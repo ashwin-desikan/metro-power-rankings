@@ -31,12 +31,15 @@ MLB script's multi-season priors + futures blend; each uses its games-to-date:
 
 SOURCES (all verified reachable from GitHub runners; the Cowork sandbox is
 egress-blocked for all of them, use SEASON_SIM_FIXTURES for offline dev):
-  AFL/NRL  fixtures: afltables.com season pages (pairings + venue home team).
-           records:  ESPN standings API (afltables lags played games by days,
-           measured 2026-08-10: Penrith 19 played on afltables, 20 on ESPN,
-           so ESPN owns W/L/D/PF/PA and afltables owns who-plays-whom).
-           The two are reconciled: a "remaining" fixture whose both teams
-           already have a full ESPN game count is dropped as already-played.
+  AFL/NRL  fixtures: ESPN scoreboard (dates= range, regular season only via
+           season.slug -- see parse_footy_scoreboard). Until 2026-08-11 this
+           was afltables.com season pages; retired after afltables stopped
+           resolving through the mini's Tailscale DNS. The per-team /schedule
+           endpoint (the WNBA/MLS pattern below) works for AFL but 500s for
+           NRL, so both leagues use /scoreboard instead.
+           records:  ESPN standings API, same as before. Both are ESPN now, so
+           reconcile_remaining()'s lag-correction (kept as a safety net, no
+           longer the primary mechanism) should mostly be a no-op.
   WNBA/MLS ESPN standings + per-team schedule endpoints (build_mlb_sim.py
            pattern). NO User-Agent header anywhere: Akamai's ESPN edge
            applies per-PoP UA policy and a plain library token is the only
@@ -116,8 +119,8 @@ def fetch_bytes(url, retries=3, soft=False):
 def _fixture_name(url):
     """Map a live URL onto the sample files _scratch/simdev uses in dev."""
     table = [
-        ("afltables.com/afl", "afl2026.html"),
-        ("afltables.com/rl", "nrl2026.html"),
+        ("australian-football/afl/scoreboard", "espn_afl_scoreboard.json"),
+        ("rugby-league/3/scoreboard", "espn_nrl_scoreboard.json"),
         ("cfl.ca/standings", "cfl_standings.html"),
         ("cfl.ca/schedule", "cfl_schedule.html"),
         ("GameAssortment=1", "spaia_central.json"),
@@ -274,31 +277,74 @@ NRL_ESPN = {
     "Dragons": "st_geo-illa", "Warriors": "auckland",
 }
 
-FOOTY_URL = {
-    "afl": "https://afltables.com/afl/seas/%d.html",
-    "nrl": "https://afltables.com/rl/seas/%d.html",
-}
-FOOTY_ESPN_URL = {
-    "afl": ESPN + "/v2/sports/australian-football/afl/standings",
-    "nrl": ESPN + "/v2/sports/rugby-league/3/standings",
-}
+FOOTY_ESPN_FRAG = {"afl": "australian-football/afl", "nrl": "rugby-league/3"}
+FOOTY_ESPN_URL = {lg: "%s/v2/sports/%s/standings" % (ESPN, frag) for lg, frag in FOOTY_ESPN_FRAG.items()}
 FOOTY_SEASON_GAMES = {"afl": 23, "nrl": 24}  # per team, 2026
 FOOTY_WIN_PTS = {"afl": 4, "nrl": 2}
 FOOTY_GAME_TOTAL = {"afl": 165.0, "nrl": 44.0}  # combined score, for PF/PA updates
+# State of Origin (NSW v QLD, representative not club) shares NRL's regular-
+# season season.slug ("2026-reg-nrl") with real club games -- measured
+# 2026-08-11, three games mid-season, weeks 12/15/18. Excluded by name, not
+# silently dropped as an unmapped team: any OTHER unrecognised name should
+# still hard-fail loudly (a stale/renamed club mapping), so this list is
+# deliberately narrow and explicit rather than "skip whatever doesn't map."
+FOOTY_EXCLUDE_TEAMS = {"afl": frozenset(), "nrl": frozenset({"New South Wales", "Queensland"})}
 
 
-def parse_footy_fixtures(html):
-    """[(home_key, away_key, played)] from an afltables season page, in page
-    (round) order. Bye rows and finals tables are skipped: a match table has
-    exactly two team links; played games carry two width=5% total cells."""
+def parse_footy_scoreboard(data, name_map, exclude_teams=frozenset()):
+    """[(home_key, away_key, played)] from an ESPN scoreboard payload
+    (site.api.espn.com .../scoreboard?dates=...), regular season only.
+
+    Replaces afltables.com (used until 2026-08-11): afltables stopped
+    resolving through the mini's Tailscale DNS, and it was only ever the
+    fixture source anyway -- records already came from ESPN's standings API
+    (FOOTY_ESPN_URL), so a lag existed between the two that reconcile_remaining
+    existed to paper over. Fixtures now come from ESPN too, closing that gap.
+
+    ESPN's per-team /schedule endpoint (the WNBA/MLS pattern, espn_schedules())
+    500s for rugby-league/3 -- measured 2026-08-11, every path_frag tried.
+    /scoreboard with a wide dates= range works for both AFL and NRL, so both
+    leagues use this shape instead.
+
+    Regular season is season.slug containing "reg", NOT season.type: AFL's
+    type codes (1=preseason, 2=regular) and NRL's (1=regular, confusingly)
+    disagree, but the slug is consistent -- "regular-season" for AFL,
+    "2026-reg-nrl" for NRL, both measured 2026-08-11.
+
+    exclude_teams drops a game outright if EITHER side's name is in the set
+    (FOOTY_EXCLUDE_TEAMS -- State of Origin). Any OTHER team name absent from
+    name_map is passed through UNMAPPED so the caller's existing `unknown`
+    check (against teams_meta) still catches it loudly, instead of silently
+    dropping the fixture."""
     out = []
-    for tbl in re.findall(r"<table[^>]*border=[12][^>]*>(.*?)</table>", html, re.S):
-        keys = re.findall(r"\.\./teams/(?:[a-z0-9_\-\.]+/)?([a-z0-9_\-\.]+)_idx\.html", tbl)
-        if len(keys) != 2 or ">Bye<" in tbl:
+    for ev in data.get("events", []) or []:
+        if "reg" not in (ev.get("season") or {}).get("slug", ""):
             continue
-        tots = re.findall(r"<td[^>]*width=5%[^>]*>\s*(\d+)\s*</td>", tbl)
-        out.append((keys[0], keys[1], len(tots) == 2))
+        comp = (ev.get("competitions") or [{}])[0]
+        names = [(c.get("team") or {}).get("displayName") for c in comp.get("competitors", []) or []]
+        if any(n in exclude_teams for n in names):
+            continue
+        home = away = None
+        for c in comp.get("competitors", []) or []:
+            nm = (c.get("team") or {}).get("displayName")
+            key = name_map.get(nm, "UNMAPPED:%s" % nm)
+            if c.get("homeAway") == "home":
+                home = key
+            else:
+                away = key
+        if home is None or away is None:
+            continue
+        done = bool(((comp.get("status") or {}).get("type") or {}).get("completed"))
+        out.append((home, away, done))
     return out
+
+
+def espn_footy_fixtures(league, season):
+    """[(home_key, away_key, played)] for the whole season, fetched live."""
+    name_map = NRL_ESPN if league == "nrl" else AFL_ESPN
+    url = "%s/site/v2/sports/%s/scoreboard?dates=%d0201-%d1101&limit=1000" % (
+        ESPN, FOOTY_ESPN_FRAG[league], season, season)
+    return parse_footy_scoreboard(fetch_json(url), name_map, FOOTY_EXCLUDE_TEAMS[league])
 
 
 def footy_espn_records(league):
@@ -410,11 +456,10 @@ def build_footy(league, sims, seed=2026):
     cfg = CFG[league]
     teams_meta = AFL_TEAMS if league == "afl" else NRL_TEAMS
     season = date.today().year
-    html = fetch_text(FOOTY_URL[league] % season)
-    fixtures = parse_footy_fixtures(html)
+    fixtures = espn_footy_fixtures(league, season)
     unknown = {k for f in fixtures for k in f[:2]} - set(teams_meta)
     if unknown:
-        raise SystemExit("[%s] unmapped afltables teams: %s" % (league, sorted(unknown)))
+        raise SystemExit("[%s] unmapped ESPN scoreboard teams: %s" % (league, sorted(unknown)))
     records = footy_espn_records(league)
     if set(records) != set(teams_meta):
         raise SystemExit("[%s] ESPN team set mismatch" % league)
@@ -483,7 +528,7 @@ def build_footy(league, sims, seed=2026):
         finals_format=("2026 top-10 with wildcard round (7v10, 8v9)" if league == "afl"
                        else "top-8 final eight system"),
         games_played=played_total, games_remaining=len(remaining),
-        source="afltables.com fixtures + ESPN records",
+        source="ESPN scoreboard + standings",
         notes="Grand Final simulated at a neutral venue. %s" %
               ("Ladder tie-break: percentage." if league == "afl" else "Ladder tie-break: points differential; bye points excluded from the simulated ordering (uniform across clubs)."),
     )
@@ -1257,22 +1302,57 @@ def self_test():
     check("mls draw rate plausible", 0.22 < p_d < 0.32)
     check("shrink is monotone", shrink(10, 20, 10) > shrink(10, 5, 10) > shrink(10, 0, 10) == 0)
 
-    # afltables parser on a miniature page
-    mini = """
-    <table border=2 width=100%><tr><td><b>Round 1</b></td></tr></table>
-    <table border=1 width=100%>
-    <tr><td><a href="../teams/geelong_idx.html">Geelong</a></td><td align=center><tt>1.1 2.2</tt></td><td width=5% align=center> 102</td><td>Thu</td></tr>
-    <tr><td><a href="../teams/stkilda_idx.html">St Kilda</a></td><td align=center><tt>1.1 2.2</tt></td><td width=5% align=center> 75</td><td><b>Geelong</b> won</td></tr>
-    </table>
-    <table border=1 width=100%>
-    <tr><td><a href="../teams/swans_idx.html">Sydney</a></td><td>&nbsp;</td><td width=5%>&nbsp;</td><td>Sat <b>Venue:</b> X</td></tr>
-    <tr><td><a href="../teams/carlton_idx.html">Carlton</a></td><td>&nbsp;</td><td width=5%>&nbsp;</td><td>&nbsp;</td></tr>
-    </table>
-    <table border=1 width=100%><tr><td><a href="../teams/essendon_idx.html">Essendon</a></td><td>Bye</td></tr></table>
-    """
-    fx = parse_footy_fixtures(mini)
-    check("footy parser: 2 matches, bye skipped", len(fx) == 2)
-    check("footy parser: played flags", fx[0] == ("geelong", "stkilda", True) and fx[1] == ("swans", "carlton", False))
+    # ESPN scoreboard parser on a miniature payload: preseason must be
+    # filtered (season.slug lacks "reg"), completed/upcoming both preserved.
+    mini_scoreboard = {"events": [
+        {"season": {"slug": "regular-season"}, "competitions": [{
+            "status": {"type": {"completed": True}},
+            "competitors": [
+                {"homeAway": "home", "team": {"displayName": "Geelong Cats"}},
+                {"homeAway": "away", "team": {"displayName": "St Kilda"}},
+            ]}]},
+        {"season": {"slug": "regular-season"}, "competitions": [{
+            "status": {"type": {"completed": False}},
+            "competitors": [
+                {"homeAway": "home", "team": {"displayName": "Sydney Swans"}},
+                {"homeAway": "away", "team": {"displayName": "Carlton"}},
+            ]}]},
+        {"season": {"slug": "preseason"}, "competitions": [{
+            "status": {"type": {"completed": True}},
+            "competitors": [
+                {"homeAway": "home", "team": {"displayName": "Essendon"}},
+                {"homeAway": "away", "team": {"displayName": "Hawthorn"}},
+            ]}]},
+    ]}
+    fx = parse_footy_scoreboard(mini_scoreboard, AFL_ESPN)
+    check("footy scoreboard: preseason filtered, 2 regular-season games", len(fx) == 2)
+    check("footy scoreboard: played flags", fx[0] == ("geelong", "stkilda", True) and fx[1] == ("swans", "carlton", False))
+    fx_unmapped = parse_footy_scoreboard({"events": [
+        {"season": {"slug": "regular-season"}, "competitions": [{
+            "status": {"type": {"completed": True}},
+            "competitors": [
+                {"homeAway": "home", "team": {"displayName": "Geelong Cats"}},
+                {"homeAway": "away", "team": {"displayName": "Some New Club"}},
+            ]}]},
+    ]}, AFL_ESPN)
+    check("footy scoreboard: unmapped team surfaces, not dropped",
+          fx_unmapped == [("geelong", "UNMAPPED:Some New Club", True)])
+    fx_origin = parse_footy_scoreboard({"events": [
+        {"season": {"slug": "2026-reg-nrl"}, "competitions": [{
+            "status": {"type": {"completed": True}},
+            "competitors": [
+                {"homeAway": "home", "team": {"displayName": "New South Wales"}},
+                {"homeAway": "away", "team": {"displayName": "Queensland"}},
+            ]}]},
+        {"season": {"slug": "2026-reg-nrl"}, "competitions": [{
+            "status": {"type": {"completed": True}},
+            "competitors": [
+                {"homeAway": "home", "team": {"displayName": "Panthers"}},
+                {"homeAway": "away", "team": {"displayName": "Storm"}},
+            ]}]},
+    ]}, NRL_ESPN, FOOTY_EXCLUDE_TEAMS["nrl"])
+    check("footy scoreboard: State of Origin excluded, club game kept",
+          fx_origin == [("penrith", "melbourne", True)])
 
     # reconciliation drops an already-played fixture
     recs = {t: dict(gp=2) for t in ("a", "b", "c", "d")}
