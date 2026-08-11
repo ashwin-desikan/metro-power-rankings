@@ -1,31 +1,97 @@
 #!/usr/bin/env bash
-# Literal port of .github/workflows/mlb-sim-refresh.yml (cron 40 9 * 3-11 *).
+# Combined port of .github/workflows/mlb-sim-refresh.yml (cron 40 9 * 3-11 *,
+# schedule already retired 2026-08-07) and .github/workflows/season-sims-
+# refresh.yml (cron 30 14 * 3-11 *, folded in here 2026-08-11 rather than run
+# as a second mini job). Seven leagues, two scripts, one daily slot.
 #
 # Kept DELIBERATELY separate from the predictions runner, for the same reason
-# the workflows are separate: predictions runs Tue/Fri because its ledgers
+# predictions.sh is its own job: predictions runs Tue/Fri because its ledgers
 # freeze a pick the first time a fixture enters the 8-day window, and making it
-# daily would quietly freeze NFL picks earlier on less information. Baseball has
-# no ledger and plays every day. Two cadences, two jobs.
+# daily would quietly freeze NFL picks earlier on less information. These seven
+# have no ledger and play/finish every day.
 #
-# The March-November restriction lives in jobs.toml (months), matching the
-# YAML's cron month field. Out of season the script exits clean without writing
-# anyway, but there is no reason to burn a run every winter morning.
+# Runs at 14:30 UTC (season-sims' original time), NOT mlb-sim's old 09:40:
+# AFL/NRL/NPB evening games (Australia/Japan) aren't finished by 09:40 UTC, so
+# that slot would systematically miss the current day's results for those
+# three. MLB has no equivalent constraint -- its games are long over by either
+# time, and the reason it moved to the mini in the first place was GitHub's
+# 1-4h-late cron dispatch, not any particular hour.
 #
-# Needs REVALIDATE_SECRET in config.env.
+# One broken source must not silence the other six leagues. All seven builds
+# below get the SAME soft-fail treatment (own timeout watchdog, tolerate a
+# nonzero exit, note it, keep going) rather than `guarded`'s hard-fail-the-
+# whole-run behaviour: sharing a job now means MLB failing must not cost the
+# other six their day's odds, and vice versa. A failed league still writes
+# nothing for itself -- build_mlb_sim.py's verify_wins() gate and
+# build_season_sims.py's per-source hard-fail are both untouched, so a broken
+# parse still can't publish a plausible-looking wrong table.
+#
+# The March-November restriction lives in jobs.toml (months), matching both
+# YAMLs' cron month field. Out of season each script exits clean without
+# writing, but there is no reason to burn a run every winter morning.
+#
+# Needs REVALIDATE_SECRET in config.env (already there for the other jobs; all
+# seven builders are stdlib-only, keyless HTTP fetches -- nothing new to add).
 . "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/_common.sh"
 
 mini_sync
 
-guarded "self-test" "$PY" scripts/predictions/build_mlb_sim.py --self-test
+guarded "self-test MLB"          "$PY" scripts/predictions/build_mlb_sim.py --self-test
+guarded "self-test season sims"  "$PY" scripts/predictions/build_season_sims.py --self-test
 
-# build() hard-fails if the derived W-L disagrees with ESPN's own standings, so
-# a silent schedule-parse break stops the run rather than publishing a
-# plausible-looking wrong table. That verify_wins() gate is the whole reason
-# this model is trustworthy; never route around it.
-guarded "rebuild the MLB model" "$PY" scripts/predictions/build_mlb_sim.py
+PARTIAL_FAILURE=0
 
-commit_paths "Auto: refresh MLB playoff odds [vercel skip]" \
-  public/data/mlb-sim.json
+# run_soft "label" timeout_seconds cmd...
+# Same watchdog shape as _common.sh's guarded(), but notes a failure/timeout
+# and returns instead of killing the whole run -- see the header above for why.
+run_soft() {
+  local label="$1"; local step_timeout="$2"; shift 2
+  note "step: $label (timeout ${step_timeout}s)"
+  "$@" &
+  local pid=$!
+  ( sleep "$step_timeout"
+    if kill -0 "$pid" 2>/dev/null; then
+      kill -TERM "$pid" 2>/dev/null; sleep 3; kill -KILL "$pid" 2>/dev/null
+    fi ) &
+  local watcher=$!
+  if wait "$pid" 2>/dev/null; then
+    kill "$watcher" 2>/dev/null; wait "$watcher" 2>/dev/null
+  else
+    local rc=$?
+    kill "$watcher" 2>/dev/null; wait "$watcher" 2>/dev/null
+    PARTIAL_FAILURE=1
+    if [ "$rc" -ge 124 ] || [ "$rc" -eq 143 ] || [ "$rc" -eq 137 ]; then
+      note "WARN: $label TIMED OUT after ${step_timeout}s"
+    else
+      note "WARN: $label failed (rc=$rc) -- see output above"
+    fi
+  fi
+}
 
-revalidate_ping "predictions-daily" "/predictions/mlb" "/predictions"
+# build() hard-fails internally if the derived W-L disagrees with ESPN's own
+# standings -- that verify_wins() gate is the whole reason this model is
+# trustworthy; never route around it. A single league, so 600s is plenty.
+run_soft "rebuild the MLB model" 600 \
+  "$PY" scripts/predictions/build_mlb_sim.py
+
+# Six leagues fetched from four external sources (afltables, ESPN, cfl.ca,
+# SPAIA) in one process -- give this one more room than a single-league step.
+run_soft "rebuild the season sims" 1800 \
+  "$PY" scripts/predictions/build_season_sims.py
+
+commit_paths "Auto: refresh MLB + season playoff odds [vercel skip]" \
+  public/data/mlb-sim.json \
+  public/data/afl-sim.json public/data/nrl-sim.json \
+  public/data/wnba-sim.json public/data/cfl-sim.json \
+  public/data/npb-sim.json public/data/mls-sim.json
+
+# Same predictions-daily tag both YAMLs used -- one flush covers all seven.
+revalidate_ping "predictions-daily" \
+  /predictions/mlb /predictions \
+  /sports/standings /teams/afl /teams/nrl /teams/wnba /teams/cfl /teams/baseball/npb
+
+if [ "$PARTIAL_FAILURE" = "1" ]; then
+  fail "one or more leagues failed to build this run (partial data may still have been committed)"
+fi
+
 note "done"

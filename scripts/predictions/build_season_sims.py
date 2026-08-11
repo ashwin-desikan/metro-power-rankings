@@ -1405,9 +1405,17 @@ def main():
         try:
             payload = BUILDERS[lg](args.sims)
             write_out(lg, payload, args.dry)
-        except SystemExit as e:
+        except Exception as e:
             # One broken source must not block the other five leagues; the
             # workflow's commit step only picks up files that were written.
+            # Catches everything, not just our own SystemExit hard-fails --
+            # a network error (DNS, timeout, connection refused) is just as
+            # capable of taking out one source as a standings mismatch is,
+            # and must not crash the whole process before the other leagues
+            # even get a turn. Found 2026-08-11 when afltables.com stopped
+            # resolving through the mini's Tailscale DNS mid-migration: an
+            # uncaught socket.gaierror killed NRL/WNBA/CFL/NPB/MLS along with
+            # AFL, even though only AFL's source was actually down.
             print("[%s] FAILED: %s" % (lg, e), file=sys.stderr)
             failures.append(lg)
     if failures:
