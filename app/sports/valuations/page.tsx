@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getAllValuations } from "@/lib/valuations";
+import { getTeamOwnerByName } from "@/lib/teamOwners";
 import ValuationsTable from "./ValuationsTable";
 
 export const dynamicParams = false;
@@ -26,7 +27,19 @@ export const metadata: Metadata = {
 };
 
 export default function ValuationsPage() {
-  const rows = getAllValuations();
+  // Owner is attached here rather than inside lib/valuations so the valuations
+  // module stays the single source of truth for figures and knows nothing about
+  // ownership. The join is by (team, league), the same key the build script
+  // validates, so a missing owner row fails the data build rather than
+  // rendering a blank cell here.
+  const rows = getAllValuations().map((r) => {
+    const owner = getTeamOwnerByName(r.team, r.league);
+    return {
+      ...r,
+      owner: owner?.ownerDisplay ?? null,
+      ownerHref: owner ? "/sports/owners" : null,
+    };
+  });
   const linked = rows.filter((r) => r.href).length;
   const leagues = new Set(rows.map((r) => r.league)).size;
   const top = rows[0];
@@ -41,7 +54,10 @@ export default function ValuationsPage() {
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           Estimated franchise valuations across the big four North American leagues and global football, on one
           sortable board. US figures are Forbes&apos; latest; football figures are Sportico&apos;s. Click any team to
-          open its page; the same figure appears on each team&apos;s page and links back here.
+          open its page; the same figure appears on each team&apos;s page and links back here. Every row also
+          carries its control owner &mdash; see{" "}
+          <Link href="/sports/owners" className="text-[var(--accent)] hover:underline">The Owners</Link> for the
+          same board grouped by who holds it.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">
           <div><strong className="text-[var(--text)] text-sm">{rows.length}</strong> teams</div>

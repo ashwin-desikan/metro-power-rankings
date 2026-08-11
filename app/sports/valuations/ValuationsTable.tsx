@@ -18,9 +18,13 @@ type Row = {
   source: string;
   href: string | null;
   anchor: string;
+  /** Control owner, from lib/teamOwners. Null only if the owner row is missing,
+      which scripts/build-team-owners-data.py treats as a hard build failure. */
+  owner: string | null;
+  ownerHref: string | null;
 };
 
-type SortKey = "value" | "team" | "league" | "year";
+type SortKey = "value" | "team" | "league" | "year" | "owner";
 const SPORTS: Array<Row["sport"] | "All"> = ["All", "NFL", "NBA", "MLB", "NHL", "Football"];
 
 export default function ValuationsTable({ rows }: { rows: Row[] }) {
@@ -43,7 +47,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
     const needle = q.trim().toLowerCase();
     let r = rows;
     if (sport !== "All") r = r.filter((x) => x.sport === sport);
-    if (needle) r = r.filter((x) => x.displayName.toLowerCase().includes(needle) || x.team.toLowerCase().includes(needle) || x.league.toLowerCase().includes(needle));
+    if (needle) r = r.filter((x) => x.displayName.toLowerCase().includes(needle) || x.team.toLowerCase().includes(needle) || x.league.toLowerCase().includes(needle) || (x.owner ?? "").toLowerCase().includes(needle));
     const dir = asc ? 1 : -1;
     return [...r].sort((a, b) => {
       let c = 0;
@@ -51,6 +55,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
       else if (sortKey === "team") c = a.displayName.localeCompare(b.displayName);
       else if (sortKey === "league") c = a.league.localeCompare(b.league);
       else if (sortKey === "year") c = (a.year ?? 0) - (b.year ?? 0);
+      else if (sortKey === "owner") c = (a.owner ?? "").localeCompare(b.owner ?? "");
       return c * dir;
     });
   }, [rows, sport, q, sortKey, asc]);
@@ -59,7 +64,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
     if (sortKey === k) setAsc((v) => !v);
     else {
       setSortKey(k);
-      setAsc(k === "team" || k === "league");
+      setAsc(k === "team" || k === "league" || k === "owner");
     }
   }
 
@@ -91,7 +96,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search team or league…"
+          placeholder="Search team, league or owner…"
           className="ml-auto w-full sm:w-64 rounded-lg border px-3 py-1.5 text-sm outline-none focus:border-[var(--accent)]"
           style={{ borderColor: "var(--border)", background: "var(--bg-card)", color: "var(--text)" }}
         />
@@ -124,6 +129,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
             <option value="team">Team</option>
             <option value="league">League / Country</option>
             <option value="value">Valuation</option>
+            <option value="owner">Owner</option>
             <option value="year">Year</option>
           </select>
         </label>
@@ -177,6 +183,20 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
                 <span className="font-semibold tabular-nums">{r.valueLabel}</span>
                 <span className="text-xs tabular-nums text-[var(--text-muted)]">{r.year ?? "—"}</span>
               </div>
+              {/* Wraps rather than truncates: entity names run long ("City
+                  Football Group (Abu Dhabi United Group, Sheikh Mansour)") and
+                  a clipped owner is worse than a second line on a card that is
+                  already variable height. */}
+              {r.owner && (
+                <div className="mt-1 text-xs text-[var(--text-muted)] break-words" title={r.owner}>
+                  <span className="text-[var(--text-dim)]">Owner: </span>
+                  {r.ownerHref ? (
+                    <Link href={r.ownerHref} className="hover:text-[var(--accent)] hover:underline">{r.owner}</Link>
+                  ) : (
+                    r.owner
+                  )}
+                </div>
+              )}
             </div>
           );
         })}
@@ -190,6 +210,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
               <th className={th} onClick={() => toggleSort("team")}>Team{arrow("team")}</th>
               <th className={th} onClick={() => toggleSort("league")}>League / Country{arrow("league")}</th>
               <th className={`${th} text-right`} onClick={() => toggleSort("value")}>Valuation{arrow("value")}</th>
+              <th className={`${th} hidden md:table-cell`} onClick={() => toggleSort("owner")}>Owner{arrow("owner")}</th>
               <th className={`${th} text-right`} onClick={() => toggleSort("year")}>Year{arrow("year")}</th>
             </tr>
           </thead>
@@ -224,6 +245,13 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
                     {r.sport === "Football" && <span className="ml-1.5 text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Football</span>}
                   </td>
                   <td className="px-3 py-2 text-right font-semibold tabular-nums">{r.valueLabel}</td>
+                  <td className="px-3 py-2 text-[var(--text-muted)] hidden md:table-cell">
+                    {r.ownerHref && r.owner ? (
+                      <Link href={r.ownerHref} className="hover:text-[var(--accent)] hover:underline">{r.owner}</Link>
+                    ) : (
+                      r.owner ?? "—"
+                    )}
+                  </td>
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]">{r.year ?? "—"}</td>
                 </tr>
               );
