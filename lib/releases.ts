@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-12",
+    headline: "Heavyweight boxing, era-correct champions, and NWSL odds",
+    items: [
+      "Every world heavyweight champion since 1885 is on the board, and because boxing recognises several at once you now see all of them: in June 2015 the unified belts and the WBC, held by different men.",
+      "The Time Machine names competitions as they were known at the time, with that era's tier: October 1983 reads European Cup and VFL Premiership. Rival leagues split too, so 1969 shows the Celtics and the ABA apart.",
+      "The Next title column works again, so every reigning champion shows the date their crown is next contested.",
+      "The NWSL joins the daily playoff and title odds, on Live Standings and the United States hub, and its tables now carry our own club names rather than the data provider's.",
+    ],
+  },
+  {
     date: "2026-08-11",
     headline: "A time machine for champions: any month, any year",
     items: [
