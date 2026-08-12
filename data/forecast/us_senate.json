@@ -12,245 +12,245 @@
   {
    "state": "Alabama",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -3.0,
    "retiring": true
   },
   {
    "state": "Alaska",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -0.09,
+   "nRatings": 12,
+   "score": -0.08,
    "retiring": false
   },
   {
    "state": "Arkansas",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -2.91,
+   "nRatings": 12,
+   "score": -2.92,
    "retiring": false
   },
   {
    "state": "Colorado",
    "incumbentParty": "D",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": 3.0,
    "retiring": false
   },
   {
    "state": "Delaware",
    "incumbentParty": "D",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": 3.0,
    "retiring": false
   },
   {
    "state": "Florida",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -2.0,
    "retiring": false
   },
   {
    "state": "Georgia",
    "incumbentParty": "D",
-   "nRatings": 11,
-   "score": 1.41,
+   "nRatings": 12,
+   "score": 1.46,
    "retiring": false
   },
   {
    "state": "Idaho",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -3.0,
    "retiring": false
   },
   {
    "state": "Illinois",
    "incumbentParty": "D",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": 3.0,
    "retiring": true
   },
   {
    "state": "Iowa",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -0.5,
+   "nRatings": 12,
+   "score": -0.46,
    "retiring": true
   },
   {
    "state": "Kansas",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -2.27,
+   "nRatings": 12,
+   "score": -2.25,
    "retiring": false
   },
   {
    "state": "Kentucky",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -3.0,
    "retiring": true
   },
   {
    "state": "Louisiana",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -2.73,
+   "nRatings": 12,
+   "score": -2.75,
    "retiring": false
   },
   {
    "state": "Maine",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": 0.32,
+   "nRatings": 12,
+   "score": 0.38,
    "retiring": false
   },
   {
    "state": "Massachusetts",
    "incumbentParty": "D",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": 3.0,
    "retiring": false
   },
   {
    "state": "Michigan",
    "incumbentParty": "D",
-   "nRatings": 11,
-   "score": 0.32,
+   "nRatings": 12,
+   "score": 0.38,
    "retiring": true
   },
   {
    "state": "Minnesota",
    "incumbentParty": "D",
-   "nRatings": 11,
-   "score": 2.27,
+   "nRatings": 12,
+   "score": 2.25,
    "retiring": true
   },
   {
    "state": "Mississippi",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -2.82,
+   "nRatings": 12,
+   "score": -2.92,
    "retiring": false
   },
   {
    "state": "Montana",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -2.36,
+   "nRatings": 12,
+   "score": -2.42,
    "retiring": true
   },
   {
    "state": "Nebraska",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -1.64,
+   "nRatings": 12,
+   "score": -1.67,
    "retiring": false
   },
   {
    "state": "New Hampshire",
    "incumbentParty": "D",
-   "nRatings": 11,
-   "score": 1.41,
+   "nRatings": 12,
+   "score": 1.54,
    "retiring": true
   },
   {
    "state": "New Jersey",
    "incumbentParty": "D",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": 3.0,
    "retiring": false
   },
   {
    "state": "New Mexico",
    "incumbentParty": "D",
-   "nRatings": 11,
-   "score": 2.91,
+   "nRatings": 12,
+   "score": 2.92,
    "retiring": false
   },
   {
    "state": "North Carolina",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": 1.5,
+   "nRatings": 12,
+   "score": 1.54,
    "retiring": true
   },
   {
    "state": "Ohio",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": 0.14,
+   "nRatings": 12,
+   "score": 0.08,
    "retiring": false
   },
   {
    "state": "Oklahoma",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -3.0,
    "retiring": true
   },
   {
    "state": "Oregon",
    "incumbentParty": "D",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": 3.0,
    "retiring": false
   },
   {
    "state": "Rhode Island",
    "incumbentParty": "D",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": 3.0,
    "retiring": false
   },
   {
    "state": "South Carolina",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -2.09,
+   "nRatings": 12,
+   "score": -2.08,
    "retiring": false
   },
   {
    "state": "South Dakota",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -3.0,
    "retiring": false
   },
   {
    "state": "Tennessee",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -3.0,
    "retiring": false
   },
   {
    "state": "Texas",
    "incumbentParty": "R",
-   "nRatings": 11,
-   "score": -0.32,
+   "nRatings": 12,
+   "score": -0.21,
    "retiring": false
   },
   {
    "state": "Virginia",
    "incumbentParty": "D",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": 3.0,
    "retiring": false
   },
   {
    "state": "West Virginia",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -3.0,
    "retiring": false
   },
   {
    "state": "Wyoming",
    "incumbentParty": "R",
-   "nRatings": 11,
+   "nRatings": 12,
    "score": -3.0,
    "retiring": true
   }

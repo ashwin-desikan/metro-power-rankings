@@ -1,18 +1,18 @@
 {
- "built": "2026-08-10",
+ "built": "2026-08-12",
  "method": "Recency-weighted poll averages; UK proportional swing on GE2024 constituency results with Monte Carlo error; US seats-votes fit on 2012-2024; NZ Sainte-Laguë; IL seat-poll averages; BR/FR round averages. Full method notes on the page.",
  "uk": {
   "electionAssumed": "2029-05-03",
   "average": {
-   "con": 20.5,
+   "con": 20.9,
    "lab": 25.1,
-   "ld": 10.7,
+   "ld": 10.5,
    "ref": 23.4,
-   "grn": 11.5,
+   "grn": 11.3,
    "snp": 3.0
   },
   "pollsters": 15,
-  "latestPollDate": "2026-08-07",
+  "latestPollDate": "2026-08-10",
   "trend": [
    {
     "date": "2024-07-12",
@@ -536,41 +536,41 @@
    },
    {
     "date": "2026-08-03",
-    "n": 9,
-    "con": 20.0,
-    "lab": 26.6,
+    "n": 11,
+    "con": 20.4,
+    "lab": 26.0,
     "ld": 10.4,
-    "ref": 23.2,
+    "ref": 23.4,
     "grn": 11.4,
-    "snp": 2.7
+    "snp": 2.8
    }
   ],
   "sim": {
    "seats": {
     "con": {
-     "median": 101,
+     "median": 109,
      "lo": 0,
-     "hi": 351
+     "hi": 358
     },
     "lab": {
-     "median": 178,
+     "median": 177,
      "lo": 8,
-     "hi": 440
+     "hi": 437
     },
     "ld": {
-     "median": 67,
+     "median": 65,
      "lo": 0,
-     "hi": 109
+     "hi": 107
     },
     "ref": {
-     "median": 153,
+     "median": 150,
      "lo": 2,
      "hi": 393
     },
     "grn": {
-     "median": 13,
-     "lo": 1,
-     "hi": 97
+     "median": 12,
+     "lo": 0,
+     "hi": 94
     },
     "snp": {
      "median": 33,
@@ -591,20 +591,20 @@
    "niSeats": 18,
    "majorityNeeds": 326,
    "pLargest": {
-    "con": 24.7,
-    "lab": 38.0,
+    "con": 26.1,
+    "lab": 37.5,
     "ld": 0.1,
-    "ref": 36.8,
-    "grn": 0.4
+    "ref": 36.0,
+    "grn": 0.3
    },
    "pMajority": {
-    "con": 8.2,
-    "lab": 20.1,
-    "ref": 16.1,
+    "con": 8.9,
+    "lab": 19.8,
+    "ref": 15.8,
     "grn": 0.0
    },
    "pHung": 55.5,
-   "monthsOut": 32.8,
+   "monthsOut": 32.7,
    "sims": 4000,
    "nat2024": {
     "con": 23.6,
@@ -711,7 +711,7 @@
     ]
    ]
   },
-  "monthsOut": 2.8,
+  "monthsOut": 2.7,
   "sims": 20000,
   "election": "2026-11-03",
   "sources": [
@@ -738,49 +738,49 @@
     "lo": 47,
     "hi": 53
    },
-   "pDemControl": 39.1,
+   "pDemControl": 40.5,
    "competitive": [
     {
      "state": "Alaska",
      "held": "R",
-     "score": -0.09,
+     "score": -0.08,
      "retiring": false,
-     "pDem": 47.0
+     "pDem": 48.0
     },
     {
      "state": "Ohio",
      "held": "R",
-     "score": 0.14,
+     "score": 0.08,
      "retiring": false,
-     "pDem": 54.0
-    },
-    {
-     "state": "Maine",
-     "held": "R",
-     "score": 0.32,
-     "retiring": false,
-     "pDem": 59.0
-    },
-    {
-     "state": "Michigan",
-     "held": "D",
-     "score": 0.32,
-     "retiring": true,
-     "pDem": 59.0
+     "pDem": 52.0
     },
     {
      "state": "Texas",
      "held": "R",
-     "score": -0.32,
+     "score": -0.21,
      "retiring": false,
-     "pDem": 41.0
+     "pDem": 44.0
+    },
+    {
+     "state": "Maine",
+     "held": "R",
+     "score": 0.38,
+     "retiring": false,
+     "pDem": 61.0
+    },
+    {
+     "state": "Michigan",
+     "held": "D",
+     "score": 0.38,
+     "retiring": true,
+     "pDem": 61.0
     },
     {
      "state": "Iowa",
      "held": "R",
-     "score": -0.5,
+     "score": -0.46,
      "retiring": true,
-     "pDem": 36.0
+     "pDem": 37.0
     }
    ],
    "sims": 20000,
@@ -919,9 +919,9 @@
     "hi": 10
    }
   },
-  "pRightBloc": 47.3,
+  "pRightBloc": 47.2,
   "pLeftBloc": 1.6,
-  "pNeither": 51.1,
+  "pNeither": 51.2,
   "monthsOut": 2.2,
   "sims": 10000,
   "sources": [
@@ -934,27 +934,27 @@
   "firstRound": {
    "shares": {
     "Lula": 41.2,
-    "F. Bolsonaro": 33.4,
-    "Caiado": 4.9,
-    "Santos": 4.5,
+    "F. Bolsonaro": 33.7,
+    "Caiado": 4.7,
+    "Santos": 4.7,
     "Zema": 2.8,
-    "Cury": 1.6
+    "Cury": 1.3
    },
-   "polls": 17,
-   "latest": "2026-08-03"
+   "polls": 21,
+   "latest": "2026-08-09"
   },
   "runoffs": [
    {
     "a": "Lula",
     "b": "F. Bolsonaro",
-    "avgA": 46.6,
-    "avgB": 42.2,
-    "pA": 86.0,
-    "polls": 52,
-    "latest": "2026-08-03"
+    "avgA": 46.7,
+    "avgB": 42.5,
+    "pA": 85.1,
+    "polls": 56,
+    "latest": "2026-08-09"
    }
   ],
-  "monthsOut": 1.8,
+  "monthsOut": 1.7,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
   ]
@@ -994,7 +994,7 @@
     "b": "Attal RE",
     "avgA": 54.9,
     "avgB": 45.1,
-    "pA": 93.4,
+    "pA": 93.5,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -1012,7 +1012,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 82.1,
+    "pA": 82.2,
     "polls": 4,
     "latest": "2026-05-27"
    },
