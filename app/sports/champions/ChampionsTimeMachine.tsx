@@ -23,7 +23,11 @@ import { competitionHref } from "@/lib/competitionLinks";
 // champions page payload is untouched.
 
 type TChampion = { name: string; canonical: string; href: string | null; metroSlug: string; season: string; won: string };
-type TReign = { c: number; from: string; to: string | null; champions: TChampion[] };
+type TReign = {
+  c: number; from: string; to: string | null;
+  eraName?: string; tier?: number | null; tierGuide?: number | null;
+  champions: TChampion[];
+};
 type TComp = {
   slug: string; competition: string; sport: string; scopeType: string;
   geo: string; region: string; tier: number | null; tierGuide: number | null;
@@ -77,7 +81,19 @@ function NationFlag({ team, scopeType }: { team: string; scopeType: string }) {
 type SortKey = "team" | "competition" | "scope" | "geo" | "won" | "tier";
 
 /** A competition plus everyone holding one of its titles during the chosen month. */
-type Hit = { comp: TComp; champions: TChampion[] };
+// `era` is the competition's name at the time being viewed, which is the whole
+// point of a time machine: August 1983 shows "VFL Premiership", not "AFL". It
+// comes from the reign, not the competition, because it changes season to
+// season. Older cached copies of the timeline document have no eraName, so it
+// falls back to the canonical name. Where a month holds co-champions from
+// different reigns the first still standing wins, which is right: they are the
+// same trophy under one name in that month.
+// `tier` / `tierGuide` come from the reign for the same reason as `era`: they
+// are era-weighted in the ledger and change within one competition. Reading
+// them off TimelineComp took whichever row sorted first in the workbook, so
+// every NFL season in history rendered the modern Super Bowl's Tier 0 even
+// though 1966-71 is tier 1 and the AAFC years are tier 3.
+type Hit = { comp: TComp; era: string; tier: number | null; tierGuide: number | null; champions: TChampion[] };
 
 export default function ChampionsTimeMachine() {
   const [data, setData] = useState<Timeline | null>(null);
@@ -154,6 +170,8 @@ export default function ChampionsTimeMachine() {
   const hits = useMemo<Hit[]>(() => {
     if (!data) return [];
     const byComp = new Map<number, TChampion[]>();
+    const eraByComp = new Map<number, string>();
+    const tierByComp = new Map<number, { tier: number | null; tierGuide: number | null }>();
     for (const r of data.reigns) {
       if (r.from > me) continue;
       if (r.to !== null && r.to <= ms) continue;
@@ -168,12 +186,32 @@ export default function ChampionsTimeMachine() {
       const a = byComp.get(r.c);
       if (a) a.push(...shown);
       else byComp.set(r.c, [...shown]);
+      // LAST reign wins, not first. Reigns arrive in chronological order per
+      // competition, and in a handover month both the outgoing and incoming
+      // reign are live. If that handover is also an era change — the last NFL
+      // Championship giving way to the first Super Bowl — the row should read
+      // as the era it has just entered, so overwrite rather than keep.
+      if (r.eraName) eraByComp.set(r.c, r.eraName);
+      if (r.tier != null || r.tierGuide != null) {
+        tierByComp.set(r.c, { tier: r.tier ?? null, tierGuide: r.tierGuide ?? null });
+      }
     }
     const out: Hit[] = [];
     for (const [ci, chs] of byComp) {
-      out.push({ comp: data.comps[ci], champions: chs.sort((a, b) => a.won.localeCompare(b.won)) });
+      const comp = data.comps[ci];
+      const t = tierByComp.get(ci);
+      out.push({
+        comp,
+        era: eraByComp.get(ci) || comp.competition,
+        tier: t ? t.tier : comp.tier,
+        tierGuide: t ? t.tierGuide : comp.tierGuide,
+        champions: chs.sort((a, b) => a.won.localeCompare(b.won)),
+      });
     }
-    return out; // comps already tier-ordered upstream; Map preserves insertion
+    // NOTE: no longer pre-sorted by tier. The document's comps order ranks on
+    // the competition's fixed head-row tier; `sorted` re-ranks on each hit's
+    // era-correct tier so the board reorders when the month moves.
+    return out;
   }, [data, ms, me]);
 
   const scopeOpts = useMemo(() => {
@@ -203,13 +241,30 @@ export default function ChampionsTimeMachine() {
   );
 
   const sorted = useMemo(() => {
-    if (!sortKey) return filtered;
+    // Default order re-ranks on the ERA-CORRECT tier, so moving the month
+    // re-sorts the board rather than only relabelling the Tier column. The
+    // document's own comps order is tier-ranked by the competition's head row,
+    // which is a fixed number and wrong for every month but the head's. Falls
+    // back to that order as the tiebreak, keeping sport-then-name grouping.
+    if (!sortKey) {
+      return filtered
+        .map((h, i) => ({ h, i }))
+        .sort(
+          (a, b) =>
+            (a.h.tier ?? 99) - (b.h.tier ?? 99) ||
+            (a.h.tierGuide ?? 999) - (b.h.tierGuide ?? 999) ||
+            a.i - b.i,
+        )
+        .map((x) => x.h);
+    }
     const firstChamp = (h: Hit) => h.champions[0]?.name ?? "";
     const wonAt = (h: Hit) => h.champions[h.champions.length - 1]?.won ?? "";
     const out = [...filtered];
     out.sort((a, b) => {
       let cmp = 0;
-      if (sortKey === "tier") cmp = (a.comp.tier ?? 99) - (b.comp.tier ?? 99) || (a.comp.tierGuide ?? 999) - (b.comp.tierGuide ?? 999);
+      // Sort on the reign's era-correct tier, so the number that sorts is the
+      // number the row displays.
+      if (sortKey === "tier") cmp = (a.tier ?? 99) - (b.tier ?? 99) || (a.tierGuide ?? 999) - (b.tierGuide ?? 999);
       else if (sortKey === "won") cmp = wonAt(a).localeCompare(wonAt(b));
       else if (sortKey === "geo") cmp = geoRank(a.comp.geo) - geoRank(b.comp.geo) || a.comp.geo.localeCompare(b.comp.geo);
       else if (sortKey === "scope") cmp = (SCOPE_RANK[a.comp.scopeType] ?? 9) - (SCOPE_RANK[b.comp.scopeType] ?? 9);
@@ -388,12 +443,14 @@ export default function ChampionsTimeMachine() {
 
           {/* Mobile: one card per competition */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {/* Key on slug + era: a competition split into rival strands
+                (NBA and ABA, NFL and AFL) yields two hits sharing a slug. */}
             {sorted.map((h) => (
-              <div key={`${h.comp.slug}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+              <div key={`${h.comp.slug}-${h.era}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 <div className="flex items-start justify-between gap-2">
-                  <Champions h={h} bold={h.comp.tier != null && h.comp.tier <= 2} />
-                  {h.comp.tier != null && (
-                    <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]" style={mono}>Tier {h.comp.tier}</span>
+                  <Champions h={h} bold={h.tier != null && h.tier <= 2} />
+                  {h.tier != null && (
+                    <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]" style={mono}>Tier {h.tier}</span>
                   )}
                 </div>
                 <div className="text-[11px] text-[var(--text-dim)] mb-2">{sportDisplay(h.comp.sport)}</div>
@@ -401,7 +458,7 @@ export default function ChampionsTimeMachine() {
                   <div className="col-span-2">
                     <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Competition</div>
                     <div>
-                      <Link href={competitionHref(h.comp.slug)} className="hover:text-[var(--accent)] hover:underline">{h.comp.competition}</Link>
+                      <Link href={competitionHref(h.comp.slug)} className="hover:text-[var(--accent)] hover:underline">{h.era}</Link>
                       {h.comp.gold && <span aria-label="Gold Standard competition" title="Gold Standard — the apex trophy in its sport" className="ml-1 cursor-default">🥇</span>}
                     </div>
                   </div>
@@ -439,14 +496,14 @@ export default function ChampionsTimeMachine() {
               </thead>
               <tbody>
                 {sorted.map((h) => (
-                  <tr key={h.comp.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
-                    <td className="py-2 px-3 align-top tabular-nums text-[var(--text-muted)]" style={mono}>{h.comp.tier ?? ""}</td>
+                  <tr key={`${h.comp.slug}-${h.era}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+                    <td className="py-2 px-3 align-top tabular-nums text-[var(--text-muted)]" style={mono}>{h.tier ?? ""}</td>
                     <td className="py-2 px-3 align-top">
-                      <Champions h={h} bold={h.comp.tier != null && h.comp.tier <= 2} />
+                      <Champions h={h} bold={h.tier != null && h.tier <= 2} />
                       <div className="text-[11px] text-[var(--text-dim)]">{sportDisplay(h.comp.sport)}</div>
                     </td>
                     <td className="py-2 px-3 align-top">
-                      <Link href={competitionHref(h.comp.slug)} className="hover:text-[var(--accent)] hover:underline">{h.comp.competition}</Link>
+                      <Link href={competitionHref(h.comp.slug)} className="hover:text-[var(--accent)] hover:underline">{h.era}</Link>
                       {h.comp.gold && <span aria-label="Gold Standard competition" title="Gold Standard — the apex trophy in its sport" className="ml-1 cursor-default">🥇</span>}
                     </td>
                     <td className="py-2 px-3 align-top text-[var(--text-muted)]">{h.comp.scopeType || "—"}</td>

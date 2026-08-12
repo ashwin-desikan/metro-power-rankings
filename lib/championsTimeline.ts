@@ -25,6 +25,8 @@ import { championTeamHref, getChampionsWithLinks } from "./championsHub";
 type Raw = {
   sport: string;
   competition: string;
+  /** Period-correct competition name ("VFL Premiership", "European Cup"). */
+  eraName?: string;
   compSlug: string;
   /** Not always a string: the workbook writes a bare year as a number. */
   season: string | number | null;
@@ -58,6 +60,17 @@ export type TimelineReign = {
   from: string;
   /** Day the next season's title was won (exclusive); null = still held. */
   to: string | null;
+  /** The competition's period-correct name for this reign; see the push site. */
+  eraName: string;
+  /**
+   * The tier THIS reign was won at, which is not the competition's tier today.
+   * The NFL is the clearest case: 1920-65 NFL Champions sit at tier 1, the
+   * 1946-49 AAFC at 3, the pre-merger Super Bowls 1966-71 at 1, and only
+   * 1972 onward at 0. Reading these off TimelineComp showed whichever row
+   * happened to sort first in the workbook for every season in history.
+   */
+  tier: number | null;
+  tierGuide: number | null;
   /**
    * One season's champions. More than one means a split title: co-champions who
    * hold it together rather than in succession — Michigan and Nebraska in 1997,
@@ -215,26 +228,86 @@ export function getChampionsTimeline(): ChampionsTimeline {
     // 1974 college football split is 39 days apart because Oklahoma were on
     // probation and played no bowl; the NFL and AAFC champions of 1946 carry
     // different era names and are still co-champions.
+    // SEASONLESS competitions key on the DATE, not the season. Boxing has no
+    // seasons: a belt can change hands three times in a calendar year, and the
+    // workbook necessarily writes the same Season (the year) on each. Grouping
+    // those by season made them co-champions, so June 1990 showed the WBA belt
+    // held by Tim Witherspoon AND Bonecrusher Smith at once, when in fact Smith
+    // took it off Witherspoon that December. Every title change is its own
+    // reign, ended by the next one in the same lineage.
+    //
+    // This is the exact inverse of the season rule above and both are needed:
+    // a league's split title is two champions on different days, a boxing
+    // lineage is two champions on different days who are a succession. Nothing
+    // in the shape of the data distinguishes them, so the sport does.
+    const SEASONLESS_SPORTS = new Set(["Boxing"]);
+    const seasonless = SEASONLESS_SPORTS.has(list[0].sport);
     const bySeason = new Map<string, Raw[]>();
     for (const r of list) {
       // Coerce: the workbook writes a bare year as a NUMBER, so season is not
       // always a string however the JSON is typed.
-      const k = String(r.season ?? "").trim() || String(r.year ?? "").trim() || r.date;
+      const k = seasonless
+        ? r.date
+        : String(r.season ?? "").trim() || String(r.year ?? "").trim() || r.date;
       const a = bySeason.get(k);
       if (a) a.push(r);
       else bySeason.set(k, [r]);
     }
-    const groups = [...bySeason.values()]
+    // STRANDS. One compSlug can carry two competitions that ran side by side
+    // under rival banners. Merging those into one season group made Boston
+    // Celtics and Oakland Oaks co-champions of the same trophy in 1969, and
+    // chained the ABA champion's reign to the NBA's calendar.
+    //
+    // This has to be a CURATED list, and both cheaper rules were tested against
+    // the ledger and rejected:
+    //   - Tier does not work. NFL Champions and AFL Champions 1960-65 are BOTH
+    //     tier 1 / guide 2.5, so a tier split leaves the pair he asked about
+    //     merged. It also splits NFL Champions (tier 1) from Super Bowl
+    //     Champions (tier 0), which is one continuous competition.
+    //   - Era name alone does not work either. 126 season groups hold more than
+    //     one era at the same tier and nearly all must stay merged: Argentina's
+    //     Apertura and Clausura, Liga MX's Apertura and Clausura, and NCAA
+    //     basketball's Helms / Premo-Porretta / tournament selections, which are
+    //     three selectors of ONE national title rather than three leagues.
+    //
+    // So: name the rival banners explicitly, keyed by competition then era, the
+    // same shape as DORMANT above. Anything unlisted stays on the main strand,
+    // which means adding a competition here is the only way to split one.
+    const RIVAL_STRANDS: Record<string, Record<string, string>> = {
+      // The AAFC (1946-49) and the AFL (1960-65) were separate leagues with
+      // their own championship games, not co-winners of the NFL's title.
+      NFL: { "AAFC Champions": "aafc", "AFL Champions": "afl" },
+      // The ABA ran 1968-76 alongside the NBA. BAA Champions is NOT here: the
+      // BAA is the NBA's own predecessor, a continuous line.
+      NBA: { "ABA Champions": "aba" },
+      // The WHA's Avco World Trophy, 1973-79, beside the Stanley Cup.
+      NHL: { "AVCO Cup Champions": "wha" },
+    };
+    const strandMap = RIVAL_STRANDS[list[0].competition] ?? {};
+    const strandOf = (r: Raw) => strandMap[String(r.eraName ?? "")] ?? "main";
+    const strandKeys = [...new Set(list.map(strandOf))];
+    const soleStrand = strandKeys.length === 1;
+
+    for (const sk of strandKeys) {
+    const strandRows = list.filter((r) => strandOf(r) === sk);
+    const strandSeasons = new Map<string, Raw[]>();
+    for (const [k, rs] of bySeason) {
+      const mine = rs.filter((r) => strandOf(r) === sk);
+      if (mine.length) strandSeasons.set(k, mine);
+    }
+    const groups = [...strandSeasons.values()]
       .map((rs) => {
         const ds = rs.map((r) => r.date).sort();
         return { rs, start: ds[0], end: ds[ds.length - 1] };
       })
       .sort((a, b) => a.start.localeCompare(b.start) || a.end.localeCompare(b.end));
 
-    const dates = [...new Set(list.map((r) => r.date))].sort();
+    const dates = [...new Set(strandRows.map((r) => r.date))].sort();
     const first = groups[0].start;
     const last = groups[groups.length - 1].end;
-    const head = list[0];
+    // The strand's own head, not the competition's. On a split competition the
+    // rival strand must take its tier, era and dates from its own rows.
+    const head = strandRows[0];
     const meta = byComp.get(head.competition);
 
     // How long one holder normally keeps it, from this competition's own
@@ -243,8 +316,15 @@ export function getChampionsTimeline(): ChampionsTimeline {
     for (let i = 1; i < dates.length; i++) gaps.push(daysBetween(dates[i - 1], dates[i]));
     const cycle = Math.min(Math.max(median(gaps), 366), 1826);
 
+    // Liveness is per strand. `meta.live` says the COMPETITION is on the
+    // current-champions board, which is true of the NBA and therefore of the
+    // ABA strand too if applied blindly — that would leave the Oakland Oaks
+    // reigning today. Only the sole strand of an unsplit competition may use
+    // it; a rival strand lives or dies on its own rows.
     const live =
-      list.some((r) => r.isCurrent) || Boolean(meta?.live) || daysBetween(last, today) <= cycle;
+      strandRows.some((r) => r.isCurrent) ||
+      (soleStrand && Boolean(meta?.live)) ||
+      daysBetween(last, today) <= cycle;
 
     const geo = meta?.geo || head.scope || "—";
     const region =
@@ -289,6 +369,21 @@ export function getChampionsTimeline(): ChampionsTimeline {
         c,
         from: g.start,
         to,
+        // The competition's name AT THE TIME, from the reign's own rows, e.g.
+        // "VFL Premiership" for 1983 rather than "AFL", "European Cup" rather
+        // than "Champions League". It belongs on the reign and not on
+        // TimelineComp because it changes from season to season, which is the
+        // whole point of it. TimelineComp.competition stays canonical so
+        // sorting, filtering and the competition link remain stable across
+        // eras. Falls back to the canonical name when a row carries no era.
+        // String() because champions-history.json is cast, not validated, and
+        // its fields are not reliably strings (see `season`).
+        eraName: String(g.rs[0]?.eraName ?? "").trim() || head.competition,
+        // Era-correct tier, from this reign's own rows rather than the
+        // competition's head row. Falls back to the competition's value so an
+        // untiered row still sorts where the competition does.
+        tier: g.rs[0]?.tier ?? head.tier ?? null,
+        tierGuide: g.rs[0]?.tierGuide ?? head.tierGuide ?? null,
         champions: [...g.rs]
           .sort((a, b) => a.date.localeCompare(b.date))
           .map((r) => ({
@@ -311,6 +406,60 @@ export function getChampionsTimeline(): ChampionsTimeline {
           })),
       });
     });
+    } // end strand
+  }
+
+  // UNIFIED TITLES vs THEIR CONSTITUENT BELTS.
+  //
+  // The ledger records a unified championship as its own competition, named for
+  // the bodies it carries: "World Heavyweight Championship (WBA, WBC, and IBF)"
+  // beside "(WBA)", "(WBC)" and "(IBF)". That leaves a GAP in each constituent
+  // lineage for as long as the belts are held together, and a gap is exactly
+  // what the reign chain fills by extending the previous holder. June 1990 read
+  // as five heavyweight champions: Buster Douglas with the unified title, plus
+  // Bonecrusher Smith, Mike Tyson and Tony Tucker still holding the very belts
+  // Douglas had just taken off Tyson.
+  //
+  // Nothing needs inventing to fix it, because the competition names already
+  // say which bodies are involved. A reign of any belt ends the moment a
+  // competition sharing one of its bodies crowns someone, and that is
+  // symmetric: a unified reign ends when a constituent belt is next won alone.
+  const bodiesOf = (competition: string): Set<string> => {
+    const open = competition.indexOf("(");
+    const close = competition.lastIndexOf(")");
+    if (open < 0 || close <= open) return new Set();
+    return new Set(
+      competition
+        .slice(open + 1, close)
+        // Drop nested qualifiers such as the "(Super)" in "WBA (Super)".
+        .replace(/\([^)]*\)/g, " ")
+        .split(/,|\band\b/i)
+        .map((s) => s.trim().toUpperCase())
+        .filter((s) => s && s !== "AND"),
+    );
+  };
+  const compBodies = comps.map((c) => (c.sport === "Boxing" ? bodiesOf(c.competition) : new Set<string>()));
+  // Every boxing reign start, so each reign can find the next event that
+  // touches one of its bodies.
+  const events = reigns
+    .map((r) => ({ c: r.c, from: r.from }))
+    .filter((e) => compBodies[e.c].size > 0)
+    .sort((a, b) => a.from.localeCompare(b.from));
+  for (const r of reigns) {
+    const mine = compBodies[r.c];
+    if (mine.size === 0) continue;
+    for (const e of events) {
+      if (e.c === r.c || e.from <= r.from) continue;
+      if (r.to !== null && e.from >= r.to) break; // already ends earlier
+      let overlaps = false;
+      for (const b of compBodies[e.c]) {
+        if (mine.has(b)) { overlaps = true; break; }
+      }
+      if (overlaps) {
+        r.to = e.from;
+        break;
+      }
+    }
   }
 
   // Same default order as the Current board: tier, then the sub-tier guide,
