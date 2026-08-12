@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import { getWClubs, getWMeta, getWTournamentCompetitions, getWLeagueHubs, decoratedRows, WCOLS_DEFAULT } from "@/lib/wfootball";
-import { getWLiveLeagues, getWLiveCompetition } from "@/lib/wLive";
+import { getWLiveLeagues, getWLiveCompetition, getWLiveOdds } from "@/lib/wLive";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedClubsTable from "@/app/teams/wfootball/MostDecoratedClubsTable";
 import WLiveHub from "@/app/teams/wfootball/WLiveHub";
@@ -27,7 +27,11 @@ export default async function WFootballHubPage() {
   const clubs = getWClubs();
   const meta = getWMeta();
   const rows = decoratedRows(clubs.slice(0, 25));
-  const [wLeagues, uwcl] = await Promise.all([getWLiveLeagues(), getWLiveCompetition("uwcl")]);
+  const [wLeagues, uwcl, wOdds] = await Promise.all([
+    getWLiveLeagues(),
+    getWLiveCompetition("uwcl"),
+    getWLiveOdds(),
+  ]);
   const hasLive = wLeagues.length > 0 || (uwcl?.hasContent ?? false);
 
   return (
@@ -69,7 +73,7 @@ export default async function WFootballHubPage() {
             Live tables and fixtures for the tracked women&apos;s competitions: Spain&apos;s Liga F, the NWSL, England&apos;s
             FA WSL, and the UEFA Women&apos;s Champions League. Refreshed daily; tables appear once each season is under way.
           </p>
-          <WLiveHub leagues={wLeagues} competition={uwcl} />
+          <WLiveHub leagues={wLeagues} competition={uwcl} odds={wOdds} />
         </section>
       )}
 

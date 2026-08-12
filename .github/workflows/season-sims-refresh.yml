@@ -64,7 +64,8 @@ jobs:
         run: |
           git add public/data/afl-sim.json public/data/nrl-sim.json \
                   public/data/wnba-sim.json public/data/cfl-sim.json \
-                  public/data/npb-sim.json public/data/mls-sim.json 2>/dev/null || true
+                  public/data/npb-sim.json public/data/mls-sim.json \
+                  public/data/nwsl-sim.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes; nothing to commit."
             exit 0
@@ -103,7 +104,7 @@ jobs:
               # revalidateTag() invalidates but does not regenerate; warm the
               # main consumers so a real visitor doesn't eat the stale hit
               # (same rationale as mlb-sim-refresh.yml).
-              for p in /sports/standings /teams/afl /teams/nrl /teams/wnba /teams/cfl /teams/baseball/npb; do
+              for p in /sports/standings /teams/afl /teams/nrl /teams/wnba /teams/cfl /teams/baseball/npb /teams/wfootball /teams/wfootball/leagues/united-states; do
                 ( wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
                     "https://rankings.citizenofnowhere.org$p")" || wcode=000
                   echo "warm $p -> HTTP $wcode" ) &

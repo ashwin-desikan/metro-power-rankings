@@ -3,6 +3,7 @@ import { readFile } from "fs/promises";
 import { join } from "path";
 import { getWClubByName } from "@/lib/wfootball";
 import { getNwslStandings } from "@/lib/nwsl-standings";
+import { getSeasonSim, simIsCurrent, simBySlugResolved, fmtOdds } from "@/lib/seasonSim";
 
 // Live women's club-football data (api-football -> committed bundle). The mini's
 // scripts/apifootball/refresh_women.py writes public/data/football/wlive-2026.json
@@ -77,13 +78,39 @@ async function loadBundle(): Promise<RawBundle | null> {
 }
 
 const num = (v: number | null | undefined): number | string => (v === null || v === undefined ? DASH : v);
-const resolveName = (name: string | null): { name: string; slug: string | null } => {
+// api-football suffixes every women's club with a bare " W" ("NJ/NY Gotham FC
+// W", "Bay FC W"). getWClubByName's stop-word list drops "women"/"womens"/
+// "ladies"/"feminin..." but NOT that one-letter token, so normName kept it and
+// every NWSL row resolved to null: sixteen dead club links on /sports/standings,
+// /teams/wfootball and the United States hub, plus nothing for the odds join to
+// key on. Fixed here rather than by adding "w" to the shared stop list, because
+// this is an api-football naming convention and a bare "w" is a plausible token
+// in a real club name elsewhere.
+const stripWSuffix = (s: string): string => s.replace(/\s+W$/u, "");
+
+// Competitions whose tables render OUR club names rather than the vendor's.
+//
+// NWSL only, and the reason is completeness, not preference: all 16 NWSL rows
+// resolve to a portal club, so the table reads consistently. FA WSL and Liga F
+// still have clubs with no honours entry (Brighton, West Ham, Leicester;
+// Athletic Club, Eibar, Espanyol, Atletico Madrid, Deportivo Alaves and two
+// more), so canonicalising those today would produce a MIXED table -- some
+// rows "Arsenal Women", others still "Brighton W" -- which reads worse than
+// consistent vendor naming. Add a comp here once its clubs all resolve.
+const CANONICAL_NAME_COMPS = new Set(["nwsl"]);
+
+const resolveName = (
+  name: string | null,
+  canonical = false,
+): { name: string; slug: string | null } => {
   const nm = name ?? DASH;
-  return { name: nm, slug: name ? getWClubByName(name)?.slug ?? null : null };
+  if (!name) return { name: nm, slug: null };
+  const club = getWClubByName(name) ?? getWClubByName(stripWSuffix(name));
+  return { name: canonical && club ? club.name : nm, slug: club?.slug ?? null };
 };
 
-function toRowVM(r: RawRow, i: number): WLiveRowVM {
-  const resolved = resolveName(r.name);
+function toRowVM(r: RawRow, i: number, canonical = false): WLiveRowVM {
+  const resolved = resolveName(r.name, canonical);
   return {
     rank: r.rank ?? i + 1,
     name: resolved.name,
@@ -92,15 +119,15 @@ function toRowVM(r: RawRow, i: number): WLiveRowVM {
   };
 }
 
-function toGroups(groups: RawGroup[]): WLiveGroupVM[] {
+function toGroups(groups: RawGroup[], canonical = false): WLiveGroupVM[] {
   return groups.map((g) => ({
     label: g.group_label || null,
-    rows: g.rows.map(toRowVM),
+    rows: g.rows.map((r, i) => toRowVM(r, i, canonical)),
   }));
 }
 
 function leagueVM(l: RawLeague): WLiveLeagueVM {
-  const groups = toGroups(l.groups);
+  const groups = toGroups(l.groups, CANONICAL_NAME_COMPS.has(l.comp_slug ?? ""));
   const hasRows = groups.some((g) => g.rows.length > 0);
   return {
     leagueId: l.league_id, name: l.name, hubSlug: l.hub_slug, compSlug: l.comp_slug,
@@ -125,7 +152,9 @@ async function nwslFromEspn(): Promise<WLiveLeagueVM | null> {
   const snap = await getNwslStandings();
   if (snap.rows.length === 0) return null;
   const rows: WLiveRowVM[] = snap.rows.map((r, i) => {
-    const resolved = resolveName(r.name);
+    // ESPN fallback path: canonicalise too, so a source swap does not change
+    // the names on the page.
+    const resolved = resolveName(r.name, CANONICAL_NAME_COMPS.has("nwsl"));
     return {
       rank: r.rank ?? i + 1, name: resolved.name, slug: resolved.slug,
       cells: [r.played, r.wins, r.draws, r.losses, r.gf, r.ga, r.gd, r.points],
@@ -189,6 +218,42 @@ export async function getWLiveLeagues(): Promise<WLiveLeagueVM[]> {
 export async function getWLiveLeagueForHub(hubSlug: string): Promise<WLiveLeagueVM | null> {
   const leagues = await getWLiveLeagues();
   return leagues.find((l) => l.hubSlug === hubSlug) ?? null;
+}
+
+// ---- Playoff odds -------------------------------------------------------------
+
+export type WLiveOddsVM = Record<
+  string,
+  { spots: number; labels: [string, string]; rows: Record<string, { po: string; title: string }> }
+>;
+
+/**
+ * Playoff and title odds for the women's leagues that have a simulation,
+ * keyed by comp slug then club slug, pre-formatted for display.
+ *
+ * NWSL only for now: it is the one women's league here with a playoff bracket
+ * rather than a champion-is-the-table-winner format, so it is the only one
+ * where "will they make the postseason" is a question worth simulating. WSL
+ * and Liga F would need a different question (title race odds) and are
+ * deliberately not faked from this machinery.
+ *
+ * The odds table is ESPN-keyed and the standings rows are api-football-keyed,
+ * so the join runs through getWClubByName and FAILS CLOSED - see
+ * simBySlugResolved. A club rebrand upstream hides the columns rather than
+ * mislabelling a row.
+ */
+export async function getWLiveOdds(): Promise<WLiveOddsVM> {
+  const out: WLiveOddsVM = {};
+  const nwsl = await getSeasonSim("nwsl");
+  if (!simIsCurrent(nwsl)) return out;
+  const bySlug = simBySlugResolved(nwsl, (n) => getWClubByName(n)?.slug);
+  if (!bySlug) return out;
+  const rows: Record<string, { po: string; title: string }> = {};
+  for (const [slug, r] of bySlug) {
+    rows[slug] = { po: fmtOdds(r.p_playoffs), title: fmtOdds(r.p_title) };
+  }
+  out.nwsl = { spots: nwsl.meta.playoff_spots ?? 8, labels: ["PO%", "Title%"], rows };
+  return out;
 }
 
 // Live UWCL (or any tournament) group/knockout data for its hub page.

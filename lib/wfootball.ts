@@ -165,7 +165,20 @@ function normName(s: string): string {
 // deep-link to the correct club page.
 const W_CLUB_NAME_ALIASES: Record<string, string> = {
   gotham: "nj-ny-gotham-fc",
-  seattlereign: "ol-reign",
+  // Was "ol-reign", a slug the clubs data no longer carries (the club is
+  // "Seattle Reign FC" again). Unreachable in practice, since the direct
+  // index already holds "seattlereign", but a wrong entry here is a trap.
+  seattlereign: "seattle-reign-fc",
+  // ESPN carries the club's 2026 rebrand ("Chicago Stars FC") while the
+  // honours data still holds the historical name. Needed for the NWSL odds
+  // join on /sports/standings and /teams/wfootball, which resolves ESPN
+  // display names to portal slugs through this map.
+  // TODO(content): rename the club in womens-football.json and
+  // womens-current-clubs.json, then retire this alias.
+  chicagostars: "chicago-red-stars",
+  // api-football shortens the club to "Kansas City W", which normalises to a
+  // name the honours data does not carry ("Kansas City Current").
+  kansascity: "kansas-city-current",
 };
 
 let _nameIndex: Map<string, WClub> | null = null;
@@ -179,11 +192,18 @@ export function getWClubByName(name: string): WClub | null {
     }
   }
   const key = normName(name);
-  const direct = _nameIndex.get(key);
-  if (direct) return direct;
+  // Curated aliases beat the fuzzy index, deliberately. normName strips "FC"
+  // as a stop word, so "FC Kansas City" (the defunct 2013-17 club, still in
+  // the honours data) and "Kansas City" collide on the key `kansascity`, and
+  // the index resolves whichever club appears first in the data -- the wrong
+  // one. When the alias table has an opinion it is a human decision about an
+  // ambiguous name and must win; the index is the fallback.
   const aliasSlug = W_CLUB_NAME_ALIASES[key];
-  if (aliasSlug) return getWClub(aliasSlug);
-  return null;
+  if (aliasSlug) {
+    const aliased = getWClub(aliasSlug);
+    if (aliased) return aliased;
+  }
+  return _nameIndex.get(key) ?? null;
 }
 
 // Deterministic monogram (initials + color) for clubs lacking a crest asset.

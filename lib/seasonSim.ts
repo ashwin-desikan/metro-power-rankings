@@ -4,7 +4,7 @@ import { join } from "path";
 
 // Season simulations for the six non-MLB leagues (built by
 // scripts/predictions/build_season_sims.py):
-//   public/data/{afl,nrl,wnba,cfl,npb,mls}-sim.json
+//   public/data/{afl,nrl,wnba,cfl,npb,mls,nwsl}-sim.json
 //     - playoff / finals odds and championship odds per team
 //
 // Same ISR read pattern as lib/mlbSim.ts: prefer the copy on GitHub raw so a
@@ -14,7 +14,7 @@ import { join } from "path";
 // SPAIA TeamCD) but joined by `slug` where the site has one and by `name`
 // for the ESPN leagues - see each consumer.
 
-export type SeasonSimLeague = "afl" | "nrl" | "wnba" | "cfl" | "npb" | "mls";
+export type SeasonSimLeague = "afl" | "nrl" | "wnba" | "cfl" | "npb" | "mls" | "nwsl";
 
 export type SeasonSimRow = {
   key: string;
@@ -111,5 +111,34 @@ export function simBySlug(sim: SeasonSimFile | null): Map<string, SeasonSimRow> 
 export function simByName(sim: SeasonSimFile | null): Map<string, SeasonSimRow> {
   const out = new Map<string, SeasonSimRow>();
   for (const r of sim?.table ?? []) out.set(r.name, r);
+  return out;
+}
+
+/**
+ * ESPN displayName -> row, re-keyed onto site slugs through `resolve`.
+ *
+ * Used by NWSL, whose sim rows are ESPN-keyed ("Gotham FC") while the live
+ * standings rows it must join against are api-football-keyed ("NJ/NY Gotham
+ * FC W") and carry a portal slug. Resolution goes through the site's own
+ * alias table (getWClubByName), so the naming knowledge stays in one place.
+ *
+ * FAILS CLOSED, deliberately: if any row does not resolve, or two resolve to
+ * the same slug, this returns null and the caller hides the odds columns
+ * entirely. A club rebrand upstream is exactly how a partial join would
+ * otherwise attach one club's title odds to another's row, which is worse
+ * than showing nothing.
+ */
+export function simBySlugResolved(
+  sim: SeasonSimFile | null,
+  resolve: (name: string) => string | null | undefined,
+): Map<string, SeasonSimRow> | null {
+  const rows = sim?.table ?? [];
+  if (rows.length === 0) return null;
+  const out = new Map<string, SeasonSimRow>();
+  for (const r of rows) {
+    const slug = resolve(r.name);
+    if (!slug || out.has(slug)) return null;
+    out.set(slug, r);
+  }
   return out;
 }

@@ -78,7 +78,7 @@ run_soft() {
 run_soft "rebuild the MLB model" 600 \
   "$PY" scripts/predictions/build_mlb_sim.py
 
-# Six leagues fetched from four external sources (afltables, ESPN, cfl.ca,
+# Seven leagues fetched from four external sources (afltables, ESPN, cfl.ca,
 # SPAIA) in one process -- give this one more room than a single-league step.
 run_soft "rebuild the season sims" 1800 \
   "$PY" scripts/predictions/build_season_sims.py
@@ -87,12 +87,14 @@ commit_paths "Auto: refresh MLB + season playoff odds [vercel skip]" \
   public/data/mlb-sim.json \
   public/data/afl-sim.json public/data/nrl-sim.json \
   public/data/wnba-sim.json public/data/cfl-sim.json \
-  public/data/npb-sim.json public/data/mls-sim.json
+  public/data/npb-sim.json public/data/mls-sim.json \
+  public/data/nwsl-sim.json
 
 # Same predictions-daily tag both YAMLs used -- one flush covers all seven.
 revalidate_ping "predictions-daily" \
   /predictions/mlb /predictions \
-  /sports/standings /teams/afl /teams/nrl /teams/wnba /teams/cfl /teams/baseball/npb
+  /sports/standings /teams/afl /teams/nrl /teams/wnba /teams/cfl /teams/baseball/npb \
+  /teams/wfootball /teams/wfootball/leagues/united-states
 
 if [ "$PARTIAL_FAILURE" = "1" ]; then
   fail "one or more leagues failed to build this run (partial data may still have been committed)"

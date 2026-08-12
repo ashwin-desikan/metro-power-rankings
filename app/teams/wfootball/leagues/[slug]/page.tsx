@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllWLeagueHubSlugs, getWLeagueHub, getWLeagueHubClubs, decoratedRows, columnsForHub } from "@/lib/wfootball";
-import { getWLiveLeagueForHub } from "@/lib/wLive";
+import { getWLiveLeagueForHub, getWLiveOdds } from "@/lib/wLive";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedClubsTable from "@/app/teams/wfootball/MostDecoratedClubsTable";
 import WLiveTable from "@/app/teams/wfootball/WLiveTable";
@@ -37,6 +37,9 @@ export default async function WLeagueHubPage({ params }: Props) {
   const rows = decoratedRows(getWLeagueHubClubs(slug));
   const compsLabel = hub.competitions.map((c) => c.short_label).join(" and ");
   const live = await getWLiveLeagueForHub(slug);
+  // Playoff odds where the league has a simulation (NWSL today). Keyed by
+  // comp slug, so a hub whose league has none simply renders as before.
+  const odds = live ? (await getWLiveOdds())[live.compSlug ?? ""] : undefined;
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -82,7 +85,18 @@ export default async function WLeagueHubPage({ params }: Props) {
             </p>
           )}
           <div className="rounded-xl border p-4 sm:p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-            <WLiveTable groups={live.groups} />
+            <WLiveTable
+              groups={live.groups}
+              odds={odds ? new Map(Object.entries(odds.rows)) : null}
+              playoffSpots={odds?.spots}
+              oddsLabels={odds?.labels}
+            />
+            {odds && (
+              <p className="mt-2 text-[11px] text-[var(--text-muted)]">
+                Green marks the {odds.spots} playoff places. Odds are simulated daily from the
+                remaining schedule.
+              </p>
+            )}
           </div>
         </section>
       )}

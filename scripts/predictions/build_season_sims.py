@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Season simulators - playoff + championship odds for six leagues.
+"""Season simulators - playoff + championship odds for seven leagues.
 
-One script, six builders, one shared engine:
+One script, seven builders, one shared engine:
+  public/data/nwsl-sim.json  NWSL Championship odds   (single table of 16, top-8 single elimination)
   public/data/afl-sim.json   AFL premiership odds     (finals: NEW 2026 top-10 wildcard format)
   public/data/nrl-sim.json   NRL premiership odds     (finals: top-8, AFL-style since 2012)
   public/data/wnba-sim.json  WNBA title odds          (top 8 overall; Bo3 / Bo5 / Bo7)
@@ -83,6 +84,11 @@ CFG = {
     "wnba": dict(sigma=11.5, hfa=2.8,  k=10.0, draw_band=0.0,  noise=0.8),
     "cfl":  dict(sigma=13.5, hfa=3.0,  k=8.0,  draw_band=0.0,  noise=1.0),
     "mls":  dict(sigma=1.45, hfa=0.35, k=10.0, draw_band=0.5,  noise=0.10),
+    # NWSL: same shape as MLS (goals, not margins). Kept identical to MLS
+    # deliberately -- both are 90-minute soccer with a similar draw rate --
+    # rather than invented from a smaller sample. Revisit if the realised
+    # draw share diverges from the ~25% the mls self-test asserts.
+    "nwsl": dict(sigma=1.45, hfa=0.35, k=10.0, draw_band=0.5,  noise=0.10),
     # NPB uses the MLB log5 machinery (runs-per-win), not margins.
     "npb":  dict(rpw=9.5, hfa_wpct=0.535, k=30.0, tie_rate=0.012, noise=0.05),
 }
@@ -133,6 +139,11 @@ def _fixture_name(url):
         ("rugby-league/3/standings", "espn_nrl_standings.json"),
         ("wnba/teams/", "espn_wnba_sched_sample.json"),
         ("usa.1/teams/", "espn_mls_sched_sample.json"),
+        # NWSL. Listed after the usa.1 entries but they cannot collide:
+        # "usa.1/" is not a substring of "usa.nwsl/".
+        ("usa.nwsl/standings", "espn_nwsl_standings.json"),
+        ("usa.nwsl/teams?", "espn_nwsl_teams.json"),
+        ("usa.nwsl/teams/", "espn_nwsl_sched_sample.json"),
     ]
     for needle, name in table:
         if needle in url:
@@ -1239,6 +1250,138 @@ def build_mls(sims, seed=2026):
 
 
 # =====================================================================
+# NWSL
+# =====================================================================
+
+def build_nwsl(sims, seed=2026):
+    """NWSL Championship odds. Single table of 16, top eight to a straight
+    single-elimination bracket.
+
+    Format per the league's own 2026 Competition Rules & Regulations:
+      - 30-game regular season, single table (no conferences).
+      - Top eight qualify, NO byes: 1v8, 2v7, 3v6, 4v5.
+      - Semi-finals are winner(1v8) v winner(4v5) and winner(2v7) v
+        winner(3v6) -- a fixed bracket, NOT a reseed.
+      - Higher seed hosts the quarter-final and semi-final; the Championship
+        is at a predetermined site, so it is simulated neutral.
+      - Draws after 90' go to extra time then penalties, so every playoff
+        game produces a winner (game_winner re-rolls the draw band).
+    Regular-season order is points, goal difference, wins, goals scored;
+    the first three are modelled, goals scored is not (see meta.notes).
+    The NWSL Shield goes to the single-table leader, so p_shield is the
+    league's own minor-premiership column.
+    """
+    cfg = CFG["nwsl"]
+    season = date.today().year
+    id2name = espn_league_teams("soccer/usa.nwsl")
+    recs = espn_standings_records(ESPN + "/v2/sports/soccer/usa.nwsl/standings")
+    # Same guard as MLS: the teams endpoint can carry an expansion side before
+    # it owns a table row.
+    ids = {tid for tid, nm in id2name.items() if nm in recs}
+    if len(ids) != 16:
+        raise SystemExit("[nwsl] expected 16 clubs, matched %d" % len(ids))
+    games = espn_schedules("soccer/usa.nwsl", ids, season, soccer=True)
+    played = [(h, a, hs, as_) for _d, h, a, hs, as_, done in games.values()
+              if done and hs is not None and as_ is not None]
+    remaining = [(h, a) for _d, h, a, _hs, _as, done in
+                 sorted(games.values(), key=lambda g: g[0]) if not done]
+
+    teams = sorted(ids)
+    w = {t: 0 for t in teams}; d = {t: 0 for t in teams}; l = {t: 0 for t in teams}
+    gd = {t: 0.0 for t in teams}
+    for h, a, hs, as_ in played:
+        gd[h] += hs - as_; gd[a] += as_ - hs
+        if hs > as_: w[h] += 1; l[a] += 1
+        elif as_ > hs: w[a] += 1; l[h] += 1
+        else: d[h] += 1; d[a] += 1
+    # Hard check vs ESPN's own standings: a parse break stops the league
+    # rather than publishing a plausible-looking wrong table.
+    for t in teams:
+        r = recs[id2name[t]]
+        if (r["w"], r["d"], r["l"]) != (w[t], d[t], l[t]):
+            raise SystemExit("[nwsl] derived %d-%d-%d vs ESPN %d-%d-%d for %s"
+                             % (w[t], d[t], l[t], r["w"], r["d"], r["l"], id2name[t]))
+
+    gp = {t: w[t] + d[t] + l[t] for t in teams}
+    m = {t: shrink(gd[t] / max(gp[t], 1), gp[t], cfg["k"]) for t in teams}
+
+    rng = random.Random(seed)
+    acc = {t: dict(playoffs=0, shield=0, semis=0, final=0, title=0, pts=0.0) for t in teams}
+
+    for _ in range(sims):
+        r = {t: m[t] + rng.gauss(0.0, cfg["noise"]) for t in teams}
+        pts = {t: 3 * w[t] + d[t] for t in teams}
+        wins_s = {t: w[t] for t in teams}
+        gd_s = {t: gd[t] for t in teams}
+        for h, a in remaining:
+            mg = sample_margin(rng, r[h], r[a], cfg)
+            if abs(mg) <= cfg["draw_band"]:
+                pts[h] += 1; pts[a] += 1
+            else:
+                x, y = (h, a) if mg > 0 else (a, h)
+                pts[x] += 3; wins_s[x] += 1
+                gd_s[x] += abs(mg); gd_s[y] -= abs(mg)
+
+        # NWSL order: points, goal difference, wins (goals scored not modelled).
+        order = sorted(teams, key=lambda t: (-pts[t], -gd_s[t], -wins_s[t], rng.random()))
+        acc[order[0]]["shield"] += 1
+        s = order[:8]
+        for t in s:
+            acc[t]["playoffs"] += 1
+        seed_of = {t: i for i, t in enumerate(s)}
+
+        def ko(hi, lo, neutral=False):
+            return hi if game_winner(rng, r[hi], r[lo], cfg, neutral) else lo
+
+        # Quarter-finals, higher seed at home.
+        q18 = ko(s[0], s[7])
+        q45 = ko(s[3], s[4])
+        q27 = ko(s[1], s[6])
+        q36 = ko(s[2], s[5])
+        for t in (q18, q45, q27, q36):
+            acc[t]["semis"] += 1
+
+        # Fixed bracket into the semi-finals; higher remaining seed hosts.
+        def host(x, y):
+            return (x, y) if seed_of[x] < seed_of[y] else (y, x)
+
+        sf1 = ko(*host(q18, q45))
+        sf2 = ko(*host(q27, q36))
+        acc[sf1]["final"] += 1
+        acc[sf2]["final"] += 1
+
+        # Championship: predetermined venue, so neutral.
+        acc[ko(sf1, sf2, neutral=True)]["title"] += 1
+        for t in teams:
+            acc[t]["pts"] += pts[t]
+
+    table = []
+    for t in teams:
+        table.append(dict(
+            key=t, name=id2name[t],
+            gp=gp[t], w=w[t], d=d[t], l=l[t], pts=3 * w[t] + d[t],
+            rating=round(m[t], 3), exp_pts=round(acc[t]["pts"] / sims, 1),
+            p_playoffs=fmt_pct(acc[t]["playoffs"], sims),
+            p_shield=fmt_pct(acc[t]["shield"], sims),
+            p_semis=fmt_pct(acc[t]["semis"], sims),
+            p_final=fmt_pct(acc[t]["final"], sims),
+            p_title=fmt_pct(acc[t]["title"], sims),
+        ))
+    table.sort(key=lambda x: (-x["p_title"], -x["exp_pts"]))
+    meta = dict(
+        league="NWSL", season=season, title_name="NWSL Championship",
+        playoff_name="Playoffs", playoff_spots=8, generated_at=now_iso(), sims=sims,
+        model="margin-v1 (current-season goal difference, shrunk GP/(GP+%s); sigma %s, HFA %s goals)"
+              % (cfg["k"], cfg["sigma"], cfg["hfa"]),
+        finals_format="Top 8 of a single table, no byes: 1v8/2v7/3v6/4v5, fixed bracket, higher seed hosts QF and SF, Championship at a neutral site",
+        games_played=len(played), games_remaining=len(remaining),
+        source="ESPN standings + per-team schedules",
+        notes="Tie-breakers simplified to points, goal difference, wins; goals scored and head-to-head are not modelled.",
+    )
+    return dict(meta=meta, table=table)
+
+
+# =====================================================================
 # season gating, output, main
 # =====================================================================
 
@@ -1253,6 +1396,7 @@ ACTIVE_MONTHS = {
     "cfl": range(6, 11),   # Jun-Oct
     "npb": range(4, 10),   # Apr-Sep (Climax odds freeze once the table is set)
     "mls": range(3, 12),   # Mar-Nov
+    "nwsl": range(3, 12),  # Mar-Nov (30-game season, Championship in Nov)
 }
 BUILDERS = {
     "afl": lambda sims: build_footy("afl", sims),
@@ -1261,6 +1405,7 @@ BUILDERS = {
     "cfl": build_cfl,
     "npb": build_npb,
     "mls": build_mls,
+    "nwsl": build_nwsl,
 }
 
 
@@ -1448,6 +1593,51 @@ def self_test():
         reps += wc == 4
     check("npb final-stage advantage", reps / trials > 0.65)
 
+    # NWSL bracket: fixed 1v8/2v7/3v6/4v5, no byes, no reseed. Run the same
+    # bracket code shape the builder uses, with equal ratings so only the
+    # structure is under test.
+    rng = random.Random(11)
+    cfgn = CFG["nwsl"]
+    seeds = ["s%d" % i for i in range(1, 9)]
+    r_eq = {t: 0.0 for t in seeds}
+    reached_final = {t: 0 for t in seeds}
+    winners = set()
+    for _ in range(400):
+        s = seeds
+        seed_of = {t: i for i, t in enumerate(s)}
+
+        def ko(hi, lo, neutral=False):
+            return hi if game_winner(rng, r_eq[hi], r_eq[lo], cfgn, neutral) else lo
+
+        def host(x, y):
+            return (x, y) if seed_of[x] < seed_of[y] else (y, x)
+
+        q18 = ko(s[0], s[7]); q45 = ko(s[3], s[4])
+        q27 = ko(s[1], s[6]); q36 = ko(s[2], s[5])
+        # A semi-final can only ever contain one side from each half.
+        if {q18, q45} & {q27, q36}:
+            raise SystemExit("SELF-TEST FAIL: nwsl bracket halves crossed")
+        sf1 = ko(*host(q18, q45)); sf2 = ko(*host(q27, q36))
+        reached_final[sf1] += 1; reached_final[sf2] += 1
+        winners.add(ko(sf1, sf2, neutral=True))
+    check("nwsl bracket: all eight seeds can win", len(winners) == 8)
+    check("nwsl bracket: every seed can reach the final", all(reached_final[t] > 0 for t in seeds))
+
+    # And with a heavy favourite at the top, seed 1 should dominate.
+    rng = random.Random(12)
+    r_top = {t: (3.0 if t == "s1" else 0.0) for t in seeds}
+    s1_titles = 0
+    for _ in range(400):
+        s = seeds
+        seed_of = {t: i for i, t in enumerate(s)}
+        ko2 = lambda hi, lo, n=False: hi if game_winner(rng, r_top[hi], r_top[lo], cfgn, n) else lo
+        host2 = lambda x, y: (x, y) if seed_of[x] < seed_of[y] else (y, x)
+        a1 = ko2(s[0], s[7]); a2 = ko2(s[3], s[4])
+        b1 = ko2(s[1], s[6]); b2 = ko2(s[2], s[5])
+        f1 = ko2(*host2(a1, a2)); f2 = ko2(*host2(b1, b2))
+        s1_titles += ko2(f1, f2, True) == "s1"
+    check("nwsl bracket: heavy favourite converts", s1_titles > 240)
+
     print("SELF-TEST: %d checks passed" % ok)
 
 
@@ -1456,7 +1646,7 @@ def self_test():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--league", default="auto",
-                    help="comma list of afl,nrl,wnba,cfl,npb,mls; 'auto' = all in-season; 'all' = every league")
+                    help="comma list of afl,nrl,wnba,cfl,npb,mls,nwsl; 'auto' = all in-season; 'all' = every league")
     ap.add_argument("--sims", type=int, default=DEFAULT_SIMS)
     ap.add_argument("--dry", action="store_true")
     ap.add_argument("--self-test", action="store_true")

@@ -28,7 +28,23 @@ function Badge({ text, tone }: { text: string; tone: "live" | "espn" | "placehol
   );
 }
 
-export default function WLiveHub({ leagues, competition }: { leagues: WLiveLeagueVM[]; competition: WLiveCompVM | null }) {
+// Playoff odds for the leagues that have a simulation, keyed by comp slug and
+// then by club slug. Only NWSL supplies one today; every other league renders
+// exactly as before. Resolved server-side so the client never sees the join.
+export type WLiveOddsByComp = Record<
+  string,
+  { spots: number; labels: [string, string]; rows: Record<string, { po: string; title: string }> }
+>;
+
+export default function WLiveHub({
+  leagues,
+  competition,
+  odds,
+}: {
+  leagues: WLiveLeagueVM[];
+  competition: WLiveCompVM | null;
+  odds?: WLiveOddsByComp;
+}) {
   const tabs: Tab[] = [
     ...leagues.map((l): Tab => ({ kind: "league", key: `l${l.leagueId}`, label: l.name, league: l })),
     ...(competition ? [{ kind: "comp" as const, key: `c${competition.leagueId}`, label: "UWCL", comp: competition }] : []),
@@ -61,7 +77,7 @@ export default function WLiveHub({ leagues, competition }: { leagues: WLiveLeagu
 
       <div className="rounded-xl border p-4 sm:p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         {current.kind === "league" ? (
-          <LeaguePanel league={current.league} />
+          <LeaguePanel league={current.league} odds={odds?.[current.league.compSlug ?? ""]} />
         ) : (
           <CompPanel comp={current.comp} />
         )}
@@ -70,7 +86,14 @@ export default function WLiveHub({ leagues, competition }: { leagues: WLiveLeagu
   );
 }
 
-function LeaguePanel({ league }: { league: WLiveLeagueVM }) {
+function LeaguePanel({
+  league,
+  odds,
+}: {
+  league: WLiveLeagueVM;
+  odds?: WLiveOddsByComp[string];
+}) {
+  const oddsMap = odds ? new Map(Object.entries(odds.rows)) : null;
   return (
     <>
       <div className="flex items-center gap-2 flex-wrap mb-3">
@@ -90,7 +113,20 @@ function LeaguePanel({ league }: { league: WLiveLeagueVM }) {
         </p>
       )}
       {league.hasRows ? (
-        <WLiveTable groups={league.groups} />
+        <>
+          <WLiveTable
+            groups={league.groups}
+            odds={oddsMap}
+            playoffSpots={odds?.spots}
+            oddsLabels={odds?.labels}
+          />
+          {odds && (
+            <p className="mt-2 text-[11px] text-[var(--text-muted)]">
+              Green marks the {odds.spots} playoff places. Odds are simulated daily from the
+              remaining schedule.
+            </p>
+          )}
+        </>
       ) : (
         <p className="text-sm text-[var(--text-muted)] italic">Table appears once the {league.seasonLabel} season is under way.</p>
       )}

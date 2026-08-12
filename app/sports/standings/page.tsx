@@ -23,7 +23,7 @@ import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { getWtcStandings } from "@/lib/wtcStandings";
 import { getRugbyFixtures, type RugbyMatch } from "@/lib/rugbyFixtures";
 import { getCfbRankings, cfbSeasonStarted } from "@/lib/cfb-live";
-import { getWLiveLeagues, getWLiveCompetition, type WLiveLeagueVM, type WLiveFixtureVM } from "@/lib/wLive";
+import { getWLiveLeagues, getWLiveCompetition, getWLiveOdds, type WLiveLeagueVM, type WLiveFixtureVM, type WLiveOddsVM } from "@/lib/wLive";
 import { getCricketFixtures, type CricketMatch } from "@/lib/cricketFixtures";
 
 import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo, monogramFor as nflMono } from "@/lib/nfl";
@@ -454,22 +454,39 @@ async function mlsBlock(): Promise<Block | null> {
 // ---- Women's club football (wlive bundle -> same source as /teams/wfootball) ----
 // One block per league (WSL / Liga F / NWSL) plus a UWCL fixtures block. All
 // collapsed by default; the green dot lights once a league has played games.
-function wLeagueBlock(l: WLiveLeagueVM | undefined, label: string): Block | null {
+function wLeagueBlock(
+  l: WLiveLeagueVM | undefined,
+  label: string,
+  odds?: WLiveOddsVM[string],
+): Block | null {
   if (!l || !l.hasRows) return null;
+  // Odds and the playoff cut only apply to a league that has a simulation
+  // (NWSL). The join is by club slug and has already failed closed upstream
+  // if any club did not resolve -- see getWLiveOdds.
+  const showOdds = !!odds;
+  const spots = odds?.spots ?? 0;
   const subTables: SubTable[] = l.groups
     .map((g): SubTable => ({
       title: l.groups.length > 1 ? g.label : null,
-      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"],
-      rows: g.rows.map((r, i): SRow => ({
-        rank: r.rank ?? i + 1, name: r.name,
-        href: r.slug ? `/teams/wfootball/clubs/${r.slug}` : null,
-        crestName: r.name, cells: r.cells,
-      })),
+      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", ...(showOdds ? odds!.labels : [])],
+      rows: g.rows.map((r, i): SRow => {
+        const rank = r.rank ?? i + 1;
+        const o = showOdds ? odds!.rows[r.slug ?? ""] : undefined;
+        return {
+          rank, name: r.name,
+          href: r.slug ? `/teams/wfootball/clubs/${r.slug}` : null,
+          crestName: r.name,
+          cells: [...r.cells, ...(showOdds ? [o?.po ?? "—", o?.title ?? "—"] : [])],
+          ...(showOdds && rank <= spots ? { po: true } : null),
+          ...(showOdds && rank === spots && i < g.rows.length - 1 ? { cut: true } : null),
+        };
+      }),
     }))
     .filter((st) => st.rows.length > 0);
   if (subTables.length === 0) return null;
   const played = l.groups.some((g) => g.rows.some((r) => Number(r.cells[0]) > 0));
-  return { league: label, href: "/teams/wfootball", note: l.seasonLabel, open: false, live: played, subTables };
+  const note = showOdds ? `${l.seasonLabel} · odds simulated` : l.seasonLabel;
+  return { league: label, href: "/teams/wfootball", note, open: false, live: played, subTables };
 }
 
 function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | null {
@@ -882,11 +899,12 @@ async function cfbBlock(): Promise<Block | null> {
 }
 
 export default async function LiveStandingsPage() {
-  const [nfl, nba, wnba, nhl, mlb, npb, mls, cfl, cfb, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, clubStandings, clubComps, wLeagues, uwclComp] = await Promise.all([
+  const [nfl, nba, wnba, nhl, mlb, npb, mls, cfl, cfb, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, clubStandings, clubComps, wLeagues, uwclComp, wOdds] = await Promise.all([
     nflBlock(), nbaBlock(), wnbaBlock(), nhlBlock(), mlbBlock(), npbBlock(),
     mlsBlock(), cflBlock(), cfbBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
     golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(),
     getClubStandings(), getClubCompetitions(), getWLiveLeagues(), getWLiveCompetition("uwcl"),
+    getWLiveOdds(),
   ]);
   const intlComps = await getInternationalComps();
   const unl = intlCompBlock(intlComps.find((c) => c.league_id === 5), {
@@ -899,7 +917,7 @@ export default async function LiveStandingsPage() {
   });
   const wsl = wLeagueBlock(wLeagues.find((l) => l.compSlug === "wsl"), "WSL");
   const ligaF = wLeagueBlock(wLeagues.find((l) => l.compSlug === "liga-f"), "Liga F");
-  const nwslW = wLeagueBlock(wLeagues.find((l) => l.compSlug === "nwsl"), "NWSL");
+  const nwslW = wLeagueBlock(wLeagues.find((l) => l.compSlug === "nwsl"), "NWSL", wOdds.nwsl);
   const uwcl = uwclBlock(uwclComp);
   const euro = euroFixturesBlocks(clubComps);
   const clubById = new Map(clubStandings.map((l) => [l.league_id, l]));
