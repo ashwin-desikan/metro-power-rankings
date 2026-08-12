@@ -38,6 +38,12 @@ type HistoryRow = {
 };
 
 let _data: Championship[] | null = null;
+/** "2027-02-07" -> 2027. Null for anything that is not an ISO-ish date. */
+function yearOf(d: string | null | undefined): number | null {
+  const m = /^(\d{4})-\d{2}-\d{2}/.exec(String(d ?? ""));
+  return m ? Number(m[1]) : null;
+}
+
 function all(): Championship[] {
   if (_data) return _data;
   const p = join(process.cwd(), "public", "data", "champions-history.json");
@@ -54,7 +60,11 @@ function all(): Championship[] {
       dateAwarded: r.dateAwarded ?? r.date ?? null,
       scope: r.scope ?? "",
       scopeType: (r.scopeType as Championship["scopeType"]) ?? null,
-      nextAwarded: null,
+      // The board renders `fmtDate(nextAwardedDate) || nextAwarded`, so the
+      // year is the fallback when a next-title date is known only vaguely.
+      // It was hardcoded null, which made that fallback dead code; derive it
+      // from the date so a row with a date always sorts and reads sensibly.
+      nextAwarded: yearOf(r.nextAwardedDate),
       nextAwardedDate: r.nextAwardedDate ?? null,
       tier: r.tier ?? null,
       tierGuide: r.tierGuide ?? null,

@@ -125,14 +125,26 @@ def main():
     for n in OPTIONAL:
         if n in hdr:
             ix[n] = hdr.index(n)
-    # The "next title" date (when the current holder's crown is next contested)
-    # lives in the column right after "Is Current", which the workbook leaves
-    # header-less. Map it by position so nextAwardedDate populates the "Next
-    # title" column on /sports/champions.
-    if "Next Awarded Date" not in ix and "Is Current" in hdr:
-        j = hdr.index("Is Current") + 1
-        if j < len(hdr) and not hdr[j]:
-            ix["Next Awarded Date"] = j
+    # The "next title" date -- when the current holder's crown is next
+    # contested -- is column V, "Next Awarded Date", and is read by name above
+    # like every other optional column.
+    #
+    # It used to be mapped BY POSITION as "the column right after Is Current,
+    # if that column is header-less". That broke silently on 2026-08-11 when
+    # the date-backfill session added "Date Source" / "Date Method" / "Date
+    # Precision" at S/T/U: column S stopped being header-less, the positional
+    # test failed, and every row shipped nextAwardedDate: null, so the "Next
+    # title" column on /sports/champions went blank sitewide with no error
+    # anywhere. The 92 dates were migrated out to their own named column on
+    # 2026-08-12. Do not reintroduce a positional fallback -- if the column is
+    # missing the guard below is meant to be loud.
+    if "Next Awarded Date" not in ix:
+        raise SystemExit(
+            "Champions sheet has no 'Next Awarded Date' column. It carries the "
+            "next-title date for the 92 current champions and feeds the 'Next "
+            "title' column on /sports/champions. Restore the header rather "
+            "than mapping it by position."
+        )
     slugset, byname = _metro_lookup()
     out = []
     for r in rows[1:]:
