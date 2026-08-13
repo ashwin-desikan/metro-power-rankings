@@ -1,13 +1,55 @@
 {
-  "generatedAt": "2026-08-12",
+  "generatedAt": "2026-08-13",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-13",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "4d7c6081a"
+    },
     {
       "date": "2026-08-12",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "6836e0832"
+      "text": "Data refreshed — Football, Basketball, Cricket, Elections, and 3 more.",
+      "commit": "8a6067a7c"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "hub",
+      "hub": null,
+      "text": "Releases: boxing, era-correct champions, NWSL odds.",
+      "commit": "623c449bf"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "hub",
+      "hub": "Refresh Schedule",
+      "text": "Render per request instead of serving hour-old JSON.",
+      "commit": "958e691e4"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Playoff and title odds, and our own club names on the women's tables.",
+      "commit": "62151074e"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "The Time Machine shows the era, not today's name.",
+      "commit": "667f4f3b4"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "hub",
+      "hub": null,
+      "text": "Restore the Next title column, and give it a named workbook column.",
+      "commit": "a129b0c0d"
     },
     {
       "date": "2026-08-11",
@@ -4159,48 +4201,6 @@
       "hub": "Rankings",
       "text": "Round 7: venue dedup, transit stations per entry, collapsible subgroups.",
       "commit": "343c10e1a"
-    },
-    {
-      "date": "2026-04-18",
-      "category": "hub",
-      "hub": "Compare",
-      "text": "Round 5: 4,200+ future-proofing, metro page restructure, annual events split.",
-      "commit": "e785aa849"
-    },
-    {
-      "date": "2026-04-17",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Add Boxing as Major Fights event group; extend events with type field.",
-      "commit": "85575535c"
-    },
-    {
-      "date": "2026-04-17",
-      "category": "hub",
-      "hub": null,
-      "text": "AI/LLM discoverability: robots, llms.txt, sitemap, JSON-LD (Dataset, ItemList, Place, AggregateRating, Breadcrumb) with CC-BY on composite…",
-      "commit": "29ac5cb6f"
-    },
-    {
-      "date": "2026-04-17",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "AI/LLM discoverability: robots, llms.txt, sitemap, full JSON-LD (Dataset, ItemList, Place, AggregateRating, Breadcrumb).",
-      "commit": "fe92e09b6"
-    },
-    {
-      "date": "2026-04-17",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Refresh data, swap Notable Venues label, retire 16 dimensions tile, harden rank bar scaling.",
-      "commit": "15897fd5a"
-    },
-    {
-      "date": "2026-04-17",
-      "category": "hub",
-      "hub": "Compare",
-      "text": "Add SiteNav with last-update chip; rename Major League Teams to Major League Teams/Venues with teams-before-venues ordering; lead with 70,0…",
-      "commit": "24f760aa3"
     }
   ]
 }
