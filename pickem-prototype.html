@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Citizen of Nowhere Picks — Prototype</title>
+<style>
+:root{
+  --bg:#08080D; --bg-card:#12121A; --bg-card-hover:#1A1A26; --border:#1E1E2E;
+  --text:#E8E8ED; --text-muted:#8888A0; --text-dim:#55556A;
+  --accent:#4ECDC4; --accent-dim:#2A7A74;
+  --good:#5BD98A; --bad:#E36B6B; --warn:#E3C86B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:860px;margin:0 auto;padding:20px 14px 80px}
+.protoBar{background:#1a1420;border:1px solid #3a2a4a;border-radius:10px;padding:8px 12px;font-size:12.5px;color:#c9a9e8;margin-bottom:18px}
+header h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
+header .tag{color:var(--text-muted);font-size:14px;margin-top:2px}
+.crumb{font-size:11.5px;color:var(--text-dim);margin-bottom:14px}
+/* tabs */
+.tabs{display:flex;gap:6px;margin:18px 0 6px;flex-wrap:wrap}
+.tab{border:1px solid var(--border);background:var(--bg-card);color:var(--text-muted);border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer;transition:.15s}
+.tab:hover{border-color:var(--accent-dim)}
+.tab.on{background:var(--accent);color:#08080D;border-color:var(--accent);font-weight:600}
+.tabNote{font-size:12.5px;color:var(--text-dim);margin-bottom:14px}
+/* league pills */
+.pills{display:flex;gap:6px;margin:12px 0;flex-wrap:wrap}
+.pill{border:1px solid var(--border);background:var(--bg-card);color:var(--text);border-radius:8px;padding:6px 11px;font-size:13px;cursor:pointer}
+.pill.on{border-color:var(--accent);color:var(--accent);font-weight:600}
+.pill.off{opacity:.45;cursor:not-allowed}
+.pill .sub{display:block;font-size:10.5px;color:var(--text-dim);font-weight:400}
+/* cards */
+.dateHead{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin:16px 0 6px}
+.game{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.game.correct{border-color:var(--good)}
+.game.wrong{border-color:var(--bad)}
+.gRow{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.gTeams{font-weight:600;font-size:14.5px;min-width:0}
+.gTeams .at{color:var(--text-dim);font-weight:400;font-size:12.5px}
+.gMeta{font-size:11.5px;color:var(--text-dim)}
+.pickBtns{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.pb{flex:1;min-width:72px;border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:8px;padding:8px 6px;font-size:13px;cursor:pointer;text-align:center;transition:.12s}
+.pb:hover{border-color:var(--accent-dim)}
+.pb.sel{background:var(--accent);color:#08080D;border-color:var(--accent);font-weight:700}
+.pb small{display:block;font-size:10px;color:inherit;opacity:.65}
+.reveal{margin-top:9px;border-top:1px dashed var(--border);padding-top:8px;font-size:12.5px}
+.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:6px 0 3px;background:var(--bg)}
+.bar i{display:block;height:100%}
+.bH{background:var(--accent)}.bD{background:var(--text-dim)}.bA{background:#7a8fd4}
+.legend{display:flex;justify-content:space-between;font-size:10.5px;color:var(--text-muted)}
+.agree{font-size:11.5px;margin-top:5px}
+.agree .yes{color:var(--good)} .agree .no{color:var(--warn)}
+.resLine{margin-top:6px;font-size:12px}
+.resLine .ok{color:var(--good);font-weight:600}.resLine .ko{color:var(--bad);font-weight:600}
+/* status strip */
+.strip{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:14px;align-items:center;font-size:12.5px;color:var(--text-muted);flex-wrap:wrap}
+.strip b{color:var(--text)}
+.btn{border:1px solid var(--border);background:var(--bg-card);color:var(--text);border-radius:8px;padding:7px 13px;font-size:13px;cursor:pointer}
+.btn:hover{border-color:var(--accent-dim)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#08080D;font-weight:700}
+.btn.danger{color:var(--bad)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+/* confidence */
+.confRow{display:flex;align-items:center;gap:10px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:9px 12px;margin-bottom:6px}
+.confRow.correct{border-color:var(--good)}
+.confRow.wrong{border-color:var(--bad)}
+.confPts{font-size:16px;font-weight:800;color:var(--accent);width:34px;text-align:center;flex-shrink:0}
+.confBody{flex:1;min-width:0;font-size:13.5px}
+.confBody .sub{font-size:11.5px;color:var(--text-dim)}
+.confMove{display:flex;flex-direction:column;gap:3px}
+.confMove button{border:1px solid var(--border);background:var(--bg);color:var(--text-muted);border-radius:6px;width:28px;height:24px;cursor:pointer;font-size:12px}
+.confMove button:hover{color:var(--accent)}
+/* radar */
+.radarCard{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:13px 14px;margin-bottom:10px}
+.radarCard.correct{border-color:var(--good)}
+.radarCard.wrong{border-color:var(--bad)}
+.gapTag{display:inline-block;font-size:10.5px;border:1px solid var(--warn);color:var(--warn);border-radius:999px;padding:1px 8px;margin-left:8px;vertical-align:middle}
+.vsGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.vsSide{border:1px solid var(--border);border-radius:10px;padding:9px 10px;cursor:pointer;text-align:center;transition:.12s}
+.vsSide:hover{border-color:var(--accent-dim)}
+.vsSide.sel{border-color:var(--accent);background:rgba(78,205,196,.08)}
+.vsSide .who{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+.vsSide .pct{font-size:19px;font-weight:800;margin:2px 0}
+.vsSide .lean{font-size:11.5px;color:var(--text-dim)}
+/* season */
+.statGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:12px 0}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:11px 12px}
+.stat .v{font-size:21px;font-weight:800}
+.stat .k{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-dim);text-align:left;padding:7px 8px;border-bottom:1px solid var(--border)}
+td{padding:8px;border-bottom:1px solid var(--border)}
+tr.me td{background:rgba(78,205,196,.06)}
+tr.model td{color:var(--text-muted);font-style:italic}
+.authBar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:11px 14px;margin:14px 0;font-size:13px;flex-wrap:wrap}
+.gbtn{background:var(--accent);color:#08080D;border:none;border-radius:999px;padding:8px 16px;font-weight:600;font-size:13px;cursor:pointer}
+.note{font-size:12px;color:var(--text-dim);margin-top:10px}
+.rules{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-top:22px;font-size:13px;color:var(--text-muted)}
+.rules h3{font-size:13px;color:var(--text);margin-bottom:6px}
+.rules p{margin-bottom:7px}
+h2{font-size:17px;margin:18px 0 4px}
+.hide{display:none}
+.emptyMsg{color:var(--text-dim);font-size:13.5px;border:1px dashed var(--border);border-radius:10px;padding:16px;margin-top:10px}
+@media (max-width:420px){ .pb{min-width:64px} .vsGrid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb">Home / Play / Games / <span style="color:var(--text-muted)">Citizen of Nowhere Picks</span></div>
+  <div class="protoBar">🧪 <b>Prototype</b> — proposed replacement for the “Beat the Model” section on /play/arcade. Real model data snapshot: PL matchweek 1 (generated 2026-08-07) and NFL week 1 (generated 2026-08-07). Picks live in this browser only.</div>
+
+  <header>
+    <h1>🎯 Citizen of Nowhere Picks</h1>
+    <div class="tag">Call the games before the model’s card is revealed. Score points, build a streak, beat the machine.</div>
+  </header>
+
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-tab="slate">📋 The Slate</button>
+    <button class="tab" data-tab="conf">🎚️ Confidence</button>
+    <button class="tab" data-tab="radar">🚨 Upset Radar</button>
+    <button class="tab" data-tab="season">🏆 My Season</button>
+  </div>
+
+  <!-- ============ SLATE ============ -->
+  <section id="tab-slate">
+    <div class="tabNote">Pick every game <b>blind</b> — the model’s call and probabilities reveal only after you commit. Picks lock at kickoff.</div>
+    <div class="pills" id="leaguePills"></div>
+    <div class="strip">
+      <span>Picked <b id="pickCount">0</b>/<b id="pickTotal">0</b></span>
+      <span>Agree with model: <b id="agreeCount">–</b></span>
+      <span style="flex:1"></span>
+      <button class="btn" id="demoBtn" title="Season hasn't started — simulate final scores from the model's own probabilities to preview grading week">▶ Demo: simulate results</button>
+      <button class="btn danger" id="resetBtn">Reset</button>
+    </div>
+    <div id="slateList"></div>
+  </section>
+
+  <!-- ============ CONFIDENCE ============ -->
+  <section id="tab-conf" class="hide">
+    <div class="tabNote">Rank your picks by confidence. Your surest call sits on top and is worth the most points — <b>points = the slot value</b>, earned only if the pick lands.</div>
+    <div class="pills" id="confPills"></div>
+    <div id="confList"></div>
+    <div class="note" id="confNote"></div>
+  </section>
+
+  <!-- ============ RADAR ============ -->
+  <section id="tab-radar">
+    <div class="tabNote"><b>Only we can run this game:</b> we publish both the model’s probability and the market’s. These are the week’s biggest disagreements — side with one. When the game is graded, the source that was closer to the truth (lower Brier) wins, and if you sided with it you bank <b>+25</b>.</div>
+    <div id="radarList"></div>
+  </section>
+
+  <!-- ============ SEASON ============ -->
+  <section id="tab-season" class="hide">
+    <div class="authBar" id="authBar"></div>
+    <div class="statGrid">
+      <div class="stat"><div class="v" id="stPts">0</div><div class="k">Points</div></div>
+      <div class="stat"><div class="v" id="stRec">0–0</div><div class="k">Record</div></div>
+      <div class="stat"><div class="v" id="stStreak">–</div><div class="k">Streak</div></div>
+      <div class="stat"><div class="v" id="stVsModel">–</div><div class="k">vs the Model</div></div>
+    </div>
+    <h2>Leaderboard <span style="font-size:11px;color:var(--text-dim);font-weight:400">(mock — global board ships with sign-in)</span></h2>
+    <table id="lbTable">
+      <thead><tr><th>#</th><th>Player</th><th>Pts</th><th>Record</th><th>Streak</th></tr></thead>
+      <tbody id="lbBody"></tbody>
+    </table>
+    <div class="note">The Model plays as the house entry — its picks come straight from the published ledger, so there is always someone to beat even before the leaderboard fills up. Sign-in reuses the site’s existing Google login (the one that syncs your Followed metros on /me).</div>
+  </section>
+
+  <div class="rules">
+    <h3>How scoring works</h3>
+    <p><b>The Slate</b> — 10 pts per correct call. Premier League games are three-way (home / draw / away); NFL games are two-way. Your running streak counts consecutive correct calls across both leagues in kickoff order.</p>
+    <p><b>Confidence</b> — rank your slate; slot value = points if that pick lands (10 games: top slot worth 10, bottom worth 1). A perfect PL matchweek is 55 bonus points.</p>
+    <p><b>Upset Radar</b> — the five games where model and market disagree most. Side with one source for +25 if it grades closer to the result. Scored by Brier, the same metric the prediction hubs already publish.</p>
+    <p><b>Beat the Model</b> — the model’s own card is graded with identical rules. Finish a week with more slate points than the machine and it goes on your permanent record.</p>
+  </div>
+</div>
+
+<script>
+const DATA = {"pl":{"meta":{"season":"2026-27","generated_at":"2026-08-07","match_blend_weight":0.5,"horizon_days":9,"odds_source":"football-data.co.uk fixtures.csv","results_source":"football-data.co.uk E0.csv"},"ledger":[{"date":"2026-08-21","home":"Arsenal","away":"Coventry City","home_slug":"arsenal","away_slug":"coventry-city","model":{"pH":0.8892,"pD":0.0804,"pA":0.0304},"predicted_at":"2026-08-02","pick":"H"},{"date":"2026-08-22","home":"Brentford","away":"Tottenham Hotspur","home_slug":"brentford","away_slug":"tottenham-hotspur","model":{"pH":0.4713,"pD":0.2295,"pA":0.2991},"predicted_at":"2026-08-02","pick":"H"},{"date":"2026-08-22","home":"Everton","away":"Crystal Palace","home_slug":"everton","away_slug":"crystal-palace","model":{"pH":0.4138,"pD":0.2897,"pA":0.2965},"predicted_at":"2026-08-02","pick":"H"},{"date":"2026-08-22","home":"Hull City","away":"Manchester United","home_slug":"hull-city","away_slug":"manchester-united","model":{"pH":0.0809,"pD":0.1356,"pA":0.7835},"predicted_at":"2026-08-02","pick":"A"},{"date":"2026-08-22","home":"Ipswich Town","away":"Sunderland","home_slug":"ipswich-town","away_slug":"sunderland","model":{"pH":0.4539,"pD":0.2641,"pA":0.282},"predicted_at":"2026-08-02","pick":"H"},{"date":"2026-08-22","home":"Nottingham Forest","away":"Leeds United","home_slug":"nottingham-forest","away_slug":"leeds-united","model":{"pH":0.4663,"pD":0.2601,"pA":0.2736},"predicted_at":"2026-08-02","pick":"H"},{"date":"2026-08-23","home":"Brighton & Hove Albion","away":"Aston Villa","home_slug":"brighton-hove-albion","away_slug":"aston-villa","model":{"pH":0.437,"pD":0.2459,"pA":0.3172},"predicted_at":"2026-08-02","pick":"H"},{"date":"2026-08-23","home":"Manchester City","away":"AFC Bournemouth","home_slug":"manchester-city","away_slug":"afc-bournemouth","model":{"pH":0.7606,"pD":0.1483,"pA":0.0911},"predicted_at":"2026-08-02","pick":"H"},{"date":"2026-08-23","home":"Newcastle United","away":"Liverpool","home_slug":"newcastle-united","away_slug":"liverpool","model":{"pH":0.3227,"pD":0.2287,"pA":0.4486},"predicted_at":"2026-08-02","pick":"A"},{"date":"2026-08-24","home":"Fulham","away":"Chelsea","home_slug":"fulham","away_slug":"chelsea","model":{"pH":0.2834,"pD":0.2453,"pA":0.4713},"predicted_at":"2026-08-02","pick":"A"}]},"nfl":{"meta":{"season":2026,"generated_at":"2026-08-07","match_blend_weight":0.5,"horizon_days":8,"odds_source":"ESPN posted lines (moneyline, else spread)","results_source":"ESPN final scores"},"ledger":[{"event_id":"401872656","date":"2026-09-10","home":"Seattle Seahawks","away":"New England Patriots","home_slug":"seattle-seahawks","away_slug":"new-england-patriots","model":{"pH":0.592},"predicted_at":"2026-08-02","market":{"pH":0.603},"blend":{"pH":0.5975},"pick":"H"},{"event_id":"401872657","date":"2026-09-11","home":"Los Angeles Rams","away":"San Francisco 49ers","home_slug":"los-angeles-rams","away_slug":"san-francisco-49ers","model":{"pH":0.6026},"predicted_at":"2026-08-02","market":{"pH":0.603},"blend":{"pH":0.6028},"pick":"H"},{"event_id":"401872661","date":"2026-09-13","home":"Carolina Panthers","away":"Chicago Bears","home_slug":"carolina-panthers","away_slug":"chicago-bears","model":{"pH":0.4494},"predicted_at":"2026-08-02","market":{"pH":0.426},"blend":{"pH":0.4377},"pick":"A"},{"event_id":"401872925","date":"2026-09-13","home":"Cincinnati Bengals","away":"Tampa Bay Buccaneers","home_slug":"cincinnati-bengals","away_slug":"tampa-bay-buccaneers","model":{"pH":0.5435},"predicted_at":"2026-08-02","market":{"pH":0.603},"blend":{"pH":0.5733},"pick":"H"},{"event_id":"401872923","date":"2026-09-13","home":"Detroit Lions","away":"New Orleans Saints","home_slug":"detroit-lions","away_slug":"new-orleans-saints","model":{"pH":0.6716},"predicted_at":"2026-08-02","market":{"pH":0.6993},"blend":{"pH":0.6855},"pick":"H"},{"event_id":"401872660","date":"2026-09-13","home":"Houston Texans","away":"Buffalo Bills","home_slug":"houston-texans","away_slug":"buffalo-bills","model":{"pH":0.4952},"predicted_at":"2026-08-02","market":{"pH":0.4554},"blend":{"pH":0.4753},"pick":"A"},{"event_id":"401872659","date":"2026-09-13","home":"Indianapolis Colts","away":"Baltimore Ravens","home_slug":"indianapolis-colts","away_slug":"baltimore-ravens","model":{"pH":0.4557},"predicted_at":"2026-08-02","market":{"pH":0.397},"blend":{"pH":0.4264},"pick":"A"},{"event_id":"401872922","date":"2026-09-13","home":"Jacksonville Jaguars","away":"Cleveland Browns","home_slug":"jacksonville-jaguars","away_slug":"cleveland-browns","model":{"pH":0.6718},"predicted_at":"2026-08-02","market":{"pH":0.7122},"blend":{"pH":0.692},"pick":"H"},{"event_id":"401872928","date":"2026-09-13","home":"Las Vegas Raiders","away":"Miami Dolphins","home_slug":"las-vegas-raiders","away_slug":"miami-dolphins","model":{"pH":0.513},"predicted_at":"2026-08-02","market":{"pH":0.603},"blend":{"pH":0.558},"pick":"H"},{"event_id":"401872926","date":"2026-09-13","home":"Los Angeles Chargers","away":"Arizona Cardinals","home_slug":"los-angeles-chargers","away_slug":"arizona-cardinals","model":{"pH":0.6983},"predicted_at":"2026-08-02","market":{"pH":0.8046},"blend":{"pH":0.7514},"pick":"H"},{"event_id":"401872927","date":"2026-09-13","home":"Minnesota Vikings","away":"Green Bay Packers","home_slug":"minnesota-vikings","away_slug":"green-bay-packers","model":{"pH":0.5059},"predicted_at":"2026-08-02","market":{"pH":0.4554},"blend":{"pH":0.4807},"pick":"A"},{"event_id":"401872929","date":"2026-09-13","home":"Philadelphia Eagles","away":"Washington Commanders","home_slug":"philadelphia-eagles","away_slug":"washington-commanders","model":{"pH":0.65},"predicted_at":"2026-08-02","market":{"pH":0.6315},"blend":{"pH":0.6407},"pick":"H"},{"event_id":"401872658","date":"2026-09-13","home":"Pittsburgh Steelers","away":"Atlanta Falcons","home_slug":"pittsburgh-steelers","away_slug":"atlanta-falcons","model":{"pH":0.6032},"predicted_at":"2026-08-02","market":{"pH":0.5886},"blend":{"pH":0.5959},"pick":"H"},{"event_id":"401872924","date":"2026-09-13","home":"Tennessee Titans","away":"New York Jets","home_slug":"tennessee-titans","away_slug":"new-york-jets","model":{"pH":0.5509},"predicted_at":"2026-08-02","market":{"pH":0.5886},"blend":{"pH":0.5697},"pick":"H"},{"event_id":"401872930","date":"2026-09-14","home":"New York Giants","away":"Dallas Cowboys","home_slug":"new-york-giants","away_slug":"dallas-cowboys","model":{"pH":0.4833},"predicted_at":"2026-08-02","market":{"pH":0.426},"blend":{"pH":0.4546},"pick":"A"},{"event_id":"401872931","date":"2026-09-15","home":"Kansas City Chiefs","away":"Denver Broncos","home_slug":"kansas-city-chiefs","away_slug":"denver-broncos","model":{"pH":0.5393},"predicted_at":"2026-08-02","market":{"pH":0.5886},"blend":{"pH":0.5639},"pick":"H"}]}};
+
+/* ---------- state ---------- */
+const KEY = "con-pickem-proto-v1";
+let S = load();
+function load(){
+  try { const s = JSON.parse(localStorage.getItem(KEY)||"null"); if(s && s.picks) return s; } catch(e){}
+  return { picks:{}, confOrder:{}, radar:{}, results:null, signedIn:false };
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+
+/* ---------- data prep ---------- */
+const LEAGUES = [
+  { id:"pl",  label:"⚽ Premier League", sub:"Matchweek 1 · Aug 21–23", ways:3, ledger:DATA.pl.ledger,  live:true },
+  { id:"nfl", label:"🏈 NFL", sub:"Week 1 · Sep 10–14", ways:2, ledger:DATA.nfl.ledger, live:true },
+  { id:"mlb", label:"⚾ MLB", sub:"needs per-game ledger", live:false },
+  { id:"cfb", label:"🏈 CFB", sub:"model ships with preseason poll", live:false },
+  { id:"ucl", label:"🏆 UCL", sub:"model ships after the draw", live:false },
+];
+let curLeague = "pl";
+const gid = (lg,e) => lg + ":" + (e.event_id || (e.date + ":" + e.home_slug));
+function games(lg){ return LEAGUES.find(l=>l.id===lg).ledger.map(e => ({...e, id: gid(lg,e), lg})); }
+function allGames(){ return [...games("pl"), ...games("nfl")].sort((a,b)=> a.date<b.date?-1:1); }
+
+/* ---------- tabs ---------- */
+document.getElementById("tabs").addEventListener("click", ev=>{
+  const t = ev.target.closest(".tab"); if(!t) return;
+  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on", x===t));
+  ["slate","conf","radar","season"].forEach(id=>{
+    document.getElementById("tab-"+id).classList.toggle("hide", id!==t.dataset.tab);
+  });
+  renderAll();
+});
+document.getElementById("tab-radar").classList.add("hide");
+
+/* ---------- slate ---------- */
+function renderPills(elId, onPick){
+  const el = document.getElementById(elId); el.innerHTML="";
+  LEAGUES.forEach(l=>{
+    const b = document.createElement("button");
+    b.className = "pill" + (l.id===curLeague?" on":"") + (l.live?"":" off");
+    b.innerHTML = l.label + '<span class="sub">' + l.sub + "</span>";
+    if(l.live) b.onclick = ()=>{ curLeague=l.id; renderAll(); };
+    el.appendChild(b);
+  });
+}
+function fmtDate(d){
+  const dt = new Date(d+"T12:00:00Z");
+  return dt.toLocaleDateString("en-GB",{weekday:"long", day:"numeric", month:"long"});
+}
+function pct(x){ return Math.round(x*100)+"%"; }
+function modelPickLabel(e, ways){
+  if(ways===3){ const m=e.model; const top=Math.max(m.pH,m.pD,m.pA);
+    return top===m.pH? e.home : top===m.pA ? e.away : "Draw"; }
+  return e.model.pH>=.5? e.home : e.away;
+}
+function outcomeLabel(e, r, ways){
+  if(r==="H") return e.home; if(r==="A") return e.away; return "Draw";
+}
+function renderSlate(){
+  renderPills("leaguePills");
+  const L = LEAGUES.find(l=>l.id===curLeague);
+  const list = document.getElementById("slateList"); list.innerHTML="";
+  let lastDate = null;
+  games(curLeague).forEach(e=>{
+    if(e.date!==lastDate){ lastDate=e.date;
+      const h=document.createElement("div"); h.className="dateHead"; h.textContent=fmtDate(e.date); list.appendChild(h); }
+    const my = S.picks[e.id];
+    const res = S.results && S.results[e.id];
+    const div = document.createElement("div");
+    div.className = "game" + (res && my ? (my===res.r?" correct":" wrong") : "");
+    const title = e.lg==="nfl"
+      ? `${e.away} <span class="at">at</span> ${e.home}`
+      : `${e.home} <span class="at">v</span> ${e.away}`;
+    let html = `<div class="gRow"><div class="gTeams">${title}</div><div class="gMeta">${e.lg.toUpperCase()}</div></div>`;
+    // pick buttons
+    const opts = L.ways===3
+      ? [["H",e.home],["D","Draw"],["A",e.away]]
+      : [["A",e.away],["H",e.home]];
+    html += '<div class="pickBtns">' + opts.map(([k,lab])=>
+      `<button class="pb${my===k?" sel":""}" data-g="${e.id}" data-k="${k}">${lab}<small>${k==="H"?"home":k==="A"?"away":"draw"}</small></button>`
+    ).join("") + "</div>";
+    // reveal
+    if(my){
+      const m = e.model;
+      html += '<div class="reveal">';
+      if(L.ways===3){
+        html += `<div class="bar"><i class="bH" style="width:${m.pH*100}%"></i><i class="bD" style="width:${m.pD*100}%"></i><i class="bA" style="width:${m.pA*100}%"></i></div>
+        <div class="legend"><span>${e.home} ${pct(m.pH)}</span><span>Draw ${pct(m.pD)}</span><span>${e.away} ${pct(m.pA)}</span></div>`;
+      } else {
+        html += `<div class="bar"><i class="bH" style="width:${m.pH*100}%"></i><i class="bA" style="width:${(1-m.pH)*100}%"></i></div>
+        <div class="legend"><span>${e.home} ${pct(m.pH)}</span><span>${e.away} ${pct(1-m.pH)}</span></div>`;
+        if(e.market) html += `<div class="legend" style="margin-top:2px"><span style="color:var(--text-dim)">market: ${e.home} ${pct(e.market.pH)}</span><span style="color:var(--text-dim)">${e.away} ${pct(1-e.market.pH)}</span></div>`;
+      }
+      const agree = my===e.pick;
+      html += `<div class="agree">Model’s call: <b>${modelPickLabel(e,L.ways)}</b> — ${agree?'<span class="yes">you agree</span>':'<span class="no">you’re fading the model</span>'}</div>`;
+      if(res){
+        const win = my===res.r;
+        html += `<div class="resLine">FT ${res.score} — ${outcomeLabel(e,res.r,L.ways)}${res.r!=="D"?" win":""}. <span class="${win?'ok':'ko'}">${win?'+10 ✓':'0 ✗'}</span> · model ${e.pick===res.r?'<span class="ok">✓</span>':'<span class="ko">✗</span>'}</div>`;
+      }
+      html += "</div>";
+    }
+    div.innerHTML = html;
+    list.appendChild(div);
+  });
+  list.querySelectorAll(".pb").forEach(b=> b.onclick = ()=>{
+    if(S.results) return; // locked after grading demo
+    const id=b.dataset.g;
+    S.picks[id] = S.picks[id]===b.dataset.k ? undefined : b.dataset.k;
+    if(!S.picks[id]) delete S.picks[id];
+    delete S.confOrder[curLeague]; // re-rank if slate changes
+    save(); renderAll();
+  });
+  // strip
+  const g = games(curLeague);
+  const picked = g.filter(e=>S.picks[e.id]);
+  document.getElementById("pickCount").textContent = picked.length;
+  document.getElementById("pickTotal").textContent = g.length;
+  document.getElementById("agreeCount").textContent =
+    picked.length? picked.filter(e=>S.picks[e.id]===e.pick).length + "/" + picked.length : "–";
+  document.getElementById("demoBtn").disabled = !!S.results;
+}
+
+/* ---------- confidence ---------- */
+function confOrderFor(lg){
+  const g = games(lg).filter(e=>S.picks[e.id]);
+  let ord = S.confOrder[lg];
+  const ids = g.map(e=>e.id);
+  if(!ord || ord.length!==ids.length || ord.some(id=>!ids.includes(id))){
+    // default: model-confidence order of YOUR picks
+    ord = [...g].sort((a,b)=> pickProb(b)-pickProb(a)).map(e=>e.id);
+    S.confOrder[lg]=ord; save();
+  }
+  return ord;
+}
+function pickProb(e){
+  const my=S.picks[e.id], m=e.model;
+  if(e.lg==="pl") return my==="H"?m.pH:my==="A"?m.pA:m.pD;
+  return my==="H"?m.pH:1-m.pH;
+}
+function renderConf(){
+  renderPills("confPills");
+  const list=document.getElementById("confList"); list.innerHTML="";
+  const g = games(curLeague).filter(e=>S.picks[e.id]);
+  if(!g.length){ list.innerHTML='<div class="emptyMsg">Make your picks on The Slate first — then come back and rank them.</div>';
+    document.getElementById("confNote").textContent=""; return; }
+  const ord = confOrderFor(curLeague);
+  const byId = Object.fromEntries(g.map(e=>[e.id,e]));
+  const n = ord.length;
+  ord.forEach((id,i)=>{
+    const e=byId[id]; const slot=n-i;
+    const res = S.results && S.results[id];
+    const row=document.createElement("div");
+    row.className="confRow"+(res?(S.picks[id]===res.r?" correct":" wrong"):"");
+    const pickLab = S.picks[id]==="H"?e.home:S.picks[id]==="A"?e.away:"Draw";
+    row.innerHTML = `<div class="confPts">${slot}</div>
+      <div class="confBody"><b>${pickLab}</b> <span class="sub">(${e.lg==="nfl"?e.away+" at "+e.home:e.home+" v "+e.away} · model gives your pick ${pct(pickProb(e))})</span>
+      ${res? `<div class="sub">${S.picks[id]===res.r? "landed: <b style='color:var(--good)'>+"+slot+"</b>":"missed: 0"}</div>`:""}</div>
+      <div class="confMove"><button data-i="${i}" data-d="-1">▲</button><button data-i="${i}" data-d="1">▼</button></div>`;
+    list.appendChild(row);
+  });
+  list.querySelectorAll(".confMove button").forEach(b=> b.onclick=()=>{
+    if(S.results) return;
+    const i=+b.dataset.i, d=+b.dataset.d, j=i+d;
+    if(j<0||j>=ord.length) return;
+    [ord[i],ord[j]]=[ord[j],ord[i]]; S.confOrder[curLeague]=ord; save(); renderConf();
+  });
+  const max = n*(n+1)/2;
+  document.getElementById("confNote").textContent =
+    `Slots default to the model’s confidence in your picks — reorder them to your own read. Max haul this slate: ${max} pts.`;
+}
+
+/* ---------- radar ---------- */
+function radarGames(){
+  return games("nfl").filter(e=>e.market)
+    .map(e=>({...e, gap: Math.abs(e.model.pH - e.market.pH)}))
+    .sort((a,b)=>b.gap-a.gap).slice(0,5);
+}
+function renderRadar(){
+  const list=document.getElementById("radarList"); list.innerHTML="";
+  radarGames().forEach(e=>{
+    const my=S.radar[e.id];
+    const res=S.results && S.results[e.id];
+    let verdict=null;
+    if(res){
+      const y = res.r==="H"?1:0;
+      const bModel=(e.model.pH-y)**2, bMarket=(e.market.pH-y)**2;
+      verdict = bModel<bMarket? "model" : bMarket<bModel ? "market" : "push";
+    }
+    const div=document.createElement("div");
+    div.className="radarCard"+(verdict&&my?(my===verdict?" correct":verdict==="push"?"":" wrong"):"");
+    const lean=(p,h)=> p>=.5? `${h?e.home:e.home} ${pct(p)}` : `${e.away} ${pct(1-p)}`;
+    div.innerHTML = `<div class="gRow"><div class="gTeams">${e.away} <span class="at">at</span> ${e.home}<span class="gapTag">Δ ${(e.gap*100).toFixed(1)} pts</span></div><div class="gMeta">${fmtDate(e.date)}</div></div>
+      <div class="vsGrid">
+        <div class="vsSide${my==="model"?" sel":""}" data-g="${e.id}" data-s="model"><div class="who">🤖 Our model</div><div class="pct">${lean(e.model.pH,true)}</div><div class="lean">home win prob ${pct(e.model.pH)}</div></div>
+        <div class="vsSide${my==="market"?" sel":""}" data-g="${e.id}" data-s="market"><div class="who">💰 The market</div><div class="pct">${lean(e.market.pH,true)}</div><div class="lean">home win prob ${pct(e.market.pH)}</div></div>
+      </div>`
+      + (verdict? `<div class="resLine">FT ${res.score}. Closer source: <b>${verdict==="push"?"dead heat":verdict==="model"?"our model":"the market"}</b>${my?` — ${my===verdict?'<span class="ok">you sided right, +25</span>':verdict==="push"?"push":'<span class="ko">wrong side, 0</span>'}`:""}</div>`:"");
+    list.appendChild(div);
+  });
+  list.querySelectorAll(".vsSide").forEach(b=> b.onclick=()=>{
+    if(S.results) return;
+    const id=b.dataset.g;
+    S.radar[id] = S.radar[id]===b.dataset.s? undefined : b.dataset.s;
+    if(!S.radar[id]) delete S.radar[id];
+    save(); renderRadar();
+  });
+}
+
+/* ---------- demo grading ---------- */
+document.getElementById("demoBtn").onclick = ()=>{
+  if(S.results) return;
+  const res={};
+  allGames().forEach(e=>{
+    const r=Math.random();
+    let out, hs, as;
+    if(e.lg==="pl"){
+      out = r<e.model.pH? "H" : r<e.model.pH+e.model.pD? "D":"A";
+      hs = out==="H"?1+Math.floor(Math.random()*3): out==="D"?Math.floor(Math.random()*3):Math.floor(Math.random()*2);
+      as = out==="A"?hs+1+Math.floor(Math.random()*2): out==="D"?hs:Math.max(0,hs-1-Math.floor(Math.random()*2));
+      if(out==="H"&&as>=hs) as=hs-1; if(out==="A"&&hs>=as) hs=Math.max(0,as-1);
+    } else {
+      const p=(e.blend||e.model).pH;
+      out = r<p? "H":"A";
+      hs = 17+Math.floor(Math.random()*17); as = 14+Math.floor(Math.random()*17);
+      if(out==="H"&&as>=hs) as=hs-3; if(out==="A"&&hs>=as) hs=Math.max(0,as-3);
+    }
+    res[e.id]={r:out, score: e.lg==="pl"? hs+"–"+as : as+"–"+hs};
+  });
+  S.results=res; save(); renderAll();
+};
+document.getElementById("resetBtn").onclick = ()=>{
+  if(!confirm("Clear all picks and demo results?")) return;
+  S={picks:{},confOrder:{},radar:{},results:null,signedIn:S.signedIn}; save(); renderAll();
+};
+
+/* ---------- season / leaderboard ---------- */
+function scoreEntry(pickerOf){
+  // pickerOf(e) -> "H"|"D"|"A"|undefined
+  let pts=0, w=0, l=0, streak=0, best=0;
+  allGames().forEach(e=>{
+    const p=pickerOf(e); if(!p) return;
+    const res=S.results&&S.results[e.id]; if(!res) return;
+    if(p===res.r){ pts+=10; w++; streak++; best=Math.max(best,streak);} else { l++; streak=0; }
+  });
+  return {pts,w,l,best};
+}
+function confPoints(){
+  let pts=0;
+  ["pl","nfl"].forEach(lg=>{
+    const ord=S.confOrder[lg]; if(!ord) return;
+    const g=Object.fromEntries(games(lg).map(e=>[e.id,e]));
+    const n=ord.length;
+    ord.forEach((id,i)=>{
+      const res=S.results&&S.results[id];
+      if(res && S.picks[id]===res.r) pts += (n-i);
+    });
+  });
+  return pts;
+}
+function radarPoints(){
+  let pts=0;
+  radarGames().forEach(e=>{
+    const my=S.radar[e.id]; const res=S.results&&S.results[e.id];
+    if(!my||!res) return;
+    const y=res.r==="H"?1:0;
+    const bM=(e.model.pH-y)**2, bK=(e.market.pH-y)**2;
+    const v=bM<bK?"model":bK<bM?"market":"push";
+    if(my===v) pts+=25;
+  });
+  return pts;
+}
+function renderSeason(){
+  const me = scoreEntry(e=>S.picks[e.id]);
+  const mePts = me.pts + confPoints() + radarPoints();
+  const model = scoreEntry(e=>e.pick);
+  document.getElementById("stPts").textContent = S.results? mePts : "0";
+  document.getElementById("stRec").textContent = `${me.w}–${me.l}`;
+  document.getElementById("stStreak").textContent = S.results? (me.best+" 🔥"):"–";
+  document.getElementById("stVsModel").textContent = S.results? (me.w>model.w?"W":me.w<model.w?"L":"T") + ` (${me.w}–${model.w})` : "–";
+  // leaderboard
+  const rows = [
+    {name: S.signedIn? "Ashwin (you)":"You (this browser)", pts:S.results?mePts:0, rec:`${me.w}–${me.l}`, st:S.results?me.best:0, cls:"me"},
+    {name:"🤖 The Model (house)", pts:S.results?model.pts:0, rec:`${model.w}–${model.l}`, st:S.results?model.best:0, cls:"model"},
+    {name:"— open slot —", pts:null},{name:"— open slot —", pts:null},
+  ].sort((a,b)=>(b.pts||0)-(a.pts||0));
+  document.getElementById("lbBody").innerHTML = rows.map((r,i)=>
+    r.pts===null? `<tr><td>${i+1}</td><td style="color:var(--text-dim)">${r.name}</td><td>–</td><td>–</td><td>–</td></tr>`
+    : `<tr class="${r.cls}"><td>${i+1}</td><td>${r.name}</td><td><b>${r.pts}</b></td><td>${r.rec}</td><td>${r.st?r.st+" 🔥":"–"}</td></tr>`).join("");
+  // auth bar
+  const ab=document.getElementById("authBar");
+  ab.innerHTML = S.signedIn
+    ? `<div><b>ashwin@…</b><div style="font-size:11px;color:var(--text-muted)">Picks synced to your account across devices <i>(mock — real flow reuses the /me Google sign-in)</i></div></div><button class="btn" id="soBtn">Sign out</button>`
+    : `<div style="color:var(--text-muted)">Signed out — picks live only in this browser. Sign in to join the global leaderboard and rival boards.</div><button class="gbtn" id="siBtn">G&nbsp; Sign in with Google <span style="font-weight:400;font-size:11px">(mock)</span></button>`;
+  const si=document.getElementById("siBtn"), so=document.getElementById("soBtn");
+  if(si) si.onclick=()=>{S.signedIn=true;save();renderSeason();};
+  if(so) so.onclick=()=>{S.signedIn=false;save();renderSeason();};
+}
+
+function renderAll(){ renderSlate(); renderConf(); renderRadar(); renderSeason(); }
+renderAll();
+</script>
+</body>
+</html>
