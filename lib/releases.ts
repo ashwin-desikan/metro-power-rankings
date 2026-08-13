@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-13",
-    headline: "Baseball's rival leagues, and our own names on the women's tables",
+    headline: "A century of markets, and baseball's rival leagues pulled apart",
     items: [
-      "Baseball's rival leagues now stand apart. October 1890 shows four championships at once: the National League, the American Association, the Players' League and the World's Series.",
-      "Brazil's two national championships of 1967 and 1968 separate too, so Santos and Botafogo are no longer joint champions of a title neither shared. From November 1903 the World Series stands alone.",
-      "The Women's Super League and Liga F tables carry our own club names, so Brighton, West Ham and Atletico de Madrid read properly and link through to their club pages.",
-      "Chicago Stars FC is renamed throughout after the club's rebrand, and the ownership board records the agreed sale of the Lakers to Josh Kushner and Bob Iger.",
+      "Every index and commodity now opens its own daily history. The Dow's runs back to 1885: 38,612 closes, including the Saturday sessions the New York exchange traded until 1952.",
+      "A comparison view puts any eight of the 39 indices, commodities and currencies on one axis, rebased to a common date, because a chart of the Nikkei beside the FTSE otherwise compares nothing.",
+      "Baseball's rival leagues now stand apart: October 1890 carries four championships at once. Brazil's two national titles of 1967 and 1968 separate too, and from November 1903 the World Series stands alone.",
+      "The Women's Super League and Liga F tables carry our own club names, Chicago Stars FC is renamed throughout, and the ownership board records the agreed sale of the Lakers.",
     ],
   },
   {
