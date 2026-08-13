@@ -157,6 +157,21 @@ OtherLeagues.xlsx
 # local scratch for files git cannot rm over the device bridge
 _to_delete/
 
+# Session scratch at the repo root. The convention already exists deeper in the
+# tree (scripts/apifootball/_scratch/, scripts/uefa/_*); the root just never got
+# the line, so one-off check scripts, verification screenshots and next-start
+# logs have been sitting in `git status` since August.
+_scratch/
+
+# Commit messages staged for `git commit -F`. Written per push, never part of a
+# commit, and 24 of them had accumulated at the root by 2026-08-13.
+.commit-msg-*.txt
+
+# Raw HTML scraped for the skyscraper pipeline. Regenerable, ~3.7 MB, and the
+# parsed artifacts under public/data are what the site reads.
+_supertalls-wiki.html
+_tallest-buildings-wiki.html
+
 # Excel source workbooks + Overture raw dumps: pipeline inputs on the Windows
 # host, never read by `next build`. Kept on disk, out of git so Vercel does not
 # clone ~50MB+ of them each deploy. Untrack existing ones with:
