@@ -36,6 +36,29 @@ from load_market_series import service_key, rest, log, CHUNK  # noqa: E402
 
 WB = "https://api.worldbank.org/v2"
 UA = "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0; +https://rankings.citizenofnowhere.org)"
+WB_SOURCE = "World Bank SP.POP.TOTL"
+
+# Taiwan is the one country this loader has to source elsewhere. The World Bank
+# does not report it, for reasons that are political rather than statistical,
+# and it is not a country this site can leave blank: 116 tracked companies and
+# tenth in the world by market cap, so every per-head figure it appears in would
+# be missing its most interesting entrant.
+#
+# UN World Population Prospects, served through Our World in Data's grapher CSV
+# (CC BY), is the standard substitute and covers 1950 onward.
+#
+# ESTIMATES ONLY. OWID's projection column runs 2024-2100 and would let Taiwan's
+# series end in 2025 like everyone else's. It is not used. Splicing a forecast
+# onto a history and labelling the result "population" is the same quiet lie as
+# an unmarked source seam, and this hub spent the day refusing to tell it.
+# Taiwan's series therefore ends in 2023 and says so.
+TAIWAN = {
+    "iso3": "TWN",
+    "url": ("https://ourworldindata.org/grapher/population.csv"
+            "?v=1&csvType=full&useColumnShortNames=true&country=~TWN"),
+    "source": "UN World Population Prospects via Our World in Data (CC BY)",
+    "from_year": 1960,
+}
 
 
 def _get(url, timeout=180):
@@ -108,7 +131,39 @@ def parse_pop(rows):
             continue
         if n <= 0:
             continue
-        out.append({"iso3": iso3, "year": int(yr), "population": n})
+        out.append({"iso3": iso3, "year": int(yr), "population": n,
+                    "source": WB_SOURCE})
+    return out
+
+
+def fetch_taiwan():
+    """Taiwan from UN WPP estimates. Returns the same row shape, so it upserts
+    through exactly the same path and cannot drift into a special case."""
+    import csv, io
+    req = urllib.request.Request(TAIWAN["url"], headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        text = r.read().decode("utf-8", "replace")
+    rows = list(csv.DictReader(io.StringIO(text)))
+    if not rows:
+        raise SystemExit("FATAL: OWID returned no rows for Taiwan.")
+    col = next((c for c in rows[0] if c.startswith("population")), None)
+    if not col:
+        raise SystemExit(f"FATAL: no population column for Taiwan; got {list(rows[0])}.")
+    out = []
+    for r in rows:
+        if (r.get("code") or "").strip() != TAIWAN["iso3"]:
+            continue
+        try:
+            y, v = int(r["year"]), int(float(r[col] or 0))
+        except (TypeError, ValueError):
+            continue
+        if y < TAIWAN["from_year"] or v <= 0:
+            continue
+        out.append({"iso3": TAIWAN["iso3"], "year": y, "population": v,
+                    "source": TAIWAN["source"]})
+    if len(out) < 50:
+        raise SystemExit(f"FATAL: only {len(out)} Taiwan years from {TAIWAN['from_year']}; "
+                         "expected 60+. OWID changed the dataset.")
     return out
 
 
@@ -124,6 +179,21 @@ def main(argv):
     log("  aggregates include: " + ", ".join(e["iso3"] for e in aggs[:12]))
 
     rows = parse_pop(fetch_pop())
+    twn = fetch_taiwan()
+    log(f"  Taiwan: {len(twn)} years {twn[0]['year']}-{twn[-1]['year']} "
+        f"({twn[-1]['population']:,}) from {TAIWAN['source']}; "
+        "estimates only, no projections")
+    if any(r["iso3"] == TAIWAN["iso3"] for r in rows):
+        raise SystemExit("FATAL: the World Bank now reports TWN. Remove the substitute "
+                         "before both sources fight over the same primary key.")
+    rows += twn
+    if not any(e["iso3"] == TAIWAN["iso3"] for e in ents):
+        # wb_entity is the name and aggregate lookup for everything downstream,
+        # so a country present in country_population but absent here would join
+        # to nothing and silently lose its name and its rank.
+        ents.append({"iso3": "TWN", "name": "Taiwan", "region": "East Asia & Pacific",
+                     "income_level": "High income", "capital": "Taipei",
+                     "lat": 25.0330, "lon": 121.5654, "is_aggregate": False})
     known = {e["iso3"] for e in ents}
     orphan = sorted({r["iso3"] for r in rows} - known)
     years = sorted({r["year"] for r in rows})
@@ -187,14 +257,18 @@ def self_test():
 
     pop = parse_pop(POP_FIXTURE)
     assert len(pop) == 3, pop
-    assert {"iso3": "USA", "year": 1960, "population": 180671000} in pop, pop
+    assert {"iso3": "USA", "year": 1960, "population": 180671000,
+            "source": WB_SOURCE} in pop, pop
+    assert all(r["source"] == WB_SOURCE for r in pop), (
+        "every World Bank row must carry its source, so Taiwan's substitute is "
+        "distinguishable in the data rather than only in a comment")
     assert all(isinstance(r["population"], int) for r in pop), "population must be integral"
     assert not any(r["iso3"] == "" for r in pop), "a blank code is an aggregate row, drop it"
     # the join that makes any per-capita figure correct
     agg = {e["iso3"] for e in ents if e["is_aggregate"]}
     countries = [r for r in pop if r["iso3"] not in agg]
     assert {r["iso3"] for r in countries} == {"USA"}, countries
-    print("self-test: 9/9 PASS")
+    print("self-test: 10/10 PASS")
     return 0
 
 

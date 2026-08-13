@@ -20,6 +20,7 @@ export const SECTION_ICON: Record<string, string> = {
   orgs: "🤝",
   leaders: "🏛️",
   power: "📈",
+  population: "👥",
   conflicts: "⚔️",
   constituents: "🧩",
   subdivisions: "🗂️",

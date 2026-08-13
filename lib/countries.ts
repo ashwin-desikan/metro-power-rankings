@@ -164,6 +164,73 @@ export function getCountryIndicators(slug: string): CountryIndicators | null {
   return loadIndicators()[slug] ?? null;
 }
 
+// Annual population 1960-2025 per country (public/data/country-population.json,
+// built by scripts/build-country-population.py from World Bank SP.POP.TOTL via
+// Supabase's country_population). Additive: the workbook stays ground truth for
+// a country's CURRENT population, and this supplies the shape, which no single
+// figure can carry. A quarter of the world's countries are past their peak.
+//
+// `rank` covers World Bank reporting economies only; its aggregates (World, the
+// EU, the income groups) wear three-letter codes too and are excluded upstream,
+// so nothing here has to maintain a skip-list.
+export type CountryPopulation = {
+  iso3: string;
+  /** Per country, not per file: Taiwan is UN WPP because the World Bank omits it. */
+  source: string;
+  first: number;
+  latest: number;
+  value: number;
+  rank: number | null;
+  peakYear: number;
+  peakValue: number;
+  /** percent below the peak, 0 when the latest year IS the peak */
+  declineFromPeak: number;
+  multiple: number | null;
+  share: number | null;
+  shareFirst: number | null;
+  series: [number, number][];
+};
+
+export type PopulationFile = {
+  _meta: {
+    source: string;
+    license: string;
+    fetchedAt: string;
+    first: number;
+    last: number;
+    countries: number;
+    note: string;
+  };
+  world: [number, number][];
+  countries: Record<string, CountryPopulation>;
+};
+
+let _pop: PopulationFile | null = null;
+let _popTried = false;
+
+function loadPopulation(): PopulationFile | null {
+  if (!_popTried) {
+    _popTried = true;
+    try {
+      _pop = JSON.parse(
+        readFileSync(join(process.cwd(), "public", "data", "country-population.json"), "utf-8"),
+      ) as PopulationFile;
+    } catch {
+      _pop = null;
+    }
+  }
+  return _pop;
+}
+
+export function getCountryPopulation(slug: string): CountryPopulation | null {
+  return loadPopulation()?.countries[slug] ?? null;
+}
+
+/** World totals for the same years, so a country's share has a denominator. */
+export function getWorldPopulationSeries(): [number, number][] {
+  return loadPopulation()?.world ?? [];
+}
+
 // Wikidata-sourced infobox facts keyed by country slug (public/data/
 // country-facts.json, built by scripts/countryfacts/build-facts.mjs; Supabase
 // public.country_facts is the editable system of record). Additive to the

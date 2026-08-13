@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getBusiness } from "@/lib/business";
+import { getCountryByName, getCountryPopulation } from "@/lib/countries";
 import { formatMarketCap } from "@/lib/shared";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import BusinessNav from "./BusinessNav";
@@ -25,10 +26,56 @@ export const metadata: Metadata = {
   twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
+// Market cap per head. A total ranks countries mostly by how many people they
+// contain, which is a fact about demography wearing the costume of a fact about
+// business. Dividing by population is the cheapest way to make the table say
+// something about a place rather than about its size.
+//
+// TWO FLOORS, AND THE SECOND ONE IS THE IMPORTANT ONE. A company count alone is
+// not enough. Measured on the live data, a ten-company floor still put Bermuda
+// top at $4.5m a head and the Cayman Islands third, because those forty and ten
+// "companies" are incorporation domiciles rather than places anything is run
+// from. A per-head board that opens with Bermuda has told the reader nothing
+// except that it does not understand its own denominator.
+//
+// A population floor is the better rule: objective, self-explanatory, and no
+// hand-curated blacklist of tax havens to defend or maintain. Below a million
+// people a single listing dominates the ratio whatever the reason. It removes
+// Bermuda (65k), the Caymans (70k) and Luxembourg (670k) without anyone having
+// to adjudicate which of those is "really" an economy.
+const PER_HEAD_MIN_COMPANIES = 10;
+const PER_HEAD_MIN_POP = 1_000_000;
+const PER_HEAD_SHOWN = 10;
+
+function population(name: string): number | null {
+  const slug = getCountryByName(name)?.slug;
+  const pop = slug ? getCountryPopulation(slug) : null;
+  return pop && pop.value > 0 ? pop.value : null;
+}
+
+function capPerHead(name: string, cap: number): number | null {
+  const p = population(name);
+  return p ? cap / p : null;
+}
+
+function fmtPerHead(n: number | null): string {
+  if (n == null) return "—";
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(1)}m`;
+  if (n >= 1e3) return `$${(n / 1e3).toFixed(0)}k`;
+  return `$${n.toFixed(0)}`;
+}
+
 export default async function BusinessOverview() {
   const biz = await getBusiness();
   const meta = biz?.metros ? biz.meta : null;
   const mappedShare = meta ? Math.round((meta.mappedCap / meta.totalCap) * 100) : 0;
+  const perHead = (biz?.countries ?? [])
+    .filter((c) => c.count >= PER_HEAD_MIN_COMPANIES)
+    .map((c) => ({ ...c, pop: population(c.name), per: capPerHead(c.name, c.cap) }))
+    .filter((c): c is typeof c & { pop: number; per: number } =>
+      c.per != null && c.pop != null && c.pop >= PER_HEAD_MIN_POP)
+    .sort((a, b) => b.per - a.per)
+    .slice(0, PER_HEAD_SHOWN);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -175,6 +222,7 @@ export default async function BusinessOverview() {
                   <th className={THR}>#</th>
                   <th className={TH}>Country</th>
                   <th className={THR}>Market cap</th>
+                  <th className={THR}>Per person</th>
                   <th className={THR}>Companies</th>
                   <th className={TH}>Led by</th>
                 </tr>
@@ -185,6 +233,9 @@ export default async function BusinessOverview() {
                     <td className={TDR} style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</td>
                     <td className={`${TD} font-semibold whitespace-nowrap`}>{c.name}</td>
                     <td className={TDR} style={MONO}>{formatMarketCap(c.cap)}</td>
+                    <td className={TDR} style={{ ...MONO, color: "var(--text-muted)" }}>
+                      {fmtPerHead(capPerHead(c.name, c.cap))}
+                    </td>
                     <td className={TDR} style={MONO}>{c.count.toLocaleString()}</td>
                     <td className={`${TD} text-[var(--text-muted)]`}>{c.top?.name ?? "—"}</td>
                   </tr>
@@ -192,6 +243,49 @@ export default async function BusinessOverview() {
               </tbody>
             </TableBox>
           </section>
+
+          {perHead.length > 0 && (
+            <section className="mb-10" id="per-person">
+              <SectionHead
+                title="The same board, per person"
+                sub={`Market cap divided by population. A total mostly ranks countries by how many people they contain; this asks how much listed value each one carries per head, which is a different question with a different answer. Places under a million people or with fewer than ${PER_HEAD_MIN_COMPANIES} tracked companies are left out: without that floor the board opens with Bermuda and the Cayman Islands, which are where companies are registered rather than where anything is run.`}
+              />
+              <TableBox stickyCol={2}>
+                <thead>
+                  <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+                    <th className={THR}>#</th>
+                    <th className={TH}>Country</th>
+                    <th className={THR}>Per person</th>
+                    <th className={THR}>Market cap</th>
+                    <th className={THR}>By total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {perHead.map((c, i) => {
+                    const byTotal = biz.countries.findIndex((x) => x.name === c.name) + 1;
+                    return (
+                      <tr key={c.name} className="border-t" style={{ borderColor: "var(--border)" }}>
+                        <td className={TDR} style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</td>
+                        <td className={`${TD} font-semibold whitespace-nowrap`}>{c.name}</td>
+                        <td className={TDR} style={MONO}>{fmtPerHead(c.per)}</td>
+                        <td className={TDR} style={{ ...MONO, color: "var(--text-muted)" }}>{formatMarketCap(c.cap)}</td>
+                        {/* The interesting column: how far a country moves when
+                            the denominator changes. */}
+                        <td className={TDR} style={{ ...MONO, color: byTotal > i + 1 ? "#10b981" : byTotal < i + 1 ? "#E2628B" : "var(--text-dim)" }}>
+                          #{byTotal}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </TableBox>
+              <p className="text-xs text-[var(--text-muted)] mt-2">
+                Population is the World Bank&apos;s latest year (SP.POP.TOTL), except Taiwan, which
+                the World Bank does not report and which uses UN World Population Prospects
+                estimates through 2023 instead. Every country page names its own source.
+              </p>
+            </section>
+          )}
 
           <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
             <h2 className="text-lg font-bold mb-2">Where these numbers come from</h2>

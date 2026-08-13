@@ -7,6 +7,8 @@ import {
   getCountry,
   getCountryIndicators,
   getCountryFacts,
+  getCountryPopulation,
+  getWorldPopulationSeries,
   getIndicatorRank,
   getMetrosForCountry,
   getIndicatorsMeta,
@@ -31,6 +33,7 @@ import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
 import LeadersSection from "./LeadersSection";
 import PowerSection from "./PowerSection";
+import PopulationSection from "./PopulationSection";
 import { getCountryPowerSeries } from "@/lib/powerHistory";
 import { countryHasLeaders, getLeaders } from "@/lib/leaders";
 import OrgsSection from "./OrgsSection";
@@ -282,6 +285,10 @@ export default async function CountryDetailPage({ params }: Props) {
   // Hoisted: the nav needs to know whether a Power section will render, and
   // PowerSection needs the series itself. Called once either way.
   const powerSeries = getCountryPowerSeries(slug);
+  // Same reason as powerSeries: the nav chip and the section both need to know
+  // whether there is a series at all. Two of the site's countries have none,
+  // because the World Bank does not report Taiwan or Vatican City.
+  const population = getCountryPopulation(slug);
   const indicators = getCountryIndicators(slug);
   const indicatorsMeta = getIndicatorsMeta();
   const facts = getCountryFacts(slug);
@@ -490,6 +497,7 @@ export default async function CountryDetailPage({ params }: Props) {
               ...(countryHasLeaders(slug) ? [{ label: "Leadership", href: "#leaders", group: "Governance" }] : []),
               ...(powerSeries.length > 0 ? [{ label: "Power", href: "#power", group: "Governance" }] : []),
               ...(conflictWars.length ? [{ label: "Conflicts", href: "#conflicts", group: "Governance" }] : []),
+              ...(population ? [{ label: "Population", href: "#population", group: "Society" }] : []),
               ...(billionaires.length ? [{ label: "Billionaires", href: "#billionaires", group: "Society" }] : []),
               ...(hasNationalTeams ? [{ label: "National Teams", href: "#national-teams", group: "Society" }] : []),
               ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs", group: "Society" }] : []),
@@ -677,6 +685,13 @@ export default async function CountryDetailPage({ params }: Props) {
 
           <PowerSection series={powerSeries} name={country.name} />
           <ConflictsSection wars={conflictWars} />
+          {population ? (
+            <PopulationSection
+              pop={population}
+              world={getWorldPopulationSeries()}
+              name={country.name}
+            />
+          ) : null}
           <BillionairesSection list={billionaires} />
 
           {(hasNationalTeams || champTitles.length > 0) ? (
