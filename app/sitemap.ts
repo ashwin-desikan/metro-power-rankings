@@ -5,6 +5,8 @@ import { getAllCountrySlugs } from "@/lib/countries";
 import { getAllCompSlugs } from "@/lib/championsHistory";
 import { competitionHasHub } from "@/lib/competitionLinks";
 import { getStateSlugsWithMetros } from "@/lib/states";
+import { MARKET_PAGE_SLUGS } from "@/lib/marketPages";
+import { CURRENCY_PAGE_CODES } from "@/lib/currencyPages";
 import { getAllFranchiseSlugs as getNflSlugs } from "@/lib/nfl";
 import { getAllFranchiseSlugs as getNbaSlugs } from "@/lib/nba";
 import { getAllFranchiseSlugs as getMlbSlugs } from "@/lib/mlb";
@@ -280,8 +282,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
+  // Business of the Metros. The whole hub was missing from the sitemap until
+  // 2026-08-13 - not just the new market pages but Overview, Companies, Owners,
+  // Currencies and the twenty currency charts, none of which were ever
+  // submitted. Added here as one block so a new board is one line, not a
+  // rediscovery of the same gap.
+  const businessTabs = [
+    "", "/companies", "/private", "/sp500", "/owners",
+    "/markets", "/markets/compare", "/currencies", "/leaders", "/crossovers",
+  ];
+  const businessEntries: MetadataRoute.Sitemap = [
+    ...businessTabs.map((t) => ({
+      url: `${BASE_URL}/business${t}`,
+      lastModified: stamp,
+      changeFrequency: "daily" as const,
+      priority: t === "" ? 0.8 : 0.7,
+    })),
+    ...MARKET_PAGE_SLUGS.map((slug) => ({
+      url: `${BASE_URL}/business/markets/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "daily" as const,
+      priority: 0.6,
+    })),
+    ...CURRENCY_PAGE_CODES.map((code) => ({
+      url: `${BASE_URL}/business/currencies/${code}`,
+      lastModified: stamp,
+      changeFrequency: "daily" as const,
+      priority: 0.6,
+    })),
+  ];
+
   return [
     ...staticEntries,
+    ...businessEntries,
     ...championsEntries,
     ...olympicsEntries,
     ...badgeEntries,

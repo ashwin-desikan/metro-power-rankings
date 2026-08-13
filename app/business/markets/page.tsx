@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getMarkets, getMarketsHistory } from "@/lib/business";
+import { hasMarketPage, marketHref, MARKETS_COMPARE } from "@/lib/marketPages";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import BusinessNav from "../BusinessNav";
 import { MONO, CARD, TH, THR, TD, TDR, MetroLink, SectionHead, Crumbs, TabHeader, TableBox } from "../ui";
+
+// Every row deep-links to its own daily history at /business/markets/[symbol],
+// back to 1885 for the Dow. A row whose slug has no page (an older cached
+// markets.json, or a symbol added to the feed before its series was
+// backfilled) renders as plain text rather than a dead link.
+function SeriesName({ slug, name }: { slug?: string; name: string }) {
+  if (!hasMarketPage(slug)) return <>{name}</>;
+  return (
+    <Link href={marketHref(slug)} className="hover:underline" style={{ color: "var(--accent)" }}>
+      {name}
+    </Link>
+  );
+}
 
 export const revalidate = 21600;
 
@@ -62,8 +77,22 @@ export default async function MarketsPage() {
         <p className="text-sm text-[var(--text-muted)]">The markets dataset has not loaded; try again shortly.</p>
       ) : (
         <>
+          <section className="mb-8 rounded-2xl border p-4 sm:p-5 flex flex-wrap items-baseline justify-between gap-2" style={CARD}>
+            <p className="text-[13.5px] text-[var(--text-muted)] max-w-2xl">
+              Every name below now opens its own daily history, the Dow&apos;s running back to 1885.
+              Or put them on one axis, rebased to a common date.
+            </p>
+            <Link
+              href={MARKETS_COMPARE}
+              className="rounded-md border px-3 py-1.5 text-xs font-medium whitespace-nowrap"
+              style={{ borderColor: "var(--accent)", color: "var(--accent)", background: "var(--bg-card)" }}
+            >
+              Compare markets →
+            </Link>
+          </section>
+
           <section className="mb-10">
-            <SectionHead title="The world's benchmarks" sub="Index levels at the latest daily snapshot, tied to their home markets." />
+            <SectionHead title="The world's benchmarks" sub="Index levels at the latest daily snapshot, tied to their home markets. Each name opens its full daily history." />
             <TableBox>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -80,7 +109,9 @@ export default async function MarketsPage() {
                   const chg = prev ? change(ix.symbol, ix.value) : null;
                   return (
                     <tr key={ix.symbol} className="border-t" style={{ borderColor: "var(--border)" }}>
-                      <td className={`${TD} font-semibold whitespace-nowrap`}>{ix.name}</td>
+                      <td className={`${TD} font-semibold whitespace-nowrap`}>
+                        <SeriesName slug={ix.slug} name={ix.name} />
+                      </td>
                       <td className={TDR} style={MONO}>{fmtLevel(ix.value)}</td>
                       {prev && (
                         <td className={TDR} style={{ ...MONO, color: chg == null ? "var(--text-dim)" : chg >= 0 ? "#10b981" : "#E2628B" }}>
@@ -114,7 +145,9 @@ export default async function MarketsPage() {
                   const chg = prev ? change(c.symbol, c.value) : null;
                   return (
                     <tr key={c.symbol} className="border-t" style={{ borderColor: "var(--border)" }}>
-                      <td className={`${TD} font-semibold whitespace-nowrap`}>{c.name}</td>
+                      <td className={`${TD} font-semibold whitespace-nowrap`}>
+                        <SeriesName slug={c.slug} name={c.name} />
+                      </td>
                       <td className={TDR} style={MONO}>{fmtLevel(c.value)}</td>
                       {prev && (
                         <td className={TDR} style={{ ...MONO, color: chg == null ? "var(--text-dim)" : chg >= 0 ? "#10b981" : "#E2628B" }}>

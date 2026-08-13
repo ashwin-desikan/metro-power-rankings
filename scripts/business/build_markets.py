@@ -11,7 +11,7 @@ Any symbol that errors is dropped with a log line and the page degrades
 gracefully; the run aborts only if fewer than six indices resolve.
 usage: build_markets.py [--self-test]
 """
-import json, os, sys, time, datetime
+import json, os, re, sys, time, datetime
 from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -22,28 +22,32 @@ import common  # noqa: E402
 OUT_DIR = os.path.join(ROOT, "public", "data", "business")
 METROS = os.path.join(ROOT, "public", "data", "metros.json")
 
+# The slug is the URL segment for /business/markets/[symbol] AND the primary
+# key in Supabase's market_series_meta. Keep the two in step: a slug added here
+# without a matching meta row writes nothing, and a meta row without an entry
+# here never gets a daily point.
 INDICES = [
-    ("^GSPC", "S&P 500", "United States", "New York"),
-    ("^DJI", "Dow Jones Industrial", "United States", "New York"),
-    ("^IXIC", "Nasdaq Composite", "United States", "New York"),
-    ("^FTSE", "FTSE 100", "United Kingdom", "London"),
-    ("^GDAXI", "DAX", "Germany", "Frankfurt"),
-    ("^FCHI", "CAC 40", "France", "Paris"),
-    ("^N225", "Nikkei 225", "Japan", "Tokyo"),
-    ("^HSI", "Hang Seng", "Hong Kong", "Hong Kong"),
-    ("^BSESN", "Sensex", "India", "Mumbai"),
-    ("000001.SS", "Shanghai Composite", "China", "Shanghai"),
-    ("^KS11", "KOSPI", "South Korea", "Seoul"),
-    ("^GSPTSE", "S&P/TSX Composite", "Canada", "Toronto"),
-    ("^BVSP", "Bovespa", "Brazil", "São Paulo"),
+    ("sp-500", "^GSPC", "S&P 500", "United States", "New York"),
+    ("dow-jones", "^DJI", "Dow Jones Industrial", "United States", "New York"),
+    ("nasdaq-composite", "^IXIC", "Nasdaq Composite", "United States", "New York"),
+    ("ftse-100", "^FTSE", "FTSE 100", "United Kingdom", "London"),
+    ("dax", "^GDAXI", "DAX", "Germany", "Frankfurt"),
+    ("cac-40", "^FCHI", "CAC 40", "France", "Paris"),
+    ("nikkei-225", "^N225", "Nikkei 225", "Japan", "Tokyo"),
+    ("hang-seng", "^HSI", "Hang Seng", "Hong Kong", "Hong Kong"),
+    ("sensex", "^BSESN", "Sensex", "India", "Mumbai"),
+    ("shanghai-composite", "000001.SS", "Shanghai Composite", "China", "Shanghai"),
+    ("kospi", "^KS11", "KOSPI", "South Korea", "Seoul"),
+    ("sp-tsx-composite", "^GSPTSE", "S&P/TSX Composite", "Canada", "Toronto"),
+    ("bovespa", "^BVSP", "Bovespa", "Brazil", "São Paulo"),
 ]
 COMMODITIES = [
-    ("GC=F", "Gold", "USD/oz"),
-    ("SI=F", "Silver", "USD/oz"),
-    ("CL=F", "Crude Oil (WTI)", "USD/bbl"),
-    ("BZ=F", "Brent Crude", "USD/bbl"),
-    ("HG=F", "Copper", "USD/lb"),
-    ("NG=F", "Natural Gas", "USD/MMBtu"),
+    ("gold", "GC=F", "Gold", "USD/oz"),
+    ("silver", "SI=F", "Silver", "USD/oz"),
+    ("crude-oil-wti", "CL=F", "Crude Oil (WTI)", "USD/bbl"),
+    ("brent-crude", "BZ=F", "Brent Crude", "USD/bbl"),
+    ("copper", "HG=F", "Copper", "USD/lb"),
+    ("natural-gas", "NG=F", "Natural Gas", "USD/MMBtu"),
 ]
 
 
@@ -84,7 +88,7 @@ def main(argv):
     metro_slug = {m["name"]: m["slug"] for m in json.load(open(METROS, encoding="utf-8"))}
 
     indices, commodities, missing = [], [], []
-    for sym, name, country, metro in INDICES:
+    for slug, sym, name, country, metro in INDICES:
         try:
             q = fetch_quote(sym)
         except Exception as e:
@@ -93,11 +97,11 @@ def main(argv):
         if not q:
             missing.append(sym)
             continue
-        indices.append({"symbol": sym, "name": name, "country": country,
+        indices.append({"slug": slug, "symbol": sym, "name": name, "country": country,
                         "metro": metro, "metroSlug": metro_slug.get(metro, ""),
                         "value": q[0], "date": q[1]})
         time.sleep(0.4)
-    for sym, name, unit in COMMODITIES:
+    for slug, sym, name, unit in COMMODITIES:
         try:
             q = fetch_quote(sym)
         except Exception as e:
@@ -106,7 +110,7 @@ def main(argv):
         if not q:
             missing.append(sym)
             continue
-        commodities.append({"symbol": sym, "name": name, "unit": unit,
+        commodities.append({"slug": slug, "symbol": sym, "name": name, "unit": unit,
                             "value": q[0], "date": q[1]})
         time.sleep(0.4)
 
@@ -133,6 +137,19 @@ def main(argv):
     n = append_history(today, values)
     common.log(f"markets: {len(indices)} indices + {len(commodities)} commodities; history {n} snapshot(s)")
 
+    # Supabase is the system of record for the long history behind
+    # /business/markets/[symbol]; the per-slug JSON is the read model the page
+    # loads. Each entry's own quote date is used rather than `today`, because a
+    # market that has not opened yet still reports yesterday's close and we do
+    # not want that filed under the wrong day. Fail-open: see series_store.
+    sys.path.insert(0, HERE)
+    import series_store
+    points = [{"slug": e["slug"], "date": e["date"] or today, "close": e["value"]}
+              for e in indices + commodities]
+    series_store.push(points)
+    extended = sum(1 for p in points if series_store.extend(p["slug"], p["date"], p["close"]))
+    common.log(f"markets-series: {extended} read-model file(s) extended")
+
 
 FIXTURE_OK = {"chart": {"result": [{"meta": {"regularMarketPrice": 7489.72,
                                              "regularMarketTime": 1785532932}}]}}
@@ -144,7 +161,14 @@ def self_test():
     assert q and q[0] == 7489.72 and q[1] == "2026-07-31", q
     assert extract(FIXTURE_BAD) is None
     assert extract({"chart": {"result": []}}) is None
-    print("self-test: 3/3 PASS")
+    # Slugs are URL segments and Supabase primary keys, so they have to be
+    # unique, non-empty and URL-safe. A duplicate here would silently overwrite
+    # one series with another's closes.
+    slugs = [r[0] for r in INDICES] + [r[0] for r in COMMODITIES]
+    assert len(slugs) == len(set(slugs)), "duplicate slug"
+    assert all(re.fullmatch(r"[a-z0-9-]+", s) for s in slugs), "slug not URL-safe"
+    assert len(slugs) == 19, f"expected 19 series, got {len(slugs)}"
+    print("self-test: 6/6 PASS")
     return 0
 
 

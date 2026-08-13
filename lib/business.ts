@@ -324,7 +324,12 @@ export type FxFile = {
   currencies: FxCurrency[];
 };
 
+// `slug` is the /business/markets/[symbol] segment and the Supabase primary
+// key. Optional here because a markets.json written before 2026-08-13 has no
+// slugs, and the board must keep rendering against an older cached copy rather
+// than throwing; the row simply does not deep-link.
 export type MarketIndex = {
+  slug?: string;
   symbol: string;
   name: string;
   country: string;
@@ -334,7 +339,7 @@ export type MarketIndex = {
   date: string;
 };
 
-export type MarketCommodity = { symbol: string; name: string; unit: string; value: number; date: string };
+export type MarketCommodity = { slug?: string; symbol: string; name: string; unit: string; value: number; date: string };
 
 export type MarketsFile = {
   meta: { generated_at: string; as_of: string; source: string; indices: number; commodities: number; missing: string[] };
@@ -383,6 +388,55 @@ export async function getFxSeries(code: string): Promise<FxSeriesFile | null> {
 
 export async function getMarkets(): Promise<MarketsFile | null> {
   return load<MarketsFile>("markets.json");
+}
+
+// Per-series daily history for /business/markets/[symbol]. Supabase's
+// market_series_daily is the system of record; these files are the read model,
+// emitted by scripts/business/emit_market_series.py and extended each morning
+// by build_markets.py. Same GH-raw ISR read as everything else in the hub, so
+// the daily append surfaces without a build. Same shape as FxSeriesFile on
+// purpose: one chart component serves both.
+export type MarketSeriesFile = {
+  meta: {
+    generated_at: string;
+    slug: string;
+    kind: "index" | "commodity" | "fx";
+    symbol: string;
+    name: string;
+    unit: string | null;
+    country: string | null;
+    metroSlug: string | null;
+    source: string;
+    sourceNote: string | null;
+    start: string;
+    end: string;
+    points: number;
+  };
+  series: [string, number][];
+};
+
+export async function getMarketSeries(slug: string): Promise<MarketSeriesFile | null> {
+  return load<MarketSeriesFile>(`markets-series/${slug.toLowerCase()}.json`);
+}
+
+// Every series at month-end for the rebased overlay at
+// /business/markets/compare. Month-end rather than daily because a 141-year
+// daily chart cannot render 38,000 points meaningfully and the overlay only
+// needs shape; it keeps the whole comparison to one modest file.
+export type MarketsOverlayFile = {
+  meta: { generated_at: string; series: number; note: string };
+  series: {
+    slug: string;
+    kind: "index" | "commodity" | "fx";
+    name: string;
+    unit: string | null;
+    start: string;
+    series: [string, number][];
+  }[];
+};
+
+export async function getMarketsOverlay(): Promise<MarketsOverlayFile | null> {
+  return load<MarketsOverlayFile>("markets-overlay.json");
 }
 
 // Local-only (small file, movement only matters once 2+ snapshots exist).

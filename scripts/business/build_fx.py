@@ -159,6 +159,18 @@ def update_series(today, rates):
         n += 1
     common.log(f"fx-series: {n} series extended to {today}")
 
+    # Supabase is the system of record for every daily series, FX included
+    # (Ashwin's call 2026-08-13, so the hub does not carry two storage models
+    # for the same shape of data). The JSON above stays the read model the
+    # currency pages load. Fail-open without a key: see series_store.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import series_store
+    series_store.push([
+        {"slug": code.lower(), "date": today, "close": float(rates[code])}
+        for code in MAJORS
+        if isinstance(rates.get(code), (int, float)) and rates[code] > 0
+    ])
+
 
 def self_test():
     rates = {"USD": 1, "EUR": 0.91, "GBP": 0.78, "XXX": -1, "JPY": 155.2}
