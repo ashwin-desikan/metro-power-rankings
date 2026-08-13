@@ -205,3 +205,11 @@ mac-mini-jobs/config.env
 mac-mini-jobs/state.json
 mac-mini-jobs/.dispatcher.lock
 betatestkeys.txt
+
+# Personal documents that happen to live in this working tree. This repo is
+# PUBLIC, and git history keeps a file even after it is deleted, so anything
+# private has to be stopped before the first commit rather than removed after.
+# SAIS-Organization-Spotlight-Answers.md was committed here on 2026-08-13 and
+# reset out again before it was ever pushed; this line is what stops the next
+# `git add .` from doing it a second time.
+SAIS-Organization-Spotlight-Answers.md
