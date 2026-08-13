@@ -19,11 +19,47 @@ HAS_TAG=0
 case "$SUBJECT" in *"[vercel skip]"*) HAS_TAG=1;; esac
 
 if [ "$TOUCHES_BUILD" = 1 ] && [ "$HAS_TAG" = 1 ]; then
-  echo "post-commit CHECK: MISMATCH -- this commit touches a build-relevant" >&2
-  echo "  path AND is tagged [vercel skip]. That means Vercel will SKIP a" >&2
-  echo "  deploy this commit may actually need. Not auto-fixed (amending is" >&2
-  echo "  its own risk) -- if the tag is wrong, fix it by hand: git commit" >&2
-  echo "  --amend, or a follow-up commit without the tag." >&2
+  # vercel-ignore.sh's own comment: "public/data STAYS IN, and that is
+  # deliberate... The ISR-backed files (business, mlb-sim, the espn
+  # snapshots, the football live bundles) are the exception, not the rule,
+  # and are already handled by rule 1, since their commits carry the
+  # marker." So for these specific jobs, touching public/ AND carrying the
+  # tag is not a mistake, it is the documented design -- and narrowing
+  # vercel-build-paths.txt itself to exclude them was tried and reverted
+  # (see that file's history): it can't tell an ISR-backed file from one of
+  # the 313 readFileSync build-time reads without a real per-file audit
+  # nobody has done, so the path list has to stay broad.
+  #
+  # What CAN be checked cheaply and safely, without touching that list: does
+  # THIS commit look like one of the known automated data-refresh jobs --
+  # authored by one of this repo's fixed bot identities, AND its
+  # build-relevant diff scoped to `public` only, never app/lib/proxy.ts/
+  # next.config.ts/etc, which no automated job here ever touches and a real
+  # app change would. Both holding is exactly the exception vercel-ignore.sh
+  # already documents, so suppress the false alarm for it too. A HUMAN
+  # commit (any other author) still gets the full warning below -- that is
+  # where the two real bugs (2026-08-06, 2026-08-11) were actually caught,
+  # and neither was bot-authored.
+  AUTHOR_EMAIL=$(git log -1 --pretty=%ae)
+  KNOWN_BOT=0
+  case "$AUTHOR_EMAIL" in
+    metro-mini-bot@users.noreply.github.com|mac-mini-claude@users.noreply.github.com|"github-actions[bot]@users.noreply.github.com") KNOWN_BOT=1;;
+  esac
+  NON_PUBLIC_PATHS=$(printf '%s\n' "$BUILD_PATHS" | grep -vx 'public')
+  PUBLIC_ONLY=1
+  git diff --quiet HEAD~1 HEAD -- $NON_PUBLIC_PATHS 2>/dev/null || PUBLIC_ONLY=0
+
+  if [ "$KNOWN_BOT" = 1 ] && [ "$PUBLIC_ONLY" = 1 ]; then
+    echo "post-commit CHECK: OK (touches_build=1 tagged=1, known automated" \
+         "data commit scoped to public/ -- the documented ISR exception," \
+         "not a real mismatch)"
+  else
+    echo "post-commit CHECK: MISMATCH -- this commit touches a build-relevant" >&2
+    echo "  path AND is tagged [vercel skip]. That means Vercel will SKIP a" >&2
+    echo "  deploy this commit may actually need. Not auto-fixed (amending is" >&2
+    echo "  its own risk) -- if the tag is wrong, fix it by hand: git commit" >&2
+    echo "  --amend, or a follow-up commit without the tag." >&2
+  fi
 elif [ "$TOUCHES_BUILD" = 0 ] && [ "$HAS_TAG" = 0 ]; then
   echo "post-commit CHECK: MISMATCH -- this commit touches nothing build-" >&2
   echo "  relevant but has no [vercel skip] tag. This is the 2026-08-06" >&2
