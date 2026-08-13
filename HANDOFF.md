@@ -5355,3 +5355,16 @@ Full `npm run verify` green (typecheck, client-imports, public-data, slug-drift,
 - **Ledger gaps Ashwin has ruled on as known history, do NOT re-flag:** Ligue 1 1930-32, rugby league (Super League lineage) 1897-1901, CONCACAF Champions Cup 1964-67 (several of those editions genuinely were not completed). The board renders these the way it renders the war years -- previous champion keeps reigning. Semantically a war gap is "no championship was held" and these are "we do not have the row", but Ashwin has decided and it needs nothing.
 - Brasileiro 1975-79 WAS a real gap and Ashwin has since filled it; the block is continuous 1972-1983.
 - `champions-history.json` field types are not validated on read -- `season` is sometimes a NUMBER, which threw a runtime 500 while tsc stayed green. Any lib reading that file should `String(x ?? "")`.
+
+## 2026-08-13 -- mini -> windows (item 3 done, business-daily.sh not yet pushed, and a standing gotcha for mac-mini-jobs/ edits)
+
+### 1. SUPABASE_SERVICE_KEY -- done on this side, needs Ashwin for the value
+Added `SUPABASE_SERVICE_KEY=""` (empty) to the live `~/metro-mini-jobs/config.env` on the mini, and documented it in `mac-mini-jobs/config.env.example` (`d8ccc2bf8`, pushed). Explicitly called out that it's a SEPARATE key from mktcap-refresh's `SUPABASE_SERVICE_KEY`, which lives in `~/.config/metro-supabase/env` (`run-mktcap-refresh.sh` sources it directly, not `config.env`) -- same variable name, deliberately different file, so the two jobs' credentials don't share a rotation. Could not fill in the actual value: no Supabase MCP tool exposes the service_role secret (by design), and it shouldn't pass through chat. Waiting on Ashwin to paste it into that line himself.
+
+### 2. business-daily.sh -- can't `bash -n` it, not pushed yet
+Re-fetched origin/main twice; HEAD still matches, so the edit you mentioned isn't in the repo. Nothing to verify until it lands -- push it and I'll check it the next time I'm invoked.
+
+### 3. Standing gotcha, worth knowing for any future mac-mini-jobs/ edit
+Your `nwsl` commit (`62151074e`, 2026-08-12) added NWSL to `mac-mini-jobs/runners/mlb-sim.sh`'s `commit_paths()` list in the repo -- correct change, but the dispatcher on the mini doesn't execute the repo copy. It runs a SEPARATE, manually-synced deployment directory (`~/metro-mini-jobs/`, not git-tracked) that only gets updated when a mini session explicitly `cp`s a changed file over after editing `mac-mini-jobs/`. Since your edit landed from a non-mini session, that sync never happened: `build_season_sims.py` (git-tracked, so it WAS current) built fresh NWSL data every run, but the stale live runner didn't know to `git add` it, so it silently rebuilt-and-discarded for about a day before I caught it and synced. Not something you did wrong -- just a fact about this repo's layout that isn't obvious from outside the mini. If you edit anything under `mac-mini-jobs/` again, flag it here and a mini session will pick up the sync; there's no other way for a Windows/cloud session to reach that live directory.
+
+**Verified before writing this**: `dispatcher.py --self-test` 79/79, live dry-run of the synced runner shows all 7 leagues (now including nwsl) committing cleanly, zero partial failures.
