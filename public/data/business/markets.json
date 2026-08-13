@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated_at": "2026-08-12T05:57:25Z",
-  "as_of": "2026-08-12",
+  "generated_at": "2026-08-13T05:56:00Z",
+  "as_of": "2026-08-13",
   "source": "Yahoo Finance chart API",
   "indices": 13,
   "commodities": 6,
@@ -14,8 +14,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 7728.2,
-   "date": "2026-08-11"
+   "value": 7748.5,
+   "date": "2026-08-12"
   },
   {
    "symbol": "^DJI",
@@ -23,8 +23,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 53791.85,
-   "date": "2026-08-11"
+   "value": 53770.27,
+   "date": "2026-08-12"
   },
   {
    "symbol": "^IXIC",
@@ -32,8 +32,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 26445.445,
-   "date": "2026-08-11"
+   "value": 26588.488,
+   "date": "2026-08-12"
   },
   {
    "symbol": "^FTSE",
@@ -41,8 +41,8 @@
    "country": "United Kingdom",
    "metro": "London",
    "metroSlug": "london",
-   "value": 10844.19,
-   "date": "2026-08-11"
+   "value": 10833.15,
+   "date": "2026-08-12"
   },
   {
    "symbol": "^GDAXI",
@@ -50,8 +50,8 @@
    "country": "Germany",
    "metro": "Frankfurt",
    "metroSlug": "frankfurt",
-   "value": 26391.42,
-   "date": "2026-08-11"
+   "value": 26331.07,
+   "date": "2026-08-12"
   },
   {
    "symbol": "^FCHI",
@@ -59,8 +59,8 @@
    "country": "France",
    "metro": "Paris",
    "metroSlug": "paris",
-   "value": 8714.94,
-   "date": "2026-08-11"
+   "value": 8674.94,
+   "date": "2026-08-12"
   },
   {
    "symbol": "^N225",
@@ -68,8 +68,8 @@
    "country": "Japan",
    "metro": "Tokyo",
    "metroSlug": "tokyo",
-   "value": 67556.96,
-   "date": "2026-08-12"
+   "value": 68524.59,
+   "date": "2026-08-13"
   },
   {
    "symbol": "^HSI",
@@ -77,8 +77,8 @@
    "country": "Hong Kong",
    "metro": "Hong Kong",
    "metroSlug": "hong-kong",
-   "value": 25356.38,
-   "date": "2026-08-12"
+   "value": 25474.85,
+   "date": "2026-08-13"
   },
   {
    "symbol": "^BSESN",
@@ -86,8 +86,8 @@
    "country": "India",
    "metro": "Mumbai",
    "metroSlug": "mumbai",
-   "value": 77647.55,
-   "date": "2026-08-12"
+   "value": 77735.57,
+   "date": "2026-08-13"
   },
   {
    "symbol": "000001.SS",
@@ -95,8 +95,8 @@
    "country": "China",
    "metro": "Shanghai",
    "metroSlug": "shanghai",
-   "value": 3940.41,
-   "date": "2026-08-12"
+   "value": 3964.729,
+   "date": "2026-08-13"
   },
   {
    "symbol": "^KS11",
@@ -104,8 +104,8 @@
    "country": "South Korea",
    "metro": "Seoul",
    "metroSlug": "seoul",
-   "value": 6589.12,
-   "date": "2026-08-12"
+   "value": 6806.6,
+   "date": "2026-08-13"
   },
   {
    "symbol": "^GSPTSE",
@@ -113,8 +113,8 @@
    "country": "Canada",
    "metro": "Toronto",
    "metroSlug": "toronto",
-   "value": 36475.92,
-   "date": "2026-08-11"
+   "value": 36662.14,
+   "date": "2026-08-12"
   },
   {
    "symbol": "^BVSP",
@@ -122,8 +122,8 @@
    "country": "Brazil",
    "metro": "São Paulo",
    "metroSlug": "",
-   "value": 167874.64,
-   "date": "2026-08-11"
+   "value": 167491.06,
+   "date": "2026-08-12"
   }
  ],
  "commodities": [
@@ -131,43 +131,43 @@
    "symbol": "GC=F",
    "name": "Gold",
    "unit": "USD/oz",
-   "value": 4449.2,
-   "date": "2026-08-12"
+   "value": 4445.5,
+   "date": "2026-08-13"
   },
   {
    "symbol": "SI=F",
    "name": "Silver",
    "unit": "USD/oz",
    "value": 65.36,
-   "date": "2026-08-12"
+   "date": "2026-08-13"
   },
   {
    "symbol": "CL=F",
    "name": "Crude Oil (WTI)",
    "unit": "USD/bbl",
-   "value": 83.65,
-   "date": "2026-08-12"
+   "value": 83.01,
+   "date": "2026-08-13"
   },
   {
    "symbol": "BZ=F",
    "name": "Brent Crude",
    "unit": "USD/bbl",
-   "value": 89.38,
-   "date": "2026-08-12"
+   "value": 88.8,
+   "date": "2026-08-13"
   },
   {
    "symbol": "HG=F",
    "name": "Copper",
    "unit": "USD/lb",
-   "value": 6.646,
-   "date": "2026-08-12"
+   "value": 6.5555,
+   "date": "2026-08-13"
   },
   {
    "symbol": "NG=F",
    "name": "Natural Gas",
    "unit": "USD/MMBtu",
-   "value": 2.777,
-   "date": "2026-08-12"
+   "value": 2.785,
+   "date": "2026-08-13"
   }
  ]
 }
