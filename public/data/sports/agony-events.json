@@ -1,0 +1,437 @@
+{
+  "_calibration": "1.00 pang = the 1996 Syracuse tournament run: maximum sudden heartbreak. Every value below is PROPOSED and awaits Ashwin's calibration. Events do not decay: the curator prices the CURRENT ache directly. Points added to agony = pangs x pang_points (engine param).",
+  "events": [
+    {
+      "sport": "NFL",
+      "slug": "atlanta-falcons",
+      "year": 2016,
+      "name": "28-3",
+      "pangs": 1.4,
+      "note": "Super Bowl LI collapse from 28-3; the most culturally dominant single wound in modern US sport"
+    },
+    {
+      "sport": "NFL",
+      "slug": "atlanta-falcons",
+      "year": 2012,
+      "name": "17-0 NFC Championship collapse",
+      "pangs": 0.7,
+      "note": "Blew 17-0 v 49ers"
+    },
+    {
+      "sport": "NFL",
+      "slug": "buffalo-bills",
+      "year": 1990,
+      "name": "Wide Right",
+      "pangs": 1.2,
+      "note": "Norwood, Super Bowl XXV by one kick"
+    },
+    {
+      "sport": "NFL",
+      "slug": "buffalo-bills",
+      "year": 1999,
+      "name": "Music City Miracle",
+      "pangs": 0.9,
+      "note": "Home Run Throwback playoff dagger"
+    },
+    {
+      "sport": "NFL",
+      "slug": "buffalo-bills",
+      "year": 2021,
+      "name": "13 Seconds",
+      "pangs": 1.1,
+      "note": "Chiefs erase the lead in 13 seconds, divisional OT"
+    },
+    {
+      "sport": "NFL",
+      "slug": "minnesota-vikings",
+      "year": 1998,
+      "name": "The Gary Anderson Miss",
+      "pangs": 1.1,
+      "note": "First miss all season, 15-1 team, NFC Championship"
+    },
+    {
+      "sport": "NFL",
+      "slug": "minnesota-vikings",
+      "year": 2009,
+      "name": "Favre's Interception",
+      "pangs": 0.9,
+      "note": "NFC Championship at New Orleans, Bountygate"
+    },
+    {
+      "sport": "NFL",
+      "slug": "minnesota-vikings",
+      "year": 2015,
+      "name": "The Blair Walsh Miss",
+      "pangs": 0.8,
+      "note": "27-yarder, wild card"
+    },
+    {
+      "sport": "NFL",
+      "slug": "cleveland-browns",
+      "year": 1986,
+      "name": "The Drive",
+      "pangs": 1.0,
+      "note": "Elway, 98 yards, AFC Championship"
+    },
+    {
+      "sport": "NFL",
+      "slug": "cleveland-browns",
+      "year": 1987,
+      "name": "The Fumble",
+      "pangs": 0.9,
+      "note": "Byner at the 3, AFC Championship, consecutive years"
+    },
+    {
+      "sport": "NFL",
+      "slug": "cleveland-browns",
+      "year": 1995,
+      "name": "The Move",
+      "pangs": 1.3,
+      "note": "Franchise taken to Baltimore, which promptly won a Super Bowl; three dark years"
+    },
+    {
+      "sport": "NFL",
+      "slug": "cleveland-browns",
+      "year": 2017,
+      "name": "0-16",
+      "pangs": 0.6,
+      "note": "Perfect imperfection"
+    },
+    {
+      "sport": "NFL",
+      "slug": "detroit-lions",
+      "year": 2008,
+      "name": "0-16",
+      "pangs": 0.6,
+      "note": "The first perfect losing season"
+    },
+    {
+      "sport": "NFL",
+      "slug": "new-york-jets",
+      "year": 2012,
+      "name": "The Butt Fumble",
+      "pangs": 0.4,
+      "note": "Humiliation class rather than near-miss class"
+    },
+    {
+      "sport": "NFL",
+      "slug": "new-york-jets",
+      "year": 2023,
+      "name": "Four Snaps",
+      "pangs": 0.5,
+      "note": "Rodgers' Achilles, season dead in one play"
+    },
+    {
+      "sport": "NFL",
+      "slug": "los-angeles-chargers",
+      "year": 2006,
+      "name": "The McCree Fumble",
+      "pangs": 0.8,
+      "note": "14-2 season ends on a fumbled interception return"
+    },
+    {
+      "sport": "NFL",
+      "slug": "san-francisco-49ers",
+      "year": 2023,
+      "name": "Overtime in Vegas",
+      "pangs": 0.7,
+      "note": "Second Super Bowl loss to the same Chiefs, in OT"
+    },
+    {
+      "sport": "Football",
+      "slug": "sheffield-wednesday",
+      "year": 2026,
+      "name": "The 18-Point Season",
+      "pangs": 0.8,
+      "note": "Dead last in the Championship, 89 conceded, back to League One — the modern nadir of a four-time champion"
+    },
+    {
+      "sport": "Football",
+      "slug": "bolton-wanderers",
+      "year": 2019,
+      "name": "The Administration",
+      "pangs": 0.7,
+      "note": "Hours from expulsion from the Football League; near-death of a founder member"
+    },
+    {
+      "sport": "Football",
+      "slug": "sunderland",
+      "year": 1998,
+      "name": "The Charlton Shootout",
+      "pangs": 0.7,
+      "note": "4-4, lost the playoff final 7-6 on penalties — the cruellest promotion final ever played"
+    },
+    {
+      "sport": "Football",
+      "slug": "everton",
+      "year": 2023,
+      "name": "The Deductions",
+      "pangs": 0.5,
+      "note": "Points deducted twice in one season while fighting the drop"
+    },
+    {
+      "sport": "Football",
+      "slug": "leeds-united",
+      "year": 2004,
+      "name": "Doing a Leeds",
+      "pangs": 0.6,
+      "note": "From Champions League semifinal to financial implosion and freefall — the phrase entered the language"
+    },
+    {
+      "sport": "Football",
+      "slug": "fc-schalke-04",
+      "year": 2001,
+      "name": "Vier-Minuten-Meister",
+      "pangs": 0.8,
+      "note": "Champions for four minutes; Bayern equalise in the 94th at Hamburg. The most famous near-title in German history"
+    },
+    {
+      "sport": "Football",
+      "slug": "fc-schalke-04",
+      "year": 2021,
+      "name": "The Abyss",
+      "pangs": 0.5,
+      "note": "Relegation amid near-bankruptcy; a founding giant hours from ruin"
+    },
+    {
+      "sport": "NBA",
+      "slug": "suns",
+      "year": 2021,
+      "name": "Up 2-0",
+      "pangs": 0.9,
+      "note": "Led the Finals 2-0, lost four straight to Milwaukee; the oldest never-champion franchise's closest miss"
+    },
+    {
+      "sport": "NBA",
+      "slug": "jazz",
+      "year": 1998,
+      "name": "The Push-Off",
+      "pangs": 1.0,
+      "note": "Jordan's last shot as a Bull, home court, back-to-back Finals defeats"
+    },
+    {
+      "sport": "NBA",
+      "slug": "pacers",
+      "year": 2004,
+      "name": "The Malice",
+      "pangs": 0.7,
+      "note": "The brawl that destroyed the franchise's best title team"
+    },
+    {
+      "sport": "NBA",
+      "slug": "kings",
+      "year": 2001,
+      "name": "The Stolen Series",
+      "pangs": 1.0,
+      "note": "2002 WCF Game 6 v the Lakers; the officiating wound that never healed"
+    },
+    {
+      "sport": "NBA",
+      "slug": "nets",
+      "year": 2013,
+      "name": "The Trade",
+      "pangs": 0.5,
+      "note": "KG/Pierce for a decade of picks; self-inflicted ruin"
+    },
+    {
+      "sport": "NBA",
+      "slug": "nets",
+      "year": 2021,
+      "name": "The Superteam Implosion",
+      "pangs": 0.5,
+      "note": "Durant, Kyrie, Harden: one series win"
+    },
+    {
+      "sport": "NBA",
+      "slug": "trail-blazers",
+      "year": 1984,
+      "name": "Bowie Over Jordan",
+      "pangs": 0.8,
+      "note": "The draft curse, part one"
+    },
+    {
+      "sport": "NBA",
+      "slug": "trail-blazers",
+      "year": 2007,
+      "name": "Oden Over Durant",
+      "pangs": 0.8,
+      "note": "The draft curse, part two"
+    },
+    {
+      "sport": "NBA",
+      "slug": "76ers",
+      "year": 2019,
+      "name": "The Bounce",
+      "pangs": 0.8,
+      "note": "Kawhi's quadruple-rim Game 7 winner"
+    },
+    {
+      "sport": "NBA",
+      "slug": "76ers",
+      "year": 2021,
+      "name": "The Simmons Collapse",
+      "pangs": 0.5,
+      "note": "Passed up the dunk; lost to Atlanta"
+    },
+    {
+      "sport": "MLB",
+      "slug": "guardians",
+      "year": 1997,
+      "name": "The Mesa Blown Save",
+      "pangs": 1.1,
+      "note": "Two outs from the title, Game 7, bottom of the 9th"
+    },
+    {
+      "sport": "MLB",
+      "slug": "guardians",
+      "year": 2016,
+      "name": "The Rain Delay",
+      "pangs": 1.0,
+      "note": "Rajai Davis ties Game 7; the delay hands history to the Cubs"
+    },
+    {
+      "sport": "MLB",
+      "slug": "mariners",
+      "year": 2001,
+      "name": "116 Wins",
+      "pangs": 0.8,
+      "note": "The greatest regular season ever played, and no pennant"
+    },
+    {
+      "sport": "MLB",
+      "slug": "mets",
+      "year": 2007,
+      "name": "The Collapse",
+      "pangs": 0.8,
+      "note": "Seven up with seventeen to play"
+    },
+    {
+      "sport": "MLB",
+      "slug": "mets",
+      "year": 2008,
+      "name": "The Encore",
+      "pangs": 0.4,
+      "note": "The collapse, again, to close Shea"
+    },
+    {
+      "sport": "MLB",
+      "slug": "pirates",
+      "year": 1992,
+      "name": "The Sid Bream Slide",
+      "pangs": 0.9,
+      "note": "The slowest man in baseball beats the throw; a generation cursed"
+    },
+    {
+      "sport": "MLB",
+      "slug": "pirates",
+      "year": 2012,
+      "name": "The Twenty Years",
+      "pangs": 0.7,
+      "note": "Twenty consecutive losing seasons, 1993-2012, the North American record"
+    },
+    {
+      "sport": "MLB",
+      "slug": "twins",
+      "year": 2020,
+      "name": "The Eighteen Straight",
+      "pangs": 0.8,
+      "note": "Eighteen consecutive playoff defeats, mostly to the Yankees"
+    },
+    {
+      "sport": "MLB",
+      "slug": "tigers",
+      "year": 2012,
+      "name": "The Sweep",
+      "pangs": 0.4,
+      "note": "Verlander, Scherzer, a Triple Crown winner, and four straight losses"
+    },
+    {
+      "sport": "Football",
+      "slug": "hamburger-sv",
+      "year": 2018,
+      "name": "The Clock Stops",
+      "pangs": 0.8,
+      "note": "The stadium clock counting 55 years of unbroken top-flight football, stopped"
+    },
+    {
+      "sport": "Football",
+      "slug": "hamburger-sv",
+      "year": 2022,
+      "name": "The Fourth Place Purgatory",
+      "pangs": 0.5,
+      "note": "Season after season in the 2. Bundesliga, finishing one spot from the playoff"
+    },
+    {
+      "sport": "Football",
+      "slug": "1-fc-nurnberg",
+      "year": 1969,
+      "name": "The Hangover",
+      "pangs": 0.7,
+      "note": "Champions of Germany 1968; relegated 1969. The Rekordmeister's signature move"
+    },
+    {
+      "sport": "Football",
+      "slug": "1-fc-nurnberg",
+      "year": 2008,
+      "name": "The Second Hangover",
+      "pangs": 0.5,
+      "note": "Pokal winners 2007; relegated 2008. The curse confirmed"
+    },
+    {
+      "sport": "Football",
+      "slug": "fortuna-dusseldorf",
+      "year": 2024,
+      "name": "The Bochum Collapse",
+      "pangs": 0.9,
+      "note": "Won the promotion final first leg 3-0 away; lost 3-0 at home and the shootout"
+    },
+    {
+      "sport": "Football",
+      "slug": "rcd-espanyol",
+      "year": 1988,
+      "name": "The Leverkusen Collapse",
+      "pangs": 0.9,
+      "note": "Won the UEFA Cup final first leg 3-0; lost the second 3-0 and the shootout"
+    },
+    {
+      "sport": "Football",
+      "slug": "rcd-espanyol",
+      "year": 2007,
+      "name": "The Glasgow Shootout",
+      "pangs": 0.6,
+      "note": "A second UEFA Cup final, a second penalty defeat, against Sevilla"
+    },
+    {
+      "sport": "Football",
+      "slug": "heart-of-midlothian",
+      "year": 1986,
+      "name": "The Albert Kidd Final",
+      "pangs": 0.9,
+      "note": "31 games unbeaten, seven minutes from the title; Albert Kidd of Dundee scores twice, Celtic win it on goal difference. Seven days later Hearts lose the Scottish Cup final 3-0. The double heartbreak weekend of Scottish football."
+    },
+    {
+      "sport": "Football",
+      "slug": "olympique-marseille",
+      "year": 1993,
+      "name": "The Stripped Title",
+      "pangs": 0.8,
+      "note": "Won the Champions League, then had the 1992-93 French title stripped and were forcibly relegated over the VA-OM affair. The only French European champion, punished at home in the same breath. Administrative wound, priced like Administration/Deductions but heavier."
+    },
+    {
+      "sport": "Football",
+      "slug": "benfica",
+      "year": 1990,
+      "name": "The Guttmann Curse",
+      "pangs": 1.0,
+      "note": "Béla Guttmann, sacked in 1962: 'not in a hundred years will Benfica win a European Cup.' Eusébio prayed at his grave in Vienna before the 1990 final, held in Vienna. Benfica lost 1-0. Eight European finals lost since the curse. Prices the folklore of the standing curse at its most vivid moment, not any individual's death."
+    },
+    {
+      "sport": "Football",
+      "slug": "torino-fc",
+      "year": 1992,
+      "name": "Three Posts in Amsterdam",
+      "pangs": 0.7,
+      "note": "1992 UEFA Cup final, second leg away to Ajax: 0-0, Torino hit the woodwork three times, lose the trophy on away goals. The sporting wound Gemini asked for; Superga remains outside the pang layer per the taste ruling."
+    }
+  ]
+}
