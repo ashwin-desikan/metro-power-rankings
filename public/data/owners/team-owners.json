@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T11:02:06",
+ "generated": "2026-08-13T12:35:36",
  "rows": [
   {
    "team": "AFC Bournemouth",
@@ -804,7 +804,7 @@
    "confidence": "sourced",
    "coControllers": "Todd Boehly, Stan Kasten",
    "minority": "Magic Johnson, Peter Guber",
-   "note": "Walter is the control person. He separately bought majority control of the Los Angeles Lakers in Oct 2025 and holds a stake in Chelsea through the Boehly side of BlueCo.",
+   "note": "Walter is the control person. He separately bought majority control of the Los Angeles Lakers in Oct 2025 and agreed on 12 Aug 2026 to sell that stake to Josh Kushner and Bob Iger; the Dodgers are not part of that deal. He also holds a stake in Chelsea through the Boehly side of BlueCo.",
    "pendingSummary": null,
    "pendingWhen": null,
    "pendingKind": null,
@@ -1377,15 +1377,15 @@
    "ownerType": "individual",
    "stakeLabel": "Majority",
    "stakePct": null,
-   "confidence": "sourced",
+   "confidence": "contested",
    "coControllers": "Jeanie Buss (Governor)",
    "minority": "Buss family trusts",
-   "note": "The NBA unanimously approved the sale and it closed 30 Oct 2025 at roughly $10B. Jeanie Buss remains team Governor for at least five years, so economic control and league governance are split. Walter also controls the Los Angeles Dodgers and holds a stake in Chelsea.",
-   "pendingSummary": null,
-   "pendingWhen": null,
-   "pendingKind": null,
-   "sourceUrl": "https://www.nba.com/news/nba-approves-sale-majority-interest-lakers-mark-walter",
-   "sourceDate": "2025-10-30"
+   "note": "SALE PENDING. Walter's own purchase closed 30 Oct 2025 at roughly $10B after a unanimous NBA vote. On 12 Aug 2026, fourteen months later, he agreed to sell the controlling stake to Josh Kushner and Bob Iger at a reported $12.5B, a record for a US sports franchise. The Dodgers and the Sparks are not part of that deal. Jeanie Buss remains team Governor and the buyers have said they intend to honour the pact that keeps her there, so the split between economic control and league governance survives the change. The NBA Board of Governors had not voted when this data was compiled.",
+   "pendingSummary": "Josh Kushner and Bob Iger, ~$12.5bn, for Mark Walter's controlling stake",
+   "pendingWhen": "NBA Board of Governors vote, no date announced",
+   "pendingKind": "control sale",
+   "sourceUrl": "https://www.cbssports.com/nba/news/lakers-sold-josh-kushner-bob-iger/",
+   "sourceDate": "2026-08-12"
   },
   {
    "team": "Memphis Grizzlies",
