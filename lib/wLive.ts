@@ -90,14 +90,17 @@ const stripWSuffix = (s: string): string => s.replace(/\s+W$/u, "");
 
 // Competitions whose tables render OUR club names rather than the vendor's.
 //
-// NWSL only, and the reason is completeness, not preference: all 16 NWSL rows
-// resolve to a portal club, so the table reads consistently. FA WSL and Liga F
-// still have clubs with no honours entry (Brighton, West Ham, Leicester;
-// Athletic Club, Eibar, Espanyol, Atletico Madrid, Deportivo Alaves and two
-// more), so canonicalising those today would produce a MIXED table -- some
-// rows "Arsenal Women", others still "Brighton W" -- which reads worse than
-// consistent vendor naming. Add a comp here once its clubs all resolve.
-const CANONICAL_NAME_COMPS = new Set(["nwsl"]);
+// The bar is completeness, not preference: every row has to read the same way.
+// FA WSL and Liga F were held back on the belief that they had clubs with no
+// honours entry. That was wrong. Nine of the ten unresolved clubs DO have
+// entries and were failing normName, not coverage: "Brighton W" against
+// "Brighton & Hove Albion Women", "Atletico Madrid W" against "Atletico de
+// Madrid Femenino", and so on. Those nine are now in W_CLUB_NAME_ALIASES.
+//
+// One club is genuinely undecorated and correctly has no portal page
+// (Leicester City), which resolveName handles by stripping the vendor's " W"
+// for display, so the table reads consistently either way.
+const CANONICAL_NAME_COMPS = new Set(["nwsl", "wsl", "liga-f"]);
 
 const resolveName = (
   name: string | null,
@@ -106,7 +109,14 @@ const resolveName = (
   const nm = name ?? DASH;
   if (!name) return { name: nm, slug: null };
   const club = getWClubByName(name) ?? getWClubByName(stripWSuffix(name));
-  return { name: canonical && club ? club.name : nm, slug: club?.slug ?? null };
+  return {
+    // On a canonicalised table, a club with no portal page still drops the
+    // data provider's bare " W". Otherwise one unresolved club reads
+    // "Leicester City FC W" beside eleven canonical names, and that mixed
+    // table is the reason WSL and Liga F stayed out of CANONICAL_NAME_COMPS.
+    name: canonical ? (club ? club.name : stripWSuffix(nm)) : nm,
+    slug: club?.slug ?? null,
+  };
 };
 
 function toRowVM(r: RawRow, i: number, canonical = false): WLiveRowVM {

@@ -169,16 +169,38 @@ const W_CLUB_NAME_ALIASES: Record<string, string> = {
   // "Seattle Reign FC" again). Unreachable in practice, since the direct
   // index already holds "seattlereign", but a wrong entry here is a trap.
   seattlereign: "seattle-reign-fc",
-  // ESPN carries the club's 2026 rebrand ("Chicago Stars FC") while the
-  // honours data still holds the historical name. Needed for the NWSL odds
-  // join on /sports/standings and /teams/wfootball, which resolves ESPN
-  // display names to portal slugs through this map.
-  // TODO(content): rename the club in womens-football.json and
-  // womens-current-clubs.json, then retire this alias.
-  chicagostars: "chicago-red-stars",
+  // INVERTED on 2026-08-13. The club was renamed to "Chicago Stars FC" in the
+  // Team List, so the honours data now normalises to `chicagostars` on its own
+  // and the old alias (chicagostars -> chicago-red-stars) is both redundant and
+  // pointing at a slug that no longer exists. The direction that still earns
+  // its place is the other one: committed vendor snapshots, and any feed that
+  // has not picked the rebrand up, still say "Chicago Red Stars", which
+  // normalises to `chicagoredstars` and would otherwise resolve to nothing.
+  chicagoredstars: "chicago-stars-fc",
   // api-football shortens the club to "Kansas City W", which normalises to a
   // name the honours data does not carry ("Kansas City Current").
   kansascity: "kansas-city-current",
+
+  // WSL and Liga F. Every club below HAS an honours entry; the vendor's short
+  // or differently-sponsored name simply does not normalise onto it, because
+  // normName strips only the stop words in STOP and these differ by a real
+  // token ("United", "de", "Gloriosas") or by a prefix that is not a stop word
+  // ("SD", "RCD", "CD", "DUX"). Without these the two competitions resolved
+  // 9/12 and 9/16, which meant a mixed table and nine dead links.
+  //
+  // FA WSL.
+  brighton: "brighton-hove-albion-women",
+  westham: "west-ham-united-women",
+  // Liga F. "athletic" is what "Athletic Club W" normalises to once the stop
+  // word "club" is dropped, and no other club in the honours data collides
+  // with it (Charlton normalises to "charltonathletic").
+  athletic: "athletic-bilbao-femenino",
+  eibar: "sd-eibar-femenino",
+  espanyol: "rcd-espanyol-femeni",
+  atleticomadrid: "atletico-de-madrid-femenino",
+  granadtenerife: "cd-tenerife-femenino",
+  edflogrono: "dux-logrono",
+  deportivoalaves: "deportivo-alaves-gloriosas",
 };
 
 let _nameIndex: Map<string, WClub> | null = null;
