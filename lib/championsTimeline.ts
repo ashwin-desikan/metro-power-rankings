@@ -194,6 +194,12 @@ const DORMANT: Record<string, { from: string; why: string }[]> = {
       why: "Shelved again after 2001; the next edition was 2005.",
     },
   ],
+  MLB: [
+    {
+      from: "1903-10-13",
+      why: "The day Boston won the first World Series, which is the day the league pennant stopped being the terminal title of a baseball season. The ledger records the NL and AL pennants for 1901, 1902 and 1904 — the years with no World Series — and not for 1903, so without this cut the 1902 winners keep reigning right through 1903 and into October 1904. That is wrong on its face for the AL, where Boston and not Philadelphia won the 1903 pennant. From November 1903 to September 1904 the board should carry the World Series champion alone. The cut lands on the NL and AL 1902 reigns only: it is later than every reign the AA, Players' League, Temple Cup and 19th-century World's Series strands can still be serving, earlier than the Federal League's, and not later than the start of the 1903 World Series reign it is meant to hand over to.",
+    },
+  ],
 };
 
 let _cache: ChampionsTimeline | null = null;
@@ -282,6 +288,40 @@ export function getChampionsTimeline(): ChampionsTimeline {
       NBA: { "ABA Champions": "aba" },
       // The WHA's Avco World Trophy, 1973-79, beside the Stanley Cup.
       NHL: { "AVCO Cup Champions": "wha" },
+      // Baseball before the World Series settled it. Two things are going on
+      // and they are different in kind, so they are split on both axes.
+      //
+      // LEAGUES. The NL, the AA, the AL, the Players' League and the Federal
+      // League each crowned their own champion, and in 1890 three of them did
+      // it in the same October. Merging them made the NL and AA pennant winners
+      // read as co-holders of one trophy.
+      //
+      // POSTSEASON. The 19th-century World's Series (1884-90), the Temple Cup
+      // (1894-97) and the World Series (1903-) are interleague play-offs, not
+      // league titles, and they are three separate formats rather than one
+      // continuous line: nothing was contested 1891-93 or 1898-1902. Keeping
+      // them apart lets each expire at its own end instead of handing the 1890
+      // co-champions a reign that runs to the first Temple Cup.
+      //
+      // "World Series Champions" is deliberately absent, so it stays on the
+      // main strand and keeps the competition's live current champion.
+      MLB: {
+        "NL Champions": "nl",
+        "AA Champions": "aa",
+        "AL Champions": "al",
+        "Players' League Champions": "pl",
+        "Federal League Champions": "fl",
+        "World's Series Winner": "ws19c",
+        "Temple Cup Winners": "temple",
+      },
+      // Brazil ran two national championships side by side in 1967 and 1968.
+      // Only the Taça Brasil is split out: the Torneio Roberto Gomes Pedrosa is
+      // the direct predecessor of the 1971 Campeonato Nacional de Clubes and
+      // belongs on the main strand, which keeps the national line unbroken
+      // through 1971. Merged, the 1968 season group ran from the Robertão final
+      // in December 1968 to the Taça Brasil final in October 1969 and put
+      // Santos and Botafogo up as joint champions of Brazil for a year.
+      "Brasileiro Série A": { "Taça Brasil": "taca" },
     };
     const strandMap = RIVAL_STRANDS[list[0].competition] ?? {};
     const strandOf = (r: Raw) => strandMap[String(r.eraName ?? "")] ?? "main";
