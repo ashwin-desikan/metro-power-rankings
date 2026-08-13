@@ -49,6 +49,15 @@ COMMODITIES = [
     ("copper", "HG=F", "Copper", "USD/lb"),
     ("natural-gas", "NG=F", "Natural Gas", "USD/MMBtu"),
 ]
+# Kept apart from COMMODITIES rather than folded into it. Bitcoin is the first
+# series on this site with no country, no exchange and no metro, which is the
+# whole reason it gets its own heading instead of being filed under raw
+# materials: the site's organising claim is that markets are places, and this
+# one is the exception that has to be labelled as one. It also trades every day
+# of the year, so it is the only series here without weekend gaps.
+CRYPTO = [
+    ("bitcoin", "BTC-USD", "Bitcoin", "USD/BTC"),
+]
 
 
 def extract(raw):
@@ -87,7 +96,7 @@ def main(argv):
         return self_test()
     metro_slug = {m["name"]: m["slug"] for m in json.load(open(METROS, encoding="utf-8"))}
 
-    indices, commodities, missing = [], [], []
+    indices, commodities, crypto, missing = [], [], [], []
     for slug, sym, name, country, metro in INDICES:
         try:
             q = fetch_quote(sym)
@@ -101,18 +110,19 @@ def main(argv):
                         "metro": metro, "metroSlug": metro_slug.get(metro, ""),
                         "value": q[0], "date": q[1]})
         time.sleep(0.4)
-    for slug, sym, name, unit in COMMODITIES:
-        try:
-            q = fetch_quote(sym)
-        except Exception as e:
-            common.log(f"{sym}: {str(e)[:80]}")
-            q = None
-        if not q:
-            missing.append(sym)
-            continue
-        commodities.append({"slug": slug, "symbol": sym, "name": name, "unit": unit,
-                            "value": q[0], "date": q[1]})
-        time.sleep(0.4)
+    for bucket, rows in ((commodities, COMMODITIES), (crypto, CRYPTO)):
+        for slug, sym, name, unit in rows:
+            try:
+                q = fetch_quote(sym)
+            except Exception as e:
+                common.log(f"{sym}: {str(e)[:80]}")
+                q = None
+            if not q:
+                missing.append(sym)
+                continue
+            bucket.append({"slug": slug, "symbol": sym, "name": name, "unit": unit,
+                           "value": q[0], "date": q[1]})
+            time.sleep(0.4)
 
     if len(indices) < 6:
         sys.exit(f"FATAL: only {len(indices)} indices resolved (missing {missing}) - refusing to write")
@@ -125,17 +135,20 @@ def main(argv):
             "generated_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "as_of": today, "source": "Yahoo Finance chart API",
             "indices": len(indices), "commodities": len(commodities),
+            "crypto": len(crypto),
             "missing": missing,
         },
         "indices": indices,
         "commodities": commodities,
+        "crypto": crypto,
     }
     os.makedirs(OUT_DIR, exist_ok=True)
     json.dump(out, open(os.path.join(OUT_DIR, "markets.json"), "w", encoding="utf-8"),
               indent=1, ensure_ascii=False)
-    values = {e["symbol"]: e["value"] for e in indices + commodities}
+    values = {e["symbol"]: e["value"] for e in indices + commodities + crypto}
     n = append_history(today, values)
-    common.log(f"markets: {len(indices)} indices + {len(commodities)} commodities; history {n} snapshot(s)")
+    common.log(f"markets: {len(indices)} indices + {len(commodities)} commodities "
+               f"+ {len(crypto)} crypto; history {n} snapshot(s)")
 
     # Supabase is the system of record for the long history behind
     # /business/markets/[symbol]; the per-slug JSON is the read model the page
@@ -145,7 +158,7 @@ def main(argv):
     sys.path.insert(0, HERE)
     import series_store
     points = [{"slug": e["slug"], "date": e["date"] or today, "close": e["value"]}
-              for e in indices + commodities]
+              for e in indices + commodities + crypto]
     series_store.push(points)
     extended = sum(1 for p in points if series_store.extend(p["slug"], p["date"], p["close"]))
     common.log(f"markets-series: {extended} read-model file(s) extended")
@@ -164,11 +177,12 @@ def self_test():
     # Slugs are URL segments and Supabase primary keys, so they have to be
     # unique, non-empty and URL-safe. A duplicate here would silently overwrite
     # one series with another's closes.
-    slugs = [r[0] for r in INDICES] + [r[0] for r in COMMODITIES]
+    slugs = [r[0] for r in INDICES] + [r[0] for r in COMMODITIES] + [r[0] for r in CRYPTO]
     assert len(slugs) == len(set(slugs)), "duplicate slug"
     assert all(re.fullmatch(r"[a-z0-9-]+", s) for s in slugs), "slug not URL-safe"
-    assert len(slugs) == 19, f"expected 19 series, got {len(slugs)}"
-    print("self-test: 6/6 PASS")
+    assert len(slugs) == 20, f"expected 20 series, got {len(slugs)}"
+    assert "compare" not in slugs, "`compare` is the overlay route, not a series"
+    print("self-test: 7/7 PASS")
     return 0
 
 

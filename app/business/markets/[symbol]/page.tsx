@@ -3,10 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getMarketSeries } from "@/lib/business";
 import { MARKET_PAGE_SLUGS, hasMarketPage, MARKETS_COMPARE } from "@/lib/marketPages";
+import { makeDeflator, deflateSeries, cagrPct } from "@/lib/realTerms";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import BusinessNav from "../../BusinessNav";
 import { MONO, CARD } from "../../ui";
 import SeriesChart from "./SeriesChart";
+import ProductionPanel from "./ProductionPanel";
 
 // Per-series history page for the nineteen indices and commodities on
 // /business/markets. Series data: public/data/business/markets-series/{slug}.json
@@ -84,6 +86,36 @@ export default async function MarketSeriesPage({ params }: { params: Promise<{ s
   // what a reader can actually compare across markets.
   const cagr = firstVal > 0 && years > 1 ? (Math.pow(lastVal / firstVal, 1 / years) - 1) * 100 : null;
 
+  // The real annualised return is the number that actually travels between
+  // markets and eras, and it is the one a nominal chart hides: the Bovespa's
+  // 6,820-fold nominal rise since 1993 is 29.5-fold in purchasing power. Stated
+  // in prose here as well as offered as a chart toggle, because a reader who
+  // never touches the toggle should still leave with the honest figure.
+  const deflator = makeDeflator(doc.cpi);
+  const realSeries = deflator ? deflateSeries(series, deflator) : [];
+  const realCagr = realSeries.length > 1 ? cagrPct(realSeries) : null;
+  const realMultiple =
+    realSeries.length > 1 && realSeries[0][1] > 0
+      ? realSeries[realSeries.length - 1][1] / realSeries[0][1]
+      : null;
+  // The nominal multiple quoted beside the real one has to be measured over the
+  // SAME window. deflateSeries only ever drops a prefix (dates are untouched),
+  // so the matching nominal start is this far from the end. Quoting the Dow's
+  // 1,737x from 1885 against a real multiple that begins in 1913 would be the
+  // exact sleight of hand this feature exists to remove.
+  const nominalWindowMultiple =
+    realSeries.length > 1 ? lastVal / series[series.length - realSeries.length][1] : null;
+  const nominalStart = series[0][0].slice(0, 4);
+  const realStart = realSeries.length > 1 ? realSeries[0][0].slice(0, 4) : null;
+  const realClamped = realStart != null && realStart !== nominalStart;
+  const realSigned = realCagr != null ? `${realCagr >= 0 ? "+" : ""}${realCagr.toFixed(1)}%` : null;
+  const annualisedNote =
+    realSigned == null
+      ? `a year since ${nominalStart}`
+      : realClamped
+        ? `a year since ${nominalStart} · ${realSigned} real since ${realStart}`
+        : `${realSigned} real · a year since ${nominalStart}`;
+
   const stats: { k: string; v: string; d: string }[] = [
     { k: "Latest", v: fmtLevel(lastVal), d: `${m.unit ? m.unit + " · " : ""}${lastDate}` },
     { k: "1-year", v: pct(yearAgo?.[1] ?? null, lastVal) ?? "—", d: yearAgo ? `from ${fmtLevel(yearAgo[1])}` : "series too young" },
@@ -91,11 +123,13 @@ export default async function MarketSeriesPage({ params }: { params: Promise<{ s
     {
       k: cagr != null ? "Annualised" : "Record high",
       v: cagr != null ? `${cagr >= 0 ? "+" : ""}${cagr.toFixed(1)}%` : fmtLevel(atHi[1]),
-      d: cagr != null ? `a year since ${series[0][0].slice(0, 4)}` : `on ${atHi[0]}`,
+      d: cagr == null ? `on ${atHi[0]}` : annualisedNote,
     },
   ];
 
-  const kindLabel = m.kind === "commodity" ? "Commodity" : "Index";
+  const kindLabel =
+    m.kind === "commodity" ? "Commodity" : m.kind === "crypto" ? "Cryptocurrency" : "Index";
+  const kindGlyph = m.kind === "commodity" ? "🛢️" : m.kind === "crypto" ? "₿" : "📈";
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -111,7 +145,7 @@ export default async function MarketSeriesPage({ params }: { params: Promise<{ s
 
       <header className="mb-6">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">
-          <span aria-hidden>{m.kind === "commodity" ? "🛢️" : "📈"}</span> {m.name}{" "}
+          <span aria-hidden>{kindGlyph}</span> {m.name}{" "}
           <span className="text-[var(--text-dim)] font-normal" style={MONO}>{m.symbol}</span>
         </h1>
         <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
@@ -147,21 +181,59 @@ export default async function MarketSeriesPage({ params }: { params: Promise<{ s
       </section>
 
       <section className="mb-8 rounded-2xl border p-4 sm:p-6" style={{ borderColor: "var(--border)" }}>
-        <SeriesChart name={m.name} unit={m.unit} series={series} />
+        <SeriesChart name={m.name} unit={m.unit} series={series} cpi={doc.cpi} />
         <p className="text-xs text-[var(--text-muted)] mt-3">
           Record high {fmtLevel(atHi[1])} on {atHi[0]}; lowest close {fmtLevel(atLo[1])} on {atLo[0]}.
+          {deflator && realMultiple != null && realCagr != null && nominalWindowMultiple != null && (
+            <>
+              {" "}Since {realStart} the level is up{" "}
+              {nominalWindowMultiple.toFixed(nominalWindowMultiple >= 100 ? 0 : 1)}× in {m.unit ? "price" : "points"};
+              in {deflator.baseYear} money it is{" "}
+              <strong className="font-semibold text-[var(--text)]">
+                {realMultiple.toFixed(realMultiple >= 100 ? 0 : 1)}×
+              </strong>
+              , or {realCagr >= 0 ? "+" : ""}{realCagr.toFixed(1)}% a year after inflation.
+            </>
+          )}
         </p>
       </section>
+
+      {doc.production ? <ProductionPanel p={doc.production} name={m.name} /> : null}
 
       <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
         <h2 className="text-lg font-bold mb-2">About this series</h2>
         <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl">
           Closing levels, one point per trading day. {m.source}.
           {m.sourceNote ? <> {m.sourceNote}</> : null}{" "}
-          Index levels are price returns in local currency, so they exclude dividends and are not
-          adjusted for inflation or exchange rates: a chart of the Nikkei against the S&amp;P compares
-          two different things in two different currencies. None of this is investment advice; all of
-          it is geography with a time axis.
+          {m.kind === "index" ? (
+            <>
+              Index levels are price returns in local currency, so they exclude dividends and are not
+              adjusted for exchange rates: a chart of the Nikkei against the S&amp;P compares two
+              different things in two different currencies.
+            </>
+          ) : m.kind === "crypto" ? (
+            <>
+              This is the only series on the site with no country, no exchange and no home metro
+              behind it, and the only one that trades every day of the year rather than on an
+              exchange calendar.
+            </>
+          ) : (
+            <>
+              Prices are in US dollars. Where the long history is stitched from more than one
+              instrument the join is named above, with the divergence across the overlapping days
+              measured rather than asserted.
+            </>
+          )}
+          {doc.cpi ? (
+            <>
+              {" "}They are quoted nominally by default, with a <em>Real</em> toggle that deflates by{" "}
+              {doc.cpi.basis} (World Bank <span style={MONO}>FP.CPI.TOTL</span>, US series extended to
+              1913 from the BLS via FRED) and expresses the whole history in {doc.cpi.base} money.
+              Inflation data is annual, so the deflator is interpolated between mid-year points, and
+              the real view begins in {doc.cpi.first}, where that CPI record starts.
+            </>
+          ) : null}{" "}
+          None of this is investment advice; all of it is geography with a time axis.
         </p>
       </section>
     </main>

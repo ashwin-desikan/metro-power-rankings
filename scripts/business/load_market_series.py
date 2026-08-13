@@ -129,10 +129,67 @@ def fetch_measuringworth():
     return out
 
 
+# Spot prices from the US Energy Information Administration, served through
+# FRED, public domain. Yahoo's continuous front-month futures only start in
+# 2000 (Brent 2007), and the EIA has published a daily spot price since the
+# 1980s, so the pre-Yahoo years are free history for two of the site's most
+# storied series: WTI covers the 1986 price collapse and the 1990 Gulf spike.
+#
+# THIS IS A SPLICE BETWEEN TWO DIFFERENT INSTRUMENTS, so it is only defensible
+# where they track. Measured on every shared day, 2026-08-13:
+#     WTI    6,502 overlapping days, median divergence 0.12%, p90 1.24%
+#     Brent  4,692 overlapping days, median divergence 1.21%, p90 3.76%
+#     gas    6,487 overlapping days, median divergence 2.55%, p90 10.25%
+# Henry Hub is therefore DELIBERATELY EXCLUDED: spot gas and front-month gas
+# diverge by more than 10% in the tail (up to 641% in a winter squeeze), which
+# is not a seam, it is a second product wearing the same name. It would also
+# have bought only 915 days. Do not "complete the set" by adding it.
+FRED_SPOT = {
+    "crude-oil-wti": ("DCOILWTICO", "WTI spot (Cushing)"),
+    "brent-crude": ("DCOILBRENTEU", "Brent spot (Europe)"),
+}
+
+
+def fetch_fred_daily(sid):
+    import csv, io
+    req = urllib.request.Request(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}",
+                                 headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        text = r.read().decode("utf-8", "replace")
+    out = {}
+    for row in csv.reader(io.StringIO(text)):
+        if len(row) < 2 or not row[0][:4].isdigit() or row[1] in (".", ""):
+            continue
+        try:
+            out[row[0]] = float(row[1])
+        except ValueError:
+            continue
+    return out
+
+
 def series_for(slug, symbol):
     """Everything is Yahoo except the Dow, which is MeasuringWorth with Yahoo
-    filling the tail MeasuringWorth has not published yet."""
+    filling the tail MeasuringWorth has not published yet, and the two oils,
+    which get EIA spot for the years before the futures series begins."""
     y = fetch_yahoo(symbol)
+    if slug in FRED_SPOT:
+        sid, label = FRED_SPOT[slug]
+        spot = fetch_fred_daily(sid)
+        if len(spot) < 5000:
+            raise SystemExit(f"FATAL: FRED {sid} returned {len(spot)} rows; expected ~10,000. "
+                             "Source changed; do not splice a truncated series.")
+        cut = min(y) if y else max(spot)
+        # Futures own every date they cover, so there is exactly ONE seam per
+        # series and today's price never changes source under a reader's feet.
+        older = {d: v for d, v in spot.items() if d < cut}
+        both = [(spot[d], y[d]) for d in spot if d in y and y[d]]
+        dev = sorted(abs(a - b) / b * 100 for a, b in both)
+        if dev:
+            log(f"      seam check vs {label}: {len(both):,} shared days, "
+                f"median {dev[len(dev)//2]:.2f}%, p90 {dev[int(len(dev)*0.9)]:.2f}%")
+        merged = dict(older)
+        merged.update(y)
+        return merged, f"eia spot {len(older):,} before {cut} + yahoo {len(y):,}"
     if slug != "dow-jones":
         return y, f"yahoo {len(y):,}"
     mw = fetch_measuringworth()

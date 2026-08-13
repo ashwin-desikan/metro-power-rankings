@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import { makeDeflator, deflateSeries, type MarketCpi } from "@/lib/realTerms";
 
 // Daily history chart for /business/markets/[symbol]. Same idiom as FxChart:
 // plain SVG, theme tokens, hover crosshair with a header readout rather than a
@@ -17,11 +18,21 @@ import { useMemo, useRef, useState } from "react";
 //
 // CHANGE SINCE RANGE START. An index level in isolation means little, so the
 // readout carries the move from the first visible point as well as the level.
+//
+// REAL TERMS. Every level here is nominal, and over these spans that is the
+// difference between a fact and a fiction: the Dow is up 1,737-fold since 1885
+// in dollars and 52-fold in purchasing power. The Real toggle deflates by the
+// CPI of the country the series is priced in (US CPI for the USD commodity
+// contracts), expressed in the latest CPI year's money. Deflation happens
+// before the range window and before decimation, so every derived number on
+// the chart follows the toggle. See lib/realTerms.ts for the interpolation and
+// the deliberate clamp at the start of the CPI record.
 
 type Props = {
   name: string;
   unit: string | null;
   series: [string, number][];
+  cpi?: MarketCpi | null;
 };
 
 const RANGES: [string, number | null][] = [
@@ -69,19 +80,28 @@ function logTicks(lo: number, hi: number): number[] {
   return out.filter((_, i) => i % keep === 0);
 }
 
-export default function SeriesChart({ name, unit, series }: Props) {
+export default function SeriesChart({ name, unit, series, cpi }: Props) {
   const ref = useRef<SVGSVGElement | null>(null);
   const [range, setRange] = useState<string>("Max");
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const [logPref, setLogPref] = useState<boolean | null>(null);
+  const [real, setReal] = useState(false);
+
+  const deflator = useMemo(() => makeDeflator(cpi), [cpi]);
+  const on = real && deflator != null;
+  const source = useMemo(
+    () => (on && deflator ? deflateSeries(series, deflator) : series),
+    [series, on, deflator],
+  );
+  const clamped = on && deflator != null && Number(series[0][0].slice(0, 4)) < deflator.minYear;
 
   const view = useMemo(() => {
     const years = RANGES.find(([label]) => label === range)?.[1] ?? null;
-    let pts = series;
-    if (years !== null && series.length > 0) {
-      const [ly, lm, ld] = series[series.length - 1][0].split("-").map(Number);
+    let pts = source;
+    if (years !== null && source.length > 0) {
+      const [ly, lm, ld] = source[source.length - 1][0].split("-").map(Number);
       const cut = `${String(ly - years).padStart(4, "0")}-${String(lm).padStart(2, "0")}-${String(ld).padStart(2, "0")}`;
-      pts = series.filter(([d]) => d >= cut);
+      pts = source.filter(([d]) => d >= cut);
     }
     if (pts.length > MAX_DRAWN) {
       const step = (pts.length - 1) / (MAX_DRAWN - 1);
@@ -90,7 +110,7 @@ export default function SeriesChart({ name, unit, series }: Props) {
       pts = keep;
     }
     return pts;
-  }, [series, range]);
+  }, [source, range]);
 
   const vals = view.map((p) => p[1]);
   const lo = vals.length ? Math.min(...vals) : 0;
@@ -177,6 +197,21 @@ export default function SeriesChart({ name, unit, series }: Props) {
               Log
             </button>
           )}
+          {deflator && (
+            <button
+              onClick={() => { setReal(!real); setHoverIdx(null); }}
+              aria-pressed={on}
+              title={`Deflate by ${cpi?.basis ?? "CPI"}, expressed in ${deflator.baseYear} money. Nominal levels over spans this long mostly measure the currency, not the market.`}
+              className="rounded-md border px-2.5 py-1 text-xs font-medium transition"
+              style={{
+                borderColor: on ? "var(--accent)" : "var(--border)",
+                color: on ? "var(--accent)" : "var(--text-muted)",
+                background: "var(--bg-card)",
+              }}
+            >
+              Real
+            </button>
+          )}
         </div>
         <div className="text-xs tabular-nums" style={{ minHeight: "1rem" }}>
           <span className="text-[var(--text-muted)]">
@@ -234,6 +269,13 @@ export default function SeriesChart({ name, unit, series }: Props) {
           </g>
         )}
       </svg>
+      {on && deflator && (
+        <p className="text-[11px] text-[var(--text-muted)] mt-1.5">
+          Real terms: deflated by {cpi?.basis ?? "CPI"} and expressed in {deflator.baseYear} money.
+          {clamped ? ` The real view starts in ${deflator.minYear}, where that CPI record begins; the nominal view goes back to ${series[0][0].slice(0, 4)}.` : ""}
+          {" "}CPI is annual, interpolated between mid-year points.
+        </p>
+      )}
     </div>
   );
 }

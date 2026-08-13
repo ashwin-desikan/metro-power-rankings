@@ -163,6 +163,46 @@ export default async function MarketsPage() {
             </TableBox>
           </section>
 
+          {(data.crypto ?? []).length > 0 && (
+            <section className="mb-10">
+              <SectionHead
+                title="Crypto"
+                sub="The exception that proves the board. Every other row here belongs to a city with a trading floor in it; this one belongs nowhere, and trades every day of the year."
+              />
+              <TableBox>
+                <thead>
+                  <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+                    <th className={TH}>Asset</th>
+                    <th className={THR}>Price</th>
+                    {prev && <th className={THR}>Week</th>}
+                    <th className={TH}>Unit</th>
+                    <th className={THR}>Quote date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(data.crypto ?? []).map((c) => {
+                    const chg = prev ? change(c.symbol, c.value) : null;
+                    return (
+                      <tr key={c.symbol} className="border-t" style={{ borderColor: "var(--border)" }}>
+                        <td className={`${TD} font-semibold whitespace-nowrap`}>
+                          <SeriesName slug={c.slug} name={c.name} />
+                        </td>
+                        <td className={TDR} style={MONO}>{fmtLevel(c.value)}</td>
+                        {prev && (
+                          <td className={TDR} style={{ ...MONO, color: chg == null ? "var(--text-dim)" : chg >= 0 ? "#10b981" : "#E2628B" }}>
+                            {chg == null ? "—" : `${chg >= 0 ? "+" : ""}${(chg * 100).toFixed(1)}%`}
+                          </td>
+                        )}
+                        <td className={`${TD} text-[var(--text-muted)]`}>{c.unit}</td>
+                        <td className={TDR} style={{ ...MONO, color: "var(--text-muted)" }}>{c.date}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </TableBox>
+            </section>
+          )}
+
           <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
             <h2 className="text-lg font-bold mb-2">About this board</h2>
             <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl">

@@ -2,6 +2,9 @@ import "server-only";
 import { readFileSync } from "fs";
 import { join } from "path";
 import type { Metro } from "./shared";
+import type { MarketCpi } from "./realTerms";
+
+export type { MarketCpi };
 
 // Business of the Metros (/business) data layer.
 //   public/data/business/business.json - metro/country money tables, race to
@@ -342,9 +345,13 @@ export type MarketIndex = {
 export type MarketCommodity = { slug?: string; symbol: string; name: string; unit: string; value: number; date: string };
 
 export type MarketsFile = {
-  meta: { generated_at: string; as_of: string; source: string; indices: number; commodities: number; missing: string[] };
+  meta: { generated_at: string; as_of: string; source: string; indices: number; commodities: number; crypto?: number; missing: string[] };
   indices: MarketIndex[];
   commodities: MarketCommodity[];
+  // Optional for the same reason `slug` is: a markets.json written before
+  // 2026-08-13 has no crypto array, and the board must render against an older
+  // cached copy rather than throwing.
+  crypto?: MarketCommodity[];
 };
 
 export type MarketsHistory = {
@@ -390,6 +397,43 @@ export async function getMarkets(): Promise<MarketsFile | null> {
   return load<MarketsFile>("markets.json");
 }
 
+// Where a commodity physically comes from, attached to the price series it is
+// a contract on. Emitted from Supabase's commodity_production by
+// scripts/business/emit_market_series.py, and embedded in the series file for
+// the same reason the CPI block is: one file, one generation, no chance of a
+// page pairing this year's prices with last year's producers.
+//
+// `coverage` is the share of the world total the named countries actually add
+// up to. It is below 100 because the source reports some output only inside
+// regional aggregates, and the page says so rather than implying the list is
+// complete.
+export type MarketProduction = {
+  commodity: string;
+  unit: string;
+  source: string;
+  first: number;
+  latest: number;
+  countries: number;
+  coverage: number;
+  world: [number, number][];
+  leaders: {
+    iso3: string;
+    name: string;
+    value: number;
+    share: number | null;
+    share1980: number | null;
+    peakYear: number;
+    peakShare: number | null;
+  }[];
+  shares: { iso3: string; name: string; series: [number, number][] }[];
+};
+
+// The four things a tracked series can be. "crypto" exists because bitcoin is
+// neither an index (no country, no exchange) nor a commodity (no physical
+// delivery), and mislabelling it as either would put it under a heading that
+// contradicts the site's whole premise that markets are places.
+export type MarketSeriesKind = "index" | "commodity" | "fx" | "crypto";
+
 // Per-series daily history for /business/markets/[symbol]. Supabase's
 // market_series_daily is the system of record; these files are the read model,
 // emitted by scripts/business/emit_market_series.py and extended each morning
@@ -400,7 +444,7 @@ export type MarketSeriesFile = {
   meta: {
     generated_at: string;
     slug: string;
-    kind: "index" | "commodity" | "fx";
+    kind: MarketSeriesKind;
     symbol: string;
     name: string;
     unit: string | null;
@@ -413,6 +457,17 @@ export type MarketSeriesFile = {
     points: number;
   };
   series: [string, number][];
+  // Annual CPI for the country this series is priced in, so the page can offer
+  // a real-terms view. Embedded rather than loaded from a second file on
+  // purpose: it is about a kilobyte, and two files fetched through the GH-raw
+  // ISR path can be at different generations, which would let a chart deflate
+  // today's level by last week's CPI. Null for FX, which has no single
+  // deflator. See lib/realTerms.ts.
+  cpi?: MarketCpi | null;
+  // Only the two oils and gas. Null everywhere else, including the metals,
+  // whose production sources were probed and rejected on 2026-08-13; see the
+  // header of scripts/business/load_commodity_production.py.
+  production?: MarketProduction | null;
 };
 
 export async function getMarketSeries(slug: string): Promise<MarketSeriesFile | null> {
@@ -427,11 +482,12 @@ export type MarketsOverlayFile = {
   meta: { generated_at: string; series: number; note: string };
   series: {
     slug: string;
-    kind: "index" | "commodity" | "fx";
+    kind: MarketSeriesKind;
     name: string;
     unit: string | null;
     start: string;
     series: [string, number][];
+    cpi?: MarketCpi | null;
   }[];
 };
 

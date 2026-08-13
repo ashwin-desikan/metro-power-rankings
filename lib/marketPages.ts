@@ -1,11 +1,11 @@
 // Which series have an individual history page at /business/markets/[symbol].
 //
-// Single source of truth for the nineteen indices and commodities. The static
+// Single source of truth for the twenty indices, commodities and crypto. The static
 // params for the detail route are driven by this list, and the Markets board
 // uses marketHref() to decide whether a row deep-links to its own chart.
 //
 // Adding a series means FOUR things in step, and they are easy to get wrong:
-//   1. INDICES / COMMODITIES in scripts/business/build_markets.py (slug first)
+//   1. INDICES / COMMODITIES / CRYPTO in scripts/business/build_markets.py (slug first)
 //   2. a row in Supabase's market_series_meta (slug is the primary key)
 //   3. a backfill: python scripts/business/load_market_series.py --only <slug>
 //   4. this list
@@ -42,9 +42,18 @@ export const MARKET_COMMODITY_SLUGS = [
   "natural-gas",
 ] as const;
 
+// Its own list rather than an entry in COMMODITIES. Bitcoin has no country, no
+// exchange and no home metro, so filing it under raw materials would put it
+// beneath a heading that contradicts what this site is about. See the `crypto`
+// kind in lib/business.ts.
+export const MARKET_CRYPTO_SLUGS = [
+  "bitcoin",
+] as const;
+
 export const MARKET_PAGE_SLUGS = [
   ...MARKET_INDEX_SLUGS,
   ...MARKET_COMMODITY_SLUGS,
+  ...MARKET_CRYPTO_SLUGS,
 ] as const;
 
 export type MarketPageSlug = (typeof MARKET_PAGE_SLUGS)[number];

@@ -1,10 +1,11 @@
 {
  "meta": {
-  "generated_at": "2026-08-13T14:22:53Z",
+  "generated_at": "2026-08-13T17:01:14Z",
   "as_of": "2026-08-13",
   "source": "Yahoo Finance chart API",
   "indices": 13,
   "commodities": 6,
+  "crypto": 1,
   "missing": []
  },
  "indices": [
@@ -15,7 +16,7 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 7812.18,
+   "value": 7791.59,
    "date": "2026-08-13"
   },
   {
@@ -25,7 +26,7 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 54032.91,
+   "value": 53732.75,
    "date": "2026-08-13"
   },
   {
@@ -35,7 +36,7 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 26844.627,
+   "value": 26778.27,
    "date": "2026-08-13"
   },
   {
@@ -45,7 +46,7 @@
    "country": "United Kingdom",
    "metro": "London",
    "metroSlug": "london",
-   "value": 10790.3,
+   "value": 10772.67,
    "date": "2026-08-13"
   },
   {
@@ -55,7 +56,7 @@
    "country": "Germany",
    "metro": "Frankfurt",
    "metroSlug": "frankfurt",
-   "value": 26382.6,
+   "value": 26299.74,
    "date": "2026-08-13"
   },
   {
@@ -65,7 +66,7 @@
    "country": "France",
    "metro": "Paris",
    "metroSlug": "paris",
-   "value": 8668.42,
+   "value": 8650.56,
    "date": "2026-08-13"
   },
   {
@@ -125,7 +126,7 @@
    "country": "Canada",
    "metro": "Toronto",
    "metroSlug": "toronto",
-   "value": 36711.64,
+   "value": 36622.56,
    "date": "2026-08-13"
   },
   {
@@ -135,7 +136,7 @@
    "country": "Brazil",
    "metro": "São Paulo",
    "metroSlug": "",
-   "value": 167680.62,
+   "value": 166825.27,
    "date": "2026-08-13"
   }
  ],
@@ -145,7 +146,7 @@
    "symbol": "GC=F",
    "name": "Gold",
    "unit": "USD/oz",
-   "value": 4426.4,
+   "value": 4422.9,
    "date": "2026-08-13"
   },
   {
@@ -153,7 +154,7 @@
    "symbol": "SI=F",
    "name": "Silver",
    "unit": "USD/oz",
-   "value": 64.79,
+   "value": 64.955,
    "date": "2026-08-13"
   },
   {
@@ -161,7 +162,7 @@
    "symbol": "CL=F",
    "name": "Crude Oil (WTI)",
    "unit": "USD/bbl",
-   "value": 80.14,
+   "value": 81.89,
    "date": "2026-08-13"
   },
   {
@@ -169,7 +170,7 @@
    "symbol": "BZ=F",
    "name": "Brent Crude",
    "unit": "USD/bbl",
-   "value": 85.94,
+   "value": 87.61,
    "date": "2026-08-13"
   },
   {
@@ -177,7 +178,7 @@
    "symbol": "HG=F",
    "name": "Copper",
    "unit": "USD/lb",
-   "value": 6.6075,
+   "value": 6.605,
    "date": "2026-08-13"
   },
   {
@@ -185,7 +186,17 @@
    "symbol": "NG=F",
    "name": "Natural Gas",
    "unit": "USD/MMBtu",
-   "value": 2.738,
+   "value": 2.747,
+   "date": "2026-08-13"
+  }
+ ],
+ "crypto": [
+  {
+   "slug": "bitcoin",
+   "symbol": "BTC-USD",
+   "name": "Bitcoin",
+   "unit": "USD/BTC",
+   "value": 63052.39,
    "date": "2026-08-13"
   }
  ]

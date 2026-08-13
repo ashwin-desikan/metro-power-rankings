@@ -76,8 +76,11 @@ export default async function CompareMarketsPage() {
           A series that did not exist at the rebase date is left out rather than started late at 100.
           Two lines beginning at 100 on different dates are measuring different periods, which is the
           precise misreading a rebased chart invites. Indices are price returns in local currency, so
-          they exclude dividends and take no account of exchange rates or inflation: a Japanese index
-          rebased in dollars would tell a different story again. Commodities are continuous
+          they exclude dividends and take no account of exchange rates: a Japanese index rebased in
+          dollars would tell a different story again. Inflation is the one distortion you can switch
+          off here. <em>Real</em> deflates every series by the CPI of the country it is priced in
+          before rebasing, which is the difference between Brazil looking like the best market on
+          earth since 1994 and Brazil looking ordinary. Commodities are continuous
           front-month futures, so the long series carries the discontinuities of contracts rolling
           over, not just the price of the metal. Currencies are units per US dollar, so a rising line
           means a weaker currency. None of this is investment advice; all of it is geography with a

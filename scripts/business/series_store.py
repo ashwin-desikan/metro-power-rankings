@@ -103,7 +103,13 @@ def self_test():
     d = tempfile.mkdtemp()
     os.makedirs(os.path.join(d, "sub"), exist_ok=True)
     p = os.path.join(d, "sub", "t.json")
-    json.dump({"meta": {}, "series": [["2020-01-01", 1.0]]}, open(p, "w"))
+    # The cpi block powers the Real toggle and is written only by
+    # emit_market_series.py. extend() runs every morning, so if it ever stopped
+    # round-tripping unknown top-level keys the toggle would quietly vanish from
+    # every page the next day. Pin it.
+    json.dump({"meta": {}, "series": [["2020-01-01", 1.0]],
+               "cpi": {"iso3": "USA", "series": [[2020, 100.0]]},
+               "production": {"commodity": "oil", "leaders": []}}, open(p, "w"))
     global OUT_DIR
     keep, OUT_DIR = OUT_DIR, d
     try:
@@ -115,10 +121,16 @@ def self_test():
         doc = json.load(open(p))
         assert doc["series"][-1] == ["2020-01-02", 9.0], doc["series"]
         assert len(doc["series"]) == 2, "same-day rerun must not duplicate"
+        assert doc.get("cpi", {}).get("iso3") == "USA", (
+            "extend() dropped the cpi block; the daily job would silently remove "
+            "the Real toggle from every markets page")
+        assert doc.get("production", {}).get("commodity") == "oil", (
+            "extend() dropped the production block; the daily job would silently "
+            "remove the where-it-comes-from section")
         assert extend("missing", "2020-01-02", 1.0, "sub") is False
     finally:
         OUT_DIR = keep
-    print("series_store self-test: 6/6 PASS")
+    print("series_store self-test: 8/8 PASS")
     return 0
 
 
