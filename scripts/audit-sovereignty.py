@@ -103,9 +103,29 @@ NOT_SOVEREIGN = {
     # below were rows the board printed as countries in 1818 with a flag, a
     # population and a rank, and the audit said nothing because it had never
     # been told they were not states.
-    "belgium": [(1795, 1830)],       # French, then the United Kingdom of the Netherlands
-    "luxembourg": [(1795, 1890)],    # French, Dutch, and in personal union to 1890
-    "netherlands": [(1795, 1813)],   # Batavian Republic, Kingdom of Holland, then annexed
+    # 🔴 THESE THREE END ONE YEAR LATER THAN THEY USED TO, and the reason is a
+    # seam worth understanding before touching any other row here. This table is
+    # HALF-OPEN — (a, b) means sovereign AT b — while the curated windows in
+    # build-colonisers.py are INCLUSIVE, so `to: 1830` means held through 1830.
+    # Written against each other, the two describe the transition year
+    # differently, and nothing catches it: this audit only reports territories
+    # rendered sovereign that should not be, so a territory held one year too
+    # LONG passes silently.
+    #
+    # Which one is right depends on the MONTH, and for the Benelux the curated
+    # data was right and this table was early. Belgian independence was
+    # recognised on 20 December 1830; French rule in the Netherlands collapsed
+    # in November 1813; William III died on 23 November 1890. In all three the
+    # old order held for most of the year, so the year belongs to it.
+    #
+    # ⚠️ 50 OTHER TERRITORIES STILL DISAGREE BY EXACTLY ONE YEAR — India 1947,
+    # Ghana 1957, Israel 1948 and the rest of the decolonisation wave, where the
+    # transition fell early in the year and this table is likely the RIGHT one.
+    # They are deliberately untouched: reconciling them is a per-territory
+    # editorial pass on the actual date, not a global off-by-one to sweep.
+    "belgium": [(1795, 1831)],       # French, then the United Kingdom of the Netherlands
+    "luxembourg": [(1795, 1891)],    # French, then in personal union to the 1890 succession
+    "netherlands": [(1795, 1814)],   # Batavian Republic, Kingdom of Holland, then annexed
     "greece": [(1458, 1830)],
     "algeria": [(1516, 1962)],       # Ottoman regency, then French from 1830
     "libya": [(1551, 1951)],

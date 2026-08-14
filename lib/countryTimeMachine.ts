@@ -59,6 +59,22 @@ export type TimelinePolity = TimelineEntity & {
   basis: "sum" | "source";
   /** Set when the polity was a slice of ONE modern country. */
   partitionOf?: string;
+  /**
+   * A REGION, not a state. Grouped into one row because the modern countries
+   * under it did not exist, and tagged "not yet one country" rather than
+   * rendered sovereign, so the grouping never asserts a state that was not
+   * there. The Indian subcontinent before the Raj is the first of these.
+   */
+  region?: boolean;
+  /** The region's not-yet-one-country note. */
+  note?: string;
+  /**
+   * Set when the series is DERIVED rather than published. Only the Vietnam
+   * pair, which is OWID's total apportioned by the COW share. `basis` is
+   * "source" for those rows and would otherwise have the board call them the
+   * source's own series, which they are not.
+   */
+  derived?: string;
   /** Percent by which the summed value differs from the source's own series. */
   sourceDivergence: number | null;
 };
@@ -236,6 +252,8 @@ export function getCountryTimeline(): CountryTimeline {
         ...(p.gaps ? { gaps: p.gaps } : {}),
         basis: p.basis,
         ...(p.partitionOf ? { partitionOf: p.partitionOf } : {}),
+        ...(p.region ? { region: true, note: p.note } : {}),
+        ...(p.derived ? { derived: p.derived } : {}),
         sourceDivergence: divergence == null ? null : Math.round(divergence * 100) / 100,
       };
     })

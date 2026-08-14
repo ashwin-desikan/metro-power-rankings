@@ -99,6 +99,7 @@ const LINK_ARGS: Record<string, [string, string]> = {
   AFL: ["AFL", "AFL"],
   NRL: ["NRL", "NRL"],
   NPB: ["Baseball", ""],
+  IPL: ["T20 Cricket", "IPL"],
   CFB: ["CFB", "CFB"],
   CBB: ["Basketball", "CBB"],
 };

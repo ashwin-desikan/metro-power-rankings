@@ -83,6 +83,62 @@ LEAGUE_COMP_BY_COUNTRY = {
     "Portugal": "Primeira Liga", "Scotland": "Scottish Premiership",
 }
 CUP_WOUND_REL = {"major": 0.6, "minor": 0.35}  # cup final lost, by cup class ("super" cups ignored)
+
+# ---------------------------------------------------------------------------
+# The parade roster: every league this engine prices a drought in, named once.
+# parade_drought() reads BOTH of these — see the 🔴 note on that function for
+# what happened when the two gates it feeds were hardcoded separately instead.
+# Adding a league to the index means adding it here in the same commit, or the
+# board will ache for a trophy it refuses to celebrate.
+# ---------------------------------------------------------------------------
+# all-teams.json `league` labels for the non-football leagues scored above.
+PARADE_LEAGUES = ("NFL", "NBA", "MLB", "NHL", "AFL", "NRL", "CFL", "NPB", "IPL")
+# champions-history.json `competition` names for the same set, plus the eight
+# football leagues (via LEAGUE_COMP_BY_COUNTRY) and both college titles.
+# 🔴 MLS AND LIGA MX ARE DELIBERATELY ABSENT: the index does not price them
+# yet (Phase 2). They belong here the day they are scored and not before —
+# this list means "we price the ache", not "a parade happened".
+PARADE_COMPS = (set(LEAGUE_COMP_BY_COUNTRY.values())
+                | {"NFL", "NBA", "MLB", "NHL", "AFL", "NRL", "CFL", "IPL",
+                   "Japan Series",              # NPB
+                   "College Football",          # CFB (already tier 2; explicit anyway)
+                   "NCAA Champions"})           # CBB — tier 3, so previously excluded
+
+# ---------------------------------------------------------------------------
+# Sport groups: the board's top-level filter (Ashwin, 2026-08-14). One level
+# ABOVE the site's all-teams taxonomy on purpose — that file separates
+# "Basketball" from "W Basketball" and "American Football" from "Canadian
+# Football", which is right for a team directory and wrong for a question like
+# "who are the most heartbroken basketball fans on earth". A reader who picks
+# Basketball wants the NBA, the college game and the European clubs in one
+# list, not three lists that each look like the whole answer.
+#
+# ⚠️ The CFL sits under American Football rather than in a code of its own.
+# Three downs and a bigger field is a different game to its players and the
+# same family to a fan choosing a filter, and a one-league group reads as an
+# oversight. Overturnable — it is a labelling call, not a scoring one.
+SPORT_GROUP = {
+    "NFL": "American Football", "CFB": "American Football", "CFL": "American Football",
+    "NBA": "Basketball", "CBB": "Basketball", "WNBA": "Basketball",
+    "CBA": "Basketball", "EuroLeague": "Basketball",
+    "MLB": "Baseball", "NPB": "Baseball",
+    "NHL": "Ice Hockey",
+    "Football": "Football",
+    "AFL": "Australian Rules",
+    "NRL": "Rugby League",
+    "IPL": "Cricket",
+}
+# Every club needs a country so the board can fly a flag. Football and the
+# grand-final leagues already carry one; these are the leagues that did not,
+# and the ones with clubs on both sides of a border are resolved per club from
+# all-teams.json rather than assumed — the Raptors and the Blue Jays are
+# Canadian, and a board that stamps every NBA club with the Stars and Stripes
+# repeats the mistake that put Toronto's World Series in Buffalo.
+LEAGUE_COUNTRY = {"NFL": "United States", "NBA": "United States", "MLB": "United States",
+                  "NHL": "United States", "CFB": "United States", "CBB": "United States",
+                  "CFL": "Canada", "NPB": "Japan"}
+SPLIT_COUNTRY_LEAGUES = {"NHL", "NBA", "MLB"}   # leagues with clubs in two countries
+
 STATURE_MAX = 0.3             # US: agony scales up to +30% by franchise valuation percentile
 CONF_APPEARANCE_SHARE = 0.25  # US: the third clock — years since the last DEEP RUN (conf final+)
 LEAGUE_AS_CONSOL = 0.30       # a league title consoles OTHER honours' longing (e.g. UCL)
@@ -1053,8 +1109,34 @@ def score_nations(data_dir):
 
 def parade_drought(data_dir):
     """Years since the metro last threw a parade for ANY major trophy — the
-    tier 0-2 title ledger PLUS domestic cups and European trophies (Ashwin
-    ruling: Newcastle's 2025 League Cup was a parade)."""
+    tier 0-2 title ledger PLUS every league this index actually prices PLUS
+    domestic cups and European trophies (Ashwin ruling: Newcastle's 2025
+    League Cup was a parade).
+
+    🔴 THE PARADE SET IS THE SET THIS INDEX SCORES. It used to be "tier 0-2 in
+    the champions ledger", and tier measures GLOBAL STATURE, not whether a
+    trophy is a trophy. The two are not the same question, and the gap between
+    them was visible on the live board: the index priced Hamilton's Grey Cup
+    drought at 21.7 and simultaneously refused to count a Grey Cup as a parade,
+    so Toronto read 59 years while the Argonauts were the reigning champions.
+    Ashwin, 2026-08-14: "Vancouver and Toronto have also had CFL success in
+    that time... And Winnipeg and Calgary."
+
+    The same one-sided rule reached further than the CFL. Every competition the
+    engine prices below tier 2 was silently excluded: the NRL, the Japan
+    Series, and — because league tier tracks league quality — the Eredivisie,
+    the Primeira Liga and the Scottish Premiership, so Feyenoord, Benfica and
+    Celtic could win their leagues without their cities holding a parade. The
+    college pair split the same way for the same reason: College Football sits
+    at tier 2 and counted, the NCAA basketball title sits at tier 3 and did
+    not, though the index prices droughts in both.
+
+    So the roster is derived ONCE, from the engine's own scoring tables, and
+    used for both gates below — which competitions end a drought, and which
+    metros are eligible to have one. Those two were separately hardcoded, which
+    is how a metro could be scored for a Grey Cup drought and still never
+    appear on this board at all.
+    """
     ch = load(data_dir, "champions-history.json")
     at = load(data_dir, "sports/all-teams.json")
     cups = load(data_dir, "football/cups.json")
@@ -1065,7 +1147,7 @@ def parade_drought(data_dir):
         m = t.get("metro")
         if not m:
             continue
-        if t.get("league") in ("NFL", "NBA", "MLB", "NHL", "AFL", "IPL"):
+        if t.get("league") in PARADE_LEAGUES:
             pro_metros.add(m)
         elif (t.get("sport") == "Football" and t.get("level") == "Major"
               and t.get("league") in FOOT_LEAGUE_TIER):
@@ -1076,7 +1158,15 @@ def parade_drought(data_dir):
         y = r.get("year") or 0
         if c not in comp_tier or y >= comp_tier[c][1]:
             comp_tier[c] = (r.get("tier"), y)
+    # The tier ledger stays as the BASELINE — it is what brings in the trophies
+    # this engine does not price club-by-club but a city plainly parades for
+    # (the IPL, Copa Libertadores, a World Series). Competitions with no metro
+    # on their rows — Wimbledon, the Tour, the Masters, the Olympic medal
+    # table — fall out on their own below, because an individual's title is
+    # not a city's parade and the ledger leaves their metro blank.
     active = {c for c, (t, y) in comp_tier.items() if y >= 2023 and t is not None and t <= 2}
+    # ...and the engine's own roster is added to it, whatever tier it sits at.
+    active |= {c for c, (t, y) in comp_tier.items() if y >= 2023 and c in PARADE_COMPS}
     mlast = {}
     for r in ch:
         m = str(r.get("metro") or "")
@@ -1301,6 +1391,63 @@ def score_gfl(data_dir):
     return out
 
 
+def score_ipl(data_dir):
+    """The IPL. Ashwin, 2026-08-14: "Let's do IPL."
+
+    Structurally the NPB case — a closed franchise league whose data carries
+    titles and runners-up directly — with the playoff field taken from each
+    season's standings, so the contention clock is real rather than inferred
+    from finals alone.
+
+    🔴 EXPECT SMALL NUMBERS, AND DO NOT FIX THAT. The league is nineteen
+    seasons old, so its longest possible drought is nineteen years, which
+    memory_ramp's sixty-year horizon matures to about a third. Punjab and Delhi
+    will sit far below Toronto and that is the correct answer: an IPL supporter
+    has not waited sixty years, because there was nothing to wait for. Scaling
+    the ramp to league age would price the FORMAT rather than the suffering,
+    and would hand a 2008 franchise the same ache as a 1917 one for waiting a
+    fifth as long. The index measures lived time. Young leagues have less of it.
+
+    Two honest limits, stated rather than papered over:
+      - Every lost final is priced at closeness 1.0. The CFL block reads
+        margins off its grand-final rows and the ledger here has none, so there
+        is no super-over-versus-thrashing distinction to make. Flat is better
+        than invented.
+      - Only ACTIVE franchises score, the same rule the other closed leagues
+        follow. Nobody is still waiting on the Deccan Chargers.
+    """
+    d = load(data_dir, "ipl/data.json")
+    playoffs = collections.defaultdict(list)
+    finals = collections.defaultdict(list)
+    for s in d.get("seasons", []):
+        y = s.get("year")
+        if not y or y > NOW:
+            continue
+        for r in s.get("standings", []):
+            if r.get("playoffs"):
+                playoffs[r["slug"]].append(y)
+            if r.get("finalist") or r.get("champion"):
+                finals[r["slug"]].append(y)
+    out = []
+    for f in d.get("franchises", []):
+        if not f.get("active"):
+            continue
+        slug = f["slug"]
+        titles = [y for y in (f.get("title_years") or []) if y <= NOW]
+        ru = [y for y in (f.get("runner_up_years") or []) if y <= NOW]
+        # Prefer the standings' own finalist flags, falling back to the
+        # franchise summary. The two agree today; the fallback is here so a
+        # season loaded without standings cannot silently erase a final.
+        gf_years = sorted(set(finals.get(slug) or []) | set(titles) | set(ru))
+        contention = sorted(set(playoffs.get(slug) or []))
+        exits = [y for y in contention if y not in set(gf_years)]
+        out.append(_gfl_record(slug, f.get("name") or slug, "IPL", "India",
+                               titles, f.get("founded") or 2008, gf_years,
+                               [(y, 1.0) for y in ru], contention, exits,
+                               closed=True))
+    return out
+
+
 def score_college_clubs(data_dir):
     """CFB and CBB with the full depth Ashwin's portals provide: title-game
     losses, playoff/Final Four exits, bowl and tournament clocks, hope, grind.
@@ -1389,6 +1536,39 @@ def score_college_clubs(data_dir):
     return out
 
 
+def stamp_group_and_country(clubs, data_dir):
+    """Give every club a sport GROUP and a country, in one place.
+
+    Both are display facts the board needs for every row, and doing it per
+    score_* function is how a field ends up present on four sports and absent
+    on the fifth. The country is resolved per club from all-teams.json for the
+    leagues that straddle a border, and only falls back to the league's own
+    country when the club is not matched there.
+    """
+    at = load(data_dir, "sports/all-teams.json")
+    by_league_name = {}
+    for t in at:
+        lg, nm, ctry = t.get("league"), norm(t.get("team")), t.get("country")
+        if lg and nm and ctry:
+            by_league_name.setdefault((lg, nm), ctry)
+    unmatched = collections.Counter()
+    for c in clubs:
+        sport = c.get("sport")
+        c["sport_group"] = SPORT_GROUP.get(sport, sport)
+        if c.get("country"):
+            continue
+        if sport in SPLIT_COUNTRY_LEAGUES:
+            hit = by_league_name.get((sport, norm(c["name"])))
+            if hit:
+                c["country"] = hit
+                continue
+            unmatched[sport] += 1
+        c["country"] = LEAGUE_COUNTRY.get(sport)
+    for lg, n in unmatched.items():
+        print(f"  note: {n} {lg} club(s) not matched in all-teams.json; "
+              f"fell back to {LEAGUE_COUNTRY.get(lg)}")
+
+
 def load_agony_events(data_dir):
     """Optional curated layer: public/data/sports/agony-events.json."""
     p = os.path.join(data_dir, "sports", "agony-events.json")
@@ -1442,9 +1622,10 @@ def main():
     us, never = score_us(dd)
     college, abdicated = score_college(dd)
     college_rows = score_college_clubs(dd)
-    gfl = score_gfl(dd)
+    gfl = score_gfl(dd) + score_ipl(dd)
     clubs = football + us + gfl + college_rows
     apply_agony_events(clubs, load_agony_events(dd))
+    stamp_group_and_country(clubs, dd)
     for grp in ("football", "us", "gfl", "college"):
         assign_quadrants([e for e in clubs if e["group"] == grp])
     nations = score_nations(dd)

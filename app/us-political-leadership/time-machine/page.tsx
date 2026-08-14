@@ -10,6 +10,7 @@ import {
 } from "@/lib/usPolitics";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import USTimeMachine from "../USTimeMachine";
+import HubBackLink from "@/app/_shared/HubBackLink";
 
 const PATH = "/us-political-leadership/time-machine";
 const TITLE = "A Day in American History";
@@ -59,6 +60,7 @@ export default async function USTimeMachinePage() {
       <header className="mb-6">
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
         <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
+        <HubBackLink className="mt-3" />
       </header>
 
       <USTimeMachine

@@ -262,17 +262,53 @@ EXTRA_HOLDINGS = [
     {"slug": "netherlands", "from": 1800, "to": 1809, "holder": "france", "kind": "client",
      "note": "the Batavian Republic, then the Kingdom of Holland from 1806"},
     {"slug": "netherlands", "from": 1810, "to": 1813, "holder": "france", "kind": "annexed"},
-    # Vienna put all three under one crown. This is the answer to the question:
-    # in 1818 Belgium was not a country, it was the southern half of the United
-    # Kingdom of the Netherlands.
+    # Vienna put all three under one crown, but not in the same way, which is
+    # the correction of 2026-08-14: Belgium was merged into a new state and
+    # Luxembourg was not.
+    #
+    # Belgium was one of the two halves Vienna WELDED TOGETHER, not a country
+    # the Dutch took. `annexed` is the nearest kind this vocabulary has and it
+    # points the wrong way on its own, so the note carries the constitutional
+    # fact: the United Kingdom of the Netherlands was a NEW state, and the
+    # north entered it too.
+    #
+    # ⚠️ There is deliberately NO polity for it, which would be the obvious
+    # way to say "one state, two modern territories". A polity absorbs its
+    # members, the client drops any empire row whose metropole is absorbed, and
+    # the Netherlands is a COLDAT metropole — so a United Kingdom of the
+    # Netherlands polity would silently delete "Netherlands and its colonies"
+    # from the 1815-1830 board and scatter Indonesia and Suriname to the bottom
+    # as loose territories. See the guard now enforcing that in
+    # build-country-population.py.
     {"slug": "belgium", "from": 1815, "to": 1830, "holder": "netherlands", "kind": "annexed",
-     "note": "the southern provinces of the United Kingdom of the Netherlands"},
-    {"slug": "luxembourg", "from": 1815, "to": 1830, "holder": "netherlands", "kind": "annexed",
-     "note": "a Grand Duchy held by the Dutch king, inside the German Confederation"},
-    # Luxembourg stayed in personal union with the Dutch crown until William III
-    # died without a son in 1890 and the succession split.
-    {"slug": "luxembourg", "from": 1831, "to": 1890, "holder": "netherlands", "kind": "client",
-     "note": "a Grand Duchy in personal union with the Dutch crown until 1890"},
+     "note": "merged with the northern Netherlands into the new United Kingdom "
+             "of the Netherlands at the Congress of Vienna"},
+    # 🔴 LUXEMBOURG WAS NEVER ANNEXED BY ANYONE IN 1815. Vienna created the
+    # Grand Duchy as a state in its own right, in PERSONAL UNION with the King
+    # of the Netherlands and simultaneously a member of the German Confederation
+    # with a Prussian garrison in the fortress. The board used to file 1815-1830
+    # as "annexed by the Netherlands" and 1831-1890 as "client of the
+    # Netherlands": the same arrangement under two different tags, split at a
+    # year when nothing about the arrangement changed. 1830 is BELGIUM's date.
+    # The old note even contradicted its own tag — "a Grand Duchy held by the
+    # Dutch king, inside the German Confederation" describes a personal union,
+    # which is what `client` is for.
+    #
+    # Luxembourg's own dates are 1839, 1867 and 1890.
+    {"slug": "luxembourg", "from": 1815, "to": 1866, "holder": "netherlands", "kind": "client",
+     "note": "a Grand Duchy in personal union with the Dutch crown, and a member "
+             "state of the German Confederation with a Prussian garrison in the "
+             "fortress; until the 1839 partition it also covered the Belgian "
+             "province that still carries its name"},
+    # The 1867 Treaty of London settled the Luxembourg Crisis: perpetual
+    # neutrality, the Prussian garrison withdrawn, the fortress dismantled. That
+    # left the shared monarch as the only remaining tie, and it lasted until
+    # William III died without a son in 1890 and the Salic succession sent the
+    # Dutch crown to Wilhelmina and the Grand Duchy to Adolphe of Nassau.
+    {"slug": "luxembourg", "from": 1867, "to": 1890, "holder": "netherlands", "kind": "client",
+     "note": "perpetually neutral under the 1867 Treaty of London and no longer "
+             "garrisoned; by then the personal union with the Dutch crown was the "
+             "only tie left, and it ended with the succession of 1890"},
 
     # --- Montenegro ---
     # Not partitioned and not really ruled: the Prince-Bishopric, and from 1852
@@ -298,8 +334,21 @@ EXTRA_HOLDINGS = [
     # for one fact rendered as "occupied by Japan, partial by Japan".
     {"slug": "palestine", "from": 1920, "to": 1948, "holder": "united-kingdom", "kind": "colony"},
     {"slug": "namibia", "from": 1915, "to": 1990, "holder": "south-africa", "kind": "colony"},
-    {"slug": "south-sudan", "from": 1899, "to": 2011, "holder": "sudan", "kind": "partial",
-     "note": "part of Sudan until 2011"},
+    # 🔴 SOUTH SUDAN IS NOT A THING SUDAN "PARTLY HELD". It WAS Sudan, until
+    # 9 July 2011 (Ashwin, 2026-08-14). A `partial` tag left it standing as its
+    # own row for 112 years, captioned "partly held by sudan" — which reads as
+    # a border dispute rather than as one country, and never rolled up into
+    # anything, so no total on the board ever contained it.
+    #
+    # It is now split at independence, which is the year the two territories
+    # stopped sharing a government:
+    #   1899-1955  a British colony alongside Sudan, so it sits inside the
+    #              British Empire with it, exactly as every other colony does
+    #   1956-2011  a member of the DEF_SUD polity in build-country-population.py,
+    #              which is the row a reader sees for the undivided country
+    # Before 1899 the Turco-Egyptian entry above still stands.
+    {"slug": "south-sudan", "from": 1899, "to": 1955, "holder": "united-kingdom",
+     "kind": "colony", "note": "the southern provinces of Anglo-Egyptian Sudan"},
     {"slug": "malta", "from": 1800, "to": 1964, "holder": "united-kingdom", "kind": "colony"},
     {"slug": "samoa", "from": 1900, "to": 1914, "holder": "germany", "kind": "colony"},
     {"slug": "samoa", "from": 1914, "to": 1962, "holder": "new-zealand", "kind": "colony"},
@@ -387,8 +436,14 @@ EXTRA_HOLDINGS = [
      "note": "Tibet was separately governed until 1951"},
     {"slug": "united-states", "from": 1861, "to": 1865, "holder": "", "kind": "partial",
      "note": "the Confederate States held the south"},
-    {"slug": "vietnam", "from": 1955, "to": 1975, "holder": "", "kind": "partial",
-     "note": "divided into North and South"},
+    # ⚠️ NOTHING HERE FOR 1954-1975 ANY MORE, and that is deliberate. This used
+    # to be a `partial` tag reading "divided at the 17th parallel", because no
+    # source we had published the two halves separately. Ashwin asked whether
+    # data existed; Correlates of War carries both, so Vietnam is now genuinely
+    # SPLIT into North and South partition rows (COW_VDR / COW_VNS in
+    # build-country-population.py) and the vietnam slug is absorbed by them for
+    # those years. A `partial` tag on top would be a second, quieter
+    # description of the same fact, and the two would drift.
     {"slug": "yemen", "from": 1967, "to": 1990, "holder": "", "kind": "partial",
      "note": "divided into North and South"},
     {"slug": "tanzania", "from": 1963, "to": 1964, "holder": "", "kind": "partial",
@@ -854,9 +909,91 @@ def spans(years):
     return [(a, b) for a, b in out]
 
 
-# Holders that are not COLDAT colonisers still deserve an era-correct label.
+# ---------------------------------------------------------------------------
+# ERA-CORRECT NAMES. Read for BOTH the country rows and the ad-hoc empire rows.
+#
+# 🔴 THE BOARD USED TO PUT MODERN NAMES ON EVERY HISTORICAL ROW. A 1900 view
+# listed Iran, Thailand, Sri Lanka, Myanmar, Zimbabwe and Burkina Faso, none of
+# which anyone alive in 1900 had heard of. It is the same failure as the rest
+# of this feature — a confident label on a year that cannot support it — and it
+# was the one the board made most often, on every row, in every year.
+#
+# THE TEST FOR ADDING ONE, inherited from ERA_NAME_COUNTRIES below: would a
+# reader IN THAT YEAR have given this as the territory's name? Persia and Siam
+# and the Gold Coast pass. Abyssinia and Formosa do not — those are exonyms
+# other people used, not what the place called itself. Mesopotamia does not: it
+# is a region, not a state.
+#
+# Renames only, never a change of STATE. Where the ground was held by a
+# different polity the polity list already owns it: Rhodesia 1965-1979, the
+# Ottoman Empire, the USSR, Gran Colombia. A name here must be the same
+# territory under a different word.
+#
+# ⚠️ THE FLAG STAYS MODERN, and that is a known compromise. A 1900 row reading
+# "Persia" flies the current Iranian flag, because the site has period artwork
+# for exactly four historical states (see HISTORICAL_FLAG in the client). The
+# polity rows solve this by flying nothing at all; a country row cannot, since
+# it is the same country. Better a right name with an anachronistic flag than a
+# wrong name with a matching one, but it is a compromise and not a solution.
+#
+# ⚠️ Türkiye is deliberately absent. It is a live naming question about the
+# PRESENT, not a historical rename, and the whole site says Turkey; changing it
+# here alone would make the Time Machine disagree with every other page.
 EXTRA_ERA_NAMES = {
     "japan": [[1895, 1947, "Empire of Japan"]],
+
+    # --- the same state under a different name ---
+    "iran": [[1800, 1934, "Persia"]],
+    # Renamed in 1939, reverted in 1945, renamed again in 1949. The revert is
+    # not a technicality: it is the point of the whole exercise, because a
+    # board that shows Thailand in 1946 is wrong in the same way it was wrong
+    # in 1900, just for three years instead of a century.
+    "thailand": [[1800, 1938, "Siam"], [1945, 1948, "Siam"]],
+    "sri-lanka": [[1800, 1971, "Ceylon"]],
+    "myanmar": [[1800, 1988, "Burma"]],
+    "oman": [[1800, 1969, "Muscat and Oman"]],
+    "eswatini": [[1800, 2017, "Swaziland"]],
+    "benin": [[1800, 1974, "Dahomey"]],
+    "burkina-faso": [[1919, 1983, "Upper Volta"]],
+    "cambodia": [[1975, 1988, "Kampuchea"]],
+    "north-macedonia": [[1991, 2018, "Macedonia"]],
+    "jordan": [[1921, 1948, "Transjordan"]],
+    "ireland": [[1922, 1936, "Irish Free State"]],
+    "bangladesh": [[1947, 1970, "East Pakistan"]],
+    "congo-dr": [[1885, 1907, "Congo Free State"], [1908, 1959, "Belgian Congo"],
+                 [1971, 1996, "Zaire"]],
+
+    # --- colonial-era names, where the territory's own name was different ---
+    # The row already says "colony of the United Kingdom"; what it did not say
+    # was that the colony was called the Gold Coast.
+    "ghana": [[1821, 1956, "Gold Coast"]],
+    "malawi": [[1907, 1963, "Nyasaland"]],
+    "zambia": [[1911, 1963, "Northern Rhodesia"]],
+    # 1965-1979 belongs to the Rhodesia polity, not here.
+    "zimbabwe": [[1898, 1964, "Southern Rhodesia"]],
+    "botswana": [[1885, 1965, "Bechuanaland"]],
+    "lesotho": [[1868, 1965, "Basutoland"]],
+    "tanzania": [[1885, 1918, "German East Africa"], [1919, 1963, "Tanganyika"]],
+    "namibia": [[1884, 1989, "South West Africa"]],
+    "vanuatu": [[1906, 1979, "New Hebrides"]],
+    "belize": [[1862, 1972, "British Honduras"]],
+    "indonesia": [[1800, 1949, "Dutch East Indies"]],
+    "kiribati": [[1892, 1978, "Gilbert Islands"]],
+    "tuvalu": [[1892, 1977, "Ellice Islands"]],
+    "east-timor": [[1800, 1974, "Portuguese Timor"]],
+    "malaysia": [[1948, 1962, "Federation of Malaya"]],
+    # 1815-1830 the northern Netherlands was not "the Netherlands" as a reader
+    # means it today, it was the northern half of a larger state that also
+    # contained Belgium. Belgium's own row says it was merged into that state;
+    # without this the Dutch row said nothing at all and the merger read as a
+    # thing that happened only to the Belgians.
+    #
+    # This is also the SAFE way to say it. The obvious alternative, a polity
+    # covering both, would absorb the Netherlands and take the Dutch empire row
+    # down with it — see the guard in build-country-population.py. An era name
+    # relabels the row without changing what it contains, so Indonesia and
+    # Suriname stay where they belong.
+    "netherlands": [[1815, 1830, "United Kingdom of the Netherlands"]],
 }
 
 # 🔴 WHEN the current holder acquired it. Without this every dependency was
@@ -1309,6 +1446,32 @@ def self_test():
         "a leaders-board era names a REGIME, not a state; renaming Iran to "
         "'Pahlavi dynasty' on a population board says the country was called "
         "that, and it was not")
+
+    # --- the curated rename table ---
+    for slug, eras in EXTRA_ERA_NAMES.items():
+        for a, b, nm in eras:
+            assert 1800 <= a <= b <= 2025, (slug, a, b, "an era must run forwards, inside the board")
+            assert nm and nm.strip() == nm, (slug, nm, "a blank or padded name renders as a gap")
+        # NOT `spans` — that is a module-level function this file uses below,
+        # and shadowing it here broke the self-test one assertion later.
+        windows = sorted((a, b) for a, b, _ in eras)
+        for (a1, b1), (a2, _) in zip(windows, windows[1:]):
+            assert b1 < a2, (
+                slug, windows, "two names for one territory in the same year; the "
+                "client resolves ties by latest start, so an overlap makes the "
+                "label depend on list order rather than on history")
+    assert EXTRA_ERA_NAMES["iran"] == [[1800, 1934, "Persia"]], (
+        "Persia is the canary for this whole table: it is the example Ashwin "
+        "raised, and 1935 is the year Reza Shah asked the world to use Iran")
+    assert len(EXTRA_ERA_NAMES["thailand"]) == 2, (
+        "Siam reverted in 1945 and became Thailand again in 1949; collapsing "
+        "that to one span puts Thailand on a 1946 board")
+    assert "turkey" not in EXTRA_ERA_NAMES, (
+        "Türkiye is a live naming question about the present, not a historical "
+        "rename, and this board must not disagree with the rest of the site")
+    assert not (set(EXTRA_ERA_NAMES) & ERA_NAME_COUNTRIES), (
+        "a slug named in both tables would take whichever the client merged "
+        "last, which is not a decision anyone made")
 
     assert _year("1933-01-30") == 1933 and _year(None) is None, _year("1933-01-30")
     assert _year("1871") == 1871

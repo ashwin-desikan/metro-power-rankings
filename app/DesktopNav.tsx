@@ -249,6 +249,12 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuGroupLabel>Geopolitics</MenuGroupLabel>
             <MenuLink href="/orgs" title="Alliances &amp; Orgs" />
             <MenuLink href="/conflicts" title="Interstate Wars" />
+            {/* The past and the future, side by side. /predictions had the
+                same orphan bug the Time Machine hub was built to fix: it was
+                in neither nav and reachable only by knowing the URL. */}
+            <MenuGroupLabel>Across time</MenuGroupLabel>
+            <MenuLink href="/time-machine" title="🕰️ The Time Machine" />
+            <MenuLink href="/predictions" title="🔮 Predictions" />
           </div>
         </div>
         <div className="border-t px-2 py-1.5 flex gap-2" style={{ borderColor: "var(--border)" }}>

@@ -37,21 +37,42 @@ export default function HeartbreakPanel({
   const clocks = h.longing.slice(0, 3);
   const wounds = h.wounds.filter((w) => w.kind !== "agony_event").slice(0, 4);
 
+  // 🔴 CLOSED BY DEFAULT (Ashwin, 2026-08-14). A team page is about the team;
+  // this panel is a cross-site index that happens to have an opinion about it,
+  // and open by default it pushed the page's own content down on every club in
+  // eleven competitions.
+  //
+  // Native <details>, not a client component with useState: this is a server
+  // component and the whole panel is server-rendered, so a toggle costs zero
+  // JavaScript and works before hydration. The SUMMARY still carries the
+  // headline — score, world rank, quadrant and what the club is waiting for —
+  // so a reader who never opens it has still been told the answer. A collapsed
+  // panel that says only "The Heartbreak Index" would be a worse page than no
+  // panel, because it asks for a click without saying what is behind it.
   return (
-    <section className={`rounded-2xl border p-4 sm:p-5 ${className}`} style={CARD} id="heartbreak">
-      <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
-        <h2 className="text-xl font-bold">
-          <Link href="/sports/heartbreak" className="hover:text-[var(--accent)] transition-colors">
+    <details className={`group rounded-2xl border p-4 sm:p-5 ${className}`} style={CARD} id="heartbreak">
+      <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden -m-1 p-1 rounded-lg">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+          <h2 className="text-xl font-bold inline-flex items-baseline gap-2">
             The Heartbreak Index
-          </Link>
-        </h2>
-        <p className="text-[12px] text-[var(--text-muted)]">
-          {h.quadrant ? `${h.quadrant} · ` : ""}
-          {longingLine(h)}
-        </p>
-      </div>
+            <span className="text-[13px] font-semibold text-[var(--text-muted)]" style={MONO}>
+              {h.total.toFixed(1)} · #{h.rank}
+            </span>
+            <span
+              aria-hidden
+              className="text-[11px] text-[var(--text-dim)] transition-transform group-open:rotate-90"
+            >
+              ▸
+            </span>
+          </h2>
+          <p className="text-[12px] text-[var(--text-muted)]">
+            {h.quadrant ? `${h.quadrant} · ` : ""}
+            {longingLine(h)}
+          </p>
+        </div>
+      </summary>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-4 mt-4">
         <Stat v={h.total.toFixed(1)} k="Heartbreak" hint="Agony plus despair, on the published scale" />
         <Stat v={`#${h.rank}`} k={`of ${h.outOf.toLocaleString()} clubs`} />
         <Stat v={`#${h.sportRank}`} k={`in ${h.sport}`} />
@@ -119,6 +140,6 @@ export default function HeartbreakPanel({
           See the whole board →
         </Link>
       </p>
-    </section>
+    </details>
   );
 }

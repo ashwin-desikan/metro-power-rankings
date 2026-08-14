@@ -290,8 +290,39 @@ POLITIES = [
     # The rest are tagged as partial holdings instead.
     {"code": "DEF_KOR", "name": "Korea", "from": 1800, "to": 1910,
      "replaces": ["south-korea", "north-korea"]},
+    # 🔴 PANAMA WAS COLOMBIAN UNTIL 1903 and the board had it standing alone
+    # from 1822 (Ashwin, 2026-08-14). It joined Gran Colombia of its own accord
+    # in November 1821 and stayed with the successor republic through every one
+    # of its four names, until the secession the United States backed in 1903.
+    # Eighty-one years of a country that did not exist yet.
     {"code": "DEF_GCO", "name": "Gran Colombia", "from": 1819, "to": 1831,
-     "replaces": ["colombia", "venezuela", "ecuador"]},
+     "replaces": ["colombia", "venezuela", "ecuador", ["panama", 1821]]},
+    # The successor republic, under all four of its names (New Granada, the
+    # Granadine Confederation, the United States of Colombia, and Colombia from
+    # 1886). Named for its two modern territories rather than for any one of
+    # those, on the same principle as "Ethiopia and Eritrea": the name should
+    # tell a reader what changed, and what changed in 1903 was Panama leaving.
+    {"code": "DEF_CPA", "name": "Colombia and Panama", "from": 1832, "to": 1903,
+     "replaces": ["colombia", "panama"]},
+    # 🔴 SUDAN WAS ONE COUNTRY UNTIL 9 JULY 2011. South Sudan used to render as
+    # its own row tagged "partly held by sudan" for the whole period, which is
+    # neither true nor countable. This is the window in which the two shared a
+    # government AND that government was their own: before 1956 they shared a
+    # coloniser instead, and that is modelled as two colonies of the same
+    # empire in build-colonisers.py, exactly like every other colony pair.
+    {"code": "DEF_SUD", "name": "Sudan and South Sudan", "from": 1956, "to": 2011,
+     "replaces": ["sudan", "south-sudan"]},
+    # ⚠️ NO United Kingdom of the Netherlands POLITY, deliberately. It looks
+    # like the obvious next entry and it would be a REGRESSION: Belgium and
+    # Luxembourg 1815-1830 are already curated in build-colonisers.py as
+    # annexed by the Netherlands, with a note naming the United Kingdom of the
+    # Netherlands, and that curation exists because Ashwin asked the question
+    # in the first place. A polity here would win over that entry, delete the
+    # Netherlands' own row for sixteen years, and leave two contradictory
+    # descriptions of the same ground in two files. The one thing it would
+    # genuinely improve is the framing — Vienna merged two territories into a
+    # new state rather than the Dutch annexing the Belgians — and that is a
+    # wording change to the existing note, not a new row.
     {"code": "DEF_FCA", "name": "Federal Republic of Central America", "from": 1823, "to": 1841,
      "replaces": ["guatemala", "el-salvador", "honduras"]},
     {"code": "DEF_WIF", "name": "West Indies Federation", "from": 1958, "to": 1962,
@@ -310,6 +341,83 @@ POLITIES = [
      "replaces": [], "partitionOf": "yemen"},
     {"code": "OWID_YPR", "name": "South Yemen", "from": 1967, "to": 1990,
      "replaces": [], "partitionOf": "yemen"},
+    # 🔴 THE ONE PAIR ON THIS BOARD WHOSE NUMBERS ARE DERIVED. Germany, Yemen
+    # and Korea split because the source publishes both halves; Vietnam does
+    # not, and for one session that was the reason it stayed whole. The fix is
+    # not a second source pretending to be the first: COW's two halves sit
+    # 5-8% below OWID's Vietnam, so used raw they would have shown 43.97m in
+    # 1975 and 47.68m in 1976 — a 3.7m jump in a year nothing happened.
+    #
+    # So COW supplies the SHARE and OWID supplies the TOTAL, and the two halves
+    # add to the Vietnam figure exactly (see COW_SPLIT in
+    # scripts/business/load_population_series.py, where the sum is asserted).
+    # Ashwin approved the apportionment knowing it is an apportionment. Anyone
+    # reading these two rows as measurements is reading them wrong.
+    #
+    # Dates are Geneva to the fall of Saigon. Formal reunification was July
+    # 1976, but the division on the ground ended in April 1975, and this board
+    # dates the settlement rather than the paperwork everywhere else.
+    # 🔴 `derived` EXISTS BECAUSE basis="source" LIES ABOUT THESE TWO. The board
+    # prints "this is the source's own series" under every partition row, which
+    # is true of East Germany and both Yemens and FALSE here. A rule that holds
+    # for the four rows it was written against and quietly misdescribes the
+    # fifth is the same failure this feature keeps producing, so the row now
+    # carries its own sentence.
+    {"code": "COW_VDR", "name": "North Vietnam", "from": 1954, "to": 1975,
+     "replaces": [], "partitionOf": "vietnam",
+     "derived": "Apportioned, not measured: no source publishes the two halves on "
+                "the same basis as the rest of this board, so the Correlates of War "
+                "figures supply the North/South share and Our World in Data supplies "
+                "the Vietnam total. The two rows add to that total exactly."},
+    {"code": "COW_VNS", "name": "South Vietnam", "from": 1954, "to": 1975,
+     "replaces": [], "partitionOf": "vietnam",
+     "derived": "Apportioned, not measured: no source publishes the two halves on "
+                "the same basis as the rest of this board, so the Correlates of War "
+                "figures supply the North/South share and Our World in Data supplies "
+                "the Vietnam total. The two rows add to that total exactly."},
+]
+
+# ------------------------------------------------------------------ regions --
+# 🔴 A REGION IS NOT A STATE, AND THIS LIST MUST NEVER IMPLY IT WAS. Everything
+# above is a polity: a government that held the ground and can be named. This
+# is the opposite case - ground no single government held, which the board
+# should still show as ONE ROW because the modern countries under it did not
+# exist either.
+#
+# Ashwin, 2026-08-14: combine India, Pakistan and Bangladesh into one line for
+# the years before the Raj. The three rows the board used to show were each
+# individually correct and together they were misleading. Rendering them
+# separately says the 1820 subcontinent contained a Pakistan-shaped thing and a
+# Bangladesh-shaped thing, and it did not: it contained the Company's three
+# presidencies, the Maratha powers, the Sikh empire, Mysore, Hyderabad and
+# several hundred princely states, and the borders that divide those three rows
+# were drawn in 1947. Three "not yet one country" tags on three separate rows
+# state the fact and still draw the wrong picture.
+#
+# The mechanism is the polity one with the one difference that matters: a
+# region renders TAGGED "not yet one country" rather than as a sovereign state,
+# so combining rows never becomes a claim that the combination was a country.
+# Its members stay in FRAGMENTED in build-colonisers.py, so the breakdown
+# underneath still says what each piece was.
+#
+# 🔴 WHOLE TERRITORIES AND ONE SHARED WINDOW ONLY, the same discipline the land
+# empires follow. A region whose members' fragmented windows end in different
+# years would have to extend some or truncate others, and both invent a date.
+# That is the entire reason this list is short: Central Asia looks like an
+# obvious second entry until you notice Kazakhstan falls in 1846 and
+# Turkmenistan in 1884, thirty-eight years apart.
+REGIONS = [
+    # Ends in 1856 rather than 1857 because the colonial run starts in 1857 and
+    # the two must abut exactly - an overlap would have the region absorbing
+    # territories COLDAT simultaneously reports as colonised. If the open
+    # question about dating the Raj from the Company rather than the Crown is
+    # ever settled the other way, this end year moves with it.
+    {"code": "REG_SAS", "name": "Indian subcontinent", "from": 1800, "to": 1856,
+     "region": True,
+     "note": "the Company's presidencies, the Maratha powers, the Sikh empire "
+             "and several hundred princely states; the borders dividing these "
+             "three territories were drawn in 1947",
+     "replaces": ["india", "pakistan", "bangladesh"]},
 ]
 
 
@@ -318,7 +426,7 @@ def build_polities(est, countries, polities=None):
     parts, and the source's own series where it does not."""
     by_slug = {s: dict(v["series"]) for s, v in countries.items()}
     out = []
-    for p in (POLITIES + LAND_EMPIRES if polities is None else polities):
+    for p in (POLITIES + LAND_EMPIRES + REGIONS if polities is None else polities):
         src = est.get(p["code"]) or {}
         gaps = p.get("gaps") or []
         years = [y for y in range(p["from"], p["to"] + 1)
@@ -360,6 +468,14 @@ def build_polities(est, countries, polities=None):
         })
         if p.get("partitionOf"):
             rec["partitionOf"] = p["partitionOf"]
+        # A region carries its own not-yet-one-country note. Without the flag
+        # the client would render it as a sovereign state, which is the single
+        # thing this list must never be allowed to say.
+        if p.get("region"):
+            rec["region"] = True
+            rec["note"] = p["note"]
+        if p.get("derived"):
+            rec["derived"] = p["derived"]
         if parts_missing:
             rec["partsMissingSomeYears"] = sorted(parts_missing)
         out.append(rec)
@@ -507,6 +623,22 @@ def main(argv):
     if dup:
         raise SystemExit(f"FATAL: {dup} heads its own empire row AND sits inside a land "
                          "empire; the board would show that state twice.")
+    # 🔴 THE SAME GUARD FOR POLITIES AND REGIONS. It used to cover LAND_EMPIRES
+    # only, which left the far more tempting mistake unguarded: a polity for the
+    # United Kingdom of the Netherlands, absorbing the Netherlands 1815-1830.
+    # The failure is not a double-count there, it is a DISAPPEARANCE. The client
+    # skips any empire row whose metropole has been absorbed, so the Dutch
+    # empire row would vanish for sixteen years and Indonesia and Suriname would
+    # scatter to the bottom of the board as loose territories, with nothing
+    # anywhere saying so. Found 2026-08-14 while checking exactly that idea.
+    swallowed = sorted({m[0] for p in POLITIES + REGIONS for m in members(p)}
+                       & COLDAT_METROPOLES)
+    if swallowed:
+        raise SystemExit(
+            f"FATAL: {swallowed} heads its own empire row AND is absorbed by a polity or "
+            "region. The empire row would be dropped for those years and its colonies "
+            "would scatter as loose territories. Model the relationship as a curated "
+            "holding in build-colonisers.py instead.")
     # OVERLAPPING YEARS, not overlapping slugs. Armenia was divided between
     # Persia and the Ottomans until 1828 and Russian afterwards; that is two
     # true statements about different decades, not a contradiction.

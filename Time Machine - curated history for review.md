@@ -10,14 +10,14 @@ The board renders a territory with no rule attached as an ordinary sovereign row
 | --- | --- |
 | 1800 | 28 |
 | 1818 | 28 |
-| 1850 | 47 |
-| 1880 | 53 |
-| 1900 | 52 |
+| 1850 | 45 |
+| 1880 | 51 |
+| 1900 | 50 |
 | 1914 | 48 |
 | 1930 | 64 |
 | 1942 | 50 |
-| 1960 | 81 |
-| 1990 | 162 |
+| 1960 | 80 |
+| 1990 | 161 |
 | 2020 | 196 |
 
 ## Empires and polities
@@ -43,6 +43,16 @@ Series is the **sum** of its parts.
 | hungary | 1800-1803 |
 | slovakia | 1800-1803 |
 | slovenia | 1800-1803 |
+
+### Indian subcontinent  ·  1800-1856
+
+Series is the **sum** of its parts.
+
+| territory | inside it |
+| --- | --- |
+| bangladesh | 1800-1856 |
+| india | 1800-1856 |
+| pakistan | 1800-1856 |
 
 ### Korea  ·  1800-1910
 
@@ -124,6 +134,7 @@ Series is the **sum** of its parts.
 | colombia | 1819-1831 |
 | ecuador | 1819-1831 |
 | venezuela | 1819-1831 |
+| panama | 1821-1831 (joined 1821) |
 
 ### Federal Republic of Central America  ·  1823-1841
 
@@ -134,6 +145,15 @@ Series is the **sum** of its parts.
 | el-salvador | 1823-1841 |
 | guatemala | 1823-1841 |
 | honduras | 1823-1841 |
+
+### Colombia and Panama  ·  1832-1903
+
+Series is the **sum** of its parts.
+
+| territory | inside it |
+| --- | --- |
+| colombia | 1832-1903 |
+| panama | 1832-1903 |
 
 ### Austria-Hungary  ·  1867-1918
 
@@ -205,6 +225,27 @@ A slice of **germany**, not a parent of several territories, so there is nothing
 Series comes from the source's own record for this polity.
 
 A slice of **germany**, not a parent of several territories, so there is nothing to sum.
+
+### North Vietnam  ·  1954-1975
+
+Series comes from the source's own record for this polity.
+
+A slice of **vietnam**, not a parent of several territories, so there is nothing to sum.
+
+### South Vietnam  ·  1954-1975
+
+Series comes from the source's own record for this polity.
+
+A slice of **vietnam**, not a parent of several territories, so there is nothing to sum.
+
+### Sudan and South Sudan  ·  1956-2011
+
+Series is the **sum** of its parts.
+
+| territory | inside it |
+| --- | --- |
+| south-sudan | 1956-2011 |
+| sudan | 1956-2011 |
 
 ### United Arab Republic  ·  1958-1961
 
@@ -388,9 +429,9 @@ COLDAT codes eight European powers and nothing else, so the American Philippines
 | singapore | 1942-1945 | japan | occupied |  |
 | solomon-islands | 1942-1945 | japan | partial | the northern and western islands; the campaign from Guadalcanal took three years |
 | singapore | 1963-1964 | malaysia | partial | a state of Malaysia until the separation of 1965 |
-| belgium | 1815-1830 | netherlands | annexed | the southern provinces of the United Kingdom of the Netherlands |
-| luxembourg | 1815-1830 | netherlands | annexed | a Grand Duchy held by the Dutch king, inside the German Confederation |
-| luxembourg | 1831-1890 | netherlands | client | a Grand Duchy in personal union with the Dutch crown until 1890 |
+| belgium | 1815-1830 | netherlands | annexed | merged with the northern Netherlands into the new United Kingdom of the Netherlands at the Congress of Vienna |
+| luxembourg | 1815-1866 | netherlands | client | a Grand Duchy in personal union with the Dutch crown, and a member state of the German Confederation with a Prussian garrison in the fortress; until the 1839 partition it also covered the Belgian province that still carries its name |
+| luxembourg | 1867-1890 | netherlands | client | perpetually neutral under the 1867 Treaty of London and no longer garrisoned; by then the personal union with the Dutch crown was the only tie left, and it ended with the succession of 1890 |
 | samoa | 1914-1962 | new-zealand | colony |  |
 | bangladesh | 1947-1970 | pakistan | partial | East Pakistan, until the war of 1971 |
 | moldova | 1918-1939 | romania | annexed | Bessarabia, united with Romania in 1918 |
@@ -413,7 +454,6 @@ COLDAT codes eight European powers and nothing else, so the American Philippines
 | northern-mariana-islands | 1800-1899 | spain | colony |  |
 | palau | 1800-1898 | spain | colony | Spanish; the German claim of 1885 went to papal arbitration and failed |
 | morocco | 1912-1956 | spain | colony |  |
-| south-sudan | 1899-2011 | sudan | partial | part of Sudan until 2011 |
 | montenegro | 1800-1877 | turkey | client | nominal Ottoman suzerainty over a state that governed itself |
 | belize | 1800-1862 | united-kingdom | colony | the Bay settlement, a formal colony from 1862 |
 | dominica | 1800-1804 | united-kingdom | colony | ceded by France at Paris in 1763 |
@@ -424,6 +464,7 @@ COLDAT codes eight European powers and nothing else, so the American Philippines
 | cyprus | 1878-1960 | united-kingdom | colony |  |
 | egypt | 1882-1922 | united-kingdom | occupied | occupied from 1882, a formal protectorate from 1914 |
 | solomon-islands | 1893-1918 | united-kingdom | colony | the British Solomon Islands Protectorate, declared in 1893 |
+| south-sudan | 1899-1955 | united-kingdom | colony | the southern provinces of Anglo-Egyptian Sudan |
 | vanuatu | 1906-1980 | united-kingdom | colony |  |
 | palestine | 1920-1948 | united-kingdom | colony |  |
 | egypt | 1939-1945 | united-kingdom | partial | sovereign, with British forces in the country under the 1936 treaty |
@@ -460,7 +501,6 @@ COLDAT codes eight European powers and nothing else, so the American Philippines
 | austria | 1945-1955 | _(divided, no single holder)_ | partial | four occupation zones until the State Treaty of 1955 |
 | germany | 1945-1948 | _(divided, no single holder)_ | partial | divided into American, British, French and Soviet occupation zones |
 | palestine | 1949-1966 | _(divided, no single holder)_ | partial | the West Bank administered by Jordan and the Gaza Strip by Egypt |
-| vietnam | 1955-1975 | _(divided, no single holder)_ | partial | divided into North and South |
 | tanzania | 1963-1964 | _(divided, no single holder)_ | partial | Zanzibar was separate until the union |
 | yemen | 1967-1990 | _(divided, no single holder)_ | partial | divided into North and South |
 

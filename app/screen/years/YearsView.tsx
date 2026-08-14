@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+
 import { useSessionState } from '@/lib/useSessionState';
 import type { ScreenYear } from '@/lib/screen';
 
@@ -16,6 +18,28 @@ export default function YearsView({ years }: { years: ScreenYear[] }) {
   const decades = Array.from(new Set(years.map((y) => Math.floor(y.year / 10) * 10))).sort((a, b) => b - a);
   const [decadeRaw, setDecade] = useSessionState<number>('mpr.screen.years.decade', decades[0]);
   const [yearRaw, setYear] = useSessionState<number>('mpr.screen.years.year', 0);
+
+  // `/screen/years?year=1994` opens on that year, so the Time Machine hub can
+  // hand a reader straight here.
+  //
+  // An effect rather than an initialiser, for the same reason as the Power
+  // Atlas: this component server-renders, so reading `window` during render
+  // would be a hydration mismatch. It also has to be an effect anyway, because
+  // the state it sets is backed by sessionStorage.
+  //
+  // ⚠️ IT FIRES ONCE AND THEN NEVER AGAIN. Without the ref it would re-apply
+  // the URL year every time the component re-rendered, and the reader would
+  // find the year chips fighting back every time they clicked one.
+  const consumed = useRef(false);
+  useEffect(() => {
+    if (consumed.current) return;
+    consumed.current = true;
+    const q = parseInt(new URLSearchParams(window.location.search).get('year') ?? '', 10);
+    if (!Number.isFinite(q) || !years.some((y) => y.year === q)) return;
+    setDecade(Math.floor(q / 10) * 10);
+    setYear(q);
+  }, [years, setDecade, setYear]);
+
   const decade = decades.includes(decadeRaw) ? decadeRaw : decades[0];
   const yearsInDec = years
     .filter((y) => Math.floor(y.year / 10) * 10 === decade)

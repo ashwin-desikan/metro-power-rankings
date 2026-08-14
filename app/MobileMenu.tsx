@@ -67,6 +67,13 @@ function buildSections(): Section[] {
       ],
     },
     {
+      label: 'Across time',
+      items: [
+        { href: '/time-machine', label: '🕰️ The Time Machine' },
+        { href: '/predictions', label: '🔮 Predictions' },
+      ],
+    },
+    {
       label: 'More',
       items: [
         { href: '/badges', label: 'Badges' },

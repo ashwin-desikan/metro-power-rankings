@@ -153,6 +153,28 @@ export function getAllCompSlugs(): string[] {
   return [...new Set(all().map((r) => r.compSlug))];
 }
 
+export type YearChampion = RollRow & { tier: number | null };
+
+/**
+ * Every champion crowned in one calendar year, carrying the competition's tier.
+ *
+ * Added for the Time Machine hub, which needs to answer "what was won in this
+ * year" without knowing the competitions in advance. The alternative it
+ * replaces was a hardcoded list of five marquee names, which returned nothing
+ * at all for the 33 years — 1860-1888 and the 1916-1919 war gap — where none
+ * of the five had been founded or was being played.
+ *
+ * `tier` is the CURRENT tier of the competition, not a tier as of that year:
+ * the champions board keeps one tier per competition and does not re-rank it
+ * by era. Fine for ordering by prominence, wrong for any claim about how
+ * important a competition was at the time.
+ */
+export function getChampionsInYear(year: number): YearChampion[] {
+  return all()
+    .filter((r) => r.year === year)
+    .map((r) => ({ ...r, teamHref: hrefFor(r), tier: metaFor(r.competition).tier }));
+}
+
 export type MetroTitle = {
   year: number | null;
   date: string;

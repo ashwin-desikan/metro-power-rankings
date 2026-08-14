@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getPowerHistory } from "@/lib/powerHistory";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
 import PowerHistory from "./PowerHistory";
+import HubBackLink from "@/app/_shared/HubBackLink";
 
 const PAGE_PATH = "/power-atlas";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
@@ -47,6 +48,7 @@ export default function GreatPowersPage() {
               contemporaries. Drag the slider and watch the tiers shift: Britain alone atop the 19th century, the
               crowded great-power table of 1900, the US and USSR splitting the Cold War world, and the present day.
             </p>
+            <HubBackLink className="mt-4" />
           </header>
           <PowerHistory data={data} />
         </div>

@@ -34,9 +34,12 @@ def _metro_lookup():
     arr = data if isinstance(data, list) else data.get("metros", data)
     slugset = {m.get("slug") for m in arr}
     byname = {}
+    # slug -> display name, so a METRO_OVERRIDE can correct the NAME as well as
+    # the slug. See the 🔴 note on METRO_OVERRIDE for why that matters.
+    bysslug = {m.get("slug"): m.get("name") for m in arr if m.get("slug")}
     for m in arr:
         byname.setdefault(_normname(m.get("name") or ""), set()).add(m.get("slug"))
-    return slugset, byname
+    return slugset, byname, bysslug
 
 # Confirmed metro corrections the workbook still carries wrong (audited
 # 2026-06-26, user-confirmed). Keyed (competition, year, canonical) -> slug.
@@ -56,6 +59,22 @@ METRO_NAME_ALIAS = {
     "rotterdam": "rotterdam-the-hague",
 }
 
+# 🔴 AN OVERRIDE CORRECTS THE NAME AND THE SLUG, NOT JUST THE SLUG. It used to
+# fix `metroSlug` only, and `metro` kept whatever the workbook said, so every
+# row in this table shipped with a corrected link and a wrong label: the 1992
+# and 1993 World Series read "Buffalo", the 2019 NBA title read "Tampa" (both
+# the Blue Jays' and the Raptors' COVID-era temporary venues, applied to titles
+# won decades before), and Super Bowl XVIII read "San Francisco-San Jose" for a
+# team that was the Los Angeles Raiders that season.
+#
+# It was not cosmetic, because consumers key on either field and get different
+# answers. build_heartbreak.py's parade_drought() keys on the NAME, so Toronto
+# was told it had not held a parade since the 1967 Stanley Cup while Buffalo
+# was credited with two World Series and Tampa with an NBA title. Ashwin found
+# it on the live board, 2026-08-14.
+#
+# The name is now resolved FROM the corrected slug against metros.json, so the
+# two cannot disagree again by construction rather than by anyone remembering.
 METRO_OVERRIDE = {
     ("MLB", 1992, "Toronto Blue Jays"): "toronto",
     ("MLB", 1993, "Toronto Blue Jays"): "toronto",
@@ -145,7 +164,7 @@ def main():
             "title' column on /sports/champions. Restore the header rather "
             "than mapping it by position."
         )
-    slugset, byname = _metro_lookup()
+    slugset, byname, bysslug = _metro_lookup()
     out = []
     for r in rows[1:]:
         comp = cell(r[ix["Competition"]])
@@ -169,6 +188,14 @@ def main():
             tier_guide = float(guide_raw) if guide_raw not in (None, "") else None
         except (TypeError, ValueError):
             tier_guide = None
+        canon = CANONICAL_ALIAS.get(cell(r[ix["Champion (Canonical)"]]), cell(r[ix["Champion (Canonical)"]]))
+        ovr = METRO_OVERRIDE.get((comp, yr, cell(r[ix["Champion (Canonical)"]])))
+        metro_slug = ovr or _fix_slug(slugset, byname, cell(r[ix["Metro Slug"]]), cell(r[ix["Metro"]]))
+        # The corrected slug wins the LABEL too. Falls back to the workbook's
+        # own name if the slug is not in metros.json, so an override for a
+        # metro the site does not yet carry degrades to today's behaviour
+        # rather than blanking the column.
+        metro_name = (bysslug.get(ovr) if ovr else None) or cell(r[ix["Metro"]])
         out.append({
             "sport": cell(r[ix["Sport"]]),
             "competition": comp,
@@ -177,9 +204,9 @@ def main():
             "season": cell(r[ix["Season"]]),
             "year": yr,
             "champion": cell(r[ix["Champion"]]),
-            "canonical": CANONICAL_ALIAS.get(cell(r[ix["Champion (Canonical)"]]), cell(r[ix["Champion (Canonical)"]])),
-            "metro": cell(r[ix["Metro"]]),
-            "metroSlug": METRO_OVERRIDE.get((comp, yr, cell(r[ix["Champion (Canonical)"]])), _fix_slug(slugset, byname, cell(r[ix["Metro Slug"]]), cell(r[ix["Metro"]]))),
+            "canonical": canon,
+            "metro": metro_name,
+            "metroSlug": metro_slug,
             "date": date,
             "scope": opt("Scope"),
             "scopeType": cell(r[ix["Scope Type"]]),

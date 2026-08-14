@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { TableScroll } from "@/app/_shared/TableScroll";
+import HubBackLink from "@/app/_shared/HubBackLink";
 import { flagCdnUrl } from "@/lib/international-display";
 
 // Time machine for /countries: pick any year from 1800 and see who held every
@@ -47,6 +48,11 @@ type Polity = Entity & {
   gaps?: [number, number][];
   basis: "sum" | "source";
   partitionOf?: string;
+  /** A REGION, not a state — rendered "not yet one country", never sovereign. */
+  region?: boolean;
+  note?: string;
+  /** Set when the series is derived rather than published (the Vietnam pair). */
+  derived?: string;
   sourceDivergence: number | null;
 };
 type Empire = {
@@ -338,13 +344,23 @@ export default function CountryTimeMachine() {
   const eraNameOf = useMemo(() => {
     const m = new Map<string, string>();
     if (!data) return m;
-    for (const [slug, eras] of Object.entries(data.countryEras)) {
-      let best: [number, number, string] | null = null;
-      for (const e of eras) {
-        if (year < e[0] || year > e[1]) continue;
-        if (!best || e[0] > best[0]) best = e;
+    // 🔴 BOTH TABLES, not just the leaders one. `countryEras` is derived from
+    // the leaders layer and covers exactly one country; `extraEraNames` is the
+    // curated list, and until now it was read ONLY when building an ad-hoc
+    // empire row for a holder COLDAT does not know. So every curated rename
+    // was inert on the country rows it was written for: the Netherlands entry
+    // added earlier the same day never rendered anywhere, and nothing failed,
+    // because a name that silently does not change looks exactly like a name
+    // that was never meant to.
+    for (const src of [data.countryEras, data.extraEraNames]) {
+      for (const [slug, eras] of Object.entries(src ?? {})) {
+        let best: [number, number, string] | null = null;
+        for (const e of eras) {
+          if (year < e[0] || year > e[1]) continue;
+          if (!best || e[0] > best[0]) best = e;
+        }
+        if (best) m.set(slug, best[2]);
       }
-      if (best) m.set(slug, best[2]);
     }
     return m;
   }, [data, year]);
@@ -590,7 +606,14 @@ export default function CountryTimeMachine() {
           // Same rule as an empire: a summed state is not stale, its parts are.
           value: n.value, asOf: p.basis === "sum" ? year : n.year,
           stale: p.basis === "sum" ? false : n.stale,
-          polity: p, control: "sovereign",
+          // 🔴 A region is NOT sovereign. It is grouped into one row precisely
+          // because no state held it, so it renders with the same "not yet one
+          // country" tag its members would have carried separately. Without
+          // this line, combining three fragmented rows into one would silently
+          // upgrade them to a country that never existed — a bigger error than
+          // the three-row version it replaces.
+          polity: p, control: p.region ? "fragmented" : "sovereign",
+          notYetNote: p.region ? p.note : undefined,
           parts: liveMembers.get(p.key),
           understatedBy: understates.get(p.name),
           occupiedWithin: (liveMembers.get(p.key) ?? []).flatMap((sl) =>
@@ -811,9 +834,14 @@ export default function CountryTimeMachine() {
           ) : null}
           {r.polity.basis === "source" || r.polity.sourceDivergence ? (
             <li className="text-[11px] text-[var(--text-dim)] pt-1.5 leading-relaxed">
-              {r.polity.basis === "source"
-                ? "A slice of one modern country, so there is nothing to sum; this is the source’s own series."
-                : null}
+              {/* A derived series says so INSTEAD of claiming to be the
+                  source's own. Both sentences would be a contradiction, and
+                  the default one is the wrong half of it. */}
+              {r.polity.derived
+                ? r.polity.derived
+                : r.polity.basis === "source"
+                  ? "A slice of one modern country, so there is nothing to sum; this is the source’s own series."
+                  : null}
               {r.polity.sourceDivergence ? (
                 <>
                   {r.polity.basis === "source" ? " " : null}
@@ -944,6 +972,10 @@ export default function CountryTimeMachine() {
           />
         </label>
       </div>
+
+      {/* The return leg to the hub. This board is one of sixteen that answer a
+          year, and until the hub existed none of them said so. */}
+      <div className="mb-2"><HubBackLink /></div>
 
       {/*
         COLLAPSED BY DEFAULT (Ashwin, 2026-08-14): "it's unnecessarily long and

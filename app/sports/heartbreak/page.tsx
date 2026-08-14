@@ -50,7 +50,10 @@ interface ClubRow {
   slug: string;
   name: string;
   sport: string;
+  /** The engine's internal partition: football / us / gfl / college. */
   group: string;
+  /** The reader-facing roll-up: American Football, Basketball, ... */
+  sport_group?: string;
   country?: string;
   agony: number;
   despair: number;
@@ -130,6 +133,7 @@ const LINK_ARGS: Record<string, [string, string]> = {
   NPB: ["Baseball", ""],
   CFB: ["CFB", "CFB"],
   CBB: ["Basketball", "CBB"],
+  IPL: ["T20 Cricket", "IPL"],
 };
 
 function teamHref(sport: string, name: string): string | undefined {
@@ -169,12 +173,16 @@ function Th({ children }: { children: React.ReactNode }) {
 
 export default function HeartbreakPage() {
   const data = loadHeartbreak();
+  // The QUADRANT cards below still take the scoring clubs only — a quadrant is
+  // a shape of suffering and a club with none has no place in one. The BOARD
+  // takes everything, including the 0.0s. See the note in HeartbreakBoard.
   const board = data.clubs.filter((c) => c.total > 0).slice(0, 100);
-  const boardRows: BoardRow[] = data.clubs.filter((c) => c.total > 0).map((c, i) => ({
+  const boardRows: BoardRow[] = data.clubs.map((c, i) => ({
     rank: i + 1,
     name: c.name,
     href: teamHref(c.sport, c.name),
     sport: c.sport,
+    sportGroup: c.sport_group ?? c.sport,
     country: c.country,
     total: c.total,
     agony: c.agony,

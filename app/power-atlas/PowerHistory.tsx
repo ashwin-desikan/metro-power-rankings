@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Row = { slug: string; share: number | null; rank: number | null; tier: string; lat?: number | null; rec?: number | null };
 type NamePeriod = { name: string; start: string | null; end: string | null };
@@ -54,6 +54,27 @@ export default function PowerHistory({ data }: { data: Data }) {
   const { years, byYear, labels } = data;
   const minY = years[0] ?? 1789, maxY = years[years.length - 1] ?? 2026;
   const [year, setYear] = useState(maxY);
+  // `/power-atlas?year=1815` opens on that year, so the Time Machine hub can
+  // hand a reader straight to it.
+  //
+  // 🔴 AN EFFECT, NOT A useState INITIALISER, and the difference is not style.
+  // The Countries board reads its `?year=` synchronously in the initialiser,
+  // and its comment says why that is safe THERE: its subtree only mounts after
+  // a tab click, so it never server-renders. This component is imported
+  // straight into a server page, so a synchronous window read would return
+  // 2026 on the server and 1815 on the client's hydration pass — a hydration
+  // mismatch. Copying the idiom without copying its precondition was the first
+  // thing I tried here.
+  //
+  // The cost is one frame on the newest year before it jumps. The alternative,
+  // reading searchParams in the page, would turn a static route dynamic for a
+  // rendering nicety.
+  useEffect(() => {
+    const q = parseInt(new URLSearchParams(window.location.search).get("year") ?? "", 10);
+    // Out of range falls back rather than clamping: a board that answers a
+    // question you did not ask is worse than one that ignores you.
+    if (Number.isFinite(q) && q >= minY && q <= maxY) setYear(q);
+  }, [minY, maxY]);
   const [hover, setHover] = useState<string | null>(null);
   const [lens, setLens] = useState<Lens>("power");
   const [blendT, setBlendT] = useState(0.5);

@@ -64,7 +64,8 @@ usage:
   python scripts/business/load_population_series.py --dry
   python scripts/business/load_population_series.py
 """
-import csv, io, json, os, sys, urllib.parse, urllib.request
+import csv, io, json, os, sys, urllib.parse, urllib.request, zipfile
+from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
@@ -90,10 +91,22 @@ COL_PROJECTION = "population_projection__projected"
 # (peak, multiple, the chart axis) would quietly start lying.
 FROM_YEAR = 1800
 
-# The ceiling. OWID's projection column runs to 2100 and loading all of it
-# would put 75 years of forecast behind a chart captioned "population". Two
-# years is what the World Bank used to supply and what the site already showed.
-TO_YEAR = 2025
+# The ceiling: THE CURRENT CALENDAR YEAR, and not one year further.
+#
+# OWID's projection column runs to 2100 and loading all of it would put 75
+# years of forecast behind a chart captioned "population". But the first
+# version of this line hardcoded 2025 and was already a year stale on the day
+# it shipped, which is how /time-machine?year=2026 came to have no world
+# population at all (Ashwin, 2026-08-14). A fixed ceiling for a series whose
+# whole job is to reach the present is a bug with a scheduled fire date, so the
+# rule is stated as a rule and computed: the line ends at the year we are
+# actually in.
+#
+# 🔴 THIS DOES NOT MAKE PROJECTIONS INTO ESTIMATES. Everything past the WPP
+# estimate boundary is still tagged kind="projection" and is still barred from
+# setting a rank, a peak or a share downstream. The ceiling only decides how
+# far the CHART reaches.
+TO_YEAR = datetime.now(timezone.utc).year
 
 WORLD = "WLD"
 
@@ -145,6 +158,80 @@ OWID_DEFUNCT = {
     "OWID_YPR": "Yemen People's Republic",
     "OWID_ERE": "Ethiopia (former)",
 }
+
+# ---------------------------------------------------------------------------
+# THE SECOND SOURCE, AND WHY THIS FILE NOW OWNS A SPLICE IT SPENT ITS DOCSTRING
+# ARGUING AGAINST (Ashwin, 2026-08-14).
+#
+# The argument for taking OWID whole was one provenance story instead of a
+# splice. That still holds for every living country. It fails for four of the
+# nine defunct polities, and it fails badly:
+#
+#     East Germany   3 usable points across a 42-year life (1950, 1973, 1990)
+#     West Germany   3 usable points across a 42-year life
+#     North Yemen    NOTHING between 1962 and 1969, so the board rendered its
+#                    1820 figure, labelled "as of 1820", on a 1965 view
+#     South Yemen    NOTHING between 1967 and 1969
+#
+# OWID's series for those four are Maddison BENCHMARK years (1820, 1870, 1913,
+# 1950, 1973) rather than the annual UN/Gapminder run every other entity gets.
+# Czechoslovakia has 1920-1993 annual, the USSR has 1922-1991. The Germanies
+# were never given the same treatment, and no amount of loading OWID more
+# carefully produces years it does not publish.
+#
+# So this is a splice, declared as one. COW's National Material Capabilities
+# carries annual total population for every state in its system, including all
+# four of these, and it AGREES with OWID where they overlap:
+#
+#     West Germany 1973  +0.01%      East Germany 1973  +0.53%
+#     West Germany 1990  +0.00%      East Germany 1990  +0.85%
+#
+# 🔴 GAP-FILL ONLY, NEVER WHOLESALE REPLACEMENT. COW is used strictly for years
+# OWID does not publish for these codes. Two reasons, and the second is the
+# real one:
+#   1. Where OWID has a year it is the better-reconciled number, and it is what
+#      every other row on the board is built from.
+#   2. COW's own documentation warns that quality varies by state and by year,
+#      and it does. Its South Yemen 1973 reads 1,950,000 between neighbours of
+#      1,515,000 and 1,632,000 — a 21% spike against OWID's smooth 1,609,000,
+#      and plainly wrong. Restricting COW to the gap years keeps that value out
+#      by construction rather than by anyone spotting it. Widen a window here
+#      and you invite it back in.
+COW_URL = "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip"
+COW_SOURCE = ("Correlates of War National Material Capabilities v7.0 "
+              "(Singer, Bremer and Stuckey 1972); annual total population, "
+              "gap-filling years Our World in Data does not publish")
+# iso3 code -> (COW ccode, first year, last year, label). The windows are the
+# GAPS, not the entities' lifespans.
+COW_FILL = {
+    "OWID_GDR": ("265", 1954, 1989, "East Germany"),
+    "OWID_GFR": ("260", 1955, 1989, "West Germany"),
+    "OWID_YAR": ("678", 1962, 1969, "North Yemen"),
+    "OWID_YPR": ("680", 1967, 1969, "South Yemen"),
+}
+
+# 🔴 VIETNAM IS AN APPORTIONMENT, NOT A MEASUREMENT, AND MUST KEEP SAYING SO.
+# COW carries both halves annually (816 North, 817 South, and 816 becomes the
+# unified country in 1976), but its levels sit 5-8% BELOW OWID's Vietnam. Taken
+# raw, 1975 would read 43.97m across two rows and 1976 would read 47.68m as
+# one: a 3.7m jump in a single year that did not happen, with the board
+# contradicting itself in the reader's face.
+#
+# So COW supplies only the SHARE and OWID supplies the total. North's share in
+# 1975 is 54.65%, which against OWID's 46,482,905 gives 25,403,706 and
+# 21,079,199 — and the two halves add to OWID's Vietnam exactly, every year, so
+# the 1975-to-1976 transition is continuous. That is a derived figure and the
+# row has to say it is derived. It is not the same kind of number as the rest
+# of this file and must never be quietly treated as one.
+COW_SPLIT = {
+    "COW_VDR": ("816", "North Vietnam"),
+    "COW_VNS": ("817", "South Vietnam"),
+}
+COW_SPLIT_OF = "VNM"          # the OWID code whose total is apportioned
+COW_SPLIT_FROM, COW_SPLIT_TO = 1954, 1975
+COW_SPLIT_SOURCE = ("Apportioned: Correlates of War NMC v7.0 gives the North/South "
+                    "share, Our World in Data gives the Vietnam total. Derived, "
+                    "not measured; the two halves sum to the total exactly")
 
 
 def _get_json(url, timeout=180):
@@ -255,6 +342,84 @@ def parse_owid(rows):
     return out
 
 
+def fetch_cow(timeout=300):
+    """-> {ccode: {year: population}} from the NMC v7 abridged CSV.
+
+    The download is a zip of a zip. tpop is in THOUSANDS and uses negative
+    sentinels for missing, which are dropped rather than coerced to zero: a
+    zero population would sail through every downstream check and render as a
+    country of nobody.
+    """
+    req = urllib.request.Request(COW_URL, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        outer = zipfile.ZipFile(io.BytesIO(r.read()))
+    inner_name = next(n for n in outer.namelist() if n.endswith("abridged.zip"))
+    inner = zipfile.ZipFile(io.BytesIO(outer.read(inner_name)))
+    csv_name = next(n for n in inner.namelist() if n.lower().endswith(".csv"))
+    rows = list(csv.DictReader(io.StringIO(inner.read(csv_name).decode("utf-8", "replace"))))
+    if not rows or "tpop" not in rows[0]:
+        raise SystemExit(f"FATAL: COW NMC shape changed; got columns {list(rows[0]) if rows else []}")
+    out = {}
+    for r in rows:
+        try:
+            v = float(r["tpop"])
+            y = int(r["year"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        if v < 0:                      # COW's missing-value sentinel
+            continue
+        out.setdefault(str(r["ccode"]).strip(), {})[y] = int(round(v * 1000))
+    return out
+
+
+def build_cow_rows(cow, owid_rows):
+    """-> [row] filling declared gaps, plus the apportioned Vietnam pair.
+
+    `owid_rows` is what parse_owid returned, so "gap" means a year OWID did not
+    publish for that code IN THIS LOAD rather than a year someone believed was
+    missing when they wrote the table down.
+    """
+    have = {(r["iso3"], r["year"]) for r in owid_rows}
+    out, notes = [], []
+    for code, (ccode, lo, hi, label) in sorted(COW_FILL.items()):
+        series = cow.get(ccode) or {}
+        if not series:
+            raise SystemExit(f"FATAL: COW ccode {ccode} ({label}) returned no population; "
+                             "the gap this fills would silently reopen.")
+        added = 0
+        for y in range(lo, hi + 1):
+            v = series.get(y)
+            if v is None or (code, y) in have:
+                continue
+            out.append({"iso3": code, "year": y, "population": v,
+                        "source": COW_SOURCE, "kind": "estimate"})
+            added += 1
+        notes.append(f"{label} +{added}")
+
+    # The apportionment. Refuses rather than guesses if either side is missing:
+    # a year with only one half would put a country on the board holding the
+    # other half's people.
+    total = {r["year"]: r["population"] for r in owid_rows
+             if r["iso3"] == COW_SPLIT_OF and r["kind"] == "estimate"}
+    (a_code, (a_cc, a_label)), (b_code, (b_cc, b_label)) = sorted(COW_SPLIT.items())
+    split_added = 0
+    for y in range(COW_SPLIT_FROM, COW_SPLIT_TO + 1):
+        a, b, t = cow.get(a_cc, {}).get(y), cow.get(b_cc, {}).get(y), total.get(y)
+        if not (a and b and t):
+            raise SystemExit(f"FATAL: cannot apportion {COW_SPLIT_OF} in {y}: "
+                             f"north={a} south={b} total={t}. Refusing to publish "
+                             "half a partition.")
+        share = a / (a + b)
+        av = int(round(t * share))
+        out.append({"iso3": a_code, "year": y, "population": av,
+                    "source": COW_SPLIT_SOURCE, "kind": "estimate"})
+        out.append({"iso3": b_code, "year": y, "population": t - av,
+                    "source": COW_SPLIT_SOURCE, "kind": "estimate"})
+        split_added += 1
+    notes.append(f"{a_label}/{b_label} {split_added}y apportioned")
+    return out, notes
+
+
 def main(argv):
     if "--self-test" in argv:
         return self_test()
@@ -266,6 +431,9 @@ def main(argv):
         + (" (DRY RUN)" if dry else ""))
 
     rows = parse_owid(fetch_owid())
+    cow_rows, cow_notes = build_cow_rows(fetch_cow(), rows)
+    rows += cow_rows
+    log(f"  COW gap-fill: {len(cow_rows):,} row(s) — {', '.join(cow_notes)}")
     codes = {r["iso3"] for r in rows}
     years = sorted({r["year"] for r in rows})
     defunct = sorted(codes & set(OWID_DEFUNCT))
@@ -322,9 +490,26 @@ def main(argv):
     # codes OWID does not carry (43 of its aggregates, ARB/EUU/LDC and friends)
     # and any year that has since dropped out. Keyed on provenance rather than
     # on a year literal, so a future source change cleans up after itself.
-    stale = urllib.parse.quote(OWID_SOURCE, safe="")
-    rest("DELETE", f"/rest/v1/country_population?source=neq.{stale}", key=key)
-    log("swept rows not written by this source")
+    #
+    # 🔴 THIS USED TO BE ONE `source=neq.<OWID>` DELETE, and it became a trap the
+    # moment a second source existed: it would have wiped every COW row on the
+    # next OWID-only run, silently, and the Germanies would have quietly
+    # collapsed back to three points each. It is now an ALLOW-LIST, and it
+    # deletes one source at a time after reading back what is actually in the
+    # table, so an unexpected provenance is named in the log rather than being
+    # swept by a filter nobody can eyeball. A single conditional DELETE across a
+    # whole table is also the one shape of query where a typo costs everything.
+    written = {r["source"] for r in rows}
+    present = rest("GET", "/rest/v1/country_population?select=source", key=key) or []
+    found = {r.get("source") or "" for r in present}
+    for src in sorted(found - written):
+        q = urllib.parse.quote(src, safe="")
+        rest("DELETE", f"/rest/v1/country_population?source=eq.{q}", key=key)
+        log(f"  swept rows from a source this load did not write: {src[:70]}")
+    if not (found - written):
+        log("  nothing to sweep: every row in the table came from this load")
+    log(f"kept {len(written)} provenance(s): "
+        + " | ".join(sorted(s.split(";")[0].split("(")[0].strip() for s in written)))
     return 0
 
 
@@ -348,8 +533,14 @@ OWID_FIXTURE = [
     _f("United States", "USA", "1800", "6100000"),
     _f("United States", "USA", "2023", "343477330"),
     _f("United States", "USA", "2024", proj="345426566"),
-    _f("United States", "USA", "2025", proj="347275809"),
-    _f("United States", "USA", "2026", proj="349000000"),
+    # The ceiling year and one year above it, written RELATIVE to TO_YEAR
+    # rather than as literals. TO_YEAR now moves with the calendar, so a
+    # literal pair here would stop testing the boundary the first January after
+    # it was written — which is the same class of bug that put the ceiling a
+    # year behind the present in the first place. 2023 and 2024 stay literal
+    # above because they pin the estimate/projection SEAM, which does not move.
+    _f("United States", "USA", str(TO_YEAR), proj="347275809"),
+    _f("United States", "USA", str(TO_YEAR + 1), proj="349000000"),
     _f("World", "OWID_WRL", "1800", "989000000"),
     _f("World", "OWID_WRL", "2023", "8091734933"),
     _f("World", "OWID_WRL", "2024", proj="8161972574"),
@@ -378,11 +569,12 @@ def self_test():
     got = {(r["iso3"], r["year"]): r["population"] for r in pop}
 
     assert ("USA", 1799) not in got, "1799 is below the annual floor and must be dropped"
-    assert ("USA", 2026) not in got, "beyond TO_YEAR is forecast we did not ask for"
+    assert ("USA", TO_YEAR + 1) not in got, "beyond TO_YEAR is forecast we did not ask for"
+    assert ("USA", TO_YEAR) in got, "the ceiling year itself must load, or the line stops short of today"
     assert got[("USA", 1800)] == 6100000, got
     assert got[("USA", 2023)] == 343477330, got
     assert got[("USA", 2024)] == 345426566, "2024 comes from the projection column"
-    assert got[("USA", 2025)] == 347275809, got
+    assert got[("USA", TO_YEAR)] == 347275809, got
 
     kind = {(r["iso3"], r["year"]): r["kind"] for r in pop}
     assert kind[("USA", 2023)] == "estimate" and kind[("USA", 2024)] == "projection", (
@@ -438,7 +630,56 @@ def self_test():
     assert not (OWID_AGGREGATES & set(OWID_DEFUNCT)), (
         "a code cannot be both an aggregate and a defunct state")
 
-    print("self-test: 27/27 PASS")
+    # --- the COW splice ---------------------------------------------------
+    # A toy COW table: the Germanies with one year OWID already has and one it
+    # does not, and a Vietnam pair whose levels are deliberately far below the
+    # total so the apportionment cannot accidentally pass by matching them.
+    span = range(COW_SPLIT_FROM, COW_SPLIT_TO + 1)
+    cow = {"265": {1973: 16_980_000, 1974: 16_925_000},
+           "260": {1973: 61_987_000, 1974: 62_071_000},
+           "678": {1965: 4_000_000}, "680": {1968: 1_400_000},
+           # Deliberately 5-8% below the totals below, the way the real data is.
+           "816": {y: 24_032_000 for y in span},
+           "817": {y: 19_941_000 for y in span}}
+    base = [{"iso3": "OWID_GDR", "year": 1973, "population": 16_890_000,
+             "source": OWID_SOURCE, "kind": "estimate"},
+            {"iso3": "OWID_GFR", "year": 1973, "population": 61_980_000,
+             "source": OWID_SOURCE, "kind": "estimate"}]
+    base += [{"iso3": "VNM", "year": y, "population": 46_482_905,
+              "source": OWID_SOURCE, "kind": "estimate"} for y in span]
+    made, _ = build_cow_rows(cow, base)
+    by = {(r["iso3"], r["year"]): r for r in made}
+
+    assert ("OWID_GDR", 1973) not in by and ("OWID_GFR", 1973) not in by, (
+        "GAP-FILL ONLY: COW must never overwrite a year OWID published, or the "
+        "series becomes a blend of two vintages nobody can reason about")
+    assert by[("OWID_GDR", 1974)]["population"] == 16_925_000, "COW fills the years OWID lacks"
+    assert by[("OWID_GDR", 1974)]["source"] == COW_SOURCE, "a spliced row says so"
+    assert ("OWID_YAR", 1965) in by and ("OWID_YPR", 1968) in by, (
+        "the Yemen gaps are the other half of this splice; without them a 1965 "
+        "board renders North Yemen's 1820 figure")
+
+    # The property the Vietnam apportionment exists to guarantee.
+    n, s = by[("COW_VDR", 1975)]["population"], by[("COW_VNS", 1975)]["population"]
+    assert n + s == 46_482_905, (
+        "the two halves must sum to OWID's total EXACTLY, or 1975 and 1976 "
+        "disagree about how many people lived in Vietnam")
+    assert abs(n / (n + s) - 24_032_000 / (24_032_000 + 19_941_000)) < 1e-6, (
+        "COW supplies the share and only the share")
+    assert by[("COW_VDR", 1975)]["source"] == COW_SPLIT_SOURCE, (
+        "an apportioned row must never wear a measured row's provenance")
+    try:
+        build_cow_rows({**cow, "817": {}}, base)
+        raise AssertionError("apportioning with one half missing must be fatal")
+    except SystemExit:
+        pass
+
+    assert not (set(COW_FILL) - set(OWID_DEFUNCT)), (
+        "COW only ever gap-fills a polity OWID already publishes; a code that "
+        "exists nowhere else would join to nothing")
+    assert not (set(COW_SPLIT) & set(COW_FILL)), "a code is filled or split, never both"
+
+    print("self-test: 38/38 PASS")
     return 0
 
 

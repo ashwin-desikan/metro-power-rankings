@@ -268,6 +268,22 @@ export type Polity = {
   sourceSeries: [number, number][];
   partitionOf?: string;
   partsMissingSomeYears?: string[];
+  /**
+   * True when the row is a REGION rather than a state: one row because the
+   * modern countries under it did not exist, tagged "not yet one country" so
+   * that grouping never becomes a claim of statehood. See REGIONS in
+   * scripts/build-country-population.py.
+   */
+  region?: boolean;
+  /** The not-yet-one-country note carried by a region row. */
+  note?: string;
+  /**
+   * Set when the series is DERIVED rather than published: North and South
+   * Vietnam are Our World in Data's total apportioned by the Correlates of
+   * War share. Its presence replaces the "this is the source's own series"
+   * line, which would otherwise describe them wrongly.
+   */
+  derived?: string;
 };
 
 let _pop: PopulationFile | null = null;
