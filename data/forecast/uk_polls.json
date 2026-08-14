@@ -4859,6 +4859,17 @@
   },
   {
    "date": "2026-08-10",
+   "pollster": "More in Common",
+   "sample": 2128,
+   "lab": 27.0,
+   "con": 21.0,
+   "ref": 25.0,
+   "ld": 12.0,
+   "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-10",
    "pollster": "Freshwater Strategy",
    "sample": 1248,
    "lab": 23.0,

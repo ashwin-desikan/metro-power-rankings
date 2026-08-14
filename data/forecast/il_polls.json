@@ -17,5 +17,27 @@
   "Zionist Home",
   "Unity"
  ],
- "polls": []
+ "polls": [
+  {
+   "date": "2026-08-13",
+   "pollster": "Yossi Tatika",
+   "seats": {
+    "Likud": 21,
+    "Together": 13,
+    "RZP": 6,
+    "Otzma": 7,
+    "Blue & White": 0,
+    "Shas": 8,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 11,
+    "Ra'am": 6,
+    "Hadash –Ta'al": 6,
+    "Balad": 9,
+    "Dems": 25,
+    "Yashar": 0,
+    "Zionist Home": 0
+   },
+   "gov": null
+  }
+ ]
 }
