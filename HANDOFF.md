@@ -5394,3 +5394,50 @@ Ashwin updated `football_lookup` (18 Andorran clubs) after an ntfy alert, then a
 **Real finding, worth knowing:** `auto_promote()` in `watch_gap_leagues.py` already does exactly what Ashwin then asked for ("I just want them all added as soon as they're in API football") -- it's been wired into `--write` already, and the job runs DAILY at 05:00 UTC per `jobs.toml`, not weekly like the script's own docstring claimed. I nearly proposed building this feature from scratch before actually reading the file and finding it already existed, entirely because that stale docstring said "weekly." Fixed the docstring (`0004b5b2e`). Andorra needed my manual `leagues.json` edit today purely because of timing -- the Lookup was filled in at 07:14 UTC, after the 05:01 UTC run had already found it unmapped and alerted, and before tomorrow's run would have auto-promoted it itself. Every future gap league should need zero manual `leagues.json` editing once its Lookup entries land.
 
 **Side effect fixed:** my manual `leagues.json` edit bypassed `auto_promote()`'s own Supabase state upsert (its early-return for "already in leagues.json" happens before that write), so Andorra's `football_league_watch` row was stuck at `state: "ready"` instead of `"promoted"`. Corrected directly in Supabase to match reality -- otherwise the row would have looked perpetually pending to anyone reading the table.
+
+## 2026-08-14 (evening) — windows → next session (Time Machine hub shipped; population now tracks the calendar)
+
+Cowork session continued from the Countries Time Machine handover at `526c0e45a`. Everything below landed in ONE batched real build: **`6fa1a24ad`** (35 files, +2,558/−107). `npm run verify` green before push: typecheck, all 5 checks, 78 vitest, 112 pytest, `next build` over 4,977 pages. Deploy was BUILDING at hand-off time — **confirm it went green before starting new work** (`node scripts/deploy-status.mjs`).
+
+### A. THE TIME MACHINE HUB (new, `/time-machine`)
+Federates the sixteen boards where the reader picks a moment. Three new libs:
+- **`lib/timeMachines.ts`** — the registry. A new board adds one entry and appears on the hub, in the year-jump list and in the cross-section without anyone editing a page. Two fields carry hard rules: `deepLink` is set ONLY where the target page genuinely reads the year off the URL (verified by reading that page's code — a link that silently drops its parameter is worse than none), and `emoji` may **never** be a flag emoji (Windows renders 🇬🇧 as the letters "GB" in a box; country boards carry `flag: "<slug>"` and get a real flagcdn image).
+- **`lib/timeMachineYear.ts`** — the cross-section. Four strands (population, power, champions, film) read the SAME files their own boards read, so the hub cannot drift from what it advertises. Every strand renders its absence with a reason rather than going blank.
+- **`lib/timeMachineYears.ts`** — 24 notable years with a `why`, and `randomNotableYear()`. Cold arrival lands on a random one, which is why the page is `force-dynamic`.
+
+`app/time-machine/YearPicker.tsx` keeps local `draft` state and commits on pointer/touch/key release with `router.replace`, not on every `onChange` — that was the reported slider lag.
+
+### B. TIME-SLICE MARKING (Ashwin, this session)
+Every card shows a grain pill and a legend sits above the sections: **Any day (4), Month (2), Season (1), Edition (3), Year (6)**. `TimeGrain` is a declared field, NOT parsed out of the `picks` prose, so a copy edit cannot silently relabel a board. `edition` is deliberately separate from `year`: a Games or a ceremony is a numbered event, and calling the Olympics "yearly" implies you can ask for 1943 and get something.
+
+### C. CHAMPIONS STRAND NOW ROTATES — and a real bug fell out
+The strand walked a hardcoded list of five marquee competitions in fixed order. Two problems: the card was identical on every visit, and **it returned nothing for 33 years in range** — 1860-1888 and the 1916-1919 war gap — because none of the five was being played, while the ledger held eight champions for 1883 and a full slate for 1917. Those years now populate.
+
+New export `getChampionsInYear(year)` in `lib/championsHistory.ts` (rows + the competition's tier). The pool is **the two best tiers actually PRESENT that year, not literally 0 and 1** — 1883's eight champions are all tier 2 and 3 (MLB, College Football, Wimbledon, the FA Cup, the Open, the Six Nations), so a literal {0,1} rule would have blanked exactly the year that prompted the request. One row per competition, chosen at random, because a straight sample gives "MLB · MLB · MLB" in the years the ledger carries both the NL and the AA.
+
+`Math.random()` is safe here ONLY because the hub is `force-dynamic` and this is a server component. Move it into a client component, or drop `force-dynamic`, and it becomes a hydration mismatch or a frozen cache respectively.
+
+### D. POPULATION CEILING NOW TRACKS THE CALENDAR (data change, Supabase written)
+`/time-machine?year=2026` had no world population. Root cause: `scripts/business/load_population_series.py` had `TO_YEAR = 2025` hardcoded, and it was **already a year stale on the day it shipped**. It is now `datetime.now(timezone.utc).year`, and the self-test fixture's ceiling rows are written relative to `TO_YEAR` so the guard cannot become a no-op each January.
+
+Ran the loader (`wb_entity` 295 rows, `country_population` **49,191** rows, up 238) and rebuilt `public/data/country-population.json`. **World 2026 = 8,300,678,396.** `_meta.last` stays 2023 and `projectedTo` moves to 2026; estimates, ranks, peaks and shares are untouched because they key off `last`, not the ceiling. `lib/timeMachines.ts` gives the countries board `to: null` rather than a literal, for the same anti-staleness reason.
+
+Below the annual series the hub shows OWID's twelve pre-1800 benchmarks (1500, 1600, then decadal to 1790, HYDE 3.3) as the nearest **preceding** value labelled with its year. Deliberately NOT interpolated into 300 annual figures, and deliberately scoped to the hub panel: loading them into the shared file would set `_meta.first` to 1500 and pad every country's dense array with ~300 nulls, moving the Countries board's axis.
+
+A workbook-sum fallback also sits above the series (sums all 247 `countries.json` rows, ~8.13bn) and is currently **dormant** because the series now reaches 2026. It wakes on 1 Jan 2027 if the loader has not been re-run. Re-running the loader in the new year is the intended fix; the fallback is only a net.
+
+### E. HEARTBREAK INDEX (earlier in the session)
+Toronto read a 59-year parade drought while holding a World Series and an NBA title in that window. **Two** bugs: `METRO_OVERRIDE` in `scripts/build-champions-history.py` corrected the slug but not the display name, and a tier gate excluded competitions that count. Toronto 59y → 2y, Buffalo correctly 33y → 61y. `public.champions` took 6,810 rows. IPL joins the index (10 franchises, NPB-shaped, closed league). The board filters by sport group, shows every club including 0.0 scores, and carries crests and flags; team pages keep the panel closed by default.
+
+### F. COUNTRIES (earlier in the session)
+Era-correct names (Persia, Siam ×2 spans, Ceylon, Burma, the Gold Coast, the Dutch East Indies — 32 slugs in `EXTRA_ERA_NAMES`); Indian subcontinent 1800-1856; Vietnam split 1954-1975 by COW share against the OWID total; East/West Germany and both Yemens gap-filled from COW NMC v7.0; Benelux windows corrected to what the Congress of Vienna actually did (Luxembourg was a client, not annexed).
+
+### Open threads
+- **Deploy `6fa1a24ad` was still building.** Verify first.
+- **Ten of the sixteen boards still do not read `?year=`.** Only 6 carry a `deepLink`. Teaching more of them is the single highest-value follow-up for the hub — the copy currently admits it ("the rest open at their own default").
+- **WNBA / EuroLeague / CBA** heartbreak builds: audited and deferred. EuroLeague is blocked on domestic-league data for the weighting Ashwin specified (present-day clubs only).
+- **Heartbreak Index calibration pass** — chosen at session open, parked immediately, never started.
+- Reciprocal hub links on Champions, World Leaders and Olympics back to `/time-machine`.
+- `/rankings` time machine over the 8 orphaned `power-ranking-history` snapshots.
+- **50 territories sit on a half-open vs inclusive seam** between `NOT_SOVEREIGN` and the curated windows (off by exactly one year). Only the three Benelux entries were fixed; the other 50 were left deliberately. Decide the rule before touching them piecemeal.
+- Carried, untouched: two `football_lookup` metro edits; the USC-1940 CFB ledger row; Chicago Stars FC + Brescia workbook recalc.
