@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Gap-league watcher: detect when leagues Ashwin tracks become available on api-football.
 
-Runs weekly on the Mac mini (needs network). Reads leagues_pending.json (the leagues/levels
-not yet on api-football), polls /leagues for each, and classifies coverage into:
+Runs DAILY on the Mac mini at 05:00 UTC (mac-mini-jobs/jobs.toml, id "gap-league-watch" --
+this docstring said "weekly" until 2026-08-14; it never was, jobs.toml has always been daily).
+Reads leagues_pending.json (the leagues/levels not yet on api-football), polls /leagues for
+each, and classifies coverage into:
   pending              -> league not found on api yet
   covered_no_standings -> league on api, but the target/current season has no standings coverage
   ready                -> league on api with standings coverage on (candidate for promotion)
