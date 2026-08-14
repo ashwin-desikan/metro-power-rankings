@@ -1,13 +1,76 @@
 {
-  "generatedAt": "2026-08-13",
+  "generatedAt": "2026-08-14",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-14",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "2b6a6764b"
+    },
     {
       "date": "2026-08-13",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "4d7c6081a"
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "199ee5957"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "The Heartbreak Index -- engine v3.18, 54 pang events, 1,191 clubs across 10 sports, board at /sports/heartbreak (unlinked).",
+      "commit": "3392b36a4"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Population over time, and the same money board per person.",
+      "commit": "53eef0be3"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Real terms, deeper oil history, bitcoin, and where the fuel comes from.",
+      "commit": "1ba5c546f"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Releases: amend today for the markets history and the comparison view.",
+      "commit": "ad818d0f6"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Daily history for every index, commodity and currency, back to 1885.",
+      "commit": "7d79727f8"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Releases: baseball's rival leagues, women's club names, Lakers pending.",
+      "commit": "670f3a325"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Our own club names on WSL and Liga F, and the Chicago Stars rename.",
+      "commit": "e6fbd5ac8"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Baseball's rival leagues, Brazil's two titles, and the 1903 handover.",
+      "commit": "75b44318b"
     },
     {
       "date": "2026-08-12",
@@ -4138,69 +4201,6 @@
       "hub": null,
       "text": "Add Google Analytics 4 tracking (G-8BQVX0NFZZ).",
       "commit": "4c7e25fb5"
-    },
-    {
-      "date": "2026-04-22",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Add All-Star Games category, refresh from latest xlsx.",
-      "commit": "2d6f55478"
-    },
-    {
-      "date": "2026-04-22",
-      "category": "fix",
-      "hub": "Rankings",
-      "text": "Fix: route NCAA minor-sport teams into College/University bucket.",
-      "commit": "6acf61647"
-    },
-    {
-      "date": "2026-04-22",
-      "category": "hub",
-      "hub": null,
-      "text": "Refresh 2026-04-22, add Citizen of Nowhere back-link, add BACKLOG.",
-      "commit": "fee9fd496"
-    },
-    {
-      "date": "2026-04-21",
-      "category": "fix",
-      "hub": null,
-      "text": "Fix: add supertallStructures field to MetroDetail interface.",
-      "commit": "0d88f6e87"
-    },
-    {
-      "date": "2026-04-21",
-      "category": "hub",
-      "hub": "Neighborhoods",
-      "text": "Surface Walkable Elite Quarters card on qualifying metro profiles.",
-      "commit": "20f8ca575"
-    },
-    {
-      "date": "2026-04-20",
-      "category": "new-hub",
-      "hub": "Neighborhoods",
-      "text": "New hub: Neighborhoods.",
-      "commit": "d5f4dd7f5"
-    },
-    {
-      "date": "2026-04-18",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Supertall Structures (350m+) section under Museums & Landmarks.",
-      "commit": "7f5791516"
-    },
-    {
-      "date": "2026-04-18",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Round 7: venue dedup, transit stations per entry, collapsible subgroups.",
-      "commit": "d0592b45f"
-    },
-    {
-      "date": "2026-04-18",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Round 7: venue dedup, transit stations per entry, collapsible subgroups.",
-      "commit": "343c10e1a"
     }
   ]
 }
