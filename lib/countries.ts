@@ -164,20 +164,29 @@ export function getCountryIndicators(slug: string): CountryIndicators | null {
   return loadIndicators()[slug] ?? null;
 }
 
-// Annual population 1960-2025 per country (public/data/country-population.json,
-// built by scripts/build-country-population.py from World Bank SP.POP.TOTL via
+// Annual population 1800-2025 per country (public/data/country-population.json,
+// built by scripts/build-country-population.py from Our World in Data via
 // Supabase's country_population). Additive: the workbook stays ground truth for
 // a country's CURRENT population, and this supplies the shape, which no single
 // figure can carry. A quarter of the world's countries are past their peak.
 //
-// `rank` covers World Bank reporting economies only; its aggregates (World, the
-// EU, the income groups) wear three-letter codes too and are excluded upstream,
-// so nothing here has to maintain a skip-list.
+// ESTIMATES AND PROJECTIONS ARE DIFFERENT THINGS. 1800-2023 are estimates;
+// 2024-2025 are UN WPP medium-variant projections. `series` carries both so the
+// line reaches the present, but EVERY scalar on this type - value, rank, peak,
+// share, multiple - is computed on estimates only and is as of `latest`. A
+// projected peak would have the site telling readers a country had already
+// reached a size it has not reached. The forecast tail lives in projectedTo /
+// projectedValue, apart, so it cannot be ranked or compared by accident.
+//
+// `rank` covers reporting territories only; aggregates (World, the EU, the
+// income groups) wear three-letter codes too and are excluded upstream, so
+// nothing here has to maintain a skip-list.
 export type CountryPopulation = {
   iso3: string;
-  /** Per country, not per file: Taiwan is UN WPP because the World Bank omits it. */
+  /** One reconciled series now, so this is the same string for every country. */
   source: string;
   first: number;
+  /** Last ESTIMATE year. Every scalar below is as of this year, never the projection. */
   latest: number;
   value: number;
   rank: number | null;
@@ -188,6 +197,18 @@ export type CountryPopulation = {
   multiple: number | null;
   share: number | null;
   shareFirst: number | null;
+  /** Last projected year, or null when the series has no forecast tail. */
+  projectedTo: number | null;
+  projectedValue: number | null;
+  /**
+   * A PREDECESSOR territory the source covers and the modern code does not.
+   * Ireland only: IRL is the 26 counties and starts in 1950, while the whole
+   * island runs 1800-1920 and is the only place the Famine is visible. Held
+   * apart rather than concatenated, because most of the fall from 1920 to 1950
+   * is partition, not emigration. No scalar above is derived from it.
+   */
+  prior?: { label: string; series: [number, number][] };
+  /** 1800..projectedTo. Points after `latest` are projections, not estimates. */
   series: [number, number][];
 };
 
@@ -197,12 +218,56 @@ export type PopulationFile = {
     license: string;
     fetchedAt: string;
     first: number;
+    /** Last estimate year across the file. */
     last: number;
+    projectedTo: number | null;
     countries: number;
     note: string;
   };
   world: [number, number][];
   countries: Record<string, CountryPopulation>;
+  polities?: Polity[];
+};
+
+/**
+ * A state that existed and ended, for the Time Machine's polity view.
+ *
+ * `series` is the SUM OF ITS PARTS wherever `replaces` is non-empty, not the
+ * source's own parent series, which is kept as `sourceSeries`. The two diverge:
+ * the USSR agrees to 0.000% but Yugoslavia is +2.1% and Serbia and Montenegro
+ * +3.1%, because OWID's parent figures for those come from a different
+ * construction than the UN WPP back-casts its successor territories carry.
+ * Summing the atoms is what stops the breakdown rows failing to add up to the
+ * total printed above them.
+ *
+ * `partitionOf` marks a polity that was a slice of ONE modern country rather
+ * than the parent of several - the two Germanys, the two Yemens. Nothing to
+ * sum, so those use the source series and `basis` says "source".
+ */
+export type Polity = {
+  code: string;
+  name: string;
+  from: number;
+  to: number;
+  replaces: string[];
+  /**
+   * [slug, from, to] per member. A land empire acquired its ground over a
+   * century, so "inside the empire" is not the same as "inside its lifespan":
+   * Merv fell in 1885, not 1800. Absent on the 20th-century dissolutions,
+   * where the whole successor set shares the parent's lifespan.
+   */
+  memberWindows?: [string, number, number][];
+  /**
+   * Years the state did not exist. Czechoslovakia was dissolved by the German
+   * occupation in 1939 and did not exist again until 1945, so a single
+   * from/to would put a country on the board that was not there.
+   */
+  gaps?: [number, number][];
+  basis: "sum" | "source";
+  series: [number, number][];
+  sourceSeries: [number, number][];
+  partitionOf?: string;
+  partsMissingSomeYears?: string[];
 };
 
 let _pop: PopulationFile | null = null;
@@ -229,6 +294,11 @@ export function getCountryPopulation(slug: string): CountryPopulation | null {
 /** World totals for the same years, so a country's share has a denominator. */
 export function getWorldPopulationSeries(): [number, number][] {
   return loadPopulation()?.world ?? [];
+}
+
+/** The whole file, for the Time Machine, which needs every series at once. */
+export function getPopulationFile(): PopulationFile | null {
+  return loadPopulation();
 }
 
 // Wikidata-sourced infobox facts keyed by country slug (public/data/

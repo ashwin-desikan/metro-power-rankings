@@ -352,6 +352,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/deep-dives" title="All deep dives →" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/sports/geography-of-erasure" title="The Geography of Erasure" />
+        <DropdownItem href="/sports/heartbreak" title="The Heartbreak Index" />
         <DropdownItem href="/sports/games" title="The Greatest Games" />
         <DropdownItem href="/sports/valuations" title="Team Valuations" />
         <DropdownItem href="/top-teams" title="The Team That Wins the City" />

@@ -305,9 +305,25 @@ export default async function MlbPredictionsPage() {
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Current record, projected final wins, and the odds of each landing spot, division by division.
             </p>
+            {/* One league per COLUMN, not one flat list. A 2-up grid fills
+                row by row, so six divisions in source order put AL West
+                beside NL East and the two leagues read as interleaved. Each
+                column carries min-w-0 because a grid child holding a table
+                otherwise inflates its track past the viewport
+                (DESIGN-STANDARDS.md). */}
             <div className="grid gap-4 lg:grid-cols-2">
-              {[...AL_DIVISIONS, ...NL_DIVISIONS].map((d) => (
-                <DivisionTable key={d} rows={rows} division={d} href={href} logo={logo} />
+              {[
+                { league: "American League", divisions: AL_DIVISIONS },
+                { league: "National League", divisions: NL_DIVISIONS },
+              ].map(({ league, divisions }) => (
+                <div key={league} className="min-w-0 space-y-4">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+                    {league}
+                  </h3>
+                  {divisions.map((d) => (
+                    <DivisionTable key={d} rows={rows} division={d} href={href} logo={logo} />
+                  ))}
+                </div>
               ))}
             </div>
           </section>

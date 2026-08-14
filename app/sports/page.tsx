@@ -36,6 +36,7 @@ const FEATURES: Feature[] = [
   { emoji: "📊", title: "Live Standings", href: "/sports/standings", desc: "Every in-season league table on Earth, refreshed live and grouped by sport." },
   { emoji: "👑", title: "Current Champions", href: "/sports/champions", desc: "Who holds every trophy right now, across every sport we track." },
   { emoji: "🎬", title: "The Greatest Games", href: "/sports/games", desc: "The highest Game Scores ever recorded, ranked within and across sports." },
+  { emoji: "💔", title: "The Heartbreak Index", href: "/sports/heartbreak", desc: "Which fanbases suffer most: droughts, lost finals and relegation, on one formula across every sport." },
   { emoji: "⚔️", title: "Sports Rivalries", href: "/sports/rivalries", desc: "The derbies, classics and grudge matches that define cities and nations." },
   { emoji: "💰", title: "Team Valuations", href: "/sports/valuations", desc: "What every franchise is worth, league by league, on one sortable board." },
   { emoji: "👻", title: "The Geography of Erasure", href: "/sports/geography-of-erasure", desc: "Ghost franchises: the champions erased when the metro behind them was outgrown." },

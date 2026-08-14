@@ -6,6 +6,8 @@ import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
+import HeartbreakTag from "@/app/teams/HeartbreakTag";
+import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import { notFound } from "next/navigation";
 import {
   getAllFranchiseSlugs,
@@ -205,6 +207,7 @@ export default async function NhlTeamPage({ params }: Props) {
         <ChampionBadge items={getCurrentChampionships(f.display_name, "Hockey")} />
             <ValuationChip league="nhl" slug={f.slug} className="mb-2" />
             <GhostFranchiseTag league="nhl" slug={f.slug} className="mb-2" />
+            <HeartbreakTag league="nhl" slug={f.slug} className="mb-2" />
             <div className="text-sm text-[var(--text-muted)] mb-2">
               Founded {f.founded ?? "—"}
               {f.metro && (
@@ -305,6 +308,8 @@ export default async function NhlTeamPage({ params }: Props) {
       </header>
 
       <RivalriesSection rivals={getRivalries(f.canonical, "Hockey", "NHL")} />
+
+      <HeartbreakPanel league="nhl" slug={f.slug} className="mb-8" />
 
       {/* Awards block */}
       {Object.keys(awardsByType).length > 0 && (

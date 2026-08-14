@@ -15,9 +15,8 @@ import {
   SITE_NAME,
   serializeJsonLd,
 } from "@/lib/seo";
-import CountriesDirectory, {
-  type DirectoryCountry,
-} from "./CountriesDirectory";
+import { type DirectoryCountry } from "./CountriesDirectory";
+import CountriesTabs from "./CountriesTabs";
 import { getCurrentPowerBySlug } from "@/lib/powerHistory";
 
 export const dynamicParams = false;
@@ -214,7 +213,7 @@ export default async function CountriesIndexPage() {
             </p>
           </header>
 
-          <CountriesDirectory countries={directory} />
+          <CountriesTabs countries={directory} />
         </div>
       </main>
     </>

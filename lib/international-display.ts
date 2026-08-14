@@ -142,6 +142,11 @@ const SUBDIVISION_CDN_CODES: Record<string, string> = {
   scotland: "gb-sct",
   wales: "gb-wls",
   "northern-ireland": "gb-nir",
+  // COUNTRY_FLAGS keys the union as "great-britain", so flagCdnUrl called with
+  // the SITE's slug for the same place returned null and the United Kingdom
+  // rendered flagless wherever it was addressed by slug - most visibly as the
+  // head of the British Empire row on the /countries Time Machine.
+  "united-kingdom": "gb",
   gibraltar: "gi",
   guernsey: "gg",
   "isle-of-man": "im",

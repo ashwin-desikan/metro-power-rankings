@@ -6,6 +6,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllNpbSlugs, getNpbTeamBySlug, getNpbTeamDetail } from "@/lib/npb";
 import TopTeamChip from "@/app/teams/TopTeamChip";
+import HeartbreakTag from "@/app/teams/HeartbreakTag";
+import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -68,6 +70,7 @@ export default async function NpbTeamPage(
           <CrestIcon name={team.name} size={40} className="flex-shrink-0" />
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
         <ChampionBadge items={getCurrentChampionships(team.name, "Baseball")} />
+          <HeartbreakTag league="npb" slug={slug} />
           <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs" style={card}>
             <span className="text-[var(--text-muted)]">{team.division} League</span>
             {team.js_titles > 0 ? (
@@ -92,6 +95,8 @@ export default async function NpbTeamPage(
           </div>
         ) : null}
       </header>
+
+      <HeartbreakPanel league="npb" slug={slug} className="mb-10" />
 
       {/* ---------------- Honours ---------------- */}
       <section className="mb-10">

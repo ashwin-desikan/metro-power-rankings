@@ -6,6 +6,8 @@ import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
+import HeartbreakTag from "@/app/teams/HeartbreakTag";
+import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import FootballHubNav from "@/app/teams/FootballHubNav";
@@ -199,6 +201,7 @@ export default async function FootballClubPage({ params }: Props) {
             <ChampionBadge items={getCurrentChampionships(club.cur_name, "Football")} />
             <ValuationChip league="football" slug={club.slug} className="ml-1" />
             <GhostFranchiseTag league="football" slug={club.slug} className="ml-1" />
+            <HeartbreakTag league="football" slug={club.slug} className="ml-1" />
             <TopTeamChip names={[club.cur_name]} metro={club.metro} className="ml-1" />
           </>
         }
@@ -287,6 +290,8 @@ export default async function FootballClubPage({ params }: Props) {
       </section>
 
       <RivalriesSection rivals={rivalries} />
+
+      <HeartbreakPanel league="football" slug={club.slug} className="mb-8" />
 
       {club.is_mls ? (
         <MlsClubSeasonsTable seasons={mlsSeasons} />

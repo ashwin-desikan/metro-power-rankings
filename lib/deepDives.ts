@@ -29,6 +29,15 @@ export const DEEP_DIVES: DeepDive[] = [
     featured: true,
   },
   {
+    slug: "heartbreak-index",
+    title: "The Heartbreak Index",
+    dek: "Which fanbases suffer most: droughts, lost finals, relegation and playoff exile, scored by one published formula across football, the US majors, college and nations.",
+    href: "/sports/heartbreak",
+    tag: "Cross-sport",
+    domain: "sports",
+    accent: "#f43f5e",
+  },
+  {
     slug: "greatest-games",
     title: "The Greatest Games",
     dek: "The top games of all-time by Game Score across the NFL, NBA and MLB, plus every Stanley Cup presentation game.",

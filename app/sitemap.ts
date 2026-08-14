@@ -84,6 +84,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/sports/heartbreak`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/teams/nfl`,
       lastModified: stamp,
       changeFrequency: "weekly",

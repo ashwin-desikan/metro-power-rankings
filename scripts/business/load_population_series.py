@@ -8,26 +8,63 @@ board reorders into something that is actually about a place rather than about
 its size. Population is the denominator that makes the rest of the data mean
 something.
 
-TWO TABLES, ON PURPOSE. The World Bank's indicator endpoints hand back
-aggregates (WLD, EUU, ARB, the income groups) sitting alongside real countries,
-every one of them wearing a three-letter code that looks exactly like an ISO3.
-Anything computing a per-capita figure has to exclude them, and a hardcoded
-skip-list copied into each consumer is precisely how "World" ends up top of a
-leaderboard. So the classification lives once, in wb_entity, sourced from the
-World Bank's own country endpoint: region.id == "NA" is its marker for an
-aggregate. That table also serves country_cpi and anything else keyed on ISO3.
+WHY OWID AND NOT THE WORLD BANK (changed 2026-08-14). SP.POP.TOTL starts in
+1960, and 1960 is not a historical floor, it is an administrative one: it is
+when the World Bank started collecting, not when the data runs out. Our World
+in Data publishes a single reconciled series that is UN World Population
+Prospects from 1950, Gapminder v7 for 1800-1949 and HYDE 3.3 before that, all
+of it stated on TODAY'S borders, under CC BY. Taking it whole buys 160 extra
+years of annual history for one source swap, and it buys them with ONE
+provenance story instead of a splice this repo would have had to own itself.
 
-SP.POP.TOTL starts in 1960 and that is a hard floor for this indicator. Longer
-history needs a different source (Maddison, HYDE, Gapminder) with its own
-awkward reconciliation of modern borders against historical ones; that is
-deliberately not this script's problem.
+THREE THINGS THAT FELL OUT OF THE SWAP, none of them incidental:
+  1. Taiwan stops being a special case. The World Bank does not report it, for
+     reasons that are political rather than statistical, so this loader used to
+     carry a separate OWID fetch just for TWN. OWID's own series covers it like
+     everyone else, so the substitute is gone rather than ported. The guard
+     against the World Bank suddenly reporting TWN went with it.
+  2. Defunct states arrive free. OWID ships the USSR, Yugoslavia,
+     Czechoslovakia, both Germanies, both Yemens and Serbia and Montenegro as
+     entities in their own right, and they RECONCILE: USSR 1989 is 289,122,632
+     and the sum of its fifteen successors that year is 289,122,632, to the
+     person. That is not a coincidence, it is what "stated on today's borders"
+     means, and it is what lets a polity view and a country view sit on the
+     same page without ever contradicting each other.
+  3. Estimates and projections are now different KINDS, not different sources.
+     UN WPP's estimates stop at 2023 and everything after is a projection.
+     Rather than lose 2024-2025 (Ashwin's call, 2026-08-14) or splice the World
+     Bank's own forward numbers onto a WPP series, both come from the same OWID
+     file: `population_historical` for 1800-2023 and
+     `population_projection__projected` for 2024-2025, tagged `kind`. One
+     publisher, one fetch, and the estimate/projection boundary is DATA the
+     page can act on rather than a comment nobody can enforce.
+
+     This is not a downgrade on the World Bank numbers it replaces. The old
+     self-test fixture in this file carried the World Bank's world total for
+     2024 as 8,161,972,572; OWID's UN WPP projection for the same year is
+     8,161,972,574. Two people apart, because the World Bank's recent years
+     were largely WPP-derived anyway. The difference is that these ones say so.
+
+WHY 1800 IS THE FLOOR HERE. OWID's file reaches 10,000 BCE, but only 41 sparse
+steps sit below 1800 (millennia, then centuries, then a scatter of 1555/1640/
+1785/1788) while 1800-2023 is 224 contiguous annual years. Everything
+downstream assumes an annual series: peak detection, growth multiples, the
+chart's x-axis. Loading the sparse tail would silently corrupt all three, so
+the floor is 1800 and the deep tail is a separate problem for a separate page.
+
+TWO TABLES, ON PURPOSE. OWID hands back aggregates (World, the continents, the
+income groups, EU27) wearing codes that sit alongside real ones. Anything
+computing a per-capita figure has to exclude them, and a hardcoded skip-list
+copied into each consumer is precisely how "World" ends up top of a
+leaderboard. So the classification lives once, in wb_entity, which also still
+serves country_cpi and anything else keyed on ISO3.
 
 usage:
   python scripts/business/load_population_series.py --self-test
   python scripts/business/load_population_series.py --dry
   python scripts/business/load_population_series.py
 """
-import json, os, sys, urllib.request
+import csv, io, json, os, sys, urllib.parse, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
@@ -36,40 +73,91 @@ from load_market_series import service_key, rest, log, CHUNK  # noqa: E402
 
 WB = "https://api.worldbank.org/v2"
 UA = "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0; +https://rankings.citizenofnowhere.org)"
-WB_SOURCE = "World Bank SP.POP.TOTL"
 
-# Taiwan is the one country this loader has to source elsewhere. The World Bank
-# does not report it, for reasons that are political rather than statistical,
-# and it is not a country this site can leave blank: 116 tracked companies and
-# tenth in the world by market cap, so every per-head figure it appears in would
-# be missing its most interesting entrant.
+OWID_URL = ("https://ourworldindata.org/grapher/population-with-projections.csv"
+            "?v=1&csvType=full&useColumnShortNames=true")
+OWID_SOURCE = ("Our World in Data population (CC BY): UN WPP 2024 from 1950, "
+               "Gapminder v7 1800-1949, HYDE 3.3 earlier; today's borders")
+
+# The two value columns in that file. Their year ranges do not overlap, which
+# is asserted below rather than assumed: if OWID ever extends the estimates
+# past 2023 the overlap would otherwise be resolved by dict-insertion order.
+COL_ESTIMATE = "population_historical"
+COL_PROJECTION = "population_projection__projected"
+
+# The floor. See the module docstring: below this OWID's steps stop being
+# annual and every downstream derivation that assumes one year per point
+# (peak, multiple, the chart axis) would quietly start lying.
+FROM_YEAR = 1800
+
+# The ceiling. OWID's projection column runs to 2100 and loading all of it
+# would put 75 years of forecast behind a chart captioned "population". Two
+# years is what the World Bank used to supply and what the site already showed.
+TO_YEAR = 2025
+
+WORLD = "WLD"
+
+# Codes OWID spells differently from the ISO3 the rest of this site keys on.
+# Not cosmetic: country-indicators.json gives Kosovo the World Bank's XKX, so
+# loading it as OWID_KOS would leave the slug joining to nothing and blank the
+# population section on a live country page. Found by diffing the old table
+# against the new one, not by reading, which is the argument for doing that
+# diff before any source swap.
+OWID_RENAME = {
+    "OWID_WRL": WORLD,   # share-of-world denominator; every consumer knows WLD
+    "OWID_KOS": "XKX",   # Kosovo
+}
+
+# Aggregates: real rows, real numbers, but not countries. Listed explicitly
+# rather than pattern-matched on the OWID_ prefix, because that prefix is ALSO
+# worn by Kosovo, Akrotiri and Dhekelia and every defunct state below. A prefix
+# test here would have silently deleted the USSR.
+OWID_AGGREGATES = {
+    "OWID_AFR", "OWID_ASI", "OWID_EUR", "OWID_NAM", "OWID_OCE", "OWID_SAM",
+    "OWID_EU27", "OWID_HIC", "OWID_LIC", "OWID_LMC", "OWID_UMC",
+}
+
+# States that existed, ended, and whose territory is now shared out among
+# codes that still exist. They are loaded, because a polity view needs them,
+# and they are NOT countries, because ranking them against the living would put
+# a country that stopped existing in 1991 into a 2023 league table.
+# Entities OWID publishes with NO code at all. There are exactly two, and only
+# one is useful: "Ireland (whole island)" carries 1800-1920, which is the only
+# place in this file the Great Famine is visible. IRL itself starts in 1950,
+# because the Republic is 26 counties and did not exist before 1922, so the two
+# are DIFFERENT TERRITORIES and must never be spliced into one line. It is
+# loaded under a synthetic code, joins to no site slug, and is attached to
+# Ireland's page as a separate, separately-labelled series.
 #
-# UN World Population Prospects, served through Our World in Data's grapher CSV
-# (CC BY), is the standard substitute and covers 1950 onward.
-#
-# ESTIMATES ONLY. OWID's projection column runs 2024-2100 and would let Taiwan's
-# series end in 2025 like everyone else's. It is not used. Splicing a forecast
-# onto a history and labelling the result "population" is the same quiet lie as
-# an unmarked source seam, and this hub spent the day refusing to tell it.
-# Taiwan's series therefore ends in 2023 and says so.
-TAIWAN = {
-    "iso3": "TWN",
-    "url": ("https://ourworldindata.org/grapher/population.csv"
-            "?v=1&csvType=full&useColumnShortNames=true&country=~TWN"),
-    "source": "UN World Population Prospects via Our World in Data (CC BY)",
-    "from_year": 1960,
+# The other uncoded entity is "Americas (UN)", an aggregate, deliberately absent.
+OWID_UNCODED = {
+    "Ireland (whole island)": "IRL_WHOLE",
+}
+
+OWID_DEFUNCT = {
+    "OWID_USS": "USSR",
+    "OWID_YGS": "Yugoslavia",
+    "OWID_CZS": "Czechoslovakia",
+    "OWID_SRM": "Serbia and Montenegro",
+    "OWID_GDR": "East Germany",
+    "OWID_GFR": "West Germany",
+    "OWID_YAR": "Yemen Arab Republic",
+    "OWID_YPR": "Yemen People's Republic",
+    "OWID_ERE": "Ethiopia (former)",
 }
 
 
-def _get(url, timeout=180):
+def _get_json(url, timeout=180):
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.loads(r.read())
 
 
 def fetch_entities():
-    """The World Bank's own catalogue of what each code is."""
-    payload = _get(f"{WB}/country?format=json&per_page=400")
+    """The World Bank's own catalogue of what each code is. Still the source of
+    names, regions and the aggregate flag even though the population numbers no
+    longer come from it, because OWID's CSV carries no such classification."""
+    payload = _get_json(f"{WB}/country?format=json&per_page=400")
     hdr = payload[0]
     if hdr.get("pages", 1) > 1:
         raise SystemExit(f"FATAL: /country now spans {hdr['pages']} pages; add paging.")
@@ -106,64 +194,64 @@ def parse_entities(rows):
     return out
 
 
-def fetch_pop():
-    payload = _get(f"{WB}/country/all/indicator/SP.POP.TOTL?format=json&per_page=25000&page=1")
-    hdr = payload[0]
-    if hdr.get("pages", 1) > 1:
-        raise SystemExit(f"FATAL: World Bank now paginates SP.POP.TOTL ({hdr['pages']} pages); "
-                         "this loader assumes one page. Add paging.")
-    return payload[1] or []
-
-
-def parse_pop(rows):
-    """-> [{iso3, year, population}]. Population is stored as an integer: the
-    World Bank reports whole people and a float would silently lose precision
-    somewhere above 2^53 people, which is not a real risk but a bigint costs
-    nothing and removes the question."""
-    out = []
-    for r in rows:
-        v, iso3, yr = r.get("value"), (r.get("countryiso3code") or "").strip(), r.get("date")
-        if v is None or len(iso3) != 3 or not yr:
-            continue
-        try:
-            n = int(round(float(v)))
-        except (TypeError, ValueError):
-            continue
-        if n <= 0:
-            continue
-        out.append({"iso3": iso3, "year": int(yr), "population": n,
-                    "source": WB_SOURCE})
-    return out
-
-
-def fetch_taiwan():
-    """Taiwan from UN WPP estimates. Returns the same row shape, so it upserts
-    through exactly the same path and cannot drift into a special case."""
-    import csv, io
-    req = urllib.request.Request(TAIWAN["url"], headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=120) as r:
+def fetch_owid(timeout=300):
+    req = urllib.request.Request(OWID_URL, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
         text = r.read().decode("utf-8", "replace")
     rows = list(csv.DictReader(io.StringIO(text)))
     if not rows:
-        raise SystemExit("FATAL: OWID returned no rows for Taiwan.")
-    col = next((c for c in rows[0] if c.startswith("population")), None)
-    if not col:
-        raise SystemExit(f"FATAL: no population column for Taiwan; got {list(rows[0])}.")
-    out = []
+        raise SystemExit("FATAL: OWID returned no rows.")
+    return rows
+
+
+def parse_owid(rows):
+    """-> [{iso3, year, population, source}]. Population is stored as an
+    integer: a float would silently lose precision somewhere above 2^53 people,
+    which is not a real risk but a bigint costs nothing and removes the
+    question."""
+    if not rows:
+        raise SystemExit("FATAL: OWID returned no rows.")
+    for col in (COL_ESTIMATE, COL_PROJECTION):
+        if col not in rows[0]:
+            raise SystemExit(f"FATAL: no {col!r} column; got {list(rows[0])}. "
+                             "OWID changed the dataset shape.")
+    out, seen = [], set()
     for r in rows:
-        if (r.get("code") or "").strip() != TAIWAN["iso3"]:
+        code = (r.get("code") or "").strip()
+        if not code:
+            code = OWID_UNCODED.get((r.get("entity") or "").strip(), "")
+        if not code or code in OWID_AGGREGATES:
+            continue
+        code = OWID_RENAME.get(code, code)
+        # Everything else is either a 3-letter code or a kept OWID_ entity.
+        if (len(code) != 3 and code not in OWID_DEFUNCT
+                and code not in OWID_UNCODED.values() and not code.startswith("OWID_")):
             continue
         try:
-            y, v = int(r["year"]), int(float(r[col] or 0))
-        except (TypeError, ValueError):
+            y = int(r["year"])
+        except (TypeError, ValueError, KeyError):
             continue
-        if y < TAIWAN["from_year"] or v <= 0:
+        if y < FROM_YEAR or y > TO_YEAR:
             continue
-        out.append({"iso3": TAIWAN["iso3"], "year": y, "population": v,
-                    "source": TAIWAN["source"]})
-    if len(out) < 50:
-        raise SystemExit(f"FATAL: only {len(out)} Taiwan years from {TAIWAN['from_year']}; "
-                         "expected 60+. OWID changed the dataset.")
+        for col, kind in ((COL_ESTIMATE, "estimate"), (COL_PROJECTION, "projection")):
+            raw = (r.get(col) or "").strip()
+            if not raw:
+                continue
+            try:
+                v = int(round(float(raw)))
+            except (TypeError, ValueError):
+                continue
+            if v <= 0:
+                continue
+            if (code, y) in seen:
+                # Both columns populated for one code-year. Silently keeping
+                # one would make the series depend on column order, so refuse.
+                raise SystemExit(f"FATAL: {code} {y} has BOTH an estimate and a "
+                                 "projection; OWID's ranges now overlap and the "
+                                 "estimate/projection boundary is ambiguous.")
+            seen.add((code, y))
+            out.append({"iso3": code, "year": y, "population": v,
+                        "source": OWID_SOURCE, "kind": kind})
     return out
 
 
@@ -176,35 +264,38 @@ def main(argv):
     aggs = [e for e in ents if e["is_aggregate"]]
     log(f"wb_entity: {len(ents)} codes · {len(ents) - len(aggs)} countries · {len(aggs)} aggregates"
         + (" (DRY RUN)" if dry else ""))
-    log("  aggregates include: " + ", ".join(e["iso3"] for e in aggs[:12]))
 
-    rows = parse_pop(fetch_pop())
-    twn = fetch_taiwan()
-    log(f"  Taiwan: {len(twn)} years {twn[0]['year']}-{twn[-1]['year']} "
-        f"({twn[-1]['population']:,}) from {TAIWAN['source']}; "
-        "estimates only, no projections")
-    if any(r["iso3"] == TAIWAN["iso3"] for r in rows):
-        raise SystemExit("FATAL: the World Bank now reports TWN. Remove the substitute "
-                         "before both sources fight over the same primary key.")
-    rows += twn
-    if not any(e["iso3"] == TAIWAN["iso3"] for e in ents):
-        # wb_entity is the name and aggregate lookup for everything downstream,
-        # so a country present in country_population but absent here would join
-        # to nothing and silently lose its name and its rank.
-        ents.append({"iso3": "TWN", "name": "Taiwan", "region": "East Asia & Pacific",
-                     "income_level": "High income", "capital": "Taipei",
-                     "lat": 25.0330, "lon": 121.5654, "is_aggregate": False})
-    known = {e["iso3"] for e in ents}
-    orphan = sorted({r["iso3"] for r in rows} - known)
+    rows = parse_owid(fetch_owid())
+    codes = {r["iso3"] for r in rows}
     years = sorted({r["year"] for r in rows})
-    log(f"country_population: {len(rows):,} observations · "
-        f"{len({r['iso3'] for r in rows})} codes · {years[0]}-{years[-1]}")
-    if orphan:
-        # Not fatal: a code the indicator knows and the catalogue does not is
-        # still real data. But it would join to nothing, so it must be visible.
-        log(f"  WARNING {len(orphan)} code(s) absent from wb_entity: {orphan[:12]}")
+    defunct = sorted(codes & set(OWID_DEFUNCT))
+    est = [r for r in rows if r["kind"] == "estimate"]
+    prj = [r for r in rows if r["kind"] == "projection"]
+    log(f"country_population: {len(rows):,} observations · {len(codes)} codes · "
+        f"{years[0]}-{years[-1]} · {len(defunct)} defunct polities")
+    log(f"  {len(est):,} estimates to {max(r['year'] for r in est)} · "
+        f"{len(prj):,} projections {min(r['year'] for r in prj)}-"
+        f"{max(r['year'] for r in prj)} (UN WPP medium variant, tagged not blended)")
+    log(f"  source: {OWID_SOURCE}")
+    log(f"  defunct: {', '.join(OWID_DEFUNCT[c] for c in defunct)}")
 
-    for probe in ("WLD", "CHN", "IND", "USA", "NGA"):
+    missing = sorted(set(OWID_DEFUNCT) - codes)
+    if missing:
+        # Not fatal, but it means the polity view lost an entity it expects.
+        log(f"  WARNING expected defunct polity absent from OWID: {missing}")
+
+    if WORLD not in codes:
+        raise SystemExit("FATAL: no world row after mapping; shares would be unavailable.")
+
+    # Defunct states must not appear in wb_entity as countries, or they would
+    # join into ranks. They are deliberately left out: build-country-population
+    # keys on country-indicators.json slugs, which none of them have.
+    known = {e["iso3"] for e in ents}
+    orphan = sorted(c for c in codes if c not in known and c not in OWID_DEFUNCT and c != WORLD)
+    if orphan:
+        log(f"  {len(orphan)} code(s) absent from wb_entity: {orphan[:12]}")
+
+    for probe in (WORLD, "CHN", "IND", "USA", "NGA", "TWN"):
         s = sorted([r for r in rows if r["iso3"] == probe], key=lambda r: r["year"])
         if not s:
             continue
@@ -220,10 +311,20 @@ def main(argv):
         rest("POST", "/rest/v1/wb_entity", body=ents[i:i + CHUNK], key=key,
              prefer="resolution=merge-duplicates,return=minimal")
     log(f"upserted {len(ents)} rows into wb_entity")
+    # Upsert FIRST, sweep second. A delete-then-insert would leave the table
+    # empty for the length of the reload, and anything reading it in that
+    # window sees a site with no population data rather than stale numbers.
     for i in range(0, len(rows), CHUNK):
         rest("POST", "/rest/v1/country_population", body=rows[i:i + CHUNK], key=key,
              prefer="resolution=merge-duplicates,return=minimal")
     log(f"upserted {len(rows):,} rows into country_population")
+    # Now remove anything this load did not write: the old World Bank rows for
+    # codes OWID does not carry (43 of its aggregates, ARB/EUU/LDC and friends)
+    # and any year that has since dropped out. Keyed on provenance rather than
+    # on a year literal, so a future source change cleans up after itself.
+    stale = urllib.parse.quote(OWID_SOURCE, safe="")
+    rest("DELETE", f"/rest/v1/country_population?source=neq.{stale}", key=key)
+    log("swept rows not written by this source")
     return 0
 
 
@@ -237,12 +338,30 @@ ENT_FIXTURE = [
     {"id": "XK", "name": "too short", "region": {"id": "ECS", "value": "Europe"}},
 ]
 
-POP_FIXTURE = [
-    {"countryiso3code": "USA", "date": "1960", "value": 180671000},
-    {"countryiso3code": "USA", "date": "2025", "value": 342034432.0},
-    {"countryiso3code": "USA", "date": "2026", "value": None},
-    {"countryiso3code": "", "date": "2024", "value": 8000000000},   # aggregate with no code
-    {"countryiso3code": "WLD", "date": "2024", "value": 8161972572},
+def _f(entity, code, year, hist="", proj=""):
+    return {"entity": entity, "code": code, "year": year,
+            COL_ESTIMATE: hist, COL_PROJECTION: proj}
+
+
+OWID_FIXTURE = [
+    _f("United States", "USA", "1799", "5000000"),
+    _f("United States", "USA", "1800", "6100000"),
+    _f("United States", "USA", "2023", "343477330"),
+    _f("United States", "USA", "2024", proj="345426566"),
+    _f("United States", "USA", "2025", proj="347275809"),
+    _f("United States", "USA", "2026", proj="349000000"),
+    _f("World", "OWID_WRL", "1800", "989000000"),
+    _f("World", "OWID_WRL", "2023", "8091734933"),
+    _f("World", "OWID_WRL", "2024", proj="8161972574"),
+    _f("Europe", "OWID_EUR", "2023", "746966209"),
+    _f("High-income countries", "OWID_HIC", "2023", "1416794460"),
+    _f("USSR", "OWID_USS", "1989", "289122632"),
+    _f("Taiwan", "TWN", "2023", "23400220"),
+    _f("Kosovo", "OWID_KOS", "2023", "1700039"),
+    _f("Americas (UN)", "", "2023", "1000000000"),
+    _f("Ireland (whole island)", "", "1841", "8148395"),
+    _f("Ireland", "IRL", "1950", "2912656"),
+    _f("Nowhere", "NOW", "2023", "0"),
 ]
 
 
@@ -255,20 +374,71 @@ def self_test():
     assert usa["lat"] == 38.8895 and usa["capital"] == "Washington D.C.", usa
     assert wld["capital"] is None and wld["lat"] is None, "blank strings must become NULL"
 
-    pop = parse_pop(POP_FIXTURE)
-    assert len(pop) == 3, pop
-    assert {"iso3": "USA", "year": 1960, "population": 180671000,
-            "source": WB_SOURCE} in pop, pop
-    assert all(r["source"] == WB_SOURCE for r in pop), (
-        "every World Bank row must carry its source, so Taiwan's substitute is "
-        "distinguishable in the data rather than only in a comment")
+    pop = parse_owid(OWID_FIXTURE)
+    got = {(r["iso3"], r["year"]): r["population"] for r in pop}
+
+    assert ("USA", 1799) not in got, "1799 is below the annual floor and must be dropped"
+    assert ("USA", 2026) not in got, "beyond TO_YEAR is forecast we did not ask for"
+    assert got[("USA", 1800)] == 6100000, got
+    assert got[("USA", 2023)] == 343477330, got
+    assert got[("USA", 2024)] == 345426566, "2024 comes from the projection column"
+    assert got[("USA", 2025)] == 347275809, got
+
+    kind = {(r["iso3"], r["year"]): r["kind"] for r in pop}
+    assert kind[("USA", 2023)] == "estimate" and kind[("USA", 2024)] == "projection", (
+        "the estimate/projection boundary must survive as data; a page that "
+        "cannot see it will draw a forecast as history")
+    assert {k for k in kind.values()} <= {"estimate", "projection"}, kind
+
+    try:
+        parse_owid([_f("Dup", "DUP", "2024", "1", "2")])
+    except SystemExit:
+        pass
+    else:
+        raise AssertionError("a code-year carrying BOTH columns is ambiguous and must "
+                             "hard-fail, not resolve by column order")
+
+    assert ("WLD", 2023) in got and ("OWID_WRL", 2023) not in got, (
+        "OWID's world code must be mapped onto WLD, or every share-of-world "
+        "figure downstream silently loses its denominator")
+
+    assert not any(r["iso3"].startswith("OWID_") and r["iso3"] in OWID_AGGREGATES for r in pop), (
+        "continents and income groups are aggregates and must never be loaded")
+    assert ("OWID_EUR", 2023) not in got and ("OWID_HIC", 2023) not in got, got
+
+    assert got[("OWID_USS", 1989)] == 289122632, (
+        "defunct states ARE loaded; a prefix test on OWID_ would have deleted "
+        "them along with the aggregates, which is why the two lists are explicit")
+
+    assert ("TWN", 2023) in got, (
+        "Taiwan comes from the same series as everyone else now; if this ever "
+        "fails the World Bank substitute has to come back")
+
+    assert got[("IRL_WHOLE", 1841)] == 8148395, (
+        "the pre-partition whole-island series is the only place the Famine is "
+        "visible; it is loaded under a synthetic code because it is a DIFFERENT "
+        "territory from IRL and must never be spliced onto it")
+    assert got[("IRL", 1950)] == 2912656 and ("IRL", 1841) not in got, (
+        "IRL is the 26 counties and starts in 1950; the two series stay apart")
+    assert ("", 2023) not in got, "Americas (UN) is an uncoded aggregate and stays dropped"
+
+    assert not any(r["iso3"] == "" for r in pop), "a blank code is an unjoinable row, drop it"
+    assert ("NOW", 2023) not in got, "a zero population is missing data, not a fact"
     assert all(isinstance(r["population"], int) for r in pop), "population must be integral"
-    assert not any(r["iso3"] == "" for r in pop), "a blank code is an aggregate row, drop it"
-    # the join that makes any per-capita figure correct
-    agg = {e["iso3"] for e in ents if e["is_aggregate"]}
-    countries = [r for r in pop if r["iso3"] not in agg]
-    assert {r["iso3"] for r in countries} == {"USA"}, countries
-    print("self-test: 10/10 PASS")
+    assert all(r["source"] == OWID_SOURCE for r in pop), "every row carries its provenance"
+
+    assert got[("XKX", 2023)] == 1700039, (
+        "Kosovo is OWID_KOS but XKX everywhere else on this site; without the "
+        "rename its country page silently loses its population section")
+
+    # The property the whole two-view design rests on.
+    assert not (set(OWID_RENAME) & OWID_AGGREGATES), (
+        "the world is renamed, not dropped; putting it in the aggregate set "
+        "would remove the denominator instead of renaming it")
+    assert not (OWID_AGGREGATES & set(OWID_DEFUNCT)), (
+        "a code cannot be both an aggregate and a defunct state")
+
+    print("self-test: 27/27 PASS")
     return 0
 
 

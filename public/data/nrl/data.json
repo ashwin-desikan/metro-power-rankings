@@ -31664,7 +31664,7 @@
 "stadium": "Sydney Showground",
 "metro": "sydney",
 "state": "New South Wales",
-"premiership": false,
+"premiership": true,
 "stripped": false
 }
 ],

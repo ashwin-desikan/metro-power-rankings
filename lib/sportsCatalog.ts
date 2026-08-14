@@ -176,6 +176,7 @@ export const SPORTS_FEATURES: SportsFeature[] = [
   { href: "/sports/champions", label: "Champions", hint: "Every current and all-time champion across sports" },
   { href: "/sports/zone-zero-cup", label: "Zone Zero Cup", hint: "National sporting-merit index across all sports" },
   { href: "/sports/games", label: "The Greatest Games", hint: "Top games of all time by Game Score" },
+  { href: "/sports/heartbreak", label: "The Heartbreak Index", hint: "Which fanbases suffer most, on one formula across every sport" },
   { href: "/sports/rivalries", label: "Sports Rivalries", hint: "Cross-sport derbies, classics and grudge matches" },
   { href: "/sports/valuations", label: "Team Valuations", hint: "Franchise values across the major leagues" },
   { href: "/sports/geography-of-erasure", label: "The Geography of Erasure", hint: "The champions the map forgot" },

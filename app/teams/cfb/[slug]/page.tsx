@@ -7,6 +7,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
+import HeartbreakTag from "@/app/teams/HeartbreakTag";
+import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import { getAllCfbSlugs, getAllCfbTeams, getCfbTeamBySlug, getCfbSeasons, getCfbAwards, getCfbRivalries, getCfbTeamGames, cfbMonogram } from "@/lib/cfb";
 import CfbGamesTable from "../CfbGamesTable";
 
@@ -95,6 +97,7 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
         <ChampionBadge items={getCurrentChampionships(t.name, "American Football")} />
             {t.fbs_fcs && <span className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded border" style={{ borderColor: "var(--border)", color: "var(--text-dim)" }}>{t.current_fbs ? "FBS" : t.fbs_fcs}</span>}
             <TopTeamChip names={[t.name]} metro={t.metro} className="ml-1" />
+            <HeartbreakTag league="cfb" slug={slug} className="ml-1" />
           </div>
           <p className="text-sm text-[var(--text-muted)]">
             {t.conference}
@@ -109,6 +112,8 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
           )}
         </div>
       </header>
+
+      <HeartbreakPanel league="cfb" slug={slug} className="mb-8" />
 
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-10">
         <Stat k="All-time" v={`${t.w}-${t.l}${t.tie ? `-${t.tie}` : ""}`} />

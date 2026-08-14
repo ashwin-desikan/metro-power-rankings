@@ -123,7 +123,11 @@ export default async function NflPredictionsPage() {
   const graded = ledger.filter((e) => e.result && e.result !== "T").slice(-10).reverse();
   const rec = preds?.record ?? null;
   const anyMarket = upcoming.some((e) => e.market);
-  const divisions = ["AFC East", "AFC North", "AFC South", "AFC West", "NFC East", "NFC North", "NFC South", "NFC West"];
+  // Held per conference rather than as one flat list, so the board can put
+  // each conference in its own COLUMN. A 2-up grid fills row by row, which
+  // reads as the two conferences interleaved rather than side by side.
+  const AFC_DIVISIONS = ["AFC East", "AFC North", "AFC South", "AFC West"];
+  const NFC_DIVISIONS = ["NFC East", "NFC North", "NFC South", "NFC West"];
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -302,9 +306,21 @@ export default async function NflPredictionsPage() {
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Expected wins and the odds of each landing spot, division by division.
             </p>
+            {/* min-w-0 on each column: a grid child holding a table otherwise
+                inflates its track past the viewport (DESIGN-STANDARDS.md). */}
             <div className="grid gap-4 lg:grid-cols-2">
-              {divisions.map((d) => (
-                <DivisionTable key={d} rows={rows} division={d} href={teamHref} logo={teamLogo} />
+              {[
+                { conference: "AFC", divisions: AFC_DIVISIONS },
+                { conference: "NFC", divisions: NFC_DIVISIONS },
+              ].map(({ conference, divisions }) => (
+                <div key={conference} className="min-w-0 space-y-4">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+                    {conference}
+                  </h3>
+                  {divisions.map((d) => (
+                    <DivisionTable key={d} rows={rows} division={d} href={teamHref} logo={teamLogo} />
+                  ))}
+                </div>
               ))}
             </div>
           </section>

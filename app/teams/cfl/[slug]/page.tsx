@@ -3,6 +3,8 @@ import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import { getRivalries } from "@/lib/rivalries";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
+import HeartbreakTag from "@/app/teams/HeartbreakTag";
+import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -129,6 +131,7 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.name}</h1>
         <ChampionBadge items={getCurrentChampionships(f.name, "Canadian Football")} />
             <TopTeamChip names={[f.name]} metro={null} />
+            <HeartbreakTag league="cfl" slug={slug} />
             <span className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded" style={{ background: f.active ? "rgba(78,205,196,0.16)" : "rgba(120,120,140,0.18)", color: f.active ? "var(--accent)" : "var(--text-dim)" }}>
               {f.active ? "Active" : "Defunct"}
             </span>
@@ -154,6 +157,8 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
       </header>
 
       <RivalriesSection rivals={getRivalries(f.name, "Canadian Football", "CFL")} />
+
+      <HeartbreakPanel league="cfl" slug={slug} className="mb-8" />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mt-4">
         <StatCell v={f.grey_cups.toString()} k="Grey Cups" sub={f.title_years.length ? `Last ${f.title_years[f.title_years.length - 1]}` : undefined} />

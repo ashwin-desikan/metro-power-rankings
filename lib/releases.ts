@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-14",
+    headline: "The Heartbreak Index, and a time machine for every country",
+    items: [
+      "The Heartbreak Index is open: one formula scoring every club we cover across eleven competitions on droughts, lost finals, relegation and playoff exile. Toronto's Maple Leafs lead the world.",
+      "Every club that scores now carries its standing on its own team page, with the clocks it is waiting on and the collapses the ledger prices by name: 28-3 in Atlanta, Wide Right in Buffalo.",
+      "Countries gains a Time Machine. Pick any year from 1800 and see who held every territory and how many people lived there, with empires, occupations and states that no longer exist all summed from the same rows.",
+      "Bitcoin's chart now starts at 8.6 cents in July 2010 rather than 2014. St Kilda's 2010 premiership is corrected, a drawn final and a lost replay being no flag, and Newtown's 1910 title now reads as won.",
+    ],
+  },
+  {
     date: "2026-08-13",
     headline: "A century of markets, and baseball's rival leagues pulled apart",
     items: [

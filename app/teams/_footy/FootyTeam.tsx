@@ -7,6 +7,8 @@ import type { FootyCopy } from "./config";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import type { Championship } from "@/lib/champions";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
+import HeartbreakTag from "@/app/teams/HeartbreakTag";
+import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import type { ResolvedRival } from "@/lib/rivalries";
 
 function titleCase(slug: string): string {
@@ -68,6 +70,7 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
           <div className="flex items-center gap-3 flex-wrap">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.name}</h1>
             <ChampionBadge items={champions} />
+            <HeartbreakTag league={lg} slug={f.slug} />
             <span className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded" style={{ background: f.active ? "rgba(78,205,196,0.16)" : "rgba(120,120,140,0.18)", color: f.active ? "var(--accent)" : "var(--text-dim)" }}>
               {f.active ? "Active" : "Defunct"}
             </span>
@@ -98,6 +101,8 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
       </header>
 
       <RivalriesSection rivals={rivals} />
+
+      <HeartbreakPanel league={lg} slug={f.slug} className="mb-8" />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mt-4">
         <StatCell v={f.premierships.toString()} k={copy.premierWord + "s"} sub={f.stripped_premierships > 0 ? `${f.stripped_premierships} stripped (${f.stripped_years.join(", ")})` : (f.title_years.length ? `Last ${f.title_years[f.title_years.length - 1]}` : undefined)} />

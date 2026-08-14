@@ -4,6 +4,8 @@ import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import { getRivalries } from "@/lib/rivalries";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
+import HeartbreakTag from "@/app/teams/HeartbreakTag";
+import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -72,6 +74,7 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
         <ChampionBadge items={getCurrentChampionships(t.name, "Basketball")} />
             {!t.current_d1 && <span className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded border" style={{ borderColor: "var(--border)", color: "var(--text-dim)" }}>Former D-I</span>}
             <TopTeamChip names={[t.name]} metro={t.metro} className="ml-1" />
+            <HeartbreakTag league="cbb" slug={slug} className="ml-1" />
           </div>
           <p className="text-sm text-[var(--text-muted)]">
             {t.conference}
@@ -88,6 +91,8 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
       </header>
 
       <RivalriesSection rivals={getRivalries(t.name, "Basketball", "NCAAM")} />
+
+      <HeartbreakPanel league="cbb" slug={slug} className="mb-8" />
 
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-10">
         <Stat k="All-time" v={`${t.w}-${t.l}`} />

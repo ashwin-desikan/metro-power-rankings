@@ -94,6 +94,7 @@ function buildSections(): Section[] {
       items: [
         { href: '/deep-dives', label: 'All deep dives' },
         { href: '/sports/geography-of-erasure', label: 'The Geography of Erasure' },
+        { href: '/sports/heartbreak', label: 'The Heartbreak Index' },
         { href: '/sports/games', label: 'The Greatest Games' },
         { href: '/sports/valuations', label: 'Team Valuations' },
         { href: '/top-teams', label: 'The Team That Wins the City' },

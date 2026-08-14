@@ -997,53 +997,6 @@
 "abbr": "WB"
 },
 {
-"slug": "st-kilda",
-"name": "St Kilda",
-"metro_slug": "melbourne",
-"state": "Victoria",
-"qid": null,
-"active": true,
-"first_year": 1897,
-"last_year": 2026,
-"seasons": 128,
-"w": 975,
-"d": 26,
-"l": 1462,
-"win_pct": 0.401,
-"premierships": 2,
-"minor_premierships": 3,
-"stripped_premierships": 0,
-"stripped_years": [],
-"gf_apps": 7,
-"finals_apps": 31,
-"title_years": [
-1966,
-2010
-],
-"minor_years": [
-1965,
-1997,
-2009
-],
-"gf_years": [
-1913,
-1965,
-1966,
-1971,
-1997,
-2009,
-2010
-],
-"aka": [],
-"leagues": [
-"AFL",
-"VFL"
-],
-"color": "#ed0f05",
-"color2": "#000000",
-"abbr": "SK"
-},
-{
 "slug": "port-adelaide",
 "name": "Port Adelaide",
 "metro_slug": "adelaide",
@@ -1083,6 +1036,52 @@
 "color": "#008aab",
 "color2": "#000000",
 "abbr": "PA"
+},
+{
+"slug": "st-kilda",
+"name": "St Kilda",
+"metro_slug": "melbourne",
+"state": "Victoria",
+"qid": null,
+"active": true,
+"first_year": 1897,
+"last_year": 2026,
+"seasons": 128,
+"w": 975,
+"d": 26,
+"l": 1462,
+"win_pct": 0.401,
+"premierships": 1,
+"minor_premierships": 3,
+"stripped_premierships": 0,
+"stripped_years": [],
+"gf_apps": 7,
+"finals_apps": 31,
+"title_years": [
+1966
+],
+"minor_years": [
+1965,
+1997,
+2009
+],
+"gf_years": [
+1913,
+1965,
+1966,
+1971,
+1997,
+2009,
+2010
+],
+"aka": [],
+"leagues": [
+"AFL",
+"VFL"
+],
+"color": "#ed0f05",
+"color2": "#000000",
+"abbr": "SK"
 },
 {
 "slug": "greater-western-sydney",
@@ -26296,7 +26295,7 @@
 "minor": false,
 "finals": true,
 "gf": true,
-"prem": true,
+"prem": false,
 "stripped": false,
 "metro": "melbourne",
 "state": "Victoria"

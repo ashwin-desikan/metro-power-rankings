@@ -167,11 +167,75 @@ def fetch_fred_daily(sid):
     return out
 
 
+# Coin Metrics community network data, free with attribution (CC BY-NC 4.0).
+# Yahoo's BTC-USD begins 2014-09-17, which is not the start of bitcoin, it is
+# the start of Yahoo covering it: the first quoted price (2010-07-18, 8.6
+# cents), the 2011 Mt Gox spike to $32 and the crash back under $3, and the
+# whole 2013 run to $1,100 all sit before it. Coin Metrics publishes a daily
+# reference rate (PriceUSD) from 2010-07-18 onward, so the missing four years
+# are free history for the site's most volatile series.
+#
+# Same splice discipline as the two oils: exactly ONE seam, at Yahoo's first
+# day, and Yahoo owns every date it covers, so today's price never changes
+# source under a reader's feet. Divergence over the shared days is logged on
+# every run and belongs in market_series_meta.source_note.
+CM_BTC_URL = "https://raw.githubusercontent.com/coinmetrics/data/master/csv/btc.csv"
+
+
+def parse_coinmetrics(text):
+    """{iso_date: price} from the community btc.csv PriceUSD column.
+
+    The file starts at the genesis block in 2009, more than a year before
+    anyone quoted a price, so early rows carry an EMPTY PriceUSD. Those are
+    dropped, never read as zero: a zero here would not be a cheap bitcoin, it
+    would be a divide-by-zero in every real-terms and rebased view."""
+    import csv, io
+    rows = csv.reader(io.StringIO(text))
+    hdr = next(rows, [])
+    if "time" not in hdr or "PriceUSD" not in hdr:
+        raise SystemExit("FATAL: Coin Metrics btc.csv has no time/PriceUSD column; "
+                         "their schema changed, do not guess at column order.")
+    ti, pi = hdr.index("time"), hdr.index("PriceUSD")
+    out = {}
+    for r in rows:
+        if len(r) <= max(ti, pi) or not r[pi]:
+            continue
+        try:
+            v = float(r[pi])
+        except ValueError:
+            continue
+        if v > 0:
+            out[r[ti][:10]] = v
+    return out
+
+
+def fetch_coinmetrics_btc():
+    req = urllib.request.Request(CM_BTC_URL, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=180) as r:
+        return parse_coinmetrics(r.read().decode("utf-8", "replace"))
+
+
 def series_for(slug, symbol):
     """Everything is Yahoo except the Dow, which is MeasuringWorth with Yahoo
-    filling the tail MeasuringWorth has not published yet, and the two oils,
-    which get EIA spot for the years before the futures series begins."""
+    filling the tail MeasuringWorth has not published yet, the two oils, which
+    get EIA spot for the years before the futures series begins, and bitcoin,
+    which gets Coin Metrics for the four years before Yahoo starts."""
     y = fetch_yahoo(symbol)
+    if slug == "bitcoin":
+        cm = fetch_coinmetrics_btc()
+        if len(cm) < 4000:
+            raise SystemExit(f"FATAL: Coin Metrics returned {len(cm)} priced days; expected "
+                             "~5,700. Source changed; do not splice a truncated series.")
+        cut = min(y) if y else max(cm)
+        older = {d: v for d, v in cm.items() if d < cut}
+        both = [(cm[d], y[d]) for d in cm if d in y and y[d]]
+        dev = sorted(abs(a - b) / b * 100 for a, b in both)
+        if dev:
+            log(f"      seam check vs Coin Metrics: {len(both):,} shared days, "
+                f"median {dev[len(dev)//2]:.2f}%, p90 {dev[int(len(dev)*0.9)]:.2f}%")
+        merged = dict(older)
+        merged.update(y)
+        return merged, f"coinmetrics {len(older):,} before {cut} + yahoo {len(y):,}"
     if slug in FRED_SPOT:
         sid, label = FRED_SPOT[slug]
         spot = fetch_fred_daily(sid)
@@ -275,7 +339,16 @@ def self_test():
     rows = MW_ROW.findall(html)
     assert len(rows) == 2, rows
     assert float(rows[1][3].replace(",", "")) == 1234.5
-    print("self-test: 4/4 PASS")
+    # Coin Metrics: real shape of the file's first rows — genesis-era days with
+    # no quoted price, then the first priced day. Empty and zero both drop.
+    cm = parse_coinmetrics(
+        "time,AdrActCnt,PriceUSD,SplyCur\n"
+        "2009-01-03,1,,50\n"
+        "2010-07-17,42,0,1000000\n"
+        "2010-07-18,51,0.08584,1100000\n"
+        "2014-09-17,99,457.334,13000000\n")
+    assert cm == {"2010-07-18": 0.08584, "2014-09-17": 457.334}, cm
+    print("self-test: 5/5 PASS")
     return 0
 
 

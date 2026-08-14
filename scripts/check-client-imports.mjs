@@ -37,6 +37,8 @@ const SERVER_ONLY_MODULES = [
   "@/lib/wcbb",
   "@/lib/collegeHockey",
   "@/lib/champions",
+  "@/lib/heartbreak",
+  "@/lib/countryTimeMachine",
   "@/lib/championsHub",
   "@/lib/championsHistory",
   "@/lib/championsTimeline",

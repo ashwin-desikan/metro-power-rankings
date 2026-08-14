@@ -24,6 +24,8 @@ import { withIcon } from "./sectionIcons";
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const LINE = "#4a9edb";
 const PEAK = "#E2628B";
+/** The predecessor territory. Deliberately not LINE: it is a different place. */
+const PRIOR = "#8b8f98";
 
 function fmtPop(n: number): string {
   if (n >= 1e9) return `${(n / 1e9).toFixed(2)}bn`;
@@ -45,6 +47,16 @@ export default function PopulationSection({
   const [hoverYear, setHoverYear] = useState<number | null>(null);
 
   const worldBy = useMemo(() => new Map(world), [world]);
+
+  // The predecessor territory, when the source has one. Ireland only: the
+  // whole island 1800-1920 against the Republic 1950 on. Drawn on the same
+  // axes so the Famine is legible, in a different colour and never joined to
+  // the modern line, because they are not the same place.
+  const priorPts = useMemo(() => {
+    if (!pop.prior || mode !== "count") return [];
+    return pop.prior.series.map(([y, v]) => [y, v] as [number, number]);
+  }, [pop.prior, mode]);
+
   const pts = useMemo(() => {
     if (mode === "count") return pop.series.map(([y, v]) => [y, v] as [number, number]);
     return pop.series
@@ -59,12 +71,58 @@ export default function PopulationSection({
 
   const shrinking = pop.declineFromPeak > 0.5;
   const W = 720, H = 200, padL = 42, padR = 12, padT = 12, padB = 22;
-  const y0 = pts[0][0];
-  const y1 = pts[pts.length - 1][0];
-  const maxV = Math.max(...pts.map((p) => p[1]));
+  // Scales span both series, or Ireland's 8.1m in 1841 would run off the top
+  // of an axis built for a country that peaks at 5.2m.
+  const scalePts = priorPts.length ? [...priorPts, ...pts] : pts;
+  const y0 = Math.min(...scalePts.map((p) => p[0]));
+  const y1 = Math.max(...scalePts.map((p) => p[0]));
+  const maxV = Math.max(...scalePts.map((p) => p[1]));
   const px = (y: number) => padL + (y1 === y0 ? 0 : ((y - y0) / (y1 - y0)) * (W - padL - padR));
   const py = (v: number) => padT + (1 - v / (maxV * 1.08)) * (H - padT - padB);
-  const path = pts.map((p, i) => `${i === 0 ? "M" : "L"}${px(p[0]).toFixed(1)},${py(p[1]).toFixed(1)}`).join(" ");
+  const d = (ps: [number, number][]) =>
+    ps.map((p, i) => `${i === 0 ? "M" : "L"}${px(p[0]).toFixed(1)},${py(p[1]).toFixed(1)}`).join(" ");
+
+  // Two paths, not one. Everything up to pop.latest is estimated; anything
+  // after it is a UN WPP projection and is drawn dashed, because a forecast
+  // rendered in the same stroke as a measurement is a forecast presented as a
+  // measurement. The estimate path keeps the boundary year so the two join.
+  const estPts = pts.filter((p) => p[0] <= pop.latest);
+  const prjPts = pts.filter((p) => p[0] >= pop.latest);
+  const isProjected = (y: number) => y > pop.latest;
+
+  // Fourteen of the small territories have holes in their history: Gibraltar,
+  // the Isle of Man, Kosovo and the Northern Marianas each jump straight from
+  // 1820 to 1950. Drawing one continuous path across that renders a 130-year
+  // guess in the same stroke as the measured years, so the line breaks instead.
+  // The threshold is deliberately above the source's own decadal resolution
+  // before 1830 - a ten-year step there is the data's shape, not a hole.
+  const MAX_GAP = 25;
+  const runs = (ps: [number, number][]): [number, number][][] => {
+    const out: [number, number][][] = [];
+    let cur: [number, number][] = [];
+    for (const p of ps) {
+      const prev = cur[cur.length - 1];
+      if (prev && p[0] - prev[0] > MAX_GAP) {
+        out.push(cur);
+        cur = [];
+      }
+      cur.push(p);
+    }
+    if (cur.length) out.push(cur);
+    return out;
+  };
+  const estRuns = runs(estPts);
+
+  // Ticks used to be hardcoded to [1960, 1980, 2000, 2020], which was fine
+  // when the series began in 1960 and unreadable now that it begins in 1800.
+  const ticks = (() => {
+    const span = y1 - y0;
+    const step = span > 150 ? 50 : span > 60 ? 20 : span > 25 ? 10 : 5;
+    const out: number[] = [];
+    for (let y = Math.ceil(y0 / step) * step; y <= y1; y += step) out.push(y);
+    return out;
+  })();
+
   const hovered = hoverYear != null ? pts.find((p) => p[0] === hoverYear) ?? null : null;
   const label = (v: number) => (mode === "count" ? fmtPop(v) : `${v.toFixed(v < 1 ? 2 : 1)}%`);
 
@@ -162,12 +220,36 @@ export default function PopulationSection({
               </g>
             );
           })}
-          {[1960, 1980, 2000, 2020].filter((y) => y >= y0 && y <= y1).map((y) => (
+          {ticks.map((y) => (
             <text key={y} x={px(y)} y={H - 6} textAnchor="middle" fontSize={8} fill="var(--text-dim)" style={MONO}>
               {y}
             </text>
           ))}
-          <path d={path} fill="none" stroke={LINE} strokeWidth={1.8} strokeLinejoin="round" />
+          {runs(priorPts).map((run, i) =>
+            run.length > 1 ? (
+              <path key={`p${i}`} d={d(run)} fill="none" stroke={PRIOR} strokeWidth={1.5} strokeLinejoin="round" />
+            ) : (
+              <circle key={`p${i}`} cx={px(run[0][0])} cy={py(run[0][1])} r={1.5} fill={PRIOR} />
+            ),
+          )}
+          {estRuns.map((run, i) =>
+            run.length > 1 ? (
+              <path key={i} d={d(run)} fill="none" stroke={LINE} strokeWidth={1.8} strokeLinejoin="round" />
+            ) : (
+              <circle key={i} cx={px(run[0][0])} cy={py(run[0][1])} r={1.8} fill={LINE} />
+            ),
+          )}
+          {prjPts.length > 1 && (
+            <path
+              d={d(prjPts)}
+              fill="none"
+              stroke={LINE}
+              strokeWidth={1.8}
+              strokeLinejoin="round"
+              strokeDasharray="4 3"
+              opacity={0.75}
+            />
+          )}
           {/* The peak only deserves a marker when the country has fallen away
               from it; otherwise it is just the last point on the line. */}
           {shrinking && mode === "count" && (
@@ -202,25 +284,32 @@ export default function PopulationSection({
         </svg>
         <div className="text-xs text-[var(--text-muted)] mt-1 h-4" style={MONO}>
           {hovered && hoverYear != null
-            ? `${hoverYear}: ${label(hovered[1])}`
-            : `${name} · ${mode === "count" ? "people" : "share of world population"}, ${y0}–${y1}`}
+            ? `${hoverYear}: ${label(hovered[1])}${isProjected(hoverYear) ? " · projected" : ""}`
+            : `${name} · ${mode === "count" ? "people" : "share of world population"}, ${y0}–${pop.latest}` +
+              (pop.projectedTo ? ` · dashed to ${pop.projectedTo} is projected` : "")}
         </div>
       </div>
 
       <p className="text-xs text-[var(--text-dim)] leading-relaxed max-w-3xl mt-3">
-        {pop.source || "World Bank Open Data"}, {pop.first} to {pop.latest}; earlier history needs a
-        different source with its own reconciliation of modern borders against historical ones.
-        {pop.source && !pop.source.includes("World Bank") ? (
-          // Taiwan. Every other country here is World Bank; saying so on the
-          // page is the point of carrying the source per country rather than
-          // stating one line of provenance for the whole file.
+        {pop.source || "Our World in Data"}. Figures above are as of {pop.latest}, the last year
+        that is estimated rather than forecast.
+        {pop.prior ? (
           <>
-            {" "}Every other country on the site uses the World Bank series, which does not report
-            this one, so the substitute is named here rather than blended in silently. These are
-            estimates only; the projections that would carry the series to {pop.latest + 2} are not
-            used.
+            {" "}The grey line is {pop.prior.label}, {pop.prior.series[0][0]} to{" "}
+            {pop.prior.series[pop.prior.series.length - 1][0]}. It is drawn separately, and never
+            joined to the blue one, because it is a different territory: most of the fall between
+            the two is the border, not the people. Nothing in the cards above is computed from it.
+          </>
+        ) : null}
+        {pop.projectedTo ? (
+          <>
+            {" "}The dashed tail to {pop.projectedTo} is a UN WPP medium-variant projection. It is
+            drawn because the line should reach the present, and drawn differently because it has
+            not happened yet: no rank, peak or share on this page uses it.
           </>
         ) : null}{" "}
+        Before 1950 the series is reconstruction rather than contemporaneous statistics, which is
+        worth knowing when a country&rsquo;s peak sits back there.{" "}
         The current population shown elsewhere on this page comes from the workbook and is
         unchanged by this.{" "}
         {shrinking ? (

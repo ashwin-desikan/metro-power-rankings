@@ -6,6 +6,8 @@ import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
+import HeartbreakTag from "@/app/teams/HeartbreakTag";
+import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import { notFound } from "next/navigation";
 import {
   getAllFranchiseSlugs,
@@ -293,6 +295,7 @@ export default async function FranchisePage({ params }: Props) {
         <ChampionBadge items={getCurrentChampionships(f.display_name, "Baseball")} />
           <ValuationChip league="mlb" slug={f.slug} className="mt-2" />
           <GhostFranchiseTag league="mlb" slug={f.slug} className="mt-2" />
+          <HeartbreakTag league="mlb" slug={f.slug} className="mt-2" />
           <p className="text-sm text-[var(--text-muted)] mt-1">
             <span className="text-[var(--text-dim)]">Founded:</span> <span className="text-[var(--text)]">{f.founding_year ?? "—"}</span>
             {" · "}
@@ -370,6 +373,8 @@ export default async function FranchisePage({ params }: Props) {
       </header>
 
       <RivalriesSection rivals={getRivalries(f.canonical, "Baseball", "MLB")} />
+
+      <HeartbreakPanel league="mlb" slug={f.slug} className="mb-8" />
 
       {/* Headline stat strip — 5 cells, mirrors NFL */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">
