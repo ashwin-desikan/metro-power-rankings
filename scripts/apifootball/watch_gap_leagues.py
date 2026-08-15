@@ -147,13 +147,33 @@ def auto_promote(lg, c, skey):
         return False
     ljson = os.path.join(HERE, "leagues.json")
     leagues = json.load(open(ljson, encoding="utf-8"))
+    pjson = os.path.join(HERE, "leagues_pending.json")
     if any(l.get("league_id") == lid for l in leagues):
-        log("  %s already in leagues.json -- not re-adding" % lg["intended_name"]); return False
+        # Already active (e.g. a manual leagues.json edit got there first, same
+        # as Andorra 2026-08-14). Still prune pending + fix the watch state, or
+        # this league re-classifies as "ready" vs a stale stored state every
+        # single day, false-transitions, and re-alerts forever -- the bug this
+        # comment is here to prevent a repeat of.
+        pending = json.load(open(pjson, encoding="utf-8"))
+        if any(p.get("api_league_id") == lid for p in pending):
+            _write_pending(pjson, [p for p in pending if p.get("api_league_id") != lid])
+            log("  %s already in leagues.json -- pruned stale pending entry" % lg["intended_name"])
+        else:
+            log("  %s already in leagues.json -- not re-adding" % lg["intended_name"])
+        if skey:
+            try:
+                supa_upsert("football_league_watch", [{"country": lg["country"], "level": lg["level"],
+                    "intended_name": lg["intended_name"], "api_league_id": lid, "target_season": lg.get("target_season"),
+                    "covered": True, "standings_ready": True, "state": "promoted",
+                    "notes": "already active; watch state corrected", "last_checked": NOW, "updated_at": NOW}],
+                    "country,level", skey)
+            except Exception as e:
+                log("  (state fixup failed: %s)" % str(e)[:80])
+        return False
     leagues.append({"league_id": lid, "country": lg["country"], "name": lg["intended_name"],
                     "season": c["season_used"], "level": lg["level"],
                     "comp_type": "domestic", "has_standings": True})
     json.dump(leagues, open(ljson, "w", encoding="utf-8"), ensure_ascii=False)  # one-line/compact, matches file
-    pjson = os.path.join(HERE, "leagues_pending.json")
     _write_pending(pjson, [p for p in json.load(open(pjson, encoding="utf-8")) if p.get("api_league_id") != lid])
     if skey:
         try:

@@ -1,5 +1,4 @@
 [
-  {"country": "Andorra", "api_country": "Andorra", "api_league_id": 312, "intended_name": "1a Divisió", "level": 1, "target_season": 2026},
   {"country": "Greece", "api_country": "Greece", "api_league_id": 494, "intended_name": "Super League 2", "level": 2, "target_season": 2026},
   {"country": "India", "api_country": "India", "api_league_id": 323, "intended_name": "Indian Super League", "level": 1, "target_season": 2026}
 ]

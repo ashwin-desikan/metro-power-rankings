@@ -5441,3 +5441,15 @@ Era-correct names (Persia, Siam ×2 spans, Ceylon, Burma, the Gold Coast, the Du
 - `/rankings` time machine over the 8 orphaned `power-ranking-history` snapshots.
 - **50 territories sit on a half-open vs inclusive seam** between `NOT_SOVEREIGN` and the curated windows (off by exactly one year). Only the three Benelux entries were fixed; the other 50 were left deliberately. Decide the rule before touching them piecemeal.
 - Carried, untouched: two `football_lookup` metro edits; the USC-1940 CFB ledger row; Chicago Stars FC + Brescia workbook recalc.
+
+## 2026-08-15 -- mini -> windows (why so many ntfy pings today: one real mlb-sim blip + a recurring gap-league-watch bug from my own Andorra fix)
+
+Ashwin asked why there were so many ntfy messages today. Two separate causes, both closed.
+
+**1. Real, one-off: `mlb-sim`'s 07:00Z run hit an NRL fixture/record mismatch** (`{'cronulla': -1, 'canberra': -1}`) and failed its ESPN reconciliation check -- `build_season_sims.py`'s per-source hard-fail doing exactly its job rather than publish a wrong table. This produces TWO ntfy pushes for one event, not a bug worth fixing today but worth knowing: `_common.sh`'s `fail()` alerts directly AND `dispatcher.py`'s own tick loop alerts again on any non-ok status -- two independent layers, neither aware of the other. Self-corrected: the 14:30Z retry of the same job came back completely clean (`DONE mlb-sim: ok`), so this was transient ESPN data, not a real break. No fix needed there.
+
+**2. Real, recurring: my own Andorra promotion on 2026-08-14 left a bug that would have fired a "high" priority ntfy alert every single day.** I promoted Andorra by hand-editing `leagues.json` and fixing Supabase's `football_league_watch.state` directly, but never removed it from `leagues_pending.json` -- only `auto_promote()` does that, and I bypassed it. Today's 05:00Z `gap-league-watch` run re-classified Andorra from live API data (still correctly "ready"), saw stored state "promoted" != live "ready", logged a false transition, **overwrote Supabase's state back to "ready"**, and pushed a high-priority `[gap-watch] 1 league transition(s)` alert. Uncaught, this repeats every day forever.
+
+Fixed properly rather than just patched for today (`watch_gap_leagues.py`'s `auto_promote()`): the "already in leagues.json" early-return branch now also prunes any stale `leagues_pending.json` entry and re-asserts `state='promoted'` in Supabase, so ANY future manually-promoted league self-heals on its next run instead of alerting forever. Applied the same fix to today's actual data: pruned Andorra from `leagues_pending.json`, reset Supabase back to `promoted`. Verified: self-test OK, and a real dry-run now reports "2 pending leagues... 0 transitions, 0 ready" -- Andorra no longer appears at all.
+
+Nothing else contributed today; only these two.
