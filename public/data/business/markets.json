@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated_at": "2026-08-14T05:53:22Z",
-  "as_of": "2026-08-14",
+  "generated_at": "2026-08-15T05:51:29Z",
+  "as_of": "2026-08-15",
   "source": "Yahoo Finance chart API",
   "indices": 13,
   "commodities": 6,
@@ -16,8 +16,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 7798.99,
-   "date": "2026-08-13"
+   "value": 7785.76,
+   "date": "2026-08-14"
   },
   {
    "slug": "dow-jones",
@@ -26,8 +26,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 53839.99,
-   "date": "2026-08-13"
+   "value": 53732.41,
+   "date": "2026-08-14"
   },
   {
    "slug": "nasdaq-composite",
@@ -36,8 +36,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 26803.025,
-   "date": "2026-08-13"
+   "value": 26729.164,
+   "date": "2026-08-14"
   },
   {
    "slug": "ftse-100",
@@ -46,8 +46,8 @@
    "country": "United Kingdom",
    "metro": "London",
    "metroSlug": "london",
-   "value": 10772.67,
-   "date": "2026-08-13"
+   "value": 10750.11,
+   "date": "2026-08-14"
   },
   {
    "slug": "dax",
@@ -56,8 +56,8 @@
    "country": "Germany",
    "metro": "Frankfurt",
    "metroSlug": "frankfurt",
-   "value": 26299.74,
-   "date": "2026-08-13"
+   "value": 26440.31,
+   "date": "2026-08-14"
   },
   {
    "slug": "cac-40",
@@ -66,8 +66,8 @@
    "country": "France",
    "metro": "Paris",
    "metroSlug": "paris",
-   "value": 8650.56,
-   "date": "2026-08-13"
+   "value": 8636.8,
+   "date": "2026-08-14"
   },
   {
    "slug": "nikkei-225",
@@ -76,7 +76,7 @@
    "country": "Japan",
    "metro": "Tokyo",
    "metroSlug": "tokyo",
-   "value": 68675.11,
+   "value": 68713.8,
    "date": "2026-08-14"
   },
   {
@@ -86,7 +86,7 @@
    "country": "Hong Kong",
    "metro": "Hong Kong",
    "metroSlug": "hong-kong",
-   "value": 25178.66,
+   "value": 25116.85,
    "date": "2026-08-14"
   },
   {
@@ -96,7 +96,7 @@
    "country": "India",
    "metro": "Mumbai",
    "metroSlug": "mumbai",
-   "value": 77758.73,
+   "value": 78009.25,
    "date": "2026-08-14"
   },
   {
@@ -106,7 +106,7 @@
    "country": "China",
    "metro": "Shanghai",
    "metroSlug": "shanghai",
-   "value": 3918.162,
+   "value": 3927.177,
    "date": "2026-08-14"
   },
   {
@@ -116,7 +116,7 @@
    "country": "South Korea",
    "metro": "Seoul",
    "metroSlug": "seoul",
-   "value": 6937.17,
+   "value": 6977.94,
    "date": "2026-08-14"
   },
   {
@@ -126,8 +126,8 @@
    "country": "Canada",
    "metro": "Toronto",
    "metroSlug": "toronto",
-   "value": 36759.29,
-   "date": "2026-08-13"
+   "value": 36730.27,
+   "date": "2026-08-14"
   },
   {
    "slug": "bovespa",
@@ -136,8 +136,8 @@
    "country": "Brazil",
    "metro": "São Paulo",
    "metroSlug": "",
-   "value": 167100.95,
-   "date": "2026-08-13"
+   "value": 166934.2,
+   "date": "2026-08-14"
   }
  ],
  "commodities": [
@@ -146,7 +146,7 @@
    "symbol": "GC=F",
    "name": "Gold",
    "unit": "USD/oz",
-   "value": 4377.1,
+   "value": 4437.3,
    "date": "2026-08-14"
   },
   {
@@ -154,7 +154,7 @@
    "symbol": "SI=F",
    "name": "Silver",
    "unit": "USD/oz",
-   "value": 63.995,
+   "value": 65.108,
    "date": "2026-08-14"
   },
   {
@@ -162,7 +162,7 @@
    "symbol": "CL=F",
    "name": "Crude Oil (WTI)",
    "unit": "USD/bbl",
-   "value": 81.64,
+   "value": 82.4,
    "date": "2026-08-14"
   },
   {
@@ -170,7 +170,7 @@
    "symbol": "BZ=F",
    "name": "Brent Crude",
    "unit": "USD/bbl",
-   "value": 87.43,
+   "value": 88.52,
    "date": "2026-08-14"
   },
   {
@@ -178,7 +178,7 @@
    "symbol": "HG=F",
    "name": "Copper",
    "unit": "USD/lb",
-   "value": 6.573,
+   "value": 6.613,
    "date": "2026-08-14"
   },
   {
@@ -186,7 +186,7 @@
    "symbol": "NG=F",
    "name": "Natural Gas",
    "unit": "USD/MMBtu",
-   "value": 2.75,
+   "value": 2.733,
    "date": "2026-08-14"
   }
  ],
@@ -196,8 +196,8 @@
    "symbol": "BTC-USD",
    "name": "Bitcoin",
    "unit": "USD/BTC",
-   "value": 63298.33,
-   "date": "2026-08-14"
+   "value": 62989.72,
+   "date": "2026-08-15"
   }
  ]
 }
