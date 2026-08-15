@@ -1,13 +1,34 @@
 {
-  "generatedAt": "2026-08-14",
+  "generatedAt": "2026-08-15",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-15",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "464398abb"
+    },
     {
       "date": "2026-08-14",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "2b6a6764b"
+      "text": "Data refreshed — Football, Basketball, Elections, AFL, and 2 more.",
+      "commit": "8790415b7"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "new-hub",
+      "hub": "Time Machine",
+      "text": "New hub: Time Machine.",
+      "commit": "6fa1a24ad"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Countries Time Machine, the Heartbreak Index shipped properly, and a markets backfill.",
+      "commit": "526c0e45a"
     },
     {
       "date": "2026-08-13",
@@ -4180,27 +4201,6 @@
       "hub": "Rankings",
       "text": "Add Wikidata/Wikipedia structured data for Top 25 metros and US major league teams; remove personal email from public schema and footer; fi…",
       "commit": "defaf0399"
-    },
-    {
-      "date": "2026-04-23",
-      "category": "new-hub",
-      "hub": "Release Notes",
-      "text": "New hub: Release Notes.",
-      "commit": "fa2ada8ac"
-    },
-    {
-      "date": "2026-04-23",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Annual Event routing and Historic Venues section.",
-      "commit": "e42be9d12"
-    },
-    {
-      "date": "2026-04-23",
-      "category": "hub",
-      "hub": null,
-      "text": "Add Google Analytics 4 tracking (G-8BQVX0NFZZ).",
-      "commit": "4c7e25fb5"
     }
   ]
 }
