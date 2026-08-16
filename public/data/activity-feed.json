@@ -1,13 +1,20 @@
 {
-  "generatedAt": "2026-08-15",
+  "generatedAt": "2026-08-16",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-16",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "46f1c7850"
+    },
     {
       "date": "2026-08-15",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "464398abb"
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "83d13def8"
     },
     {
       "date": "2026-08-14",
@@ -4194,13 +4201,6 @@
       "hub": null,
       "text": "Correct author surname in schema and llms.txt.",
       "commit": "9994da2aa"
-    },
-    {
-      "date": "2026-04-24",
-      "category": "fix",
-      "hub": "Rankings",
-      "text": "Add Wikidata/Wikipedia structured data for Top 25 metros and US major league teams; remove personal email from public schema and footer; fi…",
-      "commit": "defaf0399"
     }
   ]
 }
