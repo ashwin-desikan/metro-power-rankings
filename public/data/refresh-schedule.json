@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-08-16T07:50:39.660768+00:00",
+  "generated_at": "2026-08-16T09:31:25.383789+00:00",
   "jobs": [
-    {
-      "id": "egress-refresh",
-      "label": "Civic data (leaders, governors, congress, mayors)",
-      "schedule_text": "Sun at 09:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "09:00"
-      ],
-      "weekdays": [
-        7
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-16T09:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-09",
-        "status": "ok",
-        "slot": "2026-08-09T09:00:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -363,6 +343,26 @@
         "date": "2026-08-15",
         "status": "ok",
         "slot": "2026-08-15T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "egress-refresh",
+      "label": "Civic data (leaders, governors, congress, mayors)",
+      "schedule_text": "Sun at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-23T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-16",
+        "status": "ok",
+        "slot": "2026-08-16T09:00:00+00:00"
       }
     },
     {
