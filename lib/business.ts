@@ -190,6 +190,53 @@ export async function getSp500(): Promise<Sp500File | null> {
 }
 
 // ---------------------------------------------------------------------------
+// Point-in-time company rankings (/business/rankings). The Fortune 500/1000 as
+// published each year, 1955-2026, built by scripts/rankings/emit_rankings.py
+// from Supabase company_rankings.
+//
+// This is deliberately NOT the same shape as the market-cap boards. Those are a
+// survivor panel: today's companies and their history. This is a cross-section:
+// who was largest THAT year, so the companies that later merged, delisted or
+// failed are present because they were alive at the time. Never splice them.
+//
+// Rows are positional arrays. As objects the file is roughly four times the
+// bytes for no extra information, and this is fetched by the browser.
+export type RankingRow = [
+  number,        // rank
+  string,        // company, era-corrected where the curation file supplies a name
+  number | null, // revenue, $M
+  number | null, // market value, $M
+  string | null, // sector
+  string | null, // HQ city
+  string | null, // HQ state
+  number,        // 1 = HQ carried from another year of the same company
+  number,        // 0 = as published, 1 = era-corrected, 2 = known anachronistic
+];
+
+export type RankingsFile = {
+  meta: {
+    generated_at: string;
+    source: string;
+    first_year: number;
+    last_year: number;
+    years: number;
+    per_year: number;
+    total_rows: number;
+    companies: number;
+    gaps: number[];
+    note: string;
+  };
+  fields: string[];
+  years: Record<string, RankingRow[]>;
+  stats: Record<string, { n: number; rev: number; hq: number; src: string }>;
+  longest: [string, number, number][];
+};
+
+export async function getRankings(): Promise<RankingsFile | null> {
+  return load<RankingsFile>("rankings.json");
+}
+
+// ---------------------------------------------------------------------------
 // Crossovers, computed from the metro master (workbook ETL) so the sports rank
 // is exactly the flagship Metro Power Rankings position and the market-cap
 // figures agree with each metro's own page.

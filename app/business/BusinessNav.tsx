@@ -10,6 +10,7 @@ const TABS: [string, string][] = [
   ['/business/companies', 'Companies'],
   ['/business/private', 'Private & Unicorns'],
   ['/business/sp500', 'S&P 500'],
+  ['/business/rankings', 'Rankings'],
   ['/business/owners', 'Owners'],
   ['/business/markets', 'Markets'],
   ['/business/currencies', 'Currencies'],
