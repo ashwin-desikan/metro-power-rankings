@@ -623,10 +623,20 @@
     "name": "Gustavo Petro",
     "role": "President",
     "start": "2022-08-07",
+    "end": "2026-08-07",
+    "current": false,
+    "tenure": "4y 0m 1d",
+    "party": "Historic Pact",
+    "era": "Modern"
+  },
+  {
+    "name": "Abelardo de la Espriella",
+    "role": "President",
+    "start": "2026-08-07",
     "end": null,
     "current": true,
-    "tenure": "2022–present",
-    "party": "Historic Pact",
+    "tenure": "in office",
+    "party": "",
     "era": "Modern"
   }
 ]

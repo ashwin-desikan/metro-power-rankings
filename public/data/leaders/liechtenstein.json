@@ -73,10 +73,20 @@
     "name": "Daniel Risch",
     "role": "Prime Minister",
     "start": "2021-03-25",
+    "end": "2025-04-10",
+    "current": false,
+    "tenure": "4y 0m 17d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Brigitte Haas",
+    "role": "Prime Minister",
+    "start": "2025-04-10",
     "end": null,
     "current": true,
-    "tenure": "5y 3m 8d",
-    "party": null,
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

@@ -1,6 +1,24 @@
 {
-  "updated": "2026-08-07",
+  "updated": "2026-08-16",
   "changes": [
+    {
+      "date": "2025-04-10",
+      "slug": "liechtenstein",
+      "country": "Liechtenstein",
+      "office": "Prime Minister",
+      "from": "Daniel Risch",
+      "to": "Brigitte Haas",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-08-07",
+      "slug": "colombia",
+      "country": "Colombia",
+      "office": "President",
+      "from": "Gustavo Petro",
+      "to": "Abelardo de la Espriella",
+      "source": "wikidata"
+    },
     {
       "date": "2020-12-24",
       "slug": "moldova",
