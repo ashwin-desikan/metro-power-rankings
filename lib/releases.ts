@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-16",
+    headline: "Every year's biggest companies, back to 1955",
+    items: [
+      "A new board holds the largest American companies of every year since 1955, as the list was published at the time. Bethlehem Steel, Pan Am and Enron are all on it, because in their year they were giants.",
+      "Pick a year and read it straight down. 1955 opens with General Motors, Standard Oil of New Jersey and U.S. Steel. 2026 opens with Amazon, Walmart and UnitedHealth.",
+      "Companies are not merged across mergers. Exxon and Mobil each end in 1999 and ExxonMobil begins in 2000, because folding them together would erase the forty years Mobil stood on its own.",
+      "Names are marked rather than assumed. Our sources stamp each company's present-day name on all of its earlier years, so the board separates a name it can prove wrong from one it simply cannot date.",
+    ],
+  },
+  {
     date: "2026-08-14",
     headline: "One hub for every time machine, and the Heartbreak Index",
     items: [
