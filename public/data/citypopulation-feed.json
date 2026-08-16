@@ -1,8 +1,26 @@
 {
   "entries": [
     {
+      "date": "2026-08-12",
+      "title": "Uzbekistan (2026 census)",
+      "url": "https://www.citypopulation.de/en/uzbekistan/cities/",
+      "countries": [
+        "uzbekistan",
+        "Uzbekistan"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "title": "Peru (2025 census)",
+      "url": "https://www.citypopulation.de/en/peru/",
+      "countries": [
+        "peru",
+        "Peru"
+      ]
+    },
+    {
       "date": "2026-08-07",
-      "title": "Thailand (202 census)",
+      "title": "Thailand (2025 census)",
       "url": "https://www.citypopulation.de/en/thailand/prov/admin/",
       "countries": [
         "thailand",
@@ -52,15 +70,6 @@
       "countries": [
         "portugal",
         "Portugal"
-      ]
-    },
-    {
-      "date": "2026-06-22",
-      "title": "Peru (2025 census)",
-      "url": "https://www.citypopulation.de/en/peru/cities/",
-      "countries": [
-        "peru",
-        "Peru"
       ]
     },
     {

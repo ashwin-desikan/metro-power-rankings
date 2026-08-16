@@ -250,9 +250,9 @@
   "dublin": {
     "city": "Dublin",
     "country": "Ireland",
-    "mayor": "Paul McAuliffe",
-    "party": "Fianna Fáil",
-    "since": "2019-06-07",
+    "mayor": "Daryl Barron",
+    "party": "",
+    "since": "2026-06-29",
     "title": "Mayor"
   },
   "edinburgh": {
@@ -281,14 +281,6 @@
       "role": "Party Secretary"
     },
     "since": "2024-01-01",
-    "title": "Mayor"
-  },
-  "hamburg": {
-    "city": "Hamburg",
-    "country": "Germany",
-    "mayor": "Peter Tschentscher",
-    "party": "Social Democratic Party of Germany",
-    "since": "2018-03-28",
     "title": "Mayor"
   },
   "hangzhou": {
