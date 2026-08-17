@@ -87,7 +87,7 @@
    "confidence": "sourced",
    "co_controllers": "Behdad Eghbali, Jose E. Feliciano",
    "minority": "Todd Boehly group ~38.5% (incl. Mark Walter ~13% of that group, Hansjorg Wyss)",
-   "note": "Held through BlueCo 22. A 2025-26 standoff over which side buys the other out is unresolved, but Clearlake still controls. Feliciano separately leads the group buying the San Diego Padres.",
+   "note": "Held through BlueCo 22. A 2025-26 standoff over which side buys the other out is unresolved, but Clearlake still controls. Feliciano was separately named control person of the San Diego Padres, MLB-approved 17 Aug 2026.",
    "source_url": "https://theesk.org/2026/05/06/research-clearlake-capitals-investment-and-lending-exposure-to-chelsea-football-club-blueco-22-limited-22-holdco-limited-group-may-2022-may-2026/",
    "source_date": "2026-05-06"
   },
@@ -792,21 +792,17 @@
   {
    "team": "San Diego Padres",
    "league": "MLB",
-   "owner_display": "John Seidler",
-   "owner_key": "seidler-family",
-   "owner_type": "family",
+   "owner_display": "Jose E. Feliciano",
+   "owner_key": "feliciano-jones",
+   "owner_type": "individual",
    "stake_label": "Majority",
    "stake_pct": null,
-   "confidence": "contested",
-   "co_controllers": "",
+   "confidence": "sourced",
+   "co_controllers": "Kwanza Jones",
    "minority": "",
-   "note": "SALE PENDING. Seidler was approved as control person after his brother Peter Seidler's death in Nov 2023. An agreement announced 2 May 2026 would sell the club to a group led by Jose E. Feliciano (Clearlake) and Kwanza Jones at a record $3.9B; the full owners' vote was still outstanding when this data was compiled.",
-   "source_url": "https://timesofsandiego.com/sports/2026/08/06/padres-sale-finalized-mlb-owners/",
-   "source_date": "2026-08-06",
-   "pending_summary": "Group led by Jose E. Feliciano (Clearlake) and Kwanza Jones, ~$3.9bn",
-   "pending_when": "Full 30-owner vote, Aug 2026",
-   "pending_kind": "control sale",
-   "pending_review_by": "2026-09-01"
+   "note": "MLB owners unanimously approved the record $3.9B sale (incl. a 30% stake in Petco Park) on 17 Aug 2026, naming Feliciano the club's control person; John Seidler and the Seidler family stay on through closing, expected within weeks. Erik Greupner remains CEO, A.J. Preller president of baseball operations.",
+   "source_url": "https://www.mlbtraderumors.com/2026/08/mlb-owners-approve-sale-of-padres-to-jose-e-feliciano-kwanza-jones.html",
+   "source_date": "2026-08-17"
   },
   {
    "team": "San Francisco Giants",
