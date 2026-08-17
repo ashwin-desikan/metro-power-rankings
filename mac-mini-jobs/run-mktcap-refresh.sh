@@ -1,10 +1,20 @@
 #!/bin/bash
-# CompaniesMarketCap -> Supabase weekly refresh (mini-owned, WEEKLY, Saturday).
+# CompaniesMarketCap -> Supabase + /business weekly refresh (mini-owned, WEEKLY, Saturday).
 #
-# Runs the Supabase-only half of the Saturday mktcap ritual: refresh.py --write
-# (fetch companiesmarketcap.com + CB Insights, merge, sanity-gate, write the
-# weekly valuation snapshot, export out/mktcap_export.csv). Writes ONLY to
-# Supabase + a local gitignored CSV -- no git commit, no build.
+# Runs the Supabase-only half of the Saturday mktcap ritual (refresh.py
+# --write: fetch companiesmarketcap.com + CB Insights, merge, sanity-gate,
+# write the weekly valuation snapshot, export out/mktcap_export.csv), THEN
+# the two exports each explicitly document as belonging right after it in
+# the Saturday flow -- build_business_data.py and build_sp500.py (both
+# read-only against Supabase/Wikipedia, no Windows dependency) -- and
+# commits public/data/business/*.json. Until 2026-08-17 this job stopped
+# after the Supabase write, so /business kept showing whatever snapshot
+# Ashwin's own manual run had last produced (stuck on 2026-08-08 while the
+# mini's own weekly Supabase refreshes on 08-15/08-16 went unpublished --
+# the export step existed and was self-tested, it was just never wired to
+# anything that ran it). [vercel skip]: lib/business.ts reads these via
+# GitHub-raw ISR first, build-time file as fallback, so a data-only commit
+# surfaces with no deploy, same pattern as the season-sims/football bundles.
 #
 # Deliberately NOT run here: sync_city_lookup.py and compare_excel.py both
 # need Excel workbooks that only exist on Ashwin's Windows machine (OneDrive
@@ -17,7 +27,7 @@
 # Self-test gate before any live/network run (mirrors project discipline).
 set -uo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
-REPO="$HOME/Projects/Metro Area Project"; PY="$REPO/.venv/bin/python"; MKTCAP="$REPO/scripts/mktcap"
+REPO="$HOME/Projects/Metro Area Project"; PY="$REPO/.venv/bin/python"; MKTCAP="$REPO/scripts/mktcap"; BIZ="$REPO/scripts/business"
 DATE="$(date +%F)"; LOGDIR="$HOME/metro-mini-jobs/logs"; mkdir -p "$LOGDIR"; LOG="$LOGDIR/mktcap-refresh-$DATE.log"
 log(){ echo "$(date +%T) $*" | tee -a "$LOG"; }
 [ -f "$HOME/.config/metro-supabase/env" ] && { set -a; source "$HOME/.config/metro-supabase/env"; set +a; }
@@ -51,5 +61,28 @@ case "$QUEUE_LINE" in
   *": none"*) : ;;
   *) push "mktcap-refresh: new companies to map -- $DATE" default warning "${QUEUE_LINE:-METRO QUEUE line not found in log}" ;;
 esac
+
+cd "$BIZ" || fail "scripts/business not found"
+log "self-test: business data + sp500"
+"$PY" build_business_data.py --self-test 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_business_data.py --self-test failed"
+"$PY" build_sp500.py --self-test 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_sp500.py --self-test failed"
+
+log "build_business_data.py (Supabase -> public/data/business/business.json)"
+"$PY" build_business_data.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_business_data.py failed"
+
+log "build_sp500.py (Wikipedia + Supabase -> public/data/business/sp500.json)"
+"$PY" build_sp500.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_sp500.py failed"
+
+cd "$REPO" || fail "repo not found: $REPO"
+if git diff --quiet -- public/data/business/business.json public/data/business/sp500.json; then
+  log "no /business data change this run; nothing to commit"
+else
+  git config user.name  "metro-mini[bot]"
+  git config user.email "metro-mini-bot@users.noreply.github.com"
+  git add public/data/business/business.json public/data/business/sp500.json
+  git commit -m "business: weekly mktcap snapshot $DATE [vercel skip]" --quiet || fail "git commit failed"
+  git push origin HEAD:main --quiet || fail "git push failed"
+  log "committed + pushed /business snapshot"
+fi
 
 log "=== mktcap-refresh done ==="
