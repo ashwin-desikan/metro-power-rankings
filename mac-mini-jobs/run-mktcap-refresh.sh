@@ -31,8 +31,43 @@ REPO="$HOME/Projects/Metro Area Project"; PY="$REPO/.venv/bin/python"; MKTCAP="$
 DATE="$(date +%F)"; LOGDIR="$HOME/metro-mini-jobs/logs"; mkdir -p "$LOGDIR"; LOG="$LOGDIR/mktcap-refresh-$DATE.log"
 log(){ echo "$(date +%T) $*" | tee -a "$LOG"; }
 [ -f "$HOME/.config/metro-supabase/env" ] && { set -a; source "$HOME/.config/metro-supabase/env"; set +a; }
+# REVALIDATE_SECRET lives in config.env (the dispatcher-family jobs' file),
+# not metro-supabase/env -- separate secret, separate file, by design.
+[ -f "$HOME/metro-mini-jobs/config.env" ] && { set -a; source "$HOME/metro-mini-jobs/config.env"; set +a; }
+SITE_ORIGIN="${SITE_ORIGIN:-https://rankings.citizenofnowhere.org}"
 push(){ [ -n "${NTFY_TOPIC:-}" ] || return 0; curl -s -o /dev/null -H "Title: $1" -H "Priority: $2" -H "Tags: $3" -d "$4" "https://ntfy.sh/$NTFY_TOPIC" || true; }
 fail(){ log "ERROR: $1"; push "[ALERT] mktcap-refresh FAILED -- $DATE" urgent rotating_light "$1"; exit 1; }
+# Same shape as _common.sh's revalidate_ping (mac-mini-jobs/runners/): a
+# 300s wait for GitHub raw's CDN TTL, then flush the ISR tag so /business
+# shows this run's data within seconds instead of the 6h backstop. Warms
+# the tabs itself afterward -- 2026-08-06 measured a real visitor eating a
+# 67-minute-stale hit right after a confirmed-200 ping otherwise.
+revalidate_business(){
+  if [ -z "${REVALIDATE_SECRET:-}" ]; then
+    log "REVALIDATE_SECRET not set; skipping (6h ISR backstop applies)."
+    return 0
+  fi
+  log "Waiting out the GitHub raw CDN TTL before flushing..."
+  sleep 300
+  local attempt code
+  for attempt in 1 2 3; do
+    code="$(curl -s -o /tmp/mktcap-reval.out -w '%{http_code}' -X POST \
+      -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+      "$SITE_ORIGIN/api/revalidate?tag=business-daily")" || code=000
+    if [ "$code" = "200" ]; then
+      log "$(cat /tmp/mktcap-reval.out)"
+      log "Revalidated on attempt $attempt."
+      for p in /business /business/companies /business/private /business/sp500; do
+        code2="$(curl -s -o /dev/null -w '%{http_code}' "$SITE_ORIGIN$p")" || code2=000
+        log "warm $p -> HTTP $code2"
+      done
+      return 0
+    fi
+    log "revalidate ping attempt $attempt returned HTTP $code"
+    sleep $((attempt * 5))
+  done
+  log "WARN: on-demand revalidation failed; /business refreshes via the 6h ISR window instead."
+}
 
 log "=== mktcap-refresh start ($DATE) ==="
 [ -n "${SUPABASE_SERVICE_KEY:-}" ] || fail "SUPABASE_SERVICE_KEY not set (expected in ~/.config/metro-supabase/env)"
@@ -89,6 +124,7 @@ else
   git commit -m "business: weekly mktcap snapshot $DATE [vercel skip]" --quiet || fail "git commit failed"
   git push origin HEAD:main --quiet || fail "git push failed"
   log "committed + pushed /business snapshot"
+  revalidate_business
 fi
 
 log "=== mktcap-refresh done ==="
