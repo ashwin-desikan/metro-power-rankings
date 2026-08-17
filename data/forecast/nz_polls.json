@@ -1269,6 +1269,17 @@
    "act": 9.0,
    "nzf": 8.0,
    "tpm": 1.1
+  },
+  {
+   "date": "2026-08-11",
+   "pollster": "Talbot Mills",
+   "sample": null,
+   "nat": 29.0,
+   "lab": 34.0,
+   "grn": 8.0,
+   "act": 7.0,
+   "nzf": 13.0,
+   "tpm": 3.0
   }
  ]
 }

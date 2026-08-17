@@ -20,6 +20,28 @@
  "polls": [
   {
    "date": "2026-08-13",
+   "pollster": "Lazar",
+   "seats": {
+    "Likud": 21,
+    "Together": 14,
+    "RZP": 4,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 10,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 6,
+    "Balad": 0,
+    "Dems": 10,
+    "Yashar": 23,
+    "Zionist Home": 4,
+    "Unity": 0
+   },
+   "gov": 48
+  },
+  {
+   "date": "2026-08-13",
    "pollster": "Yossi Tatika",
    "seats": {
     "Likud": 21,

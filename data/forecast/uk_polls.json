@@ -4093,10 +4093,10 @@
    "date": "2026-05-14",
    "pollster": "Trajectory Partnership",
    "sample": 1459,
-   "lab": 24.0,
-   "con": 17.0,
-   "ref": 25.0,
-   "ld": 10.0,
+   "lab": 26.0,
+   "con": 18.0,
+   "ref": 27.0,
+   "ld": 11.0,
    "grn": 10.0,
    "snp": 3.0
   },
@@ -4808,10 +4808,11 @@
    "pollster": "JL Partners",
    "sample": 2048,
    "lab": 27.0,
-   "con": 21.0,
+   "con": 20.0,
    "ref": 25.0,
    "ld": 12.0,
-   "grn": 10.0
+   "grn": 10.0,
+   "snp": 2.0
   },
   {
    "date": "2026-08-03",
@@ -4877,6 +4878,39 @@
    "ref": 26.0,
    "ld": 9.0,
    "grn": 10.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-12",
+   "pollster": "Trajectory Partnership",
+   "sample": 1462,
+   "lab": 28.0,
+   "con": 20.0,
+   "ref": 22.0,
+   "ld": 11.0,
+   "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-13",
+   "pollster": "Survation",
+   "sample": 2004,
+   "lab": 25.0,
+   "con": 19.0,
+   "ref": 26.0,
+   "ld": 11.0,
+   "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-14",
+   "pollster": "Opinium",
+   "sample": 2050,
+   "lab": 27.0,
+   "con": 18.0,
+   "ref": 25.0,
+   "ld": 10.0,
+   "grn": 11.0,
    "snp": 3.0
   }
  ]
