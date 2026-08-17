@@ -5465,3 +5465,41 @@ Ran `scripts/leaders/refresh-current-leaders.py` live: same three changes as thi
 Committed only the two genuine changes (`4332cbb82`, real build -- `leaders/_changes.json` is on `scripts/refresh-needs-build-paths.txt`): Colombia (Gustavo Petro -> Abelardo de la Espriella) and Liechtenstein (Daniel Risch -> Brigitte Haas). Hand-reverted `nigeria.json`, restored `_current.json`'s Nigeria name, and did not add a second `_changes.json` entry for it -- the existing 2023-05-29 entry stays as the only record.
 
 **Open, worth a decision, not fixed today:** Nigeria's Wikidata label will very likely flip back to "Bola Ahmed Tinubu" at some point and re-trigger this same HARD flag again -- it's oscillated at least twice already. The gate is working correctly and I don't think it should be loosened (a fuzzy name-match heuristic risks masking a real vandalism edit elsewhere), but it means Nigeria will keep needing a one-off manual exclusion like today's every time it flips, unless something records "these two labels are the same person" so the auto-apply step stops treating it as a candidate change at all. Flagging rather than deciding -- this is a judgment call about the vandalism gate's design, not a bug.
+
+## 2026-08-17 -- windows -> next session / mini (rankings board: period-correct HQ, metro rollup, and three lineage answers overturned by our own data)
+
+Cowork session on the Windows box. Everything below is live on `main` at `c69581976` (three commits: `b264fd714`, `777fd5a04`, `c69581976`), rebased cleanly over the mini's 36 commits of the day -- zero file overlap, checked before rebasing rather than after. One real Vercel build (`dpl_5rb8t...`); every one of the mini's 19 deployments today correctly CANCELED on `[vercel skip]`.
+
+### What shipped
+
+`/business/rankings` now places every company in the metro area it was headquartered in **that year**, not today. The join is period-correct on `company_rankings r JOIN company_hq_spans s ON r.year BETWEEN s.from_year AND s.to_year`. 314 dated HQ eras for 217 companies, each with its provenance and source recorded in `scripts/rankings/curation/hq_spans_master.csv`. Mobil counts for New York in 1980 and Washington in 1992; Georgia-Pacific leaves Portland for Atlanta in 1982. **UNPLACED is 0** -- all 7,176 board rows sit in a metro, down from 65 earlier in the day. A second board rolls the year up by metro with an expandable per-city breakdown. Era names reached 199 rows across 130 companies; provably-wrong labels went 753 -> 129 -> 11 -> **0**; undated 6,248 -> 3,173.
+
+### THE ONE REUSABLE LESSON: identify a lineage from the data, not from a plausible story
+
+An external research pass (Gemini, round 3) returned 44 name eras and got **three of four lineage questions wrong in exactly the same way** -- each named the LARGER partner in a merger as the record's pre-merger identity. Two cheap checks against data already on disk refuted all three:
+
+1. **Does the other partner already hold its own company_key in the same years?** If yes, this record is the other one. `bankamerica`, `chase manhattan` and `bergen brunswig` all exist as separate keys.
+2. **Does the revenue series match?** `bank of america` reports 13.1bn in 1995 next to `bankamerica` at 16.5bn (NationsBank's scale). `jpmorgan chase` reports 13.8bn in 1996 (J.P. Morgan's, not Chase's). `cencora` runs 4.7bn to 11.6bn to 2001 (AmeriSource, about half Bergen).
+
+The HQ confirms it independently: `bank of america` is in **Charlotte**, which is NationsBank, not BankAmerica's San Francisco. Gemini's stated reason for Bergen was "higher historical revenue", which is exactly backwards -- the higher-revenue predecessor is the one that already has its own record. **Run both checks before accepting any pre-merger attribution, from a model or from yourself.** One caveat that saves a false positive: the two Fortune feeds sometimes duplicate a single company under two keys (`chase manhattan` appears twice in 1955), so a parallel series is not by itself proof of a different company.
+
+Two rounds earlier the same source returned 303 of 309 answers marked "certain" and zero unsure. Self-reported confidence has been worthless in all three rounds; the round-3 prompt replaced it with a required "name the event and its date" field, which is checkable. Worklist at `docs/Board A - name worklist round 3.csv`.
+
+### TWO LATENT TRAPS CLOSED -- please do not reopen either
+
+- **`hq_spans_master.csv` held FULL state names while `company_hq_spans.state` holds two-letter codes**, and `load_hq_spans.py` writes that column verbatim. Any future full reload would have silently undone the state normalisation and re-split every city into two spellings (the `New York City` vs `New York` class of bug). All 308 rows converted. **Keep new rows in two-letter form.**
+- **`load_hq_spans.py` set the `metro` key only on rows that already had one.** PostgREST rejects a heterogeneous batch with `All object keys must match`, so the loader broke the moment one uncurated era was added -- which is exactly what happened today. Every row now carries the key, null included. A null cannot blank an existing ruling: absent from `existing` means absent from the table too.
+
+### To the mini, with thanks
+
+Your `250a8c2f2` + `540ae84ea` fixed the `/business` 08-08 staleness Ashwin raised this morning (the export step was never wired into the Saturday runner, then ISR was not being flushed). Confirmed working from here. I re-ran `emit_rankings.py` and `emit_metro_rollup.py` after your `7cf54786c` metro mappings landed and diffed the output ignoring `generated_at`: **identical**, so those 25 new mappings are all non-US or outside the top-100 board and the rankings JSON needed no republish. Noting it so nobody re-emits looking for a change that is not there.
+
+### Open, in priority order
+
+1. **3,173 rows still carry an undated name.** The highest-value tier is the companies that HEADLINE a metro-year, since that label appears in large type once per metro per year. The round-3 worklist is fully curated; regenerate the next tier by taking the top 12 of each year from `out/company_rankings.csv` and dropping anything an authored era already covers.
+2. **`citigroup` 1995-1998 is the weakest row in the file.** It is authored as Travelers Group, on Gemini's reading and an earlier draft of mine agreeing -- but `citicorp` AND `travelers group` both hold their own keys in those years, so it has NOT passed the two-check test above. Wants a ruling from Ashwin rather than more research.
+3. The company table still does not distinguish a researched dated placement from a carried fallback. Ashwin rejected the grey-shading version; needs a better idea before shipping.
+4. `morg` remains a truncated-name key artifact; should be fixed at source.
+5. `ruledNoMetro` reports 0 because the Denison ruling only ever applied to rows outside the top 100. Harmless, but the meta field reads as though the ruling did nothing.
+6. Untouched and carried: Chicago Stars FC + Brescia workbook recalc; Heartbreak Index calibration; the ten Time Machine boards that still do not read `?year=`.
+7. Three untracked strays sit in the repo root and are not mine: `chelsearegister.txt`, `psg_profile_signup.txt`, `psgprivacy_didomi.txt`. Left in place.
