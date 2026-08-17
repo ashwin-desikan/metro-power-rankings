@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import BusinessNav from '../BusinessNav';
 import { Crumbs, TabHeader, TableBox, TH, THR, TD, TDR, MONO } from '../ui';
-import { getRankings } from '@/lib/business';
+import { getRankings, getRankingMetros } from '@/lib/business';
 import YearBoard from './YearBoard';
+import MetroBoard from './MetroBoard';
 
 export const metadata: Metadata = {
   title: 'Corporate rankings through time | Business of the Metros',
@@ -16,7 +17,7 @@ function fmtT(musd: number): string {
 }
 
 export default async function RankingsPage() {
-  const data = await getRankings();
+  const [data, metros] = await Promise.all([getRankings(), getRankingMetros()]);
 
   if (!data) {
     return (
@@ -35,6 +36,21 @@ export default async function RankingsPage() {
   const first = stats[String(meta.first_year)];
   const last = stats[String(meta.last_year)];
   const hqYears = Object.values(stats).filter((s) => s.hq > 0).length;
+
+  // 🔴 The legend must describe the marks the board is ACTUALLY showing. Curating
+  // the last provably-wrong label away and leaving "† marks one we can prove
+  // wrong" in the copy sends the reader hunting for a symbol that is not there.
+  // Counting from the data means the page can never drift from the board again.
+  const nameStates = Object.values(data.years).reduce(
+    (acc, rows) => {
+      for (const r of rows) acc[r[8]] = (acc[r[8]] ?? 0) + 1;
+      return acc;
+    },
+    {} as Record<number, number>,
+  );
+  const checkedNames = (nameStates[0] ?? 0) + (nameStates[1] ?? 0);
+  const wrongNames = nameStates[2] ?? 0;
+  const undatedNames = nameStates[3] ?? 0;
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-8">
@@ -69,6 +85,8 @@ export default async function RankingsPage() {
       </div>
 
       <YearBoard data={data} />
+
+      {metros && <MetroBoard data={metros} />}
 
       <section className="mt-10">
         <h2 className="text-2xl font-bold mb-1">The persistent</h2>
@@ -121,19 +139,49 @@ export default async function RankingsPage() {
           modern company records, 2,875 show exactly one name across their whole span.
         </p>
         <p className="mb-2">
-          So names here are corrected where we have established the era, shown plainly
-          when they are. A <span style={{ color: 'var(--accent, #4f9dff)' }}>†</span> marks
-          a label we can prove wrong for that year and have not fixed yet. A{' '}
-          <span style={{ color: 'var(--text-dim)' }}>°</span> marks a label the source
-          recorded but did not date, which is most of them. Only the newest year can be
-          taken as current without further work.
+          So the table says which names it has checked. A name with no mark has been{' '}
+          <strong className="text-[var(--text)]">checked against that year</strong>{' '}
+          &mdash; either corrected to what the company was actually called, or
+          confirmed unchanged; {checkedNames.toLocaleString()} of{' '}
+          {meta.total_rows.toLocaleString()} rows are in that state. A{' '}
+          <span style={{ color: 'var(--text-dim)' }}>°</span> marks a name the source
+          recorded but never dated, so it may be the company&rsquo;s present-day name
+          rather than that year&rsquo;s, and {undatedNames.toLocaleString()} rows still
+          carry one.
+          {wrongNames > 0 && (
+            <>
+              {' '}A <span style={{ color: 'var(--accent, #4f9dff)' }}>†</span> marks one
+              we can prove wrong for that year and have not corrected yet;{' '}
+              {wrongNames.toLocaleString()} remain.
+            </>
+          )}
+        </p>
+        <p className="mb-2">
+          Corrections so far include Standard Oil of Indiana for Amoco before 1985,
+          Swift &amp; Company for Esmark before 1973, Western Electric for AT&amp;T
+          Technologies before 1984, Aluminum Company of America for Alcoa before 1999,
+          and Allied Chemical for the record the sources label Honeywell International
+          &mdash; which is the Allied lineage, not the Minneapolis company of the
+          same name.
         </p>
         <p className="mb-2">
           Headquarters is published by the source from 2007 and carried to a company&rsquo;s
-          other years where it can be; {hqYears} of {meta.years} years carry it. Metro
-          areas are not shown yet: mapping the companies that vanished before 2007 is
-          still in progress, and a half-guessed metro is worse than an absent one.
+          other years where it can be; {hqYears} of {meta.years} years carry it.
         </p>
+        {metros && (
+          <p className="mb-2">
+            The metro view places a company by the headquarters era containing that
+            year, so a company that moved counts for each metro it actually occupied.
+            The 213 companies that reach a top 100 and had no published address were
+            researched by hand into {' '}
+            {metros.meta.placedByDatedEra.toLocaleString()} dated placements; the rest
+            carry a single address across their run and are marked{' '}
+            <span style={{ color: 'var(--text-dim)' }}>°</span>. Cities are mapped to
+            metros from the project&rsquo;s own municipality table, and where a city
+            could not be resolved it is left out rather than guessed &mdash;{' '}
+            {metros.meta.unplaced} of {metros.meta.rows.toLocaleString()} rows.
+          </p>
+        )}
         <p className="text-xs text-[var(--text-dim)]" style={MONO}>
           {meta.source} · generated {meta.generated_at.slice(0, 10)}
         </p>

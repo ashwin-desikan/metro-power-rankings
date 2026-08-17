@@ -1,0 +1,607 @@
+city,state,companies,metro,how
+New York,NY,144,New York,municipality + state
+Houston,TX,103,Houston,municipality + state
+Chicago,IL,52,Chicago,municipality + state
+Atlanta,GA,42,Atlanta,municipality + state
+Dallas,TX,40,Dallas,municipality + state
+San Francisco,CA,32,San Francisco-San Jose,municipality + state
+St. Louis,MO,26,St. Louis,municipality + state
+Charlotte,NC,26,Charlotte,municipality + state
+Denver,CO,23,Denver,municipality + state
+San Jose,CA,22,San Francisco-San Jose,municipality + state
+Columbus,OH,20,Columbus,municipality + state
+Phoenix,AZ,18,Phoenix,municipality + state
+Milwaukee,WI,17,Milwaukee,municipality + state
+Pittsburgh,PA,17,Pittsburgh,municipality + state
+Cleveland,OH,16,Cleveland,municipality + state
+Irving,TX,16,Dallas,municipality + state
+San Diego,CA,15,San Diego,municipality + state
+Stamford,CT,15,New York,municipality + state
+Las Vegas,NV,14,Las Vegas,municipality + state
+Santa Clara,CA,13,San Francisco-San Jose,municipality + state
+Arlington,VA,13,Washington-Baltimore,municipality + state
+Boston,MA,13,Boston,municipality + state
+Irvine,CA,13,Los Angeles,municipality + state
+Tulsa,OK,13,Tulsa,municipality + state
+Cincinnati,OH,13,Cincinnati,municipality + state
+Minneapolis,MN,13,Minneapolis,municipality + state
+San Antonio,TX,13,San Antonio,municipality + state
+Jacksonville,FL,13,Jacksonville,municipality + state
+Omaha,NE,13,Omaha-Lincoln,municipality + state
+Seattle,WA,12,Seattle,municipality + state
+Indianapolis,IN,12,Indianapolis,municipality + state
+Philadelphia,PA,12,Philadelphia,municipality + state
+McLean,VA,12,Washington-Baltimore,municipality + state
+Richmond,VA,11,Richmond,municipality + state
+The Woodlands,TX,11,Houston,municipality + state
+Parsippany,NJ,11,New York,municipality + state
+Fort Worth,TX,10,Dallas,municipality + state
+Kansas City,MO,10,Kansas City,municipality + state
+Los Angeles,CA,10,Los Angeles,municipality + state
+Wilmington,DE,10,Philadelphia,municipality + state
+Memphis,TN,10,Memphis,municipality + state
+Englewood,CO,10,Denver,municipality + state
+Tempe,AZ,9,Phoenix,municipality + state
+Brentwood,TN,9,Nashville,municipality + state
+Scottsdale,AZ,9,Phoenix,municipality + state
+Deerfield,IL,9,Chicago,municipality + state
+Louisville,KY,9,Louisville,municipality + state
+Nashville,TN,9,Nashville,municipality + state
+Plano,TX,9,Dallas,municipality + state
+St. Paul,MN,8,Minneapolis,municipality + state
+Raleigh,NC,8,Raleigh-Durham,municipality + state
+Norwalk,CT,8,New York,municipality + state
+Tampa,FL,8,Tampa,municipality + state
+Washington,DC,8,Washington-Baltimore,municipality + state
+Birmingham,AL,8,Birmingham (AL),municipality + state
+Sunnyvale,CA,8,San Francisco-San Jose,municipality + state
+Franklin,TN,7,Nashville,municipality + state
+Boca Raton,FL,7,Miami,municipality + state
+Orlando,FL,7,Orlando,municipality + state
+Cambridge,MA,7,Boston,municipality + state
+Boise,ID,7,Boise,municipality + state
+Waltham,MA,7,Boston,municipality + state
+Detroit,MI,7,Detroit,municipality + state
+Reston,VA,7,Washington-Baltimore,municipality + state
+Bellevue,WA,7,Seattle,municipality + state
+Hartford,CT,6,Hartford,municipality + state
+Bethesda,MD,6,Wheeling,"municipality only, unambiguous"
+Northbrook,IL,6,Chicago,municipality + state
+Troy,MI,6,Detroit,municipality + state
+Fort Lauderdale,FL,6,Miami,municipality + state
+Evansville,IN,6,Evansville,municipality + state
+Miami,FL,6,Miami,municipality + state
+Oklahoma City,OK,6,Oklahoma City,municipality + state
+Downers Grove,IL,6,Chicago,municipality + state
+Austin,TX,6,Austin,municipality + state
+Glen Allen,VA,5,Cape Girardeau,"municipality only, unambiguous"
+El Segundo,CA,5,Los Angeles,municipality + state
+West Palm Beach,FL,5,Miami,municipality + state
+Radnor,PA,5,Philadelphia,municipality + state
+Pasadena,CA,5,Los Angeles,municipality + state
+Madison,WI,5,Madison,municipality + state
+Palo Alto,CA,5,San Francisco-San Jose,municipality + state
+Auburn Hills,MI,5,Detroit,municipality + state
+Providence,RI,5,Providence,municipality + state
+Portland,OR,5,Portland,municipality + state
+Baltimore,MD,5,Washington-Baltimore,municipality + state
+Santa Ana,CA,5,Los Angeles,municipality + state
+Cary,NC,5,Raleigh-Durham,municipality + state
+Salt Lake City,UT,5,Salt Lake City-Provo,municipality + state
+Greenwich,CT,5,New York,municipality + state
+Lake Forest,IL,5,Chicago,municipality + state
+Milpitas,CA,5,San Francisco-San Jose,municipality + state
+Naperville,IL,5,Chicago,municipality + state
+Ann Arbor,MI,4,Detroit,municipality + state
+Honolulu,HI,4,Honolulu,municipality + state
+Little Rock,AR,4,Little Rock,municipality + state
+Chantilly,VA,4,Washington-Baltimore,municipality + state
+Purchase,NY,4,New York,municipality + state
+Pleasanton,CA,4,San Francisco-San Jose,municipality + state
+Princeton,NJ,4,New York,municipality + state
+Eden Prairie,MN,4,Minneapolis,municipality + state
+Lincolnshire,IL,4,Chicago,municipality + state
+Carmel,IN,4,Indianapolis,municipality + state
+Canonsburg,PA,4,Pittsburgh,municipality + state
+Midland,TX,4,Midland-Odessa,municipality + state
+Falls Church,VA,4,Washington-Baltimore,municipality + state
+Westlake Village,CA,4,Los Angeles,municipality + state
+Overland Park,KS,4,Kansas City,municipality + state
+Southfield,MI,4,Detroit,municipality + state
+Richardson,TX,4,Dallas,municipality + state
+Livonia,MI,4,Detroit,municipality + state
+Menlo Park,CA,4,San Francisco-San Jose,municipality + state
+Commerce,CA,3,Los Angeles,municipality + state
+Oak Brook,IL,3,Chicago,municipality + state
+Conshohocken,PA,3,Philadelphia,municipality + state
+Columbus,GA,3,Columbus (GA),municipality + state
+Allentown,PA,3,Allentown,municipality + state
+Mountain View,CA,3,San Francisco-San Jose,municipality + state
+Melville,NY,3,Lafayette,"municipality only, unambiguous"
+Maumee,OH,3,Toledo,municipality + state
+Fort Smith,AR,3,Fort Smith,municipality + state
+Durham,NC,3,Raleigh-Durham,municipality + state
+Westminster,CO,3,Denver,municipality + state
+Bannockburn,IL,3,Chicago,municipality + state
+Winston-Salem,NC,3,Greensboro-Winston Salem,municipality + state
+Warsaw,IN,3,South Bend,municipality + state
+Marlborough,MA,3,Boston,municipality + state
+Oakland,CA,3,San Francisco-San Jose,municipality + state
+Billerica,MA,3,Boston,municipality + state
+Burlington,NJ,3,Philadelphia,municipality + state
+Reno,NV,3,Reno,municipality + state
+Carlsbad,CA,3,San Diego,municipality + state
+Dublin,OH,3,Columbus,municipality + state
+Hoffman Estates,IL,3,Chicago,municipality + state
+Greenwood Village,CO,3,Denver,municipality + state
+Secaucus,NJ,3,New York,municipality + state
+Newport Beach,CA,3,Los Angeles,municipality + state
+Topeka,KS,3,Topeka,municipality + state
+Frisco,TX,3,Dallas,municipality + state
+Rochester,NY,3,Rochester,municipality + state
+Bloomington,IL,3,Bloomington–Normal,municipality + state
+Broomfield,CO,3,Denver,municipality + state
+North Canton,OH,3,Cleveland,municipality + state
+Redwood City,CA,3,San Francisco-San Jose,municipality + state
+Bismarck,ND,3,Bismarck,municipality + state
+Spring,TX,3,Houston,municipality + state
+Bonita Springs,FL,3,Fort Myers,municipality + state
+St. Petersburg,FL,3,Tampa,municipality + state
+Newark,NJ,3,New York,municipality + state
+Chandler,AZ,3,Phoenix,municipality + state
+Greensboro,NC,3,Greensboro-Winston Salem,municipality + state
+Fremont,CA,3,San Francisco-San Jose,municipality + state
+Elkhart,IN,3,South Bend,municipality + state
+Toledo,OH,3,Toledo,municipality + state
+Herndon,VA,3,Washington-Baltimore,municipality + state
+Framingham,MA,3,Boston,municipality + state
+Knoxville,TN,3,Knoxville,municipality + state
+Rosemont,IL,3,Chicago,municipality + state
+Santa Monica,CA,2,Los Angeles,municipality + state
+Kingwood,TX,2,,AMBIGUOUS across 2 metros
+Duluth,GA,2,Atlanta,municipality + state
+Westerville,OH,2,Columbus,municipality + state
+Morrisville,NC,2,Raleigh-Durham,municipality + state
+Bristol,TN,2,Johnson City,municipality + state
+Leawood,KS,2,Kansas City,municipality + state
+Baton Rouge,LA,2,Baton Rouge,municipality + state
+Piscataway,NJ,2,New York,municipality + state
+Camden,NJ,2,Philadelphia,municipality + state
+Berwyn,PA,2,Chicago,"municipality only, unambiguous"
+Thousand Oaks,CA,2,Los Angeles,municipality + state
+Wilmington,MA,2,Boston,municipality + state
+Westchester,IL,2,Chicago,municipality + state
+Glenview,IL,2,Chicago,municipality + state
+Madison,NJ,2,New York,municipality + state
+Green Bay,WI,2,Green Bay,municipality + state
+Moon Township,PA,2,Pittsburgh,municipality + state
+Lansing,MI,2,Lansing,municipality + state
+Alpharetta,GA,2,Atlanta,municipality + state
+Montvale,NJ,2,New York,municipality + state
+Brea,CA,2,Los Angeles,municipality + state
+Franklin Lakes,NJ,2,New York,municipality + state
+Neenah,WI,2,Appleton,municipality + state
+Elmsford,NY,2,New York,municipality + state
+Sioux Falls,SD,2,Sioux Falls,municipality + state
+York,PA,2,Harrisburg,municipality + state
+Greenville,SC,2,Greenville-Spartanburg,municipality + state
+Newton,MA,2,Boston,municipality + state
+Blue Bell,PA,2,,not in the Municipality sheet
+Lake Success,NY,2,New York,municipality + state
+Daytona Beach,FL,2,Daytona Beach,municipality + state
+Wayne,NJ,2,New York,municipality + state
+Murray Hill,NJ,2,Louisville,"municipality only, unambiguous"
+Long Beach,CA,2,Los Angeles,municipality + state
+Schaumburg,IL,2,Chicago,municipality + state
+Somerset,NJ,2,,AMBIGUOUS across 13 metros
+Rockville,MD,2,Washington-Baltimore,municipality + state
+Lebanon,TN,2,Nashville,municipality + state
+Summit,NJ,2,New York,municipality + state
+Walnut Creek,CA,2,San Francisco-San Jose,municipality + state
+Westlake,TX,2,Dallas,municipality + state
+Bensalem,PA,2,Philadelphia,municipality + state
+Bloomfield,CT,2,Hartford,municipality + state
+Fairfield,OH,2,Cincinnati,municipality + state
+Spokane,WA,2,Spokane,municipality + state
+Tacoma,WA,2,Seattle,municipality + state
+Tysons,VA,2,,not in the Municipality sheet
+Dothan,AL,2,Dothan,municipality + state
+Northville,MI,2,Detroit,municipality + state
+Findlay,OH,2,Toledo,municipality + state
+Calabasas,CA,2,Los Angeles,municipality + state
+Portland,ME,2,Portland (ME),municipality + state
+Davidson,NC,2,Greensboro-Winston Salem,municipality + state
+Sugar Land,TX,2,Houston,municipality + state
+Sturtevant,WI,2,Milwaukee,municipality + state
+Midland,MI,2,Saginaw,municipality + state
+Shelton,CT,2,Hartford,municipality + state
+McKinney,TX,2,Dallas,municipality + state
+Beverly Hills,CA,2,Los Angeles,municipality + state
+Brooklyn,NY,2,,AMBIGUOUS across 8 metros
+Springfield,MA,2,Springfield,municipality + state
+Johnston,RI,2,Providence,municipality + state
+Matthews,NC,2,Charlotte,municipality + state
+Woodland Hills,CA,2,,AMBIGUOUS across 2 metros
+Newport News,VA,2,Norfolk,municipality + state
+Akron,OH,2,Cleveland,municipality + state
+Delaware,OH,2,Columbus,municipality + state
+San Mateo,CA,2,San Francisco-San Jose,municipality + state
+Waterbury,VT,2,Burlington,municipality + state
+Lake Oswego,OR,2,Portland,municipality + state
+Zeeland,MI,2,Grand Rapids,municipality + state
+Batesville,IN,2,Batesville,"municipality only, unambiguous"
+Dallas/Ft. Worth Airport,TX,2,Dallas,municipality + state
+Malvern,PA,2,Philadelphia,municipality + state
+Danbury,CT,2,New York,municipality + state
+Armonk,NY,2,New York,municipality + state
+Burlington,MA,2,Boston,municipality + state
+Portsmouth,NH,2,Boston,municipality + state
+Long Island City,NY,2,New York,municipality + state
+Hudson,OH,2,Cleveland,municipality + state
+Chesterfield,MO,2,St. Louis,municipality + state
+Northfield,IL,2,Chicago,municipality + state
+Lexington,KY,2,,AMBIGUOUS across 14 metros
+Clearwater,FL,2,Tampa,municipality + state
+Novi,MI,2,Detroit,municipality + state
+Coral Gables,FL,2,Miami,municipality + state
+Hunt Valley,MD,2,,not in the Municipality sheet
+Des Moines,IA,2,Des Moines,municipality + state
+Lisle,IL,2,Chicago,municipality + state
+Waterford,NY,2,Albany,municipality + state
+Coppell,TX,2,Dallas,municipality + state
+Williamsville,NY,2,Buffalo,municipality + state
+Montpelier,VT,2,Burlington,municipality + state
+Miamisburg,OH,2,Dayton,municipality + state
+Westlake,OH,2,Cleveland,municipality + state
+Eagan,MN,2,Minneapolis,municipality + state
+Jersey City,NJ,2,New York,municipality + state
+Port Washington,NY,2,,AMBIGUOUS across 2 metros
+Bloomfield Hills,MI,2,Detroit,municipality + state
+El Paso,TX,2,El Paso,municipality + state
+West Chester,PA,2,Philadelphia,municipality + state
+Corte Madera,CA,2,San Francisco-San Jose,municipality + state
+Sarasota,FL,2,Sarasota,municipality + state
+Dublin,CA,2,San Francisco-San Jose,municipality + state
+Greeley,CO,2,Greeley,municipality + state
+Southlake,TX,2,Dallas,municipality + state
+Roswell,GA,2,Atlanta,municipality + state
+Grand Rapids,MI,2,Grand Rapids,municipality + state
+Wayne,PA,2,Pottsville,municipality + state
+King of Prussia,PA,2,,not in the Municipality sheet
+Bolingbrook,IL,2,Chicago,municipality + state
+Symmes Township,OH,2,Cincinnati,municipality + state
+Jericho,NY,1,,AMBIGUOUS across 2 metros
+Fairlawn,OH,1,Cleveland,municipality + state
+Wood Dale,IL,1,Chicago,municipality + state
+Abbott Park,IL,1,,not in the Municipality sheet
+North Chicago,IL,1,Chicago,municipality + state
+New Albany,OH,1,Columbus,municipality + state
+Catawba,SC,1,,AMBIGUOUS across 2 metros
+Katy,TX,1,Houston,municipality + state
+Lake Zurich,IL,1,Chicago,municipality + state
+Fairhaven,MA,1,Providence,municipality + state
+Hilliard,OH,1,Columbus,municipality + state
+Bellingham,WA,1,Bellingham,municipality + state
+West Chester,OH,1,Cincinnati,municipality + state
+Melrose Park,IL,1,Chicago,municipality + state
+Orange,CA,1,Los Angeles,municipality + state
+Greensburg,PA,1,Pittsburgh,municipality + state
+West Des Moines,IA,1,Des Moines,municipality + state
+Huntersville,NC,1,Charlotte,municipality + state
+Virginia Beach,VA,1,Norfolk,municipality + state
+Lincoln,RI,1,Providence,municipality + state
+Bridgewater,NJ,1,New York,municipality + state
+Wallingford,CT,1,New Haven,municipality + state
+New Brighton,MN,1,Minneapolis,municipality + state
+Cupertino,CA,1,San Francisco-San Jose,municipality + state
+Lake Forest,CA,1,Los Angeles,municipality + state
+Crystal Lake,IL,1,Chicago,municipality + state
+Lancaster,PA,1,Lancaster (PA),municipality + state
+Suwanee,GA,1,Atlanta,municipality + state
+Centennial,CO,1,Denver,municipality + state
+Rolling Meadows,IL,1,Chicago,municipality + state
+Alhambra,CA,1,Los Angeles,municipality + state
+Harvey,IL,1,Chicago,municipality + state
+Roseland,NJ,1,New York,municipality + state
+Pekin,IL,1,Peoria,municipality + state
+Mentor,OH,1,Cleveland,municipality + state
+Avon Lake,OH,1,Cleveland,municipality + state
+Suffern,NY,1,New York,municipality + state
+Wellington,FL,1,Miami,municipality + state
+Basking Ridge,NJ,1,,not in the Municipality sheet
+Union,NJ,1,New York,municipality + state
+Richfield,MN,1,Minneapolis,municipality + state
+Hercules,CA,1,San Francisco-San Jose,municipality + state
+San Rafael,CA,1,San Francisco-San Jose,municipality + state
+Towson,MD,1,,not in the Municipality sheet
+Rapid City,SD,1,Rapid City,municipality + state
+Marietta,GA,1,Atlanta,municipality + state
+Wauwatosa,WI,1,Milwaukee,municipality + state
+Mettawa,IL,1,Chicago,municipality + state
+South Milwaukee,WI,1,Milwaukee,municipality + state
+Lynchburg,VA,1,Lynchburg,municipality + state
+Sidney,NE,1,,AMBIGUOUS across 5 metros
+Bethpage,NY,1,New York,municipality + state
+Tupelo,MS,1,Tupelo,municipality + state
+Ridgeland,MS,1,Jackson,municipality + state
+Palm Beach Gardens,FL,1,Miami,municipality + state
+Ankeny,IA,1,Des Moines,municipality + state
+Independence,OH,1,Cleveland,municipality + state
+Vernon Hills,IL,1,Chicago,municipality + state
+Frazer,PA,1,Pittsburgh,municipality + state
+North Kansas City,MO,1,Kansas City,municipality + state
+Midlothian,TX,1,Dallas,municipality + state
+Calabasas Hills,CA,1,,not in the Municipality sheet
+Ridgefield,CT,1,New York,municipality + state
+Plantation,FL,1,Miami,municipality + state
+Fort Myers,FL,1,Fort Myers,municipality + state
+Inver Grove Heights,MN,1,Minneapolis,municipality + state
+Warren,NJ,1,New York,municipality + state
+Ewing,NJ,1,New York,municipality + state
+Hanover,MD,1,,AMBIGUOUS across 20 metros
+Carpinteria,CA,1,Santa Barbara,municipality + state
+Norwell,MA,1,Boston,municipality + state
+Jackson,MI,1,Jackson (MI),municipality + state
+Teaneck,NJ,1,New York,municipality + state
+Saxonburg,PA,1,Pittsburgh,municipality + state
+Montgomery,AL,1,Montgomery,municipality + state
+Cherry Hill,NJ,1,Philadelphia,municipality + state
+Webster,MA,1,Boston,municipality + state
+Hickory,NC,1,Hickory,municipality + state
+Westport,CT,1,New York,municipality + state
+Newark,CA,1,San Francisco-San Jose,municipality + state
+Florham Park,NJ,1,New York,municipality + state
+San Ramon,CA,1,San Francisco-San Jose,municipality + state
+Livingston,NJ,1,New York,municipality + state
+Corning,NY,1,Elmira,municipality + state
+Issaquah,WA,1,Seattle,municipality + state
+Morristown,NJ,1,New York,municipality + state
+Columbus,IN,1,Indianapolis,municipality + state
+Woonsocket,RI,1,Providence,municipality + state
+Woodland Park,NJ,1,New York,municipality + state
+Arlington,TX,1,Dallas,municipality + state
+Goleta,CA,1,Santa Barbara,municipality + state
+Moline,IL,1,Davenport,municipality + state
+Round Rock,TX,1,Austin,municipality + state
+Shoreview,MN,1,Minneapolis,municipality + state
+Coraopolis,PA,1,Pittsburgh,municipality + state
+Flint,MI,1,Detroit,municipality + state
+Riverwoods,IL,1,Chicago,municipality + state
+Goodlettsville,TN,1,Nashville,municipality + state
+Chesapeake,VA,1,Norfolk,municipality + state
+Fort Mill,SC,1,Charlotte,municipality + state
+Dayton,OH,1,Dayton,municipality + state
+Rochester Hills,MI,1,Detroit,municipality + state
+Ashburn,VA,1,Washington-Baltimore,municipality + state
+Kingsport,TN,1,Johnson City,municipality + state
+Rosemead,CA,1,Los Angeles,municipality + state
+Hopkinton,MA,1,Boston,municipality + state
+Chadds Ford,PA,1,Philadelphia,municipality + state
+New Gloucester,ME,1,Portland (ME),municipality + state
+Reading,PA,1,Philadelphia,municipality + state
+San Juan Capistrano,CA,1,Los Angeles,municipality + state
+New Orleans,LA,1,New Orleans,municipality + state
+Camp Hill,PA,1,Harrisburg,municipality + state
+Newtown,PA,1,Philadelphia,municipality + state
+Columbia,MO,1,Columbia (MO),municipality + state
+Erie,PA,1,Erie,municipality + state
+North Bethesda,MD,1,,not in the Municipality sheet
+Milton,GA,1,Atlanta,municipality + state
+Las Colinas,,1,,AMBIGUOUS across 3 metros
+Hagerstown,,1,,AMBIGUOUS across 2 metros
+South Portland,ME,1,Portland (ME),municipality + state
+Winona,MN,1,Winona,municipality + state
+Owatonna,MN,1,Minneapolis,municipality + state
+Mayfield Heights,OH,1,Cleveland,municipality + state
+Hicksville,NY,1,Defiance (OH),"municipality only, unambiguous"
+Riverside,CA,1,Los Angeles,municipality + state
+Thomasville,GA,1,Thomasville,municipality + state
+Dearborn,MI,1,Detroit,municipality + state
+Everett,WA,1,Seattle,municipality + state
+Grapevine,TX,1,Dallas,municipality + state
+Plymouth,MI,1,Detroit,municipality + state
+Evendale,OH,1,Cincinnati,municipality + state
+Waukesha,WI,1,Milwaukee,municipality + state
+Highland Heights,KY,1,Cincinnati,municipality + state
+Darien,CT,1,New York,municipality + state
+Kennett Square,PA,1,Philadelphia,municipality + state
+Foster City,CA,1,San Francisco-San Jose,municipality + state
+Audubon,PA,1,Philadelphia,"municipality only, unambiguous"
+Tucker,GA,1,Atlanta,municipality + state
+Costa Mesa,CA,1,Los Angeles,municipality + state
+Watsonville,CA,1,San Francisco-San Jose,municipality + state
+Emeryville,CA,1,San Francisco-San Jose,municipality + state
+Worcester,MA,1,Boston,municipality + state
+Pawtucket,RI,1,Providence,municipality + state
+Naples,FL,1,Fort Myers,municipality + state
+N. Richland Hills,TX,1,,not in the Municipality sheet
+Hollywood,FL,1,Miami,municipality + state
+Hershey,PA,1,North Platte (NE),"municipality only, unambiguous"
+Estero,FL,1,Fort Myers,municipality + state
+Muscatine,IA,1,Davenport,municipality + state
+Austin,MN,1,Rochester (MN),municipality + state
+Matawan,NJ,1,New York,municipality + state
+Paramus,NJ,1,New York,municipality + state
+Sunny Isles Beach,FL,1,Miami,municipality + state
+Westbrook,ME,1,Portland (ME),municipality + state
+Oakdale,MN,1,Minneapolis,municipality + state
+Black Mountain,NC,1,Asheville,municipality + state
+Acton,MA,1,Boston,municipality + state
+Altamonte Springs,FL,1,Orlando,municipality + state
+Elyria,OH,1,Cleveland,municipality + state
+Liberty Lake,WA,1,Spokane,municipality + state
+Lowell,AR,1,Fayetteville,municipality + state
+Orrville,OH,1,Cleveland,municipality + state
+McConnellsburg,PA,1,,not in the Municipality sheet
+Hoboken,NJ,1,New York,municipality + state
+New Brunswick,NJ,1,New York,municipality + state
+Des Peres,MO,1,St. Louis,municipality + state
+Santa Rosa,CA,1,San Francisco-San Jose,municipality + state
+New Haven,CT,1,New Haven,municipality + state
+Menomonee Falls,WI,1,Milwaukee,municipality + state
+Melbourne,FL,1,Melbourne (FL),municipality + state
+Monroe,MI,1,Detroit,municipality + state
+Burlington,NC,1,Greensboro-Winston Salem,municipality + state
+Eagle,ID,1,Boise,municipality + state
+Arden Hills,MN,1,Minneapolis,municipality + state
+Carthage,MO,1,Joplin,municipality + state
+Lafayette,LA,1,Lafayette,municipality + state
+Chanhassen,MN,1,Minneapolis,municipality + state
+Clifton,NJ,1,New York,municipality + state
+Medford,OR,1,Medford,municipality + state
+Antioch,TN,1,,AMBIGUOUS across 3 metros
+Foothill Ranch,CA,1,,not in the Municipality sheet
+Mooresville,NC,1,Charlotte,municipality + state
+Wickliffe,OH,1,Cleveland,municipality + state
+Groveport,OH,1,Columbus,municipality + state
+Monroe,LA,1,Monroe,municipality + state
+Buffalo,NY,1,Buffalo,municipality + state
+Avon,CT,1,Hartford,municipality + state
+Mahwah,NJ,1,New York,municipality + state
+Manitowoc,WI,1,Manitowoc,municipality + state
+Beachwood,OH,1,Cleveland,municipality + state
+Sacramento,CA,1,Sacramento,municipality + state
+Sparks,MD,1,,AMBIGUOUS across 2 metros
+Sunrise,FL,1,Miami,municipality + state
+St. Peters,MO,1,St. Louis,municipality + state
+Rahway,NJ,1,New York,municipality + state
+Ft. Lauderdale,FL,1,,not in the Municipality sheet
+Minnetonka,MN,1,Minneapolis,municipality + state
+Tempe,,1,Phoenix,"municipality only, unique nationwide"
+Redmond,WA,1,Seattle,municipality + state
+Elgin,IL,1,Chicago,municipality + state
+Andover,MA,1,Boston,municipality + state
+Racine,WI,1,Milwaukee,municipality + state
+Calhoun,GA,1,Chattanooga,municipality + state
+Corona,CA,1,Los Angeles,municipality + state
+East Aurora,NY,1,Buffalo,municipality + state
+Libertyville,IL,1,Chicago,municipality + state
+Collierville,TN,1,Memphis,municipality + state
+El Dorado,AR,1,El Dorado (AR),municipality + state
+Thornton,CO,1,Denver,municipality + state
+Ronkonkoma,NY,1,,not in the Municipality sheet
+Lincoln,NE,1,Omaha-Lincoln,municipality + state
+Los Gatos,CA,1,San Francisco-San Jose,municipality + state
+Doral,FL,1,Miami,municipality + state
+Wall,NJ,1,New York,municipality + state
+City of Industry,CA,1,,not in the Municipality sheet
+Juno Beach,FL,1,Miami,municipality + state
+Beaverton,OR,1,Portland,municipality + state
+Merrillville,IN,1,Chicago,municipality + state
+Provo,UT,1,Salt Lake City-Provo,municipality + state
+Perrysburg,OH,1,Toledo,municipality + state
+Thomasville,NC,1,Greensboro-Winston Salem,municipality + state
+Clayton,MO,1,St. Louis,municipality + state
+Highland Hills,OH,1,Cleveland,municipality + state
+Dulles,VA,1,,not in the Municipality sheet
+Springfield,MO,1,Springfield (MO),municipality + state
+Oshkosh,WI,1,Appleton,municipality + state
+Farmington,CT,1,Hartford,municipality + state
+Concord,CA,1,San Francisco-San Jose,municipality + state
+Fairport,NY,1,Rochester,municipality + state
+Aventura,FL,1,Miami,municipality + state
+Carteret,NJ,1,New York,municipality + state
+Merrimack,NH,1,Boston,municipality + state
+Wyomissing,PA,1,Philadelphia,municipality + state
+Golden Valley,MN,1,Minneapolis,municipality + state
+Bridgeport,CT,1,New York,municipality + state
+Somers,NY,1,New York,municipality + state
+Allegan,MI,1,Grand Rapids,municipality + state
+Mount Laurel,NJ,1,Philadelphia,municipality + state
+Pittsburg,TX,1,,AMBIGUOUS across 5 metros
+Henderson,NV,1,Las Vegas,municipality + state
+Medina,MN,1,Minneapolis,municipality + state
+Covington,LA,1,New Orleans,municipality + state
+Hato Rey,PR,1,,not in the Municipality sheet
+Wilmington,NC,1,Wilmington,municipality + state
+Willow Park,TX,1,Dallas,municipality + state
+Draper,UT,1,Salt Lake City-Provo,municipality + state
+Mayfield Village,OH,1,Cleveland,municipality + state
+Tucson,AZ,1,Tucson,municipality + state
+Lakeland,FL,1,Orlando,municipality + state
+Sussex,WI,1,Milwaukee,municipality + state
+Huntington Beach,CA,1,Los Angeles,municipality + state
+Pleasantville,NY,1,New York,municipality + state
+Tarrytown,NY,1,New York,municipality + state
+Edina,MN,1,Minneapolis,municipality + state
+Ames,IA,1,Des Moines,municipality + state
+Calhoun,TN,1,Chattanooga,municipality + state
+Brookfield,WI,1,Milwaukee,municipality + state
+Norcross,GA,1,Atlanta,municipality + state
+Medina,OH,1,Cleveland,municipality + state
+New Braunfels,TX,1,San Antonio,municipality + state
+Johns Creek,GA,1,Atlanta,municipality + state
+Denton,TX,1,Dallas,municipality + state
+Laurel,MS,1,Hattiesburg,municipality + state
+Cayce,SC,1,Columbia,municipality + state
+Kenilworth,NJ,1,New York,municipality + state
+Marysville,OH,1,Columbus,municipality + state
+Merriam,KS,1,Kansas City,municipality + state
+Bothell,WA,1,Seattle,municipality + state
+Trinity,NC,1,Greensboro-Winston Salem,municipality + state
+Hoffman Estates,,1,Chicago,"municipality only, unique nationwide"
+Mechanicsburg,PA,1,Harrisburg,municipality + state
+Branchville,NJ,1,New York,municipality + state
+Stevens Point,WI,1,Stevens Point,municipality + state
+Center Valley,PA,1,,not in the Municipality sheet
+Westmont,IL,1,Chicago,municipality + state
+Manhattan Beach,CA,1,Los Angeles,municipality + state
+St. George,UT,1,St. George,municipality + state
+Newark,DE,1,Philadelphia,municipality + state
+Smithfield,VA,1,Norfolk,municipality + state
+Kenosha,WI,1,Chicago,municipality + state
+Highland Park,IL,1,Chicago,municipality + state
+Hartsville,SC,1,Florence (SC),municipality + state
+Winter Haven,FL,1,Orlando,municipality + state
+Byron Center,MI,1,,not in the Municipality sheet
+Middleton,WI,1,Madison,municipality + state
+Wichita,KS,1,Wichita,municipality + state
+Dania Beach,FL,1,Miami,municipality + state
+Fairfax,VA,1,Washington-Baltimore,municipality + state
+Windsor,CT,1,Hartford,municipality + state
+New Britain,CT,1,Hartford,municipality + state
+San Bernadino,CA,1,,not in the Municipality sheet
+Fort Wayne,IN,1,Fort Wayne,municipality + state
+Portage,MI,1,Kalamazoo,municipality + state
+Whippany,NJ,1,,not in the Municipality sheet
+Maryland Heights,MO,1,St. Louis,municipality + state
+Corpus Christi,TX,1,Corpus Christi,municipality + state
+Tecumseh,MI,1,Detroit,municipality + state
+Wilsonville,OR,1,Portland,municipality + state
+North Reading,MA,1,Boston,municipality + state
+Sioux City,IA,1,Sioux City,municipality + state
+Santa Fe,NM,1,Albuquerque,municipality + state
+West Fargo,ND,1,Fargo,municipality + state
+Glassport,PA,1,Pittsburgh,municipality + state
+Fort Washington,PA,1,,not in the Municipality sheet
+Bloomington,MN,1,Minneapolis,municipality + state
+Ventura,CA,1,Los Angeles,municipality + state
+Incline Village,NV,1,,not in the Municipality sheet
+San Juan,PR,1,,AMBIGUOUS across 2 metros
+Sylmar,CA,1,,not in the Municipality sheet
+Albuquerque,NM,1,Albuquerque,municipality + state
+Springdale,AR,1,Fayetteville,municipality + state
+Warren,PA,1,Warren (PA),municipality + state
+Silver Spring,MD,1,Harrisburg,"municipality only, unambiguous"
+White Plains,NY,1,New York,municipality + state
+Chattanooga,TN,1,Chattanooga,municipality + state
+Alameda,CA,1,San Francisco-San Jose,municipality + state
+Pontiac,MI,1,Detroit,municipality + state
+Reynoldsburg,OH,1,Columbus,municipality + state
+Walnut,CA,1,Los Angeles,municipality + state
+Anoka,MN,1,Minneapolis,municipality + state
+Van Buren Township,MI,1,,not in the Municipality sheet
+Columbia,MD,1,,AMBIGUOUS across 26 metros
+Lafayette,IN,1,West Lafayette,municipality + state
+Bentonville,AR,1,Fayetteville,municipality + state
+Burbank,CA,1,Los Angeles,municipality + state
+Lowell,,1,,AMBIGUOUS across 10 metros
+Milford,MA,1,Boston,municipality + state
+Sunbury,PA,1,Bloomsburg,municipality + state
+Exton,PA,1,,not in the Municipality sheet
+Wheeling,WV,1,Wheeling,municipality + state
+Benton Harbor,MI,1,South Bend,municipality + state
+Battle Creek,MI,1,Kalamazoo,municipality + state
+Rockford,MI,1,Grand Rapids,municipality + state
+Fort Collins,CO,1,Fort Collins,municipality + state
+Boulder,CO,1,Denver,municipality + state

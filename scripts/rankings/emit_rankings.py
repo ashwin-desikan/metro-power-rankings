@@ -35,7 +35,7 @@ NAMES = os.path.join(CURATION, "era_names.csv")
 DEST = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
                     "public", "data", "business", "rankings.json")
 FIELDS = ["rank", "company", "revenue_musd", "market_value_musd", "sector",
-          "hq_city", "hq_state", "carried", "nameFlag"]
+          "hq_city", "hq_state", "carried", "nameFlag", "metro", "metroSlug"]
 # nameFlag: 0 = name as published, 1 = era-corrected from the curation file,
 #           2 = proven anachronistic, not yet corrected,
 #           3 = source-recorded name, not dated to this year (see below).
@@ -92,8 +92,59 @@ def main():
         with open(ERAS, encoding="utf-8") as f:
             suspect = {e["company_key"] for e in csv.DictReader(f)
                        if e.get("verdict") == "anachronistic"}
+    # The year from which a suspect company's MODERN name becomes correct: one past
+    # the end of its last authored era. Curating "Allied Chemical 1955-1980,
+    # Allied Corporation 1981-1985, AlliedSignal 1986-1995" therefore also says
+    # that from 1996 the record's own label is no longer an anachronism.
+    suspect_until = {k: max(t for _, t, _ in v) + 1 for k, v in eras.items() if v}
     log(f"era names authored: {sum(len(v) for v in eras.values())} rows across "
         f"{len(eras)} companies; proven-anachronistic labels: {len(suspect)}")
+
+    # 🔴 THE CURATED HQ LAYERS. out/company_rankings.csv carries only what Fortune
+    # PUBLISHED (2007+) plus the carry, which is why the board showed no HQ for
+    # companies that had been mapped by hand. The curation lives in
+    # company_hq_spans (dated eras, period-correct) and company_hq (single value),
+    # and neither was ever read back here. Same join as the metro rollup: the era
+    # CONTAINING the year wins, then the single address, then whatever the CSV had.
+    from common import select_all
+    spans = defaultdict(list)
+    try:
+        for s in select_all("/rest/v1/company_hq_spans?select=company_key,from_year,"
+                            "to_year,city,state,metro,metro_status",
+                            "company_key,from_year"):
+            spans[s["company_key"]].append(s)
+        hqmap = {h["company_key"]: h for h in
+                 select_all("/rest/v1/company_hq?select=company_key,hq_city,hq_state,"
+                            "metro", "company_key")}
+        log(f"curated HQ: {sum(len(v) for v in spans.values())} dated eras for "
+            f"{len(spans)} companies, {len(hqmap)} single-value rows")
+    except Exception as e:
+        hqmap = {}
+        log(f"WARNING: could not read the curated HQ layers ({e}); "
+            f"falling back to the CSV's published HQ only")
+
+    # Metro slugs, so the company table can LINK each metro. This is a metro site;
+    # the metro is the primary fact in that column and the street address is the
+    # footnote, not the other way round.
+    metros_json = os.path.join(os.path.dirname(DEST), "..", "metros.json")
+    slug_of = {}
+    for m in json.load(open(os.path.normpath(metros_json), encoding="utf-8")):
+        if m.get("name") and m.get("slug"):
+            slug_of.setdefault(m["name"], m["slug"])
+
+    def curated_hq(k, y, r):
+        """(city, state, metro, metro_slug, carried) for this company in this year."""
+        def pack(city, state, metro, carried):
+            return (city or None, state or None, metro or None,
+                    slug_of.get(metro) if metro else None, carried)
+        for s in spans.get(k, ()):
+            if int(s["from_year"]) <= y <= int(s["to_year"]):
+                return pack(s.get("city"), s.get("state"), s.get("metro"), 0)
+        h = hqmap.get(k)
+        if h and (h.get("hq_city") or "").strip():
+            return pack(h["hq_city"], h.get("hq_state"), h.get("metro"), 1)
+        return pack(r.get("hq_city"), r.get("hq_state"), None,
+                    1 if (r.get("hq_source") or "").startswith("carried") else 0)
 
     by_year = defaultdict(list)
     for r in rows:
@@ -117,8 +168,19 @@ def main():
             name, flag = r["company"], 0
             hit = next((n for f0, t0, n in eras.get(k, ()) if f0 <= y <= t0), None)
             if hit:
-                name, flag = hit, 1             # authored era name
-            elif k in suspect:
+                # A curation row whose era name EQUALS the published name is a
+                # CONFIRMATION, not a correction: someone checked that General
+                # Motors really was called General Motors in 1962. Flagging that
+                # as "corrected" would overstate the work and, worse, leave the
+                # reader unable to tell a checked name from an unchecked one.
+                name = hit
+                flag = 0 if hit == r["company"] else 1
+            elif k in suspect and y < suspect_until.get(k, 10**6):
+                # 🔴 The detector flags a COMPANY, not a year. Left alone that marks
+                # Citigroup as provably wrong in 2020 because the name is wrong in
+                # 1996 — 129 rows of false alarm, which teaches a reader to ignore
+                # the marker. A curated era says when the modern name STARTS being
+                # right, and from that year the flag no longer applies.
                 flag = 2                        # proven anachronistic, not yet fixed
             elif y < LATEST:
                 # NEITHER source dates names. Measured 2026-08-16: of 2,995 modern
@@ -132,12 +194,11 @@ def main():
                 # So only the newest year can be assumed current. Everything else is
                 # source-recorded and undated until someone authors the era.
                 flag = 3
+            city, state, metro, mslug, carried = curated_hq(k, y, r)
             out.append([
                 int(r["rank"]), name, num(r["revenue_musd"]),
                 num(r["market_value_musd"]), r.get("sector") or None,
-                r.get("hq_city") or None, r.get("hq_state") or None,
-                1 if (r.get("hq_source") or "").startswith("carried") else 0,
-                flag,
+                city, state, carried, flag, metro, mslug,
             ])
         years[str(y)] = out
 

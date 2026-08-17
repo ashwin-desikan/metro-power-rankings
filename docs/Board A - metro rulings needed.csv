@@ -1,0 +1,51 @@
+﻿city,state,eras,proposed_metro,status,spine_candidates,why_unresolved,companies
+Fairlawn,Ohio,1,Akron,NAME NOT IN THE SPINE — pick from the candidates,,no match in the geo authority,"GenCorp, Inc."
+Fairfield,Connecticut,1,,NO PROPOSAL — I do not know this one,Fairfield (IA),no match in the geo authority,General Electric
+Denison,Iowa,1,,NO PROPOSAL — I do not know this one,Denison,no match in the geo authority,Iowa Beef Processors
+Battle Creek,Michigan,1,Battle Creek,NAME NOT IN THE SPINE — pick from the candidates,,no match in the geo authority,Kellogg
+Ashburn,Virginia,1,Washington,NAME NOT IN THE SPINE — pick from the candidates,Washington (IN) | Washington-Baltimore,no match in the geo authority,mci
+Fairfax County,Virginia,1,Washington,NAME NOT IN THE SPINE — pick from the candidates,Washington (IN) | Washington-Baltimore,no match in the geo authority,Mobil Corporation
+Winston-Salem,North Carolina,1,Winston-Salem,NAME NOT IN THE SPINE — pick from the candidates,,no match in the geo authority,Nabisco Group Holdings Corp.
+Dayton,Ohio,1,,NO PROPOSAL — I do not know this one,Dayton | Daytona Beach,no match in the geo authority,NCR
+Bartlesville,Oklahoma,1,Bartlesville,NAME NOT IN THE SPINE — pick from the candidates,,no match in the geo authority,phillips petroleum
+Youngstown,Ohio,1,,NO PROPOSAL — I do not know this one,Youngstown,no match in the geo authority,youngstown sheet and tube
+Iselin,New Jersey,3,New York,"proposal, needs your yes",,no match in the geo authority,"Hanson Industries NA; U.S. Industries, Inc."
+Hartford,Connecticut,2,Hartford,"proposal, needs your yes",,no match in the geo authority,aetna life and casualty; itt hartford group
+Harrison,New York,2,New York,"proposal, needs your yes",,no match in the geo authority,"CVS; Texaco, Inc."
+Jackson,Mississippi,2,Jackson,"proposal, needs your yes",,no match in the geo authority,mci worldcom; worldcom
+Clinton,Mississippi,2,Jackson,"proposal, needs your yes",,no match in the geo authority,mci worldcom; worldcom
+Newark,New Jersey,2,New York,"proposal, needs your yes",,"AMBIGUOUS across 3 metros: San Francisco-San Jose, New York, Philadelphia",Prudential Ins. Co. of America; prudential insurance of america
+DeWitt,New York,1,Syracuse,"proposal, needs your yes",,no match in the geo authority,Agway
+West Allis,Wisconsin,1,Milwaukee,"proposal, needs your yes",,no match in the geo authority,Allis-Chalmers
+Piscataway,New Jersey,1,New York,"proposal, needs your yes",,no match in the geo authority,American Standard
+Middletown,Ohio,1,Cincinnati,"proposal, needs your yes",,no match in the geo authority,armco
+Mount Olive,New Jersey,1,New York,"proposal, needs your yes",,no match in the geo authority,BASF
+Orange,California,1,Los Angeles,"proposal, needs your yes",,no match in the geo authority,Bergen Brunswig Corporation
+Englewood Cliffs,New Jersey,1,New York,"proposal, needs your yes",,no match in the geo authority,Bestfoods
+Bethlehem,Pennsylvania,1,Allentown,"proposal, needs your yes",,no match in the geo authority,Bethlehem Steel Corporation
+Hamilton,Ohio,1,Cincinnati,"proposal, needs your yes",,"AMBIGUOUS across 3 metros: Hamilton (BER), San Francisco-San Jose, Hickory",champion international
+Highland Park,Michigan,1,Detroit,"proposal, needs your yes",,no match in the geo authority,Chrysler Corporation
+Mount Vernon,Ohio,1,Columbus,"proposal, needs your yes",,no match in the geo authority,Cooper Industries
+Maynard,Massachusetts,1,Boston,"proposal, needs your yes",,no match in the geo authority,digital equipment
+Lewisville,Texas,1,Dallas,"proposal, needs your yes",,no match in the geo authority,"Fleming Companies, Inc."
+Old Greenwich,Connecticut,1,New York,"proposal, needs your yes",,no match in the geo authority,fortune brands
+Rancho Cordova,California,1,Sacramento,"proposal, needs your yes",,no match in the geo authority,"GenCorp, Inc."
+Bethpage,New York,1,New York,"proposal, needs your yes",,no match in the geo authority,grumman
+Dakota Dunes,South Dakota,1,Sioux City,"proposal, needs your yes",,no match in the geo authority,ibp
+Dakota City,Nebraska,1,Sioux City,"proposal, needs your yes",,no match in the geo authority,Iowa Beef Processors
+East Hanover,New Jersey,1,New York,"proposal, needs your yes",,no match in the geo authority,Nabisco Brands
+Palatine,Illinois,1,Chicago,"proposal, needs your yes",,no match in the geo authority,pure oil
+Lexington,Massachusetts,1,Boston,"proposal, needs your yes",,"AMBIGUOUS across 2 metros: Lexington, Atlanta",raytheon
+Farmingdale,New York,1,New York,"proposal, needs your yes",,no match in the geo authority,republic aviation
+Seal Beach,California,1,Los Angeles,"proposal, needs your yes",,no match in the geo authority,rockwell international
+Hoffman Estates,Illinois,1,Chicago,"proposal, needs your yes",,no match in the geo authority,sears roebuck and
+La Jolla,California,1,San Diego,"proposal, needs your yes",,no match in the geo authority,Signal Companies
+Westwood,Kansas,1,Kansas City,"proposal, needs your yes",,no match in the geo authority,Sprint Corporation
+South Bend,Indiana,1,South Bend,"proposal, needs your yes",,no match in the geo authority,studebaker
+Holmdel,New Jersey,1,New York,"proposal, needs your yes",,no match in the geo authority,Triangle Industries
+Euclid,Ohio,1,Cleveland,"proposal, needs your yes",,no match in the geo authority,trw
+Danbury,Connecticut,1,New York,"proposal, needs your yes",,no match in the geo authority,Union Carbide Corporation
+Middlebury,Connecticut,1,New Haven,"proposal, needs your yes",,no match in the geo authority,Uniroyal
+Tuckahoe,New York,1,New York,"proposal, needs your yes",,no match in the geo authority,US Pharmaceuticals
+Morris Plains,New Jersey,1,New York,"proposal, needs your yes",,no match in the geo authority,warner lambert
+Eastlake,Ohio,1,Cleveland,"proposal, needs your yes",,no match in the geo authority,White Motor

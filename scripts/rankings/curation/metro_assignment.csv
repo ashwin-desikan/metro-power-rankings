@@ -1,0 +1,132 @@
+city,state,eras,metro,how,companies
+New York,NY,74,New York,municipality + state,"AMAX; AMF; AT&T Technologies; American Standard; Anaconda; Asarco, Inc."
+Chicago,IL,16,Chicago,municipality + state,Amoco Corporation; Armour; Bank One Corporation; Beatrice; Crane; Esmark
+Stamford,CT,10,New York,municipality + state,Continental Group; Crane; GTE Corporation; Kennecott; Singer; Tosco Corporation
+Houston,TX,10,Houston,municipality + state,Cooper Industries; Gulf & Western Industries; NL Industries; Tenneco Automotive Inc.; The Coastal Corporation; compaq computer
+Los Angeles,CA,8,Los Angeles,municipality + state,Atlantic Richfield Company; Carnation; Signal Companies; Tidewater Oil; Tosco Corporation; getty oil
+Pittsburgh,PA,7,Pittsburgh,municipality + state,Bayer Corporation; National Intergroup; armco; gulf oil; jones and laughlin steel; u s steel
+St. Louis,MO,6,St. Louis,municipality + state,Ralston Purina Company; SBC Communications Inc.; anheuser busch; may department stores; may dept stores; mcdonnell douglas
+Philadelphia,PA,5,Philadelphia,municipality + state,Atlantic Richfield Company; Scott Paper; bell atlantic; cigna; philco
+San Francisco,CA,5,San Francisco-San Jose,municipality + state,ChevronTexaco Corporation; Foremost Dairies; Tidewater Oil; bankamerica; crown zellerbach
+Cleveland,OH,5,Cleveland,municipality + state,BP America; Maxus Energy; White Motor; ltv; republic steel
+Greenwich,CT,4,New York,municipality + state,AMAX; Avco; Tenneco Automotive Inc.; american can
+Detroit,MI,4,Detroit,municipality + state,American Motors; Bendix; Hygrade Food Products; briggs manufacturing
+Atlanta,GA,4,Atlanta,municipality + state,Georgia-Pacific Corporation; Nabisco Group Holdings Corp.; bellsouth; coca cola enterprises
+Dallas,TX,4,Dallas,municipality + state,Maxus Energy; dresser industries; ltv
+White Plains,NY,3,New York,municipality + state,AMF; General Foods; itt industries
+Boston,MA,3,Boston,municipality + state,Chiquita Brands Intl.; FleetBoston Financial Corporation; gillette
+Troy,MI,3,Detroit,municipality + state,Delphi Automotive Systems Corporation; Kmart Corporation; Kmart Holding Corporation
+Oklahoma City,OK,3,Oklahoma City,municipality + state,"Fleming; Fleming Companies, Inc.; kerr mcgee"
+Iselin,NJ,3,New York,municipality + state,"Hanson Industries NA; U.S. Industries, Inc."
+Minneapolis,MN,3,Minneapolis,municipality + state,Honeywell; Honeywell Intl.; pillsbury
+Hartford,CT,2,Hartford,municipality + state,aetna life and casualty; itt hartford group
+Southfield,MI,2,Detroit,municipality + state,American Motors; Bendix
+Columbus,OH,2,Columbus,municipality + state,"Bank One Corporation; Borden Chemical, Inc."
+Louisville,KY,2,Louisville,municipality + state,BATUS; reynolds metals
+Tulsa,OK,2,Tulsa,municipality + state,Citgo Petroleum; Sunray DX Oil
+Phoenix,AZ,2,Phoenix,municipality + state,Cudahy; greyhound
+Harrison,NY,2,New York,municipality + state,"CVS; Texaco, Inc."
+Santa Monica,CA,2,Los Angeles,municipality + state,Tosco Corporation; douglas aircraft
+Irving,TX,2,Dallas,municipality + state,Exxon Mobil; GTE Corporation
+Kansas City,MO,2,Kansas City,municipality + state,farmland industries; utilicorp united
+Washington,DC,2,Washington-Baltimore,municipality + state,federal national mortgage association; mci communications
+Akron,OH,2,Cleveland,municipality + state,"GenCorp, Inc.; firestone tire and rubber"
+Richmond,VA,2,Richmond,municipality + state,Fort James Corp; reynolds metals
+Jackson,MS,2,Jackson,municipality + state,mci worldcom; worldcom
+Clinton,MS,2,Jackson,municipality + state,mci worldcom; worldcom
+Newark,NJ,2,New York,municipality + state,Prudential Ins. Co. of America; prudential insurance of america
+Bloomington,IL,2,Bloomington–Normal,municipality + state,state farm group; state farm insurance cos
+DeWitt,NY,1,Syracuse,municipality + state,Agway
+Morristown,NJ,1,New York,municipality + state,alliedsignal
+West Allis,WI,1,Milwaukee,municipality + state,Allis-Chalmers
+Wayne,NJ,1,New York,municipality + state,american cyanamid
+Madison,NJ,1,New York,municipality + state,american home products
+Piscataway,NJ,1,New York,municipality + state,American Standard
+Salt Lake City,UT,1,Salt Lake City-Provo,municipality + state,american stores
+Cupertino,CA,1,San Francisco-San Jose,municipality + state,apple computer
+Middletown,OH,1,Cincinnati,municipality + state,armco
+Berkeley Heights,NJ,1,New York,municipality + state,AT&T Technologies
+Parsippany,NJ,1,New York,municipality + state,BASF
+Mount Olive,NJ,1,New York,municipality + state,BASF
+Orange,CA,1,Los Angeles,municipality + state,Bergen Brunswig Corporation
+Englewood Cliffs,NJ,1,New York,municipality + state,Bestfoods
+Bethlehem,PA,1,Allentown,municipality + state,Bethlehem Steel Corporation
+Greensboro,NC,1,Greensboro-Winston Salem,municipality + state,burlington industries equity
+Camden,NJ,1,Philadelphia,municipality + state,campbell soup
+Hamilton,OH,1,Cincinnati,municipality + state,champion international
+Jacksonville,FL,1,Jacksonville,municipality + state,Charter
+San Ramon,CA,1,San Francisco-San Jose,municipality + state,ChevronTexaco Corporation
+Cincinnati,OH,1,Cincinnati,municipality + state,Chiquita Brands Intl.
+Highland Park,MI,1,Detroit,municipality + state,Chrysler Corporation
+Auburn Hills,MI,1,Detroit,municipality + state,Chrysler Corporation
+Corpus Christi,TX,1,Corpus Christi,municipality + state,The Coastal Corporation
+Nashville,TN,1,Nashville,municipality + state,columbia hca healthcare
+Bloomington,MN,1,Minneapolis,municipality + state,control data
+Mount Vernon,OH,1,Columbus,municipality + state,Cooper Industries
+Omaha,NE,1,Omaha-Lincoln,municipality + state,Cudahy
+Worcester,MA,1,Boston,municipality + state,CVS
+Maynard,MA,1,Boston,municipality + state,digital equipment
+Memphis,TN,1,Memphis,municipality + state,fdx
+McLean,VA,1,Washington-Baltimore,municipality + state,Federal Home Loan Mortgage Corp.
+Charlotte,NC,1,Charlotte,municipality + state,first union
+Providence,RI,1,Providence,municipality + state,FleetBoston Financial Corporation
+Lewisville,TX,1,Dallas,municipality + state,"Fleming Companies, Inc."
+Deerfield,IL,1,Chicago,municipality + state,Fort James Corp
+Old Greenwich,CT,1,New York,municipality + state,fortune brands
+Fairlawn,OH,1,Cleveland,municipality + state,"GenCorp, Inc."
+Rancho Cordova,CA,1,Sacramento,municipality + state,"GenCorp, Inc."
+Fairfield,CT,1,New York,municipality + state,General Electric
+Rye Brook,NY,1,New York,municipality + state,General Foods
+Portland,OR,1,Portland,municipality + state,Georgia-Pacific Corporation
+Bethpage,NY,1,New York,municipality + state,grumman
+Palo Alto,CA,1,San Francisco-San Jose,municipality + state,hewlett packard
+Somerville,NJ,1,New York,municipality + state,Hoechst Celanese
+Dakota Dunes,SD,1,Sioux City,municipality + state,ibp
+Armonk,NY,1,New York,municipality + state,Intl. Business Machines
+Denison,IA,1,,"RULED: no metro area — Ashwin, 2026-08-17: Denison is no metro area",Iowa Beef Processors
+Dakota City,NE,1,Sioux City,municipality + state,Iowa Beef Processors
+Oakland,CA,1,San Francisco-San Jose,municipality + state,Kaisertech
+Battle Creek,MI,1,Kalamazoo,municipality + state,Kellogg
+Glenview,IL,1,Chicago,municipality + state,Kraft
+Beverly Hills,CA,1,Los Angeles,municipality + state,litton industries
+Baltimore,MD,1,Washington-Baltimore,municipality + state,Martin Marietta
+Bethesda,MD,1,Wheeling,"municipality only, unambiguous",Martin Marietta
+New Orleans,LA,1,New Orleans,municipality + state,McDermott
+Ashburn,VA,1,Washington-Baltimore,municipality + state,mci
+Englewood,CO,1,Denver,municipality + state,"MediaOne Group, Inc."
+Maplewood,MN,1,Minneapolis,municipality + state,minnesota mining and manufacturing
+Fairfax County,VA,1,Washington-Baltimore,municipality + state,Mobil Corporation
+East Hanover,NJ,1,New York,municipality + state,Nabisco Brands
+Winston-Salem,NC,1,Greensboro-Winston Salem,municipality + state,Nabisco Group Holdings Corp.
+Dayton,OH,1,Dayton,municipality + state,NCR
+Toledo,OH,1,Toledo,municipality + state,owens illinois
+Bartlesville,OK,1,Tulsa,municipality + state,phillips petroleum
+Princeton,NJ,1,New York,municipality + state,Pullman
+Palatine,IL,1,Chicago,municipality + state,pure oil
+Lexington,MA,1,Boston,municipality + state,raytheon
+Farmingdale,NY,1,New York,municipality + state,republic aviation
+Seal Beach,CA,1,Los Angeles,municipality + state,rockwell international
+Milwaukee,WI,1,Milwaukee,municipality + state,rockwell international
+San Antonio,TX,1,San Antonio,municipality + state,SBC Communications Inc.
+Chester,PA,1,Philadelphia,municipality + state,Scott Paper
+Hoffman Estates,IL,1,Chicago,municipality + state,sears roebuck and
+La Jolla,CA,1,San Diego,municipality + state,Signal Companies
+Westwood,KS,1,Kansas City,municipality + state,Sprint Corporation
+Overland Park,KS,1,Kansas City,municipality + state,Sprint Corporation
+South Bend,IN,1,South Bend,municipality + state,studebaker
+Lake Forest,IL,1,Chicago,municipality + state,Tenneco Automotive Inc.
+Holmdel,NJ,1,New York,municipality + state,Triangle Industries
+Euclid,OH,1,Cleveland,municipality + state,trw
+Lyndhurst,OH,1,Cleveland,municipality + state,trw
+Denver,CO,1,Denver,municipality + state,u s west
+Danbury,CT,1,New York,municipality + state,Union Carbide Corporation
+Middlebury,CT,1,Hartford,municipality + state,Uniroyal
+El Segundo,CA,1,Los Angeles,municipality + state,unocal
+Tuckahoe,NY,1,New York,municipality + state,US Pharmaceuticals
+Bentonville,AR,1,Fayetteville,municipality + state,wal mart stores
+Morris Plains,NJ,1,New York,municipality + state,warner lambert
+Thousand Oaks,CA,1,Los Angeles,municipality + state,"WellPoint Health Networks, Inc."
+Eastlake,OH,1,Cleveland,municipality + state,White Motor
+Rolling Meadows,IL,1,Chicago,municipality + state,Whitman Corporation
+Rochester,NY,1,Rochester,municipality + state,xerox
+Youngstown,OH,1,Youngstown,municipality + state,youngstown sheet and tube

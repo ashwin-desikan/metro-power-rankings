@@ -211,6 +211,8 @@ export type RankingRow = [
   string | null, // HQ state
   number,        // 1 = HQ carried from another year of the same company
   number,        // 0 = as published, 1 = era-corrected, 2 = known anachronistic
+  string | null, // metro, from the curated HQ layers
+  string | null, // metro slug, for /rankings/<slug>
 ];
 
 export type RankingsFile = {
@@ -234,6 +236,51 @@ export type RankingsFile = {
 
 export async function getRankings(): Promise<RankingsFile | null> {
   return load<RankingsFile>("rankings.json");
+}
+
+// The same board rolled up by metro. A company is placed in the metro of the
+// headquarters era CONTAINING that year, so a company that moved contributes to
+// each metro it was actually in. `carried` counts the rows in a cell that came
+// from a single published address carried across a company's whole run rather
+// than from a dated era, so the page can say which is which.
+export type MetroCityRow = {
+  city: string;          // "Auburn Hills, Michigan"
+  companies: number;
+  revenue: number;
+  top: string | null;
+  topRank: number;
+};
+
+export type MetroYearRow = {
+  metro: string;
+  slug: string | null;
+  companies: number;
+  revenue: number;
+  top: string | null;
+  topRank: number;
+  carried: number;
+  cities: MetroCityRow[];
+};
+
+export type RankingMetrosFile = {
+  meta: {
+    generated_at: string;
+    source: string;
+    boardDepth: number;
+    years: number[];
+    rows: number;
+    placedByDatedEra: number;
+    placedByCarriedAddress: number;
+    ruledNoMetro: number;
+    unplaced: number;
+    note: string;
+    biggestUnplaced: { company_key: string; rows: number }[];
+  };
+  years: Record<string, MetroYearRow[]>;
+};
+
+export async function getRankingMetros(): Promise<RankingMetrosFile | null> {
+  return load<RankingMetrosFile>("rankings-metros.json");
 }
 
 // ---------------------------------------------------------------------------

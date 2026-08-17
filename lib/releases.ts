@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-17",
+    headline: "The biggest companies, placed where they actually were",
+    items: [
+      "Every company on the rankings board now shows the metro area it was headquartered in that year, not today. Mobil counts for New York in 1980 and Washington in 1992; Georgia-Pacific leaves Portland for Atlanta.",
+      "A second board totals each year by metro. New York held 34 of 1955's hundred largest companies and holds 20 of 2026's, while San Francisco-San Jose rises from two to eleven and second place.",
+      "Open any metro row to see the places inside it: Detroit breaks into Highland Park, Auburn Hills, Southfield and Dearborn, each with its own companies, revenue and best rank.",
+      "213 companies had their headquarters researched into dated eras with a source recorded for each, and the board no longer shows a single name it can prove wrong for the year it sits in.",
+    ],
+  },
+  {
     date: "2026-08-16",
     headline: "Every year's biggest companies, back to 1955",
     items: [

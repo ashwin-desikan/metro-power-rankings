@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import type { RankingRow, RankingsFile } from '@/lib/business';
 import { MONO, SMCOL, TD, TDR, TH, THR, TableBox } from '../ui';
@@ -27,10 +28,9 @@ export default function YearBoard({ data }: { data: RankingsFile }) {
   const rows: RankingRow[] = data.years[String(year)] ?? [];
   const stat = data.stats[String(year)];
   const shown = rows.length;
-  const fixed = rows.filter((r) => r[8] === 1).length;
-  const suspect = rows.filter((r) => r[8] === 2).length;
-  const unverified = rows.filter((r) => r[8] === 3).length;
-  const carried = rows.filter((r) => r[7] === 1).length;
+  // The per-year counts of corrected / undated names and carried addresses used
+  // to drive a paragraph above the table. That paragraph is gone; the glyphs and
+  // the methodology card carry the meaning, so the counts are no longer computed.
 
   return (
     <>
@@ -94,35 +94,13 @@ export default function YearBoard({ data }: { data: RankingsFile }) {
         </div>
       </div>
 
-      {(suspect > 0 || unverified > 0 || fixed > 0 || carried > 0) && (
-        <p className="text-xs text-[var(--text-muted)] mb-3 max-w-3xl leading-relaxed">
-          {fixed > 0 && (
-            <>
-              <span style={{ color: 'var(--text)' }}>{fixed}</span> name
-              {fixed === 1 ? ' is' : 's are'} corrected to what the company was actually
-              called this year.{' '}
-            </>
-          )}
-          {suspect > 0 && (
-            <>
-              <span style={{ color: 'var(--accent, #4f9dff)' }}>†</span> marks a label
-              that is demonstrably wrong for this year and not yet corrected ({suspect}).{' '}
-            </>
-          )}
-          {unverified > 0 && (
-            <>
-              <span style={{ color: 'var(--text-dim)' }}>°</span> marks a name recorded by
-              the source but not dated to this year ({unverified}). Neither Fortune feed
-              dates names: each company record carries its <em>present-day</em> name in
-              every year, which is why 1996 otherwise reads GE Aerospace and RTX.{' '}
-            </>
-          )}
-          {carried > 0 && (
-            <>Headquarters in muted type is carried from another year of the same company
-            rather than published for this one.</>
-          )}
-        </p>
-      )}
+      {/* The per-year methodology paragraph that used to sit here has been removed.
+          It restated the same four caveats above every year of the board, in
+          counts a reader has no use for ("83 names undated", "36 metros carried"),
+          directly above the data it was qualifying. The glyphs carry title
+          tooltips and the "How to read this" card at the foot of the page
+          explains them once. Caveats belong near the sources, not on top of the
+          table. */}
 
       <TableBox stickyCol={2}>
         <thead>
@@ -131,8 +109,7 @@ export default function YearBoard({ data }: { data: RankingsFile }) {
             <th className={TH}>Company</th>
             <th className={THR}>Revenue</th>
             <th className={`${THR} ${SMCOL}`}>Market value</th>
-            <th className={`${TH} ${SMCOL}`}>Sector</th>
-            <th className={`${TH} ${SMCOL}`}>Headquarters</th>
+            <th className={TH}>Metro area</th>
           </tr>
         </thead>
         <tbody>
@@ -152,14 +129,29 @@ export default function YearBoard({ data }: { data: RankingsFile }) {
               </td>
               <td className={TDR} style={MONO}>{fmtM(r[2])}</td>
               <td className={`${TDR} ${SMCOL}`} style={MONO}>{fmtM(r[3])}</td>
-              <td className={`${TD} ${SMCOL}`}>{r[4] ?? '—'}</td>
-              <td className={`${TD} ${SMCOL}`} style={r[7] === 1 ? { color: 'var(--text-dim)' } : undefined}>
-                {r[5] ? (r[6] ? `${r[5]}, ${r[6]}` : r[5]) : '—'}
+              {/* The metro is the primary fact on a metro site: named, linked and
+                  in full type. The street address underneath is the supporting
+                  detail. Carried placements are no longer greyed out — the whole
+                  column read as washed-out when most rows were carried. */}
+              <td className={TD}>
+                {r[9] ? (
+                  r[10] ? (
+                    <Link href={`/rankings/${r[10]}`} className="hover:underline"
+                          style={{ color: 'var(--accent, #4f9dff)' }}>
+                      {r[9]}
+                    </Link>
+                  ) : r[9]
+                ) : <span className="text-[var(--text-dim)]">—</span>}
+                {r[5] && (
+                  <span className="block text-[11px] text-[var(--text-muted)]">
+                    {r[6] ? `${r[5]}, ${r[6]}` : r[5]}
+                  </span>
+                )}
               </td>
             </tr>
           ))}
           {rows.length === 0 && (
-            <tr><td className={TD} colSpan={6}>No list published for {year}.</td></tr>
+            <tr><td className={TD} colSpan={5}>No list published for {year}.</td></tr>
           )}
         </tbody>
       </TableBox>
