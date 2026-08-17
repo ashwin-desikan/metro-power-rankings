@@ -1,7 +1,7 @@
 {
 "meta": {
 "as_of": "2026-08-17",
-"generated_at": "2026-08-17T16:50:39Z",
+"generated_at": "2026-08-17T17:25:30Z",
 "count": 12993
 },
 "companies": [
@@ -2551,8 +2551,8 @@
 "symbol": "BNY",
 "cap": 112180486144.0,
 "country": "United States",
-"metro": null,
-"metroSlug": "",
+"metro": "New York",
+"metroSlug": "new-york",
 "source": "Public"
 },
 {
@@ -17521,8 +17521,8 @@
 "symbol": "096770.KS",
 "cap": 15425536411.0,
 "country": "South Korea",
-"metro": null,
-"metroSlug": "",
+"metro": "Seoul",
+"metroSlug": "seoul",
 "source": "Public"
 },
 {
@@ -18311,8 +18311,8 @@
 "symbol": "LTM.NS",
 "cap": 14576195392.0,
 "country": "India",
-"metro": null,
-"metroSlug": "",
+"metro": "Mumbai",
+"metroSlug": "mumbai",
 "source": "Public"
 },
 {
@@ -25951,8 +25951,8 @@
 "symbol": "1066.KL",
 "cap": 9235089911.0,
 "country": "Malaysia",
-"metro": null,
-"metroSlug": "",
+"metro": "Kuala Lumpur",
+"metroSlug": "kuala-lumpur",
 "source": "Public"
 },
 {
@@ -34191,8 +34191,8 @@
 "symbol": "SPHR",
 "cap": 6058805248.0,
 "country": "United States",
-"metro": null,
-"metroSlug": "",
+"metro": "New York",
+"metroSlug": "new-york",
 "source": "Public"
 },
 {
@@ -41461,8 +41461,8 @@
 "symbol": "0097.KL",
 "cap": 4341391320.0,
 "country": "Malaysia",
-"metro": null,
-"metroSlug": "",
+"metro": "George Town",
+"metroSlug": "george-town",
 "source": "Public"
 },
 {
@@ -50981,8 +50981,8 @@
 "symbol": "141A.T",
 "cap": 2921594192.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Fukuoka",
+"metroSlug": "fukuoka",
 "source": "Public"
 },
 {
@@ -54531,8 +54531,8 @@
 "symbol": "2784.T",
 "cap": 2478087493.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Tokyo",
+"metroSlug": "tokyo",
 "source": "Public"
 },
 {
@@ -56091,8 +56091,8 @@
 "symbol": "9436.T",
 "cap": 2310901871.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Naha",
+"metroSlug": "naha",
 "source": "Public"
 },
 {
@@ -56211,8 +56211,8 @@
 "symbol": "3867.KL",
 "cap": 2302635288.0,
 "country": "Malaysia",
-"metro": null,
-"metroSlug": "",
+"metro": "Ipoh",
+"metroSlug": "ipoh",
 "source": "Public"
 },
 {
@@ -61901,8 +61901,8 @@
 "symbol": "FOIL",
 "cap": 1866404096.0,
 "country": "China",
-"metro": null,
-"metroSlug": "",
+"metro": "Guangzhou",
+"metroSlug": "guangzhou",
 "source": "Public"
 },
 {
@@ -63911,8 +63911,8 @@
 "symbol": "1818.KL",
 "cap": 1700325541.0,
 "country": "Malaysia",
-"metro": null,
-"metroSlug": "",
+"metro": "Kuala Lumpur",
+"metroSlug": "kuala-lumpur",
 "source": "Public"
 },
 {
@@ -66251,8 +66251,8 @@
 "symbol": "8129.T",
 "cap": 1569755300.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Tokyo",
+"metroSlug": "tokyo",
 "source": "Public"
 },
 {
@@ -82451,8 +82451,8 @@
 "symbol": "FRBT",
 "cap": 952198528.0,
 "country": "United States",
-"metro": null,
-"metroSlug": "",
+"metro": "Washington-Baltimore",
+"metroSlug": "washington-baltimore",
 "source": "Public"
 },
 {
@@ -85591,8 +85591,8 @@
 "symbol": "7222.T",
 "cap": 807961792.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Tokyo",
+"metroSlug": "tokyo",
 "source": "Public"
 },
 {
@@ -86291,8 +86291,8 @@
 "symbol": "2874.T",
 "cap": 781401020.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Tokyo",
+"metroSlug": "tokyo",
 "source": "Public"
 },
 {
@@ -90931,8 +90931,8 @@
 "symbol": "8125.T",
 "cap": 608242153.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Osaka-Kyoto-Kobe",
+"metroSlug": "osaka-kyoto-kobe",
 "source": "Public"
 },
 {
@@ -91061,8 +91061,8 @@
 "symbol": "3103.T",
 "cap": 602729161.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Osaka-Kyoto-Kobe",
+"metroSlug": "osaka-kyoto-kobe",
 "source": "Public"
 },
 {
@@ -95051,8 +95051,8 @@
 "symbol": "BLSM",
 "cap": 470387744.0,
 "country": "United States",
-"metro": null,
-"metroSlug": "",
+"metro": "San Diego",
+"metroSlug": "san-diego",
 "source": "Public"
 },
 {
@@ -97551,8 +97551,8 @@
 "symbol": "7231.T",
 "cap": 406880925.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Tokyo",
+"metroSlug": "tokyo",
 "source": "Public"
 },
 {
@@ -99171,8 +99171,8 @@
 "symbol": "5949.T",
 "cap": 370732249.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Tokyo",
+"metroSlug": "tokyo",
 "source": "Public"
 },
 {
@@ -101281,8 +101281,8 @@
 "symbol": "8052.T",
 "cap": 323077097.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Osaka-Kyoto-Kobe",
+"metroSlug": "osaka-kyoto-kobe",
 "source": "Public"
 },
 {
@@ -103061,8 +103061,8 @@
 "symbol": "8142.T",
 "cap": 284679472.0,
 "country": "Japan",
-"metro": null,
-"metroSlug": "",
+"metro": "Osaka-Kyoto-Kobe",
+"metroSlug": "osaka-kyoto-kobe",
 "source": "Public"
 },
 {
@@ -103191,8 +103191,8 @@
 "symbol": "2658.KL",
 "cap": 282428694.0,
 "country": "Malaysia",
-"metro": null,
-"metroSlug": "",
+"metro": "Kuala Lumpur",
+"metroSlug": "kuala-lumpur",
 "source": "Public"
 },
 {
@@ -106341,8 +106341,8 @@
 "symbol": "VOGX",
 "cap": 225619056.0,
 "country": "United States",
-"metro": null,
-"metroSlug": "",
+"metro": "Raleigh-Durham",
+"metroSlug": "raleigh-durham",
 "source": "Public"
 },
 {

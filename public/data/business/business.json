@@ -1,7 +1,7 @@
 {
  "meta": {
   "as_of": "2026-08-17",
-  "generated_at": "2026-08-17T16:50:39Z",
+  "generated_at": "2026-08-17T17:25:30Z",
   "snapshots": [
    "2026-07-18",
    "2026-08-02",
@@ -11,9 +11,9 @@
   ],
   "companies": 12993,
   "totalCap": 182994127593828.0,
-  "mappedCompanies": 5704,
-  "mappedCap": 175610666745149.0,
-  "metros": 532,
+  "mappedCompanies": 5729,
+  "mappedCap": 175793750291247.0,
+  "metros": 533,
   "countries": 85,
   "g500Source": "Fortune Global 500 (2022 list), extracted from CompaniesMarketCap workbook Global 500 sheet 2026-08-02",
   "cultureUnmatched": []
@@ -43,8 +43,8 @@
   },
   {
    "name": "New York",
-   "cap": 10085518155100.0,
-   "count": 330,
+   "cap": 10203757446492.0,
+   "count": 332,
    "top": [
     {
      "name": "JPMorgan Chase",
@@ -87,8 +87,8 @@
   },
   {
    "name": "Tokyo",
-   "cap": 5814235242721.0,
-   "count": 291,
+   "cap": 5820650061500.0,
+   "count": 297,
    "top": [
     {
      "name": "Mitsubishi UFJ Financial",
@@ -175,8 +175,8 @@
   },
   {
    "name": "Seoul",
-   "cap": 3549971878898.0,
-   "count": 99,
+   "cap": 3565397415309.0,
+   "count": 100,
    "top": [
     {
      "name": "Samsung",
@@ -263,8 +263,8 @@
   },
   {
    "name": "Guangzhou",
-   "cap": 2670514687779.0,
-   "count": 75,
+   "cap": 2672381091875.0,
+   "count": 76,
    "top": [
     {
      "name": "Tencent",
@@ -307,8 +307,8 @@
   },
   {
    "name": "Washington-Baltimore",
-   "cap": 2521900280704.0,
-   "count": 79,
+   "cap": 2522852479232.0,
+   "count": 80,
    "top": [
     {
      "name": "RTX",
@@ -430,6 +430,28 @@
    "region": "North America"
   },
   {
+   "name": "Mumbai",
+   "cap": 1762348648587.0,
+   "count": 97,
+   "top": [
+    {
+     "name": "Reliance Industries",
+     "cap": 186299410319.0
+    },
+    {
+     "name": "HDFC Bank",
+     "cap": 118972915712.0
+    },
+    {
+     "name": "ICICI Bank",
+     "cap": 105913442304.0
+    }
+   ],
+   "slug": "mumbai",
+   "country": "India",
+   "region": "South Asia"
+  },
+  {
    "name": "Atlanta",
    "cap": 1759719661632.0,
    "count": 47,
@@ -450,28 +472,6 @@
    "slug": "atlanta",
    "country": "United States",
    "region": "North America"
-  },
-  {
-   "name": "Mumbai",
-   "cap": 1747772453195.0,
-   "count": 96,
-   "top": [
-    {
-     "name": "Reliance Industries",
-     "cap": 186299410319.0
-    },
-    {
-     "name": "HDFC Bank",
-     "cap": 118972915712.0
-    },
-    {
-     "name": "ICICI Bank",
-     "cap": 105913442304.0
-    }
-   ],
-   "slug": "mumbai",
-   "country": "India",
-   "region": "South Asia"
   },
   {
    "name": "Dammam",
@@ -673,8 +673,8 @@
   },
   {
    "name": "Osaka-Kyoto-Kobe",
-   "cap": 1250211872298.0,
-   "count": 64,
+   "cap": 1252030600181.0,
+   "count": 68,
    "top": [
     {
      "name": "Nippon Life Insurance",
@@ -1373,8 +1373,8 @@
   },
   {
    "name": "San Diego",
-   "cap": 575079314080.0,
-   "count": 32,
+   "cap": 575549701824.0,
+   "count": 33,
    "top": [
     {
      "name": "QUALCOMM",
@@ -1958,6 +1958,28 @@
    "region": "Africa"
   },
   {
+   "name": "Kuala Lumpur",
+   "cap": 293343515483.0,
+   "count": 29,
+   "top": [
+    {
+     "name": "Maybank",
+     "cap": 34774790144.0
+    },
+    {
+     "name": "PBBank (Public Bank Bhd)",
+     "cap": 24382889077.0
+    },
+    {
+     "name": "Tenaga Nasional",
+     "cap": 22354759680.0
+    }
+   ],
+   "slug": "kuala-lumpur",
+   "country": "Malaysia",
+   "region": "ASEAN"
+  },
+  {
    "name": "Zug",
    "cap": 291932808686.0,
    "count": 10,
@@ -1978,28 +2000,6 @@
    "slug": "zug",
    "country": "Switzerland",
    "region": "Europe"
-  },
-  {
-   "name": "Kuala Lumpur",
-   "cap": 282125671337.0,
-   "count": 26,
-   "top": [
-    {
-     "name": "Maybank",
-     "cap": 34774790144.0
-    },
-    {
-     "name": "PBBank (Public Bank Bhd)",
-     "cap": 24382889077.0
-    },
-    {
-     "name": "Tenaga Nasional",
-     "cap": 22354759680.0
-    }
-   ],
-   "slug": "kuala-lumpur",
-   "country": "Malaysia",
-   "region": "ASEAN"
   },
   {
    "name": "Lausanne",
@@ -2725,8 +2725,8 @@
  "regions": [
   {
    "name": "North America",
-   "cap": 98074627765999.0,
-   "count": 2535,
+   "cap": 98194515262719.0,
+   "count": 2540,
    "metros": 167
   },
   {
@@ -2737,14 +2737,14 @@
   },
   {
    "name": "China",
-   "cap": 16285180126445.0,
-   "count": 584,
+   "cap": 16287046530541.0,
+   "count": 585,
    "metros": 58
   },
   {
    "name": "East Asia",
-   "cap": 15892771014858.0,
-   "count": 607,
+   "cap": 15921662593994.0,
+   "count": 620,
    "metros": 35
   },
   {
@@ -2755,15 +2755,15 @@
   },
   {
    "name": "South Asia",
-   "cap": 3903495199567.0,
-   "count": 287,
+   "cap": 3918071394959.0,
+   "count": 288,
    "metros": 21
   },
   {
    "name": "ASEAN",
-   "cap": 2820729272699.0,
-   "count": 164,
-   "metros": 11
+   "cap": 2838591143453.0,
+   "count": 169,
+   "metros": 12
   },
   {
    "name": "Latin America",
@@ -4047,6 +4047,13 @@
     "pct": 0.06021419104505189
    },
    {
+    "metro": "New York",
+    "cap": 10203757446492.0,
+    "prev": 10115136859484.0,
+    "chg": 88620587008.0,
+    "pct": 0.008761185166259903
+   },
+   {
     "metro": "Hefei",
     "cap": 728749850233.0,
     "prev": 659527259011.0,
@@ -4066,13 +4073,6 @@
     "prev": 2620988877110.0,
     "chg": 32553012869.0,
     "pct": 0.012420126294047523
-   },
-   {
-    "metro": "New York",
-    "cap": 10085518155100.0,
-    "prev": 10115136859484.0,
-    "chg": -29618704384.0,
-    "pct": -0.0029281565633221623
    },
    {
     "metro": "Austin",
@@ -4110,11 +4110,11 @@
     "pct": 0.015195954938114783
    },
    {
-    "metro": "Eindhoven",
-    "cap": 782405767168.0,
-    "prev": 767496577024.0,
-    "chg": 14909190144.0,
-    "pct": 0.019425741547683516
+    "metro": "Tokyo",
+    "cap": 5820650061500.0,
+    "prev": 5803088590231.0,
+    "chg": 17561471269.0,
+    "pct": 0.0030262283602844227
    }
   ]
  },
