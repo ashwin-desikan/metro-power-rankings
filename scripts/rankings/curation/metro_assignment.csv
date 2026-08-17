@@ -6,16 +6,17 @@ Houston,TX,10,Houston,municipality + state,Cooper Industries; Gulf & Western Ind
 Los Angeles,CA,8,Los Angeles,municipality + state,Atlantic Richfield Company; Carnation; Signal Companies; Tidewater Oil; Tosco Corporation; getty oil
 Pittsburgh,PA,7,Pittsburgh,municipality + state,Bayer Corporation; National Intergroup; armco; gulf oil; jones and laughlin steel; u s steel
 St. Louis,MO,6,St. Louis,municipality + state,Ralston Purina Company; SBC Communications Inc.; anheuser busch; may department stores; may dept stores; mcdonnell douglas
+Detroit,MI,5,Detroit,municipality + state,American Motors; Bendix; Hygrade Food Products; Unisys; briggs manufacturing
 Philadelphia,PA,5,Philadelphia,municipality + state,Atlantic Richfield Company; Scott Paper; bell atlantic; cigna; philco
 San Francisco,CA,5,San Francisco-San Jose,municipality + state,ChevronTexaco Corporation; Foremost Dairies; Tidewater Oil; bankamerica; crown zellerbach
 Cleveland,OH,5,Cleveland,municipality + state,BP America; Maxus Energy; White Motor; ltv; republic steel
 Greenwich,CT,4,New York,municipality + state,AMAX; Avco; Tenneco Automotive Inc.; american can
-Detroit,MI,4,Detroit,municipality + state,American Motors; Bendix; Hygrade Food Products; briggs manufacturing
 Atlanta,GA,4,Atlanta,municipality + state,Georgia-Pacific Corporation; Nabisco Group Holdings Corp.; bellsouth; coca cola enterprises
 Dallas,TX,4,Dallas,municipality + state,Maxus Energy; dresser industries; ltv
 White Plains,NY,3,New York,municipality + state,AMF; General Foods; itt industries
 Boston,MA,3,Boston,municipality + state,Chiquita Brands Intl.; FleetBoston Financial Corporation; gillette
 Troy,MI,3,Detroit,municipality + state,Delphi Automotive Systems Corporation; Kmart Corporation; Kmart Holding Corporation
+Irving,TX,3,Dallas,municipality + state,Exxon Corporation; Exxon Mobil; GTE Corporation
 Oklahoma City,OK,3,Oklahoma City,municipality + state,"Fleming; Fleming Companies, Inc.; kerr mcgee"
 Iselin,NJ,3,New York,municipality + state,"Hanson Industries NA; U.S. Industries, Inc."
 Minneapolis,MN,3,Minneapolis,municipality + state,Honeywell; Honeywell Intl.; pillsbury
@@ -27,7 +28,6 @@ Tulsa,OK,2,Tulsa,municipality + state,Citgo Petroleum; Sunray DX Oil
 Phoenix,AZ,2,Phoenix,municipality + state,Cudahy; greyhound
 Harrison,NY,2,New York,municipality + state,"CVS; Texaco, Inc."
 Santa Monica,CA,2,Los Angeles,municipality + state,Tosco Corporation; douglas aircraft
-Irving,TX,2,Dallas,municipality + state,Exxon Mobil; GTE Corporation
 Kansas City,MO,2,Kansas City,municipality + state,farmland industries; utilicorp united
 Washington,DC,2,Washington-Baltimore,municipality + state,federal national mortgage association; mci communications
 Akron,OH,2,Cleveland,municipality + state,"GenCorp, Inc.; firestone tire and rubber"
@@ -36,6 +36,7 @@ Jackson,MS,2,Jackson,municipality + state,mci worldcom; worldcom
 Clinton,MS,2,Jackson,municipality + state,mci worldcom; worldcom
 Newark,NJ,2,New York,municipality + state,Prudential Ins. Co. of America; prudential insurance of america
 Bloomington,IL,2,Bloomington–Normal,municipality + state,state farm group; state farm insurance cos
+North Chicago,IL,1,Chicago,municipality + state,Abbott Laboratories
 DeWitt,NY,1,Syracuse,municipality + state,Agway
 Morristown,NJ,1,New York,municipality + state,alliedsignal
 West Allis,WI,1,Milwaukee,municipality + state,Allis-Chalmers
@@ -121,8 +122,11 @@ Lyndhurst,OH,1,Cleveland,municipality + state,trw
 Denver,CO,1,Denver,municipality + state,u s west
 Danbury,CT,1,New York,municipality + state,Union Carbide Corporation
 Middlebury,CT,1,Hartford,municipality + state,Uniroyal
+Blue Bell,PA,1,Philadelphia,municipality + state,Unisys
 El Segundo,CA,1,Los Angeles,municipality + state,unocal
 Tuckahoe,NY,1,New York,municipality + state,US Pharmaceuticals
+Dearborn,MI,1,Detroit,municipality + state,Visteon
+Van Buren Township,MI,1,Detroit,municipality + state,Visteon
 Bentonville,AR,1,Fayetteville,municipality + state,wal mart stores
 Morris Plains,NJ,1,New York,municipality + state,warner lambert
 Thousand Oaks,CA,1,Los Angeles,municipality + state,"WellPoint Health Networks, Inc."

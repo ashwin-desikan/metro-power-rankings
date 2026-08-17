@@ -1,309 +1,315 @@
 ﻿company_key,company,from_year,to_year,city,state,country,provenance,basis,note
-texaco,"Texaco, Inc.",1955,1976,New York,New York,United States,claude,inferred,"The 1977 move is sourced and dates the END of the New York era. The START is our listing floor, not a claim about 1926."
-texaco,"Texaco, Inc.",1977,2001,Harrison,New York,United States,claude,sourced,"Harrison is in Westchester. Runs to the Chevron acquisition, which is also the last listing year."
-mobil,Mobil Corporation,1955,1986,New York,New York,United States,claude,inferred,🔴 RULING NEEDED. The article dates nothing before 2015. Mobil was at 150 E 42nd St until the Fairfax move in the late 1980s; the 1987 boundary is my recollection and is NOT sourced.
-mobil,Mobil Corporation,1987,1999,Fairfax County,Virginia,United States,claude,inferred,🔴 RULING NEEDED on the start year. The location is certain; only the boundary is not.
-amoco,Amoco Corporation,1955,1998,Chicago,Illinois,United States,claude,inferred,"Undated in the source, but Standard Oil of Indiana was Chicago-based for its whole corporate life, so the listing span is covered by one value. Low risk."
-atlantic richfield,Atlantic Richfield Company,1955,1965,Philadelphia,Pennsylvania,United States,claude,inferred,"🔴 RULING NEEDED, and an ERA-NAME issue as well as an HQ one. Fortune's rows for 1955-1965 are back-named ""Atlantic Richfield"" but the company was The Atlantic Refining Company of Philadelphia until th"
-atlantic richfield,Atlantic Richfield Company,1966,1970,New York,New York,United States,claude,sourced,Company formed 1966 from Atlantic Refining + Richfield Oil.
-atlantic richfield,Atlantic Richfield Company,1971,2000,Los Angeles,California,United States,claude,sourced,Runs to the BP acquisition and the last listing year.
-chrysler,Chrysler Corporation,1955,1995,Highland Park,Michigan,United States,claude,sourced,Fully dated by the source. Highland Park is a separate municipality inside Detroit and should map to the Detroit metro.
-chrysler,Chrysler Corporation,1996,1998,Auburn Hills,Michigan,United States,claude,sourced,Runs to the Daimler merger and the last listing year.
-bethlehem steel,Bethlehem Steel Corporation,1955,2003,Bethlehem,Pennsylvania,United States,claude,sourced,The cleanest case in the batch: the source states location AND both bounds explicitly.
-cbs,CBS,1955,1995,New York,New York,United States,claude,inferred,"Undated in the source but CBS was New York throughout the listing span (485 Madison Ave, then Black Rock from 1965). Low risk, one span."
-ralston purina,Ralston Purina Company,1955,2001,St. Louis,Missouri,United States,claude,inferred,"Undated in the source but Checkerboard Square, St. Louis was the HQ for the company's whole life. Low risk, one span."
-honeywell intl,Honeywell Intl.,1955,1995,Minneapolis,Minnesota,United States,claude,inferred,"🔴 The infobox says Charlotte, North Carolina — that is TODAY'S Honeywell. Fortune's 1955-1995 rows are Honeywell Inc. of Minneapolis, before the 1999 AlliedSignal merger. Confident on the city, unsour"
-intl business machines,Intl. Business Machines,1955,1963,New York,New York,United States,claude,inferred,🔴 RULING NEEDED on the boundary. IBM was at 590 Madison Avenue before the Armonk move; the 1964 boundary is my recollection and is not in the extract.
-intl business machines,Intl. Business Machines,1964,1995,Armonk,New York,United States,claude,inferred,Location certain and unchanged since; only the start year is unproven. Armonk is Westchester and maps to the New York metro either way.
-exxon mobil,Exxon Mobil,1955,1988,New York,New York,United States,claude,inferred,"🔴 Fortune back-names these rows ""Exxon Mobil""; the company was Standard Oil Co. (New Jersey) then Exxon, at 30 Rockefeller Plaza. Era-name row already exists in era_names.csv."
-exxon mobil,Exxon Mobil,1989,1995,Irving,Texas,United States,claude,inferred,"Two independent sources agree on the 1989 boundary, which is why this one is worth more than the usual inference. Las Colinas is a district of Irving."
-general electric,General Electric,1955,1973,New York,New York,United States,claude,inferred,🔴 RULING NEEDED. GE was at 570 Lexington Avenue before the Fairfield move; the 1974 boundary is not in the extract.
-general electric,General Electric,1974,1995,Fairfield,Connecticut,United States,claude,inferred,🔴 RULING NEEDED on the start year. Fairfield is the right era for most of this span; Boston would be wrong for all of it.
-union carbide,Union Carbide Corporation,1955,1981,New York,New York,United States,claude,inferred,"Source dates the BUILDING from 1960; the company was in New York before that too. Infobox says Seadrift, Texas, which is a Dow plant site, not this era's HQ."
-union carbide,Union Carbide Corporation,1982,2001,Danbury,Connecticut,United States,claude,inferred,🔴 RULING NEEDED. Union Carbide moved to Danbury in the early 1980s; neither the city nor the boundary is supported by this extract.
-chevrontexaco,ChevronTexaco Corporation,1955,2001,San Francisco,California,United States,claude,inferred,🔴 Fortune back-names these rows; the company was Standard Oil Co. of California until 1984. Era-name row already in era_names.csv. City confident
-chevrontexaco,ChevronTexaco Corporation,2002,2005,San Ramon,California,United States,claude,inferred,🔴 RULING NEEDED on the 2002 boundary. Both San Francisco and San Ramon are in the same metro
-borden chemical,"Borden Chemical, Inc.",1955,1986,New York,New York,United States,claude,inferred,🔴 RULING NEEDED. Borden was a New York company before the Columbus move; neither bound is in the extract.
-borden chemical,"Borden Chemical, Inc.",1987,2005,Columbus,Ohio,United States,claude,inferred,🔴 RULING NEEDED on the start year. Columbus is right for the later span. Note the listing runs to 2005 but the company is marked defunct 2001.
-nabisco group holdings,Nabisco Group Holdings Corp.,1955,1986,Winston-Salem,North Carolina,United States,claude,inferred,The source confirms a headquarters move was announced in August 1986 but the extract truncates before the destination.
-nabisco group holdings,Nabisco Group Holdings Corp.,1987,1990,Atlanta,Georgia,United States,claude,inferred,🔴 RULING NEEDED. The infobox naming all three in order supports the sequence; the boundaries are mine. Cobb County is metro Atlanta.
-nabisco group holdings,Nabisco Group Holdings Corp.,1991,2000,New York,New York,United States,claude,inferred,🔴 RULING NEEDED on the start year. This is a three-metro company across one Fortune key and is the strongest argument for the spans table.
-bestfoods,Bestfoods,1955,1967,New York,New York,United States,gemini_r2,confirmed,round 2; article: Bestfoods) moved from NYC to an international corporate campus in Engl
-bestfoods,Bestfoods,1968,2000,Englewood Cliffs,New Jersey,United States,gemini_r2,confirmed,round 2; article: Bestfoods) moved from NYC to an international corporate campus in Engl
-kraft,Kraft,1955,1971,New York,New York,United States,gemini_r2,confirmed,round 2; article: Kraft) was based at 260 Madison Ave in NYC before constructing its sub
-kraft,Kraft,1972,1988,Glenview,Illinois,United States,gemini_r2,confirmed,round 2; article: Kraft) was based at 260 Madison Ave in NYC before constructing its sub
-georgia pacific,Georgia-Pacific Corporation,1955,1981,Portland,Oregon,United States,gemini_r2,confirmed,"round 2; article: Atlanta, GAConfirmed. Founded in Augusta, GA, G-P moved executive oper"
-georgia pacific,Georgia-Pacific Corporation,1982,2005,Atlanta,Georgia,United States,gemini_r2,confirmed,"round 2; article: Atlanta, GAConfirmed. Founded in Augusta, GA, G-P moved executive oper"
-general foods,General Foods,1955,1982,White Plains,New York,United States,gemini_r2,confirmed,"round 2; article: Rye Brook, NYConfirmed. General Foods moved from NYC to White Plains ("
-general foods,General Foods,1983,1986,Rye Brook,New York,United States,gemini_r2,confirmed,"round 2; article: Rye Brook, NYConfirmed. General Foods moved from NYC to White Plains ("
-citgo petroleum,Citgo Petroleum,1955,1969,New York,New York,United States,gemini_r2,confirmed,"round 2; article: Tulsa, OKConfirmed. Cities Service Company was based at 70 Pine Street"
-citgo petroleum,Citgo Petroleum,1970,1994,Tulsa,Oklahoma,United States,gemini_r2,confirmed,"round 2; article: Tulsa, OKConfirmed. Cities Service Company was based at 70 Pine Street"
-honeywell,Honeywell,1955,1995,Minneapolis,Minnesota,United States,gemini_r2,confirmed,"round 2; article: Minneapolis, MNConfirmed. Minneapolis-Honeywell Regulator Co. (Honeywe"
-at and t technologies,AT&T Technologies,1955,1983,New York,New York,United States,gemini_r2,confirmed,"round 2; article: Berkeley Heights, NJConfirmed. Formerly Western Electric (195 Broadway"
-at and t technologies,AT&T Technologies,1984,1984,Berkeley Heights,New Jersey,United States,gemini_r2,confirmed,"round 2; article: Berkeley Heights, NJConfirmed. Formerly Western Electric (195 Broadway"
-tenneco automotive,Tenneco Automotive Inc.,1966,1995,Houston,Texas,United States,gemini_r2,confirmed,"round 2; article: Lake Forest, ILConfirmed. Tenneco Inc. was based in Houston, shifted e"
-tenneco automotive,Tenneco Automotive Inc.,1996,1999,Greenwich,Connecticut,United States,gemini_r2,confirmed,"round 2; article: Lake Forest, ILConfirmed. Tenneco Inc. was based in Houston, shifted e"
-tenneco automotive,Tenneco Automotive Inc.,2000,2005,Lake Forest,Illinois,United States,gemini_r2,confirmed,"round 2; article: Lake Forest, ILConfirmed. Tenneco Inc. was based in Houston, shifted e"
-continental group,Continental Group,1955,1977,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: Stamford, CTConfirmed (Wrong Target Fixed). Continental Can Co. was ba"
-continental group,Continental Group,1978,1984,Stamford,Connecticut,United States,gemini_r2,wrong_target_fixed,"round 2; article: Stamford, CTConfirmed (Wrong Target Fixed). Continental Can Co. was ba"
-bendix,Bendix,1955,1967,Detroit,Michigan,United States,gemini_r2,confirmed,"round 2; article: Southfield, MIConfirmed. Bendix moved from Detroit's Fisher Building t"
-bendix,Bendix,1968,1983,Southfield,Michigan,United States,gemini_r2,confirmed,"round 2; article: Southfield, MIConfirmed. Bendix moved from Detroit's Fisher Building t"
-esmark,Esmark,1955,1984,Chicago,Illinois,United States,gemini_r2,confirmed,round 2; article: Chicago until the 1984 Beatrice acquisition.Esmark
-national intergroup,National Intergroup,1955,1985,Pittsburgh,Pennsylvania,United States,gemini_r2,wrong_target_fixed,round 2; article: National Steel Center.National Steel Corporation
-ncr,NCR,1955,1991,Dayton,Ohio,United States,gemini_r2,wrong_target_fixed,"round 2; article: Dayton, OHConfirmed (Wrong Target Fixed). National Cash Register (NCR)"
-uniroyal,Uniroyal,1955,1971,New York,New York,United States,gemini_r2,confirmed,round 2; article: Uniroyal moved from Rockefeller Center in NYC to its Oxford Management
-uniroyal,Uniroyal,1972,1986,Middlebury,Connecticut,United States,gemini_r2,confirmed,round 2; article: Uniroyal moved from Rockefeller Center in NYC to its Oxford Management
-beatrice,Beatrice,1955,1991,Chicago,Illinois,United States,gemini_r2,confirmed,"round 2; article: Chicago, ILConfirmed. Beatrice Foods was based at 120 S. LaSalle St an"
-bp america,BP America,1955,1988,Cleveland,Ohio,United States,gemini_r2,confirmed,round 2; article: BP America after BP completed its buyout in 1987.Standard Oil of Ohio
-martin marietta,Martin Marietta,1955,1960,Baltimore,Maryland,United States,gemini_r2,confirmed,round 2; article: Park Ave (NYC) before moving to Bethesda in 1976.Martin Marietta
-martin marietta,Martin Marietta,1961,1975,New York,New York,United States,gemini_r2,confirmed,round 2; article: Park Ave (NYC) before moving to Bethesda in 1976.Martin Marietta
-martin marietta,Martin Marietta,1976,1995,Bethesda,Maryland,United States,gemini_r2,confirmed,round 2; article: Park Ave (NYC) before moving to Bethesda in 1976.Martin Marietta
-singer,Singer,1955,1978,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: Stamford, CTConfirmed (Wrong Target Fixed). The Singer Company moved f"
-singer,Singer,1979,1988,Stamford,Connecticut,United States,gemini_r2,wrong_target_fixed,"round 2; article: Stamford, CTConfirmed (Wrong Target Fixed). The Singer Company moved f"
-american motors,American Motors,1955,1974,Detroit,Michigan,United States,gemini_r2,confirmed,"round 2; article: Southfield, MIConfirmed. AMC was based at the Plymouth Road complex in"
-american motors,American Motors,1975,1987,Southfield,Michigan,United States,gemini_r2,confirmed,"round 2; article: Southfield, MIConfirmed. AMC was based at the Plymouth Road complex in"
-signal companies,Signal Companies,1958,1977,Los Angeles,California,United States,gemini_r2,wrong_target_fixed,"round 2; article: La Jolla, CAConfirmed (Wrong Target Fixed). Signal Oil & Gas moved fro"
-signal companies,Signal Companies,1978,1985,La Jolla,California,United States,gemini_r2,wrong_target_fixed,"round 2; article: La Jolla, CAConfirmed (Wrong Target Fixed). Signal Oil & Gas moved fro"
-gulf and western industries,Gulf & Western Industries,1966,1966,Houston,Texas,United States,gemini_r2,confirmed,round 2; article: Western Plaza at Columbus Circle in NYC in 1967.Gulf and Western Indus
-gulf and western industries,Gulf & Western Industries,1967,1985,New York,New York,United States,gemini_r2,confirmed,round 2; article: Western Plaza at Columbus Circle in NYC in 1967.Gulf and Western Indus
-armour,Armour,1955,1970,Chicago,Illinois,United States,gemini_r2,confirmed,"round 2; article: Chicago, ILConfirmed. Armour and Company was based at the Union Stock "
-anaconda,Anaconda,1955,1977,New York,New York,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. Anaconda Copper Mining Co. maintained exec"
-coastal,The Coastal Corporation,1966,1973,Corpus Christi,Texas,United States,gemini_r2,wrong_target_fixed,"round 2; article: Houston, TXConfirmed (Wrong Target Fixed). Coastal States Gas Producin"
-coastal,The Coastal Corporation,1974,2000,Houston,Texas,United States,gemini_r2,wrong_target_fixed,"round 2; article: Houston, TXConfirmed (Wrong Target Fixed). Coastal States Gas Producin"
-wilson,Wilson,1955,1967,Chicago,Illinois,United States,gemini_r2,confirmed,"round 2; article: Chicago, ILConfirmed. Wilson & Co. (meatpacking and sports equipment) "
-gencorp,"GenCorp, Inc.",1955,1983,Akron,Ohio,United States,gemini_r2,wrong_target_fixed,"round 2; article: Rancho Cordova, CAConfirmed (Wrong Target Fixed). General Tire was in "
-gencorp,"GenCorp, Inc.",1984,1998,Fairlawn,Ohio,United States,gemini_r2,wrong_target_fixed,"round 2; article: Rancho Cordova, CAConfirmed (Wrong Target Fixed). General Tire was in "
-gencorp,"GenCorp, Inc.",1999,2004,Rancho Cordova,California,United States,gemini_r2,wrong_target_fixed,"round 2; article: Rancho Cordova, CAConfirmed (Wrong Target Fixed). General Tire was in "
-chiquita brands intl,Chiquita Brands Intl.,1968,1969,Boston,Massachusetts,United States,gemini_r2,confirmed,round 2; article: Carl Lindner took control and relocated it to Cincinnati in 1985 as Ch
-chiquita brands intl,Chiquita Brands Intl.,1970,1984,New York,New York,United States,gemini_r2,confirmed,round 2; article: Carl Lindner took control and relocated it to Cincinnati in 1985 as Ch
-chiquita brands intl,Chiquita Brands Intl.,1985,1995,Cincinnati,Ohio,United States,gemini_r2,confirmed,round 2; article: Carl Lindner took control and relocated it to Cincinnati in 1985 as Ch
-nabisco brands,Nabisco Brands,1955,1974,New York,New York,United States,gemini_r2,confirmed,"round 2; article: East Hanover, NJConfirmed. Nabisco moved executive offices from Park A"
-nabisco brands,Nabisco Brands,1975,1985,East Hanover,New Jersey,United States,gemini_r2,confirmed,"round 2; article: East Hanover, NJConfirmed. Nabisco moved executive offices from Park A"
-tidewater oil,Tidewater Oil,1955,1957,San Francisco,California,United States,gemini_r2,confirmed,"round 2; article: Los Angeles, CAConfirmed. Tidewater Associated Oil had its corporate h"
-tidewater oil,Tidewater Oil,1958,1967,Los Angeles,California,United States,gemini_r2,confirmed,"round 2; article: Los Angeles, CAConfirmed. Tidewater Associated Oil had its corporate h"
-nl industries,NL Industries,1955,1985,New York,New York,United States,gemini_r2,confirmed,round 2; article: Ave of the Americas) until Valhi acquired control and moved HQ to Hous
-nl industries,NL Industries,1986,1993,Houston,Texas,United States,gemini_r2,confirmed,round 2; article: Ave of the Americas) until Valhi acquired control and moved HQ to Hous
-sbc communications,SBC Communications Inc.,1995,1997,St. Louis,Missouri,United States,gemini_r2,wrong_target_fixed,"round 2; article: San Antonio, TXConfirmed (Wrong Target Fixed). Southwestern Bell was b"
-sbc communications,SBC Communications Inc.,1998,2005,San Antonio,Texas,United States,gemini_r2,wrong_target_fixed,"round 2; article: San Antonio, TXConfirmed (Wrong Target Fixed). Southwestern Bell was b"
-allis chalmers,Allis-Chalmers,1955,1988,West Allis,Wisconsin,United States,gemini_r2,confirmed,"round 2; article: West Allis, WIConfirmed. Allis-Chalmers was continuously headquartered"
-sprint,Sprint Corporation,1995,2002,Westwood,Kansas,United States,gemini_r2,confirmed,"round 2; article: Sprint was based in Westwood, KS before transitioning to its Overland "
-sprint,Sprint Corporation,2003,2005,Overland Park,Kansas,United States,gemini_r2,confirmed,"round 2; article: Sprint was based in Westwood, KS before transitioning to its Overland "
-amax,AMAX,1955,1973,New York,New York,United States,gemini_r2,confirmed,"round 2; article: Greenwich, CTConfirmed. American Metal Climax (AMAX) moved from Rockef"
-amax,AMAX,1974,1993,Greenwich,Connecticut,United States,gemini_r2,confirmed,"round 2; article: Greenwich, CTConfirmed. American Metal Climax (AMAX) moved from Rockef"
-north american philips,North American Philips,1960,1993,New York,New York,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. North American Philips Corporation (NAPC) "
-j p stevens,J.P. Stevens,1955,1988,New York,New York,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. The textile manufacturer maintained execut"
-morrell john,Morrell (John),1955,1967,Chicago,Illinois,United States,gemini_r2,confirmed,"round 2; article: Chicago, ILConfirmed. John Morrell & Co. maintained its central execut"
-whitman,Whitman Corporation,1970,1992,Chicago,Illinois,United States,gemini_r2,wrong_target_fixed,round 2; article: Whitman was based at One Illinois Center in Chicago before moving to s
-whitman,Whitman Corporation,1993,2000,Rolling Meadows,Illinois,United States,gemini_r2,wrong_target_fixed,round 2; article: Whitman was based at One Illinois Center in Chicago before moving to s
-american standard,American Standard,1955,1987,New York,New York,United States,gemini_r2,confirmed,"round 2; article: Piscataway, NJConfirmed. American Standard moved corporate offices fro"
-american standard,American Standard,1988,1995,Piscataway,New Jersey,United States,gemini_r2,confirmed,"round 2; article: Piscataway, NJConfirmed. American Standard moved corporate offices fro"
-kmart,Kmart Corporation,1996,2003,Troy,Michigan,United States,gemini_r2,confirmed,"round 2; article: Kmart was headquartered at 3100 W. Big Beaver Rd in Troy, MI from 1972"
-kennecott,Kennecott,1955,1973,New York,New York,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Kennecott Copper moved from East 42nd St in Man"
-kennecott,Kennecott,1974,1981,Stamford,Connecticut,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Kennecott Copper moved from East 42nd St in Man"
-hanson industries na,Hanson Industries NA,1983,1987,Iselin,New Jersey,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). The North American ar"
-hanson industries na,Hanson Industries NA,1988,1994,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). The North American ar"
-hoechst celanese,Hoechst Celanese,1982,1986,New York,New York,United States,gemini_r2,confirmed,"round 2; article: Bridgewater, NJ.Celanese"
-hoechst celanese,Hoechst Celanese,1987,1994,Somerville,New Jersey,United States,gemini_r2,confirmed,"round 2; article: Bridgewater, NJ.Celanese"
-gte,GTE Corporation,1995,1999,Stamford,Connecticut,United States,gemini_r2,confirmed,round 2; article: Verizon merger.GTE
-gte,GTE Corporation,2000,2000,Irving,Texas,United States,gemini_r2,confirmed,round 2; article: Verizon merger.GTE
-bank one,Bank One Corporation,1995,1997,Columbus,Ohio,United States,gemini_r2,confirmed,"round 2; article: First Chicago NBD in 1998, it formed Bank One Corp and moved HQ to Chi"
-bank one,Bank One Corporation,1998,2004,Chicago,Illinois,United States,gemini_r2,confirmed,"round 2; article: First Chicago NBD in 1998, it formed Bank One Corp and moved HQ to Chi"
-asarco,"Asarco, Inc.",1955,1999,New York,New York,United States,gemini_r2,confirmed,round 2; article: ASARCO
-bayer,Bayer Corporation,1987,1994,Pittsburgh,Pennsylvania,United States,gemini_r2,confirmed,round 2; article: Bayer USA) were headquartered at the Bayer Road campus in Robinson Tow
-st regis,St. Regis,1955,1984,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). St. Regis Paper Compa"
-unilever u s,Unilever U.S.,1989,1993,New York,New York,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. Unilever United States was headquartered a"
-charter,Charter,1974,1984,Jacksonville,Florida,United States,gemini_r2,wrong_target_fixed,"round 2; article: Jacksonville, FLConfirmed (Wrong Target Fixed). The Charter Company (o"
-foremost dairies,Foremost Dairies,1955,1967,San Francisco,California,United States,gemini_r2,confirmed,"round 2; article: San Francisco, CAConfirmed. Foremost Dairies maintained corporate head"
-agway,Agway,1961,2003,DeWitt,New York,United States,gemini_r2,confirmed,"round 2; article: DeWitt, NYConfirmed. Agway Inc. (formed from GLF and Eastern States) w"
-rapid american,Rapid-American,1970,1973,New York,New York,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. Meshulam Riklis's conglomerate was based a"
-fort james,Fort James Corp,1982,1996,Richmond,Virginia,United States,gemini_r2,wrong_target_fixed,"round 2; article: Fort Howard in 1997 to form Fort James, HQ relocated to Deerfield, IL."
-fort james,Fort James Corp,1997,2000,Deerfield,Illinois,United States,gemini_r2,wrong_target_fixed,"round 2; article: Fort Howard in 1997 to form Fort James, HQ relocated to Deerfield, IL."
-cooper industries,Cooper Industries,1964,1966,Mount Vernon,Ohio,United States,gemini_r2,confirmed,round 2; article: Cooper Industries and moved HQ to Houston in 1967.Cooper Industries
-cooper industries,Cooper Industries,1967,2002,Houston,Texas,United States,gemini_r2,confirmed,round 2; article: Cooper Industries and moved HQ to Houston in 1967.Cooper Industries
-u s industries,"U.S. Industries, Inc.",1955,1983,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: Iselin, NJConfirmed (Wrong Target Fixed). USI was in NYC (250 Park Ave"
-u s industries,"U.S. Industries, Inc.",1984,1994,Iselin,New Jersey,United States,gemini_r2,wrong_target_fixed,"round 2; article: Iselin, NJConfirmed (Wrong Target Fixed). USI was in NYC (250 Park Ave"
-u s industries,"U.S. Industries, Inc.",1995,2003,Iselin,New Jersey,United States,gemini_r2,wrong_target_fixed,"round 2; article: Iselin, NJConfirmed (Wrong Target Fixed). USI was in NYC (250 Park Ave"
-basf,BASF,1982,1985,Parsippany,New Jersey,United States,gemini_r2,confirmed,"round 2; article: Mount Olive, NJConfirmed. BASF Corporation operated in Parsippany, NJ "
-basf,BASF,1986,1994,Mount Olive,New Jersey,United States,gemini_r2,confirmed,"round 2; article: Mount Olive, NJConfirmed. BASF Corporation operated in Parsippany, NJ "
-carnation,Carnation,1955,1984,Los Angeles,California,United States,gemini_r2,wrong_target_fixed,round 2; article: Carnation (brand)
-united merchants and mfrs,United Merchants & Mfrs.,1955,1989,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). United Merchants and "
-fleming companies,"Fleming Companies, Inc.",1996,1999,Oklahoma City,Oklahoma,United States,gemini_r2,confirmed,"round 2; article: Lewisville, TXConfirmed. The grocery wholesaler was based in Oklahoma "
-fleming companies,"Fleming Companies, Inc.",2000,2003,Lewisville,Texas,United States,gemini_r2,confirmed,"round 2; article: Lewisville, TXConfirmed. The grocery wholesaler was based in Oklahoma "
-ogden,Ogden Corporation,1957,2000,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). Ogden Corp. was headq"
-iowa beef processors,Iowa Beef Processors,1964,1967,Denison,Iowa,United States,gemini_r2,wrong_target_fixed,"round 2; article: Dakota City, NEConfirmed (Wrong Target Fixed). Iowa Beef Packers start"
-iowa beef processors,Iowa Beef Processors,1968,1981,Dakota City,Nebraska,United States,gemini_r2,wrong_target_fixed,"round 2; article: Dakota City, NEConfirmed (Wrong Target Fixed). Iowa Beef Packers start"
-avco,Avco,1955,1968,New York,New York,United States,gemini_r2,confirmed,"round 2; article: Greenwich, CTConfirmed. Avco moved corporate headquarters from 750 Thi"
-avco,Avco,1969,1985,Greenwich,Connecticut,United States,gemini_r2,confirmed,"round 2; article: Greenwich, CTConfirmed. Avco moved corporate headquarters from 750 Thi"
-pullman,Pullman,1955,1981,Chicago,Illinois,United States,gemini_r2,confirmed,"round 2; article: Pullman entity was run from Princeton, NJ from 1982 to 1988.Pullman Co"
-pullman,Pullman,1982,1988,Princeton,New Jersey,United States,gemini_r2,confirmed,"round 2; article: Pullman entity was run from Princeton, NJ from 1982 to 1988.Pullman Co"
-maxus energy,Maxus Energy,1955,1978,Cleveland,Ohio,United States,gemini_r2,confirmed,"round 2; article: Dallas, TXConfirmed. Diamond Shamrock was based in Cleveland, moved to"
-maxus energy,Maxus Energy,1979,1986,Dallas,Texas,United States,gemini_r2,confirmed,"round 2; article: Dallas, TXConfirmed. Diamond Shamrock was based in Cleveland, moved to"
-maxus energy,Maxus Energy,1987,1994,Dallas,Texas,United States,gemini_r2,confirmed,"round 2; article: Dallas, TXConfirmed. Diamond Shamrock was based in Cleveland, moved to"
-kellogg,Kellogg,1955,1995,Battle Creek,Michigan,United States,gemini_r2,confirmed,"round 2; article: Battle Creek, MIConfirmed. Kellogg Company was continuously headquarte"
-us pharmaceuticals,US Pharmaceuticals,1955,1973,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: Tuckahoe, NY in 1974.USV Pharmaceutical"
-us pharmaceuticals,US Pharmaceuticals,1974,1989,Tuckahoe,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: Tuckahoe, NY in 1974.USV Pharmaceutical"
-kmart holding,Kmart Holding Corporation,1995,2005,Troy,Michigan,United States,gemini_r2,confirmed,"round 2; article: Troy, MIConfirmed. Kmart Holding Corp (the reorganized post-bankruptcy"
-fleetboston financial,FleetBoston Financial Corporation,1995,1998,Providence,Rhode Island,United States,gemini_r2,confirmed,"round 2; article: Boston, MAConfirmed. Fleet Financial was in Providence, RI until mergi"
-fleetboston financial,FleetBoston Financial Corporation,1999,2004,Boston,Massachusetts,United States,gemini_r2,confirmed,"round 2; article: Boston, MAConfirmed. Fleet Financial was in Providence, RI until mergi"
-hygrade food products,Hygrade Food Products,1955,1956,New York,New York,United States,gemini_r2,wrong_target_fixed,round 2; article: NYC before consolidating corporate offices on Michigan Ave in Detroit 
-hygrade food products,Hygrade Food Products,1957,1977,Detroit,Michigan,United States,gemini_r2,wrong_target_fixed,round 2; article: NYC before consolidating corporate offices on Michigan Ave in Detroit 
-kaisertech,Kaisertech,1955,1988,Oakland,California,United States,gemini_r2,wrong_target_fixed,round 2; article: KaiserTech was headquartered at the Kaiser Center (300 Lakeside Dr) in
-sunray dx oil,Sunray DX Oil,1956,1968,Tulsa,Oklahoma,United States,gemini_r2,wrong_target_fixed,"round 2; article: Tulsa, OKConfirmed (Wrong Target Fixed). Sunray DX was headquartered i"
-scott paper,Scott Paper,1955,1960,Chester,Pennsylvania,United States,gemini_r2,confirmed,"round 2; article: Philadelphia, PAConfirmed. Scott Paper operated out of Chester, PA unt"
-scott paper,Scott Paper,1961,1995,Philadelphia,Pennsylvania,United States,gemini_r2,confirmed,"round 2; article: Philadelphia, PAConfirmed. Scott Paper operated out of Chester, PA unt"
-prudential ins of america,Prudential Ins. Co. of America,1995,1995,Newark,New Jersey,United States,gemini_r2,wrong_target_fixed,round 2; article: Prudential Plaza) since its 1875 founding.Prudential Financial
-fleming,Fleming,1995,1995,Oklahoma City,Oklahoma,United States,gemini_r2,confirmed,"round 2; article: Oklahoma City, OKConfirmed. Fleming Companies was based at Waterford B"
-delphi automotive systems,Delphi Automotive Systems Corporation,2001,2001,Troy,Michigan,United States,gemini_r2,wrong_target_fixed,"round 2; article: Troy, MIConfirmed (Wrong Target Fixed). Spun off from GM, Delphi was h"
-cudahy,Cudahy,1955,1955,Omaha,Nebraska,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. J.P. Morgan & Co. Incorporated was based a"
-cudahy,Cudahy,1956,1971,Phoenix,Arizona,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. J.P. Morgan & Co. Incorporated was based a"
-mcdermott,McDermott,1980,1994,New Orleans,Louisiana,United States,gemini_r2,wrong_target_fixed,round 2; article: McDermott International was based at 1010 Common St in New Orleans thr
-tosco,Tosco Corporation,1975,1983,Los Angeles,California,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Tosco was in Century City (LA), moved to Santa "
-tosco,Tosco Corporation,1984,1992,Santa Monica,California,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Tosco was in Century City (LA), moved to Santa "
-tosco,Tosco Corporation,1993,2001,Stamford,Connecticut,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Tosco was in Century City (LA), moved to Santa "
-batus,BATUS,1982,1982,Louisville,Kentucky,United States,gemini_r2,confirmed,"round 2; article: Louisville, KYConfirmed. BATUS Inc. (U.S. holding company for BAT) was"
-mediaone group,"MediaOne Group, Inc.",1995,2000,Englewood,Colorado,United States,gemini_r2,confirmed,"round 2; article: MediaOne was based at 188 Inverness Dr West in Englewood, CO.MediaOne "
-cvs,CVS,1955,1964,Worcester,Massachusetts,United States,gemini_r2,confirmed,"round 2; article: Harrison, NYConfirmed. CVS parent Melville Corporation was based in Wo"
-cvs,CVS,1965,1995,Harrison,New York,United States,gemini_r2,confirmed,"round 2; article: Harrison, NYConfirmed. CVS parent Melville Corporation was based in Wo"
-wellpoint health networks,"WellPoint Health Networks, Inc.",1996,2004,Thousand Oaks,California,United States,gemini_r2,wrong_target_fixed,"round 2; article: Thousand Oaks, CAConfirmed (Wrong Target Fixed). WellPoint Health Netw"
-amf,AMF,1955,1970,New York,New York,United States,gemini_r2,confirmed,"round 2; article: White Plains, NYConfirmed. American Machine and Foundry moved from Mad"
-amf,AMF,1971,1985,White Plains,New York,United States,gemini_r2,confirmed,"round 2; article: White Plains, NYConfirmed. American Machine and Foundry moved from Mad"
-crane,Crane,1955,1967,Chicago,Illinois,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Crane Co. moved from Chicago to NYC (300 Park A"
-crane,Crane,1968,1984,New York,New York,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Crane Co. moved from Chicago to NYC (300 Park A"
-crane,Crane,1985,1994,Stamford,Connecticut,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Crane Co. moved from Chicago to NYC (300 Park A"
-federal home loan mortgage,Federal Home Loan Mortgage Corp.,1996,1998,McLean,Virginia,United States,gemini_r2,wrong_target_fixed,"round 2; article: McLean, VAConfirmed (Wrong Target Fixed). Freddie Mac was headquartere"
-triangle industries,Triangle Industries,1969,1982,Holmdel,New Jersey,United States,gemini_r2,wrong_target_fixed,"round 2; article: New Brunswick, NJ before Nelson Peltz acquired control and moved execu"
-triangle industries,Triangle Industries,1983,1989,New York,New York,United States,gemini_r2,wrong_target_fixed,"round 2; article: New Brunswick, NJ before Nelson Peltz acquired control and moved execu"
-white motor,White Motor,1955,1972,Cleveland,Ohio,United States,gemini_r2,confirmed,"round 2; article: Eastlake, OHConfirmed. White Motor moved from its historic Cleveland p"
-white motor,White Motor,1973,1981,Eastlake,Ohio,United States,gemini_r2,confirmed,"round 2; article: Eastlake, OHConfirmed. White Motor moved from its historic Cleveland p"
-bergen brunswig,Bergen Brunswig Corporation,1995,2001,Orange,California,United States,gemini_r2,wrong_target_fixed,"round 2; article: Orange, CAConfirmed (Wrong Target Fixed). Bergen Brunswig was headquar"
-shell oil,,1955,1970,New York,New York,United States,gemini_r1,certain,Shell Oil Company US headquarters was located in New York (50 W 50th St) until 1970.
-shell oil,,1971,1994,Houston,Texas,United States,gemini_r1,certain,Relocated headquarters to One Shell Plaza in Houston in 1970-1971; listed through 1994.
-fortune brands,,1955,1987,New York,New York,United States,gemini_r1,certain,American Tobacco Co. / American Brands was based at 245 Park Ave in NYC until 1988.
-fortune brands,,1988,1995,Old Greenwich,Connecticut,United States,gemini_r1,certain,American Brands moved corporate headquarters to Old Greenwich in 1987-1988 (renamed Fortune Brands in 1997).
-mcdonnell douglas,,1955,1997,St. Louis,Missouri,United States,gemini_r1,certain,McDonnell Aircraft (merged with Douglas in 1967) was headquartered adjacent to Lambert Field in St. Louis/Berkeley.
-itt industries,,1956,1997,New York,New York,United States,gemini_r1,certain,ITT was headquartered at 320 Park Ave / 1330 Ave of Americas in NYC until the 1997 split.
-itt industries,,1998,2006,White Plains,New York,United States,gemini_r1,certain,ITT Industries operated from White Plains until moving to Stamford in 2007.
-unocal,,1955,1995,Los Angeles,California,United States,gemini_r1,certain,Union Oil Company of California (Unocal) was based at Union Oil Center in downtown Los Angeles.
-unocal,,1996,2005,El Segundo,California,United States,gemini_r1,certain,Unocal moved its corporate headquarters to El Segundo in 1996 until acquired by Chevron in 2005.
-sperry,,1955,1986,New York,New York,United States,gemini_r1,certain,Sperry Rand / Sperry Corporation was headquartered at 1290 Avenue of the Americas in NYC until the 1986 Unisys merger.
-armco,,1955,1994,Middletown,Ohio,United States,gemini_r1,certain,"American Rolling Mill Co. (Armco) was headquartered in Middletown, Ohio."
-armco,,1995,1999,Pittsburgh,Pennsylvania,United States,gemini_r1,certain,Armco relocated executive offices to Pittsburgh in the mid-1990s prior to the 1999 AK Steel merger.
-firestone tire and rubber,,1955,1986,Akron,Ohio,United States,gemini_r1,certain,"Firestone Tire & Rubber was headquartered in Akron, Ohio until moving to Chicago."
-firestone tire and rubber,,1987,1988,Chicago,Illinois,United States,gemini_r1,certain,Firestone moved its executive offices to Chicago in 1987 shortly before being acquired by Bridgestone.
-gulf oil,,1955,1984,Pittsburgh,Pennsylvania,United States,gemini_r1,certain,Gulf Oil was headquartered at the Gulf Tower in Pittsburgh until acquired by Chevron in 1984.
-conoco,,1955,1969,Houston,Texas,United States,gemini_r1,certain,Continental Oil Co. (Conoco) had executive headquarters in Houston/Ponca City during this period.
-conoco,,1970,1985,Stamford,Connecticut,United States,gemini_r1,certain,"Conoco relocated its corporate headquarters to Stamford, Connecticut in 1969-1970."
-conoco,,1986,2002,Houston,Texas,United States,gemini_r1,certain,"Under DuPont ownership and post-spinoff, Conoco was headquartered in Houston until the 2002 Phillips merger."
-litton industries,,1959,2001,Beverly Hills,California,United States,gemini_r1,certain,"Litton Industries was continuously headquartered in Beverly Hills, California until acquired by Northrop Grumman."
-raytheon,,1955,1995,Lexington,Massachusetts,United States,gemini_r1,certain,"Raytheon was headquartered in Waltham/Lexington, MA (141 Spring St, Lexington from 1961) across this era."
-american can,,1955,1969,New York,New York,United States,gemini_r1,certain,American Can Company was based at 100 Park Avenue in New York.
-american can,,1970,1986,Greenwich,Connecticut,United States,gemini_r1,certain,"Moved to a suburban campus in Greenwich, CT in 1970; later transformed into Primerica."
-u s steel,,1955,1982,Pittsburgh,Pennsylvania,United States,gemini_r1,certain,U.S. Steel maintained primary executive offices at 525 William Penn Place and the U.S. Steel Tower in Pittsburgh.
-rca,,1955,1982,New York,New York,United States,gemini_r1,certain,Radio Corporation of America (RCA) was headquartered at 30 Rockefeller Plaza in New York.
-republic steel,,1955,1984,Cleveland,Ohio,United States,gemini_r1,certain,Republic Steel was headquartered in Cleveland (Republic Building) until merging into LTV Steel in 1984.
-trw,,1955,1984,Euclid,Ohio,United States,gemini_r1,certain,"Thompson Products / TRW was based in Euclid/Cleveland, Ohio."
-trw,,1985,2002,Lyndhurst,Ohio,United States,gemini_r1,certain,"TRW moved to its corporate campus in Lyndhurst, Ohio in 1985 until acquired by Northrop Grumman."
-owens illinois,,1955,1995,Toledo,Ohio,United States,gemini_r1,certain,"Owens-Illinois was continuously headquartered in Toledo, Ohio (One SeaGate from 1982) across this span."
-xerox,,1963,1968,Rochester,New York,United States,gemini_r1,certain,"Haloid Xerox / Xerox was headquartered in Rochester, NY until moving corporate offices to Connecticut."
-xerox,,1969,1995,Stamford,Connecticut,United States,gemini_r1,certain,"Relocated corporate headquarters to Stamford, CT in 1969 (Long Ridge Rd); clipped to 1995."
-ltv,,1955,1992,Dallas,Texas,United States,gemini_r1,certain,"Ling-Temco-Vought / LTV Corporation was headquartered in Dallas, Texas (LTV Tower)."
-ltv,,1993,2002,Cleveland,Ohio,United States,gemini_r1,certain,"Following Chapter 11 reorganization and focus on LTV Steel, headquarters moved to Cleveland in 1993."
-champion international,,1955,1966,Hamilton,Ohio,United States,gemini_r1,certain,"Champion Paper & Fibre was based in Hamilton, Ohio prior to the 1967 merger with U.S. Plywood."
-champion international,,1967,1976,New York,New York,United States,gemini_r1,certain,U.S. Plywood-Champion Papers was based at 777 Third Avenue in New York.
-champion international,,1977,2000,Stamford,Connecticut,United States,gemini_r1,certain,"Champion International moved headquarters to Stamford, CT in 1977 until acquired by International Paper."
-amerada hess,,1955,2006,New York,New York,United States,gemini_r1,certain,Amerada Hess (formed 1969; Hess Oil previously in NJ/Amerada in NYC) was based at 1185 Ave of the Americas in NYC.
-burlington industries equity,,1955,1994,Greensboro,North Carolina,United States,gemini_r1,certain,"Burlington Mills / Burlington Industries was continuously headquartered in Greensboro, North Carolina."
-campbell soup,,1955,1995,Camden,New Jersey,United States,gemini_r1,certain,"Campbell Soup Company was continuously headquartered in Camden, New Jersey."
-american cyanamid,,1955,1961,New York,New York,United States,gemini_r1,certain,American Cyanamid was based at 30 Rockefeller Plaza in New York.
-american cyanamid,,1962,1994,Wayne,New Jersey,United States,gemini_r1,certain,"American Cyanamid moved to its corporate campus in Wayne, NJ in 1962 until acquired by AHP in 1994."
-reynolds metals,,1955,1957,Louisville,Kentucky,United States,gemini_r1,certain,"Reynolds Metals was based in Louisville, Kentucky before completing its Richmond move."
-reynolds metals,,1958,2000,Richmond,Virginia,United States,gemini_r1,certain,"Reynolds Metals opened and occupied its landmark headquarters in Henrico County/Richmond, VA until acquired by Alcoa in 2000."
-sinclair oil,,1955,1969,New York,New York,United States,gemini_r1,certain,Sinclair Oil Corporation was headquartered at 600 Fifth Avenue in NYC until merging into Atlantic Richfield in 1969.
-getty oil,,1968,1984,Los Angeles,California,United States,gemini_r1,certain,Getty Oil Company was headquartered at the Getty Oil Building (3810 Wilshire Blvd) in Los Angeles until acquired by Texaco.
-digital equipment,,1974,1998,Maynard,Massachusetts,United States,gemini_r1,certain,"Digital Equipment Corporation (DEC) was headquartered in Maynard, MA (The Mill) until acquired by Compaq in 1998."
-anheuser busch,,1955,1995,St. Louis,Missouri,United States,gemini_r1,certain,"Anheuser-Busch was continuously headquartered at One Busch Place in St. Louis, Missouri."
-jones and laughlin steel,,1955,1968,Pittsburgh,Pennsylvania,United States,gemini_r1,certain,"Jones & Laughlin Steel Corporation was headquartered in Pittsburgh, PA (Gateway Center) until acquired by LTV."
-general telephone and electronics,,1960,1972,New York,New York,United States,gemini_r1,certain,General Telephone & Electronics (GTE) was headquartered at 730 Third Avenue in New York.
-general telephone and electronics,,1973,1974,Stamford,Connecticut,United States,gemini_r1,certain,GTE moved to its landmark One Stamford Forum headquarters in 1973; clipped to 1974 listed span.
-hewlett packard,,1962,1995,Palo Alto,California,United States,gemini_r1,certain,"Hewlett-Packard was headquartered on Hanover Street / Page Mill Road in Palo Alto, California."
-douglas aircraft,,1955,1967,Santa Monica,California,United States,gemini_r1,certain,"Douglas Aircraft was headquartered at Clover Field in Santa Monica, CA until the 1967 McDonnell merger."
-greyhound,,1971,1971,Chicago,Illinois,United States,gemini_r1,certain,Greyhound Corporation was based in Chicago before completing its relocation to Arizona in 1971.
-greyhound,,1972,1983,Phoenix,Arizona,United States,gemini_r1,certain,Greyhound Corporation moved its global corporate headquarters to Greyhound Tower in Phoenix in 1971.
-youngstown sheet and tube,,1955,1969,Youngstown,Ohio,United States,gemini_r1,certain,"Youngstown Sheet and Tube Company was headquartered in Youngstown, Ohio (Stambaugh Building) until Lykes acquisition in 1969."
-bellsouth,,1995,2006,Atlanta,Georgia,United States,gemini_r1,certain,"BellSouth Corporation was headquartered in Atlanta, Georgia (BellSouth Center) until acquired by AT&T in 2006."
-crown zellerbach,,1955,1986,San Francisco,California,United States,gemini_r1,certain,Crown Zellerbach was headquartered at One Bush Street in San Francisco until Sir James Goldsmith's takeover in 1985-1986.
-warner lambert,,1955,2000,Morris Plains,New Jersey,United States,gemini_r1,certain,"Warner-Lambert was headquartered at Tabor Road in Morris Plains, NJ until acquired by Pfizer in 2000."
-sears roebuck and,,1996,2005,Hoffman Estates,Illinois,United States,gemini_r1,certain,"Sears moved from Sears Tower to Hoffman Estates, IL in 1992-1995; clipped to 1996-2005 listed span."
-pure oil,,1955,1959,Chicago,Illinois,United States,gemini_r1,certain,The Pure Oil Company was headquartered at the Pure Oil Building (35 E Wacker Dr) in Chicago.
-pure oil,,1960,1965,Palatine,Illinois,United States,gemini_r1,certain,"Pure Oil moved to a new suburban headquarters in Palatine, IL in 1960 until merging into Union Oil in 1965."
-compaq computer,,1986,2002,Houston,Texas,United States,gemini_r1,certain,"Compaq Computer Corporation was continuously headquartered on State Highway 249 in Houston (Harris County), TX."
-philip morris companies,,1996,2002,New York,New York,United States,gemini_r1,certain,Philip Morris Companies Inc. (renamed Altria) was headquartered at 120 Park Avenue in NYC (moved to Richmond in 2003).
-pillsbury,,1955,1989,Minneapolis,Minnesota,United States,gemini_r1,certain,The Pillsbury Company was headquartered at Pillsbury Center in Minneapolis until acquired by Grand Metropolitan in 1989.
-standard brands,,1955,1981,New York,New York,United States,gemini_r1,certain,Standard Brands was headquartered at 625 Madison Avenue in New York until merging with Nabisco in 1981.
-dresser industries,,1955,1998,Dallas,Texas,United States,gemini_r1,certain,"Dresser Industries was headquartered in Dallas, Texas (Republic National Bank / Elm St) until merging with Halliburton in 1998."
-quaker oats,,1955,2001,Chicago,Illinois,United States,gemini_r1,certain,The Quaker Oats Company was headquartered in Chicago (Merchandise Mart / Quaker Tower) until acquired by PepsiCo in 2001.
-enron,,1995,2002,Houston,Texas,United States,gemini_r1,certain,"Enron Corporation was headquartered at 1400 Smith Street in Houston, Texas throughout this span until bankruptcy."
-prudential insurance of america,,1996,2001,Newark,New Jersey,United States,gemini_r1,certain,"Prudential Insurance Company of America was headquartered at Prudential Plaza in Newark, New Jersey."
-usx,,1996,2001,Pittsburgh,Pennsylvania,United States,gemini_r1,certain,"USX Corporation (parent of U.S. Steel and Marathon Oil) was headquartered at the USX Tower in Pittsburgh, PA."
-farmland industries,,1958,2004,Kansas City,Missouri,United States,gemini_r1,certain,"Farmland Industries (agricultural cooperative) was headquartered in Kansas City, Missouri throughout this span."
-chase manhattan,,1995,2000,New York,New York,United States,gemini_r1,certain,Chase Manhattan Corporation (merged with Chemical Bank in 1996) was headquartered at 270 Park Ave in NYC.
-bell atlantic,,1996,1996,Philadelphia,Pennsylvania,United States,gemini_r1,certain,Bell Atlantic was headquartered at 1717 Arch Street in Philadelphia prior to merging with NYNEX.
-bell atlantic,,1997,2000,New York,New York,United States,gemini_r1,certain,"Following the 1997 NYNEX merger, Bell Atlantic established executive headquarters at 1095 Ave of the Americas in NYC."
-american stores,,1995,1999,Salt Lake City,Utah,United States,gemini_r1,certain,American Stores Company was headquartered at American Stores Tower in Salt Lake City until acquired by Albertsons in 1999.
-apple computer,,1983,1995,Cupertino,California,United States,gemini_r1,certain,"Apple Computer was continuously headquartered on Bandley Drive and Infinite Loop in Cupertino, California."
-grumman,,1955,1994,Bethpage,New York,United States,gemini_r1,certain,"Grumman Aircraft Engineering Corp. was headquartered in Bethpage (Long Island), NY until Northrop acquisition in 1994."
-phillips petroleum,,1996,2002,Bartlesville,Oklahoma,United States,gemini_r1,certain,"Phillips Petroleum Company was headquartered in Bartlesville, Oklahoma until the 2002 ConocoPhillips merger."
-ameritech,,1995,1999,Chicago,Illinois,United States,gemini_r1,certain,"Ameritech Corporation was headquartered at 30 S Wacker Drive in Chicago, Illinois until acquired by SBC in 1999."
-citicorp,,1995,1998,New York,New York,United States,gemini_r1,certain,Citicorp was headquartered at Citicorp Center (399 Park Avenue) in New York until merging into Citigroup in 1998.
-ibp,,1993,2001,Dakota Dunes,South Dakota,United States,gemini_r1,certain,"IBP, Inc. was headquartered in Dakota Dunes, South Dakota from 1990 until acquired by Tyson Foods in 2001."
-first union,,1996,2001,Charlotte,North Carolina,United States,gemini_r1,certain,"First Union Corporation was headquartered at One First Union Center in Charlotte, NC until the Wachovia merger in 2001."
-mci communications,,1995,1998,Washington,District of Columbia,United States,gemini_r1,certain,"MCI Communications Corporation was headquartered at 1801 Pennsylvania Ave NW in Washington, D.C."
-rjr nabisco holdings,,1996,1999,New York,New York,United States,gemini_r1,certain,RJR Nabisco Holdings Corp. was headquartered at 1301 Avenue of the Americas in New York.
-alliedsignal,,1996,1999,Morristown,New Jersey,United States,gemini_r1,certain,"AlliedSignal Inc. was headquartered at Columbia Road in Morris Township/Morristown, NJ until acquiring Honeywell in 1999."
-travelers group,,1996,1998,New York,New York,United States,gemini_r1,certain,"Travelers Group (Sandy Weill's financial services firm, formerly Primerica) was based at 388 Greenwich St in NYC."
-minnesota mining and manufacturing,,1996,2002,Maplewood,Minnesota,United States,gemini_r1,certain,"Minnesota Mining and Manufacturing (3M) was headquartered at 3M Center in Maplewood/St. Paul, MN (renamed 3M in 2002)."
-nynex,,1995,1997,New York,New York,United States,gemini_r1,certain,NYNEX Corporation was headquartered at 1095 Avenue of the Americas in New York until merging with Bell Atlantic.
-control data,,1965,1991,Bloomington,Minnesota,United States,gemini_r1,certain,"Control Data Corporation (CDC) was headquartered at 8100 34th Ave S in Bloomington (Minneapolis metro), MN."
-american home products,,1996,2001,Madison,New Jersey,United States,gemini_r1,certain,"American Home Products (renamed Wyeth in 2002) was headquartered at 5 Giralda Farms in Madison, NJ."
-stone container,,1983,1998,Chicago,Illinois,United States,gemini_r1,certain,Stone Container Corporation was headquartered at 150 N Michigan Ave in Chicago until merging into Smurfit-Stone in 1998.
-mci worldcom,,1995,1997,Jackson,Mississippi,United States,gemini_r1,certain,"LDDS / WorldCom was headquartered in downtown Jackson, Mississippi."
-mci worldcom,,1998,2000,Clinton,Mississippi,United States,gemini_r1,certain,"Following the MCI merger, MCI WorldCom opened and occupied its corporate campus in Clinton, Mississippi."
-aol time warner,,2002,2003,New York,New York,United States,gemini_r1,certain,AOL Time Warner Inc. was headquartered at 75 Rockefeller Plaza (Time Warner Center) in New York.
-worldcom,,1996,1997,Jackson,Mississippi,United States,gemini_r1,certain,"WorldCom, Inc. was headquartered in Jackson, Mississippi prior to campus completion."
-worldcom,,1998,2002,Clinton,Mississippi,United States,gemini_r1,certain,"WorldCom, Inc. was headquartered in Clinton, Mississippi until filing for Chapter 11 bankruptcy in 2002."
-utilicorp united,,1996,2001,Kansas City,Missouri,United States,gemini_r1,certain,"UtiliCorp United Inc. (renamed Aquila, Inc. in 2002) was headquartered at 1810 Main Street in Kansas City, MO."
-republic aviation,,1955,1965,Farmingdale,New York,United States,gemini_r1,certain,"Republic Aviation Corporation was headquartered at Republic Field in Farmingdale (Long Island), NY until Fairchild acquisition in 1965."
-rockwell international,,1996,1998,Seal Beach,California,United States,gemini_r1,certain,"Rockwell International was headquartered in Seal Beach/Costa Mesa, California."
-rockwell international,,1999,2001,Milwaukee,Wisconsin,United States,gemini_r1,certain,"Rockwell relocated corporate headquarters to Milwaukee, Wisconsin in 1999 (renamed Rockwell Automation in 2002)."
-teledyne,,1967,1995,Los Angeles,California,United States,gemini_r1,certain,"Teledyne, Inc. was headquartered at 1901 Avenue of the Stars (Century City) in Los Angeles, California."
-philco,,1955,1962,Philadelphia,Pennsylvania,United States,gemini_r1,certain,Philco Corporation was headquartered at Tioga and C Streets in Philadelphia until acquired by Ford Motor Co. in 1961-1962.
-merritt chapman and scott,,1956,1965,New York,New York,United States,gemini_r1,certain,Merritt-Chapman & Scott (construction conglomerate led by Louis Wolfson) was headquartered at 261 Madison Ave in NYC.
-wal mart stores,,1995,1995,Bentonville,Arkansas,United States,gemini_r1,certain,"Wal-Mart Stores, Inc. was headquartered at 702 SW 8th Street in Bentonville, Arkansas."
-state farm group,,1996,1996,Bloomington,Illinois,United States,gemini_r1,certain,"State Farm Mutual Automobile Insurance Company was headquartered at One State Farm Plaza in Bloomington, Illinois."
-state farm insurance cos,,1995,1995,Bloomington,Illinois,United States,gemini_r1,certain,"State Farm Insurance Companies was headquartered at One State Farm Plaza in Bloomington, Illinois."
-american intl group,,1995,1995,New York,New York,United States,gemini_r1,certain,American International Group (AIG) was headquartered at 70 Pine Street in New York.
-federal national mortgage association,,1996,1996,Washington,District of Columbia,United States,gemini_r1,certain,"Federal National Mortgage Association (Fannie Mae) was headquartered on Wisconsin Avenue NW in Washington, D.C."
-morgan stanley dean witter discover and,,1998,1998,New York,New York,United States,gemini_r1,certain,"Morgan Stanley, Dean Witter, Discover & Co. was headquartered at 1585 Broadway in New York."
-american international group,,2013,2013,New York,New York,United States,gemini_r1,certain,American International Group (AIG) was headquartered at 175 Water Street / 180 Maiden Lane in New York.
-cigna,,1995,1995,Philadelphia,Pennsylvania,United States,gemini_r1,certain,"Cigna Corporation was headquartered at One Liberty Place in Philadelphia, Pennsylvania."
-merrill lynch,,1995,1995,New York,New York,United States,gemini_r1,certain,Merrill Lynch & Co. was headquartered at the World Financial Center (Four World Financial Center) in NYC.
-bankamerica,,1995,1995,San Francisco,California,United States,gemini_r1,certain,BankAmerica Corp. (Bank of America) was headquartered at 555 California Street in San Francisco until 1998 NationsBank merger.
-briggs manufacturing,,1955,1955,Detroit,Michigan,United States,gemini_r1,certain,"Briggs Manufacturing Company (auto body / plumbing fixtures) was headquartered in Detroit, Michigan."
-morg,,1996,1996,New York,New York,United States,gemini_r1,certain,J.P. Morgan & Co. Incorporated (ticker/shorthand morg) was headquartered at 60 Wall Street in New York.
-chemical banking,,1996,1996,New York,New York,United States,gemini_r1,certain,Chemical Banking Corporation was headquartered at 277 Park Avenue in New York.
-studebaker,,1955,1967,South Bend,Indiana,United States,gemini_r1,certain,"Studebaker (Studebaker-Packard) was headquartered in South Bend, Indiana until merging with Worthington in 1967."
-may dept stores,,1995,1995,St. Louis,Missouri,United States,gemini_r1,certain,"The May Department Stores Company was headquartered at 611 Olive Street in St. Louis, Missouri."
-college retirement equities fund,,1996,1997,New York,New York,United States,gemini_r1,certain,"College Retirement Equities Fund (CREF, part of TIAA-CREF) was headquartered at 730 Third Avenue in NYC."
-j p morgan,,1995,1995,New York,New York,United States,gemini_r1,certain,J.P. Morgan & Co. Incorporated was headquartered at 60 Wall Street in New York.
-u s west,,1996,2000,Denver,Colorado,United States,gemini_r1,certain,"US WEST, Inc. was headquartered at 1801 California Street in Denver, Colorado until acquired by Qwest in 2000."
-mci,,2005,2005,Ashburn,Virginia,United States,gemini_r1,certain,"MCI, Inc. (emerged from WorldCom Chapter 11) was headquartered in Ashburn, VA until acquired by Verizon in 2006."
-aetna life and casualty,,1996,1996,Hartford,Connecticut,United States,gemini_r1,certain,"Aetna Life and Casualty Company was headquartered at 151 Farmington Avenue in Hartford, Connecticut."
-warner communications,,1972,1989,New York,New York,United States,gemini_r1,certain,Warner Communications Inc. was headquartered at 75 Rockefeller Plaza in NYC until merging with Time Inc. in 1989-1990.
-fdx,,1998,1999,Memphis,Tennessee,United States,gemini_r1,certain,"FDX Corporation (holding company formed in 1998, renamed FedEx Corporation in 2000) was based in Memphis, TN."
-amstar,,1955,1990,New York,New York,United States,gemini_r1,certain,American Sugar Refining Co. (renamed Amstar in 1970) was headquartered at 120 Wall St and 1251 Ave of the Americas in NYC.
-coca cola enterprises,,1988,1995,Atlanta,Georgia,United States,gemini_r1,certain,"Coca-Cola Enterprises Inc. (anchor bottler spun off in 1986) was headquartered at One Coca-Cola Plaza in Atlanta, GA."
-columbia hca healthcare,,1995,1995,Nashville,Tennessee,United States,gemini_r1,certain,"Columbia/HCA Healthcare Corporation was headquartered at One Park Plaza in Nashville, Tennessee."
-gillette,,1955,2005,Boston,Massachusetts,United States,gemini_r1,certain,"The Gillette Company was continuously headquartered at Prudential Tower / Gillette Park in Boston, MA until P&G acquisition."
-kerr mcgee,,1958,2006,Oklahoma City,Oklahoma,United States,gemini_r1,certain,Kerr-McGee Corporation was continuously headquartered at Kerr-McGee Center in Oklahoma City until acquired by Anadarko in 2006.
-may department stores,,1996,2005,St. Louis,Missouri,United States,gemini_r1,certain,The May Department Stores Company was headquartered at 611 Olive Street in St. Louis until acquired by Federated/Macy's in 2005.
-itt hartford group,,1996,1997,Hartford,Connecticut,United States,gemini_r1,certain,"ITT Hartford Group, Inc. (spun off from ITT, renamed The Hartford in 1997) was headquartered at Hartford Plaza in Hartford, CT."
+texaco,"Texaco, Inc.",1955,1976,New York,NY,United States,claude,inferred,"The 1977 move is sourced and dates the END of the New York era. The START is our listing floor, not a claim about 1926."
+texaco,"Texaco, Inc.",1977,2001,Harrison,NY,United States,claude,sourced,"Harrison is in Westchester. Runs to the Chevron acquisition, which is also the last listing year."
+mobil,Mobil Corporation,1955,1986,New York,NY,United States,claude,inferred,🔴 RULING NEEDED. The article dates nothing before 2015. Mobil was at 150 E 42nd St until the Fairfax move in the late 1980s; the 1987 boundary is my recollection and is NOT sourced.
+mobil,Mobil Corporation,1987,1999,Fairfax County,VA,United States,claude,inferred,🔴 RULING NEEDED on the start year. The location is certain; only the boundary is not.
+amoco,Amoco Corporation,1955,1998,Chicago,IL,United States,claude,inferred,"Undated in the source, but Standard Oil of Indiana was Chicago-based for its whole corporate life, so the listing span is covered by one value. Low risk."
+atlantic richfield,Atlantic Richfield Company,1955,1965,Philadelphia,PA,United States,claude,inferred,"🔴 RULING NEEDED, and an ERA-NAME issue as well as an HQ one. Fortune's rows for 1955-1965 are back-named ""Atlantic Richfield"" but the company was The Atlantic Refining Company of Philadelphia until th"
+atlantic richfield,Atlantic Richfield Company,1966,1970,New York,NY,United States,claude,sourced,Company formed 1966 from Atlantic Refining + Richfield Oil.
+atlantic richfield,Atlantic Richfield Company,1971,2000,Los Angeles,CA,United States,claude,sourced,Runs to the BP acquisition and the last listing year.
+chrysler,Chrysler Corporation,1955,1995,Highland Park,MI,United States,claude,sourced,Fully dated by the source. Highland Park is a separate municipality inside Detroit and should map to the Detroit metro.
+chrysler,Chrysler Corporation,1996,1998,Auburn Hills,MI,United States,claude,sourced,Runs to the Daimler merger and the last listing year.
+bethlehem steel,Bethlehem Steel Corporation,1955,2003,Bethlehem,PA,United States,claude,sourced,The cleanest case in the batch: the source states location AND both bounds explicitly.
+cbs,CBS,1955,1995,New York,NY,United States,claude,inferred,"Undated in the source but CBS was New York throughout the listing span (485 Madison Ave, then Black Rock from 1965). Low risk, one span."
+ralston purina,Ralston Purina Company,1955,2001,St. Louis,MO,United States,claude,inferred,"Undated in the source but Checkerboard Square, St. Louis was the HQ for the company's whole life. Low risk, one span."
+honeywell intl,Honeywell Intl.,1955,1995,Minneapolis,MN,United States,claude,inferred,"🔴 The infobox says Charlotte, North Carolina — that is TODAY'S Honeywell. Fortune's 1955-1995 rows are Honeywell Inc. of Minneapolis, before the 1999 AlliedSignal merger. Confident on the city, unsour"
+intl business machines,Intl. Business Machines,1955,1963,New York,NY,United States,claude,inferred,🔴 RULING NEEDED on the boundary. IBM was at 590 Madison Avenue before the Armonk move; the 1964 boundary is my recollection and is not in the extract.
+intl business machines,Intl. Business Machines,1964,1995,Armonk,NY,United States,claude,inferred,Location certain and unchanged since; only the start year is unproven. Armonk is Westchester and maps to the New York metro either way.
+exxon mobil,Exxon Mobil,1955,1988,New York,NY,United States,claude,inferred,"🔴 Fortune back-names these rows ""Exxon Mobil""; the company was Standard Oil Co. (New Jersey) then Exxon, at 30 Rockefeller Plaza. Era-name row already exists in era_names.csv."
+exxon mobil,Exxon Mobil,1989,1995,Irving,TX,United States,claude,inferred,"Two independent sources agree on the 1989 boundary, which is why this one is worth more than the usual inference. Las Colinas is a district of Irving."
+general electric,General Electric,1955,1973,New York,NY,United States,claude,inferred,🔴 RULING NEEDED. GE was at 570 Lexington Avenue before the Fairfield move; the 1974 boundary is not in the extract.
+general electric,General Electric,1974,1995,Fairfield,CT,United States,claude,inferred,🔴 RULING NEEDED on the start year. Fairfield is the right era for most of this span; Boston would be wrong for all of it.
+union carbide,Union Carbide Corporation,1955,1981,New York,NY,United States,claude,inferred,"Source dates the BUILDING from 1960; the company was in New York before that too. Infobox says Seadrift, Texas, which is a Dow plant site, not this era's HQ."
+union carbide,Union Carbide Corporation,1982,2001,Danbury,CT,United States,claude,inferred,🔴 RULING NEEDED. Union Carbide moved to Danbury in the early 1980s; neither the city nor the boundary is supported by this extract.
+chevrontexaco,ChevronTexaco Corporation,1955,2001,San Francisco,CA,United States,claude,inferred,🔴 Fortune back-names these rows; the company was Standard Oil Co. of California until 1984. Era-name row already in era_names.csv. City confident
+chevrontexaco,ChevronTexaco Corporation,2002,2005,San Ramon,CA,United States,claude,inferred,🔴 RULING NEEDED on the 2002 boundary. Both San Francisco and San Ramon are in the same metro
+borden chemical,"Borden Chemical, Inc.",1955,1986,New York,NY,United States,claude,inferred,🔴 RULING NEEDED. Borden was a New York company before the Columbus move; neither bound is in the extract.
+borden chemical,"Borden Chemical, Inc.",1987,2005,Columbus,OH,United States,claude,inferred,🔴 RULING NEEDED on the start year. Columbus is right for the later span. Note the listing runs to 2005 but the company is marked defunct 2001.
+nabisco group holdings,Nabisco Group Holdings Corp.,1955,1986,Winston-Salem,NC,United States,claude,inferred,The source confirms a headquarters move was announced in August 1986 but the extract truncates before the destination.
+nabisco group holdings,Nabisco Group Holdings Corp.,1987,1990,Atlanta,GA,United States,claude,inferred,🔴 RULING NEEDED. The infobox naming all three in order supports the sequence; the boundaries are mine. Cobb County is metro Atlanta.
+nabisco group holdings,Nabisco Group Holdings Corp.,1991,2000,New York,NY,United States,claude,inferred,🔴 RULING NEEDED on the start year. This is a three-metro company across one Fortune key and is the strongest argument for the spans table.
+bestfoods,Bestfoods,1955,1967,New York,NY,United States,gemini_r2,confirmed,round 2; article: Bestfoods) moved from NYC to an international corporate campus in Engl
+bestfoods,Bestfoods,1968,2000,Englewood Cliffs,NJ,United States,gemini_r2,confirmed,round 2; article: Bestfoods) moved from NYC to an international corporate campus in Engl
+kraft,Kraft,1955,1971,New York,NY,United States,gemini_r2,confirmed,round 2; article: Kraft) was based at 260 Madison Ave in NYC before constructing its sub
+kraft,Kraft,1972,1988,Glenview,IL,United States,gemini_r2,confirmed,round 2; article: Kraft) was based at 260 Madison Ave in NYC before constructing its sub
+georgia pacific,Georgia-Pacific Corporation,1955,1981,Portland,OR,United States,gemini_r2,confirmed,"round 2; article: Atlanta, GAConfirmed. Founded in Augusta, GA, G-P moved executive oper"
+georgia pacific,Georgia-Pacific Corporation,1982,2005,Atlanta,GA,United States,gemini_r2,confirmed,"round 2; article: Atlanta, GAConfirmed. Founded in Augusta, GA, G-P moved executive oper"
+general foods,General Foods,1955,1982,White Plains,NY,United States,gemini_r2,confirmed,"round 2; article: Rye Brook, NYConfirmed. General Foods moved from NYC to White Plains ("
+general foods,General Foods,1983,1986,Rye Brook,NY,United States,gemini_r2,confirmed,"round 2; article: Rye Brook, NYConfirmed. General Foods moved from NYC to White Plains ("
+citgo petroleum,Citgo Petroleum,1955,1969,New York,NY,United States,gemini_r2,confirmed,"round 2; article: Tulsa, OKConfirmed. Cities Service Company was based at 70 Pine Street"
+citgo petroleum,Citgo Petroleum,1970,1994,Tulsa,OK,United States,gemini_r2,confirmed,"round 2; article: Tulsa, OKConfirmed. Cities Service Company was based at 70 Pine Street"
+honeywell,Honeywell,1955,1995,Minneapolis,MN,United States,gemini_r2,confirmed,"round 2; article: Minneapolis, MNConfirmed. Minneapolis-Honeywell Regulator Co. (Honeywe"
+at and t technologies,AT&T Technologies,1955,1983,New York,NY,United States,gemini_r2,confirmed,"round 2; article: Berkeley Heights, NJConfirmed. Formerly Western Electric (195 Broadway"
+at and t technologies,AT&T Technologies,1984,1984,Berkeley Heights,NJ,United States,gemini_r2,confirmed,"round 2; article: Berkeley Heights, NJConfirmed. Formerly Western Electric (195 Broadway"
+tenneco automotive,Tenneco Automotive Inc.,1966,1995,Houston,TX,United States,gemini_r2,confirmed,"round 2; article: Lake Forest, ILConfirmed. Tenneco Inc. was based in Houston, shifted e"
+tenneco automotive,Tenneco Automotive Inc.,1996,1999,Greenwich,CT,United States,gemini_r2,confirmed,"round 2; article: Lake Forest, ILConfirmed. Tenneco Inc. was based in Houston, shifted e"
+tenneco automotive,Tenneco Automotive Inc.,2000,2005,Lake Forest,IL,United States,gemini_r2,confirmed,"round 2; article: Lake Forest, ILConfirmed. Tenneco Inc. was based in Houston, shifted e"
+continental group,Continental Group,1955,1977,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: Stamford, CTConfirmed (Wrong Target Fixed). Continental Can Co. was ba"
+continental group,Continental Group,1978,1984,Stamford,CT,United States,gemini_r2,wrong_target_fixed,"round 2; article: Stamford, CTConfirmed (Wrong Target Fixed). Continental Can Co. was ba"
+bendix,Bendix,1955,1967,Detroit,MI,United States,gemini_r2,confirmed,"round 2; article: Southfield, MIConfirmed. Bendix moved from Detroit's Fisher Building t"
+bendix,Bendix,1968,1983,Southfield,MI,United States,gemini_r2,confirmed,"round 2; article: Southfield, MIConfirmed. Bendix moved from Detroit's Fisher Building t"
+esmark,Esmark,1955,1984,Chicago,IL,United States,gemini_r2,confirmed,round 2; article: Chicago until the 1984 Beatrice acquisition.Esmark
+national intergroup,National Intergroup,1955,1985,Pittsburgh,PA,United States,gemini_r2,wrong_target_fixed,round 2; article: National Steel Center.National Steel Corporation
+ncr,NCR,1955,1991,Dayton,OH,United States,gemini_r2,wrong_target_fixed,"round 2; article: Dayton, OHConfirmed (Wrong Target Fixed). National Cash Register (NCR)"
+uniroyal,Uniroyal,1955,1971,New York,NY,United States,gemini_r2,confirmed,round 2; article: Uniroyal moved from Rockefeller Center in NYC to its Oxford Management
+uniroyal,Uniroyal,1972,1986,Middlebury,CT,United States,gemini_r2,confirmed,round 2; article: Uniroyal moved from Rockefeller Center in NYC to its Oxford Management
+beatrice,Beatrice,1955,1991,Chicago,IL,United States,gemini_r2,confirmed,"round 2; article: Chicago, ILConfirmed. Beatrice Foods was based at 120 S. LaSalle St an"
+bp america,BP America,1955,1988,Cleveland,OH,United States,gemini_r2,confirmed,round 2; article: BP America after BP completed its buyout in 1987.Standard Oil of Ohio
+martin marietta,Martin Marietta,1955,1960,Baltimore,MD,United States,gemini_r2,confirmed,round 2; article: Park Ave (NYC) before moving to Bethesda in 1976.Martin Marietta
+martin marietta,Martin Marietta,1961,1975,New York,NY,United States,gemini_r2,confirmed,round 2; article: Park Ave (NYC) before moving to Bethesda in 1976.Martin Marietta
+martin marietta,Martin Marietta,1976,1995,Bethesda,MD,United States,gemini_r2,confirmed,round 2; article: Park Ave (NYC) before moving to Bethesda in 1976.Martin Marietta
+singer,Singer,1955,1978,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: Stamford, CTConfirmed (Wrong Target Fixed). The Singer Company moved f"
+singer,Singer,1979,1988,Stamford,CT,United States,gemini_r2,wrong_target_fixed,"round 2; article: Stamford, CTConfirmed (Wrong Target Fixed). The Singer Company moved f"
+american motors,American Motors,1955,1974,Detroit,MI,United States,gemini_r2,confirmed,"round 2; article: Southfield, MIConfirmed. AMC was based at the Plymouth Road complex in"
+american motors,American Motors,1975,1987,Southfield,MI,United States,gemini_r2,confirmed,"round 2; article: Southfield, MIConfirmed. AMC was based at the Plymouth Road complex in"
+signal companies,Signal Companies,1958,1977,Los Angeles,CA,United States,gemini_r2,wrong_target_fixed,"round 2; article: La Jolla, CAConfirmed (Wrong Target Fixed). Signal Oil & Gas moved fro"
+signal companies,Signal Companies,1978,1985,La Jolla,CA,United States,gemini_r2,wrong_target_fixed,"round 2; article: La Jolla, CAConfirmed (Wrong Target Fixed). Signal Oil & Gas moved fro"
+gulf and western industries,Gulf & Western Industries,1966,1966,Houston,TX,United States,gemini_r2,confirmed,round 2; article: Western Plaza at Columbus Circle in NYC in 1967.Gulf and Western Indus
+gulf and western industries,Gulf & Western Industries,1967,1985,New York,NY,United States,gemini_r2,confirmed,round 2; article: Western Plaza at Columbus Circle in NYC in 1967.Gulf and Western Indus
+armour,Armour,1955,1970,Chicago,IL,United States,gemini_r2,confirmed,"round 2; article: Chicago, ILConfirmed. Armour and Company was based at the Union Stock "
+anaconda,Anaconda,1955,1977,New York,NY,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. Anaconda Copper Mining Co. maintained exec"
+coastal,The Coastal Corporation,1966,1973,Corpus Christi,TX,United States,gemini_r2,wrong_target_fixed,"round 2; article: Houston, TXConfirmed (Wrong Target Fixed). Coastal States Gas Producin"
+coastal,The Coastal Corporation,1974,2000,Houston,TX,United States,gemini_r2,wrong_target_fixed,"round 2; article: Houston, TXConfirmed (Wrong Target Fixed). Coastal States Gas Producin"
+wilson,Wilson,1955,1967,Chicago,IL,United States,gemini_r2,confirmed,"round 2; article: Chicago, ILConfirmed. Wilson & Co. (meatpacking and sports equipment) "
+gencorp,"GenCorp, Inc.",1955,1983,Akron,OH,United States,gemini_r2,wrong_target_fixed,"round 2; article: Rancho Cordova, CAConfirmed (Wrong Target Fixed). General Tire was in "
+gencorp,"GenCorp, Inc.",1984,1998,Fairlawn,OH,United States,gemini_r2,wrong_target_fixed,"round 2; article: Rancho Cordova, CAConfirmed (Wrong Target Fixed). General Tire was in "
+gencorp,"GenCorp, Inc.",1999,2004,Rancho Cordova,CA,United States,gemini_r2,wrong_target_fixed,"round 2; article: Rancho Cordova, CAConfirmed (Wrong Target Fixed). General Tire was in "
+chiquita brands intl,Chiquita Brands Intl.,1968,1969,Boston,MA,United States,gemini_r2,confirmed,round 2; article: Carl Lindner took control and relocated it to Cincinnati in 1985 as Ch
+chiquita brands intl,Chiquita Brands Intl.,1970,1984,New York,NY,United States,gemini_r2,confirmed,round 2; article: Carl Lindner took control and relocated it to Cincinnati in 1985 as Ch
+chiquita brands intl,Chiquita Brands Intl.,1985,1995,Cincinnati,OH,United States,gemini_r2,confirmed,round 2; article: Carl Lindner took control and relocated it to Cincinnati in 1985 as Ch
+nabisco brands,Nabisco Brands,1955,1974,New York,NY,United States,gemini_r2,confirmed,"round 2; article: East Hanover, NJConfirmed. Nabisco moved executive offices from Park A"
+nabisco brands,Nabisco Brands,1975,1985,East Hanover,NJ,United States,gemini_r2,confirmed,"round 2; article: East Hanover, NJConfirmed. Nabisco moved executive offices from Park A"
+tidewater oil,Tidewater Oil,1955,1957,San Francisco,CA,United States,gemini_r2,confirmed,"round 2; article: Los Angeles, CAConfirmed. Tidewater Associated Oil had its corporate h"
+tidewater oil,Tidewater Oil,1958,1967,Los Angeles,CA,United States,gemini_r2,confirmed,"round 2; article: Los Angeles, CAConfirmed. Tidewater Associated Oil had its corporate h"
+nl industries,NL Industries,1955,1985,New York,NY,United States,gemini_r2,confirmed,round 2; article: Ave of the Americas) until Valhi acquired control and moved HQ to Hous
+nl industries,NL Industries,1986,1993,Houston,TX,United States,gemini_r2,confirmed,round 2; article: Ave of the Americas) until Valhi acquired control and moved HQ to Hous
+sbc communications,SBC Communications Inc.,1995,1997,St. Louis,MO,United States,gemini_r2,wrong_target_fixed,"round 2; article: San Antonio, TXConfirmed (Wrong Target Fixed). Southwestern Bell was b"
+sbc communications,SBC Communications Inc.,1998,2005,San Antonio,TX,United States,gemini_r2,wrong_target_fixed,"round 2; article: San Antonio, TXConfirmed (Wrong Target Fixed). Southwestern Bell was b"
+allis chalmers,Allis-Chalmers,1955,1988,West Allis,WI,United States,gemini_r2,confirmed,"round 2; article: West Allis, WIConfirmed. Allis-Chalmers was continuously headquartered"
+sprint,Sprint Corporation,1995,2002,Westwood,KS,United States,gemini_r2,confirmed,"round 2; article: Sprint was based in Westwood, KS before transitioning to its Overland "
+sprint,Sprint Corporation,2003,2005,Overland Park,KS,United States,gemini_r2,confirmed,"round 2; article: Sprint was based in Westwood, KS before transitioning to its Overland "
+amax,AMAX,1955,1973,New York,NY,United States,gemini_r2,confirmed,"round 2; article: Greenwich, CTConfirmed. American Metal Climax (AMAX) moved from Rockef"
+amax,AMAX,1974,1993,Greenwich,CT,United States,gemini_r2,confirmed,"round 2; article: Greenwich, CTConfirmed. American Metal Climax (AMAX) moved from Rockef"
+north american philips,North American Philips,1960,1993,New York,NY,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. North American Philips Corporation (NAPC) "
+j p stevens,J.P. Stevens,1955,1988,New York,NY,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. The textile manufacturer maintained execut"
+morrell john,Morrell (John),1955,1967,Chicago,IL,United States,gemini_r2,confirmed,"round 2; article: Chicago, ILConfirmed. John Morrell & Co. maintained its central execut"
+whitman,Whitman Corporation,1970,1992,Chicago,IL,United States,gemini_r2,wrong_target_fixed,round 2; article: Whitman was based at One Illinois Center in Chicago before moving to s
+whitman,Whitman Corporation,1993,2000,Rolling Meadows,IL,United States,gemini_r2,wrong_target_fixed,round 2; article: Whitman was based at One Illinois Center in Chicago before moving to s
+american standard,American Standard,1955,1987,New York,NY,United States,gemini_r2,confirmed,"round 2; article: Piscataway, NJConfirmed. American Standard moved corporate offices fro"
+american standard,American Standard,1988,1995,Piscataway,NJ,United States,gemini_r2,confirmed,"round 2; article: Piscataway, NJConfirmed. American Standard moved corporate offices fro"
+kmart,Kmart Corporation,1996,2003,Troy,MI,United States,gemini_r2,confirmed,"round 2; article: Kmart was headquartered at 3100 W. Big Beaver Rd in Troy, MI from 1972"
+kennecott,Kennecott,1955,1973,New York,NY,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Kennecott Copper moved from East 42nd St in Man"
+kennecott,Kennecott,1974,1981,Stamford,CT,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Kennecott Copper moved from East 42nd St in Man"
+hanson industries na,Hanson Industries NA,1983,1987,Iselin,NJ,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). The North American ar"
+hanson industries na,Hanson Industries NA,1988,1994,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). The North American ar"
+hoechst celanese,Hoechst Celanese,1982,1986,New York,NY,United States,gemini_r2,confirmed,"round 2; article: Bridgewater, NJ.Celanese"
+hoechst celanese,Hoechst Celanese,1987,1994,Somerville,NJ,United States,gemini_r2,confirmed,"round 2; article: Bridgewater, NJ.Celanese"
+gte,GTE Corporation,1995,1999,Stamford,CT,United States,gemini_r2,confirmed,round 2; article: Verizon merger.GTE
+gte,GTE Corporation,2000,2000,Irving,TX,United States,gemini_r2,confirmed,round 2; article: Verizon merger.GTE
+bank one,Bank One Corporation,1995,1997,Columbus,OH,United States,gemini_r2,confirmed,"round 2; article: First Chicago NBD in 1998, it formed Bank One Corp and moved HQ to Chi"
+bank one,Bank One Corporation,1998,2004,Chicago,IL,United States,gemini_r2,confirmed,"round 2; article: First Chicago NBD in 1998, it formed Bank One Corp and moved HQ to Chi"
+asarco,"Asarco, Inc.",1955,1999,New York,NY,United States,gemini_r2,confirmed,round 2; article: ASARCO
+bayer,Bayer Corporation,1987,1994,Pittsburgh,PA,United States,gemini_r2,confirmed,round 2; article: Bayer USA) were headquartered at the Bayer Road campus in Robinson Tow
+st regis,St. Regis,1955,1984,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). St. Regis Paper Compa"
+unilever u s,Unilever U.S.,1989,1993,New York,NY,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. Unilever United States was headquartered a"
+charter,Charter,1974,1984,Jacksonville,FL,United States,gemini_r2,wrong_target_fixed,"round 2; article: Jacksonville, FLConfirmed (Wrong Target Fixed). The Charter Company (o"
+foremost dairies,Foremost Dairies,1955,1967,San Francisco,CA,United States,gemini_r2,confirmed,"round 2; article: San Francisco, CAConfirmed. Foremost Dairies maintained corporate head"
+agway,Agway,1961,2003,DeWitt,NY,United States,gemini_r2,confirmed,"round 2; article: DeWitt, NYConfirmed. Agway Inc. (formed from GLF and Eastern States) w"
+rapid american,Rapid-American,1970,1973,New York,NY,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. Meshulam Riklis's conglomerate was based a"
+fort james,Fort James Corp,1982,1996,Richmond,VA,United States,gemini_r2,wrong_target_fixed,"round 2; article: Fort Howard in 1997 to form Fort James, HQ relocated to Deerfield, IL."
+fort james,Fort James Corp,1997,2000,Deerfield,IL,United States,gemini_r2,wrong_target_fixed,"round 2; article: Fort Howard in 1997 to form Fort James, HQ relocated to Deerfield, IL."
+cooper industries,Cooper Industries,1964,1966,Mount Vernon,OH,United States,gemini_r2,confirmed,round 2; article: Cooper Industries and moved HQ to Houston in 1967.Cooper Industries
+cooper industries,Cooper Industries,1967,2002,Houston,TX,United States,gemini_r2,confirmed,round 2; article: Cooper Industries and moved HQ to Houston in 1967.Cooper Industries
+u s industries,"U.S. Industries, Inc.",1955,1983,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: Iselin, NJConfirmed (Wrong Target Fixed). USI was in NYC (250 Park Ave"
+u s industries,"U.S. Industries, Inc.",1984,1994,Iselin,NJ,United States,gemini_r2,wrong_target_fixed,"round 2; article: Iselin, NJConfirmed (Wrong Target Fixed). USI was in NYC (250 Park Ave"
+u s industries,"U.S. Industries, Inc.",1995,2003,Iselin,NJ,United States,gemini_r2,wrong_target_fixed,"round 2; article: Iselin, NJConfirmed (Wrong Target Fixed). USI was in NYC (250 Park Ave"
+basf,BASF,1982,1985,Parsippany,NJ,United States,gemini_r2,confirmed,"round 2; article: Mount Olive, NJConfirmed. BASF Corporation operated in Parsippany, NJ "
+basf,BASF,1986,1994,Mount Olive,NJ,United States,gemini_r2,confirmed,"round 2; article: Mount Olive, NJConfirmed. BASF Corporation operated in Parsippany, NJ "
+carnation,Carnation,1955,1984,Los Angeles,CA,United States,gemini_r2,wrong_target_fixed,round 2; article: Carnation (brand)
+united merchants and mfrs,United Merchants & Mfrs.,1955,1989,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). United Merchants and "
+fleming companies,"Fleming Companies, Inc.",1996,1999,Oklahoma City,OK,United States,gemini_r2,confirmed,"round 2; article: Lewisville, TXConfirmed. The grocery wholesaler was based in Oklahoma "
+fleming companies,"Fleming Companies, Inc.",2000,2003,Lewisville,TX,United States,gemini_r2,confirmed,"round 2; article: Lewisville, TXConfirmed. The grocery wholesaler was based in Oklahoma "
+ogden,Ogden Corporation,1957,2000,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: New York, NYConfirmed (Wrong Target Fixed). Ogden Corp. was headq"
+iowa beef processors,Iowa Beef Processors,1964,1967,Denison,IA,United States,gemini_r2,wrong_target_fixed,"round 2; article: Dakota City, NEConfirmed (Wrong Target Fixed). Iowa Beef Packers start"
+iowa beef processors,Iowa Beef Processors,1968,1981,Dakota City,NE,United States,gemini_r2,wrong_target_fixed,"round 2; article: Dakota City, NEConfirmed (Wrong Target Fixed). Iowa Beef Packers start"
+avco,Avco,1955,1968,New York,NY,United States,gemini_r2,confirmed,"round 2; article: Greenwich, CTConfirmed. Avco moved corporate headquarters from 750 Thi"
+avco,Avco,1969,1985,Greenwich,CT,United States,gemini_r2,confirmed,"round 2; article: Greenwich, CTConfirmed. Avco moved corporate headquarters from 750 Thi"
+pullman,Pullman,1955,1981,Chicago,IL,United States,gemini_r2,confirmed,"round 2; article: Pullman entity was run from Princeton, NJ from 1982 to 1988.Pullman Co"
+pullman,Pullman,1982,1988,Princeton,NJ,United States,gemini_r2,confirmed,"round 2; article: Pullman entity was run from Princeton, NJ from 1982 to 1988.Pullman Co"
+maxus energy,Maxus Energy,1955,1978,Cleveland,OH,United States,gemini_r2,confirmed,"round 2; article: Dallas, TXConfirmed. Diamond Shamrock was based in Cleveland, moved to"
+maxus energy,Maxus Energy,1979,1986,Dallas,TX,United States,gemini_r2,confirmed,"round 2; article: Dallas, TXConfirmed. Diamond Shamrock was based in Cleveland, moved to"
+maxus energy,Maxus Energy,1987,1994,Dallas,TX,United States,gemini_r2,confirmed,"round 2; article: Dallas, TXConfirmed. Diamond Shamrock was based in Cleveland, moved to"
+kellogg,Kellogg,1955,1995,Battle Creek,MI,United States,gemini_r2,confirmed,"round 2; article: Battle Creek, MIConfirmed. Kellogg Company was continuously headquarte"
+us pharmaceuticals,US Pharmaceuticals,1955,1973,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: Tuckahoe, NY in 1974.USV Pharmaceutical"
+us pharmaceuticals,US Pharmaceuticals,1974,1989,Tuckahoe,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: Tuckahoe, NY in 1974.USV Pharmaceutical"
+kmart holding,Kmart Holding Corporation,1995,2005,Troy,MI,United States,gemini_r2,confirmed,"round 2; article: Troy, MIConfirmed. Kmart Holding Corp (the reorganized post-bankruptcy"
+fleetboston financial,FleetBoston Financial Corporation,1995,1998,Providence,RI,United States,gemini_r2,confirmed,"round 2; article: Boston, MAConfirmed. Fleet Financial was in Providence, RI until mergi"
+fleetboston financial,FleetBoston Financial Corporation,1999,2004,Boston,MA,United States,gemini_r2,confirmed,"round 2; article: Boston, MAConfirmed. Fleet Financial was in Providence, RI until mergi"
+hygrade food products,Hygrade Food Products,1955,1956,New York,NY,United States,gemini_r2,wrong_target_fixed,round 2; article: NYC before consolidating corporate offices on Michigan Ave in Detroit 
+hygrade food products,Hygrade Food Products,1957,1977,Detroit,MI,United States,gemini_r2,wrong_target_fixed,round 2; article: NYC before consolidating corporate offices on Michigan Ave in Detroit 
+kaisertech,Kaisertech,1955,1988,Oakland,CA,United States,gemini_r2,wrong_target_fixed,round 2; article: KaiserTech was headquartered at the Kaiser Center (300 Lakeside Dr) in
+sunray dx oil,Sunray DX Oil,1956,1968,Tulsa,OK,United States,gemini_r2,wrong_target_fixed,"round 2; article: Tulsa, OKConfirmed (Wrong Target Fixed). Sunray DX was headquartered i"
+scott paper,Scott Paper,1955,1960,Chester,PA,United States,gemini_r2,confirmed,"round 2; article: Philadelphia, PAConfirmed. Scott Paper operated out of Chester, PA unt"
+scott paper,Scott Paper,1961,1995,Philadelphia,PA,United States,gemini_r2,confirmed,"round 2; article: Philadelphia, PAConfirmed. Scott Paper operated out of Chester, PA unt"
+prudential ins of america,Prudential Ins. Co. of America,1995,1995,Newark,NJ,United States,gemini_r2,wrong_target_fixed,round 2; article: Prudential Plaza) since its 1875 founding.Prudential Financial
+fleming,Fleming,1995,1995,Oklahoma City,OK,United States,gemini_r2,confirmed,"round 2; article: Oklahoma City, OKConfirmed. Fleming Companies was based at Waterford B"
+delphi automotive systems,Delphi Automotive Systems Corporation,2001,2001,Troy,MI,United States,gemini_r2,wrong_target_fixed,"round 2; article: Troy, MIConfirmed (Wrong Target Fixed). Spun off from GM, Delphi was h"
+cudahy,Cudahy,1955,1955,Omaha,NE,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. J.P. Morgan & Co. Incorporated was based a"
+cudahy,Cudahy,1956,1971,Phoenix,AZ,United States,gemini_r2,confirmed,"round 2; article: New York, NYConfirmed. J.P. Morgan & Co. Incorporated was based a"
+mcdermott,McDermott,1980,1994,New Orleans,LA,United States,gemini_r2,wrong_target_fixed,round 2; article: McDermott International was based at 1010 Common St in New Orleans thr
+tosco,Tosco Corporation,1975,1983,Los Angeles,CA,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Tosco was in Century City (LA), moved to Santa "
+tosco,Tosco Corporation,1984,1992,Santa Monica,CA,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Tosco was in Century City (LA), moved to Santa "
+tosco,Tosco Corporation,1993,2001,Stamford,CT,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Tosco was in Century City (LA), moved to Santa "
+batus,BATUS,1982,1982,Louisville,KY,United States,gemini_r2,confirmed,"round 2; article: Louisville, KYConfirmed. BATUS Inc. (U.S. holding company for BAT) was"
+mediaone group,"MediaOne Group, Inc.",1995,2000,Englewood,CO,United States,gemini_r2,confirmed,"round 2; article: MediaOne was based at 188 Inverness Dr West in Englewood, CO.MediaOne "
+cvs,CVS,1955,1964,Worcester,MA,United States,gemini_r2,confirmed,"round 2; article: Harrison, NYConfirmed. CVS parent Melville Corporation was based in Wo"
+cvs,CVS,1965,1995,Harrison,NY,United States,gemini_r2,confirmed,"round 2; article: Harrison, NYConfirmed. CVS parent Melville Corporation was based in Wo"
+wellpoint health networks,"WellPoint Health Networks, Inc.",1996,2004,Thousand Oaks,CA,United States,gemini_r2,wrong_target_fixed,"round 2; article: Thousand Oaks, CAConfirmed (Wrong Target Fixed). WellPoint Health Netw"
+amf,AMF,1955,1970,New York,NY,United States,gemini_r2,confirmed,"round 2; article: White Plains, NYConfirmed. American Machine and Foundry moved from Mad"
+amf,AMF,1971,1985,White Plains,NY,United States,gemini_r2,confirmed,"round 2; article: White Plains, NYConfirmed. American Machine and Foundry moved from Mad"
+crane,Crane,1955,1967,Chicago,IL,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Crane Co. moved from Chicago to NYC (300 Park A"
+crane,Crane,1968,1984,New York,NY,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Crane Co. moved from Chicago to NYC (300 Park A"
+crane,Crane,1985,1994,Stamford,CT,United States,gemini_r2,confirmed,"round 2; article: Stamford, CTConfirmed. Crane Co. moved from Chicago to NYC (300 Park A"
+federal home loan mortgage,Federal Home Loan Mortgage Corp.,1996,1998,McLean,VA,United States,gemini_r2,wrong_target_fixed,"round 2; article: McLean, VAConfirmed (Wrong Target Fixed). Freddie Mac was headquartere"
+triangle industries,Triangle Industries,1969,1982,Holmdel,NJ,United States,gemini_r2,wrong_target_fixed,"round 2; article: New Brunswick, NJ before Nelson Peltz acquired control and moved execu"
+triangle industries,Triangle Industries,1983,1989,New York,NY,United States,gemini_r2,wrong_target_fixed,"round 2; article: New Brunswick, NJ before Nelson Peltz acquired control and moved execu"
+white motor,White Motor,1955,1972,Cleveland,OH,United States,gemini_r2,confirmed,"round 2; article: Eastlake, OHConfirmed. White Motor moved from its historic Cleveland p"
+white motor,White Motor,1973,1981,Eastlake,OH,United States,gemini_r2,confirmed,"round 2; article: Eastlake, OHConfirmed. White Motor moved from its historic Cleveland p"
+bergen brunswig,Bergen Brunswig Corporation,1995,2001,Orange,CA,United States,gemini_r2,wrong_target_fixed,"round 2; article: Orange, CAConfirmed (Wrong Target Fixed). Bergen Brunswig was headquar"
+shell oil,,1955,1970,New York,NY,United States,gemini_r1,certain,Shell Oil Company US headquarters was located in New York (50 W 50th St) until 1970.
+shell oil,,1971,1994,Houston,TX,United States,gemini_r1,certain,Relocated headquarters to One Shell Plaza in Houston in 1970-1971; listed through 1994.
+fortune brands,,1955,1987,New York,NY,United States,gemini_r1,certain,American Tobacco Co. / American Brands was based at 245 Park Ave in NYC until 1988.
+fortune brands,,1988,1995,Old Greenwich,CT,United States,gemini_r1,certain,American Brands moved corporate headquarters to Old Greenwich in 1987-1988 (renamed Fortune Brands in 1997).
+mcdonnell douglas,,1955,1997,St. Louis,MO,United States,gemini_r1,certain,McDonnell Aircraft (merged with Douglas in 1967) was headquartered adjacent to Lambert Field in St. Louis/Berkeley.
+itt industries,,1956,1997,New York,NY,United States,gemini_r1,certain,ITT was headquartered at 320 Park Ave / 1330 Ave of Americas in NYC until the 1997 split.
+itt industries,,1998,2006,White Plains,NY,United States,gemini_r1,certain,ITT Industries operated from White Plains until moving to Stamford in 2007.
+unocal,,1955,1995,Los Angeles,CA,United States,gemini_r1,certain,Union Oil Company of California (Unocal) was based at Union Oil Center in downtown Los Angeles.
+unocal,,1996,2005,El Segundo,CA,United States,gemini_r1,certain,Unocal moved its corporate headquarters to El Segundo in 1996 until acquired by Chevron in 2005.
+sperry,,1955,1986,New York,NY,United States,gemini_r1,certain,Sperry Rand / Sperry Corporation was headquartered at 1290 Avenue of the Americas in NYC until the 1986 Unisys merger.
+armco,,1955,1994,Middletown,OH,United States,gemini_r1,certain,"American Rolling Mill Co. (Armco) was headquartered in Middletown, Ohio."
+armco,,1995,1999,Pittsburgh,PA,United States,gemini_r1,certain,Armco relocated executive offices to Pittsburgh in the mid-1990s prior to the 1999 AK Steel merger.
+firestone tire and rubber,,1955,1986,Akron,OH,United States,gemini_r1,certain,"Firestone Tire & Rubber was headquartered in Akron, Ohio until moving to Chicago."
+firestone tire and rubber,,1987,1988,Chicago,IL,United States,gemini_r1,certain,Firestone moved its executive offices to Chicago in 1987 shortly before being acquired by Bridgestone.
+gulf oil,,1955,1984,Pittsburgh,PA,United States,gemini_r1,certain,Gulf Oil was headquartered at the Gulf Tower in Pittsburgh until acquired by Chevron in 1984.
+conoco,,1955,1969,Houston,TX,United States,gemini_r1,certain,Continental Oil Co. (Conoco) had executive headquarters in Houston/Ponca City during this period.
+conoco,,1970,1985,Stamford,CT,United States,gemini_r1,certain,"Conoco relocated its corporate headquarters to Stamford, Connecticut in 1969-1970."
+conoco,,1986,2002,Houston,TX,United States,gemini_r1,certain,"Under DuPont ownership and post-spinoff, Conoco was headquartered in Houston until the 2002 Phillips merger."
+litton industries,,1959,2001,Beverly Hills,CA,United States,gemini_r1,certain,"Litton Industries was continuously headquartered in Beverly Hills, California until acquired by Northrop Grumman."
+raytheon,,1955,1995,Lexington,MA,United States,gemini_r1,certain,"Raytheon was headquartered in Waltham/Lexington, MA (141 Spring St, Lexington from 1961) across this era."
+american can,,1955,1969,New York,NY,United States,gemini_r1,certain,American Can Company was based at 100 Park Avenue in New York.
+american can,,1970,1986,Greenwich,CT,United States,gemini_r1,certain,"Moved to a suburban campus in Greenwich, CT in 1970; later transformed into Primerica."
+u s steel,,1955,1982,Pittsburgh,PA,United States,gemini_r1,certain,U.S. Steel maintained primary executive offices at 525 William Penn Place and the U.S. Steel Tower in Pittsburgh.
+rca,,1955,1982,New York,NY,United States,gemini_r1,certain,Radio Corporation of America (RCA) was headquartered at 30 Rockefeller Plaza in New York.
+republic steel,,1955,1984,Cleveland,OH,United States,gemini_r1,certain,Republic Steel was headquartered in Cleveland (Republic Building) until merging into LTV Steel in 1984.
+trw,,1955,1984,Euclid,OH,United States,gemini_r1,certain,"Thompson Products / TRW was based in Euclid/Cleveland, Ohio."
+trw,,1985,2002,Lyndhurst,OH,United States,gemini_r1,certain,"TRW moved to its corporate campus in Lyndhurst, Ohio in 1985 until acquired by Northrop Grumman."
+owens illinois,,1955,1995,Toledo,OH,United States,gemini_r1,certain,"Owens-Illinois was continuously headquartered in Toledo, Ohio (One SeaGate from 1982) across this span."
+xerox,,1963,1968,Rochester,NY,United States,gemini_r1,certain,"Haloid Xerox / Xerox was headquartered in Rochester, NY until moving corporate offices to Connecticut."
+xerox,,1969,1995,Stamford,CT,United States,gemini_r1,certain,"Relocated corporate headquarters to Stamford, CT in 1969 (Long Ridge Rd); clipped to 1995."
+ltv,,1955,1992,Dallas,TX,United States,gemini_r1,certain,"Ling-Temco-Vought / LTV Corporation was headquartered in Dallas, Texas (LTV Tower)."
+ltv,,1993,2002,Cleveland,OH,United States,gemini_r1,certain,"Following Chapter 11 reorganization and focus on LTV Steel, headquarters moved to Cleveland in 1993."
+champion international,,1955,1966,Hamilton,OH,United States,gemini_r1,certain,"Champion Paper & Fibre was based in Hamilton, Ohio prior to the 1967 merger with U.S. Plywood."
+champion international,,1967,1976,New York,NY,United States,gemini_r1,certain,U.S. Plywood-Champion Papers was based at 777 Third Avenue in New York.
+champion international,,1977,2000,Stamford,CT,United States,gemini_r1,certain,"Champion International moved headquarters to Stamford, CT in 1977 until acquired by International Paper."
+amerada hess,,1955,2006,New York,NY,United States,gemini_r1,certain,Amerada Hess (formed 1969; Hess Oil previously in NJ/Amerada in NYC) was based at 1185 Ave of the Americas in NYC.
+burlington industries equity,,1955,1994,Greensboro,NC,United States,gemini_r1,certain,"Burlington Mills / Burlington Industries was continuously headquartered in Greensboro, North Carolina."
+campbell soup,,1955,1995,Camden,NJ,United States,gemini_r1,certain,"Campbell Soup Company was continuously headquartered in Camden, New Jersey."
+american cyanamid,,1955,1961,New York,NY,United States,gemini_r1,certain,American Cyanamid was based at 30 Rockefeller Plaza in New York.
+american cyanamid,,1962,1994,Wayne,NJ,United States,gemini_r1,certain,"American Cyanamid moved to its corporate campus in Wayne, NJ in 1962 until acquired by AHP in 1994."
+reynolds metals,,1955,1957,Louisville,KY,United States,gemini_r1,certain,"Reynolds Metals was based in Louisville, Kentucky before completing its Richmond move."
+reynolds metals,,1958,2000,Richmond,VA,United States,gemini_r1,certain,"Reynolds Metals opened and occupied its landmark headquarters in Henrico County/Richmond, VA until acquired by Alcoa in 2000."
+sinclair oil,,1955,1969,New York,NY,United States,gemini_r1,certain,Sinclair Oil Corporation was headquartered at 600 Fifth Avenue in NYC until merging into Atlantic Richfield in 1969.
+getty oil,,1968,1984,Los Angeles,CA,United States,gemini_r1,certain,Getty Oil Company was headquartered at the Getty Oil Building (3810 Wilshire Blvd) in Los Angeles until acquired by Texaco.
+digital equipment,,1974,1998,Maynard,MA,United States,gemini_r1,certain,"Digital Equipment Corporation (DEC) was headquartered in Maynard, MA (The Mill) until acquired by Compaq in 1998."
+anheuser busch,,1955,1995,St. Louis,MO,United States,gemini_r1,certain,"Anheuser-Busch was continuously headquartered at One Busch Place in St. Louis, Missouri."
+jones and laughlin steel,,1955,1968,Pittsburgh,PA,United States,gemini_r1,certain,"Jones & Laughlin Steel Corporation was headquartered in Pittsburgh, PA (Gateway Center) until acquired by LTV."
+general telephone and electronics,,1960,1972,New York,NY,United States,gemini_r1,certain,General Telephone & Electronics (GTE) was headquartered at 730 Third Avenue in New York.
+general telephone and electronics,,1973,1974,Stamford,CT,United States,gemini_r1,certain,GTE moved to its landmark One Stamford Forum headquarters in 1973; clipped to 1974 listed span.
+hewlett packard,,1962,1995,Palo Alto,CA,United States,gemini_r1,certain,"Hewlett-Packard was headquartered on Hanover Street / Page Mill Road in Palo Alto, California."
+douglas aircraft,,1955,1967,Santa Monica,CA,United States,gemini_r1,certain,"Douglas Aircraft was headquartered at Clover Field in Santa Monica, CA until the 1967 McDonnell merger."
+greyhound,,1971,1971,Chicago,IL,United States,gemini_r1,certain,Greyhound Corporation was based in Chicago before completing its relocation to Arizona in 1971.
+greyhound,,1972,1983,Phoenix,AZ,United States,gemini_r1,certain,Greyhound Corporation moved its global corporate headquarters to Greyhound Tower in Phoenix in 1971.
+youngstown sheet and tube,,1955,1969,Youngstown,OH,United States,gemini_r1,certain,"Youngstown Sheet and Tube Company was headquartered in Youngstown, Ohio (Stambaugh Building) until Lykes acquisition in 1969."
+bellsouth,,1995,2006,Atlanta,GA,United States,gemini_r1,certain,"BellSouth Corporation was headquartered in Atlanta, Georgia (BellSouth Center) until acquired by AT&T in 2006."
+crown zellerbach,,1955,1986,San Francisco,CA,United States,gemini_r1,certain,Crown Zellerbach was headquartered at One Bush Street in San Francisco until Sir James Goldsmith's takeover in 1985-1986.
+warner lambert,,1955,2000,Morris Plains,NJ,United States,gemini_r1,certain,"Warner-Lambert was headquartered at Tabor Road in Morris Plains, NJ until acquired by Pfizer in 2000."
+sears roebuck and,,1996,2005,Hoffman Estates,IL,United States,gemini_r1,certain,"Sears moved from Sears Tower to Hoffman Estates, IL in 1992-1995; clipped to 1996-2005 listed span."
+pure oil,,1955,1959,Chicago,IL,United States,gemini_r1,certain,The Pure Oil Company was headquartered at the Pure Oil Building (35 E Wacker Dr) in Chicago.
+pure oil,,1960,1965,Palatine,IL,United States,gemini_r1,certain,"Pure Oil moved to a new suburban headquarters in Palatine, IL in 1960 until merging into Union Oil in 1965."
+compaq computer,,1986,2002,Houston,TX,United States,gemini_r1,certain,"Compaq Computer Corporation was continuously headquartered on State Highway 249 in Houston (Harris County), TX."
+philip morris companies,,1996,2002,New York,NY,United States,gemini_r1,certain,Philip Morris Companies Inc. (renamed Altria) was headquartered at 120 Park Avenue in NYC (moved to Richmond in 2003).
+pillsbury,,1955,1989,Minneapolis,MN,United States,gemini_r1,certain,The Pillsbury Company was headquartered at Pillsbury Center in Minneapolis until acquired by Grand Metropolitan in 1989.
+standard brands,,1955,1981,New York,NY,United States,gemini_r1,certain,Standard Brands was headquartered at 625 Madison Avenue in New York until merging with Nabisco in 1981.
+dresser industries,,1955,1998,Dallas,TX,United States,gemini_r1,certain,"Dresser Industries was headquartered in Dallas, Texas (Republic National Bank / Elm St) until merging with Halliburton in 1998."
+quaker oats,,1955,2001,Chicago,IL,United States,gemini_r1,certain,The Quaker Oats Company was headquartered in Chicago (Merchandise Mart / Quaker Tower) until acquired by PepsiCo in 2001.
+enron,,1995,2002,Houston,TX,United States,gemini_r1,certain,"Enron Corporation was headquartered at 1400 Smith Street in Houston, Texas throughout this span until bankruptcy."
+prudential insurance of america,,1996,2001,Newark,NJ,United States,gemini_r1,certain,"Prudential Insurance Company of America was headquartered at Prudential Plaza in Newark, New Jersey."
+usx,,1996,2001,Pittsburgh,PA,United States,gemini_r1,certain,"USX Corporation (parent of U.S. Steel and Marathon Oil) was headquartered at the USX Tower in Pittsburgh, PA."
+farmland industries,,1958,2004,Kansas City,MO,United States,gemini_r1,certain,"Farmland Industries (agricultural cooperative) was headquartered in Kansas City, Missouri throughout this span."
+chase manhattan,,1995,2000,New York,NY,United States,gemini_r1,certain,Chase Manhattan Corporation (merged with Chemical Bank in 1996) was headquartered at 270 Park Ave in NYC.
+bell atlantic,,1996,1996,Philadelphia,PA,United States,gemini_r1,certain,Bell Atlantic was headquartered at 1717 Arch Street in Philadelphia prior to merging with NYNEX.
+bell atlantic,,1997,2000,New York,NY,United States,gemini_r1,certain,"Following the 1997 NYNEX merger, Bell Atlantic established executive headquarters at 1095 Ave of the Americas in NYC."
+american stores,,1995,1999,Salt Lake City,UT,United States,gemini_r1,certain,American Stores Company was headquartered at American Stores Tower in Salt Lake City until acquired by Albertsons in 1999.
+apple computer,,1983,1995,Cupertino,CA,United States,gemini_r1,certain,"Apple Computer was continuously headquartered on Bandley Drive and Infinite Loop in Cupertino, California."
+grumman,,1955,1994,Bethpage,NY,United States,gemini_r1,certain,"Grumman Aircraft Engineering Corp. was headquartered in Bethpage (Long Island), NY until Northrop acquisition in 1994."
+phillips petroleum,,1996,2002,Bartlesville,OK,United States,gemini_r1,certain,"Phillips Petroleum Company was headquartered in Bartlesville, Oklahoma until the 2002 ConocoPhillips merger."
+ameritech,,1995,1999,Chicago,IL,United States,gemini_r1,certain,"Ameritech Corporation was headquartered at 30 S Wacker Drive in Chicago, Illinois until acquired by SBC in 1999."
+citicorp,,1995,1998,New York,NY,United States,gemini_r1,certain,Citicorp was headquartered at Citicorp Center (399 Park Avenue) in New York until merging into Citigroup in 1998.
+ibp,,1993,2001,Dakota Dunes,SD,United States,gemini_r1,certain,"IBP, Inc. was headquartered in Dakota Dunes, South Dakota from 1990 until acquired by Tyson Foods in 2001."
+first union,,1996,2001,Charlotte,NC,United States,gemini_r1,certain,"First Union Corporation was headquartered at One First Union Center in Charlotte, NC until the Wachovia merger in 2001."
+mci communications,,1995,1998,Washington,DC,United States,gemini_r1,certain,"MCI Communications Corporation was headquartered at 1801 Pennsylvania Ave NW in Washington, D.C."
+rjr nabisco holdings,,1996,1999,New York,NY,United States,gemini_r1,certain,RJR Nabisco Holdings Corp. was headquartered at 1301 Avenue of the Americas in New York.
+alliedsignal,,1996,1999,Morristown,NJ,United States,gemini_r1,certain,"AlliedSignal Inc. was headquartered at Columbia Road in Morris Township/Morristown, NJ until acquiring Honeywell in 1999."
+travelers group,,1996,1998,New York,NY,United States,gemini_r1,certain,"Travelers Group (Sandy Weill's financial services firm, formerly Primerica) was based at 388 Greenwich St in NYC."
+minnesota mining and manufacturing,,1996,2002,Maplewood,MN,United States,gemini_r1,certain,"Minnesota Mining and Manufacturing (3M) was headquartered at 3M Center in Maplewood/St. Paul, MN (renamed 3M in 2002)."
+nynex,,1995,1997,New York,NY,United States,gemini_r1,certain,NYNEX Corporation was headquartered at 1095 Avenue of the Americas in New York until merging with Bell Atlantic.
+control data,,1965,1991,Bloomington,MN,United States,gemini_r1,certain,"Control Data Corporation (CDC) was headquartered at 8100 34th Ave S in Bloomington (Minneapolis metro), MN."
+american home products,,1996,2001,Madison,NJ,United States,gemini_r1,certain,"American Home Products (renamed Wyeth in 2002) was headquartered at 5 Giralda Farms in Madison, NJ."
+stone container,,1983,1998,Chicago,IL,United States,gemini_r1,certain,Stone Container Corporation was headquartered at 150 N Michigan Ave in Chicago until merging into Smurfit-Stone in 1998.
+mci worldcom,,1995,1997,Jackson,MS,United States,gemini_r1,certain,"LDDS / WorldCom was headquartered in downtown Jackson, Mississippi."
+mci worldcom,,1998,2000,Clinton,MS,United States,gemini_r1,certain,"Following the MCI merger, MCI WorldCom opened and occupied its corporate campus in Clinton, Mississippi."
+aol time warner,,2002,2003,New York,NY,United States,gemini_r1,certain,AOL Time Warner Inc. was headquartered at 75 Rockefeller Plaza (Time Warner Center) in New York.
+worldcom,,1996,1997,Jackson,MS,United States,gemini_r1,certain,"WorldCom, Inc. was headquartered in Jackson, Mississippi prior to campus completion."
+worldcom,,1998,2002,Clinton,MS,United States,gemini_r1,certain,"WorldCom, Inc. was headquartered in Clinton, Mississippi until filing for Chapter 11 bankruptcy in 2002."
+utilicorp united,,1996,2001,Kansas City,MO,United States,gemini_r1,certain,"UtiliCorp United Inc. (renamed Aquila, Inc. in 2002) was headquartered at 1810 Main Street in Kansas City, MO."
+republic aviation,,1955,1965,Farmingdale,NY,United States,gemini_r1,certain,"Republic Aviation Corporation was headquartered at Republic Field in Farmingdale (Long Island), NY until Fairchild acquisition in 1965."
+rockwell international,,1996,1998,Seal Beach,CA,United States,gemini_r1,certain,"Rockwell International was headquartered in Seal Beach/Costa Mesa, California."
+rockwell international,,1999,2001,Milwaukee,WI,United States,gemini_r1,certain,"Rockwell relocated corporate headquarters to Milwaukee, Wisconsin in 1999 (renamed Rockwell Automation in 2002)."
+teledyne,,1967,1995,Los Angeles,CA,United States,gemini_r1,certain,"Teledyne, Inc. was headquartered at 1901 Avenue of the Stars (Century City) in Los Angeles, California."
+philco,,1955,1962,Philadelphia,PA,United States,gemini_r1,certain,Philco Corporation was headquartered at Tioga and C Streets in Philadelphia until acquired by Ford Motor Co. in 1961-1962.
+merritt chapman and scott,,1956,1965,New York,NY,United States,gemini_r1,certain,Merritt-Chapman & Scott (construction conglomerate led by Louis Wolfson) was headquartered at 261 Madison Ave in NYC.
+wal mart stores,,1995,1995,Bentonville,AR,United States,gemini_r1,certain,"Wal-Mart Stores, Inc. was headquartered at 702 SW 8th Street in Bentonville, Arkansas."
+state farm group,,1996,1996,Bloomington,IL,United States,gemini_r1,certain,"State Farm Mutual Automobile Insurance Company was headquartered at One State Farm Plaza in Bloomington, Illinois."
+state farm insurance cos,,1995,1995,Bloomington,IL,United States,gemini_r1,certain,"State Farm Insurance Companies was headquartered at One State Farm Plaza in Bloomington, Illinois."
+american intl group,,1995,1995,New York,NY,United States,gemini_r1,certain,American International Group (AIG) was headquartered at 70 Pine Street in New York.
+federal national mortgage association,,1996,1996,Washington,DC,United States,gemini_r1,certain,"Federal National Mortgage Association (Fannie Mae) was headquartered on Wisconsin Avenue NW in Washington, D.C."
+morgan stanley dean witter discover and,,1998,1998,New York,NY,United States,gemini_r1,certain,"Morgan Stanley, Dean Witter, Discover & Co. was headquartered at 1585 Broadway in New York."
+american international group,,2013,2013,New York,NY,United States,gemini_r1,certain,American International Group (AIG) was headquartered at 175 Water Street / 180 Maiden Lane in New York.
+cigna,,1995,1995,Philadelphia,PA,United States,gemini_r1,certain,"Cigna Corporation was headquartered at One Liberty Place in Philadelphia, Pennsylvania."
+merrill lynch,,1995,1995,New York,NY,United States,gemini_r1,certain,Merrill Lynch & Co. was headquartered at the World Financial Center (Four World Financial Center) in NYC.
+bankamerica,,1995,1995,San Francisco,CA,United States,gemini_r1,certain,BankAmerica Corp. (Bank of America) was headquartered at 555 California Street in San Francisco until 1998 NationsBank merger.
+briggs manufacturing,,1955,1955,Detroit,MI,United States,gemini_r1,certain,"Briggs Manufacturing Company (auto body / plumbing fixtures) was headquartered in Detroit, Michigan."
+morg,,1996,1996,New York,NY,United States,gemini_r1,certain,J.P. Morgan & Co. Incorporated (ticker/shorthand morg) was headquartered at 60 Wall Street in New York.
+chemical banking,,1996,1996,New York,NY,United States,gemini_r1,certain,Chemical Banking Corporation was headquartered at 277 Park Avenue in New York.
+studebaker,,1955,1967,South Bend,IN,United States,gemini_r1,certain,"Studebaker (Studebaker-Packard) was headquartered in South Bend, Indiana until merging with Worthington in 1967."
+may dept stores,,1995,1995,St. Louis,MO,United States,gemini_r1,certain,"The May Department Stores Company was headquartered at 611 Olive Street in St. Louis, Missouri."
+college retirement equities fund,,1996,1997,New York,NY,United States,gemini_r1,certain,"College Retirement Equities Fund (CREF, part of TIAA-CREF) was headquartered at 730 Third Avenue in NYC."
+j p morgan,,1995,1995,New York,NY,United States,gemini_r1,certain,J.P. Morgan & Co. Incorporated was headquartered at 60 Wall Street in New York.
+u s west,,1996,2000,Denver,CO,United States,gemini_r1,certain,"US WEST, Inc. was headquartered at 1801 California Street in Denver, Colorado until acquired by Qwest in 2000."
+mci,,2005,2005,Ashburn,VA,United States,gemini_r1,certain,"MCI, Inc. (emerged from WorldCom Chapter 11) was headquartered in Ashburn, VA until acquired by Verizon in 2006."
+aetna life and casualty,,1996,1996,Hartford,CT,United States,gemini_r1,certain,"Aetna Life and Casualty Company was headquartered at 151 Farmington Avenue in Hartford, Connecticut."
+warner communications,,1972,1989,New York,NY,United States,gemini_r1,certain,Warner Communications Inc. was headquartered at 75 Rockefeller Plaza in NYC until merging with Time Inc. in 1989-1990.
+fdx,,1998,1999,Memphis,TN,United States,gemini_r1,certain,"FDX Corporation (holding company formed in 1998, renamed FedEx Corporation in 2000) was based in Memphis, TN."
+amstar,,1955,1990,New York,NY,United States,gemini_r1,certain,American Sugar Refining Co. (renamed Amstar in 1970) was headquartered at 120 Wall St and 1251 Ave of the Americas in NYC.
+coca cola enterprises,,1988,1995,Atlanta,GA,United States,gemini_r1,certain,"Coca-Cola Enterprises Inc. (anchor bottler spun off in 1986) was headquartered at One Coca-Cola Plaza in Atlanta, GA."
+columbia hca healthcare,,1995,1995,Nashville,TN,United States,gemini_r1,certain,"Columbia/HCA Healthcare Corporation was headquartered at One Park Plaza in Nashville, Tennessee."
+gillette,,1955,2005,Boston,MA,United States,gemini_r1,certain,"The Gillette Company was continuously headquartered at Prudential Tower / Gillette Park in Boston, MA until P&G acquisition."
+kerr mcgee,,1958,2006,Oklahoma City,OK,United States,gemini_r1,certain,Kerr-McGee Corporation was continuously headquartered at Kerr-McGee Center in Oklahoma City until acquired by Anadarko in 2006.
+may department stores,,1996,2005,St. Louis,MO,United States,gemini_r1,certain,The May Department Stores Company was headquartered at 611 Olive Street in St. Louis until acquired by Federated/Macy's in 2005.
+itt hartford group,,1996,1997,Hartford,CT,United States,gemini_r1,certain,"ITT Hartford Group, Inc. (spun off from ITT, renamed The Hartford in 1997) was headquartered at Hartford Plaza in Hartford, CT."
+abbott laboratories,Abbott Laboratories,1955,2026,North Chicago,IL,United States,gemini_r3,undated,Abbott has been at the North Chicago site throughout its listed run
+unisys,Unisys,1955,1985,Detroit,MI,United States,gemini_r3,sourced,This record is the BURROUGHS lineage: Sperry holds its own key 1955-1986. Burroughs was headquartered in Detroit until the merger of 16 September 1986
+unisys,Unisys,1986,2021,Blue Bell,PA,United States,gemini_r3,sourced,The merged Unisys took the Sperry campus at Blue Bell from 16 September 1986
+exxon,Exxon Corporation,1996,1999,Irving,TX,United States,gemini_r3,sourced,"Exxon moved from New York to Irving in 1989, before this record's span opens"
+visteon,Visteon,2002,2003,Dearborn,MI,United States,gemini_r3,sourced,Dearborn from the 2000 Ford spin-off until the Village Center campus opened
+visteon,Visteon,2004,2026,Van Buren Township,MI,United States,gemini_r3,sourced,Relocated to the Village Center campus in Van Buren Township in November 2004

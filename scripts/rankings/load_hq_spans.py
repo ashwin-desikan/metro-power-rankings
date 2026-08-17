@@ -106,11 +106,17 @@ def main():
                 existing[(r["company_key"], r["from_year"])] = r["metro"]
     except Exception as e:
         log(f"could not read existing metros ({e}); continuing")
+    # 🔴 EVERY row must carry the metro key, even when the value is null.
+    # PostgREST rejects a batch whose objects have different key sets with
+    # "All object keys must match", so setting `metro` only on the rows that
+    # already had one broke the load the moment a single new uncurated era was
+    # added. A null here cannot blank an existing ruling: absent from `existing`
+    # means the row has no metro in the table either.
     kept = 0
     for b in body:
         m = existing.get((b["company_key"], b["from_year"]))
+        b["metro"] = m or None
         if m:
-            b["metro"] = m
             kept += 1
     if kept:
         log(f"preserving {kept} existing metro rulings")

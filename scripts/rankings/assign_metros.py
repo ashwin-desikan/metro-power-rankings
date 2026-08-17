@@ -58,6 +58,12 @@ ALIAS_STATE = {
     ("bethpage", "new york"): "oyster bay",            # CDP in Oyster Bay
     ("la jolla", "california"): "san diego",           # neighbourhood of San Diego
     ("ashburn", "virginia"): "leesburg",               # CDP in Loudoun County
+    ("blue bell", "pennsylvania"): "whitpain",         # CDP in Whitpain Township
+    # Twelve states have a Van Buren, and the sheet carries no Michigan one at
+    # all, so the city-only alias resolved to twelve metros and was correctly
+    # refused. Belleville is the incorporated place the township surrounds and
+    # the postal address Visteon's campus actually uses.
+    ("van buren township", "michigan"): "belleville",  # Wayne County, MI
     ("mclean", "virginia"): "vienna",                  # CDP in Fairfax County
     ("dakota dunes", "south dakota"): "north sioux city",
     ("dewitt", "new york"): "syracuse",                # town abutting Syracuse
