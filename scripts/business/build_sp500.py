@@ -41,8 +41,18 @@ def strip_markup(s):
 
 
 def split_cells(row_text):
-    """Split a table-row body into cells on top-level pipes ('||' or newline-'|')."""
-    text = re.sub(r"\n\|", "||", "\n" + row_text.strip())
+    """Split a table-row body into cells on top-level pipes ('||' or newline-'|').
+
+    Wikipedia writes each cell on its own line, prefixed by either a single
+    '|' (one cell's worth of markup on the line) or, as of the 2026-08-17
+    page edit, '||' (still one cell, just written in the double-pipe style
+    normally reserved for packing multiple cells onto one line). '\\n\\|'
+    alone only strips the first pipe of a '\\n||' line, leaving a stray
+    leading '|' in every cell -- matching '\\n\\|\\|?' (one pipe, second
+    optional) normalizes both styles to the same '||' the scanner below
+    expects, regardless of which one a given row happens to use.
+    """
+    text = re.sub(r"\n\|\|?", "||", "\n" + row_text.strip())
     if text.startswith("||"):
         text = text[2:]
     cells, buf, depth, i = [], "", 0, 0
@@ -132,9 +142,21 @@ def main(argv):
     raw = json.loads(common.fetch_url(API).decode("utf-8"))
     wikitext = raw["parse"]["wikitext"]
     cons = parse_constituents(wikitext)
-    changes = parse_changes(wikitext)
     if not (480 <= len(cons) <= 520):
         sys.exit(f"FATAL: parsed {len(cons)} constituents (expected ~503) - page layout changed?")
+    # "changes" is a SEPARATE table from "constituents" on the same page, and
+    # Wikipedia dropped it entirely as of 2026-08-17 (no "== Selected changes
+    # ==" section at all any more, not just a renamed id -- confirmed by
+    # listing every section header on the live page). Membership changes are
+    # a nice-to-have on top of the core 503-company list this script exists
+    # for, so a missing "changes" table degrades to zero changes rather than
+    # blocking constituents from publishing -- constituents' own row-count
+    # gate above is what still hard-fails on a REAL layout break to that table.
+    try:
+        changes = parse_changes(wikitext)
+    except RuntimeError as e:
+        common.log(f"WARNING: {e} -- Wikipedia dropped the changes table; shipping constituents only")
+        changes = []
     common.log(f"constituents: {len(cons)}, changes rows: {len(changes)}")
 
     metro_info = {m["name"]: m for m in json.load(open(METROS, encoding="utf-8"))}

@@ -74,12 +74,18 @@ log "build_sp500.py (Wikipedia + Supabase -> public/data/business/sp500.json)"
 "$PY" build_sp500.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_sp500.py failed"
 
 cd "$REPO" || fail "repo not found: $REPO"
-if git diff --quiet -- public/data/business/business.json public/data/business/sp500.json; then
+# build_business_data.py writes all three of business/companies/unicorns.json
+# (see its json.dump calls); committing only business.json would leave the
+# other two silently stale even though business.json looks fresh -- lib/
+# business.ts's getCompanies()/getUnicorns() read companies.json/unicorns.json
+# directly, they are not derived from business.json at request time.
+BIZ_PATHS="public/data/business/business.json public/data/business/sp500.json public/data/business/companies.json public/data/business/unicorns.json"
+if git diff --quiet -- $BIZ_PATHS; then
   log "no /business data change this run; nothing to commit"
 else
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
-  git add public/data/business/business.json public/data/business/sp500.json
+  git add $BIZ_PATHS
   git commit -m "business: weekly mktcap snapshot $DATE [vercel skip]" --quiet || fail "git commit failed"
   git push origin HEAD:main --quiet || fail "git push failed"
   log "committed + pushed /business snapshot"
