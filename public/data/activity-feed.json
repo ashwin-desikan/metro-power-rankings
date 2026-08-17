@@ -1,13 +1,34 @@
 {
-  "generatedAt": "2026-08-16",
+  "generatedAt": "2026-08-17",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-17",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "4c1f649be"
+    },
     {
       "date": "2026-08-16",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "46f1c7850"
+      "text": "Data refreshed — Football, Basketball, Leaders, Billionaires, and 3 more.",
+      "commit": "764121c8e"
+    },
+    {
+      "date": "2026-08-16",
+      "category": "hub",
+      "hub": null,
+      "text": "Add the point-in-time corporate rankings pipeline and board.",
+      "commit": "f2b9ef47d"
+    },
+    {
+      "date": "2026-08-16",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Add the point-in-time corporate rankings pipeline and board.",
+      "commit": "5f367965a"
     },
     {
       "date": "2026-08-15",
@@ -4180,27 +4201,6 @@
       "hub": null,
       "text": "Ship companiesAsOf source-freshness stamp; modernize tsconfig and gitignore for Next 16; OneDrive sync in update-site.sh.",
       "commit": "c125f11b9"
-    },
-    {
-      "date": "2026-04-28",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Surface Wikipedia and Wikidata links on metro detail pages: Sources line in hero, tiny W mark next to teams.",
-      "commit": "568b1db5d"
-    },
-    {
-      "date": "2026-04-24",
-      "category": "hub",
-      "hub": null,
-      "text": "Structured data upgrades and canonical URL swap.",
-      "commit": "6c0fdc230"
-    },
-    {
-      "date": "2026-04-24",
-      "category": "hub",
-      "hub": null,
-      "text": "Correct author surname in schema and llms.txt.",
-      "commit": "9994da2aa"
     }
   ]
 }
