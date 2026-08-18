@@ -5989,3 +5989,60 @@ So the site currently says Silverstone is in Northampton when a race happens the
 3. `getF1ConstructorTitles` and `getF1AllTimeConstructorWins` in `lib/f1.ts` now have no callers. `build-f1-data.py` still emits both into `data.json`. Harmless, but they are the raw-record numbers and the next person to reach for them will get the wrong identity model. Worth deleting or renaming to something that says so.
 4. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
 5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling.
+
+---
+
+## 2026-08-18 (windows, night) — Ashwin's ruling: West Northamptonshire is Northampton
+
+Ashwin ruled that Northampton is the Metro Area for West Northamptonshire. Applied to `MetroAreas.xlsx` and rebuilt.
+
+### The edit
+
+**15 cells, on two sheets.** `Counties!H44777` (the West Northamptonshire unitary authority row) and 14 blank `Municipality!G*` rows whose county is West Northamptonshire, including **Brackley North, Brackley South, Silverstone/Syresham/Helmdon, Brixworth & Spratton** and Towcester East.
+
+The ruling completes a column that was already mostly filled: **39 of the 53 West Northamptonshire census areas already said Northampton**, including rural ones like Long Buckby and Harpole. Only 14 were blank. So this was a gap, not a policy change.
+
+### 🔴 HOW THE WORKBOOK WAS EDITED, AND WHY NOT openpyxl
+
+`MetroAreas.xlsx` is 35 MB, 32 sheets, 180k+ rows and Ashwin's master. **openpyxl rewrites the entire file** and silently drops features it does not model — the reason [[feedback_elo_match_database]] bans it there.
+
+So this was a **surgical edit of the sheet XML inside the zip**, in `_set_metro.py`: read every zip entry, patch only the target `<c>` elements in `xl/worksheets/sheet4.xml` and `sheet5.xml`, write every other entry through unchanged.
+
+Checked first, and it is why the approach was safe: **the Metro Area column contains no formulas on either sheet** — cell types are only `s` (shared string) and `n` (blank). A literal write is therefore complete and nothing needs recalculating for that column. "Northampton" already existed in `sharedStrings.xml` at index 1432, so no string was added and no counts were renumbered.
+
+Verified after: zip integrity OK, **71 entries in the same order, only the two sheet XMLs differing**, all 32 sheets still open, and the non-blank Metro Area count moved by exactly +1 on Counties and +14 on Municipality. Backup at `MetroAreas.xlsx.bak-20260818-172821-westnorthants`.
+
+⚠️ **Other columns may hold formulas that now have stale cached values** (`Lookup`, `Metro Area Check`). They will recalculate when Ashwin next opens the file in Excel. Nothing in the F1 pipeline reads them.
+
+⚠️ **This edited the REPO copy, not the OneDrive master.** [[project_metro_area_location]] says never operate on the OneDrive tree; [[reference_xlsx_master_location]] calls OneDrive the master. The two now differ by these 15 cells. **Ashwin needs to reconcile that**, or the next OneDrive-driven rebuild will undo it.
+
+### Result
+
+**63 of 69 factory towns now resolve, up from 60. Every team on the 2026 grid now has a metro.**
+
+| Team | Town | Metro |
+|---|---|---|
+| Mercedes | Brackley | **Northampton** |
+| Aston Martin | Silverstone | **Northampton** |
+| Cadillac | Silverstone | **Northampton** |
+| Mercedes (engines) | Brixworth | **Northampton** |
+
+**Northampton is now the largest F1 metro on the board**: five teams, three of them racing now (Mercedes, Aston Martin, Cadillac) plus Hesketh and Shadow. It overtakes Oxford and London on current teams. That is the Motorsport Valley story sharpening rather than blurring, and it also closes the contradiction flagged in the previous entry — the race data already placed Silverstone in Northampton, and the factory data now agrees.
+
+### Still unresolved: three towns, three workbook cells
+
+| Counties row | Fixes |
+|---|---|
+| **South Norfolk** | Hethel (Team Lotus) |
+| **Breckland** | Thetford (Pacific), Hingham (Caterham) |
+| **South Kesteven** (Lincs) | Bourne (BRM) |
+
+Plus **Vichy** and **Romorantin-Lanthenay** in France, for Ligier and Matra. All historical teams; no current team is affected.
+
+### Open
+
+1. 🔴 **Reconcile the repo workbook with the OneDrive master** (15 cells).
+2. The five remaining blank district rows above, if Ashwin wants them ruled the same way.
+3. `getF1ConstructorTitles` / `getF1AllTimeConstructorWins` in `lib/f1.ts` have no callers now but are still built into `data.json`. They are the raw-record numbers; worth deleting or renaming.
+4. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
+5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling.
