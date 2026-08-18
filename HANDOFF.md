@@ -5947,3 +5947,45 @@ None is a display name or an era name, so `getF1ConstructorByName` had nothing t
 3. `lib/f1.ts`'s `getF1ConstructorTitles` and `getF1AllTimeConstructorWins` are now unused by the hub but still exported and still built into `data.json`. **Circuit pages may still show raw-record names.** Worth a sweep.
 4. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
 5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling.
+
+---
+
+## 2026-08-18 (windows, night) — the circuit sweep, and a contradiction it exposed
+
+Swept the remaining pages that name a constructor. **2,316 new links across the 77 circuit pages; every one of them now links, none did before.**
+
+### What was unlinked
+
+| Where | Renders |
+|---|---|
+| Circuit pages, Race History table + cards | **1,158 race rows**, "Constructor" column, plain text |
+| Hub, This Season table + cards | winner's team, plain text |
+| Hub, Champions table + cards | "Constructors' Champion" column, plain text |
+
+The circuit pages were the big one and I had missed them twice: once when building the constructor pages, once when fixing the hub. Both times I checked the page I was working on rather than every page that names the thing.
+
+### The label stays period-correct
+
+A 1967 race was won by a **Lotus-Ford** and the table still says so. It links to Team Lotus, because that is who they were. Rewriting the label to the modern name would be the same error as the archive splitting the wins, in the other direction — the `era_names.csv` discipline from the rankings board. Silverstone's history now links to `cooper`, `matra`, `team-lotus`, `mclaren`, `williams` and the rest from the names those cars actually raced under.
+
+**All 47 distinct winning-constructor names across 1,158 race rows resolve.** Checked before writing any JSX.
+
+### One component, not three copies
+
+`app/teams/_shared/F1TeamName.tsx`. The hub had a local copy after the last commit; the circuit page would have been a second. It is now imported by both, and anything else that names a constructor should use it rather than reimplement the resolve-and-link.
+
+### 🔴 A CONTRADICTION WORTH RULING ON
+
+The race data places **Silverstone in the Northampton metro** — `metro: "Northampton", metro_resolved: true` on all 60-odd British Grands Prix. The factory curation places Silverstone **nowhere**, because `MetroAreas.xlsx` leaves the Metro Area blank for both the Silverstone MSOA and the West Northamptonshire district.
+
+So the site currently says Silverstone is in Northampton when a race happens there and nowhere when a car is built there. The circuit side comes from the curated `f1_race_tracks` sheet, which somebody already ruled on.
+
+**That is a strong hint at the answer to the outstanding workbook question**, and it applies to Brackley and Brixworth too, both in the same blank district. I have not acted on it — the workbook is ground truth and this is Ashwin's call — but the inconsistency is now visible on the site and should be closed one way or the other.
+
+### Open
+
+1. **Thirteen commits want one build.** Build-relevant at HEAD. **If it ships after midnight, move the `lib/releases.ts` date off 2026-08-18.**
+2. 🔴 **Six workbook cells**, and the Silverstone/Northampton contradiction above is evidence for what four of them should say.
+3. `getF1ConstructorTitles` and `getF1AllTimeConstructorWins` in `lib/f1.ts` now have no callers. `build-f1-data.py` still emits both into `data.json`. Harmless, but they are the raw-record numbers and the next person to reach for them will get the wrong identity model. Worth deleting or renaming to something that says so.
+4. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
+5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling.
