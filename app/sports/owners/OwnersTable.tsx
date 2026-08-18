@@ -305,7 +305,7 @@ function Badges({ r }: { r: Row }) {
         <span
           className="ml-2 rounded px-1.5 py-0.5 text-[10px] uppercase tracking-widest align-middle"
           style={{ background: "rgba(34,197,94,0.12)", color: "var(--text-muted)" }}
-          title="Controls franchises in both a North American big-four league and football"
+          title="Controls franchises in more than one code: North American league sport, association football, motorsport"
         >
           Cross-code
         </span>

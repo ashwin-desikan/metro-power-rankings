@@ -10,7 +10,7 @@ const PAGE_PATH = "/sports/owners";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "The Owners";
 const PAGE_DESCRIPTION =
-  "Who actually owns world sport: every control entity behind the NFL, NBA, MLB, NHL, MLS, Liga MX and European football, ranked by the combined value of the franchises it controls.";
+  "Who actually owns world sport: every control entity behind the NFL, NBA, MLB, NHL, WNBA, MLS, NWSL, Formula 1, Liga MX and European football, ranked by the combined value of the franchises it controls.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -38,6 +38,11 @@ export default function OwnersPage() {
   const teams = all.reduce((s, p) => s + p.teams.length, 0);
   const crossCode = multi.filter((p) => p.crossesCodes).length;
   const top = all[0];
+  // Counted from the data, never hard-coded. This paragraph said "94 of 187"
+  // for as long as it took the seed to grow past it, which is exactly how a
+  // sourcing claim quietly becomes a false one.
+  const sourced = all.reduce(
+    (s, p) => s + p.teams.filter((t) => t.confidence === "sourced").length, 0);
 
   // Serialise to the client component's structural type. Kept explicit so the
   // client bundle never pulls the server-only lib/teamOwners module.
@@ -82,7 +87,7 @@ export default function OwnersPage() {
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">
           <div><strong className="text-[var(--text)] text-sm">{all.length}</strong> control entities</div>
           <div><strong className="text-[var(--text)] text-sm">{multi.length}</strong> hold more than one club</div>
-          <div><strong className="text-[var(--text)] text-sm">{crossCode}</strong> span North America and football</div>
+          <div><strong className="text-[var(--text)] text-sm">{crossCode}</strong> span more than one code</div>
           {top && (
             <div>
               Largest portfolio: <strong className="text-[var(--text)] text-sm">{top.ownerDisplay}</strong> ·{" "}
@@ -167,8 +172,8 @@ export default function OwnersPage() {
           rather than picking a plausible-looking answer.
         </p>
         <p>
-          <strong className="text-[var(--text-muted)]">Sources.</strong> 94 of {teams} rows carry a primary source
-          (league, club, exchange filing or tier-one outlet), linked on each row. The remainder carry a
+          <strong className="text-[var(--text-muted)]">Sources.</strong> {sourced} of {teams} rows carry a primary
+          source (league, club, exchange filing or tier-one outlet), linked on each row. The remainder carry a
           third-party aggregator value that has been checked against a control-change sweep covering January 2024
           to August 2026. UEFA&apos;s <em>European Club Finance and Investment Landscape 2025</em> supplies the
           framing that 122 European top-division clubs, 16% of the total, now sit in a cross-investment
