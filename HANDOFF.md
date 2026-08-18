@@ -5835,3 +5835,63 @@ Also: a **Points** column on the season table (it reconciles now, so it can be s
 3. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
 4. A Galatasaray entry in the football club dataset, and a Süper Lig hub, would make that valuations row link.
 5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling. Lucent/Louisville and Union Pacific/Omaha placement bugs.
+
+---
+
+## 2026-08-18 (windows, late) — the Counties sheet answers four of the thirteen
+
+Ashwin asked whether I had checked the workbook's **Counties** sheet, and the UK labels on **Municipality**. I had not. Both questions were right and both changed the answer.
+
+### What I had missed
+
+**`Municipality` files the UK as four countries** — England 6,856, Scotland 656, Wales 408, Northern Ireland 80. My country map only knew England and Scotland.
+
+**`Counties` exists, holds 49,868 rows across 239 countries, and files the whole UK as "United Kingdom"** — 361 rows, one per local authority. It also holds **Japan (1,140)** and **Netherlands (342)**, neither of which appears on `Municipality` at all. I had reported "the workbook has no Japan rows and no Netherlands rows", and that was wrong: it has no *Municipality* rows for them.
+
+### Four now resolve
+
+| Town | Was | Now | How |
+|---|---|---|---|
+| **Tokyo** (Honda 1964) | "no Japan rows" | **Tokyo** | 54 ward rows on Counties, all agreeing |
+| **Amsterdam** (Honda 1965-66) | "no Netherlands rows" | **Amsterdam** | `Amsterdam (incl. Weesp)`, North Holland |
+| **Ockham** (Tyrrell 1968-98) | "no row at all" | **London** | its borough, Guildford |
+| **Neuburg an der Donau** (Audi engines) | "no row" | **Munich** | its district, Neuburg-Schrobenhausen |
+
+**60 of 69 places now resolve, up from 56.**
+
+### How the fallback works
+
+`Municipality` is still tried first, because it is the finer geography and a village's own row beats its district's. Only when it refuses does the resolver drop to `Counties`, three ways, most explicit first:
+
+1. **An explicit `district` from the curation, matched exactly.** New optional field on `bases.py`. It is the only way to get from Ockham to Guildford, which share no letters, and naming the borough a village sits in is a checkable administrative fact rather than an inference.
+2. The town's own name against district names, exact then whole-word. That is Neuburg-Schrobenhausen.
+3. The town's name against the **State/Region** column, which is how a city-region resolves: Tokyo is 54 ward rows that all agree.
+
+Each way still refuses unless the matches agree on one non-blank metro.
+
+### 🔴 NINE LEFT, AND THEY ARE SIX WORKBOOK ROWS
+
+Every remaining refusal is now blank at **both** levels, and each one names the exact row to fill. Filling six cells clears all nine:
+
+| Counties row | Fixes |
+|---|---|
+| **West Northamptonshire** (Unitary Authority) | **Brackley (Mercedes), Silverstone (Aston Martin, Cadillac), Brixworth** |
+| **Breckland** (Norfolk) | Hingham (Caterham), Thetford (Pacific) |
+| **South Norfolk** | Hethel (Team Lotus) |
+| **South Kesteven** (Lincolnshire) | Bourne (BRM) |
+| **Vichy** (arrondissement) | Abrest (Ligier) |
+| **Romorantin-Lanthenay** (arrondissement) | Matra |
+
+Note the pattern in Norfolk and Lincolnshire: `Norwich` and `King's Lynn` have metros, `Boston (Linc)` and `Lincoln` have metros, and the surrounding rural districts are blank. So this is a per-row gap in rural England, not a structural absence. **140 of the 361 UK Counties rows are blank**, and 819 of the 2,580 rows across the five countries F1 touches.
+
+### Refusals now say something
+
+They previously degraded to "no-place" once the Counties attempt failed, which threw away the useful half. A refusal now keeps whichever reason is actionable and appends the other, e.g. *"Brackley: no-metro, 2 census rows all blank; in Counties: West Northamptonshire district, blank"*.
+
+### Open
+
+1. **Nine commits want one build.** Build-relevant at HEAD. **If it ships after midnight, move the `lib/releases.ts` date off 2026-08-18.**
+2. **Six workbook cells** would clear every remaining F1 base. Table above.
+3. ⚠️ **Anything else reading `MetroAreas.xlsx` should be re-checked against `Counties`.** If a lookup only reads `Municipality`, it is blind to Japan, the Netherlands and 237 other countries, and it will not find the UK under "United Kingdom" either.
+4. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
+5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling.
