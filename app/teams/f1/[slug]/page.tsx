@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getF1CircuitBySlug, getAllF1CircuitSlugs } from "@/lib/f1";
+import TeamName from "@/app/teams/_shared/F1TeamName";
 
 export const dynamicParams = false;
 
@@ -91,7 +92,9 @@ export default async function F1CircuitPage({ params }: { params: Promise<{ slug
               </div>
               <div>
                 <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Constructor</div>
-                <div style={{ color: "var(--text-muted)" }}>{r.winner_constructor ?? "—"}</div>
+                <div style={{ color: "var(--text-muted)" }}>
+                  {r.winner_constructor ? <TeamName name={r.winner_constructor} crest={false} /> : "—"}
+                </div>
               </div>
               <div className="col-span-2">
                 <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Pole</div>
@@ -114,7 +117,9 @@ export default async function F1CircuitPage({ params }: { params: Promise<{ slug
                 <td className={td} style={{ color: "var(--text-dim)" }}>{r.season}</td>
                 <td className={td} style={{ color: "var(--text-muted)" }}>{r.race_name}</td>
                 <td className={td} style={{ color: "var(--text)" }}>{r.winner ?? "—"}</td>
-                <td className={td} style={{ color: "var(--text-muted)" }}>{r.winner_constructor ?? "—"}</td>
+                <td className={td} style={{ color: "var(--text-muted)" }}>
+                  {r.winner_constructor ? <TeamName name={r.winner_constructor} crest={false} /> : "—"}
+                </td>
                 <td className={td} style={{ color: "var(--text-muted)" }}>{r.pole ?? "—"}</td>
               </tr>
             ))}

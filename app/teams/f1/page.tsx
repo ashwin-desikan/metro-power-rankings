@@ -8,27 +8,8 @@ import {
   fetchF1LiveSeason,
 } from "@/lib/f1";
 import { getLiveF1Standings } from "@/lib/f1Standings";
-import {
-  getF1ConstructorByName, getPagedF1Constructors,
-} from "@/lib/f1Constructors";
-import CrestIcon from "@/app/teams/_shared/CrestIcon";
-import { f1ConstructorCrestName } from "@/lib/f1Crest";
-
-/* A constructor's name, linked to its team page when we have one.
-   Every name on this hub goes through here. Until 2026-08-18 not one of them
-   was a link, so the only way from the hub into 78 team pages was a single nav
-   chip labelled "Teams". */
-function TeamName({ name, crest = true }: { name: string; crest?: boolean }) {
-  const t = getF1ConstructorByName(name);
-  const label = <>{crest && <CrestIcon name={f1ConstructorCrestName(name)} />}{name}</>;
-  return (
-    <span className="inline-flex items-center gap-1.5 min-w-0">
-      {t
-        ? <Link href={`/teams/f1/constructors/${t.slug}`} className="hover:underline inline-flex items-center gap-1.5" style={{ color: "inherit" }}>{label}</Link>
-        : label}
-    </span>
-  );
-}
+import { getPagedF1Constructors } from "@/lib/f1Constructors";
+import TeamName from "@/app/teams/_shared/F1TeamName";
 
 // "2026-06-28" -> "28 Jun" for upcoming races (shown in place of a winner).
 const F1_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -255,7 +236,7 @@ export default async function F1Page() {
               <div>
                 <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Team</div>
                 <div className="flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>
-                  {r.winner_constructor ? <><CrestIcon name={f1ConstructorCrestName(r.winner_constructor)} />{r.winner_constructor}</> : "—"}
+                  {r.winner_constructor ? <TeamName name={r.winner_constructor} /> : "—"}
                 </div>
               </div>
             </div>
@@ -282,7 +263,9 @@ export default async function F1Page() {
                     : <span style={{ color: "var(--text-muted)" }}>{r.metro}</span>}
                 </td>
                 <td className={td} style={{ color: r.winner ? "var(--text)" : "var(--text-dim)" }}>{r.winner ?? fmtRaceDate(r.date)}</td>
-                <td className={td} style={{ color: "var(--text-muted)" }}>{r.winner_constructor ? <span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(r.winner_constructor)} />{r.winner_constructor}</span> : "—"}</td>
+                <td className={td} style={{ color: "var(--text-muted)" }}>
+                  {r.winner_constructor ? <TeamName name={r.winner_constructor} /> : "—"}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -370,7 +353,7 @@ export default async function F1Page() {
                   {c.driver ?? "—"}{c.driver_nat ? <span style={{ color: "var(--text-dim)" }}> · {c.driver_nat}</span> : null}
                 </div>
                 <div className="mt-1.5 text-xs flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>
-                  <CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor ?? "—"}
+                  {c.constructor ? <TeamName name={c.constructor} /> : "—"}
                 </div>
               </div>
             ))}
@@ -387,7 +370,9 @@ export default async function F1Page() {
                     <td className={td} style={{ color: "var(--text)" }}>
                       {c.driver ?? "—"}{c.driver_nat ? <span style={{ color: "var(--text-dim)" }}> · {c.driver_nat}</span> : null}
                     </td>
-                    <td className={td} style={{ color: "var(--text-muted)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor ?? "—"}</span></td>
+                    <td className={td} style={{ color: "var(--text-muted)" }}>
+                      {c.constructor ? <TeamName name={c.constructor} /> : "—"}
+                    </td>
                   </tr>
                 ))}
               </tbody>
