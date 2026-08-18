@@ -1,13 +1,34 @@
 {
-  "generatedAt": "2026-08-17",
+  "generatedAt": "2026-08-18",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-18",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "b7697fa4d"
+    },
     {
       "date": "2026-08-17",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "4c1f649be"
+      "text": "Data refreshed — Football, Basketball, Elections, Screen of the Metros, and 2 more.",
+      "commit": "3ff6e2c67"
+    },
+    {
+      "date": "2026-08-17",
+      "category": "hub",
+      "hub": null,
+      "text": "Amend the 2026-08-17 release note to the final numbers: 217 companies researched into dated headquarters eras, and every one of the 7,176 b…",
+      "commit": "c69581976"
+    },
+    {
+      "date": "2026-08-17",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Place every company on the rankings board in the metro area it was actually headquartered in that year.",
+      "commit": "b264fd714"
     },
     {
       "date": "2026-08-16",
@@ -4180,27 +4201,6 @@
       "hub": "Release Notes",
       "text": "Surface Top Teams article in featured-articles, sitemap, llms.txt, and release notes; refresh Marylebones placeholder.",
       "commit": "ffad9a642"
-    },
-    {
-      "date": "2026-04-28",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Surface Top Team card on metro detail pages with link to /top-teams.",
-      "commit": "a7a5f0c0a"
-    },
-    {
-      "date": "2026-04-28",
-      "category": "new-hub",
-      "hub": "Top Teams",
-      "text": "New hub: Top Teams.",
-      "commit": "c3cccadf6"
-    },
-    {
-      "date": "2026-04-28",
-      "category": "hub",
-      "hub": null,
-      "text": "Ship companiesAsOf source-freshness stamp; modernize tsconfig and gitignore for Next 16; OneDrive sync in update-site.sh.",
-      "commit": "c125f11b9"
     }
   ]
 }
