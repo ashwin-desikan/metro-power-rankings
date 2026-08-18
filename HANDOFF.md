@@ -5664,3 +5664,50 @@ Board: 220 franchises, 175 owner entities, 36 multi-club, 110 sourced, 100 cross
 4. `citigroup` 1995-1998 wants Ashwin's ruling; Lucent/Louisville and Union Pacific/Omaha placement bugs.
 5. **A Süper Lig hub would earn its keep now** that Galatasaray is on the board, and a Galatasaray entry in the football club dataset would make the row link.
 6. The five remaining carried rows (Lyon, Bournemouth, RB Leipzig, Sevilla, Monterrey) still carry a Source label naming a Sportico list that did not rank them. Pre-existing; no source invented to fix it.
+
+
+## 2026-08-18 (fourth block) -- windows -> next session (Formula 1 teams get pages, counted as organisations rather than chassis names)
+
+Fourth block. **COMMITTED, NOT PUSHED**, stacked on the Football Benchmark work from block three. Four commits sit on `main` locally, ordered handoff / work / handoff / work so the build-relevant one is at HEAD. `npm run verify` clean three times. Today's two-build allowance was spent on blocks one and two, so both remaining blocks ship together whenever Ashwin says.
+
+⚠️ **If this ships after midnight, change the `lib/releases.ts` date from 2026-08-18.** The 08-18 block now describes work that is not live yet.
+
+### Phase one, as approved
+
+Curate the lineages, add the route, ship from the 27,389 results already in Supabase. No new fetching. 156 lineages from 214 constructor records, 27 curated, **78 earning a page** (ten races or a win).
+
+### 🔴 THE ARCHIVE DOES NOT MODEL TEAMS, AND THAT IS THE ENTIRE JOB
+
+Ergast identifies a car by chassis and engine, not by the entrant. Both failure directions matter and both are now fixed in `scripts/f1/lineages.py`:
+
+- **It SPLITS one team.** Team Lotus's wins were under `team_lotus` (45), `lotus-climax` (22), `lotus-ford` (11), `lotus-brm` (1). The board now says **79**, which is the real number. Brabham 23 → 35. McLaren picks up its Ford years and starts in 1966, not 1968.
+- **It MERGES unrelated organisations.** One `alfa` record spans 1950-2023 across the works team, some 1960s privateers, Autodelta, and Sauber-in-Alfa-branding. One `ats` record welds an Italian 1963 team to a German 1978-84 team sharing only an acronym.
+
+Four rules: MERGE chassis-engine variants, SPLIT the six welded records, CHAIN the nine documented successions, NOTE the rest. **Two links are genuinely arguable and the page says so** with an "arguable" badge and a paragraph rather than asserting a judgement: Racing Point continuing Force India through the 2018 administration, and the 1968-69 Matra-Ford wins belonging to the chassis constructor rather than to Ken Tyrrell's Matra International that entered them.
+
+### 🔴 THE CURRENT SEASON'S LEADER IS NOT A CHAMPION
+
+`f1_constructor_standings` carries a LIVE row for the season in progress. Counting position one as a title gave **Mercedes eleven constructors' championships against a real ten** in August 2026. Titles now count finished seasons only; the live season still shows its position in the form line, where it reads as a standing rather than a result. **Any future consumer of that table needs the same guard.**
+
+### Two smaller traps
+
+- **`str.isalnum()` is true for 'ö'.** The naive slugify emitted a non-ASCII slug for the German ATS, which becomes a percent-encoded URL nobody would type or link. ASCII-only now.
+- **The table-scroll gate reads JSX statically and cannot follow a variable.** Three wrappers were using a hoisted `const box = "... overflow-x-auto ..."`, which reads fine and fails the gate. Overflow classes must be LITERAL in the JSX.
+
+### Wiring, done in the same commit
+
+`lib/teamLinks.ts` gains an F1 branch pointing at `/teams/f1/constructors/[slug]` and NOT at `/teams/f1/[slug]`, which is circuits. The F1 hub gains a Teams tab. **The ten Formula 1 rows on /sports/valuations now link** — they had nowhere to point since this morning. The board's only remaining unlinked row is Galatasaray, a football-data gap rather than an F1 one.
+
+### What the page shows
+
+Header with the chain spelled out, an eight-tile stat grid, a **form line** (one bar per season entered, taller for a better championship finish, accent for titles, green for winning seasons, gaps left as gaps rather than a line drawn across years the team did not race), the era table, a "why these are one team" note block, reliability by decade with the top retirement causes, a season-by-season table including average grid against average finish, the driver roster, and best circuits each linked to its host metro.
+
+Page weight 68 KB to 514 KB, against 284-295 KB for the existing circuit pages, so in range.
+
+### Open
+
+1. **Push blocks three and four**, once Ashwin rules on the build. Check the release-note date first.
+2. **Phase two of F1 is where the metro story is**: base city and era per lineage, then the Motorsport Valley rollup. Curate bases, do NOT sweep Wikidata P159. ⚠️ my "six or seven of the 2026 grid within eighty miles of Oxford" line is still UNVERIFIED. [[project_f1_constructor_pages_scoping_2026_08_18]]
+3. Phase three: per-round standings, pit stops (2011+, the only widely available metric that is purely a TEAM performance), qualifying sessions (2003+).
+4. **A Galatasaray entry in the football club dataset**, and a Süper Lig hub, would make that valuations row link.
+5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling. Lucent/Louisville and Union Pacific/Omaha placement bugs.
