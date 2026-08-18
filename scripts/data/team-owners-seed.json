@@ -415,6 +415,21 @@
    "source_date": ""
   },
   {
+   "team": "Lille OSC",
+   "league": "France",
+   "owner_display": "Merlyn Partners (Alessandro Barnaba)",
+   "owner_key": "merlyn-partners",
+   "owner_type": "fund",
+   "stake_label": "Majority",
+   "stake_pct": null,
+   "confidence": "cross-checked",
+   "co_controllers": "",
+   "minority": "Elliott Management has held creditor and minority positions",
+   "note": "Merlyn Partners bought the club from Gerard Lopez in Dec 2020 through a Luxembourg chain and installed Olivier Letang as president. A 2022 reorganisation followed the debt restructuring without moving ultimate control. Graded cross-checked rather than sourced because the cap table is not publicly disclosed and the only primary record is the 2020 acquisition.",
+   "source_url": "",
+   "source_date": ""
+  },
+  {
    "team": "Olympique Lyonnais",
    "league": "France",
    "owner_display": "Michele Kang",
@@ -428,6 +443,21 @@
    "note": "Completed 26 Jun 2026, ending John Textor's ownership after Eagle Bidco entered UK administration in Mar 2026. Kang also owns the Washington Spirit and London City Lionesses through Kynisca Sports International.",
    "source_url": "https://frontofficesports.com/michele-kang-to-buy-lyon-in-deal-that-would-end-john-textors-ownership/",
    "source_date": "2026-06-26"
+  },
+  {
+   "team": "Olympique Marseille",
+   "league": "France",
+   "owner_display": "Frank McCourt",
+   "owner_key": "frank-mccourt",
+   "owner_type": "individual",
+   "stake_label": "Majority, 95.09%",
+   "stake_pct": 95.09,
+   "confidence": "sourced",
+   "co_controllers": "",
+   "minority": "",
+   "note": "Owned since the 2016 purchase from Margarita Louis-Dreyfus, held through a Delaware chain into SASP Olympique de Marseille. McCourt told supporter groups in Feb 2026 that the club is not for sale; reports of a price at which he would listen are not a process, and nothing is signed.",
+   "source_url": "https://www.getfootballnewsfrance.com/2026/marseille-owner-frank-mccourt-insists-club-is-not-for-sale-amid-supporter-unrest/",
+   "source_date": "2026-02-17"
   },
   {
    "team": "Paris Saint-Germain",
@@ -2557,6 +2587,36 @@
    "source_date": "2026-08-11"
   },
   {
+   "team": "Feyenoord",
+   "league": "Netherlands",
+   "owner_display": "Stichting Continuïteit Feyenoord",
+   "owner_key": "stichting-continuiteit-feyenoord",
+   "owner_type": "trust",
+   "stake_label": "Majority shareholder and golden share",
+   "stake_pct": 51.0,
+   "confidence": "sourced",
+   "co_controllers": "",
+   "minority": "Vrienden van Feyenoord, roughly 46-49%; Stichting Supporters steunen Feyenoord, about 1%",
+   "note": "The foundation holds the majority of Feyenoord Rotterdam N.V. plus a golden share, giving it the right to appoint directors and to veto changes to the name, crest, colours, academy and home ground. The minority sits with the supporters' group that recapitalised the club in 2010 and is being bought back in tranches.",
+   "source_url": "https://www.feyenoord.com/en/our-club/organisation/stichting-continuiteit-feyenoord",
+   "source_date": "2026-08-18"
+  },
+  {
+   "team": "PSV Eindhoven",
+   "league": "Netherlands",
+   "owner_display": "Stichting PSV Voetbal",
+   "owner_key": "stichting-psv-voetbal",
+   "owner_type": "trust",
+   "stake_label": "Majority shareholder of PSV N.V.",
+   "stake_pct": null,
+   "confidence": "sourced",
+   "co_controllers": "Eindhovense Voetbalvereniging PSV holds a golden share",
+   "minority": "",
+   "note": "Neither investor-owned nor directly member-owned. Professional football sits in PSV N.V., whose majority shareholder is a foundation; the 1913 members' association keeps a golden share protecting name, crest and governance. The 2016 partner-fund injection from Philips, ASML, VDL and others was financing, not equity, and moved no ownership.",
+   "source_url": "https://www.psv.nl/en/club/organization/structure",
+   "source_date": "2026-08-18"
+  },
+  {
    "team": "Benfica",
    "league": "Portugal",
    "owner_display": "Sport Lisboa e Benfica (members' club, 150,000+ socios)",
@@ -2632,6 +2692,21 @@
    "source_date": "2025-11-24"
   },
   {
+   "team": "Real Sociedad",
+   "league": "Spain",
+   "owner_display": "No controlling shareholder; board led by Jokin Aperribay",
+   "owner_key": "real-sociedad-shareholders",
+   "owner_type": "members' association",
+   "stake_label": "Dispersed, with a statutory cap near 2%",
+   "stake_pct": null,
+   "confidence": "sourced",
+   "co_controllers": "",
+   "minority": "",
+   "note": "Filed here as member-owned in spirit, but the precise form matters: Real Sociedad is a Sociedad Anonima Deportiva, not a socios' association like Barcelona or Athletic. No shareholder may exceed roughly 2% of capital, so control is exercised collectively through the elected board. Socios and shareholders are different populations at this club, and the shareholder count is not published.",
+   "source_url": "https://www.cope.es/programas/el-partidazo-de-cope/noticias/jokin-aperribay-presidente-real-sociedad-siempre-real-campo-favorita-20260418_3348071.html",
+   "source_date": "2026-04-18"
+  },
+  {
    "team": "Sevilla FC",
    "league": "Spain",
    "owner_display": "No controlling shareholder; board bloc led by Jose Maria del Nido Carrasco",
@@ -2649,6 +2724,21 @@
    "pending_when": "Targeted early Aug 2026, not confirmed closed",
    "pending_kind": "contested control",
    "pending_review_by": "2026-09-01"
+  },
+  {
+   "team": "Galatasaray SK",
+   "league": "Turkey",
+   "owner_display": "Galatasaray Spor Kulübü Derneği",
+   "owner_key": "galatasaray-dernek",
+   "owner_type": "members' association",
+   "stake_label": "60.01% of the listed football company",
+   "stake_pct": 60.01,
+   "confidence": "sourced",
+   "co_controllers": "",
+   "minority": "Free float 39.99% (Borsa Istanbul: GSRAY)",
+   "note": "Football sits in a listed company, Galatasaray Sportif A.S., but control rests with the members' association, which holds 60.01% split across two share classes. The Class A shares alone appoint 15 of the 16 board seats, so control is entrenched regardless of the free float, and the association's president is elected by its members. Turkey's first club on this board.",
+   "source_url": "https://news-content.foreks.com/attachments/kap/4028328d9d4a0485019d7350f59c5630.pdf",
+   "source_date": "2026-02-28"
   },
   {
    "team": "Atlanta United",

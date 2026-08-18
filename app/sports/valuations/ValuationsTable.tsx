@@ -16,6 +16,9 @@ type Row = {
   valueLabel: string;
   year: number | null;
   source: string;
+  /** Which valuation house this row's figure came from. The board takes the
+      higher of the figures it holds per team, so this is part of the number. */
+  sourceTag: "Sportico" | "Football Benchmark";
   href: string | null;
   anchor: string;
   /** Control owner, from lib/teamOwners. Null only if the owner row is missing,
@@ -49,7 +52,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
     const needle = q.trim().toLowerCase();
     let r = rows;
     if (sport !== "All") r = r.filter((x) => x.sport === sport);
-    if (needle) r = r.filter((x) => x.displayName.toLowerCase().includes(needle) || x.team.toLowerCase().includes(needle) || x.league.toLowerCase().includes(needle) || (x.owner ?? "").toLowerCase().includes(needle));
+    if (needle) r = r.filter((x) => x.displayName.toLowerCase().includes(needle) || x.team.toLowerCase().includes(needle) || x.league.toLowerCase().includes(needle) || (x.owner ?? "").toLowerCase().includes(needle) || x.sourceTag.toLowerCase().includes(needle));
     const dir = asc ? 1 : -1;
     return [...r].sort((a, b) => {
       let c = 0;
@@ -181,8 +184,9 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
                 <Link href={r.leagueHref} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{r.league}</Link>
                 {r.sport === "Football" && <span className="ml-1.5 text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Football</span>}
               </div>
-              <div className="mt-2 flex items-baseline gap-4 text-sm">
+              <div className="mt-2 flex items-baseline gap-3 text-sm flex-wrap">
                 <span className="font-semibold tabular-nums">{r.valueLabel}</span>
+                <SourceTag tag={r.sourceTag} />
                 <span className="text-xs tabular-nums text-[var(--text-muted)]">{r.year ?? "—"}</span>
               </div>
               {/* Wraps rather than truncates: entity names run long ("City
@@ -246,7 +250,10 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
                     <Link href={r.leagueHref} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{r.league}</Link>
                     {r.sport === "Football" && <span className="ml-1.5 text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Football</span>}
                   </td>
-                  <td className="px-3 py-2 text-right font-semibold tabular-nums">{r.valueLabel}</td>
+                  <td className="px-3 py-2 text-right font-semibold tabular-nums whitespace-nowrap">
+                    {r.valueLabel}
+                    <SourceTag tag={r.sourceTag} className="ml-1.5" />
+                  </td>
                   <td className="px-3 py-2 text-[var(--text-muted)] hidden md:table-cell">
                     {r.ownerHref && r.owner ? (
                       <Link href={r.ownerHref} className="hover:text-[var(--accent)] hover:underline">{r.owner}</Link>
@@ -263,5 +270,27 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
       </div>
       <div className="text-xs text-[var(--text-dim)] mt-2">{filtered.length} of {rows.length} teams shown</div>
     </div>
+  );
+}
+
+/* Provenance marker. Two letters rather than a word, because it sits inside a
+   right-aligned numeric column and a full label would push the figures around
+   at 390px. Sportico is the board's default house and gets the quieter
+   treatment; FB is the exception and is what a reader is scanning for. The
+   title attribute carries the full name for anyone who needs it. */
+function SourceTag({ tag, className = "" }: { tag: Row["sourceTag"]; className?: string }) {
+  const fb = tag === "Football Benchmark";
+  return (
+    <span
+      className={`${className} rounded px-1 py-0.5 text-[9px] font-semibold uppercase tracking-wider align-middle`}
+      style={{
+        background: fb ? "rgba(59,130,246,0.14)" : "transparent",
+        color: "var(--text-dim)",
+        border: fb ? "none" : "1px solid var(--border)",
+      }}
+      title={fb ? "Football Benchmark enterprise value, midpoint" : "Sportico franchise value"}
+    >
+      {fb ? "FB" : "SP"}
+    </span>
   );
 }

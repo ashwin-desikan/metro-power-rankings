@@ -1,5 +1,5 @@
 {
-"generated": "2026-08-18T06:58:01",
+"generated": "2026-08-18T08:41:16",
 "rows": [
 {
 "year": 2026,
@@ -136,6 +136,13 @@
 },
 {
 "year": 2026,
+"team": "Real Madrid",
+"league": "Spain",
+"value_m": 9054.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
+"year": 2026,
 "team": "Los Angeles Dodgers",
 "league": "MLB",
 "value_m": 9050.0,
@@ -248,13 +255,6 @@
 },
 {
 "year": 2026,
-"team": "Real Madrid",
-"league": "Spain",
-"value_m": 7700.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
-},
-{
-"year": 2026,
 "team": "New Orleans Saints",
 "league": "NFL",
 "value_m": 7590.0,
@@ -269,16 +269,16 @@
 },
 {
 "year": 2026,
-"team": "Los Angeles Clippers",
-"league": "NBA",
-"value_m": 6720.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"team": "FC Barcelona",
+"league": "Spain",
+"value_m": 6937.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
-"team": "FC Barcelona",
-"league": "Spain",
-"value_m": 6650.0,
+"team": "Los Angeles Clippers",
+"league": "NBA",
+"value_m": 6720.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
@@ -339,6 +339,13 @@
 },
 {
 "year": 2026,
+"team": "Manchester City",
+"league": "England",
+"value_m": 5980.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
+"year": 2026,
 "team": "Mercedes",
 "league": "F1",
 "value_m": 5880.0,
@@ -353,16 +360,16 @@
 },
 {
 "year": 2026,
-"team": "Liverpool",
+"team": "Arsenal",
 "league": "England",
-"value_m": 5740.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"value_m": 5779.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
-"team": "Manchester City",
+"team": "Liverpool",
 "league": "England",
-"value_m": 5700.0,
+"value_m": 5740.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
@@ -381,10 +388,10 @@
 },
 {
 "year": 2026,
-"team": "Arsenal",
-"league": "England",
-"value_m": 5430.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"team": "Paris Saint-Germain",
+"league": "France",
+"value_m": 5304.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -412,13 +419,6 @@
 "team": "Atlanta Hawks",
 "league": "NBA",
 "value_m": 5020.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
-},
-{
-"year": 2026,
-"team": "Paris Saint-Germain",
-"league": "France",
-"value_m": 5000.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
@@ -535,6 +535,13 @@
 },
 {
 "year": 2026,
+"team": "Tottenham Hotspur",
+"league": "England",
+"value_m": 4203.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
+"year": 2026,
 "team": "Detroit Pistons",
 "league": "NBA",
 "value_m": 4170.0,
@@ -605,13 +612,6 @@
 },
 {
 "year": 2026,
-"team": "Tottenham Hotspur",
-"league": "England",
-"value_m": 3500.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
-},
-{
-"year": 2026,
 "team": "Montreal Canadiens",
 "league": "NHL",
 "value_m": 3300.0,
@@ -651,6 +651,13 @@
 "league": "NHL",
 "value_m": 2960.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Borussia Dortmund",
+"league": "Germany",
+"value_m": 2912.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -696,6 +703,13 @@
 },
 {
 "year": 2026,
+"team": "Internazionale",
+"league": "Italy",
+"value_m": 2504.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
+"year": 2026,
 "team": "Atlético de Madrid",
 "league": "Spain",
 "value_m": 2500.0,
@@ -724,10 +738,10 @@
 },
 {
 "year": 2026,
-"team": "Borussia Dortmund",
-"league": "Germany",
-"value_m": 2170.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"team": "Juventus",
+"league": "Italy",
+"value_m": 2153.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -735,6 +749,13 @@
 "league": "F1",
 "value_m": 2140.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "AC Milan",
+"league": "Italy",
+"value_m": 2118.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -857,13 +878,6 @@
 },
 {
 "year": 2026,
-"team": "Juventus",
-"league": "Italy",
-"value_m": 1840.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
-},
-{
-"year": 2026,
 "team": "Arizona Diamondbacks",
 "league": "MLB",
 "value_m": 1820.0,
@@ -889,6 +903,13 @@
 "league": "NHL",
 "value_m": 1790.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Newcastle United",
+"league": "England",
+"value_m": 1723.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -941,13 +962,6 @@
 },
 {
 "year": 2026,
-"team": "AC Milan",
-"league": "Italy",
-"value_m": 1660.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
-},
-{
-"year": 2026,
 "team": "Cleveland Guardians",
 "league": "MLB",
 "value_m": 1640.0,
@@ -958,13 +972,6 @@
 "team": "Kansas City Royals",
 "league": "MLB",
 "value_m": 1630.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
-},
-{
-"year": 2026,
-"team": "Internazionale",
-"league": "Italy",
-"value_m": 1620.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
@@ -1001,6 +1008,13 @@
 "league": "NHL",
 "value_m": 1490.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Aston Villa",
+"league": "England",
+"value_m": 1482.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1060,6 +1074,13 @@
 },
 {
 "year": 2026,
+"team": "West Ham United",
+"league": "England",
+"value_m": 1190.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
+"year": 2026,
 "team": "Los Angeles Galaxy",
 "league": "United States",
 "value_m": 1170.0,
@@ -1074,6 +1095,13 @@
 },
 {
 "year": 2026,
+"team": "SSC Napoli",
+"league": "Italy",
+"value_m": 1133.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
+"year": 2026,
 "team": "New York City FC",
 "league": "United States",
 "value_m": 1120.0,
@@ -1081,17 +1109,10 @@
 },
 {
 "year": 2026,
-"team": "Aston Villa",
-"league": "England",
-"value_m": 1040.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
-},
-{
-"year": 2026,
-"team": "Newcastle United",
-"league": "England",
-"value_m": 1020.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"team": "Eintracht Frankfurt",
+"league": "Germany",
+"value_m": 1091.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1116,10 +1137,17 @@
 },
 {
 "year": 2026,
-"team": "West Ham United",
-"league": "England",
-"value_m": 895.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"team": "Benfica",
+"league": "Portugal",
+"value_m": 886.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
+"year": 2026,
+"team": "AS Roma",
+"league": "Italy",
+"value_m": 855.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1130,10 +1158,10 @@
 },
 {
 "year": 2026,
-"team": "AS Roma",
-"league": "Italy",
-"value_m": 840.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"team": "Galatasaray SK",
+"league": "Turkey",
+"value_m": 848.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1151,17 +1179,17 @@
 },
 {
 "year": 2026,
-"team": "SSC Napoli",
-"league": "Italy",
-"value_m": 795.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
-},
-{
-"year": 2026,
 "team": "FC Cincinnati",
 "league": "United States",
 "value_m": 790.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Olympique Marseille",
+"league": "France",
+"value_m": 782.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1200,6 +1228,13 @@
 },
 {
 "year": 2026,
+"team": "Atalanta",
+"league": "Italy",
+"value_m": 748.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
+"year": 2026,
 "team": "Portland Timbers",
 "league": "United States",
 "value_m": 745.0,
@@ -1235,10 +1270,10 @@
 },
 {
 "year": 2026,
-"team": "Eintracht Frankfurt",
-"league": "Germany",
-"value_m": 720.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"team": "PSV Eindhoven",
+"league": "Netherlands",
+"value_m": 724.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1256,10 +1291,10 @@
 },
 {
 "year": 2026,
-"team": "Benfica",
+"team": "FC Porto",
 "league": "Portugal",
-"value_m": 695.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026"
+"value_m": 702.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1332,11 +1367,25 @@
 "source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
 },
 {
+"year": 2026,
+"team": "Feyenoord",
+"league": "Netherlands",
+"value_m": 615.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+},
+{
 "year": 2024,
 "team": "RB Leipzig",
 "league": "Germany",
 "value_m": 610.0,
 "source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+},
+{
+"year": 2026,
+"team": "Lazio",
+"league": "Italy",
+"value_m": 608.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1353,18 +1402,18 @@
 "source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2024,
-"team": "Atalanta",
-"league": "Italy",
-"value_m": 595.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"year": 2026,
+"team": "Lille OSC",
+"league": "France",
+"value_m": 597.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
-"year": 2023,
-"team": "FC Porto",
-"league": "Portugal",
-"value_m": 590.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"year": 2026,
+"team": "Real Sociedad",
+"league": "Spain",
+"value_m": 588.0,
+"source": "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
 },
 {
 "year": 2026,
@@ -1420,13 +1469,6 @@
 "team": "Sevilla FC",
 "league": "Spain",
 "value_m": 535.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
-},
-{
-"year": 2023,
-"team": "Lazio",
-"league": "Italy",
-"value_m": 530.0,
 "source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
 },
 {

@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-18",
-    headline: "Every valuation on one ruler, and the owners to match",
+    headline: "Two valuation houses, and the higher number wins",
     items: [
-      "The valuations board now runs on Sportico's 2026 figures throughout. The big four had been on Forbes and football on Sportico, so sorting them into one column was comparing two different rankings.",
-      "Formula 1, the WNBA and the NWSL join, twenty-seven clubs in all. Ferrari at $6.4B is worth more than the Boston Celtics; the Golden State Valkyries, in their second season, are valued above Brighton and Fulham.",
-      "The Owners board follows, with a control owner researched for each. Kroenke now holds five clubs here across four codes and two countries, Red Bull four, and Ferrari joins Juventus under the Agnelli family.",
-      "Vancouver's Whitecaps join the deals in flight: a bid to buy the club and move it to Las Vegas is live, and MLS has approved nothing.",
+      "The valuations board now carries two houses and shows the higher figure per team, source marked on every row. Sportico covers all 220 clubs; Football Benchmark's enterprise values are the higher number on 26.",
+      "Formula 1, the WNBA and the NWSL join the board, and Galatasaray brings Turkey. Ferrari at $6.4B outvalues the Boston Celtics; Real Madrid, on Football Benchmark's figures, reaches $9.05B.",
+      "The Owners board follows, with a control owner researched for each new club. Kroenke now holds five here across four codes and two countries, Red Bull four, and Ferrari joins Juventus under the Agnelli family.",
+      "Where the two houses disagree, they disagree by a lot. Newcastle is 69% higher on Football Benchmark, Manchester United 8% lower. The tag on each row tells you which one you are reading.",
     ],
   },
   {

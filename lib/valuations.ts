@@ -31,6 +31,10 @@ export type ValuationRow = {
   valueLabel: string;
   year: number | null;
   source: string;
+  /** Short provenance tag for the row, shown next to the figure. The board now
+      takes the HIGHER of the published valuations it holds per team, so which
+      house a figure came from is part of the number, not a footnote. */
+  sourceTag: "Sportico" | "Football Benchmark";
   href: string | null; // canonical team page, when matched
   leagueKey: TeamLink["league"] | null;
   slug: string | null;
@@ -63,9 +67,13 @@ const NAMED_LEAGUES: Record<string, LeagueRoute> = {
   F1: { hub: "/teams/f1", sport: "F1", resolve: null },
 };
 
-// Football country -> league-hub slug under /teams/football/leagues/. The first
-// eight exist today; Liga MX (Mexico) is not built yet but we still link to its
-// canonical hub URL so the link is consistent and ready when the hub ships.
+// Football country -> league-hub slug under /teams/football/leagues/.
+// 🔴 EVERY SLUG HERE MUST BE A HUB THAT IS ACTUALLY BUILT. Mexico used to map to
+// "liga-mx" on the reasoning that the link would be "ready when the hub ships";
+// the hub never shipped, `dynamicParams` is false on that route, and so the
+// three Liga MX rows linked to a 404 for as long as the entry stood. A country
+// with no hub is better served by the /teams/football fallback below, which is
+// a real page. Turkey (added with Galatasaray, 2026-08-18) is in that position.
 const FOOTBALL_COUNTRY_HUB: Record<string, string> = {
   England: "premier-league",
   Spain: "la-liga",
@@ -76,12 +84,21 @@ const FOOTBALL_COUNTRY_HUB: Record<string, string> = {
   Portugal: "primeira-liga",
   Scotland: "scottish-premiership",
   "United States": "mls",
-  Mexico: "liga-mx",
 };
 
 function footballCountryHref(country: string): string {
   const slug = FOOTBALL_COUNTRY_HUB[country];
   return slug ? `/teams/football/leagues/${slug}` : "/teams/football";
+}
+
+// Provenance, derived from the source string the sheet carries. Matched on a
+// distinctive substring rather than the whole label, because the label carries
+// a report title and a date that change with each edition while the house does
+// not. An unrecognised source reads as Sportico, which is the board's default
+// house; if a third source ever lands, add it here or every row of it will be
+// mislabelled silently.
+function sourceTagFor(source: string): ValuationRow["sourceTag"] {
+  return /football benchmark/i.test(source) ? "Football Benchmark" : "Sportico";
 }
 
 export function formatValuationM(m: number): string {
@@ -123,6 +140,7 @@ function build(): { rows: ValuationRow[]; index: Map<string, ValuationRow> } {
       valueLabel: formatValuationM(r.value_m),
       year: r.year,
       source: r.source,
+      sourceTag: sourceTagFor(r.source),
       href: link?.href ?? null,
       leagueKey: link?.league ?? null,
       slug: link?.slug ?? null,
