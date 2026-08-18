@@ -1,7 +1,5 @@
-// Bumped by hand to force a production rebuild that picks up the new
-// ACTIVITY_PASSWORD/ACTIVITY_SESSION_SECRET env vars (env changes only apply
-// to a build that reaches READY; the dashboard redeploy targeted the latest
-// commit, which was [vercel skip]-tagged, so ignoreCommand correctly skipped
-// it and no fresh build ever ran).
-// Not imported anywhere. See mac-mini-jobs/run-deploy-watch.sh.
-export const DEPLOY_RETRY = "activity-gate-rebuild";
+// Bumped by mac-mini-jobs/run-deploy-watch.sh to re-trigger a Vercel build that a
+// concurrent [vercel skip] data push canceled. NOT imported anywhere — it exists
+// only so a re-trigger commit touches a build-relevant path (lib/) and Vercel's
+// ignoreCommand rebuilds the latest code. See run-deploy-watch.sh.
+export const DEPLOY_RETRY = "6ffd9115e-1";
