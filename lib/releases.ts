@@ -19,11 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-18",
-    headline: "Formula 1 teams, and two valuation houses on one board",
+    headline: "Formula 1 teams, where they build, and two valuation houses",
     items: [
       "Formula 1 teams get their own pages, counted as continuous organisations rather than chassis names. Team Lotus's 79 wins sit in one place at last, and Mercedes traces back through Brawn, Honda, BAR and Tyrrell.",
-      "The valuations board now carries two houses and shows the higher figure per team, source marked on every row. Sportico covers all 220 clubs; Football Benchmark's enterprise values are higher on 26 of them.",
-      "Formula 1, the WNBA and the NWSL join that board, and Galatasaray brings Turkey. Ferrari at $6.4B outvalues the Boston Celtics; Real Madrid reaches $9.05B on Football Benchmark's figures.",
+      "Each team now shows where its cars were actually built, town by town and sourced. Ten of the eleven teams racing have a facility in England, and the six English factories fit inside sixty miles.",
+      "The valuations board carries two houses and shows the higher figure per team, source marked on every row. Formula 1, the WNBA and the NWSL join it, and Real Madrid reaches $9.05B on Football Benchmark's figures.",
       "The Owners board follows, with a control owner researched for each new club. Kroenke now holds five here across four codes and two countries, Red Bull four, and Ferrari joins Juventus under the Agnelli family.",
     ],
   },

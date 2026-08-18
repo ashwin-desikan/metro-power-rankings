@@ -31,10 +31,13 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "scripts", "rankings"))
 
 from lineages import ERAS, NOTES  # noqa: E402
+from bases import BASES, NO_BASE  # noqa: E402
 from common import select_all, log  # noqa: E402
 
 DEST = os.path.join(ROOT, "public", "data", "f1", "constructors.json")
 F1_DATA = os.path.join(ROOT, "public", "data", "f1", "data.json")
+METROS = os.path.join(ROOT, "public", "data", "metros.json")
+BASE_METROS = os.path.join(HERE, "curation", "base_metros.json")
 # The constructors' championship did not exist before 1958, so a missing
 # standing before then is expected and must not read as a team failing to score.
 FIRST_CONSTRUCTORS_TITLE = 1958
@@ -61,6 +64,55 @@ def slugify(s):
         elif not prev_dash:
             out.append("-"); prev_dash = True
     return "".join(out).strip("-")
+
+
+def load_bases():
+    """Curated factory sites, joined to the workbook's metro ruling.
+
+    A base whose town the workbook cannot rule on keeps its town and loses its
+    metro link. That is deliberate: the page should say Brackley and say that
+    Brackley has no metro yet, rather than quietly promoting it to Milton
+    Keynes because the two are twenty minutes apart."""
+    resolved = {}
+    if os.path.exists(BASE_METROS):
+        resolved = json.load(open(BASE_METROS, encoding="utf-8")).get("metros", {})
+    else:
+        log("WARNING: no curation/base_metros.json. Run resolve_base_metros.py; "
+            "bases will render without metro links.")
+
+    slug_of, by_name = {}, defaultdict(set)
+    if os.path.exists(METROS):
+        for m in json.load(open(METROS, encoding="utf-8")):
+            slug_of[(m.get("country"), m.get("name"))] = m.get("slug")
+            by_name[m.get("name")].add(m.get("slug"))
+
+    def metro_slug(name, country):
+        s = slug_of.get((country, name))
+        if s:
+            return s
+        # A metro can sit in a different country from the factory: Colnbrook is
+        # in England and its metro is London, which is also in England, but
+        # Fussgonheim's Rhine-Neckar and Niederzissen's Ahrweiler are not
+        # guaranteed to agree on a country string. Fall back on the name only
+        # when it is unambiguous across the whole metro list.
+        cands = by_name.get(name) or set()
+        return sorted(cands)[0] if len(cands) == 1 else None
+
+    out = defaultdict(list)
+    for b in BASES:
+        r = resolved.get(f"{b['country']}|{b['town']}")
+        metro = r["metro"] if r else None
+        out[b["lineage"]].append({
+            "town": b["town"], "region": b["region"], "country": b["country"],
+            "from": b["from"], "to": b["to"], "role": b["role"],
+            "source": b["source"], "contested": b["contested"], "note": b["note"],
+            "metro": metro,
+            "metroSlug": metro_slug(metro, b["country"]) if metro else None,
+            "how": r["how"] if r else None,
+        })
+    for rows in out.values():
+        rows.sort(key=lambda r: (r["role"] != "main", r["from"]))
+    return out
 
 
 def build_index(eras):
@@ -158,6 +210,7 @@ def main():
         return 1
 
     res, meta, stand, cons, circuits = load()
+    bases_by_lin = load_bases()
     idx = build_index(ERAS)
     race_of = {(r["season"], r["round"]): r for r in meta}
     cons_meta = {c["constructor_id"]: c for c in cons}
@@ -309,8 +362,20 @@ def main():
         best_c = sorted(((cid, n, w) for cid, (n, w) in d["circuit"].items()),
                         key=lambda t: (-t[2], -t[1]))[:6]
         last_era = eras[-1]
+        # The team's home now, or the last one it had. A team with only an
+        # engine plant or a design office curated gets no headline base, since
+        # "based in Brixworth" would be false of Mercedes.
+        blist = bases_by_lin.get(lid, [])
+        mains = [b for b in blist if b["role"] == "main"]
+        home = max(mains, key=lambda b: b["from"]) if mains else None
         out.append({
             "slug": lid, "name": last_era["name"],
+            "bases": blist,
+            "base": ({"town": home["town"], "region": home["region"],
+                      "country": home["country"], "metro": home["metro"],
+                      "metroSlug": home["metroSlug"], "since": home["from"],
+                      "until": None if home["to"] >= 9999 else home["to"]}
+                     if home else None),
             "chain": [e["name"] for e in eras],
             "contested": any(e["contested"] for e in eras),
             "first": seasons[0], "last": seasons[-1], "seasons": len(seasons),
@@ -337,6 +402,19 @@ def main():
         })
 
 
+    # 🔴 A BASE ATTACHED TO A LINEAGE THAT DOES NOT EXIST IS SILENT. bases.py is
+    # keyed by lineage id, and a typo there does not crash anything; the row
+    # simply never reaches a page, and the team looks like one nobody bothered
+    # to research. Fatal, in the same spirit as an unassigned result.
+    known = {r["slug"] for r in out}
+    orphan = sorted({b["lineage"] for b in BASES} - known)
+    if orphan:
+        sys.exit(f"FATAL: bases.py names {len(orphan)} lineage(s) that no result "
+                 f"produces: {orphan}. Fix the id or delete the rows.")
+    stale = sorted(set(NO_BASE) - known)
+    if stale:
+        log(f"WARNING: NO_BASE lists {stale}, which are not lineages any more.")
+
     out.sort(key=lambda r: (-r["wins"], -r["races"], r["name"]))
     paged = [r for r in out if r["races"] >= a.min_races or r["wins"] > 0]
     pageable = {r["slug"] for r in paged}
@@ -353,6 +431,9 @@ def main():
             "lineages": len(out), "with_pages": len(paged),
             "constructor_records": len(cons),
             "curated_lineages": curated,
+            "with_base": sum(1 for r in out if r["base"]),
+            "with_base_metro": sum(1 for r in out if r["base"] and r["base"]["metro"]),
+            "base_rows": sum(len(r["bases"]) for r in out),
             "source": ("Ergast/Jolpica results, with team lineages curated in "
                        "scripts/f1/lineages.py"),
         },
@@ -365,6 +446,12 @@ def main():
     log(f"{len(out)} lineages from {len(cons)} constructor records "
         f"({curated} curated, {len(out) - curated} left as themselves)")
     log(f"{len(paged)} earn a page (>= {a.min_races} races or a win)")
+    nb = sum(1 for r in paged if not r["base"])
+    nm = sum(1 for r in paged if r["base"] and not r["base"]["metro"])
+    log(f"bases: {doc['meta']['base_rows']} sites over "
+        f"{doc['meta']['with_base']} lineages; of the {len(paged)} with pages, "
+        f"{nb} have no sourced base and {nm} have a base the workbook cannot "
+        f"place in a metro")
     log(f"-> {DEST} ({kb:.0f} KB)")
     if kb > 1500:
         log("WARNING: over 1.5 MB for a hub tab. Trim victories or seasonRows.")

@@ -3,7 +3,9 @@ import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
-import { getPagedF1Constructors, getF1ConstructorsMeta } from "@/lib/f1Constructors";
+import {
+  getPagedF1Constructors, getF1ConstructorsMeta, getF1MetroClusters,
+} from "@/lib/f1Constructors";
 
 export const dynamicParams = false;
 
@@ -34,6 +36,21 @@ export default function F1ConstructorsPage() {
   const meta = getF1ConstructorsMeta();
   const teams = getPagedF1Constructors();
   const chained = teams.filter((t) => t.chain.length > 1).length;
+  const { clusters, unplaced } = getF1MetroClusters();
+
+  // Counted, not asserted. "Most of the grid is English" is a cliché that has
+  // been repeated past the point of being true, and it is true or false in
+  // three different ways at once, so all three are computed and shown.
+  const racing = teams.filter((t) => t.current);
+  const anyEnglishSite = racing.filter((t) => t.bases.some((b) => b.country === "England"));
+  const worksInEngland = racing.filter((t) => t.base?.country === "England");
+  const headquarteredInEngland = worksInEngland.filter(
+    (t) => !t.bases.some((b) => b.role === "hq" && b.country !== "England"),
+  );
+  const noEnglishSite = racing.filter(
+    (t) => t.bases.length > 0 && !t.bases.some((b) => b.country === "England"),
+  );
+  const topClusters = clusters.slice(0, 12);
 
   const td = "px-3 py-1.5 text-sm";
   const th = "px-3 py-2 text-left text-[11px] uppercase tracking-wider";
@@ -62,6 +79,71 @@ export default function F1ConstructorsPage() {
         </div>
       </header>
 
+      {clusters.length > 0 && (
+        <section className="mb-10">
+          <h2 id="where" className="text-xl font-bold mb-2" style={{ color: "var(--text)" }}>
+            Where Formula 1 is built
+          </h2>
+          <p className="max-w-3xl text-sm leading-relaxed mb-3" style={{ color: "var(--text-muted)" }}>
+            The archive has no address field. It has a nationality field, and that is a racing licence rather than a
+            place: Red Bull is Austrian and has never built a car outside Buckinghamshire. So the factories are
+            curated by hand, with a source per site, and put to the same workbook that decides every other metro on
+            this site.
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
+            Of the {racing.length} teams racing now, <strong style={{ color: "var(--text)" }}>{anyEnglishSite.length}</strong>{" "}
+            have a facility in England
+            {noEnglishSite.length === 1 ? ` and only ${noEnglishSite[0].name} has none` : ""}.{" "}
+            <strong style={{ color: "var(--text)" }}>{worksInEngland.length}</strong> do their car work there, and{" "}
+            <strong style={{ color: "var(--text)" }}>{headquarteredInEngland.length}</strong> are headquartered there
+            outright, the difference being the American teams whose registered offices are in Indiana and North
+            Carolina while the cars are handled in Oxfordshire and Northamptonshire. Those English sites sit inside a
+            circle roughly sixty miles across. The usual claim that the whole grid is English is not true; the claim
+            that almost all of it passes through one small piece of England is, if anything, understated.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {topClusters.map((c) => (
+              <div key={`${c.country}-${c.metro}`} className="rounded-lg p-3 min-w-0" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                <div className="flex items-baseline justify-between gap-2">
+                  {c.metroSlug
+                    ? <Link href={`/rankings/${c.metroSlug}`} className="text-sm font-semibold hover:underline truncate" style={{ color: "var(--text)" }}>{c.metro}</Link>
+                    : <span className="text-sm font-semibold truncate" style={{ color: "var(--text)" }}>{c.metro}</span>}
+                  <span className="text-xs tabular-nums flex-shrink-0" style={{ color: "var(--text-dim)" }}>
+                    {c.teams.length} team{c.teams.length > 1 ? "s" : ""}
+                  </span>
+                </div>
+                <div className="mt-1.5 text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                  {c.teams.slice(0, 8).map((t, i) => (
+                    <span key={t.slug}>
+                      {i > 0 ? ", " : ""}
+                      <Link href={`/teams/f1/constructors/${t.slug}`} className="hover:underline" style={{ color: t.current ? "var(--accent)" : "var(--text-muted)" }}>
+                        {t.name}
+                      </Link>
+                    </span>
+                  ))}
+                  {c.teams.length > 8 ? ` and ${c.teams.length - 8} more` : ""}
+                </div>
+              </div>
+            ))}
+          </div>
+          {unplaced.length > 0 && (
+            <p className="mt-3 max-w-3xl text-xs leading-relaxed" style={{ color: "var(--text-dim)" }}>
+              {unplaced.length} factory town{unplaced.length > 1 ? "s are" : " is"} missing from the grid above
+              because MetroAreas.xlsx carries no Metro Area for{" "}
+              {unplaced.length > 1 ? "them" : "it"}:{" "}
+              {unplaced.map((u, i) => (
+                <span key={`${u.country}-${u.town}`}>
+                  {i > 0 ? "; " : ""}
+                  <strong style={{ color: "var(--text-muted)" }}>{u.town}</strong> ({u.teams.join(", ")})
+                </span>
+              ))}
+              . They are shown as towns rather than reassigned to a neighbouring metro, which is the same rule the
+              rest of the site follows.
+            </p>
+          )}
+        </section>
+      )}
+
       {/* Mobile: cards, capped so a 78-row list does not run to dozens of
           screens the way an uncapped fallback does (DESIGN-STANDARDS). */}
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[80vh] overflow-y-auto overscroll-contain">
@@ -89,6 +171,17 @@ export default function F1ConstructorsPage() {
                 <div className="tabular-nums" style={{ color: "var(--text-dim)" }}>{t.first}&ndash;{t.last}</div>
               </div>
             </div>
+            {t.base && (
+              <div className="mt-2 text-[11px]" style={{ color: "var(--text-muted)" }}>
+                {t.base.town}
+                {t.base.metroSlug ? (
+                  <>
+                    {" · "}
+                    <Link href={`/rankings/${t.base.metroSlug}`} className="hover:underline" style={{ color: "var(--accent)" }}>{t.base.metro}</Link>
+                  </>
+                ) : null}
+              </div>
+            )}
             {t.chain.length > 1 && (
               <div className="mt-2 text-[11px] break-words" style={{ color: "var(--text-dim)" }}>
                 {t.chain.join(" → ")}
@@ -108,6 +201,7 @@ export default function F1ConstructorsPage() {
             <th className={th + " text-right"}>Races</th>
             <th className={th + " text-right"}>Poles</th>
             <th className={th}>Span</th>
+            <th className={th}>Based in</th>
             <th className={th}>Ran as</th>
           </tr></thead>
           <tbody>
@@ -126,6 +220,21 @@ export default function F1ConstructorsPage() {
                 <td className={td + " text-right"} style={{ color: "var(--text-muted)" }}>{t.races}</td>
                 <td className={td + " text-right"} style={{ color: "var(--text-muted)" }}>{t.poles || "—"}</td>
                 <td className={td + " tabular-nums"} style={{ color: "var(--text-dim)" }}>{t.first}&ndash;{t.last}</td>
+                <td className={td + " text-xs whitespace-nowrap"} style={{ color: "var(--text-muted)" }}>
+                  {t.base ? (
+                    <>
+                      {t.base.town}
+                      {t.base.metroSlug ? (
+                        <>
+                          {" · "}
+                          <Link href={`/rankings/${t.base.metroSlug}`} className="hover:underline" style={{ color: "var(--accent)" }}>{t.base.metro}</Link>
+                        </>
+                      ) : null}
+                    </>
+                  ) : (
+                    <span style={{ color: "var(--text-dim)" }}>—</span>
+                  )}
+                </td>
                 <td className={td + " text-xs"} style={{ color: "var(--text-dim)" }}>
                   {t.chain.length > 1 ? t.chain.join(" → ") : "—"}
                 </td>
@@ -156,6 +265,15 @@ export default function F1ConstructorsPage() {
             as such on the teams concerned: whether Racing Point continues Force India through the 2018
             administration, and whether the 1968-69 Matra-Ford wins belong to the chassis constructor or to Ken
             Tyrrell&apos;s team that entered them.
+          </p>
+          <p>
+            Factory locations come from a separate curation, <code>scripts/f1/bases.py</code>, because the archive
+            has no address at all. {meta.base_rows} sites are recorded across {meta.with_base} teams, each with a
+            source and a span of years, and each town is then put to MetroAreas.xlsx. England is stored there as
+            census areas rather than towns, so a town resolves only when the areas whose names contain it agree on
+            one metro. Where they do not, or where the workbook leaves the metro blank, the town is shown on its own
+            and listed above. Brackley and Silverstone are both in that position, which is to say the homes of
+            Mercedes and Aston Martin are two of the gaps.
           </p>
           <p style={{ color: "var(--text-dim)" }}>
             A team earns a page with ten or more races or at least one win. Championship totals count finished

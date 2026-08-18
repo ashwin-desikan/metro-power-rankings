@@ -44,9 +44,46 @@ export type F1TeamCircuit = [string, string | null, string | null, string | null
 /** [season, round, raceName, driver, metro, metroSlug, circuitId] */
 export type F1Victory = [number, number, string | null, string, string | null, string | null, string];
 
+/**
+ * One factory, workshop or engine plant, for one span of years.
+ *
+ * `metro` is null when MetroAreas.xlsx cannot rule on the town, which is not
+ * an edge case: Brackley and Silverstone, the homes of Mercedes and Aston
+ * Martin, both sit in the workbook with a blank Metro Area. The page shows the
+ * town unlinked in that case rather than promoting it to a neighbouring metro.
+ */
+export type F1Base = {
+  town: string;
+  region: string;
+  country: string;
+  from: number;
+  /** 9999 means "still there". */
+  to: number;
+  role: "main" | "engine" | "design" | "hq";
+  source: string;
+  contested: number;
+  note: string;
+  metro: string | null;
+  metroSlug: string | null;
+  /** How the workbook resolved it: exact, word, metro-name and so on. */
+  how: string | null;
+};
+
 export type F1Constructor = {
   slug: string;
   name: string;
+  /** Every curated site, main sites first and then in date order. */
+  bases: F1Base[];
+  /** The current main site, or the last one. Null when none is sourced. */
+  base: {
+    town: string;
+    region: string;
+    country: string;
+    metro: string | null;
+    metroSlug: string | null;
+    since: number;
+    until: number | null;
+  } | null;
   /** Era names in order, e.g. Tyrrell -> BAR -> Honda -> Brawn -> Mercedes. */
   chain: string[];
   contested: boolean;
@@ -87,10 +124,69 @@ export type F1ConstructorsDoc = {
     with_pages: number;
     constructor_records: number;
     curated_lineages: number;
+    with_base: number;
+    with_base_metro: number;
+    base_rows: number;
     source: string;
   };
   lineages: F1Constructor[];
 };
+
+/** A metro with the teams that build, or built, cars in it. */
+export type F1MetroCluster = {
+  metro: string;
+  metroSlug: string | null;
+  country: string;
+  teams: Array<{ slug: string; name: string; town: string; current: boolean }>;
+  current: number;
+};
+
+/**
+ * Teams grouped by the metro of their MAIN site, for the "where Formula 1 is
+ * built" board. Engine plants and design offices are excluded on purpose: a
+ * team belongs to the place its car is designed and made.
+ *
+ * Towns the workbook cannot place are grouped under a null metro and reported,
+ * because pretending Brackley is nowhere would understate England badly.
+ */
+export function getF1MetroClusters(): {
+  clusters: F1MetroCluster[];
+  unplaced: Array<{ town: string; country: string; teams: string[] }>;
+} {
+  const byMetro = new Map<string, F1MetroCluster>();
+  const unplaced = new Map<string, { town: string; country: string; teams: string[] }>();
+  for (const c of getPagedF1Constructors()) {
+    const home = c.base;
+    if (!home) continue;
+    if (!home.metro) {
+      const k = `${home.country}|${home.town}`;
+      if (!unplaced.has(k)) unplaced.set(k, { town: home.town, country: home.country, teams: [] });
+      unplaced.get(k)!.teams.push(c.name);
+      continue;
+    }
+    const k = `${home.country}|${home.metro}`;
+    if (!byMetro.has(k)) {
+      byMetro.set(k, {
+        metro: home.metro, metroSlug: home.metroSlug, country: home.country,
+        teams: [], current: 0,
+      });
+    }
+    const cl = byMetro.get(k)!;
+    cl.teams.push({ slug: c.slug, name: c.name, town: home.town, current: c.current });
+    if (c.current) cl.current += 1;
+  }
+  const clusters = [...byMetro.values()].sort(
+    (a, b) => b.current - a.current || b.teams.length - a.teams.length ||
+      a.metro.localeCompare(b.metro),
+  );
+  for (const cl of clusters) {
+    cl.teams.sort((a, b) => Number(b.current) - Number(a.current) || a.name.localeCompare(b.name));
+  }
+  return {
+    clusters,
+    unplaced: [...unplaced.values()].sort((a, b) => b.teams.length - a.teams.length),
+  };
+}
 
 let _doc: F1ConstructorsDoc | null = null;
 function load(): F1ConstructorsDoc {

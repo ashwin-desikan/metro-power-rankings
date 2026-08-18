@@ -1,0 +1,480 @@
+{
+ "meta": {
+  "places": 69,
+  "refused": 13,
+  "resolved": 56,
+  "rule": "A town resolves only when the workbook rows matching it agree on one non-blank Metro Area. Anything else is refused and listed, never inferred.",
+  "source": "MetroAreas.xlsx, Municipality sheet"
+ },
+ "metros": {
+  "England|Banbury": {
+   "detail": "6 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Banbury",
+   "region": "Oxfordshire"
+  },
+  "England|Bicester": {
+   "detail": "4 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Banbury",
+   "region": "Oxfordshire"
+  },
+  "England|Bromley": {
+   "detail": "5 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Bromley"
+  },
+  "England|Byfleet": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "London",
+   "region": "Surrey"
+  },
+  "England|Cheshunt": {
+   "detail": "3 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Hertfordshire"
+  },
+  "England|Chessington": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Greater London"
+  },
+  "England|Colnbrook": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Slough"
+  },
+  "England|Didcot": {
+   "detail": "4 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Oxford",
+   "region": "Oxfordshire"
+  },
+  "England|Dinnington": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Sheffield",
+   "region": "South Yorkshire"
+  },
+  "England|Edenbridge": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "London",
+   "region": "Kent"
+  },
+  "England|Enstone": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Oxford",
+   "region": "Oxfordshire"
+  },
+  "England|Grove": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Oxford",
+   "region": "Oxfordshire"
+  },
+  "England|Hornsey": {
+   "detail": "3 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Greater London"
+  },
+  "England|Huntingdon": {
+   "detail": "3 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Huntingdon",
+   "region": "Cambridgeshire"
+  },
+  "England|Leafield": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Oxford",
+   "region": "Oxfordshire"
+  },
+  "England|Lichfield": {
+   "detail": "3 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Birmingham",
+   "region": "Staffordshire"
+  },
+  "England|Littlehampton": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Bognor Regis",
+   "region": "West Sussex"
+  },
+  "England|Maidenhead": {
+   "detail": "3 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Windsor and Maidenhead"
+  },
+  "England|Milton Keynes": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Milton Keynes",
+   "region": "Milton Keynes"
+  },
+  "England|New Haw": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Surrey"
+  },
+  "England|Northampton": {
+   "detail": "named as a Metro Area, not as a municipality",
+   "how": "metro-name",
+   "metro": "Northampton",
+   "region": "Northamptonshire"
+  },
+  "England|Reading": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Reading"
+  },
+  "England|Slough": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Slough"
+  },
+  "England|Surbiton": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Greater London"
+  },
+  "England|Towcester": {
+   "detail": "2 row(s), 1 blank",
+   "how": "word",
+   "metro": "Northampton",
+   "region": "Northamptonshire"
+  },
+  "England|Walsall": {
+   "detail": "7 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Birmingham",
+   "region": "West Midlands"
+  },
+  "England|Witney": {
+   "detail": "3 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Oxford",
+   "region": "Oxfordshire"
+  },
+  "England|Woking": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "London",
+   "region": "Surrey"
+  },
+  "France|Antony": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact",
+   "metro": "Paris",
+   "region": "Hauts-de-Seine"
+  },
+  "France|Guyancourt": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact",
+   "metro": "Paris",
+   "region": "Yvelines"
+  },
+  "France|Magny-Cours": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact",
+   "metro": "Nevers",
+   "region": "Nievre"
+  },
+  "France|Signes": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact",
+   "metro": "Toulon",
+   "region": "Var"
+  },
+  "France|Velizy-Villacoublay": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact",
+   "metro": "Paris",
+   "region": "Yvelines"
+  },
+  "France|Viry-Chatillon": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact",
+   "metro": "Paris",
+   "region": "Essonne"
+  },
+  "Germany|Cologne": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Rhine-Ruhr",
+   "region": "North Rhine-Westphalia"
+  },
+  "Germany|Fussgonheim": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Rhine-Neckar",
+   "region": "Rhineland-Palatinate"
+  },
+  "Germany|Niederzissen": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Ahrweiler",
+   "region": "Rhineland-Palatinate"
+  },
+  "Germany|Stuttgart": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Stuttgart",
+   "region": "Baden-Wurttemberg"
+  },
+  "Italy|Alessandria": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Alessandria",
+   "region": "Piedmont"
+  },
+  "Italy|Brescia": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Brescia",
+   "region": "Brescia"
+  },
+  "Italy|Faenza": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Ravenna",
+   "region": "Ravenna"
+  },
+  "Italy|Maranello": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Modena",
+   "region": "Modena"
+  },
+  "Italy|Milan": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Milan",
+   "region": "Milan"
+  },
+  "Italy|Modena": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Modena",
+   "region": "Modena"
+  },
+  "Italy|Palosco": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Milan",
+   "region": "Bergamo"
+  },
+  "Italy|Passignano sul Trasimeno": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Perugia",
+   "region": "Perugia"
+  },
+  "Italy|Senago": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Milan",
+   "region": "Milan"
+  },
+  "Italy|Settimo Milanese": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Milan",
+   "region": "Milan"
+  },
+  "Italy|Varano de' Melegari": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Parma",
+   "region": "Parma"
+  },
+  "Italy|Volpiano": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Turin",
+   "region": "Turin"
+  },
+  "Spain|Alzira": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Valencia",
+   "region": "Valencia"
+  },
+  "Spain|Madrid": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Madrid",
+   "region": "Madrid"
+  },
+  "Spain|Murcia": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Murcia",
+   "region": "Murcia"
+  },
+  "Switzerland|Hinwil": {
+   "detail": "1 row(s), 0 blank",
+   "how": "exact+region",
+   "metro": "Zurich",
+   "region": "Zurich"
+  },
+  "United States|Fishers": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Indianapolis",
+   "region": "Indiana"
+  },
+  "United States|Kannapolis": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Charlotte",
+   "region": "North Carolina"
+  }
+ },
+ "unresolved": [
+  {
+   "country": "England",
+   "detail": "2 row(s), all blank",
+   "lineages": [
+    "brm"
+   ],
+   "region": "Lincolnshire",
+   "town": "Bourne",
+   "why": "no-metro"
+  },
+  {
+   "country": "England",
+   "detail": "2 row(s), all blank",
+   "lineages": [
+    "mercedes"
+   ],
+   "region": "West Northamptonshire",
+   "town": "Brackley",
+   "why": "no-metro"
+  },
+  {
+   "country": "England",
+   "detail": "1 row(s), all blank",
+   "lineages": [
+    "mercedes"
+   ],
+   "region": "West Northamptonshire",
+   "town": "Brixworth",
+   "why": "no-metro"
+  },
+  {
+   "country": "England",
+   "detail": "",
+   "lineages": [
+    "team-lotus"
+   ],
+   "region": "Norfolk",
+   "town": "Hethel",
+   "why": "no-place"
+  },
+  {
+   "country": "England",
+   "detail": "1 row(s), all blank",
+   "lineages": [
+    "caterham"
+   ],
+   "region": "Norfolk",
+   "town": "Hingham",
+   "why": "no-metro"
+  },
+  {
+   "country": "England",
+   "detail": "",
+   "lineages": [
+    "mercedes"
+   ],
+   "region": "Surrey",
+   "town": "Ockham",
+   "why": "no-place"
+  },
+  {
+   "country": "England",
+   "detail": "1 row(s), all blank",
+   "lineages": [
+    "aston-martin",
+    "cadillac-f1-team"
+   ],
+   "region": "West Northamptonshire",
+   "town": "Silverstone",
+   "why": "no-metro"
+  },
+  {
+   "country": "England",
+   "detail": "3 row(s), all blank",
+   "lineages": [
+    "pacific"
+   ],
+   "region": "Norfolk",
+   "town": "Thetford",
+   "why": "no-metro"
+  },
+  {
+   "country": "France",
+   "detail": "1 row(s), all blank",
+   "lineages": [
+    "ligier"
+   ],
+   "region": "Allier",
+   "town": "Abrest",
+   "why": "no-metro"
+  },
+  {
+   "country": "France",
+   "detail": "1 row(s), all blank",
+   "lineages": [
+    "matra"
+   ],
+   "region": "Loir-et-Cher",
+   "town": "Romorantin-Lanthenay",
+   "why": "no-metro"
+  },
+  {
+   "country": "Germany",
+   "detail": "",
+   "lineages": [
+    "audi"
+   ],
+   "region": "Bavaria",
+   "town": "Neuburg an der Donau",
+   "why": "no-place"
+  },
+  {
+   "country": "Japan",
+   "detail": "workbook has no rows for 'Japan'",
+   "lineages": [
+    "honda-works"
+   ],
+   "region": "Tokyo",
+   "town": "Tokyo",
+   "why": "no-country"
+  },
+  {
+   "country": "Netherlands",
+   "detail": "workbook has no rows for 'Netherlands'",
+   "lineages": [
+    "honda-works"
+   ],
+   "region": "North Holland",
+   "town": "Amsterdam",
+   "why": "no-country"
+  }
+ ]
+}

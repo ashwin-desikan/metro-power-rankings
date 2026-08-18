@@ -73,6 +73,17 @@ function Stat({ label, value, sub }: { label: string; value: React.ReactNode; su
   );
 }
 
+/* A site's job, in words a reader can act on. "hq" is deliberately not called
+   headquarters on its own: Haas's Kannapolis headquarters is an office, and
+   calling it the base would put an American team in North Carolina when the
+   race team works in Banbury. */
+const BASE_ROLE: Record<string, string> = {
+  main: "Factory",
+  engine: "Engines",
+  design: "Design and aero",
+  hq: "Registered HQ",
+};
+
 function Section({ id, children }: { id: string; children: React.ReactNode }) {
   return <h2 id={id} className="text-xl font-bold mb-3 mt-10" style={{ color: "var(--text)" }}>{children}</h2>;
 }
@@ -97,6 +108,7 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
   const finishedPct = t.entries ? Math.round((finished / t.entries) * 100) : 0;
   const seasonsDesc = [...t.seasonRows].reverse();
   const notes = t.eras.filter((e) => e.note);
+  const baseNotes = t.bases.filter((b) => b.note);
 
   return (
     <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -121,6 +133,29 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             <> · <a href={t.wikipedia} target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: "var(--accent)" }}>Wikipedia</a></>
           ) : null}
         </p>
+        {t.base && (
+          <p className="mt-1 text-sm" style={{ color: "var(--text-muted)" }}>
+            {t.base.until ? "Last based in " : "Based in "}
+            <strong style={{ color: "var(--text)" }}>{t.base.town}</strong>
+            {t.base.region && t.base.region !== t.base.town ? `, ${t.base.region}` : ""}
+            {`, ${t.base.country}`}
+            {t.base.metro ? (
+              <>
+                {" · "}
+                {t.base.metroSlug
+                  ? <Link href={`/rankings/${t.base.metroSlug}`} className="hover:underline" style={{ color: "var(--accent)" }}>{t.base.metro} metro</Link>
+                  : <span>{t.base.metro} metro</span>}
+              </>
+            ) : (
+              <span style={{ color: "var(--text-dim)" }} title="MetroAreas.xlsx has this town with no Metro Area">
+                {" · no metro in the workbook yet"}
+              </span>
+            )}
+            <span style={{ color: "var(--text-dim)" }}>
+              {t.base.until ? ` (${t.base.since}–${t.base.until})` : ` (since ${t.base.since})`}
+            </span>
+          </p>
+        )}
         {t.chain.length > 1 && (
           <p className="mt-2 text-sm max-w-3xl" style={{ color: "var(--text-muted)" }}>
             One organisation, {t.chain.length} names: <strong style={{ color: "var(--text)" }}>{t.chain.join(" → ")}</strong>.
@@ -216,6 +251,81 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
         </div>
       )}
 
+
+      {t.bases.length > 0 && (
+        <>
+          <Section id="bases">Where the cars were built</Section>
+          <p className="text-sm mb-3 max-w-3xl" style={{ color: "var(--text-muted)" }}>
+            The archive records a team&rsquo;s nationality, which is a racing licence rather than an address: Red Bull
+            is Austrian and has never built a car outside Buckinghamshire. These are the actual sites, curated with a
+            source for each, and each one placed in a metro where the workbook can rule on the town.
+          </p>
+          <div className="rounded-lg overflow-x-auto hidden sm:block" style={{ border: "1px solid var(--border)" }}>
+            <table className="w-full border-collapse">
+              <thead><tr style={headStyle}>
+                <th className={th}>Years</th><th className={th}>Town</th>
+                <th className={th}>Metro</th><th className={th}>Role</th><th className={th}>Source</th>
+              </tr></thead>
+              <tbody>
+                {t.bases.map((b, i) => (
+                  <tr key={`${b.town}-${b.from}-${i}`} style={rowBorder}>
+                    <td className={td + " tabular-nums whitespace-nowrap"} style={{ color: "var(--text-dim)" }}>
+                      {b.to >= 9999 ? `${b.from}–` : `${b.from}–${b.to}`}
+                    </td>
+                    <td className={td} style={{ color: "var(--text)" }}>
+                      {b.town}
+                      <span className="text-xs" style={{ color: "var(--text-dim)" }}>
+                        {b.region && b.region !== b.town ? `, ${b.region}` : ""}, {b.country}
+                      </span>
+                      {b.contested === 1 && (
+                        <span className="ml-1.5 text-[9px] px-1 rounded uppercase tracking-wider" style={{ background: "rgba(234,179,8,0.16)", color: "var(--text-muted)" }} title="Sources disagree; see the note below">arguable</span>
+                      )}
+                    </td>
+                    <td className={td}>
+                      {b.metro && b.metroSlug
+                        ? <Link href={`/rankings/${b.metroSlug}`} className="hover:underline" style={{ color: "var(--accent)" }}>{b.metro}</Link>
+                        : b.metro
+                          ? <span style={{ color: "var(--text-muted)" }}>{b.metro}</span>
+                          : <span style={{ color: "var(--text-dim)" }} title="MetroAreas.xlsx carries this town with no Metro Area">not in the workbook</span>}
+                    </td>
+                    <td className={td} style={{ color: "var(--text-muted)" }}>{BASE_ROLE[b.role]}</td>
+                    <td className={td}>
+                      <a href={b.source} target="_blank" rel="noopener noreferrer" className="text-xs hover:underline" style={{ color: "var(--accent)" }}>source</a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {t.bases.map((b, i) => (
+              <div key={`${b.town}-${b.from}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="text-sm font-medium min-w-0 truncate" style={{ color: "var(--text)" }}>{b.town}</span>
+                  <span className="text-xs tabular-nums flex-shrink-0" style={{ color: "var(--text-dim)" }}>
+                    {b.to >= 9999 ? `${b.from}–` : `${b.from}–${b.to}`}
+                  </span>
+                </div>
+                <div className="mt-1 text-xs" style={{ color: "var(--text-muted)" }}>
+                  {BASE_ROLE[b.role]} ·{" "}
+                  {b.metro && b.metroSlug
+                    ? <Link href={`/rankings/${b.metroSlug}`} className="hover:underline" style={{ color: "var(--accent)" }}>{b.metro}</Link>
+                    : <span style={{ color: "var(--text-dim)" }}>{b.metro ?? "no metro yet"}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+          {baseNotes.length > 0 && (
+            <ul className="mt-3 space-y-2 max-w-3xl">
+              {baseNotes.map((b, i) => (
+                <li key={`${b.town}-bn-${i}`} className="text-[13px] leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                  <strong style={{ color: "var(--text)" }}>{b.town}.</strong> {b.note}
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
+      )}
 
       <Section id="reliability">Getting to the finish</Section>
       <p className="text-sm mb-3 max-w-3xl" style={{ color: "var(--text-muted)" }}>
@@ -365,6 +475,13 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             the time and are not comparable across eras: a win was worth 8 points in 1960 and 25 today. Titles count
             finished seasons only, so leading the current championship does not yet count as one.
           </p>
+          {t.bases.length > 0 && (
+            <p>
+              Factory locations are curated separately, in <code>scripts/f1/bases.py</code>, with a source per site.
+              The archive has no address field at all. Each town is then put to MetroAreas.xlsx, and a town the
+              workbook cannot rule on is shown without a metro rather than assigned to the nearest one.
+            </p>
+          )}
         </div>
       </section>
     </main>
