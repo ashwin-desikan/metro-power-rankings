@@ -5612,3 +5612,55 @@ The first build failed on `RELEASE_NOTES_VIOLATION (2026-08-18): bullet is 227 c
 3. `citigroup` 1995-1998 still wants Ashwin's ruling.
 4. Lucent/Louisville and Union Pacific/Omaha placement bugs.
 5. The eight carried valuation rows are dated 2023-2025 but their Source column claims Sportico's 2026 soccer list. Pre-existing; no source was invented to fix it.
+
+
+## 2026-08-18 (third block) -- windows -> next session (Football Benchmark joins the valuations board, and the higher figure wins)
+
+Third and last block of the day. **COMMITTED BUT NOT PUSHED**: today's two-build allowance was already spent on the Sportico load and the owners catch-up, so this is sitting on `main` locally waiting for Ashwin to say whether to spend a third build today or hold until tomorrow. `npm run verify` is clean, twice.
+
+### The ruling
+
+Ashwin asked why the board was not using Football Benchmark's *The European Elite 2026*, and supplied both the figures and the methodology page. His ruling after the options were laid out: **Football Benchmark is the primary European football source, the board shows the higher published valuation per team regardless of source, and every row says which source it is.**
+
+Twenty rows switch to Football Benchmark, six keep Sportico's larger figure, six clubs are new. Board goes 214 -> 220, seventeen leagues and countries, 26 rows on Football Benchmark.
+
+### 🔴 THEY ARE NOT MEASURING THE SAME QUANTITY, WHICH IS WHY THE MARKER IS LOAD-BEARING
+
+Football Benchmark's own methodology page defines EV as "the sum of the market value of the owners' equity, plus total debt, less cash and cash equivalents... regardless of the capital structure used to finance its operations". It is the **midpoint of a range**, built from filed statutory accounts with player trading stripped out of revenue. Sportico publishes a franchise value and does not state its basis.
+
+So the board's own description changed with it: it is now "the **highest** published valuation we hold per team", not "the latest". The page says that in the first sentence, and the per-row SP/FB tag is what makes the claim checkable instead of asserted.
+
+**The disagreements are large and they do not run one way.** Newcastle +69% on FB, Inter +55%, Eintracht +52%, Napoli +43%, Aston Villa +42%. But Manchester United is 8% LOWER on FB, Chelsea 11% lower, Ajax 17% lower. That kills the tempting explanation that including debt just inflates everything: United is the most indebted club in the sample and comes out smaller. These are two different models, not one with an adjustment.
+
+### 🔴 THE KNOWN COST OF THE HIGHER-OF RULE, RECORDED SO NOBODY REDISCOVERS IT
+
+Only the **26 clubs both houses cover** can be lifted by taking a maximum. **Eleven European clubs sit on one source alone and cannot move**: Everton, Brighton, Lyon, Fulham, Crystal Palace, Brentford, Leeds, Sunderland, Bournemouth, RB Leipzig, Sevilla.
+
+Concretely, Everton at 1,000 now sits BELOW West Ham at 1,190, where a single ruler puts Everton ahead. Some of the order around that band therefore reflects who got measured rather than what a club is worth. This was flagged to Ashwin before the work started, he took the trade knowingly, the page states it in the footnotes, and `load_football_benchmark_2026.py` prints the affected eleven on every run so it stays visible.
+
+### 🔴 A LEAGUE-HUB SLUG THAT WAS NEVER BUILT HAD BEEN LINKING TO A 404
+
+`FOOTBALL_COUNTRY_HUB` mapped `Mexico: "liga-mx"` with a comment saying the link was "ready when the hub ships". It never shipped. `dynamicParams` is false on `/teams/football/leagues/[slug]`, only nine hubs are actually built, and so the three Liga MX rows had been pointing at a 404 for as long as the entry stood. Entry removed; those rows now fall back to `/teams/football`, which is a real page.
+
+**Turkey is deliberately left unmapped for the same reason** rather than pointed at a `super-lig` slug that does not exist. The rule is now written into the file: every slug in that map must be a hub that is actually built. Verified after the build with `h.count("liga-mx") == 0`.
+
+### The naming trap did not bite twice
+
+The six new clubs are named from `public/data/football/index.json`, not from the report: **Olympique Marseille** (not "Olympique de Marseille"), **Lille OSC** (not "LOSC Lille"), PSV Eindhoven, Feyenoord, Real Sociedad, Galatasaray SK. This morning's CF Montréal accent trap is the same failure mode and it cost a round trip; checking the names against the data first cost nothing.
+
+**Galatasaray SK still renders unlinked**, because it is genuinely absent from the football club dataset, appearing only in `european-tournaments.json`. That is a real coverage gap rather than a naming error, and it is the honest rendering. Eleven rows are unlinked in total: ten F1 constructors plus Galatasaray.
+
+### Owners kept in step this time
+
+Six owner rows authored in the same sitting, because the lesson from block two is that a valuations load and an owners load are one unit of work. Four of the six are not investor-owned and the rows say so precisely: **Stichting PSV Voetbal** and **Stichting Continuïteit Feyenoord** are foundations holding golden shares over an N.V.; **Galatasaray Spor Kulübü Derneği** is a members' association controlling a listed company through a dual-class structure where the Class A shares alone appoint 15 of 16 board seats; **Real Sociedad** is a Sociedad Anónima Deportiva with a statutory shareholding cap near 2% and no controlling holder, which is filed as a members' association with the legal form corrected in the note. Lille is graded cross-checked rather than sourced because its cap table is not disclosed and the only primary record is the 2020 Merlyn acquisition.
+
+Board: 220 franchises, 175 owner entities, 36 multi-club, 110 sourced, 100 cross-checked, 10 contested.
+
+### Open
+
+1. **Push this**, once Ashwin rules on the third build. Commits are ordered correctly: handoff first, build-relevant last.
+2. **F1 constructor pages: phase one approved, scoped, NOT BUILT.** [[project_f1_constructor_pages_scoping_2026_08_18]]
+3. Rankings headline-name tier: chronology researched and sourced, nothing authored. [[project_rankings_headline_names_2026_08_18]]
+4. `citigroup` 1995-1998 wants Ashwin's ruling; Lucent/Louisville and Union Pacific/Omaha placement bugs.
+5. **A Süper Lig hub would earn its keep now** that Galatasaray is on the board, and a Galatasaray entry in the football club dataset would make the row link.
+6. The five remaining carried rows (Lyon, Bournemouth, RB Leipzig, Sevilla, Monterrey) still carry a Source label naming a Sportico list that did not rank them. Pre-existing; no source invented to fix it.
