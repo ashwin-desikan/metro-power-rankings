@@ -5711,3 +5711,75 @@ Page weight 68 KB to 514 KB, against 284-295 KB for the existing circuit pages, 
 3. Phase three: per-round standings, pit stops (2011+, the only widely available metric that is purely a TEAM performance), qualifying sessions (2003+).
 4. **A Galatasaray entry in the football club dataset**, and a Süper Lig hub, would make that valuations row link.
 5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling. Lucent/Louisville and Union Pacific/Omaha placement bugs.
+
+---
+
+## 2026-08-18 (windows, late evening) — F1 phase two: where the cars are actually built
+
+Commit `ad112eed5`, on top of the phase-one constructor pages. **Five commits now sit unpushed.** `npm run verify` clean, 5,058 pages.
+
+### The archive has no address field
+
+It has a `nationality` field, and that is a racing licence rather than a place. Red Bull is "Austrian" and has never built a car outside Buckinghamshire. Haas is "American" and works in Banbury and Maranello. Racing Bulls is "Italian" and does its aerodynamics in Milton Keynes. A metro site cannot use nationality for anything, so the geography is curated, the same shape as `era_names.csv` and `hq_spans_master.csv`.
+
+`scripts/f1/bases.py` — **83 sites over 49 lineages**, each with a town, a county, a dated span, a role (main / engine / design / hq) and a source URL. `NO_BASE` records the six teams left out ON PURPOSE, so a gap reads as a decision. De Tomaso is almost certainly Modena and is still left out, because "almost certainly" is exactly how the Wikidata HQ backfill went wrong.
+
+`scripts/f1/resolve_base_metros.py` — puts each town to `MetroAreas.xlsx` and refuses rather than guesses. **56 of 69 places resolve.**
+
+### 🔴 THE COLUMN IS NOT CALLED "Region"
+
+The Municipality sheet's county column is headed **`Distri rrondissement/County`** (sic). There IS a column called `Region (ISO 3166-2)` and it is **blank for England**. Looking for the obvious name finds a real column, reads empty, raises nothing, and silently disables every disambiguation.
+
+What that produced: **BRM's Bourne, in Lincolnshire, which has no Metro Area, resolved to London** — via *Bourne End* in Buckinghamshire. Both columns are read now, and a region hint naming a county the workbook actually knows **forbids the unscoped fallback outright**. Anything else reading this sheet needs the same correction.
+
+### How the resolver decides
+
+England is stored as **MSOAs, not towns**: Mercedes' home is "Brackley North" and "Brackley South", Alpine's is "Kingham, Enstone & Middle Barton". So a town resolves only if it appears as a WORD inside MSOA names that agree on one non-blank metro. Exact-then-word, region-scoped first; a pass that finds candidates but cannot agree **stops** rather than loosening. Last resort, and not an inference: a town that is itself a **Metro Area name** with no municipality row is taken as that metro, which is how Shadow's Northampton resolves.
+
+### 🔴 THIRTEEN TOWNS NEED A WORKBOOK RULING
+
+Blank Metro Area, or absent entirely. The two that matter are the two that matter most:
+
+| Town | County | Team |
+|---|---|---|
+| **Brackley** | West Northamptonshire | **Mercedes** |
+| **Silverstone** | West Northamptonshire | **Aston Martin, Cadillac** |
+| Brixworth | West Northamptonshire | Mercedes (engines) |
+| Bourne | Lincolnshire | BRM |
+| Thetford / Hingham / Hethel | Norfolk | Pacific / Caterham / Team Lotus |
+| Ockham | Surrey | Tyrrell |
+| Abrest / Romorantin-Lanthenay | Allier / Loir-et-Cher | Ligier / Matra |
+| Neuburg an der Donau | Bavaria | Audi (engines) |
+| Tokyo, Amsterdam | — | Honda works 1964-66 |
+
+**The workbook has no Japan rows and no Netherlands rows at all.** Mercedes currently shows three sites and not one metro among them.
+
+### ⚠️ MY MOTORSPORT VALLEY LINE WAS WRONG, AND SO IS THE CLICHÉ
+
+The phase-one note flagged "six or seven of the 2026 grid within eighty miles of Oxford" as unverified. Checked, it is three numbers rather than one, and the page **computes all three from the data** so they cannot go stale:
+
+- **10 of 11** teams racing have a facility in England. **Only Ferrari has none.**
+- **8 of 11** do their car work there — the six English teams plus Haas at Banbury and Cadillac running the 2026 car from Silverstone.
+- **6 of 11** are headquartered there outright, and that number is **falling**: Audi and Cadillac joined with designated bases elsewhere, so it went 6/10 to 6/11.
+- The six English factories fit inside a circle **~60 miles across centred near Bicester**.
+
+So "most of the grid is English" is weakening and must never be asserted flatly. "Almost all of it passes through one small piece of England" is, if anything, understated.
+
+### Judgement calls a reader could dispute
+
+- **Haas's main site is Banbury, not Kannapolis**, which is `role: "hq"`. Same for Cadillac: Silverstone main, Fishers hq. Reverse those and the index counts move by two.
+- **Ligier to Magny-Cours dated 1988, marked contested.** The 1990/91 dates that circulate belong to the circuit's rebuild and the French GP moving there.
+- **Ensign 1981-82 is Lichfield, marked contested** — sources split between Chasetown and Trent Valley Road, four miles apart.
+- Vanwall is **Cox Green, Maidenhead**; Acton was Vandervell Products, the bearing company that paid for it.
+
+### On the pages
+
+A "Based in" line and a sites table per team; a **Based in** column on the index; and a **Where Formula 1 is built** board grouping teams by the metro of their main site, with the five unplaceable towns named rather than hidden. `getF1MetroClusters()` ignores engine plants and design offices on purpose: a team belongs where its car is designed and made.
+
+### Open
+
+1. **Five commits want a build.** `ad112eed5` is build-relevant and must stay at the push HEAD. **If it ships after midnight, move the `lib/releases.ts` date off 2026-08-18.**
+2. **The thirteen-town ruling above.** Brackley and Silverstone are the ones worth doing first.
+3. Phase three: per-round standings, pit stops (2011+, the only widely available metric that is purely a TEAM performance), qualifying sessions (2003+).
+4. A Galatasaray entry in the football club dataset, and a Süper Lig hub, would make that valuations row link.
+5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling. Lucent/Louisville and Union Pacific/Omaha placement bugs.
