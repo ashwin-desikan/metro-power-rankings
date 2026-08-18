@@ -11,7 +11,7 @@ const PAGE_PATH = "/sports/valuations";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Team Valuations";
 const PAGE_DESCRIPTION =
-  "Estimated franchise valuations across the NFL, NBA, MLB, NHL and global football, on one sortable board. Forbes for US leagues, Sportico for football.";
+  "Estimated franchise valuations across the NFL, NBA, MLB, NHL, global football, Formula 1 and the WNBA, on one sortable board. Sportico's 2026 figures throughout.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -52,8 +52,9 @@ export default function ValuationsPage() {
         </div>
         <h1 className="text-4xl font-bold tracking-tight mb-2">Team Valuations</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Estimated franchise valuations across the big four North American leagues and global football, on one
-          sortable board. US figures are Forbes&apos; latest; football figures are Sportico&apos;s. Click any team to
+          Estimated franchise valuations across the big four North American leagues, global football, Formula 1
+          and the WNBA, on one sortable board. Every figure is Sportico&apos;s, so the sort is a single ranking
+          rather than several interleaved. Click any team to
           open its page; the same figure appears on each team&apos;s page and links back here. Every row also
           carries its control owner &mdash; see{" "}
           <Link href="/sports/owners" className="text-[var(--accent)] hover:underline">The Owners</Link> for the
@@ -73,9 +74,11 @@ export default function ValuationsPage() {
 
       <p className="text-xs text-[var(--text-dim)] mt-8 max-w-3xl">
         Curated, non-exhaustive snapshot — the latest published valuation per team, not a full league-by-league
-        ranking. Sources: Forbes (NFL/NBA/MLB/NHL, 2025) and Sportico&apos;s 2026 most-valuable football-club
-        valuations (with the country shown in place of a league). Figures in USD; values shown in billions above
-        $1B, otherwise millions.
+        ranking. Source: Sportico&apos;s 2026 Most Valuable Sports Franchises, which ranks 206 clubs across the
+        big four, football, Formula 1, the WNBA and the NWSL on one methodology. Football rows show the
+        country in place of a league. Eight clubs Sportico did not rank this year keep their last published
+        figure, and the year column says so. Formula 1 constructors have no team page here yet, so those rows
+        do not link. Figures in USD; values shown in billions above $1B, otherwise millions.
       </p>
     </main>
   );

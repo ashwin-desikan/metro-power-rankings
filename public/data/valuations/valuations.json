@@ -1,1118 +1,1195 @@
 {
-"generated": "2026-08-16T10:03:03",
+"generated": "2026-08-18T06:58:01",
 "rows": [
 {
-"year": 2025,
+"year": 2026,
 "team": "Dallas Cowboys",
 "league": "NFL",
-"value_m": 13000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 15500.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Golden State Warriors",
-"league": "NBA",
-"value_m": 11000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Los Angeles Rams",
 "league": "NFL",
-"value_m": 10500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 12700.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
 "team": "New York Giants",
 "league": "NFL",
-"value_m": 10100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 12000.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
+"team": "Golden State Warriors",
+"league": "NBA",
+"value_m": 11330.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New England Patriots",
+"league": "NFL",
+"value_m": 10400.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New York Jets",
+"league": "NFL",
+"value_m": 10350.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Philadelphia Eagles",
+"league": "NFL",
+"value_m": 10310.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "San Francisco 49ers",
+"league": "NFL",
+"value_m": 10210.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Miami Dolphins",
+"league": "NFL",
+"value_m": 10150.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Las Vegas Raiders",
+"league": "NFL",
+"value_m": 10100.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
 "team": "Los Angeles Lakers",
 "league": "NBA",
 "value_m": 10000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
 "team": "New York Knicks",
 "league": "NBA",
-"value_m": 9750.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 9850.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "New England Patriots",
+"year": 2026,
+"team": "Atlanta Falcons",
 "league": "NFL",
-"value_m": 9000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 9780.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "San Francisco 49ers",
+"year": 2026,
+"team": "Washington Commanders",
 "league": "NFL",
-"value_m": 8600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 9640.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Philadelphia Eagles",
+"year": 2026,
+"team": "Seattle Seahawks",
 "league": "NFL",
-"value_m": 8300.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 9610.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "New York Yankees",
-"league": "MLB",
-"value_m": 8200.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"year": 2026,
+"team": "Houston Texans",
+"league": "NFL",
+"value_m": 9520.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
 "team": "Chicago Bears",
 "league": "NFL",
+"value_m": 9450.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New York Yankees",
+"league": "MLB",
+"value_m": 9400.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Denver Broncos",
+"league": "NFL",
+"value_m": 9180.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Los Angeles Dodgers",
+"league": "MLB",
+"value_m": 9050.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Kansas City Chiefs",
+"league": "NFL",
+"value_m": 8740.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Pittsburgh Steelers",
+"league": "NFL",
+"value_m": 8700.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Tampa Bay Buccaneers",
+"league": "NFL",
+"value_m": 8680.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Los Angeles Chargers",
+"league": "NFL",
+"value_m": 8650.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Tennessee Titans",
+"league": "NFL",
+"value_m": 8620.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Cleveland Browns",
+"league": "NFL",
+"value_m": 8600.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Green Bay Packers",
+"league": "NFL",
+"value_m": 8590.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Minnesota Vikings",
+"league": "NFL",
+"value_m": 8260.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Baltimore Ravens",
+"league": "NFL",
 "value_m": 8200.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "New York Jets",
+"year": 2026,
+"team": "Buffalo Bills",
 "league": "NFL",
-"value_m": 8100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 8130.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Las Vegas Raiders",
+"year": 2026,
+"team": "Carolina Panthers",
 "league": "NFL",
-"value_m": 7700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 8070.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Detroit Lions",
+"league": "NFL",
+"value_m": 8020.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Arizona Cardinals",
+"league": "NFL",
+"value_m": 8000.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Jacksonville Jaguars",
+"league": "NFL",
+"value_m": 7910.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Indianapolis Colts",
+"league": "NFL",
+"value_m": 7770.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Real Madrid",
 "league": "Spain",
 "value_m": 7700.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Washington Commanders",
+"year": 2026,
+"team": "New Orleans Saints",
 "league": "NFL",
-"value_m": 7600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 7590.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Los Angeles Clippers",
-"league": "NBA",
-"value_m": 7500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Miami Dolphins",
-"league": "NFL",
-"value_m": 7500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Houston Texans",
+"year": 2026,
+"team": "Cincinnati Bengals",
 "league": "NFL",
 "value_m": 7400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Los Angeles Dodgers",
-"league": "MLB",
-"value_m": 6800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Denver Broncos",
-"league": "NFL",
-"value_m": 6800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Boston Celtics",
+"year": 2026,
+"team": "Los Angeles Clippers",
 "league": "NBA",
-"value_m": 6700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Seattle Seahawks",
-"league": "NFL",
-"value_m": 6700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Green Bay Packers",
-"league": "NFL",
-"value_m": 6650.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 6720.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "FC Barcelona",
 "league": "Spain",
 "value_m": 6650.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Tampa Bay Buccaneers",
-"league": "NFL",
-"value_m": 6600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"year": 2026,
+"team": "Boston Red Sox",
+"league": "MLB",
+"value_m": 6650.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Pittsburgh Steelers",
-"league": "NFL",
-"value_m": 6500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"year": 2026,
+"team": "Chicago Cubs",
+"league": "MLB",
+"value_m": 6480.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Manchester United",
 "league": "England",
 "value_m": 6470.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Cleveland Browns",
-"league": "NFL",
+"year": 2026,
+"team": "Ferrari",
+"league": "F1",
 "value_m": 6400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Atlanta Falcons",
-"league": "NFL",
+"year": 2026,
+"team": "Boston Celtics",
+"league": "NBA",
 "value_m": 6350.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Tennessee Titans",
-"league": "NFL",
-"value_m": 6300.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"year": 2026,
+"team": "Brooklyn Nets",
+"league": "NBA",
+"value_m": 6220.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Minnesota Vikings",
-"league": "NFL",
-"value_m": 6250.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Kansas City Chiefs",
-"league": "NFL",
-"value_m": 6200.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Baltimore Ravens",
-"league": "NFL",
-"value_m": 6100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Chicago Bulls",
 "league": "NBA",
-"value_m": 6000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 6120.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Los Angeles Chargers",
-"league": "NFL",
-"value_m": 6000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Buffalo Bills",
-"league": "NFL",
-"value_m": 5950.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Houston Rockets",
+"year": 2026,
+"team": "Miami Heat",
 "league": "NBA",
-"value_m": 5900.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 6030.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Indianapolis Colts",
-"league": "NFL",
-"value_m": 5900.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"year": 2026,
+"team": "Mercedes",
+"league": "F1",
+"value_m": 5880.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Bayern Munich",
 "league": "Germany",
 "value_m": 5780.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Liverpool",
 "league": "England",
 "value_m": 5740.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
-},
-{
-"year": 2025,
-"team": "Miami Heat",
-"league": "NBA",
-"value_m": 5700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Carolina Panthers",
-"league": "NFL",
-"value_m": 5700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Manchester City",
 "league": "England",
 "value_m": 5700.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Brooklyn Nets",
-"league": "NBA",
-"value_m": 5600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Jacksonville Jaguars",
-"league": "NFL",
-"value_m": 5600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Arizona Cardinals",
-"league": "NFL",
-"value_m": 5500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Philadelphia 76ers",
 "league": "NBA",
-"value_m": 5450.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 5610.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Houston Rockets",
+"league": "NBA",
+"value_m": 5530.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Arsenal",
 "league": "England",
 "value_m": 5430.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Phoenix Suns",
-"league": "NBA",
-"value_m": 5425.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Toronto Raptors",
-"league": "NBA",
-"value_m": 5400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Detroit Lions",
-"league": "NFL",
-"value_m": 5400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "New Orleans Saints",
-"league": "NFL",
-"value_m": 5300.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Cincinnati Bengals",
-"league": "NFL",
-"value_m": 5250.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Dallas Mavericks",
 "league": "NBA",
-"value_m": 5100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 5240.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
+"team": "Toronto Raptors",
+"league": "NBA",
+"value_m": 5220.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Phoenix Suns",
+"league": "NBA",
+"value_m": 5090.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
 "team": "Atlanta Hawks",
 "league": "NBA",
-"value_m": 5000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 5020.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Paris Saint-Germain",
 "league": "France",
 "value_m": 5000.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Boston Red Sox",
-"league": "MLB",
-"value_m": 4800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Cleveland Cavaliers",
-"league": "NBA",
-"value_m": 4800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Washington Wizards",
-"league": "NBA",
-"value_m": 4700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Chicago Cubs",
-"league": "MLB",
-"value_m": 4600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Denver Nuggets",
-"league": "NBA",
-"value_m": 4600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Sacramento Kings",
 "league": "NBA",
-"value_m": 4450.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 5000.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "San Antonio Spurs",
+"year": 2026,
+"team": "Cleveland Cavaliers",
 "league": "NBA",
-"value_m": 4400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 4860.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Toronto Maple Leafs",
-"league": "NHL",
-"value_m": 4400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Oklahoma City Thunder",
+"year": 2026,
+"team": "Denver Nuggets",
 "league": "NBA",
-"value_m": 4350.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 4800.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
+"team": "Washington Wizards",
+"league": "NBA",
+"value_m": 4780.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Indiana Pacers",
+"league": "NBA",
+"value_m": 4760.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "McLaren",
+"league": "F1",
+"value_m": 4730.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
 "team": "Milwaukee Bucks",
 "league": "NBA",
-"value_m": 4300.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 4540.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
+"team": "San Antonio Spurs",
+"league": "NBA",
+"value_m": 4500.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "San Francisco Giants",
+"league": "MLB",
+"value_m": 4360.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Oklahoma City Thunder",
+"league": "NBA",
+"value_m": 4340.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Red Bull Racing",
+"league": "F1",
+"value_m": 4320.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Utah Jazz",
+"league": "NBA",
+"value_m": 4270.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
 "team": "Portland Trail Blazers",
 "league": "NBA",
 "value_m": 4250.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Indiana Pacers",
-"league": "NBA",
-"value_m": 4200.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Utah Jazz",
-"league": "NBA",
-"value_m": 4100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "San Francisco Giants",
-"league": "MLB",
-"value_m": 4000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "New York Rangers",
+"year": 2026,
+"team": "Toronto Maple Leafs",
 "league": "NHL",
-"value_m": 4000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 4250.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Minnesota Timberwolves",
+"league": "NBA",
+"value_m": 4240.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Orlando Magic",
+"league": "NBA",
+"value_m": 4210.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Detroit Pistons",
+"league": "NBA",
+"value_m": 4170.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Charlotte Hornets",
+"league": "NBA",
+"value_m": 4130.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Atlanta Braves",
+"league": "MLB",
+"value_m": 4110.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New Orleans Pelicans",
+"league": "NBA",
+"value_m": 4020.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Chelsea",
 "league": "England",
 "value_m": 4000.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Orlando Magic",
-"league": "NBA",
-"value_m": 3900.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Charlotte Hornets",
-"league": "NBA",
-"value_m": 3800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Detroit Pistons",
-"league": "NBA",
-"value_m": 3650.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Minnesota Timberwolves",
-"league": "NBA",
-"value_m": 3600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "New Orleans Pelicans",
-"league": "NBA",
-"value_m": 3550.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Memphis Grizzlies",
 "league": "NBA",
-"value_m": 3500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 4000.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Philadelphia Phillies",
+"league": "MLB",
+"value_m": 3750.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Houston Astros",
+"league": "MLB",
+"value_m": 3650.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New York Rangers",
+"league": "NHL",
+"value_m": 3650.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New York Mets",
+"league": "MLB",
+"value_m": 3580.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Tottenham Hotspur",
 "league": "England",
 "value_m": 3500.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
 "team": "Montreal Canadiens",
 "league": "NHL",
-"value_m": 3400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 3300.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "New York Mets",
-"league": "MLB",
-"value_m": 3200.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Edmonton Oilers",
-"league": "NHL",
-"value_m": 3200.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Philadelphia Phillies",
+"year": 2026,
+"team": "San Diego Padres",
 "league": "MLB",
 "value_m": 3100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Los Angeles Kings",
-"league": "NHL",
-"value_m": 3100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Atlanta Braves",
-"league": "MLB",
-"value_m": 3000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Boston Bruins",
-"league": "NHL",
-"value_m": 2900.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Houston Astros",
-"league": "MLB",
-"value_m": 2800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Chicago Blackhawks",
-"league": "NHL",
-"value_m": 2800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Los Angeles Angels",
-"league": "MLB",
-"value_m": 2750.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Philadelphia Flyers",
-"league": "NHL",
-"value_m": 2700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "St. Louis Cardinals",
 "league": "MLB",
-"value_m": 2550.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 3030.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Washington Capitals",
-"league": "NHL",
-"value_m": 2550.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"year": 2026,
+"team": "Aston Martin",
+"league": "F1",
+"value_m": 3000.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Detroit Red Wings",
+"year": 2026,
+"team": "Boston Bruins",
 "league": "NHL",
-"value_m": 2500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 3000.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Los Angeles Kings",
+"league": "NHL",
+"value_m": 2960.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Toronto Blue Jays",
+"league": "MLB",
+"value_m": 2900.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Los Angeles Angels",
+"league": "MLB",
+"value_m": 2780.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Texas Rangers",
+"league": "MLB",
+"value_m": 2770.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Edmonton Oilers",
+"league": "NHL",
+"value_m": 2760.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Chicago Blackhawks",
+"league": "NHL",
+"value_m": 2740.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Philadelphia Flyers",
+"league": "NHL",
+"value_m": 2660.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Atlético de Madrid",
 "league": "Spain",
 "value_m": 2500.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Texas Rangers",
+"year": 2026,
+"team": "Washington Nationals",
 "league": "MLB",
-"value_m": 2450.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 2310.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "New Jersey Devils",
-"league": "NHL",
-"value_m": 2400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Dallas Stars",
+"year": 2026,
+"team": "Washington Capitals",
 "league": "NHL",
 "value_m": 2300.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
 "team": "Seattle Mariners",
 "league": "MLB",
-"value_m": 2200.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Vegas Golden Knights",
-"league": "NHL",
-"value_m": 2200.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 2230.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Borussia Dortmund",
 "league": "Germany",
 "value_m": 2170.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Toronto Blue Jays",
+"year": 2026,
+"team": "Williams",
+"league": "F1",
+"value_m": 2140.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Detroit Red Wings",
+"league": "NHL",
+"value_m": 2110.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Alpine",
+"league": "F1",
+"value_m": 2080.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Detroit Tigers",
 "league": "MLB",
-"value_m": 2150.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 2080.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Vancouver Canucks",
+"year": 2026,
+"team": "New Jersey Devils",
 "league": "NHL",
-"value_m": 2150.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 2060.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Washington Nationals",
-"league": "MLB",
-"value_m": 2100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "New York Islanders",
-"league": "NHL",
-"value_m": 2100.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Tampa Bay Lightning",
-"league": "NHL",
+"year": 2026,
+"team": "Racing Bulls",
+"league": "F1",
 "value_m": 2050.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
 "team": "Chicago White Sox",
 "league": "MLB",
-"value_m": 2000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 2050.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
+"team": "Vegas Golden Knights",
+"league": "NHL",
+"value_m": 2020.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Athletics",
+"league": "MLB",
+"value_m": 2000.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Milwaukee Brewers",
+"league": "MLB",
+"value_m": 1940.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Dallas Stars",
+"league": "NHL",
+"value_m": 1940.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New York Islanders",
+"league": "NHL",
+"value_m": 1930.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
 "team": "Carolina Hurricanes",
 "league": "NHL",
-"value_m": 2000.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1920.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "San Diego Padres",
-"league": "MLB",
-"value_m": 1950.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Colorado Avalanche",
-"league": "NHL",
-"value_m": 1950.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Baltimore Orioles",
 "league": "MLB",
-"value_m": 1900.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1910.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Calgary Flames",
+"year": 2026,
+"team": "Tampa Bay Lightning",
 "league": "NHL",
 "value_m": 1900.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Seattle Kraken",
+"year": 2026,
+"team": "Florida Panthers",
 "league": "NHL",
-"value_m": 1850.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1890.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Kick Sauber",
+"league": "F1",
+"value_m": 1880.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Vancouver Canucks",
+"league": "NHL",
+"value_m": 1870.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Juventus",
 "league": "Italy",
 "value_m": 1840.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Athletics",
+"year": 2026,
+"team": "Arizona Diamondbacks",
 "league": "MLB",
-"value_m": 1800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1820.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
+"team": "Calgary Flames",
+"league": "NHL",
+"value_m": 1820.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Colorado Avalanche",
+"league": "NHL",
+"value_m": 1810.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
 "team": "Minnesota Wild",
 "league": "NHL",
-"value_m": 1800.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1790.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Pittsburgh Penguins",
+"year": 2026,
+"team": "Minnesota Twins",
+"league": "MLB",
+"value_m": 1710.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Seattle Kraken",
 "league": "NHL",
-"value_m": 1750.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1710.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Milwaukee Brewers",
+"year": 2026,
+"team": "Tampa Bay Rays",
 "league": "MLB",
 "value_m": 1700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Florida Panthers",
+"year": 2026,
+"team": "Pittsburgh Penguins",
 "league": "NHL",
 "value_m": 1700.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Haas F1 Team",
+"league": "F1",
+"value_m": 1680.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Colorado Rockies",
+"league": "MLB",
+"value_m": 1680.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Cincinnati Reds",
+"league": "MLB",
+"value_m": 1670.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "AC Milan",
 "league": "Italy",
 "value_m": 1660.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Cleveland Guardians",
+"league": "MLB",
+"value_m": 1640.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Kansas City Royals",
+"league": "MLB",
+"value_m": 1630.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Internazionale",
 "league": "Italy",
 "value_m": 1620.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Arizona Diamondbacks",
-"league": "MLB",
-"value_m": 1600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Nashville Predators",
 "league": "NHL",
 "value_m": 1600.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Detroit Tigers",
+"year": 2026,
+"team": "Anaheim Ducks",
+"league": "NHL",
+"value_m": 1590.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Pittsburgh Pirates",
 "league": "MLB",
-"value_m": 1550.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1580.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
 "team": "St. Louis Blues",
 "league": "NHL",
-"value_m": 1550.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1530.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Minnesota Twins",
-"league": "MLB",
-"value_m": 1500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "San Jose Sharks",
 "league": "NHL",
-"value_m": 1500.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1490.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Colorado Rockies",
+"year": 2026,
+"team": "Miami Marlins",
 "league": "MLB",
-"value_m": 1475.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Utah Mammoth",
-"league": "NHL",
 "value_m": 1450.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Inter Miami CF",
 "league": "United States",
 "value_m": 1450.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Cleveland Guardians",
-"league": "MLB",
-"value_m": 1400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Anaheim Ducks",
+"year": 2026,
+"team": "Utah Mammoth",
 "league": "NHL",
-"value_m": 1400.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1440.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Los Angeles FC",
 "league": "United States",
 "value_m": 1400.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Ottawa Senators",
-"league": "NHL",
-"value_m": 1375.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Pittsburgh Pirates",
-"league": "MLB",
-"value_m": 1350.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Winnipeg Jets",
-"league": "NHL",
-"value_m": 1350.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Cincinnati Reds",
-"league": "MLB",
-"value_m": 1325.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
+"year": 2026,
 "team": "Buffalo Sabres",
 "league": "NHL",
-"value_m": 1325.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"value_m": 1360.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
-"team": "Kansas City Royals",
-"league": "MLB",
-"value_m": 1300.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"year": 2026,
+"team": "Ottawa Senators",
+"league": "NHL",
+"value_m": 1340.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
+"team": "Winnipeg Jets",
+"league": "NHL",
+"value_m": 1330.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
 "team": "Columbus Blue Jackets",
 "league": "NHL",
 "value_m": 1300.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
-},
-{
-"year": 2025,
-"team": "Tampa Bay Rays",
-"league": "MLB",
-"value_m": 1250.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Los Angeles Galaxy",
 "league": "United States",
 "value_m": 1170.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Atlanta United",
 "league": "United States",
 "value_m": 1140.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "New York City FC",
 "league": "United States",
 "value_m": 1120.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
-},
-{
-"year": 2025,
-"team": "Miami Marlins",
-"league": "MLB",
-"value_m": 1050.0,
-"source": "Forbes (1998-2025), via fanancialsports.com"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Aston Villa",
 "league": "England",
 "value_m": 1040.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Newcastle United",
 "league": "England",
 "value_m": 1020.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Everton",
 "league": "England",
 "value_m": 1000.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Seattle Sounders FC",
 "league": "United States",
 "value_m": 915.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Austin FC",
 "league": "United States",
 "value_m": 910.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "West Ham United",
 "league": "England",
 "value_m": 895.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Golden State Valkyries",
+"league": "WNBA",
+"value_m": 850.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "AS Roma",
 "league": "Italy",
 "value_m": 840.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Brighton & Hove Albion",
 "league": "England",
 "value_m": 835.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Columbus Crew",
 "league": "United States",
 "value_m": 800.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "SSC Napoli",
 "league": "Italy",
 "value_m": 795.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "FC Cincinnati",
 "league": "United States",
 "value_m": 790.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "CF América",
 "league": "Mexico",
 "value_m": 775.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "San Diego FC",
 "league": "United States",
 "value_m": 765.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Charlotte FC",
 "league": "United States",
 "value_m": 755.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "DC United",
 "league": "United States",
 "value_m": 750.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2025,
@@ -1126,126 +1203,126 @@
 "team": "Portland Timbers",
 "league": "United States",
 "value_m": 745.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Philadelphia Union",
 "league": "United States",
 "value_m": 740.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Chivas Guadalajara",
 "league": "Mexico",
 "value_m": 735.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
-},
-{
-"year": 2026,
-"team": "Toronto FC",
-"league": "United States",
-"value_m": 730.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Fulham",
 "league": "England",
 "value_m": 730.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Toronto FC",
+"league": "United States",
+"value_m": 730.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Eintracht Frankfurt",
 "league": "Germany",
 "value_m": 720.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Ajax",
 "league": "Netherlands",
 "value_m": 710.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Crystal Palace",
 "league": "England",
 "value_m": 705.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Benfica",
 "league": "Portugal",
 "value_m": 695.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Chicago Fire",
 "league": "United States",
 "value_m": 690.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Sporting Kansas City",
 "league": "United States",
 "value_m": 685.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Brentford",
 "league": "England",
 "value_m": 680.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Leeds United",
 "league": "England",
 "value_m": 680.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
-},
-{
-"year": 2026,
-"team": "St. Louis City SC",
-"league": "United States",
-"value_m": 675.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2026,
 "team": "Sunderland",
 "league": "England",
 "value_m": 675.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2025,
+"year": 2026,
+"team": "St. Louis City SC",
+"league": "United States",
+"value_m": 675.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Nashville SC",
+"league": "United States",
+"value_m": 670.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New York Red Bulls",
+"league": "United States",
+"value_m": 660.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
 "team": "Minnesota United",
 "league": "United States",
 "value_m": 655.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
-},
-{
-"year": 2025,
-"team": "New York Red Bulls",
-"league": "United States",
-"value_m": 645.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
-},
-{
-"year": 2025,
-"team": "Nashville SC",
-"league": "United States",
-"value_m": 640.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2025,
@@ -1262,6 +1339,20 @@
 "source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
 },
 {
+"year": 2026,
+"team": "Houston Dynamo",
+"league": "United States",
+"value_m": 600.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "New York Liberty",
+"league": "WNBA",
+"value_m": 600.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
 "year": 2024,
 "team": "Atalanta",
 "league": "Italy",
@@ -1276,6 +1367,27 @@
 "source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
 },
 {
+"year": 2026,
+"team": "San Jose Earthquakes",
+"league": "United States",
+"value_m": 585.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Real Salt Lake",
+"league": "United States",
+"value_m": 580.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Orlando City SC",
+"league": "United States",
+"value_m": 565.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
 "year": 2024,
 "team": "Monterrey",
 "league": "Mexico",
@@ -1283,18 +1395,25 @@
 "source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
 },
 {
-"year": 2024,
-"team": "San Jose Earthquakes",
+"year": 2026,
+"team": "New England Revolution",
 "league": "United States",
 "value_m": 560.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
-"year": 2024,
-"team": "Houston Dynamo",
+"year": 2026,
+"team": "Indiana Fever",
+"league": "WNBA",
+"value_m": 560.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "FC Dallas",
 "league": "United States",
-"value_m": 550.0,
-"source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+"value_m": 555.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 },
 {
 "year": 2023,
@@ -1309,6 +1428,76 @@
 "league": "Italy",
 "value_m": 530.0,
 "source": "Sportico, World's 50 Most Valuable Soccer Teams 2026 (Apr 22, 2026)"
+},
+{
+"year": 2026,
+"team": "Colorado Rapids",
+"league": "United States",
+"value_m": 480.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Vancouver Whitecaps FC",
+"league": "United States",
+"value_m": 450.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "CF Montréal",
+"league": "United States",
+"value_m": 430.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Seattle Storm",
+"league": "WNBA",
+"value_m": 425.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Phoenix Mercury",
+"league": "WNBA",
+"value_m": 420.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Las Vegas Aces",
+"league": "WNBA",
+"value_m": 410.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Los Angeles Sparks",
+"league": "WNBA",
+"value_m": 400.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Minnesota Lynx",
+"league": "WNBA",
+"value_m": 355.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Angel City FC",
+"league": "NWSL",
+"value_m": 335.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
+},
+{
+"year": 2026,
+"team": "Dallas Wings",
+"league": "WNBA",
+"value_m": 325.0,
+"source": "Sportico, The Most Valuable Sports Franchises 2026"
 }
 ]
 }

@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-18",
+    headline: "Every valuation on one ruler, plus F1 and the WNBA",
+    items: [
+      "The valuations board now runs on Sportico's 2026 figures throughout. The big four had been on Forbes and football on Sportico, so sorting them into one column was comparing two different rankings.",
+      "Formula 1 arrives with ten constructors. Ferrari, at $6.4B, is worth more than the Boston Celtics, and more than any football club in Italy.",
+      "The WNBA and the NWSL join too. The Golden State Valkyries, in their second season, are valued above Brighton, Fulham and Crystal Palace.",
+      "Twenty-seven clubs are new, seven of them in MLS. Eight that Sportico did not rank this year keep their last published figure, and the year column says which.",
+    ],
+  },
+  {
     date: "2026-08-17",
     headline: "The biggest companies, placed where they actually were",
     items: [

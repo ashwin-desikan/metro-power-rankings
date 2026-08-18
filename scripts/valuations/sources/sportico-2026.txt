@@ -1,0 +1,619 @@
+
+1
+Dallas Cowboys
+$15.50B	$1.29B	21%
+2
+Los Angeles Rams
+$12.70B	$945M	22%
+3
+New York Giants
+$12.00B	$801M	17%
+4
+Golden State Warriors
+$11.33B	$833M	24%
+5
+New England Patriots
+$10.40B	$840M	19%
+6
+New York Jets
+$10.35B	$762M	28%
+7
+Philadelphia Eagles
+$10.31B	$793M	22%
+8
+San Francisco 49ers
+$10.21B	$805M	19%
+9
+Miami Dolphins
+$10.15B	$810M	24%
+10
+Las Vegas Raiders
+$10.10B	$851M	28%
+11
+Los Angeles Lakers
+$10.00B	$618M	24%
+12
+New York Knicks
+$9.85B	$620M	19%
+13
+Atlanta Falcons
+$9.78B	$800M	39%
+14
+Washington Commanders
+$9.64B	$719M	30%
+15
+Seattle Seahawks
+$9.61B	$707M	46%
+16
+Houston Texans
+$9.52B	$732M	33%
+17
+Chicago Bears
+$9.45B	$678M	27%
+18
+New York Yankees
+$9.40B	$805M	12%
+19
+Denver Broncos
+$9.18B	$693M	40%
+20
+Los Angeles Dodgers
+$9.05B	$923M	17%
+21
+Kansas City Chiefs
+$8.74B	$699M	34%
+22
+Pittsburgh Steelers
+$8.70B	$669M	34%
+23
+Tampa Bay Buccaneers
+$8.68B	$703M	34%
+24
+Los Angeles Chargers
+$8.65B	$621M	39%
+25
+Tennessee Titans
+$8.62B	$637M	39%
+26
+Cleveland Browns
+$8.60B	$679M	40%
+27
+Green Bay Packers
+$8.59B	$723M	33%
+28
+Minnesota Vikings
+$8.26B	$677M	32%
+29
+Baltimore Ravens
+$8.20B	$668M	37%
+30
+Buffalo Bills
+$8.13B	$638M	39%
+31
+Carolina Panthers
+$8.07B	$681M	40%
+32
+Detroit Lions
+$8.02B	$658M	36%
+33
+Arizona Cardinals
+$8.00B	$630M	41%
+34
+Jacksonville Jaguars
+$7.91B	$650M	42%
+35
+Indianapolis Colts
+$7.77B	$634M	36%
+36
+Real Madrid
+$7.70B	$1.31B	18%
+37
+New Orleans Saints
+$7.59B	$646M	35%
+38
+Cincinnati Bengals
+$7.40B	$622M	35%
+39
+Los Angeles Clippers
+$6.72B	$501M	18%
+40
+FC Barcelona
+$6.65B	$1.09B	16%
+41
+Boston Red Sox
+$6.65B	$621M	10%
+42
+Chicago Cubs
+$6.48B	$639M	14%
+43
+Manchester United
+$6.47B	$878M	6%
+44
+Ferrari
+$6.40B	$725M	34%
+45
+Boston Celtics
+$6.35B	$435M	12%
+46
+Brooklyn Nets
+$6.22B	$407M	9%
+47
+Chicago Bulls
+$6.12B	$412M	10%
+48
+Miami Heat
+$6.03B	$411M	21%
+49
+Mercedes
+$5.88B	$812M	49%
+50
+Bayern Munich
+$5.78B	$971M	11%
+51
+Liverpool
+$5.74B	$926M	3%
+52
+Manchester City
+$5.70B	$914M	10%
+53
+Philadelphia 76ers
+$5.61B	$423M	23%
+54
+Houston Rockets
+$5.53B	$417M	16%
+55
+Arsenal
+$5.43B	$909M	21%
+56
+Dallas Mavericks
+$5.24B	$376M	17%
+57
+Toronto Raptors
+$5.22B	$394M	12%
+58
+Phoenix Suns
+$5.09B	$362M	18%
+59
+Atlanta Hawks
+$5.02B	$427M	23%
+60
+Paris Saint-Germain
+$5.00B	$945M	17%
+61
+Sacramento Kings
+$5.00B	$417M	22%
+62
+Cleveland Cavaliers
+$4.86B	$418M	23%
+63
+Denver Nuggets
+$4.80B	$379M	18%
+64
+Washington Wizards
+$4.78B	$348M	20%
+65
+Indiana Pacers
+$4.76B	$373M	27%
+66
+McLaren
+$4.73B	$677M	78%
+67
+Milwaukee Bucks
+$4.54B	$357M	16%
+68
+San Antonio Spurs
+$4.50B	$349M	19%
+69
+San Francisco Giants
+$4.36B	$507M	4%
+70
+Oklahoma City Thunder
+$4.34B	$362M	22%
+71
+Red Bull Racing
+$4.32B	$628M	23%
+72
+Utah Jazz
+$4.27B	$355M	16%
+73
+Portland Trail Blazers
+$4.25B	$351M	18%
+74
+Toronto Maple Leafs
+$4.25B	$380M	16%
+75
+Minnesota Timberwolves
+$4.24B	$325M	29%
+76
+Orlando Magic
+$4.21B	$325M	22%
+77
+Detroit Pistons
+$4.17B	$320M	21%
+78
+Charlotte Hornets
+$4.13B	$315M	22%
+79
+Atlanta Braves
+$4.11B	$548M	11%
+80
+New Orleans Pelicans
+$4.02B	$314M	30%
+81
+Chelsea
+$4.00B	$647M	12%
+82
+Memphis Grizzlies
+$4.00B	$301M	31%
+83
+Philadelphia Phillies
+$3.75B	$549M	11%
+84
+Houston Astros
+$3.65B	$535M	7%
+85
+New York Rangers
+$3.65B	$322M	12%
+86
+New York Mets
+$3.58B	$511M	15%
+87
+Tottenham Hotspur
+$3.50B	$743M	-5%
+88
+Montreal Canadiens
+$3.30B	$335M	13%
+89
+San Diego Padres
+$3.10B	$483M	34%
+90
+St. Louis Cardinals
+$3.03B	$388M	7%
+91
+Aston Martin
+$3.00B	$372M	45%
+92
+Boston Bruins
+$3.00B	$285M	12%
+93
+Los Angeles Kings
+$2.96B	$334M	18%
+94
+Toronto Blue Jays
+$2.90B	$570M	21%
+95
+Los Angeles Angels
+$2.78B	$397M	7%
+96
+Texas Rangers
+$2.77B	$430M	12%
+97
+Edmonton Oilers
+$2.76B	$367M	15%
+98
+Chicago Blackhawks
+$2.74B	$275M	12%
+99
+Philadelphia Flyers
+$2.66B	$313M	16%
+100
+Atletico de Madrid
+$2.50B	$497M	35%
+101
+Washington Nationals
+$2.31B	$342M	3%
+102
+Washington Capitals
+$2.30B	$285M	24%
+103
+Seattle Mariners
+$2.23B	$398M	14%
+104
+Borussia Dortmund
+$2.17B	$594M	19%
+105
+Williams
+$2.14B	$255M	73%
+106
+Detroit Red Wings
+$2.11B	$255M	14%
+107
+Alpine
+$2.08B	$305M	39%
+108
+Detroit Tigers
+$2.08B	$361M	20%
+109
+New Jersey Devils
+$2.06B	$291M	21%
+110
+Racing Bulls
+$2.05B	$274M	68%
+111
+Chicago White Sox
+$2.05B	$267M	1%
+112
+Vegas Golden Knights
+$2.02B	$253M	14%
+113
+Athletics
+$2.00B	$312M	27%
+114
+Milwaukee Brewers
+$1.94B	$370M	19%
+115
+Dallas Stars
+$1.94B	$250M	18%
+116
+New York Islanders
+$1.93B	$234M	15%
+117
+Carolina Hurricanes
+$1.92B	$240M	49%
+118
+Baltimore Orioles
+$1.91B	$324M	5%
+119
+Tampa Bay Lightning
+$1.90B	$250M	6%
+120
+Florida Panthers
+$1.89B	$280M	51%
+121
+Kick Sauber
+$1.88B	$243M	57%
+122
+Vancouver Canucks
+$1.87B	$234M	8%
+123
+Juventus
+$1.84B	$474M	2%
+124
+Arizona Diamondbacks
+$1.82B	$325M	18%
+125
+Calgary Flames
+$1.82B	$208M	15%
+126
+Colorado Avalanche
+$1.81B	$215M	15%
+127
+Minnesota Wild
+$1.79B	$242M	12%
+128
+Minnesota Twins
+$1.71B	$322M	1%
+129
+Seattle Kraken
+$1.71B	$219M	17%
+130
+Tampa Bay Rays
+$1.70B	$296M	26%
+131
+Pittsburgh Penguins
+$1.70B	$224M	16%
+132
+Haas F1 Team
+$1.68B	$209M	65%
+133
+Colorado Rockies
+$1.68B	$319M	13%
+134
+Cincinnati Reds
+$1.67B	$334M	8%
+135
+AC Milan
+$1.66B	$463M	24%
+136
+Cleveland Guardians
+$1.64B	$327M	7%
+137
+Kansas City Royals
+$1.63B	$325M	20%
+138
+Inter Milan
+$1.62B	$613M	25%
+139
+Nashville Predators
+$1.60B	$205M	21%
+140
+Anaheim Ducks
+$1.59B	$181M	28%
+141
+Pittsburgh Pirates
+$1.58B	$309M	14%
+142
+St. Louis Blues
+$1.53B	$211M	18%
+143
+San Jose Sharks
+$1.49B	$181M	5%
+144
+Miami Marlins
+$1.45B	$314M	12%
+145
+Inter Miami CF
+$1.45B	$215M	22%
+146
+Utah Mammoth
+$1.44B	$177M	20%
+147
+Los Angeles FC
+$1.40B	$158M	9%
+148
+Buffalo Sabres
+$1.36B	$174M	20%
+149
+Ottawa Senators
+$1.34B	$179M	18%
+150
+Winnipeg Jets
+$1.33B	$183M	21%
+151
+Columbus Blue Jackets
+$1.30B	$159M	23%
+152
+LA Galaxy
+$1.17B	$105M	5%
+153
+Atlanta United
+$1.14B	$117M	6%
+154
+New York City FC
+$1.12B	$87M	12%
+155
+Aston Villa
+$1.04B	$488M	22%
+156
+Newcastle United
+$1.02B	$442M	10%
+157
+Everton
+$1.00B	$259M	21%
+158
+Seattle Sounders FC
+$915M	$105M	11%
+159
+Austin FC
+$910M	$101M	5%
+160
+West Ham United
+$895M	$300M	-5%
+161
+Golden State Valkyries
+$850M	$78M	70%
+162
+AS Roma
+$840M	$256M	12%
+163
+Brighton & Hove
+$835M	$293M	12%
+164
+Columbus Crew
+$800M	$93M	10%
+165
+Napoli
+$795M	$204M	3%
+166
+FC Cincinnati
+$790M	$93M	9%
+167
+America
+$775M	$146M	1%
+168
+San Diego FC
+$765M	$107M	N/A
+169
+Charlotte FC
+$755M	$93M	7%
+170
+D.C. United
+$750M	$73M	4%
+171
+Portland Timbers
+$745M	$75M	3%
+172
+Philadelphia Union
+$740M	$75M	6%
+173
+Guadalajara
+$735M	$150M	1%
+174
+Fulham
+$730M	$257M	1%
+175
+Toronto FC
+$730M	$75M	24%
+176
+Eintracht Frankfurt
+$720M	$305M	13%
+177
+AFC Ajax
+$710M	$201M	0%
+178
+Crystal Palace
+$705M	$259M	16%
+179
+SL Benfica
+$695M	$260M	3%
+180
+Chicago Fire FC
+$690M	$64M	20%
+181
+Sporting Kansas City
+$685M	$71M	5%
+182
+Brentford
+$680M	$228M	11%
+183
+Leeds United
+$680M	$181M	21%
+184
+Sunderland
+$675M	$50M	3%
+185
+St. Louis City SC
+$675M	$82M	N/A
+186
+Nashville SC
+$670M	$70M	5%
+187
+New York Red Bulls
+$660M	$64M	2%
+188
+Minnesota United FC
+$655M	$71M	0%
+189
+Houston Dynamo FC
+$600M	$63M	3%
+190
+New York Liberty
+$600M	$43.2M	43%
+191
+San Jose Earthquakes
+$585M	$58M	-3%
+192
+Real Salt Lake
+$580M	$57M	10%
+193
+Orlando City SC
+$565M	$56M	6%
+194
+New England Revolution
+$560M	$51M	6%
+195
+Indiana Fever
+$560M	$52.6M	67%
+196
+FC Dallas
+$555M	$57M	3%
+197
+Colorado Rapids
+$480M	$47M	1%
+198
+Vancouver Whitecaps FC
+$450M	$50M	-4%
+199
+CF Montreal
+$430M	$47M	-4%
+200
+Seattle Storm
+$425M	$29M	49%
+201
+Phoenix Mercury
+$420M	$31.3M	68%
+202
+Las Vegas Aces
+$410M	$27.5M	41%
+203
+Los Angeles Sparks
+$400M	$23.7M	78%
+204
+Minnesota Lynx
+$355M	$24.9M	48%
+205
+Angel City FC
+$335M	$36.7M	34%
+206
+Dallas Wings
+$325M	$25.3M	66%
