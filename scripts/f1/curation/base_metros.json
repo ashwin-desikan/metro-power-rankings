@@ -1,8 +1,8 @@
 {
  "meta": {
   "places": 69,
-  "refused": 9,
-  "resolved": 60,
+  "refused": 6,
+  "resolved": 63,
   "rule": "A town resolves only when the workbook rows matching it agree on one non-blank Metro Area. Anything else is refused and listed, never inferred.",
   "source": "MetroAreas.xlsx, Municipality sheet"
  },
@@ -18,6 +18,18 @@
    "how": "word+region",
    "metro": "Banbury",
    "region": "Oxfordshire"
+  },
+  "England|Brackley": {
+   "detail": "2 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Northampton",
+   "region": "West Northamptonshire"
+  },
+  "England|Brixworth": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Northampton",
+   "region": "West Northamptonshire"
   },
   "England|Bromley": {
    "detail": "5 row(s), 0 blank",
@@ -145,6 +157,12 @@
    "metro": "London",
    "region": "Reading"
   },
+  "England|Silverstone": {
+   "detail": "1 row(s), 0 blank",
+   "how": "word+region",
+   "metro": "Northampton",
+   "region": "West Northamptonshire"
+  },
   "England|Slough": {
    "detail": "1 row(s), 0 blank",
    "how": "word+region",
@@ -158,7 +176,7 @@
    "region": "Greater London"
   },
   "England|Towcester": {
-   "detail": "2 row(s), 1 blank",
+   "detail": "2 row(s), 0 blank",
    "how": "word",
    "metro": "Northampton",
    "region": "Northamptonshire"
@@ -381,26 +399,6 @@
   },
   {
    "country": "England",
-   "detail": "2 row(s), all blank; in Counties: no-metro - West Northamptonshire district, blank in Counties",
-   "lineages": [
-    "mercedes"
-   ],
-   "region": "West Northamptonshire",
-   "town": "Brackley",
-   "why": "no-metro"
-  },
-  {
-   "country": "England",
-   "detail": "1 row(s), all blank; in Counties: no-metro - West Northamptonshire district, blank in Counties",
-   "lineages": [
-    "mercedes"
-   ],
-   "region": "West Northamptonshire",
-   "town": "Brixworth",
-   "why": "no-metro"
-  },
-  {
-   "country": "England",
    "detail": "South Norfolk district, blank in Counties",
    "lineages": [
     "team-lotus"
@@ -417,17 +415,6 @@
    ],
    "region": "Norfolk",
    "town": "Hingham",
-   "why": "no-metro"
-  },
-  {
-   "country": "England",
-   "detail": "1 row(s), all blank; in Counties: no-metro - West Northamptonshire district, blank in Counties",
-   "lineages": [
-    "aston-martin",
-    "cadillac-f1-team"
-   ],
-   "region": "West Northamptonshire",
-   "town": "Silverstone",
    "why": "no-metro"
   },
   {
