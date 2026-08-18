@@ -124,8 +124,11 @@ def load_workbook_context(path):
     wb.close()
 
     def most(counter_map, key):
+        """Return (majority value, was-the-vote-split) for key, or ("", False)."""
         c = counter_map.get(key)
-        return c.most_common(1)[0][0] if c else ""
+        if not c:
+            return "", False
+        return c.most_common(1)[0][0], len(c) > 1
 
     def spell(n):
         if not n:
@@ -207,8 +210,14 @@ def main():
 
         venue = info.get("venue") or ""
         city = info.get("city") or ""
-        vcountry = ctx["venue_country"](venue) or ctx["city_country"](city)
-        host = ctx["venue_host"](venue) or vcountry
+        vc_venue, vc_venue_split = ctx["venue_country"](venue)
+        via_city = not vc_venue
+        if via_city:
+            vcountry, vc_split = ctx["city_country"](city)
+        else:
+            vcountry, vc_split = vc_venue, vc_venue_split
+        host, _host_split = ctx["venue_host"](venue)
+        host = host or vcountry
         event = (info.get("event") or {}).get("name") or ""
         stage = (info.get("event") or {}).get("stage") or ""
         end_date = dates[-1] if (fmt == "Test" and len(dates) > 1) else ""
@@ -219,6 +228,17 @@ def main():
                 flags.append(f"{iso} {fmt}: team '{t}' not in workbook (check spelling)")
         if not vcountry:
             flags.append(f"{iso} {fmt} @ {venue or city or '?'}: venue/host country unmapped")
+        elif via_city:
+            flags.append(
+                f"{iso} {fmt} @ {venue or '?'} ({city}): no prior match at this exact venue; "
+                f"country '{vcountry}' inferred from city name alone -- city names can collide "
+                f"across countries (e.g. Hamilton NZ vs Hamilton Bermuda), verify"
+            )
+        elif vc_split:
+            flags.append(
+                f"{iso} {fmt} @ {venue}: venue's country history is split between countries in "
+                f"the workbook -- picked '{vcountry}' by majority vote, verify"
+            )
 
         staged.append({
             "mid": mid, "fmt": fmt, "iso": iso, "end": end_date,
