@@ -5783,3 +5783,55 @@ A "Based in" line and a sites table per team; a **Based in** column on the index
 3. Phase three: per-round standings, pit stops (2011+, the only widely available metric that is purely a TEAM performance), qualifying sessions (2003+).
 4. A Galatasaray entry in the football club dataset, and a Süper Lig hub, would make that valuations row link.
 5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling. Lucent/Louisville and Union Pacific/Omaha placement bugs.
+
+---
+
+## 2026-08-18 (windows, night) — the pagination bug that was quietly wrong about Ferrari
+
+Two commits. **Seven now sit unpushed.** `npm run verify` clean.
+
+### 🔴 `select_all` WAS RETURNING A DIFFERENT DATASET EVERY RUN
+
+`scripts/mktcap/common.py` paginates PostgREST with `order=...&limit=1000&offset=N`. That is a request for "rows 1000-1999 of this ordering". **If the ordering has ties the database may break them differently on each request**, so a tied row lands on two pages and another lands on none. Nothing errors.
+
+`f1_results` was paginated on `(season, round)` — one race, about twenty rows. Across 28 pages that produced duplicates and holes:
+
+| | shipped in `1f47e69f9` | actual |
+|---|---|---|
+| **Ferrari wins** | 251 | **250** |
+| **Williams wins** | 115 | **114** |
+| Williams races | 876 | **878** |
+| Mercedes races | 960 | **961** |
+| Brabham races | 401 | **402** |
+
+All four now agree exactly with `select count(*) ... from f1_results` run straight against Postgres. **`f1_constructor_standings` was paginated on `season` alone and had the same defect**, which means championship positions were exposed to it too.
+
+**The class fix:** `select_all` now hashes every row it returns and **raises** if one repeats across pages, with a message naming the path and the order. Callers that genuinely expect identical projected rows pass `allow_duplicate_rows=True` (one caller does: `build_business_data.py` building a set of snapshot dates, whose order was also corrected). Every F1 order now ends in `id`.
+
+**Audited the other 25 call sites and they are clean** — `company_rankings` (51,324 rows) is ordered on `(company_key, year, rank)` and `(year, rank, company_key)`, both verified unique in the database; `company_hq`, `company_hq_spans`, `mktcap_geo`, `mktcap_companies` and `mktcap_valuations` are all keyed by their order. So the corporate rankings board was never affected. The guard now protects them all anyway.
+
+### 🔴 SPRINT POINTS ARE CHAMPIONSHIP POINTS
+
+`f1_sprint_results` is a separate table and was not being read at all. McLaren's 2025 read **775 points against a real 833**. Sprint points are now added in; sprint **wins** are counted separately and deliberately kept out of the win column, because a Saturday result is not a Grand Prix victory.
+
+### The reconciliation that catches the next one
+
+The build now compares every lineage-season from 1991 against the official constructors' table and **fails loudly if they differ**. It currently reports clean, with one documented exception in `KNOWN_ADJUSTMENTS`: **Racing Point 2020, 210 scored against 195 credited**, because the FIA docked them 15 points for the brake ducts. That note renders on the Aston Martin page.
+
+Before 1994 the two numbers are not meant to agree — only a driver's best N results counted for much of the sport's history — so the check starts at 1991 and the page says why.
+
+### New on the pages
+
+**Teammate head-to-head**, up to fourteen pairings per team, qualifying and race counted separately. Qualifying counts races where BOTH cars set a grid time; the race counts races where BOTH were classified, because scoring a retirement as a defeat says a car that broke on lap two lost to somebody. The two denominators differ and both are shown.
+
+Spot-checked against the record: Schumacher out-qualified Barrichello 79-25 at Ferrari, Verstappen beat Pérez 69-6 in races, Albon beat Sargeant 33-1 at Williams, Senna beat Berger 40-8 in qualifying. The chains show through, correctly: Red Bull's list includes Irvine v de la Rosa at Jaguar, and Mercedes' includes Scheckter v Depailler at Tyrrell.
+
+Also: a **Points** column on the season table (it reconciles now, so it can be shown), and the sprint share on the points tile.
+
+### Open
+
+1. **Seven commits want one build.** The build-relevant commit is at HEAD. **If it ships after midnight, move the `lib/releases.ts` date off 2026-08-18.**
+2. **Thirteen factory towns need a workbook ruling**, Brackley and Silverstone first. Listed in the previous entry.
+3. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
+4. A Galatasaray entry in the football club dataset, and a Süper Lig hub, would make that valuations row link.
+5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling. Lucent/Louisville and Union Pacific/Omaha placement bugs.
