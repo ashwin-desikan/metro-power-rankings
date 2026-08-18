@@ -5562,3 +5562,53 @@ Both are single-row rulings in `curation/hq_spans_master.csv` rather than code c
 4. The company table still cannot distinguish a researched dated placement from a carried one. Grey shading was rejected; still needs a better idea before anything is built.
 5. Carried, untouched: Chicago Stars FC and Brescia workbook recalc; Heartbreak Index calibration; the ten Time Machine boards that do not read `?year=`.
 6. The three untracked strays in the repo root (`chelsearegister.txt`, `psg_profile_signup.txt`, `psgprivacy_didomi.txt`) are still there and still not mine.
+
+
+## 2026-08-18 (later) -- windows -> next session / mini (the owners board catches up with the valuations board, and three of my priors were wrong)
+
+Second block of the same Cowork session. The morning's Sportico load is LIVE: the mini's `run-deploy-watch.sh` re-triggered the skipped build exactly as documented and `9102a12c0` went READY about twenty minutes after the push. That is the first time I have watched that mechanism work end to end, and its parameters are now recorded rather than assumed: TARGET is the newest untagged build-relevant commit on `origin/main`, `STALE_MIN=20`, `COOLDOWN_MIN=18`, `MAX_ATTEMPTS=3`, and it re-triggers by bumping `lib/deploy-retry.ts`.
+
+### The morning's load had broken the owners build, and the gate is why we knew
+
+`scripts/build-team-owners-data.py` hard-fails when a team on the valuations board has no owner row. After the Sportico load that was 27 rows, so the owners data could not be rebuilt at all. **That gate is correct and should not be softened** -- a missing owner row would otherwise render as a blank cell, which reads as "no owner" rather than "not done yet". But it does mean a valuations load and an owners load are one unit of work, not two, and the next person to add clubs should expect to author owners in the same sitting.
+
+All 27 now carry a researched control owner with a source: ten F1 constructors, nine WNBA clubs, Angel City, seven MLS sides. Board is 214 franchises, 169 control entities, 36 holding more than one, 18 spanning more than one code, 10 on the watchlist.
+
+### 🔴 THREE OF MY OWN PRIORS WERE WRONG. The research pass caught all three.
+
+I went in expecting to reuse existing owner keys for most of these and listed my expectations in the research prompt as things to VERIFY rather than assume. That was the right call three times over:
+
+1. **Real Salt Lake is not a Utah Jazz stablemate.** The Miller family bought RSL and the Utah Royals for about $600m in April 2025 from David Blitzer and Ryan Smith -- and the Millers had themselves sold the Jazz to Smith in 2020. The two Utah portfolios SWAPPED rather than merged. New key `miller-sports-entertainment`, not `smith-entertainment-group`.
+2. **The Sparks were never a recent Mark Walter acquisition.** He has held them since 2014. The live story runs the other way: he agreed on 12 Aug 2026 to sell the Lakers to Josh Kushner and Bob Iger, and the seed already had that row correctly on the watchlist. Nothing needed fixing, which is worth saying because I went looking to fix it.
+3. **The Whitecaps have not been sold.** A sale process opened in Dec 2024 and the only public offer, from a Grant Gustavson-led group, proposes moving the club to Las Vegas. MLS has approved nothing. So they go on the watchlist under the current owners rather than to a new key.
+
+I verified 1 and 3 myself with live searches rather than taking the agent's word, per the never-fabricate-verification rule. Both hold.
+
+### Two judgement calls recorded on the rows rather than hidden
+
+- **Mercedes has no single controller and the row says so.** Mercedes-Benz Group, INEOS and Toto Wolff hold roughly even thirds. Naming the largest of three near-equal partners would assert a control that does not exist, so `owner_type` is `consortium` and all three are in `co_controllers`.
+- **Ferrari is filed under `exor-agnelli`**, which puts it in a portfolio with Juventus. EXOR is not a majority holder (21.2% of capital, 32.2% of votes), but its loyalty-share bloc with the Piero Ferrari trust is decisive and the two extended their shareholders' agreement to 2029 in January. The row states the percentages so a reader can disagree with the call.
+
+### 🔴 A DEFAULT BRANCH THAT IS ONLY CORRECT FOR THE LEAGUES YOU HAPPEN TO HAVE
+
+`lib/teamOwners.ts` computed `crossesCodes` as "is it NFL/NBA/MLB/NHL, and if not it is football". True while the board held exactly those two things. The moment the WNBA landed, **Mark Walter (Dodgers, Lakers, Sparks) and Joe Tsai (Nets, Liberty) both read as spanning North America AND football**, because the WNBA fell through to the else. Neither owns a football club.
+
+Replaced with an explicit `CODE_OF` map carrying a Motorsport value, so Red Bull (two F1 entries plus RB Leipzig plus the New York Red Bulls) and EXOR (Ferrari plus Juventus) now read as cross-code for the right reason. Same class of bug as the two divergent plists and the inert githooks: a rule enforced by a default is a coincidence.
+
+Also fixed: the sources paragraph on `/sports/owners` had **"94 of 187" hard-coded into the prose** and had been wrong since the seed grew. It now counts itself from the data, same rule as the rankings board legend.
+
+### The release-note gate earned its keep
+
+The first build failed on `RELEASE_NOTES_VIOLATION (2026-08-18): bullet is 227 chars (max 220)`. Working as designed; the 08-18 block was rewritten in place per the same-day amend rule rather than a second entry being appended.
+
+### Build budget
+
+**Two READY builds today, which is the whole allowance.** The first was the morning's Sportico load (via the mini's deploy-retry). The second is this. Nothing else should push a build-relevant commit today.
+
+### Open
+
+1. **The F1 constructor pages are scoped and started but NOT built.** Ashwin approved phase one: curate a lineage file, add `/teams/f1/constructors/[slug]`, ship from the 27,389 race results already in Supabase. `scripts/f1/curation/` exists and is empty. The assessment, the data survey and the four curation rules are in [[project_f1_constructor_pages_scoping_2026_08_18]] -- read that before starting, because the Ergast identity model is wrong in both directions and the whole job is the curation, not the page.
+2. The rankings headline-name tier, unchanged from the earlier entry: chronology researched, nothing authored.
+3. `citigroup` 1995-1998 still wants Ashwin's ruling.
+4. Lucent/Louisville and Union Pacific/Omaha placement bugs.
+5. The eight carried valuation rows are dated 2023-2025 but their Source column claims Sportico's 2026 soccer list. Pre-existing; no source was invented to fix it.
