@@ -44,6 +44,17 @@ FIRST_CONSTRUCTORS_TITLE = 1958
 # A lineage earns a page if a reader could plausibly look it up.
 MIN_RACES = 10
 
+# Seasons where the championship total is deliberately NOT the sum of the
+# points scored on track. Without these the reconciliation below would report a
+# bug that is really a stewards' decision, and the page would show a number the
+# record books do not.
+KNOWN_ADJUSTMENTS = {
+    ("aston-martin", 2020): (
+        -15, "The FIA docked Racing Point 15 constructors' points for copying "
+             "the 2019 Mercedes brake ducts, so the championship credited 195 "
+             "against 210 scored on track."),
+}
+
 
 def num(v):
     """Ergast writes '1.0', '', 'R' and 'D' into the same columns."""
@@ -115,6 +126,52 @@ def load_bases():
     return out
 
 
+def head_to_head(grid_by_race, limit=14):
+    """Teammate against teammate, the most argued-about number in the sport.
+
+    Two comparisons, counted separately and on different populations:
+
+      QUALIFYING counts a race only where BOTH cars set a starting position.
+      A grid of 0 in the archive means a pit-lane start or no time, and
+      counting that as a defeat would punish a driver for a mechanical.
+
+      RACE counts a race only where BOTH cars were CLASSIFIED. Anything else is
+      scoring a retirement as a loss, and a car that failed on lap two did not
+      lose to anybody.
+
+    That is why the two totals rarely add up to the same number of races, and
+    the page shows both denominators rather than one."""
+    pairs = defaultdict(lambda: {"races": 0, "q": [0, 0], "r": [0, 0],
+                                 "first": 9999, "last": 0})
+    for (season, _rnd), rows in grid_by_race.items():
+        if len(rows) < 2:
+            continue
+        # Sort by NAME only. grid and position are None for non-starters, and
+        # a plain tuple sort compares None with a float and raises.
+        rows = sorted(rows, key=lambda t: t[0])
+        for i in range(len(rows)):
+            for j in range(i + 1, len(rows)):
+                (a, ga, pa), (b, gb, pb) = rows[i], rows[j]
+                if a == b:
+                    continue
+                p = pairs[(a, b)]
+                p["races"] += 1
+                p["first"] = min(p["first"], season)
+                p["last"] = max(p["last"], season)
+                if ga and gb and ga > 0 and gb > 0:
+                    p["q"][0 if ga < gb else 1] += 1
+                if pa is not None and pb is not None:
+                    p["r"][0 if pa < pb else 1] += 1
+    out = []
+    for (a, b), p in pairs.items():
+        if p["races"] < 5:
+            continue
+        out.append([a, b, p["races"], p["first"], p["last"],
+                    p["q"][0], p["q"][1], p["r"][0], p["r"][1]])
+    out.sort(key=lambda r: (-r[2], r[0]))
+    return out[:limit]
+
+
 def build_index(eras):
     """constructor_id -> [era]. Kept as a list because a record can be split
     across eras by year (Sauber's three spells, the six unrelated-organisation
@@ -180,23 +237,32 @@ def self_test():
 
 
 def load():
+    # 🔴 EVERY ORDER HERE ENDS IN `id`. (season, round) is one race and about
+    # twenty rows, so paginating on it gave unstable page boundaries: rows
+    # repeated, rows vanished, and the totals moved between runs. McLaren read
+    # 148 points for 1991 against a real 139. See select_all's docstring.
     res = select_all(
         "/rest/v1/f1_results?select=season,round,driver,constructor_id,constructor,"
-        "grid,position,points,status", "season,round")
+        "grid,position,points,status", "season,round,id")
     meta = select_all("/rest/v1/f1_race_meta?select=season,round,race_name,circuit_id",
-                      "season,round")
+                      "season,round,id")
+    # 🔴 SPRINT POINTS ARE CHAMPIONSHIP POINTS. Counting only f1_results left
+    # McLaren on 775 for 2025 against a real 833, and nothing on the page said
+    # why. Sprint results are a separate table and have to be added in.
+    sprint = select_all("/rest/v1/f1_sprint_results?select=season,round,driver,"
+                        "constructor_id,points,position", "season,round,id")
     stand = select_all("/rest/v1/f1_constructor_standings?select=season,constructor_id,"
-                       "position,points,wins", "season")
+                       "position,points,wins", "season,id")
     cons = select_all("/rest/v1/f1_constructors?select=constructor_id,constructor,"
                       "nationality,wikipedia", "constructor_id")
-    log(f"{len(res)} results, {len(meta)} races, {len(stand)} standings, "
-        f"{len(cons)} constructor records")
+    log(f"{len(res)} results, {len(meta)} races, {len(sprint)} sprint entries, "
+        f"{len(stand)} standings, {len(cons)} constructor records")
     circuits = {}
     if os.path.exists(F1_DATA):
         for c in json.load(open(F1_DATA, encoding="utf-8")).get("circuits", []):
             circuits[c["circuit_id"]] = (c.get("circuit_name"), c.get("metro"),
                                          c.get("metro_slug"))
-    return res, meta, stand, cons, circuits
+    return res, meta, sprint, stand, cons, circuits
 
 
 def main():
@@ -209,7 +275,7 @@ def main():
     if self_test():
         return 1
 
-    res, meta, stand, cons, circuits = load()
+    res, meta, sprint, stand, cons, circuits = load()
     bases_by_lin = load_bases()
     idx = build_index(ERAS)
     race_of = {(r["season"], r["round"]): r for r in meta}
@@ -235,9 +301,13 @@ def main():
                      "first": 9999, "last": 0}),
         "by_season": defaultdict(lambda: {"races": set(), "wins": 0, "podiums": 0,
                                           "poles": 0, "points": 0.0,
+                                          "sprint_points": 0.0, "sprint_wins": 0,
                                           "grid": [], "finish": [], "drivers": set()}),
         "victories": [], "circuit": defaultdict(lambda: [0, 0]),
         "nat": None, "wiki": None,
+        "sprint_points": 0.0, "sprint_wins": 0, "sprint_entries": 0,
+        # (season, round) -> [(driver, grid, finish)], for teammate head-to-head.
+        "grid_by_race": defaultdict(list),
     })
 
 
@@ -282,6 +352,8 @@ def main():
         dr["points"] += pts
         dr["first"] = min(dr["first"], season); dr["last"] = max(dr["last"], season)
 
+        d["grid_by_race"][rd].append((r["driver"], grid, pos))
+
         s = d["by_season"][season]
         s["races"].add(rd); s["wins"] += won; s["podiums"] += podium
         s["poles"] += pole; s["points"] += pts; s["drivers"].add(r["driver"])
@@ -304,6 +376,25 @@ def main():
         sys.exit(f"FATAL: {len(unassigned)} results matched no era and no default: "
                  f"{sorted(set(unassigned))[:10]}")
 
+    # Sprints, 2021 onward. Their POINTS are championship points and are added
+    # in. Their WINS are not Grand Prix wins and are counted separately, because
+    # folding a Saturday result into a team's win column would quietly rewrite
+    # the record book.
+    for r in sprint:
+        season = int(r["season"])
+        e = assign(idx, r["constructor_id"], season, defaults.get(r["constructor_id"]))
+        if e is None:
+            continue
+        d = L[e["lineage"]]
+        pts = num(r["points"]) or 0.0
+        won = num(r["position"]) == 1
+        d["sprint_points"] += pts
+        d["sprint_wins"] += won
+        d["sprint_entries"] += 1
+        s = d["by_season"][season]
+        s["sprint_points"] += pts
+        s["sprint_wins"] += won
+
 
     # Championship position per lineage-season. A lineage can hold two records
     # in one season only through an Ergast duplicate; take the better position.
@@ -315,6 +406,7 @@ def main():
     # where it reads as a standing rather than a result.
     latest_season = max(int(x["season"]) for x in res)
     champ = defaultdict(dict)
+    champ_pts = {}
     for s in stand:
         season = int(s["season"])
         e = assign(idx, s["constructor_id"], season, defaults.get(s["constructor_id"]))
@@ -325,6 +417,12 @@ def main():
             continue
         cur = champ[e["lineage"]].get(season)
         champ[e["lineage"]][season] = p if cur is None else min(cur, p)
+        # Standings rows are cumulative and per round, so the largest value for
+        # a season is the final one.
+        cp = num(s["points"])
+        if cp is not None:
+            champ_pts[(e["lineage"], season)] = max(
+                champ_pts.get((e["lineage"], season), 0.0), cp)
 
     out = []
     for lid, d in L.items():
@@ -350,7 +448,7 @@ def main():
             s = d["by_season"][y]
             season_rows.append([
                 y, len(s["races"]), s["wins"], s["podiums"], s["poles"],
-                round(s["points"], 1), champ[lid].get(y),
+                round(s["points"] + s["sprint_points"], 1), champ[lid].get(y),
                 round(sum(s["grid"]) / len(s["grid"]), 1) if s["grid"] else None,
                 round(sum(s["finish"]) / len(s["finish"]), 1) if s["finish"] else None,
                 sorted(s["drivers"]),
@@ -381,7 +479,10 @@ def main():
             "first": seasons[0], "last": seasons[-1], "seasons": len(seasons),
             "races": len(d["races"]), "entries": d["entries"],
             "wins": d["wins"], "podiums": d["podiums"], "poles": d["poles"],
-            "points": round(d["points"], 1),
+            "points": round(d["points"] + d["sprint_points"], 1),
+            "sprintPoints": round(d["sprint_points"], 1),
+            "sprintWins": d["sprint_wins"],
+            "teammates": head_to_head(d["grid_by_race"]),
             "titles": sum(1 for y in seasons if y < latest_season and champ[lid].get(y) == 1),
             "bestChamp": min([p for p in (champ[lid].get(y) for y in seasons) if p],
                              default=None),
@@ -401,6 +502,35 @@ def main():
             "default": all(e["era"].get("_default") for e in d["eras"].values()),
         })
 
+
+    # 🔴 POINTS SCORED IS NOT THE CHAMPIONSHIP TOTAL, AND THE GAP IS REAL.
+    # Many seasons before 1991 counted only a driver's best N results, so the
+    # official total is LOWER than the points actually scored, by design. From
+    # 1991 every result counts, so a gap there is a bug in this script and not
+    # a rule of the sport. Sprint points were exactly that bug until this
+    # commit: 2025 McLaren read 775 against a real 833.
+    modern_gaps = []
+    for r in out:
+        notes = []
+        for y in range(1991, latest_season + 1):
+            row = next((s for s in r["seasonRows"] if s[0] == y), None)
+            official = champ_pts.get((r["slug"], y))
+            if row is None or official is None:
+                continue
+            adj, why = KNOWN_ADJUSTMENTS.get((r["slug"], y), (0, ""))
+            if why:
+                notes.append([y, adj, why])
+            if abs((row[5] + adj) - official) > 0.01:
+                modern_gaps.append((r["slug"], y, row[5], official))
+        r["pointsNotes"] = notes
+    if modern_gaps:
+        log(f"WARNING: {len(modern_gaps)} lineage-seasons since 1991 do not match "
+            f"the championship total and are not a known adjustment. "
+            f"First few: {modern_gaps[:6]}")
+    else:
+        log(f"points reconcile with the championship for every lineage-season "
+            f"1991-{latest_season} ({len(KNOWN_ADJUSTMENTS)} documented "
+            f"stewards' adjustment(s) allowed for)")
 
     # 🔴 A BASE ATTACHED TO A LINEAGE THAT DOES NOT EXIST IS SILENT. bases.py is
     # keyed by lineage id, and a typo there does not crash anything; the row

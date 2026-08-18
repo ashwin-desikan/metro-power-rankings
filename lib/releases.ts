@@ -23,8 +23,8 @@ export const RELEASES: Release[] = [
     items: [
       "Formula 1 teams get their own pages, counted as continuous organisations rather than chassis names. Team Lotus's 79 wins sit in one place at last, and Mercedes traces back through Brawn, Honda, BAR and Tyrrell.",
       "Each team now shows where its cars were actually built, town by town and sourced. Ten of the eleven teams racing have a facility in England, and the six English factories fit inside sixty miles.",
-      "The valuations board carries two houses and shows the higher figure per team, source marked on every row. Formula 1, the WNBA and the NWSL join it, and Real Madrid reaches $9.05B on Football Benchmark's figures.",
-      "The Owners board follows, with a control owner researched for each new club. Kroenke now holds five here across four codes and two countries, Red Bull four, and Ferrari joins Juventus under the Agnelli family.",
+      "Every team page now settles the teammate argument, with qualifying and race head-to-head for each pairing. Schumacher out-qualified Barrichello 79 to 25 at Ferrari, and Albon beat Sargeant 33 to 1 at Williams.",
+      "The valuations board now carries two houses and shows the higher figure per team, source marked on every row. Formula 1, the WNBA and the NWSL join it, and the Owners board gains a researched owner for each new club.",
     ],
   },
   {

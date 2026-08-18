@@ -120,8 +120,12 @@ def main(argv):
     common.log(f"merged rows: {len(rows)}")
     as_of = max((r.get("as_of") or "" for r in rows), default="")
 
+    # Ordered on (company_id, as_of) because company_id alone repeats once per
+    # snapshot, and identical projected rows are expected here: this is a set of
+    # distinct dates, so duplicates are the point rather than a fault.
     snapshots = sorted({v["as_of"] for v in common.select_all(
-        "/rest/v1/mktcap_valuations?select=as_of", order="company_id")})
+        "/rest/v1/mktcap_valuations?select=as_of", order="company_id,as_of",
+        allow_duplicate_rows=True)})
     merged_by_id = {r["company_id"]: r for r in rows}
     by_symbol = {r["symbol"]: r for r in rows if r.get("symbol")}
     by_name = {r["name"]: r for r in rows}

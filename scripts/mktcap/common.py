@@ -45,12 +45,43 @@ def select(path, key=None):
     status, body = rest("GET", path, key=key, headers={"Prefer": ""})
     return json.loads(body)
 
-def select_all(path, order, key=None, page=1000):
-    """Paginate past PostgREST's max-rows cap. path must not already contain order/limit/offset."""
+def select_all(path, order, key=None, page=1000, allow_duplicate_rows=False):
+    """Paginate past PostgREST's max-rows cap. path must not already contain order/limit/offset.
+
+    🔴 THE ORDER MUST BE UNIQUE ACROSS ROWS.
+
+    limit/offset pagination asks the server for "rows 1000-1999 of this
+    ordering". If the ordering has ties, the database is free to break them
+    differently on every request, so a tied row can appear on two pages and
+    another can appear on none. Nothing errors. You get a dataset that is
+    quietly wrong and that CHANGES BETWEEN RUNS.
+
+    It bit F1 on 2026-08-18: `f1_results` was paginated on (season, round),
+    which is one race and about twenty rows, so 27,389 results came back with
+    duplicates and holes. McLaren read 148 points for 1991 against a real 139,
+    Williams 178 for 1993 against 168. Nobody would have caught it without
+    reconciling against the championship table.
+
+    So this now checks. Every row is hashed on the columns actually selected,
+    and a repeat across pages raises rather than returns. Pass
+    allow_duplicate_rows=True only when identical projected rows are EXPECTED,
+    which really means when you are building a set and do not care.
+    """
     sep = "&" if "?" in path else "?"
-    rows, offset = [], 0
+    rows, offset, seen = [], 0, set()
     while True:
         batch = select(f"{path}{sep}order={order}&limit={page}&offset={offset}", key=key)
+        if not allow_duplicate_rows:
+            for r in batch:
+                h = json.dumps(r, sort_keys=True, separators=(",", ":"), default=str)
+                if h in seen:
+                    raise SystemExit(
+                        f"FATAL: paginating {path.split('?')[0]} on order={order!r} "
+                        f"returned the same row twice, which means the order is not "
+                        f"unique and the page boundaries are unstable. Rows are "
+                        f"being dropped as well as repeated. Add a unique column to "
+                        f"the order (usually 'id'). Duplicate: {h[:200]}")
+                seen.add(h)
         rows += batch
         if len(batch) < page: return rows
         offset += page

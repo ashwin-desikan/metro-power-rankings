@@ -173,7 +173,13 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
         <Stat label="Races" value={t.races} sub={`${t.seasons} seasons`} />
         <Stat label="Poles" value={t.poles || "—"} />
         <Stat label="Podiums" value={t.podiums} />
-        <Stat label="Points" value={t.points.toLocaleString()} sub="scoring systems differ by era" />
+        <Stat
+          label="Points"
+          value={t.points.toLocaleString()}
+          sub={t.sprintPoints > 0
+            ? `${t.sprintPoints.toLocaleString()} of them from sprints`
+            : "scoring systems differ by era"}
+        />
         <Stat label="Classified finishes" value={`${finishedPct}%`} sub={`${t.entries} car entries`} />
         <Stat
           label="First and last win"
@@ -347,6 +353,64 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
         </div>
       )}
 
+      {t.teammates.length > 0 && (
+        <>
+          <Section id="teammates">Teammate against teammate</Section>
+          <p className="text-sm mb-3 max-w-3xl" style={{ color: "var(--text-muted)" }}>
+            The same car, the same weekend, the only comparison in the sport with nothing else in it. Qualifying
+            counts the races where <em>both</em> cars set a grid time; the race counts the races where <em>both</em>{" "}
+            were classified, because a car that broke on lap two did not lose to anybody. The two denominators are
+            different for that reason, and both are shown.
+          </p>
+          <div className="rounded-lg overflow-x-auto hidden sm:block" style={{ border: "1px solid var(--border)" }}>
+            <table className="w-full border-collapse">
+              <thead><tr style={headStyle}>
+                <th className={th}>Pairing</th><th className={th}>Years</th>
+                <th className={th + " text-right"}>Races</th>
+                <th className={th + " text-center"}>Qualifying</th>
+                <th className={th + " text-center"}>Race</th>
+              </tr></thead>
+              <tbody>
+                {t.teammates.map(([a, b, races, from, to, qa, qb, ra, rb], i) => (
+                  <tr key={`${a}-${b}-${i}`} style={rowBorder}>
+                    <td className={td} style={{ color: "var(--text)" }}>{a} v {b}</td>
+                    <td className={td + " tabular-nums"} style={{ color: "var(--text-dim)" }}>
+                      {from === to ? from : `${from}–${to}`}
+                    </td>
+                    <td className={td + " text-right tabular-nums"} style={{ color: "var(--text-muted)" }}>{races}</td>
+                    <td className={td + " text-center tabular-nums"}>
+                      <span style={{ color: qa > qb ? "var(--text)" : "var(--text-dim)", fontWeight: qa > qb ? 600 : 400 }}>{qa}</span>
+                      <span style={{ color: "var(--text-dim)" }}> – </span>
+                      <span style={{ color: qb > qa ? "var(--text)" : "var(--text-dim)", fontWeight: qb > qa ? 600 : 400 }}>{qb}</span>
+                    </td>
+                    <td className={td + " text-center tabular-nums"}>
+                      <span style={{ color: ra > rb ? "var(--text)" : "var(--text-dim)", fontWeight: ra > rb ? 600 : 400 }}>{ra}</span>
+                      <span style={{ color: "var(--text-dim)" }}> – </span>
+                      <span style={{ color: rb > ra ? "var(--text)" : "var(--text-dim)", fontWeight: rb > ra ? 600 : 400 }}>{rb}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[60vh] overflow-y-auto overscroll-contain">
+            {t.teammates.map(([a, b, races, from, to, qa, qb, ra, rb], i) => (
+              <div key={`${a}-${b}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="text-sm font-medium min-w-0" style={{ color: "var(--text)" }}>{a} v {b}</span>
+                  <span className="text-xs tabular-nums flex-shrink-0" style={{ color: "var(--text-dim)" }}>
+                    {from === to ? from : `${from}–${to}`}
+                  </span>
+                </div>
+                <div className="mt-1 text-xs tabular-nums" style={{ color: "var(--text-muted)" }}>
+                  {races} races · qualifying {qa}–{qb} · race {ra}–{rb}
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
       <Section id="seasons">Season by season</Section>
       <div className="rounded-lg overflow-x-auto hidden sm:block" style={{ border: "1px solid var(--border)" }}>
         <table className="w-full border-collapse">
@@ -354,6 +418,7 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             <th className={th}>Season</th><th className={th + " text-right"}>Pos</th>
             <th className={th + " text-right"}>Races</th><th className={th + " text-right"}>Wins</th>
             <th className={th + " text-right"}>Podiums</th><th className={th + " text-right"}>Poles</th>
+            <th className={th + " text-right"}>Points</th>
             <th className={th + " text-right"}>Avg grid</th><th className={th + " text-right"}>Avg finish</th>
             <th className={th}>Drivers</th>
           </tr></thead>
@@ -366,6 +431,7 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
                 <td className={td + " text-right tabular-nums font-semibold"} style={{ color: "var(--text)" }}>{s[2] || "—"}</td>
                 <td className={td + " text-right tabular-nums"} style={{ color: "var(--text-muted)" }}>{s[3] || "—"}</td>
                 <td className={td + " text-right tabular-nums"} style={{ color: "var(--text-muted)" }}>{s[4] || "—"}</td>
+                <td className={td + " text-right tabular-nums"} style={{ color: "var(--text-muted)" }}>{s[5] || "—"}</td>
                 <td className={td + " text-right tabular-nums"} style={{ color: "var(--text-dim)" }}>{s[7] ?? "—"}</td>
                 <td className={td + " text-right tabular-nums"} style={{ color: "var(--text-dim)" }}>{s[8] ?? "—"}</td>
                 <td className={td + " text-xs"} style={{ color: "var(--text-muted)" }}>{s[9].join(", ")}</td>
@@ -374,6 +440,15 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
           </tbody>
         </table>
       </div>
+      {t.pointsNotes.length > 0 && (
+        <ul className="mt-3 space-y-1.5 max-w-3xl">
+          {t.pointsNotes.map(([y, , why]) => (
+            <li key={`pn-${y}`} className="text-[13px] leading-relaxed" style={{ color: "var(--text-muted)" }}>
+              <strong style={{ color: "var(--text)" }}>{y}.</strong> {why}
+            </li>
+          ))}
+        </ul>
+      )}
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-y-auto overscroll-contain">
         {seasonsDesc.map((s) => (
           <div key={`${s[0]}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
@@ -474,6 +549,13 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             Wins, podiums and poles count car entries, so a one-two counts as two podiums. Points are as awarded at
             the time and are not comparable across eras: a win was worth 8 points in 1960 and 25 today. Titles count
             finished seasons only, so leading the current championship does not yet count as one.
+          </p>
+          <p>
+            Points are points <em>scored</em>, race and sprint together, and every season from 1991 onward is checked
+            against the official constructors&rsquo; table at build time. Earlier seasons will not match it, and are
+            not meant to: for much of the sport&rsquo;s history only a driver&rsquo;s best few results counted toward
+            the championship. Sprint <em>wins</em> are counted separately from Grand Prix wins, because a Saturday
+            result is not a victory in the record books.
           </p>
           {t.bases.length > 0 && (
             <p>

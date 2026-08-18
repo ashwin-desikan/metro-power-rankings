@@ -45,6 +45,21 @@ export type F1TeamCircuit = [string, string | null, string | null, string | null
 export type F1Victory = [number, number, string | null, string, string | null, string | null, string];
 
 /**
+ * Teammate against teammate.
+ * [driverA, driverB, racesTogether, firstSeason, lastSeason,
+ *  qualWinsA, qualWinsB, raceWinsA, raceWinsB]
+ *
+ * The two denominators differ on purpose. Qualifying counts only races where
+ * BOTH cars set a grid position; the race counts only races where BOTH were
+ * classified. Scoring a retirement as a defeat would say a car that broke on
+ * lap two lost to somebody, and it did not.
+ */
+export type F1Teammates = [string, string, number, number, number, number, number, number, number];
+
+/** [season, pointsDelta, why] — a stewards' adjustment, not a scoring error. */
+export type F1PointsNote = [number, number, string];
+
+/**
  * One factory, workshop or engine plant, for one span of years.
  *
  * `metro` is null when MetroAreas.xlsx cannot rule on the town, which is not
@@ -95,7 +110,16 @@ export type F1Constructor = {
   wins: number;
   podiums: number;
   poles: number;
+  /** Points SCORED, race plus sprint. Not always the championship total: many
+      seasons before 1994 counted only a driver's best N results. */
   points: number;
+  /** Of which, from sprint races. 2021 onward only. */
+  sprintPoints: number;
+  /** Sprint wins are counted here and deliberately NOT in `wins`, because a
+      Saturday result is not a Grand Prix victory. */
+  sprintWins: number;
+  teammates: F1Teammates[];
+  pointsNotes: F1PointsNote[];
   titles: number;
   bestChamp: number | null;
   current: boolean;
