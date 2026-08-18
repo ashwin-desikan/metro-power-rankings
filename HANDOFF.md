@@ -5895,3 +5895,55 @@ They previously degraded to "no-place" once the Counties attempt failed, which t
 3. ⚠️ **Anything else reading `MetroAreas.xlsx` should be re-checked against `Counties`.** If a lookup only reads `Municipality`, it is blind to Japan, the Netherlands and 237 other countries, and it will not find the UK under "United Kingdom" either.
 4. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
 5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling.
+
+---
+
+## 2026-08-18 (windows, night) — the F1 hub had one link to 78 team pages, and the wrong numbers
+
+Ashwin asked where the links to the constructor pages were on `/teams/f1`. Fair question. There was **one**: a nav chip labelled "Teams". Every constructor name on the hub was plain text.
+
+### What was actually wrong was worse than the links
+
+The hub's **All-Time Wins** and **Most Constructors' Titles** tables read `lib/f1.ts`, which is built from the RAW Ergast records. So the hub asserted:
+
+| | hub said | teams board said |
+|---|---|---|
+| Team Lotus titles | **4** | **7** |
+| Team Lotus wins | **45** | **79** |
+| Mercedes titles | **8** | **10** |
+| McLaren wins | **200** | **204** |
+
+and it listed **"Brabham-Repco"** and **"Cooper-Climax"** in a titles table as though they were teams. Two answers to the same question, one click apart, and the wrong one was on the page a reader lands on first. **The whole point of the lineage curation was to stop the site saying Team Lotus won 45 races, and the flagship F1 page was still saying it.**
+
+Both tables now read `getPagedF1Constructors()`. The chassis-engine names are gone from the titles list.
+
+### Seven places named a constructor, none linked
+
+Drivers' standings Team column (table and card), constructors' standings (table and card), Most Constructors' Titles, All-Time Wins constructors (table and card). All now go through one `TeamName` component that resolves the name and links it.
+
+**The hub went from 1 constructor link to 106, across 21 destinations.**
+
+### 🔴 FOUR NAMES RESOLVED TO NOTHING, INCLUDING A CURRENT TEAM
+
+Checking every constructor name the site writes against the resolver found four that matched no lineage and rendered unlinked, indistinguishable from a team with no page:
+
+- **RB F1 Team** — a team racing *this season*, in the live standings
+- **Lotus-Climax**, **Lotus-Ford**, **Cooper-Climax**
+
+None is a display name or an era name, so `getF1ConstructorByName` had nothing to match. This is the CF Montréal trap from this morning, in a different table.
+
+**Fixed at the resolver, not the call site.** Each lineage now carries an `aliases` array — every name the archive itself uses for every record that lineage claims — and `getF1ConstructorByName` checks it after the exact and era passes. `racing-bulls` gains `AlphaTauri, Minardi, RB F1 Team, Toro Rosso`; `team-lotus` gains its six chassis-engine names. **All 36 constructor names used anywhere on the site now resolve.**
+
+⚠️ One archive wart surfaced: the record for Lotus-Pratt & Whitney carries a literal `&amp;` in its name. Harmless here, worth knowing.
+
+### The check worth keeping
+
+`_miss.py`-style reconciliation — take every constructor name the site writes anywhere, run it through the resolver, list the misses — took a minute and found a current team unlinked. **Worth doing for any board that resolves names to pages.** The valuations board got it this morning; nothing else has.
+
+### Open
+
+1. **Eleven commits want one build.** Build-relevant at HEAD. **If it ships after midnight, move the `lib/releases.ts` date off 2026-08-18.**
+2. **Six workbook cells** would clear every remaining F1 factory town. Table two entries up.
+3. `lib/f1.ts`'s `getF1ConstructorTitles` and `getF1AllTimeConstructorWins` are now unused by the hub but still exported and still built into `data.json`. **Circuit pages may still show raw-record names.** Worth a sweep.
+4. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
+5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling.
