@@ -72,6 +72,7 @@ import {
   getNrlFranchiseByTeamName,
   nrlMonogramFor,
 } from "./nrl";
+import { getF1ConstructorByName } from "./f1Constructors";
 import { getCfbTeamForName, cfbMonogram } from "./cfb";
 import { getCbbTeamForName } from "./cbb";
 import { cbbMonogram } from "./cbbShared";
@@ -81,7 +82,7 @@ export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl" | "afl" | "nrl" | "cfb" | "npb" | "cbb";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl" | "afl" | "nrl" | "cfb" | "npb" | "cbb" | "f1";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -138,6 +139,13 @@ function isAfl(sport: string, leagueHint: string): boolean {
 }
 function isNrl(sport: string, leagueHint: string): boolean {
   return NRL_SPORT_LABELS.has(sport) || leagueHint === "NRL";
+}
+// F1 CONSTRUCTORS, not circuits. /teams/f1/[slug] is a circuit; a team lives at
+// /teams/f1/constructors/[slug]. Added 2026-08-18; until then the F1 rows on
+// /sports/valuations had nowhere to point.
+const F1_SPORT_LABELS = new Set(["Formula 1", "F1", "Motorsport"]);
+function isF1(sport: string, leagueHint: string): boolean {
+  return F1_SPORT_LABELS.has(sport) || leagueHint === "F1";
 }
 const CFB_SPORT_LABELS = new Set(["American Football (NCAA)", "College Football", "CFB"]);
 function isCfb(sport: string, leagueHint: string): boolean {
@@ -339,6 +347,19 @@ export function resolveTeamLink(
       logoUrl: null,
       monogram: nrlMonogramFor(f),
       displayName: f.name,
+    };
+  }
+
+  if (isF1(sport, leagueHint)) {
+    const c = getF1ConstructorByName(cleanName);
+    if (!c) return null;
+    return {
+      slug: c.slug,
+      league: "f1",
+      href: `/teams/f1/constructors/${c.slug}`,
+      logoUrl: null,
+      monogram: { bg: "#1f2937", fg: "#ffffff", mono: c.name.slice(0, 3).toUpperCase() },
+      displayName: c.name,
     };
   }
 

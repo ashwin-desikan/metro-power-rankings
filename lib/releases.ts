@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-18",
-    headline: "Two valuation houses, and the higher number wins",
+    headline: "Formula 1 teams, and two valuation houses on one board",
     items: [
-      "The valuations board now carries two houses and shows the higher figure per team, source marked on every row. Sportico covers all 220 clubs; Football Benchmark's enterprise values are the higher number on 26.",
-      "Formula 1, the WNBA and the NWSL join the board, and Galatasaray brings Turkey. Ferrari at $6.4B outvalues the Boston Celtics; Real Madrid, on Football Benchmark's figures, reaches $9.05B.",
+      "Formula 1 teams get their own pages, counted as continuous organisations rather than chassis names. Team Lotus's 79 wins sit in one place at last, and Mercedes traces back through Brawn, Honda, BAR and Tyrrell.",
+      "The valuations board now carries two houses and shows the higher figure per team, source marked on every row. Sportico covers all 220 clubs; Football Benchmark's enterprise values are higher on 26 of them.",
+      "Formula 1, the WNBA and the NWSL join that board, and Galatasaray brings Turkey. Ferrari at $6.4B outvalues the Boston Celtics; Real Madrid reaches $9.05B on Football Benchmark's figures.",
       "The Owners board follows, with a control owner researched for each new club. Kroenke now holds five here across four codes and two countries, Red Bull four, and Ferrari joins Juventus under the Agnelli family.",
-      "Where the two houses disagree, they disagree by a lot. Newcastle is 69% higher on Football Benchmark, Manchester United 8% lower. The tag on each row tells you which one you are reading.",
     ],
   },
   {

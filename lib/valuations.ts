@@ -61,10 +61,10 @@ const NAMED_LEAGUES: Record<string, LeagueRoute> = {
   // NWSL clubs live in the women's football portal, which keys on the distinct
   // "W Football" sport label, not the men's "Football" one.
   NWSL: { hub: "/teams/wfootball", sport: "NWSL", resolve: ["W Football", "W Football"] },
-  // /teams/f1 is a real Formula 1 hub, but its [slug] pages are CIRCUITS, not
-  // constructors, so Ferrari has no page to link to. Label links to the hub;
-  // the team cell stays plain text until constructor pages exist.
-  F1: { hub: "/teams/f1", sport: "F1", resolve: null },
+  // Constructor pages shipped 2026-08-18 at /teams/f1/constructors/[slug], so
+  // these rows link now. /teams/f1/[slug] is still CIRCUITS; the resolver goes
+  // through teamLinks, which knows the difference.
+  F1: { hub: "/teams/f1/constructors", sport: "F1", resolve: ["F1", "F1"] },
 };
 
 // Football country -> league-hub slug under /teams/football/leagues/.

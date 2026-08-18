@@ -92,6 +92,7 @@ export default async function F1Page() {
       </header>
 
       <HubNav items={[
+        { label: "Teams", href: "/teams/f1/constructors" },
         { label: "Standings", href: "#standings" },
         { label: "This Season", href: "#season" },
         { label: "Host Metros", href: "#host-metros" },

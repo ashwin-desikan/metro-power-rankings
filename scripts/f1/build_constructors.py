@@ -1,0 +1,379 @@
+#!/usr/bin/env python3
+"""Build the F1 constructor read model from the Ergast/Jolpica mirror.
+
+  public/data/f1/constructors.json
+
+Reads Supabase (f1_results, f1_race_meta, f1_constructor_standings,
+f1_constructors) and the curation in lineages.py, and emits one record per
+CONTINUOUS TEAM rather than per Ergast constructor record. See lineages.py for
+why that distinction is the whole job.
+
+Design notes
+- Per-race rows are NOT shipped, except victories. 27,389 entries would be
+  megabytes on a page that is already a hub tab; the season table answers the
+  same questions and the circuit pages carry race detail.
+- Every displayed year is MEASURED from the results. The curation's spans exist
+  to assign a row, not to describe it, so a typo in a year cannot mislabel a
+  season.
+- A result that matches zero eras, or more than one, is a FATAL error. Silence
+  there would mean a team quietly missing races.
+
+  python scripts/f1/build_constructors.py
+  python scripts/f1/build_constructors.py --self-test
+"""
+import argparse, json, os, sys
+from collections import Counter, defaultdict
+from datetime import datetime, timezone
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(HERE))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(ROOT, "scripts", "rankings"))
+
+from lineages import ERAS, NOTES  # noqa: E402
+from common import select_all, log  # noqa: E402
+
+DEST = os.path.join(ROOT, "public", "data", "f1", "constructors.json")
+F1_DATA = os.path.join(ROOT, "public", "data", "f1", "data.json")
+# The constructors' championship did not exist before 1958, so a missing
+# standing before then is expected and must not read as a team failing to score.
+FIRST_CONSTRUCTORS_TITLE = 1958
+# A lineage earns a page if a reader could plausibly look it up.
+MIN_RACES = 10
+
+
+def num(v):
+    """Ergast writes '1.0', '', 'R' and 'D' into the same columns."""
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def slugify(s):
+    """ASCII only. Python's str.isalnum() is true for 'ö' and 'ü', so the naive
+    version emitted non-ASCII slugs, which become percent-encoded URLs and do
+    not match what anyone would type or link."""
+    out, prev_dash = [], False
+    for ch in s.lower():
+        if ch.isascii() and ch.isalnum():
+            out.append(ch); prev_dash = False
+        elif not prev_dash:
+            out.append("-"); prev_dash = True
+    return "".join(out).strip("-")
+
+
+def build_index(eras):
+    """constructor_id -> [era]. Kept as a list because a record can be split
+    across eras by year (Sauber's three spells, the six unrelated-organisation
+    splits)."""
+    idx = defaultdict(list)
+    for e in eras:
+        for cid in e["ids"]:
+            idx[cid].append(e)
+    return idx
+
+
+def assign(idx, cid, season, default_lineage):
+    """The era owning this (constructor_id, season), or a default era standing
+    for 'this record is its own team'. Ambiguity is fatal, never resolved by
+    picking the first match."""
+    hits = [e for e in idx.get(cid, ())
+            if e["from_year"] <= season <= e["to_year"]]
+    if len(hits) > 1:
+        raise SystemExit(
+            f"FATAL: {cid!r} in {season} matches {len(hits)} eras "
+            f"({[h['lineage'] + '/' + h['era_name'] for h in hits]}). "
+            f"Curation spans overlap; fix lineages.py rather than picking one.")
+    return hits[0] if hits else default_lineage
+
+
+def self_test():
+    ok = True
+
+    def check(label, got, want):
+        nonlocal ok
+        if got != want:
+            ok = False; print(f"  FAIL {label}: got {got!r}, want {want!r}")
+        else:
+            print(f"  ok   {label}")
+
+    check("slug", slugify("ATS (Auto Technisches Spezialzubehör)"), "ats-auto-technisches-spezialzubeh-r")
+    check("num handles Ergast junk", [num("1.0"), num("R"), num("")], [1.0, None, None])
+
+    idx = build_index(ERAS)
+    # The six split records must resolve to different lineages by year.
+    for cid, year, want in [("alfa", 1950, "alfa-romeo"), ("alfa", 2021, "audi"),
+                            ("mercedes", 1954, "mercedes-works"), ("mercedes", 2015, "mercedes"),
+                            ("renault", 1980, "renault-works"), ("renault", 2005, "alpine"),
+                            ("renault", 2018, "alpine"), ("honda", 1965, "honda-works"),
+                            ("honda", 2007, "mercedes"), ("aston_martin", 1959, "aston-martin-works"),
+                            ("aston_martin", 2023, "aston-martin"), ("ats", 1963, "ats-italy"),
+                            ("ats", 1980, "ats-germany"), ("sauber", 2000, "audi"),
+                            ("sauber", 2024, "audi"), ("lotus-ford", 1968, "team-lotus"),
+                            ("brabham-repco", 1967, "brabham"), ("tyrrell", 1975, "mercedes")]:
+        got = assign(idx, cid, year, {"lineage": "DEFAULT"})["lineage"]
+        check(f"{cid} in {year}", got, want)
+
+    # No era may claim the same record in the same year twice.
+    for cid, eras in idx.items():
+        for y in range(1950, 2027):
+            hits = [e for e in eras if e["from_year"] <= y <= e["to_year"]]
+            if len(hits) > 1:
+                ok = False
+                print(f"  FAIL {cid} in {y} claimed by {[h['lineage'] for h in hits]}")
+    check("no overlapping claims across 1950-2026", True, True)
+    print("self-test:", "PASS" if ok else "FAIL")
+    return 0 if ok else 1
+
+
+def load():
+    res = select_all(
+        "/rest/v1/f1_results?select=season,round,driver,constructor_id,constructor,"
+        "grid,position,points,status", "season,round")
+    meta = select_all("/rest/v1/f1_race_meta?select=season,round,race_name,circuit_id",
+                      "season,round")
+    stand = select_all("/rest/v1/f1_constructor_standings?select=season,constructor_id,"
+                       "position,points,wins", "season")
+    cons = select_all("/rest/v1/f1_constructors?select=constructor_id,constructor,"
+                      "nationality,wikipedia", "constructor_id")
+    log(f"{len(res)} results, {len(meta)} races, {len(stand)} standings, "
+        f"{len(cons)} constructor records")
+    circuits = {}
+    if os.path.exists(F1_DATA):
+        for c in json.load(open(F1_DATA, encoding="utf-8")).get("circuits", []):
+            circuits[c["circuit_id"]] = (c.get("circuit_name"), c.get("metro"),
+                                         c.get("metro_slug"))
+    return res, meta, stand, cons, circuits
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--self-test", action="store_true")
+    ap.add_argument("--min-races", type=int, default=MIN_RACES)
+    a = ap.parse_args()
+    if a.self_test:
+        return self_test()
+    if self_test():
+        return 1
+
+    res, meta, stand, cons, circuits = load()
+    idx = build_index(ERAS)
+    race_of = {(r["season"], r["round"]): r for r in meta}
+    cons_meta = {c["constructor_id"]: c for c in cons}
+
+    # Default era per record: "this record is its own team, spanning its own
+    # seasons". Reported at the end so a missing merge shows as a number.
+    defaults = {}
+    for c in cons:
+        cid = c["constructor_id"]
+        if cid in idx:
+            continue
+        defaults[cid] = {"lineage": slugify(c["constructor"]) or cid,
+                         "era_name": c["constructor"], "ids": [cid],
+                         "from_year": 0, "to_year": 9999, "contested": 0,
+                         "note": NOTES.get(cid, ""), "_default": True}
+
+    L = defaultdict(lambda: {
+        "eras": {}, "seasons": set(), "races": set(), "entries": 0, "wins": 0,
+        "podiums": 0, "poles": 0, "points": 0.0, "status": Counter(),
+        "decade": defaultdict(lambda: [0, 0]), "drivers": defaultdict(
+            lambda: {"races": 0, "wins": 0, "podiums": 0, "points": 0.0,
+                     "first": 9999, "last": 0}),
+        "by_season": defaultdict(lambda: {"races": set(), "wins": 0, "podiums": 0,
+                                          "poles": 0, "points": 0.0,
+                                          "grid": [], "finish": [], "drivers": set()}),
+        "victories": [], "circuit": defaultdict(lambda: [0, 0]),
+        "nat": None, "wiki": None,
+    })
+
+
+    unassigned = []
+    for r in res:
+        cid = r["constructor_id"]
+        season = int(r["season"])
+        e = assign(idx, cid, season, defaults.get(cid))
+        if e is None:
+            unassigned.append((cid, season)); continue
+        lid = e["lineage"]
+        d = L[lid]
+        key = (lid, e["era_name"], e["from_year"], e["to_year"])
+        d["eras"].setdefault(key, {"era": e, "seasons": set(), "races": set(),
+                                   "wins": 0, "podiums": 0, "poles": 0,
+                                   "points": 0.0, "drivers": set()})
+        ed = d["eras"][key]
+        rd = (season, r["round"])
+        pos, grid = num(r["position"]), num(r["grid"])
+        pts = num(r["points"]) or 0.0
+        won, podium, pole = pos == 1, pos is not None and pos <= 3, grid == 1
+
+        for bucket in (d, ed):
+            bucket["seasons"].add(season)
+            bucket["races"].add(rd)
+            bucket["wins"] += won
+            bucket["podiums"] += podium
+            bucket["poles"] += pole
+            bucket["points"] += pts
+        ed["drivers"].add(r["driver"])
+        d["entries"] += 1
+        d["status"][r["status"] or "Unknown"] += 1
+        dec = d["decade"][season // 10 * 10]
+        dec[0] += 1
+        dec[1] += (r["status"] == "Finished")
+        if d["nat"] is None and cid in cons_meta:
+            d["nat"] = cons_meta[cid].get("nationality")
+            d["wiki"] = cons_meta[cid].get("wikipedia")
+
+        dr = d["drivers"][r["driver"]]
+        dr["races"] += 1; dr["wins"] += won; dr["podiums"] += podium
+        dr["points"] += pts
+        dr["first"] = min(dr["first"], season); dr["last"] = max(dr["last"], season)
+
+        s = d["by_season"][season]
+        s["races"].add(rd); s["wins"] += won; s["podiums"] += podium
+        s["poles"] += pole; s["points"] += pts; s["drivers"].add(r["driver"])
+        if grid is not None and grid > 0:
+            s["grid"].append(grid)
+        if pos is not None:
+            s["finish"].append(pos)
+
+        m = race_of.get((r["season"], r["round"]))
+        cinfo = circuits.get(m["circuit_id"]) if m else None
+        if m:
+            c = d["circuit"][m["circuit_id"]]
+            c[0] += 1; c[1] += won
+        if won and m:
+            d["victories"].append([season, int(r["round"]), m["race_name"], r["driver"],
+                                   (cinfo or (None, None, None))[1],
+                                   (cinfo or (None, None, None))[2],
+                                   m["circuit_id"]])
+    if unassigned:
+        sys.exit(f"FATAL: {len(unassigned)} results matched no era and no default: "
+                 f"{sorted(set(unassigned))[:10]}")
+
+
+    # Championship position per lineage-season. A lineage can hold two records
+    # in one season only through an Ergast duplicate; take the better position.
+    # 🔴 THE CURRENT SEASON'S LEADER IS NOT A CHAMPION. f1_constructor_standings
+    # carries a live row for the season in progress, so counting position == 1
+    # as a title credited Mercedes with eleven constructors' championships in
+    # August 2026 against a real ten. Titles are counted only for seasons that
+    # have finished; the live season still shows its position in the form line,
+    # where it reads as a standing rather than a result.
+    latest_season = max(int(x["season"]) for x in res)
+    champ = defaultdict(dict)
+    for s in stand:
+        season = int(s["season"])
+        e = assign(idx, s["constructor_id"], season, defaults.get(s["constructor_id"]))
+        if e is None:
+            continue
+        p = num(s["position"])
+        if p is None:
+            continue
+        cur = champ[e["lineage"]].get(season)
+        champ[e["lineage"]][season] = p if cur is None else min(cur, p)
+
+    out = []
+    for lid, d in L.items():
+        seasons = sorted(d["seasons"])
+        eras = []
+        for (_, name, _, _), ed in sorted(
+                d["eras"].items(), key=lambda kv: min(kv[1]["seasons"])):
+            es = sorted(ed["seasons"])
+            eras.append({
+                "name": name, "from": es[0], "to": es[-1],
+                "races": len(ed["races"]), "wins": ed["wins"],
+                "podiums": ed["podiums"], "poles": ed["poles"],
+                "points": round(ed["points"], 1),
+                "titles": sum(1 for y in es if y < latest_season and champ[lid].get(y) == 1),
+                "contested": ed["era"]["contested"],
+                "note": ed["era"]["note"],
+                "drivers": len(ed["drivers"]),
+            })
+        form = [[y, champ[lid].get(y), round(d["by_season"][y]["points"], 1),
+                 d["by_season"][y]["wins"]] for y in seasons]
+        season_rows = []
+        for y in seasons:
+            s = d["by_season"][y]
+            season_rows.append([
+                y, len(s["races"]), s["wins"], s["podiums"], s["poles"],
+                round(s["points"], 1), champ[lid].get(y),
+                round(sum(s["grid"]) / len(s["grid"]), 1) if s["grid"] else None,
+                round(sum(s["finish"]) / len(s["finish"]), 1) if s["finish"] else None,
+                sorted(s["drivers"]),
+            ])
+        drivers = sorted(
+            ([n, v["races"], v["wins"], v["podiums"], round(v["points"], 1),
+              v["first"], v["last"]] for n, v in d["drivers"].items()),
+            key=lambda r: (-r[2], -r[1]))
+        best_c = sorted(((cid, n, w) for cid, (n, w) in d["circuit"].items()),
+                        key=lambda t: (-t[2], -t[1]))[:6]
+        last_era = eras[-1]
+        out.append({
+            "slug": lid, "name": last_era["name"],
+            "chain": [e["name"] for e in eras],
+            "contested": any(e["contested"] for e in eras),
+            "first": seasons[0], "last": seasons[-1], "seasons": len(seasons),
+            "races": len(d["races"]), "entries": d["entries"],
+            "wins": d["wins"], "podiums": d["podiums"], "poles": d["poles"],
+            "points": round(d["points"], 1),
+            "titles": sum(1 for y in seasons if y < latest_season and champ[lid].get(y) == 1),
+            "bestChamp": min([p for p in (champ[lid].get(y) for y in seasons) if p],
+                             default=None),
+            "current": seasons[-1] >= max(int(r["season"]) for r in res),
+            "nationality": d["nat"], "wikipedia": d["wiki"],
+            "eras": eras, "form": form, "seasonRows": season_rows,
+            "drivers": drivers,
+            "reliability": [[dec, v[0], round(100 * v[1] / v[0])]
+                            for dec, v in sorted(d["decade"].items())],
+            "statuses": d["status"].most_common(8),
+            "circuits": [[cid, circuits.get(cid, (cid, None, None))[0],
+                          circuits.get(cid, (None, None, None))[1],
+                          circuits.get(cid, (None, None, None))[2], n, w]
+                         for cid, n, w in best_c],
+            "victories": sorted(d["victories"], reverse=True)[:60],
+            "note": NOTES.get(lid, ""),
+            "default": all(e["era"].get("_default") for e in d["eras"].values()),
+        })
+
+
+    out.sort(key=lambda r: (-r["wins"], -r["races"], r["name"]))
+    paged = [r for r in out if r["races"] >= a.min_races or r["wins"] > 0]
+    pageable = {r["slug"] for r in paged}
+    for r in out:
+        r["hasPage"] = r["slug"] in pageable
+
+    curated = sum(1 for r in out if not r["default"])
+    latest = max(int(x["season"]) for x in res)
+    doc = {
+        "meta": {
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "first_season": min(int(x["season"]) for x in res),
+            "last_season": latest,
+            "lineages": len(out), "with_pages": len(paged),
+            "constructor_records": len(cons),
+            "curated_lineages": curated,
+            "source": ("Ergast/Jolpica results, with team lineages curated in "
+                       "scripts/f1/lineages.py"),
+        },
+        "lineages": out,
+    }
+    os.makedirs(os.path.dirname(DEST), exist_ok=True)
+    with open(DEST, "w", encoding="utf-8") as f:
+        json.dump(doc, f, separators=(",", ":"), ensure_ascii=False)
+    kb = os.path.getsize(DEST) / 1024
+    log(f"{len(out)} lineages from {len(cons)} constructor records "
+        f"({curated} curated, {len(out) - curated} left as themselves)")
+    log(f"{len(paged)} earn a page (>= {a.min_races} races or a win)")
+    log(f"-> {DEST} ({kb:.0f} KB)")
+    if kb > 1500:
+        log("WARNING: over 1.5 MB for a hub tab. Trim victories or seasonRows.")
+    top = out[:8]
+    for r in top:
+        log(f"  {r['name']:<22} {r['first']}-{r['last']}  {r['races']:>4} races  "
+            f"{r['wins']:>3} wins  {r['titles']} titles  chain={len(r['chain'])}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
