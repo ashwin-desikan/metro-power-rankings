@@ -1,30 +1,6 @@
 {
-  "generated_at": "2026-08-18T17:05:50.860037+00:00",
+  "generated_at": "2026-08-18T21:07:02.230511+00:00",
   "jobs": [
-    {
-      "id": "screen-number-ones",
-      "label": "US box office #1s",
-      "schedule_text": "Mon/Tue/Wed at 05:00, 13:00, 21:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "05:00",
-        "13:00",
-        "21:00"
-      ],
-      "weekdays": [
-        1,
-        2,
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-18T21:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-18",
-        "status": "ok",
-        "slot": "2026-08-18T13:00:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -98,6 +74,30 @@
         "date": "2026-08-18",
         "status": "ok",
         "slot": "2026-08-18T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "screen-number-ones",
+      "label": "US box office #1s",
+      "schedule_text": "Mon/Tue/Wed at 05:00, 13:00, 21:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "05:00",
+        "13:00",
+        "21:00"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-19T05:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-18",
+        "status": "ok",
+        "slot": "2026-08-18T21:00:00+00:00"
       }
     },
     {
