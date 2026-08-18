@@ -41,16 +41,23 @@ def fold(s):
     return "".join(c for c in s if not unicodedata.combining(c)).lower().strip()
 
 
-def load_workbook_rows():
-    from openpyxl import load_workbook
-    wb = load_workbook(WORKBOOK, read_only=True, data_only=True)
-    ws = wb["Municipality"]
+def load_sheet(wb, sheet, name_col):
+    """One sheet, as {folded country: [(name, metro, (regions...))]}.
+
+    🔴 THE TWO SHEETS DO NOT AGREE ON WHAT A COUNTRY IS. `Municipality` files
+    the UK as England (6,856), Scotland (656), Wales (408) and Northern Ireland
+    (80). `Counties` files all of it as "United Kingdom" (361 rows, one per
+    local authority). Reading only Municipality, as this script did until
+    2026-08-18, means a village too small to be its own MSOA has no answer at
+    all, when its district has one sitting in the next sheet along.
+    """
+    ws = wb[sheet]
     it = ws.iter_rows(values_only=True)
     hdr = [str(c).strip() if c is not None else "" for c in next(it)]
     ix = {h: i for i, h in enumerate(hdr)}
-    for col in ("Country", "Municipality", "Metro Area"):
+    for col in ("Country", name_col, "Metro Area"):
         if col not in ix:
-            sys.exit(f"FATAL: Municipality sheet has no {col!r} column: {hdr}")
+            sys.exit(f"FATAL: {sheet} sheet has no {col!r} column: {hdr}")
     # 🔴 THE COLUMN IS NOT CALLED "Region". The Municipality sheet's county-level
     # column is headed "Distri rrondissement/County" (sic), with a separate
     # "State/Region (ISO 3166-2)". Looking for a column called "Region" finds
@@ -62,7 +69,7 @@ def load_workbook_rows():
     region_cols = [c for c in ("Distri rrondissement/County",
                                "State/Region (ISO 3166-2)") if c in ix]
     if not region_cols:
-        sys.exit(f"FATAL: no county or state column on the Municipality sheet: {hdr}")
+        sys.exit(f"FATAL: no county or state column on the {sheet} sheet: {hdr}")
     rows = defaultdict(list)
     for r in it:
         def g(k):
@@ -74,12 +81,20 @@ def load_workbook_rows():
         regions = tuple(sorted({str(g(c)).strip() for c in region_cols
                                 if g(c) not in (None, "")}))
         rows[fold(country)].append((
-            str(g("Municipality") or "").strip(),
+            str(g(name_col) or "").strip(),
             str(g("Metro Area") or "").strip(),
             regions,
         ))
-    wb.close()
     return rows
+
+
+def load_workbook_rows():
+    from openpyxl import load_workbook
+    wb = load_workbook(WORKBOOK, read_only=True, data_only=True)
+    muni = load_sheet(wb, "Municipality", "Municipality")
+    cnty = load_sheet(wb, "Counties", "Distri rrondissement/County")
+    wb.close()
+    return muni, cnty
 
 
 def resolve(town, region, rows):
@@ -142,6 +157,53 @@ def resolve(town, region, rows):
     return None, "no-place", ""
 
 
+def resolve_in_counties(town, region, district, rows):
+    """The fallback, one administrative level up.
+
+    A factory village is often too small to be its own census area but its
+    DISTRICT is always in the Counties sheet. Ockham has no Municipality row at
+    all; Guildford, the borough containing it, resolves to London. Neuburg an
+    der Donau is not a district, but Neuburg-Schrobenhausen is, and it resolves
+    to Munich.
+
+    Three ways in, most explicit first:
+      1. an explicit `district` from the curation, matched exactly. Naming the
+         district a village sits in is a checkable fact, and it is the only way
+         to get from Ockham to Guildford, which share no letters.
+      2. the town's own name against district names, exact then whole-word.
+      3. the town's name against the STATE/REGION column, which is how a
+         city-region like Tokyo resolves: 54 ward rows, all agreeing on Tokyo.
+    Each way still refuses unless the matches agree on one non-blank metro."""
+    if district:
+        fd = fold(district)
+        hits = [(n, m, rg) for n, m, rg in rows if fold(n) == fd]
+        if hits:
+            metros = {m for _n, m, _rg in hits if m}
+            if len(metros) == 1:
+                return sorted(metros)[0], "county-district", district
+            if not metros:
+                return None, "no-metro", f"{district} district, blank in Counties"
+            return None, "ambiguous", ", ".join(sorted(metros)[:5])
+        return None, "no-place", f"no district called {district!r}"
+
+    metro, how, detail = resolve(town, region, rows)
+    if metro:
+        return metro, "county-" + how, detail
+
+    fr = fold(town)
+    byregion = [(n, m, rg) for n, m, rg in rows
+                if any(fold(x) == fr for x in rg)]
+    if byregion:
+        metros = {m for _n, m, _rg in byregion if m}
+        blanks = sum(1 for _n, m, _rg in byregion if not m)
+        if len(metros) == 1:
+            return (sorted(metros)[0], "county-region",
+                    f"{len(byregion)} row(s), {blanks} blank")
+        if metros:
+            return None, "ambiguous", ", ".join(sorted(metros)[:5])
+    return None, how, detail
+
+
 def self_test():
     ok = True
 
@@ -183,14 +245,47 @@ def self_test():
     check("a metro name with no municipality row still resolves",
           resolve("Northampton", "Northamptonshire", fake)[:2],
           ("Northampton", "metro-name"))
+    # The Counties fallback, one level up from the village.
+    counties = [("Guildford", "London", ("Surrey",)),
+                ("West Northamptonshire", "", ("West Northamptonshire",)),
+                ("Neuburg-Schrobenhausen", "Munich", ("Bavaria",)),
+                ("Setagaya", "Tokyo", ("Tokyo",)),
+                ("Nerima", "Tokyo", ("Tokyo",)),
+                ("Kawasaki", "Yokohama", ("Kanagawa",)),
+                ("Sagamihara", "Yokohama", ("Kanagawa",))]
+    check("a district hint reaches a village's borough",
+          resolve_in_counties("Ockham", "Surrey", "Guildford", counties)[:2],
+          ("London", "county-district"))
+    check("a blank district refuses and names itself",
+          resolve_in_counties("Brackley", "West Northamptonshire",
+                              "West Northamptonshire", counties)[:2],
+          (None, "no-metro"))
+    check("a district named after the town needs the hint",
+          resolve_in_counties("Neuburg an der Donau", "Bavaria",
+                              "Neuburg-Schrobenhausen", counties)[0], "Munich")
+    check("a city-region resolves without a district hint",
+          resolve_in_counties("Tokyo", "Tokyo", "", counties)[0], "Tokyo")
+    check("a region name that is not a metro name still resolves off the "
+          "region column",
+          resolve_in_counties("Kanagawa", "", "", counties)[:2],
+          ("Yokohama", "county-region"))
+    check("the UK is one country on Counties and four on Municipality",
+          [country_in("counties", "England"), country_in("muni", "England")],
+          ["United Kingdom", "England"])
     print("resolver self-test:", "PASS" if ok else "FAIL")
     return ok
 
 
-# The workbook labels the United Kingdom by its constituent country, so a base
-# in England has to be looked up under "England" and not under anything a
-# reader would call the country.
-COUNTRY_IN_WORKBOOK = {"England": "England", "Scotland": "Scotland"}
+# 🔴 THE TWO SHEETS LABEL THE UK DIFFERENTLY. Municipality splits it into
+# England, Scotland, Wales and Northern Ireland; Counties files the lot as
+# "United Kingdom". Everywhere else the two agree, so only the UK needs a map.
+UK = {"England", "Scotland", "Wales", "Northern Ireland"}
+
+
+def country_in(sheet, country):
+    if sheet == "counties" and country in UK:
+        return "United Kingdom"
+    return country
 
 
 def main():
@@ -202,24 +297,41 @@ def main():
     if not self_test():
         return 1
 
-    rows = load_workbook_rows()
-    print(f"\nworkbook: {sum(len(v) for v in rows.values())} municipality rows "
-          f"across {len(rows)} countries")
+    muni, cnty = load_workbook_rows()
+    print(f"\nworkbook: {sum(len(v) for v in muni.values())} municipality rows "
+          f"across {len(muni)} countries; "
+          f"{sum(len(v) for v in cnty.values())} county rows "
+          f"across {len(cnty)} countries")
 
     places = {}
     for b in BASES:
-        places.setdefault((b["country"], b["town"], b["region"]), []).append(b["lineage"])
+        key = (b["country"], b["town"], b["region"], b.get("district", ""))
+        places.setdefault(key, []).append(b["lineage"])
 
     resolved, refused = {}, []
-    for (country, town, region), lineages in sorted(places.items()):
-        wb_country = COUNTRY_IN_WORKBOOK.get(country, country)
-        crows = rows.get(fold(wb_country), [])
-        if not crows:
+    for (country, town, region, district), lineages in sorted(places.items()):
+        mrows = muni.get(fold(country_in("muni", country)), [])
+        crows = cnty.get(fold(country_in("counties", country)), [])
+        if not mrows and not crows:
             refused.append((country, town, region, "no-country",
-                            f"workbook has no rows for {wb_country!r}",
+                            f"neither sheet has rows for {country!r}",
                             sorted(set(lineages))))
             continue
-        metro, how, detail = resolve(town, region, crows)
+        metro, how, detail = (resolve(town, region, mrows) if mrows
+                              else (None, "no-place", "not on the Municipality sheet"))
+        # Municipality first because it is the finer geography. Counties is the
+        # fallback, not the default: a village's own row beats its district's.
+        if not metro and crows:
+            c_metro, c_how, c_detail = resolve_in_counties(town, region, district, crows)
+            if c_metro:
+                metro, how, detail = c_metro, c_how, c_detail
+            elif how == "no-place":
+                # Keep whichever refusal actually says something. "Brackley has
+                # two census areas and both are blank" is a ruling someone can
+                # act on; "no district called Brackley" is noise.
+                how, detail = c_how, c_detail
+            elif c_how != "no-place":
+                detail = f"{detail}; in Counties: {c_how}" + (f" - {c_detail}" if c_detail else "")
         if metro:
             resolved[f"{country}|{town}"] = {"metro": metro, "how": how,
                                              "detail": detail, "region": region}

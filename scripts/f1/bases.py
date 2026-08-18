@@ -105,14 +105,24 @@ BASES = []
 
 
 def base(lineage, town, region, country, frm, to, role="main", src="",
-         contested=0, note=""):
-    """One site, one span. `region` is the workbook's Region value where the
-    town name is ambiguous on its own (there are Groves and Bournes all over
-    England); it is a disambiguation hint, not display copy."""
+         contested=0, note="", district=""):
+    """One site, one span.
+
+    `region` is the workbook's county value, used where the town name is
+    ambiguous on its own (there are Groves and Bournes all over England). It is
+    a disambiguation hint, not display copy.
+
+    `district` is the local authority the town sits in, and it exists only for
+    villages too small to have their own row on the Municipality sheet. It is a
+    checkable administrative fact, not an inference: Ockham is in the borough of
+    Guildford. Without it there is no way to get from a village to its district,
+    because the two share no letters.
+    """
     assert src in SRC, f"{lineage}/{town}: unknown source key {src!r}"
     BASES.append({"lineage": lineage, "town": town, "region": region,
                   "country": country, "from": frm, "to": to, "role": role,
-                  "source": SRC[src], "contested": contested, "note": note})
+                  "source": SRC[src], "contested": contested, "note": note,
+                  "district": district})
 
 
 # ── The 2026 grid ───────────────────────────────────────────────────────────
@@ -120,16 +130,17 @@ def base(lineage, town, region, country, frm, to, role="main", src="",
 base("ferrari", "Maranello", "Modena", "Italy", 1950, OPEN, src="autosport-bases",
      note="The only 2026 team with no facility in England.")
 
-base("mercedes", "Ockham", "Surrey", "England", 1968, 1998, src="addresses", note=(
+base("mercedes", "Ockham", "Surrey", "England", 1968, 1998, src="addresses",
+     district="Guildford", note=(
      "Ken Tyrrell's works, at Long Reach between Ockham and Ripley. Period "
      "directories render the same address as both, which is a postal variant "
      "rather than a second site."))
 base("mercedes", "Brackley", "West Northamptonshire", "England", 1999, OPEN,
-     src="bar", note=(
+     src="bar", district="West Northamptonshire", note=(
      "Built for BAR's 1999 debut by Adrian Reynard's Reynard Motorsport, and "
      "the same building through Honda, Brawn and Mercedes."))
 base("mercedes", "Brixworth", "West Northamptonshire", "England", 2010, OPEN,
-     role="engine", src="merc-f1",
+     role="engine", src="merc-f1", district="West Northamptonshire",
      note="Mercedes-AMG High Performance Powertrains. Engines only.")
 
 base("red-bull", "Milton Keynes", "Milton Keynes", "England", 1997, OPEN,
@@ -143,7 +154,7 @@ base("mclaren", "Woking", "Surrey", "England", 1981, OPEN, src="mtc", note=(
      "since 1981."))
 
 base("aston-martin", "Silverstone", "West Northamptonshire", "England", 1991, OPEN,
-     src="amr-campus", note=(
+     src="amr-campus", district="West Northamptonshire", note=(
      "One site continuously since Jordan built it in 1991, through Midland, "
      "Spyker, Force India and Racing Point. The AMR Technology Campus that "
      "replaced it opened in 2023 on the same land."))
@@ -188,7 +199,8 @@ base("audi", "Hinwil", "Zurich", "Switzerland", 1993, OPEN, src="audi", note=(
      "Sauber's works since 1993, unchanged through BMW Sauber, Alfa Romeo, "
      "Stake and now Audi."))
 base("audi", "Neuburg an der Donau", "Bavaria", "Germany", 2026, OPEN, role="engine",
-     src="audi")
+     src="audi", district="Neuburg-Schrobenhausen",
+     note="The town is not a district; the district it names is.")
 base("audi", "Bicester", "Oxfordshire", "England", 2025, OPEN, role="design",
      src="audi", note="Audi F1 technical centre.")
 
@@ -196,7 +208,7 @@ base("cadillac-f1-team", "Fishers", "Indiana", "United States", 2026, OPEN,
      role="hq", src="cadillac",
      note="The designated headquarters, still under construction through 2026.")
 base("cadillac-f1-team", "Silverstone", "West Northamptonshire", "England", 2026,
-     OPEN, src="cadillac", note=(
+     OPEN, src="cadillac", district="West Northamptonshire", note=(
      "The 2026 car is being run from Silverstone while Fishers is completed, so "
      "the newest American team's first season is an English operation."))
 
@@ -206,7 +218,8 @@ base("cadillac-f1-team", "Silverstone", "West Northamptonshire", "England", 2026
 base("team-lotus", "Hornsey", "Greater London", "England", 1958, 1959, src="lotus-cars",
      note="Chapman's original works in north London, behind a stable yard.")
 base("team-lotus", "Cheshunt", "Hertfordshire", "England", 1959, 1966, src="lotus-cars")
-base("team-lotus", "Hethel", "Norfolk", "England", 1966, 1994, src="lotus-cars", note=(
+base("team-lotus", "Hethel", "Norfolk", "England", 1966, 1994, src="lotus-cars",
+     district="South Norfolk", note=(
      "A former RAF bomber station. Lotus laid its test track on the perimeter "
      "runways, which is why the place is a village and an aerodrome at once."))
 
@@ -220,7 +233,8 @@ base("cooper", "Surbiton", "Greater London", "England", 1950, 1965, src="cooper"
      "street."))
 base("cooper", "Byfleet", "Surrey", "England", 1965, 1969, src="cooper")
 
-base("brm", "Bourne", "Lincolnshire", "England", 1951, 1977, src="brm", note=(
+base("brm", "Bourne", "Lincolnshire", "England", 1951, 1977, src="brm",
+     district="South Kesteven", note=(
      "Raymond Mays's works behind Eastgate House, with a private test track on "
      "the disused Folkingham aerodrome a few miles away."))
 
@@ -280,7 +294,8 @@ base("matra", "Romorantin-Lanthenay", "Loir-et-Cher", "France", 1967, 1969,
      src="matra")
 base("matra", "Velizy-Villacoublay", "Yvelines", "France", 1969, 1972, src="matra")
 
-base("ligier", "Abrest", "Allier", "France", 1976, 1988, src="ligier", note=(
+base("ligier", "Abrest", "Allier", "France", 1976, 1988, src="ligier",
+     district="Vichy", note=(
      "Usually written as Vichy, the neighbouring town. The plant at Abrest is "
      "still Ligier's."))
 base("ligier", "Magny-Cours", "Nievre", "France", 1988, 1996, src="ligier-f1t",
@@ -353,7 +368,8 @@ base("honda-works", "Slough", "Slough", "England", 1967, 1968, src="honda-f1",
 base("manor", "Dinnington", "South Yorkshire", "England", 2010, 2011, src="manor")
 base("manor", "Banbury", "Oxfordshire", "England", 2012, 2016, src="manor")
 
-base("caterham", "Hingham", "Norfolk", "England", 2010, 2011, src="caterham")
+base("caterham", "Hingham", "Norfolk", "England", 2010, 2011, src="caterham",
+     district="Breckland")
 base("caterham", "Leafield", "Oxfordshire", "England", 2012, 2014, src="caterham",
      note="The former Arrows and Super Aguri works, taken on in January 2012.")
 
@@ -363,7 +379,8 @@ base("super-aguri", "Leafield", "Oxfordshire", "England", 2006, 2008,
 
 base("simtek", "Banbury", "Oxfordshire", "England", 1994, 1995, src="simtek",
      note="Acres industrial estate.")
-base("pacific", "Thetford", "Norfolk", "England", 1994, 1995, src="pacific")
+base("pacific", "Thetford", "Norfolk", "England", 1994, 1995, src="pacific",
+     district="Breckland")
 base("onyx", "Littlehampton", "West Sussex", "England", 1989, 1990, src="onyx",
      note=(
      "Peter Monteverdi bought the team in 1990 and moved it to Switzerland "

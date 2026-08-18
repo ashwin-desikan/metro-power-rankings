@@ -1,8 +1,8 @@
 {
  "meta": {
   "places": 69,
-  "refused": 13,
-  "resolved": 56,
+  "refused": 9,
+  "resolved": 60,
   "rule": "A town resolves only when the workbook rows matching it agree on one non-blank Metro Area. Anything else is refused and listed, never inferred.",
   "source": "MetroAreas.xlsx, Municipality sheet"
  },
@@ -133,6 +133,12 @@
    "metro": "Northampton",
    "region": "Northamptonshire"
   },
+  "England|Ockham": {
+   "detail": "Guildford",
+   "how": "county-district",
+   "metro": "London",
+   "region": "Surrey"
+  },
   "England|Reading": {
    "detail": "2 row(s), 0 blank",
    "how": "word+region",
@@ -223,6 +229,12 @@
    "metro": "Rhine-Neckar",
    "region": "Rhineland-Palatinate"
   },
+  "Germany|Neuburg an der Donau": {
+   "detail": "Neuburg-Schrobenhausen",
+   "how": "county-district",
+   "metro": "Munich",
+   "region": "Bavaria"
+  },
   "Germany|Niederzissen": {
    "detail": "1 row(s), 0 blank",
    "how": "exact+region",
@@ -307,6 +319,18 @@
    "metro": "Turin",
    "region": "Turin"
   },
+  "Japan|Tokyo": {
+   "detail": "named as a Metro Area, not as a municipality",
+   "how": "county-metro-name",
+   "metro": "Tokyo",
+   "region": "Tokyo"
+  },
+  "Netherlands|Amsterdam": {
+   "detail": "1 row(s), 0 blank",
+   "how": "county-word+region",
+   "metro": "Amsterdam",
+   "region": "North Holland"
+  },
   "Spain|Alzira": {
    "detail": "1 row(s), 0 blank",
    "how": "word+region",
@@ -347,7 +371,7 @@
  "unresolved": [
   {
    "country": "England",
-   "detail": "2 row(s), all blank",
+   "detail": "2 row(s), all blank; in Counties: no-metro - South Kesteven district, blank in Counties",
    "lineages": [
     "brm"
    ],
@@ -357,7 +381,7 @@
   },
   {
    "country": "England",
-   "detail": "2 row(s), all blank",
+   "detail": "2 row(s), all blank; in Counties: no-metro - West Northamptonshire district, blank in Counties",
    "lineages": [
     "mercedes"
    ],
@@ -367,7 +391,7 @@
   },
   {
    "country": "England",
-   "detail": "1 row(s), all blank",
+   "detail": "1 row(s), all blank; in Counties: no-metro - West Northamptonshire district, blank in Counties",
    "lineages": [
     "mercedes"
    ],
@@ -377,17 +401,17 @@
   },
   {
    "country": "England",
-   "detail": "",
+   "detail": "South Norfolk district, blank in Counties",
    "lineages": [
     "team-lotus"
    ],
    "region": "Norfolk",
    "town": "Hethel",
-   "why": "no-place"
+   "why": "no-metro"
   },
   {
    "country": "England",
-   "detail": "1 row(s), all blank",
+   "detail": "1 row(s), all blank; in Counties: no-metro - Breckland district, blank in Counties",
    "lineages": [
     "caterham"
    ],
@@ -397,17 +421,7 @@
   },
   {
    "country": "England",
-   "detail": "",
-   "lineages": [
-    "mercedes"
-   ],
-   "region": "Surrey",
-   "town": "Ockham",
-   "why": "no-place"
-  },
-  {
-   "country": "England",
-   "detail": "1 row(s), all blank",
+   "detail": "1 row(s), all blank; in Counties: no-metro - West Northamptonshire district, blank in Counties",
    "lineages": [
     "aston-martin",
     "cadillac-f1-team"
@@ -418,7 +432,7 @@
   },
   {
    "country": "England",
-   "detail": "3 row(s), all blank",
+   "detail": "3 row(s), all blank; in Counties: no-metro - Breckland district, blank in Counties",
    "lineages": [
     "pacific"
    ],
@@ -428,7 +442,7 @@
   },
   {
    "country": "France",
-   "detail": "1 row(s), all blank",
+   "detail": "1 row(s), all blank; in Counties: no-metro - Vichy district, blank in Counties",
    "lineages": [
     "ligier"
    ],
@@ -438,43 +452,13 @@
   },
   {
    "country": "France",
-   "detail": "1 row(s), all blank",
+   "detail": "1 row(s), all blank; in Counties: no-metro - 1 row(s), all blank",
    "lineages": [
     "matra"
    ],
    "region": "Loir-et-Cher",
    "town": "Romorantin-Lanthenay",
    "why": "no-metro"
-  },
-  {
-   "country": "Germany",
-   "detail": "",
-   "lineages": [
-    "audi"
-   ],
-   "region": "Bavaria",
-   "town": "Neuburg an der Donau",
-   "why": "no-place"
-  },
-  {
-   "country": "Japan",
-   "detail": "workbook has no rows for 'Japan'",
-   "lineages": [
-    "honda-works"
-   ],
-   "region": "Tokyo",
-   "town": "Tokyo",
-   "why": "no-country"
-  },
-  {
-   "country": "Netherlands",
-   "detail": "workbook has no rows for 'Netherlands'",
-   "lineages": [
-    "honda-works"
-   ],
-   "region": "North Holland",
-   "town": "Amsterdam",
-   "why": "no-country"
   }
  ]
 }
