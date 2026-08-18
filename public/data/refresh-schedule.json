@@ -1,44 +1,6 @@
 {
-  "generated_at": "2026-08-18T07:00:04.269846+00:00",
+  "generated_at": "2026-08-18T07:40:40.013237+00:00",
   "jobs": [
-    {
-      "id": "rugby-weekly",
-      "label": "Rugby union rankings",
-      "schedule_text": "Tue at 07:05 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:05"
-      ],
-      "weekdays": [
-        2
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-18T07:05:00+00:00",
-      "last_run": {
-        "date": "2026-08-11",
-        "status": "ok",
-        "slot": "2026-08-11T07:05:00+00:00"
-      }
-    },
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-18T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-08-17",
-        "status": "ok",
-        "slot": "2026-08-17T07:20:00+00:00"
-      }
-    },
     {
       "id": "cricket-weekly",
       "label": "Cricket results + rankings",
@@ -128,9 +90,9 @@
       "days_of_month": [],
       "next_run": "2026-08-18T14:30:00+00:00",
       "last_run": {
-        "date": "2026-08-17",
+        "date": "2026-08-18",
         "status": "ok",
-        "slot": "2026-08-17T14:30:00+00:00"
+        "slot": "2026-08-18T07:00:00+00:00"
       }
     },
     {
@@ -266,6 +228,24 @@
       }
     },
     {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-19T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-08-17",
+        "status": "ok",
+        "slot": "2026-08-17T07:20:00+00:00"
+      }
+    },
+    {
       "id": "sound-weekly",
       "label": "Sound of the Metros (music charts)",
       "schedule_text": "Wed at 07:30 UTC",
@@ -363,6 +343,26 @@
         "date": "2026-08-18",
         "status": "ok",
         "slot": "2026-08-18T06:40:00+00:00"
+      }
+    },
+    {
+      "id": "rugby-weekly",
+      "label": "Rugby union rankings",
+      "schedule_text": "Tue at 07:05 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:05"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-25T07:05:00+00:00",
+      "last_run": {
+        "date": "2026-08-18",
+        "status": "ok",
+        "slot": "2026-08-18T07:05:00+00:00"
       }
     },
     {
