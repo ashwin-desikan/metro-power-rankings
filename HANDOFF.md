@@ -5503,3 +5503,62 @@ Your `250a8c2f2` + `540ae84ea` fixed the `/business` 08-08 staleness Ashwin rais
 5. `ruledNoMetro` reports 0 because the Denison ruling only ever applied to rows outside the top 100. Harmless, but the meta field reads as though the ruling did nothing.
 6. Untouched and carried: Chicago Stars FC + Brescia workbook recalc; Heartbreak Index calibration; the ten Time Machine boards that still do not read `?year=`.
 7. Three untracked strays sit in the repo root and are not mine: `chelsearegister.txt`, `psg_profile_signup.txt`, `psgprivacy_didomi.txt`. Left in place.
+
+
+## 2026-08-18 -- windows -> next session / mini (Sportico takes the whole valuations board; and the rankings headline tier turns out to be already clear)
+
+Cowork session on the Windows box, started on the rankings board and redirected mid-session by Ashwin to the Sportico update. `main` was pulled `--ff-only` at the start; the mini had landed a handful of commits overnight, none overlapping. Valuations work is live at `e9290c21f` (one real build, deliberately the only one). Everything below the horizontal rule is rankings work that is RESEARCHED BUT NOT AUTHORED -- read it before touching `era_names.csv`.
+
+### Sportico 2026 replaced Forbes across the board
+
+Ashwin ruled on three questions before I built anything, and all three answers are settled: Sportico REPLACES Forbes for the US big four rather than sitting beside it; F1 and the women's leagues are IN; and the eight clubs Sportico did not rank this year are KEPT at their old year rather than dropped.
+
+The reason replacement was the right call and not just the newest data: the board sorts every row into one column, so a Forbes NFL figure above a Sportico football figure was two rankings interleaved, and nothing on the page told the reader that. Sportico's 2026 list happens to cover all 32 NFL, 30 NBA, 30 MLB and 32 NHL clubs -- exactly the 124 rows Forbes held -- so the whole board moved to one house and one vintage without losing a team. 187 rows to 214: ten F1 constructors, nine WNBA clubs, Angel City, seven new MLS sides.
+
+`OtherLeagues.xlsx` is GITIGNORED. The workbook is still ground truth, but it does not travel with the repo, so the only copies of this change are Ashwin's disk, the backup at `OtherLeagues.xlsx.bak-20260818-sportico`, and Supabase. Worth knowing before anyone assumes a fresh clone can rebuild the sheet.
+
+Two new scripts, both dry-run by default and both refusing to write on an unmapped name rather than guessing a league:
+
+- `scripts/valuations/load_sportico_2026.py` rebuilds the sheet from `sources/sportico-2026.txt`, prints the full diff plus a review CSV, and is idempotent (running it twice against its own output produces the same 214 rows).
+- `scripts/valuations/sync_team_valuations.py` pushes the sheet to Supabase with the SERVICE key from `.env.local` and verifies the row count back out of PostgREST. This replaces the undocumented ritual the original one-time loader assumed -- truncate by hand, enable a temporary anon-write RLS policy, insert, disable. Nobody should have to remember that, and a half-written table here ships a board with holes in it.
+
+**One trap worth recording: the accent in CF Montreal is load-bearing.** `getFootballClubByName` matches exactly, so Sportico's unaccented spelling was the single row of 214 that rendered without a team link -- silently, because an unlinked row looks like a row for a club we simply have no page for. I only caught it by grepping the BUILT html (`.next/server/app/sports/valuations.html`) for `title="No team page yet"` and reading the names out. That check is worth repeating after any bulk name load; a resolver that returns null is not an error anywhere in the pipeline.
+
+The only unlinked rows now are the ten F1 constructors. `/teams/f1` is a real Formula 1 hub but its `[slug]` pages are CIRCUITS, not constructors, so Ferrari has nowhere to point. The league label links to the hub, the team cell stays plain text, and `lib/valuations.ts` says why in a comment. If constructor pages ever ship, wire them into `lib/teamLinks.ts` and this fixes itself.
+
+`lib/valuations.ts` no longer has a US-vs-football fork. It has one `NAMED_LEAGUES` table keyed on the sheet's League value, carrying the hub, the sport chip and the `(sport, leagueHint)` pair `resolveTeamLink` needs, with a null resolver meaning "no team pages for this league yet". Any future league is one row in that table. Anything not in it is still read as a football country.
+
+**Left alone deliberately:** the eight carried rows are dated 2023-2025 but their Source column claims Sportico's 2026 soccer list. That inconsistency predates this session and I did not invent a source to fix it. It is more visible now that everything around them says 2026.
+
+---
+
+### Rankings board: the worklist rule in the handover no longer selects anything
+
+The instruction was to build the next name-curation tier by taking the top 12 of each year and dropping what `era_names.csv` already covers. **That tier is empty.** Round 3 cleared it: there are zero undated rows inside the top 12 of any year.
+
+So I built `scripts/rankings/build_headline_worklist.py` against the definition the handover actually described -- the row that HEADLINES a metro-year on the rollup, since that is the label printed in large type. It reads the emitted board rather than the CSV, because `public/data/business/rankings.json` is the only artifact carrying both the metro each row was placed in and the `nameFlag` the emitter computed. It joins back to `out/company_rankings.csv` on `(year, rank)` for the `company_key`.
+
+Result: **724 undated headlines out of 2,410 metro-year headlines (30%), across 97 companies.** The worst 25 companies clear 61% of them, the worst 50 clear 87%. Top of the list: Owens-Illinois (Toledo, 28), Textron (Providence, 27), Walt Disney (LA, 26), Cardinal Health (Columbus, 26), NCR (Dayton, 25), HCA (Nashville, 24), Dell (Austin, 22), Raytheon (Boston, 21), Elevance (Indianapolis, 21), FedEx (Memphis, 20). Worklist at `out/headline_worklist.csv` (gitignored; regenerate in one command).
+
+I have a verified rename chronology for the top 25 -- researched with sources this session, EDGAR conformed-name records where they exist -- but **authored none of it**, because the redirect came first and I would rather hand over an unwritten file than a half-written one. The findings worth keeping:
+
+- **Most of this tier is confirmations, not corrections.** Textron, Raytheon, Cardinal Health, FedEx, Humana, Johnson Controls, Publix, Nike, Litton, Reynolds Metals, Greyhound, Georgia-Pacific and Youngstown Sheet and Tube all held one name across their whole undated span. Authoring `era_name == published name` is the wanted work there; it yields flag 0.
+- **Real corrections, with dates:** Owens-Illinois Glass Company to 1965. The National Cash Register Company to 1974. Olin Mathieson Chemical Corporation to 1969. Ling-Temco-Vought to May 1971, then The LTV Corporation. Burlington Mills to 1955. Nebraska Consolidated Mills to 1971, ConAgra Inc. to 2000, ConAgra Foods after. Dell Computer Corporation to July 2003, Dell Inc. to 2016. Anthem to Nov 2004, WellPoint to Dec 2014, Anthem again to June 2022, then Elevance. Columbia/HCA to May 2000, HCA - The Healthcare Company, HCA Inc. from 2001, HCA Holdings from Nov 2010, HCA Healthcare from May 2017. World Fuel Services to June 2023. Express Scripts Inc. to the April 2012 Medco close. Dayton Hudson to January 2000. Republic Industries to April 1999. Albertson's Inc. kept its apostrophe in the charter to the 2006 end, and the 2017-onward record is Albertsons Companies.
+- **`bp america` is the Sohio spine.** 1955-1988, Cleveland, 304m growing to 14.6bn, and `amoco` (Standard Oil of Indiana) holds its own key across the same years. It passes both checks. So it wants Standard Oil Co. (Ohio) through 1987 and BP America Inc. for 1988 -- BP's tender for the remaining 45% succeeded 13 May 1987, so by the convention already in the file (Chevron 1984, ChevronTexaco 2001) the rename year keeps the old name.
+- **Raytheon 1958 vs 1959** is the one open conflict: Wikipedia alone says the Manufacturing was dropped in 1958, Britannica and one other say 1959. It does not matter for this board -- the undated span starts in 1960 either way.
+
+### Two placement bugs the worklist surfaced, neither a name problem
+
+1. **`lucent technologies` headlines LOUISVILLE 1998-2002.** The record's own HQ is Murray Hill, NJ. Something in the city-to-metro resolution put a New Jersey company in Kentucky and it has been showing in large type on a metro-year headline ever since.
+2. **`union pacific` is placed in Omaha from 1980.** Union Pacific Corporation was a New York company through the 1980s and only moved its headquarters to Omaha in the 1990s. The span looks like a single present-day address carried backwards.
+
+Both are single-row rulings in `curation/hq_spans_master.csv` rather than code changes, but neither should be authored without checking the workbook's Municipality sheet first.
+
+### Open, in priority order
+
+1. **Author the headline tier.** Chronology above; regenerate the worklist first (`python scripts/rankings/build_headline_worklist.py`), because the mini pushes to `public/data/business/rankings.json`.
+2. **`citigroup` 1995-1998 still needs Ashwin's ruling.** Unchanged from yesterday, and he has asked to be asked rather than researched at.
+3. **Lucent/Louisville and Union Pacific/Omaha**, above.
+4. The company table still cannot distinguish a researched dated placement from a carried one. Grey shading was rejected; still needs a better idea before anything is built.
+5. Carried, untouched: Chicago Stars FC and Brescia workbook recalc; Heartbreak Index calibration; the ten Time Machine boards that do not read `?year=`.
+6. The three untracked strays in the repo root (`chelsearegister.txt`, `psg_profile_signup.txt`, `psgprivacy_didomi.txt`) are still there and still not mine.
