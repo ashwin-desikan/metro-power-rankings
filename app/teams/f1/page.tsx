@@ -3,13 +3,32 @@ import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import {
-  getF1Meta, getF1Champions, getF1DriverTitles, getF1ConstructorTitles,
-  getF1AllTimeDriverWins, getF1AllTimeConstructorWins, getF1HostMetros,
+  getF1Meta, getF1Champions, getF1DriverTitles,
+  getF1AllTimeDriverWins, getF1HostMetros,
   fetchF1LiveSeason,
 } from "@/lib/f1";
 import { getLiveF1Standings } from "@/lib/f1Standings";
+import {
+  getF1ConstructorByName, getPagedF1Constructors,
+} from "@/lib/f1Constructors";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
+
+/* A constructor's name, linked to its team page when we have one.
+   Every name on this hub goes through here. Until 2026-08-18 not one of them
+   was a link, so the only way from the hub into 78 team pages was a single nav
+   chip labelled "Teams". */
+function TeamName({ name, crest = true }: { name: string; crest?: boolean }) {
+  const t = getF1ConstructorByName(name);
+  const label = <>{crest && <CrestIcon name={f1ConstructorCrestName(name)} />}{name}</>;
+  return (
+    <span className="inline-flex items-center gap-1.5 min-w-0">
+      {t
+        ? <Link href={`/teams/f1/constructors/${t.slug}`} className="hover:underline inline-flex items-center gap-1.5" style={{ color: "inherit" }}>{label}</Link>
+        : label}
+    </span>
+  );
+}
 
 // "2026-06-28" -> "28 Jun" for upcoming races (shown in place of a winner).
 const F1_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -53,9 +72,21 @@ export default async function F1Page() {
   const meta = getF1Meta();
   const champions = getF1Champions();
   const driverTitles = getF1DriverTitles();
-  const constructorTitles = getF1ConstructorTitles();
+  // 🔴 THE HUB WAS PUBLISHING THE OTHER IDENTITY MODEL. getF1ConstructorTitles
+  // and getF1AllTimeConstructorWins come from the raw Ergast records, so this
+  // page said Team Lotus won 4 titles and 45 races while the teams board one
+  // click away said 7 and 79, and it listed "Brabham-Repco" and "Cooper-Climax"
+  // as if they were teams. Two answers to the same question on one site is
+  // worse than either answer. Both tables now read the curated lineages.
+  const lineages = getPagedF1Constructors();
+  const constructorTitles = [...lineages]
+    .filter((c) => c.titles > 0)
+    .sort((a, b) => b.titles - a.titles || b.wins - a.wins)
+    .map((c) => ({ name: c.name, titles: c.titles }));
   const driverWins = getF1AllTimeDriverWins();
-  const constructorWins = getF1AllTimeConstructorWins();
+  const constructorWins = [...lineages]
+    .sort((a, b) => b.wins - a.wins || b.races - a.races)
+    .map((c) => ({ constructor: c.name, wins: c.wins }));
   const hostMetros = getF1HostMetros();
   const live = await fetchF1LiveSeason();
   const season = live.races;
@@ -130,7 +161,7 @@ export default async function F1Page() {
                     <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{d.points ?? 0} pts</span>
                   </div>
                   <div className="mt-1.5 text-xs flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>
-                    {team ? <><CrestIcon name={f1ConstructorCrestName(team)} />{team}</> : "—"}
+                    {team ? <TeamName name={team} /> : "—"}
                   </div>
                 </div>
               );
@@ -149,7 +180,7 @@ export default async function F1Page() {
                     <td className={td} style={{ color: "var(--text)" }}>{d.driver}</td>
                     <td className={td} style={{ color: "var(--text-muted)" }}>{(() => {
                       const team = driverTeam(d);
-                      return team ? <span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(team)} />{team}</span> : "—";
+                      return team ? <TeamName name={team} /> : "—";
                     })()}</td>
                     <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{d.points ?? 0}</td>
                   </tr>
@@ -166,8 +197,9 @@ export default async function F1Page() {
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5 min-w-0">
                     <span className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{c.pos ?? i + 1}</span>
-                    <CrestIcon name={f1ConstructorCrestName(c.constructor)} />
-                    <span className="font-medium text-sm truncate" style={{ color: "var(--text)" }}>{c.constructor}</span>
+                    <span className="font-medium text-sm truncate" style={{ color: "var(--text)" }}>
+                      <TeamName name={c.constructor} />
+                    </span>
                   </div>
                   <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{c.points ?? 0} pts</span>
                 </div>
@@ -183,7 +215,7 @@ export default async function F1Page() {
                 {standings.constructors.map((c, i) => (
                   <tr key={`${c.constructor}-${i}`} style={rowBorder}>
                     <td className={td} style={{ color: "var(--text-dim)" }}>{c.pos ?? i + 1}</td>
-                    <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor}</span></td>
+                    <td className={td} style={{ color: "var(--text)" }}><TeamName name={c.constructor} /></td>
                     <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.points ?? 0}</td>
                   </tr>
                 ))}
@@ -377,8 +409,9 @@ export default async function F1Page() {
             <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--text)" }}>Most Constructors&rsquo; Titles</h3>
             <ul className="space-y-1">
               {constructorTitles.slice(0, 8).map((t) => (
-                <li key={t.name} className="flex justify-between text-sm" style={{ color: "var(--text-muted)" }}>
-                  <span>{t.name}</span><span style={{ color: "var(--text)" }}>{t.titles}</span>
+                <li key={t.name} className="flex justify-between text-sm gap-2" style={{ color: "var(--text-muted)" }}>
+                  <TeamName name={t.name} crest={false} />
+                  <span className="flex-shrink-0" style={{ color: "var(--text)" }}>{t.titles}</span>
                 </li>
               ))}
             </ul>
@@ -388,6 +421,14 @@ export default async function F1Page() {
 
       {/* All-Time Wins */}
       <SectionHeading id="all-time">All-Time Wins</SectionHeading>
+      <p className="text-sm mb-4 max-w-3xl" style={{ color: "var(--text-muted)" }}>
+        Constructors are counted as continuous organisations, so Team Lotus&rsquo;s wins are added up rather than
+        split across the four chassis names the archive files them under, and the Brackley team&rsquo;s run from
+        Tyrrell through Brawn to Mercedes is one row. Every name links to its team page.{" "}
+        <Link href="/teams/f1/constructors" className="hover:underline" style={{ color: "var(--accent)" }}>
+          See all {lineages.length} teams, and where they build their cars
+        </Link>.
+      </p>
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           {/* Mobile: stacked cards instead of a 3-column table */}
@@ -424,8 +465,9 @@ export default async function F1Page() {
               <div key={`${c.constructor}-card`} className="rounded-lg p-3 flex items-center justify-between gap-2" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
                 <div className="flex items-center gap-1.5 min-w-0">
                   <span className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{i + 1}</span>
-                  <CrestIcon name={f1ConstructorCrestName(c.constructor)} />
-                  <span className="font-medium text-sm truncate" style={{ color: "var(--text)" }}>{c.constructor}</span>
+                  <span className="font-medium text-sm truncate" style={{ color: "var(--text)" }}>
+                    <TeamName name={c.constructor} />
+                  </span>
                 </div>
                 <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{c.wins} wins</span>
               </div>
@@ -438,7 +480,7 @@ export default async function F1Page() {
                 {constructorWins.slice(0, 15).map((c, i) => (
                   <tr key={c.constructor} style={rowBorder}>
                     <td className={td} style={{ color: "var(--text-dim)" }}>{i + 1}</td>
-                    <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor}</span></td>
+                    <td className={td} style={{ color: "var(--text)" }}><TeamName name={c.constructor} /></td>
                     <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.wins}</td>
                   </tr>
                 ))}

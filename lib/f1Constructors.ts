@@ -101,6 +101,10 @@ export type F1Constructor = {
   } | null;
   /** Era names in order, e.g. Tyrrell -> BAR -> Honda -> Brawn -> Mercedes. */
   chain: string[];
+  /** Every name the archive itself uses for the records this lineage claims,
+      including the chassis-engine ones like "Lotus-Climax". Used to resolve a
+      name written elsewhere on the site back to a team page. */
+  aliases: string[];
   contested: boolean;
   first: number;
   last: number;
@@ -257,6 +261,12 @@ export function getF1ConstructorByName(name: string): F1Constructor | null {
   if (exact) return exact;
   const byEra = all.find((c) => c.hasPage && c.chain.some((e) => e.toLowerCase() === n));
   if (byEra) return byEra;
+  // The archive's own labels for every record a lineage claims. The rest of the
+  // site still writes them: the F1 hub wrote "Lotus-Climax", "Lotus-Ford",
+  // "Cooper-Climax" and "RB F1 Team", none of which is a display name or an era
+  // name, so none of them linked to anything until 2026-08-18.
+  const byAlias = all.find((c) => c.hasPage && c.aliases.some((a) => a.toLowerCase() === n));
+  if (byAlias) return byAlias;
   // Era names are the sponsor-laden legal ones ("Stake F1 Team Kick Sauber")
   // while the rest of the site writes the short form ("Kick Sauber"), so match
   // on containment too. Longest era first, or "Sauber" would swallow it.

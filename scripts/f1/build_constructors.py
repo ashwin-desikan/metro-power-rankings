@@ -304,6 +304,11 @@ def main():
                                           "sprint_points": 0.0, "sprint_wins": 0,
                                           "grid": [], "finish": [], "drivers": set()}),
         "victories": [], "circuit": defaultdict(lambda: [0, 0]),
+        # Every archive name for every record this lineage claims. The archive's
+        # own labels ARE this team's aliases, and other pages still use them:
+        # the hub wrote "Lotus-Climax" and "RB F1 Team", neither of which is any
+        # lineage's display name or era name, so neither linked anywhere.
+        "aliases": set(),
         "nat": None, "wiki": None,
         "sprint_points": 0.0, "sprint_wins": 0, "sprint_entries": 0,
         # (season, round) -> [(driver, grid, finish)], for teammate head-to-head.
@@ -343,6 +348,9 @@ def main():
         dec = d["decade"][season // 10 * 10]
         dec[0] += 1
         dec[1] += (r["status"] == "Finished")
+        d["aliases"].add(r["constructor"])
+        if cid in cons_meta:
+            d["aliases"].add(cons_meta[cid].get("constructor"))
         if d["nat"] is None and cid in cons_meta:
             d["nat"] = cons_meta[cid].get("nationality")
             d["wiki"] = cons_meta[cid].get("wikipedia")
@@ -475,6 +483,7 @@ def main():
                       "until": None if home["to"] >= 9999 else home["to"]}
                      if home else None),
             "chain": [e["name"] for e in eras],
+            "aliases": sorted(a for a in d["aliases"] if a),
             "contested": any(e["contested"] for e in eras),
             "first": seasons[0], "last": seasons[-1], "seasons": len(seasons),
             "races": len(d["races"]), "entries": d["entries"],
