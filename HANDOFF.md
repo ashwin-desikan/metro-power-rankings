@@ -6046,3 +6046,107 @@ Plus **Vichy** and **Romorantin-Lanthenay** in France, for Ligier and Matra. All
 3. `getF1ConstructorTitles` / `getF1AllTimeConstructorWins` in `lib/f1.ts` have no callers now but are still built into `data.json`. They are the raw-record numbers; worth deleting or renaming.
 4. Phase three: per-round standings, pit stops (2011+), qualifying sessions (2003+).
 5. Rankings headline-name tier: chronology researched, nothing authored. `citigroup` wants a ruling.
+
+
+## 2026-08-19 (windows) — NFL expectation ledger, era-correct T20 champions, and three data repairs
+
+Cowork session. One build; the build-relevant commit is at HEAD.
+
+### A. NFL EXPECTATION LEDGER + BOARD (new, `/teams/nfl/expectation`)
+
+`NFL_all.xlsx` carries `ELO Prob (Pre)` on **all 106 seasons**, so every NFL game
+since 1920 has a pre-game win probability. `scripts/nfl/build_expectation.py`
+turns 18,195 games into `public/data/nfl/expectation/` (index + teams + 106
+season shards, 11 MB) in the SAME field vocabulary as `nfl-predictions.json`, so
+one reader serves the live week and the century and a user's picks Brier sits on
+the same axis as 1958. `lib/nflExpectation.ts` reads it on the ISR pattern (NOT a
+module-load read), so the data is not build-relevant; the page is.
+
+**Verification: 2,415 team-seasons reconcile against the independent `Year by
+Year` sheet with ZERO mismatches.** Market sigma fitted by MLE on our own data:
+11.944 points. Head-to-head 11,862 games: model .2198, market .2134, model
+closer in 8 of 47 seasons.
+
+Traps found and documented in the script: `GameID` is per ROW not per game (pair
+on date + sorted franchise pair); `W/L/T`, `PF`, `PA`, `H/A` each appear TWICE in
+the header; the ERA name AND ERA metro must come from `Year by Year`, never the
+current franchise record — otherwise 1994 reads "Tennessee Titans, Nashville" for
+a season the Houston Oilers played in Houston, and the metro rollup credits a
+century of Chicago and St Louis Cardinals football to Phoenix.
+
+### B. 🔴 DO NOT REPAIR DATA BY INFERENCE
+
+`Spread (Pre-Game)` read below even money for 2023 and 2024. The curve mirrored
+cleanly and every game's two rows summed to zero, so the evidence said "sign
+flipped" and 1,050 cells were negated. **It was half right, and half right was
+wrong** — those columns were PARTLY scrambled, so negation fixed some rows and
+broke others. Loading the real numbers from covers.com
+(`scripts/nfl/load_odds.py`, sources kept in `scripts/nfl/sources/`) settled it:
+1,710 rows matched, zero unmatched, and sign agreement went 56.5% → 67.4% (2023)
+and 52.9% → 71.2% (2024), against a 66.0% reference for 1979-2022. The market
+layer now covers 1979-2025 with **nothing held out**.
+
+The orientation gate is the only reason this never shipped. Keep it.
+
+### C. ERA-CORRECT T20 CHAMPIONS (Ashwin spotted it)
+
+`/teams/cricket/t20` listed **MI London as champion for 2023-2025**, when the club
+was Oval Invincibles until the 2026 rebrand. Root cause: ONE map doing TWO jobs.
+`ALIASES` in `build_t20_leagues.py` is now split into **`ERA_BRAND`** (applied to
+the roll) and **`LINEAGE`** (aggregation only). Fixing the class corrected **20
+cells across four leagues**, not the 5 reported, and the era names came back from
+cricsheet automatically — no rename dates authored by hand.
+
+Two traps the fix exposed: `most_titled` counted raw winner strings and would
+have split a franchise in two; and a crest belongs to the FRANCHISE, not the name
+a club used that season, so rolls now carry `winnerKey`/`ruKey`.
+
+⚠️ `scripts/update-2026-champions.py` imported the old `ALIASES` inside a bare
+`try/except`, so the rename left it with an EMPTY map and it would have written
+raw Wikipedia names. Now imports `ERA_BRAND` explicitly with no fallback.
+
+### D. THE HUNDRED 2026 ON METRO PAGES
+
+The T20 roll had the 2026 title; the CHAMPIONS LEDGER did not, so
+`/teams/cricket/t20` and `/rankings/manchester` disagreed. Appended Manchester
+Super Giants (16 Aug 2026, Lord's) to `Champions_History.xlsx` as row 6812 via
+`scripts/champions/append_champion_row.py` — surgical, inline strings so
+`sharedStrings` needs no renumbering — and rebuilt. Manchester 167 → 168 titles.
+
+⚠️ `lib/championsHistory.ts` memoises the JSON at module scope, so a running
+process never re-reads it. Treat `champions-history.json` as build-time data.
+
+### E. MLB PREDICTIONS: SHOW THE WORKING
+
+Ashwin asked why Detroit sat 4th in the AL field while 11th by record. The board
+sorts on modelled odds and the model rates **run differential**, and Detroit are
+61-65 with **+83** while everyone near them is negative. Not a bug, but the page
+showed none of it. Rows now carry record, run difference and real position, and
+the copy says the order is the model's, not the table's.
+
+🔴 I got the standings wrong twice by asking a summariser to read a large JSON.
+The raw endpoint was available the whole time. Read the feed, not a summary.
+
+### F. WORKBOOK RULINGS
+
+**Brackley = London** ("just barely"), `Municipality!G17430`/`G17432`. Silverstone
+and Towcester were moved too, then Ashwin withdrew it and they were reverted from
+the backup — they remain **Northampton**. No metro's F1 team count changed:
+Mercedes was already in London via Ockham and stays in Northampton via Brixworth.
+
+🔴 **The OneDrive `MetroAreas.xlsx` master is still 17 cells behind the repo copy**,
+verified by hash. `NFL_all.xlsx` and `Champions_History.xlsx` were edited in place
+in OneDrive, so those have nothing to reconcile.
+
+### Open
+
+1. Reconcile the OneDrive `MetroAreas.xlsx` master (17 cells).
+2. Seven era metros have no slug in `metros.json` so they render unlinked:
+   Marion, Moline, Muncie, Chicago/Pittsburgh, Phila-Pit, Cincinnati/St.Louis,
+   San Antonio/Baton Rouge.
+3. Wire the picks Brier onto the expectation axis — the point of the shape.
+4. Metro rollup line on `/rankings/<slug>`; a per-season expectation view.
+5. Then the Premier League Elo over 99,290 top-flight matches 1888-2023.
+6. `chelsearegister.txt`, `psg_profile_signup.txt`, `psgprivacy_didomi.txt` sit
+   untracked in the repo root from 08-17 and are deliberately NOT committed (one
+   carries a personal email). Delete or move them.
