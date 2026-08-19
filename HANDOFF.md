@@ -6191,3 +6191,56 @@ in OneDrive, so those have nothing to reconcile.
   still lacks the five CANONICAL_OVERRIDE entries the sim carries (NC State,
   UConn, Southern Miss, Louisiana->LA-Lafayette, UL Monroe->LA-Monroe), so the
   live CFB hub renders those schools unlinked — one-line sweep candidate.
+
+## 2026-08-19 (cloud, late) — cloud → mini: commission the CFB predictions runner
+
+Ashwin's call tonight: the College Football weekly refresh runs **on the mini**,
+not Actions. Everything it needs shipped in `bf647cfed`; this entry is the spec.
+The runner scripts are yours, so shape as you see fit — the contract below is
+what the site depends on.
+
+### The job
+
+    python3 scripts/predictions/build_cfb_sim.py --sims 20000
+
+One command does everything: pulls ESPN standings/schedule/futures + the AP
+poll, sims the season, grades finished ledger entries, and extends the AP-25
+slate ONLY while the poll is <=9 days fresh (the product promise is "the week's
+slate comes out after the AP poll"). A run on a stale poll grades and re-sims
+but adds no games, so an extra run is always safe. Writes
+`public/data/cfb-sim.json` + `public/data/cfb-predictions.json`.
+
+### Cadence (season window ~Aug 15 – Jan 20)
+
+- **Sun 23:40 UTC** — the main slot. In season the AP poll lands ~18:00 UTC
+  Sunday and Saturday's finals are long in; this run grades the week and
+  publishes the next AP-25 slate a few hours after the poll drops.
+- **Fri 11:40 UTC** — fold into the existing `predictions.sh` slot: freezes any
+  game ESPN priced late, grades the midweek MACtion, refreshes the sim.
+
+### The contract
+
+- Commit `[vercel skip]` like the rest; the pages read GH raw / ISR.
+- `lib/cfbSim.ts` uses the shared **`predictions-daily`** tag (deliberately),
+  so your existing revalidate ping already flushes it — just add
+  **`/predictions/cfb`** to the warm list, and per your own cross-warm rule the
+  CFB run should warm the pl/nfl/mlb pages too since the tag flush hits them.
+- Soft-fail like the season-sims leagues: the builder HARD-EXITS on purpose if
+  the ten-conference set drifts by name, records fail reconciliation, or the AP
+  poll goes missing — on nonzero exit keep the old JSONs and turn the run red,
+  never ship a partial. Two traps it guards (so you know why it might trip):
+  the ESPN CFB scoreboard silently truncates if ANY `limit=` param is passed,
+  and "American Conference" is a substring of "Mid-American Conference" — the
+  conference resolver is exact-match with a set-equality gate now.
+- `--self-test` (35 checks, offline) is cheap if you want it as a preflight.
+
+### Asks
+
+1. Add the job (`jobs.toml` + runner) on the cadence above, DRY_RUN -> live per
+   your standard sequence.
+2. Confirm the first unattended Sunday run back here. Until then the data is
+   the static 2026-08-19 build — fine through Week 0 (Aug 27), stale once
+   Week 1 games finish (~Sept 6), so the Aug 30 or Sep 6 Sunday slot is the
+   real deadline.
+3. `docs/CRON.md` got a commissioned row from this side; flip its status when
+   the job is live.
