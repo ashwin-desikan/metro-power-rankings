@@ -6150,3 +6150,44 @@ in OneDrive, so those have nothing to reconcile.
 6. `chelsearegister.txt`, `psg_profile_signup.txt`, `psgprivacy_didomi.txt` sit
    untracked in the repo root from 08-17 and are deliberately NOT committed (one
    carries a personal email). Delete or move them.
+
+## 2026-08-19 (cloud, evening) — College Football predictions ship with the preseason poll
+
+**From:** cloud session · **To:** whoever picks this up
+
+- `/predictions/cfb` ships: points-v3 (opponent-adjusted SRS 2023-25 with FCS
+  pooled, + DraftKings title futures w .35 + AP vote-share anchor w .25, priors
+  fading with games played), 10k sims of the real 892-game schedule, all ten
+  conference title games, the 12-team STRAIGHT-SEEDED CFP (five champs auto,
+  byes 1-4, first round hosted). Committee proxy = rating + 1.15*(W-L), stated
+  on the page as a proxy. Preseason: Ohio State 13.3% natty, Notre Dame 12.8.
+- The field renders as **eleven contested spots (Power 4 + Notre Dame) plus the
+  Group of 5 bid** — the five-champion rule guarantees at least one G5 champ
+  structurally (G5 playoff mass 151.5%, >=100 by construction). Ashwin's call.
+- 🔴 **Two traps found live, both fixed and self-tested:** (1) the ESPN CFB
+  scoreboard SILENTLY TRUNCATES whenever a `limit=` param is present — week
+  queries WITHOUT limit return the full 902-game season; limited date ranges
+  dropped FUTURE games first (Akron read 7 of 12). Never pass limit there.
+  (2) `conf_short` substring-matched, and "American Conference" is a substring
+  of "Mid-American Conference" — the MAC silently merged into the American and
+  nine title games simulated for ten leagues. Exact-name match now; the build
+  asserts the ten-conference set by name and per-conference sizes.
+- Weekly ledger: **AP Top 25 games only**; a slate only extends while the poll
+  is <=9 days old (the product promise "comes out after the AP poll"), freezes
+  on first sight, grades model/market/blend Brier. 25 opening games captured
+  off the Aug 17 preseason poll, market prob on every one.
+- **Picks:** CFB is the third league in /play/picks end to end — two-way slate
+  + confidence, keyed on ESPN event ids, AP ranks + neutral-site "vs" shown;
+  Upset Radar now merges NFL + CFB onto one board by model-market gap; the
+  Supabase picks.league CHECK already allowed 'cfb'. picksGame tests 80 pass.
+- Gates: non-incremental tsc clean, client-imports, table-scroll, vitest green
+  natively; full `npm run verify` exit 0 (219s) pre-dev-server; dev server held
+  :3000 at ship time so the Vercel build is the final build proof (2026-08-01
+  precedent). Dev-server smoke: /predictions/cfb, /play/picks, /predictions
+  and / all 200 with the new content.
+- 🟡 OPEN: (1) weekly refresh cadence for `scripts/predictions/build_cfb_sim.py`
+  — wants a Sunday-after-the-poll run plus a grading pass; mini vs Actions
+  undecided, nothing scheduled (static until Week 0, Aug 27). (2) lib/cfb-live.ts
+  still lacks the five CANONICAL_OVERRIDE entries the sim carries (NC State,
+  UConn, Southern Miss, Louisiana->LA-Lafayette, UL Monroe->LA-Monroe), so the
+  live CFB hub renders those schools unlinked — one-line sweep candidate.
