@@ -20,7 +20,7 @@
    "state": "Alaska",
    "incumbentParty": "R",
    "nRatings": 7,
-   "score": -1.14,
+   "score": -1.0,
    "retiring": true
   },
   {
@@ -139,7 +139,7 @@
    "state": "Minnesota",
    "incumbentParty": "D",
    "nRatings": 7,
-   "score": 2.71,
+   "score": 2.57,
    "retiring": true
   },
   {
@@ -237,7 +237,7 @@
    "state": "Texas",
    "incumbentParty": "R",
    "nRatings": 7,
-   "score": -2.14,
+   "score": -2.0,
    "retiring": false
   },
   {

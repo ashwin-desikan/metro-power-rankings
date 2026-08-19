@@ -1,5 +1,5 @@
 {
- "built": "2026-08-17",
+ "built": "2026-08-19",
  "method": "Recency-weighted poll averages; UK proportional swing on GE2024 constituency results with Monte Carlo error; US seats-votes fit on 2012-2024; NZ Sainte-Laguë; IL seat-poll averages; BR/FR round averages. Full method notes on the page.",
  "uk": {
   "electionAssumed": "2029-05-03",
@@ -573,7 +573,7 @@
      "hi": 108
     },
     "ref": {
-     "median": 159,
+     "median": 160,
      "lo": 2,
      "hi": 398
     },
@@ -602,7 +602,7 @@
    "majorityNeeds": 326,
    "pLargest": {
     "con": 23.1,
-    "lab": 38.9,
+    "lab": 39.0,
     "ld": 0.1,
     "ref": 37.7,
     "grn": 0.1
@@ -632,52 +632,52 @@
   ]
  },
  "us": {
-  "margin": 6.7,
+  "margin": 6.5,
   "sigma": 2.6,
   "aggregators": [
    {
     "source": "Decision Desk HQ",
-    "dem": 46.9,
-    "rep": 40.1,
-    "updated": "2026-08-05"
+    "dem": 46.5,
+    "rep": 40.2,
+    "updated": "2026-08-17"
    },
    {
     "source": "FiftyPlusOne",
-    "dem": 49.2,
-    "rep": 42.7,
-    "updated": "2026-08-05"
+    "dem": 49.5,
+    "rep": 43.4,
+    "updated": "2026-08-17"
    },
    {
     "source": "RealClearPolitics",
-    "dem": 48.6,
-    "rep": 41.6,
-    "updated": "2026-08-05"
+    "dem": 48.7,
+    "rep": 41.9,
+    "updated": "2026-08-17"
    },
    {
     "source": "Silver Bulletin",
-    "dem": 48.3,
-    "rep": 41.7,
-    "updated": "2026-08-05"
+    "dem": 48.4,
+    "rep": 41.6,
+    "updated": "2026-08-17"
    },
    {
     "source": "VoteHub",
-    "dem": 48.6,
-    "rep": 41.9,
-    "updated": "2026-08-05"
+    "dem": 48.0,
+    "rep": 41.4,
+    "updated": "2026-08-17"
    },
    {
     "source": "Race to the WH",
-    "dem": 47.8,
-    "rep": 40.9,
-    "updated": "2026-08-05"
+    "dem": 47.9,
+    "rep": 41.2,
+    "updated": "2026-08-17"
    }
   ],
   "demSeats": {
-   "median": 228,
+   "median": 227,
    "lo": 206,
-   "hi": 250
+   "hi": 249
   },
-  "pDemHouse": 78.3,
+  "pDemHouse": 77.2,
   "fit": {
    "a": 209.5,
    "b": 2.71,
@@ -720,7 +720,7 @@
     ]
    ]
   },
-  "monthsOut": 2.6,
+  "monthsOut": 2.5,
   "sims": 20000,
   "election": "2026-11-03",
   "sources": [
@@ -747,7 +747,7 @@
     "lo": 47,
     "hi": 53
    },
-   "pDemControl": 41.2,
+   "pDemControl": 40.4,
    "competitive": [
     {
      "state": "Alaska",
@@ -759,30 +759,30 @@
     {
      "state": "Ohio",
      "held": "R",
-     "score": 0.21,
+     "score": 0.17,
      "retiring": false,
-     "pDem": 56.0
+     "pDem": 55.0
     },
     {
      "state": "Texas",
      "held": "R",
-     "score": -0.29,
+     "score": -0.21,
      "retiring": false,
-     "pDem": 42.0
-    },
-    {
-     "state": "Maine",
-     "held": "R",
-     "score": 0.38,
-     "retiring": false,
-     "pDem": 61.0
+     "pDem": 44.0
     },
     {
      "state": "Michigan",
      "held": "D",
-     "score": 0.38,
+     "score": 0.29,
      "retiring": true,
-     "pDem": 61.0
+     "pDem": 58.0
+    },
+    {
+     "state": "Maine",
+     "held": "R",
+     "score": 0.33,
+     "retiring": false,
+     "pDem": 60.0
     },
     {
      "state": "Iowa",
@@ -810,12 +810,12 @@
     "D": 24
    },
    "demSeats": {
-    "median": 24,
+    "median": 25,
     "lo": 21,
     "hi": 28
    },
-   "pDemMajority": 31.9,
-   "pRepMajority": 50.4,
+   "pDemMajority": 32.4,
+   "pRepMajority": 49.8,
    "competitive": [
     {
      "state": "Georgia",
@@ -867,11 +867,11 @@
      "pDem": 75.0
     },
     {
-     "state": "Arizona",
-     "held": "D",
-     "score": 1.0,
-     "retiring": false,
-     "pDem": 76.0
+     "state": "Alaska",
+     "held": "R",
+     "score": -1.0,
+     "retiring": true,
+     "pDem": 24.0
     }
    ],
    "sims": 20000,
@@ -898,7 +898,7 @@
    },
    "lab": {
     "median": 41,
-    "lo": 36,
+    "lo": 37,
     "hi": 45
    },
    "grn": {
@@ -927,10 +927,10 @@
     "hi": 0
    }
   },
-  "pRightBloc": 84.4,
-  "pLeftBloc": 8.1,
-  "pNeither": 7.5,
-  "monthsOut": 2.0,
+  "pRightBloc": 84.7,
+  "pLeftBloc": 7.9,
+  "pNeither": 7.4,
+  "monthsOut": 1.9,
   "sims": 10000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)"
@@ -1033,12 +1033,12 @@
     "b": "F. Bolsonaro",
     "avgA": 46.3,
     "avgB": 42.5,
-    "pA": 82.3,
+    "pA": 82.5,
     "polls": 58,
     "latest": "2026-08-13"
    }
   ],
-  "monthsOut": 1.6,
+  "monthsOut": 1.5,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
   ]
@@ -1069,7 +1069,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 78.2,
+    "pA": 78.3,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -1096,7 +1096,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 81.5,
+    "pA": 81.6,
     "polls": 4,
     "latest": "2026-05-27"
    },
@@ -1137,7 +1137,7 @@
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 7.8,
+  "monthsOut": 7.7,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]
