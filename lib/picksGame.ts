@@ -1,11 +1,12 @@
 // Citizen of Nowhere Picks — pure game logic (client-safe: no server-only,
 // no fs). Types mirror the prediction ledgers built by
-// scripts/predictions/build_pl_sim.py / build_nfl_sim.py; grading here NEVER
+// scripts/predictions/build_pl_sim.py / build_nfl_sim.py / build_cfb_sim.py; grading here NEVER
 // computes results — it joins stored picks against ledger entries the daily
 // predictions workflow has already graded (result/score fields).
 //
 // Scoring (spec: PICKEM-SPEC.md):
-//   Slate      — 10 pts per correct call (PL three-way H/D/A, NFL two-way H/A).
+//   Slate      — 10 pts per correct call (PL three-way H/D/A, NFL and CFB
+//                two-way H/A; the CFB slate is AP Top 25 games only).
 //   Confidence — the slot value (n..1) as a bonus on top of the base 10.
 //   Radar      — +25 for siding with the source (model|market) whose
 //                probability graded closer to the result (lower Brier).
@@ -19,7 +20,7 @@
 
 export type PickCode = "H" | "D" | "A";
 export type RadarSide = "model" | "market";
-export type PicksLeague = "pl" | "nfl";
+export type PicksLeague = "pl" | "nfl" | "cfb";
 
 export type LedgerEntry = {
   event_id?: string; // NFL (ESPN); PL entries key on date:home_slug
@@ -29,6 +30,8 @@ export type LedgerEntry = {
   away: string;
   home_slug: string;
   away_slug: string;
+  ap?: { home: number | null; away: number | null }; // CFB: AP ranks at predict time
+  neutral?: boolean; // CFB: neutral-site game ("vs", and no home edge in the model)
   model: { pH: number; pD?: number; pA?: number };
   market?: { pH: number };
   blend?: { pH: number };
@@ -56,9 +59,12 @@ export type StoredPick = {
 export const SLATE_POINTS = 10;
 export const RADAR_POINTS = 25;
 export const RADAR_SIZE = 5;
+export const RADAR_LEAGUES = ["nfl", "cfb"] as const;
 
 export function eventKey(league: PicksLeague, e: LedgerEntry): string {
-  return league === "nfl" && e.event_id ? e.event_id : `${e.date}:${e.home_slug}`;
+  // NFL and CFB ledgers key on the ESPN event id; PL keys on date:home_slug
+  // (changing PL's key would orphan every stored pick).
+  return league !== "pl" && e.event_id ? e.event_id : `${e.date}:${e.home_slug}`;
 }
 
 /** Kickoff when the ledger carries it; else 00:00 UTC on match day. */
@@ -122,7 +128,7 @@ export function gradeSlate(
     if (p.mode === "slate") byKey.set(`${p.league}:${p.event_key}`, p);
   }
   const games: { league: PicksLeague; e: LedgerEntry }[] = [];
-  for (const league of ["pl", "nfl"] as const) {
+  for (const league of ["pl", "nfl", "cfb"] as const) {
     for (const e of ledgers[league] ?? []) games.push({ league, e });
   }
   games.sort((a, b) => {
@@ -157,13 +163,31 @@ export function gradeSlate(
   return g;
 }
 
-/** The N NFL games where model and market disagree most (needs market). */
+/** The N games of one ledger where model and market disagree most. */
 export function radarGames(nfl: LedgerEntry[], n: number = RADAR_SIZE): (LedgerEntry & { gap: number })[] {
   return nfl
     .filter((e) => e.market)
     .map((e) => ({ ...e, gap: Math.abs(e.model.pH - (e.market as { pH: number }).pH) }))
     .sort((a, b) => b.gap - a.gap)
     .slice(0, n);
+}
+
+export type RadarGame = { league: PicksLeague; e: LedgerEntry & { gap: number } };
+
+/** The combined cross-league radar: the biggest model-market gaps across
+ *  every radar-eligible league (NFL + CFB), sized to n. */
+export function radarBoard(
+  ledgers: Partial<Record<PicksLeague, LedgerEntry[]>>,
+  n: number = RADAR_SIZE,
+): RadarGame[] {
+  const out: RadarGame[] = [];
+  for (const league of RADAR_LEAGUES) {
+    for (const e of radarGames(ledgers[league] ?? [], Number.MAX_SAFE_INTEGER)) {
+      out.push({ league, e });
+    }
+  }
+  out.sort((a, b) => b.e.gap - a.e.gap);
+  return out.slice(0, n);
 }
 
 /** Which source graded closer (lower Brier) on a finished game. */
@@ -184,13 +208,18 @@ export function radarVerdict(e: LedgerEntry): RadarSide | "push" | null {
  * gaps reshuffled underneath it. The UI still only offers the current top-5;
  * this only widens grading.
  */
-export function gradeRadar(picks: StoredPick[], nfl: LedgerEntry[]): { points: number; wins: number; losses: number } {
+export function gradeRadar(
+  picks: StoredPick[],
+  ledgers: Partial<Record<PicksLeague, LedgerEntry[]>>,
+): { points: number; wins: number; losses: number } {
   const byKey = new Map<string, LedgerEntry>();
-  for (const e of nfl) byKey.set(eventKey("nfl", e), e);
+  for (const league of RADAR_LEAGUES) {
+    for (const e of ledgers[league] ?? []) byKey.set(`${league}:${eventKey(league, e)}`, e);
+  }
   let points = 0, wins = 0, losses = 0;
   for (const p of picks) {
-    if (p.mode !== "radar" || p.league !== "nfl") continue;
-    const e = byKey.get(p.event_key);
+    if (p.mode !== "radar") continue;
+    const e = byKey.get(`${p.league}:${p.event_key}`);
     if (!e || !pickIsValid(p, e)) continue;
     const v = radarVerdict(e); // null without market or result; push scores nothing
     if (v == null || v === "push") continue;
@@ -224,7 +253,7 @@ export function computeLeaderboard(
   const out: LeaderboardRow[] = [];
   for (const [userId, picks] of byUser) {
     const s = gradeSlate(picks, ledgers);
-    const r = gradeRadar(picks, ledgers.nfl ?? []);
+    const r = gradeRadar(picks, ledgers);
     out.push({
       userId,
       name: names.get(userId) ?? "Anonymous",

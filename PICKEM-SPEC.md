@@ -43,7 +43,7 @@ public leagues (needs user mass we don't have yet).
 | Premier League | ✅ `pl-predictions.json` (pH/pD/pA) | ⏳ appears when football-data posts odds | ✅ | **Launch-ready, MW1 = Aug 21** |
 | NFL | ✅ `nfl-predictions.json` (pH) | ✅ ESPN lines, all 16 Week 1 games | ✅ | **Launch-ready, Week 1 = Sept 10** |
 | MLB | ❌ season sim only (`mlb-sim.json`) | futures only | ✅ | Needs `build_mlb_sim.py` to emit a game ledger. Note the volume problem below |
-| CFB | ❌ | — | — | Model planned with the preseason poll; ledger should follow the NFL shape |
+| CFB | ✅ `cfb-predictions.json` (pH), **AP Top 25 games only**, slate refreshed after each poll | ✅ ESPN lines | ✅ `cfb-sim.json` | **LIVE 2026-08-19** (Phase 3 delivered): two-way slate keyed on ESPN event ids, entries carry `ap` ranks + `neutral`; Upset Radar merges NFL + CFB by gap |
 | UCL | ❌ | — | — | Model planned after the draw; PL shape (3-way) with two-leg awareness |
 
 Two design notes from the data:
@@ -146,7 +146,7 @@ statistics lecture to explain).
 |---|---|---|
 | 1 | **Before Aug 21** | PL Slate + Confidence, anonymous tier, vs-model record. The MW1 lock is a real deadline and a real hook: "the model has published its card; yours locks Friday" |
 | 2 | Early Sept | Supabase `picks` + leaderboard + Google sign-in. NFL Slate and Upset Radar go live for Week 1 (Sept 10) with market data |
-| 3 | Sept–Oct | CFB ledger with the model's launch |
+| 3 | ~~Sept–Oct~~ **Shipped 2026-08-19** | CFB ledger with the model's launch — arrived with the preseason poll, ahead of schedule |
 | 4 | **October (MLB playoffs)** | MLB Postseason Pick'em — decided 2026-08-10: skip the regular season entirely, launch with the playoffs. Series-winner picks per round plus per-game picks; needs a playoff-only game ledger from `build_mlb_sim.py` (a far smaller build than a full-season one), and `mlb-sim.json` already carries pennant/WS odds for the model's card |
 | 5 | After UCL draw | UCL slate; fold the existing Beat the Model season card in as "Season Locks" (the Pre-Picks analogue), retiring the old static pages the same way WC2026 was retired (reachable, unlisted) |
 | 6 | When numbers justify | Social: share-your-card images, head-to-head rival links, private leagues |

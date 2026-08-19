@@ -12,8 +12,9 @@ import {
   gradeSlate,
   isLocked,
   pickProb,
-  radarGames,
+  radarBoard,
   radarVerdict,
+  type RadarGame,
   type LedgerEntry,
   type LedgerFile,
   type PickCode,
@@ -93,10 +94,10 @@ type Tab = "slate" | "confidence" | "radar" | "season";
 const LEAGUE_META: Record<PicksLeague, { label: string; emoji: string; note: string; file: string; ways: 2 | 3 }> = {
   pl: { label: "Premier League", emoji: "\u{26BD}", note: "Matchweek slate · three-way", file: "pl-predictions.json", ways: 3 },
   nfl: { label: "NFL", emoji: "\u{1F3C8}", note: "Weekly slate · two-way", file: "nfl-predictions.json", ways: 2 },
+  cfb: { label: "College Football", emoji: "\u{1F3C8}", note: "AP Top 25 slate · two-way", file: "cfb-predictions.json", ways: 2 },
 };
 
 const COMING: { label: string; emoji: string; note: string }[] = [
-  { label: "CFB", emoji: "\u{1F3C8}", note: "with the preseason poll" },
   { label: "MLB Postseason", emoji: "\u{26BE}", note: "series + game picks in October" },
   { label: "UCL", emoji: "\u{1F3C6}", note: "after the draw" },
 ];
@@ -143,9 +144,13 @@ export default function PicksClient() {
   // Ledgers
   useEffect(() => {
     let mounted = true;
-    Promise.all([fetchLedger("pl-predictions.json"), fetchLedger("nfl-predictions.json")]).then(([pl, nfl]) => {
+    Promise.all([
+      fetchLedger("pl-predictions.json"),
+      fetchLedger("nfl-predictions.json"),
+      fetchLedger("cfb-predictions.json"),
+    ]).then(([pl, nfl, cfb]) => {
       if (!mounted) return;
-      setLedgers({ pl: pl ?? undefined, nfl: nfl ?? undefined });
+      setLedgers({ pl: pl ?? undefined, nfl: nfl ?? undefined, cfb: cfb ?? undefined });
     });
     const t = setInterval(() => setNow(Date.now()), 60_000);
     return () => {
@@ -315,10 +320,17 @@ export default function PicksClient() {
   );
 
   const grade = useMemo(
-    () => gradeSlate(picks, { pl: ledgers.pl?.ledger, nfl: ledgers.nfl?.ledger }),
+    () => gradeSlate(picks, { pl: ledgers.pl?.ledger, nfl: ledgers.nfl?.ledger, cfb: ledgers.cfb?.ledger }),
     [picks, ledgers],
   );
-  const radarGrade = useMemo(() => gradeRadar(picks, ledgers.nfl?.ledger ?? []), [picks, ledgers]);
+  const radarGrade = useMemo(
+    () => gradeRadar(picks, { nfl: ledgers.nfl?.ledger, cfb: ledgers.cfb?.ledger }),
+    [picks, ledgers],
+  );
+  const radar = useMemo(
+    () => radarBoard({ nfl: ledgers.nfl?.ledger, cfb: ledgers.cfb?.ledger }),
+    [ledgers],
+  );
 
   // Confidence ordering: distinct slots n..1 across THIS league's picked,
   // unlocked games; locked rows keep their stored slot.
@@ -342,7 +354,7 @@ export default function PicksClient() {
     [ledgers, picks, slatePicks, upsertPick, now],
   );
 
-  const genAt = ledgers.pl?.meta.generated_at ?? ledgers.nfl?.meta.generated_at ?? "…";
+  const genAt = ledgers.pl?.meta.generated_at ?? ledgers.nfl?.meta.generated_at ?? ledgers.cfb?.meta.generated_at ?? "…";
 
   // -------------------------------------------------------------------------
 
@@ -439,7 +451,7 @@ export default function PicksClient() {
 
       {tab === "radar" && (
         <RadarTab
-          nfl={ledgers.nfl?.ledger ?? []}
+          games={radar}
           now={now}
           radarPicks={radarPicks}
           seasonOf={seasonOf}
@@ -466,7 +478,7 @@ export default function PicksClient() {
         <h3 className="text-sm font-semibold text-[var(--text)] mb-2">How this game works</h3>
         <p className="mb-2">
           <b>The Slate</b> pays {SLATE_POINTS} points per correct call — Premier League games are three-way (home, draw, away)
-          and a correct draw call scores exactly like a correct win call; NFL games are two-way, and a tie grades nobody correct.
+          and a correct draw call scores exactly like a correct win call; NFL and College Football games are two-way, and a tie grades nobody correct. The College Football slate covers AP Top 25 games only, published fresh after each week's poll.
           Picks are blind: the model&rsquo;s probabilities reveal after you commit. <b>Confidence</b> ranks your slate — the slot
           value is a bonus on top of the base points when that pick lands. <b>Upset Radar</b> lists the games where our model and
           the betting market disagree most; side with either for +{RADAR_POINTS} when it grades closer to the result (lower Brier,
@@ -538,8 +550,12 @@ function SlateTab({
             >
               <div className="flex items-center justify-between gap-2 flex-wrap">
                 <div className="font-semibold text-[14.5px] min-w-0">
-                  {league === "nfl" ? (
-                    <>{e.away} <span className="font-normal text-[12.5px] text-[var(--text-dim)]">at</span> {e.home}</>
+                  {league !== "pl" ? (
+                    <>
+                      {e.ap?.away ? <span className="text-[11px] text-[var(--text-dim)]" style={MONO}>#{e.ap.away} </span> : null}{e.away}{" "}
+                      <span className="font-normal text-[12.5px] text-[var(--text-dim)]">{e.neutral ? "vs" : "at"}</span>{" "}
+                      {e.ap?.home ? <span className="text-[11px] text-[var(--text-dim)]" style={MONO}>#{e.ap.home} </span> : null}{e.home}
+                    </>
                   ) : (
                     <>{e.home} <span className="font-normal text-[12.5px] text-[var(--text-dim)]">v</span> {e.away}</>
                   )}
@@ -714,7 +730,7 @@ function ConfidenceTab({
             <div className="flex-1 min-w-0 text-[13.5px]">
               <b>{pickLab}</b>{" "}
               <span className="text-[11.5px] text-[var(--text-dim)]">
-                ({league === "nfl" ? `${e.away} at ${e.home}` : `${e.home} v ${e.away}`} · model gives your pick {pct(pickProb(league, e, p.pick as PickCode))})
+                ({league !== "pl" ? `${e.away} ${e.neutral ? "vs" : "at"} ${e.home}` : `${e.home} v ${e.away}`} · model gives your pick {pct(pickProb(league, e, p.pick as PickCode))})
               </span>
               {graded && (
                 <div className="text-[11.5px] text-[var(--text-dim)]">
@@ -744,26 +760,25 @@ function ConfidenceTab({
 }
 
 function RadarTab({
-  nfl,
+  games,
   now,
   radarPicks,
   seasonOf,
   upsertPick,
   removePick,
 }: {
-  nfl: LedgerEntry[];
+  games: RadarGame[];
   now: number;
   radarPicks: Map<string, StoredPick>;
   seasonOf: (lg: PicksLeague) => string;
   upsertPick: (p: StoredPick) => void;
   removePick: (p: StoredPick) => void;
 }) {
-  const games = radarGames(nfl);
   if (!games.length) {
     return (
       <div className="rounded-xl border border-dashed p-6 text-sm text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-        Upset Radar needs posted market odds — it lights up as soon as the ledger carries them (NFL first;
-        Premier League follows when football-data posts matchweek odds).
+        Upset Radar needs posted market odds — it lights up as soon as a ledger carries them (NFL and
+        College Football first; Premier League follows when football-data posts matchweek odds).
       </div>
     );
   }
@@ -774,8 +789,8 @@ function RadarTab({
         These are the {games.length} biggest disagreements of the week. Side with a source — when the game grades,
         the one that was closer to the truth (lower Brier) wins, and siding with it pays <b className="text-[var(--text)]">+{RADAR_POINTS}</b>.
       </p>
-      {games.map((e) => {
-        const key = eventKey("nfl", e);
+      {games.map(({ league, e }) => {
+        const key = eventKey(league, e);
         const my = radarPicks.get(key);
         const locked = isLocked(e, now);
         const verdict = radarVerdict(e);
@@ -791,7 +806,10 @@ function RadarTab({
           >
             <div className="flex items-center justify-between gap-2 flex-wrap">
               <div className="font-semibold text-[14.5px]">
-                {e.away} <span className="font-normal text-[12.5px] text-[var(--text-dim)]">at</span> {e.home}
+                <span className="mr-1.5 align-middle text-[10.5px] rounded-full border px-2 py-0.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>
+                  {LEAGUE_META[league].emoji} {league === "cfb" ? "CFB" : league.toUpperCase()}
+                </span>
+                {e.ap?.away ? `#${e.ap.away} ` : ""}{e.away} <span className="font-normal text-[12.5px] text-[var(--text-dim)]">{e.neutral ? "vs" : "at"}</span> {e.ap?.home ? `#${e.ap.home} ` : ""}{e.home}
                 <span className="ml-2 align-middle text-[10.5px] rounded-full border px-2 py-0.5 text-[#E3C86B]" style={{ borderColor: "#E3C86B" }}>
                   Δ {(e.gap * 100).toFixed(1)} pts
                 </span>
@@ -806,8 +824,8 @@ function RadarTab({
                   disabled={locked}
                   onClick={() => {
                     const base: StoredPick = {
-                      league: "nfl",
-                      season: seasonOf("nfl"),
+                      league,
+                      season: seasonOf(league),
                       event_key: key,
                       mode: "radar",
                       pick: side,

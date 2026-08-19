@@ -8,6 +8,7 @@ import {
   lockTime,
   pickIsValid,
   pickProb,
+  radarBoard,
   radarGames,
   radarVerdict,
   type LedgerEntry,
@@ -38,6 +39,21 @@ const nflGame = (over: Partial<LedgerEntry> = {}): LedgerEntry => ({
   ...over,
 });
 
+const cfbGame = (over: Partial<LedgerEntry> = {}): LedgerEntry => ({
+  event_id: "401856766",
+  date: "2026-08-29",
+  home: "TCU",
+  away: "North Carolina",
+  home_slug: "tcu-cfb",
+  away_slug: "north-carolina-cfb",
+  ap: { home: 14, away: null },
+  neutral: true,
+  model: { pH: 0.55 },
+  market: { pH: 0.71 },
+  pick: "H",
+  ...over,
+});
+
 const pick = (over: Partial<StoredPick> = {}): StoredPick => ({
   league: "pl",
   season: "2026-27",
@@ -50,8 +66,9 @@ const pick = (over: Partial<StoredPick> = {}): StoredPick => ({
 });
 
 describe("eventKey / locking", () => {
-  it("keys NFL on event_id and PL on date:home_slug", () => {
+  it("keys NFL and CFB on event_id and PL on date:home_slug", () => {
     expect(eventKey("nfl", nflGame())).toBe("401872656");
+    expect(eventKey("cfb", cfbGame())).toBe("401856766");
     expect(eventKey("pl", plGame())).toBe("2026-08-22:everton");
   });
 
@@ -83,9 +100,10 @@ describe("eventKey / locking", () => {
 });
 
 describe("pickProb", () => {
-  it("reads three-way PL and two-way NFL probabilities", () => {
+  it("reads three-way PL and two-way NFL/CFB probabilities", () => {
     expect(pickProb("pl", plGame(), "D")).toBeCloseTo(0.2897);
     expect(pickProb("nfl", nflGame(), "A")).toBeCloseTo(0.408);
+    expect(pickProb("cfb", cfbGame(), "A")).toBeCloseTo(0.45);
   });
 });
 
@@ -113,6 +131,17 @@ describe("gradeSlate", () => {
     const g = gradeSlate([pick(), late], ledgers);
     expect(g.graded).toBe(0);
     expect(g.points).toBe(0);
+  });
+
+  it("grades CFB slate picks like NFL, keyed on event_id", () => {
+    const ledgers = { cfb: [cfbGame({ result: "A", score: "24-27" })] };
+    const g = gradeSlate(
+      [pick({ league: "cfb", season: "2026", event_key: "401856766", pick: "A", picked_at: "2026-08-28T10:00:00Z" })],
+      ledgers,
+    );
+    expect(g.points).toBe(10);
+    expect(g.wins).toBe(1);
+    expect(g.modelLosses).toBe(1); // the model took TCU
   });
 
   it("tracks streaks across leagues in kickoff order and NFL ties break nobody's streak but grade as a miss", () => {
@@ -151,10 +180,23 @@ describe("radar", () => {
     const rp = (side: "model" | "market") =>
       gradeRadar(
         [{ league: "nfl", season: "2026", event_key: "401872656", mode: "radar", pick: side, confidence: null, picked_at: "2026-09-09T10:00:00Z" }],
-        nfl,
+        { nfl },
       );
     expect(rp("model").points).toBe(25);
     expect(rp("market").points).toBe(0);
+  });
+
+  it("grades CFB radar picks and merges both leagues onto one board by gap", () => {
+    const nfl = [nflGame({ model: { pH: 0.55 }, market: { pH: 0.6 } })];
+    const cfb = [cfbGame({ result: "H" })];
+    const board = radarBoard({ nfl, cfb });
+    expect(board).toHaveLength(2);
+    expect(board[0].league).toBe("cfb"); // a 16-point gap beats a 5-point one
+    const g = gradeRadar(
+      [{ league: "cfb", season: "2026", event_key: "401856766", mode: "radar", pick: "market", confidence: null, picked_at: "2026-08-28T10:00:00Z" }],
+      { nfl, cfb },
+    );
+    expect(g).toEqual({ points: 25, wins: 1, losses: 0 });
   });
 
   it("still grades a pick whose game later dropped out of the top five", () => {
@@ -169,7 +211,7 @@ describe("radar", () => {
     expect(radarGames(nfl).some((e) => e.event_id === "picked")).toBe(false);
     const g = gradeRadar(
       [{ league: "nfl", season: "2026", event_key: "picked", mode: "radar", pick: "model", confidence: null, picked_at: "2026-09-09T10:00:00Z" }],
-      nfl,
+      { nfl },
     );
     expect(g).toEqual({ points: 25, wins: 1, losses: 0 });
   });

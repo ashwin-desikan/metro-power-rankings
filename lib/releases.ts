@@ -19,10 +19,10 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-19",
-    headline: "Every NFL game since 1920, against what was expected",
+    headline: "College Football called, and every NFL game against expectation",
     items: [
-      "A new board keeps the other half of the NFL's record: what each game was expected to do before it was played. The longest odds ever beaten open with Miami winning at New England on a 6.5% chance in 2008.",
-      "Every season since 1979 sets the model against the closing market on the same games, and a century of it adds up by metro. Green Bay have beaten expectation by more than anywhere else, Phoenix by least.",
+      "College Football joins the prediction hubs and Citizen of Nowhere Picks: playoff, conference and national title odds for every FBS program, with the week's AP Top 25 games called and playable once each poll drops.",
+      "A new NFL board keeps the other half of the record: what each game was expected to do before it was played, and the model against the closing market since 1979. Green Bay have beaten expectation more than anywhere.",
       "Domestic T20 champions now carry the name each club held that season, so The Hundred reads Oval Invincibles from 2023 to 2025 and Manchester Super Giants for 2026, whose first title now shows on Manchester's honours.",
       "The baseball playoff board now shows each club's record, run difference and real position, so it is clear the order comes from the model rather than the table.",
     ],

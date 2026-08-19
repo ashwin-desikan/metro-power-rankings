@@ -29,7 +29,7 @@ const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }
 const LEAGUE_HUBS: { key: string; emoji: string; name: string; season: string; blurb: string; href?: string; game?: boolean }[] = [
   { key: "nfl", emoji: "\u{1F3C8}", name: "NFL", season: "2026 season", blurb: "Super Bowl LXI, conference, division and playoff odds from the real 272-game schedule, with weekly game picks graded all season.", href: "/predictions/nfl" },
   { key: "mlb", emoji: "⚾", name: "MLB", season: "2026 season", blurb: "World Series, pennant, division and playoff odds from the real remaining schedule and the full twelve-team bracket, refreshed daily, with every race still open called out.", href: "/predictions/mlb", game: false },
-  { key: "cfb", emoji: "\u{1F3C8}", name: "College Football", season: "2026 season", blurb: "Playoff and national-title odds across the twelve-team field, conference by conference. Arrives with the preseason AP poll." },
+  { key: "cfb", emoji: "\u{1F3C8}", name: "College Football", season: "2026 season", blurb: "Playoff, conference title and national championship odds across the twelve-team field, with every AP Top 25 game called weekly from the preseason poll on.", href: "/predictions/cfb", game: false },
   { key: "pl", emoji: "⚽", name: "Premier League", season: "2026-27 season", blurb: "Title, top-five and relegation odds from 20,000 simulated seasons blending site data with market odds, plus fixture picks graded all season.", href: "/predictions/pl" },
   { key: "ucl", emoji: "\u{1F3C6}", name: "Champions League", season: "2026-27 season", blurb: "Knockout-bracket odds from the league phase to the final. Arrives once the late-August draw sets the field." },
 ];
@@ -108,8 +108,8 @@ export default async function PredictionsPage() {
         <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-5">
           Each hub runs tens of thousands of simulated seasons and publishes every team&apos;s odds
           at each stage, most with a Beat-the-Model card, exactly like the 2026 World Cup simulator
-          below. The NFL, MLB and the Premier League are live; College Football arrives with the
-          preseason poll and the Champions League with the late-August draw.
+          below. The NFL, MLB, College Football and the Premier League are live; the Champions League
+          arrives with the late-August draw.
         </p>
         <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
           {LEAGUE_HUBS.map((h) => {
