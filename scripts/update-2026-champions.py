@@ -40,10 +40,15 @@ T20_JSON = os.path.join(ROOT, "public", "data", "cricket", "t20-leagues.json")
 RUGBY_TXT = os.path.join(ROOT, "scripts", "rugby", "domestic-winners.txt")
 
 sys.path.insert(0, os.path.join(ROOT, "scripts", "cricket"))
-try:
-    from build_t20_leagues import ALIASES as T20_ALIASES  # brand-name map
-except Exception:  # pragma: no cover - self-test still works without it
-    T20_ALIASES = {}
+# 🔴 THIS WANTS ERA_BRAND, NOT LINEAGE. It is writing a ROLL row, which prints
+# the name the club carried in that competition at the time. On 2026-08-19 the
+# single ALIASES map in build_t20_leagues.py was split into ERA_BRAND (applied
+# to the roll) and LINEAGE (aggregation only), and this import kept naming the
+# map that no longer exists. The bare `except` swallowed the ImportError and
+# left an EMPTY map, so the tracker would have silently written raw Wikipedia
+# names instead of competition brands. Import the name explicitly and let it
+# fail loudly if it moves again.
+from build_t20_leagues import ERA_BRAND as T20_ERA_BRAND
 
 SEASON = "2026"
 
@@ -161,8 +166,8 @@ def currie_done(txt_path=None):
 # --------------------------------------------------------------------- writes
 
 def record_t20(key, winner, ru):
-    winner = T20_ALIASES.get(winner, winner)
-    ru = T20_ALIASES.get(ru, ru)
+    winner = T20_ERA_BRAND.get(winner, winner)
+    ru = T20_ERA_BRAND.get(ru, ru)
     with io.open(T20_TSV, "a", encoding="utf-8", newline="") as f:
         f.write("%s\t%s\t%s\t%s\n" % (key, SEASON, winner, ru))
     print("t20 supplement: %s %s -> %s (def. %s)" % (key, SEASON, winner, ru or "N/A"))
@@ -214,11 +219,19 @@ def self_test():
           ("Jaffna", "Galle Marvels"))
     check("no-param", parse_champion("{{Infobox cricket tournament\n| fromdate = 1 May\n}}", "lpl"),
           (None, "no champions param found (page format changed?)"))
-    # Alias map must carry the lineage/rebrand names the rolls use.
-    for src, want in [("Jaffna Kings", "Jaffna"), ("Oval Invincibles", "MI London"),
-                      ("Northern Superchargers", "Sunrisers Leeds"),
+    # 🔴 The roll prints the ERA name. ERA_BRAND turns a bare county or
+    # association name into the brand that competition used at the time, and
+    # must leave a club's own era name ALONE. A rebrand that happened later
+    # (Oval Invincibles -> MI London in 2026) belongs to LINEAGE and must NEVER
+    # reach a roll row, or a 2023 title is recorded under a 2026 name.
+    for src, want in [("Warwickshire", "Birmingham Bears"),
+                      ("Nottinghamshire", "Notts Outlaws"),
+                      ("Northern Districts", "Northern Brave"),
                       ("St Lucia Kings", "Saint Lucia Kings")]:
-        check("alias-" + src, T20_ALIASES.get(src, src), want)
+        check("era-brand-" + src, T20_ERA_BRAND.get(src, src), want)
+    for src in ("Oval Invincibles", "Manchester Originals", "Northern Superchargers",
+                "Jaffna Kings", "Royal Challengers Bangalore"):
+        check("era-brand-untouched-" + src, T20_ERA_BRAND.get(src, src), src)
 
     if fails:
         print("SELF-TEST FAIL:")

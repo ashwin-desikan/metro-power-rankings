@@ -10,7 +10,17 @@ import "server-only";
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 
-export type T20RollRow = { season: string; winner: string; ru: string };
+// winner / ru are the ERA names — what the club was called that season. When a
+// club has since been renamed, winnerKey / ruKey carry the current Team List
+// franchise, so crests and links resolve on the franchise while the table still
+// prints the period-correct name. Absent when the two are the same.
+export type T20RollRow = {
+  season: string;
+  winner: string;
+  ru: string;
+  winnerKey?: string;
+  ruKey?: string;
+};
 
 export type T20Data = {
   rolls: Record<string, T20RollRow[]>;

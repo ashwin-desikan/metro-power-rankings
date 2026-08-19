@@ -55,14 +55,26 @@ LABELS = {
     "lpl": "Lanka Premier League",
 }
 
-# cricsheet winner name -> Team List name (renames/lineages).
-ALIASES = {
-    # IPL renames
-    "Royal Challengers Bangalore": "Royal Challengers Bengaluru",
-    "Delhi Daredevils": "Delhi Capitals",
-    "Kings XI Punjab": "Punjab Kings",
+# TWO MAPS, TWO JOBS. Do not merge them back into one.
+#
+# Until 2026-08-19 a single ALIASES map did both jobs below, so the roll printed
+# TODAY'S name on YESTERDAY'S season: The Hundred read "MI London" for 2023,
+# 2024 and 2025, when the team was Oval Invincibles and the rebrand did not
+# happen until 2026. That is the same defect the corporate rankings board fixed
+# with dated era names, and it is worse here, because it tells a reader that
+# Oval Invincibles never won anything.
+#
+# ERA_BRAND: cricsheet's raw name -> the name the team carried IN THAT
+# COMPETITION AT THE TIME. APPLIED TO THE ROLL. cricsheet files the Blast under
+# bare county names and the Super Smash under association names; the brand is
+# what the competition itself called them, so this makes the roll MORE
+# era-correct, not less. Spelling and whitespace normalisation belongs here too.
+ERA_BRAND = {
+    # normalisation, not a rename
     "Adelaide Strikers ": "Adelaide Strikers",
-    # T20 Blast: county -> brand names
+    "St Kitts and Nevis Patriots": "St Kitts & Nevis Patriots",
+    "St Lucia Kings": "Saint Lucia Kings",
+    # T20 Blast: county -> the brand that county plays the Blast under
     "Nottinghamshire": "Notts Outlaws",
     "Hampshire": "Hampshire Hawks",
     "Kent": "Kent Spitfires",
@@ -71,20 +83,33 @@ ALIASES = {
     "Northamptonshire": "Northants Steelbacks",
     "Lancashire": "Lancashire Lightning",
     "Warwickshire": "Birmingham Bears",
-    # Super Smash: association -> brand names
+    # Super Smash: association -> the brand it plays under
     "Northern Districts": "Northern Brave",
     "Central Districts": "Central Stags",
     "Wellington": "Wellington Firebirds",
-    # CPL renames / lineages
-    "St Lucia Kings": "Saint Lucia Kings",
-    "St Lucia Zouks": "Saint Lucia Kings",
-    "St Kitts and Nevis Patriots": "St Kitts & Nevis Patriots",
-    "Barbados Tridents": "Barbados Royals",
-    "Trinidad & Tobago Red Steel": "Trinbago Knight Riders",
-    # The Hundred: 2026 rebrands
+}
+
+# LINEAGE: a name a franchise USED TO carry -> the franchise's current Team List
+# name. NEVER APPLIED TO THE ROLL. Used only to fold a franchise's titles onto
+# one row for the honours layer and the most-titled table, so that a rename does
+# not split a club's trophy count in two.
+#
+# 🔴 An entry here is undated, so it folds the WHOLE history of the old name
+# onto the new one. That is right for aggregation and wrong for display, which
+# is exactly why it must not touch the roll.
+LINEAGE = {
+    # The Hundred: renamed for 2026 after the 2025 franchise sales
     "Oval Invincibles": "MI London",
     "Manchester Originals": "Manchester Super Giants",
     "Northern Superchargers": "Sunrisers Leeds",
+    # IPL renames
+    "Royal Challengers Bangalore": "Royal Challengers Bengaluru",
+    "Delhi Daredevils": "Delhi Capitals",
+    "Kings XI Punjab": "Punjab Kings",
+    # CPL renames / lineages
+    "St Lucia Zouks": "Saint Lucia Kings",
+    "Barbados Tridents": "Barbados Royals",
+    "Trinidad & Tobago Red Steel": "Trinbago Knight Riders",
     # LPL lineages
     "Jaffna Kings": "Jaffna",
     "Jaffna Stallions": "Jaffna",
@@ -123,6 +148,17 @@ def _year(s):
     return int(m.group(1)) if m else 0
 
 
+def _canon(name):
+    """A roll's era name -> the current Team List franchise it belongs to.
+
+    Lineage first (an old franchise name becomes the current one), then the
+    brand -> Team List re-key. This is the AGGREGATION key only. Never write
+    the result of this back into a roll row.
+    """
+    n = LINEAGE.get(name, name)
+    return BRAND_TO_TEAMLIST.get(n, n)
+
+
 def cricsheet_rolls():
     """Champions from the local cricsheet archive: winners of Final-stage
     matches per league+season. Returns {key: [{season, winner, ru}]}."""
@@ -137,12 +173,12 @@ def cricsheet_rolls():
             continue
         key, _tl_league = EVENTS[ev]
         season = str(r.get("season") or "")
-        winner = ALIASES.get(str(r.get("winner") or "").strip(),
-                             str(r.get("winner") or "").strip())
+        winner = ERA_BRAND.get(str(r.get("winner") or "").strip(),
+                               str(r.get("winner") or "").strip())
         if not winner:
             continue  # no-result final
         both = [str(x).strip() for x in (r.get("teams") or [])]
-        ru = next((ALIASES.get(t, t) for t in both if ALIASES.get(t, t) != winner), "")
+        ru = next((ERA_BRAND.get(t, t) for t in both if ERA_BRAND.get(t, t) != winner), "")
         # Keep the LAST final per season (covers double-headers / replays).
         finals[key][season] = {"season": season, "winner": winner, "ru": ru,
                                "date": str(r.get("date") or "")}
@@ -187,23 +223,44 @@ def main():
     for k in rolls:
         rolls[k].sort(key=lambda r: -_year(r["season"]))
 
+    # A CREST BELONGS TO THE FRANCHISE, NOT TO THE NAME IT USED THAT SEASON.
+    # The roll displays the era name, so a crest looked up on that string misses
+    # for every renamed club (Oval Invincibles, Manchester Originals, B-Love
+    # Kandy all have no badge of their own). Carry the canonical franchise
+    # alongside the display name and let the page resolve the crest on that.
+    # Emitted only where it differs, so the file stays small and the diff honest.
+    for k, rs in rolls.items():
+        for r in rs:
+            for field, keyfield in (("winner", "winnerKey"), ("ru", "ruKey")):
+                nm = r.get(field) or ""
+                canon = _canon(nm) if nm else ""
+                if canon and canon != nm:
+                    r[keyfield] = canon
+
     honours = defaultdict(lambda: defaultdict(list))  # (name, tl_league) -> years
     unmatched = defaultdict(list)
     key_to_league = {v[0]: v[1] for v in EVENTS.values()}
     for key, rs in rolls.items():
         tl_league = key_to_league.get(key)
         for r in rs:
-            tl_name = BRAND_TO_TEAMLIST.get(r["winner"], r["winner"])
+            tl_name = _canon(r["winner"])
             if tl_league and tl_name in tl_names.get(tl_league, set()):
                 honours[(tl_name, tl_league)][key].append(r["season"])
             else:
                 unmatched[r["winner"]].append(f"{LABELS.get(key, key)} {r['season']}")
 
-    most = {key: sorted(
-        [{"winner": w, "titles": sum(1 for r in rs if r["winner"] == w)}
-         for w in {r["winner"] for r in rs}],
-        key=lambda x: -x["titles"])[:5]
-        for key, rs in rolls.items()}
+    # AGGREGATE ON THE FRANCHISE, DISPLAY THE FRANCHISE. The roll now keeps the
+    # era name, so counting raw winner strings would split Oval Invincibles (2)
+    # from MI London (1) and report neither as a three-time champion. Fold
+    # through the same canonical key the honours layer uses.
+    most = {}
+    for key, rs in rolls.items():
+        tally = defaultdict(int)
+        for r in rs:
+            tally[_canon(r["winner"])] += 1
+        most[key] = sorted(
+            [{"winner": w, "titles": n} for w, n in tally.items()],
+            key=lambda x: (-x["titles"], x["winner"]))[:5]
 
     honour_rows = [{
         "name": name, "league": lg,

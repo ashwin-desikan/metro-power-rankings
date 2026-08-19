@@ -1,0 +1,368 @@
+2023 Regular Season - Week 1
+BOLD = team that covered the spread
+
+Thu	Sep 7, 2023	8:20	@	Kansas City Chiefs	L 20-21	L -4		Detroit Lions	U 53.5	
+Sun	Sep 10, 2023	1:00	@	Atlanta Falcons	W 24-10	W -3		Carolina Panthers	U 43	
+Sun	Sep 10, 2023	1:00	@	Baltimore Ravens	W 25-9	W -9		Houston Texans	U 44.5	
+Sun	Sep 10, 2023	1:00	@	Chicago Bears	L 20-38	L -2.5		Green Bay Packers	O 44.5	
+Sun	Sep 10, 2023	1:00		Cincinnati Bengals	L 3-24	L -1	@	Cleveland Browns	U 46.5	
+Sun	Sep 10, 2023	1:00		Jacksonville Jaguars	W 31-21	W -3.5	@	Indianapolis Colts	O 43.5	
+Sun	Sep 10, 2023	1:00	@	Minnesota Vikings	L 17-20	L -4		Tampa Bay Buccaneers	U 45.5	
+Sun	Sep 10, 2023	1:00	@	New Orleans Saints	W 16-15	L -3.5		Tennessee Titans	U 41.5	
+Sun	Sep 10, 2023	1:00		San Francisco 49ers	W 30-7	W -2.5	@	Pittsburgh Steelers	U 40.5	
+Sun	Sep 10, 2023	1:00	@	Washington Commanders	W 20-16	L -6		Arizona Cardinals	U 40.5	
+Sun	Sep 10, 2023	4:25	@	Denver Broncos	L 16-17	L -2.5		Las Vegas Raiders	U 44.5	
+Sun	Sep 10, 2023	4:25	@	Los Angeles Chargers	L 34-36	L -2.5		Miami Dolphins	O 49.5	
+Sun	Sep 10, 2023	4:25		Philadelphia Eagles	W 25-20	W -4	@	New England Patriots	U 45.5	
+Sun	Sep 10, 2023	4:25	@	Seattle Seahawks	L 13-30	L -5.5		Los Angeles Rams	U 46.5	
+Sun	Sep 10, 2023	8:20		Dallas Cowboys	W 40-0	W -3	@	New York Giants	U 46.5	
+Mon	Sep 11, 2023	8:15		Buffalo Bills	L 16-22 (OT)	L -1.5	@	New York Jets	U 47.5	
+
+Back to top
+
+2023 Regular Season - Week 2
+Thu	Sep 14, 2023	8:15	@	Philadelphia Eagles	W 34-28	P -6		Minnesota Vikings	O 49	
+Sun	Sep 17, 2023	1:00	@	Atlanta Falcons	W 25-24	L -3		Green Bay Packers	O 40.5	
+Sun	Sep 17, 2023	1:00	@	Buffalo Bills	W 38-10	W -8		Las Vegas Raiders	O 47	
+Sun	Sep 17, 2023	1:00	@	Cincinnati Bengals	L 24-27	L -3.5		Baltimore Ravens	O 45.5	
+Sun	Sep 17, 2023	1:00	@	Detroit Lions	L 31-37 (OT)	L -4.5		Seattle Seahawks	O 47	
+Sun	Sep 17, 2023	1:00	@	Houston Texans	L 20-31	L -1		Indianapolis Colts	O 40	
+Sun	Sep 17, 2023	1:00		Kansas City Chiefs	W 17-9	W -3.5	@	Jacksonville Jaguars	U 51	
+Sun	Sep 17, 2023	1:00	@	Tampa Bay Buccaneers	W 27-17	W -2.5		Chicago Bears	O 42	
+Sun	Sep 17, 2023	1:00		Los Angeles Chargers	L 24-27 (OT)	L -2.5	@	Tennessee Titans	O 45.5	
+Sun	Sep 17, 2023	4:05		New York Giants	W 31-28	L -4.5	@	Arizona Cardinals	O 36.5	
+Sun	Sep 17, 2023	4:05		San Francisco 49ers	W 30-23	L -7.5	@	Los Angeles Rams	O 44.5	
+Sun	Sep 17, 2023	4:25	@	Dallas Cowboys	W 30-10	W -8.5		New York Jets	O 38.5	
+Sun	Sep 17, 2023	4:25	@	Denver Broncos	L 33-35	L -4		Washington Commanders	O 38.5	
+Sun	Sep 17, 2023	8:20		Miami Dolphins	W 24-17	W -2	@	New England Patriots	U 46.5	
+Mon	Sep 18, 2023	7:15		New Orleans Saints	W 20-17	P -3	@	Carolina Panthers	U 39.5	
+Mon	Sep 18, 2023	8:15		Cleveland Browns	L 22-26	L -2.5	@	Pittsburgh Steelers	O 39	
+
+Back to top
+
+2023 Regular Season - Week 3
+Thu	Sep 21, 2023	8:15	@	San Francisco 49ers	W 30-12	W -10.5		New York Giants	U 43.5	
+Sun	Sep 24, 2023	1:00	@	Baltimore Ravens	L 19-22 (OT)	L -7.5		Indianapolis Colts	U 44.5	
+Sun	Sep 24, 2023	1:00	@	Cleveland Browns	W 27-3	W -3.5		Tennessee Titans	U 38	
+Sun	Sep 24, 2023	1:00	@	Detroit Lions	W 20-6	W -3		Atlanta Falcons	U 47.5	
+Sun	Sep 24, 2023	1:00	@	Green Bay Packers	W 18-17	L -1.5		New Orleans Saints	U 41.5	
+Sun	Sep 24, 2023	1:00	@	Jacksonville Jaguars	L 17-37	L -9.5		Houston Texans	O 43.5	
+Sun	Sep 24, 2023	1:00	@	Miami Dolphins	W 70-20	W -6		Denver Broncos	O 47.5	
+Sun	Sep 24, 2023	1:00	@	Minnesota Vikings	L 24-28	L -1		Los Angeles Chargers	U 53	
+Sun	Sep 24, 2023	1:00		New England Patriots	W 15-10	W -2.5	@	New York Jets	U 35.5	
+Sun	Sep 24, 2023	1:00		Buffalo Bills	W 37-3	W -4.5	@	Washington Commanders	U 43.5	
+Sun	Sep 24, 2023	4:05	@	Seattle Seahawks	W 37-27	W -5		Carolina Panthers	O 43	
+Sun	Sep 24, 2023	4:25		Dallas Cowboys	L 16-28	L -11.5	@	Arizona Cardinals	O 43.5	
+Sun	Sep 24, 2023	4:25	@	Kansas City Chiefs	W 41-10	W -13		Chicago Bears	O 48.5	
+Sun	Sep 24, 2023	8:20	@	Las Vegas Raiders	L 18-23	L -3		Pittsburgh Steelers	U 43.5	
+Mon	Sep 25, 2023	7:15		Philadelphia Eagles	W 25-11	W -6	@	Tampa Bay Buccaneers	U 44	
+Mon	Sep 25, 2023	8:15	@	Cincinnati Bengals	W 19-16	P -3		Los Angeles Rams	U 45.5	
+
+Back to top
+
+2023 Regular Season - Week 4
+Thu	Sep 28, 2023	8:15		Detroit Lions	W 34-20	W -2.5	@	Green Bay Packers	O 45	
+Sun	Oct 1, 2023	9:30	N	Jacksonville Jaguars	W 23-7	W -3.5		Atlanta Falcons	U 42.5	at London
+Sun	Oct 1, 2023	1:00	@	Buffalo Bills	W 48-20	W -2.5		Miami Dolphins	O 53	
+Sun	Oct 1, 2023	1:00		Minnesota Vikings	W 21-13	W -4.5	@	Carolina Panthers	U 46.5	
+Sun	Oct 1, 2023	1:00		Denver Broncos	W 31-28	P -3	@	Chicago Bears	O 47	
+Sun	Oct 1, 2023	1:00		Baltimore Ravens	W 28-3	W -2.5	@	Cleveland Browns	U 41	
+Sun	Oct 1, 2023	1:00		Pittsburgh Steelers	L 6-30	L -3	@	Houston Texans	U 41.5	
+Sun	Oct 1, 2023	1:00		Los Angeles Rams	W 29-23 (OT)	W -1	@	Indianapolis Colts	O 44.5	
+Sun	Oct 1, 2023	1:00	@	New Orleans Saints	L 9-26	L -4.5		Tampa Bay Buccaneers	U 41	
+Sun	Oct 1, 2023	1:00	@	Philadelphia Eagles	W 34-31 (OT)	L -9.5		Washington Commanders	O 43	
+Sun	Oct 1, 2023	1:00		Cincinnati Bengals	L 3-27	L -2.5	@	Tennessee Titans	U 41.5	
+Sun	Oct 1, 2023	4:05	@	Los Angeles Chargers	W 24-17	W -5.5		Las Vegas Raiders	U 48.5	
+Sun	Oct 1, 2023	4:25	@	Dallas Cowboys	W 38-3	W -6.5		New England Patriots	U 43.5	
+Sun	Oct 1, 2023	4:25	@	San Francisco 49ers	W 35-16	W -16.5		Arizona Cardinals	O 44.5	
+Sun	Oct 1, 2023	8:20		Kansas City Chiefs	W 23-20	L -9.5	@	New York Jets	O 41.5	
+Mon	Oct 2, 2023	8:15		Seattle Seahawks	W 24-3	W -2.5	@	New York Giants	U 46.5	
+
+Back to top
+
+2023 Regular Season - Week 5
+BOLD = team that covered the spread
+
+Thu	Oct 5, 2023	8:15	@	Washington Commanders	L 20-40	L -6		Chicago Bears	O 44.5	
+Sun	Oct 8, 2023	9:30	N	Buffalo Bills	L 20-25	L -5.5		Jacksonville Jaguars	U 48.5	at London
+Sun	Oct 8, 2023	1:00	@	Atlanta Falcons	W 21-19	L -2.5		Houston Texans	U 42	
+Sun	Oct 8, 2023	1:00	@	Detroit Lions	W 42-24	W -9.5		Carolina Panthers	O 43.5	
+Sun	Oct 8, 2023	1:00		Tennessee Titans	L 16-23	L -2.5	@	Indianapolis Colts	U 43.5	
+Sun	Oct 8, 2023	1:00	@	Miami Dolphins	W 31-16	W -13		New York Giants	U 47.5	
+Sun	Oct 8, 2023	1:00	@	New England Patriots	L 0-34	L -1.5		New Orleans Saints	U 38.5	
+Sun	Oct 8, 2023	1:00		Baltimore Ravens	L 10-17	L -4.5	@	Pittsburgh Steelers	U 38.5	
+Sun	Oct 8, 2023	4:05		Cincinnati Bengals	W 34-20	W -3	@	Arizona Cardinals	O 45.5	
+Sun	Oct 8, 2023	4:05		Philadelphia Eagles	W 23-14	W -3.5	@	Los Angeles Rams	U 49.5	
+Sun	Oct 8, 2023	4:25	@	Denver Broncos	L 21-31	L -2.5		New York Jets	O 42.5	
+Sun	Oct 8, 2023	4:25		Kansas City Chiefs	W 27-20	W -3.5	@	Minnesota Vikings	U 52.5	
+Sun	Oct 8, 2023	8:20	@	San Francisco 49ers	W 42-10	W -3.5		Dallas Cowboys	O 45	
+Mon	Oct 9, 2023	8:15	@	Las Vegas Raiders	W 17-13	W -1.5		Green Bay Packers	U 44.5	
+
+Back to top
+
+2023 Regular Season - Week 6
+Thu	Oct 12, 2023	8:15	@	Kansas City Chiefs	W 19-8	W -10.5		Denver Broncos	U 47.5	
+Sun	Oct 15, 2023	9:30	N	Baltimore Ravens	W 24-16	W -5		Tennessee Titans	U 42.5	at London
+Sun	Oct 15, 2023	1:00	@	Atlanta Falcons	L 16-24	L -1.5		Washington Commanders	U 41.5	
+Sun	Oct 15, 2023	1:00		Minnesota Vikings	W 19-13	W -3	@	Chicago Bears	U 44.5	
+Sun	Oct 15, 2023	1:00	@	Cincinnati Bengals	W 17-13	W -3		Seattle Seahawks	U 45.5	
+Sun	Oct 15, 2023	1:00		San Francisco 49ers	L 17-19	L -9.5	@	Cleveland Browns	O 35.5	
+Sun	Oct 15, 2023	1:00		New Orleans Saints	L 13-20	L -2.5	@	Houston Texans	U 41.5	
+Sun	Oct 15, 2023	1:00	@	Jacksonville Jaguars	W 37-20	W -4.5		Indianapolis Colts	O 43.5	
+Sun	Oct 15, 2023	1:00	@	Miami Dolphins	W 42-21	W -14		Carolina Panthers	O 47.5	
+Sun	Oct 15, 2023	4:05	@	Las Vegas Raiders	W 21-17	W -2.5		New England Patriots	U 42.5	
+Sun	Oct 15, 2023	4:25	@	Los Angeles Rams	W 26-9	W -7		Arizona Cardinals	U 47.5	
+Sun	Oct 15, 2023	4:25		Philadelphia Eagles	L 14-20	L -6.5	@	New York Jets	U 43.5	
+Sun	Oct 15, 2023	4:25		Detroit Lions	W 20-6	W -3	@	Tampa Bay Buccaneers	U 43.5	
+Sun	Oct 15, 2023	8:20	@	Buffalo Bills	W 14-9	L -15.5		New York Giants	U 43.5	
+Mon	Oct 16, 2023	8:15		Dallas Cowboys	W 20-17	W -1.5	@	Los Angeles Chargers	U 50	
+
+Back to top
+
+2023 Regular Season - Week 7
+Thu	Oct 19, 2023	8:15	@	New Orleans Saints	L 24-31	L -2.5		Jacksonville Jaguars	O 40.5	
+Sun	Oct 22, 2023	1:00	@	Baltimore Ravens	W 38-6	W -3		Detroit Lions	O 43.5	
+Sun	Oct 22, 2023	1:00		Las Vegas Raiders	L 12-30	L -2.5	@	Chicago Bears	O 38.5	
+Sun	Oct 22, 2023	1:00		Cleveland Browns	W 39-38	L -3.5	@	Indianapolis Colts	O 39.5	
+Sun	Oct 22, 2023	1:00		Buffalo Bills	L 25-29	L -7.5	@	New England Patriots	O 41.5	
+Sun	Oct 22, 2023	1:00		Washington Commanders	L 7-14	L -3	@	New York Giants	U 36.5	
+Sun	Oct 22, 2023	1:00	@	Tampa Bay Buccaneers	L 13-16	L -3		Atlanta Falcons	U 37.5	
+Sun	Oct 22, 2023	4:05	@	Los Angeles Rams	L 17-24	L -3		Pittsburgh Steelers	U 43.5	
+Sun	Oct 22, 2023	4:05	@	Seattle Seahawks	W 20-10	W -8.5		Arizona Cardinals	U 43.5	
+Sun	Oct 22, 2023	4:25	@	Denver Broncos	W 19-17	W -1		Green Bay Packers	U 44	
+Sun	Oct 22, 2023	4:25	@	Kansas City Chiefs	W 31-17	W -5.5		Los Angeles Chargers	U 48.5	
+Sun	Oct 22, 2023	8:20	@	Philadelphia Eagles	W 31-17	W -3		Miami Dolphins	U 51.5	
+Mon	Oct 23, 2023	8:15		San Francisco 49ers	L 17-22	L -7	@	Minnesota Vikings	U 44	
+
+Back to top
+
+2023 Regular Season - Week 8
+Thu	Oct 26, 2023	8:15	@	Buffalo Bills	W 24-18	L -10		Tampa Bay Buccaneers	U 43.5	
+Sun	Oct 29, 2023	1:00		Houston Texans	L 13-15	L -3.5	@	Carolina Panthers	U 42.5	
+Sun	Oct 29, 2023	1:00	@	Dallas Cowboys	W 43-20	W -6.5		Los Angeles Rams	O 44.5	
+Sun	Oct 29, 2023	1:00		Minnesota Vikings	W 24-10	W -1.5	@	Green Bay Packers	U 41.5	
+Sun	Oct 29, 2023	1:00		New Orleans Saints	W 38-27	W -1.5	@	Indianapolis Colts	O 43.5	
+Sun	Oct 29, 2023	1:00	@	Miami Dolphins	W 31-17	W -8.5		New England Patriots	O 46.5	
+Sun	Oct 29, 2023	1:00		New York Jets	W 13-10 (OT)	L -3.5	@	New York Giants	U 34.5	
+Sun	Oct 29, 2023	1:00		Jacksonville Jaguars	W 20-10	W -2.5	@	Pittsburgh Steelers	U 40.5	
+Sun	Oct 29, 2023	1:00		Atlanta Falcons	L 23-28	L -2.5	@	Tennessee Titans	O 35.5	
+Sun	Oct 29, 2023	1:00		Philadelphia Eagles	W 38-31	W -6.5	@	Washington Commanders	O 42.5	
+Sun	Oct 29, 2023	4:05	@	Seattle Seahawks	W 24-20	L -4.5		Cleveland Browns	O 39.5	
+Sun	Oct 29, 2023	4:25		Baltimore Ravens	W 31-24	L -9.5	@	Arizona Cardinals	O 44.5	
+Sun	Oct 29, 2023	4:25		Kansas City Chiefs	L 9-24	L -7	@	Denver Broncos	U 45.5	
+Sun	Oct 29, 2023	4:25	@	San Francisco 49ers	L 17-31	L -4.5		Cincinnati Bengals	O 44.5	
+Sun	Oct 29, 2023	8:20	@	Los Angeles Chargers	W 30-13	W -10.5		Chicago Bears	U 45.5	
+Mon	Oct 30, 2023	8:15	@	Detroit Lions	W 26-14	W -7		Las Vegas Raiders	U 45.5	
+
+Back to top
+
+2023 Regular Season - Week 9
+Thu	Nov 2, 2023	8:15	@	Pittsburgh Steelers	W 20-16	W -3		Tennessee Titans	U 36.5	
+Sun	Nov 5, 2023	9:30	N	Kansas City Chiefs	W 21-14	W -1.5		Miami Dolphins	U 51.5	at Frankfurt
+Sun	Nov 5, 2023	1:00	@	Atlanta Falcons	L 28-31	L -3.5		Minnesota Vikings	O 39.5	
+Sun	Nov 5, 2023	1:00	@	Baltimore Ravens	W 37-3	W -6.5		Seattle Seahawks	U 44.5	
+Sun	Nov 5, 2023	1:00	@	Cleveland Browns	W 27-0	W -13.5		Arizona Cardinals	U 38.5	
+Sun	Nov 5, 2023	1:00	@	Green Bay Packers	W 20-3	W -3.5		Los Angeles Rams	U 37.5	
+Sun	Nov 5, 2023	1:00	@	Houston Texans	W 39-37	L -2.5		Tampa Bay Buccaneers	O 36.5	
+Sun	Nov 5, 2023	1:00	@	New England Patriots	L 17-20	L -2.5		Washington Commanders	U 40.5	
+Sun	Nov 5, 2023	1:00	@	New Orleans Saints	W 24-17	L -8.5		Chicago Bears	U 42.5	
+Sun	Nov 5, 2023	4:05		Indianapolis Colts	W 27-13	W -1.5	@	Carolina Panthers	U 44.5	
+Sun	Nov 5, 2023	4:25	@	Las Vegas Raiders	W 30-6	W -1.5		New York Giants	U 38.5	
+Sun	Nov 5, 2023	4:25	@	Philadelphia Eagles	W 28-23	W -3		Dallas Cowboys	O 46.5	
+Sun	Nov 5, 2023	8:20	@	Cincinnati Bengals	W 24-18	W -1.5		Buffalo Bills	U 50.5	
+Mon	Nov 6, 2023	8:15		Los Angeles Chargers	W 27-6	W -3	@	New York Jets	U 41	
+
+Back to top
+
+2023 Regular Season - Week 10
+BOLD = team that covered the spread
+
+Thu	Nov 9, 2023	8:15	@	Chicago Bears	W 16-13	L -3.5		Carolina Panthers	U 38.5	
+Sun	Nov 12, 2023	9:30	N	Indianapolis Colts	W 10-6	W -2.5		New England Patriots	U 41.5	at Frankfurt
+Sun	Nov 12, 2023	1:00	@	Baltimore Ravens	L 31-33	L -6		Cleveland Browns	O 38.5	
+Sun	Nov 12, 2023	1:00	@	Cincinnati Bengals	L 27-30	L -5.5		Houston Texans	O 45.5	
+Sun	Nov 12, 2023	1:00		San Francisco 49ers	W 34-3	W -3	@	Jacksonville Jaguars	U 44.5	
+Sun	Nov 12, 2023	1:00		New Orleans Saints	L 19-27	L -2.5	@	Minnesota Vikings	O 40.5	
+Sun	Nov 12, 2023	1:00	@	Pittsburgh Steelers	W 23-19	W -3		Green Bay Packers	O 38.5	
+Sun	Nov 12, 2023	1:00	@	Tampa Bay Buccaneers	W 20-6	W -2.5		Tennessee Titans	U 38.5	
+Sun	Nov 12, 2023	4:05		Atlanta Falcons	L 23-25	L -2.5	@	Arizona Cardinals	O 43.5	
+Sun	Nov 12, 2023	4:05		Detroit Lions	W 41-38	W -2.5	@	Los Angeles Chargers	O 48.5	
+Sun	Nov 12, 2023	4:25	@	Dallas Cowboys	W 49-17	W -17.5		New York Giants	O 38.5	
+Sun	Nov 12, 2023	4:25	@	Seattle Seahawks	W 29-26	L -5.5		Washington Commanders	O 44.5	
+Sun	Nov 12, 2023	8:20		New York Jets	L 12-16	L -1.5	@	Las Vegas Raiders	U 35.5	
+Mon	Nov 13, 2023	8:15	@	Buffalo Bills	L 22-24	L -7.5		Denver Broncos	U 47.5	
+
+Back to top
+
+2023 Regular Season - Week 11
+Thu	Nov 16, 2023	8:15	@	Baltimore Ravens	W 34-20	W -3.5		Cincinnati Bengals	O 46.5	
+Sun	Nov 19, 2023	1:00		Dallas Cowboys	W 33-10	W -11	@	Carolina Panthers	O 42.5	
+Sun	Nov 19, 2023	1:00	@	Cleveland Browns	W 13-10	W -1.5		Pittsburgh Steelers	U 33.5	
+Sun	Nov 19, 2023	1:00	@	Detroit Lions	W 31-26	L -7.5		Chicago Bears	O 48.5	
+Sun	Nov 19, 2023	1:00		Los Angeles Chargers	L 20-23	L -3	@	Green Bay Packers	U 44	
+Sun	Nov 19, 2023	1:00	@	Houston Texans	W 21-16	L -5.5		Arizona Cardinals	U 48.5	
+Sun	Nov 19, 2023	1:00	@	Jacksonville Jaguars	W 34-14	W -6.5		Tennessee Titans	O 40	
+Sun	Nov 19, 2023	1:00	@	Miami Dolphins	W 20-13	L -13.5		Las Vegas Raiders	U 46	
+Sun	Nov 19, 2023	1:00	@	Washington Commanders	L 19-31	L -7.5		New York Giants	O 39.5	
+Sun	Nov 19, 2023	4:05	@	San Francisco 49ers	W 27-14	L -13.5		Tampa Bay Buccaneers	U 41.5	
+Sun	Nov 19, 2023	4:25	@	Buffalo Bills	W 32-6	W -7.5		New York Jets	U 38.5	
+Sun	Nov 19, 2023	4:25	@	Los Angeles Rams	W 17-16	L -2		Seattle Seahawks	U 45.5	
+Sun	Nov 19, 2023	8:20	@	Denver Broncos	W 21-20	L -2.5		Minnesota Vikings	U 42.5	
+Mon	Nov 20, 2023	8:15	@	Kansas City Chiefs	L 17-21	L -2.5		Philadelphia Eagles	U 45.5	
+
+Back to top
+
+2023 Regular Season - Week 12
+Thu	Nov 23, 2023	12:30	@	Detroit Lions	L 22-29	L -8.5		Green Bay Packers	O 46.5	
+Thu	Nov 23, 2023	4:30	@	Dallas Cowboys	W 45-10	W -13.5		Washington Commanders	O 47.5	
+Thu	Nov 23, 2023	8:20		San Francisco 49ers	W 31-13	W -7	@	Seattle Seahawks	O 43.5	
+Fri	Nov 24, 2023	3:00		Miami Dolphins	W 34-13	W -9.5	@	New York Jets	O 39.5	
+Sun	Nov 26, 2023	1:00		New Orleans Saints	L 15-24	L -1.5	@	Atlanta Falcons	U 40.5	
+Sun	Nov 26, 2023	1:00		Pittsburgh Steelers	W 16-10	W -2.5	@	Cincinnati Bengals	U 35.5	
+Sun	Nov 26, 2023	1:00		Jacksonville Jaguars	W 24-21	W -1.5	@	Houston Texans	U 48.5	
+Sun	Nov 26, 2023	1:00	@	Indianapolis Colts	W 27-20	W -2.5		Tampa Bay Buccaneers	O 44.5	
+Sun	Nov 26, 2023	1:00		New England Patriots	L 7-10	L -4	@	New York Giants	U 36	
+Sun	Nov 26, 2023	1:00	@	Tennessee Titans	W 17-10	W -3.5		Carolina Panthers	U 36.5	
+Sun	Nov 26, 2023	4:05		Los Angeles Rams	W 37-14	W -2.5	@	Arizona Cardinals	O 45.5	
+Sun	Nov 26, 2023	4:05	@	Denver Broncos	W 29-12	W -1		Cleveland Browns	O 37	
+Sun	Nov 26, 2023	4:25		Kansas City Chiefs	W 31-17	W -9.5	@	Las Vegas Raiders	O 42.5	
+Sun	Nov 26, 2023	4:25	@	Philadelphia Eagles	W 37-34 (OT)	W -2.5		Buffalo Bills	O 48.5	
+Sun	Nov 26, 2023	8:20		Baltimore Ravens	W 20-10	W -3	@	Los Angeles Chargers	U 48.5	
+Mon	Nov 27, 2023	8:15	@	Minnesota Vikings	L 10-12	L -3		Chicago Bears	U 43.5	
+
+Back to top
+
+2023 Regular Season - Week 13
+Thu	Nov 30, 2023	8:15	@	Dallas Cowboys	W 41-35	L -9.5		Seattle Seahawks	O 47.5	
+Sun	Dec 3, 2023	1:00	@	Houston Texans	W 22-17	W -3.5		Denver Broncos	U 47	
+Sun	Dec 3, 2023	1:00		Los Angeles Chargers	W 6-0	W -4.5	@	New England Patriots	U 39	
+Sun	Dec 3, 2023	1:00		Detroit Lions	W 33-28	W -4	@	New Orleans Saints	O 48	
+Sun	Dec 3, 2023	1:00		Atlanta Falcons	W 13-8	W -2	@	New York Jets	U 33	
+Sun	Dec 3, 2023	1:00	@	Pittsburgh Steelers	L 10-24	L -6		Arizona Cardinals	U 41	
+Sun	Dec 3, 2023	1:00		Indianapolis Colts	W 31-28 (OT)	W -1.5	@	Tennessee Titans	O 42.5	
+Sun	Dec 3, 2023	1:00		Miami Dolphins	W 45-15	W -8.5	@	Washington Commanders	O 49.5	
+Sun	Dec 3, 2023	4:05	@	Tampa Bay Buccaneers	W 21-18	L -3.5		Carolina Panthers	O 37	
+Sun	Dec 3, 2023	4:25	@	Los Angeles Rams	W 36-19	W -3.5		Cleveland Browns	O 39.5	
+Sun	Dec 3, 2023	4:25		San Francisco 49ers	W 42-19	W -3	@	Philadelphia Eagles	O 46.5	
+Sun	Dec 3, 2023	8:20		Kansas City Chiefs	L 19-27	L -5.5	@	Green Bay Packers	O 43.5	
+Mon	Dec 4, 2023	8:15	@	Jacksonville Jaguars	L 31-34 (OT)	L -10		Cincinnati Bengals	O 40.5	
+
+Back to top
+
+2023 Regular Season - Week 14
+Thu	Dec 7, 2023	8:15	@	Pittsburgh Steelers	L 18-21	L -5.5		New England Patriots	O 30.5	
+Sun	Dec 10, 2023	1:00	@	Atlanta Falcons	L 25-29	L -1.5		Tampa Bay Buccaneers	O 41.5	
+Sun	Dec 10, 2023	1:00	@	Baltimore Ravens	W 37-31 (OT)	L -7.5		Los Angeles Rams	O 42	
+Sun	Dec 10, 2023	1:00		Detroit Lions	L 13-28	L -3	@	Chicago Bears	U 44.5	
+Sun	Dec 10, 2023	1:00	@	Cincinnati Bengals	W 34-14	W -3		Indianapolis Colts	O 44.5	
+Sun	Dec 10, 2023	1:00	@	Cleveland Browns	W 31-27	W -2.5		Jacksonville Jaguars	O 37.5	
+Sun	Dec 10, 2023	1:00	@	New Orleans Saints	W 28-6	W -6		Carolina Panthers	U 38.5	
+Sun	Dec 10, 2023	1:00		Houston Texans	L 6-30	L -3	@	New York Jets	O 33.5	
+Sun	Dec 10, 2023	4:05		Minnesota Vikings	W 3-0	P -3	@	Las Vegas Raiders	U 40.5	
+Sun	Dec 10, 2023	4:05	@	San Francisco 49ers	W 28-16	L -14.5		Seattle Seahawks	U 44.5	
+Sun	Dec 10, 2023	4:25	@	Kansas City Chiefs	L 17-20	L -1.5		Buffalo Bills	U 49	
+Sun	Dec 10, 2023	4:25	@	Los Angeles Chargers	L 7-24	L -3		Denver Broncos	U 44.5	
+Sun	Dec 10, 2023	8:20	@	Dallas Cowboys	W 33-13	W -3.5		Philadelphia Eagles	U 52.5	
+Mon	Dec 11, 2023	8:15	@	Miami Dolphins	L 27-28	L -13.5		Tennessee Titans	O 44.5	
+Mon	Dec 11, 2023	8:15		Green Bay Packers	L 22-24	L -5.5	@	New York Giants	O 37.5	
+
+Back to top
+
+2023 Regular Season - Week 15
+BOLD = team that covered the spread
+
+Thu	Dec 14, 2023	8:15	@	Las Vegas Raiders	W 63-21	W -3		Los Angeles Chargers	O 36	
+Sat	Dec 16, 2023	1:00	@	Cincinnati Bengals	W 27-24 (OT)	P -3		Minnesota Vikings	O 41.5	
+Sat	Dec 16, 2023	4:30	@	Indianapolis Colts	W 30-13	W -1.5		Pittsburgh Steelers	O 41.5	
+Sat	Dec 16, 2023	8:15	@	Detroit Lions	W 42-17	W -5.5		Denver Broncos	O 49	
+Sun	Dec 17, 2023	1:00		Atlanta Falcons	L 7-9	L -3	@	Carolina Panthers	U 32.5	
+Sun	Dec 17, 2023	1:00	@	Cleveland Browns	W 20-17	W -2.5		Chicago Bears	U 38	
+Sun	Dec 17, 2023	1:00	@	Green Bay Packers	L 20-34	L -3.5		Tampa Bay Buccaneers	O 41.5	
+Sun	Dec 17, 2023	1:00	@	Miami Dolphins	W 30-0	W -7		New York Jets	U 35.5	
+Sun	Dec 17, 2023	1:00		Kansas City Chiefs	W 27-17	P -10	@	New England Patriots	O 39.5	
+Sun	Dec 17, 2023	1:00	@	New Orleans Saints	W 24-6	W -6		New York Giants	U 39.5	
+Sun	Dec 17, 2023	1:00	@	Tennessee Titans	L 16-19 (OT)	L -3		Houston Texans	U 38	
+Sun	Dec 17, 2023	4:05		San Francisco 49ers	W 45-29	W -12	@	Arizona Cardinals	O 48	
+Sun	Dec 17, 2023	4:05	@	Los Angeles Rams	W 28-20	W -6.5		Washington Commanders	U 48.5	
+Sun	Dec 17, 2023	4:25	@	Buffalo Bills	W 31-10	W -2.5		Dallas Cowboys	U 49	
+Sun	Dec 17, 2023	8:20		Baltimore Ravens	W 23-7	W -4	@	Jacksonville Jaguars	U 42	
+Mon	Dec 18, 2023	8:15		Philadelphia Eagles	L 17-20	L -5.5	@	Seattle Seahawks	U 46	
+
+Back to top
+
+2023 Regular Season - Week 16
+Thu	Dec 21, 2023	8:15	@	Los Angeles Rams	W 30-22	W -4		New Orleans Saints	O 45.5	
+Sat	Dec 23, 2023	4:30		Cincinnati Bengals	L 11-34	L -3	@	Pittsburgh Steelers	O 39	
+Sat	Dec 23, 2023	8:00		Buffalo Bills	W 24-22	L -12.5	@	Los Angeles Chargers	O 44.5	
+Sun	Dec 24, 2023	1:00	@	Atlanta Falcons	W 29-10	W -2.5		Indianapolis Colts	U 44.5	
+Sun	Dec 24, 2023	1:00		Green Bay Packers	W 33-30	L -3.5	@	Carolina Panthers	O 39.5	
+Sun	Dec 24, 2023	1:00		Cleveland Browns	W 36-22	W -3	@	Houston Texans	O 40	
+Sun	Dec 24, 2023	1:00		Detroit Lions	W 30-24	W -2.5	@	Minnesota Vikings	O 47.5	
+Sun	Dec 24, 2023	1:00	@	New York Jets	W 30-28	L -3		Washington Commanders	O 36.5	
+Sun	Dec 24, 2023	1:00		Seattle Seahawks	W 20-17	P -3	@	Tennessee Titans	U 42.5	
+Sun	Dec 24, 2023	4:05		Jacksonville Jaguars	L 12-30	L -2.5	@	Tampa Bay Buccaneers	U 43.5	
+Sun	Dec 24, 2023	4:25	@	Chicago Bears	W 27-16	W -4.5		Arizona Cardinals	O 42.5	
+Sun	Dec 24, 2023	4:25	@	Miami Dolphins	W 22-20	W -1.5		Dallas Cowboys	U 48.5	
+Sun	Dec 24, 2023	8:15	@	Denver Broncos	L 23-26	L -7		New England Patriots	O 37	
+Mon	Dec 25, 2023	1:00	@	Kansas City Chiefs	L 14-20	L -10.5		Las Vegas Raiders	U 40.5	
+Mon	Dec 25, 2023	4:30	@	Philadelphia Eagles	W 33-25	L -14		New York Giants	O 41.5	
+Mon	Dec 25, 2023	8:15	@	San Francisco 49ers	L 19-33	L -6.5		Baltimore Ravens	O 47	
+
+Back to top
+
+2023 Regular Season - Week 17
+Thu	Dec 28, 2023	8:15	@	Cleveland Browns	W 37-20	W -7		New York Jets	O 33.5	
+Sat	Dec 30, 2023	8:15	@	Dallas Cowboys	W 20-19	L -5		Detroit Lions	U 53.5	
+Sun	Dec 31, 2023	1:00	@	Baltimore Ravens	W 56-19	W -3.5		Miami Dolphins	O 46.5	
+Sun	Dec 31, 2023	1:00	@	Buffalo Bills	W 27-21	L -14.5		New England Patriots	O 40	
+Sun	Dec 31, 2023	1:00	@	Chicago Bears	W 37-17	W -2.5		Atlanta Falcons	O 39	
+Sun	Dec 31, 2023	1:00	@	Houston Texans	W 26-3	W -5.5		Tennessee Titans	U 44	
+Sun	Dec 31, 2023	1:00	@	Indianapolis Colts	W 23-20	L -3.5		Las Vegas Raiders	O 42.5	
+Sun	Dec 31, 2023	1:00	@	Jacksonville Jaguars	W 26-0	W -3.5		Carolina Panthers	U 38.5	
+Sun	Dec 31, 2023	1:00		Los Angeles Rams	W 26-25	L -6.5	@	New York Giants	O 43.5	
+Sun	Dec 31, 2023	1:00	@	Philadelphia Eagles	L 31-35	L -12.5		Arizona Cardinals	O 48	
+Sun	Dec 31, 2023	1:00	@	Tampa Bay Buccaneers	L 13-23	L -2.5		New Orleans Saints	U 42.5	
+Sun	Dec 31, 2023	1:00		San Francisco 49ers	W 27-10	W -14	@	Washington Commanders	U 48.5	
+Sun	Dec 31, 2023	4:05	@	Seattle Seahawks	L 23-30	L -4.5		Pittsburgh Steelers	O 40.5	
+Sun	Dec 31, 2023	4:25	@	Denver Broncos	W 16-9	W -3.5		Los Angeles Chargers	U 39.5	
+Sun	Dec 31, 2023	4:25	@	Kansas City Chiefs	W 25-17	W -7		Cincinnati Bengals	U 45.5	
+Sun	Dec 31, 2023	8:20	@	Minnesota Vikings	L 10-33	L -1.5		Green Bay Packers	O 42.5	
+
+Back to top
+
+2023 Regular Season - Week 18
+Sat	Jan 6, 2024	4:30		Pittsburgh Steelers	W 17-10	W -3	@	Baltimore Ravens	U 34	
+Sat	Jan 6, 2024	8:15		Houston Texans	W 23-19	W -1.5	@	Indianapolis Colts	U 47.5	
+Sun	Jan 7, 2024	1:00		Tampa Bay Buccaneers	W 9-0	W -4	@	Carolina Panthers	U 36.5	
+Sun	Jan 7, 2024	1:00	@	Cincinnati Bengals	W 31-14	W -7.5		Cleveland Browns	O 37	
+Sun	Jan 7, 2024	1:00	@	Detroit Lions	W 30-20	W -3.5		Minnesota Vikings	O 47.5	
+Sun	Jan 7, 2024	1:00	@	New England Patriots	L 3-17	L -2		New York Jets	U 28.5	
+Sun	Jan 7, 2024	1:00	@	New Orleans Saints	W 48-17	W -3		Atlanta Falcons	O 42	
+Sun	Jan 7, 2024	1:00		Jacksonville Jaguars	L 20-28	L -3.5	@	Tennessee Titans	O 41.5	
+Sun	Jan 7, 2024	4:25		Seattle Seahawks	W 21-20	L -3	@	Arizona Cardinals	U 47.5	
+Sun	Jan 7, 2024	4:25	@	Green Bay Packers	W 17-9	W -3		Chicago Bears	U 46	
+Sun	Jan 7, 2024	4:25	@	Las Vegas Raiders	W 27-14	W -3		Denver Broncos	O 37.5	
+Sun	Jan 7, 2024	4:25	@	Los Angeles Chargers	L 12-13	L -3.5		Kansas City Chiefs	U 35	
+Sun	Jan 7, 2024	4:25		Philadelphia Eagles	L 10-27	L -5	@	New York Giants	U 42.5	
+Sun	Jan 7, 2024	4:25	@	San Francisco 49ers	L 20-21	L -5.5		Los Angeles Rams	O 40	
+Sun	Jan 7, 2024	4:25		Dallas Cowboys	W 38-10	W -13	@	Washington Commanders	O 47.5	
+Sun	Jan 7, 2024	8:20		Buffalo Bills	W 21-14	W -2.5	@	Miami Dolphins	U 48	
+
+Back to top
+
+2023 Playoffs
+BOLD = team that covered the spread
+
+AFC Wild Card	Sat	Jan 13, 2024	4:30		Cleveland Browns (5)	L 14-45	L -2	@	Houston Texans (4)	O 44.5
+AFC Wild Card	Sat	Jan 13, 2024	8:10	@	Kansas City Chiefs (3)	W 26-7	W -4.5		Miami Dolphins (6)	U 43.5
+NFC Wild Card	Sun	Jan 14, 2024	4:30	@	Dallas Cowboys (2)	L 32-48	L -7		Green Bay Packers (7)	O 52
+NFC Wild Card	Sun	Jan 14, 2024	8:15	@	Detroit Lions (3)	W 24-23	L -3		Los Angeles Rams (6)	U 53
+AFC Wild Card	Mon	Jan 15, 2024	4:30	@	Buffalo Bills (2)	W 31-17	W -10		Pittsburgh Steelers (7)	O 39.5
+NFC Wild Card	Mon	Jan 15, 2024	8:15		Philadelphia Eagles (5)	L 9-32	L -2.5	@	Tampa Bay Buccaneers (4)	U 43
+AFC Divisional	Sat	Jan 20, 2024	4:30	@	Baltimore Ravens (1)	W 34-10	W -10		Houston Texans (4)	P 44
+NFC Divisional	Sat	Jan 20, 2024	8:15	@	San Francisco 49ers (1)	W 24-21	L -10.5		Green Bay Packers (7)	U 50.5
+NFC Divisional	Sun	Jan 21, 2024	3:00	@	Detroit Lions (3)	W 31-23	W -6		Tampa Bay Buccaneers (4)	O 49.5
+AFC Divisional	Sun	Jan 21, 2024	6:30	@	Buffalo Bills (2)	L 24-27	L -2.5		Kansas City Chiefs (3)	O 45.5
+AFC Championship	Sun	Jan 28, 2024	3:00	@	Baltimore Ravens (1)	L 10-17	L -4.5		Kansas City Chiefs (3)	U 44.5
+NFC Championship	Sun	Jan 28, 2024	6:30	@	San Francisco 49ers (1)	W 34-31	L -7.5		Detroit Lions (3)	O 53
+Super Bowl LVIII	Sun	Feb 11, 2024	6:30	N	San Francisco 49ers (1)	L 22-25 (OT)	L -2		Kansas City Chiefs (3)	P 47

@@ -106,13 +106,13 @@ export default function DomesticT20Page() {
                   <div className="flex items-center justify-between gap-2">
                     <span className="tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.season}</span>
                     <span className="font-medium inline-flex items-center gap-1.5 min-w-0 truncate">
-                      <CrestIcon name={r.winner} size={14} />{r.winner}
+                      <CrestIcon name={r.winnerKey ?? r.winner} size={14} />{r.winner}
                     </span>
                   </div>
                   <div className="mt-0.5 flex items-center justify-end gap-1.5 text-[var(--text-dim)]">
                     <span className="text-[10px] uppercase tracking-wide">RU</span>
                     <span className="inline-flex items-center gap-1.5 min-w-0 truncate">
-                      <CrestIcon name={r.ru} size={14} />{r.ru}
+                      <CrestIcon name={r.ruKey ?? r.ru} size={14} />{r.ru}
                     </span>
                   </div>
                 </div>
@@ -125,8 +125,8 @@ export default function DomesticT20Page() {
                   {data.rolls[k].map((r, i) => (
                     <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1 pr-2 tabular-nums whitespace-nowrap" style={mono}>{r.season}</td>
-                      <td className="py-1 font-medium"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.winner} size={16} />{r.winner}</span></td>
-                      <td className="py-1 text-[var(--text-dim)]"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.ru} size={16} />{r.ru}</span></td>
+                      <td className="py-1 font-medium"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.winnerKey ?? r.winner} size={16} />{r.winner}</span></td>
+                      <td className="py-1 text-[var(--text-dim)]"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.ruKey ?? r.ru} size={16} />{r.ru}</span></td>
                     </tr>
                   ))}
                 </tbody>
@@ -140,9 +140,10 @@ export default function DomesticT20Page() {
         <h2 className="text-base font-semibold mb-2">Notes</h2>
         <p className="text-[var(--text-muted)]">
           Champions derived from final-match results in public ball-by-ball archives
-          (Cricsheet). The T20 Blast roll spans its NatWest and Vitality eras; The
-          Hundred&apos;s 2026 rebrands (MI London, Manchester Super Giants, Sunrisers
-          Leeds) carry their predecessors&apos; titles. Defunct champions — Deccan
+          (Cricsheet). The T20 Blast roll spans its NatWest and Vitality eras. Every
+          season shows the name the club carried that year, so The Hundred reads Oval
+          Invincibles from 2023 to 2025 and MI London from 2026; the franchise keeps
+          the whole run. Defunct champions — Deccan
           Chargers, Comilla Victorians, Jamaica Tallawahs and others — stay in the
           rolls without franchise cards. Leagues we track but cannot yet source
           (Major League Cricket, Nepal T20, WPL, The Hundred Women, Zimbabwe T20,

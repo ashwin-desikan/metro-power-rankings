@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getMlbSim, type MlbSimRow } from "@/lib/mlbSim";
+import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import { getAllFranchises, logoUrlFor } from "@/lib/mlb";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -126,8 +127,22 @@ function DivisionTable({
   );
 }
 
+function ord(n: number) {
+  const s = ["th", "st", "nd", "rd"];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
 export default async function MlbPredictionsPage() {
   const sim = await getMlbSim();
+  // 🔴 THE FIELD BOARD IS ORDERED BY MODELLED ODDS, NOT BY RECORD, and the
+  // model rates on regressed RUN DIFFERENTIAL rather than wins. Those two
+  // facts together can put a team fourth here while it sits eleventh in the
+  // actual standings — 2026 Detroit are 61-65 with a +83 differential while
+  // everyone around them is negative. Without the record on the row that reads
+  // as a broken page, which is exactly how it was reported. Carry the live
+  // standings so the number doing the work is visible next to the claim.
+  const standings = await getCurrentMlbStandings();
   const rows = sim?.table ?? [];
   const meta = sim?.meta ?? null;
   const { href, logo } = teamHrefs();
@@ -261,11 +276,16 @@ export default async function MlbPredictionsPage() {
 
           {/* The field as it stands */}
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">The field as it stands</h2>
+            <h2 className="text-2xl font-bold mb-1">The field the model expects</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
-              The six clubs from each league the model has reaching the postseason most often. The top two
-              seeds skip the Wild Card round entirely, which is worth roughly a round of survival, so the
-              bye column matters more than its size suggests.
+              The six clubs from each league the model has reaching the postseason most often.{" "}
+              <strong className="text-[var(--text)]">This is ordered by those odds, not by the
+              standings</strong>, and the model rates a club on its run differential rather than its
+              record, so a team that has scored far more than it has allowed can sit high here while
+              sitting low in the table. Each row carries its real record, run differential and
+              current position so you can see where the two disagree. The top two seeds skip the Wild
+              Card round entirely, which is worth roughly a round of survival, so the bye column
+              matters more than its size suggests.
             </p>
             <div className="grid gap-4 lg:grid-cols-2">
               {(["AL", "NL"] as const).map((lg) => (
@@ -280,10 +300,27 @@ export default async function MlbPredictionsPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      {fieldFor(lg).map((r) => (
+                      {fieldFor(lg).map((r) => {
+                        const s = standings.by_canonical[r.canonical];
+                        return (
                         <tr key={r.canonical} className="border-t" style={{ borderColor: "var(--border)" }}>
                           <td className="px-3 py-2 whitespace-nowrap">
                             <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
+                            {s ? (
+                              <span className="block text-[11px] text-[var(--text-muted)] mt-0.5" style={MONO}>
+                                {s.wins}-{s.losses}
+                                <span className="mx-1.5 text-[var(--text-dim)]">·</span>
+                                <span style={{ color: s.run_diff > 0 ? "#10b981" : s.run_diff < 0 ? "#E2628B" : undefined }}>
+                                  {s.run_diff > 0 ? "+" : ""}{s.run_diff}
+                                </span>
+                                {s.playoff_seed ? (
+                                  <>
+                                    <span className="mx-1.5 text-[var(--text-dim)]">·</span>
+                                    {ord(s.playoff_seed)} by record
+                                  </>
+                                ) : null}
+                              </span>
+                            ) : null}
                           </td>
                           <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_playoffs)}</td>
                           <td className="px-3 py-2 text-right" style={{ ...MONO, color: "var(--text-muted)" }}>{pct(r.p_bye)}</td>
@@ -291,7 +328,8 @@ export default async function MlbPredictionsPage() {
                             {pct(r.p_pennant)}
                           </td>
                         </tr>
-                      ))}
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>

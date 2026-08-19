@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-19",
+    headline: "Every NFL game since 1920, against what was expected",
+    items: [
+      "A new board keeps the other half of the NFL's record: what each game was expected to do before it was played. The longest odds ever beaten open with Miami winning at New England on a 6.5% chance in 2008.",
+      "Every season since 1979 sets the model against the closing market on the same games, and a century of it adds up by metro. Green Bay have beaten expectation by more than anywhere else, Phoenix by least.",
+      "Domestic T20 champions now carry the name each club held that season, so The Hundred reads Oval Invincibles from 2023 to 2025 and Manchester Super Giants for 2026, whose first title now shows on Manchester's honours.",
+      "The baseball playoff board now shows each club's record, run difference and real position, so it is clear the order comes from the model rather than the table.",
+    ],
+  },
+  {
     date: "2026-08-18",
     headline: "Formula 1 teams, where they build, and two valuation houses",
     items: [

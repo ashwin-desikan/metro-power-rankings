@@ -63,6 +63,9 @@ export default function NflIndexPage() {
           <div>
             International: <Link href="/teams/nfl/international" className="text-[var(--accent)] hover:underline">/teams/nfl/international</Link>
           </div>
+          <div>
+            Against expectation: <Link href="/teams/nfl/expectation" className="text-[var(--accent)] hover:underline">/teams/nfl/expectation</Link>
+          </div>
         </div>
       </header>
 
@@ -72,6 +75,7 @@ export default function NflIndexPage() {
           { label: "Map", href: "#map" },
           { label: "All-Time Table", href: "#all-time" },
           { label: "Top Games", href: "#top-games" },
+          { label: "Against Expectation", href: "/teams/nfl/expectation" },
           { label: "International", href: "/teams/nfl/international" },
         ]}
       />
