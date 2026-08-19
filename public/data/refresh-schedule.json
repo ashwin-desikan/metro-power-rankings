@@ -1,93 +1,6 @@
 {
-  "generated_at": "2026-08-19T06:21:17.018916+00:00",
+  "generated_at": "2026-08-19T07:31:45.912968+00:00",
   "jobs": [
-    {
-      "id": "mlb-sim",
-      "label": "MLB + season playoff odds (7 leagues)",
-      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
-      "cadence": "daily",
-      "times": [
-        "07:00",
-        "14:30"
-      ],
-      "weekdays": [],
-      "months": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
-      "days_of_month": [],
-      "next_run": "2026-08-19T07:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-18",
-        "status": "ok",
-        "slot": "2026-08-18T14:30:00+00:00"
-      }
-    },
-    {
-      "id": "fiba-weekly",
-      "label": "FIBA basketball rankings",
-      "schedule_text": "Wed at 07:10 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:10"
-      ],
-      "weekdays": [
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-19T07:10:00+00:00",
-      "last_run": {
-        "date": "2026-08-12",
-        "status": "ok",
-        "slot": "2026-08-12T07:10:00+00:00"
-      }
-    },
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-19T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-08-18",
-        "status": "ok",
-        "slot": "2026-08-18T07:20:00+00:00"
-      }
-    },
-    {
-      "id": "sound-weekly",
-      "label": "Sound of the Metros (music charts)",
-      "schedule_text": "Wed at 07:30 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:30"
-      ],
-      "weekdays": [
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-19T07:30:00+00:00",
-      "last_run": {
-        "date": "2026-08-12",
-        "status": "ok",
-        "slot": "2026-08-12T07:30:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -131,6 +44,35 @@
         "date": "2026-08-19",
         "status": "ok",
         "slot": "2026-08-19T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "mlb-sim",
+      "label": "MLB + season playoff odds (7 leagues)",
+      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
+      "cadence": "daily",
+      "times": [
+        "07:00",
+        "14:30"
+      ],
+      "weekdays": [],
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "days_of_month": [],
+      "next_run": "2026-08-19T14:30:00+00:00",
+      "last_run": {
+        "date": "2026-08-19",
+        "status": "ok",
+        "slot": "2026-08-19T07:00:00+00:00"
       }
     },
     {
@@ -221,6 +163,24 @@
         "date": "2026-08-19",
         "status": "ok",
         "slot": "2026-08-19T06:00:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-20T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-08-18",
+        "status": "ok",
+        "slot": "2026-08-18T07:20:00+00:00"
       }
     },
     {
@@ -363,6 +323,46 @@
         "date": "2026-08-18",
         "status": "ok",
         "slot": "2026-08-18T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "fiba-weekly",
+      "label": "FIBA basketball rankings",
+      "schedule_text": "Wed at 07:10 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:10"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-26T07:10:00+00:00",
+      "last_run": {
+        "date": "2026-08-12",
+        "status": "ok",
+        "slot": "2026-08-12T07:10:00+00:00"
+      }
+    },
+    {
+      "id": "sound-weekly",
+      "label": "Sound of the Metros (music charts)",
+      "schedule_text": "Wed at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-26T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-08-12",
+        "status": "ok",
+        "slot": "2026-08-12T07:30:00+00:00"
       }
     },
     {
