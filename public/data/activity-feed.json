@@ -1,13 +1,76 @@
 {
-  "generatedAt": "2026-08-18",
+  "generatedAt": "2026-08-19",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-19",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "1e0b0ee5c"
+    },
     {
       "date": "2026-08-18",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "b7697fa4d"
+      "text": "Data refreshed — Football, Basketball, Cricket, F1, and 5 more.",
+      "commit": "3336762ae"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Link the constructor name on every page that writes one, and share one component.",
+      "commit": "8bf399ccb"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Link the F1 hub to the team pages, and stop it publishing the other identity model.",
+      "commit": "233beacb0"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Stop paginating on a non-unique order, count sprint points, and settle the teammate argument.",
+      "commit": "0b323437d"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Put every Formula 1 team on the map, town by town, and refuse where the workbook cannot.",
+      "commit": "f60618edb"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Give Formula 1 teams their own pages, counted as continuous organisations rather than as chassis names.",
+      "commit": "4c01097cd"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Add Football Benchmark as a second valuation house, take the higher figure per team, and mark which house every row came from.",
+      "commit": "80b06a72d"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Give the 27 franchises this morning's Sportico load added a researched control owner, and stop the cross-code test guessing.",
+      "commit": "5e069c77e"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Move the whole valuations board onto Sportico's 2026 figures, and open it to Formula 1, the WNBA and the NWSL.",
+      "commit": "6ffd9115e"
     },
     {
       "date": "2026-08-17",
@@ -4138,69 +4201,6 @@
       "hub": "Methodology",
       "text": "New hub: Methodology.",
       "commit": "9f9446e3a"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Enforce release notes brevity at build time (max 4 bullets, 220 chars, 12 word headline).",
-      "commit": "be7582522"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Notable + Historic Venues refresh (18 net new venues).",
-      "commit": "8bb2619c6"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Multi-Sport Events bucket, Eurovision/Historical events, Euroleague teams, Complete Event Timeline.",
-      "commit": "ad30b3006"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Multi-Sport Events bucket + Eurovision and Historical Events on metro pages.",
-      "commit": "03aa56429"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Data + content: 2026-05-01 - Top Teams 312 metros, Wikidata Top 156, Melbourne #26.",
-      "commit": "fe7d8ce44"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "2026-05-01 refresh - Wikidata Top 156, Melbourne #26, Miami #27, Boxing Day Test Match.",
-      "commit": "a1c13e19c"
-    },
-    {
-      "date": "2026-04-28",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Drop 200m+ Stretch StatCard, rename 300m+ from Megatall to Supertall (CTBUH terminology).",
-      "commit": "c121ecbea"
-    },
-    {
-      "date": "2026-04-28",
-      "category": "fix",
-      "hub": "Rankings",
-      "text": "Fix skyscraper aggregation bug: sum across municipalities per metro instead of overwriting; pick densest municipality as headline city; fix…",
-      "commit": "d2d85d617"
-    },
-    {
-      "date": "2026-04-28",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Surface Top Teams article in featured-articles, sitemap, llms.txt, and release notes; refresh Marylebones placeholder.",
-      "commit": "ffad9a642"
     }
   ]
 }
