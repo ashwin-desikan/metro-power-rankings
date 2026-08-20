@@ -1,13 +1,34 @@
 {
-  "generatedAt": "2026-08-19",
+  "generatedAt": "2026-08-20",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-20",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "e6f88e517"
+    },
     {
       "date": "2026-08-19",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "1e0b0ee5c"
+      "text": "Data refreshed — Football, Basketball, Cricket, Elections, and 3 more.",
+      "commit": "26c52890a"
+    },
+    {
+      "date": "2026-08-19",
+      "category": "fix",
+      "hub": "Play",
+      "text": "Call College Football before it happens: the season simulated, the poll honoured, and picks opened.",
+      "commit": "bf647cfed"
+    },
+    {
+      "date": "2026-08-19",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Score every NFL game since 1920 against what was expected of it, and name each champion as it was known at the time.",
+      "commit": "10c2442d0"
     },
     {
       "date": "2026-08-18",
@@ -4180,27 +4201,6 @@
       "hub": "Api",
       "text": "Methodology + tiers + share cards + matchup pages + insight engine; consolidate same-day release notes.",
       "commit": "317839a19"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Per-metro OG share cards, Reddit and LinkedIn share buttons.",
-      "commit": "e5afb403c"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "hub",
-      "hub": "Methodology",
-      "text": "Methodology page, score tiers, multi-sport bucket, eurovision/historical events, euroleague, top teams 312, wikidata top 156, venue refresh…",
-      "commit": "e9e39f818"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "new-hub",
-      "hub": "Methodology",
-      "text": "New hub: Methodology.",
-      "commit": "9f9446e3a"
     }
   ]
 }
