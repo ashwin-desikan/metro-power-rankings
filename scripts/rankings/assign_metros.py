@@ -77,6 +77,26 @@ ALIAS_STATE = {
     ("long island city", "new york"): "new york",      # Queens
     ("hunt valley", "maryland"): "towson",             # CDP, Baltimore County
     ("dallas/ft worth airport", "texas"): "irving",
+    # Unincorporated area within New Providence borough, Union County NJ (the
+    # Bell Labs / Lucent / C.R. Bard address). Without this the city-only
+    # fallback matched Murray Hill CITY, Jefferson County KY, and put Lucent's
+    # 1998-2002 headlines in Louisville.
+    ("murray hill", "new jersey"): "new providence",
+    # CDP in Montgomery County MD (Martin Marietta / Lockheed Martin country);
+    # Rockville is the county seat next door. The city-only fallback had
+    # matched Bethesda VILLAGE, Ohio, and filed Martin Marietta under Wheeling.
+    ("bethesda", "maryland"): "rockville",
+    # 2026-08-20: the state-mismatch guard surfaced seven more cross-state
+    # mismatches the old city-only fallback had "resolved". Each entry below is
+    # a containment/adjacency fact in the same county, mapped to a municipality
+    # the sheet knows. The old wrong answers are noted for the record.
+    ("glen allen", "virginia"): "richmond",            # CDP, Henrico Co (was Cape Girardeau MO)
+    ("melville", "new york"): "huntington",            # CDP in Town of Huntington (was Lafayette LA)
+    ("berwyn", "pennsylvania"): "easttown township",   # CDP in Easttown Twp, Chester Co (was Chicago)
+    ("hicksville", "new york"): "oyster bay",          # hamlet in Town of Oyster Bay (was Defiance OH)
+    ("audubon", "pennsylvania"): "lower providence township",  # CDP, Montgomery Co PA
+    ("hershey", "pennsylvania"): "derry township",     # CDP in Derry Twp, Dauphin Co (was North Platte NE)
+    ("silver spring", "maryland"): "takoma park",      # CDP, Montgomery Co MD (was Harrisburg PA)
 }
 
 
@@ -166,7 +186,14 @@ def main():
             metro, how = by_city_state[(c, st)], "municipality + state"
         elif c in by_city:
             cand = by_city[c]
-            if len(cand) == 1:
+            known_states = sorted({s2 for (c2, s2) in by_city_state if c2 == c})
+            if st and st not in known_states:
+                # The row NAMES a state and the sheet only knows this
+                # municipality under OTHER states. Matching across a state
+                # boundary is how Murray Hill NJ landed in Louisville KY.
+                how = (f"STATE MISMATCH: '{city}' exists only under "
+                       f"{', '.join(known_states[:4])}")
+            elif len(cand) == 1:
                 metro, how = cand[0], "municipality only, unambiguous"
             else:
                 # A bare municipality name matching several metros is exactly the

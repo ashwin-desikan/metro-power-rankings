@@ -57,7 +57,15 @@ def main():
             # No state at all: only accept a municipality name unique nationwide.
             metro, how = by_city[c][0], "municipality only, unique nationwide"
         elif c in by_city and len(by_city[c]) == 1:
-            metro, how = by_city[c][0], "municipality only, unambiguous"
+            known_states = sorted({s2 for (c2, s2) in exact if c2 == c})
+            if st and st not in known_states:
+                # The company NAMES a state and the sheet only knows this
+                # municipality under OTHER states. Matching across a state
+                # boundary is how Murray Hill NJ landed in Louisville KY.
+                how = (f"STATE MISMATCH: '{city}' exists only under "
+                       f"{', '.join(known_states[:4])}")
+            else:
+                metro, how = by_city[c][0], "municipality only, unambiguous"
         elif c in by_city:
             how = f"AMBIGUOUS across {len(by_city[c])} metros"
         else:

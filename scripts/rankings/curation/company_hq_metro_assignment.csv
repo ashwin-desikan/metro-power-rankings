@@ -65,7 +65,7 @@ Detroit,MI,7,Detroit,municipality + state
 Reston,VA,7,Washington-Baltimore,municipality + state
 Bellevue,WA,7,Seattle,municipality + state
 Hartford,CT,6,Hartford,municipality + state
-Bethesda,MD,6,Wheeling,"municipality only, unambiguous"
+Bethesda,MD,6,Washington-Baltimore,municipality + state
 Northbrook,IL,6,Chicago,municipality + state
 Troy,MI,6,Detroit,municipality + state
 Fort Lauderdale,FL,6,Miami,municipality + state
@@ -74,7 +74,7 @@ Miami,FL,6,Miami,municipality + state
 Oklahoma City,OK,6,Oklahoma City,municipality + state
 Downers Grove,IL,6,Chicago,municipality + state
 Austin,TX,6,Austin,municipality + state
-Glen Allen,VA,5,Cape Girardeau,"municipality only, unambiguous"
+Glen Allen,VA,5,Richmond,municipality + state
 El Segundo,CA,5,Los Angeles,municipality + state
 West Palm Beach,FL,5,Miami,municipality + state
 Radnor,PA,5,Philadelphia,municipality + state
@@ -117,7 +117,7 @@ Conshohocken,PA,3,Philadelphia,municipality + state
 Columbus,GA,3,Columbus (GA),municipality + state
 Allentown,PA,3,Allentown,municipality + state
 Mountain View,CA,3,San Francisco-San Jose,municipality + state
-Melville,NY,3,Lafayette,"municipality only, unambiguous"
+Melville,NY,3,New York,municipality + state
 Maumee,OH,3,Toledo,municipality + state
 Fort Smith,AR,3,Fort Smith,municipality + state
 Durham,NC,3,Raleigh-Durham,municipality + state
@@ -167,7 +167,7 @@ Leawood,KS,2,Kansas City,municipality + state
 Baton Rouge,LA,2,Baton Rouge,municipality + state
 Piscataway,NJ,2,New York,municipality + state
 Camden,NJ,2,Philadelphia,municipality + state
-Berwyn,PA,2,Chicago,"municipality only, unambiguous"
+Berwyn,PA,2,Philadelphia,municipality + state
 Thousand Oaks,CA,2,Los Angeles,municipality + state
 Wilmington,MA,2,Boston,municipality + state
 Westchester,IL,2,Chicago,municipality + state
@@ -186,11 +186,11 @@ Sioux Falls,SD,2,Sioux Falls,municipality + state
 York,PA,2,Harrisburg,municipality + state
 Greenville,SC,2,Greenville-Spartanburg,municipality + state
 Newton,MA,2,Boston,municipality + state
-Blue Bell,PA,2,,not in the Municipality sheet
+Blue Bell,PA,2,Philadelphia,municipality + state
 Lake Success,NY,2,New York,municipality + state
 Daytona Beach,FL,2,Daytona Beach,municipality + state
 Wayne,NJ,2,New York,municipality + state
-Murray Hill,NJ,2,Louisville,"municipality only, unambiguous"
+Murray Hill,NJ,2,New York,municipality + state
 Long Beach,CA,2,Los Angeles,municipality + state
 Schaumburg,IL,2,Chicago,municipality + state
 Somerset,NJ,2,,AMBIGUOUS across 13 metros
@@ -229,7 +229,7 @@ San Mateo,CA,2,San Francisco-San Jose,municipality + state
 Waterbury,VT,2,Burlington,municipality + state
 Lake Oswego,OR,2,Portland,municipality + state
 Zeeland,MI,2,Grand Rapids,municipality + state
-Batesville,IN,2,Batesville,"municipality only, unambiguous"
+Batesville,IN,2,,STATE MISMATCH: 'Batesville' exists only under arkansas
 Dallas/Ft. Worth Airport,TX,2,Dallas,municipality + state
 Malvern,PA,2,Philadelphia,municipality + state
 Danbury,CT,2,New York,municipality + state
@@ -393,7 +393,7 @@ South Portland,ME,1,Portland (ME),municipality + state
 Winona,MN,1,Winona,municipality + state
 Owatonna,MN,1,Minneapolis,municipality + state
 Mayfield Heights,OH,1,Cleveland,municipality + state
-Hicksville,NY,1,Defiance (OH),"municipality only, unambiguous"
+Hicksville,NY,1,New York,municipality + state
 Riverside,CA,1,Los Angeles,municipality + state
 Thomasville,GA,1,Thomasville,municipality + state
 Dearborn,MI,1,Detroit,municipality + state
@@ -406,7 +406,7 @@ Highland Heights,KY,1,Cincinnati,municipality + state
 Darien,CT,1,New York,municipality + state
 Kennett Square,PA,1,Philadelphia,municipality + state
 Foster City,CA,1,San Francisco-San Jose,municipality + state
-Audubon,PA,1,Philadelphia,"municipality only, unambiguous"
+Audubon,PA,1,Philadelphia,municipality + state
 Tucker,GA,1,Atlanta,municipality + state
 Costa Mesa,CA,1,Los Angeles,municipality + state
 Watsonville,CA,1,San Francisco-San Jose,municipality + state
@@ -416,7 +416,7 @@ Pawtucket,RI,1,Providence,municipality + state
 Naples,FL,1,Fort Myers,municipality + state
 N. Richland Hills,TX,1,,not in the Municipality sheet
 Hollywood,FL,1,Miami,municipality + state
-Hershey,PA,1,North Platte (NE),"municipality only, unambiguous"
+Hershey,PA,1,Harrisburg,municipality + state
 Estero,FL,1,Fort Myers,municipality + state
 Muscatine,IA,1,Davenport,municipality + state
 Austin,MN,1,Rochester (MN),municipality + state
@@ -582,7 +582,7 @@ Sylmar,CA,1,,not in the Municipality sheet
 Albuquerque,NM,1,Albuquerque,municipality + state
 Springdale,AR,1,Fayetteville,municipality + state
 Warren,PA,1,Warren (PA),municipality + state
-Silver Spring,MD,1,Harrisburg,"municipality only, unambiguous"
+Silver Spring,MD,1,Washington-Baltimore,municipality + state
 White Plains,NY,1,New York,municipality + state
 Chattanooga,TN,1,Chattanooga,municipality + state
 Alameda,CA,1,San Francisco-San Jose,municipality + state
@@ -590,7 +590,7 @@ Pontiac,MI,1,Detroit,municipality + state
 Reynoldsburg,OH,1,Columbus,municipality + state
 Walnut,CA,1,Los Angeles,municipality + state
 Anoka,MN,1,Minneapolis,municipality + state
-Van Buren Township,MI,1,,not in the Municipality sheet
+Van Buren Township,MI,1,Detroit,municipality + state
 Columbia,MD,1,,AMBIGUOUS across 26 metros
 Lafayette,IN,1,West Lafayette,municipality + state
 Bentonville,AR,1,Fayetteville,municipality + state

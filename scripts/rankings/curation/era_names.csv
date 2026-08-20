@@ -1,200 +1,254 @@
 company_key,era_name,from_year,to_year,source
-exxon mobil,Standard Oil Co. (New Jersey),1955,1973,"Wikipedia: Standard Oil Company (New Jersey) 1882-1973"
-exxon mobil,Exxon Corporation,1974,1995,"Wikipedia: Exxon Corporation 1973-1999"
-chevrontexaco,Standard Oil Co. of California,1955,1984,"Wikipedia: legal name changed to Chevron Corporation in 1984"
+exxon mobil,Standard Oil Co. (New Jersey),1955,1973,Wikipedia: Standard Oil Company (New Jersey) 1882-1973
+exxon mobil,Exxon Corporation,1974,1995,Wikipedia: Exxon Corporation 1973-1999
+chevrontexaco,Standard Oil Co. of California,1955,1984,Wikipedia: legal name changed to Chevron Corporation in 1984
 chevrontexaco,Chevron Corporation,1985,1995,"Wikipedia: Chevron 1984-2001, ChevronTexaco 2001-2005"
-altria group,Philip Morris Inc.,1955,1984,"Philip Morris Inc. until the 1985 holding-company reorganisation; Altria dates from 2003"
-altria group,Philip Morris Companies Inc.,1985,2002,"Philip Morris Companies Inc. 1985-2003; renamed Altria Group in 2003"
-conocophillips,Continental Oil Company,1955,1978,"Conoco was Continental Oil Company until the 1979 rename; ConocoPhillips dates from the 2002 merger"
+altria group,Philip Morris Inc.,1955,1984,Philip Morris Inc. until the 1985 holding-company reorganisation; Altria dates from 2003
+altria group,Philip Morris Companies Inc.,1985,2002,Philip Morris Companies Inc. 1985-2003; renamed Altria Group in 2003
+conocophillips,Continental Oil Company,1955,1978,Conoco was Continental Oil Company until the 1979 rename; ConocoPhillips dates from the 2002 merger
 conocophillips,Conoco Inc.,1979,2001,"Conoco Inc. 1979-2002, including the DuPont ownership years"
-conoco,Continental Oil Company,1955,1978,"Second Fortune record for the same lineage; same rename in 1979"
-conoco,Conoco Inc.,1979,2002,"Conoco Inc. until the ConocoPhillips merger completed in 2002"
-dupont,E. I. du Pont de Nemours and Company,1955,2016,"The legal and published name until the 2017 DowDuPont merger; 'DuPont' as a standalone corporate name dates from the 2019 separation"
-3m,Minnesota Mining and Manufacturing Company,1960,2001,"Renamed 3M in 2002; the full name was the published one before that"
-rockwell automation,North American Aviation,1955,1972,"North American Aviation until the 1973 Rockwell International rename"
-rockwell automation,Rockwell International,1973,1995,"Rockwell International until the 2002 Rockwell Automation rename"
-nabisco group holdings,National Biscuit Company,1955,1970,"Nabisco was National Biscuit Company until 1971"
-nabisco group holdings,Nabisco Inc.,1971,1985,"Nabisco Inc. until the 1985 RJR merger"
-nabisco group holdings,RJR Nabisco,1986,1995,"RJR Nabisco from the 1985-86 merger; Nabisco Group Holdings dates from 1999"
+conoco,Continental Oil Company,1955,1978,Second Fortune record for the same lineage; same rename in 1979
+conoco,Conoco Inc.,1979,2002,Conoco Inc. until the ConocoPhillips merger completed in 2002
+dupont,E. I. du Pont de Nemours and Company,1955,2016,The legal and published name until the 2017 DowDuPont merger; 'DuPont' as a standalone corporate name dates from the 2019 separation
+3m,Minnesota Mining and Manufacturing Company,1960,2001,Renamed 3M in 2002; the full name was the published one before that
+rockwell automation,North American Aviation,1955,1972,North American Aviation until the 1973 Rockwell International rename
+rockwell automation,Rockwell International,1973,1995,Rockwell International until the 2002 Rockwell Automation rename
+nabisco group holdings,National Biscuit Company,1955,1970,Nabisco was National Biscuit Company until 1971
+nabisco group holdings,Nabisco Inc.,1971,1985,Nabisco Inc. until the 1985 RJR merger
+nabisco group holdings,RJR Nabisco,1986,1995,RJR Nabisco from the 1985-86 merger; Nabisco Group Holdings dates from 1999
 borden chemical,The Borden Company,1955,1967,"The Borden Company until the 1968 rename to Borden, Inc."
 borden chemical,"Borden, Inc.",1968,1994,"Borden, Inc.; the Borden Chemical name belongs to the post-1995 KKR successor"
-sunoco,Sun Oil Company,1955,1975,"Sun Oil Company; the Sunoco brand only became the corporate name in 1998"
+sunoco,Sun Oil Company,1955,1975,Sun Oil Company; the Sunoco brand only became the corporate name in 1998
 sunoco,Sun Company Inc.,1976,1994,"Sun Company, Inc. from 1976 until the 1998 Sunoco rename"
-sealed air,W. R. Grace & Co.,1955,1994,"This Fortune record is the W. R. Grace lineage; Sealed Air acquired the Cryovac business in 1998 and inherited the record"
-bestfoods,Corn Products Refining Company,1959,1968,"Corn Products Refining until the 1969 CPC International rename"
-bestfoods,CPC International Inc.,1969,1994,"CPC International until the 1997 Bestfoods rename"
-marathon oil,United States Steel Corporation,1975,2001,"This record is the USX/U.S. Steel lineage; Marathon Oil separated in 2002"
-tenneco automotive,Tenneco Inc.,1966,1995,"Tenneco Inc.; the Tenneco Automotive name dates from the 1999 spin-off"
-wyeth,American Home Products Corporation,1966,1994,"American Home Products until the 2002 Wyeth rename"
-citigroup,Travelers Group Inc.,1995,1998,"The record's pre-merger identity; Citigroup dates from the 1998 Travelers-Citicorp merger"
-verizon communications,Bell Atlantic Corporation,1995,1999,"Bell Atlantic until the 2000 GTE merger created Verizon"
-ryerson tull,Inland Steel Company,1955,1980,"Inland Steel; the Ryerson Tull name dates from 1996"
-freddie mac,Federal Home Loan Mortgage Corporation,1999,2026,"Freddie Mac is the nickname; the corporate name is unchanged"
-lowes,"Lowe's Companies, Inc.",2003,2026,"Published corporate name; the bare brand is the source's shorthand"
-goodrich,The B.F.Goodrich Company,1955,1975,"B.F.Goodrich; the bare Goodrich name dates from the 2001 rename"
+sealed air,W. R. Grace & Co.,1955,1994,This Fortune record is the W. R. Grace lineage; Sealed Air acquired the Cryovac business in 1998 and inherited the record
+bestfoods,Corn Products Refining Company,1959,1968,Corn Products Refining until the 1969 CPC International rename
+bestfoods,CPC International Inc.,1969,1994,CPC International until the 1997 Bestfoods rename
+marathon oil,United States Steel Corporation,1975,2001,This record is the USX/U.S. Steel lineage; Marathon Oil separated in 2002
+tenneco automotive,Tenneco Inc.,1966,1995,Tenneco Inc.; the Tenneco Automotive name dates from the 1999 spin-off
+wyeth,American Home Products Corporation,1966,1994,American Home Products until the 2002 Wyeth rename
+citigroup,Travelers Group Inc.,1995,1998,The record's pre-merger identity; Citigroup dates from the 1998 Travelers-Citicorp merger
+verizon communications,Bell Atlantic Corporation,1995,1999,Bell Atlantic until the 2000 GTE merger created Verizon
+ryerson tull,Inland Steel Company,1955,1980,Inland Steel; the Ryerson Tull name dates from 1996
+freddie mac,Federal Home Loan Mortgage Corporation,1999,2026,Freddie Mac is the nickname; the corporate name is unchanged
+lowes,"Lowe's Companies, Inc.",2003,2026,Published corporate name; the bare brand is the source's shorthand
+goodrich,The B.F.Goodrich Company,1955,1975,B.F.Goodrich; the bare Goodrich name dates from the 2001 rename
 borgwarner,Borg-Warner Corporation,1955,1985,"Borg-Warner Corporation, hyphenated, until the 1993 BorgWarner Automotive successor"
-albertsons,"Albertson's, Inc.",2003,2005,"Albertson's with the apostrophe until the 2006 breakup; Albertsons Companies dates from 2015"
-celanese,Celanese Corporation of America,1965,1974,"Celanese Corporation of America until the 1970s shortening"
-genesco,General Shoe Corporation,1966,1973,"General Shoe Corporation; Genesco was adopted in 1959 as a contraction but the record predates the published switch"
-bank one,Banc One Corporation,1999,2004,"Banc One Corporation spelling until the First Chicago NBD merger"
+celanese,Celanese Corporation of America,1965,1974,Celanese Corporation of America until the 1970s shortening
+genesco,General Shoe Corporation,1966,1973,General Shoe Corporation; Genesco was adopted in 1959 as a contraction but the record predates the published switch
+bank one,Banc One Corporation,1999,2004,Banc One Corporation spelling until the First Chicago NBD merger
 altria group,Philip Morris Companies Inc.,2003,2008,"The 2003 list reports fiscal 2002, when the company was still Philip Morris Companies"
-curtiss wright,Curtiss-Wright Corporation,1955,1958,"Published name carries the hyphen"
-fort james,James River Corporation of Virginia,1988,1991,"James River until the 1997 Fort Howard merger created Fort James"
-chevrontexaco,ChevronTexaco Corporation,2002,2005,"Correct for these years; the record's earlier years are handled above"
-lyondell chemical,Lyondell Petrochemical Company,1990,1992,"Lyondell Petrochemical until the 1998 Lyondell Chemical rename"
-levi strauss,"Levi Strauss & Co.",1993,1994,"Published corporate name includes & Co."
-lockheed martin,Lockheed Aircraft Corporation,1955,1976,"Lockheed Aircraft until the 1977 rename to Lockheed Corporation"
-lockheed martin,Lockheed Corporation,1977,1994,"Lockheed Corporation until the 1995 Martin Marietta merger"
-united technologies,United Aircraft Corporation,1955,1974,"United Aircraft until the 1975 rename to United Technologies"
-alcoa,Aluminum Company of America,1955,1998,"The published name until the Alcoa Inc. rename in 1999"
-texaco,The Texas Company,1955,1958,"The Texas Company until the 1959 rename to Texaco Inc."
-mobil,Socony Mobil Oil Company,1955,1965,"Socony Mobil until the 1966 rename to Mobil Oil Corporation"
-amoco,Standard Oil Company (Indiana),1955,1984,"Standard Oil of Indiana until the 1985 Amoco rename"
-cbs,Columbia Broadcasting System,1955,1973,"Columbia Broadcasting System until the 1974 CBS Inc. rename"
-weyerhaeuser,Weyerhaeuser Timber Company,1958,1958,"Weyerhaeuser Timber until the 1959 rename to Weyerhaeuser Company"
-atlantic richfield,The Atlantic Refining Company,1955,1965,"Atlantic Refining until the 1966 merger with Richfield Oil formed ARCO"
-fortune brands,The American Tobacco Company,1955,1968,"American Tobacco until the 1969 American Brands rename"
-fortune brands,American Brands Inc.,1969,1994,"American Brands until the 1997 Fortune Brands rename"
+curtiss wright,Curtiss-Wright Corporation,1955,1958,Published name carries the hyphen
+fort james,James River Corporation of Virginia,1988,1991,James River until the 1997 Fort Howard merger created Fort James
+chevrontexaco,ChevronTexaco Corporation,2002,2005,Correct for these years; the record's earlier years are handled above
+lyondell chemical,Lyondell Petrochemical Company,1990,1992,Lyondell Petrochemical until the 1998 Lyondell Chemical rename
+levi strauss,Levi Strauss & Co.,1993,1994,Published corporate name includes & Co.
+lockheed martin,Lockheed Aircraft Corporation,1955,1976,Lockheed Aircraft until the 1977 rename to Lockheed Corporation
+lockheed martin,Lockheed Corporation,1977,1994,Lockheed Corporation until the 1995 Martin Marietta merger
+united technologies,United Aircraft Corporation,1955,1974,United Aircraft until the 1975 rename to United Technologies
+alcoa,Aluminum Company of America,1955,1998,The published name until the Alcoa Inc. rename in 1999
+texaco,The Texas Company,1955,1958,The Texas Company until the 1959 rename to Texaco Inc.
+amoco,Standard Oil Company (Indiana),1955,1984,Standard Oil of Indiana until the 1985 Amoco rename
+cbs,Columbia Broadcasting System,1955,1973,Columbia Broadcasting System until the 1974 CBS Inc. rename
+weyerhaeuser,Weyerhaeuser Timber Company,1958,1958,Weyerhaeuser Timber until the 1959 rename to Weyerhaeuser Company
+atlantic richfield,The Atlantic Refining Company,1955,1965,Atlantic Refining until the 1966 merger with Richfield Oil formed ARCO
+fortune brands,The American Tobacco Company,1955,1968,American Tobacco until the 1969 American Brands rename
+fortune brands,American Brands Inc.,1969,1994,American Brands until the 1997 Fortune Brands rename
 honeywell intl,Allied Chemical Corporation,1955,1980,"This record is the Allied lineage, not Honeywell of Minneapolis; Allied Chemical until the 1981 Allied Corporation rename"
-honeywell intl,Allied Corporation,1981,1985,"Allied Corporation until the 1986 AlliedSignal merger"
-honeywell intl,AlliedSignal Inc.,1986,1995,"AlliedSignal until it took the Honeywell name in 1999"
-intl business machines,International Business Machines Corporation,1955,1995,"The published corporate name; the source abbreviates it"
-shell oil,Shell Oil Company,1955,1994,"Confirmed: the US subsidiary's name is unchanged across this span"
-general motors,General Motors,1955,2025,"Confirmed: unchanged across the span"
-boeing,Boeing,1955,2025,"Confirmed: The Boeing Company throughout; the source uses the short form"
-procter and gamble,Procter & Gamble,1955,2025,"Confirmed: unchanged across the span"
-caterpillar,Caterpillar,1955,2025,"Confirmed: Caterpillar Tractor Co. to 1986 then Caterpillar Inc.; the short form holds throughout"
-ford motor,Ford Motor,1956,2025,"Confirmed: Ford Motor Company throughout"
-coca cola,Coca-Cola,1961,2025,"Confirmed: The Coca-Cola Company throughout"
-dow chemical,Dow Chemical,1955,2014,"Confirmed: The Dow Chemical Company throughout"
-general dynamics,General Dynamics,1955,2025,"Confirmed: unchanged across the span"
-international paper,International Paper,1955,2009,"Confirmed: International Paper Company throughout"
-deere,Deere,1956,2025,"Confirmed: Deere & Company throughout"
-eastman kodak,Eastman Kodak,1955,1998,"Confirmed: Eastman Kodak Company throughout"
-general electric,General Electric,1955,1995,"Confirmed: General Electric Company throughout this span"
-chrysler,Chrysler,1955,1995,"Confirmed: Chrysler Corporation throughout this span"
-goodyear tire and rubber,Goodyear Tire & Rubber,1955,1995,"Confirmed: The Goodyear Tire & Rubber Company throughout"
-pepsico,PepsiCo,1974,2025,"Confirmed: PepsiCo Inc. throughout this span"
-johnson and johnson,Johnson & Johnson,1974,2025,"Confirmed: unchanged across the span"
-ralston purina,Ralston Purina,1955,1994,"Confirmed: Ralston Purina Company throughout"
-monsanto,Monsanto Chemical Company,1955,1963,"Monsanto Chemical until the 1964 rename to Monsanto Company"
-monsanto,Monsanto Company,1964,1994,"Monsanto Company from 1964"
-weyerhaeuser,Weyerhaeuser Company,1959,2006,"Confirmed: Weyerhaeuser Company from the 1959 rename onward"
-united technologies,United Technologies,1975,2014,"Confirmed: United Technologies Corporation from the 1975 rename"
-archer daniels midland,Archer Daniels Midland,1984,2025,"Confirmed: unchanged across the span"
-union carbide,Union Carbide and Carbon Corporation,1955,1956,"Union Carbide and Carbon until the 1957 shortening"
-union carbide,Union Carbide Corporation,1957,1993,"Union Carbide Corporation from 1957"
-texaco,Texaco Inc.,1959,1995,"Confirmed: Texaco Inc. from the 1959 rename"
+honeywell intl,Allied Corporation,1981,1985,Allied Corporation until the 1986 AlliedSignal merger
+honeywell intl,AlliedSignal Inc.,1986,1995,AlliedSignal until it took the Honeywell name in 1999
+intl business machines,International Business Machines Corporation,1955,1995,The published corporate name; the source abbreviates it
+shell oil,Shell Oil Company,1955,1994,Confirmed: the US subsidiary's name is unchanged across this span
+general motors,General Motors,1955,2025,Confirmed: unchanged across the span
+boeing,Boeing,1955,2025,Confirmed: The Boeing Company throughout; the source uses the short form
+procter and gamble,Procter & Gamble,1955,2025,Confirmed: unchanged across the span
+caterpillar,Caterpillar,1955,2025,Confirmed: Caterpillar Tractor Co. to 1986 then Caterpillar Inc.; the short form holds throughout
+ford motor,Ford Motor,1956,2025,Confirmed: Ford Motor Company throughout
+coca cola,Coca-Cola,1961,2025,Confirmed: The Coca-Cola Company throughout
+dow chemical,Dow Chemical,1955,2014,Confirmed: The Dow Chemical Company throughout
+general dynamics,General Dynamics,1955,2025,Confirmed: unchanged across the span
+international paper,International Paper,1955,2009,Confirmed: International Paper Company throughout
+deere,Deere,1956,2025,Confirmed: Deere & Company throughout
+eastman kodak,Eastman Kodak,1955,1998,Confirmed: Eastman Kodak Company throughout
+general electric,General Electric,1955,1995,Confirmed: General Electric Company throughout this span
+chrysler,Chrysler,1955,1995,Confirmed: Chrysler Corporation throughout this span
+goodyear tire and rubber,Goodyear Tire & Rubber,1955,1995,Confirmed: The Goodyear Tire & Rubber Company throughout
+pepsico,PepsiCo,1974,2025,Confirmed: PepsiCo Inc. throughout this span
+johnson and johnson,Johnson & Johnson,1974,2025,Confirmed: unchanged across the span
+ralston purina,Ralston Purina,1955,1994,Confirmed: Ralston Purina Company throughout
+monsanto,Monsanto Chemical Company,1955,1963,Monsanto Chemical until the 1964 rename to Monsanto Company
+monsanto,Monsanto Company,1964,1994,Monsanto Company from 1964
+weyerhaeuser,Weyerhaeuser Company,1959,2006,Confirmed: Weyerhaeuser Company from the 1959 rename onward
+united technologies,United Technologies,1975,2014,Confirmed: United Technologies Corporation from the 1975 rename
+archer daniels midland,Archer Daniels Midland,1984,2025,Confirmed: unchanged across the span
+union carbide,Union Carbide and Carbon Corporation,1955,1956,Union Carbide and Carbon until the 1957 shortening
+union carbide,Union Carbide Corporation,1957,1993,Union Carbide Corporation from 1957
+texaco,Texaco Inc.,1959,1995,Confirmed: Texaco Inc. from the 1959 rename
 merck,Merck,1987,2025,"Confirmed: Merck & Co., Inc. throughout this span"
-bethlehem steel,Bethlehem Steel,1955,1990,"Confirmed: Bethlehem Steel Corporation throughout"
-colgate palmolive,Colgate-Palmolive,1958,1994,"Confirmed: Colgate-Palmolive Company throughout this span"
-pfizer,Pfizer,1984,2025,"Confirmed: Pfizer Inc. throughout this span"
-at and t,American Telephone and Telegraph Company,1985,1993,"AT&T was still published as American Telephone and Telegraph until the 1994 formal rename"
-at and t,AT&T Corp.,1994,2005,"AT&T Corp. until the 2005 SBC acquisition took the name"
+bethlehem steel,Bethlehem Steel,1955,1990,Confirmed: Bethlehem Steel Corporation throughout
+colgate palmolive,Colgate-Palmolive,1958,1994,Confirmed: Colgate-Palmolive Company throughout this span
+pfizer,Pfizer,1984,2025,Confirmed: Pfizer Inc. throughout this span
+at and t,American Telephone and Telegraph Company,1985,1993,AT&T was still published as American Telephone and Telegraph until the 1994 formal rename
+at and t,AT&T Corp.,1994,2005,AT&T Corp. until the 2005 SBC acquisition took the name
 at and t,AT&T Inc.,2006,2025,"AT&T Inc., the former SBC, from 2006"
-kraft,National Dairy Products Corporation,1955,1968,"National Dairy Products until the 1969 Kraftco rename"
+kraft,National Dairy Products Corporation,1955,1968,National Dairy Products until the 1969 Kraftco rename
 kraft,Kraftco Corporation,1969,1975,"Kraftco until the 1976 Kraft, Inc. rename"
 kraft,"Kraft, Inc.",1976,1988,"Kraft, Inc. until the 1988 Philip Morris acquisition"
-unocal,Union Oil Company of California,1955,1982,"Union Oil of California until the 1983 Unocal holding company"
-unocal,Unocal Corporation,1983,1994,"Unocal Corporation from 1983"
-itt industries,International Telephone and Telegraph Corporation,1956,1982,"ITT was published in full until the 1983 shortening to ITT Corporation"
-itt industries,ITT Corporation,1983,1994,"ITT Corporation until the 1995 three-way split"
-mcdonnell douglas,McDonnell Aircraft Corporation,1959,1966,"McDonnell Aircraft until the 1967 Douglas merger"
-mcdonnell douglas,McDonnell Douglas Corporation,1967,1995,"McDonnell Douglas from the 1967 merger"
-intel,Intel,1993,2025,"Confirmed: Intel Corporation throughout this span"
-general foods,General Foods Corporation,1955,1986,"Confirmed: General Foods Corporation throughout"
-armco,Armco Steel Corporation,1955,1977,"Armco Steel until the 1978 rename to Armco Inc."
-armco,Armco Inc.,1978,1986,"Armco Inc. from 1978"
-sperry,Sperry Rand Corporation,1955,1978,"Sperry Rand until the 1979 shortening to Sperry Corporation"
-sperry,Sperry Corporation,1979,1986,"Sperry Corporation until the 1986 Unisys merger"
-firestone tire and rubber,The Firestone Tire & Rubber Company,1955,1985,"Confirmed: the published name throughout this span"
-citgo petroleum,Cities Service Company,1955,1982,"Cities Service until the 1983 Citgo Petroleum rename"
-citgo petroleum,Citgo Petroleum Corporation,1983,1994,"Citgo Petroleum from 1983"
-honeywell,Minneapolis-Honeywell Regulator Company,1963,1963,"Minneapolis-Honeywell until the 1964 rename to Honeywell Inc."
-honeywell,Honeywell Inc.,1964,1994,"Honeywell Inc. from 1964 until the 1999 AlliedSignal merger"
-kroger,Kroger,1995,2025,"Confirmed: The Kroger Co. throughout this span"
+unocal,Union Oil Company of California,1955,1982,Union Oil of California until the 1983 Unocal holding company
+unocal,Unocal Corporation,1983,1994,Unocal Corporation from 1983
+itt industries,International Telephone and Telegraph Corporation,1956,1982,ITT was published in full until the 1983 shortening to ITT Corporation
+itt industries,ITT Corporation,1983,1994,ITT Corporation until the 1995 three-way split
+mcdonnell douglas,McDonnell Aircraft Corporation,1959,1966,McDonnell Aircraft until the 1967 Douglas merger
+mcdonnell douglas,McDonnell Douglas Corporation,1967,1995,McDonnell Douglas from the 1967 merger
+intel,Intel,1993,2025,Confirmed: Intel Corporation throughout this span
+general foods,General Foods Corporation,1955,1986,Confirmed: General Foods Corporation throughout
+armco,Armco Steel Corporation,1955,1977,Armco Steel until the 1978 rename to Armco Inc.
+armco,Armco Inc.,1978,1986,Armco Inc. from 1978
+sperry,Sperry Rand Corporation,1955,1978,Sperry Rand until the 1979 shortening to Sperry Corporation
+sperry,Sperry Corporation,1979,1986,Sperry Corporation until the 1986 Unisys merger
+firestone tire and rubber,The Firestone Tire & Rubber Company,1955,1985,Confirmed: the published name throughout this span
+citgo petroleum,Cities Service Company,1955,1982,Cities Service until the 1983 Citgo Petroleum rename
+citgo petroleum,Citgo Petroleum Corporation,1983,1994,Citgo Petroleum from 1983
+honeywell,Minneapolis-Honeywell Regulator Company,1963,1963,Minneapolis-Honeywell until the 1964 rename to Honeywell Inc.
+honeywell,Honeywell Inc.,1964,1994,Honeywell Inc. from 1964 until the 1999 AlliedSignal merger
+kroger,Kroger,1995,2025,Confirmed: The Kroger Co. throughout this span
 metlife,MetLife,1995,2025,"Confirmed: MetLife, Inc. throughout this span"
-target,Target,1995,1999,"The parent was Dayton Hudson Corporation until the 2000 Target Corporation rename"
-united parcel service,United Parcel Service,1995,2025,"Confirmed: unchanged across the span"
-costco wholesale,Costco Wholesale,1995,2025,"Confirmed: Costco Wholesale Corporation throughout this span"
-american express,American Express,1995,2025,"Confirmed: American Express Company throughout"
-lockheed martin,Lockheed Martin,1995,2025,"Confirmed: Lockheed Martin Corporation from the 1995 merger"
+united parcel service,United Parcel Service,1995,2025,Confirmed: unchanged across the span
+costco wholesale,Costco Wholesale,1995,2025,Confirmed: Costco Wholesale Corporation throughout this span
+american express,American Express,1995,2025,Confirmed: American Express Company throughout
+lockheed martin,Lockheed Martin,1995,2025,Confirmed: Lockheed Martin Corporation from the 1995 merger
 home depot,Home Depot,1995,2025,"Confirmed: The Home Depot, Inc. throughout this span"
 walmart,"Wal-Mart Stores, Inc.",1996,2017,"Legal name was Wal-Mart Stores, Inc. until the rename to Walmart Inc. took effect 1 February 2018"
-walmart,Walmart Inc.,2018,2026,"Walmart Inc. from 1 February 2018"
+walmart,Walmart Inc.,2018,2026,Walmart Inc. from 1 February 2018
 wal mart stores,"Wal-Mart Stores, Inc.",1995,1995,"Confirmed: Wal-Mart Stores, Inc. in 1995"
 exxonmobil holdings,Exxon Mobil Corporation,2000,2026,"The merged company is Exxon Mobil Corporation, from 30 November 1999. ExxonMobil Holdings is the data provider's label, not a corporate name"
-ge aerospace,General Electric Company,1996,2023,"General Electric Company until the GE Aerospace rename of 2 April 2024"
+ge aerospace,General Electric Company,1996,2023,General Electric Company until the GE Aerospace rename of 2 April 2024
 ge aerospace,GE Aerospace,2024,2026,"Renamed GE Aerospace on 2 April 2024, after the GE Vernova and GE HealthCare separations"
-at and t technologies,"Western Electric Company, Inc.",1955,1983,"Western Electric was the Bell System's manufacturing arm until divestiture"
-at and t technologies,"AT&T Technologies, Inc.",1984,1984,"Western Electric was folded into AT&T Technologies at the 1 January 1984 divestiture"
+at and t technologies,"Western Electric Company, Inc.",1955,1983,Western Electric was the Bell System's manufacturing arm until divestiture
+at and t technologies,"AT&T Technologies, Inc.",1984,1984,Western Electric was folded into AT&T Technologies at the 1 January 1984 divestiture
 u s steel,United States Steel Corporation,1955,1982,"United States Steel Corporation throughout. The USX holding company dates from 1986, after the last listed year here"
-esmark,Swift & Company,1955,1972,"Swift & Company until the 1973 holding-company reorganisation created Esmark"
+esmark,Swift & Company,1955,1972,Swift & Company until the 1973 holding-company reorganisation created Esmark
 esmark,"Esmark, Inc.",1973,1984,"Esmark, Inc. from the 1973 reorganisation to the 1984 Beatrice acquisition"
 cencora,AmeriSource Health Corporation,1996,2002,"This record is the AMERISOURCE spine, not Bergen Brunswig: Bergen Brunswig holds its own key for 1995-2001, and this record's revenue runs 4.7bn in 1996 to 11.6bn in 2001, which is AmeriSource's scale and roughly half Bergen's"
-cencora,AmerisourceBergen Corporation,2003,2022,"The merged scale first appears in the 2003 listing at 45.2bn; 2002 still reports AmeriSource alone at 15.8bn"
-cencora,"Cencora, Inc.",2023,2026,"Renamed Cencora on 30 August 2023"
-hp,Hewlett-Packard Company,1996,2015,"Hewlett-Packard Company until the 1 November 2015 separation"
-hp,HP Inc.,2016,2026,"The retained entity was renamed HP Inc. on 1 November 2015; Hewlett Packard Enterprise was spun out"
-cigna group,Cigna Corporation,1996,2022,"Cigna Corporation until the February 2023 rename"
-cigna group,The Cigna Group,2023,2026,"Renamed The Cigna Group in February 2023"
-mobil,"Socony Mobil Oil Company, Inc.",1955,1966,"Socony-Vacuum took the Socony Mobil Oil name in 1955 and held it until 1966"
-mobil,Mobil Oil Corporation,1967,1975,"Renamed Mobil Oil Corporation in 1966"
-mobil,Mobil Corporation,1976,1999,"Mobil Corporation was created as the holding company in 1976 and ran to the 1999 Exxon merger"
+cencora,AmerisourceBergen Corporation,2003,2022,The merged scale first appears in the 2003 listing at 45.2bn; 2002 still reports AmeriSource alone at 15.8bn
+cencora,"Cencora, Inc.",2023,2026,Renamed Cencora on 30 August 2023
+hp,Hewlett-Packard Company,1996,2015,Hewlett-Packard Company until the 1 November 2015 separation
+hp,HP Inc.,2016,2026,The retained entity was renamed HP Inc. on 1 November 2015; Hewlett Packard Enterprise was spun out
+cigna group,Cigna Corporation,1996,2022,Cigna Corporation until the February 2023 rename
+cigna group,The Cigna Group,2023,2026,Renamed The Cigna Group in February 2023
+mobil,"Socony Mobil Oil Company, Inc.",1955,1966,Socony-Vacuum took the Socony Mobil Oil name in 1955 and held it until 1966
+mobil,Mobil Oil Corporation,1967,1975,Renamed Mobil Oil Corporation in 1966
+mobil,Mobil Corporation,1976,1999,Mobil Corporation was created as the holding company in 1976 and ran to the 1999 Exxon merger
 gulf oil,Gulf Oil Corporation,1955,1984,"Gulf Oil Corporation throughout, to the 1984 Chevron acquisition"
-armour,Armour and Company,1955,1970,"Armour and Company throughout its listed run"
+armour,Armour and Company,1955,1970,Armour and Company throughout its listed run
 sears roebuck,"Sears, Roebuck and Co.",1995,1995,"Confirmed: Sears, Roebuck and Co. in 1995"
-berkshire hathaway,Berkshire Hathaway Inc.,1956,2026,"Confirmed: Berkshire Hathaway Inc. from the 1955 Berkshire Fine Spinning and Hathaway Manufacturing merger"
-cvs health,CVS Corporation,1997,2006,"Melville Corporation became CVS Corporation in 1996"
-cvs health,CVS Caremark Corporation,2007,2013,"CVS Caremark from the March 2007 Caremark Rx merger"
+berkshire hathaway,Berkshire Hathaway Inc.,1956,2026,Confirmed: Berkshire Hathaway Inc. from the 1955 Berkshire Fine Spinning and Hathaway Manufacturing merger
+cvs health,CVS Corporation,1997,2006,Melville Corporation became CVS Corporation in 1996
+cvs health,CVS Caremark Corporation,2007,2013,CVS Caremark from the March 2007 Caremark Rx merger
 cvs health,CVS Health Corporation,2014,2026,"Renamed CVS Health in September 2014, on ending tobacco sales"
 apple,"Apple Computer, Inc.",1996,2006,"Apple Computer, Inc. until the January 2007 rename"
-apple,Apple Inc.,2007,2026,"Renamed Apple Inc. on 9 January 2007"
-kmart holding,Kmart Corporation,1995,2002,"Kmart Corporation until the 2003 emergence from Chapter 11"
-kmart holding,Kmart Holding Corporation,2003,2004,"Kmart Holding Corporation from May 2003 to the 2005 Sears Holdings merger"
-mci worldcom,"WorldCom, Inc.",1995,1997,"LDDS Communications took the WorldCom name in 1995; MCI WorldCom dates only from the 1998 MCI acquisition"
-mci worldcom,"MCI WorldCom, Inc.",1998,1999,"MCI WorldCom from the September 1998 completion of the MCI acquisition"
+apple,Apple Inc.,2007,2026,Renamed Apple Inc. on 9 January 2007
+kmart holding,Kmart Corporation,1995,2002,Kmart Corporation until the 2003 emergence from Chapter 11
+kmart holding,Kmart Holding Corporation,2003,2004,Kmart Holding Corporation from May 2003 to the 2005 Sears Holdings merger
+mci worldcom,"WorldCom, Inc.",1995,1997,LDDS Communications took the WorldCom name in 1995; MCI WorldCom dates only from the 1998 MCI acquisition
+mci worldcom,"MCI WorldCom, Inc.",1998,1999,MCI WorldCom from the September 1998 completion of the MCI acquisition
 mci worldcom,"WorldCom, Inc.",2000,2000,"The MCI prefix was dropped in 2000, before the 2003 emergence as MCI, Inc."
-fleetboston financial,"Fleet Financial Group, Inc.",1995,1999,"Fleet Financial Group until the BankBoston merger completed on 1 October 1999"
-fleetboston financial,FleetBoston Financial Corporation,2000,2004,"FleetBoston Financial from the October 1999 merger to the 2004 Bank of America acquisition"
-txu,Texas Utilities Company,1995,1999,"Texas Utilities Company until the TXU rename of 2000"
-txu,TXU Corp.,2000,2007,"TXU Corp. from 2000 until the 2007 buyout and Energy Future Holdings rename"
-land olakes,"Land O'Lakes, Inc.",1955,2026,"Confirmed: the co-operative has carried the Land O'Lakes name since 1926"
-albertsons,"Albertson's, Inc.",1955,2005,"Confirmed: Albertson's, Inc. from the 1957 incorporation to the 2006 break-up"
+fleetboston financial,"Fleet Financial Group, Inc.",1995,1999,Fleet Financial Group until the BankBoston merger completed on 1 October 1999
+fleetboston financial,FleetBoston Financial Corporation,2000,2004,FleetBoston Financial from the October 1999 merger to the 2004 Bank of America acquisition
+txu,Texas Utilities Company,1995,1999,Texas Utilities Company until the TXU rename of 2000
+txu,TXU Corp.,2000,2007,TXU Corp. from 2000 until the 2007 buyout and Energy Future Holdings rename
+land olakes,"Land O'Lakes, Inc.",1955,2026,Confirmed: the co-operative has carried the Land O'Lakes name since 1926
 mediaone group,U S WEST Media Group,1995,1997,"MediaOne Group was created only in June 1998, when U S WEST split its media arm from its telephone business"
-mediaone group,"MediaOne Group, Inc.",1998,2000,"MediaOne Group from the June 1998 separation to the 2000 AT&T acquisition"
+mediaone group,"MediaOne Group, Inc.",1998,2000,MediaOne Group from the June 1998 separation to the 2000 AT&T acquisition
 citigroup,Citigroup Inc.,1999,2026,"Citigroup from the Travelers-Citicorp merger of 8 October 1998; the 1999 listing reports 76.4bn, which is the merged company"
-chevron,Chevron Corporation,1996,2001,"The ChevronTexaco years belong to the OTHER record: this key has no rows at all for 2002-2005 and the chevrontexaco key holds exactly those four years"
-chevron,Chevron Corporation,2006,2026,"Renamed back from ChevronTexaco on 9 May 2005; this record resumes in 2006"
+chevron,Chevron Corporation,1996,2001,The ChevronTexaco years belong to the OTHER record: this key has no rows at all for 2002-2005 and the chevrontexaco key holds exactly those four years
+chevron,Chevron Corporation,2006,2026,Renamed back from ChevronTexaco on 9 May 2005; this record resumes in 2006
 bank of america,NationsBank Corporation,1995,1998,"This record is the NATIONSBANK spine, not BankAmerica: a separate bankamerica key runs alongside it at 16.5bn in 1995 while this one reports 13.1bn, which is NationsBank's scale"
-bank of america,Bank of America Corporation,1999,2026,"NationsBank took the Bank of America name on 30 September 1998; revenue jumps from 21.7bn to 50.8bn at the 1999 listing"
+bank of america,Bank of America Corporation,1999,2026,NationsBank took the Bank of America name on 30 September 1998; revenue jumps from 21.7bn to 50.8bn at the 1999 listing
 jpmorgan chase,J.P. Morgan & Co. Incorporated,1996,2000,"This record is the J.P. MORGAN spine, not Chase Manhattan: chase manhattan holds its own key across the same years, and this one reports 13.8bn in 1996, which is J.P. Morgan's scale"
 jpmorgan chase,JPMorgan Chase & Co.,2001,2026,"The J.P. Morgan-Chase Manhattan merger closed 31 December 2000, so the 2001 listing is the first as the merged company"
-mckesson,McKesson Corporation,1995,1998,"McKesson Corporation until the HBO & Company merger of 12 January 1999"
+mckesson,McKesson Corporation,1995,1998,McKesson Corporation until the HBO & Company merger of 12 January 1999
 mckesson,"McKesson HBOC, Inc.",1999,2001,"McKesson HBOC from January 1999 until the name reverted in July 2001, after that year's list was published"
-mckesson,McKesson Corporation,2002,2026,"The McKesson Corporation name was restored in July 2001"
+mckesson,McKesson Corporation,2002,2026,The McKesson Corporation name was restored in July 2001
 unitedhealth group,United HealthCare Corporation,1995,1998,"United HealthCare Corporation until the reorganisation of 1 July 1998, after that year's list was published"
-unitedhealth group,UnitedHealth Group Incorporated,1999,2026,"UnitedHealth Group Incorporated from the reorganisation of 1 July 1998"
-international business machines,International Business Machines Corporation,1996,2026,"Confirmed: unchanged across the span"
-conocophillips,ConocoPhillips,2002,2026,"The Conoco-Phillips merger closed 30 August 2002"
+unitedhealth group,UnitedHealth Group Incorporated,1999,2026,UnitedHealth Group Incorporated from the reorganisation of 1 July 1998
+international business machines,International Business Machines Corporation,1996,2026,Confirmed: unchanged across the span
+conocophillips,ConocoPhillips,2002,2026,The Conoco-Phillips merger closed 30 August 2002
 amazon,"Amazon.com, Inc.",2000,2026,"Confirmed: Amazon.com, Inc. throughout; the bare brand is the source's shorthand"
-atlantic richfield,Atlantic Richfield Company,1966,2000,"The Atlantic Refining and Richfield Oil merger completed 3 January 1966; the record ends at the BP acquisition of 18 April 2000"
-philip morris companies,Philip Morris Companies Inc.,1996,2002,"Confirmed: Philip Morris Companies Inc. until the Altria rename of 27 January 2003"
+atlantic richfield,Atlantic Richfield Company,1966,2000,The Atlantic Refining and Richfield Oil merger completed 3 January 1966; the record ends at the BP acquisition of 18 April 2000
+philip morris companies,Philip Morris Companies Inc.,1996,2002,Confirmed: Philip Morris Companies Inc. until the Altria rename of 27 January 2003
 alphabet,Google Inc.,2005,2015,"Google Inc. until the Alphabet holding-company reorganisation of 2 October 2015, after that year's list was published"
-alphabet,Alphabet Inc.,2016,2026,"Alphabet Inc. from the reorganisation of 2 October 2015"
-aig,"American International Group, Inc.",1996,2026,"Confirmed: unchanged across the span"
-amoco,Amoco Corporation,1985,1998,"Renamed Amoco Corporation on 23 April 1985; the record ends at the BP merger of 31 December 1998"
-exxon,Exxon Corporation,1996,1999,"Confirmed: Exxon Corporation until the Mobil merger of 30 November 1999"
-verizon communications,Verizon Communications Inc.,2000,2026,"Bell Atlantic and GTE merged into Verizon on 30 June 2000"
-valero energy,Valero Energy Corporation,1986,2026,"Confirmed: Valero Energy Corporation throughout"
-chrysler,Chrysler Corporation,1996,1998,"Chrysler Corporation until the DaimlerChrysler merger of 12 November 1998"
-fannie mae,Federal National Mortgage Association,1995,2026,"Fannie Mae is the nickname; the chartered corporate name is unchanged"
-phillips 66,Phillips 66,2013,2026,"Confirmed: Phillips 66 from the 2012 separation from ConocoPhillips"
-texaco,Texaco Inc.,1996,2001,"Texaco Inc. to the Chevron acquisition of 9 October 2001"
-enron,Enron Corp.,1995,2002,"Confirmed: Enron Corp. throughout its listed run"
-state farm insurance cos,State Farm Mutual Automobile Insurance Company,1995,1995,"The chartered name; the source's label is a grouping"
-state farm group,State Farm Mutual Automobile Insurance Company,1996,1996,"The chartered name; the source's label is a grouping"
-state farm insurance,State Farm Mutual Automobile Insurance Company,1997,2026,"The chartered name; the source's label is a grouping"
+alphabet,Alphabet Inc.,2016,2026,Alphabet Inc. from the reorganisation of 2 October 2015
+aig,"American International Group, Inc.",1996,2026,Confirmed: unchanged across the span
+amoco,Amoco Corporation,1985,1998,Renamed Amoco Corporation on 23 April 1985; the record ends at the BP merger of 31 December 1998
+exxon,Exxon Corporation,1996,1999,Confirmed: Exxon Corporation until the Mobil merger of 30 November 1999
+verizon communications,Verizon Communications Inc.,2000,2026,Bell Atlantic and GTE merged into Verizon on 30 June 2000
+valero energy,Valero Energy Corporation,1986,2026,Confirmed: Valero Energy Corporation throughout
+chrysler,Chrysler Corporation,1996,1998,Chrysler Corporation until the DaimlerChrysler merger of 12 November 1998
+fannie mae,Federal National Mortgage Association,1995,2026,Fannie Mae is the nickname; the chartered corporate name is unchanged
+phillips 66,Phillips 66,2013,2026,Confirmed: Phillips 66 from the 2012 separation from ConocoPhillips
+texaco,Texaco Inc.,1996,2001,Texaco Inc. to the Chevron acquisition of 9 October 2001
+enron,Enron Corp.,1995,2002,Confirmed: Enron Corp. throughout its listed run
+state farm insurance cos,State Farm Mutual Automobile Insurance Company,1995,1995,The chartered name; the source's label is a grouping
+state farm group,State Farm Mutual Automobile Insurance Company,1996,1996,The chartered name; the source's label is a grouping
+state farm insurance,State Farm Mutual Automobile Insurance Company,1997,2026,The chartered name; the source's label is a grouping
 prudential insurance of america,The Prudential Insurance Company of America,1996,2001,"Confirmed to the demutualisation of 13 December 2001, which created Prudential Financial, Inc."
-sbc communications,SBC Communications Inc.,1995,2005,"Confirmed: SBC until it took the AT&T Inc. name on 18 November 2005"
-microsoft,Microsoft Corporation,1995,2026,"Confirmed: unchanged across the span"
+sbc communications,SBC Communications Inc.,1995,2005,Confirmed: SBC until it took the AT&T Inc. name on 18 November 2005
+microsoft,Microsoft Corporation,1995,2026,Confirmed: unchanged across the span
+textron,Textron,1963,1994,Textron name held throughout; no rename crosses 1963-1994
+raytheon,Raytheon,1960,1994,"Raytheon dropped 'Manufacturing' in 1958/59 (sources differ); span starts 1960, after the rename either way"
+cardinal health,Cardinal Health,1999,2025,"Cardinal Distribution became Cardinal Health in Feb 1994, before this span"
+fedex,FedEx,2002,2025,"FedEx Corporation from Jan 2000, before this span"
+humana,Humana,2008,2025,Humana Inc. since 1974
+johnson controls,Johnson Controls,1994,2016,Johnson Controls name from 1974; the Sept 2016 Tyco merger (International plc) keeps the name
+nike,Nike,2016,2025,"Nike, Inc. since 1971"
+litton industries,"Litton Industries, Inc.",1965,1994,"Litton Industries, Inc. since 1954"
+reynolds metals,Reynolds Metals Company,1955,1993,Reynolds Metals Company 1928 until the 2000 Alcoa acquisition
+greyhound,Greyhound,1971,1983,The Greyhound Corporation until March 1990; no rename crosses 1971-1983
+georgia pacific,Georgia-Pacific,1970,2004,"Georgia-Pacific Corporation from 1956, before this span"
+youngstown sheet and tube,Youngstown Sheet & Tube,1955,1966,Name unchanged from 1900 to the LTV takeover
+signal companies,Signal Companies,1968,1985,"The Signal Companies 1968-1985, unbroken to the Allied merger"
+marathon petroleum,Marathon Petroleum,2012,2025,Marathon Petroleum Corporation since the 2011 spin-off
+digital equipment,Digital Equipment Corporation,1983,1997,DEC name 1957 until the 1998 Compaq acquisition
+sprint,Sprint Corporation,1995,2005,"Sprint Corporation from Dec 1992, before this span"
+walt disney,Walt Disney,1996,2025,"The Walt Disney Company since 6 Feb 1986 (thewaltdisneycompany.com/history), before this span"
+publix super markets,Publix Super Markets,2010,2025,"Publix Super Markets, Inc. since 1930"
+massachusetts mutual life insurance,Massachusetts Mutual Life Insurance,2003,2022,MassMutual's legal name since 1851
+liberty mutual insurance group,Liberty Mutual Insurance Group,2007,2025,Liberty Mutual name since 1917
+owens illinois,Owens-Illinois Glass Company,1955,1965,"Owens-Illinois Glass Company until the 1965 rename to Owens-Illinois, Inc."
+owens illinois,Owens-Illinois,1966,1982,"Owens-Illinois, Inc. from 1965"
+ncr,The National Cash Register Company,1959,1974,The National Cash Register Company until the 1974 rename
+ncr,NCR,1975,1991,NCR Corporation from 1974
+olin,Olin Mathieson Chemical Corporation,1955,1969,Olin Mathieson Chemical Corporation 1954-1969
+olin,Olin,1970,2026,Olin Corporation from 1969
+ltv,"Ling-Temco-Vought, Inc.",1961,1971,"Ling-Temco-Vought, Inc.; renamed 5 May 1971"
+ltv,The LTV Corporation,1972,2002,The LTV Corporation from 5 May 1971
+burlington industries equity,"Burlington Industries, Inc.",1955,1994,Renamed from Burlington Mills in 1955
+conagra foods,Nebraska Consolidated Mills,1968,1971,Nebraska Consolidated Mills until the 1971 rename
+conagra foods,"ConAgra, Inc.",1972,2000,"ConAgra, Inc. 1971 to Sept 2000"
+conagra foods,ConAgra Foods,2001,2016,"ConAgra Foods, Inc. from Sept 2000"
+dell technologies,Dell Computer Corporation,1996,2003,Renamed Dell Inc. 18 Jul 2003
+dell technologies,Dell Inc.,2004,2016,Dell Technologies from 25 Aug 2016
+dell technologies,Dell Technologies,2017,2026,Dell Technologies Inc. from 25 Aug 2016
+elevance health,"Anthem, Inc.",1997,2004,"Anthem, Inc. until the WellPoint merger closed 30 Nov 2004"
+elevance health,"WellPoint, Inc.",2005,2014,"WellPoint, Inc.; renamed back to Anthem, Inc. 3 Dec 2014"
+elevance health,"Anthem, Inc.",2015,2022,"Anthem, Inc.; Elevance Health from 28 Jun 2022"
+elevance health,Elevance Health,2023,2026,"Elevance Health, Inc. from 28 Jun 2022"
+hca healthcare,Columbia/HCA Healthcare Corporation,1996,2000,Columbia/HCA until the 30 May 2000 rename
+hca healthcare,HCA - The Healthcare Company,2001,2001,HCA - The Healthcare Company; renamed HCA Inc. Jun 2001
+hca healthcare,HCA Inc.,2002,2010,"HCA Inc.; HCA Holdings, Inc. from Nov 2010"
+hca healthcare,"HCA Holdings, Inc.",2011,2017,"HCA Holdings, Inc.; HCA Healthcare from 8 May 2017"
+hca healthcare,HCA Healthcare,2018,2026,"HCA Healthcare, Inc. from 8 May 2017"
+world kinect,World Fuel Services Corporation,2001,2023,World Fuel Services; World Kinect from 16 Jun 2023
+world kinect,World Kinect,2024,2026,World Kinect Corporation from 16 Jun 2023
+express scripts holding,"Express Scripts, Inc.",1998,2012,"Express Scripts, Inc.; holding company created at the Medco close, 2 Apr 2012"
+express scripts holding,Express Scripts Holding,2013,2018,Express Scripts Holding Company from Apr 2012
+target,Dayton Hudson Corporation,1995,1999,Dayton Hudson Corporation; renamed Target Corporation Jan 2000. Replaces a row that asserted the Target name for these years
+target,Target,2000,2026,Target Corporation from Jan 2000
+autonation,"Republic Industries, Inc.",1999,1999,"Republic Industries, Inc.; renamed AutoNation Apr 1999"
+autonation,AutoNation,2000,2026,"AutoNation, Inc. from Apr 1999"
+albertsons,"Albertson's, Inc.",1995,2006,"Albertson's, Inc. (apostrophe kept in the charter) until the 2006 breakup. Replaces two overlapping rows"
+albertsons,"Albertsons Companies, Inc.",2017,2026,"Albertsons Companies, Inc. on the 2015 relisting era"
+bp america,Standard Oil Co. (Ohio),1955,1987,Sohio; the BP tender succeeded 13 May 1987
+bp america,BP America Inc.,1988,1988,BP America Inc. from 1987
+whirlpool,Whirlpool-Seeger Corporation,1955,1957,Whirlpool-Seeger Corporation 1955-1957
+whirlpool,Whirlpool,1958,2026,Whirlpool Corporation from 1957

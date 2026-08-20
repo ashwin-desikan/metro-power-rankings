@@ -54703,7 +54703,7 @@
       "ra": 614,
       "run_diff": 52,
       "playoff": true,
-      "div_title": true,
+      "div_title": false,
       "best_rec_leag": false,
       "lcs_app": false,
       "ws_app": false,
@@ -54715,7 +54715,7 @@
       "tiebreaker": false,
       "division": "AL East",
       "main_div": "AL",
-      "place": "1"
+      "place": "3"
     },
     {
       "year": 2023,

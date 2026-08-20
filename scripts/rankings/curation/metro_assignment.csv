@@ -1,5 +1,5 @@
 city,state,eras,metro,how,companies
-New York,NY,74,New York,municipality + state,"AMAX; AMF; AT&T Technologies; American Standard; Anaconda; Asarco, Inc."
+New York,NY,75,New York,municipality + state,"AMAX; AMF; AT&T Technologies; American Standard; Anaconda; Asarco, Inc."
 Chicago,IL,16,Chicago,municipality + state,Amoco Corporation; Armour; Bank One Corporation; Beatrice; Crane; Esmark
 Stamford,CT,10,New York,municipality + state,Continental Group; Crane; GTE Corporation; Kennecott; Singer; Tosco Corporation
 Houston,TX,10,Houston,municipality + state,Cooper Industries; Gulf & Western Industries; NL Industries; Tenneco Automotive Inc.; The Coastal Corporation; compaq computer
@@ -10,9 +10,9 @@ Detroit,MI,5,Detroit,municipality + state,American Motors; Bendix; Hygrade Food 
 Philadelphia,PA,5,Philadelphia,municipality + state,Atlantic Richfield Company; Scott Paper; bell atlantic; cigna; philco
 San Francisco,CA,5,San Francisco-San Jose,municipality + state,ChevronTexaco Corporation; Foremost Dairies; Tidewater Oil; bankamerica; crown zellerbach
 Cleveland,OH,5,Cleveland,municipality + state,BP America; Maxus Energy; White Motor; ltv; republic steel
+Dallas,TX,5,Dallas,municipality + state,Maxus Energy; Union Pacific; dresser industries; ltv
 Greenwich,CT,4,New York,municipality + state,AMAX; Avco; Tenneco Automotive Inc.; american can
 Atlanta,GA,4,Atlanta,municipality + state,Georgia-Pacific Corporation; Nabisco Group Holdings Corp.; bellsouth; coca cola enterprises
-Dallas,TX,4,Dallas,municipality + state,Maxus Energy; dresser industries; ltv
 White Plains,NY,3,New York,municipality + state,AMF; General Foods; itt industries
 Boston,MA,3,Boston,municipality + state,Chiquita Brands Intl.; FleetBoston Financial Corporation; gillette
 Troy,MI,3,Detroit,municipality + state,Delphi Automotive Systems Corporation; Kmart Corporation; Kmart Holding Corporation
@@ -24,7 +24,9 @@ Hartford,CT,2,Hartford,municipality + state,aetna life and casualty; itt hartfor
 Southfield,MI,2,Detroit,municipality + state,American Motors; Bendix
 Columbus,OH,2,Columbus,municipality + state,"Bank One Corporation; Borden Chemical, Inc."
 Louisville,KY,2,Louisville,municipality + state,BATUS; reynolds metals
+Bethlehem,PA,2,Allentown,municipality + state,Bethlehem Steel Corporation; Union Pacific
 Tulsa,OK,2,Tulsa,municipality + state,Citgo Petroleum; Sunray DX Oil
+Omaha,NE,2,Omaha-Lincoln,municipality + state,Cudahy; Union Pacific
 Phoenix,AZ,2,Phoenix,municipality + state,Cudahy; greyhound
 Harrison,NY,2,New York,municipality + state,"CVS; Texaco, Inc."
 Santa Monica,CA,2,Los Angeles,municipality + state,Tosco Corporation; douglas aircraft
@@ -51,7 +53,6 @@ Parsippany,NJ,1,New York,municipality + state,BASF
 Mount Olive,NJ,1,New York,municipality + state,BASF
 Orange,CA,1,Los Angeles,municipality + state,Bergen Brunswig Corporation
 Englewood Cliffs,NJ,1,New York,municipality + state,Bestfoods
-Bethlehem,PA,1,Allentown,municipality + state,Bethlehem Steel Corporation
 Greensboro,NC,1,Greensboro-Winston Salem,municipality + state,burlington industries equity
 Camden,NJ,1,Philadelphia,municipality + state,campbell soup
 Hamilton,OH,1,Cincinnati,municipality + state,champion international
@@ -64,7 +65,6 @@ Corpus Christi,TX,1,Corpus Christi,municipality + state,The Coastal Corporation
 Nashville,TN,1,Nashville,municipality + state,columbia hca healthcare
 Bloomington,MN,1,Minneapolis,municipality + state,control data
 Mount Vernon,OH,1,Columbus,municipality + state,Cooper Industries
-Omaha,NE,1,Omaha-Lincoln,municipality + state,Cudahy
 Worcester,MA,1,Boston,municipality + state,CVS
 Maynard,MA,1,Boston,municipality + state,digital equipment
 Memphis,TN,1,Memphis,municipality + state,fdx
@@ -91,7 +91,7 @@ Battle Creek,MI,1,Kalamazoo,municipality + state,Kellogg
 Glenview,IL,1,Chicago,municipality + state,Kraft
 Beverly Hills,CA,1,Los Angeles,municipality + state,litton industries
 Baltimore,MD,1,Washington-Baltimore,municipality + state,Martin Marietta
-Bethesda,MD,1,Wheeling,"municipality only, unambiguous",Martin Marietta
+Bethesda,MD,1,Washington-Baltimore,municipality + state,Martin Marietta
 New Orleans,LA,1,New Orleans,municipality + state,McDermott
 Ashburn,VA,1,Washington-Baltimore,municipality + state,mci
 Englewood,CO,1,Denver,municipality + state,"MediaOne Group, Inc."

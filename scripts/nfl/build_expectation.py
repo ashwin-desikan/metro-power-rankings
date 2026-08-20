@@ -228,6 +228,19 @@ def metro_slugs():
     return {r["name"]: r["slug"] for r in rows if r.get("name") and r.get("slug")}
 
 
+# Era metros that are not metros.json names, RULED by Ashwin 2026-08-20: the era
+# town LINKS to the metro that contains it per the MetroAreas.xlsx Municipality
+# sheet (Marion OH, Muncie IN, Moline IL), while the DISPLAY keeps the era name.
+# The four merged-team names (Chicago/Pittsburgh, Phila-Pit, Cincinnati/St.Louis,
+# San Antonio/Baton Rouge) are deliberately absent: two metros cannot share one
+# link, so they stay unlinked by design. Do not re-raise.
+ERA_METRO_SLUG_ALIAS = {
+    "Marion": "Columbus",
+    "Muncie": "Indianapolis",
+    "Moline": "Davenport",
+}
+
+
 def orient(rows):
     """Return (home_row, away_row, neutral). 'vs' is home, 'at' is away."""
     a, b = rows
@@ -433,7 +446,7 @@ def main():
             unmatched_era.append((season, key))
         era_name = (ref or {}).get("era_name") or ti.get("display") or key
         era_metro = (ref or {}).get("era_metro") or ti.get("metro")
-        slug = mslug.get(era_metro) if era_metro else None
+        slug = mslug.get(ERA_METRO_SLUG_ALIAS.get(era_metro, era_metro)) if era_metro else None
         if era_metro and not slug:
             unslugged.add(era_metro)
         row = {

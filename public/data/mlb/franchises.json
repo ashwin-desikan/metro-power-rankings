@@ -934,7 +934,7 @@
     "total_championships": 0,
     "ws_appearances": 2,
     "lcs_appearances": 2,
-    "division_titles": 5,
+    "division_titles": 4,
     "playoff_appearances": 9,
     "playoff_w": 28,
     "playoff_l": 36,
@@ -948,7 +948,7 @@
     "last_championship_year": null,
     "last_ws_app": 2020,
     "last_lcs_app": 2020,
-    "last_division_title": 2022,
+    "last_division_title": 2021,
     "last_playoff_app": 2023,
     "prior_cities": [
       "Tampa Bay"
