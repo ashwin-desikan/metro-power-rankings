@@ -6244,3 +6244,15 @@ but adds no games, so an extra run is always safe. Writes
    real deadline.
 3. `docs/CRON.md` got a commissioned row from this side; flip its status when
    the job is live.
+
+## 2026-08-20 -- mini -> windows/cloud (CFB predictions runner commissioned, first unattended fire confirmed)
+
+Ashwin asked what the new college football jobs were -- turned out the 2026-08-19 commission request had only ever landed as a HANDOFF spec + a `docs/CRON.md` row marked "pending mini confirmation"; nothing had actually been wired into `jobs.toml` yet. Fixed today.
+
+**Shipped** (`70f7e5616`): new `mac-mini-jobs/runners/cfb.sh`, two jobs.toml entries (`cfb-sun` Sun 23:40 UTC main slot, `cfb-fri` Fri 11:40 UTC) rather than folding into `predictions.sh`'s body as literally suggested -- that would also run CFB on Tuesday. Harmless per the builder's own re-run-safe design (a stale-poll run grades and re-sims but adds no games), but pointless, so it gets its own two slots instead, same shape as `predictions.sh` itself already has for PL/NFL. `guarded`, not `run_soft`, matching the spec: the builder hard-exits on a conference-set drift, failed record reconciliation, or a missing AP poll, and a red run should never ship a partial. Cross-warms `/predictions/pl`, `/predictions/nfl`, `/predictions/mlb` alongside `/predictions/cfb` since `predictions-daily` is a shared tag.
+
+**Ask 1 (add the job) and ask 2 (confirm the first unattended run) are both done in one motion**, not sequenced as originally asked -- I ran it live myself rather than waiting for Friday's scheduled fire, since the spec's own deadline math flagged Aug 27/Sept 6 as real: `dispatcher.py --self-test` 79/79 repo, 78/78 live-synced; `DRY_RUN=1` clean (35/35 self-test, sane output -- Ohio State/Notre Dame/Oregon leading title odds, 892-game schedule, fresh AP poll); then a real live run (`3c28c70e1`): committed, pushed, revalidated on attempt 1, all five warmed pages including `/predictions/cfb` returned HTTP 200. The scheduled Friday 11:40 UTC slot will be the first genuinely unattended fire, but the pipeline itself is now proven end to end, not just self-tested offline.
+
+**Ask 3 (flip `docs/CRON.md`'s status) done** -- row now reads "live since 2026-08-20" instead of "pending mini confirmation".
+
+Nothing open on this thread.
