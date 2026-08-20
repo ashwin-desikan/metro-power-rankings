@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T11:02:50.514582+00:00",
+  "generated_at": "2026-08-20T11:12:54.101756+00:00",
   "jobs": [
     {
       "id": "mlb-sim",
@@ -202,6 +202,26 @@
       }
     },
     {
+      "id": "cfb-fri",
+      "label": "CFB predictions (freeze late odds, grade midweek)",
+      "schedule_text": "Fri at 11:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "11:40"
+      ],
+      "weekdays": [
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-21T11:40:00+00:00",
+      "last_run": {
+        "date": "2026-08-14",
+        "status": "missed",
+        "slot": "2026-08-14T11:40:00+00:00"
+      }
+    },
+    {
       "id": "mktcap-refresh",
       "label": "Company market caps",
       "schedule_text": "Sat at 09:00 UTC",
@@ -239,6 +259,26 @@
         "date": "2026-08-16",
         "status": "ok",
         "slot": "2026-08-16T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "cfb-sun",
+      "label": "CFB predictions (grade the week, publish AP-25 slate)",
+      "schedule_text": "Sun at 23:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "23:40"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-23T23:40:00+00:00",
+      "last_run": {
+        "date": "2026-08-16",
+        "status": "missed",
+        "slot": "2026-08-16T23:40:00+00:00"
       }
     },
     {
