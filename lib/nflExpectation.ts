@@ -177,3 +177,11 @@ export async function getNflExpectationSeason(season: number): Promise<SeasonFil
     Boolean(remote?.games?.length),
   );
 }
+
+/** All 2,415 team-seasons (~500 KB). Used by the per-season view; the index
+ *  boards never need it, so it stays out of the main page's read. */
+export async function getNflExpectationTeams(): Promise<{ rows: TeamSeasonRow[] } | null> {
+  return load<{ rows: TeamSeasonRow[] }>("nfl/expectation/teams.json", (remote) =>
+    Boolean(remote?.rows?.length),
+  );
+}

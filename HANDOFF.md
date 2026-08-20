@@ -6256,3 +6256,88 @@ Ashwin asked what the new college football jobs were -- turned out the 2026-08-1
 **Ask 3 (flip `docs/CRON.md`'s status) done** -- row now reads "live since 2026-08-20" instead of "pending mini confirmation".
 
 Nothing open on this thread.
+
+## 2026-08-20 (cloud, evening) — the day's two-session batch ships
+
+**From:** cloud session · **To:** whoever picks this up. Pushed as two commits:
+data/scripts `[vercel skip]` underneath, the build-relevant lib/app commit at
+HEAD — one Vercel build. Gates on the exact tree: non-incremental tsc 0,
+check:client-imports, check:table-scroll, check:public-data, check:slug-drift,
+vitest 85/85, rankings selftest 34/34, MLB builder self-test 8/8. The local
+`next build` was skipped (dev server held :3000 all day; 2026-08-01 precedent —
+the Vercel build is the final proof).
+
+### Shipped
+
+- **Era names authored**: 58 sourced rows into `era_names.csv`; undated
+  headline-name rows 714 (30.7%) → 185 (7.9%). Defective target/albertsons/
+  mobil rows replaced. Both rankings assigners now REFUSE nationally-unique
+  municipality matches that contradict the row's state (the Lucent/Louisville
+  class — the guard surfaced 8 more, fixed via curated aliases); four sourced
+  Union Pacific HQ spans end the Omaha-carried-back-to-1980 error.
+- **NFL expectation**: every season 1920-2025 has `/teams/nfl/expectation/
+  [season]` (game log, five shocks, per-team wins-vs-expectation); the market
+  table runs live to this weekend; metro pages carry a century line; era
+  metros ruled and linked (Marion→Columbus, Muncie→Indianapolis,
+  Moline→Davenport; merged names unlinked by design).
+- **Picks**: a reader's Brier now lands on the expectation axis; MLB joins
+  /play/picks with series + daily modes (tab hidden until the October ledger
+  fills); the public leaderboard had silently dropped CFB points — fixed.
+  Supabase `picks.mode` CHECK now allows 'series' (applied via execute_sql;
+  NO migration-history row exists — constraint verified live).
+- **MLB postseason builder**: `scripts/predictions/build_mlb_postseason.py`,
+  backtested on the real 2025 bracket — 47 games, 11 series, every winner
+  correct, Brier .246. Empty-but-valid 2026 ledger emitted. 🔴 ESPN trap for
+  any future script: the MLB scoreboard date-RANGE query caps at exactly 100
+  events AND ignores `seasontype=` — chunk by fortnight and filter
+  `event.season.type == 3` (same class as the CFB `limit=` trap).
+- **Time Machine**: /business/rankings registered (Money, 1955-) with a real
+  `?year=` deep link; "Also in {year}" strip is a random draw from twenty
+  countries' leaders + the F1 champion; the Biggest Company preview card was
+  built then REMOVED at Ashwin's request (US-only coverage) — do not re-add.
+  Olympic top-medalist reigns capped to their Games year (EVENT_YEAR_ONLY).
+- **Rays phantom 2022 div title**: three bad cells in ONE row of the OneDrive
+  `MLB.xlsx` master (row 129 + Totals caches patched), edited in place with
+  backup; 30-team audit: zero division-years with two champions.
+- **Banter**: 17 scenarios (5 new: Buenos Aires '86, Paris '98, Johannesburg
+  '95, Rome '82, Tokyo '64), grouped by country (newest-first), "today"
+  retired, and the desktop picker is now a country chip strip — all countries
+  visible, one country's scenes expand at a time, engine in the first
+  viewport. Noindex key-gated beta, so no release-notes bullet (precedent).
+- **Hub links**: 🔮 Predictions linked from the NFL, CFB and MLB hubs and
+  FootballHubNav. cfb-live gained its five CANONICAL_OVERRIDE entries (the
+  08-19 open item); dead raw-number f1.ts helpers removed.
+
+### Closes prior Open items (from the 2026-08-19/20 entries above)
+
+Items now DONE: the seven unlinked era metros (ruled), picks Brier on the
+axis, metro rollup line + per-season view, the cfb-live override sweep, and
+the three stray txt files (moved to gitignored `Personal Layer (Private)/`,
+one carries a personal email — deliberately never committed).
+
+### Open (the single current list — supersedes the lists above)
+
+1. **PL Elo over 99,290 top-flight matches 1888-2023** — the expectation tail.
+2. **Commission the MLB October cadence ~late Sept** (mini vs Actions
+   undecided): daily `build_mlb_postseason.py` runs during the postseason.
+   Builder is proven; the empty 2026 ledger keeps the picks tab hidden until
+   real series exist.
+3. Rulings queue for Ashwin (no research needed, just verdicts): citigroup
+   1995-1998; the USC-1940 CFB ledger row; the two football_lookup probable
+   slips (San Martín de San Juan → Mendoza, Estudiantes de Mérida → Valera);
+   Batesville IN containment.
+4. Parked awaiting an explicit go: Heartbreak calibration pass; historical
+   market-cap Tier 1 full sweep; HQ backfill sweep.
+5. ⚠️ For any session running an OneDrive-driven MetroAreas rebuild: the
+   OneDrive `MetroAreas.xlsx` master is 17 cells behind the repo copy
+   (hash-verified); a sync will revert them. `MLB.xlsx`, `NFL_all.xlsx` and
+   `Champions_History.xlsx` were edited in their OneDrive masters directly —
+   nothing to reconcile there.
+6. Settled by ruling — do not re-open or re-propose: the five blank district
+   rows (Hethel, Thetford, Hingham, Bourne, Vichy, Romorantin); guangzhou
+   stays one metro; the Chicago Stars/Brescia recalc is done; the "today"
+   banter scenario stays retired; the Biggest Company preview card stays out.
+
+Dates that matter: PL matchweek 1 picks lock **Aug 21**; CFB Week 0 **Aug 27**
+(runner live on the mini); owners watchlist Aug 27 / Sep 1 / Nov 1; MLB
+playoffs early Oct (infrastructure done, cadence uncommissioned).

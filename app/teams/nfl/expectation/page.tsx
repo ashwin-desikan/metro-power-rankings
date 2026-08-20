@@ -4,6 +4,8 @@ import type { CSSProperties } from "react";
 import HubNav from "@/app/teams/HubNav";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { getNflExpectation, type TeamSeasonRow } from "@/lib/nflExpectation";
+import { getNflPredictions } from "@/lib/nflSim";
+import { ledgerBrier, type LedgerEntry } from "@/lib/picksGame";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 const PAGE_PATH = "/teams/nfl/expectation";
@@ -113,6 +115,14 @@ function SeasonTable({ rows, caption }: { rows: TeamSeasonRow[]; caption: string
 
 export default async function NflExpectationPage() {
   const data = await getNflExpectation();
+  // The live season, straight from the graded predictions ledger, so the
+  // century's axis runs all the way to this weekend. Same measure, same
+  // vocabulary; a reader's own picks land on it at /play/picks.
+  const live = await getNflPredictions().catch(() => null);
+  const liveEntries = (live?.ledger ?? []) as unknown as LedgerEntry[];
+  const liveSeason = live?.meta?.season ?? null;
+  const liveModel = ledgerBrier(liveEntries, "model");
+  const liveMarket = ledgerBrier(liveEntries, "market");
 
   if (!data) {
     return (
@@ -354,7 +364,11 @@ export default async function NflExpectationPage() {
                   s.market_brier !== null && (s.model_brier ?? 1) < s.market_brier;
                 return (
                   <tr key={s.season} className="border-t" style={{ borderColor: "var(--border)" }}>
-                    <td className="py-1.5 px-3 tabular-nums" style={mono}>{s.season}</td>
+                    <td className="py-1.5 px-3 tabular-nums" style={mono}>
+                      <Link href={`${PAGE_PATH}/${s.season}`} className="hover:underline text-[var(--accent)]">
+                        {s.season}
+                      </Link>
+                    </td>
                     <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>
                       {s.model_brier?.toFixed(4)}
                     </td>
@@ -380,9 +394,53 @@ export default async function NflExpectationPage() {
                   </tr>
                 );
               })}
+              {liveSeason != null && (
+                <tr className="border-t" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-1.5 px-3 tabular-nums" style={mono}>
+                    {liveSeason} <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">live</span>
+                  </td>
+                  <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>
+                    {liveModel.brier != null ? liveModel.brier.toFixed(4) : <span className="text-[var(--text-dim)]">&mdash;</span>}
+                  </td>
+                  <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>
+                    {liveMarket.brier != null ? liveMarket.brier.toFixed(4) : <span className="text-[var(--text-dim)]">&mdash;</span>}
+                  </td>
+                  <td
+                    className="py-1.5 px-3"
+                    style={{
+                      color:
+                        liveModel.brier == null || liveMarket.brier == null
+                          ? "var(--text-dim)"
+                          : liveModel.brier < liveMarket.brier
+                            ? UP
+                            : "var(--text-muted)",
+                    }}
+                  >
+                    {liveModel.brier == null
+                      ? <span className="text-[11px]">season not graded yet</span>
+                      : liveMarket.brier == null
+                        ? <span className="text-[11px]">no market grades yet</span>
+                        : liveModel.brier < liveMarket.brier
+                          ? "Model"
+                          : "Market"}
+                  </td>
+                  <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={mono}>
+                    {liveModel.games}
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </TableScroll>
+        <p className="text-[var(--text-muted)] text-sm mt-3">
+          The last row is this season, updating as the predictions ledger grades — and it is the row
+          you can join. Make your calls in{" "}
+          <Link href="/play/picks" className="text-[var(--accent)] hover:underline">
+            Citizen of Nowhere Picks
+          </Link>{" "}
+          and your own Brier lands on this exact axis, next to the model, the market, and every
+          season back to {firstMarket || meta.seasons[0]}.
+        </p>
       </section>
 
       <section className="rounded-xl border p-5 text-[13.5px] leading-relaxed" style={card}>

@@ -26,7 +26,7 @@ const BORD = { borderColor: "var(--border)" } as const;
 const PATH = "/time-machine";
 const TITLE = "The Time Machine";
 const DESC =
-  "Pick a year and see the world as it stood: who held every territory, who ruled, who was champion, what was on at the cinema. Sixteen boards, one year at a time.";
+  "Pick a year and see the world as it stood: who held every territory, who ruled, who was champion, what was on at the cinema. Seventeen boards, one year at a time.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -213,6 +213,36 @@ export default async function TimeMachineHub({
             </div>
           ))}
         </div>
+
+        {/* One-line facts from the boards that do not get a full card. An
+            extra with nothing for this year simply is not rendered — a strip
+            of "nothing here" chips would drown the ones that speak. */}
+        {cross.extras.length > 0 && (
+          <div className="mt-4 flex items-center gap-x-2 gap-y-2 flex-wrap">
+            <span className="text-[10px] uppercase tracking-widest" style={{ ...MONO, color: "var(--text-dim)" }}>
+              Also in {year}
+            </span>
+            {cross.extras.map((e) => {
+              const flag = e.flag ? flagCdnUrl(e.flag, "40x30") : null;
+              return (
+                <Link
+                  key={e.key}
+                  href={e.href}
+                  className="inline-flex items-center gap-1.5 text-[12px] px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--text)]"
+                  style={{ ...CARD, color: "var(--text-muted)" }}
+                >
+                  {flag ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={flag} alt="" aria-hidden width={18} height={13} className="rounded-sm object-contain flex-shrink-0" />
+                  ) : e.emoji ? (
+                    <span aria-hidden>{e.emoji}</span>
+                  ) : null}
+                  {e.text}
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </section>
 
       {/* ---- what each board lets you ask for ---- */}
@@ -268,11 +298,13 @@ export default async function TimeMachineHub({
       <section className="rounded-2xl border p-5" style={BORD} id="how-it-works">
         <h2 className="text-lg font-bold mb-2">Where these come from</h2>
         <p className="text-[13px] text-[var(--text-muted)] leading-relaxed max-w-3xl">
-          The four panels are read live from the same files their own boards read, so this page cannot
-          disagree with what it points at. The boards start in different centuries — power in 1500,
-          population in 1800, champions in 1860, film in 1920 — and a panel outside its range says so
-          rather than going blank. Four boards open directly on your chosen year; the rest open at their
-          own default until they learn to read a year from the address bar.
+          The panels and the &ldquo;also in&rdquo; strip are read live from the same files their own
+          boards read, so this page cannot disagree with what it points at — and the strip draws a
+          fresh handful from a wide pool each visit, so the same year tells a different story twice.
+          The boards start in different centuries — power in 1500, population in 1800, champions in
+          1860, film in 1920 — and a panel outside its range says so rather than going blank. Five
+          boards open directly on your chosen year; the rest open at their own default until they
+          learn to read a year from the address bar.
         </p>
       </section>
     </main>

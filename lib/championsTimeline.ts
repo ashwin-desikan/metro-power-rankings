@@ -202,6 +202,24 @@ const DORMANT: Record<string, { from: string; why: string }[]> = {
   ],
 };
 
+// Titles that are a fact about ONE EDITION of an event, not a crown anyone
+// holds. "Top Medalist" is an aggregate of a single Games — nobody defends it,
+// and carrying it forward reads as a claim that the Olympics happened in the
+// year being viewed ("United States · Summer Olympics Top Medalist" showing in
+// 1997 — Ashwin, 2026-08-20: don't display it unless it actually happened that
+// year). The reign is capped at the end of the event's own calendar year.
+//
+// Deliberately NOT applied to quadrennial championships (the World Cup, the
+// Euros): those are titles a nation demonstrably HOLDS between editions —
+// "world champions" is what France were in 1997 — and the suspension rule
+// above (England kept the 1914 Five Nations through the war) depends on that
+// meaning. An aggregate table topper is a different kind of thing, which is
+// why this is a hand-kept list rather than a rule about gap length.
+const EVENT_YEAR_ONLY = new Set([
+  "Summer Olympics Top Medalist",
+  "Winter Olympics Top Medalist",
+]);
+
 let _cache: ChampionsTimeline | null = null;
 
 export function getChampionsTimeline(): ChampionsTimeline {
@@ -405,6 +423,12 @@ export function getChampionsTimeline(): ChampionsTimeline {
       // 2024) avoids handing its last champion a twenty-year reign.
       const cut = dormancies.find((x) => x.from > g.start && (to === null || x.from < to));
       if (cut) to = cut.from;
+      // An edition-only title expires with its own calendar year, whatever the
+      // next edition's date. See EVENT_YEAR_ONLY above.
+      if (EVENT_YEAR_ONLY.has(head.competition)) {
+        const cap = jan1After(g.end);
+        if (to === null || cap < to) to = cap;
+      }
       reigns.push({
         c,
         from: g.start,

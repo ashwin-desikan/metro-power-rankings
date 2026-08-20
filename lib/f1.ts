@@ -81,9 +81,12 @@ function loadData(): F1Data {
 export function getF1Meta(): F1Meta { return loadData().meta; }
 export function getF1Champions(): F1Champion[] { return loadData().champions; }
 export function getF1DriverTitles(): F1Title[] { return loadData().driver_titles; }
-export function getF1ConstructorTitles(): F1Title[] { return loadData().constructor_titles; }
 export function getF1AllTimeDriverWins(): F1DriverWin[] { return loadData().all_time_driver_wins; }
-export function getF1AllTimeConstructorWins(): F1ConstructorWin[] { return loadData().all_time_constructor_wins; }
+// NOTE: constructor_titles and all_time_constructor_wins still exist in data.json
+// but are the RAW-RECORD numbers (Team Lotus reads 45 wins, not the curated 79).
+// Their accessors (getF1ConstructorTitles / getF1AllTimeConstructorWins) were
+// removed 2026-08-20: constructor identity is curated in scripts/f1/lineages.py
+// and served via lib/f1Constructors -- use that, never the raw archive rollup.
 export function getF1Circuits(): F1Circuit[] { return loadData().circuits; }
 export function getF1HostMetros(): F1HostMetro[] { return loadData().host_metros; }
 export function getF1LatestSeasonRaces(): F1Race[] { return loadData().latest_season_races; }

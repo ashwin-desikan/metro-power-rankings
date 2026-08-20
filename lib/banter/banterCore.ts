@@ -18,6 +18,9 @@ export type Scenario = {
    *  today's stars and stripes rather than the 48-star version. Absent on
    *  "today", whose place is wherever the reader is. */
   flag?: string;
+  /** Present-day country name, for grouping on the scene picker. The picker
+   *  groups by country and orders by year descending (Ashwin, 2026-08-20). */
+  country?: string;
   date: string;      // YYYY-MM-DD; scenario id "today" is resolved at runtime
   dateLong: string;
   year: number;

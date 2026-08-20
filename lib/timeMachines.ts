@@ -270,6 +270,20 @@ export const TIME_MACHINES: TimeMachine[] = [
 
   // --- Money -------------------------------------------------------------
   {
+    key: "business-rankings",
+    emoji: "🏢",
+    name: "The Biggest Companies",
+    href: "/business/rankings",
+    domain: "Money",
+    picks: "a year",
+    grain: "year",
+    from: 1955,
+    to: null,
+    blurb:
+      "The largest companies of every year since 1955, as the list was published at the time — era-correct names, placed in the metro they were really run from.",
+    deepLink: (y) => `/business/rankings?year=${y}`,
+  },
+  {
     key: "markets",
     emoji: "📈",
     name: "Markets, all the way back",

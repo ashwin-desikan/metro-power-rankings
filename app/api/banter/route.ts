@@ -178,20 +178,37 @@ function sse(produce: (send: (o: unknown) => void) => Promise<void>): Response {
 }
 
 // ---------------------------------------------------------------- handlers
+// The scene list, grouped by country and ordered by year DESCENDING within a
+// group; the groups themselves are ordered by their newest scene, newest
+// first. Ashwin, 2026-08-20 — this replaces registry order, and the dynamic
+// "today" scene was retired the same day.
+function orderedScenarios(): Scenario[] {
+  const newest = new Map<string, number>();
+  for (const s of SCENARIOS) {
+    const c = s.country ?? "Elsewhere";
+    newest.set(c, Math.max(newest.get(c) ?? -Infinity, s.year));
+  }
+  return [...SCENARIOS].sort((a, b) => {
+    const ca = a.country ?? "Elsewhere", cb = b.country ?? "Elsewhere";
+    if (ca !== cb) {
+      return (newest.get(cb)! - newest.get(ca)!) || ca.localeCompare(cb);
+    }
+    return b.year - a.year;
+  });
+}
+
 export async function GET(): Promise<Response> {
   // scenario list for the beta page (no auth needed: labels only, no facts)
-  const now = new Date();
-  const list = [
-    { id: "today", label: "🌍 Your local · today" },
-    ...SCENARIOS.map((s) => ({ id: s.id, label: s.label })),
-  ];
+  const ordered = orderedScenarios();
+  const list = ordered.map((s) => ({ id: s.id, label: s.label }));
   // Explicit projection, not a spread: `facts` must never leave the server (the
   // comment above says "labels only, no facts"), and the same reasoning now
   // covers what IS sent. hook/deeperChips/epilogue are client-side presentation
   // -- the epilogue in particular is the out-of-world reveal, so it goes to the
   // browser but never into systemPrompt(). See the Scenario type in banterCore.
-  const detail = [resolveScenario("today", SCENARIOS, now)!, ...SCENARIOS].map((s) => ({
-    id: s.id, label: s.label, flag: s.flag ?? null, dateLong: s.dateLong, place: s.place,
+  const detail = ordered.map((s) => ({
+    id: s.id, label: s.label, flag: s.flag ?? null, country: s.country ?? null,
+    dateLong: s.dateLong, place: s.place,
     setting: s.setting, chips: s.chips ?? [], open: s.open,
     hook: s.hook ?? null,
     deeperChips: s.deeperChips ?? [],
@@ -245,7 +262,10 @@ export async function POST(req: Request): Promise<Response> {
 
   if (!underDailyBreaker()) return json(503, { error: "The bar's closed for today — back tomorrow." });
 
-  const s = resolveScenario(String(body.scenario ?? ""), SCENARIOS, new Date());
+  // "today" was retired from the scene list on 2026-08-20; a stale client
+  // posting it gets the same answer as any other unknown scene.
+  const wanted = String(body.scenario ?? "");
+  const s = wanted === "today" ? null : resolveScenario(wanted, SCENARIOS, new Date());
   if (!s) return json(400, { error: "unknown scenario" });
 
   const messages = sanitizeMessages(body.messages);

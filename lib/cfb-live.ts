@@ -34,6 +34,11 @@ const CANONICAL_OVERRIDE: Record<string, string> = {
   "Hawai'i": "Hawaii",
   "App State": "Appalachian State",
   "Middle Tennessee": "Middle Tennessee State",
+  "NC State": "North Carolina State",
+  "UConn": "Connecticut",
+  "Southern Miss": "Southern Mississippi",
+  "Louisiana": "LA-Lafayette",
+  "UL Monroe": "LA-Monroe",
   "San José State": "San Jose State",
 };
 

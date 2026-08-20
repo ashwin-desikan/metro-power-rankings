@@ -20,8 +20,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 type ScenarioMeta = {
   id: string; label: string; flag: string | null; dateLong: string; place: string;
+  /** Present-day country, for the grouped picker. Server pre-sorts the list
+   *  (countries by their newest scene, scenes by year descending), so the
+   *  client only draws headers where the country changes. */
+  country?: string | null;
   setting: string; chips: string[]; open: string;
-  /** Why this moment matters. Null on "today", which has no stake to state. */
+  /** Why this moment matters. */
   hook?: string | null;
   /** Second-tier prompts, shown once the conversation has started. */
   deeperChips?: string[];
@@ -49,6 +53,19 @@ function Flag({ code }: { code: string | null }) {
       style={{ objectFit: "cover" }} loading="lazy" decoding="async"
     />
   );
+}
+/** Group the server-pre-sorted scene list into contiguous {country, items}
+ *  runs. The API sorts countries by their newest scene and scenes by year
+ *  descending, so a single pass suffices — no re-sorting client-side. */
+function groupScenes(list: ScenarioMeta[]): { country: string; items: ScenarioMeta[] }[] {
+  const out: { country: string; items: ScenarioMeta[] }[] = [];
+  for (const s of list) {
+    const c = s.country ?? "Elsewhere";
+    const g = out[out.length - 1];
+    if (g && g.country === c) g.items.push(s);
+    else out.push({ country: c, items: [s] });
+  }
+  return out;
 }
 type Msg = {
   role: "user" | "assistant";
@@ -101,6 +118,12 @@ export default function BanterClient() {
   const [showEpilogue, setShowEpilogue] = useState(false);
   const [scenarios, setScenarios] = useState<ScenarioMeta[]>([]);
   const [loadingScenes, setLoadingScenes] = useState(true);
+  // Which country's scenes are expanded in the desktop picker, if any. The
+  // full wall of scene buttons pushed the conversation two screens below the
+  // fold, but a bare "change scene" link hid what there was to choose (both
+  // Ashwin, 2026-08-20) — so every country stays visible as a chip and only
+  // one country's scenes expand at a time. Picking a scene collapses it.
+  const [pickerOpen, setPickerOpen] = useState<string | null>(null);
   const [sc, setSc] = useState<ScenarioMeta | null>(null);
   // One thread per scenario. Switching scene used to wipe the conversation
   // with no warning; keeping them side by side means you can wander between
@@ -195,6 +218,7 @@ export default function BanterClient() {
     stopRecording();
     setSc(s);
     setErr("");
+    setPickerOpen(null);
     setShowEpilogue(false);
     setThreads((t) => (t[s.id]?.length ? t : { ...t, [s.id]: [{ role: "assistant", content: s.open }] }));
   }
@@ -466,43 +490,89 @@ export default function BanterClient() {
           className="mt-1 w-full min-w-0 rounded-lg border border-[var(--border)] bg-[var(--bg-card)]
                      px-3 py-2.5 text-sm focus:border-[var(--accent)] focus:outline-none"
         >
-          {scenarios.map((s) => (
-            <option key={s.id} value={s.id}>{s.label}</option>
+          {groupScenes(scenarios).map((g) => (
+            <optgroup key={g.country} label={g.country}>
+              {g.items.map((s) => (
+                <option key={s.id} value={s.id}>{s.label}</option>
+              ))}
+            </optgroup>
           ))}
         </select>
       </div>
-      <div className="mt-5 hidden sm:flex flex-wrap gap-2">
-        {scenarios.map((s) => (
-          <button
-            key={s.id}
-            onClick={() => pick(s)}
-            aria-current={sc?.id === s.id ? "true" : undefined}
-            title={s.hook ?? undefined}
-            className={`flex max-w-[22rem] items-start gap-2 rounded-lg border px-3 py-2 text-left text-sm transition-colors cursor-pointer ${
-              sc?.id === s.id
-                ? "border-[var(--accent)] text-[var(--accent)] bg-[var(--bg-card)]"
-                : "border-[var(--border)] bg-[var(--bg-card)] hover:bg-[var(--bg-card-hover)]"
-            }`}
-          >
-            <span className="mt-0.5 shrink-0"><Flag code={s.flag} /></span>
-            <span className="min-w-0">
-              <span className="flex items-center gap-1.5">
-                <span>{s.label}</span>
-                {(threads[s.id]?.length ?? 0) > 1 && (
-                  <span className="text-[var(--text-dim)]" title="conversation in progress">·</span>
+      <div className="mt-5 hidden sm:block">
+        {/* Every country stays visible as a one-row strip of chips (Ashwin:
+            hiding the list behind "change scene" hid what there was to
+            choose). Only the tapped country's scenes expand below it, so the
+            engine stays inside the first viewport either way. */}
+        <div className="flex flex-wrap items-center gap-1.5">
+          <span className="mr-0.5 text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
+            Scene
+          </span>
+          {groupScenes(scenarios).map((g) => {
+            const active = g.items.some((s) => s.id === sc?.id);
+            const open = pickerOpen === g.country;
+            return (
+              <button
+                key={g.country}
+                onClick={() => setPickerOpen(open ? null : g.country)}
+                aria-expanded={open}
+                title={g.items.map((s) => s.label).join(" · ")}
+                className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs transition-colors cursor-pointer ${
+                  open
+                    ? "border-[var(--accent)] text-[var(--accent)] bg-[var(--bg-card)]"
+                    : active
+                      ? "border-[var(--accent)] bg-[var(--bg-card)]"
+                      : "border-[var(--border)] bg-[var(--bg-card)] hover:bg-[var(--bg-card-hover)]"
+                }`}
+              >
+                <Flag code={g.items[0]?.flag ?? null} />
+                <span>{g.country}</span>
+                {g.items.length > 1 && (
+                  <span className="text-[var(--text-dim)]" style={MONO}>{g.items.length}</span>
                 )}
-              </span>
-              {/* The stake, on the picker itself. This is the whole of the
-                  original complaint: the label says where and when, never why,
-                  so half the scenes gave a reader nothing to open with. */}
-              {s.hook && (
-                <span className="mt-0.5 block text-xs font-normal leading-snug text-[var(--text-dim)]">
-                  {s.hook}
-                </span>
-              )}
-            </span>
-          </button>
-        ))}
+              </button>
+            );
+          })}
+        </div>
+        {groupScenes(scenarios)
+          .filter((g) => g.country === pickerOpen)
+          .map((g) => (
+            <div key={g.country} className="mt-2 rounded-xl border border-[var(--border)] p-3">
+              <div className="grid gap-2 lg:grid-cols-2">
+                {g.items.map((s) => (
+                    <button
+                      key={s.id}
+                      onClick={() => pick(s)}
+                      aria-current={sc?.id === s.id ? "true" : undefined}
+                      title={s.hook ?? undefined}
+                      className={`flex items-start gap-2 rounded-lg border px-3 py-2 text-left text-sm transition-colors cursor-pointer ${
+                        sc?.id === s.id
+                          ? "border-[var(--accent)] text-[var(--accent)] bg-[var(--bg-card)]"
+                          : "border-[var(--border)] bg-[var(--bg-card)] hover:bg-[var(--bg-card-hover)]"
+                      }`}
+                    >
+                      <span className="mt-0.5 shrink-0"><Flag code={s.flag} /></span>
+                      <span className="min-w-0">
+                        <span className="flex items-center gap-1.5">
+                          <span>{s.label}</span>
+                          {(threads[s.id]?.length ?? 0) > 1 && (
+                            <span className="text-[var(--text-dim)]" title="conversation in progress">·</span>
+                          )}
+                        </span>
+                        {/* The stake, on the picker itself. This is the whole of the
+                            original complaint: the label says where and when, never why,
+                            so half the scenes gave a reader nothing to open with. */}
+                        {s.hook && (
+                          <span className="mt-0.5 block text-xs font-normal leading-snug text-[var(--text-dim)]">
+                            {s.hook}
+                          </span>
+                        )}
+                      </span>
+                    </button>
+                ))}
+              </div>
+            </div>
+          ))}
       </div>
       {loadingScenes && <p className="mt-5 text-sm text-[var(--text-dim)]">Opening up…</p>}
 

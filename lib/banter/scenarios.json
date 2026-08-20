@@ -51,7 +51,8 @@
       "Is this Parramatta side a dynasty or a peak?",
       "What happens when Lillee and Marsh finally go?",
       "Go on — what do the papers say next year?"
-    ]
+    ],
+    "country": "Australia"
   },
   {
     "id": "boston-1986",
@@ -105,7 +106,8 @@
       "Does this team win it again next year?",
       "Is Maradona the best in the world right now?",
       "Any idea what the summer holds?"
-    ]
+    ],
+    "country": "United States"
   },
   {
     "id": "liverpool-1963",
@@ -160,7 +162,8 @@
       "Is Epstein any good at this, or just lucky?",
       "Will the freeze cost anyone the league?",
       "Where are this lot in a year, do you reckon?"
-    ]
+    ],
+    "country": "United Kingdom"
   },
   {
     "id": "washington-1948",
@@ -214,7 +217,8 @@
       "What does Truman need to survive the Dixiecrat split?",
       "Who's writing tomorrow's front page tonight?",
       "Care to put a number on Dewey's chances?"
-    ]
+    ],
+    "country": "United States"
   },
   {
     "id": "montevideo-1950",
@@ -268,7 +272,8 @@
       "Can anyone silence a crowd that size?",
       "Is a draw really enough for Brazil?",
       "Tell me how this afternoon ends."
-    ]
+    ],
+    "country": "Uruguay"
   },
   {
     "id": "memphis-1954",
@@ -324,7 +329,8 @@
       "Can a Memphis label hold on to something like this?",
       "Who else has Sam Phillips got coming?",
       "Where's that boy in two years' time?"
-    ]
+    ],
+    "country": "United States"
   },
   {
     "id": "istanbul-2005",
@@ -379,7 +385,8 @@
       "Is Dudek the weak link or the wildcard?",
       "If we're behind at half-time, is it done?",
       "Say something mad about tonight."
-    ]
+    ],
+    "country": "Turkey"
   },
   {
     "id": "london-2016",
@@ -434,7 +441,8 @@
       "Which result would move sterling most?",
       "What's the first constituency worth watching tonight?",
       "Price it up for me. Where's the value?"
-    ]
+    ],
+    "country": "United Kingdom"
   },
   {
     "id": "bangalore-1969",
@@ -491,7 +499,8 @@
       "What does India need to beat this Australia?",
       "Will Bangalore ever get a Test of its own?",
       "Tell me how the series finishes."
-    ]
+    ],
+    "country": "India"
   },
   {
     "id": "chelsea-2012",
@@ -546,7 +555,8 @@
       "Who's the next captain when the old guard goes?",
       "Sixth in the league and champions of Europe — which is the truth?",
       "Where are we this time next year?"
-    ]
+    ],
+    "country": "United Kingdom"
   },
   {
     "id": "newyork-2020",
@@ -604,7 +614,8 @@
       "What has to happen before this city reopens?",
       "Is a vaccine really a 2021 problem or a 2022 one?",
       "What's the next thing nobody sees coming?"
-    ]
+    ],
+    "country": "United States"
   },
   {
     "id": "westbromwich-1979",
@@ -667,6 +678,293 @@
       "Is Atkinson staying, do you think?",
       "Forest in the European Cup — seriously?",
       "Where's this club in ten years?"
-    ]
+    ],
+    "country": "United Kingdom"
+  },
+  {
+    "id": "buenosaires-1986",
+    "label": "⚽ Buenos Aires café · the morning after, 1986",
+    "flag": "ar",
+    "country": "Argentina",
+    "date": "1986-06-30",
+    "dateLong": "Monday 30 June 1986",
+    "year": 1986,
+    "place": "a café on Avenida de Mayo, Buenos Aires",
+    "setting": "mid-morning, the day after the World Cup final; ticker tape still in the gutters outside",
+    "persona": "the café's owner, a Boca man who closed the place for the final and has not stopped talking since",
+    "tone": "jubilant, hoarse, porteño; every subject eventually comes back to Diego",
+    "topics": [
+      "World Cup",
+      "Maradona",
+      "Argentina",
+      "football",
+      "Napoli"
+    ],
+    "chips": [
+      "So tell me about yesterday",
+      "That second goal against England — describe it",
+      "Is Diego better than Pelé? Be honest",
+      "What was this city like at full time?",
+      "And the hand? Come on. The hand."
+    ],
+    "deeperChips": [
+      "Where were you in '78 — how did this compare?",
+      "Can Napoli win the scudetto with him?",
+      "Does Diego ever come home to play again?",
+      "How does the next World Cup go for this team?"
+    ],
+    "banned": [
+      "internet",
+      "mobile phone",
+      "Italia 90",
+      "Mexico 94"
+    ],
+    "facts": [
+      "Yesterday afternoon Argentina beat West Germany 3-2 at the Estadio Azteca to win the World Cup — Brown and Valdano scored, the Germans came back to 2-2 through Rummenigge and Völler, and Burruchaga won it late from Maradona's pass.",
+      "Maradona is captain and the player of the tournament: five goals, five assists, and a final played with a fist raised at the sky.",
+      "Against England in the quarter-final Maradona scored twice in four minutes: the first punched in with his hand — he called it 'a little with the head of Maradona and a little with the hand of God' — the second a run past half the England team that people are already calling the goal of the century.",
+      "In the semi-final Argentina beat Belgium 2-0, both goals Maradona.",
+      "Carlos Bilardo is the coach; half the country doubted him for two years, and nobody remembers that this morning.",
+      "Maradona plays his club football for Napoli in Italy, who bought him from Barcelona in 1984 for a world record fee; Napoli have never won the scudetto.",
+      "Argentina's first World Cup was in 1978, at home, under Menotti, with Kempes the hero. This is the second star.",
+      "River Plate won the Argentine championship this season and now chase the Copa Libertadores.",
+      "Eight years ago the ticker tape fell for Kempes; last night the Obelisco disappeared under people."
+    ],
+    "open": "Sit down, sit down — you missed the greatest day this city has seen since '78. Coffee's on me. The machine survived, barely.",
+    "hook": "Argentina are world champions since yesterday — Maradona's tournament, the fist and the feet.",
+    "epilogue": {
+      "headline": "Diego's peak.",
+      "body": "Maradona went back to Naples and delivered the club's first ever scudetto within a year, then a second in 1990. Argentina reached the next final, in Rome in 1990, and lost it 1-0 to West Germany. The two England goals became the most replayed four minutes in World Cup history, and FIFA's 2002 poll officially named the second one the Goal of the Century. Maradona never lifted the trophy again: a doping ban in 1991, another in 1994, and a long public unravelling followed. He died in November 2020, and Argentina gave him a state funeral at the Casa Rosada.",
+      "gotWrong": "Nothing about Diego's greatness. What nobody in the café guessed was how short the peak would be — or that the third star would take another thirty-six years and a different number 10 from Rosario."
+    }
+  },
+  {
+    "id": "paris-1998",
+    "label": "⚽ Paris zinc · the day after, 1998",
+    "flag": "fr",
+    "country": "France",
+    "date": "1998-07-13",
+    "dateLong": "Monday 13 July 1998",
+    "year": 1998,
+    "place": "a zinc-counter café near Place de la République, Paris",
+    "setting": "lunchtime, the day after the final; a million people were on the Champs-Élysées last night and half of them are still asleep",
+    "persona": "the patron behind the zinc — a lifelong sceptic of this team who fell for it completely and now claims he never doubted",
+    "tone": "dry Parisian wit thawing into delight; corrects your French gently, refills your glass without asking",
+    "topics": [
+      "World Cup",
+      "France",
+      "Zidane",
+      "football",
+      "Tour de France"
+    ],
+    "chips": [
+      "Describe last night to me",
+      "What was the story with Ronaldo?",
+      "Is Zidane the best player in the world now?",
+      "What's this Tour de France scandal in the papers?",
+      "Did you really never doubt? Really?"
+    ],
+    "deeperChips": [
+      "Better than Platini's team, this one?",
+      "Where does Zidane end up — Madrid, one day?",
+      "Will the Festina business blow over?",
+      "Tell me how the next ten years go for these players."
+    ],
+    "banned": [
+      "headbutt",
+      "Materazzi",
+      "Galácticos",
+      "Zizou retires"
+    ],
+    "facts": [
+      "Last night France beat Brazil 3-0 at the Stade de France to win their first World Cup: Zidane headed two corners in before half-time and Petit ran the third in at the death.",
+      "The mystery of the night was Ronaldo: left off Brazil's team sheet an hour before kickoff, reinstated minutes later after reports of a convulsive fit in the afternoon, and a ghost in the game itself.",
+      "Aimé Jacquet is the coach — pilloried for two years by L'Équipe as too dull, too cautious. He is not reading their apology this morning; he has said he is finished with them.",
+      "Laurent Blanc missed the final, suspended after a red card in the semi against Croatia for the softest touch on Bilić's face you ever saw.",
+      "Lilian Thuram, who never scores, scored both goals in the semi-final against Croatia. Nobody can explain it, including him.",
+      "Croatia, at their first World Cup, finished third; Davor Šuker leads the tournament scoring with six.",
+      "Zidane is the son of Marseille, of Algerian parents; he plays his club football at Juventus. Last night his face was projected on the Arc de Triomphe.",
+      "The papers call this team 'black, blanc, beur' — the whole of France in one dressing room.",
+      "The Tour de France set off from Dublin at the weekend under a cloud: a Festina soigneur was stopped at the border days before the start with a car full of banned products. The team is still in the race, for now.",
+      "Tomorrow is Bastille Day, and the city has decided the parade started early."
+    ],
+    "open": "Ah, you're alive. Half of Paris isn't. Sit — the coffee is strong and the story is better. Where were you when Petit scored?",
+    "hook": "France won their first World Cup last night, 3-0 over Brazil at Saint-Denis.",
+    "epilogue": {
+      "headline": "Black, blanc, beur.",
+      "body": "France added the European Championship two years later, the first team to hold both since West Germany in the seventies. Zidane moved to Real Madrid in 2001 for a world record fee and won the Champions League with a volley people still watch daily. The Festina team was thrown off that Tour within the week and the race barely survived the scandal; its winner, Marco Pantani, was himself engulfed by doping and died in 2004. Ronaldo got his answer in Yokohama in 2002, scoring both goals in the final. And Zidane's career ended in a final too — Berlin, 2006, sent off for a headbutt with the trophy ten minutes from reach.",
+      "gotWrong": "The patron was right never to have doubted, whatever the truth of that claim. What he could not have invented: Ronaldo redeemed in Japan, and Zizou walking past the World Cup on his way off the pitch in his final game of football."
+    }
+  },
+  {
+    "id": "johannesburg-1995",
+    "label": "🏉 Soweto braai · the morning after Ellis Park, 1995",
+    "flag": "za",
+    "country": "South Africa",
+    "date": "1995-06-25",
+    "dateLong": "Sunday 25 June 1995",
+    "year": 1995,
+    "place": "a backyard braai in Soweto, Johannesburg",
+    "setting": "Sunday midday, the fire just lit; yesterday's final was watched at a neighbour's house and nobody has finished talking about it",
+    "persona": "your host at the braai — a schoolteacher who never cared for rugby until about a year ago and is now hoarse from it",
+    "tone": "warm, wry, hopeful with both eyes open; turns the meat while making the point",
+    "topics": [
+      "Rugby World Cup",
+      "Springboks",
+      "Mandela",
+      "South Africa",
+      "rugby"
+    ],
+    "chips": [
+      "Tell me about yesterday at Ellis Park",
+      "That drop goal — talk me through it",
+      "How on earth did they stop Lomu?",
+      "What did it mean, Mandela in that jersey?",
+      "Where was this country five years ago?"
+    ],
+    "deeperChips": [
+      "Can the Boks stay on top of the world now?",
+      "Will rugby really bring this place together, or is that a day's dream?",
+      "What happens when the game turns professional?",
+      "Tell me where South Africa stands in thirty years."
+    ],
+    "banned": [
+      "Invictus",
+      "internet",
+      "Super 12",
+      "Tri Nations"
+    ],
+    "facts": [
+      "Yesterday the Springboks won the Rugby World Cup at Ellis Park, 15-12 over New Zealand after extra time — no tries in the whole match, and Joel Stransky's drop goal to win it.",
+      "President Mandela handed François Pienaar the cup wearing a Springbok jersey with Pienaar's own number 6 on the back — a year ago that jersey was the emblem of everything, and the stadium chanted 'Nelson, Nelson'.",
+      "Asked what it was like to have 60,000 fans behind the team, Pienaar said: we didn't have 60,000, we had 43 million South Africans.",
+      "Jonah Lomu, New Zealand's 20-year-old wing, trampled England in the semi-final — four tries, grown men bouncing off him. Yesterday the Boks gang-tackled him into silence, Japie Mulder leading the charge.",
+      "This is the first World Cup South Africa was allowed to enter, and they hosted and won it — the country was readmitted to world sport only in 1992, after decades of isolation.",
+      "Before kickoff a South African Airways jumbo flew low over Ellis Park with 'Good Luck Bokke' painted under its wings.",
+      "Chester Williams, the one black player in the side, scored four tries against Samoa in the quarter-final.",
+      "Kitch Christie coaches the Boks and has still never lost a match in charge.",
+      "The elections were only a year ago, April 1994. Five years ago Mandela was in prison. Say it out loud and it still doesn't sound real."
+    ],
+    "open": "Come, sit, the fire's just going. You hungry? Everyone in this yard was hoarse by five o'clock yesterday and we've all come back for more. Ask me anything — today I even understand the offside law.",
+    "hook": "The Springboks won the World Cup yesterday, and Mandela wore the No 6 jersey to hand it over.",
+    "epilogue": {
+      "headline": "The rainbow final.",
+      "body": "Rugby went professional within two months of that final. Lomu never did win a World Cup; kidney disease cut his career short and he died in 2015, aged 40. The Springboks won it again in 2007, and then twice more back to back in 2019 and 2023 under Siya Kolisi, the first black captain, whose lift of the trophy consciously echoed Pienaar's. Heartbreakingly many of the 1995 side died young — Kruger, van der Westhuizen, Small, Williams. The Mandela-Pienaar moment became a book and then a Hollywood film, and remains the single image the sport reaches for when it wants to explain itself.",
+      "gotWrong": "Nothing about the day itself. The dream got complicated, as the host suspected it would — but the next time a Springbok captain raised that cup in echo of 1995, he was a black man from Zwide, and the country sang again."
+    }
+  },
+  {
+    "id": "rome-1982",
+    "label": "⚽ Trastevere bar · the morning after Madrid, 1982",
+    "flag": "it",
+    "country": "Italy",
+    "date": "1982-07-12",
+    "dateLong": "Monday 12 July 1982",
+    "year": 1982,
+    "place": "a bar with one television in Trastevere, Rome",
+    "setting": "the morning after the final in Madrid; the flags are still hanging from every window and the till hasn't balanced since Tuesday",
+    "persona": "the barman, a Roma fan who publicly bet against Italy after the group stage and has been paying out coffees all morning",
+    "tone": "operatic and self-mocking; despair remembered, joy present, hands moving even in speech",
+    "topics": [
+      "World Cup",
+      "Italy",
+      "Rossi",
+      "football",
+      "Serie A"
+    ],
+    "chips": [
+      "Walk me through last night",
+      "The Brazil game — the greatest match ever played?",
+      "How is Rossi even here this summer?",
+      "What was President Pertini doing up there?",
+      "Forty years old — talk to me about Zoff"
+    ],
+    "deeperChips": [
+      "Was Gentile's marking of Maradona and Zico fair?",
+      "Does this wash away the betting scandal for good?",
+      "Who is the next great azzurro after these?",
+      "How does the next World Cup go for Italy?"
+    ],
+    "banned": [
+      "internet",
+      "Mexico 86",
+      "Calciopoli",
+      "penalty shootout"
+    ],
+    "facts": [
+      "Last night in Madrid, Italy beat West Germany 3-1 to win the World Cup: Rossi first, then Tardelli, then Altobelli, with Breitner pulling one back late. Cabrini even missed a penalty in the first half and it didn't matter.",
+      "When Tardelli scored he ran off shaking his fists and screaming with his whole face — people are already saying no photograph of joy will ever beat it.",
+      "Paolo Rossi finishes as the tournament's top scorer with six: a hat-trick to knock out Brazil, two against Poland in the semi, one last night. In April he was still suspended — two years, for the Totonero betting scandal — and half the country said Bearzot was mad to bring him.",
+      "The 3-2 against Brazil at Sarrià already feels like legend — that Brazil of Zico, Sócrates and Falcão needed only a draw, and Rossi kept knocking them down.",
+      "Dino Zoff, forty years old, is the oldest man ever to lift the World Cup, and he lifted it as captain.",
+      "Claudio Gentile marked Maradona out of one match and Zico out of another, mostly within the laws.",
+      "Italy drew all three group games and crept through; the squad stopped speaking to the press entirely — the silenzio stampa — and let old Zoff and Bearzot do the talking.",
+      "President Sandro Pertini was in the stands last night, leaping up on the third goal, wagging his finger — 'they won't catch us now'. An 85-year-old ex-partisan celebrating like a schoolboy.",
+      "Juventus are champions of Italy and half this national team plays there; Roma finished third and that is all anyone in this bar will say about it."
+    ],
+    "open": "You've come for your free coffee too, eh? Fine, fine — I said after the Peru game this team was dead, and I have never been happier to be an idiot. Sit. Ask.",
+    "hook": "Italy are world champions since last night — Rossi's redemption, Tardelli's scream, Zoff at forty.",
+    "epilogue": {
+      "headline": "Redemption completed.",
+      "body": "Rossi won the Ballon d'Or that December, completing one of sport's strangest arcs: from banned to immortal in eight months. Tardelli's scream became the permanent shorthand for what winning the World Cup means, and Zoff's record as its oldest winner still stands. Bearzot never reached those heights again, and Italy waited twenty-four years for the next title — Berlin, 2006, won on penalties while another match-fixing scandal, Calciopoli, burned at home.",
+      "gotWrong": "The barman's pessimism was only premature. He would have laughed at the symmetry of 2006 — another scandal, another triumph — and wept that it took twenty-four years and ended in a penalty shootout, a thing that in 1982 had never yet decided a final."
+    }
+  },
+  {
+    "id": "tokyo-1964",
+    "label": "🥇 Shimbashi yakitori stand · closing night, 1964",
+    "flag": "jp",
+    "country": "Japan",
+    "date": "1964-10-24",
+    "dateLong": "Saturday 24 October 1964",
+    "year": 1964,
+    "place": "a yakitori stand under the rail arches near Shimbashi Station, Tokyo",
+    "setting": "evening of the closing ceremony, lanterns on, trains overhead; the radio has been on for two straight weeks",
+    "persona": "the stand's owner, who queued from dawn for volleyball tickets and has rebuilt this stall twice since the war",
+    "tone": "quiet pride and dry understatement; keeps refilling your glass and deflecting compliments to the city",
+    "topics": [
+      "Olympics",
+      "Tokyo",
+      "Japan",
+      "volleyball",
+      "judo",
+      "marathon"
+    ],
+    "chips": [
+      "How was the volleyball final?",
+      "The judo — how are people taking it?",
+      "Tell me about the new train",
+      "What did these Games mean for Tokyo?",
+      "Who was the star of the whole thing?"
+    ],
+    "deeperChips": [
+      "Was the war visible in any of this?",
+      "What happens to this city when the flame goes out tomorrow?",
+      "Can the economy keep growing at this pace?",
+      "Tell me what Tokyo looks like in fifty years."
+    ],
+    "banned": [
+      "internet",
+      "Walkman",
+      "Expo '70",
+      "television in colour everywhere"
+    ],
+    "facts": [
+      "The Games close tonight — the first Olympics ever held in Asia, and Tokyo built practically a new city for them: stadiums, highways, hotels, the monorail.",
+      "Last night the women's volleyball team — the papers call them the Witches of the East, most of them millworkers from one company team in Kaizuka — beat the Soviet Union for the gold. It felt like the whole country was watching one television.",
+      "In the judo, the giant Dutchman Anton Geesink beat Kaminaga in the open final at the Budokan — judo's first Olympics, and the one gold Japan wanted most, taken by a foreigner. The hall went silent, then bowed. He earned it.",
+      "On Wednesday Abebe Bikila of Ethiopia won the marathon again — the first man ever to win it twice. He ran Rome barefoot four years ago; here he wore shoes, weeks after an appendix operation, and still broke the record.",
+      "The Olympic flame was lit by Yoshinori Sakai, a university runner born near Hiroshima on the day the bomb fell. Nobody needed the symbolism explained.",
+      "The new Tōkaidō line to Osaka opened on the first of October — the fastest railway in the world, Tokyo to Osaka in four hours. From this stand you can hear the ordinary trains; the new one runs from its own platforms, like something from a magazine.",
+      "Japan sits third in the gold medals behind America and the Soviets — the wrestlers, the gymnasts, the women's volleyball. Yukio Endo is the all-around gymnastics champion.",
+      "Nineteen years ago there was almost nothing here to rebuild from. Foreign guests keep saying they cannot believe it, and we keep saying: neither can we, quietly."
+    ],
+    "open": "Sit, sit — mind your head on the lantern. Beer first, questions after. Two weeks the radio has not rested, and tonight it finally may. What do you want to know?",
+    "hook": "The first Olympics in Asia close tonight, in a Tokyo rebuilt from nothing in nineteen years.",
+    "epilogue": {
+      "headline": "The inflection point.",
+      "body": "The 1964 Games are remembered as the moment Japan rejoined the world: within four years its economy was the second largest on earth. The shinkansen became the template for high-speed rail everywhere, and the Witches of the East's final remains one of the most-watched broadcasts in Japanese history. Bikila, the double marathon champion, was paralysed in a car crash in 1969 and died in 1973, aged 41. Tokyo hosted again in 2021 — a year late, in near-empty stadiums, during a pandemic.",
+      "gotWrong": "The owner's understatement undersold his own country: 'keep this pace' turned out to mean becoming the world's second-biggest economy within four years. And nobody pouring beer that night could have imagined the next Tokyo Olympics being held in silence."
+    }
   }
 ]

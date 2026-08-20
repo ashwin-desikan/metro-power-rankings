@@ -144,7 +144,8 @@ export default async function CfbHubPage() {
       <HubNav items={[
         ...(rankings.polls.length ? [{ label: "Rankings", href: "#rankings" }] : []),
         ...(standings.conferences.length ? [{ label: "Standings", href: "#standings" }] : []),
-        { label: "All-time", href: "#all-time" }, { label: "National champions", href: "#champions" }, { label: "Greatest games", href: "#games" }, { label: "AP polls", href: "#polls" }]} />
+        { label: "All-time", href: "#all-time" }, { label: "National champions", href: "#champions" }, { label: "Greatest games", href: "#games" }, { label: "AP polls", href: "#polls" },
+        { label: "🔮 Predictions", href: "/predictions/cfb" }]} />
 
       {rankings.polls.length > 0 && (
         <section id="rankings" className="mb-12 scroll-mt-20">

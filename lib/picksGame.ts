@@ -20,7 +20,9 @@
 
 export type PickCode = "H" | "D" | "A";
 export type RadarSide = "model" | "market";
-export type PicksLeague = "pl" | "nfl" | "cfb";
+export type PicksLeague = "pl" | "nfl" | "cfb" | "mlb";
+
+export const ALL_LEAGUES = ["pl", "nfl", "cfb", "mlb"] as const;
 
 export type LedgerEntry = {
   event_id?: string; // NFL (ESPN); PL entries key on date:home_slug
@@ -41,16 +43,34 @@ export type LedgerEntry = {
   score?: string;
 };
 
+/** A postseason SERIES entry (MLB October): the winner is locked before Game 1
+ *  for a bigger payout, then the games themselves run as an ordinary slate.
+ *  `home` is the higher seed. `model.pH` is the probability the higher seed
+ *  takes the series; `result` is the series winner once it ends. */
+export type SeriesEntry = {
+  series_id: string; // stable id from the builder (e.g. "2026-ALDS-nyy-bos")
+  round: string; // "WC" | "DS" | "CS" | "WS"
+  date: string; // Game 1 date, ISO yyyy-mm-dd
+  kickoff?: string; // Game 1 first pitch, ISO UTC — the series lock
+  home: string;
+  away: string;
+  home_slug: string;
+  away_slug: string;
+  model: { pH: number };
+  result?: "H" | "A";
+};
+
 export type LedgerFile = {
   meta: { season: number | string; generated_at: string };
   ledger: LedgerEntry[];
+  series?: SeriesEntry[];
 };
 
 export type StoredPick = {
   league: PicksLeague;
   season: string;
   event_key: string;
-  mode: "slate" | "radar";
+  mode: "slate" | "radar" | "series";
   pick: PickCode | RadarSide;
   confidence: number | null;
   picked_at: string; // ISO timestamptz
@@ -58,6 +78,7 @@ export type StoredPick = {
 
 export const SLATE_POINTS = 10;
 export const RADAR_POINTS = 25;
+export const SERIES_POINTS = 25;
 export const RADAR_SIZE = 5;
 export const RADAR_LEAGUES = ["nfl", "cfb"] as const;
 
@@ -128,7 +149,7 @@ export function gradeSlate(
     if (p.mode === "slate") byKey.set(`${p.league}:${p.event_key}`, p);
   }
   const games: { league: PicksLeague; e: LedgerEntry }[] = [];
-  for (const league of ["pl", "nfl", "cfb"] as const) {
+  for (const league of ALL_LEAGUES) {
     for (const e of ledgers[league] ?? []) games.push({ league, e });
   }
   games.sort((a, b) => {
@@ -229,6 +250,102 @@ export function gradeRadar(
   return { points, wins, losses };
 }
 
+// --- series (MLB postseason) ------------------------------------------------
+
+/** The stored event_key convention for a series pick: `series:<round>:<id>`.
+ *  Namespaced so a series pick can never collide with a game pick, and the
+ *  Supabase PK (user_id, league, season, event_key, mode) stays sufficient. */
+export function seriesKey(s: SeriesEntry): string {
+  return `series:${s.round}:${s.series_id}`;
+}
+
+/** A series locks at first pitch of Game 1 (00:00 UTC on Game 1 day without one). */
+export function seriesLockTime(s: SeriesEntry): number {
+  if (s.kickoff) {
+    const t = Date.parse(s.kickoff);
+    if (Number.isFinite(t)) return t;
+  }
+  return Date.parse(`${s.date}T00:00:00Z`);
+}
+
+export function seriesPickIsValid(p: StoredPick, s: SeriesEntry): boolean {
+  const t = Date.parse(p.picked_at);
+  return Number.isFinite(t) && t < seriesLockTime(s);
+}
+
+/** Grade stored series picks: SERIES_POINTS per correct pre-lock call. */
+export function gradeSeries(
+  picks: StoredPick[],
+  series: Partial<Record<PicksLeague, SeriesEntry[]>>,
+): { points: number; wins: number; losses: number } {
+  const byKey = new Map<string, SeriesEntry>();
+  for (const league of ALL_LEAGUES) {
+    for (const s of series[league] ?? []) byKey.set(`${league}:${seriesKey(s)}`, s);
+  }
+  let points = 0, wins = 0, losses = 0;
+  for (const p of picks) {
+    if (p.mode !== "series") continue;
+    const s = byKey.get(`${p.league}:${p.event_key}`);
+    if (!s || s.result == null || !seriesPickIsValid(p, s)) continue;
+    if (p.pick === s.result) { points += SERIES_POINTS; wins++; }
+    else losses++;
+  }
+  return { points, wins, losses };
+}
+
+// --- Brier ------------------------------------------------------------------
+// The same axis as the NFL expectation board (lib/nflExpectation): a tie
+// scores 0.5 to each side, exactly as the century ledger does.
+
+export type BrierLine = { games: number; brier: number | null };
+
+function outcomeY(result: PickCode | "T", side: "H" | "A"): number {
+  if (result === "T") return 0.5;
+  return result === side ? 1 : 0;
+}
+
+/** Season-to-date Brier of a ledger source over its graded two-way games. */
+export function ledgerBrier(entries: LedgerEntry[], source: RadarSide): BrierLine {
+  let n = 0, sum = 0;
+  for (const e of entries) {
+    if (e.result == null) continue;
+    const p = source === "model" ? e.model.pH : e.market?.pH;
+    if (p == null) continue;
+    sum += (p - outcomeY(e.result, "H")) ** 2;
+    n++;
+  }
+  return { games: n, brier: n ? sum / n : null };
+}
+
+/**
+ * A reader's Brier over their graded slate picks. A hard pick is a probability
+ * of 1 on the chosen side, so it scores 0 when right, 1 when wrong and 0.25 on
+ * a tie — which is what puts a reader on the same axis as the model, the
+ * market, and every season back to 1920 on the expectation board.
+ */
+export function userPicksBrier(
+  picks: StoredPick[],
+  ledgers: Partial<Record<PicksLeague, LedgerEntry[]>>,
+  league?: PicksLeague,
+): BrierLine {
+  const byKey = new Map<string, LedgerEntry>();
+  for (const lg of ALL_LEAGUES) {
+    if (league && lg !== league) continue;
+    for (const e of ledgers[lg] ?? []) byKey.set(`${lg}:${eventKey(lg, e)}`, e);
+  }
+  let n = 0, sum = 0;
+  for (const p of picks) {
+    if (p.mode !== "slate") continue;
+    if (league && p.league !== league) continue;
+    const e = byKey.get(`${p.league}:${p.event_key}`);
+    if (!e || e.result == null || !pickIsValid(p, e)) continue;
+    if (e.result === "T") sum += 0.25;
+    else sum += p.pick === e.result ? 0 : 1;
+    n++;
+  }
+  return { games: n, brier: n ? sum / n : null };
+}
+
 export type LeaderboardRow = {
   userId: string;
   name: string;
@@ -243,6 +360,7 @@ export function computeLeaderboard(
   rows: (StoredPick & { user_id: string })[],
   names: Map<string, string>,
   ledgers: Partial<Record<PicksLeague, LedgerEntry[]>>,
+  series: Partial<Record<PicksLeague, SeriesEntry[]>> = {},
 ): LeaderboardRow[] {
   const byUser = new Map<string, StoredPick[]>();
   for (const r of rows) {
@@ -254,12 +372,13 @@ export function computeLeaderboard(
   for (const [userId, picks] of byUser) {
     const s = gradeSlate(picks, ledgers);
     const r = gradeRadar(picks, ledgers);
+    const sr = gradeSeries(picks, series);
     out.push({
       userId,
       name: names.get(userId) ?? "Anonymous",
-      points: s.points + r.points,
-      wins: s.wins + r.wins,
-      losses: s.losses + r.losses,
+      points: s.points + r.points + sr.points,
+      wins: s.wins + r.wins + sr.wins,
+      losses: s.losses + r.losses + sr.losses,
       bestStreak: s.bestStreak,
     });
   }

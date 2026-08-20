@@ -95,6 +95,7 @@ export default async function MlbIndexPage() {
           { label: "Map", href: "#map" },
           { label: "All-Time Table", href: "#all-time" },
           { label: "Top Games", href: "#top-games" },
+          { label: "🔮 Predictions", href: "/predictions/mlb" },
         ]}
       />
 

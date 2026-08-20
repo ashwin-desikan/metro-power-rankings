@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-20",
+    headline: "A century of expectation, season by season, yours to join",
+    items: [
+      "Every NFL season since 1920 now has its own page: the game log with what each result was supposed to be, the teams that beat their year, and the results nobody saw coming. The model-vs-market table now runs live.",
+      "Your picks land on the same axis: My Season scores your hard calls with the very Brier the 1920 ledger uses, and each NFL metro's page carries its century against expectation.",
+      "The company rankings join the Time Machine, with period-correct names on 500 more headline years; the year view adds the biggest company, the year's leaders, and Olympic crowns that no longer outstay their Games.",
+      "October is built early: MLB postseason series picks wait ready for the bracket, and every prediction hub is now linked from its sport's own pages.",
+    ],
+  },
+  {
     date: "2026-08-19",
     headline: "College Football called, and every NFL game against expectation",
     items: [

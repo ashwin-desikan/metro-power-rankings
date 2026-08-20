@@ -16,6 +16,7 @@ const DESTS: Dest[] = [
   { key: "competitions", label: "Competitions", href: "/teams/football/tournaments" },
   { key: "domestic", label: "Worldwide Table", href: "/teams/football/domestic" },
   { key: "cups", label: "Cups", href: "/teams/football/cups" },
+  { key: "predictions", label: "🔮 Predictions", href: "/predictions/pl" },
 ];
 
 export default function FootballHubNav({

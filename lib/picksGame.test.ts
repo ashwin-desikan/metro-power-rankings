@@ -1,17 +1,24 @@
 import { describe, expect, it } from "vitest";
 import {
+  SERIES_POINTS,
   computeLeaderboard,
   eventKey,
   gradeRadar,
+  gradeSeries,
   gradeSlate,
   isLocked,
+  ledgerBrier,
   lockTime,
   pickIsValid,
   pickProb,
   radarBoard,
   radarGames,
   radarVerdict,
+  seriesKey,
+  seriesLockTime,
+  userPicksBrier,
   type LedgerEntry,
+  type SeriesEntry,
   type StoredPick,
 } from "./picksGame";
 
@@ -228,5 +235,87 @@ describe("computeLeaderboard", () => {
     const lb = computeLeaderboard(rows, names, ledgers);
     expect(lb[0]).toMatchObject({ userId: "u1", name: "Ash", points: 10 });
     expect(lb[1]).toMatchObject({ userId: "u2", name: "Anonymous", points: 0 });
+  });
+
+  it("counts series points when a series map is supplied", () => {
+    const lb = computeLeaderboard(
+      [{ ...pick({ league: "mlb", mode: "series", event_key: "series:WS:2026-ws-a-b", pick: "H", picked_at: "2026-10-20T10:00:00Z" }), user_id: "u1" }],
+      new Map(),
+      {},
+      { mlb: [mlbSeries({ result: "H" })] },
+    );
+    expect(lb[0]).toMatchObject({ points: SERIES_POINTS, wins: 1 });
+  });
+});
+
+// --- MLB postseason series --------------------------------------------------
+
+const mlbSeries = (over: Partial<SeriesEntry> = {}): SeriesEntry => ({
+  series_id: "2026-ws-a-b",
+  round: "WS",
+  date: "2026-10-23",
+  kickoff: "2026-10-24T00:08:00Z",
+  home: "Athletics",
+  away: "Braves",
+  home_slug: "athletics",
+  away_slug: "atlanta-braves",
+  model: { pH: 0.58 },
+  ...over,
+});
+
+describe("series picks", () => {
+  it("keys as series:<round>:<id> and locks at Game 1 first pitch", () => {
+    const s = mlbSeries();
+    expect(seriesKey(s)).toBe("series:WS:2026-ws-a-b");
+    expect(seriesLockTime(s)).toBe(Date.parse("2026-10-24T00:08:00Z"));
+    expect(seriesLockTime(mlbSeries({ kickoff: undefined }))).toBe(
+      Date.parse("2026-10-23T00:00:00Z"),
+    );
+  });
+
+  it("pays SERIES_POINTS for a correct pre-lock call and discards late picks", () => {
+    const s = mlbSeries({ result: "H" });
+    const base: StoredPick = pick({
+      league: "mlb", mode: "series", event_key: seriesKey(s), pick: "H",
+      picked_at: "2026-10-20T10:00:00Z",
+    });
+    expect(gradeSeries([base], { mlb: [s] })).toEqual({ points: SERIES_POINTS, wins: 1, losses: 0 });
+    expect(gradeSeries([{ ...base, pick: "A" }], { mlb: [s] })).toEqual({ points: 0, wins: 0, losses: 1 });
+    const late = { ...base, picked_at: "2026-10-24T01:00:00Z" };
+    expect(gradeSeries([late], { mlb: [s] })).toEqual({ points: 0, wins: 0, losses: 0 });
+    // an unfinished series grades nothing
+    expect(gradeSeries([base], { mlb: [mlbSeries()] })).toEqual({ points: 0, wins: 0, losses: 0 });
+  });
+});
+
+describe("the Brier axis", () => {
+  it("scores a ledger source over graded games, ties at 0.5", () => {
+    const nfl = [
+      nflGame({ result: "H" }), // model .592 -> (0.592-1)^2
+      nflGame({ event_id: "2", result: "T" }), // (0.592-0.5)^2
+      nflGame({ event_id: "3" }), // ungraded, skipped
+    ];
+    const m = ledgerBrier(nfl, "model");
+    expect(m.games).toBe(2);
+    expect(m.brier).toBeCloseTo(((0.592 - 1) ** 2 + (0.592 - 0.5) ** 2) / 2, 10);
+    expect(ledgerBrier([nflGame()], "market").games).toBe(0);
+  });
+
+  it("scores a reader's hard picks as 0/1 with 0.25 on a tie", () => {
+    const nfl = [
+      nflGame({ result: "H" }),
+      nflGame({ event_id: "2", result: "A" }),
+      nflGame({ event_id: "3", result: "T" }),
+    ];
+    const picks: StoredPick[] = [
+      pick({ league: "nfl", event_key: "401872656", pick: "H", picked_at: "2026-09-09T10:00:00Z" }),
+      pick({ league: "nfl", event_key: "2", pick: "H", picked_at: "2026-09-09T10:00:00Z" }),
+      pick({ league: "nfl", event_key: "3", pick: "A", picked_at: "2026-09-09T10:00:00Z" }),
+    ];
+    const b = userPicksBrier(picks, { nfl }, "nfl");
+    expect(b.games).toBe(3);
+    expect(b.brier).toBeCloseTo((0 + 1 + 0.25) / 3, 10);
+    // league filter: PL picks do not leak into the NFL line
+    expect(userPicksBrier(picks, { nfl }, "pl").games).toBe(0);
   });
 });

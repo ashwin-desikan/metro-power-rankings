@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { RankingRow, RankingsFile } from '@/lib/business';
 import { MONO, SMCOL, TD, TDR, TH, THR, TableBox } from '../ui';
 
@@ -23,7 +23,34 @@ export default function YearBoard({ data }: { data: RankingsFile }) {
     () => Object.keys(data.years).map(Number).sort((a, b) => a - b),
     [data],
   );
+  // Deep link: /business/rankings?year=1980 opens straight on that year — the
+  // Time Machine hub links here, and its registry only promises deep links
+  // that are genuinely read (lib/timeMachines.ts).
+  //
+  // 🔴 NOT the champions pattern. That subtree mounts client-only, so it may
+  // read window in the state initialiser. THIS component is server-rendered
+  // with the rest of the page, so an initialiser that saw ?year would hydrate
+  // against HTML rendered for the default year and mismatch. The param is read
+  // in a mount effect instead — one extra render, no mismatch — and `booted`
+  // keeps the write-back below from clobbering ?year before it has been read.
   const [year, setYear] = useState(data.meta.last_year);
+  const [booted, setBooted] = useState(false);
+  useEffect(() => {
+    const p = parseInt(new URLSearchParams(window.location.search).get('year') ?? '', 10);
+    if (Number.isFinite(p)) {
+      setYear(Math.min(Math.max(p, data.meta.first_year), data.meta.last_year));
+    }
+    setBooted(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Keep the URL in step without a navigation, so the view is shareable.
+  useEffect(() => {
+    if (!booted) return;
+    const u = new URL(window.location.href);
+    u.searchParams.set('year', String(year));
+    window.history.replaceState(null, '', u.toString());
+  }, [year, booted]);
 
   const rows: RankingRow[] = data.years[String(year)] ?? [];
   const stat = data.stats[String(year)];

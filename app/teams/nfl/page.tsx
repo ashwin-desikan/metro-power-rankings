@@ -77,6 +77,7 @@ export default function NflIndexPage() {
           { label: "Top Games", href: "#top-games" },
           { label: "Against Expectation", href: "/teams/nfl/expectation" },
           { label: "International", href: "/teams/nfl/international" },
+          { label: "🔮 Predictions", href: "/predictions/nfl" },
         ]}
       />
 

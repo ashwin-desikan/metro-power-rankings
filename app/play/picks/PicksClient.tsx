@@ -5,21 +5,28 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getSupabase } from "@/lib/supabaseClient";
 import {
   RADAR_POINTS,
+  SERIES_POINTS,
   SLATE_POINTS,
   computeLeaderboard,
   eventKey,
   gradeRadar,
+  gradeSeries,
   gradeSlate,
   isLocked,
+  ledgerBrier,
   pickProb,
   radarBoard,
   radarVerdict,
+  seriesKey,
+  seriesLockTime,
+  userPicksBrier,
   type RadarGame,
   type LedgerEntry,
   type LedgerFile,
   type PickCode,
   type PicksLeague,
   type RadarSide,
+  type SeriesEntry,
   type StoredPick,
 } from "@/lib/picksGame";
 
@@ -95,6 +102,9 @@ const LEAGUE_META: Record<PicksLeague, { label: string; emoji: string; note: str
   pl: { label: "Premier League", emoji: "\u{26BD}", note: "Matchweek slate · three-way", file: "pl-predictions.json", ways: 3 },
   nfl: { label: "NFL", emoji: "\u{1F3C8}", note: "Weekly slate · two-way", file: "nfl-predictions.json", ways: 2 },
   cfb: { label: "College Football", emoji: "\u{1F3C8}", note: "AP Top 25 slate · two-way", file: "cfb-predictions.json", ways: 2 },
+  // The MLB tab stays hidden until its October ledger carries a series or a
+  // game — the COMING chip advertises it in the meantime.
+  mlb: { label: "MLB Postseason", emoji: "\u{26BE}", note: "October series + game picks", file: "mlb-predictions.json", ways: 2 },
 };
 
 const COMING: { label: string; emoji: string; note: string }[] = [
@@ -148,9 +158,10 @@ export default function PicksClient() {
       fetchLedger("pl-predictions.json"),
       fetchLedger("nfl-predictions.json"),
       fetchLedger("cfb-predictions.json"),
-    ]).then(([pl, nfl, cfb]) => {
+      fetchLedger("mlb-predictions.json"),
+    ]).then(([pl, nfl, cfb, mlb]) => {
       if (!mounted) return;
-      setLedgers({ pl: pl ?? undefined, nfl: nfl ?? undefined, cfb: cfb ?? undefined });
+      setLedgers({ pl: pl ?? undefined, nfl: nfl ?? undefined, cfb: cfb ?? undefined, mlb: mlb ?? undefined });
     });
     const t = setInterval(() => setNow(Date.now()), 60_000);
     return () => {
@@ -320,13 +331,18 @@ export default function PicksClient() {
   );
 
   const grade = useMemo(
-    () => gradeSlate(picks, { pl: ledgers.pl?.ledger, nfl: ledgers.nfl?.ledger, cfb: ledgers.cfb?.ledger }),
+    () => gradeSlate(picks, { pl: ledgers.pl?.ledger, nfl: ledgers.nfl?.ledger, cfb: ledgers.cfb?.ledger, mlb: ledgers.mlb?.ledger }),
     [picks, ledgers],
   );
   const radarGrade = useMemo(
     () => gradeRadar(picks, { nfl: ledgers.nfl?.ledger, cfb: ledgers.cfb?.ledger }),
     [picks, ledgers],
   );
+  const seriesGrade = useMemo(
+    () => gradeSeries(picks, { mlb: ledgers.mlb?.series }),
+    [picks, ledgers],
+  );
+  const mlbLive = (ledgers.mlb?.ledger?.length ?? 0) > 0 || (ledgers.mlb?.series?.length ?? 0) > 0;
   const radar = useMemo(
     () => radarBoard({ nfl: ledgers.nfl?.ledger, cfb: ledgers.cfb?.ledger }),
     [ledgers],
@@ -406,7 +422,9 @@ export default function PicksClient() {
 
       {(tab === "slate" || tab === "confidence") && (
         <div className="flex gap-2 flex-wrap mb-4">
-          {(Object.keys(LEAGUE_META) as PicksLeague[]).map((lg) => (
+          {(Object.keys(LEAGUE_META) as PicksLeague[])
+            .filter((lg) => lg !== "mlb" || mlbLive)
+            .map((lg) => (
             <button
               key={lg}
               type="button"
@@ -418,13 +436,24 @@ export default function PicksClient() {
               <span className="block text-[10.5px] font-normal text-[var(--text-dim)]">{LEAGUE_META[lg].note}</span>
             </button>
           ))}
-          {COMING.map((c) => (
+          {COMING.filter((c) => !(mlbLive && c.label.startsWith("MLB"))).map((c) => (
             <span key={c.label} className="rounded-lg border px-3 py-1.5 text-sm opacity-45 cursor-not-allowed" style={CARD}>
               {c.emoji} {c.label}
               <span className="block text-[10.5px] text-[var(--text-dim)]">{c.note}</span>
             </span>
           ))}
         </div>
+      )}
+
+      {tab === "slate" && league === "mlb" && (ledgers.mlb?.series?.length ?? 0) > 0 && (
+        <SeriesBlock
+          series={ledgers.mlb?.series ?? []}
+          now={now}
+          season={seasonOf("mlb")}
+          picks={picks}
+          upsertPick={upsertPick}
+          removePick={removePick}
+        />
       )}
 
       {tab === "slate" && (
@@ -469,8 +498,10 @@ export default function PicksClient() {
           signOut={signOut}
           grade={grade}
           radarGrade={radarGrade}
+          seriesGrade={seriesGrade}
           board={board}
           ledgers={ledgers}
+          picks={picks}
         />
       )}
 
@@ -482,7 +513,8 @@ export default function PicksClient() {
           Picks are blind: the model&rsquo;s probabilities reveal after you commit. <b>Confidence</b> ranks your slate — the slot
           value is a bonus on top of the base points when that pick lands. <b>Upset Radar</b> lists the games where our model and
           the betting market disagree most; side with either for +{RADAR_POINTS} when it grades closer to the result (lower Brier,
-          the same metric the prediction hubs publish).
+          the same metric the prediction hubs publish). In October, <b>MLB series picks</b> lock the winner of each playoff
+          series before Game 1 for +{SERIES_POINTS}, while the games themselves run as an ordinary daily slate.
         </p>
         <p className="mb-2">
           Games lock at kickoff — or at 00:00 UTC on match day when the ledger carries no kickoff time. Signed out, picks live only in this browser. Sign in with Google (the same
@@ -868,8 +900,10 @@ function SeasonTab({
   signOut,
   grade,
   radarGrade,
+  seriesGrade,
   board,
   ledgers,
+  picks,
 }: {
   ready: boolean;
   user: PickUser | null;
@@ -878,16 +912,34 @@ function SeasonTab({
   signOut: () => void;
   grade: ReturnType<typeof gradeSlate>;
   radarGrade: { points: number; wins: number; losses: number };
+  seriesGrade: { points: number; wins: number; losses: number };
   board: { rows: (StoredPick & { user_id: string })[]; names: Map<string, string> } | null;
   ledgers: Partial<Record<PicksLeague, LedgerFile>>;
+  picks: StoredPick[];
 }) {
-  const totalPts = grade.points + radarGrade.points;
+  const totalPts = grade.points + radarGrade.points + seriesGrade.points;
   const modelPts = grade.modelWins * SLATE_POINTS;
   const anyGraded = grade.modelWins + grade.modelLosses > 0;
 
+  // The Brier axis: your hard NFL picks against the model and the market this
+  // season, on the same scale as every season back to 1920 on the expectation
+  // board. A hard pick scores 0 right / 1 wrong (0.25 on a tie), so it is an
+  // honest number, not a flattering one.
+  const nflEntries = useMemo(() => ledgers.nfl?.ledger ?? [], [ledgers]);
+  const yourBrier = useMemo(() => userPicksBrier(picks, { nfl: nflEntries }, "nfl"), [picks, nflEntries]);
+  const modelBrier = useMemo(() => ledgerBrier(nflEntries, "model"), [nflEntries]);
+  const marketBrier = useMemo(() => ledgerBrier(nflEntries, "market"), [nflEntries]);
+
   const lb = useMemo(() => {
     if (!board) return null;
-    return computeLeaderboard(board.rows, board.names, { pl: ledgers.pl?.ledger, nfl: ledgers.nfl?.ledger });
+    // Every live league counts here — leaving one out silently drops its
+    // points from the public board while "My Season" still shows them.
+    return computeLeaderboard(
+      board.rows,
+      board.names,
+      { pl: ledgers.pl?.ledger, nfl: ledgers.nfl?.ledger, cfb: ledgers.cfb?.ledger, mlb: ledgers.mlb?.ledger },
+      { mlb: ledgers.mlb?.series },
+    );
   }, [board, ledgers]);
 
   return (
@@ -930,12 +982,31 @@ function SeasonTab({
 
       <div className="grid gap-2 mb-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))" }}>
         <Stat v={anyGraded ? String(totalPts) : "–"} k="Points" />
-        <Stat v={`${grade.wins + radarGrade.wins}–${grade.losses + radarGrade.losses}`} k="Record" />
+        <Stat v={`${grade.wins + radarGrade.wins + seriesGrade.wins}–${grade.losses + radarGrade.losses + seriesGrade.losses}`} k="Record" />
         <Stat v={grade.bestStreak ? `${grade.bestStreak} \u{1F525}` : "–"} k="Best streak" />
         <Stat
           v={anyGraded ? `${grade.wins > grade.modelWins ? "W" : grade.wins < grade.modelWins ? "L" : "T"} (${grade.wins}–${grade.modelWins})` : "–"}
           k="vs the Model"
         />
+        <Stat v={yourBrier.brier != null ? yourBrier.brier.toFixed(3) : "–"} k="Your NFL Brier" />
+      </div>
+
+      <div className="rounded-xl border px-4 py-3 mb-6 text-[12.5px] text-[var(--text-muted)]" style={CARD}>
+        <b className="text-[var(--text)]">The Brier axis.</b>{" "}
+        {yourBrier.brier != null ? (
+          <>
+            Your hard NFL picks score <span style={MONO}>{yourBrier.brier.toFixed(3)}</span> over {yourBrier.games} graded{" "}
+            {yourBrier.games === 1 ? "game" : "games"}
+            {modelBrier.brier != null ? <> · the model sits at <span style={MONO}>{modelBrier.brier.toFixed(3)}</span></> : null}
+            {marketBrier.brier != null ? <> · the market at <span style={MONO}>{marketBrier.brier.toFixed(3)}</span></> : null}
+            . Lower is better, and a hard pick scores 0 or 1, so beating a probability model here is hard by design.
+          </>
+        ) : (
+          <>Once your NFL picks grade, your Brier lands here beside the model&rsquo;s and the market&rsquo;s.</>
+        )}{" "}
+        The same measure scores every NFL season back to 1920 on the{" "}
+        <Link href="/teams/nfl/expectation" className="underline hover:text-[var(--accent)]">expectation board</Link> — one
+        axis from 1958 to your weekend.
       </div>
 
       <h2 className="text-xl font-bold mb-1">Leaderboard</h2>
@@ -994,5 +1065,106 @@ function Stat({ v, k }: { v: string; k: string }) {
       <div className="text-[20px] font-extrabold" style={MONO}>{v}</div>
       <div className="text-[10.5px] uppercase tracking-wider text-[var(--text-muted)]">{k}</div>
     </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// MLB postseason series picks: lock the winner before Game 1 for a bigger
+// payout. Blind like the slate — the model's series probability reveals only
+// once your call is in or the series has locked.
+// ---------------------------------------------------------------------------
+
+const ROUND_LABEL: Record<string, string> = {
+  WC: "Wild Card",
+  DS: "Division Series",
+  CS: "Championship Series",
+  WS: "World Series",
+};
+
+function SeriesBlock({
+  series,
+  now,
+  season,
+  picks,
+  upsertPick,
+  removePick,
+}: {
+  series: SeriesEntry[];
+  now: number;
+  season: string;
+  picks: StoredPick[];
+  upsertPick: (p: StoredPick) => void;
+  removePick: (p: StoredPick) => void;
+}) {
+  const stored = useMemo(() => {
+    const m = new Map<string, StoredPick>();
+    for (const p of picks) if (p.mode === "series" && p.league === "mlb") m.set(p.event_key, p);
+    return m;
+  }, [picks]);
+
+  const rows = [...series].sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+
+  return (
+    <section className="mb-6">
+      <h2 className="text-lg font-bold mb-1">{"\u{26BE}"} Series winners · +{SERIES_POINTS} each</h2>
+      <p className="text-[12.5px] text-[var(--text-muted)] mb-3">
+        Call each series before Game 1 — the pick locks at first pitch and the payout is bigger than a
+        game call because there is no changing your mind mid-series.
+      </p>
+      <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
+        {rows.map((s) => {
+          const key = seriesKey(s);
+          const p = stored.get(key);
+          const locked = now >= seriesLockTime(s);
+          const done = s.result != null;
+          const correct = done && p ? p.pick === s.result : null;
+          return (
+            <div key={key} className="rounded-xl border p-3" style={CARD}>
+              <div className="text-[10.5px] uppercase tracking-wider text-[var(--text-dim)] mb-1.5">
+                {ROUND_LABEL[s.round] ?? s.round} · Game 1 {fmtDate(s.date)}
+              </div>
+              <div className="flex gap-2">
+                {(["A", "H"] as const).map((side) => {
+                  const name = side === "H" ? s.home : s.away;
+                  const mine = p?.pick === side;
+                  const winner = done && s.result === side;
+                  return (
+                    <button
+                      key={side}
+                      type="button"
+                      disabled={locked}
+                      onClick={() => {
+                        if (locked) return;
+                        if (mine && p) { removePick(p); return; }
+                        upsertPick({
+                          league: "mlb", season, event_key: key, mode: "series",
+                          pick: side, confidence: null, picked_at: new Date().toISOString(),
+                        });
+                      }}
+                      className={`flex-1 rounded-lg border px-2 py-2 text-[13px] transition-colors ${mine ? "border-[var(--accent)] text-[var(--accent)] font-semibold" : locked ? "opacity-60 cursor-not-allowed" : "hover:border-[var(--accent-dim)]"}`}
+                      style={{ background: "var(--bg-card)", borderColor: mine ? undefined : "var(--border)" }}
+                    >
+                      {name}
+                      {winner ? <span className="ml-1" aria-label="series winner">{"\u{1F3C6}"}</span> : null}
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="mt-1.5 text-[11px] text-[var(--text-dim)]" style={MONO}>
+                {done
+                  ? correct == null
+                    ? "series decided"
+                    : correct
+                      ? `+${SERIES_POINTS} \u{2705}`
+                      : "missed"
+                  : locked || p
+                    ? `model: ${s.home} ${pct(s.model.pH)}`
+                    : "blind until you pick"}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }

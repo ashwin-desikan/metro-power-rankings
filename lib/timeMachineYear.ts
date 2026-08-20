@@ -1,10 +1,14 @@
 import "server-only";
 
+import { readFileSync } from "fs";
+import { join } from "path";
+
 import { getCountryTimeline } from "./countryTimeMachine";
 import { getAllCountries, getPopulationFile } from "./countries";
 import { getPowerHistory } from "./powerHistory";
 import { getScreenYears } from "./screen";
 import { getChampionsInYear, type YearChampion } from "./championsHistory";
+import { getF1DriverTitles } from "./f1";
 
 // The cross-section: one year, read across the boards that cover it.
 //
@@ -37,9 +41,24 @@ export type YearStrand = {
   absent?: string;
 };
 
+/** A one-line fact from a board that does not get a full card: rendered as an
+ *  "Also in {year}" strip under the strand grid. Same honesty rule as the
+ *  strands — each reads the SAME data its own board reads — but an extra that
+ *  has nothing for the year simply does not appear, because a strip of
+ *  "nothing here" chips would drown the ones that do. */
+export type YearExtra = {
+  key: string;
+  text: string;
+  href: string;
+  /** Country slug for a flag chip, where the fact is about a place's office. */
+  flag?: string;
+  emoji?: string;
+};
+
 export type YearCrossSection = {
   year: number;
   strands: YearStrand[];
+  extras: YearExtra[];
 };
 
 const fmtPeople = (n: number): string =>
@@ -306,9 +325,121 @@ function champions(year: number): YearStrand {
   };
 }
 
+// ---------------------------------------------------------------------------
+// The "Also in {year}" strip: one-liners from boards that have a fact for the
+// year but no full card. Leaders come straight from the files the /leaders
+// board serves; the F1 champion from the same data as the F1 hub.
+//
+// 🔴 THE STRIP IS A RANDOM DRAW FROM A WIDE POOL, not a fixed US/UK/F1 trio
+// (Ashwin, 2026-08-20: "randomize the different categories"). Every candidate
+// the year can support goes into the pool — twenty countries' leaders plus the
+// F1 champion — and EXTRAS_SHOWN are drawn at random. Math.random() is safe
+// here for exactly the reason it is in champions() above: the hub is
+// force-dynamic, so the value renders once per request.
+
+type LeaderRow = { name: string; role: string; start: string; end: string | null };
+
+const _leaders = new Map<string, LeaderRow[]>();
+function leadersFile(slug: string): LeaderRow[] {
+  const hit = _leaders.get(slug);
+  if (hit) return hit;
+  let rows: LeaderRow[] = [];
+  try {
+    rows = JSON.parse(
+      readFileSync(join(process.cwd(), "public", "data", "leaders", `${slug}.json`), "utf-8"),
+    ) as LeaderRow[];
+  } catch {
+    /* board absent: the strip simply skips it */
+  }
+  _leaders.set(slug, rows);
+  return rows;
+}
+
+/** Whoever held an office on 1 July of the year — mid-year, so a January
+ *  handover credits the incumbent who served most of it. A country whose file
+ *  holds both a head of state and a head of government returns both; the
+ *  caller draws one. */
+function officeHolders(slug: string, year: number): LeaderRow[] {
+  const at = `${year}-07-01`;
+  return leadersFile(slug).filter(
+    (l) => l.start <= at && (l.end == null || l.end > at),
+  );
+}
+
+/** Countries in the pool, with the article their name needs in a sentence.
+ *  All twenty have deep leader histories on the /leaders board. */
+const EXTRA_COUNTRIES: [slug: string, display: string, href: string][] = [
+  ["united-states", "the United States", "/us-political-leadership/time-machine"],
+  ["united-kingdom", "the United Kingdom", "/uk-political-leadership/time-machine"],
+  ["france", "France", "/countries/france"],
+  ["germany", "Germany", "/countries/germany"],
+  ["russia", "Russia", "/countries/russia"],
+  ["china", "China", "/countries/china"],
+  ["japan", "Japan", "/countries/japan"],
+  ["india", "India", "/countries/india"],
+  ["italy", "Italy", "/countries/italy"],
+  ["spain", "Spain", "/countries/spain"],
+  ["canada", "Canada", "/countries/canada"],
+  ["australia", "Australia", "/countries/australia"],
+  ["brazil", "Brazil", "/countries/brazil"],
+  ["mexico", "Mexico", "/countries/mexico"],
+  ["turkey", "Turkey", "/countries/turkey"],
+  ["egypt", "Egypt", "/countries/egypt"],
+  ["south-africa", "South Africa", "/countries/south-africa"],
+  ["argentina", "Argentina", "/countries/argentina"],
+  ["netherlands", "the Netherlands", "/countries/netherlands"],
+  ["sweden", "Sweden", "/countries/sweden"],
+];
+
+const EXTRAS_SHOWN = 4;
+
+/**
+ * A sentence from a role string the files write many ways: "President",
+ * "King of Italy", "Emperor (Second Empire)", "Paramount Leader (PRC)",
+ * "Chairman, Council of People's Commissars", "Provisional Government".
+ * Crowns "reign over"; office-like titles read "is {role} of {country}";
+ * anything that is a body or already carries its own scope just "leads",
+ * because "is King of Italy of Italy" is the bug this function exists for.
+ */
+function leaderText(l: LeaderRow, display: string): string {
+  const clean = l.role.replace(/\s*\(.+\)\s*$/, "").trim();
+  if (/^(monarch|sovereign|emperor|empress|king|queen|sultan|regent|shogun|kaiser|tsar|stadtholder|elector)\b/i.test(clean)) {
+    return `${l.name} reigns over ${display}`;
+  }
+  if (/\bof\b|,|government|authority|regency/i.test(clean)) {
+    return `${l.name} leads ${display}`;
+  }
+  return `${l.name} is ${clean} of ${display}`;
+}
+
+function extras(year: number): YearExtra[] {
+  const pool: YearExtra[] = [];
+  for (const [slug, display, href] of EXTRA_COUNTRIES) {
+    const holders = officeHolders(slug, year);
+    if (!holders.length) continue;
+    const l = shuffled(holders)[0];
+    pool.push({ key: `leader-${slug}`, flag: slug, text: leaderText(l, display), href });
+  }
+  try {
+    const f1 = getF1DriverTitles().find((t) => t.years.includes(year));
+    if (f1) {
+      pool.push({
+        key: "f1",
+        emoji: "🏎️",
+        text: `${f1.name} takes the Formula 1 world championship`,
+        href: "/teams/f1",
+      });
+    }
+  } catch {
+    /* F1 data absent: skip */
+  }
+  return shuffled(pool).slice(0, EXTRAS_SHOWN);
+}
+
 export function getYearCrossSection(year: number): YearCrossSection {
   return {
     year,
     strands: [population(year), power(year), champions(year), film(year)],
+    extras: extras(year),
   };
 }
