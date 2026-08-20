@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated_at": "2026-08-19T05:50:59Z",
-  "as_of": "2026-08-19",
+  "generated_at": "2026-08-20T05:50:27Z",
+  "as_of": "2026-08-20",
   "source": "Yahoo Finance chart API",
   "indices": 13,
   "commodities": 6,
@@ -16,8 +16,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 7691.76,
-   "date": "2026-08-18"
+   "value": 7707.98,
+   "date": "2026-08-19"
   },
   {
    "slug": "dow-jones",
@@ -26,8 +26,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 53343.4,
-   "date": "2026-08-18"
+   "value": 53463.05,
+   "date": "2026-08-19"
   },
   {
    "slug": "nasdaq-composite",
@@ -36,8 +36,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 26289.71,
-   "date": "2026-08-18"
+   "value": 26331.09,
+   "date": "2026-08-19"
   },
   {
    "slug": "ftse-100",
@@ -46,8 +46,8 @@
    "country": "United Kingdom",
    "metro": "London",
    "metroSlug": "london",
-   "value": 10728.04,
-   "date": "2026-08-18"
+   "value": 10743.35,
+   "date": "2026-08-19"
   },
   {
    "slug": "dax",
@@ -56,8 +56,8 @@
    "country": "Germany",
    "metro": "Frankfurt",
    "metroSlug": "frankfurt",
-   "value": 26128.36,
-   "date": "2026-08-18"
+   "value": 26091.33,
+   "date": "2026-08-19"
   },
   {
    "slug": "cac-40",
@@ -66,8 +66,8 @@
    "country": "France",
    "metro": "Paris",
    "metroSlug": "paris",
-   "value": 8509.36,
-   "date": "2026-08-18"
+   "value": 8501.91,
+   "date": "2026-08-19"
   },
   {
    "slug": "nikkei-225",
@@ -76,8 +76,8 @@
    "country": "Japan",
    "metro": "Tokyo",
    "metroSlug": "tokyo",
-   "value": 65276.35,
-   "date": "2026-08-19"
+   "value": 66217.73,
+   "date": "2026-08-20"
   },
   {
    "slug": "hang-seng",
@@ -86,8 +86,8 @@
    "country": "Hong Kong",
    "metro": "Hong Kong",
    "metroSlug": "hong-kong",
-   "value": 25470.65,
-   "date": "2026-08-19"
+   "value": 25805.03,
+   "date": "2026-08-20"
   },
   {
    "slug": "sensex",
@@ -96,8 +96,8 @@
    "country": "India",
    "metro": "Mumbai",
    "metroSlug": "mumbai",
-   "value": 76895.2,
-   "date": "2026-08-19"
+   "value": 77454.92,
+   "date": "2026-08-20"
   },
   {
    "slug": "shanghai-composite",
@@ -106,8 +106,8 @@
    "country": "China",
    "metro": "Shanghai",
    "metroSlug": "shanghai",
-   "value": 3907.949,
-   "date": "2026-08-19"
+   "value": 3898.97,
+   "date": "2026-08-20"
   },
   {
    "slug": "kospi",
@@ -116,8 +116,8 @@
    "country": "South Korea",
    "metro": "Seoul",
    "metroSlug": "seoul",
-   "value": 6501.33,
-   "date": "2026-08-19"
+   "value": 6851.23,
+   "date": "2026-08-20"
   },
   {
    "slug": "sp-tsx-composite",
@@ -126,8 +126,8 @@
    "country": "Canada",
    "metro": "Toronto",
    "metroSlug": "toronto",
-   "value": 36367.93,
-   "date": "2026-08-18"
+   "value": 36401.79,
+   "date": "2026-08-19"
   },
   {
    "slug": "bovespa",
@@ -136,8 +136,8 @@
    "country": "Brazil",
    "metro": "São Paulo",
    "metroSlug": "",
-   "value": 166334.86,
-   "date": "2026-08-18"
+   "value": 167830.27,
+   "date": "2026-08-19"
   }
  ],
  "commodities": [
@@ -146,48 +146,48 @@
    "symbol": "GC=F",
    "name": "Gold",
    "unit": "USD/oz",
-   "value": 4394.8,
-   "date": "2026-08-19"
+   "value": 4536.8,
+   "date": "2026-08-20"
   },
   {
    "slug": "silver",
    "symbol": "SI=F",
    "name": "Silver",
    "unit": "USD/oz",
-   "value": 62.89,
-   "date": "2026-08-19"
+   "value": 66.835,
+   "date": "2026-08-20"
   },
   {
    "slug": "crude-oil-wti",
    "symbol": "CL=F",
    "name": "Crude Oil (WTI)",
    "unit": "USD/bbl",
-   "value": 84.7,
-   "date": "2026-08-19"
+   "value": 84.51,
+   "date": "2026-08-20"
   },
   {
    "slug": "brent-crude",
    "symbol": "BZ=F",
    "name": "Brent Crude",
    "unit": "USD/bbl",
-   "value": 91.63,
-   "date": "2026-08-19"
+   "value": 91.82,
+   "date": "2026-08-20"
   },
   {
    "slug": "copper",
    "symbol": "HG=F",
    "name": "Copper",
    "unit": "USD/lb",
-   "value": 6.465,
-   "date": "2026-08-19"
+   "value": 6.484,
+   "date": "2026-08-20"
   },
   {
    "slug": "natural-gas",
    "symbol": "NG=F",
    "name": "Natural Gas",
    "unit": "USD/MMBtu",
-   "value": 2.786,
-   "date": "2026-08-19"
+   "value": 2.799,
+   "date": "2026-08-20"
   }
  ],
  "crypto": [
@@ -196,8 +196,8 @@
    "symbol": "BTC-USD",
    "name": "Bitcoin",
    "unit": "USD/BTC",
-   "value": 64243.1,
-   "date": "2026-08-19"
+   "value": 69351.84,
+   "date": "2026-08-20"
   }
  ]
 }
