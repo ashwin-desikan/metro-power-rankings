@@ -52,6 +52,22 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       ...movedSlugRedirects,
+      // The NFL-only expectation board is now the cross-sport deep dive at
+      // /sports/expectation, which leads with the finding instead of the
+      // metric. The per-season NFL game logs at /teams/nfl/expectation/[season]
+      // are untouched — they are a different object and still useful.
+      {
+        source: "/teams/nfl/expectation",
+        destination: "/sports/expectation",
+        permanent: true,
+      },
+      // Cross-sport deep dives live at /sports/<slug>; /deep-dives is the hub.
+      // Honour the other address anyway.
+      {
+        source: "/deep-dives/expectation",
+        destination: "/sports/expectation",
+        permanent: true,
+      },
       // Metro renamed: Tula, Mexico slug changed from tula-mexico to
       // tula-de-allende (formal metro name). Preserve the old indexed URL.
       {

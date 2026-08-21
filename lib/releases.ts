@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-21",
+    headline: "Every English club, measured against what was expected of it",
+    items: [
+      "English club pages now carry their whole top-flight life against the odds: a bar for every season above or below par since 1888, with the year the club most outran its rating and the year it most fell short.",
+      "Leicester's 2015-16 is the largest gap in 127 seasons, and the longest odds ever beaten belong to a Leicester side that went down that year and won at Anfield anyway.",
+      "Metro pages now answer for both sports in one place, football and the NFL, each in its own unit because a win has been worth two points and three and never the same as a touchdown.",
+      "Against Expectation collects it all, and finds home advantage collapsing in English football and the NFL alike: both peaked a century ago and have fallen ever since.",
+    ],
+  },
+  {
     date: "2026-08-20",
     headline: "A century of expectation, season by season, yours to join",
     items: [

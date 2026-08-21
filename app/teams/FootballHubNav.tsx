@@ -16,6 +16,9 @@ const DESTS: Dest[] = [
   { key: "competitions", label: "Competitions", href: "/teams/football/tournaments" },
   { key: "domestic", label: "Worldwide Table", href: "/teams/football/domestic" },
   { key: "cups", label: "Cups", href: "/teams/football/cups" },
+  // The NFL hub carries this and Club Football did not, so every English club
+  // page quoted the measure while the hub above it never mentioned it.
+  { key: "expectation", label: "Against Expectation", href: "/sports/expectation" },
   { key: "predictions", label: "🔮 Predictions", href: "/predictions/pl" },
 ];
 

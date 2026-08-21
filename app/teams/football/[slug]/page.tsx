@@ -12,6 +12,8 @@ import TopTeamChip from "@/app/teams/TopTeamChip";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import ClubHistoryChart from "../ClubHistoryChart";
+import ClubExpectationPanel from "@/app/teams/_shared/ClubExpectationPanel";
+import { getPlExpectationClub } from "@/lib/plExpectation";
 import { notFound } from "next/navigation";
 import { colorForFootballClub } from "@/lib/football-colors";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
@@ -102,6 +104,13 @@ export default async function FootballClubPage({ params }: Props) {
   if (!club) notFound();
   const rankHistory = getClubRankHistory(slug);
   const rivalries = getRivalries(club.cur_name, "Football");
+  // The English top-flight expectation series. 🔴 Let the DATA decide, not a
+  // country guard: Cardiff and Swansea have played in the English top flight
+  // and are filed under England here today, but a guard on `country` would
+  // silently drop their panels the day that filing changed. A club with no
+  // top-flight history simply has no entry, and lib/plExpectation holds one
+  // parse of the file for the whole server process.
+  const expectation = await getPlExpectationClub(slug);
 
   let seasons = getSeasonsForClub(slug);
   let mlsSeasons = club.is_mls ? getMlsSeasonsForClub(slug) : [];
@@ -270,6 +279,9 @@ export default async function FootballClubPage({ params }: Props) {
           <ClubHistoryChart history={rankHistory} />
         </section>
       )}
+
+      <ClubExpectationPanel entry={expectation} />
+
       <section
         className="rounded-xl border p-5 mb-6"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}

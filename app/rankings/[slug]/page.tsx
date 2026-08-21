@@ -73,6 +73,8 @@ import { getFormerMajorCbbForMetro, getCbbTeamForName, cbbMonogram, type FormerC
 import { getWcbbForMetro, getFormerWcbbForMetro, type WcbbCard, type FormerWcbbCard } from "@/lib/wcbb";
 import { getNflEuropeForMetro } from "@/lib/nflEurope";
 import { getNflExpectation } from "@/lib/nflExpectation";
+import { getPlExpectation } from "@/lib/plExpectation";
+import MetroExpectationCard from "@/app/teams/_shared/MetroExpectationCard";
 import { getCollegeHockeyForMetro, type CollegeHockeyCard } from "@/lib/collegeHockey";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
@@ -223,10 +225,12 @@ export default async function MetroDetailPage({ params }: PageProps) {
   const sound = await getSoundForMetro(slug);
   const screen = getScreenForMetro(slug);
   const mayor = await getMayor(slug);
-  // The NFL expectation rollup (53 metros). One ISR-cached fetch serves every
-  // metro page; misses simply render nothing.
-  const nflExpMetro =
-    (await getNflExpectation().catch(() => null))?.metros.find((m) => m.metro_slug === slug) ?? null;
+  // The expectation rollups: NFL (53 metros) and the English top flight (39).
+  // One ISR-cached fetch each serves every metro page; misses render nothing.
+  const [nflExpMetro, plExpMetro] = await Promise.all([
+    getNflExpectation().catch(() => null).then((d) => d?.metros.find((m) => m.metro_slug === slug) ?? null),
+    getPlExpectation().catch(() => null).then((d) => d?.metros.find((m) => m.metro_slug === slug) ?? null),
+  ]);
 
   if (!detail) {
     notFound();
@@ -929,27 +933,10 @@ export default async function MetroDetailPage({ params }: PageProps) {
           );
         })()}
 
-        {/* NFL against expectation: the century rollup for the 53 metros that
-            have hosted a team-season, one line and a link to the board. */}
-        {nflExpMetro && (
-          <section>
-            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg px-4 py-3 text-sm">
-              <span aria-hidden className="mr-1.5">🏈</span>
-              <span className="font-semibold">A century against expectation:</span>{" "}
-              <span className="text-[var(--text-muted)]">
-                NFL teams representing {metro.name} have {nflExpMetro.wae >= 0 ? "beaten" : "fallen short of"} their
-                pre-game odds by{" "}
-                <span className="tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", color: nflExpMetro.wae >= 0 ? "#10b981" : "#E2628B" }}>
-                  {Math.abs(nflExpMetro.wae).toFixed(1)}
-                </span>{" "}
-                wins across {nflExpMetro.seasons} team-seasons since 1920.
-              </span>{" "}
-              <Link href="/teams/nfl/expectation" className="text-[var(--accent)] hover:underline whitespace-nowrap">
-                Full board &rarr;
-              </Link>
-            </div>
-          </section>
-        )}
+        {/* Against expectation, in ONE shared component across every sport that
+            has a ledger. The inline NFL-only block that used to live here is
+            how a site ends up with two answers a scroll apart. */}
+        <MetroExpectationCard metroName={metro.name} nfl={nflExpMetro} football={plExpMetro} />
 
         {/* Championship History: every title won by a team while based here */}
         {(() => {

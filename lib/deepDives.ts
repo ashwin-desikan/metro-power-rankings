@@ -29,6 +29,15 @@ export const DEEP_DIVES: DeepDive[] = [
     featured: true,
   },
   {
+    slug: "against-expectation",
+    title: "Against Expectation",
+    dek: "Every English top-flight match since 1888 and every NFL game since 1920, scored against the chance it was given beforehand. Home advantage has collapsed in both sports and neither league has ever said so.",
+    href: "/sports/expectation",
+    tag: "Cross-sport",
+    domain: "sports",
+    accent: "#35A79F",
+  },
+  {
     slug: "heartbreak-index",
     title: "The Heartbreak Index",
     dek: "Which fanbases suffer most: droughts, lost finals, relegation and playoff exile, scored by one published formula across football, the US majors, college and nations.",

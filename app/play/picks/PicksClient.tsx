@@ -1005,7 +1005,7 @@ function SeasonTab({
           <>Once your NFL picks grade, your Brier lands here beside the model&rsquo;s and the market&rsquo;s.</>
         )}{" "}
         The same measure scores every NFL season back to 1920 on the{" "}
-        <Link href="/teams/nfl/expectation" className="underline hover:text-[var(--accent)]">expectation board</Link> — one
+        <Link href="/sports/expectation" className="underline hover:text-[var(--accent)]">expectation board</Link> — one
         axis from 1958 to your weekend.
       </div>
 
