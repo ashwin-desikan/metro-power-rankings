@@ -6341,3 +6341,173 @@ one carries a personal email — deliberately never committed).
 Dates that matter: PL matchweek 1 picks lock **Aug 21**; CFB Week 0 **Aug 27**
 (runner live on the mini); owners watchlist Aug 27 / Sep 1 / Nov 1; MLB
 playoffs early Oct (infrastructure done, cadence uncommissioned).
+
+## 2026-08-21 (cloud) — English top-flight expectation, distributed onto club and metro pages
+
+**From:** cloud session · **To:** whoever picks this up
+
+**Not committed. `npm run verify` green (typecheck, all eight checks, 85 vitest,
+112 pytest, full 5,070-page build, EXIT=0). Ashwin has not been asked to commit
+yet.**
+
+### Why this is not a board
+
+Ashwin, on `/teams/nfl/expectation`: *"I don't know what to do with this page.
+What is it supposed to show? Even someone as nerdy about stats just doesn't see
+a use for this."* He is right. Four leaderboards of a metric the reader has no
+relationship with, on a destination page, on a site whose strength is metro and
+history narrative. **The engine is not the problem, the surface is.** He chose
+distribution, so there is NO standalone PL board and there should not be one.
+Deferred but alive: the home-advantage chart/essay, and generated upset cards
+for the Time Machine.
+
+### What shipped into the tree
+
+- `scripts/football/extract_topflight.py` — AllFootball.xlsx → the spine.
+- `scripts/football/fetch_e0.py` — caches football-data.co.uk 1993-94 on.
+- `scripts/football/build_expectation.py` — model, boards, three gates.
+  `--self-test` (40 checks), `--dry`, `--write`, `--allow-known-bad`,
+  `--allow-season-count-drift`.
+- `public/data/football/expectation/{index.json 50 KB, clubs.json 372 KB}`.
+- `lib/plExpectation.ts` (ISR, mirrors `lib/nflExpectation.ts`; clubs.json is
+  lazy and promise-cached so 610 club pages parse it once).
+- `app/teams/_shared/{ExpectationSparkline,ClubExpectationPanel,MetroExpectationCard}.tsx`.
+- Club page + `/rankings/[slug]` wired. 🔴 The inline NFL-only block on the
+  metro page is REPLACED by the shared card — one component, both sports.
+- `lib/releases.ts` 2026-08-21 entry.
+
+**127 seasons, 51,330 matches, 1888-89 → 2025-26. Log loss 0.99925.**
+
+### 🔴 Things that will bite the next session
+
+1. **`data/` is gitignored (`/data/*`), so the spine and the E0 cache never
+   enter git.** The ledger can only be rebuilt on a machine holding
+   `AllFootball.xlsx` (OneDrive, 192 MB) and the cache. The mini and CI cannot.
+   Only `public/data/football/expectation/` ships. Deliberate, but know it.
+2. **The top flight has had THREE names in the workbook.** `First Division` +
+   `Premier League` = 99,290 rows exactly, and that slice silently starts in
+   1892-93; `Football League` covers 1888-89 to 1891-92. The extractor refuses
+   if any of the three yields no rows.
+3. **1939-40 IS NOT A SEASON.** Three matchdays, then war, results expunged.
+   The workbook still carries the 33 matches. Detected generically (a real
+   season hits n*(n-1) matches exactly; under a quarter of that is void; in
+   between the build REFUSES rather than guessing).
+4. **Six points deductions are real and the hub is right** (Arsenal −2 and Man
+   Utd −1 in 1990-91, Middlesbrough −3 1996-97, Portsmouth −9 2009-10, Everton
+   −8 and Forest −4 in 2023-24). They move POINTS ONLY; a reversed fixture
+   moves W/L/GF/GA together. The signature separates them without a human.
+5. **20 reversed fixtures and 2 off-by-one scorelines remain in the workbook**,
+   listed in `KNOWN_BAD` / `KNOWN_SCORE_OFF`. **DO NOT repair by flipping the
+   venue or swapping the goals** — that is the NFL spread incident again. Get
+   the real results. Signature: 47 of 25,698 season pairings have both legs at
+   one ground, 33 have only one leg.
+6. **`Wimbledon` renders UNLINKED by design.** The workbook's own current-name
+   column resolves it to Milton Keynes Dons, which would move 554 rows and
+   fourteen seasons of London football to Milton Keynes. Ashwin rules or it
+   stays. A self-test asserts it.
+7. **Never read the workbook's `Cur. Name`/`Opp. Name` for slugs** — in 1992-93
+   it resolves 44 rows to `FC Wacker Innsbruck`, an Austrian club.
+8. **Metro names come from the site's own club index, not the workbook.** The
+   workbook says Reading and Luton where the site says London, and Leeds,
+   Bradford and Kirklees where the site publishes one Leeds-Bradford.
+9. **Pre-2000 E0 files are cp1252, not UTF-8.** Decode with a fallback chain.
+10. **The model has almost no skill before 1960** (0.6% over an era baseline,
+    against 8.4% in the 2010s). That is a finding, and the panel says so.
+
+### Two reconciliations, both passing
+
+- Season tables vs the site's own England tier-1 hub standings: 67 seasons,
+  1,405 club-seasons, **0 unmatched names**, 202 mismatched cells, all
+  accounted for by items 4 and 5.
+- **Every club's season count vs its own club page: 64 checked, 0 disagree.**
+  This is the one that caught 1939-40 (Liverpool read 112 where the club page
+  said 111). Both gates refuse by default.
+
+### Findings worth an essay
+
+Home advantage has collapsed: fitted 166 Elo points in 1900-01 to **50 in
+2025-26**, home wins 58.5% (1890s) → 43.1% (2020s). 2015-16 Leicester **+27.4
+points**, the largest gap in 127 seasons; 2007-08 Derby **−25.1**. Longest odds
+beaten: **Liverpool 1-2 Leicester, 31 Jan 1981, p=0.038** — and every one of the
+top five is a famous match, which is the best evidence the model has taste.
+Metro rollup: Liverpool +93.8, Manchester +75.6, London +51.7 over 21,146
+club-matches, i.e. the biggest metro is barely above par. The market beat the
+model in all three priced seasons.
+
+### Open
+
+1. Ask Ashwin to commit (nothing has been committed).
+2. The 22 bad fixtures: source real results, do not infer.
+3. Wimbledon: rule or leave unlinked.
+4. Deferred surfaces: home-advantage chart + essay; Time Machine upset cards.
+
+## 2026-08-21 (cloud, later) — /sports/expectation ships; the NFL board is retired
+
+**From:** cloud session · **To:** whoever picks this up
+
+Supersedes the entry above. **Still not committed. `npm run verify` green
+(EXIT=0), full 5,070-page build.**
+
+### The page
+
+`/sports/expectation` — one cross-sport deep dive that leads with the finding
+and keeps the boards underneath it as evidence, then says exactly what is
+wrong with its own numbers. 🔴 **Cross-sport deep dives live at
+`/sports/<slug>`; `/deep-dives` is only the hub** (`/sports/heartbreak`,
+`/sports/games`, `/sports/valuations`), so it is registered in
+`lib/deepDives.ts` and `/deep-dives/expectation` 301s to it.
+
+🔴 **`/teams/nfl/expectation` IS RETIRED** — 301 in `next.config.ts`, old page
+parked at `_scratch/retired-nfl-expectation-page.tsx.bak`. **The `[season]`
+game logs survive untouched** — they are a different object and still useful.
+All four link sites swept: the NFL hub twice, PicksClient, and the metro card.
+
+### 🔴 THE FINDING, and it is a good one
+
+**Home advantage is dying in both sports at once.** Football **191 Elo points
+(1901-02) → 56 (2025-26)**; the NFL **190 (1925) → 29 (2025)**. Home-win share
+59.1% → 44.2% and 62.3% → 54.0%. Two sports, two continents, nothing in common
+but crowds and travel. New file
+`scripts/expectation/build_home_advantage.py` → `public/data/expectation/
+home-advantage.json`, read by `lib/expectation.ts`.
+
+🔧 **Home-win share is NOT comparable between a sport with draws and one
+without.** The legitimate cross-sport unit is `400*log10(home wins/away wins)`,
+in which draws divide out; that is the only reason the two lines may share an
+axis, and the page says so. NFL counts REGULAR SEASON, non-neutral only,
+because the better team hosts in the playoffs and that is seeding.
+
+### 🔴 Two mistakes I made, both caught, both worth not repeating
+
+1. **I wrote "the market was closer in every one of them" from the three
+   seasons I happened to have measured.** Over the 24 priced seasons the model
+   actually wins one (2008-09). The card now DERIVES the comparison from
+   `pl.seasons`. On a page whose whole argument is that a reader can check it,
+   an uncomputed claim is the one unforgivable thing.
+2. **Ashwin hit two units one click apart**: Manchester United 1988-89 read
+   -14.1 in the callout and -4.3 in the bar tooltip. League points versus match
+   points, both correct, neither labelled where the reader was actually asking.
+   Every bar's tooltip now carries BOTH and names them.
+
+Two process notes: re-delivering a container copy of a file **silently reverted
+edits made on the device** (edit in one place per file), and **deleting a route
+leaves stale `.next/types` that fail `tsc`** — remove `.next/types` before
+typechecking after any route change.
+
+### Chart discipline
+
+🔧 The palette validator failed the site's bright `#4ECDC4`/`#f59e0b` on the
+lightness band against `--bg-card #12121A`; `#35A79F`/`#C97A06` pass all six
+checks and still read as the site's teal and amber. The sparkline uses the
+DESIGN-STANDARDS diverging pair on a zero baseline. Both charts are
+server-rendered SVG with native `<title>` tooltips and no client JavaScript.
+
+### Open
+
+1. **Ask Ashwin to commit.** Nothing is committed. `git status` shows nine
+   modified, one deleted, twelve untracked.
+2. The 20 reversed fixtures and 2 off-by-one scorelines: source the real
+   results, never infer the correction.
+3. Wimbledon: rule, or leave unlinked.
+4. Deferred: a Substack essay off the home-advantage finding (it is the most
+   shareable thing this build produced); Time Machine upset cards.
