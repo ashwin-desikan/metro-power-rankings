@@ -4486,6 +4486,17 @@
   },
   {
    "date": "2026-06-29",
+   "pollster": "Survation {{Cite web|url=https://cdn.survation.c",
+   "sample": null,
+   "lab": 2.0,
+   "con": 21.0,
+   "ref": 19.0,
+   "ld": 29.0,
+   "grn": 11.0,
+   "snp": 11.0
+  },
+  {
+   "date": "2026-06-29",
    "pollster": "Lord Ashcroft Polls",
    "sample": 5064,
    "lab": 21.0,
@@ -4881,6 +4892,16 @@
    "snp": 3.0
   },
   {
+   "date": "2026-08-11",
+   "pollster": "JL Partners",
+   "sample": 2017,
+   "lab": 28.0,
+   "con": 21.0,
+   "ref": 25.0,
+   "ld": 10.0,
+   "grn": 9.0
+  },
+  {
    "date": "2026-08-12",
    "pollster": "Trajectory Partnership",
    "sample": 1462,
@@ -4912,6 +4933,28 @@
    "ld": 10.0,
    "grn": 11.0,
    "snp": 3.0
+  },
+  {
+   "date": "2026-08-17",
+   "pollster": "YouGov",
+   "sample": 2441,
+   "lab": 22.0,
+   "con": 19.0,
+   "ref": 24.0,
+   "ld": 12.0,
+   "grn": 13.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-17",
+   "pollster": "More in Common {{Cite web |title=Very little cha",
+   "sample": null,
+   "lab": 2.0,
+   "con": 27.0,
+   "ref": 22.0,
+   "ld": 25.0,
+   "grn": 11.0,
+   "snp": 9.0
   }
  ]
 }

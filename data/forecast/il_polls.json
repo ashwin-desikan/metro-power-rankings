@@ -60,6 +60,49 @@
     "Zionist Home": 0
    },
    "gov": null
+  },
+  {
+   "date": "2026-08-19",
+   "pollster": "Kantar",
+   "seats": {
+    "Likud": 23,
+    "Together": 14,
+    "RZP": 5,
+    "Otzma": 9,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 9,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 6,
+    "Balad": 0,
+    "Dems": 10,
+    "Yashar": 24,
+    "Zionist Home": 0,
+    "Unity": 0
+   },
+   "gov": 52
+  },
+  {
+   "date": "2026-08-20",
+   "pollster": "Yossi Tatika",
+   "seats": {
+    "Likud": 21,
+    "Together": 15,
+    "RZP": 6,
+    "Otzma": 7,
+    "Blue & White": 0,
+    "Shas": 9,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 11,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 7,
+    "Balad": 8,
+    "Dems": 23,
+    "Yashar": 0,
+    "Zionist Home": 0
+   },
+   "gov": null
   }
  ]
 }
