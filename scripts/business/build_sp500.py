@@ -160,8 +160,14 @@ def main(argv):
     common.log(f"constituents: {len(cons)}, changes rows: {len(changes)}")
 
     metro_info = {m["name"]: m for m in json.load(open(METROS, encoding="utf-8"))}
+    # company_id is in the select (not just the order) so a genuine recycled-
+    # ticker collision -- two distinct companies, e.g. "Invoca(Uni)" and
+    # "Invoca(Uni)#2", identical on every other column -- doesn't hash to the
+    # same projected row and false-positive select_all's duplicate-page
+    # guard. The order column itself has always been unique; what wasn't
+    # unique was the narrower 5-column projection this used to select.
     rows = common.select_all(
-        "/rest/v1/mktcap_merged?select=name,symbol,marketcap,metro,country",
+        "/rest/v1/mktcap_merged?select=company_id,name,symbol,marketcap,metro,country",
         order="company_id")
     by_sym = {norm_sym(r["symbol"]): r for r in rows if r.get("symbol")}
 
