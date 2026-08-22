@@ -156,6 +156,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/predictions`,
+      lastModified: stamp,
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/predictions/scoreboard`,
+      lastModified: stamp,
+      changeFrequency: "daily",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/sports/expectation`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/play/picks`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
       url: `${BASE_URL}/updates`,
       lastModified: stamp,
       changeFrequency: "weekly",

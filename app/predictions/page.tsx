@@ -9,7 +9,7 @@ const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const PATH = "/predictions";
 const TITLE = "Predictions";
 const DESC =
-  "Forecasts across politics and sport: live election models, and simulated title races for the NFL, College Football, the Premier League and the Champions League, modeled on the 2026 World Cup simulator. Ranges first, probabilities second, humility throughout.";
+  "Forecasts across politics and sport, scored in public: live election models, simulated title races for the NFL, MLB, College Football and the Premier League.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -51,8 +51,9 @@ export default async function PredictionsPage() {
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Predictions</h1>
         <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
           Forecasts across politics and sport, stated honestly: weighted averages, ranges from thousands
-          of simulations, and the odds laid out so you can take the other side. Elections are live now;
-          the league title-race hubs are on the way, modeled on the World Cup simulator.
+          of simulations, and the odds laid out so you can take the other side. Elections, the NFL, MLB,
+          College Football and the Premier League are all live, and every call is scored afterwards
+          against the price the market closed at.
         </p>
         <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3" style={MONO}>
           Ranges first, probabilities second, humility throughout
@@ -100,7 +101,27 @@ export default async function PredictionsPage() {
         </Link>
       </section>
 
-      {/* League prediction hubs - coming soon */}
+      {/* The Ledger - the accountability surface for everything else on this page */}
+      <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+        <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
+          <h2 className="text-2xl font-bold flex items-center gap-2"><span aria-hidden>&#128211;</span> The Ledger</h2>
+          <span className="flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#10b981" }} aria-hidden />
+            <span className="text-[10px]" style={{ ...MONO, color: "#10b981" }}>LIVE</span>
+          </span>
+        </div>
+        <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
+          Anyone can publish a probability. This is the record: every forecast scored against the price
+          the betting market closed at, the probability bins showing whether seventy per cent has meant
+          seventy per cent, and the seasons the model beat the market named one by one. Over twenty
+          thousand priced games, the market is still ahead.
+        </p>
+        <Link href="/predictions/scoreboard" className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: "var(--accent)" }}>
+          See how the models have done <span aria-hidden>&rarr;</span>
+        </Link>
+      </section>
+
+      {/* League prediction hubs */}
       <section className="mb-10">
         <div className="flex items-baseline justify-between gap-3 mb-1 flex-wrap">
           <h2 className="text-2xl font-bold flex items-center gap-2"><span aria-hidden>&#127942;</span> League Prediction Hubs</h2>

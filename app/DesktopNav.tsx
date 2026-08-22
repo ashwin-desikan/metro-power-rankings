@@ -255,6 +255,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuGroupLabel>Across time</MenuGroupLabel>
             <MenuLink href="/time-machine" title="🕰️ The Time Machine" />
             <MenuLink href="/predictions" title="🔮 Predictions" />
+            <MenuLink href="/predictions/scoreboard" title="📓 The Ledger" />
           </div>
         </div>
         <div className="border-t px-2 py-1.5 flex gap-2" style={{ borderColor: "var(--border)" }}>

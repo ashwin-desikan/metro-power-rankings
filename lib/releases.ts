@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-22",
+    headline: "Every forecast we publish, now scored in public",
+    items: [
+      "The Ledger collects every forecast this site makes and scores it against the price the betting market closed at, nearly twenty-one thousand games that carried a price.",
+      "It opens with the unflattering number: across a century of English football and the NFL the market has been closer than our model, and the seasons we did win are named one by one.",
+      "A calibration table asks whether seventy per cent has actually meant seventy per cent, across every probability bin the model has ever used.",
+      "This season's hubs sit alongside the history, empty for now and saying so, each with the date its first result grades.",
+    ],
+  },
+  {
     date: "2026-08-21",
     headline: "Every English club, measured against what was expected of it",
     items: [

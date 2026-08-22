@@ -71,6 +71,7 @@ function buildSections(): Section[] {
       items: [
         { href: '/time-machine', label: '🕰️ The Time Machine' },
         { href: '/predictions', label: '🔮 Predictions' },
+        { href: '/predictions/scoreboard', label: '📓 The Ledger' },
       ],
     },
     {
