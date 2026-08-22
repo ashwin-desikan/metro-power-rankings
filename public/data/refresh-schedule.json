@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-08-22T02:34:59.002601+00:00",
+  "generated_at": "2026-08-22T04:05:08.175958+00:00",
   "jobs": [
-    {
-      "id": "euro-comps",
-      "label": "UEFA club competitions",
-      "schedule_text": "Daily at 04:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "04:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-22T04:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-21",
-        "status": "ok",
-        "slot": "2026-08-21T04:00:00+00:00"
-      }
-    },
     {
       "id": "gap-league-watch",
       "label": "Football gap-league watch",
@@ -177,6 +159,24 @@
         "date": "2026-08-22",
         "status": "ok",
         "slot": "2026-08-22T02:30:00+00:00"
+      }
+    },
+    {
+      "id": "euro-comps",
+      "label": "UEFA club competitions",
+      "schedule_text": "Daily at 04:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "04:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-23T04:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-22",
+        "status": "ok",
+        "slot": "2026-08-22T04:00:00+00:00"
       }
     },
     {
