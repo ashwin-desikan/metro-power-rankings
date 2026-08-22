@@ -1,7 +1,7 @@
 {
  "meta": {
-  "as_of": "2026-08-17",
-  "generated_at": "2026-08-17T17:25:30Z",
+  "as_of": "2026-08-22",
+  "generated_at": "2026-08-22T09:08:42Z",
   "unicorns": 1397,
   "graduated": 7,
   "private": 372
@@ -15386,7 +15386,7 @@
    "investors": "Durable Capital Partners, Adjacent, Creator Partners",
    "metro": "Milan",
    "metroSlug": "milan",
-   "publicCap": 24242636800.0
+   "publicCap": 26266318848.0
   },
   {
    "name": "Navan",
@@ -15398,7 +15398,7 @@
    "investors": "Andreessen Horowitz, Lightspeed Venture Partners, Zeev Ventures",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 7340000256.0
+   "publicCap": 7416299520.0
   },
   {
    "name": "Netskope",
@@ -15410,19 +15410,7 @@
    "investors": "Lightspeed Venture Partners, Social Capital, Accel",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 6125501952.0
-  },
-  {
-   "name": "Firefly Aerospace",
-   "valuation": 2000000000.0,
-   "dateJoined": "2024-05-04",
-   "country": "United States",
-   "city": "Cedar Park",
-   "industry": "Industrials",
-   "investors": "Noosphere Ventures, RPM Ventures, SMS Capital Investment",
-   "metro": "Austin",
-   "metroSlug": "austin",
-   "publicCap": 4550895104.0
+   "publicCap": 5860932096.0
   },
   {
    "name": "HeartFlow",
@@ -15434,7 +15422,19 @@
    "investors": "BlueCross BlueShield Venture Partners, US Venture Partners",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 3645965568.0
+   "publicCap": 4325942784.0
+  },
+  {
+   "name": "Firefly Aerospace",
+   "valuation": 2000000000.0,
+   "dateJoined": "2024-05-04",
+   "country": "United States",
+   "city": "Cedar Park",
+   "industry": "Industrials",
+   "investors": "Noosphere Ventures, RPM Ventures, SMS Capital Investment",
+   "metro": "Austin",
+   "metroSlug": "austin",
+   "publicCap": 4093043456.0
   },
   {
    "name": "Ionic Digital",
@@ -15446,7 +15446,7 @@
    "investors": "Attestor, Citadel, Oaktree Capital Management",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 2919443456.0
+   "publicCap": 3087449856.0
   },
   {
    "name": "Mercor",
@@ -15458,7 +15458,7 @@
    "investors": "Felicis, Benchmark",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 36072016.0
+   "publicCap": 37049265.0
   }
  ],
  "private": [
