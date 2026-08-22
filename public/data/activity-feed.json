@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-08-21",
+  "generatedAt": "2026-08-22",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-22",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "ce7b2e5e7"
+    },
     {
       "date": "2026-08-21",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "632b66026"
+      "text": "Data refreshed — Football, Basketball, Elections, AFL, and 3 more.",
+      "commit": "e0b0dfef3"
+    },
+    {
+      "date": "2026-08-21",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Against Expectation: distribute the measure, and give it one cross-sport home.",
+      "commit": "1f8cfb11f"
     },
     {
       "date": "2026-08-20",
@@ -4187,20 +4201,6 @@
       "hub": "Badges",
       "text": "Five live badges: Global Gateway, Finance Capital, Culture Capital, Sports Mecca, Rail Hub; St.",
       "commit": "224b6beda"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "new-hub",
-      "hub": "Badges",
-      "text": "New hub: Badges.",
-      "commit": "abf82506b"
-    },
-    {
-      "date": "2026-05-01",
-      "category": "new-hub",
-      "hub": "Admin",
-      "text": "New hub: Admin.",
-      "commit": "5e4b7d476"
     }
   ]
 }
