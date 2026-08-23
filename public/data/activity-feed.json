@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-08-23",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-23",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "b1e403dfa"
+    },
+    {
+      "date": "2026-08-23",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "The Ledger: every forecast this site publishes, scored in public against the market.",
+      "commit": "0c55c0eff"
+    },
     {
       "date": "2026-08-22",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "ce7b2e5e7"
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "41193a948"
     },
     {
       "date": "2026-08-21",
@@ -4187,20 +4201,6 @@
       "hub": "Rankings",
       "text": "Badge chips: show name and emoji only, drop the value display.",
       "commit": "751b5f730"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Overperformer badge live; badge chips on every metro detail page.",
-      "commit": "e49242a31"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "fix",
-      "hub": "Badges",
-      "text": "Five live badges: Global Gateway, Finance Capital, Culture Capital, Sports Mecca, Rail Hub; St.",
-      "commit": "224b6beda"
     }
   ]
 }
