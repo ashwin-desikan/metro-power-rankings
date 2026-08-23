@@ -405,9 +405,13 @@
     "since": "2023-06-20"
   },
   "france": {
-    "name": "Emmanuel Macron",
-    "role": "Pres.",
-    "since": "2017-05-14"
+    "name": "Sébastien Lecornu",
+    "role": "PM",
+    "second": {
+      "name": "Emmanuel Macron",
+      "role": "Pres."
+    },
+    "since": "2025-09-09"
   },
   "gabon": {
     "name": "Brice Clotaire Oligui Nguema",

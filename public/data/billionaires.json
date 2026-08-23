@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-16",
+  "generated": "2026-08-23",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3385,
   "billionaires": [
@@ -3637,9 +3637,9 @@
       "name": "Ralph Lauren & Family",
       "uri": "ralph-lauren-family",
       "networth": 14666.834,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Fashion & Retail"
       ],
@@ -13129,9 +13129,9 @@
       "name": "Peter Spuhler",
       "uri": "peter-spuhler",
       "networth": 5414.857,
-      "countryCode": "CH",
-      "countrySlug": "switzerland",
-      "countryName": "Switzerland",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -23624,9 +23624,9 @@
       "name": "Shmuel Harlap",
       "uri": "shmuel-harlap",
       "networth": 3085.376,
-      "countryCode": "IL",
-      "countrySlug": "israel",
-      "countryName": "Israel",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Automotive"
       ],
@@ -53187,9 +53187,9 @@
       "name": "Peter Salanki",
       "uri": "peter-salanki",
       "networth": 1186.097,
-      "countryCode": "SE",
-      "countrySlug": "sweden",
-      "countryName": "Sweden",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -54670,9 +54670,9 @@
       "name": "Liu Zhiqiang",
       "uri": "liu-zhiqiang",
       "networth": 1132.896,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": "HK",
+      "countrySlug": "hong-kong",
+      "countryName": "Hong Kong",
       "industries": [
         "Diversified"
       ],
@@ -56493,9 +56493,9 @@
       "name": "Delfin Jorge Ezequiel Carballo",
       "uri": "delfin-jorge-ezequiel-carballo",
       "networth": 1062.449,
-      "countryCode": "AR",
-      "countrySlug": "argentina",
-      "countryName": "Argentina",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Finance & Investments"
       ],
@@ -56832,9 +56832,9 @@
       "name": "Robert Steers & family",
       "uri": "robert-steers",
       "networth": 1048.158,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Finance & Investments"
       ],
@@ -56934,9 +56934,9 @@
       "name": "Wang Xinyang",
       "uri": "wang-xinyang",
       "networth": 1039.719,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -57379,9 +57379,9 @@
       "name": "Amit Burman",
       "uri": "amit-burman",
       "networth": 1022.925,
-      "countryCode": "IN",
-      "countrySlug": "india",
-      "countryName": "India",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -57431,9 +57431,9 @@
       "name": "Robert Coyiuto Jr.",
       "uri": "robert-coyiuto-jr",
       "networth": 1017.368,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "PH",
+      "countrySlug": "philippines",
+      "countryName": "Philippines",
       "industries": [
         "Energy"
       ],
@@ -57689,9 +57689,9 @@
       "name": "Christopher Urmson",
       "uri": "christopher-urmson",
       "networth": 1007.208,
-      "countryCode": "CA",
-      "countrySlug": "canada",
-      "countryName": "Canada",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Automotive"
       ],

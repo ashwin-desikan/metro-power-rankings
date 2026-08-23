@@ -1,6 +1,15 @@
 {
-  "updated": "2026-08-16",
+  "updated": "2026-08-23",
   "changes": [
+    {
+      "date": "2025-09-09",
+      "slug": "france",
+      "country": "France",
+      "office": "Prime Minister",
+      "from": null,
+      "to": "Sébastien Lecornu",
+      "source": "wikidata"
+    },
     {
       "date": "2025-04-10",
       "slug": "liechtenstein",
