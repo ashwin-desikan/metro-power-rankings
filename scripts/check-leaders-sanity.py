@@ -35,6 +35,12 @@ PINS = {
                                               # resolved its own label + start date) -- pin stays as
                                               # the regression guard now that WD is load-bearing here
     "bulgaria":     "Rumen Radev",           # WD P6 stale (still Petkov, 2021)
+    "nigeria":      "Bola Ahmed Tinubu",     # WD label oscillates long/short form of the same person,
+                                              # confirmed same `since` both directions (2026-08-15,
+                                              # 2026-08-17, 2026-08-23) -- the name-vs-date check alone
+                                              # already HOLDs each recurrence, so nothing was silently
+                                              # slipping through; this pin just stops it recurring at
+                                              # all instead of needing a fresh manual exclude every time
 }
 PARTICLES = {"bin","bint","ibn","al","van","von","de","da","del","dos","di","der",
              "ter","of","the","e","du","la","le","y","das"}
