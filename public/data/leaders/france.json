@@ -878,5 +878,15 @@
     "tenure": "9y 1m 15d",
     "party": "Centrist En Marche; 5th Republic",
     "era": "Fifth Republic"
+  },
+  {
+    "name": "Sébastien Lecornu",
+    "role": "Prime Minister",
+    "start": "2025-09-09",
+    "end": null,
+    "current": true,
+    "tenure": "0y 11m 14d",
+    "party": "Renaissance; 5th Republic",
+    "era": "Fifth Republic"
   }
 ]
