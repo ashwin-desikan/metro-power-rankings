@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-08-23T23:02:40.349763+00:00",
+  "generated_at": "2026-08-23T23:52:46.148330+00:00",
   "jobs": [
-    {
-      "id": "cfb-sun",
-      "label": "CFB predictions (grade the week, publish AP-25 slate)",
-      "schedule_text": "Sun at 23:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "23:40"
-      ],
-      "weekdays": [
-        7
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-23T23:40:00+00:00",
-      "last_run": {
-        "date": "2026-08-16",
-        "status": "missed",
-        "slot": "2026-08-16T23:40:00+00:00"
-      }
-    },
     {
       "id": "activity-feed",
       "label": "Site activity feed",
@@ -403,6 +383,26 @@
         "date": "2026-08-23",
         "status": "failed",
         "slot": "2026-08-23T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "cfb-sun",
+      "label": "CFB predictions (grade the week, publish AP-25 slate)",
+      "schedule_text": "Sun at 23:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "23:40"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-30T23:40:00+00:00",
+      "last_run": {
+        "date": "2026-08-23",
+        "status": "ok",
+        "slot": "2026-08-23T23:40:00+00:00"
       }
     },
     {
