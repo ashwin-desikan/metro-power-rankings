@@ -1,13 +1,20 @@
 {
-  "generatedAt": "2026-08-23",
+  "generatedAt": "2026-08-24",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-24",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, College football.",
+      "commit": "eedfee34d"
+    },
     {
       "date": "2026-08-23",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "b1e403dfa"
+      "text": "Data refreshed — Football, Basketball, F1, Leaders, and 3 more.",
+      "commit": "34880c7ea"
     },
     {
       "date": "2026-08-23",
@@ -4194,13 +4201,6 @@
       "hub": "Rankings",
       "text": "Six new live badges (Global Gateway, Finance Capital, Culture Capital, Sports Mecca, Rail Hub, Overperformer); badge chips on every metro p…",
       "commit": "a0a768a34"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Badge chips: show name and emoji only, drop the value display.",
-      "commit": "751b5f730"
     }
   ]
 }
