@@ -1,30 +1,6 @@
 {
-  "generated_at": "2026-08-24T11:07:40.167773+00:00",
+  "generated_at": "2026-08-24T13:08:05.152211+00:00",
   "jobs": [
-    {
-      "id": "screen-number-ones",
-      "label": "US box office #1s",
-      "schedule_text": "Mon/Tue/Wed at 05:00, 13:00, 21:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "05:00",
-        "13:00",
-        "21:00"
-      ],
-      "weekdays": [
-        1,
-        2,
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-24T13:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-24",
-        "status": "ok",
-        "slot": "2026-08-24T05:00:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -73,6 +49,30 @@
         "date": "2026-08-24",
         "status": "ok",
         "slot": "2026-08-24T11:00:00+00:00"
+      }
+    },
+    {
+      "id": "screen-number-ones",
+      "label": "US box office #1s",
+      "schedule_text": "Mon/Tue/Wed at 05:00, 13:00, 21:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "05:00",
+        "13:00",
+        "21:00"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-24T21:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-24",
+        "status": "ok",
+        "slot": "2026-08-24T13:00:00+00:00"
       }
     },
     {
