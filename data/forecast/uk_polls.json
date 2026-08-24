@@ -4947,14 +4947,25 @@
   },
   {
    "date": "2026-08-17",
-   "pollster": "More in Common {{Cite web |title=Very little cha",
-   "sample": null,
-   "lab": 2.0,
-   "con": 27.0,
-   "ref": 22.0,
-   "ld": 25.0,
-   "grn": 11.0,
-   "snp": 9.0
+   "pollster": "Deltapoll",
+   "sample": 2017,
+   "lab": 29.0,
+   "con": 21.0,
+   "ref": 27.0,
+   "ld": 8.0,
+   "grn": 8.0,
+   "snp": 2.0
+  },
+  {
+   "date": "2026-08-17",
+   "pollster": "More in Common",
+   "sample": 2055,
+   "lab": 27.0,
+   "con": 22.0,
+   "ref": 25.0,
+   "ld": 11.0,
+   "grn": 9.0,
+   "snp": 3.0
   }
  ]
 }

@@ -132,7 +132,7 @@
    "state": "Michigan",
    "incumbentParty": "D",
    "nRatings": 8,
-   "score": 1.06,
+   "score": 1.19,
    "retiring": true
   },
   {
@@ -160,7 +160,7 @@
    "state": "New Hampshire",
    "incumbentParty": "R",
    "nRatings": 8,
-   "score": -1.75,
+   "score": -1.88,
    "retiring": false
   },
   {
@@ -195,7 +195,7 @@
    "state": "Oregon",
    "incumbentParty": "D",
    "nRatings": 8,
-   "score": 1.81,
+   "score": 1.88,
    "retiring": false
   },
   {
@@ -216,7 +216,7 @@
    "state": "South Carolina",
    "incumbentParty": "R",
    "nRatings": 8,
-   "score": -2.62,
+   "score": -2.75,
    "retiring": true
   },
   {

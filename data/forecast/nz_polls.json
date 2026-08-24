@@ -1280,6 +1280,17 @@
    "act": 7.0,
    "nzf": 13.0,
    "tpm": 3.0
+  },
+  {
+   "date": "2026-08-21",
+   "pollster": "RNZ–Reid Research",
+   "sample": 1000,
+   "nat": 29.1,
+   "lab": 32.2,
+   "grn": 10.2,
+   "act": 7.7,
+   "nzf": 11.9,
+   "tpm": 3.0
   }
  ]
 }
