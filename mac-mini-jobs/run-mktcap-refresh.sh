@@ -97,6 +97,19 @@ case "$QUEUE_LINE" in
   *) push "mktcap-refresh: new companies to map -- $DATE" default warning "${QUEUE_LINE:-METRO QUEUE line not found in log}" ;;
 esac
 
+# Committed alongside the data, not just pushed to ntfy: the
+# mktcap-weekly-metro-mapping-research cloud routine cannot reach ntfy.sh at
+# all (its sandbox's egress proxy 403s the CONNECT -- confirmed 2026-08-22,
+# both raw curl and WebFetch), so ntfy was never a channel it could actually
+# read from, only Ashwin's own phone. This file is what the routine reads
+# instead, via its git source. Always rewritten (never appended) -- a rolling
+# "as of this run" snapshot, not a log; "none" is the clean, expected value.
+{
+  echo "# mktcap-refresh review queue -- $DATE"
+  echo "# Overwritten every run. 'none' below means nothing needs review this week."
+  if [ -n "$QUEUE_LINE" ]; then printf '%s\n' "$QUEUE_LINE"; else echo "none"; fi
+} > "$REPO/mac-mini-jobs/mktcap-review-queue.md"
+
 cd "$BIZ" || fail "scripts/business not found"
 log "self-test: business data + sp500"
 "$PY" build_business_data.py --self-test 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_business_data.py --self-test failed"
@@ -114,16 +127,16 @@ cd "$REPO" || fail "repo not found: $REPO"
 # other two silently stale even though business.json looks fresh -- lib/
 # business.ts's getCompanies()/getUnicorns() read companies.json/unicorns.json
 # directly, they are not derived from business.json at request time.
-BIZ_PATHS="public/data/business/business.json public/data/business/sp500.json public/data/business/companies.json public/data/business/unicorns.json"
+BIZ_PATHS="public/data/business/business.json public/data/business/sp500.json public/data/business/companies.json public/data/business/unicorns.json mac-mini-jobs/mktcap-review-queue.md"
 if git diff --quiet -- $BIZ_PATHS; then
-  log "no /business data change this run; nothing to commit"
+  log "no /business data or review-queue change this run; nothing to commit"
 else
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
   git add $BIZ_PATHS
   git commit -m "business: weekly mktcap snapshot $DATE [vercel skip]" --quiet || fail "git commit failed"
   git push origin HEAD:main --quiet || fail "git push failed"
-  log "committed + pushed /business snapshot"
+  log "committed + pushed /business snapshot + review queue"
   revalidate_business
 fi
 

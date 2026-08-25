@@ -45,23 +45,37 @@ log "building top games from supabase"
 "$PY" build_cricket_top_games.py --workbook supabase 2>&1 | tee -a "$LOG" || fail "build_cricket_top_games failed"
 
 cd "$REPO"
-if git diff --quiet -- public/data/cricket; then
-  log "no cricket data change this run; nothing to commit"
+REVIEW="$(printf '%s\n%s\n' "$STAGE_OUT" "$AFG_OUT" | grep -iE 'REVIEW' || true)"
+
+# Committed alongside the data, not just pushed to ntfy: the
+# cricket-weekly-venue-country-research cloud routine cannot reach ntfy.sh at
+# all (its sandbox's egress proxy 403s the CONNECT -- confirmed 2026-08-25,
+# both raw curl and WebFetch), so ntfy was never a channel it could actually
+# read from, only Ashwin's own phone. This file is what the routine reads
+# instead, via its git source. Always rewritten (never appended) -- a rolling
+# "as of this run" snapshot, not a log; "none" is the clean, expected value.
+{
+  echo "# Cricket weekly review queue -- $DATE"
+  echo "# Overwritten every run. 'none' below means nothing needs review this week."
+  if [ -n "$REVIEW" ]; then printf '%s\n' "$REVIEW"; else echo "none"; fi
+} > mac-mini-jobs/cricket-review-queue.md
+
+if git diff --quiet -- public/data/cricket mac-mini-jobs/cricket-review-queue.md; then
+  log "no cricket data or review-queue change this run; nothing to commit"
 else
   if [ "$DRY_RUN" = "1" ]; then
-    log "DRY_RUN=1: cricket data changed — diff summary (NOT committing):"
-    git --no-pager diff --stat -- public/data/cricket | tee -a "$LOG"
-    git checkout -- public/data/cricket
+    log "DRY_RUN=1: data changed — diff summary (NOT committing):"
+    git --no-pager diff --stat -- public/data/cricket mac-mini-jobs/cricket-review-queue.md | tee -a "$LOG"
+    git checkout -- public/data/cricket mac-mini-jobs/cricket-review-queue.md
   else
     git config user.name "mac-mini[claude]"; git config user.email "mac-mini-claude@users.noreply.github.com"
-    git add public/data/cricket
+    git add public/data/cricket mac-mini-jobs/cricket-review-queue.md
     git commit -m "data: cricket weekly refresh [vercel skip]" --quiet || fail "git commit failed"
     git push origin HEAD:main || fail "git push failed"
-    log "committed + pushed cricket data"
+    log "committed + pushed cricket data + review queue"
   fi
 fi
 
-REVIEW="$(printf '%s\n%s\n' "$STAGE_OUT" "$AFG_OUT" | grep -iE 'REVIEW' || true)"
 if [ -n "$REVIEW" ]; then
   push "Cricket weekly: REVIEW items -- $DATE" default warning "Unresolved team/venue spellings inserted with blanks; fix via the Supabase connector:
 $REVIEW"
