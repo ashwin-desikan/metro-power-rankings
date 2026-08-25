@@ -1,73 +1,6 @@
 {
-  "generated_at": "2026-08-25T06:55:04.726160+00:00",
+  "generated_at": "2026-08-25T07:35:41.102981+00:00",
   "jobs": [
-    {
-      "id": "mlb-sim",
-      "label": "MLB + season playoff odds (7 leagues)",
-      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
-      "cadence": "daily",
-      "times": [
-        "07:00",
-        "14:30"
-      ],
-      "weekdays": [],
-      "months": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
-      "days_of_month": [],
-      "next_run": "2026-08-25T07:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-24",
-        "status": "ok",
-        "slot": "2026-08-24T14:30:00+00:00"
-      }
-    },
-    {
-      "id": "rugby-weekly",
-      "label": "Rugby union rankings",
-      "schedule_text": "Tue at 07:05 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:05"
-      ],
-      "weekdays": [
-        2
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-25T07:05:00+00:00",
-      "last_run": {
-        "date": "2026-08-18",
-        "status": "ok",
-        "slot": "2026-08-18T07:05:00+00:00"
-      }
-    },
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-25T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-08-24",
-        "status": "ok",
-        "slot": "2026-08-24T07:20:00+00:00"
-      }
-    },
     {
       "id": "cricket-weekly",
       "label": "Cricket results + rankings",
@@ -131,6 +64,35 @@
         "date": "2026-08-25",
         "status": "ok",
         "slot": "2026-08-25T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "mlb-sim",
+      "label": "MLB + season playoff odds (7 leagues)",
+      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
+      "cadence": "daily",
+      "times": [
+        "07:00",
+        "14:30"
+      ],
+      "weekdays": [],
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "days_of_month": [],
+      "next_run": "2026-08-25T14:30:00+00:00",
+      "last_run": {
+        "date": "2026-08-25",
+        "status": "ok",
+        "slot": "2026-08-25T07:00:00+00:00"
       }
     },
     {
@@ -263,6 +225,24 @@
         "date": "2026-08-19",
         "status": "ok",
         "slot": "2026-08-19T07:10:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-26T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-08-24",
+        "status": "ok",
+        "slot": "2026-08-24T07:20:00+00:00"
       }
     },
     {
@@ -403,6 +383,26 @@
         "date": "2026-08-25",
         "status": "ok",
         "slot": "2026-08-25T06:40:00+00:00"
+      }
+    },
+    {
+      "id": "rugby-weekly",
+      "label": "Rugby union rankings",
+      "schedule_text": "Tue at 07:05 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:05"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-01T07:05:00+00:00",
+      "last_run": {
+        "date": "2026-08-25",
+        "status": "ok",
+        "slot": "2026-08-25T07:05:00+00:00"
       }
     },
     {
