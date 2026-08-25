@@ -1,42 +1,6 @@
 {
-  "generated_at": "2026-08-25T05:04:28.688947+00:00",
+  "generated_at": "2026-08-25T06:04:48.118435+00:00",
   "jobs": [
-    {
-      "id": "business-daily",
-      "label": "Business markets + FX",
-      "schedule_text": "Daily at 05:50 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:50"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-25T05:50:00+00:00",
-      "last_run": {
-        "date": "2026-08-24",
-        "status": "ok",
-        "slot": "2026-08-24T05:50:00+00:00"
-      }
-    },
-    {
-      "id": "substack-daily",
-      "label": "Substack feed sync",
-      "schedule_text": "Daily at 06:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "06:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-25T06:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-24",
-        "status": "ok",
-        "slot": "2026-08-24T06:00:00+00:00"
-      }
-    },
     {
       "id": "predictions-tue",
       "label": "PL + NFL predictions (grade the weekend)",
@@ -241,6 +205,42 @@
         "date": "2026-08-25",
         "status": "ok",
         "slot": "2026-08-25T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "business-daily",
+      "label": "Business markets + FX",
+      "schedule_text": "Daily at 05:50 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:50"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-26T05:50:00+00:00",
+      "last_run": {
+        "date": "2026-08-25",
+        "status": "ok",
+        "slot": "2026-08-25T05:50:00+00:00"
+      }
+    },
+    {
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-26T06:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-24",
+        "status": "ok",
+        "slot": "2026-08-24T06:00:00+00:00"
       }
     },
     {
