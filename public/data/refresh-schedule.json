@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-08-25T07:46:00.129890+00:00",
+  "generated_at": "2026-08-25T09:06:38.926281+00:00",
   "jobs": [
-    {
-      "id": "cricket-weekly",
-      "label": "Cricket results + rankings",
-      "schedule_text": "Tue at 09:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "09:00"
-      ],
-      "weekdays": [
-        2
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-25T09:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-18",
-        "status": "ok",
-        "slot": "2026-08-18T09:00:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -423,6 +403,26 @@
         "date": "2026-08-01",
         "status": "seeded",
         "slot": "2026-08-01T07:15:00+00:00"
+      }
+    },
+    {
+      "id": "cricket-weekly",
+      "label": "Cricket results + rankings",
+      "schedule_text": "Tue at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-01T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-25",
+        "status": "ok",
+        "slot": "2026-08-25T09:00:00+00:00"
       }
     },
     {
