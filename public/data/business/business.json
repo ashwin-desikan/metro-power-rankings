@@ -1,7 +1,7 @@
 {
  "meta": {
   "as_of": "2026-08-22",
-  "generated_at": "2026-08-22T09:08:42Z",
+  "generated_at": "2026-08-25T14:47:54Z",
   "snapshots": [
    "2026-07-18",
    "2026-08-02",
@@ -12,9 +12,9 @@
   ],
   "companies": 12994,
   "totalCap": 181753015943353.0,
-  "mappedCompanies": 5729,
-  "mappedCap": 174541728615413.0,
-  "metros": 533,
+  "mappedCompanies": 5730,
+  "mappedCap": 174544307622389.0,
+  "metros": 534,
   "countries": 85,
   "g500Source": "Fortune Global 500 (2022 list), extracted from CompaniesMarketCap workbook Global 500 sheet 2026-08-02",
   "cultureUnmatched": []
@@ -2726,9 +2726,9 @@
  "regions": [
   {
    "name": "North America",
-   "cap": 97059555956046.0,
-   "count": 2540,
-   "metros": 167
+   "cap": 97062134963022.0,
+   "count": 2541,
+   "metros": 168
   },
   {
    "name": "Europe",
