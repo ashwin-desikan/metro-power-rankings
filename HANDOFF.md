@@ -6519,3 +6519,120 @@ Ashwin noticed egress-refresh and mktcap-refresh were still red on healthchecks.
 Cleared both directly (`curl https://hc-ping.com/$HC_PING_KEY/<slug>`, both HTTP 200) rather than re-running the full jobs again for a checkmark -- re-running egress-refresh's whole 15-step pipeline (~30 min) risked hitting the exact same Hungary/India Wikidata regression again this week (a real, separate signal, not something to force past), and mktcap-refresh's data was already independently re-verified live.
 
 **Worth remembering for next time**: any manual recovery that runs a job's underlying script directly instead of its `hc-run.sh`-wrapped runner will leave the healthchecks tile stale. Either re-run the full wrapper for a genuine fresh ping, or ping `hc-ping.com/$HC_PING_KEY/<slug>` directly once the fix is independently verified -- but don't forget the step exists.
+
+## 2026-08-25 (cloud, evening) — cloud → mini/windows (City Lookup catch-up sync APPLIED to Supabase; CMC-workbook sunset plan agreed)
+
+**From:** cloud Cowork session · **To:** whoever picks this up. Nothing committed to git by this session; all writes were Supabase-only via the MCP, with Ashwin's explicit approval after a dry-run diff.
+
+### A. City Lookup → mktcap_geo catch-up sync (APPLIED, verified)
+
+Staged the OneDrive CMC workbook (saved 2026-08-23) and diffed City Lookup + Valid
+Metros against Supabase row-by-row (hash diff; sync_city_lookup.py semantics):
+
+- **Valid Metros: already exact parity** (4,314 both sides, order-independent hash equal). No writes.
+- **473 rows applied** (mapped_by='excel-sync', mapped_at=2026-08-25): 446 metros newly
+  set in the workbook that were blank in Supabase (RXO→Charlotte, Opendoor→SF-SJ,
+  Post→St. Louis, BBVA Argentina→Buenos Aires, …) + 27 city/state/name tidy-ups.
+- **6 rows PROTECTED** (kept Supabase, workbook was blank — post-08-08 curation the
+  sheet never saw): ViTrox 0097.KL (George Town), Nissan Shatai 7222.T (Tokyo,
+  Ashwin 08-17), BlossomHill BLSM (San Diego), Londian Wason FOIL (Guangzhou),
+  Vogenx VOGX (Raleigh-Durham), AADX (Huntsville, applied 08-25).
+- **BK deleted** (stale duplicate; renamed to BNY, which is current and mapped New York).
+- **BTE name kept** as 'Baytex Energy' (City Lookup name cell is blank for it).
+- **5 metro moves RULED (Ashwin delegated the ruling; sourced research, applied 08-25):**
+  Hengli Group and HENGTONG 600487.SS stay **Suzhou** (both HQ'd in Wujiang District,
+  Suzhou — city corrected to Wujiang); Suzhou TFC 300394.SZ stays **Suzhou** (HQ Suzhou);
+  the workbook's Shanghai cells for those three are wrong and must NOT be re-synced.
+  3867.KL Malaysian Pacific Industries moved **Ipoh → Kuala Lumpur** (corporate HQ
+  Level 9 Wisma Hong Leong, KL; Ipoh is the Carsem plant). 8142.T Toho Co., Ltd. stays
+  **Osaka-Kyoto-Kobe / Kobe** (food wholesaler HQ'd 5-9 Koyo-cho Nishi, Kobe; the
+  workbook's Tokyo confuses it with Toho the film company, 9602.T).
+  Net: the City Lookup sheet is now BEHIND Supabase on these five plus the six
+  protected rows — by design; the sheet retires at cutover and no further Excel→Supabase
+  sync may run.
+
+Post-state verified: mktcap_geo 14,117 rows (= workbook exactly), 6,301 mapped
+(6,295 workbook + 6 protected), invariant clean (0 mapped metros outside
+mktcap_valid_metros).
+
+⚠️ If Ashwin edits City Lookup again BEFORE the Excel rewiring below lands, re-run the
+catch-up (sync_city_lookup.py on Windows, or this session's hash-diff flow) — the
+08-25 sync reflects the 08-23 save only.
+
+### B. Sunset plan for the CMC workbook (Ashwin's decisions, 2026-08-25)
+
+Goal: retire "companiesmarketcap.com … (1).xlsx" as the primary market-cap source for
+MetroAreas.xlsx. Supabase mktcap_* is already source of truth (parity-verified seed,
+mini-owned Saturday refresh; latest snapshot 08-22). Decided:
+
+1. **Excel feed = Power Query from GitHub raw CSV.** The mini's run-mktcap-refresh.sh
+   gains a post-export step: commit `scripts/mktcap/out/mktcap_export.csv` weekly with
+   `[vercel skip]` (path is outside public/ so the build guard also skips — do NOT
+   move it under public/data, that forces builds). MetroAreas.xlsx `MktCap_Data`
+   A:D becomes a Power Query table refreshing from the raw URL; keep the E1/E2 date
+   stamps + K1/K2/K4 per the import contract, and confirm the Metro Areas AT/AU
+   COUNTIFS/SUMIFS still resolve over the query output before deleting the old link.
+2. **Curation home flips to Supabase.** New metros are assigned in mktcap_geo directly
+   (the Saturday cloud routine proposes; approved rows applied via MCP — the AADX
+   flow). sync_city_lookup.py and sync_geo_from_excel.py retire after the rewiring,
+   as their docstrings anticipate.
+3. **All mktcap tables on a weekly cadence:** add a weekly rewrite of mktcap_unicorns
+   from the live CB fetch inside refresh.py --write (it currently reads the fetch but
+   never rewrites the table). mktcap_private stays ~annual and mktcap_overrides
+   manual, by design — Ashwin's "all tables weekly" is satisfied once unicorns joins.
+
+Open on this thread: the mini/Windows work for items 1–3 (runner step, refresh.py
+unicorns write, the one-time Power Query rewiring in MetroAreas.xlsx); retire the two
+Excel-sync scripts afterwards. **Cutover is scheduled for Saturday 2026-08-29, 10:00
+London** — a Cowork session fires then to verify the mini half and walk Ashwin through
+the Excel rewiring.
+
+### C. Rulings queue CLEARED (Ashwin's instructions 2026-08-25, applied same evening)
+
+- **Batesville IN — Ashwin ruled: NOT in the Cincinnati metro; no metro area.** Applied:
+  company_hq rows for hillenbrand + hillenbrand industries had metro='Batesville',
+  which silently attached them to Batesville ARKANSAS (the only Batesville in the
+  spine — the assigner's own STATE MISMATCH flag caught this); both now metro=NULL.
+  mktcap_geo HI stays unmapped (city/state recorded). 🔴 TODO next repo commit: add
+  ("batesville", "indiana") to NO_METRO in scripts/rankings/assign_metros.py with the
+  ruling string (Denison precedent), so no future pass re-attaches it. The Sunday
+  top-5000 backfill routine will report HI as SKIP — correct, ignore it.
+- **football_lookup slips FIXED in Supabase** (both confirmed by in-table precedent):
+  San Martín de San Juan metro_area Mendoza → **San Juan** (Desamparados, same city,
+  already San Juan); Estudiantes de Mérida metro_area Valera → **Merida** (ULA Mérida,
+  same city, already Merida). 🔴 The CL workbook Lookup sheet is source of truth for
+  this table — the SAME two cells must be corrected in Champions League-201516.xlsx
+  before the next sync_lookup.py run, or these fixes get reverted. Added to the
+  Saturday session's checklist.
+- **USC-1940 — verified, NO CHANGE, close the item.** The only USC-1940 row anywhere
+  is basketball, not CFB: champions id-row NCAA Champions / 1940 / USC / "Helms Champ"
+  (March 1940), which is correct — Helms named USC national champion for 1939-40
+  (Indiana took the tournament and is separately listed, matching the ledger's
+  dual-selector convention). The CFB ledger is also right: 1939 Texas A&M, 1940
+  Minnesota, one AP-era champion per year; USC's claimed 1939 football title (Rose
+  Bowl won 1 Jan 1940 — the likely source of the "USC-1940" confusion) is excluded
+  consistently with the CFB workbook, which also excludes it.
+- **citigroup 1995-1998 — ruled (delegated): the authored era name "Travelers Group
+  Inc." STANDS.** The two-check test now passes on the data: the citigroup key's only
+  pre-1999 row (1995, rank 37, rev 18,465) matches the Travelers series and not
+  Citicorp (separately rank 17, rev 31,650 that same year), and the citigroup /
+  travelers group keys NEVER coexist in a year — they are one continuous series split
+  across the two Fortune sources (archive uses modern names, fortune1000 period
+  names): 18.5 → 16.6 → 21.3 → 37.6 → merged 76.4. Corporate continuity agrees
+  (Travelers Group Inc. renamed itself Citigroup Inc., Oct 1998). No file change.
+
+### D. Also this session
+
+- Weekly owners-news check commissioned per Ashwin: Cowork scheduled task
+  `owners-weekly-ownership-news-research` (trig_015cxteYLwMhcEZNN7ex2379), Mondays
+  08:00 UTC, proposal-only, PushNotification output, always pushes (even "no
+  changes") so the weekly check is auditable. Reads the seed + built owners JSON
+  from a fresh clone; never writes.
+- NEW: `mktcap-top5000-metro-backfill` (trig_01XmXMkjJx8XXbGDKY2rEuEu), Sundays
+  09:00 UTC. Ashwin authorized DIRECT assignment (not proposal-only) for unmapped
+  companies inside the top 5,000 by rank, under the full protocol: strict HQ-in-metro
+  ~30km, mktcap_valid_metros spelling, precedent check for satellite cities, never
+  guess, skip+log, never overwrite an existing mapping (SQL guard), one push report
+  per active run. Backlog at creation: 80 unmapped in the top 5,000 (4 in the top
+  1,000); 40 per run; silent no-op once clean. Companies beyond rank 5,000
+  (~6,700 unmapped) are explicitly OUT of scope per Ashwin.
