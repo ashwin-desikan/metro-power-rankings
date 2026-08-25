@@ -5,6 +5,7 @@ import FootyHub from "@/app/teams/_footy/FootyHub";
 import { FOOTY } from "@/app/teams/_footy/config";
 import { getAflLiveStandings } from "@/lib/aflStandings";
 import { getSeasonSim } from "@/lib/seasonSim";
+import { getFootyFinals, finalsIsCurrent } from "@/lib/footyFinals";
 
 export const dynamicParams = false;
 const PATH = "/teams/afl";
@@ -17,6 +18,6 @@ export const metadata: Metadata = {
 };
 
 export default async function AflPage() {
-  const [live, sim] = await Promise.all([getAflLiveStandings(), getSeasonSim("afl")]);
-  return <FootyHub copy={FOOTY.afl} meta={getAflMeta()} ladder={getAflLatestLadder()} franchises={getAllAflFranchises()} gfHistory={getAflGrandFinalHistory()} live={live} sim={sim} />;
+  const [live, sim, finals] = await Promise.all([getAflLiveStandings(), getSeasonSim("afl"), getFootyFinals("afl")]);
+  return <FootyHub copy={FOOTY.afl} meta={getAflMeta()} ladder={getAflLatestLadder()} franchises={getAllAflFranchises()} gfHistory={getAflGrandFinalHistory()} live={live} sim={sim} finals={finalsIsCurrent(finals) ? finals : null} />;
 }

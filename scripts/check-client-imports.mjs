@@ -98,6 +98,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/wintl",
   "@/lib/domesticHonours",
   "@/lib/leadersAll",
+  "@/lib/footyFinals",
 ];
 
 const SCAN_DIRS = ["app", "components"];

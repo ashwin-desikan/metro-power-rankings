@@ -5,6 +5,7 @@ import FootyHub from "@/app/teams/_footy/FootyHub";
 import { FOOTY } from "@/app/teams/_footy/config";
 import { getNrlLiveStandings } from "@/lib/nrlStandings";
 import { getSeasonSim } from "@/lib/seasonSim";
+import { getFootyFinals, finalsIsCurrent } from "@/lib/footyFinals";
 import StateOfOrigin from "./StateOfOrigin";
 
 export const dynamicParams = false;
@@ -18,6 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default async function NrlPage() {
-  const [live, sim] = await Promise.all([getNrlLiveStandings(), getSeasonSim("nrl")]);
-  return <FootyHub copy={FOOTY.nrl} meta={getNrlMeta()} ladder={getNrlLatestLadder()} franchises={getAllNrlFranchises()} gfHistory={getNrlGrandFinalHistory()} live={live} sim={sim} extra={<StateOfOrigin />} extraNav={{ label: "State of Origin", href: "#origin" }} />;
+  const [live, sim, finals] = await Promise.all([getNrlLiveStandings(), getSeasonSim("nrl"), getFootyFinals("nrl")]);
+  return <FootyHub copy={FOOTY.nrl} meta={getNrlMeta()} ladder={getNrlLatestLadder()} franchises={getAllNrlFranchises()} gfHistory={getNrlGrandFinalHistory()} live={live} sim={sim} finals={finalsIsCurrent(finals) ? finals : null} extra={<StateOfOrigin />} extraNav={{ label: "State of Origin", href: "#origin" }} />;
 }

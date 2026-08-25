@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-25",
+    headline: "September belongs to the finals: AFL and NRL brackets go live",
+    items: [
+      "The AFL and NRL hubs now carry a live finals bracket: every tie from the wildcard round to the Grand Final with venues, dates and scores, and each club's premiership odds alongside until the cup is decided.",
+      "Live Standings gains a finals strip for both codes, so results land on the same page as the ladders they settled.",
+      "Minor premierships now award themselves the moment the home-and-away season ends, and the Grand Final writes its own history: premiers, honours and the champions ledger update with no hand on the wheel.",
+    ],
+  },
+  {
     date: "2026-08-22",
     headline: "Every forecast we publish, now scored in public",
     items: [

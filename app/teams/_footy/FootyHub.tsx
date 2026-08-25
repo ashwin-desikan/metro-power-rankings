@@ -4,9 +4,11 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import HubNav from "@/app/teams/HubNav";
 import { fgFor, type FootyFranchise, type FootyMeta, type FootyLadder, type FootyGFResult } from "@/lib/_footy";
 import type { FootyStandingsView } from "@/lib/_footyStandings";
+import type { FootyFinalsBundle } from "@/lib/footyFinals";
 import { fmtOdds, simIsCurrent, simBySlug, type SeasonSimFile } from "@/lib/seasonSim";
 import type { FootyCopy } from "./config";
 import FootyAllTimeTable from "./FootyAllTimeTable";
+import FootyFinalsBracket from "./FootyFinalsBracket";
 
 function Badge({ color, color2, abbr, size = 26 }: { color: string; color2: string; abbr: string; size?: number }) {
   return (
@@ -17,10 +19,10 @@ function Badge({ color, color2, abbr, size = 26 }: { color: string; color2: stri
   );
 }
 
-export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, live, sim, extra, extraNav }: {
+export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, live, sim, finals, extra, extraNav }: {
   copy: FootyCopy; meta: FootyMeta; ladder: FootyLadder;
   franchises: FootyFranchise[]; gfHistory: FootyGFResult[]; live?: FootyStandingsView;
-  sim?: SeasonSimFile | null;
+  sim?: SeasonSimFile | null; finals?: FootyFinalsBundle | null;
   extra?: ReactNode; extraNav?: { label: string; href: string };
 }) {
   const lg = copy.league;
@@ -55,11 +57,17 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
       </header>
 
       <HubNav items={[
+        ...(finals ? [{ label: `${finals.meta.season} Finals`, href: "#finals-bracket" }] : []),
         ...(live && live.rows.length ? [{ label: `${live.year} Live`, href: "#live" }] : []),
         { label: "All-Time Table", href: "#alltime" },
         { label: "Grand Finals", href: "#finals" },
         ...(extraNav ? [extraNav] : []),
       ]} />
+
+      {/* ── Finals bracket (September; scripts/ingest/footy_finals.py) ──── */}
+      {finals && (
+        <FootyFinalsBracket copy={copy} bundle={finals} franchises={franchises} sim={sim} />
+      )}
 
       {/* ── Latest-season ladder ─────────────────────────────────────────── */}
       {live && live.rows.length > 0 && (

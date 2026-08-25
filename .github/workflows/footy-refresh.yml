@@ -2,9 +2,24 @@ name: AFL + NRL season refresh
 
 # Daily in-season: pull the current AFL ladder and NRL ladder from ESPN, upsert
 # each in-progress season into Supabase (public.afl_nrl_ladders, idempotent on
-# sport+season+team), rebuild the AFL/NRL hub JSON from Supabase, and commit with
-# [vercel skip]. The build's Team List falls back to the committed all-teams.json,
-# so no workbook is needed in CI. Quiet days produce no commit.
+# sport+season+team), refresh the finals bracket feed
+# (public/data/{afl,nrl}/finals.json, scripts/ingest/footy_finals.py), run the
+# season-end finalizer (scripts/ingest/footy_finalize.py: minor premiership +
+# finals flags at season end; Grand Final result + premiership flags + the
+# champions-ledger append once ESPN shows a completed GF), rebuild the AFL/NRL
+# hub JSON from Supabase, and commit. The build's Team List falls back to the
+# committed all-teams.json, so no workbook is needed in CI. Quiet days produce
+# no commit.
+#
+# Commit tagging: ladder/finals refreshes are ISR-from-raw ([vercel skip]).
+# The run that crowns a premier also changes champions-history.json (and
+# data.json's honours), which the site bakes at build time -- THAT commit goes
+# untagged on purpose, so the champion triggers exactly one real build. That
+# is twice a season (late Sep AFL, early Oct NRL), not a budget concern.
+#
+# September/October cadence: finals are played Thu-Sun evenings AEST; the
+# extra crons put a refresh shortly after full time so brackets and scores
+# land same-night, plus the finalizer fires within hours of the Grand Final.
 #
 # AFL uses ESPN australian-football/afl; NRL uses rugby-league/3 (league id 3,
 # nickname displayNames, gamesWon/gamesLost/gamesDrawn) per lib/_footyStandings.ts.
@@ -14,6 +29,7 @@ name: AFL + NRL season refresh
 on:
   schedule:
     - cron: "0 22 * * *"     # 22:00 UTC daily; ingests are a no-op in the offseason
+    - cron: "0 6,12 * 9,10 *"  # finals season: post-match AEST catch-ups (Sep-Oct)
   workflow_dispatch: {}
 
 permissions:
@@ -36,7 +52,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install openpyxl
+        run: pip install openpyxl requests
 
       - name: Ingest ESPN AFL ladder -> Supabase
         env:
@@ -48,19 +64,51 @@ jobs:
           SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
         run: python3 scripts/ingest/nrl_ingest.py
 
+      - name: Finals feed self-test, then refresh finals.json
+        run: |
+          python3 scripts/ingest/footy_finals.py --self-test
+          python3 scripts/ingest/footy_finals.py
+
+      - name: Season-end finalizer (flags, Grand Final, champions ledger)
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: |
+          python3 scripts/ingest/footy_finalize.py --self-test
+          python3 scripts/ingest/footy_finalize.py --write
+
+      - name: Re-emit champions JSON if the ledger gained a premier
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: |
+          mkdir -p scripts/mktcap
+          printf '%s' "$SUPABASE_WRITE_KEY" > scripts/mktcap/supabase_key.txt
+          python3 scripts/champions/build_champions.py
+          rm -f scripts/mktcap/supabase_key.txt
+
       - name: Rebuild AFL/NRL hub JSON from Supabase
         run: python3 scripts/build-afl-nrl-data.py OtherLeagues.xlsx MetroAreas.xlsx public/data
 
       - name: Commit and push only if the data changed
         run: |
-          if git diff --quiet -- public/data/afl/data.json public/data/nrl/data.json; then
+          PATHS="public/data/afl/data.json public/data/nrl/data.json \
+                 public/data/afl/finals.json public/data/nrl/finals.json \
+                 public/data/champions-history.json public/data/champions-metro-extra.json"
+          if git diff --quiet -- $PATHS; then
             echo "No change in AFL/NRL data; nothing to deploy."
             exit 0
           fi
+          # champions-history.json is baked at build time: the commit that
+          # carries a new premier must trigger a real build. Everything else
+          # is ISR-from-raw and skips.
+          if git diff --quiet -- public/data/champions-history.json; then
+            MSG="Auto: refresh AFL+NRL live seasons from ESPN [vercel skip]"
+          else
+            MSG="Auto: AFL/NRL premier crowned -- champions + hubs updated"
+          fi
           git config user.name "footy-refresh-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/afl/data.json public/data/nrl/data.json
-          git commit -m "Auto: refresh AFL+NRL live seasons from ESPN [vercel skip]"
+          git add $PATHS
+          git commit -m "$MSG"
           for attempt in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main && git push; then
               echo "Pushed on attempt $attempt."; exit 0

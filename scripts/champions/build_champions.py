@@ -65,16 +65,38 @@ def as_num(s):
 def fetch():
     rows, offset = [], 0
     while True:
+        # footy-finalizer rows (scripts/ingest/footy_finalize.py) are part of
+        # the BASE stream on purpose: an automated AFL/NRL premier must reach
+        # /sports/champions and the Time Machine, not just metro pages. They
+        # borrow the previous season's source_ordinal, so id.asc is the
+        # tie-break that keeps the file deterministic (new row lands right
+        # after the season it succeeds). push() only deletes source=SOURCE,
+        # so these rows survive workbook re-pushes; when the workbook later
+        # carries the same season, dedupe() below keeps one.
         r = requests.get(f"{URL}/rest/v1/champions", headers=H, timeout=120,
-                         params={"select": COLUMNS, "source": f"eq.{SOURCE}",
-                                 "order": "source_ordinal.asc",
+                         params={"select": COLUMNS + ",source,id",
+                                 "source": f"in.(\"{SOURCE}\",\"footy-finalizer\")",
+                                 "order": "source_ordinal.asc,id.asc",
                                  "limit": 1000, "offset": offset})
         r.raise_for_status()
         b = r.json()
         rows.extend(b)
         if len(b) < 1000:
-            return rows
+            break
         offset += 1000
+    # When the workbook catches up and carries a season the finalizer already
+    # wrote, the workbook row wins and the finalizer's duplicate is dropped
+    # (same contract as push()'s on_conflict key, minus era_name so a label
+    # difference cannot double-list a premier).
+    wb_keys = {(r["comp_slug"], str(r["season"]), r["team_name"])
+               for r in rows if r.get("source") == SOURCE}
+    out = [r for r in rows
+           if r.get("source") == SOURCE
+           or (r["comp_slug"], str(r["season"]), r["team_name"]) not in wb_keys]
+    if len(out) != len(rows):
+        print(f"base stream: dropped {len(rows) - len(out)} finalizer row(s) "
+              f"now covered by the workbook")
+    return out
 
 
 def to_row(r):
@@ -130,7 +152,10 @@ def build_extra(check=False):
                                  "entity_type": "eq.club",
                                  "placement": "eq.champion",
                                  "metro_slug": "not.is.null",
-                                 "source": f"neq.{SOURCE}",
+                                 # footy-finalizer rows ride the BASE stream
+                                 # (see fetch()); listing them here too would
+                                 # double-count the premier on metro pages.
+                                 "source": f"not.in.(\"{SOURCE}\",\"footy-finalizer\")",
                                  # id.asc makes the order TOTAL. Without it the
                                  # sort has ties, and limit/offset paging over a
                                  # non-deterministic order can skip or repeat

@@ -17,6 +17,7 @@ import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getNpbStandings } from "@/lib/npbStandings";
 import { getClubStandings, getClubCompetitions, getInternationalComps, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
+import { getFootyFinals, finalsIsCurrent } from "@/lib/footyFinals";
 import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
 import { getLiveTennisSlam } from "@/lib/tennisDraw";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
@@ -694,8 +695,35 @@ async function cflBlock(): Promise<Block | null> {
 }
 
 async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
-  const [s, sim] = await Promise.all([getFootyLiveStandings(league), getSeasonSim(league)]);
+  const [s, sim, finals] = await Promise.all([
+    getFootyLiveStandings(league), getSeasonSim(league), getFootyFinals(league),
+  ]);
   if (!s || s.rows.length === 0) return null;
+  // September: a finals strip above the ladder (real fixtures from
+  // scripts/ingest/footy_finals.py; the full bracket lives on the hub).
+  const finalsSub: SubTable | null = finalsIsCurrent(finals)
+    ? {
+        title: `${finals.meta.season} Finals`,
+        columns: ["Result / Date", "Venue"],
+        rows: finals.weeks.flatMap((w) =>
+          w.games.map((g): SRow => {
+            const nm = (side: typeof g.home) => side?.name ?? "TBC";
+            const label = `${g.code ?? w.label} · ${
+              g.completed && g.winner
+                ? `${nm(g.winner === "home" ? g.home : g.away)} def. ${nm(g.winner === "home" ? g.away : g.home)}`
+                : `${nm(g.home)} v ${nm(g.away)}`
+            }`;
+            const when =
+              g.state !== "pre" && g.home?.score !== null && g.home?.score !== undefined && g.away
+                ? `${g.home.score}–${g.away.score}`
+                : g.date
+                  ? new Date(g.date).toLocaleDateString("en-AU", { timeZone: "Australia/Sydney", day: "numeric", month: "short" })
+                  : DASH;
+            return { rank: null, name: label, cells: [when, g.venue ?? DASH] };
+          }),
+        ),
+      }
+    : null;
   const footyLive = inSeasonWindow(league); // "afl" | "nrl" are both SeasonKeys
   const showOdds = footyLive && simIsCurrent(sim);
   const odds = simBySlug(sim);
@@ -726,7 +754,15 @@ async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
     };
   });
   if (footyLive) applyPlayoffMarks(s.rows, rows, (t) => (t.rank ?? 99) <= spots);
-  return { league: league.toUpperCase(), href: `/teams/${league}`, note: footyLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: footyLive, live: footyLive, subTables: [{ title: null, columns: cols, rows }] };
+  return {
+    league: league.toUpperCase(), href: `/teams/${league}`,
+    note: finalsSub ? `${s.year} finals` : footyLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`,
+    open: footyLive, live: footyLive,
+    subTables: [
+      ...(finalsSub ? [finalsSub] : []),
+      { title: finalsSub ? `${s.year} Ladder` : null, columns: cols, rows },
+    ],
+  };
 }
 
 async function f1Block(): Promise<Block | null> {
