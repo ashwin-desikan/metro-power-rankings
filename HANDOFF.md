@@ -6511,3 +6511,11 @@ server-rendered SVG with native `<title>` tooltips and no client JavaScript.
 3. Wimbledon: rule, or leave unlinked.
 4. Deferred: a Substack essay off the home-advantage finding (it is the most
    shareable thing this build produced); Time Machine upset cards.
+
+## 2026-08-25 (later) -- mini -> windows (stale healthchecks tiles after manual recovery -- a gotcha worth remembering)
+
+Ashwin noticed egress-refresh and mktcap-refresh were still red on healthchecks.io days after I'd already fixed and verified both (the leaders sanity-gate HOLD on 08-23, the build_sp500.py pagination false-positive on 08-22). Root cause: `hc-run.sh` only pings success/fail around the FULL wrapped runner script (`hcping start` / `"$@"` / `hcping` or `hcping fail`), and both recoveries ran the underlying Python step directly (`build_sp500.py`, the leaders script) rather than re-invoking the whole wrapper -- so the data got fixed and published, but no success ping ever fired. The tiles were accurately showing the LAST real wrapped run, which genuinely had failed; they just never learned about the fix.
+
+Cleared both directly (`curl https://hc-ping.com/$HC_PING_KEY/<slug>`, both HTTP 200) rather than re-running the full jobs again for a checkmark -- re-running egress-refresh's whole 15-step pipeline (~30 min) risked hitting the exact same Hungary/India Wikidata regression again this week (a real, separate signal, not something to force past), and mktcap-refresh's data was already independently re-verified live.
+
+**Worth remembering for next time**: any manual recovery that runs a job's underlying script directly instead of its `hc-run.sh`-wrapped runner will leave the healthchecks tile stale. Either re-run the full wrapper for a genuine fresh ping, or ping `hc-ping.com/$HC_PING_KEY/<slug>` directly once the fix is independently verified -- but don't forget the step exists.
