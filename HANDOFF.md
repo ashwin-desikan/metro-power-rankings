@@ -6636,3 +6636,80 @@ the Excel rewiring.
   per active run. Backlog at creation: 80 unmapped in the top 5,000 (4 in the top
   1,000); 40 per run; silent no-op once clean. Companies beyond rank 5,000
   (~6,700 unmapped) are explicitly OUT of scope per Ashwin.
+## 2026-08-25 (cloud, night) — cloud → mini/windows (AFL/NRL FINALS: brackets, season-end finalizer, automated premiers — committed locally, NOT pushed)
+
+Ashwin's spec: bracket coverage for the September finals on /teams/afl + /teams/nrl
+and Live Standings; minor premierships awarded automatically at season end; the
+Grand Final result and premier entered everywhere with zero manual steps. Built in
+a cloud clone, verified there (tsc 0, client-imports/public-data/table-scroll/
+slug-drift OK, vitest 85/85, pytest 112/112, full `next build` EXIT=0 with the AFL
+bracket prerendered), delivered to this box hash-verified (11 files, byte-exact),
+then re-proven natively: finals feed self-test 17/17 + live parse of the real ESPN
+payload; finalizer self-test 16/16 + live dry run; `build_champions.py --check`
+BYTE-IDENTICAL over the query changes; native `npx tsc --noEmit` clean.
+
+### The pipeline (all rides the daily footy-refresh.yml Action; no mini, no desktop)
+- **NEW `scripts/ingest/footy_finals.py`** — ESPN post-season scoreboard →
+  `public/data/{afl,nrl}/finals.json`. Finals events are `season.slug` containing
+  "post" (measured live); tie codes parsed from the notes headline ("WC2 - Bulldogs
+  vs Magpies", QF/EF/SF/PF/GF), week-label fallback for the NRL until its draw
+  appears. TBC sides render as TBC; an unmapped club passes through UNLINKED with a
+  warning, never dropped. ESPN reports 0-0 pre-bounce, so `state:"pre"` must never
+  render a scoreline (the component owns that rule).
+- **NEW `scripts/ingest/footy_finalize.py`** — the "season-end finalizer" the ladder
+  ingests always promised. Stage 1 at season end (all `played` equal AND finals
+  fixtures filed): minor_prem on the ladder leader + finals on the top 10/8. Stage 2
+  on a completed GF: two-row result into afl_nrl_grand_finals (W/L shape of the
+  migrated history; venue→metro via a small map, unknown venue = nulls + warning,
+  never guessed) + grand_final_app/premiership flags. Stage 3: premier appended to
+  public.champions with **source='footy-finalizer'**, stewardship='auto', fields
+  templated from the previous season's row, metro from data.json franchises. Dry-run
+  by default; every stage idempotent (live-proven: second pass is a no-op).
+- **champions plumbing** (`scripts/champions/build_champions.py`): the BASE stream
+  now includes source='footy-finalizer' (order gains `id.asc` tie-break; the new row
+  lands right after the season it succeeds), so an automated premier reaches
+  /sports/champions, the Time Machine and metro pages — not just the extras file.
+  push() still deletes only source='champions-history.json', so finalizer rows
+  survive workbook re-pushes; if the workbook later carries the same season, the
+  base stream drops the finalizer duplicate (workbook wins). Extras exclude the new
+  source (no double-listing). `--check` run after the change: BYTE-IDENTICAL.
+- **`footy-refresh.yml`**: + finals feed + finalizer (--write; its gates make blind
+  daily runs safe) + champions re-emit + Sep/Oct crons (06:00/12:00 UTC = post-match
+  AEST). Commit tagging: ordinary refreshes `[vercel skip]`; the run that changes
+  champions-history.json goes UNTAGGED on purpose — the premier triggers exactly one
+  real build (twice a season). The champions emit writes the service key to
+  scripts/mktcap/supabase_key.txt from the SUPABASE_WRITE_KEY secret for the step,
+  then removes it.
+
+### The UI
+- **NEW `app/teams/_footy/FootyFinalsBracket.tsx`** + `lib/footyFinals.ts` (GH-raw
+  ISR, revalidate 900, registered server-only). Round-column bracket — deliberately
+  NOT a knockout tree: the double-chance system isn't one — with real fixtures,
+  venues, dates (AEST), scores once played, winner ticks, TBC slots, premiership-
+  odds figures from the sim (own 10-day freshness gate: `simIsCurrent` requires
+  regular-season games remaining, which is exactly wrong during finals), and a
+  premiers banner once the GF is decided. Wired into FootyHub above the ladder with
+  a "2026 Finals" HubNav entry; hidden when finals.json is empty/stale (45-day
+  window so the completed bracket stands through October).
+- **/sports/standings**: footy blocks gain a finals strip (code · teams, result or
+  date, venue) above the ladder; note flips to "2026 finals". NOTE: not exercisable
+  in the sandbox build (ESPN egress blocked → live footy blocks absent there);
+  spot-check on production after the push.
+- `lib/releases.ts` 2026-08-25 entry.
+
+### Already LIVE tonight (Supabase, applied via MCP after the reviewed dry run)
+**AFL 2026 minor premiership: FREMANTLE**, finals flags on the top ten (matches the
+wildcard draw: 7 Melbourne v 10 Carlton, 8 Bulldogs v 9 Collingwood). The EXISTING
+22:00 UTC Action folds these into data.json tonight even before the push. The NRL's
+flags stamp themselves when round 27 completes (~Sep 6).
+
+### Open
+1. **THE PUSH** — this commit + the handoff/rulings commit above it are local-only.
+   One real Vercel build when they land (app/+lib/ changed). AFL wildcard round is
+   Fri 28 Aug: push before then for the bracket to be live in time.
+2. After the push: dispatch footy-refresh.yml once manually to prove the new steps
+   in CI, and spot-check the standings finals strip on production.
+3. First GF (~26 Sep) is the finalizer's first live champions append — its emit
+   parity is proven, but eyeball /sports/champions that evening.
+4. The CL workbook Lookup cells + assign_metros NO_METRO Batesville addition from
+   the entry above remain queued for Saturday's cutover session.
