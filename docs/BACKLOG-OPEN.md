@@ -497,13 +497,14 @@ rescheduled kickoff self-corrects on the next run). `lockTime()` in `lib/picksGa
 reads it with the 00:00 UTC date fallback for entries that predate the change or carry a
 malformed value. The ledger JSONs pick the field up on the next Tue/Fri predictions run.
 
-### CFB league entry
-When the CFB model ships with the preseason poll, emit `cfb-predictions.json` in the NFL
-ledger shape (two-way, `event_id`, market lines where posted). Frontend is a config row in
-`LEAGUE_META` in `app/play/picks/PicksClient.tsx` plus the `league` check constraint already
-covering `'cfb'` in Supabase. Curate the slate to a ranked/featured subset — a 60-game
-Saturday is not a slate anyone finishes.
-**Priority:** P1 — season underway from late August.
+### ~~CFB league entry~~ — DONE 2026-08-25
+Shipped: `app/play/picks/PicksClient.tsx`'s `LEAGUE_META` carries a full `cfb` row
+(two-way, AP Top 25 slate note), the ledger fetch/grade/radar/board plumbing all cover
+`cfb` alongside pl/nfl/mlb, and `public/data/cfb-predictions.json` is live and current
+(the mini's `cfb-sun`/`cfb-fri` jobs, commissioned 2026-08-20, publish it every Sun 23:40
++ Fri 11:40 UTC). Verified by reading the actual wiring, not just checking the file
+exists — `fetchLedger("cfb-predictions.json")` and `gradeSlate`/`gradeRadar`/`radarBoard`
+all take a `cfb` argument.
 
 ### MLB Postseason edition (decided: series + daily game picks, October)
 No regular-season MLB game (decided 2026-08-10). At the playoffs: a playoff-only ledger from
