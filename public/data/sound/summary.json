@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-19",
+ "generated": "2026-08-26",
  "weighting": "combined = 3*US + UK + 0.6*Albums + 2.4x Grammy prestige (US/UK era-normalized to 40/chart-yr; album_raw = Total EAS millions; prestige = Big Four wins*3 + noms, split among co-credits; Album/Record of the Year x1.5, Song x1.0, Best New Artist x0.7)",
  "metros": 221,
  "attributed_artists": 2579,

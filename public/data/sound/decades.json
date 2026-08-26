@@ -4394,13 +4394,13 @@
     "metro": "Los Angeles",
     "us": 29.1,
     "uk": 20.7,
-    "combined": 108.0,
+    "combined": 107.9,
     "rank": 1
    },
    {
     "slug": "nashville",
     "metro": "Nashville",
-    "us": 21.9,
+    "us": 22.0,
     "uk": 10.4,
     "combined": 76.2,
     "rank": 2
@@ -4416,9 +4416,9 @@
    {
     "slug": "toronto",
     "metro": "Toronto",
-    "us": 18.9,
+    "us": 18.8,
     "uk": 7.8,
-    "combined": 64.4,
+    "combined": 64.2,
     "rank": 4
    },
    {
@@ -4450,7 +4450,7 @@
     "metro": "Knoxville",
     "us": 10.5,
     "uk": 0.4,
-    "combined": 31.8,
+    "combined": 31.9,
     "rank": 8
    },
    {
@@ -4458,7 +4458,7 @@
     "metro": "Seoul",
     "us": 8.8,
     "uk": 3.6,
-    "combined": 30.1,
+    "combined": 30.0,
     "rank": 9
    },
    {
@@ -4470,19 +4470,19 @@
     "rank": 10
    },
    {
-    "slug": "manchester",
-    "metro": "Manchester",
-    "us": 5.3,
-    "uk": 6.2,
-    "combined": 22.0,
-    "rank": 11
-   },
-   {
     "slug": "houston",
     "metro": "Houston",
     "us": 6.2,
     "uk": 3.4,
     "combined": 22.0,
+    "rank": 11
+   },
+   {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 5.2,
+    "uk": 6.1,
+    "combined": 21.9,
     "rank": 12
    },
    {
@@ -4506,7 +4506,7 @@
     "metro": "Chicago",
     "us": 4.4,
     "uk": 2.9,
-    "combined": 16.2,
+    "combined": 16.1,
     "rank": 15
    },
    {
@@ -4537,8 +4537,8 @@
     "slug": "honolulu",
     "metro": "Honolulu",
     "us": 3.0,
-    "uk": 1.3,
-    "combined": 10.2,
+    "uk": 1.2,
+    "combined": 10.1,
     "rank": 19
    },
    {
@@ -4721,25 +4721,25 @@
     "name": "Drake",
     "slug": "drake",
     "metro": "Toronto",
-    "combined": 45.0
+    "combined": 44.9
    },
    {
     "name": "Morgan Wallen",
     "slug": "morgan-wallen",
     "metro": "Knoxville",
-    "combined": 31.8
+    "combined": 31.9
    },
    {
     "name": "Olivia Rodrigo",
     "slug": "olivia-rodrigo",
     "metro": "Los Angeles",
-    "combined": 26.8
+    "combined": 26.7
    },
    {
     "name": "Ariana Grande",
     "slug": "ariana-grande",
     "metro": "Miami",
-    "combined": 25.3
+    "combined": 25.4
    },
    {
     "name": "Sabrina Carpenter",
@@ -4829,7 +4829,7 @@
     "name": "Bruno Mars",
     "slug": "bruno-mars",
     "metro": "Honolulu",
-    "combined": 10.2
+    "combined": 10.1
    }
   ],
   "top_songs": [
