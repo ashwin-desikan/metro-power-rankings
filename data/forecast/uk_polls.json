@@ -4486,14 +4486,14 @@
   },
   {
    "date": "2026-06-29",
-   "pollster": "Survation {{Cite web|url=https://cdn.survation.c",
-   "sample": null,
-   "lab": 2.0,
-   "con": 21.0,
-   "ref": 19.0,
-   "ld": 29.0,
+   "pollster": "Survation",
+   "sample": 2041,
+   "lab": 21.0,
+   "con": 19.0,
+   "ref": 29.0,
+   "ld": 11.0,
    "grn": 11.0,
-   "snp": 11.0
+   "snp": 2.0
   },
   {
    "date": "2026-06-29",
@@ -4629,14 +4629,14 @@
   },
   {
    "date": "2026-07-14",
-   "pollster": "Survation {{Cite web|url=https://cdn.survation.c",
-   "sample": null,
-   "lab": 1.0,
-   "con": 24.0,
-   "ref": 21.0,
-   "ld": 24.0,
+   "pollster": "Survation",
+   "sample": 1743,
+   "lab": 24.0,
+   "con": 21.0,
+   "ref": 24.0,
+   "ld": 11.0,
    "grn": 11.0,
-   "snp": 11.0
+   "snp": 3.0
   },
   {
    "date": "2026-07-16",
@@ -4965,6 +4965,28 @@
    "ref": 25.0,
    "ld": 11.0,
    "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-24",
+   "pollster": "YouGov",
+   "sample": 2380,
+   "lab": 22.0,
+   "con": 20.0,
+   "ref": 23.0,
+   "ld": 13.0,
+   "grn": 13.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-24",
+   "pollster": "Deltapoll",
+   "sample": 2022,
+   "lab": 30.0,
+   "con": 20.0,
+   "ref": 27.0,
+   "ld": 8.0,
+   "grn": 8.0,
    "snp": 3.0
   }
  ]

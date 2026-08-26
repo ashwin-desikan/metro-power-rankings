@@ -15,7 +15,8 @@
   "Dems",
   "Yashar",
   "Zionist Home",
-  "Unity"
+  "Unity",
+  "Amcha Israel"
  ],
  "polls": [
   {
@@ -143,7 +144,8 @@
     "Dems": 10,
     "Yashar": 26,
     "Zionist Home": 0,
-    "Unity": 0
+    "Unity": 0,
+    "Amcha Israel": 0
    },
    "gov": 49
   }

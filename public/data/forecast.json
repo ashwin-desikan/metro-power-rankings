@@ -1,18 +1,18 @@
 {
- "built": "2026-08-24",
+ "built": "2026-08-26",
  "method": "Recency-weighted poll averages; UK proportional swing on GE2024 constituency results with Monte Carlo error; US seats-votes fit on 2012-2024; NZ Sainte-Laguë; IL seat-poll averages; BR/FR round averages. Full method notes on the page.",
  "uk": {
   "electionAssumed": "2029-05-03",
   "average": {
-   "con": 20.5,
-   "lab": 25.9,
-   "ld": 10.4,
+   "con": 20.4,
+   "lab": 26.4,
+   "ld": 10.3,
    "ref": 24.3,
    "grn": 10.3,
-   "snp": 3.0
+   "snp": 2.9
   },
-  "pollsters": 13,
-  "latestPollDate": "2026-08-17",
+  "pollsters": 12,
+  "latestPollDate": "2026-08-24",
   "trend": [
    {
     "date": "2024-07-12",
@@ -507,22 +507,22 @@
    {
     "date": "2026-06-26",
     "n": 14,
-    "con": 19.3,
-    "lab": 19.4,
-    "ld": 12.9,
-    "ref": 24.8,
+    "con": 19.1,
+    "lab": 20.8,
+    "ld": 11.6,
+    "ref": 25.5,
     "grn": 13.4,
-    "snp": 3.5
+    "snp": 2.8
    },
    {
     "date": "2026-07-09",
     "n": 10,
-    "con": 20.5,
-    "lab": 18.1,
-    "ld": 13.0,
-    "ref": 25.0,
+    "con": 20.2,
+    "lab": 20.4,
+    "ld": 11.7,
+    "ref": 25.3,
     "grn": 13.5,
-    "snp": 3.4
+    "snp": 2.6
    },
    {
     "date": "2026-07-23",
@@ -546,44 +546,44 @@
    },
    {
     "date": "2026-08-17",
-    "n": 5,
-    "con": 19.8,
+    "n": 7,
+    "con": 19.9,
     "lab": 26.0,
     "ld": 10.4,
-    "ref": 25.4,
-    "grn": 10.0,
-    "snp": 2.8
+    "ref": 25.3,
+    "grn": 10.1,
+    "snp": 2.9
    }
   ],
   "sim": {
    "seats": {
     "con": {
-     "median": 93,
+     "median": 91,
      "lo": 0,
-     "hi": 345
+     "hi": 342
     },
     "lab": {
-     "median": 188,
-     "lo": 13,
-     "hi": 443
+     "median": 195,
+     "lo": 16,
+     "hi": 448
     },
     "ld": {
-     "median": 65,
+     "median": 64,
      "lo": 0,
      "hi": 105
     },
     "ref": {
-     "median": 164,
+     "median": 162,
      "lo": 2,
-     "hi": 400
+     "hi": 399
     },
     "grn": {
      "median": 9,
      "lo": 0,
-     "hi": 77
+     "hi": 76
     },
     "snp": {
-     "median": 31,
+     "median": 27,
      "lo": 0,
      "hi": 57
     },
@@ -593,7 +593,7 @@
      "hi": 8
     },
     "oth": {
-     "median": 15,
+     "median": 14,
      "lo": 6,
      "hi": 24
     }
@@ -601,19 +601,19 @@
    "niSeats": 18,
    "majorityNeeds": 326,
    "pLargest": {
-    "con": 22.8,
-    "lab": 38.9,
+    "con": 21.8,
+    "lab": 40.8,
     "ld": 0.0,
-    "ref": 38.2,
+    "ref": 37.3,
     "grn": 0.1
    },
    "pMajority": {
-    "con": 7.0,
-    "lab": 20.9,
-    "ref": 17.7
+    "con": 6.7,
+    "lab": 22.1,
+    "ref": 17.1
    },
-   "pHung": 54.4,
-   "monthsOut": 32.3,
+   "pHung": 54.0,
+   "monthsOut": 32.2,
    "sims": 4000,
    "nat2024": {
     "con": 23.6,
@@ -677,7 +677,7 @@
    "lo": 205,
    "hi": 249
   },
-  "pDemHouse": 75.6,
+  "pDemHouse": 75.7,
   "fit": {
    "a": 209.5,
    "b": 2.71,
@@ -747,7 +747,7 @@
     "lo": 47,
     "hi": 53
    },
-   "pDemControl": 41.5,
+   "pDemControl": 41.4,
    "competitive": [
     {
      "state": "Texas",
@@ -927,10 +927,10 @@
     "hi": 0
    }
   },
-  "pRightBloc": 84.1,
-  "pLeftBloc": 8.3,
+  "pRightBloc": 84.3,
+  "pLeftBloc": 8.1,
   "pNeither": 7.6,
-  "monthsOut": 1.8,
+  "monthsOut": 1.7,
   "sims": 10000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)"
@@ -998,6 +998,10 @@
    {
     "name": "Unity",
     "seats": 0.0
+   },
+   {
+    "name": "Amcha Israel",
+    "seats": 0.0
    }
   ],
   "polls": 6,
@@ -1007,7 +1011,7 @@
    "avg": 49.0,
    "pMajority": 0.0
   },
-  "monthsOut": 2.1,
+  "monthsOut": 2.0,
   "sims": 8000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)"
@@ -1018,14 +1022,14 @@
   "firstRound": {
    "shares": {
     "Lula": 40.7,
-    "F. Bolsonaro": 33.7,
-    "Caiado": 4.6,
-    "Santos": 4.5,
+    "F. Bolsonaro": 34.1,
+    "Caiado": 4.7,
+    "Santos": 4.3,
     "Zema": 2.9,
-    "Cury": 1.5
+    "Cury": 1.6
    },
    "polls": 22,
-   "latest": "2026-08-20"
+   "latest": "2026-08-23"
   },
   "runoffs": [],
   "monthsOut": 1.3,
@@ -1037,21 +1041,21 @@
   "electionAssumed": "2027-04-11",
   "firstRound": {
    "shares": {
-    "Marine Le Pen": 35.6,
-    "Édouard Philippe": 16.4,
-    "Jean-Luc Mélenchon": 15.0,
-    "Raphaël Glucksmann": 10.5,
-    "Gabriel Attal": 9.4,
-    "Bruno Retailleau": 8.0,
-    "Marine Tondelier": 3.6,
-    "Éric Zemmour": 3.3,
+    "Marine Le Pen": 35.2,
+    "Jean-Luc Mélenchon": 15.6,
+    "Édouard Philippe": 14.8,
+    "Raphaël Glucksmann": 10.2,
+    "Gabriel Attal": 8.5,
+    "Bruno Retailleau": 6.8,
+    "Marine Tondelier": 3.2,
+    "Éric Zemmour": 3.1,
     "Dominique de Villepin": 2.5,
-    "Fabien Roussel": 2.1,
-    "Nicolas Dupont-Aignan": 1.5,
-    "Nathalie Arthaud": 0.9
+    "Fabien Roussel": 2.0,
+    "Nicolas Dupont-Aignan": 1.9,
+    "Nathalie Arthaud": 1.0
    },
-   "polls": 5,
-   "latest": "2026-07-10"
+   "polls": 6,
+   "latest": "2026-08-19"
   },
   "runoffs": [
    {
@@ -1059,7 +1063,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 78.3,
+    "pA": 78.4,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -1086,7 +1090,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 82.0,
+    "pA": 82.1,
     "polls": 4,
     "latest": "2026-05-27"
    },
@@ -1127,7 +1131,7 @@
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 7.6,
+  "monthsOut": 7.5,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]
