@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-08-25",
+  "generatedAt": "2026-08-26",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-26",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "ea8999e11"
+    },
     {
       "date": "2026-08-25",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "7bc194f68"
+      "text": "Data refreshed — Football, Basketball, Cricket, Rugby, and 3 more.",
+      "commit": "7529279df"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "AFL/NRL finals brackets, season-end finalizer, automated premiers.",
+      "commit": "63ea1599d"
     },
     {
       "date": "2026-08-24",
@@ -4187,20 +4201,6 @@
       "hub": null,
       "text": "Restructure top nav: new Data dropdown (Compare, Badges, Matchups, Random) separates analytical tools from Articles.",
       "commit": "7eb506e7d"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "fix",
-      "hub": null,
-      "text": "Memoize badge compute and getBadgesForMetro to fix build time (12min → baseline).",
-      "commit": "cc5e3dfe7"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "new-hub",
-      "hub": "About",
-      "text": "New hub: About.",
-      "commit": "858c8a952"
     }
   ]
 }
