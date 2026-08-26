@@ -106,7 +106,13 @@ export type UniversityLike = {
   lng?: number;
 };
 
-const CWUR_INDEX_URL = "https://cwur.org/2025.php";
+// CWUR's URL is year-pinned per edition (cwur.org/YYYY.php) with no stable
+// "latest" alias, so this needs a manual bump whenever a new edition ships.
+// Confirmed live 2026-08-25 (cwur.org/2026.php, HTTP 200) -- the underlying
+// rank *data* is a separate, workbook-sourced refresh (unaffected by this
+// link), this only fixes the "Source" link pointing at a dead-looking
+// prior-year edition while a current one exists.
+const CWUR_INDEX_URL = "https://cwur.org/2026.php";
 
 export function buildUniversityMarkers(unis: readonly UniversityLike[] | undefined): TeamMarker[] {
   if (!unis) return [];
