@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-08-26",
+  "generatedAt": "2026-08-27",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-27",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "a93a28d38"
+    },
     {
       "date": "2026-08-26",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "ea8999e11"
+      "text": "Data refreshed — Football, Basketball, Elections, Sound of the Metros, and 2 more.",
+      "commit": "6fffb2181"
+    },
+    {
+      "date": "2026-08-26",
+      "category": "hub",
+      "hub": null,
+      "text": "Bump the hardcoded CWUR source link to the 2026 edition.",
+      "commit": "97ef4bf66"
     },
     {
       "date": "2026-08-25",
@@ -4187,20 +4201,6 @@
       "hub": "Countries",
       "text": "Country page polish: continent-aware children filter, disputed territory rollup, capital/largest badges, scoped homepage search, Countries…",
       "commit": "ccd90227a"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "new-hub",
-      "hub": "Countries",
-      "text": "New hub: Countries.",
-      "commit": "248115a3b"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": null,
-      "text": "Restructure top nav: new Data dropdown (Compare, Badges, Matchups, Random) separates analytical tools from Articles.",
-      "commit": "7eb506e7d"
     }
   ]
 }
