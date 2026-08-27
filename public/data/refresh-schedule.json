@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-08-26T23:03:10.252503+00:00",
+  "generated_at": "2026-08-27T02:33:21.479072+00:00",
   "jobs": [
-    {
-      "id": "activity-feed",
-      "label": "Site activity feed",
-      "schedule_text": "Daily at 02:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "02:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-27T02:30:00+00:00",
-      "last_run": {
-        "date": "2026-08-26",
-        "status": "ok",
-        "slot": "2026-08-26T02:30:00+00:00"
-      }
-    },
     {
       "id": "euro-comps",
       "label": "UEFA club competitions",
@@ -157,6 +139,24 @@
         "date": "2026-08-26",
         "status": "ok",
         "slot": "2026-08-26T07:20:00+00:00"
+      }
+    },
+    {
+      "id": "activity-feed",
+      "label": "Site activity feed",
+      "schedule_text": "Daily at 02:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "02:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-28T02:30:00+00:00",
+      "last_run": {
+        "date": "2026-08-27",
+        "status": "ok",
+        "slot": "2026-08-27T02:30:00+00:00"
       }
     },
     {
