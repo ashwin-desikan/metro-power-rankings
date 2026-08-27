@@ -24,8 +24,10 @@ path and a spurious diff costs one of two daily production builds:
 """
 
 import argparse
+import datetime
 import io
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -46,6 +48,24 @@ FIELDS = ["sport", "competition", "compSlug", "eraName", "season", "year",
           "champion", "canonical", "metro", "metroSlug", "date", "scope",
           "scopeType", "tier", "tierGuide", "isCurrent", "dateAwarded",
           "nextAwardedDate"]
+
+# Emitted only where true, so every row that does not need one stays byte-identical
+# to what it was before this field existed. render() appends these after FIELDS.
+OPTIONAL_FIELDS = ["nextAwardedEstimated"]
+
+
+def plus_one_year(iso):
+    """'2026-08-16' -> '2027-08-16'. 29 Feb steps back to the 28th."""
+    m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", str(iso or "").strip())
+    if not m:
+        return None
+    y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    if mo == 2 and d == 29:
+        d = 28
+    try:
+        return datetime.date(y + 1, mo, d).isoformat()
+    except ValueError:
+        return None
 
 COLUMNS = ("sport,competition,comp_slug,era_name,season,year,team_name,"
            "canonical_name,metro,metro_slug,match_date,scope,scope_type,tier,"
@@ -102,6 +122,24 @@ def fetch():
 def to_row(r):
     # The original emits "" for absent strings (the workbook's cell() returns
     # ""), and None only where the writer explicitly falls back to None.
+    #
+    # 🔴 THE NEXT-TITLE DATE NOW HAS A PRODUCER. It used to be nothing but a
+    # hand-typed workbook cell: the ZoneZero import of 2026 seeded 92 of them
+    # and every current champion added afterwards shipped with a blank "Next
+    # title" -- The Hundred and three heavyweight belts, and every future
+    # AFL/NRL premier the finalizer appends. A rule is the right home for
+    # "a year from now", so when a CURRENT champion carries no published date
+    # we mint one from the date it was won and MARK IT ESTIMATED. A guess that
+    # says it is a guess is honest; a blank cell is just missing.
+    #
+    # Only current rows get one. A retired row's next title already happened.
+    is_current = bool(r["is_current"])
+    awarded = r["date_awarded"] or None
+    nxt = r["next_awarded_date"] or None
+    estimated = False
+    if nxt is None and is_current:
+        nxt = plus_one_year(awarded)
+        estimated = nxt is not None
     return {
         "sport":           r["sport"] or "",
         "competition":     r["competition"] or "",
@@ -120,15 +158,24 @@ def to_row(r):
         "tier":            r["tier"],
         # float in the original, so 1 must serialise as 1.0
         "tierGuide":       float(r["tier_guide"]) if r["tier_guide"] is not None else None,
-        "isCurrent":       bool(r["is_current"]),
-        "dateAwarded":     r["date_awarded"] or None,
-        "nextAwardedDate": r["next_awarded_date"] or None,
+        "isCurrent":       is_current,
+        "dateAwarded":     awarded,
+        "nextAwardedDate": nxt,
+        "nextAwardedEstimated": estimated,
     }
 
 
 def render(rows):
-    return json.dumps([{k: row[k] for k in FIELDS} for row in rows],
-                      ensure_ascii=False, separators=(",", ":"))
+    out = []
+    for row in rows:
+        d = {k: row[k] for k in FIELDS}
+        # Falsy optional fields are dropped, which is what keeps every row that
+        # carries a published date byte-identical to the pre-rule output.
+        for k in OPTIONAL_FIELDS:
+            if row.get(k):
+                d[k] = row[k]
+        out.append(d)
+    return json.dumps(out, ensure_ascii=False, separators=(",", ":"))
 
 
 def build_extra(check=False):

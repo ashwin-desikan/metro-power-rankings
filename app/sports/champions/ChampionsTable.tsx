@@ -4,7 +4,7 @@ import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { flagCdnUrl } from "@/lib/international-display";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 // Single merged, filterable champions board for /sports/champions. Plain
 // serializable rows come from the server page (no server-only imports here),
@@ -26,6 +26,7 @@ export type ChampRow = {
   dateAwarded: string | null;
   nextAwarded: number | null;
   nextAwardedDate: string | null;
+  nextAwardedEstimated: boolean;
   tier: number | null;
   tierGuide: number | null;
   gold: boolean;
@@ -87,6 +88,53 @@ function fmtDate(iso: string | null): string {
   return `${parseInt(m[3], 10)} ${MONTHS[parseInt(m[2], 10) - 1]} ${m[1]}`;
 }
 
+const OVERDUE = "#E2628B";
+
+// The next-title date is the only forward-looking field on this board, and it
+// is the one that rots. Three states, and they have to read differently at a
+// glance, because they mean completely different things:
+//
+//   OVERDUE   the date has passed and no new champion has been recorded. That
+//             is a MISSING RESULT, not a scheduling quirk. The OFC Champions
+//             League sat here from 22 Aug 2026 -- its final was played on
+//             exactly the date the board was showing, and nobody entered it.
+//             A board that renders a past date like any other cannot tell you.
+//   ESTIMATED no date was ever published, so build_champions.py minted one a
+//             year on from the last title. Marked, always. A guess that admits
+//             it is a guess is honest; passing one off as an announcement is not.
+//   ANNOUNCED a real published date. Renders plain.
+//
+// `today` arrives from an effect rather than the server: this page is fully
+// static with no revalidate, so a build-time date would freeze and the overdue
+// state would drift out of truth between deploys.
+function NextTitle({ c, today }: { c: ChampRow; today: string | null }) {
+  const d = c.nextAwardedDate;
+  if (!d) return <span className="text-[var(--text-dim)]">{c.nextAwarded ?? "—"}</span>;
+  const overdue = today !== null && d < today;
+  return (
+    <span className="inline-flex items-baseline gap-1.5">
+      <span style={overdue ? { color: OVERDUE } : undefined}>{fmtDate(d)}</span>
+      {overdue ? (
+        <span
+          className="text-[9px] uppercase tracking-wide px-1 py-px rounded"
+          style={{ color: OVERDUE, border: `1px solid ${OVERDUE}` }}
+          title="This date has passed and no new champion has been recorded yet."
+        >
+          due
+        </span>
+      ) : c.nextAwardedEstimated ? (
+        <span
+          className="text-[9px] uppercase tracking-wide px-1 py-px rounded text-[var(--text-dim)]"
+          style={{ border: "1px solid var(--border)" }}
+          title="No date announced. Estimated a year on from the last title."
+        >
+          est
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
 // National-team champions store a country name in `team`. Show its flag, gated to
 // non-Domestic scope so a domestic club/college that happens to share a country
 // name (e.g. "Georgia") never gets one. Clubs and individuals return no flag.
@@ -122,6 +170,9 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
   const [region, setRegion] = useState<string>(ALL);
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [dir, setDir] = useState<1 | -1>(1);
+  // Null until mounted, so the server and the first client render agree.
+  const [today, setToday] = useState<string | null>(null);
+  useEffect(() => setToday(new Date().toISOString().slice(0, 10)), []);
   const [announce, setAnnounce] = useState("");
 
   // Interdependent options: each filter's choices come from the rows that pass
@@ -402,7 +453,7 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
               </div>
               <div>
                 <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Next title</div>
-                <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{fmtDate(c.nextAwardedDate) || (c.nextAwarded ?? "")}</div>
+                <div className="tabular-nums text-[var(--text-muted)]" style={mono}><NextTitle c={c} today={today} /></div>
               </div>
             </div>
           </div>
@@ -470,7 +521,7 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
                   {fmtDate(c.dateAwarded) || (c.year ?? "")}
                 </td>
                 <td className="py-2 px-3 align-top text-right tabular-nums text-[var(--text-muted)]" style={mono}>
-                  {fmtDate(c.nextAwardedDate) || (c.nextAwarded ?? "")}
+                  <NextTitle c={c} today={today} />
                 </td>
               </tr>
             ))}

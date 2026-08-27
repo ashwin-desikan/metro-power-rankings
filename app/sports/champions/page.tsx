@@ -76,6 +76,7 @@ export default function ChampionsHubPage() {
       dateAwarded: c.dateAwarded,
       nextAwarded: c.nextAwarded,
       nextAwardedDate: c.nextAwardedDate,
+      nextAwardedEstimated: c.nextAwardedEstimated,
       tier: c.tier,
       tierGuide: c.tierGuide,
       gold: c.gold,

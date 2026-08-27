@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-27",
+    headline: "The champions board learns when a title goes unrecorded",
+    items: [
+      "Auckland City's fifth straight OFC Champions League title joins the board. The final was played on 22 August, on exactly the date the board was already showing as the next one.",
+      "Every current champion now carries a next-title date. Where none has been announced, the board estimates a year on from the last title and marks it as an estimate rather than leaving the column empty.",
+      "A date that passes with no new champion now reads as overdue, and a watchdog raises it, so a title that goes unrecorded says so instead of sitting quietly.",
+      "The US Open finals and the Rugby League World Cup move to their real dates.",
+    ],
+  },
+  {
     date: "2026-08-25",
     headline: "September belongs to the finals: AFL and NRL brackets go live",
     items: [

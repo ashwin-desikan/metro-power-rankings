@@ -40,6 +40,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -152,6 +153,20 @@ def gf_rows(league, season, gf_game):
     return rows
 
 
+def _plus_one_year(iso):
+    """'2026-09-26' -> '2027-09-26'. 29 Feb steps back to the 28th."""
+    m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", str(iso or "").strip())
+    if not m:
+        return None
+    y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    if mo == 2 and d == 29:
+        d = 28
+    try:
+        return dt.date(y + 1, mo, d).isoformat()
+    except ValueError:
+        return None
+
+
 def champion_row(league, season, premier_name, gf_date_iso, template, metro_slug, metro_name):
     """The public.champions row for the new premier. Everything competition-
     shaped copies the previous champion row (template); everything club-shaped
@@ -168,6 +183,11 @@ def champion_row(league, season, premier_name, gf_date_iso, template, metro_slug
         "team_name": premier_name, "canonical_name": premier_name,
         "metro": metro_name, "metro_slug": metro_slug, "metro_status": "resolved",
         "match_date": gf_date_iso, "date_awarded": gf_date_iso,
+        # Grand finals land within a few days of the same date every year, so a
+        # year on is a good estimate and a blank cell is not. build_champions.py
+        # would mint the same value at emit time and mark it estimated; writing
+        # it here too means the LEDGER is right, not just the JSON.
+        "next_awarded_date": _plus_one_year(gf_date_iso),
         "is_current": True, "source": "footy-finalizer",
         "source_ordinal": template.get("source_ordinal"),
     }

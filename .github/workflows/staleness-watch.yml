@@ -12,7 +12,9 @@ name: Data staleness watch (dead-man's switch)
 #
 # This job is the answer to that. It checks how long ago each auto-refreshed
 # dataset was last committed and opens a single rolling Issue when one goes
-# past its budget. A watchdog must not share a failure domain with the thing it
+# past its budget. Since 2026-08-27 it also carries one CONTENT check that
+# recency cannot express: whether any current champion's next-title date has
+# passed with no new champion recorded (scripts/champions/check_overdue_titles.py). A watchdog must not share a failure domain with the thing it
 # watches, so it stays here -- and a 6-hourly check does not care about a 3h
 # dispatch lag, which makes Actions the correct home for exactly this one job.
 #
@@ -47,15 +49,36 @@ jobs:
           python-version: "3.12"
 
       - name: Self-test (offline decision logic)
-        run: python3 scripts/ops/staleness_check.py --self-test
+        run: |
+          python3 scripts/ops/staleness_check.py --self-test
+          python3 scripts/champions/check_overdue_titles.py --self-test
 
       - name: Check dataset freshness
         id: check
         run: |
           set -o pipefail
           python3 scripts/ops/staleness_check.py > /tmp/staleness.md
+          # The champions board's next-title dates are a CONTENT check, not a
+          # recency one. The OFC Champions League row went overdue on
+          # 2026-08-23 -- its final was played on exactly the date the board was
+          # advertising and the result was never entered -- while the file it
+          # lives in was being committed every day. Recency could not have
+          # caught it, and nothing else was looking. Same rolling issue, so
+          # there stays one place to look.
+          champs=0
+          python3 scripts/champions/check_overdue_titles.py > /tmp/champions.md || champs=1
+          if [ "$champs" != "0" ]; then
+            {
+              echo
+              echo "## Champions board"
+              echo
+              echo '```'
+              cat /tmp/champions.md
+              echo '```'
+            } >> /tmp/staleness.md
+          fi
           cat /tmp/staleness.md
-          if grep -q 'STALE\|unknown' /tmp/staleness.md; then
+          if grep -q 'STALE\|unknown' /tmp/staleness.md || [ "$champs" != "0" ]; then
             echo "stale=true" >> "$GITHUB_OUTPUT"
           else
             echo "stale=false" >> "$GITHUB_OUTPUT"
@@ -65,7 +88,7 @@ jobs:
         if: steps.check.outputs.stale == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TITLE: "Data staleness: a scheduled refresh has stopped landing"
+          TITLE: "Data watch: a refresh has stopped landing, or a title is overdue"
         run: |
           set -e
           gh label create data-staleness \

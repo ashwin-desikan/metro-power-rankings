@@ -23,6 +23,8 @@ export type Championship = {
   scopeType: "International" | "Continental" | "Domestic" | null;
   nextAwarded: number | null;
   nextAwardedDate: string | null;
+  /** True when the date was minted by the +1y rule, not published. */
+  nextAwardedEstimated: boolean;
   tier: number | null;
   tierGuide: number | null;
 };
@@ -33,7 +35,8 @@ type HistoryRow = {
   sport?: string; competition?: string; canonical?: string; champion?: string;
   year?: number | null; date?: string | null; dateAwarded?: string | null;
   scope?: string | null; scopeType?: string | null;
-  nextAwardedDate?: string | null; tier?: number | null; tierGuide?: number | null;
+  nextAwardedDate?: string | null; nextAwardedEstimated?: boolean;
+  tier?: number | null; tierGuide?: number | null;
   isCurrent?: boolean;
 };
 
@@ -66,6 +69,7 @@ function all(): Championship[] {
       // from the date so a row with a date always sorts and reads sensibly.
       nextAwarded: yearOf(r.nextAwardedDate),
       nextAwardedDate: r.nextAwardedDate ?? null,
+      nextAwardedEstimated: r.nextAwardedEstimated === true,
       tier: r.tier ?? null,
       tierGuide: r.tierGuide ?? null,
     }));
