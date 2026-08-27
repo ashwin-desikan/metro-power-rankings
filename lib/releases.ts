@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-27",
-    headline: "The champions board learns when a title goes unrecorded",
+    headline: "The board starts noticing what it is missing",
     items: [
-      "Auckland City's fifth straight OFC Champions League title joins the board. The final was played on 22 August, on exactly the date the board was already showing as the next one.",
-      "Every current champion now carries a next-title date. Where none has been announced, the board estimates a year on from the last title and marks it as an estimate rather than leaving the column empty.",
-      "A date that passes with no new champion now reads as overdue, and a watchdog raises it, so a title that goes unrecorded says so instead of sitting quietly.",
-      "The US Open finals and the Rugby League World Cup move to their real dates.",
+      "Auckland City's fifth straight OFC Champions League title joins the board, and every current champion now carries a next-title date, estimated a year on and marked as an estimate where none is announced.",
+      "The heavyweight belts are corrected: the IBF lineage regains Usyk's 2025 win over Dubois and now reads vacant, as it is, and the WBA no longer records a win on the day the belts were actually vacated.",
+      "The Seahawks pass to the Khosla family after a unanimous NFL vote, and the Timberwolves join the watchlist while the Board of Governors waits to vote on Marc Stad's purchase of control.",
+      "A next-title date that passes now reads as overdue, and so does a competition contested recently with no champion recorded, which turned out to be eleven of them.",
     ],
   },
   {

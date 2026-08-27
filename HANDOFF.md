@@ -6713,3 +6713,49 @@ flags stamp themselves when round 27 completes (~Sep 6).
    parity is proven, but eyeball /sports/champions that evening.
 4. The CL workbook Lookup cells + assign_metros NO_METRO Batesville addition from
    the entry above remain queued for Saturday's cutover session.
+
+## 2026-08-27 (cloud, night) — cloud → MINI: THE SOUND PIPELINE NEEDS THIS FIX APPLIED
+
+🔴 **ACTION REQUIRED ON THE MINI, BEFORE NEXT WEDNESDAY'S `sound-weekly` RUN.**
+
+Ashwin asked why "Ice Spice and Nicki Minaj" and "Nicki Minaj & Ice Spice" appear
+on /sound/artists as separate metro-less entities in 2023 when both women are
+correctly attributed to New York elsewhere.
+
+**Root cause, found and fixed in the OneDrive copy only.** The `atomic` set — solo
+acts that never charted alone, and so cannot be auto-detected from separator-free
+credits — was hardcoded in BOTH `export_site.py` (20 names) and `score_both58.py`
+(42 names). They had drifted, and **"Ice Spice" was only in the longer one**. The
+split rule is all-or-nothing (`all(t.lower() in atomic for t in toks)`), so one
+missing name fuses the whole credit into a phantom entity with no metro and no
+score reaching either artist.
+
+**The fix** moves the list into `credit_split_config.json` as a new `atomic_extra`
+key (42 names, the union) and has both scripts read it, so they cannot drift
+again. Both carry a fallback constant and print a loud WARNING to stderr if the
+config lacks the key — which is exactly what will happen if the mini runs with a
+stale config.
+
+Applied in `~/OneDrive/Documents/Claude/Projects/Metro Area Project/_sound_of_metros_pipeline/`:
+- `credit_split_config.json`  (+ `atomic_extra`, backup `.bak-20260827-atomic`)
+- `export_site.py`            (20-name literal → config read)
+- `score_both58.py`           (42-name literal → config read)
+
+🔴 **`~/som-pipeline` on the mini is a SEPARATE, ALREADY-DRIFTED COPY and it is the
+one that runs weekly.** Two overrides that exist only in the OneDrive
+`credit_split_config.json` (`Prospa & Cloonee`, `Hugel, Imael Angel & Ultra Naté`)
+are still fused in the Aug-26 output, which proves the mini ran with an older
+config. Copy all three files across, or the Wednesday job re-emits the same fused
+rows and the warning fires.
+
+**Still open, deliberately not done** (Ashwin's ruling, 2026-08-27: fix the root
+cause only for now):
+1. 443 collaboration-shaped entities with no metro. ~81 are "X and the Y" band
+   names protected by the PROT regex and only need attribution; the rest need a
+   band-vs-collaboration ruling, which the protocol itself says not to guess.
+2. **Slug collision:** "Nicki Minaj and Ice Spice" and "Nicki Minaj & Ice Spice"
+   slugify identically, so one silently overwrites the other in
+   `artists_detail.json`. There are three phantom rows in 2023, not two.
+3. `¥$` slugifies to the empty string. Anything routing on slug will collide.
+4. Only two artists with an actual #1 lack a metro: Rich the Kid (2024) and
+   Chrystal (2025).

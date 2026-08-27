@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-23T09:09:02",
+ "generated": "2026-08-27T21:13:06",
  "rows": [
   {
    "team": "AFC Bournemouth",
@@ -1665,15 +1665,15 @@
    "ownerType": "consortium",
    "stakeLabel": "Majority",
    "stakePct": null,
-   "confidence": "sourced",
+   "confidence": "contested",
    "coControllers": null,
    "minority": "Glen Taylor (former)",
-   "note": "The NBA Board of Governors unanimously approved the sale on 24 Jun 2025 at roughly $1.5B after Lore and Rodriguez won arbitration against Glen Taylor. Lore is Wolves Governor.",
-   "pendingSummary": null,
-   "pendingWhen": null,
-   "pendingKind": null,
-   "sourceUrl": "https://www.cnbc.com/2025/06/24/nba-board-of-governors-approves-sale-of-timberwolves.html",
-   "sourceDate": "2025-06-24"
+   "note": "The NBA Board of Governors unanimously approved the sale on 24 Jun 2025 at roughly $1.5B after Lore and Rodriguez won arbitration against Glen Taylor. Lore is Wolves Governor. SALE PENDING: on 21 Aug 2026 Lore agreed to sell his controlling stake to Marc Stad of Dragoneer at a $4.5B valuation for both franchises, with Lore staying on as a limited partner and Rodriguez increasing his equity to become Co-Chairman. Elisa Stad is the designated Timberwolves governor; Rodriguez remains Lynx governor. The NBA Board of Governors votes 15-16 Sep 2026, and the deal is not approved until it does.",
+   "pendingSummary": "Marc Stad (Dragoneer) buying control from Marc Lore, $4.5bn valuation",
+   "pendingWhen": "NBA Board of Governors vote 15-16 Sep 2026",
+   "pendingKind": "control sale",
+   "sourceUrl": "https://www.espn.com/nba/story/_/id/49681800/sources-stad-reaches-deal-controlling-stake-t-wolves-lynx",
+   "sourceDate": "2026-08-21"
   },
   {
    "team": "New Orleans Pelicans",
@@ -2398,20 +2398,20 @@
   {
    "team": "Seattle Seahawks",
    "league": "NFL",
-   "ownerDisplay": "Estate of Paul G. Allen (Jody Allen, trustee)",
-   "ownerKey": "paul-allen-estate",
-   "ownerType": "trust",
+   "ownerDisplay": "Khosla family (Vinod, Neeru and Neal Khosla)",
+   "ownerKey": "khosla-family",
+   "ownerType": "family",
    "stakeLabel": "100%",
    "stakePct": 100.0,
-   "confidence": "contested",
+   "confidence": "sourced",
    "coControllers": null,
    "minority": null,
-   "note": "SALE PENDING. The estate agreed on 11 Jul 2026 to sell to a Khosla family group led by Vinod Khosla for a reported record $9.612B. The NFL owners' vote is scheduled for 26 Aug 2026, after this data was compiled.",
-   "pendingSummary": "Khosla family group led by Vinod Khosla, ~$9.61bn",
-   "pendingWhen": "NFL owners' vote 26 Aug 2026",
-   "pendingKind": "control sale",
-   "sourceUrl": "https://www.seahawks.com/news/estate-of-paul-g-allen-reaches-agreement-to-sell-seattle-seahawks",
-   "sourceDate": "2026-07-11"
+   "note": "NFL owners approved the sale unanimously, 32-0, at a special meeting in Atlanta on 26 Aug 2026 for $9.612B, a record for a change of control in North American sport. Sold by the estate of Paul G. Allen, which retains nothing; the proceeds go to Allen's philanthropy. Legal closing is expected in early Sep 2026, with a Seattle introduction around the 9 Sep home opener. Vinod Khosla divested his 49ers minority stake to complete the deal. Reporting disagrees on which Khosla is the NFL-designated controlling owner: Front Office Sports and the Seattle Times name Neeru Khosla, while AP and NFL.com frame Vinod as the principal, so the family is named here rather than one of them chosen.",
+   "pendingSummary": null,
+   "pendingWhen": null,
+   "pendingKind": null,
+   "sourceUrl": "https://www.nfl.com/news/nfl-owners-approve-sale-seattle-seahawks-khosla-family",
+   "sourceDate": "2026-08-26"
   },
   {
    "team": "Tampa Bay Buccaneers",
@@ -3897,15 +3897,15 @@
    "ownerType": "consortium",
    "stakeLabel": "Controlling owners",
    "stakePct": 100.0,
-   "confidence": "sourced",
+   "confidence": "contested",
    "coControllers": null,
    "minority": "Michael Bloomberg, Eric Schmidt",
-   "note": "The Lynx were part of the Timberwolves package, not a separate deal. The NBA Board of Governors approved the $1.5bn sale unanimously in Jun 2025 after Glen Taylor declined to appeal the arbitration ruling, and the buyers took the whole thing rather than the 80% originally planned. Rodriguez is Lynx governor.",
-   "pendingSummary": null,
-   "pendingWhen": null,
-   "pendingKind": null,
-   "sourceUrl": "https://www.espn.com/nba/story/_/id/45577217/nba-owners-approve-15-billion-sale-wolves-wnba-lynx",
-   "sourceDate": "2025-06-24"
+   "note": "The Lynx were part of the Timberwolves package, not a separate deal. The NBA Board of Governors approved the $1.5bn sale unanimously in Jun 2025 after Glen Taylor declined to appeal the arbitration ruling, and the buyers took the whole thing rather than the 80% originally planned. Rodriguez is Lynx governor. SALE PENDING: on 21 Aug 2026 Lore agreed to sell his controlling stake to Marc Stad of Dragoneer at a $4.5B valuation for both franchises, with Lore staying on as a limited partner and Rodriguez increasing his equity to become Co-Chairman. Elisa Stad is the designated Timberwolves governor; Rodriguez remains Lynx governor. The NBA Board of Governors votes 15-16 Sep 2026, and the deal is not approved until it does.",
+   "pendingSummary": "Marc Stad (Dragoneer) buying control from Marc Lore, $4.5bn valuation",
+   "pendingWhen": "NBA Board of Governors vote 15-16 Sep 2026",
+   "pendingKind": "control sale",
+   "sourceUrl": "https://www.espn.com/nba/story/_/id/49681800/sources-stad-reaches-deal-controlling-stake-t-wolves-lynx",
+   "sourceDate": "2026-08-21"
   },
   {
    "team": "New York Liberty",
