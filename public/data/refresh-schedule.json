@@ -1,42 +1,6 @@
 {
-  "generated_at": "2026-08-28T05:02:57.921197+00:00",
+  "generated_at": "2026-08-28T06:03:18.724375+00:00",
   "jobs": [
-    {
-      "id": "business-daily",
-      "label": "Business markets + FX",
-      "schedule_text": "Daily at 05:50 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:50"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-28T05:50:00+00:00",
-      "last_run": {
-        "date": "2026-08-27",
-        "status": "ok",
-        "slot": "2026-08-27T05:50:00+00:00"
-      }
-    },
-    {
-      "id": "substack-daily",
-      "label": "Substack feed sync",
-      "schedule_text": "Daily at 06:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "06:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-28T06:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-27",
-        "status": "ok",
-        "slot": "2026-08-27T06:00:00+00:00"
-      }
-    },
     {
       "id": "forecast",
       "label": "Election forecast",
@@ -219,6 +183,42 @@
         "date": "2026-08-28",
         "status": "ok",
         "slot": "2026-08-28T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "business-daily",
+      "label": "Business markets + FX",
+      "schedule_text": "Daily at 05:50 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:50"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-29T05:50:00+00:00",
+      "last_run": {
+        "date": "2026-08-28",
+        "status": "ok",
+        "slot": "2026-08-28T05:50:00+00:00"
+      }
+    },
+    {
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-29T06:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-27",
+        "status": "ok",
+        "slot": "2026-08-27T06:00:00+00:00"
       }
     },
     {
