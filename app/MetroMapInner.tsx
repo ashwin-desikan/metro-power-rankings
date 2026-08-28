@@ -8,6 +8,7 @@ import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
 import { MARKER_COLORS, MARKER_LABELS, sortForRender, formatLevel, type TeamMarker } from '@/lib/teamMarkers';
 import { normalizeSport } from '@/lib/sportLabels';
+import { basemapUrl, BASEMAP_ATTRIBUTION_WITH_OVERTURE } from '@/lib/basemap';
 
 // Padding adapts to span: tight derbies get more breathing room than
 // continent-wide clusters. Returns south-west then north-east bound pairs.
@@ -315,9 +316,8 @@ export default function MetroMapInner({
       <ZoomControl position="bottomright" />
       <AttributionControl position="bottomleft" prefix={false} />
       <TileLayer
-        url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://overturemaps.org/">Overture Maps</a>'
-        subdomains={['a', 'b', 'c', 'd']}
+        url={basemapUrl("dark_all")}
+        attribution={BASEMAP_ATTRIBUTION_WITH_OVERTURE}
         maxZoom={18}
         minZoom={1}
         // World-wrap on: tiles repeat horizontally so panning east or west

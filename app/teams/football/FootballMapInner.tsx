@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { MapContainer, TileLayer, CircleMarker, Tooltip, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { basemapUrl, BASEMAP_ATTRIBUTION } from "@/lib/basemap";
 
 export type FootballMapPoint = {
   slug: string;
@@ -72,8 +73,8 @@ export default function FootballMapInner({ points, refitKey }: Props) {
       preferCanvas
     >
       <TileLayer
-        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        url={basemapUrl("dark_all", { retina: true })}
+        attribution={BASEMAP_ATTRIBUTION}
       />
       <FitToPoints points={points} refitKey={refitKey} />
       {points.map((p) => (

@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-28",
+    headline: "New universities, and maps that stop leaking",
+    items: [
+      "The world university rankings move to the 2026 edition: every rank and score refreshed, twenty-seven institutions added with their campus mapped to a metro, and last year's rank kept beside it.",
+      "Seven universities changed their names rather than arriving new, Osaka University among them, and each keeps the campus and metro already curated for it.",
+      "Every map on the site now draws its basemap through our own edge, which caches tiles closer to readers and keeps the map provider's key off the page.",
+      "Two maps were still calling a basemap host that was retired years ago; all five now share one definition, so they cannot drift apart again.",
+    ],
+  },
+  {
     date: "2026-08-27",
     headline: "The board starts noticing what it is missing",
     items: [

@@ -6,6 +6,7 @@ import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, Attributio
 import { latLngBounds } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import type { HubMarker } from "./ElectionsWorldMap";
+import { basemapUrl, BASEMAP_ATTRIBUTION } from "@/lib/basemap";
 
 // World map of the election hubs: one marker per polity at its seat of
 // government. Teal = competitive democracies; amber = managed / non-competitive
@@ -59,9 +60,9 @@ export default function ElectionsWorldMapInner({ markers }: { markers: HubMarker
       <ZoomControl position="bottomright" />
       <AttributionControl position="bottomleft" prefix={false} />
       <TileLayer
-        url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+        url={basemapUrl("dark_all")}
         noWrap
-        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+        attribution={BASEMAP_ATTRIBUTION}
       />
       {sorted.map((m) => {
         const color = m.note ? "#D97706" : "#4ECDC4";

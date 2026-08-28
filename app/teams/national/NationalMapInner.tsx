@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { MapContainer, TileLayer, CircleMarker, Tooltip, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { basemapUrl, BASEMAP_ATTRIBUTION } from "@/lib/basemap";
 
 export type NationalMapPoint = {
   slug: string;
@@ -68,8 +69,8 @@ export default function NationalMapInner({ points, refitKey }: Props) {
       worldCopyJump={true}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        attribution={BASEMAP_ATTRIBUTION}
+        url={basemapUrl("light_all", { retina: true })}
       />
       <FitToPoints points={points} refitKey={refitKey} />
       {points.map((p) => (

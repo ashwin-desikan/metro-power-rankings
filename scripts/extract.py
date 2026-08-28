@@ -547,6 +547,14 @@ def extract_universities(wb):
         metro = safe_str(v[5])
         if not metro:
             continue
+        # A row with a metro but no World Rank is an institution that fell out of
+        # the CWUR top 2000. From the 2026 edition those rows STAY in the
+        # workbook, rank blanked, so their curated metro, city and coordinates
+        # survive for the year the institution returns. They must not reach a
+        # metro page: safe_int defaults to 0, so without this guard they would
+        # emit as rank 0 and sort AHEAD of the number one university.
+        if not safe_int(v[2]):
+            continue
         entry = {
             'rank': safe_int(v[2]),
             'name': safe_str(v[3]),

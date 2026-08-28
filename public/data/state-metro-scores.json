@@ -471,7 +471,7 @@
   },
   "alabama": {
     "metros": 16,
-    "score": 29.74,
+    "score": 27.54,
     "weighted": true
   },
   "alagoas": {
@@ -1721,7 +1721,7 @@
   },
   "bavaria": {
     "metros": 18,
-    "score": 81.27,
+    "score": 79.97,
     "weighted": true
   },
   "bay": {
@@ -1896,7 +1896,7 @@
   },
   "berlin": {
     "metros": 1,
-    "score": 38.98,
+    "score": 40.48,
     "weighted": true
   },
   "bern": {
@@ -2326,7 +2326,7 @@
   },
   "brandenburg": {
     "metros": 3,
-    "score": 18.32,
+    "score": 19.02,
     "weighted": true
   },
   "branicevo": {
@@ -3421,7 +3421,7 @@
   },
   "city-of-edinburgh": {
     "metros": 1,
-    "score": 16.83,
+    "score": 17.6,
     "weighted": true
   },
   "city-of-kingston-upon-hull": {
@@ -3926,7 +3926,7 @@
   },
   "dc": {
     "metros": 1,
-    "score": 96.3,
+    "score": 94.1,
     "weighted": false
   },
   "debubawi-keyih-bahri": {
@@ -4341,7 +4341,7 @@
   },
   "east-lothian": {
     "metros": 1,
-    "score": 3.14,
+    "score": 3.29,
     "weighted": true
   },
   "east-macedonia-and-thrace": {
@@ -5141,7 +5141,7 @@
   },
   "galicia": {
     "metros": 8,
-    "score": 12.7,
+    "score": 10.5,
     "weighted": true
   },
   "gambela": {
@@ -5666,12 +5666,12 @@
   },
   "guangdong": {
     "metros": 9,
-    "score": 144.2,
+    "score": 148.6,
     "weighted": true
   },
   "guangxi": {
     "metros": 11,
-    "score": 57.8,
+    "score": 60.0,
     "weighted": true
   },
   "guantanamo": {
@@ -6521,7 +6521,7 @@
   },
   "indiana": {
     "metros": 20,
-    "score": 56.79,
+    "score": 56.36,
     "weighted": true
   },
   "ingushetia": {
@@ -6846,7 +6846,7 @@
   },
   "jiangsu": {
     "metros": 11,
-    "score": 165.27,
+    "score": 169.7,
     "weighted": true
   },
   "jiangxi": {
@@ -7391,7 +7391,7 @@
   },
   "kentucky": {
     "metros": 18,
-    "score": 29.98,
+    "score": 28.21,
     "weighted": true
   },
   "kep": {
@@ -9191,7 +9191,7 @@
   },
   "maryland-united-states": {
     "metros": 5,
-    "score": 56.17,
+    "score": 54.92,
     "weighted": true
   },
   "masaya": {
@@ -9556,7 +9556,7 @@
   },
   "midlothian": {
     "metros": 1,
-    "score": 2.83,
+    "score": 2.95,
     "weighted": true
   },
   "midtjylland": {
@@ -9601,7 +9601,7 @@
   },
   "minas-gerais": {
     "metros": 29,
-    "score": 18.48,
+    "score": 16.28,
     "weighted": true
   },
   "minnesota": {
@@ -10406,7 +10406,7 @@
   },
   "new-york": {
     "metros": 17,
-    "score": 164.94,
+    "score": 162.74,
     "weighted": true
   },
   "newfoundland": {
@@ -11881,7 +11881,7 @@
   },
   "pennsylvania": {
     "metros": 24,
-    "score": 95.13,
+    "score": 95.09,
     "weighted": true
   },
   "penrhyn": {
@@ -13661,12 +13661,12 @@
   },
   "saxony": {
     "metros": 4,
-    "score": 17.55,
+    "score": 18.94,
     "weighted": true
   },
   "saxony-anhalt": {
     "metros": 3,
-    "score": 7.01,
+    "score": 7.69,
     "weighted": true
   },
   "schaffhausen": {
@@ -13831,7 +13831,7 @@
   },
   "shanghai": {
     "metros": 1,
-    "score": 54.03,
+    "score": 56.2,
     "weighted": true
   },
   "shanxi": {
@@ -15421,7 +15421,7 @@
   },
   "texas": {
     "metros": 48,
-    "score": 210.77,
+    "score": 208.57,
     "weighted": true
   },
   "thaa-kolhumadulu": {
@@ -15486,7 +15486,7 @@
   },
   "thuringia": {
     "metros": 5,
-    "score": 7.24,
+    "score": 7.37,
     "weighted": true
   },
   "thurrock": {
@@ -16516,7 +16516,7 @@
   },
   "virginia": {
     "metros": 15,
-    "score": 69.94,
+    "score": 69.22,
     "weighted": true
   },
   "virovitica-podravina": {
@@ -16771,7 +16771,7 @@
   },
   "west-lothian": {
     "metros": 1,
-    "score": 5.7,
+    "score": 5.95,
     "weighted": true
   },
   "west-macedonia": {
@@ -16836,7 +16836,7 @@
   },
   "west-virginia": {
     "metros": 13,
-    "score": 7.5,
+    "score": 7.45,
     "weighted": true
   },
   "west-yorkshire": {
@@ -16976,7 +16976,7 @@
   },
   "wisconsin": {
     "metros": 16,
-    "score": 43.15,
+    "score": 40.95,
     "weighted": true
   },
   "wokingham": {

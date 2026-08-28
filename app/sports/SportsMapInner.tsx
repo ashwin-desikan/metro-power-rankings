@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { MapContainer, TileLayer, CircleMarker, Tooltip, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { SPORT_COLORS, DEFAULT_SPORT_COLOR, CONFERENCE_COLORS, type TeamMarker } from "./SportsExplorer";
+import { basemapUrl, BASEMAP_ATTRIBUTION } from "@/lib/basemap";
 
 type Props = { markers: TeamMarker[] };
 
@@ -67,8 +68,8 @@ export default function SportsMapInner({ markers }: Props) {
       worldCopyJump
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+        attribution={BASEMAP_ATTRIBUTION}
+        url={basemapUrl("dark_all")}
       />
       <FitToMarkers markers={markers} />
       {markers.map((m, i) => {

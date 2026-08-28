@@ -1,0 +1,29 @@
+name = "con-tiles"
+main = "src/index.js"
+compatibility_date = "2026-08-28"
+
+# No *.workers.dev URL. That subdomain would be a second, unadvertised way in
+# that the Referer allowlist in src/index.js cannot usefully police.
+workers_dev = false
+
+# A route on the existing hostname, NOT a custom domain on tiles.*.
+#
+# A Workers custom domain is created as a proxied AAAA record, and the public
+# answer inherits that address family: no A record, so an IPv4-only reader
+# cannot resolve it. Verified on 2026-08-28 -- tiles.citizenofnowhere.org came
+# back AAAA-only and would not load from a machine without IPv6.
+#
+# rankings.citizenofnowhere.org is already a proxied CNAME to Vercel with both
+# A and AAAA. The route intercepts /tiles/* at the edge before the origin, so
+# everything else still reaches Vercel untouched, the tiles are same-origin
+# (no CORS preflight, no second certificate) and no new DNS record is needed.
+[[routes]]
+pattern = "rankings.citizenofnowhere.org/tiles/*"
+zone_name = "citizenofnowhere.org"
+
+[observability]
+enabled = true
+
+# The CARTO key is a secret, not a var. Set once with:
+#   npx wrangler secret put CARTO_KEY
+# It is stored on Cloudflare's side and never appears in this file or in git.
