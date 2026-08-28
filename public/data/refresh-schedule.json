@@ -1,53 +1,6 @@
 {
-  "generated_at": "2026-08-28T06:23:33.724563+00:00",
+  "generated_at": "2026-08-28T07:34:01.535748+00:00",
   "jobs": [
-    {
-      "id": "mlb-sim",
-      "label": "MLB + season playoff odds (7 leagues)",
-      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
-      "cadence": "daily",
-      "times": [
-        "07:00",
-        "14:30"
-      ],
-      "weekdays": [],
-      "months": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
-      "days_of_month": [],
-      "next_run": "2026-08-28T07:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-27",
-        "status": "ok",
-        "slot": "2026-08-27T14:30:00+00:00"
-      }
-    },
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-28T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-08-27",
-        "status": "ok",
-        "slot": "2026-08-27T07:20:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -107,6 +60,35 @@
         "date": "2026-08-21",
         "status": "ok",
         "slot": "2026-08-21T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "mlb-sim",
+      "label": "MLB + season playoff odds (7 leagues)",
+      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
+      "cadence": "daily",
+      "times": [
+        "07:00",
+        "14:30"
+      ],
+      "weekdays": [],
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "days_of_month": [],
+      "next_run": "2026-08-28T14:30:00+00:00",
+      "last_run": {
+        "date": "2026-08-28",
+        "status": "ok",
+        "slot": "2026-08-28T07:00:00+00:00"
       }
     },
     {
@@ -197,6 +179,24 @@
         "date": "2026-08-28",
         "status": "ok",
         "slot": "2026-08-28T06:00:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-29T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-08-27",
+        "status": "ok",
+        "slot": "2026-08-27T07:20:00+00:00"
       }
     },
     {
