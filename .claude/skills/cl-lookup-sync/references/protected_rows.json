@@ -1,0 +1,25 @@
+{
+  "note": "Rows where Supabase is deliberately AHEAD of the Champions League workbook. Ashwin ruled on each of these; the workbook cell was never corrected, so a full-replace mirror would silently revert the ruling. The sync holds these rows untouched and reports them. Delete an entry here only after the workbook cell itself is fixed, verified by re-running the sync and seeing the row fall out of the diff on its own.",
+  "rows": [
+    {
+      "country": "Argentina",
+      "team": "San Martín de San Juan",
+      "field": "metro_area",
+      "supabase": "San Juan",
+      "workbook": "Mendoza",
+      "ruling": "Ashwin, 2026-08-25. The club plays in Desamparados, the same city as San Juan, and the in-table precedent already maps it to San Juan. Mendoza is wrong.",
+      "fix_workbook": "Champions League-201516.xlsx, Lookup sheet, Metro Area cell for San Martín de San Juan: Mendoza -> San Juan",
+      "recorded": "2026-08-28"
+    },
+    {
+      "country": "Venezuela",
+      "team": "Estudiantes de Mérida",
+      "field": "metro_area",
+      "supabase": "Merida",
+      "workbook": "Valera",
+      "ruling": "Ashwin, 2026-08-25. ULA Mérida is the same city and is already mapped to Merida. Valera is wrong.",
+      "fix_workbook": "Champions League-201516.xlsx, Lookup sheet, Metro Area cell for Estudiantes de Mérida: Valera -> Merida",
+      "recorded": "2026-08-28"
+    }
+  ]
+}

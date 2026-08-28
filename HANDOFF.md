@@ -6759,3 +6759,54 @@ cause only for now):
 3. `¥$` slugifies to the empty string. Anything routing on slug will collide.
 4. Only two artists with an actual #1 lack a metro: Rich the Kid (2024) and
    Chrystal (2025).
+
+## 2026-08-28 (cloud) — Lookup sheet synced to Supabase; the 25 Aug football_lookup ruling is now protected in code
+
+Ashwin asked for the Champions League workbook's `Lookup` sheet to be synced to
+`public.football_lookup`, and for a one-command way to repeat it.
+
+**Do not run `scripts/apifootball/sync_lookup.py` while a hold is live.** It is a
+`DELETE` then `INSERT` full mirror. The workbook still carries the two wrong metro
+cells Ashwin ruled on 25 Aug, so that script would have reverted both rulings
+without a word. Nothing schedules it, which is the only reason they survived.
+
+### The diff, verified by hash rather than by eye
+
+Extracted all 9,956 `Lookup` rows and compared them against the table by md5 over a
+canonical 18-field row form, per country first and then per row. Three countries
+disagreed out of 251; everything else was byte-identical.
+
+- **Solomon Islands** — `Central Coast FC` (Honiara, -9.433/159.95) was in the sheet
+  and missing from the table. **INSERTED**, id 139348. The only real change.
+- **Argentina / San Martín de San Juan** — workbook says metro `Mendoza`, Supabase
+  says `San Juan`. Supabase is right (Ashwin, 25 Aug). **HELD.**
+- **Venezuela / Estudiantes de Mérida** — workbook says `Valera`, Supabase says
+  `Merida`. Supabase is right (Ashwin, 25 Aug). **HELD.**
+
+Post-state: 9,956 rows both sides. Hash over the 9,954 non-held rows is identical
+on both sides at `8e109537a5526b19f70fb9804ce8cc8e`. Parity is proven, not assumed.
+
+### New project skill: `.claude/skills/cl-lookup-sync/` (untracked, needs a commit)
+
+`SKILL.md`, `scripts/cl_lookup.py`, `references/sql.md`,
+`references/protected_rows.json`. Run `cl_lookup.py extract | countries | rows`;
+it prints the query to run at each step and emits reviewable SQL, classifying every
+delta as ADD / CHANGE / REMOVE / HELD. Deletes come out commented, because a club
+dropped from the sheet by accident looks identical to one retired on purpose and
+would make `refresh.py --write` exit 3 the next morning.
+
+`protected_rows.json` is the durable form of a ruling. A ruling that lives only in
+this file you are reading gets reverted, because nothing reads HANDOFF.md at sync
+time. Smoke-tested end to end against live Supabase after the insert: Solomon
+Islands clean, the Venezuela hold reported and untouched, 0 statements emitted.
+
+### Two things worth knowing
+
+1. **Neither shell in a Cowork session can reach Supabase over HTTP.** The cloud
+   container and the device VM both fail closed on the egress allowlist (`HTTP 000`),
+   though the device reaches api.github.com fine. The Supabase MCP is the only path
+   from a session. Native PowerShell on the Windows host still works, which is why
+   `sync_lookup.py` is not dead.
+2. **Still open:** the two workbook cells. Fix them in the `Lookup` sheet and both
+   holds retire themselves — re-run the sync and the rows fall out of the diff. Until
+   then the sheet and the table disagree by design.
