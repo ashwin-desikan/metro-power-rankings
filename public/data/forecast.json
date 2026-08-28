@@ -1,13 +1,13 @@
 {
- "built": "2026-08-26",
+ "built": "2026-08-28",
  "method": "Recency-weighted poll averages; UK proportional swing on GE2024 constituency results with Monte Carlo error; US seats-votes fit on 2012-2024; NZ Sainte-Laguë; IL seat-poll averages; BR/FR round averages. Full method notes on the page.",
  "uk": {
   "electionAssumed": "2029-05-03",
   "average": {
-   "con": 20.4,
+   "con": 20.5,
    "lab": 26.4,
-   "ld": 10.3,
-   "ref": 24.3,
+   "ld": 10.2,
+   "ref": 24.0,
    "grn": 10.3,
    "snp": 2.9
   },
@@ -546,41 +546,41 @@
    },
    {
     "date": "2026-08-17",
-    "n": 7,
-    "con": 19.9,
-    "lab": 26.0,
+    "n": 8,
+    "con": 20.1,
+    "lab": 26.1,
     "ld": 10.4,
-    "ref": 25.3,
-    "grn": 10.1,
+    "ref": 25.0,
+    "grn": 10.0,
     "snp": 2.9
    }
   ],
   "sim": {
    "seats": {
     "con": {
-     "median": 91,
+     "median": 95,
      "lo": 0,
-     "hi": 342
+     "hi": 345
     },
     "lab": {
-     "median": 195,
+     "median": 198,
      "lo": 16,
-     "hi": 448
+     "hi": 449
     },
     "ld": {
-     "median": 64,
+     "median": 63,
      "lo": 0,
-     "hi": 105
+     "hi": 104
     },
     "ref": {
-     "median": 162,
+     "median": 155,
      "lo": 2,
-     "hi": 399
+     "hi": 397
     },
     "grn": {
      "median": 9,
      "lo": 0,
-     "hi": 76
+     "hi": 77
     },
     "snp": {
      "median": 27,
@@ -601,18 +601,18 @@
    "niSeats": 18,
    "majorityNeeds": 326,
    "pLargest": {
-    "con": 21.8,
-    "lab": 40.8,
-    "ld": 0.0,
-    "ref": 37.3,
+    "con": 22.4,
+    "lab": 41.1,
+    "ld": 0.1,
+    "ref": 36.2,
     "grn": 0.1
    },
    "pMajority": {
-    "con": 6.7,
-    "lab": 22.1,
-    "ref": 17.1
+    "con": 7.0,
+    "lab": 22.8,
+    "ref": 16.4
    },
-   "pHung": 54.0,
+   "pHung": 53.8,
    "monthsOut": 32.2,
    "sims": 4000,
    "nat2024": {
@@ -632,52 +632,52 @@
   ]
  },
  "us": {
-  "margin": 6.3,
+  "margin": 6.2,
   "sigma": 2.6,
   "aggregators": [
    {
     "source": "Decision Desk HQ",
-    "dem": 45.9,
+    "dem": 46.1,
     "rep": 40.0,
-    "updated": "2026-08-20"
+    "updated": "2026-08-27"
    },
    {
     "source": "FiftyPlusOne",
     "dem": 49.5,
     "rep": 43.4,
-    "updated": "2026-08-20"
+    "updated": "2026-08-27"
    },
    {
     "source": "RealClearPolitics",
     "dem": 48.2,
     "rep": 41.8,
-    "updated": "2026-08-20"
+    "updated": "2026-08-27"
    },
    {
     "source": "Silver Bulletin",
     "dem": 48.3,
     "rep": 41.7,
-    "updated": "2026-08-20"
+    "updated": "2026-08-27"
    },
    {
     "source": "VoteHub",
-    "dem": 47.6,
-    "rep": 41.2,
-    "updated": "2026-08-20"
+    "dem": 47.3,
+    "rep": 41.3,
+    "updated": "2026-08-27"
    },
    {
     "source": "Race to the WH",
-    "dem": 47.3,
-    "rep": 40.9,
-    "updated": "2026-08-20"
+    "dem": 47.9,
+    "rep": 41.9,
+    "updated": "2026-08-27"
    }
   ],
   "demSeats": {
-   "median": 227,
+   "median": 226,
    "lo": 205,
-   "hi": 249
+   "hi": 248
   },
-  "pDemHouse": 75.7,
+  "pDemHouse": 75.0,
   "fit": {
    "a": 209.5,
    "b": 2.71,
@@ -720,7 +720,7 @@
     ]
    ]
   },
-  "monthsOut": 2.3,
+  "monthsOut": 2.2,
   "sims": 20000,
   "election": "2026-11-03",
   "sources": [
@@ -745,16 +745,16 @@
    "demSeats": {
     "median": 50,
     "lo": 47,
-    "hi": 53
+    "hi": 54
    },
-   "pDemControl": 41.4,
+   "pDemControl": 42.4,
    "competitive": [
     {
      "state": "Texas",
      "held": "R",
-     "score": -0.04,
+     "score": 0.04,
      "retiring": false,
-     "pDem": 49.0
+     "pDem": 51.0
     },
     {
      "state": "Alaska",
@@ -814,8 +814,8 @@
     "lo": 21,
     "hi": 28
    },
-   "pDemMajority": 37.2,
-   "pRepMajority": 44.3,
+   "pDemMajority": 37.8,
+   "pRepMajority": 43.8,
    "competitive": [
     {
      "state": "Georgia",
@@ -927,10 +927,10 @@
     "hi": 0
    }
   },
-  "pRightBloc": 84.3,
-  "pLeftBloc": 8.1,
-  "pNeither": 7.6,
-  "monthsOut": 1.7,
+  "pRightBloc": 84.6,
+  "pLeftBloc": 7.9,
+  "pNeither": 7.5,
+  "monthsOut": 1.6,
   "sims": 10000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)"
@@ -940,12 +940,12 @@
   "electionAssumed": "2026-10-27",
   "parties": [
    {
-    "name": "Likud",
-    "seats": 21.0
+    "name": "Yashar",
+    "seats": 26.0
    },
    {
-    "name": "Dems",
-    "seats": 18.7
+    "name": "Likud",
+    "seats": 22.0
    },
    {
     "name": "Together",
@@ -953,39 +953,39 @@
    },
    {
     "name": "Yisrael Beiteinu",
-    "seats": 10.3
+    "seats": 10.0
    },
    {
-    "name": "Yashar",
-    "seats": 8.7
-   },
-   {
-    "name": "Otzma",
-    "seats": 8.3
+    "name": "Shas",
+    "seats": 9.0
    },
    {
     "name": "UTJ",
     "seats": 8.0
    },
    {
-    "name": "Shas",
-    "seats": 7.7
+    "name": "Dems",
+    "seats": 8.0
    },
    {
-    "name": "Hadash –Ta'al",
-    "seats": 7.0
-   },
-   {
-    "name": "Balad",
+    "name": "Otzma",
     "seats": 6.0
    },
    {
-    "name": "RZP",
-    "seats": 5.3
+    "name": "Joint List",
+    "seats": 6.0
+   },
+   {
+    "name": "Amcha Yisrael",
+    "seats": 6.0
    },
    {
     "name": "Ra'am",
     "seats": 5.0
+   },
+   {
+    "name": "RZP",
+    "seats": 0.0
    },
    {
     "name": "Blue & White",
@@ -998,17 +998,13 @@
    {
     "name": "Unity",
     "seats": 0.0
-   },
-   {
-    "name": "Amcha Israel",
-    "seats": 0.0
    }
   ],
-  "polls": 6,
-  "pollsters": 3,
-  "latestPollDate": "2026-08-20",
+  "polls": 1,
+  "pollsters": 1,
+  "latestPollDate": "2026-08-27",
   "gov": {
-   "avg": 49.0,
+   "avg": 45.0,
    "pMajority": 0.0
   },
   "monthsOut": 2.0,
@@ -1021,18 +1017,18 @@
   "election": "2026-10-04",
   "firstRound": {
    "shares": {
-    "Lula": 40.7,
-    "F. Bolsonaro": 34.1,
-    "Caiado": 4.7,
+    "Lula": 40.3,
+    "F. Bolsonaro": 34.2,
+    "Caiado": 4.6,
     "Santos": 4.3,
-    "Zema": 2.9,
-    "Cury": 1.6
+    "Zema": 2.6,
+    "Cury": 1.8
    },
    "polls": 22,
-   "latest": "2026-08-23"
+   "latest": "2026-08-26"
   },
   "runoffs": [],
-  "monthsOut": 1.3,
+  "monthsOut": 1.2,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
   ]
@@ -1041,21 +1037,21 @@
   "electionAssumed": "2027-04-11",
   "firstRound": {
    "shares": {
-    "Marine Le Pen": 35.2,
-    "Jean-Luc Mélenchon": 15.6,
-    "Édouard Philippe": 14.8,
-    "Raphaël Glucksmann": 10.2,
-    "Gabriel Attal": 8.5,
-    "Bruno Retailleau": 6.8,
-    "Marine Tondelier": 3.2,
-    "Éric Zemmour": 3.1,
+    "Marine Le Pen": 34.2,
+    "Jean-Luc Mélenchon": 15.8,
+    "Édouard Philippe": 14.7,
+    "Raphaël Glucksmann": 10.6,
+    "Gabriel Attal": 8.3,
+    "Bruno Retailleau": 6.4,
+    "Éric Zemmour": 3.3,
+    "Marine Tondelier": 3.1,
+    "Fabien Roussel": 2.5,
     "Dominique de Villepin": 2.5,
-    "Fabien Roussel": 2.0,
-    "Nicolas Dupont-Aignan": 1.9,
-    "Nathalie Arthaud": 1.0
+    "Nicolas Dupont-Aignan": 1.7,
+    "Nathalie Arthaud": 0.7
    },
-   "polls": 6,
-   "latest": "2026-08-19"
+   "polls": 7,
+   "latest": "2026-08-25"
   },
   "runoffs": [
    {
@@ -1099,7 +1095,7 @@
     "b": "Attal RE",
     "avgA": 57.0,
     "avgB": 43.0,
-    "pA": 98.4,
+    "pA": 98.5,
     "polls": 1,
     "latest": "2026-05-27"
    },
@@ -1131,7 +1127,7 @@
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 7.5,
+  "monthsOut": 7.4,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]
@@ -1361,6 +1357,31 @@
     "oth": 15
    },
    "usDemSeats": 227
+  },
+  {
+   "date": "2026-08-28",
+   "uk": {
+    "con": 20.5,
+    "lab": 26.4,
+    "ld": 10.2,
+    "ref": 24.0,
+    "grn": 10.3,
+    "snp": 2.9
+   },
+   "us": {
+    "margin": 6.2
+   },
+   "ukSeats": {
+    "con": 95,
+    "lab": 198,
+    "ld": 63,
+    "ref": 155,
+    "grn": 9,
+    "snp": 27,
+    "pc": 4,
+    "oth": 14
+   },
+   "usDemSeats": 226
   }
  ]
 }

@@ -10,144 +10,35 @@
   "UTJ",
   "Yisrael Beiteinu",
   "Ra'am",
-  "Hadash –Ta'al",
-  "Balad",
+  "Joint List",
   "Dems",
   "Yashar",
   "Zionist Home",
   "Unity",
-  "Amcha Israel"
+  "Amcha Yisrael"
  ],
  "polls": [
   {
-   "date": "2026-08-13",
-   "pollster": "Lazar",
-   "seats": {
-    "Likud": 21,
-    "Together": 14,
-    "RZP": 4,
-    "Otzma": 8,
-    "Blue & White": 0,
-    "Shas": 7,
-    "UTJ": 8,
-    "Yisrael Beiteinu": 10,
-    "Ra'am": 5,
-    "Hadash –Ta'al": 6,
-    "Balad": 0,
-    "Dems": 10,
-    "Yashar": 23,
-    "Zionist Home": 4,
-    "Unity": 0
-   },
-   "gov": 48
-  },
-  {
-   "date": "2026-08-13",
+   "date": "2026-08-27",
    "pollster": "Yossi Tatika",
-   "seats": {
-    "Likud": 21,
-    "Together": 13,
-    "RZP": 6,
-    "Otzma": 7,
-    "Blue & White": 0,
-    "Shas": 8,
-    "UTJ": 8,
-    "Yisrael Beiteinu": 11,
-    "Ra'am": 6,
-    "Hadash –Ta'al": 6,
-    "Balad": 9,
-    "Dems": 25,
-    "Yashar": 0,
-    "Zionist Home": 0
-   },
-   "gov": null
-  },
-  {
-   "date": "2026-08-19",
-   "pollster": "Kantar",
-   "seats": {
-    "Likud": 23,
-    "Together": 14,
-    "RZP": 5,
-    "Otzma": 9,
-    "Blue & White": 0,
-    "Shas": 7,
-    "UTJ": 8,
-    "Yisrael Beiteinu": 9,
-    "Ra'am": 5,
-    "Hadash –Ta'al": 6,
-    "Balad": 0,
-    "Dems": 10,
-    "Yashar": 24,
-    "Zionist Home": 0,
-    "Unity": 0
-   },
-   "gov": 52
-  },
-  {
-   "date": "2026-08-20",
-   "pollster": "Kantar",
    "seats": {
     "Likud": 22,
-    "Together": 13,
-    "RZP": 5,
-    "Otzma": 9,
-    "Blue & White": 0,
-    "Shas": 7,
-    "UTJ": 8,
-    "Yisrael Beiteinu": 10,
-    "Ra'am": 5,
-    "Hadash –Ta'al": 8,
-    "Balad": 10,
-    "Dems": 23,
-    "Yashar": 0,
-    "Zionist Home": 0
-   },
-   "gov": null
-  },
-  {
-   "date": "2026-08-20",
-   "pollster": "Yossi Tatika",
-   "seats": {
-    "Likud": 21,
-    "Together": 15,
-    "RZP": 6,
-    "Otzma": 7,
+    "Together": 14,
+    "RZP": 0,
+    "Otzma": 6,
     "Blue & White": 0,
     "Shas": 9,
     "UTJ": 8,
-    "Yisrael Beiteinu": 11,
-    "Ra'am": 5,
-    "Hadash –Ta'al": 7,
-    "Balad": 8,
-    "Dems": 23,
-    "Yashar": 0,
-    "Zionist Home": 0
-   },
-   "gov": null
-  },
-  {
-   "date": "2026-08-20",
-   "pollster": "Lazar",
-   "seats": {
-    "Likud": 20,
-    "Together": 14,
-    "RZP": 5,
-    "Otzma": 9,
-    "Blue & White": 0,
-    "Shas": 7,
-    "UTJ": 8,
     "Yisrael Beiteinu": 10,
     "Ra'am": 5,
-    "Hadash –Ta'al": 6,
-    "Balad": 0,
-    "Dems": 10,
+    "Joint List": 6,
+    "Dems": 8,
     "Yashar": 26,
     "Zionist Home": 0,
     "Unity": 0,
-    "Amcha Israel": 0
+    "Amcha Yisrael": 6
    },
-   "gov": 49
+   "gov": 45
   }
  ]
 }

@@ -4968,6 +4968,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-08-23",
+   "pollster": "More in Common",
+   "sample": 3140,
+   "lab": 27.0,
+   "con": 22.0,
+   "ref": 23.0,
+   "ld": 10.0,
+   "grn": 9.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-08-24",
    "pollster": "YouGov",
    "sample": 2380,
