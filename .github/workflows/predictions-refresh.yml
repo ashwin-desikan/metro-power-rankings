@@ -1,4 +1,4 @@
-name: Prediction models refresh (PL + NFL)
+name: Prediction models refresh (PL + UCL + NFL)
 
 # Twice a week through the 2026-27 season this re-runs the /predictions
 # league models: grades any played fixtures in the ledgers, folds real
@@ -53,10 +53,14 @@ jobs:
       - name: Self-tests (offline decision logic)
         run: |
           python3 scripts/predictions/build_pl_sim.py --self-test
+          python3 scripts/predictions/build_ucl_sim.py --self-test
           python3 scripts/predictions/build_nfl_sim.py --self-test
 
       - name: Rebuild the Premier League model
         run: python3 scripts/predictions/build_pl_sim.py
+
+      - name: Rebuild the Champions League model
+        run: python3 scripts/predictions/build_ucl_sim.py
 
       - name: Rebuild the NFL model
         run: python3 scripts/predictions/build_nfl_sim.py
@@ -64,6 +68,7 @@ jobs:
       - name: Commit if anything changed
         run: |
           git add public/data/pl-sim.json public/data/pl-predictions.json \
+                  public/data/ucl-sim.json \
                   public/data/nfl-sim.json public/data/nfl-predictions.json
           if git diff --cached --quiet; then
             echo "No changes; nothing to commit."
@@ -71,7 +76,7 @@ jobs:
           fi
           git config user.name "predictions-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Auto: refresh PL + NFL prediction models [vercel skip]"
+          git commit -m "Auto: refresh PL + UCL + NFL prediction models [vercel skip]"
           for attempt in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main && git push; then
               echo "Pushed on attempt $attempt."; exit 0
@@ -115,7 +120,7 @@ jobs:
               # /predictions/mlb is warmed by mlb-sim-refresh.yml, which shares
               # the predictions-daily tag; a flush invalidates all three, so
               # include it here too rather than leave it cold on Tue/Fri.
-              for p in /predictions/pl /predictions/nfl /predictions/mlb /predictions; do
+              for p in /predictions/pl /predictions/ucl /predictions/nfl /predictions/mlb /predictions; do
                 ( wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
                     "https://rankings.citizenofnowhere.org$p")" || wcode=000
                   echo "warm $p -> HTTP $wcode" ) &

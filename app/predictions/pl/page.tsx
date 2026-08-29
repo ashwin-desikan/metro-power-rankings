@@ -146,6 +146,37 @@ export default async function PlPredictionsPage() {
             </div>
           </section>
 
+          {/* Relegation odds board (Ashwin, 2026-08-29): the drop zone deserves
+              the same marquee treatment as the title race — same bar board,
+              sorted by relegation probability, in the palette's danger tone. */}
+          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+            <h2 className="text-2xl font-bold mb-1">The relegation battle</h2>
+            <p className="text-sm text-[var(--text-muted)] mb-4">
+              Share of simulated seasons each club finishes in the bottom three.
+            </p>
+            <div className="grid gap-2">
+              {(() => {
+                const releg = rows.slice().sort((a, b) => b.p_releg - a.p_releg).filter((r) => r.p_releg >= 1);
+                const maxReleg = releg[0]?.p_releg || 1;
+                return releg.map((r, i) => (
+                  <div key={r.slug} className="flex items-center gap-3">
+                    <span className="w-6 text-right text-[13px]" style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</span>
+                    <span className="w-44 sm:w-56 text-[14.5px] truncate">
+                      <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
+                    </span>
+                    <span className="flex-1 h-2 rounded" style={{ background: "var(--bg-card)" }}>
+                      <span
+                        className="block h-2 rounded"
+                        style={{ background: "#E2628B", opacity: 0.75, width: `${Math.max(1, (r.p_releg / maxReleg) * 100)}%` }}
+                      />
+                    </span>
+                    <span className="w-14 text-right text-[13px] font-bold" style={{ ...MONO, color: "#E2628B" }}>{pct(r.p_releg)}</span>
+                  </div>
+                ));
+              })()}
+            </div>
+          </section>
+
           {/* Next fixtures */}
           {upcoming.length > 0 && (
             <section className="mb-10">

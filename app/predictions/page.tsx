@@ -31,7 +31,7 @@ const LEAGUE_HUBS: { key: string; emoji: string; name: string; season: string; b
   { key: "mlb", emoji: "⚾", name: "MLB", season: "2026 season", blurb: "World Series, pennant, division and playoff odds from the real remaining schedule and the full twelve-team bracket, refreshed daily, with every race still open called out.", href: "/predictions/mlb", game: false },
   { key: "cfb", emoji: "\u{1F3C8}", name: "College Football", season: "2026 season", blurb: "Playoff, conference title and national championship odds across the twelve-team field, with every AP Top 25 game called weekly from the preseason poll on.", href: "/predictions/cfb", game: false },
   { key: "pl", emoji: "⚽", name: "Premier League", season: "2026-27 season", blurb: "Title, top-five and relegation odds from 20,000 simulated seasons blending site data with market odds, plus fixture picks graded all season.", href: "/predictions/pl" },
-  { key: "ucl", emoji: "\u{1F3C6}", name: "Champions League", season: "2026-27 season", blurb: "Knockout-bracket odds from the league phase to the final. Arrives once the late-August draw sets the field." },
+  { key: "ucl", emoji: "\u{1F3C6}", name: "Champions League", season: "2026-27 season", blurb: "Champion, top-eight and knockout odds for all 36 clubs from the drawn league phase to the final, built on the site's own domestic data and UEFA coefficients.", href: "/predictions/ucl", game: false },
 ];
 
 export default async function PredictionsPage() {

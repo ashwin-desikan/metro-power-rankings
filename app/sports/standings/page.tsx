@@ -16,6 +16,7 @@ import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getNpbStandings } from "@/lib/npbStandings";
 import { getClubStandings, getClubCompetitions, getInternationalComps, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
+import { deriveLeaguePhaseGroups } from "@/lib/euroCompDerive";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
 import { getFootyFinals, finalsIsCurrent } from "@/lib/footyFinals";
 import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
@@ -849,7 +850,15 @@ async function cricketFixturesBlock(): Promise<Block | null> {
 // api-football -> Supabase -> ISR bundle (getClubCompetitions), same source as the
 // tournament hubs. Team names resolve to their canonical Lookup name, never the raw
 // api name (which the retired euro-comps.json feed used to surface here).
-function euroFixturesBlocks(comps: LiveComp[]): Block[] {
+// Standings-first (Ashwin, 2026-08-29): each UEFA comp block leads with its
+// league-phase table — api-football's real standings when published, else a
+// table computed from the comp's own fixtures (lib/euroCompDerive: zeros the
+// moment the 36 are drawn, real W/D/L/Pts as results land). Fixture lists are
+// hidden from this page by default; only matches actually in play surface, as
+// a "Live" sub-table above the standings. Full fixtures stay on the
+// tournament hubs behind their own collapsed shell. Before a season's draw
+// (July), the old fixture-list block returns as a collapsed fallback.
+function euroCompBlocks(comps: LiveComp[]): Block[] {
   const WANT: Array<[number, string, string]> = [
     [2, "champions-league", "Champions League"],
     [3, "europa-league", "Europa League"],
@@ -869,18 +878,43 @@ function euroFixturesBlocks(comps: LiveComp[]): Block[] {
     if (!comp) continue;
     const fx = comp.fixtures ?? [];
     const live = fx.filter((f) => f.status && IN_PLAY.has(f.status)).sort(byKo(1));
-    const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort(byKo(-1)).slice(0, 12);
-    const upcoming = fx.filter((f) => !(f.status && (FIN.has(f.status) || IN_PLAY.has(f.status)))).sort(byKo(1)).slice(0, 20);
-    const mk = (title: string, items: LiveFixture[], score: boolean): SubTable | null =>
+    const mkFx = (title: string, items: LiveFixture[], score: boolean): SubTable | null =>
       items.length ? {
         title, columns: [score ? "Score" : "Date"],
         rows: items.map((f): SRow => ({ rank: null, name: `${nm(f.home)} v ${nm(f.away)}`,
           cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : dt(f.kickoff)] })),
       } : null;
-    const subTables = [mk("Live", live, true), mk("Upcoming", upcoming, false), mk("Recent", recent, true)]
+    const liveTable = mkFx("Live", live, true);
+
+    const { groups, computed } = deriveLeaguePhaseGroups(comp);
+    const groupTables: SubTable[] = groups
+      .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
+      .map((g): SubTable => ({
+        title: groups.length > 1 ? g.group_label : null,
+        columns: ["P", "W", "D", "L", "GD", "Pts"],
+        rows: g.rows.slice().sort(byPtsGd).map((r, i) => clubRow(r, i, "group")),
+      }))
+      .filter((st) => st.rows.length > 0);
+
+    if (groupTables.length > 0) {
+      const anyPlayed = groups.some((g) => g.rows.some((r) => Number(r.played ?? 0) > 0));
+      const note = live.length ? "live"
+        : computed ? (anyPlayed ? "computed from results" : "league phase drawn") : "league phase";
+      blocks.push({
+        league: label, href: `/teams/football/tournaments/${slug}`, note,
+        open: true, live: live.length > 0,
+        subTables: [...(liveTable ? [liveTable] : []), ...groupTables],
+      });
+      continue;
+    }
+
+    // Pre-draw fallback: qualifying fixtures only, collapsed by default.
+    const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort(byKo(-1)).slice(0, 12);
+    const upcoming = fx.filter((f) => !(f.status && (FIN.has(f.status) || IN_PLAY.has(f.status)))).sort(byKo(1)).slice(0, 20);
+    const subTables = [liveTable, mkFx("Upcoming", upcoming, false), mkFx("Recent", recent, true)]
       .filter((st): st is SubTable => st !== null);
     if (!subTables.length) continue;
-    blocks.push({ league: label, href: `/teams/football/tournaments/${slug}`, note: live.length ? "live" : "fixtures", open: true, subTables });
+    blocks.push({ league: label, href: `/teams/football/tournaments/${slug}`, note: live.length ? "live" : "qualifying", open: false, live: live.length > 0, subTables });
   }
   return blocks;
 }
@@ -955,7 +989,7 @@ export default async function LiveStandingsPage() {
   const ligaF = wLeagueBlock(wLeagues.find((l) => l.compSlug === "liga-f"), "Liga F");
   const nwslW = wLeagueBlock(wLeagues.find((l) => l.compSlug === "nwsl"), "NWSL", wOdds.nwsl);
   const uwcl = uwclBlock(uwclComp);
-  const euro = euroFixturesBlocks(clubComps);
+  const euro = euroCompBlocks(clubComps);
   const clubById = new Map(clubStandings.map((l) => [l.league_id, l]));
   const domestics = DOMESTIC_LIVE
     .map((d) => domesticLiveBlock(clubById.get(d.id), d.label))

@@ -6898,3 +6898,50 @@ Watch its log for the "update_top_companies" lines and confirm one untagged
 push + one Vercel build lands. Note the runner self-modifies via its own
 ff-merge at run start; safe in practice because the mini's daily jobs keep
 the tree current between Saturdays, so the merge is a no-op by then.
+
+## 2026-08-29 — cloud (late evening): UEFA hubs go standings-first + /predictions/ucl ships
+
+Ashwin's asks, all live in the working tree (commit pending his word):
+
+**A. CL/EL/ECL tournament hubs + /sports/standings — standings by default.**
+Root cause of the missing tables: api-football's /standings STILL returns
+empty for leagues 2/3/848 (checked football_standings in Supabase: zero rows;
+the daily refresh polls them, nothing upstream yet). The fixtures endpoint
+however already carries every drawn league-phase pairing. New
+lib/euroCompDerive.ts (pure, vitest 14/14) computes: (1) the 36-club table
+from the comp's own fixtures — zeros now, real W/D/L/Pts as results land,
+real api standings take over automatically the moment they publish; (2) a
+fixtures-derived round-by-round alive/eliminated bracket (Libertadores/NBA/
+NHL visual language, new LiveCompBracket.tsx) incl. top-8-bye handling and
+champion-from-final. Hubs: standings lead, Fixtures & Results behind a
+collapsed <details> (auto-open only while matches are in play), workbook
+bracket still wins when current_entries cover the season. /sports/standings:
+euroFixturesBlocks -> euroCompBlocks (tables first, fixtures hidden, Live
+sub-table only when in play; pre-draw fallback keeps old behaviour).
+
+**B. Workbook seam.** Ashwin updated the Champions League workbook mid-session
+to pull 2026-27; build-football-data.py CURRENT_EURO_SEASON="2026-27" /
+CURRENT_EURO_YEAR=2027 so its rows (year 2027) flow into current_entries at
+the next workbook-sync. Until then the derived bracket covers.
+
+**C. /predictions/ucl — new hub.** scripts/predictions/build_ucl_sim.py
+(ucl-poisson-v1, self-test 15/15, --verify-teams, ZERO network: bundle
+fixtures + hub archive + country-coeff only). K_LEAGUE=0.8 face-checked at
+0.5/0.65/0.8 — recalibrate after MD3-4. Knockout: seeded play-off bands, R16
+routing verified against the 2024-25 bracket (R16_ROUTING_NOTE: re-check the
+official 26-27 chart before the Feb draw). GUARD: api still stamps all 144
+league-phase fixtures with one placeholder kickoff (2026-09-08 19:00) — >18
+games on one timestamp = no fixture calls published, page says so; calls arm
+automatically when the real calendar lands. lib/uclSim.ts, page, index card
+href, predictions.sh + predictions-refresh.yml wiring (self-test gate, build,
+ucl-sim.json in the commit set, /predictions/ucl in the warm list). 2027
+final venue = Metropolitano, Madrid (uefa.com, checked).
+
+**D. /predictions/pl** — "The relegation battle" bar board (bottom-three odds,
+danger tone) between the title race and fixtures; the p_releg column already
+existed, now it has the marquee surface Ashwin asked for.
+
+npm run verify green end-to-end (typecheck, 614-file client-imports, table
+scroll, 99+14 vitest, build); pages probed on a local prod server + Playwright
+screenshots. NOTE the commit touches app/+lib/+public/data -> UNTAGGED push,
+one real build (today's second: the extract.py restamp was the first).

@@ -84,19 +84,34 @@ function Section({ title, dot, items }: { title: string; dot?: string; items: Li
   );
 }
 
-export default function LiveCompFixtures({ comp, season }: { comp: LiveComp; season: string | null }) {
+// `bare`: render only the three fixture lists, no outer section or heading —
+// used when the page wraps this in its own collapsed <details> shell so
+// fixtures stay hidden by default behind the standings (Ashwin, 2026-08-29).
+export default function LiveCompFixtures({ comp, season, bare }: { comp: LiveComp; season: string | null; bare?: boolean }) {
   const fx = comp.fixtures ?? [];
   const byKo = (dir: number) => (a: LiveFixture, b: LiveFixture) => dir * String(a.kickoff ?? "").localeCompare(String(b.kickoff ?? ""));
   const live = fx.filter((f) => f.status && IN_PLAY.has(f.status)).sort(byKo(1));
   const recent = fx.filter((f) => f.status && FINISHED.has(f.status)).sort(byKo(-1)).slice(0, 12);
   const upcoming = fx.filter((f) => !(f.status && (FINISHED.has(f.status) || IN_PLAY.has(f.status)))).sort(byKo(1)).slice(0, 20);
   if (!live.length && !recent.length && !upcoming.length) return null;
-  return (
-    <section id="fixtures" className="mb-8 scroll-mt-20">
-      <h2 className="text-xl font-bold mb-3">{season ? `${season} ` : ""}Fixtures &amp; Results</h2>
+  const lists = (
+    <>
       <Section title="Live" dot="#22c55e" items={live} />
       <Section title="Upcoming" items={upcoming} />
       <Section title="Recent Results" items={recent} />
+    </>
+  );
+  if (bare) return lists;
+  return (
+    <section id="fixtures" className="mb-8 scroll-mt-20">
+      <h2 className="text-xl font-bold mb-3">{season ? `${season} ` : ""}Fixtures &amp; Results</h2>
+      {lists}
     </section>
   );
+}
+
+// Are any of this comp's fixtures in play right now? (page-level helper so the
+// collapsed Fixtures shell can show a live dot without opening itself)
+export function compHasLive(comp: LiveComp): boolean {
+  return (comp.fixtures ?? []).some((f) => f.status && IN_PLAY.has(f.status));
 }

@@ -20,13 +20,13 @@ function ColorBall({ slug, name }: { slug: string | null; name: string }) {
   return <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: m.bg, color: m.fg, width: 18, height: 18, fontSize: 8, fontWeight: 700 }} aria-hidden>{m.mono}</span>;
 }
 
-export default function LiveCompGroups({ comp, season }: { comp: LiveComp; season: string | null }) {
+export default function LiveCompGroups({ comp, season, note }: { comp: LiveComp; season: string | null; note?: string }) {
   if (comp.groups.length === 0) return null;
   const heading = comp.groups.length > 1 ? "Group stage" : "League phase";
   return (
     <section id="groups" className="mb-8">
       <h2 className="text-lg font-semibold mb-3">
-        {season ? `${season} ` : ""}{heading} <span className="text-[var(--text-muted)] font-normal text-sm">· live</span>
+        {season ? `${season} ` : ""}{heading} <span className="text-[var(--text-muted)] font-normal text-sm">· {note ?? "live"}</span>
       </h2>
       <div className={comp.groups.length > 1 ? "grid grid-cols-1 sm:grid-cols-2 gap-3 items-start" : ""}>
         {comp.groups.slice().sort((a, b) => a.group_label.localeCompare(b.group_label)).map((g) => (

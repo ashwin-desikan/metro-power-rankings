@@ -20,14 +20,17 @@ mini_sync
   || fail "numpy missing from $PY; point PYTHON_BIN at the venv (metro-venv-requirements.txt)"
 
 guarded "self-test PL"  "$PY" scripts/predictions/build_pl_sim.py --self-test
+guarded "self-test UCL" "$PY" scripts/predictions/build_ucl_sim.py --self-test
 guarded "self-test NFL" "$PY" scripts/predictions/build_nfl_sim.py --self-test
 
-guarded "rebuild the Premier League model" "$PY" scripts/predictions/build_pl_sim.py
-guarded "rebuild the NFL model"            "$PY" scripts/predictions/build_nfl_sim.py
+guarded "rebuild the Premier League model"   "$PY" scripts/predictions/build_pl_sim.py
+guarded "rebuild the Champions League model" "$PY" scripts/predictions/build_ucl_sim.py
+guarded "rebuild the NFL model"              "$PY" scripts/predictions/build_nfl_sim.py
 
-commit_paths "Auto: refresh PL + NFL prediction models [vercel skip]" \
+commit_paths "Auto: refresh PL + UCL + NFL prediction models [vercel skip]" \
   public/data/pl-sim.json \
   public/data/pl-predictions.json \
+  public/data/ucl-sim.json \
   public/data/nfl-sim.json \
   public/data/nfl-predictions.json
 
@@ -35,5 +38,5 @@ commit_paths "Auto: refresh PL + NFL prediction models [vercel skip]" \
 # tag -- a flush here invalidates all three, so include it too rather than
 # leave it cold on Tue/Fri (the gap windows flagged 2026-08-06). Mirrors
 # predictions-refresh.yml -- keep the two in step.
-revalidate_ping "predictions-daily" "/predictions/pl" "/predictions/nfl" "/predictions/mlb" "/predictions"
+revalidate_ping "predictions-daily" "/predictions/pl" "/predictions/ucl" "/predictions/nfl" "/predictions/mlb" "/predictions"
 note "done"

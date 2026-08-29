@@ -13,8 +13,10 @@ import FootballHubNav from "@/app/teams/FootballHubNav";
 import MostDecoratedTable from "./MostDecoratedTable";
 import ContinentalTable from "./ContinentalTable";
 import { getClubCompetitions } from "@/lib/clubFootballLive";
+import { deriveLeaguePhaseGroups } from "@/lib/euroCompDerive";
 import LiveCompGroups from "./LiveCompGroups";
-import LiveCompFixtures from "./LiveCompFixtures";
+import LiveCompFixtures, { compHasLive } from "./LiveCompFixtures";
+import LiveCompBracket from "./LiveCompBracket";
 import HubNav from "@/app/teams/HubNav";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
@@ -25,6 +27,15 @@ import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 const COMP_ID_BY_SLUG: Record<string, number> = {
   "champions-league": 2, "europa-league": 3, "conference-league": 848, "uefa-super-cup": 531,
 };
+
+// Season label for the live (api-football-fed) sections. The workbook's
+// current_season wins when its entries cover the season; until that sync
+// lands, the label tracks the live bundle (lib/clubFootballLive reads the
+// live-competitions-2026.json season). Bump alongside the bundle filename.
+const LIVE_BUNDLE_SEASON = "2026-27";
+function liveCompSeason(hub: { current_season: string | null }, _slug: string): string {
+  return hub.current_season ?? LIVE_BUNDLE_SEASON;
+}
 
 export const dynamicParams = false;
 
@@ -67,13 +78,25 @@ export default async function ClubTournamentHubPage({ params }: Props) {
   const hasCurrent = hub.active && hub.current_entries.length > 0;
   const compId = COMP_ID_BY_SLUG[slug];
   const liveComp = hub.active && compId ? ((await getClubCompetitions()).find((c) => c.league_id === compId) ?? null) : null;
-  const hasGroups = !!liveComp && liveComp.groups.length > 0;
+  // Standings: api-football's real table when published, else a table computed
+  // from the comp's own league-phase fixtures (zeros once the draw names the
+  // 36, real W/D/L/Pts as results land) — see lib/euroCompDerive. Standings
+  // lead the page; Fixtures & Results sit behind a collapsed shell below.
+  const derived = liveComp ? deriveLeaguePhaseGroups(liveComp) : null;
+  const groupsComp = liveComp && derived && derived.groups.length > 0 ? { ...liveComp, groups: derived.groups } : null;
+  const hasGroups = !!groupsComp;
+  const groupsNote = derived?.computed
+    ? (derived.groups.some((g) => g.rows.some((r) => (r.played ?? 0) > 0)) ? "computed from results" : "drawn · matchday 1 upcoming")
+    : "live";
   const hasFixtures = !!liveComp && liveComp.fixtures.length > 0;
+  // The curated workbook bracket wins when it covers the season; otherwise the
+  // fixtures-derived bracket keeps the round-by-round view current on its own.
+  const showDerivedBracket = !hasCurrent && !!liveComp;
 
   const navItems = [
     ...(hasGroups ? [{ label: "Standings", href: "#groups" }] : []),
     ...(hasFixtures ? [{ label: "Fixtures", href: "#fixtures" }] : []),
-    ...(hasCurrent ? [{ label: "Current Season", href: "#current" }] : []),
+    ...(hasCurrent || showDerivedBracket ? [{ label: "Current Season", href: "#current" }] : []),
     { label: "All-Time Finals", href: "#finals" },
     ...(hub.most_decorated.length > 0 ? [{ label: "Most Decorated", href: "#most-decorated" }] : []),
   ];
@@ -127,15 +150,39 @@ export default async function ClubTournamentHubPage({ params }: Props) {
 
       {navItems.length > 1 && <HubNav items={navItems} />}
 
-      {hasGroups && liveComp && <LiveCompGroups comp={liveComp} season={hub.current_season} />}
+      {hasGroups && groupsComp && <LiveCompGroups comp={groupsComp} season={liveCompSeason(hub, slug)} note={groupsNote} />}
 
-      {hasFixtures && liveComp && <LiveCompFixtures comp={liveComp} season={hub.current_season} />}
+      {hasFixtures && liveComp && (
+        // Collapsed by default (Ashwin, 2026-08-29): the standings are the
+        // page's lead surface now; fixtures and results open on demand.
+        <details id="fixtures" className="mb-8 scroll-mt-20 rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }} open={compHasLive(liveComp)}>
+          <summary className="cursor-pointer select-none px-4 py-3 text-sm font-semibold flex items-center gap-2">
+            {compHasLive(liveComp) && <span className="inline-block w-2 h-2 rounded-full animate-pulse" style={{ background: "#22c55e" }} aria-hidden />}
+            Fixtures &amp; Results
+            <span className="text-[var(--text-muted)] font-normal text-xs">· {liveComp.fixtures.length} matches</span>
+          </summary>
+          <div className="px-4 pb-4">
+            <LiveCompFixtures comp={liveComp} season={liveCompSeason(hub, slug)} bare />
+          </div>
+        </details>
+      )}
 
       {hasCurrent && (
         <div id="current">
           <CurrentSeasonBracket
             entries={hub.current_entries}
             season={hub.current_season}
+            label={hub.short_label}
+          />
+        </div>
+      )}
+
+      {showDerivedBracket && liveComp && (
+        <div id="current">
+          <LiveCompBracket
+            comp={liveComp}
+            rankedGroups={derived && !derived.computed ? derived.groups : []}
+            season={liveCompSeason(hub, slug)}
             label={hub.short_label}
           />
         </div>

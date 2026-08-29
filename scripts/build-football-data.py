@@ -714,9 +714,14 @@ BRACKET_ROUND_BUCKETS = [
     {"key": "qualifying",   "label": "Qualifying",    "rnd_match": lambda r: r is not None and r >= 6},
 ]
 
-# The current European season the workbook's 2026 rows refer to.
-CURRENT_EURO_SEASON = None  # 2025-26 complete; set next season string when it begins
-CURRENT_EURO_YEAR = None   # Set next season year when it begins
+# The current European season the workbook's rows refer to. 2026-08-29:
+# Ashwin updated the Champions League workbook to pull the 2026-27 season, so
+# its rows (year 2027 = season ending year, same convention as the champions
+# history) flow into current_entries at the next workbook-sync. Until that
+# sync lands, the tournament hubs fall back to the fixtures-derived bracket
+# (lib/euroCompDerive) — workbook entries win the moment they exist.
+CURRENT_EURO_SEASON = "2026-27"
+CURRENT_EURO_YEAR = 2027
 
 
 def collect_european_tournaments(wb, slug_for_curname):
