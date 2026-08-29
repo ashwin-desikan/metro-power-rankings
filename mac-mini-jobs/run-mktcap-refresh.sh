@@ -87,6 +87,27 @@ if [ "$rc" -ne 0 ]; then
   fail "refresh.py --write failed (exit $rc) -- check the sanity gate: a >5% week-over-week source swing aborts before writing"
 fi
 
+# 2026-08-25 sunset plan item 1: commit out/mktcap_export.csv so MetroAreas.xlsx
+# can Power Query it straight from GitHub raw, retiring the manual CMC workbook
+# as the primary feed. out/ is gitignored (report.md, source_*.csv stay local/
+# ephemeral) -- this is the one file force-added out of it. Path stays outside
+# public/ on purpose so the [vercel skip] build guard also skips this commit.
+EXPORT_CSV="$MKTCAP/out/mktcap_export.csv"
+if [ -f "$EXPORT_CSV" ]; then
+  if git diff --quiet -- "$EXPORT_CSV" 2>/dev/null && git ls-files --error-unmatch "$EXPORT_CSV" >/dev/null 2>&1; then
+    log "mktcap_export.csv unchanged; nothing to commit"
+  else
+    git config user.name  "metro-mini[bot]"
+    git config user.email "metro-mini-bot@users.noreply.github.com"
+    git add -f "$EXPORT_CSV"
+    git commit -m "mktcap: weekly export.csv refresh $DATE [vercel skip]" --quiet || fail "git commit (mktcap_export.csv) failed"
+    git push origin HEAD:main --quiet || fail "git push (mktcap_export.csv) failed"
+    log "committed + pushed mktcap_export.csv"
+  fi
+else
+  log "WARN: $EXPORT_CSV not found after refresh.py --write; skipping export commit"
+fi
+
 # Surface anything Ashwin should look at, without treating it as a failure:
 # new geo stubs to curate. "none" is the only clean value; anything else
 # (including grep finding nothing, which would mean the line's shape changed)

@@ -17,6 +17,26 @@ def load_sources():
     uni = list(csv.DictReader(open(os.path.join(OUT, "source_unicorns.csv"), encoding="utf-8")))
     return pub, uni
 
+def write_unicorns(uni):
+    """Full weekly rewrite of mktcap_unicorns from this run's CB Insights fetch.
+
+    No FK references mktcap_unicorns (verified 2026-08-29), so delete-all +
+    reinsert is safe. id is GENERATED ALWAYS AS IDENTITY (confirmed 2026-08-29
+    after a failed run: a first attempt passed explicit ids, Postgres rejected
+    the insert since IDENTITY columns refuse client-supplied values without
+    OVERRIDING SYSTEM VALUE, and the DELETE just before it had already
+    committed -- leaving the table empty until this fix + a re-run). Omit id
+    entirely and let the identity sequence assign it.
+    """
+    rest("DELETE", "/rest/v1/mktcap_unicorns?id=gte.0")
+    rows = [dict(name=r["Company"], valuation_bn=float(r["ValuationBn"]),
+                 date_joined=r["DateJoined"] or None, country=r["Country"],
+                 city=r["City"], industry=r["Industry"], investors=r["Investors"])
+            for r in uni]
+    for i in range(0, len(rows), 500):
+        rest("POST", "/rest/v1/mktcap_unicorns", rows[i:i+500])
+    log(f"WROTE mktcap_unicorns: {len(rows)} rows (full rewrite)")
+
 def merge(pub, uni, private_rows, changes, overrides):
     """Returns (merged, ipo_dedup, skipped_renames).
 
@@ -114,6 +134,16 @@ def main(write=False):
         log(f"WARNING: NOT deactivating {cid}: symbol still live in feed but id "
             f"missing from merge (rename/collision suspect). Investigate before trusting this write.")
     unmapped_new = [m for m in new_ids if m["symbol"] not in geo_map]
+    # Bug fixed 2026-08-29: this used to report only unmapped_new (symbols new
+    # to mktcap_companies THIS run). Once a symbol gets auto-stubbed into
+    # mktcap_geo (below), it has a geo row and drops out of that set even
+    # though metro is still null -- so it silently vanished from every future
+    # week's queue. still_unmapped instead checks metro truthiness across the
+    # WHOLE merged set, so a stubbed-but-never-mapped company keeps showing up
+    # until it actually gets a metro. Caught when two same-day re-runs (after
+    # the first found 22 unmapped) both reported "none" although nothing had
+    # been mapped in between.
+    still_unmapped = [m for m in merged if not geo_map.get(m["symbol"])]
     invalid = sorted({v for v in (geo_map.get(m["symbol"]) for m in merged) if v and v not in metros})
     mapped = sum(1 for m in merged if geo_map.get(m["symbol"]))
     renames = [(m["symbol"], c["symbol"]) for m in new_ids for c in current
@@ -129,8 +159,8 @@ def main(write=False):
            f"- possible ticker renames (REVIEW, not auto-applied): {renames[:8]}",
            f"- rename guard: {len(skipped_renames)} recycled-ticker renames skipped: {skipped_renames[:8]}",
            f"- deactivation guard: {len(spared)} kept active (symbol live in feed): {spared[:8]}",
-           f"- METRO QUEUE (new, unmapped — for Ashwin): " +
-           (", ".join(f'{m["name"]} [{m["symbol"]}] ({m["country"]})' for m in unmapped_new[:40]) or "none")]
+           f"- METRO QUEUE (unmapped — for Ashwin): " +
+           (", ".join(f'{m["name"]} [{m["symbol"]}] ({m["country"]})' for m in still_unmapped[:40]) or "none")]
     report = "\n".join(rep)
     print(report)
     open(os.path.join(OUT, "report.md"), "w", encoding="utf-8").write(report + "\n")
@@ -164,8 +194,13 @@ def main(write=False):
     for i in range(0, len(dedup), 500):
         rest("POST", "/rest/v1/mktcap_geo?on_conflict=symbol", dedup[i:i+500],
              headers={"Prefer": "resolution=ignore-duplicates,return=minimal"})
+    # 4) unicorns table: full weekly rewrite from this run's CB fetch (previously
+    # read into the merge but never persisted — mktcap_unicorns sat stale since
+    # 2026-06-29 until the 2026-08-25 sunset-plan fix).
+    write_unicorns(uni)
     log(f"WRITE done: +{len(up)} companies, {len(snap)} snapshot rows, "
-        f"{len(removed)} deactivated, {len(dedup)} geo stubs queued")
+        f"{len(removed)} deactivated, {len(dedup)} geo stubs queued, "
+        f"{len(uni)} unicorns rewritten")
 
 if __name__ == "__main__":
     main(write="--write" in sys.argv)
