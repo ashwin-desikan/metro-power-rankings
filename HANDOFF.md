@@ -6810,3 +6810,51 @@ Islands clean, the Venezuela hold reported and untouched, 0 statements emitted.
 2. **Still open:** the two workbook cells. Fix them in the `Lookup` sheet and both
    holds retire themselves — re-run the sync and the rows fall out of the diff. Until
    then the sheet and the table disagree by design.
+
+## 2026-08-29 — windows/cloud (CUTOVER DAY: the CompaniesMarketCap workbook is retired)
+
+The Saturday cutover scheduled on 25 Aug ran to completion. The CMC workbook
+("companiesmarketcap.com … (1).xlsx") no longer feeds anything.
+
+- **Part A (mini, evening run):** weekly snapshot 2026-08-29 in Supabase (12,978
+  companies); `scripts/mktcap/out/mktcap_export.csv` committed (12,979 rows, exact
+  MktCap_Data A:D shape) and serving from GitHub raw; `mktcap_unicorns` rewritten
+  from the live CB fetch (1,404). The mini also researched and mapped **20 of the
+  22** new queue companies directly into `mktcap_geo` (2 documented skips).
+  🔴 OPEN: the runner + `refresh.py` code edits are NOT in git — today's CSV was a
+  one-off commit. **The mini must commit/push its `run-mktcap-refresh.sh` and
+  `refresh.py` edits**, or next Saturday's CSV commit will not happen by itself.
+- **Part B (Excel, Ashwin):** `MetroAreas.xlsx` `MktCap_Data` A:D is now a Power
+  Query table on the raw CSV URL, refresh-on-open; E1/E2 stamps kept; the old CMC
+  workbook connection/link removed; Metro Areas AT/AU spot-checked. Weekly flow is
+  now: mini refreshes Supabase + commits the CSV Saturday → open the workbook (it
+  refreshes itself) → workbook-sync when you want the site updated.
+- **Pre-sync safety check:** repo `MetroAreas.xlsx` vs the OneDrive master was
+  cell-diffed before syncing. The 08-18/08-20 "17 cells behind" drift is GONE —
+  every sheet identical except Metro Areas, whose 2,406 raw diffs are pure row
+  reordering from the mktcap re-rank (0 metros differ once rows are aligned by
+  identity; formula row-indices shifted with their rows). Reconciliation item
+  closed; do not re-flag it.
+- **workbook-sync:** 15/15 green (log `sync-20260829-195833.log`, 91s), both
+  verify gates passing. **773 `public/data` files rebuilt** — the first
+  Supabase-fed market-cap refresh on the site (761 metro details, metros index +
+  top-level boards, 3 football, 1 international).
+- **Part C:** `sync_city_lookup.py` and `sync_geo_from_excel.py` RETIRED
+  (docstring notices, kept on disk — running either would revert the 25 Aug
+  rulings; nothing schedules them). Batesville IN added to `NO_METRO` in
+  `scripts/rankings/assign_metros.py` (Denison precedent); rankings selftest
+  34/34 on both machines.
+
+### Open, for whoever is next
+1. Mini: commit + push the runner/`refresh.py` edits (above) — the one thing
+   between today and a fully hands-off Saturday.
+2. Timing race, found this morning: the 10:00 UTC Saturday mktcap research
+   routine fired **3 minutes before** the mini wrote the new review-queue file
+   (10:03), so it read last week's. Move the routine to 11:00 UTC (it predates
+   the agent sessions and can only be edited from Ashwin's scheduled-tasks
+   list), or have the mini write the queue before 10:00.
+3. CL workbook `Lookup` still carries the two ruled-wrong cells (San Martín de
+   San Juan → should be San Juan; Estudiantes de Mérida → should be Merida).
+   Supabase is right and protected via the cl-lookup-sync holds (28 Aug entry);
+   fix the sheet cells whenever the workbook is next open so the holds can
+   retire.

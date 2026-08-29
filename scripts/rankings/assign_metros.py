@@ -107,6 +107,10 @@ ALIAS_STATE = {
 # rule attached, never an empty cell someone infers meaning from.
 NO_METRO = {
     ("denison", "iowa"): "Ashwin, 2026-08-17: Denison is no metro area",
+    # The only Batesville in the spine is Batesville ARKANSAS; the state guard
+    # caught Hillenbrand's rows silently attached to it. Ruled out of
+    # Cincinnati (~60km) too — company_hq rows were nulled the same day.
+    ("batesville", "indiana"): "Ashwin, 2026-08-25: not in the Cincinnati metro; no metro area",
 }
 
 

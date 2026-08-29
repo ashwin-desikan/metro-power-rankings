@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """sync_geo_from_excel.py - pull Ashwin's metro curation from the workbook into mktcap_geo.
 
+🔴 RETIRED 2026-08-29, exactly as the paragraph below anticipated ("retires at
+cutover"). Curation lives in Supabase; the City Lookup sheet is stale by
+design since 2026-08-25 and running this would revert real rulings. Kept on
+disk for history only; do not run.
+
 The City Lookup sheet of the CompaniesMarketCap workbook is where metro
 assignments are actually curated (the 07-23 Supabase seed was a snapshot of it;
 Excel has moved on every week since). This re-syncs: for every symbol whose

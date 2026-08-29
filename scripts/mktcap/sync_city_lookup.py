@@ -2,6 +2,13 @@
 """
 sync_city_lookup.py — one-way mirror: CompaniesMarketCap workbook -> Supabase.
 
+🔴 RETIRED 2026-08-29 (CMC-workbook sunset; HANDOFF 2026-08-25/29 entries).
+Supabase public.mktcap_geo is the source of truth for metro curation now —
+the weekly cloud routines assign, and MetroAreas.xlsx reads the pipeline's
+CSV via Power Query. The City Lookup sheet is STALE BY DESIGN since the
+2026-08-25 catch-up sync and five metro rulings: RUNNING THIS SCRIPT AGAIN
+WOULD REVERT THEM. Kept on disk for history only; do not run.
+
 City Lookup sheet   -> public.mktcap_geo          (source of truth for symbol -> metro)
 Valid Metros sheet  -> public.mktcap_valid_metros (canonical metro names)
 
