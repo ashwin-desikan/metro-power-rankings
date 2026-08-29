@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-08-28",
+  "generatedAt": "2026-08-29",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-29",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "3c4d6347d"
+    },
+    {
+      "date": "2026-08-28",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "Universities move to the CWUR 2026 edition and the maps stop handing out our key.",
+      "commit": "5e0538241"
+    },
     {
       "date": "2026-08-28",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "5aaf9278b"
+      "text": "Data refreshed — Football, Basketball, Elections, Populations, and 4 more.",
+      "commit": "9669422aa"
     },
     {
       "date": "2026-08-27",
@@ -4187,20 +4201,6 @@
       "hub": "Badges",
       "text": "Add Conurbations badge merging Twin Metros + Megaregions: 4 named megaregions, 56 editorial overrides with creative names, recursive split…",
       "commit": "c5dce2cf7"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Add Twin Metros (117 clusters) and Megaregions (24 clusters within 250 km) ranked by combined cluster score; Isolated Capital (133 capitals…",
-      "commit": "45ed0deff"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Add Twin Metros (118 clusters, pairs+triplets), Megaregions (32 clusters, 4+ metros), Isolated Capital (155 capitals, peer-comparability ru…",
-      "commit": "a96688ae1"
     }
   ]
 }
