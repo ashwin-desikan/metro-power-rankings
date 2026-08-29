@@ -6858,3 +6858,43 @@ The Saturday cutover scheduled on 25 Aug ran to completion. The CMC workbook
    Supabase is right and protected via the cl-lookup-sync holds (28 Aug entry);
    fix the sheet cells whenever the workbook is next open so the holds can
    retire.
+
+## 2026-08-29 — cloud (evening): Top Companies on metro pages now fully pipeline-fed
+
+Ashwin asked for the Top Companies section of /rankings/[slug] to track the
+mini's Saturday mktcap run automatically. It was only half-connected: the
+CSV/Supabase fed MetroAreas.xlsx via Power Query, but the site's marketCap
+blocks still came from extract.py reading the workbook's CACHED MktCap_Data
+sheet — fresh only after Ashwin opened the workbook and ran workbook-sync.
+
+Before changing anything I proved the CSV path is byte-identical to what is
+live: all 555 mapped metros' marketCap blocks recomputed from
+scripts/mktcap/out/mktcap_export.csv == the deployed details exactly
+(0 differing; same skip rules, sort, round()).
+
+1. NEW scripts/mktcap/update_top_companies.py — workbook-free updater:
+   CSV -> patches ONLY detail marketCap blocks + meta.json companiesAsOf.
+   House style: dry-run default, --write, --self-test (9/9). asOf from
+   Supabase latest snapshot (anon), --as-of override, ABORTS if neither.
+   Never guesses: unknown CSV metro names and missing detail files warn+skip;
+   orphan details (almere.json, slug gone from metros.json since 2026-07,
+   stale asOf 2026-07-05 — pre-existing, left alone) never touched. Removes a
+   metro's block if it vanishes from the CSV (same semantics as extract.py).
+2. scripts/extract.py extract_mktcap() now reads the SAME CSV first (sheet
+   cache is fallback-with-warning only), so a workbook-sync run can never
+   publish staler Top Companies than the site already has — both paths
+   converge on the CSV bytes.
+3. mac-mini-jobs/run-mktcap-refresh.sh: new final step (after the /business
+   publish, so failures don't block it) — self-test gate, --write, then
+   commit public/data/details + meta.json UNTAGGED on purpose: details are
+   build-time readFileSync, so this commit IS the weekly build (one untagged
+   push per Saturday, inside the 2/day budget). No-change runs commit nothing.
+   bash -n clean. scripts/mktcap/README.md documents the step.
+
+Verified here: self-test 9/9; --write against current repo state is a perfect
+no-op (0 files, meta already 2026-08-29) — expected, since yesterday's sync
+used the same CSV. First live exercise: the mini's next Saturday run (Sep 5).
+Watch its log for the "update_top_companies" lines and confirm one untagged
+push + one Vercel build lands. Note the runner self-modifies via its own
+ff-merge at run start; safe in practice because the mini's daily jobs keep
+the tree current between Saturdays, so the merge is a no-op by then.

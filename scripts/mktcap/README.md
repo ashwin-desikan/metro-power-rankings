@@ -21,6 +21,13 @@ verified to exact parity: 4,338 mapped metros, $161.75T mapped subtotal).
    and blank geo stubs for new unmapped companies (the curation queue).
 3. `export_csv.py` — `out/mktcap_export.csv` in MktCap_Data A:D shape,
    FULL universe, blanks for unmapped (never a filtered subset).
+4. (mini runner only, since 2026-08-29 evening) `update_top_companies.py --write` —
+   patches the `marketCap` block of `public/data/details/*.json` + meta.json's
+   `companiesAsOf` straight from that CSV, then commits UNTAGGED (details are
+   build-time reads; that commit is the weekly production build). The site's
+   Top Companies sections therefore track the Saturday run with no Excel step;
+   extract.py also reads the CSV now, so a later workbook-sync converges to
+   the same bytes instead of reverting to the workbook's Power Query cache.
 
 ## The metro curation queue (Ashwin)
 New companies land with `metro = null` in `mktcap_geo` (`mapped_by='auto-stub'`).

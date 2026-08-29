@@ -762,7 +762,47 @@ def extract_events(wb):
 
 
 def extract_mktcap(wb):
-    """Extract market cap data grouped by metro, including company name and source."""
+    """Extract market cap data grouped by metro, including company name and source.
+
+    Primary source since the 2026-08-29 CMC-workbook sunset: the pipeline's
+    committed CSV (scripts/mktcap/out/mktcap_export.csv, written by the mini's
+    Saturday refresh.py run). It is the SAME feed the workbook's MktCap_Data
+    Power Query table reads, so going straight to it means extract no longer
+    depends on when the workbook was last opened/refreshed — a workbook-sync
+    run can never publish a stale Top Companies section. Proven byte-identical
+    to the sheet-cache path across all 555 mapped metros on 2026-08-29.
+    Fallback: the MktCap_Data sheet's cached values (pre-cutover behaviour),
+    kept only for a checkout that somehow lacks the CSV.
+
+    scripts/mktcap/update_top_companies.py mirrors this logic for the
+    workbook-free Saturday path — change the shape in one place, change it in
+    the other."""
+    csv_path = (Path(__file__).resolve().parent / "mktcap" / "out"
+                / "mktcap_export.csv")
+    if csv_path.exists():
+        import csv as _csv
+        mktcap = {}
+        with open(csv_path, newline='', encoding='utf-8') as f:
+            for r in _csv.DictReader(f):
+                metro = (r.get("Metro Area") or '').strip()
+                try:
+                    val = float(r.get("Valuation") or 0)
+                except ValueError:
+                    val = 0.0
+                if not metro or val == 0:
+                    continue
+                mktcap.setdefault(metro, []).append({
+                    'valuation': val,
+                    'name': (r.get("Company Name") or '').strip(),
+                    'source': (r.get("Source") or '').strip(),
+                })
+        for metro in mktcap:
+            mktcap[metro].sort(key=lambda x: x['valuation'], reverse=True)
+        print("  (source: scripts/mktcap/out/mktcap_export.csv)")
+        return mktcap
+
+    print("  WARNING: mktcap_export.csv not found; falling back to the "
+          "workbook's cached MktCap_Data sheet (may be stale)")
     ws = wb["MktCap_Data"]
     mktcap = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
