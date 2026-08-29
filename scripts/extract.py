@@ -1341,6 +1341,39 @@ def compute_dimension_ranks(metros):
     return ranks_by_slug
 
 
+def fetch_mktcap_snapshot_date():
+    """The 'Source data as of' date for the Top Companies tables, from the
+    pipeline itself: public.mktcap_valuations' latest weekly snapshot (the
+    Mac mini's Saturday run of scripts/mktcap/refresh.py --write).
+
+    Since the 2026-08-29 cutover (HANDOFF: CMC-workbook sunset) the
+    CompaniesMarketCap xlsx is retired -- its mtime, which used to feed this
+    label, would pin it to 2026-08-23 forever. Supabase is the source of
+    truth; MetroAreas.xlsx now pulls the pipeline's committed CSV via Power
+    Query (refresh-on-open), so this date and the extracted numbers move
+    together on any normal Saturday flow.
+
+    Anon read, ~1KB response. Returns 'YYYY-MM-DD' or None on any failure so
+    an offline ETL run still completes (caller falls back to the old path).
+    """
+    import urllib.request
+    url = (os.environ.get("SUPABASE_URL")
+           or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+    anon = (os.environ.get("SUPABASE_ANON_KEY") or
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30."
+            "4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+    try:
+        req = urllib.request.Request(
+            url + "/rest/v1/mktcap_valuations?select=as_of&order=as_of.desc&limit=1",
+            headers={"apikey": anon, "Authorization": "Bearer " + anon})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            rows = json.load(r)
+        as_of = (rows or [{}])[0].get("as_of")
+        return as_of if as_of and re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(as_of)) else None
+    except Exception:
+        return None
+
+
 def find_companies_source(explicit_path=None):
     """Locate the upstream companiesmarketcap.com xlsx whose mtime tells us
     when the market cap data was last refreshed. Returns Path or None.
@@ -1527,20 +1560,26 @@ def main():
     mktcap = extract_mktcap(wb)
     print(f"  {sum(len(v) for v in mktcap.values())} companies")
 
-    # Capture the freshness of the upstream companiesmarketcap.com xlsx so
-    # the metro pages can render a "Source data as of {date}" line below the
-    # Top Companies table. Falls back gracefully when the file is not found
-    # (e.g. running ETL on a machine without the OneDrive sync).
+    # "Source data as of {date}" for the Top Companies tables. Primary:
+    # the pipeline's latest weekly snapshot in Supabase (the mini's Saturday
+    # run) -- see fetch_mktcap_snapshot_date(). Fallback: the retired CMC
+    # xlsx's mtime (pre-cutover behaviour), kept only so an offline ETL run
+    # still stamps something rather than nothing.
     import datetime as _dt
-    companies_src = find_companies_source()
-    if companies_src is not None:
-        mktcap_as_of = _dt.datetime.fromtimestamp(
-            os.path.getmtime(str(companies_src))
-        ).strftime('%Y-%m-%d')
-        print(f"  companies source: {companies_src.name} (asOf {mktcap_as_of})")
+    mktcap_as_of = fetch_mktcap_snapshot_date()
+    if mktcap_as_of:
+        print(f"  companies as-of: {mktcap_as_of} (mktcap_valuations latest snapshot)")
     else:
-        mktcap_as_of = None
-        print("  companies source xlsx not found; skipping asOf stamp")
+        companies_src = find_companies_source()
+        if companies_src is not None:
+            mktcap_as_of = _dt.datetime.fromtimestamp(
+                os.path.getmtime(str(companies_src))
+            ).strftime('%Y-%m-%d')
+            print(f"  companies as-of FALLBACK (Supabase unreachable): "
+                  f"{companies_src.name} mtime {mktcap_as_of}")
+        else:
+            mktcap_as_of = None
+            print("  companies as-of: Supabase unreachable and no source xlsx; skipping stamp")
 
     print("Extracting football clubs...")
     football = extract_football(wb)
