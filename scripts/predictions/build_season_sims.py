@@ -409,7 +409,20 @@ def reconcile_remaining(remaining, records, season_games, league):
         ex = excess()
     bad = {t: v for t, v in ex.items() if v != 0}
     if bad:
-        raise SystemExit("[%s] fixture/record count mismatch: %s" % (league, bad))
+        # A team's `gp` can tick up before its fixture leaves the "remaining"
+        # list -- a match in progress, not a data error. That shows as a
+        # -1 deficit on BOTH participants (one fixture, two teams), so an
+        # even count of exactly-(-1) entries is exactly what a set of
+        # in-progress matches looks like: warn and proceed rather than hard-
+        # fail the whole multi-league job over it. Anything else (larger
+        # magnitude, odd count, any positive excess -- which the loop above
+        # would already have resolved or raised on) is a real mismatch.
+        if bad and all(v == -1 for v in bad.values()) and len(bad) % 2 == 0:
+            print("[%s] WARNING: %d team(s) show gp ahead of remaining+records "
+                  "by 1, consistent with an in-progress match: %s -- "
+                  "proceeding (not a hard mismatch)" % (league, len(bad), bad))
+        else:
+            raise SystemExit("[%s] fixture/record count mismatch: %s" % (league, bad))
     return remaining
 
 
@@ -1507,6 +1520,17 @@ def self_test():
     recs2 = {"a": dict(gp=3), "b": dict(gp=3), "c": dict(gp=2), "d": dict(gp=2)}
     out2 = reconcile_remaining(list(rem), recs2, 3, "test")
     check("reconcile drops the lagged fixture", out2 == [("c", "d")])
+    # 2026-08-29/30 real incident: an in-progress NRL match ticks gp for both
+    # teams before it leaves "remaining", showing as -1/-1 -- must warn and
+    # proceed, not SystemExit the whole multi-league job.
+    recs3 = {"a": dict(gp=1), "b": dict(gp=1), "c": dict(gp=2), "d": dict(gp=2)}
+    out3 = reconcile_remaining(list(rem), recs3, 3, "test")
+    check("reconcile tolerates one in-progress match (-1/-1, even count)", out3 == rem)
+    try:
+        reconcile_remaining([], {"a": dict(gp=2), "b": dict(gp=2), "c": dict(gp=2)}, 3, "test")
+        check("reconcile still hard-fails on an odd count of -1 deficits", False)
+    except SystemExit:
+        check("reconcile still hard-fails on an odd count of -1 deficits", True)
 
     # AFL wildcard reseeding: better ladder team becomes the new 7 seed
     rng = random.Random(1)

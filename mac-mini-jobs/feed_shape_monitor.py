@@ -90,6 +90,18 @@ def check_espn_standings(doc):
     if not isinstance(children, list):
         return "FAIL", "'children' is not a list"
     if not children:
+        # Some ESPN standings feeds (confirmed: AFL) ship the ladder flat at
+        # the top level with no conference grouping, rather than nested under
+        # children[0] -- children=[] there is a real, permanent response
+        # shape, not an off-season/empty state. Without this fallback the
+        # check reports "empty" on every single run forever (confirmed: 66/66
+        # since 2026-07-01) and can never distinguish a genuinely broken feed
+        # from a healthy flat one.
+        entries = (doc.get("standings") or {}).get("entries")
+        if isinstance(entries, list) and entries:
+            e0 = entries[0]
+            if "team" in e0 and isinstance(e0.get("stats"), list) and e0["stats"]:
+                return "ok", f"flat standings, {len(entries)} teams"
         return "empty", "no conferences/groups (off-season?)"
     grp = children[0]
     entries = (grp.get("standings") or {}).get("entries")
