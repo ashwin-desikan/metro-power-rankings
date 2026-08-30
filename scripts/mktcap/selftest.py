@@ -3,6 +3,10 @@ import sys
 sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
 from fetch_source import parse_public, parse_unicorns_html, norm_num
 from build_merged import merge
+import common
+common.SELFTEST = True  # tags log() output so a fixture-triggered warning
+                         # (e.g. merge()'s recycled-ticker guard below) can't
+                         # be mistaken for a real production alert
 
 FAIL = []
 def check(label, cond):

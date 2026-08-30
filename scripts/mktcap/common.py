@@ -104,5 +104,13 @@ def fetch_url(url, timeout=120, ua="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15
         import gzip; raw = gzip.decompress(raw)
     return raw
 
+# Set True by selftest.py before it exercises code paths (like merge()'s
+# recycled-ticker guard) that log() through their normal, non-test logic --
+# found 2026-08-30 (daily-ops-sweep): the self-test's synthetic NVDA->MSTR
+# fixture prints a real-looking "WARNING: rename ... SKIPPED" line with no
+# marker, so it reads as a live production warning in the log.
+SELFTEST = False
+
 def log(msg):
-    print(f"[mktcap] {msg}", flush=True)
+    tag = "[mktcap:selftest]" if SELFTEST else "[mktcap]"
+    print(f"{tag} {msg}", flush=True)

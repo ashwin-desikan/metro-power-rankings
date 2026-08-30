@@ -82,10 +82,18 @@ log "self-test"
 "$PY" refresh.py --self-test 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "refresh.py --self-test failed"
 
 log "refresh --write (fetch + merge + Supabase write + CSV export)"
-"$PY" refresh.py --write 2>&1 | tee -a "$LOG"; rc="${PIPESTATUS[0]}"
+WRITE_OUT="$(mktemp)"
+"$PY" refresh.py --write 2>&1 | tee -a "$LOG" | tee "$WRITE_OUT"; rc="${PIPESTATUS[0]}"
 if [ "$rc" -ne 0 ]; then
-  fail "refresh.py --write failed (exit $rc) -- check the sanity gate: a >5% week-over-week source swing aborts before writing"
+  # Report the run's own last error line rather than a hardcoded guess --
+  # found 2026-08-30 (daily-ops-sweep) that this used to always blame the
+  # >5% sanity gate even when the real cause was something else entirely
+  # (e.g. the 2026-08-29 mktcap_unicorns identity-column 400), which sends
+  # the next investigator down the wrong path.
+  LAST_ERR="$(grep -iE 'error|exception|traceback|fatal' "$WRITE_OUT" | tail -1)"
+  fail "refresh.py --write failed (exit $rc)${LAST_ERR:+ -- ${LAST_ERR}}"
 fi
+rm -f "$WRITE_OUT"
 
 # 2026-08-25 sunset plan item 1: commit out/mktcap_export.csv so MetroAreas.xlsx
 # can Power Query it straight from GitHub raw, retiring the manual CMC workbook
