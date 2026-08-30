@@ -143,6 +143,38 @@ explicit — apply it before touching any refresh script:
   actually needs to trigger a build. Ashwin has been billed for avoidable
   Vercel builds before; don't repeat it.
 
+## Release notes (every shipping day, no exceptions)
+
+> **HARD RULE.** If a commit that touches `app/`, `lib/` or `public/` lands on
+> a given day, that day gets an entry in `lib/releases.ts` before the day
+> closes. Not the commit message, not a HANDOFF entry: the public log that
+> readers see at `/updates`. **On 2026-08-30, fifteen reader-visible commits
+> shipped across five sessions and none of them wrote an entry**, including a
+> session that had backfilled 08-23 and 08-29 earlier that same afternoon and
+> still left the day it was working in blank. Backfilling is always worse than
+> writing it at the time, because by then nobody remembers which of the day's
+> changes a reader would actually have noticed.
+>
+> **This rule is easy to miss and that is the point of putting it here.** The
+> brevity discipline lives in a comment at the top of `app/updates/page.tsx`,
+> which a session only reads if it happens to open that file. Nothing else in
+> the repo mentions release notes, so a session that never touches `/updates`
+> never learns the step exists.
+>
+> **The limits are enforced at build time.** At most 4 bullets, one short
+> sentence each, 220 characters, headline 4 to 8 words with a 12 word ceiling,
+> no script names, file paths or ETL mechanics. `next build` fails with
+> `RELEASE_NOTES_VIOLATION` if you break them. Four bullets on a busy day is
+> deliberate: choose what a reader would notice, and let the rest live in the
+> commit messages.
+>
+> **One date block per shipping day.** If today already has an entry, amend it
+> rather than adding a second block.
+>
+> **Write it into the commit that ships the work**, not as a follow-up push.
+> `lib/releases.ts` is build-relevant, so a separate release-notes commit
+> spends a second production build out of the 2/day budget.
+
 ## Where things live
 
 - `scripts/civic/` — officeholder refresh pipelines (mayors, governors,

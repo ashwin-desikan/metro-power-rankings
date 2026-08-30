@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-30",
+    headline: "Six new election hubs, and a site that fits your phone",
+    items: [
+      "Elections gains six countries, Greece, Austria, Egypt, Portugal, the Philippines and Ireland, each with its full run of national contests and a page scoring how faithfully votes become seats.",
+      "Every long list on a phone now starts short and opens on request, table rows are tappable end to end, and metro pages lead with the rank instead of burying it.",
+      "In the arcade, tapping until the answer turns green no longer earns the celebration: knowing it first time and learning something new are now counted apart.",
+      "The greatest rugby tests are rescored, with closeness judged against the match's own scoring and shocks rewarded, and any game placed by hand now says so.",
+    ],
+  },
+  {
     date: "2026-08-29",
     headline: "UEFA competitions get live hubs, brackets and predictions",
     items: [
