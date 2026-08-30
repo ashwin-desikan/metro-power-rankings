@@ -164,6 +164,18 @@ table thead th {
   details.show-more[data-desktop-open] > summary { display: none; }
 }
 
+/* === A jump link reveals what it jumped to ===
+   A collapsed <details> that is also an anchor target would otherwise scroll
+   the reader to a closed section — the section nav would look broken on a
+   phone, which is the only viewport where these are closed at all. `:target`
+   force-reveals the content using the same two overrides as the desktop rule
+   above, so tapping "Sports" in the on-this-page nav lands on Sports open. */
+details[data-desktop-open]:target > *:not(summary) { display: revert; }
+details[data-desktop-open]:target::details-content {
+  content-visibility: visible;
+  block-size: auto;
+}
+
 /* A ShowMore inside a divided list needs the hairline above its control,
    because the control is the list's last child and `divide-y` only draws
    BETWEEN children it can see. The revealed rows themselves are styled by

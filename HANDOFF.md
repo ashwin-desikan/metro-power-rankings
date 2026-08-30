@@ -7453,3 +7453,64 @@ pinned build, `CHROME_PATH=/path/to/chrome` works around it.
 - **Long-form pages.** /neighborhoods (47.6 screens) and /methodology (27.9)
   are long on desktop too (~1.7x), so the probe reports them as warnings, not
   failures. The answer is in-page navigation, not truncation.
+
+## 2026-08-30 (late) — Windows (cloud session) → mini/next session: the metro profile page
+
+Follow-on to the sitewide mobile entry above, same branch. `/rankings/[slug]`
+PASSED every gate I had just written (390px wide, 17.2 phone screens, 1.6x
+ratio) and was still the worst-reading page on the site. Passing a gate is not
+the same as being good; this is what a design pass on top of the mechanical
+one found.
+
+### Measured, /rankings/new-york at 390x844
+
+| | before | after |
+| --- | --- | --- |
+| page height | 14,500px (17.2 screens) | 5,561px (**6.6 screens**) |
+| rank + score card | y=**1022** — below the fold | y=**384** |
+| section nav | y≈1450, after the hero and a callout | directly under the hero |
+| desktop length | 10.9 screens | 10.9 screens (unchanged) |
+
+Held across the template, not just New York: london 6.7, tokyo 6.6, mumbai
+6.1, lagos 5.3, boise 4.7, reykjavik 5.0 — and rankY=384 on every one.
+
+### What changed in the page
+
+- **Hero regrid.** Three explicit slots (`lg:row-start` / `lg:col-start`), so
+  the desktop hero is pixel-identical while the phone gets name → Follow →
+  rank/score → facts. The card used to render last simply because a
+  two-column grid collapses to DOM order and nobody had looked at a phone.
+- **Facts as a stat grid.** Nine `Label: value` sentences → six mono `<dl>`
+  cells (2-col phone, 3-col desktop), new `HeroStat` helper. The mayor's
+  party/since moved to their own dim line; inline they rendered
+  "(Democratic Party (Democratic Socialists of America)) (since 2026)",
+  three wrapped lines of nested parens.
+- **Seven catalogue sections → `<Disclosure>`** (Sports, Championships,
+  Companies, Culture, Education, Infrastructure, Luxury), each with a `meta`
+  count. Done with a throwaway AST codemod, since deleted: a regex cannot
+  find these `</section>` tags, they are 60–400 lines deep with nested
+  sections inside. The `<h2 id>` is preserved inside the summary, so the
+  document outline and every existing anchor survive.
+- **`MetroExpectationCard` moved INSIDE Sports.** It was a sibling, so once
+  Sports collapsed it rendered as loose sports content under a closed
+  heading.
+- **Section nav moved up**, deliberately NOT sticky — thirteen chips wrap to
+  four rows on a phone and 160px of permanent chrome is a worse trade than
+  one scroll up, now that the page is 6.6 screens.
+- Fixed a pre-existing render bug while in there: "109**in** total" in the
+  Championship History blurb (the space between `{titles.length}` and the
+  next text node did not survive; now an explicit `{" "}`).
+
+### Primitive changes you should know about
+
+- `Disclosure` gained `summaryClassName` / `bodyClassName`, so it can render
+  as a BARE page section (no card chrome) as well as a card.
+- **globals.css: `details[data-desktop-open]:target` force-opens.** A jump
+  link has to reveal what it jumped to, or the on-this-page nav looks broken
+  on the one viewport where the sections are closed. Verified by driving a
+  real tap on the nav chip.
+
+`npm run verify` green. DESIGN-STANDARDS.md has a new "Profile pages" section
+carrying the rule, so /countries/[slug] and the club pages get the same
+treatment when someone next touches them — they have the same shape and I
+have NOT done them.

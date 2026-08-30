@@ -75,6 +75,8 @@ export function Disclosure({
   desktopOpen = true,
   id,
   className = "",
+  summaryClassName = "",
+  bodyClassName = "",
   style,
 }: {
   title: ReactNode;
@@ -87,6 +89,10 @@ export function Disclosure({
   desktopOpen?: boolean;
   id?: string;
   className?: string;
+  /** Appended to the summary row — e.g. `px-0` for a bare page section. */
+  summaryClassName?: string;
+  /** Appended to the content wrapper — e.g. `border-0` to drop the hairline. */
+  bodyClassName?: string;
   style?: CSSProperties;
 }) {
   return (
@@ -97,14 +103,14 @@ export function Disclosure({
       className={`${CARD} ${className}`}
       style={style}
     >
-      <summary className={SUMMARY}>
+      <summary className={`${SUMMARY} ${summaryClassName}`}>
         <span className="min-w-0 font-semibold text-[var(--text)]">{title}</span>
         <span className="flex flex-shrink-0 items-center gap-2 text-sm text-[var(--text-muted)]">
           {meta}
           <Chevron />
         </span>
       </summary>
-      <div className="border-t border-[var(--border)]">{children}</div>
+      <div className={`border-t border-[var(--border)] ${bodyClassName}`}>{children}</div>
     </details>
   );
 }

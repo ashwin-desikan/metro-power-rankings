@@ -148,6 +148,37 @@ start open on a phone.
   desktop — it is open there, so it costs the desktop reader nothing and
   saves the phone reader a screen.
 
+### Profile pages: the catalogue collapses, the identity does not
+
+A profile page (`/rankings/[slug]`, `/countries/[slug]`, a club page) is a
+headline fact plus a catalogue of domains. Those two halves get opposite
+treatment:
+
+- **The identity block is always open and always first.** Name, rank, score,
+  tier. `/rankings/[slug]` rendered its rank/score card LAST on a phone —
+  y=1022, below mayor, land area and GAWC class — because the hero was a
+  two-column grid and a one-column grid renders DOM order. On a rankings
+  site the rank is the headline. Where a grid collapses, check what ends up
+  on top; `order-*` or explicit `lg:row-start` placement fixes it without
+  touching the desktop layout.
+- **Measurements are a stat grid, not sentences.** Nine `Label: value` lines
+  became six mono cells in a 2-col/3-col `<dl>`: same facts, a third of the
+  height, and the numbers line up where the eye can compare them.
+- **Every catalogue section is a `<Disclosure>`** — Sports, Championships,
+  Companies, Culture, Education, Infrastructure, Luxury. Open on desktop,
+  collapsed on a phone, each with a `meta` count so the closed state is a
+  table of contents with substance ("Sports · 109 teams") rather than a
+  guessing game. `/rankings/new-york` went from **17.2 phone screens to
+  6.6** this way, with the desktop page unchanged.
+- **A section nav belongs directly under the hero**, and does not need to be
+  sticky once the tail collapses. Thirteen chips wrap to four rows on a
+  phone; spending 160px of every screen on navigation is a worse trade than
+  one scroll back up.
+- **A jump link must reveal what it jumped to.** globals.css force-opens a
+  `data-desktop-open` details on `:target`, so tapping "Sports" in the nav
+  lands on Sports *open*. Without that rule the nav looks broken on exactly
+  the viewport it matters on.
+
 ### The number to watch
 
 `probe:mobile` reports **ratio** = phone screens ÷ desktop screens, and it

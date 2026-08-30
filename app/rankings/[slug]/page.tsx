@@ -78,7 +78,7 @@ import MetroExpectationCard from "@/app/teams/_shared/MetroExpectationCard";
 import { getCollegeHockeyForMetro, type CollegeHockeyCard } from "@/lib/collegeHockey";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
-import { CappedList } from "@/app/_shared/Disclosure";
+import { CappedList, Disclosure } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -133,6 +133,24 @@ const venueSportRank = (sport: string): number =>
 
 // Tailwind class string shared across collapsible subgroups (Other Teams,
 // Notable Venues, Museum buckets, Infrastructure entries, Luxury types).
+// One measurement in the hero grid: dim uppercase label, mono value under
+// it. A <dl> pair, so the label/value relationship survives into the
+// accessibility tree the way the old "Population: 22.3M" sentence did.
+function HeroStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="min-w-0">
+      <dt className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</dt>
+      <dd
+        className="truncate text-[15px] font-semibold tabular-nums text-[var(--text)]"
+        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        title={value}
+      >
+        {value}
+      </dd>
+    </div>
+  );
+}
+
 const COLLAPSIBLE_CARD_CLASS =
   "bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group";
 const COLLAPSIBLE_SUMMARY_CLASS =
@@ -377,16 +395,108 @@ export default async function MetroDetailPage({ params }: PageProps) {
           <span className="text-[var(--accent)]">{metro.name}</span>
         </nav>
 
-        {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: regionColors[metro.region] || "var(--accent)" }}>
+        {/* Hero.
+            LAYOUT. Three explicit grid slots, because DOM order IS reading
+            order once the grid collapses to one column on a phone. Measured
+            2026-08-30 on a 390px viewport: the rank/score card rendered
+            LAST, at y=1022 — a screen and a bit down, below mayor, land
+            area, density and GAWC class. On a rankings site the rank is the
+            headline fact, so on mobile it now sits directly under the name.
+            The lg: row/col placement reproduces the previous desktop hero
+            exactly (title top-left, card spanning the right rail).
+
+            DENSITY. The measurements used to be nine stacked `Label: value`
+            sentences — nine full-width lines on a phone, several wrapping to
+            two. They are numbers, so they read as a stat grid: same facts,
+            same sources, about a third of the height, and the values line up
+            in mono where the eye can compare them. */}
+        <div className="grid grid-cols-1 items-start gap-x-8 gap-y-4 lg:grid-cols-3">
+          <div className="order-1 min-w-0 lg:col-span-2 lg:col-start-1 lg:row-start-1">
+            <h1
+              className="mb-4 text-4xl font-bold sm:text-5xl"
+              style={{ color: regionColors[metro.region] || "var(--accent)" }}
+            >
               {metro.name}
             </h1>
-            <div className="mb-4">
+            <div className="mb-2">
               <FollowButton type="metro" slug={slug} name={metro.name} href={`/rankings/${slug}`} />
             </div>
-            <div className="space-y-2 text-[var(--text-muted)]">
+          </div>
+
+          {/* Rank & Score Card */}
+          <div
+            className="order-2 min-w-0 rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-6 text-center lg:order-none lg:col-start-3 lg:row-span-2 lg:row-start-1"
+            style={{
+              borderLeft: `4px solid ${regionColors[metro.region] || "var(--accent)"}`,
+            }}
+          >
+            <div className="text-5xl font-bold text-[var(--accent)] mb-2">
+              #{metro.rank}
+            </div>
+            <p className="text-[var(--text-muted)] text-sm mb-4">Global Rank</p>
+            <div className="text-4xl font-bold text-[var(--text)] mb-2">
+              {metro.score.toFixed(1)}
+            </div>
+            <p className="text-[var(--text-muted)] text-sm">Power Score</p>
+            {/* Tier pill: categorical label for the score band. Links to the
+                relevant section of the methodology page so a reader can see
+                the boundaries and rationale for each band. */}
+            {(() => {
+              const tier = computeTier(metro.score);
+              return (
+                <Link
+                  href={`/methodology#tier-${tier.slug}`}
+                  className="mt-3 inline-flex min-h-11 items-center rounded-full border px-3 text-xs font-semibold transition hover:opacity-80"
+                  style={{
+                    color: tier.accentHex,
+                    borderColor: tier.accentHex,
+                    fontFamily: "'JetBrains Mono', monospace",
+                  }}
+                  title={tier.tagline}
+                >
+                  {tier.name}
+                </Link>
+              );
+            })()}
+            {metro.pctOfCountry > 0 && (
+              <>
+                <hr className="my-4 border-[var(--border)]" />
+                <p className="text-xs text-[var(--text-muted)] mb-1">% of Country Score</p>
+                <p className="text-2xl font-bold text-[var(--accent)]">
+                  {metro.pctOfCountry.toFixed(1)}%
+                </p>
+              </>
+            )}
+            {/* Share row: Reddit and LinkedIn share links. X is intentionally
+                excluded. The OG image rendered at /rankings/[slug]/opengraph-image
+                gives each share preview a per-metro card with tier badge,
+                rank, score, and three signature dimensions.
+
+                Collapsed on a phone: sharing is a thing a reader does AFTER
+                reading, and this card is now the first thing they see, so two
+                buttons of chrome sat between the score and the page. Open on
+                desktop, where the right rail has the room. */}
+            <hr className="my-4 border-[var(--border)]" />
+            <Disclosure
+              title={<span className="text-xs font-normal text-[var(--text-muted)]">Share</span>}
+              className="border-0 bg-transparent"
+              summaryClassName="justify-center gap-1.5 px-0 py-1"
+              bodyClassName="border-0"
+            >
+              <div className="pt-3">
+                <ShareRow
+                  url={`${BASE_URL}/rankings/${slug}`}
+                  title={`${metro.name} (#${metro.rank}) - Global Metro Power Rankings`}
+                  containerClassName="flex gap-2 text-xs"
+                  linkClassName="flex-1 text-center rounded border px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                />
+              </div>
+            </Disclosure>
+          </div>
+
+          <div className="order-3 min-w-0 lg:col-span-2 lg:col-start-1 lg:row-start-2">
+            <div className="space-y-3 text-[var(--text-muted)]">
+              {/* Identity line: where this metro sits, all of it navigable. */}
               <p className="text-lg">
                 {(metro.sovereignSlug ?? metro.countrySlug) ? (
                   <Link
@@ -421,89 +531,106 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   {metro.region}
                 </a>
               </p>
-              {metro.primaryCity && (
-                <p className="text-lg">
-                  Primary City: <span className="text-[var(--text)]">{metro.primaryCity}</span>
-                </p>
-              )}
-              {mayor && (
-                <p className="text-lg">
-                  Mayor of {mayor.city}: <span className="text-[var(--text)]">{mayor.mayor}</span>{mayor.party ? <span className="text-[var(--text-muted)] text-sm"> ({mayor.party})</span> : null}
-                  {mayor.since ? (
-                    <span className="text-[var(--text-muted)] text-sm"> (since {mayor.since.slice(0, 4)})</span>
-                  ) : null}
-                  {mayor.second ? (
-                    <span className="text-[var(--text-muted)] text-sm"> · {mayor.second.name} ({mayor.second.role})</span>
-                  ) : null}
-                </p>
-              )}
-              {metro.primaryState && (
-                <p className="text-lg">
-                  Primary State/Province:{" "}
-                  {metro.stateSlug ? (
-                    <Link
-                      href={`/states/${metro.stateSlug}`}
-                      className="text-[var(--text)] hover:text-[var(--accent)]"
-                    >
-                      {metro.primaryState}
-                    </Link>
-                  ) : (
-                    <span className="text-[var(--text)]">{metro.primaryState}</span>
-                  )}
-                </p>
-              )}
-              {metro.language && (
-                <p className="text-lg">
-                  Primary Language: <span className="text-[var(--text)]">{metro.language}</span>
-                </p>
-              )}
-              <p className="text-lg">
-                Population: <span className="text-[var(--text)]">{formatPop(metro.pop)}</span>
-              </p>
-              {/* Measured land area inside the metro's own Overture boundary,
-                  summed from 30 arcsec cells with a cos(latitude) correction,
-                  plus the density that follows. Density deliberately uses the
-                  WORKBOOK population, which stays ground truth; the gridded
-                  GHS-POP figure in the same file is an internal boundary audit
-                  and is not shown. Renders nothing when a metro has no usable
-                  boundary rather than printing a zero. */}
+
+              {/* The measurements, as a grid. Land area and density come from
+                  the metro's own Overture boundary, summed from 30 arcsec
+                  cells with a cos(latitude) correction. Density deliberately
+                  uses the WORKBOOK population, which stays ground truth; the
+                  gridded GHS-POP figure in the same file is an internal
+                  boundary audit and is not shown. Cells render nothing when a
+                  metro has no usable boundary rather than printing a zero, so
+                  a thin-data metro gets a shorter grid, not empty cells. */}
               {(() => {
                 const fp = getMetroFootprint(slug);
-                if (!fp?.areaKm2) return null;
-                const density = metroDensity(metro.pop, fp.areaKm2);
+                const density = fp?.areaKm2 ? metroDensity(metro.pop, fp.areaKm2) : null;
                 return (
-                  <p className="text-lg">
-                    Land area:{" "}
-                    <span className="text-[var(--text)]">
-                      {Math.round(fp.areaKm2).toLocaleString()} km²
-                    </span>
-                    {density !== null && (
-                      <>
-                        {" • Density: "}
-                        <span className="text-[var(--text)]">
-                          {Math.round(density).toLocaleString()} people/km²
-                        </span>
-                      </>
-                    )}
-                  </p>
+                  <dl className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3">
+                    <HeroStat label="Population" value={formatPop(metro.pop)} />
+                    <HeroStat label="GDP" value={formatGdp(metro.gdp)} />
+                    <HeroStat
+                      label="GDP per capita"
+                      value={`$${metro.gdpPerCapita.toLocaleString()}`}
+                    />
+                    {fp?.areaKm2 ? (
+                      <HeroStat
+                        label="Land area"
+                        value={`${Math.round(fp.areaKm2).toLocaleString()} km²`}
+                      />
+                    ) : null}
+                    {density !== null ? (
+                      <HeroStat
+                        label="Density"
+                        value={`${Math.round(density).toLocaleString()}/km²`}
+                      />
+                    ) : null}
+                    {metro.gawcClass ? (
+                      <HeroStat label="GAWC class" value={metro.gawcClass} />
+                    ) : null}
+                  </dl>
                 );
               })()}
-              <p className="text-lg">
-                GDP: <span className="text-[var(--text)]">{formatGdp(metro.gdp)}</span> • GDP per capita:{" "}
-                <span className="text-[var(--text)]">${metro.gdpPerCapita.toLocaleString()}</span>
-              </p>
-              {metro.gawcClass && (
-                <p className="text-lg">
-                  GAWC Class: <span className="text-[var(--text)]">{metro.gawcClass}</span>
-                </p>
-              )}
+
+              {/* Who and what: short labelled rows, not sentences. The mayor's
+                  party and start year go on their own dim line — inline they
+                  produced "(Democratic Party (Democratic Socialists of
+                  America)) (since 2026)", three wrapped lines of nested
+                  parentheses on a phone. */}
+              <div className="space-y-1.5 text-[15px]">
+                {metro.primaryCity && (
+                  <p>
+                    <span className="text-[var(--text-dim)]">Primary city</span>{" "}
+                    <span className="text-[var(--text)]">{metro.primaryCity}</span>
+                  </p>
+                )}
+                {metro.primaryState && (
+                  <p>
+                    <span className="text-[var(--text-dim)]">State / province</span>{" "}
+                    {metro.stateSlug ? (
+                      <Link
+                        href={`/states/${metro.stateSlug}`}
+                        className="text-[var(--text)] hover:text-[var(--accent)]"
+                      >
+                        {metro.primaryState}
+                      </Link>
+                    ) : (
+                      <span className="text-[var(--text)]">{metro.primaryState}</span>
+                    )}
+                  </p>
+                )}
+                {metro.language && (
+                  <p>
+                    <span className="text-[var(--text-dim)]">Language</span>{" "}
+                    <span className="text-[var(--text)]">{metro.language}</span>
+                  </p>
+                )}
+                {mayor && (
+                  <div>
+                    <p>
+                      <span className="text-[var(--text-dim)]">Mayor of {mayor.city}</span>{" "}
+                      <span className="text-[var(--text)]">{mayor.mayor}</span>
+                    </p>
+                    {(mayor.party || mayor.since || mayor.second) && (
+                      <p className="text-[13px] text-[var(--text-dim)]">
+                        {[
+                          mayor.party,
+                          mayor.since ? `since ${mayor.since.slice(0, 4)}` : null,
+                          mayor.second ? `${mayor.second.name} (${mayor.second.role})` : null,
+                        ]
+                          .filter(Boolean)
+                          .join(" · ")}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+
               {/* Sources line: outbound link to canonical Wikipedia and
                   Wikidata records for the metro. Renders only when populated
                   (Top 156 as of 2026-05-01, expanded from Top 100 prior). Pairs
                   with the Place.sameAs emitted in JSON-LD above so visible UX
                   matches schema. */}
               {(metro.wikipediaUrl || metro.qid) && (
-                <p className="text-sm pt-2">
+                <p className="text-sm pt-1">
                   <span className="text-[var(--text-muted)]">Sources: </span>
                   {metro.wikipediaUrl && (
                     <a
@@ -536,65 +663,34 @@ export default async function MetroDetailPage({ params }: PageProps) {
               <BadgeChips slug={slug} />
             </div>
           </div>
-
-          {/* Rank & Score Card */}
-          <div
-            className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6 text-center"
-            style={{
-              borderLeft: `4px solid ${regionColors[metro.region] || "var(--accent)"}`,
-            }}
-          >
-            <div className="text-5xl font-bold text-[var(--accent)] mb-2">
-              #{metro.rank}
-            </div>
-            <p className="text-[var(--text-muted)] text-sm mb-4">Global Rank</p>
-            <div className="text-4xl font-bold text-[var(--text)] mb-2">
-              {metro.score.toFixed(1)}
-            </div>
-            <p className="text-[var(--text-muted)] text-sm">Power Score</p>
-            {/* Tier pill: categorical label for the score band. Links to the
-                relevant section of the methodology page so a reader can see
-                the boundaries and rationale for each band. */}
-            {(() => {
-              const tier = computeTier(metro.score);
-              return (
-                <Link
-                  href={`/methodology#tier-${tier.slug}`}
-                  className="inline-block mt-3 text-xs font-semibold rounded-full px-3 py-1 border transition hover:opacity-80"
-                  style={{
-                    color: tier.accentHex,
-                    borderColor: tier.accentHex,
-                    fontFamily: "'JetBrains Mono', monospace",
-                  }}
-                  title={tier.tagline}
-                >
-                  {tier.name}
-                </Link>
-              );
-            })()}
-            {metro.pctOfCountry > 0 && (
-              <>
-                <hr className="my-4 border-[var(--border)]" />
-                <p className="text-xs text-[var(--text-muted)] mb-1">% of Country Score</p>
-                <p className="text-2xl font-bold text-[var(--accent)]">
-                  {metro.pctOfCountry.toFixed(1)}%
-                </p>
-              </>
-            )}
-            {/* Share row: Reddit and LinkedIn share links. X is intentionally
-                excluded. The OG image rendered at /rankings/[slug]/opengraph-image
-                gives each share preview a per-metro card with tier badge,
-                rank, score, and three signature dimensions. */}
-            <hr className="my-4 border-[var(--border)]" />
-            <p className="text-xs text-[var(--text-muted)] mb-2">Share</p>
-            <ShareRow
-              url={`${BASE_URL}/rankings/${slug}`}
-              title={`${metro.name} (#${metro.rank}) - Global Metro Power Rankings`}
-              containerClassName="flex gap-2 text-xs"
-              linkClassName="flex-1 text-center rounded border px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-            />
-          </div>
         </div>
+
+
+        {/* Section nav, directly under the hero.
+            It used to render after the Capital/Largest-City card, ~1,450px
+            down on a 390px phone — you had to scroll nearly two screens to
+            learn the page HAD ten sections. Deliberately NOT sticky: at
+            thirteen chips it wraps to four rows on a phone, and spending
+            160px of every screen on navigation is a worse trade than one
+            scroll back up. The long-tail sections below are collapsed on
+            phones instead, which is what makes the top reachable. */}
+        {(() => {
+          const navItems = [
+            { label: "Map", href: "#map" },
+            { label: "Dimensions", href: "#stats" },
+            ...((getSimilarMetrosForMetro(slug)?.neighbors?.length ?? 0) > 0 ? [{ label: "Similar Metros", href: "#similar" }] : []),
+            ...(((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) ? [{ label: "Sports", href: "#sports" }] : []),
+            ...(getMetroTitles(slug).length > 0 ? [{ label: "Championships", href: "#championships" }] : []),
+            ...(detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 ? [{ label: "Companies", href: "#companies" }] : []),
+            ...(((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) || (detail.supertallStructures && detail.supertallStructures.length > 0) || Boolean(detail.skyscrapers?.medianYear)) ? [{ label: "Culture", href: "#culture" }] : []),
+            ...(((detail.universities && detail.universities.length > 0) || (detail.culture && (((detail.culture["Hospital"]?.length ?? 0) > 0) || ((detail.culture["Research Institution"]?.length ?? 0) > 0)))) ? [{ label: "Education", href: "#education" }] : []),
+            ...((detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) ? [{ label: "Infrastructure", href: "#infrastructure" }] : []),
+            ...(detail.luxury && detail.luxury.length > 0 ? [{ label: "Luxury", href: "#luxury" }] : []),
+            ...(sound ? [{ label: "Sound", href: "#sound" }] : []),
+            ...(screen ? [{ label: "Screen", href: "#screen" }] : []),
+          ];
+          return <HubNav items={navItems} />;
+        })()}
 
         {/* Capital + Largest City Card */}
         {metro.capital && metro.capital.length > 0 && (
@@ -651,24 +747,6 @@ export default async function MetroDetailPage({ params }: PageProps) {
             </div>
           </section>
         )}
-
-        {(() => {
-          const navItems = [
-            { label: "Map", href: "#map" },
-            { label: "Dimensions", href: "#stats" },
-            ...((getSimilarMetrosForMetro(slug)?.neighbors?.length ?? 0) > 0 ? [{ label: "Similar Metros", href: "#similar" }] : []),
-            ...(((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) ? [{ label: "Sports", href: "#sports" }] : []),
-            ...(getMetroTitles(slug).length > 0 ? [{ label: "Championships", href: "#championships" }] : []),
-            ...(detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 ? [{ label: "Companies", href: "#companies" }] : []),
-            ...(((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) || (detail.supertallStructures && detail.supertallStructures.length > 0) || Boolean(detail.skyscrapers?.medianYear)) ? [{ label: "Culture", href: "#culture" }] : []),
-            ...(((detail.universities && detail.universities.length > 0) || (detail.culture && (((detail.culture["Hospital"]?.length ?? 0) > 0) || ((detail.culture["Research Institution"]?.length ?? 0) > 0)))) ? [{ label: "Education", href: "#education" }] : []),
-            ...((detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) ? [{ label: "Infrastructure", href: "#infrastructure" }] : []),
-            ...(detail.luxury && detail.luxury.length > 0 ? [{ label: "Luxury", href: "#luxury" }] : []),
-            ...(sound ? [{ label: "Sound", href: "#sound" }] : []),
-            ...(screen ? [{ label: "Screen", href: "#screen" }] : []),
-          ];
-          return <HubNav items={navItems} />;
-        })()}
 
         {/* Map: cluster context for any metro that's part of a multi-metro
             conurbation, single-point Location pin otherwise. Returns null
@@ -922,33 +1000,47 @@ export default async function MetroDetailPage({ params }: PageProps) {
             return true;
           });
           return (
-            <section>
-              <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
+            <Disclosure
+              id="sports"
+              className="border-0 bg-transparent"
+              meta={(detail.teams?.length ?? 0) > 0 ? `${detail.teams!.length} teams` : undefined}
+              summaryClassName="px-0"
+              bodyClassName="border-0 pt-4"
+              title={<h2 className="text-2xl font-bold text-[var(--text)]">Sports</h2>}
+            >
               {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) && (
                 <TeamsSection teams={detail.teams || []} metroName={metro.name} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} wcbb={getWcbbForMetro(slug)} collegeHockey={getCollegeHockeyForMetro(slug)} formerWcbb={getFormerWcbbForMetro(slug)} formerRugby={getFormerTopFlightForMetro(slug)} defunctRL={getDefunctBritishRLForMetro(slug)} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
               )}
-            </section>
+              {/* Against expectation, in ONE shared component across every
+                  sport that has a ledger. The inline NFL-only block that used
+                  to live here is how a site ends up with two answers a scroll
+                  apart. It sits INSIDE Sports: as a sibling it used to render
+                  under the (now collapsed) Sports heading, reading as loose
+                  sports content belonging to nothing. */}
+              <MetroExpectationCard metroName={metro.name} nfl={nflExpMetro} football={plExpMetro} />
+            </Disclosure>
           );
         })()}
-
-        {/* Against expectation, in ONE shared component across every sport that
-            has a ledger. The inline NFL-only block that used to live here is
-            how a site ends up with two answers a scroll apart. */}
-        <MetroExpectationCard metroName={metro.name} nfl={nflExpMetro} football={plExpMetro} />
 
         {/* Championship History: every title won by a team while based here */}
         {(() => {
           const titles = getMetroTitles(slug);
           if (!titles.length) return null;
           return (
-            <section>
-              <h2 id="championships" className="text-2xl font-bold mb-2">Championship History</h2>
+            <Disclosure
+              id="championships"
+              className="border-0 bg-transparent"
+              meta={`${titles.length} titles`}
+              summaryClassName="px-0"
+              bodyClassName="border-0 pt-4"
+              title={<h2 className="text-2xl font-bold text-[var(--text)]">Championship History</h2>}
+            >
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 Every major championship won by a team while it represented {metro.name}, across all
-                sports, newest first. {titles.length} in total. Each links to the team and the
+                sports, newest first. {titles.length}{" "}in total. Each links to the team and the
                 competition&apos;s full honour roll.
               </p>
               <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
@@ -1018,14 +1110,20 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   </table>
                 </div>
               </div>
-            </section>
+            </Disclosure>
           );
         })()}
 
         {/* Top Companies Section */}
         {detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 && (
-          <section>
-            <h2 id="companies" className="text-2xl font-bold mb-6">Top Companies</h2>
+          <Disclosure
+            id="companies"
+            className="border-0 bg-transparent"
+            meta={`${detail.marketCap.top12.length} companies`}
+            summaryClassName="px-0"
+            bodyClassName="border-0 pt-4"
+            title={<h2 className="text-2xl font-bold text-[var(--text)]">Top Companies</h2>}
+          >
 
             {/* Mobile: one card per company instead of a 4-column table.
                 Same detail.marketCap.top12 array, card presentation only. */}
@@ -1150,7 +1248,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 (companiesmarketcap.com)
               </p>
             )}
-          </section>
+          </Disclosure>
         )}
 
 
@@ -1158,8 +1256,13 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0)) ||
           (detail.supertallStructures && detail.supertallStructures.length > 0) ||
           Boolean(detail.skyscrapers?.medianYear)) && (
-          <section>
-            <h2 id="culture" className="text-2xl font-bold mb-6">Cultural Assets</h2>
+          <Disclosure
+            id="culture"
+            className="border-0 bg-transparent"
+            summaryClassName="px-0"
+            bodyClassName="border-0 pt-4"
+            title={<h2 className="text-2xl font-bold text-[var(--text)]">Cultural Assets</h2>}
+          >
             <div className="space-y-8">
               {culturalAssetOrder.map((type) => {
                 if (type === "Cultural Event") {
@@ -1413,7 +1516,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 return null;
               })}
             </div>
-          </section>
+          </Disclosure>
         )}
 
         <SoundSection sound={sound} slug={slug} />
@@ -1426,8 +1529,13 @@ export default async function MetroDetailPage({ params }: PageProps) {
             (detail.culture["Hospital"]?.length ?? 0) > 0 ||
             (detail.culture["Research Institution"]?.length ?? 0) > 0
           ))) && (
-          <section>
-            <h2 id="education" className="text-2xl font-bold mb-6">Education &amp; Research</h2>
+          <Disclosure
+            id="education"
+            className="border-0 bg-transparent"
+            summaryClassName="px-0"
+            bodyClassName="border-0 pt-4"
+            title={<h2 className="text-2xl font-bold text-[var(--text)]">Education &amp; Research</h2>}
+          >
             <div className="space-y-3">
               {educationResearchOrder.map((type) => {
                 if (type === "Universities") {
@@ -1489,13 +1597,18 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 );
               })}
             </div>
-          </section>
+          </Disclosure>
         )}
 
         {/* Infrastructure Section */}
         {detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0) && (
-          <section>
-            <h2 id="infrastructure" className="text-2xl font-bold mb-6">Notable Infrastructure</h2>
+          <Disclosure
+            id="infrastructure"
+            className="border-0 bg-transparent"
+            summaryClassName="px-0"
+            bodyClassName="border-0 pt-4"
+            title={<h2 className="text-2xl font-bold text-[var(--text)]">Notable Infrastructure</h2>}
+          >
             <div className="space-y-3">
               {infrastructureOrder.map((type) => {
                 const assets = detail.culture?.[type];
@@ -1530,13 +1643,19 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 );
               })}
             </div>
-          </section>
+          </Disclosure>
         )}
 
         {/* Luxury Hospitality Section */}
         {detail.luxury && detail.luxury.length > 0 && (
-          <section>
-            <h2 id="luxury" className="text-2xl font-bold mb-6">Luxury Hospitality</h2>
+          <Disclosure
+            id="luxury"
+            className="border-0 bg-transparent"
+            meta={`${detail.luxury.length} properties`}
+            summaryClassName="px-0"
+            bodyClassName="border-0 pt-4"
+            title={<h2 className="text-2xl font-bold text-[var(--text)]">Luxury Hospitality</h2>}
+          >
             <div className="space-y-3">
               {Array.from(new Set(detail.luxury.map((l) => l.type))).map((type) => {
                 const itemsOfType = detail.luxury!.filter((l) => l.type === type);
@@ -1560,7 +1679,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 );
               })}
             </div>
-          </section>
+          </Disclosure>
         )}
 
       </div>
