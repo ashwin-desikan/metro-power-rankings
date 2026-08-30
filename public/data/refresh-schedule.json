@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T15:05:01.688781+00:00",
+  "generated_at": "2026-08-30T18:45:25.935433+00:00",
   "jobs": [
     {
       "id": "football-standings",
@@ -15,11 +15,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-08-30T17:00:00+00:00",
+      "next_run": "2026-08-30T23:00:00+00:00",
       "last_run": {
         "date": "2026-08-30",
-        "status": "ok",
-        "slot": "2026-08-30T11:00:00+00:00"
+        "status": "ok (manual)",
+        "slot": "2026-08-30T17:00:00+00:00"
       }
     },
     {
