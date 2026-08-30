@@ -3,8 +3,15 @@
 // 🔴 THIS IS NOT A BOARD OF BOARDS. Four leaderboards of a statistic, with the
 // statistic as the subject, is a lab bench — the /teams/nfl/expectation ruling.
 // So this page leads with a CLAIM, and the claim is the unflattering one: over
-// twenty-one thousand priced games the closing market has beaten this site's
-// models. The boards underneath are the evidence for it.
+// twenty-one thousand priced games the market has beaten this site's models.
+// The boards underneath are the evidence for it.
+//
+// 🔴 "CLOSING" IS A CLAIM ABOUT A COLUMN, NOT A SYNONYM FOR "ODDS". This page
+// said "closing" everywhere while the football builder read football-data's
+// PRE-MATCH price, because that was the only price the build knew how to find.
+// No closing column exists before 2012-13, so part of the football sample can
+// never be closing-priced. Every sentence about the price is now derived from
+// market_closing_matches, and says which era got which. Fixed 2026-08-30.
 //
 // 🔴 DERIVE EVERY COMPARISON, NEVER ASSERT ONE. Every number below is computed
 // from the ledgers at render time. Nothing here is a sentence someone typed
@@ -32,7 +39,7 @@ export const revalidate = 21600;
 const PATH = "/predictions/scoreboard";
 const TITLE = "The Ledger";
 const DESC =
-  "Every forecast this site publishes, scored in public against the closing market: calibration bins, the seasons the model won, and the seasons it lost.";
+  "Every forecast this site publishes, scored in public against the market that priced it: calibration bins, the seasons the model won, and the seasons it lost.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -146,6 +153,14 @@ export default async function LedgerPage() {
   const plWon = plPriced.filter((s) => (s.market_model_brier as number) < (s.market_brier as number));
   const plSkill = skill(plModel, plMarket);
 
+  // 🔴 How much of the football sample carries a TRUE closing price. Undefined
+  // on a ledger built before the 2026-08-30 fix, which is why every sentence
+  // below tests it rather than assuming it.
+  const plClosingKnown = plPriced.some((s) => s.market_closing_matches != null);
+  const plClosing = plPriced.reduce((a, s) => a + (s.market_closing_matches ?? 0), 0);
+  const plOpening = plMatches - plClosing;
+  const plClosingSeasons = plPriced.filter((s) => (s.market_closing_matches ?? 0) > 0);
+
   // ---- NFL: the builder already reconciles the head-to-head population.
   const h2h = nflExp?.meta.head_to_head ?? null;
   const nflSkill = skill(h2h?.model_brier, h2h?.market_brier);
@@ -237,7 +252,7 @@ export default async function LedgerPage() {
       />
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-10">
-        <Stat k="Priced games" v={pricedGames.toLocaleString()} sub="scored against a closing price" />
+        <Stat k="Priced games" v={pricedGames.toLocaleString()} sub="scored against a market price" />
         <Stat
           k="Seasons won"
           v={`${plWon.length + nflWon.length} of ${plPriced.length + nflSeasonsPriced.length}`}
@@ -617,10 +632,25 @@ export default async function LedgerPage() {
           <div>
             <h3 className="text-[var(--text)] font-semibold text-sm mb-1">What was priced, and by whom</h3>
             <p>
-              Football odds are football-data.co.uk closing prices, available on{" "}
-              {plPriced.length} seasons of{" "}
+              Football odds are football-data.co.uk, available on {plPriced.length} seasons of{" "}
               {plExp?.meta.season_count ?? "the"} — everything before that has no market to be
-              measured against. NFL odds come from covers.com, loaded as real numbers rather than
+              measured against.{" "}
+              {plClosingKnown ? (
+                <>
+                  Of those, {plClosing.toLocaleString()} matches across {plClosingSeasons.length}{" "}
+                  seasons carry a true <strong>closing</strong> price, which football-data has
+                  published only since {plClosingSeasons[0]?.season ?? "2012-13"}. The other{" "}
+                  {plOpening.toLocaleString()} are scored against the <strong>pre-match</strong>{" "}
+                  price, because no closing price for those matches exists anywhere. The two are
+                  not interchangeable: a closing line has absorbed the team news and the money, so
+                  it is the sharper benchmark and the harder one to beat. This site scored the whole
+                  football sample against pre-match prices while calling them closing until
+                  2026-08-30; correcting it moved the football skill score down, which is the
+                  direction an honest correction was always going to go.
+                </>
+              ) : (
+                <>These are pre-match prices; the closing-price split is not in this build.</>
+              )} NFL odds come from covers.com, loaded as real numbers rather than
               inferred, after an earlier attempt to repair them by inference proved half right and
               therefore wrong. Live hubs read football-data for the Premier League and ESPN&apos;s
               DraftKings feed for the NFL and college football. No column anywhere on this site comes

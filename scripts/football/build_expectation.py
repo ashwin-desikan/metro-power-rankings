@@ -56,7 +56,7 @@ GUARD
   was wrong. Get the real results.
 """
 import argparse, csv, gzip, io, json, math, os, sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -65,6 +65,7 @@ SPINE = os.path.join(ROOT, "data", "football", "eng-topflight.csv.gz")
 E0_DIR = os.path.join(ROOT, "data", "football", "e0")
 HUB_DIR = os.path.join(ROOT, "public", "data", "football")
 CLUB_INDEX = os.path.join(ROOT, "public", "data", "football", "index.json")
+CLUB_SEASONS = os.path.join(ROOT, "public", "data", "football", "seasons.json")
 METROS = os.path.join(ROOT, "public", "data", "metros.json")
 OUT_DIR = os.path.join(ROOT, "public", "data", "football", "expectation")
 
@@ -236,19 +237,59 @@ def read_spine(path=SPINE):
     return out
 
 
+# 🔴 A CLOSING PRICE IS A DIFFERENT COLUMN FROM AN OPENING PRICE, AND THIS
+# SITE CLAIMS CLOSING. football-data ships the pre-match price (AvgH, B365H,
+# BbAvH) and, from 2012-13, a closing price in the C-suffixed columns (AvgCH,
+# PSCH, B365CH). This build read the pre-match column for its whole life while
+# six places on the site said "scored against the closing market". They are not
+# interchangeable: the closing line is the sharper benchmark and the harder one
+# to beat, so scoring against it makes the model look WORSE. That is the right
+# direction for a page whose entire argument is that the market wins.
+#
+# 🔴 NEVER SILENTLY PROMOTE AN OPENING PRICE TO A CLOSING ONE. No closing
+# column exists before 2012-13, so roughly 3,800 priced matches can only ever be
+# scored on openers. Tag the tier per match and let the page say so by era.
+#
+# Within a tier a CONSENSUS AVERAGE beats any single book, because one book's
+# bias is not the market's view. BbAv (Betbrain, 2005-06..2018-19) covers 5,320
+# matches on which this build previously fell back to B365 alone.
+CLOSING_BOOKS = (("AvgCH", "AvgCD", "AvgCA"),      # consensus close, 2019-20 on
+                 ("PSCH", "PSCD", "PSCA"),         # Pinnacle close,  2012-13 on
+                 ("B365CH", "B365CD", "B365CA"))   # B365 close,      2019-20 on
+OPENING_BOOKS = (("AvgH", "AvgD", "AvgA"),         # consensus open,  2019-20 on
+                 ("BbAvH", "BbAvD", "BbAvA"),      # Betbrain consensus, 2005-06..2018-19
+                 ("PSH", "PSD", "PSA"),
+                 ("B365H", "B365D", "B365A"),
+                 ("BFDH", "BFDD", "BFDA"),
+                 ("BWH", "BWD", "BWA"))
+
+
+def devig_cols(row, cols):
+    """Proportional de-vig of one book's three prices, or None."""
+    try:
+        o = [float(row[c]) for c in cols]
+    except (KeyError, TypeError, ValueError):
+        return None
+    if min(o) <= 1.0:
+        return None
+    p = [1.0 / x for x in o]
+    s = sum(p)
+    return [round(x / s, 6) for x in p]
+
+
 def devig(row):
-    """Proportional de-vig of the best available 1X2 price, or None."""
-    for cols in (("AvgH", "AvgD", "AvgA"), ("B365H", "B365D", "B365A"),
-                 ("BFDH", "BFDD", "BFDA"), ("BWH", "BWD", "BWA")):
-        try:
-            o = [float(row[c]) for c in cols]
-        except (KeyError, TypeError, ValueError):
-            continue
-        if min(o) <= 1.0:
-            continue
-        p = [1.0 / x for x in o]
-        s = sum(p)
-        return [round(x / s, 6) for x in p]
+    """(probabilities, tier) for the best available 1X2 price, or None.
+
+    tier is "closing" or "opening". A closing price always wins; within a
+    tier the consensus average wins."""
+    for cols in CLOSING_BOOKS:
+        p = devig_cols(row, cols)
+        if p:
+            return p, "closing"
+    for cols in OPENING_BOOKS:
+        p = devig_cols(row, cols)
+        if p:
+            return p, "opening"
     return None
 
 
@@ -303,7 +344,8 @@ def load_all():
         for m in read_e0(os.path.join(E0_DIR, fn), season):
             mk = m.pop("mkt")
             if mk:
-                market[(m["y"], m["m"], m["d"], m["home"], m["away"])] = mk
+                market[(m["y"], m["m"], m["d"], m["home"], m["away"])] = {
+                    "p": mk[0], "tier": mk[1]}
             if season not in have:
                 extra.append(m)
     M = spine + extra
@@ -500,6 +542,42 @@ def club_top_flight_counts():
             and isinstance(c.get("top_flight_seasons"), int)}
 
 
+def count_seasons_after(seasons_by_slug, cutoff_year):
+    """slug -> number of England tier-1 seasons ENDING after cutoff_year.
+
+    🔴 THE LEDGER TAKES COMPLETED SEASONS ONLY. drop_abandoned discards a
+    season that is under 25% played, so from the first matchweek of every August
+    until the season finishes, the club pages carry one top-flight season this
+    ledger does not, for every club in the division at once. That fired the
+    season-count guard on all twenty clubs on 2026-08-30 and made the ledger
+    unbuildable in-season.
+
+    🔴 THE ANSWER IS NOT --allow-season-count-drift. That flag would wave
+    through a REAL divergence at the same time, which is the whole thing the
+    guard exists to catch (it is what found the expunged 1939-40 season).
+    Subtract exactly the seasons the ledger has not reached, and let every other
+    disagreement still refuse to publish.
+
+    seasons.json's `year` is the season's END year: 2026-27 is 2027."""
+    out = {}
+    for slug, rows in (seasons_by_slug or {}).items():
+        n = sum(1 for r in rows
+                if r.get("level") == 1 and r.get("country") == "England"
+                and isinstance(r.get("year"), int) and r["year"] > cutoff_year)
+        if n:
+            out[slug] = n
+    return out
+
+
+def club_seasons_ahead(last_season):
+    """count_seasons_after against the site's published club seasons."""
+    try:
+        d = json.load(open(CLUB_SEASONS, encoding="utf-8"))
+    except Exception:
+        return {}
+    return count_seasons_after(d, int(last_season[:4]) + 1)
+
+
 def season_count_drift(clubs, site_counts):
     """🔴 THE SECOND RECONCILIATION, and the one that pays for itself.
 
@@ -657,12 +735,14 @@ def build(rows, par, market, slugs, mr):
         h = sum(1 for r in rs if r["res"] == 1)
         d = sum(1 for r in rs if r["res"] == 0)
         mb, kb = [], []
+        tiers = Counter()
         for r in rs:
             q = market.get((r["y"], r["m"], r["d"], r["home"], r["away"]))
             if not q:
                 continue
             mb.append(brier3(r["pH"], r["pD"], r["pA"], r["res"]))
-            kb.append(brier3(q[0], q[1], q[2], r["res"]))
+            kb.append(brier3(q["p"][0], q["p"][1], q["p"][2], r["res"]))
+            tiers[q["tier"]] += 1
         season_rows.append({
             "season": s, "matches": k,
             "home_win_pct": round(h / k, 4), "draw_pct": round(d / k, 4),
@@ -672,6 +752,12 @@ def build(rows, par, market, slugs, mr):
             "market_matches": len(mb),
             "market_model_brier": round(sum(mb) / len(mb), 4) if mb else None,
             "market_brier": round(sum(kb) / len(kb), 4) if kb else None,
+            # "closing", "opening", "mixed" or None. The page must not call a
+            # season closing-priced unless every priced match in it was.
+            "market_tier": (None if not tiers else
+                            ("closing" if tiers["opening"] == 0 else
+                             "opening" if tiers["closing"] == 0 else "mixed")),
+            "market_closing_matches": tiers["closing"],
         })
 
     # metro rollup, era-neutral. 🔴 Points are NOT summable across the history:
@@ -811,6 +897,21 @@ def self_test():
 
     clubs_stub = {"liverpool": {"seasons": [0] * 112}, "everton": {"seasons": [0] * 122},
                   "era:Wimbledon": {"seasons": [0] * 14}}
+    # the in-progress season the ledger has not reached is subtracted, and
+    # nothing else is
+    sj = {"arsenal": [{"level": 1, "country": "England", "year": 2027},
+                      {"level": 1, "country": "England", "year": 2026},
+                      {"level": 2, "country": "England", "year": 2028},
+                      {"level": 1, "country": "Scotland", "year": 2028}],
+          "everton": [{"level": 1, "country": "England", "year": 2026}]}
+    ahead = count_seasons_after(sj, 2026)
+    chk("the in-progress season is counted", ahead == {"arsenal": 1})
+    chk("a completed season is not counted ahead", "everton" not in ahead)
+    chk("a second-tier or foreign season is never counted",
+        count_seasons_after({"x": [{"level": 2, "country": "England", "year": 2099},
+                                   {"level": 1, "country": "Wales", "year": 2099}]}, 2026) == {})
+    chk("nothing is ahead once the season completes", count_seasons_after(sj, 2027) == {})
+
     chk("season-count drift is caught",
         season_count_drift(clubs_stub, {"liverpool": 111, "everton": 122}) == [("liverpool", 111, 112)])
     chk("an unlinked era entry is not compared",
@@ -845,11 +946,27 @@ def self_test():
     chk("no metro is None", mr.slug_for("") is None)
 
     # de-vig prefers the average price and normalises
-    p = devig({"AvgH": "2.0", "AvgD": "4.0", "AvgA": "4.0"})
+    r = devig({"AvgH": "2.0", "AvgD": "4.0", "AvgA": "4.0"})
+    p, tier = r if r else (None, None)
     chk("devig sums to 1", p and abs(sum(p) - 1) < 1e-9)
     chk("devig picks the favourite", p and p[0] > p[1])
     chk("devig on junk prices returns None", devig({"AvgH": "1.0", "AvgD": "0", "AvgA": ""}) is None)
     chk("devig falls back past a missing book", devig({"B365H": "2.0", "B365D": "4.0", "B365A": "4.0"}) is not None)
+
+    # \U0001f534 the whole point of the 2026-08-30 fix: a pre-match price is
+    # never reported as a closing one, and a closing price always wins.
+    chk("a pre-match-only row is tagged opening", tier == "opening")
+    both = devig({"AvgH": "2.0", "AvgD": "4.0", "AvgA": "4.0",
+                  "AvgCH": "1.5", "AvgCD": "5.0", "AvgCA": "9.0"})
+    chk("a row with both prices is tagged closing", both and both[1] == "closing")
+    chk("the closing price is the one used", both and both[0][0] > 0.6)
+    ps = devig({"B365H": "2.0", "B365D": "4.0", "B365A": "4.0",
+                "PSCH": "1.5", "PSCD": "5.0", "PSCA": "9.0"})
+    chk("Pinnacle close outranks a B365 opener", ps and ps[1] == "closing")
+    cons = devig({"B365H": "3.0", "B365D": "3.0", "B365A": "3.0",
+                  "BbAvH": "1.5", "BbAvD": "5.0", "BbAvA": "9.0"})
+    chk("a consensus average outranks a single book", cons and cons[0][0] > 0.6)
+    chk("consensus average is still an opening price", cons and cons[1] == "opening")
 
     # brier
     chk("brier of a certain correct call is 0", abs(brier3(1, 0, 0, 1)) < 1e-12)
@@ -915,6 +1032,25 @@ def main():
 
     print("model: log loss %.5f  brier %.5f  skill vs era baseline %.2f%%"
           % (boards["log_loss"], boards["brier"], 100 * boards["skill_vs_era_baseline"]))
+
+    # \U0001f534 The market layer, split by price tier. The scoreboard's headline
+    # skill score lives or dies on this line, so print it every run: a build
+    # that quietly loses the closing tier would otherwise look identical.
+    for label, pick in (("closing", lambda r: r["market_closing_matches"]),
+                        ("opening", lambda r: r["market_matches"] - r["market_closing_matches"]),
+                        ("all    ", lambda r: r["market_matches"])):
+        rs = [r for r in boards["seasons"] if pick(r)]
+        n = sum(pick(r) for r in rs)
+        if not n:
+            print("market %s: none" % label)
+            continue
+        # Season Briers are only separable by tier when a season is single-tier,
+        # which every season in this source is. Assert it rather than assume it.
+        assert not [r for r in rs if r["market_tier"] == "mixed"], "mixed-tier season"
+        mo = sum(r["market_model_brier"] * pick(r) for r in rs) / n
+        mk = sum(r["market_brier"] * pick(r) for r in rs) / n
+        print("market %s: %5d matches  %s..%s  model %.5f  market %.5f  skill %+.2f%%"
+              % (label, n, rs[0]["season"], rs[-1]["season"], mo, mk, 100 * (1 - mo / mk)))
     print("home advantage: %s %.0f  ->  %s %.0f"
           % (seasons[0], par[seasons[0]][0], seasons[-1], par[seasons[-1]][0]))
     print("best season   : %s %s  %+.1f pts" % (boards["best_seasons"][0]["season"],
@@ -927,6 +1063,12 @@ def main():
           % (len(clubs), sum(1 for k in clubs if k.startswith("era:"))))
 
     site_counts = club_top_flight_counts()
+    ahead = club_seasons_ahead(seasons[-1])
+    if ahead:
+        print("club pages carry an in-progress top-flight season this ledger has "
+              "not reached (last complete: %s): %d club(s) adjusted before the "
+              "drift check" % (seasons[-1], len(ahead)))
+        site_counts = {k: v - ahead.get(k, 0) for k, v in site_counts.items()}
     drift = season_count_drift(clubs, site_counts)
     print("club season counts: %d checked against the club pages, %d disagree"
           % (sum(1 for k in clubs if not k.startswith("era:") and k in site_counts), len(drift)))
@@ -954,9 +1096,13 @@ def main():
         "baseline_log_loss": boards["baseline_log_loss"],
         "skill_vs_era_baseline": boards["skill_vs_era_baseline"],
         "market_matches": len(market),
+        "market_closing_matches": sum(1 for v in market.values() if v["tier"] == "closing"),
+        "market_opening_matches": sum(1 for v in market.values() if v["tier"] == "opening"),
         "metro_unresolved": sorted(mr.unresolved),
         "metro_site_vocabulary": {k: sorted(v) for k, v in sorted(mr.overridden.items())},
         "market_seasons": sorted({s["season"] for s in boards["seasons"] if s["market_matches"]}),
+        "market_closing_seasons": sorted({s["season"] for s in boards["seasons"]
+                                          if s.get("market_closing_matches")}),
         "reconciliation": {"seasons": nseasons, "club_seasons": checked,
                            "unmatched_names": len(unmatched),
                            "mismatched_cells": len(mism),

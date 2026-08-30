@@ -33,7 +33,16 @@ export type PlExpectationMeta = {
   baseline_log_loss: number;
   skill_vs_era_baseline: number;
   market_matches: number;
+  /**
+   * Of market_matches, how many carry a TRUE closing price (football-data's
+   * C-suffixed columns, 2012-13 on). The rest are pre-match prices, which is
+   * all that exists for them. Optional: a ledger built before 2026-08-30 has
+   * neither field, and the pages must degrade rather than claim closing.
+   */
+  market_closing_matches?: number;
+  market_opening_matches?: number;
   market_seasons: string[];
+  market_closing_seasons?: string[];
   /** Metros with no published page. Rendered unlinked, never guessed. */
   metro_unresolved: string[];
   /** Workbook metro name -> the site's own name for it. */
@@ -63,6 +72,9 @@ export type PlSeasonRow = {
   /** The model's Brier over just the matches the market also priced. */
   market_model_brier: number | null;
   market_brier: number | null;
+  /** "closing" | "opening" | "mixed", or null when the season had no price. */
+  market_tier?: string | null;
+  market_closing_matches?: number;
 };
 
 export type PlClubSeason = {

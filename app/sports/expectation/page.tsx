@@ -112,6 +112,11 @@ export default async function ExpectationPage() {
         return {
           seasons: plPriced.length,
           matches: n,
+          // Of those matches, how many carry a true closing price. Undefined on
+          // a ledger built before 2026-08-30, hence the null, not a zero.
+          closing: plPriced.some((s) => s.market_closing_matches != null)
+            ? plPriced.reduce((a, s) => a + (s.market_closing_matches ?? 0), 0)
+            : null,
           model: w((s) => s.market_model_brier ?? 0),
           market: w((s) => s.market_brier ?? 0),
           modelBetter: better.length,
@@ -467,7 +472,12 @@ export default async function ExpectationPage() {
         <SectionHead
           id="market"
           title="Against the market, which usually wins"
-          sub="A model that only ever showed its own scoreboard would be worth nothing. Both ledgers are graded against the closing betting market on every match it priced, and on balance both lose."
+          sub={
+            "A model that only ever showed its own scoreboard would be worth nothing. Both ledgers are graded against the betting market on every match it priced, and on balance both lose." +
+            (plMarket?.closing != null
+              ? ` Football carries a true closing price on ${plMarket.closing.toLocaleString()} of ${plMarket.matches.toLocaleString()} priced matches; the rest are pre-match prices, which is all that exists for them.`
+              : "")
+          }
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="rounded-xl border p-4 min-w-0" style={CARD}>
@@ -604,7 +614,8 @@ export default async function ExpectationPage() {
             <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Sources</h3>
             <p>
               English top-flight results from this site&rsquo;s own match log, extended from 2023-24
-              with football-data.co.uk, which also supplies the closing prices. NFL results and
+              with football-data.co.uk, which also supplies the prices — closing where it publishes
+              one, pre-match before 2012-13, never the two conflated. NFL results and
               pre-game probabilities from the site&rsquo;s NFL workbook, with closing spreads loaded
               from published historical odds.{" "}
               {pl ? <>Football ledger built {pl.meta.generated_at.slice(0, 10)}</> : null}

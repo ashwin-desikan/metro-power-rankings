@@ -241,8 +241,15 @@ def devig(oh, od, oa):
     return rh / s, rd / s, ra / s
 
 
-def _odds_triplet(row):
-    for pre in ("Avg", "B365", "PS"):
+# football-data ships a pre-match price and, from 2012-13, a closing price in
+# the C-suffixed columns. Closing is the sharper benchmark and the one the
+# scoreboard claims, so anything scoring the market reaches for it first.
+CLOSING_PRE = ("AvgC", "PSC", "B365C")
+OPENING_PRE = ("Avg", "B365", "PS")
+
+
+def _odds_triplet(row, prefixes=OPENING_PRE):
+    for pre in prefixes:
         try:
             oh, od, oa = float(row[pre + "H"]), float(row[pre + "D"]), float(row[pre + "A"])
             if oh > 1 and od > 1 and oa > 1:
@@ -514,6 +521,35 @@ def parse_fd_results(rows):
     return played, results
 
 
+# \U0001f534 THE MARKET LAYER IS GRADED FROM THE SETTLED ROW, NOT FROM fixtures.csv.
+# fixtures.csv only carries matches football-data has already posted odds for,
+# which is a few days out. Picks here are made up to HORIZON_DAYS ahead, so for
+# most of a season no odds exist at prediction time: the 2026-27 ledger ran to
+# `market_graded: 0` on a site whose scoreboard exists to compare model with
+# market. The finished E0 row carries a price for every played match, so the
+# benchmark is taken from there instead.
+#
+# \U0001f534 SCORING ONLY. A price attached at grading time was NOT available when
+# the pick was made. It must never reach `blend` or `pick`, which would be
+# backdating our own forecast. It answers "how did the market do on this match",
+# never "what should we have said".
+def settled_market(rows):
+    """Finished E0 rows -> {(fd_home, fd_away): ((pH, pD, pA), tier)}."""
+    out = {}
+    for r in rows or []:
+        try:
+            int(r["FTHG"]), int(r["FTAG"])
+        except (KeyError, ValueError, TypeError):
+            continue
+        trip, tier = _odds_triplet(r, CLOSING_PRE), "closing"
+        if not trip:
+            trip, tier = _odds_triplet(r, OPENING_PRE), "opening"
+        if not trip:
+            continue
+        out[(r["HomeTeam"].strip(), r["AwayTeam"].strip())] = (devig(*trip), tier)
+    return out
+
+
 def standings_from(played):
     base = {t: [0, 0, 0] for t in TEAMS_2026_27}
     for h, a, hg, ag in played:
@@ -586,7 +622,8 @@ def brier(p, outcome):
     return sum((pi - oi) ** 2 for pi, oi in zip(p, o))
 
 
-def grade_and_extend(ledger, results, upcoming, rates, mu, mkt_fix, today_iso):
+def grade_and_extend(ledger, results, upcoming, rates, mu, mkt_fix, today_iso,
+                    settled_mkt=None):
     """Grade ungraded ledger entries against results; append new predictions
     for upcoming fixtures not yet in the ledger. Mutates + returns ledger."""
     known = {(e["home"], e["away"]) for e in ledger}
@@ -608,6 +645,14 @@ def grade_and_extend(ledger, results, upcoming, rates, mu, mkt_fix, today_iso):
                 e["score"] = score
             e["graded_at"] = today_iso
             e["model_brier"] = round(brier((e["model"]["pH"], e["model"]["pD"], e["model"]["pA"]), res), 4)
+            # No price at prediction time? Take the settled one, for scoring only.
+            if not e.get("market"):
+                sm = (settled_mkt or {}).get((fd_name(e["home"]), fd_name(e["away"])))
+                if sm:
+                    (mh, md, ma), tier = sm
+                    e["market"] = {"pH": round(mh, 4), "pD": round(md, 4), "pA": round(ma, 4)}
+                    e["market_tier"] = tier
+                    e["market_priced_at"] = "settlement"
             if e.get("market"):
                 e["market_brier"] = round(brier((e["market"]["pH"], e["market"]["pD"], e["market"]["pA"]), res), 4)
             b = e.get("blend") or e["model"]
@@ -630,6 +675,7 @@ def grade_and_extend(ledger, results, upcoming, rates, mu, mkt_fix, today_iso):
         mk = mkt_fix.get((h, a))
         if mk:
             entry["market"] = {"pH": round(mk[0], 4), "pD": round(mk[1], 4), "pA": round(mk[2], 4)}
+            entry["market_priced_at"] = "prediction"
             bl = tuple(MATCH_BLEND_W * m + (1 - MATCH_BLEND_W) * p
                        for m, p in zip(mk, (pH, pD, pA)))
             entry["blend"] = {"pH": round(bl[0], 4), "pD": round(bl[1], 4), "pA": round(bl[2], 4)}
@@ -651,6 +697,11 @@ def ledger_record(ledger):
     gm = [e for e in g if "market_brier" in e]
     rec["market_graded"] = len(gm)
     rec["market_brier"] = round(sum(e["market_brier"] for e in gm) / len(gm), 4) if gm else None
+    # How the benchmark was obtained, so the page never implies we had a price
+    # in hand when we made the call. Both are honest; they are not the same claim.
+    rec["market_priced_at_prediction"] = sum(1 for e in gm if e.get("market_priced_at") != "settlement")
+    rec["market_priced_at_settlement"] = sum(1 for e in gm if e.get("market_priced_at") == "settlement")
+    rec["market_closing_graded"] = sum(1 for e in gm if e.get("market_tier") == "closing")
     return rec
 
 
@@ -740,12 +791,15 @@ def build(sims, today=None):
             cutoff = (datetime.strptime(first, "%Y-%m-%d") + timedelta(days=4)).strftime("%Y-%m-%d")
             upcoming = [f for f in far if f[0] <= cutoff]
     mkt_fix = fixtures_market(fix_rows)
-    ledger = grade_and_extend(ledger, results, upcoming, rates_b, mu, mkt_fix, today_iso)
+    ledger = grade_and_extend(ledger, results, upcoming, rates_b, mu, mkt_fix, today_iso,
+                              settled_mkt=settled_market(cur_e0))
     pred_doc = {
         "meta": {"season": SEASON, "generated_at": today_iso,
                  "match_blend_weight": MATCH_BLEND_W,
                  "horizon_days": FIXTURE_HORIZON_DAYS,
-                 "odds_source": "football-data.co.uk fixtures.csv",
+                 "odds_source": "football-data.co.uk fixtures.csv when posted "
+                                "before the pick, else the settled E0 closing "
+                                "price (scoring only, never blended)",
                  "results_source": "football-data.co.uk E0.csv"},
         "record": ledger_record(ledger),
         "ledger": ledger,
@@ -758,7 +812,12 @@ def build(sims, today=None):
 def self_test():
     fails = []
 
+    ran = []
+
     def check(name, cond):
+        # \U0001f534 The case count was hardcoded and went stale the moment anyone
+        # added a case. Count what actually ran, so a silently skipped block shows.
+        ran.append(name)
         if not cond:
             fails.append(name)
 
@@ -812,6 +871,48 @@ def self_test():
               "predicted_at": "2026-08-20"}]
     led_s = grade_and_extend(led_s, {("Arsenal", "Coventry"): ("H", 3, 1)}, [], rates, 1.4, {}, "2026-08-22")
     check("grade-score-string", led_s[0]["result"] == "H" and led_s[0]["score"] == "3-1")
+
+    # \U0001f534 the 2026-08-30 fix: a pick made before odds were posted still gets
+    # a market benchmark, taken from the settled row and used for SCORING ONLY.
+    sm_rows = [{"HomeTeam": "Arsenal", "AwayTeam": "Coventry", "FTHG": "3", "FTAG": "1",
+                "AvgH": "3.0", "AvgD": "3.0", "AvgA": "3.0",
+                "AvgCH": "1.25", "AvgCD": "6.0", "AvgCA": "12.0"}]
+    sm = settled_market(sm_rows)
+    check("settled-market-prefers-closing", sm[("Arsenal", "Coventry")][1] == "closing"
+          and sm[("Arsenal", "Coventry")][0][0] > 0.7)
+    sm_open = settled_market([{"HomeTeam": "A", "AwayTeam": "B", "FTHG": "1", "FTAG": "0",
+                               "AvgH": "2.0", "AvgD": "4.0", "AvgA": "4.0"}])
+    check("settled-market-falls-back-to-opening", sm_open[("A", "B")][1] == "opening")
+    check("settled-market-skips-unplayed",
+          settled_market([{"HomeTeam": "A", "AwayTeam": "B", "FTHG": "", "FTAG": "",
+                           "AvgCH": "2.0", "AvgCD": "4.0", "AvgCA": "4.0"}]) == {})
+    led_m = [{"date": "2026-08-21", "home": "Arsenal", "away": "Coventry City",
+              "home_slug": "arsenal", "away_slug": "coventry-city",
+              "model": {"pH": 0.7, "pD": 0.2, "pA": 0.1}, "pick": "H",
+              "predicted_at": "2026-08-20"}]
+    led_m = grade_and_extend(led_m, {("Arsenal", "Coventry"): ("H", 3, 1)}, [], rates, 1.4,
+                             {}, "2026-08-22", settled_mkt=sm)
+    check("settled-market-grades", "market_brier" in led_m[0]
+          and led_m[0]["market_priced_at"] == "settlement")
+    check("settled-market-is-scoring-only",
+          "blend" not in led_m[0] and led_m[0]["pick"] == "H"
+          and led_m[0]["model"] == {"pH": 0.7, "pD": 0.2, "pA": 0.1})
+    rec_m = ledger_record(led_m)
+    check("record-counts-settlement", rec_m["market_graded"] == 1
+          and rec_m["market_priced_at_settlement"] == 1
+          and rec_m["market_priced_at_prediction"] == 0
+          and rec_m["market_closing_graded"] == 1)
+    # a price that WAS posted before the pick is left alone, provenance intact
+    led_p = [{"date": "2026-08-21", "home": "Arsenal", "away": "Coventry City",
+              "home_slug": "arsenal", "away_slug": "coventry-city",
+              "model": {"pH": 0.7, "pD": 0.2, "pA": 0.1},
+              "market": {"pH": 0.5, "pD": 0.3, "pA": 0.2},
+              "market_priced_at": "prediction", "pick": "H",
+              "predicted_at": "2026-08-20"}]
+    led_p = grade_and_extend(led_p, {("Arsenal", "Coventry"): ("H", 3, 1)}, [], rates, 1.4,
+                             {}, "2026-08-22", settled_mkt=sm)
+    check("posted-price-not-overwritten", led_p[0]["market"]["pH"] == 0.5
+          and led_p[0]["market_priced_at"] == "prediction")
     # kickoff: ESPN date -> ISO UTC; carried on new entries and backfilled
     # onto ungraded ones (S and W are the rates fixture's two teams)
     check("kickoff-iso", kickoff_iso("2026-08-21T19:00Z") == "2026-08-21T19:00:00Z"
@@ -830,7 +931,7 @@ def self_test():
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (18 cases)")
+    print("self-test OK (%d cases)" % len(ran))
 
 
 def verify_teams():

@@ -7168,3 +7168,73 @@ Mini stands by once the push lands -- still no cron.
   in HANDOFF for Ashwin's approval. No sweep without it. No cron.
 - Comeback layer added to Stage 2 in the plan doc (approved by Ashwin
   2026-08-30) — nothing to build yet; it consumes your pbp cache later.
+
+## 2026-08-30 (Cowork cloud session, device-bridged) — the closing-price fix
+
+**Ashwin brought a football-data.co.uk archive. We already had it.** All 34
+files in `~/Downloads/Premdata` MD5-match `data/football/e0/` on all 33
+seasons (1999-2000 downloaded twice). Nothing new. What the archive exposed is
+that we read **11 of ~125 columns**.
+
+**\U0001f534 DEFECT 1, FIXED: the ledger said "closing" and scored openers.**
+`devig()` in `build_expectation.py` preferred `AvgH/AvgD/AvgA`, football-data's
+PRE-MATCH average, then fell back to `B365H`. The C-suffixed closing columns
+were never read, while `/predictions/scoreboard` said "closing" in four places
+and `/sports/expectation` in two. The tell was arithmetic: the published sample
+was 9,116 priced games and `B365H` opening coverage is 9,120.
+Now `CLOSING_BOOKS` (AvgC, PSC, B365C) then `OPENING_BOOKS` (Avg, **BbAv**, PS,
+B365, BFD, BW) — BbAv is a consensus average over 5,320 matches on which we
+previously fell back to one book. `devig()` returns `(probs, tier)`; the tier
+rides through to every season row and the meta, and both pages derive every
+sentence about the price from `market_closing_matches` instead of asserting it.
+
+Rebuilt and shipped. The correction moved the headline the way it had to:
+
+| tier | matches | seasons | model | market | skill |
+|---|---|---|---|---|---|
+| closing | 5,316 | 2012-13..2025-26 | 0.57944 | 0.56554 | **-2.46%** |
+| opening | 3,800 | 2002-03..2011-12 | 0.58285 | 0.57831 | -0.79% |
+| all | 9,116 | 2002-03..2025-26 | 0.58086 | 0.57086 | -1.75% (was -1.55%) |
+
+We are three times further behind the closing market than the opening one,
+which is what theory says and is the better story than the single number.
+Every `--dry`/`--write` run now prints this table, so a build that quietly
+loses the closing tier cannot look identical to one that keeps it.
+
+**\U0001f534 DEFECT 2, FIXED (needs a live run): the PL ledger has no market.**
+`pl-predictions.json` 2026-27 reads `market_graded: 0, market_brier: null` on
+a site whose scoreboard exists to compare model with market. `build_pl_sim.py`
+joined the market only from `fixtures.csv` at prediction time, and picks are
+made up to 9 days out, before odds are posted. New `settled_market()` takes the
+price off the finished E0 row, closing first, and grading attaches it when no
+price was posted before the pick. **SCORING ONLY** — it never touches `blend`
+or `pick`, and `market_priced_at` ("prediction"|"settlement") records which.
+Self-tested both ways. Lands on the next `predictions-refresh.yml` run.
+
+**\U0001f534 DEFECT 3, FIXED, found while fixing them: the ledger was unbuildable
+in-season.** The season-count guard compares club-page top-flight seasons with
+the ledger's, and `drop_abandoned` discards a season under 25% played. So from
+the first matchweek of every August the club pages are one season ahead for all
+twenty clubs and the guard refuses — verified, not guessed: Arsenal's club page
+carries a level-1 row at `year: 2027`, ours stops at 2025-26.
+`--allow-season-count-drift` is the WRONG answer, because it would also wave
+through a real divergence, which is exactly what this guard caught with the
+expunged 1939-40 season. New `count_seasons_after()` subtracts only the
+in-progress seasons the ledger has not reached. Drift is back to 0 disagreeing.
+
+**Verification run here.** `--self-test` PASSES on both scripts (build_pl_sim
+now counts its own cases; the hardcoded "18 cases" had gone stale at 26).
+`tsc --noEmit` clean. `check:client-imports`, `check:public-data`,
+`check:slug-drift`, `check:team-placement`, `check:skyscrapers`,
+`check:score-parity`, `check:table-scroll`, `check:live-data` all OK.
+
+**\U0001f534 NOT RUN HERE, someone must: `npm run test` and `next build`.**
+`node_modules` on this box are Windows binaries, so vitest dies loading
+rolldown's native module inside the bridged Linux VM. Neither that VM nor the
+Cowork container can reach football-data.co.uk (403 on the CONNECT tunnel), so
+`fetch_e0.py` and any live `build_pl_sim.py` run also need the Windows box, the
+mini, or CI.
+
+**UNCOMMITTED at handoff.** `app/`, `lib/` and `public/data/` all changed, so
+this is build-relevant: it does NOT carry `[vercel skip]`, and it should go as
+one commit, not several.
