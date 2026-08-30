@@ -7036,3 +7036,116 @@ this commit; will reconcile cleanly on pull).
   injuries release.
 - No action required now. Committed locally, deliberately not yet pushed;
   it reaches origin with the next approved push from the Windows box.
+
+## 2026-08-30 (mini) — mini → next session (NFL Program Stage 1: nflverse ETL built, one full pull proven end to end)
+
+Ashwin's instruction: build the nflverse ETL only (play-by-play 1999-2025 +
+current season, rosters, depth charts, snap counts, into gitignored parquet
+caches), never the injuries release, prove one full pull, record counts and
+timings here. Explicitly NOT authorized this session: no cron commissioned,
+`build_nfl_sim.py` untouched, **nothing pushed** -- read docs/NFL-PROGRAM-2026.md
+(the plan of record) first if picking this up.
+
+### What landed (uncommitted -- awaiting Ashwin's push approval)
+
+`scripts/predictions/nfl_etl.py` -- pulls parquet assets directly from
+nflverse-data's GitHub releases (github.com/nflverse/nflverse-data), no R
+runtime or `nfl_data_py` needed, plain `requests` + `pyarrow` (both now in
+`.venv`; pyarrow was not previously installed, `pandas` already was). `.gitignore`
+gained `data/nfl/` (the plan's own instruction: parquet caches stay local,
+only derived JSON would ever enter the repo, and Stage 1 hasn't built that
+derivation yet).
+
+**Scope of what pulls historical data vs. current-season-only, and why:**
+pbp gets the full 1999-2025 range because the EPA ratings need deep,
+recency-weighted history; rosters/depth_charts/snap_counts pull ONLY the
+current season (2026) because they feed live situational state (who is on
+the team right now), not the historical model -- cross-checked against the
+plan doc's own cadence table, which describes all three as daily/multi-daily
+IN-SEASON refreshes, never a backfill. If that reading is wrong, it is a
+one-line change (the `SOURCES` table in nfl_etl.py) not a rebuild.
+
+**Injuries**: never a source tag in this script, checked by name in
+`--self-test` (`injuries is never a source tag`) so this cannot regress
+silently. Confirmed against nflverse-data's own release list that the
+`injuries` tag exists but nothing recent is in it -- consistent with the
+plan doc's "died after 2024."
+
+### Proof: one full pull, run for real, not simulated
+
+```
+python scripts/predictions/nfl_etl.py --self-test   # 8/8 PASS, offline, no network
+python scripts/predictions/nfl_etl.py                # the real, full pull
+```
+
+**Result: 29/31 files ok, 1,767,835 total rows, 490.8MB, 26.5s wall time.**
+The 2 non-ok files are `pbp` 2026 and `snap_counts` 2026 -- both confirmed
+404 (not yet published; the season kicks off 2026-09-09, so this is the
+CORRECT outcome, not a partial failure) in well under a second each.
+
+| Category | Files | Rows | Size | Notes |
+|---|---|---|---|---|
+| play-by-play | 27 (1999-2025) | 1,279,628 | 488.0MB | ~1.0-1.2s/file; file size grows from 13.4MB (1999) to ~20MB (2020s) as tracking columns were added over the years -- expected, not a bug |
+| rosters | 1 (2026) | 2,930 | 0.5MB | |
+| depth_charts | 1 (2026) | 485,277 | 2.2MB | row count looks large for "depth charts" until you remember it is one row per player per team per week, not one row per team |
+| snap_counts | 0 (2026) | -- | -- | 404, expected pre-kickoff |
+
+Spot-verified the data is real and usable, not just present -- did not trust
+file existence alone: `play_by_play_2025.parquet` loads in pandas with 32
+unique teams, correct season/week columns, 48,201 of 48,771 rows carrying a
+non-null EPA (the nulls are pre-snap administrative rows: timeouts, kneels,
+end-of-quarter markers); `roster_2026.parquet` has the exact columns the
+plan's QB/situational layer will need (`season, team, position,
+depth_chart_position, jersey_number, status, ...`), 32 teams represented.
+
+A manifest at `data/nfl/_manifest.json` records every file's status, row
+count, byte size and fetch time from this run (regenerated on the next
+real run, not append-only) -- the plan doc's "staleness is surfaced, never
+papered over" principle needs exactly this kind of record to act on later,
+even though nothing reads it yet.
+
+### Explicitly not done (by instruction, not oversight)
+
+1. **No cron.** `nfl_etl.py` is a standalone script; nothing schedules it.
+   The plan's own "Mini runner (Stage 1, NOT yet commissioned)" section
+   describes the eventual nightly-in-season job this would become --
+   that commissioning is separate, deliberately deferred work.
+2. **`build_nfl_sim.py` untouched.** This ETL produces raw caches only; the
+   EPA ratings build, the QB layer, the situational features and the
+   backtest gate are all still ahead, per the plan's Stage 1 section.
+3. **Nothing pushed.** `nfl_etl.py`, the `.gitignore` addition, and this
+   HANDOFF entry are all local, uncommitted changes on the mini pending
+   Ashwin's explicit push approval.
+
+### Open, for whoever picks this up next
+
+- Re-run `nfl_etl.py` (no args) close to kickoff (2026-09-09) to pick up
+  `pbp`/`snap_counts` 2026 once nflverse actually publishes them -- both
+  will keep 404ing harmlessly until then, by design.
+- The EPA-ratings build itself (opponent-adjusted EPA/play, off/def,
+  pass/rush, recency weighted) is the next real Stage 1 step, per the plan.
+- If Ashwin wants rosters/depth_charts/snap_counts to also carry a season
+  or two of history (e.g. for continuity features), that is the one-line
+  `SOURCES` table change flagged above -- confirm with him first, since the
+  "current season only" reading was this session's interpretation of an
+  instruction that named an explicit range for pbp and none for the other
+  three, not something he stated outright either way.
+
+**RULED (Windows, same day):** current-season-only for rosters/depth_charts/
+snap_counts stands -- no code change. The backtest derives historical QB
+starts from pbp directly (first offensive snap per team-game), so it never
+needed historical rosters/depth_charts in the first place. Extend to
+historical snap counts (2012+, nflverse's own earliest snap-count season)
+only if a specific gated feature demands it later -- not preemptively.
+
+**Push plan, once Ashwin approves:** two separate commits, not one --
+`nfl_etl.py` + `.gitignore` + this HANDOFF section as `[vercel skip]` (none
+of it is build-relevant); the `lib/releases.ts` backfill (2026-08-23,
+2026-08-29 entries, drafted this session, unrelated to NFL) is build-
+relevant and goes at HEAD on its own, or holds for the next batch --
+Windows's call which, not mine to decide here.
+
+**Next: the backtest harness, on the Windows/cloud side, not the mini.**
+Per the plan's 🔴 BACKTEST GATE (every feature must beat the market layer
+walk-forward 1999-2025 out-of-sample before v3 replaces v2's live picks).
+Mini stands by once the push lands -- still no cron.

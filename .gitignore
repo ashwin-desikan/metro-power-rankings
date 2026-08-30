@@ -150,6 +150,11 @@ design_handoff_homepage_revamp/
 data/power-history/_incoming/
 data/power-history/maddison_gdp.json
 
+# NFL Program 2026 Stage 1: nflverse parquet caches (regenerable from
+# nflverse-data's GitHub releases; only derived JSON enters the repo, per
+# docs/NFL-PROGRAM-2026.md)
+data/nfl/
+
 pull-history-log.txt
 
 OtherLeagues.xlsx
