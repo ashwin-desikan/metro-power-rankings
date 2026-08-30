@@ -322,6 +322,12 @@ never does.
   hidden` keeps the last layout — so the probe uses `checkVisibility()`.
   Without it /teams/football scored 1,128 offenders, ~1,030 of them club rows
   inside groups the reader had never opened.
+- **Chart marks are not controls.** SVG anchors — map regions, chart points —
+  are sized by the data and are exempt from the 44px rule; /elections scored
+  1,196 of which 1,129 were 6px anchors in one inline SVG. What they owe the
+  reader instead is a real affordance: a tooltip, a generous tap area, or a
+  paired list that carries the same links at readable size. If a chart is the
+  ONLY route to something, it needs that list.
 - **Every control a desktop table header provides must exist on mobile
   too.** When a sortable `<th onClick>` disappears behind `hidden sm:block`,
   the card list needs its own sort control driving the same state — the
@@ -453,6 +459,10 @@ the fix is one selector away), sub-40px tap targets, and whether a scroll
 position holds. It is deliberately NOT part of `verify` — it needs a running
 server and a browser — but it is the standard of proof for any change to a
 board, a hub, or a shared shell.
+
+Re-measure a surprising row at `--concurrency 1` before acting on it: against
+a dev server, several routes compiling at once can leave a map or a lazy
+section unrendered and skew one reading.
 
 ### Mobile acceptance checklist
 

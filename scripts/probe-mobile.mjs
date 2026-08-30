@@ -29,6 +29,11 @@
  *   BASE=http://localhost:3000 node scripts/probe-mobile.mjs
  *   node scripts/probe-mobile.mjs --json out.json --concurrency 6
  *
+ * A surprising number is worth re-measuring at `--concurrency 1` before you
+ * act on it: against a DEV server, several routes compiling at once can leave
+ * a map or a lazy section unrendered and skew one row (a country page read
+ * 13.5 screens under load and 8.4 three times in a row on its own).
+ *
  * Requires a server already running at BASE (default http://localhost:3000)
  * and the `playwright` package. Both are deliberately NOT preconditions of
  * `npm run verify` — this is the manual/CI-optional deep check, and the
@@ -166,6 +171,12 @@ function measure() {
     if (el.checkVisibility && !el.checkVisibility({ contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true })) continue;
     // Inline links inside a paragraph are text, not controls; skip them.
     if (el.tagName === "A" && getComputedStyle(el).display === "inline") continue;
+    // SVG anchors are chart marks and map regions, where the size IS the
+    // data. They need their own affordance (a tooltip, a tap area, a paired
+    // list) rather than a 44px minimum, and counting them here drowns the
+    // real offenders: /elections scored 1,196, of which 1,129 were 6px
+    // anchors inside one inline SVG.
+    if (el.namespaceURI === "http://www.w3.org/2000/svg") continue;
     // Links inside a table cell are governed by the table rules (row
     // density, sticky identity column), not by the control standard —
     // counting them buried the handful of real offenders under a thousand
