@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-29",
+    headline: "UEFA competitions get live hubs, brackets and predictions",
+    items: [
+      "Champions League, Europa League and Conference League hubs now lead with a live standings table, computed directly from the drawn fixtures rather than waiting on box scores to publish it first.",
+      "Each hub also carries a live bracket: who's through, who's out, and who holds a bye into the next round, updating as results land.",
+      "A new page, /predictions/ucl, prices each club's odds of winning the Champions League, seeded from UEFA's own coefficients and this site's club-strength data.",
+      "The Premier League predictions page adds a relegation battle board alongside its title race.",
+    ],
+  },
+  {
     date: "2026-08-28",
     headline: "New universities, and maps that stop leaking",
     items: [
@@ -44,6 +54,16 @@ export const RELEASES: Release[] = [
       "The AFL and NRL hubs now carry a live finals bracket: every tie from the wildcard round to the Grand Final with venues, dates and scores, and each club's premiership odds alongside until the cup is decided.",
       "Live Standings gains a finals strip for both codes, so results land on the same page as the ladders they settled.",
       "Minor premierships now award themselves the moment the home-and-away season ends, and the Grand Final writes its own history: premiers, honours and the champions ledger update with no hand on the wheel.",
+    ],
+  },
+  {
+    date: "2026-08-23",
+    headline: "The Ledger: every forecast graded against the market",
+    items: [
+      "A new page, /predictions/scoreboard, scores every forecast this site has ever published against the closing market price -- not just whether we called it right, but by how much.",
+      "Across 20,978 graded games, the market has been closer than us by 1.5% in English football and 3% in the NFL; the 71 priced seasons behind those numbers name the nine we actually won.",
+      "Nine calibration bins ask whether a forecast that said '70% chance' has actually been right seventy times in a hundred, and four sport hubs sit open and empty until their first graded result arrives.",
+      "Elections aren't scored yet -- a seat-range forecast can't be graded until the seats are counted.",
     ],
   },
   {
