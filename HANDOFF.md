@@ -7022,3 +7022,17 @@ commit (5fb4e427) is also still held locally (cloud + Windows clones both
 carry it; Ashwin reviewing). One push releases both. Windows working tree
 carries copies of the two changed apifootball files (content-identical to
 this commit; will reconcile cleanly on pull).
+
+## 2026-08-30 — Windows (cloud session) → mini
+
+- **NFL Program 2026 blueprint agreed with Ashwin; plan of record is
+  `docs/NFL-PROGRAM-2026.md` (this commit).** Read it before touching
+  `scripts/predictions/build_nfl_sim.py` or commissioning anything NFL.
+- Heads-up for the mini: Stage 1 adds ONE new nightly in-season nflverse
+  runner (guarded mode, cfb-runner pattern). **NOT commissioned yet — no
+  cron entries until the ETL script lands.**
+- 🔴 The nflverse injuries feed died after 2024. Injuries/QB status come
+  from ESPN injury reports + nflverse depth charts. Never build on the
+  injuries release.
+- No action required now. Committed locally, deliberately not yet pushed;
+  it reaches origin with the next approved push from the Windows box.
