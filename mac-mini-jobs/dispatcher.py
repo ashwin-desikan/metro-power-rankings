@@ -629,6 +629,44 @@ def self_test():
             LOCK_FILE.unlink()
         LOCK_FILE = _real_lock_file
 
+    # --- mark_ok() --------------------------------------------------------------
+    # Commissioned 2026-08-30 (daily-ops-sweep finding): state.json and
+    # dispatcher.log could silently disagree after a manual recovery (a FAIL
+    # fixed by hand outside the wrapper, verified, but state.json never told
+    # to say so) -- --status then showed a clean green board with no record
+    # that a human had to step in. These pin that mark_ok() corrects an
+    # EXISTING entry only, never invents last_run_date/last_slot (decide()
+    # would then trust a fabricated occurrence), and never touches jobs it
+    # was not asked about.
+    global STATE_FILE
+    _real_state_file = STATE_FILE
+    STATE_FILE = Path(tempfile.mkstemp(prefix="dispatcher-test-state-")[1])
+    STATE_FILE.unlink()  # mkstemp creates it; start from "no state file" clean
+    try:
+        fake_jobs = [{"id": "test-job"}]
+        s = {"test-job": {"last_run_date": "2026-08-30", "last_status": "failed",
+                          "last_slot": "2026-08-30T09:00:00+00:00"}}
+        check("mark-ok on an unknown job id refuses", mark_ok("nope", fake_jobs, dict(s)), 1)
+        check("mark-ok on an unknown job id does not write state.json",
+              STATE_FILE.exists(), False)
+        check("mark-ok on a job with no recorded run refuses",
+              mark_ok("test-job", fake_jobs, {}), 1)
+        rc = mark_ok("test-job", fake_jobs, dict(s))
+        check("mark-ok on an existing FAIL entry succeeds", rc, 0)
+        written = json.loads(STATE_FILE.read_text())
+        check("mark-ok sets last_status to the manual marker",
+              written["test-job"]["last_status"], "ok (manual)")
+        check("mark-ok preserves last_run_date (does not invent a new occurrence)",
+              written["test-job"]["last_run_date"], "2026-08-30")
+        check("mark-ok preserves last_slot (does not invent a new occurrence)",
+              written["test-job"]["last_slot"], "2026-08-30T09:00:00+00:00")
+        check("mark-ok is idempotent on an already-marked entry",
+              mark_ok("test-job", fake_jobs, dict(written)), 0)
+    finally:
+        if STATE_FILE.exists():
+            STATE_FILE.unlink()
+        STATE_FILE = _real_state_file
+
     # --- this file must stay pure ASCII --------------------------------------
     # Learned the hard way on 2026-08-06: a single U+26A0 in a print() crashed
     # --status with UnicodeEncodeError on a cp1252 Windows console. The mini is
@@ -858,6 +896,50 @@ def seed(now, jobs, state):
     return 0
 
 
+def mark_ok(job_id, jobs, state):
+    """Record a job's most recent occurrence as manually resolved.
+
+    Found 2026-08-30 (daily-ops-sweep): egress-refresh's leaders sanity gate
+    HELD a run, dispatcher.log correctly recorded FAIL for that slot, and
+    someone fixed it by hand outside the wrapper (editing the data directly,
+    verifying, committing) rather than re-running the whole ~30-minute
+    pipeline for a checkmark -- the same call this project already makes for
+    a stale healthchecks tile after a manual recovery. But state.json had no
+    equivalent: the only way to clear it was overwriting last_status by hand
+    with no record that a human did it, so `--status` showed a plain "ok"
+    indistinguishable from the job having genuinely succeeded on its own.
+    "ok (manual)" is a distinct value FOR THAT REASON -- it does not feed
+    decide() (which only reads last_run_date/last_slot, never last_status),
+    so this is pure bookkeeping: it cannot change what runs next, only what
+    the record says happened last.
+
+    Corrects the LAST RECORDED occurrence; it does not invent one. A job
+    with no state entry at all has no run to correct, so this refuses rather
+    than fabricate last_run_date/last_slot values decide() would then trust.
+    """
+    valid_ids = {j["id"] for j in jobs}
+    if job_id not in valid_ids:
+        print(f"no such job: {job_id!r} (jobs.toml has: {', '.join(sorted(valid_ids))})")
+        return 1
+    st = state.get(job_id)
+    if not st:
+        print(f"{job_id}: no recorded run to correct -- --mark-ok fixes the status "
+              f"of an existing entry, it does not create one. Let the job run once "
+              f"(or use --seed) first.")
+        return 1
+    old = st.get("last_status", "-")
+    if old == "ok (manual)":
+        print(f"{job_id}: already marked ok (manual); nothing to do")
+        return 0
+    st["last_status"] = "ok (manual)"
+    state[job_id] = st
+    save_state(state)
+    log(f"MARK-OK {job_id}: last_status {old!r} -> 'ok (manual)' (slot {st.get('last_slot', '-')})")
+    print(f"{job_id}: last_status {old!r} -> 'ok (manual)'. "
+          f"Wrote {STATE_FILE.name}.")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser(description="mini scheduled-job dispatcher")
     ap.add_argument("--self-test", action="store_true")
@@ -871,6 +953,14 @@ def main():
                     help="mark every job's current occurrence as handled without "
                          "running it; use once at install so a cold start does not "
                          "alert on historic slots the Actions already covered")
+    ap.add_argument("--mark-ok", metavar="JOB_ID",
+                    help="record JOB_ID's last recorded run as 'ok (manual)' after "
+                         "fixing a FAIL by hand outside the wrapper (e.g. a sanity "
+                         "gate HOLD resolved by editing the data directly and "
+                         "verifying, rather than re-running the whole job). Corrects "
+                         "the existing entry; does not invent a new occurrence, and "
+                         "never affects what runs next -- decide() does not read "
+                         "last_status.")
     args = ap.parse_args()
 
     if args.self_test:
@@ -921,6 +1011,20 @@ def main():
         try:
             state = load_state()
             return seed(now, jobs, state)
+        finally:
+            release_lock()
+
+    if args.mark_ok:
+        # Same race this project already fixed for --seed (2026-08-07): hold
+        # the tick's own lock and re-read state.json AFTER acquiring it, so a
+        # concurrent tick's save_state() can't be clobbered by a snapshot
+        # taken before the lock.
+        if not acquire_lock():
+            log("a tick is currently running; wait for it to finish and retry --mark-ok")
+            return 1
+        try:
+            state = load_state()
+            return mark_ok(args.mark_ok, jobs, state)
         finally:
             release_lock()
 
