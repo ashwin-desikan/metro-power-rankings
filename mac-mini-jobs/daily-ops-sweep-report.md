@@ -1,277 +1,349 @@
 # Daily Ops Sweep -- 2026-08-30
 
-Window: 2026-08-29 09:30Z → 2026-08-30 11:30Z (trailing ~26h). Read-only run;
-nothing was fixed, re-run, pinged or written except this file.
+Rolling snapshot, rewritten every run. Window: **2026-08-29T09:00Z → 2026-08-30T11:29Z**
+(trailing ~26h). Report-only run — this sweep made **no writes** other than this file.
+Investigator: headless Claude on `Ashwins-Mac-mini.local`.
 
-## Jobs this window: 21 ok, 2 failed, 6 flagged
+## Jobs this window: 22 ok, 2 failed, 3 flagged
 
-Dispatcher-scheduled runs (23 total, from `dispatcher.log`):
+**Dispatcher jobs (24 runs incl. this sweep):**
 
 | Job | Runs | Status |
 |---|---|---|
-| football-standings | 6 | all DONE (05/11/17/23Z 08-29, 05/11Z 08-30) |
-| activity-feed | 2 | DONE, DONE |
-| euro-comps | 2 | DONE, DONE |
-| gap-league-watch | 2 | DONE, DONE |
-| business-daily | 2 | DONE (617s), DONE (617s) |
-| substack-daily | 2 | DONE, DONE |
-| feed-monitor | 2 | DONE, DONE |
-| mlb-sim | 3 | **FAIL** 08-29 07:00Z; DONE 08-29 14:30Z; DONE 08-30 07:00Z |
-| mktcap-refresh | 1 | DONE (weekly, Sat 08-29 09:00Z) |
-| egress-refresh | 1 | **FAIL** 08-30 09:00Z (weekly, Sun) |
+| activity-feed | 08-29 02:39Z, 08-30 02:34Z | ok, ok |
+| euro-comps | 08-29 04:09Z, 08-30 04:04Z | ok, ok |
+| gap-league-watch | 08-29 05:09Z, 08-30 05:04Z | ok, ok *(flagged — state transition)* |
+| football-standings | 08-29 ×4 (05,11,17,23Z), 08-30 ×2 (05,11Z) | all ok |
+| business-daily | 08-29 05:51Z, 08-30 05:55Z | ok (617s), ok (617s) |
+| substack-daily | 08-29 06:11Z, 08-30 06:16Z | ok, ok |
+| mlb-sim | 08-29 07:01Z | **FAIL** exit 1 (1822s) — self-healed, see below |
+| mlb-sim | 08-29 14:30Z, 08-30 07:06Z | ok (1838s), ok (1822s) |
+| feed-monitor | 08-29 07:42Z, 08-30 07:46Z | ok, ok *(flagged — AFL blind spot)* |
+| mktcap-refresh | 08-29 09:02Z | ok (357s) *(flagged — S&P 500 changes table)* |
+| egress-refresh | 08-30 09:07Z | **FAIL** exit 1 (1852s) — resolved by hand, see below |
+| daily-ops-sweep | 08-30 11:29Z | this run |
 
-No `MISSED` slots this window. Non-dispatcher jobs also checked and healthy:
-newsletter-podcast daily digest (both days — see self-healed #3), the hourly F1
-poller (idle, 2026 R12 already synced), Spotify retention (deleted 1 aged
-episode), podcast watchdog (final.mp3 present, episode READY).
+No `MISSED` entries in the window. `state.json` shows every other job last-ran on
+its expected slot (`cfb-sun` 08-23 → next fires tonight 23:40Z; `conflicts-monthly`
+/ `cricket-monthly` still `seeded` from 08-01 → next fire 09-01). Nothing silently
+skipped.
+
+**Non-dispatcher (launchd) jobs:** newsletter-podcast daily ok (episode
+`25r6DuEyk3js1jDHGqwsSe`, 34:13, both Gmail drafts created); newsletter-podcast
+weekly ok — clean skip, no unnarrated Substack post inside the 14-day window;
+f1 hourly watcher idle all 24h (`2026 R12 already synced`).
+
+---
 
 ## Self-healed (informational only, no action needed)
 
-**1. mlb-sim FAIL, 2026-08-29 07:00Z — NRL fixture/record race, not a data bug.**
-`[nrl] fixture/record count mismatch: {'souths': -1, 'titans': -1}` from
-`scripts/predictions/build_season_sims.py:412`. `-1` means `gp + remaining` came
-in one game *short* of the season length for exactly two teams — i.e. one
-head-to-head fixture had dropped off the "remaining" list but the played-record
-hadn't ticked yet. Confirmed via search: **Titans v Rabbitohs, NRL Round 26, was
-played 2026-08-29** — the 08:07 BST run landed right on kickoff. The 14:30Z run
-the same day and the 07:00Z run on 08-30 both reconciled clean. Data is correct
-now. (The recurrence pattern is a separate item — see attention #2.)
+**1. mlb-sim FAIL — NRL fixture/record mismatch (2026-08-29 07:32Z)**
+`[nrl] fixture/record count mismatch: {'souths': -1, 'titans': -1}` tripped the
+run's soft-fail rollup, so the job exited 1 *after* committing partial data
+(`40789fecbc..781ee55445`). The `-1` signature means ESPN had posted a result for
+both clubs but not yet the matching fixture row — transient mid-round ingestion
+lag, not a code fault. The same-day 14:30Z run completed clean (1838s), and
+today's 07:06Z run produced **zero stderr lines** and a clean `done`. Already
+healed twice over; the other six leagues were never affected (per-league soft-fail
+isolation in `runners/mlb-sim.sh` working as designed).
 
-**2. egress-refresh FAIL, 2026-08-30 09:00Z — leaders sanity gate held the commit,
-already investigated and fixed.** The gate flagged 5 hard problems and correctly
-refused to auto-commit `_current.json`. A `mac-mini[claude]` session investigated
-each and fixed them at 12:10 BST in `3976ba3c8` ("leaders: fix bad egress-refresh
-scrape (5 countries) + Norway succession"): Hungary/India had collapsed to the
-ceremonial President instead of the PM; Madagascar/Malawi had reverted to ousted
-predecessors; Nigeria was a cosmetic name truncation. The refresh was then re-run
-successfully and committed as `fcba480ad`. **I re-ran
-`scripts/check-leaders-sanity.py` this run: exit 0, 0 hard flags**, only the known
-pre-existing Switzerland soft flag (`"Swiss Federal Council" has no since date`).
-Nothing further needed.
+**2. egress-refresh FAIL — leaders sanity gate HELD the commit (2026-08-30 09:38Z)**
+The gate did its job: a bad Wikidata scrape hit 5 hard flags and the commit was
+held. **This was already investigated and fixed by hand ~90 minutes later** by the
+interactive session on this machine — commits `3976ba3c8` (leaders fix) and
+`fcba480ad` (the rest of the held refresh data), 11:10Z.
 
-**3. newsletter-podcast, 2026-08-29 08:00 — Claude Code OAuth expired, recovered
-same morning.** `Failed to authenticate: OAuth session expired and could not be
-refreshed`; the runner's guard correctly skipped the retry. A manual re-run at
-08:15:45 completed the full pipeline and published the episode
-(`440dXOdlthwCD3gYPbAHKX`). Today's 08:00 run was clean end to end (34:13 audio,
-episode `25r6DuEyk3js1jDHGqwsSe`, both Gmail drafts created).
+Note the dispatcher only retains the last 6 stderr lines, so `dispatcher.log`
+shows just 1 of the 5 hard flags. The full set, per `3976ba3c8`'s message:
+Hungary + India (scrape collapsed the PM/president pair down to the ceremonial
+president), Madagascar + Malawi (scrape reverted to each country's *ousted*
+predecessor with a self-consistent old date), Nigeria (cosmetic name truncation).
 
-**4. mktcap `write_unicorns` HTTP 400, 2026-08-29 19:21 — fixed the same evening.**
-`POST /rest/v1/mktcap_unicorns -> HTTP 400: Column "id" is an identity column
-defined as GENERATED ALWAYS`. The DELETE had already committed, so the table was
-briefly left empty. `build_merged.py::write_unicorns` was fixed to omit `id` (the
-docstring now records the incident), and the 19:23 re-run wrote the table back.
-**Verified read-only in Supabase this run: `mktcap_unicorns` = 1404 rows.** Healthy.
+I re-ran `scripts/check-leaders-sanity.py` read-only just now: **exit 0, 0 hard
+flags**, 1 pre-existing Switzerland soft flag. I also independently verified the
+Norway succession that shipped in the same commit — Harald V died 2026-08-28 aged
+89 after 35 years, Haakon succeeded as Haakon VIII ([NPR](https://www.npr.org/2026/08/28/nx-s1-5947778/norways-king-harald-v-dies-king-haakon-viii),
+[Al Jazeera](https://www.aljazeera.com/news/2026/8/28/norways-king-harald-v-dies-succeeded-by-son)) — and
+Malawi's Peter Mutharika (since 2025-10-04) and Madagascar's Michael Randrianirina.
+All match production. **Nothing further needed.**
 
-**5. gap-league-watch — Greece Super League 2 auto-promoted (state change, expected).**
-The 05:00Z scheduled run moved it `awaiting_target -> ready` (2026 standings
-coverage came on) but held with 1 unmatched club. Two later manual runs at
-12:16/12:18 BST cleared the last unmatched team and auto-promoted it into
-`leagues.json` (`49496b533`). India L1 (Indian Super League) remains
-`awaiting_target` — api-football's latest published season is still 2025. The
-`[vercel skip]` tag on that commit is **correct**: it touched only
-`scripts/apifootball/*.json`, and `scripts/` is deliberately not in
-`scripts/vercel-build-paths.txt`.
+Caveat worth knowing, not acting on: the underlying *scrape* bug is unfixed — only
+the data was corrected. `egress-refresh` is weekly (Sundays), so the same 5
+countries can trip the gate again on **2026-09-06**. The gate will hold it again,
+which is the designed behaviour.
+
+**3. Liga F `[2025-26] PLACEHOLDER` — this is the fix landing, not a regression**
+Today's three football-standings runs disagree, which looks alarming in isolation:
+
+- 00:02Z and 06:04Z → `Liga F (id 142): 16 standings rows [2026-27]`
+- 11:08Z → `Liga F (id 142): 16 standings rows [2025-26] PLACEHOLDER`
+
+The 11:08Z line is the **correct** one. Commit `50951cab3` (women's season guard,
+`looks_fresh()` in `scripts/apifootball/refresh_women.py`) landed at 11:02Z and the
+runner's ff-only pull picked it up. Confirmed against the real world: **Liga F
+2026-27 kicked off today, 30 August 2026** ([LALIGA calendar](https://www.laliga.com/en-GB/futbol-femenino/calendar),
+[RFEF](https://rfef.es/en/noticias/Spanish-football-unveils-the-calendars-for-the-2026-27-season)),
+and api-football is still serving the *completed* 2025-26 table under `season=2026`
+— exactly the upstream rollover lag the guard was written for. The two earlier runs
+shipped the mislabel, precisely as the 2026-08-30 HANDOFF entry warned they would
+("the mini's daily run uses the OLD refresh_women.py until this pushes"). Both
+Liga F and FA WSL now swap automatically once api publishes a genuinely current
+table. **No action.**
+
+**4. gap-league-watch — Greek Super League 2 auto-promoted**
+Ran 3× today (05:04Z scheduled, plus 11:16Z and 11:18Z manual). The scheduled run
+fired the `[gap-watch]` ready notice; the manual runs resolved the last two
+unmatched clubs and auto-promoted. Verified end to end:
+`scripts/apifootball/leagues.json` now has `{league_id: 494, Greece, Super League 2,
+season 2026, level 2}` and carries **121** leagues (was 120); `leagues_pending.json`
+is down to India alone. Both clubs are live in Supabase `football_lookup` —
+`PAS Pyrgos`/`Pyrgos 1968` → Pyrgos, and `Apollon Kalamarias`/`Apollon Pontou` →
+Thessaloniki, both level 2, applied 09:56Z. Per the HANDOFF entry the full-table
+hash matched the workbook **with no exclusions**, so these are workbook-backed and
+will survive the next destructive `sync_lookup.py` mirror. **No action.**
+
+---
 
 ## Needs Ashwin's attention
 
-### 1. 🔴 The sound-pipeline atomic-credits fix never reached the mini — due before Wednesday
+### 1. `_current.json` and the per-country leader timelines disagree — and the sanity gate structurally cannot catch it (HIGH)
 
-**What happened.** The 2026-08-27 HANDOFF entry ("cloud → MINI: THE SOUND PIPELINE
-NEEDS THIS FIX APPLIED") is marked *ACTION REQUIRED ON THE MINI, BEFORE NEXT
-WEDNESDAY'S `sound-weekly` RUN*. It has not been done.
+**What happened.** While verifying the egress-refresh fix I cross-checked all 204
+entries in `public/data/leaders/_current.json` against each country's own
+`public/data/leaders/<slug>.json` timeline. 177 agree. **12 disagree on the
+start date for the same person, and a further set disagree on who the officeholder
+even is.** Two are confirmed stale in production right now:
 
-**Evidence (checked read-only this run).** In `~/som-pipeline`:
-- `credit_split_config.json` — no `atomic_extra` key (0 matches)
-- `export_site.py`, `score_both58.py` — neither reads `atomic_extra`
-- Neither of the two OneDrive-only probe overrides (`Prospa & Cloonee`,
-  `Hugel, Imael Angel & Ultra Naté`) is present
-- All three files still dated **2026-07-02** — untouched since July
+| Country | `_current.json` says | Reality (verified) | Country file |
+|---|---|---|---|
+| **Estonia** | PM **Kaja Kallas**, since 2021-01-26 | PM **Kristen Michal** since **2024-07-23** | correct already |
+| **Mauritius** | PM **Pravind Jugnauth**, since 2017-01-23 | PM **Navin Ramgoolam** since **2024-11-12** | correct already |
 
-**Consequence.** `sound-weekly` next fires **Wednesday 2026-09-02 07:30Z**
-(`jobs.toml`: `time = "07:30"`, `weekdays = [3]`). With the stale config it will
-re-emit the fused phantom entities ("Ice Spice and Nicki Minaj" etc.) with no
-metro and no score reaching either artist, and print the loud stderr WARNING the
-new code was written to emit in exactly this situation.
+Kallas left the Estonian premiership in July 2024 for the EU High Representative
+role ([Prime Minister of Estonia](https://en.wikipedia.org/wiki/Prime_Minister_of_Estonia));
+Ramgoolam replaced Jugnauth after the November 2024 election
+([Prime Minister of Mauritius](https://en.wikipedia.org/wiki/Prime_Minister_of_Mauritius)).
+So `_current.json` — the file that feeds the prominent current-leaders display — has
+been ~2 years and ~1.8 years stale respectively.
 
-**Recommended fix.** Copy the three fixed files from
-`~/OneDrive/Documents/Claude/Projects/Metro Area Project/_sound_of_metros_pipeline/`
-to `~/som-pipeline/`: `credit_split_config.json`, `export_site.py`,
-`score_both58.py`. Back up the mini's current `credit_split_config.json` first —
-per the handoff it is a *separately drifted* copy, so diff it before overwriting
-in case it holds mini-only overrides that aren't in the OneDrive version. Then
-confirm `grep -c atomic_extra ~/som-pipeline/credit_split_config.json` returns 42
-names before Wednesday.
+**The drift runs both ways.** For **Bulgaria** it is the *country file* that is
+wrong: `bulgaria.json` still flags Kiril Petkov as current PM since 2021-12-13,
+while `_current.json` correctly has Rumen Radev as PM since 2026-05-08
+([Euronews, 8 May 2026](https://www.euronews.com/my-europe/2026/05/08/bulgarian-parliament-confirms-rumen-radev-as-new-prime-minister)).
 
-### 2. mlb-sim hard-fails on any in-progress NRL game — second occurrence, same shape
+The 12 same-person date disagreements (one of each pair is simply wrong):
 
-**What happened.** This is not a one-off. Both occurrences in the whole
-dispatcher history are Saturday 07:00Z runs, both NRL, both exactly `-1` on
-exactly two teams:
-- `2026-08-15T07:32:12Z` — `{'cronulla': -1, 'canberra': -1}`
-- `2026-08-29T07:32:18Z` — `{'souths': -1, 'titans': -1}`
-
-**Root cause.** `reconcile_remaining()` in
-`scripts/predictions/build_season_sims.py` (~line 385) only knows how to absorb
-*positive* excess — it drops fixtures the records say were already played. A
-**negative** excess (a fixture that has left the upcoming list before the record
-updates, i.e. a match currently in progress) falls straight through the loop to
-`raise SystemExit(...)` at line 412, which fails the whole multi-league job with
-exit 1 and fires an ntfy alert. The docstring only anticipates "afltables lags
-ESPN", the opposite direction.
-
-**Why it matters more than the failure itself.** The job builds *all* leagues;
-one in-flight NRL match aborts the run after ~30 minutes of work, and the
-dispatcher's own log line says "partial data may still have been committed". It
-will keep recurring on Saturdays for as long as the NRL season runs.
-
-**Recommended fix.** Treat a small negative excess as lag rather than a
-structural mismatch — mirroring how positive excess is already tolerated. In
-`reconcile_remaining`, before the hard exit, allow `-1` per team when the
-deficit is consistent with an even number of teams (one missing fixture) and log
-a warning instead of exiting; keep the hard failure for anything larger or
-lopsided. Alternatively (smaller, more reversible) move the Saturday `mlb-sim`
-slot off 07:00Z, which is mid-afternoon AEST and squarely inside the NRL
-Saturday window. The first is the real fix; the second is a one-line
-`jobs.toml` change if you want the alert to stop this weekend.
-
-### 3. `run-daily-ops-sweep.sh` has no concurrency lock — it ran twice today
-
-**What happened.** Two instances of this sweep ran simultaneously today:
-- PID 66654, started 12:28:49 BST — launched **manually** from the interactive
-  Claude Code session (parent chain: `claude` desktop session PID 65048)
-- PID 66758, started 12:29:31 BST — the **real scheduled run** via
-  `hc-run.sh daily-ops-sweep` (`dispatcher.log`: `11:29:30Z RUN daily-ops-sweep
-  (slot 2026-08-30 01:00Z, 630m late)`)
-
-`logs/daily-ops-sweep-2026-08-30.log` shows both "=== Daily Ops Sweep start ==="
-lines 42 seconds apart.
-
-**Root cause.** `dispatcher.py` protects *itself* with `.dispatcher.lock`
-(`acquire_lock()`, line 184), but the individual runner scripts have none, and
-neither `hc-run.sh` nor `runners/_common.sh` adds one. For most jobs a double-run
-is merely wasteful. For this one it means two headless Claude sessions racing on
-the same git working tree, both `git add/commit/push`-ing the same report file,
-both firing an ntfy digest, and each burning a separate `--max-budget-usd 10`.
-Two ntfy notifications is precisely the noise problem this job was commissioned
-to remove.
-
-**Recommended fix.** Add a lock at the top of `run-daily-ops-sweep.sh`, before
-the `claude -p` call:
-
-```bash
-LOCKDIR="$HOME/metro-mini-jobs/.daily-ops-sweep.lock"
-if ! mkdir "$LOCKDIR" 2>/dev/null; then
-  log "another sweep is already running (lock $LOCKDIR); exiting"; exit 0
-fi
-trap 'rmdir "$LOCKDIR" 2>/dev/null' EXIT
+```
+angola      _current 2017-08-23  vs  angola.json      2017-09-26
+benin       _current 2026-05-24  vs  benin.json       2026-01-01
+comoros     _current 2016-01-01  vs  comoros.json     2016-05-26
+cuba        _current 2021-04-19  vs  cuba.json        2018-04-19
+micronesia  _current 2023-01-01  vs  ...json          2023-05-11
+gambia      _current 2017-01-21  vs  gambia.json      2017-01-19
+guinea      _current 2021-10-01  vs  guinea.json      2021-09-05
+madagascar  _current 2025-10-14  vs  madagascar.json  2025-10-17
+nauru       _current 2023-09-30  vs  nauru.json       2023-10-30
+rwanda      _current 2000-03-24  vs  rwanda.json      2000-04-22
+somalia     _current 2022-05-15  vs  somalia.json     2022-05-23
+uae         _current 2006-02-11  vs  uae.json         2006-01-05
 ```
 
-`mkdir` is atomic on macOS, and exiting 0 keeps healthchecks green for the
-instance that yields. Worth considering the same guard in `runners/_common.sh`
-for every job, but this one is the urgent case because it writes and notifies.
+Madagascar is the clearest worked example: `_current.json` uses **2025-10-14** (the
+CAPSAT takeover window) while `madagascar.json` uses **2025-10-17**, the date
+Randrianirina was actually sworn in at the High Constitutional Court
+([Wikipedia](https://en.wikipedia.org/wiki/Michael_Randrianirina)). Every other
+entry in the file uses the formal inauguration date (Malawi 2025-10-04, Nigeria
+2023-05-29), so 2025-10-14 is inconsistent with the site's own convention.
 
-*(Note: today's double-run is partly an artefact of the job being commissioned
-and hand-tested this morning. The lock is still the right fix — nothing prevents
-a repeat.)*
+**Root cause.** `scripts/check-leaders-sanity.py` compares `_current.json` only
+against **its own previous git revision** (`git show {ref}:{PATH}`). It is a
+*change* detector — excellent at catching a bad scrape mid-flight, which is exactly
+what it did this morning. But a value that is **stably wrong** never changes, so it
+never trips anything, and the per-country timeline files are not consulted at all.
+Estonia and Mauritius have been quietly wrong through every green run since
+`0f47b8cf4` (2026-06-30, the original hand-population of 97 sovereigns) — that
+commit is where Madagascar's 2025-10-14 came from too, so this is hand-entry drift,
+not scrape damage.
 
-### 4. Wikipedia dropped the S&P 500 "selected changes" table — 3 weeks running, verified live
+**Recommended fix.** Add a *cross-file* check to `check-leaders-sanity.py`,
+independent of the existing git-diff check:
 
-**What happened.** `build_sp500.py` has logged
-`WARNING: table id=changes not found -- Wikipedia dropped the changes table;
-shipping constituents only` on every weekly run since 2026-08-17. Clean on
-08-08 and 08-15, missing on 08-17, 08-22 and 08-29 — a persistent upstream
-change, not a transient scrape failure.
+- For each country in `_current.json`, load `public/data/leaders/<slug>.json`, take
+  the entries with `current: true`, and compare.
+- **Date rule (high confidence, ship as HARD):** when the names match, `since` must
+  equal that entry's `start`. That alone catches all 12 above.
+- **Name rule (ship as SOFT first):** flag when `_current.json`'s primary/`second`
+  names appear nowhere among the country file's `current` entries. Run it in soft
+  mode for a cycle before promoting — my crude version produced 13 hits of which
+  most are benign style variants (`King Philippe` vs `Philippe of Belgium`,
+  `Tupou VI` vs `Tupou VI of Tonga`, diacritic differences in Vietnam/Samoa), plus
+  deliberate curation (Saudi Arabia's `⚠️ Mohammed bin Salman` pin) and legitimate
+  different-office pairs (Ireland's President Connolly vs Taoiseach Martin;
+  Pakistan's President Zardari vs PM Sharif; Bangladesh's President Shahabuddin vs
+  Chief Adviser Yunus). Normalise the crown/warning emoji and a `X of Y` → `X`
+  suffix before comparing, or the noise will drown the signal.
+- Extend `--self-test` with the Estonia (stale `_current`), Bulgaria (stale country
+  file) and Madagascar (date-only) cases — all three are real, and they cover both
+  drift directions.
 
-**Verified this run (live fetch of the same API the script uses).** The wikitext
-of `List_of_S&P_500_companies` now contains exactly **one** table,
-`id="constituents"`. There is no `changes` table and no second `{|` table start
-anywhere on the page. The script's own diagnosis is correct, and its
-`parse_changes()` (which looks for `parse_table(wikitext, "changes")`) cannot be
-fixed by re-pointing a selector — the data is simply no longer on that page. The
-article's Talk page carries a discussion debating table structure and content
-inclusion, so this reads as a deliberate editorial removal.
+Separately, and independently of the gate: **Estonia, Mauritius and Bulgaria are
+wrong on the live site right now** and want a data fix regardless of whether the
+check ships.
 
-**Impact is contained.** `build_sp500.py` degrades gracefully — the 08-29 run
-still shipped 503 constituents, 496 matched to the site universe. Only the
-membership-changes feed is dead (`changes rows: 0`).
+### 2. feed-monitor's AFL check has never once been green — it is not monitoring anything (MEDIUM)
 
-**Recommended fix — your call between two options.** (a) Accept it: drop
-`parse_changes()` and any UI that renders changes, and remove the warning so it
-stops looking like a fault. (b) Re-source it: S&P Dow Jones Indices publishes
-every index change as a press release at `press.spglobal.com` (e.g. the
-2026-03-06 Vertiv/Lumentum/Coherent/EchoStar announcement), which is the
-authoritative upstream Wikipedia was itself copying. (b) is more work and a new
-scrape surface; (a) is honest and cheap. Either way the current state — a
-weekly warning nobody acts on — is the worst of the three.
+**What happened.** `~/metro-mini-jobs/feed-monitor.log` reports
+`empty:ESPN AFL standings` on **66 of 66 runs**, every day since the monitor's
+first entry on 2026-07-01. There is no line anywhere in the file where AFL is `ok`.
+The overall run status is still `ok`, so it never alerts.
 
-### 5. mktcap metro curation queue: 26 unmapped companies waiting
+**Root cause — confirmed by probing the endpoint directly (read-only GET).** The
+feed is healthy; the *check* is wrong. ESPN serves AFL with the ladder at the
+**top level** and no conference grouping:
 
-The 08-29 09:00Z run emitted a `METRO QUEUE (new, unmapped — for Ashwin)` push
-listing 22 new companies. **Read-only Supabase check this run: `mktcap_geo` holds
-26 rows with `mapped_by = 'auto-stub'`** still awaiting a metro ruling. Heavily
-weighted to Japan and South Korea — Hyosung Corporation, Hyosung TNC, Hyosung
-Chemical, Hyosung ITX, HD Construction Equipment, LX International, LX Hausys,
-SNT Dynamics (KR); Daiwabo Holdings, Sansan, JustSystems, Tomen Devices, Furukawa,
-SYLA Holdings (JP); plus Hengli Petrochemical (CN), Erste Bank Polska (PL),
-Vincorion (DE), Panasonic Manufacturing Malaysia, Ryerson / Lyntris / First Breach
-(US), VivoPower (UK).
+```
+AFL  https://site.api.espn.com/apis/v2/sports/australian-football/afl/standings
+     children: 0          standings.entries: 18   season 2026 (18 Feb – 30 Sep)
+     entries[0] = Fremantle, has 'team', non-empty 'stats'
+NRL  https://site.api.espn.com/apis/v2/sports/rugby-league/3/standings
+     children: 1          (entries live under children[0].standings)
+```
 
-No fix required — this is the queue working as designed. Flagging it only
-because it is the alert that fired and nothing has consumed it yet.
+`check_espn_standings()` in `feed_shape_monitor.py` short-circuits at line 92:
 
-### 6. Vercel: 3 production builds today against the 2/day budget, two of them 45s apart
+```python
+if not children:
+    return "empty", "no conferences/groups (off-season?)"
+```
 
-Counted with the Vercel MCP per the CLAUDE.md discipline (`list_deployments`,
-counting `state: READY`; the other 17 deployments today were `CANCELED` and are
-free):
+AFL has 18 valid rows sitting in `doc["standings"]["entries"]` that the function
+never looks at. **Consequence:** if ESPN's AFL feed genuinely broke tomorrow, the
+monitor's output would not change by a single character — it already says `empty`.
+The one AFL signal you have is dead, and it is dead in the silent direction.
 
-| Build | Commit | Justified? |
+**Recommended fix.** In `check_espn_standings()`, before the `if not children`
+early return, fall back to the flat layout:
+
+```python
+if not children:
+    entries = (doc.get("standings") or {}).get("entries")
+    if isinstance(entries, list) and entries:
+        e0 = entries[0]
+        if "team" in e0 and isinstance(e0.get("stats"), list) and e0["stats"]:
+            return "ok", f"flat standings, {len(entries)} teams"
+    return "empty", "no conferences/groups (off-season?)"
+```
+
+I verified against the live payload that this returns `ok, flat standings, 18
+teams` for AFL today and leaves the NRL/NFL/NBA/NHL/EPL paths untouched. Worth
+adding a fixture to the monitor's self-test for the flat shape, since it is now a
+layout ESPN demonstrably ships.
+
+### 3. Vercel: 3 billable builds today against the 2/day budget, two of them 45 seconds apart (MEDIUM)
+
+Counted via Vercel MCP `list_deployments` per the CLAUDE.md rule (not GitHub
+`deployment_status`). For 2026-08-30 UTC: **24 deployment events, 3 `READY`, 21
+`CANCELED`** (canceled are free). The three that built:
+
+| Time (UTC) | Commit | Subject |
 |---|---|---|
-| `dpl_BA1jVBFh…` 11:10:08Z | `3976ba3c8` leaders fix | Yes — `public/data/leaders/**` is build-time read |
-| `dpl_ETPmUkTe…` 11:10:53Z | `fcba480ad` mini refresh | Yes — build-time-read data changed |
-| `dpl_3oKzDjy7…` 10:53Z | `bef55cb2a` deploy-retry | Yes — `run-deploy-watch.sh` healing a canceled build |
+| 10:53:51 | `bef55cb2a` | `chore(deploy): re-trigger canceled build of 669e6249e (attempt 1) [deploy-retry]` |
+| 11:10:08 | `3976ba3c8` | `leaders: fix bad egress-refresh scrape (5 countries) + Norway succession` |
+| 11:10:53 | `fcba480ad` | `data: mini refresh - build-time-read data changed, rebuild required` |
 
-All three were individually legitimate, and the skip-tagging worked correctly
-across ~20 pushes. But the first two landed **45 seconds apart** and were the
-same piece of work (the leaders fix, then the refresh that consumed it). Squashed
-or pushed together that would have been one build, and the day would have come in
-on budget. This is exactly the "one commit per work item, not one per exchange"
-rule in CLAUDE.md. Nothing to undo — noting it so the pattern is visible.
+The guard is working correctly — all 21 skips were legitimate. But **#2 and #3
+landed 45 seconds apart and both needed a build**, so two builds ran where one
+would have done. Both were parts of the *same* recovery: the leaders correction and
+the refresh data the sanity gate had held. This is precisely the batching failure
+CLAUDE.md calls out ("One commit per work item, not one per exchange").
 
-### 7. Minor observations (no action strictly required)
+**Recommendation.** When the leaders gate holds a run, the recovery is inherently
+one work item — stage the `_current.json`/country-file corrections **and** the held
+`$DATA_PATHS` and commit once, without `[vercel skip]`. Worth adding a line to
+`metro-mini-refresh.sh`'s gate comment (around line 194-196) saying so, since the
+next person to hit a HOLD will otherwise rediscover this the same way. No action
+needed on today's spend beyond knowing it happened.
 
-- **The mktcap runner's failure message misattributes errors.** When the 08-29
-  19:21 run died on the `mktcap_unicorns` identity-column 400, the runner printed
-  `ERROR: refresh.py --write failed (exit 1) -- check the sanity gate: a >5%
-  week-over-week source swing aborts before writing`. The sanity gate had nothing
-  to do with it. That hardcoded hint will send the next investigator down the
-  wrong path; worth making it generic or echoing the real exception.
-- **`state.json` records `egress-refresh` as `"ok"` for the 2026-08-30 09:00Z
-  slot** while `dispatcher.log` records `FAIL` for that same slot.
-  `dispatcher.py` writes the true status either way (line ~306), so something
-  else updated it — most plausibly the successful manual re-run at 12:10 that
-  produced `fcba480ad`. Benign here since the job genuinely did succeed on
-  re-run, but worth knowing that dispatcher state can disagree with the log if
-  any staleness check ever leans on it.
-- **`empty:ESPN AFL standings` in feed-monitor** is *not* new: it has been
-  `empty` in all 66 recorded checks since the log began 2026-07-01, never once
-  `ok`, and the monitor's overall verdict stays `ok`. The AFL pipeline sources
-  from afltables, not this ESPN feed, so this looks cosmetic — but the check has
-  never once passed, so it is proving nothing and could be repointed or dropped.
-- **The `[mktcap] WARNING: rename NVDA -> MSTR SKIPPED ... Fix
-  mktcap_symbol_changes` line is self-test fixture noise, not a real problem.**
-  It originates in `scripts/mktcap/selftest.py:46`, which uses NVDA→MSTR as the
-  deliberate recycled-ticker test case; it prints inside the self-test block, and
-  the real runs all report `rename guard: 0 recycled-ticker renames skipped: []`.
-  `mktcap_symbol_changes` contains no NVDA/MSTR rows. Flagging it because it
-  reads like an action item in the log and isn't one.
-- **This project's memory directory is empty.** CLAUDE.md cites
-  `feedback_vercel_build_budget_incident` as an existing memory, but
-  `~/.claude/projects/-Users-ashwindesikan-Projects-Metro-Area-Project/memory/`
-  contains no files and no `MEMORY.md`. Cross-referencing memory for known issues
-  (STEP 3 of this sweep) is therefore a no-op until something is written there.
-- **`jobs.toml`'s `daily-ops-sweep` entry and `run-daily-ops-sweep.sh` are still
-  uncommitted** in the working tree (`M mac-mini-jobs/jobs.toml`,
-  `?? mac-mini-jobs/run-daily-ops-sweep.sh`). Left alone deliberately — this run
-  commits only this report.
+### 4. This sweep job's own wiring is uncommitted (MEDIUM — easy to lose)
+
+`git status` on the repo shows:
+
+```
+ M mac-mini-jobs/jobs.toml            (the [[job]] daily-ops-sweep block)
+?? mac-mini-jobs/run-daily-ops-sweep.sh   (untracked)
+```
+
+`~/metro-mini-jobs/run-daily-ops-sweep.sh` is a **symlink into the working tree**,
+so the job runs off an untracked file. Any `git clean`, a fresh clone, or the
+REBUILD-RUNBOOK recovery path loses this job entirely and silently — and because
+it is the job that reports on the other jobs, nothing would report its absence.
+
+I did not commit these: this run is scoped to the report file only. **Recommend
+committing both with `[vercel skip]`** (neither path is build-relevant), plus a
+HANDOFF entry so the cloud/Windows instance knows the mini now owns a daily sweep.
+
+This also explains this run's `630m late`: the 01:00Z slot was already long past
+when the job block was saved at ~11:27Z, and `catchup_hours = 20` correctly fired
+it immediately. Expected first-run behaviour, not a fault — tomorrow it runs at
+01:00Z. (`dispatcher.log` also shows `11:27:39Z stale lock file; taking it over`
+immediately before, consistent with the interactive session's dispatcher probe.)
+
+### 5. `state.json` says egress-refresh is `ok`; `dispatcher.log` says it FAILED (LOW, but it hides a real event)
+
+`~/metro-mini-jobs/state.json` currently reads:
+
+```json
+"egress-refresh": { "last_run_date": "2026-08-30",
+                    "last_slot": "2026-08-30T09:00:00+00:00",
+                    "last_status": "ok" }
+```
+
+but `dispatcher.log` has `FAIL egress-refresh: failed exit 1 after 1852s` for that
+same slot, and **no second egress-refresh run exists** — I grepped the whole log
+after 09:38:06Z and there is exactly one mention. `dispatcher.py` line 305 writes
+`last_status: status` verbatim from `run_job()`, and the `--seed` path writes
+`"seeded"` (as `conflicts-monthly`/`cricket-monthly` show), so I could not find a
+code path that produces `ok` here. `state.json`'s mtime is 11:20Z — about 10
+minutes after the manual-recovery commits.
+
+Most likely this was reconciled by hand during that recovery, which is defensible
+(the work *was* completed). Flagging it because the consequence is real: anyone
+running `python3 dispatcher.py --status` today sees a clean green board and would
+never learn that the weekly civic refresh needed human intervention. If hand-
+reconciling state after a manual recovery is the intended workflow, it's worth a
+first-class `--mark-ok <job>` flag that writes something like `"ok (manual)"`, so
+the log and the state file stop contradicting each other. Same family as the
+2026-08-25 HANDOFF note about stale healthchecks tiles after manual recovery.
+
+### 6. S&P 500 membership changes are permanently empty — a product decision, not a break (LOW)
+
+`mktcap-refresh` logs `WARNING: table id=changes not found -- Wikipedia dropped the
+changes table; shipping constituents only`, and `public/data/business/sp500.json`
+ships `constituents: 503, changes: []`.
+
+This is **already known and handled** — `scripts/business/build_sp500.py` lines
+147-158 document that Wikipedia dropped the table on 2026-08-17 and degrade
+gracefully to zero changes rather than failing. I verified independently that it
+has not come back: the live page's only sections are *S&P 500 component stocks*,
+*See also*, *References*, *External links* — no "Selected changes" section at all.
+
+So nothing is broken. But whatever renders `changes` on `/business/sp500` is now
+permanently empty, which is a decision for you rather than the pipeline: either
+source membership changes elsewhere (S&P's own press releases, or the
+`List_of_S%26P_500_companies` page history diffed between runs), or drop the
+section from the page so it doesn't read as a bug to visitors.
+
+---
+
+## Notes
+
+- Minor, no action: `~/newsletter-podcast/logs/2026-08-30.log` duplicates two lines
+  (`Creating Gmail drafts…` / `Gmail draft step done…` each appear twice) while the
+  step's own output confirms exactly two drafts were created. Looks like a doubled
+  `tee`/log call in the wrapper, not a double invocation.
+- Runners under `~/metro-mini-jobs/runners/` (mlb-sim, business-daily, activity-feed,
+  cfb, predictions, forecast) write to stdout only, so the sole record of their
+  output is `dispatcher.log`'s **last 12 stdout + 6 stderr lines**. That truncation
+  is why this morning's 5 hard flags showed as 1. Not urgent, but a per-run log file
+  for those six — as the other runners already keep — would have saved a git-archaeology
+  detour today.
