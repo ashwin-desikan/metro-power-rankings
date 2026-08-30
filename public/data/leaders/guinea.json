@@ -203,9 +203,9 @@
   "name": "Mamady Doumbouya",
   "role": "President",
   "start": "2021-09-05",
-  "end": null,
-  "current": true,
-  "tenure": "4y 9m",
+  "end": "2026-01-17",
+  "current": false,
+  "tenure": "2021–2026 (interim)",
   "party": null,
   "era": null
  },
@@ -236,6 +236,16 @@
   "end": null,
   "current": false,
   "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mamady Doumbouya",
+  "role": "President",
+  "start": "2026-01-17",
+  "end": null,
+  "current": true,
+  "tenure": "2026–present",
   "party": null,
   "era": null
  }
