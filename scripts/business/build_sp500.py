@@ -136,6 +136,39 @@ def norm_sym(s):
     return (s or "").replace(".", "-").upper().strip()
 
 
+def diff_changes(prev_cons, cur_cons, today):
+    """Derive membership changes from a week-over-week constituent diff.
+
+    Wikipedia dropped the "changes" table entirely on 2026-08-17 (see the
+    call site) with no replacement in sight, so this is the fallback: the
+    "constituents" table (a SEPARATE table on the same page) kept updating
+    correctly the whole time, and a genuine index swap shows up there as one
+    symbol disappearing and another appearing between two runs. Two limits
+    worth knowing: (1) no "reason" (Wikipedia's table carried e.g. "Market
+    cap change" -- a bare diff can't know why), and (2) no true pairing of
+    same-day add+remove into one row the way Wikipedia's rowspan did -- each
+    side is emitted as its own entry instead of trying to guess which
+    addition corresponds to which removal.
+    """
+    prev_syms = {norm_sym(c["symbol"]) for c in prev_cons}
+    cur_by_sym = {norm_sym(c["symbol"]): c for c in cur_cons}
+    added_syms = sorted(set(cur_by_sym) - prev_syms)
+    removed_syms = sorted(prev_syms - set(cur_by_sym))
+    if not added_syms and not removed_syms:
+        return []
+    prev_by_sym = {norm_sym(c["symbol"]): c for c in prev_cons}
+    out = []
+    for sym in added_syms:
+        out.append({"date": today, "addedTicker": cur_by_sym[sym]["symbol"],
+                     "added": cur_by_sym[sym]["name"], "removedTicker": "", "removed": "",
+                     "reason": "detected via weekly constituent diff (Wikipedia's changes table was removed 2026-08-17)"})
+    for sym in removed_syms:
+        out.append({"date": today, "addedTicker": "", "added": "",
+                     "removedTicker": prev_by_sym[sym]["symbol"], "removed": prev_by_sym[sym]["name"],
+                     "reason": "detected via weekly constituent diff (Wikipedia's changes table was removed 2026-08-17)"})
+    return out
+
+
 def main(argv):
     if "--self-test" in argv:
         return self_test()
@@ -152,11 +185,25 @@ def main(argv):
     # for, so a missing "changes" table degrades to zero changes rather than
     # blocking constituents from publishing -- constituents' own row-count
     # gate above is what still hard-fails on a REAL layout break to that table.
+    today = datetime.date.today().isoformat()
+    prev = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else None
     try:
         changes = parse_changes(wikitext)
+        source_note = "Wikipedia: List of S&P 500 companies"
     except RuntimeError as e:
-        common.log(f"WARNING: {e} -- Wikipedia dropped the changes table; shipping constituents only")
-        changes = []
+        common.log(f"WARNING: {e} -- Wikipedia dropped the changes table; "
+                   f"falling back to a week-over-week constituent diff")
+        new_changes = diff_changes(prev["constituents"], cons, today) if prev else []
+        if new_changes:
+            common.log(f"changes: {len(new_changes)} detected via constituent diff: "
+                       + ", ".join(c["addedTicker"] or f"-{c['removedTicker']}" for c in new_changes))
+        # Prepend (most-recent-first, matching Wikipedia's own convention) onto
+        # whatever changes -- Wikipedia-sourced or previously diff-detected --
+        # this file already carried, so the history accumulates across weeks
+        # instead of resetting to just this run's delta every time.
+        changes = new_changes + (prev.get("changes", []) if prev else [])
+        source_note = ("Wikipedia: List of S&P 500 companies (constituents); "
+                       "changes: weekly constituent diff (Wikipedia's own changes table was removed 2026-08-17)")
     common.log(f"constituents: {len(cons)}, changes rows: {len(changes)}")
 
     metro_info = {m["name"]: m for m in json.load(open(METROS, encoding="utf-8"))}
@@ -188,7 +235,7 @@ def main(argv):
     out = {
         "meta": {
             "generated_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "source": "Wikipedia: List of S&P 500 companies",
+            "source": source_note,
             "count": len(cons), "matched": matched,
         },
         "constituents": sorted(cons, key=lambda c: -(c["cap"] or 0)),
@@ -233,7 +280,18 @@ def self_test():
     assert ch[0]["date"] == "July 1, 2026" and ch[0]["addedTicker"] == "AAA" and ch[0]["removed"] == "Zeta Inc", ch[0]
     assert ch[1]["date"] == "July 1, 2026" and ch[1]["addedTicker"] == "BBB" and ch[1]["reason"] == "Acquisition.", ch[1]
     assert norm_sym("BRK.B") == "BRK-B"
-    print("self-test: 9/9 PASS")
+    # Fallback path (2026-08-30): Wikipedia's own "changes" table is gone --
+    # detect real swaps from a week-over-week constituent diff instead.
+    prev_cons = [{"symbol": "MMM", "name": "3M"}, {"symbol": "OLD", "name": "Old Corp"}]
+    cur_cons = [{"symbol": "MMM", "name": "3M"}, {"symbol": "NEW", "name": "New Corp"}]
+    dc = diff_changes(prev_cons, cur_cons, "2026-08-30")
+    assert len(dc) == 2, dc
+    added = next(c for c in dc if c["addedTicker"] == "NEW")
+    removed = next(c for c in dc if c["removedTicker"] == "OLD")
+    assert added["added"] == "New Corp" and added["removedTicker"] == "", added
+    assert removed["removed"] == "Old Corp" and removed["addedTicker"] == "", removed
+    assert diff_changes(prev_cons, prev_cons, "2026-08-30") == [], "identical lists must report no changes"
+    print("self-test: 13/13 PASS")
     return 0
 
 
