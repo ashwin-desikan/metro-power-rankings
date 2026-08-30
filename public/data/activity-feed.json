@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-08-29",
+  "generatedAt": "2026-08-30",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-30",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "83d188a82"
+    },
     {
       "date": "2026-08-29",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "3c4d6347d"
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "352038221"
+    },
+    {
+      "date": "2026-08-29",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "UEFA comps: standings-first hubs + fixtures-derived brackets; /predictions/ucl; PL relegation board.",
+      "commit": "4cd9ca0de"
     },
     {
       "date": "2026-08-28",
@@ -4187,20 +4201,6 @@
       "hub": null,
       "text": "Conurbations badge merging Twin Metros + Megaregions with 4 named megaregions and 55 editorial overrides; tier scale aligned with metro tie…",
       "commit": "47e5a493c"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Conurbations badge merging Twin Metros + Megaregions with 4 named megaregions and 55 editorial overrides; tier scale aligned with metro tie…",
-      "commit": "4904df147"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Add Conurbations badge merging Twin Metros + Megaregions: 4 named megaregions, 56 editorial overrides with creative names, recursive split…",
-      "commit": "c5dce2cf7"
     }
   ]
 }
