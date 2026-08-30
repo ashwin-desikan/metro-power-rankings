@@ -513,20 +513,10 @@
     "name": "Rumen Radev",
     "role": "Prime Minister",
     "start": "2026-05-08",
-    "end": "2021-12-13",
-    "current": false,
-    "tenure": "",
-    "party": "Progressive Bulgaria",
-    "era": "Progressive Bulgaria era"
-  },
-  {
-    "name": "Kiril Petkov",
-    "role": "Prime Minister",
-    "start": "2021-12-13",
     "end": null,
     "current": true,
-    "tenure": "in office",
-    "party": "",
+    "tenure": "2026–present",
+    "party": "Progressive Bulgaria",
     "era": "Progressive Bulgaria era"
   }
 ]
