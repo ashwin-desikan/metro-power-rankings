@@ -148,12 +148,20 @@ explicit — apply it before touching any refresh script:
 > **HARD RULE.** If a commit that touches `app/`, `lib/` or `public/` lands on
 > a given day, that day gets an entry in `lib/releases.ts` before the day
 > closes. Not the commit message, not a HANDOFF entry: the public log that
-> readers see at `/updates`. **On 2026-08-30, fifteen reader-visible commits
-> shipped across five sessions and none of them wrote an entry**, including a
+> readers see at `/updates`. **On 2026-08-30, twenty commits touching `app/`,
+> `lib/` or `public/` shipped across five sessions and none of them wrote an
+> entry**, including a
 > session that had backfilled 08-23 and 08-29 earlier that same afternoon and
 > still left the day it was working in blank. Backfilling is always worse than
 > writing it at the time, because by then nobody remembers which of the day's
 > changes a reader would actually have noticed.
+>
+> **It is gated, so you do not have to remember it.**
+> `npm run check:release-notes` (in `npm run verify`) fails when a day EARLIER
+> than today shipped a commit touching `app/`, `lib/` or `public/` without
+> `[vercel skip]` and no entry covers it. Today only warns, so work in progress
+> never breaks verify mid-afternoon. It skips itself on a shallow checkout
+> rather than guessing, and says so.
 >
 > **This rule is easy to miss and that is the point of putting it here.** The
 > brevity discipline lives in a comment at the top of `app/updates/page.tsx`,
