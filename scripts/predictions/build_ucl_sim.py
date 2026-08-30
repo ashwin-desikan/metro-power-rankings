@@ -91,6 +91,29 @@ LEAGUE_PHASE_RE = re.compile(r"group stage|league (phase|stage)", re.I)
 # Hub-archive country spellings that differ from api-football's team country.
 COUNTRY_ALIAS = {"Czech Republic": "Czech-Republic"}
 
+# api-football bundle spelling -> Ashwin's canonical Lookup name (the hub
+# league-row namespace, which lib/football's slug-lookup resolves and every
+# club page is titled by). v1 carried this table; the v2 rewrite dropped it
+# and leaked raw api spellings ("Sporting Lisboa") onto /predictions/ucl —
+# regression caught by Ashwin 2026-08-30. Clubs not listed here match their
+# canonical name by normalization; --verify-teams and the self-test now FAIL
+# on any emitted name the site cannot resolve, so this can't regress quietly.
+ALIAS = {
+    "Arsenal FC": "Arsenal",
+    "Atlético Madrid": "Atlético de Madrid",
+    "Bayern München": "Bayern Munich",
+    "Como 1907": "Como",
+    "FK Bodo/Glimt": "FK Bodø/Glimt",
+    "Inter Milan": "Internazionale",
+    "Paris St. Germain": "Paris Saint-Germain",
+    "Sabah FK": "Sabah FA",
+    "Shakhtar Donetsk": "FC Shakhtar Donetsk",
+    "Slavia Praha": "SK Slavia Praha",
+    "Slovan Bratislava": "ŠK Slovan Bratislava",
+    "Sporting Lisboa": "Sporting Clube de Portugal",
+    "Villarreal CF": "Villarreal",
+}
+
 
 def ntn(s):
     """Normalize a club name across the bundle/hub spellings (case, accents,
@@ -136,7 +159,10 @@ def league_phase_fixtures(league_id=LEAGUE_ID):
 
 
 def hub_features():
-    """(score_by_name, coeff_by_country) from the completed t-1 hub."""
+    """(score_by_name, coeff_by_country, canon_by_ntn) from the completed t-1
+    hub. canon_by_ntn maps a normalized name to the workbook Lookup canonical
+    (the hub LEAGUE-ROW namespace — clubs[].lookup is a different, api-ish
+    namespace and must never be shown)."""
     hub = load_json(FOOT, f"hub-{HUB_SEASON}.json")
     score = {}
     for c in hub.get("clubs", []):
@@ -144,14 +170,37 @@ def hub_features():
             if k:
                 score[ntn(k)] = c.get("score")
     coeff = {c["country"]: c.get("coef") for c in hub.get("countries", [])}
-    return score, coeff
+    canon = {}
+    for l in hub.get("leagues", []):
+        for g in l.get("groups", []):
+            for r in g.get("rows", []):
+                lk = r.get("lookup") or r.get("name")
+                if lk:
+                    canon.setdefault(ntn(lk), lk)
+    return score, coeff, canon
+
+
+def canonical_name(bundle_name, canon_by_ntn):
+    """Bundle spelling -> Ashwin's canonical Lookup name, or None if unknown."""
+    if bundle_name in ALIAS:
+        return ALIAS[bundle_name]
+    return canon_by_ntn.get(ntn(bundle_name))
+
+
+def site_resolvable(name):
+    """Would lib/football getFootballClubByName resolve this exact string?
+    Mirrors its normalizeTeamName (lowercase, non-alnum -> space, NO accent
+    folding) against public/data/football/slug-lookup.json."""
+    sl = load_json(FOOT, "slug-lookup.json")
+    k = re.sub(r"[^a-z0-9]+", " ", (name or "").lower()).strip()
+    return k in sl
 
 
 def build_strengths(weights):
     """S per CL club key, z-scored within the CL 36 (the championship
     backtest's convention; tau was calibrated under it). Returns
     (S_by_key, cl_teams, cl_fixtures, resolution_table, warnings)."""
-    score_by_name, coeff_by_country = hub_features()
+    score_by_name, coeff_by_country, canon_by_ntn = hub_features()
     field = []          # (comp_id, key, name, country, score, log_coeff)
     cl_fixtures, cl_teams = None, None
     warnings = []
@@ -160,13 +209,19 @@ def build_strengths(weights):
         if lid == LEAGUE_ID:
             cl_fixtures, cl_teams = fixtures, teams
         for key, (name, country) in teams.items():
-            sc = score_by_name.get(ntn(name))
+            cname = canonical_name(name, canon_by_ntn)
+            if cname is None:
+                warnings.append(f"no canonical Lookup name for {name!r}; emitting raw api spelling")
+                cname = name
+            elif lid == LEAGUE_ID:
+                teams[key] = (cname, country)
+            sc = score_by_name.get(ntn(name)) or score_by_name.get(ntn(cname))
             cc = coeff_by_country.get(country) or coeff_by_country.get(
                 COUNTRY_ALIAS.get(country, country))
             if cc is None:
                 warnings.append(f"no country coefficient for {name!r} ({country}); skipped from field")
                 continue
-            field.append([lid, key, name, country, sc, math.log(max(cc, 0.5))])
+            field.append([lid, key, cname, country, sc, math.log(max(cc, 0.5))])
 
     # never guess UP: a club with no site score takes the field minimum
     known = [f[4] for f in field if f[4] is not None]
@@ -512,6 +567,18 @@ def self_test():
         check("weights artifact loads with expected features", True)
         S_real, teams, fixtures, table, warnings = build_strengths(weights)
         check("all 36 clubs carry a fitted strength", len(S_real) == 36)
+        # Invariant: every emitted name is either page-linked (slug-lookup
+        # resolves it -> the page shows cur_name + link) or is the canonical
+        # workbook Lookup spelling rendered as plain text (club has no page).
+        # A raw api spelling satisfies neither — that was the regression.
+        _, _, canon_map = hub_features()
+        offenders = [v[0] for v in teams.values()
+                     if not site_resolvable(v[0])
+                     and canon_map.get(ntn(v[0])) != v[0]
+                     and v[0] not in ALIAS.values()]
+        check("every emitted name is canonical (page-linked or Lookup spelling)"
+              + ("" if not offenders else f" — FAILING: {offenders}"),
+              offenders == [])
         check("strength field is centered (z-based)",
               abs(sum(S_real.values()) / len(S_real)) < 0.2)
         check("few or no feature warnings (never guess silently)", len(warnings) <= 3)
@@ -531,8 +598,20 @@ if __name__ == "__main__":
         S, teams, fixtures, table, warnings = build_strengths(weights)
         for msg in warnings:
             print("WARNING:", msg)
+        _, _, canon_map = hub_features()
+        bad = 0
         for name, country, sc, s in table:
-            print("%-30s %-14s score %.3f  S %+0.4f" % (name, country, sc, s))
+            if site_resolvable(name):
+                tag = "linked"
+            elif canon_map.get(ntn(name)) == name or name in ALIAS.values():
+                tag = "plain text (no club page)"
+            else:
+                tag = "<-- RAW API SPELLING, fix ALIAS"
+                bad += 1
+            print("%-30s %-14s score %.3f  S %+0.4f  %s" % (name, country, sc, s, tag))
+        if bad:
+            print(f"{bad} name(s) would render raw on the page — fix ALIAS")
+            sys.exit(1)
         sys.exit(0)
     sims = DEFAULT_SIMS
     if "--sims" in argv:
