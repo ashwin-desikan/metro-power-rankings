@@ -534,6 +534,7 @@ export default async function Home() {
                 {[
                   { href: '/elections/forecast', label: 'Elections', emoji: '🗳️' },
                   { href: '/predictions/pl', label: 'Premier League', emoji: '⚽' },
+                  { href: '/predictions/ucl', label: 'Champions League', emoji: '🏆' },
                   { href: '/predictions/nfl', label: 'NFL', emoji: '🏈' },
                   { href: '/predictions/cfb', label: 'College Football', emoji: '🏈' },
                   { href: '/predictions/mlb', label: 'MLB', emoji: '⚾' },
