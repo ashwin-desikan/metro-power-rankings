@@ -7,8 +7,12 @@
     "country": "Spain",
     "kind": "league",
     "continental": false,
-    "season": 2026,
-    "season_label": "2026-27"
+    "season": 2025,
+    "season_label": "2025-26",
+    "placeholder": true,
+    "watch_season": 2026,
+    "watch_season_label": "2026-27",
+    "_note": "2026-08-30: api served the completed 2025-26 table under season=2026 on kickoff day, so the site showed final 25-26 rows labelled 26-27. Placeholder+watch with the looks_fresh guard: swaps the moment the API resets to a genuinely current table."
   },
   {
     "league_id": 254,

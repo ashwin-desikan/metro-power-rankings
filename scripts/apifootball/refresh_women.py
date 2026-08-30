@@ -38,6 +38,24 @@ def log(m):
     print("[wfootball] " + m, flush=True)
 
 
+def looks_fresh(groups):
+    """True when a standings table plausibly belongs to a season in progress
+    (or just drawn) rather than a completed one carried over.
+
+    Guard born 2026-08-30: the day Liga F 2026-27 kicked off, api-football's
+    /standings?season=2026 served the COMPLETED 2025-26 table (every club at
+    30 of 30 games, Barcelona 84pts) under the new season id. A rows-exist
+    check would happily present last season's final table under a fresh
+    label. A genuinely current table always has someone short of the full
+    double round-robin; a carried-over final table has nobody."""
+    rows = [r for g in groups for r in g.get("rows", [])]
+    if not rows:
+        return False
+    n = len(rows)
+    full = 2 * (n - 1) if n > 1 else 1
+    return any((r.get("played") or 0) < full for r in rows)
+
+
 def pick_effective(entry, watch_has_rows, base_has_rows):
     """Decide which season a league entry should show.
 
@@ -88,7 +106,9 @@ def fetch_standings(entry, akey):
         if not (doc.get("_error") or doc.get("errors")):
             rows, teams = parse_standings(doc, lid, entry["watch_season"])
             watch_groups = group_rows(rows, teams)
-            watch_has = any(g["rows"] for g in watch_groups)
+            # rows alone are not enough: a carried-over final table under the
+            # new season id must NOT trigger the swap (see looks_fresh)
+            watch_has = any(g["rows"] for g in watch_groups) and looks_fresh(watch_groups)
         time.sleep(0.2)
     if watch_has:
         season, label, placeholder = pick_effective(entry, True, True)
@@ -157,9 +177,22 @@ def selftest():
            "watch_season": 2026, "watch_season_label": "2026-27"}
     assert pick_effective(wsl, watch_has_rows=False, base_has_rows=True) == (2025, "2025-26", True)
     assert pick_effective(wsl, watch_has_rows=True, base_has_rows=True) == (2026, "2026-27", False)
-    ligaf = {"season": 2026, "season_label": "2026-27"}
-    assert pick_effective(ligaf, False, True) == (2026, "2026-27", False)
-    assert pick_effective(ligaf, True, False) == (2026, "2026-27", False)  # no watch_season -> base
+    ligaf = {"season": 2025, "season_label": "2025-26", "placeholder": True,
+             "watch_season": 2026, "watch_season_label": "2026-27"}
+    assert pick_effective(ligaf, False, True) == (2025, "2025-26", True)
+    assert pick_effective(ligaf, True, True) == (2026, "2026-27", False)
+    nwsl = {"season": 2026, "season_label": "2026"}
+    assert pick_effective(nwsl, False, True) == (2026, "2026", False)
+    assert pick_effective(nwsl, True, False) == (2026, "2026", False)  # no watch_season -> base
+
+    # looks_fresh: the carried-over-final-table guard (Liga F, 2026-08-30)
+    stale = [{"group_label": "", "rows": [{"played": 30}] * 16}]       # 16 clubs, 30/30 games
+    fresh0 = [{"group_label": "", "rows": [{"played": 0}] * 12}]        # drawn, unplayed
+    mid = [{"group_label": "", "rows": [{"played": 30}] * 15 + [{"played": 2}]}]
+    assert not looks_fresh(stale), "completed table must not read as fresh"
+    assert looks_fresh(fresh0), "a zeros table is a fresh season"
+    assert looks_fresh(mid), "any club short of the full schedule = in progress"
+    assert not looks_fresh([]), "no rows is not fresh"
 
     # standings grouping + raw-name mapping (reusing the men's parser)
     sdoc = {"response": [{"league": {"standings": [[

@@ -6987,3 +6987,38 @@ Arsenal 13.0; Sporting 12.8 -> 1.3); /predictions/ucl model notes rewritten
 ("fitted, not asserted"); index blurb updated. npm run verify green.
 Research exports live in ~/research on the cloud box (re-export queries in
 the study docstring); not committed (4.6MB, derived from Supabase).
+
+## 2026-08-30 — cloud/windows: Lookup synced (holds retired), women's season guard
+
+**Lookup sync (cl-lookup-sync protocol, hash-diff):** one country differed
+(Greece): 2 CHANGEs applied via Supabase MCP — Apollon Kalamarias (api_name
+'Apollon Pontou') and PAS Pyrgos (api_name 'Pyrgos 1968'), Ashwin's new Super
+League 2 mappings. Full-table verify: 9,956 rows, hash a33fe419 identical on
+both sides WITH NO EXCLUSIONS — meaning both protected holds (San Martín de
+San Juan, Estudiantes de Mérida) retired themselves: Ashwin fixed the
+workbook cells. protected_rows.json emptied (entries moved to a 'retired'
+log). The cl-lookup-sync skill's step-5 exclusions are now unnecessary until
+a new hold exists.
+
+**WSL / Liga F 'stuck on last season' — root causes verified LIVE against
+api-football (probe from the Windows box, key untouched by the session):**
+- WSL (44): api lists 2026-27 as current (starts 04 Sep) but /standings is
+  EMPTY — nothing published yet. Our auto-watch already probes daily and
+  swaps at first publication. No fault, no change.
+- Liga F (142): api serves the COMPLETED 2025-26 table (Barcelona 84pts,
+  30/30 games) under season=2026 on kickoff day — upstream rollover lag. Our
+  bundle was relabelling last season's final table as 2026-27.
+  FIX: refresh_women.py gains looks_fresh() — a watch/new-season table where
+  every club has completed the full double round-robin is a carried-over
+  final table and must NOT be presented as the new season. Liga F moved to
+  the same placeholder+watch pattern as the WSL (base 2025-26, watch 2026).
+  Self-test extended (looks_fresh cases); live dry run on the Windows box
+  confirms: 'Liga F: 16 rows [2025-26] PLACEHOLDER'. Both leagues now swap
+  automatically the moment api publishes a genuinely current table.
+
+NOTE the dependency: the mini's daily run uses the OLD refresh_women.py until
+this pushes, so the Liga F mislabel returns nightly until then. The v2 UCL
+commit (5fb4e427) is also still held locally (cloud + Windows clones both
+carry it; Ashwin reviewing). One push releases both. Windows working tree
+carries copies of the two changed apifootball files (content-identical to
+this commit; will reconcile cleanly on pull).
