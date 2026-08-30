@@ -476,3 +476,27 @@ command = "run-mktcap-refresh.sh"
 hc_slug = "mktcap-refresh"
 catchup_hours = 24              # weekly cadence
 timeout_minutes = 20
+
+# --- daily-ops-sweep: NEW 2026-08-30. Report-only, no writes. --------------
+# Commissioned after Ashwin had to separately name several same-morning ntfy
+# alerts before any got investigated. Runs headless Claude Code once daily
+# (01:00 UTC, after the last of the previous day's evening jobs and before
+# the next day's early cluster starts at 02:30) to pull the full trailing-26h
+# RUN/DONE/FAIL list from dispatcher.log plus every individual job log's own
+# push() alerts, investigate root cause for each (cross-reference HANDOFF,
+# check if a later run already self-healed it, WebSearch for anything
+# fact-dependent), and write ONE report file + push ONE consolidated ntfy
+# digest. Deliberately does NOT re-run jobs, ping healthchecks, or write to
+# any table -- Ashwin's explicit call (2026-08-30), made right after two
+# build-triggering commits went out today without a heads-up first. An
+# unattended daily job acting on its own judgment against production is the
+# same risk category, just recurring. See run-daily-ops-sweep.sh's own
+# header for the full scope reasoning.
+[[job]]
+id = "daily-ops-sweep"
+label = "Daily ops sweep (report-only)"
+time = "01:00"
+command = "run-daily-ops-sweep.sh"
+hc_slug = "daily-ops-sweep"
+catchup_hours = 20
+timeout_minutes = 25         # was 15 -- the real first run got killed at 15m mid-investigation
