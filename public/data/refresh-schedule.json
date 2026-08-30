@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T11:20:20.454338+00:00",
+  "generated_at": "2026-08-30T11:44:30.932891+00:00",
   "jobs": [
     {
       "id": "mlb-sim",
@@ -69,6 +69,24 @@
         "date": "2026-08-23",
         "status": "ok",
         "slot": "2026-08-23T23:40:00+00:00"
+      }
+    },
+    {
+      "id": "daily-ops-sweep",
+      "label": "Daily ops sweep (report-only)",
+      "schedule_text": "Daily at 01:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "01:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-31T01:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-30",
+        "status": "timeout",
+        "slot": "2026-08-30T01:00:00+00:00"
       }
     },
     {
