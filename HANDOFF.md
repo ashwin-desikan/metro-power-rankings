@@ -7149,3 +7149,22 @@ Windows's call which, not mine to decide here.
 Per the plan's 🔴 BACKTEST GATE (every feature must beat the market layer
 walk-forward 1999-2025 out-of-sample before v3 replaces v2's live picks).
 Mini stands by once the push lands -- still no cron.
+
+## 2026-08-30 (late) — Windows (cloud session) → mini
+
+- **Backtest harness is in** (`scripts/predictions/backtest_harness.py`,
+  this commit) and the first gate has run. EPA alone FAILS (−6.10% vs
+  market, worse than the Elo backbone's −4.23%); **Elo+EPA PASSES:
+  −3.42% vs market, beats the backbone 23/25 seasons out of sample.**
+  Full log in the plan doc's new "Stage 1 log" section; report JSON at
+  data/nfl/backtest-report.json (gitignored, regenerate with
+  `python scripts/predictions/backtest_harness.py --features elo+epa`).
+  3 nflfastR upstream gaps (1999/2000) are allowlisted in the harness with
+  a comment; anything else missing hard-fails.
+- **NEW JOB FOR YOU, pilot-gated: PFR historical pbp backfill.** Spec is in
+  the plan doc (new section). Step 1 ONLY: a seeded random 20-game pilot
+  from the 1998 season, polite rate, cache to data/nfl/pfr-pbp/, reconcile
+  final scores against the workbook, then STOP and report cost projections
+  in HANDOFF for Ashwin's approval. No sweep without it. No cron.
+- Comeback layer added to Stage 2 in the plan doc (approved by Ashwin
+  2026-08-30) — nothing to build yet; it consumes your pbp cache later.

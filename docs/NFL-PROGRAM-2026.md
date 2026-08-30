@@ -44,6 +44,42 @@ against-expectation recap; metro dossier block on /rankings/[slug];
 /how-we-grade method + audit page; Substack serial "A season against the
 closing line" + the deferred home-advantage essay.
 
+## Stage 2 addendum (agreed 2026-08-30 evening) — the Comeback layer
+
+Play-by-play-derived: largest deficit overcome per franchise and per metro,
+plus the conditional ceiling by clock state (the largest deficit ever
+overcome from each point in the game). Distributed per the
+metrics-board-is-not-a-page rule: claims on team and metro pages, one deep
+dive, and an in-season "comeback watch" row on the predictions hub (current
+deficit vs the historical win rate at that clock state). Covers 1999-2025
+from the nflverse cache now; extends season by season as the PFR backfill
+(below) lands. Inspiration: comebackceiling.com (Jed Christiansen) — the
+conditional-ceiling framing is the borrowed idea; metro rollups, the century
+of pregame expectation and live picks integration are ours.
+
+## PFR historical pbp backfill (mini job, approved to PILOT 2026-08-30)
+
+Sports Reference digitized official gamebooks: PFR now carries full
+play-by-play back to 1977 (expanded Aug 2025, extended to 1977 Aug 2026).
+No alternates exist in the open (nflverse starts 1999, ESPN early 2000s,
+Armchair 2000+ paid); PFR is the source. The job, in tranches:
+
+1. Seeded RANDOM pilot: 20 games from 1998, to validate the parser and
+   measure PFR's throttle tolerance. STOP after the pilot, project the
+   full cost, get Ashwin's approval before any sweep (budget-gate rule).
+2. Tranche one: the full 1998 season (~250 games incl. playoffs).
+3. Backward sweep 1997 -> 1977, one season per tranche.
+
+Rules: polite rate (PFR throttles and bans aggressive scrapers), resumable,
+never re-fetch a cached game; cache to gitignored data/nfl/pfr-pbp/ as one
+parquet per season; reconcile every scraped game's final score against the
+workbook's rows for that season, mismatches surface and hard-stop, never
+auto-repair. Fallback if a game's pbp is patchy: its scoring summary alone
+still supports the comeback layer (deficits only change on scores).
+In parallel, one courtesy email to Jed Christiansen asking for his compiled
+dataset costs nothing. This backfill serves content, not the model: the
+backtest gate stays 1999-2025 on nflverse.
+
 ## Stage 3 — picks deepened (Weeks 6-12)
 
 Visible difficulty multipliers priced off market prob; four leaderboards
@@ -62,6 +98,25 @@ is stale, and staleness is surfaced, never papered over.
 Source cadences: pbp nightly (raw ~15 min post-final, cleanest Thu);
 rosters + depth charts daily 07:00 UTC; snap counts 0/6/12/18 UTC (PFR);
 schedules every 5 min.
+
+## Stage 1 log
+
+- 2026-08-30: nflverse ETL SHIPPED (`6e64c365f`, mini). pbp 1999-2025 +
+  current, rosters/depth_charts/snap_counts current-season-only, injuries
+  excluded. RULING: current-season-only scope for the three live feeds
+  stands; historical QB starts derive from pbp (approximation on record:
+  slightly flatters the model on surprise scratches).
+- 2026-08-30: BACKTEST HARNESS landed (`scripts/predictions/backtest_harness.py`).
+  Walk-forward 2001-2025, graded on market-priced games only; empirical
+  abbrev->franchise mapping with a hard 1:1 reconciliation (7,273 games,
+  scores agree; 3 documented nflfastR gaps allowlisted, all pre-2001).
+  GATE 1 RESULT: EPA alone −6.10% vs market — FAILS. Elo re-expressed
+  through the harness logistic −4.08%. **Elo+EPA −3.42% vs market, beats
+  the Elo backbone in 23 of 25 seasons out of sample — PASSES as an
+  increment.** EPA enters points-v3 as a feature beside the backbone,
+  never instead of it. Next gated candidates: hyperparameters (tuned
+  honestly: tune window 2001-2012, validate 2013-2025), the QB layer,
+  then rest/travel/weather.
 
 ## Calendar
 
