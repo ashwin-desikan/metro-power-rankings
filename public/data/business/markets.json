@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated_at": "2026-08-29T05:51:43Z",
-  "as_of": "2026-08-29",
+  "generated_at": "2026-08-30T05:56:15Z",
+  "as_of": "2026-08-30",
   "source": "Yahoo Finance chart API",
   "indices": 13,
   "commodities": 6,
@@ -196,8 +196,8 @@
    "symbol": "BTC-USD",
    "name": "Bitcoin",
    "unit": "USD/BTC",
-   "value": 77661.26,
-   "date": "2026-08-29"
+   "value": 78115.01,
+   "date": "2026-08-30"
   }
  ]
 }
