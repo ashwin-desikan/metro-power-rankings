@@ -23,8 +23,14 @@ MODEL (points-v2, "site data + market"):
     ignored (~0.4% of NFL games; documented approximation).
   - The REAL 2026 schedule (all 272 games, ESPN per-team schedules) is
     simulated 20k times with per-season rating noise SIGMA_SEASON. Division
-    winners by record (head-to-head inside the sim, then random, standing in
-    for the full tie-break ladder); seeds 1-7 per conference; the actual
+    winners and seeds via the OFFICIAL tie-break ladder's win-based steps
+    (h2h with the 3+-club sweep rule, division, common games incl. the
+    wild-card minimum-4 clause, conference, strength of victory, strength
+    of schedule, in the official order; the points-based steps that follow
+    them are beyond a win-only sim, so a tie surviving SOS falls to random
+    -- the documented approximation, replacing the old wins->h2h->random).
+    Full score-based ladders live in nfl_standings.py (golden-tested
+    against GSIS's 2025 standings). Seeds 1-7 per conference; the actual
     bracket (2v7 3v6 4v5, 1-seed bye, reseeded divisional, championship,
     neutral-site Super Bowl).
 
@@ -360,13 +366,123 @@ def _tally():
     return {"wins": 0.0, "division": 0, "playoffs": 0, "conf": 0, "sb": 0, "seed1": 0}
 
 
-def rank_division(teams, wins, h2h, rng):
-    """Order a division: wins, head-to-head wins inside the tied group,
-    random. An approximation of the full tie-break ladder."""
-    def key(t):
-        return -wins[t]
-    ts = sorted(teams, key=lambda t: (key(t), rng.random()))
-    # refine full ties with h2h among the tied set
+# ---- the official tie-break ladder, win-based steps ----------------------
+# Points-based steps (combined PF/PA ranks, net points, net TDs) need scores
+# a win-only sim does not have; a tie surviving SOS falls to rng. The
+# score-based ladders live in nfl_standings.py (golden-tested vs GSIS 2025).
+
+def _rec_pct(t, opps, h2h, meetings):
+    g = sum(meetings[t].get(u, 0) for u in opps)
+    if g == 0:
+        return None
+    return sum(h2h[t].get(u, 0) for u in opps) / g
+
+
+def _ladder_steps(kind, tied, wins, h2h, meetings):
+    """Yields (name, {team: value}) in the OFFICIAL order; higher wins.
+    A step where no club has a value yields None values throughout."""
+    tied_set = set(tied)
+    if kind == "division" or len(tied) == 2:
+        yield "h2h", {t: _rec_pct(t, tied_set - {t}, h2h, meetings) for t in tied}
+    else:
+        # wild card, 3+ clubs: h2h applies only to a sweep either way
+        vals = {}
+        for t in tied:
+            others = tied_set - {t}
+            if not all(meetings[t].get(u, 0) for u in others):
+                vals[t] = None
+                continue
+            g = sum(meetings[t].get(u, 0) for u in others)
+            w = sum(h2h[t].get(u, 0) for u in others)
+            vals[t] = 1.0 if w == g else (-1.0 if w == 0 else None)
+        yield "h2h-sweep", vals
+    if kind == "division":
+        yield "division", {
+            t: _rec_pct(t, set(DIVISIONS[TEAM_DIV[t]]) - {t}, h2h, meetings)
+            for t in tied}
+    common = set.intersection(
+        *[{u for u, n in meetings[t].items() if n > 0} - tied_set for t in tied])
+    conf_steps = []
+    if kind == "division":
+        conf_steps.append(("common", common, 0))
+        conf_steps.append(("conference", None, 0))
+    else:
+        conf_steps.append(("conference", None, 0))
+        conf_steps.append(("common", common, 4))   # wild card: minimum 4
+    for name, opps, min_games in conf_steps:
+        if name == "conference":
+            yield name, {
+                t: _rec_pct(t, {u for u in meetings[t]
+                                if TEAM_CONF[u] == TEAM_CONF[t]}, h2h, meetings)
+                for t in tied}
+        else:
+            if min_games and not all(
+                    sum(meetings[t].get(u, 0) for u in opps) >= min_games
+                    for t in tied):
+                continue
+            yield name, {t: _rec_pct(t, opps, h2h, meetings) for t in tied}
+    yield "sov", {
+        t: (sum(h2h[t].get(u, 0) * wins[u] for u in h2h[t]) /
+            (17.0 * max(1, sum(h2h[t].values())))) for t in tied}
+    yield "sos", {
+        t: sum(n * wins[u] for u, n in meetings[t].items()) / (17.0 * 17.0)
+        for t in tied}
+
+
+def ladder_pick(kind, tied, wins, h2h, meetings, rng):
+    """Best club among an exactly-tied group. 3+ clubs restart the ladder
+    whenever a step eliminates anyone, per the official procedure."""
+    tied = list(tied)
+    while len(tied) > 1:
+        progressed = False
+        for name, vals in _ladder_steps(kind, tied, wins, h2h, meetings):
+            usable = {t: v for t, v in vals.items() if v is not None}
+            if len(usable) < len(tied):
+                if name == "h2h-sweep" and usable:
+                    if list(usable.values()).count(1.0) == 1:
+                        return next(t for t, v in usable.items() if v == 1.0)
+                    dropped = [t for t, v in usable.items() if v == -1.0]
+                    if dropped and len(dropped) < len(tied):
+                        tied = [t for t in tied if t not in dropped]
+                        progressed = True
+                        break
+                continue
+            best = max(usable.values())
+            leaders = [t for t, v in usable.items() if v >= best - 1e-12]
+            if len(leaders) == 1:
+                return leaders[0]
+            if len(leaders) < len(tied):
+                tied = leaders
+                progressed = True
+                break
+        if not progressed:
+            return tied[rng.randrange(len(tied))]   # coin-toss territory
+    return tied[0]
+
+
+def ladder_order(teams, kind, wins, h2h, meetings, rng):
+    """Order an exactly-tied group, best first. Wild-card ordering reduces
+    division-mates through the division ladder first, per the rules."""
+    remaining = list(teams)
+    out = []
+    while len(remaining) > 1:
+        pool = remaining
+        if kind == "wildcard":
+            by_div = {}
+            for t in remaining:
+                by_div.setdefault(TEAM_DIV[t], []).append(t)
+            pool = [ts[0] if len(ts) == 1 else
+                    ladder_pick("division", ts, wins, h2h, meetings, rng)
+                    for ts in by_div.values()]
+        w = ladder_pick(kind, pool, wins, h2h, meetings, rng)
+        out.append(w)
+        remaining.remove(w)
+    out.extend(remaining)
+    return out
+
+
+def _order_by_wins(teams, kind, wins, h2h, meetings, rng):
+    ts = sorted(teams, key=lambda t: -wins[t])
     out = []
     i = 0
     while i < len(ts):
@@ -374,21 +490,20 @@ def rank_division(teams, wins, h2h, rng):
         while j < len(ts) and wins[ts[j]] == wins[ts[i]]:
             j += 1
         group = ts[i:j]
-        if len(group) > 1:
-            # `members` MUST be a separate list: CPython's list.sort() empties
-            # the list while computing keys, so a key closing over `group`
-            # itself sees an empty list, every h2h sum is 0, and the tie-break
-            # silently degrades to the random fallback. This shipped broken;
-            # the check below passed only by luck of the seed. Found while
-            # porting this helper to build_mlb_sim.py (2026-08-04).
-            members = list(group)
-            group.sort(key=lambda t: (-sum(h2h[t].get(u, 0) for u in members if u != t), rng.random()))
-        out.extend(group)
+        if len(group) == 1:
+            out.extend(group)
+        else:
+            out.extend(ladder_order(group, kind, wins, h2h, meetings, rng))
         i = j
     return out
 
 
-def playoff_field(wins, h2h, rng):
+def rank_division(teams, wins, h2h, meetings, rng):
+    """Order a division: wins, then the official win-based ladder."""
+    return _order_by_wins(teams, "division", wins, h2h, meetings, rng)
+
+
+def playoff_field(wins, h2h, meetings, rng):
     """{conf: [seed1..seed7]} from a simulated regular season."""
     field = {}
     for conf in ("AFC", "NFC"):
@@ -396,11 +511,11 @@ def playoff_field(wins, h2h, rng):
         for div, ts in DIVISIONS.items():
             if not div.startswith(conf):
                 continue
-            order = rank_division(ts, wins, h2h, rng)
+            order = rank_division(ts, wins, h2h, meetings, rng)
             champs.append(order[0])
             rest.extend(order[1:])
-        champs.sort(key=lambda t: (-wins[t], rng.random()))
-        rest.sort(key=lambda t: (-wins[t], rng.random()))
+        champs = _order_by_wins(champs, "wildcard", wins, h2h, meetings, rng)
+        rest = _order_by_wins(rest, "wildcard", wins, h2h, meetings, rng)
         field[conf] = champs + rest[:3]
     return field
 
@@ -436,7 +551,17 @@ def run_playoffs(field, r, rng):
     return a, n, sb
 
 
-def simulate(ratings, schedule, base_wins, played_h2h, sims, seed=2026):
+def schedule_meetings(schedule):
+    """{team: {opp: games}} from the full 272-game schedule (played and
+    remaining alike) -- the static pairing counts the ladder needs."""
+    m = {t: {} for t in TEAMS}
+    for _gid, _d, h, a in schedule:
+        m[h][a] = m[h].get(a, 0) + 1
+        m[a][h] = m[a].get(h, 0) + 1
+    return m
+
+
+def simulate(ratings, schedule, base_wins, played_h2h, sims, meetings, seed=2026):
     rng = random.Random(seed)
     acc = {t: _tally() for t in TEAMS}
     for _ in range(sims):
@@ -451,7 +576,7 @@ def simulate(ratings, schedule, base_wins, played_h2h, sims, seed=2026):
             else:
                 wins[a] += 1
                 h2h[a][h] = h2h[a].get(h, 0) + 1
-        field = playoff_field(wins, h2h, rng)
+        field = playoff_field(wins, h2h, meetings, rng)
         afc, nfc, sb = run_playoffs(field, r, rng)
         for conf in ("AFC", "NFC"):
             s = field[conf]
@@ -562,6 +687,7 @@ def build(sims, today=None):
         print("note: schedule has %d games (272 expected)" % len(schedule))
     played_ids = {r[0] for r in results}
     remaining = [(gid, d, h, a) for gid, d, h, a in schedule if gid not in played_ids]
+    meetings = schedule_meetings(schedule)
 
     base_wins = {t: 0 for t in TEAMS}
     played_h2h = {t: {} for t in TEAMS}
@@ -582,7 +708,8 @@ def build(sims, today=None):
     mkt_probs, mkt_provider = fetch_sb_futures()
     market_note = "model-only (no futures available)"
     if mkt_probs:
-        pre = simulate(ratings, remaining, base_wins, played_h2h, CALIB_SIMS, seed=99)
+        pre = simulate(ratings, remaining, base_wins, played_h2h, CALIB_SIMS,
+                       meetings, seed=99)
         pre_acc = pre[1] if isinstance(pre, tuple) else pre
         pairs = []
         for t in TEAMS:
@@ -600,7 +727,7 @@ def build(sims, today=None):
             market_note = "blended (weight %.2f, %s futures, 32 teams)" % (
                 MARKET_W_SEASON, mkt_provider or "book")
 
-    acc = simulate(ratings, remaining, base_wins, played_h2h, sims)
+    acc = simulate(ratings, remaining, base_wins, played_h2h, sims, meetings)
 
     table = []
     for t in TEAMS:
@@ -677,17 +804,59 @@ def self_test():
     # division ranking: wins first, then h2h inside the tie
     rng = random.Random(3)
     ts = DIVISIONS["AFC East"]
-    wins = {"Buffalo Bills": 11, "Miami Dolphins": 11, "New England Patriots": 9, "New York Jets": 4}
+    wins = {t: 0 for t in TEAMS}
+    wins.update({"Buffalo Bills": 11, "Miami Dolphins": 11,
+                 "New England Patriots": 9, "New York Jets": 4})
     h2h = defaultdict(dict, {"Miami Dolphins": {"Buffalo Bills": 2}, "Buffalo Bills": {"Miami Dolphins": 0}})
-    order = rank_division(ts, wins, h2h, rng)
+    mt = {t: {} for t in TEAMS}
+    mt["Miami Dolphins"]["Buffalo Bills"] = mt["Buffalo Bills"]["Miami Dolphins"] = 2
+    order = rank_division(ts, wins, h2h, mt, rng)
     check("div-tiebreak", order[0] == "Miami Dolphins" and order[-1] == "New York Jets")
+    # ladder: division record decides when h2h is split
+    h2h2 = defaultdict(dict, {
+        "Buffalo Bills": {"Miami Dolphins": 1, "New England Patriots": 2, "New York Jets": 2},
+        "Miami Dolphins": {"Buffalo Bills": 1, "New England Patriots": 2, "New York Jets": 1}})
+    mt2 = {t: {} for t in TEAMS}
+    for a, b in (("Buffalo Bills", "Miami Dolphins"), ("Buffalo Bills", "New England Patriots"),
+                 ("Buffalo Bills", "New York Jets"), ("Miami Dolphins", "New England Patriots"),
+                 ("Miami Dolphins", "New York Jets")):
+        mt2[a][b] = 2
+        mt2[b][a] = 2
+    check("ladder-division-step",
+          ladder_pick("division", ["Buffalo Bills", "Miami Dolphins"],
+                      wins, h2h2, mt2, rng) == "Buffalo Bills")
+    # ladder: wild-card sweep rule (3+ clubs, one beat both others)
+    h2h3 = defaultdict(dict, {"Pittsburgh Steelers": {"Denver Broncos": 1, "Houston Texans": 1}})
+    mt3 = {t: {} for t in TEAMS}
+    for a, b in (("Pittsburgh Steelers", "Denver Broncos"),
+                 ("Pittsburgh Steelers", "Houston Texans"),
+                 ("Denver Broncos", "Houston Texans")):
+        mt3[a][b] = mt3[b][a] = 1
+    h2h3["Denver Broncos"]["Houston Texans"] = 1
+    check("ladder-wc-sweep",
+          ladder_pick("wildcard", ["Pittsburgh Steelers", "Denver Broncos",
+                                   "Houston Texans"], wins, h2h3, mt3, rng)
+          == "Pittsburgh Steelers")
+    # ladder: strength of victory decides when nothing earlier separates
+    wins4 = {t: 0 for t in TEAMS}
+    wins4["Kansas City Chiefs"] = 14
+    wins4["New York Jets"] = 4
+    h2h4 = defaultdict(dict, {"Pittsburgh Steelers": {"Kansas City Chiefs": 1},
+                              "Denver Broncos": {"New York Jets": 1}})
+    mt4 = {t: {} for t in TEAMS}
+    mt4["Pittsburgh Steelers"]["Kansas City Chiefs"] = mt4["Kansas City Chiefs"]["Pittsburgh Steelers"] = 1
+    mt4["Denver Broncos"]["New York Jets"] = mt4["New York Jets"]["Denver Broncos"] = 1
+    check("ladder-sov",
+          ladder_pick("wildcard", ["Pittsburgh Steelers", "Denver Broncos"],
+                      wins4, h2h4, mt4, rng) == "Pittsburgh Steelers")
     # playoff field: 7 per conference, division winners seeded 1-4
     rng = random.Random(4)
     wins = {t: 8 for t in TEAMS}
     wins["Kansas City Chiefs"] = 14
     wins["Buffalo Bills"] = 13
     h2h = {t: {} for t in TEAMS}
-    field = playoff_field(wins, h2h, rng)
+    mt = {t: {} for t in TEAMS}
+    field = playoff_field(wins, h2h, mt, rng)
     check("field-7", len(field["AFC"]) == 7 and len(field["NFC"]) == 7)
     check("field-seed1", field["AFC"][0] == "Kansas City Chiefs")
     check("field-div-first", all(len({TEAM_DIV[t] for t in field[c][:4]}) == 4 for c in field))
@@ -751,7 +920,7 @@ def self_test():
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (21 cases)")
+    print("self-test OK (24 cases)")
 
 
 def main():

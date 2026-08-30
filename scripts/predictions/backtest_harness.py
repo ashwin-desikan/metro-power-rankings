@@ -61,9 +61,13 @@ PBP_FIRST = 1999          # nflfastR's earliest season
 FIRST_GRADED = 2001       # 1999-2000 are burn-in: features exist, no grade
 LAST_SEASON = 2025
 
-# Rating hyperparameters (gate 1 defaults; every change re-runs the gate)
-DECAY = 0.95              # per team-game EMA decay (half-life ~13.5 games)
-ROLLOVER = 0.65           # season boundary: rating *= ROLLOVER toward mean
+# Rating hyperparameters. Tuned 2026-08-30 on the honest split: 3x3 grid
+# on 2001-2012 only, single validation on 2013-2025 (-3.50% vs the initial
+# 0.95/0.65's -3.69%). A finer grid corner (0.85/0.30) won the tune window
+# and LOST validation (-3.60%) -- overfitting, rejected. Every change here
+# re-runs the gate on the same split.
+DECAY = 0.90              # per team-game EMA decay (half-life ~6.6 games)
+ROLLOVER = 0.50           # season boundary: rating *= ROLLOVER toward mean
 MIN_GAMES = 4             # a team below this many observed games predicts 0
 
 # nflfastR's documented upstream gaps: these games exist in the ledger and

@@ -157,6 +157,26 @@ schedules every 5 min.
   1981-98); era alignments come from Year by Year, and today's ladder is
   for ANALYSIS only -- never re-adjudicate a historical seed.
 
+- 2026-08-30 (night): TWO MORE STAGE 1 BRICKS.
+  (a) THE SIM RUNS THE OFFICIAL LADDER: build_nfl_sim.py's
+  wins->h2h->random tiebreaks replaced with the official win-based ladder
+  (h2h with the 3+-club sweep rule, division, common games incl. the
+  wild-card minimum-4 clause, conference, SOV, SOS, official order for
+  both ladders; division-mate reduction on wild cards; ties surviving SOS
+  fall to rng -- the points-based steps need scores a win-only sim lacks,
+  documented). Self-test grew 21 -> 24 cases (division step, sweep rule,
+  SOV decision).
+  (b) HYPERPARAMETERS TUNED HONESTLY: 3x3 grid on 2001-2012 ONLY, one
+  validation on 2013-2025. Adopted decay=0.90, rollover=0.50 (validation
+  -3.50% vs -3.69% for the old 0.95/0.65). A finer grid corner (0.85/0.30)
+  won the tune window and LOST validation (-3.60%): overfitting, rejected
+  -- the split doing its job. Sweep tooling: data/nfl/sweep_hparams.py
+  (gitignored).
+  FULL-WINDOW HEADLINE after both: **Elo+EPA -3.15% vs market over
+  2001-2025 (was -3.42% at old defaults; backbone -4.23%), beats the
+  backbone 24/25 seasons out of sample.** Next levers, in gate order:
+  the QB layer, then rest/travel/weather.
+
 ## Calendar
 
 Kickoff Wed 2026-09-09 (NE at SEA). v3 shadow from Week 1 if ETL + harness
