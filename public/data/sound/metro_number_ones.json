@@ -1,7 +1,7 @@
 {
  "los-angeles": {
   "metro": "Los Angeles",
-  "count": 216,
+  "count": 217,
   "number_ones": [
    {
     "single": "Poor Little Fool",
@@ -1204,6 +1204,12 @@
     "year": 2021
    },
    {
+    "single": "Leave the Door Open",
+    "artist": "Anderson .Paak",
+    "charts": "US",
+    "year": 2021
+   },
+   {
     "single": "Peaches",
     "artist": "Giveon",
     "charts": "US",
@@ -1315,7 +1321,7 @@
  },
  "new-york": {
   "metro": "New York",
-  "count": 285,
+  "count": 287,
   "number_ones": [
    {
     "single": "Little Star",
@@ -2926,7 +2932,19 @@
     "year": 2017
    },
    {
+    "single": "Eastside",
+    "artist": "Halsey",
+    "charts": "UK",
+    "year": 2018
+   },
+   {
     "single": "Girls Like You",
+    "artist": "Cardi B",
+    "charts": "US",
+    "year": 2018
+   },
+   {
+    "single": "I Like It",
     "artist": "Cardi B",
     "charts": "US",
     "year": 2018
@@ -5155,7 +5173,7 @@
  },
  "atlanta": {
   "metro": "Atlanta",
-  "count": 74,
+  "count": 77,
   "number_ones": [
    {
     "single": "I Want to Be Wanted",
@@ -5548,6 +5566,12 @@
     "year": 2019
    },
    {
+    "single": "Franchise",
+    "artist": "Young Thug",
+    "charts": "US",
+    "year": 2020
+   },
+   {
     "single": "Lemonade",
     "artist": "Gunna",
     "charts": "UK",
@@ -5563,6 +5587,18 @@
     "single": "Montero (Call Me by Your Name)",
     "artist": "Lil Nas X",
     "charts": "UK / US",
+    "year": 2021
+   },
+   {
+    "single": "Way 2 Sexy",
+    "artist": "Future",
+    "charts": "US",
+    "year": 2021
+   },
+   {
+    "single": "Way 2 Sexy",
+    "artist": "Young Thug",
+    "charts": "US",
     "year": 2021
    },
    {
@@ -6463,7 +6499,7 @@
  },
  "dallas": {
   "metro": "Dallas",
-  "count": 20,
+  "count": 21,
   "number_ones": [
    {
     "single": "Hey! Baby",
@@ -6553,6 +6589,12 @@
     "single": "Solo",
     "artist": "Demi Lovato",
     "charts": "UK",
+    "year": 2018
+   },
+   {
+    "single": "Sunflower",
+    "artist": "Post Malone",
+    "charts": "US",
     "year": 2018
    },
    {
@@ -6799,7 +6841,7 @@
  },
  "london": {
   "metro": "London",
-  "count": 582,
+  "count": 583,
   "number_ones": [
    {
     "single": "Hoots Mon",
@@ -10138,6 +10180,12 @@
     "year": 2019
    },
    {
+    "single": "Franchise",
+    "artist": "M.I.A.",
+    "charts": "US",
+    "year": 2020
+   },
+   {
     "single": "Head & Heart",
     "artist": "Joel Corry",
     "charts": "UK",
@@ -11995,7 +12043,7 @@
  },
  "washington-baltimore": {
   "metro": "Washington-Baltimore",
-  "count": 18,
+  "count": 19,
   "number_ones": [
    {
     "single": "I Heard It Through the Grapevine",
@@ -12098,6 +12146,12 @@
     "artist": "Mario",
     "charts": "US",
     "year": 2004
+   },
+   {
+    "single": "Eastside",
+    "artist": "Benny Blanco",
+    "charts": "UK",
+    "year": 2018
    },
    {
     "single": "A Bar Song (Tipsy)",
@@ -13825,7 +13879,7 @@
  },
  "honolulu": {
   "metro": "Honolulu",
-  "count": 14,
+  "count": 15,
   "number_ones": [
    {
     "single": "If I Can't Have You",
@@ -13898,6 +13952,12 @@
     "artist": "Bruno Mars",
     "charts": "US",
     "year": 2017
+   },
+   {
+    "single": "Leave the Door Open",
+    "artist": "Bruno Mars",
+    "charts": "US",
+    "year": 2021
    },
    {
     "single": "Die with a Smile",
@@ -14959,7 +15019,7 @@
  },
  "san-juan": {
   "metro": "San Juan",
-  "count": 4,
+  "count": 5,
   "number_ones": [
    {
     "single": "Livin' la Vida Loca",
@@ -14978,6 +15038,12 @@
     "artist": "Daddy Yankee",
     "charts": "UK / US",
     "year": 2017
+   },
+   {
+    "single": "I Like It",
+    "artist": "Bad Bunny",
+    "charts": "US",
+    "year": 2018
    },
    {
     "single": "DTMF",
@@ -15667,13 +15733,19 @@
  },
  "tupelo": {
   "metro": "Tupelo",
-  "count": 1,
+  "count": 2,
   "number_ones": [
    {
     "single": "Black Beatles",
     "artist": "Rae Sremmurd",
     "charts": "US",
     "year": 2016
+   },
+   {
+    "single": "Sunflower",
+    "artist": "Swae Lee",
+    "charts": "US",
+    "year": 2018
    }
   ]
  },
@@ -15764,6 +15836,18 @@
     "artist": "Ed Sheeran",
     "charts": "UK",
     "year": 2023
+   }
+  ]
+ },
+ "medellin": {
+  "metro": "Medellin",
+  "count": 1,
+  "number_ones": [
+   {
+    "single": "I Like It",
+    "artist": "J Balvin",
+    "charts": "US",
+    "year": 2018
    }
   ]
  },
@@ -16613,6 +16697,24 @@
    }
   ]
  },
+ "el-paso": {
+  "metro": "El Paso",
+  "count": 2,
+  "number_ones": [
+   {
+    "single": "Eastside",
+    "artist": "Khalid",
+    "charts": "UK",
+    "year": 2018
+   },
+   {
+    "single": "Beautiful People",
+    "artist": "Khalid",
+    "charts": "UK",
+    "year": 2019
+   }
+  ]
+ },
  "milwaukee": {
   "metro": "Milwaukee",
   "count": 1,
@@ -16622,18 +16724,6 @@
     "artist": "Ava Max",
     "charts": "UK",
     "year": 2018
-   }
-  ]
- },
- "el-paso": {
-  "metro": "El Paso",
-  "count": 1,
-  "number_ones": [
-   {
-    "single": "Beautiful People",
-    "artist": "Khalid",
-    "charts": "UK",
-    "year": 2019
    }
   ]
  },
