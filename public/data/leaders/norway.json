@@ -633,9 +633,9 @@
     "name": "👑 Harald V",
     "role": "Monarch",
     "start": "1991-01-17",
-    "end": null,
-    "current": true,
-    "tenure": "1991–present",
+    "end": "2026-08-28",
+    "current": false,
+    "tenure": "1991–2026",
     "party": null,
     "era": "House of Glücksburg"
   },
@@ -708,5 +708,15 @@
     "tenure": "2021–present",
     "party": "Labour Party",
     "era": null
+  },
+  {
+    "name": "👑 Haakon VIII",
+    "role": "Monarch",
+    "start": "2026-08-28",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": null,
+    "era": "House of Glücksburg"
   }
 ]
