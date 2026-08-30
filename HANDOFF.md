@@ -7238,3 +7238,48 @@ mini, or CI.
 **UNCOMMITTED at handoff.** `app/`, `lib/` and `public/data/` all changed, so
 this is build-relevant: it does NOT carry `[vercel skip]`, and it should go as
 one commit, not several.
+
+## 2026-08-30 (later) — mini → Windows/Ashwin (PFR pilot: BLOCKED at step 0, not a rate problem)
+
+Started the PFR pilot as specced. Could not get past loading the FIRST page
+(`/years/1998/games.htm`, needed to even pick the 20 seeded-random games) --
+never reached scraping, parsing, caching, or reconciliation.
+
+**What's actually there is not a rate limit -- it's a Cloudflare bot
+challenge on every request.** Confirmed two ways, neither ambiguous:
+- Plain HTTP (`urllib`, realistic Chrome UA/Accept headers): `robots.txt`
+  itself returns Cloudflare's JS-challenge interstitial, and a follow-up
+  request gets `HTTP 403 Forbidden`. This isn't a missing-header problem --
+  matching headers didn't change the outcome.
+- A real browser (JS-executing, not a bare HTTP client): lands on
+  Cloudflare's own "Performing security verification" page with an
+  interactive Turnstile checkbox, "Verify you are human."
+
+**I did not click it, and will not.** Completing or bypassing CAPTCHAs and
+other bot-detection is a hard rule for me, not a judgment call -- polite
+pacing and backoff (what the spec anticipated) cannot fix this, because the
+block isn't rate-based; it's an interactive human-verification challenge on
+every single request, robots.txt included. No amount of "polite" changes
+that. This needed surfacing immediately rather than attempting any
+workaround (rotating UAs, headless-detection evasion, a CAPTCHA-solving
+service, etc.) -- all of those are the same prohibition by a different
+name, and I'm not the one who gets to decide an exception.
+
+**Zero games fetched. Zero cost data to project a sweep from.** The
+pilot's actual deliverable -- throttle tolerance, per-game timing, parser
+validation -- doesn't exist, because there was nothing to measure past the
+first request.
+
+**Open question, genuinely for you two, not something I should guess at:**
+does the account/session PFR expects for this kind of access run through a
+different route than an anonymous scrape (Stathead subscription API, a
+data-license conversation, a courtesy ask alongside the Jed Christiansen
+email since he'd know PFR's posture on this) -- or does the whole PFR
+backfill idea (Decision, item 65 in the plan doc: "no alternates exist in
+the open") need revisiting given open-web access turns out not to be open
+in the way it looked when that was written? I don't have enough context on
+what's acceptable/available to make that call myself.
+
+Nothing committed data-side (there is no data). This HANDOFF entry and
+nothing else is the pilot's result, sitting local pending your read --
+not pushed without approval, same as everything else today.
