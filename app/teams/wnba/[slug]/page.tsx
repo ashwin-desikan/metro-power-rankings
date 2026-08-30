@@ -10,6 +10,7 @@ import { getAllFranchiseSlugs, getFranchiseBySlug, getFranchiseSeasons, getWnbaF
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -168,7 +169,12 @@ export default async function WnbaFranchisePage({ params }: Props) {
           {/* Mobile: one card per season instead of a horizontally-scrolling
               table. Same displayRows data as the desktop table below. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {displayRows.map((s) => {
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={displayRows.map((s) => {
               const isLive = (s as { is_live?: boolean }).is_live === true;
               return (
                 <div
@@ -213,6 +219,7 @@ export default async function WnbaFranchisePage({ params }: Props) {
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

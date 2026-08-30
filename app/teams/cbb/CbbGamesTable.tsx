@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { CbbGame } from "@/lib/cbbShared";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 function fmtDate(d: string | null): string | null {
@@ -36,7 +37,12 @@ export default function CbbGamesTable({ games, linkSlugs = [] }: { games: CbbGam
     <>
       {/* Mobile: one card per game. Same `games` array as the desktop table. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {games.map((g, i) => {
+        <CappedList
+          initial={12}
+          noun="games"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={games.map((g, i) => {
           const loc = [g.arena, g.metro, g.state].filter(Boolean).join(", ");
           const t = tags(g);
           const ot = g.ot && String(g.ot).trim() && String(g.ot).trim() !== "0";
@@ -78,6 +84,7 @@ export default function CbbGamesTable({ games, linkSlugs = [] }: { games: CbbGam
             </div>
           );
         })}
+        />
       </div>
 
       <div className="max-h-[70vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>

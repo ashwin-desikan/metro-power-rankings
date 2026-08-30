@@ -19,6 +19,7 @@ import {
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -174,7 +175,12 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
           <h2 className="text-lg font-semibold mb-3">Season-by-season</h2>
           {/* Mobile: one stacked card per season instead of a 10-column table. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {allSeasons.map((s) => {
+            <CappedList
+              initial={12}
+              noun="seasons"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={allSeasons.map((s) => {
               const b = seasonBadge(s);
               return (
                 <div
@@ -213,6 +219,7 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -276,7 +283,12 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
           <h2 className="text-lg font-semibold mb-3">Grey Cup Final Appearances</h2>
           {/* Mobile: one stacked card per final instead of a 6-column table. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {finals.map((g, i) => {
+            <CappedList
+              initial={12}
+              noun="finals"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={finals.map((g, i) => {
               const won = g.result === "W";
               return (
                 <div
@@ -308,6 +320,7 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

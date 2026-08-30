@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { TopGameNationalTeamRow } from "@/lib/international";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Per-team "greatest games" on a national-team page: this team's top tournament
 // matches by Game Score, this-team perspective (result W/D/L, score, opponent).
@@ -23,7 +24,12 @@ export default function TeamTopGames({ rows, teamName }: { rows: TopGameNational
       {/* Mobile: one card per game instead of a 5-column table. Same `rows`
           array drives both this block and the desktop table below. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((g, i) => {
+        <CappedList
+          initial={12}
+          noun="games"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((g, i) => {
           const r = RES[g.result] ?? RES.D;
           return (
             <div
@@ -64,6 +70,7 @@ export default function TeamTopGames({ rows, teamName }: { rows: TopGameNational
             </div>
           );
         })}
+        />
       </div>
 
       <div className="overflow-x-auto hidden sm:block">

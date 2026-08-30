@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useSessionState } from "@/lib/useSessionState";
 import { flagUrl, flagSrcSet } from "@/lib/flags";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export type DirectoryCountry = {
   slug: string;
@@ -230,7 +231,12 @@ export default function CountriesDirectory({
           a country's constituents/territories, which is a distinct
           parent/child hierarchy, not hidden data. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {filtered.map((c) => {
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={filtered.map((c) => {
           const visibleChildren = continent === "All"
             ? c.children
             : c.children.filter((k) => k.continent === continent);
@@ -247,6 +253,7 @@ export default function CountriesDirectory({
             />
           );
         })}
+        />
       </div>
 
       <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">

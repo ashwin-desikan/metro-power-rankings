@@ -5,6 +5,7 @@ import { getAllWCompetitionSlugs, getWCompetition } from "@/lib/wfootball";
 import { getWLiveCompetition } from "@/lib/wLive";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import WLiveComp from "@/app/teams/wfootball/WLiveComp";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -110,7 +111,12 @@ export default async function WCompetitionPage({ params }: Props) {
         {/* Mobile: one card per season instead of a scroll-only table. Same
             c.champions data as the desktop table below. */}
         <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-          {c.champions.map((ch, i) => (
+          <CappedList
+            initial={12}
+            noun="champions"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={c.champions.map((ch, i) => (
             <div
               key={`${ch.year}-${i}-card`}
               className="rounded-lg border p-3"
@@ -140,6 +146,7 @@ export default async function WCompetitionPage({ params }: Props) {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="mt-4 overflow-x-auto hidden sm:block">
@@ -191,7 +198,12 @@ export default async function WCompetitionPage({ params }: Props) {
           {/* Mobile: one card per club instead of a scroll-only table. Same
               c.most_decorated data as the desktop table below. */}
           <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-            {c.most_decorated.map((d, i) => (
+            <CappedList
+              initial={12}
+              noun="clubs"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={c.most_decorated.map((d, i) => (
               <div
                 key={d.slug}
                 className="rounded-lg border p-3"
@@ -219,6 +231,7 @@ export default async function WCompetitionPage({ params }: Props) {
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="mt-4 overflow-x-auto hidden sm:block">

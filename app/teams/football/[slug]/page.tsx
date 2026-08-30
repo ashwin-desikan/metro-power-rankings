@@ -448,6 +448,7 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
       <ResponsiveTable
         className=""
         variant="list"
+        mobileNoun="seasons"
         mobileRows={seasons.map((s) => {
           const isLive = s.is_live === true;
           return (
@@ -794,6 +795,7 @@ function SeasonsTable({
       <ResponsiveTable
         className=""
         variant="list"
+        mobileNoun="seasons"
         mobileRows={seasons.map((s, i) => {
           const leagueLabel = s.league || "-";
           const cupEntries = (s.year !== null ? cupsByYear.get(s.year) : null) ?? [];

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import type { NpbTeam, NpbDefunct } from "@/lib/npb";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const GOLD = "#d4af37";
@@ -90,7 +91,12 @@ export default function ClubsTable({
           read at 375px without scrolling sideways. Same `rows` data as the
           desktop table below - only the presentation differs. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((r) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((r) => (
           <div
             key={r.key + "-card"}
             className="rounded-lg border p-3"
@@ -157,6 +163,7 @@ export default function ClubsTable({
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div

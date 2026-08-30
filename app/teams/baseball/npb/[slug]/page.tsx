@@ -9,6 +9,7 @@ import TopTeamChip from "@/app/teams/TopTeamChip";
 import HeartbreakTag from "@/app/teams/HeartbreakTag";
 import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -138,7 +139,12 @@ export default async function NpbTeamPage(
               can read at 375px without scrolling sideways. Same
               `detail.seasons` data as the desktop table below. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[560px] overflow-y-auto pr-0.5">
-            {detail.seasons.map((s) => {
+            <CappedList
+              initial={12}
+              noun="seasons"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={detail.seasons.map((s) => {
               const champ = team.js_title_years.includes(s.year);
               const pennant = String(s.pos).trim() === "1";
               return (
@@ -185,6 +191,7 @@ export default async function NpbTeamPage(
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="hidden sm:block rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>

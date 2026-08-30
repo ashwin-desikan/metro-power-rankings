@@ -8,6 +8,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { WnbaFranchise } from "@/lib/wnba";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type SortKey = "default" | "franchise" | "seasons" | "wl" | "pct" | "playoffs" | "finals" | "titles";
 type SortDir = "asc" | "desc";
@@ -98,7 +99,12 @@ export default function WnbaFranchiseTable({ franchises }: { franchises: WnbaFra
       {/* Mobile: one card per franchise. Same `sorted` array as the desktop
           table below, driven by the same sort state. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((f, i) => (
+        <CappedList
+          initial={12}
+          noun="franchises"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((f, i) => (
           <Link
             key={f.slug}
             href={`/teams/wnba/${f.slug}`}
@@ -153,6 +159,7 @@ export default function WnbaFranchiseTable({ franchises }: { franchises: WnbaFra
             </div>
           </Link>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

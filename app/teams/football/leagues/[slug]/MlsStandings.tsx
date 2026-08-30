@@ -69,6 +69,7 @@ function Table({ rows, showConf, showHonors }: { rows: MlsStanding[]; showConf: 
       variant="list"
       className="rounded-xl border"
       style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      mobileNoun="clubs"
       mobileRows={rows.map((r, i) => (
         <RankRow
           key={r.cur_name}

@@ -11,6 +11,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import type { WDecoratedRow, WColumn, WStatField } from "@/lib/wfootball";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type SortKey = "total" | "club" | "country" | "metro" | WStatField;
 type SortDir = "asc" | "desc";
@@ -148,7 +149,12 @@ export default function MostDecoratedClubsTable({
           state as the desktop table below; every configured stat column is
           rendered as a labeled chip so nothing is dropped. */}
       <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((c, i) => (
+        <CappedList
+          initial={12}
+          noun="clubs"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((c, i) => (
           <div
             key={`${c.slug}-card`}
             className="rounded-lg border p-3"
@@ -188,6 +194,7 @@ export default function MostDecoratedClubsTable({
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="mt-4 overflow-x-auto hidden sm:block">

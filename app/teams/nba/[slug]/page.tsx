@@ -38,6 +38,7 @@ import {
 } from "@/lib/nba";
 import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -569,7 +570,11 @@ export default async function FranchisePage({ params }: Props) {
             horizontal scroll at phone widths. Same `seasonRows` data as the
             desktop table below. */}
         <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
-          {seasonRows.map((s) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            bodyClassName="divide-y"
+            items={seasonRows.map((s) => (
             <div key={s.year} className="py-3">
               <div className="flex items-start justify-between gap-2">
                 <a
@@ -597,6 +602,7 @@ export default async function FranchisePage({ params }: Props) {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="hidden sm:block overflow-x-auto">
@@ -748,7 +754,11 @@ export default async function FranchisePage({ params }: Props) {
                 horizontal scroll at phone widths. Same `topGames` data as the
                 desktop table below. */}
             <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
-              {topGames.map((g, i) => {
+              <CappedList
+                initial={12}
+                noun="top games"
+                bodyClassName="divide-y"
+                items={topGames.map((g, i) => {
                 const opp = getFranchiseByCanonical(g.opp_canonical);
                 const oppSlug = opp?.slug;
                 const oppLabel = `${g.opp_city || ""} ${g.opp_team || ""}`.trim() || g.opp_canonical;
@@ -790,6 +800,7 @@ export default async function FranchisePage({ params }: Props) {
                   </div>
                 );
               })}
+              />
             </div>
 
             <div className="hidden sm:block overflow-x-auto -mx-5">
@@ -1099,7 +1110,11 @@ function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
                 forcing horizontal scroll at phone widths. Same `seasonRows`
                 data as the desktop table below. */}
             <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
-              {seasonRows.map((s) => (
+              <CappedList
+                initial={12}
+                noun="rows"
+                bodyClassName="divide-y"
+                items={seasonRows.map((s) => (
                 <div key={s.year} className="py-3">
                   <div className="flex items-start justify-between gap-2">
                     <a
@@ -1127,6 +1142,7 @@ function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
                   </div>
                 </div>
               ))}
+              />
             </div>
 
             <div className="hidden sm:block overflow-x-auto">
@@ -1214,7 +1230,10 @@ function StatCell({ v, k, sub }: { v: string; k: string; sub?: string }) {
 function Block({ title, deck, children }: { title: string; deck: string | null; children: React.ReactNode }) {
   return (
     <section
-      className="rounded-xl border p-5 mt-4"
+      // min-w-0: Block is used as a grid child around wide tables, and a grid
+      // item defaults to min-width:auto — without this the table inflates the
+      // track and the page scrolls sideways on a phone.
+      className="min-w-0 rounded-xl border p-5 mt-4"
       style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
     >
       <h2 className="text-base font-semibold">{title}</h2>

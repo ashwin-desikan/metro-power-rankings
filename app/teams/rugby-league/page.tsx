@@ -4,6 +4,7 @@ import HubNav from "@/app/teams/HubNav";
 import { getAllRlNations, getRlHub } from "@/lib/rugbyLeagueIntl";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/rugby-league";
@@ -81,7 +82,12 @@ export default function InternationalRugbyLeaguePage() {
         {/* Mobile: one card per final instead of a 5-column table that only
             fits at 640px+. Same `hub.finals` (reversed) array as desktop. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {hub.finals.slice().reverse().map((f) => (
+          <CappedList
+            initial={12}
+            noun="finals"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.finals.slice().reverse().map((f) => (
             <div key={`${f.year}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2 mb-1.5">
                 <span className="font-semibold text-sm" style={{ color: "#d4af37" }}>{teamLink(f.champion)}</span>
@@ -103,6 +109,7 @@ export default function InternationalRugbyLeaguePage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -140,7 +147,12 @@ export default function InternationalRugbyLeaguePage() {
         {/* Mobile: one card per nation instead of a 6-column honour table.
             Same `teams` array as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {teams.map((t) => (
+          <CappedList
+            initial={12}
+            noun="teams"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={teams.map((t) => (
             <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center gap-1.5 font-medium text-sm mb-1.5">
                 {flagCdnUrl(t.slug) && (
@@ -174,6 +186,7 @@ export default function InternationalRugbyLeaguePage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

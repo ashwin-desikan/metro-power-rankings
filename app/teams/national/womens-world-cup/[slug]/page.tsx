@@ -5,6 +5,7 @@ import { getAllWWCNationSlugs, getWWCNation, getWWCMeta } from "@/lib/wnational"
 import { countryPageSlugFor, flagCdnUrl } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -104,7 +105,12 @@ export default async function WWCNationPage({ params }: Props) {
         {/* Mobile: one card per edition instead of a 5-column table that
             would otherwise hide the Host/Final columns entirely. */}
         <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-          {[...n.results].reverse().map((r) => {
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={[...n.results].reverse().map((r) => {
             const fs = finishStyle(r.rank);
             return (
               <div
@@ -136,6 +142,7 @@ export default async function WWCNationPage({ params }: Props) {
               </div>
             );
           })}
+          />
         </div>
 
         <div className="mt-4 overflow-x-auto hidden sm:block">

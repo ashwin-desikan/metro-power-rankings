@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { flagCdnUrl } from "@/lib/international-display";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Filterable, sortable rivalries board for /sports/rivalries. One row per unique
 // rivalry; one-way rivalries list the antagonist as Team. Click any header to sort.
@@ -227,7 +228,12 @@ export default function RivalriesTable({ rows }: { rows: RivalryRow[] }) {
 
       {/* Mobile: stacked cards, same sorted/filtered rows as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((r, i) => {
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((r, i) => {
           const national = !!(nationalSlug(r.teamHref) || nationalSlug(r.rivalHref));
           return (
             <div key={`${r.sport}-${r.rivalry}-${r.teamName}-${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)" }}>
@@ -254,6 +260,7 @@ export default function RivalriesTable({ rows }: { rows: RivalryRow[] }) {
             </div>
           );
         })}
+        />
       </div>
 
       <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>

@@ -63,7 +63,13 @@ export default function SiteNav() {
         <div className="flex items-center gap-4 min-w-0">
           <a
             href="https://citizenofnowhere.org"
-            className="hidden sm:inline-flex items-center gap-1 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors whitespace-nowrap"
+            // 2xl, not sm: below ~1536px the mega-menu needs every pixel, and
+            // this backlink was part of what pushed the brand wordmark on top
+            // of it (measured 2026-08-30: the title painted over the nav at
+            // every width from 768px to ~1350px, and still clipped to
+            // "Rankings and Refe…" at 1280 once it merely shared the row).
+            // Secondary chrome yields first; the wordmark is never clipped.
+            className="hidden 2xl:inline-flex items-center gap-1 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors whitespace-nowrap"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
             title="Back to Citizen of Nowhere"
           >
@@ -72,7 +78,10 @@ export default function SiteNav() {
           </a>
           <a
             href="/"
-            className="text-lg font-bold tracking-tight hover:opacity-80 transition whitespace-nowrap"
+            // truncate is the backstop: whatever else changes, the wordmark
+            // clips rather than overflowing its flex track and painting over
+            // the nav beside it.
+            className="text-lg font-bold tracking-tight hover:opacity-80 transition whitespace-nowrap truncate"
             style={{
               color: "var(--accent)",
               fontFamily: "'JetBrains Mono', monospace",

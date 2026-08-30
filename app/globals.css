@@ -128,3 +128,107 @@ table thead th {
     box-shadow: inset -1px 0 0 var(--border);
   }
 }
+
+/* === Environment-aware disclosure — app/_shared/Disclosure.tsx ===
+   A <details> marked `data-desktop-open` is collapsed on a phone and fully
+   open, with no toggle chrome, from 640px up. This is how the site gets
+   "contracted on mobile, expanded on desktop" with zero JavaScript and no
+   hydration flash: the server renders one tree and CSS decides the density.
+
+   Two overrides are needed because browsers hide closed <details> content
+   two different ways: the legacy UA rule (`display: none` on the non-summary
+   children) and the modern `::details-content` pseudo-element with
+   `content-visibility: hidden`. Override both or the rule silently no-ops
+   on half the browsers in the wild. */
+@media (min-width: 640px) {
+  details[data-desktop-open] > *:not(summary) { display: revert; }
+  details[data-desktop-open]::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
+
+  /* The summary is neutralised, not deleted: for <Disclosure> it carries the
+     section's TITLE, and hiding it outright took the heading off the desktop
+     page along with the toggle (caught on /methodology, 2026-08-30). Keep the
+     words, drop everything that promises an interaction there is no longer
+     any point in — the chevron, the pointer, the hover tint. */
+  details[data-desktop-open] > summary {
+    pointer-events: none;
+    cursor: default;
+    background: none;
+  }
+  details[data-desktop-open] > summary .details-chevron { display: none; }
+
+  /* <ShowMore> is the exception: its summary is pure control ("Show all 42
+     metros"), and that sentence is false once the desktop shows all 42. */
+  details.show-more[data-desktop-open] > summary { display: none; }
+}
+
+/* A ShowMore inside a divided list needs the hairline above its control,
+   because the control is the list's last child and `divide-y` only draws
+   BETWEEN children it can see. The revealed rows themselves are styled by
+   ShowMore's own bodyClassName. */
+.show-more {
+  border-top: 1px solid var(--border);
+}
+.show-more:first-child {
+  border-top: 0;
+}
+
+/* Reduced motion: the sitewide smooth scroll and the chevron spin are
+   decoration, not information. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === `truncate` implies permission to shrink ===
+   Tailwind's .truncate is overflow-hidden + ellipsis + nowrap. Inside a FLEX
+   or GRID parent that is inert on its own: flex and grid items default to
+   `min-width: auto`, so the box refuses to shrink below its text, the
+   ellipsis never appears, and the row grows past the viewport until the
+   WHOLE PAGE scrolls sideways. /screen shipped exactly this — 423px of
+   document at a 390px viewport (measured 2026-08-30) from one film title in
+   a `justify-between` row.
+
+   The shrink permission has to reach the ITEM, which is usually the row, not
+   the truncating span: zeroing the span alone does not help, because the row
+   is itself a grid item sized to its own min-content. So grant it to both —
+   the element that declares it truncates, and the element that directly
+   holds one.
+
+   Scoped in @layer base at zero specificity so every explicit `min-w-*`
+   utility still wins; on a block or table cell min-width:0 is already the
+   used value, so this changes nothing anywhere it was not already broken.
+   231 call sites in app/ carry truncate without min-w-0 — this fixes them
+   together and stops the 232nd from being a bug. `npm run check:mobile`
+   still flags new hand-written cases so the CSS stays a safety net rather
+   than the excuse. */
+@layer base {
+  :where(.truncate, [class*="line-clamp-"]),
+  :where(:has(> .truncate), :has(> [class*="line-clamp-"])),
+  /* Two levels, because the grid ITEM is often a wrapper: `section > ol >
+     li.truncate` on /sound/decades pushed the document to 481px until the
+     <section> itself was allowed to shrink. Deeper than this, write the
+     min-w-0 by hand — check:mobile will tell you where. */
+  :where(:has(> * > .truncate), :has(> * > [class*="line-clamp-"])) {
+    min-width: 0;
+  }
+}
+
+/* === Long unbreakable strings never widen the page ===
+   Source lines cite bare URLs ("en.wikipedia.org/wiki/List_of_suburban_and_
+   commuter_rail_systems"), and a single token longer than the viewport
+   forces the whole document wider — /methodology measured 442px at a 390px
+   viewport on 2026-08-30 from exactly two such citations. `break-word`
+   only breaks a word that cannot fit on a line of its own, so ordinary
+   prose wraps exactly as before. */
+@layer base {
+  body {
+    overflow-wrap: break-word;
+  }
+}

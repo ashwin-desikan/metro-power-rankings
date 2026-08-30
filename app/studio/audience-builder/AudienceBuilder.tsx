@@ -345,7 +345,7 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
       {/* ---------------- Builder ---------------- */}
-      <section className="lg:col-span-3">
+      <section className="min-w-0 lg:col-span-3">
         {/* Natural-language query */}
         <div className="rounded-xl border p-3 mb-4" style={{ ...card, borderColor: ACCENT }}>
           <label className="text-xs font-semibold" style={{ color: ACCENT }}>Describe your audience</label>

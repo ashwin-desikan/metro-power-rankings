@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Filterable CFL all-time table. Client component so the current / current+defunct
 // toggle works without a round trip. Monogram logic is inlined (lib/cfl is server-only).
@@ -68,7 +69,12 @@ export default function CflAllTimeTable({ franchises }: { franchises: Row[] }) {
           Same `rows` array (already filtered/sorted above) drives both this
           and the desktop table below. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map(f => {
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map(f => {
           const m = monogram(f.name, f.slug);
           const lc = last(f.title_years);
           const lf = last(f.gc_final_years);
@@ -116,6 +122,7 @@ export default function CflAllTimeTable({ franchises }: { franchises: Row[] }) {
             </div>
           );
         })}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

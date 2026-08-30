@@ -5,6 +5,7 @@ import Link from "next/link";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import HubBackLink from "@/app/_shared/HubBackLink";
 import { flagCdnUrl } from "@/lib/international-display";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Time machine for /countries: pick any year from 1800 and see who held every
 // territory, and how many people lived in it.
@@ -1108,7 +1109,12 @@ export default function CountryTimeMachine() {
               card list inherits none of the table rule's 80vh containment and
               would otherwise run to dozens of screens (DESIGN-STANDARDS.md). */}
           <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[80vh] overflow-y-auto overscroll-contain">
-            {rows.map((r, n) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={rows.map((r, n) => (
               <div key={r.key} className="rounded-xl border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
@@ -1204,6 +1210,7 @@ export default function CountryTimeMachine() {
                 ) : null}
               </div>
             ))}
+            />
           </div>
 
           {/* Desktop: ranked table. Rank-first, so the NAME column pins. */}

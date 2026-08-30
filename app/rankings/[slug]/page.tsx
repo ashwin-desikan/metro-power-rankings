@@ -78,6 +78,7 @@ import MetroExpectationCard from "@/app/teams/_shared/MetroExpectationCard";
 import { getCollegeHockeyForMetro, type CollegeHockeyCard } from "@/lib/collegeHockey";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -953,7 +954,11 @@ export default async function MetroDetailPage({ params }: PageProps) {
               <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
                 {/* Mobile: one card per title, same data as the desktop table */}
                 <div className="sm:hidden divide-y divide-[var(--border)] max-h-[32rem] overflow-y-auto">
-                  {titles.map((t, i) => (
+                  <CappedList
+                    initial={12}
+                    noun="titles"
+                    bodyClassName="divide-y divide-[var(--border)]"
+                    items={titles.map((t, i) => (
                     <div key={`${t.compSlug}-${t.year}-${i}-card`} className="px-4 py-3">
                       <div className="flex items-center gap-1.5">
                         <ChampionLogo name={t.champion} canonical={t.canonical} size={t.tier != null && t.tier <= 2 ? 22 : 16} />
@@ -973,6 +978,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                       </div>
                     </div>
                   ))}
+                  />
                 </div>
                 {/* Desktop: full table */}
                 <div className="hidden sm:block max-h-[32rem] overflow-y-auto overflow-x-auto">
@@ -1024,7 +1030,12 @@ export default async function MetroDetailPage({ params }: PageProps) {
             {/* Mobile: one card per company instead of a 4-column table.
                 Same detail.marketCap.top12 array, card presentation only. */}
             <div className="grid grid-cols-1 gap-2 sm:hidden">
-              {detail.marketCap.top12.map((company, idx) => {
+              <CappedList
+                initial={12}
+                noun="rows"
+                className="rounded-lg border border-[var(--border)]"
+                bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+                items={detail.marketCap.top12.map((company, idx) => {
                 const val = typeof company === "number" ? company : company.valuation;
                 const name = typeof company === "number" ? "" : company.name || "";
                 const source = typeof company === "number" ? "" : company.source || "";
@@ -1061,6 +1072,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   </div>
                 );
               })}
+              />
             </div>
 
             <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden hidden sm:block">
@@ -1343,7 +1355,11 @@ export default async function MetroDetailPage({ params }: PageProps) {
                             <div className="border-t border-[var(--border)]">
                               {/* Mobile: stacked cards */}
                               <div className="sm:hidden divide-y divide-[var(--border)]">
-                                {towers.map((t, idx) => (
+                                <CappedList
+                                  initial={12}
+                                  noun="towers"
+                                  bodyClassName="divide-y divide-[var(--border)]"
+                                  items={towers.map((t, idx) => (
                                   <div key={idx} className="px-4 py-2.5">
                                     <p className="font-medium text-[var(--text)]">{t.name}</p>
                                     <div className="mt-0.5 flex flex-wrap items-center gap-x-3 text-xs text-[var(--text-muted)] tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
@@ -1353,6 +1369,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                                     </div>
                                   </div>
                                 ))}
+                                />
                               </div>
                               {/* Desktop: table */}
                               <div className="hidden sm:block overflow-x-auto">

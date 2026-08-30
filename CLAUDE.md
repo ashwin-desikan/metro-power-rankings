@@ -162,12 +162,33 @@ explicit — apply it before touching any refresh script:
 
 - **Read `DESIGN-STANDARDS.md` before building or redesigning any hub or
   page.** It is the full look-and-feel contract (skeleton, nav idioms,
-  theme tokens, table rules, mobile checklist). The bullets here are only
-  the non-negotiable core.
+  theme tokens, table rules, disclosure primitives, mobile checklist). The
+  bullets here are only the non-negotiable core.
 - **Phone-clean at 390px, always: no page-level horizontal scroll.** Any
   grid child containing a table needs `min-w-0` (grid items default to
   `min-width:auto`, so a wide table otherwise drags the whole page
   sideways — /business shipped this broken on four tabs, 2026-08-03).
+- **DENSITY BY ENVIRONMENT: contracted on a phone, expanded on desktop.**
+  The desktop `<table>` gets an 80vh scroll box free from globals.css; its
+  `sm:hidden` card twin gets nothing and renders every row at full height.
+  That is how /teams/national reached 50 phone screens and /leaders reached
+  18x its own desktop length (measured 2026-08-30). So **every mobile-only
+  list over ~12 rows is wrapped in `<CappedList>`** from
+  `app/_shared/Disclosure.tsx`, and every secondary section is a
+  `<Disclosure>` — both are JS-free `<details>` that CSS force-opens above
+  640px via `data-desktop-open`. A genuinely bounded list opts out with
+  `data-mobile-uncapped` AND a reason. Enforced by `npm run check:mobile`
+  against the ratchet `scripts/mobile-baseline.json`: never grow it.
+- **Measure before you claim.** `npm run check:mobile` is in `npm run
+  verify`; `npm run probe:mobile` drives real Chromium at 390px and reports
+  page width, phone screens, the mobile:desktop length ratio, the widest
+  overflowing element, and whether scrolling is jacked. A mobile claim you
+  have not measured is a guess — every regression this site shipped looked
+  fine in source review.
+- **Every control the desktop table offers must exist on the phone.** When a
+  sortable `<th onClick>` disappears behind `hidden sm:block`, the card list
+  needs its own sort control driving the same state (the `<select>` +
+  direction-button idiom in `LeadersDirectory`). Tap targets ≥44px.
 - **Rank-first tables pin the identity column on phones.** A table whose
   first header is `#` must declare `data-sticky-col="2"` (or
   `stickyCol={2}` on TableBox) so swiping keeps the name visible, not the

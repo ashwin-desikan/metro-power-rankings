@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Gov = { name: string; party?: string; second?: { name: string; role: string } };
 type Row = {
@@ -123,7 +124,12 @@ export default function StatesDirectory({ rows, governors }: { rows: Row[]; gove
 
       {/* Mobile: stacked cards, same sorted/filtered data as the table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {view.map((r) => {
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={view.map((r) => {
           const g = governors[r.slug];
           return (
             <div key={`${r.slug}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -156,6 +162,7 @@ export default function StatesDirectory({ rows, governors }: { rows: Row[]; gove
             </div>
           );
         })}
+        />
       </div>
 
       <div className="hidden sm:block rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>

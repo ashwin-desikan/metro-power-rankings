@@ -40,6 +40,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 // Season gating: see lib/seasonWindows.ts for why a calendar window sits
 // alongside the games check rather than replacing it.
 import { isLeagueLive, inSeasonWindow, tournamentIsCurrent } from "@/lib/seasonWindows";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const revalidate = 120;
 
@@ -200,7 +201,12 @@ function LeagueAccordion({ block }: { block: Block }) {
 
             {/* Mobile: stacked cards instead of a table forced wide by min-w */}
             <div className="grid grid-cols-1 gap-1.5 sm:hidden">
-              {st.rows.map((r, i) => (
+              <CappedList
+                initial={12}
+                noun="rows"
+                className="rounded-lg border border-[var(--border)]"
+                bodyClassName="grid grid-cols-1 gap-1.5 p-2 pt-0"
+                items={st.rows.map((r, i) => (
                 <div key={`${r.name}-${i}-card`} className="rounded-md border px-2.5 py-2"
                   style={r.po
                     ? { borderColor: "var(--border)", borderLeft: "3px solid rgba(34,197,94,0.55)", background: "rgba(34,197,94,0.05)" }
@@ -223,6 +229,7 @@ function LeagueAccordion({ block }: { block: Block }) {
                   )}
                 </div>
               ))}
+              />
             </div>
 
             <div className="overflow-x-auto hidden sm:block">

@@ -100,7 +100,7 @@ export default function ConsentConsolePage() {
       </section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <section>
+        <section className="min-w-0">
           <h2 className="text-sm font-semibold text-[var(--text-muted)] mb-3">Processing purposes</h2>
           <div className="rounded-xl border overflow-hidden" style={card}>
             <table className="w-full text-sm">

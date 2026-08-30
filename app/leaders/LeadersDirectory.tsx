@@ -15,6 +15,7 @@ import { flagUrl, flagSrcSet, flagUrlByCode, flagSrcSetByCode } from "@/lib/flag
 import { activeIn, dkey, resolveWindow, shortRole, type HistRow } from "@/lib/leaderRules";
 import type { LeaderEntity } from "@/lib/leadersAll";
 import { BALLOT_OF } from "@/lib/electionLeaderLinks";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const CONTINENTS = [
   "All", "Europe", "North America", "Asia", "South America", "Africa",
@@ -540,9 +541,19 @@ export default function LeadersDirectory({
             </button>
             <span aria-live="polite" className="sr-only">{announce}</span>
           </div>
-          {/* Mobile: stacked cards */}
+          {/* Capped: this board is ~200 entities; as cards that was 29 phone
+              screens against 1.6 on desktop (18x, measured 2026-08-30) —
+              the desktop table gets its 80vh scroll box from globals.css and
+              the card list got nothing. The `key` resets the expansion
+              whenever the filters or sort change what the list contains. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {allTimeRows.map((x, i) => (
+            <CappedList
+              key={`alltime-${sortKey}-${sortDir}-${allTimeRows.length}`}
+              initial={12}
+              noun="terms"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={allTimeRows.map((x, i) => (
               <div key={`${x.e.type}:${x.e.slug}:${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
                 <div className="flex items-center gap-1.5 flex-wrap">
                   <FlagView view={flagFor(x.e, x.en ?? null)} />
@@ -560,6 +571,7 @@ export default function LeadersDirectory({
                 </div>
               </div>
             ))}
+            />
           </div>
           {/* Desktop: table */}
           <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
@@ -637,9 +649,19 @@ export default function LeadersDirectory({
             </button>
             <span aria-live="polite" className="sr-only">{announce}</span>
           </div>
-          {/* Mobile: stacked cards */}
+          {/* Capped: this board is ~200 entities; as cards that was 29 phone
+              screens against 1.6 on desktop (18x, measured 2026-08-30) —
+              the desktop table gets its 80vh scroll box from globals.css and
+              the card list got nothing. The `key` resets the expansion
+              whenever the filters or sort change what the list contains. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {entityRows.map(({ e, r }) => {
+            <CappedList
+              key={`entities-${mode}-${sortKey}-${sortDir}-${entityRows.length}`}
+              initial={12}
+              noun="countries and orgs"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={entityRows.map(({ e, r }) => {
               const primaries = mode === "asof" ? (r?.primaries ?? []) : (e.current ? [{ name: e.current.name, role: e.current.role, start: e.current.since ?? null }] : []);
               const seconds = mode === "asof" ? (r?.seconds ?? []) : (e.current?.second ? [{ name: e.current.second.name, role: e.current.second.role }] : []);
               const sinceVal = primaries[0]?.start ?? "";
@@ -690,6 +712,7 @@ export default function LeadersDirectory({
                 </div>
               );
             })}
+            />
           </div>
           {/* Desktop: table */}
           <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">

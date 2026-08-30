@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getWWCEditions, getWWCNations, getWWCMeta } from "@/lib/wnational";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import WWCNationsTable from "./WWCNationsTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const PAGE_PATH = "/teams/national/womens-world-cup";
 const PAGE_TITLE = "FIFA Women's World Cup";
@@ -57,7 +58,12 @@ export default function WWCHubPage() {
         {/* Mobile: one card per edition instead of a 6-column table nobody
             can read at 375px without scrolling sideways or losing columns. */}
         <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-          {editions.map((e) => (
+          <CappedList
+            initial={12}
+            noun="editions"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={editions.map((e) => (
             <div
               key={`${e.year}-card`}
               className="rounded-lg border p-3"
@@ -87,6 +93,7 @@ export default function WWCHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="mt-4 overflow-x-auto hidden sm:block">

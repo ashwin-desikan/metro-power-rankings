@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { PowerEntry, DroppedEntry } from "@/lib/powerRanking";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const CAT: Record<string, string> = {
   National: "text-blue-700 dark:text-blue-300 bg-blue-500/10",
@@ -70,9 +71,20 @@ export default function PowerTable({ rows, dropped = [], prevSnapshotDate = null
         </span>
       </div>
 
-      {/* Mobile: stacked cards, same view-filtered rows as the desktop table */}
+      {/* Capped on phones. The desktop table gets an 80vh scroll box free
+          from the globals.css table rule; this card list is not a table and
+          got nothing, so it ran 10.1x longer than the desktop page
+          (measured 2026-08-30). DESIGN-STANDARDS.md, "Density by
+          environment". */}
+      {/* Same view-filtered rows as the desktop table. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {shown.map((r, i) => (
+        <CappedList
+          key={`${view}-${shown.length}`}
+          initial={12}
+          noun="people"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={shown.map((r, i) => (
           <div key={`${r.name}-${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
@@ -105,6 +117,7 @@ export default function PowerTable({ rows, dropped = [], prevSnapshotDate = null
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>

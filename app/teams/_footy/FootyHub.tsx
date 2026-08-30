@@ -9,6 +9,7 @@ import { fmtOdds, simIsCurrent, simBySlug, type SeasonSimFile } from "@/lib/seas
 import type { FootyCopy } from "./config";
 import FootyAllTimeTable from "./FootyAllTimeTable";
 import FootyFinalsBracket from "./FootyFinalsBracket";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 function Badge({ color, color2, abbr, size = 26 }: { color: string; color2: string; abbr: string; size?: number }) {
   return (
@@ -83,7 +84,12 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
           {/* Mobile: one card per club instead of a 9-column table forcing
               sideways scroll. Same `live.rows` array, card presentation only. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {live.rows.map((r, i) => {
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={live.rows.map((r, i) => {
               const lf = r.slug ? bySlug.get(r.slug) : undefined;
               const so = showOdds && r.slug ? simRows.get(r.slug) : undefined;
               const po = inFinals(r.rank, i);
@@ -117,6 +123,7 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -195,7 +202,12 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
         {/* Mobile: one card per Grand Final instead of a 5-column table
             forcing sideways scroll. Same `gfHistory` array, cards only. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {gfHistory.map((g) => (
+          <CappedList
+            initial={12}
+            noun="grand finals"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={gfHistory.map((g) => (
             <div key={`${g.year}-card`} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               <div className="flex items-center justify-between gap-2">
                 <span className="tabular-nums text-sm text-[var(--text-muted)]">{g.year}</span>
@@ -227,6 +239,7 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

@@ -4,6 +4,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getAllWcbbTeams, getWcbbNationalChampions } from "@/lib/wcbb";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/cbb-w";
@@ -75,7 +76,12 @@ export default function WcbbHubPage() {
         {/* Mobile: one card per program. Same `ranked` data as the desktop
             table below, with every column shown as a labeled stat. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {ranked.map((t, i) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={ranked.map((t, i) => (
             <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-1.5 min-w-0">
@@ -108,6 +114,7 @@ export default function WcbbHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[600px] overflow-y-auto hidden sm:block" style={card}>
@@ -150,7 +157,12 @@ export default function WcbbHubPage() {
         {/* Mobile: one card per tournament year. Same `champs` data as the
             desktop table. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {champs.map((c) => (
+          <CappedList
+            initial={12}
+            noun="champions"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={champs.map((c) => (
             <div key={`${c.year}-card`} className="rounded-lg border p-3" style={card}>
               <div className="text-xs tabular-nums text-[var(--text-dim)] mb-1" style={mono}>{c.year}</div>
               <div className="text-sm font-semibold" style={{ color: GOLD }}>
@@ -168,6 +180,7 @@ export default function WcbbHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>

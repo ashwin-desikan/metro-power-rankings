@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
+import { CappedList } from "@/app/_shared/Disclosure";
 import {
   getF1ConstructorBySlug, getAllF1ConstructorSlugs, type F1Constructor,
 } from "@/lib/f1Constructors";
@@ -229,7 +230,12 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             </table>
           </div>
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {t.eras.map((e, i) => (
+            <CappedList
+              initial={12}
+              noun="eras"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={t.eras.map((e, i) => (
               <div key={`${e.name}-${e.from}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="text-sm font-medium" style={{ color: "var(--text)" }}>{e.name}</span>
@@ -240,6 +246,7 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
                 </div>
               </div>
             ))}
+            />
           </div>
         </>
       )}
@@ -304,7 +311,12 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             </table>
           </div>
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {t.bases.map((b, i) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={t.bases.map((b, i) => (
               <div key={`${b.town}-${b.from}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="text-sm font-medium min-w-0 truncate" style={{ color: "var(--text)" }}>{b.town}</span>
@@ -320,6 +332,7 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
                 </div>
               </div>
             ))}
+            />
           </div>
           {baseNotes.length > 0 && (
             <ul className="mt-3 space-y-2 max-w-3xl">
@@ -394,7 +407,12 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             </table>
           </div>
           <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[60vh] overflow-y-auto overscroll-contain">
-            {t.teammates.map(([a, b, races, from, to, qa, qb, ra, rb], i) => (
+            <CappedList
+              initial={12}
+              noun="teammates"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={t.teammates.map(([a, b, races, from, to, qa, qb, ra, rb], i) => (
               <div key={`${a}-${b}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="text-sm font-medium min-w-0" style={{ color: "var(--text)" }}>{a} v {b}</span>
@@ -407,6 +425,7 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
                 </div>
               </div>
             ))}
+            />
           </div>
         </>
       )}
@@ -450,7 +469,12 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
         </ul>
       )}
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-y-auto overscroll-contain">
-        {seasonsDesc.map((s) => (
+        <CappedList
+          initial={12}
+          noun="seasons"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={seasonsDesc.map((s) => (
           <div key={`${s[0]}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
             <div className="flex items-baseline justify-between gap-2">
               <span className="text-sm font-medium tabular-nums" style={{ color: "var(--text)" }}>{s[0]}</span>
@@ -464,6 +488,7 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             <div className="mt-1 text-[11px]" style={{ color: "var(--text-dim)" }}>{s[9].join(", ")}</div>
           </div>
         ))}
+        />
       </div>
 
 
@@ -490,7 +515,12 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
         </table>
       </div>
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[60vh] overflow-y-auto overscroll-contain">
-        {t.drivers.slice(0, 40).map((d, i) => (
+        <CappedList
+          initial={12}
+          noun="drivers"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={t.drivers.slice(0, 40).map((d, i) => (
           <div key={`${d[0]}-card`} className="rounded-lg p-3 flex items-center justify-between gap-2" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
             <span className="min-w-0">
               <span className="text-xs tabular-nums mr-1.5" style={{ color: "var(--text-dim)" }}>{i + 1}</span>
@@ -502,6 +532,7 @@ export default async function F1ConstructorPage({ params }: { params: Promise<{ 
             <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{d[2]} wins</span>
           </div>
         ))}
+        />
       </div>
       {t.drivers.length > 40 && (
         <p className="text-xs mt-2" style={{ color: "var(--text-dim)" }}>

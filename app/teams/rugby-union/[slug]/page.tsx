@@ -17,6 +17,7 @@ import {
 import { getRugbyGamesForTeam } from "@/lib/rugbyGames";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // dynamicParams=true since 2026-08-07: this portal's data is now read at runtime
 // (lib/liveData), so the weekly refresh can introduce a nation between builds.
@@ -314,7 +315,12 @@ export default async function RugbyTeamPage(
           <h2 className="text-lg font-semibold mb-3">Head-to-head</h2>
           {/* Mobile: stacked cards, one per opponent. */}
           <div className="sm:hidden grid grid-cols-1 gap-2">
-            {h2hEntries.map(([opp, r]) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={h2hEntries.map(([opp, r]) => (
               <div key={opp} className="rounded-lg border p-3" style={card}>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-sm font-medium truncate">{opp}</span>
@@ -336,6 +342,7 @@ export default async function RugbyTeamPage(
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="hidden sm:block rounded-xl border overflow-x-auto" style={card}>
@@ -371,7 +378,12 @@ export default async function RugbyTeamPage(
           <h2 className="text-lg font-semibold mb-3">Recent tests</h2>
           {/* Mobile: stacked cards, one per match. */}
           <div className="sm:hidden grid grid-cols-1 gap-2">
-            {detail.recent.map((m, i) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={detail.recent.map((m, i) => (
               <div key={i} className="rounded-lg border p-3" style={card}>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-sm font-medium truncate">{m.opp}</span>
@@ -386,6 +398,7 @@ export default async function RugbyTeamPage(
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="hidden sm:block rounded-xl border overflow-x-auto" style={card}>

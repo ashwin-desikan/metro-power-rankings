@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import HubNav from "@/app/teams/HubNav";
 import { getOlympicEditionsIndex, getOlympicEdition, olympicSlugForNoc } from "@/lib/olympics";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -81,7 +82,12 @@ export default async function OlympicEditionPage(
         {/* Mobile: one card per nation instead of a horizontally scrolling
             table. Same ed.table data as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {ed.table.map((r) => {
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={ed.table.map((r) => {
             const teamSlug = olympicSlugForNoc(r.noc);
             const nameEl = teamSlug ? (
               <Link href={`/teams/olympics/${teamSlug}`} className="hover:text-[var(--accent)] font-medium truncate">
@@ -120,6 +126,7 @@ export default async function OlympicEditionPage(
               </div>
             );
           })}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
@@ -182,7 +189,12 @@ export default async function OlympicEditionPage(
                 {/* Mobile: one card per nation instead of a horizontally
                     scrolling table. Same sp.table data as the desktop table. */}
                 <div className="grid grid-cols-1 gap-2 p-3 sm:hidden">
-                  {sp.table.map((r) => {
+                  <CappedList
+                    initial={12}
+                    noun="rows"
+                    className="rounded-lg border border-[var(--border)]"
+                    bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+                    items={sp.table.map((r) => {
                     const teamSlug = olympicSlugForNoc(r.noc);
                     return (
                       <div key={r.noc + "-card"} className="rounded-lg border p-2.5" style={card}>
@@ -207,6 +219,7 @@ export default async function OlympicEditionPage(
                       </div>
                     );
                   })}
+                  />
                 </div>
 
                 <div className="overflow-x-auto hidden sm:block">

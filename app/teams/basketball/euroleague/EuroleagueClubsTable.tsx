@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { euroleagueClubColor, euroleagueMonogram } from "@/lib/euroleague-colors";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Club = {
   name: string; country: string; w: number; l: number; seasons: number;
@@ -51,7 +52,12 @@ export default function EuroleagueClubsTable({ clubs }: { clubs: Club[] }) {
       {/* Mobile: one card per club instead of a cramped 8-column table.
           Same sorted/filtered `rows` array drives both views. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[560px] overflow-y-auto">
-        {rows.map((c) => {
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((c) => {
           const col = euroleagueClubColor(c.name);
           return (
             <div key={c.name} className="rounded-lg border p-3" style={card}>
@@ -108,6 +114,7 @@ export default function EuroleagueClubsTable({ clubs }: { clubs: Club[] }) {
             </div>
           );
         })}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>

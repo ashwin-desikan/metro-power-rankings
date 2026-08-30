@@ -1,159 +1,443 @@
-# DESIGN-STANDARDS.md — the consistent look-and-feel contract
+# DESIGN-STANDARDS.md — the look, feel and behaviour contract
 
-Read this before building or redesigning ANY page, and especially any hub.
-CLAUDE.md carries the short non-negotiables; this file is the full standard.
-It exists because /business shipped 2026-08-02/03 passing every automated
-gate while violating the mobile standards in spirit — four of nine tabs had
-page-level horizontal scroll on phones and every ranked table pinned the
-rank number instead of the name. The gates below were extended the same
-night so that class of miss fails `npm run verify` instead of shipping.
+Read this before building or redesigning ANY page, hub, table or control.
+CLAUDE.md carries the short non-negotiables; this file is the full standard,
+and it binds every Claude instance and every human working this repo.
 
-## The one-sentence version
+It exists because this site keeps shipping pages that are excellent on a
+1440px desktop and unusable on a phone, while passing every automated gate
+in place at the time. Two documented rounds of that:
 
-A hub is phone-first: at 390px wide the page never scrolls sideways, every
-table's identity column stays visible while its values scroll, the headline
-value sits one swipe-free column from the name, and nav/breadcrumb/header
-idioms are copied from an existing hub rather than reinvented.
+- **2026-08-02/03** — /business shipped with page-level horizontal scroll on
+  four of nine tabs and every ranked table pinning the rank number instead
+  of the name. `check:table-scroll` was written that night.
+- **2026-08-30** — a measured sweep of 25 representative routes at 390px
+  found **9 failing**. `/teams/national` ran **50.4 phone screens** against
+  4.3 on desktop; `/leaders` **29.3 against 1.6** — eighteen times the
+  desktop length for the same data. `/screen` scrolled sideways to 423px.
+  None of it was visible in source review. `check:mobile` and
+  `probe:mobile` were written that day.
 
-## Page skeleton (every hub tab)
+The pattern in both: **the failure was in the mobile half of a responsive
+pair, and nobody had measured it.** Everything below follows from that.
 
-1. `<main className="mx-auto max-w-6xl px-4 py-8">` — ordinary top padding.
-   The site nav is `sticky top-0` (never `fixed`); NEVER add nav-clearance
-   padding like the old `pt-24`. If content renders under the top bar,
-   someone reintroduced `fixed` — fix the cause (CLAUDE.md rule).
-2. Breadcrumbs (`Crumbs` in /business, same idiom elsewhere): Home / Hub /
-   Tab, text-xs, muted.
-3. Header block (`TabHeader`): emoji + h1 (text-3xl sm:text-4xl), one-line
-   sub in muted 15px, then a MONO uppercase stamp line carrying "as of" +
-   row counts + source. Every data page states its source and as-of date.
-4. Tab nav: a flex-wrap underline row (`BusinessNav`/`SoundNav`/`ScreenNav`
-   idiom): px-3 py-2 text-sm font-semibold links, active = 2px accent
-   underline. Add the tab to the nav in the SAME commit that adds the page.
-5. Sections: `SectionHead` (h2 text-2xl font-bold + muted sub, max-w-3xl),
-   anchored ids for deep links (`[id]` scroll-margin is global).
-6. Close with a "Where these numbers come from" / "How this board works"
-   card: rounded-2xl border, 13.5px muted prose, sources + caveats.
+---
 
-## Theme tokens (never hardcode)
+## 0. The three laws
 
-Colors come from globals.css custom properties: `--bg`, `--bg-card`,
-`--border`, `--text`, `--text-muted`, `--text-dim`, `--accent`, the region
-palette. Numbers render in JetBrains Mono (the shared `MONO` style const).
-Positive/negative deltas: #10b981 / #E2628B. Cards: rounded-xl border with
-`CARD`. Flag emoji never render on Windows — use flagCdnUrl() images.
+1. **Measure, don't eyeball.** A mobile claim you have not measured at 390px
+   is a guess. `npm run check:mobile` for the static rules; `npm run
+   probe:mobile` for the real browser. Neither is optional before calling a
+   UI change done.
+2. **The phone gets the same information, at a different density.** Not
+   less data, not a nested scroll box, not a cut-down page — the same board,
+   with the tail one tap away. See §2.
+3. **Copy an existing idiom before inventing one.** Every hub already has a
+   header, a tab row, a table shell, a sources card. Reinventing one is how
+   the site drifts into nine dialects of the same page.
 
-## Tables — the load-bearing rules
+---
 
-- Every `<table>` sits DIRECTLY inside a scroll wrapper: `TableScroll`,
-  `ResponsiveTable`, `TableBox` (business), or a div carrying
-  overflow-x-auto. Direct child matters — the globals.css `:has(> table)`
-  rule provides the scroll box, height cap, sticky header, and (under
-  640px) sticky first column + touch scrolling. Enforced by
-  `npm run check:table-scroll` (AST-based, runs in `npm run verify`).
-- RANK-FIRST TABLES: any table whose first header is `#` MUST declare
-  `data-sticky-col="2"` (raw table) or `stickyCol={2}` (TableBox) so the
-  NAME column pins on phones, not the rank. Enforced by the same checker
-  (rule 2) against scripts/table-scroll-rank-baseline.json — a ratchet
-  freezing legacy offenders; new/edited tables must comply. Shrink the
-  baseline as you fix files (`--write-rank-baseline`); never grow it.
-- VALUE BEFORE METADATA: on ranked boards the headline value column comes
-  immediately after the identity column (#, Name, Value, ...). A phone
-  shows the point of the table without any sideways swipe.
-- DEMOTED COLUMNS: low-priority columns (Country next to a linked Metro,
-  and similar) take `hidden sm:table-cell` (the shared `SMCOL` const in
-  app/business/ui.tsx) on BOTH th and td. Never demote a table's first two
-  columns — the sticky-col CSS counts children by position, and hidden
-  cells still count.
-- MIN-W-0 IN GRIDS: any grid child that contains a table (or any wide
-  content) needs `min-w-0`. Grid items default to `min-width: auto`, so a
-  wide table otherwise inflates its column past the viewport and the WHOLE
-  PAGE scrolls sideways — the single worst mobile failure this site has
-  shipped. TableBox carries min-w-0 itself; wrapper divs (heading + table
-  cards) need it explicitly.
-- Headerless tables (tbody-only key/value boards) are fine, but if they
-  lead with a rank cell, still pass stickyCol={2}.
-- **CAP THE MOBILE CARD FALLBACK TOO.** The globals.css `:has(> table)` rule
-  caps any wrapper directly holding a `<table>` at `max-height: 80vh` with its
-  own scroll box. A `sm:hidden` card list is NOT a table, so it inherits none
-  of that and renders every row at full height. Measured 2026-08-04: the US
-  country page ran to **80 screens on a 390px viewport, 68 of them the metros
-  card list alone (85% of the page)** — against 0.9 screens for the identical
-  596 rows on desktop, which the table rule had already contained. A card
-  fallback for a long list needs `max-h-[80vh] overflow-y-auto
-  overscroll-contain` (or a smaller cap where it suits, as the National Teams
-  champions list does with `max-h-[32rem]`). Check the page height at 390px,
-  not just its width — a page can pass the no-sideways-scroll rule and still be
-  unusable vertically.
+## 1. The page skeleton
 
-## Mobile acceptance checklist (before calling any hub done)
+Every page, hub tab and board:
 
-At 390px CSS width (device toolbar, or the iframe trick below):
-1. `document.scrollingElement.scrollWidth <= 390` on EVERY tab — no
-   page-level sideways scroll, ever.
-1b. Measure `scrollHeight` too, and compare it against the same page on
-   desktop. A ratio far above ~2x means a long list lost its containment in
-   the mobile fallback (see "cap the mobile card fallback"). The country page
-   was 9.3x before this was caught.
-1c. Scroll the page. The static probes above measure a document that is never
-   scrolled, so they cannot see scroll-jacking — a `scrollIntoView` in a
-   scrollspy made country pages unscrollable on 2026-08-04 and passed every
-   gate. Jump to a few offsets, wait, and confirm the position holds.
-2. Swipe every wide table: the name column stays pinned, values scroll.
-3. The headline value of each ranked board is visible without swiping.
-4. Tab nav rows wrap acceptably (three rows max); hero/stat card grids
-   collapse (`grid-cols-2`/`sm:grid-cols-*` patterns, never bare
-   `grid-cols-4`).
-5. No fixed-width element (w-44 etc.) forces overflow in a flex row.
+1. `<main className="mx-auto max-w-6xl px-4 py-8">` — ordinary padding.
+   **NEVER add nav-clearance padding** (`pt-24` and friends). `app/SiteNav.tsx`
+   is `sticky top-0`, never `fixed`: it occupies its own layout space, so
+   content can never render under it. If content appears under the bar,
+   someone reintroduced `fixed` or a negative offset — fix the cause.
+   Enforced by `check:mobile` rule NAV_CLEARANCE.
+   (Both `/sound` and `/screen` carried a dead `pt-12` clearance wrapper for
+   months after the nav became sticky — pure wasted vertical room on the
+   viewport with least of it. Removed 2026-08-30.)
+2. **Breadcrumbs** — `Crumbs` in /business, same idiom elsewhere: Home / Hub
+   / Tab, `text-xs`, muted.
+3. **Header block** (`TabHeader`): emoji + `h1` (`text-3xl sm:text-4xl`), a
+   one-line sub in muted 15px, then a MONO uppercase stamp carrying "as of"
+   + row counts + source. **Every data page states its source and as-of
+   date.**
+4. **Tab nav** — a flex-wrap underline row (`BusinessNav`/`SoundNav`/
+   `ScreenNav` idiom): `px-3 py-2 text-sm font-semibold`, active = 2px
+   accent underline. Add the tab to the nav in the SAME commit that adds
+   the page.
+5. **Sections** — `SectionHead` (h2 `text-2xl font-bold` + muted sub,
+   `max-w-3xl`), with anchored ids for deep links (`[id]` scroll-margin is
+   global in globals.css).
+6. **Close with a "Where these numbers come from" card** — `rounded-2xl`
+   border, 13.5px muted prose, sources and caveats.
 
-Browser-zoom users defeat window-resize testing; inject a 390px iframe of
-the page and measure inside it (same-origin), or use devtools device mode.
+Anchor targets still need the global `[id] { scroll-margin-top }` rule,
+because the sticky bar does overlay content once you scroll.
 
-## Navigation wiring (from the burned-user file)
+---
 
-A new page that isn't reachable is a bug: wire the hub tab nav, the site
-nav dropdown, and any league/competition link maps (lib/teamLinks,
-lib/competitionLinks) in the same commit (CLAUDE.md + memory rules). Big
-destination pages deserve a first-class entry point — a hero card or
-banner link — not a footer link inside a collapsed accordion (the
-/teams/football/seasons lesson, fixed 2026-08-03).
+## 2. Density by environment — the load-bearing idea
 
-## Verification
+**A desktop viewport has room; a phone viewport has taps.** The same board
+should therefore render at two densities from ONE tree, with CSS choosing.
 
-`npm run verify` = typecheck, client-import check, public-data check,
-table-scroll check (both rules), vitest, `next build`. Run it before
-declaring any frontend change done; never `next build` while the dev
-server holds :3000. The table-scroll checker's main() guard is
-pathToFileURL-based — the old string comparison made it a silent no-op on
-Windows (fixed 2026-08-03); if a gate ever prints nothing, treat that as
-the gate being broken, not passing.
+This is the rule the site kept breaking. The mechanism is that a responsive
+board renders twice — a `hidden sm:block` table and a `sm:hidden` card list.
+The desktop table is height-capped **for free** by the globals.css
+`.overflow-x-auto:has(> table)` rule (an 80vh scroll box). The card list is
+not a table, so it inherits **none** of that and renders every row at full
+height. A 32px table row becomes a 200px card. Two hundred rows becomes
+fifty screens of thumb.
 
-## Link sharing / social cards (the brand travels with the URL)
+### The primitives — `app/_shared/Disclosure.tsx`
 
-Every page must produce ONE consistent preview wherever it's shared - big
+All three are plain server components built on `<details>`: no JS, no
+hydration flash, keyboard- and screen-reader-native, and reachable by the
+browser's in-page find. They work inside client components too.
+
+| Use | Component |
+| --- | --- |
+| A long list beside a desktop table | `<CappedList items={…} initial={12} noun="clubs" />` |
+| Any secondary section (sources, a breakdown, a roster) | `<Disclosure title="…" meta={…}>` |
+| Non-uniform overflow content | `<ShowMore label="Show all 42 metros">` |
+
+```tsx
+<div className="grid grid-cols-1 gap-2 sm:hidden">
+  <CappedList
+    initial={12}
+    noun="clubs"
+    className="rounded-lg border border-[var(--border)]"
+    bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+    items={rows.map((r) => <ClubCard key={r.slug} {...r} />)}
+  />
+</div>
+```
+
+**`data-desktop-open` is how "contracted on mobile, expanded on desktop"
+works with no JavaScript.** globals.css force-reveals a marked `<details>`
+above 640px. The summary is neutralised there, not removed: a `Disclosure`
+summary carries the section TITLE, so it keeps its words and loses only the
+chevron and the pointer, reading as a plain heading. `ShowMore` is the
+exception — its summary is pure control text, and "Show all 42 metros" is a
+false sentence once the desktop shows all 42 — so that one is hidden
+outright. `Disclosure` sets `desktopOpen` by default; pass
+`desktopOpen={false}` for a genuinely optional appendix that stays
+collapsible everywhere, or `defaultOpen` for a section that should also
+start open on a phone.
+
+### Rules
+
+- **Every mobile-only list of more than ~12 rows is capped.** `<CappedList>`
+  is the default answer. Enforced by `check:mobile` rule
+  UNCAPPED_MOBILE_LIST.
+- **A cap by count beats a nested scroll box.** A scroll box inside a
+  scrolling page traps the thumb and hides the page's own end. Use an
+  explicit `max-h-… overflow-y-auto overscroll-contain` only where a scroll
+  box genuinely suits (a filter panel, a short reference list), and say why.
+- **A bounded list needs no cap.** Three cricket formats, four compare
+  columns — "Show all 3" is worse than the list. Mark the container
+  `data-mobile-uncapped` with a one-line reason, so the exemption is a
+  decision in the code rather than an omission.
+- **Reset the cap when the list changes.** In a client component with
+  filters or sorting, `key` the `CappedList` on the filter state
+  (`key={\`${continent}-${sortKey}-${rows.length}\`}`) — otherwise "show
+  all" survives into a list the reader has since narrowed.
+- **`ResponsiveTable` caps its mobile list automatically** (`mobileInitial`,
+  default 12). Pass `mobileNoun` so the control reads "Show all 20 clubs",
+  not "Show all 20 rows".
+- **Prefer `variant="list"` over `variant="cards"`** for anything
+  standings-shaped: ~40px a row against ~200px. `cards` is only for
+  genuinely card-shaped data.
+- **A `<Disclosure>` is the right container for a secondary section** even on
+  desktop — it is open there, so it costs the desktop reader nothing and
+  saves the phone reader a screen.
+
+### The number to watch
+
+`probe:mobile` reports **ratio** = phone screens ÷ desktop screens, and it
+is the diagnostic number. Above **3.0x** the mobile rendering has lost
+containment the desktop rendering has — always a bug, always a hard failure.
+
+Raw length is judged against it rather than on its own. Over **25 phone
+screens** AND over 2.0x is the same bug and fails; over 25 screens at a
+normal ratio is a long read on every device (/methodology is 28 screens at
+1.8x) and is reported as a **warning**. The answer to a warning is in-page
+navigation — a `<Disclosure>` jump index over the anchors the sections
+already have, as /neighborhoods now carries — not truncating the content.
+
+---
+
+## 3. Width — never scroll the page sideways
+
+**At 390px, `document.scrollingElement.scrollWidth` must be ≤ 390 on every
+route.** No exceptions. Wide content scrolls inside its own box; the page
+never does.
+
+- **`min-w-0` on any flex/grid child that holds wide content.** Flex and
+  grid items default to `min-width: auto`, so a wide table inflates its
+  track and drags the whole page sideways. This is the single worst mobile
+  failure the site has shipped (/business, 2026-08-03). `TableBox` carries
+  it; hand-rolled wrappers need it explicitly. Enforced by `check:mobile`
+  rule GRID_CHILD_NO_MIN_W_0.
+- **`truncate` and `line-clamp-*` grant their own shrink permission.**
+  globals.css gives `min-width: 0` to any element that declares one and to
+  its parent and grandparent — because the flex/grid ITEM that has to shrink
+  is usually the row or section wrapping the text, not the text itself — in
+  `@layer base`, so explicit `min-w-*` utilities still win. That covers the
+  231 existing call sites that carried `truncate` with no `min-w-0`. Deeper
+  than two levels, write it by hand. It is a safety net, not a licence.
+- **Long unbreakable strings** (a bare URL in a Sources line) widen the
+  whole document. `body { overflow-wrap: break-word }` handles it sitewide;
+  do not remove it.
+- **No fixed width wider than a phone** without `max-w-full` to fall back
+  to. Inside an `overflow-x-auto` box a `min-w-[640px]` is the point (a wide
+  table's column floor, a pipeline diagram) and is exempt. Enforced by rule
+  HARD_WIDTH.
+- **No `grid-cols-4`+ without a responsive prefix.** Four columns in 390px
+  is four unreadable columns; write `grid-cols-2 sm:grid-cols-4`. Enforced
+  by rule RIGID_WIDE_GRID. (Small in-card stat grids predating this rule are
+  frozen in the baseline; do not add more.)
+- **A nowrap row of chips needs somewhere to scroll** — `overflow-x-auto` on
+  the container. Rule NOWRAP_LIST_NO_SCROLL.
+- **`overflow-x-hidden` on a page container is not a fix.** It hides the
+  symptom and clips real content. Find the element that is too wide — the
+  probe names it for you.
+
+---
+
+## 4. Tables
+
+- **Every `<table>` sits DIRECTLY inside a scroll wrapper**: `TableScroll`,
+  `ResponsiveTable`, `TableBox`, or a div carrying `overflow-x-auto`. Direct
+  child matters — the globals.css `:has(> table)` rule provides the scroll
+  box, the 80vh height cap, the sticky header and (under 640px) the sticky
+  first column. Enforced by `check:table-scroll` (AST-based).
+- **Rank-first tables pin the identity column.** A table whose first header
+  is `#` MUST declare `data-sticky-col="2"` (raw table) or `stickyCol={2}`
+  (TableBox), so swiping keeps the NAME visible, not the rank. Enforced by
+  `check:table-scroll` rule 2 against the ratchet baseline
+  `scripts/table-scroll-rank-baseline.json` — shrink it as files are fixed,
+  never grow it.
+- **Value before metadata.** On a ranked board the headline value column
+  comes immediately after the identity column (`#`, Name, Value, …), so a
+  phone shows the point of the table with no sideways swipe.
+- **Demote low-priority columns** (Country beside a linked Metro, and
+  similar) with `hidden sm:table-cell` (the shared `SMCOL` const in
+  `app/business/ui.tsx`) on BOTH `th` and `td`. **Never demote a table's
+  first two columns** — the sticky-column CSS counts children by position,
+  and hidden cells still count.
+- **Headerless tables** (tbody-only key/value boards) are fine, but if they
+  lead with a rank cell, still pass `stickyCol={2}`.
+- A table's mobile counterpart is a `<CappedList>`, per §2 — the table rules
+  above cover only half of a responsive board.
+
+---
+
+## 5. Navigation and wayfinding
+
+- **The nav is `sticky top-0`, never `fixed`** (§1.1). `DesktopNav` renders
+  mega-menus from **1024px** up; `MobileMenu` fills everything below with the
+  SAME sections as collapsible groups, generated from the same sources
+  (`lib/sportsCatalog`) so the two surfaces cannot drift. **A new destination
+  goes in both, in the commit that adds it.**
+- **The desktop nav's breakpoint is a measurement, not a taste.** The
+  mega-menu row measures ~640–840px and the wordmark ~230px; below 1024 they
+  do not both fit. It used to switch on at `md` (768) and the wordmark simply
+  painted **over** the menu at every width from 768 to ~1350px (measured
+  2026-08-30). Secondary chrome yields first — the "← Citizen of Nowhere"
+  backlink now waits for `2xl` — and the wordmark carries `truncate` as a
+  backstop so it can never overflow its track again. **If you add a top-level
+  nav item, re-measure the row against the wordmark at 1024, 1280 and 1536
+  before shipping it.**
+- **A page that isn't reachable is a bug.** Wire the hub tab nav, the site
+  nav dropdown, and any league/competition link maps (`lib/teamLinks`,
+  `lib/competitionLinks`) in the same commit as the page.
+- **Big destinations get a first-class entry point** — a hero card or banner
+  link, not a footer link inside a collapsed accordion (the
+  /teams/football/seasons lesson, fixed 2026-08-03).
+- **Tab rows wrap; they do not scroll off.** Three rows maximum at 390px.
+- **Never scroll-jack.** A `scrollIntoView` in a scrollspy made country
+  pages unscrollable on 2026-08-04 and passed every gate, because static
+  probes measure a document that is never scrolled. `probe:mobile` now jumps
+  the page and checks the position holds.
+- **Provide a way back up** on any page over ~5 screens (`BackToTop` is the
+  shared component).
+
+---
+
+## 6. Controls, targets and forms
+
+- **Tap targets are ≥44px tall** for anything a thumb must hit: buttons,
+  segmented toggles, disclosure summaries, select controls, standalone
+  links. `min-h-11` is the utility. The disclosure primitives already carry
+  it. An inline link inside a paragraph is text, not a control, and is
+  exempt.
+- **Adjacent controls get ≥8px between them** so a fat thumb cannot hit two.
+- **In a mobile card or row list, the ROW is the tap target — not the name
+  inside it.** A `<Link>` wrapped around 20px of text in a 60px row gives
+  the thumb a third of the row and misses land on nothing. Make the link
+  `block`/`flex` and let it fill the row's padding box, or stretch it over
+  the row (`absolute inset-0` on the primary link inside a `relative` row,
+  with the secondary links above it in z-order). `probe:mobile` reports
+  `taps<40` for exactly this, excluding table cells, which have their own
+  density conventions. **Known debt as of 2026-08-30:** the metros list on
+  /countries/[slug] carries ~1,600 sub-40px row links and /teams/football
+  ~1,100. Fix them where you touch them.
+- **Every control a desktop table header provides must exist on mobile
+  too.** When a sortable `<th onClick>` disappears behind `hidden sm:block`,
+  the card list needs its own sort control driving the same state — the
+  Sort-by `<select>` + direction button idiom in `LeadersDirectory` and
+  `NationalIndexClient`. A phone reader who cannot re-sort has a different
+  product, not a smaller one.
+- **Filter and sort state belongs in the URL** where a reader might share
+  or bookmark the result.
+- **Announce state changes** to assistive tech (`aria-live="polite"` +
+  `sr-only`), as the sort controls already do.
+- **Inputs are ≥16px** on mobile, or iOS zooms the page on focus.
+
+---
+
+## 7. Type, colour, motion
+
+- **Never hardcode colour.** Tokens come from globals.css custom
+  properties: `--bg`, `--bg-card`, `--bg-card-hover`, `--border`, `--text`,
+  `--text-muted`, `--text-dim`, `--accent`, plus the region palette.
+- **Numbers render in JetBrains Mono** (the shared `MONO` style const) and
+  `tabular-nums` wherever they align in a column.
+- **Positive/negative deltas**: `#10b981` / `#E2628B`.
+- **Cards**: `rounded-xl` border with the shared `CARD` style.
+- **Body text is ≥13px; 10px is for uppercase mono stamps only**, never for
+  prose or a value a reader must read.
+- **Flag emoji never render on Windows** — use `flagCdnUrl()` images.
+- **Respect `prefers-reduced-motion`.** globals.css disables the sitewide
+  smooth scroll and near-zeroes transitions under it; do not reintroduce
+  motion that ignores the query.
+
+---
+
+## 8. Maps, charts and images
+
+- A map or chart is wide content: it needs `min-w-0` in a grid, and a
+  height that is a fraction of the viewport, not a fixed 520px, on a phone.
+- Leaflet containers carry `isolation: isolate` (globals.css) so their
+  internal panes cannot paint over the nav. Do not remove it.
+- Images carry `loading="lazy"`, `decoding="async"`, and explicit
+  `width`/`height` to avoid layout shift.
+
+---
+
+## 9. Link sharing / social cards (the brand travels with the URL)
+
+Every page must produce ONE consistent preview wherever it is shared — big
 dark brand card, clean title, honest description. The failure mode (found
 2026-08-03: most pages shared with no image at all, small vs large Twitter
-cards at random, doubled titles) came from Next's SHALLOW metadata merge:
-a page that exports its own `openGraph` object replaces the layout's
-ENTIRELY, images included.
+cards at random, doubled titles) came from Next's SHALLOW metadata merge: a
+page that exports its own `openGraph` object replaces the layout's ENTIRELY,
+images included.
 
-- `app/opengraph-image.png` + `app/twitter-image.png` (+ alt.txt) are the
-  sitewide fallback card - file-convention images inherit into every route,
-  so a page-level openGraph without `images` still shares with the brand
-  card. Never delete these; update both together with public/og-default.png.
-- Titles NEVER hardcode "| Global Metro Power Rankings" - the layout's
+- `app/opengraph-image.png` + `app/twitter-image.png` (+ `alt.txt`) are the
+  sitewide fallback card — file-convention images inherit into every route,
+  so a page-level `openGraph` without `images` still shares with the brand
+  card. **Never delete these**; update both together with
+  `public/og-default.png`.
+- **Titles never hardcode "| Global Metro Power Rankings"** — the layout's
   title template appends it (hardcoding doubles it in the tab and in
-  shares). og/twitter titles MAY spell out `${TITLE} | ${SITE_NAME}`
-  because templates don't apply there.
-- Twitter card is `summary_large_image` everywhere. Never `summary` - the
-  small square card is the off-brand look that prompted this section.
-- Every page.tsx exports metadata (or generateMetadata) with: title,
-  description (<=160 chars, reads like a sentence, no keyword soup),
-  `alternates.canonical`, and openGraph carrying title/description/url/type.
-  Pure-redirect pages are exempt; client-component pages inherit the layout
-  defaults (fine for private pages like /me).
-- Data-rich pages may earn a DYNAMIC share image via an /api/og route (the
-  /compare pattern: og:image renders the actual comparison). If you set
-  custom `openGraph.images`, you own both og AND twitter images - set both.
-- Verifying: view-source the built page and check `og:image`, `og:title`,
-  `twitter:card`; or paste the URL into a scraper debugger. A share with a
-  missing image or a doubled title is a broken build, not a cosmetic nit.
+  shares). og/twitter titles MAY spell out `${TITLE} | ${SITE_NAME}`,
+  because templates do not apply there.
+- **Twitter card is `summary_large_image` everywhere.** Never `summary`.
+- Every `page.tsx` exports metadata (or `generateMetadata`) with: title,
+  description (≤160 chars, reads like a sentence, no keyword soup),
+  `alternates.canonical`, and `openGraph` carrying title/description/url/
+  type. Pure-redirect pages are exempt; client-component pages inherit the
+  layout defaults (fine for private pages like /me).
+- Data-rich pages may earn a DYNAMIC share image via an `/api/og` route (the
+  /compare pattern). If you set custom `openGraph.images`, you own BOTH og
+  and twitter images — set both.
+- Verify by view-sourcing the built page for `og:image`, `og:title`,
+  `twitter:card`. A share with a missing image or a doubled title is a
+  broken build, not a cosmetic nit.
+
+---
+
+## 10. Verification — what "done" means
+
+### The gates (`npm run verify`)
+
+`typecheck` → `check:client-imports` → `check:public-data` →
+`check:slug-drift` → `check:team-placement` → `check:skyscrapers` →
+`check:score-parity` → `check:table-scroll` → **`check:mobile`** →
+`check:live-data` → `vitest` → `pytest` → `next build`.
+
+Run it before declaring ANY frontend change done. Never `next build` while
+the dev server holds :3000.
+
+**`check:mobile`** (`scripts/check-mobile.mjs`) enforces §2–§3 statically:
+UNCAPPED_MOBILE_LIST, GRID_CHILD_NO_MIN_W_0, RIGID_WIDE_GRID, HARD_WIDTH,
+NAV_CLEARANCE, NOWRAP_LIST_NO_SCROLL. It has its own unit tests
+(`scripts/check-mobile.test.mjs`) and a ratchet baseline
+(`scripts/mobile-baseline.json`) freezing the legacy tail per file, per
+rule. Useful flags:
+
+```
+node scripts/check-mobile.mjs --list             # every finding, baseline ignored
+node scripts/check-mobile.mjs --write-baseline   # ONLY to SHRINK the ratchet
+```
+
+**Growing the baseline to make the gate pass defeats the gate.** If a
+finding is genuinely intentional, say so in code — an explicit `max-h`, or
+`data-mobile-uncapped` with a reason — not in the baseline file. The gate
+tells you when a baselined file has become clean so the ratchet keeps
+tightening.
+
+If a gate ever prints nothing, treat that as the gate being broken, not
+passing. (`check:table-scroll` was a silent no-op on Windows for a while
+because its main() guard compared path strings; both gates now compare
+`pathToFileURL` and tolerate a missing `argv[1]`.)
+
+### The probe (`npm run probe:mobile`)
+
+The static gate catches the antipatterns we know the names of.
+`scripts/probe-mobile.mjs` catches the ones we do not: it loads real routes
+in real Chromium at a real 390px viewport and measures what a thumb gets.
+
+```bash
+npm run dev                                   # in another terminal
+npm run probe:mobile                          # 25-route representative sample
+node scripts/probe-mobile.mjs --all --concurrency 6
+node scripts/probe-mobile.mjs /teams/f1 /power --json out.json
+CHROME_PATH=/path/to/chrome node scripts/probe-mobile.mjs   # non-standard browser
+```
+
+It reports, per route: `scrollWidth` at 390px, phone screens, the
+mobile:desktop ratio, the widest overflowing element (with its classes, so
+the fix is one selector away), sub-40px tap targets, and whether a scroll
+position holds. It is deliberately NOT part of `verify` — it needs a running
+server and a browser — but it is the standard of proof for any change to a
+board, a hub, or a shared shell.
+
+### Mobile acceptance checklist
+
+At 390px CSS width, before calling any page done:
+
+1. `scrollWidth ≤ 390` — no page-level sideways scroll, ever.
+2. Phone screens under ~25, and under ~3x the same page on desktop.
+3. Scroll the page and confirm the position holds (no scroll-jacking).
+4. Swipe every wide table: the name column stays pinned, values scroll.
+5. The headline value of each ranked board is visible without swiping.
+6. Every sort/filter the desktop table offers exists on the phone.
+7. Tab rows wrap to three rows or fewer; stat grids collapse.
+8. Tap targets ≥44px; nothing important below 13px.
+9. The `<details>` reveals actually open, and are already open at ≥640px.
+
+Browser-zoom users defeat window-resize testing; use devtools device mode,
+or the probe. **Note:** after editing `app/globals.css`, the dev server can
+serve a stale CSS chunk from `.next` — if a new rule seems not to apply,
+confirm it in the served stylesheet before concluding it does not work, and
+`rm -rf .next` if it is missing.
+
+---
+
+## 11. When you think a rule is wrong
+
+Say so, in the pull request or in HANDOFF.md, with the measurement that
+makes the case. Every rule here is the residue of a specific shipped
+failure, so overturning one needs evidence of the same kind. What is not
+acceptable is silently routing around a rule: growing a ratchet baseline,
+adding `overflow-x-hidden` over an overflow, or marking a 200-row list
+`data-mobile-uncapped` because the control looked untidy.

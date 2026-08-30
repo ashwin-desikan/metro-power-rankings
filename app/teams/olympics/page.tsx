@@ -4,6 +4,7 @@ import HubNav from "@/app/teams/HubNav";
 import { getAllOlympicTeams, getOlympicsHub } from "@/lib/olympics";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import AllTimeTable from "./AllTimeTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/olympics";
@@ -91,7 +92,12 @@ export default function OlympicsHubPage() {
         {/* Mobile: one card per Games edition instead of a horizontally
             scrolling table. Same hub.editions data as the desktop table. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {hub.editions.slice().reverse().map((e) => (
+          <CappedList
+            initial={12}
+            noun="editions"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.editions.slice().reverse().map((e) => (
             <Link
               key={`${e.year}-${e.season}-card`}
               href={`/teams/olympics/games/${e.season.toLowerCase()}-${e.year}`}
@@ -122,6 +128,7 @@ export default function OlympicsHubPage() {
               </div>
             </Link>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>

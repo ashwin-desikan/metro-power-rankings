@@ -15,6 +15,7 @@ import Link from "next/link";
 import type { WorldCup2026Bundle, WorldCup2026Sim } from "@/lib/international";
 import { flagForTeam, flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
 import RadialKnockout from "./RadialKnockout";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Props = {
   wc: WorldCup2026Bundle;
@@ -217,7 +218,12 @@ function GroupStage({
               {/* Mobile: one card per team instead of an 8-column table.
                   Same `teams` array (sorted above) drives both. */}
               <div className="grid grid-cols-1 gap-2 sm:hidden">
-                {teams.map((t, i) => {
+                <CappedList
+                  initial={12}
+                  noun="teams"
+                  className="rounded-lg border border-[var(--border)]"
+                  bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+                  items={teams.map((t, i) => {
                   const s = t.slug ? by[t.slug] : undefined;
                   const gamesPlayed = (t.w ?? 0) + (t.d ?? 0) + (t.l ?? 0);
                   const maxFinalPts = t.pts + 3 * Math.max(0, 3 - gamesPlayed);
@@ -280,6 +286,7 @@ function GroupStage({
                     </div>
                   );
                 })}
+                />
               </div>
 
               <div className="overflow-x-auto hidden sm:block">
@@ -399,7 +406,12 @@ function TitleOdds({ sim, alive }: { sim: WorldCup2026Sim; alive: Set<string> })
       {/* Mobile: one card per team instead of a 7-column table. Same `rows`
           array (sorted by title odds above) drives both. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((r, i) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((r, i) => (
           <div
             key={`${r.slug}-card`}
             className="rounded-lg border p-3"
@@ -438,6 +450,7 @@ function TitleOdds({ sim, alive }: { sim: WorldCup2026Sim; alive: Set<string> })
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

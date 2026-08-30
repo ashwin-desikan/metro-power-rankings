@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { useSessionState } from '@/lib/useSessionState';
 import { GrammyChip } from '../GrammyBadges';
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export interface ArtistRow {
   name: string;
@@ -166,7 +167,12 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
 
       {/* Mobile: stacked cards, same rows/sort/filter state as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((a, i) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((a, i) => (
           <div key={a.slug + a.name} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
@@ -225,6 +231,7 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="overflow-x-auto hidden sm:block">

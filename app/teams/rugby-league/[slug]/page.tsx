@@ -11,6 +11,7 @@ import {
 } from "@/lib/rugbyLeagueIntl";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -112,7 +113,12 @@ export default async function RlNationPage({ params }: { params: Promise<{ slug:
         {/* Mobile: one card per World Cup appearance instead of a cramped
             3-column table. Same `detail.results` array as the desktop table. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {(detail?.results ?? []).map((r) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={(detail?.results ?? []).map((r) => (
             <div
               key={`${r.year}-card`}
               className="rounded-lg border px-3 py-2.5 flex items-center justify-between gap-3"
@@ -128,6 +134,7 @@ export default async function RlNationPage({ params }: { params: Promise<{ slug:
               <span className="text-xs text-[var(--text-muted)] text-right flex-shrink-0">{r.host}</span>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Row = {
   slug: string; name: string; active: boolean;
@@ -57,7 +58,12 @@ export default function FootyAllTimeTable({ franchises, league }: { franchises: 
       {/* Mobile: one card per club instead of an 8-column table forcing
           sideways scroll. Same `rows` array, card presentation only. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((f) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((f) => (
           <div key={`${f.slug}-card`} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: f.premierships > 0 ? "rgba(212,175,55,0.3)" : "var(--border)" }}>
             <div className="flex items-center gap-2 min-w-0">
               <TeamCrest name={f.name} size={20} fallback={<Badge r={f} />} />
@@ -92,6 +98,7 @@ export default function FootyAllTimeTable({ franchises, league }: { franchises: 
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

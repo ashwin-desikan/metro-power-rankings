@@ -12,6 +12,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import { getAllCbbSlugs, getAllCbbTeams, getCbbTeamBySlug, getCbbSeasons, getCbbAwards, getCbbNba, getCbbTeamGames, cbbMonogram } from "@/lib/cbb";
 import CbbGamesTable from "../CbbGamesTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Pre-generate only current D1 programs (365 of 498 total). Historical/
 // non-D1 programs are still reachable: dynamicParams=true renders them on
@@ -119,7 +120,12 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
         {/* Mobile: one card per season. Every column from the desktop table
             (including the ones hidden at sm/md/lg below) appears here. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {seasons.map((sn) => {
+          <CappedList
+            initial={12}
+            noun="seasons"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={seasons.map((sn) => {
             const result = sn.champ ? "Champion" : sn.final4 ? "Final Four" : sn.elite8 ? "Elite Eight" : sn.sweet16 ? "Sweet 16" : sn.ncaa ? "NCAA tournament" : sn.nit ? "NIT" : "";
             return (
               <div key={`${sn.year}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -169,6 +175,7 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
               </div>
             );
           })}
+          />
         </div>
 
         <div className="max-h-[70vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>
@@ -211,12 +218,18 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
 
           {/* Mobile: simple stacked cards for this 2-column table. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {awards.map((a, i) => (
+            <CappedList
+              initial={12}
+              noun="awards"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={awards.map((a, i) => (
               <div key={`${i}-card`} className="rounded-lg border px-3 py-2 flex items-center justify-between gap-2" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 <span className="text-sm font-medium">{a.player}</span>
                 <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{a.year}</span>
               </div>
             ))}
+            />
           </div>
 
           <div className="max-h-[60vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>
@@ -247,7 +260,12 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
           {/* Mobile: stacked cards, including the "Last college yr" column
               that's hidden at this width in the desktop table below. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {nba.map((p, i) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={nba.map((p, i) => (
               <div key={`${i}-card`} className="rounded-lg border px-3 py-2" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-sm font-medium">{p.player}</span>
@@ -256,6 +274,7 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
                 <div className="text-[11px] text-[var(--text-dim)] mt-0.5">Last college yr: {p.year || "—"}</div>
               </div>
             ))}
+            />
           </div>
 
           <div className="max-h-[60vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>

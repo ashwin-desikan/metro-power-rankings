@@ -429,7 +429,7 @@ export default async function UkElectionsPage() {
           commissioners since 2012.
         </p>
         <div className="grid gap-4 lg:grid-cols-2">
-          <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+          <div className="min-w-0 rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Metro-mayoral contests</h3>
             <p className="text-xs text-[var(--text-muted)] mb-3">{beyond.metroMayors.note}</p>
             <div className="overflow-x-auto">

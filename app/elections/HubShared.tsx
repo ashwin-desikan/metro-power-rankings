@@ -63,7 +63,12 @@ export function HubTitle({ code, title }: { code: string; title: string }) {
       <div className="mb-3">
         <BackButton href="/elections" label="All election hubs" />
       </div>
-      <div className="flex items-center gap-3 mb-2">
+      {/* flex-wrap + min-w-0 on the h1: a long hub title ("Chinese National
+          Congresses") is a flex item with min-width:auto, so at 390px it
+          refused to shrink and pushed the page to 431px wide. The title
+          wraps now, and the flag and label badge drop to a second line
+          rather than dragging the document sideways. */}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-2">
         {meta ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -76,7 +81,7 @@ export function HubTitle({ code, title }: { code: string; title: string }) {
             style={{ borderColor: "var(--border)" }}
           />
         ) : null}
-        <h1 className="text-3xl font-bold text-[var(--text)]">{title}</h1>
+        <h1 className="min-w-0 text-2xl sm:text-3xl font-bold text-[var(--text)]">{title}</h1>
         {meta?.note ? (
           <span
             className="text-[10px] uppercase tracking-wider rounded-full border px-2.5 py-1 shrink-0 font-semibold"

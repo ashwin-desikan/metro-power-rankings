@@ -14,6 +14,7 @@ import {
 } from "@/lib/ipl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -233,7 +234,12 @@ export default async function IplFranchisePage({ params }: Props) {
         </h2>
         {/* Mobile: one card per season instead of a 9-column table */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {seasons.map(s => (
+          <CappedList
+            initial={12}
+            noun="seasons"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={seasons.map(s => (
             <div
               key={s.year + "-card"}
               className="rounded-lg border p-3"
@@ -274,6 +280,7 @@ export default async function IplFranchisePage({ params }: Props) {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

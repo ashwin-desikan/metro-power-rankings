@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { flagCdnUrl } from "@/lib/international-display";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Local types (kept inline so this client component never imports the
 // server-only lib/basketball module).
@@ -56,7 +57,12 @@ export default function FibaRankingTable({ ranking }: { ranking: FibaRanking }) 
       {/* Mobile: one card per nation instead of a cramped 5-column table.
           Same `rows` data (already zone-filtered) drives both views. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[560px] overflow-y-auto">
-        {rows.map((t) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((t) => (
           <div
             key={t.rank}
             className="rounded-lg border p-3"
@@ -93,6 +99,7 @@ export default function FibaRankingTable({ ranking }: { ranking: FibaRanking }) 
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>

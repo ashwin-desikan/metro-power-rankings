@@ -11,6 +11,7 @@ import {
 } from "@/lib/basketball";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // dynamicParams=true since 2026-08-07: this portal's data is now read at runtime
 // (lib/liveData), so the weekly refresh can introduce a nation between builds.
@@ -159,7 +160,12 @@ export default async function BasketballNationPage(
           </p>
           {/* Mobile: one card per campaign year instead of a scroll-only table */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {detail.campaigns.map((c) => (
+            <CappedList
+              initial={12}
+              noun="campaigns"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={detail.campaigns.map((c) => (
               <div key={c.year} className="rounded-lg border p-3" style={card}>
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-medium text-sm tabular-nums" style={mono}>{c.year}</span>
@@ -185,6 +191,7 @@ export default async function BasketballNationPage(
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

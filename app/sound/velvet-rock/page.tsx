@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import SoundNav from '../SoundNav';
+import { CappedList } from "@/app/_shared/Disclosure";
 
 async function readJSON<T>(rel: string): Promise<T> {
   return JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', rel), 'utf8')) as T;
@@ -91,7 +92,12 @@ export default async function VelvetRockPage() {
         <h2 className="mb-2 text-sm font-bold uppercase tracking-wide" style={muted}>The Velvet Rock Capital Index</h2>
         {/* Mobile: stacked cards instead of a 4-column table forced wide by min-w */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {capitals.map((m) => (
+          <CappedList
+            initial={12}
+            noun="capitals"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={capitals.map((m) => (
             <div key={m.slug} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
               <div className="flex items-start justify-between gap-2">
                 <div>
@@ -106,6 +112,7 @@ export default async function VelvetRockPage() {
               <div className="mt-1.5 text-xs" style={muted}>{m.lenses.production!.note}</div>
             </div>
           ))}
+          />
         </div>
 
         <div className="overflow-x-auto hidden sm:block">

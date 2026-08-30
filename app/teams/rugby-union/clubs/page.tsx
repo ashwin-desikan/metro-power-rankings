@@ -4,6 +4,7 @@ import HubNav from "@/app/teams/HubNav";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { getRugbyClubRolls } from "@/lib/rugbyClubs";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/rugby-union/clubs";
@@ -90,7 +91,12 @@ export default function DomesticRugbyPage() {
                 Runner-up (hidden on the desktop table at narrow widths) is
                 shown explicitly here so no column is silently dropped. */}
             <div className="sm:hidden overflow-y-auto" style={{ maxHeight: 300 }}>
-              {clubs.rolls[k].map((r, i) => (
+              <CappedList
+                initial={12}
+                noun="clubs"
+                className="rounded-lg border border-[var(--border)]"
+                bodyClassName="p-2 pt-0"
+                items={clubs.rolls[k].map((r, i) => (
                 <div
                   key={i}
                   className="border-b last:border-b-0 py-1.5 text-xs"
@@ -115,6 +121,7 @@ export default function DomesticRugbyPage() {
                   <div className="mt-0.5 text-[var(--text-dim)]">Runner-up: {r.ru || "—"}</div>
                 </div>
               ))}
+              />
             </div>
 
             <div className="hidden sm:block overflow-y-auto" style={{ overflowX: "auto", maxHeight: 300 }}>

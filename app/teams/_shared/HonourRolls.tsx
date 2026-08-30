@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Shared winners-only honour-roll renderer for domestic competitions tracked as
 // champions lists only (handball/volleyball/basketball/hockey domestic, cricket
@@ -62,7 +63,12 @@ export default function HonourRolls({
           {/* Mobile: one row-card per season instead of a table that hides
               the runner-up entirely below sm. Same reversed rolls array. */}
           <div className="sm:hidden overflow-y-auto space-y-1" style={{ maxHeight: 340 }}>
-            {[...portal.rolls[k]].reverse().map((r, i, rows) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="space-y-1 p-2 pt-0"
+              items={[...portal.rolls[k]].reverse().map((r, i, rows) => (
               <div key={`${r.season}-${i}-card`}>
               {eraChanged(rows, i) ? (
                 <div className="flex items-center gap-2 pt-2.5 pb-1" aria-hidden={false}>
@@ -91,6 +97,7 @@ export default function HonourRolls({
               </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="hidden sm:block overflow-y-auto" style={{ overflowX: "auto", maxHeight: 340 }}>

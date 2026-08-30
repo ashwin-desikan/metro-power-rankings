@@ -4,6 +4,7 @@ import { flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const metadata: Metadata = {
   title: "British Home Championship & Rous Cup",
@@ -153,7 +154,12 @@ export default function BritishHomeChampionshipPage() {
             forces sideways scrolling at phone widths. Same `bhc` data as
             the desktop table below - only the presentation differs. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {[...bhc].reverse().map((e) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={[...bhc].reverse().map((e) => (
             <div
               key={e.year}
               className="rounded-lg border p-3"
@@ -180,6 +186,7 @@ export default function BritishHomeChampionshipPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>
@@ -225,7 +232,12 @@ export default function BritishHomeChampionshipPage() {
 
           {/* Mobile: one card per edition instead of a 4-column table. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {[...rous].reverse().map((e) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={[...rous].reverse().map((e) => (
               <div
                 key={e.year}
                 className="rounded-lg border p-3"
@@ -248,6 +260,7 @@ export default function BritishHomeChampionshipPage() {
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>

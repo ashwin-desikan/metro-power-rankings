@@ -2,6 +2,7 @@
 import { fmtWorth, forbesUrl, type Billionaire } from "@/lib/billionaires";
 import Collapsible from "./Collapsible";
 import { withIcon } from "./sectionIcons";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export default function BillionairesSection({ list }: { list: Billionaire[] }) {
   if (!list.length) return null;
@@ -19,7 +20,12 @@ export default function BillionairesSection({ list }: { list: Billionaire[] }) {
     >
         {/* Mobile: stacked cards */}
         <div className="mt-2 grid grid-cols-1 gap-2 sm:hidden">
-          {list.map((b) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={list.map((b) => (
             <div key={b.uri} className="rounded-lg border p-3 border-gray-100 dark:border-gray-800" style={{ backgroundColor: "var(--bg-card)" }}>
               <div className="flex items-start justify-between gap-2">
                 <a href={forbesUrl(b.uri)} target="_blank" rel="noopener noreferrer"
@@ -36,6 +42,7 @@ export default function BillionairesSection({ list }: { list: Billionaire[] }) {
               </div>
             </div>
           ))}
+          />
         </div>
         {/* Desktop: table */}
         <div className="hidden sm:block overflow-x-auto mt-2">

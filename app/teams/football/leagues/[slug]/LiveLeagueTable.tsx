@@ -40,6 +40,7 @@ function Table({ group }: { group: LiveTableGroup }) {
       variant="list"
       className="rounded-lg border"
       style={cardStyle}
+      mobileNoun="clubs"
       mobileRows={group.rows.map((r, i) => {
         const b = r.badge ? BADGES[r.badge] : undefined;
         return (

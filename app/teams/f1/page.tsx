@@ -10,6 +10,7 @@ import {
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getPagedF1Constructors } from "@/lib/f1Constructors";
 import TeamName from "@/app/teams/_shared/F1TeamName";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // "2026-06-28" -> "28 Jun" for upcoming races (shown in place of a winner).
 const F1_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -127,10 +128,15 @@ export default async function F1Page() {
         )}
       </div>
       <div className="grid md:grid-cols-2 gap-6">
-        <div>
+        <div className="min-w-0">
           {/* Mobile: stacked cards instead of a 4-column table */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {standings.drivers.map((d, i) => {
+            <CappedList
+              initial={12}
+              noun="drivers"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={standings.drivers.map((d, i) => {
               const team = driverTeam(d);
               return (
                 <div key={`${d.driver}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
@@ -147,6 +153,7 @@ export default async function F1Page() {
                 </div>
               );
             })}
+            />
           </div>
           <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
             <table className="w-full border-collapse">
@@ -170,10 +177,15 @@ export default async function F1Page() {
             </table>
           </div>
         </div>
-        <div>
+        <div className="min-w-0">
           {/* Mobile: stacked cards instead of a 3-column table */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {standings.constructors.map((c, i) => (
+            <CappedList
+              initial={12}
+              noun="constructors"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={standings.constructors.map((c, i) => (
               <div key={`${c.constructor}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5 min-w-0">
@@ -186,6 +198,7 @@ export default async function F1Page() {
                 </div>
               </div>
             ))}
+            />
           </div>
           <div className="rounded-lg overflow-hidden self-start hidden sm:block" style={{ border: "1px solid var(--border)" }}>
             <table className="w-full border-collapse">
@@ -210,7 +223,12 @@ export default async function F1Page() {
       <SectionHeading id="season">This Season ({meta.latest_season})</SectionHeading>
       {/* Mobile: stacked cards instead of a 6-column table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {season.map((r) => (
+        <CappedList
+          initial={12}
+          noun="seasons"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={season.map((r) => (
           <div key={`${r.round}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
             <div className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>Rd {r.round}</div>
             <div className="text-sm font-medium mt-0.5">
@@ -242,6 +260,7 @@ export default async function F1Page() {
             </div>
           </div>
         ))}
+        />
       </div>
       <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
         <table className="w-full border-collapse">
@@ -280,7 +299,12 @@ export default async function F1Page() {
       </p>
       {/* Mobile: stacked cards instead of a 6-column table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {hostMetros.map((h) => (
+        <CappedList
+          initial={12}
+          noun="host metros"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={hostMetros.map((h) => (
           <div key={`${h.metro_slug}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
             <div className="flex items-baseline justify-between gap-2">
               <div className="text-sm font-medium">
@@ -312,6 +336,7 @@ export default async function F1Page() {
             </div>
           </div>
         ))}
+        />
       </div>
       <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
         <table className="w-full border-collapse">
@@ -343,10 +368,15 @@ export default async function F1Page() {
       {/* Champions */}
       <SectionHeading id="champions">World Champions</SectionHeading>
       <div className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2">
+        <div className="min-w-0 lg:col-span-2">
           {/* Mobile: stacked cards instead of a 3-column table */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {championsHistory.map((c) => (
+            <CappedList
+              initial={12}
+              noun="champions"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={championsHistory.map((c) => (
               <div key={`${c.season}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
                 <div className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{c.season}</div>
                 <div className="text-sm font-medium mt-0.5" style={{ color: "var(--text)" }}>
@@ -357,6 +387,7 @@ export default async function F1Page() {
                 </div>
               </div>
             ))}
+            />
           </div>
           <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
             <table className="w-full border-collapse">
@@ -415,10 +446,15 @@ export default async function F1Page() {
         </Link>.
       </p>
       <div className="grid md:grid-cols-2 gap-6">
-        <div>
+        <div className="min-w-0">
           {/* Mobile: stacked cards instead of a 3-column table */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {driverWins.slice(0, 20).map((d, i) => (
+            <CappedList
+              initial={12}
+              noun="driver wins"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={driverWins.slice(0, 20).map((d, i) => (
               <div key={`${d.driver}-card`} className="rounded-lg p-3 flex items-center justify-between gap-2" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
                 <div className="flex items-center gap-2 min-w-0">
                   <span className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{i + 1}</span>
@@ -427,6 +463,7 @@ export default async function F1Page() {
                 <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{d.wins} wins</span>
               </div>
             ))}
+            />
           </div>
           <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
             <table className="w-full border-collapse">
@@ -443,10 +480,15 @@ export default async function F1Page() {
             </table>
           </div>
         </div>
-        <div>
+        <div className="min-w-0">
           {/* Mobile: stacked cards instead of a 3-column table */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {constructorWins.slice(0, 15).map((c, i) => (
+            <CappedList
+              initial={12}
+              noun="constructor wins"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={constructorWins.slice(0, 15).map((c, i) => (
               <div key={`${c.constructor}-card`} className="rounded-lg p-3 flex items-center justify-between gap-2" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
                 <div className="flex items-center gap-1.5 min-w-0">
                   <span className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{i + 1}</span>
@@ -457,6 +499,7 @@ export default async function F1Page() {
                 <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{c.wins} wins</span>
               </div>
             ))}
+            />
           </div>
           <div className="rounded-lg overflow-hidden self-start hidden sm:block" style={{ border: "1px solid var(--border)" }}>
             <table className="w-full border-collapse">

@@ -44,6 +44,7 @@ import { getBillionaires, billionairesForCountry } from "@/lib/billionaires";
 import { countryHasOrgs } from "@/lib/orgs";
 import { formatPop, regionColors, fmtArea } from "@/lib/shared";
 import { flagUrl, flagSrcSet } from "@/lib/flags";
+import { CappedList } from "@/app/_shared/Disclosure";
 import {
   AUTHOR,
   BASE_URL,
@@ -706,7 +707,11 @@ export default async function CountryDetailPage({ params }: Props) {
               <div className="border rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 {/* Mobile: one card per title, same data as the desktop table */}
                 <div className="sm:hidden divide-y divide-[var(--border)] max-h-[32rem] overflow-y-auto">
-                  {champTitles.map((t, i) => (
+                  <CappedList
+                    initial={12}
+                    noun="titles"
+                    bodyClassName="divide-y divide-[var(--border)]"
+                    items={champTitles.map((t, i) => (
                     <div key={`${t.compSlug}-${t.year}-${t.champion}-${i}-card`} className="px-4 py-3">
                       <div className="flex items-center gap-1.5">
                         <ChampionLogo name={t.champion} canonical={t.canonical} size={t.tier != null && t.tier <= 2 ? 22 : 16} />
@@ -726,6 +731,7 @@ export default async function CountryDetailPage({ params }: Props) {
                       </div>
                     </div>
                   ))}
+                  />
                 </div>
                 {/* Desktop: full table */}
                 <div className="hidden sm:block max-h-[32rem] overflow-y-auto overflow-x-auto">

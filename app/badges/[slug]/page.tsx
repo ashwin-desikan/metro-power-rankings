@@ -16,6 +16,7 @@ import ConurbationsTable, {
   type EnrichedConurbationRow,
 } from "./ConurbationsTable";
 import BadgeMap from "./BadgeMap";
+import { CappedList } from "@/app/_shared/Disclosure";
 import {
   AUTHOR,
   BASE_URL,
@@ -473,7 +474,10 @@ export default async function BadgeDetailPage({ params }: Props) {
                       borderColor: "var(--border)",
                     }}
                   >
-                    {group.map((m) => (
+                    <CappedList
+                      initial={12}
+                      noun="groups"
+                      items={group.map((m) => (
                       <MetroCard
                         key={`${m.slug}-card`}
                         metro={m}
@@ -482,6 +486,7 @@ export default async function BadgeDetailPage({ params }: Props) {
                         position={positionBySlug.get(m.slug)}
                       />
                     ))}
+                    />
                   </div>
 
                   <div
@@ -534,7 +539,10 @@ export default async function BadgeDetailPage({ params }: Props) {
                   borderColor: "var(--border)",
                 }}
               >
-                {metros.map((m, i) => (
+                <CappedList
+                  initial={12}
+                  noun="metros"
+                  items={metros.map((m, i) => (
                   <MetroCard
                     key={`${m.slug}-card`}
                     metro={m}
@@ -543,6 +551,7 @@ export default async function BadgeDetailPage({ params }: Props) {
                     position={i + 1}
                   />
                 ))}
+                />
               </div>
 
               <div

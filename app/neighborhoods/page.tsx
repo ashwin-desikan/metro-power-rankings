@@ -9,6 +9,7 @@ import {
   serializeJsonLd,
 } from "@/lib/seo";
 import { QUALIFIERS, SKIPS, qualifierAnchorId } from "@/lib/neighborhoods";
+import { Disclosure } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -357,6 +358,31 @@ export default function NeighborhoodsPage() {
               {qualifierCount} metros · ordered by rank
             </span>
           </div>
+
+          {/* Jump index. This section runs to ~45 phone screens (measured
+              2026-08-30) and every entry already carries a
+              qualifierAnchorId — there was simply nothing linking to them,
+              so reaching the last metro meant scrolling past all the rest.
+              Collapsed on a phone, open on desktop, per
+              DESIGN-STANDARDS.md "Density by environment". */}
+          <Disclosure
+            title="Jump to a metro"
+            meta={`${qualifierCount}`}
+            className="mb-6"
+          >
+            <div className="flex flex-wrap gap-x-2 gap-y-1 p-4">
+              {QUALIFIERS.map((q) => (
+                <a
+                  key={`jump-${q.rank}-${q.metro}`}
+                  href={`#${qualifierAnchorId(q.metro)}`}
+                  className="rounded-full border px-2.5 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+                >
+                  {q.metro}
+                </a>
+              ))}
+            </div>
+          </Disclosure>
 
           <div className="grid gap-5">
             {QUALIFIERS.map((q) => {

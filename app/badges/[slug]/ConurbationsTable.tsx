@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { formatPop, fmtKm } from '@/lib/shared';
 import { tierAnchor, computeTier } from '@/lib/tiers';
 import MetroMap from '@/app/MetroMap';
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Per-member metadata enriched server-side from metros.json. Drives state /
 // province / city searches that the QualifyingMetro shape alone can't answer.
@@ -516,7 +517,10 @@ export default function ConurbationsTable({
                 borderColor: 'var(--border)',
               }}
             >
-              {group.map((r) => (
+              <CappedList
+                initial={12}
+                noun="metros"
+                items={group.map((r) => (
                 <ConurbationCardView
                   key={`${r.slug}-card`}
                   row={r}
@@ -525,6 +529,7 @@ export default function ConurbationsTable({
                   onToggle={() => setOpenSlug(openSlug === r.slug ? null : r.slug)}
                 />
               ))}
+              />
             </div>
 
             <div

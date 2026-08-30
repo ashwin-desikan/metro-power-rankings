@@ -4,6 +4,7 @@ import HubNav from "@/app/teams/HubNav";
 import { getEuroleague } from "@/lib/basketball";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import EuroleagueClubsTable from "./EuroleagueClubsTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/basketball/euroleague";
@@ -83,7 +84,12 @@ export default function EuroleaguePage() {
         </p>
         {/* Mobile: one card per season instead of a cramped 4-column table */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[480px] overflow-y-auto">
-          {el.roll.map((r) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={el.roll.map((r) => (
             <div key={r.season} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-semibold text-sm">{r.champion}</span>
@@ -103,6 +109,7 @@ export default function EuroleaguePage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[480px] overflow-y-auto hidden sm:block" style={card}>

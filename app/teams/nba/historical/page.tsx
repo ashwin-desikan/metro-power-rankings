@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getHistoricalFranchises, seasonLabel } from "@/lib/nba";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const PAGE_PATH = "/teams/nba/historical";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
@@ -102,7 +103,12 @@ function HistoricalSection({
       {/* Mobile: one card per franchise instead of a 7-column table forcing
           horizontal scroll at phone widths. Same `rows` data as the table below. */}
       <div className="grid grid-cols-1 gap-2 px-4 pb-4 sm:hidden">
-        {rows.map((r) => (
+        <CappedList
+          initial={12}
+          noun="franchises"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((r) => (
           <div
             key={r.slug}
             className="rounded-lg border p-3"
@@ -133,6 +139,7 @@ function HistoricalSection({
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="hidden sm:block overflow-x-auto">

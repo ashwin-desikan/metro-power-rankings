@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 import { TableScroll } from "@/app/_shared/TableScroll";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Canonical mobile / desktop-table shell, extracted from the pattern that
 // used to be hand-rolled (with a slightly different implementation each
@@ -16,6 +17,15 @@ import { TableScroll } from "@/app/_shared/TableScroll";
 //  - "cards": the legacy grid of individually bordered boxes. Only for
 //    genuinely card-shaped data (e.g. a season record with many facets);
 //    a 20-row standings table in this mode is 2,000px of mobile scroll.
+//
+// LENGTH. The desktop <table> is height-capped for free: the globals.css
+// `.overflow-x-auto:has(> table)` rule gives every TableScroll an 80vh
+// scroll box. The mobile list is not a table, so it inherited none of that
+// and rendered every row at full height — which is why /leaders measured
+// 29 phone screens against 1.6 desktop screens (18x) on 2026-08-30. So this
+// shell caps the mobile list itself: `mobileInitial` rows, then a "Show all
+// N" control, with the whole list rendered unconditionally from 640px up.
+// See DESIGN-STANDARDS.md, "Density by environment".
 export function ResponsiveTable({
   mobileRows,
   mobileEmpty,
@@ -24,6 +34,8 @@ export function ResponsiveTable({
   style,
   compact = false,
   variant = "cards",
+  mobileInitial = 12,
+  mobileNoun = "rows",
 }: {
   mobileRows: ReactNode[];
   mobileEmpty?: ReactNode;
@@ -32,7 +44,12 @@ export function ResponsiveTable({
   style?: CSSProperties;
   compact?: boolean;
   variant?: "cards" | "list";
+  /** Rows a phone shows before the "Show all" control. 0 disables the cap. */
+  mobileInitial?: number;
+  /** Plural noun for that control, e.g. "clubs", "seasons", "nations". */
+  mobileNoun?: string;
 }) {
+  const cap = mobileInitial > 0 ? mobileInitial : mobileRows.length;
   return (
     <div className={compact ? "mt-3" : "mt-4"}>
       {mobileRows.length > 0 ? (
@@ -41,23 +58,34 @@ export function ResponsiveTable({
             className="sm:hidden rounded-xl border divide-y overflow-hidden"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
           >
-            {mobileRows.map((row, i) => (
-              <div key={i} className="border-[var(--border)]">
-                {row}
-              </div>
-            ))}
+            <CappedList
+              initial={cap}
+              noun={mobileNoun}
+              bodyClassName="divide-y divide-[var(--border)]"
+              items={mobileRows.map((row, i) => (
+                <div key={i} className="border-[var(--border)]">
+                  {row}
+                </div>
+              ))}
+            />
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {mobileRows.map((row, i) => (
-              <div
-                key={i}
-                className="rounded-lg border p-3"
-                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-              >
-                {row}
-              </div>
-            ))}
+            <CappedList
+              initial={cap}
+              noun={mobileNoun}
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={mobileRows.map((row, i) => (
+                <div
+                  key={i}
+                  className="rounded-lg border p-3"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                >
+                  {row}
+                </div>
+              ))}
+            />
           </div>
         )
       ) : (

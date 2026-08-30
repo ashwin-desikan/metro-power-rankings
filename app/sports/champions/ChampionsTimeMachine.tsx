@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { flagCdnUrl } from "@/lib/international-display";
 import { competitionHref } from "@/lib/competitionLinks";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Time machine for /sports/champions: pick any month and year and see who held
 // every trophy that month. Same board as Current — tier order, the same
@@ -445,7 +446,12 @@ export default function ChampionsTimeMachine() {
           <div className="grid grid-cols-1 gap-2 sm:hidden">
             {/* Key on slug + era: a competition split into rival strands
                 (NBA and ABA, NFL and AFL) yields two hits sharing a slug. */}
-            {sorted.map((h) => (
+            <CappedList
+              initial={12}
+              noun="competitions"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={sorted.map((h) => (
               <div key={`${h.comp.slug}-${h.era}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 <div className="flex items-start justify-between gap-2">
                   <Champions h={h} bold={h.tier != null && h.tier <= 2} />
@@ -479,6 +485,7 @@ export default function ChampionsTimeMachine() {
                 </div>
               </div>
             ))}
+            />
           </div>
 
           {/* Desktop: table */}

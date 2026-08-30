@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Metro, formatPop, regionColors } from '@/lib/shared';
 import MetroMap, { type MapPoint } from './MetroMap';
 import { useCombinedBoundaries } from '@/lib/useMetroBoundaries';
+import { CappedList } from "@/app/_shared/Disclosure";
 
 interface RankingsTableProps {
   metros: Metro[];
@@ -358,7 +359,12 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
       {/* Mobile: one card per metro instead of a 7-column table forcing
           sideways scroll. Same `filtered` array, card presentation only. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {filtered.map((metro) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={filtered.map((metro) => (
           <a
             key={`${metro.slug}-card`}
             href={`/rankings/${metro.slug}`}
@@ -414,6 +420,7 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
             </div>
           </a>
         ))}
+        />
       </div>
 
       {/* Desktop: full table. Population/City/State progressively hide on

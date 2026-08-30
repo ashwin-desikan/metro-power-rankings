@@ -9,6 +9,7 @@ import {
   getChampionshipHistory,
 } from "@/lib/ipl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -113,10 +114,15 @@ export default function IplPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 
           {/* Standings */}
-          <div className="lg:col-span-3">
+          <div className="min-w-0 lg:col-span-3">
             {/* Mobile: one card per team instead of an 8-column standings table */}
             <div className="grid grid-cols-1 gap-2 sm:hidden">
-              {latest.standings.map((st, idx) => {
+              <CappedList
+                initial={12}
+                noun="franchises"
+                className="rounded-lg border border-[var(--border)]"
+                bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+                items={latest.standings.map((st, idx) => {
                 const fr = bySlug.get(st.slug);
                 const isCutoff = idx === 3;
                 return (
@@ -165,6 +171,7 @@ export default function IplPage() {
                   </div>
                 );
               })}
+                />
               <div className="px-1 pt-1 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-[var(--text-dim)]">
                 <span>Top 4 advance to playoffs · NRR = Net Run Rate</span>
                 <span>★ Champion · F Runner-up</span>
@@ -267,7 +274,12 @@ export default function IplPage() {
 
         {/* Mobile: one card per franchise instead of a 6-column table */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {champTable.map(f => (
+          <CappedList
+            initial={12}
+            noun="tables"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={champTable.map(f => (
             <div key={f.slug + "-card"} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               <Link href={`/teams/ipl/${f.slug}`} className="flex items-center gap-2.5 hover:text-[var(--accent)] transition-colors">
                 <TeamCrest name={f.name} size={26} fallback={<Monogram abbr={f.abbr} color={f.color} />} />
@@ -309,6 +321,7 @@ export default function IplPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -364,7 +377,12 @@ export default function IplPage() {
 
         {/* Mobile: one card per final instead of a 4-column table */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {history.map(h => {
+          <CappedList
+            initial={12}
+            noun="histories"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={history.map(h => {
             const cf = bySlug.get(h.champion_slug ?? "");
             const rf = bySlug.get(h.runner_up_slug ?? "");
             return (
@@ -392,6 +410,7 @@ export default function IplPage() {
               </div>
             );
           })}
+          />
         </div>
 
         <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

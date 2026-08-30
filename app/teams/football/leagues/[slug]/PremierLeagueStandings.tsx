@@ -83,6 +83,7 @@ function LiveTable({
 
       <ResponsiveTable
         variant="list"
+        mobileNoun="clubs"
         mobileRows={rows.map((row) => {
           const eurEntries = europeBySlug.get(row.slug ?? "") ?? [];
           return (
@@ -240,6 +241,7 @@ function WorkbookTable({
 
       <ResponsiveTable
         variant="list"
+        mobileNoun="clubs"
         mobileRows={hub.current_standings.map((s) => {
           const isChamp = s.champion === true || s.place === 1;
           return (

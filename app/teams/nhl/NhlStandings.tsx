@@ -6,6 +6,7 @@
 import Link from "next/link";
 import { getCurrentNhlStandings, type TeamStanding } from "@/lib/nhl-standings";
 import { getAllFranchises, logoUrlFor, monogramFor } from "@/lib/nhl";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Region = "Atlantic" | "Metropolitan" | "Central" | "Pacific" | "Other";
 
@@ -125,7 +126,12 @@ export default async function NhlStandings() {
         </h3>
         {/* Mobile: one stacked row-card per team instead of a squeezed 6-column table. */}
         <div className="grid grid-cols-1 gap-1.5 sm:hidden">
-          {b.teams.map(t => {
+          <CappedList
+            initial={12}
+            noun="teams"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-1.5 p-2 pt-0"
+            items={b.teams.map(t => {
             const slug = slugByCanonical.get(t.canonical);
             const fr = slug ? bySlug.get(slug) : null;
             const logo = slug ? logoUrlFor(slug) : null;
@@ -164,6 +170,7 @@ export default async function NhlStandings() {
               </div>
             );
           })}
+          />
         </div>
 
         <div className="overflow-x-auto hidden sm:block">

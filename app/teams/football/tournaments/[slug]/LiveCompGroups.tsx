@@ -37,6 +37,7 @@ export default function LiveCompGroups({ comp, season, note }: { comp: LiveComp;
               variant="list"
               className="rounded-lg border"
               style={cardStyle}
+              mobileNoun="clubs"
               mobileRows={g.rows.slice().sort(byPts).map((r, i) => {
                 const c = getFootballClubByName(r.lookup ?? "") ?? getFootballClubByName(r.name ?? "");
                 const nm = c?.cur_name ?? r.lookup ?? r.name ?? "-";

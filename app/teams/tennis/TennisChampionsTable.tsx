@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // One combined, filterable Grand Slam champions ledger across all four majors.
 // Flags are precomputed server-side (flagUrl) so this client component pulls no
@@ -97,7 +98,12 @@ export default function TennisChampionsTable({
           can read at 375px without scrolling sideways. Same `filtered`
           data as the desktop table below - only the presentation differs. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {filtered.map((r) => (
+        <CappedList
+          initial={12}
+          noun="tournaments"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={filtered.map((r) => (
           <div
             key={`${r.year}-${r.tournament}-card`}
             className="rounded-lg border p-3"
@@ -129,6 +135,7 @@ export default function TennisChampionsTable({
             </div>
           </div>
         ))}
+        />
         {filtered.length === 0 && (
           <div className="rounded-lg border p-4 text-center text-sm text-[var(--text-dim)]" style={card}>
             No editions match those filters.

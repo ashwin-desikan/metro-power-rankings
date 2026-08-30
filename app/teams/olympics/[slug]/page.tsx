@@ -9,6 +9,7 @@ import {
 } from "@/lib/olympics";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -157,7 +158,12 @@ export default async function OlympicTeamPage(
         {/* Mobile: one card per Games appearance instead of a horizontally
             scrolling table. Same detail.editions data as the desktop table. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {detail.editions.map((e, i) => (
+          <CappedList
+            initial={12}
+            noun="editions"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={detail.editions.map((e, i) => (
             <div key={i} className="rounded-lg border p-3" style={card}>
               <div className="flex items-start justify-between gap-2">
                 <div>
@@ -189,6 +195,7 @@ export default async function OlympicTeamPage(
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>

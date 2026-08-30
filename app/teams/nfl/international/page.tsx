@@ -11,6 +11,7 @@ import {
 } from "@/lib/nflEurope";
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -105,7 +106,12 @@ export default function NflInternationalPage() {
         {/* Mobile: one card per game instead of a 5-column table. Same
             intl.games data/order as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {intl.games.map((g, i) => (
+          <CappedList
+            initial={12}
+            noun="games"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={intl.games.map((g, i) => (
             <div
               key={`${i}-card`}
               className="rounded-lg border p-3"
@@ -138,6 +144,7 @@ export default function NflInternationalPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
@@ -182,7 +189,12 @@ export default function NflInternationalPage() {
         {/* Mobile: one card per World Bowl instead of a 6-column table.
             Same worldBowls data/order as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {worldBowls.map((g) => (
+          <CappedList
+            initial={12}
+            noun="finals"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={worldBowls.map((g) => (
             <div
               key={g.season}
               className="rounded-lg border p-3"
@@ -201,6 +213,7 @@ export default function NflInternationalPage() {
               <div className="text-[10px] text-[var(--text-dim)] mt-1">{g.city}{g.venue ? ` · ${g.venue}` : ""}</div>
             </div>
           ))}
+          />
         </div>
 
         <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
@@ -242,7 +255,12 @@ export default function NflInternationalPage() {
         {/* Mobile: one card per franchise instead of a 6-column table.
             Same franchises data/order as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {franchises.map((f) => (
+          <CappedList
+            initial={12}
+            noun="franchises"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={franchises.map((f) => (
             <div
               key={f.canonical}
               id={nflEuropeFranchiseSlug(f.canonical)}
@@ -293,6 +311,7 @@ export default function NflInternationalPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
@@ -358,7 +377,12 @@ export default function NflInternationalPage() {
               {/* Mobile: one card per team instead of a 7-column table.
                   Same rows data/order as the desktop table below. */}
               <div className="border-t border-[var(--border)] p-2 grid grid-cols-1 gap-2 sm:hidden">
-                {rows.map((s, i) => (
+                <CappedList
+                  initial={12}
+                  noun="rows"
+                  className="rounded-lg border border-[var(--border)]"
+                  bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+                  items={rows.map((s, i) => (
                   <div
                     key={i}
                     className="rounded-lg border p-3"
@@ -394,6 +418,7 @@ export default function NflInternationalPage() {
                     </div>
                   </div>
                 ))}
+                />
               </div>
 
               <div className="border-t border-[var(--border)] overflow-x-auto hidden sm:block">

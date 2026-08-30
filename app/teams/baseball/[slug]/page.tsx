@@ -11,6 +11,7 @@ import {
 } from "@/lib/baseball";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -132,7 +133,12 @@ export default async function BaseballTeamPage(
 
         {/* Mobile: one card per tournament, same data as the table below */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {detail.campaigns.map((c) => (
+          <CappedList
+            initial={12}
+            noun="campaigns"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={detail.campaigns.map((c) => (
             <div key={c.year} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-semibold text-base tabular-nums" style={mono}>{c.year}</span>
@@ -155,6 +161,7 @@ export default async function BaseballTeamPage(
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -192,7 +199,12 @@ export default async function BaseballTeamPage(
 
         {/* Mobile: one card per game, same reversed order as the table below */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto">
-          {detail.games.slice().reverse().map((g, i) => (
+          <CappedList
+            initial={12}
+            noun="games"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={detail.games.slice().reverse().map((g, i) => (
             <div key={i} className="rounded-lg border p-3" style={card}>
               <div className="flex items-start justify-between gap-2">
                 <span className="font-medium text-sm">{g.opp}</span>
@@ -219,6 +231,7 @@ export default async function BaseballTeamPage(
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>

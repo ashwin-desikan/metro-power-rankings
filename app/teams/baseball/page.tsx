@@ -8,6 +8,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 import { getWorldRanking } from "@/lib/worldRankings";
 import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/baseball";
@@ -148,7 +149,12 @@ export default function BaseballHubPage() {
 
         {/* Mobile: one card per final, same data as the table below */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {hub.finals.slice().reverse().map((f) => (
+          <CappedList
+            initial={12}
+            noun="finals"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.finals.slice().reverse().map((f) => (
             <div key={f.year} className="rounded-lg border p-3" style={card}>
               <div className="flex items-start justify-between gap-2">
                 <span className="font-semibold text-sm">{teamLink(f.champion)}</span>
@@ -170,6 +176,7 @@ export default function BaseballHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -209,7 +216,12 @@ export default function BaseballHubPage() {
 
         {/* Mobile: one card per nation, same data as the table below */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {allTime.map((t) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={allTime.map((t) => (
             <div key={t.slug} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-medium text-sm">{teamLink(t.name)}</span>
@@ -248,6 +260,7 @@ export default function BaseballHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

@@ -5,6 +5,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { flagCdnUrl } from "@/lib/international-display";
 import { useEffect, useMemo, useState } from "react";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Single merged, filterable champions board for /sports/champions. Plain
 // serializable rows come from the server page (no server-only imports here),
@@ -390,7 +391,12 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
           can read at 375px without scrolling sideways. Same `sorted` data,
           same filters/sort state above - only the presentation differs. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((c, i) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((c, i) => (
           <div
             key={`${c.team}-${c.competition}-${i}-card`}
             className="rounded-lg border p-3"
@@ -458,6 +464,7 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>

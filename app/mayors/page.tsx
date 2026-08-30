@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAllMayors } from "@/lib/mayors";
 import { getAllMetros } from "@/lib/data";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const PATH = "/mayors";
 const TITLE = "Mayors of the World's Top Metros";
@@ -44,9 +45,18 @@ export default async function MayorsPage() {
         <p className="text-sm text-[var(--text-dim)] mt-2">{rows.length} of the top 100 metros covered.</p>
       </header>
 
-      {/* Mobile: stacked cards */}
+      {/* Capped on phones. The desktop table gets an 80vh scroll box free
+          from the globals.css table rule; this card list is not a table and
+          got nothing, so it ran 10.8x longer than the desktop page
+          (measured 2026-08-30). DESIGN-STANDARDS.md, "Density by
+          environment". */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((r) => (
+        <CappedList
+          initial={12}
+          noun="metros"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((r) => (
           <div key={`${r.slug}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
@@ -68,6 +78,7 @@ export default async function MayorsPage() {
             </div>
           </div>
         ))}
+        />
       </div>
       <div className="hidden sm:block rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
         <table className="w-full text-left text-sm">

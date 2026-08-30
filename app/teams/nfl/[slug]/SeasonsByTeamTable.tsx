@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { Season } from "@/lib/nfl";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Sortable Season-by-season table for /teams/nfl/[slug]. Client component so
 // header clicks can re-sort without a round trip. Server-side wrapper passes
@@ -150,7 +151,12 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
           can read at 375px without scrolling sideways. Same displayRows
           data, driven by the same sort state as the desktop table below. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {displayRows.map((s) => {
+        <CappedList
+          initial={12}
+          noun="seasons"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={displayRows.map((s) => {
           const isLive = s.is_live === true;
           const isSb = s.year >= 1966;
           const champColor = s.champ ? (isSb ? TITLE_GOLD : PRE_SB_BRONZE) : undefined;
@@ -247,6 +253,7 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
             </div>
           );
         })}
+        />
       </div>
 
       <div className="overflow-x-auto hidden sm:block">

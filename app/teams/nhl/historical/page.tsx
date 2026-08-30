@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllHistorical, TITLE_COLORS } from "@/lib/nhl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -64,7 +65,12 @@ export default function NhlHistoricalPage() {
 
       {/* Mobile: one stacked card per franchise instead of an 8-column table. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {historical.map((h) => (
+        <CappedList
+          initial={12}
+          noun="seasons"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={historical.map((h) => (
           <div
             key={`${h.slug}-card`}
             className="rounded-lg border p-3"
@@ -107,6 +113,7 @@ export default function NhlHistoricalPage() {
             </div>
           </div>
         ))}
+        />
       </div>
 
       <section

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { getLeaders, leaderYear, type Leader } from "@/lib/leaders";
 import Collapsible from "./Collapsible";
 import { withIcon } from "./sectionIcons";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Props = {
   countrySlug: string;
@@ -137,9 +138,15 @@ function LeaderTable({ leaders, showMetros }: { leaders: Leader[]; showMetros: b
     <>
       {/* Mobile: stacked cards */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {leaders.map((l, i) => (
+        <CappedList
+          initial={12}
+          noun="leaders"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={leaders.map((l, i) => (
           <LeaderCard key={`${l.name}-${l.start ?? i}-card`} l={l} showMetros={showMetros} />
         ))}
+        />
       </div>
       {/* Desktop: table */}
       <div className="hidden sm:block overflow-x-auto">

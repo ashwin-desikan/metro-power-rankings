@@ -10,6 +10,7 @@ import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import HeartbreakTag from "@/app/teams/HeartbreakTag";
 import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import type { ResolvedRival } from "@/lib/rivalries";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 function titleCase(slug: string): string {
   return slug.split("-").map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
@@ -136,7 +137,12 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
                 </div>
               </div>
             )}
-            {seasons.map((s) => {
+            <CappedList
+              initial={12}
+              noun="seasons"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={seasons.map((s) => {
               const b = seasonBadge(s, copy);
               return (
                 <div key={`${s.year}-${s.team}-card`} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: s.prem ? "rgba(212,175,55,0.3)" : "var(--border)" }}>
@@ -161,6 +167,7 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -235,7 +242,12 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
           {/* Mobile: one card per Grand Final instead of a 6-column table
               forcing sideways scroll. Same grandFinals array, cards only. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {grandFinals.map((g, i) => {
+            <CappedList
+              initial={12}
+              noun="grand finals"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={grandFinals.map((g, i) => {
               const won = g.result === "W", drew = g.result === "D";
               return (
                 <div key={`${g.year}-${i}-card`} className="rounded-lg border p-3" style={{ background: won ? "rgba(212,175,55,0.07)" : "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -254,6 +266,7 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

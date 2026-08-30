@@ -8,6 +8,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { WWCNation } from "@/lib/wnational";
 import { flagCdnUrl } from "@/lib/international-display";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type SortKey = "default" | "nation" | "continent" | "apps" | "titles" | "finals" | "best" | "last";
 type SortDir = "asc" | "desc";
@@ -130,7 +131,12 @@ export default function WWCNationsTable({ nations }: { nations: WWCNation[] }) {
           otherwise need horizontal scrolling or silently hidden columns.
           Same `sorted` data/state as the desktop table below. */}
       <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((n, i) => (
+        <CappedList
+          initial={12}
+          noun="nations"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((n, i) => (
           <div
             key={`${n.slug}-card`}
             className="rounded-lg border p-3"
@@ -172,6 +178,7 @@ export default function WWCNationsTable({ nations }: { nations: WWCNation[] }) {
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="mt-4 overflow-x-auto hidden sm:block">

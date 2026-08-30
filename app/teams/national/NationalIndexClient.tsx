@@ -8,6 +8,7 @@ import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { CONTINENT_COLORS, flagForTeam, flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
+import { CappedList } from "@/app/_shared/Disclosure";
 import type { NationalMapPoint } from "./NationalMapInner";
 
 const NationalMap = dynamic(() => import("./NationalMapInner"), {
@@ -301,8 +302,20 @@ export default function NationalIndexClient({ teams, snapshots }: Props) {
 
         {/* Mobile: one card per national team instead of a 6-column table.
             Same `ranked` array (filters + sort state above) drives both. */}
+        {/* Capped: ~200 national teams at ~200px of card each is 50 phone
+            screens (measured 2026-08-30). The phone gets the top of the
+            board and a control for the rest; the desktop table below is
+            already height-capped by the globals.css table rule. The `key`
+            resets the expanded state whenever the filters change the list,
+            so "show all" never means "show all of a list you left". */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {ranked.map((t) => {
+          <CappedList
+            key={`${continents.size}-${federations.size}-${search}-${sortKey}-${sortDir}-${ranked.length}`}
+            initial={12}
+            noun="national teams"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={ranked.map((t) => {
             const flagUrl = flagCdnUrl(t.slug);
             return (
               <div
@@ -386,6 +399,7 @@ export default function NationalIndexClient({ teams, snapshots }: Props) {
               </div>
             );
           })}
+          />
         </div>
 
         <div className="overflow-x-auto hidden sm:block">

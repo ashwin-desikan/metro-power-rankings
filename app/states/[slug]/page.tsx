@@ -13,6 +13,7 @@ import { getStateFacts, getInCountryRank, getAreaRank } from "@/lib/stateFacts";
 import StateFactsSection from "./StateFactsSection";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
+import { CappedList } from "@/app/_shared/Disclosure";
 import {
   AUTHOR,
   BASE_URL,
@@ -340,7 +341,11 @@ export default async function StateDetailPage({ params }: Props) {
               >
                 {/* Mobile: stacked cards */}
                 <div className="sm:hidden divide-y divide-[var(--border)]">
-                  {metros.map((m) => {
+                  <CappedList
+                    initial={12}
+                    noun="metros"
+                    bodyClassName="divide-y divide-[var(--border)]"
+                    items={metros.map((m) => {
                     const tier = computeTier(m.score);
                     const isCapital =
                       state.capital != null && m.name === state.capital;
@@ -374,6 +379,7 @@ export default async function StateDetailPage({ params }: Props) {
                       </div>
                     );
                   })}
+                  />
                 </div>
                 {/* Desktop: table */}
                 <div className="hidden sm:block overflow-x-auto">

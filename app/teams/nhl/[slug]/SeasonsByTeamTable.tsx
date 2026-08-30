@@ -9,6 +9,7 @@
 import type { ReactNode } from "react";
 import { useMemo } from "react";
 import type { Season } from "@/lib/nhl";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type LiveRow = {
   year: number;
@@ -101,7 +102,12 @@ export default function SeasonsByTeamTable({ seasons, liveRow }: Props) {
             </div>
           </div>
         )}
-        {sorted.map((s) => {
+        <CappedList
+          initial={12}
+          noun="seasons"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((s) => {
           const chip = postseasonChip(s);
           return (
             <div
@@ -144,6 +150,7 @@ export default function SeasonsByTeamTable({ seasons, liveRow }: Props) {
             </div>
           );
         })}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

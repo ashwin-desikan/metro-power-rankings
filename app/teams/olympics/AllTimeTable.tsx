@@ -13,6 +13,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { flagCdnUrl } from "@/lib/international-display";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export type AllTimeRow = {
   slug: string;
@@ -200,7 +201,12 @@ export default function AllTimeTable({ rows }: { rows: AllTimeRow[] }) {
           table. Same `visible` array (post filter/scope) as the desktop
           table below, so filtering/sorting never forks between the two. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {visible.map(({ row, v }, i) => (
+        <CappedList
+          initial={12}
+          noun="nations"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={visible.map(({ row, v }, i) => (
           <Link
             key={row.slug}
             href={`/teams/olympics/${row.slug}`}
@@ -247,6 +253,7 @@ export default function AllTimeTable({ rows }: { rows: AllTimeRow[] }) {
             </div>
           </Link>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>

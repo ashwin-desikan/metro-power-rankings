@@ -223,7 +223,11 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
   }, [openId]);
 
   return (
-    <div className="hidden md:flex gap-4 lg:gap-5 items-center">
+    // lg, not md: the full mega-menu row measures ~640px, which does not fit
+    // beside the wordmark until about 1024px. Between 768 and 1024 it used to
+    // render anyway and the two overlapped. MobileMenu — which mirrors these
+    // same sections from lib/sportsCatalog — covers that band instead.
+    <div className="hidden lg:flex gap-4 lg:gap-5 items-center">
       <Dropdown id="data" label="Geography" href="/geography" openId={openId} setOpenId={setOpenId} minWidth={480}>
         <div className="p-2 grid grid-cols-2 gap-x-4">
           <div>

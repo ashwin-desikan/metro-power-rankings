@@ -19,6 +19,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 import { getCricketGamesForTeam } from "@/lib/cricketGames";
 import CricketGreatestGames from "../CricketGreatestGames";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // dynamicParams=true since 2026-08-07: this portal's data is now read at runtime
 // (lib/liveData), so the weekly refresh can introduce a nation between builds.
@@ -166,7 +167,8 @@ export default async function CricketTeamPage(
         <h2 className="text-lg font-semibold mb-3">All-time record</h2>
 
         {/* Mobile: one card per format instead of a 9-column table. */}
-        <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {/* Bounded at three formats (Test/ODI/T20I) — no cap needed. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden" data-mobile-uncapped>
           {CRICKET_FORMATS.map((f) => {
             const rec = team.formats[f];
             if (!rec) return null;
@@ -344,7 +346,12 @@ export default async function CricketTeamPage(
 
           {/* Mobile: one card per final instead of a 4-column table. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {detail.finals.slice().reverse().map((f, i) => (
+            <CappedList
+              initial={12}
+              noun="finals"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={detail.finals.slice().reverse().map((f, i) => (
               <div key={i} className="rounded-xl border p-3" style={card}>
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="font-semibold tabular-nums" style={mono}>{f.year ?? "—"}</span>
@@ -361,6 +368,7 @@ export default async function CricketTeamPage(
                 <div className="text-xs text-[var(--text-dim)] mt-1">{f.detail}</div>
               </div>
             ))}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -424,7 +432,12 @@ export default async function CricketTeamPage(
 
           {/* Mobile: one card per opponent instead of a many-column table. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {h2hEntries.map(([opp, recs]) => {
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={h2hEntries.map(([opp, recs]) => {
               const total = CRICKET_FORMATS.reduce((acc, f) => {
                 const r = recs[f];
                 return acc + (r ? r.m : 0);
@@ -450,6 +463,7 @@ export default async function CricketTeamPage(
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -497,7 +511,12 @@ export default async function CricketTeamPage(
 
           {/* Mobile: one card per match instead of a 5-column table. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {detail.recent.map((m, i) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={detail.recent.map((m, i) => (
               <div key={i} className="rounded-xl border p-3" style={card}>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-xs tabular-nums text-[var(--text-muted)]" style={mono}>{m.date}</span>
@@ -517,6 +536,7 @@ export default async function CricketTeamPage(
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

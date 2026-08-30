@@ -6,6 +6,7 @@ import HubNav from "@/app/teams/HubNav";
 import { getAllCbbTeams, getAllCbbSlugs, getCbbTopGames, getCbbGamesByDecade, getCbbNationalChampions, getCbbDynastyLeaders, type CbbTeam } from "@/lib/cbb";
 import CbbAllTimeTable from "./CbbAllTimeTable";
 import CbbGames from "./CbbGames";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PAGE_PATH = "/teams/cbb";
@@ -78,7 +79,12 @@ export default function CbbHubPage() {
           {/* Mobile: one card per tournament year. Same `natChamps` data as
               the desktop table, with champion/runner-up/Final Four stacked. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {natChamps.map((nc) => (
+            <CappedList
+              initial={12}
+              noun="national champions"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={natChamps.map((nc) => (
               <div key={`${nc.year}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 <div className="flex items-center gap-2 mb-1.5">
                   <a href={`https://www.sports-reference.com/cbb/seasons/men/${nc.year}.html`} target="_blank" rel="noopener noreferrer" className="text-xs tabular-nums text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline" title={`${nc.year} season on Sports Reference`}>{nc.year}</a>
@@ -118,6 +124,7 @@ export default function CbbHubPage() {
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="max-h-[70vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>

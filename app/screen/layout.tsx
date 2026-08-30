@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-// Same clearance fix as /sound: the fixed site header would otherwise overlap
-// the section sub-nav (ScreenNav) rendered at the top of each /screen page.
+// Pass-through — see the note in app/sound/layout.tsx. SiteNav is
+// `sticky top-0`, so the old `pt-12` fixed-header clearance is dead space.
 export default function ScreenLayout({ children }: { children: ReactNode }) {
-  return <div className="pt-12">{children}</div>;
+  return <>{children}</>;
 }

@@ -8,6 +8,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 import { getWorldRanking } from "@/lib/worldRankings";
 import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/wnational";
@@ -135,7 +136,12 @@ export default function WomensInternationalPage() {
           Every final since {wwcMeta.year_min}. Click a nation for its full World Cup record.
         </p>
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {wwcEditions.slice().reverse().map((e) => (
+          <CappedList
+            initial={12}
+            noun="editions"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={wwcEditions.slice().reverse().map((e) => (
             <div key={`${e.year}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2">
                 <span className="tabular-nums text-sm text-[var(--text-muted)]" style={mono}>{e.year}</span>
@@ -159,6 +165,7 @@ export default function WomensInternationalPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -202,7 +209,12 @@ export default function WomensInternationalPage() {
           Every nation across all four competitions. Each tournament cell shows titles / finals reached; WC Apps is World Cup appearances. Sorted by total titles, then finals.
         </p>
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {allTime.map((r) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={allTime.map((r) => (
             <div key={`${r.name}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-medium text-sm truncate">{nationLink(r.name)}</span>
@@ -236,6 +248,7 @@ export default function WomensInternationalPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -278,7 +291,12 @@ export default function WomensInternationalPage() {
           <h2 className="text-lg font-semibold mb-1">Olympic women&apos;s football</h2>
           <p className="text-xs text-[var(--text-muted)] mb-3">Every final since {oly.meta.year_min}.</p>
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {oly.editions.slice().reverse().map((e) => (
+            <CappedList
+              initial={12}
+              noun="editions"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={oly.editions.slice().reverse().map((e) => (
               <div key={`${e.year}-card`} className="rounded-lg border p-3" style={card}>
                 <div className="tabular-nums text-sm text-[var(--text-muted)] mb-1.5" style={mono}>{e.year}{e.host ? ` · ${e.host}` : ""}</div>
                 <div className="grid grid-cols-1 gap-y-1 text-xs">
@@ -297,6 +315,7 @@ export default function WomensInternationalPage() {
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -334,7 +353,12 @@ export default function WomensInternationalPage() {
             {euros.meta.editions} editions, {euros.meta.year_min}–{euros.meta.year_max}. West Germany&apos;s 1989 title is carried under Germany.
           </p>
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {euros.finals.slice().reverse().map((f) => (
+            <CappedList
+              initial={12}
+              noun="finals"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={euros.finals.slice().reverse().map((f) => (
               <div key={`${f.year}-card`} className="rounded-lg border p-3" style={card}>
                 <div className="flex items-center justify-between gap-2">
                   <span className="tabular-nums text-sm text-[var(--text-muted)]" style={mono}>{f.year}</span>
@@ -358,6 +382,7 @@ export default function WomensInternationalPage() {
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

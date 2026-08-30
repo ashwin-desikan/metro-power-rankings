@@ -123,6 +123,7 @@ function CTable({ table }: { table: TRow[] }) {
       variant="list"
       className="rounded-lg border"
       style={cardStyle}
+      mobileNoun="tables"
       mobileRows={table.map((r, i) => (
         <RankRow
           key={i}
@@ -451,6 +452,7 @@ export default function SeasonHub({ hub }: { hub: Hub }) {
           variant="list"
           className="rounded-xl border"
           style={cardStyle}
+          mobileNoun="cups"
           mobileRows={hub.cups.map((c) => (
             <RankRow
               key={`${c.comp}-${c.country}`}

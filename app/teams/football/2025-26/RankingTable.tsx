@@ -114,6 +114,7 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
           variant="list"
           className="rounded-xl border"
           style={cardStyle}
+          mobileNoun="countries"
           mobileRows={countries.map((c) => {
             const latest = clubSeasons[clubSeasons.length - 1];
             const latestVal = latest != null ? c.seasons[latest] : null;

@@ -348,7 +348,8 @@ function CompareMobile({
   winners: Record<string, Set<string>>;
 }) {
   return (
-    <div className="md:hidden space-y-6">
+    // Bounded by MAX_METROS in normalizeSlugs — a handful of columns, never a feed.
+    <div className="md:hidden space-y-6" data-mobile-uncapped>
       {details.map((d) => (
         <div
           key={d.metro.slug}

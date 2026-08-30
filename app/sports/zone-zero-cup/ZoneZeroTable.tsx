@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { flagCdnUrl } from "@/lib/international-display";
 import { Fragment, useMemo, useState } from "react";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Interactive Zone Zero Cup table. Plain serializable rows come from the server
 // page. A view toggle switches the ranking basis (overall merit / per capita /
@@ -360,7 +361,10 @@ export default function ZoneZeroTable({
 
       {/* Mobile: stacked cards, same sorted/filtered rows and expand state as the desktop table */}
       <div className="rounded-xl border overflow-hidden sm:hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-        {sorted.map((r, i) => {
+        <CappedList
+          initial={12}
+          noun="nations"
+          items={sorted.map((r, i) => {
           const rk = sportMode ? sportPos.get(r.slug) : rowRank(r, view);
           const mt = sportMode ? r.sportMerit[sport] : rowMerit(r, view);
           const wr = sportMode ? r.sportRank[sport] : r.bestRank;
@@ -433,6 +437,7 @@ export default function ZoneZeroTable({
             </div>
           );
         })}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>

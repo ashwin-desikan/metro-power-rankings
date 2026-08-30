@@ -11,6 +11,7 @@ import HeartbreakTag from "@/app/teams/HeartbreakTag";
 import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import { getAllCfbSlugs, getAllCfbTeams, getCfbTeamBySlug, getCfbSeasons, getCfbAwards, getCfbRivalries, getCfbTeamGames, cfbMonogram } from "@/lib/cfb";
 import CfbGamesTable from "../CfbGamesTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Pre-generate only current FBS programs (138 of 306 total). Historical/
 // non-FBS programs are still reachable: dynamicParams=true renders them on
@@ -247,7 +248,12 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
           {/* Mobile: one card per award. Same `awards` array/order that
               drives the desktop table below. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-auto rounded-lg border p-2" style={{ borderColor: "var(--border)" }}>
-            {awards.map((a, i) => {
+            <CappedList
+              initial={12}
+              noun="awards"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={awards.map((a, i) => {
               const isHeisman = /^\s*heisman trophy\s*$/i.test(a.award);
               return (
                 <div key={i} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -265,6 +271,7 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="hidden sm:block max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>

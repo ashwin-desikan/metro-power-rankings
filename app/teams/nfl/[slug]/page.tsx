@@ -37,6 +37,7 @@ import { getCurrentNflStandings } from "@/lib/standings";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
 import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -566,7 +567,12 @@ export default async function FranchisePage({ params }: Props) {
               dense matchup cell that forces sideways scrolling. Same
               topGames data/order as the desktop table below. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {topGames.map((g, i) => {
+            <CappedList
+              initial={12}
+              noun="top games"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={topGames.map((g, i) => {
               const isLoss = g.result === "L";
               const isTie = g.result === "T";
               const oppF = getFranchiseByCanonical(g.opp_canonical);
@@ -646,6 +652,7 @@ export default async function FranchisePage({ params }: Props) {
                 </div>
               );
             })}
+            />
           </div>
 
           <div className="overflow-x-auto hidden sm:block">
@@ -1030,7 +1037,10 @@ function StatCell({ v, k, sub }: { v: string; k: string; sub?: string }) {
 function Block({ title, deck, children }: { title: string; deck: string | null; children: React.ReactNode }) {
   return (
     <section
-      className="rounded-xl border p-5 mt-4"
+      // min-w-0: Block is used as a grid child around wide tables, and a grid
+      // item defaults to min-width:auto — without this the table inflates the
+      // track and the page scrolls sideways on a phone.
+      className="min-w-0 rounded-xl border p-5 mt-4"
       style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
     >
       <h2 className="text-base font-semibold">{title}</h2>

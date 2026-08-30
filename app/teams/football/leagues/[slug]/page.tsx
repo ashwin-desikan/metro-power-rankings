@@ -347,13 +347,14 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
         <MlsMostDecorated rows={allTimeRows} />
       </div>
       <section id="honors" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div>
+        <div className="min-w-0">
           <h2 className="text-lg font-semibold mb-3">MLS Cup champions</h2>
 
           <ResponsiveTable
             variant="list"
             className="rounded-xl border overflow-hidden"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            mobileNoun="finals"
             mobileRows={finals.map((c) => (
               <RankRow
                 key={`${c.year}-${c.champion}-card`}
@@ -392,13 +393,14 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
             </table>
           </ResponsiveTable>
         </div>
-        <div>
+        <div className="min-w-0">
           <h2 className="text-lg font-semibold mb-3">Supporters&apos; Shield winners</h2>
 
           <ResponsiveTable
             variant="list"
             className="rounded-xl border overflow-hidden"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            mobileNoun="shields"
             mobileRows={shields.map((s) => (
               <RankRow
                 key={`${s.year}-${s.winner}-card`}
@@ -548,6 +550,7 @@ function CurrentStandings({
 
       <ResponsiveTable
         variant="list"
+        mobileNoun="clubs"
         mobileRows={hub.current_standings.map((s) => {
           const isChamp = s.champion === true || s.place === 1;
           const cups = cupsBySlug.get(s.slug) ?? [];
@@ -746,6 +749,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
 
         <ResponsiveTable
           variant="list"
+          mobileNoun="champions"
           mobileRows={sortedChamps.map((ch, i, arr) => {
             const showBreak = breakYear && ch.year === breakYear &&
               (i === 0 || arr[i - 1].year !== breakYear);

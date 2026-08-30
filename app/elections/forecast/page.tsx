@@ -247,7 +247,7 @@ export default async function ForecastPage() {
                   at this range still misses by ±{us.sigma} points.
                 </p>
               </div>
-              <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+              <div className="min-w-0 rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
                 <h4 className="font-semibold text-sm text-[var(--text)] mb-2">The aggregators</h4>
                 <div className="overflow-x-auto">
                   <SortableTable

@@ -7283,3 +7283,173 @@ what's acceptable/available to make that call myself.
 Nothing committed data-side (there is no data). This HANDOFF entry and
 nothing else is the pilot's result, sitting local pending your read --
 not pushed without approval, same as everything else today.
+
+## 2026-08-30 (Cowork cloud session, device-bridged) — the closing-price fix
+
+**Ashwin brought a football-data.co.uk archive. We already had it.** All 34
+files in `~/Downloads/Premdata` MD5-match `data/football/e0/` on all 33
+seasons (1999-2000 downloaded twice). Nothing new. What the archive exposed is
+that we read **11 of ~125 columns**.
+
+**\U0001f534 DEFECT 1, FIXED: the ledger said "closing" and scored openers.**
+`devig()` in `build_expectation.py` preferred `AvgH/AvgD/AvgA`, football-data's
+PRE-MATCH average, then fell back to `B365H`. The C-suffixed closing columns
+were never read, while `/predictions/scoreboard` said "closing" in four places
+and `/sports/expectation` in two. The tell was arithmetic: the published sample
+was 9,116 priced games and `B365H` opening coverage is 9,120.
+Now `CLOSING_BOOKS` (AvgC, PSC, B365C) then `OPENING_BOOKS` (Avg, **BbAv**, PS,
+B365, BFD, BW) — BbAv is a consensus average over 5,320 matches on which we
+previously fell back to one book. `devig()` returns `(probs, tier)`; the tier
+rides through to every season row and the meta, and both pages derive every
+sentence about the price from `market_closing_matches` instead of asserting it.
+
+Rebuilt and shipped. The correction moved the headline the way it had to:
+
+| tier | matches | seasons | model | market | skill |
+|---|---|---|---|---|---|
+| closing | 5,316 | 2012-13..2025-26 | 0.57944 | 0.56554 | **-2.46%** |
+| opening | 3,800 | 2002-03..2011-12 | 0.58285 | 0.57831 | -0.79% |
+| all | 9,116 | 2002-03..2025-26 | 0.58086 | 0.57086 | -1.75% (was -1.55%) |
+
+We are three times further behind the closing market than the opening one,
+which is what theory says and is the better story than the single number.
+Every `--dry`/`--write` run now prints this table, so a build that quietly
+loses the closing tier cannot look identical to one that keeps it.
+
+**\U0001f534 DEFECT 2, FIXED (needs a live run): the PL ledger has no market.**
+`pl-predictions.json` 2026-27 reads `market_graded: 0, market_brier: null` on
+a site whose scoreboard exists to compare model with market. `build_pl_sim.py`
+joined the market only from `fixtures.csv` at prediction time, and picks are
+made up to 9 days out, before odds are posted. New `settled_market()` takes the
+price off the finished E0 row, closing first, and grading attaches it when no
+price was posted before the pick. **SCORING ONLY** — it never touches `blend`
+or `pick`, and `market_priced_at` ("prediction"|"settlement") records which.
+Self-tested both ways. Lands on the next `predictions-refresh.yml` run.
+
+**\U0001f534 DEFECT 3, FIXED, found while fixing them: the ledger was unbuildable
+in-season.** The season-count guard compares club-page top-flight seasons with
+the ledger's, and `drop_abandoned` discards a season under 25% played. So from
+the first matchweek of every August the club pages are one season ahead for all
+twenty clubs and the guard refuses — verified, not guessed: Arsenal's club page
+carries a level-1 row at `year: 2027`, ours stops at 2025-26.
+`--allow-season-count-drift` is the WRONG answer, because it would also wave
+through a real divergence, which is exactly what this guard caught with the
+expunged 1939-40 season. New `count_seasons_after()` subtracts only the
+in-progress seasons the ledger has not reached. Drift is back to 0 disagreeing.
+
+**Verification run here.** `--self-test` PASSES on both scripts (build_pl_sim
+now counts its own cases; the hardcoded "18 cases" had gone stale at 26).
+`tsc --noEmit` clean. `check:client-imports`, `check:public-data`,
+`check:slug-drift`, `check:team-placement`, `check:skyscrapers`,
+`check:score-parity`, `check:table-scroll`, `check:live-data` all OK.
+
+**\U0001f534 NOT RUN HERE, someone must: `npm run test` and `next build`.**
+`node_modules` on this box are Windows binaries, so vitest dies loading
+rolldown's native module inside the bridged Linux VM. Neither that VM nor the
+Cowork container can reach football-data.co.uk (403 on the CONNECT tunnel), so
+`fetch_e0.py` and any live `build_pl_sim.py` run also need the Windows box, the
+mini, or CI.
+
+**UNCOMMITTED at handoff.** `app/`, `lib/` and `public/data/` all changed, so
+this is build-relevant: it does NOT carry `[vercel skip]`, and it should go as
+one commit, not several.
+
+## 2026-08-30 (late) — Windows (cloud session) → mini/next session: sitewide mobile audit, new standards, new gate
+
+Frontend-only. **Read the rewritten `DESIGN-STANDARDS.md` before any UI work
+from here** — the mobile half of it is now enforced, and `npm run verify`
+will fail you if you skip it.
+
+### What was actually wrong (measured, not guessed)
+
+Built `scripts/probe-mobile.mjs`: real Chromium, real 390px viewport, every
+static route in `app/`. First sweep of the 25-route sample: **9 of 25
+failing**, none of it visible in source review.
+
+| route | before | after |
+| --- | --- | --- |
+| /teams/national | 50.4 phone screens, 11.7x desktop | 7.7, 1.8x |
+| /leaders | 29.3 screens, **18.0x** | 3.4, 2.1x |
+| /teams/cricket | 36.0 screens | 17.3 |
+| /teams/f1 | 28.7 screens | 11.4 |
+| /power | 16.6 screens, 10.1x | 3.2, 1.9x |
+| /mayors | 13.2 screens, 10.8x | 2.2, 1.8x |
+| /sports/zone-zero-cup | 30.9 screens, 14.0x | 3.8, 1.7x |
+| /screen | 423px wide (sideways scroll) | 390px |
+| /sound/decades | 481px | 390px |
+| /methodology | 442px | 390px |
+| /elections/cn | 431px | 390px |
+
+**One root cause behind the length column.** A responsive board renders
+twice: a `hidden sm:block` table and a `sm:hidden` card list. globals.css
+gives every table an 80vh scroll box for free via `.overflow-x-auto:has(>
+table)`. The card list is not a table, so it inherited nothing and rendered
+every row at full height — a 32px row becoming a 200px card, 200 rows
+becoming 50 screens.
+
+### What changed
+
+- **`app/_shared/Disclosure.tsx`** — `Disclosure` / `ShowMore` /
+  `CappedList`, all plain server components over `<details>`: no JS, no
+  hydration flash, keyboard- and SR-native. `data-desktop-open` +
+  globals.css force-opens them above 640px, which is how "contracted on
+  mobile, expanded on desktop" works with zero JavaScript.
+- **`CappedList` applied to 198 mobile lists across 128 files** (a throwaway
+  AST codemod for the mechanical ones, since deleted, plus hand edits where
+  the list had sibling markup; every generated `noun` label was reviewed and
+  the machine-mangled ones rewritten).
+  `ResponsiveTable` now caps its own mobile list (`mobileInitial`, default
+  12) — pass `mobileNoun` at call sites you touch, several still say "rows".
+- **Three globals.css rules that fix whole classes of bug at once**, all in
+  `@layer base` so utilities still win:
+  `.truncate`/`line-clamp` (and their direct/grandparent holders) get
+  `min-width: 0` — 231 call sites carried `truncate` with no `min-w-0`, and
+  as a flex item that is inert, which is what took /screen to 423px;
+  `body { overflow-wrap: break-word }` — bare URLs in Sources lines took
+  /methodology to 442px; and a `prefers-reduced-motion` block.
+- **`/sound` and `/screen` layouts** had a dead `pt-12` clearance wrapper for
+  a nav that has been `sticky` (not `fixed`) for months. Removed.
+- **/neighborhoods and /methodology** got `<Disclosure>` jump indexes over
+  anchors that already existed and had nothing linking to them (47.6 and
+  27.9 phone screens with no way to skip a section).
+- **DESKTOP bug found on the way past:** `DesktopNav` switched on at `md`
+  (768px) but its mega-menu row needs ~640–840px beside a ~230px wordmark,
+  so **the wordmark painted straight over the menu at every width from 768
+  to ~1350px**. Moved to `lg` (MobileMenu now covers up to 1024), the
+  "← Citizen of Nowhere" backlink deferred to `2xl`, and `truncate` added to
+  the wordmark as a backstop. Verified clean at 1024/1280/1440/1536/1700.
+  **Re-measure those widths if you add a top-level nav item.**
+
+### The new gate — `npm run check:mobile` (in `verify`)
+
+`scripts/check-mobile.mjs`, AST-based, six rules: UNCAPPED_MOBILE_LIST,
+GRID_CHILD_NO_MIN_W_0, RIGID_WIDE_GRID, HARD_WIDTH, NAV_CLEARANCE,
+NOWRAP_LIST_NO_SCROLL. Unit-tested (`scripts/check-mobile.test.mjs`, 19
+cases). Ratchet baseline `scripts/mobile-baseline.json` is down to **11
+findings in 9 files** from 490 raw at the start — all small in-card stat
+grids. **Never grow it**; `--write-baseline` is for shrinking only, and the
+gate tells you when a baselined file has gone clean.
+
+Intentional exceptions go in the code, not the baseline:
+`data-mobile-uncapped` on a genuinely bounded list (three cricket formats,
+four compare columns), with a one-line reason.
+
+### For the mini specifically
+
+Nothing here touches `scripts/civic/**`, `mac-mini-jobs/**` or any data
+pipeline, and no `public/data` file changed. This commit DOES need a real
+Vercel build (`app/`, `lib/`-adjacent and `public/` paths), so it carries no
+skip marker — that is deliberate, one build for the whole sweep.
+
+`npm run probe:mobile` needs a dev server plus the `playwright` devDep, so
+it is deliberately NOT in `verify`. If the runner's Chromium predates the
+pinned build, `CHROME_PATH=/path/to/chrome` works around it.
+
+### Known remaining (measured, not fixed)
+
+- **Row tap targets.** In mobile card lists the link wraps the name, not the
+  row: ~1,600 sub-40px links on /countries/[slug], ~1,100 on /teams/football.
+  Standard is written up (DESIGN-STANDARDS §6); fix them where you touch them.
+- **Long-form pages.** /neighborhoods (47.6 screens) and /methodology (27.9)
+  are long on desktop too (~1.7x), so the probe reports them as warnings, not
+  failures. The answer is in-page navigation, not truncation.

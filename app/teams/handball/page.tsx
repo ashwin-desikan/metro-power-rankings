@@ -6,6 +6,7 @@ import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { getWorldRanking } from "@/lib/worldRankings";
 import { flagCdnUrl, HISTORICAL_FLAG } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/handball";
@@ -54,7 +55,12 @@ export default function HandballHubPage() {
       {/* Mobile: one card per edition instead of a 4-column table that would
           force sideways scrolling. Same rows, card presentation only. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((p) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((p) => (
           <div key={`${p.year}-card`} className="rounded-lg border p-3" style={card}>
             <div className="text-sm font-semibold tabular-nums mb-2" style={mono}>{p.year}</div>
             <div className="grid grid-cols-1 gap-y-1.5 text-xs">
@@ -73,6 +79,7 @@ export default function HandballHubPage() {
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>
@@ -170,7 +177,12 @@ export default function HandballHubPage() {
             can read at 375px without scrolling sideways. Same `nations`
             array, card presentation only. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {nations.map((t) => (
+          <CappedList
+            initial={12}
+            noun="nations"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={nations.map((t) => (
             <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center gap-1.5 font-medium text-sm mb-2">
                 {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
@@ -196,6 +208,7 @@ export default function HandballHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>

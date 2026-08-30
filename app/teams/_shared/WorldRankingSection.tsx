@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { flagCdnUrl } from "@/lib/international-display";
 import type { WorldRanking } from "@/lib/worldRankings";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Server component: renders an official federation world ranking as a compact,
 // scrollable table. Static (already in rank order); nations link to their
@@ -46,7 +47,12 @@ export default function WorldRankingSection({
       {/* Mobile: one row-card per nation instead of a 3-column table forcing
           sideways scroll. Same `rows` array, card presentation only. */}
       <div className="grid grid-cols-1 gap-1.5 sm:hidden">
-        {rows.map((r) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-1.5 p-2 pt-0"
+          items={rows.map((r) => (
           <div key={`${r.rank}-${r.name}-card`} className="flex items-center justify-between gap-3 rounded-lg border px-3 py-2" style={card}>
             <span className="flex items-center gap-2 min-w-0">
               <span className="tabular-nums text-[var(--text-dim)] text-sm flex-shrink-0" style={mono}>{r.rank}</span>
@@ -55,6 +61,7 @@ export default function WorldRankingSection({
             <span className="tabular-nums text-sm flex-shrink-0" style={mono}>{r.points.toLocaleString()}</span>
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>

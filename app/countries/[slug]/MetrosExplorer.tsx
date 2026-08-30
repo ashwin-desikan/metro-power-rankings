@@ -17,6 +17,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop } from "@/lib/shared";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export type ExplorerMetro = {
   slug: string;
@@ -181,7 +182,11 @@ export default function MetrosExplorer({
               overscroll-contain stops a flick inside the list from running on
               into the page once it hits the end. */}
           <div className="sm:hidden divide-y divide-[var(--border)] max-h-[80vh] overflow-y-auto overscroll-contain">
-            {shown.map((m) => {
+            <CappedList
+              initial={12}
+              noun="rows"
+              bodyClassName="divide-y divide-[var(--border)]"
+              items={shown.map((m) => {
               const tier = computeTier(m.score);
               const extra = statesOf(m);
               return (
@@ -223,6 +228,7 @@ export default function MetrosExplorer({
                 </div>
               );
             })}
+            />
           </div>
 
           {/* Desktop: table. Stays a DIRECT child of the scroll wrapper per

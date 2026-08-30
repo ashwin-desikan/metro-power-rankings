@@ -6,6 +6,7 @@ import { getAllCompSlugs, getRoll } from "@/lib/championsHistory";
 import { competitionHasHub } from "@/lib/competitionLinks";
 import { sportIcon } from "@/lib/sportLabels";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -75,7 +76,12 @@ export default async function ChampionRollPage(
 
       {/* Mobile: stacked cards instead of a 4-5 column table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((r, i) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((r, i) => (
           <div key={`${r.season}-${r.champion}-${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0 leading-tight flex items-center gap-1.5 flex-wrap font-medium text-sm">
@@ -115,6 +121,7 @@ export default async function ChampionRollPage(
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">

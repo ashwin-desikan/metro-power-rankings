@@ -5,6 +5,7 @@ import { getGolfMajors, latestByTournament, nationSlug, golfMajorMonths, type Ch
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import GolfChampionsTable, { type GolfRow } from "./GolfChampionsTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/golf";
@@ -88,7 +89,12 @@ function LeaderTable({ leaders, tours, spans }: { leaders: Leader[]; tours: stri
       {/* Mobile: one card per player instead of a table that grows a column
           per major (up to 7 columns) and forces sideways scrolling. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto">
-        {filtered.map((l) => {
+        <CappedList
+          initial={12}
+          noun="players"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={filtered.map((l) => {
           const s = spans.get(l.player);
           const span = s ? (s.first === s.last ? `${s.first}` : `${s.first}–${s.last}`) : "";
           return (
@@ -112,6 +118,7 @@ function LeaderTable({ leaders, tours, spans }: { leaders: Leader[]; tours: stri
             </div>
           );
         })}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>
@@ -249,7 +256,12 @@ export default function GolfHubPage() {
         {/* Mobile: stacked rows in card form. Only two columns, but the
             mandate is no exceptions — every table gets a true card view. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[440px] overflow-y-auto">
-          {nations.map((n) => (
+          <CappedList
+            initial={12}
+            noun="nations"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={nations.map((n) => (
             <div key={`${n.nation}-card`} className="rounded-lg border px-3 py-2 flex items-center justify-between gap-2" style={card}>
               <div className="text-sm flex items-center gap-1.5 flex-wrap">
                 <Flag nation={n.nation} />
@@ -258,6 +270,7 @@ export default function GolfHubPage() {
               <span className="flex-shrink-0 text-sm tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>{n.titles}</span>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto hidden sm:block" style={card}>
@@ -288,7 +301,12 @@ export default function GolfHubPage() {
         </p>
         {/* Mobile: one card per edition instead of a 4-column table. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[460px] overflow-y-auto">
-          {data.ryder.map((r) => (
+          <CappedList
+            initial={12}
+            noun="Ryder Cups"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={data.ryder.map((r) => (
             <div key={`${r.edition}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-start justify-between gap-2">
                 <div className="leading-tight font-medium text-sm">{r.winner}</div>
@@ -310,6 +328,7 @@ export default function GolfHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>

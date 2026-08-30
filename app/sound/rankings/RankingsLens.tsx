@@ -2,6 +2,7 @@
 
 import { useMemo } from 'react';
 import { useSessionState } from '@/lib/useSessionState';
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export interface RankMetro {
   slug: string;
@@ -58,7 +59,12 @@ export default function RankingsLens({ metros }: { metros: RankMetro[] }) {
 
       {/* Mobile: stacked cards, same rows/lens state as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((m, i) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((m, i) => (
           <div key={m.slug} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
@@ -135,6 +141,7 @@ export default function RankingsLens({ metros }: { metros: RankMetro[] }) {
             )}
           </div>
         ))}
+        />
       </div>
 
       <div className="overflow-x-auto hidden sm:block">

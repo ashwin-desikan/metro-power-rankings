@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
+import { CappedList } from "@/app/_shared/Disclosure";
 import {
   getPagedF1Constructors, getF1ConstructorsMeta, getF1MetroClusters,
 } from "@/lib/f1Constructors";
@@ -147,7 +148,12 @@ export default function F1ConstructorsPage() {
       {/* Mobile: cards, capped so a 78-row list does not run to dozens of
           screens the way an uncapped fallback does (DESIGN-STANDARDS). */}
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[80vh] overflow-y-auto overscroll-contain">
-        {teams.map((t, i) => (
+        <CappedList
+          initial={12}
+          noun="teams"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={teams.map((t, i) => (
           <div key={`${t.slug}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
             <div className="flex items-baseline justify-between gap-2">
               <span className="inline-flex items-center gap-1.5 min-w-0">
@@ -189,6 +195,7 @@ export default function F1ConstructorsPage() {
             )}
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-lg overflow-x-auto hidden sm:block" style={{ border: "1px solid var(--border)" }}>

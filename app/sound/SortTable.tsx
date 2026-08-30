@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type ReactNode, type CSSProperties } from 'react';
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export interface Col {
   key: string;
@@ -74,7 +75,12 @@ export default function SortTable({
     <div>
       {/* Mobile: stacked cards, same sorted rows as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((r, i) => {
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((r, i) => {
           const primary = primaryCol ? cellFor(primaryCol, r, i) : null;
           return (
             <div key={i} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
@@ -101,6 +107,7 @@ export default function SortTable({
             </div>
           );
         })}
+        />
       </div>
 
       <div className="overflow-x-auto hidden sm:block">

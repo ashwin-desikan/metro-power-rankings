@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export type GovRow = {
   slug: string;
@@ -139,7 +140,12 @@ export default function GovernorsTable({
 
       {/* Mobile: stacked cards instead of hiding the Since/Metros columns */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((r) => (
+        <CappedList
+          initial={12}
+          noun="governors"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((r) => (
           <div
             key={`${r.slug}-card`}
             className="rounded-lg border p-3"
@@ -173,6 +179,7 @@ export default function GovernorsTable({
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div

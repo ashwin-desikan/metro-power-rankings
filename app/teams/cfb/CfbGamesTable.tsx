@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { CfbGame } from "@/lib/cfbShared";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 function fmtDate(d: string | null): string | null {
@@ -52,7 +53,12 @@ export default function CfbGamesTable({ games, linkSlugs = [] }: { games: CfbGam
           desktop table below - no separate state, no data dropped (date,
           bowl, designation tags, location, and video link all appear here). */}
       <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-auto rounded-lg border p-2" style={{ borderColor: "var(--border)" }}>
-        {games.map((g, i) => {
+        <CappedList
+          initial={12}
+          noun="games"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={games.map((g, i) => {
           const loc = [g.stadium, g.metro, g.state].filter(Boolean).join(", ");
           const t = tags(g);
           const date = fmtDate(g.date);
@@ -80,6 +86,7 @@ export default function CfbGamesTable({ games, linkSlugs = [] }: { games: CfbGam
             </div>
           );
         })}
+        />
       </div>
 
       <div className="hidden sm:block max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>

@@ -13,6 +13,7 @@ import Link from "next/link";
 import { getCurrentMlbStandings, type TeamStanding } from "@/lib/mlb-standings";
 import { getAllFranchises, logoUrlFor, monogramFor } from "@/lib/mlb";
 import { getMlbSim, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Region = "East" | "Central" | "West" | "Other";
 
@@ -239,7 +240,11 @@ export default async function MlbStandings() {
                     {/* Mobile: one compact card per team instead of a horizontally
                         scrolling 5-column table inside an already-narrow division box. */}
                     <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
-                      {rowsData.map((row) => (
+                      <CappedList
+                        initial={12}
+                        noun="teams"
+                        bodyClassName="divide-y"
+                        items={rowsData.map((row) => (
                         <div key={row.t.canonical}
                           className="py-2 flex items-center justify-between gap-2"
                           style={row.inField ? { background: "rgba(34,197,94,0.06)" } : undefined}>
@@ -290,6 +295,7 @@ export default async function MlbStandings() {
                           </div>
                         </div>
                       ))}
+                      />
                     </div>
 
                     <div className="overflow-x-auto hidden sm:block">

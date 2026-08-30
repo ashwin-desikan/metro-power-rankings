@@ -7,6 +7,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getAllWcbbTeams, getWcbbTeamBySlug, getWcbbTournament, wcbbMonogram, type WcbbTourYear } from "@/lib/wcbb";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import { getRivalries } from "@/lib/rivalries";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Pre-generate only current D1 programs (363 of 384 total). Historical/
 // non-D1 programs are still reachable: dynamicParams=true renders them on
@@ -111,7 +112,12 @@ export default async function WcbbTeamPage({ params }: { params: Promise<{ slug:
             {/* Mobile: one card per tournament year. Same `tour` data as the
                 desktop table. */}
             <div className="grid grid-cols-1 gap-2 sm:hidden">
-              {tour.map((y) => (
+              <CappedList
+                initial={12}
+                noun="tours"
+                className="rounded-lg border border-[var(--border)]"
+                bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+                items={tour.map((y) => (
                 <div key={`${y.year}-card`} className="rounded-lg border p-3" style={card}>
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-sm font-medium tabular-nums" style={mono}>{y.year}</span>
@@ -123,6 +129,7 @@ export default async function WcbbTeamPage({ params }: { params: Promise<{ slug:
                   </div>
                 </div>
               ))}
+              />
             </div>
 
             <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>

@@ -7,6 +7,7 @@ import { getAllCfbTeams, getAllCfbSlugs, getCfbTopGames, getCfbGamesByDecade, ge
 import { getCfbStandings, getCfbRankings, type CfbPoll, type CfbConference } from "@/lib/cfb-live";
 import CfbAllTimeTable from "./CfbAllTimeTable";
 import CfbGames from "./CfbGames";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 // Live standings/rankings ISR window (ESPN feeds via lib/cfb-live).
@@ -199,7 +200,12 @@ export default async function CfbHubPage() {
           {/* Mobile: one card per season. Same `natChamps` array/order that
               drives the desktop table below. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-auto rounded-lg border p-2" style={{ borderColor: "var(--border)" }}>
-            {natChamps.map((nc) => (
+            <CappedList
+              initial={12}
+              noun="national champions"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={natChamps.map((nc) => (
               <div key={nc.year} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
                 <a href={`https://www.sports-reference.com/cfb/years/${nc.year}.html`} target="_blank" rel="noopener noreferrer" className="text-sm font-medium tabular-nums hover:text-[var(--accent)] hover:underline" title={`${nc.year} season on Sports Reference`}>{nc.year}</a>
                 <div className="mt-1 text-sm">
@@ -219,6 +225,7 @@ export default async function CfbHubPage() {
                 )}
               </div>
             ))}
+            />
           </div>
 
           <div className="hidden sm:block max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>

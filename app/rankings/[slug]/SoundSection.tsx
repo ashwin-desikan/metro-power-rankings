@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { MetroSound } from "@/lib/sound";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export default function SoundSection({ sound, slug }: { sound: MetroSound | null; slug: string }) {
   if (!sound) return null;
@@ -33,7 +34,11 @@ export default function SoundSection({ sound, slug }: { sound: MetroSound | null
           <div className="border-t border-[var(--border)]">
             {/* Mobile: stacked cards */}
             <div className="sm:hidden divide-y divide-[var(--border)]">
-              {sound.numberOnes.map((s, i) => (
+              <CappedList
+                initial={12}
+                noun="number ones"
+                bodyClassName="divide-y divide-[var(--border)]"
+                items={sound.numberOnes.map((s, i) => (
                 <div key={i} className="px-4 py-2.5">
                   <p className="font-medium text-[var(--text)]">{s.single}</p>
                   <p className="text-xs text-[var(--text-muted)] mt-0.5">{s.artist}</p>
@@ -43,6 +48,7 @@ export default function SoundSection({ sound, slug }: { sound: MetroSound | null
                   </div>
                 </div>
               ))}
+              />
             </div>
             {/* Desktop: table */}
             <div className="hidden sm:block overflow-x-auto">

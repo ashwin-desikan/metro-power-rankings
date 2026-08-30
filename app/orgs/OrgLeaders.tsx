@@ -1,4 +1,5 @@
 import { getOrgLeadership } from "@/lib/orgLeaders";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 function yr(d: string | null): string {
   if (!d) return "—";
@@ -35,7 +36,12 @@ export default function OrgLeaders({ orgKey }: { orgKey: string }) {
         <div className="mt-2">
           {/* Mobile: stacked cards */}
           <div className="sm:hidden grid grid-cols-1 gap-1.5">
-            {history.map((l, i) => (
+            <CappedList
+              initial={12}
+              noun="histories"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-1.5 p-2 pt-0"
+              items={history.map((l, i) => (
               <div
                 key={`${l.name}-${l.start ?? i}-card`}
                 className="rounded-md border px-3 py-1.5"
@@ -55,6 +61,7 @@ export default function OrgLeaders({ orgKey }: { orgKey: string }) {
                 {l.party && <p className="text-xs text-[var(--text-muted)] mt-0.5">{l.party}</p>}
               </div>
             ))}
+            />
           </div>
           {/* Desktop: table */}
           <div className="hidden sm:block overflow-x-auto">

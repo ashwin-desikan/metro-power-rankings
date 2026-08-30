@@ -11,6 +11,7 @@ import {
 } from "@/lib/volleyball";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -133,12 +134,18 @@ export default async function VolleyballTeamPage(
           {/* Mobile: one card per medal instead of a table, for consistency
               with every other table on the site. Same `detail.oly` rows. */}
           <div className="grid grid-cols-2 gap-2 sm:hidden">
-            {detail.oly.map((m) => (
+            <CappedList
+              initial={12}
+              noun="medal tables"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid gap-2 p-2 pt-0"
+              items={detail.oly.map((m) => (
               <div key={`${m.year}-${m.medal}-card`} className="rounded-lg border p-3 flex items-center justify-between gap-2" style={card}>
                 <span className="tabular-nums text-sm" style={mono}>{m.year}</span>
                 <span className="font-medium text-sm" style={{ color: m.medal === "Gold" ? GOLD : undefined }}>{m.medal}</span>
               </div>
             ))}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

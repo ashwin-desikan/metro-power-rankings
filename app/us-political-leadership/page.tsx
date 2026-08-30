@@ -12,6 +12,7 @@ import { getAllMetros } from "@/lib/data";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import GovernorsTable, { type GovRow } from "./GovernorsTable";
 import SenatorsTable, { type SenRow } from "./SenatorsTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const PATH = "/us-political-leadership";
 const TITLE = "United States Political Leadership";
@@ -190,7 +191,12 @@ export default async function USPoliticalLeadershipPage() {
           <h3 className="text-sm font-semibold text-[var(--text-muted)] mb-2">The Cabinet</h3>
           {/* Mobile: stacked cards */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {congress.executive.cabinet.map((c) => (
+            <CappedList
+              initial={12}
+              noun="cabinets"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={congress.executive.cabinet.map((c) => (
               <div key={`${c.office}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
@@ -201,6 +207,7 @@ export default async function USPoliticalLeadershipPage() {
                 </div>
               </div>
             ))}
+            />
           </div>
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <table className="w-full text-left text-sm">
@@ -283,7 +290,12 @@ export default async function USPoliticalLeadershipPage() {
           <h3 className="text-sm font-semibold text-[var(--text-muted)] mb-2">Leadership</h3>
           {/* Mobile: stacked cards */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {congress.house.leadership.map((l) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={congress.house.leadership.map((l) => (
               <div key={`${l.office}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
@@ -294,6 +306,7 @@ export default async function USPoliticalLeadershipPage() {
                 </div>
               </div>
             ))}
+            />
           </div>
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <table className="w-full text-left text-sm">

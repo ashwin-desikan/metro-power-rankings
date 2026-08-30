@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { CbbTeam } from "@/lib/cbbShared";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Col = { key: string; label: string; get: (t: CbbTeam) => number | string; num: boolean; hide?: string };
 const COLS: Col[] = [
@@ -66,7 +67,12 @@ export default function CbbAllTimeTable({ teams }: { teams: CbbTeam[] }) {
       {/* Mobile: one card per program instead of a 12-column table. Same
           `rows` data (already sorted/filtered above) drives both views. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((t) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((t) => (
           <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
             <div className="flex items-start justify-between gap-2">
               <div className="flex items-center gap-1.5 min-w-0">
@@ -116,6 +122,7 @@ export default function CbbAllTimeTable({ teams }: { teams: CbbTeam[] }) {
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="max-h-[70vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>

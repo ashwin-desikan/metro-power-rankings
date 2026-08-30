@@ -5,6 +5,7 @@ import { getTennisMajors, nationSlug, type Champion, type Leader } from "@/lib/m
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TennisChampionsTable, { type EditionRow, type ChampCell } from "./TennisChampionsTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/tennis";
@@ -82,7 +83,12 @@ function LeaderTable({ leaders, tours, spans }: { leaders: Leader[]; tours: stri
           major that forces sideways scrolling. Same filtered `rows` array
           as the desktop table below. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((l) => {
+        <CappedList
+          initial={12}
+          noun="players"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((l) => {
           const s = spans.get(l.player);
           const span = s ? (s.first === s.last ? `${s.first}` : `${s.first}–${s.last}`) : "";
           return (
@@ -105,6 +111,7 @@ function LeaderTable({ leaders, tours, spans }: { leaders: Leader[]; tours: stri
             </div>
           );
         })}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto max-h-[480px] overflow-y-auto hidden sm:block" style={card}>
@@ -252,7 +259,12 @@ export default function TennisHubPage() {
         {/* Mobile: one card per nation instead of a 4-column table. Same
             `nations` array as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {nations.map((n) => (
+          <CappedList
+            initial={12}
+            noun="nations"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={nations.map((n) => (
             <div key={n.nation} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2">
                 <div className="font-medium text-sm flex items-center gap-1.5"><Flag nation={n.nation} />{n.nation}</div>
@@ -270,6 +282,7 @@ export default function TennisHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto hidden sm:block" style={card}>
@@ -304,7 +317,12 @@ export default function TennisHubPage() {
         {/* Mobile: one card per nation instead of a 3-column table. Same
             `data.davis` array as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {data.davis.map((d) => (
+          <CappedList
+            initial={12}
+            noun="Davis Cup years"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={data.davis.map((d) => (
             <div key={d.country} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center gap-1.5">
                 <Flag nation={d.country} />
@@ -322,6 +340,7 @@ export default function TennisHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto hidden sm:block" style={card}>

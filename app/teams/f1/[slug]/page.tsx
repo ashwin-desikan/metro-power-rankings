@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getF1CircuitBySlug, getAllF1CircuitSlugs } from "@/lib/f1";
 import TeamName from "@/app/teams/_shared/F1TeamName";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -77,7 +78,12 @@ export default async function F1CircuitPage({ params }: { params: Promise<{ slug
       {/* Mobile: one card per race instead of a 5-column table that would
           otherwise force horizontal scrolling. Same reversed race list. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {raceHistory.map((r) => (
+        <CappedList
+          initial={12}
+          noun="races"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={raceHistory.map((r) => (
           <div
             key={`${r.season}-${r.round}-card`}
             className="rounded-lg p-3"
@@ -103,6 +109,7 @@ export default async function F1CircuitPage({ params }: { params: Promise<{ slug
             </div>
           </div>
         ))}
+        />
       </div>
 
       <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>

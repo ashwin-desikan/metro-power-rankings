@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type B = {
   rank: number | null; name: string; uri: string; networth: number | null;
@@ -123,7 +124,12 @@ export default function BillionairesTable({ data }: { data: B[] }) {
 
       {/* Mobile: stacked cards, same sorted/filtered/limited data as the table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {shown.map((b) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={shown.map((b) => (
           <div key={`${b.uri}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <div className="flex items-start justify-between gap-2">
               <a href={`https://www.forbes.com/profile/${b.uri}/`} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
@@ -145,6 +151,7 @@ export default function BillionairesTable({ data }: { data: B[] }) {
             )}
           </div>
         ))}
+        />
       </div>
       <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
         <table className="w-full text-sm">

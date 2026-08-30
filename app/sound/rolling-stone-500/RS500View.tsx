@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { CappedList } from "@/app/_shared/Disclosure";
 
 interface Link { name: string; slug: string; linked: boolean }
 export interface RSAlbum { rank: number; album: string; artist: string; links: Link[] }
@@ -44,7 +45,12 @@ export default function RS500View({ albums }: { albums: RSAlbum[] }) {
       </div>
       {/* Mobile: stacked cards instead of a 3-column table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((a) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((a) => (
           <div key={a.rank} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
             <div className="flex items-start justify-between gap-3">
               <div className="font-medium text-sm leading-tight">{a.album}</div>
@@ -53,6 +59,7 @@ export default function RS500View({ albums }: { albums: RSAlbum[] }) {
             <div className="mt-1 text-sm" style={muted}><Artists links={a.links} artist={a.artist} /></div>
           </div>
         ))}
+        />
       </div>
 
       <div className="overflow-x-auto hidden sm:block">

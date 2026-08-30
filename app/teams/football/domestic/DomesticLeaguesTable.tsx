@@ -204,6 +204,7 @@ export default function DomesticLeaguesTable({
         variant="list"
         className="rounded-lg border"
         style={{ borderColor: "var(--border)" }}
+        mobileNoun="leagues"
         mobileRows={view.map(({ c, h, displayCountry }) => {
           const id = c.name + "|" + (c.metro || "");
           const isOpen = open.has(id);

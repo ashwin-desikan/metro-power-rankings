@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { ScheduledJob, JobCadence } from "@/lib/refreshSchedule";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const WEEKDAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -176,13 +177,19 @@ export default function ScheduleCalendar({ jobs }: { jobs: ScheduledJob[] }) {
                       read the sidebar instead. A 7-column grid on a phone
                       leaves no room for readable labels. */}
                   <div className="sm:hidden flex-1 flex flex-wrap content-start gap-1">
-                    {dayJobs.map((dj) => (
+                    <CappedList
+                      initial={12}
+                      noun="rows"
+                      className="rounded-lg border border-[var(--border)]"
+                      bodyClassName="flex gap-1 p-2 pt-0"
+                      items={dayJobs.map((dj) => (
                       <span
                         key={dj.job.id}
                         className="inline-block h-1.5 w-1.5 rounded-full"
                         style={{ backgroundColor: CADENCE_DOT[dj.job.cadence] }}
                       />
                     ))}
+                    />
                   </div>
 
                   {/* sm+: full dot + label list, as space allows. */}

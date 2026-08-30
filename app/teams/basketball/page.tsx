@@ -5,6 +5,7 @@ import { getAllBasketballNations, getBasketballHub, getEuroleague, getFibaRankin
 import { flagCdnUrl, HISTORICAL_FLAG } from "@/lib/international-display";
 import FibaRankingTable from "./FibaRankingTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/basketball";
@@ -172,7 +173,12 @@ export default async function BasketballHubPage() {
         </p>
         {/* Mobile: one card per Games instead of a cramped 4-column table */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[440px] overflow-y-auto">
-          {hub.podiums.map((p) => (
+          <CappedList
+            initial={12}
+            noun="podiums"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.podiums.map((p) => (
             <div key={p.year} className="rounded-lg border p-3" style={card}>
               <div className="font-medium text-sm tabular-nums" style={mono}>{p.year}</div>
               <div className="mt-2 grid grid-cols-1 gap-y-1.5 text-xs">
@@ -191,6 +197,7 @@ export default async function BasketballHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto hidden sm:block" style={card}>
@@ -225,7 +232,12 @@ export default async function BasketballHubPage() {
         </p>
         {/* Mobile: one card per final instead of a cramped 4-column table */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {hub.wc_finals.map((f) => (
+          <CappedList
+            initial={12}
+            noun="finals"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.wc_finals.map((f) => (
             <div key={f.year} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-semibold text-sm">{teamLink(f.champion)}</span>
@@ -243,6 +255,7 @@ export default async function BasketballHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -274,7 +287,12 @@ export default async function BasketballHubPage() {
         <h2 id="nations" className="text-lg font-semibold mb-3">Nations</h2>
         {/* Mobile: one card per nation instead of a cramped 5-column table */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto">
-          {nations.map((t) => (
+          <CappedList
+            initial={12}
+            noun="nations"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={nations.map((t) => (
             <div key={t.slug} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center gap-1.5 min-w-0 font-medium text-sm">
                 {flagCdnUrl(t.slug) && (
@@ -304,6 +322,7 @@ export default async function BasketballHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>

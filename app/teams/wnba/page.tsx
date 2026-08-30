@@ -7,6 +7,7 @@ import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getSeasonSim, simIsCurrent, simByName, fmtOdds } from "@/lib/seasonSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import WnbaFranchiseTable from "./WnbaFranchiseTable";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PAGE_PATH = "/teams/wnba";
@@ -130,7 +131,12 @@ export default async function WnbaPage() {
 
               {/* Mobile: one card per team instead of a scroll-only table */}
               <div className="grid grid-cols-1 gap-2 p-2 sm:hidden">
-                {rows.map((st, i) => (
+                <CappedList
+                  initial={12}
+                  noun="rows"
+                  className="rounded-lg border border-[var(--border)]"
+                  bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+                  items={rows.map((st, i) => (
                   <div
                     key={(st.slug ?? st.team) + i + "-card"}
                     className="rounded-lg border p-2.5"
@@ -161,6 +167,7 @@ export default async function WnbaPage() {
                     </div>
                   </div>
                 ))}
+                />
               </div>
 
               <table className="w-full text-sm tabular-nums hidden sm:table">
@@ -225,7 +232,12 @@ export default async function WnbaPage() {
 
         {/* Mobile: one card per title year */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {champions.map((h) => {
+          <CappedList
+            initial={12}
+            noun="champions"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={champions.map((h) => {
             const cf = bySlug.get(h.champion_slug);
             return (
               <div key={h.year + "-card"} className="rounded-lg border p-2.5 flex items-center gap-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -235,6 +247,7 @@ export default async function WnbaPage() {
               </div>
             );
           })}
+          />
         </div>
 
         <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

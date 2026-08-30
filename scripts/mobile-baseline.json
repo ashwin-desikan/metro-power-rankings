@@ -1,0 +1,29 @@
+{
+  "app/refresh-schedule/ScheduleCalendar.tsx": {
+    "RIGID_WIDE_GRID": 1
+  },
+  "app/teams/_footy/FootyHub.tsx": {
+    "RIGID_WIDE_GRID": 1
+  },
+  "app/teams/_footy/FootyTeam.tsx": {
+    "RIGID_WIDE_GRID": 2
+  },
+  "app/teams/mlb/[slug]/SeasonsByTeamTable.tsx": {
+    "RIGID_WIDE_GRID": 1
+  },
+  "app/teams/nhl/[slug]/SeasonsByTeamTable.tsx": {
+    "RIGID_WIDE_GRID": 2
+  },
+  "app/teams/nhl/historical/page.tsx": {
+    "RIGID_WIDE_GRID": 1
+  },
+  "app/teams/olympics/AllTimeTable.tsx": {
+    "RIGID_WIDE_GRID": 1
+  },
+  "app/teams/olympics/[slug]/page.tsx": {
+    "RIGID_WIDE_GRID": 1
+  },
+  "app/teams/olympics/games/[slug]/page.tsx": {
+    "RIGID_WIDE_GRID": 1
+  }
+}

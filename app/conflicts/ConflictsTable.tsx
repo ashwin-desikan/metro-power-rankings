@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 type Belligerent = { name: string; slug: string | null; principal: boolean };
 type War = {
@@ -136,7 +137,12 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
 
       {/* Mobile: stacked cards, same sorted/filtered data as the table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((w) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={rows.map((w) => (
           <div key={w.name + w.start} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <div className="flex items-start justify-between gap-2">
               <a href={w.url} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
@@ -153,6 +159,7 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
             <div className="mt-1.5 text-xs text-[var(--text-dim)]">Combat deaths: {deaths(w)}</div>
           </div>
         ))}
+        />
       </div>
       <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
         <table className="w-full text-sm">

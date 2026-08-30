@@ -15,6 +15,7 @@ import CricketGreatestGames from "./CricketGreatestGames";
 import { getCricketFixtures } from "@/lib/cricketFixtures";
 import CricketFixtures from "@/app/teams/cricket/CricketFixtures";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 // Live WTC standings are fetched at request time and cached by ISR, refreshing
@@ -182,7 +183,12 @@ export default async function CricketHubPage() {
           </p>
           {/* Mobile: one card per team instead of an 8-column table. */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {wtc!.rows.map((r) => (
+            <CappedList
+              initial={12}
+              noun="rows"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+              items={wtc!.rows.map((r) => (
               <div key={r.name} className="rounded-lg border p-3" style={card}>
                 <div className="flex items-center justify-between gap-2">
                   <div className="font-medium text-sm flex items-center gap-1.5 min-w-0">
@@ -220,6 +226,7 @@ export default async function CricketHubPage() {
                 </div>
               </div>
             ))}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -270,7 +277,12 @@ export default async function CricketHubPage() {
               <div className="font-semibold mb-2">{fmt}</div>
               {/* Mobile: compact stacked rows instead of a 3-col table. */}
               <div className="grid grid-cols-1 gap-1.5 sm:hidden">
-                {hub.current_rankings[fmt].rows.map((r) => (
+                <CappedList
+                  initial={12}
+                  noun="rows"
+                  className="rounded-lg border border-[var(--border)]"
+                  bodyClassName="grid grid-cols-1 gap-1.5 p-2 pt-0"
+                  items={hub.current_rankings[fmt].rows.map((r) => (
                   <div
                     key={r.team}
                     className="rounded-lg border px-3 py-2 flex items-center justify-between gap-2"
@@ -283,6 +295,7 @@ export default async function CricketHubPage() {
                     <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={mono}>{r.rating.toFixed(1)}</span>
                   </div>
                 ))}
+                />
               </div>
               <TableScroll className="hidden sm:block">
               <table className="w-full text-sm">
@@ -321,7 +334,12 @@ export default async function CricketHubPage() {
               <div className="font-semibold mb-2">{fmt}</div>
               {/* Mobile: stacked cards instead of a 4-col table. */}
               <div className="grid grid-cols-1 gap-1.5 sm:hidden">
-                {hub.number_ones[fmt].slice(0, 8).map((r) => (
+                <CappedList
+                  initial={12}
+                  noun="rows"
+                  className="rounded-lg border border-[var(--border)]"
+                  bodyClassName="grid grid-cols-1 gap-1.5 p-2 pt-0"
+                  items={hub.number_ones[fmt].slice(0, 8).map((r) => (
                   <div key={r.team} className="rounded-lg border p-2.5" style={card}>
                     <div className="text-sm font-medium mb-1.5">{teamLink(r.team)}</div>
                     <div className="grid grid-cols-3 gap-x-3 gap-y-1 text-xs">
@@ -340,6 +358,7 @@ export default async function CricketHubPage() {
                     </div>
                   </div>
                 ))}
+                />
               </div>
               <TableScroll className="hidden sm:block">
               <table className="w-full text-sm">
@@ -376,7 +395,12 @@ export default async function CricketHubPage() {
         </p>
         {/* Mobile: one card per team, honours as a labeled mini-grid. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {hub.honours.map((h) => (
+          <CappedList
+            initial={12}
+            noun="honours"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.honours.map((h) => (
             <div key={h.team} className="rounded-lg border p-3" style={card}>
               <div className="font-medium text-sm mb-2">{teamLink(h.team)}</div>
               <div className="grid grid-cols-2 gap-x-3 gap-y-2 text-xs">
@@ -403,6 +427,7 @@ export default async function CricketHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -472,7 +497,12 @@ export default async function CricketHubPage() {
         </p>
         {/* Mobile: one card per trophy instead of a 6-col table. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {hub.series_trophies.map((t) => (
+          <CappedList
+            initial={12}
+            noun="series"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.series_trophies.map((t) => (
             <div key={t.trophy} className="rounded-lg border p-3" style={card}>
               <div className="font-medium text-sm">{t.trophy}</div>
               <div className="text-xs text-[var(--text-muted)] mt-0.5">{contestedBy(t.contested_by)}</div>
@@ -496,6 +526,7 @@ export default async function CricketHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -575,7 +606,12 @@ export default async function CricketHubPage() {
         </p>
         {/* Mobile: one card per nation instead of a 6-col table. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {associates.map((t) => {
+          <CappedList
+            initial={12}
+            noun="associates"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={associates.map((t) => {
             const pct = winPct(t.overall);
             return (
               <div key={t.slug} className="rounded-lg border p-3" style={card}>
@@ -608,6 +644,7 @@ export default async function CricketHubPage() {
               </div>
             );
           })}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

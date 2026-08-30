@@ -9,6 +9,7 @@ import {
 } from "@/lib/international";
 import { flagForTeam, flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -165,7 +166,12 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
           forces sideways scrolling at phone widths. Same `hub.champions`
           data as the desktop table below - only the presentation differs. */}
       <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {hub.champions.map((c, i) => {
+        <CappedList
+          initial={12}
+          noun="champions"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={hub.champions.map((c, i) => {
           const finalists = finalistByKey.get(finalistKey(c.year, c.tournament_label)) ?? [];
           return (
             <div
@@ -232,6 +238,7 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
             </div>
           );
         })}
+        />
       </div>
 
       <div className="mt-4 overflow-x-auto hidden sm:block">

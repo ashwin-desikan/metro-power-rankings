@@ -4,6 +4,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
 import { getT20Leagues } from "@/lib/cricketClubs";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/cricket/t20";
@@ -97,7 +98,12 @@ export default function DomesticT20Page() {
             {/* Mobile: stacked rows (season / winner / runner-up) instead of a
                 table where the runner-up column used to be dropped below sm. */}
             <div className="grid grid-cols-1 gap-1 sm:hidden overflow-y-auto" style={{ maxHeight: 260 }}>
-              {data.rolls[k].map((r, i) => (
+              <CappedList
+                initial={12}
+                noun="rows"
+                className="rounded-lg border border-[var(--border)]"
+                bodyClassName="grid grid-cols-1 gap-1 p-2 pt-0"
+                items={data.rolls[k].map((r, i) => (
                 <div
                   key={i}
                   className="rounded-md border px-2.5 py-1.5 text-xs"
@@ -117,6 +123,7 @@ export default function DomesticT20Page() {
                   </div>
                 </div>
               ))}
+              />
             </div>
 
             <div className="overflow-y-auto hidden sm:block" style={{ overflowX: "auto", maxHeight: 260 }}>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { warYears, fmtDeaths, type CountryWar, type Belligerent } from "@/lib/conflicts";
 import Collapsible from "./Collapsible";
 import { withIcon } from "./sectionIcons";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 function Bel({ b }: { b: Belligerent }) {
   const inner = b.principal ? <strong>{b.name}</strong> : <>{b.name}</>;
@@ -43,7 +44,12 @@ export default function ConflictsSection({ wars }: { wars: CountryWar[] }) {
     >
         {/* Mobile: stacked cards */}
         <div className="mt-2 grid grid-cols-1 gap-2 sm:hidden">
-          {wars.map(({ war, opponents }) => (
+          <CappedList
+            initial={12}
+            noun="wars"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={wars.map(({ war, opponents }) => (
             <div key={war.name} className="rounded-lg border p-3 border-gray-100 dark:border-gray-800" style={{ backgroundColor: "var(--bg-card)" }}>
               <div className="flex items-start justify-between gap-2">
                 <a href={war.url} target="_blank" rel="noopener noreferrer"
@@ -57,6 +63,7 @@ export default function ConflictsSection({ wars }: { wars: CountryWar[] }) {
               <div className="mt-1.5 text-xs text-[var(--text-dim)]">Combat deaths: {fmtDeaths(war)}</div>
             </div>
           ))}
+          />
         </div>
         {/* Desktop: table */}
         <div className="hidden sm:block overflow-x-auto mt-2">

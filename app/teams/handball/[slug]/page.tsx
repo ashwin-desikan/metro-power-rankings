@@ -11,6 +11,7 @@ import {
 } from "@/lib/handball";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -134,7 +135,12 @@ export default async function HandballTeamPage(
               Only two columns, so a flex-wrap row of chips reads better
               than full-width stacked cards. Same `detail.oly` array. */}
           <div className="flex flex-wrap gap-2 sm:hidden">
-            {detail.oly.map((m) => (
+            <CappedList
+              initial={12}
+              noun="medal tables"
+              className="rounded-lg border border-[var(--border)]"
+              bodyClassName="flex gap-2 p-2 pt-0"
+              items={detail.oly.map((m) => (
               <div
                 key={`${m.year}-${m.medal}-card`}
                 className="rounded-lg border px-3 py-2 flex items-center gap-2 text-sm"
@@ -144,6 +150,7 @@ export default async function HandballTeamPage(
                 <span className="font-medium" style={{ color: m.medal === "Gold" ? GOLD : undefined }}>{m.medal}</span>
               </div>
             ))}
+            />
           </div>
 
           <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>

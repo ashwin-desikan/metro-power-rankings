@@ -6,6 +6,7 @@ import { flagCdnUrl, HISTORICAL_FLAG } from "@/lib/international-display";
 import { getWorldRanking } from "@/lib/worldRankings";
 import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/hockey";
@@ -125,7 +126,12 @@ export default function HockeyHubPage() {
         {/* Mobile: one card per Games instead of a 4-column table that forces
             sideways scrolling. Same data, card presentation only. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[460px] overflow-y-auto pr-0.5">
-          {hub.olympic_podiums.map((p) => (
+          <CappedList
+            initial={12}
+            noun="podiums"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.olympic_podiums.map((p) => (
             <div key={`${p.year}-card`} className="rounded-lg border p-3" style={card}>
               <div className="font-semibold tabular-nums text-sm mb-2" style={mono}>{p.year}</div>
               <div className="grid grid-cols-1 gap-1.5 text-sm">
@@ -144,6 +150,7 @@ export default function HockeyHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>
@@ -179,7 +186,12 @@ export default function HockeyHubPage() {
         </p>
         {/* Mobile: stacked cards, same data as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {hub.world_cup.map((w) => (
+          <CappedList
+            initial={12}
+            noun="world cups"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.world_cup.map((w) => (
             <div key={`${w.year}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2 mb-2">
                 <span className="font-semibold tabular-nums text-sm" style={mono}>{w.year}</span>
@@ -197,6 +209,7 @@ export default function HockeyHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
@@ -232,7 +245,12 @@ export default function HockeyHubPage() {
         </p>
         {/* Mobile: stacked cards, same data as the desktop table below. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[460px] overflow-y-auto pr-0.5">
-          {hub.worlds.map((w) => (
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.worlds.map((w) => (
             <div key={`${w.year}-card`} className="rounded-lg border p-3" style={card}>
               <div className="font-semibold tabular-nums text-sm mb-2" style={mono}>{w.year}</div>
               <div className="grid grid-cols-1 gap-1.5 text-sm">
@@ -251,6 +269,7 @@ export default function HockeyHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>
@@ -291,7 +310,12 @@ export default function HockeyHubPage() {
         {/* Mobile: one card per nation instead of a 5-column table nobody
             can read at 375px without scrolling sideways. Same `nations` data. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto pr-0.5">
-          {nations.map((t) => (
+          <CappedList
+            initial={12}
+            noun="nations"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={nations.map((t) => (
             <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center gap-1.5 font-medium text-sm mb-2">
                 {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
@@ -317,6 +341,7 @@ export default function HockeyHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>

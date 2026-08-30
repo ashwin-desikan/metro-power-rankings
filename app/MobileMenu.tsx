@@ -237,7 +237,8 @@ export default function MobileMenu({ updated }: { updated: string | null }) {
   const closePanel = () => setOpen(false);
 
   return (
-    <div className="md:hidden">
+    // lg:hidden pairs with DesktopNav's hidden lg:flex — see the note there.
+    <div className="lg:hidden">
       <button
         ref={buttonRef}
         type="button"

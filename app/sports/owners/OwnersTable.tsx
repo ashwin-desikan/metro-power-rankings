@@ -3,6 +3,7 @@
 import { Fragment, useMemo, useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Local structural types, kept independent of the server-only lib/teamOwners
 // module so this client component never pulls a server import.
@@ -155,7 +156,12 @@ export default function OwnersTable({ rows }: { rows: Row[] }) {
 
       {/* Mobile: stacked cards, same filtered/sorted rows as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {filtered.map((r, i) => (
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={filtered.map((r, i) => (
           <div
             key={r.ownerKey}
             className="rounded-lg border p-3"
@@ -184,6 +190,7 @@ export default function OwnersTable({ rows }: { rows: Row[] }) {
             </ul>
           </div>
         ))}
+        />
       </div>
 
       <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>

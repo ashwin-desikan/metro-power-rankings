@@ -10,6 +10,7 @@ import { getRugbyFixtures } from "@/lib/rugbyFixtures";
 import RugbyFixtures from "@/app/teams/rugby-union/RugbyFixtures";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 const PATH = "/teams/rugby-union";
@@ -132,11 +133,15 @@ export default async function RugbyUnionHubPage() {
           table in October 2003.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="rounded-xl border p-4" style={card}>
+          <div className="min-w-0 rounded-xl border p-4" style={card}>
             <div className="font-semibold mb-2">Current top 15</div>
             {/* Mobile: stacked rank list, same data as the desktop table. */}
             <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
-              {hub.world_rankings.slice(0, 15).map((r) => (
+              <CappedList
+                initial={12}
+                noun="world rankings"
+                bodyClassName="divide-y"
+                items={hub.world_rankings.slice(0, 15).map((r) => (
                 <div key={r.team} className="flex items-center gap-3 py-2 text-sm">
                   <span className="w-7 text-right tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>
                     {r.rank}
@@ -144,6 +149,7 @@ export default async function RugbyUnionHubPage() {
                   <span className="flex-1 min-w-0">{teamLink(r.team)}</span>
                 </div>
               ))}
+              />
             </div>
             <TableScroll className="hidden sm:block">
             <table className="w-full text-sm">
@@ -164,11 +170,15 @@ export default async function RugbyUnionHubPage() {
             </table>
             </TableScroll>
           </div>
-          <div className="rounded-xl border p-4" style={card}>
+          <div className="min-w-0 rounded-xl border p-4" style={card}>
             <div className="font-semibold mb-2">Weeks at number one</div>
             {/* Mobile: stacked cards, same data as the desktop table. */}
             <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
-              {hub.number_ones.map((r) => (
+              <CappedList
+                initial={12}
+                noun="number ones"
+                bodyClassName="divide-y"
+                items={hub.number_ones.map((r) => (
                 <div key={r.team} className="py-2 text-sm">
                   <div className="font-medium">{teamLink(r.team)}</div>
                   <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs tabular-nums text-[var(--text-muted)]" style={mono}>
@@ -178,6 +188,7 @@ export default async function RugbyUnionHubPage() {
                   </div>
                 </div>
               ))}
+              />
             </div>
             <TableScroll className="hidden sm:block">
             <table className="w-full text-sm">
@@ -296,7 +307,12 @@ export default async function RugbyUnionHubPage() {
 
         {/* Mobile: stacked cards, same reversed rows as the desktop table. */}
         <div className="sm:hidden grid grid-cols-1 gap-2">
-          {hub.rwc_finals.slice().reverse().map((f) => (
+          <CappedList
+            initial={12}
+            noun="finals"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={hub.rwc_finals.slice().reverse().map((f) => (
             <div key={f.year} className="rounded-lg border p-3" style={card}>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-semibold">{teamLink(f.winner)}</span>
@@ -318,6 +334,7 @@ export default async function RugbyUnionHubPage() {
               </div>
             </div>
           ))}
+          />
         </div>
 
         <div className="hidden sm:block rounded-xl border overflow-x-auto" style={card}>
@@ -410,7 +427,12 @@ export default async function RugbyUnionHubPage() {
         </div>
         {/* Mobile: stacked cards, same `rest` array as the desktop table. */}
         <div className="sm:hidden grid grid-cols-1 gap-2">
-          {rest.map((t) => {
+          <CappedList
+            initial={12}
+            noun="rows"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={rest.map((t) => {
             const r = t.record;
             if (!r) return null;
             const pct = rugbyWinPct(r);
@@ -449,6 +471,7 @@ export default async function RugbyUnionHubPage() {
               </div>
             );
           })}
+          />
         </div>
 
         <div className="hidden sm:block rounded-xl border overflow-x-auto" style={card}>

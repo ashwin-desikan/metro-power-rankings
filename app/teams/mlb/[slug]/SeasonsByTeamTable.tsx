@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { Season } from "@/lib/mlb";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Sortable Season-by-season table for /teams/mlb/[slug]. Mirrors the NFL
 // version's UX exactly: live in-progress row pinned to top, italic + accent
@@ -172,7 +173,12 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, fetchedAt }: Pro
           postseason status together. Same `displayRows` drives both this
           list and the desktop table below. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {displayRows.map((s) => {
+        <CappedList
+          initial={12}
+          noun="seasons"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={displayRows.map((s) => {
           const isLive = s.is_live === true;
           const champColor = s.champ
             ? (s.year >= 1903 ? TITLE_GOLD : PRE_WS_SLATE)
@@ -282,6 +288,7 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, fetchedAt }: Pro
             </div>
           );
         })}
+        />
       </div>
 
       <div className="overflow-x-auto hidden sm:block">

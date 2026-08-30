@@ -15,6 +15,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import CflAllTimeTable from "./CflAllTimeTable";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -133,7 +134,12 @@ export default async function CflPage() {
 
                 {/* Mobile: one stacked card per team instead of an 8-column table. */}
                 <div className="grid grid-cols-1 gap-2 p-2 sm:hidden">
-                  {sortedRows.map(r => (
+                  <CappedList
+                    initial={12}
+                    noun="rows"
+                    className="rounded-lg border border-[var(--border)]"
+                    bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+                    items={sortedRows.map(r => (
                     <div
                       key={`${r.slug}-card`}
                       className="rounded-lg border p-3"
@@ -184,6 +190,7 @@ export default async function CflPage() {
                       </div>
                     </div>
                   ))}
+                  />
                 </div>
 
                 <table className="w-full text-sm tabular-nums hidden sm:table">
@@ -256,7 +263,12 @@ export default async function CflPage() {
         <h2 id="finals" className="text-xl font-bold mb-4">Grey Cup Finals</h2>
         {/* Mobile: one stacked card per final instead of a 5-column table. */}
         <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {history.map(g => (
+          <CappedList
+            initial={12}
+            noun="histories"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={history.map(g => (
             <div
               key={`${g.year}-${g.game}-card`}
               className="rounded-lg border p-3"
@@ -278,6 +290,7 @@ export default async function CflPage() {
               {g.city && <div className="text-[10px] text-[var(--text-dim)] mt-1.5">{g.city}</div>}
             </div>
           ))}
+          />
         </div>
 
         <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

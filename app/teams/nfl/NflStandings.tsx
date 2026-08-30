@@ -8,6 +8,7 @@
 import Link from "next/link";
 import { getCurrentNflStandings, type TeamStanding } from "@/lib/standings";
 import { getAllFranchises, logoUrlFor, monogramFor, type Franchise } from "@/lib/nfl";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 const DIVISION_ORDER = [
   "AFC East", "AFC North", "AFC South", "AFC West",
@@ -82,7 +83,11 @@ export default async function NflStandings() {
               {/* Mobile: compact stacked rows instead of a cramped 5-column
                   table. Same rows/order as the desktop table below. */}
               <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
-                {rows.map(({ f, t }) => {
+                <CappedList
+                  initial={12}
+                  noun="teams"
+                  bodyClassName="divide-y"
+                  items={rows.map(({ f, t }) => {
                   const logo = logoUrlFor(f.slug);
                   const mono = monogramFor(f.slug);
                   const showRec = hasLive && t != null && t.games_played > 0;
@@ -109,6 +114,7 @@ export default async function NflStandings() {
                     </Link>
                   );
                 })}
+                />
               </div>
 
               <div className="overflow-x-auto hidden sm:block">

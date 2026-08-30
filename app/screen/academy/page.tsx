@@ -84,10 +84,14 @@ export default function ScreenAcademyPage() {
             ten worldwide.
           </p>
           <div className="grid gap-4 lg:grid-cols-2">
-            <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
-              <div className="flex items-end gap-2 h-40">
+            <div className="min-w-0 rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+              {/* min-w-0 on each bar: a flex item's automatic minimum size is
+                  its content, so eleven "1920s" labels refused to shrink and
+                  pushed the page to 402px at 390px wide. Tighter gap on
+                  phones buys the labels the room they need. */}
+              <div className="flex items-end gap-1 sm:gap-2 h-40">
                 {f.academy.decades.map((d) => (
-                  <div key={d.decade} className="flex-1 flex flex-col items-center justify-end h-full">
+                  <div key={d.decade} className="min-w-0 flex-1 flex flex-col items-center justify-end h-full">
                     <span className="text-[10px] tabular-nums text-[var(--text-muted)] mb-0.5">{Math.round(d.pctTop10)}%</span>
                     <div className="w-full rounded-t" style={{ height: `${Math.max(2, d.pctTop10)}%`, backgroundColor: d.pctTop10 >= 50 ? "#5B8DEF" : "#E06C75" }} />
                     <span className="text-[9px] text-[var(--text-dim)] mt-1">{`${d.decade}s`}</span>

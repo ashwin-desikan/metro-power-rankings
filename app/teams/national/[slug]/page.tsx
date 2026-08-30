@@ -35,6 +35,7 @@ import { getAllCountrySlugs } from "@/lib/countries";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
 
@@ -383,7 +384,12 @@ function AppearancesTable({
       {/* Mobile: one card per appearance instead of a 4-column table forced
           into horizontal scroll. Same `sorted` array as the desktop table. */}
       <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((a, i) => {
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((a, i) => {
           const style = CATEGORY_PILL_STYLE[a.category];
           const shortLabel = CATEGORY_SHORT_LABEL[a.category];
           const nameAtTime = a.team_as ?? team.cur_name;
@@ -420,6 +426,7 @@ function AppearancesTable({
             </div>
           );
         })}
+        />
       </div>
 
       <div className="mt-4 overflow-x-auto hidden sm:block">
@@ -547,7 +554,12 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
           drop the Venue column just to fit. Same `finals` array, every column
           preserved (Venue now shown in the stat grid instead of hidden). */}
       <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {finals.map((f, i) => {
+        <CappedList
+          initial={12}
+          noun="finals"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={finals.map((f, i) => {
           const scoreText = f.for_goals != null && f.against_goals != null
             ? `${f.for_goals}-${f.against_goals}`
             : "-";
@@ -595,6 +607,7 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
             </div>
           );
         })}
+        />
       </div>
 
       <div className="mt-4 overflow-x-auto hidden sm:block">

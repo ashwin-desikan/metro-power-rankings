@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Franchise, HistoricalFranchise } from "@/lib/nfl";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Sortable all-time franchise table for /teams/nfl. Current franchises plus
 // (when the filter is set to "All") defunct franchises from historical.json,
@@ -186,7 +187,12 @@ export default function FranchiseTable({ franchises, historical, logoMap, monoMa
           can read at 375px without scrolling sideways. Same `sorted` data,
           same sort state as the desktop table below. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((r) => {
+        <CappedList
+          initial={12}
+          noun="franchises"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={sorted.map((r) => {
           const logo = r.slug ? logoMap[r.slug] : null;
           const mono = r.slug ? monoMap[r.slug] : null;
           return (
@@ -263,6 +269,7 @@ export default function FranchiseTable({ franchises, historical, logoMap, monoMa
             </div>
           );
         })}
+        />
       </div>
 
       <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

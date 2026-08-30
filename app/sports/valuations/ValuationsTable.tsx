@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { CappedList } from "@/app/_shared/Disclosure";
 
 // Local structural type (kept independent of the server-only lib/valuations
 // module so this client component never pulls a server import).
@@ -155,7 +156,12 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
 
       {/* Mobile: stacked cards, same filtered/sorted rows as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {filtered.map((r, i) => {
+        <CappedList
+          initial={12}
+          noun="rows"
+          className="rounded-lg border border-[var(--border)]"
+          bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+          items={filtered.map((r, i) => {
           const hot = highlight === r.anchor;
           return (
             <div
@@ -206,6 +212,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
             </div>
           );
         })}
+        />
       </div>
 
       <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>
