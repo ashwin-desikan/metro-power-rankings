@@ -6945,3 +6945,45 @@ npm run verify green end-to-end (typecheck, 614-file client-imports, table
 scroll, 99+14 vitest, build); pages probed on a local prod server + Playwright
 screenshots. NOTE the commit touches app/+lib/+public/data -> UNTAGGED push,
 one real build (today's second: the extract.py restamp was the first).
+
+## 2026-08-30 — cloud: the UCL model rebuilt from research (ucl-poisson-v2)
+
+Ashwin challenged v1's Sporting-3rd champion odds and the untested
+"blend club coefficients" fix. Answered with an actual study on the site's
+own archives — scripts/predictions/research/ (README.md = the publishable
+writeup; cl_predictors_study.py, fit_ucl_strength.py, backtest_ucl.py).
+
+Data: eur_competition_matches (Supabase; every European tie 1955-2026 =
+28,155 matches once unfolded), all 67 domestic hubs, the site's per-season
+club scores, the real UEFA coefficient tables (08/09-25/26).
+
+FINDINGS (numbers in the README + ucl_strength_weights.json):
+- The site's own club score (t-1) is the strongest preseason predictor in
+  every era (depth Spearman 0.41-0.44). The REAL UEFA 5y coefficient is
+  predictive too (0.42) — but adds NOTHING once the score is in the model
+  (collinear, negative CV weight). So "coefficients are only descriptive"
+  is false, and "add coefficients to v1" would also have been wrong.
+- Domestic goal ratios: ~zero cross-league signal at match level and
+  NON-MONOTONE at the extremes (dominating a mid league = anti-signal).
+  That was v1's exact Sporting failure, now measured.
+- European-only Elo cannot be made sharp at ~10 matches/club/season
+  (three design iterations documented; still ~coin-flip out-of-sample).
+- Home advantage in European group play is TINY: 0.035 log-goals.
+- Group pts/game is a bad outcome variable (group difficulty varies);
+  knockout depth is the right one.
+
+MODEL: S = tau*(0.0335*z(site_score) + 0.019*z(log country_coeff)), Poisson
+MLE on 6,216 group matches 1993-2026; era-CV; held-out new-format seasons
+2024-25+2025-26: 70.6% decisive accuracy vs 62.9% for v1's formula. tau=3.5
+from the championship backtest (real 2004-2024 groups reconstructed by
+connected components; maximizes actual champions' likelihood, 2.92->2.46
+logloss/season). Honest tension recorded: model favourite won 2/18 real
+seasons vs 4.0 expected — binomially compatible, recheck as seasons accrue.
+
+SHIPPED: build_ucl_sim.py rewritten (v2, self-test 18/18, weights read from
+scripts/predictions/ucl_strength_weights.json — refit on research runs only,
+never pipeline autopilot); ucl-sim.json rebuilt (PSG 15.4 / Bayern 14.5 /
+Arsenal 13.0; Sporting 12.8 -> 1.3); /predictions/ucl model notes rewritten
+("fitted, not asserted"); index blurb updated. npm run verify green.
+Research exports live in ~/research on the cloud box (re-export queries in
+the study docstring); not committed (4.6MB, derived from Supabase).

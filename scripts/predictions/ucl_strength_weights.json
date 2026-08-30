@@ -1,0 +1,52 @@
+{
+ "model": "ucl-poisson-v2 strength",
+ "fitted_on": "6216 CL/EL/ECL group and league-phase matches, 1993-2026, Poisson MLE",
+ "features": [
+  "site_score_z",
+  "country_coeff_log_z"
+ ],
+ "weights": [
+  0.0335,
+  0.019
+ ],
+ "b0": 0.3281,
+ "hfa": 0.0353,
+ "validation": {
+  "held_out_new_format_cl_2025_26": {
+   "decisive_acc": 0.7061,
+   "logloss": 1.0177,
+   "n": 288,
+   "v1_formula_same_test": {
+    "decisive_acc": 0.6286,
+    "logloss": 1.0295
+   }
+  },
+  "era_cv_decisive_acc": {
+   "1993-2003": 0.5266,
+   "2004-2015": 0.5638,
+   "2016-2026": 0.5351
+  },
+  "depth_spearman_mean_34_seasons": 0.436,
+  "championship_backtest_2004_2024": {
+   "seasons": 18,
+   "sims_per_season": 4000,
+   "champion_logloss_per_season_by_tau": {
+    "1.0": 2.9164,
+    "2.0": 2.6581,
+    "2.5": 2.5544,
+    "3.0": 2.5216,
+    "3.5": 2.462,
+    "4.0": 2.4935,
+    "5.0": 2.4823,
+    "6.0": 2.5801
+   },
+   "chosen_tau": 3.5,
+   "favourite_check": "model favourite won 2/18 real seasons; model expected 4.0 at tau=3.5 \u2014 binomially compatible (P(<=2 | p=0.22, n=18) ~ 8%) but worth rechecking as seasons accrue",
+   "script": "scripts/predictions/research/backtest_ucl.py"
+  }
+ },
+ "study": "scripts/predictions/research/cl_predictors_study.py + fit_ucl_strength.py",
+ "notes": "coeff5 (5y European results) adds nothing once site_score is in (collinear, negative CV weight); dom_comp (domestic goal ratios) is non-monotone across leagues and near-zero at match level \u2014 the Sporting failure mode. Home advantage in European group play is genuinely small (hfa 0.035 log-goals). Z-scores are standardized within the season's CL+EL+ECL league-phase field to match training. tau=3.5 rescales the match-level MLE slope to season level: noisy features attenuate per-match fits, and the championship backtest (real 2004-2024 groups, actual champions' likelihood) is the season-level calibration.",
+ "tau": 3.5,
+ "z_field": "CL league-phase participants only (36 clubs), matching the backtest convention"
+}

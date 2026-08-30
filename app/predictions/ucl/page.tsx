@@ -4,12 +4,13 @@ import { getFootballClubByName } from "@/lib/football";
 import { getUclSim } from "@/lib/uclSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
-// Champions League 2026-27 prediction hub — built 2026-08-29, the week the
-// league-phase draw set the 36-club field. Season odds from ucl-sim.json
-// (ucl-poisson-v1: the site's own domestic hub data + UEFA country
-// coefficients; no betting-market blend yet), re-run without a build via
-// lib/uclSim's ISR read. Fixture calls appear once api-football swaps the
-// draw's placeholder kickoffs for the confirmed calendar (meta flag).
+// Champions League 2026-27 prediction hub — built 2026-08-29, rebuilt as v2
+// on 2026-08-30 after the strength formula was re-derived from research
+// rather than asserted (scripts/predictions/research/: 28k European matches
+// 1955-2026, era-cross-validated fit, championship backtest). Season odds
+// from ucl-sim.json, re-run without a build via lib/uclSim's ISR read.
+// Fixture calls appear once api-football swaps the draw's placeholder
+// kickoffs for the confirmed calendar (meta flag).
 
 export const revalidate = 21600;
 
@@ -27,7 +28,7 @@ const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const PATH = "/predictions/ucl";
 const TITLE = "Champions League 2026-27 Predictions";
 const DESC =
-  "Champion, top-eight and knockout odds for all 36 Champions League clubs from thousands of simulated seasons of the drawn league phase, built on this site's own domestic data and UEFA coefficients.";
+  "Champion, top-eight and knockout odds for all 36 Champions League clubs from thousands of simulated seasons of the drawn league phase, powered by a strength model fitted on three decades of European match data and backtested against every real champion since 2004.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -224,19 +225,25 @@ export default async function UclPredictionsPage() {
 
           {/* Model notes */}
           <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
-            <h2 className="text-xl font-bold mb-2">How this model works — and where it is honest about guessing</h2>
+            <h2 className="text-xl font-bold mb-2">How this model works — fitted, not asserted</h2>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-2">
-              Every club&apos;s attack and defence come from this site&apos;s own domestic league archive,
-              measured relative to their league&apos;s average; leagues are then levelled against each other
-              with UEFA&apos;s country coefficients. The 8 drawn league-phase fixtures are simulated with
-              Poisson goals (finished matches replay their real result), the top 8 go straight to the round
-              of 16, ranks 9-24 fight through the seeded play-off bands, and the bracket runs to a one-off
-              final on neutral ground.
+              Each club&apos;s strength blends two signals that a study of every European tie since 1955
+              (28,000 matches, era-cross-validated) found to carry all the usable preseason information:
+              this site&apos;s own club rating from the season just finished, and the strength of the
+              club&apos;s league. Five-year club coefficients turned out to add nothing once those are in
+              the model, and raw domestic goal ratios predict close to nothing across leagues — dominating
+              a mid-tier league is not evidence of European strength. The blend&apos;s weights come from a
+              Poisson fit on three decades of group-stage goals; its overall spread is calibrated so that
+              replaying 2004-2024 with each season&apos;s real groups makes the actual champions as likely
+              as possible. Held out from training entirely, the two completed league-phase seasons:
+              70.6% of decisive matches called, against 62.9% for the formula it replaced.
             </p>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl">
-              Version 1 carries no betting-market blend, folds in no mid-season domestic form, and
-              approximates UEFA&apos;s knockout draw options and deep tie-breaks — all listed in the build
-              script and revisited as real matchdays calibrate it. Treat the tails as honest speculation.
+              The 8 drawn fixtures per club are simulated with Poisson goals (finished matches replay their
+              real result), the top 8 go straight to the round of 16, ranks 9-24 fight through the seeded
+              play-off bands, and the bracket runs to a one-off final on neutral ground. Still absent, and
+              said plainly: no betting-market blend, no mid-season form fold yet, and UEFA&apos;s knockout
+              draw options are approximated. The full study and backtest live in the site&apos;s repository.
             </p>
           </section>
         </>

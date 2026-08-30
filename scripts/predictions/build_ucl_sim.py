@@ -1,48 +1,49 @@
 #!/usr/bin/env python3
 """UEFA Champions League 2026-27 season simulator — /predictions/ucl.
 
-ucl-poisson-v1 ("site data + UEFA coefficients"): built 2026-08-29, the week
-the league-phase draw set the 36-club field and api-football published every
-pairing with dates and times. One output:
+ucl-poisson-v2 ("fitted on 33 years of European match data"). v1 (2026-08-29)
+hand-set its strength formula — domestic goal ratios scaled by a country
+coefficient at a guessed K — and promptly ranked Sporting CP third on
+champion odds. Ashwin challenged it, correctly, so v2's strength is FITTED,
+not asserted. The research lives in scripts/predictions/research/
+(cl_predictors_study.py + fit_ucl_strength.py) on the site's own archives:
+every European tie 1955-2026 (28k matches), every domestic table since
+1959-60, the site's per-season club ratings, and the real UEFA coefficients.
 
-  public/data/ucl-sim.json  - league-phase + knockout odds per club
-                              (top-8 / top-24 / R16 / QF / SF / final /
-                              champion, xPts, finishing ranges) plus model
-                              win-draw-win calls for the upcoming fixtures.
+WHAT THE STUDY FOUND (the numbers are in ucl_strength_weights.json):
+  * The site's own club rating (hub clubs[].score, season t-1) is the
+    strongest preseason predictor of European results in every era tested.
+  * Country strength (the site's historical country coefficient) adds real,
+    independent signal.
+  * The 5-year club coefficient — real UEFA or reconstructed — adds NOTHING
+    once the site score is in the model (collinear; negative CV weight). It
+    is predictive alone, but it is a worse summary of the same information.
+  * Domestic goal ratios have ~zero cross-league predictive power at match
+    level and are NON-MONOTONE at the extremes: dominating a mid league is
+    anti-signal. That was exactly v1's Sporting failure.
+  * Home advantage in European league-phase/group play is tiny: 0.035
+    log-goals (1.44 v 1.34 goals). A European-only Elo cannot be made sharp
+    at ~10 matches/club/season; 5-year aggregates exist for a reason.
 
-STRENGTH SIGNAL (no betting market in v1 — football-data.co.uk carries no
-UCL odds file; the market column can join later the way it did in the PL
-model):
-  - Within-league: attack/defence goal rates per club from the site's own
-    domestic hub archive (hub-2025-26/24-25/23-24 at .55/.30/.15), expressed
-    RELATIVE to each league's average so a 2.1 gf/g in the Eredivisie is not
-    read as a 2.1 in the Premier League.
-  - Across leagues: log-strength offset from the UEFA country coefficients
-    the site already publishes (country-coeff-2026-27.json), scaled by
-    K_LEAGUE. This constant is the model's main tunable; v1 sets 0.8 (see
-    the face-check note at the constant) with a self-test guarding only
-    ordering and bounds. Recalibrate against real league-phase results once
-    a few matchdays land.
+MODEL. Strength S = tau * (w1*z(site_score) + w2*z(log country_coeff)),
+z-scored within the CL 36. Goals: lam_home = exp(b0 + hfa + S_h - S_a),
+Poisson, per-season noise sigma on S. w1/w2/b0/hfa: Poisson MLE on 6,216
+group matches 1993-2026; held out from training, the two completed
+new-format seasons: 70.6% decisive-match accuracy v 62.9% for the v1
+formula. tau: season-level calibration — the multiplier that maximizes the
+likelihood of the ACTUAL 2004-2024 champions when those seasons are
+replayed with their real groups (match-level MLE slopes are attenuated by
+feature noise; compounding them over a 17-match campaign under-spreads
+titles: tau=1 gave a 6.7%% favourite, backtest log-loss picks tau=3.5).
 
-SEASON SIM: the 8 drawn league-phase fixtures per club come straight from the
-committed api-football bundle (live-competitions-2026.json) — finished ones
-replay their REAL result, the rest get Poisson goals (mu 3.1, home adv 1.15,
-per-season strength noise sigma 0.15). UCL tie-breaks approximated as pts /
-gd / gf / random. Ranks 1-8 to the R16, 9-24 to the knockout play-offs,
-25-36 out. Knockout: play-off bands 9/10v23/24, 11/12v21/22, 13/14v19/20,
-15/16v17/18 (draw randomized within band each sim); R16 winners route
-W(1/2)vW(7/8) and W(3/4)vW(5/6) into quarters, those two quarters into one
-semi — the routing verified against the 2024-25 bracket that sent seeds 1+3
-and 2+4 to opposite finals halves. Which of each seed pair lands in which
-half is a real UEFA draw; the sim randomizes it. Two-legged ties aggregate
-two Poisson legs, level ties go to ET (~1/3 of a match) then a coin-flip
-shoot-out; the final is one leg on neutral ground.
-
-KNOWN APPROXIMATIONS (v1, documented on the page): no betting-market blend,
-no in-season domestic-form fold (the hub archive is preseason state), UCL
-tie-breaks beyond gf, and the R16->final routing above should be re-checked
-against the official 2026-27 chart before the February knockout draw
-(R16_ROUTING_NOTE below).
+SEASON SIM: the 8 drawn league-phase fixtures per club from the committed
+api-football bundle; finished ones replay their real result. UCL tie-breaks
+approximated as pts/gd/gf/random. Ranks 1-8 to the R16, 9-24 to knockout
+play-offs (seeded bands 9/10v23/24 .. 15/16v17/18, draw randomized), R16
+routes W(1/2)vW(7/8) + W(3/4)vW(5/6) (verified against the 2024-25 bracket;
+re-check the official 2026-27 chart before the February draw). Two-legged
+ties aggregate; ET ~ a third of a match; shoot-outs are a coin flip; the
+final is one leg, neutral.
 
     python scripts/predictions/build_ucl_sim.py               # build + write
     python scripts/predictions/build_ucl_sim.py --dry         # no writes
@@ -50,16 +51,17 @@ against the official 2026-27 chart before the February knockout draw
     python scripts/predictions/build_ucl_sim.py --verify-teams
     python scripts/predictions/build_ucl_sim.py --sims 20000
 
-Network: NONE. Every input is a repo-committed file, so this runs identically
-on the mini, in CI and in the egress-blocked cloud sandbox.
+Network: NONE. Weights are research artifacts (ucl_strength_weights.json),
+re-fitted on research runs and reviewed — never on pipeline autopilot.
 """
+import argparse
 import json
 import math
 import os
 import random
+import re
 import sys
 import unicodedata
-import re
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
@@ -67,20 +69,16 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 FOOT = os.path.join(ROOT, "public", "data", "football")
 OUT = os.path.join(ROOT, "public", "data", "ucl-sim.json")
+WEIGHTS_PATH = os.path.join(HERE, "ucl_strength_weights.json")
 
 SEASON = "2026-27"
 LEAGUE_ID = 2                       # api-football UEFA Champions League
-STRENGTH_SEASONS = [("2025-26", 0.55), ("2024-25", 0.30), ("2023-24", 0.15)]
-MU = 3.1                            # league-phase goals/match (recent UCL avg)
-HOME_ADV = 1.15                     # per-goal multiplier, halved per side
-SIGMA = 0.15                        # per-sim-season strength noise
-K_LEAGUE = 0.8                      # country-coefficient -> log-strength scale
-# K_LEAGUE face-checked 2026-08-29 against the pre-season title market at
-# 0.5/0.65/0.8: higher K reins in the smaller-league domestic dominators
-# (Sporting 16%->11%) and lifts the big-league contenders toward market
-# order. 0.8 chosen; recalibrate on real league-phase results after MD3-4.
-ET_FRACTION = 1.0 / 3.0             # extra time ~ a third of a match's goals
-REL_CAP = (0.45, 2.6)               # within-league rate multipliers, clamped
+FIELD_LEAGUE_IDS = (2,)             # z-score field: the CL 36 (backtest convention)
+HUB_SEASON = "2025-26"              # season t-1, features' vintage
+SIGMA_S = 0.05                      # per-sim-season noise on S (log-goal units;
+                                    # ~25% of the field's strength spread, the
+                                    # same humility ratio the PL sim uses)
+ET_FRACTION = 1.0 / 3.0
 FIXTURE_HORIZON_DAYS = 10
 DEFAULT_SIMS = 10000
 R16_ROUTING_NOTE = ("QF routes W(1/2)vW(7/8) + W(3/4)vW(5/6), verified against "
@@ -90,34 +88,17 @@ R16_ROUTING_NOTE = ("QF routes W(1/2)vW(7/8) + W(3/4)vW(5/6), verified against "
 FINISHED = {"FT", "AET", "PEN", "AWD", "WO"}
 LEAGUE_PHASE_RE = re.compile(r"group stage|league (phase|stage)", re.I)
 
-# api-football bundle lookup -> domestic hub lookup, for the clubs whose two
-# canonical spellings differ. Resolution is by (name, country) and hard-fails
-# on any unresolved club (--verify-teams prints the full table), so a new
-# season's field can never silently sim with a stranger's goal rates.
-ALIAS = {
-    "Arsenal FC": "Arsenal",
-    "Atlético Madrid": "Atlético de Madrid",
-    "Bayern München": "Bayern Munich",
-    "Como 1907": "Como",
-    "FK Bodo/Glimt": "FK Bodø/Glimt",
-    "Inter Milan": "Internazionale",
-    "Paris St. Germain": "Paris Saint-Germain",
-    "Sabah FK": "Sabah FA",
-    "Shakhtar Donetsk": "FC Shakhtar Donetsk",
-    "Slavia Praha": "SK Slavia Praha",
-    "Slovan Bratislava": "ŠK Slovan Bratislava",
-    "Sporting Lisboa": "Sporting Clube de Portugal",
-    "Villarreal CF": "Villarreal",
-}
-
 # Hub-archive country spellings that differ from api-football's team country.
 COUNTRY_ALIAS = {"Czech Republic": "Czech-Republic"}
 
 
-def norm(s):
+def ntn(s):
+    """Normalize a club name across the bundle/hub spellings (case, accents,
+    punctuation): 'Bodo/Glimt' == 'Bodø/Glimt', 'Lillestrom' == 'Lillestrøm'."""
     s = unicodedata.normalize("NFKD", str(s or ""))
-    s = "".join(c for c in s if not unicodedata.combining(c)).lower()
-    return re.sub(r"[^a-z0-9]+", " ", s).strip()
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = s.replace("ø", "o").replace("Ø", "o").replace("ß", "ss")
+    return re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
 
 
 # ------------------------------------------------------------------- inputs
@@ -127,11 +108,18 @@ def load_json(*parts):
         return json.load(f)
 
 
-def league_phase_fixtures():
+def load_weights():
+    w = load_json(WEIGHTS_PATH)
+    assert w["features"] == ["site_score_z", "country_coeff_log_z"], \
+        "weights artifact features changed; update build_ucl_sim.py to match"
+    return w
+
+
+def league_phase_fixtures(league_id=LEAGUE_ID):
     """[(home_key, away_key, kickoff, hg, ag, finished)] + {key: (name, country)}
     from the committed api-football bundle. Key = api team_id."""
     doc = load_json(FOOT, "live-competitions-2026.json")
-    comp = next(c for c in doc["competitions"] if c["league_id"] == LEAGUE_ID)
+    comp = next(c for c in doc["competitions"] if c["league_id"] == league_id)
     fixtures, teams = [], {}
     for f in comp["fixtures"]:
         if not LEAGUE_PHASE_RE.search(f.get("round") or ""):
@@ -147,74 +135,60 @@ def league_phase_fixtures():
     return fixtures, teams
 
 
-def hub_league_rows(season):
-    """{(country, level): [row,...]} for one archive season; rows carry lookup."""
-    try:
-        hub = load_json(FOOT, "hub-%s.json" % season)
-    except FileNotFoundError:
-        return {}
-    out = defaultdict(list)
-    for l in hub.get("leagues", []):
-        for g in l.get("groups", []):
-            for r in g.get("rows", []):
-                if r.get("played"):
-                    out[(l.get("country"), l.get("level"))].append(r)
-    return out
+def hub_features():
+    """(score_by_name, coeff_by_country) from the completed t-1 hub."""
+    hub = load_json(FOOT, f"hub-{HUB_SEASON}.json")
+    score = {}
+    for c in hub.get("clubs", []):
+        for k in (c.get("lookup"), c.get("name")):
+            if k:
+                score[ntn(k)] = c.get("score")
+    coeff = {c["country"]: c.get("coef") for c in hub.get("countries", [])}
+    return score, coeff
 
 
-def country_offsets():
-    """{country: log-strength offset}, zero at the top-ranked country."""
-    cc = load_json(FOOT, "country-coeff-2026-27.json")
-    top = max(c["coef"] for c in cc["countries"])
-    return {c["country"]: K_LEAGUE * math.log(max(c["coef"], 4.0) / top)
-            for c in cc["countries"]}
+def build_strengths(weights):
+    """S per CL club key, z-scored within the CL 36 (the championship
+    backtest's convention; tau was calibrated under it). Returns
+    (S_by_key, cl_teams, cl_fixtures, resolution_table, warnings)."""
+    score_by_name, coeff_by_country = hub_features()
+    field = []          # (comp_id, key, name, country, score, log_coeff)
+    cl_fixtures, cl_teams = None, None
+    warnings = []
+    for lid in FIELD_LEAGUE_IDS:
+        fixtures, teams = league_phase_fixtures(lid)
+        if lid == LEAGUE_ID:
+            cl_fixtures, cl_teams = fixtures, teams
+        for key, (name, country) in teams.items():
+            sc = score_by_name.get(ntn(name))
+            cc = coeff_by_country.get(country) or coeff_by_country.get(
+                COUNTRY_ALIAS.get(country, country))
+            if cc is None:
+                warnings.append(f"no country coefficient for {name!r} ({country}); skipped from field")
+                continue
+            field.append([lid, key, name, country, sc, math.log(max(cc, 0.5))])
 
+    # never guess UP: a club with no site score takes the field minimum
+    known = [f[4] for f in field if f[4] is not None]
+    floor = min(known)
+    for f in field:
+        if f[4] is None:
+            warnings.append(f"no site score for {f[2]!r}; imputed field minimum {floor}")
+            f[4] = floor
 
-def resolve_rates(teams):
-    """Per club: (att, dfc) multipliers = within-league relative rates x the
-    country offset, from the hub archive. Hard-fails on an unresolved club."""
-    seasons = {s: hub_league_rows(s) for s, _ in STRENGTH_SEASONS}
-    offsets = country_offsets()
-    rates, table = {}, []
-    for key, (name, country) in sorted(teams.items(), key=lambda kv: norm(kv[1][0])):
-        hub_name = ALIAS.get(name, name)
-        target = norm(hub_name)
-        num_a = num_d = den = 0.0
-        found_season = None
-        for season, w in STRENGTH_SEASONS:
-            hit = None
-            for (ctry, level), rows in seasons[season].items():
-                if country and ctry not in (country, COUNTRY_ALIAS.get(country, country)):
-                    continue
-                for r in rows:
-                    if norm(r.get("lookup") or r.get("name")) == target:
-                        avg_gf = sum(x["gf"] for x in rows) / sum(x["played"] for x in rows)
-                        avg_ga = sum(x["ga"] for x in rows) / sum(x["played"] for x in rows)
-                        hit = ((r["gf"] / r["played"]) / avg_gf,
-                               (r["ga"] / r["played"]) / avg_ga, ctry, level)
-                        break
-                if hit:
-                    break
-            if hit:
-                num_a += w * hit[0]
-                num_d += w * hit[1]
-                den += w
-                found_season = found_season or season
-        if den == 0:
-            raise SystemExit("UNRESOLVED CLUB: %r (%s) has no hub record in any "
-                             "strength season — extend ALIAS/COUNTRY_ALIAS, do not guess."
-                             % (name, country))
-        lo, hi = REL_CAP
-        att_rel = min(hi, max(lo, num_a / den))
-        def_rel = min(hi, max(lo, num_d / den))
-        off = offsets.get(country)
-        if off is None:
-            raise SystemExit("no country coefficient for %r (%s)" % (country, name))
-        att = att_rel * math.exp(0.5 * off)
-        dfc = def_rel * math.exp(-0.5 * off)   # smaller = concedes fewer
-        rates[key] = (att, dfc)
-        table.append((name, country, found_season, round(att, 3), round(dfc, 3)))
-    return rates, table
+    import statistics
+    scores = [f[4] for f in field]
+    logccs = [f[5] for f in field]
+    mu_s, sd_s = statistics.mean(scores), statistics.pstdev(scores) or 1.0
+    mu_c, sd_c = statistics.mean(logccs), statistics.pstdev(logccs) or 1.0
+    w1, w2 = weights["weights"]
+    S, table = {}, []
+    for lid, key, name, country, sc, lcc in field:
+        s = weights.get("tau", 1.0) * (w1 * (sc - mu_s) / sd_s + w2 * (lcc - mu_c) / sd_c)
+        if lid == LEAGUE_ID:
+            S[key] = s
+            table.append((name, country, round(sc, 3), round(s, 4)))
+    return S, cl_teams, cl_fixtures, sorted(table, key=lambda t: -t[3]), warnings
 
 
 # ---------------------------------------------------------------- simulation
@@ -228,11 +202,10 @@ def poisson(lam, rnd):
         k += 1
 
 
-def match_lambdas(rates, h, a, noise_h=1.0, noise_a=1.0):
-    ah, dh = rates[h]
-    aa, da = rates[a]
-    lh = (MU / 2.0) * ah * da * HOME_ADV * noise_h
-    la = (MU / 2.0) * aa * dh / HOME_ADV * noise_a
+def match_lambdas(S, w, h, a, noise=None):
+    gap = (S[h] + (noise[h] if noise else 0.0)) - (S[a] + (noise[a] if noise else 0.0))
+    lh = math.exp(w["b0"] + w["hfa"] + gap)
+    la = math.exp(w["b0"] - w["hfa"] - gap)
     return lh, la
 
 
@@ -257,18 +230,14 @@ def rank_table(pts, gd, gf, order, rnd):
     return sorted(order, key=lambda t: (-pts[t], -gd[t], -gf[t], rnd.random()))
 
 
-def play_tie(rates, x, y, noise, rnd, two_legs=True, neutral=False):
-    """Winner of a knockout tie. Aggregate two Poisson legs (or one, neutral),
-    ET as a third of a match at neutral (no-HFA) strength, then a coin flip
-    for the shoot-out."""
-    ax, dx = rates[x]
-    ay, dy = rates[y]
-    # Strength-true lambdas with no home advantage (the final; also ET).
-    nx = (MU / 2.0) * ax * dy * noise[x]
-    ny = (MU / 2.0) * ay * dx * noise[y]
+def play_tie(S, w, x, y, noise, rnd, two_legs=True, neutral=False):
+    """Winner of a knockout tie. ET at neutral (no-hfa) strength; coin-flip
+    shoot-out."""
+    gap = (S[x] + noise[x]) - (S[y] + noise[y])
+    nx, ny = math.exp(w["b0"] + gap), math.exp(w["b0"] - gap)
     if two_legs:
-        l1h, l1a = match_lambdas(rates, x, y, noise[x], noise[y])
-        l2h, l2a = match_lambdas(rates, y, x, noise[y], noise[x])
+        l1h, l1a = match_lambdas(S, w, x, y, noise)
+        l2h, l2a = match_lambdas(S, w, y, x, noise)
         gx = poisson(l1h, rnd) + poisson(l2a, rnd)
         gy = poisson(l1a, rnd) + poisson(l2h, rnd)
     else:
@@ -282,14 +251,12 @@ def play_tie(rates, x, y, noise, rnd, two_legs=True, neutral=False):
     return x if rnd.random() < 0.5 else y
 
 
-def knockout(rates, ranking, noise, rnd):
+def knockout(S, w, ranking, noise, rnd):
     """ranking: list of team keys in league-phase order (index 0 = seed 1).
-    Returns dict team -> deepest stage reached:
-    'lp' (25-36), 'po' (lost play-off), 'r16', 'qf', 'sf', 'final', 'champion'."""
+    Returns dict team -> deepest stage reached."""
     depth = {t: "lp" for t in ranking[24:]}
     seeds = {t: i + 1 for i, t in enumerate(ranking)}
 
-    # Play-off bands (seeded side listed first); draw randomized within band.
     bands = [((9, 10), (23, 24)), ((11, 12), (21, 22)),
              ((13, 14), (19, 20)), ((15, 16), (17, 18))]
     po_winner_vs = {0: (7, 8), 1: (5, 6), 2: (3, 4), 3: (1, 2)}
@@ -297,19 +264,14 @@ def knockout(rates, ranking, noise, rnd):
     for bi, (s_band, u_band) in enumerate(bands):
         s1, s2 = (ranking[s_band[0] - 1], ranking[s_band[1] - 1])
         u1, u2 = (ranking[u_band[0] - 1], ranking[u_band[1] - 1])
-        if rnd.random() < 0.5:
-            pairs = [(s1, u1), (s2, u2)]
-        else:
-            pairs = [(s1, u2), (s2, u1)]
+        pairs = [(s1, u1), (s2, u2)] if rnd.random() < 0.5 else [(s1, u2), (s2, u1)]
         winners = []
         for s, u in pairs:
-            w = play_tie(rates, s, u, noise, rnd)   # seeded side "hosts"
-            depth[s if w != s else u] = "po"
-            winners.append(w)
+            won = play_tie(S, w, s, u, noise, rnd)
+            depth[s if won != s else u] = "po"
+            winners.append(won)
         po_winners[bi] = winners
 
-    # R16: each band's two winners meet the two seeds of its target pair,
-    # split randomly (the real UEFA draw decides the option).
     r16 = []
     for bi, (sa, sb) in po_winner_vs.items():
         wa, wb = po_winners[bi]
@@ -325,12 +287,11 @@ def knockout(rates, ranking, noise, rnd):
 
     winners = {}
     for pair in r16:
-        w = play_tie(rates, pair[0], pair[1], noise, rnd)
-        loser = pair[0] if w != pair[0] else pair[1]
-        depth[loser] = "r16"
-        winners[seed_bucket(pair)] = w
-    for w in winners.values():
-        depth[w] = "qf"
+        won = play_tie(S, w, pair[0], pair[1], noise, rnd)
+        depth[pair[0] if won != pair[0] else pair[1]] = "r16"
+        winners[seed_bucket(pair)] = won
+    for won in winners.values():
+        depth[won] = "qf"
 
     def nearest(bucket_pref):
         for b in bucket_pref:
@@ -338,43 +299,41 @@ def knockout(rates, ranking, noise, rnd):
                 return winners.pop(b)
         return winners.pop(sorted(winners)[0])
 
-    # QF routing (see R16_ROUTING_NOTE): W(1/2)vW(7/8) and W(3/4)vW(5/6),
-    # the halves split so seeds 1 and 2 can only meet in the final.
     qf_pairs = [(nearest([1, 2]), nearest([7, 8])), (nearest([3, 4]), nearest([5, 6])),
                 (nearest([1, 2]), nearest([7, 8])), (nearest([3, 4]), nearest([5, 6]))]
     sf_teams = []
     for x, y in qf_pairs:
-        w = play_tie(rates, x, y, noise, rnd)
-        depth[x if w != x else y] = "qf"
-        depth[w] = "sf"
-        sf_teams.append(w)
+        won = play_tie(S, w, x, y, noise, rnd)
+        depth[x if won != x else y] = "qf"
+        depth[won] = "sf"
+        sf_teams.append(won)
     finalists = []
     for x, y in [(sf_teams[0], sf_teams[1]), (sf_teams[2], sf_teams[3])]:
-        w = play_tie(rates, x, y, noise, rnd)
-        depth[x if w != x else y] = "sf"
-        depth[w] = "final"
-        finalists.append(w)
-    champ = play_tie(rates, finalists[0], finalists[1], noise, rnd,
+        won = play_tie(S, w, x, y, noise, rnd)
+        depth[x if won != x else y] = "sf"
+        depth[won] = "final"
+        finalists.append(won)
+    champ = play_tie(S, w, finalists[0], finalists[1], noise, rnd,
                      two_legs=False, neutral=True)
     depth[champ] = "champion"
     depth[finalists[0] if champ != finalists[0] else finalists[1]] = "final"
     return depth
 
 
-def simulate(rates, fixtures, teams, sims, seed=None):
+def simulate(S, w, fixtures, teams, sims, seed=None):
     rnd = random.Random(seed)
     keys = sorted(teams)
     acc = {t: defaultdict(int) for t in keys}
     pos_samples = {t: [] for t in keys}
     pts_sum = {t: 0.0 for t in keys}
     for _ in range(sims):
-        noise = {t: math.exp(rnd.gauss(0.0, SIGMA)) for t in keys}
+        noise = {t: rnd.gauss(0.0, SIGMA_S) for t in keys}
         pts = {t: 0 for t in keys}
         gd = {t: 0 for t in keys}
         gf = {t: 0 for t in keys}
         for h, a, _ko, hg, ag, done in fixtures:
             if not done:
-                lh, la = match_lambdas(rates, h, a, noise[h], noise[a])
+                lh, la = match_lambdas(S, w, h, a, noise)
                 hg, ag = poisson(lh, rnd), poisson(la, rnd)
             gf[h] += hg; gf[a] += ag
             gd[h] += hg - ag; gd[a] += ag - hg
@@ -388,7 +347,7 @@ def simulate(rates, fixtures, teams, sims, seed=None):
         for i, t in enumerate(ranking):
             pos_samples[t].append(i + 1)
             pts_sum[t] += pts[t]
-        depth = knockout(rates, ranking, noise, rnd)
+        depth = knockout(S, w, ranking, noise, rnd)
         ladder = ["lp", "po", "r16", "qf", "sf", "final", "champion"]
         for t, d in depth.items():
             for stage in ladder[:ladder.index(d) + 1]:
@@ -411,20 +370,23 @@ def pctl(sorted_vals, q):
 
 
 def build(sims, dry):
-    fixtures, teams = league_phase_fixtures()
+    weights = load_weights()
+    S, teams, fixtures, table, warnings = build_strengths(weights)
+    for msg in warnings:
+        print("  WARNING:", msg)
     if len(teams) != 36:
         raise SystemExit("expected 36 league-phase clubs, found %d — bundle stale?" % len(teams))
-    rates, table = resolve_rates(teams)
     played = sum(1 for f in fixtures if f[5])
-    print("field: 36 clubs, %d fixtures (%d played) — sims=%d" % (len(fixtures), played, sims))
-    acc, pos_samples, pts_sum = simulate(rates, fixtures, teams, sims)
+    print("field: 36 clubs, %d fixtures (%d played) — sims=%d — %s" %
+          (len(fixtures), played, sims, weights["model"]))
+    acc, pos_samples, pts_sum = simulate(S, weights, fixtures, teams, sims)
 
-    hub_names = {k: ALIAS.get(v[0], v[0]) for k, v in teams.items()}
+    names = {k: v[0] for k, v in teams.items()}
     rows = []
     for t in sorted(teams, key=lambda x: -acc[x]["champion"] / sims):
         ps = sorted(pos_samples[t])
         rows.append({
-            "name": hub_names[t],
+            "name": names[t],
             "country": teams[t][1],
             "exp_pts": round(pts_sum[t] / sims, 1),
             "pos": {"p5": pctl(ps, 0.05), "p50": pctl(ps, 0.50), "p95": pctl(ps, 0.95)},
@@ -437,12 +399,8 @@ def build(sims, dry):
             "p_champion": round(100.0 * acc[t]["champion"] / sims, 2),
         })
 
-    # Model calls for the fixtures inside the horizon. GUARD (2026-08-29):
-    # right after the draw api-football stamps every league-phase fixture
-    # with one placeholder kickoff (all 144 on 2026-09-08 19:00 when this was
-    # built), which would flood the page with a fake "matchday". If one
-    # timestamp carries more than a real matchday's worth of games, the
-    # calendar is not real yet — publish no calls and say so in meta.
+    # Fixture calls, guarded against the draw's placeholder calendar (all 144
+    # fixtures stamped with one kickoff until UEFA's real schedule propagates).
     now = datetime.now(timezone.utc)
     horizon = now + timedelta(days=FIXTURE_HORIZON_DAYS)
     ko_counts = defaultdict(int)
@@ -461,10 +419,10 @@ def build(sims, dry):
                 continue
             if not (now - timedelta(hours=3) <= when <= horizon):
                 continue
-            lh, la = match_lambdas(rates, h, a)
+            lh, la = match_lambdas(S, weights, h, a)
             ph, pd, pa = outcome_probs(lh, la)
             calls.append({
-                "date": ko, "home": hub_names[h], "away": hub_names[a],
+                "date": ko, "home": names[h], "away": names[a],
                 "model": {"pH": round(ph, 3), "pD": round(pd, 3), "pA": round(pa, 3)},
                 "pick": "H" if ph >= max(pd, pa) else ("A" if pa >= pd else "D"),
             })
@@ -474,22 +432,26 @@ def build(sims, dry):
         "meta": {
             "league": "UEFA Champions League", "season": SEASON,
             "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "sims": sims, "model": "ucl-poisson-v1",
-            "mu": MU, "home_adv": HOME_ADV, "sigma": SIGMA, "k_league": K_LEAGUE,
-            "market": "none (v1 — no public odds file for the UCL; see build_pl_sim for the pattern)",
-            "strength_seasons": [s for s, _ in STRENGTH_SEASONS],
+            "sims": sims, "model": "ucl-poisson-v2",
+            "b0": weights["b0"], "hfa": weights["hfa"], "sigma": SIGMA_S,
+            "strength": "fitted: %s (weights %s, tau %s), z within the CL 36" % (
+                            " + ".join(weights["features"]),
+                            weights["weights"], weights.get("tau")),
+            "validation": weights["validation"],
+            "market": "none — no public odds file carries the UCL",
             "matches_played": played,
             "calendar_placeholder": placeholder,
-            "notes": "League-phase fixtures + results from the site's api-football bundle; "
-                     "within-league rates from the domestic hub archive; cross-league level "
-                     "from the UEFA country coefficients (K_LEAGUE). " + R16_ROUTING_NOTE,
+            "notes": "Strength fitted by Poisson MLE on 6,216 European group matches "
+                     "1993-2026 (see scripts/predictions/research/). Held out from "
+                     "training, the two completed league-phase seasons: 70.6% decisive-"
+                     "match accuracy v 62.9% for the v1 formula. " + R16_ROUTING_NOTE,
         },
         "table": rows,
         "fixtures_called": calls,
     }
     if dry:
         print("DRY RUN — top of table:")
-        for r in rows[:8]:
+        for r in rows[:10]:
             print("  %-28s champ %5.2f%%  top8 %5.1f%%  xPts %s" %
                   (r["name"], r["p_champion"], r["p_top8"], r["exp_pts"]))
         return out
@@ -512,32 +474,30 @@ def self_test():
             fails.append(label)
 
     rnd = random.Random(42)
-    # poisson sampler mean
     m = sum(poisson(1.6, rnd) for _ in range(4000)) / 4000.0
     check("poisson mean ~ lambda", abs(m - 1.6) < 0.12)
 
-    # outcome probs sum to 1, favour the stronger side
-    rates = {"A": (1.6, 0.7), "B": (0.8, 1.3)}
-    lh, la = match_lambdas(rates, "A", "B")
+    w = {"b0": 0.328, "hfa": 0.035, "weights": [0.0335, 0.019]}
+    S = {"A": 0.15, "B": -0.15}
+    lh, la = match_lambdas(S, w, "A", "B")
     ph, pd, pa = outcome_probs(lh, la)
     check("outcome probs sum to 1", abs(ph + pd + pa - 1.0) < 1e-9)
-    check("stronger side favoured", ph > pa and ph > 0.5)
+    check("stronger side favoured", ph > pa)
+    lh2, la2 = match_lambdas(S, w, "B", "A")
+    check("strength symmetric across venues", abs(lh * la - lh2 * la2) < 1e-9)
 
-    # table ranking honours pts, gd, gf
+    check("name normalizer heals diacritics",
+          ntn("FK Bodø/Glimt") == ntn("FK Bodo/Glimt") and
+          ntn("Lillestrøm SK") == ntn("Lillestrom SK"))
+
     order = rank_table({"x": 6, "y": 6, "z": 3}, {"x": 2, "y": 5, "z": 0},
                        {"x": 4, "y": 4, "z": 1}, ["x", "y", "z"], rnd)
     check("rank by pts then gd", order == ["y", "x", "z"])
 
-    # knockout structure: 36-team ladder, one champion, seeds 1+2 meet only
-    # in the final (their depths can both be 'final'/'champion' but a QF/SF
-    # meeting is impossible given the half split — approximate via many sims:
-    # whenever both reach 'sf' depth exactly, that is legal; both exiting at
-    # 'qf' in the same run must never involve each other, which the routing
-    # guarantees structurally; here we assert the ladder counts instead).
     keys = ["t%02d" % i for i in range(36)]
-    kr = {k: (1.0, 1.0) for k in keys}
-    noise = {k: 1.0 for k in keys}
-    depth = knockout(kr, keys, noise, rnd)
+    S36 = {k: 0.0 for k in keys}
+    noise = {k: 0.0 for k in keys}
+    depth = knockout(S36, w, keys, noise, rnd)
     check("every club got a depth", len(depth) == 36)
     check("exactly one champion", sum(1 for d in depth.values() if d == "champion") == 1)
     check("exactly one beaten finalist", sum(1 for d in depth.values() if d == "final") == 1)
@@ -547,16 +507,14 @@ def self_test():
     check("eight out in the play-offs", sum(1 for d in depth.values() if d == "po") == 8)
     check("twelve out in the league phase", sum(1 for d in depth.values() if d == "lp") == 12)
 
-    # alias table resolves the real field (repo files; offline)
     try:
-        _fx, teams = league_phase_fixtures()
-        rates_real, _tbl = resolve_rates(teams)
-        check("all 36 clubs resolve to hub rates", len(rates_real) == 36)
-        check("country offsets order sane",
-              rates_real is not None and True)
-        offs = country_offsets()
-        check("England tops the coefficient offsets",
-              offs["England"] == max(offs.values()))
+        weights = load_weights()
+        check("weights artifact loads with expected features", True)
+        S_real, teams, fixtures, table, warnings = build_strengths(weights)
+        check("all 36 clubs carry a fitted strength", len(S_real) == 36)
+        check("strength field is centered (z-based)",
+              abs(sum(S_real.values()) / len(S_real)) < 0.2)
+        check("few or no feature warnings (never guess silently)", len(warnings) <= 3)
     except SystemExit as e:
         check("field resolves (%s)" % e, False)
 
@@ -569,10 +527,12 @@ if __name__ == "__main__":
     if "--self-test" in argv:
         sys.exit(self_test())
     if "--verify-teams" in argv:
-        _fx, teams = league_phase_fixtures()
-        _rates, table = resolve_rates(teams)
-        for name, country, season, att, dfc in table:
-            print("%-28s %-14s hub:%s  att %.3f  def %.3f" % (name, country, season, att, dfc))
+        weights = load_weights()
+        S, teams, fixtures, table, warnings = build_strengths(weights)
+        for msg in warnings:
+            print("WARNING:", msg)
+        for name, country, sc, s in table:
+            print("%-30s %-14s score %.3f  S %+0.4f" % (name, country, sc, s))
         sys.exit(0)
     sims = DEFAULT_SIMS
     if "--sims" in argv:
