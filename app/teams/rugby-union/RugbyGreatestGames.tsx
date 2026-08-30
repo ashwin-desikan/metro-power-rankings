@@ -25,6 +25,7 @@ const CLIPS: Record<string, string> = {
   "2023-10-28|new-zealand,south-africa": "https://www.youtube.com/watch?v=ETlUWCT2nxo",
   "1995-06-24|new-zealand,south-africa": "https://www.youtube.com/watch?v=ceD7U4JP5Fo",
   "2011-10-23|france,new-zealand": "https://www.youtube.com/watch?v=iLncU_JxyQk",
+  "2003-11-22|australia,england": "https://www.youtube.com/watch?v=2FUmusIuK3Q",
 };
 function clipFor(g: RugbyGame): string | undefined {
   return CLIPS[`${g.date}|${[g.teamSlug, g.oppSlug].sort().join(",")}`];
@@ -46,6 +47,31 @@ function Team({ name, slug, bold }: { name: string; slug: string; bold?: boolean
 }
 
 // Shared derivation for a game's display data - the team order (winner
+// The Game Score components, spelled out on hover. `up` and `vol` arrived with
+// the 2026-08-30 reweighting and are optional, so a stale data file still shows
+// the three original terms rather than "undefined". A row lifted by a curated
+// floor says so and gives the model's own number, because a hand-placed row
+// should not be able to pass itself off as a computed one.
+// The star means "a human put this here". Which kind of human intervention it
+// was matters, so the hover says: a floor lifted the row, or a pin placed it.
+function starTitle(g: RugbyGame): string {
+  return g.pin != null
+    ? `Placed at #${g.pin} by hand`
+    : "All-time classic (curated pick)";
+}
+
+function scoreTitle(g: RugbyGame): string {
+  const bits = [`Closeness ${g.cl}`, `Stakes ${g.st}`, `Quality ${g.q}`];
+  if (g.vol != null) bits.push(`Scoring volume ${g.vol}`);
+  if (g.up != null) bits.push(`Upset ${g.up}`);
+  if (g.pin != null && g.base != null) {
+    bits.push(`Placed at #${g.pin} by hand — model score ${g.base.toFixed(1)}`);
+  } else if (g.editorPick && g.base != null && g.floor != null && g.floor > g.base) {
+    bits.push(`Curated floor ${g.floor} — model score ${g.base.toFixed(1)}`);
+  }
+  return bits.join(" · ");
+}
+
 // first), which side to bold, the winner-first scoreline and the curated
 // clip link. Used by both the desktop table row and the mobile card so the
 // two presentations never drift.
@@ -72,7 +98,7 @@ function Row({ g, rank, highlight }: { g: RugbyGame; rank: number; highlight?: s
       <td className="py-2 pr-3 align-top">
         <div className="flex items-center gap-1.5 flex-wrap leading-tight">
           <span className="text-[9px] px-1 py-0.5 rounded flex-shrink-0" style={{ ...MONO, color: c.color, background: c.bg, letterSpacing: "0.04em" }}>{c.label}</span>
-          {g.editorPick && <span title="All-time classic (curated pick)" style={{ color: "#e0a83e" }}>&#9733;</span>}
+          {g.editorPick && <span title={starTitle(g)} style={{ color: "#e0a83e" }}>&#9733;</span>}
           <span className="text-[13px]">
             <Flag slug={order[0].s} /><Team name={order[0].n} slug={order[0].s} bold={isBold(order[0].s)} />
             <span className="text-[var(--text-dim)]"> v </span>
@@ -86,7 +112,7 @@ function Row({ g, rank, highlight }: { g: RugbyGame; rank: number; highlight?: s
         </div>
         <div className="text-[11px] text-[var(--text-dim)] mt-0.5 truncate max-w-[64ch]"><span style={MONO}>{fmtDay(g.date)}</span>{` · ${[score, ...(ctx ? [ctx] : [])].join(" · ")}`}</div>
       </td>
-      <td className="py-2 pr-3 text-right tabular-nums align-top font-semibold" style={{ ...MONO, color: "var(--accent)" }} title={`Closeness ${g.cl} · Stakes ${g.st} · Quality ${g.q}`}>{g.norm.toFixed(0)}</td>
+      <td className="py-2 pr-3 text-right tabular-nums align-top font-semibold" style={{ ...MONO, color: "var(--accent)" }} title={scoreTitle(g)}>{g.norm.toFixed(0)}</td>
     </tr>
   );
 }
@@ -102,7 +128,7 @@ function GameCard({ g, rank, highlight }: { g: RugbyGame; rank: number; highligh
         <div className="flex items-center gap-1.5 flex-wrap min-w-0">
           <span className="text-[var(--text-dim)] tabular-nums text-xs flex-shrink-0" style={MONO}>{rank}</span>
           <span className="text-[9px] px-1 py-0.5 rounded flex-shrink-0" style={{ ...MONO, color: c.color, background: c.bg, letterSpacing: "0.04em" }}>{c.label}</span>
-          {g.editorPick && <span title="All-time classic (curated pick)" style={{ color: "#e0a83e" }}>&#9733;</span>}
+          {g.editorPick && <span title={starTitle(g)} style={{ color: "#e0a83e" }}>&#9733;</span>}
         </div>
         <span
           className="text-base font-semibold tabular-nums flex-shrink-0"

@@ -15,6 +15,20 @@ export type RugbyGame = {
   gs: number; norm: number;
   editorPick: boolean;
   cl: number; st: number; q: number;
+  // Added 2026-08-30, all optional so a top-games.json built before that date
+  // still parses. vol: scoring volume 0-1, a proxy for open rugby. up: how far
+  // the result beat the pre-match Elo expectation, 0-1. base: the score before
+  // any curated floor, and floor: the floor itself, so the page can be honest
+  // about which rows the model earned and which were placed by hand.
+  vol?: number;
+  up?: number;
+  base?: number;
+  floor?: number | null;
+  // Added 2026-08-30. A curated rank: the row was placed at this position by
+  // hand, not by score. A floor can only lift a match to whatever its number
+  // happens to buy, so it cannot express "eleventh"; a pin can. `base` still
+  // carries the model score, and the page says so on hover.
+  pin?: number | null;
 };
 
 export type RugbyGames = {

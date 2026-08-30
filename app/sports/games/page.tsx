@@ -195,11 +195,22 @@ export default function GamesHubPage() {
     { videoId: "QiNvL3FfrT8", title: "2005 Ashes, Edgbaston", leagueTag: "TEST", matchup: "England beat Australia by 2 runs", note: "The closest Ashes Test of all time.", clipLabel: "Highlights", rank: 2 },
     { videoId: "vG4ydr_iEwo", title: "2007 T20 World Cup Final", leagueTag: "T20I", matchup: "India beat Pakistan by 5 runs", note: "India's first ICC title in 24 years; lit the T20 fuse.", clipLabel: "Highlights", rank: 3 },
   ];
+  // The badge on each card is the game's position in the Game Score table
+  // directly below it, so it is read off the live board rather than typed in.
+  // The three ranks were hardcoded 1/2/3 before this and had drifted away from
+  // the table, which is the exact failure the FEATURED comment warns about.
+  const rugbyRankOf = (date: string, a: string, b: string) => {
+    const want = [a, b].sort().join(",");
+    const i = rugbyGames.top.findIndex(
+      (g) => g.date === date && [g.teamSlug, g.oppSlug].sort().join(",") === want,
+    );
+    return i < 0 ? undefined : i + 1;
+  };
   const rugbyFeatured: FeaturedGame[] = [
-    { videoId: "ETlUWCT2nxo", title: "2023 World Cup Final", leagueTag: "RWC", matchup: "South Africa beat New Zealand 12-11", note: "A record fourth title, won by a single point, with New Zealand a man down after a red card.", clipLabel: "Highlights", rank: 1 },
-    { videoId: "ceD7U4JP5Fo", title: "1995 World Cup Final", leagueTag: "RWC", matchup: "South Africa beat New Zealand 15-12 (a.e.t.)", note: "Mandela in the number six jersey; Stransky's drop goal settled extra time.", clipLabel: "Highlights", rank: 2 },
-    { videoId: "iLncU_JxyQk", title: "2011 World Cup Final", leagueTag: "RWC", matchup: "New Zealand beat France 8-7", note: "The hosts edged France by a point to end a 24-year wait at home.", clipLabel: "Highlights", rank: 3 },
-  ];
+    { videoId: "ceD7U4JP5Fo", title: "1995 World Cup Final", leagueTag: "RWC", matchup: "South Africa beat New Zealand 15-12 (a.e.t.)", note: "Mandela in the number six jersey; Stransky's drop goal settled extra time.", clipLabel: "Highlights", rank: rugbyRankOf("1995-06-24", "south-africa", "new-zealand") },
+    { videoId: "2FUmusIuK3Q", title: "2003 World Cup Final", leagueTag: "RWC", matchup: "England beat Australia 20-17 (a.e.t.)", note: "Wilkinson's drop goal with 26 seconds of extra time left; still the only northern-hemisphere winner.", clipLabel: "Highlights", rank: rugbyRankOf("2003-11-22", "australia", "england") },
+    { videoId: "iLncU_JxyQk", title: "2011 World Cup Final", leagueTag: "RWC", matchup: "New Zealand beat France 8-7", note: "The hosts edged France by a point to end a 24-year wait at home.", clipLabel: "Highlights", rank: rugbyRankOf("2011-10-23", "france", "new-zealand") },
+  ].sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
   const cbbSlugs = getAllCbbSlugs();
   const cbbCards = FEATURED.filter((g) => g.leagueTag === "CBB").sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
   const intlAllTime = attachVideos("INTFB", intlTopAll().map((r) => ({ ...r, winner_canonical: r.winner_name })));

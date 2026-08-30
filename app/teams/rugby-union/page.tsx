@@ -368,9 +368,18 @@ export default async function RugbyUnionHubPage() {
         <h2 id="greatest-games" className="text-lg font-semibold mb-1">The greatest tests</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Every men&apos;s international since 1871 ranked by a computed Game Score: how close the match
-          was, what was at stake, and how strong both sides were on the day, with team strength measured
-          by a continuous Elo rating spanning the whole history. A star marks a curated all-time classic.
-          Filter by decade; hover a score for its components.
+          was, what was at stake, how strong both sides were on the day, and how much rugby was actually
+          played, with team strength measured by a continuous Elo rating spanning the whole history.
+          Closeness is judged against the match&apos;s own scoring, so a twelve-point margin in a
+          seventy-four-point semi-final is not treated as a blowout, and total points earns a bonus so
+          that open games are not buried under one-score kicking duels. What the score still cannot see
+          is tries, lead changes and ball-in-play time: none of those are in the results data.
+          A shock result earns its own bonus, measured against what the ratings expected before
+          kick-off, so a win nobody saw coming is no longer penalised for the weakness of the side
+          that pulled it off. A star marks a curated row: either an all-time classic lifted onto the
+          board, or one of three World Cup finals placed at a fixed rank by hand. Hover the score of
+          any starred row to see where the model itself put it. Filter by decade; hover any score for
+          its components.
         </p>
         <RugbyGreatestGames top={rg.top} decades={rg.by_decade} limit={50} />
       </section>

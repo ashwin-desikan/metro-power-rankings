@@ -7560,3 +7560,427 @@ list (~600 rows) and the club rows. What remains is real: chips and pills at
 26–30px, a manageable tail.
 
 Nothing here touches data, scripts or mac-mini-jobs.
+
+## 2026-08-30 — cowork (cloud, bridged to the Windows box) → next session (ELECTIONS: 3 defects fixed, 7 improvements shipped, Wave 1 hubs IN PROGRESS)
+
+**COMMITTED 2026-08-30**, build-relevant, no `[vercel skip]`. Went as four commits
+rather than one, because four separable work items had piled up behind the same dirty
+tree: `elections:` (this section), `home:` the Champions League link, `standings:` the
+WTC collapse, and `rugby:` the upset term plus rank pins. Rebased onto `origin/main`
+first, which was 10 commits ahead by then including the mobile audit above. One
+conflict, in the `verify` script in `package.json`, resolved to run both
+`check:election-dates` and `check:mobile`.
+
+🔴 **Two mechanical lessons, both still true next time.**
+1. Pull before you commit. The checkout was 2 behind at the time this section was
+   written and 10 behind by the time it was committed, and the incoming work touched
+   five of the same files. `git pull --ff-only` early, or expect to rebase.
+2. **Do not run git from the bridged Linux VM.** The Windows checkout is CRLF and
+   the VM's git has `core.autocrlf=false`, so `git status` there reports the ENTIRE
+   TREE as modified. Everything in this session was written preserving each file's
+   existing line endings; verified with `git -c core.autocrlf=true status`, which
+   shows only the real changes. Worse than the noise: the VM cannot delete files, so
+   `.git/index.lock` from one crashed git command wedges every later index operation
+   until Windows removes it. The route that works is Desktop Commander, which is a
+   real Windows shell (PowerShell, `core.autocrlf=true`, credentials present). Note
+   that `$` variables are stripped before PowerShell sees them over that bridge, so
+   write commands without them.
+
+Also uncommitted and unrelated, pre-existing: 18 files under `public/play/games/`.
+
+### VERIFIED
+Full `npm run verify` equivalent ran green in the Cowork cloud container against a
+fresh clone with these files copied in (the bridged VM cannot do it: its
+`node_modules` are Windows binaries, so vitest and next both die on native modules).
+`tsc` clean · 8/8 `check:*` · **vitest 99/99** · **pytest 112/112** ·
+**`next build --webpack` PASS, 5074/5074 static pages**, with `/elections/all` and
+`/elections/systems` in the route table.
+
+### A. THE THREE DEFECTS
+1. **The forecast modelled a New Zealand election date that had been superseded for
+   months.** `build_forecast.py:300` hardcoded `date(2026, 10, 17)` marked
+   "assumed"; the real date is **7 November 2026**, and `lib/electionHubsMeta.ts`
+   already said so. The wrong one fed `months_until()`, so it was setting the
+   horizon term in NZ's sigma. Fixed by making the hub table the SINGLE source of
+   election dates: new `nextDate` + `nextConfidence` (`confirmed` | `expected` |
+   `unscheduled`) on all 35 hubs, read by the pipeline through the new
+   `scripts/forecast/hub_dates.py`. `resolve()` takes a CONFIRMED hub date over the
+   script's own fallback and prints the swap; an `expected` date is a
+   latest-permissible SORT KEY and deliberately does NOT move a model. NZ monthsOut
+   1.6 → 2.3 on the rebuild. Israel's 27 Oct is now labelled confirmed (Knesset
+   dissolved 17 Jul 2026), not assumed.
+2. **`public/data/referendums.json` stopped in 2023.** Ten added with sources:
+   Chile 2023, Venezuela 2023 (turnout caveated), Switzerland Mar 2024, Ireland's
+   two Mar 2024 rejections, Moldova Oct 2024, Italy Jun 2025 (quorum), Taiwan Aug
+   2025 (threshold), Bangladesh Feb 2026, **Italy 22-23 Mar 2026 Nordio reform
+   rejected 53.2/46.8 on 55.69%** — which is also the political context for the
+   Italian electoral law the 2027 forecast will need.
+3. **Nigeria's date was superseded.** INEC's revised timetable under the Electoral
+   Act 2026 moved the presidential and NASS elections to **16 Jan 2027** (gov and
+   state assemblies 6 Feb). The hub said "February 2027".
+
+### B. 🔴 A FOURTH DEFECT, FOUND WHILE FIXING THEM, STILL OPEN UPSTREAM
+**Brazil's runoff block has been publishing EMPTY, five weeks before Brazil votes.**
+`data/forecast/br_polls.json` has 80 first-round rows and **0 matchups**; the live
+`forecast.json` of 2026-08-28 already had `runoffs: []`. Cause is `fetch_br()`
+slicing on a level-pinned `==== Second round ====` heading that the article no
+longer uses. Neither the bridged VM nor the Cowork container can reach Wikipedia
+(both 403 on the CONNECT tunnel), so **this is diagnosed, not proven**.
+
+Shipped: `find_section()` matches a runoff-shaped heading at ANY level, tried
+inside the 2026 section then across the article; `fetch_data.py` gained a
+`--self-test` (7 cases, including the exact drift shapes) and prints a WARNING when
+first-round rows exist with no runoff tables. **Someone with egress must run one
+live `fetch_br()` and confirm the matchups come back.** If they do not, read the
+article's real headings and widen `RUNOFF_HEADING`.
+
+### C. THE LEDGER, BUILT BEFORE THE RACES (this was the deadline)
+`/predictions/scoreboard` said "not yet resolvable" while four races settle between
+4 Oct and ~20 Nov. Now:
+- `build_forecast.py` **freezes** `data/forecast/snapshots/<code>-<date>.json` on
+  every run while a race is still ahead. Election day passes, the file stops being
+  touched, and it IS the last pre-election forecast. No cron, nothing to forget.
+- A human files facts only into `data/forecast/results/<code>-<date>.json`
+  (README there has the shapes). `scripts/forecast/score_forecasts.py` derives the
+  CLAIMS from the snapshot, so whoever types the result cannot choose the questions.
+- Scores Brier, picks, seat MAE, **80% interval coverage** (the number that audits
+  the un-backtested sigma) and `1 - model/market Brier` where a closing price is
+  recorded. 22-case self-test with hand-computed Briers.
+- `public/data/forecast-scoreboard.json` → `lib/forecastScoreboard.ts` (ISR from
+  GH raw, `forecast-weekly` tag) → the real Elections row on the scoreboard and a
+  "Scored in public" section on `/elections/forecast`.
+- **`scripts/forecast/check_forecast_health.py`**: runs between build and commit,
+  fails only when the file is unpublishable, WARNS when a block that should hold
+  data is empty. It catches the Brazil case today. 8-case self-test.
+- All four self-tests plus the health gate and the scorer are wired into BOTH
+  `mac-mini-jobs/runners/forecast.sh` and `forecast-weekly.yml`, self-tests before
+  any network call. `forecast-scoreboard.json` added to both commit sets.
+
+### D. THE REST
+- **Countdown board** on `/elections` off the structured dates, and
+  `scripts/check-election-dates.mjs` (in `npm run verify`): a passed date warns for
+  14 days then FAILS the build. Flag it, never auto-roll it.
+- **`/elections/all`**: A-Z index + client-side search + sort. Build this before the
+  hub count grows, not after; the four regional columns die well before 80.
+- **`/elections/systems`**: the **Gallagher index for 588 legislative elections**,
+  computed from vote and seat shares the atlas already held. Sanity-checked against
+  published figures: UK 2024 **23.68** (the record), NL 2025 1.34, ZA 2024 0.50,
+  CA 2025 5.05. Plus the full turnout table (32 hubs). `build_systems.py`,
+  16-case self-test. 🔴 **NZ and JP record seats but NOT vote shares**, so their
+  series stop in 1993; adding shares unlocks them. US/AR/TW are presidential-led
+  hubs so they have no seat series at all. The page names every gap rather than
+  showing a blank.
+- **Freedom-of-ballot chart is now population-weighted**, at the population OF THAT
+  DECADE (`country-population.json`, OWID). Reads 48.9% free in the 1940s to 67.4%
+  in the 2020s, with covered share of world population from 8.6% to 63%.
+- **Days-to-government was scoped and DROPPED**: `pmAfter` has no date field, so it
+  is not derivable. It needs a government-formation date per election. Do not
+  attempt it from the current data.
+
+### E. WAVE 1 — SIX NEW HUBS, BUILT AND VERIFIED
+
+Ashwin supplied eight concatenated Wikipedia dumps mid-session. Six new hubs are
+live in the tree: **gr, at, pt, ie, ph, eg — 259 contests, 239 with party or
+candidate data**. Rulings taken: Egypt and the Philippines lead presidential, all
+six start `tier: "compact"`, Sweden waits for 13 September, Thailand moves to Wave 2.
+
+| hub | shape | contests | span |
+| --- | --- | --- | --- |
+| gr Greece | legislative | 61 | 1862–2023 |
+| pt Portugal | combined | 61 | 1911–2026 |
+| ie Ireland | combined | 45 | 1922–2025 |
+| at Austria | combined | 42 | 1920–2024 |
+| eg Egypt | combined | 32 | 1923–2025 |
+| ph Philippines | presidential | 18 | 1935–2022 |
+
+**Extraction.** `scripts/elections/parse_wikidump.py` + `build_wikidump_hub.py` read
+the dumps offline; Wikipedia's tables survive the render as tab-delimited lines.
+🔑 Ireland uses THREE modern layouts that all begin `Party | Leader`, two of them
+eight columns wide with the seat count in DIFFERENT positions, headers wrapped over
+up to seven lines, and 2016 splitting each row across three with seats as
+`50 / 158  (32%)`. Guessing by width put Fianna Fail on 21 seats in 2024 instead of
+48. `_irish_shape()` picks the layout from header WORDS and reads positionally.
+Spot-checked: 2024 FF 48/SF 39/FG 38, 2020 FF 38/SF 37/FG 35, 2016 FG 50/FF 44/SF 23,
+2011 FG 76/Lab 37/FF 20, 1965 FF 72, 1948 FF 68. Two general parsers fell out of it,
+an infobox fallback (which took Austria's presidential series from 10/14 to 14/14)
+and an Irish presidential count-table reader.
+
+**Editorial.** 43 eras with written blurbs, six party colour maps, per-election
+summaries derived from the data (they state only what the row contains), honesty
+labels applied by era with per-election overrides. Portugal's Estado Novo years are
+`unfree`, Egypt's are mostly `unfree` or caveated, the Philippines' 1943 and 1981
+contests are labelled, and Greece's kingdom and Schism eras carry caveats.
+
+**Code.** `lib/<cc>Elections.ts` and `app/elections/<cc>/{page,[id]/page}.tsx` were
+generated from the existing hubs (Denmark = leg-only, Argentina = presidential,
+Brazil = combined), then de-templated: colours, copy, chart captions, chronology
+intros, locales and the regex colour fallbacks all replaced. Wired into
+`electionHubsMeta` (with `nextDate`/`nextConfidence`), `HUB_REGION`, `HUB_CAPITALS`,
+`electionCensus`, `HUB_COUNTRY_SLUG` and the `SYSTEMS` table.
+
+**The Gallagher layer picked them up and the numbers are sane**: Austria 2.90 median
+(list PR), **Ireland 4.27 (the atlas's only PR-STV)**, Portugal 6.53, Egypt 12.27.
+The atlas now scores **705 legislative elections across 41 hubs**.
+
+🔴 **Still to do on these six:** 20 rows have no result table and are genuine, not
+parse failures — **five Irish presidential elections were uncontested** (1952, 1974,
+1976, 1983, 2004: one nominee, no vote held) and Portugal's Estado Novo single-list
+years carry no meaningful table. They render as summary-only. Also worth a pass:
+`knownAs` is null everywhere (no nicknamed elections yet), and the per-election
+summaries are derived rather than written.
+
+### F. GERMAN PRESIDENTIAL DATA — PARSED, NOT YET SHIPPED
+
+Ashwin also sent the German presidential elections. **16 articles, 1954–2022, of
+which 14 parse with full ballot results** (2004 and 2009 do not; 1949 and 2027 are
+only in the navigation strip, not in the dump). Every winner and final-round figure
+checks out against the record: Heuss 871 in 1954, Heinemann on the THIRD ballot in
+1969, Herzog on the third in 1994, Rau on the second in 1999, Wulff on the third in
+2010, Steinmeier 1,045 in 2022.
+
+🔑 **This is better than a hub, it is the 2027 forecast's calibration set.** Each
+article also carries the Federal Convention composition table
+(`Party | Bundestag members | State electors | Total electors`), so for every
+convention we now have BOTH the paper strength of each bloc AND how it actually
+voted. The scoping doc called the 2027 German presidential election deterministic
+arithmetic; with this it is arithmetic plus a MEASURABLE defection rate, because
+**six of sixteen conventions went past the first ballot** and front-runners have
+repeatedly polled well under their nominators' strength. That defection rate is the
+entire uncertainty in a Federal Convention model.
+
+Parser is `/tmp/hubs/german_pres.py` in the session that wrote this and is NOT in
+the repo. Next session should fold it into `parse_wikidump.py`, add a presidential
+series to the `de` hub (making it combined), and use the convention tables as the
+prior for the 30 January 2027 model.
+
+### G. THREE FIXES FROM ASHWIN'S REVIEW (same session)
+
+1. 🔴 **The six new hubs were invisible on the landing map.** Not the compact tier:
+   `app/elections/page.tsx` keeps a hardcoded `CAPITALS` lat/lon table that is
+   SEPARATE from `HUB_CAPITALS` (the metro-link table in electionHubsMeta), and only
+   the second one had been filled in. `markers` filters on `CAPITALS[m.code]`, so a
+   hub with no coordinates is silently dropped. All 41 hubs now have coordinates and
+   a comment says why the two tables both matter. Compact hubs DO render, at a
+   lighter stroke and 0.35 fill; they stay out of the timeline and cross-polity
+   charts, which is the tier working as designed. Say the word and any of the six
+   can be promoted to a featured card.
+
+2. **Presidential sections were above legislative in hubs where the parliament makes
+   the government.** The combined template came from Brazil, where the presidency is
+   the executive, and every combined hub inherited that order. Flipped to
+   legislative-first: **at, pt, ie, iq, pl** (section order and JumpNav both).
+   Unchanged, because the presidency really is the executive: fr, mx, br, kr, id, ng,
+   ru, tr, ua, ps, eg. 🔴 **Poland and Iraq are judgement calls** — both have
+   directly elected presidents, but in both the parliament makes the government.
+   Easy to reverse if Ashwin disagrees.
+
+3. **The German presidency now exists on the site.** `de-elections.json` gained
+   `presEras` + `presidential` ADDITIVELY, so the existing `eras`/`elections` keys
+   and everything reading them are untouched. 16 conventions 1954-2022, 14 with full
+   ballots (2004 and 2009 have no ballot table; 1949 and 2027 are not in the dump).
+   `lib/deElections.ts` gained the presidential types and `deWinnerOf`; the hub page
+   has a new "The presidency" section AFTER the Bundestag chronology, per fix 2; the
+   `[id]` route branches on `pres-` ids into PresDetailShared; the census counts both.
+   Each card shows the Convention size, the ballot count and the three largest
+   delegations, because **five of sixteen went past the first ballot** and that is
+   the point of the section. Builder: `scripts/elections/build_de_presidential.py`.
+   🔴 A totals row was leaking into the candidate list before this shipped: 2010 and
+   2022 briefly had a winner called "Turnout". SKIP_ROWS now covers turnout,
+   electorate, quota and the rest. Verified: Wulff 625 on the third ballot in 2010,
+   Steinmeier 1,045 in 2022, Gauck 991 in 2012.
+
+**Re-verified after all three:** tsc clean, 6/6 checks run locally plus 6 in the
+container, **vitest 118/118**, `next build --webpack` **5080/5080 pages** with
+`/elections/de` and its `[id]` route in the table.
+
+### H. TWO MORE FROM ASHWIN (same session)
+
+1. **Austria now starts in 1897, not 1920.** Ashwin's point: the German hub opens
+   with the Frankfurt Parliament of 1848 and the North German Confederation
+   Reichstags of 1867-68, so a country's predecessor legislature belongs in its hub.
+   The first pass excluded the Cisleithanian Imperial Council as "a different
+   polity", which was wrong by this atlas's own precedent. Four elections added
+   (1897, 1900-01, 1907, 1911) under a new `reichsrat` era, so `at` legislative is
+   now 32 rows and Austria's series runs 1897-2024.
+
+   🔑 **Which table matters.** Each article has TWO: a party table grouped by NATION
+   ("Croatian Nation", "Czech Nation"...) and a table of parliamentary CLUBS. The
+   clubs are the right unit -- the Reichsrat organised by club, the club totals
+   reconcile to the full house (425, then 516), and the party table is ordered by
+   nation rather than size, which is how a first pass came out with the Croatian
+   National Party as the empire's largest group. `parse_cisleithania.py` reads the
+   club table; `add_reichsrat.py` splices it in. Largest club per election: Bohemian
+   Club 60, Poland Club 65, Christian Social Union 96, Deutscher Nationalverband 100.
+
+   Two parser fixes fell out and help every hub: the nav line's middle field is now
+   taken VERBATIM as the date (requiring a parseable day-month-year threw away every
+   multi-stage election -- "March 1897", "June & July 1911", "14 & 23 May 1907"),
+   and turnout is read from the "4,676,350 (84.60%)" form as well as the plain one.
+   1897 and 1900-01 carry a caveat naming the curial franchise; 1907 and 1911 do not,
+   since they were universal and equal male suffrage, matching how the German hub
+   treats its Kaiserreich rows. 🔴 The Reichsrat rows carry seats but no vote shares,
+   so they stay out of the Gallagher series and Austria's index still starts in 1920.
+   The party-by-nation tables DO have votes; someone could mine them later.
+
+2. **The home page now links the Champions League prediction hub.** The predictions
+   chip row in `app/page.tsx` had pl, nfl, cfb and mlb but not ucl, even though the
+   comment right above it says to add each new league hub as its model ships.
+   Added after the Premier League. tsc and the checks re-run green.
+
+**Final verification for the session:** tsc clean, checks green, **vitest 118/118**,
+`next build --webpack` **5080/5080 pages** with the Reichsrat rows in place. The home
+page change came after that build and was verified by tsc plus the four relevant
+checks in the same container; it adds one entry to a literal array of links.
+
+### I. LIVE STANDINGS + THE RUGBY GAME SCORE
+
+**World Test Championship collapsed by default** on `/sports/standings`, via the
+existing `collapse()` helper so `live` stays true and the green dot still shows.
+It runs a two-year cycle, so it is rarely the day's news.
+
+**Rugby Game Score reweighted after Gemini's critique.** The critique was largely
+right and one part of it was wrong, and both are worth recording.
+
+🔑 **The real defect: closeness was counted TWICE.**
+`gs = 100*(0.38cl + 0.38st + 0.24q) * (0.80 + 0.20cl)` states equal weights for
+closeness and stakes and does not apply them. Differentiate it: closeness has a
+marginal effect of about 0.55 against 0.37 for stakes and 0.24 for quality. So the
+board filled with one-score knockout grinds, and South Africa -- the best team in
+history at winning those -- took 7 of the top 10.
+
+🔴 **Where Gemini was wrong:** the three "glaringly absent" classics were all
+already in the model with curated floors -- France 43-31 New Zealand 1999 at #14,
+Ireland-New Zealand 2023 at #17, New Zealand 38-27 South Africa 2013 just outside
+the top 20. They were outranked, not missing, which points at the weighting rather
+than the coverage and is the more useful diagnosis.
+
+**What changed in `scripts/rugby/build_rugby_top_games.py`:**
+- `closeness` is now relative to the match's own scoring,
+  `1 - margin / max(16, 0.45*total)`, instead of the absolute `1 - margin/28` that
+  scored a 12-point margin at 0.571 whether the game finished 43-31 or 15-3.
+- New `volume(m)`, capped 0-1 on total points, added as a **+7 bonus on top**
+  rather than a weighted term, so an open game can climb without a tight
+  low-scoring final being demoted for being tight.
+- The multiplier is gone: `100*(0.36cl + 0.36st + 0.21q) + 7*vol`.
+- 9-case `--self-test`, built from the games the old scoring got wrong.
+
+**Simulated effect** (re-scoring the existing top 50, since the builder needs
+Supabase and neither the bridged VM nor the container can reach it):
+South Africa in the top 10 goes **7 to 4** with no nation quota anywhere in the
+model; games of 50+ points go **3 to 6**. Both of Gemini's swaps happen on merit:
+South Africa-France 2023 passes South Africa-England 2023 (which falls to #11), and
+France-New Zealand 1999 rises from #14 to #8. The 2023 and 2011 World Cup finals
+stay in the top six, which an earlier draft of the reweighting got wrong by letting
+the volume term punish them.
+
+✅ **REBUILT natively by Ashwin, 2026-08-30.** `top-games.json` now carries the new
+scores and a `vol` field. The live run matched the simulation exactly through the
+top 16 and no game entered from outside the old top 50, so the earlier caveat is
+discharged. Confirmed on the real board: South Africa 4/10 (was 7), games of 50+
+points 6/10 (was 3), average top-10 margin 4.8. France-South Africa 2023 sits above
+England-South Africa 2023, which fell to #11; France 43-31 New Zealand 1999 is #8.
+
+🔴 **THE NEXT PROBLEM, now measurable: 8 of the top 10 are curated floors.**
+With the floors switched off the model's own top 10 reads: 2023 final, 2011 final,
+France-South Africa 2023, 2003 final, England-South Africa 2023, 1995 final,
+South Africa-New Zealand 2015 SF, England-Australia 1995, Ireland-New Zealand 2023,
+South Africa-Australia 2010. Defensible on its own. How hard each floor is working:
+
+| game | shown | model | lift |
+| --- | --- | --- | --- |
+| South Africa 32-34 Japan 2015 | 94.00 | 66.35 | **+27.7** |
+| Wales 34-38 Fiji 2007 | 88.00 | 64.84 | **+23.2** |
+| New Zealand 34-17 Australia 2015 F | 92.00 | 72.80 | **+19.2** |
+| Ireland 18-19 Australia 1991 | 87.00 | 68.77 | **+18.2** |
+| South Africa 27-38 New Zealand 2013 | 88.00 | 73.99 | +14.0 |
+| South Africa 15-12 New Zealand 1995 | 101.00 | 89.38 | +11.6 (Ashwin set this one by name) |
+| France 28-29 South Africa 2023 | 92.64 | 92.64 | **+0.0 — redundant, the model now agrees** |
+
+🔑 **The floors are concentrated on UPSETS, and an upset term would replace most of
+them without hand-setting anything.** Brighton scores 66 because the quality term
+reads Japan's Elo as low, so the greatest upset in the sport's history is PENALISED
+for the very thing that made it great. The model already computes both sides' Elo
+(`m["ra"]`, `m["rb"]`), so the pre-match win probability is one line away and
+`upset = max(0, actual - expected)` would lift Brighton, Wales-Fiji and
+Ireland-Australia 1991 on merit. That is the change to make next, and it should let
+four or five floors be deleted rather than merely justified.
+
+🔴 **What the model still cannot see:** tries, lead changes and ball-in-play time.
+`rugby_results` has date, teams, points, competition, stage and venue and nothing
+about HOW the points were scored, so total points is a proxy and is documented as
+one. Adding a tries-for/tries-against pair to the source workbook is the real fix,
+and would also let the curated FLOORS shrink -- they exist because the model cannot
+see quality.
+
+### J. THE RUGBY UPSET TERM (built, needs one more native run)
+
+Ashwin asked for the upset term after the floor audit showed 8 of the top 10 were
+hand-set. Built in `scripts/rugby/build_rugby_top_games.py`. **17-case self-test
+passes; the data file still holds the volume-only build until the script is re-run
+natively, because it reads Supabase and nothing here can reach it.**
+
+**What changed**
+- `elo()` now keeps `ea` and `sa` on each match, so `upset()` reuses the SAME
+  expectation the rating update used, home advantage included. Recomputing it later
+  from ra/rb alone would silently drop the 60-point HFA.
+- `upset(m) = max(0, sa - ea)`: a 5%-chance winner scores 0.95, a favourite winning
+  scores 0. Added as a **+15 bonus**, additive like volume so it can never demote a
+  tight final between two favourites.
+- 🔑 **The quality term was the actual culprit and it has been rebalanced.** It was
+  `0.55*weaker + 0.45*mean`, which is why South Africa 32-34 Japan scored 0.11 on
+  quality: the greatest upset in the sport was marked down for the weakness of the
+  side that pulled it off. Now `0.45*weaker + 0.55*mean` (`Q_WEAKER`, `Q_MEAN`).
+- All five knobs are named constants at the top of the file with the reasoning:
+  `W_CLOSE`, `W_STAKES`, `W_QUALITY`, `B_VOLUME`, `B_UPSET`, `Q_WEAKER`, `Q_MEAN`.
+  Retuning the board is now a one-line edit, not surgery on a formula.
+- Each match keeps `base` (the score BEFORE any floor) and `floor`, and both are
+  emitted, so nobody has to reconstruct the model's own opinion again.
+
+**`report()` now prints on every run**: the top 20 with all five components, a FLOOR
+AUDIT naming every floor with its lift and marking the ones the model has overtaken
+as `REDUNDANT - delete from FLOORS`, and a top-10 shape line (South Africa share,
+50+ point games, mean margin, nations). Exercised on synthetic data here; it runs
+clean and it is deliberately after the `json.dump`, so a reporting bug can never
+cost the data.
+
+🔴 **An honest limit, tested rather than asserted.** The self-test originally
+asserted "a shock outranks an even game of the same closeness and stakes" and it
+FAILED at a bonus of 12: the quality gap between two greats and a mismatch is worth
+about 22 points, so no defensible upset weight covers it outright. The test was
+rewritten to assert what the term should actually do -- a shock is worth 10+ points
+over the same fixture won by the favourite, and a great side against a minnow is no
+longer near-zero quality. **This will not by itself put Brighton at #4.** That
+placement is an editorial claim, and after the rerun the floor audit will say by how
+much, in print, every time.
+
+**To see it:** `python scripts/rugby/build_rugby_top_games.py`, then RESTART
+`next dev` -- the dev server memoizes `public/data` JSON and will otherwise serve
+the old board. The hub page hover now spells out all five components and, on a
+floored row, gives the model's own score underneath.
+
+### J2. RANK PINS (2026-08-30, later the same day)
+
+Ashwin: 1995 final #1, 2003 final #2, 2011 final #11. A FLOOR cannot express that.
+A floor only lifts, and only to wherever its hand-set number lands once the model
+moves underneath it; no floor value means "eleventh". So `PINS` was added beside
+`FLOORS` in `build_rugby_top_games.py`: `{(date, frozenset(slugs)): rank}`.
+`apply_pins()` places pinned rows at the exact index and `_respace()` re-scores them
+between their new neighbours, so the printed score can never contradict the printed
+order. `base` still carries the model score, a `PIN AUDIT` prints each pinned game's
+model rank every run, and the hover reads "Placed at #2 by hand, model score 90.5".
+The 1995 and 2003 FLOORS were deleted so the two mechanisms cannot fight. Self-test
+is now 31 cases; an empty `PINS` is a no-op, so the model's own board is one edit away.
+
+Second, separate defect found while checking that work: **"Featured games" on
+`/sports/games#rugby-union` is not the ranked table.** It is a hardcoded three-card
+array in `app/sports/games/page.tsx`, and its rank badges were literals (1/2/3) that
+had drifted away from the table directly beneath them, which is the exact failure the
+comment at the top of `featured.ts` warns about. Rugby was the only league not deriving
+them. They now read off the live board and sort by it. The 2003 final replaced the 2023
+final as a card, with the clip Ashwin supplied; 2023 keeps its table row and its clip.
+
+`public/data/rugby-union/top-games.json` in this commit was re-scored from the
+published board, not rebuilt, because Supabase is unreachable from the Cowork session.
+A native `python scripts/rugby/build_rugby_top_games.py` reproduces the same ordering
+from source AND brings in the upset term, which the committed file still predates.
+Restart `next dev` afterwards; it memoizes `public/data` JSON.
