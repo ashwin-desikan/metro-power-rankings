@@ -57,7 +57,27 @@ from the nflverse cache now; extends season by season as the PFR backfill
 conditional-ceiling framing is the borrowed idea; metro rollups, the century
 of pregame expectation and live picks integration are ours.
 
-## PFR historical pbp backfill (mini job, approved to PILOT 2026-08-30)
+## GSIS archive (verified 2026-08-30 in Ashwin's authenticated session)
+
+Ashwin holds an NFLGSIS.com login. GameStatsLive covers seasons 1981-2026
+with quarter scores + OT on every game and official gamebook PDFs at
+`/{season}/{pre|reg|post}/{week}/{gameId}/Gamebook.pdf` (authenticated).
+Pilot verdict on three gamebooks: 1998 = digital PDF with full genuine pbp
+(down/dist/spot/clock per play) -- direct text extraction; 1994 = clean
+SuperStat scan -- OCR-friendly; 1981 = typewriter/handwriting scan -- the
+scoring-plays table (team, qtr, clock, running score) is legible, which
+alone carries the comeback layer, and team-stats TOUCHDOWNS rows carry net
+TDs. Every era has the scoring summary. 1977-1980 is NOT in the archive.
+Rules: respect the account terms; derive aggregates, cite the source, never
+redistribute PDFs; the server 503s bare requests -- slow and resumable
+only; bulk pulls need Ashwin's explicit approval per the budget gate.
+
+## PFR historical pbp backfill (SUPERSEDED for 1981+ by GSIS, 2026-08-30)
+
+Kept as the record of why: PFR sits behind Cloudflare Turnstile; the mini
+correctly refused to bypass and the no-bypass rule binds every session.
+Jed Christiansen email / SR licensing remain the only routes for 1977-1980,
+if that tail is ever wanted.
 
 Sports Reference digitized official gamebooks: PFR now carries full
 play-by-play back to 1977 (expanded Aug 2025, extended to 1977 Aug 2026).
@@ -117,6 +137,25 @@ schedules every 5 min.
   never instead of it. Next gated candidates: hyperparameters (tuned
   honestly: tune window 2001-2012, validate 2013-2025), the QB layer,
   then rest/travel/weather.
+
+- 2026-08-30 (later): GAMEBOOK PILOT verdict logged in the GSIS section
+  above. STANDINGS MODULE SHIPPED: `scripts/predictions/nfl_standings.py`
+  computes every official tiebreaking statistic GSIS's own standings page
+  carries (records incl. ties-as-half, H2H, common games + net pts, SOV/SOS
+  pct + combined wins, conf + league combined PF/PA ranks, net pts, net TDs)
+  and applies the official division and wild-card ladders (multi-club
+  restarts, sweep rule, min-4 common games; coin-toss steps returned as
+  flagged ties for the sim to randomize). 🔴 GOLDEN-TESTED against the GSIS
+  2025 standings export (`data/nfl/fixtures/gsis-standings-2025.txt`,
+  local): 32 teams x 11 columns, ZERO mismatches, run on the box via
+  `standings_golden_test.py`; seeds reproduce 2025's actual clinch picture.
+  2026 wiring plan: build_nfl_sim.py imports the ladder for in-sim
+  tiebreaks (replacing record-then-random) and a weekly standings JSON is
+  emitted in-season (TD counts from the ETL's current-season pbp; ESPN
+  results the sim already holds). Earlier years: metrics computable from
+  the expectation ledger (1920+) except net TDs (pbp 1999+, gamebooks
+  1981-98); era alignments come from Year by Year, and today's ladder is
+  for ANALYSIS only -- never re-adjudicate a historical seed.
 
 ## Calendar
 
