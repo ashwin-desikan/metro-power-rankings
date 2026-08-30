@@ -1,0 +1,8541 @@
+{
+ "meta": {
+  "title": "Greek Parliamentary Elections",
+  "sources": [
+   "Wikipedia: Greek parliamentary election articles 1862–2023 (results tables and infoboxes)",
+   "Hellenic Ministry of the Interior figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "eras": [
+  {
+   "key": "kingdom",
+   "label": "The constitutional kingdom",
+   "span": "1862–1915",
+   "blurb": "Otto was deposed in 1862 and the constitution of 1864 gave Greece universal male suffrage, decades ahead of most of Europe. What it did not give was stable government: the king still picked ministries until the 1875 principle of dedilomeni forced him to appoint whoever held the chamber. The parties of the period are named after the men who led them, Trikoupis against Deligiannis, which tells you what they were."
+  },
+  {
+   "key": "schism",
+   "label": "The National Schism",
+   "span": "1920–1936",
+   "blurb": "Venizelos against the crown, twice over, in a quarrel about which side to take in the First World War that outlived the war by twenty years. Between them sit the Asia Minor catastrophe and a million and a half refugees who changed the electorate permanently, a republic proclaimed in 1924 and abolished in 1935, and a run of elections whose results were repeatedly overturned by coup."
+  },
+  {
+   "key": "postwar",
+   "label": "Civil war and its long shadow",
+   "span": "1946–1964",
+   "blurb": "The 1946 election was held under a boycott by the left and won by the royalists; the civil war that followed ran to 1949 and its losers stayed banned from politics for a generation. Centre-right governments then held power for fifteen years under electoral systems redrawn to keep them there, until Papandreou's Centre Union broke through in 1963."
+  },
+  {
+   "key": "junta",
+   "label": "The colonels",
+   "span": "1967–1974",
+   "blurb": "No elections. The colonels seized power in April 1967, weeks before a vote Papandreou was expected to win, and held it for seven years."
+  },
+  {
+   "key": "metapolitefsi",
+   "label": "Metapolitefsi",
+   "span": "1974–2009",
+   "blurb": "The junta collapsed over Cyprus and Karamanlis returned from Paris to build a republic that lasted. A referendum ended the monarchy, the Communist Party was legalised after twenty-seven years, and from 1981 New Democracy and PASOK alternated in power with reinforced-proportional majorities, a two-party system as settled as any in Europe."
+  },
+  {
+   "key": "crisis",
+   "label": "The crisis",
+   "span": "2012–2019",
+   "blurb": "The debt crisis destroyed the two-party system in a single cycle. PASOK went from governing party to 12% in three years, Syriza from a fringe to power, and Golden Dawn into parliament. Two elections in 2012 and two in 2015, a referendum that rejected the bailout terms the government then accepted, and a bonus of fifty seats that decided who governed."
+  },
+  {
+   "key": "current",
+   "label": "After the crisis",
+   "span": "2023–",
+   "blurb": "The bonus was abolished, then restored. May 2023 produced a parliament under the old proportional rules that nobody could govern from, so a second election in June ran under the new rules and handed New Democracy a majority. The left is now split four ways where Syriza stood alone."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1862",
+   "label": "1862",
+   "year": 1862,
+   "kind": "legislative",
+   "date": "24–27 November 1862",
+   "era": "kingdom",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A greek election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1865",
+   "label": "1865",
+   "year": 1865,
+   "kind": "legislative",
+   "date": "14 May 1865",
+   "era": "kingdom",
+   "totalSeats": 170,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Russian Party",
+     "leader": "Alexandros Koumoundouros",
+     "seats": 95,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "French Party",
+     "leader": "Dimitrios Voulgaris",
+     "seats": 40,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ottonian loyalists",
+     "leader": "–",
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Russian Party finished first with 95 of 170 seats.",
+   "seatLeader": "Russian Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1868",
+   "label": "1868",
+   "year": 1868,
+   "kind": "legislative",
+   "date": "21 March 1868",
+   "era": "kingdom",
+   "totalSeats": 184,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Koumoundouros and Voulgaris supporters",
+     "leader": null,
+     "seats": 114,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Epameinondas Deligiorgis supporters",
+     "leader": null,
+     "seats": 70,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Koumoundouros and Voulgaris supporters finished first with 114 of 184 seats.",
+   "seatLeader": "Koumoundouros and Voulgaris supporters",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1869",
+   "label": "1869",
+   "year": 1869,
+   "kind": "legislative",
+   "date": "16 May 1869",
+   "era": "kingdom",
+   "totalSeats": 187,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "English Party",
+     "leader": "Thrasyvoulos Zaimis",
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Russian Party",
+     "leader": "Alexandros Koumoundouros",
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "French Party",
+     "leader": "Dimitrios Voulgaris",
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": "–",
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "English Party finished first with 100 of 187 seats.",
+   "seatLeader": "English Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1872",
+   "label": "1872",
+   "year": 1872,
+   "kind": "legislative",
+   "date": "25 February 1872",
+   "era": "kingdom",
+   "totalSeats": 190,
+   "majoritySeats": 96,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Alexandros Koumoundouros",
+     "leader": null,
+     "seats": 65,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrios Voulgaris",
+     "leader": null,
+     "seats": 65,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Epameinondas Deligiorgis",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Thrasyvoulos Zaimis",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Trikoupis and Lomvardos",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thrasyvoulos Zaimis",
+    "party": "English"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Alexandros Koumoundouros finished first with 65 of 190 seats.",
+   "seatLeader": "Supporters of Alexandros Koumoundouros",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1873",
+   "label": "1873",
+   "year": 1873,
+   "kind": "legislative",
+   "date": "27 January 1873",
+   "era": "kingdom",
+   "totalSeats": 190,
+   "majoritySeats": 96,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "United Opposition",
+     "leader": null,
+     "seats": 95,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Epameinondas Deligiorgis",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Epameinondas Deligeorgis",
+    "party": "EK"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "United Opposition finished first with 95 of 190 seats.",
+   "seatLeader": "United Opposition",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1874",
+   "label": "1874",
+   "year": 1874,
+   "kind": "legislative",
+   "date": "August 29, 2026",
+   "era": "kingdom",
+   "totalSeats": 190,
+   "majoritySeats": 96,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "United Opposition",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrios Voulgaris",
+     "leader": null,
+     "seats": 94,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Dimitrios Voulgaris",
+    "party": "Nationalist"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "United Opposition finished first with 96 of 190 seats.",
+   "seatLeader": "United Opposition",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1875",
+   "label": "1875",
+   "year": 1875,
+   "kind": "legislative",
+   "date": "18 July 1875",
+   "era": "kingdom",
+   "totalSeats": 190,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Alexandros Koumoundouros",
+     "leader": null,
+     "seats": 80,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Epameinondas Deligiorgis",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Thrasyvoulos Zaimis",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Charilaos Trikoupis",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Alexandros Koumoundouros finished first with 80 of 190 seats.",
+   "seatLeader": "Supporters of Alexandros Koumoundouros",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1879",
+   "label": "1879",
+   "year": 1879,
+   "kind": "legislative",
+   "date": "23 September 1879",
+   "era": "kingdom",
+   "totalSeats": 207,
+   "majoritySeats": 104,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Koumoundouros and Deligiannis",
+     "leader": null,
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Opposition",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexandros Koumoundouros",
+    "party": "Nationalist"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Koumoundouros and Deligiannis finished first with 100 of 207 seats.",
+   "seatLeader": "Supporters of Koumoundouros and Deligiannis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1881",
+   "label": "1881",
+   "year": 1881,
+   "kind": "legislative",
+   "date": "20 December 1881",
+   "era": "kingdom",
+   "totalSeats": 245,
+   "majoritySeats": 123,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Charilaos Trikoupis",
+     "leader": null,
+     "seats": 125,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Koumoundouros and Deligiannis",
+     "leader": null,
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Leonidas Deligiorgis",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexandros Koumoundouros",
+    "party": "Nationalist"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Charilaos Trikoupis finished first with 125 of 245 seats.",
+   "seatLeader": "Supporters of Charilaos Trikoupis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1885",
+   "label": "1885",
+   "year": 1885,
+   "kind": "legislative",
+   "date": "7 April 1885",
+   "era": "kingdom",
+   "totalSeats": 245,
+   "majoritySeats": 123,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Theodoros Deligiannis",
+     "leader": null,
+     "seats": 170,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Charilaos Trikoupis",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrats",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charilaos Trikoupis",
+    "party": "New Party"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Theodoros Deligiannis finished first with 170 of 245 seats.",
+   "seatLeader": "Supporters of Theodoros Deligiannis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1887",
+   "label": "1887",
+   "year": 1887,
+   "kind": "legislative",
+   "date": "4 January 1887",
+   "era": "kingdom",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Charilaos Trikoupis",
+     "leader": null,
+     "seats": 90,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Opposition",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charilaos Trikoupis",
+    "party": "New Party"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Charilaos Trikoupis finished first with 90 of 150 seats.",
+   "seatLeader": "Supporters of Charilaos Trikoupis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "kind": "legislative",
+   "date": "14 October 1890",
+   "era": "kingdom",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Theodoros Deligiannis",
+     "leader": null,
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Charilaos Trikoupis",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charilaos Trikoupis",
+    "party": "New Party"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Theodoros Deligiannis finished first with 100 of 150 seats.",
+   "seatLeader": "Supporters of Theodoros Deligiannis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1892",
+   "label": "1892",
+   "year": 1892,
+   "kind": "legislative",
+   "date": "3 May 1892",
+   "era": "kingdom",
+   "totalSeats": 207,
+   "majoritySeats": 104,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Charilaos Trikoupis",
+     "leader": null,
+     "seats": 160,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Opposition",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Konstantopoulos",
+    "party": "Nationalist"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Charilaos Trikoupis finished first with 160 of 207 seats.",
+   "seatLeader": "Supporters of Charilaos Trikoupis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1895",
+   "label": "1895",
+   "year": 1895,
+   "kind": "legislative",
+   "date": "16 April 1895",
+   "era": "kingdom",
+   "totalSeats": 207,
+   "majoritySeats": 104,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Theodoros Deligiannis",
+     "leader": null,
+     "seats": 150,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrios Rallis",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Charilaos Trikoupis",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Leonidas Deligiorgis",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Konstantinos Karapanos",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nikolaos Deligiannis",
+    "party": "(Caretaker)"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Theodoros Deligiannis finished first with 150 of 207 seats.",
+   "seatLeader": "Supporters of Theodoros Deligiannis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1899",
+   "label": "1899",
+   "year": 1899,
+   "kind": "legislative",
+   "date": "7 February 1899",
+   "era": "kingdom",
+   "totalSeats": 235,
+   "majoritySeats": 118,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Georgios Theotokis",
+     "leader": null,
+     "seats": 110,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Alexandros Zaimis",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Theodoros Deligiannis",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Leonidas Deligiorgis",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexandros Zaimis",
+    "party": "Nationalist"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Georgios Theotokis finished first with 110 of 235 seats.",
+   "seatLeader": "Supporters of Georgios Theotokis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1902",
+   "label": "1902",
+   "year": 1902,
+   "kind": "legislative",
+   "date": "17 November 1902",
+   "era": "kingdom",
+   "totalSeats": 235,
+   "majoritySeats": 118,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Theodoros Deligiannis",
+     "leader": null,
+     "seats": 102,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Georgios Theotokis",
+     "leader": null,
+     "seats": 102,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Alexandros Zaimis",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrios Rallis",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexandros Zaimis",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Theodoros Deligiannis finished first with 102 of 235 seats.",
+   "seatLeader": "Supporters of Theodoros Deligiannis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "kind": "legislative",
+   "date": "20 February 1905",
+   "era": "kingdom",
+   "totalSeats": 235,
+   "majoritySeats": 118,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Theodoros Deligiannis",
+     "leader": null,
+     "seats": 144,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Georgios Theotokis",
+     "leader": null,
+     "seats": 53,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Alexandros Zaimis",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Theodoros Deligiannis",
+    "party": "Nationalist"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Theodoros Deligiannis finished first with 144 of 235 seats.",
+   "seatLeader": "Supporters of Theodoros Deligiannis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1906",
+   "label": "1906",
+   "year": 1906,
+   "kind": "legislative",
+   "date": "26 March 1906",
+   "era": "kingdom",
+   "totalSeats": 177,
+   "majoritySeats": 89,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Supporters of Dimitrios Rallis",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Alexandros Zaimis",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Georgios Theotokis",
+    "party": "New Party"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Supporters of Dimitrios Rallis finished first with 47 of 177 seats.",
+   "seatLeader": "Supporters of Dimitrios Rallis",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1910-august",
+   "label": "August 1910",
+   "year": 1910,
+   "kind": "legislative",
+   "date": "21 November 2017",
+   "era": "kingdom",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "United Parties",
+     "leader": null,
+     "seats": 210,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Theotokis supporters",
+     "leader": null,
+     "seats": 94,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Neohellenic party",
+     "leader": null,
+     "seats": 64,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Third party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Agrarians of Thessaly",
+     "leader": null,
+     "seats": 46,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Supporters for Change",
+     "leader": null,
+     "seats": 45,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressive party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialists",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sociologists",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Stefanos Dragoumis",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "United Parties finished first with 210 seats.",
+   "seatLeader": "United Parties",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1910-november",
+   "label": "November 1910",
+   "year": 1910,
+   "kind": "legislative",
+   "date": "August 29, 2026",
+   "era": "kingdom",
+   "totalSeats": 362,
+   "majoritySeats": 182,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 307,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Small opposition",
+     "leader": null,
+     "seats": 42,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrios Rallis",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eleftherios Venizelos",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 307 of 362 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "legislative",
+   "date": "August 29, 2026",
+   "era": "kingdom",
+   "totalSeats": 181,
+   "majoritySeats": 91,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 146,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Georgios Theotokis",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Kyriakoulis Mavromichalis",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrios Rallis",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Alexandros Zaimis",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sociologists",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eleftherios Venizelos",
+    "party": "Liberal Party (Greece)"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 146 of 181 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1915-december",
+   "label": "December 1915",
+   "year": 1915,
+   "kind": "legislative",
+   "date": "August 29, 2026",
+   "era": "kingdom",
+   "totalSeats": 335,
+   "majoritySeats": 168,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Nationalists",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 256.0,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Georgios Theotokis",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 21.0,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrios Rallis",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 18.0,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrakopoulos",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.0,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Ion Dragoumis",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.0,
+     "swing": null
+    },
+    {
+     "name": "Northern Epirus Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 19.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 11.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Stefanos Skouloudis",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Nationalists led the poll with 256.0%.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1915-may",
+   "label": "May 1915",
+   "year": 1915,
+   "kind": "legislative",
+   "date": "August 29, 2026",
+   "era": "kingdom",
+   "totalSeats": 316,
+   "majoritySeats": 159,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 187.0,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 95.0,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Georgios Theotokis",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 12.0,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Dimitrios Rallis",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 7.0,
+     "swing": null
+    },
+    {
+     "name": "Supporters of Nikolaos Dimitrakopoulos",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.0,
+     "swing": null
+    },
+    {
+     "name": "Thessaloniki Socialist Federation",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 7.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Dimitrios Gounaris",
+    "party": "National"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party led the poll with 187.0%.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "14 November 1920",
+   "era": "schism",
+   "totalSeats": 369,
+   "majoritySeats": 186,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 118,
+     "seatChange": null,
+     "votes": 375803,
+     "share": 50.31,
+     "swing": null
+    },
+    {
+     "name": "United Opposition",
+     "leader": null,
+     "seats": 251,
+     "seatChange": null,
+     "votes": 368678,
+     "share": 49.36,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2465,
+     "share": 0.33,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eleftherios Venizelos",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "United Opposition finished first with 251 of 369 seats on 49.4% of the vote.",
+   "seatLeader": "United Opposition",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "legislative",
+   "date": "16 December 1923",
+   "era": "schism",
+   "totalSeats": 398,
+   "majoritySeats": 199,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 250.0,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union–Democratic Liberals",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 120.0,
+     "swing": null
+    },
+    {
+     "name": "Anti-Venizelists",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 7.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Democrats",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 7.0,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.0,
+     "swing": null
+    },
+    {
+     "name": "Thessaloniki Jews",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.0,
+     "swing": null
+    },
+    {
+     "name": "Western Thrace Muslims",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.0,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Stylianos Gonatas",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party led the poll with 250.0%.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1926",
+   "label": "1926",
+   "year": 1926,
+   "kind": "legislative",
+   "date": "7 November 1926",
+   "era": "schism",
+   "totalSeats": 286,
+   "majoritySeats": 144,
+   "turnout": 61.4,
+   "parties": [
+    {
+     "name": "Liberal Union",
+     "leader": null,
+     "seats": 108,
+     "seatChange": null,
+     "votes": 303140,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": 194243,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freethinkers' Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": null,
+     "votes": 151044,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 62086,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Electoral Front of Workers, Farmers and Refugees",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 41982,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Party of Greece",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 28318,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Independents and Refugees",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 17410,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liaison of United Anti-Venizelists",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 14088,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Refugee Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 13798,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Union",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 12661,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Provincial Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 9728,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Co-operation Agricultural Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 8530,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Democratic Liberals",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 7475,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liaison of Independent Democrat-Venizelists",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 5942,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hebrew Political Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 5846,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liaison of Independent Liberals",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5846,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liaison of Moderate Conservatives",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5463,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liaison of Independent Anti-Venizelists",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5367,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Agricultural Refugee Liaison",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5079,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Macedonian OMAS Liaison",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 5079,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Believers Popular Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 4888,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liaison of Independents (Trikala Prefecture)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3450,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liaison of Popular-Free Believers",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3450,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Georgios Kondylis",
+    "party": "DE"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Union finished first with 108 of 286 seats. Turnout 61.4%.",
+   "seatLeader": "Liberal Union",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "legislative",
+   "date": "19 August 1928",
+   "era": "schism",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 178,
+     "seatChange": 70,
+     "votes": 477502,
+     "share": 46.94,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -41,
+     "votes": 243543,
+     "share": 23.94,
+     "swing": null
+    },
+    {
+     "name": "Agricultural and Labour Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 68278,
+     "share": 6.71,
+     "swing": null
+    },
+    {
+     "name": "Freethinkers' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -51,
+     "votes": 53958,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Independent Royal Supporters",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 38556,
+     "share": 3.79,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 27603,
+     "share": 2.71,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 25729,
+     "share": 2.53,
+     "swing": null
+    },
+    {
+     "name": "Independent Democrats",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 18069,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17042,
+     "share": 1.68,
+     "swing": null
+    },
+    {
+     "name": "Conservative Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 15852,
+     "share": 1.56,
+     "swing": null
+    },
+    {
+     "name": "United Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14352,
+     "share": 1.41,
+     "swing": null
+    },
+    {
+     "name": "Progressive Union",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 13452,
+     "share": 1.32,
+     "swing": null
+    },
+    {
+     "name": "National Union of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1958,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1387,
+     "share": 0.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eleftherios Venizelos",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 178 of 250 seats on 46.9% of the vote.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "kind": "legislative",
+   "date": "25 September 1932",
+   "era": "schism",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 95,
+     "seatChange": 76,
+     "votes": 395974,
+     "share": 33.8,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 98,
+     "seatChange": -80,
+     "votes": 391521,
+     "share": 33.42,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 11,
+     "votes": 97836,
+     "share": 8.35,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 13,
+     "votes": 72311,
+     "share": 6.17,
+     "swing": null
+    },
+    {
+     "name": "Agricultural and Labour Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -12,
+     "votes": 69057,
+     "share": 5.89,
+     "swing": null
+    },
+    {
+     "name": "United Front",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 13,
+     "votes": 58223,
+     "share": 4.97,
+     "swing": null
+    },
+    {
+     "name": "National Radical Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -4,
+     "votes": 47698,
+     "share": 4.07,
+     "swing": null
+    },
+    {
+     "name": "Freethinkers' Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 18591,
+     "share": 1.59,
+     "swing": null
+    },
+    {
+     "name": "Conservative Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 11494,
+     "share": 0.98,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 849,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 8083,
+     "share": 0.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eleftherios Venizelos",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 98 of 250 seats on 33.4% of the vote.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "legislative",
+   "date": "5 March 1933",
+   "era": "schism",
+   "totalSeats": 248,
+   "majoritySeats": 125,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 118,
+     "seatChange": 23,
+     "votes": 434550,
+     "share": 38.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": -18,
+     "votes": 379968,
+     "share": 33.29,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -4,
+     "votes": 77254,
+     "share": 6.77,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -13,
+     "votes": 52958,
+     "share": 4.64,
+     "swing": null
+    },
+    {
+     "name": "Agricultural and Labour Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 5,
+     "votes": 47460,
+     "share": 4.16,
+     "swing": null
+    },
+    {
+     "name": "National Radical Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 6,
+     "votes": 46692,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Freethinkers' Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 4,
+     "votes": 25758,
+     "share": 2.26,
+     "swing": null
+    },
+    {
+     "name": "Independent Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 22985,
+     "share": 2.01,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -12,
+     "votes": 20200,
+     "share": 1.77,
+     "swing": null
+    },
+    {
+     "name": "National Alliance",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 14302,
+     "share": 1.25,
+     "swing": null
+    },
+    {
+     "name": "Conservative Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 9672,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9532,
+     "share": 0.84,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eleftherios Venizelos",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's Party finished first with 118 of 248 seats on 38.1% of the vote.",
+   "seatLeader": "People's Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "9 June 1935",
+   "era": "schism",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Party–National Radical Party",
+     "leader": null,
+     "seats": 287,
+     "seatChange": 158,
+     "votes": 669434,
+     "share": 65.04,
+     "swing": null
+    },
+    {
+     "name": "Union of Royalists",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1,
+     "votes": 152285,
+     "share": 14.8,
+     "swing": null
+    },
+    {
+     "name": "Communists and Allies",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 98699,
+     "share": 9.59,
+     "swing": null
+    },
+    {
+     "name": "Macedonian Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29664,
+     "share": 2.88,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5636,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "National Union of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2590,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 6,
+     "votes": 70888,
+     "share": 6.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Panagis Tsaldaris",
+    "party": "People's Party"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's Party–National Radical Party finished first with 287 of 300 seats on 65.0% of the vote.",
+   "seatLeader": "People's Party–National Radical Party",
+   "caveat": "Held under a state of emergency after a failed Venizelist coup, and boycotted by the Liberals.",
+   "unfree": null
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "26 January 1936",
+   "era": "schism",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 126,
+     "seatChange": null,
+     "votes": 474651,
+     "share": 37.26,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 72,
+     "seatChange": -183,
+     "votes": 281597,
+     "share": 22.1,
+     "swing": null
+    },
+    {
+     "name": "General Popular Radical Union",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 28,
+     "votes": 253384,
+     "share": 19.89,
+     "swing": null
+    },
+    {
+     "name": "All People Front",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 15,
+     "votes": 73411,
+     "share": 5.76,
+     "swing": null
+    },
+    {
+     "name": "Democratic Coalition",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 53693,
+     "share": 4.21,
+     "swing": null
+    },
+    {
+     "name": "Freethinkers' Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1,
+     "votes": 50137,
+     "share": 3.94,
+     "swing": null
+    },
+    {
+     "name": "National Reform Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 17822,
+     "share": 1.4,
+     "swing": null
+    },
+    {
+     "name": "Old Democratic Union of Crete",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 13762,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Agricultural Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 13006,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "Agricultural Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 12333,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Independents' Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11178,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "National Unionist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9870,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Communist Archio-Marxist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1148,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "National Union of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 505,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Communist International Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 296,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 7203,
+     "share": 0.57,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Demertzis",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 126 of 300 seats on 37.3% of the vote.",
+   "seatLeader": "Liberal Party",
+   "caveat": "The last election before the Metaxas dictatorship; the Communists held the balance of power for four months.",
+   "unfree": null
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "31 March 1946",
+   "era": "postwar",
+   "totalSeats": 354,
+   "majoritySeats": 178,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "United Alignment of Nationalists",
+     "leader": null,
+     "seats": 206,
+     "seatChange": null,
+     "votes": 610995,
+     "share": 55.12,
+     "swing": null
+    },
+    {
+     "name": "National Political Union",
+     "leader": null,
+     "seats": 68,
+     "seatChange": null,
+     "votes": 213721,
+     "share": 19.28,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": null,
+     "votes": 159525,
+     "share": 14.39,
+     "swing": null
+    },
+    {
+     "name": "National Party of Greece",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 66027,
+     "share": 5.96,
+     "swing": null
+    },
+    {
+     "name": "Union of Nationalists",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 32538,
+     "share": 2.94,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 12036,
+     "share": 1.09,
+     "swing": null
+    },
+    {
+     "name": "Union of Agrarian Parties",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 7447,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "Party X",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1848,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Civil and Agricultural Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1114,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Parataxis of Orthodox Christian Greeks",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 298,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Party of Reservists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 63,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Party for the National Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2833,
+     "share": 0.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Themistoklis Sofoulis",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "United Alignment of Nationalists finished first with 206 of 354 seats on 55.1% of the vote.",
+   "seatLeader": "United Alignment of Nationalists",
+   "caveat": "Boycotted by the left, four months before the civil war began.",
+   "unfree": null
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "legislative",
+   "date": "5 March 1950",
+   "era": "postwar",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": null,
+     "votes": 317312,
+     "share": 18.79,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": null,
+     "votes": 291083,
+     "share": 17.24,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Center Union",
+     "leader": null,
+     "seats": 45,
+     "seatChange": null,
+     "votes": 277739,
+     "share": 16.45,
+     "swing": null
+    },
+    {
+     "name": "Georgios Papandreou Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 180185,
+     "share": 10.67,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alignment",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 163824,
+     "share": 9.7,
+     "swing": null
+    },
+    {
+     "name": "Politically Independent Alignment",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 137618,
+     "share": 8.15,
+     "swing": null
+    },
+    {
+     "name": "National Reconstruction Front",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 88979,
+     "share": 5.27,
+     "swing": null
+    },
+    {
+     "name": "National Party of Greece",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 61575,
+     "share": 3.65,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers and Labourers",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 44308,
+     "share": 2.62,
+     "swing": null
+    },
+    {
+     "name": "New Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 42157,
+     "share": 2.5,
+     "swing": null
+    },
+    {
+     "name": "National Party of Working People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26925,
+     "share": 1.59,
+     "swing": null
+    },
+    {
+     "name": "Party for the National Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14256,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Greek Working People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9132,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "National Resistance Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8260,
+     "share": 0.49,
+     "swing": null
+    },
+    {
+     "name": "Party Alliance of Greek Workers and Political Refresh Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8127,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3087,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2979,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Agricultural Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2191,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Christian Labour Agricultural Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1027,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Christian Political Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 429,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Greek Drivers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 157,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Farmer Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 146,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Independent Party of War Wounded and Victims of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 145,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Labour-Professional Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 97,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Agricultural Party of Greek People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 63,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Professional and Industrial Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 42,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Byzantine Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6742,
+     "share": 0.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexandros Diomidis",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's Party finished first with 62 of 250 seats on 18.8% of the vote.",
+   "seatLeader": "People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "kind": "legislative",
+   "date": "9 September 1951",
+   "era": "postwar",
+   "totalSeats": 258,
+   "majoritySeats": 130,
+   "turnout": 77.2,
+   "parties": [
+    {
+     "name": "Greek Rally",
+     "leader": null,
+     "seats": 114,
+     "seatChange": null,
+     "votes": 624316,
+     "share": 36.53,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Center Union",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 29,
+     "votes": 401379,
+     "share": 23.49,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 1,
+     "votes": 325390,
+     "share": 19.04,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Left",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -8,
+     "votes": 180640,
+     "share": 10.57,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -60,
+     "votes": 113876,
+     "share": 6.66,
+     "swing": null
+    },
+    {
+     "name": "Georgios Papandreou Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -35,
+     "votes": 35810,
+     "share": 2.1,
+     "swing": null
+    },
+    {
+     "name": "Agricultural and Labour Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 21009,
+     "share": 1.23,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3912,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1554,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Communist Archio-Marxist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 53,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 965,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sofoklis Venizelos",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Greek Rally finished first with 114 of 258 seats on 36.5% of the vote. Turnout 77.2%.",
+   "seatLeader": "Greek Rally",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "legislative",
+   "date": "16 November 1952",
+   "era": "postwar",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 75.37,
+   "parties": [
+    {
+     "name": "Greek Rally",
+     "leader": null,
+     "seats": 247,
+     "seatChange": 133,
+     "votes": 783541,
+     "share": 49.22,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Center Union–Liberal Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -80,
+     "votes": 544834,
+     "share": 34.23,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -10,
+     "votes": 152011,
+     "share": 9.55,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 16767,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Agricultural and Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 10431,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 56679,
+     "share": 3.56,
+     "swing": null
+    },
+    {
+     "name": "Agricultural Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 691,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26853,
+     "share": 1.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nikolaos Plastiras",
+    "party": "EPEK-KF"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Greek Rally finished first with 247 of 300 seats on 49.2% of the vote. Turnout 75.4%.",
+   "seatLeader": "Greek Rally",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "legislative",
+   "date": "19 February 1956",
+   "era": "postwar",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 74.97,
+   "parties": [
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 132,
+     "seatChange": null,
+     "votes": 1620007,
+     "share": 48.15,
+     "swing": null
+    },
+    {
+     "name": "National Radical Union",
+     "leader": null,
+     "seats": 165,
+     "seatChange": null,
+     "votes": 1594112,
+     "share": 47.38,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 74545,
+     "share": 2.22,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 31022,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "Popular Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29375,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 449,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 14851,
+     "share": 0.44,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Karamanlis",
+    "party": "ERE"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Radical Union finished first with 165 of 300 seats on 47.4% of the vote. Turnout 75.0%.",
+   "seatLeader": "National Radical Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "11 May 1958",
+   "era": "postwar",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 75.48,
+   "parties": [
+    {
+     "name": "National Radical Union",
+     "leader": null,
+     "seats": 171,
+     "seatChange": 6,
+     "votes": 1583885,
+     "share": 41.16,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Left",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": 939902,
+     "share": 24.43,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": 795445,
+     "share": 20.67,
+     "swing": null
+    },
+    {
+     "name": "Progressive Agricultural Democratic Union",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 408787,
+     "share": 10.62,
+     "swing": null
+    },
+    {
+     "name": "Union of Popular Parties",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 113358,
+     "share": 2.95,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 4009,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 2339,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Karamanlis",
+    "party": "ERE"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Radical Union finished first with 171 of 300 seats on 41.2% of the vote. Turnout 75.5%.",
+   "seatLeader": "National Radical Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "29 October 1961",
+   "era": "postwar",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 81.6,
+   "parties": [
+    {
+     "name": "National Radical Union",
+     "leader": null,
+     "seats": 176,
+     "seatChange": 5,
+     "votes": 2347824,
+     "share": 50.81,
+     "swing": null
+    },
+    {
+     "name": "Centre Union–Progressive Party",
+     "leader": null,
+     "seats": 100,
+     "seatChange": 54,
+     "votes": 1555442,
+     "share": 33.66,
+     "swing": null
+    },
+    {
+     "name": "All-Democratic Agricultural Front",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -36,
+     "votes": 675867,
+     "share": 14.63,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 41550,
+     "share": 0.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Karamanlis",
+    "party": "ERE"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Radical Union finished first with 176 of 300 seats on 50.8% of the vote. Turnout 81.6%.",
+   "seatLeader": "National Radical Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "3 November 1963",
+   "era": "postwar",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 83.15,
+   "parties": [
+    {
+     "name": "Centre Union",
+     "leader": null,
+     "seats": 138,
+     "seatChange": 52,
+     "votes": 1962074,
+     "share": 42.04,
+     "swing": null
+    },
+    {
+     "name": "National Radical Union",
+     "leader": null,
+     "seats": 132,
+     "seatChange": -44,
+     "votes": 1837377,
+     "share": 39.37,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Left",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 6,
+     "votes": 669267,
+     "share": 14.34,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -12,
+     "votes": 173981,
+     "share": 3.73,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22093,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1267,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Movement for Democracy and Socialism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1095,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Karamanlis",
+    "party": "ERE"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Centre Union finished first with 138 of 300 seats on 42.0% of the vote. Turnout 83.2%.",
+   "seatLeader": "Centre Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "16 February 1964",
+   "era": "postwar",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 81.71,
+   "parties": [
+    {
+     "name": "Centre Union",
+     "leader": null,
+     "seats": 171,
+     "seatChange": 33,
+     "votes": 2424477,
+     "share": 52.72,
+     "swing": null
+    },
+    {
+     "name": "National Radical Union-Progressive Party",
+     "leader": null,
+     "seats": 107,
+     "seatChange": -27,
+     "votes": 1621546,
+     "share": 35.26,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Left",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -6,
+     "votes": 542865,
+     "share": 11.8,
+     "swing": null
+    },
+    {
+     "name": "List of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9951,
+     "share": 0.22,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ioannis Paraskevopoulos",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Centre Union finished first with 171 of 300 seats on 52.7% of the vote. Turnout 81.7%.",
+   "seatLeader": "Centre Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "legislative",
+   "date": "17 November 1974",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 79.53,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 220,
+     "seatChange": null,
+     "votes": 2669133,
+     "share": 54.37,
+     "swing": null
+    },
+    {
+     "name": "Centre Union – New Forces",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": 1002559,
+     "share": 20.42,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Socialist Movement",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 666413,
+     "share": 13.58,
+     "swing": null
+    },
+    {
+     "name": "United Left",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 464787,
+     "share": 9.47,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 52768,
+     "share": 1.07,
+     "swing": null
+    },
+    {
+     "name": "Democratic Centre Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8509,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Communist Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1539,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Union–Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 975,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 42291,
+     "share": 0.86,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Karamanlis",
+    "party": "ND"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 220 of 300 seats on 54.4% of the vote. Turnout 79.5%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "kind": "legislative",
+   "date": "20 November 1977",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 81.11,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 171,
+     "seatChange": -49,
+     "votes": 2146365,
+     "share": 41.84,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Socialist Movement",
+     "leader": null,
+     "seats": 93,
+     "seatChange": 81,
+     "votes": 1300025,
+     "share": 25.34,
+     "swing": null
+    },
+    {
+     "name": "Union of the Democratic Centre",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 16,
+     "votes": 612786,
+     "share": 11.95,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 480272,
+     "share": 9.36,
+     "swing": null
+    },
+    {
+     "name": "National Alignment",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 349988,
+     "share": 6.82,
+     "swing": null
+    },
+    {
+     "name": "Progress and Left Forces Alliance",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 139356,
+     "share": 2.72,
+     "swing": null
+    },
+    {
+     "name": "Party of New Liberals",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 55494,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Communist Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11895,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8839,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "International Workers' Union – Trotskyists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1032,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Christian-Social Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 777,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Organisation \"Fighter\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 321,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Labour-Agricultural Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 170,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Farmer Smoke-Producers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 84,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Olympic Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22348,
+     "share": 0.44,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Karamanlis",
+    "party": "ND"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 171 of 300 seats on 41.8% of the vote. Turnout 81.1%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "18 October 1981",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 81.5,
+   "parties": [
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 172,
+     "seatChange": 79,
+     "votes": 2726309,
+     "share": 48.07,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 115,
+     "seatChange": -56,
+     "votes": 2034496,
+     "share": 35.88,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 2,
+     "votes": 620302,
+     "share": 10.94,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 95799,
+     "share": 1.69,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Interior)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 76404,
+     "share": 1.35,
+     "swing": null
+    },
+    {
+     "name": "KODISO–KAE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40126,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "Union of the Democratic Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -16,
+     "votes": 22763,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20645,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8638,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "For a Revolutionary Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6595,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "EKKE – M-L KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4700,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "International Workers' Union – Trotskyists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1646,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Democratic Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1100,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Byzantine National Organisation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 407,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Olympic Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 95,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Universal Olympic Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Refugee Party of Greece \"Kimon\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11025,
+     "share": 0.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Georgios Rallis",
+    "party": "ND"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "PASOK finished first with 172 of 300 seats on 48.1% of the vote. Turnout 81.5%.",
+   "seatLeader": "PASOK",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "2 June 1985",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 80.19,
+   "parties": [
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 161,
+     "seatChange": -11,
+     "votes": 2916735,
+     "share": 45.82,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 126,
+     "seatChange": 11,
+     "votes": 2599681,
+     "share": 40.84,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -1,
+     "votes": 629525,
+     "share": 9.89,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Interior)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 117135,
+     "share": 1.84,
+     "swing": null
+    },
+    {
+     "name": "National Political Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37965,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10551,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Fighting Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10369,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Communist Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6951,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Communist Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5383,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Eleftheroi",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5212,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "International Workers' Union – Trotskyists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3685,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Christian Social Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 251,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Right",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 172,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Olympic Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 162,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Enlighten Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greens–Ecological Party–Hellenic Alternative Green Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21263,
+     "share": 0.33,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Andreas Papandreou",
+    "party": "PASOK"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "PASOK finished first with 161 of 300 seats on 45.8% of the vote. Turnout 80.2%.",
+   "seatLeader": "PASOK",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1989-june",
+   "label": "June 1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "18 June 1989",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 80.33,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 145,
+     "seatChange": 19,
+     "votes": 2887488,
+     "share": 44.28,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Socialist Movement",
+     "leader": null,
+     "seats": 125,
+     "seatChange": -36,
+     "votes": 2551518,
+     "share": 39.13,
+     "swing": null
+    },
+    {
+     "name": "Coalition of the Left and Progress",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 855944,
+     "share": 13.13,
+     "swing": null
+    },
+    {
+     "name": "Democratic Renewal",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 65614,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "Trust",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 25099,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "National Party–National Political Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21149,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "KKE Interior – Renewing Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18159,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Greek Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13863,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11450,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Fate",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9064,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9001,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Movement – Political Renewal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8182,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Union of the Democratic Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7770,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Alternative Anti-Capitalist Cohesion",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6185,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Direct Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5939,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Greek Radical Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4162,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Greek Orthodox Movement for Salvation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3756,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3350,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Communist Movement of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2709,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Fighting Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2317,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Self-Governed Movement of Labour Politics",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1912,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1636,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Labour Anti-Imperialistic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1432,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Olympic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1229,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 873,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Ecological Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 403,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Personalities",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 113,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Integrated Social Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 65,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Movement of Democratic Refresh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 54,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Collaboration Alliance of Independent Candidate MPs",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Uncommitted Party of Equality",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Federal Democratic Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of Humanism and Peace",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Radical Spring Renewal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Democratic Revival",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Olympic Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 659,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Andreas Papandreou",
+    "party": "PASOK"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 145 of 300 seats on 44.3% of the vote. Turnout 80.3%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1989-november",
+   "label": "November 1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "5 November 1989",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 80.7,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 148,
+     "seatChange": 3,
+     "votes": 3093055,
+     "share": 46.19,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Socialist Movement",
+     "leader": null,
+     "seats": 128,
+     "seatChange": 3,
+     "votes": 2723739,
+     "share": 40.67,
+     "swing": null
+    },
+    {
+     "name": "Coalition of the Left and Progress",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -7,
+     "votes": 734552,
+     "share": 10.97,
+     "swing": null
+    },
+    {
+     "name": "Alternative Ecologists",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 39130,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Trust",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 26012,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Left Initiative of Communist Radical Ecologists (AKOA–EKKE)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13461,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Kollatos–Independent Political Movement–Ecologic–Hellenic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13058,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Fate",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 10971,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Ecologists of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10223,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5125,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Popular Unions of Bipartisan Social Groups",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4410,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3188,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Fighting Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1602,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1422,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Labour Anti-Imperialistic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1384,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Self-Governed Movement of Labour Politics",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1259,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Workers Revolutionary Party – Trotskyists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1104,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Olympic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 840,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 614,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Front of National Fighters",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 99,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Party of Democratic Revival",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenists Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 53,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greens Ecological Party of Greece–Hellenic Alternative Green Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Olympic Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 32,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary-Popular Executive Committee \"Care\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Democratic Revival",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Humanism and Peace Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Regional Civic Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Social Democratic Revolutionary Liberation Front \"Spartacus\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Movement of Non-Privileged",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic European Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Self-Respect",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic European Party 1984",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11563,
+     "share": 0.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giannis Grivas",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 148 of 300 seats on 46.2% of the vote. Turnout 80.7%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "8 April 1990",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 79.24,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 150,
+     "seatChange": 2,
+     "votes": 3088137,
+     "share": 46.89,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Socialist Movement",
+     "leader": null,
+     "seats": 123,
+     "seatChange": -5,
+     "votes": 2543042,
+     "share": 38.61,
+     "swing": null
+    },
+    {
+     "name": "Coalition of the Left and Progress",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -2,
+     "votes": 677059,
+     "share": 10.28,
+     "swing": null
+    },
+    {
+     "name": "Alternative Ecologists",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 50868,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Democratic Renewal",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44077,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "Trust",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 29547,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Independent Coalition in the Department of Samos \"Cooperation\"",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 17098,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Fate",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 16434,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "New Left Current–Popular Opposition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14365,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Democratic Initiative for the Progress and Development of Evritania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12707,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "KKE Interior – Renewing Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8827,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Kollatos–Independent Political Movement–Ecologic–Hellenic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7694,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "National Party–National Political Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6641,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Ecologists of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5787,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Party of Greek Hunters",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5060,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Popular Unions of Bipartisan Social Groups",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3758,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Ecologist-Peace Supporters–Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3360,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Union of Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3158,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2590,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2079,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1355,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Communist Movement of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1350,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Self-Governed Movement of Labour Politics",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1174,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Human Rights Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 764,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Olympic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 691,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 210,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic European Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 74,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Humanism and Peace Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 71,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents Worker Fighter",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greens-Ecological Party of Greece-Hellenic Alternative Green Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 42,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Centre Democratic Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "King Fighter",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Democratic Revival",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Regional Urban Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Movement of Democratic Revival",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Flag of Hellenic Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Popular Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Self-Respect",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 802,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Xenophon Zolotas",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 150 of 300 seats on 46.9% of the vote. Turnout 79.2%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "10 October 1993",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 79.22,
+   "parties": [
+    {
+     "name": "Panhellenic Socialist Movement",
+     "leader": null,
+     "seats": 170,
+     "seatChange": 47,
+     "votes": 3235017,
+     "share": 46.88,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 111,
+     "seatChange": -39,
+     "votes": 2711737,
+     "share": 39.3,
+     "swing": null
+    },
+    {
+     "name": "Political Spring",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 336460,
+     "share": 4.88,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 313001,
+     "share": 4.54,
+     "swing": null
+    },
+    {
+     "name": "Coalition of the Left and Progress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 202887,
+     "share": 2.94,
+     "swing": null
+    },
+    {
+     "name": "Trust",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 26228,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15926,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Fate",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 12458,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "National Party – National Political Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9469,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Left Struggle",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8160,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Popular Unions of Bipartisan Social Groups",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7237,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Ecologists of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5723,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Union of Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5378,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Party of Greek Hunters",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3614,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1817,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Fighting Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1578,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Olympic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 753,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 703,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Consistent Left Move of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 484,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Self-Respect and Truth",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 334,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Human Rights Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 255,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Christopistía",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 66,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Orthodox Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 41,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Political Independent Party \"Vergina 1990\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic White Movement of Contemporary Ideology",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of Responsible Citizens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Humanism and Peace Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Free Democrats Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 863,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Konstantinos Mitsotakis",
+    "party": "ND"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Panhellenic Socialist Movement finished first with 170 of 300 seats on 46.9% of the vote. Turnout 79.2%.",
+   "seatLeader": "Panhellenic Socialist Movement",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "22 September 1996",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 76.34,
+   "parties": [
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 162,
+     "seatChange": -8,
+     "votes": 2814779,
+     "share": 41.49,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 108,
+     "seatChange": -3,
+     "votes": 2586089,
+     "share": 38.12,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2,
+     "votes": 380046,
+     "share": 5.6,
+     "swing": null
+    },
+    {
+     "name": "Synaspismos",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 10,
+     "votes": 347236,
+     "share": 5.12,
+     "swing": null
+    },
+    {
+     "name": "Democratic Social Movement",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 300954,
+     "share": 4.44,
+     "swing": null
+    },
+    {
+     "name": "Political Spring",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -10,
+     "votes": 199686,
+     "share": 2.94,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 48659,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Union of Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19931,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Party of Greek Hunters",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17472,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "National Party – National Political Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16495,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Party of Hellenism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12216,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Left Struggle",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10416,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Alternative Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5708,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Golden Dawn",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4537,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Ecologists of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4138,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4019,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE – Rainbow",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3534,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Pensioners-Labourers-Farmers-Youth Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2519,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Fighting Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2113,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Olympic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1614,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of Greek Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 238,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greek Orthodox National Popular Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 163,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Christopistía",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 71,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Free Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 64,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic White Movement of Contemporary Ideology",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 49,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Orthodox Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 42,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Labour Class",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Human Rights Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of Responsible Citizens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic European Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 611,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Costas Simitis",
+    "party": "PASOK"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "PASOK finished first with 162 of 300 seats on 41.5% of the vote. Turnout 76.3%.",
+   "seatLeader": "PASOK",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "legislative",
+   "date": "9 April 2000",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 75.74,
+   "parties": [
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 158,
+     "seatChange": -4,
+     "votes": 3008081,
+     "share": 43.8,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 125,
+     "seatChange": 17,
+     "votes": 2934948,
+     "share": 42.73,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0,
+     "votes": 379280,
+     "share": 5.52,
+     "swing": null
+    },
+    {
+     "name": "Synaspismos",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -4,
+     "votes": 219988,
+     "share": 3.2,
+     "swing": null
+    },
+    {
+     "name": "Democratic Social Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -9,
+     "votes": 184648,
+     "share": 2.69,
+     "swing": null
+    },
+    {
+     "name": "Democratic Regional Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32149,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23218,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Union of Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20523,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "National Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14688,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Front Line – Hellenic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12192,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Radical Left Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8183,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7325,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Party of Hellenism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6241,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Left! – M-L KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5879,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Alternative Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3291,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2123,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Fighting Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2044,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Autonomous Revolutionary Political Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1153,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1139,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Christopistía",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 260,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of Greek Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 153,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Patriotic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Olympic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Panhellenic Democratic Party of Peace",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 592,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Costas Simitis",
+    "party": "PASOK"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "PASOK finished first with 158 of 300 seats on 43.8% of the vote. Turnout 75.7%.",
+   "seatLeader": "PASOK",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "legislative",
+   "date": "7 March 2004",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 76.62,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 165,
+     "seatChange": 40,
+     "votes": 3360424,
+     "share": 45.36,
+     "swing": null
+    },
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 117,
+     "seatChange": -41,
+     "votes": 3003988,
+     "share": 40.55,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1,
+     "votes": 436818,
+     "share": 5.9,
+     "swing": null
+    },
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0,
+     "votes": 241714,
+     "share": 3.26,
+     "swing": null
+    },
+    {
+     "name": "Popular Orthodox Rally",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 162492,
+     "share": 2.19,
+     "swing": null
+    },
+    {
+     "name": "Democratic Social Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 132933,
+     "share": 1.79,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19510,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Radical Left Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11285,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10864,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Anti-Capitalist Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8320,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6762,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4765,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Fighting Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3175,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2619,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2097,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Christopistía",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 605,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Costas Simitis",
+    "party": "PASOK"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 165 of 300 seats on 45.4% of the vote. Turnout 76.6%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "16 September 2007",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 74.15,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 152,
+     "seatChange": -13,
+     "votes": 2994979,
+     "share": 41.84,
+     "swing": null
+    },
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 102,
+     "seatChange": -15,
+     "votes": 2727279,
+     "share": 38.1,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 10,
+     "votes": 583750,
+     "share": 8.15,
+     "swing": null
+    },
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 8,
+     "votes": 361101,
+     "share": 5.04,
+     "swing": null
+    },
+    {
+     "name": "Popular Orthodox Rally",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 10,
+     "votes": 271809,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 75502,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Revival",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57167,
+     "share": 0.8,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20840,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17555,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Radical Left Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11843,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "United Anti-Capitalist Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10604,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8137,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Liberal Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7498,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3099,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2473,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Fighting Socialist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2109,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Greek Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1740,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Light – Truth – Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 970,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Democratic Universal Hellas",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Regional Urban Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 536,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kostas Karamanlis",
+    "party": "ND"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 152 of 300 seats on 41.8% of the vote. Turnout 74.2%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "legislative",
+   "date": "4 October 2009",
+   "era": "metapolitefsi",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 70.95,
+   "parties": [
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 160,
+     "seatChange": 6,
+     "votes": 3012542,
+     "share": 43.92,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 91,
+     "seatChange": -8,
+     "votes": 2295719,
+     "share": 33.47,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -1,
+     "votes": 517249,
+     "share": 7.54,
+     "swing": null
+    },
+    {
+     "name": "Popular Orthodox Rally",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 2,
+     "votes": 386205,
+     "share": 5.63,
+     "swing": null
+    },
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 0,
+     "votes": 315665,
+     "share": 4.6,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 173589,
+     "share": 2.53,
+     "swing": null
+    },
+    {
+     "name": "Democratic Revival",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 30784,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Antarsya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24687,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Greek Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19993,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Golden Dawn",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19624,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18296,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10690,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10480,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7600,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5219,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Workers' Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4537,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1665,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Pan-Agrarian Labour Movement of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1375,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Smoking Groups for Art and Visual Composition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1355,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Light – Truth – Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 871,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Friends of Man",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Regional Urban Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Old Republic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 265,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kostas Karamanlis",
+    "party": "ND"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "PASOK finished first with 160 of 300 seats on 43.9% of the vote. Turnout 71.0%.",
+   "seatLeader": "PASOK",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2012-june",
+   "label": "June 2012",
+   "year": 2012,
+   "kind": "legislative",
+   "date": "17 June 2012",
+   "era": "crisis",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 62.49,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 129,
+     "seatChange": 11,
+     "votes": 1825497,
+     "share": 29.66,
+     "swing": null
+    },
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 10,
+     "votes": 1655022,
+     "share": 26.89,
+     "swing": null
+    },
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 33,
+     "seatChange": -1,
+     "votes": 756024,
+     "share": 12.28,
+     "swing": null
+    },
+    {
+     "name": "Independent Greeks",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -3,
+     "votes": 462406,
+     "share": 7.51,
+     "swing": null
+    },
+    {
+     "name": "Golden Dawn",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 0,
+     "votes": 426025,
+     "share": 6.92,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0,
+     "votes": 384986,
+     "share": 6.25,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -4,
+     "votes": 277227,
+     "share": 4.5,
+     "swing": null
+    },
+    {
+     "name": "Recreate Greece–Drassi–Liberal Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 98140,
+     "share": 1.59,
+     "swing": null
+    },
+    {
+     "name": "Popular Orthodox Rally",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 97099,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 54408,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "I Don't Pay Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23699,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Antarsya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 20416,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17770,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17145,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14170,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Panathinaikos Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12459,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Parties (KKE (m-l)–M-L KKE)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7592,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "National Hope",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4290,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 623,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Resistance Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 81,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Panagrarian Labour Movement of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 385,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 129 of 300 seats on 29.7% of the vote. Turnout 62.5%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2012-may",
+   "label": "May 2012",
+   "year": 2012,
+   "kind": "legislative",
+   "date": "6 May 2012",
+   "era": "crisis",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 65.12,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 108,
+     "seatChange": -15,
+     "votes": 1192103,
+     "share": 18.85,
+     "swing": null
+    },
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 12,
+     "votes": 1061928,
+     "share": 16.79,
+     "swing": null
+    },
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -31,
+     "votes": 833452,
+     "share": 13.18,
+     "swing": null
+    },
+    {
+     "name": "Independent Greeks",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 671324,
+     "share": 10.62,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 1,
+     "votes": 536105,
+     "share": 8.48,
+     "swing": null
+    },
+    {
+     "name": "Popular Association–Golden Dawn",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 7,
+     "votes": 440966,
+     "share": 6.97,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 386394,
+     "share": 6.11,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 185485,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "Popular Orthodox Rally",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 182925,
+     "share": 2.89,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 161550,
+     "share": 2.55,
+     "swing": null
+    },
+    {
+     "name": "Recreate Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 135960,
+     "share": 2.15,
+     "swing": null
+    },
+    {
+     "name": "Drassi–Liberal Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 114066,
+     "share": 1.8,
+     "swing": null
+    },
+    {
+     "name": "Antarsya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 75416,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "Social Agreement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 60552,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "No (EPAM–DIMAN)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 58170,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "I Don't Pay Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 55590,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 38313,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "National Unity Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38286,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 32519,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28514,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Parties (KKE (m-l)–M-L KKE)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16010,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Workers Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6074,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3618,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Organisation for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2565,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Organisation of Internationalist Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1783,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Dignity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 799,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Resistance Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 335,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Panagrarian Labour Movement of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 302,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Panathinaikos Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greek Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Regional Urban Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3008,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lucas Papademos",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 108 of 300 seats on 18.9% of the vote. Turnout 65.1%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2015-january",
+   "label": "January 2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "25 January 2015",
+   "era": "crisis",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 63.62,
+   "parties": [
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 149,
+     "seatChange": 9,
+     "votes": 2245978,
+     "share": 36.34,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 76,
+     "seatChange": -2,
+     "votes": 1718694,
+     "share": 27.81,
+     "swing": null
+    },
+    {
+     "name": "Popular Association–Golden Dawn",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -1,
+     "votes": 388387,
+     "share": 6.28,
+     "swing": null
+    },
+    {
+     "name": "The River",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 373924,
+     "share": 6.05,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 1,
+     "votes": 338188,
+     "share": 5.47,
+     "swing": null
+    },
+    {
+     "name": "Independent Greeks",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -3,
+     "votes": 293683,
+     "share": 4.75,
+     "swing": null
+    },
+    {
+     "name": "PASOK",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -8,
+     "votes": 289469,
+     "share": 4.68,
+     "swing": null
+    },
+    {
+     "name": "Movement of Democratic Socialists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 152557,
+     "share": 2.47,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 2,
+     "votes": 110923,
+     "share": 1.79,
+     "swing": null
+    },
+    {
+     "name": "Teleia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 109500,
+     "share": 1.77,
+     "swing": null
+    },
+    {
+     "name": "Popular Orthodox Rally",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 63669,
+     "share": 1.03,
+     "swing": null
+    },
+    {
+     "name": "Antarsya–MARS",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 39497,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left–Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 29820,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Parties (KKE (m–l)/M–L KKE)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7999,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Democratic National Reform Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7615,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Greek People's Democratic Liberation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4740,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Workers Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2363,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Organisation of Internationalist Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1854,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "National Resistance Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 618,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Greek White Movement of Today's Ideology",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 76,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Radical Orthodox Solidarity Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Panagrarian Labour Movement of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1301,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonis Samaras",
+    "party": "ND"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Syriza finished first with 149 of 300 seats on 36.3% of the vote. Turnout 63.6%.",
+   "seatLeader": "Syriza",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2015-september",
+   "label": "September 2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "20 September 2015",
+   "era": "crisis",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 56.16,
+   "parties": [
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 145,
+     "seatChange": -1,
+     "votes": 1926526,
+     "share": 35.46,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 75,
+     "seatChange": 0,
+     "votes": 1526400,
+     "share": 28.09,
+     "swing": null
+    },
+    {
+     "name": "Golden Dawn",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 1,
+     "votes": 379722,
+     "share": 6.99,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alignment",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 1,
+     "votes": 341732,
+     "share": 6.29,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0,
+     "votes": 301684,
+     "share": 5.55,
+     "swing": null
+    },
+    {
+     "name": "The River",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -2,
+     "votes": 222349,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Independent Greeks",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -1,
+     "votes": 200532,
+     "share": 3.69,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2,
+     "votes": 186644,
+     "share": 3.44,
+     "swing": null
+    },
+    {
+     "name": "Popular Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 155320,
+     "share": 2.86,
+     "swing": null
+    },
+    {
+     "name": "Antarsya–Workers Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 46183,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "United Popular Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 41626,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35594,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Recreate Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28909,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Democrats–Society of Values–Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15282,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Parties (KKE (m–l)/M–L KKE)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8873,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union–Greek Popular Gathering",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6070,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Greek People's Democratic Liberation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4421,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Organisation of Internationalist Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2433,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Organisation for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2230,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 846,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Vassiliki Thanou (interim)",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Syriza finished first with 145 of 300 seats on 35.5% of the vote. Turnout 56.2%.",
+   "seatLeader": "Syriza",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "7 July 2019",
+   "era": "crisis",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 57.78,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 158,
+     "seatChange": 83,
+     "votes": 2251618,
+     "share": 39.85,
+     "swing": null
+    },
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 86,
+     "seatChange": -59,
+     "votes": 1781057,
+     "share": 31.53,
+     "swing": null
+    },
+    {
+     "name": "Movement for Change",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 5,
+     "votes": 457623,
+     "share": 8.1,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0,
+     "votes": 299621,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Greek Solution",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 209290,
+     "share": 3.7,
+     "swing": null
+    },
+    {
+     "name": "MeRA25",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 194576,
+     "share": 3.44,
+     "swing": null
+    },
+    {
+     "name": "Golden Dawn",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -18,
+     "votes": 165620,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "Course of Freedom",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 82786,
+     "share": 1.47,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -9,
+     "votes": 70178,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "Recreate Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 41631,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "United Popular Front–Agricultural Livestock Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28313,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Antarsya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23239,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Popular Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15612,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Assembly of Greeks",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14079,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7760,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2706,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Workers Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1719,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Organisation of Internationalist Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1576,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Syn...Fonia Politikon Kommaton",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greek Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 472,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexis Tsipras",
+    "party": "Syriza"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 158 of 300 seats on 39.9% of the vote. Turnout 57.8%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2023-june",
+   "label": "June 2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "25 June 2023",
+   "era": "current",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 53.74,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 158,
+     "seatChange": 12,
+     "votes": 2115322,
+     "share": 40.56,
+     "swing": null
+    },
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 47,
+     "seatChange": -24,
+     "votes": 930013,
+     "share": 17.83,
+     "swing": null
+    },
+    {
+     "name": "PASOK – Movement for Change",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -9,
+     "votes": 617487,
+     "share": 11.84,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -5,
+     "votes": 401224,
+     "share": 7.69,
+     "swing": null
+    },
+    {
+     "name": "Spartans",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 243922,
+     "share": 4.68,
+     "swing": null
+    },
+    {
+     "name": "Greek Solution",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -4,
+     "votes": 231491,
+     "share": 4.44,
+     "swing": null
+    },
+    {
+     "name": "Victory",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 10,
+     "votes": 193124,
+     "share": 3.7,
+     "swing": null
+    },
+    {
+     "name": "Course of Freedom",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 8,
+     "votes": 165523,
+     "share": 3.17,
+     "swing": null
+    },
+    {
+     "name": "MeRA25",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 130378,
+     "share": 2.5,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25858,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Voice of Reason",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22347,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Greens – Green Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21188,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Ef Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17181,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Antarsya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15887,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Prasino & Mov",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15725,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Breath of Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14781,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14286,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Movement of the Poor of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13652,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9420,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Assembly of Greeks",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6408,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4250,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "National Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2965,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Organisation of Internationalist Communists of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1374,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1104,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Vision of the Renaissance of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 132,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Panathinaikos Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 122,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Digital Hellenism in the Whole",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "People's European Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Republican Party of Greece – TRAMP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greek Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ioannis Sarmas",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 158 of 300 seats on 40.6% of the vote. Turnout 53.7%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2023-may",
+   "label": "May 2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "21 May 2023",
+   "era": "current",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 61.76,
+   "parties": [
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 146,
+     "seatChange": -12,
+     "votes": 2407750,
+     "share": 40.79,
+     "swing": null
+    },
+    {
+     "name": "Syriza",
+     "leader": null,
+     "seats": 71,
+     "seatChange": -15,
+     "votes": 1184621,
+     "share": 20.07,
+     "swing": null
+    },
+    {
+     "name": "PASOK – Movement for Change",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 19,
+     "votes": 676165,
+     "share": 11.46,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 11,
+     "votes": 426628,
+     "share": 7.23,
+     "swing": null
+    },
+    {
+     "name": "Greek Solution",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 6,
+     "votes": 262498,
+     "share": 4.45,
+     "swing": null
+    },
+    {
+     "name": "Victory",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 172260,
+     "share": 2.92,
+     "swing": null
+    },
+    {
+     "name": "Course of Freedom",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 170424,
+     "share": 2.89,
+     "swing": null
+    },
+    {
+     "name": "MeRA25",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -9,
+     "votes": 155107,
+     "share": 2.63,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Subversion",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 53346,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "National Creation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48036,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "Unite – Freedom Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37305,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Greens – Green Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35201,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Movement 21",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34914,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Antarsya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 31759,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "Breath of Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27619,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Union of Centrists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22471,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Free Again",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20443,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Movement of the Poor of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18479,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "EAN...",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15174,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Green Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14627,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Now All Together",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14036,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Greece (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12747,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Assembly of Greeks",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12743,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Smoking Groups for Art and Visual Composition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11521,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Unity – Truth",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11401,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Political Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6079,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Society of Values –Liberal Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5866,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Northern League – Krama",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5430,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Communist Party of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3922,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Organisation of Internationalist Communists of Greece",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1930,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "SOCIAL – Modern Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1014,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Organization for the Reconstruction of the KKE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1010,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "New Structure",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 70,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greek Vision",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Greek Ecologists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 155,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kyriakos Mitsotakis",
+    "party": "ND"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "New Democracy finished first with 146 of 300 seats on 40.8% of the vote. Turnout 61.8%.",
+   "seatLeader": "New Democracy",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

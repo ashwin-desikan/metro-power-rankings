@@ -263,6 +263,32 @@ def section_slice(wt, start_pat, end_pats):
             end = min(end, start + me.start())
     return wt[start:end]
 
+# A heading whose TITLE matches, at any level, sliced to the next heading of
+# the same or higher level. section_slice() above pins the level into the
+# pattern, which is why Brazil's runoff tables vanished the moment the article
+# moved them off "==== Second round ====": the slice returned "" and the
+# forecast published an empty runoff block for weeks without a word.
+HEADING = re.compile(r"^(?P<eq>={2,6})\s*(?P<title>.+?)\s*(?P=eq)\s*$", re.M)
+
+
+def find_section(wt, title_pat, flags=re.I):
+    """Text under the first heading whose title matches, at whatever level.
+
+    Returns "" when nothing matches, so callers can chain with `or`.
+    """
+    pat = re.compile(title_pat, flags)
+    for m in HEADING.finditer(wt):
+        if not pat.search(m.group("title")):
+            continue
+        level = len(m.group("eq"))
+        start = m.end()
+        for nxt in HEADING.finditer(wt, start):
+            if len(nxt.group("eq")) <= level:
+                return wt[start:nxt.start()]
+        return wt[start:]
+    return ""
+
+
 # ---------------- UK ----------------
 
 def fetch_uk():
@@ -625,11 +651,20 @@ def candidate_tables(sec, default_year):
 def clean_cand(n):
     return re.sub(r"\s+(PT|PL|PSD|Novo|Repub\.?|MDB|PSDB|PDT|PSB|UB|Missione?s?|Avante)\.?$", "", n).strip()
 
+RUNOFF_HEADING = r"(second|2nd)[\s\-]*round|run[\s\-]?off|segundo\s+turno"
+
 def fetch_br():
     wt = wikitext("Opinion polling for the 2026 Brazilian presidential election")
     y26 = section_slice(wt, r"===\s*2026\s*===", [r"\n===\s*2025", r"\n==[^=]"])
     r1sec = section_slice(y26, r"====\s*First round\s*====", [r"\n====", r"\n==="]) or y26
-    r2sec = section_slice(y26, r"====\s*Second round\s*====", [r"\n====", r"\n==="])
+    # Try the historical heading first, then any runoff-shaped heading inside
+    # the 2026 section, then the article as a whole (some cycles keep a single
+    # runoff section above the year split). RUNOFF_HEADING stays deliberately
+    # wide: a missed heading costs the whole block, while a loose one costs
+    # nothing, because candidate_tables() ignores any table with no date column.
+    r2sec = (section_slice(y26, r"====\s*Second round\s*====", [r"\n====", r"\n==="])
+             or find_section(y26, RUNOFF_HEADING)
+             or find_section(wt, RUNOFF_HEADING))
     first = []
     for cands, rows in candidate_tables(r1sec, 2026):
         for r in rows:
@@ -644,6 +679,11 @@ def fetch_br():
                "firstRound": sorted(first, key=lambda p: p["date"]), "matchups": matchups},
               open(os.path.join(OUT, "br_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("BR first-round poll rows:", len(first), "runoff tables:", len(matchups))
+    if first and not matchups:
+        # Not fatal: the first round still publishes. But a Brazilian cycle with
+        # first-round polling and no runoff polling is a scrape failure, not a
+        # fact about Brazil, and it must never pass in silence again.
+        print("  WARNING: first-round rows but NO runoff tables -- check the article headings")
     if first:
         print("  latest R1:", first[-1])
 
@@ -674,7 +714,76 @@ def fetch_fr():
     if first:
         print("  latest R1:", first[-1])
 
+# ---------------------------------------------------------------- self-test --
+# Pure parsing logic only, no network. Cases are the ones that have actually
+# broken or would have broken this scraper, not synthetic happy paths.
+
+_R2_L4 = """=== 2026 ===
+==== First round ====
+{| class="wikitable"
+! Pollster !! Polling period !! Lula !! Bolsonaro !! Others
+|-
+| Datafolha || 20 Aug || 39 || 33 || 5
+|}
+==== Second round ====
+{| class="wikitable"
+! Pollster !! Polling period !! Lula !! Bolsonaro
+|-
+| Datafolha || 20 Aug || 49 || 42
+|}
+=== 2025 ===
+stale
+"""
+
+# The drift that actually bit: the runoff tables move to a level-3 heading, or
+# get renamed, and a level-pinned pattern silently returns nothing.
+_R2_L3 = _R2_L4.replace("==== Second round ====", "=== Runoff scenarios ===")
+_R2_WORDS = _R2_L4.replace("==== Second round ====", "==== Second-round matchups ====")
+_R2_NONE = _R2_L4.replace("==== Second round ====", "==== Regional breakdown ====")
+
+
+def _self_test():
+    fails = []
+
+    def check(label, got, want):
+        if got != want:
+            fails.append("%s: got %r, want %r" % (label, got, want))
+
+    def runoff_rows(wt):
+        """The fetch_br() lookup chain, run over fixture wikitext."""
+        y26 = section_slice(wt, r"===\s*2026\s*===", [r"\n===\s*2025", r"\n==[^=]"])
+        sec = (section_slice(y26, r"====\s*Second round\s*====", [r"\n====", r"\n==="])
+               or find_section(y26, RUNOFF_HEADING)
+               or find_section(wt, RUNOFF_HEADING))
+        return sum(len(rows) for _, rows in candidate_tables(sec, 2026)) if sec else 0
+
+    # The historical layout must keep working.
+    check("level-4 second round", runoff_rows(_R2_L4), 1)
+    # ...and so must the layouts that broke it.
+    check("level-3 renamed", runoff_rows(_R2_L3), 1)
+    check("reworded heading", runoff_rows(_R2_WORDS), 1)
+    # A page with genuinely no runoff section must yield nothing rather than
+    # falling through and re-reading the first round as a matchup.
+    check("no runoff section", runoff_rows(_R2_NONE), 0)
+
+    # find_section stops at the next same-or-higher heading, so a matched
+    # section never swallows the rest of the article.
+    body = find_section(_R2_L3, RUNOFF_HEADING)
+    check("slice stops at 2025", "stale" in body, False)
+    check("slice keeps its table", "49" in body, True)
+    check("no match returns empty", find_section(_R2_L4, r"zzz nothing"), "")
+
+    if fails:
+        print("SELF-TEST FAILED")
+        for f in fails:
+            print("  -", f)
+        return 1
+    print("fetch_data self-test OK (%d cases)" % 7)
+    return 0
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv:
+        sys.exit(_self_test())
     print("fetching UK polls...")
     fetch_uk()
     print("fetching US polls...")

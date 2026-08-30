@@ -1,0 +1,5045 @@
+{
+ "meta": {
+  "title": "Portuguese Elections",
+  "sources": [
+   "Wikipedia: Portuguese legislative and presidential election articles 1911–2026",
+   "Comissão Nacional de Eleições figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "presEras": [
+  {
+   "key": "first",
+   "label": "The First Republic and the Estado Novo",
+   "span": "1911–1958",
+   "blurb": "Elected by parliament until 1918 and again after 1926, the presidency under Salazar was a formality with one exception: in 1958 General Delgado ran openly against the regime, was credited with 23% in a count nobody trusts, and was murdered by the secret police seven years later. Direct election was abolished immediately afterwards."
+  },
+  {
+   "key": "modern",
+   "label": "The presidency since the revolution",
+   "span": "1976–",
+   "blurb": "Directly elected again since 1976, on two rounds, with real powers of dissolution and veto that Portuguese presidents have used. Soares, Sampaio, Cavaco Silva and Marcelo Rebelo de Sousa each served the full two terms the constitution allows."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "first",
+   "label": "The First Republic",
+   "span": "1918–1926",
+   "blurb": "Sixteen years, forty-five governments and eight presidents, one of them assassinated. The republic that replaced the monarchy in 1910 never found a majority it could hold, and the elections of the period were run by whichever party controlled the ministry of the interior."
+  },
+  {
+   "key": "estadonovo",
+   "label": "The Estado Novo",
+   "span": "1934–1973",
+   "blurb": "Salazar's New State held elections every four years for forty years and lost none of them. Opposition candidates were permitted to register and then denied the electoral rolls, access to the press and any prospect of an honest count; most withdrew before polling day. The National Union won every seat in every election listed here."
+  },
+  {
+   "key": "revolution",
+   "label": "The Carnation Revolution",
+   "span": "1975–1985",
+   "blurb": "The captains' coup of April 1974 ended the dictatorship and the colonial wars together. The Constituent Assembly election of 1975, held on the revolution's first anniversary with a turnout of 91.7%, remains the highest participation in Portuguese history. What followed was a decade of minority governments, a hot summer of near civil war, and an IMF programme."
+  },
+  {
+   "key": "bipartisan",
+   "label": "Cavaco and the two-party years",
+   "span": "1987–2009",
+   "blurb": "Cavaco Silva's absolute majorities in 1987 and 1991 ended the instability and set the pattern: the PSD and the PS alternating, each occasionally strong enough to govern alone, the Communists and the CDS reduced to flanks."
+  },
+  {
+   "key": "austerity",
+   "label": "Troika and geringonça",
+   "span": "2011–2019",
+   "blurb": "The bailout of 2011 brought a right-wing majority and four years of austerity. In 2015 the right won the most votes and lost power anyway: the Socialists governed with the Communists and the Left Bloc supporting from outside, an arrangement the opposition named the geringonça, the contraption, and which lasted four years."
+  },
+  {
+   "key": "current",
+   "label": "Three elections in three years",
+   "span": "2022–",
+   "blurb": "An absolute majority in 2022 that collapsed within two years, then elections in 2024 and 2025 with Chega rising at each one until it finished second. The Portuguese party system, stable for thirty years, has fragmented faster than any other in western Europe."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1911",
+   "label": "1911",
+   "year": 1911,
+   "kind": "presidential",
+   "date": "February 18, 2025",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel de Arriaga",
+     "party": "Republican",
+     "r1Votes": 121,
+     "r1Share": 55.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bernardino Machado",
+     "party": "Republican",
+     "r1Votes": 86,
+     "r1Share": 39.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Duarte Leite",
+     "party": "Independent",
+     "r1Votes": 4,
+     "r1Share": 1.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sebastião de Magalhães Lima",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Augusto Alves da Veiga",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.46,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Teófilo Braga",
+    "party": "Republican"
+   },
+   "presAfter": {
+    "name": "Manuel de Arriaga",
+    "party": "Republican"
+   },
+   "knownAs": null,
+   "summary": "Manuel de Arriaga won with 55.76% against Bernardino Machado on 39.63%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1915-august",
+   "label": "August 1915",
+   "year": 1915,
+   "kind": "presidential",
+   "date": "6 August 1915",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Teófilo Braga",
+    "party": "Democratic"
+   },
+   "presAfter": {
+    "name": "Bernardino Machado",
+    "party": "Democratic"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1915-may",
+   "label": "May 1915",
+   "year": 1915,
+   "kind": "presidential",
+   "date": "29 May 1915",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Teófilo Braga",
+     "party": "Democratic",
+     "r1Votes": 98,
+     "r1Share": 96.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Duarte Leite",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.98,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel de Arriaga",
+    "party": "Democratic"
+   },
+   "presAfter": {
+    "name": "Teófilo Braga",
+    "party": "Democratic"
+   },
+   "knownAs": null,
+   "summary": "Teófilo Braga won with 96.08% against Duarte Leite on 0.98%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "presidential",
+   "date": "16 December 1918",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Sidónio Pais",
+    "party": "PNR"
+   },
+   "presAfter": {
+    "name": "João do Canto e Castro",
+    "party": "PNR"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "presidential",
+   "date": "6 December 1919",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "João do Canto e Castro",
+    "party": "PNR"
+   },
+   "presAfter": {
+    "name": "António José de Almeida",
+    "party": "Evolutionist"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "presidential",
+   "date": "6 August 1923",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "António José de Almeida",
+    "party": "Evolutionist"
+   },
+   "presAfter": {
+    "name": "Manuel Teixeira Gomes",
+    "party": "Democratic"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1925",
+   "label": "1925",
+   "year": 1925,
+   "kind": "presidential",
+   "date": "11 December 1925",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Manuel Teixeira Gomes",
+    "party": "Democratic"
+   },
+   "presAfter": {
+    "name": "Bernardino Machado",
+    "party": "Democratic"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "presidential",
+   "date": "25 March 1928",
+   "era": "first",
+   "turnout": 69.97,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Independent",
+     "party": null,
+     "r1Votes": 761730,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Óscar Carmona",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Óscar Carmona",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Independent won with 100.00%. Turnout 70.0%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "presidential",
+   "date": "17 February 1935",
+   "era": "first",
+   "turnout": 84.29,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Óscar Carmona",
+    "party": "UN"
+   },
+   "presAfter": {
+    "name": "Óscar Carmona",
+    "party": "UN"
+   },
+   "knownAs": null,
+   "summary": "Turnout 84.3%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1942",
+   "label": "1942",
+   "year": 1942,
+   "kind": "presidential",
+   "date": "8 February 1942",
+   "era": "first",
+   "turnout": 91.12,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Óscar Carmona",
+    "party": "UN"
+   },
+   "presAfter": {
+    "name": "Óscar Carmona",
+    "party": "UN"
+   },
+   "knownAs": null,
+   "summary": "Turnout 91.1%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "presidential",
+   "date": "13 February 1949",
+   "era": "first",
+   "turnout": 77.61,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Óscar Carmona",
+    "party": "UN"
+   },
+   "presAfter": {
+    "name": "Óscar Carmona",
+    "party": "UN"
+   },
+   "knownAs": null,
+   "summary": "Turnout 77.6%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1951",
+   "label": "1951",
+   "year": 1951,
+   "kind": "presidential",
+   "date": "22 July 1951",
+   "era": "first",
+   "turnout": 77.17,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Óscar Carmona",
+    "party": "UN"
+   },
+   "presAfter": {
+    "name": "Francisco Craveiro Lopes",
+    "party": "UN"
+   },
+   "knownAs": null,
+   "summary": "Turnout 77.2%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "presidential",
+   "date": "8 June 1958",
+   "era": "first",
+   "turnout": 77.35,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Américo Tomás",
+     "party": "National Union",
+     "r1Votes": 765081,
+     "r1Share": 76.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Humberto Delgado",
+     "party": "Independent",
+     "r1Votes": 236057,
+     "r1Share": 23.58,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Francisco Craveiro Lopes",
+    "party": "UN"
+   },
+   "presAfter": {
+    "name": "Américo Tomás",
+    "party": "UN"
+   },
+   "knownAs": null,
+   "summary": "Américo Tomás won with 76.42% against Humberto Delgado on 23.58%. Turnout 77.3%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "presidential",
+   "date": "25 July 1965",
+   "era": "modern",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Américo Tomás",
+    "party": "UN"
+   },
+   "presAfter": {
+    "name": "Américo Tomás",
+    "party": "UN"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1972",
+   "label": "1972",
+   "year": 1972,
+   "kind": "presidential",
+   "date": "25 July 1972",
+   "era": "modern",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Américo Tomás",
+     "party": "People's National Action",
+     "r1Votes": 616,
+     "r1Share": 95.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against",
+     "party": "29",
+     "r1Votes": 4,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Américo Tomás",
+    "party": "ANP"
+   },
+   "presAfter": {
+    "name": "Américo Tomás",
+    "party": "ANP"
+   },
+   "knownAs": null,
+   "summary": "Américo Tomás won with 95.50%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "presidential",
+   "date": "27 June 1976",
+   "era": "modern",
+   "turnout": 75.47,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "António Ramalho Eanes",
+     "party": "Independent",
+     "r1Votes": 2967137,
+     "r1Share": 61.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Otelo Saraiva de Carvalho",
+     "party": "Independent",
+     "r1Votes": 792760,
+     "r1Share": 16.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Pinheiro de Azevedo",
+     "party": "Independent",
+     "r1Votes": 692147,
+     "r1Share": 14.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Octávio Pato",
+     "party": "Portuguese Communist Party",
+     "r1Votes": 365586,
+     "r1Share": 7.59,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Francisco da Costa Gomes",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "António Ramalho Eanes",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "António Ramalho Eanes won with 61.59% against Otelo Saraiva de Carvalho on 16.46%. Turnout 75.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "presidential",
+   "date": "7 December 1980",
+   "era": "modern",
+   "turnout": 84.39,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "António Ramalho Eanes",
+     "party": "Independent",
+     "r1Votes": 3262520,
+     "r1Share": 56.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "António Soares Carneiro",
+     "party": "Democratic Alliance",
+     "r1Votes": 2325481,
+     "r1Share": 40.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Otelo Saraiva de Carvalho",
+     "party": "Popular Unity Force",
+     "r1Votes": 85896,
+     "r1Share": 1.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Galvão de Melo",
+     "party": "Independent",
+     "r1Votes": 48468,
+     "r1Share": 0.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "António Pires Veloso",
+     "party": "Independent",
+     "r1Votes": 45132,
+     "r1Share": 0.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "António Aires Rodrigues",
+     "party": "Workers Party of Socialist Unity",
+     "r1Votes": 12745,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "António Ramalho Eanes",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "António Ramalho Eanes",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "António Ramalho Eanes won with 56.44% against António Soares Carneiro on 40.23%. Turnout 84.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "presidential",
+   "date": "1986",
+   "era": "modern",
+   "turnout": 75.39,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "PS",
+     "party": null,
+     "r1Votes": 3010756,
+     "r1Share": 51.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "CDS",
+     "party": null,
+     "r1Votes": 2872064,
+     "r1Share": 48.82,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "António Ramalho Eanes",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Mário Soares",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "PS won with 51.18% against CDS on 48.82%. Turnout 75.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "presidential",
+   "date": "13 January 1991",
+   "era": "modern",
+   "turnout": 62.16,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mário Soares",
+     "party": "Socialist Party",
+     "r1Votes": 3459521,
+     "r1Share": 70.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Basílio Horta",
+     "party": "Democratic Social Center",
+     "r1Votes": 696379,
+     "r1Share": 14.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Carvalhas",
+     "party": "Portuguese Communist Party",
+     "r1Votes": 635373,
+     "r1Share": 12.92,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Manuel Marques",
+     "party": "Popular Democratic Union",
+     "r1Votes": 126581,
+     "r1Share": 2.57,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mário Soares",
+    "party": "PS"
+   },
+   "presAfter": {
+    "name": "Mário Soares",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "Mário Soares won with 70.35% against Basílio Horta on 14.16%. Turnout 62.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "presidential",
+   "date": "14 January 1996",
+   "era": "modern",
+   "turnout": 66.29,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Jorge Sampaio",
+     "party": "Socialist Party",
+     "r1Votes": 3035056,
+     "r1Share": 53.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aníbal Cavaco Silva",
+     "party": "Social Democratic Party",
+     "r1Votes": 2595131,
+     "r1Share": 46.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mário Soares",
+    "party": "PS"
+   },
+   "presAfter": {
+    "name": "Jorge Sampaio",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "Jorge Sampaio won with 53.91% against Aníbal Cavaco Silva on 46.09%. Turnout 66.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2001",
+   "label": "2001",
+   "year": 2001,
+   "kind": "presidential",
+   "date": "14 January 2001",
+   "era": "modern",
+   "turnout": 49.71,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Jorge Sampaio",
+     "party": "Socialist Party",
+     "r1Votes": 2401015,
+     "r1Share": 55.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquim Ferreira do Amaral",
+     "party": "Social Democratic Party",
+     "r1Votes": 1498948,
+     "r1Share": 34.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "António Abreu",
+     "party": "Portuguese Communist Party",
+     "r1Votes": 223196,
+     "r1Share": 5.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Rosas",
+     "party": "Left Bloc",
+     "r1Votes": 129840,
+     "r1Share": 3.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "António Garcia Pereira",
+     "party": "Portuguese Workers' Communist Party",
+     "r1Votes": 68900,
+     "r1Share": 1.59,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jorge Sampaio",
+    "party": "PS"
+   },
+   "presAfter": {
+    "name": "Jorge Sampaio",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "Jorge Sampaio won with 55.55% against Joaquim Ferreira do Amaral on 34.68%. Turnout 49.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "presidential",
+   "date": "22 January 2006",
+   "era": "modern",
+   "turnout": 61.53,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Aníbal Cavaco Silva",
+     "party": "Social Democratic Party",
+     "r1Votes": 2773431,
+     "r1Share": 50.54,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Alegre",
+     "party": "Independent",
+     "r1Votes": 1138297,
+     "r1Share": 20.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mário Soares",
+     "party": "Socialist Party",
+     "r1Votes": 785355,
+     "r1Share": 14.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jerónimo de Sousa",
+     "party": "Portuguese Communist Party",
+     "r1Votes": 474083,
+     "r1Share": 8.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Louçã",
+     "party": "Left Bloc",
+     "r1Votes": 292198,
+     "r1Share": 5.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "António Garcia Pereira",
+     "party": "Portuguese Workers' Communist Party",
+     "r1Votes": 23983,
+     "r1Share": 0.44,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jorge Sampaio",
+    "party": "PS"
+   },
+   "presAfter": {
+    "name": "Aníbal Cavaco Silva",
+    "party": "PSD"
+   },
+   "knownAs": null,
+   "summary": "Aníbal Cavaco Silva won with 50.54% against Manuel Alegre on 20.74%. Turnout 61.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "presidential",
+   "date": "23 January 2011",
+   "era": "modern",
+   "turnout": 46.52,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Aníbal Cavaco Silva",
+     "party": "Social Democratic Party",
+     "r1Votes": 2231956,
+     "r1Share": 52.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Alegre",
+     "party": "Socialist Party",
+     "r1Votes": 831838,
+     "r1Share": 19.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Nobre",
+     "party": "Independent",
+     "r1Votes": 593021,
+     "r1Share": 14.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Lopes",
+     "party": "Portuguese Communist Party",
+     "r1Votes": 301017,
+     "r1Share": 7.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Manuel Coelho",
+     "party": "New Democracy Party",
+     "r1Votes": 189918,
+     "r1Share": 4.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Defensor Moura",
+     "party": "Independent",
+     "r1Votes": 67110,
+     "r1Share": 1.59,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Aníbal Cavaco Silva",
+    "party": "PSD"
+   },
+   "presAfter": {
+    "name": "Aníbal Cavaco Silva",
+    "party": "PSD"
+   },
+   "knownAs": null,
+   "summary": "Aníbal Cavaco Silva won with 52.95% against Manuel Alegre on 19.74%. Turnout 46.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "presidential",
+   "date": "24 January 2016",
+   "era": "modern",
+   "turnout": 48.66,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Marcelo Rebelo de Sousa",
+     "party": "Social Democratic Party",
+     "r1Votes": 2413956,
+     "r1Share": 52.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "António Sampaio da Nóvoa",
+     "party": "Independent",
+     "r1Votes": 1062138,
+     "r1Share": 22.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marisa Matias",
+     "party": "Left Bloc",
+     "r1Votes": 469814,
+     "r1Share": 10.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Maria de Belém",
+     "party": "Independent",
+     "r1Votes": 196765,
+     "r1Share": 4.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Edgar Silva",
+     "party": "Portuguese Communist Party",
+     "r1Votes": 183051,
+     "r1Share": 3.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vitorino Silva",
+     "party": "Independent",
+     "r1Votes": 152374,
+     "r1Share": 3.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paulo de Morais",
+     "party": "Independent",
+     "r1Votes": 100191,
+     "r1Share": 2.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henrique Neto",
+     "party": "Independent",
+     "r1Votes": 39163,
+     "r1Share": 0.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Sequeira",
+     "party": "Independent",
+     "r1Votes": 13954,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cândido Ferreira",
+     "party": "Independent",
+     "r1Votes": 10609,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Aníbal Cavaco Silva",
+    "party": "PSD"
+   },
+   "presAfter": {
+    "name": "Marcelo Rebelo de Sousa",
+    "party": "PSD"
+   },
+   "knownAs": null,
+   "summary": "Marcelo Rebelo de Sousa won with 52.00% against António Sampaio da Nóvoa on 22.88%. Turnout 48.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "presidential",
+   "date": "24 January 2021",
+   "era": "modern",
+   "turnout": 39.26,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Marcelo Rebelo de Sousa",
+     "party": "Social Democratic Party",
+     "r1Votes": 2531692,
+     "r1Share": 60.67,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ana Gomes",
+     "party": "Independent",
+     "r1Votes": 540823,
+     "r1Share": 12.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "André Ventura",
+     "party": "Chega",
+     "r1Votes": 497746,
+     "r1Share": 11.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "João Ferreira",
+     "party": "Portuguese Communist Party",
+     "r1Votes": 179764,
+     "r1Share": 4.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marisa Matias",
+     "party": "Left Bloc",
+     "r1Votes": 165127,
+     "r1Share": 3.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tiago Mayan Gonçalves",
+     "party": "Liberal Initiative",
+     "r1Votes": 134991,
+     "r1Share": 3.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vitorino Silva",
+     "party": "React, Include, Recycle",
+     "r1Votes": 123031,
+     "r1Share": 2.95,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Marcelo Rebelo de Sousa",
+    "party": "PSD"
+   },
+   "presAfter": {
+    "name": "Marcelo Rebelo de Sousa",
+    "party": "PSD"
+   },
+   "knownAs": null,
+   "summary": "Marcelo Rebelo de Sousa won with 60.67% against Ana Gomes on 12.96%. Turnout 39.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "presidential",
+   "date": "18 January 2026",
+   "era": "modern",
+   "turnout": 52.39,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "PS",
+     "party": null,
+     "r1Votes": 3502613,
+     "r1Share": 66.84,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Marcelo Rebelo de Sousa",
+    "party": "PSD"
+   },
+   "presAfter": {
+    "name": "António José Seguro",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "PS won with 66.84%. Turnout 52.4%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "legislative",
+   "date": "28 April 1918",
+   "era": "first",
+   "totalSeats": 155,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Republican Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 108.0,
+     "swing": null
+    },
+    {
+     "name": "Monarchist Cause",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 37.0,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Catholic Centre",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.0,
+     "swing": null
+    },
+    {
+     "name": "Other parties and independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sidónio Pais",
+    "party": "PNR"
+   },
+   "pmAfter": {
+    "name": "Sidónio Pais",
+    "party": "PNR"
+   },
+   "knownAs": null,
+   "summary": "Portuguese Catholic Centre finished first with 4 of 155 seats on 5.0% of the vote. Sidónio Pais stayed in office.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "legislative",
+   "date": "11 May 1919",
+   "era": "first",
+   "totalSeats": 163,
+   "majoritySeats": 82,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Evolutionist Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Union",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Socialist Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Catholic Centre",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties and independents",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 8,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Domingos Leite Pereira",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Democratic Party finished first with 86 of 163 seats.",
+   "seatLeader": "Democratic Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "kind": "legislative",
+   "date": "10 July 1921",
+   "era": "first",
+   "totalSeats": 163,
+   "majoritySeats": 82,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Republican Liberal Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": 24,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": -32,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reconstitution Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Monarchist Cause",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Catholic Centre",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -8,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Regionalist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties and independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tomé José de Barros Queirós",
+    "party": "PLR"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Republican Liberal Party finished first with 79 of 163 seats.",
+   "seatLeader": "Republican Liberal Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "legislative",
+   "date": "29 January 1922",
+   "era": "first",
+   "totalSeats": 163,
+   "majoritySeats": 82,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 20,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Liberal Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -45,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reconstitution Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Monarchist Cause",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Catholic Centre",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -8,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Regionalist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties and independents",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Cunha Leal",
+    "party": "Democratic"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Democratic Party finished first with 74 of 163 seats.",
+   "seatLeader": "Democratic Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "kind": "legislative",
+   "date": "8 November 1925",
+   "era": "first",
+   "totalSeats": 163,
+   "majoritySeats": 82,
+   "turnout": 71.04,
+   "parties": [
+    {
+     "name": "Democratic Leftwing Republican Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.0,
+     "swing": null
+    },
+    {
+     "name": "Union of Economic Interests",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.0,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Catholic Centre",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.0,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Socialist Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "Other parties and independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 19.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Domingos Leite Pereira",
+    "party": "Democratic"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Other parties and independents led the poll with 19.0%. Turnout 71.0%.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1934",
+   "label": "1934",
+   "year": 1934,
+   "kind": "legislative",
+   "date": "16 December 1934",
+   "era": "estadonovo",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "UN",
+     "leader": "António de Oliveira Salazar",
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "UN finished first with 100 of 100 seats.",
+   "seatLeader": "UN",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "legislative",
+   "date": "30 October 1938",
+   "era": "estadonovo",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "UN",
+     "leader": "António de Oliveira Salazar",
+     "seats": 100,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "UN finished first with 100 of 100 seats.",
+   "seatLeader": "UN",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1942",
+   "label": "1942",
+   "year": 1942,
+   "kind": "legislative",
+   "date": "1 November 1942",
+   "era": "estadonovo",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "UN",
+     "leader": "António de Oliveira Salazar",
+     "seats": 100,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "UN finished first with 100 of 100 seats.",
+   "seatLeader": "UN",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "18 November 1945",
+   "era": "estadonovo",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "UN",
+     "leader": "António de Oliveira Salazar",
+     "seats": 120,
+     "seatChange": 20,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "UN finished first with 120 of 120 seats.",
+   "seatLeader": "UN",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "13 November 1949",
+   "era": "estadonovo",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A portuguese election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "legislative",
+   "date": "8 November 1953",
+   "era": "estadonovo",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 68.2,
+   "parties": [
+    {
+     "name": "National Union",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 120.0,
+     "swing": null
+    },
+    {
+     "name": "Opposition lists",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Union led the poll with 120.0%. Turnout 68.2%.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "3 November 1957",
+   "era": "estadonovo",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 70.43,
+   "parties": [
+    {
+     "name": "National Union",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 120.0,
+     "swing": null
+    },
+    {
+     "name": "Opposition lists",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Union led the poll with 120.0%. Turnout 70.4%.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "12 November 1961",
+   "era": "estadonovo",
+   "totalSeats": 130,
+   "majoritySeats": 66,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "UN",
+     "leader": "António de Oliveira Salazar",
+     "seats": 130,
+     "seatChange": 10,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "UN finished first with 130 of 130 seats.",
+   "seatLeader": "UN",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "7 November 1965",
+   "era": "estadonovo",
+   "totalSeats": 130,
+   "majoritySeats": 66,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "António de Oliveira Salazar",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A portuguese election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "26 October 1969",
+   "era": "estadonovo",
+   "totalSeats": 130,
+   "majoritySeats": 66,
+   "turnout": 62.5,
+   "parties": [
+    {
+     "name": "National Union",
+     "leader": null,
+     "seats": 130,
+     "seatChange": null,
+     "votes": 981263,
+     "share": 88.07,
+     "swing": null
+    },
+    {
+     "name": "Democratic Electoral Commission",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 114745,
+     "share": 10.3,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Electoral Commission",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16863,
+     "share": 1.51,
+     "swing": null
+    },
+    {
+     "name": "Monarchist Electoral Commission",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1324,
+     "share": 0.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Marcello Caetano",
+    "party": "UN"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Union finished first with 130 of 130 seats on 88.1% of the vote. Turnout 62.5%.",
+   "seatLeader": "National Union",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "28 October 1973",
+   "era": "estadonovo",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "ANP",
+     "leader": "Marcello Caetano",
+     "seats": 150,
+     "seatChange": 20,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Marcello Caetano",
+    "party": "ANP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "ANP finished first with 150 of 150 seats.",
+   "seatLeader": "ANP",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "kind": "legislative",
+   "date": "25 April 1975",
+   "era": "revolution",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": 91.66,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 116,
+     "seatChange": null,
+     "votes": 2162972,
+     "share": 37.87,
+     "swing": null
+    },
+    {
+     "name": "Democratic People's Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": 1507282,
+     "share": 26.39,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Communist Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 711935,
+     "share": 12.46,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Centre",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 434879,
+     "share": 7.61,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Democratic Movement",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 236318,
+     "share": 4.14,
+     "swing": null
+    },
+    {
+     "name": "People's Socialist Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 66307,
+     "share": 1.16,
+     "swing": null
+    },
+    {
+     "name": "Movement of Socialist Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 58248,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44877,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "Communist Electoral Front (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33185,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32526,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Popular Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13138,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Internationalist Communist League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10835,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Association for the Defense of Macau Interests",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 1622,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Democratic Centre of Macau",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1030,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 116 of 250 seats on 37.9% of the vote. Turnout 91.7%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "25 April 1976",
+   "era": "revolution",
+   "totalSeats": 263,
+   "majoritySeats": 132,
+   "turnout": 83.53,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 107,
+     "seatChange": -3,
+     "votes": 1912921,
+     "share": 34.89,
+     "swing": null
+    },
+    {
+     "name": "Democratic People's Party",
+     "leader": null,
+     "seats": 73,
+     "seatChange": -2,
+     "votes": 1335381,
+     "share": 24.35,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Centre",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 8,
+     "votes": 876007,
+     "share": 15.98,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Communist Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 2,
+     "votes": 788830,
+     "share": 14.39,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 91690,
+     "share": 1.67,
+     "swing": null
+    },
+    {
+     "name": "People's Socialist Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 42162,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Reorganizing Movement of the Party of the Proletariat",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36200,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Movement of Socialist Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 31332,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29874,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28320,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "Internationalist Communist League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16269,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Portugal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15830,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Worker–Peasant Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15778,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Workers' Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5171,
+     "share": 0.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Vasco de Almeida e Costa (interim)",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 107 of 263 seats on 34.9% of the vote. Turnout 83.5%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "2 December 1979",
+   "era": "revolution",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": 82.87,
+   "parties": [
+    {
+     "name": "Democratic Alliance",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 2554458,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 141227,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23523,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": -8,
+     "votes": 1642136,
+     "share": 27.33,
+     "swing": null
+    },
+    {
+     "name": "United People Alliance",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 4,
+     "votes": 1129322,
+     "share": 18.8,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 130842,
+     "share": 2.18,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 72514,
+     "share": 1.21,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 53268,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Left-wing Union for the Socialist Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43325,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 36978,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12713,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Marxist–Leninist Communist Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3433,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Maria de Lurdes Pintasilgo",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 74 of 250 seats on 27.3% of the vote. Turnout 82.9%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "legislative",
+   "date": "5 October 1980",
+   "era": "revolution",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": 83.94,
+   "parties": [
+    {
+     "name": "Democratic Alliance",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 2706667,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": 147644,
+     "share": 2.45,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13765,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Republican and Socialist Front",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 1606198,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 67081,
+     "share": 1.11,
+     "swing": null
+    },
+    {
+     "name": "United People Alliance",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -2,
+     "votes": 1009505,
+     "share": 16.75,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 83204,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 83095,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Socialist",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 60496,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39408,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 35409,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "PDC–MIRN/PDP–FN",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 23819,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of the Atlantic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8529,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Marxist–Leninist Communist Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3913,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Sá Carneiro",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Democratic Alliance finished first with 44 of 250 seats. Turnout 83.9%.",
+   "seatLeader": "Democratic Alliance",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "25 April 1983",
+   "era": "revolution",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": 77.79,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 101,
+     "seatChange": 8,
+     "votes": 2061309,
+     "share": 36.11,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": 1554804,
+     "share": 27.24,
+     "swing": null
+    },
+    {
+     "name": "United People Alliance",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 1,
+     "votes": 1031609,
+     "share": 18.07,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Centre",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 716705,
+     "share": 12.56,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 39180,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27635,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 27260,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union–Revolutionary Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25222,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20995,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 19657,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 13327,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11500,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Marxist–Leninist Communist Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6113,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of the Atlantic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5523,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Communist Party (Reconstructed)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 86,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Pinto Balsemão",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 101 of 250 seats on 36.1% of the vote. Turnout 77.8%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "6 October 1985",
+   "era": "revolution",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": 74.16,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 88,
+     "seatChange": 3,
+     "votes": 1732288,
+     "share": 29.87,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": -15,
+     "votes": 1204321,
+     "share": 20.77,
+     "swing": null
+    },
+    {
+     "name": "Democratic Renewal Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": null,
+     "votes": 1038893,
+     "share": 17.92,
+     "swing": null
+    },
+    {
+     "name": "United People Alliance",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -3,
+     "votes": 898281,
+     "share": 15.49,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Centre",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -3,
+     "votes": 577580,
+     "share": 9.96,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 73401,
+     "share": 1.27,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 41831,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 35238,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19943,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19085,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Communist Party (Reconstructed)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12749,
+     "share": 0.22,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mário Soares",
+    "party": "PS"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 88 of 250 seats on 29.9% of the vote. Turnout 74.2%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "legislative",
+   "date": "19 July 1987",
+   "era": "bipartisan",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": 71.57,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 148,
+     "seatChange": 20,
+     "votes": 2850784,
+     "share": 50.22,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 1,
+     "votes": 1262506,
+     "share": 22.24,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -3,
+     "votes": 689137,
+     "share": 12.14,
+     "swing": null
+    },
+    {
+     "name": "Democratic Renewal Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -13,
+     "votes": 278561,
+     "share": 4.91,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Centre",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -6,
+     "votes": 251987,
+     "share": 4.44,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 50717,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 32977,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32607,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 31667,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23218,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20800,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Communist Party (Reconstructed)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18544,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9185,
+     "share": 0.16,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aníbal Cavaco Silva",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 148 of 250 seats on 50.2% of the vote. Turnout 71.6%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "legislative",
+   "date": "6 October 1991",
+   "era": "bipartisan",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 67.78,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 135,
+     "seatChange": 0,
+     "votes": 2902351,
+     "share": 50.6,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 72,
+     "seatChange": 7,
+     "votes": 1670758,
+     "share": 29.13,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -3,
+     "votes": 504583,
+     "share": 8.8,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Centre",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": 254317,
+     "share": 4.43,
+     "swing": null
+    },
+    {
+     "name": "National Solidarity Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 96096,
+     "share": 1.68,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 64159,
+     "share": 1.12,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 48542,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "Democratic Renewal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 35077,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25216,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of the Atlantic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10842,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Left Revolutionary Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6661,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 6157,
+     "share": 0.11,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aníbal Cavaco Silva",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 135 of 230 seats on 50.6% of the vote. Turnout 67.8%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "1 October 1995",
+   "era": "bipartisan",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 66.3,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 112,
+     "seatChange": 15,
+     "votes": 2583755,
+     "share": 43.76,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 88,
+     "seatChange": -16,
+     "votes": 2014589,
+     "share": 34.12,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 5,
+     "votes": 534470,
+     "share": 9.05,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0,
+     "votes": 506157,
+     "share": 8.57,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 41137,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 37638,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 33876,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "National Solidarity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 12613,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Party of the Folk",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8279,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8235,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Ecology and Future Coalition (PPM–MPT)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5932,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Unity Movement for Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2544,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of the Atlantic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2536,
+     "share": 0.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aníbal Cavaco Silva",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 112 of 230 seats on 43.8% of the vote. Turnout 66.3%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "legislative",
+   "date": "10 October 1999",
+   "era": "bipartisan",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 61.09,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 115,
+     "seatChange": 0,
+     "votes": 2385922,
+     "share": 44.06,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": -2,
+     "votes": 1750158,
+     "share": 32.32,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0,
+     "votes": 487058,
+     "share": 8.99,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -1,
+     "votes": 451643,
+     "share": 8.34,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 132333,
+     "share": 2.44,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 40006,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19938,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16522,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "National Solidarity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11488,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7346,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4104,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of the Atlantic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 438,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António Guterres",
+    "party": "PS"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 115 of 230 seats on 44.1% of the vote. Turnout 61.1%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "17 March 2002",
+   "era": "bipartisan",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 61.47,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 105,
+     "seatChange": 8,
+     "votes": 2200765,
+     "share": 40.21,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 96,
+     "seatChange": -6,
+     "votes": 2068584,
+     "share": 37.8,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0,
+     "votes": 477350,
+     "share": 8.72,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -2,
+     "votes": 379870,
+     "share": 6.94,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": 149966,
+     "share": 2.74,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 36193,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15540,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12398,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11472,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "National Renovator Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4712,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4316,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc–Popular Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3911,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "National Solidarity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António Guterres",
+    "party": "PS"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 105 of 230 seats on 40.2% of the vote. Turnout 61.5%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "20 February 2005",
+   "era": "bipartisan",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 64.26,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 121,
+     "seatChange": 7,
+     "votes": 2588312,
+     "share": 45.03,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": -11,
+     "votes": 1653425,
+     "share": 28.77,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 1,
+     "votes": 433369,
+     "share": 7.54,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -1,
+     "votes": 416415,
+     "share": 7.24,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 4,
+     "votes": 364971,
+     "share": 6.35,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 48186,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "New Democracy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40358,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17056,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "National Renovator Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9374,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5535,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of the Atlantic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1618,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Pedro Santana Lopes",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 121 of 230 seats on 45.0% of the vote. Turnout 64.3%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "legislative",
+   "date": "27 September 2009",
+   "era": "bipartisan",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 59.68,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 97,
+     "seatChange": -8,
+     "votes": 2077238,
+     "share": 36.56,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": 0,
+     "votes": 1653665,
+     "share": 29.11,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 3,
+     "votes": 592778,
+     "share": 10.43,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 3,
+     "votes": 557306,
+     "share": 9.81,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0,
+     "votes": 446279,
+     "share": 7.86,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 52761,
+     "share": 0.93,
+     "swing": null
+    },
+    {
+     "name": "Hope for Portugal Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25949,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "New Democracy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21876,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Merit and Society Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16924,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15262,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Ecology and Humanism Front (MPT–PH)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12405,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "National Renovator Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11503,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Portugal Pro-Life Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8461,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4974,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4632,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3265,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "José Sócrates",
+    "party": "PS"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 97 of 230 seats on 36.6% of the vote. Turnout 59.7%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "5 June 2011",
+   "era": "austerity",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 58.03,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 108,
+     "seatChange": 10,
+     "votes": 2159181,
+     "share": 38.66,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": -9,
+     "votes": 1566347,
+     "share": 28.05,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 1,
+     "votes": 653888,
+     "share": 11.71,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 0,
+     "votes": 441147,
+     "share": 7.9,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -5,
+     "votes": 288923,
+     "share": 5.17,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 62610,
+     "share": 1.12,
+     "swing": null
+    },
+    {
+     "name": "Party for Animals and Nature",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57995,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22705,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Hope for Portugal Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21942,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "National Renovator Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17548,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16895,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14687,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "New Democracy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11806,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Portugal Pro-Life Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8209,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4572,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of the Atlantic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4569,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3588,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "José Sócrates",
+    "party": "PS"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 108 of 230 seats on 38.7% of the vote. Turnout 58.0%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "4 October 2015",
+   "era": "austerity",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 55.84,
+   "parties": [
+    {
+     "name": "Portugal Ahead",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 1993504,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": 80841,
+     "share": 1.49,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7496,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Alliance Azores",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3624,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 4,
+     "votes": 1747730,
+     "share": 32.32,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 5,
+     "votes": 550945,
+     "share": 10.19,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0,
+     "votes": 445901,
+     "share": 8.25,
+     "swing": null
+    },
+    {
+     "name": "People Animals Nature",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 75170,
+     "share": 1.39,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61920,
+     "share": 1.14,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 60045,
+     "share": 1.11,
+     "swing": null
+    },
+    {
+     "name": "LIVRE/Time to move forward",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39330,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "National Renovator Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 27286,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22627,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "We, the Citizens!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21382,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "ACT! (Labour/Socialist Alternative)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20793,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14916,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Together for the People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14275,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "United Party of Retirees and Pensioners",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13899,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Citizenship and Christian Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2685,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1744,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Pedro Passos Coelho",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 86 of 230 seats on 32.3% of the vote. Turnout 55.8%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "6 October 2019",
+   "era": "austerity",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 48.6,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 108,
+     "seatChange": 4,
+     "votes": 1903687,
+     "share": 36.35,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": 1454283,
+     "share": 27.77,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -1,
+     "votes": 498549,
+     "share": 9.52,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -2,
+     "votes": 332018,
+     "share": 6.34,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 221094,
+     "share": 4.22,
+     "swing": null
+    },
+    {
+     "name": "People Animals Nature",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 173931,
+     "share": 3.32,
+     "swing": null
+    },
+    {
+     "name": "Chega",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 67502,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "Liberal Initiative",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 67443,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "LIVRE",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 56940,
+     "share": 1.09,
+     "swing": null
+    },
+    {
+     "name": "Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40175,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 36006,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "React, Include, Recycle",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35169,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "National Renovator Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16992,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12888,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "We, the Citizens!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12346,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 11674,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "United Party of Retirees and Pensioners",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11457,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Together for the People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10552,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8389,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8271,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Socialist Alternative Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3243,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António Costa",
+    "party": "PS"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 108 of 230 seats on 36.4% of the vote. Turnout 48.6%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "legislative",
+   "date": "30 January 2022",
+   "era": "current",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 51.46,
+   "parties": [
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 120,
+     "seatChange": 5,
+     "votes": 2302601,
+     "share": 41.38,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 1539415,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Madeira First",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": 50636,
+     "share": 0.91,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 28330,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Chega",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 6,
+     "votes": 399659,
+     "share": 7.18,
+     "swing": null
+    },
+    {
+     "name": "Liberal Initiative",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 4,
+     "votes": 273687,
+     "share": 4.92,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -5,
+     "votes": 244603,
+     "share": 4.4,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -2,
+     "votes": 238920,
+     "share": 4.29,
+     "swing": null
+    },
+    {
+     "name": "CDS – People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 89181,
+     "share": 1.6,
+     "swing": null
+    },
+    {
+     "name": "People Animals Nature",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": 88152,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "LIVRE",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 71232,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "React, Include, Recycle",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23233,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11265,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Alternative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10874,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Together for the People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10786,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7561,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Volt Portugal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6240,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Socialist Alternative Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6157,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Rise Up",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5043,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "We, the Citizens!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3880,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3533,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 2467,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 260,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António Costa",
+    "party": "PS"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 120 of 230 seats on 41.4% of the vote. Turnout 51.5%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "10 March 2024",
+   "era": "current",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 59.9,
+   "parties": [
+    {
+     "name": "Democratic Alliance",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 1814002,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Madeira First",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": 52989,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 451,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 78,
+     "seatChange": -13,
+     "votes": 1812443,
+     "share": 27.98,
+     "swing": null
+    },
+    {
+     "name": "Chega",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 11,
+     "votes": 1169781,
+     "share": 18.06,
+     "swing": null
+    },
+    {
+     "name": "Liberal Initiative",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": 319877,
+     "share": 4.94,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": 282314,
+     "share": 4.36,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -1,
+     "votes": 205551,
+     "share": 3.17,
+     "swing": null
+    },
+    {
+     "name": "LIVRE",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 204875,
+     "share": 3.16,
+     "swing": null
+    },
+    {
+     "name": "People Animals Nature",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 126125,
+     "share": 1.95,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Alternative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 102134,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "React, Include, Recycle",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26092,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Together for the People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19145,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Nova Direita",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16456,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15491,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Volt Portugal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11854,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Ergue-te",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6030,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Alternative 21 (Earth Party/Alliance)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4265,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2435,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "We, the Citizens!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2399,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Socialist Alternative Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "António Costa",
+    "party": "PS"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Socialist Party finished first with 78 of 230 seats on 28.0% of the vote. Turnout 59.9%.",
+   "seatLeader": "Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "legislative",
+   "date": "18 May 2025",
+   "era": "current",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 58.25,
+   "parties": [
+    {
+     "name": "AD – PSD/CDS Coalition",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 1971602,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Coalition PSD/CDS/PPM",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": 36886,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": -5,
+     "votes": 1442546,
+     "share": 22.83,
+     "swing": null
+    },
+    {
+     "name": "Chega",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 5,
+     "votes": 1438554,
+     "share": 22.76,
+     "swing": null
+    },
+    {
+     "name": "Liberal Initiative",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 338974,
+     "share": 5.36,
+     "swing": null
+    },
+    {
+     "name": "LIVRE",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1,
+     "votes": 257291,
+     "share": 4.07,
+     "swing": null
+    },
+    {
+     "name": "Unitary Democratic Coalition",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": 183686,
+     "share": 2.91,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": 125808,
+     "share": 1.99,
+     "swing": null
+    },
+    {
+     "name": "People Animals Nature",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 86930,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Alternative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 81660,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "Together for the People",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 20900,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "React, Include, Recycle",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14021,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Volt Portugal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12150,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Workers' Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11896,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Nova Direita",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10216,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Ergue-te",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9046,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Liberal Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7332,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5616,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "We, the Citizens!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3304,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 478,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Portuguese Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 425,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Luís Montenegro",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Chega finished first with 60 of 230 seats on 22.8% of the vote. Turnout 58.2%.",
+   "seatLeader": "Chega",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

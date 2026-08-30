@@ -16,11 +16,12 @@
     "check:skyscrapers": "node scripts/check-skyscrapers.mjs",
     "check:score-parity": "node scripts/check-score-parity.mjs",
     "check:table-scroll": "node scripts/check-table-scroll.mjs",
+    "check:election-dates": "node scripts/check-election-dates.mjs",
     "check:live-data": "node scripts/check-live-data.mjs",
     "test": "vitest run",
     "test:python": "node scripts/run-pytest.mjs",
     "test:watch": "vitest",
-    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:slug-drift && npm run check:team-placement && npm run check:skyscrapers && npm run check:score-parity && npm run check:table-scroll && npm run check:mobile && npm run check:live-data && npm run test && npm run test:python && next build --webpack",
+    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:slug-drift && npm run check:team-placement && npm run check:skyscrapers && npm run check:score-parity && npm run check:table-scroll && npm run check:election-dates && npm run check:mobile && npm run check:live-data && npm run test && npm run test:python && next build --webpack",
     "deploy-status": "node scripts/deploy-status.mjs",
     "check:mobile": "node scripts/check-mobile.mjs",
     "probe:mobile": "node scripts/probe-mobile.mjs"

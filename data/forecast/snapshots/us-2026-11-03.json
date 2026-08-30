@@ -1,0 +1,256 @@
+{
+ "code": "us",
+ "election": "2026-11-03",
+ "confidence": "confirmed",
+ "built": "2026-08-30",
+ "daysBefore": 65,
+ "block": {
+  "margin": 6.2,
+  "sigma": 2.6,
+  "aggregators": [
+   {
+    "source": "Decision Desk HQ",
+    "dem": 46.1,
+    "rep": 40.0,
+    "updated": "2026-08-27"
+   },
+   {
+    "source": "FiftyPlusOne",
+    "dem": 49.5,
+    "rep": 43.4,
+    "updated": "2026-08-27"
+   },
+   {
+    "source": "RealClearPolitics",
+    "dem": 48.2,
+    "rep": 41.8,
+    "updated": "2026-08-27"
+   },
+   {
+    "source": "Silver Bulletin",
+    "dem": 48.3,
+    "rep": 41.7,
+    "updated": "2026-08-27"
+   },
+   {
+    "source": "VoteHub",
+    "dem": 47.3,
+    "rep": 41.3,
+    "updated": "2026-08-27"
+   },
+   {
+    "source": "Race to the WH",
+    "dem": 47.9,
+    "rep": 41.9,
+    "updated": "2026-08-27"
+   }
+  ],
+  "demSeats": {
+   "median": 226,
+   "lo": 205,
+   "hi": 248
+  },
+  "pDemHouse": 75.0,
+  "fit": {
+   "a": 209.5,
+   "b": 2.71,
+   "residSd": 11.3,
+   "cycles": [
+    [
+     2012,
+     1.2,
+     201
+    ],
+    [
+     2014,
+     -5.7,
+     188
+    ],
+    [
+     2016,
+     -1.1,
+     194
+    ],
+    [
+     2018,
+     8.6,
+     235
+    ],
+    [
+     2020,
+     3.1,
+     222
+    ],
+    [
+     2022,
+     -2.8,
+     213
+    ],
+    [
+     2024,
+     -2.7,
+     215
+    ]
+   ]
+  },
+  "monthsOut": 2.1,
+  "sims": 20000,
+  "election": "2026-11-03",
+  "electionDate": "2026-11-03",
+  "electionConfidence": "confirmed",
+  "sources": [
+   "Wikipedia: 2026 United States House of Representatives elections, generic congressional ballot (CC BY-SA 4.0)",
+   "Wikipedia: 2026 United States Senate elections, race-ratings table citing Cook, Inside Elections, Sabato, The Economist, RCP, DDHQ, Race to the WH and Fox (CC BY-SA 4.0)",
+   "Wikipedia: 2026 United States gubernatorial elections, race-ratings table citing Cook, Inside Elections, Sabato, Race to the WH, RCP, Fox and VoteHub (CC BY-SA 4.0)"
+  ],
+  "senate": {
+   "races": 35,
+   "carryover": {
+    "D": 34,
+    "R": 31
+   },
+   "seatsUp": {
+    "D": 13,
+    "R": 22
+   },
+   "senateNow": {
+    "R": 53,
+    "D": 47
+   },
+   "demSeats": {
+    "median": 50,
+    "lo": 47,
+    "hi": 54
+   },
+   "pDemControl": 42.4,
+   "competitive": [
+    {
+     "state": "Texas",
+     "held": "R",
+     "score": 0.04,
+     "retiring": false,
+     "pDem": 51.0
+    },
+    {
+     "state": "Alaska",
+     "held": "R",
+     "score": -0.08,
+     "retiring": false,
+     "pDem": 48.0
+    },
+    {
+     "state": "Ohio",
+     "held": "R",
+     "score": 0.17,
+     "retiring": false,
+     "pDem": 55.0
+    },
+    {
+     "state": "Maine",
+     "held": "R",
+     "score": 0.33,
+     "retiring": false,
+     "pDem": 60.0
+    },
+    {
+     "state": "Michigan",
+     "held": "D",
+     "score": 0.33,
+     "retiring": true,
+     "pDem": 60.0
+    },
+    {
+     "state": "Iowa",
+     "held": "R",
+     "score": -0.38,
+     "retiring": true,
+     "pDem": 39.0
+    }
+   ],
+   "sims": 20000,
+   "source": "Wikipedia: 2026 United States Senate elections, race-ratings table citing Cook, Inside Elections, Sabato, The Economist, RCP, DDHQ, Race to the WH and Fox (CC BY-SA 4.0)"
+  },
+  "governors": {
+   "races": 36,
+   "carryover": {
+    "D": 6,
+    "R": 8
+   },
+   "seatsUp": {
+    "D": 18,
+    "R": 18
+   },
+   "governorsNow": {
+    "R": 26,
+    "D": 24
+   },
+   "demSeats": {
+    "median": 25,
+    "lo": 21,
+    "hi": 28
+   },
+   "pDemMajority": 37.8,
+   "pRepMajority": 43.8,
+   "competitive": [
+    {
+     "state": "Georgia",
+     "held": "R",
+     "score": 0.19,
+     "retiring": true,
+     "pDem": 56.0
+    },
+    {
+     "state": "Wisconsin",
+     "held": "D",
+     "score": 0.19,
+     "retiring": true,
+     "pDem": 56.0
+    },
+    {
+     "state": "Ohio",
+     "held": "R",
+     "score": -0.25,
+     "retiring": true,
+     "pDem": 43.0
+    },
+    {
+     "state": "Nevada",
+     "held": "R",
+     "score": -0.5,
+     "retiring": false,
+     "pDem": 36.0
+    },
+    {
+     "state": "Alaska",
+     "held": "R",
+     "score": -0.75,
+     "retiring": true,
+     "pDem": 29.0
+    },
+    {
+     "state": "Iowa",
+     "held": "R",
+     "score": 0.75,
+     "retiring": true,
+     "pDem": 71.0
+    },
+    {
+     "state": "Kansas",
+     "held": "D",
+     "score": -0.75,
+     "retiring": true,
+     "pDem": 29.0
+    },
+    {
+     "state": "Arizona",
+     "held": "D",
+     "score": 1.12,
+     "retiring": false,
+     "pDem": 79.0
+    }
+   ],
+   "sims": 20000,
+   "source": "Wikipedia: 2026 United States gubernatorial elections, race-ratings table citing Cook, Inside Elections, Sabato, Race to the WH, RCP, Fox and VoteHub (CC BY-SA 4.0)"
+  }
+ }
+}

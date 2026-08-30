@@ -1,0 +1,11 @@
+{
+ "_comment": "TEMPLATE. Copy to <code>-<election date>.json, matching a file in ../snapshots/. Delete keys you cannot fill: an absent fact grades nothing.",
+ "note": "One line about the result, shown beside the score.",
+ "sources": [
+  "Official returning authority",
+  "Wikipedia results article"
+ ],
+ "market": {
+  "us_house": null
+ }
+}

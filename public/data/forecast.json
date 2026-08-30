@@ -1,8 +1,10 @@
 {
- "built": "2026-08-28",
+ "built": "2026-08-30",
  "method": "Recency-weighted poll averages; UK proportional swing on GE2024 constituency results with Monte Carlo error; US seats-votes fit on 2012-2024; NZ Sainte-Laguë; IL seat-poll averages; BR/FR round averages. Full method notes on the page.",
  "uk": {
   "electionAssumed": "2029-05-03",
+  "electionDate": "2029-05-03",
+  "electionConfidence": "assumed",
   "average": {
    "con": 20.5,
    "lab": 26.4,
@@ -604,7 +606,7 @@
     "con": 22.4,
     "lab": 41.1,
     "ld": 0.1,
-    "ref": 36.2,
+    "ref": 36.3,
     "grn": 0.1
    },
    "pMajority": {
@@ -613,7 +615,7 @@
     "ref": 16.4
    },
    "pHung": 53.8,
-   "monthsOut": 32.2,
+   "monthsOut": 32.1,
    "sims": 4000,
    "nat2024": {
     "con": 23.6,
@@ -720,9 +722,11 @@
     ]
    ]
   },
-  "monthsOut": 2.2,
+  "monthsOut": 2.1,
   "sims": 20000,
   "election": "2026-11-03",
+  "electionDate": "2026-11-03",
+  "electionConfidence": "confirmed",
   "sources": [
    "Wikipedia: 2026 United States House of Representatives elections, generic congressional ballot (CC BY-SA 4.0)",
    "Wikipedia: 2026 United States Senate elections, race-ratings table citing Cook, Inside Elections, Sabato, The Economist, RCP, DDHQ, Race to the WH and Fox (CC BY-SA 4.0)",
@@ -879,7 +883,9 @@
   }
  },
  "nz": {
-  "electionAssumed": "2026-10-17",
+  "electionAssumed": "2026-11-07",
+  "electionDate": "2026-11-07",
+  "electionConfidence": "confirmed",
   "average": {
    "nat": 29.7,
    "lab": 30.9,
@@ -898,8 +904,8 @@
    },
    "lab": {
     "median": 41,
-    "lo": 37,
-    "hi": 44
+    "lo": 36,
+    "hi": 45
    },
    "grn": {
     "median": 13,
@@ -927,10 +933,10 @@
     "hi": 0
    }
   },
-  "pRightBloc": 84.6,
-  "pLeftBloc": 7.9,
-  "pNeither": 7.5,
-  "monthsOut": 1.6,
+  "pRightBloc": 82.1,
+  "pLeftBloc": 10.0,
+  "pNeither": 7.9,
+  "monthsOut": 2.3,
   "sims": 10000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)"
@@ -938,6 +944,8 @@
  },
  "il": {
   "electionAssumed": "2026-10-27",
+  "electionDate": "2026-10-27",
+  "electionConfidence": "confirmed",
   "parties": [
    {
     "name": "Yashar",
@@ -1007,7 +1015,7 @@
    "avg": 45.0,
    "pMajority": 0.0
   },
-  "monthsOut": 2.0,
+  "monthsOut": 1.9,
   "sims": 8000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)"
@@ -1015,26 +1023,30 @@
  },
  "br": {
   "election": "2026-10-04",
+  "electionDate": "2026-10-04",
+  "electionConfidence": "confirmed",
   "firstRound": {
    "shares": {
     "Lula": 40.3,
     "F. Bolsonaro": 34.2,
-    "Caiado": 4.6,
+    "Caiado": 4.7,
     "Santos": 4.3,
     "Zema": 2.6,
     "Cury": 1.8
    },
-   "polls": 22,
+   "polls": 21,
    "latest": "2026-08-26"
   },
   "runoffs": [],
-  "monthsOut": 1.2,
+  "monthsOut": 1.1,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
   ]
  },
  "fr": {
   "electionAssumed": "2027-04-11",
+  "electionDate": "2027-04-11",
+  "electionConfidence": "assumed",
   "firstRound": {
    "shares": {
     "Marine Le Pen": 34.2,
@@ -1059,7 +1071,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 78.4,
+    "pA": 78.5,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -1068,7 +1080,7 @@
     "b": "Attal RE",
     "avgA": 54.9,
     "avgB": 45.1,
-    "pA": 93.7,
+    "pA": 93.8,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -1086,7 +1098,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 82.1,
+    "pA": 82.2,
     "polls": 4,
     "latest": "2026-05-27"
    },

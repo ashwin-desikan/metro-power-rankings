@@ -1,0 +1,3716 @@
+{
+ "meta": {
+  "title": "Irish Elections",
+  "sources": [
+   "Wikipedia: Irish general and presidential election articles 1922–2025",
+   "Oireachtas and Department of Housing, Local Government and Heritage returns as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "presEras": [
+  {
+   "key": "early",
+   "label": "The office nobody contested",
+   "span": "1938–1983",
+   "blurb": "Ireland's presidency is largely ceremonial, and for most of its history the parties agreed a candidate rather than fight for it. Five of the thirteen elections here were never actually held: a single nominee was returned unopposed, in 1952, 1974, 1976, 1983 and again in 2004. The contests that did happen were Fianna Fáil's to lose, and it lost only once."
+  },
+  {
+   "key": "robinson",
+   "label": "Mary Robinson onwards",
+   "span": "1990–",
+   "blurb": "In 1990 Mary Robinson trailed Brian Lenihan on first preferences and won on transfers, the first non-Fianna Fáil president and the first woman, and the office has been contested and consequential since. Michael D. Higgins served two terms; Catherine Connolly's 63% in 2025 is the highest first-preference share the presidency has recorded."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "freestate",
+   "label": "The Free State",
+   "span": "1922–1932",
+   "blurb": "The first Dáil elections were fought over the Treaty by the two halves of Sinn Féin, and the losers of the civil war abstained from the parliament they had lost in. Cumann na nGaedheal governed a decade of austerity and state-building, and in 1932 handed power to the men it had recently been shooting at, which is the single most important thing that happened in Irish democracy."
+  },
+  {
+   "key": "dev",
+   "label": "De Valera's Ireland",
+   "span": "1932–1957",
+   "blurb": "Fianna Fáil in power for all but six of twenty-five years, a new constitution in 1937, neutrality through the Emergency, and two inter-party governments assembled from everyone else when the electorate tired of it. The republic was declared in 1949 by a coalition led by a party that had opposed it."
+  },
+  {
+   "key": "lemass",
+   "label": "Lemass to the crash of 1977",
+   "span": "1961–1977",
+   "blurb": "The economy opened, the Fianna Fáil vote held, and the Fine Gael and Labour parties learned to run as a National Coalition. The 1977 election was won by Fianna Fáil on a manifesto of abolished rates and car tax, a landslide that produced a fiscal crisis and, within two years, Charles Haughey."
+  },
+  {
+   "key": "alternation",
+   "label": "Three elections in eighteen months",
+   "span": "1981–2007",
+   "blurb": "The instability of the early 1980s gave way to Haughey and Reynolds, then to a rainbow coalition assembled without an election, then to Bertie Ahern's three consecutive wins on the back of the Celtic Tiger. Turnout fell throughout."
+  },
+  {
+   "key": "postcrash",
+   "label": "After the crash",
+   "span": "2011–",
+   "blurb": "In 2011 Fianna Fáil lost fifty-eight seats, the heaviest defeat any Irish governing party has suffered, and the duopoly that had defined the state since 1932 began to dissolve. By 2020 Sinn Féin topped the poll; by 2024 the old civil war parties governed together, which would have been unthinkable in any previous era on this page."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "presidential",
+   "date": "25 June 1952",
+   "era": "early",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Seán T. O'Kelly",
+    "party": "Fianna Fáil"
+   },
+   "presAfter": {
+    "name": "Seán T. O'Kelly",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1959",
+   "label": "1959",
+   "year": 1959,
+   "kind": "presidential",
+   "date": "17 June 1959",
+   "era": "early",
+   "turnout": 58.3,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Éamon de Valera",
+     "party": null,
+     "r1Votes": 538003,
+     "r1Share": 56.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Seán Mac Eoin",
+     "party": null,
+     "r1Votes": 417536,
+     "r1Share": 43.7,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Seán T. O'Kelly",
+    "party": "Fianna Fáil"
+   },
+   "presAfter": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "knownAs": null,
+   "summary": "Éamon de Valera won with 56.30% against Seán Mac Eoin on 43.70%. Turnout 58.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "presidential",
+   "date": "1 June 1966",
+   "era": "early",
+   "turnout": 65.4,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Éamon de Valera",
+     "party": null,
+     "r1Votes": 558861,
+     "r1Share": 50.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tom O'Higgins",
+     "party": null,
+     "r1Votes": 548144,
+     "r1Share": 49.52,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "presAfter": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "knownAs": null,
+   "summary": "Éamon de Valera won with 50.48% against Tom O'Higgins on 49.52%. Turnout 65.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "presidential",
+   "date": "30 May 1973",
+   "era": "early",
+   "turnout": 62.2,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Erskine H. Childers",
+     "party": null,
+     "r1Votes": 635867,
+     "r1Share": 51.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tom O'Higgins",
+     "party": null,
+     "r1Votes": 587771,
+     "r1Share": 48.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "presAfter": {
+    "name": "Erskine H. Childers",
+    "party": "Fianna Fáil"
+   },
+   "knownAs": null,
+   "summary": "Erskine H. Childers won with 51.97% against Tom O'Higgins on 48.03%. Turnout 62.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "presidential",
+   "date": "19 December 1974",
+   "era": "early",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Erskine H. Childers (deceased)",
+    "party": "Fianna Fáil"
+   },
+   "presAfter": {
+    "name": "Cearbhall Ó Dálaigh",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "presidential",
+   "date": "July 1, 2026",
+   "era": "early",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Cearbhall Ó Dálaigh",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Patrick Hillery",
+    "party": "Fianna Fáil"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "presidential",
+   "date": "7 October 1983",
+   "era": "early",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Patrick Hillery",
+    "party": "Fianna Fáil"
+   },
+   "presAfter": {
+    "name": "Patrick Hillery",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "presidential",
+   "date": "7 November 1990",
+   "era": "robinson",
+   "turnout": 64.1,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mary Robinson",
+     "party": "Labour",
+     "r1Votes": 612265,
+     "r1Share": 38.9,
+     "r2Votes": 817830,
+     "r2Share": null
+    },
+    {
+     "name": "Brian Lenihan",
+     "party": "Fianna Fáil",
+     "r1Votes": 694484,
+     "r1Share": 44.1,
+     "r2Votes": 731273,
+     "r2Share": null
+    },
+    {
+     "name": "Austin Currie",
+     "party": "Fine Gael",
+     "r1Votes": 267902,
+     "r1Share": 17.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Patrick Hillery",
+    "party": "Fianna Fáil"
+   },
+   "presAfter": {
+    "name": "Mary Robinson",
+    "party": "Labour"
+   },
+   "knownAs": null,
+   "summary": "Brian Lenihan won with 44.10% against Mary Robinson on 38.90%. Turnout 64.1%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "presidential",
+   "date": "30 October 1997",
+   "era": "robinson",
+   "turnout": 47.6,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mary McAleese",
+     "party": "Fianna Fáil",
+     "r1Votes": 574424,
+     "r1Share": 45.2,
+     "r2Votes": 706259,
+     "r2Share": null
+    },
+    {
+     "name": "Mary Banotti",
+     "party": "Fine Gael",
+     "r1Votes": 372002,
+     "r1Share": 29.3,
+     "r2Votes": 497516,
+     "r2Share": null
+    },
+    {
+     "name": "Dana Rosemary Scallon",
+     "party": "Independent",
+     "r1Votes": 175458,
+     "r1Share": 13.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adi Roche",
+     "party": "Labour",
+     "r1Votes": 88423,
+     "r1Share": 6.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Derek Nally",
+     "party": "Independent",
+     "r1Votes": 59529,
+     "r1Share": 4.7,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mary Robinson",
+    "party": "Mary McAleese"
+   },
+   "presAfter": {
+    "name": "Mary McAleese",
+    "party": "Fianna Fáil"
+   },
+   "knownAs": null,
+   "summary": "Mary McAleese won with 45.20% against Mary Banotti on 29.30%. Turnout 47.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "July 19, 2026",
+   "era": "robinson",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Mary McAleese",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Mary McAleese",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "presidential",
+   "date": "27 October 2011",
+   "era": "robinson",
+   "turnout": 56.1,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Michael D. Higgins",
+     "party": "Labour",
+     "r1Votes": 701101,
+     "r1Share": 39.6,
+     "r2Votes": 730480,
+     "r2Share": null
+    },
+    {
+     "name": "Seán Gallagher",
+     "party": "Independent",
+     "r1Votes": 504964,
+     "r1Share": 28.5,
+     "r2Votes": 529401,
+     "r2Share": null
+    },
+    {
+     "name": "Martin McGuinness",
+     "party": "Sinn Féin",
+     "r1Votes": 243030,
+     "r1Share": 13.7,
+     "r2Votes": 252611,
+     "r2Share": null
+    },
+    {
+     "name": "Gay Mitchell",
+     "party": "Fine Gael",
+     "r1Votes": 113321,
+     "r1Share": 6.4,
+     "r2Votes": 127357,
+     "r2Share": null
+    },
+    {
+     "name": "David Norris",
+     "party": "Independent",
+     "r1Votes": 109469,
+     "r1Share": 6.2,
+     "r2Votes": 116526,
+     "r2Share": null
+    },
+    {
+     "name": "Dana Rosemary Scallon",
+     "party": "Independent",
+     "r1Votes": 51220,
+     "r1Share": 2.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mary Davis",
+     "party": "Independent",
+     "r1Votes": 48657,
+     "r1Share": 2.7,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mary McAleese",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Michael D. Higgins",
+    "party": "Labour"
+   },
+   "knownAs": null,
+   "summary": "Michael D. Higgins won with 39.60% against Seán Gallagher on 28.50%. Turnout 56.1%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "26 October 2018",
+   "era": "robinson",
+   "turnout": 43.9,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Michael D. Higgins",
+     "party": "Independent",
+     "r1Votes": 822566,
+     "r1Share": 55.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Peter Casey",
+     "party": "Independent",
+     "r1Votes": 342727,
+     "r1Share": 23.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Seán Gallagher",
+     "party": "Independent",
+     "r1Votes": 94514,
+     "r1Share": 6.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Liadh Ní Riada",
+     "party": "Sinn Féin",
+     "r1Votes": 93987,
+     "r1Share": 6.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joan Freeman",
+     "party": "Independent",
+     "r1Votes": 87908,
+     "r1Share": 5.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gavin Duffy",
+     "party": "Independent",
+     "r1Votes": 32198,
+     "r1Share": 2.18,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Michael D. Higgins",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Michael D. Higgins",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Michael D. Higgins won with 55.81% against Peter Casey on 23.25%. Turnout 43.9%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "presidential",
+   "date": "24 October 2025",
+   "era": "robinson",
+   "turnout": 45.8,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Catherine Connolly",
+     "party": "Independent",
+     "r1Votes": 914143,
+     "r1Share": 63.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Heather Humphreys",
+     "party": "Fine Gael",
+     "r1Votes": 424987,
+     "r1Share": 29.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jim Gavin",
+     "party": "Fianna Fáil",
+     "r1Votes": 103568,
+     "r1Share": 7.18,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Michael D. Higgins",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Catherine Connolly",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Catherine Connolly won with 63.36% against Heather Humphreys on 29.46%. Turnout 45.8%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "legislative",
+   "date": "16 June 1922",
+   "era": "freestate",
+   "totalSeats": 128,
+   "majoritySeats": 65,
+   "turnout": 62.5,
+   "parties": [
+    {
+     "name": "Sinn Féin (Pro-Treaty)",
+     "leader": "Michael Collins",
+     "seats": 58,
+     "seatChange": null,
+     "votes": 239195,
+     "share": 38.5,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin (Anti-Treaty)",
+     "leader": "Éamon de Valera",
+     "seats": 36,
+     "seatChange": null,
+     "votes": 135310,
+     "share": 21.8,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Thomas Johnson",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 132565,
+     "share": 21.3,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": "Denis Gorey",
+     "seats": 7,
+     "seatChange": null,
+     "votes": 48718,
+     "share": 7.8,
+     "swing": null
+    },
+    {
+     "name": "Businessmen's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 14542,
+     "share": 2.3,
+     "swing": null
+    },
+    {
+     "name": "Ratepayers' Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2617,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 48638,
+     "share": 7.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Sinn Féin (Pro-Treaty) finished first with 58 of 128 seats on 38.5% of the vote. Turnout 62.5%.",
+   "seatLeader": "Sinn Féin (Pro-Treaty)",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "legislative",
+   "date": "27 August 1923",
+   "era": "freestate",
+   "totalSeats": 153,
+   "majoritySeats": 77,
+   "turnout": 61.3,
+   "parties": [
+    {
+     "name": "Cumann na nGaedheal",
+     "leader": "W. T. Cosgrave",
+     "seats": 63,
+     "seatChange": 5,
+     "votes": 410695,
+     "share": 39.0,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Éamon de Valera",
+     "seats": 44,
+     "seatChange": 8,
+     "votes": 288794,
+     "share": 27.4,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": "Denis Gorey",
+     "seats": 15,
+     "seatChange": 8,
+     "votes": 127184,
+     "share": 12.1,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Thomas Johnson",
+     "seats": 14,
+     "seatChange": -3,
+     "votes": 111939,
+     "share": 10.6,
+     "swing": null
+    },
+    {
+     "name": "Businessmen's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 9648,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "Cork Progressive Association",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 6588,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "National Democratic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4968,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Dublin Trades Council",
+     "leader": "P. T. Daly",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3847,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Ratepayers' Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2620,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Town Tenants' Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1803,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 4,
+     "votes": 85869,
+     "share": 8.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Cumann na nGaedheal finished first with 63 of 153 seats on 39.0% of the vote. Turnout 61.3%.",
+   "seatLeader": "Cumann na nGaedheal",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1927-june",
+   "label": "June 1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "9 June 1927",
+   "era": "freestate",
+   "totalSeats": 153,
+   "majoritySeats": 77,
+   "turnout": 68.1,
+   "parties": [
+    {
+     "name": "Cumann na nGaedheal",
+     "leader": "W. T. Cosgrave",
+     "seats": 47,
+     "seatChange": -16,
+     "votes": 314703,
+     "share": 27.4,
+     "swing": null
+    },
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 44,
+     "seatChange": null,
+     "votes": 299486,
+     "share": 26.2,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Thomas Johnson",
+     "seats": 22,
+     "seatChange": 8,
+     "votes": 143849,
+     "share": 12.6,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": "Michael Heffernan",
+     "seats": 11,
+     "seatChange": -4,
+     "votes": 101955,
+     "share": 8.9,
+     "swing": null
+    },
+    {
+     "name": "National League",
+     "leader": "William Redmond",
+     "seats": 8,
+     "seatChange": null,
+     "votes": 83598,
+     "share": 7.3,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "John J. O'Kelly",
+     "seats": 5,
+     "seatChange": -39,
+     "votes": 41401,
+     "share": 3.6,
+     "swing": null
+    },
+    {
+     "name": "Clann Éireann",
+     "leader": "William Magennis",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5527,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Blind Men's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1559,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Town Tenants' Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1012,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 3,
+     "votes": 153370,
+     "share": 13.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Cumann na nGaedheal finished first with 47 of 153 seats on 27.4% of the vote. Turnout 68.1%.",
+   "seatLeader": "Cumann na nGaedheal",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1927-september",
+   "label": "September 1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "15 September 1927",
+   "era": "freestate",
+   "totalSeats": 153,
+   "majoritySeats": 77,
+   "turnout": 69.0,
+   "parties": [
+    {
+     "name": "Cumann na nGaedheal",
+     "leader": "W. T. Cosgrave",
+     "seats": 62,
+     "seatChange": 15,
+     "votes": 453028,
+     "share": 38.7,
+     "swing": null
+    },
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 57,
+     "seatChange": 13,
+     "votes": 411777,
+     "share": 35.2,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Thomas Johnson",
+     "seats": 13,
+     "seatChange": -9,
+     "votes": 106184,
+     "share": 9.1,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": "Michael Heffernan",
+     "seats": 6,
+     "seatChange": -5,
+     "votes": 74626,
+     "share": 6.4,
+     "swing": null
+    },
+    {
+     "name": "National League",
+     "leader": "William Redmond",
+     "seats": 2,
+     "seatChange": -6,
+     "votes": 18990,
+     "share": 1.6,
+     "swing": null
+    },
+    {
+     "name": "Irish Worker League",
+     "leader": "James Larkin",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 12473,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Town Tenants' Association",
+     "leader": null,
+     "seats": null,
+     "seatChange": 0,
+     "votes": 832,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "John J. O'Kelly",
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 0,
+     "share": -3.6,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -4,
+     "votes": 92959,
+     "share": 7.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Cumann na nGaedheal finished first with 62 of 153 seats on 38.7% of the vote. Turnout 69.0%.",
+   "seatLeader": "Cumann na nGaedheal",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "kind": "legislative",
+   "date": "16 February 1932",
+   "era": "freestate",
+   "totalSeats": 153,
+   "majoritySeats": 77,
+   "turnout": 76.5,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 72,
+     "seatChange": 15,
+     "votes": 566498,
+     "share": 44.5,
+     "swing": null
+    },
+    {
+     "name": "Cumann na nGaedheal",
+     "leader": "W. T. Cosgrave",
+     "seats": 57,
+     "seatChange": -4,
+     "votes": 449506,
+     "share": 35.3,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Thomas J. O'Connell",
+     "seats": 7,
+     "seatChange": -6,
+     "votes": 98286,
+     "share": 7.7,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -3,
+     "votes": 22899,
+     "share": 1.8,
+     "swing": null
+    },
+    {
+     "name": "Irish Worker League",
+     "leader": "James Larkin",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3860,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Workers' Groups",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1087,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2,
+     "votes": 131890,
+     "share": 10.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 72 of 153 seats on 44.5% of the vote. Turnout 76.5%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "legislative",
+   "date": "24 January 1933",
+   "era": "dev",
+   "totalSeats": 153,
+   "majoritySeats": 77,
+   "turnout": 81.3,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 77,
+     "seatChange": 5,
+     "votes": 689054,
+     "share": 49.7,
+     "swing": null
+    },
+    {
+     "name": "Cumann na nGaedheal",
+     "leader": "W. T. Cosgrave",
+     "seats": 48,
+     "seatChange": -9,
+     "votes": 422495,
+     "share": 30.5,
+     "swing": null
+    },
+    {
+     "name": "National Centre Party",
+     "leader": "Frank MacDermot",
+     "seats": 11,
+     "seatChange": null,
+     "votes": 126909,
+     "share": 9.2,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 8,
+     "seatChange": 1,
+     "votes": 79221,
+     "share": 5.7,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -5,
+     "votes": 68882,
+     "share": 5.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 77 of 153 seats on 49.7% of the vote. Turnout 81.3%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "kind": "legislative",
+   "date": "1 July 1937",
+   "era": "dev",
+   "totalSeats": 138,
+   "majoritySeats": 70,
+   "turnout": 76.2,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 69,
+     "seatChange": -8,
+     "votes": 599040,
+     "share": 45.2,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "W. T. Cosgrave",
+     "seats": 48,
+     "seatChange": -11,
+     "votes": 461171,
+     "share": 34.8,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 13,
+     "seatChange": 5,
+     "votes": 135758,
+     "share": 10.3,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -1,
+     "votes": 128480,
+     "share": 9.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 69 of 138 seats on 45.2% of the vote. Turnout 76.2%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "legislative",
+   "date": "17 June 1938",
+   "era": "dev",
+   "totalSeats": 138,
+   "majoritySeats": 70,
+   "turnout": 76.7,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 77,
+     "seatChange": 8,
+     "votes": 667996,
+     "share": 51.9,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "W. T. Cosgrave",
+     "seats": 45,
+     "seatChange": -3,
+     "votes": 428633,
+     "share": 33.3,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 9,
+     "seatChange": -4,
+     "votes": 128945,
+     "share": 10.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -1,
+     "votes": 60685,
+     "share": 4.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 77 of 138 seats on 51.9% of the vote. Turnout 76.7%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "kind": "legislative",
+   "date": "23 June 1943",
+   "era": "dev",
+   "totalSeats": 138,
+   "majoritySeats": 70,
+   "turnout": 74.2,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 67,
+     "seatChange": -10,
+     "votes": 557525,
+     "share": 41.9,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "W. T. Cosgrave",
+     "seats": 32,
+     "seatChange": -13,
+     "votes": 307490,
+     "share": 23.1,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 17,
+     "seatChange": 8,
+     "votes": 208812,
+     "share": 15.7,
+     "swing": null
+    },
+    {
+     "name": "Clann na Talmhan",
+     "leader": "Michael Donnellan",
+     "seats": 10,
+     "seatChange": null,
+     "votes": 130452,
+     "share": 9.8,
+     "swing": null
+    },
+    {
+     "name": "Monetary Reform",
+     "leader": "Oliver J. Flanagan",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 4377,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Córas na Poblachta",
+     "leader": "Simon Donnelly",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3892,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Ailtirí na hAiséirghe",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3137,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 4,
+     "votes": 116024,
+     "share": 8.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 67 of 138 seats on 41.9% of the vote. Turnout 74.2%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1944",
+   "label": "1944",
+   "year": 1944,
+   "kind": "legislative",
+   "date": "30 May 1944",
+   "era": "dev",
+   "totalSeats": 138,
+   "majoritySeats": 70,
+   "turnout": 69.2,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 76,
+     "seatChange": 9,
+     "votes": 595259,
+     "share": 48.9,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Richard Mulcahy",
+     "seats": 30,
+     "seatChange": -2,
+     "votes": 249329,
+     "share": 20.5,
+     "swing": null
+    },
+    {
+     "name": "Clann na Talmhan",
+     "leader": "Joseph Blowick",
+     "seats": 9,
+     "seatChange": -1,
+     "votes": 122745,
+     "share": 10.1,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 8,
+     "seatChange": -9,
+     "votes": 106767,
+     "share": 8.8,
+     "swing": null
+    },
+    {
+     "name": "National Labour Party",
+     "leader": "James Everett",
+     "seats": 4,
+     "seatChange": null,
+     "votes": 32732,
+     "share": 2.7,
+     "swing": null
+    },
+    {
+     "name": "Monetary Reform",
+     "leader": "Oliver J. Flanagan",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9856,
+     "share": 0.8,
+     "swing": null
+    },
+    {
+     "name": "Ailtirí na hAiséirghe",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5809,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": 94852,
+     "share": 7.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 76 of 138 seats on 48.9% of the vote. Turnout 69.2%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "4 February 1948",
+   "era": "dev",
+   "totalSeats": 147,
+   "majoritySeats": 74,
+   "turnout": 74.2,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 68,
+     "seatChange": -8,
+     "votes": 553914,
+     "share": 41.9,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Richard Mulcahy",
+     "seats": 31,
+     "seatChange": 1,
+     "votes": 262393,
+     "share": 19.8,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 14,
+     "seatChange": 6,
+     "votes": 115073,
+     "share": 8.7,
+     "swing": null
+    },
+    {
+     "name": "Clann na Poblachta",
+     "leader": "Seán MacBride",
+     "seats": 10,
+     "seatChange": null,
+     "votes": 174823,
+     "share": 13.2,
+     "swing": null
+    },
+    {
+     "name": "Clann na Talmhan",
+     "leader": "Joseph Blowick",
+     "seats": 7,
+     "seatChange": -2,
+     "votes": 73813,
+     "share": 5.6,
+     "swing": null
+    },
+    {
+     "name": "National Labour Party",
+     "leader": "James Everett",
+     "seats": 5,
+     "seatChange": 1,
+     "votes": 34015,
+     "share": 2.6,
+     "swing": null
+    },
+    {
+     "name": "Monetary Reform",
+     "leader": "Oliver J. Flanagan",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 14369,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Ailtirí na hAiséirghe",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 322,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1,
+     "votes": 94271,
+     "share": 7.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 68 of 147 seats on 41.9% of the vote. Turnout 74.2%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "kind": "legislative",
+   "date": "30 May 1951",
+   "era": "dev",
+   "totalSeats": 147,
+   "majoritySeats": 74,
+   "turnout": 75.3,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 69,
+     "seatChange": 1,
+     "votes": 616212,
+     "share": 46.3,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Richard Mulcahy",
+     "seats": 40,
+     "seatChange": 9,
+     "votes": 349922,
+     "share": 25.8,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 16,
+     "seatChange": -3,
+     "votes": 151828,
+     "share": 11.4,
+     "swing": null
+    },
+    {
+     "name": "Clann na Talmhan",
+     "leader": "Joseph Blowick",
+     "seats": 6,
+     "seatChange": -1,
+     "votes": 38872,
+     "share": 2.9,
+     "swing": null
+    },
+    {
+     "name": "Clann na Poblachta",
+     "leader": "Seán MacBride",
+     "seats": 2,
+     "seatChange": -8,
+     "votes": 54210,
+     "share": 4.1,
+     "swing": null
+    },
+    {
+     "name": "Irish Workers' League",
+     "leader": "Michael O'Riordan",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 295,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 3,
+     "votes": 127234,
+     "share": 9.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "John A. Costello",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 69 of 147 seats on 46.3% of the vote. Turnout 75.3%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "18 May 1954",
+   "era": "dev",
+   "totalSeats": 147,
+   "majoritySeats": 74,
+   "turnout": 76.5,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 65,
+     "seatChange": -4,
+     "votes": 578960,
+     "share": 43.4,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Richard Mulcahy",
+     "seats": 50,
+     "seatChange": 10,
+     "votes": 427031,
+     "share": 32.0,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 19,
+     "seatChange": 2,
+     "votes": 161034,
+     "share": 12.1,
+     "swing": null
+    },
+    {
+     "name": "Clann na Talmhan",
+     "leader": "Joseph Blowick",
+     "seats": 5,
+     "seatChange": -1,
+     "votes": 51069,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "Clann na Poblachta",
+     "leader": "Seán MacBride",
+     "seats": 3,
+     "seatChange": 1,
+     "votes": 41249,
+     "share": 3.1,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Paddy McLogan",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1990,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "National Action",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1430,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Young Ireland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1037,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Irish Workers' League",
+     "leader": "Michael O'Riordan",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 375,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -9,
+     "votes": 70937,
+     "share": 5.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Éamon de Valera",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 65 of 147 seats on 43.4% of the vote. Turnout 76.5%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "5 March 1957",
+   "era": "dev",
+   "totalSeats": 147,
+   "majoritySeats": 74,
+   "turnout": 71.3,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Éamon de Valera",
+     "seats": 78,
+     "seatChange": 13,
+     "votes": 592994,
+     "share": 48.3,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Richard Mulcahy",
+     "seats": 40,
+     "seatChange": -10,
+     "votes": 326699,
+     "share": 26.6,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "William Norton",
+     "seats": 12,
+     "seatChange": -7,
+     "votes": 111747,
+     "share": 9.1,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Paddy McLogan",
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 65640,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Clann na Talmhan",
+     "leader": "Joseph Blowick",
+     "seats": 3,
+     "seatChange": -2,
+     "votes": 28905,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "Clann na Poblachta",
+     "leader": "Seán MacBride",
+     "seats": 1,
+     "seatChange": -2,
+     "votes": 20632,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Irish Housewives' Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4797,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Ratepayers' Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3113,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 4,
+     "votes": 72492,
+     "share": 5.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "John A. Costello",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 78 of 147 seats on 48.3% of the vote. Turnout 71.3%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "4 October 1961",
+   "era": "lemass",
+   "totalSeats": 144,
+   "majoritySeats": 73,
+   "turnout": 70.6,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Seán Lemass",
+     "seats": 70,
+     "seatChange": -8,
+     "votes": 512073,
+     "share": 43.8,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "James Dillon",
+     "seats": 47,
+     "seatChange": 7,
+     "votes": 374099,
+     "share": 32.0,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Brendan Corish",
+     "seats": 16,
+     "seatChange": 4,
+     "votes": 136111,
+     "share": 11.6,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Paddy McLogan",
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 36396,
+     "share": 3.1,
+     "swing": null
+    },
+    {
+     "name": "Clann na Talmhan",
+     "leader": "Joseph Blowick",
+     "seats": 2,
+     "seatChange": -1,
+     "votes": 17693,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Clann na Poblachta",
+     "leader": "Seán MacBride",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 13170,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Democrats",
+     "leader": "Noël Browne",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 11490,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1132,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Irish Workers' League",
+     "leader": "Michael O'Riordan",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 277,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -3,
+     "votes": 65963,
+     "share": 5.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Seán Lemass",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 70 of 144 seats on 43.8% of the vote. Turnout 70.6%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "7 April 1965",
+   "era": "lemass",
+   "totalSeats": 144,
+   "majoritySeats": 73,
+   "turnout": 75.1,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Seán Lemass",
+     "seats": 72,
+     "seatChange": 2,
+     "votes": 597414,
+     "share": 47.7,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "James Dillon",
+     "seats": 47,
+     "seatChange": 0,
+     "votes": 427081,
+     "share": 34.1,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Brendan Corish",
+     "seats": 22,
+     "seatChange": 6,
+     "votes": 192740,
+     "share": 15.4,
+     "swing": null
+    },
+    {
+     "name": "Clann na Poblachta",
+     "leader": "Seán MacBride",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9427,
+     "share": 0.8,
+     "swing": null
+    },
+    {
+     "name": "Irish Workers' Party",
+     "leader": "Michael O'Riordan",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 183,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -4,
+     "votes": 26277,
+     "share": 2.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Seán Lemass",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 72 of 144 seats on 47.7% of the vote. Turnout 75.1%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "18 June 1969",
+   "era": "lemass",
+   "totalSeats": 144,
+   "majoritySeats": 73,
+   "turnout": 76.9,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Jack Lynch",
+     "seats": 75,
+     "seatChange": 3,
+     "votes": 602234,
+     "share": 45.7,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Liam Cosgrave",
+     "seats": 50,
+     "seatChange": 3,
+     "votes": 449749,
+     "share": 34.1,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Brendan Corish",
+     "seats": 18,
+     "seatChange": -4,
+     "votes": 224498,
+     "share": 17.0,
+     "swing": null
+    },
+    {
+     "name": "Irish Workers' Party",
+     "leader": "Michael O'Riordan",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 242,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 42230,
+     "share": 3.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jack Lynch",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 75 of 144 seats on 45.7% of the vote. Turnout 76.9%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "28 February 1973",
+   "era": "lemass",
+   "totalSeats": 144,
+   "majoritySeats": 73,
+   "turnout": 76.6,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Jack Lynch",
+     "seats": 69,
+     "seatChange": -6,
+     "votes": 624528,
+     "share": 46.2,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Liam Cosgrave",
+     "seats": 54,
+     "seatChange": 4,
+     "votes": 473781,
+     "share": 35.1,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Brendan Corish",
+     "seats": 19,
+     "seatChange": 1,
+     "votes": 184656,
+     "share": 13.7,
+     "swing": null
+    },
+    {
+     "name": "Official Sinn Féin",
+     "leader": "Tomás Mac Giolla",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15366,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Aontacht Éireann",
+     "leader": "Kevin Boland",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12321,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "Communist",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 466,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 39419,
+     "share": 2.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jack Lynch",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 69 of 144 seats on 46.2% of the vote. Turnout 76.6%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "kind": "legislative",
+   "date": "16 June 1977",
+   "era": "lemass",
+   "totalSeats": 148,
+   "majoritySeats": 75,
+   "turnout": 76.3,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Jack Lynch",
+     "seats": 84,
+     "seatChange": 15,
+     "votes": 811615,
+     "share": 50.6,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Liam Cosgrave",
+     "seats": 43,
+     "seatChange": -11,
+     "votes": 488767,
+     "share": 30.5,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Brendan Corish",
+     "seats": 17,
+     "seatChange": -2,
+     "votes": 186410,
+     "share": 11.6,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin The Workers' Party",
+     "leader": "Tomás Mac Giolla",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27209,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Irish Republican Socialist",
+     "leader": "Seamus Costello",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 955,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Communist",
+     "leader": "Michael O'Riordan",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 544,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 87527,
+     "share": 5.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Liam Cosgrave",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 84 of 148 seats on 50.6% of the vote. Turnout 76.3%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "11 June 1981",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 76.2,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Charles Haughey",
+     "seats": 78,
+     "seatChange": -6,
+     "votes": 777616,
+     "share": 45.3,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Garret FitzGerald",
+     "seats": 65,
+     "seatChange": 22,
+     "votes": 626376,
+     "share": 36.5,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Frank Cluskey",
+     "seats": 15,
+     "seatChange": -2,
+     "votes": 169990,
+     "share": 9.9,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin The Workers' Party",
+     "leader": "Tomás Mac Giolla",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 29561,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Socialist Labour",
+     "leader": "Noël Browne",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 7107,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": "Eamonn O'Brien",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 571,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist",
+     "leader": "Eugene McCartan",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 358,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2,
+     "votes": 106632,
+     "share": 6.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charles Haughey",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 78 of 166 seats on 45.3% of the vote. Turnout 76.2%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1982-february",
+   "label": "February 1982",
+   "year": 1982,
+   "kind": "legislative",
+   "date": "18 February 1982",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 73.8,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Charles Haughey",
+     "seats": 81,
+     "seatChange": 3,
+     "votes": 786951,
+     "share": 47.3,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Garret FitzGerald",
+     "seats": 63,
+     "seatChange": -2,
+     "votes": 621088,
+     "share": 37.3,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Michael O'Leary",
+     "seats": 15,
+     "seatChange": 0,
+     "votes": 151875,
+     "share": 9.1,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin The Workers' Party",
+     "leader": "Tomás Mac Giolla",
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 38088,
+     "share": 2.3,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Ruairí Ó Brádaigh",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16894,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Irish Republican Socialist",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2716,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Communist",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 462,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0,
+     "votes": 46059,
+     "share": 2.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Garret FitzGerald",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 81 of 166 seats on 47.3% of the vote. Turnout 73.8%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1982-november",
+   "label": "November 1982",
+   "year": 1982,
+   "kind": "legislative",
+   "date": "24 November 1982",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 72.9,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Charles Haughey",
+     "seats": 75,
+     "seatChange": -6,
+     "votes": 763313,
+     "share": 45.2,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Garret FitzGerald",
+     "seats": 70,
+     "seatChange": 7,
+     "votes": 662284,
+     "share": 39.2,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Dick Spring",
+     "seats": 16,
+     "seatChange": 1,
+     "votes": 158115,
+     "share": 9.4,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Tomás Mac Giolla",
+     "seats": 2,
+     "seatChange": -1,
+     "votes": 54888,
+     "share": 3.3,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialist",
+     "leader": "Jim Kemmy",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7012,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3716,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Irish Republican Socialist",
+     "leader": "Jim Lane",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 398,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist",
+     "leader": "Eugene McCartan",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 259,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -1,
+     "votes": 38735,
+     "share": 2.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charles Haughey",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 75 of 166 seats on 45.2% of the vote. Turnout 72.9%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "legislative",
+   "date": "17 February 1987",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 73.3,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Charles Haughey",
+     "seats": 81,
+     "seatChange": 6,
+     "votes": 784547,
+     "share": 44.1,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Garret FitzGerald",
+     "seats": 51,
+     "seatChange": -19,
+     "votes": 481127,
+     "share": 27.1,
+     "swing": null
+    },
+    {
+     "name": "Progressive Democrats",
+     "leader": "Desmond O'Malley",
+     "seats": 14,
+     "seatChange": 14,
+     "votes": 210583,
+     "share": 11.8,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Dick Spring",
+     "seats": 12,
+     "seatChange": -4,
+     "votes": 114551,
+     "share": 6.4,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Tomás Mac Giolla",
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 67273,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Gerry Adams",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32933,
+     "share": 1.9,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialist",
+     "leader": "Jim Kemmy",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 7424,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "None",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7159,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Communist",
+     "leader": "Eugene McCartan",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 725,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -1,
+     "votes": 70843,
+     "share": 4.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Garret FitzGerald",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 81 of 166 seats on 44.1% of the vote. Turnout 73.3%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "15 June 1989",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 68.5,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Charles Haughey",
+     "seats": 77,
+     "seatChange": -4,
+     "votes": 731472,
+     "share": 44.1,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Alan Dukes",
+     "seats": 55,
+     "seatChange": 4,
+     "votes": 485307,
+     "share": 29.3,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Dick Spring",
+     "seats": 15,
+     "seatChange": 3,
+     "votes": 156989,
+     "share": 9.5,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Proinsias De Rossa",
+     "seats": 7,
+     "seatChange": 3,
+     "votes": 82263,
+     "share": 5.0,
+     "swing": null
+    },
+    {
+     "name": "Progressive Democrats",
+     "leader": "Desmond O'Malley",
+     "seats": 6,
+     "seatChange": -8,
+     "votes": 91013,
+     "share": 5.5,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "None",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 24827,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialist",
+     "leader": "Jim Kemmy",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9836,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Gerry Adams",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20003,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Communist",
+     "leader": "James Stewart",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 342,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1,
+     "votes": 54761,
+     "share": 3.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charles Haughey",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 77 of 166 seats on 44.1% of the vote. Turnout 68.5%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "25 November 1992",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 68.5,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Albert Reynolds",
+     "seats": 68,
+     "seatChange": -9,
+     "votes": 674650,
+     "share": 39.1,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "John Bruton",
+     "seats": 45,
+     "seatChange": -10,
+     "votes": 422106,
+     "share": 24.5,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Dick Spring",
+     "seats": 33,
+     "seatChange": 18,
+     "votes": 333013,
+     "share": 19.3,
+     "swing": null
+    },
+    {
+     "name": "Progressive Democrats",
+     "leader": "Desmond O'Malley",
+     "seats": 10,
+     "seatChange": 4,
+     "votes": 80787,
+     "share": 4.7,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": "Proinsias De Rossa",
+     "seats": 4,
+     "seatChange": null,
+     "votes": 47945,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Gerry Adams",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 27809,
+     "share": 1.6,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 24110,
+     "share": 1.4,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Tomás Mac Giolla",
+     "seats": 0,
+     "seatChange": -7,
+     "votes": 11533,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Christian Centrist",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3413,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1,
+     "votes": 99487,
+     "share": 5.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Albert Reynolds",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 68 of 166 seats on 39.1% of the vote. Turnout 68.5%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "6 June 1997",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 65.9,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Bertie Ahern",
+     "seats": 77,
+     "seatChange": 10,
+     "votes": 703682,
+     "share": 39.3,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "John Bruton",
+     "seats": 54,
+     "seatChange": 9,
+     "votes": 499936,
+     "share": 27.9,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Dick Spring",
+     "seats": 17,
+     "seatChange": -16,
+     "votes": 186044,
+     "share": 10.4,
+     "swing": null
+    },
+    {
+     "name": "Progressive Democrats",
+     "leader": "Mary Harney",
+     "seats": 4,
+     "seatChange": -6,
+     "votes": 83765,
+     "share": 4.7,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 49323,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Gerry Adams",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 45614,
+     "share": 2.5,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": "Proinsias De Rossa",
+     "seats": 4,
+     "seatChange": 0,
+     "votes": 44901,
+     "share": 2.5,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": "Nora Bennis",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19077,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": "Joe Higgins",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 12445,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Christian Solidarity",
+     "leader": "Gerard Casey",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8357,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Tom French",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7808,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2028,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Natural Law Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1515,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "SKIA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1388,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2,
+     "votes": 123102,
+     "share": 7.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "John Bruton",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 77 of 166 seats on 39.3% of the vote. Turnout 65.9%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "17 May 2002",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 62.6,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Bertie Ahern",
+     "seats": 81,
+     "seatChange": 8,
+     "votes": 770748,
+     "share": 41.5,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Michael Noonan",
+     "seats": 31,
+     "seatChange": -23,
+     "votes": 417619,
+     "share": 22.5,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Ruairi Quinn",
+     "seats": 21,
+     "seatChange": 4,
+     "votes": 200130,
+     "share": 10.8,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Gerry Adams",
+     "seats": 5,
+     "seatChange": 4,
+     "votes": 121020,
+     "share": 6.5,
+     "swing": null
+    },
+    {
+     "name": "Progressive Democrats",
+     "leader": "Mary Harney",
+     "seats": 8,
+     "seatChange": 4,
+     "votes": 73628,
+     "share": 4.0,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Trevor Sargent",
+     "seats": 6,
+     "seatChange": 4,
+     "votes": 71470,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": "Joe Higgins",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 14896,
+     "share": 0.8,
+     "swing": null
+    },
+    {
+     "name": "Christian Solidarity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4741,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Seán Garland",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4012,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3333,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 7,
+     "votes": 176305,
+     "share": 9.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bertie Ahern",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 81 of 166 seats on 41.5% of the vote. Turnout 62.6%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "24 May 2007",
+   "era": "alternation",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 67.0,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Bertie Ahern",
+     "seats": 78,
+     "seatChange": -3,
+     "votes": 858565,
+     "share": 41.56,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Enda Kenny",
+     "seats": 51,
+     "seatChange": 20,
+     "votes": 564428,
+     "share": 27.32,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Pat Rabbitte",
+     "seats": 20,
+     "seatChange": 0,
+     "votes": 209175,
+     "share": 10.13,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Trevor Sargent",
+     "seats": 6,
+     "seatChange": 0,
+     "votes": 96936,
+     "share": 4.69,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Gerry Adams",
+     "seats": 4,
+     "seatChange": -1,
+     "votes": 143410,
+     "share": 6.94,
+     "swing": null
+    },
+    {
+     "name": "Progressive Democrats",
+     "leader": "Michael McDowell",
+     "seats": 2,
+     "seatChange": -6,
+     "votes": 56396,
+     "share": 2.73,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": "Joe Higgins",
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 13218,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "People Before Profit",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9333,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Seán Garland",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3026,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Christian Solidarity",
+     "leader": "Cathal Loftus",
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1705,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Fathers Rights",
+     "leader": "Liam Ó Gógáin",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1355,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Immigration Control",
+     "leader": "Áine Ní Chonaill",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1329,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Irish Socialist Network",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 505,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -8,
+     "votes": 106429,
+     "share": 5.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bertie Ahern",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 78 of 166 seats on 41.6% of the vote. Turnout 67.0%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "25 February 2011",
+   "era": "postcrash",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 69.9,
+   "parties": [
+    {
+     "name": "Fine Gael",
+     "leader": "Enda Kenny",
+     "seats": 76,
+     "seatChange": 25,
+     "votes": 801628,
+     "share": 36.1,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Eamon Gilmore",
+     "seats": 37,
+     "seatChange": 17,
+     "votes": 431796,
+     "share": 19.4,
+     "swing": null
+    },
+    {
+     "name": "Fianna Fáil",
+     "leader": "Micheál Martin",
+     "seats": 20,
+     "seatChange": -58,
+     "votes": 387358,
+     "share": 17.4,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Gerry Adams",
+     "seats": 14,
+     "seatChange": 10,
+     "votes": 220661,
+     "share": 9.9,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": "Collective",
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 26770,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "People Before Profit",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 21551,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Workers and Unemployed",
+     "leader": "Séamus Healy",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 8818,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "John Gormley",
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 41039,
+     "share": 1.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Brian Cowen",
+    "party": "Fianna Fáil"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fine Gael finished first with 76 of 166 seats on 36.1% of the vote. Turnout 69.9%.",
+   "seatLeader": "Fine Gael",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "26 February 2016",
+   "era": "postcrash",
+   "totalSeats": 158,
+   "majoritySeats": 80,
+   "turnout": 65.1,
+   "parties": [
+    {
+     "name": "Fine Gael",
+     "leader": "Enda Kenny",
+     "seats": 50,
+     "seatChange": -26,
+     "votes": 544140,
+     "share": 25.5,
+     "swing": null
+    },
+    {
+     "name": "Fianna Fáil",
+     "leader": "Micheál Martin",
+     "seats": 44,
+     "seatChange": 24,
+     "votes": 519356,
+     "share": 24.3,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Gerry Adams",
+     "seats": 23,
+     "seatChange": 9,
+     "votes": 295319,
+     "share": 13.8,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Joan Burton",
+     "seats": 7,
+     "seatChange": -30,
+     "votes": 140898,
+     "share": 6.6,
+     "swing": null
+    },
+    {
+     "name": "AAA–PBP",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2,
+     "votes": 84168,
+     "share": 3.9,
+     "swing": null
+    },
+    {
+     "name": "Inds. 4 Change",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 31365,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Social Democrats",
+     "leader": "Catherine Murphy",
+     "seats": 3,
+     "seatChange": 0,
+     "votes": 64094,
+     "share": 3.0,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 57999,
+     "share": 2.7,
+     "swing": null
+    },
+    {
+     "name": "Renua",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 46552,
+     "share": 2.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Enda Kenny",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fine Gael finished first with 50 of 158 seats on 25.5% of the vote. Turnout 65.1%.",
+   "seatLeader": "Fine Gael",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "legislative",
+   "date": "8 February 2020",
+   "era": "postcrash",
+   "totalSeats": 160,
+   "majoritySeats": 81,
+   "turnout": 62.7,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Micheál Martin",
+     "seats": 38,
+     "seatChange": -6,
+     "votes": 484315,
+     "share": 22.18,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Mary Lou McDonald",
+     "seats": 37,
+     "seatChange": 14,
+     "votes": 535573,
+     "share": 24.53,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Leo Varadkar",
+     "seats": 35,
+     "seatChange": -15,
+     "votes": 455568,
+     "share": 20.86,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Eamon Ryan",
+     "seats": 12,
+     "seatChange": 10,
+     "votes": 155695,
+     "share": 7.13,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Brendan Howlin",
+     "seats": 6,
+     "seatChange": -1,
+     "votes": 95582,
+     "share": 4.38,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Leo Varadkar",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 38 of 160 seats on 22.2% of the vote. Turnout 62.7%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "29 November 2024",
+   "era": "postcrash",
+   "totalSeats": 174,
+   "majoritySeats": 88,
+   "turnout": 59.7,
+   "parties": [
+    {
+     "name": "Fianna Fáil",
+     "leader": "Micheál Martin",
+     "seats": 48,
+     "seatChange": 10,
+     "votes": 481414,
+     "share": 21.86,
+     "swing": null
+    },
+    {
+     "name": "Sinn Féin",
+     "leader": "Mary Lou McDonald",
+     "seats": 39,
+     "seatChange": 2,
+     "votes": 418627,
+     "share": 19.01,
+     "swing": null
+    },
+    {
+     "name": "Fine Gael",
+     "leader": "Simon Harris",
+     "seats": 38,
+     "seatChange": 3,
+     "votes": 458134,
+     "share": 20.8,
+     "swing": null
+    },
+    {
+     "name": "Social Democrats",
+     "leader": "Holly Cairns",
+     "seats": 11,
+     "seatChange": 5,
+     "votes": 106028,
+     "share": 4.81,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Ivana Bacik",
+     "seats": 11,
+     "seatChange": 5,
+     "votes": 102457,
+     "share": 4.65,
+     "swing": null
+    },
+    {
+     "name": "Independent Ireland",
+     "leader": "Michael Collins",
+     "seats": 4,
+     "seatChange": null,
+     "votes": 78276,
+     "share": 3.55,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Simon Harris",
+    "party": "Fine Gael"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fianna Fáil finished first with 48 of 174 seats on 21.9% of the vote. Turnout 59.7%.",
+   "seatLeader": "Fianna Fáil",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

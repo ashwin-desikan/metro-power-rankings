@@ -31,9 +31,52 @@ export type DeElection = {
   // plebiscites. Rendered with an explicit caveat, never as normal elections.
   unfree?: "partial" | "unfree" | null;
 };
+
+// ---------------- the presidency ----------------
+// Germany does not elect its president by popular vote. A Federal Convention
+// meets once and dissolves: every member of the Bundestag, plus an equal number
+// of delegates elected by the state parliaments in proportion to their party
+// strengths. An absolute majority is required on the first two ballots and a
+// plurality suffices on the third, which is why the ballot count below is a
+// result in its own right: five of these elections went past the first.
+export type DeConventionRow = {
+  party: string;
+  bundestag: number | null;
+  land: number | null;
+  total: number | null;
+};
+export type DePresCandidate = {
+  name: string;
+  party: string | null;
+  r1Votes: number | null;   // first ballot
+  r1Share: number | null;
+  r2Votes: number | null;   // the deciding ballot, where more than one was held
+  r2Share: number | null;
+};
+export type DePresElection = {
+  id: string;              // "pres-YYYY"
+  label: string;
+  year: number;
+  kind: "presidential";
+  date: string;
+  era: string;
+  turnout: number | null;
+  turnout2: number | null;
+  electors: number | null;  // size of the Federal Convention, where recorded
+  ballots: number | null;   // how many rounds it took
+  convention: DeConventionRow[] | null;
+  candidates: DePresCandidate[];
+  presBefore: { name: string; party: string | null } | null;
+  presAfter: { name: string; party: string | null } | null;
+  knownAs: string | null;
+  summary: string;
+  caveat?: string | null;
+};
 export type DeElectionsFile = {
   meta: { title: string; sources: string[]; built: string };
   eras: { key: string; label: string; span: string; blurb: string }[];
+  presEras: { key: string; label: string; span: string; blurb: string }[];
+  presidential: DePresElection[];
   elections: DeElection[];
 };
 
@@ -139,4 +182,24 @@ export function computeDeRecords(): DeElectionRecord[] {
     recs.push({ label: "Volksparteien at their weakest", value: deFmtPct(trough.s), electionId: trough.e.id, detail: `CDU/CSU + SPD combined, ${trough.e.label}` });
   }
   return recs;
+}
+
+// ---------------- presidential helpers ----------------
+export function dePresEraOf(key: string) {
+  return getDeElections().presEras.find((e) => e.key === key) ?? null;
+}
+export function dePresById(id: string): DePresElection | null {
+  return getDeElections().presidential.find((e) => e.id === id) ?? null;
+}
+export function dePresNeighbours(id: string): { prev: DePresElection | null; next: DePresElection | null } {
+  const els = getDeElections().presidential;
+  const i = els.findIndex((e) => e.id === id);
+  return { prev: i > 0 ? els[i - 1] : null, next: i >= 0 && i < els.length - 1 ? els[i + 1] : null };
+}
+
+/** The candidate the presidency went to: the deciding ballot decides. */
+export function deWinnerOf(e: DePresElection): DePresCandidate | null {
+  if (!e.candidates.length) return null;
+  return e.candidates.reduce((a, b) =>
+    ((a.r2Share ?? a.r1Share) ?? 0) >= ((b.r2Share ?? b.r1Share) ?? 0) ? a : b);
 }

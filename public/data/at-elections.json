@@ -1,0 +1,4646 @@
+{
+ "meta": {
+  "title": "Austrian Elections",
+  "sources": [
+   "Austrian Interior Ministry figures as reported there",
+   "Wikipedia: Austrian legislative and presidential election articles 1920–2024",
+   "Wikipedia: Cisleithanian Imperial Council election articles 1897–1911 (club totals per Nohlen & Stöver and ANNO)"
+  ],
+  "built": "2026-08-30"
+ },
+ "presEras": [
+  {
+   "key": "second",
+   "label": "The Second Republic",
+   "span": "1951–1986",
+   "blurb": "Directly elected since 1951, and for thirty-five years a contest between the two governing parties that the SPÖ usually won. The office is powerful on paper, entitled to dismiss the chancellor, and was used carefully."
+  },
+  {
+   "key": "waldheim",
+   "label": "The Waldheim affair",
+   "span": "1986–1992",
+   "blurb": "Kurt Waldheim was elected in 1986 after his wartime service in the Wehrmacht surfaced mid-campaign, and spent his term barred from the United States. It was the moment Austria's account of itself as Hitler's first victim stopped being tenable."
+  },
+  {
+   "key": "modern",
+   "label": "The modern presidency",
+   "span": "1998–",
+   "blurb": "Green and independent candidates broke the two-party hold. The 2016 election ran to a runoff, was annulled by the Constitutional Court over the counting of postal votes, and was rerun; Van der Bellen beat the FPÖ's Hofer twice in one year."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "reichsrat",
+   "label": "The Imperial Council",
+   "span": "1897–1911",
+   "blurb": "Before there was an Austria there was Cisleithania, the Austrian half of Austria-Hungary, and its House of Deputies is the direct ancestor of the Nationalrat. Its elections were fought in eleven languages. Deputies sat not by party but by club, and the clubs were national before they were ideological: a Poland Club, a Bohemian Club, a Ruthenian Association, an Italian Union. Until 1907 the franchise ran through curiae that weighted a landowner's vote many times a labourer's; the fifth curia added in 1896 gave every man a vote, and only a fraction of the weight. Universal and equal male suffrage arrived in 1907, whereupon the Christian Socials took 96 seats and the Social Democrats 50, and the chamber became so fragmented that it was adjourned more often than it sat. The last of these parliaments was still formally in being when the empire dissolved in 1918."
+  },
+  {
+   "key": "first",
+   "label": "The First Republic",
+   "span": "1920–1930",
+   "blurb": "Three camps, socialist, Christian-social and pan-German, each with its own newspapers, sports clubs and paramilitary wing, competing in elections nobody expected to reconcile them. They did not. The Christian Social bloc governed throughout, the Social Democrats held Vienna, and the republic ended in the civil war of 1934 and the Austrofascist state that followed."
+  },
+  {
+   "key": "anschluss",
+   "label": "Dictatorship and Anschluss",
+   "span": "1934–1945",
+   "blurb": "No elections. Parliament was dissolved in March 1933 on a procedural pretext, the Social Democrats were crushed in February 1934, and the Anschluss of 1938 delivered Austria to the Reich."
+  },
+  {
+   "key": "proporz",
+   "label": "The Proporz republic",
+   "span": "1945–1983",
+   "blurb": "Two parties, the conservative ÖVP and the socialist SPÖ, took over 90% of the vote between them for four decades and governed together for half of it, dividing the state between them post by post. Turnout ran above 90%. Kreisky's thirteen years gave the SPÖ the only absolute majorities in Austrian history."
+  },
+  {
+   "key": "haider",
+   "label": "The Haider years",
+   "span": "1986–2002",
+   "blurb": "Jörg Haider took the Freedom Party from 5% to 27% and, in 2000, into government, which brought sanctions from the other fourteen EU members and a coalition that fell apart in Knittelfeld. In the same period the two big parties fell below 60% combined for the first time and the Greens arrived."
+  },
+  {
+   "key": "fragment",
+   "label": "Five parties and an Ibiza video",
+   "span": "2006–2019",
+   "blurb": "Grand coalitions returned without the grandeur: two parties that no longer commanded the country governing it jointly. Then Kurz took the ÖVP right, the FPÖ into coalition, and the whole thing collapsed in 2019 over a secretly filmed evening on Ibiza."
+  },
+  {
+   "key": "current",
+   "label": "The FPÖ first",
+   "span": "2024–",
+   "blurb": "In September 2024 the Freedom Party came first in a Nationalrat election for the first time, and then could not form a government: coalition talks failed twice before the ÖVP, SPÖ and NEOS assembled a three-party majority to keep it out."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1951",
+   "label": "1951",
+   "year": 1951,
+   "kind": "presidential",
+   "date": "4 June 1951",
+   "era": "second",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "SPÖ",
+     "party": null,
+     "r1Votes": 2178631,
+     "r1Share": 52.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "ÖVP",
+     "party": null,
+     "r1Votes": 2006322,
+     "r1Share": 47.94,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Leopold Figl (Acting)",
+    "party": "ÖVP"
+   },
+   "presAfter": {
+    "name": "Theodor Körner",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "SPÖ won with 52.06% against ÖVP on 47.94%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "presidential",
+   "date": "5 May 1957",
+   "era": "second",
+   "turnout": 97.16,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Adolf Schärf",
+     "party": "Socialist Party",
+     "r1Votes": 2258255,
+     "r1Share": 51.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Wolfgang Denk",
+     "party": "ÖVP–FPÖ",
+     "r1Votes": 2159604,
+     "r1Share": 48.88,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Theodor Körner",
+    "party": "SPÖ"
+   },
+   "presAfter": {
+    "name": "Adolf Schärf",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Adolf Schärf won with 51.12% against Wolfgang Denk on 48.88%. Turnout 97.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "presidential",
+   "date": "28 April 1963",
+   "era": "second",
+   "turnout": 95.59,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Adolf Schärf",
+     "party": "Socialist Party of Austria",
+     "r1Votes": 2473349,
+     "r1Share": 55.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Julius Raab",
+     "party": "Austrian People's Party",
+     "r1Votes": 1814125,
+     "r1Share": 40.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Josef Kimmel",
+     "party": "Independent",
+     "r1Votes": 176646,
+     "r1Share": 3.96,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Adolf Schärf",
+    "party": "SPÖ"
+   },
+   "presAfter": {
+    "name": "Adolf Schärf",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Adolf Schärf won with 55.41% against Julius Raab on 40.64%. Turnout 95.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "presidential",
+   "date": "23 May 1965",
+   "era": "second",
+   "turnout": 95.99,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Franz Jonas",
+     "party": "Socialist Party of Austria",
+     "r1Votes": 2324436,
+     "r1Share": 50.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfons Gorbach",
+     "party": "Austrian People's Party",
+     "r1Votes": 2260888,
+     "r1Share": 49.31,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Adolf Schärf",
+    "party": "SPÖ"
+   },
+   "presAfter": {
+    "name": "Franz Jonas",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Franz Jonas won with 50.69% against Alfons Gorbach on 49.31%. Turnout 96.0%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "presidential",
+   "date": "25 April 1971",
+   "era": "second",
+   "turnout": 95.29,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Franz Jonas",
+     "party": "Socialist Party of Austria",
+     "r1Votes": 2487239,
+     "r1Share": 52.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kurt Waldheim",
+     "party": "Austrian People's Party",
+     "r1Votes": 2224809,
+     "r1Share": 47.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Franz Jonas",
+    "party": "SPÖ"
+   },
+   "presAfter": {
+    "name": "Franz Jonas",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Franz Jonas won with 52.78% against Kurt Waldheim on 47.22%. Turnout 95.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "presidential",
+   "date": "23 June 1974",
+   "era": "second",
+   "turnout": 94.06,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rudolf Kirchschläger",
+     "party": "Socialist Party of Austria",
+     "r1Votes": 2392367,
+     "r1Share": 51.66,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alois Lugger",
+     "party": "Austrian People's Party",
+     "r1Votes": 2238470,
+     "r1Share": 48.34,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Franz Jonas",
+    "party": "SPÖ"
+   },
+   "presAfter": {
+    "name": "Rudolf Kirchschläger",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Rudolf Kirchschläger won with 51.66% against Alois Lugger on 48.34%. Turnout 94.1%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "presidential",
+   "date": "18 May 1980",
+   "era": "second",
+   "turnout": 91.63,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rudolf Kirchschläger",
+     "party": "SPÖ–ÖVP",
+     "r1Votes": 3538748,
+     "r1Share": 79.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Willfried Gredler",
+     "party": "Freedom Party of Austria",
+     "r1Votes": 751400,
+     "r1Share": 16.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Norbert Burger",
+     "party": "National Democratic Party",
+     "r1Votes": 140741,
+     "r1Share": 3.18,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rudolf Kirchschläger",
+    "party": "SPÖ"
+   },
+   "presAfter": {
+    "name": "Rudolf Kirchschläger",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Rudolf Kirchschläger won with 79.87% against Willfried Gredler on 16.96%. Turnout 91.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "presidential",
+   "date": "August 19, 2026",
+   "era": "second",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Independent (ÖVP)",
+     "party": null,
+     "r1Votes": 2464787,
+     "r1Share": 53.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "SPÖ",
+     "party": null,
+     "r1Votes": 2107023,
+     "r1Share": 46.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rudolf Kirchschläger",
+    "party": "SPÖ"
+   },
+   "presAfter": {
+    "name": "Kurt Waldheim",
+    "party": "Independent (ÖVP)"
+   },
+   "knownAs": null,
+   "summary": "Independent (ÖVP) won with 53.91% against SPÖ on 46.09%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "presidential",
+   "date": "August 19, 2026",
+   "era": "waldheim",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Independent (ÖVP)",
+     "party": null,
+     "r1Votes": 2528006,
+     "r1Share": 56.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "SPÖ",
+     "party": null,
+     "r1Votes": 1915380,
+     "r1Share": 43.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Kurt Waldheim",
+    "party": "Independent (ÖVP)"
+   },
+   "presAfter": {
+    "name": "Thomas Klestil",
+    "party": "Independent (ÖVP)"
+   },
+   "knownAs": null,
+   "summary": "Independent (ÖVP) won with 56.89% against SPÖ on 43.11%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "presidential",
+   "date": "19 April 1998",
+   "era": "modern",
+   "turnout": 74.4,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Thomas Klestil",
+     "party": "Independent (ÖVP)",
+     "r1Votes": 2644034,
+     "r1Share": 63.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gertraud Knoll",
+     "party": "Independent (Greens)",
+     "r1Votes": 566551,
+     "r1Share": 13.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Heide Schmidt",
+     "party": "Liberal Forum",
+     "r1Votes": 464625,
+     "r1Share": 11.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Richard Lugner",
+     "party": "The Independents",
+     "r1Votes": 413066,
+     "r1Share": 9.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Karl Walter Nowak",
+     "party": "Independent",
+     "r1Votes": 81043,
+     "r1Share": 1.94,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Thomas Klestil",
+    "party": "Independent (ÖVP)"
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Thomas Klestil won with 63.42% against Gertraud Knoll on 13.59%. Turnout 74.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "25 April 2004",
+   "era": "modern",
+   "turnout": 71.6,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Heinz Fischer",
+     "party": "Social Democratic Party of Austria",
+     "r1Votes": 2166690,
+     "r1Share": 52.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benita Ferrero-Waldner",
+     "party": "Austrian People's Party",
+     "r1Votes": 1969326,
+     "r1Share": 47.61,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Thomas Klestil",
+    "party": "ÖVP"
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Heinz Fischer won with 52.39% against Benita Ferrero-Waldner on 47.61%. Turnout 71.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "presidential",
+   "date": "25 April 2010",
+   "era": "modern",
+   "turnout": 53.57,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Heinz Fischer",
+     "party": "Independent (SPÖ)",
+     "r1Votes": 2508373,
+     "r1Share": 79.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Barbara Rosenkranz",
+     "party": "Freedom Party of Austria",
+     "r1Votes": 481923,
+     "r1Share": 15.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rudolf Gehring",
+     "party": "Christian Party of Austria",
+     "r1Votes": 171668,
+     "r1Share": 5.43,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Heinz Fischer",
+    "party": "Independent (SPÖ)"
+   },
+   "presAfter": {
+    "name": "Heinz Fischer",
+    "party": "Independent (SPÖ)"
+   },
+   "knownAs": null,
+   "summary": "Heinz Fischer won with 79.33% against Barbara Rosenkranz on 15.24%. Turnout 53.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "presidential",
+   "date": "22 May 2016",
+   "era": "modern",
+   "turnout": 68.5,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Independent (Greens)",
+     "party": null,
+     "r1Votes": 2472892,
+     "r1Share": 53.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "FPÖ",
+     "party": null,
+     "r1Votes": 2124661,
+     "r1Share": 46.21,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Heinz Fischer",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Alexander Van der Bellen",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Independent (Greens) won with 53.79% against FPÖ on 46.21%. Turnout 68.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "9 October 2022",
+   "era": "modern",
+   "turnout": 65.19,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alexander Van der Bellen",
+     "party": "Independent (The Greens)",
+     "r1Votes": 2299590,
+     "r1Share": 56.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Walter Rosenkranz",
+     "party": "Freedom Party of Austria",
+     "r1Votes": 717097,
+     "r1Share": 17.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dominik Wlazny",
+     "party": "The Beer Party",
+     "r1Votes": 337010,
+     "r1Share": 8.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tassilo Wallentin",
+     "party": "Independent",
+     "r1Votes": 327214,
+     "r1Share": 8.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gerald Grosz",
+     "party": "Independent",
+     "r1Votes": 225942,
+     "r1Share": 5.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michael Brunner",
+     "party": "MFG Austria",
+     "r1Votes": 85465,
+     "r1Share": 2.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Heinrich Staudinger",
+     "party": "Independent",
+     "r1Votes": 64411,
+     "r1Share": 1.59,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alexander Van der Bellen",
+    "party": "Greens"
+   },
+   "presAfter": {
+    "name": "Alexander Van der Bellen",
+    "party": "Greens"
+   },
+   "knownAs": null,
+   "summary": "Alexander Van der Bellen won with 56.69% against Walter Rosenkranz on 17.68%. Turnout 65.2%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1897",
+   "label": "1897",
+   "year": 1897,
+   "kind": "legislative",
+   "date": "March 1897",
+   "era": "reichsrat",
+   "totalSeats": 425,
+   "majoritySeats": 213,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Bohemian Club",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Poland Club",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Association of German People's Parties",
+     "leader": null,
+     "seats": 41,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Slavic Christian-National Association",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "German Progressive Parties",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of Catholic People's Parties",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Union of Constitutional Landowners",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Union",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Group of Bohemian Conservative Landowners",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Union",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Association",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Union",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Center Club",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Polish Christian People's Parties",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian Club",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Schönerer's group",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The first election with the fifth curia, in which every man could vote and almost none of them counted for much. Badeni's language ordinances brought the chamber to a standstill within months and cost him his office.",
+   "seatLeader": "Bohemian Club",
+   "caveat": "Elected through the curial system, which weighted votes by class and tax: the fifth curia added in 1896 gave every man a vote worth a fraction of a landowner's.",
+   "unfree": null
+  },
+  {
+   "id": "1900-01",
+   "label": "1900–01",
+   "year": 1900,
+   "kind": "legislative",
+   "date": "12 December 1900 to 18 January 1901",
+   "era": "reichsrat",
+   "totalSeats": 425,
+   "majoritySeats": 213,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Poland Club",
+     "leader": null,
+     "seats": 65,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bohemian Club",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Association of German People's Parties",
+     "leader": null,
+     "seats": 42,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Union of Constitutionalist Landowners",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Centre Club",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "German Progressive Union",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Union",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Slavic Association",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Group of Bohemian Conservative Landowners",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Union",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Association of Social Democrats",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "German Agrarian Parties",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free Association of Pan-Germans",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ruthenian Club",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Union of Unaligned Bohemians",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of Bohemian Agrarians",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Yugoslavian Progressive Club",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Parties",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian Club",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moravian Center Parties",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A parliament of clubs with no majority and no prospect of one, elected over five weeks either side of the new year. Koerber governed largely by emergency decree under Article 14.",
+   "seatLeader": "Poland Club",
+   "caveat": "Elected through the curial system, which weighted votes by class and tax: the fifth curia added in 1896 gave every man a vote worth a fraction of a landowner's.",
+   "unfree": null
+  },
+  {
+   "id": "1907",
+   "label": "1907",
+   "year": 1907,
+   "kind": "legislative",
+   "date": "14 & 23 May 1907",
+   "era": "reichsrat",
+   "totalSeats": 516,
+   "majoritySeats": 259,
+   "turnout": 84.6,
+   "parties": [
+    {
+     "name": "Christian Social Union",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Poland Club",
+     "leader": null,
+     "seats": 55,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "German National Association",
+     "leader": null,
+     "seats": 51,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of German Social Democrats",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of Bohemian Agrarians",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bohemian Club",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ruthenian Club",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of Bohemian Social Democrats",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Association of Yugoslavians",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholic-National Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Slovenian Club",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "German Progressive Union",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "German Radical Group",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bohemian National Social Club",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian People's Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of Polish Social Democrats",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Group of Italian Social Democrats",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian Club",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of Liberal Italians",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jewish Club",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Pan-German Group",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Representation of Ruthenian-Ukrainian Social Democrats",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The first election under universal and equal male suffrage. The curiae were abolished, the Christian Socials took 96 seats and the Social Democrats 50, and mass politics arrived in the empire all at once.",
+   "seatLeader": "Christian Social Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1911",
+   "label": "1911",
+   "year": 1911,
+   "kind": "legislative",
+   "date": "June & July 1911",
+   "era": "reichsrat",
+   "totalSeats": 516,
+   "majoritySeats": 259,
+   "turnout": 80.2,
+   "parties": [
+    {
+     "name": "Deutscher Nationalverband",
+     "leader": null,
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Uniform Bohemian Club",
+     "leader": null,
+     "seats": 84,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Union",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Poland Club",
+     "leader": null,
+     "seats": 70,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of German Social Democrats",
+     "leader": null,
+     "seats": 49,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ukrainian Association",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Croatian-Slovenian Club",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of Bohemian Social Democrats",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Latin Union",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Club of Polish Social Democrats",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dalmatian Club",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The last parliament of Austria-Hungary. The German National Association took 100 of 516 seats and nothing resembling a governing majority existed; the chamber was adjourned in 1914 and did not meet again until 1917.",
+   "seatLeader": "Deutscher Nationalverband",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "17 October 1920",
+   "era": "first",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 80.27,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 85,
+     "seatChange": 16,
+     "votes": 1245531,
+     "share": 41.79,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 69,
+     "seatChange": -3,
+     "votes": 1072709,
+     "share": 35.99,
+     "swing": null
+    },
+    {
+     "name": "Greater German People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 390013,
+     "share": 13.09,
+     "swing": null
+    },
+    {
+     "name": "Landbund",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 124114,
+     "share": 4.16,
+     "swing": null
+    },
+    {
+     "name": "Civic Workers' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 42826,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "Democrats",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Burgenland Citizens' and Farmers' Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27386,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "Socialist and Democratic Czechoslovaks",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 7580,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Christian National Unity List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 70169,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "Jewish National Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": -1.0,
+     "swing": null
+    },
+    {
+     "name": "Carinthian Slovenes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Michael Mayr",
+    "party": "CS"
+   },
+   "pmAfter": {
+    "name": "Michael Mayr",
+    "party": "CS"
+   },
+   "knownAs": null,
+   "summary": "Christian Social Party finished first with 85 of 183 seats on 41.8% of the vote. Turnout 80.3%. Michael Mayr stayed in office.",
+   "seatLeader": "Christian Social Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "legislative",
+   "date": "21 October 1923",
+   "era": "first",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 87.05,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 82,
+     "seatChange": -3,
+     "votes": 1459047,
+     "share": 44.05,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 68,
+     "seatChange": -1,
+     "votes": 1311870,
+     "share": 39.6,
+     "swing": null
+    },
+    {
+     "name": "Greater German People's Party–Landbund",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -11,
+     "votes": 259375,
+     "share": 7.83,
+     "swing": null
+    },
+    {
+     "name": "Landbund",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -2,
+     "votes": 99583,
+     "share": 3.01,
+     "swing": null
+    },
+    {
+     "name": "Carinthian Unity List (CS–GdP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 95465,
+     "share": 2.88,
+     "swing": null
+    },
+    {
+     "name": "Jewish Electoral Group",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24970,
+     "share": 0.75,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22164,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "Middle Class Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18886,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Party of the Carinthian Slovenes",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9868,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Minority Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7580,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Croatian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2557,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Kaiser Loyalty People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1235,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Federation of all Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ignaz Seipel",
+    "party": "CS"
+   },
+   "pmAfter": {
+    "name": "Ignaz Seipel",
+    "party": "CS"
+   },
+   "knownAs": null,
+   "summary": "Christian Social Party finished first with 82 of 165 seats on 44.0% of the vote. Turnout 87.0%. Ignaz Seipel stayed in office.",
+   "seatLeader": "Christian Social Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "24 April 1927",
+   "era": "first",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 89.27,
+   "parties": [
+    {
+     "name": "Unity List (CS–GDVP)",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": 1756761,
+     "share": 48.24,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 3,
+     "votes": 1539635,
+     "share": 42.28,
+     "swing": null
+    },
+    {
+     "name": "Landbund for Austria",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 4,
+     "votes": 230157,
+     "share": 6.32,
+     "swing": null
+    },
+    {
+     "name": "Udeverband – Association against Corruption",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35471,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "National Socialist Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26991,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16119,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Democratic List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15112,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Jewish Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10845,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Party of the Carinthian Slovenes",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9334,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "German National Socialist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 779,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Austrian Small Business Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 251,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Association of Independent Citizens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 60,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Farmers and Traders of all Types Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ignaz Seipel",
+    "party": "CS"
+   },
+   "pmAfter": {
+    "name": "Ignaz Seipel",
+    "party": "CS"
+   },
+   "knownAs": null,
+   "summary": "Unity List (CS–GDVP) finished first with 85 of 165 seats on 48.2% of the vote. Turnout 89.3%. Ignaz Seipel stayed in office.",
+   "seatLeader": "Unity List (CS–GDVP)",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1930",
+   "label": "1930",
+   "year": 1930,
+   "kind": "legislative",
+   "date": "9 November 1930",
+   "era": "first",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 90.17,
+   "parties": [
+    {
+     "name": "Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 72,
+     "seatChange": 1,
+     "votes": 1517146,
+     "share": 41.14,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": 1314956,
+     "share": 35.65,
+     "swing": null
+    },
+    {
+     "name": "National Economy Bloc (GDVP–LB)",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 428255,
+     "share": 11.61,
+     "swing": null
+    },
+    {
+     "name": "Homeland Bloc",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 227401,
+     "share": 6.17,
+     "swing": null
+    },
+    {
+     "name": "German National Socialist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 111627,
+     "share": 3.03,
+     "swing": null
+    },
+    {
+     "name": "Landbund for Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43689,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20951,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14980,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Democratic Centre Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6719,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Jewish List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2133,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Kaiser Loyalty People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 157,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 54,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Karl Vaugoin",
+    "party": "CS"
+   },
+   "pmAfter": {
+    "name": "Otto Ender",
+    "party": "CS"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Workers' Party finished first with 72 of 165 seats on 41.1% of the vote. Turnout 90.2%. Otto Ender replaced Karl Vaugoin.",
+   "seatLeader": "Social Democratic Workers' Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "25 November 1945",
+   "era": "proporz",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 94.31,
+   "parties": [
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": 1602227,
+     "share": 49.8,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 76,
+     "seatChange": null,
+     "votes": 1434898,
+     "share": 44.6,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 174257,
+     "share": 5.42,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5972,
+     "share": 0.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Karl Renner (Acting)",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Leopold Figl",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 85 of 165 seats on 49.8% of the vote. Turnout 94.3%. Leopold Figl replaced Karl Renner (Acting).",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "9 October 1949",
+   "era": "proporz",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 96.78,
+   "parties": [
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 77,
+     "seatChange": -8,
+     "votes": 1846581,
+     "share": 44.03,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 67,
+     "seatChange": -9,
+     "votes": 1623524,
+     "share": 38.71,
+     "swing": null
+    },
+    {
+     "name": "Electoral Party of Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 489273,
+     "share": 11.67,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria and Left Socialists",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1,
+     "votes": 213066,
+     "share": 5.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12059,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Fourth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7134,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Democratic Front of the Working People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2088,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Economic Party of House and Property Owners",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Austrian Patriotic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 0,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Leopold Figl",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Leopold Figl",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 77 of 165 seats on 44.0% of the vote. Turnout 96.8%. Leopold Figl stayed in office.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "legislative",
+   "date": "22 February 1953",
+   "era": "proporz",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 95.83,
+   "parties": [
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 6,
+     "votes": 1818517,
+     "share": 42.11,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": -3,
+     "votes": 1781777,
+     "share": 41.26,
+     "swing": null
+    },
+    {
+     "name": "Electoral Party of Independents",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -2,
+     "votes": 472866,
+     "share": 10.95,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Opposition",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -1,
+     "votes": 228159,
+     "share": 5.28,
+     "swing": null
+    },
+    {
+     "name": "Bipartisan Agreement of the Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5809,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3668,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Party and Non-Party Personalities",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3029,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Free Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2573,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Association of Austrian Monarchists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1210,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Austrian National Republicans and Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1054,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Austrian Patriotic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Leopold Figl",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Julius Raab",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 74 of 165 seats on 41.3% of the vote. Turnout 95.8%. Julius Raab replaced Leopold Figl.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "legislative",
+   "date": "13 May 1956",
+   "era": "proporz",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 95.95,
+   "parties": [
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 82,
+     "seatChange": 8,
+     "votes": 1999986,
+     "share": 45.96,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 1,
+     "votes": 1873295,
+     "share": 43.05,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -8,
+     "votes": 283749,
+     "share": 6.52,
+     "swing": null
+    },
+    {
+     "name": "Communists and Left Socialists",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -1,
+     "votes": 192438,
+     "share": 4.42,
+     "swing": null
+    },
+    {
+     "name": "Free Workers Movement of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1812,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Party of Reason",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 284,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Ergokratische Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 231,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Austrian Patriotic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 83,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Austrian Middle Class Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Julius Raab",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Julius Raab",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 82 of 165 seats on 46.0% of the vote. Turnout 96.0%. Julius Raab stayed in office.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "kind": "legislative",
+   "date": "10 May 1959",
+   "era": "proporz",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 94.21,
+   "parties": [
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 78,
+     "seatChange": 4,
+     "votes": 1953935,
+     "share": 44.79,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": -3,
+     "votes": 1928043,
+     "share": 44.19,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 2,
+     "votes": 336110,
+     "share": 7.7,
+     "swing": null
+    },
+    {
+     "name": "Communists and Left Socialists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 142578,
+     "share": 3.27,
+     "swing": null
+    },
+    {
+     "name": "League of Democratic Socialists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2190,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Julius Raab",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Julius Raab",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 79 of 165 seats on 44.2% of the vote. Turnout 94.2%. Julius Raab stayed in office.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "18 November 1962",
+   "era": "proporz",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 93.77,
+   "parties": [
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": 2,
+     "votes": 2024501,
+     "share": 45.43,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 76,
+     "seatChange": -2,
+     "votes": 1960685,
+     "share": 44.0,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": 313895,
+     "share": 7.04,
+     "swing": null
+    },
+    {
+     "name": "Communists and Left Socialists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 135520,
+     "share": 3.04,
+     "swing": null
+    },
+    {
+     "name": "European Federal Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21530,
+     "share": 0.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alfons Gorbach",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Alfons Gorbach",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 81 of 165 seats on 45.4% of the vote. Turnout 93.8%. Alfons Gorbach stayed in office.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "legislative",
+   "date": "6 March 1966",
+   "era": "proporz",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 93.8,
+   "parties": [
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 85,
+     "seatChange": 4,
+     "votes": 2191109,
+     "share": 48.35,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 74,
+     "seatChange": -2,
+     "votes": 1928985,
+     "share": 42.56,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -2,
+     "votes": 242570,
+     "share": 5.35,
+     "swing": null
+    },
+    {
+     "name": "Democratic Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 148528,
+     "share": 3.28,
+     "swing": null
+    },
+    {
+     "name": "Communists and Left Socialists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18636,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1571,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Marxist–Leninist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 486,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Josef Klaus",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Josef Klaus",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 85 of 165 seats on 48.4% of the vote. Turnout 93.8%. Josef Klaus stayed in office.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "legislative",
+   "date": "1 March 1970",
+   "era": "proporz",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 91.78,
+   "parties": [
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 81,
+     "seatChange": 7,
+     "votes": 2221981,
+     "share": 48.42,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 78,
+     "seatChange": -7,
+     "votes": 2051012,
+     "share": 44.69,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0,
+     "votes": 253425,
+     "share": 5.52,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 44750,
+     "share": 0.98,
+     "swing": null
+    },
+    {
+     "name": "Democratic Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14925,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2631,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Adolf Glantschnig – For Humanity, Law and Freedom in Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 237,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Josef Klaus",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Bruno Kreisky",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Socialist Party of Austria finished first with 81 of 165 seats on 48.4% of the vote. Turnout 91.8%. Bruno Kreisky replaced Josef Klaus.",
+   "seatLeader": "Socialist Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "10 October 1971",
+   "era": "proporz",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 92.44,
+   "parties": [
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 93,
+     "seatChange": 12,
+     "votes": 2280168,
+     "share": 50.04,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 2,
+     "votes": 1964713,
+     "share": 43.11,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 4,
+     "votes": 248473,
+     "share": 5.45,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 61762,
+     "share": 1.36,
+     "swing": null
+    },
+    {
+     "name": "Offensive Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1874,
+     "share": 0.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bruno Kreisky",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Bruno Kreisky",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Socialist Party of Austria finished first with 93 of 183 seats on 50.0% of the vote. Turnout 92.4%. Bruno Kreisky stayed in office.",
+   "seatLeader": "Socialist Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "kind": "legislative",
+   "date": "5 October 1975",
+   "era": "proporz",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 92.9,
+   "parties": [
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 93,
+     "seatChange": 0,
+     "votes": 2326201,
+     "share": 50.42,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 0,
+     "votes": 1981291,
+     "share": 42.95,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": 249444,
+     "share": 5.41,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 55032,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "Group of Revolutionary Marxists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1024,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Steinacher Franz List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 440,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bruno Kreisky",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Bruno Kreisky",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Socialist Party of Austria finished first with 93 of 183 seats on 50.4% of the vote. Turnout 92.9%. Bruno Kreisky stayed in office.",
+   "seatLeader": "Socialist Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "6 May 1979",
+   "era": "proporz",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 92.24,
+   "parties": [
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 95,
+     "seatChange": 2,
+     "votes": 2413226,
+     "share": 51.03,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 77,
+     "seatChange": -3,
+     "votes": 1981739,
+     "share": 41.9,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1,
+     "votes": 286743,
+     "share": 6.06,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 45280,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Labour Group",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2263,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bruno Kreisky",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Bruno Kreisky",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party of Austria finished first with 95 of 183 seats on 51.0% of the vote. Turnout 92.2%. Bruno Kreisky stayed in office.",
+   "seatLeader": "Social Democratic Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "24 April 1983",
+   "era": "proporz",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 92.59,
+   "parties": [
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 90,
+     "seatChange": -5,
+     "votes": 2312529,
+     "share": 47.65,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": 4,
+     "votes": 2097808,
+     "share": 43.22,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1,
+     "votes": 241789,
+     "share": 4.98,
+     "swing": null
+    },
+    {
+     "name": "United Greens of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 93798,
+     "share": 1.93,
+     "swing": null
+    },
+    {
+     "name": "Alternative List Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 65816,
+     "share": 1.36,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 31912,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Austria Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5851,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Stop Immigrants Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3914,
+     "share": 0.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bruno Kreisky",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Fred Sinowatz",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Socialist Party of Austria finished first with 90 of 183 seats on 47.6% of the vote. Turnout 92.6%. Fred Sinowatz replaced Bruno Kreisky.",
+   "seatLeader": "Socialist Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "23 November 1986",
+   "era": "haider",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 90.46,
+   "parties": [
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 80,
+     "seatChange": -10,
+     "votes": 2092024,
+     "share": 43.12,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 77,
+     "seatChange": -4,
+     "votes": 2003663,
+     "share": 41.29,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 6,
+     "votes": 472205,
+     "share": 9.73,
+     "swing": null
+    },
+    {
+     "name": "Green Alternative–Freda Meissner-Blau List",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 234028,
+     "share": 4.82,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 35104,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Action List – I've Had Enough",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8100,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Green Alternatives – Democratic List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6005,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Carinthian Greens–VGÖ–VÖGA–Independent Councillors",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1059,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Franz Vranitzky",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Franz Vranitzky",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Socialist Party of Austria finished first with 80 of 183 seats on 43.1% of the vote. Turnout 90.5%. Franz Vranitzky stayed in office.",
+   "seatLeader": "Socialist Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "7 October 1990",
+   "era": "haider",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 86.14,
+   "parties": [
+    {
+     "name": "Socialist Party of Austria",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 0,
+     "votes": 2012787,
+     "share": 42.78,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": -17,
+     "votes": 1508600,
+     "share": 32.06,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 15,
+     "votes": 782648,
+     "share": 16.63,
+     "swing": null
+    },
+    {
+     "name": "Green Alternative–Freda Meissner-Blau List",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 2,
+     "votes": 225084,
+     "share": 4.78,
+     "swing": null
+    },
+    {
+     "name": "United Greens of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 92277,
+     "share": 1.96,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Welfare Beneficiaries",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35833,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25682,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "Christian Electoral Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9263,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6194,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Grey Austrians' Election Platform",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3996,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Fritz Georg",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2530,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Franz Vranitzky",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Franz Vranitzky",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Socialist Party of Austria finished first with 80 of 183 seats on 42.8% of the vote. Turnout 86.1%. Franz Vranitzky stayed in office.",
+   "seatLeader": "Socialist Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "legislative",
+   "date": "9 October 1994",
+   "era": "haider",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 81.94,
+   "parties": [
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 65,
+     "seatChange": -15,
+     "votes": 1617804,
+     "share": 34.92,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -8,
+     "votes": 1281846,
+     "share": 27.67,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 9,
+     "votes": 1042332,
+     "share": 22.5,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3,
+     "votes": 338538,
+     "share": 7.31,
+     "swing": null
+    },
+    {
+     "name": "Liberal Forum",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 276580,
+     "share": 5.97,
+     "swing": null
+    },
+    {
+     "name": "No – Civic Action Group against the Sale of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 41492,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11919,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Christian Voters' Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9051,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "United Greens Austria – List Adi Pinter",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5776,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Austrian Natural Law Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4209,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Citizen Greens Austria – Free Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2504,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "The Best Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 581,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Fritz Georg",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 482,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Franz Vranitzky",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Franz Vranitzky",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party of Austria finished first with 65 of 183 seats on 34.9% of the vote. Turnout 81.9%. Franz Vranitzky stayed in office.",
+   "seatLeader": "Social Democratic Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "17 December 1995",
+   "era": "haider",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 85.98,
+   "parties": [
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 6,
+     "votes": 1843474,
+     "share": 38.06,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": 1370510,
+     "share": 28.29,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -1,
+     "votes": 1060377,
+     "share": 21.89,
+     "swing": null
+    },
+    {
+     "name": "Liberal Forum",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -1,
+     "votes": 267026,
+     "share": 5.51,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -4,
+     "votes": 233208,
+     "share": 4.81,
+     "swing": null
+    },
+    {
+     "name": "No – Civic Action Group against the Sale of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 53176,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13938,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Austrian Natural Law Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1634,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "The Best Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 830,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Franz Vranitzky",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Franz Vranitzky",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party of Austria finished first with 71 of 183 seats on 38.1% of the vote. Turnout 86.0%. Franz Vranitzky stayed in office.",
+   "seatLeader": "Social Democratic Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "legislative",
+   "date": "3 October 1999",
+   "era": "haider",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 80.42,
+   "parties": [
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 65,
+     "seatChange": -6,
+     "votes": 1532448,
+     "share": 33.15,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 11,
+     "votes": 1244087,
+     "share": 26.91,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": 1243672,
+     "share": 26.91,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 5,
+     "votes": 342260,
+     "share": 7.4,
+     "swing": null
+    },
+    {
+     "name": "Liberal Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -10,
+     "votes": 168612,
+     "share": 3.65,
+     "swing": null
+    },
+    {
+     "name": "The Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46943,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22016,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "No to NATO and EU – Neutral Austria Citizens' Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19286,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Christian Voters Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3030,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Viktor Klima",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Wolfgang Schüssel",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party of Austria finished first with 65 of 183 seats on 33.1% of the vote. Turnout 80.4%. Wolfgang Schüssel replaced Viktor Klima.",
+   "seatLeader": "Social Democratic Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "24 November 2002",
+   "era": "haider",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 84.27,
+   "parties": [
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": 27,
+     "votes": 2076833,
+     "share": 42.3,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 69,
+     "seatChange": 4,
+     "votes": 1792499,
+     "share": 36.51,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -34,
+     "votes": 491328,
+     "share": 10.01,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 3,
+     "votes": 464980,
+     "share": 9.47,
+     "swing": null
+    },
+    {
+     "name": "Liberal Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 48083,
+     "share": 0.98,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 27568,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3906,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "The Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2439,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Christian Voters Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2009,
+     "share": 0.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Wolfgang Schüssel",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Wolfgang Schüssel",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 79 of 183 seats on 42.3% of the vote. Turnout 84.3%. Wolfgang Schüssel stayed in office.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "1 October 2006",
+   "era": "fragment",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 78.5,
+   "parties": [
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 68,
+     "seatChange": -1,
+     "votes": 1663986,
+     "share": 35.34,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": -13,
+     "votes": 1616493,
+     "share": 34.33,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 4,
+     "votes": 520130,
+     "share": 11.05,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 3,
+     "votes": 519598,
+     "share": 11.04,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Future of Austria",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 193539,
+     "share": 4.11,
+     "swing": null
+    },
+    {
+     "name": "Hans-Peter Martin's List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 131688,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 47578,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "EU Withdrawal – Neutral Free Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10594,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2257,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Certainly – Absolutely – Independent, Franz Radinger",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1514,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Initiative 2000",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 592,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "List Strong",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 312,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Wolfgang Schüssel",
+    "party": "ÖVP"
+   },
+   "pmAfter": {
+    "name": "Alfred Gusenbauer",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party of Austria finished first with 68 of 183 seats on 35.3% of the vote. Turnout 78.5%. Alfred Gusenbauer replaced Wolfgang Schüssel.",
+   "seatLeader": "Social Democratic Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "kind": "legislative",
+   "date": "28 September 2008",
+   "era": "fragment",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 78.8,
+   "parties": [
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 57,
+     "seatChange": -11,
+     "votes": 1430206,
+     "share": 29.26,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -15,
+     "votes": 1269656,
+     "share": 25.98,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 13,
+     "votes": 857029,
+     "share": 17.54,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Future of Austria",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 14,
+     "votes": 522933,
+     "share": 10.7,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -1,
+     "votes": 509936,
+     "share": 10.43,
+     "swing": null
+    },
+    {
+     "name": "Liberal Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 102249,
+     "share": 2.09,
+     "swing": null
+    },
+    {
+     "name": "Fritz Dinkhauser List – Citizens' Forum Tyrol",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 86194,
+     "share": 1.76,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 37362,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Independent Citizens' Initiative Save Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35718,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "The Christians",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31080,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Animal Rights Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2224,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2138,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "List Karlheinz Klement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 347,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "List Strong",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 237,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alfred Gusenbauer",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Werner Faymann",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party of Austria finished first with 57 of 183 seats on 29.3% of the vote. Turnout 78.8%. Werner Faymann replaced Alfred Gusenbauer.",
+   "seatLeader": "Social Democratic Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "legislative",
+   "date": "29 September 2013",
+   "era": "fragment",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 74.9,
+   "parties": [
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -5,
+     "votes": 1258605,
+     "share": 26.82,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": -4,
+     "votes": 1125876,
+     "share": 23.99,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 6,
+     "votes": 962313,
+     "share": 20.51,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 4,
+     "votes": 582657,
+     "share": 12.42,
+     "swing": null
+    },
+    {
+     "name": "Team Stronach",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 268679,
+     "share": 5.73,
+     "swing": null
+    },
+    {
+     "name": "NEOS",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 232946,
+     "share": 4.96,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Future of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -21,
+     "votes": 165746,
+     "share": 3.53,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 48175,
+     "share": 1.03,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36265,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Christian Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6647,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Der Wandel",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3051,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 947,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "EU Exit Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 510,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Men's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 490,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Werner Faymann",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Werner Faymann",
+    "party": "SPÖ"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party of Austria finished first with 52 of 183 seats on 26.8% of the vote. Turnout 74.9%. Werner Faymann stayed in office.",
+   "seatLeader": "Social Democratic Party of Austria",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "legislative",
+   "date": "15 October 2017",
+   "era": "fragment",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 80.0,
+   "parties": [
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 15,
+     "votes": 1595526,
+     "share": 31.47,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": 1361746,
+     "share": 26.86,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 11,
+     "votes": 1316442,
+     "share": 25.97,
+     "swing": null
+    },
+    {
+     "name": "NEOS",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1,
+     "votes": 268518,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Peter Pilz List",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 223543,
+     "share": 4.41,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -24,
+     "votes": 192638,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "My Vote Counts!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48234,
+     "share": 0.95,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 39689,
+     "share": 0.78,
+     "swing": null
+    },
+    {
+     "name": "The Whites",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9167,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Free List Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8889,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "New Movement for the Future",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2724,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Homeless in Politics",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 761,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 713,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "EU Exit Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 693,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Christian Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 425,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Men's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 221,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Christian Kern",
+    "party": "SPÖ"
+   },
+   "pmAfter": {
+    "name": "Sebastian Kurz",
+    "party": "ÖVP"
+   },
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 62 of 183 seats on 31.5% of the vote. Turnout 80.0%. Sebastian Kurz replaced Christian Kern.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "29 September 2019",
+   "era": "fragment",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 75.6,
+   "parties": [
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 9,
+     "votes": 1789417,
+     "share": 37.46,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -12,
+     "votes": 1011868,
+     "share": 21.18,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -20,
+     "votes": 772666,
+     "share": 16.17,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 26,
+     "votes": 664055,
+     "share": 13.9,
+     "swing": null
+    },
+    {
+     "name": "NEOS",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 5,
+     "votes": 387124,
+     "share": 8.1,
+     "swing": null
+    },
+    {
+     "name": "JETZT – Pilz List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -8,
+     "votes": 89169,
+     "share": 1.87,
+     "swing": null
+    },
+    {
+     "name": "KPÖ Plus",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 32736,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "Der Wandel",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22168,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Beer Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4946,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Every Vote Counts!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1767,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "BZÖ Carinthia – Alliance of Patriots",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 760,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 310,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Christian Party of Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 260,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Brigitte Bierlein",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Austrian People's Party finished first with 71 of 183 seats on 37.5% of the vote. Turnout 75.6%.",
+   "seatLeader": "Austrian People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "29 September 2024",
+   "era": "current",
+   "totalSeats": 183,
+   "majoritySeats": 92,
+   "turnout": 77.7,
+   "parties": [
+    {
+     "name": "Freedom Party of Austria",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 13,
+     "votes": 1408514,
+     "share": 28.85,
+     "swing": null
+    },
+    {
+     "name": "Austrian People's Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -11,
+     "votes": 1282734,
+     "share": 26.27,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Austria",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 0,
+     "votes": 1032234,
+     "share": 21.14,
+     "swing": null
+    },
+    {
+     "name": "NEOS",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 1,
+     "votes": 446378,
+     "share": 9.14,
+     "swing": null
+    },
+    {
+     "name": "The Greens",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -6,
+     "votes": 402107,
+     "share": 8.24,
+     "swing": null
+    },
+    {
+     "name": "KPÖ Plus",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 2,
+     "votes": 116891,
+     "share": 2.39,
+     "swing": null
+    },
+    {
+     "name": "The Beer Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 2,
+     "votes": 98395,
+     "share": 2.02,
+     "swing": null
+    },
+    {
+     "name": "Madeleine Petrovic List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28488,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "None of the Above",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 27830,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "MFG Austria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19785,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Liste Gaza",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19376,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "The Yellows (LBL)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 156,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Karl Nehammer",
+    "party": "ÖVP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Freedom Party of Austria finished first with 57 of 183 seats on 28.9% of the vote. Turnout 77.7%.",
+   "seatLeader": "Freedom Party of Austria",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

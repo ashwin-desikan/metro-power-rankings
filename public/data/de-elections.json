@@ -2,10 +2,11 @@
  "meta": {
   "title": "German federal elections",
   "sources": [
-   "Wikipedia: German federal election articles, 1848–2025 (results, infoboxes and leads)",
-   "Bundeswahlleiterin figures as reported there"
+   "Bundeswahlleiterin figures as reported there",
+   "Wikipedia: German and West German presidential election articles 1954–2022 (Federal Convention composition and ballot results)",
+   "Wikipedia: German federal election articles, 1848–2025 (results, infoboxes and leads)"
   ],
-  "built": "2026-07-22"
+  "built": "2026-08-30"
  },
  "eras": [
   {
@@ -3690,6 +3691,1112 @@
    "summary": "A federal election was held in Germany on 23 February 2025 to elect the 630 members of the 21st Bundestag, down from 736 in 2021 due to reforms in seat distribution. The 2025 election took place seven months ahead of schedule due to the 2024 collapse of the Scholz governing coalition.",
    "unfree": null,
    "seatLeader": "CDU/CSU"
+  }
+ ],
+ "presEras": [
+  {
+   "key": "bonn",
+   "label": "The Bonn republic",
+   "span": "1954–1989",
+   "blurb": "West Germany gave its head of state no executive power and elected him by a Federal Convention that meets once and dissolves: every member of the Bundestag, plus an equal number of delegates chosen by the state parliaments. Theodor Heuss set the tone. Gustav Heinemann's win on the third ballot in 1969 signalled the coming SPD-FDP coalition a year before the voters did. Richard von Weizsäcker's 1985 speech on the fortieth anniversary of the surrender did more to define the office than anything in the Basic Law."
+  },
+  {
+   "key": "berlin",
+   "label": "The Berlin republic",
+   "span": "1994–",
+   "blurb": "Reunification enlarged the Convention, and the office kept its habit of surprising people. Roman Herzog needed three ballots in 1994, Horst Köhler resigned in 2010 over a remark about the Bundeswehr, Christian Wulff resigned in 2012 over a home loan, and Gauck and Steinmeier restored a presidency that had started to look precarious."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "presidential",
+   "date": "17 July 1954",
+   "era": "bonn",
+   "turnout": null,
+   "turnout2": null,
+   "electors": 957,
+   "ballots": 1,
+   "convention": [
+    {
+     "party": "CDU/CSU",
+     "bundestag": null,
+     "land": null,
+     "total": 431.0
+    },
+    {
+     "party": "SPD",
+     "bundestag": null,
+     "land": null,
+     "total": 347.0
+    },
+    {
+     "party": "FDP",
+     "bundestag": null,
+     "land": null,
+     "total": 112.0
+    },
+    {
+     "party": "DP",
+     "bundestag": null,
+     "land": null,
+     "total": 15.0
+    },
+    {
+     "party": "BP",
+     "bundestag": null,
+     "land": null,
+     "total": 15.0
+    },
+    {
+     "party": "Z",
+     "bundestag": null,
+     "land": null,
+     "total": 12.0
+    },
+    {
+     "party": "KPD",
+     "bundestag": null,
+     "land": null,
+     "total": 10.0
+    },
+    {
+     "party": "Hamburg-Block",
+     "bundestag": null,
+     "land": null,
+     "total": 9.0
+    },
+    {
+     "party": "Independents",
+     "bundestag": null,
+     "land": null,
+     "total": 4.0
+    },
+    {
+     "party": "SSW",
+     "bundestag": null,
+     "land": null,
+     "total": 1.0
+    },
+    {
+     "party": "DRP",
+     "bundestag": null,
+     "land": null,
+     "total": 1.0
+    }
+   ],
+   "candidates": [
+    {
+     "name": "Theodor Heuss",
+     "party": "CDU/CSU, SPD, FDP, DP",
+     "r1Votes": 871,
+     "r1Share": 85.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfred Weber",
+     "party": "KPD",
+     "r1Votes": 12,
+     "r1Share": 1.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others1",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 0.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Not cast",
+     "party": null,
+     "r1Votes": 31,
+     "r1Share": 3.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Theodor Heuss",
+    "party": "FDP"
+   },
+   "presAfter": {
+    "name": "Theodor Heuss",
+    "party": "FDP"
+   },
+   "knownAs": null,
+   "summary": "Theodor Heuss was elected on the first ballot with 871 electoral votes of 957. The Convention's largest delegations were CDU/CSU with 431 and SPD with 347.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1959",
+   "label": "1959",
+   "year": 1959,
+   "kind": "presidential",
+   "date": "1 July 1959",
+   "era": "bonn",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": 2,
+   "convention": null,
+   "candidates": [
+    {
+     "name": "Heinrich Lübke",
+     "party": "CDU/CSU, DP",
+     "r1Votes": 517,
+     "r1Share": 49.8,
+     "r2Votes": 536,
+     "r2Share": 50.7
+    },
+    {
+     "name": "Carlo Schmid",
+     "party": "SPD",
+     "r1Votes": 385,
+     "r1Share": 37.1,
+     "r2Votes": 386,
+     "r2Share": 37.2
+    },
+    {
+     "name": "Max Becker",
+     "party": "FDP",
+     "r1Votes": 104,
+     "r1Share": 10.0,
+     "r2Votes": 99,
+     "r2Share": 9.5
+    }
+   ],
+   "presBefore": {
+    "name": "Theodor Heuss",
+    "party": "FDP"
+   },
+   "presAfter": {
+    "name": "Heinrich Lübke",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "Heinrich Lübke was elected on the second ballot with 536 electoral votes. An absolute majority is needed on the first two ballots; a plurality is enough on the third.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "presidential",
+   "date": "1 July 1964",
+   "era": "bonn",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": 1,
+   "convention": null,
+   "candidates": [
+    {
+     "name": "Heinrich Lübke",
+     "party": "CDU/CSU, SPD",
+     "r1Votes": 710,
+     "r1Share": 68.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ewald Bucher",
+     "party": "FDP",
+     "r1Votes": 123,
+     "r1Share": 11.8,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Heinrich Lübke",
+    "party": "CDU"
+   },
+   "presAfter": {
+    "name": "Heinrich Lübke",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "Heinrich Lübke was elected on the first ballot with 710 electoral votes.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "presidential",
+   "date": "5 March 1969",
+   "era": "bonn",
+   "turnout": null,
+   "turnout2": null,
+   "electors": 1036,
+   "ballots": 3,
+   "convention": [
+    {
+     "party": "CDU/CSU",
+     "bundestag": null,
+     "land": null,
+     "total": 482.0
+    },
+    {
+     "party": "SPD",
+     "bundestag": null,
+     "land": null,
+     "total": 449.0
+    },
+    {
+     "party": "FDP",
+     "bundestag": null,
+     "land": null,
+     "total": 83.0
+    },
+    {
+     "party": "NPD",
+     "bundestag": null,
+     "land": null,
+     "total": 22.0
+    }
+   ],
+   "candidates": [
+    {
+     "name": "Gustav Heinemann",
+     "party": "SPD, FDP",
+     "r1Votes": 514,
+     "r1Share": 49.6,
+     "r2Votes": 512,
+     "r2Share": 49.4
+    },
+    {
+     "name": "Gerhard Schröder",
+     "party": "CDU/CSU, NPD",
+     "r1Votes": 501,
+     "r1Share": 48.4,
+     "r2Votes": 506,
+     "r2Share": 48.8
+    }
+   ],
+   "presBefore": {
+    "name": "Heinrich Lübke",
+    "party": "CDU"
+   },
+   "presAfter": {
+    "name": "Gustav Heinemann",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "Gustav Heinemann was elected on the third ballot with 512 electoral votes of 1,036. The Convention's largest delegations were CDU/CSU with 482 and SPD with 449. An absolute majority is needed on the first two ballots; a plurality is enough on the third.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "presidential",
+   "date": "15 May 1974",
+   "era": "bonn",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": 1,
+   "convention": null,
+   "candidates": [
+    {
+     "name": "Walter Scheel",
+     "party": "FDP, SPD",
+     "r1Votes": 530,
+     "r1Share": 51.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Richard von Weizsäcker",
+     "party": "CDU/CSU",
+     "r1Votes": 498,
+     "r1Share": 48.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gustav Heinemann",
+    "party": "SPD"
+   },
+   "presAfter": {
+    "name": "Walter Scheel",
+    "party": "FDP"
+   },
+   "knownAs": null,
+   "summary": "Walter Scheel was elected on the first ballot with 530 electoral votes.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "presidential",
+   "date": "23 May 1979",
+   "era": "bonn",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": 1,
+   "convention": null,
+   "candidates": [
+    {
+     "name": "Karl Carstens",
+     "party": "CDU/CSU",
+     "r1Votes": 528,
+     "r1Share": 51.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Annemarie Renger",
+     "party": "SPD",
+     "r1Votes": 431,
+     "r1Share": 41.6,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Walter Scheel",
+    "party": "FDP"
+   },
+   "presAfter": {
+    "name": "Karl Carstens",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "Karl Carstens was elected on the first ballot with 528 electoral votes.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1984",
+   "label": "1984",
+   "year": 1984,
+   "kind": "presidential",
+   "date": "23 May 1984",
+   "era": "bonn",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": 1,
+   "convention": null,
+   "candidates": [
+    {
+     "name": "Richard von Weizsäcker",
+     "party": "CDU, CSU, SPD, FDP",
+     "r1Votes": 832,
+     "r1Share": 80.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luise Rinser",
+     "party": "The Greens",
+     "r1Votes": 68,
+     "r1Share": 6.5,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Karl Carstens",
+    "party": "CDU"
+   },
+   "presAfter": {
+    "name": "Richard von Weizsäcker",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "Richard von Weizsäcker was elected on the first ballot with 832 electoral votes.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "presidential",
+   "date": "23 May 1989",
+   "era": "bonn",
+   "turnout": null,
+   "turnout2": null,
+   "electors": 1038,
+   "ballots": 1,
+   "convention": [
+    {
+     "party": "CDU/CSU",
+     "bundestag": null,
+     "land": null,
+     "total": 479.0
+    },
+    {
+     "party": "SPD",
+     "bundestag": null,
+     "land": null,
+     "total": 419.0
+    },
+    {
+     "party": "FDP",
+     "bundestag": null,
+     "land": null,
+     "total": 71.0
+    },
+    {
+     "party": "Greens",
+     "bundestag": null,
+     "land": null,
+     "total": 67.0
+    },
+    {
+     "party": "Republicans",
+     "bundestag": null,
+     "land": null,
+     "total": 1.0
+    },
+    {
+     "party": "Independent",
+     "bundestag": null,
+     "land": null,
+     "total": 1.0
+    }
+   ],
+   "candidates": [
+    {
+     "name": "Richard von Weizsäcker",
+     "party": "CDU, CSU, SPD, FDP, The Greens",
+     "r1Votes": 881,
+     "r1Share": 84.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against votes",
+     "party": null,
+     "r1Votes": 108,
+     "r1Share": 10.4,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Richard von Weizsäcker",
+    "party": "CDU"
+   },
+   "presAfter": {
+    "name": "Richard von Weizsäcker",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "Richard von Weizsäcker was elected on the first ballot with 881 electoral votes of 1,038. The Convention's largest delegations were CDU/CSU with 479 and SPD with 419.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "presidential",
+   "date": "23 May 1994",
+   "era": "berlin",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": 3,
+   "convention": null,
+   "candidates": [
+    {
+     "name": "Roman Herzog",
+     "party": "CDU/CSU",
+     "r1Votes": 604,
+     "r1Share": 45.6,
+     "r2Votes": 696,
+     "r2Share": 52.6
+    },
+    {
+     "name": "Johannes Rau",
+     "party": "SPD",
+     "r1Votes": 505,
+     "r1Share": 38.1,
+     "r2Votes": 605,
+     "r2Share": 45.7
+    },
+    {
+     "name": "Hildegard Hamm-Brücher",
+     "party": "FDP",
+     "r1Votes": 132,
+     "r1Share": 10.0,
+     "r2Votes": 126,
+     "r2Share": 9.5
+    },
+    {
+     "name": "Jens Reich",
+     "party": "Alliance '90/The Greens",
+     "r1Votes": 62,
+     "r1Share": 4.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hans Hirzel",
+     "party": "The Republicans",
+     "r1Votes": 12,
+     "r1Share": 0.9,
+     "r2Votes": 11,
+     "r2Share": 0.8
+    }
+   ],
+   "presBefore": {
+    "name": "Richard von Weizsäcker",
+    "party": "CDU"
+   },
+   "presAfter": {
+    "name": "Roman Herzog",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "Roman Herzog was elected on the third ballot with 696 electoral votes. An absolute majority is needed on the first two ballots; a plurality is enough on the third.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "presidential",
+   "date": "23 May 1999",
+   "era": "berlin",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": 2,
+   "convention": null,
+   "candidates": [
+    {
+     "name": "Johannes Rau",
+     "party": "SPD, Greens",
+     "r1Votes": 657,
+     "r1Share": 49.1,
+     "r2Votes": 690,
+     "r2Share": 51.6
+    },
+    {
+     "name": "Dagmar Schipanski",
+     "party": "CDU/CSU",
+     "r1Votes": 588,
+     "r1Share": 43.9,
+     "r2Votes": 572,
+     "r2Share": 42.8
+    },
+    {
+     "name": "Uta Ranke-Heinemann",
+     "party": "Independent (endorsed by PDS)",
+     "r1Votes": 69,
+     "r1Share": 5.2,
+     "r2Votes": 62,
+     "r2Share": 4.6
+    }
+   ],
+   "presBefore": {
+    "name": "Roman Herzog",
+    "party": "CDU"
+   },
+   "presAfter": {
+    "name": "Johannes Rau",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "Johannes Rau was elected on the second ballot with 690 electoral votes. An absolute majority is needed on the first two ballots; a plurality is enough on the third.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "23 May 2004",
+   "era": "berlin",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": null,
+   "convention": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Johannes Rau",
+    "party": "SPD"
+   },
+   "presAfter": {
+    "name": "Horst Köhler",
+    "party": "CDU/CSU"
+   },
+   "knownAs": null,
+   "summary": "The Federal Convention met; the ballot record for this election is not on file.",
+   "caveat": "No ballot record on file for this election."
+  },
+  {
+   "id": "pres-2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "presidential",
+   "date": "23 May 2009",
+   "era": "berlin",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": null,
+   "convention": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Horst Köhler",
+    "party": "CDU/CSU"
+   },
+   "presAfter": {
+    "name": "Horst Köhler",
+    "party": "CDU/CSU"
+   },
+   "knownAs": null,
+   "summary": "The Federal Convention met; the ballot record for this election is not on file.",
+   "caveat": "No ballot record on file for this election."
+  },
+  {
+   "id": "pres-2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "presidential",
+   "date": "30 June 2010",
+   "era": "berlin",
+   "turnout": null,
+   "turnout2": null,
+   "electors": null,
+   "ballots": 3,
+   "convention": null,
+   "candidates": [
+    {
+     "name": "Christian Wulff",
+     "party": "CDU, CSU, FDP",
+     "r1Votes": 600,
+     "r1Share": 48.3,
+     "r2Votes": 625,
+     "r2Share": 50.2
+    },
+    {
+     "name": "Joachim Gauck",
+     "party": "SPD, Grüne",
+     "r1Votes": 499,
+     "r1Share": 40.2,
+     "r2Votes": 494,
+     "r2Share": 39.7
+    },
+    {
+     "name": "Luc Jochimsen",
+     "party": "Linke",
+     "r1Votes": 126,
+     "r1Share": 10.1,
+     "r2Votes": 123,
+     "r2Share": 9.6
+    },
+    {
+     "name": "Frank Rennicke",
+     "party": "NPD",
+     "r1Votes": 3,
+     "r1Share": 0.2,
+     "r2Votes": 3,
+     "r2Share": 0.2
+    }
+   ],
+   "presBefore": {
+    "name": "Jens Böhrnsen (Acting)",
+    "party": "SPD"
+   },
+   "presAfter": {
+    "name": "Christian Wulff",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "Christian Wulff was elected on the third ballot with 625 electoral votes. An absolute majority is needed on the first two ballots; a plurality is enough on the third.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "presidential",
+   "date": "18 March 2012",
+   "era": "berlin",
+   "turnout": null,
+   "turnout2": null,
+   "electors": 1240,
+   "ballots": 1,
+   "convention": [
+    {
+     "party": "CDU/CSU",
+     "bundestag": null,
+     "land": null,
+     "total": 486.0
+    },
+    {
+     "party": "SPD",
+     "bundestag": null,
+     "land": null,
+     "total": 331.0
+    },
+    {
+     "party": "Alliance '90/The Greens",
+     "bundestag": null,
+     "land": null,
+     "total": 147.0
+    },
+    {
+     "party": "FDP",
+     "bundestag": null,
+     "land": null,
+     "total": 136.0
+    },
+    {
+     "party": "The Left",
+     "bundestag": null,
+     "land": null,
+     "total": 124.0
+    },
+    {
+     "party": "Free Voters (Bavaria)",
+     "bundestag": null,
+     "land": null,
+     "total": 10.0
+    },
+    {
+     "party": "NPD",
+     "bundestag": null,
+     "land": null,
+     "total": 3.0
+    },
+    {
+     "party": "Pirate Party (Berlin)",
+     "bundestag": null,
+     "land": null,
+     "total": 2.0
+    },
+    {
+     "party": "SSW (Schleswig-Holstein)",
+     "bundestag": null,
+     "land": null,
+     "total": 1.0
+    },
+    {
+     "party": "(total)",
+     "bundestag": null,
+     "land": null,
+     "total": null
+    },
+    {
+     "party": "Bundestag MPs",
+     "bundestag": null,
+     "land": null,
+     "total": null
+    }
+   ],
+   "candidates": [
+    {
+     "name": "Joachim Gauck",
+     "party": "Independent",
+     "r1Votes": 991,
+     "r1Share": 79.92,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Beate Klarsfeld",
+     "party": "Independent",
+     "r1Votes": 126,
+     "r1Share": 10.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olaf Rose",
+     "party": "Independent",
+     "r1Votes": 3,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Horst Seehofer (acting)",
+    "party": "CSU"
+   },
+   "presAfter": {
+    "name": "Joachim Gauck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Joachim Gauck was elected on the first ballot with 991 electoral votes of 1,240. The Convention's largest delegations were CDU/CSU with 486 and SPD with 331.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "presidential",
+   "date": "12 February 2017",
+   "era": "berlin",
+   "turnout": null,
+   "turnout2": null,
+   "electors": 1259,
+   "ballots": 1,
+   "convention": [
+    {
+     "party": "CDU/CSU",
+     "bundestag": 309.0,
+     "land": 230.0,
+     "total": 539.0
+    },
+    {
+     "party": "SPD",
+     "bundestag": 193.0,
+     "land": 191.0,
+     "total": 384.0
+    },
+    {
+     "party": "Grüne",
+     "bundestag": 63.0,
+     "land": 84.0,
+     "total": 147.0
+    },
+    {
+     "party": "Die Linke",
+     "bundestag": 64.0,
+     "land": 31.0,
+     "total": 95.0
+    },
+    {
+     "party": "FDP",
+     "bundestag": 0.0,
+     "land": 36.0,
+     "total": 36.0
+    },
+    {
+     "party": "AfD",
+     "bundestag": 0.0,
+     "land": 35.0,
+     "total": 35.0
+    },
+    {
+     "party": "Piraten",
+     "bundestag": 0.0,
+     "land": 11.0,
+     "total": 11.0
+    },
+    {
+     "party": "Freie Wähler",
+     "bundestag": 0.0,
+     "land": 10.0,
+     "total": 10.0
+    },
+    {
+     "party": "SSW",
+     "bundestag": 0.0,
+     "land": 1.0,
+     "total": 1.0
+    },
+    {
+     "party": "BVB/Freie Wähler",
+     "bundestag": 0.0,
+     "land": 1.0,
+     "total": 1.0
+    }
+   ],
+   "candidates": [
+    {
+     "name": "Frank-Walter Steinmeier",
+     "party": "Social Democratic Party",
+     "r1Votes": 931,
+     "r1Share": 73.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Christoph Butterwegge",
+     "party": "Independent",
+     "r1Votes": 128,
+     "r1Share": 10.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Albrecht Glaser",
+     "party": "Alternative for Germany",
+     "r1Votes": 42,
+     "r1Share": 3.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alexander Hold",
+     "party": "Free Voters",
+     "r1Votes": 25,
+     "r1Share": 1.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Engelbert Sonneborn",
+     "party": "Independent",
+     "r1Votes": 10,
+     "r1Share": 0.79,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Joachim Gauck",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Frank-Walter Steinmeier",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "Frank-Walter Steinmeier was elected on the first ballot with 931 electoral votes of 1,259. The Convention's largest delegations were CDU/CSU with 539 and SPD with 384.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "13 February 2022",
+   "era": "berlin",
+   "turnout": null,
+   "turnout2": null,
+   "electors": 1472,
+   "ballots": 1,
+   "convention": [
+    {
+     "party": "SPD",
+     "bundestag": 206.0,
+     "land": 185.0,
+     "total": 391.0
+    },
+    {
+     "party": "CDU",
+     "bundestag": 152.0,
+     "land": 199.0,
+     "total": 351.0
+    },
+    {
+     "party": "Grüne",
+     "bundestag": 118.0,
+     "land": 115.0,
+     "total": 233.0
+    },
+    {
+     "party": "FDP",
+     "bundestag": 92.0,
+     "land": 62.0,
+     "total": 154.0
+    },
+    {
+     "party": "AfD",
+     "bundestag": 80.0,
+     "land": 72.0,
+     "total": 152.0
+    },
+    {
+     "party": "CSU",
+     "bundestag": 45.0,
+     "land": 49.0,
+     "total": 94.0
+    },
+    {
+     "party": "Die Linke",
+     "bundestag": 39.0,
+     "land": 32.0,
+     "total": 71.0
+    },
+    {
+     "party": "FW",
+     "bundestag": 0.0,
+     "land": 18.0,
+     "total": 18.0
+    },
+    {
+     "party": "Other",
+     "bundestag": 3.0,
+     "land": 2.0,
+     "total": 5.0
+    },
+    {
+     "party": "SSW",
+     "bundestag": 1.0,
+     "land": 1.0,
+     "total": 2.0
+    },
+    {
+     "party": "LKR",
+     "bundestag": 0.0,
+     "land": 1.0,
+     "total": 1.0
+    }
+   ],
+   "candidates": [
+    {
+     "name": "Frank-Walter Steinmeier",
+     "party": "SPD",
+     "r1Votes": 1045,
+     "r1Share": 78.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Max Otte",
+     "party": "CDU (suspended)",
+     "r1Votes": 140,
+     "r1Share": 10.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gerhard Trabert",
+     "party": "Independent",
+     "r1Votes": 96,
+     "r1Share": 7.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Stefanie Gebauer",
+     "party": "Free Voters",
+     "r1Votes": 58,
+     "r1Share": 4.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abstents",
+     "party": null,
+     "r1Votes": 35,
+     "r1Share": 2.38,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Frank-Walter Steinmeier",
+    "party": "SPD"
+   },
+   "presAfter": {
+    "name": "Frank-Walter Steinmeier",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "Frank-Walter Steinmeier was elected on the first ballot with 1,045 electoral votes of 1,472. The Convention's largest delegations were SPD with 391 and CDU with 351.",
+   "caveat": null
   }
  ]
 }

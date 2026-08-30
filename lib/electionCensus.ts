@@ -33,6 +33,12 @@ import { getMyElections } from "./myElections";
 import { getChElections } from "./chElections";
 import { getBeElections } from "./beElections";
 import { getDkElections } from "./dkElections";
+import { getGrElections } from "./grElections";
+import { getAtElections } from "./atElections";
+import { getPtElections } from "./ptElections";
+import { getIeElections } from "./ieElections";
+import { getPhElections } from "./phElections";
+import { getEgElections } from "./egElections";
 import { ELECTION_HUBS } from "./electionHubsMeta";
 // The Vatican hub is deliberately absent: conclaves are not polity-wide ballots,
 // so they stay out of the timeline, turnout and wartime joins.
@@ -83,6 +89,8 @@ export function getElectionCensus(): CensusRow[] {
   const fr = getFrElections(), pl = getPlElections(), ru = getRuElections(), kr = getKrElections();
   const idn = getIdElections(), tr = getTrElections(), ng = getNgElections(), mx = getMxElections(), br = getBrElections();
   const ua = getUaElections(), iq = getIqElections(), ps = getPsElections();
+  const at = getAtElections(), pt = getPtElections(), ie = getIeElections(), eg = getEgElections();
+  const de = getDeElections();
   _census = [
     row("us", usd.elections.map((e) => ({
       id: e.id, year: e.year, label: e.label, winner: e.winner.name,
@@ -90,7 +98,7 @@ export function getElectionCensus(): CensusRow[] {
     }))),
     row("uk", leg(getUkElections().elections, "United Kingdom")),
     row("eu", leg(getEuElections().elections, "European Parliament")),
-    row("de", leg(getDeElections().elections, "Germany")),
+    row("de", [...leg(de.elections, "Germany"), ...pres(de.presidential, "Germany")]),
     row("fr", [...leg(fr.legislative, "France"), ...pres(fr.presidential, "France")]),
     row("it", leg(getItElections().elections, "Italy")),
     row("es", leg(getEsElections().elections, "Spain")),
@@ -118,6 +126,12 @@ export function getElectionCensus(): CensusRow[] {
     row("ps", [...leg(ps.legislative, "Palestine"), ...pres(ps.presidential, "Palestine")]),
     row("sg", leg(getSgElections().elections, "Singapore")),
     row("my", leg(getMyElections().elections, "Malaysia")),
+    row("gr", leg(getGrElections().elections, "Greece")),
+    row("at", [...leg(at.legislative, "Austria"), ...pres(at.presidential, "Austria")]),
+    row("pt", [...leg(pt.legislative, "Portugal"), ...pres(pt.presidential, "Portugal")]),
+    row("ie", [...leg(ie.legislative, "Ireland"), ...pres(ie.presidential, "Ireland")]),
+    row("ph", pres(getPhElections().elections, "Philippines")),
+    row("eg", [...leg(eg.legislative, "Egypt"), ...pres(eg.presidential, "Egypt")]),
     row("ch", leg(getChElections().elections, "Switzerland")),
     row("be", leg(getBeElections().elections, "Belgium")),
     row("dk", leg(getDkElections().elections, "Denmark")),

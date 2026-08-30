@@ -1,0 +1,108 @@
+{
+ "code": "fr",
+ "election": "2027-04-11",
+ "confidence": "assumed",
+ "built": "2026-08-30",
+ "daysBefore": 224,
+ "block": {
+  "electionAssumed": "2027-04-11",
+  "electionDate": "2027-04-11",
+  "electionConfidence": "assumed",
+  "firstRound": {
+   "shares": {
+    "Marine Le Pen": 34.2,
+    "Jean-Luc Mélenchon": 15.8,
+    "Édouard Philippe": 14.7,
+    "Raphaël Glucksmann": 10.6,
+    "Gabriel Attal": 8.3,
+    "Bruno Retailleau": 6.4,
+    "Éric Zemmour": 3.3,
+    "Marine Tondelier": 3.1,
+    "Fabien Roussel": 2.5,
+    "Dominique de Villepin": 2.5,
+    "Nicolas Dupont-Aignan": 1.7,
+    "Nathalie Arthaud": 0.7
+   },
+   "polls": 7,
+   "latest": "2026-08-25"
+  },
+  "runoffs": [
+   {
+    "a": "Le Pen RN",
+    "b": "Philippe HOR",
+    "avgA": 52.5,
+    "avgB": 47.5,
+    "pA": 78.5,
+    "polls": 4,
+    "latest": "2026-07-08"
+   },
+   {
+    "a": "Le Pen RN",
+    "b": "Attal RE",
+    "avgA": 54.9,
+    "avgB": 45.1,
+    "pA": 93.8,
+    "polls": 4,
+    "latest": "2026-07-08"
+   },
+   {
+    "a": "Le Pen RN",
+    "b": "Mélenchon LFI",
+    "avgA": 68.4,
+    "avgB": 31.6,
+    "pA": 100.0,
+    "polls": 3,
+    "latest": "2026-07-08"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Philippe HOR",
+    "avgA": 52.9,
+    "avgB": 47.1,
+    "pA": 82.2,
+    "polls": 4,
+    "latest": "2026-05-27"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Attal RE",
+    "avgA": 57.0,
+    "avgB": 43.0,
+    "pA": 98.5,
+    "polls": 1,
+    "latest": "2026-05-27"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Mélenchon LFI",
+    "avgA": 68.2,
+    "avgB": 31.8,
+    "pA": 100.0,
+    "polls": 2,
+    "latest": "2026-05-27"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Glucksmann PP",
+    "avgA": 58.5,
+    "avgB": 41.5,
+    "pA": 99.7,
+    "polls": 1,
+    "latest": "2026-03-27"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Retailleau LR",
+    "avgA": 58.0,
+    "avgB": 42.0,
+    "pA": 99.4,
+    "polls": 1,
+    "latest": "2026-03-27"
+   }
+  ],
+  "monthsOut": 7.4,
+  "sources": [
+   "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
+  ]
+ }
+}

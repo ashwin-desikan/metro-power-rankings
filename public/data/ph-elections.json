@@ -1,0 +1,1324 @@
+{
+ "meta": {
+  "title": "Philippine Presidential Elections",
+  "sources": [
+   "Wikipedia: Philippine presidential election articles 1935–2022",
+   "Commission on Elections returns as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "eras": [
+  {
+   "key": "commonwealth",
+   "label": "The Commonwealth",
+   "span": "1935–1946",
+   "blurb": "Elected under American sovereignty from 1935, with independence promised for 1946. Quezon won twice; the 1943 election was held under Japanese occupation by a hand-picked assembly and is listed here as what it was."
+  },
+  {
+   "key": "third",
+   "label": "The Third Republic",
+   "span": "1949–1969",
+   "blurb": "A two-party system of Nacionalistas and Liberals that was genuinely competitive and genuinely violent, with turnout above 75% and a habit of turning out incumbents. Magsaysay, Macapagal and Marcos each took the presidency from a sitting party."
+  },
+  {
+   "key": "marcos",
+   "label": "Martial law",
+   "span": "1972–1985",
+   "blurb": "Marcos declared martial law in 1972 rather than leave office, held a referendum-style election in 1981 that the opposition boycotted, and called a snap election in 1986 that he claimed to have won. The count was so brazen that the computer operators walked out on television."
+  },
+  {
+   "key": "fifth",
+   "label": "The Fifth Republic",
+   "span": "1992–",
+   "blurb": "People Power removed Marcos and the 1987 constitution gave the president a single six-year term, which is why every election here has an open field and why pluralities of 40% or less have repeatedly been enough to win. Marcos's son took 58.8% in 2022, the largest majority since his father's."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "presidential",
+   "date": "September 16, 1935",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel L. Quezon",
+     "party": "Nacionalista Party",
+     "r1Votes": 695332,
+     "r1Share": 67.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Emilio Aguinaldo",
+     "party": "National Socialist Party",
+     "r1Votes": 179349,
+     "r1Share": 17.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gregorio Aglipay",
+     "party": "Republican Party",
+     "r1Votes": 148010,
+     "r1Share": 14.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pascual Racuyal",
+     "party": "Independent",
+     "r1Votes": 158,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "None (last held by Emilio Aguinaldo)",
+    "party": "None (Nonpartisan)"
+   },
+   "presAfter": {
+    "name": "Manuel L. Quezon",
+    "party": "Nacionalista"
+   },
+   "knownAs": null,
+   "summary": "Manuel L. Quezon won with 67.98% against Emilio Aguinaldo on 17.53%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1941",
+   "label": "1941",
+   "year": 1941,
+   "kind": "presidential",
+   "date": "November 11, 1941",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel L. Quezon",
+     "party": "Nacionalista Party",
+     "r1Votes": 1340320,
+     "r1Share": 80.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Sumulong",
+     "party": "Popular Front (Sumulong wing)",
+     "r1Votes": 298608,
+     "r1Share": 17.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Celerino Tiongco I",
+     "party": "Ganap Party",
+     "r1Votes": 22474,
+     "r1Share": 1.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hilario Moncado",
+     "party": "Modernist Party",
+     "r1Votes": 10726,
+     "r1Share": 0.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hermogenes Dumpit",
+     "party": "Independent",
+     "r1Votes": 298,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Veronica Miciano",
+     "party": "Independent",
+     "r1Votes": 62,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ernesto T. Belleza",
+     "party": "Independent",
+     "r1Votes": 16,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Abad Santos",
+     "party": "Popular Front (Abad Santos wing)",
+     "r1Votes": 0,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel L. Quezon",
+    "party": "Nacionalista"
+   },
+   "presAfter": {
+    "name": "Manuel L. Quezon",
+    "party": "Nacionalista"
+   },
+   "knownAs": null,
+   "summary": "Manuel L. Quezon won with 80.14% against Juan Sumulong on 17.85%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "kind": "presidential",
+   "date": "September 25, 1943",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "None (de facto); Manuel L. Quezon (de jure)",
+    "party": "Nacionalista"
+   },
+   "presAfter": {
+    "name": "Jose P. Laurel",
+    "party": "KALIBAPI"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "Held under Japanese occupation by an appointed assembly; no popular vote took place.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "presidential",
+   "date": "April 23, 1946",
+   "era": "commonwealth",
+   "turnout": 89.59,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Roxas",
+     "party": "Nacionalista Party (Liberal wing)",
+     "r1Votes": 1333006,
+     "r1Share": 53.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergio Osmeña",
+     "party": "Nacionalista Party",
+     "r1Votes": 1129994,
+     "r1Share": 45.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hilario Moncado",
+     "party": "Modernist Party",
+     "r1Votes": 8538,
+     "r1Share": 0.35,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Sergio Osmeña",
+    "party": "Nacionalista"
+   },
+   "presAfter": {
+    "name": "Manuel Roxas",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Manuel Roxas won with 53.93% against Sergio Osmeña on 45.72%. Turnout 89.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "presidential",
+   "date": "November 8, 1949",
+   "era": "third",
+   "turnout": 69.7,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "(incumbent)",
+     "party": "Liberal Party (Quirino wing)",
+     "r1Votes": 1803808,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jose P. Laurel",
+     "party": "Nacionalista Party",
+     "r1Votes": 1318320,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Avelino",
+     "party": "Liberal Party (Avelino wing)",
+     "r1Votes": 419890,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Elpidio Quirino",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Elpidio Quirino",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "(incumbent) won with 1,803,808 votes. Turnout 69.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "presidential",
+   "date": "November 10, 1953",
+   "era": "third",
+   "turnout": 77.22,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos P. Garcia",
+     "party": "Nacionalista Party",
+     "r1Votes": 2515265,
+     "r1Share": 62.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Yulo",
+     "party": "Liberal Party",
+     "r1Votes": 1483802,
+     "r1Share": 37.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Elpidio Quirino",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Ramon Magsaysay",
+    "party": "Nacionalista"
+   },
+   "knownAs": null,
+   "summary": "Carlos P. Garcia won with 62.90% against José Yulo on 37.10%. Turnout 77.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "presidential",
+   "date": "November 12, 1957",
+   "era": "third",
+   "turnout": 75.52,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "(incumbent)",
+     "party": "Nacionalista Party",
+     "r1Votes": 2072257,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Yulo",
+     "party": "Liberal Party",
+     "r1Votes": 1386829,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Manahan",
+     "party": "Progressive Party",
+     "r1Votes": 1049420,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Claro M. Recto",
+     "party": "Nationalist Citizens' Party",
+     "r1Votes": 429226,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Quirino",
+     "party": "Liberal Party (Quirino wing)",
+     "r1Votes": 60328,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Valentin de los Santos",
+     "party": "Lapiang Malaya",
+     "r1Votes": 21674,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfredo Abcede",
+     "party": "Federal Party",
+     "r1Votes": 470,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos P. Garcia",
+    "party": "Nacionalista"
+   },
+   "presAfter": {
+    "name": "Carlos P. Garcia",
+    "party": "Nacionalista"
+   },
+   "knownAs": null,
+   "summary": "(incumbent) won with 2,072,257 votes. Turnout 75.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "presidential",
+   "date": "November 14, 1961",
+   "era": "third",
+   "turnout": 79.4,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Emmanuel Pelaez",
+     "party": "Liberal Party",
+     "r1Votes": 2394400,
+     "r1Share": 37.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergio Osmeña Jr.",
+     "party": "Independent",
+     "r1Votes": 2190424,
+     "r1Share": 34.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gil Puyat",
+     "party": "Nacionalista Party",
+     "r1Votes": 1787987,
+     "r1Share": 28.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chencay Reyes Juta",
+     "party": "Dominion Status Party",
+     "r1Votes": 2,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos P. Garcia",
+    "party": "Nacionalista"
+   },
+   "presAfter": {
+    "name": "Diosdado Macapagal",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Emmanuel Pelaez won with 37.57% against Sergio Osmeña Jr. on 34.37%. Turnout 79.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "presidential",
+   "date": "November 9, 1965",
+   "era": "third",
+   "turnout": 76.4,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fernando Lopez",
+     "party": "Nacionalista Party",
+     "r1Votes": 3531550,
+     "r1Share": 48.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gerry Roxas",
+     "party": "Liberal Party",
+     "r1Votes": 3504826,
+     "r1Share": 48.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Manahan",
+     "party": "Party for Philippine Progress",
+     "r1Votes": 247426,
+     "r1Share": 3.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gonzalo D. Vasquez",
+     "party": "Reformist Party of the Philippines",
+     "r1Votes": 644,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Severo Capales",
+     "party": "New Leaf Party",
+     "r1Votes": 193,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eleodoro Salvador",
+     "party": "Partido ng Bansa",
+     "r1Votes": 172,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Diosdado Macapagal",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Ferdinand E. Marcos",
+    "party": "Nacionalista"
+   },
+   "knownAs": null,
+   "summary": "Fernando Lopez won with 48.48% against Gerry Roxas on 48.11%. Turnout 76.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "presidential",
+   "date": "November 11, 1969",
+   "era": "third",
+   "turnout": 79.6,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "(incumbent)",
+     "party": "Nacionalista Party",
+     "r1Votes": 5017343,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergio Osmeña Jr.",
+     "party": "Liberal Party",
+     "r1Votes": 3043122,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pascual Racuyal",
+     "party": "Independent",
+     "r1Votes": 778,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Segundo Baldovi",
+     "party": "Partido ng Bansa",
+     "r1Votes": 177,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pantaleon H. Panelo",
+     "party": "Independent",
+     "r1Votes": 123,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "German F. Villanueva",
+     "party": "Independent",
+     "r1Votes": 82,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gaudencio Bueno",
+     "party": "New Leaf Party",
+     "r1Votes": 44,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Angel Comagon",
+     "party": "Independent",
+     "r1Votes": 35,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cesar Bulacan",
+     "party": "Independent",
+     "r1Votes": 31,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Espiridion D. Buencamino",
+     "party": "NP",
+     "r1Votes": 23,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nic V. Garces",
+     "party": "Philippine Pro-Socialist Party",
+     "r1Votes": 23,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benito Jose",
+     "party": "Independent",
+     "r1Votes": 23,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ferdinand Marcos",
+    "party": "Nacionalista"
+   },
+   "presAfter": {
+    "name": "Ferdinand Marcos",
+    "party": "Nacionalista"
+   },
+   "knownAs": null,
+   "summary": "(incumbent) won with 5,017,343 votes. Turnout 79.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "presidential",
+   "date": "June 16, 1981",
+   "era": "marcos",
+   "turnout": 80.9,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "(incumbent)",
+     "party": "Kilusang Bagong Lipunan",
+     "r1Votes": 18309360,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejo Santos",
+     "party": "Nacionalista Party (Roy wing)",
+     "r1Votes": 1716449,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bartolome Cabangbang",
+     "party": "Federal Party",
+     "r1Votes": 749845,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Delfin R. Manapaz",
+     "party": "Independent",
+     "r1Votes": 6499,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ursula C. Dajao",
+     "party": "Independent",
+     "r1Votes": 4955,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benito L. Valdez",
+     "party": "Independent",
+     "r1Votes": 4224,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lope B. Rimando",
+     "party": "Independent",
+     "r1Votes": 1954,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lucio A. Hinigpit",
+     "party": "Sovereign Citizen Party",
+     "r1Votes": 1945,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pacifico S. Morelos",
+     "party": "Independent",
+     "r1Votes": 1740,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jose C. Igrobay",
+     "party": "Independent",
+     "r1Votes": 1421,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Simeon G. del Rosario",
+     "party": "Independent",
+     "r1Votes": 1234,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Salvador Q. Enage",
+     "party": "Independent",
+     "r1Votes": 1185,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Florencio Z. Tipano",
+     "party": "Independent",
+     "r1Votes": 592,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ferdinand Marcos",
+    "party": "KBL"
+   },
+   "presAfter": {
+    "name": "Ferdinand Marcos",
+    "party": "KBL"
+   },
+   "knownAs": null,
+   "summary": "(incumbent) won with 18,309,360 votes. Turnout 80.9%.",
+   "caveat": "Boycotted by the main opposition under martial law; Marcos was credited with 88%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "presidential",
+   "date": "February 7, 1986",
+   "era": "fifth",
+   "turnout": 78.8,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "(incumbent)",
+     "party": "Kilusang Bagong Lipunan",
+     "r1Votes": 10807197,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Corazon Aquino",
+     "party": "United Nationalist Democratic Organization",
+     "r1Votes": 9291716,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Reuben Canoy",
+     "party": "Social Democratic Party",
+     "r1Votes": 34041,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Narciso Padilla",
+     "party": "Movement for Truth, Order and Righteousness",
+     "r1Votes": 23652,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ferdinand Marcos",
+    "party": "KBL"
+   },
+   "presAfter": {
+    "name": "Corazon Aquino",
+    "party": "UNIDO"
+   },
+   "knownAs": null,
+   "summary": "(incumbent) won with 10,807,197 votes. Turnout 78.8%.",
+   "caveat": "The official count was abandoned on live television when tabulators walked out; the result was overturned by the People Power uprising three weeks later.",
+   "unfree": null
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "presidential",
+   "date": "May 11, 1992",
+   "era": "fifth",
+   "turnout": 75.5,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fidel V. Ramos",
+     "party": "Lakas–NUCD",
+     "r1Votes": 5342521,
+     "r1Share": 23.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miriam Defensor Santiago",
+     "party": "People's Reform Party",
+     "r1Votes": 4468173,
+     "r1Share": 19.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Danding Cojuangco",
+     "party": "Nationalist People's Coalition",
+     "r1Votes": 4116376,
+     "r1Share": 18.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramon Mitra Jr.",
+     "party": "Laban ng Demokratikong Pilipino",
+     "r1Votes": 3316661,
+     "r1Share": 14.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Imelda Marcos",
+     "party": "Kilusang Bagong Lipunan",
+     "r1Votes": 2338294,
+     "r1Share": 10.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jovito Salonga",
+     "party": "Liberal Party",
+     "r1Votes": 2302124,
+     "r1Share": 10.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Salvador Laurel",
+     "party": "Nacionalista Party",
+     "r1Votes": 770046,
+     "r1Share": 3.4,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Corazon Aquino",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Fidel V. Ramos",
+    "party": "Lakas"
+   },
+   "knownAs": null,
+   "summary": "Fidel V. Ramos won with 23.58% against Miriam Defensor Santiago on 19.72%. Turnout 75.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "presidential",
+   "date": "May 11, 1998",
+   "era": "fifth",
+   "turnout": 86.5,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Joseph Estrada",
+     "party": "Laban ng Makabayang Masang Pilipino",
+     "r1Votes": 10722295,
+     "r1Share": 39.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jose de Venecia Jr.",
+     "party": "Lakas–NUCD–UMDP",
+     "r1Votes": 4268483,
+     "r1Share": 15.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raul Roco",
+     "party": "Aksyon Demokratiko",
+     "r1Votes": 3720212,
+     "r1Share": 13.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lito Osmeña",
+     "party": "PROMDI",
+     "r1Votes": 3347631,
+     "r1Share": 12.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfredo Lim",
+     "party": "Liberal Party",
+     "r1Votes": 2344362,
+     "r1Share": 8.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Renato de Villa",
+     "party": "Partido para sa Demokratikong Reporma–Lapiang Manggagawa",
+     "r1Votes": 1308352,
+     "r1Share": 4.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miriam Defensor Santiago",
+     "party": "People's Reform Party",
+     "r1Votes": 797206,
+     "r1Share": 2.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Ponce Enrile",
+     "party": "Independent",
+     "r1Votes": 343139,
+     "r1Share": 1.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Santiago Dumlao",
+     "party": "Kilusan para sa Pambansang Pagpapanibago",
+     "r1Votes": 32212,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Morato",
+     "party": "Partido Bansang Marangal",
+     "r1Votes": 18644,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Fidel V. Ramos",
+    "party": "Lakas"
+   },
+   "presAfter": {
+    "name": "Joseph Estrada",
+    "party": "LAMMP"
+   },
+   "knownAs": null,
+   "summary": "Joseph Estrada won with 39.86% against Jose de Venecia Jr. on 15.87%. Turnout 86.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "May 10, 2004",
+   "era": "fifth",
+   "turnout": 76.3,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "(incumbent)",
+     "party": "Lakas–CMD",
+     "r1Votes": 12905808,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Poe Jr.",
+     "party": "Koalisyon ng Nagkakaisang Pilipino",
+     "r1Votes": 11782232,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Panfilo Lacson",
+     "party": "Laban ng Demokratikong Pilipino (Aquino wing)",
+     "r1Votes": 3510080,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raul Roco",
+     "party": "Aksyon Demokratiko",
+     "r1Votes": 2082762,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eddie Villanueva",
+     "party": "Bangon Pilipinas",
+     "r1Votes": 1988218,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gloria Macapagal Arroyo",
+    "party": "Lakas"
+   },
+   "presAfter": {
+    "name": "Gloria Macapagal Arroyo",
+    "party": "Lakas"
+   },
+   "knownAs": null,
+   "summary": "(incumbent) won with 12,905,808 votes. Turnout 76.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "presidential",
+   "date": "May 10, 2010",
+   "era": "fifth",
+   "turnout": 74.34,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Benigno Aquino III",
+     "party": "Liberal Party",
+     "r1Votes": 15208678,
+     "r1Share": 42.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joseph Estrada",
+     "party": "Pwersa ng Masang Pilipino",
+     "r1Votes": 9487837,
+     "r1Share": 26.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manny Villar",
+     "party": "Nacionalista Party",
+     "r1Votes": 5573835,
+     "r1Share": 15.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gilbert Teodoro",
+     "party": "Lakas–Kampi–CMD",
+     "r1Votes": 4095839,
+     "r1Share": 11.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eddie Villanueva",
+     "party": "Bangon Pilipinas",
+     "r1Votes": 1125878,
+     "r1Share": 3.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dick Gordon",
+     "party": "Bagumbayan–VNP",
+     "r1Votes": 501727,
+     "r1Share": 1.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicanor Perlas",
+     "party": "Independent",
+     "r1Votes": 54575,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jamby Madrigal",
+     "party": "Independent",
+     "r1Votes": 46489,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "John Carlos de los Reyes",
+     "party": "Ang Kapatiran",
+     "r1Votes": 44244,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gloria Macapagal Arroyo",
+    "party": "Lakas–Kampi"
+   },
+   "presAfter": {
+    "name": "Benigno Aquino III",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Benigno Aquino III won with 42.08% against Joseph Estrada on 26.25%. Turnout 74.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "presidential",
+   "date": "May 9, 2016",
+   "era": "fifth",
+   "turnout": 80.69,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Benigno Aquino III",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Rodrigo Duterte",
+    "party": "PDP–Laban"
+   },
+   "knownAs": null,
+   "summary": "Turnout 80.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "May 9, 2022",
+   "era": "fifth",
+   "turnout": 83.07,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Bongbong Marcos",
+     "party": "Partido Federal ng Pilipinas",
+     "r1Votes": 31629783,
+     "r1Share": 58.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leni Robredo",
+     "party": "Independent",
+     "r1Votes": 15035773,
+     "r1Share": 27.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manny Pacquiao",
+     "party": "PROMDI",
+     "r1Votes": 3663113,
+     "r1Share": 6.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Isko Moreno",
+     "party": "Aksyon Demokratiko",
+     "r1Votes": 1933909,
+     "r1Share": 3.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Panfilo Lacson",
+     "party": "Independent",
+     "r1Votes": 892375,
+     "r1Share": 1.66,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Faisal Mangondato",
+     "party": "Katipunan ng Kamalayang Kayumanggi",
+     "r1Votes": 301629,
+     "r1Share": 0.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ernesto Abella",
+     "party": "Independent",
+     "r1Votes": 114627,
+     "r1Share": 0.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leody de Guzman",
+     "party": "Partido Lakas ng Masa",
+     "r1Votes": 93027,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Norberto Gonzales",
+     "party": "Partido Demokratiko Sosyalista ng Pilipinas",
+     "r1Votes": 90656,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jose Montemayor Jr.",
+     "party": "Democratic Party of the Philippines",
+     "r1Votes": 60592,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rodrigo Duterte",
+    "party": "PDP–Laban"
+   },
+   "presAfter": {
+    "name": "Bongbong Marcos",
+    "party": "PFP"
+   },
+   "knownAs": null,
+   "summary": "Bongbong Marcos won with 58.77% against Leni Robredo on 27.94%. Turnout 83.1%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

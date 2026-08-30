@@ -112,7 +112,19 @@ export default function IqElectionsPage() {
         <StatTile label="Saddam's 2002 score" value="100%" hint="eleven million official votes, none against — recorded as an artefact of terror" />
       </div>
 
-      <JumpNav items={[["#presidential", "Presidential votes"], ["#chronology", "Parliamentary elections"], ["#charts", "The long arc in charts"], ["#records", "The numbers to know"], ["#how-it-works", "How it works"]]} />
+      <JumpNav items={[["#chronology", "Parliamentary elections"], ["#presidential", "Presidential votes"], ["#charts", "The long arc in charts"], ["#records", "The numbers to know"], ["#how-it-works", "How it works"]]} />
+
+      {/* ---------- legislative ---------- */}
+      <Chronology
+        eras={legEras}
+        elections={legislative}
+        hrefBase={PATH}
+        colorOf={iqPartyColor}
+        fmtPct={iqFmtPct}
+        leaderTag="PM"
+        headline="Parliamentary elections"
+        intro="Every national parliamentary vote, newest first — the Council of Representatives era with real winners and losers, the Ba'athist National Assembly rituals labelled for what they were, and the managed chambers of the monarchy."
+      />
 
       {/* ---------- presidential ---------- */}
       <section id="presidential" className="mb-12">
@@ -136,18 +148,6 @@ export default function IqElectionsPage() {
           </div>
         ))}
       </section>
-
-      {/* ---------- legislative ---------- */}
-      <Chronology
-        eras={legEras}
-        elections={legislative}
-        hrefBase={PATH}
-        colorOf={iqPartyColor}
-        fmtPct={iqFmtPct}
-        leaderTag="PM"
-        headline="Parliamentary elections"
-        intro="Every national parliamentary vote, newest first — the Council of Representatives era with real winners and losers, the Ba'athist National Assembly rituals labelled for what they were, and the managed chambers of the monarchy."
-      />
 
       {/* ---------- charts ---------- */}
       <section id="charts" className="mb-12">

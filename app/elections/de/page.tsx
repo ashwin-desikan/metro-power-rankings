@@ -4,10 +4,12 @@ import {
   getDeElections,
   computeDeRecords,
   dePartyColor,
+  deWinnerOf,
   DE_BIG_TWO,
   deFmtInt,
   deFmtPct,
   type DeElection,
+  type DePresElection,
 } from "@/lib/deElections";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import LineChart, { type ChartSeries } from "../LineChart";
@@ -26,7 +28,12 @@ export const metadata: Metadata = {
 };
 
 export default function DeElectionsPage() {
-  const { eras, elections, meta } = getDeElections();
+  const { eras, elections, meta, presEras, presidential } = getDeElections();
+  const presByEra = presEras
+    .map((era) => ({ era, list: presidential.filter((e) => e.era === era.key).slice().reverse() }))
+    .filter((g) => g.list.length)
+    .reverse();
+  const multiBallot = presidential.filter((e) => (e.ballots ?? 1) > 1).length;
   const records = computeDeRecords();
   const last = elections[elections.length - 1];
   const free = elections.filter((e) => !e.unfree);
@@ -83,7 +90,7 @@ export default function DeElectionsPage() {
         <StatTile label="Universal male suffrage" value="1871" hint="women vote from 1919 — earlier than Britain, France or the US" />
       </div>
 
-      <JumpNav items={[["#chronology", "Chronology"], ["#charts", "The long arc in charts"], ["#records", "Records"], ["#how-it-works", "How it works"]]} />
+      <JumpNav items={[["#chronology", "Chronology"], ["#presidential", "The presidency"], ["#charts", "The long arc in charts"], ["#records", "Records"], ["#how-it-works", "How it works"]]} />
 
       <Chronology
         eras={eras}
@@ -95,6 +102,75 @@ export default function DeElectionsPage() {
         intro="Every national election, newest first, grouped into six eras — including, clearly labelled, the unfree votes of the Nazi years. Click any election for the full result and the story."
       />
 
+
+      {/* ---------- the presidency ----------
+          Second, and deliberately so: the Bundestag election decides who governs
+          Germany. The Federal Convention is still worth its own section, because
+          the ballot count is a result in its own right. */}
+      <section id="presidential" className="mb-12 scroll-mt-20">
+        <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">The presidency</h2>
+        <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
+          Germany does not elect its president by popular vote. A Federal Convention meets once and
+          dissolves: every member of the Bundestag, plus an equal number of delegates chosen by the
+          state parliaments in proportion to their strength there. An absolute majority is needed on
+          the first two ballots and a plurality is enough on the third, which is why the number of
+          ballots below is a result and not a footnote: {multiBallot} of these {presidential.length}
+          {" "}elections went past the first, and the Convention has a long history of not doing as
+          it is told.
+        </p>
+        {presByEra.map(({ era, list }) => (
+          <div key={era.key} id={`pres-era-${era.key}`} className="mb-8">
+            <div className="mb-3">
+              <h3 className="text-lg font-bold text-[var(--text)]">
+                {era.label} <span className="font-normal text-sm text-[var(--text-dim)]">{era.span}</span>
+              </h3>
+              <p className="text-sm text-[var(--text-muted)] max-w-3xl mt-1">{era.blurb}</p>
+            </div>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {list.map((e: DePresElection) => {
+                const win = deWinnerOf(e);
+                const top = (e.convention ?? []).filter((r) => r.total).slice(0, 3);
+                return (
+                  <Link
+                    key={e.id}
+                    href={`${PATH}/${e.id}`}
+                    className="block rounded-lg border p-3 transition-colors hover:border-[var(--accent)]"
+                    style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+                  >
+                    <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1.5">
+                      <span className="font-bold text-[var(--text)]">{e.label}</span>
+                      <span className="text-xs text-[var(--text-dim)] tabular-nums">
+                        {e.electors ? `${deFmtInt(e.electors)} electors` : "Federal Convention"}
+                        {e.ballots ? ` · ${e.ballots} ballot${e.ballots === 1 ? "" : "s"}` : ""}
+                      </span>
+                    </div>
+                    {win ? (
+                      <div className="flex items-baseline justify-between gap-3 text-sm">
+                        <span className="text-[var(--text)]">
+                          <span className="inline-block h-2.5 w-2.5 rounded-full mr-1.5 align-middle" style={{ backgroundColor: dePartyColor(win.party) }} />
+                          {win.name}
+                          {win.party ? <span className="text-[var(--text-dim)]"> · {win.party}</span> : null}
+                        </span>
+                        <span className="tabular-nums text-[var(--text-muted)] whitespace-nowrap">
+                          {deFmtInt(win.r2Votes ?? win.r1Votes)}
+                          {(win.r2Share ?? win.r1Share) != null ? ` · ${deFmtPct(win.r2Share ?? win.r1Share)}` : ""}
+                        </span>
+                      </div>
+                    ) : (
+                      <p className="text-sm text-[var(--text-dim)]">Ballot record not on file.</p>
+                    )}
+                    {top.length ? (
+                      <p className="text-[11px] text-[var(--text-dim)] mt-2 tabular-nums">
+                        Convention: {top.map((r) => `${r.party} ${r.total}`).join(" · ")}
+                      </p>
+                    ) : null}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </section>
       {/* ---------- charts ---------- */}
       <section id="charts" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">The long arc in charts</h2>

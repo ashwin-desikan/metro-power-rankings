@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getForecast, FORECAST_COLORS, FORECAST_NAMES, NZ_COLORS, NZ_NAMES, type SeatRange, type Matchup } from "@/lib/forecast";
+import { getForecastScoreboard, longDate, type ResolvedRace } from "@/lib/forecastScoreboard";
+import { getForecast, forecastDateLabel, FORECAST_COLORS, FORECAST_NAMES, NZ_COLORS, NZ_NAMES, type SeatRange, type Matchup } from "@/lib/forecast";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import LineChart, { type ChartSeries } from "../LineChart";
@@ -125,7 +126,7 @@ function CountryHeader({ flag, title, sub }: { flag: string; title: string; sub:
 }
 
 export default async function ForecastPage() {
-  const f = await getForecast();
+  const [f, ledger] = await Promise.all([getForecast(), getForecastScoreboard()]);
   if (!f) {
     return (
       <main className="mx-auto max-w-6xl px-4 py-8">
@@ -220,6 +221,87 @@ export default async function ForecastPage() {
         </p>
       </div>
 
+
+      {/* ================= THE LEDGER =================
+          Every race on this page is frozen before it votes: build_forecast.py
+          rewrites a snapshot on each run while the date is still ahead, so the
+          file that survives election day IS the last published forecast. When
+          the count is final it gets scored here, right or wrong, on the same
+          Brier axis /predictions/scoreboard uses for football. */}
+      {ledger && (ledger.resolved.length > 0 || ledger.pending.length > 0) ? (
+        <section id="ledger" className="mb-8 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-1">Scored in public</h2>
+          <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
+            Each forecast below is written to disk before its election and never touched again,
+            so nothing on this page can be improved after the result is known. Once the count is
+            final the frozen call is graded and the number stands, whichever way it falls.
+          </p>
+
+          {ledger.resolved.length ? (
+            <div className="grid gap-3 sm:grid-cols-2 mb-4">
+              {ledger.resolved.map((r: ResolvedRace) => (
+                <div key={`${r.code}-${r.election}`} className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span className="font-bold text-[var(--text)]">{r.country}</span>
+                    <span className="text-xs text-[var(--text-dim)] tabular-nums">{longDate(r.election)}</span>
+                  </div>
+                  <p className="text-xs text-[var(--text-dim)] mt-0.5">
+                    Forecast frozen {r.forecastFrom}
+                    {r.daysBefore != null ? `, ${r.daysBefore} day${r.daysBefore === 1 ? "" : "s"} out` : ""}
+                  </p>
+                  <div className="mt-3 grid gap-1.5 text-xs">
+                    {r.binaries.map((b) => (
+                      <div key={b.key} className="flex items-baseline justify-between gap-3">
+                        <span className="text-[var(--text-muted)]">{b.label}</span>
+                        <span className="tabular-nums whitespace-nowrap">
+                          <span style={{ color: (b.p > 50) === (b.outcome === 1) ? "#10b981" : "#E2628B" }}>
+                            {b.p}%
+                          </span>
+                          <span className="text-[var(--text-dim)]"> · {b.outcome ? "happened" : "did not"}</span>
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-[var(--text-dim)] mt-3 tabular-nums">
+                    Brier {r.summary.brier?.toFixed(4) ?? "—"}
+                    {r.summary.picks ? ` · ${r.summary.correct}/${r.summary.picks} picks` : ""}
+                    {r.summary.mae != null ? ` · seat MAE ${r.summary.mae}` : ""}
+                    {r.summary.coverage != null ? ` · ${r.summary.coverage}% of intervals contained the result` : ""}
+                    {r.summary.skill != null ? ` · ${r.summary.skill > 0 ? "+" : ""}${r.summary.skill}% vs the market` : ""}
+                  </p>
+                  {r.note ? <p className="text-xs text-[var(--text-muted)] mt-2">{r.note}</p> : null}
+                </div>
+              ))}
+            </div>
+          ) : null}
+
+          {ledger.pending.length ? (
+            <div className="text-sm">
+              <h3 className="font-semibold text-[var(--text)] mb-2">Frozen and waiting</h3>
+              <div className="grid gap-1.5">
+                {ledger.pending.map((p) => (
+                  <div key={`${p.code}-${p.election}`} className="flex items-baseline justify-between gap-3 text-xs">
+                    <span className="text-[var(--text)] font-semibold">{p.country}</span>
+                    <span className="tabular-nums text-[var(--text-dim)] whitespace-nowrap">
+                      {longDate(p.election)}
+                      {p.awaitingResult ? (
+                        <span style={{ color: "#D97706" }}> · voted, awaiting the final count</span>
+                      ) : p.daysAway != null ? (
+                        <span> · {p.daysAway} days</span>
+                      ) : null}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          <p className="text-xs text-[var(--text-dim)] mt-4">
+            The full ledger, alongside football, the NFL and college football on one axis, is at{" "}
+            <Link href="/predictions/scoreboard" className="text-[var(--accent)] hover:underline">/predictions/scoreboard</Link>.
+          </p>
+        </section>
+      ) : null}
       {/* ================= UNITED STATES ================= */}
       <section id="us" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
         <CountryHeader
@@ -379,7 +461,7 @@ export default async function ForecastPage() {
         <CountryHeader
           flag="gb"
           title="United Kingdom — the next general election"
-          sub={`Due by August 2029 (modelled as ${uk.electionAssumed.slice(0, 7)}), ${uk.sim.monthsOut} months away. Average of the latest poll from each of ${uk.pollsters} pollsters, recency-weighted; latest poll ${uk.latestPollDate}.`}
+          sub={`Due by August 2029 (${forecastDateLabel(uk)}), ${uk.sim.monthsOut} months away. Average of the latest poll from each of ${uk.pollsters} pollsters, recency-weighted; latest poll ${uk.latestPollDate}.`}
         />
 
         <div className="grid gap-4 lg:grid-cols-2 mb-6">
@@ -483,7 +565,7 @@ export default async function ForecastPage() {
           <CountryHeader
             flag="il"
             title="Israel — the 2026 Knesset election"
-            sub={`Modelled for ${il.electionAssumed.slice(0, 7)} on the regular four-year schedule. Israeli pollsters publish seat projections directly; this is the recency-weighted average of ${il.polls} published seat polls (a thin base — the cycle's polling has only just begun), renormalised to the Knesset's 120 seats.`}
+            sub={`Set for ${forecastDateLabel(il)}, ${il.monthsOut} months away, after the Knesset dissolved itself on 17 July 2026. Israeli pollsters publish seat projections directly; this is the recency-weighted average of ${il.polls} published seat polls (a thin base — the cycle's polling has only just begun), renormalised to the Knesset's 120 seats.`}
           />
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -528,7 +610,7 @@ export default async function ForecastPage() {
           <CountryHeader
             flag="nz"
             title="New Zealand — the 2026 general election"
-            sub={`Due late 2026 (modelled as ${nz.electionAssumed.slice(0, 7)}), ${nz.monthsOut} months away. Latest poll from each of ${nz.pollsters} pollsters, recency-weighted; latest ${nz.latestPollDate}. Seats via Sainte-Laguë with the 5% threshold (electorate-seat waiver assumed for ACT and Te Pāti Māori).`}
+            sub={`Set for ${forecastDateLabel(nz)}, ${nz.monthsOut} months away. Latest poll from each of ${nz.pollsters} pollsters, recency-weighted; latest ${nz.latestPollDate}. Seats via Sainte-Laguë with the 5% threshold (electorate-seat waiver assumed for ACT and Te Pāti Māori).`}
           />
           <div className="grid gap-4 lg:grid-cols-2 mb-4">
             <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -576,7 +658,7 @@ export default async function ForecastPage() {
           <CountryHeader
             flag="fr"
             title="France — the 2027 presidential election"
-            sub={`Due spring 2027 (modelled as ${fr.electionAssumed.slice(0, 7)}), ${fr.monthsOut} months away. The heaviest caveat on this page: no candidate has been formally nominated, so pollsters test hypothetical fields. These are scenario averages, not a forecast of a settled race.`}
+            sub={`Due spring 2027 (${forecastDateLabel(fr)}), ${fr.monthsOut} months away. The heaviest caveat on this page: no candidate has been formally nominated, so pollsters test hypothetical fields. These are scenario averages, not a forecast of a settled race.`}
           />
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>

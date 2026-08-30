@@ -29,7 +29,7 @@ import { getUaElections } from "@/lib/uaElections";
 import { getIqElections } from "@/lib/iqElections";
 import { getPsElections } from "@/lib/psElections";
 import { getVaElections } from "@/lib/vaElections";
-import { ELECTION_HUBS } from "@/lib/electionHubsMeta";
+import { ELECTION_HUBS, nextElections } from "@/lib/electionHubsMeta";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubCardClient from "./HubCardClient";
@@ -38,8 +38,18 @@ import ElectionsWorldMap, { type HubMarker } from "./ElectionsWorldMap";
 import TimelineStrip, { TimelineLegend, type TlDot, type TlRow } from "./TimelineStrip";
 import { BackButton } from "./HubShared";
 import { getElectionCensus } from "@/lib/electionCensus";
+import { weightedFreedomDecades } from "@/lib/electionPopulationWeight";
 import { getForecast, FORECAST_COLORS, FORECAST_NAMES, NZ_COLORS, NZ_NAMES } from "@/lib/forecast";
 import LineChart, { type ChartSeries } from "./LineChart";
+
+const MONTHS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+function fullDate(iso: string): string {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+}
 
 const PATH = "/elections";
 const TITLE = "Elections";
@@ -65,6 +75,12 @@ const CAPITALS: Record<string, [number, number]> = {
   in: [28.6139, 77.209], jp: [35.6762, 139.6503], au: [-35.2809, 149.13], nz: [-41.2866, 174.7756],
   kr: [37.5665, 126.978], id: [-6.2088, 106.8456], tw: [25.033, 121.5654], cn: [39.9042, 116.4074],
   ua: [50.4501, 30.5234], iq: [33.3152, 44.3661], ps: [31.9038, 35.2034], va: [41.9029, 12.4534],
+  // Wave 1, 2026-08-30. A hub with no entry here is silently absent from the
+  // map, which is exactly how the six new hubs shipped invisible: the metro
+  // link table (HUB_CAPITALS) and this coordinate table are separate, and only
+  // one of them was filled in.
+  gr: [37.9838, 23.7275], at: [48.2082, 16.3738], pt: [38.7223, -9.1393],
+  ie: [53.3498, -6.2603], ph: [14.5995, 120.9842], eg: [30.0444, 31.2357],
   sg: [1.3521, 103.8198], my: [3.139, 101.6869], ch: [46.948, 7.4474], be: [50.8503, 4.3517],
   dk: [55.6761, 12.5683],
 };
@@ -221,6 +237,12 @@ export default async function ElectionsPage() {
     }));
 
   // ---------- "every election ever" timeline ----------
+  // The countdown board. nextElections() sorts on the structured dates in
+  // ELECTION_HUBS and puts the unscheduled hubs (Ukraine, the Vatican) last.
+  const allNext = nextElections();
+  const countdown = allNext.slice(0, 12);
+  const confirmedCount = allNext.filter((r) => r.confidence === "confirmed").length;
+
   const tlRows: TlRow[] = getElectionCensus()
     .filter((r) => ELECTION_HUBS[r.code]?.tier !== "compact")
     .map((r) => ({
@@ -256,6 +278,14 @@ export default async function ElectionsPage() {
       unfree: slice.filter((x) => x.f === 2).length,
     });
   }
+
+  // The same chart weighted by the people living under those ballots, at the
+  // population of the decade rather than of today. The contest-counted version
+  // measures the atlas; this one measures the world it covers.
+  const freedomPop = weightedFreedomDecades(getElectionCensus());
+  const freedomCounts = new Map(freedomDecades.map((r) => [r.d, r]));
+  const millions = (n: number) =>
+    n >= 1e9 ? `${(n / 1e9).toFixed(2)}bn` : `${Math.round(n / 1e6)}m`;
 
   const top: Card[] = [
     {
@@ -427,9 +457,9 @@ export default async function ElectionsPage() {
   // the map/timeline/charts above — and can be promoted to a featured card
   // later by dropping `tier: "compact"` in electionHubsMeta.
   const regions: { title: string; cards: Card[]; more: string[] }[] = [
-    { title: "Europe", cards: europe, more: ["ch", "be", "dk"] },
-    { title: "Asia & Oceania", cards: asiaOceania, more: ["sg", "my"] },
-    { title: "Middle East & Africa", cards: meAfrica, more: [] },
+    { title: "Europe", cards: europe, more: ["ch", "be", "dk", "gr", "at", "pt", "ie"] },
+    { title: "Asia & Oceania", cards: asiaOceania, more: ["sg", "my", "ph"] },
+    { title: "Middle East & Africa", cards: meAfrica, more: ["eg"] },
     { title: "The Americas", cards: americas, more: [] },
   ];
 
@@ -443,6 +473,7 @@ export default async function ElectionsPage() {
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <BackButton href="/" label="Back to rankings" />
+        <BackButton href="/elections/all" label="All hubs A–Z" />
         <BackButton href="/leaders" label="World Leaders" />
         <BackButton href="/countries" label="Countries" />
         <BackButton href="/conflicts" label="Conflicts" />
@@ -574,6 +605,58 @@ export default async function ElectionsPage() {
         </section>
       ) : null}
 
+
+      {/* ---------- the countdown board ----------
+          Sorted on ELECTION_HUBS.nextDate, the one place election dates live.
+          A confirmed date prints as a date; an "expected" one prints the prose
+          instead, because its date is a latest-permissible sort key and not a
+          claim. An overdue row is left visible on purpose: it means a result
+          needs filing, and scripts/check-election-dates.mjs fails the build if
+          it stays that way for a fortnight. */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Next to vote</h2>
+        <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
+          The twelve soonest contests in the atlas. Dates in white are officially set; the rest
+          are the term running its course, and say so rather than inventing a day.
+        </p>
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {countdown.map((r) => (
+            <Link
+              key={r.code}
+              href={r.href}
+              className="flex items-center gap-3 rounded-xl border p-3 transition-colors hover:border-[var(--accent)]"
+              style={{ borderColor: r.overdue ? "#B4540A" : "var(--border)", backgroundColor: "var(--bg-card)" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={flagUrlByCode(r.flag)} srcSet={flagSrcSetByCode(r.flag)} alt="" width={26} height={19} className="rounded-[2px] shrink-0" />
+              <span className="min-w-0 flex-1">
+                <span className="block font-semibold text-[var(--text)] truncate">{r.name}</span>
+                <span className="block text-xs text-[var(--text-dim)] truncate">
+                  {r.confidence === "confirmed" && r.date ? fullDate(r.date) : r.next}
+                </span>
+              </span>
+              <span className="shrink-0 text-right tabular-nums text-xs">
+                {r.overdue ? (
+                  <span className="font-semibold" style={{ color: "#D97706" }}>result due</span>
+                ) : r.daysAway == null ? (
+                  <span className="text-[var(--text-dim)]">no date</span>
+                ) : (
+                  <>
+                    <span className={r.confidence === "confirmed" ? "font-bold text-[var(--text)]" : "text-[var(--text-muted)]"}>
+                      {r.daysAway === 0 ? "today" : r.daysAway.toLocaleString("en-US")}
+                    </span>
+                    {r.daysAway === 0 ? null : <span className="block text-[10px] text-[var(--text-dim)]">days</span>}
+                  </>
+                )}
+              </span>
+            </Link>
+          ))}
+        </div>
+        <p className="text-xs text-[var(--text-dim)] mt-2">
+          {confirmedCount} of the {allNext.length} hubs have an officially set date. The others show the
+          term running out, which is what is actually known.
+        </p>
+      </section>
       {/* ---------- world map ---------- */}
       <section className="mb-10">
         <ElectionsWorldMap markers={markers} />
@@ -654,6 +737,12 @@ export default async function ElectionsPage() {
           <Link href="/elections/referendums" className="text-[var(--accent)] hover:underline">
             Landmark referendums: when the people decided directly →
           </Link>
+          <Link href="/elections/all" className="text-[var(--accent)] hover:underline">
+            Every hub A–Z, searchable →
+          </Link>
+          <Link href="/elections/systems" className="text-[var(--accent)] hover:underline">
+            Electoral systems: how closely seats track votes →
+          </Link>
         </p>
       </section>
 
@@ -669,33 +758,49 @@ export default async function ElectionsPage() {
               turnout lives 20 points below its peers. Hover for exact figures.
             </p>
             <LineChart series={turnoutSeries} yMax={100} yTicks={[25, 50, 75]} />
+            <p className="text-[10px] text-[var(--text-dim)] mt-2">
+              Six is a chart; all of them is a table. Turnout for every polity that records it,
+              with the highs that are rituals marked as such, is on{" "}
+              <Link href="/elections/systems" className="text-[var(--accent)] hover:underline">electoral systems</Link>.
+            </p>
           </div>
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">How much of the world voted freely</h3>
             <p className="text-xs text-[var(--text-muted)] mb-3">
-              Every contest in the atlas by decade, colored by the honesty labels: the imperial and
-              colonial restrictions of the early rows, the mid-century surge of rituals under
-              dictatorship, the democratic flood after 1945 and again after 1989.
+              Weighted by the people, not by the elections. Each polity counts once a decade, at its
+              population in that decade, under the worst label its ballots earned: the colonial
+              restrictions of the early rows, the mid-century rituals under dictatorship, the
+              democratic flood after 1945 and again after 1989.
             </p>
             <div className="grid gap-1">
-              {freedomDecades.map(({ d, free, partial, unfree }) => {
-                const total = free + partial + unfree;
+              {freedomPop.map(({ d, free, partial, unfree, covered, worldShare, polities }) => {
+                const counts = freedomCounts.get(d);
                 return (
                   <div key={d} className="flex items-center gap-2">
                     <span className="text-[10px] tabular-nums text-[var(--text-dim)] w-10 shrink-0">{d}s</span>
                     <div className="flex h-3 flex-1 overflow-hidden rounded-sm" style={{ backgroundColor: "var(--border)" }}>
-                      {free > 0 ? <div style={{ width: `${(free / total) * 100}%`, backgroundColor: "#4ECDC4" }} title={`${free} free contests`} /> : null}
-                      {partial > 0 ? <div style={{ width: `${(partial / total) * 100}%`, backgroundColor: "#D97706" }} title={`${partial} restricted or tilted`} /> : null}
-                      {unfree > 0 ? <div style={{ width: `${(unfree / total) * 100}%`, backgroundColor: "#8E1B1B" }} title={`${unfree} unfree rituals`} /> : null}
+                      {free > 0 ? <div style={{ width: `${(free / covered) * 100}%`, backgroundColor: "#4ECDC4" }} title={`${millions(free)} under free ballots${counts ? ` · ${counts.free} contests` : ""}`} /> : null}
+                      {partial > 0 ? <div style={{ width: `${(partial / covered) * 100}%`, backgroundColor: "#D97706" }} title={`${millions(partial)} under restricted or tilted ballots${counts ? ` · ${counts.partial} contests` : ""}`} /> : null}
+                      {unfree > 0 ? <div style={{ width: `${(unfree / covered) * 100}%`, backgroundColor: "#8E1B1B" }} title={`${millions(unfree)} under unfree rituals${counts ? ` · ${counts.unfree} contests` : ""}`} /> : null}
                     </div>
-                    <span className="text-[10px] tabular-nums text-[var(--text-dim)] w-8 shrink-0 text-right">{total}</span>
+                    <span
+                      className="text-[10px] tabular-nums text-[var(--text-dim)] w-12 shrink-0 text-right"
+                      title={`${polities} polities voting, ${millions(covered)} people, ${worldShare.toFixed(0)}% of the world alive then`}
+                    >
+                      {millions(covered)}
+                    </span>
                   </div>
                 );
               })}
             </div>
             <p className="text-[10px] text-[var(--text-dim)] mt-2">
-              Share of contests in this atlas rated free (teal), restricted or tilted (amber), and
-              unfree (dark red), by decade. Coverage reflects the {tlRows.length} polities tracked here.
+              Free (teal), restricted or tilted (amber), unfree (dark red). The figure on the right is
+              the population of the polities that voted at all that decade, which is why the early rows
+              are small: in the {freedomPop[0]?.d}s that was{" "}
+              {freedomPop[0]?.worldShare.toFixed(0)}% of the people alive, against{" "}
+              {freedomPop[freedomPop.length - 1]?.worldShare.toFixed(0)}% in the{" "}
+              {freedomPop[freedomPop.length - 1]?.d}s. Hover any bar for the contest counts behind it.
+              Coverage is the {tlRows.length} polities tracked here, so this is the covered world, not the whole one.
             </p>
           </div>
         </div>

@@ -19,14 +19,21 @@ Method (documented on /elections/forecast):
 import json, math, os, random, sys
 from datetime import date, datetime
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import hub_dates  # single source of election dates: lib/electionHubsMeta.ts
+
 sys.stdout.reconfigure(encoding="utf-8")
 random.seed(20260722)  # deterministic output per input set
 IN = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "forecast")
 PUB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "public", "data")
 TODAY = date.today()
 
-UK_ELECTION = date(2029, 5, 3)   # due by August 2029; spring convention
-US_ELECTION = date(2026, 11, 3)
+# Election dates come from lib/electionHubsMeta.ts via hub_dates.resolve().
+# The date() literal below each call is the model's OWN assumption, used only
+# while the hub has no confirmed date; a confirmed hub date always wins and the
+# swap is printed at run time. Never edit a date here without editing the hub.
+UK_ELECTION, UK_CONF = hub_dates.resolve("uk", date(2029, 5, 3), "United Kingdom")
+US_ELECTION, US_CONF = hub_dates.resolve("us", date(2026, 11, 3), "United States")
 UK_PARTIES = ["con", "lab", "ld", "ref", "grn", "snp"]
 PARTY_NAMES = {"con": "Conservative", "lab": "Labour", "ld": "Liberal Democrat", "ref": "Reform UK",
                "grn": "Green", "snp": "SNP", "pc": "Plaid Cymru", "oth": "Others", "ni": "NI parties"}
@@ -297,7 +304,7 @@ def weighted_recent(rows, window=45, half_life=14.0):
 
 # ---------------- New Zealand (MMP, Sainte-Laguë) ----------------
 
-NZ_ELECTION = date(2026, 10, 17)   # due late 2026; NZ votes on Saturdays (assumed)
+NZ_ELECTION, NZ_CONF = hub_dates.resolve("nz", date(2026, 10, 17), "New Zealand")
 NZ_PARTIES = ["nat", "lab", "grn", "act", "nzf", "tpm", "top"]
 NZ_WAIVER = {"act", "tpm"}         # assumed to retain an electorate seat (threshold waiver)
 
@@ -370,7 +377,9 @@ def nz_forecast(nzdata, sims=10000):
         arr.sort()
         return {"median": arr[len(arr) // 2], "lo": arr[int(len(arr) * 0.05)], "hi": arr[int(len(arr) * 0.95)]}
     return {
-        "electionAssumed": NZ_ELECTION.isoformat(),
+        "electionAssumed": NZ_ELECTION.isoformat(),  # legacy key, kept for rollout
+        "electionDate": NZ_ELECTION.isoformat(),
+        "electionConfidence": NZ_CONF,
         "average": avg, "pollsters": npolls,
         "latestPollDate": nzdata["polls"][-1]["date"] if nzdata.get("polls") else None,
         "seats": {k: rng(v) for k, v in tallies.items() if v},
@@ -383,7 +392,7 @@ def nz_forecast(nzdata, sims=10000):
 
 # ---------------- Israel (seat polls, Gov-bloc column) ----------------
 
-IL_ELECTION = date(2026, 10, 27)   # four-year Knesset term from Nov 2022 (assumed)
+IL_ELECTION, IL_CONF = hub_dates.resolve("il", date(2026, 10, 27), "Israel")
 
 def il_forecast(ildata, sims=8000):
     polls = ildata.get("polls", [])
@@ -415,7 +424,9 @@ def il_forecast(ildata, sims=8000):
         sig = 2.0 + 2.5 * math.sqrt(months / 12.0)   # bloc-total seat error at horizon
         p61 = round(100.0 * sum(1 for _ in range(sims) if random.gauss(gov_avg, sig) >= 61) / sims, 1)
     return {
-        "electionAssumed": IL_ELECTION.isoformat(),
+        "electionAssumed": IL_ELECTION.isoformat(),  # legacy key, kept for rollout
+        "electionDate": IL_ELECTION.isoformat(),
+        "electionConfidence": IL_CONF,
         "parties": [{"name": k, "seats": round(v, 1)} for k, v in sorted(avg.items(), key=lambda kv: -kv[1])],
         "polls": len(polls), "pollsters": len(latest),
         "latestPollDate": polls[-1]["date"],
@@ -426,7 +437,7 @@ def il_forecast(ildata, sims=8000):
 
 # ---------------- Brazil (two-round presidential) ----------------
 
-BR_ELECTION = date(2026, 10, 4)
+BR_ELECTION, BR_CONF = hub_dates.resolve("br", date(2026, 10, 4), "Brazil")
 
 def matchup_forecast(matchups, months, base_sigma, window, sims=10000):
     merged = {}
@@ -454,6 +465,8 @@ def br_forecast(brdata):
     months = months_until(BR_ELECTION)
     return {
         "election": BR_ELECTION.isoformat(),
+        "electionDate": BR_ELECTION.isoformat(),
+        "electionConfidence": BR_CONF,
         "firstRound": {"shares": {k: v for k, v in sorted(first.items(), key=lambda kv: -kv[1])},
                        "polls": n1, "latest": latest1},
         "runoffs": matchup_forecast(brdata.get("matchups", []), months, base_sigma=3.0, window=150),
@@ -463,7 +476,7 @@ def br_forecast(brdata):
 
 # ---------------- France (2027 presidential, scenario polling) ----------------
 
-FR_ELECTION = date(2027, 4, 11)    # first round, spring 2027 convention (assumed)
+FR_ELECTION, FR_CONF = hub_dates.resolve("fr", date(2027, 4, 11), "France")
 
 def fr_forecast(frdata):
     first, n1, latest1 = weighted_recent(frdata.get("firstRound", []), window=120)
@@ -472,13 +485,58 @@ def fr_forecast(frdata):
     if not first and not runoffs:
         return None
     return {
-        "electionAssumed": FR_ELECTION.isoformat(),
+        "electionAssumed": FR_ELECTION.isoformat(),  # legacy key, kept for rollout
+        "electionDate": FR_ELECTION.isoformat(),
+        "electionConfidence": FR_CONF,
         "firstRound": {"shares": {k: v for k, v in sorted(first.items(), key=lambda kv: -kv[1])},
                        "polls": n1, "latest": latest1},
         "runoffs": runoffs,
         "monthsOut": round(months, 1),
         "sources": [frdata["source"]],
     }
+
+
+# ---------------- eve-of-election freeze ----------------
+#
+# A forecast that is not written down before the result is not a forecast, it
+# is a memory. Every run overwrites the snapshot for each race that has not yet
+# voted; the moment election day passes, the file stops being touched and is,
+# by construction, the last forecast published before the polls opened. No
+# scheduling, no eve-of-poll cron, nothing to forget.
+#
+# scripts/forecast/score_forecasts.py joins these to data/forecast/results/.
+SNAP_DIR = os.path.join(IN, "snapshots")
+
+
+def freeze_pre_election(blocks):
+    """Persist the current forecast for every race still in the future."""
+    os.makedirs(SNAP_DIR, exist_ok=True)
+    frozen = []
+    for code, block in blocks.items():
+        if not block:
+            continue
+        iso = block.get("electionDate") or block.get("election") or block.get("electionAssumed")
+        if not iso:
+            continue
+        try:
+            when = datetime.strptime(iso, "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        if when <= TODAY:
+            continue  # voted, or voting today: whatever is on disk is final
+        path = os.path.join(SNAP_DIR, "%s-%s.json" % (code, iso))
+        payload = {"code": code, "election": iso,
+                   "confidence": block.get("electionConfidence", "assumed"),
+                   "built": TODAY.isoformat(),
+                   "daysBefore": (when - TODAY).days,
+                   "block": block}
+        json.dump(payload, open(path, "w", encoding="utf-8"),
+                  ensure_ascii=False, indent=1)
+        frozen.append("%s@%s(-%dd)" % (code, iso, (when - TODAY).days))
+    if frozen:
+        print("froze pre-election snapshots:", ", ".join(frozen))
+    return frozen
+
 
 # ---------------- main ----------------
 
@@ -491,7 +549,9 @@ def main():
     print("UK average over", npolls, "pollsters:", avg)
     trend = uk_trend(ukdata["polls"])
     uk = {
-        "electionAssumed": UK_ELECTION.isoformat(),
+        "electionAssumed": UK_ELECTION.isoformat(),  # legacy key, kept for rollout
+        "electionDate": UK_ELECTION.isoformat(),
+        "electionConfidence": UK_CONF,
         "average": avg, "pollsters": npolls,
         "latestPollDate": ukdata["polls"][-1]["date"] if ukdata["polls"] else None,
         "trend": trend,
@@ -504,6 +564,8 @@ def main():
     us = us_forecast(usdata)
     if us:
         us["election"] = US_ELECTION.isoformat()
+        us["electionDate"] = US_ELECTION.isoformat()
+        us["electionConfidence"] = US_CONF
         us["sources"] = [usdata["source"]]
         print("US margin D%+.1f -> D seats" % us["margin"], us["demSeats"], "P(D House)", us["pDemHouse"])
         sen_path = os.path.join(IN, "us_senate.json")
@@ -569,6 +631,8 @@ def main():
     }
     json.dump(out, open(os.path.join(PUB, "forecast.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("wrote public/data/forecast.json")
+
+    freeze_pre_election({"uk": uk, "us": us, "nz": nz, "il": il, "br": br, "fr": fr})
 
 if __name__ == "__main__":
     main()

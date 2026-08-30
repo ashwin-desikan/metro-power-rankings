@@ -1,0 +1,60 @@
+{
+ "resolved": [],
+ "pending": [
+  {
+   "code": "br",
+   "country": "Brazil",
+   "election": "2026-10-04",
+   "daysAway": 35,
+   "forecastFrom": "2026-08-30",
+   "awaitingResult": false
+  },
+  {
+   "code": "il",
+   "country": "Israel",
+   "election": "2026-10-27",
+   "daysAway": 58,
+   "forecastFrom": "2026-08-30",
+   "awaitingResult": false
+  },
+  {
+   "code": "us",
+   "country": "United States",
+   "election": "2026-11-03",
+   "daysAway": 65,
+   "forecastFrom": "2026-08-30",
+   "awaitingResult": false
+  },
+  {
+   "code": "nz",
+   "country": "New Zealand",
+   "election": "2026-11-07",
+   "daysAway": 69,
+   "forecastFrom": "2026-08-30",
+   "awaitingResult": false
+  },
+  {
+   "code": "fr",
+   "country": "France",
+   "election": "2027-04-11",
+   "daysAway": 224,
+   "forecastFrom": "2026-08-30",
+   "awaitingResult": false
+  },
+  {
+   "code": "uk",
+   "country": "United Kingdom",
+   "election": "2029-05-03",
+   "daysAway": 977,
+   "forecastFrom": "2026-08-30",
+   "awaitingResult": false
+  }
+ ],
+ "totals": {
+  "binaries": 0,
+  "intervals": 0,
+  "races": 0
+ },
+ "calibration": [],
+ "built": "2026-08-30"
+}

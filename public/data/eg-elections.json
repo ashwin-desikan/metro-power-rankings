@@ -1,0 +1,2674 @@
+{
+ "meta": {
+  "title": "Egyptian Elections",
+  "sources": [
+   "Wikipedia: Egyptian presidential and parliamentary election articles 1923–2025",
+   "National Election Authority figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "presEras": [
+  {
+   "key": "plebiscite",
+   "label": "Confirmation by plebiscite",
+   "span": "1956–2005",
+   "blurb": "For half a century Egypt did not elect presidents, it confirmed them. A single candidate nominated by parliament was put to a yes-or-no vote and returned with 90 to 99% approval, six times in a row. Those votes are recorded in this atlas under referendums, not here."
+  },
+  {
+   "key": "multi",
+   "label": "The multi-candidate era",
+   "span": "2005–2010",
+   "blurb": "A constitutional amendment in 2005 allowed rival candidates for the first time. Mubarak took 88.6% on a turnout of 23%, his nearest challenger was jailed after the count, and the exercise convinced nobody."
+  },
+  {
+   "key": "revolution",
+   "label": "Revolution and counter-revolution",
+   "span": "2012–2014",
+   "blurb": "The only genuinely competitive presidential election in Egyptian history was held in May and June 2012 and won by the Muslim Brotherhood's Mohamed Morsi with 51.7%. He was removed by the army a year later. The 2014 election that followed returned Sisi with 96.9%."
+  },
+  {
+   "key": "sisi",
+   "label": "The Sisi presidency",
+   "span": "2018–",
+   "blurb": "Two further elections at 97.1% and 89.6%. Serious challengers have been arrested, withdrawn under pressure or failed to secure nominations; the 2018 runner-up was a Sisi supporter who entered to avoid a single-candidate ballot."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "monarchy",
+   "label": "The liberal monarchy",
+   "span": "1923–1950",
+   "blurb": "Egypt's parliamentary decades, and the only ones in which the outcome was in doubt. The Wafd won every election it was allowed to contest and was dismissed from office by the king or the British each time it did. Between the 1923 constitution and the 1952 coup, no Wafd government completed a term."
+  },
+  {
+   "key": "nasser",
+   "label": "One party",
+   "span": "1957–1970",
+   "blurb": "The monarchy went in 1952 and with it the parties. The National Union and then the Arab Socialist Union were the only permitted vehicles, half the seats were reserved for workers and farmers, and the union with Syria produced two elections for a state that lasted three years."
+  },
+  {
+   "key": "ndp",
+   "label": "The National Democratic Party",
+   "span": "1976–2010",
+   "blurb": "Sadat allowed platforms, then parties, then arrested their leaders. Under Mubarak the NDP took between two-thirds and nine-tenths of the seats at every election for thirty years, with the Muslim Brotherhood contesting as independents when it was allowed to contest at all. The 2010 election, the most nakedly rigged of them, was followed within weeks by Tahrir Square."
+  },
+  {
+   "key": "after",
+   "label": "After the revolution",
+   "span": "2011–",
+   "blurb": "The 2011–12 election gave Islamist parties around three-quarters of the seats and was annulled by the courts. Since 2015 the chamber has been elected under a system built around individual seats and pro-government lists, and the largest bloc has supported the president."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "presidential",
+   "date": "7 September 2005",
+   "era": "multi",
+   "turnout": 22.95,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Hosni Mubarak",
+     "party": "National Democratic Party",
+     "r1Votes": 6316784,
+     "r1Share": 88.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ayman Nour",
+     "party": "El-Ghad Party",
+     "r1Votes": 540405,
+     "r1Share": 7.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Numan Gumaa",
+     "party": "New Wafd Party",
+     "r1Votes": 208891,
+     "r1Share": 2.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Osama Shaltout",
+     "party": "Solidarity Party",
+     "r1Votes": 29857,
+     "r1Share": 0.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Wahid al-Uqsuri",
+     "party": "Egyptian Arab Socialist Party",
+     "r1Votes": 11881,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ibrahim Turk",
+     "party": "Democratic Union Party",
+     "r1Votes": 5831,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mamduh Qinawi",
+     "party": "Free Social Constitutional Party",
+     "r1Votes": 5481,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ahmad al-Sabahi",
+     "party": "Umma Party",
+     "r1Votes": 4393,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fawzi Ghazal",
+     "party": "Egypt 2000 Party",
+     "r1Votes": 4222,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rifaat al-Agrudi",
+     "party": "National Conciliation Party",
+     "r1Votes": 4106,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Hosni Mubarak",
+    "party": "NDP"
+   },
+   "presAfter": {
+    "name": "Hosni Mubarak",
+    "party": "NDP"
+   },
+   "knownAs": null,
+   "summary": "Hosni Mubarak won with 88.57% against Ayman Nour on 7.58%. Turnout 22.9%.",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "presidential",
+   "date": "2012",
+   "era": "revolution",
+   "turnout": 46.42,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Freedom and Justice",
+     "party": null,
+     "r1Votes": 13230131,
+     "r1Share": 51.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Independent",
+     "party": null,
+     "r1Votes": 12347380,
+     "r1Share": 48.27,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Freedom and Justice won with 51.73% against Independent on 48.27%. Turnout 46.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "26–28 May 2014",
+   "era": "revolution",
+   "turnout": 47.5,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Abdel Fattah el-Sisi",
+     "party": "Independent",
+     "r1Votes": 23780114,
+     "r1Share": 96.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hamdeen Sabahi",
+     "party": "Egyptian Popular Current",
+     "r1Votes": 757511,
+     "r1Share": 3.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Adly Mansour (acting)",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Abdel Fattah el-Sisi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Abdel Fattah el-Sisi won with 96.91% against Hamdeen Sabahi on 3.09%. Turnout 47.5%.",
+   "caveat": "Held after the removal of an elected president, with the main opposition banned.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "26–28 March 2018",
+   "era": "sisi",
+   "turnout": 41.05,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Abdel Fattah el-Sisi",
+     "party": "Independent",
+     "r1Votes": 21835387,
+     "r1Share": 97.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Moussa Mostafa Moussa",
+     "party": "El-Ghad Party",
+     "r1Votes": 656534,
+     "r1Share": 2.92,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Abdel Fattah el-Sisi",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Abdel Fattah el-Sisi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Abdel Fattah el-Sisi won with 97.08% against Moussa Mostafa Moussa on 2.92%. Turnout 41.0%.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "presidential",
+   "date": "10–12 December 2023",
+   "era": "sisi",
+   "turnout": 66.88,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Abdel Fattah el-Sisi",
+     "party": "Independent",
+     "r1Votes": 39702451,
+     "r1Share": 89.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hazem Omar",
+     "party": "Republican People's Party",
+     "r1Votes": 1986352,
+     "r1Share": 4.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Farid Zahran",
+     "party": "Egyptian Social Democratic Party",
+     "r1Votes": 1776952,
+     "r1Share": 4.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abdel-Sanad Yamama",
+     "party": "Egyptian Wafd Party",
+     "r1Votes": 822606,
+     "r1Share": 1.86,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Abdel Fattah el-Sisi",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Abdel Fattah el-Sisi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Abdel Fattah el-Sisi won with 89.65% against Hazem Omar on 4.49%. Turnout 66.9%.",
+   "caveat": null,
+   "unfree": "unfree"
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "legislative",
+   "date": "February 4, 2026",
+   "era": "monarchy",
+   "totalSeats": 211,
+   "majoritySeats": null,
+   "turnout": 96.86,
+   "parties": [
+    {
+     "name": "Wafd Party",
+     "leader": null,
+     "seats": 179,
+     "seatChange": null,
+     "votes": 33354,
+     "share": 49.41,
+     "swing": null
+    },
+    {
+     "name": "Liberal Constitutional Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 16690,
+     "share": 24.72,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 5103,
+     "share": 7.56,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 12357,
+     "share": 18.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yahya Ibrahim Pasha",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Saad Zaghloul",
+    "party": "Wafd Party"
+   },
+   "knownAs": null,
+   "summary": "Wafd Party finished first with 179 of 211 seats on 49.4% of the vote. Turnout 96.9%. Saad Zaghloul replaced Yahya Ibrahim Pasha.",
+   "seatLeader": "Wafd Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "kind": "legislative",
+   "date": "23 March 1925",
+   "era": "monarchy",
+   "totalSeats": 211,
+   "majoritySeats": null,
+   "turnout": 95.47,
+   "parties": [
+    {
+     "name": "Wafd Party",
+     "leader": null,
+     "seats": 113,
+     "seatChange": -66,
+     "votes": 31482,
+     "share": 46.75,
+     "swing": null
+    },
+    {
+     "name": "Liberal Constitutional Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 20,
+     "votes": 13771,
+     "share": 20.45,
+     "swing": null
+    },
+    {
+     "name": "Ittihad Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 11465,
+     "share": 17.03,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0,
+     "votes": 2931,
+     "share": 4.35,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 17,
+     "votes": 7693,
+     "share": 11.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmed Zeiwar Pasha",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Ahmed Zeiwar Pasha",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Wafd Party finished first with 113 of 211 seats on 46.8% of the vote. Turnout 95.5%. Ahmed Zeiwar Pasha stayed in office.",
+   "seatLeader": "Wafd Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1926",
+   "label": "1926",
+   "year": 1926,
+   "kind": "legislative",
+   "date": "22 May 1926",
+   "era": "monarchy",
+   "totalSeats": 211,
+   "majoritySeats": null,
+   "turnout": 63.35,
+   "parties": [
+    {
+     "name": "Wafd Party",
+     "leader": null,
+     "seats": 171,
+     "seatChange": 58,
+     "votes": 771737,
+     "share": 67.98,
+     "swing": null
+    },
+    {
+     "name": "Liberal Constitutional Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -11,
+     "votes": 216025,
+     "share": 19.03,
+     "swing": null
+    },
+    {
+     "name": "Ittihad Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -28,
+     "votes": 70643,
+     "share": 6.22,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -2,
+     "votes": 22136,
+     "share": 1.95,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -17,
+     "votes": 54723,
+     "share": 4.82,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmed Zeiwar Pasha",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Adly Yakan Pasha",
+    "party": "Liberal Constitutional"
+   },
+   "knownAs": null,
+   "summary": "Wafd Party finished first with 171 of 211 seats on 68.0% of the vote. Turnout 63.4%. Adly Yakan Pasha replaced Ahmed Zeiwar Pasha.",
+   "seatLeader": "Wafd Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "kind": "legislative",
+   "date": "21 December 1929",
+   "era": "monarchy",
+   "totalSeats": 232,
+   "majoritySeats": null,
+   "turnout": 64.01,
+   "parties": [
+    {
+     "name": "Wafd Party",
+     "leader": null,
+     "seats": 216,
+     "seatChange": null,
+     "votes": 610461,
+     "share": 60.88,
+     "swing": null
+    },
+    {
+     "name": "Liberal Constitutional Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 189014,
+     "share": 18.85,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 30880,
+     "share": 3.08,
+     "swing": null
+    },
+    {
+     "name": "Ittihad Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49437,
+     "share": 4.93,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 122870,
+     "share": 12.25,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Adly Yakan Pasha",
+    "party": "Liberal Constitutional"
+   },
+   "pmAfter": {
+    "name": "Mostafa el-Nahas",
+    "party": "Wafd"
+   },
+   "knownAs": null,
+   "summary": "Wafd Party finished first with 216 of 232 seats on 60.9% of the vote. Turnout 64.0%. Mostafa el-Nahas replaced Adly Yakan Pasha.",
+   "seatLeader": "Wafd Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "1 June 1931",
+   "era": "monarchy",
+   "totalSeats": 150,
+   "majoritySeats": null,
+   "turnout": 95.44,
+   "parties": [
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": null,
+     "votes": 25286,
+     "share": 58.01,
+     "swing": null
+    },
+    {
+     "name": "Ittihad Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 10351,
+     "share": 23.75,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 1904,
+     "share": 4.37,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 277,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 5768,
+     "share": 13.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ismail Sidky",
+    "party": "People's Party"
+   },
+   "pmAfter": {
+    "name": "Ismail Sidky",
+    "party": "People's Party"
+   },
+   "knownAs": null,
+   "summary": "People's Party finished first with 84 of 150 seats on 58.0% of the vote. Turnout 95.4%. Ismail Sidky stayed in office.",
+   "seatLeader": "People's Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "April 20, 2026",
+   "era": "monarchy",
+   "totalSeats": 232,
+   "majoritySeats": null,
+   "turnout": 59.48,
+   "parties": [
+    {
+     "name": "Wafd Party",
+     "leader": null,
+     "seats": 190,
+     "seatChange": null,
+     "votes": 794966,
+     "share": 62.05,
+     "swing": null
+    },
+    {
+     "name": "Popular Unionist Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 174535,
+     "share": 13.62,
+     "swing": null
+    },
+    {
+     "name": "Liberal Constitutional Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 157454,
+     "share": 12.29,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 20275,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 133855,
+     "share": 10.45,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aly Maher Pasha",
+    "party": "Ittihad Party"
+   },
+   "pmAfter": {
+    "name": "Mostafa el-Nahas",
+    "party": "Wafd Party"
+   },
+   "knownAs": null,
+   "summary": "Wafd Party finished first with 190 of 232 seats on 62.0% of the vote. Turnout 59.5%. Mostafa el-Nahas replaced Aly Maher Pasha.",
+   "seatLeader": "Wafd Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "legislative",
+   "date": "6 April 1938",
+   "era": "monarchy",
+   "totalSeats": 264,
+   "majoritySeats": null,
+   "turnout": 59.26,
+   "parties": [
+    {
+     "name": "Qawmiyyun",
+     "leader": null,
+     "seats": 105,
+     "seatChange": null,
+     "votes": 755951,
+     "share": 42.61,
+     "swing": null
+    },
+    {
+     "name": "Saadist Institutional Party",
+     "leader": null,
+     "seats": 87,
+     "seatChange": null,
+     "votes": 451146,
+     "share": 25.43,
+     "swing": null
+    },
+    {
+     "name": "Wafd Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 111106,
+     "share": 6.26,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 58,
+     "seatChange": null,
+     "votes": 455835,
+     "share": 25.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mohamed Mahmoud Pasha",
+    "party": "Liberal Constitutional"
+   },
+   "pmAfter": {
+    "name": "Mohamed Mahmoud Pasha",
+    "party": "Liberal Constitutional"
+   },
+   "knownAs": null,
+   "summary": "Qawmiyyun finished first with 105 of 264 seats on 42.6% of the vote. Turnout 59.3%. Mohamed Mahmoud Pasha stayed in office.",
+   "seatLeader": "Qawmiyyun",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1942",
+   "label": "1942",
+   "year": 1942,
+   "kind": "legislative",
+   "date": "24 March 1942",
+   "era": "monarchy",
+   "totalSeats": 264,
+   "majoritySeats": null,
+   "turnout": 56.9,
+   "parties": [
+    {
+     "name": "Wafd Party",
+     "leader": null,
+     "seats": 232,
+     "seatChange": null,
+     "votes": 738675,
+     "share": 58.3,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 18687,
+     "share": 1.47,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 233590,
+     "share": 18.44,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 276070,
+     "share": 21.79,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mostafa el-Nahas",
+    "party": "Wafd"
+   },
+   "pmAfter": {
+    "name": "Mostafa el-Nahas",
+    "party": "Wafd"
+   },
+   "knownAs": null,
+   "summary": "Wafd Party finished first with 232 of 264 seats on 58.3% of the vote. Turnout 56.9%. Mostafa el-Nahas stayed in office.",
+   "seatLeader": "Wafd Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "9 January 1945",
+   "era": "monarchy",
+   "totalSeats": 264,
+   "majoritySeats": null,
+   "turnout": 54.74,
+   "parties": [
+    {
+     "name": "Saadist Institutional Party",
+     "leader": null,
+     "seats": 126,
+     "seatChange": null,
+     "votes": 739717,
+     "share": 41.95,
+     "swing": null
+    },
+    {
+     "name": "Liberal Constitutional Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": 427899,
+     "share": 24.27,
+     "swing": null
+    },
+    {
+     "name": "Wafdist Block",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 354570,
+     "share": 20.11,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 67700,
+     "share": 3.84,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": 173485,
+     "share": 9.84,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmad Maher Pasha",
+    "party": "Saadist"
+   },
+   "pmAfter": {
+    "name": "Ahmad Maher Pasha",
+    "party": "Saadist"
+   },
+   "knownAs": null,
+   "summary": "Saadist Institutional Party finished first with 126 of 264 seats on 42.0% of the vote. Turnout 54.7%. Ahmad Maher Pasha stayed in office.",
+   "seatLeader": "Saadist Institutional Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "legislative",
+   "date": "16 January 1950",
+   "era": "monarchy",
+   "totalSeats": 319,
+   "majoritySeats": null,
+   "turnout": 60.49,
+   "parties": [
+    {
+     "name": "Wafd Party",
+     "leader": null,
+     "seats": 226,
+     "seatChange": null,
+     "votes": 1357206,
+     "share": 54.56,
+     "swing": null
+    },
+    {
+     "name": "Saadist Institutional Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 406693,
+     "share": 16.35,
+     "swing": null
+    },
+    {
+     "name": "Liberal Constitutional Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 292444,
+     "share": 11.76,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 37512,
+     "share": 1.51,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 16499,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Wafdist Block",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14803,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 362587,
+     "share": 14.57,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hussein Sirri Pasha",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Mostafa el-Nahas",
+    "party": "Wafd"
+   },
+   "knownAs": null,
+   "summary": "Wafd Party finished first with 226 of 319 seats on 54.6% of the vote. Turnout 60.5%. Mostafa el-Nahas replaced Hussein Sirri Pasha.",
+   "seatLeader": "Wafd Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "6 June 1957",
+   "era": "nasser",
+   "totalSeats": 350,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "NU",
+     "leader": "Gamal Abdel Nasser",
+     "seats": 350,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gamal Abdel Nasser",
+    "party": "NU"
+   },
+   "pmAfter": {
+    "name": "Gamal Abdel Nasser",
+    "party": "NU"
+   },
+   "knownAs": null,
+   "summary": "NU finished first with 350 of 350 seats. Gamal Abdel Nasser stayed in office.",
+   "seatLeader": "NU",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "10 March 1964",
+   "era": "nasser",
+   "totalSeats": 360,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Arab Socialist Union",
+     "leader": null,
+     "seats": 350,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ali Sabri",
+    "party": "ASU"
+   },
+   "pmAfter": {
+    "name": "Ali Sabri",
+    "party": "ASU"
+   },
+   "knownAs": null,
+   "summary": "Arab Socialist Union finished first with 350 of 360 seats. Ali Sabri stayed in office.",
+   "seatLeader": "Arab Socialist Union",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "8 January 1969",
+   "era": "nasser",
+   "totalSeats": 350,
+   "majoritySeats": null,
+   "turnout": 88.22,
+   "parties": [
+    {
+     "name": "Arab Socialist Union",
+     "leader": null,
+     "seats": 350,
+     "seatChange": 0,
+     "votes": 6368511,
+     "share": 100.0,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": 10.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gamal Abdel Nasser",
+    "party": "ASU"
+   },
+   "pmAfter": {
+    "name": "Gamal Abdel Nasser",
+    "party": "ASU"
+   },
+   "knownAs": null,
+   "summary": "Arab Socialist Union finished first with 350 of 350 seats on 100.0% of the vote. Turnout 88.2%. Gamal Abdel Nasser stayed in office.",
+   "seatLeader": "Arab Socialist Union",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "27 October 1971",
+   "era": "ndp",
+   "totalSeats": 360,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Arab Socialist Union",
+     "leader": null,
+     "seats": 350,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mahmoud Fawzi",
+    "party": "ASU"
+   },
+   "pmAfter": {
+    "name": "Mahmoud Fawzi",
+    "party": "ASU"
+   },
+   "knownAs": null,
+   "summary": "Arab Socialist Union finished first with 350 of 360 seats. Mahmoud Fawzi stayed in office.",
+   "seatLeader": "Arab Socialist Union",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "August 24, 2026",
+   "era": "ndp",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 39.77,
+   "parties": [
+    {
+     "name": "Arab Socialist Organisation",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 295.0,
+     "swing": null
+    },
+    {
+     "name": "Liberal Socialist Organisation",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 15.0,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Organisation",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 47.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mamdouh Salem",
+    "party": "ASU"
+   },
+   "pmAfter": {
+    "name": "Mamdouh Salem",
+    "party": "Arab Socialist Organisation"
+   },
+   "knownAs": null,
+   "summary": "Arab Socialist Organisation led the poll with 295.0%. Turnout 39.8%. Mamdouh Salem stayed in office.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "April 9, 2025",
+   "era": "ndp",
+   "totalSeats": 392,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 347,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Labour Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Socialists Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -13,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -34,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mustafa Khalil",
+    "party": "NDP"
+   },
+   "pmAfter": {
+    "name": "Mustafa Khalil",
+    "party": "NDP"
+   },
+   "knownAs": null,
+   "summary": "National Democratic Party finished first with 347 of 392 seats. Mustafa Khalil stayed in office.",
+   "seatLeader": "National Democratic Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "kind": "legislative",
+   "date": "27 May 1984",
+   "era": "ndp",
+   "totalSeats": 458,
+   "majoritySeats": 230,
+   "turnout": 43.14,
+   "parties": [
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 390,
+     "seatChange": 43,
+     "votes": 3756359,
+     "share": 72.99,
+     "swing": null
+    },
+    {
+     "name": "New Wafd Party–Muslim Brotherhood",
+     "leader": null,
+     "seats": 58,
+     "seatChange": null,
+     "votes": 778131,
+     "share": 15.12,
+     "swing": null
+    },
+    {
+     "name": "Socialist Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -30,
+     "votes": 364040,
+     "share": 7.07,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 214587,
+     "share": 4.17,
+     "swing": null
+    },
+    {
+     "name": "Liberal Socialists Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 33448,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": 10.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmad Fuad Mohieddin",
+    "party": "NDP"
+   },
+   "pmAfter": {
+    "name": "Kamal Hassan Ali",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "National Democratic Party finished first with 390 of 458 seats on 73.0% of the vote. Turnout 43.1%. Kamal Hassan Ali replaced Ahmad Fuad Mohieddin.",
+   "seatLeader": "National Democratic Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "legislative",
+   "date": "6 and 13 April 1987",
+   "era": "ndp",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 50.46,
+   "parties": [
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 346,
+     "seatChange": -44,
+     "votes": 4751758,
+     "share": 69.62,
+     "swing": null
+    },
+    {
+     "name": "Islamic Alliance (SLP–LSP–MB)",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 60,
+     "votes": 1163525,
+     "share": 17.05,
+     "swing": null
+    },
+    {
+     "name": "New Wafd Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": -23,
+     "votes": 746023,
+     "share": 10.93,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 150570,
+     "share": 2.21,
+     "swing": null
+    },
+    {
+     "name": "Umma Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13031,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 7.0,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": 10.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Atef Sedki",
+    "party": "National Democratic Party"
+   },
+   "pmAfter": {
+    "name": "Atef Sedki",
+    "party": "National Democratic Party"
+   },
+   "knownAs": null,
+   "summary": "National Democratic Party finished first with 346 seats on 69.6% of the vote. Turnout 50.5%. Atef Sedki stayed in office.",
+   "seatLeader": "National Democratic Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "June 27, 2026",
+   "era": "ndp",
+   "totalSeats": 454,
+   "majoritySeats": 228,
+   "turnout": 44.43,
+   "parties": [
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 348.0,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.0,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Green Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Umma Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 83.0,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 10.0,
+     "swing": null
+    },
+    {
+     "name": "Vacant",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 7.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Atef Sedki",
+    "party": "NDP"
+   },
+   "pmAfter": {
+    "name": "Atef Sedki",
+    "party": "NDP"
+   },
+   "knownAs": null,
+   "summary": "Independents finished first with 75 of 454 seats on 83.0% of the vote. Turnout 44.4%. Atef Sedki stayed in office.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "June 27, 2026",
+   "era": "ndp",
+   "totalSeats": 454,
+   "majoritySeats": 228,
+   "turnout": 47.99,
+   "parties": [
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 318.0,
+     "swing": null
+    },
+    {
+     "name": "New Wafd Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.0,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.0,
+     "swing": null
+    },
+    {
+     "name": "Arab Democratic Nasserist Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Socialist Labour Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Liberal Socialists Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 112.0,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 10.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Atef Sedki",
+    "party": "NDP"
+   },
+   "pmAfter": {
+    "name": "Kamal Ganzouri",
+    "party": "NDP"
+   },
+   "knownAs": null,
+   "summary": "Independents finished first with 29 of 454 seats on 112.0% of the vote. Turnout 48.0%. Kamal Ganzouri replaced Atef Sedki.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "legislative",
+   "date": "18 October–8 November 2000",
+   "era": "ndp",
+   "totalSeats": 454,
+   "majoritySeats": 227,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 353,
+     "seatChange": 35,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Wafd Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Arab Democratic Nasserist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Socialists Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 72,
+     "seatChange": -40,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Vacant",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kamal Ganzouri",
+    "party": "NDP"
+   },
+   "pmAfter": {
+    "name": "Atef Ebeid",
+    "party": "NDP"
+   },
+   "knownAs": null,
+   "summary": "National Democratic Party finished first with 353 of 454 seats. Atef Ebeid replaced Kamal Ganzouri.",
+   "seatLeader": "National Democratic Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "9 November – 7 December 2005",
+   "era": "ndp",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 28.13,
+   "parties": [
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 324.0,
+     "swing": null
+    },
+    {
+     "name": "New Wafd Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.0,
+     "swing": null
+    },
+    {
+     "name": "Dignity Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "El-Ghad Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "Muslim Brotherhood independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 88.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 8.0,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 10.0,
+     "swing": null
+    },
+    {
+     "name": "Vacant",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 12.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Atef Ebeid",
+    "party": "NDP"
+   },
+   "pmAfter": {
+    "name": "Ahmed Nazif",
+    "party": "NDP"
+   },
+   "knownAs": null,
+   "summary": "Muslim Brotherhood independents finished first with 71 seats on 88.0% of the vote. Turnout 28.1%. Ahmed Nazif replaced Atef Ebeid.",
+   "seatLeader": null,
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "29 November 2010",
+   "era": "ndp",
+   "totalSeats": 518,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 424,
+     "seatChange": 100,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Wafd Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Generation Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Peace Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "El-Ghad Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Justice Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Muslim Brotherhood independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -87,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 57,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Presidential appointees",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Vacant",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmed Nazif",
+    "party": "NDP"
+   },
+   "pmAfter": {
+    "name": "Ahmed Shafik",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "National Democratic Party finished first with 424 of 518 seats. Ahmed Shafik replaced Ahmed Nazif.",
+   "seatLeader": "National Democratic Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "28 November 2011 – 11 January 2012",
+   "era": "after",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Freedom and Justice1",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Al-Nour 2",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Bloc",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Wafd",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Al-Wasat",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolution Continues",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reform and Development",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Egypt",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Justice",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Citizen",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Peace Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other/Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Freedom and Justice1 finished first with 73 seats.",
+   "seatLeader": "Freedom and Justice1",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "17 October – 2 December 2015",
+   "era": "after",
+   "totalSeats": 596,
+   "majoritySeats": 299,
+   "turnout": 28.27,
+   "parties": [
+    {
+     "name": "Free Egyptians Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nation's Future Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Wafd Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Homeland Defenders Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Congress Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Al-Nour Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Peace Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Social Democratic Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Patriotic Movement",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Modern Egypt Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reform and Development Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "My Homeland Egypt Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Guards Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free Egyptian Building Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Arab Democratic Nasserist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 251,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 251 of 596 seats. Turnout 28.3%.",
+   "seatLeader": "Independents",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "legislative",
+   "date": "26 April 2019",
+   "era": "after",
+   "totalSeats": 596,
+   "majoritySeats": 298,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Nation's Future",
+     "leader": "Ashraf Rashad",
+     "seats": 316,
+     "seatChange": 263,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican People's",
+     "leader": "Hazem Omar",
+     "seats": 50,
+     "seatChange": 37,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Wafd",
+     "leader": "Bahaa El-Din Abu Shoka",
+     "seats": 26,
+     "seatChange": -10,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Homeland Defenders",
+     "leader": "Galal Haridy",
+     "seats": 23,
+     "seatChange": 5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Modern Egypt Party",
+     "leader": "Nabil Dibis",
+     "seats": 11,
+     "seatChange": 7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reform & Development",
+     "leader": "Mohamed Anwar Sadat",
+     "seats": 9,
+     "seatChange": 6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic",
+     "leader": "Farid Zahran",
+     "seats": 7,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom",
+     "leader": "Mamdouh Hassan",
+     "seats": 7,
+     "seatChange": 7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Congress",
+     "leader": "Omar El-Mokhtar Semeida",
+     "seats": 7,
+     "seatChange": -5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Al-Nour",
+     "leader": "Yunis Makhyun",
+     "seats": 7,
+     "seatChange": 7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tagammu",
+     "leader": "Sayed Abdel Aal",
+     "seats": 6,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Justice",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Eradet Geel",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": "–",
+     "seats": 124,
+     "seatChange": -201,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Nation's Future finished first with 316 of 596 seats.",
+   "seatLeader": "Nation's Future",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "legislative",
+   "date": "25 November 2025",
+   "era": "after",
+   "totalSeats": 596,
+   "majoritySeats": 298,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Nation's Future Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Homeland Defenders Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Front Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Wafd Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reform and Development Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Al-Nour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Unionist Rally Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Congress Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Egyptian Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Eradet Geel Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Consciousness Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Homeland Defenders Party finished first with 5 of 596 seats.",
+   "seatLeader": "Homeland Defenders Party",
+   "caveat": "A real contest on a restricted or tilted field.",
+   "unfree": null
+  }
+ ]
+}

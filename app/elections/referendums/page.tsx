@@ -10,7 +10,7 @@ import SortableTable from "../SortableTable";
 const PATH = "/elections/referendums";
 const TITLE = "Landmark Referendums";
 const DESC =
-  "The votes where the people decided directly: Brexit and the near-miss in Quebec, the plebiscite that ended Pinochet, the ballot that abolished the Italian monarchy, women's suffrage in Switzerland — sixty landmark referendums with results, turnout and what happened next.";
+  "The votes where the people decided directly: Brexit and the near-miss in Quebec, the plebiscite that ended Pinochet, the ballot that abolished the Italian monarchy, Ireland's double rejection in 2024, Italy's judicial reform thrown out in 2026 — a century of landmark referendums with results, turnout and what happened next.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,6 +40,7 @@ export default function ReferendumsPage() {
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <BackButton href="/elections" label="All election hubs" />
         <BackButton href="/elections/under-fire" label="Elections under fire" />
+        <BackButton href="/elections/systems" label="Electoral systems" />
       </div>
 
       <header className="mb-6">
@@ -121,7 +122,11 @@ export default function ReferendumsPage() {
       <footer className="mt-10 pt-6 border-t text-xs text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
         {meta.note} {meta.sources[0]}. Poland 2015&apos;s 7.8% turnout is the lowest here; Chile
         1988&apos;s 97.5% the highest. Germany holds no national referendums at all — a deliberate
-        postwar choice.
+        postwar choice. Two rows here were decided by a rule rather than a majority:
+        Italy&apos;s 2025 questions carried 65–88% of the votes cast and still fell to the 50%
+        quorum, and Taiwan&apos;s 2025 nuclear question won three to one but missed the
+        quarter-of-the-electorate bar. A turnout column is not decoration in those systems,
+        it is the result.
       </footer>
     </main>
   );

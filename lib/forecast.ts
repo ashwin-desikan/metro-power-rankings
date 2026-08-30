@@ -9,6 +9,40 @@ import { join } from "path";
 // fallback, so refreshes appear without a Vercel build — the same pattern
 // as the conflicts dataset.
 
+// Election dates. `electionDate` + `electionConfidence` come from
+// lib/electionHubsMeta.ts through scripts/forecast/hub_dates.py, so the date a
+// forecast models is the same date the hub advertises. `electionAssumed` is the
+// pre-2026-08-30 key, kept optional so a page rendering an older forecast.json
+// during a rollout still finds a date. Read them through forecastDate().
+export type ForecastDated = {
+  electionDate?: string;
+  electionConfidence?: "confirmed" | "assumed";
+  electionAssumed?: string;
+  election?: string;
+};
+
+/** The date a block models, and whether it is officially set. */
+export function forecastDate(f: ForecastDated | null | undefined): {
+  iso: string | null;
+  confirmed: boolean;
+} {
+  const iso = f?.electionDate ?? f?.election ?? f?.electionAssumed ?? null;
+  return { iso, confirmed: f?.electionConfidence === "confirmed" };
+}
+
+/** "7 November 2026" for a confirmed date, else "modelled as 2026-11". */
+export function forecastDateLabel(f: ForecastDated | null | undefined): string {
+  const { iso, confirmed } = forecastDate(f);
+  if (!iso) return "date not set";
+  if (!confirmed) return `modelled as ${iso.slice(0, 7)}`;
+  const [y, m, d] = iso.split("-").map(Number);
+  const month = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+  ][m - 1];
+  return `${d} ${month} ${y}`;
+}
+
 export type SeatRange = { median: number; lo: number; hi: number };
 export type UkTrendPoint = { date: string; n: number } & Partial<Record<"con" | "lab" | "ld" | "ref" | "grn" | "snp", number>>;
 export type UkSim = {
@@ -22,8 +56,7 @@ export type UkSim = {
   sims: number;
   nat2024: Record<string, number>;
 };
-export type UkForecast = {
-  electionAssumed: string;
+export type UkForecast = ForecastDated & {
   average: Record<string, number>;
   pollsters: number;
   latestPollDate: string | null;
@@ -54,7 +87,7 @@ export type GovernorsForecast = {
   sims: number;
   source: string;
 };
-export type UsForecast = {
+export type UsForecast = ForecastDated & {
   margin: number;
   sigma: number;
   aggregators: { source: string; dem: number | null; rep: number | null; updated: string | null }[];
@@ -63,13 +96,11 @@ export type UsForecast = {
   fit: { a: number; b: number; residSd: number; cycles: [number, number, number][] };
   monthsOut: number;
   sims: number;
-  election: string;
   sources: string[];
   senate?: SenateForecast | null;
   governors?: GovernorsForecast | null;
 };
-export type NzForecast = {
-  electionAssumed: string;
+export type NzForecast = ForecastDated & {
   average: Record<string, number>;
   pollsters: number;
   latestPollDate: string | null;
@@ -81,8 +112,7 @@ export type NzForecast = {
   sims: number;
   sources: string[];
 };
-export type IlForecast = {
-  electionAssumed: string;
+export type IlForecast = ForecastDated & {
   parties: { name: string; seats: number }[];
   polls: number;
   pollsters: number;
@@ -94,8 +124,8 @@ export type IlForecast = {
 };
 export type Matchup = { a: string; b: string; avgA: number; avgB: number; pA: number; polls: number; latest: string | null };
 export type RoundShares = { shares: Record<string, number>; polls: number; latest: string | null };
-export type BrForecast = { election: string; firstRound: RoundShares; runoffs: Matchup[]; monthsOut: number; sources: string[] };
-export type FrForecast = { electionAssumed: string; firstRound: RoundShares; runoffs: Matchup[]; monthsOut: number; sources: string[] };
+export type BrForecast = ForecastDated & { firstRound: RoundShares; runoffs: Matchup[]; monthsOut: number; sources: string[] };
+export type FrForecast = ForecastDated & { firstRound: RoundShares; runoffs: Matchup[]; monthsOut: number; sources: string[] };
 export type ForecastFile = {
   built: string;
   method: string;

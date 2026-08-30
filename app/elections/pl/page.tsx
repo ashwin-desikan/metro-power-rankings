@@ -117,7 +117,19 @@ export default function PlElectionsPage() {
         <StatTile label="2023 turnout" value="74.3%" hint="the Third Republic's record, beating even 1989" />
       </div>
 
-      <JumpNav items={[["#presidential", "Presidents & kings"], ["#chronology", "Parliamentary elections"], ["#charts", "The long arc in charts"], ["#records", "Records"], ["#how-it-works", "How it works"]]} />
+      <JumpNav items={[["#chronology", "Parliamentary elections"], ["#presidential", "Presidents & kings"], ["#charts", "The long arc in charts"], ["#records", "Records"], ["#how-it-works", "How it works"]]} />
+
+      {/* ---------- legislative ---------- */}
+      <Chronology
+        eras={legEras}
+        elections={legislative}
+        hrefBase={PATH}
+        colorOf={plPartyColor}
+        fmtPct={plFmtPct}
+        leaderTag="PM"
+        headline="Parliamentary elections"
+        intro="Every Sejm election, newest first — the Second Republic, the communist rituals labelled as such, the semi-free breakthrough of June 1989 and the fully free Third Republic."
+      />
 
       {/* ---------- presidential & royal ---------- */}
       <section id="presidential" className="mb-12">
@@ -141,18 +153,6 @@ export default function PlElectionsPage() {
           </div>
         ))}
       </section>
-
-      {/* ---------- legislative ---------- */}
-      <Chronology
-        eras={legEras}
-        elections={legislative}
-        hrefBase={PATH}
-        colorOf={plPartyColor}
-        fmtPct={plFmtPct}
-        leaderTag="PM"
-        headline="Parliamentary elections"
-        intro="Every Sejm election, newest first — the Second Republic, the communist rituals labelled as such, the semi-free breakthrough of June 1989 and the fully free Third Republic."
-      />
 
       {/* ---------- charts ---------- */}
       <section id="charts" className="mb-12">

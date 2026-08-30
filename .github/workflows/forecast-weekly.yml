@@ -65,17 +65,35 @@ jobs:
       - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
         with:
           python-version: "3.12"
+      - name: Self-tests (pure logic, no network)
+        run: |
+          set -e
+          python scripts/forecast/fetch_data.py --self-test
+          python scripts/forecast/hub_dates.py --self-test
+          python scripts/forecast/check_forecast_health.py --self-test
+          python scripts/forecast/score_forecasts.py --self-test
       - name: Fetch polls + rebuild forecast
         run: |
           set -e
           python scripts/forecast/fetch_data.py
           python scripts/forecast/build_forecast.py
+      - name: Forecast health gate
+        run: |
+          set -e
+          # Fails only when the file is unpublishable. An empty block that used
+          # to hold data prints a WARN and still commits, because half a
+          # forecast beats none -- but it can no longer pass in silence.
+          python scripts/forecast/check_forecast_health.py
+      - name: Score settled races
+        run: |
+          set -e
+          python scripts/forecast/score_forecasts.py --write
       - name: Commit if changed
         run: |
           set -e
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/forecast.json data/forecast
+          git add public/data/forecast.json public/data/forecast-scoreboard.json data/forecast
           if git diff --cached --quiet; then
             echo "no changes"
           else

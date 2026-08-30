@@ -18,11 +18,29 @@
 
 mini_sync
 
+# Self-tests before any network call, so a parser regression is caught on the
+# mini in a second rather than on Wikipedia in ten minutes.
+guarded "self-test: parsers"  "$PY" scripts/forecast/fetch_data.py --self-test
+guarded "self-test: dates"    "$PY" scripts/forecast/hub_dates.py --self-test
+guarded "self-test: health"   "$PY" scripts/forecast/check_forecast_health.py --self-test
+guarded "self-test: scoring"  "$PY" scripts/forecast/score_forecasts.py --self-test
+
 guarded "fetch polls"     "$PY" scripts/forecast/fetch_data.py
 guarded "rebuild forecast" "$PY" scripts/forecast/build_forecast.py
 
+# Between build and commit: a block that publishes must contain what it says
+# it contains. Exits non-zero only when the file is unpublishable, so an empty
+# runoff list warns loudly and still ships the first round.
+guarded "forecast health"  "$PY" scripts/forecast/check_forecast_health.py
+
+# Re-grade the ledger. Freezes nothing itself: build_forecast.py has already
+# written the pre-election snapshots, and a race scores the moment somebody
+# files its result in data/forecast/results/.
+guarded "score forecasts"  "$PY" scripts/forecast/score_forecasts.py --write
+
 commit_paths "data: weekly election forecast refresh [vercel skip]" \
   public/data/forecast.json \
+  public/data/forecast-scoreboard.json \
   data/forecast
 
 revalidate_ping "forecast-weekly" "/elections/forecast" "/predictions"

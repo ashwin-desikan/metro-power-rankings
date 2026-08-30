@@ -32,6 +32,7 @@ import { getNflExpectation } from "@/lib/nflExpectation";
 import { getPlPredictions } from "@/lib/plSim";
 import { getNflPredictions } from "@/lib/nflSim";
 import { getCfbPredictions } from "@/lib/cfbSim";
+import { getForecastScoreboard, nextToSettle, awaitingResults, longDate } from "@/lib/forecastScoreboard";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const revalidate = 21600;
@@ -129,13 +130,21 @@ function SkillBar({ v, max = 0.06 }: { v: number | null; max?: number }) {
 }
 
 export default async function LedgerPage() {
-  const [plExp, nflExp, plLive, nflLive, cfbLive] = await Promise.all([
+  const [plExp, nflExp, plLive, nflLive, cfbLive, elec] = await Promise.all([
     getPlExpectation(),
     getNflExpectation(),
     getPlPredictions(),
     getNflPredictions(),
     getCfbPredictions(),
+    getForecastScoreboard(),
   ]);
+
+  // ---- Elections. Four races settle between 4 October and 20 November 2026,
+  // so this row exists before any of them rather than after.
+  const elecT = elec?.totals;
+  const elecNext = nextToSettle(elec);
+  const elecOwed = awaitingResults(elec);
+  const elecSkill = elecT?.skill == null ? null : elecT.skill / 100;
 
   // ---- Football: aggregate the model and market over the priced matches only.
   // market_model_brier is the model's score over exactly the games the market
@@ -565,12 +574,52 @@ export default async function LedgerPage() {
                   <Link href="/elections/forecast" className="hover:underline font-semibold">
                     Elections
                   </Link>
-                  <div className="text-[var(--text-dim)] text-[11px]">2026–27 · seat ranges</div>
+                  <div className="text-[var(--text-dim)] text-[11px]">
+                    2026–27 · {elecT?.races ? `${elecT.races} race${elecT.races === 1 ? "" : "s"} settled` : "seat ranges"}
+                  </div>
                 </td>
-                <td className="px-3 py-2.5 text-[var(--text-muted)]" colSpan={5}>
-                  Not yet resolvable. The first race on the board that settles is the US midterms on
-                  3 November 2026.
-                </td>
+                {elecT?.races ? (
+                  <>
+                    <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
+                      {elecT.binaries}
+                    </td>
+                    <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
+                      {elecT.correct ?? 0}/{elecT.picks ?? 0}
+                    </td>
+                    <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                      {elecT.pricedBrier != null ? elecT.pricedBrier.toFixed(4) : elecT.brier != null ? elecT.brier.toFixed(4) : "—"}
+                    </td>
+                    <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                      {elecT.marketBrier != null ? elecT.marketBrier.toFixed(4) : "—"}
+                    </td>
+                    <td className="px-3 py-2.5">
+                      {elecSkill == null ? (
+                        <span className="text-[var(--text-dim)] text-xs">no market priced these</span>
+                      ) : (
+                        <SkillBar v={elecSkill} />
+                      )}
+                    </td>
+                  </>
+                ) : (
+                  <td className="px-3 py-2.5 text-[var(--text-muted)]" colSpan={5}>
+                    {elecOwed.length ? (
+                      <>
+                        {elecOwed.map((p) => p.country).join(", ")} ha{elecOwed.length === 1 ? "s" : "ve"} voted and
+                        {" "}the final count is not filed yet. The forecast is already frozen, so nothing here
+                        {" "}can be written after the fact.
+                      </>
+                    ) : elecNext ? (
+                      <>
+                        Nothing graded yet. The first race that settles is {elecNext.country} on{" "}
+                        {longDate(elecNext.election)}
+                        {elecNext.daysAway != null ? `, ${elecNext.daysAway} days away` : ""}. Its
+                        {" "}forecast is frozen on every run until then.
+                      </>
+                    ) : (
+                      "Nothing graded yet."
+                    )}
+                  </td>
+                )}
               </tr>
             </tbody>
           </table>
