@@ -194,6 +194,12 @@ else
   note "leaders sanity gate"
   "$PY" scripts/check-leaders-sanity.py \
     || fail "leaders sanity gate HELD the commit -- _current.json has a vandalism/pin flag; review scripts/check-leaders-sanity.py output, do NOT auto-commit"
+  # If this gate HELD a previous run and you're now recovering by hand: stage
+  # the correction TOGETHER with $DATA_PATHS in ONE commit, not two separate
+  # pushes. A HOLD recovery is inherently one work item (the fix, plus the
+  # data that was blocked behind it) -- found 2026-08-30 (daily-ops-sweep)
+  # after exactly that split cost an extra billable Vercel build (two
+  # commits 45s apart for the same recovery).
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
   # Some refreshed files are read by lib/ with readFileSync at BUILD time, so a
