@@ -301,15 +301,27 @@ never does.
   exempt.
 - **Adjacent controls get ≥8px between them** so a fat thumb cannot hit two.
 - **In a mobile card or row list, the ROW is the tap target — not the name
-  inside it.** A `<Link>` wrapped around 20px of text in a 60px row gives
-  the thumb a third of the row and misses land on nothing. Make the link
-  `block`/`flex` and let it fill the row's padding box, or stretch it over
-  the row (`absolute inset-0` on the primary link inside a `relative` row,
-  with the secondary links above it in z-order). `probe:mobile` reports
-  `taps<40` for exactly this, excluding table cells, which have their own
-  density conventions. **Known debt as of 2026-08-30:** the metros list on
-  /countries/[slug] carries ~1,600 sub-40px row links and /teams/football
-  ~1,100. Fix them where you touch them.
+  inside it.** A `<Link>` wrapped around 20px of text in a 60px row gives the
+  thumb a third of the row and misses land on nothing. Two ways to fix it,
+  both fine:
+  - Make the link itself `block`/`flex` and let it fill the row's padding box
+    (the football club list does this — give it enough `py` to clear 44px).
+  - **`tap-row` + `tap-target`** (globals.css) for a row the link cannot
+    wrap: `tap-row` on the row, `tap-target` on the ONE primary link. The
+    link grows a pseudo-element covering the row, so the whole row is the hit
+    area while the link keeps its inline text styling; secondary links and
+    controls in the row are lifted above the overlay automatically. The
+    trade-off is that the overlay swallows text selection inside the row —
+    right for a navigation row, wrong for a row of copyable data.
+- **Secondary links inside a `tap-row` are exempt**, the same way table cells
+  are: once the row is a 44px target, a tier pill or a state name in the
+  metadata line is a link in a block of text, not a control competing for the
+  thumb. `probe:mobile` scores them that way.
+- **`taps<40` only counts what a thumb can actually reach.** Content inside a
+  collapsed `<details>` still reports a bounding box — `content-visibility:
+  hidden` keeps the last layout — so the probe uses `checkVisibility()`.
+  Without it /teams/football scored 1,128 offenders, ~1,030 of them club rows
+  inside groups the reader had never opened.
 - **Every control a desktop table header provides must exist on mobile
   too.** When a sortable `<th onClick>` disappears behind `hidden sm:block`,
   the card list needs its own sort control driving the same state — the

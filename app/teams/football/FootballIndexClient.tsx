@@ -642,7 +642,11 @@ export default function FootballIndexClient({ clubs }: Props) {
                   <li key={c.slug}>
                     <Link
                       href={`/teams/football/${c.slug}`}
-                      className="flex items-baseline gap-2 rounded-md px-1.5 py-1 -mx-1.5 transition-colors hover:bg-[var(--bg-card-hover)]"
+                      // py-2.5 (not py-1): the whole row is already the link, but at 28px it
+                      // was under the 44px thumb standard. The rows live inside
+                      // collapsed groups, so the extra height is only spent once a
+                      // reader has asked for the list.
+                      className="flex items-baseline gap-2 rounded-md px-1.5 py-2.5 -mx-1.5 transition-colors hover:bg-[var(--bg-card-hover)]"
                     >
                       {!hasCrest && <Dot slug={c.slug} />}
                       {hasCrest && <CrestIcon name={c.cur_name} size={16} className="flex-shrink-0" />}

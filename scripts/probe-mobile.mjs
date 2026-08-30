@@ -157,6 +157,13 @@ function measure() {
   for (const el of document.querySelectorAll("a[href], button, [role='button'], summary, input, select")) {
     const r = el.getBoundingClientRect();
     if (r.width === 0 || r.height === 0) continue;
+    // Content inside a COLLAPSED <details> still reports a box — the modern
+    // `content-visibility: hidden` implementation keeps the last layout — so
+    // a bounding rect is not proof a thumb can reach it. /teams/football
+    // counted 1,128 "small tap targets" this way, ~1,030 of them club rows
+    // inside closed disclosure groups the reader had never opened.
+    // checkVisibility is the API that actually knows.
+    if (el.checkVisibility && !el.checkVisibility({ contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true })) continue;
     // Inline links inside a paragraph are text, not controls; skip them.
     if (el.tagName === "A" && getComputedStyle(el).display === "inline") continue;
     // Links inside a table cell are governed by the table rules (row
@@ -164,6 +171,18 @@ function measure() {
     // counting them buried the handful of real offenders under a thousand
     // ordinary table rows.
     if (el.closest("td, th")) continue;
+    // A stretched link (globals.css `.tap-row` / `.tap-target`) has a hit
+    // area the size of its row, not of its text. Measure what the thumb can
+    // actually hit, or the fix looks like a no-op here.
+    const row = el.closest(".tap-row");
+    if (row) {
+      // Inside a row that IS a large target, the primary link is the row and
+      // the rest is secondary metadata — a tier pill, a state name — which
+      // WCAG treats like links in a block of text. Same reasoning as the
+      // table-cell exemption above: the row rules govern, not this one.
+      if (el.classList.contains("tap-target") && row.getBoundingClientRect().height >= 40) continue;
+      if (!el.classList.contains("tap-target")) continue;
+    }
     if (r.height < 40) out.smallTaps++;
   }
   for (const el of document.querySelectorAll("p, li, td, th, span, div")) {

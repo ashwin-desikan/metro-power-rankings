@@ -244,3 +244,35 @@ details[data-desktop-open]:target::details-content {
     overflow-wrap: break-word;
   }
 }
+
+/* === Row-sized tap targets ===
+   In a mobile card list the anchor usually wraps just the NAME: 20px of text
+   inside a 70px row, so two thirds of the row does nothing and a thumb aimed
+   at the row misses. Measured 2026-08-30 at 390px: ~1,600 sub-40px links on
+   /countries/[slug], ~1,100 on /teams/football.
+
+   The fix is the standard "stretched link" — the primary anchor grows a
+   pseudo-element covering the row, so the whole row is the hit area while the
+   anchor itself stays inline and keeps its text styling. Secondary links and
+   controls in the same row are lifted above the overlay so they still work.
+
+   Usage: `tap-row` on the row, `tap-target` on the ONE primary link.
+   Note the trade-off: the overlay swallows text selection inside the row.
+   That is right for a navigation row and wrong for a row of copyable data —
+   in the latter case leave the row alone and give the link real padding. */
+.tap-row {
+  position: relative;
+}
+.tap-row .tap-target::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.tap-row a:not(.tap-target),
+.tap-row button,
+.tap-row summary,
+.tap-row [role="button"] {
+  position: relative;
+  z-index: 1;
+}

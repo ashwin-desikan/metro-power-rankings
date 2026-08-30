@@ -190,11 +190,11 @@ export default function MetrosExplorer({
               const tier = computeTier(m.score);
               const extra = statesOf(m);
               return (
-                <div key={`${m.slug}-card`} className="px-4 py-3">
+                <div key={`${m.slug}-card`} className="tap-row px-4 py-3">
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
                       <span className="text-xs text-[var(--text-dim)] tabular-nums mr-1.5" style={MONO}>#{m.rank}</span>
-                      <Link href={`/rankings/${m.slug}`} className="font-semibold hover:text-[var(--accent)]">{m.name}</Link>
+                      <Link href={`/rankings/${m.slug}`} className="tap-target font-semibold hover:text-[var(--accent)]">{m.name}</Link>
                       {isCapital(m.name) ? <CapitalBadge /> : null}
                       {isLargest(m.name) ? <LargestBadge /> : null}
                     </div>

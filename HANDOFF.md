@@ -7514,3 +7514,49 @@ Held across the template, not just New York: london 6.7, tokyo 6.6, mumbai
 carrying the rule, so /countries/[slug] and the club pages get the same
 treatment when someone next touches them — they have the same shape and I
 have NOT done them.
+
+## 2026-08-30 (late) — Windows (cloud session) → mini/next session: row tap targets, and a metric that was lying
+
+Closes the "known remaining" item from the two entries above, and corrects the
+measurement that raised it.
+
+### The fix: `tap-row` / `tap-target`
+
+In a mobile card list the anchor wraps just the NAME — 20px of text in a 70px
+row, so two thirds of the row does nothing. New utility pair in globals.css:
+`tap-row` on the row, `tap-target` on the ONE primary link. The link grows a
+covering pseudo-element (the standard "stretched link"), so the whole row is
+the hit area while the link keeps its inline text styling; secondary links in
+the row are lifted above the overlay automatically. Applied to the metros
+list, billionaires and conflicts sections on /countries/[slug].
+
+Separately, the football club rows went `py-1` -> `py-2.5`: the whole row was
+already the link, but at 28px it was under the standard. Now 41px. They sit
+inside collapsed groups, so the height is only spent once a reader asks.
+
+### The metric was wrong, in TWO ways — worth knowing before you trust it
+
+1. **It counted things a thumb cannot reach.** Content inside a collapsed
+   `<details>` still reports a bounding box (`content-visibility: hidden`
+   keeps the last layout), so the probe was scoring club rows in groups
+   nobody had opened. Now uses `checkVisibility()`.
+2. **It counted secondary metadata inside a fixed row.** Once the row is a
+   44px target, a tier pill in its metadata line is a link in a block of
+   text, not a control competing for the thumb — same reasoning as the
+   existing table-cell exemption.
+
+What that does to the numbers reported in the earlier entries:
+
+| route | as reported before | real, after the fixes |
+| --- | --- | --- |
+| /countries/united-states | 1,727 | **40** |
+| /teams/football | 1,128 | **27** |
+| /rankings/new-york | 145 | **37** |
+| /leaders | 255 | **48** |
+
+Most of that drop is the metric being corrected, not code being fixed — say
+so if anyone quotes the before/after. The genuine code fixes are the metros
+list (~600 rows) and the club rows. What remains is real: chips and pills at
+26–30px, a manageable tail.
+
+Nothing here touches data, scripts or mac-mini-jobs.

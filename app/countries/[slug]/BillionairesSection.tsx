@@ -26,10 +26,10 @@ export default function BillionairesSection({ list }: { list: Billionaire[] }) {
             className="rounded-lg border border-[var(--border)]"
             bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
             items={list.map((b) => (
-            <div key={b.uri} className="rounded-lg border p-3 border-gray-100 dark:border-gray-800" style={{ backgroundColor: "var(--bg-card)" }}>
+            <div key={b.uri} className="tap-row rounded-lg border p-3 border-gray-100 dark:border-gray-800" style={{ backgroundColor: "var(--bg-card)" }}>
               <div className="flex items-start justify-between gap-2">
                 <a href={forbesUrl(b.uri)} target="_blank" rel="noopener noreferrer"
-                   className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
+                   className="tap-target font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
                   {b.rank ? <span className="text-[var(--text-dim)] tabular-nums mr-1.5">#{b.rank}</span> : null}
                   {b.name}
                   {b.selfMade === false ? <span className="ml-1.5 text-[10px] text-[var(--text-dim)]" title="Inherited">(inherited)</span> : null}
