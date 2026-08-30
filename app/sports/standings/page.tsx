@@ -1050,7 +1050,11 @@ export default async function LiveStandingsPage() {
     { sport: "Basketball", blocks: [nba, wnba] },
     { sport: "Baseball", blocks: [mlb, npb] },
     { sport: "Hockey", blocks: [nhl] },
-    { sport: "Cricket", blocks: [wtc, cricketFix] },
+    // The World Test Championship table runs a two-year cycle, so it is rarely
+    // news on any given day. Collapsed by default (Ashwin, 2026-08-30);
+    // collapse() keeps `live` true, so the green dot still shows when a
+    // cycle is under way.
+    { sport: "Cricket", blocks: [collapse(wtc), cricketFix] },
     { sport: "Rugby Union", blocks: [rugbyFix] },
     { sport: "Rugby League", blocks: [nrl] },
     { sport: "Aussie Rules", blocks: [afl] },
