@@ -21,8 +21,8 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-08-23",
-  "prevSnapshotDate": "2026-08-16",
+  "asOf": "2026-08-30",
+  "prevSnapshotDate": "2026-08-23",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -116,9 +116,9 @@
       "power": 408.4,
       "jurisdictionHref": "/countries/india",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 6,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "⚠️ Elon Musk",
@@ -292,9 +292,9 @@
       "power": 255.2,
       "jurisdictionHref": "/countries/france",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 17,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Jensen Huang",
@@ -559,9 +559,9 @@
       "jurisdiction": "California",
       "metro": "Sacramento",
       "metroSlug": "sacramento",
-      "jscore": 329.6,
+      "jscore": 329.0,
       "weight": 0.55,
-      "power": 181.3,
+      "power": 181.0,
       "jurisdictionHref": "/states/california",
       "transition": "Term-limited; leaves office Jan 2027 (California gubernatorial election, 3 Nov 2026)",
       "prevRank": 34,
@@ -809,6 +809,22 @@
       "delta": 0
     },
     {
+      "name": "Xin Changxing",
+      "role": "Party Secretary, Jiangsu",
+      "category": "Sub-national",
+      "jurisdiction": "Jiangsu",
+      "metro": "Nanjing",
+      "metroSlug": "nanjing",
+      "jscore": 169.4,
+      "weight": 0.8,
+      "power": 135.6,
+      "jurisdictionHref": "/states/jiangsu",
+      "transition": "",
+      "prevRank": 58,
+      "isNew": false,
+      "delta": 8
+    },
+    {
       "name": "👑 Charles III",
       "role": "King (15 realms) & Head of the Commonwealth",
       "category": "Crown",
@@ -822,7 +838,7 @@
       "transition": "",
       "prevRank": 50,
       "isNew": false,
-      "delta": 0
+      "delta": -1
     },
     {
       "name": "Lee Jae Myung",
@@ -838,7 +854,7 @@
       "transition": "",
       "prevRank": 51,
       "isNew": false,
-      "delta": 0
+      "delta": -1
     },
     {
       "name": "Andy Jassy",
@@ -854,7 +870,7 @@
       "transition": "",
       "prevRank": 52,
       "isNew": false,
-      "delta": 0
+      "delta": -1
     },
     {
       "name": "Ted Sarandos",
@@ -870,7 +886,7 @@
       "transition": "",
       "prevRank": 53,
       "isNew": false,
-      "delta": 0
+      "delta": -1
     },
     {
       "name": "Zohran Mamdani",
@@ -886,7 +902,7 @@
       "transition": "",
       "prevRank": 54,
       "isNew": false,
-      "delta": 0
+      "delta": -1
     },
     {
       "name": "Roger Goodell",
@@ -899,22 +915,6 @@
       "weight": 0.44,
       "power": 131.5,
       "jurisdictionHref": "/teams/nfl",
-      "transition": "",
-      "prevRank": 70,
-      "isNew": false,
-      "delta": 15
-    },
-    {
-      "name": "Sadiq Khan",
-      "role": "Mayor of London",
-      "category": "Mayor",
-      "jurisdiction": "London",
-      "metro": "London",
-      "metroSlug": "london",
-      "jscore": 180.7,
-      "weight": 0.72,
-      "power": 130.1,
-      "jurisdictionHref": "/rankings/london",
       "transition": "",
       "prevRank": 55,
       "isNew": false,
@@ -932,25 +932,9 @@
       "power": 127.5,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 56,
-      "isNew": false,
-      "delta": -1
-    },
-    {
-      "name": "Xin Changxing",
-      "role": "Party Secretary, Jiangsu",
-      "category": "Sub-national",
-      "jurisdiction": "Jiangsu",
-      "metro": "Nanjing",
-      "metroSlug": "nanjing",
-      "jscore": 158.4,
-      "weight": 0.8,
-      "power": 126.7,
-      "jurisdictionHref": "/states/jiangsu",
-      "transition": "",
       "prevRank": 57,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Volodymyr Zelenskyy",
@@ -964,9 +948,9 @@
       "power": 126.5,
       "jurisdictionHref": "/countries/ukraine",
       "transition": "",
-      "prevRank": 58,
+      "prevRank": 59,
       "isNew": false,
-      "delta": -1
+      "delta": 1
     },
     {
       "name": "Jeff Bezos",
@@ -980,9 +964,9 @@
       "power": 122.6,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 59,
+      "prevRank": 60,
       "isNew": false,
-      "delta": -1
+      "delta": 1
     },
     {
       "name": "MrBeast",
@@ -996,9 +980,25 @@
       "power": 120.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 60,
+      "prevRank": 61,
       "isNew": false,
-      "delta": -1
+      "delta": 1
+    },
+    {
+      "name": "Huang Kunming",
+      "role": "Party Secretary, Guangdong",
+      "category": "Sub-national",
+      "jurisdiction": "Guangdong",
+      "metro": "Guangzhou",
+      "metroSlug": "guangzhou",
+      "jscore": 148.6,
+      "weight": 0.8,
+      "power": 118.9,
+      "jurisdictionHref": "/states/guangdong",
+      "transition": "",
+      "prevRank": 70,
+      "isNew": false,
+      "delta": 9
     },
     {
       "name": "Sergey Brin",
@@ -1012,9 +1012,9 @@
       "power": 117.6,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 61,
+      "prevRank": 62,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Michael Dell",
@@ -1028,9 +1028,9 @@
       "power": 117.3,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 62,
+      "prevRank": 63,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Greg Abbott",
@@ -1039,14 +1039,14 @@
       "jurisdiction": "Texas",
       "metro": "Austin",
       "metroSlug": "austin",
-      "jscore": 211.7,
+      "jscore": 208.6,
       "weight": 0.55,
-      "power": 116.4,
+      "power": 114.7,
       "jurisdictionHref": "/states/texas",
       "transition": "Seeking a 4th term; Texas gubernatorial election, 3 Nov 2026",
-      "prevRank": 63,
+      "prevRank": 64,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Ron O'Hanley",
@@ -1060,9 +1060,9 @@
       "power": 114.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 64,
+      "prevRank": 65,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Brian Roberts",
@@ -1076,9 +1076,9 @@
       "power": 110.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 65,
+      "prevRank": 66,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Lionel Messi",
@@ -1092,9 +1092,9 @@
       "power": 108.0,
       "jurisdictionHref": "/teams/football/inter-miami-cf",
       "transition": "",
-      "prevRank": 66,
+      "prevRank": 67,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Emmanuel Grégoire",
@@ -1103,14 +1103,14 @@
       "jurisdiction": "Paris",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 144.2,
+      "jscore": 144.1,
       "weight": 0.72,
       "power": 103.8,
       "jurisdictionHref": "/rankings/paris",
       "transition": "",
-      "prevRank": 67,
+      "prevRank": 68,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "C.C. Wei",
@@ -1124,25 +1124,9 @@
       "power": 103.3,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 68,
-      "isNew": false,
-      "delta": -1
-    },
-    {
-      "name": "Huang Kunming",
-      "role": "Party Secretary, Guangdong",
-      "category": "Sub-national",
-      "jurisdiction": "Guangdong",
-      "metro": "Guangzhou",
-      "metroSlug": "guangzhou",
-      "jscore": 125.2,
-      "weight": 0.8,
-      "power": 100.2,
-      "jurisdictionHref": "/states/guangdong",
-      "transition": "",
       "prevRank": 69,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Aleksander Čeferin",
@@ -1158,7 +1142,7 @@
       "transition": "",
       "prevRank": 71,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Lachlan Murdoch",
@@ -1174,7 +1158,7 @@
       "transition": "",
       "prevRank": 72,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Yuriko Koike",
@@ -1190,7 +1174,7 @@
       "transition": "",
       "prevRank": 73,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Taylor Swift",
@@ -1206,7 +1190,7 @@
       "transition": "",
       "prevRank": 74,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Rob Jetten",
@@ -1222,7 +1206,7 @@
       "transition": "",
       "prevRank": 75,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Ron DeSantis",
@@ -1238,7 +1222,7 @@
       "transition": "Term-limited; leaves office Jan 2027 (Florida gubernatorial election, 3 Nov 2026)",
       "prevRank": 76,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "⚠️ Abdel Fattah el-Sisi",
@@ -1254,7 +1238,23 @@
       "transition": "",
       "prevRank": 77,
       "isNew": false,
-      "delta": 0
+      "delta": 1
+    },
+    {
+      "name": "Lin Wu",
+      "role": "Party Secretary, Shandong",
+      "category": "Sub-national",
+      "jurisdiction": "Shandong",
+      "metro": "Jinan",
+      "metroSlug": "jinan",
+      "jscore": 115.2,
+      "weight": 0.8,
+      "power": 92.2,
+      "jurisdictionHref": "/states/shandong",
+      "transition": "",
+      "prevRank": 93,
+      "isNew": false,
+      "delta": 16
     },
     {
       "name": "Mark Zuckerberg",
@@ -1273,36 +1273,20 @@
       "delta": 0
     },
     {
-      "name": "Kathy Hochul",
-      "role": "Governor, New York",
-      "category": "Sub-national",
-      "jurisdiction": "New York",
-      "metro": "New York",
-      "metroSlug": "new-york",
-      "jscore": 164.6,
-      "weight": 0.55,
-      "power": 90.5,
-      "jurisdictionHref": "/states/new-york",
-      "transition": "Seeking re-election; New York gubernatorial election, 3 Nov 2026",
-      "prevRank": 79,
-      "isNew": false,
-      "delta": 0
-    },
-    {
       "name": "Daniel Lurie",
       "role": "Mayor of San Francisco",
       "category": "Mayor",
       "jurisdiction": "San Francisco",
       "metro": "San Francisco-San Jose",
       "metroSlug": "san-francisco-san-jose",
-      "jscore": 125.6,
+      "jscore": 125.0,
       "weight": 0.72,
-      "power": 90.4,
+      "power": 90.0,
       "jurisdictionHref": "/rankings/san-francisco-san-jose",
       "transition": "",
       "prevRank": 80,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "👑 Naruhito",
@@ -1318,7 +1302,23 @@
       "transition": "",
       "prevRank": 81,
       "isNew": false,
-      "delta": 0
+      "delta": 1
+    },
+    {
+      "name": "Kathy Hochul",
+      "role": "Governor, New York",
+      "category": "Sub-national",
+      "jurisdiction": "New York",
+      "metro": "New York",
+      "metroSlug": "new-york",
+      "jscore": 162.7,
+      "weight": 0.55,
+      "power": 89.5,
+      "jurisdictionHref": "/states/new-york",
+      "transition": "Seeking re-election; New York gubernatorial election, 3 Nov 2026",
+      "prevRank": 79,
+      "isNew": false,
+      "delta": -2
     },
     {
       "name": "Larry Ellison",
@@ -1471,9 +1471,9 @@
       "jurisdiction": "Beijing",
       "metro": "Beijing",
       "metroSlug": "beijing",
-      "jscore": 113.9,
+      "jscore": 114.0,
       "weight": 0.72,
-      "power": 82.0,
+      "power": 82.1,
       "jurisdictionHref": "/rankings/beijing",
       "transition": "",
       "prevRank": 91,
@@ -1497,20 +1497,20 @@
       "delta": 0
     },
     {
-      "name": "Lin Wu",
-      "role": "Party Secretary, Shandong",
-      "category": "Sub-national",
-      "jurisdiction": "Shandong",
-      "metro": "Jinan",
-      "metroSlug": "jinan",
-      "jscore": 102.0,
-      "weight": 0.8,
+      "name": "Gong Zheng",
+      "role": "Mayor of Shanghai",
+      "category": "Mayor",
+      "jurisdiction": "Shanghai",
+      "metro": "Shanghai",
+      "metroSlug": "shanghai",
+      "jscore": 113.3,
+      "weight": 0.72,
       "power": 81.6,
-      "jurisdictionHref": "/states/shandong",
+      "jurisdictionHref": "/rankings/shanghai",
       "transition": "",
-      "prevRank": 93,
+      "prevRank": 96,
       "isNew": false,
-      "delta": 0
+      "delta": 3
     },
     {
       "name": "Swiss Federal Council",
@@ -1545,20 +1545,20 @@
       "delta": 0
     },
     {
-      "name": "Gong Zheng",
-      "role": "Mayor of Shanghai",
-      "category": "Mayor",
-      "jurisdiction": "Shanghai",
-      "metro": "Shanghai",
-      "metroSlug": "shanghai",
-      "jscore": 109.3,
-      "weight": 0.72,
-      "power": 78.7,
-      "jurisdictionHref": "/rankings/shanghai",
+      "name": "Wang Hao",
+      "role": "Party Secretary, Zhejiang",
+      "category": "Sub-national",
+      "jurisdiction": "Zhejiang",
+      "metro": "Hangzhou",
+      "metroSlug": "hangzhou",
+      "jscore": 98.6,
+      "weight": 0.8,
+      "power": 78.9,
+      "jurisdictionHref": "/states/zhejiang",
       "transition": "",
-      "prevRank": 96,
+      "prevRank": 100,
       "isNew": false,
-      "delta": 0
+      "delta": 4
     },
     {
       "name": "Karen Bass",
@@ -1583,14 +1583,30 @@
       "jurisdiction": "Île-de-France",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 138.2,
+      "jscore": 138.5,
       "weight": 0.55,
-      "power": 76.0,
+      "power": 76.2,
       "jurisdictionHref": "/states/ile-de-france",
       "transition": "",
       "prevRank": 98,
       "isNew": false,
       "delta": 0
+    },
+    {
+      "name": "Sun Zhiyang",
+      "role": "Mayor of Guangzhou",
+      "category": "Mayor",
+      "jurisdiction": "Guangzhou",
+      "metro": "Guangzhou",
+      "metroSlug": "guangzhou",
+      "jscore": 105.4,
+      "weight": 0.72,
+      "power": 75.9,
+      "jurisdictionHref": "/rankings/guangzhou",
+      "transition": "",
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Cyril Ramaphosa",
@@ -1606,37 +1622,15 @@
       "transition": "",
       "prevRank": 99,
       "isNew": false,
-      "delta": 0
-    },
-    {
-      "name": "Wang Hao",
-      "role": "Party Secretary, Zhejiang",
-      "category": "Sub-national",
-      "jurisdiction": "Zhejiang",
-      "metro": "Hangzhou",
-      "metroSlug": "hangzhou",
-      "jscore": 93.2,
-      "weight": 0.8,
-      "power": 74.6,
-      "jurisdictionHref": "/states/zhejiang",
-      "transition": "",
-      "prevRank": 100,
-      "isNew": false,
-      "delta": 0
+      "delta": -1
     }
   ],
   "dropped": [
     {
-      "name": "Narendra Modi",
-      "prevRank": 6,
-      "category": "National",
-      "jurisdiction": "India"
-    },
-    {
-      "name": "Emmanuel Macron",
-      "prevRank": 17,
-      "category": "National",
-      "jurisdiction": "France"
+      "name": "Sadiq Khan",
+      "prevRank": 56,
+      "category": "Mayor",
+      "jurisdiction": "London"
     }
   ]
 }

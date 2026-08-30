@@ -750,7 +750,7 @@
     "name": "Klaus-Michael Kuehne",
     "networth": 42512.677,
     "rank": 47,
-    "countryCode": "de",
+    "countryCode": null,
     "industries": [
       "Logistics"
     ],
@@ -13591,7 +13591,7 @@
     "name": "Ion Stoica",
     "networth": 5031,
     "rank": 841,
-    "countryCode": "ro",
+    "countryCode": "us",
     "industries": [
       "Technology"
     ],
@@ -48292,7 +48292,7 @@
     "name": "Sean Lie",
     "networth": 1253.261,
     "rank": 2995,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -51971,7 +51971,7 @@
     "name": "Denise Prenosil",
     "networth": 1115.145,
     "rank": 3225,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Fashion & Retail"
     ],
@@ -52486,7 +52486,7 @@
     "name": "Norman Asbjornson",
     "networth": 1092.685,
     "rank": 3258,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -52710,7 +52710,7 @@
     "name": "Gao Shuhua",
     "networth": 1083.703,
     "rank": 3272,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -52999,7 +52999,7 @@
     "name": "Yoon Dae-in",
     "networth": 1069.269,
     "rank": 3290,
-    "countryCode": "kr",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -53191,7 +53191,7 @@
     "name": "Delfin Jorge Ezequiel Carballo",
     "networth": 1062.449,
     "rank": 3302,
-    "countryCode": null,
+    "countryCode": "ar",
     "industries": [
       "Finance & Investments"
     ],
@@ -53223,7 +53223,7 @@
     "name": "Lou Boliang",
     "networth": 1062.193,
     "rank": 3304,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -53334,7 +53334,7 @@
     "name": "Chen Baohua",
     "networth": 1055.288,
     "rank": 3311,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -53510,7 +53510,7 @@
     "name": "Robert Steers & family",
     "networth": 1048.158,
     "rank": 3322,
-    "countryCode": null,
+    "countryCode": "us",
     "industries": [
       "Finance & Investments"
     ],
@@ -53606,7 +53606,7 @@
     "name": "Wang Xinyang",
     "networth": 1039.719,
     "rank": 3328,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -54074,7 +54074,7 @@
     "name": "Robert Coyiuto Jr.",
     "networth": 1017.368,
     "rank": 3357,
-    "countryCode": "ph",
+    "countryCode": null,
     "industries": [
       "Energy"
     ],
@@ -54156,7 +54156,7 @@
     "name": "Abigail Bennett",
     "networth": 1014.192,
     "rank": 3362,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Food & Beverage"
     ],
@@ -54366,7 +54366,7 @@
     "name": "Philippe Benacin",
     "networth": 1003.798,
     "rank": 3375,
-    "countryCode": null,
+    "countryCode": "fr",
     "industries": [
       "Fashion & Retail"
     ],
@@ -54414,7 +54414,7 @@
     "name": "Antonio Luiz Seabra",
     "networth": 1000.328,
     "rank": 3378,
-    "countryCode": null,
+    "countryCode": "br",
     "industries": [
       "Fashion & Retail"
     ],

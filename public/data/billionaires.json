@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-23",
+  "generated": "2026-08-30",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3385,
   "billionaires": [
@@ -800,9 +800,9 @@
       "name": "Klaus-Michael Kuehne",
       "uri": "klaus-michael-kuehne",
       "networth": 42512.677,
-      "countryCode": "DE",
-      "countrySlug": "germany",
-      "countryName": "Germany",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Logistics"
       ],
@@ -14435,9 +14435,9 @@
       "name": "Ion Stoica",
       "uri": "ion-stoica",
       "networth": 5031,
-      "countryCode": "RO",
-      "countrySlug": "romania",
-      "countryName": "Romania",
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Technology"
       ],
@@ -51289,9 +51289,9 @@
       "name": "Sean Lie",
       "uri": "sean-lie",
       "networth": 1253.261,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -55197,9 +55197,9 @@
       "name": "Denise Prenosil",
       "uri": "denise-prenosil",
       "networth": 1115.145,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Fashion & Retail"
       ],
@@ -55744,9 +55744,9 @@
       "name": "Norman Asbjornson",
       "uri": "norman-asbjornson",
       "networth": 1092.685,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -55982,9 +55982,9 @@
       "name": "Gao Shuhua",
       "uri": "gao-shuhua",
       "networth": 1083.703,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -56289,9 +56289,9 @@
       "name": "Yoon Dae-in",
       "uri": "yoon-dae-in",
       "networth": 1069.269,
-      "countryCode": "KR",
-      "countrySlug": "south-korea",
-      "countryName": "South Korea",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -56493,9 +56493,9 @@
       "name": "Delfin Jorge Ezequiel Carballo",
       "uri": "delfin-jorge-ezequiel-carballo",
       "networth": 1062.449,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "AR",
+      "countrySlug": "argentina",
+      "countryName": "Argentina",
       "industries": [
         "Finance & Investments"
       ],
@@ -56527,9 +56527,9 @@
       "name": "Lou Boliang",
       "uri": "lou-boliang",
       "networth": 1062.193,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -56645,9 +56645,9 @@
       "name": "Chen Baohua",
       "uri": "chen-baohua",
       "networth": 1055.288,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -56832,9 +56832,9 @@
       "name": "Robert Steers & family",
       "uri": "robert-steers",
       "networth": 1048.158,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Finance & Investments"
       ],
@@ -56934,9 +56934,9 @@
       "name": "Wang Xinyang",
       "uri": "wang-xinyang",
       "networth": 1039.719,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Technology"
       ],
@@ -57431,9 +57431,9 @@
       "name": "Robert Coyiuto Jr.",
       "uri": "robert-coyiuto-jr",
       "networth": 1017.368,
-      "countryCode": "PH",
-      "countrySlug": "philippines",
-      "countryName": "Philippines",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Energy"
       ],
@@ -57518,9 +57518,9 @@
       "name": "Abigail Bennett",
       "uri": "abigail-bennett",
       "networth": 1014.192,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -57741,9 +57741,9 @@
       "name": "Philippe Benacin",
       "uri": "philippe-benacin",
       "networth": 1003.798,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "FR",
+      "countrySlug": "france",
+      "countryName": "France",
       "industries": [
         "Fashion & Retail"
       ],
@@ -57792,9 +57792,9 @@
       "name": "Antonio Luiz Seabra",
       "uri": "antonio-luiz-seabra",
       "networth": 1000.328,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "BR",
+      "countrySlug": "brazil",
+      "countryName": "Brazil",
       "industries": [
         "Fashion & Retail"
       ],
