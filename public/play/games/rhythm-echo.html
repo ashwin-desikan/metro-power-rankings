@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Rhythm Echo · Play &amp; Learn</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* Rhythm Echo — PLAY-MASTERY-SPEC.md §3.2 Game B.
+     v2 (2026-08-30). v1 was rejected as unreadable: it had two competing mode
+     buttons, no visible state, and bare notation a child who has not started
+     lessons cannot read. v2 fixes all three:
+       - ONE continuous flow. It listens to you, then it is your turn. No modes.
+       - A banner the size of the screen says which half you are in.
+       - Duration is shown as WIDTH. A long note is a long block. You can see
+         the rhythm before you can read the notation, and the notation sits on
+         the block so the symbol is learned by association. */
+  .stage{border-radius:20px;padding:14px 12px 12px;margin:8px 0 10px;transition:background .3s}
+  .stage.listen{background:linear-gradient(180deg,#dff0ff,#eaf6ff)}
+  .stage.mine{background:linear-gradient(180deg,#fff0c2,#fff8e0)}
+  .stage.done{background:#f4f8fb}
+  .banner{font-size:1.6rem;font-weight:900;color:var(--navy);letter-spacing:.5px;margin:2px 0 2px}
+  .banner .sub{display:block;font-size:.98rem;font-weight:700;color:#5b7b97;letter-spacing:0;margin-top:2px}
+  .stage.mine .banner{animation:pulse 1s ease-in-out infinite}
+  @keyframes pulse{50%{transform:scale(1.06)}}
+
+  .beats{display:flex;gap:10px;justify-content:center;margin:8px 0 4px;min-height:26px}
+  .beat{width:22px;height:22px;border-radius:50%;background:#ffffff90;box-shadow:inset 0 0 0 3px #b9cfe2;transition:transform .1s}
+  .beat.on{background:var(--coral);box-shadow:inset 0 0 0 3px #d2453f;transform:scale(1.35)}
+
+  .blocks{display:flex;gap:5px;align-items:stretch;margin:8px 2px 2px;min-height:74px}
+  .blk{border-radius:12px;background:#ffffffcc;box-shadow:inset 0 0 0 3px #cfe0ee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:0;transition:transform .1s,background .1s,box-shadow .1s;padding:6px 2px}
+  .blk .len{font-size:.66rem;font-weight:800;color:#5b7b97;white-space:nowrap}
+  .blk.rest{background:#eef3f7;box-shadow:inset 0 0 0 3px #dbe6ef}
+  .blk.lit{background:var(--sun);box-shadow:inset 0 0 0 3px #d9a900;transform:translateY(-7px) scale(1.03)}
+  .blk.rest.lit{background:#e2eaf1;transform:none}
+  .blk.tapped{background:#bff3e4;box-shadow:inset 0 0 0 3px #34d3b0}
+  .blk.on{background:#bff3e4;box-shadow:inset 0 0 0 3px #1f9e82}
+  .blk.near{background:#fff0bd;box-shadow:inset 0 0 0 3px #e8c86a}
+  .blk.off{background:#ffe9e5;box-shadow:inset 0 0 0 3px #e9a79c}
+
+  .pad{width:100%;height:132px;margin:8px 0 4px;border:none;border-radius:24px;background:#e7edf3;box-shadow:0 8px 0 #cbd8e4;color:#8ba4bb;font-family:inherit;font-weight:900;font-size:1.4rem;display:flex;align-items:center;justify-content:center;gap:10px;touch-action:manipulation;user-select:none;transition:background .2s,color .2s}
+  .pad.live{background:linear-gradient(180deg,#ffd23f,#f5b800);box-shadow:0 9px 0 #d19c00;color:#5c4200;cursor:pointer}
+  .pad.live:active,.pad.hit{transform:translateY(5px);box-shadow:0 4px 0 #d19c00;background:linear-gradient(180deg,#ffe694,#ffd23f)}
+
+  .btnrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0 0}
+  .mini{border:none;background:#eaf6ff;color:#1d6fb8;font-weight:800;border-radius:999px;padding:11px 18px;font-size:1rem;cursor:pointer;font-family:inherit}
+  .lvl{font-size:.82rem;font-weight:800;color:#5b7b97;letter-spacing:.5px}
+  .cover{position:fixed;inset:0;background:#eef6fcf7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover.hidden{display:none}
+  .cover h1{font-size:2.1rem;margin:6px 0;color:var(--navy)}
+  .cover p{font-size:1.06rem;font-weight:700;color:#5b7b97;max-width:420px;margin:4px 0 6px;line-height:1.45}
+  .bigbtn{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.2rem;padding:14px 28px;cursor:pointer;background:var(--coral);color:#fff;box-shadow:0 7px 0 #d2453f;margin-top:14px}
+  .grown{font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px;line-height:1.45}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="mag" id="logoEmoji">🥁</span> <span id="logoText">Rhythm Echo</span></div>
+  <div class="hgroup">
+    <a class="back" id="back" href="/play">← All games</a>
+    <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+  </div>
+</header>
+
+<div class="cover" id="start">
+  <div style="font-size:3.6rem">🥁🎵</div>
+  <h1>Rhythm Echo</h1>
+  <p><b>1.</b> The drum plays a rhythm. Watch the blocks light up.</p>
+  <p><b>2.</b> Then it's your turn. Tap the big pad to copy it.</p>
+  <p style="font-size:.95rem">A <b>wide</b> block is a long note. A <b>narrow</b> block is a quick one.</p>
+  <button class="bigbtn" id="begin">Start drumming! 🥁</button>
+</div>
+
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="lvl" id="lvl">Round 1 of 8</div>
+    <div class="stage listen" id="stage">
+      <div class="banner" id="banner">🎧 Listen…<span class="sub" id="bsub">Watch the blocks</span></div>
+      <div class="beats" id="beats"></div>
+      <div class="blocks" id="blocks"></div>
+    </div>
+    <button class="pad" id="pad">👆 Wait…</button>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div></div>
+    <div class="btnrow" id="btnrow">
+      <button class="mini" id="again1">🔁 Hear it again</button>
+      <button class="mini" id="read">🔊 Read it to me</button>
+    </div>
+    <button class="next" id="next">Next →</button>
+    <div class="finale" id="finale">
+      <h2 id="finaleH">🏆 You did it!</h2>
+      <p id="finaleP" style="font-size:1.2rem;font-weight:700;color:#16324f">Great drumming!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown" id="grownText">For grown-ups: call-and-response rhythm, the standard way rhythm is taught in KS1/KS2 music and in instrumental lessons. Block width shows note length, so duration is visible before notation is readable; the symbol sits on the block so it is learned by association. Maths: a semibreve is 1, a minim ½, a crotchet ¼, a quaver ⅛ of a bar. Rhythms are generated fresh every round, so there is nothing to memorise, and scoring is on timing and on the right NUMBER of taps, so tapping fast cannot help. Ages 6–10.</p>
+
+<script src="assets/scoring.js"></script>
+<script>
+"use strict";
+var $ = function (id) { return document.getElementById(id); };
+var ROUNDS = 8, BPM = 76, soundOn = true, actx = null;
+var round = 0, pattern = null, taps = [], phase = "idle", tapStart = 0, timers = [];
+
+/* ---------- audio ---------------------------------------------------------- */
+function ctx() {
+  try {
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === "suspended") actx.resume();
+    return actx;
+  } catch (e) { return null; }
+}
+function click(when, accent) {
+  if (!soundOn) return; var a = ctx(); if (!a) return;
+  var o = a.createOscillator(), g = a.createGain();
+  o.type = "square"; o.frequency.value = accent ? 1500 : 950;
+  o.connect(g); g.connect(a.destination);
+  g.gain.setValueAtTime(0.0001, when);
+  g.gain.exponentialRampToValueAtTime(accent ? 0.20 : 0.14, when + 0.004);
+  g.gain.exponentialRampToValueAtTime(0.0001, when + 0.09);
+  o.start(when); o.stop(when + 0.11);
+}
+function thump() {
+  if (!soundOn) return; var a = ctx(); if (!a) return;
+  var o = a.createOscillator(), g = a.createGain();
+  o.type = "sine"; o.frequency.setValueAtTime(340, a.currentTime);
+  o.frequency.exponentialRampToValueAtTime(120, a.currentTime + 0.12);
+  g.gain.setValueAtTime(0.24, a.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.0001, a.currentTime + 0.16);
+  o.connect(g); g.connect(a.destination);
+  o.start(); o.stop(a.currentTime + 0.18);
+}
+function tone(f, d, type, when, gain) {
+  if (!soundOn) return; var a = ctx(); if (!a) return;
+  var o = a.createOscillator(), g = a.createGain();
+  o.type = type || "sine"; o.frequency.value = f; g.gain.value = gain || 0.12;
+  o.connect(g); g.connect(a.destination);
+  var t = a.currentTime + (when || 0);
+  o.start(t); g.gain.setValueAtTime(g.gain.value, t); g.gain.exponentialRampToValueAtTime(0.0001, t + d); o.stop(t + d);
+}
+function cheer() { [523, 659, 784, 1047].forEach(function (f, k) { tone(f, 0.25, "triangle", k * 0.09, 0.14); }); }
+function learn() { [392, 523].forEach(function (f, k) { tone(f, 0.22, "triangle", k * 0.11, 0.11); }); }
+function speak(txt, onDone) {
+  if (!soundOn || !("speechSynthesis" in window)) { if (onDone) onDone(); return; }
+  try {
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(txt); u.rate = 0.9; u.pitch = 1.1;
+    if (onDone) { u.onend = onDone; u.onerror = onDone; }
+    speechSynthesis.speak(u);
+  } catch (e) { if (onDone) onDone(); }
+}
+function confetti() {
+  var em = ["🥁", "🎵", "⭐", "🎉", "🎶"];
+  for (var k = 0; k < 18; k++) {
+    var c = document.createElement("div"); c.className = "confetti";
+    c.style.left = Math.random() * 100 + "vw"; c.style.background = "transparent";
+    c.style.width = "auto"; c.style.height = "auto"; c.style.fontSize = "1.4rem";
+    c.textContent = em[k % em.length];
+    c.style.animation = "fall " + (1.2 + Math.random() * 0.8) + "s ease-in " + (Math.random() * 0.2) + "s forwards";
+    document.body.appendChild(c);
+    (function (el) { setTimeout(function () { el.remove(); }, 2400); })(c);
+  }
+}
+var tT; function toast(t) { $("toast").textContent = t; clearTimeout(tT); tT = setTimeout(function () { $("toast").textContent = ""; }, 3000); }
+function later(fn, ms) { var id = setTimeout(fn, ms); timers.push(id); return id; }
+function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+
+/* ---------- notation -------------------------------------------------------
+   Drawn as SVG, not Unicode music glyphs, which show as tofu on some phones. */
+var NAMES = { 4: "semibreve", 2: "minim", 1.5: "dotted crotchet", 1: "crotchet", 0.5: "quaver" };
+var BEATS = { 4: "4 beats", 2: "2 beats", 1.5: "1½ beats", 1: "1 beat", 0.5: "½ beat" };
+function noteSVG(v, rest) {
+  if (rest) return '<svg width="26" height="40" viewBox="0 0 26 40"><rect x="4" y="14" width="18" height="8" rx="2" fill="#8ba4bb"></rect>' +
+    (v >= 2 ? '<rect x="4" y="25" width="18" height="8" rx="2" fill="#8ba4bb"></rect>' : '') + '</svg>';
+  var hollow = v >= 2, stem = v < 4, flag = v === 0.5, dot = v === 1.5;
+  return '<svg width="26" height="40" viewBox="0 0 26 40">' +
+    (stem ? '<rect x="17" y="4" width="3" height="24" fill="#16324f"></rect>' : '') +
+    (flag ? '<path d="M20 4 q8 5 5 13 q-1-7-5-9 z" fill="#16324f"></path>' : '') +
+    '<ellipse cx="11" cy="29" rx="8" ry="5.8" transform="rotate(-18 11 29)" ' +
+      (hollow ? 'fill="#fff" stroke="#16324f" stroke-width="2.6"' : 'fill="#16324f"') + '></ellipse>' +
+    (dot ? '<circle cx="23" cy="29" r="2.3" fill="#16324f"></circle>' : '') + '</svg>';
+}
+
+/* ---------- rhythm generation ----------------------------------------------
+   Generated fresh every round, never drawn from a fixed list, so there is no
+   finite set of answers to learn by heart. */
+var LEVELS = [
+  { vals: [1],                bars: 1, rests: false, label: "four steady beats" },
+  { vals: [1, 2],             bars: 1, rests: false, label: "long notes and short notes" },
+  { vals: [1, 2],             bars: 1, rests: true,  label: "with a silent gap" },
+  { vals: [0.5, 1, 2],        bars: 1, rests: false, label: "now with quick notes" },
+  { vals: [0.5, 1, 2],        bars: 1, rests: true,  label: "quick notes and a gap" },
+  { vals: [0.5, 1, 1.5, 2],   bars: 1, rests: false, label: "with a dotted note" },
+  { vals: [0.5, 1, 2],        bars: 2, rests: false, label: "two bars" },
+  { vals: [0.5, 1, 1.5, 2],   bars: 2, rests: true,  label: "the big one" }
+];
+function makeBar(vals, allowRests) {
+  var left = 4, out = [], guard = 0;
+  while (left > 0.0001 && guard++ < 40) {
+    var opts = vals.filter(function (v) { return v <= left + 0.0001; });
+    var v = opts[Math.floor(Math.random() * opts.length)];
+    var isRest = allowRests && out.length > 0 && left - v > 0.0001 && Math.random() < 0.2;
+    out.push({ v: v, rest: isRest });
+    left -= v;
+  }
+  return out;
+}
+function makePattern(lvl) {
+  var L = LEVELS[lvl], bars = [], b;
+  for (b = 0; b < L.bars; b++) bars.push(makeBar(L.vals, L.rests));
+  var flat = [], onsets = [], t = 0;
+  bars.forEach(function (bar) {
+    bar.forEach(function (n) {
+      flat.push(n);
+      if (!n.rest) onsets.push({ beat: t, blockIndex: flat.length - 1 });
+      t += n.v;
+    });
+  });
+  return { flat: flat, onsets: onsets, beats: t, label: L.label, lvl: lvl };
+}
+
+/* ---------- drawing ---------------------------------------------------------
+   Width is proportional to duration. This is the whole readability idea: you
+   can SEE that a minim lasts twice as long as a crotchet before you can read
+   either symbol. */
+function drawBlocks(pat) {
+  $("blocks").innerHTML = pat.flat.map(function (n) {
+    return '<div class="blk' + (n.rest ? ' rest' : '') + '" style="flex:' + n.v + ' 1 0">' +
+      noteSVG(n.v, n.rest) +
+      '<span class="len">' + (n.rest ? "shhh" : BEATS[n.v]) + '</span></div>';
+  }).join("");
+}
+function blocks() { return Array.prototype.slice.call($("blocks").children); }
+function drawBeats(on) {
+  $("beats").innerHTML = [0, 1, 2, 3].map(function (k) {
+    return '<div class="beat' + (on != null && k <= on ? " on" : "") + '"></div>';
+  }).join("");
+}
+function setStage(kind, title, sub) {
+  $("stage").className = "stage " + kind;
+  $("banner").innerHTML = title + '<span class="sub">' + sub + "</span>";
+}
+
+/* ---------- the round: ONE continuous flow ---------------------------------
+   listen -> your turn -> result. There are no mode buttons to understand.
+   v1 had "Listen again" and "My turn" competing for the same tap and no
+   visible state; that is what made it unreadable. */
+function beatSec() { return 60 / BPM; }
+
+function runRound() {
+  clearTimers();
+  taps = []; phase = "listen";
+  $("reveal").className = "reveal"; $("next").className = "next"; $("toast").textContent = "";
+  $("pad").className = "pad"; $("pad").textContent = "👆 Wait…";
+  blocks().forEach(function (b) { b.className = b.className.replace(/ (lit|on|near|off|tapped)/g, ""); });
+  setStage("listen", "🎧 Listen…", "Watch the blocks light up");
+  drawBeats(null);
+  var a = ctx(); if (!a) return;
+  var bs = beatSec(), t0 = a.currentTime + 0.5;
+  countIn(t0, bs, function () {
+    var start = t0 + 4 * bs;
+    pattern.onsets.forEach(function (o) {
+      var when = start + o.beat * bs;
+      click(when, false);
+      var dur = pattern.flat[o.blockIndex].v * bs * 1000;
+      later(function () { litBlock(o.blockIndex, Math.max(150, dur - 40)); }, (when - a.currentTime) * 1000);
+    });
+    later(myTurn, (start + pattern.beats * bs - a.currentTime) * 1000 + 700);
+  });
+}
+
+function countIn(t0, bs, done) {
+  var a = ctx();
+  for (var k = 0; k < 4; k++) {
+    click(t0 + k * bs, k === 0);
+    (function (n) { later(function () { drawBeats(n); }, (t0 + n * bs - a.currentTime) * 1000); })(k);
+  }
+  later(function () { drawBeats(null); done(); }, (t0 + 4 * bs - a.currentTime) * 1000);
+}
+
+function litBlock(i, ms) {
+  var el = blocks()[i]; if (!el) return;
+  el.classList.add("lit");
+  later(function () { el.classList.remove("lit"); }, ms || 200);
+}
+
+function myTurn() {
+  phase = "countin";
+  setStage("mine", "🥁 Your turn!", "Tap the pad to copy it");
+  $("pad").className = "pad"; $("pad").textContent = "👆 Get ready…";
+  speak("Your turn!");
+  var a = ctx(); if (!a) return;
+  var bs = beatSec(), t0 = a.currentTime + 0.9;
+  countIn(t0, bs, function () {
+    phase = "tapping";
+    tapStart = t0 + 4 * bs;
+    $("pad").className = "pad live"; $("pad").textContent = "👆 Tap!";
+  });
+  later(function () {
+    if (phase !== "tapping") return;
+    phase = "grading";
+    $("pad").className = "pad"; $("pad").textContent = "👆 Wait…";
+    grade();
+  }, (t0 + 4 * bs + (pattern.beats + 1.3) * bs - a.currentTime) * 1000);
+}
+
+function onTap() {
+  if (phase !== "tapping") return;
+  var a = ctx(); if (!a) return;
+  taps.push(a.currentTime - tapStart);
+  thump();
+  var el = blocks()[(pattern.onsets[taps.length - 1] || {}).blockIndex];
+  if (el) { el.classList.add("tapped"); }
+  $("pad").classList.add("hit");
+  later(function () { $("pad").classList.remove("hit"); }, 90);
+}
+
+/* ---------- grading ---------------------------------------------------------
+   Two things are measured: how close each tap is to where the note falls, and
+   whether the NUMBER of taps is right. Tapping fast fails both, so mashing is
+   not expressible as a strategy in this game. */
+function grade() {
+  var bs = beatSec() * 1000;
+  var exp = pattern.onsets.map(function (o) { return o.beat * bs; });
+  var used = taps.map(function (t) { return t * 1000; });
+  var gold = bs * 0.24, silver = bs * 0.45;
+  var onTime = 0, near = 0, els = blocks();
+
+  blocks().forEach(function (b) { b.className = b.className.replace(/ (lit|tapped)/g, ""); });
+
+  exp.forEach(function (e, i) {
+    var best = -1, bestErr = 1e9;
+    used.forEach(function (t, k) { var d = Math.abs(t - e); if (d < bestErr) { bestErr = d; best = k; } });
+    var el = els[pattern.onsets[i].blockIndex];
+    if (best >= 0 && bestErr <= silver) {
+      used.splice(best, 1);
+      if (bestErr <= gold) { onTime++; if (el) el.classList.add("on"); }
+      else { near++; if (el) el.classList.add("near"); }
+    } else if (el) el.classList.add("off");
+  });
+  var extra = used.length;
+
+  var perfect = onTime === exp.length && extra === 0;
+  var solid = (onTime + near) === exp.length && extra <= 1;
+  var tier = Scoring.answerTier(perfect ? "gold" : solid ? "silver" : "grey").tier;
+
+  setStage("done", tier === "gold" ? "🌟 Perfect echo!" : tier === "silver" ? "👍 You got it!" : "🆕 Nearly!",
+    tier === "grey"
+      ? (extra > 1 ? "That was " + taps.length + " taps — the rhythm has " + exp.length + "." : "Green blocks were spot on.")
+      : "Green = spot on, yellow = a little early or late");
+
+  if (tier === "gold") { toast("🌟 Perfect echo!"); cheer(); confetti(); }
+  else if (tier === "silver") { toast("👍 You got it!"); cheer(); }
+  else { toast("🆕 Press 🔁 Hear it again, then have another go"); learn(); }
+
+  var counts = {};
+  pattern.flat.forEach(function (n) { if (!n.rest) counts[NAMES[n.v]] = (counts[NAMES[n.v]] || 0) + 1; });
+  var parts = Object.keys(counts).map(function (k) { return counts[k] + " " + k + (counts[k] > 1 ? "s" : ""); });
+  $("fact").textContent = "That rhythm was " + parts.join(" and ") +
+    ". Two quavers take exactly the same time as one crotchet, and four crotchets fill one bar.";
+  $("reveal").className = "reveal show";
+  Scoring.paintPassport("passport", round, "🥁");
+  $("again1").textContent = "🔁 Practise this one";
+  $("next").textContent = round === ROUNDS - 1 ? "See my drumming →" : "Next →";
+  $("next").className = "next show";
+  phase = "done";
+}
+
+/* ---------- rounds ---------------------------------------------------------- */
+function render() {
+  pattern = makePattern(Math.min(round, LEVELS.length - 1));
+  Scoring.beginRound("lvl" + pattern.lvl + "-" + pattern.onsets.length, "a " + pattern.label + " rhythm");
+  $("lvl").textContent = "Round " + (round + 1) + " of " + ROUNDS + " · " + pattern.label;
+  $("again1").textContent = "🔁 Hear it again";
+  drawBlocks(pattern);
+  Scoring.paintPassport("passport", round, "🥁");
+  runRound();
+}
+function finale() {
+  clearTimers();
+  ["lvl", "stage", "pad", "toast", "reveal", "next", "btnrow"].forEach(function (id) { var e = $(id); if (e) e.style.display = "none"; });
+  $("finaleH").textContent = Scoring.headline();
+  $("finalStamps").innerHTML = Scoring.finaleHTML();
+  $("finale").className = "finale show";
+  Scoring.paintPassport("passport", ROUNDS, "🥁");
+  cheer(); confetti();
+}
+
+$("pad").addEventListener("pointerdown", function (e) { e.preventDefault(); onTap(); });
+/* Practising after the score is banked is encouraged: the first attempt is what
+   counts, and repetition afterwards is how the rhythm actually sticks. */
+$("again1").onclick = function () { if (phase === "listen" || phase === "countin" || phase === "tapping") return; runRound(); };
+$("read").onclick = function () {
+  speak("The drum plays a rhythm and the blocks light up. Then it is your turn: tap the big pad to copy it. A wide block is a long note. A narrow block is a quick note.");
+};
+$("next").onclick = function () {
+  round++;
+  if (round >= ROUNDS) { finale(); return; }
+  render(); window.scrollTo({ top: 0, behavior: "smooth" });
+};
+$("begin").onclick = function () {
+  ctx();
+  $("start").classList.add("hidden");
+  Scoring.init({ slug: "rhythm-echo", total: ROUNDS, noun: "rhythm" });
+  render();
+};
+$("again").onclick = function () {
+  round = 0;
+  Scoring.init({ slug: "rhythm-echo", total: ROUNDS, noun: "rhythm" });
+  ["lvl", "stage", "pad", "toast", "reveal", "next", "btnrow"].forEach(function (id) { var e = $(id); if (e) e.style.display = ""; });
+  $("finale").className = "finale";
+  render(); window.scrollTo({ top: 0 });
+};
+$("snd").onclick = function () { soundOn = !soundOn; $("snd").textContent = soundOn ? "🔊" : "🔇"; if (!soundOn && "speechSynthesis" in window) speechSynthesis.cancel(); };
+var back = $("back"); if (back) back.setAttribute("href", location.protocol === "file:" ? "index.html" : "/play");
+
+if (!document.getElementById("allgames")) {
+  var ag = document.createElement("a");
+  ag.id = "allgames"; ag.className = "next show ghost";
+  ag.href = location.protocol === "file:" ? "index.html" : "/play";
+  ag.textContent = "All games 🎮";
+  ag.style.textDecoration = "none"; ag.style.marginLeft = "8px";
+  $("again").parentNode.insertBefore(ag, $("again").nextSibling);
+}
+
+Scoring.init({ slug: "rhythm-echo", total: ROUNDS, noun: "rhythm" });
+Scoring.paintPassport("passport", 0, "🥁");
+drawBeats(null);
+</script>
+</body>
+</html>

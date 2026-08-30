@@ -1,3 +1,8 @@
+/* ⚠ THIS FILE IS SHARED AND UNSCOPED across every game that links it.
+   A new game re-using a class name here silently inherits these rules. It has
+   bitten twice: `.bar` below is a 52px chart bar, and a music game using
+   class="bar" had its stave crushed into a 52px column. Before naming a class
+   in a new game, grep this file. Prefix game-specific classes (.nvbar, .rbar). */
 :root{--navy:#16324f;--mint:#34d3b0;--sun:#ffd23f;--coral:#ff6b6b;--sky1:#7fd1ff;--sky2:#bff0e6;--ink:#13293d;--card:#fff}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%}
@@ -84,3 +89,22 @@ main{width:100%;max-width:660px;padding:8px 16px 28px;flex:1;display:flex;flex-d
 .opt img.crest{height:34px;width:auto;object-fit:contain}
 .lt td.tm img.crest{height:22px;width:22px;object-fit:contain;vertical-align:middle;margin-right:6px}
 .bar .lab img.crest{height:18px;width:18px;object-fit:contain;display:block;margin:0 auto 2px}
+
+/* Honest Answer scoring — PLAY-MASTERY-SPEC.md §1.2, §1.5 (added 2026-08-30).
+   Gold = knew it. Silver = worked it out. Grey = learned it just now.
+   No red, no cross, no "wrong": a miss is a thing newly learned, not a failure. */
+.stamp.silver{background:#dfe9f3;border-style:solid;border-color:#9fb6ca;animation:pop .4s}
+.stamp.miss{background:#fff7e6;border-style:solid;border-color:#e8c86a;animation:pop .4s}
+.opt.shown{background:var(--mint);color:#06372c;box-shadow:0 5px 0 #1f9e82;outline:3px dashed #06372c55;outline-offset:-6px}
+.opt.picked{background:#eef3f8;color:#5b7b97;box-shadow:0 5px 0 #c9d8e6}
+/* the finale tally mounts inside #finalStamps (.stamps), which sets a 1.8rem
+   font and 3px letter-spacing for the emoji row — reset both for real text */
+.stamps .tally,.stamps .learned{font-size:1rem;letter-spacing:normal;line-height:1.4}
+.tally{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0 6px}
+.tally .tl{background:#ffffffcc;border-radius:14px;padding:8px 12px;font-weight:700;color:var(--navy);font-size:.98rem;letter-spacing:normal;white-space:nowrap}
+.tally .tl b{font-size:1.15rem}
+.learned{background:#fff7e6;border-radius:18px;padding:12px 14px;margin:10px 0;text-align:left}
+.learned .lh{font-weight:800;color:#7a5b00;margin-bottom:4px;font-size:1.02rem;letter-spacing:normal}
+.learned ul{margin:0;padding-left:20px}
+.learned li{font-weight:700;color:#7a5b00;line-height:1.35;margin:3px 0;font-size:1rem;letter-spacing:normal}
+.next.ghost{background:#5b7b97;box-shadow:0 6px 0 #40566b}

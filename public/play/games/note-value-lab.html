@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Note Value Lab · Play &amp; Learn</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* Note Value Lab — PLAY-MASTERY-SPEC.md §3.2 Game A.
+     THE POINT: fractions with a meaning you can hear. A bar holds 4 beats. A
+     semibreve is the whole bar, a minim half of it, a crotchet a quarter, a
+     quaver an eighth. The bar only closes when the pieces add up to exactly 4,
+     and then it PLAYS, so the answer is audible rather than merely marked
+     correct. This is the least arbitrary form of the times-table relationship
+     available, which matters for a player who rejects rules that feel arbitrary.
+
+     Shares its visual language with rhythm-echo.html on purpose: same blocks,
+     same width-is-duration rule, same note drawings. The two games teach each
+     other. */
+  .goal{font-size:1.22rem;font-weight:900;color:var(--navy);margin:6px 4px 2px;line-height:1.3}
+  .goalsub{font-size:.95rem;font-weight:700;color:#5b7b97;margin-bottom:6px}
+
+  .barwrap{position:relative;background:#f4f9fd;border-radius:16px;padding:10px 10px 8px;margin:8px 0 4px}
+  .grid{position:absolute;left:10px;right:10px;top:10px;bottom:30px;display:flex;pointer-events:none}
+  .grid div{flex:1;border-right:2px dashed #cfe0ee}
+  .grid div:last-child{border-right:none}
+  .nvbar{position:relative;display:flex;gap:4px;align-items:stretch;height:84px}
+  .slotempty{flex:1;border:3px dashed #c3d7e8;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#8ba4bb;font-weight:800;font-size:.9rem;text-align:center;padding:4px;min-width:0}
+  .blk{border-radius:12px;background:#fff;box-shadow:inset 0 0 0 3px #9fc6e0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:0;padding:4px 2px;cursor:pointer;transition:transform .12s,background .12s}
+  .blk .len{font-size:.62rem;font-weight:800;color:#5b7b97;white-space:nowrap}
+  .blk.given{background:#eef3f7;box-shadow:inset 0 0 0 3px #b9cfe2;cursor:default}
+  .blk.lit{background:var(--sun);box-shadow:inset 0 0 0 3px #d9a900;transform:translateY(-6px)}
+  .blk.bad{background:#ffe0da;box-shadow:inset 0 0 0 3px #e9756a;animation:shakeX .4s}
+  @keyframes shakeX{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  .beatnums{display:flex;margin-top:4px}
+  .beatnums span{flex:1;text-align:center;font-size:.72rem;font-weight:800;color:#8ba4bb}
+
+  .left{font-size:1.28rem;font-weight:900;color:var(--navy);margin:8px 0 2px}
+  .left.full{color:#1f9e82}
+  .leftsub{font-size:.86rem;font-weight:700;color:#5b7b97;margin-bottom:6px}
+
+  .tray{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0 2px}
+  .cardbtn{border:none;background:#fff;border-radius:16px;box-shadow:0 5px 0 #cbd8e4;padding:8px 6px 6px;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:74px}
+  .cardbtn:active{transform:translateY(3px);box-shadow:0 2px 0 #cbd8e4}
+  .cardbtn .nm{font-size:.72rem;font-weight:900;color:var(--navy)}
+  .cardbtn .fr{font-size:.68rem;font-weight:800;color:#1d6fb8}
+  .btnrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 0}
+  .mini{border:none;background:#eaf6ff;color:#1d6fb8;font-weight:800;border-radius:999px;padding:10px 16px;font-size:.98rem;cursor:pointer;font-family:inherit}
+  .mini:disabled{opacity:.4;cursor:default}
+  .lvl{font-size:.82rem;font-weight:800;color:#5b7b97;letter-spacing:.5px}
+  .cover{position:fixed;inset:0;background:#eef6fcf7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover.hidden{display:none}
+  .cover h1{font-size:2rem;margin:6px 0;color:var(--navy)}
+  .cover p{font-size:1.04rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0;line-height:1.45}
+  .bigbtn{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.2rem;padding:14px 28px;cursor:pointer;background:var(--coral);color:#fff;box-shadow:0 7px 0 #d2453f;margin-top:14px}
+  .grown{font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px;line-height:1.45}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="mag" id="logoEmoji">🎼</span> <span id="logoText">Note Lab</span></div>
+  <div class="hgroup">
+    <a class="back" id="back" href="/play">← All games</a>
+    <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+  </div>
+</header>
+
+<div class="cover" id="start">
+  <div style="font-size:3.4rem">🎼🧪</div>
+  <h1>Note Value Lab</h1>
+  <p>A <b>bar</b> of music holds exactly <b>4 beats</b>.</p>
+  <p>Tap notes to drop them in. A wide note lasts longer.</p>
+  <p>When the bar is exactly full, <b>it plays!</b></p>
+  <button class="bigbtn" id="begin">Start building! 🎵</button>
+</div>
+
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="lvl" id="lvl">Round 1 of 8</div>
+    <div class="goal" id="goal">Fill the bar</div>
+    <div class="goalsub" id="goalsub">Tap notes to add them</div>
+
+    <div class="barwrap">
+      <div class="grid"><div></div><div></div><div></div><div></div></div>
+      <div class="nvbar" id="bar"></div>
+      <div class="beatnums"><span>beat 1</span><span>beat 2</span><span>beat 3</span><span>beat 4</span></div>
+    </div>
+
+    <div class="left" id="left">4 beats to fill</div>
+    <div class="leftsub" id="leftsub">that's the whole bar</div>
+
+    <div class="tray" id="tray"></div>
+
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div></div>
+    <div class="btnrow" id="btnrow">
+      <button class="mini" id="undo">↩️ Take one out</button>
+      <button class="mini" id="hint">💡 Show me</button>
+      <button class="mini" id="read">🔊 Read it to me</button>
+    </div>
+    <button class="next" id="next">Next →</button>
+
+    <div class="finale" id="finale">
+      <h2 id="finaleH">🏆 You did it!</h2>
+      <p id="finaleP" style="font-size:1.2rem;font-weight:700;color:#16324f">Great building!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown" id="grownText">For grown-ups: KS2 maths (fractions of a whole, equivalent fractions, adding fractions to make 1) taught through KS2 music notation (duration and note value). A bar of 4/4 is the whole; a semibreve is 1, a minim ½, a crotchet ¼, a quaver ⅛. A note that will not fit is shown overflowing the bar rather than being blocked, so the reason is visible. Completed bars play back, so the arithmetic is audible. Ages 7–10.</p>
+
+<script src="assets/scoring.js"></script>
+<script>
+"use strict";
+var $ = function (id) { return document.getElementById(id); };
+var ROUNDS = 8, BPM = 76, soundOn = true, actx = null;
+var round = 0, L = null, placed = [], given = [], mistakes = 0, usedHint = false, locked = false, timers = [];
+
+/* ---------- audio ---------------------------------------------------------- */
+function ctx() {
+  try { actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+        if (actx.state === "suspended") actx.resume(); return actx; } catch (e) { return null; }
+}
+function click(when) {
+  if (!soundOn) return; var a = ctx(); if (!a) return;
+  var o = a.createOscillator(), g = a.createGain();
+  o.type = "square"; o.frequency.value = 950; o.connect(g); g.connect(a.destination);
+  g.gain.setValueAtTime(0.0001, when);
+  g.gain.exponentialRampToValueAtTime(0.15, when + 0.004);
+  g.gain.exponentialRampToValueAtTime(0.0001, when + 0.1);
+  o.start(when); o.stop(when + 0.12);
+}
+function tone(f, d, type, when, gain) {
+  if (!soundOn) return; var a = ctx(); if (!a) return;
+  var o = a.createOscillator(), g = a.createGain();
+  o.type = type || "sine"; o.frequency.value = f; g.gain.value = gain || 0.12;
+  o.connect(g); g.connect(a.destination);
+  var t = a.currentTime + (when || 0);
+  o.start(t); g.gain.setValueAtTime(g.gain.value, t); g.gain.exponentialRampToValueAtTime(0.0001, t + d); o.stop(t + d);
+}
+function plink() { tone(760, 0.12, "triangle", 0, 0.10); }
+function cheer() { [523, 659, 784, 1047].forEach(function (f, k) { tone(f, 0.25, "triangle", k * 0.09, 0.14); }); }
+function nudge() { tone(300, 0.18, "sine", 0, 0.10); }
+function speak(t) {
+  if (!soundOn || !("speechSynthesis" in window)) return;
+  try { speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(t); u.rate = 0.9; u.pitch = 1.1; speechSynthesis.speak(u); } catch (e) {}
+}
+function confetti() {
+  var em = ["🎵", "🎼", "⭐", "🎉"];
+  for (var k = 0; k < 18; k++) {
+    var c = document.createElement("div"); c.className = "confetti";
+    c.style.left = Math.random() * 100 + "vw"; c.style.background = "transparent";
+    c.style.width = "auto"; c.style.height = "auto"; c.style.fontSize = "1.4rem";
+    c.textContent = em[k % em.length];
+    c.style.animation = "fall " + (1.2 + Math.random() * 0.8) + "s ease-in " + (Math.random() * 0.2) + "s forwards";
+    document.body.appendChild(c);
+    (function (el) { setTimeout(function () { el.remove(); }, 2400); })(c);
+  }
+}
+var tT; function toast(t) { $("toast").textContent = t; clearTimeout(tT); tT = setTimeout(function () { $("toast").textContent = ""; }, 3200); }
+function later(fn, ms) { var id = setTimeout(fn, ms); timers.push(id); return id; }
+function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+
+/* ---------- note vocabulary ------------------------------------------------- */
+var NOTE = {
+  4:   { name: "semibreve",        beats: "4 beats",  frac: "the whole bar" },
+  2:   { name: "minim",            beats: "2 beats",  frac: "½ a bar" },
+  1.5: { name: "dotted crotchet",  beats: "1½ beats", frac: "⅜ of a bar" },
+  1:   { name: "crotchet",         beats: "1 beat",   frac: "¼ of a bar" },
+  0.5: { name: "quaver",           beats: "½ a beat", frac: "⅛ of a bar" }
+};
+function noteSVG(v) {
+  var hollow = v >= 2, stem = v < 4, flag = v === 0.5, dot = v === 1.5;
+  return '<svg width="24" height="38" viewBox="0 0 26 40">' +
+    (stem ? '<rect x="17" y="4" width="3" height="24" fill="#16324f"></rect>' : '') +
+    (flag ? '<path d="M20 4 q8 5 5 13 q-1-7-5-9 z" fill="#16324f"></path>' : '') +
+    '<ellipse cx="11" cy="29" rx="8" ry="5.8" transform="rotate(-18 11 29)" ' +
+      (hollow ? 'fill="#fff" stroke="#16324f" stroke-width="2.6"' : 'fill="#16324f"') + '></ellipse>' +
+    (dot ? '<circle cx="23" cy="29" r="2.3" fill="#16324f"></circle>' : '') + '</svg>';
+}
+function beatsWord(n) {
+  if (n === 0.5) return "half a beat";
+  if (n === 1.5) return "one and a half beats";
+  return n + (n === 1 ? " beat" : " beats");
+}
+
+/* ---------- levels ----------------------------------------------------------
+   A deliberate ramp: fill freely, then finish a part-built bar (which is
+   subtraction: 4 minus what is there), then a constraint that forces
+   equivalence reasoning. */
+var LEVELS = [
+  { mode: "fill",   tray: [1],                 goal: "Fill the bar with crotchets", sub: "How many 1-beat notes fit in 4 beats?" },
+  { mode: "fill",   tray: [1, 2],              goal: "Fill the bar any way you like", sub: "Minims and crotchets. There is more than one right answer." },
+  { mode: "finish", given: [2, 1],             tray: [0.5, 1, 2], goal: "Finish the bar", sub: "Some of it is built already. What is missing?" },
+  { mode: "finish", given: [2],                tray: [0.5, 1, 2], goal: "Finish the bar", sub: "A minim is in. Fill the rest." },
+  { mode: "finish", given: [1, 1, 1, 0.5],     tray: [0.5, 1, 2], goal: "Finish the bar", sub: "Careful — only a little space is left." },
+  { mode: "count",  n: 6, tray: [0.5, 1, 2],   goal: "Fill the bar using exactly 6 notes", sub: "4 beats, but it must take 6 notes to get there." },
+  { mode: "finish", given: [1.5, 1],           tray: [0.5, 1, 1.5, 2], goal: "Finish the bar", sub: "A dotted note lasts one and a half beats." },
+  { mode: "fill",   tray: [0.5, 1, 1.5, 2, 4], goal: "Fill the bar any way you like", sub: "Every note is available. Build something interesting." }
+];
+
+/* ---------- state helpers ---------------------------------------------------- */
+function total() {
+  var s = 0; given.forEach(function (v) { s += v; }); placed.forEach(function (v) { s += v; }); return s;
+}
+function remaining() { return Math.round((4 - total()) * 100) / 100; }
+function isComplete() {
+  if (Math.abs(remaining()) > 0.001) return false;
+  if (L.mode === "count") return (given.length + placed.length) === L.n;
+  return true;
+}
+
+/* ---------- drawing ---------------------------------------------------------- */
+function draw() {
+  var all = given.map(function (v) { return { v: v, given: true }; })
+        .concat(placed.map(function (v) { return { v: v, given: false }; }));
+  var html = all.map(function (n, i) {
+    return '<div class="blk' + (n.given ? " given" : "") + '" data-i="' + i + '" style="flex:' + n.v + ' 1 0">' +
+      noteSVG(n.v) + '<span class="len">' + NOTE[n.v].beats + "</span></div>";
+  }).join("");
+  var rem = remaining();
+  if (rem > 0.001) {
+    html += '<div class="slotempty" style="flex:' + rem + ' 1 0">' +
+      (rem >= 1 ? "space for<br>" + (rem === 1 ? "1 beat" : (rem % 1 ? rem : rem) + " beats") : "½") + "</div>";
+  }
+  $("bar").innerHTML = html;
+  Array.prototype.forEach.call($("bar").querySelectorAll(".blk:not(.given)"), function (el) {
+    el.onclick = function () { if (locked) return; removeAt(+el.getAttribute("data-i") - given.length); };
+  });
+
+  var full = Math.abs(rem) < 0.001;
+  if (L.mode === "count" && full && (given.length + placed.length) !== L.n) {
+    $("left").textContent = "Full — but that's " + (given.length + placed.length) + " notes, not " + L.n;
+    $("left").className = "left";
+    $("leftsub").textContent = "Take some out and try longer or shorter notes.";
+  } else if (full) {
+    $("left").textContent = "The bar is full! 🎉"; $("left").className = "left full";
+    $("leftsub").textContent = "4 beats exactly.";
+  } else {
+    $("left").textContent = (rem === 0.5 ? "½ a beat" : rem + (rem === 1 ? " beat" : " beats")) + " to fill";
+    $("left").className = "left";
+    $("leftsub").textContent = L.mode === "count"
+      ? (given.length + placed.length) + " of " + L.n + " notes used"
+      : "the bar holds 4 beats altogether";
+  }
+  $("undo").disabled = locked || placed.length === 0;
+}
+
+function drawTray() {
+  $("tray").innerHTML = L.tray.map(function (v) {
+    return '<button class="cardbtn" data-v="' + v + '">' + noteSVG(v) +
+      '<span class="nm">' + NOTE[v].name + "</span>" +
+      '<span class="fr">' + NOTE[v].beats + "</span></button>";
+  }).join("");
+  Array.prototype.forEach.call($("tray").children, function (btn) {
+    btn.onclick = function () { addNote(parseFloat(btn.getAttribute("data-v"))); };
+  });
+}
+
+/* ---------- the core interaction --------------------------------------------
+   A note that will not fit is NOT blocked. It is placed, shown overflowing the
+   bar, and bounced back out with the arithmetic said aloud. Blocking it would
+   hide the very thing the game is teaching. */
+function addNote(v) {
+  if (locked) return;
+  var rem = remaining();
+  if (v > rem + 0.001) {
+    mistakes++;
+    placed.push(v); draw();
+    var els = $("bar").querySelectorAll(".blk");
+    var el = els[els.length - 1]; if (el) el.classList.add("bad");
+    nudge();
+    var msg = "A " + NOTE[v].name + " is " + beatsWord(v) + ", but only " +
+      (rem === 0.5 ? "half a beat" : beatsWord(rem)) + " is left.";
+    toast("That one is too long 📏");
+    speak(msg);
+    $("fact").textContent = msg;
+    $("reveal").className = "reveal show";
+    later(function () { placed.pop(); draw(); $("reveal").className = "reveal"; }, 1500);
+    return;
+  }
+  placed.push(v); plink(); draw();
+  if (isComplete()) later(complete, 320);
+  else if (Math.abs(remaining()) < 0.001) { /* full but wrong note count in count mode */ }
+}
+function removeAt(i) { if (i < 0 || i >= placed.length) return; mistakes++; placed.splice(i, 1); draw(); }
+
+function showMe() {
+  if (locked) return;
+  usedHint = true;
+  placed = solve();
+  draw();
+  toast("💡 Here's one way");
+  later(complete, 500);
+}
+/* Greedy solve, largest-first, respecting the note-count constraint. */
+function solve() {
+  var rem = 4, s = 0; given.forEach(function (v) { rem -= v; });
+  var out = [], tray = L.tray.slice().sort(function (a, b) { return b - a; });
+  if (L.mode === "count") {
+    var need = L.n - given.length;
+    // fill with the smallest note, then upgrade until the total reaches rem
+    var small = Math.min.apply(null, L.tray);
+    out = []; for (var k = 0; k < need; k++) out.push(small);
+    var have = need * small, guard = 0;
+    while (Math.abs(have - rem) > 0.001 && guard++ < 200) {
+      var idx = out.indexOf(small);
+      var bumped = false;
+      for (var j = 0; j < out.length; j++) {
+        for (var t = 0; t < tray.length; t++) {
+          var cand = tray[t];
+          if (cand > out[j] && have - out[j] + cand <= rem + 0.001) { have = have - out[j] + cand; out[j] = cand; bumped = true; break; }
+        }
+        if (bumped) break;
+      }
+      if (!bumped) break;
+    }
+    return out;
+  }
+  var guard2 = 0;
+  while (rem > 0.001 && guard2++ < 40) {
+    for (var i = 0; i < tray.length; i++) if (tray[i] <= rem + 0.001) { out.push(tray[i]); rem -= tray[i]; break; }
+  }
+  return out;
+}
+
+/* ---------- completion: the bar plays --------------------------------------
+   This is the payoff. The arithmetic becomes a sound. */
+function complete() {
+  locked = true;
+  var tier = usedHint ? "grey" : mistakes === 0 ? "gold" : "silver";
+  Scoring.answerTier(tier);
+  play(function () {
+    if (tier === "gold") { toast("🌟 Exactly 4 beats!"); cheer(); confetti(); }
+    else if (tier === "silver") { toast("👍 You got there!"); cheer(); }
+    else { toast("🆕 Now you've seen one way"); }
+    var all = given.concat(placed), counts = {};
+    all.forEach(function (v) { counts[NOTE[v].name] = (counts[NOTE[v].name] || 0) + 1; });
+    var parts = Object.keys(counts).map(function (k) { return counts[k] + " " + k + (counts[k] > 1 ? "s" : ""); });
+    var sums = all.map(function (v) { return NOTE[v].beats.replace(" beats", "").replace(" beat", "").replace("½ a", "½"); }).join(" + ");
+    $("fact").textContent = parts.join(" and ") + " = 4 beats. " + sums + " = 4.";
+    $("reveal").className = "reveal show";
+    Scoring.paintPassport("passport", round, "🎵");
+    $("next").textContent = round === ROUNDS - 1 ? "See my bars →" : "Next →";
+    $("next").className = "next show";
+    $("undo").disabled = true; $("hint").disabled = true;
+  });
+}
+function play(done) {
+  var a = ctx(); if (!a) { if (done) done(); return; }
+  var all = given.concat(placed), bs = 60 / BPM, t0 = a.currentTime + 0.25, t = 0;
+  all.forEach(function (v, i) {
+    var when = t0 + t * bs;
+    click(when);
+    (function (idx, w, dur) {
+      later(function () {
+        var el = $("bar").children[idx]; if (!el) return;
+        el.classList.add("lit");
+        later(function () { el.classList.remove("lit"); }, Math.max(140, dur - 40));
+      }, (w - a.currentTime) * 1000);
+    })(i, when, v * bs * 1000);
+    t += v;
+  });
+  later(function () { if (done) done(); }, (t0 + 4 * bs - a.currentTime) * 1000 + 250);
+}
+
+/* ---------- rounds ----------------------------------------------------------- */
+function render() {
+  clearTimers();
+  L = LEVELS[Math.min(round, LEVELS.length - 1)];
+  given = (L.given || []).slice(); placed = []; mistakes = 0; usedHint = false; locked = false;
+  Scoring.beginRound("nvl-" + round, L.goal.toLowerCase());
+  $("lvl").textContent = "Round " + (round + 1) + " of " + ROUNDS;
+  $("goal").textContent = L.goal; $("goalsub").textContent = L.sub;
+  $("reveal").className = "reveal"; $("next").className = "next"; $("toast").textContent = "";
+  $("hint").disabled = false;
+  drawTray(); draw();
+  Scoring.paintPassport("passport", round, "🎵");
+}
+function finale() {
+  clearTimers();
+  ["lvl", "goal", "goalsub", "left", "leftsub", "tray", "toast", "reveal", "next", "btnrow"].forEach(function (id) { var e = $(id); if (e) e.style.display = "none"; });
+  document.querySelector(".barwrap").style.display = "none";
+  $("finaleH").textContent = Scoring.headline();
+  $("finalStamps").innerHTML = Scoring.finaleHTML();
+  $("finale").className = "finale show";
+  Scoring.paintPassport("passport", ROUNDS, "🎵");
+  cheer(); confetti();
+}
+
+$("undo").onclick = function () { if (placed.length) removeAt(placed.length - 1); };
+$("hint").onclick = showMe;
+$("read").onclick = function () {
+  speak(L.goal + ". " + L.sub + " A bar holds four beats. " +
+    (remaining() > 0 ? "You still have " + beatsWord(remaining()) + " to fill." : "The bar is full."));
+};
+$("next").onclick = function () { round++; if (round >= ROUNDS) { finale(); return; } render(); window.scrollTo({ top: 0, behavior: "smooth" }); };
+$("begin").onclick = function () {
+  ctx(); $("start").classList.add("hidden");
+  Scoring.init({ slug: "note-value-lab", total: ROUNDS, noun: "bar" });
+  render();
+};
+$("again").onclick = function () {
+  round = 0;
+  Scoring.init({ slug: "note-value-lab", total: ROUNDS, noun: "bar" });
+  ["lvl", "goal", "goalsub", "left", "leftsub", "tray", "toast", "reveal", "next", "btnrow"].forEach(function (id) { var e = $(id); if (e) e.style.display = ""; });
+  document.querySelector(".barwrap").style.display = "";
+  $("finale").className = "finale";
+  render(); window.scrollTo({ top: 0 });
+};
+$("snd").onclick = function () { soundOn = !soundOn; $("snd").textContent = soundOn ? "🔊" : "🔇"; if (!soundOn && "speechSynthesis" in window) speechSynthesis.cancel(); };
+var back = $("back"); if (back) back.setAttribute("href", location.protocol === "file:" ? "index.html" : "/play");
+
+if (!document.getElementById("allgames")) {
+  var ag = document.createElement("a");
+  ag.id = "allgames"; ag.className = "next show ghost";
+  ag.href = location.protocol === "file:" ? "index.html" : "/play";
+  ag.textContent = "All games 🎮";
+  ag.style.textDecoration = "none"; ag.style.marginLeft = "8px";
+  $("again").parentNode.insertBefore(ag, $("again").nextSibling);
+}
+
+Scoring.init({ slug: "note-value-lab", total: ROUNDS, noun: "bar" });
+Scoring.paintPassport("passport", 0, "🎵");
+</script>
+</body>
+</html>

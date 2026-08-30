@@ -109,11 +109,13 @@
   <div style="font-size:4rem">🥇⚾</div>
   <h1>Top umpire!</h1>
   <p id="finp">You called them like you saw them.</p>
+  <div id="scoreboard"></div>
   <button class="big" id="again">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
 <p class="grown">For grown-ups: the real strike zone, called pitch by pitch — a pitch that clips any part of the zone is a strike; three strikes make an out, four balls a walk. Judging edges and boundaries, visually. Ages 6–10.</p>
 
+<script src="assets/scoring.js"></script>
 <script>
 const $=id=>document.getElementById(id);
 const ROUNDS=9;
@@ -129,7 +131,16 @@ function popMitt(){tone(180,.08,"square",0,.15);tone(120,.12,"sine",.02,.12);}
 function confetti(n){const em=["⚾","⭐","🧢","🎉"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
 function bigCall(txt,walk){const e=$("bigcall");e.textContent=txt;e.classList.toggle("walk",!!walk);e.classList.add("show");setTimeout(()=>e.classList.remove("show"),1600);}
-function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<ROUNDS;i++){const d=document.createElement("div");d.className="stamp"+(i<idx?" on":"");d.textContent="⚾";el.appendChild(d);}}
+function buildPass(){
+  const el=$("pass"); el.innerHTML="";
+  for(let i=0;i<ROUNDS;i++){
+    const d=document.createElement("div");
+    const r=Scoring._state.rounds[i];
+    if(r){ d.className="stamp "+Scoring.tierClass(r.tier); d.textContent=r.tier==="grey"?"🆕":"⚾"; }
+    else { d.className="stamp"; d.textContent="⚾"; }
+    el.appendChild(d);
+  }
+}
 function updCount(){$("cBalls").textContent=balls;$("cStrikes").textContent=strikes;$("cOuts").textContent=outs;$("cWalks").textContent=walks;}
 
 /* Strike zone geometry (SVG units). A pitch is a STRIKE if the ball circle
@@ -180,9 +191,19 @@ const WHY={
   wide:"Ball! Way outside — the zone is only as wide as home plate.",
   close:"Ball! Just missed the edge — great eyes, ump."
 };
+const LABEL={
+  mid:"Strike down the middle",
+  corner:"Strike on the corner",
+  paint:"Strike clipping the line",
+  high:"Ball too high",
+  low:"Ball in the dirt",
+  wide:"Ball way outside",
+  close:"Ball just off the edge"
+};
 function render(){
   locked=true; firstTry=true;
   cur=seq[idx]?makeScenario(seq[idx]):makeScenario(pick(CASES));
+  Scoring.beginRound(Scoring.idOf({q:cur.kind}), LABEL[cur.kind]);
   window.__case={kind:cur.kind, strike:cur.strike}; // test/debug hook
   $("batterEmoji").setAttribute("x", Math.random()<.5?90:310);
   const b=$("pball");
@@ -210,34 +231,46 @@ function advanceCount(){
   updCount();
 }
 function choose(callStrike){
-  if(locked)return;
+  if(Scoring.answered()||!Scoring.armed())return;
   const correct=callStrike===cur.strike;
+  var res=Scoring.answer(correct);
+  locked=true;
   if(correct){
-    locked=true; if(firstTry)perfect++;
+    if(firstTry)perfect++;
     reveal();
     $("bStrike").disabled=true; $("bBall").disabled=true;
     const why=WHY[cur.kind];
     $("verdict").textContent=(cur.strike?"🔥 ":"🫱 ")+why;
-    toast(pick(["Great call, blue! 🎉","Sharp eyes! ⭐","Just like a big-league ump! 🙌"]));
+    toast(res.tier==="gold"?pick(["Great call, blue! 🎉","Sharp eyes! ⭐","Just like a big-league ump! 🙌"]):pick(["Nice work getting there! 👍","Worked it out! ⭐"]));
     speak(why); confetti(8); cheer();
     advanceCount();
     idx++; buildPass();
     $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next pitch →";
     $("next").classList.add("show");
   } else {
-    firstTry=false;
-    toast("Check the yellow zone 👀 did the ball touch it?");
-    speak("Not quite. Would any part of the ball touch the yellow zone? Try again.");
+    reveal();
+    $("bStrike").disabled=true; $("bBall").disabled=true;
+    const why=WHY[cur.kind];
+    $("verdict").textContent=(cur.strike?"🔥 ":"🫱 ")+why;
+    toast("Now you know it! 🆕");
+    speak(why);
+    advanceCount();
+    idx++; buildPass();
+    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next pitch →";
+    $("next").classList.add("show");
   }
 }
 let seq=[];
 function startRun(){
+  Scoring.init({slug:"ball-or-strike", total:ROUNDS, noun:"call", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
   seq=shuffle(CASES.concat(shuffle(CASES).slice(0,ROUNDS-CASES.length)));
   idx=0; perfect=0; balls=0; strikes=0; outs=0; walks=0; updCount(); render();
 }
 $("bStrike").onclick=()=>choose(true);
 $("bBall").onclick=()=>choose(false);
 $("next").onclick=()=>{ if(idx>=ROUNDS){
+    document.querySelector("#finale h1").textContent=Scoring.headline();
+    $("scoreboard").innerHTML=Scoring.finaleHTML();
     $("finp").textContent=(perfect>=8?"Perfect calls on "+perfect+" of 9 pitches — the big leagues need you!":"All 9 pitches called, "+perfect+" on the first look. ")+" Your inning: "+outs+" strikeout"+(outs===1?"":"s")+" and "+walks+" walk"+(walks===1?"":"s")+".";
     $("finale").classList.remove("hidden"); confetti(24); speak("Top umpire!");
   } else render(); };

@@ -34,6 +34,17 @@
   .pass{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:14px}
   .stamp{width:32px;height:32px;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 3px #dcebf6;display:flex;align-items:center;justify-content:center;font-size:1rem;opacity:.4;filter:grayscale(1)}
   .stamp.on{opacity:1;filter:none;box-shadow:inset 0 0 0 3px var(--gold);animation:pop .4s}
+  /* Honest Answer tiers — PLAY-MASTERY-SPEC.md §1.2 */
+  .stamp.silver{opacity:1;filter:none;box-shadow:inset 0 0 0 3px #9fb6ca;animation:pop .4s}
+  .stamp.miss{opacity:1;filter:none;background:#fff7e6;box-shadow:inset 0 0 0 3px #e8c86a;animation:pop .4s}
+  .club.shown{outline:4px dashed #17a88c88;outline-offset:-6px;border-radius:18px}
+  .club.picked{opacity:.5}
+  .tally{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+  .tally .tl{background:#fff;border-radius:14px;padding:8px 13px;font-weight:800;font-size:.98rem;box-shadow:0 3px 0 #e4dcc0}
+  .learned{background:#fff7e6;border-radius:16px;padding:12px 14px;margin:8px auto;text-align:left;max-width:430px}
+  .learned .lh{font-weight:900;color:#7a5b00;margin-bottom:4px}
+  .learned ul{margin:0;padding-left:20px}
+  .learned li{font-weight:700;color:#7a5b00;line-height:1.35;margin:3px 0}
   @keyframes pop{50%{transform:scale(1.3) rotate(-6deg)}}
   .toast{position:fixed;left:50%;top:10%;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:900;font-size:1.1rem;padding:10px 18px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}
   .toast.show{opacity:1}
@@ -72,6 +83,7 @@
   <button class="btn" onclick="location.reload()">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
+<script src="assets/scoring.js"></script>
 <script src="pools/champions-duel-data.js"></script>
 <script>
 const FINALS=(window.DUEL||{FINALS:[]}).FINALS;
@@ -84,10 +96,10 @@ function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new Spee
 function ctx(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();return actx;}catch(e){return null;}}
 function tone(f,d,type,when,g){if(!sound)return;const a=ctx();if(!a)return;const o=a.createOscillator(),gn=a.createGain();o.type=type||"sine";o.frequency.value=f;gn.gain.value=g||.12;o.connect(gn);gn.connect(a.destination);const t=a.currentTime+(when||0);o.start(t);gn.gain.setValueAtTime(gn.gain.value,t);gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.stop(t+d);}
 function cheer(){[523,659,784,1047].forEach((f,k)=>tone(f,.25,"triangle",k*.09,.14));}
-function buzz(){tone(170,.22,"sine",0,.12);}
+function learn(){[392,523].forEach((f,k)=>tone(f,.22,"triangle",k*.11,.11));}
 function confetti(n){const em=["🏆","⭐","🎉","⚽","🏈","🏀","⚾","🏒"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
-function buildPass(){const el=$("pass");el.innerHTML="";order.forEach((f,i)=>{const d=document.createElement("div");d.className="stamp"+(i<solved?" on":"");d.textContent=i<solved?f.sport:"🏆";el.appendChild(d);});}
+function buildPass(){const el=$("pass");el.innerHTML="";order.forEach((f,i)=>{const d=document.createElement("div");const r=Scoring._state.rounds[i];d.className="stamp"+(r?" "+Scoring.tierClass(r.tier):"");d.textContent=r?(r.tier==="grey"?"🆕":f.sport):"🏆";d.title=r?({gold:"Knew it",silver:"Worked it out",grey:"Learned it"})[r.tier]:"";el.appendChild(d);});}
 function scoreLine(f){
  const wName=f.w===0?f.h:f.a, lName=f.w===0?f.a:f.h;
  if(f.note)return f.note;
@@ -100,6 +112,7 @@ function scoreLine(f){
 }
 function render(){
  done=false; cur=order[idx];
+ Scoring.beginRound(Scoring.idOf({q:cur.comp+" "+cur.end+" "+cur.h+" v "+cur.a}), cur.end+" "+cur.comp+": "+cur.h+" v "+cur.a+"");
  const flip=Math.random()<.5;
  cur.disp=flip?[1,0]:[0,1];   // disp[buttonIdx] = final side index (0=h,1=a)
  const names=[cur.h,cur.a], logos=[cur.hlogo,cur.alogo];
@@ -109,7 +122,7 @@ function render(){
    im.onerror=function(){im.style.display="none";};
    im.src=logos[side]||""; if(!logos[side])im.style.display="none";
    $("n"+b).textContent=names[side];
-   $("c"+b).classList.remove("win","bad");
+   $("c"+b).classList.remove("win","bad","shown","picked");
  });
  $("year").textContent=cur.end;
  $("comp").textContent=cur.sport+" "+cur.comp;
@@ -117,23 +130,48 @@ function render(){
  buildPass();
  speak("The "+cur.end+" "+cur.comp+". "+cur.h+", or "+cur.a+". Who won?");
 }
+/* Honest Answer loop — PLAY-MASTERY-SPEC.md §1. This game is BINARY, so under the
+   old loop (retry free, round will not advance until correct) guessing needed on
+   average 1.5 taps and paid exactly the same trophy as knowing. One tap now. A
+   miss still reveals the winner and reads the score line, so it teaches. */
 function choose(b){
- if(done)return;
- const side=cur.disp[b];
- if(side===cur.w){
-   done=true; $("c"+b).classList.add("win");
+ if(Scoring.answered()||!Scoring.armed())return;
+ const side=cur.disp[b], correct=(side===cur.w);
+ const res=Scoring.answer(correct);
+ done=true;
+ const winBtn = cur.disp[0]===cur.w ? 0 : 1;
+ if(correct){
+   $("c"+b).classList.add("win");
    $("reveal").textContent="🏆 "+scoreLine(cur);
-   $("next").disabled=false; solved=Math.max(solved,idx+1);
-   cheer(); confetti(12); toast(pick(["Champion! 🏆","Yes! 🎉","You knew it! ⭐"]));
-   speak(scoreLine(cur)); buildPass();
- } else {
-   $("c"+b).classList.add("bad"); setTimeout(()=>$("c"+b).classList.remove("bad"),420);
-   buzz(); toast("Not this time — try again! 💪"); speak("Not this time. Try again!");
+   cheer(); confetti(12);
+   toast(res.tier==="gold"?pick(["Champion! 🏆","You knew it! ⭐"]):"Worked it out! 👍");
+   speak(scoreLine(cur));
+ }else{
+   $("c"+b).classList.add("picked");
+   $("c"+winBtn).classList.add("win","shown");
+   $("reveal").textContent="🆕 "+scoreLine(cur);
+   learn();
+   toast("Now you know it! 🆕");
+   speak(scoreLine(cur));
  }
+ $("next").disabled=false; solved=Math.max(solved,idx+1);
+ buildPass();
 }
 $("c0").onclick=()=>choose(0); $("c1").onclick=()=>choose(1);
-$("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {$("finale").classList.add("show");confetti(24);speak("Amazing! You are the Duel Champion of every sport!");} };
-$("read").onclick=()=>{ if(cur)speak("The "+cur.end+" "+cur.comp+". "+cur.h+", or "+cur.a+". Who won?"); };
+$("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {
+  const h=$("finale").querySelector("h1"); if(h)h.textContent=Scoring.headline().replace(/^[^ ]+ /,"");
+  let box=document.getElementById("tallybox");
+  if(!box){box=document.createElement("div");box.id="tallybox";
+    const btn=$("finale").querySelector("button"); btn.parentNode.insertBefore(box,btn);}
+  box.innerHTML=Scoring.finaleHTML();
+  $("finale").classList.add("show");confetti(24);
+  speak(Scoring.headline().replace(/[^a-zA-Z0-9 !]/g,""));
+} };
+$("read").onclick=()=>{ if(!cur)return; Scoring.readStarted();
+ if(!sound||!("speechSynthesis" in window)){Scoring.readEnded();return;}
+ try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance("The "+cur.end+" "+cur.comp+". "+cur.h+", or "+cur.a+". Who won?");
+  u.rate=.95;u.pitch=1.1;u.onend=()=>Scoring.readEnded();u.onerror=()=>Scoring.readEnded();speechSynthesis.speak(u);}
+ catch(e){Scoring.readEnded();} };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
 /* Balanced sampling: one final from each competition (8 comps = 8 rounds),
@@ -146,9 +184,12 @@ if(location.protocol==="file:")$("back").setAttribute("href","index.html");
    const g=groups[k];
    const modern=g.filter(f=>f.end>=2000);
    const pool=(modern.length&&Math.random()<.7)?modern:g;
-   picks.push(pick(pool));
+   /* Leitner-weighted within the competition (spec §1.7): finals he has never
+      seen or missed last time surface; ones he has known twice rest for a week. */
+   picks.push(Scoring.weightedSample(pool,1,f=>Scoring.idOf({q:f.comp+" "+f.end+" "+f.h+" v "+f.a}))[0]||pick(pool));
  });
  order=shuffle(picks).slice(0,N);
+ Scoring.init({slug:"champions-duel",total:order.length,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
 })();
 render();
 </script>

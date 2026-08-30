@@ -67,11 +67,13 @@
 </main>
 <div class="toast" id="toast"></div>
 <div class="finale" id="finale">
-  <h1 style="font-size:2.2rem">🏆 Ocean Explorer!</h1>
+  <h1 style="font-size:2.2rem" id="finaleHead">🏆 Ocean Explorer!</h1>
   <p style="font-size:1.15rem;font-weight:800">Five oceans found! With the seven continents, that is our whole world. 🌍</p>
+  <div id="finaleTally"></div>
   <button class="next" style="margin-top:16px" onclick="location.reload()">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
+<script src="assets/scoring.js"></script>
 <script>
 const OCEANS=[
  {n:"Pacific Ocean",x:13,y:49,fact:"the biggest ocean of all!"},
@@ -81,11 +83,11 @@ const OCEANS=[
  {n:"Arctic Ocean",x:50,y:6,fact:"the smallest, at the frozen far North."}
 ];
 const $=id=>document.getElementById(id);
-let sound=true, order=[], idx=0, solved=0;
+let sound=true, order=[], idx=0;
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
-function buildPass(){const el=$("pass");el.innerHTML="";OCEANS.forEach((_,i)=>{const d=document.createElement("div");d.className="stamp"+(i<solved?" on":"");d.textContent="🌊";el.appendChild(d);});}
+function buildPass(){const el=$("pass");el.innerHTML="";OCEANS.forEach((_,i)=>{const d=document.createElement("div");const r=Scoring._state.rounds[i];d.className="stamp"+(r?" "+Scoring.tierClass(r.tier):"");d.textContent=(r&&r.tier==="grey")?"🆕":"🌊";el.appendChild(d);});}
 function drawMarkers(){
  const M=$("markers"); M.innerHTML="";
  OCEANS.forEach(o=>{const b=document.createElement("button");b.className="marker";b.style.left=o.x+"%";b.style.top=o.y+"%";
@@ -94,31 +96,39 @@ function drawMarkers(){
 }
 function render(){
  const q=order[idx];
+ Scoring.beginRound(Scoring.idOf({q:q.n}), q.n);
  $("ask").textContent="Find the "+q.n+"!"; $("reveal").textContent=""; $("next").disabled=true; $("halo").style.opacity=0;
- [...$("markers").children].forEach(m=>{m.classList.remove("good","dim","bad");});
+ [...$("markers").children].forEach(m=>{m.classList.remove("good","dim","picked");});
  speak("Find the "+q.n+"!"); buildPass();
 }
 function choose(o,b){
+ if(Scoring.answered()||!Scoring.armed())return;
  const q=order[idx];
- if($("next").disabled===false)return;
- if(o.n===q.n){
+ const correct=o.n===q.n;
+ const res=Scoring.answer(correct);
+ if(correct){
    [...$("markers").children].forEach(m=>{ if(m.dataset.n===q.n)m.classList.add("good"); else m.classList.add("dim"); });
    $("reveal").textContent="✅ The "+q.n+" is "+q.fact;
-   $("next").disabled=false; solved=Math.max(solved,idx+1);
-   toast(pick(["Yes! 🌊","Found it! ⭐","Nice! 🙌"])); speak("Yes! The "+q.n+" is "+q.fact); confetti(8); buildPass();
-   if(solved===OCEANS.length) setTimeout(finale,900);
+   $("next").disabled=false;
+   toast(res.tier==="gold"?pick(["Yes! 🌊","Found it! ⭐","Nice! 🙌"]):"You worked it out! 👍"); speak("Yes! The "+q.n+" is "+q.fact); confetti(8); buildPass();
  } else {
-   b.classList.add("bad"); setTimeout(()=>b.classList.remove("bad"),400);
-   toast("Try again 🤔"); speak("That is the "+o.n+". Try again.");
+   [...$("markers").children].forEach(m=>{ if(m.dataset.n===q.n)m.classList.add("good"); else m.classList.add("dim"); });
+   b.classList.add("picked");
+   $("reveal").textContent="🆕 The "+q.n+" is "+q.fact;
+   $("next").disabled=false;
+   toast("Now you know it! 🆕"); speak("The "+q.n+" is "+q.fact);
    const h=$("halo"); h.style.left=q.x+"%"; h.style.top=q.y+"%"; h.style.opacity=1; setTimeout(()=>h.style.opacity=0,1300);
+   buildPass();
  }
+ if(Scoring._state.rounds.length===OCEANS.length) setTimeout(finale,900);
 }
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1200);}
 function confetti(n){const em=["🌊","⭐","🎉","🐬"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
-function finale(){$("finale").classList.add("show");speak("Amazing! Five oceans found. You are an Ocean Explorer!");confetti(20);}
+function finale(){$("finaleHead").textContent=Scoring.headline();$("finaleTally").innerHTML=Scoring.finaleHTML();$("finale").classList.add("show");speak("Amazing! Five oceans found. You are an Ocean Explorer!");confetti(20);}
 $("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {finale();} };
 $("say").onclick=()=>speak("Find the "+order[idx].n+"!");
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound)speechSynthesis.cancel();};
+Scoring.init({slug:"five-oceans", total:OCEANS.length, stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
 order=shuffle(OCEANS); drawMarkers(); render();
 </script>
 </body>

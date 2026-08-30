@@ -43,6 +43,18 @@
   .cover h1{font-size:2.1rem;margin:8px 0}
   .cover p{font-size:1.08rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 18px}
   .bigbtn{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.25rem;padding:15px 28px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d}
+  /* Honest Answer tiers — PLAY-MASTERY-SPEC.md §1.2. Gold = knew it,
+     silver = worked it out, amber = learned it just now. No red, no cross. */
+  .stamp.silver{opacity:1;filter:none;box-shadow:inset 0 0 0 3px #9fb6ca;animation:pop .4s}
+  .stamp.miss{opacity:1;filter:none;box-shadow:inset 0 0 0 3px #e8c86a;background:#fff7e6;animation:pop .4s}
+  .opt.shown{background:#e8fbf4;box-shadow:0 6px 0 #bfe6da,0 0 0 4px var(--accent);outline:3px dashed #06372c44;outline-offset:-8px}
+  .opt.picked{background:#eef3f8;color:#5b7b97;opacity:.75}
+  .tally{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+  .tally .tl{background:#fff;border-radius:14px;padding:8px 13px;font-weight:800;font-size:.98rem;box-shadow:0 3px 0 #d7e6f2}
+  .learned{background:#fff7e6;border-radius:16px;padding:12px 14px;margin:8px auto;text-align:left;max-width:430px}
+  .learned .lh{font-weight:900;color:#7a5b00;margin-bottom:4px}
+  .learned ul{margin:0;padding-left:20px}
+  .learned li{font-weight:700;color:#7a5b00;line-height:1.35;margin:3px 0}
   .hidden{display:none !important}
 </style>
 </head>
@@ -81,6 +93,7 @@
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
 
+<script src="assets/scoring.js"></script>
 <script>
 const CARDS=[
  {em:"🏠", t:"Lives in the White House", a:"pres", f:"The White House, in Washington, D.C., has 132 rooms!"},
@@ -106,35 +119,51 @@ let sound=true,idx=0,order=[],done=false;
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
+function speakThen(t){if(!sound||!("speechSynthesis" in window)){Scoring.readEnded();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;u.onend=()=>Scoring.readEnded();u.onerror=()=>Scoring.readEnded();speechSynthesis.speak(u);}catch(e){Scoring.readEnded();}}
 function confetti(n){const em=["🏛️","⭐","🎉","👑"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
-function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");d.className="stamp"+(i<idx?" on":"");d.textContent="🏛️";el.appendChild(d);}}
+function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");const r=Scoring._state.rounds[i];d.className="stamp"+(r?" "+Scoring.tierClass(r.tier):"");d.textContent=r?(r.tier==="grey"?"🆕":"🏛️"):"🏛️";d.title=r?({gold:"Knew it",silver:"Worked it out",grey:"Learned it"})[r.tier]:"";el.appendChild(d);}}
 function render(){
   done=false; const c=order[idx];
+  Scoring.beginRound(Scoring.idOf({q:c.t}), c.t);
   $("em").textContent=c.em; $("txt").textContent=c.t;
-  ["pres","pm","king"].forEach(k=>$("o-"+k).classList.remove("good","bad"));
+  ["pres","pm","king"].forEach(k=>$("o-"+k).classList.remove("good","bad","shown","picked"));
   $("reveal").textContent=""; $("next").disabled=true;
   buildPass(); speak(c.t+". Whose job is that?");
 }
+/* Honest Answer loop — PLAY-MASTERY-SPEC.md §1. One tap per round. A miss shows
+   the right answer and still gives the fact, so it teaches instead of stalling.
+   Previously a wrong tap cost nothing and the round would not advance until the
+   answer was right, which made tapping-until-green the winning strategy here:
+   with only 3 options, guessing beat knowing. */
 function choose(k){
-  if(done)return; const c=order[idx];
-  if(k===c.a){
-    done=true; $("o-"+k).classList.add("good");
-    $("reveal").textContent="✅ That's "+NAMES[k]+" — "+c.f;
-    $("next").disabled=false;
-    toast(pick(["Yes! 🎉","Spot on! ⭐","You're the boss! 🙌"]));
-    speak("Yes! That is "+NAMES[k].replace(/ .$/,"")+". "+c.f); confetti(9);
-    idx++; buildPass();
-  } else {
-    $("o-"+k).classList.add("bad"); setTimeout(()=>$("o-"+k).classList.remove("bad"),420);
-    toast("Try again 🤔"); speak("Not that one. Try again!");
+  if(Scoring.answered()||!Scoring.armed())return;
+  const c=order[idx], correct=(k===c.a);
+  const res=Scoring.answer(correct);
+  done=true;
+  ["pres","pm","king"].forEach(x=>{
+    if(x===c.a) $("o-"+x).classList.add(correct?"good":"shown");
+    else if(x===k) $("o-"+x).classList.add("picked");
+  });
+  if(correct){
+    $("reveal").textContent=(res.tier==="gold"?"⭐ ":"👍 ")+c.f;
+    toast(res.tier==="gold"?pick(["You knew it! 🎉","Straight away! ⭐"]):"Worked it out! 👍");
+    speak("Yes! "+c.f); confetti(9);
+  }else{
+    $("reveal").textContent="🆕 That's "+NAMES[c.a]+" — "+c.f;
+    toast("Now you know it! 🆕");
+    speak("That's "+NAMES[c.a].replace(/ .$/,"")+". "+c.f);
   }
+  $("next").disabled=false;
+  idx++; buildPass();
 }
+
 ["pres","pm","king"].forEach(k=>$("o-"+k).onclick=()=>choose(k));
-$("next").onclick=()=>{ if(idx>=N){ $("finale").classList.remove("hidden"); confetti(24); speak("Boss of the bosses! Amazing!"); } else render(); };
-$("go").onclick=()=>{ $("start").classList.add("hidden"); order=shuffle(CARDS).slice(0,N); idx=0; render(); };
-$("again").onclick=()=>{ $("finale").classList.add("hidden"); order=shuffle(CARDS).slice(0,N); idx=0; render(); };
-$("read").onclick=()=>{ speak(order[idx].t+". Whose job is that?"); };
+$("next").onclick=()=>{ if(idx>=N){ $("finale").classList.remove("hidden"); showTally(); confetti(24); speak("Boss of the bosses! Amazing!"); } else render(); };
+$("go").onclick=()=>{ $("start").classList.add("hidden"); order=shuffle(CARDS).slice(0,N); idx=0; Scoring.init({slug:"whos-the-boss",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}}); render(); };
+function showTally(){const h=$("finale").querySelector("h1");if(h)h.textContent=Scoring.headline();let box=document.getElementById("tallybox");if(!box){box=document.createElement("div");box.id="tallybox";$("again").parentNode.insertBefore(box,$("again"));}box.innerHTML=Scoring.finaleHTML();}
+$("again").onclick=()=>{ $("finale").classList.add("hidden"); order=shuffle(CARDS).slice(0,N); idx=0; Scoring.init({slug:"whos-the-boss",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}}); render(); };
+$("read").onclick=()=>{ Scoring.readStarted(); speakThen(order[idx].t+". Whose job is that?"); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
 buildPass();

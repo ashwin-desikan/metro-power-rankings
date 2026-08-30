@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Call the Play · Play &amp; Learn</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* Call the Play — PLAY-MASTERY-SPEC.md §3.3 Game E.
+     A DECISION TREE UNDER CONSTRAINTS, wearing the clothes of the game the
+     player already chooses to play on a phone. Down, distance, field position,
+     clock and timeouts are the constraints; the play call is the decision.
+
+     Football rarely has one right answer, so this game does not pretend it
+     does. Every call is graded best / reasonable / poor, which maps exactly
+     onto the arcade's gold / silver / newly-learned tiers. That is a truer
+     model of the sport AND a truer model of decision-making than right/wrong.
+
+     Class names are prefixed (.ctp-) — assets/styles.css is shared and unscoped. */
+  .ctp-chips{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:6px 0 8px}
+  .ctp-chip{background:#16324f;color:#fff;border-radius:10px;padding:6px 10px;font-weight:900;font-size:.86rem;letter-spacing:.3px}
+  .ctp-chip.warn{background:#d2453f}
+  .ctp-chip.cool{background:#1d6fb8}
+  .ctp-field{position:relative;height:74px;border-radius:12px;background:repeating-linear-gradient(90deg,#2f8f4e 0 9.8%,#37a259 9.8% 10%);margin:4px 0 2px;overflow:hidden;box-shadow:inset 0 0 0 3px #1e6b39}
+  .ctp-ez{position:absolute;top:0;bottom:0;width:8%;background:#1e6b39;display:flex;align-items:center;justify-content:center;color:#ffffff88;font-weight:900;font-size:.6rem;writing-mode:vertical-rl}
+  .ctp-ez.l{left:0}.ctp-ez.r{right:0}
+  .ctp-los{position:absolute;top:0;bottom:0;width:4px;background:#fff;box-shadow:0 0 6px #0006}
+  .ctp-fd{position:absolute;top:0;bottom:0;width:4px;background:var(--sun);box-shadow:0 0 6px #0006}
+  .ctp-ball{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:1.5rem;transition:left .9s cubic-bezier(.2,.8,.3,1);z-index:3;filter:drop-shadow(0 2px 3px #0006)}
+  .ctp-key{display:flex;gap:10px;justify-content:center;font-size:.7rem;font-weight:800;color:#5b7b97;margin-bottom:8px}
+  .ctp-key i{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:3px;font-style:normal}
+  .ctp-sit{font-size:1.12rem;font-weight:800;color:var(--navy);margin:6px 4px 2px;line-height:1.35}
+  .ctp-plays{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:10px 0 2px}
+  .ctp-play{border:none;background:#fff;border-radius:16px;box-shadow:0 5px 0 #cbd8e4;padding:12px 8px;cursor:pointer;font-family:inherit;font-weight:900;color:var(--navy);font-size:1rem;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:78px;justify-content:center}
+  .ctp-play:active{transform:translateY(3px);box-shadow:0 2px 0 #cbd8e4}
+  .ctp-play .e{font-size:1.7rem}
+  .ctp-play .s{font-size:.72rem;font-weight:700;color:#5b7b97}
+  .ctp-play.best{background:#d6f7ee;box-shadow:0 5px 0 #1f9e82}
+  .ctp-play.ok{background:#fff3c4;box-shadow:0 5px 0 #e8c86a}
+  .ctp-play.poor{background:#ffe9e5;box-shadow:0 5px 0 #e9a79c}
+  .ctp-play.pickd{outline:4px solid #16324f;outline-offset:-4px}
+  .ctp-play.dim{opacity:.5}
+  .ctp-out{background:#16324f;color:#fff;border-radius:14px;padding:11px 12px;margin:10px 0 0;font-weight:800;font-size:1.02rem;display:none}
+  .ctp-out.show{display:block;animation:pop .35s}
+  .lvl{font-size:.82rem;font-weight:800;color:#5b7b97;letter-spacing:.5px}
+  .cover{position:fixed;inset:0;background:#eef6fcf7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover.hidden{display:none}
+  .cover h1{font-size:2rem;margin:6px 0;color:var(--navy)}
+  .cover p{font-size:1.04rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0;line-height:1.45}
+  .bigbtn{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.2rem;padding:14px 28px;cursor:pointer;background:var(--coral);color:#fff;box-shadow:0 7px 0 #d2453f;margin-top:14px}
+  .grown{font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px;line-height:1.45}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="mag" id="logoEmoji">🏈</span> <span id="logoText">Call the Play</span></div>
+  <div class="hgroup">
+    <a class="back" id="back" href="/play">← All games</a>
+    <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+  </div>
+</header>
+
+<div class="cover" id="start">
+  <div style="font-size:3.4rem">🏈🧠</div>
+  <h1>Call the Play</h1>
+  <p>You are the coach. Look at the <b>down</b>, the <b>yards to go</b>, the <b>clock</b> and the <b>score</b>.</p>
+  <p>Then pick the play.</p>
+  <p style="font-size:.95rem">Often more than one call is sensible — but one is usually <b>best</b>.</p>
+  <button class="bigbtn" id="begin">Take the headset 🎧</button>
+</div>
+
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="lvl" id="lvl">Drive 1 of 8</div>
+    <div class="ctp-chips" id="chips"></div>
+    <div class="ctp-field" id="field">
+      <div class="ctp-ez l">END ZONE</div><div class="ctp-ez r">END ZONE</div>
+      <div class="ctp-los" id="los"></div>
+      <div class="ctp-fd" id="fd"></div>
+      <div class="ctp-ball" id="ball">🏈</div>
+    </div>
+    <div class="ctp-key"><span><i style="background:#fff;box-shadow:0 0 0 1px #ccc"></i>where the ball is</span><span><i style="background:#ffd23f"></i>where you need to reach</span></div>
+    <div class="ctp-sit" id="sit">—</div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="ctp-plays" id="plays"></div>
+    <div class="ctp-out" id="out"></div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div></div>
+    <button class="next" id="next">Next drive →</button>
+    <div class="finale" id="finale">
+      <h2 id="finaleH">🏆 You did it!</h2>
+      <p id="finaleP" style="font-size:1.2rem;font-weight:700;color:#16324f">Great coaching!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Coach again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown" id="grownText">For grown-ups: a decision tree under constraints — the same reasoning shape as an <code>if / else if / else</code> in code, and the concept behind Higher or Lower and In the Club. Every call is graded best, reasonable or poor rather than right or wrong, because real football usually has more than one defensible option; the reasoning is always explained afterwards. Teaches down and distance, field position, kicking range and clock management. Ages 7–10.</p>
+
+<script src="assets/scoring.js"></script>
+<script>
+"use strict";
+var $ = function (id) { return document.getElementById(id); };
+var soundOn = true, actx = null, round = 0, S = null, answered = false;
+
+/* ---------- audio ---------------------------------------------------------- */
+function ctx(){ try{ actx = actx || new (window.AudioContext||window.webkitAudioContext)(); if(actx.state==="suspended")actx.resume(); return actx; }catch(e){return null;} }
+function tone(f,d,type,when,gain){ if(!soundOn)return; var a=ctx(); if(!a)return;
+  var o=a.createOscillator(),g=a.createGain(); o.type=type||"sine"; o.frequency.value=f; g.gain.value=gain||0.12;
+  o.connect(g); g.connect(a.destination); var t=a.currentTime+(when||0);
+  o.start(t); g.gain.setValueAtTime(g.gain.value,t); g.gain.exponentialRampToValueAtTime(0.0001,t+d); o.stop(t+d); }
+function cheer(){ [523,659,784,1047].forEach(function(f,k){ tone(f,0.24,"triangle",k*0.09,0.13); }); }
+function okTone(){ [523,659].forEach(function(f,k){ tone(f,0.2,"triangle",k*0.1,0.12); }); }
+function learn(){ [392,523].forEach(function(f,k){ tone(f,0.22,"triangle",k*0.11,0.11); }); }
+function whistle(){ tone(1650,0.16,"square",0,0.07); tone(1500,0.16,"square",0.16,0.07); }
+function speak(t){ if(!soundOn||!("speechSynthesis" in window))return;
+  try{ speechSynthesis.cancel(); var u=new SpeechSynthesisUtterance(t); u.rate=0.93; u.pitch=1.05; speechSynthesis.speak(u); }catch(e){} }
+function confetti(){ var em=["🏈","⭐","🎉","🥇"];
+  for(var k=0;k<18;k++){ var c=document.createElement("div"); c.className="confetti";
+    c.style.left=Math.random()*100+"vw"; c.style.background="transparent"; c.style.width="auto"; c.style.height="auto"; c.style.fontSize="1.4rem";
+    c.textContent=em[k%em.length];
+    c.style.animation="fall "+(1.2+Math.random()*0.8)+"s ease-in "+(Math.random()*0.2)+"s forwards";
+    document.body.appendChild(c); (function(el){ setTimeout(function(){el.remove();},2400); })(c); } }
+var tT; function toast(t){ $("toast").textContent=t; clearTimeout(tT); tT=setTimeout(function(){$("toast").textContent="";},3200); }
+
+/* ---------- the scenarios ---------------------------------------------------
+   Hand-authored, ramping from "what is a down" to clock management. `yard` is
+   yards from your OWN goal line, so 25 is your own 25 and 80 is the opponent's
+   20. `rank` is best (2) / reasonable (1) / poor (0). */
+var GAMES = [
+  { down:1, togo:10, yard:25, clock:"1st quarter", score:"Scores level", to:3,
+    sit:"First down. You have four tries to move 10 yards.",
+    plays:[
+      { e:"🏃", n:"Run it", s:"safe yards", rank:2, out:"Handed off — 4 yards. 2nd and 6.",
+        why:"A run on first down is the safest way to start. Four yards is a good start, and you still have three tries left." },
+      { e:"➡️", n:"Short pass", s:"quick throw", rank:2, out:"Caught for 6 yards. 2nd and 4.",
+        why:"A short pass is just as sensible here. On first down almost anything reasonable works — that is what first down is FOR." },
+      { e:"🚀", n:"Deep pass", s:"big risk", rank:1, out:"Incomplete. 2nd and 10.",
+        why:"Not silly, but risky this early. A deep throw often falls incomplete, and now you need 10 yards in three tries instead of four." },
+      { e:"🦶", n:"Punt", s:"give it away", rank:0, out:"You punted the ball away on FIRST down.",
+        why:"Never punt on first down! A punt gives the ball to the other team. You save that for fourth down, when you have run out of tries." }
+    ],
+    fact:"You get four downs to move the ball 10 yards. Get there and you start again at first down." },
+
+  { down:4, togo:12, yard:30, clock:"2nd quarter", score:"Scores level", to:3,
+    sit:"Fourth down, 12 yards to go, and you are deep in your own half.",
+    plays:[
+      { e:"🦶", n:"Punt", s:"push them back", rank:2, out:"A 45-yard punt. They start on their own 25.",
+        why:"Exactly right. Fourth and long, near your own end zone, is the classic punt. If you fail here, they get the ball already close to scoring." },
+      { e:"🚀", n:"Deep pass", s:"go for it", rank:0, out:"Incomplete. They take over on your 30 and score easily.",
+        why:"Too risky. Failing on fourth down hands them the ball right next to your end zone. That is the worst place on the field to gamble." },
+      { e:"🏃", n:"Run it", s:"go for it", rank:0, out:"Tackled after 3 yards. They take over on your 33.",
+        why:"You needed 12 and a run rarely gains that. Now they have the ball in easy scoring range." },
+      { e:"🎯", n:"Field goal", s:"kick 3 points", rank:0, out:"That would be an 87-yard kick. Nobody can do that.",
+        why:"Far too far. The longest field goal ever made is around 66 yards, and you are on your own 30." }
+    ],
+    fact:"Punting is not giving up. It is trading the ball for better field position." },
+
+  { down:3, togo:1, yard:50, clock:"2nd quarter", score:"You lead by 3", to:3,
+    sit:"Third down and only ONE yard to go, at midfield.",
+    plays:[
+      { e:"🏃", n:"Run it", s:"one yard", rank:2, out:"Powered through for 2 yards. FIRST DOWN!",
+        why:"Short yardage means a run. You only need one yard, and a run almost always gains at least one. Keep it simple." },
+      { e:"➡️", n:"Short pass", s:"quick throw", rank:1, out:"Caught for 5. First down.",
+        why:"It worked, but why risk a throw? A pass can fall incomplete and gain nothing. A run for one yard is the safer call." },
+      { e:"🚀", n:"Deep pass", s:"big play", rank:0, out:"Incomplete. Fourth down.",
+        why:"You needed ONE yard and threw for thirty. Now it is fourth down and you have to punt." },
+      { e:"🦶", n:"Punt", s:"give it away", rank:0, out:"You punted on third down with a yard to go.",
+        why:"You still had a down left, and only one yard to gain. Never punt on third down." }
+    ],
+    fact:"Short yardage is run territory. Long yardage is pass territory." },
+
+  { down:3, togo:15, yard:20, clock:"4th quarter, 4:00 left", score:"You trail by 7", to:2,
+    sit:"Third and 15. You are behind and the clock is running down.",
+    plays:[
+      { e:"🚀", n:"Deep pass", s:"chase the sticks", rank:2, out:"Caught for 22 yards! First down.",
+        why:"You need 15 yards, so you have to throw far enough to get 15. A run will not do it, and you are behind with time running out." },
+      { e:"➡️", n:"Short pass", s:"take what's there", rank:1, out:"Caught for 7. Fourth and 8.",
+        why:"Reasonable, but it left you short. When you need 15, throwing 7 still means fourth down." },
+      { e:"🏃", n:"Run it", s:"safe yards", rank:0, out:"Ran for 3. Fourth and 12.",
+        why:"A run almost never gains 15. You are behind, so safe yards are not enough — you need the whole 15." },
+      { e:"🦶", n:"Punt", s:"give it away", rank:0, out:"Punted on third down while losing.",
+        why:"You are behind with four minutes left. Giving the ball away now means you may never get it back." }
+    ],
+    fact:"Match the play to the yards you need. Needing 15 means you must throw at least 15." },
+
+  { down:4, togo:2, yard:65, clock:"3rd quarter", score:"You trail by 3", to:3,
+    sit:"Fourth and 2 on their 35. A field goal from here is a 52-yard kick.",
+    plays:[
+      { e:"🏃", n:"Go for it", s:"2 yards to gain", rank:2, out:"Ran for 4. FIRST DOWN, and the drive lives.",
+        why:"Only 2 yards, and you are past midfield. A 52-yard kick is long even for a professional. Going for it is the modern call." },
+      { e:"🎯", n:"Field goal", s:"52-yard kick", rank:1, out:"The kick sails wide. No points.",
+        why:"Defensible — 3 points would tie it. But 52 yards is right at the edge of range, and you only needed 2 yards." },
+      { e:"🦶", n:"Punt", s:"pin them deep", rank:0, out:"A 20-yard punt into the end zone. Touchback.",
+        why:"You are too close to their end zone for a punt to help. You would gain almost no field position and lose the ball." },
+      { e:"🚀", n:"Deep pass", s:"end zone shot", rank:0, out:"Incomplete. They take over.",
+        why:"You needed 2 yards, not 35. The longer the throw, the more likely it falls incomplete." }
+    ],
+    fact:"A field goal is worth 3 points, but only if the kicker is close enough. Around 40 yards is comfortable; past 55 is a gamble." },
+
+  { down:1, togo:10, yard:40, clock:"0:50 left, NO timeouts", score:"You trail by 2", to:0,
+    sit:"Fifty seconds left, no timeouts, and you need a field goal to win.",
+    plays:[
+      { e:"↗️", n:"Pass to the sideline", s:"stops the clock", rank:2, out:"Caught for 14 and he steps OUT OF BOUNDS. Clock stopped, 0:44 left.",
+        why:"Perfect. A player going out of bounds stops the clock. With no timeouts, that is the only way to save time while gaining yards." },
+      { e:"➡️", n:"Short pass, middle", s:"gains yards", rank:1, out:"Caught for 9, tackled in bounds. Clock runs — 0:31 left.",
+        why:"You gained yards, but he was tackled in bounds so the clock kept running. With no timeouts every second matters." },
+      { e:"🏃", n:"Run it", s:"safe yards", rank:0, out:"Ran for 4. The clock keeps running — 0:26 left.",
+        why:"A run stays in bounds, so the clock never stops. With no timeouts and under a minute, a run wastes the thing you have least of: time." },
+      { e:"🦶", n:"Punt", s:"give it away", rank:0, out:"You punted while losing with 50 seconds left.",
+        why:"You are behind. Giving the ball away with under a minute means the game is over." }
+    ],
+    fact:"The clock stops when a player goes out of bounds or a pass falls incomplete. It keeps running after a normal tackle." },
+
+  { down:2, togo:6, yard:80, clock:"1:30 left", score:"You lead by 4", to:3,
+    sit:"You are WINNING. They have one timeout left. Ball on their 20.",
+    plays:[
+      { e:"🏃", n:"Run it", s:"clock keeps running", rank:2, out:"Ran for 3, tackled in bounds. Clock runs down to 0:50.",
+        why:"You are ahead, so time is your friend. A run keeps the clock moving and drains their chance to come back." },
+      { e:"➡️", n:"Short pass", s:"gains more", rank:1, out:"Caught for 7. First down, but the clock stopped briefly.",
+        why:"It gained more yards, but you do not need yards — you need the clock to run. When you are ahead, boring is good." },
+      { e:"🚀", n:"Deep pass", s:"score again", rank:0, out:"Incomplete. The clock STOPS. 1:24 left.",
+        why:"An incomplete pass stops the clock, which helps THEM. When you are winning late, never stop your own clock." },
+      { e:"🎯", n:"Field goal", s:"kick 3 more", rank:1, out:"Good! You lead by 7 — but they get the ball back with 1:24.",
+        why:"A sensible call, and 7 points is safer than 4. But kicking early gives them the ball back with time to score." }
+    ],
+    fact:"When you are ahead late, run the ball. When you are behind late, throw it and get out of bounds." },
+
+  { down:1, togo:10, yard:20, clock:"0:40 left", score:"You lead by 3", to:2,
+    sit:"You lead, it is first down, and they have NO timeouts left.",
+    plays:[
+      { e:"🧎", n:"Kneel down", s:"end the game", rank:2, out:"Knee down. Clock runs. Kneel again and the game is OVER. YOU WIN.",
+        why:"The victory formation. They have no timeouts, so each kneel burns about 40 seconds. Three kneels and the game ends. You cannot lose the ball if you never carry it." },
+      { e:"🏃", n:"Run it", s:"safe yards", rank:1, out:"Ran for 3 — but the ball came loose! You recovered it, just.",
+        why:"The clock runs, which is right. But every run risks a fumble, and you do not need a single yard. Why carry the ball at all?" },
+      { e:"➡️", n:"Short pass", s:"gains yards", rank:0, out:"Incomplete. The clock stops with 0:36 left.",
+        why:"An incomplete pass stops the clock and gives them time back. You are winning — you want the clock to run." },
+      { e:"🦶", n:"Punt", s:"give it away", rank:0, out:"You gave them the ball with 40 seconds and a chance to tie.",
+        why:"You had first down and the lead. Handing them the ball is the one way to lose from here." }
+    ],
+    fact:"The victory formation: when you lead and they have no timeouts, kneeling ends the game safely." }
+];
+
+/* ---------- drawing ---------------------------------------------------------- */
+function pct(y){ return 8 + (y / 100) * 84; }   /* 8% end zones each side */
+function drawField(anim) {
+  $("los").style.left = pct(S.yard) + "%";
+  $("fd").style.left = pct(Math.min(100, S.yard + S.togo)) + "%";
+  $("ball").style.left = pct(anim == null ? S.yard : anim) + "%";
+}
+function ordinal(n){ return n===1?"1st":n===2?"2nd":n===3?"3rd":"4th"; }
+function spot(y){
+  if (y === 50) return "midfield";
+  return y < 50 ? "your own " + y : "their " + (100 - y);
+}
+function drawChips() {
+  var c = [
+    '<span class="ctp-chip">' + ordinal(S.down) + " DOWN</span>",
+    '<span class="ctp-chip">' + S.togo + " TO GO</span>",
+    '<span class="ctp-chip cool">BALL ON ' + spot(S.yard).toUpperCase() + "</span>",
+    '<span class="ctp-chip' + (/left/.test(S.clock) ? " warn" : "") + '">' + S.clock.toUpperCase() + "</span>",
+    '<span class="ctp-chip">' + S.score.toUpperCase() + "</span>"
+  ];
+  if (S.to === 0) c.push('<span class="ctp-chip warn">NO TIMEOUTS</span>');
+  $("chips").innerHTML = c.join("");
+}
+
+/* ---------- the decision ----------------------------------------------------
+   One call per drive. A poor call still shows what happens and why, so a miss
+   teaches the reasoning rather than ending the drive in a buzzer. */
+function choose(i, btn) {
+  if (answered || !Scoring.armed()) return;
+  answered = true;
+  var p = S.plays[i];
+  var tier = p.rank === 2 ? "gold" : p.rank === 1 ? "silver" : "grey";
+  Scoring.answerTier(tier);
+
+  Array.prototype.forEach.call($("plays").children, function (b, k) {
+    var r = S.plays[k].rank;
+    b.classList.add(r === 2 ? "best" : r === 1 ? "ok" : "poor");
+    if (k === i) b.classList.add("pickd"); else b.classList.add("dim");
+    b.disabled = true;
+  });
+
+  whistle();
+  var gain = p.out.match(/(\d+)\s*yard|for (\d+)/);
+  var g = gain ? parseInt(gain[1] || gain[2], 10) : 0;
+  if (/punt|incomplete|wide|touchback/i.test(p.out)) g = 0;
+  drawField(Math.max(2, Math.min(98, S.yard + g)));
+
+  $("out").textContent = p.out; $("out").className = "ctp-out show";
+  if (tier === "gold") { toast("🌟 Great call, coach!"); cheer(); confetti(); }
+  else if (tier === "silver") { toast("👍 That works — but there was a better call"); okTone(); }
+  else { toast("🆕 Now you know why"); learn(); }
+
+  /* A scenario may legitimately have more than one best call — on first down a
+     run and a short pass are equally sensible, and pretending otherwise would
+     teach a falsehood about the sport. Name them all. */
+  var bests = S.plays.filter(function (x) { return x.rank === 2; });
+  var names = bests.map(function (x) { return x.e + " " + x.n; });
+  var label = names.length > 1
+    ? "Best calls: " + names.slice(0, -1).join(", ") + " or " + names[names.length - 1] + "."
+    : "Best call: " + names[0] + ".";
+  $("fact").innerHTML = "<b>" + (tier === "gold" ? "Why it works: " : "Why: ") + "</b>" + p.why +
+    (tier === "gold" ? "" : "<br><br><b>" + label + "</b> " + bests[0].why) +
+    "<br><br>💡 " + S.fact;
+  $("reveal").className = "reveal show";
+  speak(p.why);
+  Scoring.paintPassport("passport", round, "🏈");
+  $("next").textContent = round === GAMES.length - 1 ? "See my season →" : "Next drive →";
+  $("next").className = "next show";
+}
+
+/* ---------- rounds ----------------------------------------------------------- */
+function render() {
+  S = GAMES[round]; answered = false;
+  Scoring.beginRound("ctp-" + round, S.sit);
+  $("lvl").textContent = "Drive " + (round + 1) + " of " + GAMES.length;
+  $("sit").textContent = S.sit;
+  $("out").className = "ctp-out"; $("reveal").className = "reveal";
+  $("next").className = "next"; $("toast").textContent = "";
+  drawChips(); drawField(null);
+  $("plays").innerHTML = S.plays.map(function (p, i) {
+    return '<button class="ctp-play" data-i="' + i + '"><span class="e">' + p.e + "</span>" +
+      "<span>" + p.n + "</span><span class='s'>" + p.s + "</span></button>";
+  }).join("");
+  Array.prototype.forEach.call($("plays").children, function (b) {
+    b.onclick = function () { choose(+b.getAttribute("data-i"), b); };
+  });
+  Scoring.paintPassport("passport", round, "🏈");
+}
+function finale() {
+  ["lvl", "chips", "field", "sit", "read", "plays", "out", "toast", "reveal", "next"].forEach(function (id) { var e = $(id); if (e) e.style.display = "none"; });
+  document.querySelector(".ctp-key").style.display = "none";
+  $("finaleH").textContent = Scoring.headline();
+  $("finalStamps").innerHTML = Scoring.finaleHTML();
+  $("finale").className = "finale show";
+  Scoring.paintPassport("passport", GAMES.length, "🏈");
+  cheer(); confetti();
+}
+
+$("read").onclick = function () {
+  speak(ordinal(S.down) + " down, " + S.togo + " to go, ball on " + spot(S.yard) + ". " + S.clock + ". " + S.score + ". " + S.sit);
+};
+$("next").onclick = function () { round++; if (round >= GAMES.length) { finale(); return; } render(); window.scrollTo({ top: 0, behavior: "smooth" }); };
+$("begin").onclick = function () { ctx(); $("start").classList.add("hidden"); Scoring.init({ slug: "call-the-play", total: GAMES.length, noun: "play" }); render(); };
+$("again").onclick = function () {
+  round = 0; Scoring.init({ slug: "call-the-play", total: GAMES.length, noun: "play" });
+  ["lvl", "chips", "field", "sit", "read", "plays", "out", "toast", "reveal", "next"].forEach(function (id) { var e = $(id); if (e) e.style.display = ""; });
+  document.querySelector(".ctp-key").style.display = "";
+  $("finale").className = "finale"; render(); window.scrollTo({ top: 0 });
+};
+$("snd").onclick = function () { soundOn = !soundOn; $("snd").textContent = soundOn ? "🔊" : "🔇"; if (!soundOn && "speechSynthesis" in window) speechSynthesis.cancel(); };
+var back = $("back"); if (back) back.setAttribute("href", location.protocol === "file:" ? "index.html" : "/play");
+
+if (!document.getElementById("allgames")) {
+  var ag = document.createElement("a");
+  ag.id = "allgames"; ag.className = "next show ghost";
+  ag.href = location.protocol === "file:" ? "index.html" : "/play";
+  ag.textContent = "All games 🎮";
+  ag.style.textDecoration = "none"; ag.style.marginLeft = "8px";
+  $("again").parentNode.insertBefore(ag, $("again").nextSibling);
+}
+
+Scoring.init({ slug: "call-the-play", total: GAMES.length, noun: "play" });
+Scoring.paintPassport("passport", 0, "🏈");
+</script>
+</body>
+</html>

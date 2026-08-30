@@ -115,11 +115,13 @@
   <div style="font-size:4rem">🥇🏏</div>
   <h1>Elite umpire!</h1>
   <p id="finp">Every review went your way.</p>
+  <div id="scoreboard"></div>
   <button class="big" id="again">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
 <p class="grown">For grown-ups: the real dismissal laws, judged visually with a DRS-style review — bowled, caught behind off the edge, LBW hitting or missing, the pitched-outside-leg rule, and why a bounced catch is never out. Ages 6–10.</p>
 
+<script src="assets/scoring.js"></script>
 <script>
 const $=id=>document.getElementById(id);
 const ROUNDS=8;
@@ -133,7 +135,16 @@ function cheer(){[523,659,784,1047].forEach((f,k)=>tone(f,.22,"triangle",k*.08,.
 function knock(){tone(220,.07,"square",0,.15);}
 function confetti(n){const em=["🏏","⭐","👆","🎉"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
-function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<ROUNDS;i++){const d=document.createElement("div");d.className="stamp"+(i<idx?" on":"");d.textContent="🏏";el.appendChild(d);}}
+function buildPass(){
+  const el=$("pass"); el.innerHTML="";
+  for(let i=0;i<ROUNDS;i++){
+    const d=document.createElement("div");
+    const r=Scoring._state.rounds[i];
+    if(r){ d.className="stamp "+Scoring.tierClass(r.tier); d.textContent=r.tier==="grey"?"🆕":"🏏"; }
+    else { d.className="stamp"; d.textContent="🏏"; }
+    el.appendChild(d);
+  }
+}
 
 /* Geometry: bowler's-end view. Stumps occupy x 183..216, y 62..110.
    Leg stump line = x 216; pitching right of it = outside leg (right-handed batter). */
@@ -146,6 +157,14 @@ const WHY={
   outsideLeg:"NOT OUT! The ball PITCHED outside leg stump — see the yellow bounce past the red line? That can never be LBW, however plumb it looks.",
   edge:"OUT — caught behind! It kissed the edge of the bat (see the spark ✨) and the keeper held on. Any touch of the bat plus a catch is out.",
   bump:"NOT OUT! It came off the bat but BOUNCED before the fielder grabbed it. A catch only counts on the full."
+};
+const LABEL={
+  bowled:"Out, bowled",
+  lbwOut:"Out, LBW hitting the stumps",
+  lbwMiss:"Not out, LBW missing the stumps",
+  outsideLeg:"Not out, pitched outside leg",
+  edge:"Out, caught behind off the edge",
+  bump:"Not out, bounced before the catch"
 };
 function rx(a,b){return a+Math.random()*(b-a);}
 function makeScenario(kind){
@@ -165,6 +184,7 @@ function setBall(x,y){const b=$("cball");b.setAttribute("cx",x);b.setAttribute("
 function render(){
   locked=true; firstTry=true;
   cur=seq[idx]?makeScenario(seq[idx]):makeScenario(pick(CASES));
+  Scoring.beginRound(Scoring.idOf({q:cur.kind}), LABEL[cur.kind]);
   window.__case={kind:cur.kind,out:cur.out}; // test/debug hook
   ["legline","leglab","hitbox","hitlab","bounce","track","proj","spark","fielder"].forEach(id=>$(id).setAttribute("opacity",0));
   $("bail1").setAttribute("transform",""); $("bail2").setAttribute("transform","");
@@ -242,33 +262,42 @@ function reveal(){
   if(k==="bowled"){ $("hitbox").setAttribute("opacity",1); $("hitlab").setAttribute("opacity",1); }
 }
 function choose(callOut){
-  if(locked)return;
+  if(Scoring.answered()||!Scoring.armed())return;
   const correct=callOut===cur.out;
+  var res=Scoring.answer(correct);
+  locked=true;
   if(correct){
-    locked=true; if(firstTry)perfect++;
+    if(firstTry)perfect++;
     reveal();
     $("bOut").disabled=true; $("bNot").disabled=true;
     const why=WHY[cur.kind];
     $("verdict").textContent=(cur.out?"👆 ":"🙅 ")+why;
-    toast(pick(["Great decision! 🎉","The review agrees! 📺","Elite umpiring! 🙌"]));
+    toast(res.tier==="gold"?pick(["Great decision! 🎉","The review agrees! 📺","Elite umpiring! 🙌"]):pick(["Nice work getting there! 👍","Worked it out! ⭐"]));
     speak(why); confetti(10); cheer();
     idx++; buildPass();
     $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next ball →";
     $("next").classList.add("show");
   } else {
-    firstTry=false;
-    toast("Watch the replay clues 👀 Try again!");
-    speak("Have another look. Where did it pitch, and what did it hit? Try again.");
+    reveal();
+    $("bOut").disabled=true; $("bNot").disabled=true;
+    const why=WHY[cur.kind];
+    $("verdict").textContent=(cur.out?"👆 ":"🙅 ")+why;
+    toast("Now you know it! 🆕");
+    speak(why);
+    idx++; buildPass();
+    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next ball →";
+    $("next").classList.add("show");
   }
 }
 let seq=[];
 function startRun(){
+  Scoring.init({slug:"hows-that", total:ROUNDS, noun:"call", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
   seq=shuffle(CASES.concat(shuffle(CASES).slice(0,ROUNDS-CASES.length)));
   idx=0; perfect=0; render();
 }
 $("bOut").onclick=()=>choose(true);
 $("bNot").onclick=()=>choose(false);
-$("next").onclick=()=>{ if(idx>=ROUNDS){ $("finp").textContent = perfect>=7 ? "Perfect reviews on "+perfect+" of 8 — the ICC elite panel calls!" : "All 8 appeals answered, "+perfect+" on the first look. Play again to go perfect!"; $("finale").classList.remove("hidden"); confetti(24); speak("Elite umpire!"); } else render(); };
+$("next").onclick=()=>{ if(idx>=ROUNDS){ document.querySelector("#finale h1").textContent=Scoring.headline(); $("scoreboard").innerHTML=Scoring.finaleHTML(); $("finp").textContent = perfect>=7 ? "Perfect reviews on "+perfect+" of 8 — the ICC elite panel calls!" : "All 8 appeals answered, "+perfect+" on the first look. Play again to go perfect!"; $("finale").classList.remove("hidden"); confetti(24); speak("Elite umpire!"); } else render(); };
 $("go").onclick=()=>{ $("start").classList.add("hidden"); ctx(); startRun(); };
 $("again").onclick=()=>{ $("finale").classList.add("hidden"); startRun(); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};

@@ -79,18 +79,20 @@
 
 <div class="cover hidden" id="finale">
   <div style="font-size:3.8rem">🕰️🏅</div>
-  <h1>Right on time!</h1>
+  <h1 id="finaleH">Right on time!</h1>
   <p id="finp">Never late for kick-off again. Timekeeper of the season!</p>
+  <div id="finaleStats"></div>
   <div>
     <button class="bigbtn" id="again">Play again 🔁</button>
     <a class="homebtn" id="homelink" href="/play">All games 🎮</a>
   </div>
 </div>
 
+<script src="assets/scoring.js"></script>
 <script>
 const $=id=>document.getElementById(id);
 const N=8;
-let sound=true,LEVEL=3,idx=0,done=false,actx=null;
+let sound=true,LEVEL=3,idx=0,done=false,actx=null,nudges=0;
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
@@ -100,19 +102,43 @@ function cheer(){[523,659,784,1047].forEach((f,k)=>tone(f,.24,"triangle",k*.09,.
 function buzz(){tone(170,.2,"sine",0,.1);}
 function confetti(n){const em=["🕰️","⭐","🎉","⏱️"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
-function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");d.className="stamp"+(i<idx?" on":"");d.textContent="⏱️";el.appendChild(d);}}
+function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");const r=Scoring._state.rounds[i];
+  if(r){d.className="stamp "+Scoring.tierClass(r.tier);d.textContent=r.tier==="grey"?"🆕":"⏱️";}
+  else{d.className="stamp"+(i<idx?" on":"");d.textContent="⏱️";}
+  el.appendChild(d);}}
+/* Honest Answer loop — PLAY-MASTERY-SPEC.md §1.
+   CHOICE sites end the round on one answer. BUILD sites nudge without ending it:
+   a construction task is scored on directness, like Note Value Lab, not on a
+   single tap. */
 function onCorrect(msg,sayMsg){
-  done=true;$("reveal").textContent="✅ "+msg;
-  toast(pick(["Yes! 🎉","Brilliant! ⭐","Maths star! 🙌"]));
+  if(done)return;
+  done=true;
+  const res = nudges>0 ? Scoring.answerTier("silver") : Scoring.answer(true);
+  $("reveal").textContent="✅ "+msg;
+  toast(res.tier==="gold"?pick(["Yes! 🎉","Brilliant! ⭐","Maths star! 🙌"]):"You worked it out! 👍");
   cheer();confetti(9);speak(sayMsg||msg);
   idx++;buildPass();
   $("next").disabled=false;
   $("next").textContent = idx>=N ? "See my score →" : "Next →";
 }
-function onWrong(hint){toast(hint||"Try again 🤔");buzz();speak("Not quite. Try again!");}
-function finish(){$("finale").classList.remove("hidden");confetti(24);cheer();speak("Right on time! Timekeeper of the season!");}
+/* CHOICE miss: one answer, then the correct answer is shown and it still teaches. */
+function onMiss(msg,sayMsg){
+  if(done)return;
+  done=true;
+  Scoring.answerTier("grey");
+  $("reveal").textContent="🆕 "+msg;
+  toast("Now you know it! 🆕");
+  learnTone();speak(sayMsg||msg);
+  idx++;buildPass();
+  $("next").disabled=false;
+  $("next").textContent = idx>=N ? "See my score →" : "Next →";
+}
+/* BUILD nudge: does NOT end the round, but costs the gold. */
+function onWrong(hint){ nudges++; toast(hint||"Not yet 🤔"); learnTone(); speak(hint||"Not yet. Have another look."); }
+function learnTone(){ [392,523].forEach((f,k)=>tone(f,.22,"triangle",k*.11,.11)); }
+function finish(){$("finaleH").textContent=Scoring.headline();$("finaleStats").innerHTML=Scoring.finaleHTML();$("finale").classList.remove("hidden");confetti(24);cheer();speak("Right on time! Timekeeper of the season!");}
 $("next")&&($("next").onclick=()=>{ if(!done)return; if(idx>=N){finish();} else render(); });
-function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":"🌟 Year 4");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
+function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":"🌟 Year 4");$("start").classList.add("hidden");ctx();idx=0;Scoring.init({slug:"kickoff-clock",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"},noun:"one"});makeRounds();render();}
 $("lvl3").onclick=()=>startRun(3);
 $("lvl4").onclick=()=>startRun(4);
 $("again").onclick=()=>{$("finale").classList.add("hidden");$("start").classList.remove("hidden");};
@@ -125,11 +151,12 @@ let rounds=[];
 function ri(a,b){return a+Math.floor(Math.random()*(b-a+1));}
 function mcq(options,ans,msg,say){
   const o=document.createElement("div");o.className="opts"+(options.length===2?" two":"");
+  const btns=[];
   options.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.innerHTML=t;
-    b.onclick=()=>{if(done)return;
+    b.onclick=()=>{if(done||!Scoring.armed())return;
       if(i===ans){b.classList.add("good");onCorrect(msg,say);}
-      else{b.classList.add("bad");setTimeout(()=>b.classList.remove("bad"),420);onWrong();}};
-    o.appendChild(b);});
+      else{b.classList.add("picked");btns[ans].classList.add("shown");onMiss(msg,say);}};
+    o.appendChild(b);btns.push(b);});
   $("zone").appendChild(o);
 }
 function clockSVG(h,m){
@@ -153,8 +180,10 @@ function makeRounds(){
   rounds=shuffle(kinds);
 }
 function render(){
-  done=false;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
-  ({readc:rRead,conv:rConv,dur:rDur,perim:rPerim,area:rArea,units:rUnits,roman:rRoman})[rounds[idx]]();
+  done=false;nudges=0;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
+  const k=rounds[idx];
+  ({readc:rRead,conv:rConv,dur:rDur,perim:rPerim,area:rArea,units:rUnits,roman:rRoman})[k]();
+  Scoring.beginRound(Scoring.idOf({q:$("q").textContent}), k);
 }
 /* read the stadium clock */
 function rRead(){

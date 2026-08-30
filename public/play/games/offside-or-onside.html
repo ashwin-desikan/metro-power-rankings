@@ -94,10 +94,12 @@
   <div style="font-size:4rem">🥇🚩</div>
   <h1>Top linesman!</h1>
   <p id="finp">You read the line like a pro referee.</p>
+  <div id="scoreboard"></div>
   <button class="big" id="again">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
 
+<script src="assets/scoring.js"></script>
 <script>
 const $=id=>document.getElementById(id);
 const ROUNDS=8;
@@ -107,7 +109,16 @@ function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
 function confetti(n){const em=["🚩","⭐","⚽","🎉"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
-function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<ROUNDS;i++){const d=document.createElement("div");d.className="stamp"+(i<idx?" on":"");d.textContent="🚩";el.appendChild(d);}}
+function buildPass(){
+  const el=$("pass"); el.innerHTML="";
+  for(let i=0;i<ROUNDS;i++){
+    const d=document.createElement("div");
+    const r=Scoring._state.rounds[i];
+    if(r){ d.className="stamp "+Scoring.tierClass(r.tier); d.textContent=r.tier==="grey"?"🆕":"🚩"; }
+    else { d.className="stamp"; d.textContent="🚩"; }
+    el.appendChild(d);
+  }
+}
 
 /* scenario cases:
    off  — attacker beyond the last defender (OFFSIDE)
@@ -122,6 +133,13 @@ const WHY={
   behind:"Onside! He was behind the defenders when the ball was kicked.",
   own:"Onside! You can never be offside in your own half.",
   ball:"Onside! He was behind the ball. That is always onside."
+};
+const LABEL={
+  off:"Offside, past the last defender",
+  lvl:"Onside, level with the defender",
+  behind:"Onside, behind the defender",
+  own:"Onside, in his own half",
+  ball:"Onside, behind the ball"
 };
 function rx(min,max){return min+Math.random()*(max-min);}
 function makeScenario(kind){
@@ -156,6 +174,7 @@ function jersey(g,x,y,color,num,ring){
 function render(){
   locked=false; firstTry=true;
   cur=seq[idx]?makeScenario(seq[idx]):makeScenario(pick(CASES));
+  Scoring.beginRound(Scoring.idOf({q:cur.kind}), LABEL[cur.kind]);
   const g=$("players"); g.innerHTML="";
   jersey(g,200,26,"#f0c33c","1","#b78a00");                 // keeper
   cur.defs.forEach((d,i)=>jersey(g,d.x,d.y,"#3b6fd4",String(i+2)));
@@ -182,34 +201,43 @@ function reveal(){
   if(cur.offside){ $("flagman").setAttribute("y",cur.Dy); $("flagman").setAttribute("opacity",1); }
 }
 function choose(callOffside){
-  if(locked)return;
+  if(Scoring.answered()||!Scoring.armed())return;
   const correct = callOffside===cur.offside;
+  var res=Scoring.answer(correct);
+  locked=true;
   if(correct){
-    locked=true; if(firstTry)perfect++;
+    if(firstTry)perfect++;
     reveal();
     $("bOn").disabled=true; $("bOff").disabled=true;
     const why=WHY[cur.kind];
     $("verdict").textContent=(cur.offside?"🚩 ":"✅ ")+why;
-    toast(pick(["Great call! 🎉","Sharp eyes! ⭐","Just like a real ref! 🙌"]));
+    toast(res.tier==="gold"?pick(["Great call! 🎉","Sharp eyes! ⭐","Just like a real ref! 🙌"]):pick(["Nice work getting there! 👍","Worked it out! ⭐"]));
     speak(why); confetti(10);
     idx++; buildPass();
     $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next play →";
     $("next").classList.add("show");
   } else {
-    firstTry=false;
-    toast("Look at the yellow-shirt line 👀 Try again!");
-    speak("Not quite. Look where the last defender is standing, then try again.");
+    reveal();
+    $("bOn").disabled=true; $("bOff").disabled=true;
+    const why=WHY[cur.kind];
+    $("verdict").textContent=(cur.offside?"🚩 ":"✅ ")+why;
+    toast("Now you know it! 🆕");
+    speak(why);
+    idx++; buildPass();
+    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next play →";
+    $("next").classList.add("show");
   }
 }
 let seq=[];
 function startRun(){
+  Scoring.init({slug:"offside-or-onside", total:ROUNDS, noun:"call", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
   // guarantee variety: all five cases + 3 random
   seq=shuffle(CASES.concat(shuffle(CASES).slice(0,ROUNDS-CASES.length)));
   idx=0; perfect=0; render();
 }
 $("bOn").onclick=()=>choose(false);
 $("bOff").onclick=()=>choose(true);
-$("next").onclick=()=>{ if(idx>=ROUNDS){ $("finp").textContent = perfect>=7 ? "Perfect calls on "+perfect+" of 8. FIFA, call this kid!" : "You got all 8, with "+perfect+" first-time calls. Play again to go perfect!"; $("finale").classList.remove("hidden"); confetti(24); speak("Top linesman!"); } else render(); };
+$("next").onclick=()=>{ if(idx>=ROUNDS){ document.querySelector("#finale h1").textContent=Scoring.headline(); $("scoreboard").innerHTML=Scoring.finaleHTML(); $("finp").textContent = perfect>=7 ? "Perfect calls on "+perfect+" of 8. FIFA, call this kid!" : "You got all 8, with "+perfect+" first-time calls. Play again to go perfect!"; $("finale").classList.remove("hidden"); confetti(24); speak("Top linesman!"); } else render(); };
 $("go").onclick=()=>{ $("start").classList.add("hidden"); startRun(); };
 $("again").onclick=()=>{ $("finale").classList.add("hidden"); startRun(); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
