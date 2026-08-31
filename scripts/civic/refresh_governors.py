@@ -26,7 +26,7 @@ SELECT ?stateLabel ?govLabel ?partyLabel ?start WHERE {
   FILTER NOT EXISTS { ?st pq:P582 ?end }      # current (no end date)
   OPTIONAL { ?st pq:P580 ?start }
   OPTIONAL { ?gov wdt:P102 ?party }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }
 """
 

@@ -119,7 +119,7 @@ SELECT ?person ?personLabel ?start ?end ?partyLabel WHERE {
   OPTIONAL { ?st pq:P582 ?end. }
   OPTIONAL { ?person wdt:P102 ?partyItem. }
   SERVICE wikibase:label {
-    bd:serviceParam wikibase:language "en".
+    bd:serviceParam wikibase:language "en,mul".
     ?person rdfs:label ?personLabel.
     ?partyItem rdfs:label ?partyLabel.
   }
@@ -152,7 +152,7 @@ SELECT ?person ?personLabel ?posLabel ?start ?end ?partyLabel WHERE {
   OPTIONAL { ?st pq:P582 ?end. }
   OPTIONAL { ?person wdt:P102 ?partyItem. }
   SERVICE wikibase:label {
-    bd:serviceParam wikibase:language "en".
+    bd:serviceParam wikibase:language "en,mul".
     ?person rdfs:label ?personLabel.
     ?partyItem rdfs:label ?partyLabel.
   }
@@ -412,7 +412,7 @@ SELECT ?person ?personLabel ?start ?end WHERE {
   ?person wdt:P31 wd:Q5 .
   OPTIONAL { ?st pq:P580 ?start. }
   OPTIONAL { ?st pq:P582 ?end. }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en".
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul".
     ?person rdfs:label ?personLabel. }
 }""" % (name, name)
 
@@ -430,7 +430,7 @@ SELECT DISTINCT ?person ?personLabel ?posLabel ?start ?end WHERE {
   ?person wdt:P31 wd:Q5 . ?person p:P39 ?st . ?st ps:P39 ?pos .
   OPTIONAL { ?st pq:P580 ?start. }
   OPTIONAL { ?st pq:P582 ?end. }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en".
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul".
     ?person rdfs:label ?personLabel. }
 }""" % name
 

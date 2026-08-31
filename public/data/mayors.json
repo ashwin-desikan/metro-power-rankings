@@ -359,6 +359,14 @@
     "since": "",
     "title": "Mayor"
   },
+  "london": {
+    "city": "London",
+    "country": "United Kingdom",
+    "mayor": "Sadiq Khan",
+    "party": "Labour Party",
+    "since": "2016-05-09",
+    "title": "Mayor"
+  },
   "los-angeles": {
     "city": "Los Angeles",
     "country": "United States",

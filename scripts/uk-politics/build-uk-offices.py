@@ -167,7 +167,7 @@ SELECT ?person ?personLabel ?start ?end ?partyLabel ?jur WHERE {
   OPTIONAL { ?person wdt:P102 ?partyItem. }
   OPTIONAL { ?pos wdt:P1001 ?jur. }
   SERVICE wikibase:label {
-    bd:serviceParam wikibase:language "en".
+    bd:serviceParam wikibase:language "en,mul".
     ?person rdfs:label ?personLabel.
     ?partyItem rdfs:label ?partyLabel.
   }

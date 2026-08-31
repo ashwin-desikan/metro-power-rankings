@@ -80,7 +80,7 @@ _CORE_OPTIONALS = """
   OPTIONAL { ?sub wdt:P1449 ?nickname. FILTER(lang(?nickname) = "en") }
   OPTIONAL { ?sub wdt:P194 ?legislature. }
   OPTIONAL { ?sub wdt:P610 ?hp. OPTIONAL { ?hp wdt:P2044 ?hpElev. } }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 """
 
 

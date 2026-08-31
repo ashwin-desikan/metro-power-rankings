@@ -26,7 +26,7 @@ def query_senators():
       FILTER NOT EXISTS {{ ?st pq:P582 ?end }}
       OPTIONAL {{ ?person wdt:P102 ?party }}
       OPTIONAL {{ ?st pq:P768 ?district }}
-      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en,mul". }}
     }}"""
     seen = {}
     for b in sparql(q):

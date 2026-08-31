@@ -198,7 +198,7 @@ def resolve_current_holders(cache, office_by_key):
       FILTER NOT EXISTS {{ ?st pq:P582 ?end }}
       OPTIONAL {{ ?person wdt:P102 ?party }}
       OPTIONAL {{ ?st pq:P580 ?start }}
-      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en,mul". }}
     }}"""
     rows = sparql(query, timeout=120)
     by_key = {}

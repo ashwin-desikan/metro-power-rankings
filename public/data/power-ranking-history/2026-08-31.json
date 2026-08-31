@@ -451,6 +451,14 @@
     },
     {
       "rank": 57,
+      "name": "Sadiq Khan",
+      "bare": "sadiq khan",
+      "category": "Mayor",
+      "jurisdiction": "London",
+      "power": 130.1
+    },
+    {
+      "rank": 58,
       "name": "Larry Page",
       "bare": "larry page",
       "category": "Billionaire",
@@ -458,7 +466,7 @@
       "power": 127.5
     },
     {
-      "rank": 58,
+      "rank": 59,
       "name": "Volodymyr Zelenskyy",
       "bare": "volodymyr zelenskyy",
       "category": "National",
@@ -466,7 +474,7 @@
       "power": 126.5
     },
     {
-      "rank": 59,
+      "rank": 60,
       "name": "Jeff Bezos",
       "bare": "jeff bezos",
       "category": "Billionaire",
@@ -474,7 +482,7 @@
       "power": 122.6
     },
     {
-      "rank": 60,
+      "rank": 61,
       "name": "MrBeast",
       "bare": "mrbeast",
       "category": "Culture",
@@ -482,7 +490,7 @@
       "power": 120.0
     },
     {
-      "rank": 61,
+      "rank": 62,
       "name": "Huang Kunming",
       "bare": "huang kunming",
       "category": "Sub-national",
@@ -490,7 +498,7 @@
       "power": 118.9
     },
     {
-      "rank": 62,
+      "rank": 63,
       "name": "Sergey Brin",
       "bare": "sergey brin",
       "category": "Billionaire",
@@ -498,7 +506,7 @@
       "power": 117.6
     },
     {
-      "rank": 63,
+      "rank": 64,
       "name": "Michael Dell",
       "bare": "michael dell",
       "category": "Billionaire",
@@ -506,7 +514,7 @@
       "power": 117.3
     },
     {
-      "rank": 64,
+      "rank": 65,
       "name": "Greg Abbott",
       "bare": "greg abbott",
       "category": "Sub-national",
@@ -514,7 +522,7 @@
       "power": 114.7
     },
     {
-      "rank": 65,
+      "rank": 66,
       "name": "Ron O'Hanley",
       "bare": "ron o'hanley",
       "category": "Finance",
@@ -522,7 +530,7 @@
       "power": 114.0
     },
     {
-      "rank": 66,
+      "rank": 67,
       "name": "Brian Roberts",
       "bare": "brian roberts",
       "category": "Media",
@@ -530,7 +538,7 @@
       "power": 110.0
     },
     {
-      "rank": 67,
+      "rank": 68,
       "name": "Lionel Messi",
       "bare": "lionel messi",
       "category": "Culture",
@@ -538,7 +546,7 @@
       "power": 108.0
     },
     {
-      "rank": 68,
+      "rank": 69,
       "name": "Emmanuel Grégoire",
       "bare": "emmanuel grégoire",
       "category": "Mayor",
@@ -546,7 +554,7 @@
       "power": 103.8
     },
     {
-      "rank": 69,
+      "rank": 70,
       "name": "C.C. Wei",
       "bare": "c.c. wei",
       "category": "Corporate",
@@ -554,7 +562,7 @@
       "power": 103.3
     },
     {
-      "rank": 70,
+      "rank": 71,
       "name": "Aleksander Čeferin",
       "bare": "aleksander čeferin",
       "category": "Sport",
@@ -562,7 +570,7 @@
       "power": 100.0
     },
     {
-      "rank": 71,
+      "rank": 72,
       "name": "Lachlan Murdoch",
       "bare": "lachlan murdoch",
       "category": "Media",
@@ -570,7 +578,7 @@
       "power": 99.0
     },
     {
-      "rank": 72,
+      "rank": 73,
       "name": "Yuriko Koike",
       "bare": "yuriko koike",
       "category": "Mayor",
@@ -578,7 +586,7 @@
       "power": 96.7
     },
     {
-      "rank": 73,
+      "rank": 74,
       "name": "Taylor Swift",
       "bare": "taylor swift",
       "category": "Culture",
@@ -586,7 +594,7 @@
       "power": 96.0
     },
     {
-      "rank": 74,
+      "rank": 75,
       "name": "Rob Jetten",
       "bare": "rob jetten",
       "category": "National",
@@ -594,7 +602,7 @@
       "power": 94.7
     },
     {
-      "rank": 75,
+      "rank": 76,
       "name": "Ron DeSantis",
       "bare": "ron desantis",
       "category": "Sub-national",
@@ -602,7 +610,7 @@
       "power": 94.3
     },
     {
-      "rank": 76,
+      "rank": 77,
       "name": "⚠️ Abdel Fattah el-Sisi",
       "bare": "abdel fattah el-sisi",
       "category": "National",
@@ -610,7 +618,7 @@
       "power": 93.4
     },
     {
-      "rank": 77,
+      "rank": 78,
       "name": "Lin Wu",
       "bare": "lin wu",
       "category": "Sub-national",
@@ -618,7 +626,7 @@
       "power": 92.2
     },
     {
-      "rank": 78,
+      "rank": 79,
       "name": "Mark Zuckerberg",
       "bare": "mark zuckerberg",
       "category": "Billionaire",
@@ -626,7 +634,7 @@
       "power": 91.9
     },
     {
-      "rank": 79,
+      "rank": 80,
       "name": "Daniel Lurie",
       "bare": "daniel lurie",
       "category": "Mayor",
@@ -634,7 +642,7 @@
       "power": 90.0
     },
     {
-      "rank": 80,
+      "rank": 81,
       "name": "👑 Naruhito",
       "bare": "naruhito",
       "category": "Crown",
@@ -642,7 +650,7 @@
       "power": 90.0
     },
     {
-      "rank": 81,
+      "rank": 82,
       "name": "Kathy Hochul",
       "bare": "kathy hochul",
       "category": "Sub-national",
@@ -650,7 +658,7 @@
       "power": 89.5
     },
     {
-      "rank": 82,
+      "rank": 83,
       "name": "Larry Ellison",
       "bare": "larry ellison",
       "category": "Billionaire",
@@ -658,7 +666,7 @@
       "power": 89.3
     },
     {
-      "rank": 83,
+      "rank": 84,
       "name": "Asif Ali Zardari",
       "bare": "asif ali zardari",
       "category": "National",
@@ -666,7 +674,7 @@
       "power": 88.7
     },
     {
-      "rank": 84,
+      "rank": 85,
       "name": "Hock Tan",
       "bare": "hock tan",
       "category": "Corporate",
@@ -674,7 +682,7 @@
       "power": 88.2
     },
     {
-      "rank": 85,
+      "rank": 86,
       "name": "David Zaslav",
       "bare": "david zaslav",
       "category": "Media",
@@ -682,7 +690,7 @@
       "power": 88.0
     },
     {
-      "rank": 86,
+      "rank": 87,
       "name": "Ahmed el-Tayeb",
       "bare": "ahmed el-tayeb",
       "category": "Faith",
@@ -690,7 +698,7 @@
       "power": 88.0
     },
     {
-      "rank": 87,
+      "rank": 88,
       "name": "Andrew Bailey",
       "bare": "andrew bailey",
       "category": "Central bank",
@@ -698,7 +706,7 @@
       "power": 87.3
     },
     {
-      "rank": 88,
+      "rank": 89,
       "name": "Amin H. Nasser",
       "bare": "amin h. nasser",
       "category": "Corporate",
@@ -706,7 +714,7 @@
       "power": 85.9
     },
     {
-      "rank": 89,
+      "rank": 90,
       "name": "Jamie Dimon",
       "bare": "jamie dimon",
       "category": "Finance",
@@ -714,7 +722,7 @@
       "power": 84.0
     },
     {
-      "rank": 90,
+      "rank": 91,
       "name": "Donald Tusk",
       "bare": "donald tusk",
       "category": "National",
@@ -722,7 +730,7 @@
       "power": 83.1
     },
     {
-      "rank": 91,
+      "rank": 92,
       "name": "Yin Yong",
       "bare": "yin yong",
       "category": "Mayor",
@@ -730,7 +738,7 @@
       "power": 82.1
     },
     {
-      "rank": 92,
+      "rank": 93,
       "name": "Anwar Ibrahim",
       "bare": "anwar ibrahim",
       "category": "National",
@@ -738,7 +746,7 @@
       "power": 81.6
     },
     {
-      "rank": 93,
+      "rank": 94,
       "name": "Gong Zheng",
       "bare": "gong zheng",
       "category": "Mayor",
@@ -746,7 +754,7 @@
       "power": 81.6
     },
     {
-      "rank": 94,
+      "rank": 95,
       "name": "Swiss Federal Council",
       "bare": "swiss federal council",
       "category": "National",
@@ -754,7 +762,7 @@
       "power": 81.1
     },
     {
-      "rank": 95,
+      "rank": 96,
       "name": "Oh Se-hoon",
       "bare": "oh se-hoon",
       "category": "Mayor",
@@ -762,7 +770,7 @@
       "power": 80.4
     },
     {
-      "rank": 96,
+      "rank": 97,
       "name": "Wang Hao",
       "bare": "wang hao",
       "category": "Sub-national",
@@ -770,7 +778,7 @@
       "power": 78.9
     },
     {
-      "rank": 97,
+      "rank": 98,
       "name": "Karen Bass",
       "bare": "karen bass",
       "category": "Mayor",
@@ -778,7 +786,7 @@
       "power": 78.3
     },
     {
-      "rank": 98,
+      "rank": 99,
       "name": "Valérie Pécresse",
       "bare": "valérie pécresse",
       "category": "Sub-national",
@@ -786,20 +794,12 @@
       "power": 76.2
     },
     {
-      "rank": 99,
+      "rank": 100,
       "name": "Sun Zhiyang",
       "bare": "sun zhiyang",
       "category": "Mayor",
       "jurisdiction": "Guangzhou",
       "power": 75.9
-    },
-    {
-      "rank": 100,
-      "name": "Cyril Ramaphosa",
-      "bare": "cyril ramaphosa",
-      "category": "National",
-      "jurisdiction": "South Africa",
-      "power": 75.3
     }
   ]
 }

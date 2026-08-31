@@ -145,7 +145,7 @@ def resolve_mayors(cache):
       FILTER NOT EXISTS {{ ?st pq:P582 ?e }}
       OPTIONAL {{ ?st pq:P580 ?start }}
       OPTIONAL {{ ?mayor wdt:P102 ?party }}
-      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en,mul". }}
     }}"""
     # A city usually carries SEVERAL open (no end-date) P6 statements: on
     # Wikidata a predecessor's term often never got an end date, and some

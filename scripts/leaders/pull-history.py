@@ -214,7 +214,7 @@ SELECT ?prop ?personLabel ?start ?end ?officeLabel ?formLabel WHERE {
     ?country p:P35 ?st. ?st ps:P35 ?person. BIND("P35" AS ?prop)
     OPTIONAL { ?st pq:P580 ?start } OPTIONAL { ?st pq:P582 ?end }
   }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }
 """
 

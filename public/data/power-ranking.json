@@ -921,6 +921,22 @@
       "delta": 0
     },
     {
+      "name": "Sadiq Khan",
+      "role": "Mayor of London",
+      "category": "Mayor",
+      "jurisdiction": "London",
+      "metro": "London",
+      "metroSlug": "london",
+      "jscore": 180.7,
+      "weight": 0.72,
+      "power": 130.1,
+      "jurisdictionHref": "/rankings/london",
+      "transition": "",
+      "prevRank": 57,
+      "isNew": false,
+      "delta": 0
+    },
+    {
       "name": "Larry Page",
       "role": "Billionaire (Technology)",
       "category": "Billionaire",
@@ -932,7 +948,7 @@
       "power": 127.5,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 57,
+      "prevRank": 58,
       "isNew": false,
       "delta": 0
     },
@@ -948,7 +964,7 @@
       "power": 126.5,
       "jurisdictionHref": "/countries/ukraine",
       "transition": "",
-      "prevRank": 58,
+      "prevRank": 59,
       "isNew": false,
       "delta": 0
     },
@@ -964,7 +980,7 @@
       "power": 122.6,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 59,
+      "prevRank": 60,
       "isNew": false,
       "delta": 0
     },
@@ -980,7 +996,7 @@
       "power": 120.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 60,
+      "prevRank": 61,
       "isNew": false,
       "delta": 0
     },
@@ -996,7 +1012,7 @@
       "power": 118.9,
       "jurisdictionHref": "/states/guangdong",
       "transition": "",
-      "prevRank": 61,
+      "prevRank": 62,
       "isNew": false,
       "delta": 0
     },
@@ -1012,7 +1028,7 @@
       "power": 117.6,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 62,
+      "prevRank": 63,
       "isNew": false,
       "delta": 0
     },
@@ -1028,7 +1044,7 @@
       "power": 117.3,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 63,
+      "prevRank": 64,
       "isNew": false,
       "delta": 0
     },
@@ -1044,7 +1060,7 @@
       "power": 114.7,
       "jurisdictionHref": "/states/texas",
       "transition": "Seeking a 4th term; Texas gubernatorial election, 3 Nov 2026",
-      "prevRank": 64,
+      "prevRank": 65,
       "isNew": false,
       "delta": 0
     },
@@ -1060,7 +1076,7 @@
       "power": 114.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 65,
+      "prevRank": 66,
       "isNew": false,
       "delta": 0
     },
@@ -1076,7 +1092,7 @@
       "power": 110.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 66,
+      "prevRank": 67,
       "isNew": false,
       "delta": 0
     },
@@ -1092,7 +1108,7 @@
       "power": 108.0,
       "jurisdictionHref": "/teams/football/inter-miami-cf",
       "transition": "",
-      "prevRank": 67,
+      "prevRank": 68,
       "isNew": false,
       "delta": 0
     },
@@ -1108,7 +1124,7 @@
       "power": 103.8,
       "jurisdictionHref": "/rankings/paris",
       "transition": "",
-      "prevRank": 68,
+      "prevRank": 69,
       "isNew": false,
       "delta": 0
     },
@@ -1124,7 +1140,7 @@
       "power": 103.3,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 69,
+      "prevRank": 70,
       "isNew": false,
       "delta": 0
     },
@@ -1140,7 +1156,7 @@
       "power": 100.0,
       "jurisdictionHref": "/teams/football",
       "transition": "",
-      "prevRank": 70,
+      "prevRank": 71,
       "isNew": false,
       "delta": 0
     },
@@ -1156,7 +1172,7 @@
       "power": 99.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 71,
+      "prevRank": 72,
       "isNew": false,
       "delta": 0
     },
@@ -1172,7 +1188,7 @@
       "power": 96.7,
       "jurisdictionHref": "/rankings/tokyo",
       "transition": "",
-      "prevRank": 72,
+      "prevRank": 73,
       "isNew": false,
       "delta": 0
     },
@@ -1188,7 +1204,7 @@
       "power": 96.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 73,
+      "prevRank": 74,
       "isNew": false,
       "delta": 0
     },
@@ -1204,7 +1220,7 @@
       "power": 94.7,
       "jurisdictionHref": "/countries/netherlands",
       "transition": "",
-      "prevRank": 74,
+      "prevRank": 75,
       "isNew": false,
       "delta": 0
     },
@@ -1220,7 +1236,7 @@
       "power": 94.3,
       "jurisdictionHref": "/states/florida-uruguay",
       "transition": "Term-limited; leaves office Jan 2027 (Florida gubernatorial election, 3 Nov 2026)",
-      "prevRank": 75,
+      "prevRank": 76,
       "isNew": false,
       "delta": 0
     },
@@ -1236,7 +1252,7 @@
       "power": 93.4,
       "jurisdictionHref": "/countries/egypt",
       "transition": "",
-      "prevRank": 76,
+      "prevRank": 77,
       "isNew": false,
       "delta": 0
     },
@@ -1252,7 +1268,7 @@
       "power": 92.2,
       "jurisdictionHref": "/states/shandong",
       "transition": "",
-      "prevRank": 77,
+      "prevRank": 78,
       "isNew": false,
       "delta": 0
     },
@@ -1268,7 +1284,7 @@
       "power": 91.9,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 78,
+      "prevRank": 79,
       "isNew": false,
       "delta": 0
     },
@@ -1284,7 +1300,7 @@
       "power": 90.0,
       "jurisdictionHref": "/rankings/san-francisco-san-jose",
       "transition": "",
-      "prevRank": 79,
+      "prevRank": 80,
       "isNew": false,
       "delta": 0
     },
@@ -1300,7 +1316,7 @@
       "power": 90.0,
       "jurisdictionHref": "/countries/japan",
       "transition": "",
-      "prevRank": 80,
+      "prevRank": 81,
       "isNew": false,
       "delta": 0
     },
@@ -1316,7 +1332,7 @@
       "power": 89.5,
       "jurisdictionHref": "/states/new-york",
       "transition": "Seeking re-election; New York gubernatorial election, 3 Nov 2026",
-      "prevRank": 81,
+      "prevRank": 82,
       "isNew": false,
       "delta": 0
     },
@@ -1332,7 +1348,7 @@
       "power": 89.3,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 82,
+      "prevRank": 83,
       "isNew": false,
       "delta": 0
     },
@@ -1348,7 +1364,7 @@
       "power": 88.7,
       "jurisdictionHref": "/countries/pakistan",
       "transition": "",
-      "prevRank": 83,
+      "prevRank": 84,
       "isNew": false,
       "delta": 0
     },
@@ -1364,7 +1380,7 @@
       "power": 88.2,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 84,
+      "prevRank": 85,
       "isNew": false,
       "delta": 0
     },
@@ -1380,7 +1396,7 @@
       "power": 88.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 85,
+      "prevRank": 86,
       "isNew": false,
       "delta": 0
     },
@@ -1396,7 +1412,7 @@
       "power": 88.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 86,
+      "prevRank": 87,
       "isNew": false,
       "delta": 0
     },
@@ -1412,7 +1428,7 @@
       "power": 87.3,
       "jurisdictionHref": "/countries/united-kingdom",
       "transition": "",
-      "prevRank": 87,
+      "prevRank": 88,
       "isNew": false,
       "delta": 0
     },
@@ -1428,7 +1444,7 @@
       "power": 85.9,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 88,
+      "prevRank": 89,
       "isNew": false,
       "delta": 0
     },
@@ -1444,7 +1460,7 @@
       "power": 84.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 89,
+      "prevRank": 90,
       "isNew": false,
       "delta": 0
     },
@@ -1460,7 +1476,7 @@
       "power": 83.1,
       "jurisdictionHref": "/countries/poland",
       "transition": "",
-      "prevRank": 90,
+      "prevRank": 91,
       "isNew": false,
       "delta": 0
     },
@@ -1476,7 +1492,7 @@
       "power": 82.1,
       "jurisdictionHref": "/rankings/beijing",
       "transition": "",
-      "prevRank": 91,
+      "prevRank": 92,
       "isNew": false,
       "delta": 0
     },
@@ -1492,7 +1508,7 @@
       "power": 81.6,
       "jurisdictionHref": "/countries/malaysia",
       "transition": "",
-      "prevRank": 92,
+      "prevRank": 93,
       "isNew": false,
       "delta": 0
     },
@@ -1508,7 +1524,7 @@
       "power": 81.6,
       "jurisdictionHref": "/rankings/shanghai",
       "transition": "",
-      "prevRank": 93,
+      "prevRank": 94,
       "isNew": false,
       "delta": 0
     },
@@ -1524,7 +1540,7 @@
       "power": 81.1,
       "jurisdictionHref": "/countries/switzerland",
       "transition": "",
-      "prevRank": 94,
+      "prevRank": 95,
       "isNew": false,
       "delta": 0
     },
@@ -1540,7 +1556,7 @@
       "power": 80.4,
       "jurisdictionHref": "/rankings/seoul",
       "transition": "",
-      "prevRank": 95,
+      "prevRank": 96,
       "isNew": false,
       "delta": 0
     },
@@ -1556,7 +1572,7 @@
       "power": 78.9,
       "jurisdictionHref": "/states/zhejiang",
       "transition": "",
-      "prevRank": 96,
+      "prevRank": 97,
       "isNew": false,
       "delta": 0
     },
@@ -1572,7 +1588,7 @@
       "power": 78.3,
       "jurisdictionHref": "/rankings/los-angeles",
       "transition": "In a runoff for re-election; LA mayoral election, 3 Nov 2026",
-      "prevRank": 97,
+      "prevRank": 98,
       "isNew": false,
       "delta": 0
     },
@@ -1588,7 +1604,7 @@
       "power": 76.2,
       "jurisdictionHref": "/states/ile-de-france",
       "transition": "",
-      "prevRank": 98,
+      "prevRank": 99,
       "isNew": false,
       "delta": 0
     },
@@ -1603,22 +1619,6 @@
       "weight": 0.72,
       "power": 75.9,
       "jurisdictionHref": "/rankings/guangzhou",
-      "transition": "",
-      "prevRank": 99,
-      "isNew": false,
-      "delta": 0
-    },
-    {
-      "name": "Cyril Ramaphosa",
-      "role": "Pres., South Africa",
-      "category": "National",
-      "jurisdiction": "South Africa",
-      "metro": "Johannesburg",
-      "metroSlug": "johannesburg",
-      "jscore": 111.4,
-      "weight": 0.676,
-      "power": 75.3,
-      "jurisdictionHref": "/countries/south-africa",
       "transition": "",
       "prevRank": 100,
       "isNew": false,
