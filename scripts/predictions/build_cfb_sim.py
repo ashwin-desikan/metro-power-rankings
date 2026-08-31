@@ -90,6 +90,14 @@ MATCH_BLEND_W = 0.5
 WINDOW_DAYS = 8
 POLL_MAX_AGE_DAYS = 9  # a slate only grows while the AP poll is this fresh
 DEFAULT_SIMS = 10000
+MIN_TEAM_GAMES = 10    # hard floor per FBS team (played + remaining). Also the
+                       # trigger for the per-team schedule backfill below, so
+                       # the repair and the gate can never drift apart.
+MAX_BACKFILL_TEAMS = 8 # a handful of teams short is an ESPN indexing gap and
+                       # is repairable one team at a time; dozens short is the
+                       # scoreboard itself being broken, and firing 138 extra
+                       # requests at ESPN would be the wrong response - bail
+                       # and let the gate fail loudly instead.
 FCS = "__FCS__"        # pooled pseudo-team for every non-FBS opponent
 ESPN = "https://site.api.espn.com/apis"
 CORE = "https://sports.core.api.espn.com/v2"
@@ -283,10 +291,7 @@ def season_events(season, include_post=True):
             for c in comp.get("competitors", []):
                 t = c.get("team") or {}
                 tid = str(t.get("id"))
-                try:
-                    sc = int(c.get("score"))
-                except (TypeError, ValueError):
-                    sc = None
+                sc = _score_val(c.get("score"))
                 if c.get("homeAway") == "home":
                     home, hs, hloc = tid, sc, t.get("location") or ""
                 else:
@@ -313,6 +318,119 @@ def season_events(season, include_post=True):
             })
     events.sort(key=lambda e: (e["date"], e["id"]))
     return events
+
+
+def _score_val(raw):
+    """Competitor score across both ESPN shapes: the scoreboard returns a bare
+    string ("33"), the per-team schedule an object ({"value": 33.0, ...})."""
+    if isinstance(raw, dict):
+        raw = raw.get("value", raw.get("displayValue"))
+    try:
+        return int(float(raw))
+    except (TypeError, ValueError):
+        return None
+
+
+def team_schedule_events(team_id, season, conf_of):
+    """Regular-season events for one team from its own schedule endpoint,
+    normalised into the season_events() shape.
+
+    This endpoint indexes independently of the scoreboard and is the repair
+    path for scoreboard gaps (measured 2026-08-30: ESPN's groups=80 scoreboard
+    carried 3 of Jacksonville State's games, this endpoint all 12). It is a
+    thinner payload, so three fields differ and are reconstructed here:
+      - score is an object, not a string          -> _score_val handles both
+      - no conferenceCompetition flag             -> derived from conf_of
+      - no odds block                             -> mkt stays None, which
+        grade_and_extend already treats as a model-only ledger entry
+    Only seasontype 2 is taken: bowls and the CFP never enter the season sim,
+    and a scheduled CCG has TBD competitors that fail the both-sides check
+    below, so no note-less championship game can slip in as a regular game."""
+    d = fetch_json("%s/site/v2/sports/football/college-football/teams/%s"
+                   "/schedule?season=%d" % (ESPN, team_id, season), soft=True)
+    out = []
+    for ev in (d or {}).get("events", []):
+        eid = str(ev.get("id") or "")
+        if not eid:
+            continue
+        if ((ev.get("season") or {}).get("year") or season) != season:
+            continue
+        if ((ev.get("seasonType") or {}).get("type") or 2) != 2:
+            continue
+        comp = (ev.get("competitions") or [{}])[0]
+        home = away = None
+        hloc = aloc = ""
+        hs = as_ = None
+        for c in comp.get("competitors", []):
+            t = c.get("team") or {}
+            tid = str(t.get("id") or "")
+            sc = _score_val(c.get("score"))
+            if c.get("homeAway") == "home":
+                home, hs, hloc = tid, sc, t.get("location") or ""
+            else:
+                away, as_, aloc = tid, sc, t.get("location") or ""
+        if not home or not away:
+            continue
+        notes = comp.get("notes") or []
+        note = (notes[0].get("headline") or "") if notes else ""
+        completed = bool(((comp.get("status") or {}).get("type") or {})
+                         .get("completed"))
+        out.append({
+            "id": eid,
+            "date": (ev.get("date") or "")[:10],
+            "kick": ev.get("date") or "",
+            "week": (ev.get("week") or {}).get("number") or 0,
+            "st": 2,
+            "home": home, "away": away, "hs": hs, "as": as_,
+            "hloc": hloc, "aloc": aloc,
+            "completed": completed,
+            "neutral": bool(comp.get("neutralSite")),
+            "conf_game": bool(conf_of.get(home)
+                              and conf_of.get(home) == conf_of.get(away)),
+            "note": note,
+            "mkt": None if completed else market_home_prob(comp),
+        })
+    return out
+
+
+def backfill_short_schedules(events, id_list, names, conf_of, season):
+    """Repair scoreboard indexing gaps before the hard gate sees them.
+
+    Any FBS team the scoreboard leaves under MIN_TEAM_GAMES regular-season
+    games gets its own schedule endpoint pulled and the missing events merged
+    in by event id. The gate in build() is unchanged and still runs after
+    this: a team the repair cannot lift over the floor still hard-exits."""
+    counts = defaultdict(int)
+    for e in events:
+        if e["st"] != 2 or is_ccg(e):
+            continue
+        for side in ("home", "away"):
+            counts[e[side]] += 1
+    short = [t for t in id_list if counts[t] < MIN_TEAM_GAMES]
+    if not short:
+        return events, []
+    if len(short) > MAX_BACKFILL_TEAMS:
+        print("  backfill SKIPPED: %d teams under %d games - that is a broken "
+              "scoreboard, not an indexing gap; not fetching %d team endpoints"
+              % (len(short), MIN_TEAM_GAMES, len(short)))
+        return events, []
+    have = {e["id"] for e in events}
+    merged = list(events)
+    repaired = []
+    for t in short:
+        added = [e for e in team_schedule_events(t, season, conf_of)
+                 if e["id"] not in have]
+        for e in added:
+            have.add(e["id"])
+        merged.extend(added)
+        after = counts[t] + len(added)
+        print("  backfill: %s had %d scoreboard games, +%d from its own "
+              "schedule endpoint -> %d"
+              % (names.get(t, t), counts[t], len(added), after))
+        if added:
+            repaired.append((t, counts[t], after))
+    merged.sort(key=lambda e: (e["date"], e["id"]))
+    return merged, repaired
 
 
 def is_ccg(ev):
@@ -940,6 +1058,8 @@ def build(sims, today=None):
 
     # 2026 events + current-season fold
     events = season_events(SEASON)
+    events, repaired = backfill_short_schedules(events, id_list, names,
+                                                conf_of, SEASON)
     state, gp, warns = prepare_state(fbs_ids, id_list, conf_of, events)
     for w in warns:
         print("  warn:", w)
@@ -952,7 +1072,10 @@ def build(sims, today=None):
                             seasons_ids[s])[FCS] for s, _ in STRENGTH_SEASONS]
     state["r_fcs"] = sum(r_fcs_hist) / len(r_fcs_hist)
 
-    # schedule sanity: every FBS team should hold 10+ games (played+remaining)
+    # schedule sanity: every FBS team should hold MIN_TEAM_GAMES+ games
+    # (played + remaining), counted AFTER the backfill above. Still a hard
+    # exit, deliberately: the floor is not relaxed to paper over a gap, the
+    # gap is repaired from a second source and then re-checked.
     per_team_games = defaultdict(int)
     for hi, ai, _hfa, _cf in state["remaining"]:
         if hi >= 0:
@@ -961,8 +1084,11 @@ def build(sims, today=None):
             per_team_games[ai] += 1
     for i, t in enumerate(id_list):
         total = per_team_games[i] + state["reg_wins"][i] + state["losses"][i]
-        if total < 10:
-            raise SystemExit("schedule gap: %s has only %d games" % (names[t], total))
+        if total < MIN_TEAM_GAMES:
+            raise SystemExit(
+                "schedule gap: %s has only %d games (backfill from its own "
+                "schedule endpoint did not lift it over %d)"
+                % (names[t], total, MIN_TEAM_GAMES))
         if total > 14:
             print("  note: %s carries %d games" % (names[t], total))
 
@@ -1041,6 +1167,13 @@ def build(sims, today=None):
             "teams": len(id_list),
             "schedule_games": len(state["remaining"]) + games_played,
             "games_played": games_played,
+            # non-empty only when the scoreboard under-indexed a team and its
+            # own schedule endpoint filled the gap - a silent repair would
+            # hide an upstream ESPN problem that is worth seeing in the data
+            "schedule_backfill": [
+                {"team": names.get(t, t), "scoreboard": before, "after": after}
+                for t, before, after in repaired
+            ],
             "source": "ESPN FBS standings, schedules, AP poll, posted lines + national-title futures",
             "notes": "Opponent-adjusted margins (three seasons, FCS pooled) blended with "
                      "futures- and AP-poll-implied ratings; the real FBS schedule, all ten "
@@ -1222,10 +1355,68 @@ def self_test():
     check("ml-devig", 0.58 < mp < 0.65)
     check("spread-prob", 0.56 < market_home_prob({"odds": [{"spread": -3.5}]}) < 0.62)
 
+    # score parsing across both ESPN shapes (scoreboard string vs schedule obj)
+    check("score-str", _score_val("33") == 33)
+    check("score-obj", _score_val({"value": 33.0, "displayValue": "33"}) == 33)
+    check("score-none", _score_val(None) is None and _score_val({}) is None)
+
+    # backfill: an under-indexed team is repaired from its own schedule
+    # endpoint; a team already at the floor is never fetched; and a wholesale
+    # scoreboard failure bails out instead of stampeding ESPN
+    bf_ids = ["x", "y", "z"]
+    bf_conf = {"x": "East", "y": "East", "z": "West"}
+    bf_names = {t: t.upper() for t in bf_ids}
+
+    def bf_ev(eid, h, a):
+        return {"id": eid, "date": "2026-09-%02d" % (int(eid[-1]) + 1),
+                "kick": "", "week": 1, "st": 2, "home": h, "away": a,
+                "hs": None, "as": None, "hloc": "", "aloc": "",
+                "completed": False, "neutral": False,
+                "conf_game": bf_conf[h] == bf_conf.get(a), "note": "",
+                "mkt": None}
+
+    # y and z start full (11 mutual games), x holds only one of them
+    seed = [bf_ev("s%d" % k, "y", "z") for k in range(11)]
+    seed.append(bf_ev("s99", "x", "y"))
+    calls = []
+    real_fetch = globals()["team_schedule_events"]
+
+    def fake_fetch(team_id, season, conf_of):
+        calls.append(team_id)
+        # returns x's full slate, including the one game already on the board
+        return [bf_ev("s99", "x", "y")] + [bf_ev("x%d" % k, "x", "z")
+                                           for k in range(11)]
+
+    globals()["team_schedule_events"] = fake_fetch
+    try:
+        merged, rep = backfill_short_schedules(seed, bf_ids, bf_names,
+                                               bf_conf, 2026)
+        # everything now at the floor -> second pass fetches nothing
+        calls_after_repair = list(calls)
+        _, rep2 = backfill_short_schedules(merged, bf_ids, bf_names,
+                                           bf_conf, 2026)
+        noop_quiet = calls == calls_after_repair
+        # 20 teams short is an outage, not a gap: bail without fetching
+        calls[:] = []
+        wide = ["t%d" % k for k in range(20)]
+        _, rep3 = backfill_short_schedules([], wide, {},
+                                           dict.fromkeys(wide, "East"), 2026)
+        outage_quiet = calls == []
+    finally:
+        globals()["team_schedule_events"] = real_fetch
+
+    check("backfill-fires-only-short", calls_after_repair == ["x"])
+    check("backfill-dedups", len({e["id"] for e in merged}) == len(merged))
+    check("backfill-keeps-original", sum(1 for e in merged if e["id"] == "s99") == 1)
+    check("backfill-lifts", len(merged) == len(seed) + 11)
+    check("backfill-reports", rep == [("x", 1, 12)])
+    check("backfill-noop", rep2 == [] and noop_quiet)
+    check("backfill-outage-bails", rep3 == [] and outage_quiet)
+
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (%d checks)" % 35)
+    print("self-test OK (%d checks)" % 45)
 
 
 def main():
