@@ -133,8 +133,19 @@ chmod +x "$REPO"/mac-mini-jobs/*.sh "$HOME/metro-mini-jobs/hc-run.sh" "$HOME/met
 # --- DISPATCHER FIRST. Without this, business-daily and forecast never run again:
 # their GitHub Action schedules are commented out, so they have NO fallback runner.
 cp "$REPO"/mac-mini-jobs/dispatcher.py "$REPO"/mac-mini-jobs/jobs.toml "$HOME/metro-mini-jobs/"
-cp -R "$REPO"/mac-mini-jobs/runners "$HOME/metro-mini-jobs/"
-chmod +x "$HOME/metro-mini-jobs/runners/"*.sh
+# Runners are SYMLINKED too, for the same reason as the wrappers above. They
+# were `cp -R`'d until 2026-08-31 and had silently drifted: the live copies were
+# stuck at 2026-08-06, so forecast.sh never ran its four self-tests, the health
+# check, or score_forecasts.py (leaving forecast-scoreboard.json frozen), and
+# predictions.sh never built the UCL sim at all -- both jobs reporting green the
+# whole time. `dispatcher.py --check-sync` is what surfaces this; run it after
+# any change here. No chmod: the dispatcher always invokes a runner as
+# `/bin/bash <path>` (via hc-run.sh's "$@"), so the +x bit is irrelevant, and
+# chmod follows a symlink -- it would rewrite the REPO file's mode instead.
+mkdir -p "$HOME/metro-mini-jobs/runners"
+for r in "$REPO"/mac-mini-jobs/runners/*.sh; do
+  ln -sf "$r" "$HOME/metro-mini-jobs/runners/$(basename "$r")"
+done
 python3 "$HOME/metro-mini-jobs/dispatcher.py" --self-test
 python3 "$HOME/metro-mini-jobs/dispatcher.py" --seed
 cp "$REPO"/mac-mini-jobs/com.citizenofnowhere.dispatcher.plist "$HOME/Library/LaunchAgents/"
