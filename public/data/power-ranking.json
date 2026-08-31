@@ -21,8 +21,8 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-08-30",
-  "prevSnapshotDate": "2026-08-23",
+  "asOf": "2026-08-31",
+  "prevSnapshotDate": "2026-08-30",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -105,8 +105,8 @@
       "delta": 0
     },
     {
-      "name": "Droupadi Murmu",
-      "role": "Pres., India",
+      "name": "Narendra Modi",
+      "role": "PM, India",
       "category": "National",
       "jurisdiction": "India",
       "metro": "Delhi",
@@ -281,8 +281,8 @@
       "delta": 0
     },
     {
-      "name": "Sébastien Lecornu",
-      "role": "PM, France",
+      "name": "Emmanuel Macron",
+      "role": "Pres., France",
       "category": "National",
       "jurisdiction": "France",
       "metro": "Paris",
@@ -820,9 +820,9 @@
       "power": 135.6,
       "jurisdictionHref": "/states/jiangsu",
       "transition": "",
-      "prevRank": 58,
+      "prevRank": 50,
       "isNew": false,
-      "delta": 8
+      "delta": 0
     },
     {
       "name": "👑 Charles III",
@@ -836,9 +836,9 @@
       "power": 135.0,
       "jurisdictionHref": "/countries/united-kingdom",
       "transition": "",
-      "prevRank": 50,
+      "prevRank": 51,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Lee Jae Myung",
@@ -852,9 +852,9 @@
       "power": 134.2,
       "jurisdictionHref": "/countries/south-korea",
       "transition": "",
-      "prevRank": 51,
+      "prevRank": 52,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Andy Jassy",
@@ -868,9 +868,9 @@
       "power": 133.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 52,
+      "prevRank": 53,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Ted Sarandos",
@@ -884,9 +884,9 @@
       "power": 132.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 53,
+      "prevRank": 54,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Zohran Mamdani",
@@ -900,9 +900,9 @@
       "power": 131.9,
       "jurisdictionHref": "/rankings/new-york",
       "transition": "",
-      "prevRank": 54,
+      "prevRank": 55,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Roger Goodell",
@@ -916,9 +916,9 @@
       "power": 131.5,
       "jurisdictionHref": "/teams/nfl",
       "transition": "",
-      "prevRank": 55,
+      "prevRank": 56,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Larry Page",
@@ -948,9 +948,9 @@
       "power": 126.5,
       "jurisdictionHref": "/countries/ukraine",
       "transition": "",
-      "prevRank": 59,
+      "prevRank": 58,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Jeff Bezos",
@@ -964,9 +964,9 @@
       "power": 122.6,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 60,
+      "prevRank": 59,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "MrBeast",
@@ -980,9 +980,9 @@
       "power": 120.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 61,
+      "prevRank": 60,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Huang Kunming",
@@ -996,9 +996,9 @@
       "power": 118.9,
       "jurisdictionHref": "/states/guangdong",
       "transition": "",
-      "prevRank": 70,
+      "prevRank": 61,
       "isNew": false,
-      "delta": 9
+      "delta": 0
     },
     {
       "name": "Sergey Brin",
@@ -1140,9 +1140,9 @@
       "power": 100.0,
       "jurisdictionHref": "/teams/football",
       "transition": "",
-      "prevRank": 71,
+      "prevRank": 70,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Lachlan Murdoch",
@@ -1156,9 +1156,9 @@
       "power": 99.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 72,
+      "prevRank": 71,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Yuriko Koike",
@@ -1172,9 +1172,9 @@
       "power": 96.7,
       "jurisdictionHref": "/rankings/tokyo",
       "transition": "",
-      "prevRank": 73,
+      "prevRank": 72,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Taylor Swift",
@@ -1188,9 +1188,9 @@
       "power": 96.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 74,
+      "prevRank": 73,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Rob Jetten",
@@ -1204,9 +1204,9 @@
       "power": 94.7,
       "jurisdictionHref": "/countries/netherlands",
       "transition": "",
-      "prevRank": 75,
+      "prevRank": 74,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Ron DeSantis",
@@ -1220,9 +1220,9 @@
       "power": 94.3,
       "jurisdictionHref": "/states/florida-uruguay",
       "transition": "Term-limited; leaves office Jan 2027 (Florida gubernatorial election, 3 Nov 2026)",
-      "prevRank": 76,
+      "prevRank": 75,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "⚠️ Abdel Fattah el-Sisi",
@@ -1236,9 +1236,9 @@
       "power": 93.4,
       "jurisdictionHref": "/countries/egypt",
       "transition": "",
-      "prevRank": 77,
+      "prevRank": 76,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Lin Wu",
@@ -1252,9 +1252,9 @@
       "power": 92.2,
       "jurisdictionHref": "/states/shandong",
       "transition": "",
-      "prevRank": 93,
+      "prevRank": 77,
       "isNew": false,
-      "delta": 16
+      "delta": 0
     },
     {
       "name": "Mark Zuckerberg",
@@ -1284,9 +1284,9 @@
       "power": 90.0,
       "jurisdictionHref": "/rankings/san-francisco-san-jose",
       "transition": "",
-      "prevRank": 80,
+      "prevRank": 79,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "👑 Naruhito",
@@ -1300,9 +1300,9 @@
       "power": 90.0,
       "jurisdictionHref": "/countries/japan",
       "transition": "",
-      "prevRank": 81,
+      "prevRank": 80,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Kathy Hochul",
@@ -1316,9 +1316,9 @@
       "power": 89.5,
       "jurisdictionHref": "/states/new-york",
       "transition": "Seeking re-election; New York gubernatorial election, 3 Nov 2026",
-      "prevRank": 79,
+      "prevRank": 81,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "Larry Ellison",
@@ -1508,9 +1508,9 @@
       "power": 81.6,
       "jurisdictionHref": "/rankings/shanghai",
       "transition": "",
-      "prevRank": 96,
+      "prevRank": 93,
       "isNew": false,
-      "delta": 3
+      "delta": 0
     },
     {
       "name": "Swiss Federal Council",
@@ -1556,9 +1556,9 @@
       "power": 78.9,
       "jurisdictionHref": "/states/zhejiang",
       "transition": "",
-      "prevRank": 100,
+      "prevRank": 96,
       "isNew": false,
-      "delta": 4
+      "delta": 0
     },
     {
       "name": "Karen Bass",
@@ -1604,9 +1604,9 @@
       "power": 75.9,
       "jurisdictionHref": "/rankings/guangzhou",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 99,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Cyril Ramaphosa",
@@ -1620,17 +1620,10 @@
       "power": 75.3,
       "jurisdictionHref": "/countries/south-africa",
       "transition": "",
-      "prevRank": 99,
+      "prevRank": 100,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     }
   ],
-  "dropped": [
-    {
-      "name": "Sadiq Khan",
-      "prevRank": 56,
-      "category": "Mayor",
-      "jurisdiction": "London"
-    }
-  ]
+  "dropped": []
 }
