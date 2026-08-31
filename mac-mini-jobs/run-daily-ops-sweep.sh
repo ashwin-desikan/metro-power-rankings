@@ -57,12 +57,24 @@ command -v claude >/dev/null || { log "ERROR: claude not on PATH"; exit 1; }
 
 REPORT="$REPO/mac-mini-jobs/daily-ops-sweep-report.md"
 
+# STEP 1's window query selects on each log line's own UTC timestamp, not on
+# formatted date strings. The original form was
+#   grep "$(date -u -v-26H +%Y-%m-%d)\|$(date -u +%Y-%m-%d)" dispatcher.log
+# which matched only the two ENDPOINT dates of the window. Fired at the 01:00Z
+# slot, -26H lands on the day before yesterday, so the pattern was
+# "yesterday-1 OR today" and the whole of YESTERDAY -- the bulk of the window,
+# and where nearly all activity lives -- was silently dropped. Found by the
+# sweep auditing itself on 2026-08-31: every failure it was meant to report
+# that night (cfb-sun, football-standings, egress-refresh, daily-ops-sweep)
+# sat on the missing day. It had misfired that way every run since.
+
 PROMPT="Today's date is $DATE. You are running a DAILY, UNATTENDED, READ-ONLY ops sweep on the Mac mini for the Metro Area Project (Citizen of Nowhere). Ashwin should never have to ask you to look at an ntfy alert or a job failure -- that is the point of this job. Do the thorough investigation a careful engineer would do, not a keyword grep. INVESTIGATE AND REPORT ONLY -- you make NO writes of any kind this run: no git commits/pushes to anything except the one report file below, no re-running jobs, no healthchecks pings, no Supabase writes, no fixing anything, even something that looks completely mechanical and obviously safe. Every finding gets written up for Ashwin to act on himself.
 
 CRITICAL EXECUTION RULES -- you are running headless (claude -p). The moment your turn ends, this process EXITS and CANNOT be resumed. Do the ENTIRE sweep in ONE continuous turn. Do not use the Task tool or delegate to subagents (no nested headless sessions). Your FINAL message must come only AFTER \$REPORT exists on disk with this run's findings.
 
 STEP 1 -- Comprehensive dispatcher log review, not a keyword search:
-Run: grep \"\$(date -u -v-26H +%Y-%m-%d)\\|\$(date -u +%Y-%m-%d)\" \$HOME/metro-mini-jobs/dispatcher.log | grep -E '(RUN|DONE|FAIL|MISSED)'
+Run: SINCE=\"\$(date -u -v-26H +%Y-%m-%dT%H:%M:%SZ)\"; awk -v since=\"\$SINCE\" '/^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T/{ts=substr(\$0,1,20)} ts>=since' \$HOME/metro-mini-jobs/dispatcher.log | grep -E '(RUN|DONE|FAIL|MISSED)'
+That selects on the line's actual UTC timestamp, so it covers the whole window including the calendar day in the MIDDLE of it. Do not replace it with a grep for two formatted dates -- see the note above the prompt. Continuation lines that carry no timestamp of their own (a git error spilling several lines under a FAIL) inherit the last timestamp seen, so failure context stays attached instead of being dropped.
 List EVERY job that ran in the trailing ~26 hours with its DONE/FAIL status. For every FAIL, read the full dispatcher.log context around it (not just the one-line summary) to understand what actually happened.
 
 STEP 2 -- Individual job logs, because dispatcher.log only shows job-level exit code:
