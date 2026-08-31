@@ -392,6 +392,7 @@ def _lowercased_word(name):
 def main():
     cur, prev = load_working(), load_prev()
     hard, soft, repairs, reverted = [], [], [], []
+    mutated = False   # any write-back to `cur`, whatever list it was logged under
 
     # Pass 0a: restore pinned entries WHOLE, before any check sees them. The
     # pinned value wins outright -- see the PINS comment for why comparing
@@ -407,9 +408,28 @@ def main():
                          (prev_e or {}).get("name") or "")
         if e == want:
             continue
-        repairs.append(f'{slug}: {describe_pin_drift(e, PINS[slug])} '
-                       f'- pinned entry restored')
+        # A pin exists to hold the PRIMARY office against a bad scrape. When the
+        # only thing that moved is the ceremonial `second`, that is not the
+        # failure the pin guards -- it is usually a real succession, and
+        # restoring it silently would bury exactly the event worth knowing
+        # about. Live case: Hungary's Tamas Sulyok had his term ended early in
+        # July 2026 and Agnes Forsthoffer, the Speaker, is ACTING head of state
+        # until parliament elects a successor. When it does, the scrape will
+        # propose the new president here. Still restore, so the data only ever
+        # changes deliberately, but say so loudly enough to act on.
+        only_second = all(e.get(k) == want.get(k) for k in ("name", "role", "since")) \
+            and (e.get("second") or None) != (want.get("second") or None)
+        if only_second:
+            was = (want.get("second") or {}).get("name") or "none"
+            now = (e.get("second") or {}).get("name") or "none"
+            soft.append(f'{slug}: ceremonial second "{was}" -> "{now}" proposed by '
+                        f'the scrape; the pin held the committed value. If this is '
+                        f'a real succession, update the pin in PINS.')
+        else:
+            repairs.append(f'{slug}: {describe_pin_drift(e, PINS[slug])} '
+                           f'- pinned entry restored')
         cur[slug] = want
+        mutated = True
 
     # Pin staleness: a pin that wins outright must not be able to rot unnoticed.
     today = date.today()
@@ -440,8 +460,9 @@ def main():
                     f'- a predecessor, not a handover; committed entry kept')
         cur[slug] = old_e
         reverted.append(slug)
+        mutated = True
 
-    if repairs or reverted:
+    if mutated:
         with open(PATH, "w", encoding="utf-8") as f:
             f.write(json.dumps(cur, indent=2, ensure_ascii=False))
 
