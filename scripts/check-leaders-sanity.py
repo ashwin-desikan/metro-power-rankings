@@ -32,10 +32,12 @@ Two deviations from the originally-specified gate, both grounded in the data:
     because that is precisely where the India vandalism sat (a primary-only check
     would have missed "Ganesh rajput" once India leads with the PM).
 """
-import json, re, subprocess, sys, unicodedata
+import json, os, re, subprocess, sys, unicodedata
 from datetime import date
 
 PATH = "public/data/leaders/_current.json"
+LEADERS_DIR = "public/data/leaders"
+CHANGES_PATH = "public/data/leaders/_changes.json"
 
 # Manually verified heads of government the scrape must NOT overwrite (Wikidata is
 # vandalized, stale, or returns the wrong office for these). Compared on the BARE
@@ -133,6 +135,125 @@ _GLYPHS = "⚠️\U0001f451"  # warn (⚠️) + crown (👑)
 def bare(n):
     """Strip leading warn/crown glyphs and whitespace, matching the source's bare()."""
     return re.sub(r'^[⚠️\U0001f451\s]+', '', (n or "")).strip()
+
+def git_show_raw(path, ref="HEAD"):
+    """The committed copy of a file as TEXT, or None when git cannot supply it."""
+    try:
+        return subprocess.check_output(["git", "show", f"{ref}:{path}"],
+                                       text=True, stderr=subprocess.DEVNULL)
+    except Exception:
+        return None
+
+
+def git_show(path, ref="HEAD"):
+    """The committed copy of a file, parsed, or None."""
+    raw = git_show_raw(path, ref)
+    try:
+        return json.loads(raw) if raw is not None else None
+    except Exception:
+        return None
+
+
+def json_indent(raw):
+    """The indent width a JSON file is already stored with, so rewriting it does
+    not reformat every line. The leaders timelines are stored at 1 space and
+    _changes.json at 2; re-dumping at a fixed width would churn whole files."""
+    for line in (raw or "").splitlines()[1:]:
+        stripped = line.lstrip(" ")
+        if stripped and stripped != line:
+            return len(line) - len(stripped)
+    return 2
+
+
+def repair_country_timeline(slug, pinned):
+    """Restore public/data/leaders/<slug>.json when the scrape drops a pinned
+    leader out of the sitting rows.
+
+    PINS used to guard _current.json alone, and that was not enough. The
+    per-country timelines are written by refresh-current-leaders.py's
+    _update_history() -- a different file, written BEFORE this gate ever runs.
+    On 2026-08-31 a forced egress-refresh passed this gate with five clean pin
+    repairs and still published Kaja Kallas, Andry Rajoelina, Lazarus Chakwera
+    and Pravind Jugnauth as sitting leaders on their country pages, plus three
+    Tinubu rows for Nigeria, two of them zero-length (start == end) from the
+    long/short label oscillation being read as a handover.
+
+    Detects a REGRESSION against the committed file rather than asserting the
+    pinned name must always be sitting. A timeline legitimately need not carry
+    the pinned person at all: saudi-arabia.json tracks monarchs, so King Salman
+    is its sitting row while the pin names Mohammed bin Salman, the head of
+    government. Only "was sitting in the committed file, is not sitting now"
+    counts.
+
+    Restores the committed file wholesale rather than unpicking the inserted
+    row: the committed copy is the human-verified state, and a pin already
+    means the scrape is not trusted for this country."""
+    path = f"{LEADERS_DIR}/{slug}.json"
+    if not os.path.exists(path):
+        return None
+    try:
+        rows = json.loads(open(path, encoding="utf-8").read())
+    except Exception:
+        return None
+    raw_committed = git_show_raw(path)
+    committed = git_show(path)
+    if not isinstance(rows, list) or not isinstance(committed, list):
+        return None  # no baseline to compare against; _current.json still guarded
+
+    def sitting(rs):
+        return {bare(r.get("name") or "") for r in rs
+                if isinstance(r, dict) and r.get("current")}
+
+    was, now = sitting(committed), sitting(rows)
+    if pinned["name"] not in was or pinned["name"] in now:
+        return None
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(raw_committed)          # byte-exact; never reformat the file
+    got = sorted(now - was) or ["nobody"]
+    return (f'{slug}.json: timeline dropped "{pinned["name"]}" from the sitting '
+            f'rows in favour of {got} - committed timeline restored')
+
+
+def repair_changes_log(pinned_slugs):
+    """Drop entries this run added to _changes.json that record a handover TO
+    somebody a pin rejects. Those are fabrications -- the 2026-08-31 run logged
+    four, all of them running BACKWARDS in time (Mutharika -> Chakwera dated
+    2020-06-28), which /leaders/changes would have rendered as real events.
+    Only entries absent from the committed file are considered, so genuine
+    history is never rewritten."""
+    try:
+        raw = open(CHANGES_PATH, encoding="utf-8").read()
+        doc = json.loads(raw)
+    except Exception:
+        return []
+    rows = doc.get("changes") if isinstance(doc, dict) else doc
+    if not isinstance(rows, list):
+        return []
+    committed = git_show(CHANGES_PATH)
+    if committed is None:
+        return []
+    old_rows = committed.get("changes") if isinstance(committed, dict) else committed
+    seen = {json.dumps(r, sort_keys=True) for r in (old_rows or [])}
+    kept, dropped = [], []
+    for r in rows:
+        fresh = json.dumps(r, sort_keys=True) not in seen
+        slug = r.get("slug")
+        if fresh and slug in pinned_slugs and bare(r.get("to") or "") != PINS[slug]["name"]:
+            dropped.append(r)
+        else:
+            kept.append(r)
+    if not dropped:
+        return []
+    if isinstance(doc, dict):
+        doc["changes"] = kept
+    else:
+        doc = kept
+    with open(CHANGES_PATH, "w", encoding="utf-8") as f:
+        f.write(json.dumps(doc, indent=json_indent(raw), ensure_ascii=False)
+                + ("\n" if raw.endswith("\n") else ""))
+    return [f'_changes.json: dropped fabricated "{r.get("from")} -> {r.get("to")}" '
+            f'({r.get("slug")}, dated {r.get("date")})' for r in dropped]
+
 
 def load_working():
     with open(PATH, encoding="utf-8") as f:
@@ -323,6 +444,17 @@ def main():
     if repairs or reverted:
         with open(PATH, "w", encoding="utf-8") as f:
             f.write(json.dumps(cur, indent=2, ensure_ascii=False))
+
+    # Pass 0c: the same pins, applied to the files _current.json does NOT cover.
+    # refresh-current-leaders.py writes the per-country timeline and the changes
+    # log in the same pass it writes _current.json, so a pinned country can be
+    # correct in _current.json and wrong on its own page. See
+    # repair_country_timeline for the run that proved it.
+    for slug in PINS:
+        msg = repair_country_timeline(slug, PINS[slug])
+        if msg:
+            repairs.append(msg)
+    repairs.extend(repair_changes_log(set(PINS)))
 
     for slug, e in cur.items():
         if not isinstance(e, dict):
