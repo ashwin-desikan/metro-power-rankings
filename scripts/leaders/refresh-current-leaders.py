@@ -114,6 +114,7 @@ WARN_NAMES = {
     "Abdel Fattah al-Burhan","Min Aung Hlaing","Donald Trump",
     "Abdel Fattah el-Sisi","Kais Saied","Benjamin Netanyahu","Mohammed bin Salman","Recep Tayyip Erdoğan",
 }
+QID_RE = re.compile(r"Q\d+")   # an unresolved Wikidata entity, never a name
 ROLE_DEFAULT = ["Supreme Leader","General Secretary","President","Chancellor",
                 "Prime Minister","Taoiseach","Premier","Monarch"]
 ROLE_PM_LED  = ["Supreme Leader","General Secretary","Chancellor","Prime Minister",
@@ -198,6 +199,20 @@ def build_entry(slug, hos_name, hog_name, hog_office, form, hos_start=None, hog_
     res = pick(slug, cands, pm_led)
     return apply_warn(res) if res else None
 
+# The label service MUST keep "mul" in its fallback chain. Wikidata has been
+# migrating person labels to the language-agnostic `mul` code and deleting the
+# now-redundant `en` one; when only `mul` remains, an "en"-only service returns
+# the bare QID instead of a name. Measured 2026-08-31: that hit NINE label slots
+# across seven countries -- hog for IN (Q1058 = Narendra Modi), HU, MX, US, RS,
+# and hos for MX, FR, US (Q22686 = Donald Trump), AD.
+#
+# _plausible() rejects a QID, so nothing corrupt ever reached the data -- but the
+# candidate was silently DROPPED, and that is the whole India bug: with the PM
+# discarded, `pick` fell through to the ceremonial President, so India published
+# Droupadi Murmu (Pres.) with no `second`, and the sanity gate HELD the entire
+# egress-refresh job every week. It read as a role/office-mapping fault; India
+# was already correctly in PM_LED and P6 was correctly Modi with the right start
+# date. The only thing broken was label resolution.
 SPARQL = """
 SELECT ?iso ?hosLabel ?hogLabel ?hosStart ?hogStart ?hogOfficeLabel ?formLabel WHERE {
   ?country wdt:P297 ?iso .
@@ -205,7 +220,7 @@ SELECT ?iso ?hosLabel ?hogLabel ?hosStart ?hogStart ?hogOfficeLabel ?formLabel W
   OPTIONAL { ?country p:P6 ?hogSt. ?hogSt ps:P6 ?hog. FILTER NOT EXISTS { ?hogSt pq:P582 ?hogEnd } OPTIONAL { ?hogSt pq:P580 ?hogStart } }
   OPTIONAL { ?country wdt:P1313 ?hogOffice. }
   OPTIONAL { ?country wdt:P122 ?form. }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }
 """
 
@@ -229,6 +244,21 @@ def query_wikidata():
             v = b.get(k_in,{}).get("value")
             if v and k_out not in d:
                 d[k_out] = v[:10] if k_out.endswith("_start") else v
+
+    # A QID here means the label service found no label in ANY of its fallback
+    # languages. _plausible() will drop the candidate downstream, which is safe
+    # but silent -- and a silently dropped head of government is how India came
+    # to publish its ceremonial President. Say so loudly instead.
+    unresolved = sorted(
+        (iso, k, v) for iso, info in by_iso.items() for k, v in info.items()
+        if k in ("hos", "hog") and QID_RE.fullmatch(str(v) or "")
+    )
+    for iso, k, v in unresolved:
+        print(f"  WARN unresolved label: {iso} {k}={v} "
+              f"(no en/mul label on Wikidata; candidate will be dropped)")
+    if unresolved:
+        print(f"  WARN {len(unresolved)} unresolved label(s) -- if this is a new "
+              f"Wikidata label migration, extend the service's language chain")
     return by_iso
 
 ISO2_BY_SLUG = Path(__file__).with_name("iso2_by_slug.json")
@@ -264,7 +294,7 @@ def _plausible(name):
     but "rajput" is a lowercase non-particle word -- the vandalism signature."""
     b = bare(name)
     if len(b) < 2: return False
-    if re.fullmatch(r"Q\d+", b): return False
+    if QID_RE.fullmatch(b): return False
     words = [w for w in re.split(r"\s+", b) if w]
     if not any(w[:1].isupper() or (w[:1] and not w[:1].isascii()) for w in words):
         return False
@@ -464,6 +494,24 @@ def self_test():
     e = build_entry("india", "Ganesh rajput", "Narendra Modi", "Prime Minister of India",
                     "republic", hos_start="2022-07-25", hog_start="2014-05-26")
     assert e == {"name": "Narendra Modi", "role": "PM", "since": "2014-05-26"}, e
+    # The REAL India failure (2026-08-31), distinct from the vandalism case above:
+    # Wikidata's P6 was correct (Q1058, start 2014-05-26) but Q1058 had no `en`
+    # label, only `mul`, so an "en"-only label service returned the bare QID. The
+    # PM candidate was then dropped as implausible and India published its
+    # ceremonial President with no `second` -- which HELD egress-refresh weekly.
+    e = build_entry("india", "Droupadi Murmu", "Q1058", "Prime Minister of India",
+                    "republic", hos_start="2022-07-25", hog_start="2014-05-26")
+    assert e == {"name": "Droupadi Murmu", "role": "Pres.", "since": "2022-07-25"}, e
+    # ...and with the label resolved (what "en,mul" now returns), the PM leads
+    # and the President becomes the ceremonial second, as it always should have.
+    e = build_entry("india", "Droupadi Murmu", "Narendra Modi", "Prime Minister of India",
+                    "republic", hos_start="2022-07-25", hog_start="2014-05-26")
+    assert e == {"name": "Narendra Modi", "role": "PM", "since": "2014-05-26",
+                 "second": {"name": "Droupadi Murmu", "role": "Pres."}}, e
+    # The query must keep `mul` in the fallback chain -- dropping it silently
+    # reintroduces the bug above for every person Wikidata has migrated.
+    assert 'wikibase:language "en,mul"' in SPARQL, "label service lost its mul fallback"
+    assert QID_RE.fullmatch("Q1058") and not QID_RE.fullmatch("Narendra Modi")
     # _plausible: rejects capitalized-first / lowercased-rest vandalism and QIDs;
     # keeps real names and legitimate lowercase particles.
     assert _plausible("Narendra Modi") and _plausible("Mohammed bin Salman") and _plausible("Lula da Silva")
