@@ -263,20 +263,10 @@
     "name": "Kristen Michal",
     "role": "Prime Minister",
     "start": "2024-07-23",
-    "end": "2021-01-26",
-    "current": false,
-    "tenure": "",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Kaja Kallas",
-    "role": "Prime Minister",
-    "start": "2021-01-26",
     "end": null,
     "current": true,
-    "tenure": "in office",
-    "party": "",
+    "tenure": "1y 11m 10d",
+    "party": null,
     "era": null
   }
 ]

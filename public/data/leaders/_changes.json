@@ -2,60 +2,6 @@
   "updated": "2026-08-31",
   "changes": [
     {
-      "date": "2020-06-28",
-      "slug": "malawi",
-      "country": "Malawi",
-      "office": "President",
-      "from": "Peter Mutharika",
-      "to": "Lazarus Chakwera",
-      "source": "wikidata"
-    },
-    {
-      "date": "2025-10-14",
-      "slug": "madagascar",
-      "country": "Madagascar",
-      "office": "President",
-      "from": "Michael Randrianirina",
-      "to": "Andry Rajoelina",
-      "source": "wikidata"
-    },
-    {
-      "date": "2017-01-23",
-      "slug": "mauritius",
-      "country": "Mauritius",
-      "office": "Prime Minister",
-      "from": "Navin Ramgoolam",
-      "to": "Pravind Jugnauth",
-      "source": "wikidata"
-    },
-    {
-      "date": "2021-01-26",
-      "slug": "estonia",
-      "country": "Estonia",
-      "office": "Prime Minister",
-      "from": "Kristen Michal",
-      "to": "Kaja Kallas",
-      "source": "wikidata"
-    },
-    {
-      "date": "2023-05-29",
-      "slug": "nigeria",
-      "country": "Nigeria",
-      "office": "President",
-      "from": "Bola Ahmed Tinubu",
-      "to": "Bola Tinubu",
-      "source": "wikidata"
-    },
-    {
-      "date": "2025-07-03",
-      "slug": "thailand",
-      "country": "Thailand",
-      "office": "Prime Minister",
-      "from": "Paetongtarn Shinawatra",
-      "to": "Phumtham Wechayachai",
-      "source": "wikidata"
-    },
-    {
       "date": "2025-09-09",
       "slug": "france",
       "country": "France",
@@ -504,6 +450,15 @@
       "from": "Keir Starmer",
       "to": "Andy Burnham",
       "source": "curated"
+    },
+    {
+      "date": "2025-07-03",
+      "slug": "thailand",
+      "country": "Thailand",
+      "office": "Prime Minister",
+      "from": "Paetongtarn Shinawatra",
+      "to": "Phumtham Wechayachai",
+      "source": "wikidata"
     }
   ]
 }
