@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-30",
+  "generated": "2026-08-31",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3385,
   "billionaires": [
@@ -3448,9 +3448,9 @@
       "name": "Hussain Sajwani",
       "uri": "hussain-sajwani",
       "networth": 15278.407,
-      "countryCode": "AE",
-      "countrySlug": "united-arab-emirates",
-      "countryName": "United Arab Emirates",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Real Estate"
       ],
@@ -10239,9 +10239,9 @@
       "name": "Pavel Durov",
       "uri": "pavel-durov",
       "networth": 6620,
-      "countryCode": "AE",
-      "countrySlug": "united-arab-emirates",
-      "countryName": "United Arab Emirates",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -13250,9 +13250,9 @@
       "name": "Hamad bin Jassim bin Jaber Al Thani",
       "uri": "hamad-bin-jassim-bin-jaber-al-thani",
       "networth": 5387.724,
-      "countryCode": "QA",
-      "countrySlug": "qatar",
-      "countryName": "Qatar",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Finance & Investments"
       ],
@@ -14035,9 +14035,9 @@
       "name": "Abdulla bin Ahmad Al Ghurair & family",
       "uri": "abdulla-bin-ahmad-al-ghurair",
       "networth": 5125.818,
-      "countryCode": "AE",
-      "countrySlug": "united-arab-emirates",
-      "countryName": "United Arab Emirates",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Diversified"
       ],
@@ -15688,9 +15688,9 @@
       "name": "Abdulla Al Futtaim & family",
       "uri": "abdulla-al-futtaim",
       "networth": 4662.006,
-      "countryCode": "AE",
-      "countrySlug": "united-arab-emirates",
-      "countryName": "United Arab Emirates",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Automotive"
       ],
@@ -21805,9 +21805,9 @@
       "name": "Waleed Mohammad Al Zaabi",
       "uri": "waleed-mohammad-al-zaabi",
       "networth": 3407.642,
-      "countryCode": "AE",
-      "countrySlug": "united-arab-emirates",
-      "countryName": "United Arab Emirates",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Real Estate"
       ],
@@ -22906,9 +22906,9 @@
       "name": "Mohamed Alabbar",
       "uri": "mohamed-alabbar",
       "networth": 3210.618,
-      "countryCode": "AE",
-      "countrySlug": "united-arab-emirates",
-      "countryName": "United Arab Emirates",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Diversified"
       ],
@@ -28704,9 +28704,9 @@
       "name": "Hussain Binghatti Aljbori",
       "uri": "hussain-binghatti-aljbori",
       "networth": 2507.011,
-      "countryCode": "AE",
-      "countrySlug": "united-arab-emirates",
-      "countryName": "United Arab Emirates",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Real Estate"
       ],
@@ -38412,9 +38412,9 @@
       "name": "Abbas Sajwani",
       "uri": "abbas-sajwani",
       "networth": 1874.376,
-      "countryCode": "AE",
-      "countrySlug": "united-arab-emirates",
-      "countryName": "United Arab Emirates",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Real Estate"
       ],

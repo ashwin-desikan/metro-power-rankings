@@ -863,6 +863,16 @@
     "name": "Paetongtarn Shinawatra",
     "role": "Prime Minister",
     "start": "2024-08-16",
+    "end": "2025-07-03",
+    "current": false,
+    "tenure": "0y 10m 21d",
+    "party": "",
+    "era": null
+  },
+  {
+    "name": "Phumtham Wechayachai",
+    "role": "Prime Minister",
+    "start": "2025-07-03",
     "end": null,
     "current": true,
     "tenure": "in office",
