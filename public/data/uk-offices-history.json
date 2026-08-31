@@ -1,1 +1,2540 @@
-{"source":"Wikidata P39 (position held, matched by office label) + P580/P582 | Great Offices from House of Commons authoritative lists","note":"UK offices beyond PM/Sovereign (those come from /leaders). end=null=current.","chancellor":[{"name":"John Smith","party":"Whig","start":"1708-04-22","end":"1710-08-11"},{"name":"Robert Harley","party":"Tory","start":"1710-08-11","end":"1711-06-04"},{"name":"Robert Benson","party":"Tory","start":"1711-06-04","end":"1713-08-21"},{"name":"William Wyndham","party":"Tory","start":"1713-08-21","end":"1714-10-13"},{"name":"Richard Onslow","party":"Whig","start":"1714-10-13","end":"1715-10-12"},{"name":"Robert Walpole","party":"Whig","start":"1715-10-12","end":"1717-04-15"},{"name":"James Stanhope","party":"Whig","start":"1717-04-15","end":"1718-03-20"},{"name":"John Aislabie","party":"Whig","start":"1718-03-20","end":"1721-01-23"},{"name":"John Pratt","party":"Whig","start":"1721-02-02","end":"1721-04-03"},{"name":"Robert Walpole","party":"Whig","start":"1721-04-03","end":"1742-02-12"},{"name":"Samuel Sandys","party":"Whig","start":"1742-02-12","end":"1743-12-12"},{"name":"Henry Pelham","party":"Whig","start":"1743-12-12","end":"1754-03-08"},{"name":"William Lee","party":"Whig","start":"1754-03-08","end":"1754-04-06"},{"name":"Henry Bilson-Legge","party":"Whig","start":"1754-04-06","end":"1755-11-25"},{"name":"George Lyttelton","party":"Whig","start":"1755-11-25","end":"1756-11-16"},{"name":"Henry Bilson-Legge","party":"Whig","start":"1756-11-16","end":"1757-04-13"},{"name":"William Murray","party":"Whig","start":"1757-04-13","end":"1757-07-02"},{"name":"Henry Bilson-Legge","party":"Whig","start":"1757-07-02","end":"1761-03-19"},{"name":"William Barrington","party":"Whig","start":"1761-03-19","end":"1762-05-29"},{"name":"Francis Dashwood","party":"Whig","start":"1762-05-29","end":"1763-04-16"},{"name":"George Grenville","party":"Whig","start":"1763-04-16","end":"1765-07-16"},{"name":"William Dowdeswell","party":"Whig","start":"1765-07-16","end":"1766-08-02"},{"name":"Charles Townshend","party":"Whig","start":"1766-08-02","end":"1767-09-04"},{"name":"Frederick North","party":"Tory","start":"1767-09-11","end":"1782-03-27"},{"name":"Lord John Cavendish","party":"Whig","start":"1782-03-27","end":"1782-07-10"},{"name":"William Pitt the Younger","party":"Whig","start":"1782-07-10","end":"1783-03-31"},{"name":"Lord John Cavendish","party":"Whig","start":"1783-04-02","end":"1783-12-19"},{"name":"William Pitt the Younger","party":"Tory","start":"1783-12-19","end":"1801-03-14"},{"name":"Henry Addington","party":"Tory","start":"1801-03-14","end":"1804-05-10"},{"name":"William Pitt the Younger","party":"Tory","start":"1804-05-10","end":"1806-01-23"},{"name":"Edward Law","party":"Whig","start":"1806-01-23","end":"1806-02-05"},{"name":"Lord Henry Petty-Fitzmaurice","party":"Whig","start":"1806-02-05","end":"1807-03-26"},{"name":"Spencer Perceval","party":"Tory","start":"1807-03-26","end":"1812-05-11"},{"name":"Nicholas Vansittart","party":"Tory","start":"1812-06-09","end":"1817-07-12"},{"name":"Nicholas Vansittart","party":"Tory","start":"1817-07-12","end":"1823-01-31"},{"name":"Frederick John Robinson","party":"Tory","start":"1823-01-31","end":"1827-04-27"},{"name":"George Canning","party":"Whig","start":"1827-04-27","end":"1827-08-08"},{"name":"Charles Abbott","party":"Tory","start":"1827-08-08","end":"1827-09-05"},{"name":"John Charles Herries","party":"Tory","start":"1827-09-05","end":"1828-01-26"},{"name":"Henry Goulburn","party":"Tory","start":"1828-01-26","end":"1830-11-22"},{"name":"John Spencer","party":"Whig","start":"1830-11-22","end":"1834-11-14"},{"name":"Thomas Denman","party":"Whig","start":"1834-11-14","end":"1834-12-15"},{"name":"Robert Peel","party":"Conservative","start":"1834-12-15","end":"1835-04-08"},{"name":"Thomas Spring Rice","party":"Whig","start":"1835-04-18","end":"1839-08-26"},{"name":"Francis Baring","party":"Whig","start":"1839-08-26","end":"1841-08-30"},{"name":"Henry Goulburn","party":"Conservative","start":"1841-09-03","end":"1846-06-27"},{"name":"Charles Wood","party":"Whig","start":"1846-07-06","end":"1852-02-21"},{"name":"Benjamin Disraeli","party":"Conservative","start":"1852-02-27","end":"1852-12-17"},{"name":"William Ewart Gladstone","party":"Whig","start":"1852-12-28","end":"1855-02-28"},{"name":"George Cornewall Lewis","party":"Whig","start":"1855-02-28","end":"1858-02-21"},{"name":"Benjamin Disraeli","party":"Conservative","start":"1858-02-26","end":"1859-06-11"},{"name":"William Ewart Gladstone","party":"Liberal","start":"1859-06-18","end":"1866-06-26"},{"name":"Benjamin Disraeli","party":"Conservative","start":"1866-07-06","end":"1868-02-29"},{"name":"George Ward Hunt","party":"Conservative","start":"1868-02-29","end":"1868-12-01"},{"name":"Robert Lowe","party":"Liberal","start":"1868-12-09","end":"1873-08-11"},{"name":"William Ewart Gladstone","party":"Liberal","start":"1873-08-11","end":"1874-02-17"},{"name":"Stafford Northcote","party":"Conservative","start":"1874-02-21","end":"1880-04-21"},{"name":"William Ewart Gladstone","party":"Liberal","start":"1880-04-28","end":"1882-12-16"},{"name":"Hugh Childers","party":"Liberal","start":"1882-12-16","end":"1885-06-09"},{"name":"Michael Hicks Beach","party":"Conservative","start":"1885-06-24","end":"1886-01-28"},{"name":"William Harcourt","party":"Liberal","start":"1886-02-06","end":"1886-07-20"},{"name":"Lord Randolph Churchill","party":"Conservative","start":"1886-08-03","end":"1886-12-22"},{"name":"George Goschen","party":"Liberal Unionist","start":"1887-01-14","end":"1892-08-11"},{"name":"William Harcourt","party":"Liberal","start":"1892-08-18","end":"1895-06-21"},{"name":"Michael Hicks Beach","party":"Conservative","start":"1895-06-29","end":"1902-08-11"},{"name":"Charles Ritchie","party":"Conservative","start":"1902-08-11","end":"1903-10-09"},{"name":"Austen Chamberlain","party":"Liberal Unionist","start":"1903-10-09","end":"1905-12-04"},{"name":"Herbert Henry Asquith","party":"Liberal","start":"1905-12-10","end":"1908-04-16"},{"name":"David Lloyd George","party":"Liberal","start":"1908-04-16","end":"1915-05-25"},{"name":"Reginald McKenna","party":"Liberal","start":"1915-05-25","end":"1916-12-10"},{"name":"Bonar Law","party":"Conservative","start":"1916-12-10","end":"1919-01-10"},{"name":"Austen Chamberlain","party":"Conservative","start":"1919-01-10","end":"1921-04-01"},{"name":"Robert Horne","party":"Conservative","start":"1921-04-01","end":"1922-10-19"},{"name":"Stanley Baldwin","party":"Conservative","start":"1922-10-27","end":"1923-08-27"},{"name":"Neville Chamberlain","party":"Conservative","start":"1923-08-27","end":"1924-01-22"},{"name":"Philip Snowden","party":"Labour","start":"1924-01-22","end":"1924-11-03"},{"name":"Winston Churchill","party":"Conservative","start":"1924-11-06","end":"1929-06-04"},{"name":"Philip Snowden","party":"National Labour","start":"1929-06-07","end":"1931-11-05"},{"name":"Neville Chamberlain","party":"Conservative","start":"1931-11-05","end":"1937-05-28"},{"name":"John Simon","party":"Liberal National","start":"1937-05-28","end":"1940-05-12"},{"name":"Kingsley Wood","party":"Conservative","start":"1940-05-12","end":"1943-09-21"},{"name":"John Anderson","party":"Independent","start":"1943-09-24","end":"1945-07-26"},{"name":"Hugh Dalton","party":"Labour","start":"1945-07-27","end":"1947-11-13"},{"name":"Stafford Cripps","party":"Labour","start":"1947-11-13","end":"1950-10-19"},{"name":"Hugh Gaitskell","party":"Labour","start":"1950-10-19","end":"1951-10-26"},{"name":"Richard Austen Butler","party":"Conservative","start":"1951-10-26","end":"1955-12-20"},{"name":"Harold Macmillan","party":"Conservative","start":"1955-12-20","end":"1957-01-13"},{"name":"Peter Thorneycroft","party":"Conservative","start":"1957-01-13","end":"1958-01-06"},{"name":"Derick Heathcoat-Amory","party":"Conservative","start":"1958-01-06","end":"1960-07-27"},{"name":"Selwyn Lloyd","party":"Conservative","start":"1960-07-27","end":"1962-07-13"},{"name":"Reginald Maudling","party":"Conservative","start":"1962-07-16","end":"1964-10-16"},{"name":"James Callaghan","party":"Labour","start":"1964-10-17","end":"1967-11-29"},{"name":"Roy Jenkins","party":"Labour","start":"1967-11-29","end":"1970-06-19"},{"name":"Iain Macleod","party":"Conservative","start":"1970-06-20","end":"1970-07-20"},{"name":"Anthony Barber","party":"Conservative","start":"1970-07-25","end":"1974-03-04"},{"name":"Denis Healey","party":"Labour","start":"1974-03-05","end":"1979-05-04"},{"name":"Geoffrey Howe","party":"Conservative","start":"1979-05-04","end":"1983-06-11"},{"name":"Nigel Lawson","party":"Conservative","start":"1983-06-11","end":"1989-10-26"},{"name":"John Major","party":"Conservative","start":"1989-10-26","end":"1990-11-28"},{"name":"Norman Lamont","party":"Conservative","start":"1990-11-28","end":"1993-05-27"},{"name":"Kenneth Clarke","party":"Conservative","start":"1993-05-27","end":"1997-05-02"},{"name":"Gordon Brown","party":"Labour","start":"1997-05-02","end":"2007-06-28"},{"name":"Alistair Darling","party":"Labour","start":"2007-06-28","end":"2010-05-11"},{"name":"George Osborne","party":"Conservative","start":"2010-05-11","end":"2016-07-13"},{"name":"Philip Hammond","party":"Conservative","start":"2016-07-13","end":"2019-07-24"},{"name":"Sajid Javid","party":"Conservative","start":"2019-07-24","end":"2020-02-13"},{"name":"Rishi Sunak","party":"Conservative","start":"2020-02-13","end":"2022-07-05"},{"name":"Nadhim Zahawi","party":"Conservative","start":"2022-07-05","end":"2022-09-06"},{"name":"Kwasi Kwarteng","party":"Conservative","start":"2022-09-06","end":"2022-10-14"},{"name":"Jeremy Hunt","party":"Conservative","start":"2022-10-14","end":"2024-07-05"},{"name":"Rachel Reeves","party":"Labour","start":"2024-07-05","end":"2026-07-20"},{"name":"John Healey","party":"Labour","start":"2026-07-20","end":null}],"foreignSecretary":[{"name":"Charles James Fox","party":"Whig","start":"1782-03-27","end":"1782-07-05"},{"name":"Thomas Robinson","party":"Whig","start":"1782-07-13","end":"1783-04-02"},{"name":"Charles James Fox","party":"Whig","start":"1783-04-02","end":"1783-12-19"},{"name":"George Nugent-Temple-Grenville","party":"Tory","start":"1783-12-19","end":"1783-12-23"},{"name":"Francis Osborne","party":"Tory","start":"1783-12-23","end":"1791-06-08"},{"name":"William Grenville","party":"Tory","start":"1791-06-08","end":"1801-02-20"},{"name":"Robert Jenkinson","party":"Tory","start":"1801-02-20","end":"1804-05-14"},{"name":"Dudley Ryder","party":"Tory","start":"1804-05-14","end":"1805-01-11"},{"name":"Henry Phipps","party":"Tory","start":"1805-01-11","end":"1806-02-07"},{"name":"Charles James Fox","party":"Whig","start":"1806-02-07","end":"1806-09-13"},{"name":"Charles Grey","party":"Whig","start":"1806-09-24","end":"1807-03-25"},{"name":"Henry Bathurst","party":"Tory","start":"1809-10-11","end":"1809-12-06"},{"name":"Richard Wellesley","party":"Independent","start":"1809-12-06","end":"1812-03-04"},{"name":"Robert Stewart","party":"Tory","start":"1812-03-04","end":"1822-08-12"},{"name":"George Canning","party":"Tory","start":"1822-09-16","end":"1827-04-30"},{"name":"John Ward","party":"Whig","start":"1827-04-30","end":"1828-06-02"},{"name":"George Hamilton-Gordon","party":"Tory","start":"1828-06-02","end":"1830-11-22"},{"name":"Henry John Temple","party":"Whig","start":"1830-11-22","end":"1834-11-14"},{"name":"Arthur Wellesley","party":"Conservative","start":"1834-11-14","end":"1835-04-18"},{"name":"Henry John Temple","party":"Whig","start":"1835-04-18","end":"1841-09-02"},{"name":"George Hamilton-Gordon","party":"Conservative","start":"1841-09-02","end":"1846-07-06"},{"name":"Henry John Temple","party":"Whig","start":"1846-07-06","end":"1851-12-26"},{"name":"Granville Leveson-Gower","party":"Whig","start":"1851-12-26","end":"1852-02-27"},{"name":"James Howard Harris","party":"Conservative","start":"1852-02-27","end":"1852-12-28"},{"name":"Lord John Russell","party":"Whig","start":"1852-12-28","end":"1853-02-21"},{"name":"George Villiers","party":"Whig","start":"1853-02-21","end":"1858-02-26"},{"name":"James Howard Harris","party":"Conservative","start":"1858-02-26","end":"1859-06-18"},{"name":"John Russell","party":"Liberal","start":"1859-06-18","end":"1865-11-03"},{"name":"George Villiers","party":"Liberal","start":"1865-11-03","end":"1866-07-06"},{"name":"Edward Stanley","party":"Conservative","start":"1866-07-06","end":"1868-12-09"},{"name":"George Villiers","party":"Liberal","start":"1868-12-09","end":"1870-07-06"},{"name":"Granville Leveson-Gower","party":"Liberal","start":"1870-07-06","end":"1874-02-21"},{"name":"Edward Stanley","party":"Conservative","start":"1874-02-21","end":"1878-04-02"},{"name":"Robert Gascoyne-Cecil","party":"Conservative","start":"1878-04-02","end":"1880-04-28"},{"name":"Granville Leveson-Gower","party":"Liberal","start":"1880-04-28","end":"1885-06-24"},{"name":"Robert Gascoyne-Cecil","party":"Conservative","start":"1885-06-24","end":"1886-02-06"},{"name":"Archibald Primrose","party":"Liberal","start":"1886-02-06","end":"1886-08-03"},{"name":"Stafford Northcote","party":"Conservative","start":"1886-08-03","end":"1887-01-12"},{"name":"Robert Gascoyne-Cecil","party":"Conservative","start":"1887-01-14","end":"1892-08-11"},{"name":"Archibald Primrose","party":"Liberal","start":"1892-08-18","end":"1894-03-11"},{"name":"John Wodehouse","party":"Liberal","start":"1894-03-11","end":"1895-06-21"},{"name":"Robert Gascoyne-Cecil","party":"Conservative","start":"1895-06-29","end":"1900-11-12"},{"name":"Henry Petty-Fitzmaurice","party":"Liberal Unionist","start":"1900-11-12","end":"1905-12-04"},{"name":"Edward VII","party":"Liberal","start":"1905-12-10","end":"1916-12-10"},{"name":"Arthur Balfour","party":"Conservative","start":"1916-12-10","end":"1919-10-23"},{"name":"George Curzon","party":"Conservative","start":"1919-10-23","end":"1924-01-22"},{"name":"Ramsay MacDonald","party":"Labour","start":"1924-01-22","end":"1924-11-03"},{"name":"Austen Chamberlain","party":"Conservative","start":"1924-11-06","end":"1929-06-04"},{"name":"Arthur Henderson","party":"Labour","start":"1929-06-07","end":"1931-08-24"},{"name":"Rufus Isaacs","party":"Liberal National","start":"1931-08-25","end":"1931-11-05"},{"name":"Sir John Simon","party":"Liberal National","start":"1931-11-05","end":"1935-06-07"},{"name":"Anthony Eden","party":"Conservative","start":"1935-12-22","end":"1938-02-20"},{"name":"Edward Wood","party":"Conservative","start":"1938-02-21","end":"1940-12-22"},{"name":"Anthony Eden","party":"Conservative","start":"1940-12-22","end":"1945-07-26"},{"name":"Ernest Bevin","party":"Labour","start":"1945-07-27","end":"1951-03-09"},{"name":"Herbert Morrison","party":"Labour","start":"1951-03-09","end":"1951-10-26"},{"name":"Anthony Eden","party":"Conservative","start":"1951-10-28","end":"1955-04-07"},{"name":"Harold Macmillan","party":"Conservative","start":"1955-04-07","end":"1955-12-20"},{"name":"Selwyn Lloyd","party":"Conservative","start":"1955-12-20","end":"1960-07-27"},{"name":"Alec Douglas-Home","party":"Conservative","start":"1960-07-27","end":"1963-10-18"},{"name":"Richard Austen Butler","party":"Conservative","start":"1963-10-20","end":"1964-10-16"},{"name":"Michael Stewart","party":"Labour","start":"1965-01-22","end":"1966-08-11"},{"name":"George Brown","party":"Labour","start":"1966-08-11","end":"1968-03-16"},{"name":"Michael Stewart","party":"Labour","start":"1968-03-16","end":"1968-10-17"},{"name":"Michael Stewart","party":"Labour","start":"1968-10-17","end":"1970-06-19"},{"name":"Alec Douglas-Home","party":"Conservative","start":"1970-06-20","end":"1974-03-04"},{"name":"James Callaghan","party":"Labour","start":"1974-03-05","end":"1976-04-05"},{"name":"Anthony Crosland","party":"Labour","start":"1976-04-08","end":"1977-02-19"},{"name":"David Owen","party":"Labour","start":"1977-02-22","end":"1979-05-04"},{"name":"Peter Carington","party":"Conservative","start":"1979-05-04","end":"1982-04-05"},{"name":"Francis Pym","party":"Conservative","start":"1982-04-06","end":"1983-06-11"},{"name":"Geoffrey Howe","party":"Conservative","start":"1983-06-11","end":"1989-07-24"},{"name":"John Major","party":"Conservative","start":"1989-07-24","end":"1989-10-26"},{"name":"Douglas Hurd","party":"Conservative","start":"1989-10-26","end":"1995-07-05"},{"name":"Malcolm Rifkind","party":"Conservative","start":"1995-07-05","end":"1997-05-02"},{"name":"Robin Cook","party":"Labour","start":"1997-05-02","end":"2001-06-08"},{"name":"Jack Straw","party":"Labour","start":"2001-06-08","end":"2006-05-05"},{"name":"Margaret Beckett","party":"Labour","start":"2006-05-05","end":"2007-06-28"},{"name":"David Miliband","party":"Labour","start":"2007-06-28","end":"2010-05-11"},{"name":"William Hague","party":"Conservative","start":"2010-05-12","end":"2014-07-14"},{"name":"Philip Hammond","party":"Conservative","start":"2014-07-14","end":"2016-07-13"},{"name":"Boris Johnson","party":"Conservative","start":"2016-07-13","end":"2018-07-09"},{"name":"Jeremy Hunt","party":"Conservative","start":"2018-07-09","end":"2019-07-24"},{"name":"Dominic Raab","party":"Conservative","start":"2019-07-24","end":"2020-09-02"},{"name":"Dominic Raab","party":"Conservative","start":"2020-09-02","end":"2021-09-15"},{"name":"Liz Truss","party":"Conservative","start":"2021-09-15","end":"2022-09-06"},{"name":"James Cleverly","party":"Conservative","start":"2022-09-06","end":"2023-11-13"},{"name":"David Cameron","party":"Conservative","start":"2023-11-13","end":"2024-07-05"},{"name":"David Lammy","party":"Labour","start":"2024-07-05","end":"2025-09-05"},{"name":"Yvette Cooper","party":"Labour","start":"2025-09-05","end":"2026-07-20"},{"name":"Ed Miliband","party":"Labour","start":"2026-07-20","end":null}],"homeSecretary":[{"name":"William Petty","party":"Whig","start":"1782-03-27","end":"1782-07-10"},{"name":"Thomas Townsend","party":"Whig","start":"1782-07-10","end":"1783-04-02"},{"name":"Frederick North","party":"Tory","start":"1783-04-02","end":"1783-12-19"},{"name":"George Nugent-Temple-Grenville","party":"Tory","start":"1783-12-19","end":"1783-12-23"},{"name":"Thomas Townsend","party":"Whig","start":"1783-12-23","end":"1789-06-05"},{"name":"William Grenville","party":"Tory","start":"1789-06-05","end":"1791-06-08"},{"name":"Henry Dundas","party":"Tory","start":"1791-06-08","end":"1794-07-11"},{"name":"William Cavendish-Bentinck","party":"Tory","start":"1794-07-11","end":"1801-07-30"},{"name":"Thomas Pelham","party":"Whig","start":"1801-07-30","end":"1803-08-17"},{"name":"Charles Philip Yorke","party":"Tory","start":"1803-08-17","end":"1804-05-12"},{"name":"Robert Jenkinson","party":"Tory","start":"1804-05-12","end":"1806-02-05"},{"name":"George Spencer","party":"Whig","start":"1806-02-05","end":"1807-03-25"},{"name":"Robert Jenkinson","party":"Tory","start":"1807-03-25","end":"1809-11-01"},{"name":"Richard Ryder","party":"Tory","start":"1809-11-01","end":"1812-06-08"},{"name":"Henry Addington","party":"Tory","start":"1812-06-11","end":"1822-01-17"},{"name":"Robert Peel","party":"Tory","start":"1822-01-17","end":"1827-04-10"},{"name":"William Sturges Bourne","party":"Whig","start":"1827-04-30","end":"1827-07-16"},{"name":"Henry Petty-Fitzmaurice","party":"Whig","start":"1827-07-16","end":"1828-01-22"},{"name":"Robert Peel","party":"Tory","start":"1828-01-26","end":"1830-11-22"},{"name":"William Lamb","party":"Whig","start":"1830-11-22","end":"1834-07-16"},{"name":"John Ponsonby","party":"Whig","start":"1834-07-19","end":"1834-11-15"},{"name":"Arthur Wellesley","party":"Tory","start":"1834-11-15","end":"1834-12-15"},{"name":"Henry Goulburn","party":"Conservative","start":"1834-12-15","end":"1835-04-18"},{"name":"Lord John Russell","party":"Whig","start":"1835-04-18","end":"1839-08-30"},{"name":"Constantine Phipps","party":"Whig","start":"1839-08-30","end":"1841-08-30"},{"name":"Sir James Graham","party":"Conservative","start":"1841-09-06","end":"1846-06-30"},{"name":"Sir George Grey","party":"Whig","start":"1846-07-08","end":"1852-02-23"},{"name":"Spencer Horatio Walpole","party":"Conservative","start":"1852-02-27","end":"1852-12-19"},{"name":"Henry John Temple","party":"Whig","start":"1852-12-28","end":"1855-02-06"},{"name":"Sir George Grey","party":"Whig","start":"1855-02-08","end":"1858-02-26"},{"name":"Spencer Horatio Walpole","party":"Conservative","start":"1858-02-26","end":"1859-03-03"},{"name":"Thomas Henry Sutton Sotheron-Estcourt","party":"Conservative","start":"1859-03-03","end":"1859-06-18"},{"name":"George Cornewall Lewis","party":"Liberal","start":"1859-06-18","end":"1861-07-25"},{"name":"Sir George Grey","party":"Liberal","start":"1861-07-25","end":"1866-06-28"},{"name":"Spencer Horatio Walpole","party":"Conservative","start":"1866-07-06","end":"1867-05-17"},{"name":"Gathorne Gathorne-Hardy","party":"Conservative","start":"1867-05-17","end":"1868-12-03"},{"name":"Henry Bruce","party":"Liberal","start":"1868-12-09","end":"1873-08-09"},{"name":"Robert Lowe","party":"Liberal","start":"1873-08-09","end":"1874-02-20"},{"name":"R. A. Cross","party":"Conservative","start":"1874-02-21","end":"1880-04-23"},{"name":"William Harcourt","party":"Liberal","start":"1880-04-28","end":"1885-06-23"},{"name":"R. A. Cross","party":"Conservative","start":"1885-06-24","end":"1886-02-01"},{"name":"Hugh Childers","party":"Liberal","start":"1886-02-06","end":"1886-07-25"},{"name":"Henry Matthews","party":"Conservative","start":"1886-08-03","end":"1892-08-15"},{"name":"H. H. Asquith","party":"Liberal","start":"1892-08-18","end":"1895-06-25"},{"name":"Matthew White Ridley","party":"Conservative","start":"1895-06-29","end":"1900-11-12"},{"name":"Charles Ritchie","party":"Conservative","start":"1900-11-12","end":"1902-08-11"},{"name":"Aretas Akers-Douglas","party":"Conservative","start":"1902-08-11","end":"1905-12-05"},{"name":"Herbert Gladstone","party":"Liberal","start":"1905-12-11","end":"1910-02-19"},{"name":"Winston Churchill","party":"Liberal","start":"1910-02-19","end":"1911-10-24"},{"name":"Reginald McKenna","party":"Liberal","start":"1911-10-24","end":"1915-05-27"},{"name":"John Simon","party":"Liberal","start":"1915-05-27","end":"1916-01-12"},{"name":"Herbert Samuel","party":"Liberal","start":"1916-01-12","end":"1916-12-07"},{"name":"George Cave","party":"Conservative","start":"1916-12-11","end":"1919-01-14"},{"name":"Edward Shortt","party":"National Liberal","start":"1919-01-14","end":"1922-10-23"},{"name":"William Bridgeman","party":"Conservative","start":"1922-10-25","end":"1924-01-22"},{"name":"Arthur Henderson","party":"Labour","start":"1924-01-23","end":"1924-11-04"},{"name":"William Joynson-Hicks","party":"Conservative","start":"1924-11-07","end":"1929-06-05"},{"name":"John Robert Clynes","party":"Labour","start":"1929-06-08","end":"1931-08-26"},{"name":"Herbert Samuel","party":"Liberal National","start":"1931-08-26","end":"1932-10-01"},{"name":"Sir John Gilmour","party":"Unionist","start":"1932-10-01","end":"1935-06-07"},{"name":"John Simon","party":"Liberal National","start":"1935-06-07","end":"1937-05-28"},{"name":"Samuel Hoare","party":"Conservative","start":"1937-05-28","end":"1939-09-03"},{"name":"John Anderson","party":"Independent","start":"1939-09-04","end":"1940-10-04"},{"name":"Herbert Morrison","party":"Labour","start":"1940-10-04","end":"1945-05-23"},{"name":"Donald Somervell","party":"Conservative","start":"1945-05-25","end":"1945-07-26"},{"name":"James Chuter Ede","party":"Labour","start":"1945-08-03","end":"1951-10-26"},{"name":"David Maxwell Fyfe","party":"Conservative","start":"1951-10-27","end":"1954-10-19"},{"name":"Gwilym Lloyd George","party":"National Liberal","start":"1954-10-19","end":"1957-01-14"},{"name":"Rab Butler","party":"Conservative","start":"1957-01-14","end":"1962-07-13"},{"name":"Henry Brooke","party":"Conservative","start":"1962-07-14","end":"1964-10-16"},{"name":"Frank Soskice","party":"Labour","start":"1964-10-18","end":"1965-12-23"},{"name":"Roy Jenkins","party":"Labour","start":"1965-12-23","end":"1967-11-30"},{"name":"James Callaghan","party":"Labour","start":"1967-11-30","end":"1970-06-19"},{"name":"Reginald Maudling","party":"Conservative","start":"1970-06-20","end":"1972-07-18"},{"name":"Robert Carr","party":"Conservative","start":"1972-07-18","end":"1974-03-04"},{"name":"Roy Jenkins","party":"Labour","start":"1974-03-05","end":"1976-09-10"},{"name":"Merlyn Rees","party":"Labour","start":"1976-09-10","end":"1979-05-04"},{"name":"William Whitelaw","party":"Conservative","start":"1979-05-04","end":"1983-06-11"},{"name":"Leon Brittan","party":"Conservative","start":"1983-06-11","end":"1985-09-02"},{"name":"Douglas Hurd","party":"Conservative","start":"1985-09-02","end":"1989-10-26"},{"name":"David Waddington","party":"Conservative","start":"1989-10-26","end":"1990-11-28"},{"name":"Kenneth Baker","party":"Conservative","start":"1990-11-28","end":"1992-04-10"},{"name":"Kenneth Clarke","party":"Conservative","start":"1992-04-10","end":"1993-05-27"},{"name":"Michael Howard","party":"Conservative","start":"1993-05-27","end":"1997-05-02"},{"name":"Jack Straw","party":"Labour","start":"1997-05-02","end":"2001-06-08"},{"name":"David Blunkett","party":"Labour","start":"2001-06-08","end":"2004-12-15"},{"name":"Charles Clarke","party":"Labour","start":"2004-12-15","end":"2006-05-05"},{"name":"John Reid","party":"Labour","start":"2006-05-05","end":"2007-06-28"},{"name":"Jacqui Smith","party":"Labour","start":"2007-06-28","end":"2009-06-05"},{"name":"Alan Johnson","party":"Labour","start":"2009-06-05","end":"2010-05-11"},{"name":"Theresa May","party":"Conservative","start":"2010-05-12","end":"2016-07-13"},{"name":"Amber Rudd","party":"Conservative","start":"2016-07-13","end":"2018-04-29"},{"name":"Sajid Javid","party":"Conservative","start":"2018-04-30","end":"2019-07-24"},{"name":"Priti Patel","party":"Conservative","start":"2019-07-24","end":"2022-09-06"},{"name":"Suella Braverman","party":"Conservative","start":"2022-09-06","end":"2022-10-19"},{"name":"Grant Shapps","party":"Conservative","start":"2022-10-19","end":"2022-10-25"},{"name":"Suella Braverman","party":"Conservative","start":"2022-10-25","end":"2023-11-13"},{"name":"James Cleverly","party":"Conservative","start":"2023-11-13","end":"2024-07-05"},{"name":"Yvette Cooper","party":"Labour","start":"2024-07-05","end":"2025-09-05"},{"name":"Shabana Mahmood","party":"Labour","start":"2025-09-05","end":null}],"deputyPrimeMinister":[{"name":"Clement Attlee","party":"Labour Party","start":"1942-02-19","end":"1945-05-23"},{"name":"Rab Butler","party":"Conservative Party","start":"1962-07-13","end":"1963-10-18"},{"name":"George Brown, Baron George-Brown","party":"Labour Party","start":"1964-10-16","end":"1968-03-15"},{"name":"Willie Whitelaw","party":"Conservative Party","start":"1979-05-04","end":"1988-01-10"},{"name":"Geoffrey Howe","party":"Conservative Party","start":"1989-07-24","end":"1990-11-01"},{"name":"Michael Heseltine","party":"Conservative Party","start":"1995-07-05","end":"1997-05-02"},{"name":"John Prescott","party":"Labour Party","start":"1997-05-02","end":"2001-06-08"},{"name":"Nick Clegg","party":"Liberal Democrats","start":"2010-05-11","end":"2015-05-08"},{"name":"Dominic Raab","party":"Conservative Party","start":"2021-09-15","end":"2022-09-06"},{"name":"Thérèse Coffey","party":"Conservative Party","start":"2022-09-06","end":"2022-10-25"},{"name":"Oliver Dowden","party":"Conservative Party","start":"2023-04-21","end":"2024-07-05"},{"name":"Angela Rayner","party":"Labour Party","start":"2024-07-05","end":"2024-07-09"},{"name":"David Lammy","party":"Labour Party","start":"2025-09-05","end":"2026-07-20"}],"leaderOfOpposition":[{"name":"Charles Grey, 2nd Earl Grey","party":"Whigs","start":"1807-05-01","end":"1807-11-14"},{"name":"George Ponsonby","party":"Whigs","start":"1808-01-01","end":"1817-07-08"},{"name":"George Tierney","party":"Whigs","start":"1818-01-01","end":"1821-01-23"},{"name":"Robert Peel","party":"Conservative Party","start":"1827-04-01","end":"1828-01-01"},{"name":"John Spencer, 3rd Earl Spencer","party":"Whigs","start":"1830-02-01","end":"1830-11-01"},{"name":"Robert Peel","party":"Conservative Party","start":"1830-11-01","end":"1834-11-01"},{"name":"John Russell, 1st Earl Russell","party":"Whigs","start":"1834-11-01","end":"1835-04-01"},{"name":"Robert Peel","party":"Conservative Party","start":"1835-04-18","end":"1841-08-01"},{"name":"John Russell, 1st Earl Russell","party":"Whigs","start":"1841-08-01","end":"1841-08-30"},{"name":"William Lamb, 2nd Viscount Melbourne","party":"Whigs","start":"1841-08-30","end":"1842-10-01"},{"name":"Lord George Bentinck","party":"Conservative Party","start":"1846-06-01","end":"1848-02-10"},{"name":"Charles Manners, 6th Duke of Rutland","party":"Conservative Party","start":"1848-02-10","end":"1848-03-04"},{"name":"John Charles Herries","party":"Conservative Party","start":"1849-02-01","end":"1851-01-01"},{"name":"Benjamin Disraeli","party":"Conservative Party","start":"1851-01-01","end":"1852-02-01"},{"name":"John Russell, 1st Earl Russell","party":"Whigs","start":"1852-02-01","end":"1852-12-01"},{"name":"Benjamin Disraeli","party":"Conservative Party","start":"1852-12-01","end":"1858-02-01"},{"name":"Henry Temple, 3rd Viscount Palmerston","party":"Whigs","start":"1858-02-19","end":"1859-06-01"},{"name":"Benjamin Disraeli","party":"Conservative Party","start":"1859-06-01","end":"1866-06-01"},{"name":"William Ewart Gladstone","party":"Conservative Party","start":"1866-06-01","end":"1866-06-28"},{"name":"John Russell, 1st Earl Russell","party":"Whigs","start":"1866-06-28","end":"1868-12-01"},{"name":"Benjamin Disraeli","party":"Conservative Party","start":"1868-12-01","end":"1874-02-01"},{"name":"William Ewart Gladstone","party":"Conservative Party","start":"1874-02-01","end":"1875-02-01"},{"name":"Spencer Cavendish, 8th Duke of Devonshire","party":"Liberal Party","start":"1875-02-01","end":"1880-04-01"},{"name":"Stafford Northcote, 1st Earl of Iddesleigh","party":"Conservative Party","start":"1880-04-01","end":"1880-04-21"},{"name":"Benjamin Disraeli","party":"Conservative Party","start":"1880-04-21","end":"1881-04-19"},{"name":"William Ewart Gladstone","party":"Conservative Party","start":"1885-06-01","end":"1886-02-01"},{"name":"Michael Hicks Beach, 1st Earl St Aldwyn","party":"Conservative Party","start":"1886-02-01","end":"1886-07-01"},{"name":"William Ewart Gladstone","party":"Conservative Party","start":"1886-07-20","end":"1892-08-01"},{"name":"Arthur Balfour","party":"Conservative Party","start":"1892-08-01","end":"1892-08-11"},{"name":"Robert Gascoyne-Cecil, 3rd Marquess of Salisbury","party":"Conservative Party","start":"1892-08-11","end":"1895-06-22"},{"name":"Archibald Primrose, 5th Earl of Rosebery","party":"Liberal Party","start":"1895-06-22","end":"1896-10-06"},{"name":"William Vernon Harcourt","party":"Liberal Party","start":"1896-10-06","end":"1898-12-08"},{"name":"Henry Campbell-Bannerman","party":"Liberal Party","start":"1899-02-06","end":"1905-12-05"},{"name":"Arthur Balfour","party":"Conservative Party","start":"1905-12-05","end":"1906-02-08"},{"name":"Joseph Chamberlain","party":"Conservative Party","start":"1906-02-08","end":"1906-02-27"},{"name":"Arthur Balfour","party":"Conservative Party","start":"1906-02-27","end":"1911-11-13"},{"name":"Bonar Law","party":"Conservative Party","start":"1911-11-13","end":"1915-05-25"},{"name":"Edward Carson, Baron Carson","party":"Conservative Party","start":"1915-10-19","end":"1916-12-06"},{"name":"H. H. Asquith","party":"Liberal Party","start":"1916-12-06","end":"1918-12-14"},{"name":"Donald Maclean","party":"Liberal Party","start":"1918-12-14","end":"1920-02-12"},{"name":"H. H. Asquith","party":"Liberal Party","start":"1920-02-12","end":"1922-11-21"},{"name":"Ramsay MacDonald","party":"Labour Party","start":"1922-11-21","end":"1924-01-22"},{"name":"Stanley Baldwin","party":"Conservative Party","start":"1924-01-22","end":"1924-11-04"},{"name":"Ramsay MacDonald","party":"Labour Party","start":"1924-11-04","end":"1929-06-05"},{"name":"Stanley Baldwin","party":"Conservative Party","start":"1929-06-05","end":"1931-08-24"},{"name":"Arthur Henderson","party":"Labour Party","start":"1931-09-01","end":"1932-10-25"},{"name":"George Lansbury","party":"Labour Party","start":"1932-10-25","end":"1935-10-05"},{"name":"Clement Attlee","party":"Labour Party","start":"1935-10-25","end":"1940-05-22"},{"name":"Hastings Lees-Smith","party":"Labour Party","start":"1940-05-22","end":"1942-01-21"},{"name":"Frederick Pethick-Lawrence, 1st Baron Pethick-Lawrence","party":"Labour Party","start":"1942-01-21","end":"1942-02-01"},{"name":"Arthur Greenwood","party":"Labour Party","start":"1942-02-01","end":"1945-05-23"},{"name":"Clement Attlee","party":"Labour Party","start":"1945-05-23","end":"1945-07-26"},{"name":"Winston Churchill","party":"Conservative Party","start":"1945-07-26","end":"1951-10-26"},{"name":"Clement Attlee","party":"Labour Party","start":"1951-10-26","end":"1955-11-25"},{"name":"Herbert Morrison","party":"Labour Party","start":"1955-11-26","end":"1955-12-14"},{"name":"Hugh Gaitskell","party":"Labour Party","start":"1955-12-14","end":"1963-01-18"},{"name":"George Brown, Baron George-Brown","party":"Labour Party","start":"1963-01-18","end":"1963-02-14"},{"name":"Harold Wilson","party":"Labour Party","start":"1963-02-14","end":"1964-10-16"},{"name":"Alec Douglas-Home","party":"Conservative Party","start":"1964-10-16","end":"1965-07-28"},{"name":"Edward Heath","party":"Conservative Party","start":"1965-07-28","end":"1970-06-19"},{"name":"Harold Wilson","party":"Labour Party","start":"1970-06-19","end":"1974-03-04"},{"name":"Edward Heath","party":"Conservative Party","start":"1974-03-04","end":"1975-02-11"},{"name":"Margaret Thatcher","party":"Conservative Party","start":"1975-02-11","end":"1979-05-04"},{"name":"James Callaghan","party":"Labour Party","start":"1979-05-04","end":"1980-11-10"},{"name":"Michael Foot","party":"Labour Party","start":"1980-11-10","end":"1983-10-02"},{"name":"Neil Kinnock","party":"Labour Party","start":"1983-10-02","end":"1992-07-18"},{"name":"John Smith","party":"Labour Party","start":"1992-07-18","end":"1994-05-12"},{"name":"Margaret Beckett","party":"Labour Party","start":"1994-05-12","end":"1994-07-21"},{"name":"Tony Blair","party":"Labour Party","start":"1994-07-21","end":"1997-05-02"},{"name":"John Major","party":"Conservative Party","start":"1997-05-02","end":"1997-06-19"},{"name":"William Hague","party":"Conservative Party","start":"1997-06-19","end":"2001-09-13"},{"name":"Iain Duncan Smith","party":"Conservative Party","start":"2001-09-13","end":"2003-11-06"},{"name":"Michael Howard","party":"Conservative Party","start":"2003-11-06","end":"2005-12-06"},{"name":"David Cameron","party":"Conservative Party","start":"2005-12-06","end":"2010-05-11"},{"name":"Harriet Harman","party":"Labour Party","start":"2010-05-11","end":"2010-09-25"},{"name":"Ed Miliband","party":"Labour Party","start":"2010-09-25","end":"2015-05-08"},{"name":"Harriet Harman","party":"Labour Party","start":"2015-05-08","end":"2015-09-12"},{"name":"Jeremy Corbyn","party":"Labour Party","start":"2015-09-12","end":"2020-04-04"},{"name":"Keir Starmer","party":"Labour Party","start":"2020-04-04","end":"2024-07-05"},{"name":"Rishi Sunak","party":"Conservative Party","start":"2024-07-05","end":"2024-11-02"},{"name":"Kemi Badenoch","party":"Conservative Party","start":"2024-11-02","end":null}],"firstMinisterScotland":[{"name":"Donald Dewar","party":"Labour Party","start":"1999-05-13","end":"2000-10-11"},{"name":"Jim Wallace, Baron Wallace of Tankerness","party":"Liberal Democrats","start":"2000-10-11","end":"2000-10-26"},{"name":"Henry McLeish","party":"Labour Party","start":"2000-10-27","end":"2001-11-08"},{"name":"Jim Wallace, Baron Wallace of Tankerness","party":"Liberal Democrats","start":"2001-11-08","end":"2001-11-22"},{"name":"Jack McConnell","party":"Labour Party","start":"2001-11-22","end":"2007-05-16"},{"name":"Alex Salmond","party":"Scottish National Party","start":"2007-05-16","end":"2014-11-19"},{"name":"Nicola Sturgeon","party":"Scottish National Party","start":"2014-11-20","end":"2023-03-28"},{"name":"Humza Yousaf","party":"Scottish National Party","start":"2023-03-29","end":"2024-05-07"},{"name":"John Swinney","party":"Scottish National Party","start":"2024-05-08","end":null}],"firstMinisterWales":[{"name":"Alun Michael","party":"Labour Party","start":"1999-05-12","end":"2000-02-09"},{"name":"Rhodri Morgan","party":"Labour Party","start":"2000-02-09","end":"2009-12-09"},{"name":"Carwyn Jones","party":"Labour Party","start":"2009-12-10","end":"2018-12-12"},{"name":"Mark Drakeford","party":"Labour Party","start":"2018-12-13","end":"2024-03-20"},{"name":"Vaughan Gething","party":"Labour Party","start":"2024-03-20","end":"2024-08-05"},{"name":"Eluned Morgan","party":"Labour Party","start":"2024-08-06","end":"2026-05-12"},{"name":"Rhun ap Iorwerth","party":"Plaid Cymru","start":"2026-05-12","end":null}],"firstMinisterNorthernIreland":[{"name":"David Trimble","party":"Conservative Party","start":"1998-07-01","end":"2001-07-01"},{"name":"Reg Empey","party":"Ulster Unionist Party","start":"2001-07-01","end":"2001-11-06"},{"name":"David Trimble","party":"Conservative Party","start":"2001-11-06","end":"2002-10-14"},{"name":"Ian Paisley","party":"Democratic Unionist Party","start":"2007-05-08","end":"2008-06-05"},{"name":"Peter Robinson","party":"Democratic Unionist Party","start":"2008-06-05","end":"2016-01-11"},{"name":"Arlene Foster","party":"Democratic Unionist Party","start":"2016-01-11","end":"2017-01-09"},{"name":"Arlene Foster","party":"Democratic Unionist Party","start":"2020-01-11","end":"2021-06-14"},{"name":"Paul Givan","party":"Democratic Unionist Party","start":"2021-06-17","end":"2022-02-04"},{"name":"Michelle O'Neill","party":"Sinn Féin","start":"2024-02-03","end":null}]}
+{
+  "source": "Wikidata P39 (position held, matched by office label) + P580/P582",
+  "note": "UK offices beyond PM/Sovereign (those come from /leaders). end=null=current.",
+  "chancellor": [
+    {
+      "name": "John Sandale",
+      "party": "Unknown",
+      "start": "1307-08-28",
+      "end": "1308-05-28"
+    },
+    {
+      "name": "Hervey de Stanton",
+      "party": "Unknown",
+      "start": "1324-01-01",
+      "end": "1327-01-01"
+    },
+    {
+      "name": "Henry Somer",
+      "party": "Unknown",
+      "start": "1410-01-01",
+      "end": "1437-01-01"
+    },
+    {
+      "name": "Thomas Cromwell",
+      "party": "Unknown",
+      "start": "1533-04-12",
+      "end": "1540-06-01"
+    },
+    {
+      "name": "John Baker",
+      "party": "Unknown",
+      "start": "1545-01-01",
+      "end": "1558-01-01"
+    },
+    {
+      "name": "Julius Caesar",
+      "party": "Unknown",
+      "start": "1606-01-01",
+      "end": "1614-01-01"
+    },
+    {
+      "name": "Fulke Greville, 1st Baron Brooke",
+      "party": "Unknown",
+      "start": "1614-01-01",
+      "end": "1621-01-01"
+    },
+    {
+      "name": "Richard Weston, 1st Earl of Portland",
+      "party": "Unknown",
+      "start": "1621-01-01",
+      "end": "1628-01-01"
+    },
+    {
+      "name": "Edward Barrett, 1st Lord Barrett of Newburgh",
+      "party": "Unknown",
+      "start": "1628-01-01",
+      "end": "1629-01-01"
+    },
+    {
+      "name": "Francis Cottington, 1st Baron Cottington",
+      "party": "Unknown",
+      "start": "1629-01-01",
+      "end": "1642-01-01"
+    },
+    {
+      "name": "Edward Hyde, 1st Earl of Clarendon",
+      "party": "Tories",
+      "start": "1643-03-01",
+      "end": "1646-01-01"
+    },
+    {
+      "name": "Anthony Ashley Cooper, 1st Earl of Shaftesbury",
+      "party": "Whigs",
+      "start": "1661-05-13",
+      "end": "1672-11-22"
+    },
+    {
+      "name": "John Ernle",
+      "party": "Unknown",
+      "start": "1676-05-02",
+      "end": "1689-04-06"
+    },
+    {
+      "name": "Henry Booth, 1st Earl of Warrington",
+      "party": "Unknown",
+      "start": "1689-04-09",
+      "end": "1690-03-18"
+    },
+    {
+      "name": "Charles Montagu, 1st Earl of Halifax",
+      "party": "Whigs",
+      "start": "1694-05-03",
+      "end": "1699-01-01"
+    },
+    {
+      "name": "John Smith",
+      "party": "Whigs",
+      "start": "1699-01-01",
+      "end": "1701-01-01"
+    },
+    {
+      "name": "John Smith",
+      "party": "Whigs",
+      "start": "1708-01-01",
+      "end": "1710-01-01"
+    },
+    {
+      "name": "Robert Harley, 1st Earl of Oxford and Earl Mortimer",
+      "party": "Tories",
+      "start": "1710-08-11",
+      "end": "1711-06-04"
+    },
+    {
+      "name": "Sir William Wyndham, 3rd Baronet",
+      "party": "Tories",
+      "start": "1713-08-21",
+      "end": "1714-10-13"
+    },
+    {
+      "name": "Richard Onslow, 1st Baron Onslow",
+      "party": "Whigs",
+      "start": "1714-10-13",
+      "end": "1715-10-12"
+    },
+    {
+      "name": "James Stanhope, 1st Earl Stanhope",
+      "party": "Whigs",
+      "start": "1717-04-15",
+      "end": "1718-01-01"
+    },
+    {
+      "name": "John Aislabie",
+      "party": "Whigs",
+      "start": "1718-01-01",
+      "end": "1721-01-01"
+    },
+    {
+      "name": "John Pratt",
+      "party": "Whigs",
+      "start": "1721-02-02",
+      "end": "1721-04-03"
+    },
+    {
+      "name": "Robert Walpole",
+      "party": "Whigs",
+      "start": "1721-04-15",
+      "end": "1742-02-23"
+    },
+    {
+      "name": "Henry Pelham",
+      "party": "Whigs",
+      "start": "1743-12-12",
+      "end": "1754-03-06"
+    },
+    {
+      "name": "William Murray, 1st Earl of Mansfield",
+      "party": "Unknown",
+      "start": "1757-04-05",
+      "end": "1757-04-08"
+    },
+    {
+      "name": "William Barrington, 2nd Viscount Barrington",
+      "party": "Whigs",
+      "start": "1761-03-19",
+      "end": "1762-05-29"
+    },
+    {
+      "name": "Francis Dashwood, 11th Baron le Despencer",
+      "party": "Tories",
+      "start": "1762-06-09",
+      "end": "1763-04-08"
+    },
+    {
+      "name": "George Grenville",
+      "party": "Whigs",
+      "start": "1763-04-16",
+      "end": "1765-07-16"
+    },
+    {
+      "name": "William Dowdeswell",
+      "party": "Whigs",
+      "start": "1765-07-16",
+      "end": "1766-08-02"
+    },
+    {
+      "name": "Charles Townshend",
+      "party": "Whigs",
+      "start": "1766-08-02",
+      "end": "1767-09-04"
+    },
+    {
+      "name": "Frederick North, 2nd Earl of Guilford",
+      "party": "Tories",
+      "start": "1767-09-11",
+      "end": "1782-03-27"
+    },
+    {
+      "name": "Lord John Cavendish",
+      "party": "Whigs",
+      "start": "1782-03-27",
+      "end": "1782-07-10"
+    },
+    {
+      "name": "William Pitt the Younger",
+      "party": "Tories",
+      "start": "1782-07-10",
+      "end": "1783-03-31"
+    },
+    {
+      "name": "Henry Addington, 1st Viscount Sidmouth",
+      "party": "Tories",
+      "start": "1801-03-17",
+      "end": "1804-05-10"
+    },
+    {
+      "name": "Henry Petty-Fitzmaurice, 3rd Marquess of Lansdowne",
+      "party": "Whigs",
+      "start": "1806-02-05",
+      "end": "1807-03-26"
+    },
+    {
+      "name": "Spencer Perceval",
+      "party": "Tories",
+      "start": "1807-03-26",
+      "end": "1812-05-11"
+    },
+    {
+      "name": "Nicholas Vansittart, 1st Baron Bexley",
+      "party": "Tories",
+      "start": "1812-05-12",
+      "end": "1823-01-31"
+    },
+    {
+      "name": "F. J. Robinson, 1st Viscount Goderich",
+      "party": "Tories",
+      "start": "1823-01-31",
+      "end": "1827-04-20"
+    },
+    {
+      "name": "George Canning",
+      "party": "Tories",
+      "start": "1827-04-20",
+      "end": "1827-08-08"
+    },
+    {
+      "name": "John Charles Herries",
+      "party": "Conservative Party",
+      "start": "1827-09-03",
+      "end": "1828-01-25"
+    },
+    {
+      "name": "Henry Goulburn",
+      "party": "Conservative Party",
+      "start": "1828-01-26",
+      "end": "1830-11-22"
+    },
+    {
+      "name": "John Spencer, 3rd Earl Spencer",
+      "party": "Whigs",
+      "start": "1830-11-22",
+      "end": "1834-11-14"
+    },
+    {
+      "name": "Thomas Denman, 1st Baron Denman",
+      "party": "Whigs",
+      "start": "1834-11-14",
+      "end": "1834-12-15"
+    },
+    {
+      "name": "Robert Peel",
+      "party": "Conservative Party",
+      "start": "1834-12-15",
+      "end": "1835-04-08"
+    },
+    {
+      "name": "Thomas Spring Rice, 1st Baron Monteagle of Brandon",
+      "party": "Whigs",
+      "start": "1835-04-18",
+      "end": "1839-08-26"
+    },
+    {
+      "name": "Francis Baring, 1st Baron Northbrook",
+      "party": "Whigs",
+      "start": "1839-08-26",
+      "end": "1841-08-30"
+    },
+    {
+      "name": "Henry Goulburn",
+      "party": "Conservative Party",
+      "start": "1841-09-03",
+      "end": "1846-06-27"
+    },
+    {
+      "name": "Charles Wood, 1st Viscount Halifax",
+      "party": "Whigs",
+      "start": "1846-07-06",
+      "end": "1852-02-21"
+    },
+    {
+      "name": "Benjamin Disraeli",
+      "party": "Conservative Party",
+      "start": "1852-02-27",
+      "end": "1852-12-17"
+    },
+    {
+      "name": "William Ewart Gladstone",
+      "party": "Conservative Party",
+      "start": "1852-12-28",
+      "end": "1855-02-28"
+    },
+    {
+      "name": "George Cornewall Lewis",
+      "party": "Liberal Party",
+      "start": "1855-02-28",
+      "end": "1858-02-21"
+    },
+    {
+      "name": "Benjamin Disraeli",
+      "party": "Conservative Party",
+      "start": "1858-02-26",
+      "end": "1859-06-11"
+    },
+    {
+      "name": "William Ewart Gladstone",
+      "party": "Conservative Party",
+      "start": "1859-06-18",
+      "end": "1866-06-26"
+    },
+    {
+      "name": "Benjamin Disraeli",
+      "party": "Conservative Party",
+      "start": "1866-07-06",
+      "end": "1868-02-29"
+    },
+    {
+      "name": "George Ward Hunt",
+      "party": "Conservative Party",
+      "start": "1868-02-29",
+      "end": "1868-12-01"
+    },
+    {
+      "name": "Robert Lowe",
+      "party": "Liberal Party",
+      "start": "1868-12-09",
+      "end": "1873-08-11"
+    },
+    {
+      "name": "William Ewart Gladstone",
+      "party": "Conservative Party",
+      "start": "1873-08-11",
+      "end": "1874-02-17"
+    },
+    {
+      "name": "Stafford Northcote, 1st Earl of Iddesleigh",
+      "party": "Conservative Party",
+      "start": "1874-02-21",
+      "end": "1880-04-21"
+    },
+    {
+      "name": "William Ewart Gladstone",
+      "party": "Conservative Party",
+      "start": "1880-04-28",
+      "end": "1882-12-16"
+    },
+    {
+      "name": "Hugh Childers",
+      "party": "Liberal Party",
+      "start": "1882-12-16",
+      "end": "1885-06-09"
+    },
+    {
+      "name": "Michael Hicks Beach, 1st Earl St Aldwyn",
+      "party": "Conservative Party",
+      "start": "1885-06-24",
+      "end": "1886-01-28"
+    },
+    {
+      "name": "William Vernon Harcourt",
+      "party": "Liberal Party",
+      "start": "1886-02-06",
+      "end": "1886-07-20"
+    },
+    {
+      "name": "Lord Randolph Churchill",
+      "party": "Conservative Party",
+      "start": "1886-08-03",
+      "end": "1886-12-22"
+    },
+    {
+      "name": "George Goschen, 1st Viscount Goschen",
+      "party": "Liberal Party",
+      "start": "1887-01-14",
+      "end": "1892-08-11"
+    },
+    {
+      "name": "William Vernon Harcourt",
+      "party": "Liberal Party",
+      "start": "1892-08-18",
+      "end": "1895-06-21"
+    },
+    {
+      "name": "Michael Hicks Beach, 1st Earl St Aldwyn",
+      "party": "Conservative Party",
+      "start": "1895-06-29",
+      "end": "1902-08-11"
+    },
+    {
+      "name": "Charles Ritchie, 1st Baron Ritchie of Dundee",
+      "party": "Conservative Party",
+      "start": "1902-08-11",
+      "end": "1903-10-09"
+    },
+    {
+      "name": "Austen Chamberlain",
+      "party": "Conservative Party",
+      "start": "1903-10-09",
+      "end": "1905-12-04"
+    },
+    {
+      "name": "H. H. Asquith",
+      "party": "Liberal Party",
+      "start": "1905-12-10",
+      "end": "1908-04-05"
+    },
+    {
+      "name": "David Lloyd George",
+      "party": "Liberal Party",
+      "start": "1908-04-05",
+      "end": "1915-05-25"
+    },
+    {
+      "name": "Reginald McKenna",
+      "party": "Liberal Party",
+      "start": "1915-05-27",
+      "end": "1916-12-10"
+    },
+    {
+      "name": "Bonar Law",
+      "party": "Conservative Party",
+      "start": "1916-12-10",
+      "end": "1919-01-10"
+    },
+    {
+      "name": "Austen Chamberlain",
+      "party": "Conservative Party",
+      "start": "1919-01-10",
+      "end": "1921-04-01"
+    },
+    {
+      "name": "Robert Horne, 1st Viscount Horne of Slamannan",
+      "party": "Unionist Party",
+      "start": "1921-04-01",
+      "end": "1922-10-19"
+    },
+    {
+      "name": "Stanley Baldwin",
+      "party": "Conservative Party",
+      "start": "1922-10-27",
+      "end": "1923-08-27"
+    },
+    {
+      "name": "Neville Chamberlain",
+      "party": "Conservative Party",
+      "start": "1923-08-27",
+      "end": "1924-01-22"
+    },
+    {
+      "name": "Philip Snowden, 1st Viscount Snowden",
+      "party": "Labour Party",
+      "start": "1924-01-22",
+      "end": "1924-11-03"
+    },
+    {
+      "name": "Winston Churchill",
+      "party": "Conservative Party",
+      "start": "1924-11-06",
+      "end": "1929-06-04"
+    },
+    {
+      "name": "Philip Snowden, 1st Viscount Snowden",
+      "party": "Labour Party",
+      "start": "1929-06-07",
+      "end": "1931-11-05"
+    },
+    {
+      "name": "Neville Chamberlain",
+      "party": "Conservative Party",
+      "start": "1931-11-05",
+      "end": "1937-05-28"
+    },
+    {
+      "name": "John Simon, 1st Viscount Simon",
+      "party": "Liberal Party",
+      "start": "1937-05-28",
+      "end": "1940-05-10"
+    },
+    {
+      "name": "Kingsley Wood",
+      "party": "Conservative Party",
+      "start": "1940-05-12",
+      "end": "1943-09-21"
+    },
+    {
+      "name": "John Anderson, 1st Viscount Waverley",
+      "party": "Unknown",
+      "start": "1943-09-24",
+      "end": "1945-07-26"
+    },
+    {
+      "name": "Hugh Dalton",
+      "party": "Labour Party",
+      "start": "1945-07-27",
+      "end": "1947-11-13"
+    },
+    {
+      "name": "Stafford Cripps",
+      "party": "Labour Party",
+      "start": "1947-11-13",
+      "end": "1950-10-19"
+    },
+    {
+      "name": "Hugh Gaitskell",
+      "party": "Labour Party",
+      "start": "1950-10-19",
+      "end": "1951-10-26"
+    },
+    {
+      "name": "Rab Butler",
+      "party": "Conservative Party",
+      "start": "1951-10-28",
+      "end": "1955-12-20"
+    },
+    {
+      "name": "Harold Macmillan",
+      "party": "Conservative Party",
+      "start": "1955-12-20",
+      "end": "1957-01-13"
+    },
+    {
+      "name": "Peter Thorneycroft, Baron Thorneycroft",
+      "party": "Conservative Party",
+      "start": "1957-01-13",
+      "end": "1958-01-06"
+    },
+    {
+      "name": "Derick Heathcoat-Amory, 1st Viscount Amory",
+      "party": "Conservative Party",
+      "start": "1958-01-06",
+      "end": "1960-07-27"
+    },
+    {
+      "name": "Selwyn Lloyd",
+      "party": "Conservative Party",
+      "start": "1960-07-27",
+      "end": "1962-07-13"
+    },
+    {
+      "name": "Reginald Maudling",
+      "party": "Conservative Party",
+      "start": "1962-07-13",
+      "end": "1964-10-16"
+    },
+    {
+      "name": "James Callaghan",
+      "party": "Labour Party",
+      "start": "1964-10-16",
+      "end": "1967-11-30"
+    },
+    {
+      "name": "Roy Jenkins",
+      "party": "Liberal Democrats",
+      "start": "1967-11-30",
+      "end": "1970-06-19"
+    },
+    {
+      "name": "Iain Macleod",
+      "party": "Conservative Party",
+      "start": "1970-06-20",
+      "end": "1970-07-20"
+    },
+    {
+      "name": "Anthony Barber",
+      "party": "Conservative Party",
+      "start": "1970-07-25",
+      "end": "1974-03-04"
+    },
+    {
+      "name": "Denis Healey",
+      "party": "Labour Party",
+      "start": "1974-03-05",
+      "end": "1979-05-04"
+    },
+    {
+      "name": "Geoffrey Howe",
+      "party": "Conservative Party",
+      "start": "1979-05-04",
+      "end": "1979-05-05"
+    },
+    {
+      "name": "Geoffrey Howe",
+      "party": "Conservative Party",
+      "start": "1979-05-05",
+      "end": "1983-06-11"
+    },
+    {
+      "name": "Nigel Lawson",
+      "party": "Conservative Party",
+      "start": "1983-06-11",
+      "end": "1989-10-26"
+    },
+    {
+      "name": "John Major",
+      "party": "Conservative Party",
+      "start": "1989-10-26",
+      "end": "1990-11-28"
+    },
+    {
+      "name": "Norman Lamont",
+      "party": "Conservative Party",
+      "start": "1990-11-28",
+      "end": "1993-05-27"
+    },
+    {
+      "name": "Kenneth Clarke",
+      "party": "Conservative Party",
+      "start": "1993-05-27",
+      "end": "1997-05-02"
+    },
+    {
+      "name": "Gordon Brown",
+      "party": "Labour Party",
+      "start": "1997-05-02",
+      "end": "2007-06-27"
+    },
+    {
+      "name": "Alistair Darling",
+      "party": "Labour Party",
+      "start": "2007-06-28",
+      "end": "2010-05-11"
+    },
+    {
+      "name": "George Osborne",
+      "party": "Conservative Party",
+      "start": "2010-05-11",
+      "end": "2010-05-12"
+    },
+    {
+      "name": "George Osborne",
+      "party": "Conservative Party",
+      "start": "2010-05-12",
+      "end": "2016-07-13"
+    },
+    {
+      "name": "Philip Hammond",
+      "party": "Conservative Party",
+      "start": "2016-07-13",
+      "end": "2019-07-24"
+    },
+    {
+      "name": "Sajid Javid",
+      "party": "Conservative Party",
+      "start": "2019-07-24",
+      "end": "2020-02-13"
+    },
+    {
+      "name": "Rishi Sunak",
+      "party": "Conservative Party",
+      "start": "2020-02-13",
+      "end": "2022-07-05"
+    },
+    {
+      "name": "Nadhim Zahawi",
+      "party": "Conservative Party",
+      "start": "2022-07-05",
+      "end": "2022-09-06"
+    },
+    {
+      "name": "Kwasi Kwarteng",
+      "party": "Conservative Party",
+      "start": "2022-09-06",
+      "end": "2022-10-14"
+    },
+    {
+      "name": "Jeremy Hunt",
+      "party": "Conservative Party",
+      "start": "2022-10-14",
+      "end": "2024-07-05"
+    },
+    {
+      "name": "Rachel Reeves",
+      "party": "Labour Party",
+      "start": "2024-07-05",
+      "end": "2026-07-20"
+    },
+    {
+      "name": "John Healey",
+      "party": "Labour Party",
+      "start": "2026-07-20",
+      "end": null
+    }
+  ],
+  "foreignSecretary": [
+    {
+      "name": "Thomas Robinson, 2nd Baron Grantham",
+      "party": "Whigs",
+      "start": "1782-07-13",
+      "end": "1783-04-02"
+    },
+    {
+      "name": "George Nugent-Temple-Grenville, 1st Marquess of Buckingham",
+      "party": "Whigs",
+      "start": "1783-12-19",
+      "end": "1783-12-23"
+    },
+    {
+      "name": "Francis Osborne, 5th Duke of Leeds",
+      "party": "Tories",
+      "start": "1783-12-23",
+      "end": "1791-05-01"
+    },
+    {
+      "name": "William Wyndham Grenville, 1st Baron Grenville",
+      "party": "Tories",
+      "start": "1791-06-08",
+      "end": "1801-02-20"
+    },
+    {
+      "name": "Robert Jenkinson, 2nd Earl of Liverpool",
+      "party": "Tories",
+      "start": "1801-02-20",
+      "end": "1804-05-14"
+    },
+    {
+      "name": "Dudley Ryder, 1st Earl of Harrowby",
+      "party": "Tories",
+      "start": "1804-05-14",
+      "end": "1805-01-11"
+    },
+    {
+      "name": "Henry Phipps, 1st Earl of Mulgrave",
+      "party": "Tories",
+      "start": "1805-01-11",
+      "end": "1806-02-07"
+    },
+    {
+      "name": "Charles James Fox",
+      "party": "Whigs",
+      "start": "1806-02-07",
+      "end": "1806-09-13"
+    },
+    {
+      "name": "Charles Grey, 2nd Earl Grey",
+      "party": "Whigs",
+      "start": "1806-09-24",
+      "end": "1807-03-25"
+    },
+    {
+      "name": "Henry Bathurst, 3rd Earl Bathurst",
+      "party": "Tories",
+      "start": "1809-10-11",
+      "end": "1809-12-06"
+    },
+    {
+      "name": "Richard Wellesley, 1st Marquess Wellesley",
+      "party": "Whigs",
+      "start": "1809-12-06",
+      "end": "1812-01-01"
+    },
+    {
+      "name": "Robert Stewart, Viscount Castlereagh",
+      "party": "Whigs",
+      "start": "1812-01-01",
+      "end": "1822-01-01"
+    },
+    {
+      "name": "George Canning",
+      "party": "Tories",
+      "start": "1822-09-13",
+      "end": "1827-04-20"
+    },
+    {
+      "name": "John Ward, 1st Earl of Dudley",
+      "party": "Tories",
+      "start": "1827-04-30",
+      "end": "1828-06-02"
+    },
+    {
+      "name": "Arthur Wellesley, 1st Duke of Wellington",
+      "party": "Conservative Party",
+      "start": "1834-11-14",
+      "end": "1835-04-18"
+    },
+    {
+      "name": "George Hamilton-Gordon, 4th Earl of Aberdeen",
+      "party": "Peelite",
+      "start": "1841-09-02",
+      "end": "1846-07-06"
+    },
+    {
+      "name": "Henry Temple, 3rd Viscount Palmerston",
+      "party": "Whigs",
+      "start": "1846-07-06",
+      "end": "1851-12-26"
+    },
+    {
+      "name": "Granville Leveson-Gower, 2nd Earl Granville",
+      "party": "Liberal Party",
+      "start": "1851-12-26",
+      "end": "1852-02-27"
+    },
+    {
+      "name": "James Harris",
+      "party": "Conservative Party",
+      "start": "1852-02-27",
+      "end": "1852-12-28"
+    },
+    {
+      "name": "George Villiers, 4th Earl of Clarendon",
+      "party": "Liberal Party",
+      "start": "1853-02-21",
+      "end": "1858-02-26"
+    },
+    {
+      "name": "John Russell, 1st Earl Russell",
+      "party": "Whigs",
+      "start": "1859-06-18",
+      "end": "1865-11-03"
+    },
+    {
+      "name": "George Villiers, 4th Earl of Clarendon",
+      "party": "Liberal Party",
+      "start": "1865-11-03",
+      "end": "1866-07-06"
+    },
+    {
+      "name": "Edward Stanley, 15th Earl of Derby",
+      "party": "Conservative Party",
+      "start": "1866-07-06",
+      "end": "1868-12-09"
+    },
+    {
+      "name": "Archibald Primrose, 5th Earl of Rosebery",
+      "party": "Liberal Party",
+      "start": "1886-02-06",
+      "end": "1886-08-03"
+    },
+    {
+      "name": "Stafford Northcote, 1st Earl of Iddesleigh",
+      "party": "Conservative Party",
+      "start": "1886-08-03",
+      "end": "1887-01-12"
+    },
+    {
+      "name": "Archibald Primrose, 5th Earl of Rosebery",
+      "party": "Liberal Party",
+      "start": "1892-08-18",
+      "end": "1894-03-10"
+    },
+    {
+      "name": "John Wodehouse, 1st Earl of Kimberley",
+      "party": "Liberal Party",
+      "start": "1894-03-10",
+      "end": "1895-06-21"
+    },
+    {
+      "name": "Robert Gascoyne-Cecil, 3rd Marquess of Salisbury",
+      "party": "Conservative Party",
+      "start": "1895-06-29",
+      "end": "1900-11-12"
+    },
+    {
+      "name": "Henry Petty-Fitzmaurice, 5th Marquess of Lansdowne",
+      "party": "Liberal Unionist Party",
+      "start": "1900-11-12",
+      "end": "1905-12-04"
+    },
+    {
+      "name": "Edward Grey, 1st Viscount Grey of Fallodon",
+      "party": "Liberal Party",
+      "start": "1905-12-10",
+      "end": "1916-12-10"
+    },
+    {
+      "name": "Arthur Balfour",
+      "party": "Conservative Party",
+      "start": "1916-12-10",
+      "end": "1919-10-23"
+    },
+    {
+      "name": "George Curzon, 1st Marquess Curzon of Kedleston",
+      "party": "Conservative Party",
+      "start": "1919-10-23",
+      "end": "1924-01-22"
+    },
+    {
+      "name": "Ramsay MacDonald",
+      "party": "Labour Party",
+      "start": "1924-01-22",
+      "end": "1924-11-03"
+    },
+    {
+      "name": "Austen Chamberlain",
+      "party": "Conservative Party",
+      "start": "1924-11-03",
+      "end": "1929-06-04"
+    },
+    {
+      "name": "Arthur Henderson",
+      "party": "Labour Party",
+      "start": "1929-06-07",
+      "end": "1931-08-24"
+    },
+    {
+      "name": "Rufus Isaacs, 1st Marquess of Reading",
+      "party": "Liberal Party",
+      "start": "1931-08-25",
+      "end": "1931-11-05"
+    },
+    {
+      "name": "John Simon, 1st Viscount Simon",
+      "party": "Liberal Party",
+      "start": "1931-11-05",
+      "end": "1935-06-07"
+    },
+    {
+      "name": "Samuel Hoare, 1st Viscount Templewood",
+      "party": "Conservative Party",
+      "start": "1935-06-07",
+      "end": "1935-12-18"
+    },
+    {
+      "name": "Anthony Eden",
+      "party": "Conservative Party",
+      "start": "1935-12-22",
+      "end": "1938-02-20"
+    },
+    {
+      "name": "Edward Wood, 1st Earl of Halifax",
+      "party": "Conservative Party",
+      "start": "1938-02-21",
+      "end": "1940-12-22"
+    },
+    {
+      "name": "Anthony Eden",
+      "party": "Conservative Party",
+      "start": "1940-12-22",
+      "end": "1945-07-26"
+    },
+    {
+      "name": "Ernest Bevin",
+      "party": "Labour Party",
+      "start": "1945-07-27",
+      "end": "1951-03-09"
+    },
+    {
+      "name": "Herbert Morrison",
+      "party": "Labour Party",
+      "start": "1951-03-09",
+      "end": "1951-10-26"
+    },
+    {
+      "name": "Anthony Eden",
+      "party": "Conservative Party",
+      "start": "1951-10-28",
+      "end": "1955-04-07"
+    },
+    {
+      "name": "Harold Macmillan",
+      "party": "Conservative Party",
+      "start": "1955-04-07",
+      "end": "1955-12-20"
+    },
+    {
+      "name": "Selwyn Lloyd",
+      "party": "Conservative Party",
+      "start": "1955-12-22",
+      "end": "1960-07-27"
+    },
+    {
+      "name": "Alec Douglas-Home",
+      "party": "Conservative Party",
+      "start": "1960-07-27",
+      "end": "1963-10-18"
+    },
+    {
+      "name": "Rab Butler",
+      "party": "Conservative Party",
+      "start": "1963-10-20",
+      "end": "1964-10-16"
+    },
+    {
+      "name": "Patrick Gordon Walker",
+      "party": "Labour Party",
+      "start": "1964-10-16",
+      "end": "1965-01-22"
+    },
+    {
+      "name": "Michael Stewart, Baron Stewart of Fulham",
+      "party": "Labour Party",
+      "start": "1965-01-22",
+      "end": "1966-08-11"
+    },
+    {
+      "name": "George Brown, Baron George-Brown",
+      "party": "Labour Party",
+      "start": "1966-08-11",
+      "end": "1968-03-15"
+    },
+    {
+      "name": "Michael Stewart, Baron Stewart of Fulham",
+      "party": "Labour Party",
+      "start": "1968-03-16",
+      "end": "1970-06-19"
+    },
+    {
+      "name": "Alec Douglas-Home",
+      "party": "Conservative Party",
+      "start": "1970-06-20",
+      "end": "1974-03-04"
+    },
+    {
+      "name": "James Callaghan",
+      "party": "Labour Party",
+      "start": "1974-03-05",
+      "end": "1976-04-05"
+    },
+    {
+      "name": "Anthony Crosland",
+      "party": "Labour Party",
+      "start": "1976-04-08",
+      "end": "1977-02-19"
+    },
+    {
+      "name": "David Owen",
+      "party": "Labour Party",
+      "start": "1977-02-21",
+      "end": "1979-05-04"
+    },
+    {
+      "name": "Peter Carington, 6th Baron Carrington",
+      "party": "Conservative Party",
+      "start": "1979-05-04",
+      "end": "1979-05-05"
+    },
+    {
+      "name": "Peter Carington, 6th Baron Carrington",
+      "party": "Conservative Party",
+      "start": "1979-05-05",
+      "end": "1982-04-05"
+    },
+    {
+      "name": "Francis Pym",
+      "party": "Conservative Party",
+      "start": "1982-04-05",
+      "end": "1982-04-06"
+    },
+    {
+      "name": "Francis Pym",
+      "party": "Conservative Party",
+      "start": "1982-04-06",
+      "end": "1983-06-11"
+    },
+    {
+      "name": "Geoffrey Howe",
+      "party": "Conservative Party",
+      "start": "1983-06-11",
+      "end": "1989-07-24"
+    },
+    {
+      "name": "John Major",
+      "party": "Conservative Party",
+      "start": "1989-07-24",
+      "end": "1989-10-26"
+    },
+    {
+      "name": "Douglas Hurd",
+      "party": "Conservative Party",
+      "start": "1989-10-26",
+      "end": "1995-07-05"
+    },
+    {
+      "name": "Malcolm Rifkind",
+      "party": "Conservative Party",
+      "start": "1995-07-05",
+      "end": "1997-05-02"
+    },
+    {
+      "name": "Robin Cook",
+      "party": "Labour Party",
+      "start": "1997-05-02",
+      "end": "2001-06-08"
+    },
+    {
+      "name": "Jack Straw",
+      "party": "Labour Party",
+      "start": "2001-06-08",
+      "end": "2006-05-05"
+    },
+    {
+      "name": "Margaret Beckett",
+      "party": "Labour Party",
+      "start": "2006-05-05",
+      "end": "2007-06-28"
+    },
+    {
+      "name": "David Miliband",
+      "party": "Labour Party",
+      "start": "2007-06-28",
+      "end": "2010-05-11"
+    },
+    {
+      "name": "William Hague",
+      "party": "Conservative Party",
+      "start": "2010-05-12",
+      "end": "2014-07-14"
+    },
+    {
+      "name": "Philip Hammond",
+      "party": "Conservative Party",
+      "start": "2014-07-15",
+      "end": "2016-07-13"
+    },
+    {
+      "name": "Boris Johnson",
+      "party": "Conservative Party",
+      "start": "2016-07-13",
+      "end": "2018-07-08"
+    },
+    {
+      "name": "Jeremy Hunt",
+      "party": "Conservative Party",
+      "start": "2018-07-08",
+      "end": "2018-07-09"
+    },
+    {
+      "name": "Jeremy Hunt",
+      "party": "Conservative Party",
+      "start": "2018-07-09",
+      "end": "2019-07-24"
+    },
+    {
+      "name": "Dominic Raab",
+      "party": "Conservative Party",
+      "start": "2019-07-24",
+      "end": "2020-09-02"
+    },
+    {
+      "name": "Liz Truss",
+      "party": "Conservative Party",
+      "start": "2021-09-15",
+      "end": "2022-09-06"
+    },
+    {
+      "name": "James Cleverly",
+      "party": "Conservative Party",
+      "start": "2022-09-06",
+      "end": "2022-10-14"
+    },
+    {
+      "name": "Isabelle Housna Kassiré",
+      "party": "Unknown",
+      "start": "2022-10-14",
+      "end": "2023-11-13"
+    },
+    {
+      "name": "David Cameron",
+      "party": "Conservative Party",
+      "start": "2023-11-13",
+      "end": "2024-07-05"
+    },
+    {
+      "name": "David Lammy",
+      "party": "Labour Party",
+      "start": "2024-07-05",
+      "end": "2025-09-05"
+    },
+    {
+      "name": "Yvette Cooper",
+      "party": "Labour Party",
+      "start": "2025-09-05",
+      "end": "2026-07-20"
+    },
+    {
+      "name": "Ed Miliband",
+      "party": "Labour Party",
+      "start": "2026-07-20",
+      "end": null
+    }
+  ],
+  "homeSecretary": [
+    {
+      "name": "William Petty, 2nd Earl of Shelburne",
+      "party": "Whigs",
+      "start": "1782-03-27",
+      "end": "1782-07-10"
+    },
+    {
+      "name": "Thomas Townshend, 1st Viscount Sydney",
+      "party": "Whigs",
+      "start": "1782-07-10",
+      "end": "1783-04-02"
+    },
+    {
+      "name": "Frederick North, 2nd Earl of Guilford",
+      "party": "Tories",
+      "start": "1783-04-02",
+      "end": "1783-12-19"
+    },
+    {
+      "name": "George Nugent-Temple-Grenville, 1st Marquess of Buckingham",
+      "party": "Whigs",
+      "start": "1783-12-19",
+      "end": "1783-12-23"
+    },
+    {
+      "name": "Thomas Townshend, 1st Viscount Sydney",
+      "party": "Whigs",
+      "start": "1783-12-23",
+      "end": "1789-06-05"
+    },
+    {
+      "name": "William Wyndham Grenville, 1st Baron Grenville",
+      "party": "Tories",
+      "start": "1789-06-05",
+      "end": "1791-06-08"
+    },
+    {
+      "name": "Henry Dundas, 1st Viscount Melville",
+      "party": "Tories",
+      "start": "1791-06-08",
+      "end": "1794-07-11"
+    },
+    {
+      "name": "William Cavendish-Bentinck, 3rd Duke of Portland",
+      "party": "Whigs",
+      "start": "1794-07-11",
+      "end": "1801-07-30"
+    },
+    {
+      "name": "Thomas Pelham, 2nd Earl of Chichester",
+      "party": "Whigs",
+      "start": "1801-07-30",
+      "end": "1803-08-17"
+    },
+    {
+      "name": "Charles Philip Yorke",
+      "party": "Tories",
+      "start": "1803-08-17",
+      "end": "1804-05-12"
+    },
+    {
+      "name": "Robert Jenkinson, 2nd Earl of Liverpool",
+      "party": "Tories",
+      "start": "1804-05-12",
+      "end": "1806-02-05"
+    },
+    {
+      "name": "George Spencer, 2nd Earl Spencer",
+      "party": "Whigs",
+      "start": "1806-02-05",
+      "end": "1807-03-25"
+    },
+    {
+      "name": "Robert Jenkinson, 2nd Earl of Liverpool",
+      "party": "Tories",
+      "start": "1807-03-25",
+      "end": "1809-11-01"
+    },
+    {
+      "name": "Richard Ryder",
+      "party": "Tories",
+      "start": "1809-11-01",
+      "end": "1812-06-08"
+    },
+    {
+      "name": "Henry Addington, 1st Viscount Sidmouth",
+      "party": "Tories",
+      "start": "1812-06-08",
+      "end": "1822-01-17"
+    },
+    {
+      "name": "Robert Peel",
+      "party": "Conservative Party",
+      "start": "1822-01-17",
+      "end": "1827-04-10"
+    },
+    {
+      "name": "William Sturges Bourne",
+      "party": "Tories",
+      "start": "1827-04-30",
+      "end": "1827-07-16"
+    },
+    {
+      "name": "Henry Petty-Fitzmaurice, 3rd Marquess of Lansdowne",
+      "party": "Whigs",
+      "start": "1827-07-16",
+      "end": "1828-01-22"
+    },
+    {
+      "name": "Robert Peel",
+      "party": "Conservative Party",
+      "start": "1828-01-26",
+      "end": "1830-11-22"
+    },
+    {
+      "name": "William Lamb, 2nd Viscount Melbourne",
+      "party": "Whigs",
+      "start": "1830-11-22",
+      "end": "1834-07-16"
+    },
+    {
+      "name": "John Ponsonby, 4th Earl of Bessborough",
+      "party": "Whigs",
+      "start": "1834-07-19",
+      "end": "1834-11-15"
+    },
+    {
+      "name": "Arthur Wellesley, 1st Duke of Wellington",
+      "party": "Conservative Party",
+      "start": "1834-11-15",
+      "end": "1834-12-15"
+    },
+    {
+      "name": "Henry Goulburn",
+      "party": "Conservative Party",
+      "start": "1834-12-15",
+      "end": "1835-04-18"
+    },
+    {
+      "name": "John Russell, 1st Earl Russell",
+      "party": "Whigs",
+      "start": "1835-04-18",
+      "end": "1839-08-30"
+    },
+    {
+      "name": "Constantine Phipps, 1st Marquess of Normanby",
+      "party": "Whigs",
+      "start": "1839-08-30",
+      "end": "1841-08-30"
+    },
+    {
+      "name": "Sir James Graham, 2nd Baronet",
+      "party": "Whigs",
+      "start": "1841-09-06",
+      "end": "1846-06-30"
+    },
+    {
+      "name": "Sir George Grey, 2nd Baronet",
+      "party": "Whigs",
+      "start": "1846-07-08",
+      "end": "1852-02-23"
+    },
+    {
+      "name": "Spencer Horatio Walpole",
+      "party": "Whigs",
+      "start": "1852-02-27",
+      "end": "1852-12-19"
+    },
+    {
+      "name": "Henry Temple, 3rd Viscount Palmerston",
+      "party": "Whigs",
+      "start": "1852-12-28",
+      "end": "1855-02-06"
+    },
+    {
+      "name": "Sir George Grey, 2nd Baronet",
+      "party": "Whigs",
+      "start": "1855-02-08",
+      "end": "1858-02-26"
+    },
+    {
+      "name": "Spencer Horatio Walpole",
+      "party": "Whigs",
+      "start": "1858-02-26",
+      "end": "1859-03-03"
+    },
+    {
+      "name": "Thomas Sotheron-Estcourt",
+      "party": "Conservative Party",
+      "start": "1859-03-03",
+      "end": "1859-06-18"
+    },
+    {
+      "name": "George Cornewall Lewis",
+      "party": "Liberal Party",
+      "start": "1859-06-18",
+      "end": "1861-07-25"
+    },
+    {
+      "name": "Sir George Grey, 2nd Baronet",
+      "party": "Whigs",
+      "start": "1861-07-25",
+      "end": "1866-06-28"
+    },
+    {
+      "name": "Spencer Horatio Walpole",
+      "party": "Whigs",
+      "start": "1866-07-06",
+      "end": "1867-05-17"
+    },
+    {
+      "name": "Gathorne Gathorne-Hardy, 1st Earl of Cranbrook",
+      "party": "Conservative Party",
+      "start": "1867-05-17",
+      "end": "1868-12-03"
+    },
+    {
+      "name": "Henry Bruce, 1st Baron Aberdare",
+      "party": "Liberal Party",
+      "start": "1868-12-09",
+      "end": "1873-08-09"
+    },
+    {
+      "name": "Robert Lowe",
+      "party": "Liberal Party",
+      "start": "1873-08-09",
+      "end": "1874-02-20"
+    },
+    {
+      "name": "Richard Assheton Cross, 1st Viscount Cross",
+      "party": "Conservative Party",
+      "start": "1874-02-21",
+      "end": "1880-04-23"
+    },
+    {
+      "name": "William Vernon Harcourt",
+      "party": "Liberal Party",
+      "start": "1880-04-28",
+      "end": "1885-06-23"
+    },
+    {
+      "name": "Richard Assheton Cross, 1st Viscount Cross",
+      "party": "Conservative Party",
+      "start": "1885-06-24",
+      "end": "1886-02-01"
+    },
+    {
+      "name": "Hugh Childers",
+      "party": "Liberal Party",
+      "start": "1886-02-06",
+      "end": "1886-07-25"
+    },
+    {
+      "name": "Henry Matthews, 1st Viscount Llandaff",
+      "party": "Conservative Party",
+      "start": "1886-08-03",
+      "end": "1892-08-15"
+    },
+    {
+      "name": "H. H. Asquith",
+      "party": "Liberal Party",
+      "start": "1892-08-18",
+      "end": "1895-06-25"
+    },
+    {
+      "name": "Matthew White Ridley, 1st Viscount Ridley",
+      "party": "Conservative Party",
+      "start": "1895-06-29",
+      "end": "1900-11-12"
+    },
+    {
+      "name": "Charles Ritchie, 1st Baron Ritchie of Dundee",
+      "party": "Conservative Party",
+      "start": "1900-11-12",
+      "end": "1902-07-12"
+    },
+    {
+      "name": "Aretas Akers-Douglas, 1st Viscount Chilston",
+      "party": "Conservative Party",
+      "start": "1902-07-12",
+      "end": "1905-12-05"
+    },
+    {
+      "name": "Herbert Gladstone, 1st Viscount Gladstone",
+      "party": "Liberal Party",
+      "start": "1905-12-11",
+      "end": "1910-02-19"
+    },
+    {
+      "name": "Winston Churchill",
+      "party": "Conservative Party",
+      "start": "1910-02-19",
+      "end": "1911-10-24"
+    },
+    {
+      "name": "Reginald McKenna",
+      "party": "Liberal Party",
+      "start": "1911-10-24",
+      "end": "1915-05-27"
+    },
+    {
+      "name": "John Simon, 1st Viscount Simon",
+      "party": "Liberal Party",
+      "start": "1915-05-27",
+      "end": "1916-01-12"
+    },
+    {
+      "name": "Herbert Samuel, 1st Viscount Samuel",
+      "party": "Liberal Party",
+      "start": "1916-01-12",
+      "end": "1916-12-07"
+    },
+    {
+      "name": "George Cave, 1st Viscount Cave",
+      "party": "Conservative Party",
+      "start": "1916-12-11",
+      "end": "1919-01-14"
+    },
+    {
+      "name": "Edward Shortt",
+      "party": "Liberal Party",
+      "start": "1919-01-14",
+      "end": "1922-10-23"
+    },
+    {
+      "name": "William Bridgeman, 1st Viscount Bridgeman",
+      "party": "Conservative Party",
+      "start": "1922-10-25",
+      "end": "1924-01-22"
+    },
+    {
+      "name": "Arthur Henderson",
+      "party": "Labour Party",
+      "start": "1924-01-23",
+      "end": "1924-11-04"
+    },
+    {
+      "name": "William Joynson-Hicks, 1st Viscount Brentford",
+      "party": "Conservative Party",
+      "start": "1924-11-07",
+      "end": "1929-06-05"
+    },
+    {
+      "name": "John Robert Clynes",
+      "party": "Labour Party",
+      "start": "1929-06-08",
+      "end": "1931-08-26"
+    },
+    {
+      "name": "Herbert Samuel, 1st Viscount Samuel",
+      "party": "Liberal Party",
+      "start": "1931-08-26",
+      "end": "1932-10-01"
+    },
+    {
+      "name": "Sir John Gilmour, 2nd Baronet",
+      "party": "Unionist Party",
+      "start": "1932-10-01",
+      "end": "1935-06-07"
+    },
+    {
+      "name": "John Simon, 1st Viscount Simon",
+      "party": "Liberal Party",
+      "start": "1935-06-07",
+      "end": "1937-05-28"
+    },
+    {
+      "name": "Samuel Hoare, 1st Viscount Templewood",
+      "party": "Conservative Party",
+      "start": "1937-05-28",
+      "end": "1939-09-03"
+    },
+    {
+      "name": "John Anderson, 1st Viscount Waverley",
+      "party": "Unknown",
+      "start": "1939-09-04",
+      "end": "1940-10-03"
+    },
+    {
+      "name": "Herbert Morrison",
+      "party": "Labour Party",
+      "start": "1940-10-04",
+      "end": "1945-05-23"
+    },
+    {
+      "name": "Donald Somervell, Baron Somervell of Harrow",
+      "party": "Conservative Party",
+      "start": "1945-05-25",
+      "end": "1945-07-26"
+    },
+    {
+      "name": "James Chuter Ede",
+      "party": "Labour Party",
+      "start": "1945-08-03",
+      "end": "1951-10-26"
+    },
+    {
+      "name": "David Maxwell Fyfe, 1st Earl of Kilmuir",
+      "party": "Conservative Party",
+      "start": "1951-10-27",
+      "end": "1954-10-19"
+    },
+    {
+      "name": "Gwilym Lloyd George, 1st Viscount Tenby",
+      "party": "Conservative Party",
+      "start": "1954-10-19",
+      "end": "1957-01-14"
+    },
+    {
+      "name": "Rab Butler",
+      "party": "Conservative Party",
+      "start": "1957-01-14",
+      "end": "1962-07-13"
+    },
+    {
+      "name": "Henry Brooke, Baron Brooke of Cumnor",
+      "party": "Conservative Party",
+      "start": "1962-07-14",
+      "end": "1964-10-16"
+    },
+    {
+      "name": "Frank Soskice, Baron Stow Hill",
+      "party": "Labour Party",
+      "start": "1964-10-18",
+      "end": "1965-12-23"
+    },
+    {
+      "name": "Roy Jenkins",
+      "party": "Liberal Democrats",
+      "start": "1965-12-23",
+      "end": "1967-11-30"
+    },
+    {
+      "name": "James Callaghan",
+      "party": "Labour Party",
+      "start": "1967-11-30",
+      "end": "1970-06-19"
+    },
+    {
+      "name": "Reginald Maudling",
+      "party": "Conservative Party",
+      "start": "1970-06-20",
+      "end": "1972-07-18"
+    },
+    {
+      "name": "Robert Carr",
+      "party": "Conservative Party",
+      "start": "1972-07-18",
+      "end": "1974-03-04"
+    },
+    {
+      "name": "Roy Jenkins",
+      "party": "Liberal Democrats",
+      "start": "1974-03-05",
+      "end": "1976-09-10"
+    },
+    {
+      "name": "Merlyn Rees",
+      "party": "Labour Party",
+      "start": "1976-09-10",
+      "end": "1979-05-04"
+    },
+    {
+      "name": "Willie Whitelaw",
+      "party": "Conservative Party",
+      "start": "1979-05-04",
+      "end": "1979-05-05"
+    },
+    {
+      "name": "Willie Whitelaw",
+      "party": "Conservative Party",
+      "start": "1979-05-05",
+      "end": "1983-06-11"
+    },
+    {
+      "name": "Leon Brittan",
+      "party": "Conservative Party",
+      "start": "1983-06-11",
+      "end": "1985-09-02"
+    },
+    {
+      "name": "Douglas Hurd",
+      "party": "Conservative Party",
+      "start": "1985-09-02",
+      "end": "1989-10-26"
+    },
+    {
+      "name": "David Waddington, Baron Waddington",
+      "party": "Conservative Party",
+      "start": "1989-10-26",
+      "end": "1990-11-28"
+    },
+    {
+      "name": "Kenneth Baker, Baron Baker of Dorking",
+      "party": "Conservative Party",
+      "start": "1990-11-28",
+      "end": "1992-04-10"
+    },
+    {
+      "name": "Kenneth Clarke",
+      "party": "Conservative Party",
+      "start": "1992-04-10",
+      "end": "1992-04-11"
+    },
+    {
+      "name": "Kenneth Clarke",
+      "party": "Conservative Party",
+      "start": "1992-04-11",
+      "end": "1993-05-27"
+    },
+    {
+      "name": "Michael Howard",
+      "party": "Conservative Party",
+      "start": "1993-05-27",
+      "end": "1997-05-02"
+    },
+    {
+      "name": "Jack Straw",
+      "party": "Labour Party",
+      "start": "1997-05-02",
+      "end": "2001-06-08"
+    },
+    {
+      "name": "David Blunkett",
+      "party": "Labour Party",
+      "start": "2001-06-08",
+      "end": "2004-12-15"
+    },
+    {
+      "name": "Charles Clarke",
+      "party": "Labour Party",
+      "start": "2004-12-15",
+      "end": "2006-05-05"
+    },
+    {
+      "name": "John Reid, Baron Reid of Cardowan",
+      "party": "Labour Party",
+      "start": "2006-05-05",
+      "end": "2007-06-28"
+    },
+    {
+      "name": "Jacqui Smith",
+      "party": "Labour Party",
+      "start": "2007-06-28",
+      "end": "2009-06-02"
+    },
+    {
+      "name": "Alan Johnson",
+      "party": "Labour Party",
+      "start": "2009-06-05",
+      "end": "2009-06-06"
+    },
+    {
+      "name": "Alan Johnson",
+      "party": "Labour Party",
+      "start": "2009-06-06",
+      "end": "2010-05-11"
+    },
+    {
+      "name": "Theresa May",
+      "party": "Conservative Party",
+      "start": "2010-05-12",
+      "end": "2016-07-13"
+    },
+    {
+      "name": "Amber Rudd",
+      "party": "Conservative Party",
+      "start": "2016-07-13",
+      "end": "2018-04-29"
+    },
+    {
+      "name": "Sajid Javid",
+      "party": "Conservative Party",
+      "start": "2018-04-30",
+      "end": "2019-07-24"
+    },
+    {
+      "name": "Priti Patel",
+      "party": "Conservative Party",
+      "start": "2019-07-24",
+      "end": "2022-09-06"
+    },
+    {
+      "name": "Suella Braverman",
+      "party": "Conservative Party",
+      "start": "2022-09-06",
+      "end": "2022-10-19"
+    },
+    {
+      "name": "Grant Shapps",
+      "party": "Conservative Party",
+      "start": "2022-10-19",
+      "end": "2022-10-25"
+    },
+    {
+      "name": "James Cleverly",
+      "party": "Conservative Party",
+      "start": "2023-11-13",
+      "end": "2024-07-05"
+    },
+    {
+      "name": "Yvette Cooper",
+      "party": "Labour Party",
+      "start": "2024-07-05",
+      "end": "2025-09-05"
+    },
+    {
+      "name": "Shabana Mahmood",
+      "party": "Labour Party",
+      "start": "2025-09-05",
+      "end": null
+    }
+  ],
+  "deputyPrimeMinister": [
+    {
+      "name": "Clement Attlee",
+      "party": "Labour Party",
+      "start": "1942-02-19",
+      "end": "1945-05-23"
+    },
+    {
+      "name": "Anthony Eden",
+      "party": "Conservative Party",
+      "start": "1945-05-23",
+      "end": "1945-07-26"
+    },
+    {
+      "name": "Anthony Eden",
+      "party": "Conservative Party",
+      "start": "1951-10-26",
+      "end": "1955-04-06"
+    },
+    {
+      "name": "Rab Butler",
+      "party": "Conservative Party",
+      "start": "1962-07-13",
+      "end": "1963-10-18"
+    },
+    {
+      "name": "George Brown, Baron George-Brown",
+      "party": "Labour Party",
+      "start": "1964-10-16",
+      "end": "1968-03-15"
+    },
+    {
+      "name": "Willie Whitelaw",
+      "party": "Conservative Party",
+      "start": "1979-05-04",
+      "end": "1988-01-10"
+    },
+    {
+      "name": "Geoffrey Howe",
+      "party": "Conservative Party",
+      "start": "1989-07-24",
+      "end": "1990-11-01"
+    },
+    {
+      "name": "Michael Heseltine",
+      "party": "Conservative Party",
+      "start": "1995-07-05",
+      "end": "1997-05-02"
+    },
+    {
+      "name": "John Prescott",
+      "party": "Labour Party",
+      "start": "1997-05-02",
+      "end": "2001-06-08"
+    },
+    {
+      "name": "Nick Clegg",
+      "party": "Liberal Democrats",
+      "start": "2010-05-11",
+      "end": "2015-05-08"
+    },
+    {
+      "name": "Dominic Raab",
+      "party": "Conservative Party",
+      "start": "2021-09-15",
+      "end": "2022-09-06"
+    },
+    {
+      "name": "Thérèse Coffey",
+      "party": "Conservative Party",
+      "start": "2022-09-06",
+      "end": "2022-10-25"
+    },
+    {
+      "name": "Oliver Dowden",
+      "party": "Conservative Party",
+      "start": "2023-04-21",
+      "end": "2024-07-05"
+    },
+    {
+      "name": "Angela Rayner",
+      "party": "Labour Party",
+      "start": "2024-07-05",
+      "end": "2024-07-09"
+    },
+    {
+      "name": "David Lammy",
+      "party": "Labour Party",
+      "start": "2025-09-05",
+      "end": "2026-07-20"
+    }
+  ],
+  "leaderOfOpposition": [
+    {
+      "name": "Charles Grey, 2nd Earl Grey",
+      "party": "Whigs",
+      "start": "1807-05-01",
+      "end": "1807-11-14"
+    },
+    {
+      "name": "George Ponsonby",
+      "party": "Whigs",
+      "start": "1808-01-01",
+      "end": "1817-07-08"
+    },
+    {
+      "name": "George Tierney",
+      "party": "Whigs",
+      "start": "1818-01-01",
+      "end": "1821-01-23"
+    },
+    {
+      "name": "Robert Peel",
+      "party": "Conservative Party",
+      "start": "1827-04-01",
+      "end": "1828-01-01"
+    },
+    {
+      "name": "John Spencer, 3rd Earl Spencer",
+      "party": "Whigs",
+      "start": "1830-02-01",
+      "end": "1830-11-01"
+    },
+    {
+      "name": "Robert Peel",
+      "party": "Conservative Party",
+      "start": "1830-11-01",
+      "end": "1834-11-01"
+    },
+    {
+      "name": "John Russell, 1st Earl Russell",
+      "party": "Whigs",
+      "start": "1834-11-01",
+      "end": "1835-04-01"
+    },
+    {
+      "name": "Robert Peel",
+      "party": "Conservative Party",
+      "start": "1835-04-18",
+      "end": "1841-08-01"
+    },
+    {
+      "name": "John Russell, 1st Earl Russell",
+      "party": "Whigs",
+      "start": "1841-08-01",
+      "end": "1841-08-30"
+    },
+    {
+      "name": "William Lamb, 2nd Viscount Melbourne",
+      "party": "Whigs",
+      "start": "1841-08-30",
+      "end": "1842-10-01"
+    },
+    {
+      "name": "Lord George Bentinck",
+      "party": "Conservative Party",
+      "start": "1846-06-01",
+      "end": "1848-02-10"
+    },
+    {
+      "name": "Charles Manners, 6th Duke of Rutland",
+      "party": "Conservative Party",
+      "start": "1848-02-10",
+      "end": "1848-03-04"
+    },
+    {
+      "name": "Charles Manners, 6th Duke of Rutland",
+      "party": "Conservative Party",
+      "start": "1849-02-01",
+      "end": "1851-01-01"
+    },
+    {
+      "name": "Benjamin Disraeli",
+      "party": "Conservative Party",
+      "start": "1851-01-01",
+      "end": "1852-02-01"
+    },
+    {
+      "name": "John Russell, 1st Earl Russell",
+      "party": "Whigs",
+      "start": "1852-02-01",
+      "end": "1852-12-01"
+    },
+    {
+      "name": "Benjamin Disraeli",
+      "party": "Conservative Party",
+      "start": "1852-12-01",
+      "end": "1858-02-01"
+    },
+    {
+      "name": "Henry Temple, 3rd Viscount Palmerston",
+      "party": "Whigs",
+      "start": "1858-02-19",
+      "end": "1859-06-01"
+    },
+    {
+      "name": "Benjamin Disraeli",
+      "party": "Conservative Party",
+      "start": "1859-06-01",
+      "end": "1866-06-01"
+    },
+    {
+      "name": "William Ewart Gladstone",
+      "party": "Conservative Party",
+      "start": "1866-06-01",
+      "end": "1866-06-28"
+    },
+    {
+      "name": "John Russell, 1st Earl Russell",
+      "party": "Whigs",
+      "start": "1866-06-28",
+      "end": "1868-12-01"
+    },
+    {
+      "name": "Benjamin Disraeli",
+      "party": "Conservative Party",
+      "start": "1868-12-01",
+      "end": "1874-02-01"
+    },
+    {
+      "name": "William Ewart Gladstone",
+      "party": "Conservative Party",
+      "start": "1874-02-01",
+      "end": "1875-02-01"
+    },
+    {
+      "name": "Spencer Cavendish, 8th Duke of Devonshire",
+      "party": "Liberal Party",
+      "start": "1875-02-01",
+      "end": "1880-04-01"
+    },
+    {
+      "name": "Stafford Northcote, 1st Earl of Iddesleigh",
+      "party": "Conservative Party",
+      "start": "1880-04-01",
+      "end": "1880-04-21"
+    },
+    {
+      "name": "Benjamin Disraeli",
+      "party": "Conservative Party",
+      "start": "1880-04-21",
+      "end": "1881-04-19"
+    },
+    {
+      "name": "William Ewart Gladstone",
+      "party": "Conservative Party",
+      "start": "1885-06-01",
+      "end": "1886-02-01"
+    },
+    {
+      "name": "Michael Hicks Beach, 1st Earl St Aldwyn",
+      "party": "Conservative Party",
+      "start": "1886-02-01",
+      "end": "1886-07-01"
+    },
+    {
+      "name": "William Ewart Gladstone",
+      "party": "Conservative Party",
+      "start": "1886-07-20",
+      "end": "1892-08-01"
+    },
+    {
+      "name": "Arthur Balfour",
+      "party": "Conservative Party",
+      "start": "1892-08-01",
+      "end": "1892-08-11"
+    },
+    {
+      "name": "Robert Gascoyne-Cecil, 3rd Marquess of Salisbury",
+      "party": "Conservative Party",
+      "start": "1892-08-11",
+      "end": "1895-06-22"
+    },
+    {
+      "name": "Archibald Primrose, 5th Earl of Rosebery",
+      "party": "Liberal Party",
+      "start": "1895-06-22",
+      "end": "1896-10-06"
+    },
+    {
+      "name": "William Vernon Harcourt",
+      "party": "Liberal Party",
+      "start": "1896-10-06",
+      "end": "1898-12-08"
+    },
+    {
+      "name": "Henry Campbell-Bannerman",
+      "party": "Liberal Party",
+      "start": "1899-02-06",
+      "end": "1905-12-05"
+    },
+    {
+      "name": "Arthur Balfour",
+      "party": "Conservative Party",
+      "start": "1905-12-05",
+      "end": "1906-02-08"
+    },
+    {
+      "name": "Joseph Chamberlain",
+      "party": "Conservative Party",
+      "start": "1906-02-08",
+      "end": "1906-02-27"
+    },
+    {
+      "name": "Arthur Balfour",
+      "party": "Conservative Party",
+      "start": "1906-02-27",
+      "end": "1911-11-13"
+    },
+    {
+      "name": "Bonar Law",
+      "party": "Conservative Party",
+      "start": "1911-11-13",
+      "end": "1915-05-25"
+    },
+    {
+      "name": "Edward Carson, Baron Carson",
+      "party": "Conservative Party",
+      "start": "1915-10-19",
+      "end": "1916-12-06"
+    },
+    {
+      "name": "H. H. Asquith",
+      "party": "Liberal Party",
+      "start": "1916-12-06",
+      "end": "1918-12-14"
+    },
+    {
+      "name": "Donald Maclean",
+      "party": "Liberal Party",
+      "start": "1918-12-14",
+      "end": "1920-02-12"
+    },
+    {
+      "name": "H. H. Asquith",
+      "party": "Liberal Party",
+      "start": "1920-02-12",
+      "end": "1922-11-21"
+    },
+    {
+      "name": "Ramsay MacDonald",
+      "party": "Labour Party",
+      "start": "1922-11-21",
+      "end": "1924-01-22"
+    },
+    {
+      "name": "Stanley Baldwin",
+      "party": "Conservative Party",
+      "start": "1924-01-22",
+      "end": "1924-11-04"
+    },
+    {
+      "name": "Ramsay MacDonald",
+      "party": "Labour Party",
+      "start": "1924-11-04",
+      "end": "1929-06-05"
+    },
+    {
+      "name": "Stanley Baldwin",
+      "party": "Conservative Party",
+      "start": "1929-06-05",
+      "end": "1931-08-24"
+    },
+    {
+      "name": "Arthur Henderson",
+      "party": "Labour Party",
+      "start": "1931-09-01",
+      "end": "1932-10-25"
+    },
+    {
+      "name": "George Lansbury",
+      "party": "Labour Party",
+      "start": "1932-10-25",
+      "end": "1935-10-05"
+    },
+    {
+      "name": "Clement Attlee",
+      "party": "Labour Party",
+      "start": "1935-10-25",
+      "end": "1940-05-22"
+    },
+    {
+      "name": "Hastings Lees-Smith",
+      "party": "Labour Party",
+      "start": "1940-05-22",
+      "end": "1942-01-21"
+    },
+    {
+      "name": "Frederick Pethick-Lawrence, 1st Baron Pethick-Lawrence",
+      "party": "Labour Party",
+      "start": "1942-01-21",
+      "end": "1942-02-01"
+    },
+    {
+      "name": "Arthur Greenwood",
+      "party": "Labour Party",
+      "start": "1942-02-01",
+      "end": "1945-05-23"
+    },
+    {
+      "name": "Clement Attlee",
+      "party": "Labour Party",
+      "start": "1945-05-23",
+      "end": "1945-07-26"
+    },
+    {
+      "name": "Winston Churchill",
+      "party": "Conservative Party",
+      "start": "1945-07-26",
+      "end": "1951-10-26"
+    },
+    {
+      "name": "Clement Attlee",
+      "party": "Labour Party",
+      "start": "1951-10-26",
+      "end": "1955-11-25"
+    },
+    {
+      "name": "Herbert Morrison",
+      "party": "Labour Party",
+      "start": "1955-11-26",
+      "end": "1955-12-14"
+    },
+    {
+      "name": "Hugh Gaitskell",
+      "party": "Labour Party",
+      "start": "1955-12-14",
+      "end": "1963-01-18"
+    },
+    {
+      "name": "George Brown, Baron George-Brown",
+      "party": "Labour Party",
+      "start": "1963-01-18",
+      "end": "1963-02-14"
+    },
+    {
+      "name": "Harold Wilson",
+      "party": "Labour Party",
+      "start": "1963-02-14",
+      "end": "1964-10-16"
+    },
+    {
+      "name": "Alec Douglas-Home",
+      "party": "Conservative Party",
+      "start": "1964-10-16",
+      "end": "1965-07-28"
+    },
+    {
+      "name": "Edward Heath",
+      "party": "Conservative Party",
+      "start": "1965-07-28",
+      "end": "1970-06-19"
+    },
+    {
+      "name": "Harold Wilson",
+      "party": "Labour Party",
+      "start": "1970-06-19",
+      "end": "1974-03-04"
+    },
+    {
+      "name": "Edward Heath",
+      "party": "Conservative Party",
+      "start": "1974-03-04",
+      "end": "1975-02-11"
+    },
+    {
+      "name": "Margaret Thatcher",
+      "party": "Conservative Party",
+      "start": "1975-02-11",
+      "end": "1979-05-04"
+    },
+    {
+      "name": "James Callaghan",
+      "party": "Labour Party",
+      "start": "1979-05-04",
+      "end": "1980-11-10"
+    },
+    {
+      "name": "Michael Foot",
+      "party": "Labour Party",
+      "start": "1980-11-10",
+      "end": "1983-10-02"
+    },
+    {
+      "name": "Neil Kinnock",
+      "party": "Labour Party",
+      "start": "1983-10-02",
+      "end": "1992-07-18"
+    },
+    {
+      "name": "John Smith",
+      "party": "Labour Party",
+      "start": "1992-07-18",
+      "end": "1994-05-12"
+    },
+    {
+      "name": "Margaret Beckett",
+      "party": "Labour Party",
+      "start": "1994-05-12",
+      "end": "1994-07-21"
+    },
+    {
+      "name": "Tony Blair",
+      "party": "Labour Party",
+      "start": "1994-07-21",
+      "end": "1997-05-02"
+    },
+    {
+      "name": "John Major",
+      "party": "Conservative Party",
+      "start": "1997-05-02",
+      "end": "1997-06-19"
+    },
+    {
+      "name": "William Hague",
+      "party": "Conservative Party",
+      "start": "1997-06-19",
+      "end": "2001-09-13"
+    },
+    {
+      "name": "Iain Duncan Smith",
+      "party": "Conservative Party",
+      "start": "2001-09-13",
+      "end": "2003-11-06"
+    },
+    {
+      "name": "Michael Howard",
+      "party": "Conservative Party",
+      "start": "2003-11-06",
+      "end": "2005-12-06"
+    },
+    {
+      "name": "David Cameron",
+      "party": "Conservative Party",
+      "start": "2005-12-06",
+      "end": "2010-05-11"
+    },
+    {
+      "name": "Harriet Harman",
+      "party": "Labour Party",
+      "start": "2010-05-11",
+      "end": "2010-09-25"
+    },
+    {
+      "name": "Ed Miliband",
+      "party": "Labour Party",
+      "start": "2010-09-25",
+      "end": "2015-05-08"
+    },
+    {
+      "name": "Harriet Harman",
+      "party": "Labour Party",
+      "start": "2015-05-08",
+      "end": "2015-09-12"
+    },
+    {
+      "name": "Jeremy Corbyn",
+      "party": "Labour Party",
+      "start": "2015-09-12",
+      "end": "2020-04-04"
+    },
+    {
+      "name": "Keir Starmer",
+      "party": "Labour Party",
+      "start": "2020-04-04",
+      "end": "2024-07-05"
+    },
+    {
+      "name": "Rishi Sunak",
+      "party": "Conservative Party",
+      "start": "2024-07-05",
+      "end": "2024-11-02"
+    },
+    {
+      "name": "Kemi Badenoch",
+      "party": "Conservative Party",
+      "start": "2024-11-02",
+      "end": null
+    }
+  ],
+  "firstMinisterScotland": [
+    {
+      "name": "Donald Dewar",
+      "party": "Labour Party",
+      "start": "1999-05-13",
+      "end": "2000-10-11"
+    },
+    {
+      "name": "Jim Wallace, Baron Wallace of Tankerness",
+      "party": "Liberal Democrats",
+      "start": "2000-10-11",
+      "end": "2000-10-26"
+    },
+    {
+      "name": "Henry McLeish",
+      "party": "Labour Party",
+      "start": "2000-10-27",
+      "end": "2001-11-08"
+    },
+    {
+      "name": "Jim Wallace, Baron Wallace of Tankerness",
+      "party": "Liberal Democrats",
+      "start": "2001-11-08",
+      "end": "2001-11-22"
+    },
+    {
+      "name": "Jack McConnell",
+      "party": "Labour Party",
+      "start": "2001-11-22",
+      "end": "2007-05-16"
+    },
+    {
+      "name": "Alex Salmond",
+      "party": "Scottish National Party",
+      "start": "2007-05-16",
+      "end": "2014-11-19"
+    },
+    {
+      "name": "Nicola Sturgeon",
+      "party": "Scottish National Party",
+      "start": "2014-11-20",
+      "end": "2023-03-28"
+    },
+    {
+      "name": "Humza Yousaf",
+      "party": "Scottish National Party",
+      "start": "2023-03-29",
+      "end": "2024-05-07"
+    },
+    {
+      "name": "John Swinney",
+      "party": "Scottish National Party",
+      "start": "2024-05-08",
+      "end": null
+    }
+  ],
+  "firstMinisterWales": [
+    {
+      "name": "Alun Michael",
+      "party": "Labour Party",
+      "start": "1999-05-12",
+      "end": "2000-02-09"
+    },
+    {
+      "name": "Rhodri Morgan",
+      "party": "Labour Party",
+      "start": "2000-02-09",
+      "end": "2009-12-09"
+    },
+    {
+      "name": "Carwyn Jones",
+      "party": "Labour Party",
+      "start": "2009-12-10",
+      "end": "2018-12-12"
+    },
+    {
+      "name": "Mark Drakeford",
+      "party": "Labour Party",
+      "start": "2018-12-13",
+      "end": "2024-03-20"
+    },
+    {
+      "name": "Vaughan Gething",
+      "party": "Labour Party",
+      "start": "2024-03-20",
+      "end": "2024-08-05"
+    },
+    {
+      "name": "Eluned Morgan",
+      "party": "Labour Party",
+      "start": "2024-08-06",
+      "end": "2026-05-12"
+    },
+    {
+      "name": "Rhun ap Iorwerth",
+      "party": "Plaid Cymru",
+      "start": "2026-05-12",
+      "end": null
+    }
+  ],
+  "firstMinisterNorthernIreland": [
+    {
+      "name": "David Trimble",
+      "party": "Conservative Party",
+      "start": "1998-07-01",
+      "end": "2001-07-01"
+    },
+    {
+      "name": "Reg Empey",
+      "party": "Ulster Unionist Party",
+      "start": "2001-07-01",
+      "end": "2001-11-06"
+    },
+    {
+      "name": "David Trimble",
+      "party": "Conservative Party",
+      "start": "2001-11-06",
+      "end": "2002-10-14"
+    },
+    {
+      "name": "Ian Paisley",
+      "party": "Democratic Unionist Party",
+      "start": "2007-05-08",
+      "end": "2008-06-05"
+    },
+    {
+      "name": "Peter Robinson",
+      "party": "Democratic Unionist Party",
+      "start": "2008-06-05",
+      "end": "2016-01-11"
+    },
+    {
+      "name": "Arlene Foster",
+      "party": "Democratic Unionist Party",
+      "start": "2016-01-11",
+      "end": "2017-01-09"
+    },
+    {
+      "name": "Arlene Foster",
+      "party": "Democratic Unionist Party",
+      "start": "2020-01-11",
+      "end": "2021-06-14"
+    },
+    {
+      "name": "Paul Givan",
+      "party": "Democratic Unionist Party",
+      "start": "2021-06-17",
+      "end": "2022-02-04"
+    },
+    {
+      "name": "Michelle O'Neill",
+      "party": "Sinn Féin",
+      "start": "2024-02-03",
+      "end": null
+    }
+  ]
+}
