@@ -1,291 +1,219 @@
 # Daily Ops Sweep -- 2026-08-31
 
-Rolling snapshot, rewritten every run. Window: **2026-08-29T23:07Z → 2026-08-31T01:07Z**
-(trailing ~26h). Report-only — this sweep made **no writes** other than this file.
+Window: 2026-08-30T06:13Z -> 2026-08-31T08:18Z (trailing 26h, selected on each
+line's own UTC timestamp). Read-only run: nothing was re-run, fixed, pinged or
+written except this file.
 
-> **Note on the window query.** The command in the job prompt greps
-> `date -u -v-26H` and `date -u`, which at 01:07Z resolves to **08-29 and 08-31 and
-> silently drops 08-30 entirely** — the day almost everything in this report
-> happened. This sweep used an explicit `awk $1 >= "2026-08-29T23:00:00Z"` filter
-> over all three dates instead. See "Needs attention #3".
+## Jobs this window: 17 ok, 4 failed, 3 flagged
 
-## Jobs this window: 15 ok, 4 failed, 2 flagged
+21 dispatcher occurrences:
 
-| Job | Run(s) | Status |
+| When (UTC) | Job | Result |
 |---|---|---|
-| football-standings | 08-29 23:02Z, 08-30 05:04Z, 11:08Z, 23:05Z | ok |
-| football-standings | 08-30 17:05Z | **FAIL** exit 1 (2s) — self-healed, see S1 |
-| activity-feed | 08-30 02:34Z | ok (5s) |
-| euro-comps | 08-30 04:04Z | ok (5s) — 69 fixtures, 3 comps |
-| gap-league-watch | 08-30 05:04Z | ok (7s) *(flagged — state transition, S2)* |
-| business-daily | 08-30 05:55Z | ok (617s) — markets+FX pushed, revalidate 200, 3 warms 200 |
-| substack-daily | 08-30 06:16Z | ok (4s) — 20 posts, no new slugs |
-| mlb-sim | 08-30 07:06Z, 14:34Z | ok (1822s / 1820s) — clean, no NRL crash |
-| feed-monitor | 08-30 07:46Z | ok (16s) |
-| egress-refresh | 08-30 09:07Z | **FAIL** exit 1 (1852s) — resolved by hand, see S3 |
-| daily-ops-sweep | 08-30 11:29Z | **FAIL** timeout 15m — already fixed, see S4 |
-| cfb-sun | 08-30 23:47Z | **FAIL** exit 1 (602s) — **NEW, unresolved, see #1** |
-| daily-ops-sweep | 08-31 01:07Z | this run |
+| 08-30 06:16 | substack-daily | DONE 4s |
+| 08-30 07:06 | mlb-sim | DONE 1822s |
+| 08-30 07:46 | feed-monitor | DONE 16s |
+| 08-30 09:07 | egress-refresh | **FAIL** exit 1, 1852s |
+| 08-30 11:08 | football-standings | DONE 75s |
+| 08-30 11:29 | daily-ops-sweep | **FAIL** timeout 15m |
+| 08-30 14:34 | mlb-sim | DONE 1820s |
+| 08-30 17:05 | football-standings | **FAIL** exit 1, 2s |
+| 08-30 23:05 | football-standings | DONE 83s |
+| 08-30 23:47 | cfb-sun | **FAIL** exit 1, 602s |
+| 08-31 01:07 | daily-ops-sweep | DONE 535s |
+| 08-31 02:36 | activity-feed | DONE 5s |
+| 08-31 04:06 | euro-comps | DONE 4s |
+| 08-31 05:06 | gap-league-watch | DONE 3s |
+| 08-31 05:06 | football-standings | DONE 81s |
+| 08-31 05:07 | screen-number-ones | DONE 22s |
+| 08-31 05:58 | business-daily | DONE 617s |
+| 08-31 06:18 | forecast | DONE 607s (**flagged** -- ran the stale runner, see #1) |
+| 08-31 06:28 | substack-daily | DONE 4s |
+| 08-31 07:09 | mlb-sim | DONE 1824s |
+| 08-31 07:49 | feed-monitor | DONE 14s |
 
-Launchd-side (outside the dispatcher): `f1` hourly watcher idle all 26h
-(`2026 R12 already synced`) — **correct**, R12 was the Dutch GP at Zandvoort on
-21–23 Aug and the next round (Monza) is 4–6 Sept, so there is nothing to sync.
-`newsletter-podcast` daily produced episode `25r6DuEyk3js1jDHGqwsSe` (34:13,
-READY) with both Gmail drafts; watchdog `Healthy`; retention deleted 1 expired
-episode; weekly correctly skipped (no unnarrated Substack post inside the 14-day
-window — Substack quiet since 2026-07-01, a known standing skip).
+Outside the dispatcher, both healthy: the hourly F1 watcher logged 26h of
+`idle: 2026 R12 already synced` (correct -- R12 Zandvoort was 21-23 Aug, Monza
+is 4-6 Sept), and newsletter-podcast's weekly run on 08-30 09:00 took a clean
+skip with no script written.
 
-No `MISSED` entries. `state.json` shows every non-window job on its expected slot
-(`cfb-fri` 08-28 ok, `forecast`/`predictions-fri` 08-28 ok, `predictions-tue`
-`rugby-weekly` `cricket-weekly` 08-25, `fiba-weekly` 08-26, `mktcap-refresh` 08-29,
-`conflicts-monthly`/`cricket-monthly` seeded 08-01 → next fire 09-01). Nothing
-silently skipped. Working tree is clean; no stashes.
-
----
+`python3 dispatcher.py --check-sync` reports **in sync** -- the runner drift
+described in #1 is closed as of 08:53Z today.
 
 ## Self-healed (informational only, no action needed)
 
-**S1. football-standings FAIL 17:05Z + 10× `export_schedule.py` WARNs — one cause, one cure**
-Both trace to a single uncommitted `HANDOFF.md` in the mini's working tree, which
-made `git merge --ff-only` refuse:
+**`daily-ops-sweep` 15m timeout (08-30 11:29Z).** Already handled on 08-30
+(timeout raised to 25m, PID lock added). The 08-31 01:07Z run finished clean in
+535s, and `bef7f8e3d` additionally fixed the window query that had been dropping
+the middle day of its own 26h window. Nothing outstanding.
 
-```
-17:05:08 ERROR: cannot fast-forward (repo diverged; resolve by hand)
-! error: Your local changes ... would be overwritten by merge:  HANDOFF.md
-```
+**`football-standings` exit 1 after 2s (08-30 17:05Z).** `git pull --ff-only`
+refused because an uncommitted `HANDOFF.md` sat in the working tree:
+`error: Your local changes to the following files would be overwritten by merge`.
+Same cause produced 10 consecutive `WARN export_schedule.py failed` lines from
+17:05Z to 18:35Z. HANDOFF.md was committed at 18:39:56Z; the 19:41 local run,
+the 23:05Z slot and both of today's slots all completed clean. Working tree is
+clean now and `origin/main` is level with HEAD.
 
-The dispatcher's post-tick `export_schedule()` hit the same wall on every 10-minute
-tick from **17:05:10Z to 18:35:25Z** (10 WARNs). The interactive session committed
-that file as `c3dbba8d7` at **18:39:56Z**; the very next tick's export succeeded
-(`503a29e77`, 18:45:27Z) and the 23:05Z scheduled football-standings run was clean
-(83s). **Fully self-healed, nothing outstanding.** Worth knowing as a pattern: an
-uncommitted file in the mini's clone quietly red-lines *every* ff-only job until
-someone commits it.
+**`cfb-sun` exit 1 after 602s (08-30 23:47Z)** -- `schedule gap: Jacksonville
+State has only 3 games`. Diagnosed and fixed today: ESPN's `groups=80`
+scoreboard was omitting 9 of JSU's 12 games (upstream indexing, not our bug).
+`8617e8368` backfills any FBS team under `MIN_TEAM_GAMES` from its own
+`/teams/<id>/schedule` endpoint and keeps the hard gate as the final check.
+Verified in the rebuilt artefact: `public/data/cfb-sim.json` is now
+`generated_at 2026-08-31`, `games_played: 8`, and records
+`schedule_backfill: [{team: "Jacksonville State", scoreboard: 3, after: 12}]`.
+Published via `a1952febe`; state marked `ok (manual)` at 06:52Z. The fix gets its
+first *unattended* exercise at `cfb-fri`, Fri 09-04 11:40Z.
 
-**S2. gap-league-watch — Greek Super League 2 transition, already consumed**
-The 05:04Z run pushed `=== TRANSITIONS === Greece L2 Super League 2:
-awaiting_target -> ready`. The interactive session resolved the two unmatched
-clubs and the 12:18 local run logged `AUTO-PROMOTED Super League 2 (api 494) ->
-leagues.json`, pushed as `49496b533`. India ISL remains `awaiting_target` (api has
-no 2026 season yet) — expected. **No action.**
+**Greek Super League 2 auto-promoted.** `gap-league-watch` went
+`awaiting_target -> ready` on 08-30 with one UNMATCHED club; after the Lookup
+entry was added, the 12:18 run matched 16/16 and auto-promoted the league.
+Confirmed present in `scripts/apifootball/leagues.json`. India L1 (Indian Super
+League) remains correctly `awaiting_target` -- api-football's latest published
+season is still 2025.
 
-**S3. egress-refresh FAIL 09:38Z — leaders sanity gate held the commit**
-The gate did its job (5 hard flags; `dispatcher.log` keeps only the last 6 stderr
-lines so it shows Nigeria + 3 softs). Investigated in full by yesterday's sweep and
-fixed by hand: `c43399283`, `3976ba3c8`, `6d954fc67`, and the job was explicitly
-`MARK-OK`'d at 12:47:46Z. Working tree is clean and `state.json` reads
-`ok (manual)`. **Nothing further this window** — but see #2 for the recurrence risk
-on 09-06.
+**Vercel build budget: 0 billable builds today.** All 28 production deployments
+between 08-31 00:00Z and 09:06Z are `CANCELED` (free). Spot-checked that today's
+`[vercel skip]` tags were *correct*, not lucky: today's leaders commits touched
+only `_current.json`, `power-ranking.json` and `power-ranking-history/**`, all of
+which `lib/currentLeaders.ts` / `lib/powerRanking.ts` serve ISR-from-raw. No
+per-country `public/data/leaders/<slug>.json` file was committed today, so the
+build-required case (`6d954fc67` on 08-30, correctly tagged `[triggers build]`)
+did not arise. This is a clean day against 08-30's 7 billable builds.
 
-**S4. daily-ops-sweep FAIL 11:44Z — its own timeout, already raised**
-The 08-30 run was killed at the then-default 15m mid-investigation. `jobs.toml` now
-carries `timeout_minutes = 25` with that exact comment, and `run-daily-ops-sweep.sh`
-gained the PID lock yesterday's report asked for. Today's run started 01:07:11Z on
-its proper slot, 7m late, single instance. **Both fixes verified in place.**
-
-Also verified fixed from yesterday's report: the mlb-sim NRL in-progress crash and
-the feed-monitor AFL blind spot (`35ddd39a3`), the sound-pipeline atomic-credits
-copy (`298789fb5`), the S&P 500 changes diff (`238dde631`), the sweep's own wiring
-committed (`b56222aee`), and the HOLD-recovery commit rule (`1240d8b6e`). Only the
-mktcap 26-company backlog and one leaders date correction remain open from that
-report.
-
----
+**Release notes:** no commit touched `app/` or `lib/` today, so no
+`lib/releases.ts` entry is due yet. If anything reader-visible ships later today,
+08-31 still needs its block.
 
 ## Needs Ashwin's attention
 
-### 1. 🔴 cfb-sun hard-failed and the week-1 AP-25 slate never published — ESPN's scoreboard has lost 9 of Jacksonville State's 12 games
+### 1. This morning's `forecast` run silently skipped its gate and its scoring
 
-**What happened.** `cfb-sun` (08-30 23:47Z) passed its self-test (35 checks) and
-then died 55s into the model build:
+**What happened.** `forecast` ran at 06:18Z, reported `DONE ok 607s`, and
+committed `2b41e6e1a` -- but it ran the *stale* copy of `runners/forecast.sh`,
+frozen at 2026-08-06. That version has none of the steps the repo copy has had
+since: the four `--self-test` calls, `check_forecast_health.py` (the gate that
+must pass between build and commit), `score_forecasts.py --write`, and
+`forecast-scoreboard.json` in its `commit_paths` list.
 
-```
-[00:47:06] step: rebuild the CFB model (sim + AP-25 slate + grading)
-[00:48:01] FAIL: step failed (rc=1)
-! schedule gap: Jacksonville State has only 3 games
-```
+**Root cause.** `REBUILD-RUNBOOK.md` §7 symlinked the top-level wrappers but
+`cp -R`'d `runners/` two lines later, so the live runners never picked up repo
+edits. `0b94d2f72` closed this at **08:53Z today** -- two and a half hours *after*
+the forecast run. I diffed the backup (`~/metro-mini-jobs/runners-backup-2026-08-31/`)
+against the repo: `_common.sh`, `business-daily.sh`, `cfb.sh` and `mlb-sim.sh`
+were identical, so only two jobs were ever affected -- `forecast.sh` and
+`predictions.sh`. Both reported green throughout, which is what made it silent.
 
-`guarded` (not `run_soft`) means the old JSONs were kept — correct, no partial
-shipped. But `public/data/cfb-sim.json` and `cfb-predictions.json` are still the
-**2026-08-28 preseason build** (`generated_at: 2026-08-28`, `games_played: 0`,
-poll `Preseason 2026-08-17`). Week 1 was played on 29–30 August. The site is
-showing a preseason model on the Monday after the season opened, and the product
-promise — "the week's slate comes out after the AP poll" — did not happen.
+**Consequences, verified on disk.**
+- `public/data/forecast-scoreboard.json` is unchanged since the `62979497c`
+  hand-seed of 08-30. The ledger has not been graded on the mini, ever.
+- Today's published `forecast.json` shipped **without passing
+  `check_forecast_health.py`** -- the "a block that publishes must contain what
+  it says it contains" check. That is the part worth caring about.
+- `predictions.sh` never built the UCL sim. `public/data/ucl-sim.json` is dated
+  08-30 12:01 from `669e6249e`, a hand-run, not the job.
 
-**Root cause — reproduced live, read-only, this run.** This is not a transient
-fetch miss and not our bug. `build_cfb_sim.py` line 965 hard-exits when any FBS
-team holds <10 games (played + remaining). I replayed the exact 21 scoreboard URLs
-`season_events()` uses, with the same headers (no User-Agent, `Accept:
-application/json`), and got 940 events and **exactly one** team short:
-
-```
-FBS teams with <10 scoreboard games: 1
-   3  id 55  Jacksonville State
-JSU games visible in groups=80 scoreboard:
-   2026-08-29 wk1  JVST @ NDSU  (completed)
-   2026-09-05 wk1  EKU @ JVST
-   2026-10-29 wk9  JVST @ NMSU
-```
-
-The other 137 teams are fine, and no `soft-fetch miss:` line appeared in the run's
-stdout, so no week query failed. The games genuinely exist — ESPN's **team**
-endpoint returns all twelve:
+**Recommended fix.** Both self-heal on the now-symlinked runners --
+`forecast` next fires **Wed 09-02 06:10Z** (Mon/Wed/Fri) and `predictions-tue`
+**Tue 09-01 06:40Z** -- so no change is required if you are content to wait.
+If you want the ledger and the health gate honoured before Wednesday, run on the
+mini:
 
 ```
-/teams/55/schedule?season=2026  ->  12 events, group 12 (CUSA), parent 80 (FBS)
-   09-12 JVST @ OHIO | 09-19 GASO | 09-26 MTSU | 10-07 @ KENN | 10-14 FIU
-   11-08 SHSU | 11-14 @ WKU | 11-21 MOST | 11-28 @ DEL     (all missing above)
+cd ~/metro-mini-jobs && bash runners/forecast.sh
 ```
 
-I pulled one of the missing ones end to end. Event **401866418** (`JVST @ OHIO`,
-2026-09-12) resolves through `/teams/195/schedule` and `/summary?event=401866418`
-with both competitors correctly grouped (Ohio group 15, JSU group 12) — yet it is
-absent from `scoreboard?groups=80&seasontype=2&week=2`, from `week=3`, from
-`dates=20260912&groups=80`, **and from `dates=20260912` with no groups filter at
-all**. ESPN's scoreboard index is dropping these events; every other endpoint has
-them. The `limit=` truncation trap documented at `season_events()` is not involved
-— no limit param is passed.
-
-**Why it will not fix itself.** `cfb-fri` fires **2026-09-04 11:40Z** and `cfb-sun`
-**2026-09-06 23:40Z**; both run the same builder and will hit the same line. Unless
-ESPN reindexes, the CFB pages stay frozen on preseason numbers through week 2, and
-you get an ntfy alert each time.
-
-**Recommended fix** (smallest change that owns the problem, in `scripts/predictions/build_cfb_sim.py`):
-after `prepare_state()` and *before* the loop at line 962, backfill from the
-per-team endpoint for any team the scoreboard shorted —
-
-- for each `id_list` team whose `per_team_games + reg_wins + losses < 10`, GET
-  `.../teams/{id}/schedule?season=2026`, take `seasonType.id == 2` events whose
-  event id is not already in `seen`, and append them in `season_events()`'s shape
-  (both competitor ids, `neutralSite`, `conferenceCompetition`, completed/score);
-- log one `note:` line per backfilled team so a silent upstream regression is still
-  visible in the run log;
-- **keep the <10 hard exit** as the final gate, so if the backfill also comes up
-  short the run still turns red instead of shipping a wrong CUSA title race.
-
-Do **not** just relax the threshold to 3 — JSU's conference and playoff
-probabilities would be computed off a 3-game season and CUSA's whole board would be
-wrong. If you would rather not touch the builder mid-season, the honest alternative
-is to leave it failing and accept a frozen CFB page until ESPN reindexes; the guard
-is behaving correctly either way. Worth re-checking the scoreboard in a day or two
-before writing code — this looks like an ESPN-side glitch that may clear on its own.
-
-Evidence commands (all read-only, all re-runnable):
-```
-curl -s -H 'Accept: application/json' \
- 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/55/schedule?season=2026' | python3 -c 'import json,sys;print(len(json.load(sys.stdin)["events"]))'
-# -> 12, vs 3 visible via scoreboard?groups=80
-```
-
-### 2. The leaders sanity gate will almost certainly HOLD egress-refresh again on 2026-09-06 — Nigeria is structurally unfixable as configured
-
-`egress-refresh` is weekly (Sun 09:00Z) and has now failed **two Sundays running**
-(08-23 and 08-30), both on `check-leaders-sanity.py`. The 08-30 data was corrected
-by hand, but **the scrape was not**, so the same inputs return next Sunday.
-
-Nigeria is the one that cannot resolve itself. `scripts/check-leaders-sanity.py`
-pins `nigeria: "Bola Ahmed Tinubu"`, and its own comment (added 2026-08-15) says the
-pin "stops it recurring at all instead of needing a fresh manual exclude every
-time". **It does not.** The pin is a comparison, not a repair: the scrape writes the
-short form, the pin compares bare names, they differ, and the run HOLDs —
-which is exactly what happened on 08-30:
+or, to touch only the missing half without refetching polls:
 
 ```
-! HARD  nigeria: name "Bola Ahmed Tinubu" -> "Bola Tinubu" with unchanged since (2023-05-29)
+cd "$HOME/Projects/Metro Area Project"
+python3 scripts/forecast/check_forecast_health.py     # gate today's published file
+python3 scripts/forecast/score_forecasts.py --write   # regrade the ledger
+git add public/data/forecast-scoreboard.json data/forecast
 ```
 
-Wikidata is oscillating between two labels for the same person with the same start
-date (recorded 2026-08-15, 08-17, 08-23, and again 08-30). No data is at risk — the
-gate is holding correctly — but it burns a 31-minute run and an ntfy alert every
-Sunday, and it trains the gate's output to be ignored.
+`forecast-scoreboard.json` is ISR-from-raw (`lib/forecastScoreboard.ts`), so that
+commit takes `[vercel skip]` and costs no build.
 
-**Recommended fix.** Make the pin *load-bearing* rather than advisory: in the
-refresh pipeline, after the scrape and before the gate, rewrite any pinned country's
-name to the pinned value when the bare-name comparison shows a pure long/short-form
-variant of the same person **and** `since` is unchanged; log it as a normalisation.
-Then Nigeria stops flagging while a genuine handover (new `since`) still HOLDs.
-Add a `--self-test` case for both directions. Smaller stopgap if you would rather
-not touch the pipeline: treat a same-`since` name change that is a strict
-subsequence of the pinned name as SOFT rather than HARD.
+### 2. `egress-refresh`'s leaders fixes are unproven -- today's 09:00Z slot is the test
 
-Also still open: Switzerland's `"Swiss Federal Council" has no since date` soft flag
-(pre-existing, benign — a collective head of state genuinely has no single start
-date; consider whitelisting it so the soft list stays meaningful), and the one
-remaining real date correction from yesterday's report's item #4 that `6d954fc67`
-deliberately left ("2 are false positives, 1 needs a real update").
+**What happened.** The 08-30 09:07Z run got 30 minutes into the pipeline
+(billionaires, civic, zone-zero-cup and the citypopulation watcher all completed)
+and then the leaders sanity gate HELD the commit: `HOLD: 5 hard flag(s)`, led by
+`HARD nigeria: name "Bola Ahmed Tinubu" -> "Bola Tinubu" with unchanged since
+(2023-05-29)`, plus SOFT flags on hungary, india and switzerland. That is the
+**fourth-plus** recurrence since early August, and each one has red-lined the
+whole job for a country whose correct value was already in the file.
 
-### 3. This sweep job's own window query drops a whole day near UTC midnight
+**Root cause (found today, not previously understood).** Wikidata has been
+migrating person labels to the language-agnostic `mul` code and deleting the
+redundant `en` one. Asked for `en` alone the label service returns a bare QID,
+`_plausible()` rejects it, and the head-of-government candidate is silently
+*dropped* -- so `pick` falls through to the ceremonial President. Measured today
+this hit 9 label slots across 7 countries (IN, HU, MX, US among them), which is
+why India led with Murmu and France with Lecornu rather than Modi and Macron.
+Three commits landed this morning: `3a618cea5` (keep `mul` in the label
+fallback), `64da27c52` (pins restore the whole entry and the run *continues*
+instead of halting), `31c2d59a0` (pin estonia/madagascar/malawi/mauritius as
+known-stale sources), `c67a8eb8e` (France back to Macron, ranking rebuilt).
 
-The prompt in `run-daily-ops-sweep.sh` builds its grep from two literal dates:
+**Why it still needs your eye.** `egress-refresh` has not run since. Its next
+slot is **today 09:00Z**, roughly 40 minutes after this report was written, and
+that is the first real exercise of all four commits together. Its state currently
+reads `ok (manual)`, which is bookkeeping, not evidence.
 
-```
-grep "$(date -u -v-26H +%Y-%m-%d)\|$(date -u +%Y-%m-%d)" dispatcher.log
-```
+**What to check.** After 09:40Z, `grep -A20 'RUN egress-refresh'
+~/metro-mini-jobs/dispatcher.log | tail -40`. A clean run ends `DONE
+egress-refresh`. If it HOLDs again, the `!` lines name the countries, and the new
+pin mechanism means a HOLD now indicates a country that is *not* pinned -- a
+genuinely new case, not the Nigeria loop.
 
-Fired at its 01:00Z slot, that resolves to `2026-08-29` and `2026-08-31` — and
-matches **nothing from 2026-08-30**, which is where every failure in this report
-lives. It only appears to work because the sweep is told to reason about a 26h
-window and a careful reader notices; a sweep that took the command literally would
-have reported "31 lines, all clean" and missed the cfb-sun failure entirely. The
-job runs at 01:00Z by design, so this misfires **every single day**.
+**Data spot-check, done independently rather than assumed.** Current
+`_current.json` values for the flagged countries are correct as of today:
+Nigeria = Bola Ahmed Tinubu (Pres., 2023-05-29); India = Modi (PM) with Murmu as
+ceremonial second; France = Macron (Pres., 2017-05-14). Hungary = Péter Magyar
+(PM since 2026-05-09) with Ágnes Forsthoffer as "Pres." -- confirmed by search
+that Magyar was sworn in 09 May 2026 after Tisza's April landslide, and that
+Forsthoffer, Speaker of the National Assembly, is **acting** head of state after
+Tamás Sulyok's term was ended early in July 2026. So the entry is substantively
+right, with one caveat worth knowing: parliament is expected to elect a new
+president, so Hungary's `second` will move again and will trip the same SOFT flag
+when it does. Switzerland's missing `since` on "Swiss Federal Council" is the
+known, deliberate SOFT case -- no action.
 
-**Recommended fix** — in `mac-mini-jobs/run-daily-ops-sweep.sh`, replace the grep
-in `$PROMPT` with a filter that spans the range rather than two endpoints:
+### 3. Minor: `--self-test` writes fake MARK-OK lines into the real dispatcher.log
 
-```bash
-awk -v since="$(date -u -v-26H +%Y-%m-%dT%H:%M:%SZ)" '$1 >= since' \
-  $HOME/metro-mini-jobs/dispatcher.log | grep -E '(RUN|DONE|FAIL|MISSED|WARN)'
-```
+`dispatcher.log` carries three lines reading
+`MARK-OK test-job: last_status 'failed' -> 'ok (manual)'` (08-30 12:47 x2,
+**08-31 07:53**, in this window), each preceded by `stale lock file; taking it
+over`. There is no `test-job` in `jobs.toml` and none in `state.json`, and
+`mark_ok()` refuses unknown ids -- these come from `dispatcher.py --self-test`,
+which exercises `mark_ok()` against a synthetic jobs table and lets the result
+land in the operational log. Harmless to state, but a log reader (including this
+sweep) has to rule it out every day, and it looks exactly like a human clearing a
+real failure. Suggested fix: have the self-test log to a null/temp sink, or
+prefix its lines with `SELFTEST` so they can be filtered.
 
-`dispatcher.log`'s leading field is a sortable UTC ISO timestamp, so a plain string
-compare is exact. Adding `WARN` to the pattern also surfaces the `export_schedule.py`
-run in S1, which the current `(RUN|DONE|FAIL|MISSED)` pattern shows only by accident.
+### 4. Carried from HANDOFF J2, self-heals tomorrow -- flagging so it isn't lost
 
-Two smaller things in the same file, worth folding into the same edit:
-`$HOME/metro-mini-jobs/logs/*-$DATE.log` only globs *today's* logs, so at 01:07Z it
-matches four files and misses the whole preceding day (this sweep read
-`*-2026-08-30.log` explicitly); and `dispatcher.py` keeps only the last 12 stdout
-and **6 stderr** lines per job (lines 254–258), which is why both the cfb-sun
-traceback and 4 of the 5 leaders hard flags are unrecoverable from `dispatcher.log`
-— worth raising the stderr tail to ~30 lines, or teeing each runner to its own
-`logs/<job>-<date>.log` the way `football-standings` and `gap-league-watch` already do.
+The 08-30 rugby entry notes that `public/data/rugby-union/top-games.json` was
+**re-scored from the published board rather than rebuilt from source**, because
+Supabase was unreachable from that Cowork session, so the committed file predates
+the new upset term. `rugby-weekly` runs **Tue 09-01 07:05Z** on the mini and will
+rebuild it natively from source, which resolves this without action. Worth
+knowing only because the board's ordering may shift when it does -- that is the
+model finally being applied, not a regression.
 
-### 4. Vercel: 7 billable production builds on 2026-08-30 against the 2/day budget
+## Also noted, no action
 
-Counted with the Vercel MCP `list_deployments` per the CLAUDE.md rule (not GitHub
-`deployment_status`). `READY` production deployments, 2026-08-30 UTC:
-
-| Time (UTC) | Commit | Work item |
-|---|---|---|
-| 10:53:51 | `bef55cb2a` | deploy-retry (healing a canceled build) |
-| 11:10:08 | `3976ba3c8` | leaders fix |
-| 11:10:53 | `fcba480ad` | the held refresh that consumed it |
-| 16:06:00 | `74f444400` | football expectation ledger |
-| 19:05:14 | `675cd0525` | deploy-retry for the mobile batch |
-| 20:43:14 | `263fb4be5` | rugby rescoring |
-| 20:55:56 | `0623a6b8c` | release notes for the day |
-
-Every one is individually legitimate reader-visible work and the skip-tagging held
-across ~40 pushes (all 08-31 deployments so far are `CANCELED`, i.e. free — 0
-billable today). This is not a guard failure. It is the batching rule: **three of
-the seven were second builds of a work item that had already built** — the 11:10:08
-/ 11:10:53 pair (45s apart, flagged in yesterday's report too), and the two
-`[deploy-retry]` commits, each spent because a `[vercel skip]`-tagged commit
-happened to be the HEAD of a mixed push. `675cd0525`'s own commit message states the
-lesson: **order a mixed batch so a build-relevant commit is LAST**, or push the
-skip-tagged ones separately afterwards. Nothing to undo; flagged because this is the
-line item that has been billed before.
-
-### 5. mktcap metro curation queue: still 26 companies awaiting a ruling
-
-Carried forward unchanged from yesterday's report (`mktcap_geo`, `mapped_by =
-'auto-stub'`). `mktcap-refresh` is weekly (Sat 09:00Z), so nothing changed this
-window and nothing will before 2026-09-05. Listed only so it does not fall off the
-board — the queue is working as designed, it just has not been consumed.
-
----
-
-*Generated by the unattended daily ops sweep on the Mac mini. Report-only: no jobs
-were re-run, no healthchecks pinged, no data written. Network access this run was
-read-only GETs against ESPN plus one web search, and read-only Vercel MCP listing.*
+- `[wfootball] FA WSL (id 44): 12 standings rows [2025-26] PLACEHOLDER` on every
+  football-standings run this window. Liga F flipped from PLACEHOLDER to 2026-27
+  between the 00:05 and 06:06 runs today, so the mechanism works; the WSL
+  2026-27 season simply has not opened on api-football yet. Expect it to clear on
+  its own in early September.
+- The Substack has been quiet since 2026-07-01. The newsletter-podcast weekly
+  skip will keep repeating each Sunday until a new post lands, and
+  **Greying Power** (2026-05-10) remains the one published post with no episode --
+  it is outside the 14-day rule, so it needs a deliberate manual run if you want
+  it narrated.
