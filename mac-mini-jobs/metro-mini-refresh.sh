@@ -135,6 +135,20 @@ run_step "mayors"               "$PY" scripts/civic/refresh_mayors.py
 # guessed at or blanked.
 run_step "cabinet"              "$PY" scripts/civic/refresh_cabinet.py --write
 run_step "house leadership"     "$PY" scripts/civic/refresh_house_leadership.py --write
+# UK offices beyond PM/Sovereign (Chancellor, Foreign/Home Secretary, the three
+# First Ministers, Leader of the Opposition). Until 2026-08-31 nothing refreshed
+# these at all -- build-uk-offices.py was a hand-run one-off, so the data sat at
+# its 2026-07-21 build with no process behind it.
+#
+# READ-ONLY --check, deliberately NOT --enrich. Wikidata actively restructures
+# historical office statements: between 07-21 and 08-31 it moved Samuel Sandys'
+# 1742 term from Chancellor of the Exchequer to Leader of the House of Commons
+# and did the same to five other Chancellors while adding fifteen more. A weekly
+# unattended rebuild would silently gain and lose real historical officeholders
+# with nobody reviewing. --check watches the part that matters -- who currently
+# holds each office -- and fails the step (=> ntfy) only when a sitting holder
+# changes, which is the signal to rebuild deliberately and review the diff.
+run_step "uk offices (check)"   "$PY" scripts/uk-politics/build-uk-offices.py --check
 run_step "billionaires fetch"   "$PY" scripts/billionaires/fetch-billionaires.py
 run_step "billionaires build"   "$PY" scripts/billionaires/build-billionaires.py
 run_step "valuations"           "$PY" scripts/build-valuations-data.py

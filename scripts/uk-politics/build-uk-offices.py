@@ -87,10 +87,61 @@ def _mk_filter(allow_unknown):
 #    diplomat. Neither signal alone suffices (jurisdiction is missing on some old
 #    UK office items; party is missing on some real UK holders).
 _uk_party = _mk_filter(False)
+
+
+def _uk_office(r):
+    """Keep a holder of a generic-labelled office only if it is plausibly UK.
+
+    A KNOWN non-UK jurisdiction is decisive and outranks the party test. That
+    matters because party names collide across countries: the Dutch PvdA
+    renders in English as "Labour Party", which UK_PARTIES accepts, so Frans
+    Timmermans, Max van der Stoel, Piet Dankert and Dick Benschop all passed the
+    party test and landed in the UK Foreign Secretary list.
+
+    They had never appeared before only because their Wikidata labels resolved
+    to bare QIDs, which parse_rows drops -- broken labels were acting as an
+    accidental filter. Fixing label resolution (en,mul) removed that accident
+    and exposed the real gap, so it is closed here rather than left to chance.
+
+    Where jurisdiction is unknown -- true of several genuinely old UK office
+    items -- fall back to the party test, which is what kept early peers."""
+    if r.get("jurKnown") and not r.get("jurUK"):
+        return False
+    return bool(r.get("jurUK")) or _uk_party(r.get("party"))
+#  - homeSecretary: the bare label "Home Secretary" is shared with India, whose
+#    holders carry party "Unknown" and no UK jurisdiction. Added 2026-08-31
+#    after a live run admitted Ajay Kumar Bhalla (India's Home Secretary
+#    2019-2022) into the UK list. Same shape as foreignSecretary: jurisdiction
+#    OR a UK party, so early peers without P102 survive on jurisdiction alone.
 KEEP_RULE = {
     "leaderOfOpposition": lambda r: _uk_party(r.get("party")),
-    "foreignSecretary": lambda r: r.get("jurUK") or _uk_party(r.get("party")),
+    "foreignSecretary": _uk_office,
+    "homeSecretary": _uk_office,
 }
+
+# --- write guard ------------------------------------------------------------
+# --enrich used to print "0 holders: check label(s)" and then write anyway, so a
+# single Wikidata position rename silently emptied an office and the script
+# still exited 0. Offices are matched by EXACT English label, which makes that a
+# live risk rather than a theoretical one. Refuse to publish instead.
+MIN_HOLDERS = 1          # an empty office is always a lookup failure, never real
+MAX_SHRINK = 0.20        # a roster losing >20% against the committed file is a
+                         # query regression, not history being revised
+
+
+def check_publishable(out, previous):
+    """Reasons this build must NOT overwrite the committed file. Empty = ok."""
+    problems = []
+    for key in OFFICES:
+        rows = out.get(key) or []
+        if len(rows) < MIN_HOLDERS:
+            problems.append(f"{key}: {len(rows)} holders -- label lookup failed")
+            continue
+        was = len(previous.get(key) or []) if isinstance(previous, dict) else 0
+        if was and len(rows) < was * (1 - MAX_SHRINK):
+            problems.append(f"{key}: {was} -> {len(rows)} holders, a "
+                            f"{100*(was-len(rows))/was:.0f}% drop")
+    return problems
 
 _DATE_RE = re.compile(r"^-?\d{4}-\d{2}-\d{2}$")
 
@@ -114,9 +165,12 @@ def parse_rows(payload):
         jur = b.get("jur", {}).get("value", "")
         sig = (name, start)
         if sig not in by_sig:
-            by_sig[sig] = {"name": name, "party": party, "start": start, "end": end, "jurUK": False}
+            by_sig[sig] = {"name": name, "party": party, "start": start, "end": end,
+                           "jurUK": False, "jurKnown": False}
             order.append(sig)
         # any binding pointing the position at the UK => UK-jurisdiction office
+        if jur:
+            by_sig[sig]["jurKnown"] = True
         if jur.rsplit("/", 1)[-1] == "Q145":
             by_sig[sig]["jurUK"] = True
         # prefer a real party over "Unknown" if a later binding has one
@@ -195,23 +249,62 @@ def _run(query, tries=4):
             raise
 
 
-def cmd_enrich():
+def build_all(verbose=True):
+    """Query every office and return the document. Shared by --enrich and
+    --check so the two can never drift in what they measure."""
     out = {"source": "Wikidata P39 (position held, matched by office label) + P580/P582",
            "note": "UK offices beyond PM/Sovereign (those come from /leaders). end=null=current."}
-    print("UK offices:")
+    if verbose:
+        print("UK offices:")
     for key, labels in OFFICES.items():
         q = office_query(labels, COUNTRY_CONSTRAINT.get(key))
         rows = collapse(parse_rows(_run(q)))
         keep = KEEP_RULE.get(key)
         if keep:
             rows = [r for r in rows if keep(r)]
-        # strip the internal jurUK flag before writing
-        rows = [{k2: v for k2, v in r.items() if k2 != "jurUK"} for r in close_open_terms(rows)]
+        # strip the internal flags before writing
+        rows = [{k2: v for k2, v in r.items() if k2 not in ("jurUK", "jurKnown")}
+                for r in close_open_terms(rows)]
         out[key] = rows
-        flag = "  <-- 0 holders: check label(s)" if not rows else ""
-        print("  %-28s %4d holders%s" % (key, len(rows), flag))
+        if verbose:
+            flag = "  <-- 0 holders: check label(s)" if not rows else ""
+            print("  %-28s %4d holders%s" % (key, len(rows), flag))
+    return out
+
+
+def cmd_enrich():
+    out = build_all()
+    previous = {}
+    if os.path.exists(OUT):
+        try:
+            with open(OUT, encoding="utf-8") as f:
+                previous = json.load(f)
+        except Exception:
+            previous = {}
+
+    problems = check_publishable(out, previous)
+    if problems:
+        print("\nREFUSING TO WRITE -- this build would lose data:")
+        for p_ in problems:
+            print("  " + p_)
+        print("Nothing written; %s is unchanged." % OUT)
+        raise SystemExit(1)
+
+    # Report roster churn by START DATE, not by name: Wikidata keeps migrating
+    # peers between short and full titled forms ("Archibald Primrose" ->
+    # "Archibald Primrose, 5th Earl of Rosebery"), which is a relabelling, not a
+    # change of who held the office. Dates are the stable identity.
+    for key in OFFICES:
+        was = {r.get("start") for r in (previous.get(key) or [])}
+        now = {r.get("start") for r in (out.get(key) or [])}
+        if previous and (was - now or now - was):
+            print("  %-28s terms +%d -%d" % (key, len(now - was), len(was - now)))
+
+    # indent=2, not separators=(",",":"): this file is reviewed by eye in a diff
+    # when a build changes it, and a single 38KB line is unreviewable.
     with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
+        json.dump(out, f, ensure_ascii=False, indent=2)
+        f.write("\n")
     print("wrote %s" % os.path.relpath(OUT, ROOT))
 
 
@@ -246,13 +339,70 @@ def cmd_self_test():
     print("self-test OK: parse_rows (jurUK+party-fill), close_open_terms, KEEP rules")
 
 
+def cmd_check():
+    """Report drift without writing. This is the mode that is safe to schedule.
+
+    --enrich must NOT run unattended, and the reason is upstream rather than
+    ours. Wikidata actively restructures historical office statements: between
+    2026-07-21 and 2026-08-31 it moved Samuel Sandys' 1742 term from Chancellor
+    of the Exchequer to Leader of the House of Commons, and did the same to five
+    other 18th/19th-century Chancellors, while adding fifteen more. A weekly
+    unattended rebuild would silently gain and lose real historical
+    officeholders with nobody reviewing, and history is exactly the kind of data
+    that should not move on its own.
+
+    What DOES need watching is the current holders -- a new Foreign Secretary is
+    a real event and the whole point of closing this gap. So: exit 1 when a
+    sitting holder differs, which surfaces as a failed step and an ntfy alert;
+    report historical churn but exit 0, because that is Wikidata being edited,
+    not something Ashwin needs to act on."""
+    out = build_all()
+    try:
+        with open(OUT, encoding="utf-8") as f:
+            committed = json.load(f)
+    except Exception:
+        print("no committed %s to compare against" % OUT)
+        return
+    def sitting(d, key):
+        return sorted((r.get("name"), r.get("start"))
+                      for r in (d.get(key) or []) if not r.get("end"))
+    changed, churn = [], []
+    for key in OFFICES:
+        a, b = sitting(committed, key), sitting(out, key)
+        if a != b:
+            changed.append(f"{key}: {a} -> {b}")
+        was = {r.get("start") for r in (committed.get(key) or [])}
+        now = {r.get("start") for r in (out.get(key) or [])}
+        if was - now or now - was:
+            churn.append(f"{key}: terms +{len(now-was)} -{len(was-now)}")
+    for c in churn:
+        print("  historical churn (no action): " + c)
+    if not changed:
+        print("uk-offices: current holders unchanged in all %d offices" % len(OFFICES))
+        return
+    print("\nUK OFFICE HOLDER CHANGED -- rebuild deliberately and review the diff:")
+    for c in changed:
+        print("  " + c)
+    print("\n  cd \"$REPO_DIR\" && python3 scripts/uk-politics/build-uk-offices.py --enrich")
+    raise SystemExit(1)
+
+
 def main():
     ap = argparse.ArgumentParser()
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--self-test", action="store_true")
     g.add_argument("--enrich", action="store_true")
+    g.add_argument("--check", action="store_true",
+                   help="NETWORK, READ-ONLY. Report drift vs the committed file "
+                        "without writing. Exits 1 only when a CURRENT holder "
+                        "differs -- i.e. when a deliberate rebuild is due.")
     a = ap.parse_args()
-    cmd_self_test() if a.self_test else cmd_enrich()
+    if a.self_test:
+        cmd_self_test()
+    elif a.check:
+        cmd_check()
+    else:
+        cmd_enrich()
 
 
 if __name__ == "__main__":
