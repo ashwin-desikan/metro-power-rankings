@@ -98,6 +98,32 @@ PINS = {
         "pinned_on": "2026-08-23",
         "name": "Bola Ahmed Tinubu", "role": "Pres.", "since": "2023-05-29",
     },
+    # --- Wikidata stale, committed value verified correct (all four 2026-08-31)
+    # These four regressed repeatedly to a PREDECESSOR (see
+    # is_predecessor_restore) and had already been hand-corrected twice
+    # (c43399283, 3976ba3c8). The predecessor check reverts them correctly, but
+    # as an anomaly needing review every single run. They are not anomalies --
+    # they are a known-stale source, which is what a pin is for. Each was
+    # news-verified in office on 2026-08-31, and each agrees with its own
+    # per-country timeline file.
+    "estonia": {                                 # WD P6 stale: Kaja Kallas, who
+        "pinned_on": "2026-08-31",               # left for the EU role in 2024
+        "name": "Kristen Michal", "role": "PM", "since": "2024-07-23",
+        "second": {"name": "Alar Karis", "role": "Pres."},
+    },
+    "madagascar": {                              # WD P35 stale: Andry Rajoelina,
+        "pinned_on": "2026-08-31",               # ousted in the 2025 coup
+        "name": "Michael Randrianirina", "role": "Pres.", "since": "2025-10-17",
+    },
+    "malawi": {                                  # WD P35 stale: Lazarus Chakwera,
+        "pinned_on": "2026-08-31",               # lost the Sept 2025 election
+        "name": "Peter Mutharika", "role": "Pres.", "since": "2025-10-04",
+    },
+    "mauritius": {                               # WD P6 stale: Pravind Jugnauth,
+        "pinned_on": "2026-08-31",               # resigned after the 2024 landslide
+        "name": "Navin Ramgoolam", "role": "PM", "since": "2024-11-12",
+        "second": {"name": "Dharam Gokhool", "role": "Pres."},
+    },
 }
 PIN_MAX_AGE_DAYS = 365  # past this, a pin raises a SOFT flag asking for a re-check
 PARTICLES = {"bin","bint","ibn","al","van","von","de","da","del","dos","di","der",
