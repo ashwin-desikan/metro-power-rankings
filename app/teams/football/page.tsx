@@ -10,6 +10,8 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { Badge } from "@/app/teams/_shared/Badge";
 import FootballIndexClient, { type IndexClub } from "./FootballIndexClient";
+import ClubGreatestGames from "./ClubGreatestGames";
+import { getClubGames } from "@/lib/clubGames";
 import { getPastSeasons } from "@/lib/footballSeasons";
 
 // Re-render hourly so the auto month-window league/competition statuses
@@ -38,6 +40,7 @@ export const metadata: Metadata = {
 
 export default async function FootballIndex() {
   const PAST_SEASONS = getPastSeasons();
+  const clubGames = getClubGames();
   const clubs = getAllClubs();
   const hubs = getAllLeagueHubs();
   const tournamentHubs = getAllEuropeanTournamentHubs();
@@ -210,6 +213,7 @@ export default async function FootballIndex() {
         items={[
           { label: "Tournament Hubs", href: "#tournaments" },
           { label: "League Hubs", href: "#leagues" },
+          { label: "Greatest Games", href: "#greatest" },
           { label: "Domestic Leagues Worldwide", href: "#domestic" },
         ]}
       />
@@ -280,6 +284,22 @@ export default async function FootballIndex() {
             );
           })}
         </div>
+      </section>
+
+      <section className="mb-10">
+        <div className="flex items-baseline justify-between gap-3 mb-3 flex-wrap">
+          <h2 id="greatest" className="text-lg font-semibold scroll-mt-20">Greatest games</h2>
+          <Link href="/sports/games#clubfb" className="text-xs text-[var(--accent)] font-medium hover:underline whitespace-nowrap">
+            Full board on the Greatest Games page →
+          </Link>
+        </div>
+        <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-3">
+          Every top-flight league match, every UEFA competition match and the ten major domestic cups
+          since 1871, ranked by one Game Score of closeness, stakes, quality and upset. Starred rows are curated all-time classics;
+          hover any score for its components. The home side is listed first; neutral venues and
+          two-legged ties are marked on each row.
+        </p>
+        <ClubGreatestGames top={clubGames.top} europe={clubGames.europe} league={clubGames.league} cups={clubGames.cups} decades={clubGames.by_decade} limit={10} />
       </section>
 
       <section className="mb-10">

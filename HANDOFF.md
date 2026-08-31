@@ -7984,3 +7984,116 @@ published board, not rebuilt, because Supabase is unreachable from the Cowork se
 A native `python scripts/rugby/build_rugby_top_games.py` reproduces the same ordering
 from source AND brings in the upset term, which the committed file still predates.
 Restart `next dev` afterwards; it memoizes `public/data` JSON.
+
+
+## 2026-08-31 — windows → next session (CLUB FOOTBALL GREATEST GAMES — WP1-WP5 shipped in one build)
+
+Cowork session, two days. The club football "greatest games" feature went from
+scoping to shipped: unified club Elo (WP2b), Game Score v10 (WP3+WP5), and the
+full site build (WP4) — boards on /sports/games#clubfb, hub section, per-club
+top 10s on every football club page, homepage card, three featured clips.
+This commit is the ONE build carrying all of it.
+
+### The data (Supabase, all live)
+- `football_elo` — 269,499 rows. Unified Elo over top-flight leagues + UEFA
+  comps + TEN major domestic cups (WP5). EURO_K_MULT=2.5, SPILL=1.5, coef
+  anchor OFF. Brier: euro 0.55386, league 0.58494, cup 0.56230.
+  ARCHITECTURE RULE: country membership pools = league+euro clubs ONLY;
+  cup-only clubs init at country mean −250 and never join the pool (first
+  attempt let them in → reversion anchors deflated → euro Brier 0.639,
+  garbage boards. Do not repeat).
+- `football_gamescore` — 261,300 rows. GS = 100×(0.34·cl+0.34·st+0.22·q+
+  0.10·u)×(0.80+0.20·cl). League stakes: live table, dual-convention
+  (2pt+3pt) title-liveness, cap 0.75, PLUS a rivalry stakes floor (0.25,
+  top-tier 0.32, pairs from public/data/rivalries.json — Ashwin's CFB
+  precedent). Cups: 0.78 main / 0.60 league cups × cup round curve. Eleven
+  curated floors (Istanbul 95.0 … Lisbon '14 88.5); Celtic-Inter '67's 89.2
+  floor is now INERT (cup-enriched Elo earns it 90.9 = #8 naturally; the
+  audit prints NOT MATCHED for it — that means floor-not-needed).
+- Scoring universe rulings (all Ashwin's): leagues (Exclude respected,
+  Russian/Soviet OUT, playoff pseudo-comps OUT — 17 comps with
+  "playoff"/"nacompetitie" in the key tail) + all UEFA rows (Exclude
+  ignored) + ten cups (FA Cup, League Cup, Copa del Rey, Coppa Italia,
+  DFB-Pokal, Coupe de France, Scottish Cup, Scottish League Cup, KNVB
+  Beker, Taça de Portugal; Exclude ignored). Heysel 1985 STAYS on boards
+  (ruled: "the game was still played"); the emitter's OMIT set is empty but
+  the mechanism remains.
+
+### FOUR STAKES-INTEGRITY GATES (each an Ashwin board-reading catch; the
+scorer's 21-row CLASSIC CHECKS regression suite covers all four — run it
+after ANY scorer change)
+1. CONTESTED-RACE: clinch/H2H count as deciders only when the top two are
+   within 1.5 wins under BOTH conventions. Killed Mainz-Bayern '21 (81→58.7)
+   and SPAL-Juve '19 (→53.3) formality-clinch false deciders.
+2. SEASON-FRAGMENT: a season whose fullest schedule < nt−1 produces zero
+   league stakes (the abandoned 1939-40 First Division 3-match stub).
+3. SEASON-LENGTH NORM: per (comp, club-count) median schedule; short seasons
+   keep missing rounds as still-to-play. Fixes COVID 2019-20 (Heracles-Ajax
+   78→46; Ajax-AZ →37) — ex-ante, Feb 2020 was a 34-round season.
+4. PLACEHOLDER-DATE CLUSTERS: a date holding > nt/2 of one season's matches
+   is a stamp, not a date (France 1933-38 carries WHOLE SEASONS on one date)
+   → zero league stakes for those rows. Restored England to the 1930s league
+   board (Sunderland 1-0 Wolves, 7 May 1938).
+
+### The pipeline (native on this box; scripts in %TEMP% — NOT in repo)
+%TEMP%\clubgames_elo2.py → %TEMP%\clubgames_gamescore.py →
+scripts/football/build_club_top_games.py (repo). Elo rerun REQUIRES a Game
+Score rerun (delete %TEMP%\clubgames_gs_cache.pkl first — it caches the elo
+rows) and then the emitter. Emitter output: public/data/football/
+top-club-games.json (top/europe/league/cups 50 + by_decade per class) and
+top-club-games-by-team.json (top 10 × 692 clubs). Restart `next dev` after
+emitting — it memoizes public/data JSON. Consider copying the two %TEMP%
+scorer scripts somewhere durable; %TEMP% does not survive cleanups.
+
+### Rivalries (this commit)
+- Football: rivalry stakes floor (above) + rivalry NAME on every board/club
+  page row ("Champions League · Madrid Derby"). 5,846 league rows floored;
+  64 of 87 curated football rivalries matched a scored match.
+- NRL/AFL: 11 new rivalries per Ashwin (canonical names from
+  public/data/{nrl,afl}/data.json): Southern Derby, Silvertails v Fibros
+  (Manly↔Western Suburbs AND ↔Wests Tigers), Battle of the West;
+  Hawthorn↔Essendon (TOP), Carlton↔Essendon (TOP), Collingwood↔Richmond,
+  Carlton↔Richmond, Sydney Derby, QClash, King's Birthday clash,
+  GWS↔Western Bulldogs. NOTE: the directed source lines live in
+  data/dir-extra.txt which is GITIGNORED (local-only, like Rivalries.xlsx);
+  the built public/data/rivalries.json ships in this commit. The mini does
+  not have the source lines — treat the Windows box as source of truth for
+  rivalry curation.
+
+### Also in this commit
+- Ottawa/ghost champions-link fix (lib/championsHub.ts): year-gated cutoffs
+  + GHOST_FRANCHISES name fallback, so pre-1935 Senators Cups link to
+  /teams/nhl/senators-org (also fixes Maroons/Canton/1890s Orioles).
+- Era names everywhere (Woolwich Arsenal, Ambrosiana-Inter) with canonical
+  crests/links; home side always listed first; legs/aggregates/neutral
+  venues marked; Cups tab with decade filters on every view.
+
+### 🔴 FOR ASHWIN'S WORKBOOK MASTER FIX LIST (4th data-defect class)
+The workbook's home/away flag is wrong on ~1 fixture in each of 56 seasons
+(found via a home-count audit after Ashwin caught Arsenal shown home at
+Anfield '89). 49 spine rows were corrected against engsoccerdata — 40 of
+them had credited the WIN to the WRONG CLUB (scoreline stored in true
+home-away order with the clubs swapped). Fix list:
+%TEMP%\home_fix_final.json. IMPLICATION: the shipped English Against
+Expectation ledger reads the same workbook flags — Anfield '89 et al. are
+likely miscredited there too. Also for the list: France 1933-38 league
+seasons have NO real match dates (one placeholder date per season — real
+dates would restore those title races to the boards); n-a| shadow comp keys
+(duplicate-ingest risk, unscored); a stray czech-republic|scottish-cup row;
+world-cup-qual rows sitting in the club spine.
+
+### Open threads
+- Floor/pin candidates awaiting Ashwin's canon ruling: Wigan '13, Wimbledon
+  '88 (canonical name in the spine is Milton Keynes Dons — era name shows
+  Wimbledon), Sunderland '73, Hereford '72 (scores 48.7 — quality honestly
+  unknown for a non-league side), Liverpool 4-3 Newcastle '96 (55.3 —
+  April leverage was genuinely moderate; the Match of the Decade vote is a
+  drama claim, i.e. floor territory).
+- 2026-27 live refresh for the club boards not yet designed (the spine
+  stops at 2026; a refresh needs new spine rows → Elo → GS → emit).
+- WP5b optional: Portugal/Scotland pre-1994 league scrape to deepen those
+  countries.
+- ClubElo benchmark is DEAD (site changed completely); internal yardsticks
+  (Brier, era boards, classic checks) are the record.
+- Carried: Supabase RLS advisory (8 tables, SQL drafted, not applied);
+  governors `governorsNow` hardcoded R26/D24; `tsconfig.clean.json` stray.

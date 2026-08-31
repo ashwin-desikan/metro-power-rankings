@@ -89,6 +89,7 @@ TOP_RIVALRIES = [
     ("cricket", "Australia", "England"), ("cricket", "India", "Pakistan"), ("cricket", "Australia", "India"),
     ("rugby-union", "New Zealand", "Australia"), ("rugby-union", "New Zealand", "South Africa"), ("rugby-union", "England", "Scotland"),
     ("afl", "Collingwood", "Carlton"), ("afl", "West Coast", "Fremantle"),
+    ("afl", "Hawthorn", "Essendon"), ("afl", "Carlton", "Essendon"),
     ("nrl", "South Sydney", "Sydney Roosters"),
     ("cfl", "Saskatchewan Roughriders", "Winnipeg Blue Bombers"),
     ("wnba", "New York Liberty", "Las Vegas Aces"),

@@ -229,6 +229,40 @@ function ballGames(): SportGames[] {
   return out;
 }
 
+// Club football's top two, straight from its Game Score board (same pattern
+// as cricket and rugby: the data file is the source, so the card can't drift).
+type ClubEntry = { date: string; comp: string; round?: string | null; home: string; away: string; hg: number; ag: number; pens?: string | null };
+function clubBallGames(): SportGames[] {
+  const top = readData<{ top: ClubEntry[] }>(['football', 'top-club-games.json'], { top: [] }).top.slice(0, 2);
+  if (!top.length) return [];
+  return [{
+    tag: 'CLUBFB', label: 'Club Football', emoji: '\u{1F3C6}',
+    games: top.map((e, i) => {
+      const homeWon = e.hg > e.ag;
+      let awayWon = e.ag > e.hg;
+      let onPens = false;
+      if (!homeWon && !awayWon && e.pens) {
+        // Drawn, settled in the shootout: the pens string is home-away.
+        const [ph, pa] = e.pens.split('-').map(Number);
+        if (Number.isFinite(ph) && Number.isFinite(pa) && ph !== pa) {
+          awayWon = pa > ph;
+          onPens = true;
+        }
+      }
+      const decided = homeWon || awayWon || onPens;
+      const w = awayWon ? e.away : e.home;
+      const l = awayWon ? e.home : e.away;
+      const score = awayWon && !onPens ? `${e.ag}-${e.hg}` : `${e.hg}-${e.ag}`;
+      return {
+        title: `${e.date.slice(0, 4)} ${e.comp}${e.round ? ` ${e.round}` : ''}`,
+        matchup: `${w} ${decided ? 'beat' : 'drew'} ${l} ${score}${onPens ? ' on penalties' : ''}`,
+        flagUrls: [],
+        rank: i + 1,
+      };
+    }),
+  }];
+}
+
 type IndexCard = { n: string; title: string; desc: string; stat: string; href: string; emoji?: string; seal?: boolean; isNew?: boolean; preview: Preview[] };
 
 type AtlasCard = { emoji: string; title: string; desc: string; href: string; sub: string; live?: boolean };
@@ -382,7 +416,7 @@ export default async function Home() {
   const posts: SubstackPost[] = await getSubstackPosts();
   const journal = posts.slice(0, 3);
   const badges = getLiveBadges();
-  const games = [...marqueeGames(), ...ballGames()];
+  const games = [...clubBallGames(), ...marqueeGames(), ...ballGames()];
   const forecast = await getForecast();
 
   const INDICES: IndexCard[] = [

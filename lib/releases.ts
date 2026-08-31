@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-31",
+    headline: "The greatest club football games, ranked",
+    items: [
+      "The Greatest Games board adds club football: 260,000 matches since 1871 across top-flight leagues, UEFA competitions and ten major domestic cups, scored on closeness, stakes, quality and upset over one unified rating.",
+      "Second legs carry their leg and aggregate score and are judged on the tie; league stakes come from the live table under both historical points systems; home sides are listed first and neutral venues flagged.",
+      "Ten curated classics carry a star, Hampden 1960 to Istanbul 2005, each showing the model's own score on hover; Liverpool 4-0 Barcelona and the Lisbon Lions need no star, the model ranks them fourth and eighth itself.",
+      "Clubs appear under era names (Woolwich Arsenal, Ambrosiana-Inter) with crests, and club pages carry their greatest games; the original Ottawa Senators' Cups now link to the defunct club, not the modern namesake.",
+    ],
+  },
+  {
     date: "2026-08-30",
     headline: "Six new election hubs, and a site that fits your phone",
     items: [

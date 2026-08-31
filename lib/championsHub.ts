@@ -19,6 +19,7 @@ import { getAllBaseballTeams } from "./baseball";
 import { getWcbbTeamForName } from "./wcbb";
 import { getWnbaFranchiseByTeamName } from "./wnba";
 import { getF1Champions } from "./f1";
+import { GHOST_FRANCHISES, ghostTeamHref } from "./ghostFranchises";
 
 export type ChampionRow = Championship & {
   teamHref: string | null;
@@ -303,7 +304,37 @@ function intlTeamHref(c: Championship): string | null {
 // franchise and club leagues; the two it can't route (WNBA, which collides with
 // the bare "Basketball" NBA branch, and women's college basketball) are looked
 // up directly.
-function clubTeamHref(c: Championship): string | null {
+// A champion whose name a MODERN franchise also carries, but whose titles
+// belong to a defunct namesake: year-gated redirect to the ghost's page. The
+// original Ottawa Senators' eleven Cups (1903-1927) must not decorate the
+// 1992 expansion club that borrowed the name.
+const GHOST_NAME_CUTOFFS: { sport: string; team: string; before: number; href: string }[] = [
+  { sport: "Hockey", team: "Ottawa Senators", before: 1935, href: "/teams/nhl/senators-org" },
+];
+
+// Ghost fallback index: champions of truly dead franchises (Montreal Maroons,
+// Canton Bulldogs, the 1890s Orioles) link to their Geography of Erasure team
+// pages instead of going linkless. Keyed on sport + name with any
+// parenthetical qualifier stripped, so "Baltimore Orioles (AA/NL, 1882-1899)"
+// meets "Baltimore Orioles (original NL)". Sport labels are normalized
+// (the ghost roster says Gridiron; the ledger says American Football).
+const stripParen = (s: string) => s.replace(/\s*\([^)]*\)\s*$/, "").trim().toLowerCase();
+const GHOST_SPORT_ALIAS: Record<string, string> = { Gridiron: "American Football" };
+let _ghostByName: Map<string, string> | null = null;
+function ghostHrefByName(sport: string, team: string): string | null {
+  if (!_ghostByName) {
+    _ghostByName = new Map();
+    for (const g of GHOST_FRANCHISES) {
+      const href = ghostTeamHref(g);
+      if (!href) continue;
+      const s = GHOST_SPORT_ALIAS[g.sport] ?? g.sport;
+      _ghostByName.set(`${s}|${stripParen(g.name)}`, href);
+    }
+  }
+  return _ghostByName.get(`${sport}|${stripParen(team)}`) ?? null;
+}
+
+function clubTeamHref(c: Championship, year: number | null = null): string | null {
   if (c.competition === "WNBA") {
     const f = getWnbaFranchiseByTeamName(c.team);
     return f ? `/teams/wnba/${f.slug}` : null;
@@ -312,12 +343,17 @@ function clubTeamHref(c: Championship): string | null {
     const t = getWcbbTeamForName(c.team);
     return t ? `/teams/cbb-w/${t.slug}` : null;
   }
+  for (const g of GHOST_NAME_CUTOFFS) {
+    if (c.sport === g.sport && c.team === g.team && year != null && year < g.before) {
+      return g.href;
+    }
+  }
   const hint = c.competition.includes("NCAA")
     ? "NCAA"
     : c.competition === "College Football"
       ? "CFB"
       : "";
-  return resolveTeamLink(c.sport, c.team, hint)?.href ?? null;
+  return resolveTeamLink(c.sport, c.team, hint)?.href ?? ghostHrefByName(c.sport, c.team);
 }
 
 // Competition -> league hub. Explicit entries for the franchise/club leagues;
@@ -427,5 +463,5 @@ export function championTeamHref(row: {
   year: number | null;
 }): string | null {
   const c = row as unknown as Championship;
-  return row.scopeType === "International" ? intlTeamHref(c) : clubTeamHref(c);
+  return row.scopeType === "International" ? intlTeamHref(c) : clubTeamHref(c, row.year);
 }

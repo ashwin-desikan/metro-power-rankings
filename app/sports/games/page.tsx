@@ -36,6 +36,8 @@ import { getCricketGames } from "@/lib/cricketGames";
 import CricketGreatestGames from "@/app/teams/cricket/CricketGreatestGames";
 import { getRugbyGames } from "@/lib/rugbyGames";
 import RugbyGreatestGames from "@/app/teams/rugby-union/RugbyGreatestGames";
+import { getClubGames } from "@/lib/clubGames";
+import ClubGreatestGames from "@/app/teams/football/ClubGreatestGames";
 import {
   getTopGamesAllTime as intlTopAll,
   getTopGamesByDecade as intlTopDec,
@@ -190,6 +192,18 @@ export default function GamesHubPage() {
   const cbbByDecade = getCbbGamesByDecade();
   const cricketGames = getCricketGames();
   const rugbyGames = getRugbyGames();
+  const clubGames = getClubGames();
+  // Featured club clips: the badge rank is read off the live board below, so
+  // it can never drift from the table (the FEATURED lesson).
+  const clubRankOf = (date: string) => {
+    const i = clubGames.top.findIndex((g) => g.date === date);
+    return i >= 0 ? i + 1 : undefined;
+  };
+  const clubFeatured: FeaturedGame[] = [
+    { videoId: "3OQToElxke4", title: "2005 Champions League Final", leagueTag: "CL", matchup: "Liverpool 3-3 AC Milan, won on penalties", note: "0-3 at half-time in Istanbul; level six minutes later.", clipLabel: "Highlights", rank: clubRankOf("2005-05-25") },
+    { videoId: "458CiSLm1vc", title: "1999 Champions League Final", leagueTag: "CL", matchup: "Manchester United 2-1 Bayern Munich", note: "Two goals in stoppage time at the Camp Nou completed the treble.", clipLabel: "Highlights", rank: clubRankOf("1999-05-26") },
+    { videoId: "3e8HTU1adBw", title: "1960 European Cup Final", leagueTag: "EC", matchup: "Real Madrid 7-3 Eintracht Frankfurt", note: "Ten goals at Hampden Park; Puskas four, Di Stefano three.", clipLabel: "Highlights", rank: clubRankOf("1960-05-18") },
+  ];
   const cricketFeatured: FeaturedGame[] = [
     { videoId: "pQ5xEiZ-5IE", title: "2019 World Cup Final", leagueTag: "ODI", matchup: "New Zealand tie England", note: "Tied, then the super over tied; decided on boundary count.", clipLabel: "Highlights", rank: 1 },
     { videoId: "QiNvL3FfrT8", title: "2005 Ashes, Edgbaston", leagueTag: "TEST", matchup: "England beat Australia by 2 runs", note: "The closest Ashes Test of all time.", clipLabel: "Highlights", rank: 2 },
@@ -264,6 +278,7 @@ export default function GamesHubPage() {
       <HubNav
         items={[
           { label: "How it works", href: "#how" },
+          { label: "Club Football", href: "#clubfb" },
           { label: "International Football", href: "#intfb" },
           { label: "NFL", href: "#nfl" },
           { label: "NBA", href: "#nba" },
@@ -293,6 +308,26 @@ export default function GamesHubPage() {
           </Link>
           .
         </p>
+      </section>
+
+      {/* Club Football */}
+      <section id="clubfb" className="mb-12 scroll-mt-24">
+        <div className="flex items-baseline justify-between gap-3 mb-3 flex-wrap">
+          <div>
+            <h2 className="text-xl font-bold tracking-tight">Club Football</h2>
+            <p className="text-sm text-[var(--text-muted)] max-w-3xl">
+              Every top-flight league match, every UEFA competition match and the ten major domestic cups
+              since 1871, some 260,000 in all,
+              ranked by a Game Score of closeness, stakes, quality and upset over one unified club Elo.
+              Second legs are scored on the aggregate tie, league stakes come from the live table, and a
+              starred row is a curated all-time classic whose model score shows on hover. The home side
+              is listed first; neutral venues and two-legged ties are marked on each row.
+            </p>
+          </div>
+          <a href="/teams/football" className="text-xs text-[var(--accent)] hover:underline whitespace-nowrap">Full Club Football hub &rarr;</a>
+        </div>
+        <FeaturedClips games={clubFeatured} />
+        <ClubGreatestGames top={clubGames.top} europe={clubGames.europe} league={clubGames.league} cups={clubGames.cups} decades={clubGames.by_decade} limit={12} />
       </section>
 
       {/* International Football */}
@@ -412,9 +447,9 @@ export default function GamesHubPage() {
             be ranked head to head rather than league by league.
           </li>
           <li>
-            <span className="text-[var(--text)] font-medium">More sports.</span> Club Football and International
-            Football are next; the game data is already in hand
-            and slots into the same model.
+            <span className="text-[var(--text)] font-medium">More depth per club.</span> Club and International
+            Football now have their boards; the next step is each club&apos;s own greatest games on its team page,
+            from the same per-team data already emitted.
           </li>
         </ul>
       </section>

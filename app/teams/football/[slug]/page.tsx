@@ -13,6 +13,8 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import ClubHistoryChart from "../ClubHistoryChart";
 import ClubExpectationPanel from "@/app/teams/_shared/ClubExpectationPanel";
+import TeamGreatestGames from "../TeamGreatestGames";
+import { getClubGamesForTeam } from "@/lib/clubGames";
 import { getPlExpectationClub } from "@/lib/plExpectation";
 import { notFound } from "next/navigation";
 import { colorForFootballClub } from "@/lib/football-colors";
@@ -111,6 +113,7 @@ export default async function FootballClubPage({ params }: Props) {
   // top-flight history simply has no entry, and lib/plExpectation holds one
   // parse of the file for the whole server process.
   const expectation = await getPlExpectationClub(slug);
+  const topGames = getClubGamesForTeam(slug);
 
   let seasons = getSeasonsForClub(slug);
   let mlsSeasons = club.is_mls ? getMlsSeasonsForClub(slug) : [];
@@ -281,6 +284,8 @@ export default async function FootballClubPage({ params }: Props) {
       )}
 
       <ClubExpectationPanel entry={expectation} />
+
+      <TeamGreatestGames rows={topGames} slug={club.slug} teamName={club.cur_name} />
 
       <section
         className="rounded-xl border p-5 mb-6"
