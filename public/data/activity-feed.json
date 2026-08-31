@@ -1,13 +1,104 @@
 {
-  "generatedAt": "2026-08-30",
+  "generatedAt": "2026-08-31",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-08-31",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "c451c96eb"
+    },
     {
       "date": "2026-08-30",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "83d188a82"
+      "text": "Data refreshed — Football, Basketball, Leaders, Sound of the Metros, and 3 more.",
+      "commit": "a60418da8"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": null,
+      "text": "Release notes: 2026-08-30, and put the rule where sessions will actually see it.",
+      "commit": "0623a6b8c"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "An upset bonus, honest floors, and rank pins for three World Cup finals.",
+      "commit": "263fb4be5"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Collapse the World Test Championship by default.",
+      "commit": "54cb99933"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": null,
+      "text": "Link the Champions League prediction hub from the predictions section.",
+      "commit": "82ad8a77f"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "Six new hubs, a Gallagher systems layer, a forecast ledger, and one source of truth for dates.",
+      "commit": "62979497c"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Play: Honest Answer scoring across the whole arcade, plus 3 new games.",
+      "commit": "69cd2789c"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Make the row the tap target, and stop the metric counting what a thumb cannot reach.",
+      "commit": "d7873a022"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Metro page: rank above the fold, facts as a stat grid, catalogue sections collapse.",
+      "commit": "a6f5d0fe0"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Density-by-environment standard, disclosure primitives, and a gate that measures.",
+      "commit": "ad24c6dce"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Score the expectation ledger against closing prices, not openers; grade the live PL market from the settled E0 row.",
+      "commit": "74f444400"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": null,
+      "text": "Release notes: backfill 2026-08-23 (Predictions Scoreboard) + 2026-08-29 (UEFA comps).",
+      "commit": "62fab9e68"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Ucl-poisson-v2 — strength fitted on 33 years of European matches, not asserted.",
+      "commit": "02f2aba5b"
     },
     {
       "date": "2026-08-29",
@@ -4110,97 +4201,6 @@
       "hub": "Rankings",
       "text": "Metro detail map: solo metros get a single-point Location pin; cluster members keep cluster context.",
       "commit": "14e2ca44d"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Conurbations page: per-row Show map / Hide map toggle, mounts Leaflet on demand for one cluster at a time.",
-      "commit": "b2030554e"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Metro detail pages: embed conurbation cluster map for any metro that's part of a multi-metro cluster.",
-      "commit": "5d999c164"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": "Matchups",
-      "text": "Matchup pages: embed two-point map between hero cards and editorial paragraph.",
-      "commit": "e37d402a6"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": null,
-      "text": "MetroMap component: dark CARTO tiles, dashed connection line, auto-bounds, single-point zoom fallback.",
-      "commit": "25adcf6f7"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Release notes: 2026-05-03 conurbation overhaul + tier vocabulary update.",
-      "commit": "550d44671"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": null,
-      "text": "Conurbations editorial overhaul: 60+ named regions globally, Tier B World renamed Continental, metro tier World City renamed Continental Ci…",
-      "commit": "d684f9684"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": null,
-      "text": "Name 7 UK conurbations matching existing cluster memberships: Scottish Central Belt, English Midlands, Severnside, English South Coast, Nor…",
-      "commit": "4ebc3b97f"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": null,
-      "text": "Mobile nav: add hamburger disclosure menu so phone users can reach all top-nav pages.",
-      "commit": "790c56a97"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Conurbations: client-side search by Country / State-Province / Metro / Cluster Name.",
-      "commit": "bbce4c3d9"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": null,
-      "text": "Split Zurich conurbation: add Trinational Basel + Greater Zurich named megaregions; Sheffield/South Yorkshire override.",
-      "commit": "284af08b7"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": null,
-      "text": "Greater South East, Haven Gateway named megaregions; New Haven joins Tri-State Area; clean stale c079 cluster row.",
-      "commit": "939392358"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Conurbations badge merging Twin Metros + Megaregions: 5 named megaregions (Pearl River Delta, Jing-Jin-Ji, Randstad, Flemish Diamond, North…",
-      "commit": "62a4b6b54"
-    },
-    {
-      "date": "2026-05-02",
-      "category": "hub",
-      "hub": null,
-      "text": "Conurbations badge merging Twin Metros + Megaregions with 4 named megaregions and 55 editorial overrides; tier scale aligned with metro tie…",
-      "commit": "47e5a493c"
     }
   ]
 }
