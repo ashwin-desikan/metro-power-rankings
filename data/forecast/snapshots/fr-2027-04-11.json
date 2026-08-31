@@ -2,8 +2,8 @@
  "code": "fr",
  "election": "2027-04-11",
  "confidence": "assumed",
- "built": "2026-08-30",
- "daysBefore": 224,
+ "built": "2026-08-31",
+ "daysBefore": 223,
  "block": {
   "electionAssumed": "2027-04-11",
   "electionDate": "2027-04-11",
@@ -11,20 +11,20 @@
   "firstRound": {
    "shares": {
     "Marine Le Pen": 34.2,
-    "Jean-Luc Mélenchon": 15.8,
-    "Édouard Philippe": 14.7,
-    "Raphaël Glucksmann": 10.6,
+    "Édouard Philippe": 15.5,
+    "Jean-Luc Mélenchon": 15.2,
+    "Raphaël Glucksmann": 10.9,
     "Gabriel Attal": 8.3,
-    "Bruno Retailleau": 6.4,
-    "Éric Zemmour": 3.3,
-    "Marine Tondelier": 3.1,
-    "Fabien Roussel": 2.5,
-    "Dominique de Villepin": 2.5,
-    "Nicolas Dupont-Aignan": 1.7,
-    "Nathalie Arthaud": 0.7
+    "Bruno Retailleau": 6.5,
+    "Éric Zemmour": 3.5,
+    "Marine Tondelier": 3.3,
+    "Fabien Roussel": 2.7,
+    "Nicolas Dupont-Aignan": 2.2,
+    "Dominique de Villepin": 2.0,
+    "Nathalie Arthaud": 1.0
    },
-   "polls": 7,
-   "latest": "2026-08-25"
+   "polls": 8,
+   "latest": "2026-08-28"
   },
   "runoffs": [
    {
@@ -41,7 +41,7 @@
     "b": "Attal RE",
     "avgA": 54.9,
     "avgB": 45.1,
-    "pA": 93.8,
+    "pA": 93.7,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -59,7 +59,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 82.2,
+    "pA": 81.8,
     "polls": 4,
     "latest": "2026-05-27"
    },
@@ -68,7 +68,7 @@
     "b": "Attal RE",
     "avgA": 57.0,
     "avgB": 43.0,
-    "pA": 98.5,
+    "pA": 98.8,
     "polls": 1,
     "latest": "2026-05-27"
    },
@@ -95,12 +95,12 @@
     "b": "Retailleau LR",
     "avgA": 58.0,
     "avgB": 42.0,
-    "pA": 99.4,
+    "pA": 99.3,
     "polls": 1,
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 7.4,
+  "monthsOut": 7.3,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]

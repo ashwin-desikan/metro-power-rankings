@@ -2,8 +2,8 @@
  "code": "us",
  "election": "2026-11-03",
  "confidence": "confirmed",
- "built": "2026-08-30",
- "daysBefore": 65,
+ "built": "2026-08-31",
+ "daysBefore": 64,
  "block": {
   "margin": 6.2,
   "sigma": 2.6,
@@ -50,7 +50,7 @@
    "lo": 205,
    "hi": 248
   },
-  "pDemHouse": 75.0,
+  "pDemHouse": 75.1,
   "fit": {
    "a": 209.5,
    "b": 2.71,
@@ -120,51 +120,51 @@
    "demSeats": {
     "median": 50,
     "lo": 47,
-    "hi": 54
+    "hi": 53
    },
-   "pDemControl": 42.4,
+   "pDemControl": 41.9,
    "competitive": [
-    {
-     "state": "Texas",
-     "held": "R",
-     "score": 0.04,
-     "retiring": false,
-     "pDem": 51.0
-    },
     {
      "state": "Alaska",
      "held": "R",
-     "score": -0.08,
+     "score": -0.09,
      "retiring": false,
-     "pDem": 48.0
+     "pDem": 47.0
+    },
+    {
+     "state": "Texas",
+     "held": "R",
+     "score": 0.14,
+     "retiring": false,
+     "pDem": 54.0
     },
     {
      "state": "Ohio",
      "held": "R",
-     "score": 0.17,
+     "score": 0.23,
      "retiring": false,
-     "pDem": 55.0
-    },
-    {
-     "state": "Maine",
-     "held": "R",
-     "score": 0.33,
-     "retiring": false,
-     "pDem": 60.0
-    },
-    {
-     "state": "Michigan",
-     "held": "D",
-     "score": 0.33,
-     "retiring": true,
-     "pDem": 60.0
+     "pDem": 57.0
     },
     {
      "state": "Iowa",
      "held": "R",
-     "score": -0.38,
+     "score": -0.32,
      "retiring": true,
-     "pDem": 39.0
+     "pDem": 41.0
+    },
+    {
+     "state": "Michigan",
+     "held": "D",
+     "score": 0.32,
+     "retiring": true,
+     "pDem": 59.0
+    },
+    {
+     "state": "Maine",
+     "held": "R",
+     "score": 0.36,
+     "retiring": false,
+     "pDem": 60.0
     }
    ],
    "sims": 20000,
@@ -189,22 +189,15 @@
     "lo": 21,
     "hi": 28
    },
-   "pDemMajority": 37.8,
-   "pRepMajority": 43.8,
+   "pDemMajority": 36.6,
+   "pRepMajority": 45.2,
    "competitive": [
     {
      "state": "Georgia",
      "held": "R",
-     "score": 0.19,
+     "score": 0.25,
      "retiring": true,
-     "pDem": 56.0
-    },
-    {
-     "state": "Wisconsin",
-     "held": "D",
-     "score": 0.19,
-     "retiring": true,
-     "pDem": 56.0
+     "pDem": 57.0
     },
     {
      "state": "Ohio",
@@ -214,25 +207,25 @@
      "pDem": 43.0
     },
     {
-     "state": "Nevada",
-     "held": "R",
-     "score": -0.5,
-     "retiring": false,
-     "pDem": 36.0
+     "state": "Wisconsin",
+     "held": "D",
+     "score": 0.25,
+     "retiring": true,
+     "pDem": 57.0
     },
     {
-     "state": "Alaska",
+     "state": "Nevada",
      "held": "R",
-     "score": -0.75,
-     "retiring": true,
-     "pDem": 29.0
+     "score": -0.44,
+     "retiring": false,
+     "pDem": 37.0
     },
     {
      "state": "Iowa",
      "held": "R",
-     "score": 0.75,
+     "score": 0.69,
      "retiring": true,
-     "pDem": 71.0
+     "pDem": 69.0
     },
     {
      "state": "Kansas",
@@ -242,11 +235,18 @@
      "pDem": 29.0
     },
     {
+     "state": "Alaska",
+     "held": "R",
+     "score": -0.88,
+     "retiring": true,
+     "pDem": 26.0
+    },
+    {
      "state": "Arizona",
      "held": "D",
-     "score": 1.12,
+     "score": 1.0,
      "retiring": false,
-     "pDem": 79.0
+     "pDem": 76.0
     }
    ],
    "sims": 20000,
