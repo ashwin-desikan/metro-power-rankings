@@ -156,9 +156,21 @@ def save_state(state):
     tmp.replace(STATE_FILE)
 
 
+# Set for the duration of --self-test. The self-test exercises mark_ok()
+# against a synthetic jobs table, and mark_ok() logs; without this those lines
+# landed in the REAL dispatcher.log reading
+#   MARK-OK test-job: last_status 'failed' -> 'ok (manual)'
+# which is indistinguishable from a human clearing a genuine failure. Three had
+# accumulated by 2026-08-31 and the daily ops sweep had to rule them out on
+# every run. Still printed to stdout, just never written to the operational log.
+IN_SELF_TEST = False
+
+
 def log(msg):
     line = f"{datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')} {msg}"
     print(line, flush=True)
+    if IN_SELF_TEST:
+        return
     try:
         with LOG_FILE.open("a") as fh:
             fh.write(line + "\n")
@@ -310,6 +322,8 @@ def tick(now, jobs, state, dry_run=False):
 # --- self-test ---------------------------------------------------------------
 
 def self_test():
+    global IN_SELF_TEST
+    IN_SELF_TEST = True          # keep test logging out of the operational log
     cases = []
 
     def check(label, got, want):
