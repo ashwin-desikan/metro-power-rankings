@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-01T09:08:19.319524+00:00",
+  "generated_at": "2026-09-01T10:08:50.667697+00:00",
   "jobs": [
-    {
-      "id": "cricket-monthly",
-      "label": "Cricket ICC rankings",
-      "schedule_text": "1st of the month at 10:00 UTC",
-      "cadence": "monthly",
-      "times": [
-        "10:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [
-        1
-      ],
-      "next_run": "2026-09-01T10:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-01",
-        "status": "seeded",
-        "slot": "2026-08-01T10:00:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -461,6 +441,26 @@
         "date": "2026-09-01",
         "status": "ok (manual)",
         "slot": "2026-09-01T07:15:00+00:00"
+      }
+    },
+    {
+      "id": "cricket-monthly",
+      "label": "Cricket ICC rankings",
+      "schedule_text": "1st of the month at 10:00 UTC",
+      "cadence": "monthly",
+      "times": [
+        "10:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [
+        1
+      ],
+      "next_run": "2026-10-01T10:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T10:00:00+00:00"
       }
     }
   ]
