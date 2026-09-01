@@ -46,6 +46,10 @@ KEEP_LABEL = {
     "AFDL", "SPLA", "UNITA", "ADF", "FLNC", "Interahamwe", "CNDD-FDD", "Ex-FAR/ALiR",
     "DRF", "Azerbaijan People's Government", "Republic of Mahabad", "March 23 Movement",
     "ALiR", "FAR",  # non-state Rwandan Hutu armed groups; source split the old "Ex-FAR/ALiR" label
+    "PLO",  # 1982 Lebanon War belligerent. Non-state at the time and not a
+            # country in countries.json, so it cannot be aliased to a slug --
+            # same class as Houthis / Northern Alliance / SPLA above. Appeared
+            # 2026-09-01 when the source relabelled that war's participants.
 }
 
 # Scrape noise: generic military-doctrine terms or infobox artifacts that leak into

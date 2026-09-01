@@ -720,18 +720,19 @@
     "deaths_max": null
   },
   {
-    "name": "1982 Ethiopian–Somali Border War",
-    "wiki": "1982_Ethiopian%E2%80%93Somali_Border_War",
-    "start": "1982-06-01",
-    "end": "1982-08-01",
+    "name": "1982 Lebanon War",
+    "wiki": "1982_Lebanon_War",
+    "start": "1982-06-06",
+    "end": "1985-06-05",
     "ongoing": false,
     "side_a": [
-      "Somalia"
+      "Israel"
     ],
     "side_b": [
-      "Ethiopia"
+      "PLO",
+      "Syria"
     ],
-    "deaths_min": null,
+    "deaths_min": 19085,
     "deaths_max": null
   },
   {

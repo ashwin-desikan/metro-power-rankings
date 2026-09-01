@@ -127,6 +127,7 @@ def _fixture_name(url):
     table = [
         ("australian-football/afl/scoreboard", "espn_afl_scoreboard.json"),
         ("rugby-league/3/scoreboard", "espn_nrl_scoreboard.json"),
+        ("api.stats.cfl.ca/standings", "cfl_standings.json"),
         ("cfl.ca/standings", "cfl_standings.html"),
         ("cfl.ca/schedule", "cfl_schedule.html"),
         ("GameAssortment=1", "spaia_central.json"),
@@ -765,47 +766,113 @@ CFL_LABEL = {
 }
 
 
-def parse_cfl_schedule(html):
-    """[(ts, away, home, away_score, home_score, final)] from cfl.ca/schedule/.
+def _nuxt_payload(html):
+    """The __NUXT_DATA__ flat array from a Nuxt-rendered page, or None.
 
-    The page is server-rendered WordPress: each game block carries a unix
-    timestamp, a status span, visitor/host abbreviations and score spans.
-    Preseason games appear too; the caller filters by timestamp against the
-    regular-season window and by both abbreviations being CFL teams."""
-    out = []
-    blocks = re.split(r'<div class="date-time">', html)[1:]
-    for b in blocks:
-        ts = re.search(r"Number\((\d+)\)", b)
-        status = re.search(r'<span class="status">([^<]*)</span>', b)
-        vis = re.search(r'<span class="visitor">.*?<span class="text">([A-Z]{2,3})</span>', b, re.S)
-        host = re.search(r'<span class="host">.*?<span class="text">([A-Z]{2,3})</span>', b, re.S)
-        if not (ts and vis and host):
+    Nuxt serialises with devalue: one flat array where every structured value
+    holds INTEGER INDICES into that same array rather than nested objects, so a
+    reference has to be resolved by lookup. Index 0 is the root."""
+    m = re.search(r'id="__NUXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
+    if not m:
+        return None
+    try:
+        flat = json.loads(m.group(1))
+    except ValueError:
+        return None
+    return flat if isinstance(flat, list) else None
+
+
+def _nuxt_resolve(flat, i, seen=None, depth=0):
+    """Resolve one devalue reference into plain data. `seen` breaks the cycles
+    the format legitimately contains (entries link back to their own space)."""
+    if depth > 12 or not isinstance(i, int) or not (0 <= i < len(flat)):
+        return None
+    if seen and i in seen:
+        return None
+    seen = (seen or frozenset()) | {i}
+    v = flat[i]
+    if isinstance(v, dict):
+        return {k: _nuxt_resolve(flat, x, seen, depth + 1) for k, x in v.items()}
+    if isinstance(v, list):
+        return [_nuxt_resolve(flat, x, seen, depth + 1) for x in v]
+    return v
+
+
+def parse_cfl_schedule(html):
+    """[(ts, away, home, away_score, home_score, final)] from cfl.ca/schedule/,
+    REGULAR SEASON ONLY.
+
+    cfl.ca was a server-rendered WordPress page until it was rebuilt as a Nuxt
+    app; the old parser keyed off `<div class="date-time">`, `Number(<ts>)` and
+    visitor/host score spans, none of which exist on the new page. It parsed 0
+    games on 2026-09-01 and the 81-game gate in build_cfl correctly failed the
+    run rather than shipping an empty CFL.
+
+    The schedule now lives in the __NUXT_DATA__ payload as game objects carrying
+    home_team_id / away_team_id / game_type_id / start_at / *_team_score /
+    game_status, plus nine team objects mapping ID -> abbreviation.
+
+    Filters on game_type_id == 1 rather than on dates. That is both explicit and
+    a fix: the caller's June 1 - Nov 1 window admits 83 games because two 2026
+    playoff fixtures fall on Oct 31, so a date-only filter would now overshoot
+    the 81-game gate."""
+    flat = _nuxt_payload(html)
+    if flat is None:
+        return []
+    teams, games = {}, []
+    for idx, v in enumerate(flat):
+        if not isinstance(v, dict):
             continue
-        vs_ = re.search(r'<span class="visitor-score">\s*(\d*)\s*</span>', b)
-        hs_ = re.search(r'<span class="host-score">\s*(\d*)\s*</span>', b)
-        # "Final", "F (OT)", "F (2OT)" are all finals; upcoming games carry an
-        # empty status span.
-        final = bool(status and re.match(r"\s*f", status.group(1), re.I))
-        a_sc = int(vs_.group(1)) if final and vs_ and vs_.group(1) else None
-        h_sc = int(hs_.group(1)) if final and hs_ and hs_.group(1) else None
-        out.append((int(ts.group(1)), vis.group(1), host.group(1), a_sc, h_sc, final))
+        if "abbreviation" in v and "ID" in v:
+            t = _nuxt_resolve(flat, idx)
+            if t and t.get("ID") is not None and t.get("abbreviation"):
+                teams[t["ID"]] = t["abbreviation"]
+        elif "home_team_id" in v and "game_type_id" in v:
+            games.append(_nuxt_resolve(flat, idx))
+    out = []
+    for g in games:
+        if not g or g.get("game_type_id") != 1:
+            continue
+        home, away = teams.get(g.get("home_team_id")), teams.get(g.get("away_team_id"))
+        start = g.get("start_at")
+        if not (home and away and start):
+            continue
+        try:
+            ts = int(datetime.fromisoformat(start).timestamp())
+        except (TypeError, ValueError):
+            continue
+        final = (g.get("game_status") or "").strip().lower().startswith("finish")
+        a_sc = g.get("away_team_score") if final else None
+        h_sc = g.get("home_team_score") if final else None
+        out.append((ts, away, home, a_sc, h_sc, final))
     return out
 
 
-def parse_cfl_standings(html):
-    """abbr -> (gp, w, l, t, pts) from cfl.ca/standings/ (the exact ROW regex
-    lib/cflStandings.ts uses, tags stripped)."""
-    text = re.sub(r"<script[\s\S]*?</script>", " ", html)
-    text = re.sub(r"<style[\s\S]*?</style>", " ", text)
-    text = re.sub(r"<[^>]+>", " ", text)
-    text = re.sub(r"&[a-z]+;", " ", text, flags=re.I)
-    text = re.sub(r"\s+", " ", text)
-    row = re.compile(r"(\d+)\s+([A-Z]{2,})\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+\d+-\d+-\d+\s+\d+-\d+-\d+\s+\d+-\d+-\d+")
+def parse_cfl_standings(payload):
+    """abbr -> (gp, w, l, t, pts) from api.stats.cfl.ca/standings/<season>.
+
+    Was a regex over the cfl.ca/standings/ HTML table (mirroring
+    lib/cflStandings.ts). The site is now a Nuxt app that loads its table
+    client-side, so the SSR HTML carries no rows at all and the old regex
+    matched nothing; the year-suffixed /standings/<year>/ URL it fetched also
+    404s. The page's own XHR target is a clean public JSON API, which is a
+    better source than scraping ever was."""
+    try:
+        doc = json.loads(payload)
+    except (TypeError, ValueError):
+        return {}
     out = {}
-    for mm in row.finditer(text):
-        abbr = CFL_LABEL.get(mm.group(2))
-        if abbr and abbr not in out:
-            out[abbr] = (int(mm.group(3)), int(mm.group(4)), int(mm.group(5)), int(mm.group(6)), int(mm.group(7)))
+    divisions = ((doc.get("data") or {}).get("divisions") or {})
+    for div in divisions.values():
+        for r in (div or {}).get("standings") or []:
+            abbr = r.get("abbreviation")
+            if not abbr or abbr in out:
+                continue
+            try:
+                out[abbr] = (int(r["games_played"]), int(r["wins"]), int(r["losses"]),
+                             int(r["ties"]), int(r["points"]))
+            except (KeyError, TypeError, ValueError):
+                continue
     return out
 
 
@@ -842,7 +909,7 @@ def build_cfl(sims, seed=2026):
         elif asx > hsx: w[a] += 1; l[h] += 1
         else: tie[h] += 1; tie[a] += 1
     # Hard check vs cfl.ca's own standings table.
-    st = parse_cfl_standings(fetch_text("https://www.cfl.ca/standings/%d/" % season))
+    st = parse_cfl_standings(fetch_text("https://api.stats.cfl.ca/standings/%d" % season))
     if len(st) != 9:
         raise SystemExit("[cfl] standings parse found %d teams" % len(st))
     for t in teams:
@@ -1565,23 +1632,25 @@ def self_test():
     field_e = cross if pts[cross] > pts[third] else third
     check("cfl crossover tie stays home", field_e == "e3")
 
-    # CFL schedule parser on a miniature block
-    mini_cfl = """
-    <div class="date-time"><script>var int_timestamp = Number(1779130800) * 1000;</script>
-    <span class="status">Final</span></div><div class="matchup"><div>
-    <span class="visitor"><span class="icon"></span><span class="text">SSK</span></span>
-    <span class="visitor-score">15</span><span class="versus">@</span>
-    <span class="host-score">20</span><span class="host"><span class="text">CGY</span></span></div></div>
-    <div class="date-time"><script>var int_timestamp = Number(1789130800) * 1000;</script>
-    <span class="status"></span></div><div class="matchup"><div>
-    <span class="visitor"><span class="text">TOR</span></span>
-    <span class="visitor-score"></span><span class="versus">@</span>
-    <span class="host-score"></span><span class="host"><span class="text">MTL</span></span></div></div>
-    """
-    g = parse_cfl_schedule(mini_cfl)
-    check("cfl parser: two games", len(g) == 2)
+    # CFL schedule parser on a miniature __NUXT_DATA__ payload. Rebuilt
+    # 2026-09-01: cfl.ca moved from server-rendered WordPress to Nuxt, so the
+    # old fixture (date-time blocks, Number(<ts>), visitor/host score spans)
+    # tested a page shape that no longer exists anywhere. Includes a playoff
+    # game to pin that game_type_id != 1 is excluded -- the date window alone
+    # does not, because 2026's playoffs open on Oct 31.
+    mini_cfl = ('<script id="__NUXT_DATA__" type="application/json">'
+                + '[null, {"ID": 2, "abbreviation": 3}, 17, "SSK", {"ID": 5, "abbreviation": 6}, 6, "CGY", {"ID": 8, "abbreviation": 9}, 19, "TOR", {"ID": 11, "abbreviation": 12}, 11, "MTL", {"home_team_id": 14, "away_team_id": 15, "game_type_id": 16, "start_at": 17, "game_status": 18, "home_team_score": 19, "away_team_score": 20, "week": 21}, 6, 17, 1, "2026-05-19T15:00:00+00:00", "Finished", 20, 15, 3, {"home_team_id": 23, "away_team_id": 24, "game_type_id": 25, "start_at": 26, "game_status": 27, "home_team_score": 28, "away_team_score": 29, "week": 30}, 11, 19, 1, "2026-09-11T15:00:00+00:00", null, null, null, 15, {"home_team_id": 32, "away_team_id": 33, "game_type_id": 34, "start_at": 35, "game_status": 36, "home_team_score": 37, "away_team_score": 38, "week": 39}, 6, 17, 3, "2026-10-31T15:00:00+00:00", "Finished", 30, 10, 21]'
+                + '</script>')
+    g = sorted(parse_cfl_schedule(mini_cfl))
+    check("cfl parser: regular season only", len(g) == 2)
     check("cfl parser: final with scores", g[0][1:] == ("SSK", "CGY", 15, 20, True))
     check("cfl parser: upcoming without scores", g[1][1:] == ("TOR", "MTL", None, None, False))
+    check("cfl standings: JSON API shape", parse_cfl_standings(
+        '{"data":{"divisions":{"east":{"standings":[{"abbreviation":"MTL",'
+        '"games_played":11,"wins":9,"losses":2,"ties":0,"points":18}]}}}}'
+    ) == {"MTL": (11, 9, 2, 0, 18)})
+    check("cfl standings: bad payload is empty, not a crash",
+          parse_cfl_standings("not json") == {})
 
     # NPB synthetic schedule: totals honoured, intra-league only
     rest = {"1": 40, "2": 40, "3": 40, "4": 40, "5": 40, "6": 40,
