@@ -152,17 +152,31 @@ revalidate_ping() {
 }
 
 # _warm_paths path...
-# Fire-and-forget GETs, in parallel, capped at 20s each so a hung route can't
-# hold the runner open. Best-effort: a warm failing is not a job failure, same
-# fail-open posture as the ping itself -- the 6h window is still the backstop.
+# GETs capped at 20s each so a hung route can't hold the runner open. Best-effort:
+# a warm failing is not a job failure, same fail-open posture as the ping itself --
+# the 6h window is still the backstop.
+#
+# SERIAL WITH A STAGGER, NOT PARALLEL, since 2026-09-01. These used to fire together
+# with `&` + `wait`, so a caller passing eight paths (season-sims does) put eight
+# requests plus the revalidate POST on the wire in the same instant. The
+# citizenofnowhere.org zone is on Cloudflare's FREE plan, where rate limiting gives
+# you ONE rule, counts over a fixed 10-SECOND window, and counts cached responses as
+# well as origin ones -- "requests to origin only" is a paid parameter. So a BURST is
+# the only thing that can trip it and a steady trickle cannot, which is the opposite
+# of the usual intuition. Six requests in five minutes tripped it on 2026-09-01.
+#
+# The failure was invisible by design: a rate-limited warm returns 429/1015, the
+# fail-open posture swallows it, and the page it was meant to warm is left cold, so
+# the next real visitor eats the stale hit -- the exact problem the warm exists to
+# prevent. WARM_STAGGER keeps at most two requests inside any 10-second window.
+# The cost is seconds in a job that already sleeps 300s to wait out the raw CDN TTL.
+WARM_STAGGER="${WARM_STAGGER:-5}"
 _warm_paths() {
   [ "$#" -eq 0 ] && return 0
-  local path pids=()
+  local path code
   for path in "$@"; do
-    ( code="$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$SITE_ORIGIN$path")" || code=000
-      note "warm $path -> HTTP $code" ) &
-    pids+=($!)
+    code="$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$SITE_ORIGIN$path")" || code=000
+    note "warm $path -> HTTP $code"
+    sleep "$WARM_STAGGER"
   done
-  local pid
-  for pid in "${pids[@]}"; do wait "$pid" 2>/dev/null; done
 }

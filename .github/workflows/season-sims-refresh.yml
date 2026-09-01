@@ -104,12 +104,19 @@ jobs:
               # revalidateTag() invalidates but does not regenerate; warm the
               # main consumers so a real visitor doesn't eat the stale hit
               # (same rationale as mlb-sim-refresh.yml).
+              # SERIAL, not parallel -- mirrors _warm_paths() in mac-mini-jobs/runners/_common.sh.
+              # The zone is on Cloudflare's FREE plan: one rate-limiting rule, a fixed 10-SECOND
+              # counting window, and cached responses counted too ('requests to origin only' is a
+              # paid parameter). So only a BURST can trip it. Firing these together with `&` put
+              # every warm plus the POST above on the wire in one instant. A rate-limited warm
+              # returns 429/1015, the fail-open posture swallows it, and the page is left cold --
+              # the exact problem the warm exists to prevent. Keep this list short and serial.
               for p in /sports/standings /teams/afl /teams/nrl /teams/wnba /teams/cfl /teams/baseball/npb /teams/wfootball /teams/wfootball/leagues/united-states; do
-                ( wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
-                    "https://rankings.citizenofnowhere.org$p")" || wcode=000
-                  echo "warm $p -> HTTP $wcode" ) &
+                wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
+                  "https://rankings.citizenofnowhere.org$p")" || wcode=000
+                echo "warm $p -> HTTP $wcode"
+                sleep 5
               done
-              wait
               break
             fi
             echo "revalidate ping attempt $attempt returned HTTP $code"
