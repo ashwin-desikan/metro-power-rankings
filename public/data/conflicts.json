@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07",
+  "generated": "2026-09-01",
   "source": "https://en.wikipedia.org/wiki/List_of_interstate_wars_since_1945",
   "count": 75,
   "wars": [
@@ -1461,25 +1461,30 @@
       ]
     },
     {
-      "name": "1982 Ethiopian–Somali Border War",
-      "url": "https://en.wikipedia.org/wiki/1982_Ethiopian%E2%80%93Somali_Border_War",
-      "start": "1982-06-01",
-      "end": "1982-08-01",
+      "name": "1982 Lebanon War",
+      "url": "https://en.wikipedia.org/wiki/1982_Lebanon_War",
+      "start": "1982-06-06",
+      "end": "1985-06-05",
       "ongoing": false,
-      "major": false,
-      "deathsMin": null,
+      "major": true,
+      "deathsMin": 19085,
       "deathsMax": null,
       "sideA": [
         {
-          "name": "Somalia",
-          "slug": "somalia",
+          "name": "Israel",
+          "slug": "israel",
           "principal": true
         }
       ],
       "sideB": [
         {
-          "name": "Ethiopia",
-          "slug": "ethiopia",
+          "name": "PLO",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Syria",
+          "slug": "syria",
           "principal": true
         }
       ]
