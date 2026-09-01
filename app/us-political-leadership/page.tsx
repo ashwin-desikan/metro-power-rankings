@@ -12,7 +12,8 @@ import { getAllMetros } from "@/lib/data";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import GovernorsTable, { type GovRow } from "./GovernorsTable";
 import SenatorsTable, { type SenRow } from "./SenatorsTable";
-import { CappedList } from "@/app/_shared/Disclosure";
+import { CappedList, Disclosure } from "@/app/_shared/Disclosure";
+import { getConstitutionDocuments, getCountryConstitution } from "@/lib/constitutions";
 
 const PATH = "/us-political-leadership";
 const TITLE = "United States Political Leadership";
@@ -98,6 +99,8 @@ function OfficialCard({ label, name, sub, acting }: { label: string; name: strin
 
 export default async function USPoliticalLeadershipPage() {
   const congress = await getUsCongress();
+  const organic = getConstitutionDocuments().founding["united-states"];
+  const usConst = getCountryConstitution("united-states");
   const justices = await getScotusHistory();
   const bench = benchOn(justices, new Date().toISOString().slice(0, 10));
 
@@ -126,6 +129,7 @@ export default async function USPoliticalLeadershipPage() {
     .sort((a, b) => a.state.localeCompare(b.state) || a.name.localeCompare(b.name));
 
   const navItems = [
+    { label: "Organic Laws", href: "#organic-laws" },
     { label: "Executive", href: "#executive" },
     { label: "Supreme Court", href: "#supreme-court" },
     { label: "Governors", href: "#governors" },
@@ -180,6 +184,43 @@ export default async function USPoliticalLeadershipPage() {
         <p className="text-lg font-bold text-[var(--text)]">A day in American history →</p>
         <p className="text-sm text-[var(--text-muted)]">Who was President, Vice President, and the House balance on any date back to 1789.</p>
       </Link>
+
+      {organic ? (
+        <section id="organic-laws" className="mb-12 scroll-mt-20">
+          <h2 className="text-xl font-bold mb-1 text-[var(--text)]">{organic.label}</h2>
+          <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl leading-relaxed">{organic.summary}</p>
+          <Disclosure title="The four documents"
+                      meta={`${organic.documents[0].year} to ${organic.documents[organic.documents.length - 1].year}`}
+                      desktopOpen={false}
+                      summaryClassName="px-0">
+          <ol className="grid gap-2 sm:grid-cols-2">
+            {organic.documents.map((doc) => (
+              <li key={doc.name} className="rounded-xl border p-4"
+                  style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+                <div className="flex items-baseline justify-between gap-3">
+                  <p className="font-bold text-[var(--text)] min-w-0">{doc.name}</p>
+                  <span className="shrink-0 text-lg font-bold tabular-nums text-[var(--text)]">{doc.year}</span>
+                </div>
+                <p className="mt-1 text-sm text-[var(--text-muted)] leading-relaxed">{doc.what}</p>
+                <p className="mt-2 text-[10px] uppercase tracking-widest text-[var(--text-dim)]">{doc.status}</p>
+              </li>
+            ))}
+          </ol>
+          </Disclosure>
+          <p className="mt-4 text-sm text-[var(--text-muted)] max-w-3xl leading-relaxed">
+            {organic.context}{" "}
+            <Link href="/constitutions" className="text-[var(--accent)] hover:underline">
+              Compare it with every other country&apos;s →
+            </Link>
+          </p>
+          {usConst?.adopted ? (
+            <p className="mt-2 text-xs text-[var(--text-dim)]">
+              {usConst.amendEvents} amendment events since {usConst.adopted}, the last of them in{" "}
+              {usConst.lastEvent}, across {usConst.ageYears} years under a single constitution.
+            </p>
+          ) : null}
+        </section>
+      ) : null}
 
       {congress ? (
         <section id="executive" className="mb-12 scroll-mt-20">

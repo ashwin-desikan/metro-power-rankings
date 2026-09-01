@@ -1,0 +1,8363 @@
+{
+ "built": "2026-09-01",
+ "asOf": 2025,
+ "note": "Executives whose term began while the current constitution stood. Rotating, acting and party offices are excluded from the count and listed separately; Switzerland's annually rotating presidency is the reason that rule exists.",
+ "countries": [
+  {
+   "slug": "argentina",
+   "name": "Argentina",
+   "adopted": 1853,
+   "years": 172,
+   "headsOfState": 56,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 56,
+   "yearsPerTransition": 3.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "netherlands",
+   "name": "Netherlands",
+   "adopted": 1814,
+   "years": 211,
+   "headsOfState": 8,
+   "headsOfGovernment": 48,
+   "office": "hog",
+   "transitions": 48,
+   "yearsPerTransition": 4.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 William I",
+     "role": "Sovereign Prince"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "united-states",
+   "name": "United States",
+   "adopted": 1789,
+   "years": 236,
+   "headsOfState": 47,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 47,
+   "yearsPerTransition": 5.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "italy",
+   "name": "Italy",
+   "adopted": 1947,
+   "years": 78,
+   "headsOfState": 0,
+   "headsOfGovernment": 46,
+   "office": "hog",
+   "transitions": 46,
+   "yearsPerTransition": 1.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Alcide De Gasperi",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "japan",
+   "name": "Japan",
+   "adopted": 1946,
+   "years": 79,
+   "headsOfState": 2,
+   "headsOfGovernment": 37,
+   "office": "hog",
+   "transitions": 37,
+   "yearsPerTransition": 2.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Shōwa (Hirohito)",
+     "role": "Emperor"
+    },
+    {
+     "name": "Shidehara Kijuro",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "australia",
+   "name": "Australia",
+   "adopted": 1901,
+   "years": 124,
+   "headsOfState": 0,
+   "headsOfGovernment": 36,
+   "office": "hog",
+   "transitions": 36,
+   "yearsPerTransition": 3.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "nauru",
+   "name": "Nauru",
+   "adopted": 1968,
+   "years": 57,
+   "headsOfState": 33,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 33,
+   "yearsPerTransition": 1.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "canada",
+   "name": "Canada",
+   "adopted": 1867,
+   "years": 158,
+   "headsOfState": 0,
+   "headsOfGovernment": 29,
+   "office": "hog",
+   "transitions": 29,
+   "yearsPerTransition": 5.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "vanuatu",
+   "name": "Vanuatu",
+   "adopted": 1980,
+   "years": 45,
+   "headsOfState": 15,
+   "headsOfGovernment": 28,
+   "office": "hog",
+   "transitions": 28,
+   "yearsPerTransition": 1.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "guinea-bissau",
+   "name": "Guinea-Bissau",
+   "adopted": 1984,
+   "years": 41,
+   "headsOfState": 10,
+   "headsOfGovernment": 25,
+   "office": "hog",
+   "transitions": 25,
+   "yearsPerTransition": 1.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "João Bernardo Vieira",
+     "role": "President"
+    },
+    {
+     "name": "Victor Saúde Maria",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "sao-tome-and-principe",
+   "name": "São Tomé and Príncipe",
+   "adopted": 1975,
+   "years": 50,
+   "headsOfState": 6,
+   "headsOfGovernment": 24,
+   "office": "hog",
+   "transitions": 24,
+   "yearsPerTransition": 2.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Leonel Mário d'Alva",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "ireland",
+   "name": "Ireland",
+   "adopted": 1937,
+   "years": 88,
+   "headsOfState": 0,
+   "headsOfGovernment": 23,
+   "office": "hog",
+   "transitions": 23,
+   "yearsPerTransition": 3.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Éamon de Valera",
+     "role": "Taoiseach"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "mexico",
+   "name": "Mexico",
+   "adopted": 1917,
+   "years": 108,
+   "headsOfState": 22,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 22,
+   "yearsPerTransition": 4.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Venustiano Carranza",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "austria",
+   "name": "Austria",
+   "adopted": 1934,
+   "years": 91,
+   "headsOfState": 9,
+   "headsOfGovernment": 21,
+   "office": "hog",
+   "transitions": 21,
+   "yearsPerTransition": 4.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Wilhelm Miklas",
+     "role": "Federal President"
+    },
+    {
+     "name": "⚠️ Engelbert Dollfuss",
+     "role": "Federal Chancellor"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "solomon-islands",
+   "name": "Solomon Islands",
+   "adopted": 1978,
+   "years": 47,
+   "headsOfState": 0,
+   "headsOfGovernment": 20,
+   "office": "hog",
+   "transitions": 20,
+   "yearsPerTransition": 2.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "india",
+   "name": "India",
+   "adopted": 1949,
+   "years": 76,
+   "headsOfState": 0,
+   "headsOfGovernment": 17,
+   "office": "hog",
+   "transitions": 17,
+   "yearsPerTransition": 4.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Jawaharlal Nehru",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "israel",
+   "name": "Israel",
+   "adopted": 1958,
+   "years": 67,
+   "headsOfState": 0,
+   "headsOfGovernment": 17,
+   "office": "hog",
+   "transitions": 17,
+   "yearsPerTransition": 3.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "David Ben-Gurion",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "mongolia",
+   "name": "Mongolia",
+   "adopted": 1992,
+   "years": 33,
+   "headsOfState": 5,
+   "headsOfGovernment": 16,
+   "office": "hog",
+   "transitions": 16,
+   "yearsPerTransition": 2.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Punsalmaagiin Ochirbat",
+     "role": "President"
+    },
+    {
+     "name": "Dashiin Byambasüren",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "south-korea",
+   "name": "South Korea",
+   "adopted": 1948,
+   "years": 77,
+   "headsOfState": 16,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 16,
+   "yearsPerTransition": 4.8,
+   "excluded": {
+    "acting": 1
+   },
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "panama",
+   "name": "Panama",
+   "adopted": 1972,
+   "years": 53,
+   "headsOfState": 15,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 15,
+   "yearsPerTransition": 3.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Demetrio B. Lakas",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "pakistan",
+   "name": "Pakistan",
+   "adopted": 1973,
+   "years": 52,
+   "headsOfState": 6,
+   "headsOfGovernment": 15,
+   "office": "hog",
+   "transitions": 15,
+   "yearsPerTransition": 3.5,
+   "excluded": {
+    "acting": 8
+   },
+   "inOfficeAtAdoption": [
+    {
+     "name": "Zulfikar Ali Bhutto",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "mauritania",
+   "name": "Mauritania",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 6,
+   "headsOfGovernment": 14,
+   "office": "hog",
+   "transitions": 14,
+   "yearsPerTransition": 2.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Maaouya Ould Sid'Ahmed Taya",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "Maaouya Ould Sid'Ahmed Taya",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "papua-new-guinea",
+   "name": "Papua New Guinea",
+   "adopted": 1975,
+   "years": 50,
+   "headsOfState": 0,
+   "headsOfGovernment": 14,
+   "office": "hog",
+   "transitions": 14,
+   "yearsPerTransition": 3.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "czech-republic",
+   "name": "Czech Republic",
+   "adopted": 1993,
+   "years": 32,
+   "headsOfState": 4,
+   "headsOfGovernment": 14,
+   "office": "hog",
+   "transitions": 14,
+   "yearsPerTransition": 2.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "bosnia-herzegovina",
+   "name": "Bosnia-Herzegovina",
+   "adopted": 1995,
+   "years": 30,
+   "headsOfState": 3,
+   "headsOfGovernment": 14,
+   "office": "hog",
+   "transitions": 14,
+   "yearsPerTransition": 2.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Haris Silajdžić",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "belgium",
+   "name": "Belgium",
+   "adopted": 1831,
+   "years": 194,
+   "headsOfState": 7,
+   "headsOfGovernment": 13,
+   "office": "hog",
+   "transitions": 13,
+   "yearsPerTransition": 14.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "denmark",
+   "name": "Denmark",
+   "adopted": 1953,
+   "years": 72,
+   "headsOfState": 2,
+   "headsOfGovernment": 13,
+   "office": "hog",
+   "transitions": 13,
+   "yearsPerTransition": 5.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Frederik IX",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "turkey",
+   "name": "Turkey",
+   "adopted": 1982,
+   "years": 43,
+   "headsOfState": 6,
+   "headsOfGovernment": 13,
+   "office": "hog",
+   "transitions": 13,
+   "yearsPerTransition": 3.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Kenan Evren",
+     "role": "President (Military Junta)"
+    },
+    {
+     "name": "Bülent Ulusu",
+     "role": "Prime Minister (Military era)"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "samoa",
+   "name": "Samoa",
+   "adopted": 1962,
+   "years": 63,
+   "headsOfState": 4,
+   "headsOfGovernment": 13,
+   "office": "hog",
+   "transitions": 13,
+   "yearsPerTransition": 4.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "moldova",
+   "name": "Moldova",
+   "adopted": 1994,
+   "years": 31,
+   "headsOfState": 7,
+   "headsOfGovernment": 13,
+   "office": "hog",
+   "transitions": 13,
+   "yearsPerTransition": 2.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Mircea Snegur",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "haiti",
+   "name": "Haiti",
+   "adopted": 1987,
+   "years": 38,
+   "headsOfState": 12,
+   "headsOfGovernment": 8,
+   "office": "hos",
+   "transitions": 12,
+   "yearsPerTransition": 3.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Henri Namphy",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 21
+  },
+  {
+   "slug": "sweden",
+   "name": "Sweden",
+   "adopted": 1974,
+   "years": 51,
+   "headsOfState": 0,
+   "headsOfGovernment": 12,
+   "office": "hog",
+   "transitions": 12,
+   "yearsPerTransition": 4.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Olof Palme",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "👑 Carl XVI Gustaf",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "germany",
+   "name": "Germany",
+   "adopted": 1949,
+   "years": 76,
+   "headsOfState": 12,
+   "headsOfGovernment": 10,
+   "office": "hos",
+   "transitions": 12,
+   "yearsPerTransition": 6.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "jamaica",
+   "name": "Jamaica",
+   "adopted": 1962,
+   "years": 63,
+   "headsOfState": 0,
+   "headsOfGovernment": 12,
+   "office": "hog",
+   "transitions": 12,
+   "yearsPerTransition": 5.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "kuwait",
+   "name": "Kuwait",
+   "adopted": 1962,
+   "years": 63,
+   "headsOfState": 6,
+   "headsOfGovernment": 12,
+   "office": "hog",
+   "transitions": 12,
+   "yearsPerTransition": 5.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Abdullah III Al-Salim Al-Sabah",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "yemen",
+   "name": "Yemen",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 3,
+   "headsOfGovernment": 12,
+   "office": "hog",
+   "transitions": 12,
+   "yearsPerTransition": 2.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Ali Abdullah Saleh",
+     "role": "President"
+    },
+    {
+     "name": "Haidar Abu Bakr al-Attas",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "grenada",
+   "name": "Grenada",
+   "adopted": 1974,
+   "years": 51,
+   "headsOfState": 0,
+   "headsOfGovernment": 12,
+   "office": "hog",
+   "transitions": 12,
+   "yearsPerTransition": 4.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "peru",
+   "name": "Peru",
+   "adopted": 1993,
+   "years": 32,
+   "headsOfState": 11,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 11,
+   "yearsPerTransition": 2.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Alberto Fujimori",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 11
+  },
+  {
+   "slug": "iran",
+   "name": "Iran",
+   "adopted": 1979,
+   "years": 46,
+   "headsOfState": 11,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 11,
+   "yearsPerTransition": 4.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Mohammad Reza Pahlavi",
+     "role": "Shah"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "north-macedonia",
+   "name": "North Macedonia",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 11,
+   "headsOfGovernment": 3,
+   "office": "hos",
+   "transitions": 11,
+   "yearsPerTransition": 3.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "poland",
+   "name": "Poland",
+   "adopted": 1997,
+   "years": 28,
+   "headsOfState": 4,
+   "headsOfGovernment": 10,
+   "office": "hog",
+   "transitions": 10,
+   "yearsPerTransition": 2.8,
+   "excluded": {
+    "acting": 1
+   },
+   "inOfficeAtAdoption": [
+    {
+     "name": "Aleksander Kwaśniewski",
+     "role": "President"
+    },
+    {
+     "name": "Włodzimierz Cimoszewicz",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 8
+  },
+  {
+   "slug": "uruguay",
+   "name": "Uruguay",
+   "adopted": 1966,
+   "years": 59,
+   "headsOfState": 10,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 10,
+   "yearsPerTransition": 5.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Luis Batlle Berres",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 1,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "malaysia",
+   "name": "Malaysia",
+   "adopted": 1957,
+   "years": 68,
+   "headsOfState": 0,
+   "headsOfGovernment": 10,
+   "office": "hog",
+   "transitions": 10,
+   "yearsPerTransition": 6.8,
+   "excluded": {
+    "rotating": 1
+   },
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "vietnam",
+   "name": "Vietnam",
+   "adopted": 1992,
+   "years": 33,
+   "headsOfState": 10,
+   "headsOfGovernment": 4,
+   "office": "hos",
+   "transitions": 10,
+   "yearsPerTransition": 3.3,
+   "excluded": {
+    "party": 4
+   },
+   "inOfficeAtAdoption": [
+    {
+     "name": "Vo Chi Cong",
+     "role": "President"
+    },
+    {
+     "name": "Vo Van Kiet",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "guyana",
+   "name": "Guyana",
+   "adopted": 1980,
+   "years": 45,
+   "headsOfState": 9,
+   "headsOfGovernment": 10,
+   "office": "hog",
+   "transitions": 10,
+   "yearsPerTransition": 4.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Forbes Burnham",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "Arthur Chung",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "bangladesh",
+   "name": "Bangladesh",
+   "adopted": 1972,
+   "years": 53,
+   "headsOfState": 4,
+   "headsOfGovernment": 10,
+   "office": "hog",
+   "transitions": 10,
+   "yearsPerTransition": 5.3,
+   "excluded": {
+    "acting": 4
+   },
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "sri-lanka",
+   "name": "Sri Lanka",
+   "adopted": 1978,
+   "years": 47,
+   "headsOfState": 10,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 10,
+   "yearsPerTransition": 4.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "J.R. Jayewardene",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "dominica",
+   "name": "Dominica",
+   "adopted": 1978,
+   "years": 47,
+   "headsOfState": 10,
+   "headsOfGovernment": 7,
+   "office": "hos",
+   "transitions": 10,
+   "yearsPerTransition": 4.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "guatemala",
+   "name": "Guatemala",
+   "adopted": 1985,
+   "years": 40,
+   "headsOfState": 9,
+   "headsOfGovernment": 5,
+   "office": "hos",
+   "transitions": 9,
+   "yearsPerTransition": 4.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Carlos Castillo Armas",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 7
+  },
+  {
+   "slug": "estonia",
+   "name": "Estonia",
+   "adopted": 1992,
+   "years": 33,
+   "headsOfState": 6,
+   "headsOfGovernment": 9,
+   "office": "hog",
+   "transitions": 9,
+   "yearsPerTransition": 3.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "libya",
+   "name": "Libya",
+   "adopted": 1951,
+   "years": 74,
+   "headsOfState": 9,
+   "headsOfGovernment": 6,
+   "office": "hos",
+   "transitions": 9,
+   "yearsPerTransition": 8.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "cyprus",
+   "name": "Cyprus",
+   "adopted": 1960,
+   "years": 65,
+   "headsOfState": 9,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 9,
+   "yearsPerTransition": 7.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "senegal",
+   "name": "Senegal",
+   "adopted": 2001,
+   "years": 24,
+   "headsOfState": 2,
+   "headsOfGovernment": 9,
+   "office": "hog",
+   "transitions": 9,
+   "yearsPerTransition": 2.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Abdoulaye Wade",
+     "role": "President"
+    },
+    {
+     "name": "Moustapha Niasse",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "trinidad-tobago",
+   "name": "Trinidad & Tobago",
+   "adopted": 1976,
+   "years": 49,
+   "headsOfState": 7,
+   "headsOfGovernment": 9,
+   "office": "hog",
+   "transitions": 9,
+   "yearsPerTransition": 5.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Eric Williams",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "malta",
+   "name": "Malta",
+   "adopted": 1964,
+   "years": 61,
+   "headsOfState": 5,
+   "headsOfGovernment": 9,
+   "office": "hog",
+   "transitions": 9,
+   "yearsPerTransition": 6.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "mauritius",
+   "name": "Mauritius",
+   "adopted": 1968,
+   "years": 57,
+   "headsOfState": 9,
+   "headsOfGovernment": 9,
+   "office": "hos",
+   "transitions": 9,
+   "yearsPerTransition": 6.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "france",
+   "name": "France",
+   "adopted": 1958,
+   "years": 67,
+   "headsOfState": 8,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 8,
+   "yearsPerTransition": 8.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "René Coty",
+     "role": "President (4th Republic)"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 14
+  },
+  {
+   "slug": "chile",
+   "name": "Chile",
+   "adopted": 1980,
+   "years": 45,
+   "headsOfState": 8,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 8,
+   "yearsPerTransition": 5.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Augusto Pinochet",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "portugal",
+   "name": "Portugal",
+   "adopted": 1976,
+   "years": 49,
+   "headsOfState": 5,
+   "headsOfGovernment": 8,
+   "office": "hog",
+   "transitions": 8,
+   "yearsPerTransition": 6.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "brazil",
+   "name": "Brazil",
+   "adopted": 1988,
+   "years": 37,
+   "headsOfState": 8,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 8,
+   "yearsPerTransition": 4.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "José Sarney",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 7
+  },
+  {
+   "slug": "costa-rica",
+   "name": "Costa Rica",
+   "adopted": 1949,
+   "years": 76,
+   "headsOfState": 8,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 8,
+   "yearsPerTransition": 9.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "José Figueres Ferrer",
+     "role": "President (Founding Junta of the Second Republic)"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 9
+  },
+  {
+   "slug": "honduras",
+   "name": "Honduras",
+   "adopted": 1982,
+   "years": 43,
+   "headsOfState": 8,
+   "headsOfGovernment": 4,
+   "office": "hos",
+   "transitions": 8,
+   "yearsPerTransition": 5.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Oswaldo López Arellano",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 1,
+   "constitutionsSince1789": 12
+  },
+  {
+   "slug": "lithuania",
+   "name": "Lithuania",
+   "adopted": 1992,
+   "years": 33,
+   "headsOfState": 6,
+   "headsOfGovernment": 8,
+   "office": "hog",
+   "transitions": 8,
+   "yearsPerTransition": 4.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "suriname",
+   "name": "Suriname",
+   "adopted": 1987,
+   "years": 38,
+   "headsOfState": 8,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 8,
+   "yearsPerTransition": 4.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Fred Ramdat Misier",
+     "role": "President"
+    },
+    {
+     "name": "Pretaap Radhakishun",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "laos",
+   "name": "Laos",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 6,
+   "headsOfGovernment": 8,
+   "office": "hog",
+   "transitions": 8,
+   "yearsPerTransition": 4.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Kaysone Phomvihane",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "Phoumi Vongvichit",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "liechtenstein",
+   "name": "Liechtenstein",
+   "adopted": 1921,
+   "years": 104,
+   "headsOfState": 1,
+   "headsOfGovernment": 7,
+   "office": "hog",
+   "transitions": 7,
+   "yearsPerTransition": 14.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "greece",
+   "name": "Greece",
+   "adopted": 1975,
+   "years": 50,
+   "headsOfState": 4,
+   "headsOfGovernment": 7,
+   "office": "hog",
+   "transitions": 7,
+   "yearsPerTransition": 7.1,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 8
+  },
+  {
+   "slug": "liberia",
+   "name": "Liberia",
+   "adopted": 1986,
+   "years": 39,
+   "headsOfState": 7,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 5.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Samuel Doe",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "luxembourg",
+   "name": "Luxembourg",
+   "adopted": 1868,
+   "years": 157,
+   "headsOfState": 7,
+   "headsOfGovernment": 4,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 22.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 William III",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "montenegro",
+   "name": "Montenegro",
+   "adopted": 2007,
+   "years": 18,
+   "headsOfState": 2,
+   "headsOfGovernment": 7,
+   "office": "hog",
+   "transitions": 7,
+   "yearsPerTransition": 2.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Filip Vujanović",
+     "role": "President"
+    },
+    {
+     "name": "Željko Šturanović",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "iceland",
+   "name": "Iceland",
+   "adopted": 1944,
+   "years": 81,
+   "headsOfState": 7,
+   "headsOfGovernment": 5,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 11.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Christian X",
+     "role": "King"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "indonesia",
+   "name": "Indonesia",
+   "adopted": 1949,
+   "years": 76,
+   "headsOfState": 7,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 10.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Sukarno",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "sierra-leone",
+   "name": "Sierra Leone",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 7,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 4.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Joseph Saidu Momoh",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "zambia",
+   "name": "Zambia",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 7,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 4.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Kenneth Kaunda",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "lesotho",
+   "name": "Lesotho",
+   "adopted": 1993,
+   "years": 32,
+   "headsOfState": 2,
+   "headsOfGovernment": 7,
+   "office": "hog",
+   "transitions": 7,
+   "yearsPerTransition": 4.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Letsie III",
+     "role": "King"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "bahamas",
+   "name": "Bahamas",
+   "adopted": 1973,
+   "years": 52,
+   "headsOfState": 0,
+   "headsOfGovernment": 7,
+   "office": "hog",
+   "transitions": 7,
+   "yearsPerTransition": 7.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Lynden Pindling",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "philippines",
+   "name": "Philippines",
+   "adopted": 1987,
+   "years": 38,
+   "headsOfState": 7,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 5.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Corazon Aquino",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "georgia",
+   "name": "Georgia",
+   "adopted": 1995,
+   "years": 30,
+   "headsOfState": 5,
+   "headsOfGovernment": 7,
+   "office": "hog",
+   "transitions": 7,
+   "yearsPerTransition": 4.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "kiribati",
+   "name": "Kiribati",
+   "adopted": 1979,
+   "years": 46,
+   "headsOfState": 7,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 6.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "belize",
+   "name": "Belize",
+   "adopted": 1981,
+   "years": 44,
+   "headsOfState": 0,
+   "headsOfGovernment": 7,
+   "office": "hog",
+   "transitions": 7,
+   "yearsPerTransition": 6.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "namibia",
+   "name": "Namibia",
+   "adopted": 1990,
+   "years": 35,
+   "headsOfState": 7,
+   "headsOfGovernment": 6,
+   "office": "hos",
+   "transitions": 7,
+   "yearsPerTransition": 5.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "iraq",
+   "name": "Iraq",
+   "adopted": 2005,
+   "years": 20,
+   "headsOfState": 4,
+   "headsOfGovernment": 7,
+   "office": "hog",
+   "transitions": 7,
+   "yearsPerTransition": 2.9,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Ayad Allawi",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "spain",
+   "name": "Spain",
+   "adopted": 1978,
+   "years": 47,
+   "headsOfState": 1,
+   "headsOfGovernment": 6,
+   "office": "hog",
+   "transitions": 6,
+   "yearsPerTransition": 7.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 King Juan Carlos I",
+     "role": "Monarch"
+    },
+    {
+     "name": "Adolfo Suárez",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 10
+  },
+  {
+   "slug": "paraguay",
+   "name": "Paraguay",
+   "adopted": 1992,
+   "years": 33,
+   "headsOfState": 6,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 6,
+   "yearsPerTransition": 5.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Andrés Rodríguez",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 5,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "colombia",
+   "name": "Colombia",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 6,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 6,
+   "yearsPerTransition": 5.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "César Gaviria",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 8
+  },
+  {
+   "slug": "el-salvador",
+   "name": "El Salvador",
+   "adopted": 1983,
+   "years": 42,
+   "headsOfState": 6,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 6,
+   "yearsPerTransition": 7.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Óscar Osorio",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 1,
+   "constitutionsSince1789": 11
+  },
+  {
+   "slug": "burkina-faso",
+   "name": "Burkina Faso",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 5,
+   "headsOfGovernment": 6,
+   "office": "hog",
+   "transitions": 6,
+   "yearsPerTransition": 5.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Blaise Compaoré",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "nigeria",
+   "name": "Nigeria",
+   "adopted": 1999,
+   "years": 26,
+   "headsOfState": 6,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 6,
+   "yearsPerTransition": 4.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Abdulsalami Abubakar",
+     "role": "Head of State"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "somalia",
+   "name": "Somalia",
+   "adopted": 2012,
+   "years": 13,
+   "headsOfState": 3,
+   "headsOfGovernment": 6,
+   "office": "hog",
+   "transitions": 6,
+   "yearsPerTransition": 2.2,
+   "excluded": {
+    "acting": 2
+   },
+   "inOfficeAtAdoption": [
+    {
+     "name": "Sharif Sheikh Ahmed",
+     "role": "President"
+    },
+    {
+     "name": "Abdiweli Mohamed Ali",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "malawi",
+   "name": "Malawi",
+   "adopted": 1994,
+   "years": 31,
+   "headsOfState": 6,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 6,
+   "yearsPerTransition": 5.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Hastings Banda",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "botswana",
+   "name": "Botswana",
+   "adopted": 1966,
+   "years": 59,
+   "headsOfState": 6,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 6,
+   "yearsPerTransition": 9.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "mozambique",
+   "name": "Mozambique",
+   "adopted": 2004,
+   "years": 21,
+   "headsOfState": 3,
+   "headsOfGovernment": 6,
+   "office": "hog",
+   "transitions": 6,
+   "yearsPerTransition": 3.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Joaquim Chissano",
+     "role": "President"
+    },
+    {
+     "name": "Pascoal Mocumbi",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "ukraine",
+   "name": "Ukraine",
+   "adopted": 1996,
+   "years": 29,
+   "headsOfState": 6,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 6,
+   "yearsPerTransition": 4.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Leonid Kuchma",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "kosovo",
+   "name": "Kosovo",
+   "adopted": 2008,
+   "years": 17,
+   "headsOfState": 0,
+   "headsOfGovernment": 6,
+   "office": "hog",
+   "transitions": 6,
+   "yearsPerTransition": 2.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Agim Çeku",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "bolivia",
+   "name": "Bolivia",
+   "adopted": 2009,
+   "years": 16,
+   "headsOfState": 5,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 3.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Evo Morales",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 17
+  },
+  {
+   "slug": "bulgaria",
+   "name": "Bulgaria",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 4,
+   "headsOfGovernment": 5,
+   "office": "hog",
+   "transitions": 5,
+   "yearsPerTransition": 6.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Zhelyu Zhelev",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "china",
+   "name": "China",
+   "adopted": 1982,
+   "years": 43,
+   "headsOfState": 5,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 8.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 10
+  },
+  {
+   "slug": "albania",
+   "name": "Albania",
+   "adopted": 1998,
+   "years": 27,
+   "headsOfState": 5,
+   "headsOfGovernment": 4,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 5.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Rexhep Meidani",
+     "role": "President"
+    },
+    {
+     "name": "Fatos Nano",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 8
+  },
+  {
+   "slug": "finland",
+   "name": "Finland",
+   "adopted": 1999,
+   "years": 26,
+   "headsOfState": 3,
+   "headsOfGovernment": 5,
+   "office": "hog",
+   "transitions": 5,
+   "yearsPerTransition": 5.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Martti Ahtisaari",
+     "role": "President"
+    },
+    {
+     "name": "Paavo Lipponen",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "romania",
+   "name": "Romania",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 5,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 6.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Ion Iliescu",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "ethiopia",
+   "name": "Ethiopia",
+   "adopted": 1994,
+   "years": 31,
+   "headsOfState": 5,
+   "headsOfGovernment": 3,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 6.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Meles Zenawi",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "thailand",
+   "name": "Thailand",
+   "adopted": 2017,
+   "years": 8,
+   "headsOfState": 0,
+   "headsOfGovernment": 5,
+   "office": "hog",
+   "transitions": 5,
+   "yearsPerTransition": 1.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Prayut Chan-o-cha",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "👑 Vajiralongkorn (Rama X)",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 11
+  },
+  {
+   "slug": "jordan",
+   "name": "Jordan",
+   "adopted": 1952,
+   "years": 73,
+   "headsOfState": 2,
+   "headsOfGovernment": 5,
+   "office": "hog",
+   "transitions": 5,
+   "yearsPerTransition": 14.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Talal bin Abdullah",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "nepal",
+   "name": "Nepal",
+   "adopted": 2015,
+   "years": 10,
+   "headsOfState": 2,
+   "headsOfGovernment": 5,
+   "office": "hog",
+   "transitions": 5,
+   "yearsPerTransition": 2.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Ram Baran Yadav",
+     "role": "President"
+    },
+    {
+     "name": "Sushil Koirala",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "ghana",
+   "name": "Ghana",
+   "adopted": 1992,
+   "years": 33,
+   "headsOfState": 5,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 6.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Jerry Rawlings",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "niger",
+   "name": "Niger",
+   "adopted": 2010,
+   "years": 15,
+   "headsOfState": 5,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 3.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Mamadou Tandja",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 7
+  },
+  {
+   "slug": "tanzania",
+   "name": "Tanzania",
+   "adopted": 1977,
+   "years": 48,
+   "headsOfState": 5,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 9.6,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Julius Nyerere",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "maldives",
+   "name": "Maldives",
+   "adopted": 2008,
+   "years": 17,
+   "headsOfState": 5,
+   "headsOfGovernment": 3,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 3.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Maumoon Abdul Gayoom",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "st-vincent-the-grenadines",
+   "name": "St. Vincent & the Grenadines",
+   "adopted": 1979,
+   "years": 46,
+   "headsOfState": 0,
+   "headsOfGovernment": 5,
+   "office": "hog",
+   "transitions": 5,
+   "yearsPerTransition": 9.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "cape-verde",
+   "name": "Cape Verde",
+   "adopted": 1980,
+   "years": 45,
+   "headsOfState": 5,
+   "headsOfGovernment": 4,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 9.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Pedro Pires",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "Aristides Pereira",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "andorra",
+   "name": "Andorra",
+   "adopted": 1993,
+   "years": 32,
+   "headsOfState": 5,
+   "headsOfGovernment": 2,
+   "office": "hos",
+   "transitions": 5,
+   "yearsPerTransition": 6.4,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "nicaragua",
+   "name": "Nicaragua",
+   "adopted": 1987,
+   "years": 38,
+   "headsOfState": 4,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 9.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Daniel Ortega",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 12
+  },
+  {
+   "slug": "serbia",
+   "name": "Serbia",
+   "adopted": 2006,
+   "years": 19,
+   "headsOfState": 2,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 4.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Boris Tadić",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 12
+  },
+  {
+   "slug": "monaco",
+   "name": "Monaco",
+   "adopted": 1962,
+   "years": 63,
+   "headsOfState": 2,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 15.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Rainier III",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "latvia",
+   "name": "Latvia",
+   "adopted": 1940,
+   "years": 85,
+   "headsOfState": 4,
+   "headsOfGovernment": 4,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 21.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Kārlis Ulmanis",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "benin",
+   "name": "Benin",
+   "adopted": 1990,
+   "years": 35,
+   "headsOfState": 4,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 8.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Mathieu Kérékou",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "cote-divoire",
+   "name": "Côte d'Ivoire",
+   "adopted": 2016,
+   "years": 9,
+   "headsOfState": 0,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 2.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Daniel Kablan Duncan",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "south-africa",
+   "name": "South Africa",
+   "adopted": 1996,
+   "years": 29,
+   "headsOfState": 4,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 7.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Nelson Mandela",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "myanmar",
+   "name": "Myanmar",
+   "adopted": 2008,
+   "years": 17,
+   "headsOfState": 4,
+   "headsOfGovernment": 2,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 4.2,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Than Shwe",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "rwanda",
+   "name": "Rwanda",
+   "adopted": 2003,
+   "years": 22,
+   "headsOfState": 0,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 5.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Bernard Makuza",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "Paul Kagame",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "uganda",
+   "name": "Uganda",
+   "adopted": 1995,
+   "years": 30,
+   "headsOfState": 0,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 7.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Kintu Musoke",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "barbados",
+   "name": "Barbados",
+   "adopted": 1966,
+   "years": 59,
+   "headsOfState": 2,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 14.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "eswatini",
+   "name": "Eswatini",
+   "adopted": 2005,
+   "years": 20,
+   "headsOfState": 0,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 5.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Themba Dlamini",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "fiji",
+   "name": "Fiji",
+   "adopted": 2013,
+   "years": 12,
+   "headsOfState": 4,
+   "headsOfGovernment": 2,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 3.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Frank Bainimarama",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "Epeli Nailatikau",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "seychelles",
+   "name": "Seychelles",
+   "adopted": 1993,
+   "years": 32,
+   "headsOfState": 4,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 8.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "France-Albert René",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "antigua-barbuda",
+   "name": "Antigua & Barbuda",
+   "adopted": 1981,
+   "years": 44,
+   "headsOfState": 0,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 11.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "st-kitts-nevis",
+   "name": "St. Kitts & Nevis",
+   "adopted": 1983,
+   "years": 42,
+   "headsOfState": 0,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 10.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "armenia",
+   "name": "Armenia",
+   "adopted": 1995,
+   "years": 30,
+   "headsOfState": 4,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 7.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Levon Ter-Petrosyan",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "east-timor",
+   "name": "East Timor",
+   "adopted": 2002,
+   "years": 23,
+   "headsOfState": 4,
+   "headsOfGovernment": 2,
+   "office": "hos",
+   "transitions": 4,
+   "yearsPerTransition": 5.8,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "qatar",
+   "name": "Qatar",
+   "adopted": 2003,
+   "years": 22,
+   "headsOfState": 1,
+   "headsOfGovernment": 4,
+   "office": "hog",
+   "transitions": 4,
+   "yearsPerTransition": 5.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Emir Hamad bin Khalifa Al Thani",
+     "role": "Monarch"
+    },
+    {
+     "name": "Abdullah bin Khalifa Al Thani",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "ecuador",
+   "name": "Ecuador",
+   "adopted": 2008,
+   "years": 17,
+   "headsOfState": 3,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 3,
+   "yearsPerTransition": 5.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Rafael Correa",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 23
+  },
+  {
+   "slug": "russia",
+   "name": "Russia",
+   "adopted": 1993,
+   "years": 32,
+   "headsOfState": 3,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 3,
+   "yearsPerTransition": 10.7,
+   "excluded": {
+    "acting": 1
+   },
+   "inOfficeAtAdoption": [
+    {
+     "name": "Boris Yeltsin",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "hungary",
+   "name": "Hungary",
+   "adopted": 2011,
+   "years": 14,
+   "headsOfState": 3,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 3,
+   "yearsPerTransition": 4.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Viktor Orbán",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "Pál Schmitt",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "morocco",
+   "name": "Morocco",
+   "adopted": 2011,
+   "years": 14,
+   "headsOfState": 0,
+   "headsOfGovernment": 3,
+   "office": "hog",
+   "transitions": 3,
+   "yearsPerTransition": 4.7,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Abbas El Fassi",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "madagascar",
+   "name": "Madagascar",
+   "adopted": 2010,
+   "years": 15,
+   "headsOfState": 3,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 3,
+   "yearsPerTransition": 5.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Andry Rajoelina",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "kyrgyzstan",
+   "name": "Kyrgyzstan",
+   "adopted": 2021,
+   "years": 4,
+   "headsOfState": 1,
+   "headsOfGovernment": 3,
+   "office": "hog",
+   "transitions": 3,
+   "yearsPerTransition": 1.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Artyom Novikov",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "belarus",
+   "name": "Belarus",
+   "adopted": 1994,
+   "years": 31,
+   "headsOfState": 3,
+   "headsOfGovernment": 2,
+   "office": "hos",
+   "transitions": 3,
+   "yearsPerTransition": 10.3,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Stanislav Shushkevich",
+     "role": "Chairman of the Supreme Soviet (head of state)"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "kazakhstan",
+   "name": "Kazakhstan",
+   "adopted": 1995,
+   "years": 30,
+   "headsOfState": 2,
+   "headsOfGovernment": 3,
+   "office": "hog",
+   "transitions": 3,
+   "yearsPerTransition": 10.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Nursultan Nazarbayev",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "venezuela",
+   "name": "Venezuela",
+   "adopted": 1999,
+   "years": 26,
+   "headsOfState": 2,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 2,
+   "yearsPerTransition": 13.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Rafael Caldera",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 22
+  },
+  {
+   "slug": "afghanistan",
+   "name": "Afghanistan",
+   "adopted": 2004,
+   "years": 21,
+   "headsOfState": 2,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 2,
+   "yearsPerTransition": 10.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 7
+  },
+  {
+   "slug": "north-korea",
+   "name": "North Korea",
+   "adopted": 1972,
+   "years": 53,
+   "headsOfState": 2,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 2,
+   "yearsPerTransition": 26.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Kim Il-sung",
+     "role": "Supreme Leader"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "congo",
+   "name": "Congo",
+   "adopted": 2015,
+   "years": 10,
+   "headsOfState": 0,
+   "headsOfGovernment": 2,
+   "office": "hog",
+   "transitions": 2,
+   "yearsPerTransition": 5.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 8
+  },
+  {
+   "slug": "kenya",
+   "name": "Kenya",
+   "adopted": 2010,
+   "years": 15,
+   "headsOfState": 2,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 2,
+   "yearsPerTransition": 7.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Mwai Kibaki",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "equatorial-guinea",
+   "name": "Equatorial Guinea",
+   "adopted": 1991,
+   "years": 34,
+   "headsOfState": 0,
+   "headsOfGovernment": 2,
+   "office": "hog",
+   "transitions": 2,
+   "yearsPerTransition": 17.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Teodoro Obiang",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "cambodia",
+   "name": "Cambodia",
+   "adopted": 1993,
+   "years": 32,
+   "headsOfState": 2,
+   "headsOfGovernment": 2,
+   "office": "hos",
+   "transitions": 2,
+   "yearsPerTransition": 16.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Hun Sen",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "bahrain",
+   "name": "Bahrain",
+   "adopted": 2002,
+   "years": 23,
+   "headsOfState": 0,
+   "headsOfGovernment": 2,
+   "office": "hog",
+   "transitions": 2,
+   "yearsPerTransition": 11.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Khalifa bin Salman Al Khalifa",
+     "role": "Prime Minister"
+    },
+    {
+     "name": "👑 Hamad bin Isa Al Khalifa",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "tuvalu",
+   "name": "Tuvalu",
+   "adopted": 2023,
+   "years": 2,
+   "headsOfState": 0,
+   "headsOfGovernment": 2,
+   "office": "hog",
+   "transitions": 2,
+   "yearsPerTransition": 1.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Kausea Natano",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "saudi-arabia",
+   "name": "Saudi Arabia",
+   "adopted": 1992,
+   "years": 33,
+   "headsOfState": 2,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 2,
+   "yearsPerTransition": 16.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 King Fahd bin Abdulaziz",
+     "role": "King"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "tajikistan",
+   "name": "Tajikistan",
+   "adopted": 1994,
+   "years": 31,
+   "headsOfState": 1,
+   "headsOfGovernment": 2,
+   "office": "hog",
+   "transitions": 2,
+   "yearsPerTransition": 15.5,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  },
+  {
+   "slug": "dominican-republic",
+   "name": "Dominican Republic",
+   "adopted": 2015,
+   "years": 10,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 10.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Danilo Medina",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 33
+  },
+  {
+   "slug": "tunisia",
+   "name": "Tunisia",
+   "adopted": 2022,
+   "years": 3,
+   "headsOfState": 0,
+   "headsOfGovernment": 1,
+   "office": "hog",
+   "transitions": 1,
+   "yearsPerTransition": 3.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Kais Saied",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "egypt",
+   "name": "Egypt",
+   "adopted": 2014,
+   "years": 11,
+   "headsOfState": 1,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 11.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Adly Mansour",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "syria",
+   "name": "Syria",
+   "adopted": 2012,
+   "years": 13,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 13.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "bhutan",
+   "name": "Bhutan",
+   "adopted": 2008,
+   "years": 17,
+   "headsOfState": 1,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 17.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Jigme Singye Wangchuck",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "cameroon",
+   "name": "Cameroon",
+   "adopted": 1972,
+   "years": 53,
+   "headsOfState": 1,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 53.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Ahmadou Ahidjo",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 3
+  },
+  {
+   "slug": "chad",
+   "name": "Chad",
+   "adopted": 2023,
+   "years": 2,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 2.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Mahamat Déby",
+     "role": "Chairman"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 7
+  },
+  {
+   "slug": "congo-dr",
+   "name": "Congo DR",
+   "adopted": 2005,
+   "years": 20,
+   "headsOfState": 1,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 20.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Joseph Kabila",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "togo",
+   "name": "Togo",
+   "adopted": 2024,
+   "years": 1,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 1.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Faure Gnassingbé",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "burundi",
+   "name": "Burundi",
+   "adopted": 2018,
+   "years": 7,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 7.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Pierre Nkurunziza",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "algeria",
+   "name": "Algeria",
+   "adopted": 2020,
+   "years": 5,
+   "headsOfState": 0,
+   "headsOfGovernment": 1,
+   "office": "hog",
+   "transitions": 1,
+   "yearsPerTransition": 5.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Abdelmadjid Tebboune",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "zimbabwe",
+   "name": "Zimbabwe",
+   "adopted": 2013,
+   "years": 12,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 12.0,
+   "excluded": {
+    "acting": 1
+   },
+   "inOfficeAtAdoption": [
+    {
+     "name": "Robert Mugabe",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "gambia",
+   "name": "Gambia",
+   "adopted": 1996,
+   "years": 29,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 29.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Yahya Jammeh",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "sudan",
+   "name": "Sudan",
+   "adopted": 1998,
+   "years": 27,
+   "headsOfState": 1,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 27.0,
+   "excluded": {
+    "acting": 2
+   },
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Omar al-Bashir",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "angola",
+   "name": "Angola",
+   "adopted": 2010,
+   "years": 15,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 15.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "José Eduardo dos Santos",
+     "role": "President"
+    },
+    {
+     "name": "Paulo Kassoma",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "djibouti",
+   "name": "Djibouti",
+   "adopted": 1992,
+   "years": 33,
+   "headsOfState": 1,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 33.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Hassan Gouled Aptidon",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "azerbaijan",
+   "name": "Azerbaijan",
+   "adopted": 1995,
+   "years": 30,
+   "headsOfState": 1,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 30.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Heydar Aliyev",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "turkmenistan",
+   "name": "Turkmenistan",
+   "adopted": 2008,
+   "years": 17,
+   "headsOfState": 1,
+   "headsOfGovernment": 1,
+   "office": "hos",
+   "transitions": 1,
+   "yearsPerTransition": 17.0,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "⚠️ Gurbanguly Berdimuhamedow",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "switzerland",
+   "name": "Switzerland",
+   "adopted": 1999,
+   "years": 26,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {
+    "rotating": 27
+   },
+   "inOfficeAtAdoption": [],
+   "approximateRows": 0,
+   "constitutionsSince1789": 7
+  },
+  {
+   "slug": "cuba",
+   "name": "Cuba",
+   "adopted": 2019,
+   "years": 6,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {
+    "party": 1
+   },
+   "inOfficeAtAdoption": [
+    {
+     "name": "Miguel Díaz-Canel",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 7
+  },
+  {
+   "slug": "guinea",
+   "name": "Guinea",
+   "adopted": 2025,
+   "years": 0,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Mamady Doumbouya",
+     "role": "President"
+    },
+    {
+     "name": "Bah Oury",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 6
+  },
+  {
+   "slug": "gabon",
+   "name": "Gabon",
+   "adopted": 2024,
+   "years": 1,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Raymond Ndong Sima",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "mali",
+   "name": "Mali",
+   "adopted": 2023,
+   "years": 2,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Assimi Goïta",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 4
+  },
+  {
+   "slug": "central-african-republic",
+   "name": "Central African Republic",
+   "adopted": 2023,
+   "years": 2,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Félix Moloua",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 8
+  },
+  {
+   "slug": "comoros",
+   "name": "Comoros",
+   "adopted": 2018,
+   "years": 7,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Azali Assoumani",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 5
+  },
+  {
+   "slug": "uzbekistan",
+   "name": "Uzbekistan",
+   "adopted": 2023,
+   "years": 2,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Abdulla Aripov",
+     "role": "Prime Minister"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "oman",
+   "name": "Oman",
+   "adopted": 2021,
+   "years": 4,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "👑 Haitham bin Tarik Al Said",
+     "role": "Monarch"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 2
+  },
+  {
+   "slug": "eritrea",
+   "name": "Eritrea",
+   "adopted": 1997,
+   "years": 28,
+   "headsOfState": 0,
+   "headsOfGovernment": 0,
+   "office": "hos",
+   "transitions": 0,
+   "yearsPerTransition": null,
+   "excluded": {},
+   "inOfficeAtAdoption": [
+    {
+     "name": "Isaias Afwerki",
+     "role": "President"
+    }
+   ],
+   "approximateRows": 0,
+   "constitutionsSince1789": 1
+  }
+ ],
+ "spanners": [
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "👑 Bhumibol Adulyadej (Rama IX)",
+   "role": "Monarch",
+   "start": 1946,
+   "end": 2016,
+   "constitutionsOutlasted": 8,
+   "adoptedDuring": [
+    1947,
+    1949,
+    1968,
+    1974,
+    1976,
+    1978,
+    1997,
+    2007
+   ]
+  },
+  {
+   "slug": "serbia",
+   "country": "Serbia",
+   "name": "Josip Broz Tito",
+   "role": "President",
+   "start": 1945,
+   "end": 1980,
+   "constitutionsOutlasted": 4,
+   "adoptedDuring": [
+    1946,
+    1953,
+    1963,
+    1974
+   ]
+  },
+  {
+   "slug": "spain",
+   "country": "Spain",
+   "name": "👑 Queen Isabel II",
+   "role": "Monarch",
+   "start": 1833,
+   "end": 1868,
+   "constitutionsOutlasted": 3,
+   "adoptedDuring": [
+    1834,
+    1837,
+    1845
+   ]
+  },
+  {
+   "slug": "greece",
+   "country": "Greece",
+   "name": "👑 George II",
+   "role": "Monarch",
+   "start": 1922,
+   "end": 1947,
+   "constitutionsOutlasted": 3,
+   "adoptedDuring": [
+    1925,
+    1926,
+    1927
+   ]
+  },
+  {
+   "slug": "ethiopia",
+   "country": "Ethiopia",
+   "name": "👑 Haile Selassie I",
+   "role": "Monarch",
+   "start": 1930,
+   "end": 1974,
+   "constitutionsOutlasted": 3,
+   "adoptedDuring": [
+    1931,
+    1955,
+    1974
+   ]
+  },
+  {
+   "slug": "morocco",
+   "country": "Morocco",
+   "name": "👑 King Hassan II",
+   "role": "Monarch",
+   "start": 1961,
+   "end": 1999,
+   "constitutionsOutlasted": 3,
+   "adoptedDuring": [
+    1962,
+    1970,
+    1972
+   ]
+  },
+  {
+   "slug": "togo",
+   "country": "Togo",
+   "name": "Gnassingbé Eyadéma",
+   "role": "President",
+   "start": 1967,
+   "end": 2005,
+   "constitutionsOutlasted": 3,
+   "adoptedDuring": [
+    1971,
+    1979,
+    1992
+   ]
+  },
+  {
+   "slug": "kyrgyzstan",
+   "country": "Kyrgyzstan",
+   "name": "Kurmanbek Bakiyev",
+   "role": "President",
+   "start": 2005,
+   "end": 2010,
+   "constitutionsOutlasted": 3,
+   "adoptedDuring": [
+    2006,
+    2007,
+    2010
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "Head of State (National Convention)",
+   "role": "Head of State (National Convention)",
+   "start": 1792,
+   "end": 1795,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1793,
+    1795
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "Napoleon Bonaparte (First Consul)",
+   "role": "First Consul",
+   "start": 1799,
+   "end": 1804,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1802,
+    1804
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "👑 Jean-Jacques Dessalines (Jacques I)",
+   "role": "Emperor",
+   "start": 1804,
+   "end": 1806,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1805,
+    1806
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Alexandre Pétion",
+   "role": "President",
+   "start": 1807,
+   "end": 1818,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1811,
+    1816
+   ]
+  },
+  {
+   "slug": "portugal",
+   "country": "Portugal",
+   "name": "👑 João VI",
+   "role": "Monarch",
+   "start": 1816,
+   "end": 1826,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1822,
+    1826
+   ]
+  },
+  {
+   "slug": "denmark",
+   "country": "Denmark",
+   "name": "👑 Frederik VII",
+   "role": "Monarch",
+   "start": 1848,
+   "end": 1863,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1849,
+    1863
+   ]
+  },
+  {
+   "slug": "russia",
+   "country": "Russia",
+   "name": "Vladimir Lenin",
+   "role": "Chairman, Council of People's Commissars",
+   "start": 1917,
+   "end": 1924,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1918,
+    1924
+   ]
+  },
+  {
+   "slug": "poland",
+   "country": "Poland",
+   "name": "Józef Piłsudski",
+   "role": "President (Chief of State)",
+   "start": 1918,
+   "end": 1922,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1919,
+    1921
+   ]
+  },
+  {
+   "slug": "latvia",
+   "country": "Latvia",
+   "name": "Jānis Čakste",
+   "role": "President",
+   "start": 1918,
+   "end": 1927,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1919,
+    1922
+   ]
+  },
+  {
+   "slug": "egypt",
+   "country": "Egypt",
+   "name": "👑 King Fuad I",
+   "role": "Monarch",
+   "start": 1922,
+   "end": 1936,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1923,
+    1930
+   ]
+  },
+  {
+   "slug": "lithuania",
+   "country": "Lithuania",
+   "name": "Antanas Smetona",
+   "role": "President",
+   "start": 1926,
+   "end": 1940,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1928,
+    1938
+   ]
+  },
+  {
+   "slug": "brazil",
+   "country": "Brazil",
+   "name": "⚠️ Getúlio Vargas",
+   "role": "President",
+   "start": 1930,
+   "end": 1945,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1934,
+    1937
+   ]
+  },
+  {
+   "slug": "poland",
+   "country": "Poland",
+   "name": "⚠️ Bolesław Bierut",
+   "role": "President",
+   "start": 1945,
+   "end": 1956,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1947,
+    1952
+   ]
+  },
+  {
+   "slug": "vietnam",
+   "country": "Vietnam",
+   "name": "Pham Van Dong",
+   "role": "Prime Minister",
+   "start": 1955,
+   "end": 1987,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1960,
+    1980
+   ]
+  },
+  {
+   "slug": "nepal",
+   "country": "Nepal",
+   "name": "👑 Mahendra",
+   "role": "Monarch",
+   "start": 1955,
+   "end": 1972,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1959,
+    1962
+   ]
+  },
+  {
+   "slug": "dominican-republic",
+   "country": "Dominican Republic",
+   "name": "Joaquín Balaguer",
+   "role": "President",
+   "start": 1960,
+   "end": 1962,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1961,
+    1962
+   ]
+  },
+  {
+   "slug": "cameroon",
+   "country": "Cameroon",
+   "name": "Ahmadou Ahidjo",
+   "role": "President",
+   "start": 1960,
+   "end": 1982,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1961,
+    1972
+   ]
+  },
+  {
+   "slug": "congo",
+   "country": "Congo",
+   "name": "Fulbert Youlou",
+   "role": "President",
+   "start": 1960,
+   "end": 1963,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1961,
+    1963
+   ]
+  },
+  {
+   "slug": "zambia",
+   "country": "Zambia",
+   "name": "Kenneth Kaunda",
+   "role": "President",
+   "start": 1964,
+   "end": 1991,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1973,
+    1991
+   ]
+  },
+  {
+   "slug": "congo-dr",
+   "country": "Congo DR",
+   "name": "⚠️ Mobutu Sese Seko",
+   "role": "President",
+   "start": 1965,
+   "end": 1997,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1967,
+    1997
+   ]
+  },
+  {
+   "slug": "lesotho",
+   "country": "Lesotho",
+   "name": "Leabua Jonathan",
+   "role": "Prime Minister",
+   "start": 1965,
+   "end": 1986,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1966,
+    1983
+   ]
+  },
+  {
+   "slug": "guyana",
+   "country": "Guyana",
+   "name": "Forbes Burnham",
+   "role": "Prime Minister",
+   "start": 1966,
+   "end": 1980,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1970,
+    1980
+   ]
+  },
+  {
+   "slug": "gabon",
+   "country": "Gabon",
+   "name": "Omar Bongo",
+   "role": "President",
+   "start": 1967,
+   "end": 2009,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1975,
+    1991
+   ]
+  },
+  {
+   "slug": "bahrain",
+   "country": "Bahrain",
+   "name": "Khalifa bin Salman Al Khalifa",
+   "role": "Prime Minister",
+   "start": 1971,
+   "end": 2020,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1973,
+    2002
+   ]
+  },
+  {
+   "slug": "benin",
+   "country": "Benin",
+   "name": "Mathieu Kérékou",
+   "role": "President",
+   "start": 1972,
+   "end": 1991,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1977,
+    1990
+   ]
+  },
+  {
+   "slug": "seychelles",
+   "country": "Seychelles",
+   "name": "France-Albert René",
+   "role": "President",
+   "start": 1977,
+   "end": 2004,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1979,
+    1993
+   ]
+  },
+  {
+   "slug": "maldives",
+   "country": "Maldives",
+   "name": "Maumoon Abdul Gayoom",
+   "role": "President",
+   "start": 1978,
+   "end": 2008,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1998,
+    2008
+   ]
+  },
+  {
+   "slug": "equatorial-guinea",
+   "country": "Equatorial Guinea",
+   "name": "Teodoro Obiang",
+   "role": "President",
+   "start": 1979,
+   "end": null,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1982,
+    1991
+   ]
+  },
+  {
+   "slug": "cambodia",
+   "country": "Cambodia",
+   "name": "Heng Samrin",
+   "role": "President",
+   "start": 1979,
+   "end": 1992,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1981,
+    1989
+   ]
+  },
+  {
+   "slug": "mauritania",
+   "country": "Mauritania",
+   "name": "Maaouya Ould Sid'Ahmed Taya",
+   "role": "Prime Minister",
+   "start": 1984,
+   "end": 1992,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1985,
+    1991
+   ]
+  },
+  {
+   "slug": "cambodia",
+   "country": "Cambodia",
+   "name": "⚠️ Hun Sen",
+   "role": "Prime Minister",
+   "start": 1985,
+   "end": 1993,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1989,
+    1993
+   ]
+  },
+  {
+   "slug": "mozambique",
+   "country": "Mozambique",
+   "name": "Joaquim Chissano",
+   "role": "President",
+   "start": 1986,
+   "end": 2005,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1990,
+    2004
+   ]
+  },
+  {
+   "slug": "burkina-faso",
+   "country": "Burkina Faso",
+   "name": "Blaise Compaoré",
+   "role": "President",
+   "start": 1987,
+   "end": 2014,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1988,
+    1991
+   ]
+  },
+  {
+   "slug": "niger",
+   "country": "Niger",
+   "name": "Ali Saibou",
+   "role": "President",
+   "start": 1987,
+   "end": 1993,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1989,
+    1992
+   ]
+  },
+  {
+   "slug": "chad",
+   "country": "Chad",
+   "name": "Idriss Déby",
+   "role": "President",
+   "start": 1991,
+   "end": 2021,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    1996,
+    2018
+   ]
+  },
+  {
+   "slug": "niger",
+   "country": "Niger",
+   "name": "Mamadou Tandja",
+   "role": "President",
+   "start": 1999,
+   "end": 2010,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    2009,
+    2010
+   ]
+  },
+  {
+   "slug": "congo-dr",
+   "country": "Congo DR",
+   "name": "Joseph Kabila",
+   "role": "President",
+   "start": 2001,
+   "end": 2019,
+   "constitutionsOutlasted": 2,
+   "adoptedDuring": [
+    2003,
+    2005
+   ]
+  },
+  {
+   "slug": "poland",
+   "country": "Poland",
+   "name": "👑 Stanisław II August Poniatowski",
+   "role": "King",
+   "start": 1764,
+   "end": 1795,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1791
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "👑 Louis XVI",
+   "role": "Monarch",
+   "start": 1774,
+   "end": 1792,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1791
+   ]
+  },
+  {
+   "slug": "spain",
+   "country": "Spain",
+   "name": "👑 King Carlos IV",
+   "role": "Monarch",
+   "start": 1788,
+   "end": 1808,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1808
+   ]
+  },
+  {
+   "slug": "sweden",
+   "country": "Sweden",
+   "name": "👑 Gustav IV Adolf",
+   "role": "Monarch",
+   "start": 1792,
+   "end": 1809,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1809
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "Executive Directory",
+   "role": "President of the Directory",
+   "start": 1795,
+   "end": 1799,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1799
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "⚠️ 👑 Emperor Napoleon I",
+   "role": "Monarch",
+   "start": 1804,
+   "end": 1814,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1814
+   ]
+  },
+  {
+   "slug": "netherlands",
+   "country": "Netherlands",
+   "name": "Rutger Jan Schimmelpenninck",
+   "role": "Grand Pensionary",
+   "start": 1805,
+   "end": 1806,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1806
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "👑 Henri Christophe (Henri I)",
+   "role": "King",
+   "start": 1811,
+   "end": 1820,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1816
+   ]
+  },
+  {
+   "slug": "netherlands",
+   "country": "Netherlands",
+   "name": "👑 William I",
+   "role": "Sovereign Prince",
+   "start": 1813,
+   "end": 1815,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1814
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Jean-Pierre Boyer",
+   "role": "President",
+   "start": 1818,
+   "end": 1843,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1843
+   ]
+  },
+  {
+   "slug": "brazil",
+   "country": "Brazil",
+   "name": "👑 Emperor Pedro I",
+   "role": "Emperor",
+   "start": 1822,
+   "end": 1831,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1824
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "👑 Charles X",
+   "role": "Monarch",
+   "start": 1824,
+   "end": 1830,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1830
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "👑 Louis Philippe I",
+   "role": "Monarch",
+   "start": 1830,
+   "end": 1848,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1848
+   ]
+  },
+  {
+   "slug": "colombia",
+   "country": "Colombia",
+   "name": "José María Obando",
+   "role": "President",
+   "start": 1831,
+   "end": 1832,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1832
+   ]
+  },
+  {
+   "slug": "italy",
+   "country": "Italy",
+   "name": "👑 Charles Albert",
+   "role": "King of Sardinia",
+   "start": 1831,
+   "end": 1849,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1848
+   ]
+  },
+  {
+   "slug": "mexico",
+   "country": "Mexico",
+   "name": "Miguel Barragan",
+   "role": "President",
+   "start": 1834,
+   "end": 1836,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1836
+   ]
+  },
+  {
+   "slug": "portugal",
+   "country": "Portugal",
+   "name": "👑 Maria II",
+   "role": "Monarch",
+   "start": 1834,
+   "end": 1853,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1838
+   ]
+  },
+  {
+   "slug": "portugal",
+   "country": "Portugal",
+   "name": "👑 Fernando II",
+   "role": "Monarch",
+   "start": 1837,
+   "end": 1853,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1838
+   ]
+  },
+  {
+   "slug": "mexico",
+   "country": "Mexico",
+   "name": "⚠️ Antonio Lopez de Santa Anna",
+   "role": "President",
+   "start": 1840,
+   "end": 1844,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1843
+   ]
+  },
+  {
+   "slug": "colombia",
+   "country": "Colombia",
+   "name": "Pedro Alcántara Herrán",
+   "role": "President",
+   "start": 1841,
+   "end": 1845,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1843
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Jean-Louis Pierrot",
+   "role": "President",
+   "start": 1845,
+   "end": 1846,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1846
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "👑 Faustin Soulouque (Faustin I)",
+   "role": "Emperor",
+   "start": 1847,
+   "end": 1859,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1849
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "⚠️ Louis-Napoleon Bonaparte",
+   "role": "President / Prince-President",
+   "start": 1848,
+   "end": 1852,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1852
+   ]
+  },
+  {
+   "slug": "italy",
+   "country": "Italy",
+   "name": "👑 Victor Emmanuel II",
+   "role": "King of Sardinia",
+   "start": 1849,
+   "end": 1861,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1861
+   ]
+  },
+  {
+   "slug": "colombia",
+   "country": "Colombia",
+   "name": "José Hilario López",
+   "role": "President",
+   "start": 1849,
+   "end": 1853,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1853
+   ]
+  },
+  {
+   "slug": "luxembourg",
+   "country": "Luxembourg",
+   "name": "👑 William III",
+   "role": "Monarch",
+   "start": 1849,
+   "end": 1890,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1868
+   ]
+  },
+  {
+   "slug": "mexico",
+   "country": "Mexico",
+   "name": "Ignacio Comonfort",
+   "role": "President",
+   "start": 1855,
+   "end": 1858,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1857
+   ]
+  },
+  {
+   "slug": "colombia",
+   "country": "Colombia",
+   "name": "Mariano Ospina Rodríguez",
+   "role": "President",
+   "start": 1857,
+   "end": 1861,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1858
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Fabre Geffrard",
+   "role": "President",
+   "start": 1859,
+   "end": 1867,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1867
+   ]
+  },
+  {
+   "slug": "colombia",
+   "country": "Colombia",
+   "name": "Tomás Cipriano de Mosquera",
+   "role": "President",
+   "start": 1861,
+   "end": 1863,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1863
+   ]
+  },
+  {
+   "slug": "turkey",
+   "country": "Turkey",
+   "name": "👑 Abdulaziz",
+   "role": "Sultan",
+   "start": 1861,
+   "end": 1876,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1876
+   ]
+  },
+  {
+   "slug": "denmark",
+   "country": "Denmark",
+   "name": "👑 Christian IX",
+   "role": "Monarch",
+   "start": 1863,
+   "end": 1906,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1866
+   ]
+  },
+  {
+   "slug": "greece",
+   "country": "Greece",
+   "name": "👑 George I",
+   "role": "Monarch",
+   "start": 1863,
+   "end": 1913,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1864
+   ]
+  },
+  {
+   "slug": "japan",
+   "country": "Japan",
+   "name": "👑 Meiji",
+   "role": "Emperor",
+   "start": 1867,
+   "end": 1912,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1889
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Nissage Saget",
+   "role": "President",
+   "start": 1870,
+   "end": 1874,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1874
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "Patrice de Mac-Mahon",
+   "role": "President",
+   "start": 1873,
+   "end": 1879,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1875
+   ]
+  },
+  {
+   "slug": "spain",
+   "country": "Spain",
+   "name": "👑 King Alfonso XII",
+   "role": "Monarch",
+   "start": 1874,
+   "end": 1885,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1876
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Boisrond Canal",
+   "role": "President",
+   "start": 1876,
+   "end": 1879,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1879
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Lysius Salomon",
+   "role": "President",
+   "start": 1879,
+   "end": 1888,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1888
+   ]
+  },
+  {
+   "slug": "colombia",
+   "country": "Colombia",
+   "name": "Rafael Núñez",
+   "role": "President",
+   "start": 1884,
+   "end": 1894,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1886
+   ]
+  },
+  {
+   "slug": "japan",
+   "country": "Japan",
+   "name": "Kuroda Kiyotaka",
+   "role": "Prime Minister",
+   "start": 1888,
+   "end": 1889,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1889
+   ]
+  },
+  {
+   "slug": "brazil",
+   "country": "Brazil",
+   "name": "Deodoro da Fonseca",
+   "role": "President",
+   "start": 1889,
+   "end": 1891,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1891
+   ]
+  },
+  {
+   "slug": "monaco",
+   "country": "Monaco",
+   "name": "👑 Albert I",
+   "role": "Monarch",
+   "start": 1889,
+   "end": 1922,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1911
+   ]
+  },
+  {
+   "slug": "russia",
+   "country": "Russia",
+   "name": "👑 Emperor Nicholas II",
+   "role": "Emperor",
+   "start": 1894,
+   "end": 1917,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1905
+   ]
+  },
+  {
+   "slug": "iran",
+   "country": "Iran",
+   "name": "👑 Mozaffar ad-Din Shah",
+   "role": "Shah",
+   "start": 1896,
+   "end": 1907,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1906
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Tirésias Simon Sam",
+   "role": "President",
+   "start": 1896,
+   "end": 1902,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1902
+   ]
+  },
+  {
+   "slug": "spain",
+   "country": "Spain",
+   "name": "👑 King Alfonso XIII",
+   "role": "Monarch",
+   "start": 1902,
+   "end": 1931,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1931
+   ]
+  },
+  {
+   "slug": "china",
+   "country": "China",
+   "name": "👑 Xuantong Emperor (Puyi)",
+   "role": "Emperor",
+   "start": 1908,
+   "end": 1912,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1911
+   ]
+  },
+  {
+   "slug": "portugal",
+   "country": "Portugal",
+   "name": "Teófilo Braga",
+   "role": "President",
+   "start": 1910,
+   "end": 1911,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1911
+   ]
+  },
+  {
+   "slug": "nepal",
+   "country": "Nepal",
+   "name": "👑 Tribhuvan",
+   "role": "Monarch",
+   "start": 1911,
+   "end": 1955,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1948
+   ]
+  },
+  {
+   "slug": "albania",
+   "country": "Albania",
+   "name": "Ismail Qemali",
+   "role": "Chairman",
+   "start": 1912,
+   "end": 1914,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1914
+   ]
+  },
+  {
+   "slug": "denmark",
+   "country": "Denmark",
+   "name": "👑 Christian X",
+   "role": "Monarch",
+   "start": 1912,
+   "end": 1947,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1915
+   ]
+  },
+  {
+   "slug": "mexico",
+   "country": "Mexico",
+   "name": "Venustiano Carranza",
+   "role": "President",
+   "start": 1914,
+   "end": 1920,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1917
+   ]
+  },
+  {
+   "slug": "romania",
+   "country": "Romania",
+   "name": "👑 Ferdinand I",
+   "role": "Monarch",
+   "start": 1914,
+   "end": 1927,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1923
+   ]
+  },
+  {
+   "slug": "finland",
+   "country": "Finland",
+   "name": "C. G. E. Mannerheim",
+   "role": "Regent",
+   "start": 1918,
+   "end": 1919,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1919
+   ]
+  },
+  {
+   "slug": "iceland",
+   "country": "Iceland",
+   "name": "👑 Christian X",
+   "role": "King",
+   "start": 1918,
+   "end": 1944,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1944
+   ]
+  },
+  {
+   "slug": "turkey",
+   "country": "Turkey",
+   "name": "👑 Mehmed VI",
+   "role": "Sultan",
+   "start": 1918,
+   "end": 1922,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1921
+   ]
+  },
+  {
+   "slug": "serbia",
+   "country": "Serbia",
+   "name": "👑 Peter I",
+   "role": "King",
+   "start": 1918,
+   "end": 1921,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1921
+   ]
+  },
+  {
+   "slug": "afghanistan",
+   "country": "Afghanistan",
+   "name": "👑 Amanullah Khan",
+   "role": "Monarch",
+   "start": 1919,
+   "end": 1926,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1923
+   ]
+  },
+  {
+   "slug": "estonia",
+   "country": "Estonia",
+   "name": "Jaan Tõnisson",
+   "role": "State Elder",
+   "start": 1919,
+   "end": 1920,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1920
+   ]
+  },
+  {
+   "slug": "lithuania",
+   "country": "Lithuania",
+   "name": "Aleksandras Stulginskis",
+   "role": "President",
+   "start": 1920,
+   "end": 1926,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1922
+   ]
+  },
+  {
+   "slug": "serbia",
+   "country": "Serbia",
+   "name": "👑 Alexander I",
+   "role": "King",
+   "start": 1921,
+   "end": 1934,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1931
+   ]
+  },
+  {
+   "slug": "turkey",
+   "country": "Turkey",
+   "name": "Mustafa Kemal Atatürk",
+   "role": "President",
+   "start": 1923,
+   "end": 1938,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1924
+   ]
+  },
+  {
+   "slug": "mongolia",
+   "country": "Mongolia",
+   "name": "Balingiin Tserendorj",
+   "role": "Prime Minister",
+   "start": 1923,
+   "end": 1928,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1924
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "👑 Prajadhipok (Rama VII)",
+   "role": "Monarch",
+   "start": 1925,
+   "end": 1935,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1932
+   ]
+  },
+  {
+   "slug": "albania",
+   "country": "Albania",
+   "name": "Ahmet Zogu",
+   "role": "President",
+   "start": 1925,
+   "end": 1928,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1928
+   ]
+  },
+  {
+   "slug": "japan",
+   "country": "Japan",
+   "name": "👑 Shōwa (Hirohito)",
+   "role": "Emperor",
+   "start": 1926,
+   "end": 1989,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1946
+   ]
+  },
+  {
+   "slug": "poland",
+   "country": "Poland",
+   "name": "Ignacy Mościcki",
+   "role": "President",
+   "start": 1926,
+   "end": 1939,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1935
+   ]
+  },
+  {
+   "slug": "austria",
+   "country": "Austria",
+   "name": "Wilhelm Miklas",
+   "role": "Federal President",
+   "start": 1928,
+   "end": 1938,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1934
+   ]
+  },
+  {
+   "slug": "albania",
+   "country": "Albania",
+   "name": "👑 Zog I",
+   "role": "Monarch",
+   "start": 1928,
+   "end": 1939,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1939
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Sténio Vincent",
+   "role": "President",
+   "start": 1930,
+   "end": 1941,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1935
+   ]
+  },
+  {
+   "slug": "romania",
+   "country": "Romania",
+   "name": "👑 Carol II",
+   "role": "Monarch",
+   "start": 1930,
+   "end": 1940,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1938
+   ]
+  },
+  {
+   "slug": "portugal",
+   "country": "Portugal",
+   "name": "⚠️ António de Oliveira Salazar",
+   "role": "Prime Minister",
+   "start": 1932,
+   "end": 1968,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1933
+   ]
+  },
+  {
+   "slug": "austria",
+   "country": "Austria",
+   "name": "⚠️ Engelbert Dollfuss",
+   "role": "Federal Chancellor",
+   "start": 1932,
+   "end": 1934,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1934
+   ]
+  },
+  {
+   "slug": "estonia",
+   "country": "Estonia",
+   "name": "Konstantin Päts",
+   "role": "State Elder",
+   "start": 1932,
+   "end": 1933,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1933
+   ]
+  },
+  {
+   "slug": "ireland",
+   "country": "Ireland",
+   "name": "Éamon de Valera",
+   "role": "Taoiseach",
+   "start": 1932,
+   "end": 1948,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1937
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "Albert Lebrun",
+   "role": "President",
+   "start": 1932,
+   "end": 1940,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1940
+   ]
+  },
+  {
+   "slug": "afghanistan",
+   "country": "Afghanistan",
+   "name": "Mohammed Zahir Shah",
+   "role": "President",
+   "start": 1933,
+   "end": 1973,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1964
+   ]
+  },
+  {
+   "slug": "estonia",
+   "country": "Estonia",
+   "name": "Konstantin Päts",
+   "role": "State Elder",
+   "start": 1934,
+   "end": 1938,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1937
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "👑 Ananda Mahidol (Rama VIII)",
+   "role": "Monarch",
+   "start": 1935,
+   "end": 1946,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1946
+   ]
+  },
+  {
+   "slug": "latvia",
+   "country": "Latvia",
+   "name": "Kārlis Ulmanis",
+   "role": "President",
+   "start": 1936,
+   "end": 1940,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1940
+   ]
+  },
+  {
+   "slug": "turkey",
+   "country": "Turkey",
+   "name": "İsmet İnönü",
+   "role": "President",
+   "start": 1938,
+   "end": 1950,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1945
+   ]
+  },
+  {
+   "slug": "mongolia",
+   "country": "Mongolia",
+   "name": "Khorloogiin Choibalsan",
+   "role": "Prime Minister",
+   "start": 1939,
+   "end": 1952,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1940
+   ]
+  },
+  {
+   "slug": "panama",
+   "country": "Panama",
+   "name": "Augusto Samuel Boyd",
+   "role": "President",
+   "start": 1939,
+   "end": 1940,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1940
+   ]
+  },
+  {
+   "slug": "spain",
+   "country": "Spain",
+   "name": "⚠️ Francisco Franco",
+   "role": "Monarch",
+   "start": 1939,
+   "end": 1975,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1967
+   ]
+  },
+  {
+   "slug": "iran",
+   "country": "Iran",
+   "name": "👑 Mohammad Reza Pahlavi",
+   "role": "Shah",
+   "start": 1941,
+   "end": 1979,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1979
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Élie Lescot",
+   "role": "President",
+   "start": 1941,
+   "end": 1946,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1946
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "Charles de Gaulle",
+   "role": "President (GPRF)",
+   "start": 1944,
+   "end": 1946,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1946
+   ]
+  },
+  {
+   "slug": "panama",
+   "country": "Panama",
+   "name": "Enrique Adolfo Jiménez",
+   "role": "President",
+   "start": 1945,
+   "end": 1948,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1946
+   ]
+  },
+  {
+   "slug": "italy",
+   "country": "Italy",
+   "name": "Alcide De Gasperi",
+   "role": "Prime Minister",
+   "start": 1945,
+   "end": 1953,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1947
+   ]
+  },
+  {
+   "slug": "japan",
+   "country": "Japan",
+   "name": "Shidehara Kijuro",
+   "role": "Prime Minister",
+   "start": 1945,
+   "end": 1946,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1946
+   ]
+  },
+  {
+   "slug": "vietnam",
+   "country": "Vietnam",
+   "name": "Ho Chi Minh",
+   "role": "President",
+   "start": 1945,
+   "end": 1969,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1960
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "Seni Pramoj",
+   "role": "Prime Minister",
+   "start": 1945,
+   "end": 1946,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1946
+   ]
+  },
+  {
+   "slug": "indonesia",
+   "country": "Indonesia",
+   "name": "Sukarno",
+   "role": "President",
+   "start": 1945,
+   "end": 1967,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1949
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "Thawan Thamrongnawasawat",
+   "role": "Prime Minister",
+   "start": 1946,
+   "end": 1947,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1947
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Dumarsais Estimé",
+   "role": "President",
+   "start": 1946,
+   "end": 1950,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1950
+   ]
+  },
+  {
+   "slug": "bulgaria",
+   "country": "Bulgaria",
+   "name": "Georgi Dimitrov",
+   "role": "Prime Minister",
+   "start": 1946,
+   "end": 1949,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1947
+   ]
+  },
+  {
+   "slug": "india",
+   "country": "India",
+   "name": "Jawaharlal Nehru",
+   "role": "Prime Minister",
+   "start": 1947,
+   "end": 1964,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1949
+   ]
+  },
+  {
+   "slug": "denmark",
+   "country": "Denmark",
+   "name": "👑 Frederik IX",
+   "role": "Monarch",
+   "start": 1947,
+   "end": 1972,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1953
+   ]
+  },
+  {
+   "slug": "greece",
+   "country": "Greece",
+   "name": "👑 Paul",
+   "role": "Monarch",
+   "start": 1947,
+   "end": 1964,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1952
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "⚠️ Plaek Phibunsongkhram (Phibun)",
+   "role": "Prime Minister",
+   "start": 1948,
+   "end": 1957,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1949
+   ]
+  },
+  {
+   "slug": "costa-rica",
+   "country": "Costa Rica",
+   "name": "José Figueres Ferrer",
+   "role": "President (Founding Junta of the Second Republic)",
+   "start": 1948,
+   "end": 1949,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1949
+   ]
+  },
+  {
+   "slug": "north-korea",
+   "country": "North Korea",
+   "name": "⚠️ Kim Il-sung",
+   "role": "Supreme Leader",
+   "start": 1948,
+   "end": 1994,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1972
+   ]
+  },
+  {
+   "slug": "monaco",
+   "country": "Monaco",
+   "name": "👑 Rainier III",
+   "role": "Monarch",
+   "start": 1949,
+   "end": 2005,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "kuwait",
+   "country": "Kuwait",
+   "name": "👑 Abdullah III Al-Salim Al-Sabah",
+   "role": "Monarch",
+   "start": 1950,
+   "end": 1965,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "jordan",
+   "country": "Jordan",
+   "name": "👑 Talal bin Abdullah",
+   "role": "Monarch",
+   "start": 1951,
+   "end": 1952,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1952
+   ]
+  },
+  {
+   "slug": "bhutan",
+   "country": "Bhutan",
+   "name": "👑 Jigme Dorji Wangchuck",
+   "role": "Monarch",
+   "start": 1952,
+   "end": 1972,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1953
+   ]
+  },
+  {
+   "slug": "mongolia",
+   "country": "Mongolia",
+   "name": "Yumjaagiin Tsedenbal",
+   "role": "Prime Minister",
+   "start": 1952,
+   "end": 1974,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1960
+   ]
+  },
+  {
+   "slug": "cuba",
+   "country": "Cuba",
+   "name": "⚠️ Fulgencio Batista",
+   "role": "President",
+   "start": 1952,
+   "end": 1959,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1959
+   ]
+  },
+  {
+   "slug": "egypt",
+   "country": "Egypt",
+   "name": "Gamal Abdel Nasser",
+   "role": "President",
+   "start": 1954,
+   "end": 1970,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1956
+   ]
+  },
+  {
+   "slug": "france",
+   "country": "France",
+   "name": "René Coty",
+   "role": "President (4th Republic)",
+   "start": 1954,
+   "end": 1959,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1958
+   ]
+  },
+  {
+   "slug": "pakistan",
+   "country": "Pakistan",
+   "name": "Chaudhry Mohammad Ali",
+   "role": "Prime Minister",
+   "start": 1955,
+   "end": 1956,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1956
+   ]
+  },
+  {
+   "slug": "israel",
+   "country": "Israel",
+   "name": "David Ben-Gurion",
+   "role": "Prime Minister",
+   "start": 1955,
+   "end": 1963,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1958
+   ]
+  },
+  {
+   "slug": "somalia",
+   "country": "Somalia",
+   "name": "Abdullahi Issa",
+   "role": "Prime Minister",
+   "start": 1956,
+   "end": 1960,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1960
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "⚠️ François Duvalier (Papa Doc)",
+   "role": "President",
+   "start": 1957,
+   "end": 1971,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1964
+   ]
+  },
+  {
+   "slug": "tunisia",
+   "country": "Tunisia",
+   "name": "Habib Bourguiba",
+   "role": "President",
+   "start": 1957,
+   "end": 1987,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1959
+   ]
+  },
+  {
+   "slug": "senegal",
+   "country": "Senegal",
+   "name": "Mamadou Dia",
+   "role": "Prime Minister",
+   "start": 1957,
+   "end": 1962,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1960
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Ahmed Sékou Touré",
+   "role": "President",
+   "start": 1958,
+   "end": 1984,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1982
+   ]
+  },
+  {
+   "slug": "south-africa",
+   "country": "South Africa",
+   "name": "⚠️ H.F. Verwoerd",
+   "role": "Prime Minister",
+   "start": 1958,
+   "end": 1966,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1961
+   ]
+  },
+  {
+   "slug": "pakistan",
+   "country": "Pakistan",
+   "name": "⚠️ Ayub Khan",
+   "role": "President / CMLA",
+   "start": 1958,
+   "end": 1969,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "cuba",
+   "country": "Cuba",
+   "name": "Osvaldo Dorticós Torrado",
+   "role": "President",
+   "start": 1959,
+   "end": 1976,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1976
+   ]
+  },
+  {
+   "slug": "venezuela",
+   "country": "Venezuela",
+   "name": "Romulo Betancourt",
+   "role": "President",
+   "start": 1959,
+   "end": 1964,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1961
+   ]
+  },
+  {
+   "slug": "burkina-faso",
+   "country": "Burkina Faso",
+   "name": "Maurice Yaméogo",
+   "role": "President",
+   "start": 1959,
+   "end": 1966,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1960
+   ]
+  },
+  {
+   "slug": "nigeria",
+   "country": "Nigeria",
+   "name": "Abubakar Tafawa Balewa",
+   "role": "Prime Minister",
+   "start": 1960,
+   "end": 1966,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1963
+   ]
+  },
+  {
+   "slug": "senegal",
+   "country": "Senegal",
+   "name": "Léopold Sédar Senghor",
+   "role": "President",
+   "start": 1960,
+   "end": 1980,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1963
+   ]
+  },
+  {
+   "slug": "chad",
+   "country": "Chad",
+   "name": "François Tombalbaye",
+   "role": "President",
+   "start": 1960,
+   "end": 1975,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "mauritania",
+   "country": "Mauritania",
+   "name": "Moktar Ould Daddah",
+   "role": "Prime Minister",
+   "start": 1960,
+   "end": 1961,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1961
+   ]
+  },
+  {
+   "slug": "congo-dr",
+   "country": "Congo DR",
+   "name": "Joseph Kasa-Vubu",
+   "role": "President",
+   "start": 1960,
+   "end": 1965,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1964
+   ]
+  },
+  {
+   "slug": "turkey",
+   "country": "Turkey",
+   "name": "Cemal Gürsel",
+   "role": "President",
+   "start": 1960,
+   "end": 1966,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1961
+   ]
+  },
+  {
+   "slug": "turkey",
+   "country": "Turkey",
+   "name": "Cemal Gürsel",
+   "role": "Prime Minister (Military Junta)",
+   "start": 1960,
+   "end": 1961,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1961
+   ]
+  },
+  {
+   "slug": "central-african-republic",
+   "country": "Central African Republic",
+   "name": "David Dacko",
+   "role": "President",
+   "start": 1960,
+   "end": 1966,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1964
+   ]
+  },
+  {
+   "slug": "myanmar",
+   "country": "Myanmar",
+   "name": "U Nu",
+   "role": "Prime Minister",
+   "start": 1960,
+   "end": 1962,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "uganda",
+   "country": "Uganda",
+   "name": "Benedicto Kiwanuka",
+   "role": "Prime Minister",
+   "start": 1961,
+   "end": 1962,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "rwanda",
+   "country": "Rwanda",
+   "name": "Grégoire Kayibanda",
+   "role": "Prime Minister",
+   "start": 1961,
+   "end": 1962,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "rwanda",
+   "country": "Rwanda",
+   "name": "Grégoire Kayibanda",
+   "role": "President",
+   "start": 1961,
+   "end": 1973,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "togo",
+   "country": "Togo",
+   "name": "Sylvanus Olympio",
+   "role": "President",
+   "start": 1961,
+   "end": 1963,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1963
+   ]
+  },
+  {
+   "slug": "tanzania",
+   "country": "Tanzania",
+   "name": "Julius Nyerere",
+   "role": "Prime Minister",
+   "start": 1961,
+   "end": 1962,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1962
+   ]
+  },
+  {
+   "slug": "sierra-leone",
+   "country": "Sierra Leone",
+   "name": "👑 Elizabeth II",
+   "role": "King",
+   "start": 1961,
+   "end": 1971,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1971
+   ]
+  },
+  {
+   "slug": "tanzania",
+   "country": "Tanzania",
+   "name": "Julius Nyerere",
+   "role": "President",
+   "start": 1962,
+   "end": 1985,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1977
+   ]
+  },
+  {
+   "slug": "trinidad-tobago",
+   "country": "Trinidad & Tobago",
+   "name": "Eric Williams",
+   "role": "Prime Minister",
+   "start": 1962,
+   "end": 1981,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1976
+   ]
+  },
+  {
+   "slug": "uganda",
+   "country": "Uganda",
+   "name": "Milton Obote",
+   "role": "Prime Minister",
+   "start": 1962,
+   "end": 1966,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1966
+   ]
+  },
+  {
+   "slug": "myanmar",
+   "country": "Myanmar",
+   "name": "⚠️ Ne Win",
+   "role": "President",
+   "start": 1962,
+   "end": 1981,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1974
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "⚠️ Thanom Kittikachorn",
+   "role": "Prime Minister",
+   "start": 1963,
+   "end": 1973,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1968
+   ]
+  },
+  {
+   "slug": "benin",
+   "country": "Benin",
+   "name": "Christophe Soglo",
+   "role": "President",
+   "start": 1963,
+   "end": 1964,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1964
+   ]
+  },
+  {
+   "slug": "uganda",
+   "country": "Uganda",
+   "name": "Edward Mutesa II",
+   "role": "President",
+   "start": 1963,
+   "end": 1966,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1966
+   ]
+  },
+  {
+   "slug": "brazil",
+   "country": "Brazil",
+   "name": "⚠️ Humberto Castelo Branco",
+   "role": "President",
+   "start": 1964,
+   "end": 1967,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1967
+   ]
+  },
+  {
+   "slug": "greece",
+   "country": "Greece",
+   "name": "👑 Constantine II",
+   "role": "Monarch",
+   "start": 1964,
+   "end": 1973,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1968
+   ]
+  },
+  {
+   "slug": "philippines",
+   "country": "Philippines",
+   "name": "⚠️ Ferdinand Marcos Sr.",
+   "role": "President",
+   "start": 1965,
+   "end": 1986,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1973
+   ]
+  },
+  {
+   "slug": "algeria",
+   "country": "Algeria",
+   "name": "⚠️ Houari Boumédiène",
+   "role": "President",
+   "start": 1965,
+   "end": 1978,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1976
+   ]
+  },
+  {
+   "slug": "ghana",
+   "country": "Ghana",
+   "name": "Joseph Arthur Ankrah",
+   "role": "President",
+   "start": 1966,
+   "end": 1969,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1969
+   ]
+  },
+  {
+   "slug": "central-african-republic",
+   "country": "Central African Republic",
+   "name": "Jean-Bedel Bokassa",
+   "role": "President",
+   "start": 1966,
+   "end": 1976,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1976
+   ]
+  },
+  {
+   "slug": "burundi",
+   "country": "Burundi",
+   "name": "Michel Micombero",
+   "role": "President",
+   "start": 1966,
+   "end": 1976,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1974
+   ]
+  },
+  {
+   "slug": "lesotho",
+   "country": "Lesotho",
+   "name": "👑 Moshoeshoe II",
+   "role": "King",
+   "start": 1966,
+   "end": 1990,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1983
+   ]
+  },
+  {
+   "slug": "malawi",
+   "country": "Malawi",
+   "name": "Hastings Banda",
+   "role": "President",
+   "start": 1966,
+   "end": 1994,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1994
+   ]
+  },
+  {
+   "slug": "uganda",
+   "country": "Uganda",
+   "name": "Milton Obote",
+   "role": "President",
+   "start": 1966,
+   "end": 1971,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1967
+   ]
+  },
+  {
+   "slug": "nigeria",
+   "country": "Nigeria",
+   "name": "Yakubu Gowon",
+   "role": "Head of State",
+   "start": 1966,
+   "end": 1975,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1975
+   ]
+  },
+  {
+   "slug": "greece",
+   "country": "Greece",
+   "name": "⚠️ Georgios Papadopoulos",
+   "role": "Prime Minister",
+   "start": 1967,
+   "end": 1973,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1968
+   ]
+  },
+  {
+   "slug": "yemen",
+   "country": "Yemen",
+   "name": "Abdul Rahman al-Iryani",
+   "role": "President",
+   "start": 1967,
+   "end": 1974,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1970
+   ]
+  },
+  {
+   "slug": "eswatini",
+   "country": "Eswatini",
+   "name": "Makhosini Dlamini",
+   "role": "Prime Minister",
+   "start": 1967,
+   "end": 1976,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1968
+   ]
+  },
+  {
+   "slug": "benin",
+   "country": "Benin",
+   "name": "Alphonse Alley",
+   "role": "President",
+   "start": 1967,
+   "end": 1968,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1968
+   ]
+  },
+  {
+   "slug": "equatorial-guinea",
+   "country": "Equatorial Guinea",
+   "name": "Francisco Macías Nguema Biyoko",
+   "role": "President",
+   "start": 1968,
+   "end": 1979,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1973
+   ]
+  },
+  {
+   "slug": "mali",
+   "country": "Mali",
+   "name": "Moussa Traoré",
+   "role": "President",
+   "start": 1968,
+   "end": 1991,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1974
+   ]
+  },
+  {
+   "slug": "congo",
+   "country": "Congo",
+   "name": "Alfred Raoul",
+   "role": "Prime Minister",
+   "start": 1968,
+   "end": 1969,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1969
+   ]
+  },
+  {
+   "slug": "benin",
+   "country": "Benin",
+   "name": "Paul-Émile de Souza",
+   "role": "President",
+   "start": 1969,
+   "end": 1970,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1970
+   ]
+  },
+  {
+   "slug": "panama",
+   "country": "Panama",
+   "name": "Demetrio B. Lakas",
+   "role": "President",
+   "start": 1969,
+   "end": 1978,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1972
+   ]
+  },
+  {
+   "slug": "bahamas",
+   "country": "Bahamas",
+   "name": "Lynden Pindling",
+   "role": "Prime Minister",
+   "start": 1969,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1973
+   ]
+  },
+  {
+   "slug": "sudan",
+   "country": "Sudan",
+   "name": "Jaafar Nimeiry",
+   "role": "President",
+   "start": 1969,
+   "end": 1985,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1973
+   ]
+  },
+  {
+   "slug": "congo",
+   "country": "Congo",
+   "name": "Marien Ngouabi",
+   "role": "President",
+   "start": 1969,
+   "end": 1977,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1973
+   ]
+  },
+  {
+   "slug": "vietnam",
+   "country": "Vietnam",
+   "name": "Ton Duc Thang",
+   "role": "President",
+   "start": 1969,
+   "end": 1980,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1980
+   ]
+  },
+  {
+   "slug": "morocco",
+   "country": "Morocco",
+   "name": "Ahmed Laraki",
+   "role": "Prime Minister",
+   "start": 1969,
+   "end": 1971,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1970
+   ]
+  },
+  {
+   "slug": "sweden",
+   "country": "Sweden",
+   "name": "Olof Palme",
+   "role": "Prime Minister",
+   "start": 1969,
+   "end": 1976,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1974
+   ]
+  },
+  {
+   "slug": "sri-lanka",
+   "country": "Sri Lanka",
+   "name": "Sirimavo Bandaranaike",
+   "role": "Prime Minister",
+   "start": 1970,
+   "end": 1977,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1972
+   ]
+  },
+  {
+   "slug": "oman",
+   "country": "Oman",
+   "name": "👑 Qaboos bin Said",
+   "role": "Monarch",
+   "start": 1970,
+   "end": 2020,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1996
+   ]
+  },
+  {
+   "slug": "guyana",
+   "country": "Guyana",
+   "name": "Arthur Chung",
+   "role": "President",
+   "start": 1970,
+   "end": 1980,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1980
+   ]
+  },
+  {
+   "slug": "egypt",
+   "country": "Egypt",
+   "name": "Anwar Sadat",
+   "role": "President",
+   "start": 1970,
+   "end": 1981,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1971
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "⚠️ Jean-Claude Duvalier (Baby Doc)",
+   "role": "President",
+   "start": 1971,
+   "end": 1986,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1983
+   ]
+  },
+  {
+   "slug": "bahrain",
+   "country": "Bahrain",
+   "name": "👑 Isa bin Salman Al Khalifa",
+   "role": "Monarch",
+   "start": 1971,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1973
+   ]
+  },
+  {
+   "slug": "morocco",
+   "country": "Morocco",
+   "name": "Mohamed Karim Lamrani",
+   "role": "Prime Minister",
+   "start": 1971,
+   "end": 1972,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1972
+   ]
+  },
+  {
+   "slug": "pakistan",
+   "country": "Pakistan",
+   "name": "Zulfikar Ali Bhutto",
+   "role": "President",
+   "start": 1971,
+   "end": 1973,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1973
+   ]
+  },
+  {
+   "slug": "sierra-leone",
+   "country": "Sierra Leone",
+   "name": "Siaka Stevens",
+   "role": "President",
+   "start": 1971,
+   "end": 1985,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "bhutan",
+   "country": "Bhutan",
+   "name": "👑 Jigme Singye Wangchuck",
+   "role": "Monarch",
+   "start": 1972,
+   "end": 2008,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2008
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Louis Lansana Beavogui",
+   "role": "Prime Minister",
+   "start": 1972,
+   "end": 1984,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1982
+   ]
+  },
+  {
+   "slug": "madagascar",
+   "country": "Madagascar",
+   "name": "Gabriel Ramanantsoa",
+   "role": "President",
+   "start": 1972,
+   "end": 1975,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1975
+   ]
+  },
+  {
+   "slug": "nepal",
+   "country": "Nepal",
+   "name": "👑 Birendra",
+   "role": "Monarch",
+   "start": 1972,
+   "end": 2001,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1990
+   ]
+  },
+  {
+   "slug": "rwanda",
+   "country": "Rwanda",
+   "name": "Juvénal Habyarimana",
+   "role": "President",
+   "start": 1973,
+   "end": 1994,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "afghanistan",
+   "country": "Afghanistan",
+   "name": "Mohammed Daoud Khan",
+   "role": "President",
+   "start": 1973,
+   "end": 1978,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1977
+   ]
+  },
+  {
+   "slug": "chile",
+   "country": "Chile",
+   "name": "⚠️ Augusto Pinochet",
+   "role": "President",
+   "start": 1973,
+   "end": 1990,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1980
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "Sanya Dharmasakti",
+   "role": "Prime Minister",
+   "start": 1973,
+   "end": 1975,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1974
+   ]
+  },
+  {
+   "slug": "sweden",
+   "country": "Sweden",
+   "name": "👑 Carl XVI Gustaf",
+   "role": "Monarch",
+   "start": 1973,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1974
+   ]
+  },
+  {
+   "slug": "suriname",
+   "country": "Suriname",
+   "name": "Henck Arron",
+   "role": "Prime Minister",
+   "start": 1973,
+   "end": 1980,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1975
+   ]
+  },
+  {
+   "slug": "sao-tome-and-principe",
+   "country": "São Tomé and Príncipe",
+   "name": "Leonel Mário d'Alva",
+   "role": "Prime Minister",
+   "start": 1974,
+   "end": 1975,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1975
+   ]
+  },
+  {
+   "slug": "mozambique",
+   "country": "Mozambique",
+   "name": "Joaquim Chissano",
+   "role": "Prime Minister",
+   "start": 1974,
+   "end": 1975,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1975
+   ]
+  },
+  {
+   "slug": "ethiopia",
+   "country": "Ethiopia",
+   "name": "Tafari Benti",
+   "role": "President",
+   "start": 1974,
+   "end": 1977,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1976
+   ]
+  },
+  {
+   "slug": "spain",
+   "country": "Spain",
+   "name": "👑 King Juan Carlos I",
+   "role": "Monarch",
+   "start": 1975,
+   "end": 2014,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "laos",
+   "country": "Laos",
+   "name": "Kaysone Phomvihane",
+   "role": "Prime Minister",
+   "start": 1975,
+   "end": 1991,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1991
+   ]
+  },
+  {
+   "slug": "congo",
+   "country": "Congo",
+   "name": "Louis Sylvain Goma",
+   "role": "Prime Minister",
+   "start": 1975,
+   "end": 1984,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1979
+   ]
+  },
+  {
+   "slug": "cape-verde",
+   "country": "Cape Verde",
+   "name": "Aristides Pereira",
+   "role": "President",
+   "start": 1975,
+   "end": 1991,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1980
+   ]
+  },
+  {
+   "slug": "madagascar",
+   "country": "Madagascar",
+   "name": "Didier Ratsiraka",
+   "role": "President",
+   "start": 1975,
+   "end": 1993,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "chad",
+   "country": "Chad",
+   "name": "Félix Malloum",
+   "role": "President",
+   "start": 1975,
+   "end": 1979,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "Kukrit Pramoj",
+   "role": "Prime Minister",
+   "start": 1975,
+   "end": 1976,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1976
+   ]
+  },
+  {
+   "slug": "burundi",
+   "country": "Burundi",
+   "name": "Jean-Baptiste Bagaza",
+   "role": "President",
+   "start": 1976,
+   "end": 1987,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1981
+   ]
+  },
+  {
+   "slug": "somalia",
+   "country": "Somalia",
+   "name": "Mohamed Siad Barre",
+   "role": "President",
+   "start": 1976,
+   "end": 1991,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1979
+   ]
+  },
+  {
+   "slug": "nigeria",
+   "country": "Nigeria",
+   "name": "Olusegun Obasanjo",
+   "role": "Head of State",
+   "start": 1976,
+   "end": 1979,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "spain",
+   "country": "Spain",
+   "name": "Adolfo Suárez",
+   "role": "Prime Minister",
+   "start": 1976,
+   "end": 1981,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "comoros",
+   "country": "Comoros",
+   "name": "Ali Soilih",
+   "role": "President",
+   "start": 1976,
+   "end": 1978,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "ethiopia",
+   "country": "Ethiopia",
+   "name": "⚠️ Mengistu Haile Mariam",
+   "role": "President",
+   "start": 1977,
+   "end": 1991,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1987
+   ]
+  },
+  {
+   "slug": "djibouti",
+   "country": "Djibouti",
+   "name": "Hassan Gouled Aptidon",
+   "role": "President",
+   "start": 1977,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "congo",
+   "country": "Congo",
+   "name": "Joachim Yhombi-Opango",
+   "role": "President",
+   "start": 1977,
+   "end": 1979,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1979
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "Kriangsak Chamanan",
+   "role": "Prime Minister",
+   "start": 1977,
+   "end": 1980,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "sri-lanka",
+   "country": "Sri Lanka",
+   "name": "J.R. Jayewardene",
+   "role": "Prime Minister",
+   "start": 1977,
+   "end": 1978,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1978
+   ]
+  },
+  {
+   "slug": "south-africa",
+   "country": "South Africa",
+   "name": "⚠️ P.W. Botha",
+   "role": "State President",
+   "start": 1978,
+   "end": 1989,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1983
+   ]
+  },
+  {
+   "slug": "ghana",
+   "country": "Ghana",
+   "name": "Fred Akuffo",
+   "role": "President",
+   "start": 1978,
+   "end": 1979,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1979
+   ]
+  },
+  {
+   "slug": "mauritania",
+   "country": "Mauritania",
+   "name": "Mohamed Khouna Ould Haidalla",
+   "role": "Prime Minister",
+   "start": 1979,
+   "end": 1980,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1980
+   ]
+  },
+  {
+   "slug": "angola",
+   "country": "Angola",
+   "name": "José Eduardo dos Santos",
+   "role": "President",
+   "start": 1979,
+   "end": 2017,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2010
+   ]
+  },
+  {
+   "slug": "congo",
+   "country": "Congo",
+   "name": "Denis Sassou Nguesso",
+   "role": "President",
+   "start": 1979,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "algeria",
+   "country": "Algeria",
+   "name": "Chadli Bendjedid",
+   "role": "President",
+   "start": 1979,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1989
+   ]
+  },
+  {
+   "slug": "central-african-republic",
+   "country": "Central African Republic",
+   "name": "David Dacko",
+   "role": "President",
+   "start": 1979,
+   "end": 1981,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1981
+   ]
+  },
+  {
+   "slug": "guinea-bissau",
+   "country": "Guinea-Bissau",
+   "name": "João Bernardo Vieira",
+   "role": "President",
+   "start": 1980,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1984
+   ]
+  },
+  {
+   "slug": "turkey",
+   "country": "Turkey",
+   "name": "⚠️ Kenan Evren",
+   "role": "President (Military Junta)",
+   "start": 1980,
+   "end": 1989,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1982
+   ]
+  },
+  {
+   "slug": "liberia",
+   "country": "Liberia",
+   "name": "⚠️ Samuel Doe",
+   "role": "President",
+   "start": 1980,
+   "end": 1990,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1986
+   ]
+  },
+  {
+   "slug": "turkey",
+   "country": "Turkey",
+   "name": "Bülent Ulusu",
+   "role": "Prime Minister (Military era)",
+   "start": 1980,
+   "end": 1983,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1982
+   ]
+  },
+  {
+   "slug": "ghana",
+   "country": "Ghana",
+   "name": "⚠️ Jerry Rawlings",
+   "role": "President",
+   "start": 1981,
+   "end": 2001,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "tuvalu",
+   "country": "Tuvalu",
+   "name": "Tomasi Puapua",
+   "role": "Prime Minister",
+   "start": 1981,
+   "end": 1989,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1986
+   ]
+  },
+  {
+   "slug": "saudi-arabia",
+   "country": "Saudi Arabia",
+   "name": "👑 King Fahd bin Abdulaziz",
+   "role": "King",
+   "start": 1982,
+   "end": 2005,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "suriname",
+   "country": "Suriname",
+   "name": "Fred Ramdat Misier",
+   "role": "President",
+   "start": 1982,
+   "end": 1988,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1987
+   ]
+  },
+  {
+   "slug": "guinea-bissau",
+   "country": "Guinea-Bissau",
+   "name": "Victor Saúde Maria",
+   "role": "Prime Minister",
+   "start": 1982,
+   "end": 1984,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1984
+   ]
+  },
+  {
+   "slug": "chad",
+   "country": "Chad",
+   "name": "Hissène Habré",
+   "role": "President",
+   "start": 1982,
+   "end": 1990,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1989
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Lansana Conté",
+   "role": "President",
+   "start": 1984,
+   "end": 2008,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1990
+   ]
+  },
+  {
+   "slug": "nigeria",
+   "country": "Nigeria",
+   "name": "⚠️ Ibrahim Babangida",
+   "role": "Head of State",
+   "start": 1985,
+   "end": 1993,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1989
+   ]
+  },
+  {
+   "slug": "sierra-leone",
+   "country": "Sierra Leone",
+   "name": "Joseph Saidu Momoh",
+   "role": "President",
+   "start": 1985,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1991
+   ]
+  },
+  {
+   "slug": "brazil",
+   "country": "Brazil",
+   "name": "José Sarney",
+   "role": "President",
+   "start": 1985,
+   "end": 1990,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1988
+   ]
+  },
+  {
+   "slug": "mozambique",
+   "country": "Mozambique",
+   "name": "Mário da Graça Machungo",
+   "role": "Prime Minister",
+   "start": 1986,
+   "end": 1994,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1990
+   ]
+  },
+  {
+   "slug": "suriname",
+   "country": "Suriname",
+   "name": "Pretaap Radhakishun",
+   "role": "Prime Minister",
+   "start": 1986,
+   "end": 1987,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1987
+   ]
+  },
+  {
+   "slug": "laos",
+   "country": "Laos",
+   "name": "Phoumi Vongvichit",
+   "role": "President",
+   "start": 1986,
+   "end": 1991,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1991
+   ]
+  },
+  {
+   "slug": "dominican-republic",
+   "country": "Dominican Republic",
+   "name": "Joaquín Balaguer",
+   "role": "President",
+   "start": 1986,
+   "end": 1996,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1994
+   ]
+  },
+  {
+   "slug": "philippines",
+   "country": "Philippines",
+   "name": "Corazon Aquino",
+   "role": "President",
+   "start": 1986,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1987
+   ]
+  },
+  {
+   "slug": "haiti",
+   "country": "Haiti",
+   "name": "Henri Namphy",
+   "role": "President",
+   "start": 1986,
+   "end": 1988,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1987
+   ]
+  },
+  {
+   "slug": "afghanistan",
+   "country": "Afghanistan",
+   "name": "Mohammad Najibullah",
+   "role": "President",
+   "start": 1987,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1990
+   ]
+  },
+  {
+   "slug": "fiji",
+   "country": "Fiji",
+   "name": "Penaia Ganilau",
+   "role": "President",
+   "start": 1987,
+   "end": 1993,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1990
+   ]
+  },
+  {
+   "slug": "fiji",
+   "country": "Fiji",
+   "name": "Kamisese Mara",
+   "role": "Prime Minister",
+   "start": 1987,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1990
+   ]
+  },
+  {
+   "slug": "burundi",
+   "country": "Burundi",
+   "name": "Pierre Buyoya",
+   "role": "President",
+   "start": 1987,
+   "end": 1993,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "zimbabwe",
+   "country": "Zimbabwe",
+   "name": "Robert Mugabe",
+   "role": "President",
+   "start": 1987,
+   "end": 2017,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2013
+   ]
+  },
+  {
+   "slug": "vietnam",
+   "country": "Vietnam",
+   "name": "Vo Chi Cong",
+   "role": "President",
+   "start": 1987,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "comoros",
+   "country": "Comoros",
+   "name": "Said Mohamed Djohar",
+   "role": "President",
+   "start": 1989,
+   "end": 1995,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "sudan",
+   "country": "Sudan",
+   "name": "⚠️ Omar al-Bashir",
+   "role": "President",
+   "start": 1989,
+   "end": 2019,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1998
+   ]
+  },
+  {
+   "slug": "south-africa",
+   "country": "South Africa",
+   "name": "F.W. de Klerk",
+   "role": "State President",
+   "start": 1989,
+   "end": 1994,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1993
+   ]
+  },
+  {
+   "slug": "romania",
+   "country": "Romania",
+   "name": "Ion Iliescu",
+   "role": "President",
+   "start": 1989,
+   "end": 1996,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1991
+   ]
+  },
+  {
+   "slug": "yemen",
+   "country": "Yemen",
+   "name": "Haidar Abu Bakr al-Attas",
+   "role": "Prime Minister",
+   "start": 1990,
+   "end": 1994,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1991
+   ]
+  },
+  {
+   "slug": "mongolia",
+   "country": "Mongolia",
+   "name": "Punsalmaagiin Ochirbat",
+   "role": "President",
+   "start": 1990,
+   "end": 1997,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "mongolia",
+   "country": "Mongolia",
+   "name": "Dashiin Byambasüren",
+   "role": "Prime Minister",
+   "start": 1990,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "peru",
+   "country": "Peru",
+   "name": "⚠️ Alberto Fujimori",
+   "role": "President",
+   "start": 1990,
+   "end": 2000,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1993
+   ]
+  },
+  {
+   "slug": "yemen",
+   "country": "Yemen",
+   "name": "Ali Abdullah Saleh",
+   "role": "President",
+   "start": 1990,
+   "end": 2011,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1991
+   ]
+  },
+  {
+   "slug": "colombia",
+   "country": "Colombia",
+   "name": "César Gaviria",
+   "role": "President",
+   "start": 1990,
+   "end": 1994,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1991
+   ]
+  },
+  {
+   "slug": "moldova",
+   "country": "Moldova",
+   "name": "Mircea Snegur",
+   "role": "President",
+   "start": 1990,
+   "end": 1997,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1994
+   ]
+  },
+  {
+   "slug": "bulgaria",
+   "country": "Bulgaria",
+   "name": "Zhelyu Zhelev",
+   "role": "President",
+   "start": 1990,
+   "end": 1997,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1991
+   ]
+  },
+  {
+   "slug": "lesotho",
+   "country": "Lesotho",
+   "name": "👑 Letsie III",
+   "role": "King",
+   "start": 1990,
+   "end": 1995,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1993
+   ]
+  },
+  {
+   "slug": "poland",
+   "country": "Poland",
+   "name": "Lech Wałęsa",
+   "role": "President",
+   "start": 1990,
+   "end": 1995,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "belarus",
+   "country": "Belarus",
+   "name": "Stanislav Shushkevich",
+   "role": "Chairman of the Supreme Soviet (head of state)",
+   "start": 1991,
+   "end": 1994,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1994
+   ]
+  },
+  {
+   "slug": "turkmenistan",
+   "country": "Turkmenistan",
+   "name": "⚠️ Saparmurat Niyazov",
+   "role": "President",
+   "start": 1991,
+   "end": 2006,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "serbia",
+   "country": "Serbia",
+   "name": "⚠️ Slobodan Milošević",
+   "role": "President",
+   "start": 1991,
+   "end": 1997,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "mali",
+   "country": "Mali",
+   "name": "Amadou Toumani Touré",
+   "role": "President",
+   "start": 1991,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "kazakhstan",
+   "country": "Kazakhstan",
+   "name": "Nursultan Nazarbayev",
+   "role": "President",
+   "start": 1991,
+   "end": 2019,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1995
+   ]
+  },
+  {
+   "slug": "armenia",
+   "country": "Armenia",
+   "name": "Levon Ter-Petrosyan",
+   "role": "President",
+   "start": 1991,
+   "end": 1998,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1995
+   ]
+  },
+  {
+   "slug": "uzbekistan",
+   "country": "Uzbekistan",
+   "name": "⚠️ Islam Karimov",
+   "role": "President",
+   "start": 1991,
+   "end": 2016,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "congo",
+   "country": "Congo",
+   "name": "André Milongo",
+   "role": "Prime Minister",
+   "start": 1991,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "russia",
+   "country": "Russia",
+   "name": "Boris Yeltsin",
+   "role": "President",
+   "start": 1991,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1993
+   ]
+  },
+  {
+   "slug": "poland",
+   "country": "Poland",
+   "name": "Jan Olszewski",
+   "role": "Prime Minister",
+   "start": 1991,
+   "end": 1992,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "kyrgyzstan",
+   "country": "Kyrgyzstan",
+   "name": "Askar Akayev",
+   "role": "President",
+   "start": 1991,
+   "end": 2005,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1993
+   ]
+  },
+  {
+   "slug": "ethiopia",
+   "country": "Ethiopia",
+   "name": "Meles Zenawi",
+   "role": "President",
+   "start": 1991,
+   "end": 1995,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1994
+   ]
+  },
+  {
+   "slug": "vietnam",
+   "country": "Vietnam",
+   "name": "Vo Van Kiet",
+   "role": "Prime Minister",
+   "start": 1991,
+   "end": 1997,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1992
+   ]
+  },
+  {
+   "slug": "fiji",
+   "country": "Fiji",
+   "name": "Sitiveni Rabuka",
+   "role": "Prime Minister",
+   "start": 1992,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1997
+   ]
+  },
+  {
+   "slug": "myanmar",
+   "country": "Myanmar",
+   "name": "⚠️ Than Shwe",
+   "role": "President",
+   "start": 1992,
+   "end": 2011,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2008
+   ]
+  },
+  {
+   "slug": "cote-divoire",
+   "country": "Côte d'Ivoire",
+   "name": "Daniel Kablan Duncan",
+   "role": "Prime Minister",
+   "start": 1993,
+   "end": 2000,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2000
+   ]
+  },
+  {
+   "slug": "niger",
+   "country": "Niger",
+   "name": "Mahamane Ousmane",
+   "role": "President",
+   "start": 1993,
+   "end": 1996,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1996
+   ]
+  },
+  {
+   "slug": "bosnia-herzegovina",
+   "country": "Bosnia-Herzegovina",
+   "name": "Haris Silajdžić",
+   "role": "Prime Minister",
+   "start": 1993,
+   "end": 1996,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1995
+   ]
+  },
+  {
+   "slug": "eritrea",
+   "country": "Eritrea",
+   "name": "Isaias Afwerki",
+   "role": "President",
+   "start": 1993,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1997
+   ]
+  },
+  {
+   "slug": "azerbaijan",
+   "country": "Azerbaijan",
+   "name": "Heydar Aliyev",
+   "role": "President",
+   "start": 1993,
+   "end": 2003,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1995
+   ]
+  },
+  {
+   "slug": "fiji",
+   "country": "Fiji",
+   "name": "Kamisese Mara",
+   "role": "President",
+   "start": 1993,
+   "end": 2000,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1997
+   ]
+  },
+  {
+   "slug": "rwanda",
+   "country": "Rwanda",
+   "name": "Faustin Twagiramungu",
+   "role": "Prime Minister",
+   "start": 1994,
+   "end": 1995,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1995
+   ]
+  },
+  {
+   "slug": "rwanda",
+   "country": "Rwanda",
+   "name": "Pasteur Bizimungu",
+   "role": "President",
+   "start": 1994,
+   "end": 2000,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1995
+   ]
+  },
+  {
+   "slug": "finland",
+   "country": "Finland",
+   "name": "Martti Ahtisaari",
+   "role": "President",
+   "start": 1994,
+   "end": 2000,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1999
+   ]
+  },
+  {
+   "slug": "mozambique",
+   "country": "Mozambique",
+   "name": "Pascoal Mocumbi",
+   "role": "Prime Minister",
+   "start": 1994,
+   "end": 2004,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2004
+   ]
+  },
+  {
+   "slug": "south-africa",
+   "country": "South Africa",
+   "name": "Nelson Mandela",
+   "role": "President",
+   "start": 1994,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1996
+   ]
+  },
+  {
+   "slug": "venezuela",
+   "country": "Venezuela",
+   "name": "Rafael Caldera",
+   "role": "President",
+   "start": 1994,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1999
+   ]
+  },
+  {
+   "slug": "ukraine",
+   "country": "Ukraine",
+   "name": "Leonid Kuchma",
+   "role": "President",
+   "start": 1994,
+   "end": 2005,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1996
+   ]
+  },
+  {
+   "slug": "uganda",
+   "country": "Uganda",
+   "name": "Kintu Musoke",
+   "role": "Prime Minister",
+   "start": 1994,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1995
+   ]
+  },
+  {
+   "slug": "gambia",
+   "country": "Gambia",
+   "name": "Yahya Jammeh",
+   "role": "President",
+   "start": 1994,
+   "end": 2017,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1996
+   ]
+  },
+  {
+   "slug": "qatar",
+   "country": "Qatar",
+   "name": "👑 Emir Hamad bin Khalifa Al Thani",
+   "role": "Monarch",
+   "start": 1995,
+   "end": 2013,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2003
+   ]
+  },
+  {
+   "slug": "poland",
+   "country": "Poland",
+   "name": "Aleksander Kwaśniewski",
+   "role": "President",
+   "start": 1995,
+   "end": 2005,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1997
+   ]
+  },
+  {
+   "slug": "finland",
+   "country": "Finland",
+   "name": "Paavo Lipponen",
+   "role": "Prime Minister",
+   "start": 1995,
+   "end": 2003,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1999
+   ]
+  },
+  {
+   "slug": "qatar",
+   "country": "Qatar",
+   "name": "Abdullah bin Khalifa Al Thani",
+   "role": "Prime Minister",
+   "start": 1996,
+   "end": 2007,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2003
+   ]
+  },
+  {
+   "slug": "niger",
+   "country": "Niger",
+   "name": "Ibrahim Baré Maïnassara",
+   "role": "President",
+   "start": 1996,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1999
+   ]
+  },
+  {
+   "slug": "poland",
+   "country": "Poland",
+   "name": "Włodzimierz Cimoszewicz",
+   "role": "Prime Minister",
+   "start": 1996,
+   "end": 1997,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1997
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "Chavalit Yongchaiyudh",
+   "role": "Prime Minister",
+   "start": 1996,
+   "end": 1997,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1997
+   ]
+  },
+  {
+   "slug": "congo",
+   "country": "Congo",
+   "name": "Denis Sassou Nguesso",
+   "role": "President",
+   "start": 1997,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2001
+   ]
+  },
+  {
+   "slug": "madagascar",
+   "country": "Madagascar",
+   "name": "Didier Ratsiraka",
+   "role": "President",
+   "start": 1997,
+   "end": 2002,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1998
+   ]
+  },
+  {
+   "slug": "albania",
+   "country": "Albania",
+   "name": "Rexhep Meidani",
+   "role": "President",
+   "start": 1997,
+   "end": 2002,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1998
+   ]
+  },
+  {
+   "slug": "albania",
+   "country": "Albania",
+   "name": "Fatos Nano",
+   "role": "Prime Minister",
+   "start": 1997,
+   "end": 1998,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1998
+   ]
+  },
+  {
+   "slug": "nigeria",
+   "country": "Nigeria",
+   "name": "Abdulsalami Abubakar",
+   "role": "Head of State",
+   "start": 1998,
+   "end": 1999,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    1999
+   ]
+  },
+  {
+   "slug": "bahrain",
+   "country": "Bahrain",
+   "name": "👑 Hamad bin Isa Al Khalifa",
+   "role": "Monarch",
+   "start": 1999,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2002
+   ]
+  },
+  {
+   "slug": "comoros",
+   "country": "Comoros",
+   "name": "Azali Assoumani",
+   "role": "President",
+   "start": 1999,
+   "end": 2002,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2001
+   ]
+  },
+  {
+   "slug": "cote-divoire",
+   "country": "Côte d'Ivoire",
+   "name": "Robert Guéï",
+   "role": "President",
+   "start": 1999,
+   "end": 2000,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2000
+   ]
+  },
+  {
+   "slug": "senegal",
+   "country": "Senegal",
+   "name": "Moustapha Niasse",
+   "role": "Prime Minister",
+   "start": 2000,
+   "end": 2001,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2001
+   ]
+  },
+  {
+   "slug": "senegal",
+   "country": "Senegal",
+   "name": "Abdoulaye Wade",
+   "role": "President",
+   "start": 2000,
+   "end": 2012,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2001
+   ]
+  },
+  {
+   "slug": "rwanda",
+   "country": "Rwanda",
+   "name": "Bernard Makuza",
+   "role": "Prime Minister",
+   "start": 2000,
+   "end": 2011,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2003
+   ]
+  },
+  {
+   "slug": "dominican-republic",
+   "country": "Dominican Republic",
+   "name": "Hipólito Mejía",
+   "role": "President",
+   "start": 2000,
+   "end": 2004,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2002
+   ]
+  },
+  {
+   "slug": "rwanda",
+   "country": "Rwanda",
+   "name": "Paul Kagame",
+   "role": "President",
+   "start": 2000,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2003
+   ]
+  },
+  {
+   "slug": "kenya",
+   "country": "Kenya",
+   "name": "Mwai Kibaki",
+   "role": "President",
+   "start": 2002,
+   "end": 2013,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2010
+   ]
+  },
+  {
+   "slug": "burundi",
+   "country": "Burundi",
+   "name": "Domitien Ndayizeye",
+   "role": "President",
+   "start": 2003,
+   "end": 2005,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2005
+   ]
+  },
+  {
+   "slug": "eswatini",
+   "country": "Eswatini",
+   "name": "Themba Dlamini",
+   "role": "Prime Minister",
+   "start": 2003,
+   "end": 2008,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2005
+   ]
+  },
+  {
+   "slug": "dominican-republic",
+   "country": "Dominican Republic",
+   "name": "Leonel Fernández",
+   "role": "President",
+   "start": 2004,
+   "end": 2012,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2010
+   ]
+  },
+  {
+   "slug": "iraq",
+   "country": "Iraq",
+   "name": "Ayad Allawi",
+   "role": "Prime Minister",
+   "start": 2004,
+   "end": 2005,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2005
+   ]
+  },
+  {
+   "slug": "serbia",
+   "country": "Serbia",
+   "name": "Boris Tadić",
+   "role": "President",
+   "start": 2004,
+   "end": 2012,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2006
+   ]
+  },
+  {
+   "slug": "burundi",
+   "country": "Burundi",
+   "name": "Pierre Nkurunziza",
+   "role": "President",
+   "start": 2005,
+   "end": 2020,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2018
+   ]
+  },
+  {
+   "slug": "togo",
+   "country": "Togo",
+   "name": "Faure Gnassingbé",
+   "role": "President",
+   "start": 2005,
+   "end": 2025,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2024
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "⚠️ Surayud Chulanont",
+   "role": "Prime Minister",
+   "start": 2006,
+   "end": 2008,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2007
+   ]
+  },
+  {
+   "slug": "montenegro",
+   "country": "Montenegro",
+   "name": "Željko Šturanović",
+   "role": "Prime Minister",
+   "start": 2006,
+   "end": 2008,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2007
+   ]
+  },
+  {
+   "slug": "montenegro",
+   "country": "Montenegro",
+   "name": "Filip Vujanović",
+   "role": "President",
+   "start": 2006,
+   "end": 2018,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2007
+   ]
+  },
+  {
+   "slug": "bolivia",
+   "country": "Bolivia",
+   "name": "Evo Morales",
+   "role": "President",
+   "start": 2006,
+   "end": 2019,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2009
+   ]
+  },
+  {
+   "slug": "kosovo",
+   "country": "Kosovo",
+   "name": "Agim Çeku",
+   "role": "Prime Minister",
+   "start": 2006,
+   "end": 2008,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2008
+   ]
+  },
+  {
+   "slug": "turkmenistan",
+   "country": "Turkmenistan",
+   "name": "⚠️ Gurbanguly Berdimuhamedow",
+   "role": "President",
+   "start": 2007,
+   "end": 2022,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2008
+   ]
+  },
+  {
+   "slug": "fiji",
+   "country": "Fiji",
+   "name": "Frank Bainimarama",
+   "role": "Prime Minister",
+   "start": 2007,
+   "end": 2014,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2013
+   ]
+  },
+  {
+   "slug": "morocco",
+   "country": "Morocco",
+   "name": "Abbas El Fassi",
+   "role": "Prime Minister",
+   "start": 2007,
+   "end": 2011,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2011
+   ]
+  },
+  {
+   "slug": "ecuador",
+   "country": "Ecuador",
+   "name": "Rafael Correa",
+   "role": "President",
+   "start": 2007,
+   "end": 2017,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2008
+   ]
+  },
+  {
+   "slug": "nepal",
+   "country": "Nepal",
+   "name": "Ram Baran Yadav",
+   "role": "President",
+   "start": 2008,
+   "end": 2015,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2015
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Kabiné Komara",
+   "role": "Prime Minister",
+   "start": 2008,
+   "end": 2010,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2010
+   ]
+  },
+  {
+   "slug": "angola",
+   "country": "Angola",
+   "name": "Paulo Kassoma",
+   "role": "Prime Minister",
+   "start": 2008,
+   "end": 2010,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2010
+   ]
+  },
+  {
+   "slug": "somalia",
+   "country": "Somalia",
+   "name": "Sharif Sheikh Ahmed",
+   "role": "President",
+   "start": 2009,
+   "end": 2012,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2012
+   ]
+  },
+  {
+   "slug": "fiji",
+   "country": "Fiji",
+   "name": "Epeli Nailatikau",
+   "role": "President",
+   "start": 2009,
+   "end": 2015,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2013
+   ]
+  },
+  {
+   "slug": "madagascar",
+   "country": "Madagascar",
+   "name": "Andry Rajoelina",
+   "role": "President",
+   "start": 2009,
+   "end": 2014,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2010
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Sékouba Konaté",
+   "role": "President",
+   "start": 2009,
+   "end": 2010,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2010
+   ]
+  },
+  {
+   "slug": "hungary",
+   "country": "Hungary",
+   "name": "Viktor Orbán",
+   "role": "Prime Minister",
+   "start": 2010,
+   "end": 2026,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2011
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Alpha Condé",
+   "role": "President",
+   "start": 2010,
+   "end": 2021,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2020
+   ]
+  },
+  {
+   "slug": "hungary",
+   "country": "Hungary",
+   "name": "Pál Schmitt",
+   "role": "President",
+   "start": 2010,
+   "end": 2012,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2011
+   ]
+  },
+  {
+   "slug": "somalia",
+   "country": "Somalia",
+   "name": "Abdiweli Mohamed Ali",
+   "role": "Prime Minister",
+   "start": 2011,
+   "end": 2012,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2012
+   ]
+  },
+  {
+   "slug": "tunisia",
+   "country": "Tunisia",
+   "name": "Moncef Marzouki",
+   "role": "President",
+   "start": 2011,
+   "end": 2014,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2014
+   ]
+  },
+  {
+   "slug": "cote-divoire",
+   "country": "Côte d'Ivoire",
+   "name": "Daniel Kablan Duncan",
+   "role": "Prime Minister",
+   "start": 2012,
+   "end": 2017,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2016
+   ]
+  },
+  {
+   "slug": "dominican-republic",
+   "country": "Dominican Republic",
+   "name": "Danilo Medina",
+   "role": "President",
+   "start": 2012,
+   "end": 2020,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2015
+   ]
+  },
+  {
+   "slug": "egypt",
+   "country": "Egypt",
+   "name": "Adly Mansour",
+   "role": "President",
+   "start": 2013,
+   "end": 2014,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2014
+   ]
+  },
+  {
+   "slug": "central-african-republic",
+   "country": "Central African Republic",
+   "name": "Catherine Samba-Panza",
+   "role": "President",
+   "start": 2014,
+   "end": 2016,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2016
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "⚠️ Prayut Chan-o-cha",
+   "role": "Prime Minister",
+   "start": 2014,
+   "end": 2023,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2017
+   ]
+  },
+  {
+   "slug": "nepal",
+   "country": "Nepal",
+   "name": "Sushil Koirala",
+   "role": "Prime Minister",
+   "start": 2014,
+   "end": 2015,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2015
+   ]
+  },
+  {
+   "slug": "thailand",
+   "country": "Thailand",
+   "name": "👑 Vajiralongkorn (Rama X)",
+   "role": "Monarch",
+   "start": 2016,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2017
+   ]
+  },
+  {
+   "slug": "comoros",
+   "country": "Comoros",
+   "name": "Azali Assoumani",
+   "role": "President",
+   "start": 2016,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2018
+   ]
+  },
+  {
+   "slug": "uzbekistan",
+   "country": "Uzbekistan",
+   "name": "Abdulla Aripov",
+   "role": "Prime Minister",
+   "start": 2016,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2023
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Ibrahima Kassory Fofana",
+   "role": "Prime Minister",
+   "start": 2018,
+   "end": 2021,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2020
+   ]
+  },
+  {
+   "slug": "cuba",
+   "country": "Cuba",
+   "name": "Miguel Díaz-Canel",
+   "role": "President",
+   "start": 2018,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2019
+   ]
+  },
+  {
+   "slug": "algeria",
+   "country": "Algeria",
+   "name": "Abdelmadjid Tebboune",
+   "role": "President",
+   "start": 2019,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2020
+   ]
+  },
+  {
+   "slug": "tuvalu",
+   "country": "Tuvalu",
+   "name": "Kausea Natano",
+   "role": "Prime Minister",
+   "start": 2019,
+   "end": 2024,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2023
+   ]
+  },
+  {
+   "slug": "tunisia",
+   "country": "Tunisia",
+   "name": "⚠️ Kais Saied",
+   "role": "President",
+   "start": 2019,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2022
+   ]
+  },
+  {
+   "slug": "oman",
+   "country": "Oman",
+   "name": "👑 Haitham bin Tarik Al Said",
+   "role": "Monarch",
+   "start": 2020,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2021
+   ]
+  },
+  {
+   "slug": "kyrgyzstan",
+   "country": "Kyrgyzstan",
+   "name": "Artyom Novikov",
+   "role": "Prime Minister",
+   "start": 2020,
+   "end": 2021,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2021
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Mamady Doumbouya",
+   "role": "President",
+   "start": 2021,
+   "end": 2026,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2025
+   ]
+  },
+  {
+   "slug": "mali",
+   "country": "Mali",
+   "name": "Assimi Goïta",
+   "role": "President",
+   "start": 2021,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2023
+   ]
+  },
+  {
+   "slug": "chad",
+   "country": "Chad",
+   "name": "Mahamat Déby",
+   "role": "Chairman",
+   "start": 2021,
+   "end": 2024,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2023
+   ]
+  },
+  {
+   "slug": "central-african-republic",
+   "country": "Central African Republic",
+   "name": "Félix Moloua",
+   "role": "Prime Minister",
+   "start": 2022,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2023
+   ]
+  },
+  {
+   "slug": "gabon",
+   "country": "Gabon",
+   "name": "Raymond Ndong Sima",
+   "role": "Prime Minister",
+   "start": 2023,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2024
+   ]
+  },
+  {
+   "slug": "guinea",
+   "country": "Guinea",
+   "name": "Bah Oury",
+   "role": "Prime Minister",
+   "start": 2024,
+   "end": null,
+   "constitutionsOutlasted": 1,
+   "adoptedDuring": [
+    2025
+   ]
+  }
+ ]
+}

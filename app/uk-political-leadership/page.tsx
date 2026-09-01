@@ -9,6 +9,8 @@ import {
   type UkChamber,
 } from "@/lib/ukPolitics";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { getConstitutionDocuments } from "@/lib/constitutions";
+import { Disclosure } from "@/app/_shared/Disclosure";
 
 const PATH = "/uk-political-leadership";
 const TITLE = "United Kingdom Political Leadership";
@@ -100,6 +102,7 @@ export default async function UKPoliticalLeadershipPage() {
   ];
   const anyGreat = cur(offices.chancellor) || cur(offices.foreignSecretary) || cur(offices.homeSecretary) || cur(offices.deputyPrimeMinister) || cur(offices.leaderOfOpposition);
   const anyDevolved = devolved.some((x) => x.holder);
+  const uk = getConstitutionDocuments().uncodified["united-kingdom"];
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
@@ -115,6 +118,45 @@ export default async function UKPoliticalLeadershipPage() {
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
         <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
       </header>
+
+      {uk ? (
+        <section id="constitution" className="mb-8 rounded-xl border p-4"
+                 style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h2 className="text-xl font-bold text-[var(--text)]">The constitution</h2>
+            <p className="text-xs tabular-nums text-[var(--text-muted)]">
+              {uk.instruments.length} instruments since {uk.instruments[0].year}
+            </p>
+          </div>
+          <p className="mt-2 text-sm text-[var(--text-muted)] leading-relaxed max-w-3xl">{uk.summary}</p>
+          <Disclosure title="The constitutional statutes"
+                      meta={`${uk.instruments[0].year} to ${uk.instruments[uk.instruments.length - 1].year}`}
+                      desktopOpen={false}
+                      summaryClassName="px-0">
+            <ol className="mt-3 space-y-2">
+              {uk.instruments.map((i) => (
+                <li key={`${i.year}-${i.name}`} className="flex gap-3 text-sm">
+                  <span className="w-12 shrink-0 font-semibold tabular-nums text-[var(--text)]">{i.year}</span>
+                  <span className="min-w-0">
+                    <span className="font-medium text-[var(--text)]">{i.name}</span>
+                    {i.repealed ? (
+                      <span className="ml-1.5 text-[10px] uppercase tracking-wide text-[var(--text-dim)]">
+                        repealed {i.repealed}
+                      </span>
+                    ) : null}
+                    <span className="block text-[var(--text-muted)]">{i.what}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </Disclosure>
+          <p className="mt-3 text-sm">
+            <Link href="/constitutions" className="text-[var(--accent)] hover:underline">
+              How this compares with every other country&apos;s constitution →
+            </Link>
+          </p>
+        </section>
+      ) : null}
 
       <div className="grid gap-3 sm:grid-cols-2 mb-3">
         <Link

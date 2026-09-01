@@ -10,6 +10,7 @@ import {
 } from "@/lib/usPolitics";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import USTimeMachine from "../USTimeMachine";
+import { tenuresForCountry } from "@/lib/constitutionTenures";
 import HubBackLink from "@/app/_shared/HubBackLink";
 
 const PATH = "/us-political-leadership/time-machine";
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 };
 
 export default async function USTimeMachinePage() {
+  const usConst = tenuresForCountry("united-states");
   const execHist = await getExecutiveHistory();
   const houseHist = await getHouseHistory();
   const senateHist = await getSenateHistory();
@@ -71,6 +73,7 @@ export default async function USTimeMachinePage() {
         cabinet={cabinetHist}
         governors={governorHist}
         scotus={scotusHist}
+        constitution={usConst ? { adopted: usConst.adopted, total: usConst.transitions } : undefined}
       />
 
       <p className="text-sm text-[var(--text-muted)]">

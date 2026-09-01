@@ -19,6 +19,7 @@ import { getStatesForCountry } from "@/lib/states";
 import CountryMap from "./CountryMap";
 import Collapsible from "./Collapsible";
 import CountryFactsSection from "./CountryFactsSection";
+import { getCountryConstitution } from "@/lib/constitutions";
 import NationalTeamsSection, { countryHasNationalTeams } from "./NationalTeamsSection";
 import LeagueHubsSection from "./LeagueHubsSection";
 import CountryNav, { type CountryNavItem } from "./CountryNav";
@@ -277,6 +278,7 @@ const ECON_INDICATORS: { key: keyof CountryIndicators["indicators"]; label: stri
 
 export default async function CountryDetailPage({ params }: Props) {
   const { slug } = await params;
+  const constitution = getCountryConstitution(slug);
   const conflictWars = conflictsForCountry(await getConflicts(), slug);
   const billionaires = billionairesForCountry(await getBillionaires(), slug);
   const country = getCountry(slug);
@@ -595,7 +597,7 @@ export default async function CountryDetailPage({ params }: Props) {
           ) : null}
 
           {/* ================= OVERVIEW ================================= */}
-          <CountryFactsSection facts={facts} />
+          <CountryFactsSection facts={facts} constitution={constitution} />
 
           {indicators ? (
             <Collapsible
@@ -651,7 +653,7 @@ export default async function CountryDetailPage({ params }: Props) {
           <LeadersSection
             countrySlug={slug}
             aside={
-              ELECTION_CARD[slug] ? (
+              ELECTION_CARD[slug] || constitution ? (
                 <div className="grid gap-3 sm:grid-cols-2 mt-4">
                   {slug === "united-states" || slug === "united-kingdom" ? (
                     <Link
@@ -670,15 +672,40 @@ export default async function CountryDetailPage({ params }: Props) {
                       </p>
                     </Link>
                   ) : null}
-                  <Link
-                    href={ELECTION_CARD[slug].href}
-                    className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)] min-w-0"
-                    style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-                  >
-                    <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Elections</p>
-                    <p className="font-bold text-[var(--text)]">{ELECTION_CARD[slug].head}</p>
-                    <p className="text-xs text-[var(--text-muted)] mt-1">{ELECTION_CARD[slug].sub}</p>
-                  </Link>
+                  {ELECTION_CARD[slug] ? (
+                    <Link
+                      href={ELECTION_CARD[slug].href}
+                      className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)] min-w-0"
+                      style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+                    >
+                      <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Elections</p>
+                      <p className="font-bold text-[var(--text)]">{ELECTION_CARD[slug].head}</p>
+                      <p className="text-xs text-[var(--text-muted)] mt-1">{ELECTION_CARD[slug].sub}</p>
+                    </Link>
+                  ) : null}
+                  {/* Every country with a constitutional record gets this, not
+                      just the ones with an election hub. */}
+                  {constitution?.adopted ? (
+                    <Link
+                      href="/constitutions"
+                      className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)] min-w-0"
+                      style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+                    >
+                      <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Constitution</p>
+                      <p className="font-bold text-[var(--text)]">
+                        {constitution.chars?.uncodified
+                          ? "No single document →"
+                          : `Written ${constitution.adopted} →`}
+                      </p>
+                      <p className="text-xs text-[var(--text-muted)] mt-1">
+                        {constitution.chars?.uncodified
+                          ? "An uncodified constitution: statute, precedent and convention rather than one text."
+                          : `${constitution.amendEvents} amendment ${
+                              constitution.amendEvents === 1 ? "event" : "events"
+                            } since, the last in ${constitution.lastEvent}. Compare it with every other country.`}
+                      </p>
+                    </Link>
+                  ) : null}
                 </div>
               ) : null
             }

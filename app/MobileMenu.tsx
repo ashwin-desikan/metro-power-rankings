@@ -56,6 +56,8 @@ function buildSections(): Section[] {
         { href: '/us-political-leadership', label: 'US Political Leadership' },
         { href: '/uk-political-leadership', label: 'UK Political Leadership' },
         { href: '/elections', label: 'Elections' },
+        { href: '/constitutions', label: "The World's Constitutions" },
+        { href: '/constitutions/leaders', label: 'Who Outlasts Whom' },
         { href: '/mayors', label: 'Mayors of the World' },
       ],
     },

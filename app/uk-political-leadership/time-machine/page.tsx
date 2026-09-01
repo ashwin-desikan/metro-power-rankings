@@ -8,6 +8,7 @@ import {
 } from "@/lib/ukPolitics";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import UKTimeMachine from "../UKTimeMachine";
+import { getConstitutionDocuments } from "@/lib/constitutions";
 import HubBackLink from "@/app/_shared/HubBackLink";
 
 const PATH = "/uk-political-leadership/time-machine";
@@ -51,6 +52,7 @@ export default async function UKTimeMachinePage() {
       </header>
 
       <UKTimeMachine
+        instruments={getConstitutionDocuments().uncodified["united-kingdom"]?.instruments ?? []}
         sovereigns={sovereigns}
         primeMinisters={primeMinisters}
         offices={offices}

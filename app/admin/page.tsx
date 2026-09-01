@@ -669,6 +669,13 @@ export default async function MissionControlPage() {
           </div>
           <div className="flex items-center gap-3">
             <Link
+              href="/admin/feedback"
+              className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)]"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              Feedback &rarr;
+            </Link>
+            <Link
               href="/"
               className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)]"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}

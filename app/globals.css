@@ -170,8 +170,15 @@ table thead th {
    phone, which is the only viewport where these are closed at all. `:target`
    force-reveals the content using the same two overrides as the desktop rule
    above, so tapping "Sports" in the on-this-page nav lands on Sports open. */
-details[data-desktop-open]:target > *:not(summary) { display: revert; }
-details[data-desktop-open]:target::details-content {
+/* `.jump-open` extends the same guarantee to a <details> that is collapsed on
+   EVERY viewport (Disclosure desktopOpen={false}). /updates groups 125 release
+   entries into collapsed months, and its month chips are the page's only
+   navigation, so a chip that landed on a shut section would be the exact
+   "nav looks broken" bug this rule exists to prevent — just on desktop too. */
+details[data-desktop-open]:target > *:not(summary),
+details.jump-open:target > *:not(summary) { display: revert; }
+details[data-desktop-open]:target::details-content,
+details.jump-open:target::details-content {
   content-visibility: visible;
   block-size: auto;
 }

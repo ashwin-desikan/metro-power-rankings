@@ -206,6 +206,7 @@ export default function USTimeMachine({
   cabinet = [],
   governors = {},
   scotus = [],
+  constitution,
 }: {
   presidents: Dated[];
   vicePresidents: Dated[];
@@ -213,6 +214,8 @@ export default function USTimeMachine({
   senate?: SenTerm[];
   cabinet?: CabinetOffice[];
   governors?: Record<string, Dated[]>;
+  /** The document in force, and how many presidents had served under it. */
+  constitution?: { adopted: number; total: number };
   scotus?: Justice[];
 }) {
   const today = new Date().toISOString().slice(0, 10);
@@ -228,6 +231,17 @@ export default function USTimeMachine({
   const pres = onDate(presidents, date);
   const vp = onDate(vicePresidents, date);
   const cong = house.find((h) => h.start <= date && date < h.end) ?? null;
+
+  // Which president is this, counting from the constitution's adoption? The
+  // count is of terms begun, so a president serving non-consecutive terms is
+  // counted each time they arrive, which is how the presidency is numbered.
+  const underConstitution = useMemo(() => {
+    if (!constitution) return null;
+    const started = presidents.filter(
+      (x) => x.start.slice(0, 4) >= String(constitution.adopted) && x.start <= date,
+    );
+    return { nth: started.length, of: constitution.total, adopted: constitution.adopted };
+  }, [presidents, date, constitution]);
 
   const cabinetOnDate = useMemo(
     () => cabinet.map((c) => ({ office: c.office, holder: onDate(c.holders, date) })),
@@ -300,6 +314,21 @@ export default function USTimeMachine({
         <Card label="President" office={pres} />
         <Card label="Vice President" office={vp} />
       </div>
+
+      {underConstitution && underConstitution.nth > 0 ? (
+        <p className="mb-4 text-xs text-[var(--text-muted)]">
+          Serving under the constitution of {underConstitution.adopted}, which by this date had
+          seen{" "}
+          <span className="font-semibold text-[var(--text)] tabular-nums">
+            {underConstitution.nth}
+          </span>{" "}
+          president{underConstitution.nth === 1 ? "" : "s"} take office, and has seen{" "}
+          {underConstitution.of} in all.{" "}
+          <a href="/constitutions/leaders" className="text-[var(--accent)] hover:underline">
+            How that compares →
+          </a>
+        </p>
+      ) : null}
 
       {cabinetOnDate.length > 0 ? (
         <div className="mb-4">

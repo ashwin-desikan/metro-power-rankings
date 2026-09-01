@@ -1,0 +1,228 @@
+{
+ "built": "2026-09-01",
+ "inclusionRule": "Statutes that condition the relationship between citizen and state in a general way or alter fundamental rights, in the sense the courts use when they speak of constitutional statutes, plus the franchise landmarks. Ruled 2026-09-01.",
+ "review": "Hand-curated. This session had no network access, so the dates and titles here were written from knowledge and have not been checked against primary sources. Spot-check before this ships.",
+ "uncodified": {
+  "united-kingdom": {
+   "form": "uncodified",
+   "summary": "The United Kingdom has a constitution but not a document. It is a body of statutes, prerogative powers, court decisions and conventions, and any of the statutes can be changed by an ordinary Act of Parliament. That is why the comparative dataset records no amendment procedure for it: there is nothing to amend, only law to replace.",
+   "instruments": [
+    {
+     "year": 1689,
+     "name": "Bill of Rights",
+     "what": "Settled the terms on which the Crown holds power: no suspending laws, no taxation without Parliament, free elections, free speech in Parliament."
+    },
+    {
+     "year": 1701,
+     "name": "Act of Settlement",
+     "what": "Fixed the succession and gave judges tenure during good behaviour rather than at the Crown's pleasure."
+    },
+    {
+     "year": 1707,
+     "name": "Union with Scotland Act",
+     "what": "Merged the English and Scottish parliaments into one Parliament of Great Britain."
+    },
+    {
+     "year": 1800,
+     "name": "Union with Ireland Act",
+     "what": "Added Ireland to the union, in force from 1801."
+    },
+    {
+     "year": 1832,
+     "name": "Representation of the People Act",
+     "what": "The Great Reform Act: redrew the borough seats and widened the franchise for the first time."
+    },
+    {
+     "year": 1867,
+     "name": "Representation of the People Act",
+     "what": "Extended the vote to urban working men, roughly doubling the electorate."
+    },
+    {
+     "year": 1884,
+     "name": "Representation of the People Act",
+     "what": "Extended the county franchise on the same terms as the boroughs."
+    },
+    {
+     "year": 1911,
+     "name": "Parliament Act",
+     "what": "Removed the Lords' veto over money bills and replaced it with a delaying power."
+    },
+    {
+     "year": 1918,
+     "name": "Representation of the People Act",
+     "what": "Near-universal male suffrage and the vote for women over 30 with a property qualification."
+    },
+    {
+     "year": 1928,
+     "name": "Representation of the People (Equal Franchise) Act",
+     "what": "Equalised the franchise at 21 for women and men."
+    },
+    {
+     "year": 1931,
+     "name": "Statute of Westminster",
+     "what": "Ended Westminster's power to legislate for the dominions without their request."
+    },
+    {
+     "year": 1949,
+     "name": "Parliament Act",
+     "what": "Cut the Lords' delaying power from two years to one."
+    },
+    {
+     "year": 1958,
+     "name": "Life Peerages Act",
+     "what": "Created appointed life peers, remaking the composition of the second chamber."
+    },
+    {
+     "year": 1969,
+     "name": "Representation of the People Act",
+     "what": "Lowered the voting age from 21 to 18."
+    },
+    {
+     "year": 1972,
+     "name": "European Communities Act",
+     "what": "Gave European law effect in the United Kingdom and priority over inconsistent domestic law."
+    },
+    {
+     "year": 1998,
+     "name": "Human Rights Act",
+     "what": "Made Convention rights enforceable in domestic courts and required legislation to be read compatibly where possible."
+    },
+    {
+     "year": 1998,
+     "name": "Scotland Act",
+     "what": "Created the Scottish Parliament and defined what is reserved to Westminster."
+    },
+    {
+     "year": 1998,
+     "name": "Government of Wales Act",
+     "what": "Created the National Assembly for Wales."
+    },
+    {
+     "year": 1998,
+     "name": "Northern Ireland Act",
+     "what": "Put the Belfast Agreement into law and created the Assembly and the power-sharing executive."
+    },
+    {
+     "year": 1999,
+     "name": "House of Lords Act",
+     "what": "Removed all but 92 hereditary peers from the Lords."
+    },
+    {
+     "year": 2005,
+     "name": "Constitutional Reform Act",
+     "what": "Separated the top court from the Lords, creating the Supreme Court, and reformed the Lord Chancellor's role."
+    },
+    {
+     "year": 2011,
+     "name": "Fixed-term Parliaments Act",
+     "what": "Took the power to call an early election out of the Prime Minister's hands. Repealed in 2022.",
+     "repealed": 2022
+    },
+    {
+     "year": 2018,
+     "name": "European Union (Withdrawal) Act",
+     "what": "Repealed the 1972 Act and converted retained EU law into domestic law."
+    },
+    {
+     "year": 2020,
+     "name": "European Union (Withdrawal Agreement) Act",
+     "what": "Gave effect to the withdrawal agreement and the transition period."
+    },
+    {
+     "year": 2022,
+     "name": "Dissolution and Calling of Parliament Act",
+     "what": "Restored the prerogative power to dissolve Parliament."
+    }
+   ]
+  },
+  "new-zealand": {
+   "form": "uncodified",
+   "summary": "New Zealand is the other pure case: no single constitutional document, no upper house since 1950, and a Bill of Rights that courts may interpret around but cannot use to strike down a statute.",
+   "instruments": [
+    {
+     "year": 1852,
+     "name": "New Zealand Constitution Act",
+     "what": "Passed at Westminster, it created representative government and the provinces."
+    },
+    {
+     "year": 1867,
+     "name": "Maori Representation Act",
+     "what": "Created four seats reserved for Maori voters."
+    },
+    {
+     "year": 1893,
+     "name": "Electoral Act",
+     "what": "Gave women the vote, the first country in the world to do so in a national election."
+    },
+    {
+     "year": 1947,
+     "name": "Statute of Westminster Adoption Act",
+     "what": "Took up the independence the 1931 Statute offered."
+    },
+    {
+     "year": 1950,
+     "name": "Legislative Council Abolition Act",
+     "what": "Abolished the upper house, leaving a unicameral Parliament."
+    },
+    {
+     "year": 1975,
+     "name": "Treaty of Waitangi Act",
+     "what": "Created the Waitangi Tribunal to hear claims under the Treaty."
+    },
+    {
+     "year": 1986,
+     "name": "Constitution Act",
+     "what": "Repealed the 1852 Act and gathered the core rules of government into one statute."
+    },
+    {
+     "year": 1990,
+     "name": "New Zealand Bill of Rights Act",
+     "what": "Set out civil and political rights, without the power to strike down legislation."
+    },
+    {
+     "year": 1993,
+     "name": "Electoral Act",
+     "what": "Replaced first past the post with mixed-member proportional representation, after a referendum."
+    },
+    {
+     "year": 2003,
+     "name": "Supreme Court Act",
+     "what": "Ended appeals to the Privy Council and created a domestic Supreme Court."
+    }
+   ]
+  }
+ },
+ "founding": {
+  "united-states": {
+   "label": "The Organic Laws of the United States",
+   "summary": "Every edition of the United States Code opens with four documents, not one. They are printed together as the Organic Laws, and the Constitution is the last of them rather than the whole of them.",
+   "context": "Placed against the rest of the world: the oldest national constitution still in force, shorter than all but 27 of the 191 codified constitutions on record, and amended at 0.7 events per decade, which is roughly a tenth of Brazil's rate.",
+   "documents": [
+    {
+     "year": 1776,
+     "name": "Declaration of Independence",
+     "what": "Stated the principles the new country claimed for itself: consent of the governed, and a right to alter a government that withholds it.",
+     "status": "foundational"
+    },
+    {
+     "year": 1777,
+     "name": "Articles of Confederation",
+     "what": "The first national compact. Drafted 1777, in force 1781, and abandoned in 1789 for want of a workable federal power.",
+     "status": "superseded"
+    },
+    {
+     "year": 1787,
+     "name": "Northwest Ordinance",
+     "what": "Governed the Northwest Territory and set the terms on which new states could join as equals rather than as possessions.",
+     "status": "foundational"
+    },
+    {
+     "year": 1787,
+     "name": "Constitution of the United States",
+     "what": "Adopted 1787, in force 1789, amended 27 times in 16 separate acts. The oldest national constitution still in force anywhere.",
+     "status": "in force"
+    }
+   ]
+  }
+ }
+}

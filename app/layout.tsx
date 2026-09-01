@@ -5,6 +5,7 @@ import "./globals.css";
 import SiteNav from "./SiteNav";
 import VisitBeacon from "./VisitBeacon";
 import BackToTop from "./BackToTop";
+import SiteFooter from "./SiteFooter";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -138,6 +139,7 @@ export default function RootLayout({
         <SiteNav />
         <VisitBeacon />
         {children}
+        <SiteFooter />
         <BackToTop />
         {/* Third page-view counter on this site, deliberately, because each
             answers a different question and none of them answers all three.

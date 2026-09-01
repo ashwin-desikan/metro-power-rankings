@@ -8097,3 +8097,204 @@ world-cup-qual rows sitting in the club spine.
   (Brier, era boards, classic checks) are the record.
 - Carried: Supabase RLS advisory (8 tables, SQL drafted, not applied);
   governors `governorsNow` hardcoded R26/D24; `tsconfig.clean.json` stray.
+
+---
+
+## 2026-09-01 — cowork (cloud, bridged to the Windows box) → next session (CONSTITUTIONS HUB: WP1-WP3 built, unpushed)
+
+New hub at `/constitutions`, built from the Comparative Constitutions Project.
+`npm run verify` passed natively on the Windows box (typecheck clean, 134 vitest
++ 112 pytest, `next build` compiled, `/constitutions` prerendered static).
+**Two small copy fixes landed AFTER that run, so re-run verify before pushing.**
+
+**Files (all uncommitted in the Windows working copy)**
+- `scripts/civic/build_constitutions.py` — `--self-test` / `--build --src <dir>`.
+- `public/data/constitutions.json` — 196 live countries, 758 systems, 240KB.
+- `lib/constitutions.ts`, `app/constitutions/page.tsx`.
+- Nav wired in `app/DesktopNav.tsx` and `app/MobileMenu.tsx`.
+- Release note added for 2026-09-01 (a second entry that day, alongside the club
+  ranking one; the football entry was left untouched).
+
+**Sources are hand-downloaded and live OUTSIDE the repo.** Neither this session
+nor the cloud container has egress to comparativeconstitutionsproject.org or
+utexas.box.com. Ashwin unzipped both releases to
+`C:\Users\ashwi\Desktop\New folder (2)`; `--src` points there. CCP ships roughly
+annually, so there is no scheduled refresh and none is wanted.
+
+**Three things a later session needs to know before touching this.**
+
+1. **No rigidity index, deliberately.** One was built and hand-checked on
+   2026-09-01. It ranked Uganda the most rigid constitution in the world and
+   Germany near the bottom, because formal procedure is not difficulty and the
+   weights were ours. The board is amendment EVENTS per decade, which is
+   observed. Do not reintroduce a score without a published construction and a
+   validation pass against the amendment rate.
+2. **Statehood gaps are not coverage gaps.** 92 of 223 codes have year gaps. Most
+   are CCP's sparse later updates; a few are real (Poland 1795-1918, Haiti
+   1915-1934). The first version dated a system's end as "the next new
+   constitution" and gave Poland's 1791 constitution a 128-year life. Each system
+   now carries `outcome`: replaced (544), interrupted (84), in force at last
+   coverage (130). Only `replaced` is a completed lifespan; mean 15.1, median 10.
+3. **CCP codings mean narrower things than their names.** `AMNDAMAJ` is only
+   asked when a legislative chamber approves, so the US reads as having no
+   supermajority hurdle. `judind` is whether the text carries an explicit
+   independence clause, not whether courts are independent; the US codes false.
+   Assume every variable is narrower than its name until the codebook says
+   otherwise.
+
+**Open, not blocking:** WP4 endurance model (survival fit, needs a walk-forward
+backtest against the 544 replaced systems before anything publishes), WP6 the
+Wikidata backfill for the 145 countries whose continuous record stops in 2019,
+and optional `_names.json` timelines for cote-divoire, eswatini, north-macedonia,
+zimbabwe and south-africa. Full scoping and audits are in the Claude Projects
+folder under `Constitutions Hub - *`.
+
+**Addendum, same day — WP4 and the uncodified pair.**
+`scripts/civic/model_constitution_endurance.py` (`--self-test`, `--report --src`)
+holds the survival analysis. 🔴 **The per-country forecast does NOT ship and the
+script says why**: asked in 1999 how many constitutions would still stand in
+2019 it said 91 against an actual 134, because constitutions written since 1990
+outlive the historical base rate. Earlier cuts (1900-1980) calibrate to within
+5-20%, so the failure is specific to the present, which is the only period a
+live forecast would serve. Descriptive findings passed and are on the page:
+KM median 14 years, age protects (92% chance of another 20 at age 100), the era
+shift (median 9 → 12 → 15 → not yet reached), and the flexibility result
+(amended in the first decade, median 24 further years against 14).
+`build_constitutions.py` now imports the KM helpers and writes an `endurance`
+block into `constitutions.json`, so the page never hardcodes a statistic.
+
+New file `public/data/constitutions-uncodified.json`: hand-curated constitutional
+instruments for the United Kingdom (25) and New Zealand (10), on a ruled
+inclusion test — statutes conditioning the citizen-state relationship generally
+or altering fundamental rights, plus the franchise landmarks. 🔴 **Curated from
+knowledge with no network access this session; the dates and titles want a
+spot-check before this ships.** The page now opens the comparison with three
+constitutional forms rather than treating uncodified as an exception, which was
+Ashwin's call and the right one for a site written by a US and UK citizen.
+
+**Addendum 2, same day — a table bug, and WP5.**
+🔴 **`CappedList` cannot cap table rows.** It renders its overflow inside
+`<details><div>…`, which a `<tbody>` may not contain, so rows past the cap were
+hoisted out of the table's layout and the columns visibly jumped at the
+boundary. Ashwin spotted it between rows 12 and 13 on `/constitutions`. Neither
+`check:mobile` nor `check:table-scroll` catches this. The house pattern is the
+fix and is now used: a real table in `hidden sm:block`, capped CARDS in
+`sm:hidden`. Worth knowing before capping any other table.
+
+**WP5 shipped.** `public/data/constitutions-uncodified.json` was renamed
+`constitutions-documents.json` and now holds two sections: `uncodified` (UK, NZ)
+and `founding` (the four US Organic Laws). The old file could not be deleted
+from the Linux mount and sits in `public/data/_to_delete/` — remove it natively.
+`/us-political-leadership` opens with an Organic Laws module (Declaration,
+Articles of Confederation, Northwest Ordinance, Constitution) plus one line
+placing the US against the rest of the world, and a new nav item. Country pages
+carry a Constitution row in the facts box linking to the hub, via
+`getCountryConstitution(slug)`.
+
+**Addendum 3, same day — the coverage cliff was a misreading.**
+🔴 The CCP chronology is a complete country-year panel through 2019 and switches
+to **event-only recording from 2020** (209 rows over six years, zero
+`non-event`). I read the missing filler rows as missing coverage and shipped a
+page claiming the record stopped in 2019 for 145 of 196 countries. It does not:
+the file carries 13 new constitutions, 190 amendments across 88 countries, 3
+suspensions and 3 interims for 2020-2025. `PANEL_END = 2019` now marks where the
+panel ends; statehood gaps still interrupt a system, post-2019 silence does not;
+systems in force are censored at 2025. Country fields are `asOf` and
+`lastEvent`, replacing `continuousTo`/`lastConfirmed`, and the boards show "last
+changed" instead of a coverage date. Corrected outcomes: **555 replaced, 26
+interrupted, 177 in force**. All WP4 findings survive and the gate still fails
+(1999 cut predicts 92 against 135 actual). `model_constitution_endurance.py` now
+reads `constitutions.json` rather than re-deriving the systems table, so the
+gate and the page cannot diverge. General lesson: when a panel looks like it
+stops, check whether its recording mode changed.
+
+Also this pass: `/uk-political-leadership` gains a constitution section (the 25
+statutes, collapsed, with a link to `/constitutions`), mirroring the Organic
+Laws module on the US page.
+
+## 2026-09-01 (later) — cowork (cloud, bridged) → mini: 🔴 THE CONFLICTS REFRESH WIPED FIVE CENTURIES OF WAR
+
+**To whoever runs the mini's `run-scraper-refresh.sh conflicts`: that job
+destroyed data this morning and the live site is affected.**
+
+`public/data/conflicts.json` is not the scrape. It is the full 1500-present
+dataset — scraped interstate wars since 1945 PLUS curated historical wars PLUS
+curated rows that supersede scrape artefacts. `lib/conflicts.ts` says exactly
+that in its own comment and merges the committed file with the GitHub raw feed
+so the history survives each refresh. `scripts/conflicts/build-conflicts.py`
+wrote the file from the scrape alone, so today's run replaced 500 years with 75
+rows: the file now reads `generated: 2026-09-01`, `count: 75`, 1945-2026 only.
+`/conflicts`, `/elections/under-fire` (its own copy cites Lincoln 1864 and the
+1918 coupon election) and every country ConflictsSection lost their history.
+
+A second bug compounded it: `lib/conflicts.ts` unconditionally dropped the
+scraped "2003 invasion of Iraq" row because a curated "Iraq War" row was meant
+to supersede it. With the curated row gone, that rule deleted the last record of
+the 2003 invasion.
+
+**Fixed here, uncommitted:** `build-conflicts.py` now MERGES — anything already
+in the output that the scrape does not mention is carried forward, and a run
+that would shrink the file exits non-zero instead of writing. `lib/conflicts.ts`
+now only applies a supersede-drop when the superseding row is actually present.
+
+🔴 **Recovery needs git and could not be done from this session.** Find the last
+good commit with `git log --oneline -- public/data/conflicts.json`, restore with
+`git checkout <sha> -- public/data/conflicts.json`, re-run
+`python scripts/conflicts/build-conflicts.py` (it should now say "N carried
+forward" rather than 0), and push. Until then the live site is missing the
+history.
+
+Also this pass: the US and UK constitution sections now start collapsed on
+desktop as well as mobile, and every country page carries a Constitution card in
+its Leadership section (not only the ones with an election hub).
+
+**Addendum 4, same day — Who outlasts whom (`/constitutions/leaders`) built.**
+`scripts/civic/build_constitution_tenures.py` (`--self-test`, `--build`) joins
+`constitutions.json` to the dated leaders files and writes
+`public/data/constitution-tenures.json`: 177 countries, 403 leaders whose single
+tenure outlasted a constitution. Reader is `lib/constitutionTenures.ts`. Nav
+wired in DesktopNav, MobileMenu, the constitutions hub and `/leaders`.
+
+Three defects the build surfaced, all the same family as earlier ones:
+1. 🔴 **Rotating offices.** Switzerland has 180 "President of the Swiss
+   Confederation" rows for an annually rotating office; counted naively it
+   becomes the most executive-churning country on earth on a constitution
+   standing since 1848. Malaysia's Yang di-Pertuan Agong rotates every five
+   years. Both are classified `rotating` and excluded; the self-test asserts it
+   and Switzerland now ranks 168th with 27 rotations excluded.
+2. 🔴 **Open-ended tenures.** A row with no end date was read as running to the
+   present, so Han-dynasty emperors "outlasted" ten modern Chinese
+   constitutions. A missing end is now filled from the NEXT holder's start.
+   Same defect as Poland's 128-year constitution.
+3. 🔴 **Coarse leaders files.** 25 countries carry rows tagged
+   `party: "backbone; year-level dates"`. Ecuador's had Velasco Ibarra running
+   1968-2007 (he left office in 1972), which made him outlast six constitutions.
+   Backbone rows are excluded from the outlasted board and flag their country's
+   count as approximate; four countries carry that flag.
+
+The role classifier covers all 83 labels that appear inside a constitutional
+span and FAILS the build on an unknown one, so a new label is a decision rather
+than a silent skip.
+
+Findings on the page: Argentina 56 executives under the 1853 constitution,
+Netherlands 48 since 1814, US 47 since 1789, Italy 46 since 1947. At the other
+end, Cameroon has changed head of state once in 53 years. The page leads on that
+contrast: a low churn number is not stability. King Bhumibol of Thailand reigned
+through eight constitutions, the most of anyone since 1789.
+
+**Addendum 5, same day — the two open items closed.**
+1. **Time-machine lines shipped.** `/us-political-leadership/time-machine` now
+   says which president the chosen date's holder was counting from 1789, and how
+   many the constitution has seen in all; `/uk-political-leadership/time-machine`
+   says there is no single document and names how many landmark statutes had
+   been enacted by that year and the most recent one. Both link onward. The UK
+   page reads `getConstitutionDocuments()` server-side and passes plain data into
+   the client component, so `check:client-imports` stays clean.
+2. **Shrink guards added to the two Supabase-fed nightly rebuilds.**
+   `scripts/champions/build_champions.py` now refuses to write
+   `champions-history.json` on ANY net row loss (the ledger only grows), and
+   `scripts/basketball/build_intl_basketball.py` refuses to write
+   `euroleague.json` if the season list would shrink, or if the existing file
+   cannot be parsed. Neither could be executed here (both need Supabase and this
+   shell has no egress), so both need one native run to confirm they still pass
+   in the normal case. Both files parse.

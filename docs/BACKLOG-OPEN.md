@@ -596,3 +596,43 @@ uncommenting `YearFilterBar` in four files). The Atlas of Metros embedding (simi
 exist; only the visualization is missing). Governance country context
 (`public/data/country-facts.json` exists with a Languages block but no government type,
 currency or governance signal).
+
+## Constitutions crossovers (parked 2026-09-01)
+
+Four cross-domain ideas proposed the day `/constitutions` shipped, taking the
+rulebook life cycle (adopted, amended, entrenched, suspended, replaced) as a
+shape shared by constitutions, league rulebooks and corporate charters. Ashwin
+read them and did not want any of them now. Parked deliberately, not rejected on
+the merits, so they are here rather than lost.
+
+### Older than the law of the land
+Join institutional founding years to constitutional adoption years: clubs,
+companies, universities and newspapers that predate the document governing them.
+Barcelona has outlived four Spanish constitutions; the FA (1863) is older than
+almost every constitution in force. Needs one field the site does not hold, a
+founding year, available from Wikidata inception (P571) through the pipeline the
+civic scripts already use. Everything else is a join against `constitutions.json`.
+**Priority:** parked
+
+### Who must agree (approval thresholds across institutions)
+One board of amendment and approval paths across domains: the US Constitution's
+two thirds of Congress plus three quarters of the states, the NFL's 24 of 32
+owners, the NBA's three quarters, FIFA's statutes, EU treaty unanimity, the
+Security Council veto, corporate supermajority provisions. The Seahawks resolving
+32-0 is structurally a ratification. Curated table of roughly fifty rows, no new
+pipeline. The strongest analytical join of the four.
+**Priority:** parked
+
+### When the rules stopped
+Constitutional suspensions (89 in the dataset) laid against seasons cancelled and
+trophies not awarded in the champions ledger, with the conflicts dataset
+explaining why. All three datasets are already in the repo; `/elections/under-fire`
+is the template for the shape.
+**Priority:** parked
+
+### The Rulebook Index
+Amendment events per decade applied to sporting codes: the MCC Laws (seven codes
+since 1744, giving a median code life directly comparable to the fourteen-year
+constitutional median), IFAB since 1863, the NFL competition committee, rugby,
+basketball. Needs curated change lists per sport, so a quarter rather than a week.
+**Priority:** parked

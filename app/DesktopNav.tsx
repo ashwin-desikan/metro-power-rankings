@@ -249,6 +249,8 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/us-political-leadership" title="US Political Leadership" />
             <MenuLink href="/uk-political-leadership" title="UK Political Leadership" />
             <MenuLink href="/elections" title="Elections" />
+            <MenuLink href="/constitutions" title={"The World's Constitutions"} />
+            <MenuLink href="/constitutions/leaders" title="Who Outlasts Whom" />
             <MenuLink href="/mayors" title="Mayors of the World" />
             <MenuGroupLabel>Geopolitics</MenuGroupLabel>
             <MenuLink href="/orgs" title="Alliances &amp; Orgs" />

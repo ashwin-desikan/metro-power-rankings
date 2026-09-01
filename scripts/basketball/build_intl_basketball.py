@@ -470,6 +470,24 @@ def main():
         "totals": {"nations": len(nation_rows), "podium_editions": len(podiums)},
     }
 
+    # 🔴 SHRINK GUARD on the Supabase-fed file. euroleague.json is the only
+    # output here that comes from a live table rather than a committed input, so
+    # a partial read would quietly publish a thinner season list. Same failure
+    # mode that cost the conflicts dataset five centuries of war in 2026.
+    _el_path = os.path.join(OUT, "euroleague.json")
+    if os.path.exists(_el_path):
+        try:
+            _before = json.load(io.open(_el_path, encoding="utf-8"))
+            _b = len(_before.get("seasons", _before)) if isinstance(_before, dict) else len(_before)
+            _a = len(euroleague.get("seasons", euroleague)) if isinstance(euroleague, dict) else len(euroleague)
+            if _a < _b:
+                raise SystemExit(
+                    f"ERROR: euroleague.json would drop {_b - _a} rows ({_b} -> {_a}). "
+                    f"Refusing to write; check the table before re-running.")
+        except (ValueError, KeyError, TypeError) as e:
+            raise SystemExit(f"ERROR: {_el_path} exists but could not be read ({e}); "
+                             f"refusing to overwrite it.")
+
     os.makedirs(os.path.join(OUT, "nation-detail"), exist_ok=True)
     json.dump(nation_rows, io.open(os.path.join(OUT, "nations.json"), "w",
               encoding="utf-8", newline=""), separators=(",", ":"), ensure_ascii=False)

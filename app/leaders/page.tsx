@@ -77,6 +77,13 @@ export default async function LeadersIndexPage() {
               Countries directory &rarr;
             </Link>
             <Link
+              href="/constitutions/leaders"
+              className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              Who outlasts whom &rarr;
+            </Link>
+            <Link
               href="/leaders/changes"
               className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}

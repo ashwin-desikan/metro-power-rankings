@@ -159,13 +159,17 @@ const DEVOLVED: { key: keyof Offices; label: string }[] = [
 ];
 
 export default function UKTimeMachine({
-  sovereigns, primeMinisters, offices, commons = [], lords = [],
+  sovereigns, primeMinisters, offices, commons = [], lords = [], instruments = [],
 }: {
   sovereigns: Dated[];
   primeMinisters: Dated[];
   offices: Offices;
   commons?: Chamber[];
   lords?: Chamber[];
+  /** Constitutional statutes, oldest first. The UK has no single document, so
+   *  the equivalent of "which constitution was in force" is "what had been
+   *  enacted by then". */
+  instruments?: { year: number; name: string }[];
 }) {
   const today = new Date().toISOString().slice(0, 10);
   const MIN_DATE = "1707-05-01";
@@ -178,6 +182,9 @@ export default function UKTimeMachine({
   const [draft, setDraft] = useState(today);
 
   const sovereign = onDate(sovereigns, date);
+  const year = Number(date.slice(0, 4));
+  const enacted = instruments.filter((i) => i.year <= year);
+  const latestStatute = enacted.length ? enacted[enacted.length - 1] : null;
   const pm = onDate(primeMinisters, date);
   const chancellor = onDate(offices.chancellor, date);
   const foreign = onDate(offices.foreignSecretary, date);
@@ -224,6 +231,19 @@ export default function UKTimeMachine({
         <Card label="The Sovereign" office={sovereign} showParty={false} />
         <Card label="Prime Minister" office={pm} />
       </div>
+
+      {latestStatute ? (
+        <p className="mb-4 text-xs text-[var(--text-muted)]">
+          No single constitution governs this day. By {year} the constitution amounted to{" "}
+          <span className="font-semibold text-[var(--text)] tabular-nums">{enacted.length}</span>{" "}
+          of its landmark statutes, the most recent being the {latestStatute.name} of{" "}
+          {latestStatute.year}.{" "}
+          <a href="/constitutions" className="text-[var(--accent)] hover:underline">
+            How that compares →
+          </a>
+        </p>
+      ) : null}
+
 
       {anyGreatOffice ? (
         <div className="mb-4">

@@ -65,7 +65,7 @@ type Cell = string | number;
 type Mono = { text: string; bg: string; fg: string };
 type SRow = { rank: number | string | null; name: string; href?: string | null; logoUrl?: string | null; flagUrl?: string | null; crestName?: string | null; monogram?: Mono | null; cells: Cell[]; po?: boolean; cut?: boolean };
 type SubTable = { title: string | null; columns: string[]; rows: SRow[] };
-type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean };
+type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean; cutNote?: string | null };
 type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]] };
 
 // The Football section on Live Standings renders as two columns: the LEFT column
@@ -94,6 +94,23 @@ const DASH = "—";
 const slugId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 const pct3 = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v.toFixed(3).replace(/^0/, ""));
 const num = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v);
+
+// Recent form and current streak. Both ride feeds the page already fetches:
+// `form` on every api-football LiveRow, `streak` on the four ESPN majors and
+// the WNBA. Neither reached the page until 2026-09-01.
+//
+// ORDER (the part that is easy to get wrong): the api-football bundle returns
+// `form` NEWEST-FIRST. Verified 2026-09-01 against the fixture list in the
+// same bundle - AEK Athens carried "WD" over a 0-0 on 18 Aug followed by a
+// 4-0 on 26 Aug, and nine further samples agreed. Every league site renders
+// form left-to-right oldest-to-newest, so the string is REVERSED here for
+// display. Do not "correct" it back without re-running that check.
+const form5 = (v: string | null | undefined): Cell =>
+  v ? v.slice(0, 5).split("").reverse().join("") : DASH;
+
+// ESPN ships the streak as a ready display string ("W3", "L1"); this only
+// guards the nulls it leaves in partial or offseason payloads.
+const strk = (v: string | null | undefined): Cell => (v || DASH);
 
 // inSeasonFromGames used to live here. It now sits in lib/seasonWindows.ts
 // paired with a calendar window, because on its own it cannot close a board:
@@ -127,6 +144,14 @@ function buildBlock<T>(opts: {
   // when the group split does not apply). Only evaluated on live tables -
   // callers pass undefined in the offseason.
   playoff?: (sorted: T[]) => (t: T) => boolean;
+  // One line naming what the green tint and the cut line actually mean in THIS
+  // competition ("Top 7 in each conference make the playoffs"). The page header
+  // explains the convention once, ninety words in, which nobody arriving on an
+  // anchor or a shared link ever reads. Borrowed from thestands.com, whose
+  // NWSL table carries "Top 8 make the playoffs - leader holds the Shield"
+  // under the table itself. Only set it where the rule is already established
+  // in code; never guess a format.
+  cutNote?: string | null;
 }): Block | null {
   if (opts.items.length === 0) return null;
   const mk = (items: T[]): SRow[] => {
@@ -141,7 +166,7 @@ function buildBlock<T>(opts: {
     .filter((st) => st.rows.length > 0);
   const covered = grouped.reduce((a, st) => a + st.rows.length, 0);
   const subTables = grouped.length > 0 && covered === all.length ? grouped : [{ title: null, columns: opts.columns, rows: all }];
-  return { league: opts.league, href: opts.href, note: opts.note, open: opts.open, subTables };
+  return { league: opts.league, href: opts.href, note: opts.note, open: opts.open, subTables, cutNote: opts.playoff ? opts.cutNote ?? null : null };
 }
 
 function Marker({ r }: { r: SRow }) {
@@ -265,6 +290,12 @@ function LeagueAccordion({ block }: { block: Block }) {
             </div>
           </div>
         ))}
+        {block.cutNote && (
+          <div className="text-[10px] text-[var(--text-dim)] pt-0.5 md:col-span-2">
+            <span className="inline-block w-2 h-2 rounded-sm align-middle mr-1.5" style={{ background: "rgba(34,197,94,0.45)" }} aria-hidden />
+            {block.cutNote}
+          </div>
+        )}
       </div>
     </details>
   );
@@ -283,17 +314,18 @@ async function nflBlock(): Promise<Block | null> {
     const f = fr.get(t.canonical); const m = f ? nflMono(f.slug) : null;
     return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/nfl/${f.slug}` : null,
       logoUrl: f ? nflLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
-      cells: live ? [t.wins, t.losses, t.ties, pct3(t.win_pct)] : [DASH, DASH, DASH, DASH] };
+      cells: live ? [t.wins, t.losses, t.ties, pct3(t.win_pct), strk(t.streak)] : [DASH, DASH, DASH, DASH, DASH] };
   };
   return buildBlock({
     league: "NFL", href: "/teams/nfl", note: live ? s.source_label : "Offseason", open: live,
-    items: teams, columns: ["W", "L", "T", "PCT"],
+    items: teams, columns: ["W", "L", "T", "PCT", "STRK"],
     sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "AFC", pick: (t) => t.conference === "AFC" }, { title: "NFC", pick: (t) => t.conference === "NFC" }],
     row,
     // ESPN's playoffSeed already applies the real seeding rules (division
     // winners first, then wild cards), so seed <= 7 IS the current field.
     playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 7 : undefined,
+    cutNote: "Seeds 1-7 in each conference make the playoffs.",
   });
 }
 
@@ -308,16 +340,17 @@ async function nbaBlock(): Promise<Block | null> {
     const f = fr.get(t.canonical); const m = f ? nbaMono(f.slug) : null;
     return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/nba/${f.slug}` : null,
       logoUrl: f ? nbaLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
-      cells: live ? [t.wins, t.losses, pct3(t.win_pct)] : [DASH, DASH, DASH] };
+      cells: live ? [t.wins, t.losses, pct3(t.win_pct), strk(t.streak)] : [DASH, DASH, DASH, DASH] };
   };
   return buildBlock({
     league: "NBA", href: "/teams/nba", note: live ? s.source_label : "Offseason", open: live,
-    items: teams, columns: ["W", "L", "PCT"],
+    items: teams, columns: ["W", "L", "PCT", "STRK"],
     sort: live ? (a, b) => b.win_pct - a.win_pct : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
     row,
     // Seeds 1-10 reach the postseason bracket (7-10 via the play-in).
     playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 10 : undefined,
+    cutNote: "Seeds 1-10 in each conference reach the postseason; 7-10 through the play-in.",
   });
 }
 
@@ -332,17 +365,18 @@ async function nhlBlock(): Promise<Block | null> {
     const f = fr.get(t.canonical); const m = f ? nhlMono(f.slug) : null;
     return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/nhl/${f.slug}` : null,
       logoUrl: f ? nhlLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
-      cells: live ? [t.games_played, t.wins, t.losses, t.ot_losses, t.points] : [DASH, DASH, DASH, DASH, DASH] };
+      cells: live ? [t.games_played, t.wins, t.losses, t.ot_losses, t.points, strk(t.streak)] : [DASH, DASH, DASH, DASH, DASH, DASH] };
   };
   return buildBlock({
     league: "NHL", href: "/teams/hockey", note: live ? s.source_label : "Offseason", open: live,
-    items: teams, columns: ["GP", "W", "L", "OTL", "PTS"],
+    items: teams, columns: ["GP", "W", "L", "OTL", "PTS", "STRK"],
     sort: live ? (a, b) => b.points - a.points || b.wins - a.wins || b.goal_diff - a.goal_diff : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "Eastern Conference", pick: (t) => t.conference === "E" }, { title: "Western Conference", pick: (t) => t.conference === "W" }],
     row,
     // ESPN's playoffSeed carries the divisional top-3 + wild-card rules;
     // 8 per conference make the field.
     playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 8 : undefined,
+    cutNote: "Eight per conference make the playoffs: the top three in each division plus two wild cards.",
   });
 }
 
@@ -385,20 +419,21 @@ async function mlbBlock(): Promise<Block | null> {
       logoUrl: f ? mlbLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
       cells: live
         ? [t.wins, t.losses, pct3(t.win_pct), gb.get(t.canonical) ?? DASH,
-           ...(showOdds ? [fmtOdds(odds.get(t.canonical)), fmtOdds(wsOdds.get(t.canonical))] : [])]
-        : [DASH, DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : [])] };
+           ...(showOdds ? [fmtOdds(odds.get(t.canonical)), fmtOdds(wsOdds.get(t.canonical))] : []), strk(t.streak)]
+        : [DASH, DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : []), DASH] };
   };
   return buildBlock({
     league: "MLB", href: "/teams/mlb",
     note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : "Offseason",
     open: live,
-    items: teams, columns: ["W", "L", "PCT", "GB", ...(showOdds ? ["PO%", "WS%"] : [])],
+    items: teams, columns: ["W", "L", "PCT", "GB", ...(showOdds ? ["PO%", "WS%"] : []), "STRK"],
     sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "American League", pick: (t) => leagueOf(t) === "AL" }, { title: "National League", pick: (t) => leagueOf(t) === "NL" }],
     row,
     // Three division winners + three wild cards per league; ESPN's seed
     // already encodes that, and it is null for eliminated clubs late on.
     playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 6 : undefined,
+    cutNote: "Six per league make the postseason: three division winners and three wild cards."
   });
 }
 
@@ -420,17 +455,18 @@ async function wnbaBlock(): Promise<Block | null> {
     return { rank: live ? i + 1 : null, name: f?.name ?? t.name, href: f ? `/teams/wnba/${f.slug}` : null,
       crestName: f?.name ?? t.name, monogram: m ? { text: m.abbr, bg: m.color, fg: "#fff" } : null,
       cells: live
-        ? [t.wins, t.losses, pct3(t.win_pct), ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_title)] : [])]
-        : [DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : [])] };
+        ? [t.wins, t.losses, pct3(t.win_pct), ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_title)] : []), strk(t.streak)]
+        : [DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : []), DASH] };
   };
   return buildBlock({
     league: "WNBA", href: "/teams/wnba",
     note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : "Offseason", open: live,
-    items: s.rows, columns: ["W", "L", "PCT", ...(showOdds ? ["PO%", "Title%"] : [])],
+    items: s.rows, columns: ["W", "L", "PCT", ...(showOdds ? ["PO%", "Title%"] : []), "STRK"],
     sort: live ? (a, b) => b.win_pct - a.win_pct : (a, b) => a.name.localeCompare(b.name),
     groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
     row,
     playoff: live ? () => (t) => field.has(t.name) : undefined,
+    cutNote: "The best eight records across both conferences make the playoffs; seeding is conference-blind.",
   });
 }
 
@@ -566,7 +602,7 @@ function clubRow(r: LiveRow, i: number, cols: "domestic" | "group"): SRow {
   const c = getFootballClubByName(r.lookup ?? "") ?? getFootballClubByName(r.name ?? "");
   const nm = c?.cur_name ?? r.name ?? r.lookup ?? "";
   const cells = cols === "domestic"
-    ? [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points)]
+    ? [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points), form5(r.form)]
     : [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gd), num(r.points)];
   return { rank: r.rank ?? i + 1, name: nm, href: c ? `/teams/football/${c.slug}` : null, crestName: nm, cells };
 }
@@ -578,7 +614,7 @@ function domesticLiveBlock(league: LiveLeague | undefined, label: string): Block
   const subTables: SubTable[] = league.groups
     .map((g): SubTable => ({
       title: league.groups.length > 1 ? g.group_label : null,
-      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"],
+      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", "Form"],
       rows: g.rows.slice().sort(byPtsGd).map((r, i) => clubRow(r, i, "domestic")),
     }))
     .filter((st) => st.rows.length > 0);

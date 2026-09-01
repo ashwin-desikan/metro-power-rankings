@@ -33,14 +33,21 @@ const GH_RAW =
 const NAME_FIX: Record<string, string> = {
   "Russo-Ukrainian War (outline)": "Russo-Ukrainian War",
 };
-const DROP_NAMES = new Set(["2003 invasion of Iraq"]);
+// Each drop names the curated row that supersedes it. The drop only applies
+// when that row is actually present: on 2026-09-01 the curated "Iraq War" entry
+// was wiped by a refresh and this rule then deleted the only remaining record of
+// the 2003 invasion. A superseding rule must check that it is superseding
+// something.
+const SUPERSEDED: Record<string, string> = { "2003 invasion of Iraq": "Iraq War" };
 
 function curate(wars: War[]): War[] {
+  const present = new Set(wars.map((w) => NAME_FIX[w.name] ?? w.name));
   const seen = new Set<string>();
   const out: War[] = [];
   for (const w of wars) {
     const name = NAME_FIX[w.name] ?? w.name;
-    if (DROP_NAMES.has(name) || seen.has(name)) continue;
+    const supersededBy = SUPERSEDED[name];
+    if ((supersededBy && present.has(supersededBy)) || seen.has(name)) continue;
     seen.add(name);
     out.push(name === w.name ? w : { ...w, name });
   }

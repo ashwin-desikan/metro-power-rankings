@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const UPDATED = "July 5, 2026";
+const UPDATED = "September 1, 2026";
 
 function H({ children }: { children: React.ReactNode }) {
   return <h2 className="text-lg font-semibold mt-8 mb-2">{children}</h2>;
@@ -43,6 +43,15 @@ export default function PrivacyPage() {
           in our database alongside your account identifier, protected so that only you can read or change it, and
           synced to your other signed-in devices. You can unfollow anything at any time, and you can sign out to
           return to a browser-only list.
+        </p>
+
+        <H>Feedback you send us</H>
+        <p>
+          If you use the &ldquo;Spot an error?&rdquo; control in the footer, we store what you wrote, the page you
+          were on, the category you picked, and the name and email address attached to your Google sign-in. Sending
+          feedback requires signing in, and the reason is narrow: so we can come back to you about what you
+          reported. We use it to fix the site and to reply to you, and for nothing else. It is never published, never
+          shown to other readers, and never shared with anyone. Ask us to delete a report and we will remove it.
         </p>
 
         <H>Analytics</H>

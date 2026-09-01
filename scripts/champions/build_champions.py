@@ -324,6 +324,20 @@ def main():
     if args.check:
         build_extra(check=True)
         return
+
+    # 🔴 SHRINK GUARD. This runs nightly from a Supabase table and commits the
+    # result, so a partial read or a bad delete upstream would quietly publish a
+    # smaller ledger and nobody would notice for months. That is exactly how the
+    # conflicts dataset lost five centuries of war between 2026-05 and 2026-09.
+    # The ledger only ever grows, so ANY net row loss is a stop.
+    if old:
+        before, after = len(json.loads(old)), len(json.loads(text))
+        if after < before:
+            print(f"ERROR: would drop {before - after:,} rows "
+                  f"({before:,} -> {after:,}). Refusing to write. "
+                  f"Check the table before re-running.")
+            sys.exit(4)
+
     io.open(OUT, "w", encoding="utf-8", newline="").write(text)
     print(f"wrote {OUT}")
     build_extra()

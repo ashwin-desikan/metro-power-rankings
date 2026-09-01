@@ -10,6 +10,18 @@ country slug on each side is marked the principal.
 
 The weekly/monthly GitHub Action regenerates conflicts_raw.json from Wikipedia,
 then runs this script and commits conflicts.json with [vercel skip].
+
+MERGE, NOT OVERWRITE -- read this before changing the write step.
+conflicts.json is NOT just the scrape. It is the full 1500-present dataset: the
+scraped interstate wars since 1945 PLUS the curated historical wars and the
+curated entries that supersede scrape artefacts (the "Iraq War" row that stands
+in for "2003 invasion of Iraq"). lib/conflicts.ts merges this committed file
+with the GitHub raw feed and relies on the local copy carrying the history.
+
+On 2026-09-01 this script overwrote the file with the 75 scraped rows and five
+centuries of history went with it. So it now MERGES: every war already in the
+output file that the scrape does not mention is carried forward untouched, and
+a run that would shrink the file aborts instead of writing.
 """
 import json, sys, datetime
 from pathlib import Path
@@ -95,13 +107,34 @@ def main():
             "sideA": side(w.get("side_a", [])), "sideB": side(w.get("side_b", [])),
         })
 
+    # --- merge with whatever is already committed -------------------------
+    existing = []
+    if OUT.exists():
+        try:
+            existing = json.loads(OUT.read_text(encoding="utf-8")).get("wars", [])
+        except Exception as e:                      # a corrupt file is not a licence to wipe it
+            print(f"ERROR: {OUT.name} exists but could not be read ({e}); refusing to overwrite")
+            sys.exit(3)
+    scraped_names = {w["name"] for w in wars}
+    carried = [w for w in existing if w["name"] not in scraped_names]
+    merged = wars + carried
+    merged.sort(key=lambda w: (w.get("start") or "", w["name"]))
+
+    # A refresh may add wars and may revise them. It must never lose them.
+    if existing and len(merged) < len(existing):
+        print(f"ERROR: merge would drop {len(existing) - len(merged)} wars "
+              f"({len(existing)} -> {len(merged)}). Refusing to write.")
+        sys.exit(4)
+
     data = {
         "generated": datetime.date.today().isoformat(),
-        "source": "https://en.wikipedia.org/wiki/List_of_interstate_wars_since_1945",
-        "count": len(wars), "wars": wars,
+        "source": "https://en.wikipedia.org/wiki/List_of_interstate_wars_since_1945"
+                  " (post-1945 rows) plus curated historical wars carried forward",
+        "count": len(merged), "wars": merged,
     }
     OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"wrote {len(wars)} wars -> {OUT.name}")
+    print(f"wrote {len(merged)} wars -> {OUT.name} "
+          f"({len(wars)} from the scrape, {len(carried)} carried forward)")
     if unmapped:
         print("UNMAPPED belligerents (review — add to ALIAS or KEEP_LABEL):")
         for u in sorted(unmapped): print("  ", u)

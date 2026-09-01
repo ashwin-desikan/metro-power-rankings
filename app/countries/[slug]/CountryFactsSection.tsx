@@ -28,7 +28,14 @@ function CappedList({ items, max }: { items: string[]; max: number }) {
   );
 }
 
-export default function CountryFactsSection({ facts }: { facts: CountryFacts | null }) {
+export default function CountryFactsSection({
+  facts,
+  constitution,
+}: {
+  facts: CountryFacts | null;
+  /** From the comparative constitutions dataset, where the country has a row. */
+  constitution?: { adopted: number | null; amendEvents: number; slug: string } | null;
+}) {
   if (!facts) return null;
 
   const rows: { label: string; value: ReactNode }[] = [];
@@ -55,6 +62,19 @@ export default function CountryFactsSection({ facts }: { facts: CountryFacts | n
   }
   if (facts.governmentForm) push("Government", cap(facts.governmentForm));
   if (facts.legislature) push("Legislature", facts.legislature);
+  if (constitution?.adopted) {
+    push(
+      "Constitution",
+      <Link
+        href="/constitutions"
+        className="underline decoration-dotted underline-offset-2 hover:text-[var(--accent)]"
+      >
+        {`${constitution.adopted}, ${constitution.amendEvents} amendment ${
+          constitution.amendEvents === 1 ? "event" : "events"
+        } since`}
+      </Link>,
+    );
+  }
   if (facts.demonym) push("Demonym", facts.demonym);
   if (facts.timezones?.length)
     push(

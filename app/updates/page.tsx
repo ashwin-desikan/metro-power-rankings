@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ActivityPreview from "@/app/ActivityPreview";
 import { RELEASES, type Release } from "@/lib/releases";
+import { Disclosure } from "@/app/_shared/Disclosure";
 import {
   AUTHOR,
   BASE_URL,
@@ -35,8 +36,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Hand-curated release log. Add new entries at the top. Group same-day
-// shipping into a single date block.
+// Hand-curated release log. Add new entries at the top. Same-day work that is
+// genuinely one story shares a date block; genuinely separate stories get their
+// own, which is why the render keys on date PLUS index rather than date alone.
 //
 // === BREVITY RULES (enforced at build time, see end of file) ===
 // This is a PUBLIC release notes page, not an internal changelog.
@@ -94,6 +96,45 @@ function formatReleaseDate(iso: string): string {
   const day = parseInt(m[3], 10);
   const year = m[1];
   return `${month} ${day}, ${year}`;
+}
+
+// --- Month grouping -----------------------------------------------------
+//
+// 125 entries rendered flat measured 88.7 phone screens on 2026-09-01, the
+// longest route on the site, and probe:mobile flagged it as long on DESKTOP
+// too. The standard's answer to a length warning is in-page navigation rather
+// than truncation (DESIGN-STANDARDS "The number to watch"), so nothing is cut:
+// entries are grouped by the month they shipped, the current month stays open
+// on every viewport, and older months collapse EVERYWHERE. desktopOpen={false}
+// rather than the usual default because the desktop reading is the one the
+// probe called out; a release archive from four months ago is exactly the
+// "genuinely optional appendix" that option exists for.
+const FULL_MONTHS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+type MonthGroup = { key: string; label: string; releases: Release[] };
+
+const monthAnchorId = (key: string) => `m-${key}`;
+
+function monthLabel(key: string): string {
+  const m = /^(\d{4})-(\d{2})$/.exec(key);
+  if (!m) return key;
+  return `${FULL_MONTHS[parseInt(m[2], 10) - 1]} ${m[1]}`;
+}
+
+// RELEASES is newest-first, so a single pass keeps both the group order and
+// the order within each group without sorting anything.
+function groupByMonth(releases: Release[]): MonthGroup[] {
+  const out: MonthGroup[] = [];
+  for (const r of releases) {
+    const key = r.date.slice(0, 7);
+    const last = out[out.length - 1];
+    if (last && last.key === key) last.releases.push(r);
+    else out.push({ key, label: monthLabel(key), releases: [r] });
+  }
+  return out;
 }
 
 const breadcrumbJsonLd = {
@@ -162,6 +203,7 @@ const webPageJsonLd = {
 };
 
 export default function UpdatesPage() {
+  const groups = groupByMonth(RELEASES);
   return (
     <>
       <script
@@ -192,54 +234,97 @@ export default function UpdatesPage() {
             </h1>
             <p className="text-lg text-[var(--text-muted)] leading-relaxed">
               A running log of new sections, new data, methodology changes, and
-              fixes on the Global Metro Power Rankings. Newest at the top.
-              Same-day shipping collapses into one entry.
+              fixes on the Global Metro Power Rankings. Newest at the top,
+              grouped by the month it shipped.
             </p>
           </header>
 
           <ActivityPreview />
 
-          <div className="space-y-12">
-            {RELEASES.map((release) => (
-              <article key={release.date} className="flex flex-col sm:flex-row gap-6 sm:gap-10">
-                <div className="sm:w-36 flex-shrink-0">
-                  <time
-                    dateTime={release.date}
-                    className="block text-sm font-semibold text-[var(--accent)]"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                  >
-                    {formatReleaseDate(release.date)}
-                  </time>
+          {/* Jump index. Six chips, so it stays one or two rows even at 390px. */}
+          <Disclosure
+            title="Jump to a month"
+            meta={`${groups.length} months \u00b7 ${RELEASES.length} entries`}
+            className="mb-8"
+          >
+            <div className="flex flex-wrap gap-2 p-4">
+              {groups.map((g) => (
+                <a
+                  key={`jump-${g.key}`}
+                  href={`#${monthAnchorId(g.key)}`}
+                  className="inline-flex items-center min-h-11 rounded-full border px-3 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+                >
+                  {g.label}
+                  <span className="ml-1.5 text-[var(--text-dim)] tabular-nums">{g.releases.length}</span>
+                </a>
+              ))}
+            </div>
+          </Disclosure>
+
+          <div className="space-y-4">
+            {groups.map((g, gi) => (
+              <Disclosure
+                key={g.key}
+                id={monthAnchorId(g.key)}
+                title={g.label}
+                meta={`${g.releases.length} ${g.releases.length === 1 ? "entry" : "entries"}`}
+                // Newest month open everywhere; the rest closed everywhere, and
+                // marked jump-open so an anchor still reveals what it landed on.
+                defaultOpen={gi === 0}
+                desktopOpen={gi === 0}
+                className={gi === 0 ? "" : "jump-open"}
+                bodyClassName="px-4 sm:px-6 py-8"
+              >
+                <div className="space-y-12">
+                  {g.releases.map((release, ri) => (
+                    // Keyed on date PLUS index: two entries have shared
+                    // 2026-09-01 since the club-ranking launch, and a duplicate
+                    // React key is a reconciliation bug waiting to happen.
+                    <article key={`${release.date}-${ri}`} className="flex flex-col sm:flex-row gap-6 sm:gap-10">
+                            <div className="sm:w-36 flex-shrink-0">
+                              <time
+                                dateTime={release.date}
+                                className="block text-sm font-semibold text-[var(--accent)]"
+                                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                              >
+                                {formatReleaseDate(release.date)}
+                              </time>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h2 className="text-xl font-bold mb-4 text-[var(--text)]">
+                                {release.headline}
+                              </h2>
+                              <ul className="space-y-3">
+                                {release.items.map((item, idx) => (
+                                  <li
+                                    key={idx}
+                                    className="text-[var(--text)] leading-relaxed flex gap-3"
+                                  >
+                                    <span
+                                      className="text-[var(--accent)] flex-shrink-0 mt-1"
+                                      aria-hidden="true"
+                                    >
+                                      &middot;
+                                    </span>
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                    </div>
+                    </article>
+                  ))}
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-xl font-bold mb-4 text-[var(--text)]">
-                    {release.headline}
-                  </h2>
-                  <ul className="space-y-3">
-                    {release.items.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="text-[var(--text)] leading-relaxed flex gap-3"
-                      >
-                        <span
-                          className="text-[var(--accent)] flex-shrink-0 mt-1"
-                          aria-hidden="true"
-                        >
-                          &middot;
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
+              </Disclosure>
             ))}
           </div>
 
           <footer className="mt-16 pt-8 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">
             <p>
               Have a correction, a feature request, or a city you think is
-              miscategorized? Leave a comment on any post at{" "}
+              miscategorized? Use the &ldquo;Spot an error?&rdquo; control at the
+              foot of any page, which tells us which page you were reading. For
+              anything longer, the comments are open on every post at{" "}
               <a
                 href="https://citizenofnowhere.substack.com"
                 target="_blank"
