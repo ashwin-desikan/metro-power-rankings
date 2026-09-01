@@ -68,9 +68,32 @@ SCALE_MIN_MP = 3          # clubs below this do not set the scale
 TOP5    = {"England", "Spain", "Germany", "Italy", "France"}
 LAB     = {"Czech Republic": "Czechia", "Turkey": "Türkiye"}
 EUROIDS = {2: "CL", 3: "EL", 848: "ECL"}
-USC_ID  = 531
+USC_ID  = 531     # UEFA Super Cup
+ICC_ID  = 1168    # FIFA Intercontinental Cup
 DOMCUPS = {48, 137, 81, 97, 185, 90, 143, 45, 66, 181, 96, 65}
-TROPHY  = {"CL": 0.12, "EL": 0.05, "ECL": 0.03, "USC": 0.04, "CUP": 0.015, "SUPER": 0.01}
+TROPHY  = {"CL": 0.12, "EL": 0.05, "ECL": 0.03, "USC": 0.04, "ICC": 0.02, "CUP": 0.015, "SUPER": 0.01}
+
+
+def comp_of(lid, ctype):
+    """Which competition a fixture belongs to, or None if it is outside this ranking.
+
+    Domestic super cups are matched on football_league.comp_type, NOT on an id list. The
+    first version of this function carried only the archive's hardcoded cup ids, so the
+    four domestic super cups already played this season (Community Shield, Trophee des
+    Champions, the German and Portuguese super cups) were dropped entirely: the winners
+    lost both the result and the trophy. Spain, Italy and the Netherlands have theirs
+    registered and unplayed, and they would have been dropped in the same silence. Reading
+    the type means a super cup added later is picked up without a code change.
+
+    Deliberately still None: national-team competitions (Nations League, Asian Cup) and
+    CONMEBOL Libertadores, which is not a UEFA club competition.
+    """
+    if lid in EUROIDS: return EUROIDS[lid]
+    if lid == USC_ID:  return "USC"
+    if lid == ICC_ID:  return "ICC"
+    if lid in DOMCUPS: return "CUP"
+    if ctype == "super_cup": return "SUPER"
+    return None
 
 
 def sm(comp, r):
@@ -83,7 +106,7 @@ def sm(comp, r):
         return 1.25 if r in ("Final", "Semi-finals", "Quarter-finals", "Round of 16") else (1.1 if r.startswith("League Stage") else 1.0)
     if comp == "ECL":
         return 1.15 if r in ("Final", "Semi-finals", "Quarter-finals", "Round of 16") else (1.05 if r.startswith("League Stage") else 1.0)
-    return {"USC": 1.3}.get(comp, 1.0)
+    return {"USC": 1.3, "ICC": 1.2}.get(comp, 1.0)
 
 
 def shrink(mp, k=None):
@@ -150,7 +173,10 @@ def build(key):
     UEFA = {c["country"] for c in coefdoc["countries"]}
 
     # 1. universe: UEFA level-1 domestic leagues with a 2026 table
-    leagues = [l for l in supa_get("/rest/v1/football_league?select=league_id,country,name,level,comp_type,season", key)
+    allcomps = supa_get("/rest/v1/football_league?select=league_id,country,name,level,comp_type,season", key)
+    ctype = {l["league_id"]: l.get("comp_type") for l in allcomps}
+    allmeta = {l["league_id"]: l for l in allcomps}
+    leagues = [l for l in allcomps
                if l.get("level") == 1 and l.get("comp_type") == "domestic" and l.get("country") in UEFA]
     lmeta = {l["league_id"]: l for l in leagues}
     st = supa_get(f"/rest/v1/football_standings?select=league_id,team_id,played,win,draw,lose,rank,group_label&season=eq.{SEASON}", key)
@@ -238,13 +264,8 @@ def build(key):
 
     # 4b. European, domestic-cup and super-cup matches, with true per-match weighting
     fx = supa_get(f"/rest/v1/football_fixtures?select=league_id,round,home_team_id,away_team_id,home_goals,away_goals,kickoff,status&season=eq.{SEASON}", key)
-    def comp_of(lid):
-        if lid in EUROIDS: return EUROIDS[lid]
-        if lid == USC_ID: return "USC"
-        if lid in DOMCUPS: return "CUP"
-        return None
     for f in fx:
-        comp = comp_of(f["league_id"])
+        comp = comp_of(f["league_id"], ctype.get(f["league_id"]))
         if comp is None or f["home_goals"] is None or f["away_goals"] is None:
             continue
         m = sm(comp, f["round"])
@@ -267,8 +288,10 @@ def build(key):
     for lid, fs in finals.items():
         f = sorted(fs, key=lambda x: x.get("kickoff") or "")[-1]
         wid = f["home_team_id"] if f["home_goals"] >= f["away_goals"] else f["away_team_id"]
-        comp = comp_of(lid)
-        TB[wid] += TROPHY.get(comp if comp in TROPHY else "SUPER", TROPHY["SUPER"])
+        comp = comp_of(lid, ctype.get(lid))
+        if comp is None:
+            continue
+        TB[wid] += TROPHY[comp]
     groups = defaultdict(set)
     for r in st:
         groups[r["league_id"]].add(r.get("group_label") or "")
@@ -312,15 +335,37 @@ def build(key):
     rank_rows(clubs, lambda c: c["score"])
     return clubs, {"scale": round(scale, 4), "legacyScale": round(legacy, 4), "pctl": round(pctl, 4),
                    "leagues": len(byleague), "clubs": len(clubs), "k": K_SHRINK,
-                   "euroMatches": sum(1 for f in fx if comp_of(f["league_id"]) and f["home_goals"] is not None)}
+                   "trophies": sum(1 for v in TB.values() if v),
+                   # Every competition in football_fixtures that this ranking IGNORED, printed on
+                   # every run. The four dropped super cups were invisible precisely because the
+                   # builder said nothing about what it skipped. Silence is the defect; a comp
+                   # that should count now has to be argued out loud, in the log, once a day.
+                   "dropped": sorted({(allmeta.get(f["league_id"], {}).get("name") or str(f["league_id"]))
+                                      for f in fx if comp_of(f["league_id"], ctype.get(f["league_id"])) is None}),
+                   "euroMatches": sum(1 for f in fx
+                                      if comp_of(f["league_id"], ctype.get(f["league_id"])) and f["home_goals"] is not None)}
 
 
 # ------------------------- self test -------------------------
 def selftest():
     assert sm("CL", "Final") == 1.5 and sm("CL", "League Stage - 3") == 1.2
     assert sm("EL", "Round of 16") == 1.25 and sm("ECL", "League Stage - 1") == 1.05
-    assert sm("USC", None) == 1.3 and sm("CUP", "Semi-finals") == 1.0
+    assert sm("USC", None) == 1.3 and sm("ICC", None) == 1.2 and sm("CUP", "Semi-finals") == 1.0
     assert result_q(2, 1) == 1.0 and result_q(1, 1) == 0.5 and result_q(0, 1) == 0.0
+    # COMPETITION SCOPE. Ashwin caught the first build dropping every domestic super cup,
+    # match result and trophy alike, because comp_of matched an id list. These cases pin the
+    # scope so the next comp added to football_league cannot fall through in silence.
+    assert comp_of(2, "continental") == "CL" and comp_of(848, "continental") == "ECL"
+    assert comp_of(531, "continental") == "USC"     # UEFA Super Cup
+    assert comp_of(1168, "super_cup") == "ICC"      # FIFA Intercontinental
+    assert comp_of(48, "cup") == "CUP"              # EFL Cup
+    for lid in (526, 528, 529, 543, 547, 550, 556):  # FR, EN, DE, NL, IT, PT, ES super cups
+        assert comp_of(lid, "super_cup") == "SUPER", lid
+    assert comp_of(99999, "super_cup") == "SUPER", "a NEW super cup must count without a code change"
+    assert comp_of(5, "international") is None      # Nations League: national teams
+    assert comp_of(7, "international") is None      # Asian Cup: national teams
+    assert comp_of(13, "continental") is None       # Libertadores: not a UEFA club comp
+    assert set(TROPHY) >= {"CL", "EL", "ECL", "USC", "ICC", "CUP", "SUPER"}, "every scored comp needs a trophy value"
     # shrinkage crosses 0.5 exactly at the archive's rankability gate
     assert abs(shrink(8) - 0.5) < 1e-12
     assert shrink(0) == 0.0 and shrink(4) < 0.5 < shrink(20)
@@ -361,18 +406,21 @@ def selftest():
     rows = [{"score": 3}, {"score": 5}, {"score": 5}, {"score": 1}]
     rank_rows(rows, lambda c: c["score"])
     assert [r["rank"] for r in rows] == [1, 1, 3, 4]
-    print("self-test OK (11 cases)")
+    print("self-test OK (25 cases)")
 
 
 # ------------------------- report + CLI -------------------------
 def report(clubs, meta):
-    print(f"leagues={meta['leagues']}  clubs={meta['clubs']}  euro/cup matches={meta['euroMatches']}")
+    print(f"leagues={meta['leagues']}  clubs={meta['clubs']}  euro/cup/super-cup matches={meta['euroMatches']}"
+          f"  clubs holding a trophy bonus={meta['trophies']}")
     print(f"K={meta['k']}  form scale = max Q/MP over MP>={SCALE_MIN_MP} = {meta['scale']}"
           f"   [p{SCALE_PCTL} would be {meta['pctl']}; the archive's max over MP>=8 would be {meta['legacyScale']}]")
     mps = sorted(c["mp"] for c in clubs)
     med = mps[len(mps) // 2] if mps else 0
     print(f"median matches played={med}  median form weight={round(med/(med+K_SHRINK), 3)}"
           "   <- how much of this board is THIS season rather than pedigree")
+    print("IGNORED competitions in football_fixtures (check this line whenever a comp is added): "
+          + (", ".join(meta["dropped"]) if meta["dropped"] else "none"))
     print("\n  #  club                       ctry           score  form  shr  ped  cur   wt  mp  rec")
     for c in clubs[:25]:
         print("  %2d  %-26s %-12s %6.3f %5.2f %5.2f %4.2f %4.2f %4.2f %3d  %d-%d-%d"
