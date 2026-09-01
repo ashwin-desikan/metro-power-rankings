@@ -40,6 +40,22 @@ export type CoefCountryRow = {
   coef: number;
 };
 
+export type PowerRow = {
+  rank: number;
+  name: string;
+  slug: string | null;
+  country: string;
+  mp: number;
+  w: number;
+  d: number;
+  l: number;
+  form: number;
+  ped: number;
+  wt: number;    // weight on THIS season: mp/(mp+k)
+  tb: number;
+  score: number;
+};
+
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const DASH = "—";
@@ -92,7 +108,7 @@ function CountryTable({
 
 export default function CoefTables({
   clubs, countries, liveSeasons, currentSeason,
-  accessCountries, accessSeasons, accessWindow, powerNote,
+  accessCountries, accessSeasons, accessWindow, powerNote, power, powerK,
 }: {
   clubs: CoefClubRow[];
   countries: CoefCountryRow[];
@@ -102,18 +118,23 @@ export default function CoefTables({
   accessSeasons: string[];
   accessWindow: string;
   powerNote: string;
+  power: PowerRow[];
+  powerK: number;
 }) {
   const live = clubs.length > 0 || countries.length > 0;
-  const [tab, setTab] = useState<string>(live ? "clubs" : "access");
+  const hasPower = power.length > 0;
+  const [tab, setTab] = useState<string>(hasPower ? "power" : live ? "clubs" : "access");
   const [country, setCountry] = useState<string>("");
 
   const clubCountries = Array.from(new Set(clubs.map((c) => c.country).filter((c): c is string => !!c))).sort();
   const clubRows = country ? clubs.filter((c) => c.country === country) : clubs.slice(0, 100);
+  const powerRows = power.slice(0, 100);
+  const medianWt = hasPower ? [...power].sort((a, b) => a.wt - b.wt)[Math.floor(power.length / 2)].wt : 0;
 
   const items = [
+    { key: "power", label: "Club power ranking" },
     ...(live ? [{ key: "clubs", label: "Club coefficient" }, { key: "race", label: "Country race" }] : []),
     { key: "access", label: "Access ranking" },
-    { key: "power", label: "Club power ranking" },
   ];
 
   return (
@@ -202,12 +223,64 @@ export default function CoefTables({
         </>
       )}
 
-      {tab === "power" && (
+      {tab === "power" && (hasPower ? (
+        <>
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            Every result weighted by the opponent&rsquo;s strength and the stage it was played at, plus five-year
+            pedigree, the live coefficient and trophies won. The season is young, so each club&rsquo;s form is
+            blended toward its pedigree with weight <span style={mono}>mp / (mp + {powerK})</span>. The
+            <strong> Wt</strong> column is that weight: today the median club sits at {medianWt.toFixed(2)}, so
+            most of this board is still pedigree rather than this season. It rises every week.
+          </p>
+          <ResponsiveTable
+            compact
+            variant="list"
+            className="rounded-xl border"
+            style={cardStyle}
+            mobileNoun="clubs"
+            mobileRows={powerRows.map((c) => (
+              <RankRow
+                key={`${c.rank}-${c.name}`}
+                rank={c.rank}
+                name={
+                  <>
+                    <CrestIcon name={c.name} size={14} className="flex-shrink-0" />
+                    {c.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:text-[var(--accent)] truncate">{c.name}</Link> : <span className="truncate">{c.name}</span>}
+                  </>
+                }
+                sub={<>{c.country} · {c.mp} P · {c.w}-{c.d}-{c.l}{c.tb > 0 ? ` · +${c.tb.toFixed(2)} trophy` : ""}</>}
+                right={c.score.toFixed(3)}
+                rightSub="score"
+              />
+            ))}
+          >
+            <table className="w-full text-xs min-w-[600px]" data-sticky-col="2"><thead><tr className="text-left text-[var(--text-muted)]">
+              <th className="py-2 px-2 font-medium text-right">#</th><th className="py-2 px-2 font-medium">Club</th><th className="py-2 px-2 font-medium">Country</th>
+              <th className="py-2 px-2 font-medium text-right">P</th><th className="py-2 px-2 font-medium text-right">W</th><th className="py-2 px-2 font-medium text-right">D</th><th className="py-2 px-2 font-medium text-right">L</th>
+              <th className="py-2 px-2 font-medium text-right">Form</th><th className="py-2 px-2 font-medium text-right">Ped</th>
+              <th className="py-2 px-2 font-medium text-right" title="How much of this club's score is this season rather than pedigree">Wt</th>
+              <th className="py-2 px-2 font-medium text-right">Trophy</th><th className="py-2 px-2 font-medium text-right">Score</th></tr></thead>
+              <tbody>{powerRows.map((c) => (
+                <tr key={`${c.rank}-${c.name}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{c.rank}</td>
+                  <td className="py-1.5 px-2 font-medium whitespace-nowrap"><span className="inline-flex items-center gap-1.5"><CrestIcon name={c.name} size={14} className="flex-shrink-0" />{c.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:text-[var(--accent)]">{c.name}</Link> : <span>{c.name}</span>}</span></td>
+                  <td className="py-1.5 px-2 whitespace-nowrap text-[var(--text-muted)]">{c.country}</td>
+                  {[c.mp, c.w, c.d, c.l].map((v, j) => <td key={j} className="py-1.5 px-2 text-right tabular-nums" style={mono}>{v}</td>)}
+                  <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{c.form.toFixed(2)}</td>
+                  <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{c.ped.toFixed(2)}</td>
+                  <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{c.wt.toFixed(2)}</td>
+                  <td className="py-1.5 px-2 text-right tabular-nums text-[var(--accent)]" style={mono}>{c.tb > 0 ? `+${c.tb.toFixed(2)}` : DASH}</td>
+                  <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={mono}>{c.score.toFixed(3)}</td>
+                </tr>))}</tbody>
+            </table>
+          </ResponsiveTable>
+        </>
+      ) : (
         <div className="rounded-xl border px-4 py-8 text-center" style={cardStyle}>
           <p className="text-sm font-medium">Club power ranking opens later in the season</p>
           <p className="mt-1.5 text-xs text-[var(--text-muted)] max-w-md mx-auto">{powerNote}</p>
         </div>
-      )}
+      ))}
     </div>
   );
 }

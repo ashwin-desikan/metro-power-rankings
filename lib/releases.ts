@@ -19,11 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-01",
-    headline: "UEFA coefficients, live and daily, on the 2026-27 hub",
+    headline: "A live club ranking, and daily UEFA coefficients",
     items: [
-      "The 2026-27 hub now carries the live UEFA club and country coefficients, 416 clubs and 55 associations across the 2022/23 to 2026/27 window, recomputed daily from this season's European results.",
+      "The 2026-27 club power ranking is live: 693 clubs across 52 leagues, every result weighted by the opponent and the stage, refreshed daily rather than waiting for the season to finish.",
+      "A fortnight of football is not a season, so each club's form is blended toward its five-year record and the table shows how much of every score is this season rather than reputation. That share rises every week.",
+      "The hub now also carries the live UEFA club and country coefficients, 416 clubs and 55 associations across the 2022/23 to 2026/27 window, recomputed daily from this season's European results.",
       "The frozen ranking that decided this season's entries moves to its own labelled tab, so the window that set the slots is never mistaken for the race still being run.",
-      "Scoring follows the Kassiesa method: qualifying counts half, the knockout play-off counts for the country only, and no club falls below a fifth of its association's coefficient.",
     ],
   },
   {

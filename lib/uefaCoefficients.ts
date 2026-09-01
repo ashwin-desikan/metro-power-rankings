@@ -57,18 +57,7 @@ const GH_RAW =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/football";
 
 async function load(): Promise<UefaCoefficients | null> {
-  try {
-    const res = await fetch(`${GH_RAW}/${FILE}`, { next: { revalidate: 1800 } });
-    if (res.ok) return (await res.json()) as UefaCoefficients;
-  } catch {
-    /* fall through to disk */
-  }
-  try {
-    const p = join(process.cwd(), "public", "data", "football", FILE);
-    return JSON.parse(await readFile(p, "utf-8")) as UefaCoefficients;
-  } catch {
-    return null;
-  }
+  return loadFile<UefaCoefficients>(FILE);
 }
 
 export async function getUefaCoefficients(): Promise<UefaCoefficients | null> {
@@ -81,4 +70,57 @@ export async function getUefaCountryCoefficients(): Promise<UefaCountryCoef[]> {
 
 export async function getUefaClubCoefficients(): Promise<UefaClubCoef[]> {
   return (await load())?.clubs ?? [];
+}
+
+// ---- Citizen of Nowhere club power ranking, in season -----------------------
+// scripts/uefa/build_live_ranking.py writes live-ranking-2026-27.json on the same
+// daily cadence and the same [vercel skip] commit. Read the same way, for the same
+// reason: it changes every matchday and must never be baked into a build.
+
+export type LiveRankingClub = {
+  rank: number;
+  name: string;
+  lookup: string | null;
+  country: string;
+  score: number;
+  form: number;        // this season's form, 0-1
+  formShrunk: number;  // after the blend toward pedigree
+  ped: number;
+  cur: number;
+  wt: number;          // weight on THIS season, mp/(mp+k)
+  winpct: number;
+  mp: number;
+  mpEuro: number;
+  w: number;
+  d: number;
+  l: number;
+  tb: number;
+};
+
+export type LiveRanking = {
+  season: string;
+  generated: string;
+  method: string;
+  k: number;
+  scale: number;
+  clubs: LiveRankingClub[];
+};
+
+async function loadFile<T>(file: string): Promise<T | null> {
+  try {
+    const res = await fetch(`${GH_RAW}/${file}`, { next: { revalidate: 1800 } });
+    if (res.ok) return (await res.json()) as T;
+  } catch {
+    /* fall through to disk */
+  }
+  try {
+    const p = join(process.cwd(), "public", "data", "football", file);
+    return JSON.parse(await readFile(p, "utf-8")) as T;
+  } catch {
+    return null;
+  }
+}
+
+export async function getLiveRanking(): Promise<LiveRanking | null> {
+  return loadFile<LiveRanking>("live-ranking-2026-27.json");
 }

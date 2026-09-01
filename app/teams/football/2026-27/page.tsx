@@ -5,8 +5,8 @@ import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
-import CoefTables, { type CoefClubRow, type CoefCountryRow } from "./CoefTables";
-import { getUefaCoefficients } from "@/lib/uefaCoefficients";
+import CoefTables, { type CoefClubRow, type CoefCountryRow, type PowerRow } from "./CoefTables";
+import { getUefaCoefficients, getLiveRanking } from "@/lib/uefaCoefficients";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getFootballClubByName } from "@/lib/football";
 import { getClubStandings, getClubCompetitions, getSuperCups, getDomesticCups, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
@@ -268,9 +268,18 @@ function CompCard({ comp }: { comp: LiveComp }) {
 }
 
 export default async function ClubFootball2027Page() {
-  const [standings, comps, superCups, domesticCups, coef] = await Promise.all([
-    getClubStandings(), getClubCompetitions(), getSuperCups(), getDomesticCups(), getUefaCoefficients(),
+  const [standings, comps, superCups, domesticCups, coef, ranking] = await Promise.all([
+    getClubStandings(), getClubCompetitions(), getSuperCups(), getDomesticCups(),
+    getUefaCoefficients(), getLiveRanking(),
   ]);
+
+  const powerRows: PowerRow[] = (ranking?.clubs ?? []).map((c) => {
+    const r = resolveClub({ name: c.name, lookup: c.lookup });
+    return {
+      rank: c.rank, name: r.name, slug: r.slug, country: c.country, mp: c.mp,
+      w: c.w, d: c.d, l: c.l, form: c.form, ped: c.ped, wt: c.wt, tb: c.tb, score: c.score,
+    };
+  });
 
   // Live UEFA coefficients (daily, ISR). Slugs are resolved HERE because
   // lib/football is server-only; CoefTables is a client component and cannot
@@ -336,10 +345,11 @@ export default async function ClubFootball2027Page() {
       <section id="ranking" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-1">Rankings and coefficients</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">
-          Three tables, and they answer different questions. The club and country coefficients are the live
-          UEFA five-year rankings, recomputed every day from this season&rsquo;s European results. The access
-          ranking is the frozen {COEF_2027.window} window that decided how many clubs each country entered
-          this season, and it will not move again.
+          Four tables, and they answer different questions. The power ranking is this site&rsquo;s own, weighing
+          every result by the opponent and the stage. The club and country coefficients are the live UEFA
+          five-year rankings, recomputed every day from this season&rsquo;s European results. The access ranking
+          is the frozen {COEF_2027.window} window that decided how many clubs each country entered this season,
+          and it will not move again.
         </p>
         <CoefTables
           clubs={coefClubs}
@@ -349,6 +359,8 @@ export default async function ClubFootball2027Page() {
           accessCountries={COEF_2027.countries}
           accessSeasons={COEF_2027.clubSeasons}
           accessWindow={COEF_2027.window}
+          power={powerRows}
+          powerK={ranking?.k ?? 8}
           powerNote="The Citizen of Nowhere club power ranking weighs every result by the opponent's strength and the stage it was played at, so it needs a season with some matches in it. Until it publishes, the UEFA coefficients above are the live measure of who is climbing."
         />
       </section>

@@ -82,7 +82,22 @@ else
   push "football: UEFA coefficient self-test FAILED" high warning "Scoring logic broke its own unit tests. Coefficients NOT refreshed. See $LOG"
 fi
 
-BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json public/data/football/wlive-2026.json public/data/football/uefa-coefficients.json"
+# Citizen of Nowhere club power ranking, in season. MUST run after the coefficient step: it
+# reads uefa-coefficients.json for each club's live current-season coefficient. Supabase and
+# local files only, no api-football calls. Soft-fail for the same reason as above.
+"$PY" scripts/uefa/build_live_ranking.py --self-test 2>&1 | tee -a "$LOG"
+if [ "${PIPESTATUS[0]}" -eq 0 ]; then
+  "$PY" scripts/uefa/build_live_ranking.py --write 2>&1 | tee -a "$LOG"
+  [ "${PIPESTATUS[0]}" -eq 0 ] || {
+    log "  WARN: club power ranking --write failed; keeping the previous file"
+    push "football: club power ranking not refreshed" default warning "build_live_ranking.py --write failed; standings bundles still shipped. See $LOG"
+  }
+else
+  log "  WARN: club power ranking self-test failed; skipping the ranking write"
+  push "football: power ranking self-test FAILED" high warning "Scoring logic broke its own unit tests. Ranking NOT refreshed. See $LOG"
+fi
+
+BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json public/data/football/wlive-2026.json public/data/football/uefa-coefficients.json public/data/football/live-ranking-2026-27.json"
 if ! git diff --quiet -- $BUNDLES; then
   git add $BUNDLES
   git commit -q -m "football: refresh live bundles [vercel skip]" || fail "bundle commit failed"
