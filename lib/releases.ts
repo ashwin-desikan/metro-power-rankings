@@ -19,32 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-01",
-    headline: "Recent form on the tables, and a way to report errors",
+    headline: "Constitutions, a live club ranking, and form on every table",
     items: [
-      "Every league table on Live Standings now carries recent form or the current streak: the last five results for European leagues, and the live win or loss run for the NFL, MLB, the NBA, the NHL and the WNBA.",
-      "Each table with a playoff race now states in one line what its own cut means, so the green shading and the line under it no longer need a legend at the top of the page.",
-      "A footer now runs across the site, carrying a control for reporting an error on whatever page you are reading, without leaving it.",
-      "Reports are signed in with Google so we can come back to you about what you found. What you send is never published and is used only to fix the site.",
-    ],
-  },
-  {
-    date: "2026-09-01",
-    headline: "The world's constitutions",
-    items: [
-      "A new page covers the constitution of every country: when it was adopted, how often it has been amended, and how long documents like it tend to last.",
-      "Since 1789 the world has written 758 constitutions and replaced 555 of them. Half are gone within fourteen years, though one written since 1990 is twice as likely to reach twenty as one written in the 1800s.",
-      "Not every country keeps its constitution in one document: the UK and New Zealand get their 35 constitutional statutes, and the US page now opens with the four Organic Laws its Code prints.",
-      "A companion page counts who outlasts whom. Italy has changed prime minister 46 times under one constitution; King Bhumibol of Thailand reigned through eight of them.",
-    ],
-  },
-  {
-    date: "2026-09-01",
-    headline: "A live club ranking, and daily UEFA coefficients",
-    items: [
-      "The 2026-27 club power ranking is live: 693 clubs across 52 leagues, every result weighted by the opponent and the stage, refreshed daily rather than waiting for the season to finish.",
-      "A fortnight of football is not a season, so each club's form is blended toward its five-year record and the table shows how much of every score is this season rather than reputation. That share rises every week.",
-      "The hub now also carries the live UEFA club and country coefficients, 416 clubs and 55 associations across the 2022/23 to 2026/27 window, recomputed daily from this season's European results.",
-      "The frozen ranking that decided this season's entries moves to its own labelled tab, so the window that set the slots is never mistaken for the race still being run.",
+      "A new hub covers the constitution of every country: when it was adopted, how often it has been amended, and how long such documents last. A companion page counts the leaders who outlasted theirs.",
+      "Since 1789 the world has written 758 constitutions and replaced 555 of them. Half are gone within fourteen years, though one written since 1990 is twice as likely to reach twenty as one from the 1800s.",
+      "The 2026-27 club power ranking is live: 693 clubs across 52 leagues, refreshed daily, beside live UEFA club and country coefficients recomputed from this season's European results.",
+      "Standings tables now carry recent form and current streak and explain their own playoff cut, and a new site footer lets you report an error on whatever page you are reading.",
     ],
   },
   {
