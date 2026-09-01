@@ -62,7 +62,27 @@ log "exporting frontend bundles"
 # swaps FA WSL to 2026-27 the day api-football publishes that table -- so it must run
 # daily, not once. lib/wLive.ts ISR-reads the bundle from GitHub raw ([vercel skip]).
 "$PY" scripts/apifootball/refresh_women.py --write 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "women's refresh failed"
-BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json public/data/football/wlive-2026.json"
+# UEFA country + club coefficients (Kassiesa method5). Reads Supabase ONLY -- the
+# football_fixtures/football_standings rows refresh.py wrote above -- and makes no
+# api-football calls, so it is free to run on all four daily slots. It writes
+# public/data/football/uefa-coefficients.json, which lib/uefaCoefficients.ts reads
+# from GitHub raw via ISR, so the live five-year race refreshes with NO Vercel build.
+# SOFT-FAIL on purpose (the refresh.py rc=3 precedent): a coefficient miss must never
+# block the standings bundles, which are the most-read tables on the site. Flip the
+# `|| { ... }` to `|| fail "..."` if you would rather it hard-fail.
+"$PY" scripts/uefa/uefa_coefficients.py --self-test 2>&1 | tee -a "$LOG"
+if [ "${PIPESTATUS[0]}" -eq 0 ]; then
+  "$PY" scripts/uefa/uefa_coefficients.py --write 2>&1 | tee -a "$LOG"
+  [ "${PIPESTATUS[0]}" -eq 0 ] || {
+    log "  WARN: uefa coefficients --write failed; keeping the previous file"
+    push "football: UEFA coefficients not refreshed" default warning "uefa_coefficients.py --write failed; standings bundles still shipped. See $LOG"
+  }
+else
+  log "  WARN: uefa coefficients self-test failed; skipping the coefficient write"
+  push "football: UEFA coefficient self-test FAILED" high warning "Scoring logic broke its own unit tests. Coefficients NOT refreshed. See $LOG"
+fi
+
+BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json public/data/football/wlive-2026.json public/data/football/uefa-coefficients.json"
 if ! git diff --quiet -- $BUNDLES; then
   git add $BUNDLES
   git commit -q -m "football: refresh live bundles [vercel skip]" || fail "bundle commit failed"
