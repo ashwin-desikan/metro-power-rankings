@@ -106,9 +106,17 @@ export type LiveRanking = {
   clubs: LiveRankingClub[];
 };
 
+// 300s, NOT the 1800s that lib/clubFootballLive.ts and lib/euroComps.ts use. The rule that
+// matters: a page's data cache must never outlive the page's own `revalidate`, or that number
+// is a lie. /teams/football/2026-27 declares `revalidate = 300`, so at 1800 it regenerated six
+// times over reusing the same half-hour-old JSON. Caught 2026-09-01, when a pushed ranking
+// showed PSG on the score from a build two revisions earlier and the file on GitHub raw was
+// already correct. The other two libs feed pages that revalidate at 1800 and are consistent.
+const REVALIDATE = 300;
+
 async function loadFile<T>(file: string): Promise<T | null> {
   try {
-    const res = await fetch(`${GH_RAW}/${file}`, { next: { revalidate: 1800 } });
+    const res = await fetch(`${GH_RAW}/${file}`, { next: { revalidate: REVALIDATE } });
     if (res.ok) return (await res.json()) as T;
   } catch {
     /* fall through to disk */
