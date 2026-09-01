@@ -1,13 +1,34 @@
 {
-  "generatedAt": "2026-08-31",
+  "generatedAt": "2026-09-01",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-01",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "e0bd6e87b"
+    },
     {
       "date": "2026-08-31",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "c451c96eb"
+      "text": "Data refreshed — Football, Basketball, Elections, Leaders, and 5 more.",
+      "commit": "b6b8bff54"
+    },
+    {
+      "date": "2026-08-31",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Club football greatest games: unified Elo, Game Score, cup and rivalry boards.",
+      "commit": "31a9c0949"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "hub",
+      "hub": null,
+      "text": "Release notes: gate the rule so a shipping day cannot close unwritten.",
+      "commit": "573c7ea47"
     },
     {
       "date": "2026-08-30",
@@ -4180,27 +4201,6 @@
       "hub": null,
       "text": "Data refreshed — Populations.",
       "commit": "266586cb6"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "MetroPageMap: render dissolved-county boundary layer from public/data/metro-boundaries/{slug}.geojson when present; falls back to pin-only…",
-      "commit": "f5b34695b"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Release notes: add map embed bullet to 2026-05-03 entry.",
-      "commit": "b5afea8f5"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Metro detail map: solo metros get a single-point Location pin; cluster members keep cluster context.",
-      "commit": "14e2ca44d"
     }
   ]
 }
