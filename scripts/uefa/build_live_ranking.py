@@ -71,7 +71,17 @@ EUROIDS = {2: "CL", 3: "EL", 848: "ECL"}
 USC_ID  = 531     # UEFA Super Cup
 ICC_ID  = 1168    # FIFA Intercontinental Cup
 DOMCUPS = {48, 137, 81, 97, 185, 90, 143, 45, 66, 181, 96, 65}
-TROPHY  = {"CL": 0.12, "EL": 0.05, "ECL": 0.03, "USC": 0.04, "ICC": 0.02, "CUP": 0.015, "SUPER": 0.01}
+# Trophy bonuses. Ashwin's rulings, 2026-09-01:
+#   * UEFA Super Cup counts as a domestic super cup (0.04 -> 0.01). It is a one-off match
+#     between two clubs who already won their trophy, and the archive was paying it four
+#     times what the Community Shield pays.
+#   * The Intercontinental Cup and the old FIFA Club World Cup count the SAME (0.02 -> 0.03
+#     for the Intercontinental). They were the same title in different decades.
+#   * The 32-team Club World Cup keeps 0.05.
+# NOTE the 1.3 stage multiplier on a UEFA Super Cup MATCH is unchanged; this ruling was
+# about the trophy layer. Say the word if the match weighting should drop to 1.0 as well.
+TROPHY  = {"CL": 0.12, "EL": 0.05, "ECL": 0.03, "CWC": 0.05, "ICC": 0.03,
+           "CUP": 0.015, "USC": 0.01, "SUPER": 0.01}
 
 
 def comp_of(lid, ctype):
@@ -87,6 +97,12 @@ def comp_of(lid, ctype):
 
     Deliberately still None: national-team competitions (Nations League, Asian Cup) and
     CONMEBOL Libertadores, which is not a UEFA club competition.
+
+    STILL EXPOSED: the 32-team FIFA Club World Cup has no id here because it is not yet in
+    football_league for this season. If it arrives typed as a cup or a super cup it would be
+    scored at 0.015 or 0.01 instead of its 0.05. The daily run prints every ignored comp, so
+    a NEW comp shows up in the log; a comp that is silently MIS-typed would not. Add its id
+    to a CWC branch the day it appears.
     """
     if lid in EUROIDS: return EUROIDS[lid]
     if lid == USC_ID:  return "USC"
@@ -366,6 +382,14 @@ def selftest():
     assert comp_of(7, "international") is None      # Asian Cup: national teams
     assert comp_of(13, "continental") is None       # Libertadores: not a UEFA club comp
     assert set(TROPHY) >= {"CL", "EL", "ECL", "USC", "ICC", "CUP", "SUPER"}, "every scored comp needs a trophy value"
+    # Ashwin's trophy rulings, pinned so a later edit cannot quietly undo them.
+    assert TROPHY["USC"] == TROPHY["SUPER"], "UEFA Super Cup counts as a domestic super cup"
+    assert TROPHY["ICC"] == 0.03 and TROPHY["CWC"] == 0.05, "Intercontinental == old FIFA CWC; 32-team CWC is 0.05"
+    # The full ladder, written out because the revaluation created two new ties and they should
+    # be deliberate rather than discovered: the 32-team Club World Cup now sits level with the
+    # Europa League, and the Intercontinental Cup level with the Conference League.
+    assert TROPHY["CL"] > TROPHY["CWC"] == TROPHY["EL"] > TROPHY["ICC"] == TROPHY["ECL"] \
+        > TROPHY["CUP"] > TROPHY["USC"] == TROPHY["SUPER"]
     # shrinkage crosses 0.5 exactly at the archive's rankability gate
     assert abs(shrink(8) - 0.5) < 1e-12
     assert shrink(0) == 0.0 and shrink(4) < 0.5 < shrink(20)

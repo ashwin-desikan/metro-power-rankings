@@ -21,9 +21,16 @@ CLUB POWER-RANKING FORMULA (per club, UEFA first divisions only):
     pedigree/current= from the 1-year UEFA club coefficients (public.uefa_club_coeff_history,
                       17/18-25/26); five_year = sum of the five seasons ending that year.
     country factor  = sqrt(country 5-year coef / England's), from public.uefa_country_coeff_history.
-    trophy_bonus    = CL 0.12 (0.10 pre-2026-08-02), Club World Cup 0.05, Europa League 0.05, UEFA Super Cup 0.04,
-                      Conference League 0.03, old 7-team Club World Cup 0.03, domestic league title
-                      0.06 (top-5 league) else 0.03, Intercontinental 0.02, domestic cup 0.015, domestic super cup 0.01
+    trophy_bonus    = CL 0.12 (0.10 pre-2026-08-02), Club World Cup (32-team) 0.05, Europa League 0.05,
+                      Conference League 0.03, old 7-team Club World Cup 0.03, Intercontinental 0.03,
+                      domestic league title 0.06 (top-5 league) else 0.03, domestic cup 0.015,
+                      domestic super cup 0.01, UEFA Super Cup 0.01.
+                      REVALUED 2026-09-01 (Ashwin): the UEFA Super Cup fell 0.04 -> 0.01 to sit level
+                      with a domestic super cup, and the Intercontinental Cup rose 0.02 -> 0.03 to sit
+                      level with the old FIFA Club World Cup, the same title in a different decade.
+                      🔴 THE SHIPPED hub-*.json FILES STILL CARRY THE OLD VALUES. This script cannot
+                      run outside a container, so re-running it is not how they get fixed; see
+                      scripts/uefa/hubgen/ and the project memory note on the trophy-layer recompute.
                       (added to the winning club; the old Club World Cup shows in the super-cup section).
 
 DATA SOURCES (per season): the fetch scripts in scripts/apifootball/_scratch produce the season
@@ -191,8 +198,8 @@ def build(season):
     for cid,fx in S["cup_fixtures"].items():
         cid=int(cid); wid=fwid(fx)
         if cid in DOMCUPS: addb(wid,0.015)          # domestic cup
-        elif cid==531: addb(wid,0.04)               # UEFA Super Cup
-        elif cid==1168: addb(wid,0.02)              # Intercontinental
+        elif cid==531: addb(wid,0.01)               # UEFA Super Cup: counts as a domestic super cup (Ashwin, 2026-09-01)
+        elif cid==1168: addb(wid,0.03)              # Intercontinental: same value as the old FIFA Club World Cup (Ashwin, 2026-09-01)
         else: addb(wid,0.01)                        # domestic super cup
     for lid,d in S["standings_all"].items():        # domestic league champions (single-group UEFA)
         if d["confed"]=="UEFA" and d.get("level")==1 and d["response"]:
