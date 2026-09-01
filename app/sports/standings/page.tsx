@@ -24,6 +24,10 @@ import { getLiveTennisSlam } from "@/lib/tennisDraw";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { getWtcStandings } from "@/lib/wtcStandings";
 import { getRugbyFixtures, type RugbyMatch } from "@/lib/rugbyFixtures";
+import { getRugbyStandings, rugbyAllRows, RUGBY_COMPS, type RugbyCompKey, type RugbyStandingRow } from "@/lib/rugbyStandings";
+import { getEuroleagueStandings, EUROLEAGUE_FULL_SEASON, type EuroleagueRow } from "@/lib/euroleagueStandings";
+import { rugbyClubColor, rugbyMonogram } from "@/lib/rugby-colors";
+import { euroleagueClubColor, euroleagueMonogram } from "@/lib/euroleague-colors";
 import { getCfbRankings, cfbSeasonStarted } from "@/lib/cfb-live";
 import { getWLiveLeagues, getWLiveCompetition, getWLiveOdds, type WLiveLeagueVM, type WLiveFixtureVM, type WLiveOddsVM } from "@/lib/wLive";
 import { getCricketFixtures, type CricketMatch } from "@/lib/cricketFixtures";
@@ -39,7 +43,7 @@ import { getFootballClubByName } from "@/lib/football";
 import { flagCdnUrl } from "@/lib/international-display";
 // Season gating: see lib/seasonWindows.ts for why a calendar window sits
 // alongside the games check rather than replacing it.
-import { isLeagueLive, inSeasonWindow, tournamentIsCurrent } from "@/lib/seasonWindows";
+import { isLeagueLive, inSeasonWindow, tournamentIsCurrent, type SeasonKey } from "@/lib/seasonWindows";
 import { CappedList } from "@/app/_shared/Disclosure";
 
 export const revalidate = 120;
@@ -47,7 +51,7 @@ export const revalidate = 120;
 const PATH = "/sports/standings";
 const TITLE = "Live Standings";
 const DESC =
-  "Every live league table the site tracks, in one place: European club football, Copa Libertadores, the four North American majors, college football rankings, MLS, the WSL, Liga F, NWSL and Women\u2019s Champions League, WNBA, CFL, NPB, AFL, NRL and F1. Refreshed through each season.";
+  "Every live league table the site tracks, in one place: European club football, Copa Libertadores, the four North American majors, college football rankings, MLS, the WSL, Liga F, NWSL and Women\u2019s Champions League, WNBA, the EuroLeague, the Top 14, Gallagher Premiership and Champions Cup, CFL, NPB, AFL, NRL and F1. Refreshed through each season.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -856,6 +860,121 @@ const _ruOverride: Record<string, string> = { "Ivory Coast": "ivory-coast", "Wes
 const _ruFlag = (n: string) => flagCdnUrl(_ruOverride[n] ?? _slugName(n));
 const _crFlag = (n: string) => flagCdnUrl(_slugName(n));
 
+// Club rugby union boards, all three off the same ESPN v2 standings shape
+// (lib/rugbyStandings.ts). Playoff fields are the PUBLISHED format, checked
+// against sources on 2026-09-01 rather than recalled:
+//  - Top 14: top six, with first and second seeded straight to the semi-finals
+//    and third-to-sixth playing quarter-finals hosted by third and fourth.
+//  - Premiership: 10 clubs, 18 rounds, semi-finals then a final, so top four.
+//  - Champions Cup: EPCR CHANGED THIS FOR 2026-27. It is no longer top four
+//    per pool. Only the top THREE in each pool are guaranteed a knockout
+//    place; the last four spots go to the best-ranked remaining clubs across
+//    all pools on competition points. The cut line therefore marks three, and
+//    the note carries the cross-pool half, which no contiguous line can show.
+//    Same overhaul moved the try bonus to a three-try margin and put wins
+//    above points difference as the first tie-break. Re-verify before the pool
+//    stage opens in December.
+const RUGBY_BOARDS: Record<RugbyCompKey, { seasonKey: SeasonKey; field: number; cutNote: string }> = {
+  top14: { seasonKey: "top14", field: 6,
+    cutNote: "Top six reach the play-offs; the top two go straight to the semi-finals." },
+  prem: { seasonKey: "premrugby", field: 4,
+    cutNote: "Top four reach the play-offs." },
+  "champions-cup": { seasonKey: "championscup", field: 3,
+    cutNote: "Top three in each pool qualify for the round of 16; the last four places go to the best-ranked remaining clubs across all pools." },
+};
+
+async function rugbyStandingsBlock(key: RugbyCompKey): Promise<Block | null> {
+  const s = await getRugbyStandings(key);
+  const rows = rugbyAllRows(s);
+  if (rows.length === 0) return null;
+  const board = RUGBY_BOARDS[key];
+  const played = rows.map((r) => r.played);
+  const live = isLeagueLive(board.seasonKey, played, RUGBY_COMPS[key].fullSeason);
+  // Three states, not two. A season that has FINISHED still has a real table
+  // worth reading, so it keeps its numbers and is merely labelled and closed;
+  // only a genuinely empty pre-season shell (every club on zero, which is what
+  // ESPN serves the moment it rolls a competition over) falls back to dashes.
+  const anyPlayed = Math.max(0, ...played) > 0;
+  const showNums = live || anyPlayed;
+  const season = s.season_label ? ` · ${s.season_label}` : "";
+  const note = live ? (s.season_label || "live") : anyPlayed ? `Final${season}` : `Opens soon${season}`;
+  const pools = Array.from(new Set(rows.map((r) => r.pool).filter((p): p is string => !!p)));
+  const row = (r: RugbyStandingRow, i: number): SRow => {
+    const c = rugbyClubColor(r.display);
+    return {
+      rank: showNums ? (r.rank ?? i + 1) : null,
+      name: r.display,
+      // No per-club rugby page exists, so the club links to its metro, which
+      // is the page this site is actually about.
+      href: r.metro_slug ? `/rankings/${r.metro_slug}` : null,
+      crestName: r.team ?? r.display,
+      monogram: { text: rugbyMonogram(r.display), bg: c.bg, fg: c.fg },
+      cells: showNums
+        ? [r.played, r.won, r.drawn, r.lost, r.bonus, r.pf, r.pa,
+           r.pd > 0 ? `+${r.pd}` : r.pd, r.points, r.form ?? DASH]
+        : [DASH, DASH, DASH, DASH, DASH, DASH, DASH, DASH, DASH, DASH],
+    };
+  };
+  return buildBlock({
+    league: RUGBY_COMPS[key].label, href: "/teams/rugby-union", note, open: live,
+    items: rows,
+    columns: ["P", "W", "D", "L", "BP", "PF", "PA", "PD", "Pts", "Form"],
+    // ESPN publishes the official order, tie-breaks included, in `rank`.
+    // Recomputing it here would only invent a second, worse table; points and
+    // difference are the fallback for a feed that omits the rank stat.
+    sort: showNums
+      ? (a, b) => (a.rank ?? 99) - (b.rank ?? 99) || b.points - a.points || b.pd - a.pd
+      : (a, b) => a.display.localeCompare(b.display),
+    groups: pools.map((p) => ({ title: p, pick: (r: RugbyStandingRow) => r.pool === p })),
+    row,
+    playoff: live
+      ? (sorted) => { const f = new Set(sorted.slice(0, board.field)); return (r) => f.has(r); }
+      : undefined,
+    cutNote: board.cutNote,
+  });
+}
+
+async function euroleagueBlock(): Promise<Block | null> {
+  const s = await getEuroleagueStandings();
+  if (s.rows.length === 0) return null;
+  const played = s.rows.map((r) => r.played);
+  const live = isLeagueLive("euroleague", played, EUROLEAGUE_FULL_SEASON);
+  const anyPlayed = Math.max(0, ...played) > 0;
+  const showNums = live || anyPlayed;
+  const season = s.season_label ? ` · ${s.season_label}` : "";
+  const note = live ? (s.season_label || "live") : anyPlayed ? `Final${season}` : `Opens soon${season}`;
+  const row = (r: EuroleagueRow, i: number): SRow => {
+    const c = euroleagueClubColor(r.display);
+    return {
+      rank: showNums ? (r.rank ?? i + 1) : null,
+      name: r.display,
+      href: r.metro_slug ? `/rankings/${r.metro_slug}` : null,
+      crestName: r.team ?? r.display,
+      monogram: { text: euroleagueMonogram(r.display), bg: c.bg, fg: c.fg },
+      cells: showNums
+        ? [r.played, r.won, r.lost, pct3(r.played > 0 ? r.won / r.played : null),
+           r.pf, r.pa, r.pd > 0 ? `+${r.pd}` : r.pd]
+        : [DASH, DASH, DASH, DASH, DASH, DASH, DASH],
+    };
+  };
+  return buildBlock({
+    league: "EuroLeague", href: "/teams/basketball", note, open: live,
+    items: s.rows, columns: ["P", "W", "L", "PCT", "PF", "PA", "PD"],
+    sort: showNums
+      ? (a, b) => (a.rank ?? 99) - (b.rank ?? 99) || b.won - a.won || b.pd - a.pd
+      : (a, b) => a.display.localeCompare(b.display),
+    groups: [],
+    row,
+    // 20 clubs, 38 rounds, ten through to the post-season (euroleaguebasketball.net
+    // format page, checked 2026-09-01). The contiguous line falls at ten; the
+    // six/four split inside it is what the note is for.
+    playoff: live
+      ? (sorted) => { const f = new Set(sorted.slice(0, 10)); return (r) => f.has(r); }
+      : undefined,
+    cutNote: "Top ten reach the post-season: the top six go straight to the quarter-finals, seventh to tenth into the play-in.",
+  });
+}
+
 async function rugbyFixturesBlock(): Promise<Block | null> {
   const f = await getRugbyFixtures();
   if (!f) return null;
@@ -1012,10 +1131,12 @@ async function cfbBlock(): Promise<Block | null> {
 }
 
 export default async function LiveStandingsPage() {
-  const [nfl, nba, wnba, nhl, mlb, npb, mls, cfl, cfb, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, clubStandings, clubComps, wLeagues, uwclComp, wOdds] = await Promise.all([
+  const [nfl, nba, wnba, nhl, mlb, npb, mls, cfl, cfb, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, top14, premRugby, championsCup, euroleague, clubStandings, clubComps, wLeagues, uwclComp, wOdds] = await Promise.all([
     nflBlock(), nbaBlock(), wnbaBlock(), nhlBlock(), mlbBlock(), npbBlock(),
     mlsBlock(), cflBlock(), cfbBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
     golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(),
+    rugbyStandingsBlock("top14"), rugbyStandingsBlock("prem"), rugbyStandingsBlock("champions-cup"),
+    euroleagueBlock(),
     getClubStandings(), getClubCompetitions(), getWLiveLeagues(), getWLiveCompetition("uwcl"),
     getWLiveOdds(),
   ]);
@@ -1083,7 +1204,10 @@ export default async function LiveStandingsPage() {
     { sport: "Golf", blocks: [golf] },
     { sport: "Tennis", blocks: [tennis] },
     { sport: "Gridiron", blocks: [nfl, cfb, cfl] },
-    { sport: "Basketball", blocks: [nba, wnba] },
+    // EuroLeague sits under the two North American leagues and is collapsed by
+    // default: 20 clubs over 38 rounds is a long table, and the NBA is what
+    // most arrivals came for.
+    { sport: "Basketball", blocks: [nba, wnba, collapse(euroleague)] },
     { sport: "Baseball", blocks: [mlb, npb] },
     { sport: "Hockey", blocks: [nhl] },
     // The World Test Championship table runs a two-year cycle, so it is rarely
@@ -1091,7 +1215,13 @@ export default async function LiveStandingsPage() {
     // collapse() keeps `live` true, so the green dot still shows when a
     // cycle is under way.
     { sport: "Cricket", blocks: [collapse(wtc), cricketFix] },
-    { sport: "Rugby Union", blocks: [rugbyFix] },
+    // Internationals first: a test week is the reason anyone opens this
+    // section, and the club tables run all season underneath. Champions Cup
+    // ahead of the two domestic leagues, mirroring the Football section's
+    // continental-before-domestic order. All three club boards collapse, so
+    // the section opens at a readable length; collapse() keeps `live` true so
+    // an in-season board still shows its green dot.
+    { sport: "Rugby Union", blocks: [rugbyFix, championsCup, top14, premRugby].map((b, i) => (i === 0 ? b : collapse(b))) },
     { sport: "Rugby League", blocks: [nrl] },
     { sport: "Aussie Rules", blocks: [afl] },
   ]

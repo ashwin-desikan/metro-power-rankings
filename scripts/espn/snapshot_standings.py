@@ -42,6 +42,11 @@ ENDPOINTS: dict[str, str] = {
     "wnba": "https://site.api.espn.com/apis/v2/sports/basketball/wnba/standings",
     "nhl": "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings",
     "mls": "https://site.api.espn.com/apis/v2/sports/soccer/usa.1/standings",
+    # Club rugby union. Same v2 standings shape as the majors above, so these
+    # ride the identical snapshot/fallback path (lib/rugbyStandings.ts).
+    "rugby-top14": "https://site.api.espn.com/apis/v2/sports/rugby/270559/standings",
+    "rugby-prem": "https://site.api.espn.com/apis/v2/sports/rugby/267979/standings",
+    "rugby-champions-cup": "https://site.api.espn.com/apis/v2/sports/rugby/271937/standings",
     "cfb-standings": "https://site.api.espn.com/apis/v2/sports/football/college-football/standings",
     "cfb-rankings": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings",
 }

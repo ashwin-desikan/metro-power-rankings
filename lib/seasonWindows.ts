@@ -29,7 +29,9 @@
 
 export type SeasonKey =
   | "nfl" | "nba" | "nhl" | "mlb" | "wnba" | "npb"
-  | "cfl" | "afl" | "nrl" | "f1" | "mls";
+  | "cfl" | "afl" | "nrl" | "f1" | "mls"
+  | "top14" | "premrugby" | "championscup"
+  | "euroleague";
 
 export type SeasonWindow = {
   /** [month, day], 1-indexed month. */
@@ -59,6 +61,15 @@ export const SEASON_WINDOWS: Record<SeasonKey, SeasonWindow> = {
   f1: { start: [2, 20], end: [12, 15], wraps: false, note: "testing/Bahrain through Abu Dhabi (early Dec)" },
   // Football
   mls: { start: [2, 15], end: [12, 15], wraps: false, note: "late Feb through MLS Cup (early Dec)" },
+  // Club rugby union. All three wrap the new year. Generous at both ends per
+  // the note above: the games check is what actually closes these boards.
+  top14: { start: [8, 25], end: [7, 10], wraps: true, note: "early Sep through the final (late June)" },
+  premrugby: { start: [9, 10], end: [7, 5], wraps: true, note: "late Sep through the final (late June)" },
+  // Pool stage only opens in December, but the knockouts run to a late-May
+  // final, so the window has to carry the whole back half of the season.
+  championscup: { start: [11, 20], end: [6, 10], wraps: true, note: "Dec pool stage through the final (late May)" },
+  // Basketball
+  euroleague: { start: [9, 15], end: [6, 5], wraps: true, note: "late Sep through the Final Four (late May)" },
 };
 
 /** Day-of-year-ish ordinal that ignores leap days: month * 100 + day. */

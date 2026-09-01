@@ -1,0 +1,202 @@
+{
+ "_note": "ESPN rugby team id -> Team List 'Dom. Rugby Union' club. Built 2026-09-01 from live ESPN standings for leagues 270559 / 267979 / 271937. Alias rows were supplied by Ashwin. Key on the ESPN integer id, not the display name.",
+ "_verified": {
+  "Top 14": "14/14",
+  "Gallagher Premiership": "10/10",
+  "Champions Cup": "24/24"
+ },
+ "map": {
+  "25917": {
+   "espn_name": "Clermont Auvergne",
+   "team": "ASM Clermont",
+   "metro_slug": "clermont-ferrand",
+   "source": "alias"
+  },
+  "25912": {
+   "espn_name": "Bayonne",
+   "team": "Aviron Bayonnais",
+   "metro_slug": "bayonne",
+   "source": "alias"
+  },
+  "25898": {
+   "espn_name": "Bath Rugby",
+   "team": "Bath",
+   "metro_slug": "bath",
+   "source": "auto"
+  },
+  "25899": {
+   "espn_name": "Bristol Rugby",
+   "team": "Bristol Bears",
+   "metro_slug": "bristol",
+   "source": "alias"
+  },
+  "25953": {
+   "espn_name": "Bulls",
+   "team": "Bulls (rugby union)",
+   "metro_slug": "johannesburg",
+   "source": "auto"
+  },
+  "25916": {
+   "espn_name": "Castres Olympique",
+   "team": "Castres Olympique",
+   "metro_slug": "castres",
+   "source": "auto"
+  },
+  "25951": {
+   "espn_name": "Edinburgh",
+   "team": "Edinburgh Rugby",
+   "metro_slug": "edinburgh",
+   "source": "auto"
+  },
+  "116227": {
+   "espn_name": "Exeter Chiefs",
+   "team": "Exeter Chiefs",
+   "metro_slug": "exeter",
+   "source": "auto"
+  },
+  "25952": {
+   "espn_name": "Glasgow Warriors",
+   "team": "Glasgow Warriors",
+   "metro_slug": "glasgow",
+   "source": "auto"
+  },
+  "25900": {
+   "espn_name": "Gloucester Rugby",
+   "team": "Gloucester",
+   "metro_slug": "gloucester",
+   "source": "auto"
+  },
+  "25901": {
+   "espn_name": "Harlequins",
+   "team": "Harlequins",
+   "metro_slug": "london",
+   "source": "auto"
+  },
+  "25903": {
+   "espn_name": "Leicester Tigers",
+   "team": "Leicester Tigers",
+   "metro_slug": "leicester",
+   "source": "auto"
+  },
+  "25924": {
+   "espn_name": "Leinster",
+   "team": "Leinster",
+   "metro_slug": "dublin",
+   "source": "auto"
+  },
+  "143736": {
+   "espn_name": "Lyon",
+   "team": "Lyon OU",
+   "metro_slug": "lyon",
+   "source": "alias"
+  },
+  "25918": {
+   "espn_name": "Montpellier Herault",
+   "team": "Montpellier HR",
+   "metro_slug": "montpellier",
+   "source": "alias"
+  },
+  "25925": {
+   "espn_name": "Munster",
+   "team": "Munster",
+   "metro_slug": "limerick-city",
+   "source": "auto"
+  },
+  "25906": {
+   "espn_name": "Newcastle Falcons",
+   "team": "Newcastle Red Bulls",
+   "metro_slug": "newcastle",
+   "source": "alias"
+  },
+  "25907": {
+   "espn_name": "Northampton Saints",
+   "team": "Northampton Saints",
+   "metro_slug": "northampton",
+   "source": "auto"
+  },
+  "25986": {
+   "espn_name": "Toulon",
+   "team": "RC Toulon",
+   "metro_slug": "toulon",
+   "source": "auto"
+  },
+  "99855": {
+   "espn_name": "Racing 92",
+   "team": "Racing 92",
+   "metro_slug": "paris",
+   "source": "auto"
+  },
+  "25908": {
+   "espn_name": "Sale Sharks",
+   "team": "Sale Sharks",
+   "metro_slug": "manchester",
+   "source": "auto"
+  },
+  "25909": {
+   "espn_name": "Saracens",
+   "team": "Saracens",
+   "metro_slug": "london",
+   "source": "auto"
+  },
+  "25966": {
+   "espn_name": "Scarlets",
+   "team": "Scarlets",
+   "metro_slug": "llanelli",
+   "source": "auto"
+  },
+  "270567": {
+   "espn_name": "Pau",
+   "team": "Section Paloise",
+   "metro_slug": "pau",
+   "source": "alias"
+  },
+  "25961": {
+   "espn_name": "Sharks",
+   "team": "Sharks (rugby union)",
+   "metro_slug": "durban",
+   "source": "alias"
+  },
+  "25921": {
+   "espn_name": "Stade Francais Paris",
+   "team": "Stade Français Paris",
+   "metro_slug": "paris",
+   "source": "auto"
+  },
+  "119318": {
+   "espn_name": "La Rochelle",
+   "team": "Stade Rochelais",
+   "metro_slug": "la-rochelle",
+   "source": "alias"
+  },
+  "25922": {
+   "espn_name": "Stade Toulousain",
+   "team": "Stade Toulousain",
+   "metro_slug": "toulouse",
+   "source": "auto"
+  },
+  "25962": {
+   "espn_name": "Stormers",
+   "team": "Stormers (rugby union)",
+   "metro_slug": "cape-town",
+   "source": "auto"
+  },
+  "289766": {
+   "espn_name": "US Montauban",
+   "team": "US Montauban",
+   "metro_slug": "toulouse",
+   "source": "auto"
+  },
+  "25920": {
+   "espn_name": "Perpignan",
+   "team": "USA Perpignan",
+   "metro_slug": "perpignan",
+   "source": "alias"
+  },
+  "143737": {
+   "espn_name": "Bordeaux Begles",
+   "team": "Union Bordeaux Bègles",
+   "metro_slug": "bordeaux",
+   "source": "alias"
+  }
+ }
+}

@@ -19,11 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-01",
-    headline: "Constitutions, a live club ranking, and form on every table",
+    headline: "Constitutions, a live club ranking, rugby and the EuroLeague",
     items: [
-      "A new hub covers the constitution of every country: when it was adopted, how often it has been amended, and how long such documents last. A companion page counts the leaders who outlasted theirs.",
-      "Since 1789 the world has written 758 constitutions and replaced 555 of them. Half are gone within fourteen years, though one written since 1990 is twice as likely to reach twenty as one from the 1800s.",
+      "A new hub covers every country's constitution and a companion page counts the leaders who outlasted theirs: since 1789 the world has written 758 and replaced 555, and half are gone within fourteen years.",
       "The 2026-27 club power ranking is live: 693 clubs across 52 leagues, refreshed daily, beside live UEFA club and country coefficients recomputed from this season's European results.",
+      "Live Standings adds four club boards: the Top 14, Gallagher Premiership and Champions Cup, with bonus points and tries, and the EuroLeague.",
       "Standings tables now carry recent form and current streak and explain their own playoff cut, and a new site footer lets you report an error on whatever page you are reading.",
     ],
   },

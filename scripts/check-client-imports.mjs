@@ -72,6 +72,8 @@ const SERVER_ONLY_MODULES = [
   "@/lib/cfbSim",
   "@/lib/nhl",
   "@/lib/nhl-standings",
+  "@/lib/rugbyStandings",
+  "@/lib/euroleagueStandings",
   "@/lib/cricket",
   "@/lib/rugbyUnion",
   "@/lib/lions",
