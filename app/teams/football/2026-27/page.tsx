@@ -5,7 +5,8 @@ import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
-import RankingTable, { type CoefCountry } from "../2025-26/RankingTable";
+import CoefTables, { type CoefClubRow, type CoefCountryRow } from "./CoefTables";
+import { getUefaCoefficients } from "@/lib/uefaCoefficients";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getFootballClubByName } from "@/lib/football";
 import { getClubStandings, getClubCompetitions, getSuperCups, getDomesticCups, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
@@ -70,11 +71,13 @@ const UEFA_TIERS: Record<string, { tier: UefaTier; rank: number }> = {
 };
 const DASH = "—";
 
-// Country coefficients that seed 2026-27 (2026 UEFA ranking, five-year window 2021/22–2025/26).
-// Shown in the Club power ranking section until the live club ranking publishes in September.
+// The ACCESS window that seeded 2026-27 (2026 UEFA ranking, five-year window 2021/22–2025/26).
+// Frozen for the whole season, so a build-time read is correct here. The LIVE five-year race
+// (2022/23–2026/27) is a different dataset and must NOT be read this way: it comes from
+// lib/uefaCoefficients.ts, which ISR-reads the daily-refreshed bundle from GitHub raw.
 const COEF_2027 = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), "public", "data", "football", "country-coeff-2026-27.json"), "utf-8"),
-) as { clubSeasons: string[]; window: string; countries: CoefCountry[] };
+) as { clubSeasons: string[]; window: string; countries: CoefCountryRow[] };
 
 const num = (v: number | null | undefined): number | string => (v === null || v === undefined ? DASH : v);
 const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
@@ -265,16 +268,28 @@ function CompCard({ comp }: { comp: LiveComp }) {
 }
 
 export default async function ClubFootball2027Page() {
-  const [standings, comps, superCups, domesticCups] = await Promise.all([
-    getClubStandings(), getClubCompetitions(), getSuperCups(), getDomesticCups(),
+  const [standings, comps, superCups, domesticCups, coef] = await Promise.all([
+    getClubStandings(), getClubCompetitions(), getSuperCups(), getDomesticCups(), getUefaCoefficients(),
   ]);
+
+  // Live UEFA coefficients (daily, ISR). Slugs are resolved HERE because
+  // lib/football is server-only; CoefTables is a client component and cannot
+  // call it. Fail-soft: no bundle means the coefficient tabs simply do not
+  // render and the frozen access window still does.
+  const coefClubs: CoefClubRow[] = (coef?.clubs ?? []).map((c) => {
+    const r = resolveClub({ name: c.name, lookup: c.uefa_name });
+    return { rank: c.rank, name: r.name, slug: r.slug, country: c.country, seasons: c.seasons, trank: c.trank };
+  });
+  const coefCountries: CoefCountryRow[] = (coef?.countries ?? []).map((c) => ({
+    rank: c.rank, country: c.country, seasons: c.seasons, coef: c.crank,
+  }));
   const confs = buildConfs(standings);
   const compById = new Map(comps.map((c) => [c.league_id, c]));
   const orderedComps = COMP_ORDER.map((id) => compById.get(id)).filter((c): c is LiveComp => !!c && (c.groups.length > 0 || c.fixtures.length > 0));
   const totalLeagues = confs.reduce((a, c) => a + c.countries.reduce((b, k) => b + k.leagues.length, 0), 0);
 
   const nav = [
-    { label: "Power Ranking", href: "#ranking" },
+    { label: "Rankings", href: "#ranking" },
     ...(orderedComps.length > 0 ? [{ label: "Competitions", href: "#competitions" }] : []),
     { label: "Leagues", href: "#domestic" },
     ...(domesticCups.some((c) => c.fixtures.length > 0) ? [{ label: "Domestic Cups", href: "#domestic-cups" }] : []),
@@ -319,13 +334,23 @@ export default async function ClubFootball2027Page() {
       <HubNav items={nav} />
 
       <section id="ranking" className="scroll-mt-24 mb-10">
-        <h2 className="text-lg font-semibold mb-1">Club power ranking</h2>
+        <h2 className="text-lg font-semibold mb-1">Rankings and coefficients</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">
-          The 2026-27 club power ranking publishes around the first September international break, once the
-          season has been played in enough. Until then, these are the 2026 UEFA country coefficients (five-year
-          window {COEF_2027.window}) that seed this season&rsquo;s European competitions.
+          Three tables, and they answer different questions. The club and country coefficients are the live
+          UEFA five-year rankings, recomputed every day from this season&rsquo;s European results. The access
+          ranking is the frozen {COEF_2027.window} window that decided how many clubs each country entered
+          this season, and it will not move again.
         </p>
-        <RankingTable clubs={[]} countries={COEF_2027.countries} clubSeasons={COEF_2027.clubSeasons} />
+        <CoefTables
+          clubs={coefClubs}
+          countries={coefCountries}
+          liveSeasons={coef?.seasons ?? []}
+          currentSeason={coef?.currentSeason ?? ""}
+          accessCountries={COEF_2027.countries}
+          accessSeasons={COEF_2027.clubSeasons}
+          accessWindow={COEF_2027.window}
+          powerNote="The Citizen of Nowhere club power ranking weighs every result by the opponent's strength and the stage it was played at, so it needs a season with some matches in it. Until it publishes, the UEFA coefficients above are the live measure of who is climbing."
+        />
       </section>
 
       {orderedComps.length > 0 && (

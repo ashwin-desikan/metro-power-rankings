@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-01",
+    headline: "UEFA coefficients, live and daily, on the 2026-27 hub",
+    items: [
+      "The 2026-27 hub now carries the live UEFA club and country coefficients, 416 clubs and 55 associations across the 2022/23 to 2026/27 window, recomputed daily from this season's European results.",
+      "The frozen ranking that decided this season's entries moves to its own labelled tab, so the window that set the slots is never mistaken for the race still being run.",
+      "Scoring follows the Kassiesa method: qualifying counts half, the knockout play-off counts for the country only, and no club falls below a fifth of its association's coefficient.",
+    ],
+  },
+  {
     date: "2026-08-31",
     headline: "The greatest club football games, ranked",
     items: [
