@@ -1,179 +1,6 @@
 {
-  "generated_at": "2026-08-31T17:03:41.779820+00:00",
+  "generated_at": "2026-09-01T06:56:40.013571+00:00",
   "jobs": [
-    {
-      "id": "screen-number-ones",
-      "label": "US box office #1s",
-      "schedule_text": "Mon/Tue/Wed at 05:00, 13:00, 21:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "05:00",
-        "13:00",
-        "21:00"
-      ],
-      "weekdays": [
-        1,
-        2,
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-31T21:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T13:00:00+00:00"
-      }
-    },
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-31T23:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T17:00:00+00:00"
-      }
-    },
-    {
-      "id": "daily-ops-sweep",
-      "label": "Daily ops sweep (report-only)",
-      "schedule_text": "Daily at 01:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "01:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T01:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T01:00:00+00:00"
-      }
-    },
-    {
-      "id": "activity-feed",
-      "label": "Site activity feed",
-      "schedule_text": "Daily at 02:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "02:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T02:30:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T02:30:00+00:00"
-      }
-    },
-    {
-      "id": "euro-comps",
-      "label": "UEFA club competitions",
-      "schedule_text": "Daily at 04:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "04:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T04:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T04:00:00+00:00"
-      }
-    },
-    {
-      "id": "gap-league-watch",
-      "label": "Football gap-league watch",
-      "schedule_text": "Daily at 05:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T05:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T05:00:00+00:00"
-      }
-    },
-    {
-      "id": "business-daily",
-      "label": "Business markets + FX",
-      "schedule_text": "Daily at 05:50 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:50"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T05:50:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T05:50:00+00:00"
-      }
-    },
-    {
-      "id": "substack-daily",
-      "label": "Substack feed sync",
-      "schedule_text": "Daily at 06:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "06:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T06:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T06:00:00+00:00"
-      }
-    },
-    {
-      "id": "predictions-tue",
-      "label": "PL + NFL predictions (grade the weekend)",
-      "schedule_text": "Tue at 06:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "06:40"
-      ],
-      "weekdays": [
-        2
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T06:40:00+00:00",
-      "last_run": {
-        "date": "2026-08-25",
-        "status": "ok",
-        "slot": "2026-08-25T06:40:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -299,6 +126,159 @@
         "date": "2026-08-01",
         "status": "seeded",
         "slot": "2026-08-01T10:00:00+00:00"
+      }
+    },
+    {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-01T11:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "screen-number-ones",
+      "label": "US box office #1s",
+      "schedule_text": "Mon/Tue/Wed at 05:00, 13:00, 21:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "05:00",
+        "13:00",
+        "21:00"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-01T13:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "daily-ops-sweep",
+      "label": "Daily ops sweep (report-only)",
+      "schedule_text": "Daily at 01:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "01:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-02T01:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T01:00:00+00:00"
+      }
+    },
+    {
+      "id": "activity-feed",
+      "label": "Site activity feed",
+      "schedule_text": "Daily at 02:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "02:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-02T02:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T02:30:00+00:00"
+      }
+    },
+    {
+      "id": "euro-comps",
+      "label": "UEFA club competitions",
+      "schedule_text": "Daily at 04:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "04:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-02T04:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T04:00:00+00:00"
+      }
+    },
+    {
+      "id": "gap-league-watch",
+      "label": "Football gap-league watch",
+      "schedule_text": "Daily at 05:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-02T05:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "business-daily",
+      "label": "Business markets + FX",
+      "schedule_text": "Daily at 05:50 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:50"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-02T05:50:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T05:50:00+00:00"
+      }
+    },
+    {
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-02T06:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T06:00:00+00:00"
       }
     },
     {
@@ -461,6 +441,26 @@
         "date": "2026-08-30",
         "status": "ok (manual)",
         "slot": "2026-08-30T23:40:00+00:00"
+      }
+    },
+    {
+      "id": "predictions-tue",
+      "label": "PL + NFL predictions (grade the weekend)",
+      "schedule_text": "Tue at 06:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "06:40"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T06:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T06:40:00+00:00"
       }
     }
   ]
