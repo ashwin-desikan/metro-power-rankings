@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-01T06:16:28.336290+00:00",
+  "generated_at": "2026-09-01T06:56:40.013571+00:00",
   "jobs": [
-    {
-      "id": "predictions-tue",
-      "label": "PL + NFL predictions (grade the weekend)",
-      "schedule_text": "Tue at 06:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "06:40"
-      ],
-      "weekdays": [
-        2
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T06:40:00+00:00",
-      "last_run": {
-        "date": "2026-08-25",
-        "status": "ok",
-        "slot": "2026-08-25T06:40:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -461,6 +441,26 @@
         "date": "2026-08-30",
         "status": "ok (manual)",
         "slot": "2026-08-30T23:40:00+00:00"
+      }
+    },
+    {
+      "id": "predictions-tue",
+      "label": "PL + NFL predictions (grade the weekend)",
+      "schedule_text": "Tue at 06:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "06:40"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T06:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T06:40:00+00:00"
       }
     }
   ]
