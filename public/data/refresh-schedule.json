@@ -1,93 +1,6 @@
 {
-  "generated_at": "2026-09-01T06:56:40.013571+00:00",
+  "generated_at": "2026-09-01T07:37:14.402325+00:00",
   "jobs": [
-    {
-      "id": "mlb-sim",
-      "label": "MLB + season playoff odds (7 leagues)",
-      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
-      "cadence": "daily",
-      "times": [
-        "07:00",
-        "14:30"
-      ],
-      "weekdays": [],
-      "months": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
-      "days_of_month": [],
-      "next_run": "2026-09-01T07:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T14:30:00+00:00"
-      }
-    },
-    {
-      "id": "rugby-weekly",
-      "label": "Rugby union rankings",
-      "schedule_text": "Tue at 07:05 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:05"
-      ],
-      "weekdays": [
-        2
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T07:05:00+00:00",
-      "last_run": {
-        "date": "2026-08-25",
-        "status": "ok",
-        "slot": "2026-08-25T07:05:00+00:00"
-      }
-    },
-    {
-      "id": "conflicts-monthly",
-      "label": "Armed conflicts data",
-      "schedule_text": "1st of the month at 07:15 UTC",
-      "cadence": "monthly",
-      "times": [
-        "07:15"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [
-        1
-      ],
-      "next_run": "2026-09-01T07:15:00+00:00",
-      "last_run": {
-        "date": "2026-08-01",
-        "status": "seeded",
-        "slot": "2026-08-01T07:15:00+00:00"
-      }
-    },
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-01T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-08-31",
-        "status": "ok",
-        "slot": "2026-08-31T07:20:00+00:00"
-      }
-    },
     {
       "id": "cricket-weekly",
       "label": "Cricket results + rankings",
@@ -171,6 +84,35 @@
         "date": "2026-09-01",
         "status": "ok",
         "slot": "2026-09-01T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "mlb-sim",
+      "label": "MLB + season playoff odds (7 leagues)",
+      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
+      "cadence": "daily",
+      "times": [
+        "07:00",
+        "14:30"
+      ],
+      "weekdays": [],
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "days_of_month": [],
+      "next_run": "2026-09-01T14:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "failed",
+        "slot": "2026-09-01T07:00:00+00:00"
       }
     },
     {
@@ -324,6 +266,24 @@
       }
     },
     {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-02T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-08-31",
+        "status": "ok",
+        "slot": "2026-08-31T07:20:00+00:00"
+      }
+    },
+    {
       "id": "sound-weekly",
       "label": "Sound of the Metros (music charts)",
       "schedule_text": "Wed at 07:30 UTC",
@@ -461,6 +421,46 @@
         "date": "2026-09-01",
         "status": "ok",
         "slot": "2026-09-01T06:40:00+00:00"
+      }
+    },
+    {
+      "id": "rugby-weekly",
+      "label": "Rugby union rankings",
+      "schedule_text": "Tue at 07:05 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:05"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T07:05:00+00:00",
+      "last_run": {
+        "date": "2026-09-01",
+        "status": "ok",
+        "slot": "2026-09-01T07:05:00+00:00"
+      }
+    },
+    {
+      "id": "conflicts-monthly",
+      "label": "Armed conflicts data",
+      "schedule_text": "1st of the month at 07:15 UTC",
+      "cadence": "monthly",
+      "times": [
+        "07:15"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [
+        1
+      ],
+      "next_run": "2026-10-01T07:15:00+00:00",
+      "last_run": {
+        "date": "2026-08-01",
+        "status": "seeded",
+        "slot": "2026-08-01T07:15:00+00:00"
       }
     }
   ]
