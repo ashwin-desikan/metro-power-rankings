@@ -50,11 +50,22 @@ jobs:
           # Format: url|name|notes (notes optional, surfaced in the Issue body).
           URLS=(
             "https://cwur.org/2025.php|CWUR 2025 index|Year-pinned URL; will need bump when CWUR publishes 2026"
-            # ESPN PROBES REMOVED 2026-09-02, for exactly the reason the Substack
-            # ones went below, and with the same evidence. ESPN sits behind
-            # Akamai and 403s GitHub runner IPs; the UA is not the variable (see
-            # build_season_sims.py fetch_bytes, which documents the measured
-            # matrix). These four had been failing since at least 2026-08-13 and
+            # ESPN PROBES REMOVED 2026-09-02. CORRECTED SAME DAY: the first
+            # version of this note said the runner IP range was the cause and
+            # "the UA is not the variable". That is wrong, and it contradicted
+            # build_season_sims.py fetch_bytes, which it cited. Measured from a
+            # residential vantage against the same URL:
+            #     urllib default (Python-urllib/3.x)  200
+            #     urllib + Accept only                200
+            #     urllib + custom bot UA              403
+            #     urllib + browser UA                 403
+            #     curl, every UA including none       403
+            # It is the client/UA shape, not the IP. These probes 403 from
+            # ANYWHERE because this workflow uses curl, whose UA shapes Akamai's
+            # ESPN edge rejects. They could be made to pass from a runner by
+            # probing with python/urllib instead -- they are left out because
+            # the mini's check is better, not because a runner cannot reach
+            # ESPN. These four had been failing since at least 2026-08-13 and
             # issue #9 was open on them again -- the second time this channel has
             # been trained to be ignored by a probe that cannot pass.
             #
