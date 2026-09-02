@@ -3,7 +3,7 @@
  "parties": [
   "Likud",
   "Together",
-  "RZP",
+  "RZP- Zehut",
   "Otzma",
   "Blue & White",
   "Shas",
@@ -17,50 +17,5 @@
   "Unity",
   "Amcha Yisrael"
  ],
- "polls": [
-  {
-   "date": "2026-08-27",
-   "pollster": "Yossi Tatika",
-   "seats": {
-    "Likud": 22,
-    "Together": 14,
-    "RZP": 0,
-    "Otzma": 6,
-    "Blue & White": 0,
-    "Shas": 9,
-    "UTJ": 8,
-    "Yisrael Beiteinu": 10,
-    "Ra'am": 5,
-    "Joint List": 6,
-    "Dems": 8,
-    "Yashar": 26,
-    "Zionist Home": 0,
-    "Unity": 0,
-    "Amcha Yisrael": 6
-   },
-   "gov": 45
-  },
-  {
-   "date": "2026-08-27",
-   "pollster": "Lazar",
-   "seats": {
-    "Likud": 20,
-    "Together": 15,
-    "RZP": 0,
-    "Otzma": 8,
-    "Blue & White": 0,
-    "Shas": 7,
-    "UTJ": 8,
-    "Yisrael Beiteinu": 9,
-    "Ra'am": 5,
-    "Joint List": 8,
-    "Dems": 10,
-    "Yashar": 25,
-    "Zionist Home": 0,
-    "Unity": 0,
-    "Amcha Yisrael": 5
-   },
-   "gov": 43
-  }
- ]
+ "polls": []
 }

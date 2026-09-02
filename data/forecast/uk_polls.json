@@ -5001,6 +5001,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-08-26",
+   "pollster": "BMG Research",
+   "sample": 1579,
+   "lab": 27.0,
+   "con": 18.0,
+   "ref": 23.0,
+   "ld": 10.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-08-28",
    "pollster": "Opinium",
    "sample": 2003,
@@ -5021,6 +5032,17 @@
    "ld": 9.0,
    "grn": 10.0,
    "snp": 2.0
+  },
+  {
+   "date": "2026-08-31",
+   "pollster": "More in Common",
+   "sample": 2522,
+   "lab": 26.0,
+   "con": 23.0,
+   "ref": 22.0,
+   "ld": 11.0,
+   "grn": 9.0,
+   "snp": 3.0
   }
  ]
 }
