@@ -19,8 +19,10 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-02",
-    headline: "Steadier rugby and EuroLeague tables",
+    headline: "A century of corrected results, and steadier rugby tables",
     items: [
+      "One league match per season, from 1892 to 1992, had been recorded the wrong way round. Forty of them credited the win to the wrong club. All forty-seven are now corrected.",
+      "The 8-0 in 1948 was Arsenal beating Grimsby, not Grimsby beating Arsenal; the 6-1 in 1973 was Leeds beating Arsenal. Every club's over- and under-performance is redrawn.",
       "The Top 14, Gallagher Premiership and Champions Cup tables now come through reliably, with a saved copy behind them for the moments the upstream feed refuses a request.",
     ],
   },

@@ -49,6 +49,13 @@ GUARD
   to write when a season mismatches unless --allow-known-bad is passed, which
   admits only the fixtures listed in KNOWN_BAD below.
 
+  🔴 UPDATE 2026-09-02: twenty of those fixtures are now REPAIRED, upstream in
+  extract_topflight.py, from engsoccerdata and against an internal proof (both
+  legs recorded at one ground). That satisfies the instruction below rather
+  than defying it: the real results were obtained. What remains in KNOWN_BAD is
+  two fixtures where the spine and engsoccerdata agree and the HUB is the
+  outlier, which is a different problem and is not repaired here either.
+
   🔴 DO NOT REPAIR THE SPINE BY INFERENCE. The bad fixtures show a clean
   signature (both legs recorded at one ground) and it is tempting to flip the
   venue or swap the goals. That is the 2023-24 NFL spread incident again:
@@ -121,18 +128,28 @@ ERA_UNLINKED = {"Wimbledon"}
 # are recorded at one ground, so one of them is the wrong way round. Listed as
 # (season, club, club). NOT repaired here - see the module docstring.
 KNOWN_BAD = [
-    ("1961-62", "Arsenal", "Everton"), ("1964-65", "Aston Villa", "Manchester United"),
-    ("1966-67", "Everton", "Sunderland"), ("1967-68", "Everton", "Fulham"),
-    ("1968-69", "Leicester City", "Manchester United"),
-    ("1969-70", "Arsenal", "Tottenham Hotspur"),
-    ("1971-72", "Arsenal", "Tottenham Hotspur"), ("1972-73", "Arsenal", "Leeds United"),
-    ("1975-76", "Manchester City", "Manchester United"),
-    ("1976-77", "Everton", "Newcastle United"), ("1977-78", "Arsenal", "Derby County"),
-    ("1978-79", "Nottingham Forest", "West Bromwich Albion"),
-    ("1979-80", "Arsenal", "Middlesbrough"), ("1980-81", "Liverpool", "Manchester City"),
-    ("1981-82", "Aston Villa", "Swansea City"), ("1981-82", "Middlesbrough", "Tottenham Hotspur"),
-    ("1984-85", "Everton", "Luton Town"), ("1985-86", "Chelsea", "Watford"),
-    ("1988-89", "Middlesbrough", "Norwich City"), ("1991-92", "Arsenal", "Southampton"),
+    # 🔴 THE OTHER TWENTY ENTRIES ARE GONE BECAUSE THEY WERE FIXED, 2026-09-02.
+    # They were one fault repeated, not twenty: AllFootball.xlsx records one
+    # fixture per season the wrong way round, always the season's final
+    # matchday, 1891-92 to 1991-92. 42 of the 47 pairings recorded BOTH legs at
+    # the same ground, which cannot happen in a double round-robin, so the
+    # workbook was provably the wrong side without appealing to anyone else;
+    # engsoccerdata then said which leg. scripts/football/audit_home_away.py
+    # found all 47 by comparing every one of the spine's 50,223 fixtures, and
+    # scripts/football/extract_topflight.py now assigns the true orientation
+    # from scripts/football/home_away_corrections.json as it builds the spine.
+    # The docstring's old instruction was "get the real results" -- these are
+    # them, so this is a repair from a source, not the repair by inference the
+    # docstring forbids. Re-run the audit after any spine rebuild: it should
+    # report 0 reversed and 0 venue_only.
+    #
+    # These two are NOT that fault and are still open. In both, the spine and
+    # engsoccerdata AGREE with each other and the site's own hub standings
+    # disagree with both, so the evidence points at the hub rather than the
+    # workbook. Two independent sources against one is not proof, and nothing
+    # here is repaired on a two-to-one vote.
+    ("1981-82", "Middlesbrough", "Tottenham Hotspur"),
+    ("1988-89", "Middlesbrough", "Norwich City"),
 ]
 
 # 🔴 POINTS DEDUCTIONS ARE NOT DATA ERRORS. The reconciliation separates two
@@ -154,7 +171,13 @@ DEDUCTIONS = {
 # only GF/GA move and the table's shape survives. Milder than KNOWN_BAD and
 # listed separately so the two are never confused.
 KNOWN_SCORE_OFF = [
+    # 2026-09-02: engsoccerdata sides with the HUB on this one and against the
+    # workbook -- it has West Ham 1-3 Tottenham where the workbook has 1-2. So
+    # this is a genuine workbook error, of one goal, and fixing it belongs in
+    # the master rather than here. Left listed until it is fixed at source.
     ("1993-94", "Tottenham Hotspur", "West Ham United"),
+    # engsoccerdata does NOT flag this one, so the workbook and engsoccerdata
+    # agree and only the hub differs. Unexplained; do not guess at it.
     ("2004-05", "Aston Villa", "Manchester United"),
 ]
 

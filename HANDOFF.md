@@ -8550,3 +8550,108 @@ season-end class means the honest fix probably audits every season's last
 matchday rather than only these 47.
 
 ---
+
+## 2026-09-02 (night) - cowork (cloud, bridged to the Windows box) -> mini and next session: THE HOME/AWAY BUG IS FIXED, AND IT WAS ONE BUG 47 TIMES
+
+Ashwin chose the extract-time correction over editing the master, then gave
+permission to edit the OneDrive workbooks. The master is still NOT edited, on
+purpose, and the reason is in the last section.
+
+### What was actually wrong
+`AllFootball.xlsx` records ONE English tier-1 fixture per season the wrong way
+round. Always the season's FINAL matchday. One per season, 1891-92 to 1991-92,
+with gaps. 40 of the 47 credit the win to the wrong club; 7 keep the right
+result at the wrong ground.
+
+🔴 **It is provable without any outside source.** 42 of the 47 pairings record
+BOTH legs at the same ground, which cannot happen in a double round-robin. So
+the workbook is the side that is wrong; engsoccerdata only says which leg.
+
+### The audit, which is the part worth keeping
+`scripts/football/audit_home_away.py` (`--self-test`) compares ALL 50,223 spine
+fixtures against engsoccerdata rather than trusting a hand list.
+- It learns the spine-name to engsoccerdata-name map by CONSTRAINT PROPAGATION:
+  a fixture matching unambiguously on date and unordered goals pins a pair;
+  outright name equality seeds it; anything already mapped forces its partner;
+  repeat to fixpoint. Unanimity required, ambiguity reported, never resolved by
+  similarity. 70 clubs mapped, 0 ambiguous.
+- ⚠️ The first version zipped the two SORTED name pairs positionally. That is
+  wrong the moment the two naming systems sort differently, which is exactly
+  what era names do: it voted Woolwich Arsenal for whoever Arsenal happened to
+  be playing, left Woolwich Arsenal and Small Heath unmapped, and silently
+  skipped 500 of the oldest fixtures - the ones the audit exists to find.
+- ⚠️ Second trap, same family: the emitter INVERTED the name map to find the
+  true home club. The map is many-to-one by design (Woolwich Arsenal and
+  Arsenal both point at "Arsenal"), so inversion dropped 16 of 47. Ask the
+  FORWARD map which of the fixture's own two clubs matches instead.
+
+**Verdict: reversed 40, venue_only 7, and NOTHING ELSE.** 47 seasons, 47
+fixtures, no season with more than one, all in April/May/June. **So 47 IS the
+complete population** - the season gaps are clean seasons, not undetected
+errors. That closes the question the earlier note left open.
+
+### The fix
+`scripts/football/home_away_corrections.json` (47 rows, tracked) holds the TRUE
+orientation in SPINE names. `extract_topflight.py` now ASSIGNS it while building
+the spine, and fails the build if any correction matches other than exactly two
+rows. 🔴 **Assign, do not transform**: a transformation must know that a
+reversed fixture swaps venue AND goals while a venue-only one swaps venue
+alone, and getting that backwards on a draw is invisible. Assignment is also
+idempotent, so if the master is ever fixed at source this becomes a no-op that
+says so in its own output.
+
+Re-extract: 94 rows rewritten, 0 already correct. Re-audit after: **0 reversed,
+0 venue_only.**
+
+### What the ledger's own reconciliation says
+It rebuilds every league table and diffs it against the site's hub standings,
+which is a stronger check than the audit.
+- **mismatched cells 202 -> 22. Seasons implicated 21 -> 4. KNOWN_BAD 20 -> 2.**
+- Model fit improved: brier 0.59654 -> 0.59644, log loss 0.99925 -> 0.99912,
+  skill vs era baseline 3.16% -> 3.17%. Small, and in the direction correcting
+  real data should move it.
+- 52 club totals moved, all under a point. Arsenal 59.57 -> 58.98, Everton
+  33.79 -> 34.69, Sunderland -5.97 -> -4.92.
+
+### The four that remain, now understood rather than just listed
+- **1981-82 Middlesbrough/Tottenham and 1988-89 Middlesbrough/Norwich**: the
+  spine and engsoccerdata AGREE and the HUB STANDINGS disagree with both. So
+  the evidence points at the hub, not the workbook. Two sources against one is
+  not proof and nothing was repaired on it. These are the only KNOWN_BAD left.
+- **1993-94 West Ham/Tottenham**: engsoccerdata sides with the hub AGAINST the
+  workbook - 1-3, where the workbook says 1-2. A genuine workbook error, of one
+  goal. Belongs in the master.
+- **2004-05 Aston Villa/Manchester United**: engsoccerdata does NOT flag it, so
+  workbook and engsoccerdata agree and only the hub differs. Unexplained.
+- Separately the audit found **6 score_off fixtures** (right ground, different
+  scoreline): 1900-01, 1903-04 x2, 1908-09, 1955-56, 1993-94. Not the
+  home/away class. Not touched.
+
+### 🔴 WHY THE MASTER WORKBOOK IS STILL NOT EDITED, WITH PERMISSION GRANTED
+Not caution about the file size. Three specific reasons:
+1. **The affected rows carry frozen season aggregates.** `W`, `D`, `L`,
+   `Points`, `GS`, `GA`, `Diff` (cols 22-28) are static VALUES, not formulas,
+   and they are populated only on a season's last game - which is every one of
+   these 47. Flipping a result changes both clubs' season totals, so a correct
+   workbook edit must recompute them. `W Bin`/`D Bin`/`L Bin`, `Lookup` and
+   `Home Stadium` ARE formulas and would recalculate on their own.
+2. **The venue fields move too**: `Stadium`, `Stad. Metro Area` and the
+   opponent metro/county pairs all describe the wrong ground on these rows.
+   (`Metro Area` col 33 is the ROW TEAM's own metro and does not move, which is
+   why the spine's metro column needed no correction.)
+3. 🔴 **DOUBLE-APPLY HAZARD.** The Supabase club-greatest-games spine
+   (`football_matches`) was ALREADY corrected for these fixtures on 2026-08-31,
+   48/48 verified. If the workbook is fixed and re-ingested without accounting
+   for that, the correction gets applied twice and reverses them again. Any
+   workbook fix must reconcile against Supabase first, not just re-run the
+   loader.
+
+So the master fix is a scoped piece of work of its own, and it now has a
+regression guard waiting for it: run the audit after, and it must report 0.
+
+### Shipped
+One real build, no skip marker, release note amended into the existing
+2026-09-02 block. `npm run verify` green: 15 gates, 134 vitest, 112 pytest,
+`next build` complete.
+
+---
