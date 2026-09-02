@@ -96,6 +96,24 @@ def fixture_rows(rows, teams):
     return out
 
 
+def committed_seasons():
+    """{league_id: (season, placeholder)} from the bundle already on disk.
+
+    The season ratchet needs to know what we last PUBLISHED, not just what the
+    API says today. Missing or unreadable bundle -> {}, which disables the
+    ratchet rather than blocking a first build."""
+    try:
+        with open(BUNDLE, encoding="utf-8") as f:
+            doc = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for row in (doc.get("leagues") or []) + (doc.get("competitions") or []):
+        if isinstance(row, dict) and row.get("league_id") is not None:
+            out[row["league_id"]] = (row.get("season"), bool(row.get("placeholder")))
+    return out
+
+
 def fetch_standings(entry, akey):
     """Pull standings for an entry, honouring its watch season. Returns
     (season, season_label, placeholder, groups)."""
@@ -129,10 +147,31 @@ def build(write):
     entries = json.load(open(os.path.join(HERE, "wleagues.json"), encoding="utf-8"))
     akey = api_key()
     leagues, competitions = [], []
+    published = committed_seasons()
+    regressions = []
     log(f"refresh start ({len(entries)} women's competitions, write={write})")
     for e in entries:
         lid = e["league_id"]
         season, label, placeholder, groups = fetch_standings(e, akey)
+
+        # SEASON RATCHET. api-football can serve the COMPLETED previous table
+        # under the new season id, which looks_fresh() correctly refuses -- but
+        # the refusal then falls all the way back to the placeholder, so a
+        # league that has already kicked off goes BACKWARDS on the live site.
+        # Liga F did exactly this: five runs on the real 2026-27 matchday-1
+        # table from 2026-08-31, then back to the completed 2025-26 table from
+        # 09-01, and it sat that way for 18 hours because nothing said so.
+        # Once a real season has been published, never return to a placeholder
+        # for it -- the same "must never lose them" invariant the conflicts,
+        # champions and euroleague builders got this week.
+        was_season, was_placeholder = published.get(lid, (None, True))
+        if placeholder and not was_placeholder and was_season is not None and season != was_season:
+            regressions.append(
+                f"{e['name']} (id {lid}): published season {was_season} -> "
+                f"{season} placeholder; upstream regressed, keeping {was_season}")
+            season, placeholder = was_season, False
+            label = e.get("watch_season_label", str(was_season)) if was_season == e.get("watch_season") else label
+
         n = sum(len(g["rows"]) for g in groups)
         if e.get("continental"):
             fdoc = api_get("/fixtures", akey, league=lid, season=season)
@@ -156,6 +195,23 @@ def build(write):
             })
             tag = " PLACEHOLDER" if placeholder else ""
             log(f"  {e['name']} (id {lid}): {n} standings rows [{label}]{tag}")
+
+    # Explicit watch list. A league sitting on last season's table is visible
+    # only as a " PLACEHOLDER" tag on its own line, which is easy to read past --
+    # Liga F oscillated for six days before anyone noticed. Say plainly which
+    # leagues are still waiting, so the daily sweep has one line to check.
+    waiting = [l for l in leagues if l.get("placeholder")]
+    if waiting:
+        log("  awaiting 2026-27 in api-football: " + ", ".join(
+            f"{l['name']} (showing {l['season_label']})" for l in waiting))
+    else:
+        log("  all leagues on their current season")
+
+    for r in regressions:
+        log(f"  RATCHET HELD: {r}")
+    if regressions:
+        log(f"  {len(regressions)} league(s) would have gone backwards this run "
+            f"-- upstream is serving a completed table under the new season id")
 
     bundle = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
