@@ -321,6 +321,31 @@ def parse_fiba(node_slugs):
     return hub, by_node
 
 
+def _sizes(doc):
+    """{key: magnitude} for a JSON doc, so a shrink guard compares like with like.
+
+    euroleague.json mixes row LISTS (roll, clubs, most_titled) with a scalar
+    COUNT (seasons: 69). The first version of this guard did
+    len(doc.get("seasons", doc)), which raises TypeError on an int -- and the
+    except turned that into "exists but could not be read", so fiba-weekly
+    hard-failed every run from 2026-09-01 against a perfectly healthy file.
+    Comparing every key also guards more than the original did: a drop in any
+    of roll/clubs/most_titled now stops the write too, not just seasons."""
+    if isinstance(doc, list):
+        return {"": len(doc)}
+    if not isinstance(doc, dict):
+        return {}
+    out = {}
+    for k, v in doc.items():
+        if isinstance(v, bool):
+            continue
+        if isinstance(v, int):
+            out[k] = v
+        elif hasattr(v, "__len__"):
+            out[k] = len(v)
+    return out
+
+
 def main():
     import sys
     try:
@@ -478,15 +503,15 @@ def main():
     if os.path.exists(_el_path):
         try:
             _before = json.load(io.open(_el_path, encoding="utf-8"))
-            _b = len(_before.get("seasons", _before)) if isinstance(_before, dict) else len(_before)
-            _a = len(euroleague.get("seasons", euroleague)) if isinstance(euroleague, dict) else len(euroleague)
-            if _a < _b:
-                raise SystemExit(
-                    f"ERROR: euroleague.json would drop {_b - _a} rows ({_b} -> {_a}). "
-                    f"Refusing to write; check the table before re-running.")
-        except (ValueError, KeyError, TypeError) as e:
-            raise SystemExit(f"ERROR: {_el_path} exists but could not be read ({e}); "
+        except ValueError as e:                     # corrupt is not a licence to wipe
+            raise SystemExit(f"ERROR: {_el_path} exists but could not be parsed ({e}); "
                              f"refusing to overwrite it.")
+        _shrunk = [f"{k or 'rows'} {b} -> {_sizes(euroleague)[k]}"
+                   for k, b in _sizes(_before).items()
+                   if k in _sizes(euroleague) and _sizes(euroleague)[k] < b]
+        if _shrunk:
+            raise SystemExit("ERROR: euroleague.json would shrink (" + "; ".join(_shrunk)
+                             + "). Refusing to write; check the table before re-running.")
 
     os.makedirs(os.path.join(OUT, "nation-detail"), exist_ok=True)
     json.dump(nation_rows, io.open(os.path.join(OUT, "nations.json"), "w",

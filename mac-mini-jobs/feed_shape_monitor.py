@@ -155,6 +155,42 @@ def check_espn_tennis_scoreboard(doc):
     return "ok", f"{ev.get('name','?')}: {len(groupings)} groupings"
 
 
+def check_espn_golf_scoreboard(doc):
+    # Golf scoreboards are a FIELD, not a two-sided fixture, so the team-sport
+    # checker's "competition needs 2 competitors" is simply the wrong shape:
+    # a tournament that has not started has no field posted at all. On
+    # 2026-09-02 this hard-failed on the Biltmore Championship, which was two
+    # weeks out (state "pre", no `competitors` key), and would have failed in
+    # every gap between tournaments. Same class as the ATP false positive.
+    #
+    # Mirrors what lib/golfLeaderboard.ts actually consumes: it branches on
+    # status.type.state (pre | in | post) and coerces a missing competitors to
+    # an empty array, so a field is only REQUIRED once play is under way.
+    if not isinstance(doc, dict) or "events" not in doc:
+        return "FAIL", "missing top-level 'events'"
+    events = doc.get("events")
+    if not isinstance(events, list):
+        return "FAIL", "'events' is not a list"
+    if not events:
+        return "empty", "no tournament scheduled (off-season)"
+    ev = events[0]
+    comps = ev.get("competitions") or []
+    if not comps:
+        return "FAIL", "golf event missing 'competitions' (ESPN shape change?)"
+    comp = comps[0] or {}
+    state = (((comp.get("status") or {}).get("type") or {}).get("state"))
+    if not state:
+        return "FAIL", "golf competition missing status.type.state (ESPN shape change?)"
+    field = comp.get("competitors")
+    if state == "pre":
+        return "empty", f"{ev.get('name','tournament')}: not started ({len(field or [])} in field)"
+    if not isinstance(field, list) or not field:
+        return "FAIL", f"{ev.get('name','tournament')} is {state} but has no field"
+    if "athlete" not in (field[0] or {}):
+        return "FAIL", "golf competitor missing 'athlete' (ESPN shape change?)"
+    return "ok", f"{ev.get('name','?')}: {len(field)} in field ({state})"
+
+
 def check_spaia_npb(doc):
     if not isinstance(doc, list):
         return "FAIL", "expected a top-level JSON array"
@@ -255,7 +291,7 @@ FEEDS = [
      check_espn_scoreboard),
     ("ESPN PGA scoreboard",
      "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard",
-     check_espn_scoreboard),
+     check_espn_golf_scoreboard),
     ("ESPN ATP scoreboard",
      "https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard",
      check_espn_tennis_scoreboard),
