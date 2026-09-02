@@ -50,10 +50,20 @@ jobs:
           # Format: url|name|notes (notes optional, surfaced in the Issue body).
           URLS=(
             "https://cwur.org/2025.php|CWUR 2025 index|Year-pinned URL; will need bump when CWUR publishes 2026"
-            "https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings|ESPN MLB standings|"
-            "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings|ESPN NBA standings|"
-            "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings|ESPN NHL standings|"
-            "https://site.api.espn.com/apis/v2/sports/football/nfl/standings|ESPN NFL standings|"
+            # ESPN PROBES REMOVED 2026-09-02, for exactly the reason the Substack
+            # ones went below, and with the same evidence. ESPN sits behind
+            # Akamai and 403s GitHub runner IPs; the UA is not the variable (see
+            # build_season_sims.py fetch_bytes, which documents the measured
+            # matrix). These four had been failing since at least 2026-08-13 and
+            # issue #9 was open on them again -- the second time this channel has
+            # been trained to be ignored by a probe that cannot pass.
+            #
+            # Coverage is not lost: feed_shape_monitor.py on the mini already
+            # probes all four of these URLs, byte-identical, from residential
+            # egress, and they returned ok on 2026-09-02 minutes after this
+            # issue was reporting 403. It is also the better test, checking
+            # response SHAPE rather than status alone.
+            # Do not re-add these here without first proving a 200 from a runner.
             # SUBSTACK PROBES REMOVED 2026-08-05. They cannot pass from here, and
             # a probe that can never pass is worse than no probe: issue #9 sat
             # open for 47 days on these two lines and taught everyone to ignore

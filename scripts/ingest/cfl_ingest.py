@@ -33,38 +33,59 @@ TEAMS = {
     "OTTAWA": ("Ottawa RedBlacks", "East"),
     "HAMILTON": ("Hamilton Tiger-Cats", "East"),
 }
-# rank TEAM gp w l t pts pf pa  home away div  (records dropped)
-ROW = re.compile(r"(\d+)\s+([A-Z]{2,})\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+\d+-\d+-\d+\s+\d+-\d+-\d+\s+\d+-\d+-\d+")
+# cfl.ca abbreviation -> (name, division). The old uppercase-city keys
+# ("WINNIPEG") came from the scraped HTML table; the JSON API returns
+# abbreviations, so TEAMS above is kept for its names and this maps onto it.
+ABBR = {
+    "WPG": "WINNIPEG", "EDM": "EDMONTON", "BC": "BC", "SSK": "SASKATCHEWAN",
+    "CGY": "CALGARY", "MTL": "MONTREAL", "TOR": "TORONTO", "OTT": "OTTAWA",
+    "HAM": "HAMILTON",
+}
 
-def fetch_html(year):
+
+def fetch_standings(year):
+    """Season standings from api.stats.cfl.ca.
+
+    Was a scrape of https://www.cfl.ca/standings/<year>/. cfl.ca was rebuilt as
+    a Nuxt app: that year-suffixed URL now 404s (which is what failed this
+    workflow from 2026-08-31), and the standings table on the surviving
+    /standings/ page is loaded client-side, so the SSR HTML has no rows for the
+    old regex to match either. This endpoint is the XHR the rebuilt page makes
+    itself -- a public JSON API, and a better source than the scrape was.
+
+    Mirrors scripts/predictions/build_season_sims.py parse_cfl_standings, which
+    was moved to the same endpoint on 2026-09-01. Keep the two in step."""
     req = urllib.request.Request(
-        f"https://www.cfl.ca/standings/{year}/",
-        headers={"User-Agent": "Mozilla/5.0 (compatible; MetroPowerRankings/1.0; +https://rankings.citizenofnowhere.org)"})
+        f"https://api.stats.cfl.ca/standings/{year}",
+        headers={"Accept": "application/json",
+                 "User-Agent": "MetroPowerRankings/1.0 (+https://rankings.citizenofnowhere.org)"})
     with urllib.request.urlopen(req, timeout=20) as r:
-        return r.read().decode("utf-8", "replace")
+        return json.loads(r.read().decode("utf-8", "replace"))
 
-def rows_from_html(html, year):
-    text = re.sub(r"<script[\s\S]*?</script>", " ", html, flags=re.I)
-    text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
-    text = re.sub(r"<[^>]+>", " ", text)
-    text = re.sub(r"&[a-z]+;", " ", text, flags=re.I)
-    text = re.sub(r"\s+", " ", text)
+
+def rows_from_api(doc, year):
     rows, seen = [], set()
-    for m in ROW.finditer(text):
-        label = m.group(2)
-        meta = TEAMS.get(label)
-        if not meta or meta[0] in seen:
-            continue
-        seen.add(meta[0])
-        name, division = meta
-        gp, w, l, t, pts, pf, pa = (int(m.group(i)) for i in (3, 4, 5, 6, 7, 8, 9))
-        rows.append({
-            "year": year, "division": division, "team": name, "canonical": name,
-            "w": w, "l": l, "t": t,
-            "pct": round((w + 0.5 * t) / gp, 3) if gp else 0.0,
-            "pf": pf, "pa": pa,
-        })
+    for div in ((doc.get("data") or {}).get("divisions") or {}).values():
+        for r in (div or {}).get("standings") or []:
+            meta = TEAMS.get(ABBR.get(r.get("abbreviation"), ""))
+            if not meta or meta[0] in seen:
+                continue
+            seen.add(meta[0])
+            name, division = meta
+            try:
+                gp = int(r["games_played"]); w = int(r["wins"])
+                l = int(r["losses"]); t = int(r["ties"])
+                pf = int(r["points_for"]); pa = int(r["points_against"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            rows.append({
+                "year": year, "division": division, "team": name, "canonical": name,
+                "w": w, "l": l, "t": t,
+                "pct": round((w + 0.5 * t) / gp, 3) if gp else 0.0,
+                "pf": pf, "pa": pa,
+            })
     return rows
+
 
 def upsert(rows):
     if not KEY:
@@ -83,7 +104,7 @@ def upsert(rows):
         sys.exit(f"HTTP {ex.code} upserting {TABLE}: {ex.read().decode(errors='replace')[:300]}")
 
 if __name__ == "__main__":
-    rows = rows_from_html(fetch_html(YEAR), YEAR)
+    rows = rows_from_api(fetch_standings(YEAR), YEAR)
     if not rows:
         print(f"No CFL standings parsed for {YEAR} (offseason or page changed); nothing to do.")
         sys.exit(0)
