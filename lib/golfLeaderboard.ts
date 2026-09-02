@@ -25,7 +25,10 @@ export async function getLiveGolfMajor(): Promise<GolfMajor | null> {
   let root: AnyObj | null;
   try {
     const res = await fetch(URL, {
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0)", Accept: "application/json" },
+      // No User-Agent on ESPN requests. Akamai's ESPN edge rejects custom
+      // tokens and browser-shaped UAs alike (measured 2026-09-02: 403 with
+      // either, 200 with none). Same fix as espnFetch.ts in 027923904.
+      headers: { Accept: "application/json" },
       next: { revalidate: 120 },
       signal: AbortSignal.timeout(8000),
     });

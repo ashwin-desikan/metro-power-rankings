@@ -36,7 +36,10 @@ export async function getNwslStandings(): Promise<NwslStandingsSnapshot> {
     const res = await fetch(ESPN_STANDINGS_URL, {
       signal: AbortSignal.timeout(5000),
       next: { revalidate: REVALIDATE_SECONDS },
-      headers: { "User-Agent": "rankings-citizen-of-nowhere/1.0", Accept: "application/json" },
+      // No User-Agent on ESPN requests. Akamai's ESPN edge rejects custom
+      // tokens and browser-shaped UAs alike (measured 2026-09-02: 403 with
+      // either, 200 with none). Same fix as espnFetch.ts in 027923904.
+      headers: { Accept: "application/json" },
     });
     if (!res.ok) throw new Error(`espn http ${res.status}`);
     raw = await res.json();

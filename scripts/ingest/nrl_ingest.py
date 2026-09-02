@@ -48,7 +48,7 @@ CLUBS = {
 
 def _get(url):
     req = urllib.request.Request(url, headers={
-        "User-Agent": "rankings-citizen-of-nowhere/1.0", "Accept": "application/json"})
+        "Accept": "application/json"})   # no UA: Akamai 403s custom tokens (027923904)
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.load(r)
 

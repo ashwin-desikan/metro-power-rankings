@@ -25,7 +25,10 @@ DEBUG = "--debug" in sys.argv
 GOLF_URL = "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard"
 TENNIS_URL = {"atp": "https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard",
               "wta": "https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard"}
-UA = {"User-Agent": "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0)", "Accept": "application/json"}
+# No User-Agent: Akamai's ESPN edge rejects custom tokens and browser-shaped
+# UAs alike (measured 2026-09-02: 403 with either, 200 with none). Same fix as
+# espnFetch.ts in 027923904; jobs.toml ROLLOUT STATE has the full matrix.
+UA = {"Accept": "application/json"}
 
 # LOOKBACK_DAYS: without an explicit `dates=` range, ESPN's site.api scoreboard
 # endpoints default to a "current" window (effectively "today"/"this event").
