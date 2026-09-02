@@ -83,12 +83,16 @@ async function labelsFor(qids) {
   for (let i = 0; i < qids.length; i += 50) {
     const batch = qids.slice(i, i + 50);
     const url =
-      "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels|descriptions&languages=en&ids=" +
+      "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels|descriptions&languages=en|mul&ids=" +
       batch.join("|");
     const j = await fetchJson(url);
     for (const [qid, ent] of Object.entries(j.entities || {})) {
       out[qid] = {
-        label: ent.labels?.en?.value || "",
+        // `mul` fallback: Wikidata is migrating labels to the language-agnostic
+          // code and deleting the redundant `en` one, so an en-only read returns
+          // "" for a growing set of entities. Descriptions are not migrated the
+          // same way, so they stay en-only.
+          label: ent.labels?.en?.value || ent.labels?.mul?.value || "",
         description: ent.descriptions?.en?.value || "",
       };
     }

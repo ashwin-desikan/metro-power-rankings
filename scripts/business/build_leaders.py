@@ -98,14 +98,26 @@ def fetch_entities(qids):
     for i in range(0, len(qids), 50):
         batch = "|".join(qids[i:i + 50])
         res = api({"action": "wbgetentities", "ids": batch, "props": "claims|labels",
-                   "languages": "en", "format": "json"})
+                   "languages": "en|mul", "format": "json"})
         out.update(res.get("entities", {}))
         time.sleep(1.0)
     return out
 
 
 def label_of(ent):
-    return ent.get("labels", {}).get("en", {}).get("value", "")
+    """English label, falling back to `mul`.
+
+    Wikidata is migrating person labels to the language-agnostic `mul` code and
+    deleting the redundant `en` one, so an en-only read returns "" for a growing
+    set of people. That is the same failure that dropped London's mayor and
+    India's PM from the site in 2026-09. Requesting en|mul is not enough on its
+    own -- the extractor has to look at what came back."""
+    labels = ent.get("labels") or {}
+    for lang in ("en", "mul"):
+        v = (labels.get(lang) or {}).get("value")
+        if v:
+            return v
+    return ""
 
 
 def diff_and_log(old_rows, new_rows, group, changes):
