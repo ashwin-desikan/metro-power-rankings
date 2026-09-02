@@ -218,3 +218,7 @@ betatestkeys.txt
 # reset out again before it was ever pushed; this line is what stops the next
 # `git add .` from doing it a second time.
 SAIS-Organization-Spotlight-Answers.md
+
+# Release-highlights reel working dir (screenshots, narration, music, cuts).
+# Regenerate with scripts/reel/build_reel.py; the mp4 is a deliverable, not source.
+reel-build/
