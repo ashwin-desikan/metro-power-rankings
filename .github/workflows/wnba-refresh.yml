@@ -43,6 +43,20 @@ jobs:
           SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
         run: python3 scripts/ingest/wnba_ingest.py
 
+      # Sets only the outcome columns (playoffs / div_title / best_rec /
+      # sf_app / champ_app / champ / p_wins / p_losses) that the ingest above
+      # deliberately never writes. Safe to run every day of the year: with no
+      # postseason games on the wire it prints that and exits 0, and it
+      # refuses to write at all if the bracket is not the shape it expects or
+      # a conference lead is still tied. Runs BEFORE the rebuild so a
+      # championship lands in data.json on the same pass.
+      - name: Season-end finalizer (postseason outcome flags)
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: |
+          python3 scripts/ingest/wnba_finalize.py --self-test
+          python3 scripts/ingest/wnba_finalize.py --write
+
       - name: Rebuild hub JSON from Supabase
         run: python3 scripts/build-wnba-data.py
 
