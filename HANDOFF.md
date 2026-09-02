@@ -8366,3 +8366,71 @@ through eight constitutions, the most of anyone since 1789.
    contains uncommitted changes" on the Windows side. `git reset` with no
    arguments fixes that. Also note the mount reports ~1,730 modified tracked
    files that are a CRLF artifact and are not real: natively the tree was clean.
+
+## 2026-09-02 (later) — cowork (cloud, bridged to the Windows box) → mini and next session: 🔴 espnFetch.ts CARRIED THE LOSING USER-AGENT FOR FOUR WEEKS
+
+**Symptom.** Ashwin noticed the three club rugby union boards had disappeared
+from `/sports/standings` hours after they shipped, while the EuroLeague board
+next to them was fine.
+
+**Chain, verified rather than reasoned about.**
+1. `rugbyStandingsBlock` returns `null` when `rows.length === 0`, so the whole
+   published section vanishes rather than degrading.
+2. Rows were empty because `fetchEspnJson` returned `null`, which happens only
+   when the live fetch AND the snapshot fallback both fail.
+3. The snapshot fallback could not have worked: `rugby-top14.json`,
+   `rugby-prem.json` and `rugby-champions-cup.json` did not exist.
+   `scripts/espn/snapshot_standings.py` learned those three keys in `f7090d28c`,
+   which reached origin at ~09:29 UTC, AFTER that morning's 09:25 cron slot.
+   The boards shipped with a fallback that had never been populated.
+4. The live fetch was failing because `lib/espnFetch.ts` sent
+   `User-Agent: rankings-citizen-of-nowhere/1.0`.
+5. EuroLeague was unaffected because `getEuroleagueStandings()` reads a
+   committed file and never touches ESPN.
+
+**🔴 The root cause, and the reason it survived four weeks.** Two files
+recorded CONTRADICTORY conclusions from the same investigation on 2026-08-05.
+`mac-mini-jobs/jobs.toml` ROLLOUT STATE says Akamai's ESPN edge applies
+different UA policy per PoP, that the mini's PoP rejects a custom token, and
+that sending NO User-Agent was "the only shape that passed from every vantage
+measured". The three mini prediction scripts were fixed that way and have
+worked since. `lib/espnFetch.ts` recorded the opposite, that a custom token was
+the fix, and kept the losing header. Nobody noticed because every other ESPN
+board already had a committed snapshot absorbing the failure. The rugby boards
+had none, so they went dark.
+
+Re-measured 2026-09-02 from the mini, same URL, same minute:
+`rankings-citizen-of-nowhere/1.0` -> **403 in 95ms**; no User-Agent -> **200**.
+
+**Fixed here.** `lib/espnFetch.ts` now sends no User-Agent and the false comment
+is replaced with the measurement and the per-PoP explanation. This touches
+`lib/`, so it takes a real build and carries a release-notes entry, no skip
+marker. The three snapshots were also created by a manual dispatch of
+`espn-standings-snapshot.yml`, so the boards are now protected on both paths.
+
+**A misdiagnosis worth recording, because it nearly cost a migration.** Working
+from the false comment, this session tested ESPN from the mini WITH the custom
+UA, got 403 from both curl and Python, and concluded ESPN was blocking the
+mini's IP. On that basis it proposed moving `build_cfb_sim.py` and
+`build_nfl_sim.py` back to GitHub Actions, three days before a CFB run and a
+week before NFL kickoff, undoing the 2026-08-05 migration for no reason.
+`jobs.toml` caught it. **The mini's ESPN jobs are healthy. No migration
+happened and none is needed.** The lesson is narrower than "verify": a test
+inherits the assumption baked into its own parameters, and this one reproduced
+a known solved bug and read it as a new one.
+
+**Three things NOT done, deliberately.**
+1. **The boards still vanish rather than degrade** when a source is
+   unreachable. The obvious fix, rendering a block with empty `subTables` and
+   an "unavailable" note, is an untested render path: no existing block ships
+   zero rows, and `next build`/`tsc` cannot be trusted through the Cowork mount.
+   Needs a native session that can run `npm run verify` and `probe:mobile`.
+   Consider whether an empty section is actually better than absence first;
+   "a metrics board is not a page" cuts both ways.
+2. **`SNAPSHOT_REVALIDATE_SECONDS = 900` caches the 404 too.** After the
+   snapshots landed, the boards stayed missing for several minutes because
+   Next had cached the negative result. Worth a shorter window on failure.
+3. **A monitoring gap.** `external-url-monitor.yml` watches ESPN from GitHub
+   Actions, which was never blocked. It reported healthy throughout. A monitor
+   that watches from a different vantage than the worker cannot see this class
+   of failure at all.

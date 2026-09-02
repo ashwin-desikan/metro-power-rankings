@@ -41,10 +41,32 @@ export async function fetchEspnJson(
       signal: AbortSignal.timeout(5000),
       next: { revalidate: revalidateSeconds },
       headers: {
-        // Deliberately NOT a browser UA: ESPN 403s bare browser-UA requests
-        // that lack real browser TLS/header fingerprints (verified 2026-08-05
-        // from a residential vantage; the custom UA got 200 from the same IP).
-        "User-Agent": "rankings-citizen-of-nowhere/1.0",
+        // NO User-Agent. Send nothing and inherit the runtime's own token.
+        //
+        // This file used to hardcode "rankings-citizen-of-nowhere/1.0" with a
+        // comment claiming a custom token was the shape that worked. That was
+        // wrong, and mac-mini-jobs/jobs.toml recorded the correct finding on
+        // the SAME DAY (2026-08-05): Akamai's ESPN edge applies DIFFERENT UA
+        // policy per PoP, some PoPs reject a custom token outright, and "no
+        // User-Agent at all" was "the only shape that passed from every
+        // vantage measured". The three mini prediction scripts were fixed that
+        // way and have worked since; this file kept the losing header and
+        // nobody noticed, because every other ESPN board had a committed
+        // snapshot to fall back on.
+        //
+        // The rugby boards are what exposed it, on 2026-09-02. They shipped
+        // before the snapshot workflow had ever run with their keys, so the
+        // fallback 404'd, fetchEspnJson returned null, and three published
+        // boards vanished from /sports/standings within hours of going live.
+        //
+        // Re-measured 2026-09-02 from the mini, same URL, same minute:
+        //   with "rankings-citizen-of-nowhere/1.0"  -> HTTP 403 in 95ms
+        //   with no User-Agent                      -> HTTP 200
+        //
+        // Do not add a User-Agent back without re-running that pair from more
+        // than one vantage, and do not "fix" a 403 by imitating a browser
+        // fingerprint: that is bypassing an access control, which this project
+        // refused to do for Cloudflare Turnstile on PFR and refuses here.
         Accept: "application/json",
       },
     });

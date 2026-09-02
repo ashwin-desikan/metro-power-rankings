@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-02",
+    headline: "Steadier rugby and EuroLeague tables",
+    items: [
+      "The Top 14, Gallagher Premiership and Champions Cup tables now come through reliably, with a saved copy behind them for the moments the upstream feed refuses a request.",
+    ],
+  },
+  {
     date: "2026-09-01",
     headline: "Constitutions, a live club ranking, rugby and the EuroLeague",
     items: [
