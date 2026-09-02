@@ -27,6 +27,16 @@ guarded "rebuild the Premier League model"   "$PY" scripts/predictions/build_pl_
 guarded "rebuild the Champions League model" "$PY" scripts/predictions/build_ucl_sim.py
 guarded "rebuild the NFL model"              "$PY" scripts/predictions/build_nfl_sim.py
 
+# points-v3 runs in SHADOW beside v2 from week 1 (docs/NFL-PROGRAM-2026.md).
+# It must come AFTER build_nfl_sim.py, which is what appends new fixtures to
+# the ledger; this step prices the ones that have no shadow yet and freezes
+# them. Already-frozen picks are never repriced, so the step is idempotent.
+# It needs the gitignored nflverse pbp cache under data/nfl/ -- if that is
+# missing it records the staleness in the ledger and returns 0 rather than
+# failing, because `guarded` aborts the entire run on any non-zero step.
+guarded "self-test NFL shadow"   "$PY" scripts/predictions/build_nfl_shadow.py --self-test
+guarded "rebuild the NFL v3 shadow" "$PY" scripts/predictions/build_nfl_shadow.py --write
+
 commit_paths "Auto: refresh PL + UCL + NFL prediction models [vercel skip]" \
   public/data/pl-sim.json \
   public/data/pl-predictions.json \

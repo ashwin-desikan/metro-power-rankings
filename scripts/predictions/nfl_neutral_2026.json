@@ -1,0 +1,131 @@
+{
+ "_meta": {
+  "built_by": "ESPN scoreboard venue.address.country, weeks 1-18",
+  "note": "The live sim (build_nfl_sim.py) has no neutral handling and gives the designated home team full home field in all nine of these, including the Rams against the 49ers in Melbourne in week 1.",
+  "what": "2026 NFL games played away from the designated home side's own ground.",
+  "why": "The century backbone in NFL_all.xlsx applies home field of 65 Elo points at a team's own venue and ZERO at a displaced or international one. Measured, not assumed: implied HFA is exactly 0 on all 37 London rows, and on Mexico, Germany, Brazil, Ireland and Spain, and on the 2005 Saints at the Alamodome, the 2005 Cardinals at Estadio Azteca, the 2003 Chargers at Sun Devil Stadium and the 2010 Vikings at Ford Field."
+ },
+ "games": [
+  {
+   "city": "Melbourne",
+   "country": "Australia",
+   "date": "2026-09-11",
+   "event_id": "401872657",
+   "teams": [
+    "Los Angeles Rams",
+    "San Francisco 49ers"
+   ],
+   "venue": "Melbourne Cricket Ground",
+   "week": 1
+  },
+  {
+   "city": "Rio De Janeiro",
+   "country": "Brazil",
+   "date": "2026-09-27",
+   "event_id": "401872960",
+   "teams": [
+    "Dallas Cowboys",
+    "Baltimore Ravens"
+   ],
+   "venue": "Maracan\u00e3 Stadium",
+   "week": 3
+  },
+  {
+   "city": "London",
+   "country": "England",
+   "date": "2026-10-04",
+   "event_id": "401872965",
+   "teams": [
+    "Washington Commanders",
+    "Indianapolis Colts"
+   ],
+   "venue": "Tottenham Hotspur Stadium",
+   "week": 4
+  },
+  {
+   "city": "London",
+   "country": "England",
+   "date": "2026-10-11",
+   "event_id": "401872981",
+   "teams": [
+    "Jacksonville Jaguars",
+    "Philadelphia Eagles"
+   ],
+   "venue": "Tottenham Hotspur Stadium",
+   "week": 5
+  },
+  {
+   "city": "London",
+   "country": "England",
+   "date": "2026-10-18",
+   "event_id": "401872996",
+   "teams": [
+    "Jacksonville Jaguars",
+    "Houston Texans"
+   ],
+   "venue": "Wembley Stadium",
+   "week": 6
+  },
+  {
+   "city": "Saint-Denis",
+   "country": "France",
+   "date": "2026-10-25",
+   "event_id": "401873011",
+   "teams": [
+    "New Orleans Saints",
+    "Pittsburgh Steelers"
+   ],
+   "venue": "Stade de France",
+   "week": 7
+  },
+  {
+   "city": "Madrid",
+   "country": "Spain",
+   "date": "2026-11-08",
+   "event_id": "401873038",
+   "teams": [
+    "Atlanta Falcons",
+    "Cincinnati Bengals"
+   ],
+   "venue": "Santiago Bernab\u00e9u",
+   "week": 9
+  },
+  {
+   "city": "Munich",
+   "country": "Germany",
+   "date": "2026-11-15",
+   "event_id": "401873053",
+   "teams": [
+    "Detroit Lions",
+    "New England Patriots"
+   ],
+   "venue": "FC Bayern Munich Stadium",
+   "week": 10
+  },
+  {
+   "city": "Mexico City",
+   "country": "Mexico",
+   "date": "2026-11-23",
+   "event_id": "401873077",
+   "teams": [
+    "San Francisco 49ers",
+    "Minnesota Vikings"
+   ],
+   "venue": "Estadio Banorte",
+   "week": 11
+  }
+ ],
+ "neutral_event_ids": [
+  "401872657",
+  "401872960",
+  "401872965",
+  "401872981",
+  "401872996",
+  "401873011",
+  "401873038",
+  "401873053",
+  "401873077"
+ ],
+ "season": 2026,
+ "source": "ESPN scoreboard venue.address.country"
+}

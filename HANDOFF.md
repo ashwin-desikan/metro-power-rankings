@@ -8434,3 +8434,119 @@ a known solved bug and read it as a new one.
    Actions, which was never blocked. It reported healthy throughout. A monitor
    that watches from a different vantage than the worker cannot see this class
    of failure at all.
+
+## 2026-09-02 (later still) - cowork (cloud, bridged to the Windows box) -> mini and next session: THE V3 SHADOW IS LIVE, AND THE GATE'S BACKBONE IS NOT THE LIVE ENGINE'S
+
+Items 1 and 2 of `Next Session Prompt 20260902.md`. Nothing committed or pushed.
+
+### 1. NFL v3 shadow ledger - BUILT, all 16 week-1 fixtures priced and frozen
+
+**The thing that had to be found first.** The walk-forward gate grades its
+candidate against the CENTURY BACKBONE, which is the `ELO Prob (Pre)` column of
+`NFL_all.xlsx`. The live pick engine does not use it. `build_nfl_sim.py`'s
+`model.pH` is a regressed recency-weighted POINT MARGIN off ESPN season
+standings through a normal CDF. Two different models, one field name. Plugging
+the live probability into a logistic whose `elo_logit` coefficient was fitted on
+workbook-Elo logits would apply a coefficient fitted for one predictor to a
+different one, and nothing would look wrong.
+
+**So the backbone was lifted out of the workbook and MEASURED, three parts, all
+in `scripts/predictions/nfl_elo_workbook.py` (`--self-test`, `--write`):**
+- probability `p = 1/(1+10^(-(dElo + 65*own_ground)/400))`. HFA is exactly 65,
+  divisor exactly 400. Reproduces the workbook column to **MAE 6e-8** over 7,185
+  rows. The 52 neutral rows pinned the divisor independently at HFA 0.
+- off-season `new = (2/3)*old + 501.49`, one third of the way to 1505,
+  **R2 0.99996** over 829 franchise-season boundaries.
+- in-season `shift = 20 * (actual - p) * ln(|margin|+1) * 2.2/(edge*0.001+2.2)`,
+  **R2 1.00000** over 14,522 rows. A flat K fits at only 0.893 and the script
+  says so rather than using it; the workbook is running the standard
+  margin-of-victory damper at K=20. Because this is exact, the shadow's backbone
+  stays live all season without anyone reopening the workbook.
+
+**HOME FIELD IS ZERO AT A DISPLACED VENUE, and this was measured too.** Inverting
+the workbook's own probability gives an implied HFA of exactly 0 on all 37 London
+rows and on Mexico, Germany, Brazil, Ireland and Spain, and on the 2005 Saints at
+the Alamodome, the 2005 Cardinals at Estadio Azteca, the 2003 Chargers at Sun
+Devil Stadium and the 2010 Vikings at Ford Field. 60 rows in all, every one a
+game the home side did not host. `scripts/predictions/nfl_neutral_2026.json` holds
+the nine 2026 games that qualify, from ESPN venue country.
+🔴 **The live sim has no neutral handling at all** and gives the Rams a full home
+edge against the 49ers in Melbourne in week 1. Worth a fix in v2 independently.
+
+**🔴 THE GATE-PASSING MODEL IS NOT IDENTIFIED IN `home`, and the shadow is what
+found it.** `home` is 1.0 on 99.6% of the 7,203 training rows, so it is nearly
+collinear with the intercept. The fit lands on a cancelling pair, intercept
++18.7922 against home -18.7504. At home=1 that sums to +0.04 and everything is
+fine, which is why the aggregate gate never noticed - about one graded game a
+season is neutral. At home=0 the intercept stands alone and **the first thing the
+shadow priced was Melbourne, at 1.0000.**
+- Dropping `home` is NOT the fix: re-running the gate without it (new
+  `--features elo+epa+nohome` mode, added to the harness) costs real skill,
+  **-3.64% vs -3.15%**, beating the backbone in 21 of 25 seasons rather than 24.
+  The term carries a genuine correction to the workbook's FLAT 65, which matters
+  because home advantage has been falling for a century - this project's own
+  finding.
+- The fix is a re-parameterisation, not a refit: use `(w0 + w3)` as one constant
+  and let venue enter only through the backbone. **Numerically identical to the
+  fitted model at home=1**, so the gate result stands for 99.6% of the season,
+  and a principled extrapolation at a neutral site. Melbourne now prices 0.5988.
+  Self-tested both ways round.
+
+**Shipped state.** `scripts/predictions/build_nfl_shadow.py` (`--self-test`,
+`--write`) fits `elo+epa` on 1999-2025, carries EPA form and workbook Elo into
+2026, prices and FREEZES any ledger entry without a shadow, grades finished ones,
+and replays results into the backbone in date order so a rerun cannot
+double-count. Verified idempotent: second run priced 0, graded 0. Brier uses the
+ledger's own TWO-SIDED convention so `shadow_brier` is comparable with
+`model_brier` and `market_brier`, not the harness's one-sided figure.
+All 16 week-1 fixtures are written into `public/data/nfl-predictions.json`.
+
+**Wired into `mac-mini-jobs/runners/predictions.sh`** after `build_nfl_sim.py`.
+🔴 **The mini needs the gitignored nflverse pbp cache under `data/nfl/`** - run
+`scripts/predictions/nfl_etl.py` there before Wed 9 Sep. If it is missing the
+shadow step records the staleness in the ledger meta and returns 0 rather than
+failing, because `guarded` aborts the whole predictions run on any non-zero step.
+Week 1 is already priced from this box either way.
+
+**Dead end for the record:** the workbook carries `qbelo1_pre`/`qbelo2_pre`, but
+only 1999-2022. FiveThirtyEight stopped publishing. Do not build the QB layer on
+them.
+
+### 2. The workbook home/away fix list - VERIFIED, NOT APPLIED
+
+- `scripts/football/home_fix_final.json` was **already tracked in the repo**. The
+  prompt's "get it out of %TEMP%" step was done before this session started; the
+  repo copy is byte-identical to the %TEMP% one (`fc /b`, no differences).
+- **48 entries: 40 winner-wrong, 8 venue-only. 47 English, 1 Italian.**
+- **The Supabase spine is already fixed, 48/48 agree with the engsoccerdata
+  truth.** That fix reaches nothing: the Against Expectation ledger does not read
+  Supabase, it reads `data/football/eng-topflight.csv.gz`, the workbook extract.
+- **Verified against that spine, one fixture at a time, in
+  `scripts/football/verify_home_fix.py` (`--self-test`): 39 wrong winner, 7
+  venue-only, 1 absent, 0 already correct.** The published ledger still credits
+  the wrong club in 39 fixtures, Arsenal 8-0 Grimsby and Leeds 6-1 Arsenal among
+  them. ⚠️ match on DATE as well as the club pair - keying on the pair alone
+  silently matches the reverse fixture and reports nonsense.
+- **The error is narrower than it looks and the correction is mechanical.** The
+  scoreline is stored in TRUE home-away order with the two club names exchanged.
+  Fixing it means swapping the names and leaving the goals alone. engsoccerdata
+  is the source, so `build_expectation.py`'s "DO NOT REPAIR THE SPINE BY
+  INFERENCE ... Get the real results" block is now satisfied, not defied.
+- 🔴 **IT IS ONE BUG, NOT 47. All 47 fall in April, May or June - every one is a
+  season's final matchday, one per season, 1891-92 to 1991-92 with gaps.** The
+  gaps are the open question: either those seasons are clean or the pass that
+  produced this list never reached them. Do not treat 47 as a proven population.
+- 🔴 One row needs a human: **1937-38 Leicester City 1-4 Birmingham City
+  (1938-05-07) is absent from the spine entirely.**
+- KNOWN_BAD in `build_expectation.py` holds 20 of these; two of its entries are
+  NOT in the fix list and remain unresolved: 1981-82 Middlesbrough v Tottenham
+  and 1988-89 Middlesbrough v Norwich.
+
+**FOR ASHWIN, and this is why nothing was applied.** Correcting the master
+`AllFootball.xlsx` rewrites 192 MB of ground truth; correcting the extract instead
+(a curated table applied at extract time, the `protected_rows.json` pattern)
+rewrites published historical results either way. Both are his call, and the
+season-end class means the honest fix probably audits every season's last
+matchday rather than only these 47.
+
+---

@@ -311,6 +311,16 @@ def feature_vector(mode, feat, home, elo_logit):
         return [1.0, elo_logit]
     if mode == "elo+epa":
         return [1.0, elo_logit, feat, home]
+    if mode == "elo+epa+nohome":
+        # 🔴 `home` is very nearly collinear with the intercept here: only the
+        # Super Bowls are neutral, so it is 1.0 on 99.6% of training rows, and
+        # the backbone ALREADY carries home field (the workbook adds 65 Elo
+        # points at a team's own ground). Fitting both produced a cancelling
+        # pair, intercept +18.79 against home -18.75, which is harmless at
+        # home=1 and returns a probability of 1.0000 at a neutral site. The
+        # aggregate gate never saw it because roughly one graded game a season
+        # is neutral. Dropping the redundant term identifies the model.
+        return [1.0, elo_logit, feat]
     raise ValueError(mode)
 
 
@@ -543,7 +553,7 @@ def main():
     ap.add_argument("--no-adjust", action="store_true",
                     help="ablation: skip opponent adjustment")
     ap.add_argument("--features", default="epa",
-                    choices=["epa", "elo", "elo+epa"])
+                    choices=["epa", "elo", "elo+epa", "elo+epa+nohome"])
     ap.add_argument("--label", default=None)
     ap.add_argument("--self-test", action="store_true")
     args = ap.parse_args()
