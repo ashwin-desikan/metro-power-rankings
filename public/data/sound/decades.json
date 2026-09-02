@@ -4394,15 +4394,15 @@
     "metro": "Los Angeles",
     "us": 30.0,
     "uk": 20.7,
-    "combined": 110.7,
+    "combined": 110.6,
     "rank": 1
    },
    {
     "slug": "nashville",
     "metro": "Nashville",
     "us": 22.0,
-    "uk": 10.4,
-    "combined": 76.2,
+    "uk": 10.3,
+    "combined": 76.3,
     "rank": 2
    },
    {
@@ -4418,7 +4418,7 @@
     "metro": "Toronto",
     "us": 19.1,
     "uk": 7.9,
-    "combined": 65.2,
+    "combined": 65.1,
     "rank": 4
    },
    {
@@ -4448,9 +4448,9 @@
    {
     "slug": "knoxville",
     "metro": "Knoxville",
-    "us": 10.5,
+    "us": 10.6,
     "uk": 0.4,
-    "combined": 31.9,
+    "combined": 32.1,
     "rank": 8
    },
    {
@@ -4482,7 +4482,7 @@
     "metro": "Manchester",
     "us": 5.2,
     "uk": 6.1,
-    "combined": 21.9,
+    "combined": 21.8,
     "rank": 12
    },
    {
@@ -4530,7 +4530,7 @@
     "metro": "Honolulu",
     "us": 3.9,
     "uk": 1.2,
-    "combined": 12.9,
+    "combined": 12.8,
     "rank": 18
    },
    {
@@ -4658,7 +4658,7 @@
     "metro": "Bristol",
     "us": 0.7,
     "uk": 2.1,
-    "combined": 4.2,
+    "combined": 4.1,
     "rank": 34
    },
    {
@@ -4672,7 +4672,7 @@
    {
     "slug": "boston",
     "metro": "Boston",
-    "us": 0.5,
+    "us": 0.4,
     "uk": 2.5,
     "combined": 3.9,
     "rank": 36
@@ -4721,19 +4721,19 @@
     "name": "Drake",
     "slug": "drake",
     "metro": "Toronto",
-    "combined": 44.4
+    "combined": 44.3
    },
    {
     "name": "Morgan Wallen",
     "slug": "morgan-wallen",
     "metro": "Knoxville",
-    "combined": 31.9
+    "combined": 32.1
    },
    {
     "name": "Olivia Rodrigo",
     "slug": "olivia-rodrigo",
     "metro": "Los Angeles",
-    "combined": 26.7
+    "combined": 26.6
    },
    {
     "name": "Ariana Grande",
@@ -4751,7 +4751,7 @@
     "name": "Harry Styles",
     "slug": "harry-styles",
     "metro": "Manchester",
-    "combined": 20.4
+    "combined": 20.3
    },
    {
     "name": "SZA",
@@ -4811,7 +4811,7 @@
     "name": "Bruno Mars",
     "slug": "bruno-mars",
     "metro": "Honolulu",
-    "combined": 12.9
+    "combined": 12.8
    },
    {
     "name": "Beyonc\u00e9",
