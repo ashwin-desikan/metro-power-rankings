@@ -1,13 +1,62 @@
 {
-  "generatedAt": "2026-09-01",
+  "generatedAt": "2026-09-02",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-02",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "c9d7c8f4b"
+    },
     {
       "date": "2026-09-01",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "e0bd6e87b"
+      "text": "Data refreshed — Football, Basketball, Cricket, Conflicts, and 4 more.",
+      "commit": "cd8c9a9a9"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "hub",
+      "hub": null,
+      "text": "Merge the three 2026-09-01 release blocks into one.",
+      "commit": "d5494823d"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "new-hub",
+      "hub": "Constitutions",
+      "text": "New hub: Constitutions.",
+      "commit": "8849f5577"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "hub",
+      "hub": null,
+      "text": "Match the coefficient data cache to the hub's own revalidate.",
+      "commit": "a139f660a"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Live club power ranking for 2026-27, daily on the mini.",
+      "commit": "fbaa31fce"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Live UEFA club and country coefficients on the 2026-27 hub.",
+      "commit": "df3890fc6"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "hub",
+      "hub": null,
+      "text": "ISR loader for UEFA coefficients, daily refresh on the mini.",
+      "commit": "dd22617b5"
     },
     {
       "date": "2026-08-31",
@@ -4152,55 +4201,6 @@
       "hub": "Release Notes",
       "text": "Data refresh, country boundary maps, release notes trim.",
       "commit": "4ace6c61e"
-    },
-    {
-      "date": "2026-05-04",
-      "category": "hub",
-      "hub": "Countries",
-      "text": "Data refresh, country boundary maps, release notes trim.",
-      "commit": "7b6dc6875"
-    },
-    {
-      "date": "2026-05-04",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Data refresh + Germany boundaries: 1,137 metros across NA/UK/FR/DE; release notes trimmed.",
-      "commit": "7fbae35d2"
-    },
-    {
-      "date": "2026-05-04",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Populations.",
-      "commit": "4e515b3bc"
-    },
-    {
-      "date": "2026-05-04",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Boundary builder: add France via Municipality (113 metros), merge Lewes into Brighton & Hove.",
-      "commit": "61eb71a1c"
-    },
-    {
-      "date": "2026-05-04",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Boundary builder: add UK via Municipality (180 metros), fold four constituents into United Kingdom.",
-      "commit": "e72aa96c7"
-    },
-    {
-      "date": "2026-05-04",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Boundary builder: trim outlier multipolygon parts beyond 200 km from anchor.",
-      "commit": "55cde7722"
-    },
-    {
-      "date": "2026-05-03",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Populations.",
-      "commit": "266586cb6"
     }
   ]
 }
