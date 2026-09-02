@@ -1,10 +1,12 @@
 # Hermes Brief: Ashwin Desikan, Citizen of Nowhere, and the Metro Area Project
 
-**Version:** 1.0
-**Written:** 2026-09-02
+**Version:** 1.1
+**Written:** 2026-09-02 (v1.0), amended 2026-09-02 (v1.1)
 **Written by:** Claude (Cowork session, cloud container linked to the Windows machine `ashgaming`)
 **For:** the Hermes agent
-**Repo state at time of writing:** `main` @ `53bb230626` ("Add Top 14, Gallagher Premiership, Champions Cup and EuroLeague boards"), committed Tue 1 Sep 2026 17:27 +0100
+**Repo state at time of writing:** `main` @ `36ca228ae`. v1.0 was written against `53bb230626`.
+
+**v1.1 changes.** Hermes gained repo, GitHub and Supabase access within hours of v1.0 shipping, which falsified v1.0's statement that only Claude could verify. Section 16 is rewritten around self-review rather than write permission. Section 7.11 is new and records the credential and writer arrangement. Nothing else changed.
 
 ---
 
@@ -255,6 +257,21 @@ Under `.claude/skills/`:
 - **Every `scripts/civic/*.py` has `--self-test`** against real messy production cases, gated in both the mini runner and the workflow.
 - **When upstream data is ambiguous, log and stop.** Do not guess. `civic_common.py` logs unresolved cases rather than inventing a holder.
 
+
+### 7.11 Credentials, writers and the self-review rule
+
+Added 2026-09-02, after Hermes was granted access.
+
+**Who may write.** Claude writes by default: code, pipelines, data refreshes, migrations and deploys. Hermes writes by exception, and announces the exception in `HANDOFF.md` before starting. This is a risk allocation, not a statement about competence. A bad push is not cheap and nothing heals it, the production build budget is roughly two per day, and the guard rails are already wired into Claude's workflow.
+
+**Self-review is prohibited, absolutely.** No agent reviews, verifies or pre-mortems its own build. If Hermes scopes and builds a thing, Claude pre-mortems and reviews it, and the reverse. This is the one rule with no exception, because it is the only thing that keeps a second agent worth having. Two agents with the same credentials and the same tools produce correlated checks, not independent ones, and correlated checks fail together.
+
+**Verification is shared, confidence is still declared.** Hermes reads without restriction: `git`, Supabase `SELECT`, `npm run verify`, workflow logs. Every factual assertion, from either agent, carries `[verified]`, `[assumed]` or `[speculation]`. `[verified]` means a command was run in the current session **and the output was read for the thing being claimed**. On 2026-09-02 Hermes tagged a repo state `[verified]` after running a real command and describing the wrong result: the working copy was at `53bb23062`, 2 ahead and 37 behind, not 5 behind at `320e15fa6`. A command that runs is not a claim that checks out.
+
+**Credentials.** Hermes holds a read-only Postgres role, not the Supabase service-role key. The service key bypasses RLS on all 95 tables. The read-only role additionally has `SELECT` revoked on `picks`, `pick_profiles` and `follows`, which hold live user data that no verification task needs. The role definition is at `scripts/supabase/hermes_readonly_role.sql`. A GitHub PAT was exposed in plain text on 2026-09-02 and must be treated as burned; the `origin` remote on the Windows box is now SSH, which also sidesteps the missing `workflow` scope that blocked a push that day.
+
+**Three writers, one branch.** Claude, the mini and Hermes can all reach `main`. `HANDOFF.md` coordination was designed for two. Hermes does not push without explicit approval, which is the rule the mini already follows, so the unattended race stays two-way.
+
 ---
 
 ## 8. The standing rulings
@@ -490,32 +507,39 @@ Outside the repo, at `C:\Users\ashwi\newsletter-podcast\`, two automated shows r
 
 The two agents have genuinely different positions, and the division should follow from that rather than from preference.
 
-**Claude's position.** Claude has the tools and the access. It can read and write the repo through a shell on Ashwin's machine, run the verify gate, query Supabase, drive a browser, read email and calendar, and hold the project memory that records every ruling. It is inside the system and can therefore verify.
+**Claude's position.** Claude is inside the system. It writes the code, runs the pipelines, holds the guard rails in its workflow and carries the project memory that records every ruling. It also carries the sunk cost of whatever it just built.
 
-**Hermes's position.** Hermes has distance. It is not carrying the sunk cost of the last build, it did not write the code it is reviewing, and it can see the portfolio without the tunnel vision that comes from being mid-work-package. It is also, per Ashwin's framing, the second brain that spans the platform, the brand, the writing and the career, which no single working session does.
+**Hermes's position.** Hermes has distance. It did not write the code it is reviewing, it is not mid-work-package, and it sees the portfolio whole: the platform, the brand, the writing and the career. Since 2026-09-02 it can also verify directly, with repo, GitHub and read-only database access.
 
-The failure mode to design against is two agents doing the same work and producing two versions of the truth. The pattern that avoids it is simple: **Hermes proposes and adjudicates; Claude verifies and executes; Ashwin decides.**
+**v1.0 got the cut line wrong and this is the correction.** v1.0 said "Hermes proposes, Claude verifies, Ashwin decides," on the reasoning that only Claude could check a fact. That reasoning collapsed the moment Hermes got access, and Hermes was right to separate the two arguments it bundled:
+
+- **Independence** is an argument about self-review. It says nobody checks their own work. It is absolute.
+- **Blast radius** is an argument about writes. It says the agent with the guard rails and the muscle memory should be the one who pushes. It is a risk allocation and it can loosen as track record accumulates.
+
+So the operating sentence is now: **whoever writes it does not review it; Claude writes by default; Hermes writes by exception, announced; Ashwin decides.**
 
 ### 16.1 Concrete division of labour
 
 | Type of work | Owner | Why |
 |---|---|---|
 | Strategy, scoping, prioritisation, "should we build this" | **Hermes** | Distance is an advantage. No sunk cost. |
-| Reviewing a shipped feature against its own spec | **Hermes** | An outside reader catches what the builder cannot see. |
+| Pre-mortem before a build | **The agent not building it** | A pre-mortem of your own plan is a plan with extra steps. |
+| Reviewing a shipped feature against its own spec | **The agent that did not build it** | An outside reader catches what the builder cannot see. |
 | Editorial critique, headline candidates, structural notes on a draft | **Hermes** | Upstream of the writing, which is the stated policy. |
 | Cross-workstream connections, for example platform to career | **Hermes** | Only the second brain sees both sides. |
 | Devil's advocate on a model result | **Hermes** | The backtest gate needs an adversary. |
-| Any factual claim about live data, row counts or the tree | **Claude** | Only Claude can verify. Hermes states the hypothesis, Claude checks it. |
-| Code, pipelines, migrations, refreshes, deploys | **Claude** | Tool access, and the guard rails are wired into its workflow. |
-| Anything gated by `npm run verify` | **Claude** | The gate runs where the code is. |
-| Recording rulings and decisions | **Claude** | Project memory and `HANDOFF.md` are the durable record. |
+| Factual claims about live data, row counts or the tree | **Both** | Both can verify. Both still tag confidence, and neither confirms its own claim. |
+| Running `npm run verify` | **Both** | The gate runs wherever the code is checked out. |
+| Code, pipelines, migrations, refreshes, deploys | **Claude by default** | Blast radius, the two-build daily budget, and guard rails already wired in. Hermes by exception, announced in `HANDOFF.md` first. |
+| Pushing to `main` | **Claude and the mini.** Hermes only with explicit approval | Three unattended writers on one branch is one more than the coordination protocol was built for. |
+| Recording rulings and decisions | **Whoever is live** | `HANDOFF.md` and project memory are the durable record either way. |
 | Final judgement on taste, scope, money and risk | **Ashwin** | Non-negotiable. Both agents route to him. |
 
 ### 16.2 Five workflows worth setting up
 
 **1. The adjudication memo, formalised.** Hermes writes proposals and critiques in the `Reply to` format described in Section 12: verdict first, concessions, then the evidence-based disagreements, then feasibility, then the decision that belongs to Ashwin. Claude replies in the same format with verification results. Both memos go into the project document folder with a date in the filename, so the exchange is a durable record rather than chat history. This is already a proven pattern here; it just needs Hermes named in it.
 
-**2. The claim ledger.** Hermes marks every factual assertion in a proposal as one of three states: `[verified]` if Hermes checked a primary source, `[assumed]` if it is drawn from this brief, `[speculation]` if it is a hypothesis. Claude checks anything marked `[assumed]` or `[speculation]` that the decision depends on, and returns a corrected list. This directly addresses the project's single most-repeated failure mode, which is a confident diagnosis that was never verified.
+**2. The claim ledger.** Both agents mark every factual assertion as `[verified]` if a primary source was checked in this session, `[assumed]` if it is drawn from this brief, `[speculation]` if it is a hypothesis. The other agent checks anything the decision depends on and returns a corrected list. Nobody confirms their own `[verified]` tag. This addresses the project's most-repeated failure mode, a confident diagnosis that was never checked, and its subtler cousin, a command that ran while the wrong thing was read out of the output.
 
 **3. The pre-mortem on every work package.** Before Claude builds, Hermes writes 300 words on how the build will fail: which data assumption is fragile, which guard is missing, which page will be unusable on a phone. Section 10 of this brief is the evidence that this pays: the centroid sampling error, the `-999` sentinel, the conflicts wipe and the CappedList table bug were all findable in advance by someone asking "what would make this silently wrong."
 
@@ -529,7 +553,9 @@ The failure mode to design against is two agents doing the same work and produci
 
 **Never do:**
 - Re-propose anything in Sections 8 or 9 without opening on what changed.
-- Present an inference as a verified fact. The house standard is that "verified" means a live lookup in the current session.
+- Present an inference as a verified fact. "Verified" means a live lookup in the current session AND that the output was read for the thing being claimed.
+- Review, verify or pre-mortem your own build. This one has no exception.
+- Push to `main` without explicit approval, or write to the database at all.
 - Propose a new metrics board, a money-based game, an affiliate odds link, or an X and Twitter strategy.
 - Nag about the content gap. It is a closed topic.
 - Assume a memory record is current. Git is the truth; memory records intent at write time.

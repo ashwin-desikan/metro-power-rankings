@@ -8298,3 +8298,71 @@ through eight constitutions, the most of anyone since 1789.
    cannot be parsed. Neither could be executed here (both need Supabase and this
    shell has no egress), so both need one native run to confirm they still pass
    in the normal case. Both files parse.
+
+## 2026-09-02 — cowork (cloud, bridged to the Windows box) → mini and next session: A THIRD WRITER, AND THE DEPLOY THAT DID NOT HAPPEN
+
+1. **A second agent now has repo, GitHub and database access, and there is a
+   rule about it.** Ashwin has been running a second AI agent called Hermes.
+   `HERMES_BRIEF.md` (root, added today at `d4231ea2b`) is its cold-start
+   context: brand, surface area, architecture, data estate, operating model,
+   the standing rulings, the dead ends, the lessons, the review-memo protocol,
+   the active workstreams. v1.1 today amends Section 16 and adds Section 7.11.
+   What matters operationally, and what a future session must not undo:
+   - **Self-review is prohibited absolutely.** No agent reviews, verifies or
+     pre-mortems its own build. This is the only rule with no exception. Two
+     agents with the same credentials and tools produce correlated checks, and
+     correlated checks fail together.
+   - **Claude writes by default, Hermes by exception, announced here first.**
+     Not a competence judgement: blast radius, the two-build daily budget, and
+     the fact that the guard rails are wired into one workflow and not the other.
+   - **Hermes does not push to `main` without explicit approval**, the same rule
+     the mini follows. That keeps the unattended race two-way, which is what this
+     file's protocol was designed for.
+   - **Hermes gets a read-only Postgres role, not the service key.** Draft at
+     `scripts/supabase/hermes_readonly_role.sql`, FOR REVIEW, not run by anyone.
+     It revokes `picks`, `pick_profiles` and `follows` after the blanket grant:
+     no verification task needs live user rows.
+   - **`[verified]` was tightened.** It now means a command ran in this session
+     AND the output was read for the thing being claimed. Hermes tagged a repo
+     state `[verified]` today after running a real command and describing the
+     wrong result (claimed 5 behind at `320e15fa6`; the tree was at `53bb23062`,
+     2 ahead and 37 behind). Same shape as the WDQS misdiagnosis: the command
+     runs, and the wrong thing is read out of it.
+
+2. **🔴 A build-relevant commit pushed under a `[vercel skip]` tip never
+   deploys, and an empty commit cannot rescue it.** Today's push carried three
+   commits: `f7090d28c` (the rugby and EuroLeague boards, touching `app/` and
+   `lib/`), `d4231ea2b` (docs) and `73339f8bd` (workflows and scripts, tagged
+   `[vercel skip]`). Vercel evaluates the TIP only, rule 1 of
+   `scripts/vercel-ignore.sh` matched the marker on that tip, and the boards
+   were canceled along with everything else. This is the guard behaving as
+   designed, not a defect: the push-range diff in step 4 exists for exactly
+   this case but never runs, because rule 1 short-circuits first.
+   - `git commit --allow-empty` then does NOT fix it. No marker, so it falls
+     through to the path diff, which finds nothing changed, and skips.
+     A path-based guard cannot be un-skipped by a commit that changes no paths.
+   - **What works is `[deploy-retry]` on the subject line**, the hatch the guard
+     already defines and `mac-mini-jobs/run-deploy-watch.sh` already uses.
+     `6468e8837` did it and reached READY. The boards are live.
+   - Two smaller notes from the same hour: `node scripts/trigger-rebuild.mjs`
+     produced no deployment on Windows, so it may want a hook URL that is not
+     set there, and it is worth checking whether run-deploy-watch would have
+     healed this on its own before a human noticed.
+
+3. **The Windows `origin` remote is now SSH.** An HTTPS push was rejected with
+   "refusing to allow a Personal Access Token to create or update workflow
+   `.github/workflows/wnba-refresh.yml` without `workflow` scope", which
+   rejects the WHOLE push, not the one commit. SSH keys are not subject to that
+   restriction. The PAT that was in the remote URL has been exposed in plain
+   text and should be treated as burned; if anything else still uses it, reissue
+   with `repo` and `workflow`.
+
+4. **Do not run git against this repo through the Cowork bridge without delete
+   rights.** The bindfs mount cannot unlink, so git leaves `HEAD.lock`,
+   `index.lock` and `tmp_obj_*` behind and the next native command fails with
+   "cannot lock ref 'HEAD'". A commit was made today through a copied index
+   (`GIT_INDEX_FILE`) to dodge a stuck `index.lock`, which then left the real
+   index pointing at the pre-commit tree and produced a confusing "your index
+   contains uncommitted changes" on the Windows side. `git reset` with no
+   arguments fixes that. Also note the mount reports ~1,730 modified tracked
+   files that are a CRLF artifact and are not real: natively the tree was clean.
