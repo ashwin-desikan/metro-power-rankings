@@ -53,12 +53,39 @@ CURRENT_SEASON = 2026
 # (release tag, filename template, cache subdir, years to pull)
 # NOTE: "injuries" is deliberately not a tag here -- see module docstring.
 PBP_YEARS = list(range(1999, 2026)) + [CURRENT_SEASON]
+
+# A cached file for a COMPLETED season is immutable -- 2019's play-by-play will
+# never change, so re-fetching it is pure waste (the historical pbp cache alone
+# is ~468MB). A file for the CURRENT season is not: rosters and depth charts
+# move daily, snap counts several times a week, and pbp gains a week of games
+# every week. Until 2026-09-02 this script treated "the file exists" as "the
+# file is current" for both cases, so a cache laid down on 08-30 was still
+# being served three days later. Deleting the two current-season files by hand
+# and re-running showed what that hid, days before kickoff:
+#   rosters       2,930 -> 2,902 rows   (-28, roster cutdowns)
+#   depth_charts  485,277 -> 492,320    (+7,043)
+CACHE_MAX_AGE_HOURS = 12
 SOURCES = [
     ("pbp", "play_by_play_{year}.parquet", "pbp", PBP_YEARS),
     ("rosters", "roster_{year}.parquet", "rosters", [CURRENT_SEASON]),
     ("depth_charts", "depth_charts_{year}.parquet", "depth_charts", [CURRENT_SEASON]),
     ("snap_counts", "snap_counts_{year}.parquet", "snap_counts", [CURRENT_SEASON]),
 ]
+
+
+def cache_state(path, year, force=False, now=None):
+    """'missing' | 'stale' | 'fresh' for a cached file.
+
+    Completed seasons are never stale. Only the current season ages out, and
+    --force overrides everything."""
+    if not path.exists():
+        return "missing"
+    if force:
+        return "stale"
+    if year < CURRENT_SEASON:
+        return "fresh"
+    age_h = ((now or time.time()) - path.stat().st_mtime) / 3600.0
+    return "stale" if age_h > CACHE_MAX_AGE_HOURS else "fresh"
 
 
 def build_url(tag, fname):
@@ -96,20 +123,26 @@ def fetch_one(tag, fname, out_path):
     return {"status": "ok", "url": url, "seconds": round(dur, 1), "bytes": size, "rows": rows}
 
 
-def run(pbp_years_override=None):
+def run(pbp_years_override=None, force=False):
     results = []
     for tag, fname_tmpl, subdir, years in SOURCES:
         y_list = pbp_years_override if (pbp_years_override and tag == "pbp") else years
         for year in y_list:
             fname = fname_tmpl.format(year=year)
             out_path = CACHE_DIR / subdir / fname
-            if out_path.exists():
+            state = cache_state(out_path, year, force)
+            if state == "fresh":
                 rows = parquet_row_count(out_path)
                 size = out_path.stat().st_size
-                print(f"  [cached]   {tag:<12} {year}: {rows:,} rows, {size / 1e6:.1f}MB")
+                age_h = (time.time() - out_path.stat().st_mtime) / 3600.0
+                note = "" if year < CURRENT_SEASON else f", {age_h:.1f}h old"
+                print(f"  [cached]   {tag:<12} {year}: {rows:,} rows, "
+                      f"{size / 1e6:.1f}MB{note}")
                 results.append({"tag": tag, "year": year, "status": "cached",
                                 "rows": rows, "bytes": size, "seconds": 0})
                 continue
+            if state == "stale":
+                out_path.unlink(missing_ok=True)
             res = fetch_one(tag, fname, out_path)
             res["tag"] = tag
             res["year"] = year
@@ -148,9 +181,13 @@ def write_manifest(results):
 # ---------------- offline self-test ----------------
 
 def self_test():
-    fails = []
+    fails, ran = [], []
 
+    # `ran` counts what actually executed. The total used to be the literal
+    # `6 + 2`, so it under-reported as soon as a check was added -- it still
+    # said "8/8" with thirteen checks passing.
     def check(label, cond):
+        ran.append(label)
         print(("PASS " if cond else "FAIL ") + label)
         if not cond:
             fails.append(label)
@@ -177,14 +214,34 @@ def self_test():
     ])
     check("manifest counts only ok/cached files, not not_yet_published ones",
           write_manifest_test["files_ok"] == 1 and write_manifest_test["files_total"] == 2)
+    import tempfile, os as _os
+    with tempfile.TemporaryDirectory() as td:
+        f = Path(td) / "x.parquet"
+        f.write_bytes(b"x")
+        now = time.time()
+        old_mtime = now - (CACHE_MAX_AGE_HOURS + 1) * 3600
+        _os.utime(f, (old_mtime, old_mtime))
+        check("a completed season is never stale, however old the file",
+              cache_state(f, CURRENT_SEASON - 1, now=now) == "fresh")
+        check("a current-season file past CACHE_MAX_AGE_HOURS is stale",
+              cache_state(f, CURRENT_SEASON, now=now) == "stale")
+        fresh_mtime = now - 60
+        _os.utime(f, (fresh_mtime, fresh_mtime))
+        check("a current-season file inside the window is fresh",
+              cache_state(f, CURRENT_SEASON, now=now) == "fresh")
+        check("--force restages even a completed season",
+              cache_state(f, CURRENT_SEASON - 1, force=True, now=now) == "stale")
+        check("a missing file reports missing, not stale",
+              cache_state(Path(td) / "nope.parquet", CURRENT_SEASON, now=now) == "missing")
+
     check("manifest totals roll up correctly",
           write_manifest_test["total_rows"] == 100 and write_manifest_test["total_bytes"] == 1000)
     MANIFEST.unlink(missing_ok=True)  # this self-test's own fixture manifest, not a real one
 
     if fails:
-        print(f"\n{len(fails)}/{6 + 2} FAILED", file=sys.stderr)
+        print(f"\n{len(fails)}/{len(ran)} FAILED", file=sys.stderr)
         return 1
-    print(f"\nself-test: {6 + 2}/{6 + 2} PASS")
+    print(f"\nself-test: {len(ran)}/{len(ran)} PASS")
     return 0
 
 
@@ -194,6 +251,9 @@ def main(argv):
                     help="restrict the PBP pull to these years only, for a quick test run "
                          "(rosters/depth_charts/snap_counts are unaffected -- they always pull "
                          "just the current season)")
+    ap.add_argument("--force", action="store_true",
+                    help="re-fetch even fresh files, including completed seasons "
+                         "(the historical pbp cache is ~468MB -- you rarely want this)")
     ap.add_argument("--self-test", action="store_true")
     args = ap.parse_args(argv)
 
@@ -201,7 +261,7 @@ def main(argv):
         return self_test()
 
     t0 = time.time()
-    results = run(pbp_years_override=args.years)
+    results = run(pbp_years_override=args.years, force=args.force)
     summary = write_manifest(results)
     dur = time.time() - t0
     print(f"\n=== {summary['files_ok']}/{summary['files_total']} files ok, "
