@@ -3,8 +3,10 @@
 
 The baseball leg of /predictions, same convention as the NFL and Premier
 League sims:
-  public/data/mlb-sim.json  - season odds per team (exp wins, division,
+  public/data/mlb-sim.json          - season odds per team (exp wins, division,
                               playoffs, first-round bye, pennant, World Series)
+  public/data/mlb-sim-history.json  - one snapshot per build date, for trend
+                              lines on the same numbers
 
 WHY IN-HOUSE. There is no free, licensable public feed for MLB postseason
 probabilities. FanGraphs and Baseball-Reference both publish them but serve
@@ -28,10 +30,10 @@ MODEL (rundiff-v1, "site data + market"):
         P(home) = sigmoid(r_home - r_away + HFA_LOGIT)
     HFA_LOGIT is the log-odds of .535, MLB's long-run home win rate.
   - The REAL remaining schedule (ESPN per-team schedules, 2430 games over a
-    full season) is simulated DEFAULT_SIMS times with per-season rating noise
-    SIGMA_SEASON. Division winners by record (head-to-head inside the sim,
-    then random, standing in for the full tie-break ladder). Seeds 1-3 are
-    the division winners, 4-6 the wild cards.
+    full season) is simulated DEFAULT_SIMS times with per-season rating noise.
+    Division winners by record (head-to-head inside the sim, then random,
+    standing in for the full tie-break ladder). Seeds 1-3 are the division
+    winners, 4-6 the wild cards.
   - The real bracket: seeds 1-2 bye; Wild Card 3v6 and 4v5 best-of-3 entirely
     at the higher seed; LDS best-of-5 (2-2-1); LCS and World Series
     best-of-7 (2-3-2). Home games follow the actual pattern, not a coin flip.
@@ -40,6 +42,19 @@ MODEL (rundiff-v1, "site data + market"):
     curve and blended at MARKET_W_MAX scaled by the share of the season still
     unplayed, so it matters in March and is nearly silent in September. Soft
     by design: no futures means model-only, not a failure.
+
+RUNDIFF-V1-V3 additions (contract 2026-09-03, mirrors build_nfl_sim.py's
+points-v3): per-season noise now has three correlated layers on the log-odds
+scale (a league-wide HFA jitter, a per-division jitter, and a per-team
+residual sized so the total matches an adaptive sigma that shrinks as the
+season plays out and widens where the stats and market ratings disagree
+about a team). Every simulated season draws from common random numbers keyed
+to its index (rating shocks, then one uniform per FULL-schedule game in fixed
+(date, event id) order), so a rating change does not reshuffle which games
+"get unlucky" between builds; postseason and tie-break draws come from a
+second, independent random stream. Season win-count percentiles are
+collected from the same run, and a history file tracks the headline numbers
+across builds.
 
     python scripts/predictions/build_mlb_sim.py               # build + write
     python scripts/predictions/build_mlb_sim.py --dry
@@ -61,6 +76,7 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT_SIM = os.path.join(ROOT, "public", "data", "mlb-sim.json")
+OUT_HIST = os.path.join(ROOT, "public", "data", "mlb-sim-history.json")
 
 SEASON = 2026
 GAMES_PER_TEAM = 162
@@ -76,6 +92,16 @@ MARKET_W_MAX = 0.35     # preseason weight of the futures-implied rating
 CALIB_SIMS = 3000       # quick pre-sim mapping rating <-> title odds
 DEFAULT_SIMS = 20000
 ESPN = "https://site.api.espn.com/apis"
+
+# rundiff-v1-v3: correlated season-noise layers, the adaptive-sigma / market
+# disagreement knob, and history-file cap (contract 2026-09-03).
+SEED = SEASON              # common random numbers seed
+HFA_SD = 0.01               # sd of the per-season league-wide HFA-logit jitter
+DIV_SD = 0.03                # sd of the per-season, per-division jitter
+SIGMA_FLOOR_FRAC = 0.45      # floor on adaptive sigma as a fraction of SIGMA_SEASON
+DISAGREE_K = 0.5             # widens a team's sigma by this * |stats - market|
+TEAM_SD_FLOOR = 0.0004       # floor (variance) under the per-team residual sqrt
+HISTORY_KEEP = 180           # max snapshots kept in mlb-sim-history.json
 
 # The six divisions, keyed by ESPN's team `name` (the mark, not the city).
 # lib/mlb-standings.ts already relies on that field matching the workbook
@@ -285,6 +311,81 @@ def home_win_prob(r_h, r_a, hfa=HFA_LOGIT):
     return 1.0 / (1.0 + math.exp(-(r_h - r_a + hfa)))
 
 
+# --------------------------------------------------------- adaptive sigma
+
+def adaptive_sigma(frac_left, sigma_season=SIGMA_SEASON, floor_frac=SIGMA_FLOOR_FRAC):
+    """League-wide per-season rating sigma given the fraction of the season's
+    games still to play; shrinks toward `floor_frac` of the full-season value
+    as the season resolves, never below it."""
+    frac_left = min(max(frac_left, 0.0), 1.0)
+    return sigma_season * max(floor_frac, math.sqrt(frac_left))
+
+
+def team_sigma(sigma_base, r_stats, r_market, disagree_k=DISAGREE_K):
+    """Widen a team's season sigma by how much the stats and market ratings
+    disagree about it (no widening when there is no market rating)."""
+    if r_market is None:
+        return sigma_base
+    return math.sqrt(sigma_base ** 2 + (disagree_k * abs(r_stats - r_market)) ** 2)
+
+
+def div_residual_sd(sigma_adaptive, div_sd=DIV_SD, floor=TEAM_SD_FLOOR):
+    """sd of a team's own noise layer once the shared division layer (sd
+    `div_sd`) is split out of its adaptive sigma, so the two layers' variance
+    sums back to it (floored so a small adaptive sigma never goes negative
+    under the sqrt)."""
+    return math.sqrt(max(sigma_adaptive ** 2 - div_sd ** 2, floor))
+
+
+# --------------------------------------------------------------- intervals
+
+def percentiles(values, p):
+    """Nearest-rank percentile (p in 0..100) of a list of numbers. None for
+    an empty list. Used for the season win-count p10/p90 bands."""
+    if not values:
+        return None
+    s = sorted(values)
+    idx = int(round((p / 100.0) * (len(s) - 1)))
+    idx = min(max(idx, 0), len(s) - 1)
+    return s[idx]
+
+
+def band_for(p_playoffs):
+    """Playoff-odds band label from p_playoffs (0..100)."""
+    if p_playoffs >= 90:
+        return "solid"
+    if p_playoffs >= 75:
+        return "likely"
+    if p_playoffs >= 60:
+        return "lean"
+    if p_playoffs >= 40:
+        return "tossup"
+    if p_playoffs >= 15:
+        return "unlikely"
+    return "out"
+
+
+# ------------------------------------------------------------------- history
+
+def upsert_snapshot(doc, date_iso, games_played, rows, keep=HISTORY_KEEP):
+    """Insert or replace `date_iso`'s snapshot in the history doc (a rebuild
+    on the same date REPLACES it, never duplicates), sorted ascending by
+    date and capped at `keep` entries (oldest dropped first). `doc` may be
+    None for a fresh file."""
+    doc = doc or {"meta": {"league": "mlb", "season": SEASON,
+                           "generated_at": date_iso, "keep": keep},
+                  "snapshots": []}
+    snaps = [s for s in doc.get("snapshots", []) if s.get("date") != date_iso]
+    snaps.append({"date": date_iso, "games_played": games_played, "rows": rows})
+    snaps.sort(key=lambda s: s["date"])
+    if len(snaps) > keep:
+        snaps = snaps[-keep:]
+    doc["snapshots"] = snaps
+    doc["meta"]["generated_at"] = date_iso
+    doc["meta"]["keep"] = keep
+    return doc
+
+
 # ----------------------------------------------------------------- schedule
 
 def espn_teams():
@@ -486,30 +587,62 @@ def run_playoffs(field, wins, r, rng):
     return al, nl, sim_series(host, away, r, rng, BO7_PATTERN)
 
 
-def simulate(ratings, schedule, base_wins, played_h2h, sims, seed=2026):
-    """schedule: [(home, away)] of games still to play."""
-    rng = random.Random(seed)
+def simulate(ratings, schedule, base_wins, played_h2h, sims, seed=SEED,
+             sigma_team=None, gid_pos=None, n_full=0):
+    """Monte Carlo the remaining schedule `sims` times.
+
+    `schedule`: [(gid, home, away)] games still to play. `gid_pos`:
+    {event_id: position in the FULL (played + remaining) season, sorted by
+    (date, event id)} - fixed regardless of how much of the season has been
+    played, so a game's draw never moves between builds. `n_full`: total
+    games in that full ordering.
+
+    Common random numbers: season i draws its correlated rating shocks (a
+    league-wide HFA-logit jitter, a per-division jitter, a per-team
+    residual) and then ONE uniform per game of the full schedule, indexed by
+    gid_pos, from random.Random(seed*1_000_003 + i); postseason and
+    tie-break draws come from a second random.Random(seed*7_919 + i), so
+    neither stream's length depends on the other.
+
+    `sigma_team`: {team: adaptive per-team sigma} (falls back to
+    SIGMA_SEASON for any team missing from it).
+
+    Returns (acc, win_lists): acc per-team tallies, win_lists per-team
+    season win counts across sims (for percentiles)."""
+    sigma_team = sigma_team or {}
+    gid_pos = gid_pos or {}
+    div_names = sorted(DIVISIONS)
+    e_sd = {t: div_residual_sd(sigma_team.get(t, SIGMA_SEASON)) for t in TEAMS}
+
     acc = {t: _tally() for t in TEAMS}
-    rand = rng.random
-    for _ in range(sims):
-        r = {t: ratings[t] + rng.gauss(0.0, SIGMA_SEASON) for t in TEAMS}
-        # Each ordered pair recurs 6-13 times across a season, so caching the
-        # matchup probability cuts the exp() calls by roughly three quarters.
+    win_lists = {t: [] for t in TEAMS}
+
+    for i in range(sims):
+        rng = random.Random(seed * 1_000_003 + i)
+        rng2 = random.Random(seed * 7_919 + i)
+        hfa_s = HFA_LOGIT + rng.gauss(0.0, HFA_SD)
+        div_noise = {d: rng.gauss(0.0, DIV_SD) for d in div_names}
+        team_noise = {t: rng.gauss(0.0, e_sd[t]) for t in TEAMS}
+        r = {t: ratings[t] + div_noise[TEAM_DIV[t]] + team_noise[t] for t in TEAMS}
+        uniforms = [rng.random() for _ in range(n_full)]
+
         pcache = {}
         wins = dict(base_wins)
         h2h = {t: dict(played_h2h[t]) for t in TEAMS}
-        for h, a in schedule:
-            p = pcache.get((h, a))
+        for gid, h, a in schedule:
+            key = (h, a)
+            p = pcache.get(key)
             if p is None:
-                p = pcache[(h, a)] = home_win_prob(r[h], r[a])
-            if rand() < p:
+                p = pcache[key] = home_win_prob(r[h], r[a], hfa=hfa_s)
+            u = uniforms[gid_pos[gid]] if gid in gid_pos else rng.random()
+            if u < p:
                 wins[h] += 1
                 h2h[h][a] = h2h[h].get(a, 0) + 1
             else:
                 wins[a] += 1
                 h2h[a][h] = h2h[a].get(h, 0) + 1
-        field = playoff_field(wins, h2h, rng)
-        al, nl, ws = run_playoffs(field, wins, r, rng)
+        field = playoff_field(wins, h2h, rng2)
+        al, nl, ws = run_playoffs(field, wins, r, rng2)
         for lg in ("AL", "NL"):
             s = field[lg]
             for t in s:
@@ -523,7 +656,8 @@ def simulate(ratings, schedule, base_wins, played_h2h, sims, seed=2026):
         acc[ws]["ws"] += 1
         for t in TEAMS:
             acc[t]["wins"] += wins[t]
-    return acc
+            win_lists[t].append(wins[t])
+    return acc, win_lists
 
 
 # -------------------------------------------------------------------- build
@@ -539,14 +673,17 @@ def build(sims, today=None):
     games = team_schedules(team_ids)
     played = [(h, a, hs, as_) for _d, h, a, hs, as_, done in games.values()
               if done and hs is not None and as_ is not None]
-    # Sort on the date alone. Sorting the raw tuples would compare the score
-    # fields, and an unplayed game carries None, which is not orderable
-    # against an int in Python 3.
-    remaining = [(h, a) for _d, h, a, _hs, _as, done in
-                 sorted(games.values(), key=lambda g: g[0]) if not done]
+    # Full-season fixed ordering for common random numbers: every game
+    # (played or not), sorted by (date, event id), position never moves as
+    # the season plays out.
+    full_sorted = sorted(games.items(), key=lambda kv: (kv[1][0], kv[0]))
+    gid_pos = {gid: i for i, (gid, _v) in enumerate(full_sorted)}
+    n_full = len(full_sorted)
+    remaining = [(gid, v[1], v[2]) for gid, v in games.items() if not v[5]]
 
     per_season = {s: season_rundiff(s) for s, _ in STRENGTH_SEASONS}
-    ratings = base_ratings(per_season, played)
+    r_stats = base_ratings(per_season, played)
+    ratings = dict(r_stats)
 
     base_wins = {t: 0 for t in TEAMS}
     base_losses = {t: 0 for t in TEAMS}
@@ -570,16 +707,19 @@ def build(sims, today=None):
     frac_left = min(1.0, len(remaining) / total_slots) if total_slots else 0.0
     market_w = MARKET_W_MAX * frac_left
     market_note = "model-only (no futures available)"
+    r_market = None
     mkt_probs, provider = fetch_ws_futures()
     if mkt_probs and market_w > 0.01:
-        pre = simulate(ratings, remaining, base_wins, played_h2h, CALIB_SIMS, seed=99)
-        pairs = [(_logodds(pre[t]["ws"] / CALIB_SIMS), ratings[t]) for t in TEAMS]
+        pre_acc, _pre_wl = simulate(r_stats, remaining, base_wins, played_h2h,
+                                    CALIB_SIMS, seed=99, gid_pos=gid_pos, n_full=n_full)
+        pairs = [(_logodds(pre_acc[t]["ws"] / CALIB_SIMS), r_stats[t]) for t in TEAMS]
         a, b = _fit_rating_from_logodds(pairs)
         if b > 0:
             r_mkt = {t: a + b * _logodds(mkt_probs.get(t, 1.0 / 60)) for t in TEAMS}
             m = sum(r_mkt.values()) / len(r_mkt)
             r_mkt = {t: v - m for t, v in r_mkt.items()}
-            ratings = {t: (1 - market_w) * ratings[t] + market_w * r_mkt[t]
+            r_market = r_mkt
+            ratings = {t: (1 - market_w) * r_stats[t] + market_w * r_mkt[t]
                        for t in TEAMS}
             m2 = sum(ratings.values()) / len(ratings)
             ratings = {t: v - m2 for t, v in ratings.items()}
@@ -588,23 +728,40 @@ def build(sims, today=None):
     elif mkt_probs:
         market_note = "model-only (season too far advanced for futures to add signal)"
 
-    acc = simulate(ratings, remaining, base_wins, played_h2h, sims)
+    # Adaptive sigma: league-wide from games remaining, widened per team by
+    # stats/market disagreement.
+    sigma_base = adaptive_sigma(frac_left)
+    sigma_team_dict = {t: team_sigma(sigma_base, r_stats[t],
+                                     r_market[t] if r_market is not None else None)
+                       for t in TEAMS}
+
+    acc, win_lists = simulate(ratings, remaining, base_wins, played_h2h, sims,
+                              sigma_team=sigma_team_dict, gid_pos=gid_pos, n_full=n_full)
 
     table = []
     for t in TEAMS:
         a = acc[t]
+        p10 = percentiles(win_lists[t], 10)
+        p90 = percentiles(win_lists[t], 90)
+        p_playoffs = round(100.0 * a["playoffs"] / sims, 2)
         table.append({
             "canonical": t, "name": team_ids[t][1],
             "league": TEAM_LG[t], "division": TEAM_DIV[t],
             "rating": round(ratings[t], 4),
+            "rating_stats": round(r_stats[t], 4),
+            "rating_market": round(r_market[t], 4) if r_market is not None else None,
+            "sigma_team": round(sigma_team_dict[t], 4),
             "true_wpct": round(1.0 / (1.0 + math.exp(-ratings[t])), 3),
             "wins": base_wins[t], "losses": base_losses[t],
             "exp_wins": round(a["wins"] / sims, 1),
+            "wins_p10": round(p10, 1) if p10 is not None else None,
+            "wins_p90": round(p90, 1) if p90 is not None else None,
             "p_division": round(100.0 * a["division"] / sims, 2),
-            "p_playoffs": round(100.0 * a["playoffs"] / sims, 2),
+            "p_playoffs": p_playoffs,
             "p_bye": round(100.0 * a["bye"] / sims, 2),
             "p_pennant": round(100.0 * a["pennant"] / sims, 2),
             "p_ws": round(100.0 * a["ws"] / sims, 2),
+            "band": band_for(p_playoffs),
         })
     table.sort(key=lambda r: (-r["p_ws"], -r["exp_wins"]))
 
@@ -616,32 +773,59 @@ def build(sims, today=None):
     s = sum(r["p_pennant"] for r in table)
     assert abs(s - 200.0) < 2.0, "p_pennant sums to %.2f" % s
 
-    return {
+    corr_team_sd = round(sum(div_residual_sd(v) for v in sigma_team_dict.values())
+                         / len(sigma_team_dict), 4)
+
+    sim_doc = {
         "meta": {
             "league": "mlb", "season": SEASON, "title_game": "World Series",
-            "generated_at": today_iso, "sims": sims, "model": "rundiff-v1",
+            "generated_at": today_iso, "sims": sims, "model": "rundiff-v1-v3",
+            "seed": SEED,
             "runs_per_win": RPW, "hfa_wpct": 0.535,
-            "sigma_season": SIGMA_SEASON, "regress": REGRESS,
+            "sigma_season": SIGMA_SEASON, "sigma_season_eff": round(sigma_base, 4),
+            "corr": {"hfa_sd": HFA_SD, "div_sd": DIV_SD, "team_sd": corr_team_sd},
+            "regress": REGRESS,
             "strength_seasons": [s for s, _ in STRENGTH_SEASONS],
             "market": market_note, "market_weight": round(market_w, 3),
             "schedule_games": len(games), "games_played": len(played),
             "games_remaining": len(remaining), "wins_check": wins_note,
             "source": "ESPN standings (2024/2025) + 2026 team schedules + World Series futures",
             "notes": "Regressed run-differential ratings on the ten-runs-per-win scale, "
-                     "converted to log-odds so each game is log5 plus home field. The real "
-                     "remaining schedule and the full 12-team bracket are simulated; division "
-                     "tie-breaks approximated (record, then head-to-head).",
+                     "converted to log-odds so each game is log5 plus home field, with "
+                     "correlated per-team/division/HFA season noise sized to an adaptive "
+                     "sigma and common random numbers. The real remaining schedule and the "
+                     "full 12-team bracket are simulated; division tie-breaks approximated "
+                     "(record, then head-to-head).",
         },
         "table": table,
     }
+
+    hist_rows = {r["canonical"]: {
+        "xw": round(r["exp_wins"], 1),
+        "div": round(r["p_division"], 1),
+        "po": round(r["p_playoffs"], 1),
+        "pennant": round(r["p_pennant"], 1),
+        "title": round(r["p_ws"], 1),
+    } for r in table}
+    hist_doc = None
+    if os.path.exists(OUT_HIST):
+        try:
+            hist_doc = json.load(io.open(OUT_HIST, encoding="utf-8"))
+        except Exception:
+            hist_doc = None
+    hist_doc = upsert_snapshot(hist_doc, today_iso, len(played), hist_rows, HISTORY_KEEP)
+
+    return sim_doc, hist_doc
 
 
 # ---------------------------------------------------------------- self-test
 
 def self_test():
     fails = []
+    ran = []
 
     def check(name, cond):
+        ran.append(name)
         if not cond:
             fails.append(name)
 
@@ -717,23 +901,95 @@ def self_test():
     check("num-shapes", _num("7") == 7 and _num(7) == 7 and _num({"value": 7.0}) == 7
           and _num(None) is None)
 
-    # a tiny end-to-end sim: probabilities are well-formed and the better team
-    # really does make the playoffs more often
+    # adaptive sigma: shrinks with games played, never below the floor, and
+    # clamps a nonsense frac_left to [0, 1]
+    check("adaptive-sigma-full", abs(adaptive_sigma(1.0, 0.07, 0.45) - 0.07) < 1e-12)
+    check("adaptive-sigma-floor", abs(adaptive_sigma(0.0, 0.07, 0.45) - 0.07 * 0.45) < 1e-12)
+    check("adaptive-sigma-mid", adaptive_sigma(0.25, 0.07, 0.45) < adaptive_sigma(1.0, 0.07, 0.45))
+    check("adaptive-sigma-clamp-neg", adaptive_sigma(-3.0, 0.07, 0.45) == adaptive_sigma(0.0, 0.07, 0.45))
+    check("adaptive-sigma-clamp-big", adaptive_sigma(99.0, 0.07, 0.45) == adaptive_sigma(1.0, 0.07, 0.45))
+
+    # team sigma: no widening without a market rating; widens with disagreement
+    check("team-sigma-no-market", team_sigma(0.05, 0.3, None) == 0.05)
+    check("team-sigma-agree", abs(team_sigma(0.05, 0.3, 0.3) - 0.05) < 1e-12)
+    ts_wide = team_sigma(0.05, 0.9, -0.1, disagree_k=0.5)
+    check("team-sigma-disagree", ts_wide > 0.05)
+    check("team-sigma-formula", abs(ts_wide - math.sqrt(0.05 ** 2 + (0.5 * 1.0) ** 2)) < 1e-9)
+
+    # div residual sd: variance splits back out, floored so it never goes
+    # negative under the sqrt for a tiny adaptive sigma
+    dsd = div_residual_sd(0.05, div_sd=0.03, floor=0.0004)
+    check("div-residual-variance", abs(dsd ** 2 + 0.03 ** 2 - 0.05 ** 2) < 1e-9)
+    check("div-residual-floor", div_residual_sd(0.01, div_sd=0.03, floor=0.0004) == math.sqrt(0.0004))
+
+    # percentiles: nearest-rank, empty-safe, monotonic p10 <= p90
+    check("percentiles-empty", percentiles([], 50) is None)
+    check("percentiles-single", percentiles([7], 10) == 7 and percentiles([7], 90) == 7)
+    vals = [70, 75, 80, 85, 90, 95, 100, 105, 110]
+    p10, p90 = percentiles(vals, 10), percentiles(vals, 90)
+    check("percentiles-order", p10 <= p90)
+    check("percentiles-bounds", vals[0] <= p10 and p90 <= vals[-1])
+
+    # band thresholds, boundary-inclusive at each cut
+    check("band-solid", band_for(90.0) == "solid" and band_for(99.9) == "solid")
+    check("band-likely", band_for(75.0) == "likely" and band_for(89.9) == "likely")
+    check("band-lean", band_for(60.0) == "lean")
+    check("band-tossup", band_for(40.0) == "tossup")
+    check("band-unlikely", band_for(15.0) == "unlikely")
+    check("band-out", band_for(14.9) == "out" and band_for(0.0) == "out")
+
+    # upsert_snapshot: fresh doc, same-date rebuild replaces (not appends),
+    # ascending sort, and the cap drops the oldest first
+    doc = upsert_snapshot(None, "2026-04-01", 5, {"yankees": {"xw": 90.0}}, keep=3)
+    check("snapshot-fresh", len(doc["snapshots"]) == 1 and doc["meta"]["league"] == "mlb")
+    doc = upsert_snapshot(doc, "2026-04-01", 6, {"yankees": {"xw": 91.0}}, keep=3)
+    check("snapshot-replace-same-date", len(doc["snapshots"]) == 1
+          and doc["snapshots"][0]["games_played"] == 6)
+    doc = upsert_snapshot(doc, "2026-03-30", 4, {"yankees": {"xw": 89.0}}, keep=3)
+    check("snapshot-sorted", [s["date"] for s in doc["snapshots"]] == ["2026-03-30", "2026-04-01"])
+    doc = upsert_snapshot(doc, "2026-04-05", 8, {}, keep=3)
+    doc = upsert_snapshot(doc, "2026-04-10", 10, {}, keep=3)
+    check("snapshot-cap", len(doc["snapshots"]) == 3
+          and doc["snapshots"][0]["date"] == "2026-04-01")
+
+    # a tiny end-to-end sim: probabilities are well-formed, the better team
+    # really does make the playoffs more often, and CRN keeps a game's draw
+    # fixed regardless of which other games are in the (sub)schedule passed
     ratings = {t: 0.0 for t in TEAMS}
     ratings["Dodgers"] = 0.35
-    sched = [(h, a) for h in TEAMS for a in TEAMS
-             if h != a and TEAM_LG[h] == TEAM_LG[a]][:200]
-    acc = simulate(ratings, sched, {t: 60 for t in TEAMS},
-                   {t: {} for t in TEAMS}, 60, seed=7)
+    full_pairs = [(h, a) for h in TEAMS for a in TEAMS
+                  if h != a and TEAM_LG[h] == TEAM_LG[a]][:200]
+    full_sched = [("g%d" % i, h, a) for i, (h, a) in enumerate(full_pairs)]
+    gid_pos = {g[0]: i for i, g in enumerate(full_sched)}
+    acc, win_lists = simulate(ratings, full_sched, {t: 60 for t in TEAMS},
+                              {t: {} for t in TEAMS}, 60, seed=7,
+                              gid_pos=gid_pos, n_full=len(full_sched))
     check("sim-playoff-count", abs(sum(a["playoffs"] for a in acc.values()) - 12 * 60) < 1)
     check("sim-ws-count", sum(a["ws"] for a in acc.values()) == 60)
     check("sim-pennant-count", sum(a["pennant"] for a in acc.values()) == 120)
     check("sim-favourite", acc["Dodgers"]["playoffs"] >= acc["Rockies"]["playoffs"])
+    check("sim-win-lists", len(win_lists["Dodgers"]) == 60)
+    # CRN: drop the LAST game from the schedule (as if it hadn't been played
+    # yet) but keep the SAME full ordering (gid_pos/n_full unchanged). Every
+    # other game's draw must be untouched, so every team NOT in the dropped
+    # game must post the exact same season win total, one season at a time.
+    drop_gid, drop_h, drop_a = full_sched[-1]
+    partial_sched = full_sched[:-1]
+    _acc2, wl2 = simulate(ratings, partial_sched, {t: 60 for t in TEAMS},
+                          {t: {} for t in TEAMS}, 5, seed=7,
+                          gid_pos=gid_pos, n_full=len(full_sched))
+    _acc1, wl1 = simulate(ratings, full_sched, {t: 60 for t in TEAMS},
+                          {t: {} for t in TEAMS}, 5, seed=7,
+                          gid_pos=gid_pos, n_full=len(full_sched))
+    untouched = [t for t in TEAMS if t not in (drop_h, drop_a)]
+    check("crn-stable-subset", all(wl1[t] == wl2[t] for t in untouched))
+    check("crn-dropped-game-differs",
+          wl1[drop_h] != wl2[drop_h] or wl1[drop_a] != wl2[drop_a])
 
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (%d cases)" % 30)
+    print("self-test OK (%d cases)" % len(ran))
 
 
 def main():
@@ -742,15 +998,15 @@ def main():
     sims = DEFAULT_SIMS
     if "--sims" in sys.argv:
         sims = int(sys.argv[sys.argv.index("--sims") + 1])
-    doc = build(sims)
-    m = doc["meta"]
+    sim_doc, hist_doc = build(sims)
+    m = sim_doc["meta"]
     print("schedule %d games, %d played, %d remaining | %s\nwins: %s"
           % (m["schedule_games"], m["games_played"], m["games_remaining"],
              m["market"], m["wins_check"]))
-    for r in doc["table"][:10]:
-        print("  %-14s %-11s WS %5.1f%%  pennant %5.1f%%  playoffs %6.2f%%  xW %5.1f"
+    for r in sim_doc["table"][:10]:
+        print("  %-14s %-11s WS %5.1f%%  pennant %5.1f%%  playoffs %6.2f%%  xW %5.1f (p10 %s p90 %s)"
               % (r["canonical"], r["division"], r["p_ws"], r["p_pennant"],
-                 r["p_playoffs"], r["exp_wins"]))
+                 r["p_playoffs"], r["exp_wins"], r["wins_p10"], r["wins_p90"]))
     if "--dry" in sys.argv:
         print("dry run; nothing written."); return
     if m["games_played"] == 0:
@@ -763,8 +1019,10 @@ def main():
     if m["games_remaining"] == 0:
         print("note: regular season complete; odds are now a postseason snapshot.")
     with io.open(OUT_SIM, "w", encoding="utf-8", newline="") as f:
-        json.dump(doc, f, separators=(",", ":"), ensure_ascii=False)
-    print("wrote %s" % os.path.relpath(OUT_SIM, ROOT))
+        json.dump(sim_doc, f, separators=(",", ":"), ensure_ascii=False)
+    with io.open(OUT_HIST, "w", encoding="utf-8", newline="") as f:
+        json.dump(hist_doc, f, separators=(",", ":"), ensure_ascii=False)
+    print("wrote %s + %s" % (os.path.relpath(OUT_SIM, ROOT), os.path.relpath(OUT_HIST, ROOT)))
 
 
 if __name__ == "__main__":

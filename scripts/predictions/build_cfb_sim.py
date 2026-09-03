@@ -62,10 +62,14 @@ import urllib.request
 from collections import defaultdict
 from datetime import date, datetime, timedelta
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sim_common as sc
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT_SIM = os.path.join(ROOT, "public", "data", "cfb-sim.json")
 OUT_PRED = os.path.join(ROOT, "public", "data", "cfb-predictions.json")
+OUT_HIST = os.path.join(ROOT, "public", "data", "cfb-sim-history.json")
 SLUG_LOOKUP = os.path.join(ROOT, "public", "data", "cfb", "slug-lookup.json")
 
 SEASON = 2026
@@ -90,6 +94,18 @@ MATCH_BLEND_W = 0.5
 WINDOW_DAYS = 8
 POLL_MAX_AGE_DAYS = 9  # a slate only grows while the AP poll is this fresh
 DEFAULT_SIMS = 10000
+
+# points-v3: correlated season-noise layers and the adaptive-sigma / market
+# rating / tiering knobs (contract 2026-09-03, CFB-scaled).
+HFA_SD = 0.9               # sd of the per-season league-wide HFA jitter
+CONF_SD = 1.5               # sd of the per-season, per-conference jitter
+SIGMA_FLOOR_FRAC = 0.45     # floor on adaptive sigma as a fraction of SIGMA_SEASON
+DISAGREE_K = 0.5            # widens a team's sigma by this * |stats - market|
+TIER_SIMS = 4000            # sim count for the "lite" and "classic" tiers
+SPREAD_LAMBDA = 2.0         # ridge weight (games-equivalent) pulling spread ratings to prior
+SPREAD_LOOKBACK_DAYS = 28   # ledger market.spread entries older than this are dropped
+SPREAD_MIN_OBS = 25         # below this many spread observations, fall back to futures
+HISTORY_KEEP = 180          # max snapshots kept in cfb-sim-history.json
 MIN_TEAM_GAMES = 10    # hard floor per FBS team (played + remaining). Also the
                        # trigger for the per-team schedule backfill below, so
                        # the repair and the gate can never drift apart.
@@ -291,11 +307,11 @@ def season_events(season, include_post=True):
             for c in comp.get("competitors", []):
                 t = c.get("team") or {}
                 tid = str(t.get("id"))
-                sc = _score_val(c.get("score"))
+                sc_val = _score_val(c.get("score"))
                 if c.get("homeAway") == "home":
-                    home, hs, hloc = tid, sc, t.get("location") or ""
+                    home, hs, hloc = tid, sc_val, t.get("location") or ""
                 else:
-                    away, as_, aloc = tid, sc, t.get("location") or ""
+                    away, as_, aloc = tid, sc_val, t.get("location") or ""
             if not home or not away:
                 continue
             notes = comp.get("notes") or []
@@ -315,6 +331,7 @@ def season_events(season, include_post=True):
                 "conf_game": bool(comp.get("conferenceCompetition")),
                 "note": note,
                 "mkt": None if completed else market_home_prob(comp),
+                "spread": None if completed else sc.market_spread(comp),
             })
     events.sort(key=lambda e: (e["date"], e["id"]))
     return events
@@ -364,11 +381,11 @@ def team_schedule_events(team_id, season, conf_of):
         for c in comp.get("competitors", []):
             t = c.get("team") or {}
             tid = str(t.get("id") or "")
-            sc = _score_val(c.get("score"))
+            sc_val = _score_val(c.get("score"))
             if c.get("homeAway") == "home":
-                home, hs, hloc = tid, sc, t.get("location") or ""
+                home, hs, hloc = tid, sc_val, t.get("location") or ""
             else:
-                away, as_, aloc = tid, sc, t.get("location") or ""
+                away, as_, aloc = tid, sc_val, t.get("location") or ""
         if not home or not away:
             continue
         notes = comp.get("notes") or []
@@ -389,6 +406,7 @@ def team_schedule_events(team_id, season, conf_of):
                               and conf_of.get(home) == conf_of.get(away)),
             "note": note,
             "mkt": None if completed else market_home_prob(comp),
+            "spread": None if completed else sc.market_spread(comp),
         })
     return out
 
@@ -509,8 +527,7 @@ def historical_ratings(seasons_events, seasons_ids, current_ids):
 # --------------------------------------------------- market + poll priors
 
 def american_prob(v):
-    v = float(str(v).replace("+", ""))
-    return 100.0 / (v + 100.0) if v > 0 else -v / (-v + 100.0)
+    return sc.american_prob(v)
 
 
 def fetch_title_futures(fbs_ids):
@@ -575,22 +592,11 @@ def fetch_ap_poll():
 
 
 def _fit_rating_from_logodds(pairs):
-    n = len(pairs)
-    if n < 2:
-        return 0.0, 0.0
-    sx = sum(x for x, _ in pairs); sy = sum(y for _, y in pairs)
-    sxx = sum(x * x for x, _ in pairs); sxy = sum(x * y for x, y in pairs)
-    denom = n * sxx - sx * sx
-    if abs(denom) < 1e-9:
-        return 0.0, 0.0
-    b = (n * sxy - sx * sy) / denom
-    a = (sy - b * sx) / n
-    return a, b
+    return sc.fit_rating_from_logodds(pairs)
 
 
 def _logodds(p, floor=5e-4):
-    p = min(max(p, floor), 1 - floor)
-    return math.log(p / (1 - p))
+    return sc.logodds(p, floor)
 
 
 def blend_priors(ratings, natty_curve, mkt_probs, poll_pts, gp):
@@ -650,7 +656,9 @@ def committee_field(scores, champs, rng):
     """The 12-team CFP under the 2026 format: five highest-ranked conference
     champions are in, seven at-large, STRAIGHT SEEDING by committee rank.
     scores: {i: committee score}; champs: set of champion indices.
-    Returns seeds[0..11] (seed 1 first)."""
+    Returns (seeds[0..11] (seed 1 first), first_out) -- first_out is the
+    best-ranked team the field left out (None only in a tiny self-test
+    field smaller than 13 teams), the bubble marker for p_bubble."""
     ranked = sorted(scores, key=lambda i: (-scores[i], rng.random()))
     champ_order = [i for i in ranked if i in champs]
     auto = set(champ_order[:5])
@@ -661,7 +669,10 @@ def committee_field(scores, champs, rng):
         if i not in auto:
             field.append(i)
     field.sort(key=lambda i: (-scores[i], rng.random()))
-    return field[:12]
+    field = field[:12]
+    field_set = set(field)
+    first_out = next((i for i in ranked if i not in field_set), None)
+    return field, first_out
 
 
 def run_cfp(seeds, r, rng, sim_game):
@@ -688,13 +699,28 @@ def run_cfp(seeds, r, rng, sim_game):
     return g(s1, s2, 0.0)
 
 
-def simulate(state, ratings_list, sims, seed=2026, natty_only=False):
+def simulate(state, ratings_list, sims, seed=2026, natty_only=False,
+             sigma_team=None, window_gids=None):
     """state: prepared arrays (see prepare_state). ratings_list: base rating
-    per index. Returns {i: tally} (natty_only skips the record-keeping the
-    calibration pre-sim does not need)."""
-    rng = random.Random(seed)
+    per index. Returns {"acc", "win_lists", "leverage", "bubble"}
+    (natty_only skips the record-keeping the calibration pre-sim does not
+    need, and returns only "acc" for backward compatibility with that
+    pre-sim's one caller).
+
+    Common random numbers: season i draws its correlated rating shocks (a
+    league-wide HFA jitter, a per-conference jitter, a per-team jitter) from
+    random.Random(seed*1_000_003 + i), then ONE uniform per game of the FULL
+    regular-season schedule (played + remaining, fixed (date, gid) order via
+    state["gid_pos"]), so a game's draw does not move as earlier games get
+    played. Conference-title, committee and CFP draws come from a second
+    random.Random(seed*7_919 + i), so neither stream's length depends on the
+    other.
+
+    `sigma_team`: {index: adaptive per-team sigma} (falls back to
+    SIGMA_SEASON for any team missing from it). `window_gids`: event ids to
+    collect playoff-leverage counts for (the ledger's upcoming AP window)."""
     n = state["n"]
-    remaining = state["remaining"]        # (hi, ai, hfa, conf_flag) ai=-1 FCS
+    remaining = state["remaining"]        # (gid, hi, ai, hfa, conf_flag) ai=-1 FCS
     conf_members = state["conf_members"]  # {conf: [i]} (no Independents)
     fixed_ccg = state["fixed_ccg"]        # {conf: (winner_i, loser_i)}
     ccg_neutral = state["ccg_neutral"]    # {conf: bool}
@@ -704,24 +730,54 @@ def simulate(state, ratings_list, sims, seed=2026, natty_only=False):
     base_cw = state["conf_w"]
     base_cl = state["conf_l"]
     base_h2h = state["h2h"]
+    gid_pos = state["gid_pos"]
+    n_full = state["n_full"]
+    sigma_team = sigma_team or {}
+    window_gids = set(window_gids or ())
+    idx_conf = {i: c for c, members in conf_members.items() for i in members}
+    e_sd = {}
+    for i in range(n):
+        s_i = sigma_team.get(i, SIGMA_SEASON)
+        e_sd[i] = sc.layer_residual_sd(s_i, CONF_SD) if i in idx_conf else s_i
     acc = {i: _tally() for i in range(n)}
+    win_lists = {i: [] for i in range(n)}
+    bubble = {i: 0 for i in range(n)}
+    lc = {gid: {"home": {"win_po": 0, "win_total": 0, "loss_po": 0, "loss_total": 0},
+                "away": {"win_po": 0, "win_total": 0, "loss_po": 0, "loss_total": 0}}
+          for gid in window_gids}
     sqrt2 = math.sqrt(2.0)
 
-    def sim_game(rh, ra, hfa):
-        p = 0.5 * (1.0 + math.erf(((rh - ra + hfa) / SIGMA_GAME) / sqrt2))
-        return rng.random() < p
+    def game_prob(rh, ra, hfa):
+        return 0.5 * (1.0 + math.erf(((rh - ra + hfa) / SIGMA_GAME) / sqrt2))
 
-    for _ in range(sims):
-        r = [ratings_list[i] + rng.gauss(0.0, SIGMA_SEASON) for i in range(n)]
+    for i in range(sims):
+        rng = random.Random(seed * 1_000_003 + i)
+        rng2 = random.Random(seed * 7_919 + i)
+
+        def sim_game2(rh, ra, hfa):
+            return rng2.random() < game_prob(rh, ra, hfa)
+
+        hfa_s = HFA + rng.gauss(0.0, HFA_SD)
+        conf_noise = {c: rng.gauss(0.0, CONF_SD) for c in conf_members}
+        team_noise = [rng.gauss(0.0, e_sd[k]) for k in range(n)]
+        r = [ratings_list[k] + conf_noise.get(idx_conf.get(k), 0.0) + team_noise[k]
+             for k in range(n)]
+        uniforms = [rng.random() for _ in range(n_full)]
+
         rw = list(base_rw)
         lo = list(base_l)
         cw = list(base_cw)
         cl = list(base_cl)
         h2h = dict(base_h2h)
-        for hi, ai, hfa, cf in remaining:
+        game_winner = {}
+        for gid, hi, ai, g_hfa, cf in remaining:
+            eff_hfa = 0.0 if g_hfa == 0.0 else hfa_s
             ra = r[ai] if ai >= 0 else r_fcs
             rh = r[hi] if hi >= 0 else r_fcs
-            hwin = sim_game(rh, ra, hfa)
+            u = uniforms[gid_pos[gid]]
+            hwin = u < game_prob(rh, ra, eff_hfa)
+            if gid in window_gids:
+                game_winner[gid] = (hi, ai, hwin)
             if hwin:
                 if hi >= 0:
                     rw[hi] += 1
@@ -750,10 +806,10 @@ def simulate(state, ratings_list, sims, seed=2026, natty_only=False):
                     acc[ltm]["ccg"] += 1
                     acc[wtm]["conf"] += 1
                 continue
-            order = order_conference(members, cw, cl, h2h, rng)
+            order = order_conference(members, cw, cl, h2h, rng2)
             a, b = order[0], order[1]
-            hfa = 0.0 if ccg_neutral[conf] else HFA
-            awin = sim_game(r[a], r[b], hfa)
+            ccg_hfa = 0.0 if ccg_neutral[conf] else hfa_s
+            awin = sim_game2(r[a], r[b], ccg_hfa)
             wtm, ltm = (a, b) if awin else (b, a)
             wins[wtm] += 1
             loss[ltm] += 1
@@ -762,25 +818,57 @@ def simulate(state, ratings_list, sims, seed=2026, natty_only=False):
                 acc[a]["ccg"] += 1
                 acc[b]["ccg"] += 1
                 acc[wtm]["conf"] += 1
-        scores = {i: r[i] + K_REC * (wins[i] - loss[i]) for i in range(n)}
-        seeds = committee_field(scores, champs, rng)
-        champ = run_cfp(seeds, r, rng, sim_game)
+        scores = {k: r[k] + K_REC * (wins[k] - loss[k]) for k in range(n)}
+        seeds, first_out = committee_field(scores, champs, rng2)
+        champ = run_cfp(seeds, r, rng2, sim_game2)
         acc[champ]["natty"] += 1
         if not natty_only:
-            for k, i in enumerate(seeds):
-                acc[i]["playoff"] += 1
+            po_set = set(seeds)
+            for k, t in enumerate(seeds):
+                acc[t]["playoff"] += 1
                 if k < 4:
-                    acc[i]["bye"] += 1
-            for i in range(n):
-                acc[i]["reg_wins"] += rw[i]
-    return acc
+                    acc[t]["bye"] += 1
+            bubble[seeds[-1]] += 1
+            if first_out is not None:
+                bubble[first_out] += 1
+            for t in range(n):
+                acc[t]["reg_wins"] += rw[t]
+                win_lists[t].append(rw[t])
+            for gid, (hi, ai, hwin) in game_winner.items():
+                entry = lc[gid]
+                if hwin:
+                    entry["home"]["win_total"] += 1
+                    if hi >= 0 and hi in po_set:
+                        entry["home"]["win_po"] += 1
+                    entry["away"]["loss_total"] += 1
+                    if ai >= 0 and ai in po_set:
+                        entry["away"]["loss_po"] += 1
+                else:
+                    entry["home"]["loss_total"] += 1
+                    if hi >= 0 and hi in po_set:
+                        entry["home"]["loss_po"] += 1
+                    entry["away"]["win_total"] += 1
+                    if ai >= 0 and ai in po_set:
+                        entry["away"]["win_po"] += 1
+
+    if natty_only:
+        return {"acc": acc}
+
+    leverage = {}
+    for gid, c in lc.items():
+        lh = sc.leverage_from_counts(c["home"]["win_po"], c["home"]["win_total"],
+                                     c["home"]["loss_po"], c["home"]["loss_total"])
+        la = sc.leverage_from_counts(c["away"]["win_po"], c["away"]["win_total"],
+                                     c["away"]["loss_po"], c["away"]["loss_total"])
+        leverage[gid] = {"home": lh, "away": la, "game": round(lh + la, 1)}
+
+    return {"acc": acc, "win_lists": win_lists, "leverage": leverage, "bubble": bubble}
 
 
 # -------------------------------------------------------- ledger + grading
 
 def brier2(p_home, outcome_home_win):
-    o = 1.0 if outcome_home_win else 0.0
-    return (p_home - o) ** 2 + ((1 - p_home) - (1 - o)) ** 2
+    return sc.brier2(p_home, outcome_home_win)
 
 
 def market_home_prob(comp):
@@ -817,7 +905,8 @@ def upcoming_ap_games(events, today, window_days, ap_ranks):
     """Not-yet-completed FBS games in the window where either side is in the
     CURRENT AP Top 25, drawn from the already-fetched season events (never a
     limited date-range query - see season_events). [(event_id, iso_date,
-    home_id, away_id, home_loc, away_loc, market_pH, kickoff_iso, neutral)]."""
+    home_id, away_id, home_loc, away_loc, market_pH, kickoff_iso, neutral,
+    spread)]."""
     d0 = today.isoformat()
     d1 = (today + timedelta(days=window_days)).isoformat()
     # quiet window (e.g. the preseason poll lands ten days before kickoff):
@@ -840,20 +929,40 @@ def upcoming_ap_games(events, today, window_days, ap_ranks):
             continue
         out.append((e["id"], e["date"], e["home"], e["away"],
                     e["hloc"], e["aloc"], e["mkt"],
-                    kickoff_iso(e["kick"]), e["neutral"]))
+                    kickoff_iso(e["kick"]), e["neutral"], e.get("spread")))
     out.sort(key=lambda g: (g[1], g[0]))
     return out
 
 
-def grade_and_extend(ledger, results_by_id, upcoming, rating_of, today_iso,
-                     ap_ranks, poll_label, poll_fresh, lookup):
+def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
+                     classic_rating_of, today_iso, ap_ranks, poll_label,
+                     poll_fresh, lookup, leverage_by_gid=None, id_by_name=None):
     known = {e["event_id"] for e in ledger}
     kick_by_id = {u[0]: u[7] for u in upcoming if u[7]}
+    leverage_by_gid = leverage_by_gid or {}
+    id_by_name = id_by_name or {}
     for e in ledger:
         if e.get("result"):
             continue
         if kick_by_id.get(e["event_id"]):
             e["kickoff"] = kick_by_id[e["event_id"]]
+        # lite.pH / classic.pH are new as of points-v3: a one-time backfill
+        # onto entries frozen by an older build (no result exists yet to
+        # protect, so this is not a freeze violation).
+        hid = id_by_name.get(e.get("home"))
+        aid = id_by_name.get(e.get("away"))
+        hfa_g = 0.0 if e.get("neutral") else HFA
+        if lite_rating_of is not None and "lite" not in e and hid is not None and aid is not None:
+            e["lite"] = {"pH": round(home_win_prob(lite_rating_of(hid), lite_rating_of(aid),
+                                                    hfa_g), 4), "backfilled": today_iso}
+        if classic_rating_of is not None and "classic" not in e and hid is not None and aid is not None:
+            e["classic"] = {"pH": round(home_win_prob(classic_rating_of(hid), classic_rating_of(aid),
+                                                       hfa_g), 4), "backfilled": today_iso}
+        # leverage is descriptive, not a frozen pick, so it refreshes every
+        # run while the game is still upcoming.
+        lev = leverage_by_gid.get(e["event_id"])
+        if lev is not None:
+            e["leverage"] = lev
         res = results_by_id.get(e["event_id"])
         if res:
             hs, as_ = res
@@ -868,13 +977,17 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, today_iso,
             e["model_brier"] = round(brier2(e["model"]["pH"], hw), 4)
             if e.get("market") is not None:
                 e["market_brier"] = round(brier2(e["market"]["pH"], hw), 4)
+            if e.get("lite") is not None:
+                e["lite_brier"] = round(brier2(e["lite"]["pH"], hw), 4)
+            if e.get("classic") is not None:
+                e["classic_brier"] = round(brier2(e["classic"]["pH"], hw), 4)
             b = e.get("blend") or e["model"]
             e["blend_brier"] = round(brier2(b["pH"], hw), 4)
             e["pick_correct"] = (e["pick"] == e["result"])
     if not poll_fresh:
         ledger.sort(key=lambda e: (e["date"], e["home"]))
         return ledger
-    for gid, iso, h, a, hloc, aloc, mkt_ph, kick, neutral in upcoming:
+    for gid, iso, h, a, hloc, aloc, mkt_ph, kick, neutral, spread in upcoming:
         if gid in known:
             continue
         hfa = 0.0 if neutral else HFA
@@ -891,9 +1004,18 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, today_iso,
             entry["neutral"] = True
         if kick:
             entry["kickoff"] = kick
+        if lite_rating_of is not None:
+            entry["lite"] = {"pH": round(home_win_prob(lite_rating_of(h), lite_rating_of(a), hfa), 4)}
+        if classic_rating_of is not None:
+            entry["classic"] = {"pH": round(home_win_prob(classic_rating_of(h), classic_rating_of(a), hfa), 4)}
         if mkt_ph is not None:
             entry["market"] = {"pH": mkt_ph}
+            if spread is not None:
+                entry["market"]["spread"] = spread
             entry["blend"] = {"pH": round(MATCH_BLEND_W * mkt_ph + (1 - MATCH_BLEND_W) * ph, 4)}
+        lev = leverage_by_gid.get(gid)
+        if lev is not None:
+            entry["leverage"] = lev
         src = entry.get("blend") or entry["model"]
         entry["pick"] = "H" if src["pH"] >= 0.5 else "A"
         ledger.append(entry)
@@ -912,6 +1034,10 @@ def ledger_record(ledger):
     gm = [e for e in g if "market_brier" in e]
     rec["market_graded"] = len(gm)
     rec["market_brier"] = round(sum(e["market_brier"] for e in gm) / len(gm), 4) if gm else None
+    gl = [e for e in g if "lite_brier" in e]
+    rec["lite_brier"] = round(sum(e["lite_brier"] for e in gl) / len(gl), 4) if gl else None
+    gc = [e for e in g if "classic_brier" in e]
+    rec["classic_brier"] = round(sum(e["classic_brier"] for e in gc) / len(gc), 4) if gc else None
     return rec
 
 
@@ -930,6 +1056,9 @@ def prepare_state(fbs_ids, id_list, conf_of, events):
     fixed_ccg = {}
     gp = defaultdict(int)
     warn = []
+    full_sched = []  # (gid, date) for every non-CCG FBS-touching regular-
+                     # season game, played or not -- fixed CRN index space
+                     # (see simulate()'s docstring on why it never shrinks)
     for e in events:
         if e["st"] != 2:
             continue  # bowls/CFP never enter the season sim
@@ -937,6 +1066,8 @@ def prepare_state(fbs_ids, id_list, conf_of, events):
         ai = idx.get(e["away"], -1)
         if hi < 0 and ai < 0:
             continue
+        if not is_ccg(e):
+            full_sched.append((e["id"], e["date"]))
         if is_ccg(e):
             if e["completed"] and hi >= 0 and ai >= 0 and e["hs"] is not None:
                 conf = conf_of.get(e["home"])
@@ -969,7 +1100,7 @@ def prepare_state(fbs_ids, id_list, conf_of, events):
                 conf_l[l] += 1
                 h2h[(w, l)] = h2h.get((w, l), 0) + 1
         else:
-            remaining.append((hi, ai, 0.0 if e["neutral"] else HFA, cf))
+            remaining.append((e["id"], hi, ai, 0.0 if e["neutral"] else HFA, cf))
     conf_members = defaultdict(list)
     for t in id_list:
         c = conf_of.get(t)
@@ -979,12 +1110,15 @@ def prepare_state(fbs_ids, id_list, conf_of, events):
         if len(members) < 2:
             raise SystemExit("conference %s has %d members" % (c, len(members)))
     ccg_neutral = {c: (c not in CCG_HOME_HOSTED) for c in conf_members}
+    full_sched.sort(key=lambda g: (g[1], g[0]))
+    gid_pos = {gid: i for i, (gid, _d) in enumerate(full_sched)}
     return {
         "n": n, "idx": idx, "remaining": remaining,
         "conf_members": dict(conf_members), "fixed_ccg": fixed_ccg,
         "ccg_neutral": ccg_neutral, "r_fcs": None,  # set by caller
         "reg_wins": reg_wins, "losses": losses,
         "conf_w": conf_w, "conf_l": conf_l, "h2h": h2h,
+        "gid_pos": gid_pos, "n_full": len(full_sched),
     }, dict(gp), warn
 
 
@@ -1077,7 +1211,7 @@ def build(sims, today=None):
     # exit, deliberately: the floor is not relaxed to paper over a gap, the
     # gap is repaired from a second source and then re-checked.
     per_team_games = defaultdict(int)
-    for hi, ai, _hfa, _cf in state["remaining"]:
+    for _gid, hi, ai, _hfa, _cf in state["remaining"]:
         if hi >= 0:
             per_team_games[hi] += 1
         if ai >= 0:
@@ -1094,7 +1228,7 @@ def build(sims, today=None):
 
     # priors: futures + AP poll through the model's own rating->natty curve
     ratings_list = [r_stats[t] for t in id_list]
-    pre = simulate(state, ratings_list, CALIB_SIMS, seed=99, natty_only=True)
+    pre = simulate(state, ratings_list, CALIB_SIMS, seed=99, natty_only=True)["acc"]
     pairs = []
     for i, t in enumerate(id_list):
         p = pre[i]["natty"] / CALIB_SIMS
@@ -1113,15 +1247,110 @@ def build(sims, today=None):
         if poll_pts:
             parts.append("AP poll w %.2f (%d teams)" % (W_POLL, len(poll_pts)))
         market_note = "blended: " + ", ".join(parts)
-    ratings = blend_priors(r_stats, curve, mkt_probs or {}, poll_pts or {}, gp)
-    ratings_list = [ratings[t] for t in id_list]
 
-    acc = simulate(state, ratings_list, sims)
+    # tier ratings: lite = stats only; classic = stats + market (no poll);
+    # deluxe = current production (stats + market + AP poll, unchanged).
+    r_lite = dict(r_stats)
+    r_classic = blend_priors(r_stats, curve, mkt_probs or {}, {}, gp)
+    r_deluxe = blend_priors(r_stats, curve, mkt_probs or {}, poll_pts or {}, gp)
+    ratings = r_deluxe
+    ratings_list_lite = [r_lite[t] for t in id_list]
+    ratings_list_classic = [r_classic[t] for t in id_list]
+    ratings_list = [r_deluxe[t] for t in id_list]
+
+    # market-implied ratings from posted spreads (this window + the ledger's
+    # recent history), ridge-regularized toward a futures-only rating (or
+    # the stats rating when no futures are available). Used to (a) widen a
+    # team's adaptive sigma where stats and market disagree, and (b) report
+    # rating_stats/rating_market on the table -- NOT to build the tier
+    # blends above, which stay on the existing market-probability pipeline.
+    r_futures = None
+    if mkt_probs and curve[1] > 0:
+        raw = {t: curve[0] + curve[1] * _logodds(mkt_probs.get(t, MKT_MIN_PROB))
+               for t in id_list}
+        mean = sum(raw.values()) / len(raw)
+        r_futures = {t: v - mean for t, v in raw.items()}
+
+    id_by_name = {v: k for k, v in names.items()}
+    win_start = today.isoformat()
+    win_end = (today + timedelta(days=WINDOW_DAYS)).isoformat()
+    spread_obs = []
+    for e in events:
+        if e["completed"] or e["st"] != 2 or is_ccg(e):
+            continue
+        if not (win_start <= e["date"] <= win_end):
+            continue
+        sp = e.get("spread")
+        if sp is not None and e["home"] in fbs_ids and e["away"] in fbs_ids:
+            spread_obs.append((e["home"], e["away"], sp, e["neutral"]))
+    existing_ledger_for_spreads = []
+    if os.path.exists(OUT_PRED):
+        try:
+            existing_ledger_for_spreads = json.load(io.open(OUT_PRED, encoding="utf-8")).get("ledger", [])
+        except Exception:
+            existing_ledger_for_spreads = []
+    for e in existing_ledger_for_spreads:
+        sp = (e.get("market") or {}).get("spread")
+        if sp is None:
+            continue
+        h, a = id_by_name.get(e.get("home")), id_by_name.get(e.get("away"))
+        if h is None or a is None:
+            continue
+        try:
+            d = date.fromisoformat(str(e.get("date"))[:10])
+        except (TypeError, ValueError):
+            continue
+        age = (today - d).days
+        if 0 <= age <= SPREAD_LOOKBACK_DAYS:
+            spread_obs.append((h, a, sp, bool(e.get("neutral"))))
+
+    spread_prior = r_futures if r_futures is not None else r_stats
+    r_spread, n_spread_obs = sc.implied_ratings_from_spreads(
+        spread_obs, spread_prior, lam=SPREAD_LAMBDA, hfa=HFA, sweeps=200)
+    if n_spread_obs >= SPREAD_MIN_OBS:
+        r_market = r_spread
+        market_ratings_kind = "futures+spreads"
+    elif r_futures is not None:
+        r_market = r_futures
+        market_ratings_kind = "futures"
+    else:
+        r_market = None
+        market_ratings_kind = "none"
+
+    # adaptive sigma: league-wide from games remaining, widened per team by
+    # stats/market disagreement.
+    schedule_games_total = len(state["remaining"]) + sum(state["reg_wins"])
+    frac_left = (len(state["remaining"]) / float(schedule_games_total)
+                if schedule_games_total else 1.0)
+    sigma_base = sc.adaptive_sigma(frac_left, SIGMA_SEASON, SIGMA_FLOOR_FRAC)
+    sigma_team_dict = {
+        i: sc.team_sigma(sigma_base, r_stats[t],
+                         r_market[t] if r_market is not None else None, DISAGREE_K)
+        for i, t in enumerate(id_list)
+    }
+
+    # ledger's upcoming AP window, computed ahead of the main sim so leverage
+    # can be collected for exactly those games.
+    ap_set = {t: rk for t, rk in ap_ranks_by_id.items() if rk and rk <= 25}
+    poll_fresh = bool(poll_date) and (today - date.fromisoformat(poll_date)).days <= POLL_MAX_AGE_DAYS
+    upcoming = upcoming_ap_games(events, today, WINDOW_DAYS, ap_set) if ap_set else []
+    window_gids = {u[0] for u in upcoming}
+
+    lite_run = simulate(state, ratings_list_lite, TIER_SIMS, seed=SEASON,
+                        sigma_team=sigma_team_dict)
+    classic_run = simulate(state, ratings_list_classic, TIER_SIMS, seed=SEASON,
+                           sigma_team=sigma_team_dict)
+    deluxe_run = simulate(state, ratings_list, sims, seed=SEASON,
+                          sigma_team=sigma_team_dict, window_gids=window_gids)
+    acc = deluxe_run["acc"]
 
     games_played = sum(state["reg_wins"]) + 0  # every win is one played game
     table = []
     for i, t in enumerate(id_list):
         a = acc[i]
+        p10 = sc.percentiles(deluxe_run["win_lists"][i], 10)
+        p90 = sc.percentiles(deluxe_run["win_lists"][i], 90)
+        p_playoff = round(100.0 * a["playoff"] / sims, 2)
         table.append({
             "espn_id": t,
             "name": CANONICAL_OVERRIDE.get(names[t], names[t]),
@@ -1132,12 +1361,19 @@ def build(sims, today=None):
             "power4": conf_of[t] in ("SEC", "Big Ten", "Big 12", "ACC")
                       or names[t] == "Notre Dame",
             "rating": round(ratings[t], 2),
+            "rating_stats": round(r_stats[t], 2),
+            "rating_market": round(r_market[t], 2) if r_market is not None else None,
+            "sigma_team": round(sigma_team_dict[i], 2),
             "exp_wins": round(a["reg_wins"] / sims, 1),
+            "wins_p10": round(p10, 1) if p10 is not None else None,
+            "wins_p90": round(p90, 1) if p90 is not None else None,
             "p_ccg": round(100.0 * a["ccg"] / sims, 2),
             "p_conf": round(100.0 * a["conf"] / sims, 2),
-            "p_playoff": round(100.0 * a["playoff"] / sims, 2),
+            "p_playoff": p_playoff,
             "p_bye": round(100.0 * a["bye"] / sims, 2),
             "p_natty": round(100.0 * a["natty"] / sims, 2),
+            "p_bubble": round(100.0 * deluxe_run["bubble"].get(i, 0) / sims, 2),
+            "band": sc.band_for(p_playoff),
             "ap_rank": ap_ranks_by_id.get(t),
         })
     table.sort(key=lambda r: (-r["p_natty"], -r["p_playoff"], -r["exp_wins"]))
@@ -1152,16 +1388,42 @@ def build(sims, today=None):
     if unresolved:
         print("  unlinked on the page (%d): %s" % (len(unresolved), ", ".join(unresolved)))
 
+    def tier_rows(run, n):
+        rows = {}
+        for i, t in enumerate(id_list):
+            a = run["acc"][i]
+            slug = page_slug_for(names[t], lookup) or t
+            rows[slug] = {
+                "exp_wins": round(a["reg_wins"] / n, 1),
+                "p_ccg": round(100.0 * a["ccg"] / n, 2),
+                "p_conf": round(100.0 * a["conf"] / n, 2),
+                "p_playoff": round(100.0 * a["playoff"] / n, 2),
+                "p_bye": round(100.0 * a["bye"] / n, 2),
+                "p_natty": round(100.0 * a["natty"] / n, 2),
+            }
+        return rows
+
+    tiers = {"lite": tier_rows(lite_run, TIER_SIMS),
+             "classic": tier_rows(classic_run, TIER_SIMS),
+             "deluxe": tier_rows(deluxe_run, sims)}
+    corr_team_sd = round(sum(sc.layer_residual_sd(v, CONF_SD) for v in sigma_team_dict.values())
+                         / len(sigma_team_dict), 2)
+
     sim_doc = {
         "meta": {
             "league": "cfb", "season": SEASON,
             "title_game": "2026 CFP National Championship",
             "generated_at": today_iso, "sims": sims, "model": "points-v3",
+            "seed": SEASON,
             "hfa": HFA, "sigma_game": SIGMA_GAME, "sigma_season": SIGMA_SEASON,
+            "sigma_season_eff": round(sigma_base, 2),
+            "corr": {"hfa_sd": HFA_SD, "conf_sd": CONF_SD, "team_sd": corr_team_sd},
             "regress": REGRESS, "k_rec": K_REC,
             "strength_seasons": [s for s, _ in STRENGTH_SEASONS],
             "market": market_note,
             "market_weight": W_MARKET, "poll_weight": W_POLL,
+            "market_ratings": market_ratings_kind,
+            "tiers": ["lite", "classic", "deluxe"],
             "poll": {"label": poll_label, "date": poll_date},
             "conferences": sorted(state["conf_members"]),
             "teams": len(id_list),
@@ -1178,12 +1440,29 @@ def build(sims, today=None):
             "notes": "Opponent-adjusted margins (three seasons, FCS pooled) blended with "
                      "futures- and AP-poll-implied ratings; the real FBS schedule, all ten "
                      "conference title games and the 12-team straight-seeded playoff "
-                     "simulated. Conference tie-breaks approximated (record, then "
-                     "head-to-head); the selection committee is modeled as rating plus "
-                     "record, a stated proxy.",
+                     "simulated with correlated per-team/conference/HFA season noise and "
+                     "common random numbers. Conference tie-breaks approximated (record, "
+                     "then head-to-head); the selection committee is modeled as rating "
+                     "plus record, a stated proxy.",
         },
         "table": table,
+        "tiers": tiers,
     }
+
+    hist_rows = {r["slug"]: {
+        "xw": round(r["exp_wins"], 1),
+        "po": round(r["p_playoff"], 1),
+        "conf": round(r["p_conf"], 1),
+        "title": round(r["p_natty"], 1),
+    } for r in table if r["slug"]}
+    hist_doc = None
+    if os.path.exists(OUT_HIST):
+        try:
+            hist_doc = json.load(io.open(OUT_HIST, encoding="utf-8"))
+        except Exception:
+            hist_doc = None
+    hist_doc = sc.upsert_snapshot(hist_doc, today_iso, games_played, hist_rows,
+                                  "cfb", SEASON, HISTORY_KEEP)
 
     ledger = []
     if os.path.exists(OUT_PRED):
@@ -1193,36 +1472,47 @@ def build(sims, today=None):
             ledger = []
     results_by_id = {e["id"]: (e["hs"], e["as"]) for e in events
                      if e["completed"] and e["hs"] is not None and e["as"] is not None}
-    ap_set = {t: rk for t, rk in ap_ranks_by_id.items() if rk and rk <= 25}
-    poll_fresh = bool(poll_date) and (today - date.fromisoformat(poll_date)).days <= POLL_MAX_AGE_DAYS
-    upcoming = upcoming_ap_games(events, today, WINDOW_DAYS, ap_set) if ap_set else []
     idx = state["idx"]
 
     def rating_of(tid):
         i = idx.get(tid, -1)
         return ratings_list[i] if i >= 0 else state["r_fcs"]
 
+    def lite_rating_of(tid):
+        i = idx.get(tid, -1)
+        return ratings_list_lite[i] if i >= 0 else state["r_fcs"]
+
+    def classic_rating_of(tid):
+        i = idx.get(tid, -1)
+        return ratings_list_classic[i] if i >= 0 else state["r_fcs"]
+
     ledger = grade_and_extend(ledger, results_by_id, upcoming, rating_of,
-                              today_iso, ap_set, poll_label, poll_fresh, lookup)
+                              lite_rating_of, classic_rating_of, today_iso,
+                              ap_set, poll_label, poll_fresh, lookup,
+                              leverage_by_gid=deluxe_run["leverage"],
+                              id_by_name=id_by_name)
     pred_doc = {
         "meta": {"season": SEASON, "generated_at": today_iso,
                  "match_blend_weight": MATCH_BLEND_W, "horizon_days": WINDOW_DAYS,
                  "scope": "games involving AP Top 25 teams only",
+                 "tiers": ["lite", "classic", "market", "blend"],
                  "poll": {"label": poll_label, "date": poll_date, "fresh": poll_fresh},
                  "odds_source": "ESPN posted lines (moneyline, else spread)",
                  "results_source": "ESPN final scores"},
         "record": ledger_record(ledger),
         "ledger": ledger,
     }
-    return sim_doc, pred_doc
+    return sim_doc, pred_doc, hist_doc
 
 
 # ---------------------------------------------------------------- self-test
 
 def self_test():
     fails = []
+    total = [0]
 
     def check(name, cond):
+        total[0] += 1
         if not cond:
             fails.append(name)
 
@@ -1246,12 +1536,14 @@ def self_test():
     rng = random.Random(4)
     scores = {i: 100.0 - i for i in range(30)}          # 0 strongest
     champs = {0, 5, 20, 25, 28}                          # three weak champs
-    seeds = committee_field(scores, champs, rng)
+    seeds, first_out = committee_field(scores, champs, rng)
     check("field-size", len(seeds) == 12)
     check("field-champs-in", champs <= set(seeds))
     check("field-straight", seeds == sorted(seeds, key=lambda i: -scores[i]))
     check("field-at-large", 1 in seeds and 2 in seeds)   # best non-champs in
     check("field-bumped", 9 not in seeds or len([c for c in champs if scores[c] < scores[9]]) < 3)
+    check("field-first-out", first_out is not None and first_out not in set(seeds)
+          and scores[first_out] == max(scores[i] for i in scores if i not in set(seeds)))
 
     # bracket: strongest ratings should win most; runs to one champion
     rng = random.Random(5)
@@ -1304,7 +1596,8 @@ def self_test():
             "home_slug": "georgia-cfb", "away_slug": "alabama-cfb",
             "model": {"pH": 0.5}, "pick": "H", "predicted_at": "2026-09-08"}]
     graded = grade_and_extend(led, {"1": (31, 17), "2": (20, 20)}, [],
-                              lambda t: 0.0, "2026-09-13", {}, "Week 3", True, {})
+                              lambda t: 0.0, lambda t: 0.0, lambda t: 0.0,
+                              "2026-09-13", {}, "Week 3", True, {})
     by_id = {e["event_id"]: e for e in graded}
     check("grade-win", by_id["1"]["pick_correct"] is True
           and abs(by_id["1"]["model_brier"] - 0.18) < 1e-9)
@@ -1312,17 +1605,53 @@ def self_test():
     rec = ledger_record(graded)
     check("record-skips-tie", rec["graded"] == 1)
     up = [("3", "2026-09-19", "194", "333", "Ohio State", "Alabama", 0.55,
-           "2026-09-19T19:30:00Z", False)]
-    stale = grade_and_extend(list(graded), {}, up, lambda t: 0.0, "2026-09-14",
-                             {"194": 1}, "Week 3", False, {})
+           "2026-09-19T19:30:00Z", False, -3.5)]
+    stale = grade_and_extend(list(graded), {}, up, lambda t: 0.0, lambda t: 0.0,
+                             lambda t: 0.0, "2026-09-14", {"194": 1}, "Week 3", False, {})
     check("poll-gate-blocks", all(e["event_id"] != "3" for e in stale))
     fresh = grade_and_extend(list(graded), {}, up, lambda t: 2.0 if t == "194" else 0.0,
+                             lambda t: 1.0 if t == "194" else 0.0,
+                             lambda t: 1.5 if t == "194" else 0.0,
                              "2026-09-14", {"194": 1}, "Week 3", True, {})
     e3 = next(e for e in fresh if e["event_id"] == "3")
     check("poll-gate-adds", e3["ap"]["home"] == 1 and e3["ap"]["away"] is None
           and e3["kickoff"] == "2026-09-19T19:30:00Z" and e3["week"] == "Week 3")
     check("blend-pick", e3["pick"] == "H" and abs(e3["blend"]["pH"] -
           (0.5 * 0.55 + 0.5 * e3["model"]["pH"])) < 1e-4)
+    check("tier-fields-at-creation", "lite" in e3 and "classic" in e3
+          and "backfilled" not in e3["lite"] and "backfilled" not in e3["classic"])
+    check("spread-carried", e3["market"]["spread"] == -3.5)
+
+    # lite/classic backfill onto a pre-points-v3 frozen entry (no result yet,
+    # so the freeze is not violated), plus lite_brier/classic_brier grading
+    old = [{"event_id": "9", "date": "2026-09-12", "home": "Ohio State", "away": "Texas",
+            "home_slug": "ohio-state-cfb", "away_slug": "texas-cfb",
+            "model": {"pH": 0.7}, "pick": "H", "predicted_at": "2026-09-08"}]
+    id_by_name = {"Ohio State": "194", "Texas": "251"}
+    backfilled = grade_and_extend(old, {}, [], lambda t: 0.0,
+                                  lambda t: 1.0 if t == "194" else -1.0,
+                                  lambda t: 0.5 if t == "194" else -0.5,
+                                  "2026-09-10", {}, "Week 3", True, {},
+                                  id_by_name=id_by_name)
+    e9 = backfilled[0]
+    check("lite-backfilled", e9["lite"].get("backfilled") == "2026-09-10")
+    check("classic-backfilled", e9["classic"].get("backfilled") == "2026-09-10")
+    graded9 = grade_and_extend(backfilled, {"9": (31, 17)}, [], lambda t: 0.0,
+                               lambda t: 0.0, lambda t: 0.0, "2026-09-13", {}, "Week 3", True, {})
+    e9g = graded9[0]
+    check("lite-brier-graded", "lite_brier" in e9g and "classic_brier" in e9g)
+    rec9 = ledger_record(graded9)
+    check("record-lite-classic-brier", rec9["lite_brier"] is not None
+          and rec9["classic_brier"] is not None)
+
+    # leverage refreshes on an ungraded entry every run
+    lev_entry = [{"event_id": "10", "date": "2026-09-19", "home": "Ohio State",
+                 "away": "Texas", "home_slug": "ohio-state-cfb", "away_slug": "texas-cfb",
+                 "model": {"pH": 0.6}, "pick": "H", "predicted_at": "2026-09-08"}]
+    lev_out = grade_and_extend(lev_entry, {}, [], lambda t: 0.0, lambda t: 0.0,
+                               lambda t: 0.0, "2026-09-14", {}, "Week 3", True, {},
+                               leverage_by_gid={"10": {"home": 5.0, "away": -2.0, "game": 3.0}})
+    check("leverage-refreshed", lev_out[0]["leverage"]["game"] == 3.0)
 
     # kickoff parsing
     check("kickoff-iso", kickoff_iso("2026-08-29T16:00Z") == "2026-08-29T16:00:00Z"
@@ -1343,11 +1672,87 @@ def self_test():
                        "conf_game": conf_of[h] == conf_of[a2], "note": ""})
     state, gp2, _ = prepare_state(set(ids), ids, conf_of, events)
     state["r_fcs"] = -18.0
-    acc = simulate(state, [8.0, 0.0, 0.0, -8.0], 400, seed=7)
+    check("prepare-state-gid-index", state["n_full"] == 6 and len(state["gid_pos"]) == 6)
+    run = simulate(state, [8.0, 0.0, 0.0, -8.0], 400, seed=7)
+    acc = run["acc"]
     check("mini-natty-sum", sum(acc[i]["natty"] for i in range(4)) == 400)
     check("mini-favourite", acc[0]["natty"] == max(acc[i]["natty"] for i in range(4)))
     check("mini-ccg", all(acc[i]["ccg"] > 0 for i in range(4)))
     check("mini-conf-sum", sum(acc[i]["conf"] for i in range(4)) == 2 * 400)
+    check("mini-win-lists", len(run["win_lists"][0]) == 400)
+
+    # CRN determinism: same seed -> identical accumulators
+    run_a = simulate(state, [8.0, 0.0, 0.0, -8.0], 300, seed=11)
+    run_b = simulate(state, [8.0, 0.0, 0.0, -8.0], 300, seed=11)
+    check("sim-crn-deterministic", run_a["acc"] == run_b["acc"])
+
+    # leverage collection: a game in window_gids gets a home/away/game swing;
+    # a game outside it collects nothing
+    run_window = simulate(state, [8.0, 0.0, 0.0, -8.0], 300, seed=11, window_gids={"1"})
+    check("sim-leverage-present", "1" in run_window["leverage"] and "2" not in run_window["leverage"])
+    lev1 = run_window["leverage"]["1"]
+    check("sim-leverage-shape", set(lev1) == {"home", "away", "game"}
+          and abs(lev1["game"] - (lev1["home"] + lev1["away"])) < 1e-6)
+
+    # p_bubble: every sim credits exactly two teams (last-in seed 12, and
+    # the best team left out) in a field with more than 12 teams -- the
+    # mini fixture only has 4 teams (all make the CFP every sim), so bubble
+    # counts are all zero there; check the shape instead via a wider probe.
+    check("mini-bubble-shape", set(run["bubble"]) == {0, 1, 2, 3})
+
+    # adaptive sigma / team sigma / conference residual sd (CFB-scaled)
+    check("sigma-full-season", abs(sc.adaptive_sigma(1.0, SIGMA_SEASON, SIGMA_FLOOR_FRAC)
+          - SIGMA_SEASON) < 1e-9)
+    check("sigma-floor", abs(sc.adaptive_sigma(0.0, SIGMA_SEASON, SIGMA_FLOOR_FRAC)
+          - SIGMA_SEASON * SIGMA_FLOOR_FRAC) < 1e-9)
+    check("sigma-frac", abs(sc.adaptive_sigma(0.25, SIGMA_SEASON, SIGMA_FLOOR_FRAC)
+          - SIGMA_SEASON * math.sqrt(0.25)) < 1e-9)
+    check("team-sigma-no-market", sc.team_sigma(3.0, 1.0, None, DISAGREE_K) == 3.0)
+    check("team-sigma-disagree", sc.team_sigma(3.0, 4.0, -2.0, DISAGREE_K) > 3.0)
+    check("conf-residual-floor", abs(sc.layer_residual_sd(0.5, CONF_SD) - 0.5) < 1e-9)
+    check("conf-residual-normal",
+          abs(sc.layer_residual_sd(3.0, CONF_SD) - math.sqrt(9.0 - CONF_SD ** 2)) < 1e-9)
+
+    # percentiles / leverage_from_counts / band_for (shared module, exercised
+    # here with CFB-shaped messy inputs)
+    check("percentiles-p10", sc.percentiles([9, 3, 12, 6, 15], 10) == 3)
+    check("percentiles-p90", sc.percentiles([9, 3, 12, 6, 15], 90) == 15)
+    check("percentiles-empty", sc.percentiles([], 50) is None)
+    check("leverage-basic", abs(sc.leverage_from_counts(70, 100, 15, 100) - 55.0) < 1e-9)
+    check("leverage-zero-denom", sc.leverage_from_counts(0, 0, 5, 10) == 0.0)
+    check("band-solid", sc.band_for(92) == "solid")
+    check("band-tossup", sc.band_for(40) == "tossup")
+    check("band-out", sc.band_for(4) == "out")
+
+    # market_spread: raw posted line, negative = home favoured; missing odds
+    check("market-spread-raw", sc.market_spread({"odds": [{"spread": -6.5}]}) == -6.5)
+    check("market-spread-missing", sc.market_spread({"odds": []}) is None)
+
+    # implied_ratings_from_spreads: neutral games skip the HFA adjustment
+    prior0 = {"a": 0.0, "b": 0.0, "c": 0.0, "d": 0.0}
+    obs = [("a", "b", -3.0, False), ("c", "d", -3.0, True)]
+    r_impl, n_impl = sc.implied_ratings_from_spreads(obs, prior0, lam=SPREAD_LAMBDA, hfa=HFA)
+    check("spread-n-count", n_impl == 2)
+    check("spread-favourite-up", r_impl["a"] > r_impl["b"])
+    # same posted spread (-3), but the neutral game has no HFA to absorb
+    # part of it, so the implied rating gap has to be bigger
+    check("spread-neutral-larger-gap", (r_impl["c"] - r_impl["d"]) > (r_impl["a"] - r_impl["b"]) > 0)
+    check("spread-no-obs", sc.implied_ratings_from_spreads([], prior0)[1] == 0)
+
+    # upsert_snapshot (cfb variant): fresh file, same-date replace, keep-cap
+    doc = sc.upsert_snapshot(None, "2026-09-01", 40,
+                             {"ohio-state-cfb": {"xw": 10.2, "po": 78.0, "conf": 55.0, "title": 12.0}},
+                             "cfb", SEASON, keep=180)
+    check("hist-fresh", len(doc["snapshots"]) == 1 and doc["meta"]["league"] == "cfb")
+    doc = sc.upsert_snapshot(doc, "2026-09-01", 45,
+                             {"ohio-state-cfb": {"xw": 10.4, "po": 79.0, "conf": 56.0, "title": 12.5}},
+                             "cfb", SEASON, keep=180)
+    check("hist-replace-same-date",
+          len(doc["snapshots"]) == 1 and doc["snapshots"][0]["games_played"] == 45)
+    doc2 = None
+    for k in range(5):
+        doc2 = sc.upsert_snapshot(doc2, "2026-08-%02d" % (k + 1), k, {}, "cfb", SEASON, keep=3)
+    check("hist-cap", len(doc2["snapshots"]) == 3 and doc2["snapshots"][0]["date"] == "2026-08-03")
 
     # market prob from moneyline + spread paths
     comp = {"odds": [{"homeTeamOdds": {"moneyLine": -160}, "awayTeamOdds": {"moneyLine": 140}}]}
@@ -1416,7 +1821,7 @@ def self_test():
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (%d checks)" % 45)
+    print("self-test OK (%d checks)" % total[0])
 
 
 def main():
@@ -1425,13 +1830,15 @@ def main():
     sims = DEFAULT_SIMS
     if "--sims" in sys.argv:
         sims = int(sys.argv[sys.argv.index("--sims") + 1])
-    sim_doc, pred_doc = build(sims)
+    sim_doc, pred_doc, hist_doc = build(sims)
     m = sim_doc["meta"]
     print("teams %d | schedule %d games, %d played | %s"
           % (m["teams"], m["schedule_games"], m["games_played"], m["market"]))
+    print("tiers: %s | market_ratings: %s | sigma_eff: %.2f"
+          % (m["tiers"], m["market_ratings"], m["sigma_season_eff"]))
     for r in sim_doc["table"][:10]:
-        print("  %-22s natty %5.1f%%  playoff %5.1f%%  conf %5.1f%%  xW %.1f"
-              % (r["name"], r["p_natty"], r["p_playoff"], r["p_conf"], r["exp_wins"]))
+        print("  %-22s natty %5.1f%%  playoff %5.1f%%  conf %5.1f%%  xW %.1f  band %s"
+              % (r["name"], r["p_natty"], r["p_playoff"], r["p_conf"], r["exp_wins"], r["band"]))
     up = [e for e in pred_doc["ledger"] if not e.get("result")]
     print("ledger: %d entries (%d graded, %d upcoming) | poll %s %s fresh=%s"
           % (len(pred_doc["ledger"]), pred_doc["record"]["graded"], len(up),
@@ -1450,7 +1857,9 @@ def main():
         json.dump(sim_doc, f, separators=(",", ":"), ensure_ascii=False)
     with io.open(OUT_PRED, "w", encoding="utf-8", newline="") as f:
         json.dump(pred_doc, f, separators=(",", ":"), ensure_ascii=False)
-    print("wrote cfb-sim.json + cfb-predictions.json")
+    with io.open(OUT_HIST, "w", encoding="utf-8", newline="") as f:
+        json.dump(hist_doc, f, separators=(",", ":"), ensure_ascii=False)
+    print("wrote cfb-sim.json + cfb-predictions.json + cfb-sim-history.json")
 
 
 if __name__ == "__main__":

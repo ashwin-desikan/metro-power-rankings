@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Premier League 2026-27 season simulator + fixture predictions + ledger.
 
-poisson-v2 ("site data + market"): the /predictions/pl model. Three outputs
-from one run:
-  public/data/pl-sim.json          - season odds (title/top5/top7/releg/xPts)
+poisson-v2-v3 ("site data + market, correlated noise"): the /predictions/pl
+model. Three outputs from one run:
+  public/data/pl-sim.json          - season odds (title/top4/top5/top7/releg/xPts)
+  public/data/pl-sim-history.json  - one snapshot per build date, for trend
+                                     lines on the same numbers
   public/data/pl-predictions.json  - upcoming-fixture predictions + the graded
                                      ledger tracking us vs the market all season
 
@@ -22,7 +24,21 @@ STRENGTH SIGNAL (blended, meta records everything):
 
 SEASON SIM: actual standings so far (E0 current season) + every REMAINING
 fixture simulated with Poisson goals (mu from the hubs, home adv x1.11) and
-per-season strength noise sigma=0.15 (the humility layer). PL tie-breaks.
+per-season strength noise (the humility layer). PL tie-breaks.
+
+POISSON-V2-V3 additions (contract 2026-09-03, mirrors build_nfl_sim.py's
+points-v3): per-season noise now has two correlated layers on the log-
+strength scale - a league-wide home-advantage jitter (multiplicative on
+HOME_ADV) and a per-team residual sized to an adaptive sigma that shrinks as
+the season plays out (no market-disagreement widening here; PL's market
+term is already folded into the blended strength, not a second rating).
+Every simulated season draws its rating shocks from common random numbers
+keyed to its index; because a single uniform per fixture cannot drive a
+Poisson scoreline, each fixture's home/away goal counts are drawn from their
+OWN random stream, keyed by that season AND the fixture's fixed position in
+the full round-robin - so a fixture's draw does not move as earlier
+fixtures are played or the schedule shrinks between builds. A history file
+tracks the headline numbers across builds.
 
 FIXTURES + LEDGER: upcoming fixtures (ESPN eng.1 scoreboard, next 9 days)
 get model probabilities; football-data fixtures.csv market odds are joined
@@ -41,6 +57,11 @@ Network: football-data.co.uk + ESPN (verified reachable from the Windows box
 and CI; the Cowork cloud sandbox is egress-blocked). Last-season odds are
 REQUIRED (hard fail); fixtures.csv / current E0 / ESPN are soft (degrade to
 model-only, preseason state). Team list baked + --verify-teams, as in v1.
+
+Stdlib only, by design (contract 2026-09-03): the per-fixture common-random-
+numbers scheme needs one independent random.Random stream per (season,
+fixture position), which does not vectorize cleanly across an external RNG
+library, so the numpy fast path from poisson-v2 is retired in this build.
 """
 import io
 import json
@@ -57,6 +78,7 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 HUBS = os.path.join(ROOT, "public", "data", "football")
 OUT_SIM = os.path.join(ROOT, "public", "data", "pl-sim.json")
 OUT_PRED = os.path.join(ROOT, "public", "data", "pl-predictions.json")
+OUT_HIST = os.path.join(ROOT, "public", "data", "pl-sim-history.json")
 
 SEASON = "2026-27"
 FD_SEASON_CUR = "2627"   # football-data.co.uk season codes
@@ -70,6 +92,13 @@ MATCH_BLEND_W = 0.5      # market weight in per-fixture blend (when odds posted)
 FIXTURE_HORIZON_DAYS = 9
 DEFAULT_SIMS = 20000
 FD_BASE = "https://www.football-data.co.uk"
+
+# poisson-v2-v3: correlated season-noise layers, adaptive sigma and the
+# history-file cap (contract 2026-09-03).
+SEED = 20262027              # common random numbers seed
+HOME_ADV_SD = 0.03            # sd of the per-season, league-wide HOME_ADV jitter (multiplicative)
+SIGMA_FLOOR_FRAC = 0.45       # floor on adaptive sigma as a fraction of SIGMA
+HISTORY_KEEP = 180            # max snapshots kept in pl-sim-history.json
 
 # Verified vs ESPN eng.1 2026-27 standings, 2026-08-02.
 TEAMS_2026_27 = [
@@ -355,6 +384,66 @@ def blend_ratings(rates, mu, mkt):
     return out
 
 
+# --------------------------------------------------------- adaptive sigma
+
+def adaptive_sigma(frac_left, sigma_season=SIGMA, floor_frac=SIGMA_FLOOR_FRAC):
+    """League-wide per-season strength sigma given the fraction of the
+    38-round season still to play; shrinks toward `floor_frac` of the
+    full-season value as the season resolves, never below it."""
+    frac_left = min(max(frac_left, 0.0), 1.0)
+    return sigma_season * max(floor_frac, math.sqrt(frac_left))
+
+
+# --------------------------------------------------------------- intervals
+
+def percentiles(values, p):
+    """Nearest-rank percentile (p in 0..100) of a list of numbers. None for
+    an empty list. Used for the season points-total p10/p90 bands."""
+    if not values:
+        return None
+    s = sorted(values)
+    idx = int(round((p / 100.0) * (len(s) - 1)))
+    idx = min(max(idx, 0), len(s) - 1)
+    return s[idx]
+
+
+def band_for(p_top4):
+    """Top-4-odds band label from p_top4 (0..100), the same cuts as the
+    NFL/MLB playoff bands."""
+    if p_top4 >= 90:
+        return "solid"
+    if p_top4 >= 75:
+        return "likely"
+    if p_top4 >= 60:
+        return "lean"
+    if p_top4 >= 40:
+        return "tossup"
+    if p_top4 >= 15:
+        return "unlikely"
+    return "out"
+
+
+# ------------------------------------------------------------------- history
+
+def upsert_snapshot(doc, date_iso, games_played, rows, keep=HISTORY_KEEP):
+    """Insert or replace `date_iso`'s snapshot in the history doc (a rebuild
+    on the same date REPLACES it, never duplicates), sorted ascending by
+    date and capped at `keep` entries (oldest dropped first). `doc` may be
+    None for a fresh file."""
+    doc = doc or {"meta": {"league": "premier-league", "season": SEASON,
+                           "generated_at": date_iso, "keep": keep},
+                  "snapshots": []}
+    snaps = [s for s in doc.get("snapshots", []) if s.get("date") != date_iso]
+    snaps.append({"date": date_iso, "games_played": games_played, "rows": rows})
+    snaps.sort(key=lambda s: s["date"])
+    if len(snaps) > keep:
+        snaps = snaps[-keep:]
+    doc["snapshots"] = snaps
+    doc["meta"]["generated_at"] = date_iso
+    doc["meta"]["keep"] = keep
+    return doc
+
+
 # ------------------------------------------------------------------ the sim
 
 def poisson(lam, rng):
@@ -373,10 +462,10 @@ def sort_table(rows, rng):
     return [r[0] for r in rows]
 
 
-def match_lambdas(rates, mu, h, a):
+def match_lambdas(rates, mu, h, a, home_adv=HOME_ADV):
     att = {t: rates[t][0] / mu for t in rates}
     dfc = {t: rates[t][1] / mu for t in rates}
-    return (mu * HOME_ADV * att[h] * dfc[a], mu * (2 - HOME_ADV) * att[a] * dfc[h])
+    return (mu * home_adv * att[h] * dfc[a], mu * (2 - home_adv) * att[a] * dfc[h])
 
 
 def match_probs(rates, mu, h, a, cap=10):
@@ -395,103 +484,82 @@ def match_probs(rates, mu, h, a, cap=10):
     return pH / s, pD / s, pA / s
 
 
+def full_fixture_order():
+    """Every possible (home, away) pairing among the 20 clubs, in a fixed
+    order (alphabetical, since the round-robin has no real calendar until
+    fixtures are actually released) - the CRN position table, independent of
+    how much of the season has been played."""
+    return [(h, a) for h in TEAMS_2026_27 for a in TEAMS_2026_27 if h != a]
+
+
 def remaining_fixtures(played_pairs):
-    out = []
-    for h in TEAMS_2026_27:
-        for a in TEAMS_2026_27:
-            if h != a and (h, a) not in played_pairs:
-                out.append((h, a))
-    return out
+    return [f for f in full_fixture_order() if f not in played_pairs]
 
 
 def _tally():
-    return {"pts": 0.0, "title": 0, "top5": 0, "top7": 0, "releg": 0, "pos": defaultdict(int)}
+    return {"pts": 0.0, "title": 0, "top4": 0, "top5": 0, "top7": 0, "releg": 0, "pos": defaultdict(int)}
 
 
-def simulate(rates, mu, sims, base, fixtures, seed=20262027):
-    """base: {team: (pts, gd, gf)} actual standings so far."""
-    try:
-        import numpy as np  # noqa: F401
-        return _simulate_numpy(rates, mu, sims, base, fixtures, seed)
-    except ImportError:
-        return _simulate_py(rates, mu, sims, base, fixtures, seed)
+def simulate(rates, mu, sims, base, fixtures, seed=SEED, sigma_team=None,
+            fixture_pos=None):
+    """Monte Carlo the remaining fixtures `sims` times.
 
+    `fixtures`: [(home, away)] still to play. `fixture_pos`: {(home, away):
+    position in the full 380-fixture round robin} - fixed regardless of how
+    many fixtures have been played, so a fixture's draw never moves between
+    builds. `sigma_team`: per-team adaptive sigma (uniform across teams for
+    this league; falls back to SIGMA when absent).
 
-def _fix_lams(rates, mu, fixtures):
-    return [(h, a) + match_lambdas(rates, mu, h, a) for h, a in fixtures]
+    Common random numbers: season i draws a league-wide HOME_ADV jitter
+    (multiplicative, sd HOME_ADV_SD) and a per-team attack/defence residual
+    from random.Random(seed*1_000_003 + i). A single uniform cannot drive a
+    Poisson scoreline, so each fixture's home/away goal counts are drawn
+    from their OWN stream, random.Random((seed*1_000_003+i)*1000 + pos),
+    keyed by that season and the fixture's fixed position - so a fixture's
+    draw does not move as earlier fixtures are played or the remaining
+    schedule shrinks between builds. The table-order tie-break (sort_table's
+    shuffle) draws from the season's main stream, same as before.
 
-
-def _simulate_py(rates, mu, sims, base, fixtures, seed):
-    rng = random.Random(seed)
+    Returns (teams, acc, pts_lists): pts_lists is {team: [points per sim]},
+    for the season points-total p10/p90 interval."""
+    sigma_team = sigma_team or {}
+    fixture_pos = fixture_pos or {}
     teams = sorted(rates)
-    fl = _fix_lams(rates, mu, fixtures)
+    fl = [(h, a) + match_lambdas(rates, mu, h, a) for h, a in fixtures]
     acc = {t: _tally() for t in teams}
-    for _ in range(sims):
-        nA = {t: math.exp(rng.gauss(0.0, SIGMA)) for t in teams}
-        nD = {t: math.exp(rng.gauss(0.0, SIGMA)) for t in teams}
+    pts_lists = {t: [] for t in teams}
+    for i in range(sims):
+        rng = random.Random(seed * 1_000_003 + i)
+        home_adv_s = HOME_ADV * math.exp(rng.gauss(0.0, HOME_ADV_SD))
+        nA = {t: math.exp(rng.gauss(0.0, sigma_team.get(t, SIGMA))) for t in teams}
+        nD = {t: math.exp(rng.gauss(0.0, sigma_team.get(t, SIGMA))) for t in teams}
         pts = {t: base[t][0] for t in teams}
         gd = {t: base[t][1] for t in teams}
         gf = {t: base[t][2] for t in teams}
-        for h, a, lh, la in fl:
-            x = poisson(lh * nA[h] * nD[a], rng)
-            y = poisson(la * nA[a] * nD[h], rng)
+        adv_ratio = home_adv_s / HOME_ADV
+        for h, a, lh0, la0 in fl:
+            lh = lh0 * adv_ratio * nA[h] * nD[a]
+            la = la0 * (2 - home_adv_s) / (2 - HOME_ADV) * nA[a] * nD[h]
+            pos = fixture_pos.get((h, a))
+            fix_rng = random.Random((seed * 1_000_003 + i) * 1000 + pos) if pos is not None else rng
+            x = poisson(lh, fix_rng)
+            y = poisson(la, fix_rng)
             gd[h] += x - y; gd[a] += y - x; gf[h] += x; gf[a] += y
             if x > y: pts[h] += 3
             elif y > x: pts[a] += 3
             else: pts[h] += 1; pts[a] += 1
         order = sort_table([[t, pts[t], gd[t], gf[t]] for t in teams], rng)
-        for pos, t in enumerate(order, 1):
+        for pos_i, t in enumerate(order, 1):
             a2 = acc[t]
-            a2["pts"] += pts[t]; a2["pos"][pos] += 1
-            if pos == 1: a2["title"] += 1
-            if pos <= 5: a2["top5"] += 1
-            if pos <= 7: a2["top7"] += 1
-            if pos >= 18: a2["releg"] += 1
-    return teams, acc
-
-
-def _simulate_numpy(rates, mu, sims, base, fixtures, seed):
-    import numpy as np
-    rng_np = np.random.default_rng(seed)
-    rng = random.Random(seed)
-    teams = sorted(rates)
-    idx = {t: i for i, t in enumerate(teams)}
-    n = len(teams)
-    fl = _fix_lams(rates, mu, fixtures)
-    lh = np.array([f[2] for f in fl]); la = np.array([f[3] for f in fl])
-    hi = np.array([idx[f[0]] for f in fl], dtype=int)
-    ai = np.array([idx[f[1]] for f in fl], dtype=int)
-    b_pts = np.array([base[t][0] for t in teams])
-    b_gd = np.array([base[t][1] for t in teams])
-    b_gf = np.array([base[t][2] for t in teams])
-    acc = {t: _tally() for t in teams}
-    B = 500
-    done = 0
-    while done < sims:
-        b = min(B, sims - done)
-        nA = np.exp(rng_np.normal(0.0, SIGMA, (n, b)))
-        nD = np.exp(rng_np.normal(0.0, SIGMA, (n, b)))
-        X = rng_np.poisson(lh[:, None] * nA[hi, :] * nD[ai, :]) if len(fl) else np.zeros((0, b), dtype=int)
-        Y = rng_np.poisson(la[:, None] * nA[ai, :] * nD[hi, :]) if len(fl) else np.zeros((0, b), dtype=int)
-        for s in range(b):
-            x, y = X[:, s], Y[:, s]
-            pts = b_pts.copy(); gd = b_gd.copy(); gf = b_gf.copy()
-            if len(fl):
-                hw = x > y; aw = y > x; dr = x == y
-                np.add.at(pts, hi[hw], 3); np.add.at(pts, ai[aw], 3)
-                np.add.at(pts, hi[dr], 1); np.add.at(pts, ai[dr], 1)
-                np.add.at(gd, hi, x - y); np.add.at(gd, ai, y - x)
-                np.add.at(gf, hi, x); np.add.at(gf, ai, y)
-            order = sort_table([[t, int(pts[idx[t]]), int(gd[idx[t]]), int(gf[idx[t]])] for t in teams], rng)
-            for pos, t in enumerate(order, 1):
-                a2 = acc[t]
-                a2["pts"] += int(pts[idx[t]]); a2["pos"][pos] += 1
-                if pos == 1: a2["title"] += 1
-                if pos <= 5: a2["top5"] += 1
-                if pos <= 7: a2["top7"] += 1
-                if pos >= 18: a2["releg"] += 1
-        done += b
-    return teams, acc
+            a2["pts"] += pts[t]; a2["pos"][pos_i] += 1
+            if pos_i == 1: a2["title"] += 1
+            if pos_i <= 4: a2["top4"] += 1
+            if pos_i <= 5: a2["top5"] += 1
+            if pos_i <= 7: a2["top7"] += 1
+            if pos_i >= 18: a2["releg"] += 1
+        for t in teams:
+            pts_lists[t].append(pts[t])
+    return teams, acc, pts_lists
 
 
 def percentile(posdist, sims, q):
@@ -521,7 +589,7 @@ def parse_fd_results(rows):
     return played, results
 
 
-# \U0001f534 THE MARKET LAYER IS GRADED FROM THE SETTLED ROW, NOT FROM fixtures.csv.
+# THE MARKET LAYER IS GRADED FROM THE SETTLED ROW, NOT FROM fixtures.csv.
 # fixtures.csv only carries matches football-data has already posted odds for,
 # which is a few days out. Picks here are made up to HORIZON_DAYS ahead, so for
 # most of a season no odds exist at prediction time: the 2026-27 ledger ran to
@@ -529,7 +597,7 @@ def parse_fd_results(rows):
 # market. The finished E0 row carries a price for every played match, so the
 # benchmark is taken from there instead.
 #
-# \U0001f534 SCORING ONLY. A price attached at grading time was NOT available when
+# SCORING ONLY. A price attached at grading time was NOT available when
 # the pick was made. It must never reach `blend` or `pick`, which would be
 # backdating our own forecast. It answers "how did the market do on this match",
 # never "what should we have said".
@@ -734,33 +802,52 @@ def build(sims, today=None):
 
     played_pairs = {(h, a) for h, a, _, _ in played}
     fixtures = remaining_fixtures(played_pairs)
-    teams, acc = simulate(rates_b, mu, sims, base, fixtures)
+    fixture_pos = {f: i for i, f in enumerate(full_fixture_order())}
+
+    frac_left = len(fixtures) / float(len(full_fixture_order()))
+    sigma_base = adaptive_sigma(frac_left)
+    sigma_team_dict = {t: sigma_base for t in TEAMS_2026_27}
+
+    teams, acc, pts_lists = simulate(rates_b, mu, sims, base, fixtures,
+                                     sigma_team=sigma_team_dict, fixture_pos=fixture_pos)
 
     table = []
     for t in teams:
         a = acc[t]
         pd_ = a["pos"]
+        p_top4 = round(100.0 * a["top4"] / sims, 2)
+        p10 = percentiles(pts_lists[t], 10)
+        p90 = percentiles(pts_lists[t], 90)
         table.append({
             "slug": slugify(t), "name": t,
             "exp_pts": round(a["pts"] / sims, 1),
+            "rating_stats": round(model_ls[t], 4),
+            "sigma_team": round(sigma_team_dict[t], 4),
             "p_title": round(100.0 * a["title"] / sims, 2),
+            "p_top4": p_top4,
             "p_top5": round(100.0 * a["top5"] / sims, 2),
             "p_top7": round(100.0 * a["top7"] / sims, 2),
             "p_releg": round(100.0 * a["releg"] / sims, 2),
+            "pts_p10": p10, "pts_p90": p90,
             "pos": {"p5": percentile(pd_, sims, 0.05), "p25": percentile(pd_, sims, 0.25),
                     "p50": percentile(pd_, sims, 0.50), "p75": percentile(pd_, sims, 0.75),
                     "p95": percentile(pd_, sims, 0.95)},
+            "band": band_for(p_top4),
         })
     table.sort(key=lambda r: (-r["p_title"], -r["exp_pts"]))
     assert len(table) == 20, "expected 20 teams"
     s = sum(r["p_title"] for r in table)
     assert abs(s - 100.0) < 1.0, "p_title sums to %.2f" % s
 
+    corr_note = {"home_adv_sd": HOME_ADV_SD, "team_sd": round(sigma_base, 4)}
+
     sim_doc = {
         "meta": {
             "league": "premier-league", "season": SEASON,
-            "generated_at": today_iso, "sims": sims, "model": "poisson-v2",
+            "generated_at": today_iso, "sims": sims, "model": "poisson-v2-v3",
+            "seed": SEED,
             "mu": round(mu, 4), "home_adv": HOME_ADV, "sigma": SIGMA,
+            "sigma_season_eff": round(sigma_base, 4), "corr": corr_note,
             "market": market_note, "blend_market_weight": MARKET_W,
             "odds_source": "football-data.co.uk closing/posted odds (E0/E1)",
             "promoted_calibration": {"att": round(att_f, 3), "def": round(def_f, 3), "n": ncal},
@@ -768,10 +855,26 @@ def build(sims, today=None):
             "matches_played": len(played),
             "notes": "Site-data goal rates blended with market-implied team "
                      "ratings; actual results folded in and only the remaining "
-                     "fixtures simulated.",
+                     "fixtures simulated, with correlated home-advantage and "
+                     "per-team season noise sized to an adaptive sigma and "
+                     "common random numbers.",
         },
         "table": table,
     }
+
+    hist_rows = {r["slug"]: {
+        "xpts": round(r["exp_pts"], 1),
+        "title": round(r["p_title"], 1),
+        "top4": round(r["p_top4"], 1),
+        "rel": round(r["p_releg"], 1),
+    } for r in table}
+    hist_doc = None
+    if os.path.exists(OUT_HIST):
+        try:
+            hist_doc = json.load(io.open(OUT_HIST, encoding="utf-8"))
+        except Exception:
+            hist_doc = None
+    hist_doc = upsert_snapshot(hist_doc, today_iso, len(played), hist_rows, HISTORY_KEEP)
 
     # ledger: load existing, grade, extend with upcoming fixtures
     ledger = []
@@ -804,7 +907,7 @@ def build(sims, today=None):
         "record": ledger_record(ledger),
         "ledger": ledger,
     }
-    return sim_doc, pred_doc
+    return sim_doc, pred_doc, hist_doc
 
 
 # ---------------------------------------------------------------- self-test
@@ -815,7 +918,7 @@ def self_test():
     ran = []
 
     def check(name, cond):
-        # \U0001f534 The case count was hardcoded and went stale the moment anyone
+        # The case count was hardcoded and went stale the moment anyone
         # added a case. Count what actually ran, so a silently skipped block shows.
         ran.append(name)
         if not cond:
@@ -854,6 +957,9 @@ def self_test():
     check("standings", base["Arsenal"] == (3, 2, 2) and base["Chelsea"] == (0, -2, 0))
     rem = remaining_fixtures({("Arsenal", "Chelsea")})
     check("remaining", len(rem) == 379 and ("Chelsea", "Arsenal") in rem)
+    check("full-fixture-order-count", len(full_fixture_order()) == 380)
+    check("full-fixture-order-fixed",
+          full_fixture_order()[:2] == [("AFC Bournemouth", "Arsenal"), ("AFC Bournemouth", "Aston Villa")])
     # grading: correct pick + brier vs the known result
     ledger = [{"date": "2026-08-21", "home": "Arsenal", "away": "Coventry City",
                "home_slug": "arsenal", "away_slug": "coventry-city",
@@ -872,7 +978,7 @@ def self_test():
     led_s = grade_and_extend(led_s, {("Arsenal", "Coventry"): ("H", 3, 1)}, [], rates, 1.4, {}, "2026-08-22")
     check("grade-score-string", led_s[0]["result"] == "H" and led_s[0]["score"] == "3-1")
 
-    # \U0001f534 the 2026-08-30 fix: a pick made before odds were posted still gets
+    # the 2026-08-30 fix: a pick made before odds were posted still gets
     # a market benchmark, taken from the settled row and used for SCORING ONLY.
     sm_rows = [{"HomeTeam": "Arsenal", "AwayTeam": "Coventry", "FTHG": "3", "FTAG": "1",
                 "AvgH": "3.0", "AvgD": "3.0", "AvgA": "3.0",
@@ -928,6 +1034,69 @@ def self_test():
     check("kickoff-backfill", by_fix[("S", "W")]["kickoff"] == "2026-08-21T19:00:00Z")
     check("kickoff-new-entry", by_fix[("W", "S")]["kickoff"] == "2026-08-22T14:00:00Z")
 
+    # adaptive sigma: shrinks with games played, never below the floor
+    check("adaptive-sigma-full", abs(adaptive_sigma(1.0, 0.15, 0.45) - 0.15) < 1e-12)
+    check("adaptive-sigma-floor", abs(adaptive_sigma(0.0, 0.15, 0.45) - 0.15 * 0.45) < 1e-12)
+    check("adaptive-sigma-mid", adaptive_sigma(0.2, 0.15, 0.45) < adaptive_sigma(1.0, 0.15, 0.45))
+    check("adaptive-sigma-clamp-neg", adaptive_sigma(-5.0, 0.15, 0.45) == adaptive_sigma(0.0, 0.15, 0.45))
+    check("adaptive-sigma-clamp-big", adaptive_sigma(9.0, 0.15, 0.45) == adaptive_sigma(1.0, 0.15, 0.45))
+
+    # percentiles: nearest-rank, empty-safe, monotonic p10 <= p90
+    check("percentiles-empty", percentiles([], 50) is None)
+    check("percentiles-single", percentiles([44], 10) == 44)
+    ptsv = [38, 40, 45, 50, 55, 60, 65, 70, 75, 90]
+    p10, p90 = percentiles(ptsv, 10), percentiles(ptsv, 90)
+    check("percentiles-order", p10 <= p90)
+    check("percentiles-bounds", ptsv[0] <= p10 and p90 <= ptsv[-1])
+
+    # band thresholds (top-4 odds, same cuts as the playoff band)
+    check("band-solid", band_for(90.0) == "solid")
+    check("band-likely", band_for(75.0) == "likely" and band_for(89.9) == "likely")
+    check("band-lean", band_for(60.0) == "lean")
+    check("band-tossup", band_for(40.0) == "tossup")
+    check("band-unlikely", band_for(15.0) == "unlikely")
+    check("band-out", band_for(0.0) == "out" and band_for(14.9) == "out")
+
+    # upsert_snapshot: fresh doc, same-date rebuild replaces (not appends),
+    # ascending sort, and the cap drops the oldest first
+    doc = upsert_snapshot(None, "2026-09-01", 5, {"arsenal": {"xpts": 80.0}}, keep=3)
+    check("snapshot-fresh", len(doc["snapshots"]) == 1 and doc["meta"]["league"] == "premier-league")
+    doc = upsert_snapshot(doc, "2026-09-01", 6, {"arsenal": {"xpts": 81.0}}, keep=3)
+    check("snapshot-replace-same-date", len(doc["snapshots"]) == 1
+          and doc["snapshots"][0]["games_played"] == 6)
+    doc = upsert_snapshot(doc, "2026-08-25", 4, {"arsenal": {"xpts": 79.0}}, keep=3)
+    check("snapshot-sorted", [s["date"] for s in doc["snapshots"]] == ["2026-08-25", "2026-09-01"])
+    doc = upsert_snapshot(doc, "2026-09-08", 8, {}, keep=3)
+    doc = upsert_snapshot(doc, "2026-09-15", 10, {}, keep=3)
+    check("snapshot-cap", len(doc["snapshots"]) == 3
+          and doc["snapshots"][0]["date"] == "2026-09-01")
+
+    # a small end-to-end sim: probs are well-formed, the strong team tops the
+    # table more often, and per-fixture CRN draws are stable when the
+    # remaining-fixture list shrinks (a fixture already played is simply
+    # dropped from `fixtures`, but its position in `fixture_pos` is fixed)
+    sim_teams = ["Alpha", "Beta", "Gamma", "Delta"]
+    sim_rates = {"Alpha": (2.2, 0.7), "Beta": (1.2, 1.2), "Gamma": (1.0, 1.4), "Delta": (0.8, 1.8)}
+    sim_base = {t: (0, 0, 0) for t in sim_teams}
+    full = [(h, a) for h in sim_teams for a in sim_teams if h != a]
+    fpos = {f: i for i, f in enumerate(full)}
+    teams_out, acc, pts_l = simulate(sim_rates, 1.4, 300, sim_base, full, seed=11, fixture_pos=fpos)
+    check("sim-teams", sorted(teams_out) == sorted(sim_teams))
+    check("sim-title-sum", sum(a["title"] for a in acc.values()) == 300)
+    check("sim-alpha-strong", acc["Alpha"]["title"] > acc["Delta"]["title"])
+    check("sim-pts-lists", all(len(pts_l[t]) == 300 for t in sim_teams))
+    # CRN: drop one fixture (Alpha-Beta) from the schedule but keep the SAME
+    # fixture_pos table. Every fixture's own draw is keyed by its fixed
+    # position, so every team NOT in the dropped fixture must post the exact
+    # same points total, one season at a time; Alpha/Beta (who no longer
+    # play each other) must differ in at least one season.
+    partial = [f for f in full if f != ("Alpha", "Beta")]
+    _t2, _acc2, pl2 = simulate(sim_rates, 1.4, 5, sim_base, partial, seed=11, fixture_pos=fpos)
+    _t1, _acc1, pl1 = simulate(sim_rates, 1.4, 5, sim_base, full, seed=11, fixture_pos=fpos)
+    untouched = [t for t in sim_teams if t not in ("Alpha", "Beta")]
+    check("crn-stable-subset-pl", all(pl1[t] == pl2[t] for t in untouched))
+    check("crn-dropped-fixture-differs-pl", pl1["Alpha"] != pl2["Alpha"] or pl1["Beta"] != pl2["Beta"])
+
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
@@ -955,11 +1124,12 @@ def main():
     sims = DEFAULT_SIMS
     if "--sims" in sys.argv:
         sims = int(sys.argv[sys.argv.index("--sims") + 1])
-    sim_doc, pred_doc = build(sims)
+    sim_doc, pred_doc, hist_doc = build(sims)
     print("mu=%.3f  %s  played=%d" % (sim_doc["meta"]["mu"], sim_doc["meta"]["market"],
                                       sim_doc["meta"]["matches_played"]))
     for r in sim_doc["table"][:6]:
-        print("  %-24s title %5.1f%%  top5 %5.1f%%  xPts %.1f" % (r["name"], r["p_title"], r["p_top5"], r["exp_pts"]))
+        print("  %-24s title %5.1f%%  top4 %5.1f%%  xPts %.1f (p10 %s p90 %s)"
+              % (r["name"], r["p_title"], r["p_top4"], r["exp_pts"], r["pts_p10"], r["pts_p90"]))
     for r in sim_doc["table"][-3:]:
         print("  %-24s releg %5.1f%%  xPts %.1f" % (r["name"], r["p_releg"], r["exp_pts"]))
     up = [e for e in pred_doc["ledger"] if not e.get("result")]
@@ -971,7 +1141,9 @@ def main():
         json.dump(sim_doc, f, separators=(",", ":"), ensure_ascii=False)
     with io.open(OUT_PRED, "w", encoding="utf-8", newline="") as f:
         json.dump(pred_doc, f, separators=(",", ":"), ensure_ascii=False)
-    print("wrote pl-sim.json + pl-predictions.json")
+    with io.open(OUT_HIST, "w", encoding="utf-8", newline="") as f:
+        json.dump(hist_doc, f, separators=(",", ":"), ensure_ascii=False)
+    print("wrote pl-sim.json + pl-predictions.json + pl-sim-history.json")
 
 
 if __name__ == "__main__":
