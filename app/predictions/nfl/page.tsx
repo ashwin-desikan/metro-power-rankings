@@ -15,7 +15,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import HubNav from "@/app/teams/HubNav";
 import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
-import { PredCrumbs, PredHeader, SourcesCard, ListLabel, MONO, CARD } from "../_shared/ui";
+import { PredCrumbs, PredHeader, SourcesCard, ListLabel, MONO, CARD, plural } from "../_shared/ui";
 import PredictionsNav from "../_shared/PredictionsNav";
 import { FixtureRow, TeamOddsRow } from "../_shared/rows";
 import { Delta } from "../_shared/Delta";
@@ -348,8 +348,7 @@ export default async function NflPredictionsPage() {
 
           {/* Next games */}
           {upcoming.length > 0 && (
-            <section id="games" className="mb-10">
-              <h2 className="text-2xl font-bold mb-1">The next games, called</h2>
+            <Disclosure id="games" title="The next games, called" meta={plural(upcoming.length, "games", "game")} className="mb-10" bodyClassName="p-4 sm:p-5">
               <p className="text-sm text-[var(--text-muted)] mb-1">
                 Win probability for the home side.
               </p>
@@ -417,13 +416,12 @@ export default async function NflPredictionsPage() {
                   </tbody>
                 </table>
               </ResponsiveTable>
-            </section>
+            </Disclosure>
           )}
 
           {/* Games that matter this week */}
           {leverageGames.length > 0 && (
-            <section id="leverage" className="mb-10">
-              <h2 className="text-2xl font-bold mb-1">Games that matter this week</h2>
+            <Disclosure id="leverage" title="Games that matter this week" meta={plural(leverageGames.length, "games", "game")} className="mb-10" bodyClassName="p-4 sm:p-5">
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 Points of playoff probability each team stands to swing by winning versus losing, most
                 consequential first.
@@ -470,13 +468,12 @@ export default async function NflPredictionsPage() {
                   </tbody>
                 </table>
               </ResponsiveTable>
-            </section>
+            </Disclosure>
           )}
 
           {/* Bubble watch */}
           {bubbleRows.length > 0 && (
-            <section id="bubble" className="mb-10">
-              <h2 className="text-2xl font-bold mb-1">Bubble watch</h2>
+            <Disclosure id="bubble" title="Bubble watch" meta={plural(bubbleRows.length, "teams", "team")} className="mb-10" bodyClassName="p-4 sm:p-5">
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 Teams most often sitting on the 7-seed line - in the field or the first team out - across the
                 simulation.
@@ -523,12 +520,11 @@ export default async function NflPredictionsPage() {
                   </tbody>
                 </table>
               </ResponsiveTable>
-            </section>
+            </Disclosure>
           )}
 
           {/* Tracking */}
-          <section id="record" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
-            <h2 className="text-2xl font-bold mb-1">How the model is doing</h2>
+          <Disclosure id="record" title="How the model is doing" meta={plural(graded.length, "games", "game")} className="mb-10" bodyClassName="p-5 sm:p-6">
             {rec && rec.graded > 0 ? (
               <>
                 <div className="grid gap-3 sm:grid-cols-3 my-4">
@@ -602,11 +598,10 @@ export default async function NflPredictionsPage() {
                 against the betting line&apos;s - in public, win or lose.
               </p>
             )}
-          </section>
+          </Disclosure>
 
           {/* Division tables */}
-          <section id="divisions" className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">Every team, every outcome</h2>
+          <Disclosure id="divisions" title="Every team, every outcome" meta="8 divisions" className="mb-10" bodyClassName="p-4 sm:p-5">
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Expected wins and the odds of each landing spot, division by division.
             </p>
@@ -635,11 +630,13 @@ export default async function NflPredictionsPage() {
                 raw JSON on GitHub
               </a>
             </p>
-          </section>
+          </Disclosure>
 
           {/* Citizen of Nowhere Picks */}
-          <section id="picks" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
-            <h2 className="text-2xl font-bold mb-2"><span aria-hidden>&#127919;</span> Citizen of Nowhere Picks</h2>
+          <section id="picks" className="mb-10 rounded-2xl border p-5 sm:p-6" style={CARD}>
+            <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+              <span aria-hidden>&#127919;</span> Citizen of Nowhere Picks
+            </h2>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
               Call every game of the week blind, rank your confidence, and take a side on the Upset Radar -
               the games where this model and the betting market disagree most. The model plays its own card,

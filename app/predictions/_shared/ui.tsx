@@ -99,6 +99,16 @@ export function PredHeader({
  * ("AFC East", "SEC", "American League"), so the phone reader gets the
  * same grouping context the desktop header already gives for free.
  */
+/**
+ * "1 game" / "2 games" - pluralises a Disclosure `meta` count. Pass the
+ * plural form; a trailing "s" is dropped for singular unless `singular` is
+ * given explicitly (e.g. plural(1, "clubs", "club")).
+ */
+export function plural(n: number, noun: string, singular?: string): string {
+  const word = n === 1 ? (singular ?? noun.replace(/s$/, "")) : noun;
+  return `${n} ${word}`;
+}
+
 export function ListLabel({ children }: { children: ReactNode }) {
   return (
     <div
@@ -113,12 +123,14 @@ export function ListLabel({ children }: { children: ReactNode }) {
 export function SourcesCard({
   children,
   title = "Where these numbers come from",
+  id,
 }: {
   children: ReactNode;
   title?: string;
+  id?: string;
 }) {
   return (
-    <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
+    <section id={id} className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
       <h2 className="text-lg font-bold mb-2">{title}</h2>
       <div className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl space-y-3">
         {children}

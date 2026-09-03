@@ -6,7 +6,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
-import { PredCrumbs, PredHeader, SourcesCard, MONO, SMCOL } from "../_shared/ui";
+import { PredCrumbs, PredHeader, SourcesCard, MONO, SMCOL, plural } from "../_shared/ui";
 import PredictionsNav from "../_shared/PredictionsNav";
 import { FixtureRow, TeamOddsRow } from "../_shared/rows";
 
@@ -131,7 +131,7 @@ export default async function UclPredictionsPage() {
           </section>
 
           {/* Fixture calls */}
-          <section id="fixtures" className="mb-10">
+          <Disclosure id="fixtures" title="The next fixtures, called" meta={plural(calls.length, "fixtures", "fixture")} className="mb-10" bodyClassName="p-4 sm:p-5">
             <SectionHead
               id="fixtures-head"
               title="The next fixtures, called"
@@ -193,10 +193,10 @@ export default async function UclPredictionsPage() {
                   : "No league-phase fixtures inside the next ten days. Calls for the coming matchday appear here as it approaches."}
               </p>
             )}
-          </section>
+          </Disclosure>
 
           {/* Full table */}
-          <section id="table" className="mb-10">
+          <Disclosure id="table" title="Every club, every outcome" meta={plural(rows.length, "clubs", "club")} className="mb-10" bodyClassName="p-4 sm:p-5">
             <SectionHead
               id="table-head"
               title="Every club, every outcome"
@@ -249,7 +249,7 @@ export default async function UclPredictionsPage() {
                 </tbody>
               </table>
             </ResponsiveTable>
-          </section>
+          </Disclosure>
 
           {/* Sources + method */}
           <SourcesCard>

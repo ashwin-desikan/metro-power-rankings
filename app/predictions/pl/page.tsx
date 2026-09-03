@@ -12,7 +12,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
-import { PredCrumbs, PredHeader, SourcesCard, MONO, CARD, SMCOL } from "../_shared/ui";
+import { PredCrumbs, PredHeader, SourcesCard, MONO, CARD, SMCOL, plural } from "../_shared/ui";
 import PredictionsNav from "../_shared/PredictionsNav";
 import { FixtureRow, TeamOddsRow } from "../_shared/rows";
 import { Band } from "../_shared/Band";
@@ -168,8 +168,7 @@ export default async function PlPredictionsPage() {
           </section>
 
           {/* Relegation odds board */}
-          <section id="relegation" className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
-            <h2 className="text-2xl font-bold mb-1">The relegation battle</h2>
+          <Disclosure id="relegation" title="The relegation battle" meta="20 clubs" className="mb-10" bodyClassName="p-5 sm:p-6">
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Share of simulated seasons each club finishes in the bottom three.
             </p>
@@ -197,11 +196,11 @@ export default async function PlPredictionsPage() {
                 ));
               })()}
             </div>
-          </section>
+          </Disclosure>
 
           {/* Next fixtures */}
           {upcoming.length > 0 && (
-            <section id="fixtures" className="mb-10">
+            <Disclosure id="fixtures" title="The next fixtures, called" meta={plural(upcoming.length, "fixtures", "fixture")} className="mb-10" bodyClassName="p-4 sm:p-5">
               <SectionHead
                 id="fixtures-head"
                 title="The next fixtures, called"
@@ -261,12 +260,11 @@ export default async function PlPredictionsPage() {
                   </tbody>
                 </table>
               </ResponsiveTable>
-            </section>
+            </Disclosure>
           )}
 
           {/* Tracking */}
-          <section id="record" className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
-            <h2 className="text-2xl font-bold mb-1">How the model is doing</h2>
+          <Disclosure id="record" title="How the model is doing" meta={plural(graded.length, "fixtures", "fixture")} className="mb-10" bodyClassName="p-5 sm:p-6">
             {rec && rec.graded > 0 ? (
               <>
                 <div className="grid gap-3 sm:grid-cols-3 my-4">
@@ -339,10 +337,10 @@ export default async function PlPredictionsPage() {
                 score against the betting market&apos;s - in public, win or lose.
               </p>
             )}
-          </section>
+          </Disclosure>
 
           {/* Full table */}
-          <section id="table" className="mb-10">
+          <Disclosure id="table" title="Every club, every outcome" meta={plural(rows.length, "clubs", "club")} className="mb-10" bodyClassName="p-4 sm:p-5">
             <SectionHead
               id="table-head"
               title="Every club, every outcome"
@@ -438,11 +436,13 @@ export default async function PlPredictionsPage() {
                 raw JSON on GitHub
               </a>
             </p>
-          </section>
+          </Disclosure>
 
           {/* Citizen of Nowhere Picks */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
-            <h2 className="text-2xl font-bold mb-2"><span aria-hidden>&#127919;</span> Citizen of Nowhere Picks</h2>
+          <section id="picks" className="mb-10 rounded-2xl border p-5 sm:p-6" style={CARD}>
+            <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+              <span aria-hidden>&#127919;</span> Citizen of Nowhere Picks
+            </h2>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
               Call every game of the matchweek blind, rank your confidence, and see whether you out-predict
               this model week after week. The model plays its own card, graded by the same rules.

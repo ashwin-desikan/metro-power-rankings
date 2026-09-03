@@ -12,7 +12,7 @@ import { getAllFranchises, logoUrlFor } from "@/lib/mlb";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
-import { PredCrumbs, PredHeader, SourcesCard, ListLabel, MONO, CARD, SMCOL } from "../_shared/ui";
+import { PredCrumbs, PredHeader, SourcesCard, ListLabel, MONO, CARD, SMCOL, plural } from "../_shared/ui";
 import PredictionsNav from "../_shared/PredictionsNav";
 import { TeamOddsRow } from "../_shared/rows";
 import { Delta } from "@/app/predictions/_shared/Delta";
@@ -299,8 +299,7 @@ export default async function MlbPredictionsPage() {
           </section>
 
           {/* The races still open - this page's answer to the NFL hub's ledger */}
-          <section id="open" className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">The races still open</h2>
+          <Disclosure id="open" title="The races still open" meta={plural(open.length, "teams", "team")} className="mb-10" bodyClassName="p-4 sm:p-5">
             <p className="text-sm text-[var(--text-muted)] mb-1 max-w-3xl">
               Every club the model puts between {OPEN_LO}% and {OPEN_HI}% to reach October, closest to a
               coin flip first.
@@ -349,11 +348,10 @@ export default async function MlbPredictionsPage() {
                 </p>
               </div>
             )}
-          </section>
+          </Disclosure>
 
           {/* The field as it stands */}
-          <section id="field" className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">The field the model expects</h2>
+          <Disclosure id="field" title="The field the model expects" meta="12 teams" className="mb-10" bodyClassName="p-4 sm:p-5">
             <p className="text-sm text-[var(--text-muted)] mb-1 max-w-3xl">
               The six clubs from each league the model has reaching the postseason most often.
             </p>
@@ -462,11 +460,10 @@ export default async function MlbPredictionsPage() {
                 );
               })}
             </div>
-          </section>
+          </Disclosure>
 
           {/* Division tables */}
-          <section id="divisions" className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">Every club, every outcome</h2>
+          <Disclosure id="divisions" title="Every club, every outcome" meta="6 divisions" className="mb-10" bodyClassName="p-4 sm:p-5">
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Current record, projected final wins, and the odds of each landing spot, division by division.
             </p>
@@ -499,7 +496,7 @@ export default async function MlbPredictionsPage() {
                 raw JSON on GitHub
               </a>
             </p>
-          </section>
+          </Disclosure>
 
           {/* Sources + method */}
           {meta && (

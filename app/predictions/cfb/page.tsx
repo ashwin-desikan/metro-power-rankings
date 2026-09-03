@@ -15,7 +15,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import HubNav from "@/app/teams/HubNav";
 import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
-import { PredCrumbs, PredHeader, SourcesCard, ListLabel, MONO, CARD, SMCOL } from "../_shared/ui";
+import { PredCrumbs, PredHeader, SourcesCard, ListLabel, MONO, CARD, SMCOL, plural } from "../_shared/ui";
 import PredictionsNav from "../_shared/PredictionsNav";
 import { FixtureRow, TeamOddsRow } from "../_shared/rows";
 import { Delta } from "@/app/predictions/_shared/Delta";
@@ -334,8 +334,7 @@ export default async function CfbPredictionsPage() {
           </section>
 
           {/* The twelve-team field */}
-          <section id="field" className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">The twelve-team field</h2>
+          <Disclosure id="field" title="The twelve-team field" meta="12 teams" className="mb-10" bodyClassName="p-4 sm:p-5">
             <p className="text-sm text-[var(--text-muted)] mb-1">
               Five conference champions and seven at-large, seeded straight by committee rank, byes to
               the top four seeds.
@@ -477,11 +476,10 @@ export default async function CfbPredictionsPage() {
                 </p>
               </div>
             </div>
-          </section>
+          </Disclosure>
 
           {/* Conference title games */}
-          <section id="ccg" className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">The conference title games</h2>
+          <Disclosure id="ccg" title="The conference title games" meta={plural(ccgCards.length, "pairings", "pairing")} className="mb-10" bodyClassName="p-4 sm:p-5">
             <p className="text-sm text-[var(--text-muted)] mb-4">
               The likeliest title-game pairing per league, each team&apos;s odds of reaching it, and the
               favourite to win outright.
@@ -505,12 +503,11 @@ export default async function CfbPredictionsPage() {
                 </div>
               ))}
             </div>
-          </section>
+          </Disclosure>
 
           {/* Next games - AP Top 25 only */}
           {upcoming.length > 0 && (
-            <section id="games" className="mb-10">
-              <h2 className="text-2xl font-bold mb-1">The week&apos;s Top 25 games, called</h2>
+            <Disclosure id="games" title="The week&apos;s Top 25 games, called" meta={plural(upcoming.length, "games", "game")} className="mb-10" bodyClassName="p-4 sm:p-5">
               <p className="text-sm text-[var(--text-muted)] mb-1">
                 Every game involving an AP Top 25 team{pollLabel ? ` (${pollLabel} poll)` : ""}, win
                 probability for the home side.
@@ -582,13 +579,12 @@ export default async function CfbPredictionsPage() {
                   </tbody>
                 </table>
               </ResponsiveTable>
-            </section>
+            </Disclosure>
           )}
 
           {/* Games that matter this week */}
           {leverageGames.length > 0 && (
-            <section id="leverage" className="mb-10">
-              <h2 className="text-2xl font-bold mb-1">Games that matter this week</h2>
+            <Disclosure id="leverage" title="Games that matter this week" meta={plural(leverageGames.length, "games", "game")} className="mb-10" bodyClassName="p-4 sm:p-5">
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 Points of playoff probability each team stands to swing by winning versus losing, most
                 consequential first.
@@ -636,13 +632,12 @@ export default async function CfbPredictionsPage() {
                   </tbody>
                 </table>
               </ResponsiveTable>
-            </section>
+            </Disclosure>
           )}
 
           {/* Bubble watch */}
           {bubbleRows.length > 0 && (
-            <section id="bubble" className="mb-10">
-              <h2 className="text-2xl font-bold mb-1">Bubble watch</h2>
+            <Disclosure id="bubble" title="Bubble watch" meta={plural(bubbleRows.length, "teams", "team")} className="mb-10" bodyClassName="p-4 sm:p-5">
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 Teams most often on the last at-large line: the twelfth team in, or the first team out.
               </p>
@@ -685,12 +680,11 @@ export default async function CfbPredictionsPage() {
                   </tbody>
                 </table>
               </ResponsiveTable>
-            </section>
+            </Disclosure>
           )}
 
           {/* Tracking */}
-          <section id="record" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
-            <h2 className="text-2xl font-bold mb-1">How the model is doing</h2>
+          <Disclosure id="record" title="How the model is doing" meta={plural(graded.length, "games", "game")} className="mb-10" bodyClassName="p-5 sm:p-6">
             {rec && rec.graded > 0 ? (
               <>
                 <div className="grid gap-3 sm:grid-cols-3 my-4">
@@ -765,11 +759,10 @@ export default async function CfbPredictionsPage() {
                 model&apos;s Brier score against the betting line&apos;s - in public, win or lose.
               </p>
             )}
-          </section>
+          </Disclosure>
 
           {/* Conference tables */}
-          <section id="conferences" className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">Every team, every outcome</h2>
+          <Disclosure id="conferences" title="Every team, every outcome" meta={plural(conferences.length, "conferences", "conference")} className="mb-10" bodyClassName="p-4 sm:p-5">
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Expected regular-season wins and the odds of each landing spot, conference by conference.
             </p>
@@ -825,11 +818,13 @@ export default async function CfbPredictionsPage() {
                 raw JSON on GitHub
               </a>
             </p>
-          </section>
+          </Disclosure>
 
           {/* Citizen of Nowhere Picks */}
-          <section id="picks" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
-            <h2 className="text-2xl font-bold mb-2"><span aria-hidden>&#127919;</span> Citizen of Nowhere Picks</h2>
+          <section id="picks" className="mb-10 rounded-2xl border p-5 sm:p-6" style={CARD}>
+            <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+              <span aria-hidden>&#127919;</span> Citizen of Nowhere Picks
+            </h2>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
               Call every game of the week blind, rank your confidence, and take a side on the Upset Radar -
               the games where this model and the betting market disagree most. The model plays its own card,

@@ -32,8 +32,9 @@ import { Fragment } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
+import { Disclosure } from "@/app/_shared/Disclosure";
 import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
-import { PredCrumbs, PredHeader, SourcesCard } from "../_shared/ui";
+import { PredCrumbs, PredHeader, SourcesCard, plural } from "../_shared/ui";
 import PredictionsNav from "../_shared/PredictionsNav";
 import { LedgerRow } from "../_shared/rows";
 import { getPlExpectation } from "@/lib/plExpectation";
@@ -556,9 +557,9 @@ export default async function LedgerPage() {
       </section>
 
       {/* ---------------------------------------------------------------- */}
-      <section className="mb-12">
+        <Disclosure id="calibration" title="When the model said 70%, did it happen 70% of the time?" meta={plural(calibration.length, "bins", "bin")} className="mb-10" bodyClassName="p-4 sm:p-5">
         <SectionHead
-          id="calibration"
+          id="calibration-head"
           title="When the model said 70%, did it happen 70% of the time?"
           sub="A well-calibrated forecast lands on the diagonal."
           more={`Every English top-flight match outcome the model has ever priced, sorted into probability bins: the share that actually happened should match the share it was given. ${calibN.toLocaleString()} outcomes across ${calibration.length} populated bins.`}
@@ -643,12 +644,12 @@ export default async function LedgerPage() {
           Green means the outcome happened more often than the model expected; pink means less. The
           bars are drawn to a six-point scale, so a full bar is a six-percentage-point miss.
         </p>
-      </section>
+        </Disclosure>
 
       {/* ---------------------------------------------------------------- */}
-      <section className="mb-12">
+        <Disclosure id="won" title="The seasons the model beat the market" meta={plural(plWon.length + nflWon.length, "seasons", "season")} className="mb-10" bodyClassName="p-4 sm:p-5">
         <SectionHead
-          id="won"
+          id="won-head"
           title="The seasons the model beat the market"
           sub="Derived, not chosen: every season the model's Brier came in under the market's."
           more="These are the exceptions, and naming them is the only way the rest of this page means anything. A page that only ever showed its own scoreboard would be worth nothing."
@@ -699,12 +700,12 @@ export default async function LedgerPage() {
             )}
           </div>
         </div>
-      </section>
+        </Disclosure>
 
       {/* ---------------------------------------------------------------- */}
-      <section className="mb-12">
+        <Disclosure id="live" title="This season, as it grades" meta={plural(liveMobileRows.length, "ledgers", "ledger")} className="mb-10" bodyClassName="p-4 sm:p-5">
         <SectionHead
-          id="live"
+          id="live-head"
           title="This season, as it grades"
           sub="Each hub freezes its call when it publishes it."
           more="Nothing below is back-filled, and a row with nothing in it says so rather than waiting for a good week to appear."
@@ -907,12 +908,12 @@ export default async function LedgerPage() {
             </tbody>
           </table>
         </ResponsiveTable>
-      </section>
+        </Disclosure>
 
       {/* ---------------------------------------------------------------- */}
-      <section className="mb-12">
+        <Disclosure id="you" title="Your own calls land on this axis too" className="mb-10" bodyClassName="p-5 sm:p-6">
         <SectionHead
-          id="you"
+          id="you-head"
           title="Your own calls land on this axis too"
           sub="Reader picks are scored on the same axis."
           more="Citizen of Nowhere Picks scores a reader's hard calls with the same Brier the 1920 ledger uses, so a pick made this Saturday is measured the way a match from 1958 is measured."
@@ -940,10 +941,10 @@ export default async function LedgerPage() {
             </Link>
           </div>
         </div>
-      </section>
+        </Disclosure>
 
       {/* ---------------------------------------------------------------- */}
-      <SourcesCard title="Where these numbers come from, and what they cannot tell you">
+      <SourcesCard id="method" title="Where these numbers come from, and what they cannot tell you">
         <div>
           <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Why a skill score and not a Brier score</h3>
           <p>
