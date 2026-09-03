@@ -12,12 +12,18 @@ import {
 } from "@/lib/cfbSim";
 import { getAllCfbSlugs } from "@/lib/cfb";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { CappedList } from "@/app/_shared/Disclosure";
+import { Disclosure } from "@/app/_shared/Disclosure";
+import HubNav from "@/app/teams/HubNav";
+import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
+import { PredCrumbs, PredHeader, SourcesCard, ListLabel, MONO, CARD, SMCOL } from "../_shared/ui";
+import PredictionsNav from "../_shared/PredictionsNav";
+import { FixtureRow, TeamOddsRow } from "../_shared/rows";
 import { Delta } from "@/app/predictions/_shared/Delta";
 import { Sparkline } from "@/app/predictions/_shared/Sparkline";
 import { Band } from "@/app/predictions/_shared/Band";
 import { TierTabs } from "@/app/predictions/_shared/TierTabs";
 import { deltaSince, series } from "@/app/predictions/_shared/deltas";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // College Football 2026 prediction hub on /predictions - the CFB sibling of
 // /predictions/nfl. Season odds from cfb-sim.json (the real FBS schedule, all
@@ -31,8 +37,6 @@ import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 
 export const revalidate = 21600;
 
-const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
-const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const BORD = { borderColor: "var(--border)" } as const;
 const PATH = "/predictions/cfb";
 const TITLE = "College Football 2026 Predictions";
@@ -97,6 +101,12 @@ function TeamLabel({ name, href, rank }: { name: string; href: string | null; ra
   );
 }
 
+/** Mobile row identity: rank + name, linked when a program page exists. */
+function mobileName(r: { name: string; ap_rank?: number | null }, href: string | null) {
+  const label = <>{r.ap_rank ? <span style={{ ...MONO, color: "var(--text-dim)" }}>#{r.ap_rank} </span> : null}{r.name}</>;
+  return href ? <Link href={href}>{label}</Link> : label;
+}
+
 /** Merge a tier's stats-only/market-only numbers onto the base rows for
  *  identity fields (name/slug/conference/power4/ap_rank). Rows a tier has no
  *  entry for (should not happen, but the JSON is data, not a promise) fall
@@ -133,104 +143,84 @@ function ConferenceTable({ rows, conference, href, history, withHistory }: {
     .sort((a, b) => b.p_conf - a.p_conf || b.p_playoff - a.p_playoff || b.exp_wins - a.exp_wins);
   const indep = conference === "Independents";
   return (
-    <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-            <th className="px-2 py-2 font-semibold">{conference}</th>
-            <th className="px-2 py-2 text-right font-semibold">xW</th>
-            {!indep && <th className="px-2 py-2 text-right font-semibold">CCG</th>}
-            {!indep && <th className="px-2 py-2 text-right font-semibold">Conf</th>}
-            <th className="px-2 py-2 text-right font-semibold">Playoff</th>
-            <th className="px-2 py-2 text-right font-semibold">Title</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ts.map((r) => (
-            <tr key={r.espn_id} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="px-2 py-2 whitespace-nowrap">
-                <span className="inline-flex items-center gap-1.5">
-                  <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
-                  {withHistory && r.slug && (
-                    <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
-                      <Sparkline points={series(history, r.slug, "title")} />
+    <div className="min-w-0">
+      <ListLabel>{conference}</ListLabel>
+      <ResponsiveTable
+        variant="list"
+        mobileNoun="teams"
+        className="rounded-xl border min-w-0"
+        style={BORD}
+        mobileRows={ts.map((r) => (
+          <TeamOddsRow
+            key={r.espn_id}
+            name={mobileName(r, href(r.slug))}
+            band={r.band ? <Band band={r.band} /> : null}
+            right={pct(r.p_playoff)}
+            metricLabel="playoff"
+            rightSub={`xW ${r.exp_wins.toFixed(1)}${r.wins_p10 != null && r.wins_p90 != null ? ` (${r.wins_p10.toFixed(1)}-${r.wins_p90.toFixed(1)})` : ""}`}
+          />
+        ))}
+      >
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+              <th className="px-2 py-2 font-semibold">{conference}</th>
+              <th className="px-2 py-2 text-right font-semibold">xW</th>
+              {!indep && <th className={`px-2 py-2 text-right font-semibold ${SMCOL}`}>CCG</th>}
+              {!indep && <th className={`px-2 py-2 text-right font-semibold ${SMCOL}`}>Conf</th>}
+              <th className="px-2 py-2 text-right font-semibold">Playoff</th>
+              <th className="px-2 py-2 text-right font-semibold">Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ts.map((r) => (
+              <tr key={r.espn_id} className="border-t" style={{ borderColor: "var(--border)" }}>
+                <td className="px-2 py-2 whitespace-nowrap">
+                  <span className="inline-flex items-center gap-1.5">
+                    <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
+                    {withHistory && r.slug && (
+                      <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
+                        <Sparkline points={series(history, r.slug, "title")} />
+                      </span>
+                    )}
+                  </span>
+                </td>
+                <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>
+                  {r.exp_wins.toFixed(1)}
+                  {r.wins_p10 != null && r.wins_p90 != null && (
+                    <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+                      {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
                     </span>
                   )}
-                </span>
-                {/* Band lives in the Bubble watch section instead. It does NOT
-                    reappear here: this grid's column is capped at ~550px by
-                    max-w-6xl regardless of viewport, so no breakpoint gives it
-                    room back without reopening the horizontal-scroll regression. */}
-              </td>
-              <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>
-                {r.exp_wins.toFixed(1)}
-                {r.wins_p10 != null && r.wins_p90 != null && (
-                  <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
-                    {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
-                  </span>
-                )}
-              </td>
-              {!indep && <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>{pct(r.p_ccg)}</td>}
-              {!indep && <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>{pct(r.p_conf)}</td>}
-              <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>
-                {pct(r.p_playoff)}
-                {withHistory && r.slug && (
-                  <span className="block text-[10px] leading-tight">
-                    <Delta value={deltaSince(history, r.slug, "po", 7)} unit="pp" />
-                  </span>
-                )}
-              </td>
-              <td className="px-2 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_natty >= 3 ? "var(--accent)" : "var(--text-muted)" }}>
-                {pct(r.p_natty)}
-                {withHistory && r.slug && (
-                  <span className="block text-[10px] leading-tight">
-                    <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
-                  </span>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                </td>
+                {!indep && <td className={`px-2 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>{pct(r.p_ccg)}</td>}
+                {!indep && <td className={`px-2 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>{pct(r.p_conf)}</td>}
+                <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>
+                  {pct(r.p_playoff)}
+                  {withHistory && r.slug && (
+                    <span className="block text-[10px] leading-tight">
+                      <Delta value={deltaSince(history, r.slug, "po", 7)} unit="pp" />
+                    </span>
+                  )}
+                </td>
+                <td className="px-2 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_natty >= 3 ? "var(--accent)" : "var(--text-muted)" }}>
+                  {pct(r.p_natty)}
+                  {withHistory && r.slug && (
+                    <span className="block text-[10px] leading-tight">
+                      <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </ResponsiveTable>
     </div>
   );
 }
 
 const PICK_LABEL = (e: CfbPredictionEntry) => (e.pick === "H" ? e.home : e.away);
-
-function LeverageRow({ e }: { e: CfbPredictionEntry }) {
-  const lev = e.leverage!;
-  return (
-    <tr className="border-t" style={BORD}>
-      <td className="px-3 py-2 whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</td>
-      <td className="px-3 py-2 font-semibold whitespace-nowrap">
-        {e.away} <span style={{ color: "var(--text-dim)" }}>{e.neutral ? "vs" : "at"}</span> {e.home}
-      </td>
-      <td className="px-3 py-2 text-right" style={MONO}>{pct(lev.home)}</td>
-      <td className="px-3 py-2 text-right" style={MONO}>{pct(lev.away)}</td>
-      <td className="px-3 py-2 font-semibold" style={{ color: "var(--accent)" }}>{PICK_LABEL(e)}</td>
-    </tr>
-  );
-}
-
-function LeverageCard({ e }: { e: CfbPredictionEntry }) {
-  const lev = e.leverage!;
-  return (
-    <div className="px-3 py-2.5">
-      <div className="flex items-center justify-between gap-2">
-        <span className="font-semibold text-sm">
-          {e.away} <span style={{ color: "var(--text-dim)" }}>{e.neutral ? "vs" : "at"}</span> {e.home}
-        </span>
-        <span className="text-[11px] whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</span>
-      </div>
-      <div className="flex items-center gap-4 mt-1 text-[13px]" style={MONO}>
-        <span>{e.home} swing {pct(lev.home)}</span>
-        <span>{e.away} swing {pct(lev.away)}</span>
-      </div>
-      <div className="text-[13px] font-semibold mt-0.5" style={{ color: "var(--accent)" }}>Pick: {PICK_LABEL(e)}</div>
-    </div>
-  );
-}
 
 export default async function CfbPredictionsPage() {
   const [sim, preds, history] = await Promise.all([getCfbSim(), getCfbPredictions(), getCfbSimHistory()]);
@@ -253,6 +243,7 @@ export default async function CfbPredictionsPage() {
   // really eleven spots for the Power 4 + Notre Dame, one for the G5.
   const p4Field = byPlayoff.filter((r) => r.power4).slice(0, 14);
   const g5Field = byPlayoff.filter((r) => !r.power4).slice(0, 6);
+  const g5PlayoffMax = Math.max(...g5Field.map((r) => r.p_playoff), 0.0001);
   // The likeliest title game per conference: the two highest title-game odds.
   const ccgCards = conferences.filter((c) => c !== "Independents").map((c) => {
     const pair = rows.filter((r) => r.conference === c).sort((a, b) => b.p_ccg - a.p_ccg).slice(0, 2);
@@ -272,35 +263,39 @@ export default async function CfbPredictionsPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>{" / "}
-        <Link href="/predictions" className="hover:underline">Predictions</Link>{" / "}
-        <span>College Football</span>
-      </nav>
-
-      <header className="mb-8">
-        <div className="flex items-center gap-3 flex-wrap mb-2">
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            <span aria-hidden>🏈</span> College Football 2026
-          </h1>
-          <span className="flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#10b981" }} aria-hidden />
-            <span className="text-[10px]" style={{ ...MONO, color: "#10b981" }}>LIVE</span>
-          </span>
-        </div>
-        <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
-          {meta ? `${meta.sims.toLocaleString()} simulations` : "Thousands of simulations"} of the real
-          {meta ? ` ${meta.schedule_games}-game` : ""} FBS schedule, all ten conference title games and the
-          twelve-team playoff - a ratings model built from three seasons of opponent-adjusted margins,
-          anchored to the AP poll and the title market, predicting every Top 25 game as the season plays out.
-        </p>
-        {meta && (
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3" style={MONO}>
-            {meta.model} · AP {meta.poll.label ?? "poll"} {meta.poll.date ?? ""} · updated {meta.generated_at}
-            {meta.games_played > 0 ? ` · after ${meta.games_played} games` : " · preseason"}
-          </p>
-        )}
-      </header>
+      <PredCrumbs tab="College Football" />
+      <PredHeader
+        emoji="🏈"
+        title="College Football 2026"
+        live
+        sub={
+          <>
+            {meta ? `${meta.sims.toLocaleString()} simulations` : "Thousands of simulations"} of the real
+            {meta ? ` ${meta.schedule_games}-game` : ""} FBS schedule, all ten conference title games and the
+            twelve-team playoff - a ratings model built from three seasons of opponent-adjusted margins,
+            anchored to the AP poll and the title market, predicting every Top 25 game as the season plays out.
+          </>
+        }
+        stamp={
+          meta
+            ? `${meta.model} · AP ${meta.poll.label ?? "poll"} ${meta.poll.date ?? ""} · updated ${meta.generated_at}${meta.games_played > 0 ? ` · after ${meta.games_played} games` : " · preseason"}`
+            : null
+        }
+      />
+      <PredictionsNav />
+      <HubNav
+        items={[
+          { label: "National title race", href: "#natty" },
+          { label: "The field", href: "#field" },
+          { label: "Title games", href: "#ccg" },
+          { label: "Top 25 games", href: "#games" },
+          { label: "Games that matter", href: "#leverage" },
+          { label: "Bubble watch", href: "#bubble" },
+          { label: "Model record", href: "#record" },
+          { label: "Every team", href: "#conferences" },
+          { label: "Picks", href: "#picks" },
+        ]}
+      />
 
       {!sim && (
         <section className="rounded-2xl border p-6 mb-8" style={{ borderColor: "var(--border)" }}>
@@ -314,7 +309,7 @@ export default async function CfbPredictionsPage() {
       {rows.length > 0 && (
         <>
           {/* National title board */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          <section id="natty" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
             <h2 className="text-2xl font-bold mb-1">The race for the national title</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Share of simulated seasons each program wins the CFP National Championship.
@@ -326,7 +321,7 @@ export default async function CfbPredictionsPage() {
                   <span className="w-44 sm:w-56 text-[14.5px] truncate">
                     <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
                   </span>
-                  <span className="flex-1 h-2 rounded" style={{ background: "var(--bg-card)" }}>
+                  <span className="flex-1 h-2 rounded min-w-0" style={{ background: "var(--bg-card)" }}>
                     <span
                       className="block h-2 rounded"
                       style={{ background: "var(--accent)", opacity: 0.75, width: `${Math.max(1, (r.p_natty / maxNatty) * 100)}%` }}
@@ -339,21 +334,49 @@ export default async function CfbPredictionsPage() {
           </section>
 
           {/* The twelve-team field */}
-          <section className="mb-10">
+          <section id="field" className="mb-10">
             <h2 className="text-2xl font-bold mb-1">The twelve-team field</h2>
-            <p className="text-sm text-[var(--text-muted)] mb-4">
+            <p className="text-sm text-[var(--text-muted)] mb-1">
               Five conference champions and seven at-large, seeded straight by committee rank, byes to
-              the top four seeds. Because only four power conferences exist, at least one of the five
-              champion bids always goes to a Group of 5 league - so eleven spots are effectively
-              contested by the Power 4 and Notre Dame, and the twelfth is reserved for the best Group
-              of 5 champion, with a second sneaking in when one earns it.
+              the top four seeds.
             </p>
+            <details className="mb-4 max-w-3xl">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">How the field fills</summary>
+              <div className="mt-2 text-sm text-[var(--text-muted)]">
+                Because only four power conferences exist, at least one of the five champion bids always
+                goes to a Group of 5 league, so eleven spots are effectively contested by the Power 4 and
+                Notre Dame, and the twelfth is reserved for the best Group of 5 champion, with a second
+                sneaking in when one earns it.
+              </div>
+            </details>
             <div className="grid gap-4 lg:grid-cols-2 items-start">
               <div className="min-w-0">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2">
                   The eleven contested spots - Power 4 + Notre Dame
                 </h3>
-                <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+                <ResponsiveTable
+                  variant="list"
+                  mobileNoun="teams"
+                  className="rounded-xl border"
+                  style={BORD}
+                  mobileRows={p4Field.map((r, i) => (
+                    <TeamOddsRow
+                      key={r.espn_id}
+                      name={mobileName(r, href(r.slug))}
+                      band={
+                        <span className="inline-flex items-center gap-1.5">
+                          {r.band && <Band band={r.band} />}
+                          <span className="text-[13px] text-[var(--text-muted)]">
+                            {r.conference}{i < 11 ? " · qualifying" : ""}
+                          </span>
+                        </span>
+                      }
+                      right={pct(r.p_playoff)}
+                      metricLabel="playoff"
+                      rightSub={`bye ${pct(r.p_bye)}`}
+                    />
+                  ))}
+                >
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -361,7 +384,7 @@ export default async function CfbPredictionsPage() {
                         <th className="px-3 py-2 text-right font-semibold">Playoff</th>
                         <th className="px-3 py-2 text-right font-semibold">Top-4 seed</th>
                         <th className="px-3 py-2 text-right font-semibold">Natl title</th>
-                        <th className="px-3 py-2 font-semibold">Conference</th>
+                        <th className={`px-3 py-2 font-semibold ${SMCOL}`}>Conference</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -382,22 +405,42 @@ export default async function CfbPredictionsPage() {
                           </td>
                           <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_bye)}</td>
                           <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_natty)}</td>
-                          <td className="px-3 py-2 whitespace-nowrap text-[var(--text-muted)]">{r.conference}</td>
+                          <td className={`px-3 py-2 whitespace-nowrap text-[var(--text-muted)] ${SMCOL}`}>{r.conference}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
-                </div>
+                </ResponsiveTable>
                 <p className="text-xs text-[var(--text-dim)] mt-2">
                   Green rows mark the eleven most likely qualifiers from this pool; the line under row
                   eleven is the cut.
                 </p>
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0" data-mobile-uncapped="the model's top six Group of 5 contenders">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2">
                   The Group of 5 bid
                 </h3>
-                <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+                <ResponsiveTable
+                  variant="list"
+                  mobileNoun="teams"
+                  mobileInitial={0}
+                  className="rounded-xl border"
+                  style={BORD}
+                  mobileRows={g5Field.map((r, i) => (
+                    <TeamOddsRow
+                      key={r.espn_id}
+                      name={mobileName(r, href(r.slug))}
+                      band={
+                        <span className="text-[13px] text-[var(--text-muted)]">
+                          {r.conference}{i === 0 ? " · favourite" : ""}
+                        </span>
+                      }
+                      right={pct(r.p_playoff)}
+                      metricLabel="playoff"
+                      rightSub={`title ${pct(r.p_natty)}`}
+                    />
+                  ))}
+                >
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -405,7 +448,7 @@ export default async function CfbPredictionsPage() {
                         <th className="px-3 py-2 text-right font-semibold">Playoff</th>
                         <th className="px-3 py-2 text-right font-semibold">Conference title</th>
                         <th className="px-3 py-2 text-right font-semibold">Natl title</th>
-                        <th className="px-3 py-2 font-semibold">Conference</th>
+                        <th className={`px-3 py-2 font-semibold ${SMCOL}`}>Conference</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -417,15 +460,17 @@ export default async function CfbPredictionsPage() {
                           <td className="px-3 py-2 whitespace-nowrap">
                             <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
                           </td>
-                          <td className="px-3 py-2 text-right font-bold" style={MONO}>{pct(r.p_playoff)}</td>
+                          <td className="px-3 py-2 text-right font-bold" style={MONO}>
+                            <DataBar v={r.p_playoff} max={g5PlayoffMax} dp={1} suffix="%" color="var(--seq-4)" width={100} />
+                          </td>
                           <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_conf)}</td>
                           <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_natty)}</td>
-                          <td className="px-3 py-2 whitespace-nowrap text-[var(--text-muted)]">{r.conference}</td>
+                          <td className={`px-3 py-2 whitespace-nowrap text-[var(--text-muted)] ${SMCOL}`}>{r.conference}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
-                </div>
+                </ResponsiveTable>
                 <p className="text-xs text-[var(--text-dim)] mt-2">
                   The guaranteed spot goes to the highest-ranked of these leagues&apos; champions - the
                   green row is the current favourite to claim it.
@@ -435,20 +480,20 @@ export default async function CfbPredictionsPage() {
           </section>
 
           {/* Conference title games */}
-          <section className="mb-10">
+          <section id="ccg" className="mb-10">
             <h2 className="text-2xl font-bold mb-1">The conference title games</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4">
-              The likeliest championship-game pairing in each league, with every team&apos;s odds of
-              reaching it, and the favourite to win the conference outright.
+              The likeliest title-game pairing per league, each team&apos;s odds of reaching it, and the
+              favourite to win outright.
             </p>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-mobile-uncapped="one pairing card per conference, ten total">
               {ccgCards.map(({ conference, pair, fav }) => (
                 <div key={conference} className="min-w-0 rounded-xl border p-4" style={CARD}>
                   <div className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: "var(--text-muted)" }}>{conference}</div>
                   {pair.map((r) => (
                     <div key={r.espn_id} className="flex items-center justify-between gap-2 mb-1">
-                      <span className="text-sm truncate"><TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} /></span>
-                      <span className="text-[13px]" style={MONO}>{pct(r.p_ccg)}</span>
+                      <span className="text-sm truncate min-w-0"><TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} /></span>
+                      <span className="text-[13px] flex-shrink-0" style={MONO}>{pct(r.p_ccg)}</span>
                     </div>
                   ))}
                   {fav && (
@@ -464,16 +509,40 @@ export default async function CfbPredictionsPage() {
 
           {/* Next games - AP Top 25 only */}
           {upcoming.length > 0 && (
-            <section className="mb-10">
+            <section id="games" className="mb-10">
               <h2 className="text-2xl font-bold mb-1">The week&apos;s Top 25 games, called</h2>
-              <p className="text-sm text-[var(--text-muted)] mb-4">
+              <p className="text-sm text-[var(--text-muted)] mb-1">
                 Every game involving an AP Top 25 team{pollLabel ? ` (${pollLabel} poll)` : ""}, win
-                probability for the home side{anyMarket
-                  ? " from the model and the posted line, blended 50/50 into the pick"
-                  : "; the market column joins once lines are posted"}. Each week&apos;s slate is published
-                after the AP poll drops, frozen on first sight, and graded against the final score below.
+                probability for the home side.
               </p>
-              <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+              <details className="mb-4 max-w-3xl">
+                <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">How this is measured</summary>
+                <div className="mt-2 text-sm text-[var(--text-muted)]">
+                  {anyMarket
+                    ? "The pick blends the model and the posted line 50/50."
+                    : "The market column joins once lines are posted."} Each week&apos;s slate is published
+                  after the AP poll drops, frozen on first sight, and graded against the final score below.
+                </div>
+              </details>
+              <ResponsiveTable
+                variant="list"
+                mobileNoun="games"
+                className="rounded-xl border"
+                style={BORD}
+                mobileRows={upcoming.map((e) => (
+                  <FixtureRow
+                    key={e.event_id}
+                    team1={<>{e.ap.away ? <span style={{ ...MONO, color: "var(--text-dim)" }}>#{e.ap.away} </span> : null}{e.away}</>}
+                    sep={e.neutral ? "vs" : "at"}
+                    team2={<>{e.ap.home ? <span style={{ ...MONO, color: "var(--text-dim)" }}>#{e.ap.home} </span> : null}{e.home}</>}
+                    neutral={e.neutral}
+                    kickoff={fmtDate(e.date)}
+                    modelPct={`Model ${ppct(e.model.pH)}`}
+                    marketPct={anyMarket ? (e.market ? `Market ${ppct(e.market.pH)}` : "Market —") : undefined}
+                    pick={PICK_LABEL(e)}
+                  />
+                ))}
+              >
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -512,53 +581,87 @@ export default async function CfbPredictionsPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </ResponsiveTable>
             </section>
           )}
 
           {/* Games that matter this week */}
           {leverageGames.length > 0 && (
-            <section className="mb-10">
+            <section id="leverage" className="mb-10">
               <h2 className="text-2xl font-bold mb-1">Games that matter this week</h2>
               <p className="text-sm text-[var(--text-muted)] mb-4">
-                How many points of playoff probability each team stands to swing by winning versus losing -
-                the games with the most on the line, first.
+                Points of playoff probability each team stands to swing by winning versus losing, most
+                consequential first.
               </p>
-              <div className="hidden sm:block overflow-x-auto rounded-xl border" style={BORD}>
+              <ResponsiveTable
+                variant="list"
+                mobileNoun="games"
+                className="rounded-xl border"
+                style={BORD}
+                mobileRows={leverageGames.map((e) => (
+                  <FixtureRow
+                    key={e.event_id}
+                    team1={e.away}
+                    sep={e.neutral ? "vs" : "at"}
+                    team2={e.home}
+                    kickoff={fmtDate(e.date)}
+                    modelPct={`Home swing ${pct(e.leverage.home)}`}
+                    marketPct={`Away swing ${pct(e.leverage.away)}`}
+                    pick={PICK_LABEL(e)}
+                  />
+                ))}
+              >
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                       <th className="px-3 py-2 font-semibold">Kickoff</th>
                       <th className="px-3 py-2 font-semibold">Matchup</th>
                       <th className="px-3 py-2 text-right font-semibold">Swing (home)</th>
-                      <th className="px-3 py-2 text-right font-semibold">Swing (away)</th>
+                      <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Swing (away)</th>
                       <th className="px-3 py-2 font-semibold">Our pick</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {leverageGames.map((e) => <LeverageRow key={e.event_id} e={e} />)}
+                    {leverageGames.map((e) => (
+                      <tr key={e.event_id} className="border-t" style={BORD}>
+                        <td className="px-3 py-2 whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</td>
+                        <td className="px-3 py-2 font-semibold whitespace-nowrap">
+                          {e.away} <span style={{ color: "var(--text-dim)" }}>{e.neutral ? "vs" : "at"}</span> {e.home}
+                        </td>
+                        <td className="px-3 py-2 text-right" style={MONO}>{pct(e.leverage.home)}</td>
+                        <td className={`px-3 py-2 text-right ${SMCOL}`} style={MONO}>{pct(e.leverage.away)}</td>
+                        <td className="px-3 py-2 font-semibold" style={{ color: "var(--accent)" }}>{PICK_LABEL(e)}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
-              </div>
-              <div className="sm:hidden rounded-xl border divide-y" style={BORD}>
-                <CappedList
-                  items={leverageGames.map((e) => <LeverageCard key={e.event_id} e={e} />)}
-                  initial={12}
-                  noun="games"
-                />
-              </div>
+              </ResponsiveTable>
             </section>
           )}
 
           {/* Bubble watch */}
           {bubbleRows.length > 0 && (
-            <section className="mb-10">
+            <section id="bubble" className="mb-10">
               <h2 className="text-2xl font-bold mb-1">Bubble watch</h2>
               <p className="text-sm text-[var(--text-muted)] mb-4">
-                Teams most often sitting on the last at-large line - the twelfth team in, or the first team
-                out - across the simulation.
+                Teams most often on the last at-large line: the twelfth team in, or the first team out.
               </p>
-              <div className="overflow-x-auto rounded-xl border" style={BORD}>
+              <ResponsiveTable
+                variant="list"
+                mobileNoun="teams"
+                className="rounded-xl border"
+                style={BORD}
+                mobileRows={bubbleRows.map((r) => (
+                  <TeamOddsRow
+                    key={r.espn_id}
+                    name={mobileName(r, href(r.slug))}
+                    band={r.band ? <Band band={r.band} /> : null}
+                    right={pct(r.p_bubble)}
+                    metricLabel="bubble"
+                    rightSub={`playoff ${pct(r.p_playoff)}`}
+                  />
+                ))}
+              >
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -581,12 +684,12 @@ export default async function CfbPredictionsPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </ResponsiveTable>
             </section>
           )}
 
           {/* Tracking */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          <section id="record" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
             <h2 className="text-2xl font-bold mb-1">How the model is doing</h2>
             {rec && rec.graded > 0 ? (
               <>
@@ -608,7 +711,24 @@ export default async function CfbPredictionsPage() {
                   </div>
                 </div>
                 {graded.length > 0 && (
-                  <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+                  <ResponsiveTable
+                    variant="list"
+                    mobileNoun="games"
+                    className="rounded-xl border"
+                    style={BORD}
+                    mobileRows={graded.map((e) => (
+                      <FixtureRow
+                        key={e.event_id}
+                        team1={e.away}
+                        sep={e.neutral ? "vs" : "at"}
+                        team2={e.home}
+                        kickoff={<>Pick: {PICK_LABEL(e)} · Brier {e.model_brier?.toFixed(3) ?? "—"}</>}
+                        graded
+                        score={<>{e.result === "H" ? e.home : e.away}{e.score ? ` ${e.score}` : ""}</>}
+                        correct={!!e.pick_correct}
+                      />
+                    ))}
+                  >
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -616,7 +736,7 @@ export default async function CfbPredictionsPage() {
                           <th className="px-3 py-2 font-semibold">Game</th>
                           <th className="px-3 py-2 font-semibold">Our pick</th>
                           <th className="px-3 py-2 font-semibold">Result</th>
-                          <th className="px-3 py-2 text-right font-semibold">Brier</th>
+                          <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Brier</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -630,12 +750,12 @@ export default async function CfbPredictionsPage() {
                             <td className="px-3 py-2 whitespace-nowrap" style={MONO}>
                               {e.result === "H" ? e.home : e.away}{e.score ? ` ${e.score}` : ""}
                             </td>
-                            <td className="px-3 py-2 text-right" style={MONO}>{e.model_brier?.toFixed(3) ?? "—"}</td>
+                            <td className={`px-3 py-2 text-right ${SMCOL}`} style={MONO}>{e.model_brier?.toFixed(3) ?? "—"}</td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
-                  </div>
+                  </ResponsiveTable>
                 )}
               </>
             ) : (
@@ -648,7 +768,7 @@ export default async function CfbPredictionsPage() {
           </section>
 
           {/* Conference tables */}
-          <section className="mb-10">
+          <section id="conferences" className="mb-10">
             <h2 className="text-2xl font-bold mb-1">Every team, every outcome</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Expected regular-season wins and the odds of each landing spot, conference by conference.
@@ -697,7 +817,7 @@ export default async function CfbPredictionsPage() {
                 ))}
               </div>
             )}
-            <p className="text-xs text-[var(--text-muted)] mt-4">
+            <p className="text-[13px] text-[var(--text-muted)] mt-4">
               Get the data:{" "}
               <Link href="/predictions/cfb/table.csv" className="hover:underline">season table as CSV</Link>
               {" · "}
@@ -708,7 +828,7 @@ export default async function CfbPredictionsPage() {
           </section>
 
           {/* Citizen of Nowhere Picks */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          <section id="picks" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
             <h2 className="text-2xl font-bold mb-2"><span aria-hidden>&#127919;</span> Citizen of Nowhere Picks</h2>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
               Call every game of the week blind, rank your confidence, and take a side on the Upset Radar -
@@ -717,52 +837,61 @@ export default async function CfbPredictionsPage() {
             </p>
             <Link
               href="/play/picks"
-              className="inline-flex items-center gap-1.5 rounded-lg font-semibold text-sm px-4 py-2"
+              className="inline-flex items-center min-h-11 gap-1.5 rounded-lg font-semibold text-sm px-4 py-2"
               style={{ backgroundColor: "var(--accent)", color: "#08080D" }}
             >
               Play Citizen of Nowhere Picks <span aria-hidden>&rarr;</span>
             </Link>
           </section>
 
-          {/* Method */}
+          {/* Sources + method */}
           {meta && (
-            <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
-              <h2 className="text-lg font-bold mb-2">How the model works</h2>
-              <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl">
-                Each team&apos;s rating starts from its opponent-adjusted scoring margin over the last three
-                seasons ({meta.strength_seasons.join(", ")}), margins capped, home advantage removed and FCS
-                opponents pooled, then regressed toward the mean (&times;{meta.regress}). On top of the stats
-                sit two anchors, each mapped onto the points scale through the model&apos;s own
-                rating-to-title-odds curve: the national-championship futures market (weight
-                {" "}{meta.market_weight}) and the AP poll&apos;s vote shares (weight {meta.poll_weight}) -
-                college rosters churn through the portal, so the poll and the market carry roster news that
-                three seasons of margins cannot see. Both anchors fade as real 2026 results fold in. Every
-                remaining game on the actual schedule is simulated as a point-spread probability (home
-                advantage {meta.hfa} points, margin sd {meta.sigma_game}), each simulated season drawing every
-                team&apos;s rating from a distribution (&sigma; {meta.sigma_season} points). Conference
-                standings, all ten title games and the twelve-team playoff play out inside every simulation
-                under the 2026 format: five highest-ranked champions in, seven at-large, straight seeding,
-                byes to the top four. Two stated approximations: conference tie-breaks are record then
-                head-to-head, not each league&apos;s full ladder; and the selection committee is modeled as
-                rating plus record - a proxy, because the committee is not a formula. Weekly picks cover AP
-                Top 25 games only, blend the model with the posted line 50/50, and are graded above.
+            <SourcesCard>
+              <p>
+                Ratings start from three seasons of opponent-adjusted FBS scoring margin ({meta.strength_seasons.join(", ")}),
+                anchored to the national-championship futures market and the AP poll, then replayed forward against
+                the real remaining 2026 schedule. Last generated {meta.generated_at}
+                {meta.games_played > 0 ? `, after ${meta.games_played} games played` : " (preseason)"}. Weekly
+                picks cover AP Top 25 games, blend the model 50/50 with the posted line, and are graded against
+                final scores above; the Brier scores on this page use that same graded record.
               </p>
-              {meta.model === "points-v3" && (
-                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mt-3">
-                  Three tiers of this model run side by side: a stats-only &quot;lite&quot; rating, a
-                  &quot;classic&quot; build that adds the title market, and the full &quot;deluxe&quot; build
-                  that also folds in the AP poll - deluxe is the production tier shown by default above.
-                  Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
-                  from narrows week by week as fewer games remain, and widens back out for a team the stats
-                  and the market disagree about most. Each simulated season also draws one correlated error
-                  for the whole sport, one for each conference, and one for each team, rather than treating
-                  every game as its own coin flip - real seasons run hot or cold together, not independently.
-                  Every tier reuses the same random draws for the same simulated season, so a change from one
-                  build to the next reflects an actual change in the inputs rather than noise in which season
-                  got drawn.
+              <Disclosure title="How the model works" desktopOpen bodyClassName="p-4 sm:p-5" className="mt-1">
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed">
+                  Each team&apos;s rating starts from its opponent-adjusted scoring margin over the last three
+                  seasons ({meta.strength_seasons.join(", ")}), margins capped, home advantage removed and FCS
+                  opponents pooled, then regressed toward the mean (&times;{meta.regress}). On top of the stats
+                  sit two anchors, each mapped onto the points scale through the model&apos;s own
+                  rating-to-title-odds curve: the national-championship futures market (weight
+                  {" "}{meta.market_weight}) and the AP poll&apos;s vote shares (weight {meta.poll_weight}) -
+                  college rosters churn through the portal, so the poll and the market carry roster news that
+                  three seasons of margins cannot see. Both anchors fade as real 2026 results fold in. Every
+                  remaining game on the actual schedule is simulated as a point-spread probability (home
+                  advantage {meta.hfa} points, margin sd {meta.sigma_game}), each simulated season drawing every
+                  team&apos;s rating from a distribution (&sigma; {meta.sigma_season} points). Conference
+                  standings, all ten title games and the twelve-team playoff play out inside every simulation
+                  under the 2026 format: five highest-ranked champions in, seven at-large, straight seeding,
+                  byes to the top four. Two stated approximations: conference tie-breaks are record then
+                  head-to-head, not each league&apos;s full ladder; and the selection committee is modeled as
+                  rating plus record - a proxy, because the committee is not a formula. Weekly picks cover AP
+                  Top 25 games only, blend the model with the posted line 50/50, and are graded above.
                 </p>
-              )}
-            </section>
+                {meta.model === "points-v3" && (
+                  <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed mt-3">
+                    Three tiers of this model run side by side: a stats-only &quot;lite&quot; rating, a
+                    &quot;classic&quot; build that adds the title market, and the full &quot;deluxe&quot; build
+                    that also folds in the AP poll - deluxe is the production tier shown by default above.
+                    Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
+                    from narrows week by week as fewer games remain, and widens back out for a team the stats
+                    and the market disagree about most. Each simulated season also draws one correlated error
+                    for the whole sport, one for each conference, and one for each team, rather than treating
+                    every game as its own coin flip - real seasons run hot or cold together, not independently.
+                    Every tier reuses the same random draws for the same simulated season, so a change from one
+                    build to the next reflects an actual change in the inputs rather than noise in which season
+                    got drawn.
+                  </p>
+                )}
+              </Disclosure>
+            </SourcesCard>
           )}
         </>
       )}

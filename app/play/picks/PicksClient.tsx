@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getSupabase } from "@/lib/supabaseClient";
+import { PredCrumbs, PredHeader, SourcesCard } from "@/app/predictions/_shared/ui";
+import PredictionsNav from "@/app/predictions/_shared/PredictionsNav";
 import {
   RADAR_POINTS,
   SERIES_POINTS,
@@ -376,28 +378,21 @@ export default function PicksClient() {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>
-        {" / "}
-        <Link href="/play" className="hover:underline">Play</Link>
-        {" / "}
-        <Link href="/play/arcade" className="hover:underline">Games</Link>
-        {" / "}
-        <span>Citizen of Nowhere Picks</span>
-      </nav>
-
-      <header className="mb-6">
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">{"\u{1F3AF}"} Citizen of Nowhere Picks</h1>
-        <p className="mt-2 text-[15px] text-[var(--text-muted)] max-w-3xl">
-          Call every game before the model&rsquo;s card is revealed. Score points, build a streak, beat the machine.
-          The model&rsquo;s own picks come from the{" "}
-          <Link href="/predictions" className="underline hover:text-[var(--accent)]">prediction hubs</Link>{" "}
-          and are graded by the same rules.
-        </p>
-        <div className="mt-2 text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
-          model card {genAt} · picks lock at kickoff · graded from the prediction ledger
-        </div>
-      </header>
+      <PredCrumbs tab="Picks" root={{ label: "Play", href: "/play" }} />
+      <PredHeader
+        emoji="🎯"
+        title="Citizen of Nowhere Picks"
+        sub={
+          <>
+            Call every game before the model&rsquo;s card is revealed. Score points, build a streak, beat the machine.
+            The model&rsquo;s own picks come from the{" "}
+            <Link href="/predictions" className="underline hover:text-[var(--accent)]">prediction hubs</Link>{" "}
+            and are graded by the same rules.
+          </>
+        }
+        stamp={`model card ${genAt} · picks lock at kickoff · graded from the prediction ledger`}
+      />
+      <PredictionsNav />
 
       <div className="flex gap-2 flex-wrap mb-5">
         {(
@@ -412,7 +407,7 @@ export default function PicksClient() {
             key={id}
             type="button"
             onClick={() => setTab(id)}
-            className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${tab === id ? "font-semibold" : "text-[var(--text-muted)] hover:border-[var(--accent-dim)]"}`}
+            className={`min-h-11 rounded-full border px-4 py-1.5 text-sm transition-colors ${tab === id ? "font-semibold" : "text-[var(--text-muted)] hover:border-[var(--accent-dim)]"}`}
             style={tab === id ? { background: "var(--accent)", color: "#08080D", borderColor: "var(--accent)" } : CARD}
           >
             {label}
@@ -429,17 +424,17 @@ export default function PicksClient() {
               key={lg}
               type="button"
               onClick={() => setLeague(lg)}
-              className={`rounded-lg border px-3 py-1.5 text-sm text-left transition-colors ${league === lg ? "border-[var(--accent)] text-[var(--accent)] font-semibold" : "hover:border-[var(--accent-dim)]"}`}
+              className={`min-h-11 rounded-lg border px-3 py-1.5 text-sm text-left transition-colors ${league === lg ? "border-[var(--accent)] text-[var(--accent)] font-semibold" : "hover:border-[var(--accent-dim)]"}`}
               style={{ background: "var(--bg-card)", borderColor: league === lg ? undefined : "var(--border)" }}
             >
               {LEAGUE_META[lg].emoji} {LEAGUE_META[lg].label}
-              <span className="block text-[10.5px] font-normal text-[var(--text-dim)]">{LEAGUE_META[lg].note}</span>
+              <span className="block text-[12px] uppercase tracking-wide font-normal" style={{ ...MONO, color: "var(--text-dim)" }}>{LEAGUE_META[lg].note}</span>
             </button>
           ))}
           {COMING.filter((c) => !(mlbLive && c.label.startsWith("MLB"))).map((c) => (
-            <span key={c.label} className="rounded-lg border px-3 py-1.5 text-sm opacity-45 cursor-not-allowed" style={CARD}>
+            <span key={c.label} className="min-h-11 inline-flex flex-col justify-center rounded-lg border px-3 py-1.5 text-sm opacity-45 cursor-not-allowed" style={CARD}>
               {c.emoji} {c.label}
-              <span className="block text-[10.5px] text-[var(--text-dim)]">{c.note}</span>
+              <span className="block text-[12px] uppercase tracking-wide" style={{ ...MONO, color: "var(--text-dim)" }}>{c.note}</span>
             </span>
           ))}
         </div>
@@ -505,26 +500,33 @@ export default function PicksClient() {
         />
       )}
 
-      <div className="rounded-2xl border p-5 mt-10 text-[13.5px] text-[var(--text-muted)]" style={CARD}>
-        <h3 className="text-sm font-semibold text-[var(--text)] mb-2">How this game works</h3>
-        <p className="mb-2">
-          <b>The Slate</b> pays {SLATE_POINTS} points per correct call — Premier League games are three-way (home, draw, away)
-          and a correct draw call scores exactly like a correct win call; NFL and College Football games are two-way, and a tie grades nobody correct. The College Football slate covers AP Top 25 games only, published fresh after each week's poll.
-          Picks are blind: the model&rsquo;s probabilities reveal after you commit. <b>Confidence</b> ranks your slate — the slot
-          value is a bonus on top of the base points when that pick lands. <b>Upset Radar</b> lists the games where our model and
-          the betting market disagree most; side with either for +{RADAR_POINTS} when it grades closer to the result (lower Brier,
-          the same metric the prediction hubs publish). In October, <b>MLB series picks</b> lock the winner of each playoff
-          series before Game 1 for +{SERIES_POINTS}, while the games themselves run as an ordinary daily slate.
-        </p>
-        <p className="mb-2">
-          Games lock at kickoff — or at 00:00 UTC on match day when the ledger carries no kickoff time. Signed out, picks live only in this browser. Sign in with Google (the same
-          account that syncs your <Link href="/me" className="underline">follows</Link>) to join the global leaderboard — picks
-          made in this browser merge into your account, and only picks stamped before a game locks can score.
-        </p>
-        <p>
-          Results and grading come from the daily predictions ledger — the model never re-picks, and neither can you. Full
-          methodology on the <Link href="/predictions" className="underline">prediction hubs</Link>.
-        </p>
+      <div className="mt-10">
+        <SourcesCard title="How this game works">
+          <p>
+            <b>The Slate</b> pays {SLATE_POINTS} points per correct call: Premier League games are three-way (home, draw, away)
+            and a correct draw call scores exactly like a correct win call; NFL and College Football games are two-way, and a tie grades nobody correct. The College Football slate covers AP Top 25 games only, published fresh after each week's poll.
+            Picks are blind: the model&rsquo;s probabilities reveal after you commit. <b>Confidence</b> ranks your slate. The slot
+            value is a bonus on top of the base points when that pick lands. <b>Upset Radar</b> lists the games where our model and
+            the betting market disagree most; side with either for +{RADAR_POINTS} when it grades closer to the result (lower Brier,
+            the same metric the prediction hubs publish). In October, <b>MLB series picks</b> lock the winner of each playoff
+            series before Game 1 for +{SERIES_POINTS}, while the games themselves run as an ordinary daily slate.
+          </p>
+          <p>
+            Games lock at kickoff, or at 00:00 UTC on match day when the ledger carries no kickoff time. Signed out, picks live only in this browser. Sign in with Google (the same
+            account that syncs your <Link href="/me" className="underline">follows</Link>) to join the global leaderboard: picks
+            made in this browser merge into your account, and only picks stamped before a game locks can score.
+          </p>
+          <p>
+            Results and grading come from the daily predictions ledger: the model never re-picks, and neither can you.
+          </p>
+          <Link
+            href="/predictions"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-lg border font-semibold text-[13px] px-4 py-2 hover:border-[var(--accent)] transition-colors"
+            style={{ borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            Full methodology on the prediction hubs <span aria-hidden>&rarr;</span>
+          </Link>
+        </SourcesCard>
       </div>
     </main>
   );
@@ -575,7 +577,7 @@ function SlateTab({
           ways === 3 ? [["H", e.home], ["D", "Draw"], ["A", e.away]] : [["A", e.away], ["H", e.home]];
         return (
           <div key={eventKey(league, e)}>
-            {head && <div className="text-[11px] uppercase tracking-wider text-[var(--text-dim)] mt-5 mb-2">{head}</div>}
+            {head && <div className="text-[12px] uppercase tracking-wider mt-5 mb-2" style={{ ...MONO, color: "var(--text-dim)" }}>{head}</div>}
             <div
               className="rounded-xl border p-4 mb-2"
               style={{ ...CARD, borderColor: graded && my ? (won ? "#10b981" : "#E2628B") : "var(--border)" }}
@@ -584,15 +586,15 @@ function SlateTab({
                 <div className="font-semibold text-[14.5px] min-w-0">
                   {league !== "pl" ? (
                     <>
-                      {e.ap?.away ? <span className="text-[11px] text-[var(--text-dim)]" style={MONO}>#{e.ap.away} </span> : null}{e.away}{" "}
-                      <span className="font-normal text-[12.5px] text-[var(--text-dim)]">{e.neutral ? "vs" : "at"}</span>{" "}
-                      {e.ap?.home ? <span className="text-[11px] text-[var(--text-dim)]" style={MONO}>#{e.ap.home} </span> : null}{e.home}
+                      {e.ap?.away ? <span className="text-[13px] text-[var(--text-dim)]" style={MONO}>#{e.ap.away} </span> : null}{e.away}{" "}
+                      <span className="font-normal text-[13px] text-[var(--text-dim)]">{e.neutral ? "vs" : "at"}</span>{" "}
+                      {e.ap?.home ? <span className="text-[13px] text-[var(--text-dim)]" style={MONO}>#{e.ap.home} </span> : null}{e.home}
                     </>
                   ) : (
-                    <>{e.home} <span className="font-normal text-[12.5px] text-[var(--text-dim)]">v</span> {e.away}</>
+                    <>{e.home} <span className="font-normal text-[13px] text-[var(--text-dim)]">v</span> {e.away}</>
                   )}
                 </div>
-                <div className="text-[11px] text-[var(--text-dim)]">{locked ? (graded ? `FT ${e.score ?? ""}` : "\u{1F512} Locked") : "Open"}</div>
+                <div className="text-[13px] text-[var(--text-dim)]">{locked ? (graded ? `FT ${e.score ?? ""}` : "\u{1F512} Locked") : "Open"}</div>
               </div>
 
               {!locked && (
@@ -614,7 +616,7 @@ function SlateTab({
                         if (my?.pick === code) removePick(base);
                         else upsertPick(base);
                       }}
-                      className={`flex-1 min-w-[72px] rounded-lg border px-2 py-2 text-[13px] text-center transition-colors ${my?.pick === code ? "font-bold" : "hover:border-[var(--accent-dim)]"}`}
+                      className={`flex-1 min-w-[72px] min-h-11 rounded-lg border px-2 py-2 text-[13px] text-center transition-colors ${my?.pick === code ? "font-bold" : "hover:border-[var(--accent-dim)]"}`}
                       style={my?.pick === code ? { background: "var(--accent)", color: "#08080D", borderColor: "var(--accent)" } : { background: "var(--bg)", borderColor: "var(--border)" }}
                     >
                       {label}
@@ -624,14 +626,14 @@ function SlateTab({
               )}
 
               {(my || locked) && (
-                <div className="mt-2.5 pt-2 border-t border-dashed text-[12.5px]" style={{ borderColor: "var(--border)" }}>
+                <div className="mt-2.5 pt-2 border-t border-dashed text-[13px]" style={{ borderColor: "var(--border)" }}>
                   <ProbBar league={league} e={e} />
                   <div className="mt-1.5">
                     Model&rsquo;s call: <b>{modelPickLabel(league, e)}</b>
                     {my && (
                       my.pick === e.pick
-                        ? <span className="text-[#10b981]"> — you agree</span>
-                        : <span className="text-[var(--text-muted)]"> — you&rsquo;re fading the model{my.pick !== "H" && my.pick !== "A" ? " with the draw" : ""}</span>
+                        ? <span className="text-[#10b981]">: you agree</span>
+                        : <span className="text-[var(--text-muted)]">: you&rsquo;re fading the model{my.pick !== "H" && my.pick !== "A" ? " with the draw" : ""}</span>
                     )}
                   </div>
                   {graded && (
@@ -663,7 +665,7 @@ function ProbBar({ league, e }: { league: PicksLeague; e: LedgerEntry }) {
           <i style={{ width: `${pD * 100}%`, background: "var(--text-dim)" }} />
           <i style={{ width: `${pA * 100}%`, background: "#7a8fd4" }} />
         </div>
-        <div className="flex justify-between text-[10.5px] text-[var(--text-muted)] mt-0.5">
+        <div className="flex justify-between text-[13px] text-[var(--text-muted)] mt-0.5">
           <span>{e.home} {pct(pH)}</span><span>Draw {pct(pD)}</span><span>{e.away} {pct(pA)}</span>
         </div>
       </>
@@ -676,7 +678,7 @@ function ProbBar({ league, e }: { league: PicksLeague; e: LedgerEntry }) {
         <i style={{ width: `${pH * 100}%`, background: "var(--accent)" }} />
         <i style={{ width: `${(1 - pH) * 100}%`, background: "#7a8fd4" }} />
       </div>
-      <div className="flex justify-between text-[10.5px] text-[var(--text-muted)] mt-0.5">
+      <div className="flex justify-between text-[13px] text-[var(--text-muted)] mt-0.5">
         <span>{e.home} {pct(pH)}</span>
         {e.market && <span className="text-[var(--text-dim)]">market {pct(e.market.pH)}</span>}
         <span>{e.away} {pct(1 - pH)}</span>
@@ -724,7 +726,7 @@ function ConfidenceTab({
   if (!picked.length) {
     return (
       <div className="rounded-xl border border-dashed p-6 text-sm text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-        Make your picks on The Slate first — then come back and rank them by confidence.
+        Make your picks on The Slate first, then come back and rank them by confidence.
       </div>
     );
   }
@@ -744,7 +746,7 @@ function ConfidenceTab({
     <>
       <p className="text-[13px] text-[var(--text-muted)] mb-3 max-w-3xl">
         Your surest call sits on top and its slot value pays as a bonus when the pick lands. Slots default to the
-        model&rsquo;s confidence in <i>your</i> picks — reordering them to your own read is where the skill lives.
+        model&rsquo;s confidence in <i>your</i> picks: reordering them to your own read is where the skill lives.
         Max bonus this slate: <b className="text-[var(--text)]">{maxHaul}</b>.
       </p>
       {ordered.map((e, i) => {
@@ -761,18 +763,18 @@ function ConfidenceTab({
             <div className="w-9 text-center text-lg font-extrabold text-[var(--accent)]" style={MONO}>{p.confidence ?? "–"}</div>
             <div className="flex-1 min-w-0 text-[13.5px]">
               <b>{pickLab}</b>{" "}
-              <span className="text-[11.5px] text-[var(--text-dim)]">
+              <span className="text-[13px] text-[var(--text-dim)]">
                 ({league !== "pl" ? `${e.away} ${e.neutral ? "vs" : "at"} ${e.home}` : `${e.home} v ${e.away}`} · model gives your pick {pct(pickProb(league, e, p.pick as PickCode))})
               </span>
               {graded && (
-                <div className="text-[11.5px] text-[var(--text-dim)]">
+                <div className="text-[13px] text-[var(--text-dim)]">
                   {won ? <span className="text-[#10b981]">landed: +{p.confidence}</span> : "missed: 0"}
                 </div>
               )}
             </div>
             <div className="flex flex-col gap-1">
-              <button type="button" aria-label="More confident" onClick={() => move(i, -1)} className="rounded border w-7 h-6 text-[11px] text-[var(--text-muted)] hover:text-[var(--accent)]" style={{ borderColor: "var(--border)", background: "var(--bg)" }}>▲</button>
-              <button type="button" aria-label="Less confident" onClick={() => move(i, 1)} className="rounded border w-7 h-6 text-[11px] text-[var(--text-muted)] hover:text-[var(--accent)]" style={{ borderColor: "var(--border)", background: "var(--bg)" }}>▼</button>
+              <button type="button" aria-label="More confident" onClick={() => move(i, -1)} className="rounded border min-h-11 min-w-11 flex items-center justify-center text-[13px] text-[var(--text-muted)] hover:text-[var(--accent)]" style={{ borderColor: "var(--border)", background: "var(--bg)" }}>▲</button>
+              <button type="button" aria-label="Less confident" onClick={() => move(i, 1)} className="rounded border min-h-11 min-w-11 flex items-center justify-center text-[13px] text-[var(--text-muted)] hover:text-[var(--accent)]" style={{ borderColor: "var(--border)", background: "var(--bg)" }}>▼</button>
             </div>
           </div>
         );
@@ -783,7 +785,7 @@ function ConfidenceTab({
         return (
           <div key={eventKey(league, e)} className="flex items-center gap-3 rounded-xl border px-3 py-2.5 mb-1.5 opacity-70" style={CARD}>
             <div className="w-9 text-center text-lg font-extrabold text-[var(--text-dim)]" style={MONO}>{p.confidence ?? "–"}</div>
-            <div className="flex-1 min-w-0 text-[13.5px]"><b>{pickLab}</b> <span className="text-[11.5px] text-[var(--text-dim)]">{"\u{1F512}"} locked</span></div>
+            <div className="flex-1 min-w-0 text-[13.5px]"><b>{pickLab}</b> <span className="text-[13px] text-[var(--text-dim)]">{"\u{1F512}"} locked</span></div>
           </div>
         );
       })}
@@ -809,7 +811,7 @@ function RadarTab({
   if (!games.length) {
     return (
       <div className="rounded-xl border border-dashed p-6 text-sm text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-        Upset Radar needs posted market odds — it lights up as soon as a ledger carries them (NFL and
+        Upset Radar needs posted market odds: it lights up as soon as a ledger carries them (NFL and
         College Football first; Premier League follows when football-data posts matchweek odds).
       </div>
     );
@@ -818,7 +820,7 @@ function RadarTab({
     <>
       <p className="text-[13px] text-[var(--text-muted)] mb-3 max-w-3xl">
         Only this site can run this game: we publish both our model&rsquo;s probability and the betting market&rsquo;s.
-        These are the {games.length} biggest disagreements of the week. Side with a source — when the game grades,
+        These are the {games.length} biggest disagreements of the week. Side with a source: when the game grades,
         the one that was closer to the truth (lower Brier) wins, and siding with it pays <b className="text-[var(--text)]">+{RADAR_POINTS}</b>.
       </p>
       {games.map(({ league, e }) => {
@@ -838,15 +840,15 @@ function RadarTab({
           >
             <div className="flex items-center justify-between gap-2 flex-wrap">
               <div className="font-semibold text-[14.5px]">
-                <span className="mr-1.5 align-middle text-[10.5px] rounded-full border px-2 py-0.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>
+                <span className="mr-1.5 align-middle text-[12px] uppercase rounded-full border px-2 py-0.5" style={{ ...MONO, borderColor: "var(--border)", color: "var(--text-muted)" }}>
                   {LEAGUE_META[league].emoji} {league === "cfb" ? "CFB" : league.toUpperCase()}
                 </span>
-                {e.ap?.away ? `#${e.ap.away} ` : ""}{e.away} <span className="font-normal text-[12.5px] text-[var(--text-dim)]">{e.neutral ? "vs" : "at"}</span> {e.ap?.home ? `#${e.ap.home} ` : ""}{e.home}
-                <span className="ml-2 align-middle text-[10.5px] rounded-full border px-2 py-0.5 text-[#E3C86B]" style={{ borderColor: "#E3C86B" }}>
+                {e.ap?.away ? `#${e.ap.away} ` : ""}{e.away} <span className="font-normal text-[13px] text-[var(--text-dim)]">{e.neutral ? "vs" : "at"}</span> {e.ap?.home ? `#${e.ap.home} ` : ""}{e.home}
+                <span className="ml-2 align-middle text-[12px] rounded-full border px-2 py-0.5" style={{ ...MONO, borderColor: "#E3C86B", color: "#E3C86B" }}>
                   Δ {(e.gap * 100).toFixed(1)} pts
                 </span>
               </div>
-              <div className="text-[11px] text-[var(--text-dim)]">{fmtDate(e.date)}{locked && !verdict ? " · \u{1F512}" : ""}</div>
+              <div className="text-[13px] text-[var(--text-dim)]">{fmtDate(e.date)}{locked && !verdict ? " · \u{1F512}" : ""}</div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2.5">
               {sides.map(({ side, who, p }) => (
@@ -867,21 +869,21 @@ function RadarTab({
                     if (my?.pick === side) removePick(base);
                     else upsertPick(base);
                   }}
-                  className={`rounded-lg border px-3 py-2.5 text-center transition-colors ${my?.pick === side ? "border-[var(--accent)]" : locked ? "opacity-60" : "hover:border-[var(--accent-dim)]"}`}
+                  className={`min-h-11 rounded-lg border px-3 py-2.5 text-center transition-colors ${my?.pick === side ? "border-[var(--accent)]" : locked ? "opacity-60" : "hover:border-[var(--accent-dim)]"}`}
                   style={{ background: my?.pick === side ? "rgba(78,205,196,.08)" : "var(--bg)", borderColor: my?.pick === side ? undefined : "var(--border)" }}
                 >
-                  <div className="text-[10.5px] uppercase tracking-wider text-[var(--text-muted)]">{who}</div>
+                  <div className="text-[12px] uppercase tracking-wider" style={{ ...MONO, color: "var(--text-muted)" }}>{who}</div>
                   <div className="text-[17px] font-extrabold" style={MONO}>{p >= 0.5 ? e.home : e.away} {pct(p >= 0.5 ? p : 1 - p)}</div>
                 </button>
               ))}
             </div>
             {verdict && (
-              <div className="mt-2 text-[12.5px]">
+              <div className="mt-2 text-[13px]">
                 FT {e.score}. Closer source: <b>{verdict === "push" ? "dead heat" : verdict === "model" ? "our model" : "the market"}</b>
                 {my && verdict !== "push" && (
                   my.pick === verdict
-                    ? <span className="text-[#10b981]"> — you sided right, +{RADAR_POINTS}</span>
-                    : <span className="text-[#E2628B]"> — wrong side, 0</span>
+                    ? <span className="text-[#10b981]">: you sided right, +{RADAR_POINTS}</span>
+                    : <span className="text-[#E2628B]">: wrong side, 0</span>
                 )}
               </div>
             )}
@@ -946,7 +948,7 @@ function SeasonTab({
     <>
       <div className="flex items-center justify-between gap-3 rounded-xl border px-4 py-3 mb-5 flex-wrap" style={CARD}>
         {!authEnabled ? (
-          <div className="text-[13px] text-[var(--text-muted)]">Sign-in is unavailable right now — picks stay in this browser.</div>
+          <div className="text-[13px] text-[var(--text-muted)]">Sign-in is unavailable right now. Picks stay in this browser.</div>
         ) : user ? (
           <>
             <div className="flex items-center gap-3 min-w-0">
@@ -956,22 +958,22 @@ function SeasonTab({
               )}
               <div className="min-w-0">
                 <div className="text-[13px] font-medium truncate">{user.name}</div>
-                <div className="text-[11px] text-[var(--text-muted)]">Picks synced to your account and counted on the leaderboard</div>
+                <div className="text-[13px] text-[var(--text-muted)]">Picks synced to your account and counted on the leaderboard</div>
               </div>
             </div>
-            <button type="button" onClick={signOut} className="shrink-0 text-[12px] rounded-full border px-3 py-1.5 hover:border-[var(--accent)] transition-colors" style={{ borderColor: "var(--border)" }}>
+            <button type="button" onClick={signOut} className="shrink-0 min-h-11 text-[13px] rounded-full border px-3 py-1.5 hover:border-[var(--accent)] transition-colors" style={{ borderColor: "var(--border)" }}>
               Sign out
             </button>
           </>
         ) : (
           <>
             <div className="text-[13px] text-[var(--text-muted)]">
-              {ready ? "Signed out — picks live only in this browser. Sign in before games lock to count on the leaderboard." : " "}
+              {ready ? "Signed out. Picks live only in this browser. Sign in before games lock to count on the leaderboard." : " "}
             </div>
             <button
               type="button"
               onClick={signIn}
-              className="shrink-0 inline-flex items-center gap-2 rounded-full font-medium text-[13px] px-4 py-2 transition-opacity hover:opacity-90"
+              className="shrink-0 min-h-11 inline-flex items-center gap-2 rounded-full font-medium text-[13px] px-4 py-2 transition-opacity hover:opacity-90"
               style={{ background: "var(--accent)", color: "#08080D" }}
             >
               <span aria-hidden>G</span> Sign in with Google
@@ -991,7 +993,7 @@ function SeasonTab({
         <Stat v={yourBrier.brier != null ? yourBrier.brier.toFixed(3) : "–"} k="Your NFL Brier" />
       </div>
 
-      <div className="rounded-xl border px-4 py-3 mb-6 text-[12.5px] text-[var(--text-muted)]" style={CARD}>
+      <div className="rounded-xl border px-4 py-3 mb-6 text-[13px] text-[var(--text-muted)]" style={CARD}>
         <b className="text-[var(--text)]">The Brier axis.</b>{" "}
         {yourBrier.brier != null ? (
           <>
@@ -1005,13 +1007,13 @@ function SeasonTab({
           <>Once your NFL picks grade, your Brier lands here beside the model&rsquo;s and the market&rsquo;s.</>
         )}{" "}
         The same measure scores every NFL season back to 1920 on the{" "}
-        <Link href="/sports/expectation" className="underline hover:text-[var(--accent)]">expectation board</Link> — one
+        <Link href="/sports/expectation" className="underline hover:text-[var(--accent)]">expectation board</Link>: one
         axis from 1958 to your weekend.
       </div>
 
       <h2 className="text-xl font-bold mb-1">Leaderboard</h2>
-      <p className="text-[12.5px] text-[var(--text-muted)] mb-3">
-        Global board, graded from everyone&rsquo;s pre-lock picks. The Model plays as the house entry — there is always
+      <p className="text-[13px] text-[var(--text-muted)] mb-3">
+        Global board, graded from everyone&rsquo;s pre-lock picks. The Model plays as the house entry: there is always
         someone to beat.
       </p>
       {!authEnabled || !lb ? (
@@ -1022,7 +1024,7 @@ function SeasonTab({
         <div className="overflow-x-auto">
           <table className="w-full text-[13.5px]" data-sticky-col="2">
             <thead>
-              <tr className="text-left text-[10.5px] uppercase tracking-wider text-[var(--text-dim)]">
+              <tr className="text-left text-[12px] uppercase tracking-wider" style={{ ...MONO, color: "var(--text-dim)" }}>
                 <th className="py-2 px-2 border-b" style={{ borderColor: "var(--border)" }}>#</th>
                 <th className="py-2 px-2 border-b" style={{ borderColor: "var(--border)" }}>Player</th>
                 <th className="py-2 px-2 border-b" style={{ borderColor: "var(--border)" }}>Pts</th>
@@ -1063,7 +1065,7 @@ function Stat({ v, k }: { v: string; k: string }) {
   return (
     <div className="rounded-xl border px-3 py-2.5" style={CARD}>
       <div className="text-[20px] font-extrabold" style={MONO}>{v}</div>
-      <div className="text-[10.5px] uppercase tracking-wider text-[var(--text-muted)]">{k}</div>
+      <div className="text-[12px] uppercase tracking-wider" style={{ ...MONO, color: "var(--text-muted)" }}>{k}</div>
     </div>
   );
 }
@@ -1107,8 +1109,8 @@ function SeriesBlock({
   return (
     <section className="mb-6">
       <h2 className="text-lg font-bold mb-1">{"\u{26BE}"} Series winners · +{SERIES_POINTS} each</h2>
-      <p className="text-[12.5px] text-[var(--text-muted)] mb-3">
-        Call each series before Game 1 — the pick locks at first pitch and the payout is bigger than a
+      <p className="text-[13px] text-[var(--text-muted)] mb-3">
+        Call each series before Game 1: the pick locks at first pitch and the payout is bigger than a
         game call because there is no changing your mind mid-series.
       </p>
       <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
@@ -1120,7 +1122,7 @@ function SeriesBlock({
           const correct = done && p ? p.pick === s.result : null;
           return (
             <div key={key} className="rounded-xl border p-3" style={CARD}>
-              <div className="text-[10.5px] uppercase tracking-wider text-[var(--text-dim)] mb-1.5">
+              <div className="text-[12px] uppercase tracking-wider mb-1.5" style={{ ...MONO, color: "var(--text-dim)" }}>
                 {ROUND_LABEL[s.round] ?? s.round} · Game 1 {fmtDate(s.date)}
               </div>
               <div className="flex gap-2">
@@ -1141,7 +1143,7 @@ function SeriesBlock({
                           pick: side, confidence: null, picked_at: new Date().toISOString(),
                         });
                       }}
-                      className={`flex-1 rounded-lg border px-2 py-2 text-[13px] transition-colors ${mine ? "border-[var(--accent)] text-[var(--accent)] font-semibold" : locked ? "opacity-60 cursor-not-allowed" : "hover:border-[var(--accent-dim)]"}`}
+                      className={`flex-1 min-h-11 rounded-lg border px-2 py-2 text-[13px] transition-colors ${mine ? "border-[var(--accent)] text-[var(--accent)] font-semibold" : locked ? "opacity-60 cursor-not-allowed" : "hover:border-[var(--accent-dim)]"}`}
                       style={{ background: "var(--bg-card)", borderColor: mine ? undefined : "var(--border)" }}
                     >
                       {name}
@@ -1150,7 +1152,7 @@ function SeriesBlock({
                   );
                 })}
               </div>
-              <div className="mt-1.5 text-[11px] text-[var(--text-dim)]" style={MONO}>
+              <div className="mt-1.5 text-[13px] text-[var(--text-dim)]" style={MONO}>
                 {done
                   ? correct == null
                     ? "series decided"

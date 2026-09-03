@@ -4,7 +4,7 @@ import PicksClient from "./PicksClient";
 export const metadata: Metadata = {
   title: "Citizen of Nowhere Picks",
   description:
-    "Call every Premier League, NFL and College Football game before the model's card is revealed. Blind picks, a confidence pool, and the Upset Radar — the games where our model and the betting market disagree most. Score points, build a streak, beat the machine.",
+    "Call every Premier League, NFL and College Football game before the model's card is revealed. Blind picks, a confidence pool, and the Upset Radar: the games where our model and the betting market disagree most. Score points, build a streak, beat the machine.",
   alternates: { canonical: "/play/picks" },
   openGraph: {
     title: "Citizen of Nowhere Picks | Global Metro Power Rankings",

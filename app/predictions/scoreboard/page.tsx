@@ -22,12 +22,20 @@
 // two-way and score near 0.22. The only honest cross-sport unit is the skill
 // score against the same market that priced the same games: 1 - model/market,
 // which is dimensionless. Raw Brier stays inside its own sport's row.
+//
+// Shell brought into line with app/predictions/nfl/page.tsx 2026-09-03: shared
+// PredCrumbs/PredHeader/PredictionsNav, and every <table> through
+// ResponsiveTable with a mobile list counterpart (LedgerRow for the two
+// per-ledger boards, a local CalibRow for the calibration bins).
 import type { Metadata } from "next";
 import { Fragment } from "react";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
-import { TableScroll } from "@/app/_shared/TableScroll";
+import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
+import { PredCrumbs, PredHeader, SourcesCard } from "../_shared/ui";
+import PredictionsNav from "../_shared/PredictionsNav";
+import { LedgerRow } from "../_shared/rows";
 import { getPlExpectation } from "@/lib/plExpectation";
 import { getNflExpectation } from "@/lib/nflExpectation";
 import { getPlPredictions } from "@/lib/plSim";
@@ -36,6 +44,7 @@ import { getCfbPredictions } from "@/lib/cfbSim";
 import { getForecastScoreboard, nextToSettle, awaitingResults, longDate } from "@/lib/forecastScoreboard";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
+import { SectionHead } from "@/app/_shared/SectionHead";
 export const revalidate = 21600;
 
 const PATH = "/predictions/scoreboard";
@@ -79,6 +88,11 @@ function pct(v: number | null, dp = 2): string {
   return `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v * 100).toFixed(dp)}%`;
 }
 
+function fmtSkill(v: number | null): string {
+  if (v == null) return "—";
+  return `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v * 100).toFixed(1)}%`;
+}
+
 function Stat({ v, k, sub }: { v: string; k: string; sub?: string }) {
   return (
     <div className="rounded-xl border p-4 min-w-0" style={CARD}>
@@ -93,16 +107,6 @@ function Stat({ v, k, sub }: { v: string; k: string; sub?: string }) {
   );
 }
 
-function SectionHead({ title, sub, id }: { title: string; sub: string; id: string }) {
-  return (
-    <>
-      <h2 id={id} className="text-2xl font-bold scroll-mt-24">
-        {title}
-      </h2>
-      <p className="mt-1 mb-4 text-sm text-[var(--text-muted)] max-w-3xl">{sub}</p>
-    </>
-  );
-}
 
 /** A diverging bar centred on zero: the market's score is the middle line. */
 function SkillBar({ v, max = 0.06 }: { v: number | null; max?: number }) {
@@ -127,6 +131,50 @@ function SkillBar({ v, max = 0.06 }: { v: number | null; max?: number }) {
         {pct(v)}
       </span>
     </span>
+  );
+}
+
+/** Mobile counterpart for the calibration table: bin label, predicted vs
+ *  actual, and the sample size, matching the ResponsiveTable "list" density. */
+function CalibRow({ bin, n, predicted, actual }: { bin: string; n: number; predicted: number; actual: number }) {
+  const gap = actual - predicted;
+  const good = gap >= 0;
+  return (
+    <div className="flex items-center gap-3 px-3 py-2.5">
+      <div className="min-w-0 flex-1">
+        <div className="text-[13px] font-semibold tabular-nums" style={MONO}>{bin}</div>
+        <div className="mt-0.5 text-[13px]" style={{ ...MONO, color: "var(--text-dim)" }}>
+          predicted {(predicted * 100).toFixed(1)}% · actual {(actual * 100).toFixed(1)}%
+        </div>
+      </div>
+      <div className="flex-shrink-0 text-right">
+        <div className="text-[13px] font-bold tabular-nums" style={{ ...MONO, color: good ? UP : DOWN }}>
+          {gap >= 0 ? "+" : "−"}{(Math.abs(gap) * 100).toFixed(1)}
+        </div>
+        <div className="text-[13px] tabular-nums" style={{ ...MONO, color: "var(--text-dim)" }}>{n.toLocaleString()} n</div>
+      </div>
+    </div>
+  );
+}
+
+/** Mobile counterpart for an empty/descriptive row in the "live" ledger table
+ *  (MLB with no game ledger, elections before results, an un-graded hub) —
+ *  same shell as LedgerRow, with a note line instead of a score. */
+function NoteRow({ league, sub, note, href }: { league: ReactNode; sub?: ReactNode; note: ReactNode; href?: string }) {
+  const body = (
+    <div className="flex items-center gap-3 px-3 py-2.5">
+      <div className="min-w-0 flex-1">
+        <div className="text-[13px] font-semibold truncate">{league}</div>
+        {sub != null && <div className="mt-0.5 text-[13px]" style={{ ...MONO, color: "var(--text-dim)" }}>{sub}</div>}
+        <div className="mt-1 text-[13px] text-[var(--text-muted)]">{note}</div>
+      </div>
+    </div>
+  );
+  if (!href) return body;
+  return (
+    <div className="tap-row">
+      <Link href={href} className="block tap-target">{body}</Link>
+    </div>
   );
 }
 
@@ -170,6 +218,7 @@ export default async function LedgerPage() {
   const plClosing = plPriced.reduce((a, s) => a + (s.market_closing_matches ?? 0), 0);
   const plOpening = plMatches - plClosing;
   const plClosingSeasons = plPriced.filter((s) => (s.market_closing_matches ?? 0) > 0);
+  const plSeasonsLabel = plPriced.length ? `${plPriced[0].season}–${plPriced[plPriced.length - 1].season}` : "—";
 
   // ---- NFL: the builder already reconciles the head-to-head population.
   const h2h = nflExp?.meta.head_to_head ?? null;
@@ -178,6 +227,9 @@ export default async function LedgerPage() {
     (s) => s.model_brier != null && s.market_brier != null && s.market_games > 0,
   );
   const nflWon = nflSeasonsPriced.filter((s) => (s.model_brier as number) < (s.market_brier as number));
+  const nflSeasonsLabel = nflSeasonsPriced.length
+    ? `${nflSeasonsPriced[0].season}–${nflSeasonsPriced[nflSeasonsPriced.length - 1].season}`
+    : "—";
 
   const pricedGames = plMatches + (h2h?.games ?? 0);
   const calibration = plExp?.calibration ?? [];
@@ -262,31 +314,111 @@ export default async function LedgerPage() {
     .filter(Boolean)
     .join(" · ");
 
+  // ---- Mobile rows for the "live" ledger table, in the same order as the
+  // desktop tbody (main row, then any tier sub-rows, then MLB/elections).
+  const liveMobileRows: ReactNode[] = [];
+  for (const l of live) {
+    const r = l.rec;
+    const s = skill(r?.model_brier, r?.market_brier);
+    const empty = !r || r.graded === 0;
+    liveMobileRows.push(
+      empty ? (
+        <NoteRow key={l.key} league={l.label} sub={`${l.season} · ${l.shape}`} note={`Nothing graded yet. First result lands ${l.first}.`} href={l.href} />
+      ) : (
+        <LedgerRow
+          key={l.key}
+          league={l.label}
+          seasons={l.season}
+          way={l.shape}
+          skillPct={fmtSkill(s)}
+          modelBrier={r.model_brier != null ? r.model_brier.toFixed(4) : "—"}
+          marketBrier={r.market_brier != null ? r.market_brier.toFixed(4) : "—"}
+          href={l.href}
+        />
+      ),
+    );
+    if (l.key === "nfl" && nflLiteGraded.length > 0) {
+      liveMobileRows.push(
+        <LedgerRow
+          key="nfl-lite"
+          league="NFL · lite tier"
+          seasons="stats-only rating"
+          way="same fixtures"
+          skillPct={fmtSkill(nflLiteSkill)}
+          modelBrier={nflLiteBrier != null ? nflLiteBrier.toFixed(4) : "—"}
+          marketBrier={nflLiteMarketBrier != null ? nflLiteMarketBrier.toFixed(4) : "—"}
+        />,
+      );
+    }
+    if (l.key === "cfb" && cfbLiteGraded.length > 0) {
+      liveMobileRows.push(
+        <LedgerRow
+          key="cfb-lite"
+          league="CFB · lite tier"
+          seasons="stats-only rating"
+          way="same fixtures"
+          skillPct={fmtSkill(cfbLiteSkill)}
+          modelBrier={cfbLiteBrier != null ? cfbLiteBrier.toFixed(4) : "—"}
+          marketBrier={cfbLiteMarketBrier != null ? cfbLiteMarketBrier.toFixed(4) : "—"}
+        />,
+      );
+    }
+    if (l.key === "cfb" && cfbClassicGraded.length > 0) {
+      liveMobileRows.push(
+        <LedgerRow
+          key="cfb-classic"
+          league="CFB · classic tier"
+          seasons="stats + market rating"
+          way="same fixtures"
+          skillPct={fmtSkill(cfbClassicSkill)}
+          modelBrier={cfbClassicBrier != null ? cfbClassicBrier.toFixed(4) : "—"}
+          marketBrier={cfbClassicMarketBrier != null ? cfbClassicMarketBrier.toFixed(4) : "—"}
+        />,
+      );
+    }
+  }
+  liveMobileRows.push(
+    <NoteRow
+      key="mlb"
+      league="MLB"
+      sub="2026 · season-level"
+      note="No game-by-game ledger by design: the honest unit of prediction in this sport is the season. The postseason bracket joins in October."
+      href="/predictions/mlb"
+    />,
+  );
+  liveMobileRows.push(
+    <NoteRow
+      key="elections"
+      league="Elections"
+      sub={`2026–27 · ${elecT?.races ? `${elecT.races} race${elecT.races === 1 ? "" : "s"} settled` : "seat ranges"}`}
+      note={
+        elecT?.races ? (
+          <>
+            {elecT.correct ?? 0}/{elecT.picks ?? 0} picks correct ·{" "}
+            {elecSkill == null ? "no market priced these" : `skill ${fmtSkill(elecSkill)}`}
+          </>
+        ) : elecOwed.length ? (
+          <>{elecOwed.map((p) => p.country).join(", ")} ha{elecOwed.length === 1 ? "s" : "ve"} voted, count not filed yet.</>
+        ) : elecNext ? (
+          <>Nothing graded yet. First to settle: {elecNext.country} on {longDate(elecNext.election)}.</>
+        ) : (
+          "Nothing graded yet."
+        )
+      }
+      href="/elections/forecast"
+    />,
+  );
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">
-          Home
-        </Link>
-        {" / "}
-        <Link href="/predictions" className="hover:underline">
-          Predictions
-        </Link>
-        {" / "}
-        <span>The Ledger</span>
-      </nav>
-
-      <header className="mb-6">
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">📓 The Ledger</h1>
-        <p className="mt-2 text-[15px] text-[var(--text-muted)] max-w-3xl">
-          Every forecast this site publishes is frozen when it is published and scored afterwards
-          against the price the betting market closed at. This is the record. It is not a flattering
-          one, and a page that only ever showed its own scoreboard would be worth nothing.
-        </p>
-        <div className="mt-2 text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
-          {stamp}
-        </div>
-      </header>
+      <PredCrumbs tab="The Ledger" />
+      <PredHeader
+        emoji="📓"
+        title="The Ledger"
+        sub="Every forecast this site publishes is frozen at publication and scored against the price the betting market closed at. This is the record. It is not a flattering one."
+        stamp={stamp}
+      />
+      <PredictionsNav />
 
       <HubNav
         items={[
@@ -315,14 +447,43 @@ export default async function LedgerPage() {
         <SectionHead
           id="verdict"
           title="The market wins, and this is by how much"
-          sub="Brier scores are not comparable across a sport with draws and one without, so the unit here is the skill score against the market that priced the same games: one minus the model's Brier over the market's. Zero is a tie. Negative means the market was closer."
+          sub="Zero is a tie. Negative means the market was closer."
+          more="Brier scores are not comparable across a sport with draws and one without, so the unit here is the skill score against the market that priced the same games: one minus the model's Brier over the market's."
         />
 
-        <TableScroll className="rounded-xl border" style={CARD}>
+        <ResponsiveTable
+          variant="list"
+          mobileNoun="ledgers"
+          className="rounded-xl border"
+          style={CARD}
+          mobileRows={[
+            <LedgerRow
+              key="pl"
+              league="English top flight"
+              seasons={plSeasonsLabel}
+              way="three-way"
+              skillPct={fmtSkill(plSkill)}
+              modelBrier={plModel != null ? plModel.toFixed(4) : "—"}
+              marketBrier={plMarket != null ? plMarket.toFixed(4) : "—"}
+              href="/sports/expectation"
+            />,
+            <LedgerRow
+              key="nfl"
+              league="NFL"
+              seasons={nflSeasonsLabel}
+              way="two-way"
+              skillPct={fmtSkill(nflSkill)}
+              modelBrier={h2h?.model_brier != null ? h2h.model_brier.toFixed(4) : "—"}
+              marketBrier={h2h?.market_brier != null ? h2h.market_brier.toFixed(4) : "—"}
+              href="/sports/expectation"
+            />,
+          ]}
+        >
           <table className="w-full text-xs sm:text-sm">
             <thead>
               <tr className="text-left" style={{ background: "var(--bg-card-hover)" }}>
                 <th className="px-3 py-2 font-semibold">Ledger</th>
+                <th className="px-3 py-2 font-semibold hidden sm:table-cell">Seasons</th>
                 <th className="px-3 py-2 text-right font-semibold">Priced</th>
                 <th className="px-3 py-2 text-right font-semibold">Model</th>
                 <th className="px-3 py-2 text-right font-semibold">Market</th>
@@ -332,14 +493,13 @@ export default async function LedgerPage() {
             </thead>
             <tbody>
               <tr className="border-t" style={BORD}>
-                <td className="px-3 py-2.5">
+                <td className="px-3 py-2.5 whitespace-nowrap">
                   <Link href="/sports/expectation" className="hover:underline font-semibold">
                     English top flight
                   </Link>
-                  <div className="text-[var(--text-dim)] text-[11px]">
-                    {plPriced.length ? `${plPriced[0].season}–${plPriced[plPriced.length - 1].season}` : "—"} · three-way
-                  </div>
+                  <div className="text-[var(--text-dim)] text-[11px] sm:hidden">three-way</div>
                 </td>
+                <td className="px-3 py-2.5 hidden sm:table-cell text-[var(--text-dim)]">{plSeasonsLabel}</td>
                 <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
                   {plMatches.toLocaleString()}
                 </td>
@@ -357,17 +517,13 @@ export default async function LedgerPage() {
                 </td>
               </tr>
               <tr className="border-t" style={BORD}>
-                <td className="px-3 py-2.5">
+                <td className="px-3 py-2.5 whitespace-nowrap">
                   <Link href="/sports/expectation" className="hover:underline font-semibold">
                     NFL
                   </Link>
-                  <div className="text-[var(--text-dim)] text-[11px]">
-                    {nflSeasonsPriced.length
-                      ? `${nflSeasonsPriced[0].season}–${nflSeasonsPriced[nflSeasonsPriced.length - 1].season}`
-                      : "—"}{" "}
-                    · two-way
-                  </div>
+                  <div className="text-[var(--text-dim)] text-[11px] sm:hidden">two-way</div>
                 </td>
+                <td className="px-3 py-2.5 hidden sm:table-cell text-[var(--text-dim)]">{nflSeasonsLabel}</td>
                 <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
                   {(h2h?.games ?? 0).toLocaleString()}
                 </td>
@@ -386,7 +542,7 @@ export default async function LedgerPage() {
               </tr>
             </tbody>
           </table>
-        </TableScroll>
+        </ResponsiveTable>
 
         <div className="mt-4 rounded-2xl border p-5 text-[13.5px] text-[var(--text-muted)] max-w-4xl" style={BORD}>
           <p>
@@ -404,11 +560,20 @@ export default async function LedgerPage() {
         <SectionHead
           id="calibration"
           title="When the model said 70%, did it happen 70% of the time?"
-          sub={`Every English top-flight match outcome the model has ever priced, sorted into probability bins. A well-calibrated forecast lands on the diagonal: the share that actually happened matches the share it was given. ${calibN.toLocaleString()} outcomes across ${calibration.length} populated bins.`}
+          sub="A well-calibrated forecast lands on the diagonal."
+          more={`Every English top-flight match outcome the model has ever priced, sorted into probability bins: the share that actually happened should match the share it was given. ${calibN.toLocaleString()} outcomes across ${calibration.length} populated bins.`}
         />
 
         {calibration.length ? (
-          <TableScroll className="rounded-xl border" style={CARD}>
+          <ResponsiveTable
+            variant="list"
+            mobileNoun="bins"
+            className="rounded-xl border"
+            style={CARD}
+            mobileRows={calibration.map((c) => (
+              <CalibRow key={c.bin} bin={c.bin} n={c.n} predicted={c.predicted} actual={c.actual} />
+            ))}
+          >
             <table className="w-full text-xs sm:text-sm">
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card-hover)" }}>
@@ -469,7 +634,7 @@ export default async function LedgerPage() {
                 })}
               </tbody>
             </table>
-          </TableScroll>
+          </ResponsiveTable>
         ) : (
           <p className="text-sm text-[var(--text-muted)]">The calibration table is not available in this build.</p>
         )}
@@ -485,7 +650,8 @@ export default async function LedgerPage() {
         <SectionHead
           id="won"
           title="The seasons the model beat the market"
-          sub="Derived, not chosen: every season in which the model's Brier over the priced games came in under the market's. These are the exceptions, and naming them is the only way the rest of this page means anything."
+          sub="Derived, not chosen: every season the model's Brier came in under the market's."
+          more="These are the exceptions, and naming them is the only way the rest of this page means anything. A page that only ever showed its own scoreboard would be worth nothing."
         />
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -540,10 +706,17 @@ export default async function LedgerPage() {
         <SectionHead
           id="live"
           title="This season, as it grades"
-          sub="Each hub freezes its call when it publishes it. Nothing below is back-filled, and a row with nothing in it says so rather than waiting for a good week to appear."
+          sub="Each hub freezes its call when it publishes it."
+          more="Nothing below is back-filled, and a row with nothing in it says so rather than waiting for a good week to appear."
         />
 
-        <TableScroll className="rounded-xl border" style={CARD}>
+        <ResponsiveTable
+          variant="list"
+          mobileNoun="ledgers"
+          className="rounded-xl border"
+          style={CARD}
+          mobileRows={liveMobileRows}
+        >
           <table className="w-full text-xs sm:text-sm">
             <thead>
               <tr className="text-left" style={{ background: "var(--bg-card-hover)" }}>
@@ -563,7 +736,7 @@ export default async function LedgerPage() {
                 return (
                   <Fragment key={l.key}>
                     <tr className="border-t" style={BORD}>
-                      <td className="px-3 py-2.5">
+                      <td className="px-3 py-2.5 whitespace-nowrap">
                         <Link href={l.href} className="hover:underline font-semibold">
                           {l.label}
                         </Link>
@@ -597,7 +770,7 @@ export default async function LedgerPage() {
                     </tr>
                     {l.key === "nfl" && nflLiteGraded.length > 0 && (
                       <tr className="border-t" style={BORD}>
-                        <td className="px-3 py-2.5">
+                        <td className="px-3 py-2.5 whitespace-nowrap">
                           <span className="font-semibold text-[var(--text-muted)]">NFL &middot; lite tier</span>
                           <div className="text-[var(--text-dim)] text-[11px]">
                             stats-only rating, same fixtures
@@ -620,7 +793,7 @@ export default async function LedgerPage() {
                     )}
                     {l.key === "cfb" && cfbLiteGraded.length > 0 && (
                       <tr className="border-t" style={BORD}>
-                        <td className="px-3 py-2.5">
+                        <td className="px-3 py-2.5 whitespace-nowrap">
                           <span className="font-semibold text-[var(--text-muted)]">CFB &middot; lite tier</span>
                           <div className="text-[var(--text-dim)] text-[11px]">
                             stats-only rating, same fixtures
@@ -643,7 +816,7 @@ export default async function LedgerPage() {
                     )}
                     {l.key === "cfb" && cfbClassicGraded.length > 0 && (
                       <tr className="border-t" style={BORD}>
-                        <td className="px-3 py-2.5">
+                        <td className="px-3 py-2.5 whitespace-nowrap">
                           <span className="font-semibold text-[var(--text-muted)]">CFB &middot; classic tier</span>
                           <div className="text-[var(--text-dim)] text-[11px]">
                             stats + market rating, same fixtures
@@ -668,7 +841,7 @@ export default async function LedgerPage() {
                 );
               })}
               <tr className="border-t" style={BORD}>
-                <td className="px-3 py-2.5">
+                <td className="px-3 py-2.5 whitespace-nowrap">
                   <Link href="/predictions/mlb" className="hover:underline font-semibold">
                     MLB
                   </Link>
@@ -680,7 +853,7 @@ export default async function LedgerPage() {
                 </td>
               </tr>
               <tr className="border-t" style={BORD}>
-                <td className="px-3 py-2.5">
+                <td className="px-3 py-2.5 whitespace-nowrap">
                   <Link href="/elections/forecast" className="hover:underline font-semibold">
                     Elections
                   </Link>
@@ -733,7 +906,7 @@ export default async function LedgerPage() {
               </tr>
             </tbody>
           </table>
-        </TableScroll>
+        </ResponsiveTable>
       </section>
 
       {/* ---------------------------------------------------------------- */}
@@ -741,7 +914,8 @@ export default async function LedgerPage() {
         <SectionHead
           id="you"
           title="Your own calls land on this axis too"
-          sub="Citizen of Nowhere Picks scores a reader's hard calls with the same Brier the 1920 ledger uses, so a pick made this Saturday is measured the way a match from 1958 is measured."
+          sub="Reader picks are scored on the same axis."
+          more="Citizen of Nowhere Picks scores a reader's hard calls with the same Brier the 1920 ledger uses, so a pick made this Saturday is measured the way a match from 1958 is measured."
         />
         <div className="rounded-2xl border p-5 sm:p-6" style={BORD}>
           <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
@@ -752,14 +926,14 @@ export default async function LedgerPage() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/play/picks"
-              className="inline-flex items-center gap-1.5 rounded-lg font-semibold text-sm px-4 py-2"
+              className="inline-flex items-center min-h-11 gap-1.5 rounded-lg font-semibold text-sm px-4 py-2"
               style={{ backgroundColor: "var(--accent)", color: "#08080D" }}
             >
               🎯 Play Citizen of Nowhere Picks
             </Link>
             <Link
               href="/sports/expectation"
-              className="inline-flex items-center gap-1.5 rounded-lg border font-semibold text-sm px-4 py-2 hover:border-[var(--accent)] transition-colors"
+              className="inline-flex items-center min-h-11 gap-1.5 rounded-lg border font-semibold text-sm px-4 py-2 hover:border-[var(--accent)] transition-colors"
               style={{ borderColor: "var(--border)", color: "var(--text)" }}
             >
               🎲 Against Expectation
@@ -769,103 +943,95 @@ export default async function LedgerPage() {
       </section>
 
       {/* ---------------------------------------------------------------- */}
-      <section className="mb-4">
-        <SectionHead
-          id="method"
-          title="Where these numbers come from, and what they cannot tell you"
-          sub="Everything above is computed from the ledgers when the page renders. None of it is a claim someone typed."
-        />
-
-        <div className="rounded-2xl border p-5 text-[13.5px] text-[var(--text-muted)] space-y-4 max-w-4xl" style={BORD}>
-          <div>
-            <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Why a skill score and not a Brier score</h3>
-            <p>
-              English football is a three-way question and a good model scores near 0.60 on it. The
-              NFL and college football are two-way and a good model scores near 0.22. Those two
-              numbers do not belong in one column, and putting them there would be exactly the kind
-              of quiet wrongness this page exists to argue against. The skill score divides the model
-              by the market that priced the same games, which removes the scale along with the
-              question&apos;s shape.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-[var(--text)] font-semibold text-sm mb-1">What was priced, and by whom</h3>
-            <p>
-              Football odds are football-data.co.uk, available on {plPriced.length} seasons of{" "}
-              {plExp?.meta.season_count ?? "the"} — everything before that has no market to be
-              measured against.{" "}
-              {plClosingKnown ? (
-                <>
-                  Of those, {plClosing.toLocaleString()} matches across {plClosingSeasons.length}{" "}
-                  seasons carry a true <strong>closing</strong> price, which football-data has
-                  published only since {plClosingSeasons[0]?.season ?? "2012-13"}. The other{" "}
-                  {plOpening.toLocaleString()} are scored against the <strong>pre-match</strong>{" "}
-                  price, because no closing price for those matches exists anywhere. The two are
-                  not interchangeable: a closing line has absorbed the team news and the money, so
-                  it is the sharper benchmark and the harder one to beat. This site scored the whole
-                  football sample against pre-match prices while calling them closing until
-                  2026-08-30; correcting it moved the football skill score down, which is the
-                  direction an honest correction was always going to go.
-                </>
-              ) : (
-                <>These are pre-match prices; the closing-price split is not in this build.</>
-              )} NFL odds come from covers.com, loaded as real numbers rather than
-              inferred, after an earlier attempt to repair them by inference proved half right and
-              therefore wrong. Live hubs read football-data for the Premier League and ESPN&apos;s
-              DraftKings feed for the NFL and college football. No column anywhere on this site comes
-              from an exchange yet; a Kalshi or Polymarket price would be a genuine fourth column,
-              not a replacement for any of these.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-[var(--text)] font-semibold text-sm mb-1">What this does not prove</h3>
-            <p>
-              Nothing here is held out. Both historical models were fitted on their full histories,
-              so the calibration above is in-sample and should be read as a consistency check rather
-              than as evidence of predictive skill. The football model has almost no skill before
-              about 1960 — {plExp ? `${(plExp.meta.skill_vs_era_baseline * 100).toFixed(1)}%` : "a few percent"}{" "}
-              over an era baseline across the whole series, and a fraction of that in the early
-              decades. Twenty fixtures in the football source are recorded the wrong way round and
-              two scorelines are off by one; they are listed rather than repaired, because sourcing
-              the real result is the only honest fix.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Why the elections row is empty</h3>
-            <p>
-              A seat range cannot be scored until the seats are counted. The election forecast
-              publishes its own history of what it said over time, but it has no resolved outcomes to
-              be graded against until November, and inventing an accuracy figure for it would
-              undermine every other number on this page.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Sources</h3>
-            <p>
-              <Link href="/sports/expectation" className="hover:underline">
-                Against Expectation
-              </Link>{" "}
-              carries the full historical ledgers and their reconciliations. The live hubs are{" "}
-              <Link href="/predictions/pl" className="hover:underline">
-                Premier League
-              </Link>
-              ,{" "}
-              <Link href="/predictions/nfl" className="hover:underline">
-                NFL
-              </Link>
-              ,{" "}
-              <Link href="/predictions/cfb" className="hover:underline">
-                College Football
-              </Link>{" "}
-              and{" "}
-              <Link href="/predictions/mlb" className="hover:underline">
-                MLB
-              </Link>
-              . Methodology for each model is stated on its own hub.
-            </p>
-          </div>
+      <SourcesCard title="Where these numbers come from, and what they cannot tell you">
+        <div>
+          <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Why a skill score and not a Brier score</h3>
+          <p>
+            English football is a three-way question and a good model scores near 0.60 on it. The
+            NFL and college football are two-way and a good model scores near 0.22. Those two
+            numbers do not belong in one column, and putting them there would be exactly the kind
+            of quiet wrongness this page exists to argue against. The skill score divides the model
+            by the market that priced the same games, which removes the scale along with the
+            question&apos;s shape.
+          </p>
         </div>
-      </section>
+        <div>
+          <h3 className="text-[var(--text)] font-semibold text-sm mb-1">What was priced, and by whom</h3>
+          <p>
+            Football odds are football-data.co.uk, available on {plPriced.length} seasons of{" "}
+            {plExp?.meta.season_count ?? "the"} — everything before that has no market to be
+            measured against.{" "}
+            {plClosingKnown ? (
+              <>
+                Of those, {plClosing.toLocaleString()} matches across {plClosingSeasons.length}{" "}
+                seasons carry a true <strong>closing</strong> price, which football-data has
+                published only since {plClosingSeasons[0]?.season ?? "2012-13"}. The other{" "}
+                {plOpening.toLocaleString()} are scored against the <strong>pre-match</strong>{" "}
+                price, because no closing price for those matches exists anywhere. The two are
+                not interchangeable: a closing line has absorbed the team news and the money, so
+                it is the sharper benchmark and the harder one to beat. This site scored the whole
+                football sample against pre-match prices while calling them closing until
+                2026-08-30; correcting it moved the football skill score down, which is the
+                direction an honest correction was always going to go.
+              </>
+            ) : (
+              <>These are pre-match prices; the closing-price split is not in this build.</>
+            )} NFL odds come from covers.com, loaded as real numbers rather than
+            inferred, after an earlier attempt to repair them by inference proved half right and
+            therefore wrong. Live hubs read football-data for the Premier League and ESPN&apos;s
+            DraftKings feed for the NFL and college football. No column anywhere on this site comes
+            from an exchange yet; a Kalshi or Polymarket price would be a genuine fourth column,
+            not a replacement for any of these.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-[var(--text)] font-semibold text-sm mb-1">What this does not prove</h3>
+          <p>
+            Nothing here is held out. Both historical models were fitted on their full histories,
+            so the calibration above is in-sample and should be read as a consistency check rather
+            than as evidence of predictive skill. The football model has almost no skill before
+            about 1960 — {plExp ? `${(plExp.meta.skill_vs_era_baseline * 100).toFixed(1)}%` : "a few percent"}{" "}
+            over an era baseline across the whole series, and a fraction of that in the early
+            decades. Twenty fixtures in the football source are recorded the wrong way round and
+            two scorelines are off by one; they are listed rather than repaired, because sourcing
+            the real result is the only honest fix.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Why the elections row is empty</h3>
+          <p>
+            A seat range cannot be scored until the seats are counted. The election forecast
+            publishes its own history of what it said over time, but it has no resolved outcomes to
+            be graded against until November, and inventing an accuracy figure for it would
+            undermine every other number on this page.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Sources</h3>
+          <p>
+            <Link href="/sports/expectation" className="hover:underline">
+              Against Expectation
+            </Link>{" "}
+            carries the full historical ledgers and their reconciliations. The live hubs are{" "}
+            <Link href="/predictions/pl" className="hover:underline">
+              Premier League
+            </Link>
+            ,{" "}
+            <Link href="/predictions/nfl" className="hover:underline">
+              NFL
+            </Link>
+            ,{" "}
+            <Link href="/predictions/cfb" className="hover:underline">
+              College Football
+            </Link>{" "}
+            and{" "}
+            <Link href="/predictions/mlb" className="hover:underline">
+              MLB
+            </Link>
+            . Methodology for each model is stated on its own hub.
+          </p>
+        </div>
+      </SourcesCard>
     </main>
   );
 }

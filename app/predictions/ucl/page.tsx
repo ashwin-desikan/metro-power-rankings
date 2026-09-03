@@ -3,6 +3,12 @@ import Link from "next/link";
 import { getFootballClubByName } from "@/lib/football";
 import { getUclSim } from "@/lib/uclSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { Disclosure } from "@/app/_shared/Disclosure";
+import { SectionHead } from "@/app/_shared/SectionHead";
+import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
+import { PredCrumbs, PredHeader, SourcesCard, MONO, SMCOL } from "../_shared/ui";
+import PredictionsNav from "../_shared/PredictionsNav";
+import { FixtureRow, TeamOddsRow } from "../_shared/rows";
 
 // Champions League 2026-27 prediction hub — built 2026-08-29, rebuilt as v2
 // on 2026-08-30 after the strength formula was re-derived from research
@@ -10,9 +16,12 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 // 1955-2026, era-cross-validated fit, championship backtest). Season odds
 // from ucl-sim.json, re-run without a build via lib/uclSim's ISR read.
 // Fixture calls appear once api-football swaps the draw's placeholder
-// kickoffs for the confirmed calendar (meta flag).
+// kickoffs for the confirmed calendar (meta flag). Shell brought into line
+// with app/predictions/nfl/page.tsx 2026-09-03.
 
 export const revalidate = 21600;
+
+const BORD = { borderColor: "var(--border)" } as const;
 
 function ClubLabel({ name }: { name: string }) {
   const club = getFootballClubByName(name);
@@ -24,7 +33,6 @@ function ClubLabel({ name }: { name: string }) {
   );
 }
 
-const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const PATH = "/predictions/ucl";
 const TITLE = "Champions League 2026-27 Predictions";
 const DESC =
@@ -66,37 +74,28 @@ export default async function UclPredictionsPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>{" / "}
-        <Link href="/predictions" className="hover:underline">Predictions</Link>{" / "}
-        <span>Champions League</span>
-      </nav>
-
-      <header className="mb-8">
-        <div className="flex items-center gap-3 flex-wrap mb-2">
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            <span aria-hidden>🏆</span> Champions League 2026-27
-          </h1>
-          <span className="flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#10b981" }} aria-hidden />
-            <span className="text-[10px]" style={{ ...MONO, color: "#10b981" }}>LIVE</span>
-          </span>
-        </div>
-        <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
-          {meta ? `${meta.sims.toLocaleString()} simulated seasons` : "Thousands of simulated seasons"}{" "}
-          of the drawn league phase and the seeded knockout that follows it — every club&apos;s road from the
-          36-team table to the final, replayed with real results as they land.
-        </p>
-        {meta && (
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3" style={MONO}>
-            {meta.model} · updated {meta.generated_at}
-            {meta.matches_played > 0 ? ` · after ${meta.matches_played} matches` : " · preseason"}
-          </p>
-        )}
-      </header>
+      <PredCrumbs tab="UCL" />
+      <PredHeader
+        emoji="🏆"
+        title="Champions League 2026-27"
+        live
+        sub={
+          <>
+            {meta ? `${meta.sims.toLocaleString()} simulated seasons` : "Thousands of simulated seasons"}{" "}
+            of the drawn league phase and the seeded knockout that follows it: every club&apos;s road from the
+            36-team table to the final, replayed with real results as they land.
+          </>
+        }
+        stamp={
+          meta
+            ? `${meta.model} · updated ${meta.generated_at}${meta.matches_played > 0 ? ` · after ${meta.matches_played} matches` : " · preseason"}`
+            : null
+        }
+      />
+      <PredictionsNav />
 
       {!sim && (
-        <section className="rounded-2xl border p-6 mb-8" style={{ borderColor: "var(--border)" }}>
+        <section className="rounded-2xl border p-6 mb-8" style={BORD}>
           <p className="text-sm text-[var(--text-muted)]">
             The simulation data has not loaded. It lives at <code>/data/ucl-sim.json</code> and is rebuilt by
             the prediction pipeline; try again shortly.
@@ -107,7 +106,7 @@ export default async function UclPredictionsPage() {
       {rows.length > 0 && (
         <>
           {/* Champion odds board */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          <section id="champion" className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
             <h2 className="text-2xl font-bold mb-1">The champion board</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Share of simulated seasons each club lifts the trophy at the Metropolitano in Madrid.
@@ -132,46 +131,61 @@ export default async function UclPredictionsPage() {
           </section>
 
           {/* Fixture calls */}
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">The next fixtures, called</h2>
+          <section id="fixtures" className="mb-10">
+            <SectionHead
+              id="fixtures-head"
+              title="The next fixtures, called"
+              sub={calls.length > 0 ? "Win-draw-win probabilities for the upcoming league-phase matches, model-only for now." : "No fixtures called for the coming window yet."}
+              more={calls.length > 0 ? "No public odds file carries the Champions League yet, so the market column the Premier League hub enjoys has nothing to join on." : undefined}
+              moreLabel="Why no market column"
+            />
             {calls.length > 0 ? (
-              <>
-                <p className="text-sm text-[var(--text-muted)] mb-4">
-                  Win-draw-win probabilities for the upcoming league-phase matches. Model-only for now —
-                  no public odds file carries the Champions League, so the market column the Premier League
-                  hub enjoys has nothing to join on yet.
-                </p>
-                <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-                        <th className="px-3 py-2 font-semibold">Kickoff</th>
-                        <th className="px-3 py-2 font-semibold">Fixture</th>
-                        <th className="px-3 py-2 text-right font-semibold">Home</th>
-                        <th className="px-3 py-2 text-right font-semibold">Draw</th>
-                        <th className="px-3 py-2 text-right font-semibold">Away</th>
-                        <th className="px-3 py-2 text-right font-semibold">Pick</th>
+              <ResponsiveTable
+                variant="list"
+                mobileNoun="fixtures"
+                className="rounded-xl border"
+                style={BORD}
+                mobileRows={calls.map((c) => (
+                  <FixtureRow
+                    key={`${c.date}-${c.home}`}
+                    team1={c.home}
+                    sep="v"
+                    team2={c.away}
+                    kickoff={fmtKickoff(c.date)}
+                    modelPct={`Model ${ppct(c.model.pH)}/${ppct(c.model.pD)}/${ppct(c.model.pA)}`}
+                    pick={c.pick === "H" ? c.home : c.pick === "A" ? c.away : "Draw"}
+                  />
+                ))}
+              >
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+                      <th className="px-3 py-2 font-semibold">Kickoff</th>
+                      <th className="px-3 py-2 font-semibold">Fixture</th>
+                      <th className="px-3 py-2 text-right font-semibold">Home</th>
+                      <th className="px-3 py-2 text-right font-semibold">Draw</th>
+                      <th className="px-3 py-2 text-right font-semibold">Away</th>
+                      <th className="px-3 py-2 text-right font-semibold">Pick</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {calls.map((c) => (
+                      <tr key={`${c.date}-${c.home}`} className="border-t" style={BORD}>
+                        <td className="px-3 py-2 whitespace-nowrap text-[var(--text-muted)]">{fmtKickoff(c.date)}</td>
+                        <td className="px-3 py-2 whitespace-nowrap">
+                          <ClubLabel name={c.home} /> <span className="text-[var(--text-dim)]">v</span> <ClubLabel name={c.away} />
+                        </td>
+                        <td className="px-3 py-2 text-right" style={MONO}>{ppct(c.model.pH)}</td>
+                        <td className="px-3 py-2 text-right" style={MONO}>{ppct(c.model.pD)}</td>
+                        <td className="px-3 py-2 text-right" style={MONO}>{ppct(c.model.pA)}</td>
+                        <td className="px-3 py-2 text-right font-semibold whitespace-nowrap">
+                          {c.pick === "H" ? c.home : c.pick === "A" ? c.away : "Draw"}
+                        </td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {calls.map((c) => (
-                        <tr key={`${c.date}-${c.home}`} className="border-t" style={{ borderColor: "var(--border)" }}>
-                          <td className="px-3 py-2 whitespace-nowrap text-[var(--text-muted)]">{fmtKickoff(c.date)}</td>
-                          <td className="px-3 py-2 whitespace-nowrap">
-                            <ClubLabel name={c.home} /> <span className="text-[var(--text-dim)]">v</span> <ClubLabel name={c.away} />
-                          </td>
-                          <td className="px-3 py-2 text-right" style={MONO}>{ppct(c.model.pH)}</td>
-                          <td className="px-3 py-2 text-right" style={MONO}>{ppct(c.model.pD)}</td>
-                          <td className="px-3 py-2 text-right" style={MONO}>{ppct(c.model.pA)}</td>
-                          <td className="px-3 py-2 text-right font-semibold whitespace-nowrap">
-                            {c.pick === "H" ? c.home : c.pick === "A" ? c.away : "Draw"}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </>
+                    ))}
+                  </tbody>
+                </table>
+              </ResponsiveTable>
             ) : (
               <p className="text-sm text-[var(--text-muted)] max-w-3xl">
                 {meta?.calendar_placeholder
@@ -182,70 +196,92 @@ export default async function UclPredictionsPage() {
           </section>
 
           {/* Full table */}
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">Every club, every outcome</h2>
-            <p className="text-sm text-[var(--text-muted)] mb-4">
-              Expected league-phase points, finishing ranges and the odds of each landing spot: the top eight
-              (straight to the round of 16), the top 24 (alive in the knockouts), the quarter-finals and the
-              trophy. &ldquo;Finish&rdquo; is the median simulated position with the 5th-95th percentile range.
-            </p>
-            <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+          <section id="table" className="mb-10">
+            <SectionHead
+              id="table-head"
+              title="Every club, every outcome"
+              sub="Expected league-phase points, finishing range and odds for each landing spot."
+              more="The top eight (straight to the round of 16), the top 24 (alive in the knockouts), the quarter-finals and the trophy. &ldquo;Finish&rdquo; is the median simulated position with the 5th-95th percentile range."
+            />
+            <ResponsiveTable
+              variant="list"
+              mobileNoun="clubs"
+              className="rounded-xl border"
+              style={BORD}
+              mobileRows={rows.map((r) => (
+                <TeamOddsRow
+                  key={r.name}
+                  name={<ClubLabel name={r.name} />}
+                  right={pct(r.p_top24)}
+                  metricLabel="advance"
+                  rightSub={`xPts ${r.exp_pts.toFixed(1)} · Finish ${r.pos.p50} (${r.pos.p5}-${r.pos.p95})`}
+                />
+              ))}
+            >
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                     <th className="px-3 py-2 font-semibold">Club</th>
                     <th className="px-3 py-2 text-right font-semibold">xPts</th>
-                    <th className="px-3 py-2 text-right font-semibold">Finish</th>
-                    <th className="px-3 py-2 text-right font-semibold">Top 8</th>
-                    <th className="px-3 py-2 text-right font-semibold">Top 24</th>
-                    <th className="px-3 py-2 text-right font-semibold">QF</th>
+                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Finish</th>
+                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Top 8</th>
+                    <th className="px-3 py-2 text-right font-semibold">Advance</th>
+                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>QF</th>
                     <th className="px-3 py-2 text-right font-semibold">Champion</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map((r) => (
-                    <tr key={r.name} className="border-t" style={{ borderColor: "var(--border)" }}>
+                    <tr key={r.name} className="border-t" style={BORD}>
                       <td className="px-3 py-2 whitespace-nowrap">
                         <ClubLabel name={r.name} />
                       </td>
                       <td className="px-3 py-2 text-right" style={MONO}>{r.exp_pts.toFixed(1)}</td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
+                      <td className={`px-3 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>
                         {r.pos.p50}<span style={{ color: "var(--text-dim)" }}> ({r.pos.p5}-{r.pos.p95})</span>
                       </td>
-                      <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_top8)}</td>
+                      <td className={`px-3 py-2 text-right ${SMCOL}`} style={MONO}>{pct(r.p_top8)}</td>
                       <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_top24 < 25 ? "#E2628B" : "var(--text-muted)" }}>{pct(r.p_top24)}</td>
-                      <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_qf)}</td>
+                      <td className={`px-3 py-2 text-right ${SMCOL}`} style={MONO}>{pct(r.p_qf)}</td>
                       <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_champion >= 1 ? "var(--accent)" : "var(--text-muted)" }}>{pct(r.p_champion)}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            </div>
+            </ResponsiveTable>
           </section>
 
-          {/* Model notes */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
-            <h2 className="text-xl font-bold mb-2">How this model works — fitted, not asserted</h2>
-            <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-2">
+          {/* Sources + method */}
+          <SourcesCard>
+            <p>
               Each club&apos;s strength blends two signals that a study of every European tie since 1955
               (28,000 matches, era-cross-validated) found to carry all the usable preseason information:
               this site&apos;s own club rating from the season just finished, and the strength of the
-              club&apos;s league. Five-year club coefficients turned out to add nothing once those are in
-              the model, and raw domestic goal ratios predict close to nothing across leagues — dominating
-              a mid-tier league is not evidence of European strength. The blend&apos;s weights come from a
-              Poisson fit on three decades of group-stage goals; its overall spread is calibrated so that
-              replaying 2004-2024 with each season&apos;s real groups makes the actual champions as likely
-              as possible. Held out from training entirely, the two completed league-phase seasons:
-              70.6% of decisive matches called, against 62.9% for the formula it replaced.
+              club&apos;s league. Held out from training entirely, the two completed league-phase seasons:
+              70.6% of decisive matches called, against 62.9% for the formula it replaced. No betting-market
+              blend yet, no mid-season form fold, and UEFA&apos;s knockout draw options are approximated.
             </p>
-            <p className="text-sm text-[var(--text-muted)] max-w-3xl">
-              The 8 drawn fixtures per club are simulated with Poisson goals (finished matches replay their
-              real result), the top 8 go straight to the round of 16, ranks 9-24 fight through the seeded
-              play-off bands, and the bracket runs to a one-off final on neutral ground. Still absent, and
-              said plainly: no betting-market blend, no mid-season form fold yet, and UEFA&apos;s knockout
-              draw options are approximated. The full study and backtest live in the site&apos;s repository.
-            </p>
-          </section>
+            <Disclosure title="How the model works" desktopOpen bodyClassName="p-4 sm:p-5" className="mt-1">
+              <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed">
+                Each club&apos;s strength blends two signals that a study of every European tie since 1955
+                (28,000 matches, era-cross-validated) found to carry all the usable preseason information:
+                this site&apos;s own club rating from the season just finished, and the strength of the
+                club&apos;s league. Five-year club coefficients turned out to add nothing once those are in
+                the model, and raw domestic goal ratios predict close to nothing across leagues. Dominating
+                a mid-tier league is not evidence of European strength. The blend&apos;s weights come from a
+                Poisson fit on three decades of group-stage goals; its overall spread is calibrated so that
+                replaying 2004-2024 with each season&apos;s real groups makes the actual champions as likely
+                as possible.
+              </p>
+              <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed mt-3">
+                The 8 drawn fixtures per club are simulated with Poisson goals (finished matches replay their
+                real result), the top 8 go straight to the round of 16, ranks 9-24 fight through the seeded
+                play-off bands, and the bracket runs to a one-off final on neutral ground. Still absent, and
+                said plainly: no betting-market blend, no mid-season form fold yet, and UEFA&apos;s knockout
+                draw options are approximated. The full study and backtest live in the site&apos;s repository.
+              </p>
+            </Disclosure>
+          </SourcesCard>
         </>
       )}
     </main>

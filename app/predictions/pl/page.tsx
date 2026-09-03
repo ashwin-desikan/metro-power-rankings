@@ -7,13 +7,19 @@ import {
   getPlSimHistory,
   type PlPredictionEntry,
   type PlSimRow,
-  type PlSimHistoryFile,
 } from "@/lib/plSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { Delta } from "@/app/predictions/_shared/Delta";
-import { Sparkline } from "@/app/predictions/_shared/Sparkline";
-import { Band } from "@/app/predictions/_shared/Band";
-import { deltaSince, series } from "@/app/predictions/_shared/deltas";
+import { Disclosure } from "@/app/_shared/Disclosure";
+import { SectionHead } from "@/app/_shared/SectionHead";
+import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
+import { PredCrumbs, PredHeader, SourcesCard, MONO, CARD, SMCOL } from "../_shared/ui";
+import PredictionsNav from "../_shared/PredictionsNav";
+import { FixtureRow, TeamOddsRow } from "../_shared/rows";
+import { Band } from "../_shared/Band";
+import { Delta } from "../_shared/Delta";
+import { Sparkline } from "../_shared/Sparkline";
+import { deltaSince, series } from "../_shared/deltas";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Premier League 2026-27 prediction hub: the first live league hub on
 // /predictions. Season odds from pl-sim.json (site data blended with market
@@ -23,9 +29,11 @@ import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 // read. Every points-v3 field (bands, percentile ranges) is optional - the
 // page renders identically to the poisson-v2 build when a field is absent.
 // PL has no tiers: the market blend is a single number, not a separate run.
+// Shell brought into line with app/predictions/nfl/page.tsx 2026-09-03.
 
 export const revalidate = 21600;
 
+const BORD = { borderColor: "var(--border)" } as const;
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
@@ -46,8 +54,6 @@ function ClubLabel({ name, href }: { name: string; href: string | null }) {
   );
 }
 
-const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
-const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const PATH = "/predictions/pl";
 const TITLE = "Premier League 2026-27 Predictions";
 const DESC =
@@ -99,37 +105,28 @@ export default async function PlPredictionsPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>{" / "}
-        <Link href="/predictions" className="hover:underline">Predictions</Link>{" / "}
-        <span>Premier League</span>
-      </nav>
-
-      <header className="mb-8">
-        <div className="flex items-center gap-3 flex-wrap mb-2">
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            <span aria-hidden>⚽</span> Premier League 2026-27
-          </h1>
-          <span className="flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#10b981" }} aria-hidden />
-            <span className="text-[10px]" style={{ ...MONO, color: "#10b981" }}>LIVE</span>
-          </span>
-        </div>
-        <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
-          {meta ? `${meta.sims.toLocaleString()} simulated seasons` : "Thousands of simulated seasons"} from a
-          model that blends this site&apos;s own season data with market odds, replays the real results as they
-          land, and predicts every fixture - then keeps score on itself all season.
-        </p>
-        {meta && (
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3" style={MONO}>
-            {meta.model} · updated {meta.generated_at}
-            {meta.matches_played > 0 ? ` · after ${meta.matches_played} matches` : " · preseason"}
-          </p>
-        )}
-      </header>
+      <PredCrumbs tab="Premier League" />
+      <PredHeader
+        emoji="⚽"
+        title="Premier League 2026-27"
+        live
+        sub={
+          <>
+            {meta ? `${meta.sims.toLocaleString()} simulated seasons` : "Thousands of simulated seasons"} from a
+            model that blends this site&apos;s own season data with market odds, replays the real results as they
+            land, and predicts every fixture - then keeps score on itself all season.
+          </>
+        }
+        stamp={
+          meta
+            ? `${meta.model} · updated ${meta.generated_at}${meta.matches_played > 0 ? ` · after ${meta.matches_played} matches` : " · preseason"}`
+            : null
+        }
+      />
+      <PredictionsNav />
 
       {!sim && (
-        <section className="rounded-2xl border p-6 mb-8" style={{ borderColor: "var(--border)" }}>
+        <section className="rounded-2xl border p-6 mb-8" style={BORD}>
           <p className="text-sm text-[var(--text-muted)]">
             The simulation data has not loaded. It lives at <code>/data/pl-sim.json</code> and is rebuilt by
             the prediction pipeline; try again shortly.
@@ -140,7 +137,7 @@ export default async function PlPredictionsPage() {
       {rows.length > 0 && (
         <>
           {/* Title odds board */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          <section id="title" className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
             <h2 className="text-2xl font-bold mb-1">The title race</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Share of simulated seasons each club finishes first.
@@ -170,10 +167,8 @@ export default async function PlPredictionsPage() {
             </div>
           </section>
 
-          {/* Relegation odds board (Ashwin, 2026-08-29): the drop zone deserves
-              the same marquee treatment as the title race — same bar board,
-              sorted by relegation probability, in the palette's danger tone. */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          {/* Relegation odds board */}
+          <section id="relegation" className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
             <h2 className="text-2xl font-bold mb-1">The relegation battle</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Share of simulated seasons each club finishes in the bottom three.
@@ -206,15 +201,35 @@ export default async function PlPredictionsPage() {
 
           {/* Next fixtures */}
           {upcoming.length > 0 && (
-            <section className="mb-10">
-              <h2 className="text-2xl font-bold mb-1">The next fixtures, called</h2>
-              <p className="text-sm text-[var(--text-muted)] mb-4">
-                Win-draw-win probabilities for the upcoming round{anyMarket
-                  ? ", from the model and the betting market, blended 50/50 into the pick"
-                  : ". Market odds join each column once the books post them"}. Every
-                prediction is frozen when first published and graded against the real result below.
-              </p>
-              <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+            <section id="fixtures" className="mb-10">
+              <SectionHead
+                id="fixtures-head"
+                title="The next fixtures, called"
+                sub="Win-draw-win probabilities for the upcoming round."
+                more={
+                  anyMarket
+                    ? "The pick blends the model and the betting market 50/50. Every prediction is frozen when first published and graded against the real result below."
+                    : "Market odds join each column once the books post them. Every prediction is frozen when first published and graded against the real result below."
+                }
+              />
+              <ResponsiveTable
+                variant="list"
+                mobileNoun="fixtures"
+                className="rounded-xl border"
+                style={BORD}
+                mobileRows={upcoming.map((e) => (
+                  <FixtureRow
+                    key={`${e.date}-${e.home_slug}`}
+                    team1={e.home}
+                    sep="v"
+                    team2={e.away}
+                    kickoff={fmtDate(e.date)}
+                    modelPct={`Model ${ppct(e.model.pH)}/${ppct(e.model.pD)}/${ppct(e.model.pA)}`}
+                    marketPct={anyMarket ? (e.market ? `Market ${ppct(e.market.pH)}/${ppct(e.market.pD)}/${ppct(e.market.pA)}` : "Market —") : undefined}
+                    pick={PICK_LABEL[e.pick](e)}
+                  />
+                ))}
+              >
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -229,7 +244,7 @@ export default async function PlPredictionsPage() {
                   </thead>
                   <tbody>
                     {upcoming.map((e) => (
-                      <tr key={`${e.date}-${e.home_slug}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+                      <tr key={`${e.date}-${e.home_slug}`} className="border-t" style={BORD}>
                         <td className="px-3 py-2 whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</td>
                         <td className="px-3 py-2 font-semibold whitespace-nowrap">{e.home} <span style={{ color: "var(--text-dim)" }}>v</span> {e.away}</td>
                         <td className="px-3 py-2 text-right" style={MONO}>{ppct(e.model.pH)}</td>
@@ -245,12 +260,12 @@ export default async function PlPredictionsPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </ResponsiveTable>
             </section>
           )}
 
           {/* Tracking */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          <section id="record" className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
             <h2 className="text-2xl font-bold mb-1">How the model is doing</h2>
             {rec && rec.graded > 0 ? (
               <>
@@ -272,7 +287,24 @@ export default async function PlPredictionsPage() {
                   </div>
                 </div>
                 {graded.length > 0 && (
-                  <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+                  <ResponsiveTable
+                    variant="list"
+                    mobileNoun="fixtures"
+                    className="rounded-xl border"
+                    style={BORD}
+                    mobileRows={graded.map((e) => (
+                      <FixtureRow
+                        key={`${e.date}-${e.home_slug}`}
+                        team1={e.home}
+                        sep="v"
+                        team2={e.away}
+                        kickoff={<>Pick: {PICK_LABEL[e.pick](e)} · Brier {e.model_brier?.toFixed(3) ?? "—"}</>}
+                        graded
+                        score={e.result === "H" ? e.home : e.result === "A" ? e.away : "Draw"}
+                        correct={!!e.pick_correct}
+                      />
+                    ))}
+                  >
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -285,7 +317,7 @@ export default async function PlPredictionsPage() {
                       </thead>
                       <tbody>
                         {graded.map((e) => (
-                          <tr key={`${e.date}-${e.home_slug}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+                          <tr key={`${e.date}-${e.home_slug}`} className="border-t" style={BORD}>
                             <td className="px-3 py-2 whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</td>
                             <td className="px-3 py-2 whitespace-nowrap">{e.home} <span style={{ color: "var(--text-dim)" }}>v</span> {e.away}</td>
                             <td className="px-3 py-2" style={{ color: e.pick_correct ? "var(--accent)" : "#E2628B" }}>
@@ -297,7 +329,7 @@ export default async function PlPredictionsPage() {
                         ))}
                       </tbody>
                     </table>
-                  </div>
+                  </ResponsiveTable>
                 )}
               </>
             ) : (
@@ -310,14 +342,29 @@ export default async function PlPredictionsPage() {
           </section>
 
           {/* Full table */}
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-1">Every club, every outcome</h2>
-            <p className="text-sm text-[var(--text-muted)] mb-4">
-              Expected points, finishing ranges and the odds of each landing spot: the title, the top four
-              (automatic Champions League), the top five/seven (Europe) and the bottom three.
-              &ldquo;Finish&rdquo; is the median simulated position with the 5th-95th percentile range.
-            </p>
-            <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+          <section id="table" className="mb-10">
+            <SectionHead
+              id="table-head"
+              title="Every club, every outcome"
+              sub="Expected points, finishing range and odds for each landing spot."
+              more="The title, the top four (automatic Champions League), the top five/seven (Europe) and the bottom three. &ldquo;Finish&rdquo; is the median simulated position with the 5th-95th percentile range."
+            />
+            <ResponsiveTable
+              variant="list"
+              mobileNoun="clubs"
+              className="rounded-xl border"
+              style={BORD}
+              mobileRows={rows.map((r) => (
+                <TeamOddsRow
+                  key={r.slug}
+                  name={<ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />}
+                  band={r.band ? <Band band={r.band} /> : null}
+                  right={r.p_top4 != null ? pct(r.p_top4) : "—"}
+                  metricLabel="top 4"
+                  rightSub={`xPts ${r.exp_pts.toFixed(1)}${r.pts_p10 != null && r.pts_p90 != null ? ` (${r.pts_p10}-${r.pts_p90})` : ""}`}
+                />
+              ))}
+            >
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -326,19 +373,16 @@ export default async function PlPredictionsPage() {
                     <th className="px-3 py-2 text-right font-semibold">Finish</th>
                     <th className="px-3 py-2 text-right font-semibold">Title</th>
                     <th className="px-3 py-2 text-right font-semibold">Top 4</th>
-                    <th className="px-3 py-2 text-right font-semibold">Top 5</th>
-                    <th className="px-3 py-2 text-right font-semibold">Top 7</th>
+                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Top 5</th>
+                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Top 7</th>
                     <th className="px-3 py-2 text-right font-semibold">Relegated</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map((r: PlSimRow) => (
-                    <tr key={r.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
+                    <tr key={r.slug} className="border-t" style={BORD}>
                       <td className="px-3 py-2 whitespace-nowrap">
                         <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
-                        {/* Band moved out of the Top 4 cell (was widening the
-                            table past its box at 1652px). Hidden below xl: at
-                            that point the name column is the only place left. */}
                         {r.band && (
                           <span className="hidden xl:block mt-0.5">
                             <Band band={r.band} />
@@ -359,8 +403,8 @@ export default async function PlPredictionsPage() {
                           ({r.pos.p5}-{r.pos.p95})
                         </span>
                       </td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_title >= 1 ? "var(--accent)" : "var(--text-muted)" }}>
-                        {pct(r.p_title)}
+                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
+                        <DataBar v={r.p_title} max={maxTitle} dp={1} suffix="%" color="var(--seq-4)" width={90} />
                         <span className="block text-[10px] leading-tight">
                           <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
                         </span>
@@ -373,8 +417,8 @@ export default async function PlPredictionsPage() {
                           </span>
                         )}
                       </td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>{pct(r.p_top5)}</td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>{pct(r.p_top7)}</td>
+                      <td className={`px-3 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>{pct(r.p_top5)}</td>
+                      <td className={`px-3 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>{pct(r.p_top7)}</td>
                       <td className="px-3 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_releg >= 25 ? "#E2628B" : "var(--text-muted)" }}>
                         {pct(r.p_releg)}
                         <span className="block text-[10px] leading-tight">
@@ -385,8 +429,8 @@ export default async function PlPredictionsPage() {
                   ))}
                 </tbody>
               </table>
-            </div>
-            <p className="text-xs text-[var(--text-muted)] mt-4">
+            </ResponsiveTable>
+            <p className="text-[13px] text-[var(--text-muted)] mt-4">
               Get the data:{" "}
               <Link href="/predictions/pl/table.csv" className="hover:underline">season table as CSV</Link>
               {" · "}
@@ -397,7 +441,7 @@ export default async function PlPredictionsPage() {
           </section>
 
           {/* Citizen of Nowhere Picks */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
             <h2 className="text-2xl font-bold mb-2"><span aria-hidden>&#127919;</span> Citizen of Nowhere Picks</h2>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
               Call every game of the matchweek blind, rank your confidence, and see whether you out-predict
@@ -405,42 +449,51 @@ export default async function PlPredictionsPage() {
             </p>
             <Link
               href="/play/picks"
-              className="inline-flex items-center gap-1.5 rounded-lg font-semibold text-sm px-4 py-2"
+              className="inline-flex items-center min-h-11 gap-1.5 rounded-lg font-semibold text-sm px-4 py-2"
               style={{ backgroundColor: "var(--accent)", color: "#08080D" }}
             >
               Play Citizen of Nowhere Picks <span aria-hidden>&rarr;</span>
             </Link>
           </section>
 
-          {/* Method */}
+          {/* Sources + method */}
           {meta && (
-            <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
-              <h2 className="text-lg font-bold mb-2">How the model works</h2>
-              <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl">
-                Each club&apos;s attack and defence are goal rates per game from its last three league seasons
-                ({meta.strength_seasons.join(", ")}), recency-weighted, with the current campaign&apos;s real
-                goals folded in as it plays out. The promoted clubs&apos; Championship rates are translated with
-                factors calibrated on every promoted side in this site&apos;s hub archive
-                ({meta.promoted_calibration.n} club-seasons: attack &times;{meta.promoted_calibration.att},
-                goals conceded &times;{meta.promoted_calibration.def}). On top of the site data sits a market
-                signal: de-vigged match odds ({meta.odds_source}) fitted into team ratings and blended in at
-                weight {meta.blend_market_weight}. Played matches count as real results; every remaining
-                fixture is simulated with Poisson goals (league scoring rate {meta.mu} per team-game, home
-                advantage &times;{meta.home_adv}), each simulated season drawing every club&apos;s strength from
-                a distribution (&sigma; {meta.sigma}) rather than a fixed number. Fixture picks blend model
-                and market {Math.round((preds?.meta.match_blend_weight ?? 0.5) * 100)}/{Math.round((1 - (preds?.meta.match_blend_weight ?? 0.5)) * 100)} and are graded
-                against results above. {meta.notes}
+            <SourcesCard>
+              <p>
+                Ratings blend this site&apos;s own club data with a market signal, replayed forward{" "}
+                {meta.sims.toLocaleString()} times against the real remaining 2026-27 season. Last generated{" "}
+                {meta.generated_at}
+                {meta.matches_played > 0 ? `, after ${meta.matches_played} matches played` : " (preseason)"}.
+                Fixture picks blend the model with the posted line and are graded against results above; the
+                Brier scores on this page and on the Ledger use that same graded record.
               </p>
-              {meta.model.includes("v3") && (
-                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mt-3">
-                  Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
-                  from narrows week by week as fewer matches remain, and widens back out for a club the stats
-                  and the market disagree about most. Each simulated season also draws one correlated
-                  home-advantage error for the whole league and one for each club, rather than treating every
-                  match as its own coin flip - real campaigns run hot or cold together, not independently.
+              <Disclosure title="How the model works" desktopOpen bodyClassName="p-4 sm:p-5" className="mt-1">
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed">
+                  Each club&apos;s attack and defence are goal rates per game from its last three league seasons
+                  ({meta.strength_seasons.join(", ")}), recency-weighted, with the current campaign&apos;s real
+                  goals folded in as it plays out. The promoted clubs&apos; Championship rates are translated with
+                  factors calibrated on every promoted side in this site&apos;s hub archive
+                  ({meta.promoted_calibration.n} club-seasons: attack &times;{meta.promoted_calibration.att},
+                  goals conceded &times;{meta.promoted_calibration.def}). On top of the site data sits a market
+                  signal: de-vigged match odds ({meta.odds_source}) fitted into team ratings and blended in at
+                  weight {meta.blend_market_weight}. Played matches count as real results; every remaining
+                  fixture is simulated with Poisson goals (league scoring rate {meta.mu} per team-game, home
+                  advantage &times;{meta.home_adv}), each simulated season drawing every club&apos;s strength from
+                  a distribution (&sigma; {meta.sigma}) rather than a fixed number. Fixture picks blend model
+                  and market {Math.round((preds?.meta.match_blend_weight ?? 0.5) * 100)}/{Math.round((1 - (preds?.meta.match_blend_weight ?? 0.5)) * 100)} and are graded
+                  against results above. {meta.notes}
                 </p>
-              )}
-            </section>
+                {meta.model.includes("v3") && (
+                  <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed mt-3">
+                    Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
+                    from narrows week by week as fewer matches remain, and widens back out for a club the stats
+                    and the market disagree about most. Each simulated season also draws one correlated
+                    home-advantage error for the whole league and one for each club, rather than treating every
+                    match as its own coin flip - real campaigns run hot or cold together, not independently.
+                  </p>
+                )}
+              </Disclosure>
+            </SourcesCard>
           )}
         </>
       )}

@@ -10,10 +10,16 @@ import {
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import { getAllFranchises, logoUrlFor } from "@/lib/mlb";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { Disclosure } from "@/app/_shared/Disclosure";
+import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
+import { PredCrumbs, PredHeader, SourcesCard, ListLabel, MONO, CARD, SMCOL } from "../_shared/ui";
+import PredictionsNav from "../_shared/PredictionsNav";
+import { TeamOddsRow } from "../_shared/rows";
 import { Delta } from "@/app/predictions/_shared/Delta";
 import { Sparkline } from "@/app/predictions/_shared/Sparkline";
 import { Band } from "@/app/predictions/_shared/Band";
 import { deltaSince, series } from "@/app/predictions/_shared/deltas";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // MLB 2026 prediction hub - the baseball sibling of /predictions/nfl and
 // /predictions/pl. Season odds from mlb-sim.json (the real remaining schedule
@@ -35,8 +41,6 @@ import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 
 export const revalidate = 21600;
 
-const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
-const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const PATH = "/predictions/mlb";
 const TITLE = "MLB 2026 Predictions";
 const DESC =
@@ -99,6 +103,13 @@ function TeamName({
   );
 }
 
+/** Mobile row crest, matching the desktop table's logo treatment. */
+function TeamCrest({ logo }: { logo: string | null }) {
+  if (!logo) return null;
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />;
+}
+
 function DivisionTable({
   rows, division, href, logo, history,
 }: {
@@ -107,65 +118,86 @@ function DivisionTable({
 }) {
   const ts = rows.filter((r) => r.division === division).sort((a, b) => b.exp_wins - a.exp_wins);
   return (
-    <div className="overflow-x-auto rounded-xl border min-w-0" style={{ borderColor: "var(--border)" }}>
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-            <th className="px-1.5 py-2 font-semibold">{division}</th>
-            <th className="px-1.5 py-2 text-right font-semibold">Now</th>
-            <th className="px-1.5 py-2 text-right font-semibold">xW</th>
-            <th className="px-1.5 py-2 text-right font-semibold">Playoff</th>
-            <th className="px-1.5 py-2 text-right font-semibold hidden sm:table-cell">Div</th>
-            <th className="px-1.5 py-2 text-right font-semibold hidden sm:table-cell">Pen</th>
-            <th className="px-1.5 py-2 text-right font-semibold">Series</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ts.map((r) => (
-            <tr key={r.canonical} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="px-1.5 py-2 whitespace-nowrap">
-                <span className="inline-flex items-center gap-1">
-                  <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
-                  {series(history, r.canonical, "title").length >= 2 && (
-                    <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
-                      <Sparkline points={series(history, r.canonical, "title")} />
+    <div className="min-w-0" data-mobile-uncapped="five teams per division">
+      <ListLabel>{division}</ListLabel>
+      <ResponsiveTable
+        variant="list"
+        mobileNoun="teams"
+        mobileInitial={0}
+        className="rounded-xl border min-w-0"
+        style={{ borderColor: "var(--border)" }}
+        mobileRows={ts.map((r) => (
+          <TeamOddsRow
+            key={r.canonical}
+            crest={<TeamCrest logo={logo(r.canonical)} />}
+            name={href(r.canonical) ? <Link href={href(r.canonical)!}>{r.name}</Link> : r.name}
+            band={
+              <span className="inline-flex items-center gap-1.5">
+                {r.band && <Band band={r.band} />}
+                <span className="text-[13px]" style={{ ...MONO, color: "var(--text-muted)" }}>{r.wins}-{r.losses}</span>
+              </span>
+            }
+            right={pct(r.p_playoffs)}
+            metricLabel="playoffs"
+            rightSub={`xW ${r.exp_wins.toFixed(1)}${r.wins_p10 != null && r.wins_p90 != null ? ` (${r.wins_p10.toFixed(1)}-${r.wins_p90.toFixed(1)})` : ""}`}
+          />
+        ))}
+      >
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+              <th className="px-1.5 py-2 font-semibold">{division}</th>
+              <th className="px-1.5 py-2 text-right font-semibold">Now</th>
+              <th className="px-1.5 py-2 text-right font-semibold">xW</th>
+              <th className="px-1.5 py-2 text-right font-semibold">Playoff</th>
+              <th className={`px-1.5 py-2 text-right font-semibold ${SMCOL}`}>Div</th>
+              <th className={`px-1.5 py-2 text-right font-semibold ${SMCOL}`}>Pen</th>
+              <th className="px-1.5 py-2 text-right font-semibold">Series</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ts.map((r) => (
+              <tr key={r.canonical} className="border-t" style={{ borderColor: "var(--border)" }}>
+                <td className="px-1.5 py-2 whitespace-nowrap">
+                  <span className="inline-flex items-center gap-1">
+                    <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
+                    {series(history, r.canonical, "title").length >= 2 && (
+                      <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
+                        <Sparkline points={series(history, r.canonical, "title")} />
+                      </span>
+                    )}
+                  </span>
+                </td>
+                <td className="px-1.5 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>
+                  {r.wins}-{r.losses}
+                </td>
+                <td className="px-1.5 py-2 text-right whitespace-nowrap" style={MONO}>
+                  {r.exp_wins.toFixed(1)}
+                  {r.wins_p10 != null && r.wins_p90 != null && (
+                    <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+                      {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
                     </span>
                   )}
-                </span>
-                {/* Band lives in the Bubble watch section instead. It does NOT
-                    reappear here: this grid's column is capped at ~550px by
-                    max-w-6xl regardless of viewport, so no breakpoint gives it
-                    room back without reopening the horizontal-scroll regression. */}
-              </td>
-              <td className="px-1.5 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>
-                {r.wins}-{r.losses}
-              </td>
-              <td className="px-1.5 py-2 text-right whitespace-nowrap" style={MONO}>
-                {r.exp_wins.toFixed(1)}
-                {r.wins_p10 != null && r.wins_p90 != null && (
-                  <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
-                    {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
+                </td>
+                <td className="px-1.5 py-2 text-right whitespace-nowrap" style={MONO}>
+                  {pct(r.p_playoffs)}
+                  <span className="block text-[10px] leading-tight">
+                    <Delta value={deltaSince(history, r.canonical, "po", 7)} unit="pp" />
                   </span>
-                )}
-              </td>
-              <td className="px-1.5 py-2 text-right whitespace-nowrap" style={MONO}>
-                {pct(r.p_playoffs)}
-                <span className="block text-[10px] leading-tight">
-                  <Delta value={deltaSince(history, r.canonical, "po", 7)} unit="pp" />
-                </span>
-              </td>
-              <td className="px-1.5 py-2 text-right hidden sm:table-cell" style={MONO}>{pct(r.p_division)}</td>
-              <td className="px-1.5 py-2 text-right hidden sm:table-cell" style={MONO}>{pct(r.p_pennant)}</td>
-              <td className="px-1.5 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_ws >= 5 ? "var(--accent)" : "var(--text-muted)" }}>
-                {pct(r.p_ws)}
-                <span className="block text-[10px] leading-tight">
-                  <Delta value={deltaSince(history, r.canonical, "title", 7)} unit="pp" />
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                </td>
+                <td className={`px-1.5 py-2 text-right ${SMCOL}`} style={MONO}>{pct(r.p_division)}</td>
+                <td className={`px-1.5 py-2 text-right ${SMCOL}`} style={MONO}>{pct(r.p_pennant)}</td>
+                <td className="px-1.5 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_ws >= 5 ? "var(--accent)" : "var(--text-muted)" }}>
+                  {pct(r.p_ws)}
+                  <span className="block text-[10px] leading-tight">
+                    <Delta value={deltaSince(history, r.canonical, "title", 7)} unit="pp" />
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </ResponsiveTable>
     </div>
   );
 }
@@ -203,36 +235,26 @@ export default async function MlbPredictionsPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>{" / "}
-        <Link href="/predictions" className="hover:underline">Predictions</Link>{" / "}
-        <span>MLB</span>
-      </nav>
-
-      <header className="mb-8">
-        <div className="flex items-center gap-3 flex-wrap mb-2">
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            <span aria-hidden>⚾</span> MLB 2026
-          </h1>
-          <span className="flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#10b981" }} aria-hidden />
-            <span className="text-[10px]" style={{ ...MONO, color: "#10b981" }}>LIVE</span>
-          </span>
-        </div>
-        <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
-          {meta ? `${meta.sims.toLocaleString()} simulations` : "Thousands of simulations"} of every
-          {meta ? ` one of the ${meta.games_remaining.toLocaleString()}` : " remaining"} games left on the
-          real schedule, then the full twelve-team bracket played out to the World Series - a ratings
-          model built from run differential, folding in results as they land.
-        </p>
-        {meta && (
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3" style={MONO}>
-            {meta.model} · {meta.market} · updated {meta.generated_at}
-            {meta.games_played > 0 ? ` · after ${meta.games_played.toLocaleString()} games` : " · preseason"}
-            {" · "}{meta.wins_check}
-          </p>
-        )}
-      </header>
+      <PredCrumbs tab="MLB" />
+      <PredHeader
+        emoji="⚾"
+        title="MLB 2026"
+        live
+        sub={
+          <>
+            {meta ? `${meta.sims.toLocaleString()} simulations` : "Thousands of simulations"} of every
+            {meta ? ` one of the ${meta.games_remaining.toLocaleString()}` : " remaining"} games left on the
+            real schedule, then the full twelve-team bracket played out to the World Series - a ratings
+            model built from run differential, folding in results as they land.
+          </>
+        }
+        stamp={
+          meta
+            ? `${meta.model} · ${meta.market} · updated ${meta.generated_at}${meta.games_played > 0 ? ` · after ${meta.games_played.toLocaleString()} games` : " · preseason"} · ${meta.wins_check}`
+            : null
+        }
+      />
+      <PredictionsNav />
 
       {!sim && (
         <section className="rounded-2xl border p-6 mb-8" style={{ borderColor: "var(--border)" }}>
@@ -246,12 +268,17 @@ export default async function MlbPredictionsPage() {
       {rows.length > 0 && (
         <>
           {/* World Series board */}
-          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+          <section id="ws" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
             <h2 className="text-2xl font-bold mb-1">The race for the World Series</h2>
-            <p className="text-sm text-[var(--text-muted)] mb-4">
-              Share of simulated seasons each club wins the whole thing. Every club under 1.5% is left off;
-              they are in the division tables below.
+            <p className="text-sm text-[var(--text-muted)] mb-1">
+              Share of simulated seasons each club wins the whole thing.
             </p>
+            <details className="mb-4 max-w-3xl">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">More</summary>
+              <div className="mt-2 text-sm text-[var(--text-muted)]">
+                Every club under 1.5% is left off; they are in the division tables below.
+              </div>
+            </details>
             <div className="grid gap-2">
               {rows.filter((r) => r.p_ws >= 1.5).map((r, i) => (
                 <div key={r.canonical} className="flex items-center gap-3">
@@ -272,13 +299,19 @@ export default async function MlbPredictionsPage() {
           </section>
 
           {/* The races still open - this page's answer to the NFL hub's ledger */}
-          <section className="mb-10">
+          <section id="open" className="mb-10">
             <h2 className="text-2xl font-bold mb-1">The races still open</h2>
-            <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
+            <p className="text-sm text-[var(--text-muted)] mb-1 max-w-3xl">
               Every club the model puts between {OPEN_LO}% and {OPEN_HI}% to reach October, closest to a
-              coin flip first. This is where the season is actually being decided, and where the model is
-              most likely to be wrong.
+              coin flip first.
             </p>
+            <details className="mb-4 max-w-3xl">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">Why this matters</summary>
+              <div className="mt-2 text-sm text-[var(--text-muted)]">
+                This is where the season is actually being decided, and where the model is most likely to
+                be wrong.
+              </div>
+            </details>
             {open.length > 0 ? (
               <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
                 {open.map((r) => (
@@ -295,13 +328,13 @@ export default async function MlbPredictionsPage() {
                       <span className="text-3xl font-bold leading-none" style={{ ...MONO, color: "var(--accent)" }}>
                         {Math.round(r.p_playoffs)}%
                       </span>
-                      <span className="text-xs text-[var(--text-muted)] pb-0.5">to reach October</span>
+                      <span className="text-[13px] text-[var(--text-muted)] pb-0.5">to reach October</span>
                       {r.band && <Band band={r.band} className="mb-1" />}
                     </div>
                     <div className="h-1.5 rounded mb-2" style={{ background: "var(--bg)" }}>
                       <span className="block h-1.5 rounded" style={{ background: "var(--accent)", opacity: 0.75, width: `${r.p_playoffs}%` }} />
                     </div>
-                    <p className="text-[11px] text-[var(--text-muted)]">
+                    <p className="text-[13px] text-[var(--text-muted)]">
                       {r.division} · {pct(r.p_division)} to win it · {r.exp_wins.toFixed(1)} projected wins
                     </p>
                   </div>
@@ -319,70 +352,120 @@ export default async function MlbPredictionsPage() {
           </section>
 
           {/* The field as it stands */}
-          <section className="mb-10">
+          <section id="field" className="mb-10">
             <h2 className="text-2xl font-bold mb-1">The field the model expects</h2>
-            <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
-              The six clubs from each league the model has reaching the postseason most often.{" "}
-              <strong className="text-[var(--text)]">This is ordered by those odds, not by the
-              standings</strong>, and the model rates a club on its run differential rather than its
-              record, so a team that has scored far more than it has allowed can sit high here while
-              sitting low in the table. Each row carries its real record, run differential and
-              current position so you can see where the two disagree. The top two seeds skip the Wild
-              Card round entirely, which is worth roughly a round of survival, so the bye column
-              matters more than its size suggests.
+            <p className="text-sm text-[var(--text-muted)] mb-1 max-w-3xl">
+              The six clubs from each league the model has reaching the postseason most often.
             </p>
+            <details className="mb-4 max-w-3xl">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">How to read this</summary>
+              <div className="mt-2 text-sm text-[var(--text-muted)]">
+                <strong className="text-[var(--text)]">This is ordered by those odds, not by the
+                standings</strong>, and the model rates a club on its run differential rather than its
+                record, so a team that has scored far more than it has allowed can sit high here while
+                sitting low in the table. Each row carries its real record, run differential and current
+                position so you can see where the two disagree. The top two seeds skip the Wild Card round
+                entirely, which is worth roughly a round of survival, so the bye column matters more than
+                its size suggests.
+              </div>
+            </details>
             <div className="grid gap-4 lg:grid-cols-2">
-              {(["AL", "NL"] as const).map((lg) => (
-                <div key={lg} className="overflow-x-auto rounded-xl border min-w-0" style={{ borderColor: "var(--border)" }}>
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-                        <th className="px-3 py-2 font-semibold">{lg === "AL" ? "American League" : "National League"}</th>
-                        <th className="px-3 py-2 text-right font-semibold">Playoffs</th>
-                        <th className="px-3 py-2 text-right font-semibold">Bye</th>
-                        <th className="px-3 py-2 text-right font-semibold">Pennant</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {fieldFor(lg).map((r) => {
+              {(["AL", "NL"] as const).map((lg) => {
+                const field = fieldFor(lg);
+                const fieldPlayoffMax = Math.max(...field.map((r) => r.p_playoffs), 0.0001);
+                return (
+                  <div key={lg} className="min-w-0" data-mobile-uncapped="top six seeds per league">
+                    <ListLabel>{lg === "AL" ? "American League" : "National League"}</ListLabel>
+                    <ResponsiveTable
+                      variant="list"
+                      mobileNoun="teams"
+                      mobileInitial={0}
+                      className="rounded-xl border min-w-0"
+                      style={{ borderColor: "var(--border)" }}
+                      mobileRows={field.map((r) => {
                         const s = standings.by_canonical[r.canonical];
                         return (
-                        <tr key={r.canonical} className="border-t" style={{ borderColor: "var(--border)" }}>
-                          <td className="px-3 py-2 whitespace-nowrap">
-                            <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
-                            {s ? (
-                              <span className="block text-[11px] text-[var(--text-muted)] mt-0.5" style={MONO}>
-                                {s.wins}-{s.losses}
-                                <span className="mx-1.5 text-[var(--text-dim)]">·</span>
-                                <span style={{ color: s.run_diff > 0 ? "#10b981" : s.run_diff < 0 ? "#E2628B" : undefined }}>
-                                  {s.run_diff > 0 ? "+" : ""}{s.run_diff}
+                          <TeamOddsRow
+                            key={r.canonical}
+                            crest={<TeamCrest logo={logo(r.canonical)} />}
+                            name={href(r.canonical) ? <Link href={href(r.canonical)!}>{r.name}</Link> : r.name}
+                            band={
+                              s ? (
+                                <span className="text-[13px]" style={{ ...MONO, color: "var(--text-muted)" }}>
+                                  {s.wins}-{s.losses}
+                                  <span className="mx-1.5 text-[var(--text-dim)]">·</span>
+                                  <span style={{ color: s.run_diff > 0 ? "#10b981" : s.run_diff < 0 ? "#E2628B" : undefined }}>
+                                    {s.run_diff > 0 ? "+" : ""}{s.run_diff}
+                                  </span>
+                                  {s.playoff_seed ? (
+                                    <>
+                                      <span className="mx-1.5 text-[var(--text-dim)]">·</span>
+                                      {ord(s.playoff_seed)} by record
+                                    </>
+                                  ) : null}
                                 </span>
-                                {s.playoff_seed ? (
-                                  <>
-                                    <span className="mx-1.5 text-[var(--text-dim)]">·</span>
-                                    {ord(s.playoff_seed)} by record
-                                  </>
-                                ) : null}
-                              </span>
-                            ) : null}
-                          </td>
-                          <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_playoffs)}</td>
-                          <td className="px-3 py-2 text-right" style={{ ...MONO, color: "var(--text-muted)" }}>{pct(r.p_bye)}</td>
-                          <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_pennant >= 15 ? "var(--accent)" : "var(--text-muted)" }}>
-                            {pct(r.p_pennant)}
-                          </td>
-                        </tr>
+                              ) : null
+                            }
+                            right={pct(r.p_playoffs)}
+                            metricLabel="playoffs"
+                            rightSub={`pennant ${pct(r.p_pennant)}`}
+                          />
                         );
                       })}
-                    </tbody>
-                  </table>
-                </div>
-              ))}
+                    >
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+                            <th className="px-3 py-2 font-semibold">{lg === "AL" ? "American League" : "National League"}</th>
+                            <th className="px-3 py-2 text-right font-semibold">Playoffs</th>
+                            <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Bye</th>
+                            <th className="px-3 py-2 text-right font-semibold">Pennant</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {field.map((r) => {
+                            const s = standings.by_canonical[r.canonical];
+                            return (
+                              <tr key={r.canonical} className="border-t" style={{ borderColor: "var(--border)" }}>
+                                <td className="px-3 py-2 whitespace-nowrap">
+                                  <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
+                                  {s ? (
+                                    <span className="block text-[13px] text-[var(--text-muted)] mt-0.5" style={MONO}>
+                                      {s.wins}-{s.losses}
+                                      <span className="mx-1.5 text-[var(--text-dim)]">·</span>
+                                      <span style={{ color: s.run_diff > 0 ? "#10b981" : s.run_diff < 0 ? "#E2628B" : undefined }}>
+                                        {s.run_diff > 0 ? "+" : ""}{s.run_diff}
+                                      </span>
+                                      {s.playoff_seed ? (
+                                        <>
+                                          <span className="mx-1.5 text-[var(--text-dim)]">·</span>
+                                          {ord(s.playoff_seed)} by record
+                                        </>
+                                      ) : null}
+                                    </span>
+                                  ) : null}
+                                </td>
+                                <td className="px-3 py-2 text-right" style={MONO}>
+                                  <DataBar v={r.p_playoffs} max={fieldPlayoffMax} dp={1} suffix="%" color="var(--seq-4)" width={100} />
+                                </td>
+                                <td className={`px-3 py-2 text-right ${SMCOL}`} style={{ ...MONO, color: "var(--text-muted)" }}>{pct(r.p_bye)}</td>
+                                <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_pennant >= 15 ? "var(--accent)" : "var(--text-muted)" }}>
+                                  {pct(r.p_pennant)}
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </ResponsiveTable>
+                  </div>
+                );
+              })}
             </div>
           </section>
 
           {/* Division tables */}
-          <section className="mb-10">
+          <section id="divisions" className="mb-10">
             <h2 className="text-2xl font-bold mb-1">Every club, every outcome</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4">
               Current record, projected final wins, and the odds of each landing spot, division by division.
@@ -408,7 +491,7 @@ export default async function MlbPredictionsPage() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-[var(--text-muted)] mt-4">
+            <p className="text-[13px] text-[var(--text-muted)] mt-4">
               Get the data:{" "}
               <Link href="/predictions/mlb/table.csv" className="hover:underline">season table as CSV</Link>
               {" · "}
@@ -418,56 +501,64 @@ export default async function MlbPredictionsPage() {
             </p>
           </section>
 
-          {/* Method */}
+          {/* Sources + method */}
           {meta && (
-            <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
-              <h2 className="text-lg font-bold mb-2">How the model works</h2>
-              <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mb-3">
-                Each club&apos;s rating starts from its run differential per game across the last two
-                seasons ({meta.strength_seasons.join(" and ")}), shrunk toward the league average
-                (&times;{meta.regress}) because rosters turn over. This season&apos;s real run differential
-                folds in at a weight that climbs with games played and dominates by midsummer - baseball
-                gives you 162 games of evidence, and by August the standings have earned the right to
-                outvote history. Run differential becomes a true-talent win percentage through the classic
-                ten-runs-per-win rule, so a club outscoring opponents by a run a game reads as a .600 team.
-                Those percentages are held as log-odds, which makes every head-to-head exactly the log5
-                formula plus a home-field term ({(meta.hfa_wpct * 100).toFixed(1)}%, the long-run MLB home
-                win rate).
+            <SourcesCard>
+              <p>
+                Ratings start from run differential per game across the last two seasons
+                ({meta.strength_seasons.join(" and ")}), shrunk toward the league average, then replayed
+                forward {meta.sims.toLocaleString()} times against every remaining game on the real 2026
+                schedule and the full twelve-team bracket. Last generated {meta.generated_at}
+                {meta.games_played > 0 ? `, after ${meta.games_played.toLocaleString()} games played` : " (preseason)"}.
+                Every number above is checked against the real standings before it ships - the build refuses
+                to publish if the win-loss records it derives disagree with the league&apos;s own.
               </p>
-              <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mb-3">
-                Every one of the {meta.games_remaining.toLocaleString()} games left on the actual schedule is
-                then simulated {meta.sims.toLocaleString()} times, with each simulated season drawing every
-                club&apos;s rating afresh from a distribution (&sigma; {meta.sigma_season} in log-odds) so
-                the output carries the model&apos;s own uncertainty rather than pretending to none. The
-                bracket is the real one: byes for the top two seeds, a best-of-three Wild Card round played
-                entirely at the higher seed, a 2-2-1 Division Series and 2-3-2 Championship Series and World
-                Series, with home games where they actually fall rather than a coin flip. Division ties are
-                broken on record then head-to-head, an approximation of the full ladder.
-                {meta.market_weight > 0.01
-                  ? ` The market gets a say too: the World Series futures ESPN carries are de-vigged, mapped onto the rating scale through the model's own rating-to-title-odds curve, and blended in at weight ${meta.market_weight} - a weight that scales with how much season is left, so the market speaks loudest in March and is nearly silent by September.`
-                  : " The market is not blended in at this point of the season: with this much of the schedule already played, the standings carry more information than the futures do."}
-              </p>
-              {meta.model.includes("v3") && (
-                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mb-3">
-                  Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
-                  from narrows week by week as fewer games remain, and widens back out for a club the stats
-                  and the market disagree about most. Each simulated season also draws one correlated error
-                  for the whole league, one for each division, and one for each club, rather than treating
-                  every game as its own coin flip - real seasons run hot or cold together, not independently.
+              <Disclosure title="How the model works" desktopOpen bodyClassName="p-4 sm:p-5" className="mt-1">
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed">
+                  Each club&apos;s rating starts from its run differential per game across the last two
+                  seasons ({meta.strength_seasons.join(" and ")}), shrunk toward the league average
+                  (&times;{meta.regress}) because rosters turn over. This season&apos;s real run differential
+                  folds in at a weight that climbs with games played and dominates by midsummer - baseball
+                  gives you 162 games of evidence, and by August the standings have earned the right to
+                  outvote history. Run differential becomes a true-talent win percentage through the classic
+                  ten-runs-per-win rule, so a club outscoring opponents by a run a game reads as a .600 team.
+                  Those percentages are held as log-odds, which makes every head-to-head exactly the log5
+                  formula plus a home-field term ({(meta.hfa_wpct * 100).toFixed(1)}%, the long-run MLB home
+                  win rate).
                 </p>
-              )}
-              <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl">
-                <strong className="text-[var(--text)]">What this hub does not have, yet.</strong> There are no
-                game-by-game picks and no graded ledger here, unlike the{" "}
-                <Link href="/predictions/nfl" className="underline hover:text-[var(--accent)]">NFL hub</Link>.
-                That is a deliberate gap rather than an oversight: the NFL plays sixteen games a week and each
-                one is an event worth calling in advance, while baseball plays fifteen a day and almost none of
-                them decide anything. The honest unit of prediction in this sport is the season, so that is
-                what is published. Every number above is checked against the real standings before it ships -
-                the build refuses to publish if the win-loss records it derives disagree with the league&apos;s
-                own.
-              </p>
-            </section>
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed mt-3">
+                  Every one of the {meta.games_remaining.toLocaleString()} games left on the actual schedule is
+                  then simulated {meta.sims.toLocaleString()} times, with each simulated season drawing every
+                  club&apos;s rating afresh from a distribution (&sigma; {meta.sigma_season} in log-odds) so
+                  the output carries the model&apos;s own uncertainty rather than pretending to none. The
+                  bracket is the real one: byes for the top two seeds, a best-of-three Wild Card round played
+                  entirely at the higher seed, a 2-2-1 Division Series and 2-3-2 Championship Series and World
+                  Series, with home games where they actually fall rather than a coin flip. Division ties are
+                  broken on record then head-to-head, an approximation of the full ladder.
+                  {meta.market_weight > 0.01
+                    ? ` The market gets a say too: the World Series futures ESPN carries are de-vigged, mapped onto the rating scale through the model's own rating-to-title-odds curve, and blended in at weight ${meta.market_weight} - a weight that scales with how much season is left, so the market speaks loudest in March and is nearly silent by September.`
+                    : " The market is not blended in at this point of the season: with this much of the schedule already played, the standings carry more information than the futures do."}
+                </p>
+                {meta.model.includes("v3") && (
+                  <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed mt-3">
+                    Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
+                    from narrows week by week as fewer games remain, and widens back out for a club the stats
+                    and the market disagree about most. Each simulated season also draws one correlated error
+                    for the whole league, one for each division, and one for each club, rather than treating
+                    every game as its own coin flip - real seasons run hot or cold together, not independently.
+                  </p>
+                )}
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed mt-3">
+                  <strong className="text-[var(--text)]">What this hub does not have, yet.</strong> There are no
+                  game-by-game picks and no graded ledger here, unlike the{" "}
+                  <Link href="/predictions/nfl" className="underline hover:text-[var(--accent)]">NFL hub</Link>.
+                  That is a deliberate gap rather than an oversight: the NFL plays sixteen games a week and each
+                  one is an event worth calling in advance, while baseball plays fifteen a day and almost none of
+                  them decide anything. The honest unit of prediction in this sport is the season, so that is
+                  what is published.
+                </p>
+              </Disclosure>
+            </SourcesCard>
           )}
         </>
       )}
