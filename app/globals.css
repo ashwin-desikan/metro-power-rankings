@@ -10,6 +10,39 @@
   --text-dim: #55556A;
   --accent: #4ECDC4;
   --accent-dim: #2A7A74;
+
+  /* ---------------------------------------------------------------- charts
+     Validated 2026-09-03 with the dataviz validator against --bg-card.
+     Do NOT hand-edit. Re-run before changing anything:
+       node scripts/validate_palette.js "<hex,...>" --mode dark --surface "#12121A"
+
+     The ORDER is the CVD-safety mechanism, not decoration. Assign slots in
+     sequence and never cycle: a 7th series folds into "Other" or becomes small
+     multiples. Only the FIRST THREE clear the all-pairs test, so maps, scatter,
+     bubble and small-multiples are capped at three series.
+     Worst adjacent pair: dE 12.5 protan / 20.1 normal. All >= 3:1 on surface. */
+  --cat-1: #2FA8A0;
+  --cat-2: #D9702A;
+  --cat-3: #7A5FD6;
+  --cat-4: #C94F76;
+  --cat-5: #3F7FC4;
+  --cat-6: #A88A1E;
+
+  /* Sequential: magnitude, one hue, brighter = more (dark-mode anchor).
+     Lightness monotone, every step >= 2:1 on --bg-card. */
+  --seq-1: #165A56;
+  --seq-2: #1A6E68;
+  --seq-3: #248B84;
+  --seq-4: #2FA8A0;
+  --seq-5: #4CC6BD;
+
+  /* Diverging: polarity around a zero baseline, two hues + a neutral midpoint.
+     The pair sits in the CVD floor band (dE 7.1 deutan), which is legal ONLY
+     with secondary encoding. Direction from the zero line supplies it, so never
+     use these two as flat fills with no baseline. */
+  --div-neg: #C94F76;
+  --div-mid: #6B6B78;
+  --div-pos: #2FA8A0;
   --region-na: #4ECDC4;
   --region-eu: #7B68EE;
   --region-eastasia: #FF6B9D;
