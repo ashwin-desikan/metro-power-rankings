@@ -1,13 +1,48 @@
 {
-  "generatedAt": "2026-09-02",
+  "generatedAt": "2026-09-03",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-03",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "8dce7ee3d"
+    },
     {
       "date": "2026-09-02",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "c9d7c8f4b"
+      "text": "Data refreshed — Football, Basketball, Elections, Sound of the Metros, and 4 more.",
+      "commit": "5e377a824"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "hub",
+      "hub": null,
+      "text": "Put 47 misrecorded fixtures the right way round, one per season.",
+      "commit": "a83494a84"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "fix",
+      "hub": null,
+      "text": "Drop the rejected User-Agent from the eight remaining ESPN callers.",
+      "commit": "df1db8447"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "fix",
+      "hub": null,
+      "text": "Stop sending the User-Agent that Akamai's edge rejects.",
+      "commit": "027923904"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Add Top 14, Gallagher Premiership, Champions Cup and EuroLeague boards.",
+      "commit": "f7090d28c"
     },
     {
       "date": "2026-09-01",
@@ -4166,41 +4201,6 @@
       "hub": "Rankings",
       "text": "Ensure states.json + state route artifacts are in the deploy.",
       "commit": "b27130544"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": "Countries",
-      "text": "Editorial override for additional states; London gains Surrey/Hertfordshire (Berkshire missing from sheet).",
-      "commit": "aff52abcf"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Map markers: gold/magenta/slate palette; unify Football and Soccer label everywhere.",
-      "commit": "3e0872375"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Map markers: Major League precedence, spread colocated, bigger icons, category filters, level in tooltip.",
-      "commit": "0fb6fe974"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Add team/venue markers to metro detail map (Major League / Other / Venues).",
-      "commit": "8b7e76028"
-    },
-    {
-      "date": "2026-05-04",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Data refresh, country boundary maps, release notes trim.",
-      "commit": "4ace6c61e"
     }
   ]
 }
