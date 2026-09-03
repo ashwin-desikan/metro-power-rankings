@@ -336,42 +336,50 @@ export default async function PlPredictionsPage() {
                     <tr key={r.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="px-3 py-2 whitespace-nowrap">
                         <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
+                        {/* Band moved out of the Top 4 cell (was widening the
+                            table past its box at 1652px). Hidden below xl: at
+                            that point the name column is the only place left. */}
+                        {r.band && (
+                          <span className="hidden xl:block mt-0.5">
+                            <Band band={r.band} />
+                          </span>
+                        )}
                       </td>
-                      <td className="px-3 py-2 text-right" style={MONO}>
+                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
                         {r.exp_pts.toFixed(1)}
                         {r.pts_p10 != null && r.pts_p90 != null && (
-                          <span className="ml-1 text-[11px]" style={{ color: "var(--text-dim)" }}>
+                          <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
                             ({r.pts_p10}–{r.pts_p90})
                           </span>
                         )}
                       </td>
                       <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
-                        {r.pos.p50}<span style={{ color: "var(--text-dim)" }}> ({r.pos.p5}-{r.pos.p95})</span>
-                      </td>
-                      <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_title >= 1 ? "var(--accent)" : "var(--text-muted)" }}>
-                        {pct(r.p_title)}
-                        <div className="flex justify-end mt-0.5">
-                          <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
-                        </div>
-                      </td>
-                      <td className="px-3 py-2 text-right" style={MONO}>
-                        <span className="inline-flex items-center justify-end gap-1.5">
-                          {r.p_top4 != null ? pct(r.p_top4) : "—"}
-                          {r.band && <Band band={r.band} />}
+                        {r.pos.p50}
+                        <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+                          ({r.pos.p5}-{r.pos.p95})
                         </span>
+                      </td>
+                      <td className="px-3 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_title >= 1 ? "var(--accent)" : "var(--text-muted)" }}>
+                        {pct(r.p_title)}
+                        <span className="block text-[10px] leading-tight">
+                          <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
+                        </span>
+                      </td>
+                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
+                        {r.p_top4 != null ? pct(r.p_top4) : "—"}
                         {r.p_top4 != null && (
-                          <div className="flex justify-end mt-0.5">
+                          <span className="block text-[10px] leading-tight">
                             <Delta value={deltaSince(history, r.slug, "top4", 7)} unit="pp" />
-                          </div>
+                          </span>
                         )}
                       </td>
-                      <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_top5)}</td>
-                      <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_top7)}</td>
-                      <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_releg >= 25 ? "#E2628B" : "var(--text-muted)" }}>
+                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>{pct(r.p_top5)}</td>
+                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>{pct(r.p_top7)}</td>
+                      <td className="px-3 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_releg >= 25 ? "#E2628B" : "var(--text-muted)" }}>
                         {pct(r.p_releg)}
-                        <div className="flex justify-end mt-0.5">
+                        <span className="block text-[10px] leading-tight">
                           <Delta value={deltaSince(history, r.slug, "rel", 7)} unit="pp" />
-                        </div>
+                        </span>
                       </td>
                     </tr>
                   ))}

@@ -137,18 +137,18 @@ function ConferenceTable({ rows, conference, href, history, withHistory }: {
       <table className="w-full text-sm">
         <thead>
           <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-            <th className="px-3 py-2 font-semibold">{conference}</th>
-            <th className="px-3 py-2 text-right font-semibold">xW</th>
-            {!indep && <th className="px-3 py-2 text-right font-semibold">Title game</th>}
-            {!indep && <th className="px-3 py-2 text-right font-semibold">Conference</th>}
-            <th className="px-3 py-2 text-right font-semibold">Playoff</th>
-            <th className="px-3 py-2 text-right font-semibold">Natl title</th>
+            <th className="px-2 py-2 font-semibold">{conference}</th>
+            <th className="px-2 py-2 text-right font-semibold">xW</th>
+            {!indep && <th className="px-2 py-2 text-right font-semibold">CCG</th>}
+            {!indep && <th className="px-2 py-2 text-right font-semibold">Conf</th>}
+            <th className="px-2 py-2 text-right font-semibold">Playoff</th>
+            <th className="px-2 py-2 text-right font-semibold">Title</th>
           </tr>
         </thead>
         <tbody>
           {ts.map((r) => (
             <tr key={r.espn_id} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="px-3 py-2 whitespace-nowrap">
+              <td className="px-2 py-2 whitespace-nowrap">
                 <span className="inline-flex items-center gap-1.5">
                   <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
                   {withHistory && r.slug && (
@@ -157,34 +157,35 @@ function ConferenceTable({ rows, conference, href, history, withHistory }: {
                     </span>
                   )}
                 </span>
+                {/* Band lives in the Bubble watch section instead. It does NOT
+                    reappear here: this grid's column is capped at ~550px by
+                    max-w-6xl regardless of viewport, so no breakpoint gives it
+                    room back without reopening the horizontal-scroll regression. */}
               </td>
-              <td className="px-3 py-2 text-right" style={MONO}>
+              <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>
                 {r.exp_wins.toFixed(1)}
                 {r.wins_p10 != null && r.wins_p90 != null && (
-                  <span className="ml-1 text-[11px]" style={{ color: "var(--text-dim)" }}>
-                    ({r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)})
+                  <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+                    {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
                   </span>
                 )}
               </td>
-              {!indep && <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_ccg)}</td>}
-              {!indep && <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_conf)}</td>}
-              <td className="px-3 py-2 text-right" style={MONO}>
-                <span className="inline-flex items-center justify-end gap-1.5">
-                  {pct(r.p_playoff)}
-                  {r.band && <Band band={r.band} />}
-                </span>
+              {!indep && <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>{pct(r.p_ccg)}</td>}
+              {!indep && <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>{pct(r.p_conf)}</td>}
+              <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>
+                {pct(r.p_playoff)}
                 {withHistory && r.slug && (
-                  <div className="flex justify-end mt-0.5">
+                  <span className="block text-[10px] leading-tight">
                     <Delta value={deltaSince(history, r.slug, "po", 7)} unit="pp" />
-                  </div>
+                  </span>
                 )}
               </td>
-              <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_natty >= 3 ? "var(--accent)" : "var(--text-muted)" }}>
+              <td className="px-2 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_natty >= 3 ? "var(--accent)" : "var(--text-muted)" }}>
                 {pct(r.p_natty)}
                 {withHistory && r.slug && (
-                  <div className="flex justify-end mt-0.5">
+                  <span className="block text-[10px] leading-tight">
                     <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
-                  </div>
+                  </span>
                 )}
               </td>
             </tr>

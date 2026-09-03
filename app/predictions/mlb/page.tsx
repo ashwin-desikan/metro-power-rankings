@@ -111,53 +111,56 @@ function DivisionTable({
       <table className="w-full text-sm">
         <thead>
           <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-            <th className="px-3 py-2 font-semibold">{division}</th>
-            <th className="px-3 py-2 text-right font-semibold">Now</th>
-            <th className="px-3 py-2 text-right font-semibold">xW</th>
-            <th className="px-3 py-2 text-right font-semibold">Playoffs</th>
-            <th className="px-3 py-2 text-right font-semibold hidden sm:table-cell">Division</th>
-            <th className="px-3 py-2 text-right font-semibold hidden sm:table-cell">Pennant</th>
-            <th className="px-3 py-2 text-right font-semibold">Series</th>
+            <th className="px-1.5 py-2 font-semibold">{division}</th>
+            <th className="px-1.5 py-2 text-right font-semibold">Now</th>
+            <th className="px-1.5 py-2 text-right font-semibold">xW</th>
+            <th className="px-1.5 py-2 text-right font-semibold">Playoff</th>
+            <th className="px-1.5 py-2 text-right font-semibold hidden sm:table-cell">Div</th>
+            <th className="px-1.5 py-2 text-right font-semibold hidden sm:table-cell">Pen</th>
+            <th className="px-1.5 py-2 text-right font-semibold">Series</th>
           </tr>
         </thead>
         <tbody>
           {ts.map((r) => (
             <tr key={r.canonical} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="px-3 py-2 whitespace-nowrap">
-                <span className="inline-flex items-center gap-1.5">
+              <td className="px-1.5 py-2 whitespace-nowrap">
+                <span className="inline-flex items-center gap-1">
                   <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
-                  <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
-                    <Sparkline points={series(history, r.canonical, "title")} />
-                  </span>
+                  {series(history, r.canonical, "title").length >= 2 && (
+                    <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
+                      <Sparkline points={series(history, r.canonical, "title")} />
+                    </span>
+                  )}
                 </span>
+                {/* Band lives in the Bubble watch section instead. It does NOT
+                    reappear here: this grid's column is capped at ~550px by
+                    max-w-6xl regardless of viewport, so no breakpoint gives it
+                    room back without reopening the horizontal-scroll regression. */}
               </td>
-              <td className="px-3 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>
+              <td className="px-1.5 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>
                 {r.wins}-{r.losses}
               </td>
-              <td className="px-3 py-2 text-right" style={MONO}>
+              <td className="px-1.5 py-2 text-right whitespace-nowrap" style={MONO}>
                 {r.exp_wins.toFixed(1)}
                 {r.wins_p10 != null && r.wins_p90 != null && (
-                  <span className="ml-1 text-[11px]" style={{ color: "var(--text-dim)" }}>
-                    ({r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)})
+                  <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+                    {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
                   </span>
                 )}
               </td>
-              <td className="px-3 py-2 text-right" style={MONO}>
-                <span className="inline-flex items-center justify-end gap-1.5">
-                  {pct(r.p_playoffs)}
-                  {r.band && <Band band={r.band} />}
-                </span>
-                <div className="flex justify-end mt-0.5">
+              <td className="px-1.5 py-2 text-right whitespace-nowrap" style={MONO}>
+                {pct(r.p_playoffs)}
+                <span className="block text-[10px] leading-tight">
                   <Delta value={deltaSince(history, r.canonical, "po", 7)} unit="pp" />
-                </div>
+                </span>
               </td>
-              <td className="px-3 py-2 text-right hidden sm:table-cell" style={MONO}>{pct(r.p_division)}</td>
-              <td className="px-3 py-2 text-right hidden sm:table-cell" style={MONO}>{pct(r.p_pennant)}</td>
-              <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_ws >= 5 ? "var(--accent)" : "var(--text-muted)" }}>
+              <td className="px-1.5 py-2 text-right hidden sm:table-cell" style={MONO}>{pct(r.p_division)}</td>
+              <td className="px-1.5 py-2 text-right hidden sm:table-cell" style={MONO}>{pct(r.p_pennant)}</td>
+              <td className="px-1.5 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_ws >= 5 ? "var(--accent)" : "var(--text-muted)" }}>
                 {pct(r.p_ws)}
-                <div className="flex justify-end mt-0.5">
+                <span className="block text-[10px] leading-tight">
                   <Delta value={deltaSince(history, r.canonical, "title", 7)} unit="pp" />
-                </div>
+                </span>
               </td>
             </tr>
           ))}
