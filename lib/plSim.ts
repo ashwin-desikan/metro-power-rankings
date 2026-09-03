@@ -3,12 +3,16 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 // Premier League 2026-27 prediction data (built by
-// scripts/predictions/build_pl_sim.py, poisson-v2):
+// scripts/predictions/build_pl_sim.py, poisson-v2/v3):
 //   public/data/pl-sim.json          - season simulation (title/top5/top7/releg)
+//   public/data/pl-sim-history.json  - daily snapshots of the same odds, for
+//                                      week-over-week deltas and sparklines
 //   public/data/pl-predictions.json  - fixture predictions + graded ledger
 // Same read pattern as lib/forecast.ts: GitHub raw via ISR (remote wins on a
 // newer generated_at) with the build-time file as fallback, so data-only
 // re-runs appear without a Vercel build.
+
+export type PlBand = "solid" | "likely" | "lean" | "tossup" | "unlikely" | "out";
 
 export type PlSimRow = {
   slug: string;
@@ -19,6 +23,13 @@ export type PlSimRow = {
   p_top7: number;
   p_releg: number;
   pos: { p5: number; p25: number; p50: number; p75: number; p95: number };
+  // points-v3, optional
+  rating_stats?: number;
+  sigma_team?: number;
+  p_top4?: number;
+  pts_p10?: number;
+  pts_p90?: number;
+  band?: PlBand;
 };
 
 export type PlSimMeta = {
@@ -37,6 +48,10 @@ export type PlSimMeta = {
   strength_seasons: string[];
   matches_played: number;
   notes: string;
+  // points-v3, optional
+  seed?: number;
+  sigma_season_eff?: number;
+  corr?: { home_adv_sd: number; team_sd: number };
 };
 
 export type PlSimFile = { meta: PlSimMeta; table: PlSimRow[] };
@@ -82,6 +97,24 @@ export type PlPredictionsFile = {
   ledger: PlPredictionEntry[];
 };
 
+export type PlSimHistorySnapshotRow = {
+  xpts: number;
+  title: number;
+  top4: number;
+  rel: number;
+};
+
+export type PlSimHistorySnapshot = {
+  date: string;
+  games_played: number;
+  rows: Record<string, PlSimHistorySnapshotRow>;
+};
+
+export type PlSimHistoryFile = {
+  meta: { league: string; season: string; generated_at: string; keep: number };
+  snapshots: PlSimHistorySnapshot[];
+};
+
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
@@ -125,4 +158,8 @@ export async function getPlSim(): Promise<PlSimFile | null> {
 
 export async function getPlPredictions(): Promise<PlPredictionsFile | null> {
   return load<PlPredictionsFile>("pl-predictions.json");
+}
+
+export async function getPlSimHistory(): Promise<PlSimHistoryFile | null> {
+  return load<PlSimHistoryFile>("pl-sim-history.json");
 }

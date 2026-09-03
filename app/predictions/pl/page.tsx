@@ -1,15 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllClubSlugs } from "@/lib/football";
-import { getPlSim, getPlPredictions, type PlPredictionEntry } from "@/lib/plSim";
+import {
+  getPlSim,
+  getPlPredictions,
+  getPlSimHistory,
+  type PlPredictionEntry,
+  type PlSimRow,
+  type PlSimHistoryFile,
+} from "@/lib/plSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { Delta } from "@/app/predictions/_shared/Delta";
+import { Sparkline } from "@/app/predictions/_shared/Sparkline";
+import { Band } from "@/app/predictions/_shared/Band";
+import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 
 // Premier League 2026-27 prediction hub: the first live league hub on
 // /predictions. Season odds from pl-sim.json (site data blended with market
-// odds), fixture-by-fixture predictions + the season-long graded ledger from
-// pl-predictions.json; both re-run without a build via lib/plSim's ISR read.
+// odds), week-over-week deltas/sparklines from pl-sim-history.json,
+// fixture-by-fixture predictions + the season-long graded ledger from
+// pl-predictions.json; all three re-run without a build via lib/plSim's ISR
+// read. Every points-v3 field (bands, percentile ranges) is optional - the
+// page renders identically to the poisson-v2 build when a field is absent.
+// PL has no tiers: the market blend is a single number, not a separate run.
 
 export const revalidate = 21600;
+
+const GH_BASE =
+  "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
 /** Sim slug -> /teams/football/<slug>, only when that club page exists.
  *  pl-sim.json slugs are generated from club names by the model script, while
@@ -68,7 +86,7 @@ const PICK_LABEL: Record<string, (e: PlPredictionEntry) => string> = {
 };
 
 export default async function PlPredictionsPage() {
-  const [sim, preds] = await Promise.all([getPlSim(), getPlPredictions()]);
+  const [sim, preds, history] = await Promise.all([getPlSim(), getPlPredictions(), getPlSimHistory()]);
   const clubSlugs = new Set(getAllClubSlugs());
   const rows = sim?.table ?? [];
   const meta = sim?.meta ?? null;
@@ -131,8 +149,11 @@ export default async function PlPredictionsPage() {
               {rows.filter((r) => r.p_title >= 0.1).map((r, i) => (
                 <div key={r.slug} className="flex items-center gap-3">
                   <span className="w-6 text-right text-[13px]" style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</span>
-                  <span className="w-44 sm:w-56 text-[14.5px] truncate">
-                    <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
+                  <span className="w-44 sm:w-56 text-[14.5px] inline-flex items-center gap-1.5 min-w-0">
+                    <span className="truncate"><ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} /></span>
+                    <span className="hidden sm:inline-block flex-shrink-0" style={{ color: "var(--accent)" }}>
+                      <Sparkline points={series(history, r.slug, "title")} />
+                    </span>
                   </span>
                   <span className="flex-1 h-2 rounded" style={{ background: "var(--bg-card)" }}>
                     <span
@@ -140,7 +161,10 @@ export default async function PlPredictionsPage() {
                       style={{ background: "var(--accent)", opacity: 0.75, width: `${Math.max(1, (r.p_title / maxTitle) * 100)}%` }}
                     />
                   </span>
-                  <span className="w-14 text-right text-[13px] font-bold" style={{ ...MONO, color: "var(--accent)" }}>{pct(r.p_title)}</span>
+                  <span className="w-14 flex flex-col items-end">
+                    <span className="text-[13px] font-bold" style={{ ...MONO, color: "var(--accent)" }}>{pct(r.p_title)}</span>
+                    <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
+                  </span>
                 </div>
               ))}
             </div>
@@ -170,7 +194,10 @@ export default async function PlPredictionsPage() {
                         style={{ background: "#E2628B", opacity: 0.75, width: `${Math.max(1, (r.p_releg / maxReleg) * 100)}%` }}
                       />
                     </span>
-                    <span className="w-14 text-right text-[13px] font-bold" style={{ ...MONO, color: "#E2628B" }}>{pct(r.p_releg)}</span>
+                    <span className="w-14 flex flex-col items-end">
+                      <span className="text-[13px] font-bold" style={{ ...MONO, color: "#E2628B" }}>{pct(r.p_releg)}</span>
+                      <Delta value={deltaSince(history, r.slug, "rel", 7)} unit="pp" />
+                    </span>
                   </div>
                 ));
               })()}
@@ -286,9 +313,9 @@ export default async function PlPredictionsPage() {
           <section className="mb-10">
             <h2 className="text-2xl font-bold mb-1">Every club, every outcome</h2>
             <p className="text-sm text-[var(--text-muted)] mb-4">
-              Expected points, finishing ranges and the odds of each landing spot: the title, the top five
-              (Champions League), the top seven (Europe) and the bottom three. &ldquo;Finish&rdquo; is the
-              median simulated position with the 5th-95th percentile range.
+              Expected points, finishing ranges and the odds of each landing spot: the title, the top four
+              (automatic Champions League), the top five/seven (Europe) and the bottom three.
+              &ldquo;Finish&rdquo; is the median simulated position with the 5th-95th percentile range.
             </p>
             <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
               <table className="w-full text-sm">
@@ -298,30 +325,67 @@ export default async function PlPredictionsPage() {
                     <th className="px-3 py-2 text-right font-semibold">xPts</th>
                     <th className="px-3 py-2 text-right font-semibold">Finish</th>
                     <th className="px-3 py-2 text-right font-semibold">Title</th>
+                    <th className="px-3 py-2 text-right font-semibold">Top 4</th>
                     <th className="px-3 py-2 text-right font-semibold">Top 5</th>
                     <th className="px-3 py-2 text-right font-semibold">Top 7</th>
                     <th className="px-3 py-2 text-right font-semibold">Relegated</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {rows.map((r) => (
+                  {rows.map((r: PlSimRow) => (
                     <tr key={r.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="px-3 py-2 whitespace-nowrap">
                         <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
                       </td>
-                      <td className="px-3 py-2 text-right" style={MONO}>{r.exp_pts.toFixed(1)}</td>
+                      <td className="px-3 py-2 text-right" style={MONO}>
+                        {r.exp_pts.toFixed(1)}
+                        {r.pts_p10 != null && r.pts_p90 != null && (
+                          <span className="ml-1 text-[11px]" style={{ color: "var(--text-dim)" }}>
+                            ({r.pts_p10}–{r.pts_p90})
+                          </span>
+                        )}
+                      </td>
                       <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
                         {r.pos.p50}<span style={{ color: "var(--text-dim)" }}> ({r.pos.p5}-{r.pos.p95})</span>
                       </td>
-                      <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_title >= 1 ? "var(--accent)" : "var(--text-muted)" }}>{pct(r.p_title)}</td>
+                      <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_title >= 1 ? "var(--accent)" : "var(--text-muted)" }}>
+                        {pct(r.p_title)}
+                        <div className="flex justify-end mt-0.5">
+                          <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
+                        </div>
+                      </td>
+                      <td className="px-3 py-2 text-right" style={MONO}>
+                        <span className="inline-flex items-center justify-end gap-1.5">
+                          {r.p_top4 != null ? pct(r.p_top4) : "—"}
+                          {r.band && <Band band={r.band} />}
+                        </span>
+                        {r.p_top4 != null && (
+                          <div className="flex justify-end mt-0.5">
+                            <Delta value={deltaSince(history, r.slug, "top4", 7)} unit="pp" />
+                          </div>
+                        )}
+                      </td>
                       <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_top5)}</td>
                       <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_top7)}</td>
-                      <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_releg >= 25 ? "#E2628B" : "var(--text-muted)" }}>{pct(r.p_releg)}</td>
+                      <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_releg >= 25 ? "#E2628B" : "var(--text-muted)" }}>
+                        {pct(r.p_releg)}
+                        <div className="flex justify-end mt-0.5">
+                          <Delta value={deltaSince(history, r.slug, "rel", 7)} unit="pp" />
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+            <p className="text-xs text-[var(--text-muted)] mt-4">
+              Get the data:{" "}
+              <Link href="/predictions/pl/table.csv" className="hover:underline">season table as CSV</Link>
+              {" · "}
+              <a href={`${GH_BASE}/pl-sim.json`} className="hover:underline" target="_blank" rel="noreferrer">
+                raw JSON on GitHub
+              </a>
+            </p>
           </section>
 
           {/* Citizen of Nowhere Picks */}
@@ -359,6 +423,15 @@ export default async function PlPredictionsPage() {
                 and market {Math.round((preds?.meta.match_blend_weight ?? 0.5) * 100)}/{Math.round((1 - (preds?.meta.match_blend_weight ?? 0.5)) * 100)} and are graded
                 against results above. {meta.notes}
               </p>
+              {meta.model.includes("v3") && (
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mt-3">
+                  Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
+                  from narrows week by week as fewer matches remain, and widens back out for a club the stats
+                  and the market disagree about most. Each simulated season also draws one correlated
+                  home-advantage error for the whole league and one for each club, rather than treating every
+                  match as its own coin flip - real campaigns run hot or cold together, not independently.
+                </p>
+              )}
             </section>
           )}
         </>

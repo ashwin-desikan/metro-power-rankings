@@ -70,6 +70,9 @@ import os
 import random
 import sys
 import urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sim_common as sc
 from collections import defaultdict
 from datetime import date, datetime, timedelta
 
@@ -387,61 +390,19 @@ def blend_ratings(rates, mu, mkt):
 # --------------------------------------------------------- adaptive sigma
 
 def adaptive_sigma(frac_left, sigma_season=SIGMA, floor_frac=SIGMA_FLOOR_FRAC):
-    """League-wide per-season strength sigma given the fraction of the
-    38-round season still to play; shrinks toward `floor_frac` of the
-    full-season value as the season resolves, never below it."""
-    frac_left = min(max(frac_left, 0.0), 1.0)
-    return sigma_season * max(floor_frac, math.sqrt(frac_left))
+    return sc.adaptive_sigma(frac_left, sigma_season, floor_frac)
 
 
 # --------------------------------------------------------------- intervals
 
-def percentiles(values, p):
-    """Nearest-rank percentile (p in 0..100) of a list of numbers. None for
-    an empty list. Used for the season points-total p10/p90 bands."""
-    if not values:
-        return None
-    s = sorted(values)
-    idx = int(round((p / 100.0) * (len(s) - 1)))
-    idx = min(max(idx, 0), len(s) - 1)
-    return s[idx]
-
-
-def band_for(p_top4):
-    """Top-4-odds band label from p_top4 (0..100), the same cuts as the
-    NFL/MLB playoff bands."""
-    if p_top4 >= 90:
-        return "solid"
-    if p_top4 >= 75:
-        return "likely"
-    if p_top4 >= 60:
-        return "lean"
-    if p_top4 >= 40:
-        return "tossup"
-    if p_top4 >= 15:
-        return "unlikely"
-    return "out"
+percentiles = sc.percentiles
+band_for = sc.band_for
 
 
 # ------------------------------------------------------------------- history
 
 def upsert_snapshot(doc, date_iso, games_played, rows, keep=HISTORY_KEEP):
-    """Insert or replace `date_iso`'s snapshot in the history doc (a rebuild
-    on the same date REPLACES it, never duplicates), sorted ascending by
-    date and capped at `keep` entries (oldest dropped first). `doc` may be
-    None for a fresh file."""
-    doc = doc or {"meta": {"league": "premier-league", "season": SEASON,
-                           "generated_at": date_iso, "keep": keep},
-                  "snapshots": []}
-    snaps = [s for s in doc.get("snapshots", []) if s.get("date") != date_iso]
-    snaps.append({"date": date_iso, "games_played": games_played, "rows": rows})
-    snaps.sort(key=lambda s: s["date"])
-    if len(snaps) > keep:
-        snaps = snaps[-keep:]
-    doc["snapshots"] = snaps
-    doc["meta"]["generated_at"] = date_iso
-    doc["meta"]["keep"] = keep
-    return doc
+    return sc.upsert_snapshot(doc, date_iso, games_played, rows, "premier-league", SEASON, keep=keep)
 
 
 # ------------------------------------------------------------------ the sim

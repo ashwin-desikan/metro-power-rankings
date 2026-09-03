@@ -72,6 +72,9 @@ import random
 import sys
 import urllib.request
 from collections import defaultdict
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sim_common as sc
 from datetime import date, datetime, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -409,129 +412,38 @@ def _logodds(p, floor=5e-4):
 
 
 def implied_ratings_from_spreads(obs, prior, lam=SPREAD_LAMBDA, hfa=HFA, sweeps=200):
-    """Ridge-regularized team ratings from posted point spreads.
-
-    obs: [(home, away, spread, neutral)] -- ESPN's posted home spread
-    (negative = home favoured); neutral drops the HFA adjustment for that
-    game. prior: {team: rating}, the regression target (recentred elsewhere;
-    a team present in `prior` but with no observations falls back to it).
-    Solved by Gauss-Seidel on the ridge normal equations (stdlib only,
-    200 sweeps is comfortably enough to converge at this scale).
-
-    Returns ({team: rating}, n_observations_used), ratings recentred to
-    mean zero. n counts only observations touching a team we have a prior
-    (or that appears elsewhere in `obs`) for."""
-    m = dict(prior)
-    by_team = defaultdict(list)  # team -> [(other_team, sign, y)]
-    n = 0
-    for h, a, spread, neutral in obs:
-        if spread is None:
-            continue
-        m.setdefault(h, 0.0)
-        m.setdefault(a, 0.0)
-        y = -spread - (0.0 if neutral else hfa)
-        by_team[h].append((a, 1.0, y))
-        by_team[a].append((h, -1.0, y))
-        n += 1
-    if n == 0:
-        return {t: v for t, v in prior.items()}, 0
-    for _ in range(sweeps):
-        for t in m:
-            num = lam * prior.get(t, 0.0)
-            den = lam
-            for other, sign, y in by_team.get(t, []):
-                num += sign * y + m[other]
-                den += 1.0
-            if den > 0:
-                m[t] = num / den
-    mean_m = sum(m.values()) / len(m)
-    return {t: v - mean_m for t, v in m.items()}, n
+    """Ridge-regularized team ratings from posted point spreads. See
+    sim_common.implied_ratings_from_spreads for the full docstring; this
+    wrapper only pins this builder's own defaults (sim_common's own
+    defaults are lam=2.0, hfa=0.0, which differ from SPREAD_LAMBDA/HFA)."""
+    return sc.implied_ratings_from_spreads(obs, prior, lam=lam, hfa=hfa, sweeps=sweeps)
 
 
 # --------------------------------------------------------- adaptive sigma
 
 def adaptive_sigma(frac_left, sigma_season=SIGMA_SEASON, floor_frac=SIGMA_FLOOR_FRAC):
-    """League-wide per-season rating sigma given the fraction of the 272-game
-    schedule still to play; shrinks toward `floor_frac` of the full-season
-    value as the season resolves, never below it."""
-    frac_left = min(max(frac_left, 0.0), 1.0)
-    return sigma_season * max(floor_frac, math.sqrt(frac_left))
+    return sc.adaptive_sigma(frac_left, sigma_season, floor_frac)
 
 
 def team_sigma(sigma_base, r_stats, r_market, disagree_k=DISAGREE_K):
-    """Widen a team's season sigma by how much the stats and market ratings
-    disagree about it (no widening when there is no market rating)."""
-    if r_market is None:
-        return sigma_base
-    return math.sqrt(sigma_base ** 2 + (disagree_k * abs(r_stats - r_market)) ** 2)
+    return sc.team_sigma(sigma_base, r_stats, r_market, disagree_k)
 
 
 def div_residual_sd(sigma_adaptive, div_sd=DIV_SD, floor=0.25):
-    """sd of a team's own noise layer once the shared division layer (sd
-    `div_sd`) is split out of its adaptive sigma, so the two layers' variance
-    sums back to it (floored so a small adaptive sigma never goes negative
-    under the sqrt)."""
-    return math.sqrt(max(sigma_adaptive ** 2 - div_sd ** 2, floor))
+    return sc.layer_residual_sd(sigma_adaptive, div_sd, floor)
 
 
 # --------------------------------------------------------------- intervals
 
-def percentiles(values, p):
-    """Nearest-rank percentile (p in 0..100) of a list of numbers. None for
-    an empty list. Used for the season win-count p10/p90 bands."""
-    if not values:
-        return None
-    s = sorted(values)
-    idx = int(round((p / 100.0) * (len(s) - 1)))
-    idx = min(max(idx, 0), len(s) - 1)
-    return s[idx]
-
-
-def leverage_from_counts(win_po, win_total, loss_po, loss_total):
-    """100 * (P(playoffs | this team won this game) - P(playoffs | lost)),
-    the points of playoff-probability swing riding on one game. 0.0 (not an
-    error) when a branch never happened in the sample -- can't occur in a
-    real sim with enough draws, but keeps the build from crashing on a tiny
-    or degenerate sample."""
-    if not win_total or not loss_total:
-        return 0.0
-    return round(100.0 * (win_po / win_total - loss_po / loss_total), 1)
-
-
-def band_for(p_playoffs):
-    """Playoff-odds band label from p_playoffs (0..100)."""
-    if p_playoffs >= 90:
-        return "solid"
-    if p_playoffs >= 75:
-        return "likely"
-    if p_playoffs >= 60:
-        return "lean"
-    if p_playoffs >= 40:
-        return "tossup"
-    if p_playoffs >= 15:
-        return "unlikely"
-    return "out"
+percentiles = sc.percentiles
+leverage_from_counts = sc.leverage_from_counts
+band_for = sc.band_for
 
 
 # ------------------------------------------------------------------- history
 
 def upsert_snapshot(doc, date_iso, games_played, rows, keep=HISTORY_KEEP):
-    """Insert or replace `date_iso`'s snapshot in the history doc (a rebuild
-    on the same date REPLACES it, never duplicates), sorted ascending by
-    date and capped at `keep` entries (oldest dropped first). `doc` may be
-    None for a fresh file."""
-    doc = doc or {"meta": {"league": "nfl", "season": SEASON,
-                           "generated_at": date_iso, "keep": keep},
-                  "snapshots": []}
-    snaps = [s for s in doc.get("snapshots", []) if s.get("date") != date_iso]
-    snaps.append({"date": date_iso, "games_played": games_played, "rows": rows})
-    snaps.sort(key=lambda s: s["date"])
-    if len(snaps) > keep:
-        snaps = snaps[-keep:]
-    doc["snapshots"] = snaps
-    doc["meta"]["generated_at"] = date_iso
-    doc["meta"]["keep"] = keep
-    return doc
+    return sc.upsert_snapshot(doc, date_iso, games_played, rows, "nfl", SEASON, keep=keep)
 
 
 # ------------------------------------------------------------------ the sim

@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-03",
+    headline: "Predictions that show their uncertainty and their movement",
+    items: [
+      "Every prediction hub now shows how each team's odds moved over the past week, with a sparkline of the season, a 10th-to-90th percentile range on projected wins, and a plain-language band from Solid to Out.",
+      "The NFL and college football hubs add two views of the same season: a stats-only model and one that also listens to the market. The Ledger scores each so you can see what the market adds.",
+      "New tables name the games that matter most this week, measured by how far a win or a loss would move a team's playoff chances, and the teams sitting on the bubble.",
+      "Under the hood, uncertainty now tightens as the season plays out, related teams' errors move together, and neutral-site games such as the Rams and 49ers in Melbourne no longer hand anyone a home edge.",
+    ],
+  },
+  {
     date: "2026-09-02",
     headline: "A century of corrected results, and steadier rugby tables",
     items: [

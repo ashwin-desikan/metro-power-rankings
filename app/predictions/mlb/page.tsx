@@ -1,14 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getMlbSim, type MlbSimRow } from "@/lib/mlbSim";
+import {
+  getMlbSim,
+  getMlbSimHistory,
+  MLB_DATA_GH_BASE,
+  type MlbSimRow,
+  type MlbSimHistoryFile,
+} from "@/lib/mlbSim";
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import { getAllFranchises, logoUrlFor } from "@/lib/mlb";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { Delta } from "@/app/predictions/_shared/Delta";
+import { Sparkline } from "@/app/predictions/_shared/Sparkline";
+import { Band } from "@/app/predictions/_shared/Band";
+import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 
 // MLB 2026 prediction hub - the baseball sibling of /predictions/nfl and
 // /predictions/pl. Season odds from mlb-sim.json (the real remaining schedule
-// plus the full 12-team bracket), refreshing without a build via lib/mlbSim's
-// ISR read.
+// plus the full 12-team bracket), week-over-week deltas/sparklines from
+// mlb-sim-history.json; both refresh without a build via lib/mlbSim's ISR
+// read. Every points-v3 field (bands, percentile ranges) is optional - the
+// page renders identically to the points-v2 build when a field is absent.
+// There are still no tiers and no leverage here, by the same design choice
+// documented below: no game-by-game ledger, no per-game swing to compute.
 //
 // DELIBERATELY NOT A COPY OF THE NFL HUB. That page's centrepiece after the
 // title board is a per-game ledger, because the NFL plays sixteen games a
@@ -86,8 +100,11 @@ function TeamName({
 }
 
 function DivisionTable({
-  rows, division, href, logo,
-}: { rows: MlbSimRow[]; division: string; href: (c: string) => string | null; logo: (c: string) => string | null }) {
+  rows, division, href, logo, history,
+}: {
+  rows: MlbSimRow[]; division: string; href: (c: string) => string | null; logo: (c: string) => string | null;
+  history: MlbSimHistoryFile | null;
+}) {
   const ts = rows.filter((r) => r.division === division).sort((a, b) => b.exp_wins - a.exp_wins);
   return (
     <div className="overflow-x-auto rounded-xl border min-w-0" style={{ borderColor: "var(--border)" }}>
@@ -107,17 +124,40 @@ function DivisionTable({
           {ts.map((r) => (
             <tr key={r.canonical} className="border-t" style={{ borderColor: "var(--border)" }}>
               <td className="px-3 py-2 whitespace-nowrap">
-                <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
+                <span className="inline-flex items-center gap-1.5">
+                  <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
+                  <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
+                    <Sparkline points={series(history, r.canonical, "title")} />
+                  </span>
+                </span>
               </td>
               <td className="px-3 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>
                 {r.wins}-{r.losses}
               </td>
-              <td className="px-3 py-2 text-right" style={MONO}>{r.exp_wins.toFixed(1)}</td>
-              <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_playoffs)}</td>
+              <td className="px-3 py-2 text-right" style={MONO}>
+                {r.exp_wins.toFixed(1)}
+                {r.wins_p10 != null && r.wins_p90 != null && (
+                  <span className="ml-1 text-[11px]" style={{ color: "var(--text-dim)" }}>
+                    ({r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)})
+                  </span>
+                )}
+              </td>
+              <td className="px-3 py-2 text-right" style={MONO}>
+                <span className="inline-flex items-center justify-end gap-1.5">
+                  {pct(r.p_playoffs)}
+                  {r.band && <Band band={r.band} />}
+                </span>
+                <div className="flex justify-end mt-0.5">
+                  <Delta value={deltaSince(history, r.canonical, "po", 7)} unit="pp" />
+                </div>
+              </td>
               <td className="px-3 py-2 text-right hidden sm:table-cell" style={MONO}>{pct(r.p_division)}</td>
               <td className="px-3 py-2 text-right hidden sm:table-cell" style={MONO}>{pct(r.p_pennant)}</td>
               <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_ws >= 5 ? "var(--accent)" : "var(--text-muted)" }}>
                 {pct(r.p_ws)}
+                <div className="flex justify-end mt-0.5">
+                  <Delta value={deltaSince(history, r.canonical, "title", 7)} unit="pp" />
+                </div>
               </td>
             </tr>
           ))}
@@ -142,7 +182,7 @@ export default async function MlbPredictionsPage() {
   // everyone around them is negative. Without the record on the row that reads
   // as a broken page, which is exactly how it was reported. Carry the live
   // standings so the number doing the work is visible next to the claim.
-  const standings = await getCurrentMlbStandings();
+  const [standings, history] = await Promise.all([getCurrentMlbStandings(), getMlbSimHistory()]);
   const rows = sim?.table ?? [];
   const meta = sim?.meta ?? null;
   const { href, logo } = teamHrefs();
@@ -253,6 +293,7 @@ export default async function MlbPredictionsPage() {
                         {Math.round(r.p_playoffs)}%
                       </span>
                       <span className="text-xs text-[var(--text-muted)] pb-0.5">to reach October</span>
+                      {r.band && <Band band={r.band} className="mb-1" />}
                     </div>
                     <div className="h-1.5 rounded mb-2" style={{ background: "var(--bg)" }}>
                       <span className="block h-1.5 rounded" style={{ background: "var(--accent)", opacity: 0.75, width: `${r.p_playoffs}%` }} />
@@ -359,11 +400,19 @@ export default async function MlbPredictionsPage() {
                     {league}
                   </h3>
                   {divisions.map((d) => (
-                    <DivisionTable key={d} rows={rows} division={d} href={href} logo={logo} />
+                    <DivisionTable key={d} rows={rows} division={d} href={href} logo={logo} history={history} />
                   ))}
                 </div>
               ))}
             </div>
+            <p className="text-xs text-[var(--text-muted)] mt-4">
+              Get the data:{" "}
+              <Link href="/predictions/mlb/table.csv" className="hover:underline">season table as CSV</Link>
+              {" · "}
+              <a href={`${MLB_DATA_GH_BASE}/mlb-sim.json`} className="hover:underline" target="_blank" rel="noreferrer">
+                raw JSON on GitHub
+              </a>
+            </p>
           </section>
 
           {/* Method */}
@@ -395,6 +444,15 @@ export default async function MlbPredictionsPage() {
                   ? ` The market gets a say too: the World Series futures ESPN carries are de-vigged, mapped onto the rating scale through the model's own rating-to-title-odds curve, and blended in at weight ${meta.market_weight} - a weight that scales with how much season is left, so the market speaks loudest in March and is nearly silent by September.`
                   : " The market is not blended in at this point of the season: with this much of the schedule already played, the standings carry more information than the futures do."}
               </p>
+              {meta.model.includes("v3") && (
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mb-3">
+                  Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
+                  from narrows week by week as fewer games remain, and widens back out for a club the stats
+                  and the market disagree about most. Each simulated season also draws one correlated error
+                  for the whole league, one for each division, and one for each club, rather than treating
+                  every game as its own coin flip - real seasons run hot or cold together, not independently.
+                </p>
+              )}
               <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl">
                 <strong className="text-[var(--text)]">What this hub does not have, yet.</strong> There are no
                 game-by-game picks and no graded ledger here, unlike the{" "}

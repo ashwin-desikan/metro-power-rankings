@@ -34,14 +34,20 @@ export function TierTabs({
   tabs,
   children,
   className = "",
+  defaultTab = DEFAULT_TAB,
 }: {
   tabs: TierTab[];
   /** One child per tab, in the same order as `tabs`. */
   children: ReactNode[];
   className?: string;
+  /** Tab key selected before the viewer's stored choice (if any) loads.
+   *  Defaults to "classic" for backward compatibility with the NFL hub;
+   *  CFB's three-tier board passes "deluxe". Falls back to the first tab
+   *  when the requested default isn't in `tabs`. */
+  defaultTab?: string;
 }) {
   const groupId = useId();
-  const fallback = tabs.some((t) => t.key === DEFAULT_TAB) ? DEFAULT_TAB : tabs[0]?.key;
+  const fallback = tabs.some((t) => t.key === defaultTab) ? defaultTab : tabs[0]?.key;
   const [active, setActive] = useState<string>(fallback);
 
   useEffect(() => {

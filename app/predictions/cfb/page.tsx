@@ -1,19 +1,39 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getCfbSim, getCfbPredictions, type CfbPredictionEntry, type CfbSimRow } from "@/lib/cfbSim";
+import {
+  getCfbSim,
+  getCfbPredictions,
+  getCfbSimHistory,
+  CFB_DATA_GH_BASE,
+  type CfbPredictionEntry,
+  type CfbSimRow,
+  type CfbSimTierRow,
+  type CfbSimHistoryFile,
+} from "@/lib/cfbSim";
 import { getAllCfbSlugs } from "@/lib/cfb";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
+import { Delta } from "@/app/predictions/_shared/Delta";
+import { Sparkline } from "@/app/predictions/_shared/Sparkline";
+import { Band } from "@/app/predictions/_shared/Band";
+import { TierTabs } from "@/app/predictions/_shared/TierTabs";
+import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 
 // College Football 2026 prediction hub on /predictions - the CFB sibling of
 // /predictions/nfl. Season odds from cfb-sim.json (the real FBS schedule, all
 // ten conference title games and the 12-team straight-seeded playoff), weekly
-// AP Top 25 game predictions + graded ledger from cfb-predictions.json; both
-// refresh without a build via lib/cfbSim's ISR read.
+// AP Top 25 game predictions + graded ledger from cfb-predictions.json,
+// week-over-week deltas/sparklines from cfb-sim-history.json; all three
+// refresh without a build via lib/cfbSim's ISR read. Every points-v3 field
+// (three tiers, bands, percentile ranges, leverage, bubble odds) is optional
+// - the page renders identically to the points-v2 build when a field is
+// absent.
 
 export const revalidate = 21600;
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
+const BORD = { borderColor: "var(--border)" } as const;
 const PATH = "/predictions/cfb";
 const TITLE = "College Football 2026 Predictions";
 const DESC =
@@ -77,8 +97,37 @@ function TeamLabel({ name, href, rank }: { name: string; href: string | null; ra
   );
 }
 
-function ConferenceTable({ rows, conference, href }: {
+/** Merge a tier's stats-only/market-only numbers onto the base rows for
+ *  identity fields (name/slug/conference/power4/ap_rank). Rows a tier has no
+ *  entry for (should not happen, but the JSON is data, not a promise) fall
+ *  back to the base row unchanged rather than disappearing from the table. */
+function tierDisplayRows(base: CfbSimRow[], tier: Record<string, CfbSimTierRow> | undefined): CfbSimRow[] | null {
+  if (!tier) return null;
+  return base.map((r) => {
+    const key = r.slug ?? r.espn_id;
+    const t = tier[key];
+    if (!t) return r;
+    return {
+      ...r,
+      exp_wins: t.exp_wins,
+      p_ccg: t.p_ccg,
+      p_conf: t.p_conf,
+      p_playoff: t.p_playoff,
+      p_bye: t.p_bye,
+      p_natty: t.p_natty,
+      wins_p10: undefined,
+      wins_p90: undefined,
+      p_bubble: undefined,
+      band: undefined,
+    };
+  });
+}
+
+function ConferenceTable({ rows, conference, href, history, withHistory }: {
   rows: CfbSimRow[]; conference: string; href: (s: string | null) => string | null;
+  history: CfbSimHistoryFile | null;
+  /** Only the deluxe (production) tier carries week-over-week history. */
+  withHistory: boolean;
 }) {
   const ts = rows.filter((r) => r.conference === conference)
     .sort((a, b) => b.p_conf - a.p_conf || b.p_playoff - a.p_playoff || b.exp_wins - a.exp_wins);
@@ -100,13 +149,44 @@ function ConferenceTable({ rows, conference, href }: {
           {ts.map((r) => (
             <tr key={r.espn_id} className="border-t" style={{ borderColor: "var(--border)" }}>
               <td className="px-3 py-2 whitespace-nowrap">
-                <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
+                <span className="inline-flex items-center gap-1.5">
+                  <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
+                  {withHistory && r.slug && (
+                    <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
+                      <Sparkline points={series(history, r.slug, "title")} />
+                    </span>
+                  )}
+                </span>
               </td>
-              <td className="px-3 py-2 text-right" style={MONO}>{r.exp_wins.toFixed(1)}</td>
+              <td className="px-3 py-2 text-right" style={MONO}>
+                {r.exp_wins.toFixed(1)}
+                {r.wins_p10 != null && r.wins_p90 != null && (
+                  <span className="ml-1 text-[11px]" style={{ color: "var(--text-dim)" }}>
+                    ({r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)})
+                  </span>
+                )}
+              </td>
               {!indep && <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_ccg)}</td>}
               {!indep && <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_conf)}</td>}
-              <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_playoff)}</td>
-              <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_natty >= 3 ? "var(--accent)" : "var(--text-muted)" }}>{pct(r.p_natty)}</td>
+              <td className="px-3 py-2 text-right" style={MONO}>
+                <span className="inline-flex items-center justify-end gap-1.5">
+                  {pct(r.p_playoff)}
+                  {r.band && <Band band={r.band} />}
+                </span>
+                {withHistory && r.slug && (
+                  <div className="flex justify-end mt-0.5">
+                    <Delta value={deltaSince(history, r.slug, "po", 7)} unit="pp" />
+                  </div>
+                )}
+              </td>
+              <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_natty >= 3 ? "var(--accent)" : "var(--text-muted)" }}>
+                {pct(r.p_natty)}
+                {withHistory && r.slug && (
+                  <div className="flex justify-end mt-0.5">
+                    <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
+                  </div>
+                )}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -117,8 +197,42 @@ function ConferenceTable({ rows, conference, href }: {
 
 const PICK_LABEL = (e: CfbPredictionEntry) => (e.pick === "H" ? e.home : e.away);
 
+function LeverageRow({ e }: { e: CfbPredictionEntry }) {
+  const lev = e.leverage!;
+  return (
+    <tr className="border-t" style={BORD}>
+      <td className="px-3 py-2 whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</td>
+      <td className="px-3 py-2 font-semibold whitespace-nowrap">
+        {e.away} <span style={{ color: "var(--text-dim)" }}>{e.neutral ? "vs" : "at"}</span> {e.home}
+      </td>
+      <td className="px-3 py-2 text-right" style={MONO}>{pct(lev.home)}</td>
+      <td className="px-3 py-2 text-right" style={MONO}>{pct(lev.away)}</td>
+      <td className="px-3 py-2 font-semibold" style={{ color: "var(--accent)" }}>{PICK_LABEL(e)}</td>
+    </tr>
+  );
+}
+
+function LeverageCard({ e }: { e: CfbPredictionEntry }) {
+  const lev = e.leverage!;
+  return (
+    <div className="px-3 py-2.5">
+      <div className="flex items-center justify-between gap-2">
+        <span className="font-semibold text-sm">
+          {e.away} <span style={{ color: "var(--text-dim)" }}>{e.neutral ? "vs" : "at"}</span> {e.home}
+        </span>
+        <span className="text-[11px] whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</span>
+      </div>
+      <div className="flex items-center gap-4 mt-1 text-[13px]" style={MONO}>
+        <span>{e.home} swing {pct(lev.home)}</span>
+        <span>{e.away} swing {pct(lev.away)}</span>
+      </div>
+      <div className="text-[13px] font-semibold mt-0.5" style={{ color: "var(--accent)" }}>Pick: {PICK_LABEL(e)}</div>
+    </div>
+  );
+}
+
 export default async function CfbPredictionsPage() {
-  const [sim, preds] = await Promise.all([getCfbSim(), getCfbPredictions()]);
+  const [sim, preds, history] = await Promise.all([getCfbSim(), getCfbPredictions(), getCfbSimHistory()]);
   const href = cfbHref();
   const rows = sim?.table ?? [];
   const meta = sim?.meta ?? null;
@@ -144,6 +258,16 @@ export default async function CfbPredictionsPage() {
     const fav = rows.filter((r) => r.conference === c).sort((a, b) => b.p_conf - a.p_conf)[0];
     return { conference: c, pair, fav };
   });
+
+  const liteRows = tierDisplayRows(rows, sim?.tiers?.lite);
+  const classicRows = tierDisplayRows(rows, sim?.tiers?.classic);
+  const leverageGames = upcoming
+    .filter((e): e is CfbPredictionEntry & { leverage: NonNullable<CfbPredictionEntry["leverage"]> } => !!e.leverage)
+    .sort((a, b) => b.leverage.game - a.leverage.game);
+  const bubbleRows = rows
+    .filter((r): r is CfbSimRow & { p_bubble: number } => r.p_bubble != null)
+    .sort((a, b) => b.p_bubble - a.p_bubble)
+    .slice(0, 8);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -249,7 +373,12 @@ export default async function CfbPredictionsPage() {
                           <td className="px-3 py-2 whitespace-nowrap">
                             <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
                           </td>
-                          <td className="px-3 py-2 text-right font-bold" style={MONO}>{pct(r.p_playoff)}</td>
+                          <td className="px-3 py-2 text-right font-bold" style={MONO}>
+                            <span className="inline-flex items-center justify-end gap-1.5">
+                              {pct(r.p_playoff)}
+                              {r.band && <Band band={r.band} />}
+                            </span>
+                          </td>
                           <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_bye)}</td>
                           <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_natty)}</td>
                           <td className="px-3 py-2 whitespace-nowrap text-[var(--text-muted)]">{r.conference}</td>
@@ -360,8 +489,16 @@ export default async function CfbPredictionsPage() {
                         <td className="px-3 py-2 whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</td>
                         <td className="px-3 py-2 font-semibold whitespace-nowrap">
                           {e.ap.away ? <span style={{ ...MONO, color: "var(--text-dim)" }}>#{e.ap.away} </span> : null}{e.away}
-                          <span style={{ color: "var(--text-dim)" }}>{e.neutral ? " vs " : " at "}</span>
+                          <span style={{ color: "var(--text-dim)" }}> at </span>
                           {e.ap.home ? <span style={{ ...MONO, color: "var(--text-dim)" }}>#{e.ap.home} </span> : null}{e.home}
+                          {e.neutral && (
+                            <span
+                              className="ml-1.5 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide align-middle"
+                              style={{ color: "var(--text-muted)", border: "1px solid var(--border)" }}
+                            >
+                              neutral
+                            </span>
+                          )}
                         </td>
                         <td className="px-3 py-2 text-right" style={MONO}>{ppct(e.model.pH)}</td>
                         {anyMarket && (
@@ -370,6 +507,75 @@ export default async function CfbPredictionsPage() {
                           </td>
                         )}
                         <td className="px-3 py-2 font-semibold" style={{ color: "var(--accent)" }}>{PICK_LABEL(e)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+
+          {/* Games that matter this week */}
+          {leverageGames.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-1">Games that matter this week</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                How many points of playoff probability each team stands to swing by winning versus losing -
+                the games with the most on the line, first.
+              </p>
+              <div className="hidden sm:block overflow-x-auto rounded-xl border" style={BORD}>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+                      <th className="px-3 py-2 font-semibold">Kickoff</th>
+                      <th className="px-3 py-2 font-semibold">Matchup</th>
+                      <th className="px-3 py-2 text-right font-semibold">Swing (home)</th>
+                      <th className="px-3 py-2 text-right font-semibold">Swing (away)</th>
+                      <th className="px-3 py-2 font-semibold">Our pick</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {leverageGames.map((e) => <LeverageRow key={e.event_id} e={e} />)}
+                  </tbody>
+                </table>
+              </div>
+              <div className="sm:hidden rounded-xl border divide-y" style={BORD}>
+                <CappedList
+                  items={leverageGames.map((e) => <LeverageCard key={e.event_id} e={e} />)}
+                  initial={12}
+                  noun="games"
+                />
+              </div>
+            </section>
+          )}
+
+          {/* Bubble watch */}
+          {bubbleRows.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-1">Bubble watch</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                Teams most often sitting on the last at-large line - the twelfth team in, or the first team
+                out - across the simulation.
+              </p>
+              <div className="overflow-x-auto rounded-xl border" style={BORD}>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+                      <th className="px-3 py-2 font-semibold">Team</th>
+                      <th className="px-3 py-2 text-right font-semibold">Playoff</th>
+                      <th className="px-3 py-2 text-right font-semibold">Bubble</th>
+                      <th className="px-3 py-2 font-semibold">Band</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bubbleRows.map((r) => (
+                      <tr key={r.espn_id} className="border-t" style={BORD}>
+                        <td className="px-3 py-2 whitespace-nowrap">
+                          <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
+                        </td>
+                        <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_playoff)}</td>
+                        <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_bubble)}</td>
+                        <td className="px-3 py-2">{r.band && <Band band={r.band} />}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -448,13 +654,73 @@ export default async function CfbPredictionsPage() {
             </p>
             {/* min-w-0 on each column: a grid child holding a table otherwise
                 inflates its track past the viewport (DESIGN-STANDARDS.md). */}
-            <div className="grid gap-4 lg:grid-cols-2">
-              {conferences.map((c) => (
-                <div key={c} className="min-w-0">
-                  <ConferenceTable rows={rows} conference={c} href={href} />
-                </div>
-              ))}
-            </div>
+            {liteRows && classicRows ? (
+              <TierTabs
+                defaultTab="deluxe"
+                tabs={[
+                  { key: "lite", label: "Lite (stats only)" },
+                  { key: "classic", label: "Classic (stats + market)" },
+                  { key: "deluxe", label: "Deluxe (+ AP poll)" },
+                ]}
+              >
+                {[
+                  <div key="lite" className="grid gap-4 lg:grid-cols-2">
+                    {conferences.map((c) => (
+                      <div key={c} className="min-w-0">
+                        <ConferenceTable rows={liteRows} conference={c} href={href} history={history} withHistory={false} />
+                      </div>
+                    ))}
+                  </div>,
+                  <div key="classic" className="grid gap-4 lg:grid-cols-2">
+                    {conferences.map((c) => (
+                      <div key={c} className="min-w-0">
+                        <ConferenceTable rows={classicRows} conference={c} href={href} history={history} withHistory={false} />
+                      </div>
+                    ))}
+                  </div>,
+                  <div key="deluxe" className="grid gap-4 lg:grid-cols-2">
+                    {conferences.map((c) => (
+                      <div key={c} className="min-w-0">
+                        <ConferenceTable rows={rows} conference={c} href={href} history={history} withHistory />
+                      </div>
+                    ))}
+                  </div>,
+                ]}
+              </TierTabs>
+            ) : (
+              <div className="grid gap-4 lg:grid-cols-2">
+                {conferences.map((c) => (
+                  <div key={c} className="min-w-0">
+                    <ConferenceTable rows={rows} conference={c} href={href} history={history} withHistory />
+                  </div>
+                ))}
+              </div>
+            )}
+            <p className="text-xs text-[var(--text-muted)] mt-4">
+              Get the data:{" "}
+              <Link href="/predictions/cfb/table.csv" className="hover:underline">season table as CSV</Link>
+              {" · "}
+              <a href={`${CFB_DATA_GH_BASE}/cfb-sim.json`} className="hover:underline" target="_blank" rel="noreferrer">
+                raw JSON on GitHub
+              </a>
+            </p>
+          </section>
+
+          {/* Citizen of Nowhere Picks */}
+          <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+            <h2 className="text-2xl font-bold mb-2"><span aria-hidden>&#127919;</span> Citizen of Nowhere Picks</h2>
+            <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
+              Call every game of the week blind, rank your confidence, and take a side on the Upset Radar -
+              the games where this model and the betting market disagree most. The model plays its own card,
+              graded by the same rules.
+            </p>
+            <Link
+              href="/play/picks"
+              className="inline-flex items-center gap-1.5 rounded-lg font-semibold text-sm px-4 py-2"
+              style={{ backgroundColor: "var(--accent)", color: "#08080D" }}
+            >
+              Play Citizen of Nowhere Picks <span aria-hidden>&rarr;</span>
+            </Link>
           </section>
 
           {/* Method */}
@@ -480,6 +746,21 @@ export default async function CfbPredictionsPage() {
                 rating plus record - a proxy, because the committee is not a formula. Weekly picks cover AP
                 Top 25 games only, blend the model with the posted line 50/50, and are graded above.
               </p>
+              {meta.model === "points-v3" && (
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mt-3">
+                  Three tiers of this model run side by side: a stats-only &quot;lite&quot; rating, a
+                  &quot;classic&quot; build that adds the title market, and the full &quot;deluxe&quot; build
+                  that also folds in the AP poll - deluxe is the production tier shown by default above.
+                  Uncertainty shrinks as the season does - the spread of outcomes each simulated season draws
+                  from narrows week by week as fewer games remain, and widens back out for a team the stats
+                  and the market disagree about most. Each simulated season also draws one correlated error
+                  for the whole sport, one for each conference, and one for each team, rather than treating
+                  every game as its own coin flip - real seasons run hot or cold together, not independently.
+                  Every tier reuses the same random draws for the same simulated season, so a change from one
+                  build to the next reflects an actual change in the inputs rather than noise in which season
+                  got drawn.
+                </p>
+              )}
             </section>
           )}
         </>

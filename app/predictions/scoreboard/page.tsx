@@ -229,6 +229,30 @@ export default async function LedgerPage() {
   const nflLiteMarketBrier = nflLiteAvg("market_brier");
   const nflLiteSkill = skill(nflLiteBrier, nflLiteMarketBrier);
 
+  // ---- CFB lite/classic tiers (points-v3): two stats-anchored rating runs
+  // alongside the production "deluxe" build, frozen on the same ledger
+  // entries. Surfaces only once graded entries actually carry them - most
+  // slates never will until the builder starts grading tiers.
+  const cfbLiteGraded = (cfbLive?.ledger ?? []).filter(
+    (e) => e.result && e.result !== "T" && e.lite_brier != null && e.market_brier != null,
+  );
+  const cfbClassicGraded = (cfbLive?.ledger ?? []).filter(
+    (e) => e.result && e.result !== "T" && e.classic_brier != null && e.market_brier != null,
+  );
+  const cfbTierAvg = (
+    entries: typeof cfbLiteGraded,
+    key: "lite_brier" | "classic_brier" | "market_brier",
+  ): number | null =>
+    entries.length
+      ? entries.reduce((a, e) => a + (e[key] as number), 0) / entries.length
+      : null;
+  const cfbLiteBrier = cfbTierAvg(cfbLiteGraded, "lite_brier");
+  const cfbLiteMarketBrier = cfbTierAvg(cfbLiteGraded, "market_brier");
+  const cfbLiteSkill = skill(cfbLiteBrier, cfbLiteMarketBrier);
+  const cfbClassicBrier = cfbTierAvg(cfbClassicGraded, "classic_brier");
+  const cfbClassicMarketBrier = cfbTierAvg(cfbClassicGraded, "market_brier");
+  const cfbClassicSkill = skill(cfbClassicBrier, cfbClassicMarketBrier);
+
   const stamp = [
     `${pricedGames.toLocaleString()} priced games scored`,
     plExp ? `football ${plExp.meta.seasons[0]}–${plExp.meta.seasons[1]}` : null,
@@ -591,6 +615,52 @@ export default async function LedgerPage() {
                         </td>
                         <td className="px-3 py-2.5">
                           <SkillBar v={nflLiteSkill} />
+                        </td>
+                      </tr>
+                    )}
+                    {l.key === "cfb" && cfbLiteGraded.length > 0 && (
+                      <tr className="border-t" style={BORD}>
+                        <td className="px-3 py-2.5">
+                          <span className="font-semibold text-[var(--text-muted)]">CFB &middot; lite tier</span>
+                          <div className="text-[var(--text-dim)] text-[11px]">
+                            stats-only rating, same fixtures
+                          </div>
+                        </td>
+                        <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
+                          {cfbLiteGraded.length}
+                        </td>
+                        <td className="px-3 py-2.5 text-right tabular-nums text-[var(--text-dim)]">—</td>
+                        <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                          {cfbLiteBrier != null ? cfbLiteBrier.toFixed(4) : "—"}
+                        </td>
+                        <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                          {cfbLiteMarketBrier != null ? cfbLiteMarketBrier.toFixed(4) : "—"}
+                        </td>
+                        <td className="px-3 py-2.5">
+                          <SkillBar v={cfbLiteSkill} />
+                        </td>
+                      </tr>
+                    )}
+                    {l.key === "cfb" && cfbClassicGraded.length > 0 && (
+                      <tr className="border-t" style={BORD}>
+                        <td className="px-3 py-2.5">
+                          <span className="font-semibold text-[var(--text-muted)]">CFB &middot; classic tier</span>
+                          <div className="text-[var(--text-dim)] text-[11px]">
+                            stats + market rating, same fixtures
+                          </div>
+                        </td>
+                        <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
+                          {cfbClassicGraded.length}
+                        </td>
+                        <td className="px-3 py-2.5 text-right tabular-nums text-[var(--text-dim)]">—</td>
+                        <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                          {cfbClassicBrier != null ? cfbClassicBrier.toFixed(4) : "—"}
+                        </td>
+                        <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                          {cfbClassicMarketBrier != null ? cfbClassicMarketBrier.toFixed(4) : "—"}
+                        </td>
+                        <td className="px-3 py-2.5">
+                          <SkillBar v={cfbClassicSkill} />
                         </td>
                       </tr>
                     )}

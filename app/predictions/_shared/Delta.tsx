@@ -2,8 +2,8 @@
 // the move is small enough to be noise rather than signal.
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
-const UP = "#10b981";
-const DOWN = "#E2628B";
+const UP = "var(--band-solid)";
+const DOWN = "var(--band-out)";
 const MUTE_THRESHOLD = 0.5;
 
 export function Delta({
@@ -21,7 +21,7 @@ export function Delta({
 
   const muted = Math.abs(value) < MUTE_THRESHOLD;
   const rounded = Math.round(Math.abs(value) * 10) / 10;
-  const arrow = value > 0 ? "▲" : value < 0 ? "▼" : "—";
+  const arrow = value > 0 ? "▲" : value < 0 ? "▼" : "=";
   const label = unit === "pp" ? "percentage points" : "wins";
   const direction = value > 0 ? "up" : value < 0 ? "down" : "unchanged";
   const suffix = unit === "pp" ? "pp" : "w";
