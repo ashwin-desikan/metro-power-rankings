@@ -5,8 +5,12 @@ import { join } from "path";
 // NFL 2026 prediction data (built by scripts/predictions/build_nfl_sim.py):
 //   public/data/nfl-sim.json          - season simulation (division/playoffs/
 //                                       conference/Super Bowl LXI)
+//   public/data/nfl-sim-history.json  - daily snapshots of the same odds, for
+//                                       week-over-week deltas and sparklines
 //   public/data/nfl-predictions.json  - weekly game predictions + graded ledger
 // Same ISR read pattern as lib/plSim.ts / lib/forecast.ts.
+
+export type NflBand = "solid" | "likely" | "lean" | "tossup" | "unlikely" | "out";
 
 export type NflSimRow = {
   slug: string;
@@ -20,6 +24,27 @@ export type NflSimRow = {
   p_seed1: number;
   p_conf: number;
   p_sb: number;
+  // points-v3, optional: all absent on the JSON currently in the repo.
+  wins_p10?: number;
+  wins_p90?: number;
+  rating_stats?: number;
+  rating_market?: number | null;
+  sigma_team?: number;
+  p_bubble?: number;
+  band?: NflBand;
+};
+
+export type NflSimTierRow = {
+  exp_wins: number;
+  p_division: number;
+  p_playoffs: number;
+  p_conf: number;
+  p_sb: number;
+};
+
+export type NflSimTiers = {
+  lite?: Record<string, NflSimTierRow>;
+  classic?: Record<string, NflSimTierRow>;
 };
 
 export type NflSimMeta = {
@@ -40,9 +65,15 @@ export type NflSimMeta = {
   games_played: number;
   source: string;
   notes: string;
+  // points-v3, optional
+  seed?: number;
+  sigma_season_eff?: number;
+  corr?: { hfa_sd: number; div_sd: number; team_sd: number };
+  tiers?: ("lite" | "classic")[];
+  market_ratings?: "futures" | "futures+spreads" | "none";
 };
 
-export type NflSimFile = { meta: NflSimMeta; table: NflSimRow[] };
+export type NflSimFile = { meta: NflSimMeta; table: NflSimRow[]; tiers?: NflSimTiers };
 
 export type NflPredictionEntry = {
   event_id: string;
@@ -52,7 +83,7 @@ export type NflPredictionEntry = {
   home_slug: string;
   away_slug: string;
   model: { pH: number };
-  market?: { pH: number };
+  market?: { pH: number; spread?: number | null };
   blend?: { pH: number };
   pick: "H" | "A";
   predicted_at: string;
@@ -63,6 +94,11 @@ export type NflPredictionEntry = {
   market_brier?: number;
   blend_brier?: number;
   pick_correct?: boolean;
+  // points-v3, optional
+  lite?: { pH: number };
+  neutral?: true;
+  lite_brier?: number;
+  leverage?: { home: number; away: number; game: number };
 };
 
 export type NflPredictionsFile = {
@@ -73,6 +109,8 @@ export type NflPredictionsFile = {
     horizon_days: number;
     odds_source: string;
     results_source: string;
+    // points-v3, optional
+    tiers?: ("lite" | "classic" | "market" | "blend")[];
   };
   record: {
     graded: number;
@@ -81,12 +119,36 @@ export type NflPredictionsFile = {
     blend_brier: number | null;
     market_graded: number;
     market_brier: number | null;
+    // points-v3, optional
+    lite_brier?: number | null;
   };
   ledger: NflPredictionEntry[];
 };
 
-const GH_BASE =
+export type NflSimHistorySnapshotRow = {
+  xw: number;
+  div: number;
+  po: number;
+  conf: number;
+  title: number;
+};
+
+export type NflSimHistorySnapshot = {
+  date: string;
+  games_played: number;
+  rows: Record<string, NflSimHistorySnapshotRow>;
+};
+
+export type SimHistoryFile = {
+  meta: { league: string; season: number; generated_at: string; keep: number };
+  snapshots: NflSimHistorySnapshot[];
+};
+
+// Exported so the "Get the data" link on the NFL hub can point at the raw
+// JSON without duplicating the path.
+export const NFL_DATA_GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
+const GH_BASE = NFL_DATA_GH_BASE;
 
 async function load<T extends { meta: { generated_at: string } }>(
   file: string,
@@ -125,4 +187,8 @@ export async function getNflSim(): Promise<NflSimFile | null> {
 
 export async function getNflPredictions(): Promise<NflPredictionsFile | null> {
   return load<NflPredictionsFile>("nfl-predictions.json");
+}
+
+export async function getNflSimHistory(): Promise<SimHistoryFile | null> {
+  return load<SimHistoryFile>("nfl-sim-history.json");
 }

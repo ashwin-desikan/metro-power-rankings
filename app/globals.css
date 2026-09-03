@@ -21,6 +21,13 @@
   --region-eurasia: #85C1E9;
   --region-southasia: #F0B27A;
   --region-africa: #FF8C42;
+  /* Playoff-odds band chip (predictions hubs): solid green through to out red. */
+  --band-solid: #10b981;
+  --band-likely: #4ECDC4;
+  --band-lean: #7B9E89;
+  --band-tossup: #8888A0;
+  --band-unlikely: #C97B5A;
+  --band-out: #E2628B;
 }
 
 html { scroll-behavior: smooth; }

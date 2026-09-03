@@ -1,18 +1,38 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getNflSim, getNflPredictions, type NflPredictionEntry, type NflSimRow } from "@/lib/nflSim";
+import {
+  getNflSim,
+  getNflPredictions,
+  getNflSimHistory,
+  NFL_DATA_GH_BASE,
+  type NflPredictionEntry,
+  type NflSimRow,
+  type NflSimTierRow,
+  type SimHistoryFile,
+} from "@/lib/nflSim";
 import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo } from "@/lib/nfl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { CappedList } from "@/app/_shared/Disclosure";
+import { Delta } from "@/app/predictions/_shared/Delta";
+import { Sparkline } from "@/app/predictions/_shared/Sparkline";
+import { Band } from "@/app/predictions/_shared/Band";
+import { TierTabs } from "@/app/predictions/_shared/TierTabs";
+import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 
 // NFL 2026 prediction hub on /predictions - the NFL sibling of
 // /predictions/pl. Season odds from nfl-sim.json (real 272-game schedule +
 // full playoff bracket), weekly game predictions + graded ledger from
-// nfl-predictions.json; both refresh without a build via lib/nflSim's ISR read.
+// nfl-predictions.json, week-over-week deltas/sparklines from
+// nfl-sim-history.json; all three refresh without a build via lib/nflSim's
+// ISR read. Every points-v3 field (tiers, bands, percentile ranges,
+// leverage, bubble odds) is optional - the page renders identically to the
+// points-v2 build when a field is absent.
 
 export const revalidate = 21600;
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
+const BORD = { borderColor: "var(--border)" } as const;
 const PATH = "/predictions/nfl";
 const TITLE = "NFL 2026 Predictions";
 const DESC =
@@ -74,9 +94,38 @@ function TeamLabel({ name, href, logo }: { name: string; href: string | null; lo
   );
 }
 
+/** Merge a tier's stats-only numbers onto the base rows for identity fields
+ *  (name/slug/conf/division/logo). Rows a tier has no entry for (should not
+ *  happen, but the JSON is data, not a promise) fall back to the base row
+ *  unchanged rather than disappearing from the table. */
+function tierDisplayRows(base: NflSimRow[], tier: Record<string, NflSimTierRow> | undefined): NflSimRow[] | null {
+  if (!tier) return null;
+  return base.map((r) => {
+    const t = tier[r.slug];
+    if (!t) return r;
+    return {
+      ...r,
+      exp_wins: t.exp_wins,
+      p_division: t.p_division,
+      p_playoffs: t.p_playoffs,
+      p_conf: t.p_conf,
+      p_sb: t.p_sb,
+      wins_p10: undefined,
+      wins_p90: undefined,
+      band: undefined,
+    };
+  });
+}
+
 function DivisionTable({
-  rows, division, href, logo,
-}: { rows: NflSimRow[]; division: string; href: (s: string) => string | null; logo: (s: string) => string | null }) {
+  rows, division, href, logo, history, withHistory,
+}: {
+  rows: NflSimRow[]; division: string;
+  href: (s: string) => string | null; logo: (s: string) => string | null;
+  history: SimHistoryFile | null;
+  /** Only the classic (production) tier carries week-over-week history. */
+  withHistory: boolean;
+}) {
   const ts = rows.filter((r) => r.division === division).sort((a, b) => b.exp_wins - a.exp_wins);
   return (
     <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
@@ -95,13 +144,44 @@ function DivisionTable({
           {ts.map((r) => (
             <tr key={r.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
               <td className="px-3 py-2 whitespace-nowrap">
-                <TeamLabel name={r.name} href={href(r.slug)} logo={logo(r.slug)} />
+                <span className="inline-flex items-center gap-1.5">
+                  <TeamLabel name={r.name} href={href(r.slug)} logo={logo(r.slug)} />
+                  {withHistory && (
+                    <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
+                      <Sparkline points={series(history, r.slug, "title")} />
+                    </span>
+                  )}
+                </span>
               </td>
-              <td className="px-3 py-2 text-right" style={MONO}>{r.exp_wins.toFixed(1)}</td>
+              <td className="px-3 py-2 text-right" style={MONO}>
+                {r.exp_wins.toFixed(1)}
+                {r.wins_p10 != null && r.wins_p90 != null && (
+                  <span className="ml-1 text-[11px]" style={{ color: "var(--text-dim)" }}>
+                    ({r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)})
+                  </span>
+                )}
+              </td>
               <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_division)}</td>
-              <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_playoffs)}</td>
+              <td className="px-3 py-2 text-right" style={MONO}>
+                <span className="inline-flex items-center justify-end gap-1.5">
+                  {pct(r.p_playoffs)}
+                  {r.band && <Band band={r.band} />}
+                </span>
+                {withHistory && (
+                  <div className="flex justify-end mt-0.5">
+                    <Delta value={deltaSince(history, r.slug, "po", 7)} unit="pp" />
+                  </div>
+                )}
+              </td>
               <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_conf)}</td>
-              <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_sb >= 5 ? "var(--accent)" : "var(--text-muted)" }}>{pct(r.p_sb)}</td>
+              <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_sb >= 5 ? "var(--accent)" : "var(--text-muted)" }}>
+                {pct(r.p_sb)}
+                {withHistory && (
+                  <div className="flex justify-end mt-0.5">
+                    <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
+                  </div>
+                )}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -110,10 +190,77 @@ function DivisionTable({
   );
 }
 
+const AFC_DIVISIONS = ["AFC East", "AFC North", "AFC South", "AFC West"];
+const NFC_DIVISIONS = ["NFC East", "NFC North", "NFC South", "NFC West"];
+
+function DivisionGrid({
+  rows, href, logo, history, withHistory,
+}: {
+  rows: NflSimRow[];
+  href: (s: string) => string | null; logo: (s: string) => string | null;
+  history: SimHistoryFile | null;
+  withHistory: boolean;
+}) {
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      {[
+        { conference: "AFC", divisions: AFC_DIVISIONS },
+        { conference: "NFC", divisions: NFC_DIVISIONS },
+      ].map(({ conference, divisions }) => (
+        <div key={conference} className="min-w-0 space-y-4">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+            {conference}
+          </h3>
+          {divisions.map((d) => (
+            <DivisionTable
+              key={d} rows={rows} division={d} href={href} logo={logo}
+              history={history} withHistory={withHistory}
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 const PICK_LABEL = (e: NflPredictionEntry) => (e.pick === "H" ? e.home : e.away);
 
+function LeverageRow({ e }: { e: NflPredictionEntry }) {
+  const lev = e.leverage!;
+  return (
+    <tr className="border-t" style={BORD}>
+      <td className="px-3 py-2 whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</td>
+      <td className="px-3 py-2 font-semibold whitespace-nowrap">
+        {e.away} <span style={{ color: "var(--text-dim)" }}>at</span> {e.home}
+      </td>
+      <td className="px-3 py-2 text-right" style={MONO}>{pct(lev.home)}</td>
+      <td className="px-3 py-2 text-right" style={MONO}>{pct(lev.away)}</td>
+      <td className="px-3 py-2 font-semibold" style={{ color: "var(--accent)" }}>{PICK_LABEL(e)}</td>
+    </tr>
+  );
+}
+
+function LeverageCard({ e }: { e: NflPredictionEntry }) {
+  const lev = e.leverage!;
+  return (
+    <div className="px-3 py-2.5">
+      <div className="flex items-center justify-between gap-2">
+        <span className="font-semibold text-sm">
+          {e.away} <span style={{ color: "var(--text-dim)" }}>at</span> {e.home}
+        </span>
+        <span className="text-[11px] whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</span>
+      </div>
+      <div className="flex items-center gap-4 mt-1 text-[13px]" style={MONO}>
+        <span>{e.home} swing {pct(lev.home)}</span>
+        <span>{e.away} swing {pct(lev.away)}</span>
+      </div>
+      <div className="text-[13px] font-semibold mt-0.5" style={{ color: "var(--accent)" }}>Pick: {PICK_LABEL(e)}</div>
+    </div>
+  );
+}
+
 export default async function NflPredictionsPage() {
-  const [sim, preds] = await Promise.all([getNflSim(), getNflPredictions()]);
+  const [sim, preds, history] = await Promise.all([getNflSim(), getNflPredictions(), getNflSimHistory()]);
   const { href: teamHref, logo: teamLogo } = nflTeamLinks();
   const rows = sim?.table ?? [];
   const meta = sim?.meta ?? null;
@@ -123,11 +270,15 @@ export default async function NflPredictionsPage() {
   const graded = ledger.filter((e) => e.result && e.result !== "T").slice(-10).reverse();
   const rec = preds?.record ?? null;
   const anyMarket = upcoming.some((e) => e.market);
-  // Held per conference rather than as one flat list, so the board can put
-  // each conference in its own COLUMN. A 2-up grid fills row by row, which
-  // reads as the two conferences interleaved rather than side by side.
-  const AFC_DIVISIONS = ["AFC East", "AFC North", "AFC South", "AFC West"];
-  const NFC_DIVISIONS = ["NFC East", "NFC North", "NFC South", "NFC West"];
+
+  const liteRows = tierDisplayRows(rows, sim?.tiers?.lite);
+  const leverageGames = upcoming
+    .filter((e): e is NflPredictionEntry & { leverage: NonNullable<NflPredictionEntry["leverage"]> } => !!e.leverage)
+    .sort((a, b) => b.leverage.game - a.leverage.game);
+  const bubbleRows = rows
+    .filter((r): r is NflSimRow & { p_bubble: number } => r.p_bubble != null)
+    .sort((a, b) => b.p_bubble - a.p_bubble)
+    .slice(0, 8);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -222,7 +373,17 @@ export default async function NflPredictionsPage() {
                     {upcoming.map((e) => (
                       <tr key={e.event_id} className="border-t" style={{ borderColor: "var(--border)" }}>
                         <td className="px-3 py-2 whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>{fmtDate(e.date)}</td>
-                        <td className="px-3 py-2 font-semibold whitespace-nowrap">{e.away} <span style={{ color: "var(--text-dim)" }}>at</span> {e.home}</td>
+                        <td className="px-3 py-2 font-semibold whitespace-nowrap">
+                          {e.away} <span style={{ color: "var(--text-dim)" }}>at</span> {e.home}
+                          {e.neutral && (
+                            <span
+                              className="ml-1.5 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide align-middle"
+                              style={{ color: "var(--text-muted)", border: "1px solid var(--border)" }}
+                            >
+                              neutral
+                            </span>
+                          )}
+                        </td>
                         <td className="px-3 py-2 text-right" style={MONO}>{ppct(e.model.pH)}</td>
                         {anyMarket && (
                           <td className="px-3 py-2 text-right" style={{ ...MONO, color: "var(--text-muted)" }}>
@@ -230,6 +391,75 @@ export default async function NflPredictionsPage() {
                           </td>
                         )}
                         <td className="px-3 py-2 font-semibold" style={{ color: "var(--accent)" }}>{PICK_LABEL(e)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+
+          {/* Games that matter this week */}
+          {leverageGames.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-1">Games that matter this week</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                How many points of playoff probability each team stands to swing by winning versus losing -
+                the games with the most on the line, first.
+              </p>
+              <div className="hidden sm:block overflow-x-auto rounded-xl border" style={BORD}>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+                      <th className="px-3 py-2 font-semibold">Kickoff</th>
+                      <th className="px-3 py-2 font-semibold">Matchup</th>
+                      <th className="px-3 py-2 text-right font-semibold">Swing (home)</th>
+                      <th className="px-3 py-2 text-right font-semibold">Swing (away)</th>
+                      <th className="px-3 py-2 font-semibold">Our pick</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {leverageGames.map((e) => <LeverageRow key={e.event_id} e={e} />)}
+                  </tbody>
+                </table>
+              </div>
+              <div className="sm:hidden rounded-xl border divide-y" style={BORD}>
+                <CappedList
+                  items={leverageGames.map((e) => <LeverageCard key={e.event_id} e={e} />)}
+                  initial={12}
+                  noun="games"
+                />
+              </div>
+            </section>
+          )}
+
+          {/* Bubble watch */}
+          {bubbleRows.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-1">Bubble watch</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                Teams most often sitting on the 7-seed line - in the field or the first team out - across the
+                simulation.
+              </p>
+              <div className="overflow-x-auto rounded-xl border" style={BORD}>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left" style={{ background: "var(--bg-card)" }}>
+                      <th className="px-3 py-2 font-semibold">Team</th>
+                      <th className="px-3 py-2 text-right font-semibold">Playoffs</th>
+                      <th className="px-3 py-2 text-right font-semibold">Bubble</th>
+                      <th className="px-3 py-2 font-semibold">Band</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bubbleRows.map((r) => (
+                      <tr key={r.slug} className="border-t" style={BORD}>
+                        <td className="px-3 py-2 whitespace-nowrap">
+                          <TeamLabel name={r.name} href={teamHref(r.slug)} logo={teamLogo(r.slug)} />
+                        </td>
+                        <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_playoffs)}</td>
+                        <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_bubble)}</td>
+                        <td className="px-3 py-2">{r.band && <Band band={r.band} />}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -308,21 +538,29 @@ export default async function NflPredictionsPage() {
             </p>
             {/* min-w-0 on each column: a grid child holding a table otherwise
                 inflates its track past the viewport (DESIGN-STANDARDS.md). */}
-            <div className="grid gap-4 lg:grid-cols-2">
-              {[
-                { conference: "AFC", divisions: AFC_DIVISIONS },
-                { conference: "NFC", divisions: NFC_DIVISIONS },
-              ].map(({ conference, divisions }) => (
-                <div key={conference} className="min-w-0 space-y-4">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-                    {conference}
-                  </h3>
-                  {divisions.map((d) => (
-                    <DivisionTable key={d} rows={rows} division={d} href={teamHref} logo={teamLogo} />
-                  ))}
-                </div>
-              ))}
-            </div>
+            {liteRows ? (
+              <TierTabs
+                tabs={[
+                  { key: "classic", label: "Classic (stats + market)" },
+                  { key: "lite", label: "Lite (stats only)" },
+                ]}
+              >
+                {[
+                  <DivisionGrid key="classic" rows={rows} href={teamHref} logo={teamLogo} history={history} withHistory />,
+                  <DivisionGrid key="lite" rows={liteRows} href={teamHref} logo={teamLogo} history={history} withHistory={false} />,
+                ]}
+              </TierTabs>
+            ) : (
+              <DivisionGrid rows={rows} href={teamHref} logo={teamLogo} history={history} withHistory />
+            )}
+            <p className="text-xs text-[var(--text-muted)] mt-4">
+              Get the data:{" "}
+              <Link href="/predictions/nfl/table.csv" className="hover:underline">season table as CSV</Link>
+              {" · "}
+              <a href={`${NFL_DATA_GH_BASE}/nfl-sim.json`} className="hover:underline" target="_blank" rel="noreferrer">
+                raw JSON on GitHub
+              </a>
+            </p>
           </section>
 
           {/* Citizen of Nowhere Picks */}
@@ -363,6 +601,19 @@ export default async function NflPredictionsPage() {
                 50/50 and are graded against final scores above. Where the blend still disagrees with the
                 futures alone, that gap is the interesting part.
               </p>
+              {meta.model === "points-v3" && (
+                <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl mt-3">
+                  Two tiers of this model run side by side: a stats-only &quot;lite&quot; rating and the full
+                  &quot;classic&quot; build that also blends in the market. Uncertainty shrinks as the season
+                  does - the spread of outcomes each simulated season draws from narrows week by week as fewer
+                  games remain, and widens back out for a team the stats and the market disagree about most.
+                  Each simulated season also draws one correlated error for the whole league, one for each
+                  division, and one for each team, rather than treating every game as its own coin flip - real
+                  seasons run hot or cold together, not independently. Every tier reuses the same random draws
+                  for the same simulated season, so a change from one build to the next reflects an actual
+                  change in the inputs rather than noise in which season got drawn.
+                </p>
+              )}
             </section>
           )}
         </>

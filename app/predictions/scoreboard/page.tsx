@@ -23,6 +23,7 @@
 // score against the same market that priced the same games: 1 - model/market,
 // which is dimensionless. Raw Brier stays inside its own sport's row.
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
@@ -213,6 +214,20 @@ export default async function LedgerPage() {
     },
   ];
   const gradedNow = live.reduce((a, l) => a + (l.rec?.graded ?? 0), 0);
+
+  // ---- NFL lite tier (points-v3): a stats-only rating run alongside the
+  // production build, frozen on the same ledger entries. Surfaces only once
+  // graded entries actually carry it - most seasons never will.
+  const nflLiteGraded = (nflLive?.ledger ?? []).filter(
+    (e) => e.result && e.result !== "T" && e.lite_brier != null && e.market_brier != null,
+  );
+  const nflLiteAvg = (key: "lite_brier" | "market_brier"): number | null =>
+    nflLiteGraded.length
+      ? nflLiteGraded.reduce((a, e) => a + (e[key] as number), 0) / nflLiteGraded.length
+      : null;
+  const nflLiteBrier = nflLiteAvg("lite_brier");
+  const nflLiteMarketBrier = nflLiteAvg("market_brier");
+  const nflLiteSkill = skill(nflLiteBrier, nflLiteMarketBrier);
 
   const stamp = [
     `${pricedGames.toLocaleString()} priced games scored`,
@@ -522,39 +537,64 @@ export default async function LedgerPage() {
                 const s = skill(r?.model_brier, r?.market_brier);
                 const empty = !r || r.graded === 0;
                 return (
-                  <tr key={l.key} className="border-t" style={BORD}>
-                    <td className="px-3 py-2.5">
-                      <Link href={l.href} className="hover:underline font-semibold">
-                        {l.label}
-                      </Link>
-                      <div className="text-[var(--text-dim)] text-[11px]">
-                        {l.season} · {l.shape}
-                      </div>
-                    </td>
-                    {empty ? (
-                      <td className="px-3 py-2.5 text-[var(--text-muted)]" colSpan={5}>
-                        Nothing graded yet. First result lands {l.first}.
+                  <Fragment key={l.key}>
+                    <tr className="border-t" style={BORD}>
+                      <td className="px-3 py-2.5">
+                        <Link href={l.href} className="hover:underline font-semibold">
+                          {l.label}
+                        </Link>
+                        <div className="text-[var(--text-dim)] text-[11px]">
+                          {l.season} · {l.shape}
+                        </div>
                       </td>
-                    ) : (
-                      <>
-                        <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
-                          {r.graded}
+                      {empty ? (
+                        <td className="px-3 py-2.5 text-[var(--text-muted)]" colSpan={5}>
+                          Nothing graded yet. First result lands {l.first}.
+                        </td>
+                      ) : (
+                        <>
+                          <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
+                            {r.graded}
+                          </td>
+                          <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
+                            {r.pick_correct}/{r.graded}
+                          </td>
+                          <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                            {r.model_brier != null ? r.model_brier.toFixed(4) : "—"}
+                          </td>
+                          <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                            {r.market_brier != null ? r.market_brier.toFixed(4) : "—"}
+                          </td>
+                          <td className="px-3 py-2.5">
+                            <SkillBar v={s} />
+                          </td>
+                        </>
+                      )}
+                    </tr>
+                    {l.key === "nfl" && nflLiteGraded.length > 0 && (
+                      <tr className="border-t" style={BORD}>
+                        <td className="px-3 py-2.5">
+                          <span className="font-semibold text-[var(--text-muted)]">NFL &middot; lite tier</span>
+                          <div className="text-[var(--text-dim)] text-[11px]">
+                            stats-only rating, same fixtures
+                          </div>
                         </td>
                         <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>
-                          {r.pick_correct}/{r.graded}
+                          {nflLiteGraded.length}
+                        </td>
+                        <td className="px-3 py-2.5 text-right tabular-nums text-[var(--text-dim)]">—</td>
+                        <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                          {nflLiteBrier != null ? nflLiteBrier.toFixed(4) : "—"}
                         </td>
                         <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
-                          {r.model_brier != null ? r.model_brier.toFixed(4) : "—"}
-                        </td>
-                        <td className="px-3 py-2.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
-                          {r.market_brier != null ? r.market_brier.toFixed(4) : "—"}
+                          {nflLiteMarketBrier != null ? nflLiteMarketBrier.toFixed(4) : "—"}
                         </td>
                         <td className="px-3 py-2.5">
-                          <SkillBar v={s} />
+                          <SkillBar v={nflLiteSkill} />
                         </td>
-                      </>
+                      </tr>
                     )}
-                  </tr>
+                  </Fragment>
                 );
               })}
               <tr className="border-t" style={BORD}>

@@ -4,10 +4,12 @@
 The NFL leg of /predictions (same convention as the Premier League hub):
   public/data/nfl-sim.json          - season odds per team (exp wins, division,
                                       playoffs, conference, Super Bowl LXI)
+  public/data/nfl-sim-history.json  - one snapshot per build date, for trend
+                                      lines on the same numbers
   public/data/nfl-predictions.json  - upcoming-game predictions + the graded
                                       ledger tracking us vs the market
 
-MODEL (points-v2, "site data + market"):
+MODEL (points-v3, "site data + market + spreads, correlated noise"):
   - Team strength = regressed scoring margin per game from the last three
     regular seasons, BLENDED with a market rating implied by the DraftKings
     Super Bowl futures ESPN carries for all 32 teams (de-vigged, mapped onto
@@ -19,27 +21,41 @@ MODEL (points-v2, "site data + market"):
     and a preseason model should say so). In-season, actual 2026 results are
     folded into the rating at a weight growing with games played.
   - Each game: P(home) = Phi((r_home - r_away + HFA) / SIGMA_GAME), the
-    classic points-spread translation (HFA 1.6 pts, sigma 13.4). Ties are
-    ignored (~0.4% of NFL games; documented approximation).
+    classic points-spread translation (HFA 1.6 pts, sigma 13.4), with HFA
+    dropped to 0 for a neutral-site game (ESPN's competition.neutralSite).
+    Ties are ignored (~0.4% of NFL games; documented approximation).
   - The REAL 2026 schedule (all 272 games, ESPN per-team schedules) is
-    simulated 20k times with per-season rating noise SIGMA_SEASON. Division
-    winners and seeds via the OFFICIAL tie-break ladder's win-based steps
-    (h2h with the 3+-club sweep rule, division, common games incl. the
-    wild-card minimum-4 clause, conference, strength of victory, strength
-    of schedule, in the official order; the points-based steps that follow
-    them are beyond a win-only sim, so a tie surviving SOS falls to random
-    -- the documented approximation, replacing the old wins->h2h->random).
-    Full score-based ladders live in nfl_standings.py (golden-tested
-    against GSIS's 2025 standings). Seeds 1-7 per conference; the actual
-    bracket (2v7 3v6 4v5, 1-seed bye, reseeded divisional, championship,
-    neutral-site Super Bowl).
+    simulated with per-season rating noise. Division winners and seeds via
+    the OFFICIAL tie-break ladder's win-based steps (h2h with the 3+-club
+    sweep rule, division, common games incl. the wild-card minimum-4 clause,
+    conference, strength of victory, strength of schedule, in the official
+    order; the points-based steps that follow them are beyond a win-only
+    sim, so a tie surviving SOS falls to random -- the documented
+    approximation, replacing the old wins->h2h->random). Full score-based
+    ladders live in nfl_standings.py (golden-tested against GSIS's 2025
+    standings). Seeds 1-7 per conference; the actual bracket (2v7 3v6 4v5,
+    1-seed bye, reseeded divisional, championship, neutral-site Super Bowl).
+
+POINTS-V3 additions: per-season noise now has three correlated layers (a
+league-wide HFA jitter, a per-division jitter, and a per-team jitter sized
+so the total matches an adaptive sigma that shrinks as the season plays out
+and widens where the stats and market disagree about a team). ESPN's posted
+spreads feed a ridge-regularized market rating (prior = the futures rating)
+that takes over the market blend once enough of them accumulate. Every
+simulated season draws from common random numbers keyed to its index, so a
+rating change does not reshuffle which games "get unlucky" between builds.
+A cheap stats-only "lite" tier runs alongside the full "classic" run at the
+same seed for comparison in `tiers`. Win-count percentiles, playoff-leverage
+swings for the upcoming window, and bubble odds are all collected from the
+same run.
 
 WEEKLY PREDICTIONS + LEDGER: regular/post-season games in the next window
 (reaching ahead to the first week when quiet) get a model win probability;
 ESPN's posted line (moneyline de-vigged, else the spread through the same
 Phi) provides the market column and a 50/50 blend that makes the pick.
 Predictions freeze on first sight; later runs grade them against final
-scores and accumulate pick accuracy + Brier for model, market and blend.
+scores and accumulate pick accuracy + Brier for model, lite, market and
+blend.
 
     python scripts/predictions/build_nfl_sim.py               # build + write
     python scripts/predictions/build_nfl_sim.py --dry
@@ -62,6 +78,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT_SIM = os.path.join(ROOT, "public", "data", "nfl-sim.json")
 OUT_PRED = os.path.join(ROOT, "public", "data", "nfl-predictions.json")
+OUT_HIST = os.path.join(ROOT, "public", "data", "nfl-sim-history.json")
 
 SEASON = 2026
 STRENGTH_SEASONS = [(2025, 0.55), (2024, 0.30), (2023, 0.15)]
@@ -75,6 +92,17 @@ MATCH_BLEND_W = 0.5
 WINDOW_DAYS = 8
 DEFAULT_SIMS = 20000
 ESPN = "https://site.api.espn.com/apis"
+
+# points-v3: correlated season-noise layers and the adaptive-sigma / market
+# rating / tiering knobs (contract 2026-09-03).
+HFA_SD = 0.6              # sd of the per-season league-wide HFA jitter
+DIV_SD = 1.0               # sd of the per-season, per-division jitter
+SIGMA_FLOOR_FRAC = 0.45    # floor on adaptive sigma as a fraction of SIGMA_SEASON
+DISAGREE_K = 0.5           # widens a team's sigma by this * |stats - market|
+TIER_SIMS = 5000           # sim count for the stats-only "lite" tier
+SPREAD_LAMBDA = 2.0        # ridge weight (games-equivalent) pulling spread ratings to prior
+SPREAD_LOOKBACK_DAYS = 28  # ledger market.spread entries older than this are dropped
+HISTORY_KEEP = 180         # max snapshots kept in nfl-sim-history.json
 
 # The eight divisions (stable since 2002). Verified against ESPN's 2026 team
 # list at build time (verify step inside build()).
@@ -179,7 +207,9 @@ def espn_teams():
 
 
 def full_schedule(team_ids):
-    """All 272 regular-season games [(event_id, iso_date, home, away)]."""
+    """All 272 regular-season games [(event_id, iso_date, home, away, neutral)].
+    `neutral` is ESPN's competition.neutralSite flag (e.g. the London/Madrid/
+    Melbourne games), appended at the end so earlier positions never move."""
     games = {}
     for name, tid in team_ids.items():
         d = fetch_json("%s/site/v2/sports/football/nfl/teams/%s/schedule?season=%d&seasontype=2"
@@ -194,13 +224,14 @@ def full_schedule(team_ids):
                 elif c.get("homeAway") == "away":
                     away = nm
             if home in TEAM_DIV and away in TEAM_DIV:
-                games[ev["id"]] = (ev.get("date", "")[:10], home, away)
+                games[ev["id"]] = (ev.get("date", "")[:10], home, away, bool(comp.get("neutralSite")))
     return [(gid,) + v for gid, v in sorted(games.items(), key=lambda kv: kv[1][0])]
 
 
 def played_results(schedule_window_days=400):
     """Completed 2026 regular/post-season games from ESPN scoreboards, by
-    scanning the season window. [(event_id, home, away, hs, as_, type)]."""
+    scanning the season window.
+    [(event_id, home, away, hs, as_, type, neutral)]."""
     start = date(SEASON, 9, 1)
     end = min(date.today(), date(SEASON + 1, 2, 20))
     if end <= start:
@@ -228,7 +259,8 @@ def played_results(schedule_window_days=400):
             else:
                 away, as_ = nm, sc
         if home in TEAM_DIV and away in TEAM_DIV and hs is not None and as_ is not None:
-            out.append((ev["id"], home, away, hs, as_, ev["season"]["type"]))
+            out.append((ev["id"], home, away, hs, as_, ev["season"]["type"],
+                        bool(comp.get("neutralSite"))))
     return out
 
 
@@ -245,7 +277,8 @@ def kickoff_iso(raw):
 def upcoming_games(today, window_days):
     """Regular/post-season games not yet completed within the window (reaching
     ahead to the first batch when the near window is empty).
-    [(event_id, iso, home, away, market_pH or None, kickoff_iso or None)]."""
+    [(event_id, iso, home, away, market_pH or None, kickoff_iso or None,
+      neutral, spread or None)]."""
     def scan(days):
         d0 = today.strftime("%Y%m%d")
         d1 = (today + timedelta(days=days)).strftime("%Y%m%d")
@@ -268,7 +301,8 @@ def upcoming_games(today, window_days):
             if home not in TEAM_DIV or away not in TEAM_DIV:
                 continue
             out.append((ev["id"], ev.get("date", "")[:10], home, away,
-                        market_home_prob(comp), kickoff_iso(ev.get("date"))))
+                        market_home_prob(comp), kickoff_iso(ev.get("date")),
+                        bool(comp.get("neutralSite")), market_spread(comp)))
         return sorted(out, key=lambda g: g[1])
     got = scan(window_days)
     if not got:
@@ -299,6 +333,19 @@ def market_home_prob(comp):
                 pass
     return None
 
+
+def market_spread(comp):
+    """Raw posted home spread from ESPN's odds (negative = home favoured),
+    or None when nothing is posted yet. Kept separate from market_home_prob
+    because the ledger stores the spread itself, not just its win prob."""
+    for o in comp.get("odds") or []:
+        spread = o.get("spread")
+        if spread is not None:
+            try:
+                return float(spread)
+            except (TypeError, ValueError):
+                pass
+    return None
 
 
 # ------------------------------------------------------- market (futures)
@@ -359,6 +406,133 @@ def _fit_rating_from_logodds(pairs):
 def _logodds(p, floor=5e-4):
     p = min(max(p, floor), 1 - floor)
     return math.log(p / (1 - p))
+
+
+def implied_ratings_from_spreads(obs, prior, lam=SPREAD_LAMBDA, hfa=HFA, sweeps=200):
+    """Ridge-regularized team ratings from posted point spreads.
+
+    obs: [(home, away, spread, neutral)] -- ESPN's posted home spread
+    (negative = home favoured); neutral drops the HFA adjustment for that
+    game. prior: {team: rating}, the regression target (recentred elsewhere;
+    a team present in `prior` but with no observations falls back to it).
+    Solved by Gauss-Seidel on the ridge normal equations (stdlib only,
+    200 sweeps is comfortably enough to converge at this scale).
+
+    Returns ({team: rating}, n_observations_used), ratings recentred to
+    mean zero. n counts only observations touching a team we have a prior
+    (or that appears elsewhere in `obs`) for."""
+    m = dict(prior)
+    by_team = defaultdict(list)  # team -> [(other_team, sign, y)]
+    n = 0
+    for h, a, spread, neutral in obs:
+        if spread is None:
+            continue
+        m.setdefault(h, 0.0)
+        m.setdefault(a, 0.0)
+        y = -spread - (0.0 if neutral else hfa)
+        by_team[h].append((a, 1.0, y))
+        by_team[a].append((h, -1.0, y))
+        n += 1
+    if n == 0:
+        return {t: v for t, v in prior.items()}, 0
+    for _ in range(sweeps):
+        for t in m:
+            num = lam * prior.get(t, 0.0)
+            den = lam
+            for other, sign, y in by_team.get(t, []):
+                num += sign * y + m[other]
+                den += 1.0
+            if den > 0:
+                m[t] = num / den
+    mean_m = sum(m.values()) / len(m)
+    return {t: v - mean_m for t, v in m.items()}, n
+
+
+# --------------------------------------------------------- adaptive sigma
+
+def adaptive_sigma(frac_left, sigma_season=SIGMA_SEASON, floor_frac=SIGMA_FLOOR_FRAC):
+    """League-wide per-season rating sigma given the fraction of the 272-game
+    schedule still to play; shrinks toward `floor_frac` of the full-season
+    value as the season resolves, never below it."""
+    frac_left = min(max(frac_left, 0.0), 1.0)
+    return sigma_season * max(floor_frac, math.sqrt(frac_left))
+
+
+def team_sigma(sigma_base, r_stats, r_market, disagree_k=DISAGREE_K):
+    """Widen a team's season sigma by how much the stats and market ratings
+    disagree about it (no widening when there is no market rating)."""
+    if r_market is None:
+        return sigma_base
+    return math.sqrt(sigma_base ** 2 + (disagree_k * abs(r_stats - r_market)) ** 2)
+
+
+def div_residual_sd(sigma_adaptive, div_sd=DIV_SD, floor=0.25):
+    """sd of a team's own noise layer once the shared division layer (sd
+    `div_sd`) is split out of its adaptive sigma, so the two layers' variance
+    sums back to it (floored so a small adaptive sigma never goes negative
+    under the sqrt)."""
+    return math.sqrt(max(sigma_adaptive ** 2 - div_sd ** 2, floor))
+
+
+# --------------------------------------------------------------- intervals
+
+def percentiles(values, p):
+    """Nearest-rank percentile (p in 0..100) of a list of numbers. None for
+    an empty list. Used for the season win-count p10/p90 bands."""
+    if not values:
+        return None
+    s = sorted(values)
+    idx = int(round((p / 100.0) * (len(s) - 1)))
+    idx = min(max(idx, 0), len(s) - 1)
+    return s[idx]
+
+
+def leverage_from_counts(win_po, win_total, loss_po, loss_total):
+    """100 * (P(playoffs | this team won this game) - P(playoffs | lost)),
+    the points of playoff-probability swing riding on one game. 0.0 (not an
+    error) when a branch never happened in the sample -- can't occur in a
+    real sim with enough draws, but keeps the build from crashing on a tiny
+    or degenerate sample."""
+    if not win_total or not loss_total:
+        return 0.0
+    return round(100.0 * (win_po / win_total - loss_po / loss_total), 1)
+
+
+def band_for(p_playoffs):
+    """Playoff-odds band label from p_playoffs (0..100)."""
+    if p_playoffs >= 90:
+        return "solid"
+    if p_playoffs >= 75:
+        return "likely"
+    if p_playoffs >= 60:
+        return "lean"
+    if p_playoffs >= 40:
+        return "tossup"
+    if p_playoffs >= 15:
+        return "unlikely"
+    return "out"
+
+
+# ------------------------------------------------------------------- history
+
+def upsert_snapshot(doc, date_iso, games_played, rows, keep=HISTORY_KEEP):
+    """Insert or replace `date_iso`'s snapshot in the history doc (a rebuild
+    on the same date REPLACES it, never duplicates), sorted ascending by
+    date and capped at `keep` entries (oldest dropped first). `doc` may be
+    None for a fresh file."""
+    doc = doc or {"meta": {"league": "nfl", "season": SEASON,
+                           "generated_at": date_iso, "keep": keep},
+                  "snapshots": []}
+    snaps = [s for s in doc.get("snapshots", []) if s.get("date") != date_iso]
+    snaps.append({"date": date_iso, "games_played": games_played, "rows": rows})
+    snaps.sort(key=lambda s: s["date"])
+    if len(snaps) > keep:
+        snaps = snaps[-keep:]
+    doc["snapshots"] = snaps
+    doc["meta"]["generated_at"] = date_iso
+    doc["meta"]["keep"] = keep
+    return doc
+
 
 # ------------------------------------------------------------------ the sim
 
@@ -504,8 +678,11 @@ def rank_division(teams, wins, h2h, meetings, rng):
 
 
 def playoff_field(wins, h2h, meetings, rng):
-    """{conf: [seed1..seed7]} from a simulated regular season."""
+    """({conf: [seed1..seed7]}, {conf: best_non_qualifier_or_None}) from a
+    simulated regular season. The second element is the "8th seed" -- the
+    best wild-card team that missed -- needed for the bubble stat."""
     field = {}
+    bubble_next = {}
     for conf in ("AFC", "NFC"):
         champs, rest = [], []
         for div, ts in DIVISIONS.items():
@@ -517,7 +694,8 @@ def playoff_field(wins, h2h, meetings, rng):
         champs = _order_by_wins(champs, "wildcard", wins, h2h, meetings, rng)
         rest = _order_by_wins(rest, "wildcard", wins, h2h, meetings, rng)
         field[conf] = champs + rest[:3]
-    return field
+        bubble_next[conf] = rest[3] if len(rest) > 3 else None
+    return field, bubble_next
 
 
 def sim_game(r_h, r_a, rng, hfa=HFA):
@@ -553,31 +731,84 @@ def run_playoffs(field, r, rng):
 
 def schedule_meetings(schedule):
     """{team: {opp: games}} from the full 272-game schedule (played and
-    remaining alike) -- the static pairing counts the ladder needs."""
+    remaining alike) -- the static pairing counts the ladder needs. The
+    trailing `neutral` element (if present) is ignored here; only who plays
+    whom matters for the ladder's common-games counting."""
     m = {t: {} for t in TEAMS}
-    for _gid, _d, h, a in schedule:
+    for g in schedule:
+        h, a = g[2], g[3]
         m[h][a] = m[h].get(a, 0) + 1
         m[a][h] = m[a].get(h, 0) + 1
     return m
 
 
-def simulate(ratings, schedule, base_wins, played_h2h, sims, meetings, seed=2026):
-    rng = random.Random(seed)
+def simulate(ratings, schedule, base_wins, played_h2h, sims, meetings, seed=2026,
+             sigma_team=None, window_gids=None, full_schedule=None, hfa=HFA):
+    """Monte Carlo the remaining schedule `sims` times.
+
+    Common random numbers: season i draws its correlated rating shocks (a
+    league-wide HFA jitter, a per-division jitter, a per-team jitter) and
+    then ONE uniform per game of the FULL 272-game schedule -- in a fixed
+    (date, gid) order, so a game's draw does not move as earlier games get
+    played -- from random.Random(seed*1_000_003 + i); playoff seeding and
+    tie-break draws come from a second random.Random(seed*7_919 + i), so
+    neither stream's length depends on the other.
+
+    `sigma_team`: {team: adaptive per-team sigma} (falls back to
+    SIGMA_SEASON for any team missing from it). `window_gids`: event ids to
+    collect playoff-leverage counts for (the ledger's upcoming window).
+    `full_schedule`: the complete 272-game list for CRN indexing (defaults
+    to `schedule` itself, fine when `schedule` already is the full slate,
+    e.g. the calibration pre-sim).
+
+    Returns a dict: acc (per-team tallies), win_lists (per-team season win
+    counts across sims, for percentiles), leverage ({gid: {home, away,
+    game}} point-of-playoff-odds swings), bubble (per-team count of
+    seed-7-or-best-non-qualifier finishes)."""
+    sigma_team = sigma_team or {}
+    window_gids = set(window_gids or ())
+    full_sched = full_schedule if full_schedule is not None else schedule
+    full_sorted = sorted(full_sched, key=lambda g: (g[1], g[0]))
+    gid_pos = {g[0]: i for i, g in enumerate(full_sorted)}
+    n_full = len(full_sorted)
+    div_names = sorted(DIVISIONS)
+    e_sd = {t: div_residual_sd(sigma_team.get(t, SIGMA_SEASON)) for t in TEAMS}
+
     acc = {t: _tally() for t in TEAMS}
-    for _ in range(sims):
-        noise = {t: rng.gauss(0.0, SIGMA_SEASON) for t in TEAMS}
-        r = {t: ratings[t] + noise[t] for t in TEAMS}
+    win_lists = {t: [] for t in TEAMS}
+    bubble = {t: 0 for t in TEAMS}
+    lc = {gid: {"home": {"win_po": 0, "win_total": 0, "loss_po": 0, "loss_total": 0},
+                "away": {"win_po": 0, "win_total": 0, "loss_po": 0, "loss_total": 0}}
+          for gid in window_gids}
+
+    for i in range(sims):
+        rng = random.Random(seed * 1_000_003 + i)
+        rng2 = random.Random(seed * 7_919 + i)
+        hfa_s = hfa + rng.gauss(0.0, HFA_SD)
+        div_noise = {d: rng.gauss(0.0, DIV_SD) for d in div_names}
+        team_noise = {t: rng.gauss(0.0, e_sd[t]) for t in TEAMS}
+        r = {t: ratings[t] + div_noise[TEAM_DIV[t]] + team_noise[t] for t in TEAMS}
+        uniforms = [rng.random() for _ in range(n_full)]
+
         wins = dict(base_wins)
         h2h = {t: dict(played_h2h[t]) for t in TEAMS}
-        for _gid, _d, h, a in schedule:
-            if sim_game(r[h], r[a], rng):
-                wins[h] += 1
-                h2h[h][a] = h2h[h].get(a, 0) + 1
+        game_winner = {}
+        for g in schedule:
+            gid, h, a = g[0], g[2], g[3]
+            neutral = g[4] if len(g) > 4 else False
+            u = uniforms[gid_pos[gid]]
+            p = home_win_prob(r[h], r[a], hfa=0.0 if neutral else hfa_s)
+            hw = u < p
+            if gid in window_gids:
+                game_winner[gid] = (h, a, hw)
+            if hw:
+                wins[h] += 1; h2h[h][a] = h2h[h].get(a, 0) + 1
             else:
-                wins[a] += 1
-                h2h[a][h] = h2h[a].get(h, 0) + 1
-        field = playoff_field(wins, h2h, meetings, rng)
-        afc, nfc, sb = run_playoffs(field, r, rng)
+                wins[a] += 1; h2h[a][h] = h2h[a].get(h, 0) + 1
+
+        field, bubble_next = playoff_field(wins, h2h, meetings, rng2)
+        afc, nfc, sb = run_playoffs(field, r, rng2)
+        po_set = set(field["AFC"]) | set(field["NFC"])
         for conf in ("AFC", "NFC"):
             s = field[conf]
             acc[s[0]]["seed1"] += 1
@@ -587,12 +818,42 @@ def simulate(ratings, schedule, base_wins, played_h2h, sims, meetings, seed=2026
                 if div.startswith(conf):
                     champ = next(t for t in s[:4] if t in ts)
                     acc[champ]["division"] += 1
+            bubble[s[6]] += 1
+            if bubble_next[conf]:
+                bubble[bubble_next[conf]] += 1
         acc[afc]["conf"] += 1
         acc[nfc]["conf"] += 1
         acc[sb]["sb"] += 1
         for t in TEAMS:
             acc[t]["wins"] += wins[t]
-    return acc
+            win_lists[t].append(wins[t])
+
+        for gid, (h, a, hw) in game_winner.items():
+            entry = lc[gid]
+            if hw:
+                entry["home"]["win_total"] += 1
+                if h in po_set:
+                    entry["home"]["win_po"] += 1
+                entry["away"]["loss_total"] += 1
+                if a in po_set:
+                    entry["away"]["loss_po"] += 1
+            else:
+                entry["home"]["loss_total"] += 1
+                if h in po_set:
+                    entry["home"]["loss_po"] += 1
+                entry["away"]["win_total"] += 1
+                if a in po_set:
+                    entry["away"]["win_po"] += 1
+
+    leverage = {}
+    for gid, c in lc.items():
+        lh = leverage_from_counts(c["home"]["win_po"], c["home"]["win_total"],
+                                   c["home"]["loss_po"], c["home"]["loss_total"])
+        la = leverage_from_counts(c["away"]["win_po"], c["away"]["win_total"],
+                                   c["away"]["loss_po"], c["away"]["loss_total"])
+        leverage[gid] = {"home": lh, "away": la, "game": round(lh + la, 1)}
+
+    return {"acc": acc, "win_lists": win_lists, "leverage": leverage, "bubble": bubble}
 
 
 # -------------------------------------------------------- ledger + grading
@@ -602,16 +863,50 @@ def brier2(p_home, outcome_home_win):
     return (p_home - o) ** 2 + ((1 - p_home) - (1 - o)) ** 2
 
 
-def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso):
+def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso,
+                     lite_ratings=None, leverage_by_gid=None):
     known = {e["event_id"] for e in ledger}
     # ESPN's scoreboard is the kickoff source, so ungraded entries appended by
     # an earlier run pick their timestamp up (or a rescheduled time) here.
     kick_by_id = {u[0]: u[5] for u in upcoming if len(u) > 5 and u[5]}
+    neutral_by_id = {u[0]: (u[6] if len(u) > 6 else False) for u in upcoming}
     for e in ledger:
         if e.get("result"):
             continue
         if kick_by_id.get(e["event_id"]):
             e["kickoff"] = kick_by_id[e["event_id"]]
+        # neutral is new as of points-v3: an entry frozen by an older build
+        # never had it, and its model/lite pH would have wrongly carried
+        # HFA. One-time correction while ungraded (no result exists yet to
+        # protect), not a freeze violation -- the pick itself was never
+        # graded against the wrong number.
+        if neutral_by_id.get(e["event_id"]) and not e.get("neutral"):
+            e["neutral"] = True
+            if e["home"] in ratings and e["away"] in ratings:
+                new_ph = round(home_win_prob(ratings[e["home"]], ratings[e["away"]], hfa=0.0), 4)
+                if new_ph != e["model"]["pH"]:
+                    # Silver-style backfill label: the retroactive edit is
+                    # visible in the data, not silently overwritten.
+                    e["repriced"] = {"at": today_iso, "reason": "neutral-site",
+                                     "prior_model_pH": e["model"]["pH"], "prior_pick": e["pick"]}
+                e["model"]["pH"] = new_ph
+            if lite_ratings is not None and e["home"] in lite_ratings and e["away"] in lite_ratings:
+                e["lite"] = {"pH": round(home_win_prob(lite_ratings[e["home"]], lite_ratings[e["away"]],
+                                                        hfa=0.0), 4), "backfilled": today_iso}
+            if e.get("market") is not None:
+                e["blend"] = {"pH": round(MATCH_BLEND_W * e["market"]["pH"]
+                                          + (1 - MATCH_BLEND_W) * e["model"]["pH"], 4)}
+            e["pick"] = "H" if (e.get("blend") or e["model"])["pH"] >= 0.5 else "A"
+        # lite.pH is new as of points-v3 too: same one-time backfill.
+        if lite_ratings is not None and "lite" not in e and e["home"] in lite_ratings and e["away"] in lite_ratings:
+            hfa_g = 0.0 if e.get("neutral") else HFA
+            e["lite"] = {"pH": round(home_win_prob(lite_ratings[e["home"]], lite_ratings[e["away"]],
+                                                    hfa=hfa_g), 4), "backfilled": today_iso}
+        # leverage is descriptive, not a frozen pick, so it refreshes every
+        # run while the game is still upcoming.
+        lev = (leverage_by_gid or {}).get(e["event_id"])
+        if lev is not None:
+            e["leverage"] = lev
         res = results_by_id.get(e["event_id"])
         if res:
             _h, _a, hs, as_ = res
@@ -626,15 +921,21 @@ def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso):
             e["model_brier"] = round(brier2(e["model"]["pH"], hw), 4)
             if e.get("market") is not None:
                 e["market_brier"] = round(brier2(e["market"]["pH"], hw), 4)
+            if e.get("lite") is not None:
+                e["lite_brier"] = round(brier2(e["lite"]["pH"], hw), 4)
             b = e.get("blend") or e["model"]
             e["blend_brier"] = round(brier2(b["pH"], hw), 4)
             e["pick_correct"] = (e["pick"] == e["result"])
+    leverage_by_gid = leverage_by_gid or {}
     for u in upcoming:
         gid, iso, h, a, mkt_ph = u[:5]
         kick = u[5] if len(u) > 5 else None
+        neutral = u[6] if len(u) > 6 else False
+        spread = u[7] if len(u) > 7 else None
         if gid in known:
             continue
-        ph = round(home_win_prob(ratings[h], ratings[a]), 4)
+        hfa_g = 0.0 if neutral else HFA
+        ph = round(home_win_prob(ratings[h], ratings[a], hfa=hfa_g), 4)
         entry = {
             "event_id": gid, "date": iso, "home": h, "away": a,
             "home_slug": slugify(h), "away_slug": slugify(a),
@@ -642,9 +943,19 @@ def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso):
         }
         if kick:
             entry["kickoff"] = kick
+        if neutral:
+            entry["neutral"] = True
+        if lite_ratings is not None:
+            lp = round(home_win_prob(lite_ratings[h], lite_ratings[a], hfa=hfa_g), 4)
+            entry["lite"] = {"pH": lp}
         if mkt_ph is not None:
             entry["market"] = {"pH": mkt_ph}
+            if spread is not None:
+                entry["market"]["spread"] = spread
             entry["blend"] = {"pH": round(MATCH_BLEND_W * mkt_ph + (1 - MATCH_BLEND_W) * ph, 4)}
+        lev = leverage_by_gid.get(gid)
+        if lev is not None:
+            entry["leverage"] = lev
         src = entry.get("blend") or entry["model"]
         entry["pick"] = "H" if src["pH"] >= 0.5 else "A"
         ledger.append(entry)
@@ -660,6 +971,8 @@ def ledger_record(ledger):
         "model_brier": round(sum(e["model_brier"] for e in g) / len(g), 4) if g else None,
         "blend_brier": round(sum(e["blend_brier"] for e in g) / len(g), 4) if g else None,
     }
+    gl = [e for e in g if "lite_brier" in e]
+    rec["lite_brier"] = round(sum(e["lite_brier"] for e in gl) / len(gl), 4) if gl else None
     gm = [e for e in g if "market_brier" in e]
     rec["market_graded"] = len(gm)
     rec["market_brier"] = round(sum(e["market_brier"] for e in gm) / len(gm), 4) if gm else None
@@ -679,14 +992,14 @@ def build(sims, today=None):
 
     per_season = {s: season_margins(s) for s, _ in STRENGTH_SEASONS}
     results = played_results()
-    played = [(h, a, hs, as_) for _id, h, a, hs, as_, ty in results if ty == 2]
-    ratings = base_ratings(per_season, played)
+    played = [(h, a, hs, as_) for _id, h, a, hs, as_, ty, _neu in results if ty == 2]
+    r_stats = base_ratings(per_season, played)
 
     schedule = full_schedule(team_ids)
     if len(schedule) != 272:
         print("note: schedule has %d games (272 expected)" % len(schedule))
     played_ids = {r[0] for r in results}
-    remaining = [(gid, d, h, a) for gid, d, h, a in schedule if gid not in played_ids]
+    remaining = [g for g in schedule if g[0] not in played_ids]
     meetings = schedule_meetings(schedule)
 
     base_wins = {t: 0 for t in TEAMS}
@@ -701,47 +1014,120 @@ def build(sims, today=None):
             base_wins[a] += 1
             played_h2h[a][h] = played_h2h[a].get(h, 0) + 1
 
-    # Market blend: DraftKings Super Bowl futures -> ratings on the points
-    # scale via the model's own rating->title-odds curve (quick pre-sim), then
-    # blended at MARKET_W_SEASON. The stats see the past; the futures see the
-    # roster news. Falls back to model-only if the market is unavailable.
+    # existing ledger, read once: feeds both the spread-implied ratings
+    # (last SPREAD_LOOKBACK_DAYS days of stored market.spread) and grading.
+    existing_ledger = []
+    prev_meta = {}
+    if os.path.exists(OUT_PRED):
+        try:
+            prev_doc = json.load(io.open(OUT_PRED, encoding="utf-8"))
+            existing_ledger = prev_doc.get("ledger", [])
+            prev_meta = prev_doc.get("meta") or {}
+        except Exception:
+            existing_ledger = []
+
+    # Market step 1: DraftKings Super Bowl futures -> ratings on the points
+    # scale via the model's own rating->title-odds curve (quick pre-sim).
     mkt_probs, mkt_provider = fetch_sb_futures()
-    market_note = "model-only (no futures available)"
+    r_futures = None
     if mkt_probs:
-        pre = simulate(ratings, remaining, base_wins, played_h2h, CALIB_SIMS,
-                       meetings, seed=99)
-        pre_acc = pre[1] if isinstance(pre, tuple) else pre
-        pairs = []
-        for t in TEAMS:
-            p = pre_acc[t]["sb"] / CALIB_SIMS
-            pairs.append((_logodds(p), ratings[t]))
+        pre = simulate(r_stats, remaining, base_wins, played_h2h, CALIB_SIMS,
+                       meetings, seed=99, full_schedule=schedule)
+        pre_acc = pre["acc"]
+        pairs = [(_logodds(pre_acc[t]["sb"] / CALIB_SIMS), r_stats[t]) for t in TEAMS]
         a, b = _fit_rating_from_logodds(pairs)
         if b > 0:
-            r_mkt = {t: a + b * _logodds(mkt_probs.get(t, 1.0 / 64)) for t in TEAMS}
-            m = sum(r_mkt.values()) / len(r_mkt)
-            r_mkt = {t: v - m for t, v in r_mkt.items()}
-            ratings = {t: (1 - MARKET_W_SEASON) * ratings[t] + MARKET_W_SEASON * r_mkt[t]
-                       for t in TEAMS}
-            m2 = sum(ratings.values()) / len(ratings)
-            ratings = {t: v - m2 for t, v in ratings.items()}
-            market_note = "blended (weight %.2f, %s futures, 32 teams)" % (
-                MARKET_W_SEASON, mkt_provider or "book")
+            r_mkt_raw = {t: a + b * _logodds(mkt_probs.get(t, 1.0 / 64)) for t in TEAMS}
+            m = sum(r_mkt_raw.values()) / len(r_mkt_raw)
+            r_futures = {t: v - m for t, v in r_mkt_raw.items()}
 
-    acc = simulate(ratings, remaining, base_wins, played_h2h, sims, meetings)
+    # Market step 2: posted spreads (this window + the ledger's recent
+    # history) -> ridge-regularized ratings, prior = futures (or stats).
+    upcoming = upcoming_games(today, WINDOW_DAYS)
+    window_gids = {u[0] for u in upcoming}
+    spread_obs = []
+    for u in upcoming:
+        h, a = u[2], u[3]
+        neutral = u[6] if len(u) > 6 else False
+        spread = u[7] if len(u) > 7 else None
+        if spread is not None:
+            spread_obs.append((h, a, spread, neutral))
+    for e in existing_ledger:
+        sp = (e.get("market") or {}).get("spread")
+        if sp is None:
+            continue
+        try:
+            d = date.fromisoformat(str(e.get("date"))[:10])
+        except (TypeError, ValueError):
+            continue
+        age = (today - d).days
+        if 0 <= age <= SPREAD_LOOKBACK_DAYS:
+            spread_obs.append((e["home"], e["away"], sp, bool(e.get("neutral"))))
+
+    spread_prior = r_futures if r_futures is not None else r_stats
+    r_spread, n_spread_obs = implied_ratings_from_spreads(spread_obs, spread_prior, lam=SPREAD_LAMBDA)
+
+    if n_spread_obs >= 8:
+        r_market = r_spread
+        market_ratings_kind = "futures+spreads"
+    elif r_futures is not None:
+        r_market = r_futures
+        market_ratings_kind = "futures"
+    else:
+        r_market = None
+        market_ratings_kind = "none"
+
+    if r_market is not None:
+        ratings = {t: (1 - MARKET_W_SEASON) * r_stats[t] + MARKET_W_SEASON * r_market[t] for t in TEAMS}
+        m2 = sum(ratings.values()) / len(ratings)
+        ratings = {t: v - m2 for t, v in ratings.items()}
+        market_note = "blended (weight %.2f, %s, %s)" % (
+            MARKET_W_SEASON, market_ratings_kind, mkt_provider or "book")
+    else:
+        ratings = dict(r_stats)
+        market_note = "model-only (no futures or spreads available)"
+
+    # Adaptive sigma: league-wide from games remaining, widened per team by
+    # stats/market disagreement.
+    frac_left = len(remaining) / float(len(schedule)) if schedule else 1.0
+    sigma_base = adaptive_sigma(frac_left)
+    sigma_team_dict = {t: team_sigma(sigma_base, r_stats[t],
+                                     r_market[t] if r_market is not None else None)
+                       for t in TEAMS}
+
+    # Lite tier: stats-only ratings, same seed, cheaper sim count.
+    lite = simulate(r_stats, remaining, base_wins, played_h2h, TIER_SIMS, meetings,
+                    seed=SEASON, sigma_team=sigma_team_dict, full_schedule=schedule)
+
+    # Classic tier: the production run.
+    classic = simulate(ratings, remaining, base_wins, played_h2h, sims, meetings,
+                       seed=SEASON, sigma_team=sigma_team_dict, window_gids=window_gids,
+                       full_schedule=schedule)
+    acc = classic["acc"]
 
     table = []
     for t in TEAMS:
         a = acc[t]
+        p10 = percentiles(classic["win_lists"][t], 10)
+        p90 = percentiles(classic["win_lists"][t], 90)
+        p_playoffs = round(100.0 * a["playoffs"] / sims, 2)
         table.append({
             "slug": slugify(t), "name": t,
             "conf": TEAM_CONF[t], "division": TEAM_DIV[t],
             "rating": round(ratings[t], 2),
+            "rating_stats": round(r_stats[t], 2),
+            "rating_market": round(r_market[t], 2) if r_market is not None else None,
+            "sigma_team": round(sigma_team_dict[t], 2),
             "exp_wins": round(a["wins"] / sims, 1),
+            "wins_p10": round(p10, 1) if p10 is not None else None,
+            "wins_p90": round(p90, 1) if p90 is not None else None,
             "p_division": round(100.0 * a["division"] / sims, 2),
-            "p_playoffs": round(100.0 * a["playoffs"] / sims, 2),
+            "p_playoffs": p_playoffs,
             "p_seed1": round(100.0 * a["seed1"] / sims, 2),
             "p_conf": round(100.0 * a["conf"] / sims, 2),
             "p_sb": round(100.0 * a["sb"] / sims, 2),
+            "p_bubble": round(100.0 * classic["bubble"].get(t, 0) / sims, 2),
+            "band": band_for(p_playoffs),
         })
     table.sort(key=lambda r: (-r["p_sb"], -r["exp_wins"]))
     assert len(table) == 32
@@ -750,41 +1136,81 @@ def build(sims, today=None):
     s = sum(r["p_playoffs"] for r in table)
     assert abs(s - 1400.0) < 14.0, "p_playoffs sums to %.2f" % s
 
+    def tier_rows(res, n):
+        rows = {}
+        for t in TEAMS:
+            a = res["acc"][t]
+            rows[slugify(t)] = {
+                "exp_wins": round(a["wins"] / n, 1),
+                "p_division": round(100.0 * a["division"] / n, 2),
+                "p_playoffs": round(100.0 * a["playoffs"] / n, 2),
+                "p_conf": round(100.0 * a["conf"] / n, 2),
+                "p_sb": round(100.0 * a["sb"] / n, 2),
+            }
+        return rows
+
+    tiers = {"lite": tier_rows(lite, TIER_SIMS), "classic": tier_rows(classic, sims)}
+    corr_team_sd = round(sum(div_residual_sd(v) for v in sigma_team_dict.values())
+                         / len(sigma_team_dict), 2)
+
     sim_doc = {
         "meta": {
             "league": "nfl", "season": SEASON, "title_game": "Super Bowl LXI",
-            "generated_at": today_iso, "sims": sims, "model": "points-v2",
+            "generated_at": today_iso, "sims": sims, "model": "points-v3",
+            "seed": SEASON,
             "hfa": HFA, "sigma_game": SIGMA_GAME, "sigma_season": SIGMA_SEASON,
+            "sigma_season_eff": round(sigma_base, 2),
+            "corr": {"hfa_sd": HFA_SD, "div_sd": DIV_SD, "team_sd": corr_team_sd},
             "regress": REGRESS,
             "strength_seasons": [s for s, _ in STRENGTH_SEASONS],
             "market": market_note, "market_weight": MARKET_W_SEASON,
+            "market_ratings": market_ratings_kind,
+            "tiers": ["lite", "classic"],
             "schedule_games": len(schedule), "games_played": len(played),
             "source": "ESPN standings + 2026 schedule + posted lines + Super Bowl futures",
-            "notes": "Regressed scoring-margin ratings blended with futures-implied market ratings; the real 272-game "
-                     "schedule and full playoff bracket simulated; division "
-                     "tie-breaks approximated (record, then head-to-head).",
+            "notes": "Regressed scoring-margin ratings blended with a market rating (spreads "
+                     "when there are enough of them, else futures); the real 272-game schedule "
+                     "and full playoff bracket simulated with correlated per-team/division/HFA "
+                     "season noise and common random numbers; division tie-breaks approximated "
+                     "(record, then head-to-head).",
         },
         "table": table,
+        "tiers": tiers,
     }
 
-    ledger = []
-    if os.path.exists(OUT_PRED):
+    hist_rows = {r["slug"]: {
+        "xw": round(r["exp_wins"], 1),
+        "div": round(r["p_division"], 1),
+        "po": round(r["p_playoffs"], 1),
+        "conf": round(r["p_conf"], 1),
+        "title": round(r["p_sb"], 1),
+    } for r in table}
+    hist_doc = None
+    if os.path.exists(OUT_HIST):
         try:
-            ledger = json.load(io.open(OUT_PRED, encoding="utf-8")).get("ledger", [])
+            hist_doc = json.load(io.open(OUT_HIST, encoding="utf-8"))
         except Exception:
-            ledger = []
+            hist_doc = None
+    hist_doc = upsert_snapshot(hist_doc, today_iso, len(played), hist_rows, HISTORY_KEEP)
+
     results_by_id = {r[0]: (r[1], r[2], r[3], r[4]) for r in results}
-    upcoming = upcoming_games(today, WINDOW_DAYS)
-    ledger = grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso)
+    ledger = grade_and_extend(existing_ledger, results_by_id, upcoming, ratings, today_iso,
+                              lite_ratings=r_stats, leverage_by_gid=classic["leverage"])
     pred_doc = {
         "meta": {"season": SEASON, "generated_at": today_iso,
                  "match_blend_weight": MATCH_BLEND_W, "horizon_days": WINDOW_DAYS,
+                 "tiers": ["lite", "classic", "market", "blend"],
                  "odds_source": "ESPN posted lines (moneyline, else spread)",
                  "results_source": "ESPN final scores"},
         "record": ledger_record(ledger),
         "ledger": ledger,
     }
-    return sim_doc, pred_doc
+    # build_nfl_shadow.py owns meta.shadow (its fitted weights and gate
+    # result); this builder rebuilds meta from scratch, so carry it forward
+    # rather than wiping it every morning.
+    if prev_meta.get("shadow"):
+        pred_doc["meta"]["shadow"] = prev_meta["shadow"]
+    return sim_doc, pred_doc, hist_doc
 
 
 # ---------------------------------------------------------------- self-test
@@ -801,6 +1227,7 @@ def self_test():
     p = home_win_prob(3.0, -3.0)
     check("winprob-favourite", 0.65 < p < 0.75)
     check("winprob-sym", abs(home_win_prob(0, 0) - phi(HFA / SIGMA_GAME)) < 1e-9)
+    check("winprob-neutral-drops-hfa", abs(home_win_prob(0, 0, hfa=0.0) - 0.5) < 1e-9)
     # division ranking: wins first, then h2h inside the tie
     rng = random.Random(3)
     ts = DIVISIONS["AFC East"]
@@ -849,27 +1276,32 @@ def self_test():
     check("ladder-sov",
           ladder_pick("wildcard", ["Pittsburgh Steelers", "Denver Broncos"],
                       wins4, h2h4, mt4, rng) == "Pittsburgh Steelers")
-    # playoff field: 7 per conference, division winners seeded 1-4
+    # playoff field: 7 per conference, division winners seeded 1-4, and the
+    # 8th-seed bubble marker never overlaps the field itself
     rng = random.Random(4)
     wins = {t: 8 for t in TEAMS}
     wins["Kansas City Chiefs"] = 14
     wins["Buffalo Bills"] = 13
     h2h = {t: {} for t in TEAMS}
     mt = {t: {} for t in TEAMS}
-    field = playoff_field(wins, h2h, mt, rng)
+    field, bubble_next = playoff_field(wins, h2h, mt, rng)
     check("field-7", len(field["AFC"]) == 7 and len(field["NFC"]) == 7)
     check("field-seed1", field["AFC"][0] == "Kansas City Chiefs")
     check("field-div-first", all(len({TEAM_DIV[t] for t in field[c][:4]}) == 4 for c in field))
+    check("field-bubble-outside-field",
+          all(bubble_next[c] is None or bubble_next[c] not in field[c] for c in field))
     # playoffs run to a single SB winner from the field
     r = {t: 0.0 for t in TEAMS}
     afc, nfc, sb = run_playoffs(field, r, random.Random(5))
     check("sb-winner", sb in (afc, nfc) and TEAM_CONF[afc] == "AFC" and TEAM_CONF[nfc] == "NFC")
-    # market prob from moneyline + spread paths
+    # market prob / spread from moneyline + spread paths
     comp = {"odds": [{"homeTeamOdds": {"moneyLine": -160}, "awayTeamOdds": {"moneyLine": 140}}]}
     mp = market_home_prob(comp)
     check("ml-devig", 0.58 < mp < 0.65)
     comp2 = {"odds": [{"spread": -3.5}]}
     check("spread-prob", 0.58 < market_home_prob(comp2) < 0.62)
+    check("spread-raw", market_spread(comp2) == -3.5)
+    check("spread-raw-missing", market_spread({"odds": []}) is None)
     # grading: home win graded correctly, tie voids
     led = [{"event_id": "1", "date": "2026-09-13", "home": "Buffalo Bills", "away": "New York Jets",
             "home_slug": "buffalo-bills", "away_slug": "new-york-jets",
@@ -904,6 +1336,47 @@ def self_test():
     check("kickoff-backfill", by_id["3"]["kickoff"] == "2026-09-13T17:00:00Z")
     check("kickoff-new-entry", by_id["4"]["kickoff"] == "2026-09-14T00:15:00Z")
     check("kickoff-graded-untouched", "kickoff" not in win and "kickoff" not in tie)
+    # neutral-site window game: no HFA in model.pH / lite.pH, entry flagged,
+    # and market.spread rides along with market.pH
+    up3 = [("5", "2026-10-05", "Los Angeles Rams", "San Francisco 49ers", 0.55,
+            "2026-10-05T14:30:00Z", True, -1.5)]
+    led3 = grade_and_extend([], {}, up3, {t: 0.0 for t in TEAMS}, "2026-10-01",
+                            lite_ratings={t: 0.0 for t in TEAMS})
+    neut = led3[0]
+    check("neutral-flag", neut.get("neutral") is True)
+    check("neutral-no-hfa", abs(neut["model"]["pH"] - 0.5) < 1e-9
+          and abs(neut["lite"]["pH"] - 0.5) < 1e-9)
+    check("neutral-spread-carried", neut["market"]["spread"] == -1.5 and neut["market"]["pH"] == 0.55)
+    up4 = [("6", "2026-10-05", "Dallas Cowboys", "New York Giants", None, None, False, None)]
+    led4 = grade_and_extend([], {}, up4, {t: 0.0 for t in TEAMS}, "2026-10-01")
+    check("non-neutral-omitted", "neutral" not in led4[0])
+    check("lite-at-creation-not-backfilled", "backfilled" not in neut["lite"])
+    # a pre-points-v3 frozen entry that ESPN now reports as neutral: the
+    # prior model.pH/pick are preserved under `repriced`, and the fresh
+    # lite.pH carries the backfill label
+    rzero6 = {t: 0.0 for t in TEAMS}
+    r_up = dict(rzero6); r_up["Los Angeles Rams"] = 3.0  # nonzero so pH actually moves
+    led6 = [{"event_id": "8", "date": "2026-10-05", "home": "Los Angeles Rams",
+             "away": "San Francisco 49ers", "home_slug": "los-angeles-rams",
+             "away_slug": "san-francisco-49ers", "model": {"pH": 0.71}, "pick": "H",
+             "predicted_at": "2026-09-01"}]
+    up6 = [("8", "2026-10-05", "Los Angeles Rams", "San Francisco 49ers", None, None, True, None)]
+    led6 = grade_and_extend(led6, {}, up6, r_up, "2026-10-01", lite_ratings=rzero6)
+    e6 = led6[0]
+    check("repriced-present", e6.get("repriced") is not None)
+    check("repriced-prior-values",
+          e6["repriced"]["reason"] == "neutral-site"
+          and e6["repriced"]["prior_model_pH"] == 0.71 and e6["repriced"]["prior_pick"] == "H")
+    check("repriced-model-changed", e6["model"]["pH"] != 0.71)
+    check("lite-backfilled-labelled", e6["lite"].get("backfilled") == "2026-10-01")
+    # lite_brier flows through grading and the ledger record
+    led5 = [{"event_id": "7", "date": "2026-09-13", "home": "Buffalo Bills", "away": "New York Jets",
+             "home_slug": "buffalo-bills", "away_slug": "new-york-jets",
+             "model": {"pH": 0.7}, "lite": {"pH": 0.6}, "pick": "H", "predicted_at": "2026-09-10"}]
+    led5 = grade_and_extend(led5, {"7": ("Buffalo Bills", "New York Jets", 27, 13)},
+                            [], {t: 0.0 for t in TEAMS}, "2026-09-14")
+    check("lite-brier-graded", abs(led5[0]["lite_brier"] - 0.32) < 1e-9)
+    check("record-lite-brier", abs(ledger_record(led5)["lite_brier"] - 0.32) < 1e-9)
     # futures mapping helpers: line recovery + logodds clamp + a blend that
     # actually moves a market favourite up
     a, b = _fit_rating_from_logodds([(-3.0, -3.0), (-2.0, -1.0), (-1.0, 1.0), (0.0, 3.0)])
@@ -916,11 +1389,103 @@ def self_test():
     r_m = {t: 2.0 * (_logodds(mkt[t]) - lo_mean) for t in TEAMS}
     blended = {t: (1 - MARKET_W_SEASON) * r_model[t] + MARKET_W_SEASON * r_m[t] for t in TEAMS}
     check("blend-favourite-up", blended["Los Angeles Rams"] > 1.0)
+    # adaptive sigma: full season, mid-season (above floor), season over
+    # (floor governs) -- SIGMA_FLOOR_FRAC 0.45 vs sqrt(0.3) = 0.548 and
+    # sqrt(0.0) = 0
+    check("sigma-full-season", abs(adaptive_sigma(1.0) - SIGMA_SEASON) < 1e-9)
+    check("sigma-frac-30", abs(adaptive_sigma(0.3) - SIGMA_SEASON * math.sqrt(0.3)) < 1e-9)
+    check("sigma-floor", abs(adaptive_sigma(0.0) - SIGMA_SEASON * SIGMA_FLOOR_FRAC) < 1e-9)
+    check("sigma-clamps-out-of-range", adaptive_sigma(1.5) == adaptive_sigma(1.0)
+          and adaptive_sigma(-0.2) == adaptive_sigma(0.0))
+    check("team-sigma-no-market", team_sigma(2.0, 1.0, None) == 2.0)
+    check("team-sigma-disagree", team_sigma(2.0, 3.0, -1.0) > 2.0)
+    check("div-residual-floor", abs(div_residual_sd(0.5) - 0.5) < 1e-9)
+    check("div-residual-normal", abs(div_residual_sd(3.0) - math.sqrt(9.0 - 1.0)) < 1e-9)
+    # percentiles: nearest-rank on a short, unsorted, messy list
+    check("percentiles-empty", percentiles([], 50) is None)
+    check("percentiles-p10", percentiles([50, 10, 30, 20, 40], 10) == 10)
+    check("percentiles-p90", percentiles([50, 10, 30, 20, 40], 90) == 50)
+    check("percentiles-median-odd", percentiles([9, 3, 9, 3, 5], 50) == 5)
+    # leverage: normal swing and both zero-denominator edges
+    check("leverage-basic", abs(leverage_from_counts(80, 100, 20, 100) - 60.0) < 1e-9)
+    check("leverage-zero-win-denom", leverage_from_counts(0, 0, 5, 10) == 0.0)
+    check("leverage-zero-loss-denom", leverage_from_counts(5, 10, 0, 0) == 0.0)
+    # band_for: every boundary, inclusive on the low edge of each band
+    check("band-solid", band_for(95) == "solid" and band_for(90) == "solid")
+    check("band-likely", band_for(89.9) == "likely" and band_for(75) == "likely")
+    check("band-lean", band_for(60) == "lean")
+    check("band-tossup", band_for(40) == "tossup")
+    check("band-unlikely", band_for(15) == "unlikely")
+    check("band-out", band_for(3) == "out")
+    # upsert_snapshot: fresh file, same-date replace, and a keep-cap that
+    # drops the oldest first
+    doc = upsert_snapshot(None, "2026-09-01", 10,
+                          {"buffalo-bills": {"xw": 10.3, "div": 48.9, "po": 78.4,
+                                             "conf": 24.0, "title": 14.4}})
+    check("hist-fresh", len(doc["snapshots"]) == 1 and doc["snapshots"][0]["date"] == "2026-09-01")
+    doc = upsert_snapshot(doc, "2026-09-01", 11,
+                          {"buffalo-bills": {"xw": 10.5, "div": 49.0, "po": 79.0,
+                                             "conf": 24.5, "title": 15.0}})
+    check("hist-replace-same-date",
+          len(doc["snapshots"]) == 1 and doc["snapshots"][0]["games_played"] == 11)
+    doc2 = None
+    for i in range(5):
+        doc2 = upsert_snapshot(doc2, "2026-08-%02d" % (i + 1), i, {}, keep=3)
+    check("hist-cap", len(doc2["snapshots"]) == 3 and doc2["snapshots"][0]["date"] == "2026-08-03"
+          and doc2["snapshots"][-1]["date"] == "2026-08-05")
+    # implied_ratings_from_spreads: a neutral game skips the HFA adjustment,
+    # a team with zero observations falls back to its prior, and n counts
+    # only observations actually used
+    prior0 = {t: 0.0 for t in TEAMS}
+    obs = [("Buffalo Bills", "Miami Dolphins", -6.0, False),
+           ("Kansas City Chiefs", "Denver Broncos", -3.0, True),
+           ("Green Bay Packers", "Chicago Bears", -3.0, False)]
+    r_impl, n_impl = implied_ratings_from_spreads(obs, prior0, lam=SPREAD_LAMBDA)
+    check("spread-n-count", n_impl == 3)
+    check("spread-favourite-up", r_impl["Buffalo Bills"] > r_impl["Miami Dolphins"])
+    # same posted spread (-3), but the neutral game has no HFA to absorb
+    # part of it, so the implied rating gap has to be bigger
+    check("spread-neutral-larger-gap",
+          (r_impl["Kansas City Chiefs"] - r_impl["Denver Broncos"]) >
+          (r_impl["Green Bay Packers"] - r_impl["Chicago Bears"]) > 0)
+    r_iso, n_iso = implied_ratings_from_spreads(
+        [("Buffalo Bills", "Miami Dolphins", -6.0, False)], prior0, lam=SPREAD_LAMBDA)
+    check("spread-fallback-to-prior", abs(r_iso["Kansas City Chiefs"]) < 0.5)
+    check("spread-no-obs", implied_ratings_from_spreads([], prior0)[1] == 0)
+    # simulate: CRN determinism (same seed -> identical acc) and a neutral
+    # game removing home-field advantage from the win share
+    rzero = {t: 0.0 for t in TEAMS}
+    zero_wins = {t: 0 for t in TEAMS}
+    zero_h2h = {t: {} for t in TEAMS}
+    zero_meet = {t: {} for t in TEAMS}
+    home_game = [("nA", "2026-09-10", "Buffalo Bills", "Miami Dolphins", False)]
+    res1 = simulate(rzero, home_game, zero_wins, zero_h2h, 400, zero_meet, seed=11,
+                    full_schedule=home_game)
+    res2 = simulate(rzero, home_game, zero_wins, zero_h2h, 400, zero_meet, seed=11,
+                    full_schedule=home_game)
+    check("sim-crn-deterministic", res1["acc"]["Buffalo Bills"] == res2["acc"]["Buffalo Bills"])
+    n_probe = 2000
+    neutral_game = [("nB", "2026-09-10", "Buffalo Bills", "Miami Dolphins", True)]
+    res_neutral = simulate(rzero, neutral_game, zero_wins, zero_h2h, n_probe, zero_meet, seed=11,
+                           full_schedule=neutral_game)
+    res_home_big = simulate(rzero, home_game, zero_wins, zero_h2h, n_probe, zero_meet, seed=11,
+                            full_schedule=home_game)
+    bills_home = sum(res_home_big["win_lists"]["Buffalo Bills"]) / n_probe
+    bills_neutral = sum(res_neutral["win_lists"]["Buffalo Bills"]) / n_probe
+    check("sim-neutral-drops-hfa", bills_home > bills_neutral + 0.02 and abs(bills_neutral - 0.5) < 0.05)
+    # leverage collection: a game in window_gids gets a home/away/game swing
+    lev_doc = res_home_big["leverage"].get("nA")
+    check("sim-leverage-present", lev_doc is None)  # window_gids empty above, so nothing collected
+    res_window = simulate(rzero, home_game, zero_wins, zero_h2h, n_probe, zero_meet, seed=11,
+                          full_schedule=home_game, window_gids={"nA"})
+    lev = res_window["leverage"]["nA"]
+    check("sim-leverage-shape", set(lev) == {"home", "away", "game"}
+          and abs(lev["game"] - (lev["home"] + lev["away"])) < 1e-6)
 
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (24 cases)")
+    print("self-test OK (%d cases)" % 72)
 
 
 def main():
@@ -929,7 +1494,7 @@ def main():
     sims = DEFAULT_SIMS
     if "--sims" in sys.argv:
         sims = int(sys.argv[sys.argv.index("--sims") + 1])
-    sim_doc, pred_doc = build(sims)
+    sim_doc, pred_doc, hist_doc = build(sims)
     m = sim_doc["meta"]
     print("schedule %d games, %d played | %s" % (m["schedule_games"], m["games_played"], m["market"]))
     for r in sim_doc["table"][:8]:
@@ -944,7 +1509,9 @@ def main():
         json.dump(sim_doc, f, separators=(",", ":"), ensure_ascii=False)
     with io.open(OUT_PRED, "w", encoding="utf-8", newline="") as f:
         json.dump(pred_doc, f, separators=(",", ":"), ensure_ascii=False)
-    print("wrote nfl-sim.json + nfl-predictions.json")
+    with io.open(OUT_HIST, "w", encoding="utf-8", newline="") as f:
+        json.dump(hist_doc, f, separators=(",", ":"), ensure_ascii=False)
+    print("wrote nfl-sim.json + nfl-predictions.json + nfl-sim-history.json")
 
 
 if __name__ == "__main__":
