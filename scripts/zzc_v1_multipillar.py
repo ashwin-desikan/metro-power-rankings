@@ -88,6 +88,12 @@ PRESTIGE = {
     # reach and standalone global names, which the modern pentathlons do not.
     # It sits below athletics, which remains the one universal Olympic sport.
     "Swimming": 0.75,
+    # Artistic gymnastics lifted 0.5 to 0.75 on 2026-09-04, on the same argument
+    # and in the same tier. The FIG world championships run in every non-Games
+    # year, the sport carries names known outside it, and it was sitting with the
+    # quadrennial disciplines. Rhythmic gymnastics and trampolining stay at the
+    # default deliberately: they share a federation, not a footprint.
+    "Artistic Gymnastics": 0.75,
     "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
     "Women's Basketball": 1.0, "Women's Volleyball": 0.55, "Women's Handball": 0.5,  # ~half the men's, like Women's Football
     "Women's Ice Hockey": 0.75,   # half of Ice Hockey's 1.5, the same rule
@@ -553,6 +559,29 @@ def hockey_contribs(boost):
                          "worlds_bronze_years": ("world", "third")}, boost)
 
 
+def womens_hockey_contribs(boost):
+    """IIHF Women's World Championship medals.
+
+    Added 2026-09-04, completing a split that started with the Olympic medal
+    table. Women's Ice Hockey had been an Olympic-only pillar worth 1.9 to each
+    of Canada and the United States, because the Ice Hockey title pillar reads
+    the men's world championship and nothing read the women's.
+
+    Only the world championship is here. The Olympic medals already arrive
+    through the women's team-sport split in olympic_contribs, so listing them
+    again would count each one twice. No flagship tier either: the men's pillar
+    reserves that for the World Cup of Hockey, which has no women's equivalent.
+    """
+    path = os.path.join(D, "hockey", "womens-nations.json")
+    if not os.path.exists(path):
+        print("  women's hockey: womens-nations.json missing, pillar skipped")
+        return []
+    return _medal_years(path, "Women's Ice Hockey",
+                        {"worlds_gold_years": ("world", "champion"),
+                         "worlds_silver_years": ("world", "runner_up"),
+                         "worlds_bronze_years": ("world", "third")}, boost)
+
+
 def handball_contribs(boost):
     return _medal_years(os.path.join(D, "handball", "nations.json"), "Handball",
                         {"worlds_gold_years": ("world", "champion"), "worlds_silver_years": ("world", "runner_up"),
@@ -866,6 +895,7 @@ PILLARS = [("olympics", olympic_contribs), ("football", football_contribs),
            ("golf", golf_contribs), ("tennis", tennis_contribs),
            ("netball", netball_titles_contribs),
            ("road_cycling", road_cycling_contribs),
+           ("womens_hockey", womens_hockey_contribs),
            ("ranking", ranking_contribs), ("extra_ranking", extra_ranking_contribs)]
 
 
