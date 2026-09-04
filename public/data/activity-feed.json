@@ -1,13 +1,62 @@
 {
-  "generatedAt": "2026-09-03",
+  "generatedAt": "2026-09-04",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-04",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "b19ff7d46"
+    },
     {
       "date": "2026-09-03",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "8dce7ee3d"
+      "text": "Data refreshed — Football, Basketball, AFL, College football, and 1 more.",
+      "commit": "844b1d9e8"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "hub",
+      "hub": null,
+      "text": "SectionHead disclosure, DataBar in-cell bars, validated chart tokens.",
+      "commit": "89b2953e2"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Collapse secondary sections on the phone, headline board first [preview].",
+      "commit": "86cddc96c"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Bring every hub, the Ledger and Picks onto the site's hub design [preview].",
+      "commit": "c3cd0e85b"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Keep the division tables inside their grid column [preview].",
+      "commit": "447c6af1c"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Deltas, tiers, bands and leverage on the CFB, MLB and PL hubs; release note.",
+      "commit": "422dad55d"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Points-v3, tiers, adaptive uncertainty, correlated error, deltas and leverage.",
+      "commit": "e2dda01b8"
     },
     {
       "date": "2026-09-02",
@@ -4152,55 +4201,6 @@
       "hub": "Countries",
       "text": "Wire JP+NL boundary builder; absorb 2026-05-06 xlsx; country-map selector below map.",
       "commit": "174eb279a"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": "Countries",
-      "text": "Country page: per-tier polygon toggle with All/None + xlsx refresh (Harrogate UK, 356 English mapping refinements).",
-      "commit": "1c0a49709"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Populations.",
-      "commit": "3ff74336d"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "fix",
-      "hub": null,
-      "text": "Lib/badges: scope loadCsv path under public/data so Turbopack NFT does not over-trace the project root (fixes Vercel deploy bundle bloat).",
-      "commit": "0cac50279"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Country/state pages, team markers, six new boundary countries (IT/ES/PL/AD/SM/VA), region links across breadcrumbs.",
-      "commit": "850118827"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": null,
-      "text": "Country-page state counts + state-page metro lists from Counties/Municipality cross-sheet aggregation.",
-      "commit": "4bfd6b8e1"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": "Countries",
-      "text": "Country pages: group state chips by Type, show all subdivision types per country.",
-      "commit": "2a2ee0bcd"
-    },
-    {
-      "date": "2026-05-05",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Ensure states.json + state route artifacts are in the deploy.",
-      "commit": "b27130544"
     }
   ]
 }
