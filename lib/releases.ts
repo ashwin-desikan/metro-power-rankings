@@ -23,8 +23,8 @@ export const RELEASES: Release[] = [
     items: [
       "Every NFL game is now priced at four books with each margin removed, and the Ledger shows how far each leans from the other three. NFL tables also stopped serving preseason records as the season.",
       "A new Order section places every country on two measures, what a state can do and what holds it in check, and a second board tracks which way each one has been moving.",
-      "The Cup now reads by sport as well as by nation. Motorsport counts six championships rather than one, NASCAR joins the national sports, and short track and the marathon swim merge into the sports they are.",
-      "Filter that board by what a sport is: the football family tree, the ones a panel decides, the ones won sitting down. In-cell bars are gone from every table, having only repeated the number beside them.",
+      "Motorsport counts seven championships rather than one, road cycling counts the Tour and the world title instead of Olympic medals alone, and women's ice hockey becomes a sport of its own.",
+      "Handball no longer outscores tennis, which was the clearest thing wrong with the board. Filter it by what a sport is: the football family tree, the ones a panel decides, the ones won sitting down.",
     ],
   },
   {

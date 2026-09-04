@@ -2,9 +2,8 @@
   "_meta": {
     "title": "Motorsport world championships outside Formula 1",
     "purpose": "Feeds the Zone Zero Cup motorsport recognition bonus. Formula 1 is not listed here; it is read live from public/data/f1/data.json.",
-    "test": "A series is credited here only when its champions come from more than one nation. A series whose winners are effectively one nationality is domestic recognition, not international merit, and belongs in NATIONAL_SPORTS instead. NASCAR fails that test: every Cup champion since 1990 is American, so NASCAR is credited to the United States the way sumo is credited to Japan.",
+    "test": "Any top-tier championship with a season-long drivers' title is credited. How international the field is sets the weight, not whether the series is admitted. An earlier draft excluded a series whose champions were all one nationality, which put NASCAR among the national sports; Ashwin overruled it on 2026-09-04 and NASCAR is here with a weight that reflects a domestic field.",
     "excluded": {
-      "NASCAR Cup Series": "Single-nationality champion list. Moved to NATIONAL_SPORTS as a United States token.",
       "World Endurance Championship / Le Mans": "Titles are won by two- and three-driver crews of mixed nationality. Attribution to one nation is not merely uncertain, it is ambiguous by construction.",
       "Isle of Man TT / Dakar": "Event wins, not a championship. No season-long title to decay.",
       "Junior single-seaters (F2, F3, Moto2, Moto3)": "Feeder series. Crediting them would count the same driver twice on the way up."
@@ -24,27 +23,153 @@
     {
       "key": "motogp",
       "label": "MotoGP",
-      "weight": 0.70,
+      "weight": 0.7,
       "why": "Two-wheel racing's apex, an FIM world championship on a global calendar. A smaller commercial footprint than Formula 1 and a shorter grid.",
       "champions": [
-        {"year": 1990, "nat": "American"}, {"year": 1991, "nat": "American"},
-        {"year": 1992, "nat": "American"}, {"year": 1993, "nat": "American"},
-        {"year": 1994, "nat": "Australian"}, {"year": 1995, "nat": "Australian"},
-        {"year": 1996, "nat": "Australian"}, {"year": 1997, "nat": "Australian"},
-        {"year": 1998, "nat": "Australian"}, {"year": 1999, "nat": "Spanish"},
-        {"year": 2000, "nat": "American"}, {"year": 2001, "nat": "Italian"},
-        {"year": 2002, "nat": "Italian"}, {"year": 2003, "nat": "Italian"},
-        {"year": 2004, "nat": "Italian"}, {"year": 2005, "nat": "Italian"},
-        {"year": 2006, "nat": "American"}, {"year": 2007, "nat": "Australian"},
-        {"year": 2008, "nat": "Italian"}, {"year": 2009, "nat": "Italian"},
-        {"year": 2010, "nat": "Spanish"}, {"year": 2011, "nat": "Australian"},
-        {"year": 2012, "nat": "Spanish"}, {"year": 2013, "nat": "Spanish"},
-        {"year": 2014, "nat": "Spanish"}, {"year": 2015, "nat": "Spanish"},
-        {"year": 2016, "nat": "Spanish"}, {"year": 2017, "nat": "Spanish"},
-        {"year": 2018, "nat": "Spanish"}, {"year": 2019, "nat": "Spanish"},
-        {"year": 2020, "nat": "Spanish"}, {"year": 2021, "nat": "French"},
-        {"year": 2022, "nat": "Italian"}, {"year": 2023, "nat": "Italian"},
-        {"year": 2024, "nat": "Spanish"}, {"year": 2025, "nat": "Spanish"}
+        {
+          "year": 1990,
+          "nat": "American"
+        },
+        {
+          "year": 1991,
+          "nat": "American"
+        },
+        {
+          "year": 1992,
+          "nat": "American"
+        },
+        {
+          "year": 1993,
+          "nat": "American"
+        },
+        {
+          "year": 1994,
+          "nat": "Australian"
+        },
+        {
+          "year": 1995,
+          "nat": "Australian"
+        },
+        {
+          "year": 1996,
+          "nat": "Australian"
+        },
+        {
+          "year": 1997,
+          "nat": "Australian"
+        },
+        {
+          "year": 1998,
+          "nat": "Australian"
+        },
+        {
+          "year": 1999,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2000,
+          "nat": "American"
+        },
+        {
+          "year": 2001,
+          "nat": "Italian"
+        },
+        {
+          "year": 2002,
+          "nat": "Italian"
+        },
+        {
+          "year": 2003,
+          "nat": "Italian"
+        },
+        {
+          "year": 2004,
+          "nat": "Italian"
+        },
+        {
+          "year": 2005,
+          "nat": "Italian"
+        },
+        {
+          "year": 2006,
+          "nat": "American"
+        },
+        {
+          "year": 2007,
+          "nat": "Australian"
+        },
+        {
+          "year": 2008,
+          "nat": "Italian"
+        },
+        {
+          "year": 2009,
+          "nat": "Italian"
+        },
+        {
+          "year": 2010,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2011,
+          "nat": "Australian"
+        },
+        {
+          "year": 2012,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2013,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2014,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2015,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2016,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2017,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2018,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2019,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2020,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2021,
+          "nat": "French"
+        },
+        {
+          "year": 2022,
+          "nat": "Italian"
+        },
+        {
+          "year": 2023,
+          "nat": "Italian"
+        },
+        {
+          "year": 2024,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2025,
+          "nat": "Spanish"
+        }
       ]
     },
     {
@@ -53,67 +178,392 @@
       "weight": 0.55,
       "why": "An FIA world championship with a genuinely global calendar, but usually only two or three factory teams contest the title.",
       "champions": [
-        {"year": 1990, "nat": "Spanish"}, {"year": 1991, "nat": "Finnish"},
-        {"year": 1992, "nat": "Spanish"}, {"year": 1993, "nat": "Finnish"},
-        {"year": 1994, "nat": "French"}, {"year": 1995, "nat": "British"},
-        {"year": 1996, "nat": "Finnish"}, {"year": 1997, "nat": "Finnish"},
-        {"year": 1998, "nat": "Finnish"}, {"year": 1999, "nat": "Finnish"},
-        {"year": 2000, "nat": "Finnish"}, {"year": 2001, "nat": "British"},
-        {"year": 2002, "nat": "Finnish"}, {"year": 2003, "nat": "Norwegian"},
-        {"year": 2004, "nat": "French"}, {"year": 2005, "nat": "French"},
-        {"year": 2006, "nat": "French"}, {"year": 2007, "nat": "French"},
-        {"year": 2008, "nat": "French"}, {"year": 2009, "nat": "French"},
-        {"year": 2010, "nat": "French"}, {"year": 2011, "nat": "French"},
-        {"year": 2012, "nat": "French"}, {"year": 2013, "nat": "French"},
-        {"year": 2014, "nat": "French"}, {"year": 2015, "nat": "French"},
-        {"year": 2016, "nat": "French"}, {"year": 2017, "nat": "French"},
-        {"year": 2018, "nat": "French"}, {"year": 2019, "nat": "Estonian"},
-        {"year": 2020, "nat": "French"}, {"year": 2021, "nat": "French"},
-        {"year": 2022, "nat": "Finnish"}, {"year": 2023, "nat": "Finnish"},
-        {"year": 2024, "nat": "Belgian"}, {"year": 2025, "nat": "French"}
+        {
+          "year": 1990,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1991,
+          "nat": "Finnish"
+        },
+        {
+          "year": 1992,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1993,
+          "nat": "Finnish"
+        },
+        {
+          "year": 1994,
+          "nat": "French"
+        },
+        {
+          "year": 1995,
+          "nat": "British"
+        },
+        {
+          "year": 1996,
+          "nat": "Finnish"
+        },
+        {
+          "year": 1997,
+          "nat": "Finnish"
+        },
+        {
+          "year": 1998,
+          "nat": "Finnish"
+        },
+        {
+          "year": 1999,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2000,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2001,
+          "nat": "British"
+        },
+        {
+          "year": 2002,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2003,
+          "nat": "Norwegian"
+        },
+        {
+          "year": 2004,
+          "nat": "French"
+        },
+        {
+          "year": 2005,
+          "nat": "French"
+        },
+        {
+          "year": 2006,
+          "nat": "French"
+        },
+        {
+          "year": 2007,
+          "nat": "French"
+        },
+        {
+          "year": 2008,
+          "nat": "French"
+        },
+        {
+          "year": 2009,
+          "nat": "French"
+        },
+        {
+          "year": 2010,
+          "nat": "French"
+        },
+        {
+          "year": 2011,
+          "nat": "French"
+        },
+        {
+          "year": 2012,
+          "nat": "French"
+        },
+        {
+          "year": 2013,
+          "nat": "French"
+        },
+        {
+          "year": 2014,
+          "nat": "French"
+        },
+        {
+          "year": 2015,
+          "nat": "French"
+        },
+        {
+          "year": 2016,
+          "nat": "French"
+        },
+        {
+          "year": 2017,
+          "nat": "French"
+        },
+        {
+          "year": 2018,
+          "nat": "French"
+        },
+        {
+          "year": 2019,
+          "nat": "Estonian"
+        },
+        {
+          "year": 2020,
+          "nat": "French"
+        },
+        {
+          "year": 2021,
+          "nat": "French"
+        },
+        {
+          "year": 2022,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2023,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2024,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2025,
+          "nat": "French"
+        }
       ]
     },
     {
       "key": "indycar",
       "label": "IndyCar",
-      "weight": 0.40,
+      "weight": 0.4,
       "why": "Single-country venues but a champion list spanning five continents, and the Indianapolis 500 carries prestige no other oval race has. The 1996 to 2007 CART and IRL titles are each credited at half, because the sport was split and neither crown was the whole field.",
       "champions": [
-        {"year": 1990, "nat": "American"}, {"year": 1991, "nat": "American"},
-        {"year": 1992, "nat": "American"}, {"year": 1993, "nat": "British"},
-        {"year": 1994, "nat": "American"}, {"year": 1995, "nat": "Canadian"},
-        {"year": 1996, "nat": "American", "credit": 0.5, "note": "CART"},
-        {"year": 1996, "nat": "American", "credit": 0.5, "note": "IRL"},
-        {"year": 1997, "nat": "Italian", "credit": 0.5, "note": "CART"},
-        {"year": 1998, "nat": "Italian", "credit": 0.5, "note": "CART"},
-        {"year": 1998, "nat": "Swedish", "credit": 0.5, "note": "IRL"},
-        {"year": 1999, "nat": "Colombian", "credit": 0.5, "note": "CART"},
-        {"year": 1999, "nat": "American", "credit": 0.5, "note": "IRL"},
-        {"year": 2000, "nat": "Brazilian", "credit": 0.5, "note": "CART"},
-        {"year": 2000, "nat": "American", "credit": 0.5, "note": "IRL"},
-        {"year": 2001, "nat": "Brazilian", "credit": 0.5, "note": "CART"},
-        {"year": 2001, "nat": "American", "credit": 0.5, "note": "IRL"},
-        {"year": 2002, "nat": "Brazilian", "credit": 0.5, "note": "CART"},
-        {"year": 2002, "nat": "American", "credit": 0.5, "note": "IRL"},
-        {"year": 2003, "nat": "Canadian", "credit": 0.5, "note": "CART"},
-        {"year": 2003, "nat": "New Zealander", "credit": 0.5, "note": "IRL"},
-        {"year": 2004, "nat": "French", "credit": 0.5, "note": "Champ Car"},
-        {"year": 2004, "nat": "Brazilian", "credit": 0.5, "note": "IRL"},
-        {"year": 2005, "nat": "French", "credit": 0.5, "note": "Champ Car"},
-        {"year": 2005, "nat": "British", "credit": 0.5, "note": "IRL"},
-        {"year": 2006, "nat": "French", "credit": 0.5, "note": "Champ Car"},
-        {"year": 2006, "nat": "American", "credit": 0.5, "note": "IRL"},
-        {"year": 2007, "nat": "French", "credit": 0.5, "note": "Champ Car"},
-        {"year": 2007, "nat": "British", "credit": 0.5, "note": "IRL"},
-        {"year": 2008, "nat": "New Zealander"}, {"year": 2009, "nat": "British"},
-        {"year": 2010, "nat": "British"}, {"year": 2011, "nat": "British"},
-        {"year": 2012, "nat": "American"}, {"year": 2013, "nat": "New Zealander"},
-        {"year": 2014, "nat": "Australian"}, {"year": 2015, "nat": "New Zealander"},
-        {"year": 2016, "nat": "French"}, {"year": 2017, "nat": "American"},
-        {"year": 2018, "nat": "New Zealander"}, {"year": 2019, "nat": "American"},
-        {"year": 2020, "nat": "New Zealander"}, {"year": 2021, "nat": "Spanish"},
-        {"year": 2022, "nat": "Australian"}, {"year": 2023, "nat": "Spanish"},
-        {"year": 2024, "nat": "Spanish"}, {"year": 2025, "nat": "Spanish"}
+        {
+          "year": 1990,
+          "nat": "American"
+        },
+        {
+          "year": 1991,
+          "nat": "American"
+        },
+        {
+          "year": 1992,
+          "nat": "American"
+        },
+        {
+          "year": 1993,
+          "nat": "British"
+        },
+        {
+          "year": 1994,
+          "nat": "American"
+        },
+        {
+          "year": 1995,
+          "nat": "Canadian"
+        },
+        {
+          "year": 1996,
+          "nat": "American",
+          "credit": 0.5,
+          "note": "CART"
+        },
+        {
+          "year": 1996,
+          "nat": "American",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 1997,
+          "nat": "Italian",
+          "credit": 0.5,
+          "note": "CART"
+        },
+        {
+          "year": 1998,
+          "nat": "Italian",
+          "credit": 0.5,
+          "note": "CART"
+        },
+        {
+          "year": 1998,
+          "nat": "Swedish",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 1999,
+          "nat": "Colombian",
+          "credit": 0.5,
+          "note": "CART"
+        },
+        {
+          "year": 1999,
+          "nat": "American",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2000,
+          "nat": "Brazilian",
+          "credit": 0.5,
+          "note": "CART"
+        },
+        {
+          "year": 2000,
+          "nat": "American",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2001,
+          "nat": "Brazilian",
+          "credit": 0.5,
+          "note": "CART"
+        },
+        {
+          "year": 2001,
+          "nat": "American",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2002,
+          "nat": "Brazilian",
+          "credit": 0.5,
+          "note": "CART"
+        },
+        {
+          "year": 2002,
+          "nat": "American",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2003,
+          "nat": "Canadian",
+          "credit": 0.5,
+          "note": "CART"
+        },
+        {
+          "year": 2003,
+          "nat": "New Zealander",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2004,
+          "nat": "French",
+          "credit": 0.5,
+          "note": "Champ Car"
+        },
+        {
+          "year": 2004,
+          "nat": "Brazilian",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2005,
+          "nat": "French",
+          "credit": 0.5,
+          "note": "Champ Car"
+        },
+        {
+          "year": 2005,
+          "nat": "British",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2006,
+          "nat": "French",
+          "credit": 0.5,
+          "note": "Champ Car"
+        },
+        {
+          "year": 2006,
+          "nat": "American",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2007,
+          "nat": "French",
+          "credit": 0.5,
+          "note": "Champ Car"
+        },
+        {
+          "year": 2007,
+          "nat": "British",
+          "credit": 0.5,
+          "note": "IRL"
+        },
+        {
+          "year": 2008,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2009,
+          "nat": "British"
+        },
+        {
+          "year": 2010,
+          "nat": "British"
+        },
+        {
+          "year": 2011,
+          "nat": "British"
+        },
+        {
+          "year": 2012,
+          "nat": "American"
+        },
+        {
+          "year": 2013,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2014,
+          "nat": "Australian"
+        },
+        {
+          "year": 2015,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2016,
+          "nat": "French"
+        },
+        {
+          "year": 2017,
+          "nat": "American"
+        },
+        {
+          "year": 2018,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2019,
+          "nat": "American"
+        },
+        {
+          "year": 2020,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2021,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2022,
+          "nat": "Australian"
+        },
+        {
+          "year": 2023,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2024,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2025,
+          "nat": "Spanish"
+        }
       ]
     },
     {
@@ -122,24 +572,150 @@
       "weight": 0.35,
       "why": "A genuine world championship with real national depth in Poland and Scandinavia, and the only motorsport with a working national-team competition. The competitive world is small, so the weight is low. Seasons are recorded by the year the title was decided.",
       "champions": [
-        {"year": 1990, "nat": "Swedish"}, {"year": 1991, "nat": "Danish"},
-        {"year": 1992, "nat": "British"}, {"year": 1993, "nat": "American"},
-        {"year": 1994, "nat": "Swedish"}, {"year": 1995, "nat": "Danish"},
-        {"year": 1996, "nat": "American"}, {"year": 1997, "nat": "American"},
-        {"year": 1998, "nat": "Swedish"}, {"year": 1999, "nat": "Swedish"},
-        {"year": 2000, "nat": "British"}, {"year": 2001, "nat": "Swedish"},
-        {"year": 2002, "nat": "Swedish"}, {"year": 2003, "nat": "Danish"},
-        {"year": 2004, "nat": "Australian"}, {"year": 2005, "nat": "Swedish"},
-        {"year": 2006, "nat": "Australian"}, {"year": 2007, "nat": "Danish"},
-        {"year": 2008, "nat": "Danish"}, {"year": 2009, "nat": "Australian"},
-        {"year": 2010, "nat": "Polish"}, {"year": 2011, "nat": "American"},
-        {"year": 2012, "nat": "Australian"}, {"year": 2013, "nat": "British"},
-        {"year": 2014, "nat": "American"}, {"year": 2015, "nat": "British"},
-        {"year": 2016, "nat": "American"}, {"year": 2017, "nat": "Australian"},
-        {"year": 2018, "nat": "British"}, {"year": 2019, "nat": "Polish"},
-        {"year": 2020, "nat": "Polish"}, {"year": 2021, "nat": "Russian"},
-        {"year": 2022, "nat": "Polish"}, {"year": 2023, "nat": "Polish"},
-        {"year": 2024, "nat": "Polish"}, {"year": 2025, "nat": "Polish"}
+        {
+          "year": 1990,
+          "nat": "Swedish"
+        },
+        {
+          "year": 1991,
+          "nat": "Danish"
+        },
+        {
+          "year": 1992,
+          "nat": "British"
+        },
+        {
+          "year": 1993,
+          "nat": "American"
+        },
+        {
+          "year": 1994,
+          "nat": "Swedish"
+        },
+        {
+          "year": 1995,
+          "nat": "Danish"
+        },
+        {
+          "year": 1996,
+          "nat": "American"
+        },
+        {
+          "year": 1997,
+          "nat": "American"
+        },
+        {
+          "year": 1998,
+          "nat": "Swedish"
+        },
+        {
+          "year": 1999,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2000,
+          "nat": "British"
+        },
+        {
+          "year": 2001,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2002,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2003,
+          "nat": "Danish"
+        },
+        {
+          "year": 2004,
+          "nat": "Australian"
+        },
+        {
+          "year": 2005,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2006,
+          "nat": "Australian"
+        },
+        {
+          "year": 2007,
+          "nat": "Danish"
+        },
+        {
+          "year": 2008,
+          "nat": "Danish"
+        },
+        {
+          "year": 2009,
+          "nat": "Australian"
+        },
+        {
+          "year": 2010,
+          "nat": "Polish"
+        },
+        {
+          "year": 2011,
+          "nat": "American"
+        },
+        {
+          "year": 2012,
+          "nat": "Australian"
+        },
+        {
+          "year": 2013,
+          "nat": "British"
+        },
+        {
+          "year": 2014,
+          "nat": "American"
+        },
+        {
+          "year": 2015,
+          "nat": "British"
+        },
+        {
+          "year": 2016,
+          "nat": "American"
+        },
+        {
+          "year": 2017,
+          "nat": "Australian"
+        },
+        {
+          "year": 2018,
+          "nat": "British"
+        },
+        {
+          "year": 2019,
+          "nat": "Polish"
+        },
+        {
+          "year": 2020,
+          "nat": "Polish"
+        },
+        {
+          "year": 2021,
+          "nat": "Russian"
+        },
+        {
+          "year": 2022,
+          "nat": "Polish"
+        },
+        {
+          "year": 2023,
+          "nat": "Polish"
+        },
+        {
+          "year": 2024,
+          "nat": "Polish"
+        },
+        {
+          "year": 2025,
+          "nat": "Polish"
+        }
       ]
     },
     {
@@ -148,12 +724,202 @@
       "weight": 0.25,
       "why": "World championship status only since 2021, and its grid draws on the same driver pool one tier down from Formula 1. Seasons are recorded by the year they finished.",
       "champions": [
-        {"year": 2015, "nat": "Brazilian"}, {"year": 2016, "nat": "Swiss"},
-        {"year": 2017, "nat": "Brazilian"}, {"year": 2018, "nat": "French"},
-        {"year": 2019, "nat": "French"}, {"year": 2020, "nat": "Portuguese"},
-        {"year": 2021, "nat": "Dutch"}, {"year": 2022, "nat": "Belgian"},
-        {"year": 2023, "nat": "British"}, {"year": 2024, "nat": "German"},
-        {"year": 2025, "nat": "British"}
+        {
+          "year": 2015,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2016,
+          "nat": "Swiss"
+        },
+        {
+          "year": 2017,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2018,
+          "nat": "French"
+        },
+        {
+          "year": 2019,
+          "nat": "French"
+        },
+        {
+          "year": 2020,
+          "nat": "Portuguese"
+        },
+        {
+          "year": 2021,
+          "nat": "Dutch"
+        },
+        {
+          "year": 2022,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2023,
+          "nat": "British"
+        },
+        {
+          "year": 2024,
+          "nat": "German"
+        },
+        {
+          "year": 2025,
+          "nat": "British"
+        }
+      ]
+    },
+    {
+      "key": "nascar",
+      "label": "NASCAR Cup Series",
+      "weight": 0.4,
+      "why": "The largest stock car championship in the world and the second most watched motorsport on television, but a domestic field: every Cup champion since 1990 has been American. The weight matches IndyCar's, which races the same country with a field drawn from five continents. Champions are recorded by year and nationality only, because the nationality has been American in every season in the window and no attribution question turns on which American won.",
+      "champions": [
+        {
+          "year": 1990,
+          "nat": "American"
+        },
+        {
+          "year": 1991,
+          "nat": "American"
+        },
+        {
+          "year": 1992,
+          "nat": "American"
+        },
+        {
+          "year": 1993,
+          "nat": "American"
+        },
+        {
+          "year": 1994,
+          "nat": "American"
+        },
+        {
+          "year": 1995,
+          "nat": "American"
+        },
+        {
+          "year": 1996,
+          "nat": "American"
+        },
+        {
+          "year": 1997,
+          "nat": "American"
+        },
+        {
+          "year": 1998,
+          "nat": "American"
+        },
+        {
+          "year": 1999,
+          "nat": "American"
+        },
+        {
+          "year": 2000,
+          "nat": "American"
+        },
+        {
+          "year": 2001,
+          "nat": "American"
+        },
+        {
+          "year": 2002,
+          "nat": "American"
+        },
+        {
+          "year": 2003,
+          "nat": "American"
+        },
+        {
+          "year": 2004,
+          "nat": "American"
+        },
+        {
+          "year": 2005,
+          "nat": "American"
+        },
+        {
+          "year": 2006,
+          "nat": "American"
+        },
+        {
+          "year": 2007,
+          "nat": "American"
+        },
+        {
+          "year": 2008,
+          "nat": "American"
+        },
+        {
+          "year": 2009,
+          "nat": "American"
+        },
+        {
+          "year": 2010,
+          "nat": "American"
+        },
+        {
+          "year": 2011,
+          "nat": "American"
+        },
+        {
+          "year": 2012,
+          "nat": "American"
+        },
+        {
+          "year": 2013,
+          "nat": "American"
+        },
+        {
+          "year": 2014,
+          "nat": "American"
+        },
+        {
+          "year": 2015,
+          "nat": "American"
+        },
+        {
+          "year": 2016,
+          "nat": "American"
+        },
+        {
+          "year": 2017,
+          "nat": "American"
+        },
+        {
+          "year": 2018,
+          "nat": "American"
+        },
+        {
+          "year": 2019,
+          "nat": "American"
+        },
+        {
+          "year": 2020,
+          "nat": "American"
+        },
+        {
+          "year": 2021,
+          "nat": "American"
+        },
+        {
+          "year": 2022,
+          "nat": "American"
+        },
+        {
+          "year": 2023,
+          "nat": "American"
+        },
+        {
+          "year": 2024,
+          "nat": "American"
+        },
+        {
+          "year": 2025,
+          "nat": "American"
+        }
       ]
     }
   ]

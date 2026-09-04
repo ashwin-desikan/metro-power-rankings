@@ -184,12 +184,20 @@ export default async function ZoneZeroCupPage() {
             <p>
               Motorsport is a bonus for the opposite reason. It is global, but the constructor is a company and the
               driver&apos;s nationality is a passport, so there is no national competition to build a pillar on. The row
-              is decayed drivers&apos; titles across six championships: Formula 1 at full weight, then MotoGP, the World
-              Rally Championship, IndyCar, Speedway and Formula E, each weighted for how deep and how international its
-              field is. A series earns a place only when its champions come from more than one nation. Stock car racing
-              fails that test, because every NASCAR Cup champion since 1990 has been American, so it sits with the
-              national sports instead. Endurance racing is left out for a different reason: its titles are won by
-              mixed-nationality crews, so there is no one country to credit.
+              is decayed drivers&apos; titles across seven championships: Formula 1 at full weight, then MotoGP, the
+              World Rally Championship, IndyCar, NASCAR, Speedway and Formula E, each weighted for how deep and how
+              international its field is. A domestic series is not excluded, it is weighted as one, which is why NASCAR
+              carries IndyCar&apos;s weight rather than Formula 1&apos;s. Endurance racing is left out for a different
+              reason: its titles are won by mixed-nationality crews, so there is no one country to credit.
+            </p>
+            <p>
+              Road cycling is a scoring pillar again rather than an Olympic footnote. It had been counted from Games
+              medals alone, which gave the whole sport less than golf, because the Olympics awards two road events per
+              gender against six or more on the track. It now counts the world championship road race, the one race
+              contested by national teams rather than trade teams and therefore the highest-scoring line here, then the
+              Tour, the Giro and the Vuelta, and the women&apos;s editions of all of them on the same scale. The Tour
+              winners come from this site&apos;s own champions record rather than a second copy. The seven Tours the UCI
+              annulled score nothing.
             </p>
             <p>
               All {sportRows.length} disciplines are listed, including the {sportRows.length - scoredSports} carrying

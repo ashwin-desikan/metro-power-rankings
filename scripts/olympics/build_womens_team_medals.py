@@ -16,7 +16,10 @@ LINEAGE = {"URS":"RUS","EUN":"RUS","ROC":"RUS","YUG":"SRB","SCG":"SRB",
            "TCH":"CZE","BOH":"CZE","FRG":"GER","UAR":"EGY"}
 MED = {"Gold":0,"Silver":1,"Bronze":2}
 TEAM_SPORTS = {"Basketball","3x3 Basketball","Volleyball","Beach Volleyball",
-               "Handball","Field Handball","Hockey","Water Polo"}
+               "Handball","Field Handball","Hockey","Water Polo",
+               # Ice Hockey added 2026-09-04 so the Cup can score the women's
+               # tournament (on the programme since 1998) as its own pillar.
+               "Ice Hockey"}
 
 def norm_season(r):
     if r["year"] == 1906: return "Intercalated"

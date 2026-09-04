@@ -69,15 +69,28 @@ PRESTIGE = {
     "Rugby Union": 1.5, "Ice Hockey": 1.5, "Baseball": 1.5,
     "Women's Football": 1.25,  # own pillar; deliberately below the half-of-men's
                                # pattern the other women's lines follow (Ashwin, 2026-09-04)
-    "Volleyball": 1.2, "Handball": 1.2,
+    # Recalibrated 2026-09-04 after Gemini read the by-sport board and called
+    # handball ahead of tennis the main structural anomaly on it. That is right.
+    # Handball is deep and well funded across Northern and Central Europe and has
+    # close to no footprint in the Americas, Africa, Australasia or most of Asia,
+    # and it was outscoring a sport with four annual events each larger than the
+    # handball world championship. Volleyball keeps more of its weight because
+    # its case is participation and it has genuine elite leagues on three
+    # continents. Handball 1.2 to 1.0, volleyball 1.2 to 1.1, tennis 0.7 to 0.9.
+    "Volleyball": 1.1, "Handball": 1.0,
     "Athletics": 1.0,   # the foundational Olympic sport (track & field); lifted above the 0.5 Olympic default
     "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
-    "Women's Basketball": 1.0, "Women's Volleyball": 0.6, "Women's Handball": 0.6,  # ~half the men's, like Women's Football
+    "Women's Basketball": 1.0, "Women's Volleyball": 0.55, "Women's Handball": 0.5,  # ~half the men's, like Women's Football
+    "Women's Ice Hockey": 0.75,   # half of Ice Hockey's 1.5, the same rule
     # Racquet / precision individual sports, hugely popular across large-population
     # regions (golf worldwide; tennis global; badminton & table tennis across Asia).
     # Lifted from their earlier suppressed levels so they are not collectively
     # underweighted, while still below the major team sports.
-    "Tennis": 0.7, "Golf": 0.6, "Badminton": 0.6, "Table Tennis": 0.6,
+    "Tennis": 0.9, "Golf": 0.6, "Badminton": 0.6, "Table Tennis": 0.6,
+    # Road cycling: a year-round professional sport with a national-team world
+    # championship, held at the Olympic default of 0.5 only because nobody had
+    # given it a line of its own. Lifted just below athletics.
+    "Cycling Road": 0.9,
 }
 
 # Default prestige for Olympic-programme sports (everything not in PRESTIGE):
@@ -134,6 +147,13 @@ WOMENS_TEAM_CANON = {
     "Volleyball": "Women's Volleyball", "Beach Volleyball": "Women's Volleyball",
     "Handball": "Women's Handball", "Field Handball": "Women's Handball",
     "Hockey": "Women's Hockey", "Water Polo": "Women's Water Polo",
+    # Added 2026-09-04. The women's tournament has been on the programme since
+    # 1998 and its medal table is not the men's: Canada and the United States
+    # have taken every gold, which the mixed row was hiding. This splits the
+    # Olympic half only. The Ice Hockey title pillar reads the IIHF men's world
+    # championship, so Women's Ice Hockey is currently Olympic medals alone and
+    # is understated until the women's worlds are added to hockey/nations.json.
+    "Ice Hockey": "Women's Ice Hockey",
 }
 
 FOLD = {
@@ -173,7 +193,6 @@ WI_CRICKET_FLOOR_BONUS = 1.8
 NATIONAL_SPORTS = [
     # (sport label, token, [nation slugs])
     ("American Football", 25.0, ["united-states"]),
-    ("Stock Car Racing", 6.0, ["united-states"]),  # NASCAR: every Cup champion since 1990 is American
     ("Australian Rules Football", 9.0, ["australia"]),
     ("Kabaddi", 5.5, ["india"]),
     ("Kabaddi", 2.5, ["bangladesh"]),
@@ -192,12 +211,16 @@ NATIONAL_SPORTS = [
 # a recognition bonus added on top of the capped best-10, never competing for a
 # cap slot. (Release 1a, Ashwin 2026-09-04; widened beyond Formula 1 in 1b.)
 #
-# Which series count. A series is credited here only when its champions come from
-# more than one nation. A series whose winners are effectively one nationality is
-# domestic recognition, not international merit, and belongs in NATIONAL_SPORTS.
-# NASCAR fails that test and is a United States token above. Endurance racing is
-# excluded for a different reason: its titles are won by mixed-nationality crews,
-# so attribution is ambiguous by construction rather than merely uncertain.
+# Which series count. Any top-tier championship with a season-long drivers' title
+# is credited, and how international its field is sets the weight rather than
+# deciding entry. An earlier draft excluded a series whose champions were all one
+# nationality, which put NASCAR among the national sports; Ashwin overruled it on
+# 2026-09-04, and he is right. A concentrated winner list is a fact about a series
+# worth recording, not grounds for refusing to record it, and splitting motorsport
+# across two different kinds of row made the sport harder to read rather than more
+# accurate. Endurance racing stays out for a different reason that still holds:
+# its titles are won by mixed-nationality crews, so attribution is ambiguous by
+# construction rather than merely uncertain.
 #
 # Formula 1 is read live from the F1 pipeline at weight 1.00. Every other series
 # and its weight live in scripts/data/motorsport-series.json, which carries the
@@ -206,7 +229,16 @@ NATIONAL_SPORTS = [
 # BETA is anchored against the existing national-sport tokens, which run 2.5
 # (hurling) to 25.0 (American football, the USA's biggest domestic sport). CAP
 # binds only on a genuine dynasty across several series at once.
-MOTORSPORT_BETA = 2.0
+# Raised 2.0 to 2.3 on 2026-09-04. The argument, from Gemini and accepted by
+# Ashwin, is footprint: Formula 1 alone runs a year-round professional economy
+# above a billion and a half viewers, and motorsport was scoring below swimming
+# and level with wrestling, two sports with little professional life outside the
+# Games. The reservation stands and is worth writing down rather than burying:
+# this is a ranking of nations, and motorsport's national unit is the weakest on
+# the board, a driver's passport attached to a company's car. The raise is a
+# judgement about how much of the sporting world the row should represent, not a
+# claim that the attribution problem got better.
+MOTORSPORT_BETA = 2.3
 MOTORSPORT_CAP = 18.0
 MOTORSPORT_SERIES_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "data", "motorsport-series.json")
@@ -703,6 +735,110 @@ NETBALL_WC = {
 }
 
 
+# --- Road cycling: title pillar --------------------------------------------
+# Road cycling was scored from Olympic medals alone, which gave the entire sport
+# 20.9 points on the board: below golf, and barely half of track cycling. The
+# cause is structural rather than a missing file. The Games award two road events
+# per gender against six or more on the track, so an Olympic-only pillar measures
+# how many medals the IOC hands out and not how much of the sport there is. The
+# Tour, the Giro, the Vuelta and the world championship road race counted for
+# nothing at all. (Ashwin, 2026-09-04.)
+#
+# The world championship road race is deliberately the highest-scoring line here.
+# It is the one race contested by national teams rather than trade teams, which
+# makes it the properly national title in a sport that spends the rest of the
+# year racing for companies, and this is a ranking of nations. The Tour sits just
+# below it, and the other Grand Tours below that.
+#
+# Women's editions are scored on the same scale as the men's and land in the same
+# pillar, on the argument the Cup already applies to athletics, swimming and
+# tennis: one sport, both genders, one row. The women's Grand Tours are recent,
+# so they contribute what their short history earns rather than a token.
+ROAD_CYCLING_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "data", "road-cycling.json")
+ROAD_TIER_PTS = {
+    "worlds_men": 3.5, "worlds_women": 3.5,
+    "tour": 3.0, "giro": 2.0, "vuelta": 1.75,
+    "tdf_femmes": 2.0, "giro_women": 1.5,
+}
+# Cycling demonyms the motorsport map does not carry.
+ROAD_NAT_EXTRA = {
+    "Latvian": "latvia", "Slovak": "slovakia", "Portuguese": "portugal",
+    "Norwegian": "norway", "Lithuanian": "lithuania", "Belarusian": "belarus",
+    "Swedish": "sweden", "Kazakh": "kazakhstan", "Ecuadorian": "ecuador",
+    "Luxembourgish": "luxembourg", "Colombian": "colombia",
+    "Slovenian": "slovenia", "Danish": "denmark", "Belgian": "belgium",
+    "Swiss": "switzerland", "Russian": "russia", "Polish": "poland",
+}
+
+
+def road_cycling_contribs(boost):
+    """Grand Tour and world championship road titles, by rider nationality.
+
+    The Tour de France winner list is NOT duplicated here. The site already
+    holds it in champions-history.json from 1903, and this reads that record so
+    the two can never disagree; only the riders' nationalities come from the
+    curated file. The seven Tours the UCI annulled are skipped explicitly,
+    because champions-history still lists the original rider.
+
+    A missing or unreadable source drops that part rather than raising.
+    """
+    if not os.path.exists(ROAD_CYCLING_FILE):
+        print("  road cycling: road-cycling.json missing, pillar skipped")
+        return []
+    try:
+        doc = json.load(open(ROAD_CYCLING_FILE, encoding="utf-8"))
+    except (ValueError, OSError) as e:
+        print(f"  road cycling: road-cycling.json unreadable ({e}), pillar skipped")
+        return []
+    nat_slug = dict(MOTORSPORT_NAT_SLUG)
+    nat_slug.update(ROAD_NAT_EXTRA)
+    unmapped, acc = set(), defaultdict(float)
+
+    def credit(nat, year, key):
+        slug = nat_slug.get(nat)
+        if not slug:
+            unmapped.add(nat)
+            return
+        acc[fold(slug)] += ROAD_TIER_PTS[key] * decay(int(year))
+
+    for key in ("worlds_men", "worlds_women", "giro", "vuelta",
+                "tdf_femmes", "giro_women"):
+        for year, nat in doc.get(key) or []:
+            credit(nat, year, key)
+
+    # The Tour, read from the site's own champions record.
+    vacated = set(doc.get("tdf_vacated") or [])
+    riders = doc.get("riders") or {}
+    hist = os.path.join(D, "champions-history.json")
+    if not os.path.exists(hist):
+        print("  road cycling: champions-history.json missing, Tour de France skipped")
+    else:
+        try:
+            rows = json.load(open(hist, encoding="utf-8"))
+        except (ValueError, OSError) as e:
+            print(f"  road cycling: champions-history unreadable ({e}), Tour skipped")
+            rows = []
+        unknown_riders = set()
+        for r in rows:
+            if r.get("sport") != "Cycling" or r.get("competition") != "Tour de France":
+                continue
+            yr = r.get("year")
+            if not yr or int(yr) < 1990 or int(yr) in vacated:
+                continue
+            nat = riders.get(r.get("champion") or "")
+            if not nat:
+                unknown_riders.add(r.get("champion"))
+                continue
+            credit(nat, yr, "tour")
+        if unknown_riders:
+            print("  road cycling: Tour winners with no nationality on file, "
+                  f"no credit given: {sorted(unknown_riders)}")
+    if unmapped:
+        print(f"  road cycling: UNMAPPED nationalities: {sorted(unmapped)}")
+    return [(sl, "Cycling Road", v) for sl, v in acc.items() if v > 0]
+
+
 def netball_titles_contribs(boost):
     out = []
     for slug, places in NETBALL_WC.items():
@@ -720,6 +856,7 @@ PILLARS = [("olympics", olympic_contribs), ("football", football_contribs),
            ("baseball", baseball_contribs), ("rugby_league", rugby_league_contribs),
            ("golf", golf_contribs), ("tennis", tennis_contribs),
            ("netball", netball_titles_contribs),
+           ("road_cycling", road_cycling_contribs),
            ("ranking", ranking_contribs), ("extra_ranking", extra_ranking_contribs)]
 
 

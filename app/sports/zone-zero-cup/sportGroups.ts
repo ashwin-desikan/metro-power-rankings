@@ -78,7 +78,7 @@ export const GROUP_BLURB: Record<SportFilter, string> = {
   team: "Codes played club and country, in a league and for a flag. Most are also Olympic sports and appear under those filters too.",
   summer: "Everything contested at the Summer Games, the team codes included, plus the racquet and precision sports whose own majors matter more than the Olympic title.",
   winter: "Everything contested at the Winter Games, ice hockey and curling included.",
-  national: "Recognition bonuses, added on top of a nation's ten scoring slots rather than competing for one. National sports are domestically major and internationally negligible, which is why one country can hold all of a sport, and why stock car racing sits here rather than under motorsport. Motorsport is here for the opposite reason: it is global, but the constructor is a company and the driver's nationality is a passport, so there is no national competition to build a pillar on.",
+  national: "Recognition bonuses, added on top of a nation's ten scoring slots rather than competing for one. National sports are domestically major and internationally negligible, which is why one country can hold all of a sport. Motorsport is here for the opposite reason: it is global, but the constructor is a company and the driver's nationality is a passport, so there is no national competition to build a pillar on.",
   retired: "Contested at a Games once and never since. They score nothing today and stay on the board because leaving them off would be a tidier record and a less true one.",
 };
 
@@ -89,7 +89,7 @@ const TEAM = new Set([
   "Football", "Women's Football", "Futsal",
   "Basketball", "Women's Basketball",
   "Cricket", "Women's Cricket",
-  "Ice Hockey", "Curling",
+  "Ice Hockey", "Women's Ice Hockey", "Curling",
   "Rugby Union", "Women's Rugby", "Rugby League",
   "Baseball", "Softball",
   "Handball", "Women's Handball",
@@ -116,7 +116,7 @@ const TEAM_SUMMER = new Set([
   "Cricket", "Women's Cricket",
   "Lacrosse",
 ]);
-const TEAM_WINTER = new Set(["Ice Hockey", "Curling"]);
+const TEAM_WINTER = new Set(["Ice Hockey", "Women's Ice Hockey", "Curling"]);
 
 const WINTER = new Set([
   "Alpine Skiing", "Cross Country Skiing", "Ski Jumping", "Nordic Combined",

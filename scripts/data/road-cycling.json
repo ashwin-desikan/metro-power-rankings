@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "title": "Road cycling titles outside the Olympic programme",
+    "why": "Road cycling was scored from Olympic medals alone, which gave the whole sport 20.9 points on the board, below golf and barely half of track cycling. The cause is structural rather than a data gap: the Games award two road events per gender against six or more on the track, so an Olympic-only pillar measures how many medals the IOC hands out rather than how much the sport matters. The Tour, the Giro, the Vuelta and the world championship road race carried no weight at all. Ashwin identified this on 2026-09-04.",
+    "tourDeFrance": "NOT LISTED HERE. The site already holds the full Tour de France winner record in public/data/champions-history.json, 1903 to date, and the pipeline reads it from there rather than keeping a second copy that can drift. Only the riders' nationalities are supplied here, in the riders map below.",
+    "vacated": "The Tour titles of 1999 to 2005 were annulled by the UCI with no winner promoted. champions-history.json still lists the original rider, so the pipeline skips those seven years explicitly. Also handled upstream by the official record and therefore already correct in the lists below: the 2006 Tour (Pereiro), the 2010 Tour (Schleck), the 2011 Giro (Scarponi) and the 2011 Vuelta (Froome).",
+    "tiers": "worlds is the road race world championship, the one event contested by national teams rather than trade teams, which makes it the properly national title in a sport that otherwise races for companies. grand_tour is the three-week general classification. Women's editions are scored on the same scale as the men's, on the same argument the Cup already applies to athletics and swimming: one sport, both genders, one pillar.",
+    "notHeldYet": "The 2026 Vuelta was still running on 2026-09-04 and the 2026 world championships are scheduled for 26 to 27 September in Montreal. Neither is included.",
+    "asOf": "2026-09-04"
+  },
+  "worlds_men": [
+    [1990, "Belgian"], [1991, "Italian"], [1992, "Italian"], [1993, "American"],
+    [1994, "French"], [1995, "Spanish"], [1996, "Belgian"], [1997, "French"],
+    [1998, "Swiss"], [1999, "Spanish"], [2000, "Latvian"], [2001, "Spanish"],
+    [2002, "Italian"], [2003, "Spanish"], [2004, "Spanish"], [2005, "Belgian"],
+    [2006, "Italian"], [2007, "Italian"], [2008, "Italian"], [2009, "Australian"],
+    [2010, "Norwegian"], [2011, "British"], [2012, "Belgian"], [2013, "Portuguese"],
+    [2014, "Polish"], [2015, "Slovak"], [2016, "Slovak"], [2017, "Slovak"],
+    [2018, "Spanish"], [2019, "Danish"], [2020, "French"], [2021, "French"],
+    [2022, "Belgian"], [2023, "Dutch"], [2024, "Slovenian"], [2025, "Slovenian"]
+  ],
+  "worlds_women": [
+    [1990, "French"], [1991, "Dutch"], [1993, "Dutch"], [1994, "Norwegian"],
+    [1995, "French"], [1996, "Swiss"], [1997, "Italian"], [1998, "Lithuanian"],
+    [1999, "Lithuanian"], [2000, "Belarusian"], [2001, "Lithuanian"],
+    [2002, "Swedish"], [2003, "Swedish"], [2004, "German"], [2005, "German"],
+    [2006, "Dutch"], [2007, "Italian"], [2008, "British"], [2009, "Italian"],
+    [2010, "Italian"], [2011, "Italian"], [2012, "Dutch"], [2013, "Dutch"],
+    [2014, "French"], [2015, "British"], [2016, "Danish"], [2017, "Dutch"],
+    [2018, "Dutch"], [2019, "Dutch"], [2020, "Dutch"], [2021, "Italian"],
+    [2022, "Dutch"], [2023, "Belgian"], [2024, "Belgian"], [2025, "Canadian"]
+  ],
+  "giro": [
+    [1990, "Italian"], [1991, "Italian"], [1992, "Spanish"], [1993, "Spanish"],
+    [1994, "Russian"], [1995, "Swiss"], [1996, "Russian"], [1997, "Italian"],
+    [1998, "Italian"], [1999, "Italian"], [2000, "Italian"], [2001, "Italian"],
+    [2002, "Italian"], [2003, "Italian"], [2004, "Italian"], [2005, "Italian"],
+    [2006, "Italian"], [2007, "Italian"], [2008, "Spanish"], [2009, "Russian"],
+    [2010, "Italian"], [2011, "Italian"], [2012, "Canadian"], [2013, "Italian"],
+    [2014, "Colombian"], [2015, "Spanish"], [2016, "Italian"], [2017, "Dutch"],
+    [2018, "British"], [2019, "Ecuadorian"], [2020, "British"], [2021, "Colombian"],
+    [2022, "Australian"], [2023, "Slovenian"], [2024, "Slovenian"], [2025, "British"],
+    [2026, "Danish"]
+  ],
+  "vuelta": [
+    [1990, "Italian"], [1991, "Spanish"], [1992, "Swiss"], [1993, "Swiss"],
+    [1994, "Swiss"], [1995, "French"], [1996, "Swiss"], [1997, "Swiss"],
+    [1998, "Spanish"], [1999, "German"], [2000, "Spanish"], [2001, "Spanish"],
+    [2002, "Spanish"], [2003, "Spanish"], [2004, "Spanish"], [2005, "Spanish"],
+    [2006, "Kazakh"], [2007, "Russian"], [2008, "Spanish"], [2009, "Spanish"],
+    [2010, "Italian"], [2011, "British"], [2012, "Spanish"], [2013, "American"],
+    [2014, "Spanish"], [2015, "Italian"], [2016, "Colombian"], [2017, "British"],
+    [2018, "British"], [2019, "Slovenian"], [2020, "Slovenian"], [2021, "Slovenian"],
+    [2022, "Belgian"], [2023, "American"], [2024, "Slovenian"], [2025, "Danish"]
+  ],
+  "tdf_femmes": [
+    [2022, "Dutch"], [2023, "Dutch"], [2024, "Polish"], [2025, "French"],
+    [2026, "Dutch"]
+  ],
+  "giro_women": [
+    [2010, "American"], [2011, "Dutch"], [2012, "Dutch"], [2013, "American"],
+    [2014, "Dutch"], [2015, "Dutch"], [2016, "American"], [2017, "Dutch"],
+    [2018, "Dutch"], [2019, "Dutch"], [2020, "Dutch"], [2021, "Dutch"],
+    [2022, "Dutch"], [2023, "Dutch"], [2024, "Italian"], [2025, "Italian"],
+    [2026, "Dutch"]
+  ],
+  "tdf_vacated": [1999, 2000, 2001, 2002, 2003, 2004, 2005],
+  "riders": {
+    "Greg LeMond": "American", "Miguel Induráin": "Spanish", "Bjarne Riis": "Danish",
+    "Jan Ullrich": "German", "Marco Pantani": "Italian", "Óscar Pereiro": "Spanish",
+    "Alberto Contador": "Spanish", "Carlos Sastre": "Spanish",
+    "Andy Schleck": "Luxembourgish", "Cadel Evans": "Australian",
+    "Bradley Wiggins": "British", "Chris Froome": "British",
+    "Vincenzo Nibali": "Italian", "Geraint Thomas": "British",
+    "Egan Bernal": "Colombian", "Tadej Pogačar": "Slovenian",
+    "Jonas Vingegaard": "Danish"
+  }
+}
