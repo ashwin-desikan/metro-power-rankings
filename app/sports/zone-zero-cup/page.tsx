@@ -4,6 +4,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getZoneZeroNations, getZoneZeroMeta, getZoneZeroRegions } from "@/lib/zoneZeroCup";
 import HubNav from "@/app/teams/HubNav";
 import ZoneZeroTable, { type ZzcRow } from "./ZoneZeroTable";
+import SportTotals, { buildSportRows } from "./SportTotals";
 import { flagCdnUrl } from "@/lib/international-display";
 
 export const dynamicParams = false;
@@ -57,16 +58,12 @@ export default async function ZoneZeroCupPage() {
     defunct: n.defunct,
   }));
 
-  // Sport dropdown ordered by total merit across all nations (biggest first)
-  const sportTotals = new Map<string, number>();
-  for (const n of nations) {
-    for (const [sp, pts] of Object.entries(n.sportMerit)) {
-      sportTotals.set(sp, (sportTotals.get(sp) ?? 0) + pts);
-    }
-  }
-  const sports = Array.from(sportTotals.keys()).sort(
-    (a, b) => (sportTotals.get(b) ?? 0) - (sportTotals.get(a) ?? 0),
-  );
+  // One pass over every nation's sportMerit, used twice: to order the sport
+  // dropdown (biggest first, as before) and to build the by-sport board below.
+  // Two loops over the same map is how the two would eventually disagree.
+  const sportRows = buildSportRows(nations, meta.method.prestige ?? {});
+  const sports = sportRows.map((r) => r.sport);
+  const scoredSports = sportRows.filter((r) => r.total > 0).length;
 
   const podium = [...nations].sort((a, b) => a.rank - b.rank).slice(0, 3);
 
@@ -113,6 +110,7 @@ export default async function ZoneZeroCupPage() {
       <HubNav
         items={[
           { label: "Rankings", href: "#rankings" },
+          { label: "By sport", href: "#by-sport" },
           { label: "How it's scored", href: "#scoring" },
         ]}
       />
@@ -157,6 +155,35 @@ export default async function ZoneZeroCupPage() {
           by merit or current world ranking.
         </p>
         <ZoneZeroTable rows={rows} regions={regions} sports={sports} />
+      </section>
+
+      <section id="by-sport" className="mb-12 scroll-mt-24">
+        <h2 className="text-lg font-semibold mb-1">The Cup by sport</h2>
+        <p className="text-[var(--text-muted)] text-sm mb-1 max-w-3xl">
+          The same points read down the other axis: how much of the Cup each sport accounts for, and who holds it.
+        </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)] space-y-2">
+            <p>
+              Every nation&apos;s per-sport points, summed. Share is that sport&apos;s slice of all the points on
+              the board. Nations counts everyone with any points in it at all, and top four hold is what the four
+              leaders take of the sport&apos;s own total, which is the difference between a sport a handful of
+              countries own and one the world shares. Weight is the prestige multiplier the method applies to a
+              sport&apos;s flagship title, where it has one.
+            </p>
+            <p>
+              All {sportRows.length} disciplines are listed, including the {sportRows.length - scoredSports} carrying
+              no points today. The Olympic art competitions are among them: painting, sculpture, architecture,
+              literature and music awarded medals until 1948 and stay in the record, alongside croquet, tug of war
+              and the military ski patrol. Competitors that no longer exist are marked &#8224; and suspended ones
+              &#42;, which is why an entry such as Individual Neutral Athletes can sit among the leaders.
+            </p>
+          </div>
+        </details>
+        <SportTotals rows={sportRows} />
       </section>
 
       <section id="scoring" className="mb-12 scroll-mt-24">

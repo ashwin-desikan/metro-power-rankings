@@ -23,7 +23,7 @@ export const RELEASES: Release[] = [
     items: [
       "Every NFL game is now priced at four books with each margin removed, and the Ledger shows how far each one leans from the other three. The Champions League has a graded ledger of its own.",
       "NFL standings were showing preseason records as the season. ESPN stopped saying which season type it serves and its default was the preseason, so every NFL table now asks for the regular season.",
-      "Tables across the site draw the number as well as print it, and games you have already played move to a Results section on the picks page, so the slate stays the games you can still call.",
+      "The Zone Zero Cup now reads by sport as well as by nation: how much of the Cup each sport holds, how many nations score in it, how concentrated it is, and who leads it.",
       "A new Order section places every country on two measures, what a state can do and what holds it in check, and a second board tracks which way each one has been moving.",
     ],
   },
