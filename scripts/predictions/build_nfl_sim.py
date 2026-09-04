@@ -153,8 +153,19 @@ def fetch_json(url, soft=False):
 # ------------------------------------------------------------------ ratings
 
 def season_margins(season):
-    """{team: (margin_per_game, games)} from ESPN standings."""
-    d = fetch_json("%s/v2/sports/football/nfl/standings?season=%d" % (ESPN, season))
+    """{team: (margin_per_game, games)} from ESPN's REGULAR-season standings.
+
+    seasontype=2 pinned. Called only for completed seasons (STRENGTH_SEASONS),
+    where the unpinned default does resolve to the regular season -- verified
+    2026-09-04, season=2025 returns the Patriots at 14-3 with 490 points for --
+    so this is a no-op today. It is here anyway because the same endpoint
+    unpinned was serving PRESEASON for the current season that morning, and a
+    rating built on preseason margins is not a rating. The current season never
+    reaches this function (played_results() reads the scoreboard and filters
+    season.type to 2 and 3), so this is belt to that braces.
+    """
+    d = fetch_json("%s/v2/sports/football/nfl/standings?season=%d&seasontype=2"
+                   % (ESPN, season))
     out = {}
     for ch in d.get("children", []):
         for e in ch.get("standings", {}).get("entries", []):

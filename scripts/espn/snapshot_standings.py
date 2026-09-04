@@ -36,7 +36,12 @@ OUT_DIR = REPO_ROOT / "public" / "data" / "espn-snapshots"
 
 # Keys MUST match the snapshotKey each lib passes to fetchEspnJson().
 ENDPOINTS: dict[str, str] = {
-    "nfl": "https://site.api.espn.com/apis/v2/sports/football/nfl/standings",
+    # 🔴 seasontype=2 must match lib/standings.ts exactly. Unpinned, ESPN
+    # serves whatever season type its calendar is in, which on 2026-09-04 was
+    # the PRESEASON; a fallback that disagrees with the live path is worse
+    # than no fallback, because it only shows up when ESPN is already down.
+    # The other leagues are deliberately unpinned -- see that file's note.
+    "nfl": "https://site.api.espn.com/apis/v2/sports/football/nfl/standings?seasontype=2",
     "mlb": "https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings",
     "nba": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "wnba": "https://site.api.espn.com/apis/v2/sports/basketball/wnba/standings",

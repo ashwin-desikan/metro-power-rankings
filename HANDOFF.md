@@ -9278,3 +9278,89 @@ now **fails the run** if the PNG is not 1080x1920 rather than padding it. Cost:
 - 🔴 THE RELEASE REEL IS STILL NOT SHOT. It needs the Mac; both sessions today
   were bridged to Windows. The `clips` step has still never run against
   rankings.citizenofnowhere.org.
+
+
+## 2026-09-04 (late) — cowork → mini and next session: 🔴 THE NFL STANDINGS WERE THE PRESEASON, ON THREE PAGES, FOR A MONTH
+
+Ashwin: "the NFL Standings are showing preseason standings right now... will
+that automatically switch over when the regular season starts, or do you need to
+plug into the regular season now?"
+
+He was right, it was on more surfaces than he saw, and the answer to the second
+half is "it would have, on Sunday, and that is not good enough".
+
+### What was actually wrong
+
+`https://site.api.espn.com/apis/v2/sports/football/nfl/standings` with no
+`seasontype` serves whichever season type ESPN's own calendar is in. Measured
+2026-09-04:
+
+| request | Buffalo |
+|---|---|
+| no parameter | 3-0, 88 points for |
+| `?seasontype=1` | 3-0 (byte-identical to no parameter) |
+| `?seasontype=2` | 0-0 |
+
+So `lib/standings.ts` was serving the PRESEASON to all three of its consumers:
+`/sports/standings`'s NFL block, `/teams/nfl`, and the live 2026 row on every
+franchise page. Verified on production: `/teams/nfl/buffalo-bills` was rendering
+a 3-0 row.
+
+🔴 **And the guards did not catch it because they were written for the wrong
+failure.** The franchise page gates on `games_played > 0` with a comment saying
+that keeps preseason out. It does not: preseason rows are 3-0, not 0-0. That
+guard only ever protected against an empty table.
+
+### The second bug, underneath the first
+
+`pickSeasonType()` reads `root.season.type`. **ESPN no longer sends it.** The
+2026 standings payload's season object is `{year, startDate, endDate,
+displayName}` and nothing else, so every branch missed, the function returned
+"unknown" on every call, and `is_preseason` fell through to "are all the records
+zero". Preseason records are not zero. That is why the site said "2026 Season"
+over a preseason table instead of "2026 Preseason".
+
+The payload does still carry its own calendar, in `seasons[].types[]`:
+preseason 6 Aug to 6 Sep, regular season 6 Sep to 13 Jan, postseason 13 Jan on.
+`pickSeasonType` now falls back to that. 🔴 **Only when `seasons[].year` matches
+the year being read** — checked the same day, the NBA, NHL and MLB payloads
+return a 2027 season id carrying 2025-26 windows, so an unmatched read of that
+array is a second guess, not a fix.
+
+### What changed
+
+- `lib/standings.ts` requests `?seasontype=2`. Pinned, not left to the default.
+- The pure half is now `lib/standingsShape.ts` and it has **`lib/standings.test.ts`,
+  11 cases**. The split exists because `lib/standings.ts` imports `server-only`,
+  which vitest cannot resolve, and this whole bug lived in the pure half where no
+  other kind of check could see it. One case is "calls a 3-0 preseason table
+  preseason", which is the exact thing that failed.
+- `source_label` now describes the TABLE (always the regular season) and where
+  the calendar has got to: "2026 Regular Season · opens 6 Sept" today,
+  "· Week N" in season, "· final" once the postseason starts (ESPN reports
+  `hasStandings=false` for postseason, so what comes back then is the completed
+  regular-season table and calling it "Postseason" would describe the calendar
+  rather than the numbers).
+- `/sports/standings` used `note: live ? source_label : "Offseason"`. Two days
+  before kickoff "Offseason" is untrue; it now prefers the label.
+- `/teams/nfl` says when the season opens, read from ESPN's calendar rather than
+  a hardcoded "Thursday after Labor Day" that would need editing every year.
+- `scripts/espn/snapshot_standings.py` pins the SAME url. A fallback that
+  disagrees with the live path is worse than no fallback: it only shows up when
+  ESPN is already down.
+- `scripts/predictions/build_nfl_sim.py`'s `season_margins` pins it too. A no-op
+  today (verified: season=2025 unpinned returns the Patriots at 14-3 with 490
+  points for, the real regular season) and belt-and-braces to
+  `played_results()`, which already filters `season.type` to 2 and 3. **The model
+  was never contaminated by preseason results.**
+
+### Deliberately NOT changed
+MLB, NBA, NHL and WNBA are left unpinned. Checked the same day: all four already
+resolve their default to type 2, and their `types[]` windows come back stale, so
+pinning them would be a guess dressed as a fix. Postseason carries
+`hasStandings=false` in all five leagues, so the "it will flip to postseason in
+January" worry I started with is unfounded — worth recording, since it was the
+first thing I reached for.
+
+`npm run verify` green: 154 vitest (143 + the 11 new), 112 python, next build
+clean across 5,086 pages. Release note amended into the 2026-09-04 entry.
