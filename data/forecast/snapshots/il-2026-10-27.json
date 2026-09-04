@@ -2,82 +2,82 @@
  "code": "il",
  "election": "2026-10-27",
  "confidence": "confirmed",
- "built": "2026-08-31",
- "daysBefore": 57,
+ "built": "2026-09-04",
+ "daysBefore": 53,
  "block": {
   "electionAssumed": "2026-10-27",
   "electionDate": "2026-10-27",
   "electionConfidence": "confirmed",
   "parties": [
    {
-    "name": "Yashar",
-    "seats": 25.5
+    "name": "Likud",
+    "seats": 22.0
    },
    {
-    "name": "Likud",
-    "seats": 21.0
+    "name": "Yashar",
+    "seats": 22.0
    },
    {
     "name": "Together",
-    "seats": 14.5
+    "seats": 15.0
    },
    {
     "name": "Yisrael Beiteinu",
-    "seats": 9.5
-   },
-   {
-    "name": "Dems",
-    "seats": 9.0
+    "seats": 10.0
    },
    {
     "name": "Shas",
-    "seats": 8.0
+    "seats": 9.0
    },
    {
     "name": "UTJ",
     "seats": 8.0
    },
    {
+    "name": "Dems",
+    "seats": 8.0
+   },
+   {
     "name": "Otzma",
-    "seats": 7.0
+    "seats": 6.0
    },
    {
     "name": "Joint List",
-    "seats": 7.0
+    "seats": 6.0
    },
    {
-    "name": "Amcha Yisrael",
-    "seats": 5.5
+    "name": "RZP- Zehut",
+    "seats": 5.0
    },
    {
     "name": "Ra'am",
     "seats": 5.0
    },
    {
-    "name": "RZP",
-    "seats": 0.0
+    "name": "Zionist Home",
+    "seats": 4.0
    },
    {
     "name": "Blue & White",
     "seats": 0.0
    },
    {
-    "name": "Zionist Home",
+    "name": "Unity",
     "seats": 0.0
    },
    {
-    "name": "Unity",
+    "name": "Amcha Yisrael",
     "seats": 0.0
    }
   ],
-  "polls": 2,
-  "pollsters": 2,
-  "latestPollDate": "2026-08-27",
+  "polls": 1,
+  "pollsters": 1,
+  "latestPollDate": "2026-09-03",
   "gov": {
-   "avg": 44.0,
+   "avg": 50.0,
    "pMajority": 0.0
   },
-  "monthsOut": 1.9,
+  "monthsOut": 1.7,
   "sims": 8000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)"

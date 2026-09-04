@@ -2,8 +2,8 @@
  "code": "us",
  "election": "2026-11-03",
  "confidence": "confirmed",
- "built": "2026-09-02",
- "daysBefore": 62,
+ "built": "2026-09-04",
+ "daysBefore": 60,
  "block": {
   "margin": 6.4,
   "sigma": 2.6,
@@ -120,51 +120,51 @@
    "demSeats": {
     "median": 50,
     "lo": 47,
-    "hi": 53
+    "hi": 54
    },
-   "pDemControl": 41.6,
+   "pDemControl": 42.4,
    "competitive": [
     {
      "state": "Alaska",
      "held": "R",
-     "score": -0.1,
+     "score": -0.05,
      "retiring": false,
-     "pDem": 47.0
+     "pDem": 49.0
     },
     {
      "state": "Texas",
      "held": "R",
-     "score": 0.1,
+     "score": 0.09,
      "retiring": false,
      "pDem": 53.0
     },
     {
      "state": "Ohio",
      "held": "R",
-     "score": 0.25,
+     "score": 0.23,
      "retiring": false,
      "pDem": 57.0
     },
     {
      "state": "Iowa",
      "held": "R",
-     "score": -0.35,
+     "score": -0.32,
      "retiring": true,
-     "pDem": 40.0
+     "pDem": 41.0
     },
     {
      "state": "Maine",
      "held": "R",
-     "score": 0.35,
+     "score": 0.36,
      "retiring": false,
      "pDem": 60.0
     },
     {
      "state": "Michigan",
      "held": "D",
-     "score": 0.4,
+     "score": 0.41,
      "retiring": true,
-     "pDem": 61.0
+     "pDem": 62.0
     }
    ],
    "sims": 20000,
@@ -189,8 +189,8 @@
     "lo": 21,
     "hi": 28
    },
-   "pDemMajority": 37.7,
-   "pRepMajority": 44.0,
+   "pDemMajority": 38.4,
+   "pRepMajority": 43.3,
    "competitive": [
     {
      "state": "Georgia",
@@ -228,18 +228,18 @@
      "pDem": 33.0
     },
     {
-     "state": "Iowa",
-     "held": "R",
-     "score": 0.69,
-     "retiring": true,
-     "pDem": 69.0
-    },
-    {
      "state": "Kansas",
      "held": "D",
      "score": -0.75,
      "retiring": true,
      "pDem": 29.0
+    },
+    {
+     "state": "Iowa",
+     "held": "R",
+     "score": 0.81,
+     "retiring": true,
+     "pDem": 72.0
     },
     {
      "state": "Arizona",

@@ -2,8 +2,8 @@
  "code": "uk",
  "election": "2029-05-03",
  "confidence": "assumed",
- "built": "2026-09-02",
- "daysBefore": 974,
+ "built": "2026-09-04",
+ "daysBefore": 972,
  "block": {
   "electionAssumed": "2029-05-03",
   "electionDate": "2029-05-03",
@@ -12,12 +12,12 @@
    "con": 20.3,
    "lab": 26.5,
    "ld": 10.1,
-   "ref": 23.7,
-   "grn": 10.5,
+   "ref": 23.6,
+   "grn": 10.6,
    "snp": 2.8
   },
   "pollsters": 12,
-  "latestPollDate": "2026-08-31",
+  "latestPollDate": "2026-09-01",
   "trend": [
    {
     "date": "2024-07-12",
@@ -557,17 +557,17 @@
     "ld": 10.3,
     "ref": 24.8,
     "grn": 10.1,
-    "snp": 2.9
+    "snp": 2.8
    },
    {
-    "date": "2026-08-28",
-    "n": 3,
-    "con": 20.3,
-    "lab": 26.7,
-    "ld": 10.0,
-    "ref": 23.7,
-    "grn": 10.3,
-    "snp": 2.7
+    "date": "2026-08-31",
+    "n": 4,
+    "con": 20.2,
+    "lab": 25.8,
+    "ld": 10.5,
+    "ref": 23.5,
+    "grn": 11.0,
+    "snp": 2.8
    }
   ],
   "sim": {
@@ -578,9 +578,9 @@
      "hi": 343
     },
     "lab": {
-     "median": 202,
+     "median": 203,
      "lo": 16,
-     "hi": 452
+     "hi": 453
     },
     "ld": {
      "median": 63,
@@ -588,17 +588,17 @@
      "hi": 104
     },
     "ref": {
-     "median": 150,
+     "median": 148,
      "lo": 2,
      "hi": 394
     },
     "grn": {
      "median": 9,
      "lo": 0,
-     "hi": 80
+     "hi": 81
     },
     "snp": {
-     "median": 25,
+     "median": 24,
      "lo": 0,
      "hi": 57
     },
@@ -616,19 +616,19 @@
    "niSeats": 18,
    "majorityNeeds": 326,
    "pLargest": {
-    "con": 22.1,
-    "lab": 42.2,
+    "con": 22.2,
+    "lab": 42.5,
     "ld": 0.0,
-    "ref": 35.5,
+    "ref": 35.1,
     "grn": 0.1
    },
    "pMajority": {
     "con": 6.9,
-    "lab": 23.7,
-    "ref": 15.9
+    "lab": 23.8,
+    "ref": 15.7
    },
-   "pHung": 53.5,
-   "monthsOut": 32.0,
+   "pHung": 53.6,
+   "monthsOut": 31.9,
    "sims": 4000,
    "nat2024": {
     "con": 23.6,

@@ -97,7 +97,7 @@
    "state": "Iowa",
    "incumbentParty": "R",
    "nRatings": 8,
-   "score": 0.69,
+   "score": 0.81,
    "retiring": true
   },
   {
@@ -174,7 +174,7 @@
    "state": "New York",
    "incumbentParty": "D",
    "nRatings": 8,
-   "score": 2.62,
+   "score": 2.75,
    "retiring": false
   },
   {
@@ -202,7 +202,7 @@
    "state": "Pennsylvania",
    "incumbentParty": "D",
    "nRatings": 8,
-   "score": 2.75,
+   "score": 2.88,
    "retiring": false
   },
   {
