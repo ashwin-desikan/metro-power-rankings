@@ -28,6 +28,11 @@ guarded "self-test NFL" "$PY" scripts/predictions/build_nfl_sim.py --self-test
 # after would freeze today's calls against yesterday's consensus. It is soft all
 # the way down (a book being unreachable leaves the previous file in place and
 # exits 0), which is why `guarded` is safe here.
+# The self-test is the gate and is `guarded`: it is offline and deterministic,
+# so a failure there is a real defect and should stop the run. The build itself
+# exits 0 whatever happens to the four third-party endpoints (see its __main__),
+# because losing a Friday's model over a book being down is not a trade worth
+# making. Read the step's output, not its exit code, to know if it worked.
 guarded "self-test the meta-market"         "$PY" scripts/predictions/build_meta_market.py --self-test
 guarded "rebuild the NFL meta-market"       "$PY" scripts/predictions/build_meta_market.py
 

@@ -693,5 +693,21 @@ def self_test():
 if __name__ == "__main__":
     argv = sys.argv[1:]
     if "--self-test" in argv:
+        # The self-test keeps its real exit code. It is offline, deterministic
+        # and it is the gate: the runner runs it immediately before the build.
         sys.exit(self_test())
-    build(dry="--dry" in argv)
+    # 🔴 The BUILD never fails the run, on purpose. This step sits ahead of
+    # build_nfl_sim.py under `guarded`, which aborts the whole predictions run
+    # on a non-zero exit, and four third-party endpoints are four ways for a
+    # Friday to lose its model over something that is not the model's fault.
+    # A failure is printed loudly and the previous file stands, so the symptom
+    # is a `generated_at` that stops moving rather than a silent success.
+    try:
+        build(dry="--dry" in argv)
+    except SystemExit:
+        raise
+    except Exception:
+        import traceback
+        print("META-MARKET BUILD FAILED -- the previous file stands. Traceback:")
+        traceback.print_exc()
+        print("(exiting 0 on purpose: this step must never cost the day its model)")
