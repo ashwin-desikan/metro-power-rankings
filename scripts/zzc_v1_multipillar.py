@@ -101,9 +101,26 @@ COUNTRY_SPORT_PRESTIGE = {
     ("netherlands", "Hockey"): 1.5,          # field hockey, elite men's & women's program
 }
 
+# Disciplines the Cup scores as one pillar. The test is the one this table has
+# always applied, made explicit: the same activity in a different format is one
+# sport, and a different activity under a shared federation is not. 3x3 is
+# basketball on half a court; beach volleyball is volleyball on sand; short track
+# is speed skating on a smaller oval; the 10km marathon swim is the same freestyle
+# stroke over a longer course, and the same swimmers contest both. Figure skating
+# shares a federation with speed skating and is a different activity, so it keeps
+# its own pillar, and the same reasoning keeps slalom apart from sprint canoeing,
+# BMX freestyle apart from BMX racing, and diving and water polo apart from the
+# pool they share.
+#
+# The merge happens before the cap and before diminishing returns, which is the
+# point of it. Left split, a nation deep in one sport spends two of its ten
+# scoring slots on it and gets two separate concave curves instead of one, so
+# splitting a sport quietly pays better than winning at it.
 OLY_CANON = {
     "3x3 Basketball": "Basketball", "Basketball": "Basketball",
     "Beach Volleyball": "Volleyball", "Volleyball": "Volleyball",
+    "Short Track Speed Skating": "Speed Skating", "Speed Skating": "Speed Skating",
+    "Marathon Swimming": "Swimming", "Swimming": "Swimming",
     "Football": "Football", "Handball": "Handball", "Ice Hockey": "Ice Hockey",
     "Rugby": "Rugby Union", "Rugby sevens": "Rugby Union", "Rugby Sevens": "Rugby Union",
     "Baseball": "Baseball",
@@ -156,6 +173,7 @@ WI_CRICKET_FLOOR_BONUS = 1.8
 NATIONAL_SPORTS = [
     # (sport label, token, [nation slugs])
     ("American Football", 25.0, ["united-states"]),
+    ("Stock Car Racing", 6.0, ["united-states"]),  # NASCAR: every Cup champion since 1990 is American
     ("Australian Rules Football", 9.0, ["australia"]),
     ("Kabaddi", 5.5, ["india"]),
     ("Kabaddi", 2.5, ["bangladesh"]),
@@ -165,7 +183,6 @@ NATIONAL_SPORTS = [
     ("Sumo", 6.0, ["japan"]),
     ("Bandy", 2.5, ["russia", "sweden"]),
     ("Pesäpallo", 2.5, ["finland"]),   # Finnish baseball, the national sport
-    ("Speedway", 3.0, ["poland"]),     # motorcycle speedway, a major sport in Poland
     ("Rugby League", 2.5, ["papua-new-guinea"]),   # the one nation where RL is THE national sport
 ]
 
@@ -173,60 +190,101 @@ NATIONAL_SPORTS = [
 # company and the driver's nationality is a passport, so there is no national
 # competition to build a pillar on. It enters the same way a national sport does:
 # a recognition bonus added on top of the capped best-10, never competing for a
-# cap slot. (Release 1, Feature 5, Ashwin 2026-09-04.)
+# cap slot. (Release 1a, Ashwin 2026-09-04; widened beyond Formula 1 in 1b.)
+#
+# Which series count. A series is credited here only when its champions come from
+# more than one nation. A series whose winners are effectively one nationality is
+# domestic recognition, not international merit, and belongs in NATIONAL_SPORTS.
+# NASCAR fails that test and is a United States token above. Endurance racing is
+# excluded for a different reason: its titles are won by mixed-nationality crews,
+# so attribution is ambiguous by construction rather than merely uncertain.
+#
+# Formula 1 is read live from the F1 pipeline at weight 1.00. Every other series
+# and its weight live in scripts/data/motorsport-series.json, which carries the
+# reasoning per series.
 #
 # BETA is anchored against the existing national-sport tokens, which run 2.5
-# (hurling) to 25.0 (American football, the USA's biggest domestic sport). At 3.0
-# the leading motorsport nation lands around 13, above Aussie rules at 9.0 and
-# well below American football. CAP binds only on a genuine dynasty: eight
-# consecutive recent titles would reach ~18 uncapped.
-MOTORSPORT_BETA = 3.0
-MOTORSPORT_CAP = 15.0
+# (hurling) to 25.0 (American football, the USA's biggest domestic sport). CAP
+# binds only on a genuine dynasty across several series at once.
+MOTORSPORT_BETA = 2.0
+MOTORSPORT_CAP = 18.0
+MOTORSPORT_SERIES_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "data", "motorsport-series.json")
 
 # Drivers' championships are recorded by nationality as a demonym. Explicit map,
 # because a wrong guess here silently credits the wrong country.
-F1_NAT_SLUG = {
+MOTORSPORT_NAT_SLUG = {
     "British": "great-britain", "German": "germany", "Brazilian": "brazil",
     "Argentine": "argentina", "Australian": "australia", "Austrian": "austria",
     "Finnish": "finland", "French": "france", "Italian": "italy",
     "Dutch": "netherlands", "Spanish": "spain", "American": "united-states",
     "New Zealander": "new-zealand", "South African": "south-africa",
     "Canadian": "canada", "Swedish": "sweden", "Mexican": "mexico",
+    "Colombian": "colombia", "Swiss": "switzerland", "Portuguese": "portugal",
+    "Belgian": "belgium", "Estonian": "estonia", "Norwegian": "norway",
+    "Danish": "denmark", "Polish": "poland", "Russian": "russia",
 }
+# Kept under the old name so anything still importing it does not break.
+F1_NAT_SLUG = MOTORSPORT_NAT_SLUG
 
 
-def motorsport_bonus():
-    """Decayed Formula 1 drivers' world titles, by the driver's nationality.
+def _motorsport_series():
+    """Every credited series as (label, weight, [(year, nat, credit)]).
 
-    Same half-life as everything else in the Cup, so a 1950 title is worth
-    essentially nothing and the board reflects who is winning now. Returns
-    {slug: points} with the cap applied.
-
-    A missing or unreadable f1/data.json returns nothing rather than raising: the
-    Cup should still build without it, one bonus line lighter.
+    Formula 1 comes from the live pipeline; the rest from the curated file. A
+    missing or unreadable source returns nothing for that series rather than
+    raising: the Cup should still build, one line lighter.
     """
+    out = []
     path = os.path.join(D, "f1", "data.json")
     if not os.path.exists(path):
-        print("  motorsport: f1/data.json missing, bonus skipped")
-        return {}
+        print("  motorsport: f1/data.json missing, Formula 1 skipped")
+    else:
+        try:
+            champs = json.load(open(path, encoding="utf-8")).get("champions") or []
+            out.append(("Formula 1", 1.0,
+                        [(r.get("season"), r.get("driver_nat"), 1.0) for r in champs]))
+        except (ValueError, OSError) as e:
+            print(f"  motorsport: f1/data.json unreadable ({e}), Formula 1 skipped")
+    if not os.path.exists(MOTORSPORT_SERIES_FILE):
+        print("  motorsport: motorsport-series.json missing, only Formula 1 counted")
+        return out
     try:
-        champs = json.load(open(path, encoding="utf-8")).get("champions") or []
+        doc = json.load(open(MOTORSPORT_SERIES_FILE, encoding="utf-8"))
     except (ValueError, OSError) as e:
-        print(f"  motorsport: f1/data.json unreadable ({e}), bonus skipped")
-        return {}
+        print(f"  motorsport: motorsport-series.json unreadable ({e}), only Formula 1 counted")
+        return out
+    for sr in doc.get("series") or []:
+        out.append((sr["label"], float(sr["weight"]),
+                    [(c.get("year"), c.get("nat"), float(c.get("credit", 1.0)))
+                     for c in sr.get("champions") or []]))
+    return out
+
+
+def motorsport_bonus(detail=False):
+    """Decayed drivers' titles across the credited series, by nationality.
+
+    Same half-life as everything else in the Cup, so a 1990 title is worth
+    little and the board reflects who is winning now. Returns {slug: points}
+    with the cap applied, or with detail=True also the per-series breakdown.
+    """
     unmapped, dec = set(), defaultdict(float)
-    for r in champs:
-        nat, yr = r.get("driver_nat"), r.get("season")
-        if not nat or not yr:
-            continue
-        slug = F1_NAT_SLUG.get(nat)
-        if not slug:
-            unmapped.add(nat)
-            continue
-        dec[fold(slug)] += 0.5 ** ((NOW - int(yr)) / HALFLIFE_LOCKED)
+    by_series = defaultdict(lambda: defaultdict(float))
+    for label, weight, rows in _motorsport_series():
+        for yr, nat, credit in rows:
+            if not nat or not yr:
+                continue
+            slug = MOTORSPORT_NAT_SLUG.get(nat)
+            if not slug:
+                unmapped.add(nat)
+                continue
+            v = weight * credit * 0.5 ** ((NOW - int(yr)) / HALFLIFE_LOCKED)
+            dec[fold(slug)] += v
+            by_series[label][fold(slug)] += v
     if unmapped:
         print(f"  motorsport: UNMAPPED nationalities, no credit given: {sorted(unmapped)}")
-    return {s: min(MOTORSPORT_CAP, MOTORSPORT_BETA * v) for s, v in dec.items() if v > 0}
+    pts = {s: min(MOTORSPORT_CAP, MOTORSPORT_BETA * v) for s, v in dec.items() if v > 0}
+    return (pts, {k: dict(v) for k, v in by_series.items()}) if detail else pts
 
 
 # Domestic-strength / foundational boosts: additive to merit like the national

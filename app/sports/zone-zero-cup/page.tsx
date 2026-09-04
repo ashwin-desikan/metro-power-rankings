@@ -182,6 +182,16 @@ export default async function ZoneZeroCupPage() {
               bonus is folded into that pillar&apos;s row rather than counted twice.
             </p>
             <p>
+              Motorsport is a bonus for the opposite reason. It is global, but the constructor is a company and the
+              driver&apos;s nationality is a passport, so there is no national competition to build a pillar on. The row
+              is decayed drivers&apos; titles across six championships: Formula 1 at full weight, then MotoGP, the World
+              Rally Championship, IndyCar, Speedway and Formula E, each weighted for how deep and how international its
+              field is. A series earns a place only when its champions come from more than one nation. Stock car racing
+              fails that test, because every NASCAR Cup champion since 1990 has been American, so it sits with the
+              national sports instead. Endurance racing is left out for a different reason: its titles are won by
+              mixed-nationality crews, so there is no one country to credit.
+            </p>
+            <p>
               All {sportRows.length} disciplines are listed, including the {sportRows.length - scoredSports} carrying
               no points today. The Olympic art competitions are among them: painting, sculpture, architecture,
               literature and music awarded medals until 1948 and stay in the record, alongside croquet, tug of war
