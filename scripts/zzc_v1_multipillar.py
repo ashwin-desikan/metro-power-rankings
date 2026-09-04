@@ -93,10 +93,35 @@ PRESTIGE = {
     # year, the sport carries names known outside it, and it was sitting with the
     # quadrennial disciplines. Rhythmic gymnastics and trampolining stay at the
     # default deliberately: they share a federation, not a footprint.
-    "Artistic Gymnastics": 0.75,
+    # Artistic gymnastics 0.75 to 0.6 on 2026-09-04. I had extended the swimming
+    # argument to it the same day and pushed it too far: swimming has a year-round
+    # professional presence and names known outside the sport, and gymnastics is
+    # closer to quadrennial in public attention than that reasoning allowed. Above
+    # the default because its world championships are real, below swimming because
+    # the rest of the case is not the same case.
+    "Artistic Gymnastics": 0.6,
     "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
     "Women's Basketball": 1.0, "Women's Volleyball": 0.55, "Women's Handball": 0.5,  # ~half the men's, like Women's Football
-    "Women's Ice Hockey": 0.75,   # half of Ice Hockey's 1.5, the same rule
+    # Women's Ice Hockey 0.75 to 0.5 on 2026-09-04. The half-the-men's rule put it
+    # at 0.75 and that was wrong for this sport: Canada and the United States have
+    # won all 24 world championships and every Olympic gold ever awarded, which is
+    # the depth problem Rugby League sits at 0.4 for. The board's top-four-hold
+    # figure does not show it, because the 45-nation IIHF ranking spreads points
+    # across countries that have never been near a medal. Breadth of ranking is
+    # not depth of competition.
+    "Women's Ice Hockey": 0.5,
+    # Women's Cricket 0.5 to 1.0. It had been sitting at the bare Olympic default
+    # while men's cricket carries 2.0, so it was the one paired code the
+    # half-the-men's rule was never applied to. Australia have won seven Women's
+    # World Cups and England four, and none of it was worth what the same feat is
+    # worth in football or basketball.
+    "Women's Cricket": 1.0,
+    # Women's Hockey 0.5 to 0.3. Field hockey's men's pillar has no PRESTIGE entry
+    # and therefore sits at the 0.5 default, so the women's line at the same 0.5
+    # was the halving rule failing in the other direction: a default-weighted
+    # sport got a women's pillar weighted as if the men's were a major code. At
+    # 0.3 it lands below netball, which is what the sport's standing supports.
+    "Women's Hockey": 0.3,
     # Racquet / precision individual sports, hugely popular across large-population
     # regions (golf worldwide; tennis global; badminton & table tennis across Asia).
     # Lifted from their earlier suppressed levels so they are not collectively
@@ -898,6 +923,40 @@ def road_cycling_contribs(boost):
     return [(sl, "Cycling Road", v) for sl, v in acc.items() if v > 0]
 
 
+# --- Sailing: the America's Cup ---------------------------------------------
+# Sailing was an Olympic-medals-only pillar, so the oldest trophy in
+# international sport counted for nothing at all. Ashwin asked for it in on
+# 2026-09-04 with the instruction that it should lift sailing a little rather
+# than transform it, so the base is deliberately below the netball world title:
+# the Cup is one match between two boats every three or four years, not a
+# tournament of nations, and it should read as a supplement to the Olympic
+# record rather than a replacement for it.
+AMERICAS_CUP_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "data", "americas-cup.json")
+AMERICAS_CUP_BASE = {"winner": 2.0, "loser": 0.8}
+
+
+def americas_cup_contribs(boost):
+    if not os.path.exists(AMERICAS_CUP_FILE):
+        print("  sailing: americas-cup.json missing, America's Cup skipped")
+        return []
+    try:
+        doc = json.load(open(AMERICAS_CUP_FILE, encoding="utf-8"))
+    except (ValueError, OSError) as e:
+        print(f"  sailing: americas-cup.json unreadable ({e}), skipped")
+        return []
+    acc = defaultdict(float)
+    for m in doc.get("matches") or []:
+        yr = m.get("year")
+        if not yr:
+            continue
+        for role, base in AMERICAS_CUP_BASE.items():
+            slug = m.get(role)
+            if slug:
+                acc[fold(slug)] += base * decay(int(yr))
+    return [(sl, "Sailing", v) for sl, v in acc.items() if v > 0]
+
+
 def netball_titles_contribs(boost):
     out = []
     for slug, places in NETBALL_WC.items():
@@ -917,6 +976,7 @@ PILLARS = [("olympics", olympic_contribs), ("football", football_contribs),
            ("netball", netball_titles_contribs),
            ("road_cycling", road_cycling_contribs),
            ("womens_hockey", womens_hockey_contribs),
+           ("americas_cup", americas_cup_contribs),
            ("ranking", ranking_contribs), ("extra_ranking", extra_ranking_contribs)]
 
 
@@ -1083,6 +1143,19 @@ def all_world_rankings():
     for row in json.load(open(os.path.join(D, "rankings", "womens-football.json"), encoding="utf-8"))["rows"]:
         if row.get("engineSlug"):
             put(fold(row["engineSlug"]), "Women's Football", row.get("rank"))
+    # zzc-extra carries the rankings for every sport without a hub of its own:
+    # water polo, futsal, table tennis, badminton, lacrosse, netball and the
+    # women's codes. Those rankings had been feeding merit through
+    # extra_ranking_contribs since they were added, but never reaching this
+    # function, so a nation's page showed a world rank for baseball and ice
+    # hockey and nothing at all for eleven sports it is ranked in. Ashwin
+    # noticed it on 2026-09-04 for women's ice hockey and women's basketball;
+    # the other nine had the same hole and nobody had looked.
+    extra = os.path.join(D, "rankings", "zzc-extra.json")
+    if os.path.exists(extra):
+        for sport, blk in json.load(open(extra, encoding="utf-8"))["sports"].items():
+            for slug, rank in blk.get("ranks") or []:
+                put(slug, sport, rank)
     return out
 
 

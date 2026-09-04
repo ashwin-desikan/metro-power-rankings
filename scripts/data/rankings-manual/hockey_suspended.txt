@@ -1,0 +1,7 @@
+# IIHF World Ranking
+# url: https://www.iihf.com
+# asOf: 2026-06-03
+# separator: |
+# Edit this file to update the ranking. It is data, not code.
+Russia|5510
+Belarus|4270

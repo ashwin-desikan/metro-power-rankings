@@ -1,0 +1,63 @@
+# IIHF World Ranking
+# url: https://www.iihf.com
+# asOf: 2026-06-03
+# separator: |
+# Edit this file to update the ranking. It is data, not code.
+Switzerland|5335
+Canada|5305
+United States|5305
+Finland|5240
+Sweden|5100
+Czechia|5090
+Germany|4910
+Slovakia|4900
+Latvia|4845
+Denmark|4760
+Norway|4755
+Austria|4555
+Slovenia|4375
+Kazakhstan|4370
+France|4350
+Italy|4295
+Hungary|4275
+Great Britain|4260
+Ukraine|3995
+Poland|3965
+Japan|3965
+Romania|3835
+Lithuania|3795
+South Korea|3750
+Estonia|3655
+China|3635
+Spain|3490
+Netherlands|3400
+Croatia|3350
+Serbia|3340
+Iceland|2985
+Georgia|2790
+Bulgaria|2775
+Chinese Taipei|2750
+Turkiye|2630
+Thailand|2520
+South Africa|2505
+United Arab Emirates|2280
+Australia|2210
+Belgium|2200
+Israel|2160
+New Zealand|2025
+Kyrgyzstan|1800
+Turkmenistan|1650
+Mexico|1645
+Bosnia and Herzegovina|1605
+Luxembourg|1505
+Hong Kong, China|1400
+DPR Korea|1305
+Mongolia|1280
+Philippines|1280
+Singapore|1250
+Kuwait|1110
+Iran|1080
+Indonesia|1060
+Malaysia|1000
+Uzbekistan|960
+Armenia|805

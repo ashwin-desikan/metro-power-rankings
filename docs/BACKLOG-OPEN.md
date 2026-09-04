@@ -685,3 +685,53 @@ since 1744, giving a median code life directly comparable to the fourteen-year
 constitutional median), IFAB since 1863, the NFL competition committee, rugby,
 basketball. Needs curated change lists per sport, so a quarter rather than a week.
 **Priority:** parked
+
+## Zone Zero Cup: sports still absent from the board
+
+Added 2026-09-04, during the session that widened motorsport, gave road cycling a
+pillar and split women's ice hockey out. Every item here is a sport the Cup does
+not score at all, or scores from one source when it has two.
+
+### Esports
+**Priority:** P1 for the list below.
+The largest competitive activity on earth that this board does not acknowledge.
+The problem is not data, it is the unit. Most of the money and audience sits in
+franchise leagues (LCS, LEC, LCK, LPL) whose teams are organisations rather than
+nations, which is the Formula 1 attribution problem again and worse. But there
+IS a national layer to build on: the League of Legends World Championship is
+contested by regional leagues that map closely onto countries, the Dota 2
+International and the CS majors have effectively national rosters, and the IESF
+World Esports Championship and the Asian Games esports programme are literal
+national-team events. Start from the national-team competitions, decide
+explicitly whether a Korean-rostered organisation counts as Korea, and expect the
+answer to be that it does not. Title-holders skew hard to South Korea and China,
+which is itself a finding worth publishing.
+
+### Squash
+Research complete. The WSF World Team Championship has run since 1967 for men
+(28 editions) and 1979 for women (23), which is enough history for a pillar
+rather than a bonus. Caveat: the Great Britain fold has to split England,
+Scotland and Wales correctly, and the cadence changed from biennial to annual.
+
+### Snooker
+Research complete. Recommend a bonus, not a pillar: the team World Cup ran in
+only 16 of 47 years and has not been held since 2019. The individual world
+championship record is complete from 1977, and England hold 25 of 49 titles.
+
+### Ranked shortlist behind those
+Chess Olympiad (about 45 editions, 180-plus federations, the strongest case on
+the list after esports), Bermuda Bowl bridge (38), beach soccer (15 editions,
+Brazil hold 15 titles), PDC World Cup of Darts (about 15), roller hockey (46),
+petanque (33), racquetball, ultimate, padel, orienteering relay, ski
+orienteering, sepak takraw King's Cup, floorball (a Sweden and Finland duopoly),
+korfball (the Netherlands hold 11 of 12), fistball. Beach volleyball and dragon
+boat were checked and rejected as duplicating existing FIVB and ICF pillars.
+Powerlifting recommended for exclusion.
+
+### Sports scored from one source that have two
+Women's cricket has no title pillar: the entire line is world ranking, so
+Australia's seven Women's World Cups and England's four are worth nothing. That
+is the largest single gap on the board. Women's ice hockey has the same shape in
+reverse and was fixed on 2026-09-04. Pro boxing is absent entirely; only the
+Olympic amateur code scores, though the fragmented belts make attribution genuinely
+hard. Alpine skiing counts Olympic medals but not the World Cup season title.

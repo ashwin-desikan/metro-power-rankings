@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "title": "America's Cup match results",
+    "why": "Sailing was scored from Olympic medals alone, so the oldest trophy in international sport counted for nothing. Ashwin asked for it in on 2026-09-04, with the explicit instruction that it should lift sailing a little rather than transform it, which is what the base points below are set to do.",
+    "attribution": "The Cup is contested by yacht clubs, not countries, and a crew is usually multinational. The nation credited is the one the challenging or defending club represents, which is how the event itself is reported and the only attribution with a defensible rule behind it. Sailors' passports are deliberately not used: Team New Zealand has sailed with Australians and Oracle Team USA won with a New Zealand-born helmsman, and following the crew rather than the club would credit the wrong flag in both directions.",
+    "window": "1983 onward, the year the New York Yacht Club's 132-year hold ended. With an 8-year half-life nothing before that can move a ranking.",
+    "notHeldYet": "The 38th match is scheduled for Naples in 2027 and is not in this file.",
+    "asOf": "2026-09-04",
+    "source": "https://en.wikipedia.org/wiki/America%27s_Cup"
+  },
+  "matches": [
+    {"year": 1983, "winner": "australia",   "loser": "united-states"},
+    {"year": 1987, "winner": "united-states", "loser": "australia"},
+    {"year": 1988, "winner": "united-states", "loser": "new-zealand"},
+    {"year": 1992, "winner": "united-states", "loser": "italy"},
+    {"year": 1995, "winner": "new-zealand", "loser": "united-states"},
+    {"year": 2000, "winner": "new-zealand", "loser": "italy"},
+    {"year": 2003, "winner": "switzerland", "loser": "new-zealand"},
+    {"year": 2007, "winner": "switzerland", "loser": "new-zealand"},
+    {"year": 2010, "winner": "united-states", "loser": "switzerland"},
+    {"year": 2013, "winner": "united-states", "loser": "new-zealand"},
+    {"year": 2017, "winner": "new-zealand", "loser": "united-states"},
+    {"year": 2021, "winner": "new-zealand", "loser": "italy"},
+    {"year": 2024, "winner": "new-zealand", "loser": "great-britain"}
+  ]
+}

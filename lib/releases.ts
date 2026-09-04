@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "Every NFL game is now priced at four books with each margin removed, and the Ledger shows how far each leans from the other three. NFL tables also stopped serving preseason records as the season.",
       "A new Order section places every country on two measures, what a state can do and what holds it in check, and a second board tracks which way each one has been moving.",
       "Motorsport counts seven championships rather than one, road cycling counts the Tour and the world title instead of Olympic medals alone, and women's ice hockey becomes a sport of its own.",
-      "Handball no longer outscores tennis, and swimming, gymnastics and women's basketball are all counted properly for the first time. You can also filter the board by what a sport is, down to the ones won sitting down.",
+      "Country pages now show a world rank in eleven more sports, women's basketball and water polo among them. Sailing counts the America's Cup, and handball no longer outscores tennis.",
     ],
   },
   {

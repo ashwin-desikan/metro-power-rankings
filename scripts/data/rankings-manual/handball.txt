@@ -1,0 +1,41 @@
+# handballranking.com World Ranking
+# url: https://www.handballranking.com
+# asOf: 2026-05-17
+# separator: |
+# Edit this file to update the ranking. It is data, not code.
+Denmark|2290.9
+France|2016
+Germany|1991
+Egypt|1937.6
+Croatia|1931.2
+Portugal|1905.4
+Iceland|1894.8
+Norway|1890.9
+Sweden|1872.4
+Spain|1868.4
+Slovenia|1797.1
+Hungary|1750.3
+Brazil|1746.6
+Serbia|1703.5
+Russia|1668
+Belarus|1608.8
+Argentina|1603.8
+Austria|1586.1
+Switzerland|1561.5
+Poland|1545.5
+Czechia|1543.5
+Netherlands|1542.6
+North Macedonia|1532
+Bahrain|1497.4
+Tunisia|1480
+Qatar|1478
+Italy|1455.4
+Chile|1411.5
+South Korea|1372.7
+Cape Verde|1367.8
+Greece|1356.5
+Montenegro|1352.5
+Japan|1352
+Romania|1345.8
+Saudi Arabia|1341.7
+United States|1339.8

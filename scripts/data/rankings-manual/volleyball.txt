@@ -1,0 +1,35 @@
+# FIVB Senior World Ranking
+# url: https://www.volleyball.fivb.com
+# asOf: 2025-10-05
+# separator: |
+# Edit this file to update the ranking. It is data, not code.
+Poland|390.96
+Italy|385.02
+Brazil|338.4
+France|328.22
+United States|324.35
+Slovenia|303.61
+Japan|294.77
+Argentina|269
+Bulgaria|261.3
+Canada|252.99
+Germany|247.4
+Cuba|243.14
+Serbia|233.34
+Turkey|230.09
+Belgium|225.86
+Iran|209.02
+Ukraine|202.85
+Czech Republic|201.25
+Finland|188.93
+Netherlands|180.95
+Qatar|164.99
+Puerto Rico|147.9
+Portugal|145.04
+Romania|141.7
+Greece|137.44
+South Korea|137.28
+Egypt|136.56
+China|129.01
+Chile|125.32
+Mexico|121.91

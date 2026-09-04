@@ -34,10 +34,19 @@ case "$JOB" in
     ADD=( public/data/conflicts.json public/data/conflicts_raw.json )
     MSG="data: monthly interstate-wars refresh [vercel skip]" ;;
   fiba)
-    "$PY" scripts/basketball/fetch_fiba_ranking.py scripts/basketball/fiba_ranking.json 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "fetch_fiba_ranking failed"
+    # Men's, then the basketball ETL that consumes it.
+    "$PY" scripts/basketball/fetch_fiba_ranking.py --gender men scripts/basketball/fiba_ranking.json 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "fetch_fiba_ranking (men) failed"
     "$PY" scripts/basketball/build_intl_basketball.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_intl_basketball failed"
-    ADD=( public/data/basketball scripts/basketball/fiba_ranking.json )
-    MSG="Auto: refresh FIBA World Ranking [vercel skip]" ;;
+    # Women's, then push it into the Cup's ranking feed. Added 2026-09-04: the
+    # women's ranking here had been a hand-kept top ten, which is not a short
+    # ranking but one that stops where women's basketball outside the
+    # traditional powers begins. Same page, same parser, one extra flag.
+    # apply_womens_ranking exits non-zero rather than writing a ranking that
+    # has quietly lost countries, so a FIBA markup change fails the job.
+    "$PY" scripts/basketball/fetch_fiba_ranking.py --gender women scripts/basketball/fiba_ranking_women.json 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "fetch_fiba_ranking (women) failed"
+    "$PY" scripts/basketball/apply_womens_ranking.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "apply_womens_ranking failed"
+    ADD=( public/data/basketball public/data/rankings/zzc-extra.json scripts/basketball/fiba_ranking.json scripts/basketball/fiba_ranking_women.json )
+    MSG="Auto: refresh FIBA World Rankings, men and women [vercel skip]" ;;
   rugby)
     "$PY" scripts/rugby/fetch_wru_rankings.py scripts/rugby/wrurankings.txt 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "fetch_wru_rankings failed"
     "$PY" scripts/ingest/rugby_results_ingest.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "rugby_results_ingest failed"
