@@ -1,28 +1,6 @@
 {
-  "generated_at": "2026-09-04T06:01:26.212240+00:00",
+  "generated_at": "2026-09-04T06:21:48.896713+00:00",
   "jobs": [
-    {
-      "id": "forecast",
-      "label": "Election forecast",
-      "schedule_text": "Mon/Wed/Fri at 06:10 UTC",
-      "cadence": "weekly",
-      "times": [
-        "06:10"
-      ],
-      "weekdays": [
-        1,
-        3,
-        5
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-04T06:10:00+00:00",
-      "last_run": {
-        "date": "2026-09-02",
-        "status": "ok",
-        "slot": "2026-09-02T06:10:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -234,9 +212,9 @@
       "days_of_month": [],
       "next_run": "2026-09-05T06:00:00+00:00",
       "last_run": {
-        "date": "2026-09-03",
+        "date": "2026-09-04",
         "status": "ok",
-        "slot": "2026-09-03T06:00:00+00:00"
+        "slot": "2026-09-04T06:00:00+00:00"
       }
     },
     {
@@ -321,6 +299,28 @@
         "date": "2026-09-02",
         "status": "ok",
         "slot": "2026-09-02T21:00:00+00:00"
+      }
+    },
+    {
+      "id": "forecast",
+      "label": "Election forecast",
+      "schedule_text": "Mon/Wed/Fri at 06:10 UTC",
+      "cadence": "weekly",
+      "times": [
+        "06:10"
+      ],
+      "weekdays": [
+        1,
+        3,
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-07T06:10:00+00:00",
+      "last_run": {
+        "date": "2026-09-04",
+        "status": "ok",
+        "slot": "2026-09-04T06:10:00+00:00"
       }
     },
     {
