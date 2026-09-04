@@ -8751,3 +8751,235 @@ are SKIPPED by `scripts/vercel-ignore.sh` unless the SUBJECT carries `[preview]`
   with lite/classic (the name-to-id map lacks FCS). Harmless; they grade on
   `model` only.
 - Label nit: MLB table header "Pen" for pennant, abbreviated to fit the grid.
+## 2026-09-03 - cowork (cloud, bridged to the Windows box) -> mini and next session: THE WALL OF TEXT IS GONE, THE BOARDS HAVE BARS, AND THE REEL CAN NOW RECORD MOTION
+
+Landed on main as merge `948f7b915` (264 files, 4,922 insertions, 892 deletions),
+on top of an earlier shared-primitives push `89b2953e2`. Real build both times,
+no skip marker. `npx tsc --noEmit` clean, `next build` clean: 60s compile, all
+5,086 static pages, zero errors.
+
+Trigger: Ashwin watched the two release reels back and said the site is "too
+text-heavy... more of a data dump or a word dump", and separately that the reels
+"just took screenshots". Both turned out to be the same problem.
+
+### A. THE PROSE STANDARD IS NOW IN THE CONTRACT FILES, NOT JUST IN A SESSION
+
+The diagnosis is NOT that the writing is bad. It is good and must not be blanded
+out. The problem was placement: every board put its methodology essay above the
+table the reader came for.
+
+**Standard: one clause above the board, stat tiles, the board, then the essay
+collapsed below.** Written into **`DESIGN-STANDARDS.md` section 2A "Prose
+density"** (new), with sections 7 and 8 rewritten, and the one-line versions in
+**`CLAUDE.md`**. Update those files when the standard changes, not just memory.
+
+- `app/_shared/SectionHead.tsx` is new and replaces FIVE drifted local copies
+  (business/ui, ground-floor, skyscrapers, sports/expectation, sports/heartbreak,
+  predictions/scoreboard). `sub` is the reading key, one clause, under 20 words.
+  `more` takes the derivation and collapses **on every viewport**, unlike
+  `_shared/Disclosure`, which opens on desktop by default: the desktop wall of
+  text was the thing being fixed. Use Disclosure for bottom-of-page methodology
+  and sources cards; use `more` for the note belonging to one board.
+- `app/business/ui.tsx` re-exports it so the eight business imports still resolve.
+  `app/geography/page.tsx` keeps its own `{eyebrow,title,blurb}` variant.
+
+Measured before and after: prose in `sub=`/`intro=`/`blurb=` props 2,397 words
+across 51 files down to 1,666; `more=` props 0 to 43; `<details>` blocks ~39 to
+103. Sources and provenance moved to page bottoms on ground-floor,
+f1/constructors and constitutions.
+
+### B. EM DASHES: 618 REMOVED, AND THE HAZARD THAT NEARLY BIT
+
+Down to 37 (4 of those deliberate: two regexes in `app/badges/[slug]/*` that
+MATCH a dash-prefixed upstream label, two masked-value glyphs in
+`app/studio/identity`).
+
+**Three buckets exist and only one is editable. Get this wrong and you break
+tables:**
+
+| Bucket | Rule |
+|---|---|
+| Null-fallback / empty-cell glyph: `?? "-"`, `return "-"`, `: "-"`, `>-<` | **NEVER TOUCH.** 217 of them. **That count is the invariant to check after any sweep**, and the tell for real breakage is `?? ","`. |
+| Inline separator: `<span>- </span>` between two pieces of text | This IS prose. Colon or comma. |
+| Inside `//` or block comments | Invisible. Leave it. |
+
+A naive "placeholder-shaped" count drifts DOWNWARD when separators are correctly
+fixed (665 to 649 here) and looks exactly like damage when it is not. Check the
+null-fallback count, not the raw one. Also: the earlier claim that this sweep is
+"mechanical, no editorial judgement" was wrong. Each spaced dash needs a call
+between comma, colon and full stop.
+
+### C. THE SITE WAS A TABLE SITE. NOW 31 ROUTES CARRY IN-CELL BARS
+
+Measured across 364 routes: 130 had a `<table>`, 7% any bar, 1% a sparkline, <1%
+a chart library, and **113 were a table with no visual encoding at all**.
+
+The answer is not chart pages. **Encode in the row that already exists.** The
+pattern already existed in exactly one place (`SkillBar` on the Ledger) and was
+never propagated.
+
+- `app/_shared/DataBar.tsx`: `DataBar` (magnitude) and `DivergingBar` (polarity).
+  Props `dp`/`suffix`/`scale`, plus `format` to keep a call site's own formatter
+  (that is how `/rankings/[slug]` keeps `formatMarketCap` and `fmtHeightM`).
+- 🔴 **`max` is the column's own maximum, computed ONCE over the FULL row set** and
+  passed to every row. Never per-row, never over a paginated slice, and once PER
+  GROUP for grouped tables (`teams/nhl/NhlStandings.tsx` is the reference).
+  Client components: `useMemo` over the filtered/sorted rows
+  (`BillionairesTable`). Server: the IIFE pattern (`sports/expectation`).
+- The number keeps a text token; the bar carries identity. A diverging bar ALWAYS
+  draws its zero line, because that line is the secondary encoding the palette
+  legally requires (see D).
+- Bars go in the DESKTOP table. Mobile card twins were left alone throughout.
+
+Table-only routes 113 to 92. The 31 figure undercounts: several edits went into
+SHARED components (`football/SeasonHub.tsx` `CTable`,
+`2026-27/Hub2027Client.tsx` `StandingsTable`, `leagues/[slug]/LiveLeagueTable`,
+`tournaments/[slug]/LiveCompGroups`) rendering across ~68 season pages and every
+league and tournament hub.
+
+**Refusals that were RIGHT and should stay refused:** `teams/football/[slug]`
+club season history (the win system changed 2pt to 3pt in 1981-82 and the table
+spans divisions and countries, so one Pts bar compares non-comparable
+quantities); franchise and historical tables across NFL/MLB/NBA/NHL (titles
+already carry a gold chip, do not double-encode); `sports/champions` (Tier is a
+1-4 category, not a magnitude); chronological logs, key-value fact sheets and
+rank-only tables. A wrong bar is worse than none.
+
+### D. THE CHART PALETTE FAILED FOUR OF FIVE CHECKS. IT IS NOW VALIDATED
+
+Run through the `dataviz` skill's validator rather than eyeballed. The old set
+had 7 of 8 outside the lightness band, two reading as gray, and `#82E0AA` vs
+`#85C1E9` at dE 14.3, **indistinguishable to a reader with FULL colour vision**.
+
+New tokens in `globals.css`, all five checks passing:
+- `--cat-1..6`: `#2FA8A0 #D9702A #7A5FD6 #C94F76 #3F7FC4 #A88A1E`
+- `--seq-1..5`: `#165A56 #1A6E68 #248B84 #2FA8A0 #4CC6BD`
+- `--div-neg/mid/pos`: `#C94F76 #6B6B78 #2FA8A0`
+
+🔴 **Do not hand-edit these.** Re-run first:
+`node scripts/validate_palette.js "<hex,...>" --mode dark --surface "#12121A"`.
+Never reason about colour separation by hand.
+
+Three things that are load-bearing and non-obvious:
+1. **The categorical ORDER is the colourblind-safety mechanism**, not decoration.
+   Assign in sequence, never cycle; a 7th series folds into "Other" or facets.
+   Found by permutation search: most orderings fail one test or the other, and
+   blue beside purple failed every single attempt.
+2. **Only `--cat-1..3` clear the all-pairs test**, so maps, scatter, bubble and
+   small multiples are capped at THREE series. More means fewer series or facets,
+   never a palette change.
+3. **The diverging pair sits in the CVD floor band** (dE 7.1 deutan), legal ONLY
+   with secondary encoding. The zero line supplies it. Never use the pair as flat
+   fills with no baseline.
+
+`#4ECDC4` stays the UI accent for links and focus. It is too light to be a data
+mark on this surface, which is a different job. Also fixed: DESIGN-STANDARDS
+section 7 said "never hardcode colour" and then hardcoded `#10b981`/`#E2628B` two
+bullets later.
+
+### E. SPARKLINES, AND A FILENAME THAT MISLEADS
+
+`app/_shared/Sparkline.tsx` (inline SVG polyline, no chart library) plus
+`lib/powerRankHistory.ts`, wired into `/power` as a Trend column
+(`hidden lg:table-cell`). `invert` for rank-like series where LOWER is better.
+Nulls are gaps, not zeros. Under two points renders a dash, not a misleading flat
+line.
+
+⚠️ **`public/data/power-ranking-history/` is the Nowhere 100 (PEOPLE), not
+metros.** Easy to misread from the name. 12 snapshots, 112 people seen, 89
+present in all 12, with real movement (Michael Dell 93 to 62). Matching is on the
+snapshot's own `bare` field because live names carry warning/crown glyphs;
+`bareName()` is exported so call sites normalise identically.
+
+Still unused: `power-history.json` has a `byYear` structure for country power
+across 235 years.
+
+### F. THE REEL CAN NOW RECORD MOTION. IT HAS NOT BEEN RUN AGAINST THE LIVE SITE
+
+`scripts/reel/cdp_clip.py` drives plain Chrome over the DevTools Protocol and
+records a real interaction. Add an `act` list to a segment and it is recorded
+instead of stilled; segments without `act` fall through unchanged, so this is
+purely additive and a mixed reel is fine. `assemble` prints `MOTION` or `still `
+per segment. One dep: `pip install websocket-client`. **Playwright is still NOT
+used and NOT installed.**
+
+`build_reel.py` also no longer hardcodes `/Applications/Google Chrome.app/...`,
+which meant it only ever ran on the Mac. `find_chrome()` now covers macOS, Linux
+and Windows, `REEL_CHROME` overrides.
+
+🔴 **Four gotchas, each of which cost an hour:**
+1. `--remote-allow-origins=*`. Chrome >=111 rejects a CDP websocket whose Origin
+   it does not know, with a bare 403 that reads exactly like "Chrome never started".
+2. `Emulation.setDeviceMetricsOverride`, NOT `--window-size`. `--window-size` is
+   the WINDOW: headless gives 540x820 of PAGE for a 540x960 window, and the
+   missing 140 CSS px come back as black bars after the pad. Measured 1080x1640
+   without the override, 1080x1920 with it. ⚠️ The old docstring claim that
+   `--window-size` plus scale factor "gives EXACTLY 1080x1920" is wrong for
+   headless=new. **The still `shots` step likely has the same letterboxing and
+   nobody has checked.**
+3. CDP is on loopback and an ambient HTTP proxy will reject 127.0.0.1, with the
+   same misleading failure. The HTTP call now uses an opener with proxies off.
+4. `--no-sandbox` only when euid is 0. Never on a desktop run.
+
+**Verified end to end against a LOCAL MOCK only** (a fake Ledger board on
+`python3 -m http.server`, clicked and scrolled, frames confirmed by eye).
+Nothing here has touched rankings.citizenofnowhere.org: the cloud container and
+the Windows device VM both have zero egress to it, and the device VM has no
+Chrome. **The reel machine is the Mac.**
+
+### G. ENVIRONMENT FACTS WORTH NOT RELEARNING
+
+- **`next build` CANNOT run from `device_bash`.** node_modules holds the Windows
+  SWC binary and that shell is a Linux VM: "Failed to load SWC binary for
+  linux/x64". `npx tsc --noEmit` DOES work there, as does a per-file
+  `ts.transpileModule` syntax check.
+- Real builds go through Desktop Commander on Windows, **launched detached**,
+  because a foreground call times out at 60s at the device layer:
+  `Start-Process cmd.exe -ArgumentList '/c','npx next build --webpack > log 2>&1' -WindowStyle Hidden`
+  then poll the log from `device_bash`.
+- `git` over the `$HOME/mnt/` mount is unusably slow (`git status` timed out at
+  120s). Use Desktop Commander for git.
+- Writes to the mount can **silently revert**. Subagents must re-read in a
+  SEPARATE later call to confirm.
+- **Many files are CRLF.** Read as bytes, normalise to LF, edit, write back as
+  CRLF. A blind `\n` edit corrupts the diff.
+- Route `page.tsx` often holds NO table: the markup is in a sibling
+  `*Table.tsx` / `*Directory.tsx` / `*Client.tsx`, sometimes under
+  `teams/_footy/` or `_shared/`. Name the component, not the route.
+
+### Housekeeping and open threads
+
+- ⚠️ **`.probe-shots/` was untracked and NOT gitignored**, so a `git add -A`
+  swept 43 disposable mobile-probe PNGs into the commit. Removed from the index
+  before the merge was pushed, and `.probe-shots/` added to `.gitignore` in the
+  same commit. Main never carried them.
+- ⚠️ **A scratch git worktree is still on disk** at
+  `C:\Users\ashwi\Desktop\Projects\_push_main`. It was used to push the shared
+  primitives to main without checking out a different branch in the shared tree
+  (the tree was on `predictions/expert-upgrades` at the time). `git worktree
+  remove` was blocked by a permission classifier. Clear it with
+  `git worktree remove --force "C:\Users\ashwi\Desktop\Projects\_push_main"`.
+- Branch `claude/copy-and-viz-2026-09-03` holds the single pre-merge commit
+  `2e21b1cf3`. Safe to delete once the merge is confirmed good.
+- **Still table-only, heaviest first:** `/sports/standings`, `/badges/[slug]`,
+  `/us-political-leadership`, `/studio/audience-builder`.
+- `app/banter/BanterClient.tsx` still uses `#E2628B` as an error-state UI colour.
+  Out of scope for chart colour; should become a status token.
+- **NEXT SESSION'S FIRST JOB, at Ashwin's instruction: re-shoot the reel** with
+  the new `clips` step, from the Mac, against the live site. Start with
+  `scripts/reel/reel-motion-example.json` (scroll motion on all eight content
+  segments, cannot miss), then add `click` on the boards that now sort with a bar
+  visible: the Ledger's skill-vs-market column and any league table's points
+  column show the new work best. Run `narrate` BEFORE `clips` and each clip
+  matches its own voiceover length automatically.
+
+### Also drafted, not built
+`SONGBOOK-SPEC.md` at repo root: sports and music history turned into songs, in
+the musical idiom of that team's city in that team's year. Parked in
+`docs/BACKLOG-OPEN.md` as two entries. The derivation layer is P2 and ungated
+(cheap, proves or kills the concept); the production track is P3 and gated on the
+Substack publishing again, Suno being on a paid tier, and a Higgsfield budget.
+Also `internal/relaunch-plan-2026-09.md` (gitignored): 51 releases since 1 July,
+zero Substack posts, resolved into six themes rather than 51 posts.
+
+---
