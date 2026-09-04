@@ -9051,7 +9051,7 @@ same URL returned 200 to a single curl seconds later.
 
 ### D. IN-CELL BARS ON THE FOUR BOARDS THAT STILL HAD NONE
 
-`036380d27`, a real build. `/sports/standings`, `/badges/[slug]`,
+`337418799` (built as `58005f62c`, see E). `/sports/standings`, `/badges/[slug]`,
 `/us-political-leadership`, `/studio/audience-builder`. Mobile card twins
 untouched, as in the first pass.
 
@@ -9083,6 +9083,21 @@ league table on the same page. Same width as `Playoff`, already in that row.
 next build clean across all 5,086 pages. Release note for 2026-09-04 added to
 `lib/releases.ts` (one entry for the whole day, covering this morning's copy
 density and palette work as well).
+
+### E. 🔴 THE BARS COMMIT DID NOT DEPLOY, AND IT IS THE SAME TRAP AS 2026-08-18
+
+`337418799` was pushed in the SAME push as the `[vercel skip]` HANDOFF commit
+sitting on top of it. GitHub creates one deployment per push, for the HEAD only,
+and `scripts/vercel-ignore.sh` rule 1 skipped it on the tag before the path diff
+could see the app changes. The bars commit got no deployment at all. Recovered
+with an empty `[deploy-retry]` commit, `58005f62c`, READY and live; the bars and
+the `Pennant` header verified on the live pages.
+
+`--no-verify` was not needed: `prepare-commit-msg` did not re-tag the retry
+commit, and the post-commit hook's MISMATCH warning is expected on a deliberate
+empty retry. Third time this has bitten. **Before any push containing app
+changes: `git log origin/main..HEAD --format=%s` and check the LAST line has no
+`[vercel skip]`.** One command; it is the whole guard.
 
 ### State on exit
 - `.probe-shots/` deleted. The `_push_main` worktree was already gone. Merged
