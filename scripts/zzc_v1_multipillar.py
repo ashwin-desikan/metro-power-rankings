@@ -79,6 +79,15 @@ PRESTIGE = {
     # continents. Handball 1.2 to 1.0, volleyball 1.2 to 1.1, tennis 0.7 to 0.9.
     "Volleyball": 1.1, "Handball": 1.0,
     "Athletics": 1.0,   # the foundational Olympic sport (track & field); lifted above the 0.5 Olympic default
+    # Swimming lifted 0.5 to 0.75 on 2026-09-04. Found by reading Australia's
+    # inputs rather than its outputs: 110.80 of raw, more than its cricket, was
+    # being squashed to 8.4 and left below a rugby union side that is struggling.
+    # The bare Olympic default was filing the second-largest sport at the Games
+    # alongside the quadrennial single-discipline ones. Swimming has a biennial
+    # world championship that is a genuine second pinnacle, year-round broadcast
+    # reach and standalone global names, which the modern pentathlons do not.
+    # It sits below athletics, which remains the one universal Olympic sport.
+    "Swimming": 0.75,
     "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
     "Women's Basketball": 1.0, "Women's Volleyball": 0.55, "Women's Handball": 0.5,  # ~half the men's, like Women's Football
     "Women's Ice Hockey": 0.75,   # half of Ice Hockey's 1.5, the same rule
