@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import OrderNav from "@/app/order/_shared/OrderNav";
+import { OrderCrumbs, OrderHeader } from "@/app/order/_shared/ui";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 import { CappedList, Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
@@ -72,17 +74,14 @@ export default function TrajectoryPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
       <main className="mx-auto max-w-5xl px-4 py-8">
-        <nav className="mb-6 flex flex-wrap gap-x-4 gap-y-1 text-xs" style={MONO}>
-          <Link href="/order" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">&larr; Order hub</Link>
-          <Link href="/order/grid" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">The Order Grid</Link>
-          <Link href="/order/about" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">What this is</Link>
-        </nav>
-
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--text)]">{TITLE}</h1>
-        <p className="mt-3 text-[var(--text-muted)] leading-relaxed max-w-3xl">
-          Nothing reaches the corner, so where a country stands is the least interesting thing about it. Which way it is
-          moving is the question. Six signals, reported separately, because they do not cover the same countries.
-        </p>
+        <OrderCrumbs tab="Direction" />
+        <OrderHeader
+          emoji="📉"
+          title={TITLE}
+          sub="Nothing reaches the corner, so where a country stands is the least interesting thing about it. Which way it is moving is the question."
+          stamp={`${cov.countries} countries · ${t.meta.windows.panelFrom} to ${t.year} · site leadership histories, CCP, elections atlas, Power Atlas · built ${t.built}`}
+        />
+        <OrderNav />
 
         <div className="mt-6 rounded-xl border p-4" style={{ ...CARD, borderLeftWidth: "4px", borderLeftColor: "var(--cat-3)" }}>
           <p className="text-[10px] uppercase tracking-widest mb-1" style={{ ...MONO, color: "var(--text-dim)" }}>Read this before the boards</p>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import OrderNav from "@/app/order/_shared/OrderNav";
+import { OrderCrumbs, OrderHeader } from "@/app/order/_shared/ui";
 import HubNav from "@/app/teams/HubNav";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { getOrderGrid, getRecognitionGap, getTrajectory } from "@/lib/order";
@@ -68,22 +70,21 @@ export default function OrderHubPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
-        <nav className="mb-8 flex flex-wrap gap-x-4 gap-y-1 text-xs" style={MONO}>
-          <Link href="/" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">&larr; Back to rankings</Link>
-          <Link href="/geography" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Geography hub &rarr;</Link>
-          <Link href="/order/about" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">What this is &rarr;</Link>
-        </nav>
-
-        <header className="mb-8 border-b pb-8" style={{ borderColor: "var(--border)" }}>
-          <p className="text-xs tracking-widest text-[var(--text-muted)] mb-3" style={MONO}>ORDER</p>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">No country is finished.</h1>
-          <p className="text-lg text-[var(--text-muted)] leading-relaxed max-w-3xl">
-            Political order has three legs: a state that can act, a law that binds the ruler, and a way for society to
-            hold both to account. This layer measures them, refuses to call any arrangement final, and puts a date on
-            every claim.{" "}
-            <Link href="/order/about" className="underline hover:text-[var(--accent)]">Read the argument</Link>.
-          </p>
-        </header>
+        <OrderCrumbs />
+        <OrderHeader
+          emoji="🧭"
+          title="No country is finished."
+          sub={
+            <>
+              Political order has three legs: a state that can act, a law that binds the ruler, and a way for society to
+              hold both to account. This layer measures them, refuses to call any arrangement final, and puts a date on
+              every claim.{" "}
+              <Link href="/order/about" className="underline hover:text-[var(--accent)]">Read the argument</Link>.
+            </>
+          }
+          stamp={`${cov.scored} states on the grid · ${tcov.countries} tracked for direction · built ${grid.built}`}
+        />
+        <OrderNav />
 
         <HubNav items={[
           { label: "Instruments", href: "#instruments" },

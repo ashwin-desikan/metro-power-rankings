@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import OrderNav from "@/app/order/_shared/OrderNav";
+import { OrderCrumbs, OrderHeader } from "@/app/order/_shared/ui";
+import { TableScroll } from "@/app/_shared/TableScroll";
 import { getOrderGrid, cellMatrix } from "@/lib/order";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
 
@@ -61,19 +64,13 @@ export default function OrderAboutPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
-        <nav className="mb-8 flex flex-wrap gap-x-4 gap-y-1 text-xs" style={MONO}>
-          <Link href="/order" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">&larr; Order hub</Link>
-          <Link href="/order/grid" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">The Order Grid &rarr;</Link>
-        </nav>
-
-        <header className="mb-10 border-b pb-8" style={{ borderColor: "var(--border)" }}>
-          <p className="text-xs tracking-widest text-[var(--text-muted)] mb-3" style={MONO}>THE ORDER LAYER</p>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">No country is finished.</h1>
-          <p className="text-lg text-[var(--text-muted)] leading-relaxed">
-            Every ranking on this site is an argument about where power sits and what holds it. The Order layer states
-            that argument once, in the open, and gives it instruments.
-          </p>
-        </header>
+        <OrderCrumbs tab="What this is" />
+        <OrderHeader
+          emoji="🧭"
+          title="No country is finished."
+          sub="Every ranking on this site is an argument about where power sits and what holds it. The Order layer states that argument once, in the open, and gives it instruments."
+        />
+        <OrderNav />
 
         <section className="mb-10">
           <h2 className="text-2xl font-bold mb-3">The argument we are in</h2>
@@ -116,7 +113,7 @@ export default function OrderAboutPage() {
             what a state can do: its reach, its spending, its ability to act. Integrity is what holds it in check: law
             that binds the ruler rather than serving him.
           </p>
-          <div className="overflow-x-auto">
+          <TableScroll>
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-left border-b" style={{ borderColor: "var(--border)" }}>
@@ -141,7 +138,7 @@ export default function OrderAboutPage() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </TableScroll>
           <h3 className="text-lg font-bold mt-8 mb-2">And a tenth that stays empty</h3>
           <p className="text-[15px] leading-relaxed text-[var(--text-muted)] mb-4">
             {vanguard.name} is the corner the two axes point at: {vanguard.blurb.charAt(0).toLowerCase() + vanguard.blurb.slice(1)}

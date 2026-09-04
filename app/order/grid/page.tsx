@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import OrderNav from "@/app/order/_shared/OrderNav";
+import { OrderCrumbs, OrderHeader } from "@/app/order/_shared/ui";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 import { CappedList, Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
@@ -80,18 +82,14 @@ export default function OrderGridPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
       <main className="mx-auto max-w-5xl px-4 py-8">
-        <nav className="mb-6 flex flex-wrap gap-x-4 gap-y-1 text-xs" style={MONO}>
-          <Link href="/order" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">&larr; Order hub</Link>
-          <Link href="/order/about" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">What this is</Link>
-          <Link href="/order/trajectory" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Direction of Travel</Link>
-          <Link href="/order/recognition-gap" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">The Recognition Gap &rarr;</Link>
-        </nav>
-
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--text)]">{TITLE}</h1>
-        <p className="mt-3 text-[var(--text-muted)] leading-relaxed max-w-3xl">
-          A state needs the capacity to act and something above it that binds the ruler. Neither is worth much alone.
-          This board places {cov.scored} of them on both at once, in {grid.year}, and keeps the corner empty.
-        </p>
+        <OrderCrumbs tab="The Grid" />
+        <OrderHeader
+          emoji="🧭"
+          title={TITLE}
+          sub="A state needs the capacity to act and something above it that binds the ruler. Neither is worth much alone."
+          stamp={`${cov.scored} states · ${grid.year} · Power Atlas, V-Dem, Comparative Constitutions Project · built ${grid.built}`}
+        />
+        <OrderNav />
 
         <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3">
           <StatTile label="States placed" value={String(cov.scored)} hint={`${cov.unscored} without a rule of law reading`} />

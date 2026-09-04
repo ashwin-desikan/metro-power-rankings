@@ -50,7 +50,11 @@ export function Sparkline({
   const xs = values.length - 1 || 1;
   const lo = Math.min(...pts.map((p) => p.v));
   const hi = Math.max(...pts.map((p) => p.v));
-  const span = hi - lo || 1;
+  // A flat series is not a shape. Without this the `|| 1` fallback below maps
+  // every equal value to one edge of the box and draws a hard line that reads
+  // as a real trend. Same failure as app/predictions/_shared/Sparkline.tsx.
+  if (hi === lo) return <span className="text-[var(--text-dim)] text-xs">—</span>;
+  const span = hi - lo;
   const pad = 2;
   const h = height - pad * 2;
 

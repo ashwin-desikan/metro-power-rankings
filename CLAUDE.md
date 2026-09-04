@@ -219,6 +219,34 @@ explicit — apply it before touching any refresh script:
 - `package.json` scripts — `npm run verify` is the full local proof gate for
   frontend work.
 
+## The design sweep (every new page, every release, no exceptions)
+
+> **HARD RULE, added 2026-09-04 at Ashwin's instruction.** A page is not done
+> when it renders and the gates pass. Before any commit that adds or reshapes a
+> page, sweep it against `DESIGN-STANDARDS.md` at BOTH widths and record the
+> numbers. `npm run verify` proves the static rules; it cannot tell you the page
+> has no breadcrumb, no as-of stamp, no tab row, or a table that is unreadable
+> at 390px.
+>
+> The Order layer shipped its first draft failing four items on this list, all
+> of them caught only by reading the standards afterwards rather than before.
+
+1. **Read `DESIGN-STANDARDS.md` §1 before writing the page**, not after. The
+   skeleton is: crumbs, header with an as-of + source stamp, tab row, sections
+   with `SectionHead`, closing sources card. A new family gets a `_shared/ui.tsx`
+   and a nav component copied from `predictions/_shared`, never a hand-rolled
+   variant.
+2. **Every data page states its source and its as-of date** in the MONO stamp
+   under the h1. If you cannot fill the stamp, the page is not finished.
+3. **Measure at 390 and at 1280.** `npm run probe:mobile` where it can reach the
+   page; otherwise drive the dev server and record, per page: `scrollWidth`
+   against the viewport, phone screens, the widest overflowing element, and that
+   each `sm:hidden` card list has its reveal control.
+4. **Put the numbers in the commit or the HANDOFF entry.** A mobile claim with
+   no measurement behind it does not count, per DESIGN-STANDARDS §0.1.
+5. **Sweep the whole family, not just the new page.** Adding a tab means every
+   sibling page gains it in the same commit.
+
 ## Frontend design standards (non-negotiable)
 
 - **Read `DESIGN-STANDARDS.md` before building or redesigning any hub or

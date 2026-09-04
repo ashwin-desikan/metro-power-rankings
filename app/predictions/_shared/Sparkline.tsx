@@ -11,7 +11,16 @@ export function Sparkline({ points, className = "" }: { points: number[]; classN
 
   const min = Math.min(...points);
   const max = Math.max(...points);
-  const span = max - min || 1;
+
+  // A series that has not moved is not a trend, and drawing it is worse than
+  // drawing nothing: with `span || 1` below, every identical point maps to the
+  // BOTTOM of the box, so a team that has not budged renders a hard flat line
+  // pinned to the floor. On 2026-09-04, the first day two snapshots existed and
+  // no games had been played, that put an identical line beside all 32 teams in
+  // the Classic tab. Render nothing until there is something to show.
+  if (max === min) return null;
+
+  const span = max - min;
   const step = (WIDTH - PAD * 2) / (points.length - 1);
 
   const coords = points

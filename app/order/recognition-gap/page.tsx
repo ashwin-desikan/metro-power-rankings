@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import OrderNav from "@/app/order/_shared/OrderNav";
+import { OrderCrumbs, OrderHeader } from "@/app/order/_shared/ui";
 import { DivergingBar } from "@/app/_shared/DataBar";
 import { CappedList, Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
@@ -21,7 +23,6 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC, images: ["/og-default.png"] },
 };
 
-const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const CARD = { borderColor: "var(--border)", backgroundColor: "var(--bg-card)" } as const;
 
 function StatTile({ label, value, hint }: { label: string; value: string; hint?: string }) {
@@ -67,18 +68,14 @@ export default function RecognitionGapPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
       <main className="mx-auto max-w-5xl px-4 py-8">
-        <nav className="mb-6 flex flex-wrap gap-x-4 gap-y-1 text-xs" style={MONO}>
-          <Link href="/order" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">&larr; Order hub</Link>
-          <Link href="/order/grid" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">The Order Grid</Link>
-          <Link href="/power-atlas" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">The Power Atlas &rarr;</Link>
-        </nav>
-
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--text)]">{TITLE}</h1>
-        <p className="mt-3 text-[var(--text-muted)] leading-relaxed max-w-3xl">
-          Status and substance are not the same thing. The Power Atlas already measures both: what a country has, and what
-          the world treats it as having. The distance between them is what this board reports, for {rows.length} states
-          in {data.year}.
-        </p>
+        <OrderCrumbs tab="Recognition" />
+        <OrderHeader
+          emoji="⚖️"
+          title={TITLE}
+          sub="Status and substance are not the same thing. The Power Atlas measures both: what a country has, and what the world treats it as having."
+          stamp={`${rows.length} states · ${data.meta.seriesFrom} to ${data.year} · Correlates of War, Maddison, site power score · built ${data.built}`}
+        />
+        <OrderNav />
 
         <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3">
           <StatTile label="States" value={String(rows.length)} hint={`ranked in ${data.year}`} />
