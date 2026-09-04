@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export type SenRow = {
   name: string;
@@ -21,6 +22,12 @@ function partyClass(p: string): string {
 }
 
 export default function SenatorsTable({ rows }: { rows: SenRow[] }) {
+  // Column maximum over the FULL row set, computed once (see GovernorsTable).
+  const scoreMax = useMemo(
+    () => Math.max(...rows.map((r) => r.score), 0.0001),
+    [rows],
+  );
+
   const [key, setKey] = useState<SortKey>("state");
   const [dir, setDir] = useState<1 | -1>(1);
   const [announce, setAnnounce] = useState("");
@@ -160,7 +167,9 @@ export default function SenatorsTable({ rows }: { rows: SenRow[] }) {
                 <td className="py-2 px-4 font-medium text-[var(--text)]">{r.name}</td>
                 <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>{r.party}</td>
                 <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">{r.cls}</td>
-                <td className="py-2 px-4 text-right tabular-nums text-[var(--text)]">{r.score > 0 ? r.score.toFixed(1) : "—"}</td>
+                <td className="py-2 px-4">
+                  <DataBar v={r.score > 0 ? r.score : null} max={scoreMax} dp={1} width={112} label="metro score" />
+                </td>
               </tr>
             ))}
           </tbody>

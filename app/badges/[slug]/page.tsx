@@ -17,6 +17,7 @@ import ConurbationsTable, {
 } from "./ConurbationsTable";
 import BadgeMap from "./BadgeMap";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 import {
   AUTHOR,
   BASE_URL,
@@ -67,11 +68,17 @@ function MetroRow({
   badgeSlug,
   showTier = false,
   position,
+  contextMax,
 }: {
   metro: QualifyingMetro;
   badgeSlug: string;
   showTier?: boolean;
   position?: number;
+  /** The context column’s own maximum over the FULL qualifying set,
+   *  computed once by the page and passed to every row. Null when the badge’s
+   *  metric is signed or degenerate, in which case the cell stays a bare
+   *  number: a magnitude bar cannot honestly draw a negative value. */
+  contextMax?: number | null;
 }) {
   const tier = computeTier(metro.score);
   // Conurbations: ranks A/B/C by descending list position; D uses the lead
@@ -157,10 +164,20 @@ function MetroRow({
         </td>
       ) : null}
       <td
-        className="py-3 pr-4 text-right font-bold"
+        className={`py-3 pr-4 font-bold${contextMax == null ? " text-right" : ""}`}
         style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}
       >
-        {formatContextValue(badgeSlug, metro.contextValue)}
+        {contextMax == null ? (
+          formatContextValue(badgeSlug, metro.contextValue)
+        ) : (
+          <DataBar
+            v={metro.contextValue}
+            max={contextMax}
+            format={(v) => formatContextValue(badgeSlug, v)}
+            width={132}
+            label={metro.contextLabel}
+          />
+        )}
       </td>
       <td
         className="py-3 text-right text-sm"
@@ -314,6 +331,19 @@ export default async function BadgeDetailPage({ params }: Props) {
   // Positional rank in the sorted list (1-based).
   const positionBySlug = new Map<string, number>();
   metros.forEach((m, i) => positionBySlug.set(m.slug, i + 1));
+
+  // 🔴 The context column’s maximum, over the FULL qualifying set and
+  // computed ONCE here, not per row and not per tier group: the tier groups are
+  // strata of the same metric, so rescaling inside each one would draw a
+  // tier-D cluster as long as a tier-A one. Null when any value is negative
+  // (a signed badge metric wants a diverging bar, not this one) or when the
+  // column is flat, and the cell then stays the bare number it was.
+  const contextMax: number | null = (() => {
+    const vals = metros.map((m) => m.contextValue).filter((v) => Number.isFinite(v));
+    if (vals.length === 0 || vals.some((v) => v < 0)) return null;
+    const mx = Math.max(...vals);
+    return mx > 0 ? mx : null;
+  })();
 
   const collectionLd = {
     "@context": "https://schema.org",
@@ -521,6 +551,7 @@ export default async function BadgeDetailPage({ params }: Props) {
                             badgeSlug={badge.slug}
                             showTier={false}
                             position={positionBySlug.get(m.slug)}
+                            contextMax={contextMax}
                           />
                         ))}
                       </tbody>
@@ -586,6 +617,7 @@ export default async function BadgeDetailPage({ params }: Props) {
                         badgeSlug={badge.slug}
                         showTier={showTierColumn}
                         position={i + 1}
+                        contextMax={contextMax}
                       />
                     ))}
                   </tbody>

@@ -7,6 +7,7 @@
 // are the stand-in first-party audience; consent and scores are synthetic.
 
 import { useEffect, useMemo, useState } from "react";
+import { DataBar } from "@/app/_shared/DataBar";
 import ActivationModal, { type ActProfile } from "./ActivationModal";
 
 type Consent = "opted_in" | "opted_out" | "unknown";
@@ -41,6 +42,13 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const ACCENT = "#4ECDC4";
 const GOLD = "#d4af37";
 const SEG_KEY = "studio-audience-segments";
+// The propensity bar's ceiling. scoresFor() clamps the score to 1..99, so the
+// scale has its own fixed maximum and that is what every row is drawn against.
+// Deliberately NOT the maximum of the rows on screen: the table shows the first
+// 14 of the segment, and scaling a bounded score to a slice would draw a member
+// on 70 as if it were the weakest thing in the audience. One max for every row,
+// as everywhere else, but here the column's own ceiling supplies it.
+const PROPENSITY_MAX = 100;
 const LOOKALIKE_STEPS = [0, 50, 100, 250, 500];
 const SCORE_METRICS: { key: "propensity" | "churn"; label: string }[] = [
   { key: "propensity", label: "Propensity" },
@@ -580,7 +588,7 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
                 <tr className="text-left text-xs text-[var(--text-muted)]">
                   <th className="py-2 px-3 font-medium">Metro</th>
                   <th className="py-2 px-3 font-medium">Country</th>
-                  <th className="py-2 px-3 font-medium text-right">Propensity</th>
+                  <th className="py-2 px-3 font-medium">Propensity</th>
                   <th className="py-2 px-3 font-medium text-right">Consent</th>
                 </tr>
               </thead>
@@ -597,7 +605,9 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
                         )}
                       </td>
                       <td className="py-1.5 px-3 text-xs text-[var(--text-muted)]">{p.country}</td>
-                      <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{sc.propensity}</td>
+                      <td className="py-1.5 px-3 tabular-nums" style={mono}>
+                        <DataBar v={sc.propensity} max={PROPENSITY_MAX} width={104} label="propensity" />
+                      </td>
                       <td className="py-1.5 px-3 text-right text-xs" style={mono}>
                         <span style={{ color: p.governance.suppressed ? "#e74c3c" : p.governance.consent === "opted_in" ? ACCENT : "var(--text-dim)" }}>
                           {p.governance.suppressed ? "suppressed" : p.governance.consent.replace("_", " ")}

@@ -45,6 +45,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 // alongside the games check rather than replacing it.
 import { isLeagueLive, inSeasonWindow, tournamentIsCurrent, type SeasonKey } from "@/lib/seasonWindows";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export const revalidate = 120;
 
@@ -95,6 +96,42 @@ const orderBy = (list: string[]) => (a: Block, b: Block): number => {
 };
 
 const DASH = "—";
+
+// ---- the ordering column, encoded in the cell that already prints it ------
+//
+// Every standings sub-table here is ordered by exactly one column, and until
+// now that column was a bare number in a row of bare numbers: the reader had to
+// scan the whole column to see a runaway leader or a tight middle. The bar goes
+// in the cell that is already rendering the figure, so no width, no chart, no
+// second table.
+//
+// PCT before PTS/Pts because where both exist (MLB, the World Test
+// Championship) PCT is the column the table is sorted by. Fixture and results
+// sub-tables carry none of these names, so they are skipped without a special
+// case. A column with any unparseable cell is skipped too: half a bar column is
+// worse than none.
+const BAR_COLS = ["PCT", "PTS", "Pts"];
+
+function cellNum(c: Cell): number | null {
+  if (typeof c === "number") return isFinite(c) ? c : null;
+  const s = String(c).trim();
+  if (!s || s === DASH) return null;
+  const v = Number(s);
+  return isFinite(v) ? v : null;
+}
+
+// 🔴 max is the COLUMN's own maximum over the sub-table's FULL row set,
+// computed once here and passed to every row. Never per row, never over a
+// slice: a per-row max draws every bar full and says nothing.
+function barColumn(st: SubTable): { index: number; max: number } | null {
+  const name = BAR_COLS.find((c) => st.columns.includes(c));
+  if (!name) return null;
+  const index = st.columns.indexOf(name);
+  const vals = st.rows.map((r) => cellNum(r.cells[index]));
+  if (vals.length === 0 || vals.some((v) => v === null)) return null;
+  const max = Math.max(...(vals as number[]));
+  return max > 0 ? { index, max } : null;
+}
 const slugId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 const pct3 = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v.toFixed(3).replace(/^0/, ""));
 const num = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v);
@@ -224,7 +261,9 @@ function LeagueAccordion({ block }: { block: Block }) {
         </span>
       </summary>
       <div className={`border-t px-3 py-3 ${block.cols ? "grid grid-cols-1 md:grid-cols-2 gap-4 items-start" : "space-y-4"}`} style={{ borderColor: "var(--border)" }}>
-        {block.subTables.map((st, si) => (
+        {block.subTables.map((st, si) => {
+          const bar = barColumn(st);
+          return (
           <div key={si}>
             {st.title && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{st.title}</div>}
 
@@ -285,7 +324,14 @@ function LeagueAccordion({ block }: { block: Block }) {
                       <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank ?? i + 1}</td>
                       <td className="py-1 px-1.5 font-medium whitespace-nowrap"><NameCell r={r} /></td>
                       {r.cells.map((c, j) => (
-                        <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{c}</td>
+                        bar && j === bar.index ? (
+                          <td key={j} className="py-1 px-1.5 tabular-nums" style={mono}>
+                            {/* format keeps this page's own cell formatting (".612", not "0.6") */}
+                            <DataBar v={cellNum(c)} max={bar.max} format={() => String(c)} width={88} label={st.columns[j]} />
+                          </td>
+                        ) : (
+                          <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{c}</td>
+                        )
                       ))}
                     </tr>
                   ))}
@@ -293,7 +339,8 @@ function LeagueAccordion({ block }: { block: Block }) {
               </table>
             </div>
           </div>
-        ))}
+          );
+        })}
         {block.cutNote && (
           <div className="text-[10px] text-[var(--text-dim)] pt-0.5 md:col-span-2">
             <span className="inline-block w-2 h-2 rounded-sm align-middle mr-1.5" style={{ background: "rgba(34,197,94,0.45)" }} aria-hidden />

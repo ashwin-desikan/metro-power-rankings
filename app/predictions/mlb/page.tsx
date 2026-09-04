@@ -151,7 +151,7 @@ function DivisionTable({
               <th className="px-1.5 py-2 text-right font-semibold">xW</th>
               <th className="px-1.5 py-2 text-right font-semibold">Playoff</th>
               <th className={`px-1.5 py-2 text-right font-semibold ${SMCOL}`}>Div</th>
-              <th className={`px-1.5 py-2 text-right font-semibold ${SMCOL}`}>Pen</th>
+              <th className={`px-1.5 py-2 text-right font-semibold ${SMCOL}`}>Pennant</th>
               <th className="px-1.5 py-2 text-right font-semibold">Series</th>
             </tr>
           </thead>

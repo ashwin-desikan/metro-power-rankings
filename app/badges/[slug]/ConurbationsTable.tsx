@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { DataBar } from '@/app/_shared/DataBar';
 import Link from 'next/link';
 import { formatPop, fmtKm } from '@/lib/shared';
 import { tierAnchor, computeTier } from '@/lib/tiers';
@@ -76,11 +77,15 @@ function ConurbationRowView({
   position,
   isOpen,
   onToggle,
+  contextMax,
 }: {
   row: EnrichedConurbationRow;
   position: number;
   isOpen: boolean;
   onToggle: () => void;
+  /** The value column’s own maximum over the FULL filtered set, computed
+   *  once by the table. Null leaves the cell a bare number. */
+  contextMax: number | null;
 }) {
   const tier = computeTier(row.score);
   const rankLabel =
@@ -167,10 +172,20 @@ function ConurbationRowView({
         ) : null}
       </td>
       <td
-        className="py-3 pr-4 text-right font-bold"
+        className={`py-3 pr-4 font-bold${contextMax === null ? ' text-right' : ''}`}
         style={{ fontFamily: "'JetBrains Mono', monospace", color: 'var(--accent)' }}
       >
-        {formatContext(row.contextValue)}
+        {contextMax === null ? (
+          formatContext(row.contextValue)
+        ) : (
+          <DataBar
+            v={row.contextValue}
+            max={contextMax}
+            format={formatContext}
+            width={128}
+            label={row.contextLabel}
+          />
+        )}
       </td>
       <td
         className="py-3 pr-4 text-right text-sm"
@@ -411,6 +426,17 @@ export default function ConurbationsTable({
     });
   }, [rows, searchTerm, searchScope]);
 
+  // 🔴 The value column’s maximum, over the FULL filtered set and computed
+  // ONCE, not per row and not per tier section: the tiers are strata of one
+  // metric, so rescaling inside each would draw a tier-D cluster as long as a
+  // tier-A one. Null when a value is negative or the column is flat.
+  const contextMax = useMemo<number | null>(() => {
+    const vals = filtered.map((r) => r.contextValue).filter((v) => Number.isFinite(v));
+    if (vals.length === 0 || vals.some((v) => v < 0)) return null;
+    const mx = Math.max(...vals);
+    return mx > 0 ? mx : null;
+  }, [filtered]);
+
   // Group filtered rows by tier
   const tieredGroups = useMemo(() => {
     const m = new Map<string, EnrichedConurbationRow[]>();
@@ -564,6 +590,7 @@ export default function ConurbationsTable({
                       position={positionBySlug.get(r.slug) ?? r.rank}
                       isOpen={openSlug === r.slug}
                       onToggle={() => setOpenSlug(openSlug === r.slug ? null : r.slug)}
+                      contextMax={contextMax}
                     />
                   ))}
                 </tbody>
