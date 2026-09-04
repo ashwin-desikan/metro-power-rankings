@@ -53,7 +53,7 @@ import sys
 import urllib.error
 import urllib.request
 
-from cdp_clip import capture_clip, find_chrome
+from cdp_clip import capture_clip, capture_shot, find_chrome
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -158,19 +158,40 @@ def paths(work, seg):
 # ------------------------------------------------------------------ steps
 
 def step_shots(segs, work, force=False):
+    """One still per segment, at EXACTLY 1080x1920, captured over CDP.
+
+    🔴 This used to shell out to `chrome --headless --screenshot` with
+    --window-size=540,960 and trust it to produce 1080x1920. It does not any
+    more: --window-size sizes the WINDOW, and headless=new (what plain
+    --headless became in Chrome 132) leaves 540x820 of page, so the still
+    arrived at 1080x1640 and the render step's scale+pad added black bars.
+    The clips step was fixed for this in cdp_clip.py and the stills path was
+    not, so the two capture paths disagreed and only one of them said so.
+    Both now go through Emulation.setDeviceMetricsOverride, which sizes the
+    PAGE. Costs this step the websocket-client dependency the clips step
+    already had.
+    """
     need(CHROME, "install Google Chrome, or point CHROME at another Chromium")
+    try:
+        import websocket  # noqa: F401
+    except ImportError:
+        die("pip install websocket-client (the stills are captured over CDP too "
+            "since 2026-09-04 -- see step_shots for why)")
     for s in segs:
         out = paths(work, s)["shot"]
         if os.path.exists(out) and not force:
             print(f"  {s['slug']:18} skip (exists)")
             continue
-        subprocess.run([CHROME, "--headless", "--disable-gpu", "--hide-scrollbars",
-                        "--force-device-scale-factor=2", f"--window-size={W // 2},{H // 2}",
-                        "--virtual-time-budget=14000", f"--screenshot={out}", s["url"]],
-                       capture_output=True)
-        if not os.path.exists(out):
-            die(f"screenshot failed for {s['url']}")
-        print(f"  {s['slug']:18} {os.path.getsize(out) // 1024:5d} KB  {s['url']}")
+        try:
+            w, h = capture_shot(s["url"], out, chrome=CHROME)
+        except Exception as e:
+            die(f"screenshot failed for {s['url']}: {e}")
+        if (w, h) != (W, H):
+            # Never pad silently. A wrong size here is a black bar in the
+            # finished reel, which is exactly what nobody noticed for a month.
+            die(f"{s['slug']}: captured {w}x{h}, expected {W}x{H} -- the "
+                f"viewport override did not take; do not render this")
+        print(f"  {s['slug']:18} {os.path.getsize(out) // 1024:5d} KB  {w}x{h}  {s['url']}")
 
 
 def step_clips(segs, work, force=False):

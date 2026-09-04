@@ -82,6 +82,10 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT_SIM = os.path.join(ROOT, "public", "data", "nfl-sim.json")
 OUT_PRED = os.path.join(ROOT, "public", "data", "nfl-predictions.json")
 OUT_HIST = os.path.join(ROOT, "public", "data", "nfl-sim-history.json")
+# Written by build_meta_market.py, which must run BEFORE this builder in the
+# runner. Read-only here and soft: a missing or stale meta-market must never
+# fail the model build, it just means a ledger entry freezes without one.
+IN_META = os.path.join(ROOT, "public", "data", "nfl-meta-market.json")
 
 SEASON = 2026
 STRENGTH_SEASONS = [(2025, 0.55), (2024, 0.30), (2023, 0.15)]
@@ -775,9 +779,42 @@ def brier2(p_home, outcome_home_win):
     return (p_home - o) ** 2 + ((1 - p_home) - (1 - o)) ** 2
 
 
+def load_meta_market():
+    """{event_id: {"pH", "books", "sd_logodds"}} from nfl-meta-market.json.
+
+    The consensus of the posted books is a better answer to "what does the
+    market think" than the one price ESPN happens to carry, and in week 1 of
+    2026 it was a much better one: ESPN had no moneyline at all, so the market
+    column was a spread put through Phi, quantised onto the half-point grid and
+    leaning 1.6 points against the three books that were quoting. Entries
+    freeze BOTH -- `market` stays exactly what it was, so nothing already
+    graded moves, and `meta_market` is the new column beside it."""
+    if not os.path.exists(IN_META):
+        return {}
+    try:
+        doc = json.load(io.open(IN_META, encoding="utf-8"))
+    except (OSError, ValueError):
+        print("meta-market file will not parse; freezing without it")
+        return {}
+    out = {}
+    for g in doc.get("games", []):
+        c = g.get("consensus") or {}
+        if c.get("p_home") is None:
+            continue
+        out[str(g.get("event_id"))] = {
+            "pH": round(float(c["p_home"]), 4),
+            "books": c.get("books"),
+            "sd_logodds": c.get("sd_logodds"),
+        }
+        if c.get("derived_only"):
+            out[str(g.get("event_id"))]["derived_only"] = True
+    return out
+
+
 def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso,
-                     lite_ratings=None, leverage_by_gid=None):
+                     lite_ratings=None, leverage_by_gid=None, meta_by_gid=None):
     known = {e["event_id"] for e in ledger}
+    meta_by_gid = meta_by_gid or {}
     # ESPN's scoreboard is the kickoff source, so ungraded entries appended by
     # an earlier run pick their timestamp up (or a rescheduled time) here.
     kick_by_id = {u[0]: u[5] for u in upcoming if len(u) > 5 and u[5]}
@@ -814,6 +851,13 @@ def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso,
             hfa_g = 0.0 if e.get("neutral") else HFA
             e["lite"] = {"pH": round(home_win_prob(lite_ratings[e["home"]], lite_ratings[e["away"]],
                                                     hfa=hfa_g), 4), "backfilled": today_iso}
+        # The meta-market is new as of 2026-09-04. Backfilling it onto an
+        # UNGRADED entry is not a freeze violation: the consensus written today
+        # is today's price on a game nobody has played, not hindsight. Labelled
+        # either way, the same convention `lite` uses.
+        mm = meta_by_gid.get(e["event_id"])
+        if mm is not None and "meta_market" not in e:
+            e["meta_market"] = dict(mm, backfilled=today_iso)
         # leverage is descriptive, not a frozen pick, so it refreshes every
         # run while the game is still upcoming.
         lev = (leverage_by_gid or {}).get(e["event_id"])
@@ -835,6 +879,8 @@ def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso,
                 e["market_brier"] = round(brier2(e["market"]["pH"], hw), 4)
             if e.get("lite") is not None:
                 e["lite_brier"] = round(brier2(e["lite"]["pH"], hw), 4)
+            if e.get("meta_market") is not None:
+                e["meta_brier"] = round(brier2(e["meta_market"]["pH"], hw), 4)
             b = e.get("blend") or e["model"]
             e["blend_brier"] = round(brier2(b["pH"], hw), 4)
             e["pick_correct"] = (e["pick"] == e["result"])
@@ -865,6 +911,9 @@ def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso,
             if spread is not None:
                 entry["market"]["spread"] = spread
             entry["blend"] = {"pH": round(MATCH_BLEND_W * mkt_ph + (1 - MATCH_BLEND_W) * ph, 4)}
+        mm = meta_by_gid.get(gid)
+        if mm is not None:
+            entry["meta_market"] = dict(mm)
         lev = leverage_by_gid.get(gid)
         if lev is not None:
             entry["leverage"] = lev
@@ -888,6 +937,12 @@ def ledger_record(ledger):
     gm = [e for e in g if "market_brier" in e]
     rec["market_graded"] = len(gm)
     rec["market_brier"] = round(sum(e["market_brier"] for e in gm) / len(gm), 4) if gm else None
+    # The meta-market is scored on its OWN graded set and says how big that set
+    # is, because it starts later than the rest and a Brier compared across
+    # different games is not a comparison.
+    gmm = [e for e in g if "meta_brier" in e]
+    rec["meta_graded"] = len(gmm)
+    rec["meta_brier"] = round(sum(e["meta_brier"] for e in gmm) / len(gmm), 4) if gmm else None
     return rec
 
 
@@ -1106,13 +1161,19 @@ def build(sims, today=None):
     hist_doc = upsert_snapshot(hist_doc, today_iso, len(played), hist_rows, HISTORY_KEEP)
 
     results_by_id = {r[0]: (r[1], r[2], r[3], r[4]) for r in results}
+    meta_by_gid = load_meta_market()
     ledger = grade_and_extend(existing_ledger, results_by_id, upcoming, ratings, today_iso,
-                              lite_ratings=r_stats, leverage_by_gid=classic["leverage"])
+                              lite_ratings=r_stats, leverage_by_gid=classic["leverage"],
+                              meta_by_gid=meta_by_gid)
     pred_doc = {
         "meta": {"season": SEASON, "generated_at": today_iso,
                  "match_blend_weight": MATCH_BLEND_W, "horizon_days": WINDOW_DAYS,
-                 "tiers": ["lite", "classic", "market", "blend"],
+                 "tiers": ["lite", "classic", "market", "meta", "blend"],
                  "odds_source": "ESPN posted lines (moneyline, else spread)",
+                 "meta_market_source": "nfl-meta-market.json: DraftKings, FanDuel, "
+                                       "Kalshi and Polymarket, power de-vigged, "
+                                       "posted prices only",
+                 "meta_market_games": len(meta_by_gid),
                  "results_source": "ESPN final scores"},
         "record": ledger_record(ledger),
         "ledger": ledger,
@@ -1129,8 +1190,13 @@ def build(sims, today=None):
 
 def self_test():
     fails = []
+    ran = [0]
 
     def check(name, cond):
+        # 🔴 The count used to be the literal 72 in the print at the bottom. It
+        # was right when it was written and wrong the moment a case was added,
+        # which is a test harness telling you a number it did not measure.
+        ran[0] += 1
         if not cond:
             fails.append(name)
 
@@ -1289,6 +1355,38 @@ def self_test():
                             [], {t: 0.0 for t in TEAMS}, "2026-09-14")
     check("lite-brier-graded", abs(led5[0]["lite_brier"] - 0.32) < 1e-9)
     check("record-lite-brier", abs(ledger_record(led5)["lite_brier"] - 0.32) < 1e-9)
+
+    # ---- the meta-market column ----------------------------------------
+    mm = {"9": {"pH": 0.66, "books": 3, "sd_logodds": 0.05}}
+    up9 = [("9", "2026-10-12", "Buffalo Bills", "New York Jets", 0.62, None, False, -3.0)]
+    led9 = grade_and_extend([], {}, up9, {t: 0.0 for t in TEAMS}, "2026-10-01",
+                            meta_by_gid=mm)
+    e9 = led9[0]
+    check("meta-frozen-at-creation",
+          e9["meta_market"]["pH"] == 0.66 and e9["meta_market"]["books"] == 3
+          and "backfilled" not in e9["meta_market"])
+    check("meta-does-not-move-the-market-column", e9["market"]["pH"] == 0.62)
+    check("meta-does-not-move-the-pick",
+          e9["pick"] == ("H" if e9["blend"]["pH"] >= 0.5 else "A"))
+    # backfill onto an entry frozen before the meta-market existed: labelled,
+    # and only ever onto a game with no result
+    old9 = [{"event_id": "9", "date": "2026-10-12", "home": "Buffalo Bills",
+             "away": "New York Jets", "home_slug": "buffalo-bills",
+             "away_slug": "new-york-jets", "model": {"pH": 0.7}, "pick": "H",
+             "predicted_at": "2026-09-01"}]
+    back9 = grade_and_extend(old9, {}, [], {t: 0.0 for t in TEAMS}, "2026-10-02",
+                             meta_by_gid=mm)
+    check("meta-backfill-labelled",
+          back9[0]["meta_market"].get("backfilled") == "2026-10-02")
+    graded9 = grade_and_extend(back9, {"9": ("Buffalo Bills", "New York Jets", 27, 13)},
+                               [], {t: 0.0 for t in TEAMS}, "2026-10-13", meta_by_gid=mm)
+    check("meta-brier-graded", abs(graded9[0]["meta_brier"] - 2 * (1 - 0.66) ** 2) < 1e-9)
+    rec9 = ledger_record(graded9)
+    check("record-meta-brier",
+          rec9["meta_graded"] == 1 and abs(rec9["meta_brier"] - 2 * (1 - 0.66) ** 2) < 1e-9)
+    check("meta-absent-is-not-an-error",
+          "meta_market" not in grade_and_extend([], {}, up9, {t: 0.0 for t in TEAMS},
+                                                "2026-10-01")[0])
     # futures mapping helpers: line recovery + logodds clamp + a blend that
     # actually moves a market favourite up
     a, b = _fit_rating_from_logodds([(-3.0, -3.0), (-2.0, -1.0), (-1.0, 1.0), (0.0, 3.0)])
@@ -1397,7 +1495,7 @@ def self_test():
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (%d cases)" % 72)
+    print("self-test OK (%d cases)" % ran[0])
 
 
 def main():

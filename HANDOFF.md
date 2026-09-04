@@ -9112,3 +9112,166 @@ changes: `git log origin/main..HEAD --format=%s` and check the LAST line has no
   from the Mac against rankings.citizenofnowhere.org. Untouched, along with the
   suspected letterboxing bug in the older still `shots` step (the fix went into
   `clips` only, so `shots` captures may be 1080x1640 padded to 1080x1920).
+
+
+## 2026-09-04 (afternoon) — cowork (cloud, bridged to the Windows box) → mini and next session: THE MARKET IS FOUR MARKETS, THE CHAMPIONS LEAGUE HAS A LEDGER, AND THE PICKS PAGE STOPPED SHOWING YESTERDAY
+
+Second session of the day, on top of `edf30d68b`. Everything below is one
+build. Ashwin's two asks mid-session are A and B; C and D are the ideas 7/8
+work; E and F are the leftovers from this morning's entry.
+
+### A. 🔴 /play/picks WAS SHOWING THE WHOLE SEASON
+
+Ashwin: "I still see the matches that have already occurred. It makes the page
+super long, and confusing, as this should be focused on games happening that
+weekend or will happen."
+
+He is right and the cause is structural, not cosmetic: `entries` was the WHOLE
+ledger and `SlateTab` mapped every row. A ledger only grows, so the open slate
+sank one round deeper every week. Three states now, in `PicksClient.tsx`:
+
+| state | test | treatment |
+|---|---|---|
+| OPEN | not locked | leads the tab, always visible |
+| LIVE | locked, no result | `Disclosure`, open by default |
+| DONE | `result != null` | `Disclosure` with `desktopOpen={false}`, newest first, capped at `ARCHIVE_MAX = 24`, and a line pointing at the Ledger for the rest |
+
+The Confidence tab had the same shape and a worse bug behind it: `picked` was
+every pick since August, so the slot ladder grew with the season and by March a
+PL player would have been ranking 180 picks with the top slot paying 180 bonus
+points, which is not what "Max bonus this slate" says. It is now scoped to
+unplayed games, with a "Settled slots" archive under it.
+
+### B. THE CHAMPIONS LEAGUE JOINS THE PICKS GAME, WHICH MEANT GIVING IT A LEDGER
+
+`/predictions/ucl` had a table and a list of fixture calls, and no memory: the
+calls were recomputed every run and nothing was ever scored. Pick'em reads a
+LEDGER, so this was the blocker.
+
+`build_ucl_sim.py` now writes **`public/data/ucl-predictions.json`** on the same
+freeze-then-grade contract as the PL and NFL ledgers. `league_phase_fixtures()`
+carries the api-football `fixture_id` (appended LAST, so `f[5]` is still
+`finished` for the index-based readers), grading reads the same committed
+bundle the simulation runs on, and the placeholder-calendar guard that protects
+the fixture calls protects the freeze too: under a placeholder calendar it
+grades but never freezes, or the draw would price the whole league phase at once
+against a date that is not real. 18 entries frozen on the first run.
+
+No market column, deliberately: no public odds file carries the competition, so
+this ledger scores the model alone. Do not blend in a scraped price without a
+source note.
+
+Front end: `lib/picksGame.ts` gains `"ucl"` and an `isThreeWay(league)` helper
+that replaces the four scattered `league === "pl"` checks — that is how the
+Champions League would otherwise have been quietly added as a two-way
+competition. `RADAR_LEAGUES` stays NFL/CFB (no market, no radar).
+
+### C. 🔴 IDEA 7: "THE MARKET" WAS ONE BOOK, AND IT WAS NOT EVEN A PRICE
+
+New builder **`scripts/predictions/build_meta_market.py`** ->
+`public/data/nfl-meta-market.json`. Four books on every upcoming NFL game:
+
+| book | reachable via | week-1 state |
+|---|---|---|
+| DraftKings | ESPN's odds block (the direct DK endpoints 403) | spread only, no moneyline |
+| FanDuel | `sbapi.nj.sportsbook.fanduel.com` content-managed-page | moneylines, 16 games |
+| Kalshi | `api.elections.kalshi.com` KXNFLGAME | bid/ask both sides, 32 games |
+| Polymarket | `gamma-api.polymarket.com` events, slug `nfl-<away>-<home>-<date>` | order book, 33 games |
+
+All four are keyless and all four answered from the Windows box, which is the
+same network the mini is on.
+
+🔴 **The finding that justifies the whole exercise.** ESPN posted no NFL
+moneyline for week 1, so the site's "market" column was the SPREAD put through
+the sim's own Phi curve. That is quantised — four different fixtures came back
+at exactly 0.603 because each was a -3.5 — and it leaned **-1.6 points** against
+the three books that were actually quoting. So the market the Ledger has been
+scoring the model against was, this week, a model. Derived prices are now
+carried and labelled but excluded from the consensus and from the house
+effects, unless a translation is all there is for a game.
+
+🔴 **Identity, not math, is the hard part.** Four naming schemes: ESPN display
+names, FanDuel display names, Kalshi ticker abbreviations, Polymarket
+nicknames. Everything resolves to the ESPN abbreviation and the join key is the
+UNORDERED PAIR, never the date: Kalshi stamps the US local date and Polymarket
+the UTC end date, so one 20:20 ET kickoff is 26SEP09 to one and 2026-09-10 to
+the other. The date is a sanity check with a two-day tolerance; further apart is
+REFUSED and reported, never guessed. `ABBR_ALIAS` carries Kalshi's `JAC`->`JAX`
+and `WAS`->`WSH`.
+
+### D. IDEA 8: POWER DE-VIG AND HOUSE EFFECTS
+
+In `sim_common.py`, so both halves are tested through the builders:
+- `power_devig(raw)` solves `sum(r^k) = 1` by bisection (f is strictly
+  decreasing, so no derivative and no failure mode). Proportional de-vig removes
+  the same FRACTION from every outcome, which is only right if the book spreads
+  its margin evenly; books load it onto longshots. On a two-way market the two
+  agree to a third decimal. On a 32-team futures board with an 18% overround the
+  gap is large, and it lands exactly where the futures feed
+  `fit_rating_from_logodds` — the log-odds of a 0.5% team.
+- 🔴 `house_effects(rows)` measures each book against the consensus of the
+  **OTHER** books on that game. Including it drags every book's own baseline
+  toward its own number and shrinks the very thing being measured, worst for
+  the book with fewest peers. Same leave-one-out correction pollster ratings use.
+- First live run: FanDuel +0.67pp toward home, Kalshi -0.31pp, Polymarket
+  -0.03pp, over 33 games.
+
+Wiring: `build_meta_market.py` runs BEFORE `build_nfl_sim.py` in
+`predictions.sh` and in the YAML fallback, because the NFL builder now freezes
+the consensus into the ledger as `meta_market` (with `meta_brier` on grading and
+`meta_graded`/`meta_brier` in the record). `market` is untouched, so nothing
+already graded moves and the pick still blends model with the single posted
+line — the record stays comparable with every call made before today. The
+meta-market builder is soft ALL the way down: a dead book, or a dead ESPN,
+leaves the previous file in place and exits 0, because it runs under `guarded`
+and must never cost the day its model.
+
+Pages: `/predictions/nfl` gains a **Books (home)** column beside Model;
+`/predictions/scoreboard` gains **"The market is four markets, and they
+disagree"**, a `DivergingBar` board of per-book leans with one max over the full
+set.
+
+### E. THE SIX CFB FCS LEDGER ENTRIES, AND WHY IT MATTERED
+
+Not cosmetic. `grade_and_extend`'s tier backfill required BOTH sides to resolve
+to an FBS id, so six preseason FBS-v-FCS entries carried `model` and no
+`lite`/`classic` — and the Ledger derives each tier's skill from the rows that
+carry it, so lite and classic were being scored on 19 games while model was
+scored on 25. A Brier comparison across different game sets is not a comparison.
+The model already holds one pooled FCS rating (`state["r_fcs"]`, fitted, not
+guessed) and every `*_rating_of` falls through to it, so an unresolved name now
+prices normally and the entry is marked `fcs_opponent`. Both sides unresolved is
+still skipped: that is a resolution failure, not an FBS-v-FCS game.
+
+### F. THE REEL'S STILL `shots` STEP WAS LETTERBOXING, AS SUSPECTED
+
+Confirmed and fixed, though the reel itself still has to be shot from the Mac.
+`step_shots` shelled out to `chrome --headless --screenshot` with
+`--window-size=540,960` and trusted it to give 1080x1920. It does not:
+`--window-size` sizes the WINDOW and `headless=new` (what plain `--headless`
+became in Chrome 132) leaves 540x820 of page, so stills arrived at 1080x1640 and
+the render step's `scale`+`pad` letterboxed them. `clips` was fixed for this in
+`cdp_clip.py` and `shots` was not, so a reel could come back with bars on the
+stills and none on the motion. New `capture_shot()` in `cdp_clip.py` uses
+`Emulation.setDeviceMetricsOverride` like `capture_clip` does, and `step_shots`
+now **fails the run** if the PNG is not 1080x1920 rather than padding it. Cost:
+`shots` needs `websocket-client` too. README updated.
+
+### Also
+- `build_nfl_sim.py`'s self-test printed `"self-test OK (%d cases)" % 72` — a
+  hardcoded literal that was right when written and wrong from the next case on.
+  It counts now (79).
+- Release note: the 2026-09-04 entry was AMENDED rather than a second one added,
+  per lib/releases.ts's own one-block-per-shipping-day rule.
+
+### State on exit
+- Still open: nothing on ideas 7/8 for CFB (the module is NFL-only by design;
+  the shapes generalise but CFB's book coverage has not been checked).
+- The meta-market consensus does NOT feed the pick. That is deliberate for now:
+  changing the pick source mid-season would break the comparability of the
+  record. Revisit at the season break with graded `meta_brier` in hand.
+- Inverse-variance weighting of the books waits on graded history. Equal weight
+  is documented in `meta.consensus`, not hidden.
+- 🔴 THE RELEASE REEL IS STILL NOT SHOT. It needs the Mac; both sessions today
+  were bridged to Windows. The `clips` step has still never run against
+  rankings.citizenofnowhere.org.

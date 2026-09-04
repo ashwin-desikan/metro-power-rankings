@@ -128,8 +128,18 @@ These are all measured on the mini, and each one cost time to discover:
 
 - **Chrome headless, not Playwright.** Playwright is not installed; an
   `npx --no-install playwright --version` that prints a version is reading the
-  npx cache. `--window-size=540,960` with `--force-device-scale-factor=2`
-  yields exactly 1080x1920, so nothing is ever rescaled.
+  npx cache.
+- **Both capture paths go through CDP now (2026-09-04).** `--window-size=540,960`
+  with `--force-device-scale-factor=2` was believed to yield exactly 1080x1920.
+  It does not under `headless=new`, which plain `--headless` became in Chrome
+  132: the window is 540x960 but the *page* is 540x820, so `shots` was writing
+  1080x1640 stills and the render step's `scale`+`pad` quietly letterboxed them.
+  The `clips` step was fixed for this and the stills path was not, which is why
+  a reel could come back with black bars on the stills and none on the motion.
+  `step_shots` now calls `capture_shot()` in `cdp_clip.py`, sets the viewport
+  with `Emulation.setDeviceMetricsOverride`, and **fails the run** if the PNG is
+  not 1080x1920 rather than padding it. Cost: `shots` needs
+  `websocket-client` too, which the `clips` step already required.
 - **Captions are PNG overlays.** This ffmpeg build has neither `drawtext` nor
   `subtitles` (no libfreetype), so text is rendered with Pillow and composited
   via `overlay`. Check `ffmpeg -filters` before assuming otherwise.

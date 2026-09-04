@@ -936,7 +936,8 @@ def upcoming_ap_games(events, today, window_days, ap_ranks):
 
 def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
                      classic_rating_of, today_iso, ap_ranks, poll_label,
-                     poll_fresh, lookup, leverage_by_gid=None, id_by_name=None):
+                     poll_fresh, lookup, leverage_by_gid=None, id_by_name=None,
+                     is_fbs=None):
     known = {e["event_id"] for e in ledger}
     kick_by_id = {u[0]: u[7] for u in upcoming if u[7]}
     leverage_by_gid = leverage_by_gid or {}
@@ -952,10 +953,27 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
         hid = id_by_name.get(e.get("home"))
         aid = id_by_name.get(e.get("away"))
         hfa_g = 0.0 if e.get("neutral") else HFA
-        if lite_rating_of is not None and "lite" not in e and hid is not None and aid is not None:
+        # 🔴 A name that does not resolve to an FBS id is an FCS opponent, and
+        # the model already holds exactly ONE rating for the whole FCS field
+        # (state["r_fcs"], fitted from the pooled FCS results, not guessed).
+        # Every *_rating_of does idx.get(tid, -1) -> -1 -> r_fcs, so passing the
+        # unresolved name straight through lands on it.
+        #
+        # Until 2026-09-04 this backfill required BOTH sides to resolve, so six
+        # preseason FBS-v-FCS entries carried `model` and no `lite`/`classic`.
+        # That is not cosmetic: the Ledger derives each tier's skill from the
+        # rows that carry it, so lite and classic were being scored on 19 games
+        # while model was scored on 25, and a Brier comparison across different
+        # game sets is not a comparison. One unresolved side is an FCS visitor;
+        # BOTH unresolved is not a game this ledger has any business pricing
+        # (the scope is AP Top 25), so it is still skipped.
+        both_unknown = hid is None and aid is None
+        if (hid is None) != (aid is None):
+            e["fcs_opponent"] = True
+        if lite_rating_of is not None and "lite" not in e and not both_unknown:
             e["lite"] = {"pH": round(home_win_prob(lite_rating_of(hid), lite_rating_of(aid),
                                                     hfa_g), 4), "backfilled": today_iso}
-        if classic_rating_of is not None and "classic" not in e and hid is not None and aid is not None:
+        if classic_rating_of is not None and "classic" not in e and not both_unknown:
             e["classic"] = {"pH": round(home_win_prob(classic_rating_of(hid), classic_rating_of(aid),
                                                        hfa_g), 4), "backfilled": today_iso}
         # leverage is descriptive, not a frozen pick, so it refreshes every
@@ -1008,6 +1026,10 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
             entry["lite"] = {"pH": round(home_win_prob(lite_rating_of(h), lite_rating_of(a), hfa), 4)}
         if classic_rating_of is not None:
             entry["classic"] = {"pH": round(home_win_prob(classic_rating_of(h), classic_rating_of(a), hfa), 4)}
+        # Marked at creation as well as on backfill, so the Ledger can say why a
+        # 99% call was never going to separate the tiers.
+        if is_fbs is not None and (is_fbs(h) != is_fbs(a)):
+            entry["fcs_opponent"] = True
         if mkt_ph is not None:
             entry["market"] = {"pH": mkt_ph}
             if spread is not None:
@@ -1490,7 +1512,8 @@ def build(sims, today=None):
                               lite_rating_of, classic_rating_of, today_iso,
                               ap_set, poll_label, poll_fresh, lookup,
                               leverage_by_gid=deluxe_run["leverage"],
-                              id_by_name=id_by_name)
+                              id_by_name=id_by_name,
+                              is_fbs=lambda tid: idx.get(tid, -1) >= 0)
     pred_doc = {
         "meta": {"season": SEASON, "generated_at": today_iso,
                  "match_blend_weight": MATCH_BLEND_W, "horizon_days": WINDOW_DAYS,
@@ -1643,6 +1666,33 @@ def self_test():
     rec9 = ledger_record(graded9)
     check("record-lite-classic-brier", rec9["lite_brier"] is not None
           and rec9["classic_brier"] is not None)
+
+    # An FCS visitor resolves to no FBS id. It must still be priced by every
+    # tier, from the pooled FCS rating, or the tiers end up scored on different
+    # game sets and their Brier scores stop being comparable (2026-09-04).
+    fcs = [{"event_id": "11", "date": "2026-09-12", "home": "Ohio State",
+            "away": "Furman", "home_slug": "ohio-state-cfb", "away_slug": None,
+            "model": {"pH": 0.99}, "pick": "H", "predicted_at": "2026-09-08"}]
+    fcs_out = grade_and_extend(fcs, {}, [], lambda t: 0.0,
+                               lambda t: 20.0 if t == "194" else -18.0,
+                               lambda t: 18.0 if t == "194" else -18.0,
+                               "2026-09-10", {}, "Week 3", True, {},
+                               id_by_name={"Ohio State": "194"})
+    e11 = fcs_out[0]
+    check("fcs-tiers-backfilled", "lite" in e11 and "classic" in e11)
+    check("fcs-priced-from-the-pooled-rating", e11["lite"]["pH"] > 0.95)
+    check("fcs-opponent-marked", e11.get("fcs_opponent") is True)
+
+    # Two unresolved names is not an FBS-v-FCS game, it is a resolution failure,
+    # and pricing it 50/50 would be worse than leaving it alone.
+    ghost = [{"event_id": "12", "date": "2026-09-12", "home": "Nowhere A&M",
+              "away": "Furman", "home_slug": None, "away_slug": None,
+              "model": {"pH": 0.5}, "pick": "H", "predicted_at": "2026-09-08"}]
+    ghost_out = grade_and_extend(ghost, {}, [], lambda t: 0.0, lambda t: 0.0,
+                                 lambda t: 0.0, "2026-09-10", {}, "Week 3", True, {},
+                                 id_by_name={"Ohio State": "194"})
+    check("both-sides-unresolved-still-skipped",
+          "lite" not in ghost_out[0] and "fcs_opponent" not in ghost_out[0])
 
     # leverage refreshes on an ungraded entry every run
     lev_entry = [{"event_id": "10", "date": "2026-09-19", "home": "Ohio State",

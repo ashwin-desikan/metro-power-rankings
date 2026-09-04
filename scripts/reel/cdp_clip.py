@@ -193,6 +193,50 @@ def run_actions(ch, acts, out_dir, seconds):
     return misses
 
 
+def capture_shot(url, out_png, chrome=None, settle=NAV_SETTLE):
+    """One full-viewport still at EXACTLY W x H, over CDP.
+
+    🔴 This exists because `chrome --headless --window-size=540,960 --screenshot`
+    does NOT produce 1080x1920 any more. --window-size sizes the WINDOW, and
+    headless=new (which plain `--headless` became in Chrome 132) gives 540x820
+    of page for a 540x960 window. The still then reached the render step at
+    1080x1640 and ffmpeg's scale+pad added black bars top and bottom -- the
+    letterboxing that was fixed in capture_clip and left in the stills path.
+    Emulation.setDeviceMetricsOverride sizes the PAGE, so the two capture paths
+    now agree by construction rather than by coincidence.
+
+    captureBeyondViewport stays False on purpose: this is a phone-shaped frame
+    of the top of the page, not a full-page capture.
+    """
+    chrome = chrome or find_chrome()
+    if not chrome:
+        raise RuntimeError("no Chrome found; set REEL_CHROME")
+    ch = Chrome(chrome)
+    try:
+        ch.cmd("Page.enable")
+        ch.cmd("Runtime.enable")
+        ch.cmd("Emulation.setDeviceMetricsOverride",
+               width=W // 2, height=H // 2, deviceScaleFactor=2, mobile=False)
+        ch.cmd("Page.navigate", url=url)
+        time.sleep(settle)
+        ch.js("document.documentElement.style.scrollBehavior='auto'")
+        png = ch.shot()
+    finally:
+        ch.close()
+    os.makedirs(os.path.dirname(os.path.abspath(out_png)) or ".", exist_ok=True)
+    with open(out_png, "wb") as f:
+        f.write(png)
+    return png_size(png)
+
+
+def png_size(png):
+    """(width, height) from a PNG's IHDR, so a wrong-sized capture is caught
+    where it happens rather than as black bars in the finished reel."""
+    if len(png) < 24 or png[:8] != b"\x89PNG\r\n\x1a\n":
+        return (0, 0)
+    return (int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big"))
+
+
 def capture_clip(url, acts, seconds, out_mp4, chrome=None, work=None):
     chrome = chrome or find_chrome()
     if not chrome:

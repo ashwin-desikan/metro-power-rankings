@@ -69,6 +69,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 FOOT = os.path.join(ROOT, "public", "data", "football")
 OUT = os.path.join(ROOT, "public", "data", "ucl-sim.json")
+# The frozen-call ledger, same shape as pl-predictions.json so /play/picks
+# and /predictions/scoreboard can read it with no league special-casing.
+OUT_PRED = os.path.join(ROOT, "public", "data", "ucl-predictions.json")
 WEIGHTS_PATH = os.path.join(HERE, "ucl_strength_weights.json")
 
 SEASON = "2026-27"
@@ -139,8 +142,11 @@ def load_weights():
 
 
 def league_phase_fixtures(league_id=LEAGUE_ID):
-    """[(home_key, away_key, kickoff, hg, ag, finished)] + {key: (name, country)}
-    from the committed api-football bundle. Key = api team_id."""
+    """[(home_key, away_key, kickoff, hg, ag, finished, fixture_id)] +
+    {key: (name, country)} from the committed api-football bundle.
+    Key = api team_id. fixture_id is last so index-based readers (f[5] is
+    still `finished`) keep working; it exists so the ledger has a stable
+    event id that survives a rescheduled kickoff or a renamed club."""
     doc = load_json(FOOT, "live-competitions-2026.json")
     comp = next(c for c in doc["competitions"] if c["league_id"] == league_id)
     fixtures, teams = [], {}
@@ -154,7 +160,8 @@ def league_phase_fixtures(league_id=LEAGUE_ID):
             teams[t["team_id"]] = (t.get("lookup") or t.get("name"), t.get("country"))
         done = f.get("status") in FINISHED and f.get("home_goals") is not None and f.get("away_goals") is not None
         fixtures.append((h["team_id"], a["team_id"], f.get("kickoff"),
-                         f.get("home_goals"), f.get("away_goals"), done))
+                         f.get("home_goals"), f.get("away_goals"), done,
+                         f.get("fixture_id")))
     return fixtures, teams
 
 
@@ -386,7 +393,7 @@ def simulate(S, w, fixtures, teams, sims, seed=None):
         pts = {t: 0 for t in keys}
         gd = {t: 0 for t in keys}
         gf = {t: 0 for t in keys}
-        for h, a, _ko, hg, ag, done in fixtures:
+        for h, a, _ko, hg, ag, done, _fid in fixtures:
             if not done:
                 lh, la = match_lambdas(S, w, h, a, noise)
                 hg, ag = poisson(lh, rnd), poisson(la, rnd)
@@ -413,6 +420,144 @@ def simulate(S, w, fixtures, teams, sims, seed=None):
             if i < 24:
                 acc[t]["top24"] += 1
     return acc, pos_samples, pts_sum
+
+
+
+# ------------------------------------------------------- the frozen ledger
+#
+# /predictions/ucl had a table and a set of fixture calls but no MEMORY: the
+# calls were recomputed every run and nothing was ever scored. That also kept
+# the Champions League out of /play/picks, which reads a ledger, not a call
+# list. This section adds the same freeze-then-grade contract the PL and NFL
+# ledgers run on:
+#
+#   FREEZE  a tie is priced ONCE, when it enters the fixture horizon, and the
+#           entry is never repriced afterwards. That is the whole point: a
+#           prediction you can revise is not a prediction.
+#   GRADE   from the same committed api-football bundle the simulation itself
+#           reads, so the ledger can never disagree with the table above it.
+#
+# There is no market column here and there deliberately isn't one: no public
+# odds file carries the Champions League, so this ledger scores the model
+# alone. Do not blend in a scraped price without a source note.
+
+
+def iso_z(ko):
+    """Bundle kickoffs are '+00:00'; the other ledgers store 'Z'. One shape,
+    because lib/picksGame's lockTime does a bare Date.parse on it."""
+    try:
+        return (datetime.fromisoformat(ko.replace("Z", "+00:00"))
+                .astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+    except (AttributeError, TypeError, ValueError):
+        return ko
+
+
+def club_slug(name):
+    """The site's own club slug, from public/data/football/slug-lookup.json --
+    the same table lib/football's getFootballClubByName consults, so a ledger
+    row links to the club page that exists rather than to a slug guessed from
+    the name. Falls back to plain slugification so an unmapped club still gets
+    a stable key instead of an empty one."""
+    sl = load_json(FOOT, "slug-lookup.json")
+    k = re.sub(r"[^a-z0-9]+", " ", (name or "").lower()).strip()
+    return sl.get(k) or re.sub(r"[^a-z0-9]+", "-", (name or "").lower()).strip("-")
+
+
+def brier3(p, outcome):
+    """Three-way Brier, the convention build_pl_sim.py grades on, so the two
+    football ledgers are directly comparable on the Ledger page."""
+    o = {"H": (1, 0, 0), "D": (0, 1, 0), "A": (0, 0, 1)}[outcome]
+    return sum((pi - oi) ** 2 for pi, oi in zip(p, o))
+
+
+def grade_and_extend(ledger, fixtures, names, S, weights, now, horizon,
+                     placeholder=False):
+    """Grade ungraded entries, then freeze a call for every league-phase tie
+    inside the horizon. Mutates and returns ledger.
+
+    `placeholder` is the same guard the fixture calls use: until UEFA's real
+    calendar propagates, the draw stamps every remaining tie with one kickoff.
+    Freezing then would price the whole league phase at once against a date
+    that is not real, so extension is skipped while grading continues."""
+    today_iso = now.strftime("%Y-%m-%d")
+    by_id = {f[6]: f for f in fixtures if f[6] is not None}
+    known = {e.get("event_id") for e in ledger}
+
+    for e in ledger:
+        f = by_id.get(_as_int(e.get("event_id")))
+        if f is None:
+            continue
+        _h, _a, ko, hg, ag, done, _fid = f
+        if ko and not e.get("result"):
+            e["kickoff"] = iso_z(ko)      # a rescheduled tie moves its lock
+        if e.get("result") or not done:
+            continue
+        res = "H" if hg > ag else ("A" if ag > hg else "D")
+        e["result"] = res
+        e["score"] = "%d-%d" % (hg, ag)
+        e["graded_at"] = today_iso
+        e["model_brier"] = round(brier3((e["model"]["pH"], e["model"]["pD"],
+                                         e["model"]["pA"]), res), 4)
+        e["pick_correct"] = (e["pick"] == res)
+
+    if not placeholder:
+        for h, a, ko, _hg, _ag, done, fid in fixtures:
+            if done or fid is None or str(fid) in known or not ko:
+                continue
+            try:
+                when = datetime.fromisoformat(ko.replace("Z", "+00:00"))
+            except (AttributeError, ValueError):
+                continue
+            if not (now - timedelta(hours=3) <= when <= horizon):
+                continue
+            if h not in names or a not in names:
+                continue
+            lh, la = match_lambdas(S, weights, h, a)
+            ph, pd, pa = outcome_probs(lh, la)
+            hn, an = names[h], names[a]
+            ledger.append({
+                "event_id": str(fid),
+                "date": when.astimezone(timezone.utc).strftime("%Y-%m-%d"),
+                "kickoff": iso_z(ko),
+                "home": hn, "away": an,
+                "home_slug": club_slug(hn), "away_slug": club_slug(an),
+                "model": {"pH": round(ph, 4), "pD": round(pd, 4), "pA": round(pa, 4)},
+                "predicted_at": today_iso,
+                "pick": "H" if ph >= max(pd, pa) else ("A" if pa >= pd else "D"),
+            })
+    ledger.sort(key=lambda e: (e.get("date") or "", e.get("home") or ""))
+    return ledger
+
+
+def _as_int(v):
+    try:
+        return int(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def ledger_record(ledger):
+    g = [e for e in ledger if e.get("result")]
+    return {
+        "graded": len(g),
+        "pick_correct": sum(1 for e in g if e.get("pick_correct")),
+        "model_brier": round(sum(e["model_brier"] for e in g) / len(g), 4) if g else None,
+        "decisive_graded": sum(1 for e in g if e["result"] != "D"),
+    }
+
+
+def load_ledger():
+    if not os.path.exists(OUT_PRED):
+        return []
+    try:
+        with open(OUT_PRED, encoding="utf-8") as fh:
+            got = json.load(fh).get("ledger", [])
+        return got if isinstance(got, list) else []
+    except (OSError, ValueError):
+        # A truncated or hand-edited file must not silently wipe the history:
+        # fail the run instead, the same posture build() takes on a stale bundle.
+        raise SystemExit("ucl-predictions.json exists but will not parse; "
+                         "fix or delete it deliberately before rebuilding")
 
 
 # ------------------------------------------------------------------- output
@@ -459,13 +604,13 @@ def build(sims, dry):
     now = datetime.now(timezone.utc)
     horizon = now + timedelta(days=FIXTURE_HORIZON_DAYS)
     ko_counts = defaultdict(int)
-    for _h, _a, ko, _hg, _ag, done in fixtures:
+    for _h, _a, ko, _hg, _ag, done, _fid in fixtures:
         if ko and not done:
             ko_counts[ko] += 1
     placeholder = max(ko_counts.values(), default=0) > 18
     calls = []
     if not placeholder:
-        for h, a, ko, _hg, _ag, done in fixtures:
+        for h, a, ko, _hg, _ag, done, _fid in fixtures:
             if done or not ko:
                 continue
             try:
@@ -482,6 +627,29 @@ def build(sims, dry):
                 "pick": "H" if ph >= max(pd, pa) else ("A" if pa >= pd else "D"),
             })
         calls.sort(key=lambda c: c["date"])
+
+    # The ledger runs off the same fixtures, the same strengths and the same
+    # horizon as the calls above, so a call and its frozen entry can never
+    # disagree. Grading happens even under a placeholder calendar; freezing
+    # does not (see grade_and_extend).
+    ledger = grade_and_extend(load_ledger(), fixtures, names, S, weights,
+                              now, horizon, placeholder=placeholder)
+    pred = {
+        "meta": {
+            "league": "UEFA Champions League",
+            "season": SEASON,
+            "generated_at": now.strftime("%Y-%m-%d"),
+            "horizon_days": FIXTURE_HORIZON_DAYS,
+            "model": "ucl-poisson-v2",
+            "market": "none - no public odds file carries the Champions League, "
+                      "so this ledger scores the model alone",
+            "results_source": "api-football league-phase bundle "
+                              "(public/data/football/live-competitions-2026.json)",
+            "calendar_placeholder": placeholder,
+        },
+        "record": ledger_record(ledger),
+        "ledger": ledger,
+    }
 
     out = {
         "meta": {
@@ -509,10 +677,20 @@ def build(sims, dry):
         for r in rows[:10]:
             print("  %-28s champ %5.2f%%  top8 %5.1f%%  xPts %s" %
                   (r["name"], r["p_champion"], r["p_top8"], r["exp_pts"]))
+        print("DRY RUN — ledger: %d entries, %d graded, model Brier %s"
+              % (len(ledger), pred["record"]["graded"], pred["record"]["model_brier"]))
+        for e in ledger[-5:]:
+            print("  %s  %-26s v %-26s pick %s%s"
+                  % (e["date"], e["home"], e["away"], e["pick"],
+                     ("  -> " + e["result"] + " " + e.get("score", "")) if e.get("result") else ""))
         return out
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
+    with open(OUT_PRED, "w", encoding="utf-8") as f:
+        json.dump(pred, f, ensure_ascii=False, separators=(",", ":"))
     print("wrote %s (%d clubs, %d fixture calls)" % (os.path.relpath(OUT, ROOT), len(rows), len(calls)))
+    print("wrote %s (%d ledger entries, %d graded)"
+          % (os.path.relpath(OUT_PRED, ROOT), len(ledger), pred["record"]["graded"]))
     return out
 
 
@@ -548,6 +726,57 @@ def self_test():
     order = rank_table({"x": 6, "y": 6, "z": 3}, {"x": 2, "y": 5, "z": 0},
                        {"x": 4, "y": 4, "z": 1}, ["x", "y", "z"], rnd)
     check("rank by pts then gd", order == ["y", "x", "z"])
+
+    # ---- the ledger contract -------------------------------------------
+    check("three-way Brier matches the PL convention",
+          abs(brier3((0.7, 0.2, 0.1), "H") - (0.09 + 0.04 + 0.01)) < 1e-9)
+    check("Brier punishes the wrong call harder",
+          brier3((0.7, 0.2, 0.1), "A") > brier3((0.7, 0.2, 0.1), "H"))
+    check("kickoffs normalise to the Z shape lockTime parses",
+          iso_z("2026-09-08T16:45:00+00:00") == "2026-09-08T16:45:00Z")
+    check("a bad kickoff is passed through, never crashed on",
+          iso_z(None) is None and iso_z("nonsense") == "nonsense")
+
+    now_t = datetime(2026, 9, 8, 12, 0, tzinfo=timezone.utc)
+    hor_t = now_t + timedelta(days=FIXTURE_HORIZON_DAYS)
+    S_t = {1: 0.20, 2: -0.20}
+    names_t = {1: "Arsenal", 2: "Real Madrid"}
+    fx = [
+        # inside the horizon and unplayed -> freezes
+        (1, 2, "2026-09-10T19:00:00+00:00", None, None, False, 900001),
+        # played -> grades, never freezes
+        (2, 1, "2026-09-01T19:00:00+00:00", 2, 1, True, 900002),
+        # beyond the horizon -> untouched until it enters the window
+        (1, 2, "2026-11-01T19:00:00+00:00", None, None, False, 900003),
+    ]
+    led = grade_and_extend([], fx, names_t, S_t, w, now_t, hor_t)
+    check("freezes only ties inside the horizon", len(led) == 1)
+    check("the frozen entry carries a string event id and a Z kickoff",
+          led[0]["event_id"] == "900001" and led[0]["kickoff"].endswith("Z"))
+    check("the frozen entry is a full three-way call",
+          abs(sum(led[0]["model"][k] for k in ("pH", "pD", "pA")) - 1.0) < 0.02
+          and led[0]["pick"] in "HDA")
+
+    # a call already in the ledger is graded, never repriced
+    frozen = dict(led[0]); frozen["event_id"] = "900002"
+    frozen["model"] = {"pH": 0.25, "pD": 0.25, "pA": 0.50}; frozen["pick"] = "A"
+    led2 = grade_and_extend([frozen], fx, names_t, S_t, w, now_t, hor_t)
+    got = next(e for e in led2 if e["event_id"] == "900002")
+    check("a played tie grades from the bundle",
+          got["result"] == "H" and got["score"] == "2-1" and got["pick_correct"] is False)
+    check("grading never reprices the frozen call", got["model"]["pA"] == 0.50)
+    check("regrading is idempotent",
+          grade_and_extend(led2, fx, names_t, S_t, w, now_t, hor_t) is led2
+          and sum(1 for e in led2 if e.get("result")) == 1)
+    check("the record counts what it says it counts",
+          ledger_record(led2)["graded"] == 1 and ledger_record(led2)["pick_correct"] == 0)
+
+    # the draw's placeholder calendar must not freeze the whole league phase
+    led3 = grade_and_extend([], fx, names_t, S_t, w, now_t, hor_t, placeholder=True)
+    check("a placeholder calendar grades but never freezes", led3 == [])
+
+    check("club slugs come from the site's own lookup",
+          club_slug("Paris Saint-Germain") == "paris-saint-germain")
 
     keys = ["t%02d" % i for i in range(36)]
     S36 = {k: 0.0 for k in keys}

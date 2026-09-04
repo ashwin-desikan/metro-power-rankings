@@ -23,6 +23,14 @@ guarded "self-test PL"  "$PY" scripts/predictions/build_pl_sim.py --self-test
 guarded "self-test UCL" "$PY" scripts/predictions/build_ucl_sim.py --self-test
 guarded "self-test NFL" "$PY" scripts/predictions/build_nfl_sim.py --self-test
 
+# The meta-market MUST run before the NFL model: build_nfl_sim.py reads
+# public/data/nfl-meta-market.json when it freezes a ledger entry, so running it
+# after would freeze today's calls against yesterday's consensus. It is soft all
+# the way down (a book being unreachable leaves the previous file in place and
+# exits 0), which is why `guarded` is safe here.
+guarded "self-test the meta-market"         "$PY" scripts/predictions/build_meta_market.py --self-test
+guarded "rebuild the NFL meta-market"       "$PY" scripts/predictions/build_meta_market.py
+
 guarded "rebuild the Premier League model"   "$PY" scripts/predictions/build_pl_sim.py
 guarded "rebuild the Champions League model" "$PY" scripts/predictions/build_ucl_sim.py
 guarded "rebuild the NFL model"              "$PY" scripts/predictions/build_nfl_sim.py
@@ -46,6 +54,8 @@ commit_paths "Auto: refresh PL + UCL + NFL prediction models [vercel skip]" \
   public/data/ucl-sim.json \
   public/data/nfl-sim.json \
   public/data/nfl-predictions.json \
+  public/data/nfl-meta-market.json \
+  public/data/ucl-predictions.json \
   public/data/pl-sim-history.json \
   public/data/nfl-sim-history.json
 
