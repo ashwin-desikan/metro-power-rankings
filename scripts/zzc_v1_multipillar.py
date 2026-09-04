@@ -79,15 +79,28 @@ PRESTIGE = {
     # continents. Handball 1.2 to 1.0, volleyball 1.2 to 1.1, tennis 0.7 to 0.9.
     "Volleyball": 1.1, "Handball": 1.0,
     "Athletics": 1.0,   # the foundational Olympic sport (track & field); lifted above the 0.5 Olympic default
-    # Swimming lifted 0.5 to 0.75 on 2026-09-04. Found by reading Australia's
-    # inputs rather than its outputs: 110.80 of raw, more than its cricket, was
-    # being squashed to 8.4 and left below a rugby union side that is struggling.
-    # The bare Olympic default was filing the second-largest sport at the Games
-    # alongside the quadrennial single-discipline ones. Swimming has a biennial
-    # world championship that is a genuine second pinnacle, year-round broadcast
-    # reach and standalone global names, which the modern pentathlons do not.
-    # It sits below athletics, which remains the one universal Olympic sport.
-    "Swimming": 0.75,
+    # Swimming: 0.5 to 0.75 and then down to 0.27, both on 2026-09-04. The lift
+    # was made on Australia's inputs and it was the wrong read of them, and the
+    # right number turns out to be well BELOW the Olympic default rather than
+    # above it. Ashwin's objection was that United States swimming at 18.8 sat
+    # third in that country's own column, ahead of baseball and women's football.
+    #
+    # The reason he is right is visible in the raw. The United States' swimming
+    # and athletics raws are 194 and 187, all but identical: by medal volume it
+    # is as dominant in the pool as on the track. But those two sports are not
+    # comparable measures of sporting merit, because a swimming medal table is
+    # partly an infrastructure table. Kenya and Ethiopia can win the 10,000m
+    # without a facility; nobody wins the 400m freestyle without a country full
+    # of 50m pools. Athletics is contested by everyone and swimming is contested
+    # by whoever built the pools, so an equal medal haul in the two is not an
+    # equal achievement, and a board that scores them alike is measuring GDP.
+    # Swimming also awards about 35 golds a Games, which compounds it.
+    #
+    # 0.27 is calibrated, not derived: it is the value that brings the United
+    # States to 6.8, which is the ceiling Ashwin set. Treat it as a placeholder
+    # for the thing actually missing, which is event-count and access
+    # normalisation applied to every multi-event Olympic sport at once.
+    "Swimming": 0.27,
     # Artistic gymnastics lifted 0.5 to 0.75 on 2026-09-04, on the same argument
     # and in the same tier. The FIG world championships run in every non-Games
     # year, the sport carries names known outside it, and it was sitting with the
