@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { leagueStatusFor, clubFootballStatus, LeagueStatusTag, type LeagueStatus } from "@/lib/leagueStatus";
-import { catalogByFamily, boardLabelFor, SPORTS_FEATURES, type CatalogEntry } from "@/lib/sportsCatalog";
+import { catalogByFamily, boardLabelFor, familyLabel, SPORTS_FEATURES, type CatalogEntry } from "@/lib/sportsCatalog";
 
 // Client-side desktop nav. Replaces the pure-CSS hover dropdowns that were
 // failing on touch and slow-hover environments. Each dropdown is now a
@@ -231,7 +231,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Dropdown id="data" label="Geography" href="/geography" openId={openId} setOpenId={setOpenId} minWidth={480}>
         <div className="p-2 grid grid-cols-2 gap-x-4">
           <div>
-            <MenuGroupLabel>Places &amp; directories</MenuGroupLabel>
+            <MenuGroupLabel>🗺️ Places &amp; directories</MenuGroupLabel>
             <MenuLink href="/rankings" title="Metro Power Rankings" />
             <MenuLink href="/ground-floor" title="The Ground Floor" />
             <MenuLink href="/countries" title="Countries" />
@@ -242,7 +242,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/matchups/london-vs-new-york" title="Matchups" />
           </div>
           <div>
-            <MenuGroupLabel>Power &amp; people</MenuGroupLabel>
+            <MenuGroupLabel>👑 Power &amp; people</MenuGroupLabel>
             <MenuLink href="/power" title="The Nowhere 100" />
             <MenuLink href="/leaders" title="World Leaders" />
             <MenuLink href="/power-atlas" title="The Power Atlas" />
@@ -252,28 +252,28 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/constitutions" title={"The World's Constitutions"} />
             <MenuLink href="/constitutions/leaders" title="Who Outlasts Whom" />
             <MenuLink href="/mayors" title="Mayors of the World" />
-            <MenuGroupLabel>Geopolitics</MenuGroupLabel>
+            <MenuGroupLabel>🤝 Geopolitics</MenuGroupLabel>
             <MenuLink href="/orgs" title="Alliances &amp; Orgs" />
             <MenuLink href="/conflicts" title="Interstate Wars" />
             {/* The Order layer reads business, sport and culture as well as
                 geography, so /order is a peer route rather than a child of
                 this hub. It sits here until it has enough boards to earn its
                 own top-level menu. */}
-            <MenuGroupLabel>Political order</MenuGroupLabel>
+            <MenuGroupLabel>⚖️ Political order</MenuGroupLabel>
             <MenuLink href="/order" title="🧭 The Order layer" />
             <MenuLink href="/order/grid" title="The Order Grid" />
             <MenuLink href="/order/trajectory" title="Direction of Travel" />
             {/* The past and the future, side by side. /predictions had the
                 same orphan bug the Time Machine hub was built to fix: it was
                 in neither nav and reachable only by knowing the URL. */}
-            <MenuGroupLabel>Across time</MenuGroupLabel>
-            <MenuLink href="/time-machine" title="🕰️ The Time Machine" />
+            <MenuGroupLabel>🕰️ Across time</MenuGroupLabel>
+            <MenuLink href="/time-machine" title="The Time Machine" />
             <MenuLink href="/predictions" title="🔮 Predictions" />
             <MenuLink href="/predictions/scoreboard" title="📓 The Ledger" />
           </div>
         </div>
         <div className="border-t px-2 py-1.5 flex gap-2" style={{ borderColor: "var(--border)" }}>
-          <MenuLink href="/badges" title="Badges" />
+          <MenuLink href="/badges" title="🏅 Badges" />
           <MenuLink href="/random" title="🎲 Random metro" />
         </div>
       </Dropdown>
@@ -287,7 +287,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             >
               Zone Zero Sports Hub <span aria-hidden className="text-[var(--text-dim)]">→</span>
             </a>
-            <MenuGroupLabel>Across all sports</MenuGroupLabel>
+            <MenuGroupLabel>🏟️ Across all sports</MenuGroupLabel>
             {SPORTS_FEATURES.map((f) => (
               <SportsFeatureLink key={f.href} href={f.href} label={f.label} live={f.live} />
             ))}
@@ -295,7 +295,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
           <div className="p-2" style={{ columnCount: 3, columnGap: "0.75rem" }}>
             {sportsFamilies.map((g) => (
               <div key={g.family} className="mb-1.5" style={{ breakInside: "avoid" }}>
-                <MenuGroupLabel>{g.family}</MenuGroupLabel>
+                <MenuGroupLabel>{familyLabel(g.family)}</MenuGroupLabel>
                 {g.entries.map((e) => (
                   <SportsMegaItem key={e.href} entry={e} />
                 ))}
@@ -355,37 +355,37 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       {/* Business: the money hub's tabs plus the money-adjacent directory pages.
           Mirrors the Culture pattern - marquee destination first, tabs below. */}
       <Dropdown id="business" label="Business" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="/business" title="Business of the Metros →" />
+        <DropdownItem href="/business" title="💼 Business of the Metros →" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/business/companies" title="Companies" />
-        <DropdownItem href="/business/private" title="Private & Unicorns" />
-        <DropdownItem href="/business/sp500" title="S&P 500" />
-        <DropdownItem href="/business/owners" title="Owners" />
-        <DropdownItem href="/business/markets" title="Markets" />
-        <DropdownItem href="/business/currencies" title="Currencies" />
-        <DropdownItem href="/business/leaders" title="Leaders" />
-        <DropdownItem href="/business/crossovers" title="Crossovers" />
+        <DropdownItem href="/business/companies" title="🏢 Companies" />
+        <DropdownItem href="/business/private" title="🦄 Private & Unicorns" />
+        <DropdownItem href="/business/sp500" title="📈 S&P 500" />
+        <DropdownItem href="/business/owners" title="🏦 Owners" />
+        <DropdownItem href="/business/markets" title="📊 Markets" />
+        <DropdownItem href="/business/currencies" title="💱 Currencies" />
+        <DropdownItem href="/business/leaders" title="👔 Leaders" />
+        <DropdownItem href="/business/crossovers" title="🔀 Crossovers" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/billionaires" title="Billionaires" />
+        <DropdownItem href="/billionaires" title="💰 Billionaires" />
       </Dropdown>
 
       <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="/deep-dives" title="All deep dives →" />
+        <DropdownItem href="/deep-dives" title="✍️ All deep dives →" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/sports/geography-of-erasure" title="The Geography of Erasure" />
-        <DropdownItem href="/sports/heartbreak" title="The Heartbreak Index" />
-        <DropdownItem href="/sports/games" title="The Greatest Games" />
-        <DropdownItem href="/sports/valuations" title="Team Valuations" />
-        <DropdownItem href="/top-teams" title="The Team That Wins the City" />
-        <DropdownItem href="/neighborhoods" title="The Last of the Marylebones" />
-        <DropdownItem href="/badges/velvet-rock-capital" title="Velvet Rock Capital" />
+        <DropdownItem href="/sports/geography-of-erasure" title="👻 The Geography of Erasure" />
+        <DropdownItem href="/sports/heartbreak" title="💔 The Heartbreak Index" />
+        <DropdownItem href="/sports/games" title="🏆 The Greatest Games" />
+        <DropdownItem href="/sports/valuations" title="💵 Team Valuations" />
+        <DropdownItem href="/top-teams" title="🏙️ The Team That Wins the City" />
+        <DropdownItem href="/neighborhoods" title="🏘️ The Last of the Marylebones" />
+        <DropdownItem href="/badges/velvet-rock-capital" title="🎸 Velvet Rock Capital" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="https://citizenofnowhere.substack.com" external title="On Substack" />
+        <DropdownItem href="https://citizenofnowhere.substack.com" external title="✉️ On Substack" />
       </Dropdown>
 
       <Dropdown id="play" label="Play" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="/play" title="Kids Games" hint="Free learning games for younger fans" />
-        <DropdownItem href="/play/arcade" title="Games" hint="Bigger games: random metro, quizzes and more" />
+        <DropdownItem href="/play" title="🧸 Kids Games" hint="Free learning games for younger fans" />
+        <DropdownItem href="/play/arcade" title="🕹️ Games" hint="Bigger games: random metro, quizzes and more" />
       </Dropdown>
 
       <Dropdown id="about" label="About" openId={openId} setOpenId={setOpenId}>

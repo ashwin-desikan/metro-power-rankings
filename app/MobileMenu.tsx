@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { leagueStatusFor, clubFootballStatus } from '@/lib/leagueStatus';
-import { catalogByFamily, boardLabelFor, SPORTS_FEATURES } from '@/lib/sportsCatalog';
+import { catalogByFamily, boardLabelFor, familyLabel, SPORTS_FEATURES } from '@/lib/sportsCatalog';
 
 // Mobile-only menu. The desktop nav in SiteNav.tsx is hidden below md (768px);
 // this fills that gap. It mirrors the desktop mega-menus as collapsible
@@ -34,7 +34,7 @@ function leafDotColor(leaf: Leaf): string | null {
 function buildSections(): Section[] {
   const geography: SubGroup[] = [
     {
-      label: 'Places & directories',
+      label: '🗺️ Places & directories',
       items: [
         { href: '/geography', label: 'Geography Hub' },
         { href: '/rankings', label: 'Metro Power Rankings' },
@@ -48,7 +48,7 @@ function buildSections(): Section[] {
       ],
     },
     {
-      label: 'Power & people',
+      label: '👑 Power & people',
       items: [
         { href: '/power', label: 'The Nowhere 100' },
         { href: '/leaders', label: 'World Leaders' },
@@ -62,14 +62,14 @@ function buildSections(): Section[] {
       ],
     },
     {
-      label: 'Geopolitics',
+      label: '🤝 Geopolitics',
       items: [
         { href: '/orgs', label: 'Alliances & Orgs' },
         { href: '/conflicts', label: 'Interstate Wars' },
       ],
     },
     {
-      label: 'Political order',
+      label: '⚖️ Political order',
       items: [
         { href: '/order', label: '🧭 The Order layer' },
         { href: '/order/grid', label: 'The Order Grid' },
@@ -78,17 +78,17 @@ function buildSections(): Section[] {
       ],
     },
     {
-      label: 'Across time',
+      label: '🕰️ Across time',
       items: [
-        { href: '/time-machine', label: '🕰️ The Time Machine' },
+        { href: '/time-machine', label: 'The Time Machine' },
         { href: '/predictions', label: '🔮 Predictions' },
         { href: '/predictions/scoreboard', label: '📓 The Ledger' },
       ],
     },
     {
-      label: 'More',
+      label: '✨ More',
       items: [
-        { href: '/badges', label: 'Badges' },
+        { href: '/badges', label: '🏅 Badges' },
         { href: '/random', label: '🎲 Random metro' },
       ],
     },
@@ -96,14 +96,14 @@ function buildSections(): Section[] {
 
   const sports: SubGroup[] = [
     {
-      label: 'Across all sports',
+      label: '🏟️ Across all sports',
       items: [
         { href: '/sports', label: 'Zone Zero Sports Hub' },
         ...SPORTS_FEATURES.map((f) => ({ href: f.href, label: f.label, live: f.live })),
       ],
     },
     ...catalogByFamily(false).map((g) => ({
-      label: g.family,
+      label: familyLabel(g.family),
       items: g.entries.map((e) => ({ href: e.href, label: boardLabelFor(e) })),
     })),
   ];
@@ -111,15 +111,15 @@ function buildSections(): Section[] {
   const deepDives: SubGroup[] = [
     {
       items: [
-        { href: '/deep-dives', label: 'All deep dives' },
-        { href: '/sports/geography-of-erasure', label: 'The Geography of Erasure' },
-        { href: '/sports/heartbreak', label: 'The Heartbreak Index' },
-        { href: '/sports/games', label: 'The Greatest Games' },
-        { href: '/sports/valuations', label: 'Team Valuations' },
-        { href: '/top-teams', label: 'The Team That Wins the City' },
-        { href: '/neighborhoods', label: 'The Last of the Marylebones' },
-        { href: '/badges/velvet-rock-capital', label: 'Velvet Rock Capital' },
-        { href: 'https://citizenofnowhere.substack.com', label: 'On Substack', external: true },
+        { href: '/deep-dives', label: '✍️ All deep dives' },
+        { href: '/sports/geography-of-erasure', label: '👻 The Geography of Erasure' },
+        { href: '/sports/heartbreak', label: '💔 The Heartbreak Index' },
+        { href: '/sports/games', label: '🏆 The Greatest Games' },
+        { href: '/sports/valuations', label: '💵 Team Valuations' },
+        { href: '/top-teams', label: '🏙️ The Team That Wins the City' },
+        { href: '/neighborhoods', label: '🏘️ The Last of the Marylebones' },
+        { href: '/badges/velvet-rock-capital', label: '🎸 Velvet Rock Capital' },
+        { href: 'https://citizenofnowhere.substack.com', label: '✉️ On Substack', external: true },
       ],
     },
   ];
@@ -127,7 +127,7 @@ function buildSections(): Section[] {
   const play: SubGroup[] = [
     {
       items: [
-        { href: '/play', label: '🎮 Kids Games', hint: 'Free learning games for younger fans' },
+        { href: '/play', label: '🧸 Kids Games', hint: 'Free learning games for younger fans' },
         { href: '/play/arcade', label: '🕹️ Games', hint: 'Bigger games: random metro, quizzes and more' },
       ],
     },
@@ -182,16 +182,16 @@ function buildSections(): Section[] {
         {
           label: '💼 Money',
           items: [
-            { href: '/business', label: 'Business of the Metros' },
-            { href: '/business/companies', label: 'Companies' },
-            { href: '/business/private', label: 'Private & Unicorns' },
-            { href: '/business/sp500', label: 'S&P 500' },
-            { href: '/business/owners', label: 'Owners' },
-            { href: '/business/markets', label: 'Markets' },
-            { href: '/business/currencies', label: 'Currencies' },
-            { href: '/business/leaders', label: 'Leaders' },
-            { href: '/business/crossovers', label: 'Crossovers' },
-            { href: '/billionaires', label: 'Billionaires' },
+            { href: '/business', label: '💼 Business of the Metros' },
+            { href: '/business/companies', label: '🏢 Companies' },
+            { href: '/business/private', label: '🦄 Private & Unicorns' },
+            { href: '/business/sp500', label: '📈 S&P 500' },
+            { href: '/business/owners', label: '🏦 Owners' },
+            { href: '/business/markets', label: '📊 Markets' },
+            { href: '/business/currencies', label: '💱 Currencies' },
+            { href: '/business/leaders', label: '👔 Leaders' },
+            { href: '/business/crossovers', label: '🔀 Crossovers' },
+            { href: '/billionaires', label: '💰 Billionaires' },
           ],
         },
       ],

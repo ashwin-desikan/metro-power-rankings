@@ -47,6 +47,39 @@ export const FAMILY_ORDER: SportFamily[] = [
   "Volleyball",
 ];
 
+/**
+ * One emoji per sport family, for the nav menus and any surface that shows a
+ * family heading. Single source so DesktopNav and MobileMenu cannot drift, which
+ * is the same reason FAMILY_ORDER lives here.
+ *
+ * These are the glyphs the home page already uses for the same sports, not new
+ * choices: oval-ball codes all take the rugby ball there too, so Rugby Union,
+ * Rugby League and Aussie Rules share it here rather than inventing three
+ * lookalikes. The family name beside it carries the difference.
+ */
+export const FAMILY_EMOJI: Record<SportFamily, string> = {
+  Olympics: "🥇",
+  Football: "⚽",
+  Motorsport: "🏎️",
+  Golf: "⛳",
+  Tennis: "🎾",
+  Gridiron: "🏈",
+  Basketball: "🏀",
+  Baseball: "⚾",
+  Hockey: "🏒",
+  Cricket: "🏏",
+  "Rugby Union": "🏉",
+  "Rugby League": "🏉",
+  "Aussie Rules": "🏉",
+  Handball: "🤾",
+  Volleyball: "🏐",
+};
+
+/** "⚽ Football" - the family heading as every nav should render it. */
+export function familyLabel(family: SportFamily): string {
+  return `${FAMILY_EMOJI[family]} ${family}`;
+}
+
 export type LeagueScope = "club" | "international" | "college";
 
 export type CatalogEntry = {
