@@ -28,6 +28,13 @@ export type SportRow = {
   sport: string;
   kind: SportKind;
   group: SportGroup;
+  /**
+   * Every group this sport belongs to. NOT exclusive: football is a team sport
+   * and a summer Olympic one, ice hockey is a team sport and a winter Olympic
+   * one, and the filters are lenses rather than a partition. Counts across the
+   * filter row therefore do not add up to the size of the board.
+   */
+  groups: SportGroup[];
   /** Scored as its own women's pillar, rather than pooled with the men's. */
   womens: boolean;
   total: number;
@@ -53,11 +60,11 @@ export const GROUP_LABEL: Record<SportFilter, string> = {
 };
 
 export const GROUP_BLURB: Record<SportFilter, string> = {
-  all: "Every discipline the Cup scores, plus the national sports it recognises.",
+  all: "Every discipline the Cup scores, plus the national sports it recognises. The filters overlap, so their counts do not add up to this one.",
   womens: "The eight codes the Cup scores as their own pillar, separately from the men's. Every other discipline here, athletics and swimming and tennis and rowing among them, is one pillar covering both, so the women's half of it cannot be pulled out. This filter shows where the Cup counts women's sport separately, not where women compete.",
-  team: "Codes played club and country, in a league and for a flag. Winter team games sit here rather than under Winter Olympic, because that is where a reader looks for them.",
-  summer: "The individual summer programme, plus the racquet and precision sports contested mainly outside the Games.",
-  winter: "The individual winter programme. Ice hockey and curling are team sports and are filed as such.",
+  team: "Codes played club and country, in a league and for a flag. Most are also Olympic sports and appear under those filters too.",
+  summer: "Everything contested at the Summer Games, the team codes included, plus the racquet and precision sports whose own majors matter more than the Olympic title.",
+  winter: "Everything contested at the Winter Games, ice hockey and curling included.",
   national: "Domestically major, internationally negligible. These carry a fixed recognition bonus rather than competing for a nation's ten scoring slots, which is why one country can hold all of a sport.",
   retired: "Contested at a Games once and never since. They score nothing today and stay on the board because leaving them off would be a tidier record and a less true one.",
 };
@@ -78,6 +85,25 @@ const TEAM = new Set([
   "Hockey", "Women's Hockey",
   "Lacrosse", "Netball",
 ]);
+
+// Team codes on the Olympic programme, so they appear under Summer or Winter as
+// well as under Team. The test is whether the code has been contested at the
+// Games at all, which is why cricket (1900, and back for 2028) and lacrosse
+// (1904 and 1908, and back for 2028) are in, and futsal, netball and rugby
+// league are not.
+const TEAM_SUMMER = new Set([
+  "Football", "Women's Football",
+  "Basketball", "Women's Basketball",
+  "Handball", "Women's Handball",
+  "Volleyball", "Women's Volleyball",
+  "Water Polo", "Women's Water Polo",
+  "Hockey", "Women's Hockey",
+  "Rugby Union", "Women's Rugby",
+  "Baseball", "Softball",
+  "Cricket", "Women's Cricket",
+  "Lacrosse",
+]);
+const TEAM_WINTER = new Set(["Ice Hockey", "Curling"]);
 
 const WINTER = new Set([
   "Alpine Skiing", "Cross Country Skiing", "Ski Jumping", "Nordic Combined",
@@ -106,12 +132,24 @@ export function isWomens(sport: string): boolean {
   return sport.startsWith("Women's ");
 }
 
-export function classify(sport: string, kind: SportKind): SportGroup {
-  if (kind === "national") return "national";
-  if (RETIRED.has(sport)) return "retired";
-  if (TEAM.has(sport)) return "team";
-  if (WINTER.has(sport)) return "winter";
-  return "summer";
+/**
+ * Every group a sport belongs to. A sport can be in several: the filters are
+ * lenses over the board, not a partition of it.
+ *
+ * Retired and national are terminal, because a discontinued event is not on any
+ * current programme and a recognition bonus is not an Olympic code.
+ */
+export function classify(sport: string, kind: SportKind): SportGroup[] {
+  if (kind === "national") return ["national"];
+  if (RETIRED.has(sport)) return ["retired"];
+  const out: SportGroup[] = [];
+  if (TEAM.has(sport)) out.push("team");
+  if (WINTER.has(sport) || TEAM_WINTER.has(sport)) out.push("winter");
+  // Everything that is not a team code and not a winter discipline is a summer
+  // discipline, so summer stays the residual and a new pillar lands somewhere
+  // sensible without anyone editing a list.
+  if (TEAM_SUMMER.has(sport) || (!TEAM.has(sport) && !WINTER.has(sport))) out.push("summer");
+  return out;
 }
 
 /**
@@ -153,7 +191,7 @@ export function buildSportRows(nations: NationLike[], prestige: Record<string, n
       return {
         sport,
         kind,
-        group: classify(sport, kind),
+        groups: classify(sport, kind),
         womens: isWomens(sport),
         total: a.total,
         share: (a.total / grand) * 100,

@@ -21,7 +21,7 @@ const CARD = { borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }
 const ORDER: SportFilter[] = ["all", "team", "summer", "winter", "womens", "national", "retired"];
 
 const matches = (r: SportRow, f: SportFilter) =>
-  f === "all" ? true : f === "womens" ? r.womens : r.group === f;
+  f === "all" ? true : f === "womens" ? r.womens : r.groups.includes(f);
 
 function Leaders({ row }: { row: SportRow }) {
   return (
