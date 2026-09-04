@@ -219,6 +219,21 @@ explicit — apply it before touching any refresh script:
 - `package.json` scripts — `npm run verify` is the full local proof gate for
   frontend work.
 
+## Slow-moving data (add it to the currency manifest)
+
+Data that updates less often than weekly and has no scheduled job behind it does
+not fail loudly when it goes stale. It just answers this year's question with
+last year's facts. `scripts/data/data-currency.json` lists every such dataset
+with the date it becomes overdue, and `npm run check:data-currency` says what
+the site currently owes. It runs inside `npm run verify` and is warn-only, so a
+backlog never blocks unrelated work; `--strict` makes it a hard failure.
+
+If you add a championship, a title list, a hand-kept ranking or anything else
+that arrives a few rows at a time on a known date, add it to that manifest in
+the same commit. The probes read the real data files, so an entry cannot drift
+from what the pipeline holds, and a manifest entry that no longer matches its
+data is reported rather than passing silently.
+
 ## The design sweep (every new page, every release, no exceptions)
 
 > **HARD RULE, added 2026-09-04 at Ashwin's instruction.** A page is not done

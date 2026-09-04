@@ -1,0 +1,159 @@
+{
+  "_meta": {
+    "why": "Slow-moving data does not go wrong loudly. A scraper that breaks throws an error and pages somebody; a championship that finished in November and never got its row just sits there looking finished, and the board quietly answers a question about 2026 with 2024's facts. Every entry below is a dataset nobody will notice going stale, paired with the date it becomes stale. scripts/check-data-currency.mjs reads this and says what the site currently owes.",
+    "howToAddOne": "Annual events need the date their season ends and a probe the checker already implements. Rankings need the file and how old their asOf may get. If you add a data source that updates less often than weekly and has no scheduled job behind it, it belongs here, and adding it costs one object.",
+    "grace": "graceDays is how long after the event a missing row is merely late rather than wrong. It is generous on purpose: results are often not final on the day, and a gate that shouts the morning after a race gets ignored within a month.",
+    "asOf": "2026-09-04"
+  },
+  "annual": [
+    {
+      "key": "f1",
+      "label": "Formula 1 season",
+      "probe": "motorsport:formula-1",
+      "endsMonthDay": "12-10",
+      "graceDays": 45
+    },
+    {
+      "key": "motogp",
+      "label": "MotoGP season",
+      "probe": "motorsport:motogp",
+      "endsMonthDay": "11-20",
+      "graceDays": 45
+    },
+    {
+      "key": "wrc",
+      "label": "World Rally Championship",
+      "probe": "motorsport:wrc",
+      "endsMonthDay": "11-30",
+      "graceDays": 45
+    },
+    {
+      "key": "indycar",
+      "label": "IndyCar season",
+      "probe": "motorsport:indycar",
+      "endsMonthDay": "09-15",
+      "graceDays": 45
+    },
+    {
+      "key": "nascar",
+      "label": "NASCAR Cup season",
+      "probe": "motorsport:nascar",
+      "endsMonthDay": "11-10",
+      "graceDays": 45
+    },
+    {
+      "key": "speedway",
+      "label": "Speedway Grand Prix",
+      "probe": "motorsport:speedway",
+      "endsMonthDay": "10-10",
+      "graceDays": 45
+    },
+    {
+      "key": "formula-e",
+      "label": "Formula E season",
+      "probe": "motorsport:formula-e",
+      "endsMonthDay": "08-01",
+      "graceDays": 45
+    },
+    {
+      "key": "worlds-road",
+      "label": "Road race world championship",
+      "probe": "cycling:worlds_men",
+      "endsMonthDay": "10-05",
+      "graceDays": 30
+    },
+    {
+      "key": "worlds-road-w",
+      "label": "Women's road race worlds",
+      "probe": "cycling:worlds_women",
+      "endsMonthDay": "10-05",
+      "graceDays": 30
+    },
+    {
+      "key": "tdf",
+      "label": "Tour de France",
+      "probe": "tourDeFrance",
+      "endsMonthDay": "07-30",
+      "graceDays": 30
+    },
+    {
+      "key": "giro",
+      "label": "Giro d'Italia",
+      "probe": "cycling:giro",
+      "endsMonthDay": "06-05",
+      "graceDays": 30
+    },
+    {
+      "key": "vuelta",
+      "label": "Vuelta a Espana",
+      "probe": "cycling:vuelta",
+      "endsMonthDay": "09-20",
+      "graceDays": 30
+    },
+    {
+      "key": "tdf-femmes",
+      "label": "Tour de France Femmes",
+      "probe": "cycling:tdf_femmes",
+      "endsMonthDay": "08-15",
+      "graceDays": 30
+    },
+    {
+      "key": "giro-women",
+      "label": "Giro d'Italia Women",
+      "probe": "cycling:giro_women",
+      "endsMonthDay": "07-15",
+      "graceDays": 30
+    },
+    {
+      "key": "iihf-women",
+      "label": "IIHF Women's World Championship",
+      "probe": "womensHockeyWorlds",
+      "endsMonthDay": "12-01",
+      "graceDays": 45
+    }
+  ],
+  "snapshots": [
+    {
+      "key": "hockey-men",
+      "label": "IIHF men's world ranking",
+      "file": "public/data/rankings/hockey-men.json",
+      "maxAgeDays": 300,
+      "why": "IIHF republishes after each Worlds, so roughly annual."
+    },
+    {
+      "key": "baseball-men",
+      "label": "WBSC men's world ranking",
+      "file": "public/data/rankings/baseball-men.json",
+      "maxAgeDays": 400,
+      "why": "WBSC updates once a year."
+    },
+    {
+      "key": "volleyball-men",
+      "label": "FIVB senior world ranking",
+      "file": "public/data/rankings/volleyball-men.json",
+      "maxAgeDays": 270,
+      "why": "FIVB restates after each major event, several times a year."
+    },
+    {
+      "key": "handball-men",
+      "label": "Handball world ranking",
+      "file": "public/data/rankings/handball-men.json",
+      "maxAgeDays": 400,
+      "why": "handballranking.com moves after each major tournament."
+    },
+    {
+      "key": "womens-football",
+      "label": "FIFA women's world ranking",
+      "file": "public/data/rankings/womens-football.json",
+      "maxAgeDays": 150,
+      "why": "FIFA publishes quarterly, so anything older than two cycles is stale."
+    },
+    {
+      "key": "zzc-extra",
+      "label": "ZZC ranking-only feed",
+      "file": "public/data/rankings/zzc-extra.json",
+      "maxAgeDays": 300,
+      "why": "Hand-maintained. The whole point of the limit is that nothing else will remind anyone."
+    }
+  ]
+}
