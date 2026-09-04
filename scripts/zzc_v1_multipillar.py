@@ -96,11 +96,16 @@ PRESTIGE = {
     # equal achievement, and a board that scores them alike is measuring GDP.
     # Swimming also awards about 35 golds a Games, which compounds it.
     #
-    # 0.27 is calibrated, not derived: it is the value that brings the United
-    # States to 6.8, which is the ceiling Ashwin set. Treat it as a placeholder
-    # for the thing actually missing, which is event-count and access
-    # normalisation applied to every multi-event Olympic sport at once.
-    "Swimming": 0.27,
+    # 0.27 was calibrated to a target and read as too harsh once it was on the
+    # board, taking Zimbabwe down eleven places and Singapore eight for the
+    # crime of having produced one great swimmer each. 0.4 keeps the argument
+    # and softens the sentence: still clearly below the 0.5 Olympic default,
+    # still behind baseball and women's football in the United States column,
+    # without gutting the countries whose whole standing here was a pool.
+    # (Ashwin, 2026-09-04.) All of this remains a placeholder for the thing
+    # actually missing, which is event-count and access normalisation applied
+    # to every multi-event Olympic sport at once.
+    "Swimming": 0.4,
     # Artistic gymnastics lifted 0.5 to 0.75 on 2026-09-04, on the same argument
     # and in the same tier. The FIG world championships run in every non-Games
     # year, the sport carries names known outside it, and it was sitting with the
@@ -139,7 +144,17 @@ PRESTIGE = {
     # regions (golf worldwide; tennis global; badminton & table tennis across Asia).
     # Lifted from their earlier suppressed levels so they are not collectively
     # underweighted, while still below the major team sports.
-    "Tennis": 0.9, "Golf": 0.6, "Badminton": 0.6, "Table Tennis": 0.6,
+    # Badminton and table tennis 0.6 to 0.85 on 2026-09-04. They had been filed
+    # a notch under golf's neighbours and well under tennis, which reads the
+    # world from one side of it. These are the primary racquet sports for well
+    # over a third of the planet, both are Olympic with real world
+    # championships, and neither is a one-country sport: China leads table
+    # tennis with 19 per cent of the board's points and badminton with 17, with
+    # Japan, South Korea, Sweden and Germany behind the first and Indonesia,
+    # Denmark, Malaysia and India behind the second. They sit just under tennis,
+    # which keeps a small edge for four annual majors on a genuinely global
+    # calendar, and above golf, which does not out-contest either of them.
+    "Tennis": 0.9, "Golf": 0.6, "Badminton": 0.85, "Table Tennis": 0.85,
     # Road cycling: a year-round professional sport with a national-team world
     # championship, held at the Olympic default of 0.5 only because nobody had
     # given it a line of its own. Lifted just below athletics.
