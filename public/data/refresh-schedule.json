@@ -1,27 +1,6 @@
 {
-  "generated_at": "2026-09-04T07:42:38.434818+00:00",
+  "generated_at": "2026-09-04T11:04:12.194813+00:00",
   "jobs": [
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-04T11:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T05:00:00+00:00"
-      }
-    },
     {
       "id": "predictions-fri",
       "label": "PL + NFL predictions (fresh odds)",
@@ -89,6 +68,27 @@
         "date": "2026-09-04",
         "status": "ok",
         "slot": "2026-09-04T07:00:00+00:00"
+      }
+    },
+    {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-04T17:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-04",
+        "status": "ok",
+        "slot": "2026-09-04T11:00:00+00:00"
       }
     },
     {
