@@ -1,285 +1,248 @@
-# Daily Ops Sweep -- 2026-09-03
+# Daily Ops Sweep -- 2026-09-04
 
-Window: 2026-09-01T23:01Z -> 2026-09-03T01:01Z (trailing 26h, selected on each
-line's own UTC timestamp). Read-only run: nothing was re-run, fixed, pinged,
-marked or written except this file.
+Window: 2026-09-02T23:00Z -> 2026-09-04T01:00Z (trailing 26h, selected on each
+line's own UTC timestamp). Read-only run: nothing was re-run, fixed, restored,
+pinged, marked or written except this file.
 
-## Jobs this window: 18 ok, 2 failed, 1 flagged
+## Jobs this window: 14 ok, 0 failed, 1 flagged
 
-20 completed dispatcher occurrences, plus this run:
+Fourteen completed dispatcher occurrences, plus this run. **No `FAIL` lines, no
+`MISSED` lines, no job near its timeout.**
 
 | When (UTC) | Job | Result |
 |---|---|---|
-| 09-01 23:03 | football-standings | DONE 87s |
-| 09-02 01:05 | daily-ops-sweep | DONE 751s |
-| 09-02 02:37 | activity-feed | DONE 5s |
-| 09-02 04:08 | euro-comps | DONE 5s |
-| 09-02 05:08 | gap-league-watch | DONE 3s |
-| 09-02 05:08 | football-standings | DONE 86s |
-| 09-02 05:09 | screen-number-ones | DONE 21s |
-| 09-02 05:50 | business-daily | DONE 615s |
-| 09-02 06:10 | forecast | DONE 615s |
-| 09-02 06:20 | substack-daily | DONE 4s |
-| 09-02 07:00 | mlb-sim | DONE 1821s |
-| 09-02 07:41 | fiba-weekly | **FAIL** exit 1, 5s (resolved, see below) |
-| 09-02 07:41 | sound-weekly | DONE 10s |
-| 09-02 07:41 | feed-monitor | **FAIL** exit 1, 16s (resolved, see below) |
-| 09-02 11:01 | football-standings | DONE 88s |
-| 09-02 13:03 | screen-number-ones | DONE 220s |
-| 09-02 14:37 | mlb-sim | DONE 1823s |
-| 09-02 17:07 | football-standings | DONE 88s |
-| 09-02 21:09 | screen-number-ones | DONE 29s |
 | 09-02 23:09 | football-standings | DONE 86s |
-| 09-03 01:01 | daily-ops-sweep | RUN (this run) |
+| 09-03 01:01 | daily-ops-sweep | DONE 631s |
+| 09-03 02:32 | activity-feed | DONE 5s |
+| 09-03 04:02 | euro-comps | DONE 5s |
+| 09-03 05:02 | gap-league-watch | DONE 4s |
+| 09-03 05:02 | football-standings | DONE 89s |
+| 09-03 05:54 | business-daily | DONE 615s |
+| 09-03 06:14 | substack-daily | DONE 4s |
+| 09-03 07:04 | mlb-sim | DONE 1822s |
+| 09-03 07:44 | feed-monitor | DONE 15s |
+| 09-03 11:05 | football-standings | DONE 89s |
+| 09-03 14:36 | mlb-sim | DONE 1826s |
+| 09-03 17:07 | football-standings | DONE 89s |
+| 09-03 23:09 | football-standings | DONE 86s |
+| 09-04 01:00 | daily-ops-sweep | RUN (this run) |
 
-No `MISSED` lines. Every job due in the window ran: all eight dailies, plus the
-Wednesday set (`fiba-weekly`, `sound-weekly`) and `forecast` (Mon/Wed/Fri).
-`state.json` shows no job overdue; `mktcap-refresh` is next Sat 09-05 and
-`egress-refresh` Sun 09-06. Working tree clean. No job came near its timeout --
-`business-daily` and `forecast` both landing on 615s is coincidence, their
-limits are 25m and 45m.
+**Everything due in the window ran.** 09-03 was a Thursday, which carries no
+weekday-specific job: `screen-number-ones` is `weekdays = [1,2,3]` (Mon-Wed) and
+its absence is correct, not a miss; `forecast` is Mon/Wed/Fri; `rugby`/`cricket`
+weekly are Tue; `fiba`/`sound` weekly are Wed. `state.json` shows nothing
+overdue. `mktcap-refresh` is next Sat 09-05, `egress-refresh` Sun 09-06, and
+`cfb-fri` / `predictions-fri` / `forecast` are due later today (11:40Z / 06:10Z).
 
-All four launchd agents report exit 0 (`launchctl list`: heartbeat,
-deploy-watch, dispatcher, f1-weekly). `newsletter-podcast` ran 09-02 clean end
-to end: 42:47 episode `spotify:episode:67xwhBoSDywJhsUDY3XZgf` reached READY,
-both Gmail drafts created. No 09-03 run yet.
+All four launchd agents report exit 0 (`launchctl list`: heartbeat, deploy-watch,
+dispatcher, f1-weekly). `f1-weekly` ticked hourly all window, every tick
+`idle: 2026 R12 already synced`. `deploy-watch` ran ~156 times and never
+re-triggered a build: it tracked TARGET `a83494a84` -> `89b2953e2` -> `824304002`
+and found each live within one cycle. `newsletter-podcast` ran 09-03 clean end to
+end (37:23 episode `spotify:episode:1EwIxfii0qzYNwkPGyzfRn` reached READY, both
+Gmail drafts created, watchdog confirmed healthy at 09:30). Working tree clean.
 
-**Job-script `push()` alerts.** One ntfy message fired in this window from a job
-that exited clean, and it is retained and readable: `run-deploy-watch.sh` at
-09-02 13:58:06Z, "Vercel auto-retry -- Re-triggered canceled build of
-df1db8447". Covered in item 2 below. The two dispatcher FAIL pushes (both
-07:41Z) are the only others. Everything else that can notify mid-run logged a
-clean pass: `gap-league-watch` "no state transitions this run", `football-standings`
-`unmatched=0` on all five runs, `business-daily` / `forecast` / `mlb-sim` /
-`activity-feed` all exited 0 and can only push via `fail()`.
-**Evidence limit, unchanged from prior sweeps:** the ntfy topic
-(`?poll=1&since=30h`, read-only GET) retains only that one message, because
-ntfy.sh's free tier keeps ~12h -- so it independently confirms push-silence
-from ~13:00Z on 09-02 onward, and the earlier half rests on the job logs above.
-The six `runners/*.sh` jobs still write no log of their own.
+**Job-script `push()` alerts: none this window.** The ntfy topic
+(`?poll=1&since=30h`, read-only GET) returns **zero** retained messages, which on
+ntfy.sh's ~12h free-tier retention independently proves push-silence from roughly
+13:00Z on 09-03 onward; the earlier half rests on the job logs, all of which
+logged a clean pass. `gap-league-watch` logged `no state transitions this run`;
+`football-standings` logged `unmatched=0 collisions=0` on all five runs;
+`business-daily`, `mlb-sim`, `activity-feed`, `substack-daily` and `euro-comps`
+exited 0 and can only push via `fail()`. Both review queues are clean --
+`mktcap-review-queue.md` reads `METRO QUEUE ... none` (closed 08-29) and
+`cricket-review-queue.md` reads `none`.
+
+**Two dispatcher latenesses, both benign and self-explaining.** `feed-monitor`
+ran 25m after its 07:20Z slot and `substack-daily` 14m after 06:00Z: in both
+cases the dispatcher was holding its own lock behind a long-running job
+(`mlb-sim` ran 07:04-07:34Z; `business-daily` 05:54-06:04Z). Catchup fired
+correctly in both cases and the work was done. No action.
+
+**Evidence limit, unchanged from prior sweeps.** The six `runners/*.sh` jobs
+(`business-daily`, `mlb-sim`, `activity-feed`, `forecast`, `predictions`, `cfb`)
+still write no dated log of their own, so their evidence is the tail that
+dispatcher.log captured plus their exit code. Both `mlb-sim` runs and
+`business-daily` ended on clean revalidate + warm sequences, all HTTP 200.
 
 ## Self-healed (informational only, no action needed)
 
-**`fiba-weekly` FAIL (09-02 07:41Z)** -- `euroleague.json exists but could not
-be read (object of type 'int' has no len())`. Not a corrupt file: the shrink
-guard added 09-01 did `len(_before.get("seasons", _before))`, and
-euroleague.json's `seasons` is a scalar count (69), not a list, so `len()` raised
-TypeError and the `except` reported it as an unreadable file. Fixed the same
-morning by `b1c638b35`, which replaces the comparison with a `_sizes()` helper
-that uses the int directly where a value is scalar and `len()` where it is
-sized, and keeps `ValueError` separate so a genuine corruption still refuses.
-**Verified in the artefact, not the commit message:** two clean re-runs at
-08:48:09 and 09:09:30 local, both `nations: 59 | WC finals: 19 | EL seasons: 69`
-and "no change for fiba this run".
+Nothing failed this window, so nothing needed healing. Four things that look
+like they might want attention and do not:
 
-**`feed-monitor` FAIL (09-02 07:41Z)** -- `ESPN PGA scoreboard: competition
-missing 2 'competitors'`. A false positive: the PGA feed was wired to
-`check_espn_scoreboard`, the team-sport checker, which requires two competitors
-per competition. Golf is a field, and the live event (Biltmore Championship,
-2026-09-17, state `pre`) had no `competitors` key at all -- so this would have
-failed in every gap between tournaments and had been passing on luck. Same
-`b1c638b35` adds `check_espn_golf_scoreboard`, which branches on
-`status.type.state` and only requires a field once play is under way.
-**Verified live:** `feed-monitor.log` shows two clean runs after the fix
-(09-02 08:50:03 and 09:09:16 local), both `ok` with PGA a soft `empty`.
-
-Both jobs were marked `ok (manual)` at 07:51:27Z, two seconds after that commit.
-
-**Liga F's disappearance was acted on** (yesterday's item 1). The monotonic
-season ratchet this sweep recommended was implemented the same morning in
-`bc9a7219c`, including the loud log line -- `RATCHET HELD` now prints on every
-run, and `awaiting 2026-27 in api-football:` names the leagues still waiting.
-That closes the "nothing logs a league regressing" half completely. **The other
-half did not land correctly -- see item 1 below.**
-
-**The HANDOFF question "would run-deploy-watch have healed this on its own?"
-now has an answer: yes, in about 30 minutes, unattended.** The 09-02 entry
-records a build-relevant commit pushed under a `[vercel skip]` tip
-(`f7090d28c` under `73339f8bd`) and asks whether the watcher would have caught
-it. It happened a second time that afternoon -- `df1db8447` (the ESPN
-User-Agent fix, touching `lib/`) was pushed at 13:28:10Z with
-`3a4cd879b` (docs, `[vercel skip]`) as the tip, so Vercel evaluated the tip
-only, `vercel-ignore.sh` rule 1 matched, and no build ran. `run-deploy-watch.sh`
-re-triggered it unattended at 13:58:03Z with `19f8c2181`, which touches only
-`lib/deploy-retry.ts` and carries the script's exact generated subject
-(`run-deploy-watch.sh:144`). It reached READY. No human involved.
+- **`empty ESPN PGA scoreboard: Biltmore Championship Asheville: not started
+  (0 in field)`** in the 09-03 feed-monitor run is the *correct* post-fix
+  behaviour, not a recurrence. `b1c638b35` rewired the PGA feed off the
+  team-sport checker (which a field sport can never satisfy pre-tournament);
+  `empty` is a pass, and the job exited 0. The last actual PGA `FAIL` was
+  09-02 08:41Z, resolved the same morning.
+- **`[gap-watch] India L1 Indian Super League -> awaiting_target`** is steady
+  state, not a stall: api-football's latest published ISL season is still 2025.
+  The job wrote watch state and logged `no state transitions this run`.
+- **The HANDOFF item "the mini needs the gitignored nflverse pbp cache under
+  `data/nfl/` before Wed 9 Sep"** (2026-09-02 entry) is **already satisfied on
+  this box** -- `data/nfl/` holds `pbp/` (29 entries), `rosters/`,
+  `depth_charts/` and a `_manifest.json` dated 09-02 20:05. `predictions-fri`
+  fires at 11:40Z today and will find the cache. No action.
+- **Vercel builds on 09-03: two production builds, exactly at the 2/day budget.**
+  Counted via the Vercel MCP (`list_deployments`), not GitHub: `89b2953e2`
+  (21:31Z, shared SectionHead/DataBar/chart tokens) and `824304002` (21:52Z,
+  the merge) are the only `READY` + `target: production` deployments; every
+  other production deployment in the window is `CANCELED` (free). Two further
+  `READY` builds were previews on `predictions/expert-upgrades`, which do not
+  spend the production budget. deploy-watch's log independently confirms no
+  build-triggering commit landed on main before 21:31Z -- it sat on TARGET
+  `a83494a84` all day. **No guard bug, no overspend.** The `429` in
+  `/tmp/deploy-watch.err` is the 09-02 13:58Z one already written up yesterday;
+  that file has not been touched since (mtime 09-02 14:58 local).
+- **Release notes for 09-03 exist** (`lib/releases.ts:21`), so `npm run
+  check:release-notes` will not trip anyone tomorrow despite the twenty-odd
+  commits Ashwin shipped that day.
 
 ## Needs Ashwin's attention
 
-### 1. 🔴 The Liga F ratchet relabels the season but does not swap the table, so the site is now publishing last season's completed table AS the live 2026-27 season
+### 1. 🔴 Liga F still publishes the completed 2025-26 table under a "2026-27" label. Carried from yesterday's sweep, unfixed, and it has now been live ~2 days.
 
-**What happened.** `bc9a7219c` fixed the label and left the data behind. The
-ratchet at `scripts/apifootball/refresh_women.py:167-173` reassigns `season`,
-`placeholder` and `label`, but never reassigns `groups` -- and `groups` still
-holds what `fetch_standings()` returned, which in the regression case is the
-*placeholder* payload: the completed 2025-26 table.
-
-`public/data/football/wlive-2026.json` right now (generated 09-02T23:11:18Z,
-and again at 09-03 00:09Z):
+**What happened.** `public/data/football/wlive-2026.json` -- the bundle
+`/teams/wfootball` and the Spain women's league hub read -- currently says
+`season: 2026, season_label: "2026-27", placeholder: false` for Liga F while
+carrying **the finished 2025-26 table**: all 16 clubs at `played: 30`,
+Barcelona W on 87 points, Real Madrid W 72, Real Sociedad W 66. Verified on the
+**published** artefact, not just locally:
 
 ```
-season_label "2026-27"   season 2026   placeholder FALSE
-16 rows, every club played: 30
-rank 1  Barcelona W   P30 W29 D0 L1  GF130 GA9  87 pts
-rank 16 (last)        P30            9 pts
+$ curl -s https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/football/wlive-2026.json
+generated_at 2026-09-03T23:10:26Z
+Liga F: season 2026 label 2026-27 placeholder False rows 16
+  played 30 pts 87 / played 30 pts 72 / played 30 pts 66
 ```
 
-That is unambiguously the finished 2025-26 season -- yesterday's report
-identified exactly this shape ("all 16 clubs on `played: 30`, Barcelona W on 87
-points") as the completed table. It is now flying a `2026-27` label with
-`placeholder: false`.
+The real world, checked this run: **Liga F 2026-27 has played matchday 1**.
+Barcelona, Athletic Club, Madrid CFF, DUX Logroño, Alavés, Real Madrid, Sevilla
+and Eibar are all on 3 points from 1 game; the other eight are on 0. Nothing has
+played 30 games. (Sources: [LaLiga official Liga F
+standings](https://www.laliga.com/en-GB/futbol-femenino/standing), [2026-27 Liga
+F on Wikipedia](https://en.wikipedia.org/wiki/2026%E2%80%9327_Liga_F), [ESPN Liga
+F standings](https://www.espn.com/soccer/standings/_/league/esp.w.1/liga-f).)
 
-**This is strictly worse than the state it replaced.** Walking the committed
-bundle through git:
+This is strictly worse than the state it replaced. Before the ratchet the same
+rows were at least honestly tagged `2025-26 PLACEHOLDER`; now nothing on the page
+says the table is a year stale.
 
-| Bundle commit | UTC | Published |
-|---|---|---|
-| `50fbad7d7` .. `4d714edfe` | 08-31 06:07 -> 09-01 00:05 | `2026-27` ph=false, **played=[1]** -- correct |
-| `c8c24b4f3` .. `0808ba120` | 09-01 06:05 -> 09-02 06:09 | `2025-26` ph=**true**, played=[30] -- stale but honestly labelled |
-| `bc9a7219c` .. `8dce7ee3d` | 09-02 09:00 -> 09-03 00:11 | `2026-27` ph=**false**, played=[30] -- **stale AND mislabelled** |
+**Root cause -- `scripts/apifootball/refresh_women.py:167-173`.** The season
+ratchet added by `bc9a7219c` (2026-09-02) reassigns `season`, `placeholder` and
+`label` but **never reassigns `groups`**:
 
-Before the ratchet a reader saw "2025-26" on a placeholder. After it, the same
-rows are presented as the current season with the placeholder flag cleared, so
-nothing on the page or in the data says the table is a year out of date.
+```python
+was_season, was_placeholder = published.get(lid, (None, True))
+if placeholder and not was_placeholder and was_season is not None and season != was_season:
+    regressions.append(...)
+    season, placeholder = was_season, False        # <-- groups is NOT touched
+    label = e.get("watch_season_label", ...) if was_season == e.get("watch_season") else label
+```
 
-**Verified against the real world, not assumed.** Liga F 2026-27 has played
-matchday 1 only: Barcelona top on 1 game (5-0), CD Tenerife bottom after losing
-0-5, all 16 clubs on one match. So the correct table is 16 clubs at `played: 1`
--- which the site *had* on 08-31, and which is still recoverable from
-`4d714edfe` (09-01 00:05Z), the last commit carrying it.
+`groups` at that point is whatever `fetch_standings()` returned, which for Liga F
+is the `base_groups` fallback: the completed 2025-26 table. `looks_fresh()`
+(line 41) correctly refused the carried-over table upstream, the code fell back
+to the placeholder as designed, and then the ratchet relabelled that fallback as
+the new season without swapping the rows back.
 
-**Scope is exactly one league.** Today's log prints `1 league(s) would have gone
-backwards this run`, and only Liga F. FA WSL is correctly still
-`2025-26 PLACEHOLDER` (its season starts 4 Sept, so that is right and should
-clear on its own around 5-6 Sept); NWSL is on a genuine live `played=[21,22]`.
+**Evidence it is firing every single run.** All five `football-standings` runs in
+this window logged, from `logs/football-standings-2026-09-0{3,4}.log`:
 
-**Recommended fix.** Make the ratchet carry the last published *rows*, which is
-what the invariant was supposed to mean:
+```
+[wfootball]   Liga F (id 142): 16 standings rows [2026-27]
+[wfootball]   RATCHET HELD: Liga F (id 142): published season 2026 -> 2025 placeholder;
+              upstream regressed, keeping 2026
+```
 
-1. `committed_seasons()` (`refresh_women.py:99-115`) currently returns
-   `{league_id: (season, placeholder)}` -- it reads the bundle and throws the
-   rows away. Return `groups` too, e.g.
-   `{league_id: (season, placeholder, groups)}`.
-2. In the ratchet block (`:167-173`), when the regression fires, also restore
-   `groups = was_groups` alongside the season/label reassignment.
-3. **If there are no committed groups to restore, do not flip the label.** Fall
-   through to the honest placeholder instead. A label change with no data behind
-   it is the bug being fixed; it must not be reachable.
-4. Because the guard's whole job is to survive this, add the case to the
-   self-test: published `2026 played=1` + upstream returning
-   `2025 played=30 placeholder` must yield `2026-27` **with the played=1 rows**,
-   and a missing-prior-bundle variant must yield the placeholder.
+Git dates the transition precisely: `4d714edfe` (2026-09-01 00:05Z) is the last
+commit carrying the **real** matchday-1 rows (Barcelona W `played 1, pts 3`).
+From `c9d7c8f4b` (09-02 00:05Z) the rows are the 30-game table, honestly flagged
+`season 2025 / 2025-26 / placeholder true`; from `bc9a7219c` (09-02 09:00Z)
+onward the same wrong rows carry the `2026-27` label. Nothing has touched
+`refresh_women.py` since. Scope is exactly one league: NWSL is genuinely current
+(`played 21-22`, plausible for early September) and FA WSL is honestly flagged
+`2025-26 PLACEHOLDER`.
 
-Once shipped, the first run repopulates from whatever api-football is serving;
-if upstream is still regressed, the ratchet will hold the recovered matchday-1
-table from `4d714edfe` rather than the finished one. Worth checking again after
-matchday 2 (~5-7 Sept), when upstream should publish a genuinely live table and
-the ratchet stops firing -- today's log line `RATCHET HELD: Liga F` disappearing
-is the signal.
+**Recommended fix -- one condition and one assignment, and it self-heals.**
+`looks_fresh(groups)` is already the right predicate and is already in the file.
 
-### 2. `run-deploy-watch.sh`'s duplicate-build guard fails OPEN under GitHub rate limiting, and was actually bypassed that way on 09-02
+1. Widen `committed_seasons()` (line 99) to also return the previously published
+   rows: `{league_id: (season, placeholder, groups)}`.
+2. Rewrite the ratchet at 167-173 to hold the rows too, **and to refuse to
+   ratchet when the previously published rows are themselves a completed
+   table**:
 
-**What happened.** `/tmp/deploy-watch.err` recorded
-`curl: (56) The requested URL returned error: 429` at 09-02 14:58 local
-(13:58Z) -- the same minute the watcher re-triggered `df1db8447`. The 429 came
-from the duplicate-build guard at `run-deploy-watch.sh:89`, the *unauthenticated*
-`api.github.com/repos/.../deployments?sha=$TARGET` call whose comment reads
-"Repo is public; unauthenticated API is fine at this rate."
+   ```python
+   was_season, was_placeholder, prev_groups = published.get(lid, (None, True, []))
+   if (placeholder and not was_placeholder and was_season is not None
+           and season != was_season and looks_fresh(prev_groups)):
+       regressions.append(...)
+       season, placeholder, groups = was_season, False, prev_groups
+       label = ...
+   ```
 
-**Root cause.** That call is `curl -fsS ... 2>/dev/null || true`. On a 429,
-`curl -f` fails, `|| true` swallows it, `DEPLOY_OK` comes back empty, the
-`[ "$DEPLOY_OK" = "yes" ]` test is false, and the script proceeds to spend a
-build. The inner `urllib.request.urlopen(statuses_url)` has the same shape --
-its failure is caught by a bare `except Exception: pass`. Both paths read
-**"no answer" as "no successful deployment."**
+   The `looks_fresh(prev_groups)` guard is what makes this **self-healing from
+   today's poisoned bundle**: on the next run the currently published Liga F rows
+   (30 of 30) fail it, so the ratchet declines to fire and the league drops back
+   to the honest `2025-26 PLACEHOLDER` until api-football publishes the real
+   2026-27 table, at which point the normal `watch_season` swap takes over.
+   Without that guard, a plain `groups = prev_groups` would pin the wrong rows
+   permanently, because the bad bundle is now what `committed_seasons()` reads.
+3. Add a `selftest()` case (the function starts at line 229) for exactly this:
+   published `(2026, placeholder=False, matchday-1 rows)` + upstream returning
+   `(2025, placeholder=True, 30-of-30 rows)` must yield season 2026 **and** the
+   matchday-1 rows; and published `(2026, False, 30-of-30 rows)` must NOT
+   ratchet.
+4. Optional, only if you want the matchday-1 rows back immediately rather than an
+   honest placeholder for a day: the good Liga F block is recoverable with
+   `git show 4d714edfe:public/data/football/wlive-2026.json`. **Restoring it
+   without the code fix is pointless** -- the 05:00Z `football-standings` run
+   overwrites the bundle four times a day. Ship the code change first, or both in
+   one commit.
 
-**This is the exact hazard CLAUDE.md already names**, one endpoint over: "Do not
-count GitHub `deployment_status` events: that endpoint returns 404 under
-secondary rate limiting, which reads as 'no builds' when it means 'no answer'.
-That is exactly how the 13 went unnoticed." The deploy-watch guard consults the
-sibling `deployments` endpoint unauthenticated and makes the same inference.
+`scripts/apifootball/refresh_women.py` is outside the build-path list, so a
+fix commit carries `[vercel skip]` and spends no Vercel build; the corrected
+`wlive-2026.json` reaches the site through the ordinary ISR-from-raw path.
 
-**On 09-02 the outcome was still correct** -- I checked all three pages of
-Vercel deployments across the window and `df1db8447` has no deployment record at
-all, so it genuinely needed the re-trigger. But the guard did not establish
-that; it simply failed open. The scenario it exists to prevent (a build that
-finished while the live check lagged, which "burned ~8 min on 2026-08-03") is
-the one where a 429 makes it spend a duplicate build.
+### 2. The ratchet can hold indefinitely and never tells anyone. That is why #1 sat for two days.
 
-**Blast radius is bounded**, which is why this is a fix-when-convenient and not
-an emergency: `STALE_MIN=20`, `COOLDOWN_MIN=18`, `MAX_ATTEMPTS=3`, and the
-agent runs on `StartInterval 600`. Worst case is up to 3 duplicate builds on one
-target before it gives up -- but against a 2/day budget that is a real cost.
+`RATCHET HELD` and the `N league(s) would have gone backwards this run` summary
+(lines 208-213) are **`log()` calls only** -- they write to
+`logs/football-standings-<date>.log` and nothing else. `run-football-standings.sh`
+line 64 only calls `fail()` on a non-zero exit, so a held ratchet never reaches
+ntfy. The bug was found by yesterday's sweep reading the job log by hand, which
+is the one path that exists; without the sweep it would still be undetected.
 
-**Recommended fix**, smallest reversible change first:
+**Recommended fix.** Give the hold a time bound and an alert. Persist a small
+counter of consecutive held runs per league beside the bundle, and have
+`run-football-standings.sh` push one ntfy warning when any league crosses ~6
+consecutive holds (24h at 4 runs/day), then stay quiet until the count resets.
+A ratchet that holds for a few hours is upstream lag and is the feature working;
+one that holds for a day means either upstream has genuinely regressed or the
+held rows are wrong, and both deserve a look. Worth pairing with the #1 fix in
+the same change, since the `looks_fresh(prev_groups)` guard gives you the natural
+place to distinguish "holding good rows" from "refusing to hold bad ones".
 
-1. Distinguish "no" from "no answer". Capture the HTTP status
-   (`curl -sS -o body -w '%{http_code}'`) instead of relying on `-f` + `|| true`.
-   On any non-200 (429, 403, 5xx), **skip the re-trigger this tick and return** --
-   the agent runs again in 10 minutes and the target is still stale, so nothing
-   is lost by waiting for a real answer. That is the fail-closed posture
-   `vercel-ignore.sh` already adopted for the same class of problem.
-2. Send `Authorization: Bearer $GITHUB_TOKEN` if one is available on the mini.
-   The unauthenticated limit is 60 requests/hour per IP shared with every other
-   job on this box, and this agent alone wakes 144 times a day; authenticated is
-   5,000/hour. That most likely removes the 429 entirely.
-3. Log the distinction. The current failure is invisible except as a bare curl
-   line in `/tmp/deploy-watch.err` with no timestamp and no context -- it only
-   surfaced here because the file's mtime happened to match the retry.
+### 3. Watch item for this weekend, not yet a problem: FA WSL 2026-27 kicks off today.
 
-### 3. Carried from yesterday, still open: the `prepare-commit-msg` merge hole is unpatched
+The 2026-27 Women's Super League starts **Friday 4 September 2026** (London City
+Lionesses v Manchester United), expanding from 12 clubs to **14**. The bundle
+currently shows FA WSL as `season 2025 / 2025-26 / placeholder true / 12 rows`,
+which is correct and honest today, and `refresh_women.py` logs
+`awaiting 2026-27 in api-football: FA WSL (showing 2025-26)` on every run. When
+api-football publishes the new table the normal `watch_season` swap should pick
+it up with no intervention.
 
-`.githooks/prepare-commit-msg` still reads
-`case "$SOURCE" in merge|squash|commit) exit 0;; esac`, so git-generated merge
-subjects still get no `[vercel skip]` consideration. Yesterday's report has the
-concrete patch and the three pinned SHAs.
-
-**It did not recur on 09-02, and I want to be precise about why rather than
-imply it is fixed.** The one merge that built (`8ccb4d98a`, 11:47:32Z) was
-*legitimate*: it carried `027923904` "fix(espn): stop sending the User-Agent
-that Akamai's edge rejects", which is untagged and touches `lib/espnFetch.ts`.
-Yesterday's proposed patch would correctly have left that merge alone (1
-untagged commit on the range -> `exit 0`). So the hole is still there; it just
-was not hit by an all-skipped merge this window. The fix is still worth applying
-before it is.
-
-### 4. Carried, unchanged
-
-- **`egress-refresh`** has failed two Sundays running (08-23, 08-30) and
-  `state.json` still sits on the 08-30 slot at `ok (manual)`. Next unattended
-  run is **Sun 2026-09-06 09:00Z**. After 09:40Z that day:
-  `grep -A20 'RUN egress-refresh' ~/metro-mini-jobs/dispatcher.log | tail -40`.
-- **The mini's project memory directory is still empty** with no `MEMORY.md`
-  (`~/.claude/projects/-Users-ashwindesikan-Projects-Metro-Area-Project/memory/`),
-  so CLAUDE.md's pointer to `feedback_vercel_build_budget_incident` still
-  resolves to nothing on this machine. This run is read-only and did not create
-  it.
-
-## Also noted, no action
-
-- **Vercel: 4 READY production builds on 09-02, against the 2/day budget** --
-  counted with the Vercel MCP across three pages covering the whole window
-  (`CANCELED` is free and there were 40+ of those), not from GitHub
-  `deployment_status`. All four were genuinely build-worthy, so there is no
-  guard bug here, but the day ran double the budget:
-  `6468e8837` 10:09Z (rugby + EuroLeague boards, `[deploy-retry]`),
-  `8ccb4d98a` 11:47Z (merge carrying the untagged `lib/espnFetch.ts` fix),
-  `19f8c2181` 13:58Z (deploy-watch's re-trigger of `df1db8447`),
-  `a83494a84` 18:59Z (the 47 misrecorded football fixtures).
-  Two of the four were `[deploy-retry]` commits rescuing work whose own build
-  never ran -- both instances of the `[vercel skip]`-tip behaviour in the 09-02
-  HANDOFF entry. The mechanism is understood and documented as designed
-  behaviour; the cost is that shipping through a batched push takes a second
-  commit to land.
-- **Release notes are current.** `npm run check:release-notes` passes,
-  125 entries, newest 2026-09-02 -- so 09-02's shipping day was logged despite
-  being a heavy one.
-- `gap-league-watch`: India L1 (Indian Super League) remains correctly
-  `awaiting_target`; api-football's latest published season is still 2025. One
-  pending league, no transitions, no push.
-- `screen-number-ones` ran three times cleanly. `mktcap-review-queue.md` is
-  untouched since 08-29; `mktcap-refresh` next runs Sat 09-05.
-
-Sources for the real-world check in item 1:
-[2026-27 Liga F (Wikipedia)](https://en.wikipedia.org/wiki/2026%E2%80%9327_Liga_F),
-[2026-27 Spanish Liga F standings (ESPN)](https://www.espn.com/soccer/standings/_/league/esp.w.1)
+The reason to note it: FA WSL is currently `placeholder: true`, so the broken
+ratchet cannot bite on the *first* swap. But the moment WSL publishes a real
+2026-27 table, any subsequent upstream regression puts it on exactly Liga F's
+path -- the completed 12-team 2025-26 table relabelled `2026-27`. **Landing the
+#1 fix before WSL's first results settle removes that exposure.** If the swap has
+not happened by early next week, or if WSL appears with 12 rows rather than 14,
+that is worth a look at `wleagues.json`.
+(Sources: [2026-27 Women's Super League on
+Wikipedia](https://en.wikipedia.org/wiki/2026%E2%80%9327_Women%27s_Super_League),
+[WSL 2026-27 key dates and
+fixtures](https://www.stylist.co.uk/fitness-health/sport/womens-super-league-key-dates-2026-27/1107171).)
