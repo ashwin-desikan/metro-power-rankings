@@ -41,14 +41,7 @@ export function MetroLink({ name, slug }: { name: string | null | undefined; slu
   );
 }
 
-export function SectionHead({ title, sub }: { title: string; sub: string }) {
-  return (
-    <>
-      <h2 className="text-2xl font-bold mb-1">{title}</h2>
-      <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">{sub}</p>
-    </>
-  );
-}
+export { SectionHead } from "@/app/_shared/SectionHead";
 
 export function Crumbs({ tab }: { tab?: string }) {
   return (

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const path = `/teams/rugby-league/${slug}`;
   const desc = `${t.name} at the Rugby League World Cup: ${t.titles} title${t.titles === 1 ? "" : "s"}, ${t.runner_ups} runner-up finish${t.runner_ups === 1 ? "" : "es"}, ${t.semis} other semi-final${t.semis === 1 ? "" : "s"} across ${t.first}-${t.last}.`;
   return {
-    title: `${t.name} — Rugby League World Cup`,
+    title: `${t.name}: Rugby League World Cup`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${t.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },

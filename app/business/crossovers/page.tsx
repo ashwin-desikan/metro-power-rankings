@@ -42,7 +42,8 @@ export default async function CrossoversPage() {
       <section className="mb-10" id="sport">
         <SectionHead
           title="Sporting money, corporate money"
-          sub="The flagship Metro Power Rankings measure sporting weight; the Money Table measures corporate weight. These metros disagree hardest with themselves: sporting giants without the boardrooms, and boardroom giants without the trophies."
+          sub="The flagship Metro Power Rankings measure sporting weight; the Money Table measures corporate weight."
+          more="These metros disagree hardest with themselves: sporting giants without the boardrooms, and boardroom giants without the trophies."
         />
         <div className="grid gap-4 lg:grid-cols-2">
           {[
@@ -84,7 +85,8 @@ export default async function CrossoversPage() {
       <section className="mb-10" id="states">
         <SectionHead
           title="The state of money"
-          sub="US states by the market value headquartered in their metros (each metro counts toward its primary state). The same states whose politics this site tracks all year."
+          sub="US states by the market value headquartered in their metros."
+          more="Each metro counts toward its primary state. The same states whose politics this site tracks all year."
         />
         <TableBox stickyCol={2}>
           <thead>
@@ -125,7 +127,8 @@ export default async function CrossoversPage() {
           <section className="mb-10" id="employers">
             <SectionHead
               title="Who employs the world"
-              sub={`Market cap measures what investors think; headcount measures who signs the pay cheques. The Fortune Global 500's biggest employers - ${(totalG500Employees / 1e6).toFixed(1)} million people across just the top thirty.`}
+              sub="Market cap measures what investors think; headcount measures who signs the pay cheques."
+              more={`The Fortune Global 500's biggest employers: ${(totalG500Employees / 1e6).toFixed(1)} million people across just the top thirty.`}
             />
             <div className="grid gap-4 lg:grid-cols-2">
               <TableBox>

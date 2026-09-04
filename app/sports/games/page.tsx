@@ -241,8 +241,7 @@ export default function GamesHubPage() {
         <h1 className="text-4xl font-bold tracking-tight mb-2">The Greatest Games</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           The best games each sport has produced, gathered in one place. NFL, NBA and MLB games are ranked by
-          Game Score, a composite of stakes, quality, competitiveness and matchup strength weighted by round
-          and team rating. Hockey joins through every game at which the Stanley Cup was physically awarded.
+          Game Score; hockey joins through every game at which the Stanley Cup was physically awarded.
         </p>
       </header>
 
@@ -296,18 +295,26 @@ export default function GamesHubPage() {
       <section id="how" className="mb-10">
         <h2 className="text-lg font-semibold mb-2">How Game Score works</h2>
         <p className="text-sm text-[var(--text-muted)] max-w-3xl">
-          Within each league, every postseason game earns a Game Score that blends how much was at stake
-          (round and seeding), how good the two teams were (rating), and how close and consequential the game
-          itself turned out to be. The result is a single number that lets a first-round upset and a Game 7
-          classic sit on the same ladder. The catch is that those numbers are calibrated per sport, so a 3.6 in
-          baseball is not the same currency as a 3.6 in basketball. Hockey is a different case again: the data
-          here is the roll of Stanley Cup presentation games rather than a scored ranking. A unified, normalized
-          board that ranks across all four is the next build, not a claim this page makes yet.{" "}
-          <Link href="/methodology" className="underline decoration-dotted hover:text-[var(--text)]">
-            Methodology
-          </Link>
-          .
+          Every postseason game earns a Game Score from its stakes, the teams&apos; quality, and how close it was.
         </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            Within each league, every postseason game earns a Game Score that blends how much was at stake
+            (round and seeding), how good the two teams were (rating), and how close and consequential the game
+            itself turned out to be. The result is a single number that lets a first-round upset and a Game 7
+            classic sit on the same ladder. The catch is that those numbers are calibrated per sport, so a 3.6 in
+            baseball is not the same currency as a 3.6 in basketball. Hockey is a different case again: the data
+            here is the roll of Stanley Cup presentation games rather than a scored ranking. A unified, normalized
+            board that ranks across all four is the next build, not a claim this page makes yet.{" "}
+            <Link href="/methodology" className="underline decoration-dotted hover:text-[var(--text)]">
+              Methodology
+            </Link>
+            .
+          </div>
+        </details>
       </section>
 
       {/* Club Football */}
@@ -316,13 +323,20 @@ export default function GamesHubPage() {
           <div>
             <h2 className="text-xl font-bold tracking-tight">Club Football</h2>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl">
-              Every top-flight league match, every UEFA competition match and the ten major domestic cups
-              since 1871, some 260,000 in all,
-              ranked by a Game Score of closeness, stakes, quality and upset over one unified club Elo.
-              Second legs are scored on the aggregate tie, league stakes come from the live table, and a
-              starred row is a curated all-time classic whose model score shows on hover. The home side
-              is listed first; neutral venues and two-legged ties are marked on each row.
+              Every top-flight league match, UEFA match and major domestic cup since 1871, ranked by Game Score.
             </p>
+            <details className="mt-1.5 max-w-3xl">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+                How this is measured
+              </summary>
+              <div className="mt-2 text-sm text-[var(--text-muted)]">
+                Some 260,000 matches in all, ranked by a Game Score of closeness, stakes, quality and upset
+                over one unified club Elo. Second legs are scored on the aggregate tie, league stakes come
+                from the live table, and a starred row is a curated all-time classic whose model score shows
+                on hover. The home side is listed first; neutral venues and two-legged ties are marked on
+                each row.
+              </div>
+            </details>
           </div>
           <a href="/teams/football" className="text-xs text-[var(--accent)] hover:underline whitespace-nowrap">Full Club Football hub &rarr;</a>
         </div>
@@ -403,11 +417,18 @@ export default function GamesHubPage() {
           <h2 className="text-xl font-bold tracking-tight">Cricket</h2>
           <Link href="/teams/cricket#greatest-games" className="text-xs" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>Full cricket hub &rarr;</Link>
         </div>
-        <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
-          Tests, ODIs and T20Is ranked by a Game Score of closeness, stakes and both sides&apos; strength
-          from the recomputed rankings, on one scale under All formats. A &#9733; marks the curated
-          all-time classics.
+        <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-1">
+          Tests, ODIs and T20Is ranked by a Game Score of closeness, stakes and strength, on one scale.
         </p>
+        <details className="mb-4 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            Strength comes from the recomputed rankings, with all three formats on one scale under &quot;All
+            formats.&quot; A &#9733; marks the curated all-time classics.
+          </div>
+        </details>
         <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] font-semibold mb-2">Featured games</p>
         <FeaturedGames games={cricketFeatured} />
         <div className="mt-6">
@@ -421,12 +442,18 @@ export default function GamesHubPage() {
           <h2 className="text-xl font-bold tracking-tight">Rugby Union</h2>
           <Link href="/teams/rugby-union#greatest-games" className="text-xs" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>Full rugby hub &rarr;</Link>
         </div>
-        <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
-          Every men&apos;s international since 1871 ranked by a Game Score of closeness, stakes and both
-          sides&apos; strength on the day, with team strength from a continuous Elo rating running the whole
-          history so eras before the modern rankings are scored on the same scale. A &#9733; marks the
-          curated all-time classics.
+        <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-1">
+          Every men&apos;s international since 1871 ranked by a Game Score of closeness, stakes and strength.
         </p>
+        <details className="mb-4 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            Team strength comes from a continuous Elo rating running the whole history, so eras before the
+            modern rankings are scored on the same scale. A &#9733; marks the curated all-time classics.
+          </div>
+        </details>
         <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] font-semibold mb-2">Featured games</p>
         <FeaturedGames games={rugbyFeatured} />
         <div className="mt-6">

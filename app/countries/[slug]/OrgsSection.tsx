@@ -35,7 +35,7 @@ function OrgBadge({
       href={def.href}
       target="_blank"
       rel="noopener noreferrer"
-      title={`${def.label} — ${style.label}`}
+      title={`${def.label}: ${style.label}`}
       className={`
         inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs
         transition-opacity hover:opacity-80 no-underline

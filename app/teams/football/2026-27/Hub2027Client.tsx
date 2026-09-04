@@ -6,6 +6,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export type HubRow = { rank: number | null; name: string; slug: string | null; cells: (number | string)[]; champ?: boolean };
 export type HubGroup = { label: string | null; rows: HubRow[] };
@@ -32,6 +33,13 @@ function ClubLabel({ r }: { r: HubRow }) {
 }
 
 function StandingsTable({ group }: { group: HubGroup }) {
+  // Points (cells[7]) is the standings' argument — the column the table is
+  // sorted by. max is this group's own maximum, computed once per group
+  // (each StandingsTable call renders exactly one table), never per row.
+  const ptsMax = Math.max(
+    ...group.rows.map((r) => (typeof r.cells[7] === "number" ? (r.cells[7] as number) : 0)),
+    1,
+  );
   return (
     <ResponsiveTable
       compact
@@ -68,7 +76,13 @@ function StandingsTable({ group }: { group: HubGroup }) {
                 <ClubLabel r={r} />
               </td>
               {r.cells.map((c, j) => (
-                <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{c}</td>
+                j === 7 ? (
+                  <td key={j} className="py-1 px-1.5 text-right">
+                    <DataBar v={typeof c === "number" ? c : null} max={ptsMax} width={88} label="points" />
+                  </td>
+                ) : (
+                  <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{c}</td>
+                )
               ))}
             </tr>
           ))}

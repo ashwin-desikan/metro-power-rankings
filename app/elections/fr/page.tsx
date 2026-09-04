@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/fr";
 const TITLE = "French Elections";
 const DESC =
-  "Every French legislative election from the Revolution of 1791 to the snap vote of 2024, and every Fifth Republic presidential election from 1958 to 2022 — the results, the leaders and the story of each, across five republics, two empires and three monarchies.";
+  "Every French legislative election from the Revolution of 1791 to the snap vote of 2024, and every Fifth Republic presidential election from 1958 to 2022: the results, the leaders and the story of each, across five republics, two empires and three monarchies.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -130,7 +130,7 @@ export default function FrElectionsPage() {
       <section id="presidential" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential elections</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          The Fifth Republic&apos;s twelve presidential contests, newest first — one by electoral college in
+          The Fifth Republic&apos;s twelve presidential contests, newest first, one by electoral college in
           1958, then by direct two-round vote since 1965. Click any election for both rounds in full.
         </p>
         {presByEra.map(({ era, list }) => (
@@ -171,7 +171,7 @@ export default function FrElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Two turnouts, two stories</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               Presidential elections still draw quorums above 70%, but legislative turnout collapsed once the
-              Assembly vote became the presidency&apos;s echo — from 80% before 2002 to under 48% in 2022,
+              Assembly vote became the presidency&apos;s echo, from 80% before 2002 to under 48% in 2022,
               before 2024&apos;s snap election snapped it back.
             </p>
             <LineChart series={[legTurnout, presTurnout]} yMax={100} yTicks={[50, 75]} />
@@ -193,10 +193,10 @@ export default function FrElectionsPage() {
       <HowItWorks
         title="How French elections work"
         cards={[
-          ["Two rounds, always", "Both the presidency and Assembly seats use runoffs: if nobody wins outright, the top candidates meet again two weeks later. Round one is for choosing, round two for eliminating — the system that built the 'republican front'."],
-          ["President and Assembly", "The president is head of state, but governments answer to the Assembly. When the two disagree — 1986, 1993, 1997 — France gets cohabitation: a president of one camp, a prime minister of the other."],
-          ["The five-year alignment", "Since 2002 presidential terms match the Assembly's, with legislative elections held weeks after the presidential vote — designed to hand new presidents a majority, which worked every time until 2022."],
-          ["A history of franchises", "France has voted under property qualifications, universal male suffrage (1848, a European first), and full universal suffrage only from 1945 — the same country, five republics, and a dozen electoral systems along the way."],
+          ["Two rounds, always", "Both the presidency and Assembly seats use runoffs: if nobody wins outright, the top candidates meet again two weeks later. Round one is for choosing, round two for eliminating, the system that built the 'republican front'."],
+          ["President and Assembly", "The president is head of state, but governments answer to the Assembly. When the two disagree, 1986, 1993, 1997, France gets cohabitation: a president of one camp, a prime minister of the other."],
+          ["The five-year alignment", "Since 2002 presidential terms match the Assembly's, with legislative elections held weeks after the presidential vote, designed to hand new presidents a majority, which worked every time until 2022."],
+          ["A history of franchises", "France has voted under property qualifications, universal male suffrage (1848, a European first), and full universal suffrage only from 1945, the same country, five republics, and a dozen electoral systems along the way."],
         ]}
       />
 

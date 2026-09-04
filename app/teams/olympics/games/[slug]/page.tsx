@@ -21,7 +21,7 @@ export async function generateMetadata(
   const path = `/teams/olympics/games/${slug}`;
   const desc = `Complete medal table and a medal table by sport for the ${ed.name}${ed.hostCity ? ` in ${ed.hostCity}` : ""}: ${ed.nations} nations, ${ed.events} events and ${ed.medalsTotal.toLocaleString()} medals.`;
   return {
-    title: `${ed.name} — Medals`,
+    title: `${ed.name}: Medals`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${ed.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },

@@ -116,7 +116,7 @@ export default function EgElectionsPage() {
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
         <StatTile label="House seats" value="596" hint="including 28 presidential appointees" />
         <StatTile label="Contests on file" value={String(legislative.length + presidential.length)} hint="legislative and presidential" />
-        <StatTile label="The one competitive race" value="2012" hint="51.7% — decided by fewer than 900,000 votes" />
+        <StatTile label="The one competitive race" value="2012" hint="51.7%, decided by fewer than 900,000 votes" />
       </div>
 
       <JumpNav items={[["#presidential", "Presidential elections"], ["#chronology", "Parliamentary elections"], ["#charts", "The long arc in charts"], ["#records", "Records"], ["#how-it-works", "How it works"]]} />

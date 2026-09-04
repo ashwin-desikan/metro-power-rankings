@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/kr";
 const TITLE = "South Korean Elections";
 const DESC =
-  "Every South Korean presidential election from 1948 to the post-martial-law snap vote of 2025, and every National Assembly election since 1948 — the rigged and rubber-stamp contests of the authoritarian decades labelled as such, and the fierce two-camp democracy since 1987.";
+  "Every South Korean presidential election from 1948 to the post-martial-law snap vote of 2025, and every National Assembly election since 1948: the rigged and rubber-stamp contests of the authoritarian decades labelled as such, and the fierce two-camp democracy since 1987.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -153,7 +153,7 @@ export default function KrElectionsPage() {
         fmtPct={krFmtPct}
         leaderTag="President"
         headline="National Assembly elections"
-        intro="Every National Assembly election, newest first — from the 1948 Constitutional Assembly through the appointed-seat Assemblies of the Yushin years to the democratic era's midterm verdicts on each presidency."
+        intro="Every National Assembly election, newest first, from the 1948 Constitutional Assembly through the appointed-seat Assemblies of the Yushin years to the democratic era's midterm verdicts on each presidency."
       />
 
       {/* ---------- charts ---------- */}
@@ -187,10 +187,10 @@ export default function KrElectionsPage() {
       <HowItWorks
         title="How South Korean elections work"
         cards={[
-          ["One round, one term", "The president is elected by simple plurality in a single round, for one five-year term with no re-election — a constitutional answer to the decades of strongmen extending their rule."],
-          ["A mixed Assembly", "The National Assembly's 300 seats mix constituency winners with proportional list seats, elected every four years — deliberately out of phase with the presidency, so every president faces a mid-term verdict."],
-          ["The two camps", "Since democratisation, politics has been a duel between a conservative camp (today's People Power Party, in red) and a liberal one (the Democratic Party, in blue) — with third-candidate splits deciding several presidencies."],
-          ["Impeachment as a feature", "Two presidents have been removed by impeachment since 2017, each removal triggering a 60-day snap election — the constitutional machinery that produced both the 2017 and 2025 contests."],
+          ["One round, one term", "The president is elected by simple plurality in a single round, for one five-year term with no re-election, a constitutional answer to the decades of strongmen extending their rule."],
+          ["A mixed Assembly", "The National Assembly's 300 seats mix constituency winners with proportional list seats, elected every four years, deliberately out of phase with the presidency, so every president faces a mid-term verdict."],
+          ["The two camps", "Since democratisation, politics has been a duel between a conservative camp (today's People Power Party, in red) and a liberal one (the Democratic Party, in blue), with third-candidate splits deciding several presidencies."],
+          ["Impeachment as a feature", "Two presidents have been removed by impeachment since 2017, each removal triggering a 60-day snap election, the constitutional machinery that produced both the 2017 and 2025 contests."],
         ]}
       />
 

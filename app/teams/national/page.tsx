@@ -304,11 +304,11 @@ export default async function NationalIndexPage() {
           <div className="rounded-xl border p-4" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl">
               The 2026-27 league phase runs 24 September to 17 November. Live group tables appear
-              here — and in the International Football section of{" "}
+              here, and in the International Football section of{" "}
               <Link href="/sports/standings#international-football" className="hover:underline" style={{ color: "var(--accent)" }}>
                 Live Standings
               </Link>
-              {" "}— from the first matchday, fed by the same daily refresh as the club competitions.
+              , from the first matchday, fed by the same daily refresh as the club competitions.
             </p>
           </div>
         }
@@ -325,12 +325,12 @@ export default async function NationalIndexPage() {
         fallback={
           <div className="rounded-xl border p-4" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl">
-              The 2027 Asian Cup runs 7 to 20 January 2027. Live group tables appear here — and in
+              The 2027 Asian Cup runs 7 to 20 January 2027. Live group tables appear here, and in
               the International Football section of{" "}
               <Link href="/sports/standings#international-football" className="hover:underline" style={{ color: "var(--accent)" }}>
                 Live Standings
               </Link>
-              {" "}— from the first matchday. Every edition on file is on the{" "}
+              , from the first matchday. Every edition on file is on the{" "}
               <Link href="/teams/national/tournaments/asian-cup" className="hover:underline" style={{ color: "var(--accent)" }}>
                 Asian Cup hub
               </Link>.

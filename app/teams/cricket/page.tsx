@@ -113,9 +113,8 @@ export default async function CricketHubPage() {
           Every men&apos;s international on file from the first Test in 1877 to this
           week&apos;s fixtures: {hub.totals.matches.toLocaleString()} matches across Tests,
           ODIs and T20Is, all {hub.totals.full_members} full members and every associate
-          nation, with the Citizen of Nowhere rankings recomputed monthly from first
-          principles, the all-time number-one reigns, major-tournament honours, and the
-          named series trophies from the Ashes on down.
+          nation. Rankings recomputed monthly from first principles, plus number-one
+          reigns, tournament honours, and named series trophies from the Ashes on down.
         </p>
       </header>
 
@@ -480,12 +479,18 @@ export default async function CricketHubPage() {
       {/* ---------------- Greatest Games ---------------- */}
       <section id="greatest-games" className="mb-12 scroll-mt-24">
         <h2 className="text-lg font-semibold mb-1">The Greatest Games</h2>
-        <p className="text-[var(--text-muted)] text-sm mb-4 max-w-3xl">
-          Every men&apos;s international ranked by a Game Score that blends how close the finish was, what
-          was at stake, and how strong both sides were on the day, from the recomputed rankings. A &#9733;
-          marks the hand-picked all-time classics whose greatness is historical rather than in the margin.
-          Switch formats, or read them on one scale under All formats.
+        <p className="text-[var(--text-muted)] text-sm mb-1 max-w-3xl">
+          Every international ranked by a Game Score blending closeness, stakes and team strength.
         </p>
+        <details className="mb-4 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            A &#9733; marks the hand-picked all-time classics whose greatness is historical rather than
+            in the margin. Switch formats, or read them on one scale under All formats.
+          </div>
+        </details>
         <CricketGreatestGames test={cg.Test} odi={cg.ODI} t20i={cg.T20I} combined={cg.combined} decades={cg.by_decade} limit={50} />
       </section>
 
@@ -710,7 +715,7 @@ export default async function CricketHubPage() {
           These are our own ratings, not the ICC&apos;s, and they own their differences.
           A windowed recomputation can anchor a team&apos;s level only through its
           opponents, so sides that play almost entirely inside a closed regional pool
-          can&apos;t be placed on the same scale as the global circuit — the main T20I
+          can&apos;t be placed on the same scale as the global circuit: the main T20I
           table therefore covers full members and circuit-connected nations, while
           regional-pool sides are ranked in the separate associate run. And in the
           crossover band where strong associates meet the full-member tail, our order

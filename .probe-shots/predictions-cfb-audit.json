@@ -1,0 +1,608 @@
+{
+  "route": "/predictions/cfb",
+  "scrollWidth": 390,
+  "scrollHeight": 15995,
+  "innerWidth": 390,
+  "tables": [
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 513,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 15
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 507,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 7
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 651,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 25
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "hidden sm:block overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 25
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 387,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 9
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 509,
+      "wrapperClientWidth": 314,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 2
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 17
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 19
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 17
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 18
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 15
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 11
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 14
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 11
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 9
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 15
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 3
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 17
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 19
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 17
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 18
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 15
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 11
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 14
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 11
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 9
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 15
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 3
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 432,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 17
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 424,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 19
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 424,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 17
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 454,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 18
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 425,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 15
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 479,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 11
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 440,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 14
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 446,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 11
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 437,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 9
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 451,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 15
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 356,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 3
+    }
+  ],
+  "overflowEls": [
+    {
+      "tag": "table",
+      "cls": "w-full text-sm",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "thead",
+      "cls": "",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "tr",
+      "cls": "text-left",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 66,
+      "right": 415
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 115,
+      "right": 530
+    },
+    {
+      "tag": "tbody",
+      "cls": "",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 66,
+      "right": 415
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 whitespace-nowrap text-[var(--text-muted)]",
+      "width": 115,
+      "right": 530
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 66,
+      "right": 415
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 whitespace-nowrap text-[var(--text-muted)]",
+      "width": 115,
+      "right": 530
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 66,
+      "right": 415
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 whitespace-nowrap text-[var(--text-muted)]",
+      "width": 115,
+      "right": 530
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 66,
+      "right": 415
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 whitespace-nowrap text-[var(--text-muted)]",
+      "width": 115,
+      "right": 530
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 513,
+      "right": 530
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 66,
+      "right": 415
+    }
+  ],
+  "tapsUnder44": 3,
+  "tinyTextCount": 97,
+  "tinyTextSamples": [
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 12,
+      "text": "Updated",
+      "tag": "a",
+      "cls": "hidden xl:inline-block text-xs text-[var(--text-muted)] hove"
+    },
+    {
+      "fontSize": 12,
+      "text": "Home",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Predictions",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "College Football",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 10,
+      "text": "points-v3",
+      "tag": "p",
+      "cls": "text-[10px] uppercase tracking-widest text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 10,
+      "text": "Likely",
+      "tag": "span",
+      "cls": "inline-flex items-center rounded-full px-2 py-0.5 text-[10px"
+    },
+    {
+      "fontSize": 10,
+      "text": "Likely",
+      "tag": "span",
+      "cls": "inline-flex items-center rounded-full px-2 py-0.5 text-[10px"
+    },
+    {
+      "fontSize": 10,
+      "text": "Lean",
+      "tag": "span",
+      "cls": "inline-flex items-center rounded-full px-2 py-0.5 text-[10px"
+    },
+    {
+      "fontSize": 10,
+      "text": "Lean",
+      "tag": "span",
+      "cls": "inline-flex items-center rounded-full px-2 py-0.5 text-[10px"
+    }
+  ],
+  "hasCrumbs": true,
+  "hasH1": true,
+  "h1Text": "🏈 College Football 2026",
+  "monoStamp": "LIVE",
+  "tabNavDetected": true,
+  "hasSourcesCard": false,
+  "smHiddenLists": [
+    {
+      "cls": "sm:hidden rounded-xl border divide-y",
+      "childCount": 13,
+      "insideDetails": false
+    }
+  ],
+  "detailsCount": 1,
+  "details": [
+    {
+      "open": false,
+      "desktopOpen": true,
+      "summary": "Show all 24 games"
+    }
+  ],
+  "h2Count": 10,
+  "pageHeight390": 15995,
+  "pageHeight1440": 9885
+}

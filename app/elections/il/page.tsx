@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/il";
 const TITLE = "Israeli Elections";
 const DESC =
-  "Every Israeli election from the pre-state Assembly of Representatives of 1920 to the Knesset of 2022 — the Mapai decades, the Mahapach, the direct-election experiment and the deadlock cycle — with the next contest due in 2026, for novices and experts alike.";
+  "Every Israeli election from the pre-state Assembly of Representatives of 1920 to the Knesset of 2022: the Mapai decades, the Mahapach, the direct-election experiment and the deadlock cycle, with the next contest due in 2026, for novices and experts alike.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -58,8 +58,8 @@ export default function IlElectionsPage() {
 
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
         <StatTile label="Elections covered" value={String(elections.length)} hint={`${elections[0].year}–${last.year}, including the Yishuv assemblies`} />
-        <StatTile label="Latest" value={last.label} hint={`${last.seatLeader ?? ""} · ${last.pmAfter ? last.pmAfter.name : ""} — next due 2026`} />
-        <StatTile label="Knesset seats" value={ilFmtInt(last.totalSeats)} hint="61 for a majority — never won by one party" />
+        <StatTile label="Latest" value={last.label} hint={`${last.seatLeader ?? ""} · ${last.pmAfter ? last.pmAfter.name : ""}, next due 2026`} />
+        <StatTile label="Knesset seats" value={ilFmtInt(last.totalSeats)} hint="61 for a majority, never won by one party" />
         <StatTile label="Elections 2019–2022" value="5" hint="the deadlock cycle: five votes in under four years" />
       </div>
 
@@ -72,7 +72,7 @@ export default function IlElectionsPage() {
         colorOf={ilPartyColor}
         fmtPct={ilFmtPct}
         leaderTag="PM"
-        intro="Every election, newest first, across five eras — from the voluntary assemblies of the Yishuv through the Knesset's proportional politics, including the unique 2001 vote for prime minister alone."
+        intro="Every election, newest first, across five eras, from the voluntary assemblies of the Yishuv through the Knesset's proportional politics, including the unique 2001 vote for prime minister alone."
       />
 
       {/* ---------- charts ---------- */}
@@ -86,7 +86,7 @@ export default function IlElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout, 1949–2022</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               From the 80-plus percent participation of the founding decades to the high 60s of the modern
-              era — with the deadlock cycle, remarkably, pushing turnout back up.
+              era, with the deadlock cycle, remarkably, pushing turnout back up.
             </p>
             <LineChart series={[turnoutSeries]} yMax={100} yTicks={[50, 75]} />
           </div>
@@ -106,9 +106,9 @@ export default function IlElectionsPage() {
       <HowItWorks
         title="How Israeli elections work"
         cards={[
-          ["One nationwide district", "The whole country elects the Knesset's 120 seats by closed-list proportional representation in a single district — a system inherited from the Yishuv's assemblies and essentially unchanged since 1949."],
-          ["The threshold", "A party needs 3.25% of the vote to enter — a bar raised over the years from 1%, and one that regularly decides coalitions by knocking out small allies a few thousand votes short."],
-          ["Coalitions, always", "No party has ever won a majority, so every Israeli government is a coalition negotiated after the vote — which is why the president's nomination of a coalition-builder can matter as much as the count itself."],
+          ["One nationwide district", "The whole country elects the Knesset's 120 seats by closed-list proportional representation in a single district, a system inherited from the Yishuv's assemblies and essentially unchanged since 1949."],
+          ["The threshold", "A party needs 3.25% of the vote to enter, a bar raised over the years from 1%, and one that regularly decides coalitions by knocking out small allies a few thousand votes short."],
+          ["Coalitions, always", "No party has ever won a majority, so every Israeli government is a coalition negotiated after the vote, which is why the president's nomination of a coalition-builder can matter as much as the count itself."],
           ["The direct-election detour", "From 1996 to 2001 Israelis elected the prime minister directly on a separate ballot. It fragmented the Knesset without stabilising the premiership, and was abolished after the 2001 PM-only special election."],
         ]}
       />

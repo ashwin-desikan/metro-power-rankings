@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/iq";
 const TITLE = "Iraqi Elections";
 const DESC =
-  "Eighty years of Iraqi voting, recorded honestly: the managed chambers of the Hashemite monarchy, Saddam's single-list rituals and 99.99% referendums, the purple-finger election of 2005 held under fire — and an unbroken run of competitive parliamentary elections since, through civil war, ISIS and the Tishreen uprising.";
+  "Eighty years of Iraqi voting, recorded honestly: the managed chambers of the Hashemite monarchy, Saddam's single-list rituals and 99.99% referendums, the purple-finger election of 2005 held under fire, and an unbroken run of competitive parliamentary elections since, through civil war, ISIS and the Tishreen uprising.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -109,7 +109,7 @@ export default function IqElectionsPage() {
         <StatTile label="Parliamentary elections" value={String(legislative.length)} hint="1946–2025: monarchy, Ba'athist rituals, and the federal republic" />
         <StatTile label="Presidential votes" value={String(presidential.length)} hint="two Saddam referendums, four parliamentary elections of a ceremonial president" />
         <StatTile label="Competitive elections since 2005" value="7" hint="an unbroken run from the purple fingers of January 2005 to November 2025" />
-        <StatTile label="Saddam's 2002 score" value="100%" hint="eleven million official votes, none against — recorded as an artefact of terror" />
+        <StatTile label="Saddam's 2002 score" value="100%" hint="eleven million official votes, none against, recorded as an artefact of terror" />
       </div>
 
       <JumpNav items={[["#chronology", "Parliamentary elections"], ["#presidential", "Presidential votes"], ["#charts", "The long arc in charts"], ["#records", "The numbers to know"], ["#how-it-works", "How it works"]]} />
@@ -123,7 +123,7 @@ export default function IqElectionsPage() {
         fmtPct={iqFmtPct}
         leaderTag="PM"
         headline="Parliamentary elections"
-        intro="Every national parliamentary vote, newest first — the Council of Representatives era with real winners and losers, the Ba'athist National Assembly rituals labelled for what they were, and the managed chambers of the monarchy."
+        intro="Every national parliamentary vote, newest first: the Council of Representatives era with real winners and losers, the Ba'athist National Assembly rituals labelled for what they were, and the managed chambers of the monarchy."
       />
 
       {/* ---------- presidential ---------- */}
@@ -131,8 +131,8 @@ export default function IqElectionsPage() {
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential votes</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
           Two kinds of contest that could not be less alike: Saddam&apos;s yes-or-no referendums,
-          and the parliament&apos;s repeatedly deadlocked elections of a ceremonial president —
-          by convention a Kurd — since 2014.
+          and the parliament&apos;s repeatedly deadlocked elections of a ceremonial president,
+          by convention a Kurd, since 2014.
         </p>
         {presByEra.map(({ era, list }) => (
           <div key={era.key} id={`pres-era-${era.key}`} className="mb-8">
@@ -168,12 +168,12 @@ export default function IqElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Why the Ba&apos;athist numbers are not data</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               The National Assembly elections of 1980–2000 and the referendums of 1995 and 2002
-              reported whatever the regime required — 99.99%, then a perfect 100. They appear in
+              reported whatever the regime required: 99.99%, then a perfect 100. They appear in
               the chronology with their honest labels, and in no chart: announced unanimity
               measures fear, not opinion.
             </p>
             <div className="text-xs text-[var(--text-dim)] mt-6">
-              Explore the chronologies above — every table sorts, and every entry carries its label.
+              Explore the chronologies above: every table sorts, and every entry carries its label.
             </div>
           </div>
         </div>
@@ -186,8 +186,8 @@ export default function IqElectionsPage() {
         cards={[
           ["The Council of Representatives", "329 seats elected by proportional representation by governorate, with quota seats for women (a quarter of the chamber) and for Christian, Yazidi, Shabak, Mandaean and Feyli Kurd minorities. The electoral law has changed before nearly every election."],
           ["Forming a government", "No party has ever approached a majority, so governments emerge from months of negotiation between Shia, Sunni and Kurdish blocs. The record: nine months after 2010, a year after 2021, and five months to elect a president after 2025."],
-          ["The ethno-sectarian convention", "By convention since 2005 the presidency goes to a Kurd, the premiership to a Shia Arab and the speakership to a Sunni Arab. The president is elected by parliament with a two-thirds quorum — the source of repeated deadlocks."],
-          ["What the labels mean", "Monarchy-era elections were managed by the palace; Ba'athist votes were rituals under state terror; everything since January 2005 has been genuinely competitive, held under violence but not falsified — each entry says which it is."],
+          ["The ethno-sectarian convention", "By convention since 2005 the presidency goes to a Kurd, the premiership to a Shia Arab and the speakership to a Sunni Arab. The president is elected by parliament with a two-thirds quorum, the source of repeated deadlocks."],
+          ["What the labels mean", "Monarchy-era elections were managed by the palace; Ba'athist votes were rituals under state terror; everything since January 2005 has been genuinely competitive, held under violence but not falsified, each entry says which it is."],
         ]}
       />
 

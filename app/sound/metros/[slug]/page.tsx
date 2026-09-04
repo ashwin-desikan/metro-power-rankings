@@ -133,7 +133,7 @@ export default async function MetroProfile({ params }: { params: Promise<{ slug:
               {m.top_songs.slice(0, 15).map((s, i) => (
                 <li key={s.single + i} className="truncate">
                   <span className="mr-1 text-xs tabular-nums" style={muted}>{i + 1}</span>
-                  &ldquo;{s.single}&rdquo; <span className="text-xs" style={muted}>— {s.artist} · {s.chart} #{s.peak} ({s.year})</span>
+                  &ldquo;{s.single}&rdquo; <span className="text-xs" style={muted}>: {s.artist} · {s.chart} #{s.peak} ({s.year})</span>
                 </li>
               ))}
             </ol>

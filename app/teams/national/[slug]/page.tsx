@@ -737,7 +737,7 @@ function BhcSection({ slug }: { slug: string }) {
         </Link>
       </div>
       <p className="text-xs text-[var(--text-muted)] mb-3">
-        Historical reference only — these titles are not counted in the main honors totals.
+        Historical reference only: these titles are not counted in the main honors totals.
       </p>
       <div className="flex gap-6 text-sm mb-0">
         {bhcWins > 0 && (

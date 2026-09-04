@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Season } from "@/lib/nfl";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Sortable Season-by-season table for /teams/nfl/[slug]. Client component so
 // header clicks can re-sort without a round trip. Server-side wrapper passes
@@ -99,6 +100,10 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
   }
 
   const displayRows = liveRow ? [liveRow, ...sortedHistorical] : sortedHistorical;
+  // Win% is the clearest single magnitude column in a season-by-season log.
+  // colMax is computed once here over the full displayRows set (not a
+  // paginated/visible slice), before both the mobile and desktop row maps.
+  const colMax = Math.max(...displayRows.map((s) => s.win_pct), 0.001);
 
   return (
     <>
@@ -328,7 +333,9 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
                   <td className="text-right py-1.5">{s.w}</td>
                   <td className="text-right py-1.5">{s.l}</td>
                   <td className="text-right py-1.5">{s.t}</td>
-                  <td className="text-right py-1.5">{s.win_pct.toFixed(3)}</td>
+                  <td className="text-right py-1.5">
+                    <DataBar v={s.win_pct} max={colMax} dp={3} width={72} label="win percentage" />
+                  </td>
                   <td className="text-right py-1.5">{s.pf}</td>
                   <td className="text-right py-1.5">{s.pa}</td>
                   <td className="pl-3 py-1.5 text-[var(--text-muted)]">{s.division}</td>
@@ -445,7 +452,7 @@ function SeasonBadges({
         key="stolen"
         className="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide"
         style={{ background: TITLE_GOLD, color: "#1a1a1a" }}
-        title="Won the 1925 NFL title on the field, then stripped by the league — pro football’s ‘stolen championship.’"
+        title="Won the 1925 NFL title on the field, then stripped by the league: pro football’s ‘stolen championship.’"
       >
         Stolen Championship
       </span>,

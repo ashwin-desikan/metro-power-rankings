@@ -16,6 +16,7 @@ import { activeIn, dkey, resolveWindow, shortRole, type HistRow } from "@/lib/le
 import type { LeaderEntity } from "@/lib/leadersAll";
 import { BALLOT_OF } from "@/lib/electionLeaderLinks";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 const CONTINENTS = [
   "All", "Europe", "North America", "Asia", "South America", "Africa",
@@ -348,6 +349,17 @@ export default function LeadersDirectory({
     return list;
   }, [entities, mode, ms, me, monarchTimeline, continent, type, org, entitySlug, search, sortKey, sortDir, powerMap, relYear]);
 
+  // Score is the board's argument in the "current" lens (the site's
+  // metro-based country score, defaulted as the sort key there), so it is
+  // the one column that gets an in-cell bar. max is the column's own
+  // maximum across the current filtered/sorted rows, computed once here so
+  // bars stay comparable as the table re-sorts or filters. Power is left
+  // alone: it already carries its own accent-coloured figure and is the
+  // "current" column's counterpart metric for the time-machine lens instead.
+  const scoreMax = useMemo(
+    () => Math.max(...entityRows.map(({ e }) => e.scoreTotal ?? 0), 1),
+    [entityRows]);
+
   // ── All-time rows (one per historical term) ───────────────────────────────
   const allTimeRows = useMemo(() => {
     if (mode !== "alltime" || (entitySlug === "all" && !search.trim())) return [];
@@ -435,7 +447,7 @@ export default function LeadersDirectory({
 
       {mode === "asof" ? (
         <p className="text-xs text-[var(--text-dim)] leading-relaxed">
-          Full succession is loaded for {historyCount} offices — those resolve to the exact
+          Full succession is loaded for {historyCount} offices. Those resolve to the exact
           officeholder(s) for the month, and a mid-month handover shows both. The rest carry only a
           current snapshot, so they appear (marked <span className="text-[var(--text-muted)]">now</span>)
           from the date the incumbent took office. For Commonwealth realms the sovereign resolves by date.
@@ -749,7 +761,9 @@ export default function LeadersDirectory({
                       <td className="hidden md:table-cell px-4 py-3 text-[var(--text-muted)] text-xs">{regionLabel(e)}</td>
                       <td className="px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtPct(powerShare(e.slug))}</td>
                       {mode === "current" && (
-                        <td className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}>{fmtScore(e.scoreTotal)}</td>
+                        <td className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                          <DataBar v={e.scoreTotal} max={scoreMax} dp={1} color="var(--seq-4)" width={104} label="score" />
+                        </td>
                       )}
                       <td className="px-2 sm:px-4 py-3">
                         {primaries.length ? (

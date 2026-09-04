@@ -89,7 +89,7 @@ export default function IplPage() {
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           The world's highest-attended T20 franchise league, launched by the BCCI in 2008.
           Ten city franchises compete each spring in a double round-robin group stage, followed
-          by a four-team playoff. Rosters are rebuilt annually through the IPL auction — meaning
+          by a four-team playoff. Rosters are rebuilt annually through the IPL auction, meaning
           a franchise's identity and city count more than any squad continuity.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">

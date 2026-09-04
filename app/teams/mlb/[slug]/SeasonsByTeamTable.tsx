@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Season } from "@/lib/mlb";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Sortable Season-by-season table for /teams/mlb/[slug]. Mirrors the NFL
 // version's UX exactly: live in-progress row pinned to top, italic + accent
@@ -121,6 +122,10 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, fetchedAt }: Pro
   }
 
   const displayRows = liveRow ? [liveRow, ...sortedHistorical] : sortedHistorical;
+  // Win% is the clearest single magnitude column in a season-by-season log.
+  // colMax is computed once here over the full displayRows set (not a
+  // paginated/visible slice), before both the mobile and desktop row maps.
+  const colMax = Math.max(...displayRows.map((s) => s.win_pct), 0.001);
 
   return (
     <>
@@ -373,7 +378,9 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, fetchedAt }: Pro
                   </td>
                   <td className="text-right py-1.5">{s.w}</td>
                   <td className="text-right py-1.5">{s.l}</td>
-                  <td className="text-right py-1.5">{s.win_pct.toFixed(3)}</td>
+                  <td className="text-right py-1.5">
+                    <DataBar v={s.win_pct} max={colMax} dp={3} width={72} label="win percentage" />
+                  </td>
                   <td className="text-right py-1.5">{s.rs}</td>
                   <td className="text-right py-1.5">{s.ra}</td>
                   <td className="pl-3 py-1.5 text-[var(--text-muted)]">{s.division}</td>

@@ -96,7 +96,7 @@ export default async function FootballIndex() {
         eyebrow="Club Football"
         title={<h1 className="text-3xl font-semibold tracking-tight">Football</h1>}
         subtitle={
-          <>Every European trophy, the great leagues, and every club&apos;s story — back to the 1870s.</>
+          <>Every European trophy, the great leagues, and every club&apos;s story, back to the 1870s.</>
         }
         cta={
           <a
@@ -120,7 +120,7 @@ export default async function FootballIndex() {
                 <span className="text-lg font-semibold">2026-27 Club Football Hub</span>
               </div>
               <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl">
-                Every tracked league table, live — plus the European cups and the Libertadores.
+                Every tracked league table, live, plus the European cups and the Libertadores.
               </p>
             </div>
             <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Open the season hub →</span>
@@ -146,9 +146,9 @@ export default async function FootballIndex() {
         {/* The four layers, as stat-cards that double as section nav — the numbers ARE the pitch. */}
         <div className="grid gap-2.5 grid-cols-2 lg:grid-cols-4">
           {[
-            { href: "#tournaments", emoji: "🏆", stat: String(tournamentHubs.length), label: "tournament hubs", blurb: "Champions League to Club World Cup — every edition, every final." },
+            { href: "#tournaments", emoji: "🏆", stat: String(tournamentHubs.length), label: "tournament hubs", blurb: "Champions League to Club World Cup: every edition, every final." },
             { href: "#leagues", emoji: "🏟️", stat: String(hubs.length), label: "league hubs", blurb: "The great top flights: live tables, all-time champions." },
-            { href: "#domestic", emoji: "🌍", stat: String(countryCount), label: "countries", blurb: "Domestic leagues worldwide — one master table of top-flight clubs." },
+            { href: "#domestic", emoji: "🌍", stat: String(countryCount), label: "countries", blurb: "Domestic leagues worldwide: one master table of top-flight clubs." },
             { href: "#clubs", emoji: "🗺️", stat: clubs.length.toLocaleString("en-US"), label: "clubs", blurb: `Pinned on the interactive world map, ${yearsOfHistory ? `${yearsOfHistory}+ years` : "150 years"} of history each.` },
           ].map((c) => (
             <a
@@ -325,9 +325,9 @@ export default async function FootballIndex() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
           {[
             ["Promotion & relegation", "Most leagues on this site are open pyramids: the bottom few clubs in a division swap places with the top few from the tier below each season. England's is the deepest tracked here, five levels from the Premier League down to the National League."],
-            ["Qualifying for Europe", "A club's league finish (and sometimes a domestic cup win) earns a spot in next season's Champions League, Europa League, or Conference League — UEFA's three continental club competitions, seeded by a country's five-year coefficient."],
-            ["Country coefficients", "UEFA ranks each of its 55 member associations by how their clubs perform in Europe over a rolling five years. A higher coefficient means more Champions League places and a easier route through qualifying — it's why a mid-table team in a strong country can outrank a champion elsewhere."],
-            ["Reading a club page", "Every club page stacks the same layers: honors and footprint at the top, a rank-history chart, then season-by-season league results, domestic cup runs, and European appearances — the full record in one scroll."],
+            ["Qualifying for Europe", "A club's league finish (and sometimes a domestic cup win) earns a spot in next season's Champions League, Europa League, or Conference League: UEFA's three continental club competitions, seeded by a country's five-year coefficient."],
+            ["Country coefficients", "UEFA ranks each of its 55 member associations by how their clubs perform in Europe over a rolling five years. A higher coefficient means more Champions League places and a easier route through qualifying: it's why a mid-table team in a strong country can outrank a champion elsewhere."],
+            ["Reading a club page", "Every club page stacks the same layers: honors and footprint at the top, a rank-history chart, then season-by-season league results, domestic cup runs, and European appearances: the full record in one scroll."],
           ].map(([h, b]) => (
             <div key={h} className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
               <p className="font-semibold text-[var(--text)] mb-1">{h}</p>

@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/pl";
 const TITLE = "Polish Elections";
 const DESC =
-  "Polish elections from the Commonwealth's royal free elections of 1573 to the knife-edge presidential runoff of 2025 — the Second Republic, the communist rituals labelled as such, the round-table breakthrough of 1989 and the Third Republic's fierce two-camp politics.";
+  "Polish elections from the Commonwealth's royal free elections of 1573 to the knife-edge presidential runoff of 2025: the Second Republic, the communist rituals labelled as such, the round-table breakthrough of 1989 and the Third Republic's fierce two-camp politics.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -128,14 +128,14 @@ export default function PlElectionsPage() {
         fmtPct={plFmtPct}
         leaderTag="PM"
         headline="Parliamentary elections"
-        intro="Every Sejm election, newest first — the Second Republic, the communist rituals labelled as such, the semi-free breakthrough of June 1989 and the fully free Third Republic."
+        intro="Every Sejm election, newest first: the Second Republic, the communist rituals labelled as such, the semi-free breakthrough of June 1989 and the fully free Third Republic."
       />
 
       {/* ---------- presidential & royal ---------- */}
       <section id="presidential" className="mb-12">
-        <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidents — and elected kings</h2>
+        <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidents, and elected kings</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          All {presidential.length} contests for the Polish head of state, newest first — the direct
+          All {presidential.length} contests for the Polish head of state, newest first: the direct
           two-round elections of the Third Republic, the National Assembly votes of the Second, and the
           Commonwealth&apos;s eleven royal free elections, when the assembled nobility chose the king.
         </p>
@@ -164,7 +164,7 @@ export default function PlElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since the round table</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Polish turnout was long the puzzle of postcommunist Europe — barely 40% in 2005 — until the
+              Polish turnout was long the puzzle of postcommunist Europe, barely 40% in 2005, until the
               stakes of 2020, 2023 and 2025 drove record participation.
             </p>
             <LineChart series={[legTurnout, presTurnout]} yMax={100} yTicks={[25, 50, 75]} />
@@ -173,11 +173,11 @@ export default function PlElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">A two-camp republic</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               Since 2005 every parliament and presidency has been a duel between Law and Justice and the
-              Civic Platform camp — with the 2023 Sejm and the 2020 and 2025 runoffs each decided by a few
+              Civic Platform camp, with the 2023 Sejm and the 2020 and 2025 runoffs each decided by a few
               points or less.
             </p>
             <div className="text-xs text-[var(--text-dim)] mt-6">
-              Explore the chronology above for each contest&apos;s full result — every table sorts, and
+              Explore the chronology above for each contest&apos;s full result: every table sorts, and
               every era carries its story.
             </div>
           </div>
@@ -189,9 +189,9 @@ export default function PlElectionsPage() {
       <HowItWorks
         title="How Polish elections work"
         cards={[
-          ["Two rounds for president", "The president is directly elected for five years: a majority in round one, or a runoff between the top two a fortnight later — and the runoffs of 1995, 2020 and 2025 were all decided by roughly two points or less."],
-          ["A proportional Sejm", "The Sejm's 460 seats are elected by open-list PR with a 5% threshold (8% for coalitions) — thresholds that have repeatedly redrawn the map by wasting or rescuing whole blocs of votes."],
-          ["Cohabitation by design", "President and Sejm are elected on different cycles, so opposing camps regularly share power — a presidential veto takes a three-fifths Sejm majority to override, which is the fulcrum of Polish politics today."],
+          ["Two rounds for president", "The president is directly elected for five years: a majority in round one, or a runoff between the top two a fortnight later, and the runoffs of 1995, 2020 and 2025 were all decided by roughly two points or less."],
+          ["A proportional Sejm", "The Sejm's 460 seats are elected by open-list PR with a 5% threshold (8% for coalitions), thresholds that have repeatedly redrawn the map by wasting or rescuing whole blocs of votes."],
+          ["Cohabitation by design", "President and Sejm are elected on different cycles, so opposing camps regularly share power: a presidential veto takes a three-fifths Sejm majority to override, which is the fulcrum of Polish politics today."],
           ["The oldest electoral habit", "Poland elected its kings for two centuries: every nobleman could vote in person on the election field. The franchise was nobility-only, but the tradition of the ballot deciding the throne is older here than almost anywhere."],
         ]}
       />

@@ -12,6 +12,7 @@ import {
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export const dynamicParams = false;
 
@@ -69,6 +70,10 @@ function CountryLink({ name, slug }: { name: string | null; slug: string | null 
 export default function NflInternationalPage() {
   const { meta } = getNflEurope();
   const franchises = getNflEuropeFranchises();
+  // Franchises are sorted by World Bowl titles (already badged with a gold
+  // chip) then win pct; Win% is the one remaining column without any
+  // encoding, so it takes the bar. colMax is computed once over the full set.
+  const franchisesColMax = Math.max(...franchises.map((f) => f.win_pct), 0.001);
   const worldBowls = getNflEuropeWorldBowls().slice().sort((a, b) => b.season - a.season);
   const seasons = getNflEuropeSeasonsByYear();
   const intl = getNflInternationalSeries();
@@ -352,7 +357,9 @@ export default function NflInternationalPage() {
                     <span className="text-[var(--text-dim)]"> · {f.seasons} seas.</span>
                   </td>
                   <td className="px-3 py-2 tabular-nums text-right whitespace-nowrap">{rec(f.w, f.l, f.t)}</td>
-                  <td className="px-3 py-2 tabular-nums text-right text-[var(--text-muted)]">{f.win_pct.toFixed(3)}</td>
+                  <td className="px-3 py-2 text-right">
+                    <DataBar v={f.win_pct} max={franchisesColMax} dp={3} width={80} label="win percentage" />
+                  </td>
                   <td className="px-3 py-2 tabular-nums text-right whitespace-nowrap">
                     <span className="text-[var(--text)] font-semibold">{f.wb_titles}</span>
                     <span className="text-[var(--text-dim)]"> / {f.wb_apps} app{f.wb_apps === 1 ? "" : "s"}</span>

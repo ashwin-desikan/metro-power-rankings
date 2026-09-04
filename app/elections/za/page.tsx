@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/za";
 const TITLE = "South African General Elections";
 const DESC =
-  "Every South African general election from Union in 1910 to 2024 — the whites-only parliaments of segregation and apartheid, stated plainly as such, and the democratic era from 1994's queues to the 2024 coalition — for novices and experts alike.";
+  "Every South African general election from Union in 1910 to 2024: the whites-only parliaments of segregation and apartheid, stated plainly as such, and the democratic era from 1994's queues to the 2024 coalition, for novices and experts alike.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -89,7 +89,7 @@ export default function ZaElectionsPage() {
         colorOf={zaPartyColor}
         fmtPct={zaFmtPct}
         leaderTag="Leader"
-        intro="Every general election, newest first, in three eras. The pre-1994 contests were held on a racially restricted franchise and every page says so — they are part of the historical record, not equivalents of the democratic era."
+        intro="Every general election, newest first, in three eras. The pre-1994 contests were held on a racially restricted franchise and every page says so: they are part of the historical record, not equivalents of the democratic era."
       />
 
       {/* ---------- charts ---------- */}
@@ -111,8 +111,8 @@ export default function ZaElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">The National Party&apos;s grip, 1948–1989</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Within the whites-only electorate, the NP rose from its narrow 1948 win — a minority of even
-              that restricted vote — to two-thirds dominance, before reform politics fractured its base.
+              Within the whites-only electorate, the NP rose from its narrow 1948 win, a minority of even
+              that restricted vote, to two-thirds dominance, before reform politics fractured its base.
             </p>
             <LineChart series={[npShare]} yMax={100} yTicks={[25, 50, 75]} />
           </div>
@@ -124,7 +124,7 @@ export default function ZaElectionsPage() {
       <HowItWorks
         title="How South African elections work"
         cards={[
-          ["Pure proportional representation", "Since 1994 the National Assembly's 400 seats are allocated in proportion to the national vote, with no threshold — a deliberate choice for inclusiveness after apartheid, which lets even small parties win a seat."],
+          ["Pure proportional representation", "Since 1994 the National Assembly's 400 seats are allocated in proportion to the national vote, with no threshold, a deliberate choice for inclusiveness after apartheid, which lets even small parties win a seat."],
           ["Parliament elects the President", "Voters choose parties; the Assembly then elects the President as both head of state and government. That is why 2024's hung result produced a negotiated government of national unity rather than a runoff."],
           ["The franchise is the history", "From 1910 the vote was overwhelmingly white, and the small Cape non-white franchise was stripped away step by step. Every pre-1994 result on these pages describes an electorate designed to exclude most South Africans."],
           ["Dominance and its limits", "The NP won every whites-only election from 1948; the ANC has won every democratic one. But 2024 showed the system can force sharing: no majority, and a coalition cabinet spanning old rivals."],

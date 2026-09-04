@@ -21,6 +21,7 @@ import { colorForFootballClub } from "@/lib/football-colors";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 import {
   getAllClubs,
   getAllClubSlugs,
@@ -444,6 +445,11 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
       </details>
     );
   }
+  // Points is this club's season-by-season argument (MLS has run a single
+  // 3-point scale throughout, unlike English football's mixed 2-/3-point
+  // history below); max is this club's own maximum across every season on
+  // file, computed once, never per row.
+  const ptsMax = Math.max(...seasons.map((s) => s.pts ?? 0), 1);
   return (
     <details open className="rounded-xl border p-5 mb-6 group" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}><summary className="text-base font-semibold cursor-pointer select-none list-none flex items-center justify-between gap-2 [&::-webkit-details-marker]:hidden"><span>Season-by-season</span><span aria-hidden className="text-[var(--text-muted)] text-xs font-normal transition-transform group-open:rotate-180">▾</span></summary>
       <p className="mt-1 text-xs text-[var(--text-muted)]">Major League Soccer. No promotion or relegation; the Supporters&apos; Shield (&#9733;) marks the best regular-season record and the MLS Cup is the playoff title.</p>
@@ -507,7 +513,7 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
                   <td className="py-1.5 px-2 text-right">{s.w}</td>
                   <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.d}</td>
                   <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.l}</td>
-                  <td className="py-1.5 px-2 text-right font-semibold">{s.pts ?? "—"}</td>
+                  <td className="py-1.5 px-2 text-right"><DataBar v={s.pts} max={ptsMax} width={88} label="points" /></td>
                   <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{s.gd > 0 ? `+${s.gd}` : s.gd}</td>
                   <td className="py-1.5 px-2"><MlsFinish s={s} /></td>
                 </tr>
@@ -834,7 +840,7 @@ function SeasonsTable({
                     <span title={s.playoffs ? "Relegated (playoffs)" : "Relegated"} className="flex-shrink-0 text-[11px] font-semibold leading-none" style={{ color: "#dc2626" }}>↓</span>
                   )}
                   {s.playoffs && !s.promoted && !s.relegated && (
-                    <span title={s.playoff_final ? "Playoff final — not promoted" : "Playoffs"} className="flex-shrink-0 text-[9px] font-semibold uppercase tracking-wide leading-none" style={{ color: "#d97706" }}>PO</span>
+                    <span title={s.playoff_final ? "Playoff final, not promoted" : "Playoffs"} className="flex-shrink-0 text-[9px] font-semibold uppercase tracking-wide leading-none" style={{ color: "#d97706" }}>PO</span>
                   )}
                 </>
               }
@@ -916,7 +922,7 @@ function SeasonsTable({
                 >
                   <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">
                     {s.year ?? "-"}
-                    {s.is_live && <span className="ml-1.5 text-[10px] font-normal" style={{ color: "rgb(34,197,94)" }} title="In progress — live from the api feed">&#9679; live</span>}
+                    {s.is_live && <span className="ml-1.5 text-[10px] font-normal" style={{ color: "rgb(34,197,94)" }} title="In progress, live from the api feed">&#9679; live</span>}
                   </td>
                   <td className="py-1.5">
                     <span>{leagueLabel}</span>

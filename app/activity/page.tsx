@@ -19,7 +19,7 @@ const PAGE_PATH = "/activity";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Site Activity";
 const PAGE_DESCRIPTION =
-  "A running log of everything that changes on the Global Metro Power Rankings — data refreshes, hub edits, new hubs, and fixes — newest first.";
+  "A running log of everything that changes on the Global Metro Power Rankings: data refreshes, hub edits, new hubs, and fixes, newest first.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -104,7 +104,7 @@ export default async function ActivityPage() {
     mainEntityOfPage: PAGE_URL,
     url: PAGE_URL,
     headline: `${PAGE_TITLE} - Global Metro Power Rankings`,
-    alternativeHeadline: "What changed on the site and when — the full activity log",
+    alternativeHeadline: "What changed on the site and when: the full activity log",
     description: PAGE_DESCRIPTION,
     datePublished: firstDate,
     dateModified: latestDate,

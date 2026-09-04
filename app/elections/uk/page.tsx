@@ -17,7 +17,7 @@ import SortableTable from "../SortableTable";
 const PATH = "/elections/uk";
 const TITLE = "UK General Elections";
 const DESC =
-  "Every United Kingdom general election from 1802 to 2024: the results, the leaders, the turnout, the governments they made, and the story of each — plus referendums, devolved elections, European elections and mayoral contests.";
+  "Every United Kingdom general election from 1802 to 2024: the results, the leaders, the turnout, the governments they made, and the story of each. Plus referendums, devolved elections, European elections and mayoral contests.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -343,13 +343,21 @@ export default async function UkElectionsPage() {
       {/* ---------- devolved & european ---------- */}
       <section id="devolved" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Devolved &amp; European elections</h2>
-        <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
-          Since 1999 the UK has run parallel democracies under proportional systems, where the SNP and Plaid
-          Cymru routinely outperform their Westminster results. May 2026 redrew the map: the SNP won a fifth
-          term at Holyrood while Plaid Cymru ended a Labour winning streak in Wales that stretched back to
-          1922, leaving all three devolved governments led by parties opposed to the union for the first
-          time. European Parliament elections ran from 1979 until Brexit.
+        <p className="text-sm text-[var(--text-muted)] mb-1 max-w-3xl">
+          Parallel democracies under proportional systems since 1999, where nationalist parties routinely
+          outperform Westminster.
         </p>
+        <details className="mb-4 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            May 2026 redrew the map: the SNP won a fifth term at Holyrood while Plaid Cymru ended a
+            Labour winning streak in Wales that stretched back to 1922, leaving all three devolved
+            governments led by parties opposed to the union for the first time. European Parliament
+            elections ran from 1979 until Brexit.
+          </div>
+        </details>
         <div className="grid gap-4 lg:grid-cols-3 mb-4">
           {(["scotland", "wales", "northernIreland"] as const).map((k) => {
             const d = beyond.devolved[k];
@@ -464,12 +472,20 @@ export default async function UkElectionsPage() {
           </div>
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Council seats held, 1973–2026</h3>
-            <p className="text-xs text-[var(--text-muted)] mb-2">
-              Total councillors by party across Great Britain: the Commons Library series to 2025, with the
-              July 2026 composition from Open Council Data. Labour&apos;s base peaked in the mid-1990s before
-              the 1997 landslide; Reform UK went from 14 seats in 2024 to over 2,300 after May 2026, when
-              they won 1,453 of the seats up for election.
+            <p className="text-xs text-[var(--text-muted)] mb-1">
+              Total councillors by party across Great Britain, 1973–2026.
             </p>
+            <details className="mb-2">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+                How this is measured
+              </summary>
+              <div className="mt-2 text-xs text-[var(--text-muted)]">
+                The Commons Library series to 2025, with the July 2026 composition from Open Council
+                Data. Labour&apos;s base peaked in the mid-1990s before the 1997 landslide; Reform UK
+                went from 14 seats in 2024 to over 2,300 after May 2026, when they won 1,453 of the
+                seats up for election.
+              </div>
+            </details>
             <LineChart yMax={12000} yTicks={[4000, 8000]} unit="" series={councillorSeries} />
           </div>
         </div>

@@ -61,9 +61,7 @@ export default function ConstitutionsPage() {
       <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--text)]">{TITLE}</h1>
       <p className="mt-3 text-[var(--text-muted)] leading-relaxed">
         A constitution is the one document a country writes about itself on purpose. Most of them
-        do not last. Since 1789 the world has produced {d.systems.length} constitutional systems and
-        replaced {lives.length} of them; half are gone within {e.medianYears} years. The handful
-        that endure are the exception, and this is the record of both.
+        do not last.
       </p>
 
       <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -77,10 +75,17 @@ export default function ConstitutionsPage() {
       <section className="mt-10">
         <h2 className="text-xl font-bold text-[var(--text)]">The oldest still standing</h2>
         <p className="mt-1 text-sm text-[var(--text-muted)]">
-          Adoption year of the constitution currently in force. Just {preWW1} countries are governed
-          by a document written before the First World War, and {preWW2} by one written before the
-          end of the Second.
+          Adoption year of the constitution currently in force.
         </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            Just {preWW1} countries are governed by a document written before the First World War,
+            and {preWW2} by one written before the end of the Second.
+          </div>
+        </details>
         {/* CappedList renders its overflow inside a <details><div>, which a
             <tbody> cannot legally contain: rows 13+ get hoisted out of the
             table's layout and the columns visibly jump. So the house pattern
@@ -148,14 +153,19 @@ export default function ConstitutionsPage() {
         <h2 className="text-xl font-bold text-[var(--text)]">How often a constitution changes</h2>
         <p className="mt-1 text-sm text-[var(--text-muted)]">
           Amendment events per decade in force, for every constitution at least twenty years old.
-          This is the closest thing to an honest difficulty measure, because it records what
-          actually happened rather than what the amendment clause says. Sort any column.
         </p>
-        <p className="mt-2 text-xs text-[var(--text-dim)]">
-          A note on counting: the source records amendment <em>events</em>, not amended articles.
-          The United States shows 16 events for 27 amendments, because the ten articles of the Bill
-          of Rights were ratified as one act.
-        </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            This is the closest thing to an honest difficulty measure, because it records what
+            actually happened rather than what the amendment clause says. Sort any column. A note
+            on counting: the source records amendment <em>events</em>, not amended articles. The
+            United States shows 16 events for 27 amendments, because the ten articles of the Bill
+            of Rights were ratified as one act.
+          </div>
+        </details>
         <div className="mt-4">
           <SortableTable
             tableClassName="w-full text-sm"
@@ -199,10 +209,17 @@ export default function ConstitutionsPage() {
       <section className="mt-12">
         <h2 className="text-xl font-bold text-[var(--text)]">Countries that keep starting over</h2>
         <p className="mt-1 text-sm text-[var(--text-muted)]">
-          Constitutional systems adopted since 1789. Amending a constitution and replacing one are
-          different acts, and the countries at the top of this list have done the second far more
-          often than the first.
+          Constitutional systems adopted since 1789.
         </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            Amending a constitution and replacing one are different acts, and the countries at the
+            top of this list have done the second far more often than the first.
+          </div>
+        </details>
         <ul className="mt-4 grid sm:grid-cols-2 gap-2">
           {mostChurn.slice(0, 10).map((c) => (
             <li key={c.slug} className="flex items-baseline justify-between gap-3 rounded-lg border px-3 py-2"
@@ -220,17 +237,21 @@ export default function ConstitutionsPage() {
       <section className="mt-12">
         <h2 className="text-xl font-bold text-[var(--text)]">Three ways to have a constitution</h2>
         <p className="mt-1 text-sm text-[var(--text-muted)]">
-          Most countries keep their constitution in one document that says how it may be changed.
-          Two do not, and they are not edge cases to be tidied away: the United Kingdom and New
-          Zealand are governed by a body of statute, court decision and convention in which any
-          part can be altered by an ordinary Act of Parliament. A third group, including Israel and
-          Saudi Arabia, works from a set of basic laws rather than a single text.
+          Most countries keep one amendable document; a few, including the United Kingdom, do not.
         </p>
-        <p className="mt-2 text-sm text-[var(--text-muted)]">
-          The comparative dataset records no amendment procedure for the uncodified pair, which
-          would leave them off every board on this page. Instead they get the series that actually
-          describes them: the statutes that changed the constitution.
-        </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            The United Kingdom and New Zealand are governed by a body of statute, court decision
+            and convention in which any part can be altered by an ordinary Act of Parliament. A
+            third group, including Israel and Saudi Arabia, works from a set of basic laws rather
+            than a single text. The comparative dataset records no amendment procedure for the
+            uncodified pair, which would leave them off every board on this page. Instead they get
+            the series that actually describes them: the statutes that changed the constitution.
+          </div>
+        </details>
 
         {Object.entries(unc.uncodified).map(([slug, u]) => {
           const rate = instrumentsPerDecade(u);
@@ -283,10 +304,18 @@ export default function ConstitutionsPage() {
       <section className="mt-12">
         <h2 className="text-xl font-bold text-[var(--text)]">How long a constitution lasts</h2>
         <p className="mt-1 text-sm text-[var(--text-muted)]">
-          Measured across all {d.systems.length} systems since 1789, treating a constitution as
-          having died only when a later one replaced it. Where a country ceased to exist, as Poland
-          did in 1795, its constitution did not fail and is not counted as a death.
+          Measured across all {d.systems.length} systems since 1789, counted as dead only when a
+          later one replaced it.
         </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            Where a country ceased to exist, as Poland did in 1795, its constitution did not fail
+            and is not counted as a death.
+          </div>
+        </details>
 
         <div className="mt-4 grid sm:grid-cols-2 gap-4">
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>

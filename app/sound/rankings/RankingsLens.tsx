@@ -70,7 +70,7 @@ export default function RankingsLens({ metros }: { metros: RankMetro[] }) {
               <div className="min-w-0">
                 <div className="text-sm font-medium leading-tight">
                   <a href={`/rankings/${m.slug}`} className="hover:underline">{m.metro}</a>
-                  <a href={`/sound/metros/${m.slug}`} title={`${m.metro} \u2014 sound profile`} aria-label={`${m.metro} sound profile`} className="ml-1.5 inline-flex items-center rounded px-1 py-0.5 align-middle hover:bg-[var(--bg-card-hover)] transition-colors" style={{ color: 'var(--accent)' }}>&#9835;</a>
+                  <a href={`/sound/metros/${m.slug}`} title={`${m.metro}: sound profile`} aria-label={`${m.metro} sound profile`} className="ml-1.5 inline-flex items-center rounded px-1 py-0.5 align-middle hover:bg-[var(--bg-card-hover)] transition-colors" style={{ color: 'var(--accent)' }}>&#9835;</a>
                   {m.lenses.origin === null && (
                     <span title="Production-only" style={{ color: COLOR.production }}> &#9670;</span>
                   )}
@@ -181,7 +181,7 @@ export default function RankingsLens({ metros }: { metros: RankMetro[] }) {
               <tr key={m.slug} className="border-t" style={{ borderColor: 'var(--border, #1b2330)' }}>
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{i + 1}</td>
                 <td className="py-1.5 pr-3">
-                  <a href={`/rankings/${m.slug}`} className="hover:underline">{m.metro}</a><a href={`/sound/metros/${m.slug}`} title={`${m.metro} \u2014 sound profile`} aria-label={`${m.metro} sound profile`} className="ml-1.5 inline-flex items-center rounded px-1.5 py-0.5 text-sm align-middle hover:bg-[var(--bg-card-hover)] transition-colors" style={{ color: 'var(--accent)' }}>&#9835;</a>
+                  <a href={`/rankings/${m.slug}`} className="hover:underline">{m.metro}</a><a href={`/sound/metros/${m.slug}`} title={`${m.metro}: sound profile`} aria-label={`${m.metro} sound profile`} className="ml-1.5 inline-flex items-center rounded px-1.5 py-0.5 text-sm align-middle hover:bg-[var(--bg-card-hover)] transition-colors" style={{ color: 'var(--accent)' }}>&#9835;</a>
                   {m.lenses.origin === null && (
                     <span title="Production-only" style={{ color: COLOR.production }}> &#9670;</span>
                   )}

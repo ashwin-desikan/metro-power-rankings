@@ -1,0 +1,286 @@
+{
+  "route": "/predictions/mlb",
+  "scrollWidth": 390,
+  "scrollHeight": 6420,
+  "innerWidth": 390,
+  "tables": [
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border min-w-0",
+      "tableScrollWidth": 431,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 7
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border min-w-0",
+      "tableScrollWidth": 431,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 7
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border min-w-0",
+      "tableScrollWidth": 376,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 6
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border min-w-0",
+      "tableScrollWidth": 387,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 6
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border min-w-0",
+      "tableScrollWidth": 381,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 6
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border min-w-0",
+      "tableScrollWidth": 399,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 6
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border min-w-0",
+      "tableScrollWidth": 391,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 6
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border min-w-0",
+      "tableScrollWidth": 408,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 6
+    }
+  ],
+  "overflowEls": [
+    {
+      "tag": "table",
+      "cls": "w-full text-sm",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "thead",
+      "cls": "",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "tr",
+      "cls": "text-left",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 80,
+      "right": 448
+    },
+    {
+      "tag": "tbody",
+      "cls": "",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 80,
+      "right": 448
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 80,
+      "right": 448
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 80,
+      "right": 448
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 80,
+      "right": 448
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 80,
+      "right": 448
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 80,
+      "right": 448
+    },
+    {
+      "tag": "table",
+      "cls": "w-full text-sm",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "thead",
+      "cls": "",
+      "width": 431,
+      "right": 448
+    },
+    {
+      "tag": "tr",
+      "cls": "text-left",
+      "width": 431,
+      "right": 448
+    }
+  ],
+  "tapsUnder44": 2,
+  "tinyTextCount": 28,
+  "tinyTextSamples": [
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 12,
+      "text": "Updated",
+      "tag": "a",
+      "cls": "hidden xl:inline-block text-xs text-[var(--text-muted)] hove"
+    },
+    {
+      "fontSize": 12,
+      "text": "Home",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Predictions",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "MLB",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 10,
+      "text": "rundiff-v1",
+      "tag": "p",
+      "cls": "text-[10px] uppercase tracking-widest text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 12,
+      "text": "to reach October",
+      "tag": "span",
+      "cls": "text-xs text-[var(--text-muted)] pb-0.5"
+    },
+    {
+      "fontSize": 11,
+      "text": "NL West",
+      "tag": "p",
+      "cls": "text-[11px] text-[var(--text-muted)]"
+    },
+    {
+      "fontSize": 12,
+      "text": "to reach October",
+      "tag": "span",
+      "cls": "text-xs text-[var(--text-muted)] pb-0.5"
+    },
+    {
+      "fontSize": 11,
+      "text": "AL Central",
+      "tag": "p",
+      "cls": "text-[11px] text-[var(--text-muted)]"
+    }
+  ],
+  "hasCrumbs": true,
+  "hasH1": true,
+  "h1Text": "⚾ MLB 2026",
+  "monoStamp": "LIVE",
+  "tabNavDetected": true,
+  "hasSourcesCard": false,
+  "smHiddenLists": [],
+  "detailsCount": 0,
+  "details": [],
+  "h2Count": 5,
+  "pageHeight390": 6420,
+  "pageHeight1440": 3527
+}

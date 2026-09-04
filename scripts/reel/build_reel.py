@@ -53,6 +53,9 @@ import sys
 import urllib.error
 import urllib.request
 
+from cdp_clip import capture_clip, find_chrome
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 VOICE_ID = "TX3LPaxmHKxFdv7VOQHJ"
@@ -63,7 +66,9 @@ W, H, FPS = 1080, 1920, 30
 ZOOM_MAX = 1.03
 TAIL = 0.45          # silence after each clip so cuts do not clip the last word
 MUSIC_VOL = 0.16
-CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+# Resolved at run time across macOS/Linux/Windows; REEL_CHROME overrides.
+# The old hardcoded /Applications path meant this file only ever ran on the Mac.
+CHROME = find_chrome() or "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 FONT = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
 MUSIC_PROMPT = ("Calm, understated instrumental bed for a data-journalism product tour. "
                 "Warm analog synth pads, soft muted piano, gentle pulse, no drums after "
@@ -145,6 +150,7 @@ def paths(work, seg):
         "shot": f"{work}/shots/{seg['slug']}.png",
         "audio": f"{work}/audio/{seg['n']:02d}.mp3",
         "caption": f"{work}/seg/{seg['n']:02d}_caption.png",
+        "clip": f"{work}/clips/{seg['slug']}.mp4",
         "video": f"{work}/seg/{seg['n']:02d}.mp4",
     }
 
@@ -165,6 +171,51 @@ def step_shots(segs, work, force=False):
         if not os.path.exists(out):
             die(f"screenshot failed for {s['url']}")
         print(f"  {s['slug']:18} {os.path.getsize(out) // 1024:5d} KB  {s['url']}")
+
+
+def step_clips(segs, work, force=False):
+    """Record a real interaction for every segment that declares `act`.
+
+    A still of a table is indistinguishable from a PDF. A segment with an
+    `act` list is driven over CDP and recorded instead: the board actually
+    re-sorts, the filter actually redraws. Segments with no `act` fall through
+    to `shots` and the Ken Burns push, unchanged, so this step is additive.
+
+    Segment fields:
+        "act":    [{"at": 1.0, "click": "#sort"}, {"at": 3.2, "scroll": "+400"}]
+        "clip_s": clip length in seconds. Defaults to the narration length once
+                  `narrate` has run, else 6.0. Run narrate first and you get a
+                  clip that matches its own voiceover exactly.
+
+    Verbs: click / hover (css selector), scroll (absolute y, or "+N"/"-N"),
+    eval (raw js). `at` is seconds from the start of the clip.
+    """
+    todo = [s for s in segs if s.get("act")]
+    if not todo:
+        print("  no segment declares `act` -- nothing to record")
+        return
+    if not find_chrome():
+        die("no Chrome found -- set REEL_CHROME to the binary")
+    try:
+        import websocket  # noqa: F401
+    except ImportError:
+        die("pip install websocket-client (needed only by the clips step)")
+    for s in todo:
+        out = paths(work, s)["clip"]
+        if os.path.exists(out) and not force:
+            print(f"  {s['slug']:18} skip (exists)")
+            continue
+        secs = s.get("clip_s")
+        if secs is None:
+            audio = paths(work, s)["audio"]
+            secs = round(duration(audio) + TAIL, 2) if os.path.exists(audio) else 6.0
+        misses = capture_clip(s["url"], s["act"], secs, out,
+                              work=os.path.join(work, "frames"))
+        print(f"  {s['slug']:18} {secs:5.2f}s  {os.path.getsize(out) // 1024:5d} KB"
+              + (f"  MISSED {misses}" if misses else ""))
+        if misses:
+            print("    ^ that selector matched nothing. The clip recorded, but the "
+                  "interaction did not happen. Fix it and rerun with --force.")
 
 
 def step_narrate(segs, work, force=False):
@@ -265,24 +316,35 @@ def step_assemble(segs, work, force=False):
     listing = []
     for s in segs:
         p = paths(work, s)
-        for k in ("shot", "audio", "caption"):
+        clip = p["clip"] if os.path.exists(p["clip"]) else None
+        for k in (("audio", "caption") if clip else ("shot", "audio", "caption")):
             if not os.path.exists(p[k]):
                 die(f"segment {s['n']}: missing {k} -- run that step first")
         d = duration(p["audio"]) + TAIL
-        frames = max(int(d * FPS), 1)
-        rate = (ZOOM_MAX - 1.0) / frames
-        vf = (f"scale={W * 2}:-2,"
-              f"zoompan=z='min(zoom+{rate:.6f},{ZOOM_MAX})':d={frames}"
-              f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={FPS},"
-              f"format=yuv420p[bg];[bg][2:v]overlay=0:0:format=auto,format=yuv420p")
-        subprocess.run(["ffmpeg", "-y", "-loop", "1", "-t", f"{d:.3f}", "-i", p["shot"],
-                        "-i", p["audio"], "-i", p["caption"], "-filter_complex", vf,
+        if clip:
+            # Recorded motion. Hold the last frame if the clip is short of the
+            # narration and trim if it runs long, so audio stays authoritative.
+            vf = (f"[0:v]tpad=stop_mode=clone:stop_duration=30,"
+                  f"trim=0:{d:.3f},setpts=PTS-STARTPTS,fps={FPS},"
+                  f"scale={W}:{H},format=yuv420p[bg];"
+                  f"[bg][2:v]overlay=0:0:format=auto,format=yuv420p")
+            src = ["-i", clip]
+        else:
+            frames = max(int(d * FPS), 1)
+            rate = (ZOOM_MAX - 1.0) / frames
+            vf = (f"scale={W * 2}:-2,"
+                  f"zoompan=z='min(zoom+{rate:.6f},{ZOOM_MAX})':d={frames}"
+                  f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={FPS},"
+                  f"format=yuv420p[bg];[bg][2:v]overlay=0:0:format=auto,format=yuv420p")
+            src = ["-loop", "1", "-t", f"{d:.3f}", "-i", p["shot"]]
+        subprocess.run(["ffmpeg", "-y"] + src +
+                       ["-i", p["audio"], "-i", p["caption"], "-filter_complex", vf,
                         "-map", "1:a", "-c:a", "aac", "-b:a", "192k",
                         "-c:v", "libx264", "-preset", "medium", "-crf", "19",
                         "-r", str(FPS), "-t", f"{d:.3f}", p["video"]],
                        capture_output=True, check=True)
         listing.append(f"file '{os.path.abspath(p['video'])}'")
-        print(f"  {s['n']:02d}  {d:5.2f}s  {s['caption']}")
+        print(f"  {s['n']:02d}  {d:5.2f}s  {'MOTION' if clip else 'still '}  {s['caption']}")
 
     concat = f"{work}/concat.txt"
     with open(concat, "w", encoding="utf-8") as f:
@@ -319,8 +381,8 @@ def step_assemble(segs, work, force=False):
           f"{W}x{H}  faststart")
 
 
-STEPS = {"shots": step_shots, "narrate": step_narrate, "captions": step_captions,
-         "music": step_music, "assemble": step_assemble}
+STEPS = {"shots": step_shots, "narrate": step_narrate, "clips": step_clips,
+         "captions": step_captions, "music": step_music, "assemble": step_assemble}
 
 
 def main():
@@ -334,7 +396,7 @@ def main():
     a = ap.parse_args()
 
     segs = load_script(a.script)
-    for sub in ("shots", "audio", "seg"):
+    for sub in ("shots", "audio", "seg", "clips", "frames"):
         os.makedirs(os.path.join(a.workdir, sub), exist_ok=True)
 
     order = list(STEPS) if a.step == "all" else [a.step]

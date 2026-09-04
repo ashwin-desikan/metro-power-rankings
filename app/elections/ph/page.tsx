@@ -89,7 +89,7 @@ export default function PhElectionsPage() {
       .map((e) => {
         const w = phWinnerOf(e);
         const s = w ? (w.r2Share ?? w.r1Share) : null;
-        return w && s != null ? { x: e.year, y: s, label: `${e.label} — ${w.name}` } : null;
+        return w && s != null ? { x: e.year, y: s, label: `${e.label}, ${w.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };

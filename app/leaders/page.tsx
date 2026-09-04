@@ -14,7 +14,7 @@ const PAGE_PATH = "/leaders";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Leaders";
 const PAGE_DESCRIPTION =
-  "Every current head of state and government we track — sovereign states, constituents, territories, and intergovernmental organisations — in one filterable table, with a time machine to look up who held each office in any month and year.";
+  "Every current head of state and government we track: sovereign states, constituents, territories, and intergovernmental organisations, in one filterable table, with a time machine to look up who held each office in any month and year.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -100,7 +100,7 @@ export default async function LeadersIndexPage() {
               LEADERS
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-              Who leads the world, right now — and who did then.
+              Who leads the world, right now, and who did then.
             </h1>
             <p className="text-lg text-[var(--text-muted)] leading-relaxed max-w-3xl">
               Every current head of state and government we track, from sovereign

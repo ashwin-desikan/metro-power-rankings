@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/br";
 const TITLE = "Brazilian Elections";
 const DESC =
-  "Every Brazilian presidential election from the first Republic in 1891 to the 2022 runoff, and the parliamentary contests from the 1934 Constituent Assembly to 1990 — the Old Republic's arranged counts, the dictatorship's electoral college and the New Republic's two-round battles, stated plainly throughout.";
+  "Every Brazilian presidential election from the first Republic in 1891 to the 2022 runoff, and the parliamentary contests from the 1934 Constituent Assembly to 1990: the Old Republic's arranged counts, the dictatorship's electoral college and the New Republic's two-round battles, stated plainly throughout.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -154,7 +154,7 @@ export default function BrElectionsPage() {
         fmtPct={brFmtPct}
         leaderTag="President"
         headline="Parliamentary elections"
-        intro="The Chamber of Deputies contests from the 1934 Constituent Assembly to the first Congress of the restored democracy in 1990, newest first — including the dictatorship's imposed two-party years."
+        intro="The Chamber of Deputies contests from the 1934 Constituent Assembly to the first Congress of the restored democracy in 1990, newest first, including the dictatorship's imposed two-party years."
       />
 
       {/* ---------- charts ---------- */}
@@ -169,14 +169,14 @@ export default function BrElectionsPage() {
             <p className="text-xs text-[var(--text-muted)] mb-2">
               From the populist republic&apos;s plurality wins through the runoff era: Collor over Lula,
               Cardoso&apos;s first-round victories, four Workers&apos; Party wins, and 2022&apos;s
-              50.9%–49.1% — the narrowest ever.
+              50.9%–49.1%, the narrowest ever.
             </p>
             <LineChart series={[runoffWinner]} yMax={100} yTicks={[50, 75]} />
           </div>
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout in the direct-vote eras</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Compulsory voting keeps Brazilian turnout near 80% — among the highest anywhere for an
+              Compulsory voting keeps Brazilian turnout near 80%, among the highest anywhere for an
               electorate of 150 million.
             </p>
             <LineChart series={[presTurnout]} yMax={100} yTicks={[50, 75]} />
@@ -190,9 +190,9 @@ export default function BrElectionsPage() {
         title="How Brazilian elections work"
         cards={[
           ["Two rounds since 1989", "The president needs an absolute majority; if nobody clears 50% in October's first round, the top two meet again three weeks later. Every election since 2002 has featured the Workers' Party in the runoff."],
-          ["Compulsory voting", "Voting is compulsory for adults aged 18 to 70, and turnout runs near 80% of one of the world's largest electorates — with electronic voting machines counting the result within hours."],
-          ["Open-list fragmentation", "Chamber seats are allocated by open-list proportional representation in state-wide districts, producing one of the world's most fragmented legislatures — every president governs by coalition."],
-          ["The franchise's long climb", "The Old Republic barred illiterate Brazilians — most of the country — from voting; women gained the vote in 1932, illiterate citizens only in 1985. Universal suffrage in Brazil is younger than the personal computer."],
+          ["Compulsory voting", "Voting is compulsory for adults aged 18 to 70, and turnout runs near 80% of one of the world's largest electorates, with electronic voting machines counting the result within hours."],
+          ["Open-list fragmentation", "Chamber seats are allocated by open-list proportional representation in state-wide districts, producing one of the world's most fragmented legislatures: every president governs by coalition."],
+          ["The franchise's long climb", "The Old Republic barred illiterate Brazilians, most of the country, from voting; women gained the vote in 1932, illiterate citizens only in 1985. Universal suffrage in Brazil is younger than the personal computer."],
         ]}
       />
 

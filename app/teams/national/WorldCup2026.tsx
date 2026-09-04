@@ -497,7 +497,7 @@ function TitleOdds({ sim, alive }: { sim: WorldCup2026Sim; alive: Set<string> })
       <p className="text-[10px] text-[var(--text-dim)] mt-2">
         {sim.meta.sims.toLocaleString()} Monte Carlo simulations.
         {sim.meta.knockout_phase
-          ? ` Knockout phase: strength weighted ${Math.round(sim.meta.blend_market_weight * 100)}% market / ${Math.round((1 - sim.meta.blend_market_weight) * 100)}% Elo — Elo-dominant from group-stage refresh.`
+          ? ` Knockout phase: strength weighted ${Math.round(sim.meta.blend_market_weight * 100)}% market / ${Math.round((1 - sim.meta.blend_market_weight) * 100)}% Elo, Elo-dominant from group-stage refresh.`
           : ` Team strength blends market odds (${Math.round(sim.meta.blend_market_weight * 100)}%) with our Elo ranking (${Math.round((1 - sim.meta.blend_market_weight) * 100)}%).`
         }
         {" "}Market from {sim.meta.odds_source}, as of {fmtDate(sim.meta.odds_as_of)}. Updated {fmtDate(sim.meta.generated_at)}. Informational, not betting advice.

@@ -7,7 +7,7 @@ import ConflictsTable from "./ConflictsTable";
 const PATH = "/conflicts";
 const TITLE = "Wars since 1500";
 const DESC =
-  "Five centuries of war — the interstate wars fought between sovereign states, and the notable civil wars labelled as such — with belligerents linked to their country pages throughout. Combat-death estimates are shown from 1945, where the source tracks them; the modern era refreshes monthly.";
+  "Five centuries of war: the interstate wars fought between sovereign states, and the notable civil wars labelled as such, with belligerents linked to their country pages throughout. Combat-death estimates are shown from 1945, where the source tracks them; the modern era refreshes monthly.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -36,9 +36,9 @@ export default async function ConflictsPage() {
       <ConflictsTable wars={wars} />
       <footer className="mt-10 pt-6 border-t text-xs text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
         Interstate war = armed conflict between sovereign states (excludes rebellions and purely colonial campaigns;
-        wars of independence appear only where sovereign states fought on both sides). Notable civil wars — from the
-        Wars of Religion and the Taiping Rebellion to Syria and Yemen — are included and carry a civil-war label. Predecessor states are
-        mapped to their modern country where the continuation is clear — Ottoman Empire to Turkey, Prussia to Germany,
+        wars of independence appear only where sovereign states fought on both sides). Notable civil wars, from the
+        Wars of Religion and the Taiping Rebellion to Syria and Yemen, are included and carry a civil-war label. Predecessor states are
+        mapped to their modern country where the continuation is clear: Ottoman Empire to Turkey, Prussia to Germany,
         the Russian Empire and Soviet Union to Russia; non-state forces are shown unlinked. Major = a war of the first
         rank (10,000+ combat deaths in the modern era). Sources: Wikipedia, “List of interstate wars since 1945”
         (refreshed monthly) and the “List of wars” series, 1500–1944, curated to notable interstate wars.

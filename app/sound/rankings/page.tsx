@@ -9,7 +9,7 @@ async function load(): Promise<RankMetro[]> {
 }
 
 export const metadata = {
-  title: 'Sound of the Metros — Rankings',
+  title: 'Sound of the Metros: Rankings',
   description: 'Metro leaderboard across three lenses: origin (US:UK 3:1), Velvet Rock affinity, and production.',
 };
 

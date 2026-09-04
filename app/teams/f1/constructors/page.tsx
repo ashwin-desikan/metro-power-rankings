@@ -68,9 +68,8 @@ export default function F1ConstructorsPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold" style={{ color: "var(--text)" }}>Formula 1 Teams</h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
           Every team to have entered a World Championship race, counted as a <em>continuous organisation</em>{" "}
-          rather than as a chassis name. The archive everyone builds on files Team Lotus under four separate
-          records and splits its 79 wins between them; it also files three unrelated Alfa Romeos as one. Here they
-          are put back the way the paddock understood them, and where the call is arguable the page says so.
+          rather than as a chassis name. Here they are put back the way the paddock understood them, and where
+          the call is arguable the page says so.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Chip title="Seasons covered">{meta.first_season}&ndash;{meta.last_season}</Chip>
@@ -85,23 +84,19 @@ export default function F1ConstructorsPage() {
           <h2 id="where" className="text-xl font-bold mb-2" style={{ color: "var(--text)" }}>
             Where Formula 1 is built
           </h2>
-          <p className="max-w-3xl text-sm leading-relaxed mb-3" style={{ color: "var(--text-muted)" }}>
-            The archive has no address field. It has a nationality field, and that is a racing licence rather than a
-            place: Red Bull is Austrian and has never built a car outside Buckinghamshire. So the factories are
-            curated by hand, with a source per site, and put to the same workbook that decides every other metro on
-            this site.
+          <p className="max-w-3xl text-sm leading-relaxed mb-1" style={{ color: "var(--text-muted)" }}>
+            Where each team&apos;s factory actually is, since the archive itself has no address field.
           </p>
-          <p className="max-w-3xl text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
-            Of the {racing.length} teams racing now, <strong style={{ color: "var(--text)" }}>{anyEnglishSite.length}</strong>{" "}
-            have a facility in England
-            {noEnglishSite.length === 1 ? ` and only ${noEnglishSite[0].name} has none` : ""}.{" "}
-            <strong style={{ color: "var(--text)" }}>{worksInEngland.length}</strong> do their car work there, and{" "}
-            <strong style={{ color: "var(--text)" }}>{headquarteredInEngland.length}</strong> are headquartered there
-            outright, the difference being the American teams whose registered offices are in Indiana and North
-            Carolina while the cars are handled in Oxfordshire and Northamptonshire. Those English sites sit inside a
-            circle roughly sixty miles across. The usual claim that the whole grid is English is not true; the claim
-            that almost all of it passes through one small piece of England is, if anything, understated.
-          </p>
+          <details className="mb-4 max-w-3xl">
+            <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+              How this is measured
+            </summary>
+            <div className="mt-2 text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
+              It has a nationality field, and that is a racing licence rather than a place: Red Bull is Austrian
+              and has never built a car outside Buckinghamshire. So the factories are curated by hand, with a
+              source per site, and put to the same workbook that decides every other metro on this site.
+            </div>
+          </details>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {topClusters.map((c) => (
               <div key={`${c.country}-${c.metro}`} className="rounded-lg p-3 min-w-0" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
@@ -142,6 +137,17 @@ export default function F1ConstructorsPage() {
               rest of the site follows.
             </p>
           )}
+          <p className="mt-4 max-w-3xl rounded-xl border p-4 text-sm leading-relaxed" style={{ borderColor: "var(--border)", background: "var(--bg-card)", color: "var(--text-muted)" }}>
+            Of the {racing.length} teams racing now, <strong style={{ color: "var(--text)" }}>{anyEnglishSite.length}</strong>{" "}
+            have a facility in England
+            {noEnglishSite.length === 1 ? ` and only ${noEnglishSite[0].name} has none` : ""}.{" "}
+            <strong style={{ color: "var(--text)" }}>{worksInEngland.length}</strong> do their car work there, and{" "}
+            <strong style={{ color: "var(--text)" }}>{headquarteredInEngland.length}</strong> are headquartered there
+            outright, the difference being the American teams whose registered offices are in Indiana and North
+            Carolina while the cars are handled in Oxfordshire and Northamptonshire. Those English sites sit inside a
+            circle roughly sixty miles across. The usual claim that the whole grid is English is not true; the claim
+            that almost all of it passes through one small piece of England is, if anything, understated.
+          </p>
         </section>
       )}
 
@@ -259,7 +265,9 @@ export default function F1ConstructorsPage() {
             engine rather than by the company that entered it. Four rules turn that into teams. Chassis-engine
             variants of one marque are merged, so Lotus-Climax and Lotus-Ford are Team Lotus. Records that weld
             unrelated organisations together are split, which is the two Alfa Romeos, the two Mercedes, the two
-            Renaults, the two Hondas, the two Aston Martins and the two ATSs that share only an acronym.
+            Renaults, the two Hondas, the two Aston Martins and the two ATSs that share only an acronym. The
+            archive everyone builds on files Team Lotus under four separate records and splits its 79 wins
+            between them; it also files three unrelated Alfa Romeos as one.
           </p>
           <p>
             Where a team changed its name but the organisation carried on, the eras are chained: Tyrrell to BAR to

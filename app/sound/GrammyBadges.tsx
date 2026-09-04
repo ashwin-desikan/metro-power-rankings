@@ -12,7 +12,7 @@ const SILVER = { background: 'rgba(191,196,209,0.10)', color: '#c7ccd6', border:
 function Pill({ a, won }: { a: GrammyAward; won: boolean }) {
   return (
     <span
-      title={`${won ? 'Won' : 'Nominated'} · ${a.award} ${a.year}${a.work ? ` — ${a.work}` : ''}`}
+      title={`${won ? 'Won' : 'Nominated'} · ${a.award} ${a.year}${a.work ? `: ${a.work}` : ''}`}
       className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold"
       style={won ? GOLD : SILVER}
     >
@@ -60,7 +60,7 @@ export function AwardBadges({ awards, className = '' }: { awards?: OtherAward[];
       {awards.map((a, i) => (
         <span
           key={i}
-          title={`${a.award} — ${a.category} ${a.year}${a.work ? ` — ${a.work}` : ''}`}
+          title={`${a.award}: ${a.category} ${a.year}${a.work ? `: ${a.work}` : ''}`}
           className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold"
           style={COPPER}
         >
@@ -82,7 +82,7 @@ export function RSBadges({ albums, className = '' }: { albums?: RSAlbum[]; class
       {albums.map((a, i) => (
         <span
           key={i}
-          title={`Rolling Stone 500 Greatest Albums — #${a.rank}: ${a.album}`}
+          title={`Rolling Stone 500 Greatest Albums, #${a.rank}: ${a.album}`}
           className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold"
           style={CRIMSON}
         >
@@ -101,9 +101,9 @@ interface MergedBadge { year: number; typ: number; tone: Tone; glyph: string; la
 /** All award badges in one row, ordered by YEAR (newest first) then by TYPE within a year (win, nomination, other award). */
 export function BadgeRow({ wins = [], noms = [], others = [], className = '' }: { wins?: GrammyAward[]; noms?: GrammyAward[]; others?: OtherAward[]; className?: string }) {
   const items: MergedBadge[] = [];
-  for (const a of wins) items.push({ year: a.year, typ: 0, tone: 'gold', glyph: '★', label: `${ABBR[a.award] ?? a.award} ${a.year}`, title: `Won · ${a.award} ${a.year}${a.work ? ` — ${a.work}` : ''}` });
-  for (const a of noms) items.push({ year: a.year, typ: 1, tone: 'silver', glyph: '☆', label: `${ABBR[a.award] ?? a.award} ${a.year}`, title: `Nominated · ${a.award} ${a.year}${a.work ? ` — ${a.work}` : ''}` });
-  for (const a of others) items.push({ year: a.year, typ: 2, tone: 'copper', glyph: '', label: `${a.award} · ${shortCat(a.category)} ${a.year}`, title: `${a.award} — ${a.category} ${a.year}${a.work ? ` — ${a.work}` : ''}` });
+  for (const a of wins) items.push({ year: a.year, typ: 0, tone: 'gold', glyph: '★', label: `${ABBR[a.award] ?? a.award} ${a.year}`, title: `Won · ${a.award} ${a.year}${a.work ? `: ${a.work}` : ''}` });
+  for (const a of noms) items.push({ year: a.year, typ: 1, tone: 'silver', glyph: '☆', label: `${ABBR[a.award] ?? a.award} ${a.year}`, title: `Nominated · ${a.award} ${a.year}${a.work ? `: ${a.work}` : ''}` });
+  for (const a of others) items.push({ year: a.year, typ: 2, tone: 'copper', glyph: '', label: `${a.award} · ${shortCat(a.category)} ${a.year}`, title: `${a.award}: ${a.category} ${a.year}${a.work ? `: ${a.work}` : ''}` });
   if (items.length === 0) return null;
   items.sort((x, y) => y.year - x.year || x.typ - y.typ || x.label.localeCompare(y.label));
   return (

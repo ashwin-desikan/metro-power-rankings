@@ -55,8 +55,8 @@ export default function OlympicsHubPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Olympics</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The complete medal record: all {hub.totals.editions} Games from Athens 1896
-          through Milano-Cortina 2026 — every Summer and Winter edition plus the 1906
-          Intercalated Games — with historical lineages folded into their modern
+          through Milano-Cortina 2026, every Summer and Winter edition plus the 1906
+          Intercalated Games, with historical lineages folded into their modern
           nations, from the Soviet Union into Russia to Bohemia into Czechia, and a
           page for every team ever to win a medal.
         </p>
@@ -193,7 +193,7 @@ export default function OlympicsHubPage() {
         <h2 className="text-base font-semibold mb-2">Sources &amp; methodology</h2>
         <p className="text-[var(--text-muted)] mb-2">
           Medal tables from the Olympedia historical record, every Summer and Winter
-          Games plus the 1906 Intercalated Games — which we count fully in all-time
+          Games plus the 1906 Intercalated Games, which we count fully in all-time
           totals as a deliberate editorial choice; the IOC excludes it. Historical
           delegations fold into their modern lineages (Soviet Union, Unified Team and
           ROC into Russia; Yugoslavia and Serbia &amp; Montenegro into Serbia; Bohemia

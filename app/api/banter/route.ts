@@ -162,7 +162,7 @@ function sse(produce: (send: (o: unknown) => void) => Promise<void>): Response {
         await produce(send);
       } catch (e) {
         console.log(JSON.stringify({ at: "banter", kind: "stream-error", err: String(e).slice(0, 200) }));
-        send({ t: "error", error: "The local's lost his voice — try again in a minute." });
+        send({ t: "error", error: "The local's lost his voice. Try again in a minute." });
       } finally {
         controller.close();
       }
@@ -222,7 +222,7 @@ export async function POST(req: Request): Promise<Response> {
   const wait = allow(who);
   if (wait) {
     return new Response(
-      JSON.stringify({ error: "Easy on — one at a time.", retryAfter: wait }),
+      JSON.stringify({ error: "Easy on, one at a time.", retryAfter: wait }),
       { status: 429, headers: { "content-type": "application/json", "retry-after": String(wait) } },
     );
   }
@@ -260,7 +260,7 @@ export async function POST(req: Request): Promise<Response> {
   // no inference and no daily-breaker credit.
   if (body.probe) return json(200, { ok: true });
 
-  if (!underDailyBreaker()) return json(503, { error: "The bar's closed for today — back tomorrow." });
+  if (!underDailyBreaker()) return json(503, { error: "The bar's closed for today, back tomorrow." });
 
   // "today" was retired from the scene list on 2026-08-20; a stale client
   // posting it gets the same answer as any other unknown scene.
@@ -291,7 +291,7 @@ export async function POST(req: Request): Promise<Response> {
         send({ t: "rewind", slips });
         const fix: Msg = {
           role: "system",
-          content: `Your last reply mentioned ${slips.join(", ")} — that breaks the scenario dated ` +
+          content: `Your last reply mentioned ${slips.join(", ")} . That breaks the scenario dated ` +
             `${s.dateLong}. Rewrite the reply staying strictly inside ${s.dateLong}, same warmth and opinion.`,
         };
         reply = await completeStreaming(
@@ -317,7 +317,7 @@ export async function POST(req: Request): Promise<Response> {
     if (slips.length) {
       const fix: Msg = {
         role: "system",
-        content: `Your last reply mentioned ${slips.join(", ")} — that breaks the scenario dated ` +
+        content: `Your last reply mentioned ${slips.join(", ")} . That breaks the scenario dated ` +
           `${s.dateLong}. Rewrite the reply staying strictly inside ${s.dateLong}, same warmth and opinion.`,
       };
       reply = await complete([sys, ...messages, { role: "assistant", content: reply }, fix], temperature);
@@ -331,6 +331,6 @@ export async function POST(req: Request): Promise<Response> {
     return json(200, { reply, slips });
   } catch (e) {
     console.log(JSON.stringify({ at: "banter", kind: "error", who, err: String(e).slice(0, 200) }));
-    return json(502, { error: "The local's lost his voice — try again in a minute." });
+    return json(502, { error: "The local's lost his voice. Try again in a minute." });
   }
 }

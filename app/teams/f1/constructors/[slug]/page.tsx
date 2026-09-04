@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const t = getF1ConstructorBySlug(slug);
   if (!t) return { title: "Team not found" };
-  const title = `${t.name} — Formula 1`;
+  const title = `${t.name}: Formula 1`;
   const chain = t.chain.length > 1 ? ` Ran as ${t.chain.join(", then ")}.` : "";
   const desc =
     `${t.name} in Formula 1: ${t.races} World Championship races from ${t.first} to ${t.last}, ` +

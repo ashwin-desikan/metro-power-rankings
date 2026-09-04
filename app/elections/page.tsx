@@ -54,7 +54,7 @@ function fullDate(iso: string): string {
 const PATH = "/elections";
 const TITLE = "Elections";
 const DESC =
-  "Election history hubs for thirty-five polities: every general election, the parties, the leaders, the turnout and the results — with unfree and managed votes labelled as such. For novices who want the story and experts who want the numbers.";
+  "Election history hubs for thirty-five polities: every general election, the parties, the leaders, the turnout and the results, with unfree and managed votes labelled as such. For novices who want the story and experts who want the numbers.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -291,7 +291,7 @@ export default async function ElectionsPage() {
     {
       hub: "us",
       head: "US Presidential Elections →",
-      body: "All 60 presidential elections from 1788 to 2024: every ticket, the popular and electoral votes, state-by-state results, turnout back to Washington, the Congress each contest seated, and the story of ten eras — from unanimous elections to the polarized present.",
+      body: "All 60 presidential elections from 1788 to 2024: every ticket, the popular and electoral votes, state-by-state results, turnout back to Washington, the Congress each contest seated, and the story of ten eras, from unanimous elections to the polarized present.",
     },
     {
       hub: "uk",
@@ -309,7 +309,7 @@ export default async function ElectionsPage() {
     {
       hub: "de",
       head: "German Federal Elections →",
-      body: `${de.elections.length} national elections from the Frankfurt Parliament of 1848 to ${deLast.year}, across Empire, Weimar, dictatorship and two republics — with the Nazi-era sham votes clearly labelled as such.`,
+      body: `${de.elections.length} national elections from the Frankfurt Parliament of 1848 to ${deLast.year}, across Empire, Weimar, dictatorship and two republics, with the Nazi-era sham votes clearly labelled as such.`,
     },
     {
       hub: "fr",
@@ -334,22 +334,22 @@ export default async function ElectionsPage() {
     {
       hub: "nl",
       head: "Dutch General Elections →",
-      body: `All ${nl.elections.length} general elections from 1886 to ${nlLast.year}: the school struggle, the Pacification of 1917, the pillarised decades, the Fortuyn shock — and the fragmented coalitions of the world's purest proportional system.`,
+      body: `All ${nl.elections.length} general elections from 1886 to ${nlLast.year}: the school struggle, the Pacification of 1917, the pillarised decades, the Fortuyn shock, and the fragmented coalitions of the world's purest proportional system.`,
     },
     {
       hub: "ru",
       head: "Russian & Soviet Elections →",
-      body: `${ru.presidential.length} presidential votes and ${ru.legislative.length} legislative elections, 1906–2024, recorded honestly: the Tsar's Dumas, the free 1917 vote the Bolsheviks overturned, the Soviet single-list theatre, the contested Duma of the 1990s — and the managed votes that closed the window.`,
+      body: `${ru.presidential.length} presidential votes and ${ru.legislative.length} legislative elections, 1906–2024, recorded honestly: the Tsar's Dumas, the free 1917 vote the Bolsheviks overturned, the Soviet single-list theatre, the contested Duma of the 1990s, and the managed votes that closed the window.`,
     },
     {
       hub: "ua",
       head: "Ukrainian Elections →",
-      body: `${ua.presidential.length} presidential and ${ua.legislative.length} Rada elections since independence — every one competitive, three incumbents defeated, one falsified runoff overturned by revolution. Suspended under martial law since 2022; the record awaits the war's end.`,
+      body: `${ua.presidential.length} presidential and ${ua.legislative.length} Rada elections since independence: every one competitive, three incumbents defeated, one falsified runoff overturned by revolution. Suspended under martial law since 2022; the record awaits the war's end.`,
     },
     {
       hub: "va",
       head: "Papal Conclaves →",
-      body: `${va.elections.length} papal elections across 964 years — the oldest electoral system still in use. The 33-month deadlock that invented the conclave, the schism with three rival popes, the crown vetoes, and the two-day conclaves of the modern age, through Leo XIV in 2025.`,
+      body: `${va.elections.length} papal elections across 964 years, the oldest electoral system still in use. The 33-month deadlock that invented the conclave, the schism with three rival popes, the crown vetoes, and the two-day conclaves of the modern age, through Leo XIV in 2025.`,
     },
   ];
 
@@ -362,7 +362,7 @@ export default async function ElectionsPage() {
     {
       hub: "jp",
       head: "Japanese General Elections →",
-      body: `All ${jp.elections.length} general elections from 1890 — Asia's first national parliament — to the ${jpLast.year} snap election: the 1955 system, the reform era, and the LDP's seven decades of dominance.`,
+      body: `All ${jp.elections.length} general elections from 1890, Asia's first national parliament, to the ${jpLast.year} snap election: the 1955 system, the reform era, and the LDP's seven decades of dominance.`,
     },
     {
       hub: "au",
@@ -400,17 +400,17 @@ export default async function ElectionsPage() {
     {
       hub: "za",
       head: "South African General Elections →",
-      body: `All ${za.elections.length} general elections from Union in 1910 to ${zaLast.year}: the whites-only parliaments stated plainly as such, then the democratic era — from the queues of 1994 to the 2024 coalition.`,
+      body: `All ${za.elections.length} general elections from Union in 1910 to ${zaLast.year}: the whites-only parliaments stated plainly as such, then the democratic era, from the queues of 1994 to the 2024 coalition.`,
     },
     {
       hub: "il",
       head: "Israeli Elections →",
-      body: `${il.elections.length} elections from the pre-state assemblies of 1920 to ${ilLast.year}: the Mapai decades, the Mahapach, the direct-election experiment and the deadlock cycle — where no party has ever won a majority.`,
+      body: `${il.elections.length} elections from the pre-state assemblies of 1920 to ${ilLast.year}: the Mapai decades, the Mahapach, the direct-election experiment and the deadlock cycle, where no party has ever won a majority.`,
     },
     {
       hub: "tr",
       head: "Turkish Elections →",
-      body: `From the Ottoman parliaments of 1877 to the 2023 runoff: ${tr.legislative.length} parliamentary and ${tr.presidential.length} presidential contests — the single-party era labelled, the coups, and the tilted contests of today.`,
+      body: `From the Ottoman parliaments of 1877 to the 2023 runoff: ${tr.legislative.length} parliamentary and ${tr.presidential.length} presidential contests: the single-party era labelled, the coups, and the tilted contests of today.`,
     },
     {
       hub: "ng",
@@ -420,7 +420,7 @@ export default async function ElectionsPage() {
     {
       hub: "iq",
       head: "Iraqi Elections →",
-      body: `${iq.legislative.length} parliamentary elections from the monarchy of 1946 to November 2025, recorded honestly: the palace-managed chambers, Saddam's 99.99% rituals stated plainly — and seven consecutive competitive elections since the purple fingers of 2005.`,
+      body: `${iq.legislative.length} parliamentary elections from the monarchy of 1946 to November 2025, recorded honestly: the palace-managed chambers, Saddam's 99.99% rituals stated plainly, and seven consecutive competitive elections since the purple fingers of 2005.`,
     },
     {
       hub: "ps",
@@ -448,7 +448,7 @@ export default async function ElectionsPage() {
     {
       hub: "ar",
       head: "Argentine Presidential Elections →",
-      body: `All ${ar.elections.length} presidential contests from 1826 to Milei's runoff: the oligarchic republic's arranged successions, the secret-ballot revolution of 1916, Perón, the proscription years — and unbroken democracy since 1983.`,
+      body: `All ${ar.elections.length} presidential contests from 1826 to Milei's runoff: the oligarchic republic's arranged successions, the secret-ballot revolution of 1916, Perón, the proscription years, and unbroken democracy since 1983.`,
     },
   ];
 
@@ -498,11 +498,18 @@ export default async function ElectionsPage() {
               </h2>
               <span className="text-xs text-[var(--accent)]">Open the full forecast →</span>
             </div>
-            <p className="text-xs text-[var(--text-muted)] mb-4 max-w-3xl">
-              Whatever the next US and UK elections are, they live here permanently. Seat ranges from
-              thousands of simulations, updated weekly — ranges first, probabilities second, and
-              labelled as speculation. Updated {forecast.built}.
+            <p className="text-xs text-[var(--text-muted)] mb-1 max-w-3xl">
+              Whatever the next US and UK elections are, they live here permanently.
             </p>
+            <details className="mb-4 max-w-3xl">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+                How this is measured
+              </summary>
+              <div className="mt-2 text-xs text-[var(--text-muted)]">
+                Seat ranges from thousands of simulations, updated weekly: ranges first, probabilities
+                second, and labelled as speculation. Updated {forecast.built}.
+              </div>
+            </details>
             <div className="grid gap-5 md:grid-cols-2">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2">United States · 2026 midterms · 3 November</p>
@@ -719,12 +726,20 @@ export default async function ElectionsPage() {
       {/* ---------- every election ever ---------- */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Two centuries of ballots</h2>
-        <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
+        <p className="text-sm text-[var(--text-muted)] mb-1 max-w-3xl">
           Every one of the {totalContests.toLocaleString("en-US")} contests in the atlas on one
-          timeline, newest first — the postwar democratic wave, the cluster of 1989–91, the solid
-          amber-and-red rows of the managed systems, and New Zealand&apos;s unbroken teal line back
-          to 1853. Scroll right to travel back in time.
+          timeline, newest first.
         </p>
+        <details className="mb-4 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How to read it
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            The postwar democratic wave, the cluster of 1989–91, the solid amber-and-red rows of
+            the managed systems, and New Zealand&apos;s unbroken teal line back to 1853. Scroll
+            right to travel back in time.
+          </div>
+        </details>
         <TimelineStrip rows={tlRows} />
         <TimelineLegend />
         <p className="text-sm mt-3 flex flex-wrap gap-x-5 gap-y-1">
@@ -752,11 +767,19 @@ export default async function ElectionsPage() {
         <div className="grid gap-4 lg:grid-cols-2 items-start">
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout across six democracies, 1900–2026</h3>
-            <p className="text-xs text-[var(--text-muted)] mb-2">
-              Compulsory-voting Australia holds above 90% for a century; New Zealand and Germany run
-              high without compulsion; India climbs as the franchise deepens; American presidential
-              turnout lives 20 points below its peers. Hover for exact figures.
+            <p className="text-xs text-[var(--text-muted)] mb-1">
+              Compulsory voting explains most of the gap between these six democracies.
             </p>
+            <details className="mb-2">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+                How to read it
+              </summary>
+              <div className="mt-2 text-xs text-[var(--text-muted)]">
+                Compulsory-voting Australia holds above 90% for a century; New Zealand and Germany run
+                high without compulsion; India climbs as the franchise deepens; American presidential
+                turnout lives 20 points below its peers. Hover for exact figures.
+              </div>
+            </details>
             <LineChart series={turnoutSeries} yMax={100} yTicks={[25, 50, 75]} />
             <p className="text-[10px] text-[var(--text-dim)] mt-2">
               Six is a chart; all of them is a table. Turnout for every polity that records it,
@@ -766,12 +789,19 @@ export default async function ElectionsPage() {
           </div>
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">How much of the world voted freely</h3>
-            <p className="text-xs text-[var(--text-muted)] mb-3">
-              Weighted by the people, not by the elections. Each polity counts once a decade, at its
-              population in that decade, under the worst label its ballots earned: the colonial
-              restrictions of the early rows, the mid-century rituals under dictatorship, the
-              democratic flood after 1945 and again after 1989.
+            <p className="text-xs text-[var(--text-muted)] mb-1">
+              Weighted by the people, not by the elections.
             </p>
+            <details className="mb-3">
+              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+                How this is measured
+              </summary>
+              <div className="mt-2 text-xs text-[var(--text-muted)]">
+                Each polity counts once a decade, at its population in that decade, under the worst
+                label its ballots earned: the colonial restrictions of the early rows, the mid-century
+                rituals under dictatorship, the democratic flood after 1945 and again after 1989.
+              </div>
+            </details>
             <div className="grid gap-1">
               {freedomPop.map(({ d, free, partial, unfree, covered, worldShare, polities }) => {
                 const counts = freedomCounts.get(d);

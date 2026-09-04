@@ -1,0 +1,236 @@
+{
+  "route": "/predictions/scoreboard",
+  "scrollWidth": 390,
+  "scrollHeight": 5898,
+  "innerWidth": 390,
+  "tables": [
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 424,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 3
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 448,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 10
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 360,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 6
+    }
+  ],
+  "overflowEls": [
+    {
+      "tag": "table",
+      "cls": "w-full text-xs sm:text-sm",
+      "width": 424,
+      "right": 441
+    },
+    {
+      "tag": "thead",
+      "cls": "",
+      "width": 424,
+      "right": 441
+    },
+    {
+      "tag": "tr",
+      "cls": "text-left",
+      "width": 424,
+      "right": 441
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 156,
+      "right": 441
+    },
+    {
+      "tag": "tbody",
+      "cls": "",
+      "width": 424,
+      "right": 441
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 424,
+      "right": 441
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2.5",
+      "width": 156,
+      "right": 441
+    },
+    {
+      "tag": "span",
+      "cls": "flex items-center gap-2 min-w-[132px]",
+      "width": 132,
+      "right": 429
+    },
+    {
+      "tag": "span",
+      "cls": "tabular-nums text-xs",
+      "width": 43,
+      "right": 429
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 424,
+      "right": 441
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2.5",
+      "width": 156,
+      "right": 441
+    },
+    {
+      "tag": "span",
+      "cls": "flex items-center gap-2 min-w-[132px]",
+      "width": 132,
+      "right": 429
+    },
+    {
+      "tag": "span",
+      "cls": "tabular-nums text-xs",
+      "width": 43,
+      "right": 429
+    },
+    {
+      "tag": "table",
+      "cls": "w-full text-xs sm:text-sm",
+      "width": 448,
+      "right": 465
+    },
+    {
+      "tag": "thead",
+      "cls": "",
+      "width": 448,
+      "right": 465
+    },
+    {
+      "tag": "tr",
+      "cls": "text-left",
+      "width": 448,
+      "right": 465
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 148,
+      "right": 465
+    },
+    {
+      "tag": "tbody",
+      "cls": "",
+      "width": 448,
+      "right": 465
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 448,
+      "right": 465
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2",
+      "width": 148,
+      "right": 465
+    }
+  ],
+  "tapsUnder44": 18,
+  "tinyTextCount": 61,
+  "tinyTextSamples": [
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 12,
+      "text": "Updated",
+      "tag": "a",
+      "cls": "hidden xl:inline-block text-xs text-[var(--text-muted)] hove"
+    },
+    {
+      "fontSize": 12,
+      "text": "Home",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Predictions",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "The Ledger",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 11,
+      "text": "20,978 priced games scored · football 1888-89–2025-26 · NFL ",
+      "tag": "div",
+      "cls": "mt-2 text-[11px] uppercase tracking-wider text-[var(--text-d"
+    },
+    {
+      "fontSize": 10,
+      "text": "On this page",
+      "tag": "span",
+      "cls": "text-[10px] uppercase tracking-widest text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 12,
+      "text": "The market wins",
+      "tag": "a",
+      "cls": "text-xs px-3 py-1.5 rounded-full border transition-colors ho"
+    },
+    {
+      "fontSize": 12,
+      "text": "Calibration",
+      "tag": "a",
+      "cls": "text-xs px-3 py-1.5 rounded-full border transition-colors ho"
+    },
+    {
+      "fontSize": 12,
+      "text": "The seasons we won",
+      "tag": "a",
+      "cls": "text-xs px-3 py-1.5 rounded-full border transition-colors ho"
+    }
+  ],
+  "hasCrumbs": true,
+  "hasH1": true,
+  "h1Text": "📓 The Ledger",
+  "monoStamp": null,
+  "tabNavDetected": true,
+  "hasSourcesCard": true,
+  "smHiddenLists": [],
+  "detailsCount": 0,
+  "details": [],
+  "h2Count": 6,
+  "pageHeight390": 5898,
+  "pageHeight1440": 3669
+}

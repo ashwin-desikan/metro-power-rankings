@@ -6,6 +6,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import type { DomesticClub, EraHonours } from "@/lib/domesticFootball";
+import { DataBar } from "@/app/_shared/DataBar";
 
 type SortKey = "name" | "country" | "titles" | "majorTrophies" | "cups" | "contTitles" | "clTitles";
 
@@ -67,6 +68,10 @@ export default function DomesticLeaguesTable({
     });
     return rows;
   }, [clubs, scope, conf, country, countryActive, q, sortKey, asc]);
+  // Titles is this table's argument (the default sort, and what "domestic
+  // leagues" honours are counted by); max is this filtered view's own
+  // maximum, computed once, unaffected by which column is the active sort.
+  const titlesMax = useMemo(() => Math.max(...view.map(({ h }) => h.titles || 0), 1), [view]);
 
   function sortBy(k: SortKey) {
     if (k === sortKey) setAsc((v) => !v);
@@ -323,7 +328,9 @@ export default function DomesticLeaguesTable({
                         <Badge variant="defunct" className="ml-1.5">Former</Badge>
                       )}
                     </td>
-                    <td className="px-3 py-2 text-right tabular-nums font-semibold" style={mono}>{h.titles || ""}</td>
+                    <td className="px-3 py-2 text-right">
+                      <DataBar v={h.titles || null} max={titlesMax} width={72} label="titles" />
+                    </td>
                     <td className="px-3 py-2 text-right tabular-nums" style={mono}>{h.majorTrophies || ""}</td>
                     <td className="px-3 py-2 text-right tabular-nums" style={mono}>{h.cups || ""}</td>
                     <td className="px-3 py-2 text-right tabular-nums" style={mono}>{h.contTitles || ""}</td>

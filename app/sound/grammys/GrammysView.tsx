@@ -45,7 +45,7 @@ function CategoryCard({ cat }: { cat: Category }) {
             <li key={i} className="flex gap-2">
               <span aria-hidden style={{ color: n.winner ? GOLD : 'transparent', width: '1em' }}>★</span>
               <span style={n.winner ? { color: GOLD, fontWeight: 600 } : undefined}>
-                {n.work ? <span>{n.work} — </span> : null}
+                {n.work ? <span>{n.work}: </span> : null}
                 <Credits links={n.links} artist={n.artist} />
               </span>
             </li>
@@ -71,7 +71,7 @@ function OtherAwards({ groups }: { groups: OtherGroup[] }) {
                 <li key={i}>
                   <span style={muted}>{shortCat(it.category)}: </span>
                   <span>
-                    {it.work ? <span style={muted}>{it.work} — </span> : null}
+                    {it.work ? <span style={muted}>{it.work}: </span> : null}
                     <Credits links={it.links} artist={it.artist} />
                   </span>
                 </li>
@@ -159,7 +159,7 @@ export default function GrammysView({ ceremonies }: { ceremonies: Ceremony[] }) 
                     <span className="tabular-nums" style={muted}>{m.year}</span>{' · '}
                     <span style={muted}>{m.award ? `${m.award} · ` : ''}{m.label}</span>{' · '}
                     <span style={color ? { color, fontWeight: 600 } : undefined}>
-                      {m.work ? <span>{m.work} — </span> : null}
+                      {m.work ? <span>{m.work}: </span> : null}
                       <Credits links={m.links} artist={m.artist} />
                     </span>
                   </span>

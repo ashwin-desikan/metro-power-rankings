@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/id";
 const TITLE = "Indonesian Elections";
 const DESC =
-  "Indonesian elections from the colonial Volksraad of 1917 to the 2024 vote — the 1955 experiment, the New Order's managed contests labelled as such, and the reformasi era's single-day elections of over 200 million voters, the largest ever held.";
+  "Indonesian elections from the colonial Volksraad of 1917 to the 2024 vote: the 1955 experiment, the New Order's managed contests labelled as such, and the reformasi era's single-day elections of over 200 million voters, the largest ever held.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -126,7 +126,7 @@ export default function IdElectionsPage() {
       <section id="presidential" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential elections</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          The six presidential contests of democratic Indonesia, newest first — one indirect Assembly vote
+          The six presidential contests of democratic Indonesia, newest first, one indirect Assembly vote
           in 1999, then five direct elections.
         </p>
         {presByEra.map(({ era, list }) => (
@@ -153,7 +153,7 @@ export default function IdElectionsPage() {
         fmtPct={idFmtPct}
         leaderTag="President"
         headline="Legislative elections"
-        intro="Every legislative contest, newest first — the colonial Volksraad, the 1955 experiment, the New Order's managed votes and the reformasi DPR, each era labelled for what it was."
+        intro="Every legislative contest, newest first: the colonial Volksraad, the 1955 experiment, the New Order's managed votes and the reformasi DPR, each era labelled for what it was."
       />
 
       {/* ---------- charts ---------- */}
@@ -174,7 +174,7 @@ export default function IdElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout where recorded</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Indonesian turnout runs high — the New Order compelled it, and the reformasi era has kept it
+              Indonesian turnout runs high: the New Order compelled it, and the reformasi era has kept it
               above 70% by choice, topping 80% in the 2019 and 2024 single-day votes.
             </p>
             <LineChart series={[legTurnout]} yMax={100} yTicks={[50, 75]} />
@@ -187,10 +187,10 @@ export default function IdElectionsPage() {
       <HowItWorks
         title="How Indonesian elections work"
         cards={[
-          ["The world's biggest election day", "Indonesia votes for president, the DPR and regional councils on a single day across three time zones and seventeen thousand islands — over 200 million voters, five ballots each, counted by hand."],
+          ["The world's biggest election day", "Indonesia votes for president, the DPR and regional councils on a single day across three time zones and seventeen thousand islands, over 200 million voters, five ballots each, counted by hand."],
           ["Direct president, two rounds if needed", "Since 2004 the president is directly elected, needing a majority plus 20% in half the provinces; otherwise a runoff. A nomination threshold forces candidates to assemble big party coalitions first."],
-          ["Open-list DPR", "The DPR's 580 seats are filled by open-list proportional representation with a 4% national threshold — a fragmented chamber in which no party has ever come close to a majority."],
-          ["The New Order's shadow", "For three decades elections were staged with exactly three permitted parties and a mobilised bureaucracy. The reformasi rules — independent commission, freed parties, direct presidency — are all reactions to that machinery."],
+          ["Open-list DPR", "The DPR's 580 seats are filled by open-list proportional representation with a 4% national threshold, a fragmented chamber in which no party has ever come close to a majority."],
+          ["The New Order's shadow", "For three decades elections were staged with exactly three permitted parties and a mobilised bureaucracy. The reformasi rules, independent commission, freed parties, direct presidency, are all reactions to that machinery."],
         ]}
       />
 

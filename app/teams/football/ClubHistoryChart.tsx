@@ -67,7 +67,7 @@ export default function ClubHistoryChart({ history }: { history: Pt[] }) {
         <h3 className="text-sm font-semibold">Power-ranking history</h3>
         <div className="text-xs tabular-nums" style={{ minHeight: "1rem" }}>
           {cur ? (
-            <span className="text-[var(--text-muted)]"><span className="font-semibold text-[var(--text)]">{ss(cur.season)}</span> — rank <span className="font-semibold text-[var(--text)]">{cur.rank}</span>, score <span className="font-semibold text-[var(--text)]">{cur.score.toFixed(3)}</span></span>
+            <span className="text-[var(--text-muted)]"><span className="font-semibold text-[var(--text)]">{ss(cur.season)}</span>: rank <span className="font-semibold text-[var(--text)]">{cur.rank}</span>, score <span className="font-semibold text-[var(--text)]">{cur.score.toFixed(3)}</span></span>
           ) : <span className="text-[var(--text-dim)]">Hover a season for its rank and score</span>}
         </div>
       </div>

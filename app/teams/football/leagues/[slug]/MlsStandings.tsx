@@ -14,6 +14,7 @@ import type { MlsStanding } from "@/lib/football";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 const MLS_CREST_ALIAS: Record<string, string> = { "LA Galaxy": "Los Angeles Galaxy" };
 
@@ -64,6 +65,10 @@ function Honors({ row }: { row: MlsStanding }) {
 }
 
 function Table({ rows, showConf, showHonors }: { rows: MlsStanding[]; showConf: boolean; showHonors: boolean }) {
+  // Points is the standings' argument (rows are point-ordered); max is this
+  // table's own maximum — combined or a single conference — computed once
+  // per Table call, never per row.
+  const ptsMax = Math.max(...rows.map((r) => r.pts ?? 0), 1);
   return (
     <ResponsiveTable
       variant="list"
@@ -114,7 +119,7 @@ function Table({ rows, showConf, showHonors }: { rows: MlsStanding[]; showConf: 
               <td className="py-1.5 px-2 text-right">{r.w}</td>
               <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.d}</td>
               <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.l}</td>
-              <td className="py-1.5 px-2 text-right font-semibold">{r.pts ?? "—"}</td>
+              <td className="py-1.5 px-2 text-right"><DataBar v={r.pts} max={ptsMax} width={80} label="points" /></td>
               <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gs}</td>
               <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.ga}</td>
               <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gd > 0 ? `+${r.gd}` : r.gd}</td>

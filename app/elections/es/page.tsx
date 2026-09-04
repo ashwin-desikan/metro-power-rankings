@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/es";
 const TITLE = "Spanish General Elections";
 const DESC =
-  "Every Spanish general election from 1867 to 2023 — the revolutionary Sexenio, the turno pacífico's arranged results stated plainly, the Second Republic's three violent swings, the Francoist rituals, and the democratic era from the transition to today's coalitions.";
+  "Every Spanish general election from 1867 to 2023: the revolutionary Sexenio, the turno pacífico's arranged results stated plainly, the Second Republic's three violent swings, the Francoist rituals, and the democratic era from the transition to today's coalitions.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -82,7 +82,7 @@ export default function EsElectionsPage() {
         colorOf={esPartyColor}
         fmtPct={esFmtPct}
         leaderTag="PM"
-        intro="Every general election, newest first, across five eras — with the turno pacífico's arranged majorities and the Francoist rituals labelled for what they were. Click any election for the full result and the story."
+        intro="Every general election, newest first, across five eras, with the turno pacífico's arranged majorities and the Francoist rituals labelled for what they were. Click any election for the full result and the story."
       />
 
       {/* ---------- charts ---------- */}
@@ -96,7 +96,7 @@ export default function EsElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout, 1977–2023</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               Spain's democratic turnout peaked at the polarised 1982 and 1996 contests and has ranged
-              through the 60s and 70s since — 2023&apos;s July election held it above 66% in high summer.
+              through the 60s and 70s since. 2023&apos;s July election held it above 66% in high summer.
             </p>
             <LineChart series={[demTurnout]} yMax={100} yTicks={[50, 75]} />
           </div>
@@ -119,7 +119,7 @@ export default function EsElectionsPage() {
           ["Provincial proportionality", "The Congress's 350 seats are elected by closed-list PR in 52 provincial districts. Small provinces elect so few deputies that the system quietly favours the big two parties and territorially concentrated regionalists."],
           ["The investiture", "Winning the election is only step one: the Congress must invest a Prime Minister by majority. Since 2015's fragmentation, investitures have taken months, produced repeat elections, and made regionalist parties kingmakers."],
           ["A young democracy's old habit", "From 1876 to 1923 the two dynastic parties simply alternated by arrangement, with results fixed in advance. The memory of managed elections is why the 1977 transition built such deliberately proportional institutions."],
-          ["The autonomies matter", "Basque, Catalan, Galician and Canarian parties have held the balance of power repeatedly — Spanish governments are made in Madrid but sustained, or toppled, by the periphery."],
+          ["The autonomies matter", "Basque, Catalan, Galician and Canarian parties have held the balance of power repeatedly: Spanish governments are made in Madrid but sustained, or toppled, by the periphery."],
         ]}
       />
 

@@ -16,7 +16,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/in";
 const TITLE = "Indian General Elections";
 const DESC =
-  "Every Indian general election from the Central Legislative Assembly votes of the Raj to the Lok Sabha of 2024 — the world's largest democratic exercise, with the results, the Prime Ministers and the story of each, for novices and experts alike.";
+  "Every Indian general election from the Central Legislative Assembly votes of the Raj to the Lok Sabha of 2024: the world's largest democratic exercise, with the results, the Prime Ministers and the story of each, for novices and experts alike.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -88,7 +88,7 @@ export default function InElectionsPage() {
         colorOf={inPartyColor}
         fmtPct={inFmtPct}
         leaderTag="PM"
-        intro="Every general election, newest first, grouped into six eras — from the limited-franchise assemblies of British India to the largest democratic exercise on earth. Click any election for the full result and the story."
+        intro="Every general election, newest first, grouped into six eras, from the limited-franchise assemblies of British India to the largest democratic exercise on earth. Click any election for the full result and the story."
       />
 
       {/* ---------- charts ---------- */}
@@ -110,7 +110,7 @@ export default function InElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Congress and the BJP</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               Lok Sabha seats for the Congress family against the Jana Sangh and its successor the BJP: one
-              dominance ends in 1989, the other begins in 2014 — with 2024 the first dent in it.
+              dominance ends in 1989, the other begins in 2014, with 2024 the first dent in it.
             </p>
             <LineChart series={[congressSeats, bjpSeats]} yMax={450} yTicks={[100, 272, 400]} unit="" />
           </div>
@@ -122,10 +122,10 @@ export default function InElectionsPage() {
       <HowItWorks
         title="How Indian general elections work"
         cards={[
-          ["First past the post", "One MP per constituency, most votes wins — inherited from Westminster and kept through every delimitation. It gave Congress decades of huge majorities on minority vote shares, and does the same for the BJP today."],
-          ["An election in phases", "Polling runs in stages over several weeks — seven phases in 2024 — so security forces and a million-plus polling stations can be redeployed. Counting, by contrast, happens in a single day."],
-          ["The Election Commission", "A constitutionally independent commission runs the whole exercise, from the model code of conduct to the electronic voting machines used nationwide since 2004 — the machinery that makes a 970-million-voter election possible."],
-          ["Alliances decide", "Since 1989 the real contest has usually been between pre-poll alliances — the BJP-led NDA against the Congress-led UPA and its successor INDIA bloc — with regional parties supplying the margins of power."],
+          ["First past the post", "One MP per constituency, most votes wins, inherited from Westminster and kept through every delimitation. It gave Congress decades of huge majorities on minority vote shares, and does the same for the BJP today."],
+          ["An election in phases", "Polling runs in stages over several weeks, seven phases in 2024, so security forces and a million-plus polling stations can be redeployed. Counting, by contrast, happens in a single day."],
+          ["The Election Commission", "A constitutionally independent commission runs the whole exercise, from the model code of conduct to the electronic voting machines used nationwide since 2004, the machinery that makes a 970-million-voter election possible."],
+          ["Alliances decide", "Since 1989 the real contest has usually been between pre-poll alliances, the BJP-led NDA against the Congress-led UPA and its successor INDIA bloc, with regional parties supplying the margins of power."],
         ]}
       />
 

@@ -140,7 +140,7 @@ export default function TopGamesTable({ allTime, byDecade, allTimeLabel = "All-t
                     {g.pens ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">(pens {g.pens})</span> : null}
                   </div>
                   {g.stadium ? (
-                    <div className="text-[10px] mt-0.5 truncate font-medium tracking-wide" style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }} title={[g.stadium, g.stadium_metro, g.stadium_country].filter(Boolean).join(" — ")}>
+                    <div className="text-[10px] mt-0.5 truncate font-medium tracking-wide" style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }} title={[g.stadium, g.stadium_metro, g.stadium_country].filter(Boolean).join(", ")}>
                       {g.stadium}{g.stadium_metro ? <span className="ml-1 opacity-80">· {g.stadium_metro}{g.stadium_country ? `, ${g.stadium_country}` : ""}</span> : null}
                     </div>
                   ) : null}

@@ -22,10 +22,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const comps = hub.competitions.map((c) => c.short_label).join(", ");
   const desc = `Women's club football in ${hub.country}: ${comps}. All-time champions, finals, and the most decorated clubs.`;
   return {
-    title: `Women's Football — ${hub.country}`,
+    title: `Women's Football: ${hub.country}`,
     description: desc,
     alternates: { canonical: `/teams/wfootball/leagues/${hub.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `Women's Football — ${hub.country} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/leagues/${hub.slug}`, type: "website" },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `Women's Football: ${hub.country} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/leagues/${hub.slug}`, type: "website" },
   };
 }
 

@@ -124,7 +124,7 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
             ? `${rows.length} artist${rows.length === 1 ? '' : 's'} · scored in ${periodLabel}`
             : q.trim()
             ? `${rows.length} artist${rows.length === 1 ? '' : 's'}`
-            : 'top 150 by all-time combined — search or pick a decade for period scores'}
+            : 'top 150 by all-time combined: search or pick a decade for period scores'}
         </span>
       </div>
 

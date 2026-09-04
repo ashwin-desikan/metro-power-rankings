@@ -26,7 +26,7 @@ export async function generateMetadata(
   const path = `/teams/olympics/${slug}`;
   const desc = `${team.name} at the Olympic Games: all-time medal record, every Summer and Winter campaign${team.lineage ? `, including the ${team.lineage.join(" and ")} era${team.lineage.length > 1 ? "s" : ""}` : ""}.`;
   return {
-    title: `${team.name} — Olympics`,
+    title: `${team.name}: Olympics`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },

@@ -54,7 +54,7 @@ export default function DomesticT20Page() {
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The franchise game&apos;s honours boards: every champion of the eleven T20
           leagues we can source from ball-by-ball archives, winners only. The IPL has
-          its own full portal with standings and season pages — this is the
+          its own full portal with standings and season pages. This is the
           cross-league trophy view. Title chips appear on each franchise&apos;s metro
           card.
         </p>
@@ -150,8 +150,8 @@ export default function DomesticT20Page() {
           (Cricsheet). The T20 Blast roll spans its NatWest and Vitality eras. Every
           season shows the name the club carried that year, so The Hundred reads Oval
           Invincibles from 2023 to 2025 and MI London from 2026; the franchise keeps
-          the whole run. Defunct champions — Deccan
-          Chargers, Comilla Victorians, Jamaica Tallawahs and others — stay in the
+          the whole run. Defunct champions, Deccan
+          Chargers, Comilla Victorians, Jamaica Tallawahs and others, stay in the
           rolls without franchise cards. Leagues we track but cannot yet source
           (Major League Cricket, Nepal T20, WPL, The Hundred Women, Zimbabwe T20,
           Afghanistan Premier League) will join as data lands.

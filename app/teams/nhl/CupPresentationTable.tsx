@@ -131,7 +131,7 @@ export default function CupPresentationTable({ allTime, byDecade }: Props) {
                 {g.arena ? (
                   <div className="text-[10px] mt-1 truncate font-medium tracking-wide"
                     style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
-                    title={[g.arena, g.arena_city, g.arena_state].filter(Boolean).join(" — ")}>
+                    title={[g.arena, g.arena_city, g.arena_state].filter(Boolean).join(", ")}>
                     {g.arena}
                     {loc ? <span className="opacity-80"> · {loc}</span> : null}
                   </div>
@@ -203,7 +203,7 @@ export default function CupPresentationTable({ allTime, byDecade }: Props) {
                     {g.arena ? (
                       <div className="text-[10px] mt-0.5 truncate font-medium tracking-wide"
                         style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
-                        title={[g.arena, g.arena_city, g.arena_state].filter(Boolean).join(" — ")}>
+                        title={[g.arena, g.arena_city, g.arena_state].filter(Boolean).join(", ")}>
                         {g.arena}
                         {loc ? <span className="opacity-80"> · {loc}</span> : null}
                       </div>

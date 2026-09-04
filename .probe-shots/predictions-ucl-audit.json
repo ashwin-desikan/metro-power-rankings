@@ -1,0 +1,226 @@
+{
+  "route": "/predictions/ucl",
+  "scrollWidth": 390,
+  "scrollHeight": 3928,
+  "innerWidth": 390,
+  "tables": [
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 899,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 19
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 663,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 37
+    }
+  ],
+  "overflowEls": [
+    {
+      "tag": "table",
+      "cls": "w-full text-sm",
+      "width": 899,
+      "right": 916
+    },
+    {
+      "tag": "thead",
+      "cls": "",
+      "width": 899,
+      "right": 916
+    },
+    {
+      "tag": "tr",
+      "cls": "text-left",
+      "width": 899,
+      "right": 916
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 325,
+      "right": 526
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 64,
+      "right": 590
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 59,
+      "right": 649
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 61,
+      "right": 710
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 207,
+      "right": 916
+    },
+    {
+      "tag": "tbody",
+      "cls": "",
+      "width": 899,
+      "right": 916
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 899,
+      "right": 916
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 whitespace-nowrap",
+      "width": 325,
+      "right": 526
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 64,
+      "right": 590
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 59,
+      "right": 649
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 61,
+      "right": 710
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right font-semibold whitespace-nowrap",
+      "width": 207,
+      "right": 916
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 899,
+      "right": 916
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 whitespace-nowrap",
+      "width": 325,
+      "right": 526
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 64,
+      "right": 590
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 59,
+      "right": 649
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 61,
+      "right": 710
+    }
+  ],
+  "tapsUnder44": 2,
+  "tinyTextCount": 11,
+  "tinyTextSamples": [
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 12,
+      "text": "Updated",
+      "tag": "a",
+      "cls": "hidden xl:inline-block text-xs text-[var(--text-muted)] hove"
+    },
+    {
+      "fontSize": 12,
+      "text": "Home",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Predictions",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Champions League",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 10,
+      "text": "ucl-poisson-v2",
+      "tag": "p",
+      "cls": "text-[10px] uppercase tracking-widest text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 12,
+      "text": "About",
+      "tag": "a",
+      "cls": "inline-flex items-center min-h-11 text-xs text-[var(--text-m"
+    },
+    {
+      "fontSize": 12,
+      "text": "Methodology",
+      "tag": "a",
+      "cls": "inline-flex items-center min-h-11 text-xs text-[var(--text-m"
+    },
+    {
+      "fontSize": 12,
+      "text": "Updates",
+      "tag": "a",
+      "cls": "inline-flex items-center min-h-11 text-xs text-[var(--text-m"
+    },
+    {
+      "fontSize": 12,
+      "text": "Privacy",
+      "tag": "a",
+      "cls": "inline-flex items-center min-h-11 text-xs text-[var(--text-m"
+    }
+  ],
+  "hasCrumbs": true,
+  "hasH1": true,
+  "h1Text": "🏆 Champions League 2026-27",
+  "monoStamp": "LIVE",
+  "tabNavDetected": true,
+  "hasSourcesCard": false,
+  "smHiddenLists": [],
+  "detailsCount": 0,
+  "details": [],
+  "h2Count": 4,
+  "pageHeight390": 3928,
+  "pageHeight1440": 3283
+}

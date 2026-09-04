@@ -1,0 +1,84 @@
+{
+  "route": "/play/picks",
+  "scrollWidth": 390,
+  "scrollHeight": 6392,
+  "innerWidth": 390,
+  "tables": [],
+  "overflowEls": [],
+  "tapsUnder44": 18,
+  "tinyTextCount": 208,
+  "tinyTextSamples": [
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 12,
+      "text": "Updated",
+      "tag": "a",
+      "cls": "hidden xl:inline-block text-xs text-[var(--text-muted)] hove"
+    },
+    {
+      "fontSize": 12,
+      "text": "Home",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Play",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Games",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere Picks",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 11,
+      "text": "model card",
+      "tag": "div",
+      "cls": "mt-2 text-[11px] uppercase tracking-wider text-[var(--text-d"
+    },
+    {
+      "fontSize": 10.5,
+      "text": "Matchweek slate · three-way",
+      "tag": "span",
+      "cls": "block text-[10.5px] font-normal text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 10.5,
+      "text": "Weekly slate · two-way",
+      "tag": "span",
+      "cls": "block text-[10.5px] font-normal text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 10.5,
+      "text": "AP Top 25 slate · two-way",
+      "tag": "span",
+      "cls": "block text-[10.5px] font-normal text-[var(--text-dim)]"
+    }
+  ],
+  "hasCrumbs": true,
+  "hasH1": true,
+  "h1Text": "🎯 Citizen of Nowhere Picks",
+  "monoStamp": null,
+  "tabNavDetected": true,
+  "hasSourcesCard": false,
+  "smHiddenLists": [],
+  "detailsCount": 0,
+  "details": [],
+  "h2Count": 0,
+  "pageHeight390": 6392,
+  "pageHeight1440": 5553
+}

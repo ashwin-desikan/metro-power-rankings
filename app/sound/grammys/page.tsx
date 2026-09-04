@@ -3,7 +3,7 @@ import path from 'path';
 import SoundNav from '../SoundNav';
 import GrammysView, { type Ceremony } from './GrammysView';
 
-export const metadata = { title: 'Awards History — Sound of the Metros' };
+export const metadata = { title: 'Awards History: Sound of the Metros' };
 
 interface HubData { meta: { note: string; years: string }; ceremonies: Ceremony[] }
 

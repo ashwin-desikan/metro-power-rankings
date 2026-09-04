@@ -5,7 +5,7 @@ import SoundNav from '../SoundNav';
 
 interface Scene { slug: string; name: string; metro: string; metro_slug: string; era: string; blurb: string; artists: string[] }
 async function load(): Promise<Scene[]> { return JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', 'scenes.json'), 'utf8')); }
-export const metadata = { title: 'Scenes — Sound of the Metros' };
+export const metadata = { title: 'Scenes: Sound of the Metros' };
 const muted = { color: 'var(--text-muted)' } as const;
 
 export default async function ScenesPage() {

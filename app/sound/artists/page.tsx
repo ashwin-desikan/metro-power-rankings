@@ -8,7 +8,7 @@ async function j<T>(f: string): Promise<T> {
 }
 
 export const metadata = {
-  title: 'Sound of the Metros — Artists',
+  title: 'Sound of the Metros: Artists',
   description: 'Every attributed artist with hometown metro and per-chart top-ten record, 1958 to 2026.',
 };
 

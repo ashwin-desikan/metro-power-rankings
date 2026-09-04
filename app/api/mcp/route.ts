@@ -55,7 +55,7 @@ const mcpHandler = createMcpHandler(
       {
         title: "List top metros",
         description:
-          `Ranked list of metros from the Global Metro Power Rankings composite (4,300+ metros total), optionally filtered by region or country. Returns lightweight summary rows (rank, slug, name, country, region, score, population) — call get_metro for full detail on any one metro. Capped at ${LIST_MAX} rows per call.`,
+          `Ranked list of metros from the Global Metro Power Rankings composite (4,300+ metros total), optionally filtered by region or country. Returns lightweight summary rows (rank, slug, name, country, region, score, population). Call get_metro for full detail on any one metro. Capped at ${LIST_MAX} rows per call.`,
         inputSchema: z.object({
           n: z
             .number()

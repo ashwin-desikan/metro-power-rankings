@@ -4,7 +4,7 @@ import SoundNav from '../SoundNav';
 
 interface Song { single: string; artist: string; artist_slug: string; metro: string | null; peak_date: string }
 async function load(): Promise<Record<string, Song[]>> { return JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', 'uk_december_number_ones.json'), 'utf8')); }
-export const metadata = { title: 'The UK December Number Ones — Sound of the Metros' };
+export const metadata = { title: 'The UK December Number Ones: Sound of the Metros' };
 const muted = { color: 'var(--text-muted)' } as const;
 
 export default async function ChristmasPage() {
@@ -25,7 +25,7 @@ export default async function ChristmasPage() {
               {data[y].map((s, i) => (
                 <span key={i}>
                   {i > 0 && <span style={muted}> · </span>}
-                  &ldquo;{s.single}&rdquo; <span style={muted}>— <a href={`/sound/artists/${s.artist_slug}`} className="hover:underline">{s.artist}</a>{s.metro ? ` (${s.metro})` : ''}</span>
+                  &ldquo;{s.single}&rdquo; <span style={muted}>: <a href={`/sound/artists/${s.artist_slug}`} className="hover:underline">{s.artist}</a>{s.metro ? ` (${s.metro})` : ''}</span>
                 </span>
               ))}
             </div>

@@ -7,7 +7,7 @@ import BillionairesTable from "./BillionairesTable";
 const PATH = "/billionaires";
 const TITLE = "Billionaires";
 const DESC =
-  "Every billionaire on the Forbes real-time list — net worth, country, and industry — sortable and filterable, with each linked to their country page. Refreshed monthly.";
+  "Every billionaire on the Forbes real-time list: net worth, country, and industry, sortable and filterable, with each linked to their country page. Refreshed monthly.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -30,7 +30,7 @@ export default async function BillionairesPage() {
         {data.length ? (
           <p className="text-sm text-[var(--text-dim)] mt-2 tabular-nums">{data.length} billionaires · {fmtWorth(total)} combined net worth</p>
         ) : (
-          <p className="text-sm text-[var(--text-dim)] mt-2">Data populates on the next monthly refresh — trigger “Billionaires refresh” from the repo’s Actions tab to load it now.</p>
+          <p className="text-sm text-[var(--text-dim)] mt-2">Data populates on the next monthly refresh. Trigger “Billionaires refresh” from the repo’s Actions tab to load it now.</p>
         )}
       </header>
       {data.length ? <BillionairesTable data={data} /> : null}

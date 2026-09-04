@@ -126,7 +126,7 @@ export default function YearsView({ years }: { years: ScreenYear[] }) {
       </div>
       <p className="text-xs text-[var(--text-dim)] mt-4">
         Years before the late 1970s are generally reported as US rentals rather than worldwide
-        gross — comparable within a year, not across eras. Award winners are shown against the
+        gross, comparable within a year, not across eras. Award winners are shown against the
         year of the films they honoured, not the ceremony date. Rows marked <span className="uppercase text-[9px] tracking-wider">tmdb</span> extend
         the top ten with TMDb revenue data (1960 onward). This product uses the TMDB API but is
         not endorsed or certified by TMDB.

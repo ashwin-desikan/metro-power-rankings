@@ -1,0 +1,236 @@
+{
+  "route": "/predictions/pl",
+  "scrollWidth": 390,
+  "scrollHeight": 5518,
+  "innerWidth": 390,
+  "tables": [
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 711,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 18
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 679,
+      "wrapperClientWidth": 314,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 11
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 668,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 21
+    }
+  ],
+  "overflowEls": [
+    {
+      "tag": "table",
+      "cls": "w-full text-sm",
+      "width": 711,
+      "right": 728
+    },
+    {
+      "tag": "thead",
+      "cls": "",
+      "width": 711,
+      "right": 728
+    },
+    {
+      "tag": "tr",
+      "cls": "text-left",
+      "width": 711,
+      "right": 728
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 295,
+      "right": 428
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 64,
+      "right": 492
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 59,
+      "right": 551
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 61,
+      "right": 612
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 116,
+      "right": 728
+    },
+    {
+      "tag": "tbody",
+      "cls": "",
+      "width": 711,
+      "right": 728
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 711,
+      "right": 728
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 font-semibold whitespace-nowrap",
+      "width": 295,
+      "right": 428
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 64,
+      "right": 492
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 59,
+      "right": 551
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 61,
+      "right": 612
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 116,
+      "right": 728
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 711,
+      "right": 728
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 font-semibold whitespace-nowrap",
+      "width": 295,
+      "right": 428
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 64,
+      "right": 492
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 59,
+      "right": 551
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 61,
+      "right": 612
+    }
+  ],
+  "tapsUnder44": 3,
+  "tinyTextCount": 40,
+  "tinyTextSamples": [
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 12,
+      "text": "Updated",
+      "tag": "a",
+      "cls": "hidden xl:inline-block text-xs text-[var(--text-muted)] hove"
+    },
+    {
+      "fontSize": 12,
+      "text": "Home",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Predictions",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Premier League",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 10,
+      "text": "poisson-v2-v3",
+      "tag": "p",
+      "cls": "text-[10px] uppercase tracking-widest text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 11,
+      "text": "Picks",
+      "tag": "div",
+      "cls": "text-[11px] uppercase tracking-widest mb-1"
+    },
+    {
+      "fontSize": 12,
+      "text": "match calls correct",
+      "tag": "div",
+      "cls": "text-xs text-[var(--text-muted)]"
+    },
+    {
+      "fontSize": 11,
+      "text": "Model Brier",
+      "tag": "div",
+      "cls": "text-[11px] uppercase tracking-widest mb-1"
+    },
+    {
+      "fontSize": 12,
+      "text": "lower is better; 0.667 = guessing",
+      "tag": "div",
+      "cls": "text-xs text-[var(--text-muted)]"
+    }
+  ],
+  "hasCrumbs": true,
+  "hasH1": true,
+  "h1Text": "⚽ Premier League 2026-27",
+  "monoStamp": "LIVE",
+  "tabNavDetected": true,
+  "hasSourcesCard": false,
+  "smHiddenLists": [],
+  "detailsCount": 0,
+  "details": [],
+  "h2Count": 7,
+  "pageHeight390": 5518,
+  "pageHeight1440": 4344
+}

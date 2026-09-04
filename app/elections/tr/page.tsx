@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/tr";
 const TITLE = "Turkish Elections";
 const DESC =
-  "Turkish elections from the Ottoman parliaments of 1877 to the runoff of 2023 — the single-party era labelled as such, the White Revolution of 1950, three coups and their shadows, and the fiercely contested but tilted elections of the Erdoğan era.";
+  "Turkish elections from the Ottoman parliaments of 1877 to the runoff of 2023: the single-party era labelled as such, the White Revolution of 1950, three coups and their shadows, and the fiercely contested but tilted elections of the Erdoğan era.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -54,7 +54,7 @@ function PresCard({ e }: { e: TrPresElection }) {
           ) : e.presAfter ? (
             <span>{e.presAfter.name}</span>
           ) : (
-            <span>no winner — the coup followed</span>
+            <span>no winner, the coup followed</span>
           )}
           {runnerUp ? <span>def. {runnerUp.name}</span> : null}
           {e.turnout != null ? <span>turnout {trFmtPct(e.turnout)}</span> : null}
@@ -128,7 +128,7 @@ export default function TrElectionsPage() {
       <section id="presidential" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential elections</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          All {presidential.length} contests for the Turkish presidency, newest first — the
+          All {presidential.length} contests for the Turkish presidency, newest first: the
           single-party rituals and the Assembly&apos;s votes labelled as such, the 1980 deadlock that
           ended in a coup, and the direct elections of the Erdoğan era with their tilted playing
           field stated plainly.
@@ -157,7 +157,7 @@ export default function TrElectionsPage() {
         fmtPct={trFmtPct}
         leaderTag="PM"
         headline="Parliamentary elections"
-        intro="Every parliamentary election, newest first — from the Ottoman Chamber of 1877 through the single-party era, the multiparty decades and their coups, to the Grand National Assembly of today."
+        intro="Every parliamentary election, newest first, from the Ottoman Chamber of 1877 through the single-party era, the multiparty decades and their coups, to the Grand National Assembly of today."
       />
 
       {/* ---------- charts ---------- */}
@@ -170,7 +170,7 @@ export default function TrElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since 1950</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Turkish turnout is among the world&apos;s highest without strict enforcement — near 90%
+              Turkish turnout is among the world&apos;s highest without strict enforcement, near 90%
               in the fiercest contests, and above 85% in every vote of the past decade.
             </p>
             <LineChart series={[legTurnout]} yMax={100} yTicks={[50, 75]} />
@@ -191,10 +191,10 @@ export default function TrElectionsPage() {
       <HowItWorks
         title="How Turkish elections work"
         cards={[
-          ["The executive presidency", "Since the 2017 referendum, the directly elected president is head of state and government: a majority in round one or a runoff a fortnight later. Parliament is elected the same day — and the alliances that contest both races are the system's real machinery."],
-          ["The threshold's long shadow", "The 1980 junta's 10% national threshold — lowered to 7% in 2022 — was designed to keep small parties out. In 2002 it wiped every governing party from parliament at once; today's alliance rules exist largely to route around it."],
+          ["The executive presidency", "Since the 2017 referendum, the directly elected president is head of state and government: a majority in round one or a runoff a fortnight later. Parliament is elected the same day, and the alliances that contest both races are the system's real machinery."],
+          ["The threshold's long shadow", "The 1980 junta's 10% national threshold, lowered to 7% in 2022, was designed to keep small parties out. In 2002 it wiped every governing party from parliament at once; today's alliance rules exist largely to route around it."],
           ["Coups as punctuation", "The army removed elected governments in 1960, 1971, 1980 and 1997. Each coup rewrote the electoral rules; the eras in this hub follow those ruptures, and the constrained votes that followed them carry their labels."],
-          ["Competitive, not fair", "Turkey's recent elections are real contests with mass turnout and opposition victories — Istanbul fell to the opposition twice in 2019 — fought on a field tilted by state media, imprisoned politicians and emergency rule. The entries record both halves of that truth."],
+          ["Competitive, not fair", "Turkey's recent elections are real contests with mass turnout and opposition victories, Istanbul fell to the opposition twice in 2019, fought on a field tilted by state media, imprisoned politicians and emergency rule. The entries record both halves of that truth."],
         ]}
       />
 

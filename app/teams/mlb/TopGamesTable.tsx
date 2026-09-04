@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/mlb";
 import { WatchButton, type GameVideo } from "@/app/teams/_shared/GameVideo";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { DataBar } from "@/app/_shared/DataBar";
 
 type Row = TopGameLeagueRow & { video?: GameVideo };
 
@@ -22,6 +23,10 @@ function decadeKeys(byDecade: Record<string, TopGameLeagueRow[]>): string[] {
 export default function TopGamesTable({ allTime, byDecade }: Props) {
   const [bucket, setBucket] = useState<string>("all");
   const rows = bucket === "all" ? allTime : (byDecade[bucket] ?? []);
+  // Game Score is the board's argument (ranked by Game Score). colMax is
+  // the max over the currently shown bucket (all-time or one decade),
+  // computed once above the row map so bars stay comparable within that view.
+  const colMax = Math.max(...rows.map((g) => g.game_score), 0.0001);
   const decades = decadeKeys(byDecade);
 
   return (
@@ -109,8 +114,8 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
             {g.stadium ? (() => {
               const locParts = [g.stadium_city, g.stadium_state].filter(Boolean).join(", ");
               const title = g.stadium_canonical && g.stadium_canonical !== g.stadium
-                ? `${g.stadium} (now ${g.stadium_canonical})${locParts ? " — " + locParts : ""}`
-                : `${g.stadium}${locParts ? " — " + locParts : ""}`;
+                ? `${g.stadium} (now ${g.stadium_canonical})${locParts ? ", " + locParts : ""}`
+                : `${g.stadium}${locParts ? ", " + locParts : ""}`;
               return (
                 <div
                   className="text-[10px] mt-1 truncate font-medium tracking-wide"
@@ -178,8 +183,8 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                   {g.stadium ? (() => {
                     const locParts = [g.stadium_city, g.stadium_state].filter(Boolean).join(", ");
                     const title = g.stadium_canonical && g.stadium_canonical !== g.stadium
-                      ? `${g.stadium} (now ${g.stadium_canonical})${locParts ? " — " + locParts : ""}`
-                      : `${g.stadium}${locParts ? " — " + locParts : ""}`;
+                      ? `${g.stadium} (now ${g.stadium_canonical})${locParts ? ", " + locParts : ""}`
+                      : `${g.stadium}${locParts ? ", " + locParts : ""}`;
                     return (
                       <div
                         className="text-[10px] mt-0.5 truncate font-medium tracking-wide"
@@ -193,7 +198,9 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                   })() : null}
                   {g.video ? <WatchButton video={g.video} /> : null}
                 </td>
-                <td className="py-2 text-right font-semibold">{g.game_score.toFixed(3)}</td>
+                <td className="py-2 text-right">
+                  <DataBar v={g.game_score} max={colMax} dp={3} color="var(--seq-4)" width={92} label="game score" />
+                </td>
               </tr>
             ))}
             {rows.length === 0 && (

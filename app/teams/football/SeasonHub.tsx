@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 import { getFootballClubByName } from "@/lib/football";
 import Hub2027Client, { type HubConf, type HubLeague, type HubGroup, type HubRow } from "./2026-27/Hub2027Client";
 import RankingTable, { type RankedClub } from "./2025-26/RankingTable";
@@ -117,6 +118,10 @@ function buildConfs(leagues: League[], countryRank: Map<string, number>, season:
 }
 function CTable({ table }: { table: TRow[] }) {
   const cols: [string, keyof TRow][] = [["P", "played"], ["W", "win"], ["D", "draw"], ["L", "lose"], ["GD", "gd"], ["Pts", "points"]];
+  // Points is this table's argument (what the standings are sorted by); max
+  // is this table's own maximum, computed once here — each CTable call
+  // already renders exactly one group/table, never a shared slice.
+  const ptsMax = Math.max(...table.map((r) => (typeof r.points === "number" ? r.points : 0)), 1);
   return (
     <ResponsiveTable
       compact
@@ -141,7 +146,11 @@ function CTable({ table }: { table: TRow[] }) {
     <tbody>{table.map((r, i) => (<tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
       <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank ?? i + 1}</td>
       <td className="py-1 px-1.5 font-medium whitespace-nowrap"><ClubCell name={r.name} lookup={r.lookup} /></td>
-      {cols.map(([, k]) => <td key={k} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{num(r[k] as number)}</td>)}</tr>))}</tbody>
+      {cols.map(([c, k]) => c === "Pts" ? (
+        <td key={k} className="py-1 px-1.5 text-right"><DataBar v={r[k] as number} max={ptsMax} width={72} label="points" /></td>
+      ) : (
+        <td key={k} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{num(r[k] as number)}</td>
+      ))}</tr>))}</tbody>
       </table>
     </ResponsiveTable>
   );

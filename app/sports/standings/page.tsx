@@ -849,10 +849,10 @@ async function tennisBlock(): Promise<Block | null> {
   if (!men && !women) return null;
   const tournament = men?.tournament ?? women?.tournament ?? "Grand Slam";
   const toSub = (d: Awaited<ReturnType<typeof getLiveTennisSlam>>, label: string): SubTable | null =>
-    d ? { title: `${label} — ${d.round}`, columns: ["Score"], rows: d.matches.map((m): SRow => ({ rank: null, name: m.label, flagUrl: m.flagUrl, cells: [m.score] })) } : null;
+    d ? { title: `${label}: ${d.round}`, columns: ["Score"], rows: d.matches.map((m): SRow => ({ rank: null, name: m.label, flagUrl: m.flagUrl, cells: [m.score] })) } : null;
   const subTables = [toSub(men, "Men's Singles"), toSub(women, "Women's Singles")].filter((st): st is SubTable => st !== null);
   if (subTables.length === 0) return null;
-  return { league: `Tennis — ${tournament}`, href: "/teams/tennis", note: "live", open: true, subTables };
+  return { league: `Tennis: ${tournament}`, href: "/teams/tennis", note: "live", open: true, subTables };
 }
 
 const _slugName = (n: string) => n.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -1262,11 +1262,19 @@ export default async function LiveStandingsPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Live Standings</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           Every live league table the site tracks, gathered on one page and grouped by sport, each
-          formatted to match its own league page. In-season leagues open expanded; leagues between
-          seasons open collapsed with records zeroed until they restart. Green-shaded rows sit in
-          playoff position today, with the green rule marking the cut; PO/Finals and title odds are
-          our own simulations of each remaining schedule, refreshed daily.
+          formatted to match its own league page. Green-shaded rows sit in playoff position today;
+          PO/Finals and title odds are our own simulations, refreshed daily.
         </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            In-season leagues open expanded; leagues between seasons open collapsed with records zeroed
+            until they restart. The green rule marks the playoff cut, and title odds simulate each
+            remaining schedule.
+          </div>
+        </details>
       </header>
 
       <HubNav items={groups.map((g) => ({ label: g.sport, href: `#${slugId(g.sport)}` }))} />

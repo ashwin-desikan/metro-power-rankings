@@ -17,7 +17,7 @@ import SortableTable from "../SortableTable";
 const PATH = "/elections/us";
 const TITLE = "US Presidential Elections";
 const DESC =
-  "Every United States presidential election from 1788 to 2024: the candidates, the popular and electoral votes, the turnout, the Congresses each contest produced, and the story of each — from Washington's unanimous elections to the polarized present.";
+  "Every United States presidential election from 1788 to 2024: the candidates, the popular and electoral votes, the turnout, the Congresses each contest produced, and the story of each, from Washington's unanimous elections to the polarized present.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -225,7 +225,7 @@ export default function UsElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">The two-party grip since 1856</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               Democratic + Republican share of the popular vote, against the best single third-party or
-              independent run. The duopoly bends — 1912, 1968, 1992 — but never breaks.
+              independent run. The duopoly bends, 1912, 1968, 1992, but never breaks.
             </p>
             <LineChart series={[twoPartySeries, thirdSeries]} yMax={100} yTicks={[25, 50, 75]} />
           </div>
@@ -233,7 +233,7 @@ export default function UsElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">The Electoral College amplifier</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               The winner&apos;s share of electoral votes against their share of the popular vote since 1824.
-              The gap between the lines is the College&apos;s exaggeration of victory — and when the lower
+              The gap between the lines is the College&apos;s exaggeration of victory, and when the lower
               line dips under 50% with the upper line still high, a president is being elected without a
               popular majority.
             </p>

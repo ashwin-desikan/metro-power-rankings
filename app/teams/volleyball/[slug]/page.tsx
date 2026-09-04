@@ -28,7 +28,7 @@ export async function generateMetadata(
   const path = `/teams/volleyball/${slug}`;
   const desc = `${team.name} in international volleyball: Olympic medals and FIVB World Championship record.`;
   return {
-    title: `${team.name} — International Volleyball`,
+    title: `${team.name}: International Volleyball`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },

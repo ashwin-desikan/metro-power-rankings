@@ -10,7 +10,7 @@ export const dynamic = "force-static";
 const PATH = "/screen";
 const TITLE = "The Screen of the Metros";
 const DESC =
-  "Metro areas ranked by the film industry they raised: a century of top-grossing films, era-normalized so 1939 counts like 2024, credited to directors and billed casts, mapped to the metros that made them — with every Academy Award nomination since 1929 layered on as prestige.";
+  "Metro areas ranked by the film industry they raised: a century of top-grossing films, era-normalized so 1939 counts like 2024, credited to directors and billed casts, mapped to the metros that made them, with every Academy Award nomination since 1929 layered on as prestige.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -129,7 +129,7 @@ export default function ScreenPage() {
             </div>
             <p className="text-sm text-[var(--text-muted)]">
               The top ten at the box office and the night&apos;s big Oscar winners, for every year
-              since 1920 — the whole century, decade by decade.
+              since 1920: the whole century, decade by decade.
             </p>
           </Link>
           <Link href="/screen/academy" className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -139,7 +139,7 @@ export default function ScreenPage() {
             </div>
             <p className="text-sm text-[var(--text-muted)]">
               {seventies != null && tens != null
-                ? `Best Picture winners were top-ten grossers ${Math.round(seventies)}% of the time in the 1970s — and ${Math.round(tens)}% in the 2010s. The great divorce, plus where the Academy's nominees are born.`
+                ? `Best Picture winners were top-ten grossers ${Math.round(seventies)}% of the time in the 1970s, and ${Math.round(tens)}% in the 2010s. The great divorce, plus where the Academy's nominees are born.`
                 : "The Academy versus the box office, and where the nominees are born."}
             </p>
           </Link>
@@ -149,10 +149,10 @@ export default function ScreenPage() {
       <HowItWorks
         title="How the Screen rankings work"
         cards={[
-          ["The base pillar", "The top ten grossing films of every year since 1920 (Wikipedia's year-in-film tables, which cite Box Office Mojo and The Numbers). Each year distributes a fixed 100 points by gross share, so eras compete on dominance, not inflation. Pre-1930 years are discounted — silent-era box office reporting is fragmentary US rentals."],
+          ["The base pillar", "The top ten grossing films of every year since 1920 (Wikipedia's year-in-film tables, which cite Box Office Mojo and The Numbers). Each year distributes a fixed 100 points by gross share, so eras compete on dominance, not inflation. Pre-1930 years are discounted: silent-era box office reporting is fragmentary US rentals."],
           ["Who gets the credit", "A film's box office goes 25% to its director and the rest down the billing order, with later films in a long career counting less, so the prolific no longer crowd out a brilliant few. Two more pillars sit alongside it: Academy prestige and audience acclaim from TMDb, each normalized and blended."],
           ["The prestige pillar", "Academy nominations since 1929, win-weighted and restricted to the marquee categories (picture, directing, acting, writing, cinematography), so craft, shorts and honorary awards no longer crown the list. Data: the open oscar_data project (BSD-2), joined via IMDb identifiers. Films rank separately on their own four-pillar blend."],
-          ["The metro connection", "People are attributed to metros by birthplace, resolved deterministically through Wikidata, with editorial overrides where someone is really 'from' somewhere else — Spielberg is Phoenix, not Cincinnati. Vague or rural birthplaces stay unattributed rather than guessed."],
+          ["The metro connection", "People are attributed to metros by birthplace, resolved deterministically through Wikidata, with editorial overrides where someone is really 'from' somewhere else: Spielberg is Phoenix, not Cincinnati. Vague or rural birthplaces stay unattributed rather than guessed."],
         ]}
       />
 

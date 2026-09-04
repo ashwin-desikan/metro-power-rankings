@@ -38,7 +38,7 @@ export default function GrElectionsPage() {
         const p = e.parties
           .filter((p) => p.share != null)
           .sort((a, b) => (b.share ?? 0) - (a.share ?? 0))[0];
-        return p ? { x: e.year, y: p.share as number, label: `${e.label} — ${p.name}` } : null;
+        return p ? { x: e.year, y: p.share as number, label: `${e.label}, ${p.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };

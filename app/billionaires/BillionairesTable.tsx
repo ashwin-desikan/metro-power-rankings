@@ -2,6 +2,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 type B = {
   rank: number | null; name: string; uri: string; networth: number | null;
@@ -59,6 +60,13 @@ export default function BillionairesTable({ data }: { data: B[] }) {
     return out;
   }, [data, q, country, industry, made, sortKey, dir]);
 
+  // Net worth is the board's argument (ranked list of billionaires), so it is
+  // the one column that gets an in-cell bar. max is the column's own maximum
+  // across the current filtered/sorted set, computed once here so bars stay
+  // comparable while the table re-sorts or "Show more" reveals further rows.
+  const colMax = useMemo(
+    () => Math.max(...rows.map((b) => b.networth ?? 0), 1),
+    [rows]);
   const shown = rows.slice(0, limit);
   const sel = "px-3 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-sm text-[var(--text)]";
 
@@ -174,7 +182,10 @@ export default function BillionairesTable({ data }: { data: B[] }) {
                   <a href={`https://www.forbes.com/profile/${b.uri}/`} target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--text)] hover:text-[var(--accent)] hover:underline">{b.name}</a>
                   {b.selfMade === false ? <span className="ml-1.5 text-[10px] text-[var(--text-dim)]">inherited</span> : null}
                 </td>
-                <td className="px-3 py-2 text-right tabular-nums font-semibold text-[var(--text)] whitespace-nowrap">{worth(b.networth)}</td>
+                <td className="px-3 py-2 text-right">
+                  <DataBar v={b.networth} max={colMax} dp={1} suffix="B" scale={0.001}
+                           color="var(--seq-4)" width={104} label="net worth" />
+                </td>
                 <td className="px-3 py-2 whitespace-nowrap">
                   {b.countrySlug ? <Link href={`/countries/${b.countrySlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{b.countryName}</Link> : <span className="text-[var(--text-dim)]">{b.countryName ?? "—"}</span>}
                 </td>

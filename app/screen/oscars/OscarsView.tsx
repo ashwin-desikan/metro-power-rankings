@@ -18,9 +18,9 @@ function Entry({ label, n }: { label: string; n: ScreenOscarNominee }) {
   return (
     <span style={n.winner ? { color: GOLD, fontWeight: 600 } : undefined}>
       {actingFirst ? (
-        <>{names}{n.film ? <span> — {n.film}</span> : null}</>
+        <>{names}{n.film ? <span>: {n.film}</span> : null}</>
       ) : (
-        <>{n.film || names}{n.film && names ? <span> — {names}</span> : null}</>
+        <>{n.film || names}{n.film && names ? <span>: {names}</span> : null}</>
       )}
     </span>
   );
@@ -112,7 +112,7 @@ export default function OscarsView({ ceremonies }: { ceremonies: ScreenCeremony[
                   <span className="tabular-nums" style={muted}>{m.yearLabel}</span>{' · '}
                   <span style={muted}>{m.category}</span>{' · '}
                   <span style={m.winner ? { color: GOLD, fontWeight: 600 } : undefined}>
-                    {ACTING.test(m.category) ? `${m.names.join(', ')}${m.film ? ` — ${m.film}` : ''}` : `${m.film || m.names.join(', ')}${m.film && m.names.length ? ` — ${m.names.join(', ')}` : ''}`}
+                    {ACTING.test(m.category) ? `${m.names.join(', ')}${m.film ? `: ${m.film}` : ''}` : `${m.film || m.names.join(', ')}${m.film && m.names.length ? `: ${m.names.join(', ')}` : ''}`}
                   </span>
                 </span>
               </li>
@@ -140,7 +140,7 @@ export default function OscarsView({ ceremonies }: { ceremonies: ScreenCeremony[
                     <span style={muted}>{o.category}: </span>
                     <span>
                       {o.film ? <span className="font-medium text-[var(--text)]">{o.film}</span> : null}
-                      {o.film && o.names.length ? <span style={muted}> — </span> : null}
+                      {o.film && o.names.length ? <span style={muted}>: </span> : null}
                       {o.names.length ? <span style={muted}>{o.names.join(', ')}</span> : null}
                     </span>
                   </li>

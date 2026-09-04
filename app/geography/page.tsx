@@ -133,7 +133,7 @@ export default function GeographyHubPage() {
         </section>
 
         <section id="people" className="mb-12 scroll-mt-24">
-          <SectionHead eyebrow="People & power" title="Who holds it" blurb="The powerful, the wealthy, and the elected, from the hundred most powerful people to every head of state, mapped to the places they run." />
+          <SectionHead eyebrow="People & power" title="Who holds it" blurb="The powerful, the wealthy, and the elected, mapped to the places they run." />
           <CardGrid cards={PEOPLE} />
         </section>
 

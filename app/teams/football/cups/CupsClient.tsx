@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 import type {
   DomesticCupCompetition,
   DomesticCupSeason,
@@ -130,6 +131,10 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
   const [announce, setAnnounce] = useState("");
   const sorted = [...rows].sort((a, b) =>
     b[sort] - a[sort] || b.cups - a.cups || b.f - a.f || a.cur_name.localeCompare(b.cur_name));
+  // Total Cups is this table's argument (the default sort, and the combined
+  // total the other eight columns build toward); max is the column's own
+  // maximum, computed once over the full row set, unaffected by sort.
+  const cupsMax = Math.max(...rows.map((r) => r.cups), 1);
 
   const SortTh = ({ k, label, lead = false }: { k: SortKey; label: string; lead?: boolean }) => (
     <th className={"p-0 text-right font-medium " + (lead ? "border-l" : "")} style={lead ? { borderColor: "var(--border)" } : undefined}>
@@ -250,7 +255,13 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
                 <td className="py-1.5 pl-4 pr-2 whitespace-nowrap"><ClubName name={r.cur_name} slug={r.slug} /></td>
                 <Cell v={r.fa_sf} last={r.fa_sf_last} lead /><Cell v={r.fa_f} last={r.fa_f_last} /><Cell v={r.fa_cups} last={r.fa_cups_last} strong />
                 <Cell v={r.lg_sf} last={r.lg_sf_last} lead /><Cell v={r.lg_f} last={r.lg_f_last} /><Cell v={r.lg_cups} last={r.lg_cups_last} strong />
-                <Cell v={r.sf} last={r.sf_last} lead /><Cell v={r.f} last={r.f_last} /><Cell v={r.cups} last={r.cups_last} strong />
+                <Cell v={r.sf} last={r.sf_last} lead /><Cell v={r.f} last={r.f_last} />
+                <td className="py-1.5 px-2 text-right whitespace-nowrap">
+                  <span className="inline-flex items-center gap-1">
+                    <DataBar v={r.cups || null} max={cupsMax} width={64} label="total cups" />
+                    {r.cups_last ? <span className="text-[10px] text-[var(--text-dim)]">({r.cups_last})</span> : null}
+                  </span>
+                </td>
               </tr>
             ))}
           </tbody>

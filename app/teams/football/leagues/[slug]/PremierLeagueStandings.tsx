@@ -6,6 +6,7 @@ import type { FootballLeagueHub, FootballCupFinal, FootballEuropeEntry } from "@
 import { europeanCompDisplayCode, europeanCompSortKey } from "@/lib/football";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Fallback monogram badge when no crest is available
 function ColorBall({ slug, name }: { slug: string; name: string }) {
@@ -66,6 +67,9 @@ function LiveTable({
   europeBySlug: EurMap;
 }) {
   const displayYear = `${season_year}–${String(season_year + 1).slice(2)}`;
+  // Points is the standings' argument (what the table is sorted by); max is
+  // this season's own maximum, computed once over the full row set.
+  const ptsMax = Math.max(...rows.map((r) => r.points), 1);
   return (
     <section
       className="rounded-xl border p-5 mb-6"
@@ -168,7 +172,7 @@ function LiveTable({
                   <td className="py-1.5 text-right tabular-nums">{row.wins}</td>
                   <td className="py-1.5 text-right tabular-nums">{row.draws}</td>
                   <td className="py-1.5 text-right tabular-nums">{row.losses}</td>
-                  <td className="py-1.5 text-right tabular-nums font-semibold">{row.points}</td>
+                  <td className="py-1.5 text-right"><DataBar v={row.points} max={ptsMax} width={88} label="points" /></td>
                   <td className="py-1.5 text-right tabular-nums hidden sm:table-cell">{row.gf}</td>
                   <td className="py-1.5 text-right tabular-nums hidden sm:table-cell">{row.ga}</td>
                   <td className="py-1.5 text-right tabular-nums">{row.gd > 0 ? `+${row.gd}` : row.gd}</td>
@@ -227,6 +231,9 @@ function WorkbookTable({
   europeBySlug: EurMap;
 }) {
   if (hub.current_standings.length === 0) return null;
+  // Points is the standings' argument; max is this season's own maximum,
+  // computed once over the full row set.
+  const ptsMax = Math.max(...hub.current_standings.map((s) => s.pts ?? 0), 1);
   return (
     <section
       className="rounded-xl border p-5 mb-6"
@@ -330,7 +337,7 @@ function WorkbookTable({
                   <td className="py-1.5 text-right tabular-nums">{s.w ?? "–"}</td>
                   <td className="py-1.5 text-right tabular-nums">{s.d ?? "–"}</td>
                   <td className="py-1.5 text-right tabular-nums">{s.l ?? "–"}</td>
-                  <td className="py-1.5 text-right tabular-nums font-semibold">{s.pts ?? "–"}</td>
+                  <td className="py-1.5 text-right"><DataBar v={s.pts} max={ptsMax} width={88} label="points" /></td>
                   <td className="py-1.5 text-right tabular-nums hidden sm:table-cell">{s.gf ?? "–"}</td>
                   <td className="py-1.5 text-right tabular-nums hidden sm:table-cell">{s.ga ?? "–"}</td>
                   <td className="py-1.5 text-right tabular-nums">{s.gd != null ? (s.gd > 0 ? `+${s.gd}` : s.gd) : "–"}</td>

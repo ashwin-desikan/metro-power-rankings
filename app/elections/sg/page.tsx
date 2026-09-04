@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/sg";
 const TITLE = 'Singaporean General Elections';
 const DESC =
-  "Every Singaporean general election from 1948 to 2025 — the colonial Legislative Council, Marshall's upset, the PAP's arrival in 1959 and its unbroken rule since: the walkover years, the GRC era, and the cleanly counted, structurally tilted contests of today, each labelled for what it is.";
+  "Every Singaporean general election from 1948 to 2025, the colonial Legislative Council, Marshall's upset, the PAP's arrival in 1959 and its unbroken rule since: the walkover years, the GRC era, and the cleanly counted, structurally tilted contests of today, each labelled for what it is.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -38,7 +38,7 @@ export default function SgElectionsPage() {
         const p = e.parties
           .filter((p) => p.share != null)
           .sort((a, b) => (b.share ?? 0) - (a.share ?? 0))[0];
-        return p ? { x: e.year, y: p.share as number, label: `${e.label} — ${p.name}` } : null;
+        return p ? { x: e.year, y: p.share as number, label: `${e.label}, ${p.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -94,7 +94,7 @@ export default function SgElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">The PAP's vote share</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              The governing party's share swings between 60 and 70 per cent — 2011's 60.1% was treated as a crisis, 2015's 69.9% as a restoration — while its seat share barely moves: the signature of a majoritarian map.
+              The governing party's share swings between 60 and 70 per cent: 2011's 60.1% was treated as a crisis, 2015's 69.9% as a restoration, while its seat share barely moves: the signature of a majoritarian map.
             </p>
             <LineChart series={[largest]} yMax={80} yTicks={[20, 40, 60]} />
           </div>
@@ -108,7 +108,7 @@ export default function SgElectionsPage() {
         cards={[
           [
                     "First past the post, super-sized",
-                    "Parliament is elected by plurality in single wards and Group Representation Constituencies of four or five seats, winner-take-all. A GRC slate needs one minority candidate — and lets a 60% national vote become a 90% seat share."
+                    "Parliament is elected by plurality in single wards and Group Representation Constituencies of four or five seats, winner-take-all. A GRC slate needs one minority candidate, and lets a 60% national vote become a 90% seat share."
           ],
           [
                     "Compulsory, clean, tilted",
@@ -116,7 +116,7 @@ export default function SgElectionsPage() {
           ],
           [
                     "The opposition's slow advance",
-                    "From zero elected opposition MPs between 1968 and 1981 to a Workers' Party GRC breakthrough in 2011 and ten opposition seats today — each step historic by Singaporean standards, marginal by anyone else's."
+                    "From zero elected opposition MPs between 1968 and 1981 to a Workers' Party GRC breakthrough in 2011 and ten opposition seats today, each step historic by Singaporean standards, marginal by anyone else's."
           ],
           [
                     "Why record it this way",

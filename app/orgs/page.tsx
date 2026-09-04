@@ -17,7 +17,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 const PATH = "/orgs";
 const TITLE = "Alliances & Organisations";
 const DESC =
-  "A global reference map of 18 international organisations — from security alliances to regional blocs to energy cartels — showing every country's membership status across NATO, the EU, BRICS+, the UN, ASEAN, the African Union, OPEC, and more.";
+  "A global reference map of 18 international organisations: from security alliances to regional blocs to energy cartels, showing every country's membership status across NATO, the EU, BRICS+, the UN, ASEAN, the African Union, OPEC, and more.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -38,7 +38,7 @@ const ORG_DESC: Record<string, string> = {
   "EU":           "Political and economic union of 27 European states with a single market, common currency (eurozone), and shared institutions.",
   "G7":           "Informal forum of the seven largest advanced economies, meeting annually to coordinate policy.",
   "G20":          "Broader forum of 19 nations plus the EU and African Union, covering roughly 85% of global GDP.",
-  "OECD":         "The 'rich country' development club — 38 members committed to market democracy and open trade.",
+  "OECD":         "The 'rich country' development club: 38 members committed to market democracy and open trade.",
   "BRICS+":       "Emerging-economy bloc anchored by Brazil, Russia, India, China, and South Africa, expanded in 2024 to 11 full members.",
   "SCO":          "Eurasian security and economic body led by China and Russia, focused on regional stability.",
   "ASEAN":        "Ten-nation Southeast Asian bloc covering trade, diplomacy, and regional integration.",
@@ -69,7 +69,7 @@ function CountryPill({ slug, status }: { slug: string; status: OrgStatus }) {
   return (
     <Link
       href={`/countries/${slug}`}
-      title={`${label} — ${style.label}`}
+      title={`${label}: ${style.label}`}
       className={`
         inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs no-underline
         transition-opacity hover:opacity-70

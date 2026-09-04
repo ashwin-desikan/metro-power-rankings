@@ -18,7 +18,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/de";
 const TITLE = "German Federal Elections";
 const DESC =
-  "Every German national election from the Frankfurt Parliament of 1848 to the Bundestag of 2025 — Empire, Weimar, dictatorship, Bonn and Berlin republics — with the results, the chancellors and the story of each, for novices and experts alike.";
+  "Every German national election from the Frankfurt Parliament of 1848 to the Bundestag of 2025: Empire, Weimar, dictatorship, Bonn and Berlin republics, with the results, the chancellors and the story of each, for novices and experts alike.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -87,7 +87,7 @@ export default function DeElectionsPage() {
         <StatTile label="National elections" value={String(elections.length)} hint={`${elections[0].year}–${last.year}, across five constitutional orders`} />
         <StatTile label="Latest" value={last.label} hint={`${last.seatLeader ?? ""} · ${last.pmAfter ? last.pmAfter.name : ""}`} />
         <StatTile label="Bundestag seats today" value={deFmtInt(last.totalSeats)} hint={last.majoritySeats ? `${last.majoritySeats} for a majority` : undefined} />
-        <StatTile label="Universal male suffrage" value="1871" hint="women vote from 1919 — earlier than Britain, France or the US" />
+        <StatTile label="Universal male suffrage" value="1871" hint="women vote from 1919, earlier than Britain, France or the US" />
       </div>
 
       <JumpNav items={[["#chronology", "Chronology"], ["#presidential", "The presidency"], ["#charts", "The long arc in charts"], ["#records", "Records"], ["#how-it-works", "How it works"]]} />
@@ -99,7 +99,7 @@ export default function DeElectionsPage() {
         colorOf={dePartyColor}
         fmtPct={deFmtPct}
         leaderTag="Chancellor"
-        intro="Every national election, newest first, grouped into six eras — including, clearly labelled, the unfree votes of the Nazi years. Click any election for the full result and the story."
+        intro="Every national election, newest first, grouped into six eras, including, clearly labelled, the unfree votes of the Nazi years. Click any election for the full result and the story."
       />
 
 
@@ -203,10 +203,10 @@ export default function DeElectionsPage() {
       <HowItWorks
         title="How German federal elections work"
         cards={[
-          ["Two votes", "Since 1949 each voter casts a first vote for a constituency candidate and a second vote for a party list. The second vote sets the party balance — proportionality is the system's spine, a deliberate answer to Weimar and to first-past-the-post alike."],
-          ["The 5% hurdle", "A party needs 5% of the national second vote (or three constituency wins) to enter the Bundestag. Adopted against Weimar-style fragmentation, it has kept the chamber to a handful of parties — and made every decimal around 5% an election-night drama."],
+          ["Two votes", "Since 1949 each voter casts a first vote for a constituency candidate and a second vote for a party list. The second vote sets the party balance: proportionality is the system's spine, a deliberate answer to Weimar and to first-past-the-post alike."],
+          ["The 5% hurdle", "A party needs 5% of the national second vote (or three constituency wins) to enter the Bundestag. Adopted against Weimar-style fragmentation, it has kept the chamber to a handful of parties, and made every decimal around 5% an election-night drama."],
           ["Chancellor, not president", "Voters elect a parliament, and the Bundestag elects the chancellor. No German chancellor has ever governed alone: every government since 1949 has been a coalition, negotiated for weeks after the vote."],
-          ["Constructive no-confidence", "The Bundestag can only remove a chancellor by electing a successor in the same motion — used successfully once, when Helmut Kohl replaced Helmut Schmidt in 1982. Another Weimar lesson built into the machinery."],
+          ["Constructive no-confidence", "The Bundestag can only remove a chancellor by electing a successor in the same motion, used successfully once, when Helmut Kohl replaced Helmut Schmidt in 1982. Another Weimar lesson built into the machinery."],
         ]}
       />
 

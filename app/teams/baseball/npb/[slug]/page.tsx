@@ -26,7 +26,7 @@ export async function generateMetadata(
   const path = `/teams/baseball/npb/${slug}`;
   const desc = `${team.name} in Nippon Professional Baseball: Japan Series titles, league pennants, and season-by-season record.`;
   return {
-    title: `${team.name} — NPB`,
+    title: `${team.name}: NPB`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },

@@ -38,6 +38,7 @@ import SeasonsByTeamTable from "./SeasonsByTeamTable";
 import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export const dynamicParams = false;
 
@@ -144,6 +145,9 @@ export default async function FranchisePage({ params }: Props) {
   const seasons = getSeasons(f.slug);
   const proBowlCount = getProBowlCount(f.canonical);
   const topGames = getTopGamesForTeam(f.slug);
+  // Game Score is this board's argument (mirrors the league-wide
+  // TopGamesTable). colMax is computed once over the full topGames set.
+  const topGamesColMax = Math.max(...topGames.map((g) => g.du), 0.0001);
   const mono = monogramFor(f.slug);
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
@@ -763,7 +767,9 @@ export default async function FranchisePage({ params }: Props) {
                           );
                         })() : null}
                       </td>
-                      <td className="py-2 text-right font-semibold">{g.du.toFixed(3)}</td>
+                      <td className="py-2 text-right">
+                      <DataBar v={g.du} max={topGamesColMax} dp={3} color="var(--seq-4)" width={92} label="game score" />
+                    </td>
                     </tr>
                   );
                 })}

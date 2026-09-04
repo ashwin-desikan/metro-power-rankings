@@ -6,6 +6,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Live standings for a whole country: a switcher across every tracked league/level
 // (Premier League, Championship, League One … and, once wired, the domestic cups),
@@ -34,6 +35,13 @@ const CUP_STYLE: Record<string, { bg: string; fg: string }> = {
 };
 
 function Table({ group }: { group: LiveTableGroup }) {
+  // Points (cells[7]) is the standings' argument; max is this group's own
+  // maximum, computed once per group — each Table call renders exactly one
+  // group's table, never a shared slice.
+  const ptsMax = Math.max(
+    ...group.rows.map((r) => (typeof r.cells[7] === "number" ? (r.cells[7] as number) : 0)),
+    1,
+  );
   return (
     <ResponsiveTable
       compact
@@ -109,7 +117,13 @@ function Table({ group }: { group: LiveTableGroup }) {
                   )}
                 </td>
                 {r.cells.map((c, j) => (
-                  <td key={j} className={`py-1.5 text-right tabular-nums ${COLS[j] === "GF" || COLS[j] === "GA" ? "hidden sm:table-cell" : ""} ${COLS[j] === "Pts" ? "font-semibold" : ""}`} style={mono}>{c}</td>
+                  COLS[j] === "Pts" ? (
+                    <td key={j} className="py-1.5 text-right">
+                      <DataBar v={typeof c === "number" ? c : null} max={ptsMax} width={80} label="points" />
+                    </td>
+                  ) : (
+                    <td key={j} className={`py-1.5 text-right tabular-nums ${COLS[j] === "GF" || COLS[j] === "GA" ? "hidden sm:table-cell" : ""}`} style={mono}>{c}</td>
+                  )
                 ))}
               </tr>
             );

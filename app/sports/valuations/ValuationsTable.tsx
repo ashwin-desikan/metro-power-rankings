@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Local structural type (kept independent of the server-only lib/valuations
 // module so this client component never pulls a server import).
@@ -65,6 +66,14 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
       return c * dir;
     });
   }, [rows, sport, q, sortKey, asc]);
+
+  // Valuation is the board's argument (this table exists to rank teams by
+  // it), so it is the one column that gets an in-cell bar. max is the
+  // column's own maximum across the current filtered/sorted set, computed
+  // once here so bars stay comparable while the table re-sorts or filters.
+  const colMax = useMemo(
+    () => Math.max(...filtered.map((r) => r.valueM), 1),
+    [filtered]);
 
   function toggleSort(k: SortKey) {
     if (sortKey === k) setAsc((v) => !v);
@@ -257,9 +266,12 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
                     <Link href={r.leagueHref} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{r.league}</Link>
                     {r.sport === "Football" && <span className="ml-1.5 text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Football</span>}
                   </td>
-                  <td className="px-3 py-2 text-right font-semibold tabular-nums whitespace-nowrap">
-                    {r.valueLabel}
-                    <SourceTag tag={r.sourceTag} className="ml-1.5" />
+                  <td className="px-3 py-2 text-right whitespace-nowrap">
+                    <span className="inline-flex items-center justify-end gap-1.5">
+                      <DataBar v={r.valueM} max={colMax} dp={1} suffix="B" scale={0.001}
+                               color="var(--seq-4)" width={104} label="valuation" />
+                      <SourceTag tag={r.sourceTag} />
+                    </span>
                   </td>
                   <td className="px-3 py-2 text-[var(--text-muted)] hidden md:table-cell">
                     {r.ownerHref && r.owner ? (

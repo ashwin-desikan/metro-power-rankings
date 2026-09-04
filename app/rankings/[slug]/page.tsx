@@ -6,6 +6,7 @@ import { getMetroTitles, getFormerTopFlightForMetro, type FormerTopFlight } from
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import FollowButton from "@/app/FollowButton";
 import ShareRow from "@/app/_shared/ShareRow";
+import { DataBar } from "@/app/_shared/DataBar";
 import { competitionHref } from "@/lib/competitionLinks";
 import HubNav from "@/app/teams/HubNav";
 import { getSoundForMetro } from "@/lib/sound";
@@ -1192,7 +1193,13 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   </tr>
                 </thead>
                 <tbody>
-                  {detail.marketCap.top12.map((company, idx) => {
+                  {(() => {
+                    const capMax = Math.max(
+                      ...detail.marketCap.top12.map((c) =>
+                        typeof c === "number" ? c : c.valuation),
+                      1,
+                    );
+                    return detail.marketCap.top12.map((company, idx) => {
                     const val = typeof company === "number" ? company : company.valuation;
                     const name = typeof company === "number" ? "" : company.name || "";
                     const source = typeof company === "number" ? "" : company.source || "";
@@ -1218,18 +1225,16 @@ export default async function MetroDetailPage({ params }: PageProps) {
                         <td className="px-4 py-3 text-[var(--text)] font-medium">
                           {name}
                         </td>
-                        <td
-                          className="px-4 py-3 text-right text-[var(--accent)] font-mono"
-                          style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                        >
-                          {formatMarketCap(val)}
+                        <td className="px-4 py-3">
+                          <DataBar v={val} max={capMax} format={formatMarketCap}
+                                   width={150} label="valuation" />
                         </td>
                         <td className={`px-4 py-3 text-right text-xs ${sourceColor}`}>
                           {source}
                         </td>
                       </tr>
                     );
-                  })}
+                  }); })()}
                 </tbody>
               </table>
             </div>
@@ -1487,12 +1492,14 @@ export default async function MetroDetailPage({ params }: PageProps) {
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    {towers.map((t, idx) => (
+                                    {(() => { const hMax = Math.max(...towers.map((x) => x.heightM ?? 0), 1);
+                                    return towers.map((t, idx) => (
                                       <tr key={idx} className="border-t border-[var(--border)]">
                                         <td className="px-4 py-2 font-medium text-[var(--text)]">{t.name}</td>
                                         <td className="px-4 py-2 text-[var(--text-muted)]">{t.city}</td>
-                                        <td className="px-4 py-2 text-right text-[var(--text)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                                          {fmtHeightM(t.heightM)}
+                                        <td className="px-4 py-2">
+                                          <DataBar v={t.heightM} max={hMax} format={fmtHeightM}
+                                                   width={120} label="height" />
                                         </td>
                                         <td className="px-4 py-2 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                                           {fmtHeightFt(t.heightM)}
@@ -1501,7 +1508,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                                           {t.yearBuilt ?? "\u2014"}
                                         </td>
                                       </tr>
-                                    ))}
+                                    )); })()}
                                   </tbody>
                                 </table>
                               </div>
@@ -2048,7 +2055,7 @@ function TeamsSection({
   const renderCollegeCard = (m: MajorCollegeCard) => {
     const body = (
       <>
-        <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">{m.sport === "football" ? "🏈" : "🏀"}</span>{m.sport === "football" ? `College Football${m.division ? ` (${m.division})` : ""}` : "College Basketball"}{m.conference ? ` (${m.conference})` : ""}{m.isTop && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
+        <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">{m.sport === "football" ? "🏈" : "🏀"}</span>{m.sport === "football" ? `College Football${m.division ? ` (${m.division})` : ""}` : "College Basketball"}{m.conference ? ` (${m.conference})` : ""}{m.isTop && <span className="ml-1 cursor-default" title="Top Team for this metro: the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
         <div className="flex items-center gap-2">
           {collegeLogo(m.name, m.mono, m.color)}
           <p className="font-semibold text-[var(--text)]">{m.name}</p>
@@ -2070,7 +2077,7 @@ function TeamsSection({
   // Women's College Basketball card: titles (gold), Final Fours, tournament apps.
   const renderWcbbCard = (m: WcbbCard, isTop = false) => (
     <Link key={"w-" + m.slug} href={m.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
-      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏀</span>Women&apos;s College Basketball{m.conference ? ` (${m.conference})` : ""}{isTop && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
+      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏀</span>Women&apos;s College Basketball{m.conference ? ` (${m.conference})` : ""}{isTop && <span className="ml-1 cursor-default" title="Top Team for this metro: the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
       <div className="flex items-center gap-2">
         {collegeLogo(m.name, m.mono, m.color)}
         <p className="font-semibold text-[var(--text)]">{m.name}</p>
@@ -2085,7 +2092,7 @@ function TeamsSection({
   // College Hockey card: titles (gold), Frozen Fours. No team page in v1 (no link).
   const renderHockeyCard = (m: CollegeHockeyCard, isTop = false) => (
     <div key={"h-" + m.name} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">
-      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏒</span>College Hockey{isTop && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
+      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏒</span>College Hockey{isTop && <span className="ml-1 cursor-default" title="Top Team for this metro: the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
       <div className="flex items-center gap-2">
         {collegeLogo(m.name, m.mono, m.color)}
         <p className="font-semibold text-[var(--text)]">{m.name}</p>
@@ -2787,7 +2794,7 @@ function TeamCard({
     >
       <p className="text-xs text-[var(--text-muted)] mb-1">
         {sportIcon(team.sport) && <span aria-hidden className="mr-1">{sportIcon(team.sport)}</span>}
-        {normalizeTeamSport(team.sport)} • {displayLeague}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
+        {normalizeTeamSport(team.sport)} • {displayLeague}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league: the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro: the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
       </p>
       <ChampionBadge items={cardChamps} />
       {elHonours && (elHonours.titles > 0 || elHonours.f4 > 0) && (
@@ -2838,7 +2845,7 @@ function TeamCard({
                   style={h.count > 0
                     ? { background: "rgba(212,175,55,0.16)", color: "#d4af37" }
                     : { background: "rgba(120,120,140,0.16)", color: "var(--text-dim)" }}
-                  title={h.count > 0 ? `${h.count}× ${h.label}` : `No ${h.label} titles — connected to the roll, none yet`}>
+                  title={h.count > 0 ? `${h.count}× ${h.label}` : `No ${h.label} titles: connected to the roll, none yet`}>
               {h.count > 0 ? `${h.count}× ${h.label}` : `No ${h.label} titles`}
             </Link>
           ))}
@@ -2859,7 +2866,7 @@ function TeamCard({
           {cwsRec.titles > 0 && (
             <Link href="/teams/baseball/college" className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide hover:opacity-80 transition-opacity"
                   style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
-                  title={`College World Series titles${cwsRec.last_title ? ` — last in ${cwsRec.last_title}` : ""}`}>
+                  title={`College World Series titles${cwsRec.last_title ? `: last in ${cwsRec.last_title}` : ""}`}>
               {cwsRec.titles}× CWS title{cwsRec.titles === 1 ? "" : "s"}
             </Link>
           )}
@@ -3001,7 +3008,7 @@ function TeamCard({
             <span
               className="text-[10px] px-1.5 py-0.5 rounded"
               style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}
-              title="Pennants — World Series appearances (won or lost)"
+              title="Pennants: World Series appearances (won or lost)"
             >
               {mlbFranchise.ws_appearances} pennant{mlbFranchise.ws_appearances === 1 ? "" : "s"}
             </span>

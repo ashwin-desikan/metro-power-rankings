@@ -102,21 +102,21 @@ export default function PsElectionsPage() {
       >
         <p className="text-[var(--text-muted)]">
           <span className="font-bold" style={{ color: "#D97706" }}>A democracy frozen mid-step.</span>{" "}
-          Palestinians have voted in exactly one round of genuinely contested national elections —
-          2005–2006 — and its outcome ended the experiment: Hamas won a free and fair vote, the
+          Palestinians have voted in exactly one round of genuinely contested national elections,
+          2005–2006, and its outcome ended the experiment: Hamas won a free and fair vote, the
           world boycotted the result, Fatah and Hamas split the territories between them in 2007,
           and every scheduled election since was postponed. The Legislative Council elected in 2006
           was dissolved in 2018 without a successor, and Mahmoud Abbas has governed on a four-year
-          mandate for over twenty years. A new PLC election is scheduled for 28 November 2026 —
+          mandate for over twenty years. A new PLC election is scheduled for 28 November 2026:
           the entries below are the entire national record it would extend.
         </p>
       </div>
 
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
-        <StatTile label="Legislative elections" value={String(legislative.length)} hint="1923 (annulled), 1996 and 2006 — the entire record" />
-        <StatTile label="Presidential elections" value={String(presidential.length)} hint="Arafat 1996, Abbas 2005 — none since" />
+        <StatTile label="Legislative elections" value={String(legislative.length)} hint="1923 (annulled), 1996 and 2006, the entire record" />
+        <StatTile label="Presidential elections" value={String(presidential.length)} hint="Arafat 1996, Abbas 2005, none since" />
         <StatTile label="Years without a vote" value="20" hint="no national election since 25 January 2006" />
-        <StatTile label="Next scheduled" value="2026" hint="PLC election, 28 November 2026 — 200 seats" />
+        <StatTile label="Next scheduled" value="2026" hint="PLC election, 28 November 2026, 200 seats" />
       </div>
 
       <JumpNav items={[["#presidential", "Presidential elections"], ["#chronology", "Legislative elections"], ["#records", "The numbers to know"], ["#how-it-works", "How it works"]]} />
@@ -125,7 +125,7 @@ export default function PsElectionsPage() {
       <section id="presidential" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential elections</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          Both of them, newest first — and both won by Fatah&apos;s founding generation with the
+          Both of them, newest first, and both won by Fatah&apos;s founding generation with the
           Islamist factions boycotting.
         </p>
         {presByEra.map(({ era, list }) => (
@@ -161,8 +161,8 @@ export default function PsElectionsPage() {
         title="How Palestinian elections work"
         cards={[
           ["The system on paper", "A directly elected president and a 132-seat Legislative Council (200 seats under the 2021 law), elected by proportional representation. The 2026 election is called for a 200-seat PLC on full national lists."],
-          ["Who votes, and where", "Palestinians of the West Bank, Gaza and East Jerusalem — the last a perennial flashpoint, since Israel has restricted Jerusalem voting and the 2021 election was postponed over it. The diaspora does not vote."],
-          ["Why 2006 froze everything", "Hamas won 74 of 132 seats on 44% of the vote against a divided Fatah. The Quartet demanded conditions Hamas rejected, funding was cut, and within eighteen months Hamas held Gaza and Fatah the West Bank — each side ruling without the legislature."],
+          ["Who votes, and where", "Palestinians of the West Bank, Gaza and East Jerusalem, the last a perennial flashpoint, since Israel has restricted Jerusalem voting and the 2021 election was postponed over it. The diaspora does not vote."],
+          ["Why 2006 froze everything", "Hamas won 74 of 132 seats on 44% of the vote against a divided Fatah. The Quartet demanded conditions Hamas rejected, funding was cut, and within eighteen months Hamas held Gaza and Fatah the West Bank, each side ruling without the legislature."],
           ["What an election needs now", "Fatah–Hamas agreement on holding it, Israeli acquiescence in Jerusalem and the occupied West Bank, and a Gaza in a condition to vote. The 28 November 2026 date, announced for the post-war transition, is the first scheduled national vote in two decades."],
         ]}
       />

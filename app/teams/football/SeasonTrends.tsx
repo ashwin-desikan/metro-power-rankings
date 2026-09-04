@@ -447,7 +447,7 @@ function ScatterChart({ data }: { data: TrendsData }) {
       {hi && (() => {
         const r = pts.find((x) => x.name === hi);
         if (!r) return null;
-        return <div className="text-xs text-[var(--text-muted)] mt-1"><span className="font-semibold text-[var(--text)]">{hi}</span> — rank {r.p.rank}, form {r.p.form.toFixed(2)}, pedigree {r.p.ped.toFixed(2)}, trophy bonus {r.p.tb.toFixed(2)}</div>;
+        return <div className="text-xs text-[var(--text-muted)] mt-1"><span className="font-semibold text-[var(--text)]">{hi}</span>: rank {r.p.rank}, form {r.p.form.toFixed(2)}, pedigree {r.p.ped.toFixed(2)}, trophy bonus {r.p.tb.toFixed(2)}</div>;
       })()}
     </div>
   );

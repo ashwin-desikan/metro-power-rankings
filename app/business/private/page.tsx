@@ -56,7 +56,7 @@ export default async function PrivatePage() {
       <TabHeader
         emoji="🦄"
         title="Private Markets & Unicorns"
-        sub="The companies without a ticker. Unicorns carry their last-raise valuations (CB Insights), private giants an estimated value - both are softer numbers than a market close, and the boards below say so rather than pretending otherwise."
+        sub="The companies without a ticker. Unicorns carry their last-raise valuations (CB Insights) and private giants an estimated value, both softer numbers than a market close."
         stamp={data ? `snapshot ${data.meta.as_of} · ${unicorns.length.toLocaleString()} unicorns · ${priv.length} private giants` : null}
       />
       <BusinessNav />
@@ -192,7 +192,9 @@ export default async function PrivatePage() {
           <section className="mb-6">
             <SectionHead
               title="The private giants"
-              sub="The biggest companies that never listed - family firms, trading houses, state-adjacent groups. Values are estimates (revenue-based), which is exactly why they live on their own board."
+              sub="The biggest companies that never listed: family firms, trading houses, state-adjacent groups."
+              more="Values are estimates (revenue-based), which is exactly why they live on their own board."
+              moreLabel="Why these are estimates"
             />
             <TableBox stickyCol={2}>
               <thead>

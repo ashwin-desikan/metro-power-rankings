@@ -1,0 +1,402 @@
+{
+  "route": "/predictions/nfl",
+  "scrollWidth": 390,
+  "scrollHeight": 7189,
+  "innerWidth": 390,
+  "tables": [
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 745,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 17
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "hidden sm:block overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 3
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 420,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 9
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 483,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 468,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 473,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 479,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 514,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 466,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 489,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 477,
+      "wrapperClientWidth": 356,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    },
+    {
+      "wrapperTag": "div",
+      "wrapperClass": "overflow-x-auto rounded-xl border",
+      "tableScrollWidth": 0,
+      "wrapperClientWidth": 0,
+      "wrapperOverflowX": "auto",
+      "directChild": true,
+      "stickyCol": null,
+      "rows": 5
+    }
+  ],
+  "overflowEls": [
+    {
+      "tag": "table",
+      "cls": "w-full text-sm",
+      "width": 745,
+      "right": 762
+    },
+    {
+      "tag": "thead",
+      "cls": "",
+      "width": 745,
+      "right": 762
+    },
+    {
+      "tag": "tr",
+      "cls": "text-left",
+      "width": 745,
+      "right": 762
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 376,
+      "right": 509
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 72,
+      "right": 581
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 text-right font-semibold",
+      "width": 72,
+      "right": 654
+    },
+    {
+      "tag": "th",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 108,
+      "right": 762
+    },
+    {
+      "tag": "tbody",
+      "cls": "",
+      "width": 745,
+      "right": 762
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 745,
+      "right": 762
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 font-semibold whitespace-nowrap",
+      "width": 376,
+      "right": 509
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 72,
+      "right": 581
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 72,
+      "right": 654
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 108,
+      "right": 762
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 745,
+      "right": 762
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 font-semibold whitespace-nowrap",
+      "width": 376,
+      "right": 509
+    },
+    {
+      "tag": "span",
+      "cls": "ml-1.5 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide a",
+      "width": 63,
+      "right": 497
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 72,
+      "right": 581
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 text-right",
+      "width": 72,
+      "right": 654
+    },
+    {
+      "tag": "td",
+      "cls": "px-3 py-2 font-semibold",
+      "width": 108,
+      "right": 762
+    },
+    {
+      "tag": "tr",
+      "cls": "border-t",
+      "width": 745,
+      "right": 762
+    }
+  ],
+  "tapsUnder44": 3,
+  "tinyTextCount": 25,
+  "tinyTextSamples": [
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 12,
+      "text": "Updated",
+      "tag": "a",
+      "cls": "hidden xl:inline-block text-xs text-[var(--text-muted)] hove"
+    },
+    {
+      "fontSize": 12,
+      "text": "Home",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Predictions",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "NFL",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 10,
+      "text": "points-v3",
+      "tag": "p",
+      "cls": "text-[10px] uppercase tracking-widest text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 10,
+      "text": "neutral",
+      "tag": "span",
+      "cls": "ml-1.5 rounded px-1.5 py-0.5 text-[10px] font-semibold upper"
+    },
+    {
+      "fontSize": 11,
+      "text": "Fri, Sep 11",
+      "tag": "span",
+      "cls": "text-[11px] whitespace-nowrap"
+    },
+    {
+      "fontSize": 11,
+      "text": "Thu, Sep 10",
+      "tag": "span",
+      "cls": "text-[11px] whitespace-nowrap"
+    },
+    {
+      "fontSize": 10,
+      "text": "Toss-up",
+      "tag": "span",
+      "cls": "inline-flex items-center rounded-full px-2 py-0.5 text-[10px"
+    }
+  ],
+  "hasCrumbs": true,
+  "hasH1": true,
+  "h1Text": "🏈 NFL 2026",
+  "monoStamp": "LIVE",
+  "tabNavDetected": true,
+  "hasSourcesCard": false,
+  "smHiddenLists": [
+    {
+      "cls": "sm:hidden rounded-xl border divide-y",
+      "childCount": 2,
+      "insideDetails": false
+    }
+  ],
+  "detailsCount": 0,
+  "details": [],
+  "h2Count": 8,
+  "pageHeight390": 7189,
+  "pageHeight1440": 4889
+}

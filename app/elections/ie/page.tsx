@@ -116,7 +116,7 @@ export default function IeElectionsPage() {
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
         <StatTile label="Dáil seats" value="174" hint="88 for a majority" />
         <StatTile label="Elections since 1922" value={String(legislative.length + presidential.length)} hint="legislative and presidential" />
-        <StatTile label="Uncontested presidencies" value="5" hint="of 13 — a single nominee, no vote held" />
+        <StatTile label="Uncontested presidencies" value="5" hint="of 13, a single nominee, no vote held" />
       </div>
 
       <JumpNav items={[["#chronology", "Parliamentary elections"], ["#presidential", "Presidential elections"], ["#charts", "The long arc in charts"], ["#records", "Records"], ["#how-it-works", "How it works"]]} />

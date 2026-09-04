@@ -16,6 +16,7 @@ import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export const revalidate = 300;
 
@@ -148,6 +149,9 @@ function buildConfs(standings: Awaited<ReturnType<typeof getClubStandings>>): Hu
 function CompGroupTable({ rows }: { rows: LiveRow[] }) {
   const cols = ["P", "W", "D", "L", "GD", "Pts"];
   const sorted = rows.slice().sort(byPtsGd);
+  // Points is this group's argument; max is this group's own maximum,
+  // computed once per CompGroupTable call, never per row.
+  const ptsMax = Math.max(...sorted.map((r) => (typeof r.points === "number" ? r.points : 0)), 1);
   return (
     <ResponsiveTable
       compact
@@ -194,7 +198,13 @@ function CompGroupTable({ rows }: { rows: LiveRow[] }) {
                   </span>
                 </td>
                 {[num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gd), num(r.points)].map((v, j) => (
-                  <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{v}</td>
+                  cols[j] === "Pts" ? (
+                    <td key={j} className="py-1 px-1.5 text-right">
+                      <DataBar v={typeof r.points === "number" ? r.points : null} max={ptsMax} width={72} label="points" />
+                    </td>
+                  ) : (
+                    <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{v}</td>
+                  )
                 ))}
               </tr>
             );

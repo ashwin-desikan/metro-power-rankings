@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import { TableScroll } from "@/app/_shared/TableScroll";
+import { DivergingBar } from "@/app/_shared/DataBar";
 import {
   getNflExpectation,
   getNflExpectationSeason,
@@ -22,8 +23,9 @@ export const dynamicParams = true;
 const FIRST_SEASON = 1920;
 const mono: CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
 const card: CSSProperties = { background: "var(--bg-card)", borderColor: "var(--border)" };
-const UP = "#10b981";
-const DOWN = "#E2628B";
+// Validated diverging tokens; see globals.css. Never a raw hex.
+const UP = "var(--div-pos)";
+const DOWN = "var(--div-neg)";
 
 export async function generateStaticParams() {
   // Prerender the recent decade; the other ~95 render on demand and cache.
@@ -101,6 +103,10 @@ export default async function NflExpectationSeasonPage({
   const teamRows = (teams?.rows ?? [])
     .filter((r) => r.season === season && r.wae != null)
     .sort((a, b) => (b.wae ?? 0) - (a.wae ?? 0));
+  // Wins vs expected is this board's argument (teams are sorted desc by
+  // it) and is genuinely signed, so it takes a DivergingBar. colMax is the
+  // max absolute value, computed once over the full teamRows set.
+  const teamRowsColMax = Math.max(...teamRows.map((r) => Math.abs(r.wae ?? 0)), 0.0001);
 
   const games = [...file.games].sort((a, b) =>
     (a.date ?? "") < (b.date ?? "") ? -1 : (a.date ?? "") > (b.date ?? "") ? 1 : 0,
@@ -130,7 +136,7 @@ export default async function NflExpectationSeasonPage({
           The {season} season, against expectation
         </h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Every game of {season} scored against the chance it was given beforehand — the same axis
+          Every game of {season} scored against the chance it was given beforehand: the same axis
           that runs from 1920 to this weekend&apos;s picks.
         </p>
         <div className="flex gap-3 mt-4 text-sm" style={mono}>
@@ -210,11 +216,8 @@ export default async function NflExpectationSeasonPage({
                         </Link>
                       ) : r.team}
                     </td>
-                    <td
-                      className="py-1.5 px-3 text-right tabular-nums font-semibold"
-                      style={{ ...mono, color: (r.wae ?? 0) > 0 ? UP : DOWN }}
-                    >
-                      {signed(r.wae ?? 0)}
+                    <td className="py-1.5 px-3 text-right">
+                      <DivergingBar v={r.wae ?? 0} max={teamRowsColMax} dp={2} suffix="" width={132} label="wins against expectation" />
                     </td>
                     <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.wins}</td>
                     <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>

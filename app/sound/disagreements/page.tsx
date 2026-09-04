@@ -5,7 +5,7 @@ import SortTable, { type Col } from '../SortTable';
 
 interface D { single: string; artist: string; artist_slug: string; metro: string | null; us: number | null; uk: number | null; kind: string; year: number; gap?: number }
 async function load(): Promise<D[]> { return JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', 'chart_disagreements.json'), 'utf8')); }
-export const metadata = { title: 'Chart Disagreements — Sound of the Metros' };
+export const metadata = { title: 'Chart Disagreements: Sound of the Metros' };
 const muted = { color: 'var(--text-muted)' } as const;
 const COLS: Col[] = [
   { key: 'single', label: 'Single' },

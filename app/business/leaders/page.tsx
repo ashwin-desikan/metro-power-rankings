@@ -42,7 +42,7 @@ export default async function BizLeadersPage() {
       <TabHeader
         emoji="🎩"
         title="Business Leaders"
-        sub="The site tracks who runs every country; this board tracks who runs the money. CEOs of the biggest companies, the people behind the major funds, and every central bank governor - with changes logged as they happen, the same way the political leaders pages work."
+        sub="The site tracks who runs every country; this board tracks who runs the money. CEOs of the biggest companies, the people behind the major funds, and every central bank governor, with changes logged as they happen."
         stamp={data ? `as of ${data.meta.as_of} · ${data.meta.resolved}/${data.meta.total} seats resolved · source: Wikidata` : null}
       />
       <BusinessNav />
@@ -81,7 +81,8 @@ export default async function BizLeadersPage() {
           <section className="mb-10" id="central-banks">
             <SectionHead
               title="The central bankers"
-              sub="The unelected officials whose signatures move more money than most parliaments. Each bank links to its country's page; the elections layer next door tracks who appoints them."
+              sub="The unelected officials whose signatures move more money than most parliaments."
+              more="Each bank links to its country's page; the elections layer next door tracks who appoints them."
             />
             <TableBox>
               <thead>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/nfl";
 import { WatchButton, type GameVideo } from "@/app/teams/_shared/GameVideo";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Replace the bare "Super Bowl" round label with a numbered one ("SB 50"
 // for the 2015 season, "SB " + roman for every other Super Bowl). Other
@@ -73,6 +74,10 @@ function decadeKeys(byDecade: Record<string, TopGameLeagueRow[]>): string[] {
 export default function TopGamesTable({ allTime, byDecade }: Props) {
   const [bucket, setBucket] = useState<string>("all"); // "all" | "1920" | ...
   const rows = bucket === "all" ? allTime : (byDecade[bucket] ?? []);
+  // Game Score is the board's argument (ranked by Game Score). colMax is
+  // the max over the currently shown bucket (all-time or one decade),
+  // computed once above the row map so bars stay comparable within that view.
+  const colMax = Math.max(...rows.map((g) => g.du), 0.0001);
 
   const decades = decadeKeys(byDecade);
 
@@ -160,7 +165,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
               <div
                 className="text-[10px] mt-1 truncate font-medium tracking-wide"
                 style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
-                title={[g.stadium, g.stadium_city, g.stadium_state].filter(Boolean).join(" — ")}
+                title={[g.stadium, g.stadium_city, g.stadium_state].filter(Boolean).join(", ")}
               >
                 {g.stadium}
                 {g.stadium_city ? (
@@ -227,7 +232,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                     <div
                       className="text-[10px] mt-0.5 truncate font-medium tracking-wide"
                       style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
-                      title={[g.stadium, g.stadium_city, g.stadium_state].filter(Boolean).join(" — ")}
+                      title={[g.stadium, g.stadium_city, g.stadium_state].filter(Boolean).join(", ")}
                     >
                       {g.stadium}
                       {g.stadium_city ? (
@@ -239,7 +244,9 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                   ) : null}
                   {g.video ? <WatchButton video={g.video} /> : null}
                 </td>
-                <td className="py-2 text-right font-semibold">{g.du.toFixed(3)}</td>
+                <td className="py-2 text-right">
+                  <DataBar v={g.du} max={colMax} dp={3} color="var(--seq-4)" width={92} label="game score" />
+                </td>
               </tr>
             ))}
             {rows.length === 0 && (

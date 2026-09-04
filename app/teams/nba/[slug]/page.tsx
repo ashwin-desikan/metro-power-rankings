@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DataBar } from "@/app/_shared/DataBar";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import { getRivalries } from "@/lib/rivalries";
@@ -131,6 +132,9 @@ export default async function FranchisePage({ params }: Props) {
   const allNba = getAllNbaSelections(f.canonical);
   const seasons = getSeasons(f.slug);
   const topGames = getTopGamesForTeam(f.slug);
+  // Top-games board is explicitly "ranked by Game Score"; max is this
+  // column's own maximum over the full topGames set, computed once.
+  const topGamesMax = Math.max(...topGames.map((g) => g.game_score ?? 0), 0.001);
   const playoffState = getPlayoffStateForCanonical(f.canonical);
   const playoffBundle = getPlayoffState();
   const showPostseasonChip = playoffState && !playoffBundle.is_postseason_complete;
@@ -744,7 +748,7 @@ export default async function FranchisePage({ params }: Props) {
       {/* Top games by Game Score */}
       <Block
         title="Top games"
-        deck={`The franchise's top ${topGames.length > 0 ? Math.min(topGames.length, 10) : 10} games ranked by Game Score — a composite of stakes, quality, and ELO-weighted matchup strength.`}
+        deck={`The franchise's top ${topGames.length > 0 ? Math.min(topGames.length, 10) : 10} games ranked by Game Score: a composite of stakes, quality, and ELO-weighted matchup strength.`}
       >
         {topGames.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No playoff games recorded.</p>
@@ -846,7 +850,7 @@ export default async function FranchisePage({ params }: Props) {
                           {g.arena_metro ? ` · ${g.arena_metro}${g.arena_state ? `, ${g.arena_state}` : ""}` : ""}
                         </td>
                         <td className="py-2 pr-5 text-right font-semibold">
-                          {g.game_score != null ? g.game_score.toFixed(3) : "—"}
+                          <DataBar v={g.game_score} max={topGamesMax} dp={3} color="var(--seq-4)" width={96} label="game score" />
                         </td>
                       </tr>
                     );

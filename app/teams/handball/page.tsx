@@ -120,8 +120,8 @@ export default function HandballHubPage() {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">International Handball</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          The national-team game: every men&apos;s Olympic podium — the sport&apos;s ultimate
-          trophy — alongside the IHF World Championship since 1938. Soviet, Yugoslav and
+          The national-team game: every men&apos;s Olympic podium, the sport&apos;s ultimate
+          trophy, alongside the IHF World Championship since 1938. Soviet, Yugoslav and
           German lineages fold into their modern successors, attributed per edition.
         </p>
       </header>

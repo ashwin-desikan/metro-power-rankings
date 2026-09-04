@@ -101,15 +101,25 @@ export default function ChampionsHubPage() {
         </div>
         <h1 className="text-4xl font-bold tracking-tight mb-2">Champions</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Three views, one board. <strong className="text-[var(--text)]">Current</strong> lists every
-          reigning champion across the Gold Standard competitions and selected leagues, filterable by
-          scope, sport or region. <strong className="text-[var(--text)]">Time Machine</strong> asks the
-          same board any date: pick a month and year to see who held every trophy that month, with both
-          holders shown when a title changed hands mid-month.{" "}
-          <strong className="text-[var(--text)]">All-Time</strong> opens the honour rolls: every champion
-          of every competition we track, each linked to its team page and, for club sports, the home
-          metro that won it.
+          Three views, one board. <strong className="text-[var(--text)]">Current</strong>,{" "}
+          <strong className="text-[var(--text)]">Time Machine</strong> and{" "}
+          <strong className="text-[var(--text)]">All-Time</strong> each read the same champions ledger
+          differently.
         </p>
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            What each view shows
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            <strong className="text-[var(--text)]">Current</strong> lists every reigning champion across
+            the Gold Standard competitions and selected leagues, filterable by scope, sport or region.{" "}
+            <strong className="text-[var(--text)]">Time Machine</strong> asks the same board any date: pick
+            a month and year to see who held every trophy that month, with both holders shown when a title
+            changed hands mid-month. <strong className="text-[var(--text)]">All-Time</strong> opens the
+            honour rolls: every champion of every competition we track, each linked to its team page and,
+            for club sports, the home metro that won it.
+          </div>
+        </details>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-[var(--text-muted)] mt-3">
           <div>
             <strong className="text-[var(--text)] text-sm tabular-nums" style={mono}>{rows.length}</strong> competitions tracked

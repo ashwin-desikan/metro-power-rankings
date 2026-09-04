@@ -6,9 +6,9 @@ import ScreenNav from "../ScreenNav";
 
 export const dynamic = "force-static";
 
-const TITLE = "Screen of the Metros — Films";
+const TITLE = "Screen of the Metros: Films";
 const DESC =
-  "The definitive films of the last century, scored across critical standing, audience acclaim, box-office dominance and cultural longevity — the canon and the blockbusters on one board.";
+  "The definitive films of the last century, scored across critical standing, audience acclaim, box-office dominance and cultural longevity: the canon and the blockbusters on one board.";
 
 export const metadata: Metadata = {
   title: TITLE,

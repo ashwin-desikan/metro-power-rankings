@@ -14,6 +14,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { EuropeanMostDecorated } from "@/lib/football";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 type SortKey = "cups" | "finals" | "last_won" | "last_final" | "club";
 type SortDir = "asc" | "desc";
@@ -123,6 +124,11 @@ export default function MostDecoratedTable({ rows }: Props) {
     });
     return arr;
   }, [rows, sortKey, sortDir]);
+
+  // Cups is this table's argument (the default sort, and what "most
+  // decorated" means); max is the column's own maximum, computed once over
+  // the full row set, unaffected by the active sort/column.
+  const cupsMax = useMemo(() => Math.max(...rows.map((r) => r.champion_count), 1), [rows]);
 
   return (
     <section
@@ -262,8 +268,8 @@ export default function MostDecoratedTable({ rows }: Props) {
                     <span className="font-medium">{d.cur_name}</span>
                   )}
                 </td>
-                <td className="py-1.5 px-2 text-right tabular-nums font-semibold">
-                  {d.champion_count > 0 ? d.champion_count : <span className="text-[var(--text-dim)] font-normal">—</span>}
+                <td className="py-1.5 px-2 text-right">
+                  <DataBar v={d.champion_count > 0 ? d.champion_count : null} max={cupsMax} width={72} label="cups" />
                 </td>
                 <td className="py-1.5 px-2 text-right tabular-nums">
                   {(d.finals_count ?? d.champion_count)}

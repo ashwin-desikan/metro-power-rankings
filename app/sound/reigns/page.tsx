@@ -5,7 +5,7 @@ import SortTable, { type Col } from '../SortTable';
 
 interface R { single: string; artist: string; artist_slug: string; metro: string | null; chart: string; weeks: number; peak: number; year: number }
 async function load(): Promise<R[]> { return JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', 'longest_reigns.json'), 'utf8')); }
-export const metadata = { title: 'Longest Reigns — Sound of the Metros' };
+export const metadata = { title: 'Longest Reigns: Sound of the Metros' };
 const muted = { color: 'var(--text-muted)' } as const;
 const COLS: Col[] = [
   { key: 'weeks', label: 'Weeks', numeric: true, align: 'right', bold: true },

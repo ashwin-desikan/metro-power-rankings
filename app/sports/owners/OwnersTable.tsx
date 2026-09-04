@@ -4,6 +4,7 @@ import { Fragment, useMemo, useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Local structural types, kept independent of the server-only lib/teamOwners
 // module so this client component never pulls a server import.
@@ -71,6 +72,15 @@ export default function OwnersTable({ rows }: { rows: Row[] }) {
       return c * dir || a.totalM - b.totalM;
     });
   }, [rows, scope, q, sortKey, asc]);
+
+  // Portfolio value is the board's argument (this table ranks control
+  // entities by combined club value), so it is the one column that gets an
+  // in-cell bar. max is the column's own maximum across the current
+  // filtered/sorted set, computed once here so bars stay comparable while
+  // the table re-sorts or filters.
+  const colMax = useMemo(
+    () => Math.max(...filtered.map((r) => r.totalM), 1),
+    [filtered]);
 
   function toggleSort(k: SortKey) {
     if (sortKey === k) setAsc((v) => !v);
@@ -230,7 +240,10 @@ export default function OwnersTable({ rows }: { rows: Row[] }) {
                       <span className="ml-2 text-[var(--text-dim)]">{isOpen ? "▾" : "▸"}</span>
                       <Badges r={r} />
                     </td>
-                    <td className="px-3 py-2 text-right font-semibold tabular-nums">{r.totalLabel}</td>
+                    <td className="px-3 py-2 text-right">
+                      <DataBar v={r.totalM} max={colMax} dp={1} suffix="B" scale={0.001}
+                               color="var(--seq-4)" width={104} label="portfolio value" />
+                    </td>
                     <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]">{r.teams.length}</td>
                     <td className="px-3 py-2 text-[var(--text-muted)] hidden md:table-cell">
                       {r.leagues.join(", ")}

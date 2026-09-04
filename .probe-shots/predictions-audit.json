@@ -1,0 +1,84 @@
+{
+  "route": "/predictions",
+  "scrollWidth": 390,
+  "scrollHeight": 3353,
+  "innerWidth": 390,
+  "tables": [],
+  "overflowEls": [],
+  "tapsUnder44": 6,
+  "tinyTextCount": 26,
+  "tinyTextSamples": [
+    {
+      "fontSize": 12,
+      "text": "Citizen of Nowhere",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 12,
+      "text": "Updated",
+      "tag": "a",
+      "cls": "hidden xl:inline-block text-xs text-[var(--text-muted)] hove"
+    },
+    {
+      "fontSize": 12,
+      "text": "Home",
+      "tag": "a",
+      "cls": "hover:underline"
+    },
+    {
+      "fontSize": 12,
+      "text": "Predictions",
+      "tag": "span",
+      "cls": ""
+    },
+    {
+      "fontSize": 10,
+      "text": "Ranges first, probabilities second, humility throughout",
+      "tag": "p",
+      "cls": "text-[10px] uppercase tracking-widest text-[var(--text-dim)]"
+    },
+    {
+      "fontSize": 11,
+      "text": "US House",
+      "tag": "div",
+      "cls": "text-[11px] uppercase tracking-widest mb-1"
+    },
+    {
+      "fontSize": 12,
+      "text": "Democrats win control",
+      "tag": "div",
+      "cls": "text-xs text-[var(--text-muted)]"
+    },
+    {
+      "fontSize": 11,
+      "text": "US Senate",
+      "tag": "div",
+      "cls": "text-[11px] uppercase tracking-widest mb-1"
+    },
+    {
+      "fontSize": 12,
+      "text": "Democratic control",
+      "tag": "div",
+      "cls": "text-xs text-[var(--text-muted)]"
+    },
+    {
+      "fontSize": 11,
+      "text": "US Governors",
+      "tag": "div",
+      "cls": "text-[11px] uppercase tracking-widest mb-1"
+    }
+  ],
+  "hasCrumbs": true,
+  "hasH1": true,
+  "h1Text": "Predictions",
+  "monoStamp": "LIVE",
+  "tabNavDetected": true,
+  "hasSourcesCard": false,
+  "smHiddenLists": [],
+  "detailsCount": 0,
+  "details": [],
+  "h2Count": 4,
+  "pageHeight390": 3353,
+  "pageHeight1440": 2023
+}

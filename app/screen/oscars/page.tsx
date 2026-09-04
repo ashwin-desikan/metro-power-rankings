@@ -6,7 +6,7 @@ import OscarsView from "./OscarsView";
 
 export const dynamic = "force-static";
 
-const TITLE = "Screen of the Metros — Oscar Winners";
+const TITLE = "Screen of the Metros: Oscar Winners";
 const DESC =
   "Every Academy Awards ceremony since 1929, one night at a time: the Big Six categories with every nominee and the winner in gold, and every other award of the night beneath.";
 

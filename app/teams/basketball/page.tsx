@@ -11,7 +11,7 @@ export const dynamicParams = false;
 const PATH = "/teams/basketball";
 const TITLE = "International Basketball";
 const DESC =
-  "National-team basketball: FIBA World Cup finals and campaigns, every Olympic podium since 1936, and the EuroLeague's complete club honours — with lineages folded into modern nations.";
+  "National-team basketball: FIBA World Cup finals and campaigns, every Olympic podium since 1936, and the EuroLeague's complete club honours, with lineages folded into modern nations.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -75,7 +75,7 @@ export default async function BasketballHubPage() {
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The national-team game: FIBA World Cup finals and full campaigns for the
           editions on file, every Olympic podium since 1936, and pages for all{" "}
-          {hub.totals.nations} nations — Soviet and Yugoslav lineages folded into
+          {hub.totals.nations} nations, Soviet and Yugoslav lineages folded into
           their modern successors, attributed per edition.
         </p>
       </header>
@@ -157,7 +157,7 @@ export default async function BasketballHubPage() {
         <section className="mb-10">
           <h2 id="fiba-ranking" className="text-lg font-semibold mb-1">FIBA World Ranking</h2>
           <p className="text-xs text-[var(--text-muted)] mb-3">
-            The current FIBA World Ranking for Men, presented by Nike — all{" "}
+            The current FIBA World Ranking for Men, presented by Nike, all{" "}
             {fiba.teams.length} ranked nations, filterable by FIBA zone. Updated as
             new rankings are published (as of {fiba.label}).
           </p>

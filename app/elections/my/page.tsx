@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/my";
 const TITLE = 'Malaysian General Elections';
 const DESC =
-  'Every Malayan and Malaysian general election from 1955 to 2022 — the Merdeka landslide, the May 13 rupture, six decades of Barisan Nasional supermajorities on a tilted map, and the two-coalition era that finally made power change hands at the ballot box.';
+  'Every Malayan and Malaysian general election from 1955 to 2022: the Merdeka landslide, the May 13 rupture, six decades of Barisan Nasional supermajorities on a tilted map, and the two-coalition era that finally made power change hands at the ballot box.';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -38,7 +38,7 @@ export default function MyElectionsPage() {
         const p = e.parties
           .filter((p) => p.share != null)
           .sort((a, b) => (b.share ?? 0) - (a.share ?? 0))[0];
-        return p ? { x: e.year, y: p.share as number, label: `${e.label} — ${p.name}` } : null;
+        return p ? { x: e.year, y: p.share as number, label: `${e.label}, ${p.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -94,7 +94,7 @@ export default function MyElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">The leading force's vote share</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              The infobox convention attributes each coalition's vote to its leading party — the arc runs from Alliance dominance through BN's manufactured majorities to the sub-40% pluralities of the two-coalition era.
+              The infobox convention attributes each coalition's vote to its leading party: the arc runs from Alliance dominance through BN's manufactured majorities to the sub-40% pluralities of the two-coalition era.
             </p>
             <LineChart series={[largest]} yMax={80} yTicks={[20, 40, 60]} />
           </div>
@@ -108,15 +108,15 @@ export default function MyElectionsPage() {
         cards={[
           [
                     "Westminster with a tilted map",
-                    "222 members of the Dewan Rakyat are elected first past the post. Rural Malay-majority seats hold a fraction of the voters of urban ones — malapportionment severe enough that in 2013 the government won a majority while losing the popular vote."
+                    "222 members of the Dewan Rakyat are elected first past the post. Rural Malay-majority seats hold a fraction of the voters of urban ones: malapportionment severe enough that in 2013 the government won a majority while losing the popular vote."
           ],
           [
                     "The coalition is the unit",
-                    "Malaysian politics runs on permanent coalitions — Alliance, then Barisan Nasional, now BN, Pakatan Harapan, Perikatan Nasional and the Borneo blocs. Elections are fought, and governments formed, coalition by coalition."
+                    "Malaysian politics runs on permanent coalitions: Alliance, then Barisan Nasional, now BN, Pakatan Harapan, Perikatan Nasional and the Borneo blocs. Elections are fought, and governments formed, coalition by coalition."
           ],
           [
                     "The Borneo kingmakers",
-                    "Sabah and Sarawak's 57 seats sit outside the peninsula's party system, and since 2008 their regional coalitions have decided who governs — including the unity government of 2022."
+                    "Sabah and Sarawak's 57 seats sit outside the peninsula's party system, and since 2008 their regional coalitions have decided who governs, including the unity government of 2022."
           ],
           [
                     "From ritual to real",

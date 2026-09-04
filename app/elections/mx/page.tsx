@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/mx";
 const TITLE = "Mexican Elections";
 const DESC =
-  "Every Mexican presidential election from 1853 to 2024 and the Chamber of Deputies midterms since 1943 — Santa Anna, the Porfiriato, the Revolution, seventy years of one-party rule and the democratic transition, stated plainly throughout, for novices and experts alike.";
+  "Every Mexican presidential election from 1853 to 2024 and the Chamber of Deputies midterms since 1943: Santa Anna, the Porfiriato, the Revolution, seventy years of one-party rule and the democratic transition, stated plainly throughout, for novices and experts alike.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -126,7 +126,7 @@ export default function MxElectionsPage() {
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential elections</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
           All {presidential.length} presidential contests, newest first. The arranged elections of the
-          Porfiriato and the hegemonic-party decades are labelled as such on every page — the numbers are
+          Porfiriato and the hegemonic-party decades are labelled as such on every page: the numbers are
           the official record, not evidence of a free vote.
         </p>
         {presByEra.map(({ era, list }) => (
@@ -153,7 +153,7 @@ export default function MxElectionsPage() {
         fmtPct={mxFmtPct}
         leaderTag="President"
         headline="Chamber of Deputies midterms"
-        intro="The midterm elections for the Chamber of Deputies, newest first — the contests that turned from rituals of an official majority into genuine referendums on each presidency."
+        intro="The midterm elections for the Chamber of Deputies, newest first, the contests that turned from rituals of an official majority into genuine referendums on each presidency."
       />
 
       {/* ---------- charts ---------- */}
@@ -187,10 +187,10 @@ export default function MxElectionsPage() {
       <HowItWorks
         title="How Mexican elections work"
         cards={[
-          ["One round, one term", "The presidency is won by simple plurality in a single round, for a single six-year term — the sexenio. No re-election, ever: the Revolution's founding slogan is written into the constitution."],
-          ["A mixed Chamber", "The Chamber of Deputies mixes 300 district seats with 200 proportional seats, elected every three years — so every president faces a midterm referendum halfway through the sexenio."],
-          ["From ritual to referee", "For six decades the official party controlled the count itself. The independent electoral institute built in the 1990s — today's INE — is the institution that made 1997, 2000 and everything since believable."],
-          ["Alliances on the ballot", "Modern contests are fought by coalitions — Morena with the Greens and PT, the PAN with its rivals-turned-partners — so a candidate's vote is an alliance total across several party columns."],
+          ["One round, one term", "The presidency is won by simple plurality in a single round, for a single six-year term, the sexenio. No re-election, ever: the Revolution's founding slogan is written into the constitution."],
+          ["A mixed Chamber", "The Chamber of Deputies mixes 300 district seats with 200 proportional seats, elected every three years, so every president faces a midterm referendum halfway through the sexenio."],
+          ["From ritual to referee", "For six decades the official party controlled the count itself. The independent electoral institute built in the 1990s, today's INE, is the institution that made 1997, 2000 and everything since believable."],
+          ["Alliances on the ballot", "Modern contests are fought by coalitions, Morena with the Greens and PT, the PAN with its rivals-turned-partners, so a candidate's vote is an alliance total across several party columns."],
         ]}
       />
 
