@@ -56,11 +56,24 @@ COMMONWEALTH_REALMS = {
     "belize", "grenada", "jamaica", "papua-new-guinea", "st-kitts-nevis", "st-lucia",
     "st-vincent-the-grenadines", "solomon-islands", "tuvalu",
 }
-WARN_NAMES = {
-    "Vladimir Putin", "Ali Khamenei", "Mojtaba Khamenei", "Kim Jong-un", "Alexander Lukashenko",
-    "Abdel Fattah al-Burhan", "Min Aung Hlaing", "Donald Trump", "Abdel Fattah el-Sisi",
-    "Kais Saied", "Benjamin Netanyahu", "Mohammed bin Salman", "Recep Tayyip Erdoğan",
-}
+
+# The warning glyph is curated in ONE place, scripts/data/warn-flags.json, with a
+# written criterion and dated acts behind every name. It used to be three
+# hardcoded sets in three scripts, which is a list that drifts and a judgement
+# about living people with no evidence attached. Missing file is a hard failure:
+# silently shipping an unflagged feed would be worse than not shipping one.
+WARN_FLAGS = ROOT / "scripts" / "data" / "warn-flags.json"
+
+
+def load_warn_names(scope):
+    with open(WARN_FLAGS, encoding="utf-8") as fh:
+        people = json.load(fh)["people"]
+    return {
+        name for name, v in people.items()
+        if v.get("scope") == scope and v.get("status") != "removed"
+    }
+
+WARN_NAMES = load_warn_names("leader")
 CROWN, WARN = "\U0001f451", "⚠️"
 
 def bare(n):

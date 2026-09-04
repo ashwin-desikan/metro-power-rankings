@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "why": "The CCP chronology is a country-year panel keyed to the Correlates of War state system. A country whose constitution was adopted BEFORE it entered that system therefore has no 'new' event in its own rows, and the build reads no adoption year for it at all. Norway is the clearest case: the constitution dates from 1814, the COW entry from 1905, so the founding event sits outside the panel. That is a property of the join, not a fact about the country, and leaving the field empty made 15 states unmeasurable on constitutional age.",
+    "rule": "One source, one rule: the year the document currently in force was adopted, as stated by the source. Where the adoption year and the year it took effect differ, the note says so. Nothing here is inferred from a neighbouring country, an independence date, or a guess.",
+    "source": "Wikipedia, List of national constitutions (https://en.wikipedia.org/wiki/List_of_national_constitutions), read 2026-09-04",
+    "appliesWhen": "The country is live, has no 'new' event in the chronology, and is not recorded as uncodified. The United Kingdom and New Zealand are uncodified and are deliberately absent from this file.",
+    "flag": "Every row this touches carries adoptedSource: 'curated'. Rows the chronology dates itself carry 'chronology'."
+  },
+  "overrides": {
+    "norway": { "adopted": 1814, "note": "Adopted 17 May 1814, in a union with Sweden until 1905." },
+    "lebanon": { "adopted": 1926, "note": "Adopted 23 May 1926, under the French mandate." },
+    "tonga": { "adopted": 1875, "note": "Granted 4 November 1875, the oldest in force in the Pacific." },
+    "brunei": { "adopted": 1959, "note": "Adopted 1959, while still a British protected state." },
+    "taiwan": { "adopted": 1947, "note": "Adopted 25 December 1947, on the mainland, before the 1949 move to Taipei." },
+    "united-arab-emirates": { "adopted": 1971, "note": "Provisional from 2 December 1971, made permanent in 1996 without a new document." },
+    "singapore": { "adopted": 1965, "note": "The state constitution of 1963 became the national constitution on independence in 1965." },
+    "croatia": { "adopted": 1990, "note": "Adopted 22 December 1990, while still within Yugoslavia." },
+    "slovenia": { "adopted": 1991, "note": "Adopted 23 December 1991." },
+    "slovakia": { "adopted": 1992, "note": "Adopted 1 September 1992, before the split from Czechoslovakia took effect." },
+    "marshall-islands": { "adopted": 1979, "note": "Adopted 1979, twelve years before UN membership." },
+    "federated-states-of-micronesia": { "adopted": 1978, "note": "Ratified 1978, in force 10 May 1979." },
+    "palau": { "adopted": 1981, "note": "Approved by referendum in 1980, in force 1 January 1981." },
+    "saint-lucia": { "adopted": 1978, "note": "Adopted 1978, in force at independence in 1979." },
+    "south-sudan": { "adopted": 2011, "note": "Transitional constitution of 9 July 2011, still the document in force." }
+  }
+}

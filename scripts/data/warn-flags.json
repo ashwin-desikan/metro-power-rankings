@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "what": "The single source of truth for the warning glyph the site puts in front of a person's name, on the Nowhere 100, the leader directories, the per-country leadership histories and the billionaires board.",
+    "why": "The glyph used to be three hardcoded Python sets in three scripts, with no evidence attached to any name. That is fine for an emoji and not fine for a published judgement about a living person, and it is not usable as an input to anything that predicts. This file makes each flag an auditable claim: which written criterion is met, which dated acts meet it, and where each act is recorded.",
+    "rule": "A name is flagged only when at least one criterion below is met AND at least one dated act is recorded against it. A name with no evidence carries status 'needs evidence' and is still flagged, because these were flagged editorially before this file existed; the status says the evidence has not been written down yet, not that the flag is disputed. Nothing is added without an act.",
+    "removal": "A flag comes off by the same test it went on: the acts are reviewed and found not to meet a criterion, or the criterion no longer applies. Removals stay in the file with status 'removed' and a reason, so the record shows what changed and when.",
+    "scopeWarning": "🔴 THIS IS A CURATED LIST, NOT A MEASUREMENT. Thirteen names against roughly two hundred sitting leaders means the absence of a flag is not evidence of anything. Any board that uses this as a signal must say so on the page, and must not present an unflagged country as cleared.",
+    "reviewedOn": "2026-09-04",
+    "sources": "Each act carries its own source. Acts marked verified were checked against a primary or reference source on the date given; acts with no source are the editor's to fill."
+  },
+  "criteria": {
+    "atrocities": "Command or direct responsibility for mass killing, forced displacement, or other grave crimes against civilians, as found by a court, a treaty body, or a UN inquiry.",
+    "subversion": "Systemic subversion of the constitutional order from inside it: seizing power by force, suspending or dissolving the legislature or the courts, removing term limits for oneself, or refusing to transfer power after losing it.",
+    "conviction": "A criminal conviction in a court of competent jurisdiction."
+  },
+  "people": {
+    "Vladimir Putin": {
+      "scope": "leader", "country": "russia", "criteria": ["atrocities"], "status": "evidenced",
+      "acts": [
+        { "date": "2023-03-17", "what": "International Criminal Court issued an arrest warrant over the unlawful deportation of children from occupied Ukraine.", "source": "ICC, Situation in Ukraine", "verified": "2026-09-04" }
+      ]
+    },
+    "Benjamin Netanyahu": {
+      "scope": "leader", "country": "israel", "criteria": ["atrocities"], "status": "evidenced",
+      "acts": [
+        { "date": "2024-11-21", "what": "International Criminal Court issued an arrest warrant in the Situation in the State of Palestine.", "source": "ICC", "verified": "2026-09-04" }
+      ]
+    },
+    "Donald Trump": {
+      "scope": "leader", "country": "united-states", "criteria": ["conviction"], "status": "evidenced",
+      "acts": [
+        { "date": "2024-05-30", "what": "Convicted on 34 felony counts of falsifying business records, New York State Supreme Court.", "source": "Manhattan District Attorney", "verified": "2026-09-04" }
+      ],
+      "note": "The subversion criterion has not been assessed in this file. If it is invoked it needs its own dated acts, each one sourced, and it should not lean on the conviction already recorded here."
+    },
+    "Kim Jong-un": { "scope": "leader", "country": "north-korea", "criteria": ["atrocities"], "status": "needs evidence", "acts": [] },
+    "Min Aung Hlaing": { "scope": "leader", "country": "myanmar", "criteria": ["subversion", "atrocities"], "status": "needs evidence", "acts": [] },
+    "Abdel Fattah al-Burhan": { "scope": "leader", "country": "sudan", "criteria": ["subversion"], "status": "needs evidence", "acts": [] },
+    "Abdel Fattah el-Sisi": { "scope": "leader", "country": "egypt", "criteria": ["subversion"], "status": "needs evidence", "acts": [] },
+    "Kais Saied": { "scope": "leader", "country": "tunisia", "criteria": ["subversion"], "status": "needs evidence", "acts": [] },
+    "Recep Tayyip Erdoğan": { "scope": "leader", "country": "turkey", "criteria": ["subversion"], "status": "needs evidence", "acts": [] },
+    "Alexander Lukashenko": { "scope": "leader", "country": "belarus", "criteria": ["subversion"], "status": "needs evidence", "acts": [] },
+    "Mohammed bin Salman": { "scope": "leader", "country": "saudi-arabia", "criteria": ["atrocities"], "status": "needs evidence", "acts": [] },
+    "Ali Khamenei": { "scope": "leader", "country": "iran", "criteria": ["atrocities"], "status": "needs evidence", "acts": [] },
+    "Mojtaba Khamenei": { "scope": "leader", "country": "iran", "criteria": ["atrocities"], "status": "needs evidence", "acts": [] },
+    "Elon Musk": {
+      "scope": "billionaire", "country": null, "criteria": [], "status": "criterion not asserted", "acts": [],
+      "note": "🔴 Carried over from the billionaires build, where the glyph was applied with no criterion recorded. None of the three criteria in this file is currently asserted against this name. Either an act is written down under one of them, a fourth criterion is written and applied to everyone in scope, or the flag comes off. Left in place rather than removed silently, because removing an editorial call without the editor is worse than surfacing it."
+    }
+  }
+}

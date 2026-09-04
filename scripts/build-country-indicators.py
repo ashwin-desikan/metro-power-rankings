@@ -36,6 +36,17 @@ WB_INDICATORS = {
     "inflationPct":      ("FP.CPI.TOTL.ZG",      "Inflation, consumer prices (annual %)"),
     "popGrowthPct":      ("SP.POP.GROW",         "Population growth (annual %)"),
     "migrantStockPct":   ("SM.POP.TOTL.ZS",      "International migrant stock (% of pop)"),
+    # Fiscal capacity, added 2026-09-04 for the Order layer. In the political
+    # science this site argues with, tax revenue as a share of GDP is the
+    # standard measure of what a state can actually do, ahead of GDP size or
+    # army size. The GC.* series are central government only and their coverage
+    # is patchier than the rest of this file, which is why general government
+    # consumption sits alongside them as the wider fallback. A country with none
+    # of the four is reported as unmeasured, never as zero.
+    "taxRevenuePct":     ("GC.TAX.TOTL.GD.ZS",   "Tax revenue (% of GDP)"),
+    "govExpensePct":     ("GC.XPN.TOTL.GD.ZS",   "Central government expense (% of GDP)"),
+    "govDebtPct":        ("GC.DOD.TOTL.GD.ZS",   "Central government debt, total (% of GDP)"),
+    "govConsumptionPct": ("NE.CON.GOVT.ZS",      "General government final consumption (% of GDP)"),
 }
 
 # Our World in Data grapher series: (slug, short-name value column, label).

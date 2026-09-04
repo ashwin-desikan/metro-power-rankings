@@ -11,9 +11,25 @@ COUNTRIES = ROOT / "public/data/countries.json"
 
 # Editorial warning glyph (same convention as leaders): names here get a
 # warning prefix baked into the display name so it renders everywhere
-# automatically and survives each data refresh. Curated by the editor.
+# automatically and survives each data refresh.
 WARN = "⚠️"
-WARN_NAMES = {"Elon Musk"}
+# The warning glyph is curated in ONE place, scripts/data/warn-flags.json, with a
+# written criterion and dated acts behind every name. It used to be three
+# hardcoded sets in three scripts, which is a list that drifts and a judgement
+# about living people with no evidence attached. Missing file is a hard failure:
+# silently shipping an unflagged feed would be worse than not shipping one.
+WARN_FLAGS = ROOT / "scripts" / "data" / "warn-flags.json"
+
+
+def load_warn_names(scope):
+    with open(WARN_FLAGS, encoding="utf-8") as fh:
+        people = json.load(fh)["people"]
+    return {
+        name for name, v in people.items()
+        if v.get("scope") == scope and v.get("status") != "removed"
+    }
+
+WARN_NAMES = load_warn_names("billionaire")
 def warn_name(n):
     return f"{WARN} {n}" if n in WARN_NAMES and not str(n).startswith(WARN) else n
 

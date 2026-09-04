@@ -105,15 +105,27 @@ COMMONWEALTH_REALMS = {
     "belize","grenada","jamaica","papua-new-guinea","st-kitts-nevis","saint-lucia",
     "st-vincent-the-grenadines","solomon-islands","tuvalu",
 }
-# Current leaders that carry a warning glyph (editorial; cannot be auto-derived).
-WARN_NAMES = {
-    # Current leaders carrying a warning glyph (atrocities / systemic subversion /
-    # criminal conviction). Historical figures are flagged in the per-country
-    # history files directly; this set only re-applies the glyph on the live feed.
-    "Vladimir Putin","Ali Khamenei","Mojtaba Khamenei","Kim Jong-un","Alexander Lukashenko",
-    "Abdel Fattah al-Burhan","Min Aung Hlaing","Donald Trump",
-    "Abdel Fattah el-Sisi","Kais Saied","Benjamin Netanyahu","Mohammed bin Salman","Recep Tayyip Erdoğan",
-}
+
+# The warning glyph is curated in ONE place, scripts/data/warn-flags.json, with a
+# written criterion and dated acts behind every name. It used to be three
+# hardcoded sets in three scripts, which is a list that drifts and a judgement
+# about living people with no evidence attached. Missing file is a hard failure:
+# silently shipping an unflagged feed would be worse than not shipping one.
+WARN_FLAGS = ROOT / "scripts" / "data" / "warn-flags.json"
+
+
+def load_warn_names(scope):
+    with open(WARN_FLAGS, encoding="utf-8") as fh:
+        people = json.load(fh)["people"]
+    return {
+        name for name, v in people.items()
+        if v.get("scope") == scope and v.get("status") != "removed"
+    }
+
+# Current leaders carrying a warning glyph (atrocities / systemic subversion /
+# criminal conviction). Historical figures are flagged in the per-country history
+# files directly; this set only re-applies the glyph on the live feed.
+WARN_NAMES = load_warn_names("leader")
 QID_RE = re.compile(r"Q\d+")   # an unresolved Wikidata entity, never a name
 ROLE_DEFAULT = ["Supreme Leader","General Secretary","President","Chancellor",
                 "Prime Minister","Taoiseach","Premier","Monarch"]

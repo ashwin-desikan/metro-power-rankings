@@ -77,6 +77,11 @@ from model_constitution_endurance import km, surv_at, median_surv  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT = os.path.join(ROOT, "public", "data", "constitutions.json")
+# Curated adoption years for countries whose founding document predates their
+# entry into the Correlates of War state system, so the chronology panel never
+# carries their "new" event. See the file's own _meta for the rule and source.
+ADOPTION_OVERRIDES = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                  "constitution-adoption-overrides.json")
 COUNTRIES = os.path.join(ROOT, "public", "data", "countries.json")
 LEADERS = os.path.join(ROOT, "public", "data", "leaders")
 
@@ -245,6 +250,42 @@ def resolve(cow_names, slugs, defunct, names):
     return out
 
 
+def load_adoption_overrides():
+    with open(ADOPTION_OVERRIDES, encoding="utf-8") as f:
+        return json.load(f)["overrides"]
+
+
+def apply_adoption_overrides(countries, as_of):
+    """Fill an adoption year the chronology cannot supply, and say so.
+
+    Only touches a country that has NO adoption year, is not recorded as
+    uncodified, and is named in the overrides file. It never overwrites a year
+    the chronology gives, and it never invents amendment counts: those depend on
+    the raw event rows and are set to null rather than to a false zero, because a
+    zero here would read as "never amended" for a constitution that has been.
+    """
+    overrides = load_adoption_overrides()
+    touched = []
+    for c in countries:
+        c.setdefault("adoptedSource", "chronology" if c.get("adopted") is not None else None)
+        if c.get("adopted") is not None:
+            continue
+        if (c.get("chars") or {}).get("uncodified"):
+            c["adoptedSource"] = "uncodified"
+            continue
+        o = overrides.get(c["slug"])
+        if not o:
+            continue
+        c["adopted"] = o["adopted"]
+        c["ageYears"] = as_of - o["adopted"]
+        c["adoptedSource"] = "curated"
+        c["adoptedNote"] = o["note"]
+        c["amendEvents"] = None
+        c["amendPerDecade"] = None
+        touched.append(c["slug"])
+    return touched
+
+
 def build(src):
     cce = os.path.join(src, "ccpcce_v6", "ccpcce_v6", "ccpcce", "ccpcce_v6.csv")
     cnc = os.path.join(src, "ccpcnc_v5", "ccpcnc_v5", "ccpcnc", "ccpcnc_v5_small.csv")
@@ -389,6 +430,7 @@ def build(src):
                      "historical base rate."),
     }
 
+    touched = apply_adoption_overrides(countries, data_end)
     countries.sort(key=lambda c: c["name"])
     systems.sort(key=lambda s: (s["start"], s["slug"]))
     payload = {
@@ -415,6 +457,7 @@ def build(src):
     print(f"  live countries: {len(countries)}")
     print(f"  constitutional systems: {len(systems)}")
     print(f"  with characteristics: {sum(1 for c in countries if c['chars'])}")
+    print(f"  curated adoption years applied: {len(touched)} ({', '.join(touched)})")
     print(f"  countries with an event since 2020: {payload['coverage']['countriesWithAnEventSince2020']}")
     oc = Counter(s["outcome"] for s in systems)
     print(f"  system outcomes: {dict(oc)}")
@@ -466,10 +509,23 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--build", action="store_true")
+    ap.add_argument("--apply-overrides", action="store_true",
+                    help="apply the curated adoption years to the existing "
+                         "public/data/constitutions.json, without the CCP source files")
     ap.add_argument("--src", help="folder holding the unzipped ccpcce_v6/ and ccpcnc_v5/ releases")
     a = ap.parse_args()
     if a.self_test:
         self_test()
+    elif a.apply_overrides:
+        with open(OUT, encoding="utf-8") as f:
+            payload = json.load(f)
+        as_of = max((c.get("asOf") or 0) for c in payload["countries"])
+        touched = apply_adoption_overrides(payload["countries"], as_of)
+        with open(OUT, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=1)
+        aged = sum(1 for c in payload["countries"] if c.get("ageYears") is not None)
+        print(f"applied {len(touched)} curated adoption years: {', '.join(touched)}")
+        print(f"countries with an age: {aged} of {len(payload['countries'])}")
     elif a.build:
         if not a.src:
             raise SystemExit("--build needs --src (the folder holding both unzipped CCP releases)")

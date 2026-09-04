@@ -9364,3 +9364,191 @@ first thing I reached for.
 
 `npm run verify` green: 154 vitest (143 + the 11 new), 112 python, next build
 clean across 5,086 pages. Release note amended into the 2026-09-04 entry.
+
+---
+
+## 2026-09-04 (evening) — cowork (cloud, bridged to the Windows box) → mini and next session: THE ORDER LAYER, FIRST TWO BOARDS, NOT YET COMMITTED
+
+Ashwin asked for a political-philosophy spine across the whole site, framed
+against Fukuyama. The plan is `internal/political-order-spine.md` (gitignored,
+v2). This entry covers the code, which is **written and unpushed at the time of
+writing** — Ashwin reviews before it lands.
+
+### What is new
+- `scripts/order/build_order_data.py` — offline, deterministic, `--self-test`
+  and `--dry-run` per the CLAUDE.md working loop. Reads power-history,
+  country-indicators, constitutions and countries. Writes
+  `public/data/order/order-grid.json` and `recognition-gap.json`.
+- `lib/order.ts`, `app/order/{page,about/page,grid/page,recognition-gap/page}.tsx`.
+- Nav: an Order group inside the Geography menu on both DesktopNav and
+  MobileMenu, plus a card on `/geography`. `/order` is a PEER route, not a
+  Geography child, because the layer reads business, sport and culture too. It
+  earns its own top-level menu once it has more boards.
+- `scripts/build-country-indicators.py` gains four fiscal indicators
+  (`taxRevenuePct`, `govExpensePct`, `govDebtPct`, `govConsumptionPct`). **They
+  are wired only.** Neither this container nor the Windows VM has egress to
+  api.worldbank.org, so nothing has been fetched. 🔴 **Mini: please run
+  `python3 scripts/build-country-indicators.py` and check the four land.** Tax
+  revenue over GDP is the standard state-capacity measure and it is the missing
+  half of the grid's Force axis.
+
+### Two data findings worth keeping
+1. **19 countries in `constitutions.json` have `adopted: null`.** Two of them
+   (UK, New Zealand) are genuinely uncodified and `chars.uncodified` says so.
+   The other seventeen, Norway, Croatia, Slovakia, Slovenia, Singapore and
+   others, have codified constitutions with well known adoption years that this
+   build of the CCP chronology does not carry. The grid keeps them apart on
+   purpose and never guesses a year. Worth fixing upstream: it also means
+   `/constitutions` is showing 176 ages where it could show ~193.
+2. The two axes correlate at only **r = 0.31** across 173 states, so the grid is
+   genuinely two-dimensional rather than one index drawn twice.
+
+### Verification status, stated honestly
+`check:table-scroll`, `check:mobile`, `check:client-imports`,
+`check:public-data` and `check:release-notes` all pass. **`npm run typecheck`
+did not finish**: it ran 38 minutes against the OneDrive mount from the Linux
+side and was still going. A syntax-only pass over the five new files is clean.
+🔴 **Run `npm run verify` natively on Windows before pushing.**
+
+### Not done on purpose
+- No commit, no push, no build spent.
+- The 2026-09-04 release entry already holds its four-bullet maximum, so the
+  Order bullet is not written. Whoever ships this either amends that day or
+  opens the next one.
+- The recognition-gap-against-war probe stays off the site. `sideA` in
+  conflicts.json is not an initiator coding, there are no era controls, and the
+  recognised score carries a curated hindsight layer that may be circular with
+  war participation. The numbers are in the internal plan.
+
+### Follow-up the same session, after Ashwin's review
+
+- **The constitutions adoption gap is fixed at source.** Diagnosis first: the CCP
+  chronology is a country-year panel keyed to the Correlates of War state system,
+  so a country whose constitution predates its entry into that system has no
+  "new" event in its own rows and the build reads no adoption year. Norway is the
+  clean case, constitution 1814, COW entry 1905. Guinea was a separate false
+  positive: it has an adoption year of 2025 and an age of 0, which the Order
+  script was treating as missing.
+  New file `scripts/civic/constitution-adoption-overrides.json`, 15 curated years
+  with a source and a per-country note, applied by
+  `build_constitutions.py --apply-overrides` (a mode that works without the CCP
+  source CSVs, which are not in the repo). Rows it touches carry
+  `adoptedSource: "curated"` and have `amendEvents`/`amendPerDecade` set to null
+  rather than a false zero. **Countries with an age: 176 to 192 of 196.** The
+  remaining four are the UK and New Zealand (uncodified) and Abkhazia and South
+  Ossetia (no characteristics at all). `/constitutions` gains from this too: its
+  "oldest still standing" table was missing Norway 1814 and Tonga 1875.
+- Uncodified is now a first-class state on the grid, not a blank: a
+  `constitutionForm` field, a labelled cell in the tables, and a disclosure that
+  works the UK through (17 documents, ~280,000 words, no replacement or
+  suspension since 1789, which is why it scores level with the oldest written
+  constitution).
+- Cell membership now sorts by approach, best first. Sorting by force put China
+  at the head of the Terminal Void, which read as "worst"; China leads Russia
+  there on approach and the order now says so.
+- Doctrine line changed for a general reader: "No country is finished." The
+  Denmark reference stays in the body of `/order/about` where it is explained.
+- Release note for 2026-09-04 amended in place: the two market bullets merged
+  into one to make room for the Order bullet, headline now "Four books on every
+  game, and a map of political order". Still four bullets, all inside the limits.
+- Re-ran the static gates after all of it: table-scroll, mobile, client-imports,
+  public-data and release-notes all green. Typecheck still needs a native run.
+
+### Second follow-up: the Vanguard was populated, which was wrong
+
+Ashwin caught it: 29 states were sitting in Cell 7. The canon defines the
+Vanguard as total force and total integrity at once, an unconditioned ideal
+approached and never held. A tertile of a ranked field is not that, and a board
+that puts the United States at the top of something that looks like a morality
+index is indefensible in public.
+
+**The error was in the arithmetic, not the label.** Percentile axes put the top
+of any field at the top of the scale, so the corner was always about to be
+reached. Fixed properly:
+
+- `CELLS` no longer contains the Vanguard. The top-right band is **The
+  Approach**, "as near as anyone gets, which is not near". The other eight canon
+  names are untouched.
+- `VANGUARD` is a separate object, `occupiable: false`, carrying the reason: the
+  two axes pull against each other, because a state with total capacity has
+  nothing above it and a state with something above it does not have total
+  capacity. It is drawn off the grid, permanently empty.
+- `vanguard_distance()` is computed on ABSOLUTE terms, not percentiles: force is
+  the state's share of world recognised power, integrity the raw 0..1 composite.
+  **Closest anything gets is the United States at 46.7, and only by holding a
+  third of world power. Median state 76.1. China is 76.1, exactly the median,
+  which is a better line than anything I could have written.**
+- Two guards, both in `--self-test` and in the build: nothing may ever be
+  assigned to the Vanguard, and `MIN_PLAUSIBLE_DISTANCE = 25.0` stops the build
+  if a data change ever brings a state near the corner. It fails loudly rather
+  than quietly publishing an arrival.
+- `approach` and the overall `rank` are gone from the payload. The countries
+  array now sorts alphabetically: the board has no global ranking, and every
+  ordering it shows is a named question the page chooses.
+- New disclosure, "This is not a ranking of good countries", which also states
+  the real limitation: the rule of law reading is a single 2025 cross-section, so
+  the board **cannot show a country going backwards right now**. That is the
+  honest answer to "why is Trump's America near the top", and the fix is the
+  V-Dem panel, not an adjustment.
+
+Static gates green again. Typecheck still needs the native run.
+
+### Third follow-up: direction of travel, and the warning glyph becomes evidence
+
+Ashwin's push: the board cannot only describe the present, it has to show who is
+backsliding, own the historical record of the countries that look clean today,
+and predict. He is right, and the resolution comes out of the canon: if the
+corner cannot be reached, POSITION is the least interesting thing about it and
+DIRECTION is the product.
+
+**`scripts/data/warn-flags.json` is now the single source of the warning glyph.**
+It was three hardcoded Python sets in three scripts (`leaders/pull-history.py`,
+`leaders/refresh-current-leaders.py`, `billionaires/build-billionaires.py`) with
+no evidence behind any name. Now one file: the three written criteria that were
+already in a comment (atrocities / systemic subversion / criminal conviction),
+which criterion each name is flagged under, and dated sourced acts. All three
+scripts read it through `load_warn_names(scope)` and the resulting sets are
+IDENTICAL to the old hardcoded ones, verified. Missing file is a hard failure on
+purpose: silently shipping an unflagged feed is worse than not shipping one.
+- Three names carry verified acts: Putin (ICC warrant 2023-03-17), Netanyahu
+  (ICC warrant 2024-11-21), Trump (34-count conviction 2024-05-30). Ten are
+  marked `needs evidence` and are Ashwin's to fill.
+- 🔴 **Elon Musk meets none of the three criteria** as written. The flag was
+  applied in the billionaires build with no criterion recorded. Left in place,
+  status `criterion not asserted`, rather than removed without the editor.
+
+**`scripts/order/build_order_trajectory.py` -> `public/data/order/trajectory.json`.**
+Offline, `--self-test`, `--dry-run`. Six signals, reported SEPARATELY and never
+blended, because coverage runs from 192 (force trend) down to 40
+(accountability) and one number would hide that.
+
+The unlock nobody had used: the per-country leadership histories already carry
+the warning glyph on HISTORICAL leaders. **196 flagged terms across 66
+countries, dated, back to the 1930s.** Consecutive terms merge into spells, so
+Argentina's four junta entries are one spell 1976-1983.
+
+### What it says, on the first run
+- **Two countries on earth entered a flagged period in the last ten years:
+  Tunisia (2019) and the United States (2025).** Entering a spell is the largest
+  single move available on this signal; Russia and North Korea are not movers
+  because they never changed.
+- The US record is four spells: Jackson 1829-37, Nixon 1969-74, Trump 2017-21,
+  Trump 2025-. It sits in The Approach on level and is a new entrant on
+  direction, and both statements are true at once. That is the whole argument for
+  splitting position from direction.
+- The clean-looking countries are not clean in our own data: Mexico 8 spells,
+  Thailand 6, Italy 5, Peru 5, Venezuela 5, Brazil 4, France 4, Japan 4.
+- Israel is in The Approach AND currently flagged since 2006.
+- Turnout against each country's own post-1945 median: Italy -24.6, Egypt -16.2,
+  Ukraine -15.6, Greece -14.6, Austria -13.4, **United Kingdom -13.1** while
+  sitting top of the grid.
+- The signals disagree for the US, which is the point: flag entrant in 2025,
+  force share down 4 points over 20 years, turnout UP 5 points on its own
+  post-war median. Components are published, not reconciled.
+
+### Still to do
+Board at `/order/trajectory`, the Ledger calls, and the Article V amendment. The
+canon currently forbids naming living public figures on the site while the site
+has been flagging thirteen of them for months; the recommendation is a narrow
+carve-out permitting person-level flags that meet a written criterion, carry
+dated sourced acts, and are applied by the same test to everyone in scope.
