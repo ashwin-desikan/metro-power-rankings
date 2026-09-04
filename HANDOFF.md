@@ -9096,8 +9096,11 @@ the `Pennant` header verified on the live pages.
 `--no-verify` was not needed: `prepare-commit-msg` did not re-tag the retry
 commit, and the post-commit hook's MISMATCH warning is expected on a deliberate
 empty retry. Third time this has bitten. **Before any push containing app
-changes: `git log origin/main..HEAD --format=%s` and check the LAST line has no
-`[vercel skip]`.** One command; it is the whole guard.
+changes: `git log origin/main..HEAD --format=%s` and check the FIRST line has
+no `[vercel skip]`.** git log prints NEWEST FIRST, so the first line is HEAD, and
+HEAD is the only commit Vercel judges. (This entry first said "last line", which
+is backwards; caught the same afternoon by actually running it.) One command; it
+is the whole guard.
 
 ### State on exit
 - `.probe-shots/` deleted. The `_push_main` worktree was already gone. Merged
