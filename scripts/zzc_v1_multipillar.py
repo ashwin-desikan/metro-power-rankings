@@ -169,6 +169,66 @@ NATIONAL_SPORTS = [
     ("Rugby League", 2.5, ["papua-new-guinea"]),   # the one nation where RL is THE national sport
 ]
 
+# Motorsport: a global sport with a weak national unit. The constructor is a
+# company and the driver's nationality is a passport, so there is no national
+# competition to build a pillar on. It enters the same way a national sport does:
+# a recognition bonus added on top of the capped best-10, never competing for a
+# cap slot. (Release 1, Feature 5, Ashwin 2026-09-04.)
+#
+# BETA is anchored against the existing national-sport tokens, which run 2.5
+# (hurling) to 25.0 (American football, the USA's biggest domestic sport). At 3.0
+# the leading motorsport nation lands around 13, above Aussie rules at 9.0 and
+# well below American football. CAP binds only on a genuine dynasty: eight
+# consecutive recent titles would reach ~18 uncapped.
+MOTORSPORT_BETA = 3.0
+MOTORSPORT_CAP = 15.0
+
+# Drivers' championships are recorded by nationality as a demonym. Explicit map,
+# because a wrong guess here silently credits the wrong country.
+F1_NAT_SLUG = {
+    "British": "great-britain", "German": "germany", "Brazilian": "brazil",
+    "Argentine": "argentina", "Australian": "australia", "Austrian": "austria",
+    "Finnish": "finland", "French": "france", "Italian": "italy",
+    "Dutch": "netherlands", "Spanish": "spain", "American": "united-states",
+    "New Zealander": "new-zealand", "South African": "south-africa",
+    "Canadian": "canada", "Swedish": "sweden", "Mexican": "mexico",
+}
+
+
+def motorsport_bonus():
+    """Decayed Formula 1 drivers' world titles, by the driver's nationality.
+
+    Same half-life as everything else in the Cup, so a 1950 title is worth
+    essentially nothing and the board reflects who is winning now. Returns
+    {slug: points} with the cap applied.
+
+    A missing or unreadable f1/data.json returns nothing rather than raising: the
+    Cup should still build without it, one bonus line lighter.
+    """
+    path = os.path.join(D, "f1", "data.json")
+    if not os.path.exists(path):
+        print("  motorsport: f1/data.json missing, bonus skipped")
+        return {}
+    try:
+        champs = json.load(open(path, encoding="utf-8")).get("champions") or []
+    except (ValueError, OSError) as e:
+        print(f"  motorsport: f1/data.json unreadable ({e}), bonus skipped")
+        return {}
+    unmapped, dec = set(), defaultdict(float)
+    for r in champs:
+        nat, yr = r.get("driver_nat"), r.get("season")
+        if not nat or not yr:
+            continue
+        slug = F1_NAT_SLUG.get(nat)
+        if not slug:
+            unmapped.add(nat)
+            continue
+        dec[fold(slug)] += 0.5 ** ((NOW - int(yr)) / HALFLIFE_LOCKED)
+    if unmapped:
+        print(f"  motorsport: UNMAPPED nationalities, no credit given: {sorted(unmapped)}")
+    return {s: min(MOTORSPORT_CAP, MOTORSPORT_BETA * v) for s, v in dec.items() if v > 0}
+
+
 # Domestic-strength / foundational boosts: additive to merit like the national
 # sports above, BUT for sports the nation ALREADY scores in. They are NOT shown
 # as a separate "national sports" recognition line (that would visually duplicate
@@ -829,8 +889,13 @@ def emit_json(merit, tops, special, name, sportmap):
     nat_by_nation = defaultdict(list)
     for sp, token, slugs in NATIONAL_SPORTS:
         for sl in slugs:
-            nat_by_nation[fold(sl)].append((sp, token))
-    merit = {s: merit[s] + sum(t for _, t in nat_by_nation.get(s, [])) for s in merit}
+            nat_by_nation[fold(sl)].append((sp, token, "national"))
+    for sl, pts in motorsport_bonus().items():
+        # A title from the 1950s decays to nothing. Crediting a visible 0.0 would
+        # put a meaningless row on that country's page, so it is not credited.
+        if round(pts, 1) > 0:
+            nat_by_nation[sl].append(("Motorsport", round(pts, 1), "motorsport"))
+    merit = {s: merit[s] + sum(t for _, t, _ in nat_by_nation.get(s, [])) for s in merit}
 
     overall = sorted(merit.items(), key=lambda kv: kv[1], reverse=True)
     orank = {s: i for i, (s, _) in enumerate(overall, 1)}
@@ -867,7 +932,8 @@ def emit_json(merit, tops, special, name, sportmap):
             "sportMerit": {sp: round(p, 1) for sp, p in sorted(
                 sportmap.get(slug, {}).items(), key=lambda kv: kv[1], reverse=True) if p > 0},
             "sportRank": dict(sportRanks.get(slug, {})),
-            "nationalSports": [{"sport": sp, "pts": t} for sp, t in nat_by_nation.get(slug, [])],
+            "nationalSports": [{"sport": sp, "pts": t, "kind": k}
+                               for sp, t, k in nat_by_nation.get(slug, [])],
             "suspended": slug in SUSPENDED,
             "defunct": bool(special.get(slug)),
         })

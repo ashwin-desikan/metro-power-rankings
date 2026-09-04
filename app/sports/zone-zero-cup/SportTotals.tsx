@@ -101,8 +101,8 @@ export default function SportTotals({ rows }: { rows: SportRow[] }) {
                 <td className="px-3 py-2.5 tabular-nums text-[var(--text-dim)]">{i + 1}</td>
                 <td className="px-3 py-2.5 font-medium whitespace-nowrap">
                   {r.sport}
-                  {r.kind === "national" && group === "all" ? (
-                    <>{" "}<span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">national</span></>
+                  {r.bonusKind && group === "all" ? (
+                    <>{" "}<span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{r.bonusKind}</span></>
                   ) : null}
                 </td>
                 <td className="px-3 py-2.5">
@@ -135,8 +135,8 @@ export default function SportTotals({ rows }: { rows: SportRow[] }) {
                 <span className="min-w-0 font-medium text-[var(--text)]">
                   <span className="mr-2 text-xs tabular-nums text-[var(--text-dim)]">{i + 1}</span>
                   {r.sport}
-                  {r.kind === "national" && group === "all" ? (
-                    <>{" "}<span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">national</span></>
+                  {r.bonusKind && group === "all" ? (
+                    <>{" "}<span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{r.bonusKind}</span></>
                   ) : null}
                 </span>
                 <span className="shrink-0 text-lg font-bold tabular-nums text-[var(--text)]">{r.total.toFixed(1)}</span>

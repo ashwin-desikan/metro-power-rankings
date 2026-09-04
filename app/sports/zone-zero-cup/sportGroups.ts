@@ -19,7 +19,7 @@ export type NationLike = {
   name: string;
   countrySlug: string | null;
   sportMerit: Record<string, number>;
-  nationalSports?: { sport: string; pts: number }[];
+  nationalSports?: { sport: string; pts: number; kind?: "national" | "motorsport" }[];
   defunct?: boolean;
   suspended?: boolean;
 };
@@ -37,6 +37,8 @@ export type SportRow = {
   groups: SportGroup[];
   /** Scored as its own women's pillar, rather than pooled with the men's. */
   womens: boolean;
+  /** For a bonus row, which kind of bonus it is. Null for a scoring pillar. */
+  bonusKind: "national" | "motorsport" | null;
   total: number;
   share: number;
   nations: number;
@@ -55,7 +57,7 @@ export const GROUP_LABEL: Record<SportFilter, string> = {
   team: "Team",
   summer: "Summer",
   winter: "Winter",
-  national: "National",
+  national: "Bonus",
   retired: "Retired",
 };
 
@@ -65,7 +67,7 @@ export const GROUP_BLURB: Record<SportFilter, string> = {
   team: "Codes played club and country, in a league and for a flag. Most are also Olympic sports and appear under those filters too.",
   summer: "Everything contested at the Summer Games, the team codes included, plus the racquet and precision sports whose own majors matter more than the Olympic title.",
   winter: "Everything contested at the Winter Games, ice hockey and curling included.",
-  national: "Domestically major, internationally negligible. These carry a fixed recognition bonus rather than competing for a nation's ten scoring slots, which is why one country can hold all of a sport.",
+  national: "Recognition bonuses, added on top of a nation's ten scoring slots rather than competing for one. National sports are domestically major and internationally negligible, which is why one country can hold all of a sport. Motorsport is here for the opposite reason: it is global, but the constructor is a company and the driver's nationality is a passport, so there is no national competition to build a pillar on.",
   retired: "Contested at a Games once and never since. They score nothing today and stay on the board because leaving them off would be a tidier record and a less true one.",
 };
 
@@ -162,10 +164,11 @@ export function classify(sport: string, kind: SportKind): SportGroup[] {
  * pillar AND Papua New Guinea's national sport, and its row has to carry both.
  */
 export function buildSportRows(nations: NationLike[], prestige: Record<string, number>): SportRow[] {
-  const acc = new Map<string, { total: number; kinds: Set<SportKind>; holders: Map<string, { n: NationLike; pts: number }> }>();
+  const acc = new Map<string, { total: number; kinds: Set<SportKind>; bonus: Set<string>; holders: Map<string, { n: NationLike; pts: number }> }>();
 
-  const add = (sport: string, pts: number, n: NationLike, kind: SportKind) => {
-    const a = acc.get(sport) ?? { total: 0, kinds: new Set<SportKind>(), holders: new Map() };
+  const add = (sport: string, pts: number, n: NationLike, kind: SportKind, bonusKind?: string) => {
+    const a = acc.get(sport) ?? { total: 0, kinds: new Set<SportKind>(), bonus: new Set<string>(), holders: new Map() };
+    if (bonusKind) a.bonus.add(bonusKind);
     a.total += pts;
     a.kinds.add(kind);
     const prev = a.holders.get(n.name);
@@ -175,7 +178,7 @@ export function buildSportRows(nations: NationLike[], prestige: Record<string, n
 
   for (const n of nations) {
     for (const [sport, pts] of Object.entries(n.sportMerit)) add(sport, pts, n, "pillar");
-    for (const ns of n.nationalSports ?? []) add(ns.sport, ns.pts, n, "national");
+    for (const ns of n.nationalSports ?? []) add(ns.sport, ns.pts, n, "national", ns.kind ?? "national");
   }
 
   const grand = [...acc.values()].reduce((s, a) => s + a.total, 0) || 1;
@@ -193,6 +196,7 @@ export function buildSportRows(nations: NationLike[], prestige: Record<string, n
         kind,
         groups: classify(sport, kind),
         womens: isWomens(sport),
+        bonusKind: kind === "national" ? ((a.bonus.has("motorsport") ? "motorsport" : "national") as "national" | "motorsport") : null,
         total: a.total,
         share: (a.total / grand) * 100,
         nations: a.holders.size,
