@@ -9552,3 +9552,112 @@ canon currently forbids naming living public figures on the site while the site
 has been flagging thirteen of them for months; the recommendation is a narrow
 carve-out permitting person-level flags that meet a written criterion, carry
 dated sourced acts, and are applied by the same test to everyone in scope.
+
+---
+
+## 2026-09-04 (night) — cowork (cloud, bridged to the Windows box) → mini and next session: THE CUP GAINED FOUR SPORTS AND LOST ITS BARS, AND SLOW DATA NOW HAS A GATE
+
+Fifteen commits on `main`, unpushed at the time of writing. Ashwin runs
+`npm run verify` and pushes from Windows. Everything below is committed.
+
+### 🔴 The one thing that has not been checked
+**`next build` never ran this session.** The device sandbox kills any process
+that outlives a single command, so a multi-minute build cannot complete through
+the bridge. Typecheck, all ten gates, 154 vitest and 111/112 pytest are green.
+The 112th is an environment artefact: `test_returns_none_when_nothing_exists`
+finds a real `Excel Files` mount where it expects nothing, and passes on the
+mini and on Windows.
+
+**Nor was anything measured in a browser.** No dev server would stay up either
+(`next dev` dies on a lockfile the mount refuses to let it create). The specific
+unverified risk is `/sports/zone-zero-cup`: the by-sport board now has TWO chip
+rows, thirteen chips, against the three-row cap in DESIGN-STANDARDS at 390px.
+Somebody please look at that on a phone.
+
+### What changed in the Cup
+- **Motorsport** reads seven series and the whole podium, not F1 winners only.
+  `scripts/data/motorsport-series.json` carries MotoGP, WRC, IndyCar, NASCAR,
+  Speedway and Formula E with per-series weights and reasoning; F1 champions
+  still come live from `public/data/f1/data.json` and only the rest of its
+  podium is curated. Champion/second/third score 1 / 0.5 / 0.25, the same ratio
+  as the `world` tier in `TIER`. 22 nations to 27; Monaco enters the board.
+- **Road cycling** is a scoring pillar instead of an Olympic footnote. The world
+  championship road race scores highest deliberately, being the one race
+  contested by national teams rather than trade teams. `scripts/data/road-cycling.json`
+  holds the Giro, Vuelta, both women's Grand Tours and the Worlds; **the Tour de
+  France is NOT duplicated** — it is read from `champions-history.json` and only
+  riders' nationalities are curated. 20.9 points to 78.6.
+- **Women's ice hockey** is its own sport. Olympic half via `WOMENS_TEAM_CANON`
+  plus a new `public/data/hockey/womens-nations.json` for all 24 IIHF Women's
+  World Championships.
+- **The America's Cup** enters the sailing pillar from 1983, attributed to the
+  club's nation rather than the crew's passports.
+
+### Weights moved a lot, and every one is commented in place
+Swimming 0.5 → 0.75 → 0.27 → **0.4** across the day, ending well BELOW the
+Olympic default. The argument is in the file and it is worth reading before
+anyone moves it back: the US swimming and athletics raws are 194 and 187, so
+by medal volume the country is equally dominant in both, but a swimming medal
+table is partly an infrastructure table and athletics is not. Also: badminton
+and table tennis 0.6 → **0.85**; women's cricket 0.5 → **1.0** (it was the one
+paired code the half-the-men's rule was never applied to); women's hockey 0.5 →
+**0.3**; women's ice hockey 0.75 → **0.5**; artistic gymnastics 0.75 → **0.6**;
+handball 1.2 → **1.0**, volleyball 1.2 → **1.1**, tennis 0.7 → **0.9**.
+
+### 🔴 Three findings other sessions should know about
+1. **`all_world_rankings()` read six sources and never `zzc-extra.json`**, so
+   eleven sports fed merit while showing no world rank on any country page:
+   water polo, futsal, table tennis, badminton, lacrosse, netball and the
+   women's codes. Fixed. The US page went from six ranked sports to fifteen.
+2. **Women's basketball was a hand-kept TOP TEN.** Not a short ranking, a
+   ranking that stopped exactly where women's basketball outside the traditional
+   powers begins. Mali, three times an Afrobasket finalist, sat 148th. Now 119
+   nations from FIBA. **Check whether other sports in `zzc-extra.json` are
+   truncated the same way.**
+3. **`champions-history.json` still credits Lance Armstrong with the 1999-2005
+   Tours**, which the UCI annulled with no winner promoted. The Cup pillar skips
+   them explicitly, so rankings are correct, but the Champions surface is wrong.
+   Ashwin has said to leave it; recording it here so it is not rediscovered as
+   new.
+
+### Automation and the currency gate
+- `scripts/data/data-currency.json` + `scripts/check-data-currency.mjs`, in
+  `npm run verify`, **warn-only**. 21 slow-moving datasets paired with the date
+  each goes stale. It found the FIVB senior world ranking at eleven months old
+  on its first run. `--strict` makes it a hard failure; switch that on once the
+  backlog is clear. **If you add a championship or a hand-kept ranking, add it
+  to the manifest in the same commit.**
+- `fetch_fiba_ranking.py` takes `--gender men|women` now, and
+  `scripts/basketball/apply_womens_ranking.py` pushes the women's result into
+  `zzc-extra.json`. Both are wired into the `fiba` case of
+  `run-scraper-refresh.sh`. 🔴 **Mini: run `DRY_RUN=1 ./mac-mini-jobs/run-scraper-refresh.sh fiba`
+  once before trusting the schedule.** Neither sandbox has egress to
+  fiba.basketball, so `--gender women` has never hit the live page. It fails
+  loudly rather than writing a short ranking if FIBA's markup has moved.
+- The six pasted rankings are out of `build_rankings.py` and into
+  `scripts/data/rankings-manual/*.txt`, each with its own source, url and asOf
+  header. Emitted JSON is content-identical; `git diff` on
+  `public/data/rankings` is empty. **The four federation fetch scripts were NOT
+  written**: direct HTTP is blocked from both sandboxes, and four parsers
+  written without seeing a line of markup would be four scripts that fail on
+  first contact and cannot be told apart from four that work. They want one
+  saved page each, on the mini.
+
+### Elsewhere
+`DataBar`/`DivergingBar` no longer draw bars, at Ashwin's instruction. One file,
+about sixty call sites, numbers untouched; `max`, `color` and `width` are
+accepted, ignored and deprecated. Also: NASCAR moved into motorsport after a
+first attempt filed it as a US national sport (Ashwin overruled that and was
+right); `SportRow.group` was a vestigial field failing typecheck on `main`;
+`docs/BACKLOG-OPEN.md` gains a Cup section with **esports at the top**.
+
+### Open questions for whoever is next
+- Is 0.4 the right swimming number, or is the real answer event-count and access
+  normalisation applied to every multi-event Olympic sport at once? Athletics,
+  gymnastics, cycling, wrestling and shooting all have the same shape of problem
+  and only swimming has been hand-corrected for it.
+- **Women's cricket has no title pillar.** The entire line is world ranking, so
+  Australia's seven World Cups and England's four are worth nothing. Largest
+  single gap on the board.
+- `.git` on the Windows checkout has ~46 stale lock and temp files the mount
+  would not let git delete. Harmless, but clean them from Windows.
