@@ -368,7 +368,11 @@ async function nflBlock(): Promise<Block | null> {
       cells: live ? [t.wins, t.losses, t.ties, pct3(t.win_pct), strk(t.streak)] : [DASH, DASH, DASH, DASH, DASH] };
   };
   return buildBlock({
-    league: "NFL", href: "/teams/nfl", note: live ? s.source_label : "Offseason", open: live,
+    // source_label now describes the REGULAR-season table in every calendar
+    // state ("2026 Regular Season · opens 6 Sep" before week 1), so it is a
+    // better note than the flat "Offseason" this used when nothing is live:
+    // two days before kickoff, "Offseason" is simply untrue.
+    league: "NFL", href: "/teams/nfl", note: s.source_label || "Offseason", open: live,
     items: teams, columns: ["W", "L", "T", "PCT", "STRK"],
     sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "AFC", pick: (t) => t.conference === "AFC" }, { title: "NFC", pick: (t) => t.conference === "NFC" }],

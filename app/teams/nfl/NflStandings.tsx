@@ -35,6 +35,15 @@ export default async function NflStandings() {
   const isCurrentYear = standings.season_year === currentYear;
   const live: Record<string, TeamStanding> = inSeasonWindow && isCurrentYear ? standings.by_canonical : {};
   const hasLive = Object.values(live).some((t) => t.games_played > 0);
+  // ESPN publishes its own season calendar in the standings payload; use it
+  // rather than a hardcoded "Thursday after Labor Day" that would need editing
+  // every year and would be wrong in any year the league moves the opener.
+  const opensLabel = (() => {
+    if (!standings.regular_season_start) return null;
+    const d = new Date(standings.regular_season_start);
+    if (!Number.isFinite(d.getTime()) || d.getTime() < Date.now()) return null;
+    return d.toLocaleDateString("en-US", { month: "long", day: "numeric", timeZone: "UTC" });
+  })();
 
   const byDivision = new Map<string, Franchise[]>();
   for (const f of getAllFranchises()) {
@@ -57,7 +66,8 @@ export default async function NflStandings() {
           <p className="text-xs text-[var(--text-muted)]">
             {hasLive
               ? <>Live from ESPN, refreshed hourly{fetchedDate ? `. As of ${fetchedDate}.` : "."}</>
-              : <>The {currentYear} season has not started yet. Live standings from ESPN appear here once Week 1 begins.</>}
+              : <>The {currentYear} regular season has not started yet
+                  {opensLabel ? <> — it opens on {opensLabel}</> : null}. Live standings from ESPN appear here once Week 1 begins.</>}
           </p>
         </div>
         <a href="https://www.espn.com/nfl/standings" target="_blank" rel="noreferrer" className="text-xs text-[var(--accent)] hover:underline whitespace-nowrap">Full standings on ESPN &rarr;</a>

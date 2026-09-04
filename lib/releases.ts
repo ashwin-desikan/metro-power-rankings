@@ -23,8 +23,8 @@ export const RELEASES: Release[] = [
     items: [
       "The market on the NFL hub is now four markets. Every game is priced at DraftKings, FanDuel, Kalshi and Polymarket, each book's margin removed, and the consensus sits beside the model.",
       "The Ledger shows how far each book leans from the other three on the same games. The Champions League league phase now keeps a graded ledger too, and has joined the picks game.",
-      "Tables across the site draw the number as well as print it: a bar in the cell you were already reading, so a runaway leader shows before you scan the column.",
-      "Games you have already played move to a Results section at the bottom of each picks tab, so the slate stays the games you can still call.",
+      "NFL standings were showing preseason records as the season. ESPN stopped saying which season type it serves and its default was the preseason, so every NFL table now asks for the regular season.",
+      "Tables across the site draw the number as well as print it, and games you have already played move to a Results section on the picks page, so the slate stays the games you can still call.",
     ],
   },
   {
