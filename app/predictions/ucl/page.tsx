@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getFootballClubByName } from "@/lib/football";
-import { getUclSim } from "@/lib/uclSim";
+import { getUclSim, UCL_DATA_GH_BASE } from "@/lib/uclSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
@@ -249,6 +249,18 @@ export default async function UclPredictionsPage() {
                 </tbody>
               </table>
             </ResponsiveTable>
+            <p className="text-[13px] text-[var(--text-muted)] mt-4">
+              Get the data:{" "}
+              <Link href="/predictions/ucl/table.csv" className="hover:underline">league-phase table as CSV</Link>
+              {" · "}
+              <a href={`${UCL_DATA_GH_BASE}/ucl-sim.json`} className="hover:underline" target="_blank" rel="noreferrer">
+                raw JSON on GitHub
+              </a>
+              {" · "}
+              <a href={`${UCL_DATA_GH_BASE}/ucl-predictions.json`} className="hover:underline" target="_blank" rel="noreferrer">
+                the frozen call ledger
+              </a>
+            </p>
           </Disclosure>
 
           {/* Sources + method */}

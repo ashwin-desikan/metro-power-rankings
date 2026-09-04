@@ -1022,6 +1022,20 @@ export default async function LedgerPage() {
             </table>
           </ResponsiveTable>
 
+          <p className="text-[13px] text-[var(--text-muted)] mt-3">
+            Get the data:{" "}
+            <a
+              href="https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/nfl-meta-market.json"
+              className="hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              every book&rsquo;s price on every game, raw
+            </a>
+            . Each entry carries the prices as posted, the de-vigged number, and the book&rsquo;s own hold,
+            so the arithmetic here can be checked rather than taken.
+          </p>
+
           <p className="text-xs text-[var(--text-dim)] mt-3 max-w-3xl">
             {meta.meta.games_multi_book} of {meta.meta.games} games in the next {meta.meta.window_days} days
             carry two or more books. Leans are in percentage points at an even game, which is the one

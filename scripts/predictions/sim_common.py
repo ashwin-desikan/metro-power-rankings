@@ -275,7 +275,7 @@ def meta_consensus(prices):
     return p, math.sqrt(var), n
 
 
-def house_effects(rows, min_games=1):
+def house_effects(rows, min_games=1, min_books=2):
     """Per-book lean against its peers, the betting-market analogue of a
     pollster house effect.
 
@@ -298,8 +298,13 @@ def house_effects(rows, min_games=1):
     acc = defaultdict(list)
     for row in rows:
         priced = {b: p for b, p in row.items() if p is not None}
-        if len(priced) < 2:
-            continue  # a book cannot lean against nobody
+        if len(priced) < max(2, min_books):
+            # 🔴 A book leans against a CONSENSUS, and two prices are not one.
+            # At exactly two books the leave-one-out baseline for each IS the
+            # other, so the two leans come out as exact negatives and the pair
+            # reports its own disagreement twice, dressed as two findings.
+            # Callers with thin coverage should pass min_books=3.
+            continue
         for b, p in priced.items():
             others = {k: v for k, v in priced.items() if k != b}
             base, _sd, n = meta_consensus(others)

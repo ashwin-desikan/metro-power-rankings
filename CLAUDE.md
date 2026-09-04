@@ -119,6 +119,27 @@ explicit — apply it before touching any refresh script:
   elections file, the football season hubs, state facts, the quiz. The
   ISR-backed files are the minority. Excluding `public/data` would silently
   stop deploys for all the rest, and silence is the expensive failure here.
+- **A non-`main` branch does not build unless the commit SUBJECT carries
+  `[preview]`.** Rule 2 of the guard: off `main`, no marker means skip. So a
+  preview deployment for a feature branch has to be asked for, in the subject
+  line, on the commit you want built — an empty commit with `[preview]` is the
+  usual way to opt an existing branch in. This is the right default (a branch
+  that builds on every push is a branch that spends money on every push) and it
+  is also the thing that looks like a broken pipeline the first time you meet
+  it: the push succeeds, Vercel reports nothing, and there is no error anywhere
+  to read.
+- **The three markers are matched against the SUBJECT LINE only, never the
+  body.** A commit body that merely discusses `[vercel skip]` in prose once
+  matched a whole-message check and silently skipped a build that touched the
+  guard itself (2026-08-06).
+- 🔴 **The build-relevant commit must be the LAST one in a push.** GitHub
+  creates one deployment per push, for the push HEAD only, so an app commit
+  underneath a `[vercel skip]` handoff commit is never judged at all — it gets
+  no deployment, not a skipped one. Before any push containing app changes:
+  `git log origin/main..HEAD --format=%s` and check the FIRST line (git log is
+  newest-first, so the first line is HEAD) has no `[vercel skip]`. Recovery is
+  an empty commit whose subject carries `[deploy-retry]`, which is rule 3 and
+  always builds. This has bitten on 2026-08-18 and again on 2026-09-04.
 - `scripts/vercel-ignore.sh` **fails closed**: if it cannot resolve the base
   commit it skips rather than builds, because a missed deploy is auto-healed by
   `mac-mini-jobs/run-deploy-watch.sh` and a spurious deploy is healed by

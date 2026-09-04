@@ -34,7 +34,9 @@ guarded "self-test NFL" "$PY" scripts/predictions/build_nfl_sim.py --self-test
 # because losing a Friday's model over a book being down is not a trade worth
 # making. Read the step's output, not its exit code, to know if it worked.
 guarded "self-test the meta-market"         "$PY" scripts/predictions/build_meta_market.py --self-test
-guarded "rebuild the NFL meta-market"       "$PY" scripts/predictions/build_meta_market.py
+# --league nfl, not both: cfb.sh runs the college one on its own cadence and
+# two runners rebuilding the same file is two chances to race on it.
+guarded "rebuild the NFL meta-market"       "$PY" scripts/predictions/build_meta_market.py --league nfl
 
 guarded "rebuild the Premier League model"   "$PY" scripts/predictions/build_pl_sim.py
 guarded "rebuild the Champions League model" "$PY" scripts/predictions/build_ucl_sim.py

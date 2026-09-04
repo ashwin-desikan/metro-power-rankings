@@ -69,6 +69,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT_SIM = os.path.join(ROOT, "public", "data", "cfb-sim.json")
 OUT_PRED = os.path.join(ROOT, "public", "data", "cfb-predictions.json")
+# Written by build_meta_market.py --league cfb, which must run BEFORE this
+# builder in the runner. Read-only here and soft: a missing meta-market means
+# an entry freezes without one, never a failed build.
+IN_META = os.path.join(ROOT, "public", "data", "cfb-meta-market.json")
 OUT_HIST = os.path.join(ROOT, "public", "data", "cfb-sim-history.json")
 SLUG_LOOKUP = os.path.join(ROOT, "public", "data", "cfb", "slug-lookup.json")
 
@@ -934,10 +938,41 @@ def upcoming_ap_games(events, today, window_days, ap_ranks):
     return out
 
 
+def load_meta_market():
+    """{event_id: {"pH", "books", "sd_logodds"}} from cfb-meta-market.json.
+
+    College football is THREE books, not four: Polymarket carries no college
+    game markets. And in practice only two of the three POST a price -- ESPN's
+    DraftKings block is spread-only for most college games, and a spread put
+    through Phi is carried but never votes -- so the consensus here is usually
+    FanDuel and Kalshi. That is still a better answer to "what does the market
+    think" than one book alone, and the file says how many voted on each game.
+    """
+    if not os.path.exists(IN_META):
+        return {}
+    try:
+        doc = json.load(io.open(IN_META, encoding="utf-8"))
+    except (OSError, ValueError):
+        print("meta-market file will not parse; freezing without it")
+        return {}
+    out = {}
+    for g in doc.get("games", []):
+        c = g.get("consensus") or {}
+        if c.get("p_home") is None:
+            continue
+        row = {"pH": round(float(c["p_home"]), 4), "books": c.get("books"),
+               "sd_logodds": c.get("sd_logodds")}
+        if c.get("derived_only"):
+            row["derived_only"] = True
+        out[str(g.get("event_id"))] = row
+    return out
+
+
 def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
                      classic_rating_of, today_iso, ap_ranks, poll_label,
                      poll_fresh, lookup, leverage_by_gid=None, id_by_name=None,
-                     is_fbs=None):
+                     is_fbs=None, meta_by_gid=None):
+    meta_by_gid = meta_by_gid or {}
     known = {e["event_id"] for e in ledger}
     kick_by_id = {u[0]: u[7] for u in upcoming if u[7]}
     leverage_by_gid = leverage_by_gid or {}
@@ -976,6 +1011,12 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
         if classic_rating_of is not None and "classic" not in e and not both_unknown:
             e["classic"] = {"pH": round(home_win_prob(classic_rating_of(hid), classic_rating_of(aid),
                                                        hfa_g), 4), "backfilled": today_iso}
+        # The meta-market is new as of 2026-09-04. Backfilling it onto an
+        # UNGRADED entry is not a freeze violation: the consensus written today
+        # is today's price on a game nobody has played, not hindsight.
+        mm = meta_by_gid.get(e["event_id"])
+        if mm is not None and "meta_market" not in e:
+            e["meta_market"] = dict(mm, backfilled=today_iso)
         # leverage is descriptive, not a frozen pick, so it refreshes every
         # run while the game is still upcoming.
         lev = leverage_by_gid.get(e["event_id"])
@@ -999,6 +1040,8 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
                 e["lite_brier"] = round(brier2(e["lite"]["pH"], hw), 4)
             if e.get("classic") is not None:
                 e["classic_brier"] = round(brier2(e["classic"]["pH"], hw), 4)
+            if e.get("meta_market") is not None:
+                e["meta_brier"] = round(brier2(e["meta_market"]["pH"], hw), 4)
             b = e.get("blend") or e["model"]
             e["blend_brier"] = round(brier2(b["pH"], hw), 4)
             e["pick_correct"] = (e["pick"] == e["result"])
@@ -1030,6 +1073,9 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
         # 99% call was never going to separate the tiers.
         if is_fbs is not None and (is_fbs(h) != is_fbs(a)):
             entry["fcs_opponent"] = True
+        mm = meta_by_gid.get(gid)
+        if mm is not None:
+            entry["meta_market"] = dict(mm)
         if mkt_ph is not None:
             entry["market"] = {"pH": mkt_ph}
             if spread is not None:
@@ -1056,10 +1102,25 @@ def ledger_record(ledger):
     gm = [e for e in g if "market_brier" in e]
     rec["market_graded"] = len(gm)
     rec["market_brier"] = round(sum(e["market_brier"] for e in gm) / len(gm), 4) if gm else None
+    # 🔴 Every tier reports its OWN graded count beside its own Brier, because
+    # the sets genuinely differ and a Brier without its denominator invites the
+    # comparison the sets cannot support. The 2026-09-04 FCS fix stopped the
+    # gap growing, but it cannot close the one entry already graded before the
+    # tiers existed (San José State at USC, 2026-08-29): backfilling a price
+    # onto a game that has been played is hindsight, so that entry keeps model
+    # only, for good. /predictions/scoreboard already derives tier skill over
+    # the intersection of tier-and-market-priced rows; these counts are so the
+    # raw file cannot be read carelessly either.
     gl = [e for e in g if "lite_brier" in e]
+    rec["lite_graded"] = len(gl)
     rec["lite_brier"] = round(sum(e["lite_brier"] for e in gl) / len(gl), 4) if gl else None
     gc = [e for e in g if "classic_brier" in e]
+    rec["classic_graded"] = len(gc)
     rec["classic_brier"] = round(sum(e["classic_brier"] for e in gc) / len(gc), 4) if gc else None
+    gmm = [e for e in g if "meta_brier" in e]
+    rec["meta_graded"] = len(gmm)
+    rec["meta_brier"] = round(sum(e["meta_brier"] for e in gmm) / len(gmm), 4) if gmm else None
+    rec["fcs_opponent_games"] = sum(1 for e in ledger if e.get("fcs_opponent"))
     return rec
 
 
@@ -1513,7 +1574,8 @@ def build(sims, today=None):
                               ap_set, poll_label, poll_fresh, lookup,
                               leverage_by_gid=deluxe_run["leverage"],
                               id_by_name=id_by_name,
-                              is_fbs=lambda tid: idx.get(tid, -1) >= 0)
+                              is_fbs=lambda tid: idx.get(tid, -1) >= 0,
+                              meta_by_gid=load_meta_market())
     pred_doc = {
         "meta": {"season": SEASON, "generated_at": today_iso,
                  "match_blend_weight": MATCH_BLEND_W, "horizon_days": WINDOW_DAYS,

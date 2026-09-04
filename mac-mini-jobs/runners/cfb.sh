@@ -35,6 +35,12 @@
 
 mini_sync
 
+# Before the model: build_cfb_sim.py reads the consensus when it freezes a
+# ledger entry. Soft all the way down (see its __main__), so a dead book
+# costs the meta-market and not the day's model.
+guarded "self-test the meta-market" "$PY" scripts/predictions/build_meta_market.py --self-test
+guarded "rebuild the CFB meta-market" "$PY" scripts/predictions/build_meta_market.py --league cfb
+
 guarded "self-test CFB" "$PY" scripts/predictions/build_cfb_sim.py --self-test
 
 guarded "rebuild the CFB model (sim + AP-25 slate + grading)" \
@@ -46,6 +52,7 @@ guarded "rebuild the CFB model (sim + AP-25 slate + grading)" \
 commit_paths "Auto: refresh CFB predictions [vercel skip]" \
   public/data/cfb-sim.json \
   public/data/cfb-predictions.json \
+  public/data/cfb-meta-market.json \
   public/data/cfb-sim-history.json
 
 # lib/cfbSim.ts uses the shared predictions-daily tag (deliberately), so this

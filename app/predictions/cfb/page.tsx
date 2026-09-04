@@ -233,6 +233,11 @@ export default async function CfbPredictionsPage() {
   const graded = ledger.filter((e) => e.result && e.result !== "T").slice(-10).reverse();
   const rec = preds?.record ?? null;
   const anyMarket = upcoming.some((e) => e.market);
+  // The multi-book consensus, its own column beside the model. College is three
+  // books rather than the NFL's four (Polymarket has no college game markets)
+  // and usually only two of them post a price, so the count matters and is
+  // shown next to the number.
+  const anyMeta = upcoming.some((e) => e.meta_market);
   const pollLabel = preds?.meta.poll.label ?? meta?.poll.label ?? null;
   const conferences = (meta?.conferences ?? []).slice().sort(confSort);
   if (rows.some((r) => r.conference === "Independents") && !conferences.includes("Independents"))
@@ -517,7 +522,10 @@ export default async function CfbPredictionsPage() {
                 <div className="mt-2 text-sm text-[var(--text-muted)]">
                   {anyMarket
                     ? "The pick blends the model and the posted line 50/50."
-                    : "The market column joins once lines are posted."} Each week&apos;s slate is published
+                    : "The market column joins once lines are posted."}{" "}
+                  {anyMeta
+                    ? "Books is the consensus of every posted price we can read — DraftKings, FanDuel and Kalshi — de-vigged by the power method and averaged in log-odds. Three books, not the four the NFL board carries: Polymarket lists college futures and awards but no game markets. It is not in the pick: the pick still blends the model with the single posted line, so the record stays comparable with every call made before the consensus existed. A price we had to translate from a spread is carried on the Ledger but never votes here."
+                    : ""} Each week&apos;s slate is published
                   after the AP poll drops, frozen on first sight, and graded against the final score below.
                 </div>
               </details>
@@ -535,7 +543,13 @@ export default async function CfbPredictionsPage() {
                     neutral={e.neutral}
                     kickoff={fmtDate(e.date)}
                     modelPct={`Model ${ppct(e.model.pH)}`}
-                    marketPct={anyMarket ? (e.market ? `Market ${ppct(e.market.pH)}` : "Market —") : undefined}
+                    marketPct={anyMeta
+                      ? (e.meta_market
+                          ? `Books ${ppct(e.meta_market.pH)}${e.meta_market.books ? ` (${e.meta_market.books})` : ""}`
+                          : "Books —")
+                      : anyMarket
+                        ? (e.market ? `Market ${ppct(e.market.pH)}` : "Market —")
+                        : undefined}
                     pick={PICK_LABEL(e)}
                   />
                 ))}
@@ -547,6 +561,7 @@ export default async function CfbPredictionsPage() {
                       <th className="px-3 py-2 font-semibold">Game</th>
                       <th className="px-3 py-2 text-right font-semibold">Model (home)</th>
                       {anyMarket && <th className="px-3 py-2 text-right font-semibold">Market (home)</th>}
+                      {anyMeta && <th className="px-3 py-2 text-right font-semibold">Books (home)</th>}
                       <th className="px-3 py-2 font-semibold">Pick</th>
                     </tr>
                   </thead>
@@ -571,6 +586,23 @@ export default async function CfbPredictionsPage() {
                         {anyMarket && (
                           <td className="px-3 py-2 text-right" style={{ ...MONO, color: "var(--text-muted)" }}>
                             {e.market ? ppct(e.market.pH) : "—"}
+                          </td>
+                        )}
+                        {anyMeta && (
+                          <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
+                            {e.meta_market ? (
+                              <>
+                                {ppct(e.meta_market.pH)}
+                                {e.meta_market.books ? (
+                                  <span className="ml-1 text-[11px] text-[var(--text-dim)]">
+                                    {e.meta_market.books}
+                                    {e.meta_market.derived_only ? "*" : ""}
+                                  </span>
+                                ) : null}
+                              </>
+                            ) : (
+                              <span style={{ color: "var(--text-dim)" }}>—</span>
+                            )}
                           </td>
                         )}
                         <td className="px-3 py-2 font-semibold" style={{ color: "var(--accent)" }}>{PICK_LABEL(e)}</td>

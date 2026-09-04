@@ -943,7 +943,12 @@ def ledger_record(ledger):
         "model_brier": round(sum(e["model_brier"] for e in g) / len(g), 4) if g else None,
         "blend_brier": round(sum(e["blend_brier"] for e in g) / len(g), 4) if g else None,
     }
+    # Its own graded count beside its own Brier: the tier started later than the
+    # model, so the two averages are over different game sets until they are not,
+    # and a Brier without its denominator invites a comparison the sets cannot
+    # support. Same reasoning as build_cfb_sim.py's record.
     gl = [e for e in g if "lite_brier" in e]
+    rec["lite_graded"] = len(gl)
     rec["lite_brier"] = round(sum(e["lite_brier"] for e in gl) / len(gl), 4) if gl else None
     gm = [e for e in g if "market_brier" in e]
     rec["market_graded"] = len(gm)

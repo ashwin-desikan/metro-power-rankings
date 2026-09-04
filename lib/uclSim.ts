@@ -53,8 +53,11 @@ export type UclFixtureCall = {
 
 export type UclSimFile = { meta: UclSimMeta; table: UclSimRow[]; fixtures_called: UclFixtureCall[] };
 
-const GH_BASE =
+/** Exported so the hub's "Get the data" line points at the same files this
+ *  module reads, rather than at a second copy of the URL that can drift. */
+export const UCL_DATA_GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
+const GH_BASE = UCL_DATA_GH_BASE;
 
 export async function getUclSim(): Promise<UclSimFile | null> {
   let local: UclSimFile | null = null;

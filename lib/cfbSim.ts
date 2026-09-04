@@ -118,6 +118,22 @@ export type CfbPredictionEntry = {
   lite_brier?: number;
   classic_brier?: number;
   leverage?: { home: number; away: number; game: number };
+  /** The multi-book consensus frozen with the call (2026-09-04 on). College is
+   *  three books, not four — Polymarket carries no college game markets — and
+   *  in practice only two POST a price, because ESPN's DraftKings block is
+   *  spread-only for most college games and a spread put through Phi is
+   *  carried but never votes. `books` is how many voted. */
+  meta_market?: {
+    pH: number;
+    books?: number;
+    sd_logodds?: number | null;
+    derived_only?: true;
+    backfilled?: string;
+  };
+  meta_brier?: number;
+  /** One side is an FCS opponent, so every tier prices it from the one pooled
+   *  FCS rating and none of them can separate on it. */
+  fcs_opponent?: true;
 };
 
 export type CfbPredictionsFile = {
@@ -131,7 +147,7 @@ export type CfbPredictionsFile = {
     odds_source: string;
     results_source: string;
     // points-v3, optional
-    tiers?: ("lite" | "classic" | "market" | "blend")[];
+    tiers?: ("lite" | "classic" | "market" | "meta" | "blend")[];
   };
   record: {
     graded: number;
@@ -140,9 +156,16 @@ export type CfbPredictionsFile = {
     blend_brier: number | null;
     market_graded: number;
     market_brier: number | null;
-    // points-v3, optional
+    // points-v3, optional. Each tier reports its OWN graded count, because the
+    // sets genuinely differ and a Brier without its denominator invites a
+    // comparison the sets cannot support.
+    lite_graded?: number;
     lite_brier?: number | null;
+    classic_graded?: number;
     classic_brier?: number | null;
+    meta_graded?: number;
+    meta_brier?: number | null;
+    fcs_opponent_games?: number;
   };
   ledger: CfbPredictionEntry[];
 };

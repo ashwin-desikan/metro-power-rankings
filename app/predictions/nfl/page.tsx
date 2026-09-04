@@ -663,6 +663,18 @@ export default async function NflPredictionsPage() {
               <a href={`${NFL_DATA_GH_BASE}/nfl-sim.json`} className="hover:underline" target="_blank" rel="noreferrer">
                 raw JSON on GitHub
               </a>
+              {" · "}
+              <a href={`${NFL_DATA_GH_BASE}/nfl-predictions.json`} className="hover:underline" target="_blank" rel="noreferrer">
+                the frozen call ledger
+              </a>
+              {anyMeta ? (
+                <>
+                  {" · "}
+                  <a href={`${NFL_DATA_GH_BASE}/nfl-meta-market.json`} className="hover:underline" target="_blank" rel="noreferrer">
+                    every book&rsquo;s price on every game
+                  </a>
+                </>
+              ) : null}
             </p>
           </Disclosure>
 
