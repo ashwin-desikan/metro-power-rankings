@@ -8983,3 +8983,117 @@ Also `internal/relaunch-plan-2026-09.md` (gitignored): 51 releases since 1 July,
 zero Substack posts, resolved into six themes rather than 51 posts.
 
 ---
+
+
+## 2026-09-04 — cowork (cloud, bridged to the Windows box) → mini and next session: THE HISTORY SNAPSHOTS WERE NEVER BEING COMMITTED, AND THE LAST FOUR BOARDS GET BARS
+
+Session-open protocol run first. `main` was already at `830934dd5`, tree clean.
+
+### A. 🔴 THE DELTAS AND SPARKLINES WERE NEVER GOING TO APPEAR
+
+The 2026-09-03 entry says the first daily refresh after it would write a second
+snapshot to each `public/data/<league>-sim-history.json` and light up the
+week-over-week deltas and sparklines on every hub. It would not have.
+
+The proof was sitting in the tree this morning: the mini's `mlb-sim` job ran at
+07:00 UTC and committed `mlb-sim.json` with `generated_at` 2026-09-04, while
+`mlb-sim-history.json` still held its single 2026-09-03 snapshot. The builders
+write the history files correctly. **Every runner and workflow stages an
+explicit path list, and not one of them listed the history file.** The snapshot
+was being written on the mini's disk each run and left uncommitted.
+
+Fixed in `c13225f39` (`[vercel skip]`, no build spent):
+`mac-mini-jobs/runners/predictions.sh` (+ `pl-sim-history.json`,
+`nfl-sim-history.json`), `cfb.sh` (+ `cfb-sim-history.json`), `mlb-sim.sh`
+(+ `mlb-sim-history.json`), and the two retired-schedule YAMLs kept as manual
+fallbacks. Mini: nothing to change on your side, but note the accumulated
+snapshots on your disk are uncommitted, so the FIRST run after this fix commits
+2026-09-03 plus every day since in one go. That is the intended outcome; deltas
+and sparklines appear on the hub as soon as it lands.
+
+### B. THE MARKET-RATING RIDGE, TESTED ON LIVE LINES FOR THE FIRST TIME
+
+`meta.market_ratings` reads `futures` for the NFL and `futures+spreads` for CFB.
+The NFL will NOT flip today, and that is timing, not a bug:
+
+- ESPN is carrying DraftKings spreads for all 15 week-1 games and **no
+  moneylines at all** (checked 2026-09-04 09:00 UTC).
+- `WINDOW_DAYS` is 8, so today's `upcoming_games` sees only 2 of them (10 and 11
+  Sep). The ridge needs 8. The ledger's 28-day lookback adds nothing because all
+  16 frozen week-1 entries carry `market.pH` and no `market.spread` — they were
+  frozen when ESPN had a moneyline and no spread, and the freeze is not repriced.
+- Expect `futures+spreads` from **predictions-fri on 2026-09-11**, when the
+  Sunday slate sits inside the window.
+
+The ridge itself was run against the live posted lines offline (flat prior, so
+the shrinkage is visible): the Melbourne neutral game returns LAR +0.88 / SF
+−0.88, symmetric with no HFA, and SEA/NE returns +0.47 / −0.48 for the same 3.5
+number at a home ground, HFA correctly absorbing the difference. The path works.
+
+`meta.shadow` is intact in `nfl-predictions.json` (all 16 ledger entries carry a
+frozen `shadow`). Note for whoever reads `build_nfl_sim.py:1123` next: the
+carry-forward reads the previous **predictions** doc, not the sim doc.
+`nfl-sim.json` has no `meta.shadow` and nothing writes one.
+
+### C. LIVE PROBE: 8/8 CLEAN, AND A TRAP WORTH KNOWING
+
+`BASE=https://rankings.citizenofnowhere.org node scripts/probe-mobile.mjs` on
+the eight prediction routes at 390px: **8/8 clean**, screens identical to the
+09-03 baseline (index 4.3, NFL 3.4, CFB 3.6, MLB 2.3, PL 2.5, UCL 2.5, Ledger
+4.3, Picks 9.4).
+
+🔴 **Run the live probe at `--concurrency 1`, in batches, with a pause between.**
+At `--concurrency 2` seven of eight routes came back "463px wide, 1.2 screens,
+taps<40:3" — identical numbers on six structurally different pages, which is the
+tell. That is Cloudflare's free-plan rate limiter (fixed 10-second window,
+cached responses counted) serving a challenge page, not a mobile regression. The
+same URL returned 200 to a single curl seconds later.
+
+### D. IN-CELL BARS ON THE FOUR BOARDS THAT STILL HAD NONE
+
+`036380d27`, a real build. `/sports/standings`, `/badges/[slug]`,
+`/us-political-leadership`, `/studio/audience-builder`. Mobile card twins
+untouched, as in the first pass.
+
+`/sports/standings` is generic, so the encoding is too: `barColumn()` picks the
+one column a sub-table is ordered by (PCT, else PTS, else Pts) and computes that
+column's maximum once over the sub-table's full row set. Fixture and results
+sub-tables carry none of those names and skip themselves; so does any column
+with an unparseable cell. `DataBar`'s `format` keeps the page's own text, so
+`.612` stays `.612`.
+
+Three judgement calls worth keeping:
+- **badges**: the max is over the FULL qualifying set, NOT per tier group. The
+  tiers there are strata of one metric, so a per-group max would draw a tier-D
+  cluster as long as a tier-A one. (This is the opposite call to
+  `teams/nhl/NhlStandings.tsx`, where the groups are divisions and per-group is
+  right. The test is whether the groups are strata of one quantity or separate
+  populations.) Null max, and a bare number, when any value is negative.
+- **audience-builder**: propensity is drawn against its own 1..99 ceiling, not
+  the visible rows. The table shows the first 14 of a segment, and scaling a
+  bounded score to a slice would draw a member on 70 as the weakest thing in the
+  audience.
+- **governors/senators**: `useMemo` over the full `rows` prop, so sorting
+  reorders and never rescales.
+
+Also: the MLB division grid's `Pen` header now reads `Pennant`, matching the
+league table on the same page. Same width as `Playoff`, already in that row.
+
+`npm run verify` green before the commit: 143 vitest, 112 python, tsc clean,
+next build clean across all 5,086 pages. Release note for 2026-09-04 added to
+`lib/releases.ts` (one entry for the whole day, covering this morning's copy
+density and palette work as well).
+
+### State on exit
+- `.probe-shots/` deleted. The `_push_main` worktree was already gone. Merged
+  branch `claude/copy-and-viz-2026-09-03` deleted.
+- Idea 7 (multi-book meta-market: Polymarket, Kalshi, DraftKings, FanDuel) and
+  idea 8 (per-book house effects, power-method de-vig) are still NOT built, and
+  are now the largest open item on /predictions.
+- The 6 CFB preseason ledger entries against FCS opponents still carry no
+  lite/classic tier.
+- 🔴 **The release reel could not be re-shot from here.** This session is
+  bridged to the WINDOWS box; `scripts/reel`'s new `clips` step needs to run
+  from the Mac against rankings.citizenofnowhere.org. Untouched, along with the
+  suspected letterboxing bug in the older still `shots` step (the fix went into
+  `clips` only, so `shots` captures may be 1080x1640 padded to 1080x1920).
