@@ -83,8 +83,11 @@ run_soft "rebuild the MLB model" 600 \
 run_soft "rebuild the season sims" 1800 \
   "$PY" scripts/predictions/build_season_sims.py
 
+# The *-sim-history.json snapshots were written by the builders from
+# 2026-09-03 but never staged, so the week-over-week deltas and
+# sparklines on the hubs stayed blank. Added 2026-09-04.
 commit_paths "Auto: refresh MLB + season playoff odds [vercel skip]" \
-  public/data/mlb-sim.json \
+  public/data/mlb-sim.json public/data/mlb-sim-history.json \
   public/data/afl-sim.json public/data/nrl-sim.json \
   public/data/wnba-sim.json public/data/cfl-sim.json \
   public/data/npb-sim.json public/data/mls-sim.json \

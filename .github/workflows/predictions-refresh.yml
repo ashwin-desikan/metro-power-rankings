@@ -69,7 +69,8 @@ jobs:
         run: |
           git add public/data/pl-sim.json public/data/pl-predictions.json \
                   public/data/ucl-sim.json \
-                  public/data/nfl-sim.json public/data/nfl-predictions.json
+                  public/data/nfl-sim.json public/data/nfl-predictions.json \
+                  public/data/pl-sim-history.json public/data/nfl-sim-history.json
           if git diff --cached --quiet; then
             echo "No changes; nothing to commit."
             exit 0

@@ -40,9 +40,13 @@ guarded "self-test CFB" "$PY" scripts/predictions/build_cfb_sim.py --self-test
 guarded "rebuild the CFB model (sim + AP-25 slate + grading)" \
   "$PY" scripts/predictions/build_cfb_sim.py --sims 20000
 
+# The *-sim-history.json snapshots were written by the builders from
+# 2026-09-03 but never staged, so the week-over-week deltas and
+# sparklines on the hubs stayed blank. Added 2026-09-04.
 commit_paths "Auto: refresh CFB predictions [vercel skip]" \
   public/data/cfb-sim.json \
-  public/data/cfb-predictions.json
+  public/data/cfb-predictions.json \
+  public/data/cfb-sim-history.json
 
 # lib/cfbSim.ts uses the shared predictions-daily tag (deliberately), so this
 # flush also invalidates PL/NFL/MLB -- cross-warm them too rather than leave

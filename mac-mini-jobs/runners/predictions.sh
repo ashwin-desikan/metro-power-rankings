@@ -37,12 +37,17 @@ guarded "rebuild the NFL model"              "$PY" scripts/predictions/build_nfl
 guarded "self-test NFL shadow"   "$PY" scripts/predictions/build_nfl_shadow.py --self-test
 guarded "rebuild the NFL v3 shadow" "$PY" scripts/predictions/build_nfl_shadow.py --write
 
+# The *-sim-history.json snapshots were written by the builders from
+# 2026-09-03 but never staged, so the week-over-week deltas and
+# sparklines on the hubs stayed blank. Added 2026-09-04.
 commit_paths "Auto: refresh PL + UCL + NFL prediction models [vercel skip]" \
   public/data/pl-sim.json \
   public/data/pl-predictions.json \
   public/data/ucl-sim.json \
   public/data/nfl-sim.json \
-  public/data/nfl-predictions.json
+  public/data/nfl-predictions.json \
+  public/data/pl-sim-history.json \
+  public/data/nfl-sim-history.json
 
 # /predictions/mlb is warmed by mlb-sim.sh, which shares the predictions-daily
 # tag -- a flush here invalidates all three, so include it too rather than
