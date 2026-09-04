@@ -8655,3 +8655,99 @@ One real build, no skip marker, release note amended into the existing
 `next build` complete.
 
 ---
+
+## 2026-09-03 - cowork (cloud, bridged to the Windows box) -> mini and next session: POINTS-V3 AND THE PREDICTION HUBS JOIN THE REDESIGN, LIVE
+
+Cowork session, Fable orchestrating Sonnet workers. Everything below is LIVE on
+`main` at `824304002` (merge of `predictions/expert-upgrades` into `main` after
+`origin/main` had moved 10 commits; verified with the full gate in a detached
+worktree before the push). One production build spent today for this work; the
+two preview builds on the branch do not count. Release note for 2026-09-03 is
+in `lib/releases.ts`.
+
+### A. THE ENGINE: points-v3 in all four builders (`scripts/predictions/`)
+Ideas taken from Silver Bulletin's FLIPR methodology and Neil Paine's trackers
+(sources and the full idea inventory are in project memory
+`reference_prediction_expert_sources` and `project_predictions_points_v3_2026_09_03`).
+- Common random numbers: season i draws its shocks, then ONE uniform per game
+  of the FULL schedule in fixed (date, id) order, from `Random(seed*1_000_003+i)`;
+  playoffs and tie-breaks from `Random(seed*7_919+i)`. Week-to-week deltas are
+  now information, not sampling noise. PL draws goals per fixture stream; the
+  numpy fast path is gone (about 69 s at 20k sims, fine for the Action).
+- Correlated error layers per simulated season: league HFA jitter, division
+  (NFL, MLB) or conference (CFB) shared shock, team residual.
+- Adaptive sigma: `SIGMA_SEASON * max(0.45, sqrt(frac_left))`, widened per team
+  by `0.5 * |r_stats - r_market|` where a market rating exists.
+- Tiers frozen in the ledger: NFL `lite` (stats only) + `classic` (production);
+  CFB `lite` / `classic` / `deluxe` (deluxe = + AP poll, production).
+  `model.pH` is unchanged in meaning. The Ledger derives skill per tier at render.
+- Spread-implied market ratings by ridge (Gauss-Seidel, prior = futures
+  rating) once >= 8 (NFL) / 25 (CFB) lines are posted; `meta.market_ratings`
+  says which path ran. UNTESTED on live NFL data until more lines post.
+- 🔴 NEUTRAL SITES FIXED: `competition.neutralSite` threaded through schedule,
+  upcoming and results; HFA 0 in sim and pick. The Melbourne Rams v 49ers
+  entry was repriced 0.6026 -> 0.5571 and carries `repriced` with the prior.
+  Any backfilled `lite` carries `backfilled: <date>`.
+- New per-row fields: `wins_p10/p90`, `band`, `p_bubble`, `rating_stats`,
+  `rating_market`, `sigma_team`; per-game `leverage` (P(playoffs|win) minus
+  P(playoffs|loss)) for games inside the 8-day window only. New history files
+  `public/data/<league>-sim-history.json`, one snapshot per date, keep 180;
+  deltas and sparklines render nothing until a second snapshot exists, so the
+  first daily refresh after this entry is when they appear.
+- 🔴 `build_nfl_sim.py` now CARRIES `meta.shadow` forward. Before today every
+  morning build wiped the v3 shadow block that `build_nfl_shadow.py` writes.
+- Shared helpers live in `scripts/predictions/sim_common.py`.
+- Mini: nothing to change. `predictions-refresh.yml`, `mlb-sim-refresh.yml` and
+  the `cfb-sun`/`cfb-fri` runner pick the new builders up as they are; the
+  self-tests (NFL 72, CFB 86, MLB 60, PL 53) are what CI gates on.
+
+### B. THE HUBS: every prediction page rebuilt on DESIGN-STANDARDS
+Ashwin's call: the hubs had missed the redesign. Measured first (probe +
+full-page screenshots at 390 and 1440), then rebuilt. What was wrong was idiom,
+not width: no route scrolled sideways, but every fixtures/ledger table pinned
+the DATE column on a phone so the matchup and the pick were off-screen, no hub
+had the shared header/tab row/sources card, three different table shells, and
+CFB ran 19 phone screens with no navigation.
+- `app/predictions/_shared/`: `ui.tsx` (PredCrumbs, PredHeader, SourcesCard,
+  plural(), re-exports from business/ui), `PredictionsNav.tsx` (BusinessNav
+  idiom, 8 tabs, wraps to 3 rows at 390), `rows.tsx` (FixtureRow, TeamOddsRow,
+  LedgerRow), Band (MONO 10px uppercase), Delta, Sparkline, TierTabs, deltas.ts.
+- Every `<table>` in the family goes through `app/teams/_shared/ResponsiveTable`
+  `variant="list"` with a capped phone list; 4-row division tables carry
+  `data-mobile-uncapped="four teams per division"`.
+- Density (section 2): the headline board is open and first; every later
+  section is a `<Disclosure id title meta>` (desktopOpen), so a phone gets a
+  table of contents with counts and the HubNav chips land on open sections via
+  `:target`. The Picks CTA stays an open card (section 5, first-class entry).
+- The hubs also adopted `app/_shared/SectionHead.tsx` and `app/_shared/DataBar.tsx`,
+  authored by the concurrent session on this box and committed by it to main.
+- Live probe against production (`BASE=https://rankings.citizenofnowhere.org
+  node scripts/probe-mobile.mjs ...`): 8/8 clean at 390. Phone screens:
+  index 4.3, NFL 3.4 (was 8.5), CFB 3.6 (was 19.0), MLB 2.3, PL 2.5, UCL 2.5,
+  Ledger 4.3, Picks 9.4 (one gameplay flow, nothing secondary to collapse).
+  Desktop unchanged. The remaining taps<40 on these routes are site chrome
+  (header, the 38px tab idiom, 30px HubNav chips), a sitewide question.
+
+### C. WORKING-TREE PROTOCOL THAT HELD WITH TWO SESSIONS IN ONE CHECKOUT
+The Windows checkout was shared with a concurrent session carrying ~200
+uncommitted files. What worked: commit only explicit paths, never `git add -A`,
+`git stash` or a branch switch; for any commit or merge that must not touch the
+tree, use a detached worktree (`git worktree add --detach C:\Users\ashwi\wt-pred
+origin/<branch>`), junction `node_modules` from the main tree, run
+`npm run verify` there with output to a log file, `git push origin HEAD:main`,
+then `cmd /c rmdir` the junction and `git worktree remove --force`. The
+auto-mode classifier refuses to commit another session's uncommitted files;
+that is right, hand it to the owning session. Preview builds on non-main refs
+are SKIPPED by `scripts/vercel-ignore.sh` unless the SUBJECT carries `[preview]`.
+
+### State on exit
+- The shared checkout's local `predictions/expert-upgrades` is still at
+  `86cddc96c` (origin at `824304002`, main identical). A `git pull --ff-only`
+  there is safe only once the other session has committed its edits.
+- `.probe-shots/` in the repo is untracked audit scratch; delete at will.
+- Idea 7 (multi-book meta-market: Polymarket, Kalshi, DraftKings, FanDuel) and
+  idea 8 (per-book house effects, power-method de-vig) were NOT built.
+- 6 CFB preseason ledger entries against FCS opponents could not be backfilled
+  with lite/classic (the name-to-id map lacks FCS). Harmless; they grade on
+  `model` only.
+- Label nit: MLB table header "Pen" for pennant, abbreviated to fit the grid.
