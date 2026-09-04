@@ -1,11 +1,11 @@
 {
  "meta": {
-  "generated_at": "2026-09-03T05:54:17Z",
-  "as_of": "2026-09-03",
+  "generated_at": "2026-09-04T05:51:25Z",
+  "as_of": "2026-09-04",
   "base": "USD",
   "source": "exchangerate-api.com",
   "count": 165,
-  "api_update_utc": "Thu, 03 Sep 2026 00:00:01 +0000"
+  "api_update_utc": "Fri, 04 Sep 2026 00:00:01 +0000"
  },
  "majors": [
   "EUR",
@@ -46,8 +46,8 @@
   {
    "code": "AFN",
    "name": "afghani",
-   "perUsd": 65.0788,
-   "usdPer": 0.015365987080278063,
+   "perUsd": 65.047,
+   "usdPer": 0.015373499162144297,
    "countries": [
     {
      "name": "Afghanistan",
@@ -59,8 +59,8 @@
   {
    "code": "ALL",
    "name": "Albanian lek",
-   "perUsd": 79.6006,
-   "usdPer": 0.012562719376487112,
+   "perUsd": 79.3991,
+   "usdPer": 0.012594601198250358,
    "countries": [
     {
      "name": "Albania",
@@ -72,8 +72,8 @@
   {
    "code": "AMD",
    "name": "Armenian dram",
-   "perUsd": 363.8944,
-   "usdPer": 0.002748049983731544,
+   "perUsd": 364.0489,
+   "usdPer": 0.0027468837290814505,
    "countries": [
     {
      "name": "Armenia",
@@ -93,16 +93,16 @@
   {
    "code": "AOA",
    "name": "AOA",
-   "perUsd": 924.7404,
-   "usdPer": 0.001081384570199377,
+   "perUsd": 925.6806,
+   "usdPer": 0.00108028622399562,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "ARS",
    "name": "Argentine convertible peso",
-   "perUsd": 1511.6306,
-   "usdPer": 0.0006615372829843482,
+   "perUsd": 1508.2111,
+   "usdPer": 0.0006630371570664081,
    "countries": [
     {
      "name": "Argentina",
@@ -114,8 +114,8 @@
   {
    "code": "AUD",
    "name": "Australian dollar",
-   "perUsd": 1.3967,
-   "usdPer": 0.7159733657907925,
+   "perUsd": 1.3897,
+   "usdPer": 0.7195797654169965,
    "countries": [
     {
      "name": "Australia",
@@ -152,8 +152,8 @@
   {
    "code": "AZN",
    "name": "Azerbaijani manat",
-   "perUsd": 1.6997,
-   "usdPer": 0.5883391186680003,
+   "perUsd": 1.6994,
+   "usdPer": 0.5884429798752501,
    "countries": [
     {
      "name": "Azerbaijan",
@@ -165,8 +165,8 @@
   {
    "code": "BAM",
    "name": "BAM",
-   "perUsd": 1.6886,
-   "usdPer": 0.592206561648703,
+   "perUsd": 1.6833,
+   "usdPer": 0.5940711697261332,
    "countries": [],
    "countryCount": 0
   },
@@ -186,8 +186,8 @@
   {
    "code": "BDT",
    "name": "Bangladeshi taka",
-   "perUsd": 122.6167,
-   "usdPer": 0.008155495947941838,
+   "perUsd": 122.802,
+   "usdPer": 0.00814318985032817,
    "countries": [
     {
      "name": "Bangladesh",
@@ -199,8 +199,8 @@
   {
    "code": "BGN",
    "name": "BGN",
-   "perUsd": 1.6886,
-   "usdPer": 0.592206561648703,
+   "perUsd": 1.6833,
+   "usdPer": 0.5940711697261332,
    "countries": [],
    "countryCount": 0
   },
@@ -220,8 +220,8 @@
   {
    "code": "BIF",
    "name": "Burundian franc",
-   "perUsd": 2993.1704,
-   "usdPer": 0.00033409390925421417,
+   "perUsd": 2992.8978,
+   "usdPer": 0.00033412433929417835,
    "countries": [
     {
      "name": "Burundi",
@@ -241,8 +241,8 @@
   {
    "code": "BND",
    "name": "Brunei dollar",
-   "perUsd": 1.2717,
-   "usdPer": 0.7863489816780687,
+   "perUsd": 1.2674,
+   "usdPer": 0.7890168849613381,
    "countries": [
     {
      "name": "Brunei",
@@ -254,16 +254,16 @@
   {
    "code": "BOB",
    "name": "BOB",
-   "perUsd": 12.06,
-   "usdPer": 0.08291873963515754,
+   "perUsd": 12.1398,
+   "usdPer": 0.08237367996177862,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "BRL",
    "name": "Brazilian real",
-   "perUsd": 5.1391,
-   "usdPer": 0.1945866007666712,
+   "perUsd": 5.0947,
+   "usdPer": 0.19628241113313838,
    "countries": [
     {
      "name": "Brazil",
@@ -288,8 +288,8 @@
   {
    "code": "BTN",
    "name": "ngultrum",
-   "perUsd": 94.9007,
-   "usdPer": 0.01053733007238092,
+   "perUsd": 94.5355,
+   "usdPer": 0.010578036822146178,
    "countries": [
     {
      "name": "Bhutan",
@@ -301,8 +301,8 @@
   {
    "code": "BWP",
    "name": "Botswana pula",
-   "perUsd": 13.6605,
-   "usdPer": 0.07320376267340141,
+   "perUsd": 13.5594,
+   "usdPer": 0.07374957593993835,
    "countries": [
     {
      "name": "Botswana",
@@ -314,8 +314,8 @@
   {
    "code": "BYN",
    "name": "Belarusian ruble",
-   "perUsd": 3.0832,
-   "usdPer": 0.32433834976647635,
+   "perUsd": 3.0822,
+   "usdPer": 0.3244435792615664,
    "countries": [
     {
      "name": "Belarus",
@@ -340,8 +340,8 @@
   {
    "code": "CAD",
    "name": "Canadian dollar",
-   "perUsd": 1.3865,
-   "usdPer": 0.7212405337179949,
+   "perUsd": 1.3793,
+   "usdPer": 0.7250054375407816,
    "countries": [
     {
      "name": "Canada",
@@ -353,8 +353,8 @@
   {
    "code": "CDF",
    "name": "Congolese franc",
-   "perUsd": 2293.2067,
-   "usdPer": 0.000436070590583919,
+   "perUsd": 2290.2306,
+   "usdPer": 0.00043663725390796895,
    "countries": [
     {
      "name": "Congo DR",
@@ -366,8 +366,8 @@
   {
    "code": "CHF",
    "name": "Swiss franc",
-   "perUsd": 0.8134,
-   "usdPer": 1.2294074256208507,
+   "perUsd": 0.8082,
+   "usdPer": 1.2373174956693886,
    "countries": [
     {
      "name": "Liechtenstein",
@@ -391,8 +391,8 @@
   {
    "code": "CLP",
    "name": "Chilean peso",
-   "perUsd": 936.6268,
-   "usdPer": 0.001067661100451108,
+   "perUsd": 936.8336,
+   "usdPer": 0.001067425421120677,
    "countries": [
     {
      "name": "Chile",
@@ -404,16 +404,16 @@
   {
    "code": "CNH",
    "name": "CNH",
-   "perUsd": 6.7188,
-   "usdPer": 0.14883610168482467,
+   "perUsd": 6.7184,
+   "usdPer": 0.14884496308644915,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "CNY",
    "name": "renminbi",
-   "perUsd": 6.7365,
-   "usdPer": 0.14844503822459734,
+   "perUsd": 6.7355,
+   "usdPer": 0.14846707742558088,
    "countries": [
     {
      "name": "China",
@@ -425,8 +425,8 @@
   {
    "code": "COP",
    "name": "Colombian peso",
-   "perUsd": 3168.0184,
-   "usdPer": 0.00031565473230837297,
+   "perUsd": 3154.7242,
+   "usdPer": 0.0003169849205835489,
    "countries": [
     {
      "name": "Colombia",
@@ -438,8 +438,8 @@
   {
    "code": "CRC",
    "name": "Costa Rican colón",
-   "perUsd": 453.6334,
-   "usdPer": 0.0022044232192779457,
+   "perUsd": 453.1262,
+   "usdPer": 0.002206890707268748,
    "countries": [
     {
      "name": "Costa Rica",
@@ -459,8 +459,8 @@
   {
    "code": "CVE",
    "name": "Cape Verdean escudo",
-   "perUsd": 95.1976,
-   "usdPer": 0.010504466499155441,
+   "perUsd": 94.8978,
+   "usdPer": 0.010537652084663712,
    "countries": [
     {
      "name": "Cape Verde",
@@ -472,8 +472,8 @@
   {
    "code": "CZK",
    "name": "CZK",
-   "perUsd": 20.8874,
-   "usdPer": 0.04787575284621351,
+   "perUsd": 20.8269,
+   "usdPer": 0.048014826978570985,
    "countries": [],
    "countryCount": 0
   },
@@ -493,8 +493,8 @@
   {
    "code": "DKK",
    "name": "Danish krone",
-   "perUsd": 6.4566,
-   "usdPer": 0.15488027754545736,
+   "perUsd": 6.4349,
+   "usdPer": 0.15540257035851374,
    "countries": [
     {
      "name": "Denmark",
@@ -510,8 +510,8 @@
   {
    "code": "DOP",
    "name": "Dominican peso",
-   "perUsd": 58.7848,
-   "usdPer": 0.01701120017419469,
+   "perUsd": 58.6758,
+   "usdPer": 0.017042801291162625,
    "countries": [
     {
      "name": "Dominican Republic",
@@ -523,8 +523,8 @@
   {
    "code": "DZD",
    "name": "Algerian dinar",
-   "perUsd": 133.4243,
-   "usdPer": 0.007494886613607867,
+   "perUsd": 133.3007,
+   "usdPer": 0.007501836074379204,
    "countries": [
     {
      "name": "Algeria",
@@ -536,8 +536,8 @@
   {
    "code": "EGP",
    "name": "Egyptian pound",
-   "perUsd": 51.085,
-   "usdPer": 0.01957521777429774,
+   "perUsd": 50.9393,
+   "usdPer": 0.019631208124179168,
    "countries": [
     {
      "name": "Egypt",
@@ -562,8 +562,8 @@
   {
    "code": "ETB",
    "name": "bir",
-   "perUsd": 162.2879,
-   "usdPer": 0.00616188884075769,
+   "perUsd": 162.4022,
+   "usdPer": 0.006157552052866279,
    "countries": [
     {
      "name": "Ethiopia",
@@ -575,8 +575,8 @@
   {
    "code": "EUR",
    "name": "euro",
-   "perUsd": 0.8633,
-   "usdPer": 1.1583458820803894,
+   "perUsd": 0.8606,
+   "usdPer": 1.1619800139437602,
    "countries": [
     {
      "name": "Andorra",
@@ -616,8 +616,8 @@
   {
    "code": "FJD",
    "name": "Fijian dollar",
-   "perUsd": 2.2072,
-   "usdPer": 0.4530627038782168,
+   "perUsd": 2.2,
+   "usdPer": 0.45454545454545453,
    "countries": [
     {
      "name": "Fiji",
@@ -629,8 +629,8 @@
   {
    "code": "FKP",
    "name": "Falkland Islands pound",
-   "perUsd": 0.7416,
-   "usdPer": 1.348435814455232,
+   "perUsd": 0.7398,
+   "usdPer": 1.3517166801838334,
    "countries": [
     {
      "name": "Falkland Islands",
@@ -642,16 +642,16 @@
   {
    "code": "FOK",
    "name": "FOK",
-   "perUsd": 6.4545,
-   "usdPer": 0.15493066852583467,
+   "perUsd": 6.435,
+   "usdPer": 0.15540015540015542,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "GBP",
    "name": "pound sterling",
-   "perUsd": 0.7416,
-   "usdPer": 1.348435814455232,
+   "perUsd": 0.7398,
+   "usdPer": 1.3517166801838334,
    "countries": [
     {
      "name": "Bermuda",
@@ -691,8 +691,8 @@
   {
    "code": "GEL",
    "name": "Georgian lari",
-   "perUsd": 2.6178,
-   "usdPer": 0.3820001528000611,
+   "perUsd": 2.6151,
+   "usdPer": 0.38239455470154105,
    "countries": [
     {
      "name": "Georgia",
@@ -704,16 +704,16 @@
   {
    "code": "GGP",
    "name": "GGP",
-   "perUsd": 0.7416,
-   "usdPer": 1.348435814455232,
+   "perUsd": 0.7398,
+   "usdPer": 1.3517166801838334,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "GHS",
    "name": "Ghana cedi",
-   "perUsd": 11.3089,
-   "usdPer": 0.08842593001971899,
+   "perUsd": 11.3388,
+   "usdPer": 0.08819275408332451,
    "countries": [
     {
      "name": "Ghana",
@@ -725,8 +725,8 @@
   {
    "code": "GIP",
    "name": "Gibraltar pound",
-   "perUsd": 0.7416,
-   "usdPer": 1.348435814455232,
+   "perUsd": 0.7398,
+   "usdPer": 1.3517166801838334,
    "countries": [
     {
      "name": "Gibraltar",
@@ -738,8 +738,8 @@
   {
    "code": "GMD",
    "name": "dalasi",
-   "perUsd": 74.9923,
-   "usdPer": 0.013334702362775912,
+   "perUsd": 74.7219,
+   "usdPer": 0.013382957339146889,
    "countries": [
     {
      "name": "Gambia",
@@ -751,8 +751,8 @@
   {
    "code": "GNF",
    "name": "Guinean franc",
-   "perUsd": 8783.2742,
-   "usdPer": 0.0001138527589176255,
+   "perUsd": 8782.4224,
+   "usdPer": 0.00011386380140404088,
    "countries": [
     {
      "name": "Guinea",
@@ -764,8 +764,8 @@
   {
    "code": "GTQ",
    "name": "quetzal",
-   "perUsd": 7.6291,
-   "usdPer": 0.13107706020369375,
+   "perUsd": 7.627,
+   "usdPer": 0.1311131506490101,
    "countries": [
     {
      "name": "Guatemala",
@@ -777,8 +777,8 @@
   {
    "code": "GYD",
    "name": "Guyanese dollar",
-   "perUsd": 209.2271,
-   "usdPer": 0.004779495581595309,
+   "perUsd": 209.2516,
+   "usdPer": 0.004778935979462045,
    "countries": [
     {
      "name": "Guyana",
@@ -790,8 +790,8 @@
   {
    "code": "HKD",
    "name": "Hong Kong dollar",
-   "perUsd": 7.842,
-   "usdPer": 0.12751849018107625,
+   "perUsd": 7.8407,
+   "usdPer": 0.1275396329409364,
    "countries": [
     {
      "name": "Hong Kong",
@@ -807,8 +807,8 @@
   {
    "code": "HNL",
    "name": "Honduran lempira",
-   "perUsd": 26.8385,
-   "usdPer": 0.03725990647763474,
+   "perUsd": 26.8095,
+   "usdPer": 0.037300210746190714,
    "countries": [
     {
      "name": "Honduras",
@@ -820,16 +820,16 @@
   {
    "code": "HRK",
    "name": "HRK",
-   "perUsd": 6.5049,
-   "usdPer": 0.1537302648772464,
+   "perUsd": 6.4844,
+   "usdPer": 0.15421627290111653,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "HTG",
    "name": "gourde",
-   "perUsd": 130.7713,
-   "usdPer": 0.007646937821983876,
+   "perUsd": 130.7544,
+   "usdPer": 0.007647926188334771,
    "countries": [
     {
      "name": "Haiti",
@@ -841,8 +841,8 @@
   {
    "code": "HUF",
    "name": "forint",
-   "perUsd": 317.5533,
-   "usdPer": 0.0031490776509014396,
+   "perUsd": 313.5359,
+   "usdPer": 0.0031894274307981956,
    "countries": [
     {
      "name": "Hungary",
@@ -854,8 +854,8 @@
   {
    "code": "IDR",
    "name": "rupiah",
-   "perUsd": 17746.3628,
-   "usdPer": 5.634957491120378e-05,
+   "perUsd": 17656.5692,
+   "usdPer": 5.663614424029782e-05,
    "countries": [
     {
      "name": "Indonesia",
@@ -867,8 +867,8 @@
   {
    "code": "ILS",
    "name": "new shekel",
-   "perUsd": 3.0253,
-   "usdPer": 0.3305457310018841,
+   "perUsd": 3.0135,
+   "usdPer": 0.3318400530944085,
    "countries": [
     {
      "name": "Israel",
@@ -884,16 +884,16 @@
   {
    "code": "IMP",
    "name": "IMP",
-   "perUsd": 0.7416,
-   "usdPer": 1.348435814455232,
+   "perUsd": 0.7398,
+   "usdPer": 1.3517166801838334,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "INR",
    "name": "Indian rupee",
-   "perUsd": 94.8986,
-   "usdPer": 0.010537563251723418,
+   "perUsd": 94.5405,
+   "usdPer": 0.01057747737742026,
    "countries": [
     {
      "name": "India",
@@ -905,8 +905,8 @@
   {
    "code": "IQD",
    "name": "Iraqi dinar",
-   "perUsd": 1310.8688,
-   "usdPer": 0.0007628528499572193,
+   "perUsd": 1311.0793,
+   "usdPer": 0.0007627303703139848,
    "countries": [
     {
      "name": "Iraq",
@@ -918,8 +918,8 @@
   {
    "code": "IRR",
    "name": "Iranian rial",
-   "perUsd": 1362300.0909,
-   "usdPer": 7.340526560042674e-07,
+   "perUsd": 1453498.8388,
+   "usdPer": 6.879950456827292e-07,
    "countries": [
     {
      "name": "Iran",
@@ -931,8 +931,8 @@
   {
    "code": "ISK",
    "name": "Icelandic króna",
-   "perUsd": 121.4679,
-   "usdPer": 0.008232627714811896,
+   "perUsd": 121.0843,
+   "usdPer": 0.008258709015124174,
    "countries": [
     {
      "name": "Iceland",
@@ -944,16 +944,16 @@
   {
    "code": "JEP",
    "name": "JEP",
-   "perUsd": 0.7416,
-   "usdPer": 1.348435814455232,
+   "perUsd": 0.7398,
+   "usdPer": 1.3517166801838334,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "JMD",
    "name": "Jamaican dollar",
-   "perUsd": 158.3358,
-   "usdPer": 0.006315691081865251,
+   "perUsd": 158.3702,
+   "usdPer": 0.006314319234300392,
    "countries": [
     {
      "name": "Jamaica",
@@ -978,8 +978,8 @@
   {
    "code": "JPY",
    "name": "yen",
-   "perUsd": 159.0833,
-   "usdPer": 0.006286014936828692,
+   "perUsd": 156.0317,
+   "usdPer": 0.006408954077921345,
    "countries": [
     {
      "name": "Japan",
@@ -991,8 +991,8 @@
   {
    "code": "KES",
    "name": "Kenyan shilling",
-   "perUsd": 129.4653,
-   "usdPer": 0.007724077416883133,
+   "perUsd": 129.37,
+   "usdPer": 0.007729767334003246,
    "countries": [
     {
      "name": "Kenya",
@@ -1004,8 +1004,8 @@
   {
    "code": "KGS",
    "name": "Kyrgyz som",
-   "perUsd": 87.4761,
-   "usdPer": 0.011431693914109111,
+   "perUsd": 87.4883,
+   "usdPer": 0.011430099796201321,
    "countries": [
     {
      "name": "Kyrgyzstan",
@@ -1017,8 +1017,8 @@
   {
    "code": "KHR",
    "name": "riel",
-   "perUsd": 4048.7648,
-   "usdPer": 0.00024698890881485634,
+   "perUsd": 4045.1691,
+   "usdPer": 0.0002472084541533752,
    "countries": [
     {
      "name": "Cambodia",
@@ -1030,16 +1030,16 @@
   {
    "code": "KID",
    "name": "KID",
-   "perUsd": 1.3966,
-   "usdPer": 0.7160246312473149,
+   "perUsd": 1.3897,
+   "usdPer": 0.7195797654169965,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "KMF",
    "name": "Comorian franc",
-   "perUsd": 424.742,
-   "usdPer": 0.0023543704178065742,
+   "perUsd": 423.4042,
+   "usdPer": 0.002361809353804237,
    "countries": [
     {
      "name": "Comoros",
@@ -1051,16 +1051,16 @@
   {
    "code": "KRW",
    "name": "KRW",
-   "perUsd": 1361.068,
-   "usdPer": 0.000734717148592135,
+   "perUsd": 1356.7317,
+   "usdPer": 0.0007370654050465541,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "KWD",
    "name": "Kuwaiti dinar",
-   "perUsd": 0.3086,
-   "usdPer": 3.240440699935191,
+   "perUsd": 0.3085,
+   "usdPer": 3.2414910858995136,
    "countries": [
     {
      "name": "Kuwait",
@@ -1085,8 +1085,8 @@
   {
    "code": "KZT",
    "name": "Kazakhstani tenge",
-   "perUsd": 455.0369,
-   "usdPer": 0.002197623972912966,
+   "perUsd": 455.594,
+   "usdPer": 0.0021949367199743633,
    "countries": [
     {
      "name": "Kazakhstan",
@@ -1098,8 +1098,8 @@
   {
    "code": "LAK",
    "name": "Lao kip",
-   "perUsd": 22300.8014,
-   "usdPer": 4.484143785074917e-05,
+   "perUsd": 22251.692,
+   "usdPer": 4.4940402734317914e-05,
    "countries": [
     {
      "name": "Laos",
@@ -1124,8 +1124,8 @@
   {
    "code": "LKR",
    "name": "Sri Lankan rupee",
-   "perUsd": 328.0024,
-   "usdPer": 0.0030487581798181963,
+   "perUsd": 328.0864,
+   "usdPer": 0.0030479776058989338,
    "countries": [
     {
      "name": "Sri Lanka",
@@ -1137,8 +1137,8 @@
   {
    "code": "LRD",
    "name": "Liberian dollar",
-   "perUsd": 176.9672,
-   "usdPer": 0.005650764661473991,
+   "perUsd": 177.2783,
+   "usdPer": 0.005640848315896531,
    "countries": [
     {
      "name": "Liberia",
@@ -1150,8 +1150,8 @@
   {
    "code": "LSL",
    "name": "loti",
-   "perUsd": 16.0678,
-   "usdPer": 0.062236273789815666,
+   "perUsd": 16.0051,
+   "usdPer": 0.06248008447307421,
    "countries": [
     {
      "name": "Lesotho",
@@ -1163,8 +1163,8 @@
   {
    "code": "LYD",
    "name": "Libyan dinar",
-   "perUsd": 6.3501,
-   "usdPer": 0.15747783499472448,
+   "perUsd": 6.3527,
+   "usdPer": 0.15741338328584698,
    "countries": [
     {
      "name": "Libya",
@@ -1176,8 +1176,8 @@
   {
    "code": "MAD",
    "name": "Moroccan dirham",
-   "perUsd": 9.3393,
-   "usdPer": 0.1070744060047327,
+   "perUsd": 9.3473,
+   "usdPer": 0.10698276507654617,
    "countries": [
     {
      "name": "Morocco",
@@ -1193,8 +1193,8 @@
   {
    "code": "MDL",
    "name": "Moldovan leu",
-   "perUsd": 17.2832,
-   "usdPer": 0.05785965561932975,
+   "perUsd": 17.3005,
+   "usdPer": 0.057801797635906475,
    "countries": [
     {
      "name": "Moldova",
@@ -1206,8 +1206,8 @@
   {
    "code": "MGA",
    "name": "ariary",
-   "perUsd": 4312.3642,
-   "usdPer": 0.00023189136019633963,
+   "perUsd": 4319.7357,
+   "usdPer": 0.0002314956445136215,
    "countries": [
     {
      "name": "Madagascar",
@@ -1232,8 +1232,8 @@
   {
    "code": "MMK",
    "name": "kyat",
-   "perUsd": 2100.2971,
-   "usdPer": 0.00047612311610581193,
+   "perUsd": 2099.7305,
+   "usdPer": 0.00047625159514518646,
    "countries": [
     {
      "name": "Myanmar",
@@ -1245,8 +1245,8 @@
   {
    "code": "MNT",
    "name": "Mongolian tögrög",
-   "perUsd": 3585.7495,
-   "usdPer": 0.0002788817233328764,
+   "perUsd": 3579.3432,
+   "usdPer": 0.0002793808651821932,
    "countries": [
     {
      "name": "Mongolia",
@@ -1258,16 +1258,16 @@
   {
    "code": "MOP",
    "name": "MOP",
-   "perUsd": 8.0772,
-   "usdPer": 0.123805279057099,
+   "perUsd": 8.0759,
+   "usdPer": 0.12382520833591301,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "MRU",
    "name": "Mauritanian ouguiya",
-   "perUsd": 40.182,
-   "usdPer": 0.024886765218256928,
+   "perUsd": 40.2041,
+   "usdPer": 0.024873085083362147,
    "countries": [
     {
      "name": "Mauritania",
@@ -1279,8 +1279,8 @@
   {
    "code": "MUR",
    "name": "Mauritian rupee",
-   "perUsd": 47.1725,
-   "usdPer": 0.021198791668874874,
+   "perUsd": 47.0594,
+   "usdPer": 0.02124973969068879,
    "countries": [
     {
      "name": "Mauritius",
@@ -1292,8 +1292,8 @@
   {
    "code": "MVR",
    "name": "Maldivian rufiyaa",
-   "perUsd": 15.4494,
-   "usdPer": 0.06472743278056105,
+   "perUsd": 15.4384,
+   "usdPer": 0.0647735516633848,
    "countries": [
     {
      "name": "Maldives",
@@ -1305,8 +1305,8 @@
   {
    "code": "MWK",
    "name": "Malawian kwacha",
-   "perUsd": 1740.0095,
-   "usdPer": 0.0005747095058963759,
+   "perUsd": 1741.5814,
+   "usdPer": 0.0005741907900486305,
    "countries": [
     {
      "name": "Malawi",
@@ -1318,8 +1318,8 @@
   {
    "code": "MXN",
    "name": "peso",
-   "perUsd": 16.9912,
-   "usdPer": 0.058853995009181224,
+   "perUsd": 16.9479,
+   "usdPer": 0.059004360422235204,
    "countries": [
     {
      "name": "Mexico",
@@ -1331,8 +1331,8 @@
   {
    "code": "MYR",
    "name": "Malaysian ringgit",
-   "perUsd": 4.0448,
-   "usdPer": 0.24723101265822783,
+   "perUsd": 4.0423,
+   "usdPer": 0.24738391509784033,
    "countries": [
     {
      "name": "Malaysia",
@@ -1344,8 +1344,8 @@
   {
    "code": "MZN",
    "name": "Mozambican metical",
-   "perUsd": 63.749,
-   "usdPer": 0.01568652057287173,
+   "perUsd": 63.7875,
+   "usdPer": 0.01567705271408975,
    "countries": [
     {
      "name": "Mozambique",
@@ -1357,8 +1357,8 @@
   {
    "code": "NAD",
    "name": "Namibian dollar",
-   "perUsd": 16.0678,
-   "usdPer": 0.062236273789815666,
+   "perUsd": 16.0051,
+   "usdPer": 0.06248008447307421,
    "countries": [
     {
      "name": "Namibia",
@@ -1370,8 +1370,8 @@
   {
    "code": "NGN",
    "name": "naira",
-   "perUsd": 1329.1708,
-   "usdPer": 0.0007523487575863086,
+   "perUsd": 1324.7934,
+   "usdPer": 0.0007548346783732467,
    "countries": [
     {
      "name": "Nigeria",
@@ -1383,8 +1383,8 @@
   {
    "code": "NIO",
    "name": "Nicaraguan córdoba",
-   "perUsd": 36.7686,
-   "usdPer": 0.027197119281125743,
+   "perUsd": 36.7723,
+   "usdPer": 0.02719438272830364,
    "countries": [
     {
      "name": "Nicaragua",
@@ -1396,8 +1396,8 @@
   {
    "code": "NOK",
    "name": "Norwegian krone",
-   "perUsd": 9.3215,
-   "usdPer": 0.1072788714262726,
+   "perUsd": 9.2935,
+   "usdPer": 0.10760208748049713,
    "countries": [
     {
      "name": "Norway",
@@ -1409,8 +1409,8 @@
   {
    "code": "NPR",
    "name": "Nepalese rupee",
-   "perUsd": 151.8411,
-   "usdPer": 0.006585832162701666,
+   "perUsd": 151.2567,
+   "usdPer": 0.006611277384737337,
    "countries": [
     {
      "name": "Nepal",
@@ -1422,8 +1422,8 @@
   {
    "code": "NZD",
    "name": "New Zealand dollar",
-   "perUsd": 1.7107,
-   "usdPer": 0.5845560296954463,
+   "perUsd": 1.7006,
+   "usdPer": 0.5880277549100318,
    "countries": [
     {
      "name": "Cook Islands",
@@ -1468,8 +1468,8 @@
   {
    "code": "PEN",
    "name": "Nuevo sol",
-   "perUsd": 3.3629,
-   "usdPer": 0.2973623955514586,
+   "perUsd": 3.3601,
+   "usdPer": 0.2976101901729115,
    "countries": [
     {
      "name": "Peru",
@@ -1481,8 +1481,8 @@
   {
    "code": "PGK",
    "name": "kina",
-   "perUsd": 4.4586,
-   "usdPer": 0.22428565020409996,
+   "perUsd": 4.4583,
+   "usdPer": 0.22430074243545745,
    "countries": [
     {
      "name": "Papua New Guinea",
@@ -1494,8 +1494,8 @@
   {
    "code": "PHP",
    "name": "Philippine peso",
-   "perUsd": 62.5822,
-   "usdPer": 0.015978984439664952,
+   "perUsd": 62.5414,
+   "usdPer": 0.015989408615732937,
    "countries": [
     {
      "name": "Philippines",
@@ -1507,8 +1507,8 @@
   {
    "code": "PKR",
    "name": "Pakistani rupee",
-   "perUsd": 277.6947,
-   "usdPer": 0.0036010770101121844,
+   "perUsd": 277.3635,
+   "usdPer": 0.0036053770593463094,
    "countries": [
     {
      "name": "Pakistan",
@@ -1520,16 +1520,16 @@
   {
    "code": "PLN",
    "name": "PLN",
-   "perUsd": 3.7373,
-   "usdPer": 0.26757284670751613,
+   "perUsd": 3.7203,
+   "usdPer": 0.26879552724242667,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "PYG",
    "name": "Paraguayan guaraní",
-   "perUsd": 5906.513,
-   "usdPer": 0.00016930463032926535,
+   "perUsd": 5902.9722,
+   "usdPer": 0.00016940618490461466,
    "countries": [
     {
      "name": "Paraguay",
@@ -1554,8 +1554,8 @@
   {
    "code": "RON",
    "name": "Romanian Leu",
-   "perUsd": 4.5368,
-   "usdPer": 0.22041967906894724,
+   "perUsd": 4.5237,
+   "usdPer": 0.22105798350907443,
    "countries": [
     {
      "name": "Romania",
@@ -1567,8 +1567,8 @@
   {
    "code": "RSD",
    "name": "Serbian dinar",
-   "perUsd": 101.3751,
-   "usdPer": 0.009864355250944265,
+   "perUsd": 101.0368,
+   "usdPer": 0.009897383923481346,
    "countries": [
     {
      "name": "Serbia",
@@ -1580,8 +1580,8 @@
   {
    "code": "RUB",
    "name": "Russian ruble",
-   "perUsd": 86.9508,
-   "usdPer": 0.011500756749794136,
+   "perUsd": 86.6779,
+   "usdPer": 0.0115369661701541,
    "countries": [
     {
      "name": "Russia",
@@ -1593,8 +1593,8 @@
   {
    "code": "RWF",
    "name": "Rwandan franc",
-   "perUsd": 1476.6859,
-   "usdPer": 0.0006771920826223099,
+   "perUsd": 1475.4475,
+   "usdPer": 0.0006777604760589584,
    "countries": [
     {
      "name": "Rwanda",
@@ -1619,8 +1619,8 @@
   {
    "code": "SBD",
    "name": "Solomon Islands dollar",
-   "perUsd": 7.9015,
-   "usdPer": 0.12655824843384167,
+   "perUsd": 7.9644,
+   "usdPer": 0.1255587363768771,
    "countries": [
     {
      "name": "Solomon Islands",
@@ -1632,8 +1632,8 @@
   {
    "code": "SCR",
    "name": "Seychellois rupee",
-   "perUsd": 14.177,
-   "usdPer": 0.07053678493334274,
+   "perUsd": 13.8743,
+   "usdPer": 0.07207570832402356,
    "countries": [
     {
      "name": "Seychelles",
@@ -1645,8 +1645,8 @@
   {
    "code": "SDG",
    "name": "Sudanese pound",
-   "perUsd": 543.863,
-   "usdPer": 0.0018386983486650128,
+   "perUsd": 511.319,
+   "usdPer": 0.0019557262687285235,
    "countries": [
     {
      "name": "Sudan",
@@ -1658,8 +1658,8 @@
   {
    "code": "SEK",
    "name": "Swedish krona",
-   "perUsd": 9.6324,
-   "usdPer": 0.10381628669905735,
+   "perUsd": 9.5601,
+   "usdPer": 0.10460141630317674,
    "countries": [
     {
      "name": "Sweden",
@@ -1671,8 +1671,8 @@
   {
    "code": "SGD",
    "name": "Singapore dollar",
-   "perUsd": 1.2717,
-   "usdPer": 0.7863489816780687,
+   "perUsd": 1.2674,
+   "usdPer": 0.7890168849613381,
    "countries": [
     {
      "name": "Singapore",
@@ -1684,8 +1684,8 @@
   {
    "code": "SHP",
    "name": "SHP",
-   "perUsd": 0.7416,
-   "usdPer": 1.348435814455232,
+   "perUsd": 0.7398,
+   "usdPer": 1.3517166801838334,
    "countries": [],
    "countryCount": 0
   },
@@ -1713,8 +1713,8 @@
   {
    "code": "SOS",
    "name": "Somali shilling",
-   "perUsd": 571.6657,
-   "usdPer": 0.0017492740949824346,
+   "perUsd": 571.607,
+   "usdPer": 0.0017494537330718484,
    "countries": [
     {
      "name": "Somalia",
@@ -1726,8 +1726,8 @@
   {
    "code": "SRD",
    "name": "Surinamese dollar",
-   "perUsd": 38.1699,
-   "usdPer": 0.026198653913161944,
+   "perUsd": 37.9558,
+   "usdPer": 0.026346434537014102,
    "countries": [
     {
      "name": "Suriname",
@@ -1739,8 +1739,8 @@
   {
    "code": "SSP",
    "name": "South Sudanese pound",
-   "perUsd": 5739.0153,
-   "usdPer": 0.00017424591985318457,
+   "perUsd": 5781.7462,
+   "usdPer": 0.00017295812811707301,
    "countries": [
     {
      "name": "South Sudan",
@@ -1752,8 +1752,8 @@
   {
    "code": "STN",
    "name": "São Tomé and Príncipe dobra",
-   "perUsd": 21.1522,
-   "usdPer": 0.04727640623670351,
+   "perUsd": 21.0855,
+   "usdPer": 0.047425956225842406,
    "countries": [
     {
      "name": "São Tomé and Príncipe",
@@ -1765,8 +1765,8 @@
   {
    "code": "SYP",
    "name": "Syrian pound",
-   "perUsd": 121.7841,
-   "usdPer": 0.008211252536250628,
+   "perUsd": 121.7248,
+   "usdPer": 0.008215252766897132,
    "countries": [
     {
      "name": "Syria",
@@ -1778,8 +1778,8 @@
   {
    "code": "SZL",
    "name": "lilangeni",
-   "perUsd": 16.0678,
-   "usdPer": 0.062236273789815666,
+   "perUsd": 16.0051,
+   "usdPer": 0.06248008447307421,
    "countries": [
     {
      "name": "Eswatini",
@@ -1791,8 +1791,8 @@
   {
    "code": "THB",
    "name": "baht",
-   "perUsd": 33.2074,
-   "usdPer": 0.030113769822388985,
+   "perUsd": 32.944,
+   "usdPer": 0.030354541039339482,
    "countries": [
     {
      "name": "Thailand",
@@ -1804,8 +1804,8 @@
   {
    "code": "TJS",
    "name": "Tajikistani somoni",
-   "perUsd": 9.2382,
-   "usdPer": 0.1082461951462406,
+   "perUsd": 9.2377,
+   "usdPer": 0.10825205408272622,
    "countries": [
     {
      "name": "Tajikistan",
@@ -1817,8 +1817,8 @@
   {
    "code": "TMT",
    "name": "Turkmenistan new manat",
-   "perUsd": 3.5014,
-   "usdPer": 0.28560004569600733,
+   "perUsd": 3.5009,
+   "usdPer": 0.2856408352138022,
    "countries": [
     {
      "name": "Turkmenistan",
@@ -1830,8 +1830,8 @@
   {
    "code": "TND",
    "name": "Tunisian dinar",
-   "perUsd": 2.918,
-   "usdPer": 0.3427004797806717,
+   "perUsd": 2.9092,
+   "usdPer": 0.34373710985838035,
    "countries": [
     {
      "name": "Tunisia",
@@ -1843,8 +1843,8 @@
   {
    "code": "TOP",
    "name": "Tongan paʻanga",
-   "perUsd": 2.3644,
-   "usdPer": 0.4229402808323465,
+   "perUsd": 2.3659,
+   "usdPer": 0.4226721332262564,
    "countries": [
     {
      "name": "Tonga",
@@ -1856,8 +1856,8 @@
   {
    "code": "TRY",
    "name": "Turkish lira",
-   "perUsd": 48.3333,
-   "usdPer": 0.02068966944115134,
+   "perUsd": 48.3953,
+   "usdPer": 0.02066316357166915,
    "countries": [
     {
      "name": "Northern Cyprus",
@@ -1873,8 +1873,8 @@
   {
    "code": "TTD",
    "name": "Trinidad and Tobago dollar",
-   "perUsd": 6.7515,
-   "usdPer": 0.1481152336517811,
+   "perUsd": 6.7583,
+   "usdPer": 0.1479662045188879,
    "countries": [
     {
      "name": "Trinidad & Tobago",
@@ -1886,16 +1886,16 @@
   {
    "code": "TVD",
    "name": "TVD",
-   "perUsd": 1.3966,
-   "usdPer": 0.7160246312473149,
+   "perUsd": 1.3897,
+   "usdPer": 0.7195797654169965,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "TWD",
    "name": "New Taiwan dollar",
-   "perUsd": 31.7588,
-   "usdPer": 0.03148733579354383,
+   "perUsd": 31.6938,
+   "usdPer": 0.031551912361408224,
    "countries": [
     {
      "name": "Taiwan",
@@ -1907,8 +1907,8 @@
   {
    "code": "TZS",
    "name": "Tanzanian shilling",
-   "perUsd": 2644.1097,
-   "usdPer": 0.0003781991344761528,
+   "perUsd": 2643.0144,
+   "usdPer": 0.00037835586518181663,
    "countries": [
     {
      "name": "Tanzania",
@@ -1920,8 +1920,8 @@
   {
    "code": "UAH",
    "name": "hryvnia",
-   "perUsd": 44.6096,
-   "usdPer": 0.022416699544492664,
+   "perUsd": 44.7424,
+   "usdPer": 0.0223501644972107,
    "countries": [
     {
      "name": "Ukraine",
@@ -1933,8 +1933,8 @@
   {
    "code": "UGX",
    "name": "Ugandan shilling",
-   "perUsd": 3742.3134,
-   "usdPer": 0.0002672143920388923,
+   "perUsd": 3757.8105,
+   "usdPer": 0.00026611240774381787,
    "countries": [
     {
      "name": "Uganda",
@@ -1946,8 +1946,8 @@
   {
    "code": "UYU",
    "name": "Uruguayan peso",
-   "perUsd": 40.2884,
-   "usdPer": 0.02482104029944103,
+   "perUsd": 40.2102,
+   "usdPer": 0.02486931176666617,
    "countries": [
     {
      "name": "Uruguay",
@@ -1959,8 +1959,8 @@
   {
    "code": "UZS",
    "name": "Uzbek som",
-   "perUsd": 11819.6633,
-   "usdPer": 8.460477888570649e-05,
+   "perUsd": 11809.6469,
+   "usdPer": 8.467653677266168e-05,
    "countries": [
     {
      "name": "Uzbekistan",
@@ -1972,8 +1972,8 @@
   {
    "code": "VES",
    "name": "sovereign bolivar",
-   "perUsd": 804.8109,
-   "usdPer": 0.001242527903138489,
+   "perUsd": 807.3862,
+   "usdPer": 0.0012385646422988156,
    "countries": [
     {
      "name": "Venezuela",
@@ -1985,8 +1985,8 @@
   {
    "code": "VND",
    "name": "Vietnamese đồng",
-   "perUsd": 26038.7718,
-   "usdPer": 3.8404269129160696e-05,
+   "perUsd": 26003.6591,
+   "usdPer": 3.8456126353386933e-05,
    "countries": [
     {
      "name": "Vietnam",
@@ -1998,8 +1998,8 @@
   {
    "code": "VUV",
    "name": "Vanuatu vatus",
-   "perUsd": 118.2712,
-   "usdPer": 0.008455143771264688,
+   "perUsd": 118.0875,
+   "usdPer": 0.008468296813803323,
    "countries": [
     {
      "name": "Vanuatu",
@@ -2011,8 +2011,8 @@
   {
    "code": "WST",
    "name": "Samoan tālā",
-   "perUsd": 2.6812,
-   "usdPer": 0.3729673280620618,
+   "perUsd": 2.687,
+   "usdPer": 0.3721622627465575,
    "countries": [
     {
      "name": "Samoa",
@@ -2024,8 +2024,8 @@
   {
    "code": "XAF",
    "name": "Central African CFA franc",
-   "perUsd": 566.3226,
-   "usdPer": 0.0017657780212197078,
+   "perUsd": 564.539,
+   "usdPer": 0.0017713568061728242,
    "countries": [
     {
      "name": "Cameroon",
@@ -2115,16 +2115,16 @@
   {
    "code": "XDR",
    "name": "XDR",
-   "perUsd": 0.7314,
-   "usdPer": 1.3672409078479628,
+   "perUsd": 0.7302,
+   "usdPer": 1.3694878115584772,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "XOF",
    "name": "West African CFA franc",
-   "perUsd": 566.3226,
-   "usdPer": 0.0017657780212197078,
+   "perUsd": 564.539,
+   "usdPer": 0.0017713568061728242,
    "countries": [
     {
      "name": "Benin",
@@ -2156,8 +2156,8 @@
   {
    "code": "XPF",
    "name": "CFP Franc",
-   "perUsd": 103.0257,
-   "usdPer": 0.009706315996882332,
+   "perUsd": 102.7012,
+   "usdPer": 0.009736984572721643,
    "countries": [
     {
      "name": "New Caledonia",
@@ -2177,8 +2177,8 @@
   {
    "code": "YER",
    "name": "Yemeni Rial",
-   "perUsd": 236.956,
-   "usdPer": 0.0042201927784061176,
+   "perUsd": 236.8881,
+   "usdPer": 0.004221402425871118,
    "countries": [
     {
      "name": "Yemen",
@@ -2190,8 +2190,8 @@
   {
    "code": "ZAR",
    "name": "rand",
-   "perUsd": 16.0667,
-   "usdPer": 0.062240534770674746,
+   "perUsd": 16.0041,
+   "usdPer": 0.06248398847795252,
    "countries": [
     {
      "name": "South Africa",
@@ -2203,8 +2203,8 @@
   {
    "code": "ZMW",
    "name": "Zambian Kwacha",
-   "perUsd": 19.082,
-   "usdPer": 0.052405408238130176,
+   "perUsd": 19.1019,
+   "usdPer": 0.052350813269884146,
    "countries": [
     {
      "name": "Zambia",
@@ -2216,16 +2216,16 @@
   {
    "code": "ZWG",
    "name": "ZWG",
-   "perUsd": 26.7164,
-   "usdPer": 0.03743019269063197,
+   "perUsd": 26.6539,
+   "usdPer": 0.03751796172417545,
    "countries": [],
    "countryCount": 0
   },
   {
    "code": "ZWL",
    "name": "ZWL",
-   "perUsd": 26.7164,
-   "usdPer": 0.03743019269063197,
+   "perUsd": 26.6539,
+   "usdPer": 0.03751796172417545,
    "countries": [],
    "countryCount": 0
   }
