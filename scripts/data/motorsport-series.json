@@ -17,9 +17,311 @@
       "https://en.wikipedia.org/wiki/List_of_IndyCar_champions",
       "https://en.wikipedia.org/wiki/Formula_E",
       "https://en.wikipedia.org/wiki/Speedway_World_Championship"
-    ]
+    ],
+    "podiums": "Added 2026-09-04. Every other title pillar on this board counts champion, runner-up and third; motorsport counted winners only, which understated it twice over. It lost the second and third of every season, and it lost every nation that has been on a championship podium without ever winning one. Scored 1.0 / 0.5 / 0.25, the same ratio as the world tier in TIER (4.0 / 2.0 / 1.0).",
+    "gaps": "Speedway 1990 second place is omitted. Shawn Moran finished second on points and was disqualified for a failed drug test, and sources disagree on whether the FIM vacated the position or retained him as a disqualified second. An omitted position is honest; a guessed one is not."
   },
   "series": [
+    {
+      "key": "formula-1",
+      "label": "Formula 1",
+      "weight": 1.0,
+      "championsFrom": "public/data/f1/data.json",
+      "why": "The apex of the sport and the 1.00 anchor for every other weight. Champions are read live from the site's own F1 pipeline, so only the rest of the podium is kept here. The 1997 order is the final one after Schumacher's exclusion.",
+      "champions": [],
+      "runners_up": [
+        {
+          "year": 1990,
+          "nat": "French"
+        },
+        {
+          "year": 1991,
+          "nat": "British"
+        },
+        {
+          "year": 1992,
+          "nat": "Italian"
+        },
+        {
+          "year": 1993,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 1994,
+          "nat": "British"
+        },
+        {
+          "year": 1995,
+          "nat": "British"
+        },
+        {
+          "year": 1996,
+          "nat": "Canadian"
+        },
+        {
+          "year": 1997,
+          "nat": "German"
+        },
+        {
+          "year": 1998,
+          "nat": "German"
+        },
+        {
+          "year": 1999,
+          "nat": "British"
+        },
+        {
+          "year": 2000,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2001,
+          "nat": "British"
+        },
+        {
+          "year": 2002,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2003,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2004,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2005,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2006,
+          "nat": "German"
+        },
+        {
+          "year": 2007,
+          "nat": "British"
+        },
+        {
+          "year": 2008,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2009,
+          "nat": "German"
+        },
+        {
+          "year": 2010,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2011,
+          "nat": "British"
+        },
+        {
+          "year": 2012,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2013,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2014,
+          "nat": "German"
+        },
+        {
+          "year": 2015,
+          "nat": "German"
+        },
+        {
+          "year": 2016,
+          "nat": "British"
+        },
+        {
+          "year": 2017,
+          "nat": "German"
+        },
+        {
+          "year": 2018,
+          "nat": "German"
+        },
+        {
+          "year": 2019,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2020,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2021,
+          "nat": "British"
+        },
+        {
+          "year": 2022,
+          "nat": "Monegasque"
+        },
+        {
+          "year": 2023,
+          "nat": "Mexican"
+        },
+        {
+          "year": 2024,
+          "nat": "British"
+        },
+        {
+          "year": 2025,
+          "nat": "Dutch"
+        }
+      ],
+      "thirds": [
+        {
+          "year": 1990,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 1991,
+          "nat": "Italian"
+        },
+        {
+          "year": 1992,
+          "nat": "German"
+        },
+        {
+          "year": 1993,
+          "nat": "British"
+        },
+        {
+          "year": 1994,
+          "nat": "Austrian"
+        },
+        {
+          "year": 1995,
+          "nat": "British"
+        },
+        {
+          "year": 1996,
+          "nat": "German"
+        },
+        {
+          "year": 1997,
+          "nat": "British"
+        },
+        {
+          "year": 1998,
+          "nat": "British"
+        },
+        {
+          "year": 1999,
+          "nat": "German"
+        },
+        {
+          "year": 2000,
+          "nat": "British"
+        },
+        {
+          "year": 2001,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2002,
+          "nat": "Colombian"
+        },
+        {
+          "year": 2003,
+          "nat": "Colombian"
+        },
+        {
+          "year": 2004,
+          "nat": "British"
+        },
+        {
+          "year": 2005,
+          "nat": "German"
+        },
+        {
+          "year": 2006,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2007,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2008,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2009,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2010,
+          "nat": "Australian"
+        },
+        {
+          "year": 2011,
+          "nat": "Australian"
+        },
+        {
+          "year": 2012,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2013,
+          "nat": "Australian"
+        },
+        {
+          "year": 2014,
+          "nat": "Australian"
+        },
+        {
+          "year": 2015,
+          "nat": "German"
+        },
+        {
+          "year": 2016,
+          "nat": "Australian"
+        },
+        {
+          "year": 2017,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2018,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2019,
+          "nat": "Dutch"
+        },
+        {
+          "year": 2020,
+          "nat": "Dutch"
+        },
+        {
+          "year": 2021,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2022,
+          "nat": "Mexican"
+        },
+        {
+          "year": 2023,
+          "nat": "British"
+        },
+        {
+          "year": 2024,
+          "nat": "Monegasque"
+        },
+        {
+          "year": 2025,
+          "nat": "Australian"
+        }
+      ]
+    },
     {
       "key": "motogp",
       "label": "MotoGP",
@@ -169,6 +471,298 @@
         {
           "year": 2025,
           "nat": "Spanish"
+        }
+      ],
+      "runners_up": [
+        {
+          "year": 1990,
+          "nat": "American"
+        },
+        {
+          "year": 1991,
+          "nat": "Australian"
+        },
+        {
+          "year": 1992,
+          "nat": "Australian"
+        },
+        {
+          "year": 1993,
+          "nat": "American"
+        },
+        {
+          "year": 1994,
+          "nat": "Italian"
+        },
+        {
+          "year": 1995,
+          "nat": "Australian"
+        },
+        {
+          "year": 1996,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1997,
+          "nat": "Japanese"
+        },
+        {
+          "year": 1998,
+          "nat": "Italian"
+        },
+        {
+          "year": 1999,
+          "nat": "American"
+        },
+        {
+          "year": 2000,
+          "nat": "Italian"
+        },
+        {
+          "year": 2001,
+          "nat": "Italian"
+        },
+        {
+          "year": 2002,
+          "nat": "Italian"
+        },
+        {
+          "year": 2003,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2004,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2005,
+          "nat": "Italian"
+        },
+        {
+          "year": 2006,
+          "nat": "Italian"
+        },
+        {
+          "year": 2007,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2008,
+          "nat": "Australian"
+        },
+        {
+          "year": 2009,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2010,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2011,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2012,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2013,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2014,
+          "nat": "Italian"
+        },
+        {
+          "year": 2015,
+          "nat": "Italian"
+        },
+        {
+          "year": 2016,
+          "nat": "Italian"
+        },
+        {
+          "year": 2017,
+          "nat": "Italian"
+        },
+        {
+          "year": 2018,
+          "nat": "Italian"
+        },
+        {
+          "year": 2019,
+          "nat": "Italian"
+        },
+        {
+          "year": 2020,
+          "nat": "Italian"
+        },
+        {
+          "year": 2021,
+          "nat": "Italian"
+        },
+        {
+          "year": 2022,
+          "nat": "French"
+        },
+        {
+          "year": 2023,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2024,
+          "nat": "Italian"
+        },
+        {
+          "year": 2025,
+          "nat": "Spanish"
+        }
+      ],
+      "thirds": [
+        {
+          "year": 1990,
+          "nat": "Australian"
+        },
+        {
+          "year": 1991,
+          "nat": "American"
+        },
+        {
+          "year": 1992,
+          "nat": "American"
+        },
+        {
+          "year": 1993,
+          "nat": "Australian"
+        },
+        {
+          "year": 1994,
+          "nat": "American"
+        },
+        {
+          "year": 1995,
+          "nat": "Italian"
+        },
+        {
+          "year": 1996,
+          "nat": "Italian"
+        },
+        {
+          "year": 1997,
+          "nat": "Japanese"
+        },
+        {
+          "year": 1998,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1999,
+          "nat": "Japanese"
+        },
+        {
+          "year": 2000,
+          "nat": "Italian"
+        },
+        {
+          "year": 2001,
+          "nat": "Italian"
+        },
+        {
+          "year": 2002,
+          "nat": "Japanese"
+        },
+        {
+          "year": 2003,
+          "nat": "Italian"
+        },
+        {
+          "year": 2004,
+          "nat": "Italian"
+        },
+        {
+          "year": 2005,
+          "nat": "American"
+        },
+        {
+          "year": 2006,
+          "nat": "Italian"
+        },
+        {
+          "year": 2007,
+          "nat": "Italian"
+        },
+        {
+          "year": 2008,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2009,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2010,
+          "nat": "Italian"
+        },
+        {
+          "year": 2011,
+          "nat": "Italian"
+        },
+        {
+          "year": 2012,
+          "nat": "Australian"
+        },
+        {
+          "year": 2013,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2014,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2015,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2016,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2017,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2018,
+          "nat": "Italian"
+        },
+        {
+          "year": 2019,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2020,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2021,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2022,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2023,
+          "nat": "Italian"
+        },
+        {
+          "year": 2024,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2025,
+          "nat": "Italian"
         }
       ]
     },
@@ -321,6 +915,298 @@
         {
           "year": 2025,
           "nat": "French"
+        }
+      ],
+      "runners_up": [
+        {
+          "year": 1990,
+          "nat": "French"
+        },
+        {
+          "year": 1991,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1992,
+          "nat": "Finnish"
+        },
+        {
+          "year": 1993,
+          "nat": "French"
+        },
+        {
+          "year": 1994,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1995,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1996,
+          "nat": "British"
+        },
+        {
+          "year": 1997,
+          "nat": "British"
+        },
+        {
+          "year": 1998,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1999,
+          "nat": "British"
+        },
+        {
+          "year": 2000,
+          "nat": "British"
+        },
+        {
+          "year": 2001,
+          "nat": "British"
+        },
+        {
+          "year": 2002,
+          "nat": "Norwegian"
+        },
+        {
+          "year": 2003,
+          "nat": "French"
+        },
+        {
+          "year": 2004,
+          "nat": "Norwegian"
+        },
+        {
+          "year": 2005,
+          "nat": "Norwegian"
+        },
+        {
+          "year": 2006,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2007,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2008,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2009,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2010,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2011,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2012,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2013,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2014,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2015,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2016,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2017,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2018,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2019,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2020,
+          "nat": "British"
+        },
+        {
+          "year": 2021,
+          "nat": "British"
+        },
+        {
+          "year": 2022,
+          "nat": "Estonian"
+        },
+        {
+          "year": 2023,
+          "nat": "British"
+        },
+        {
+          "year": 2024,
+          "nat": "British"
+        },
+        {
+          "year": 2025,
+          "nat": "British"
+        }
+      ],
+      "thirds": [
+        {
+          "year": 1990,
+          "nat": "Finnish"
+        },
+        {
+          "year": 1991,
+          "nat": "French"
+        },
+        {
+          "year": 1992,
+          "nat": "French"
+        },
+        {
+          "year": 1993,
+          "nat": "French"
+        },
+        {
+          "year": 1994,
+          "nat": "Finnish"
+        },
+        {
+          "year": 1995,
+          "nat": "Swedish"
+        },
+        {
+          "year": 1996,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1997,
+          "nat": "Spanish"
+        },
+        {
+          "year": 1998,
+          "nat": "British"
+        },
+        {
+          "year": 1999,
+          "nat": "French"
+        },
+        {
+          "year": 2000,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2001,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2002,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2003,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2004,
+          "nat": "Estonian"
+        },
+        {
+          "year": 2005,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2006,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2007,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2008,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2009,
+          "nat": "Spanish"
+        },
+        {
+          "year": 2010,
+          "nat": "Norwegian"
+        },
+        {
+          "year": 2011,
+          "nat": "French"
+        },
+        {
+          "year": 2012,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2013,
+          "nat": "Finnish"
+        },
+        {
+          "year": 2014,
+          "nat": "Norwegian"
+        },
+        {
+          "year": 2015,
+          "nat": "Norwegian"
+        },
+        {
+          "year": 2016,
+          "nat": "Norwegian"
+        },
+        {
+          "year": 2017,
+          "nat": "Estonian"
+        },
+        {
+          "year": 2018,
+          "nat": "Estonian"
+        },
+        {
+          "year": 2019,
+          "nat": "French"
+        },
+        {
+          "year": 2020,
+          "nat": "Estonian"
+        },
+        {
+          "year": 2021,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2022,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2023,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2024,
+          "nat": "Estonian"
+        },
+        {
+          "year": 2025,
+          "nat": "Finnish"
         }
       ]
     },
@@ -564,6 +1450,432 @@
           "year": 2025,
           "nat": "Spanish"
         }
+      ],
+      "runners_up": [
+        {
+          "year": 1990,
+          "nat": "American"
+        },
+        {
+          "year": 1991,
+          "nat": "American"
+        },
+        {
+          "year": 1992,
+          "nat": "American"
+        },
+        {
+          "year": 1993,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 1994,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 1995,
+          "nat": "American"
+        },
+        {
+          "year": 1996,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 1996,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 1997,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 1998,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 1998,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 1999,
+          "nat": "British",
+          "credit": 0.5
+        },
+        {
+          "year": 1999,
+          "nat": "Swedish",
+          "credit": 0.5
+        },
+        {
+          "year": 2000,
+          "nat": "Mexican",
+          "credit": 0.5
+        },
+        {
+          "year": 2000,
+          "nat": "Canadian",
+          "credit": 0.5
+        },
+        {
+          "year": 2001,
+          "nat": "Swedish",
+          "credit": 0.5
+        },
+        {
+          "year": 2001,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 2002,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2002,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2003,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2003,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2004,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2004,
+          "nat": "British",
+          "credit": 0.5
+        },
+        {
+          "year": 2005,
+          "nat": "Spanish",
+          "credit": 0.5
+        },
+        {
+          "year": 2005,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2006,
+          "nat": "British",
+          "credit": 0.5
+        },
+        {
+          "year": 2006,
+          "nat": "British",
+          "credit": 0.5
+        },
+        {
+          "year": 2007,
+          "nat": "British",
+          "credit": 0.5
+        },
+        {
+          "year": 2007,
+          "nat": "New Zealander",
+          "credit": 0.5
+        },
+        {
+          "year": 2008,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2009,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2010,
+          "nat": "Australian"
+        },
+        {
+          "year": 2011,
+          "nat": "Australian"
+        },
+        {
+          "year": 2012,
+          "nat": "Australian"
+        },
+        {
+          "year": 2013,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2014,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2015,
+          "nat": "Colombian"
+        },
+        {
+          "year": 2016,
+          "nat": "Australian"
+        },
+        {
+          "year": 2017,
+          "nat": "French"
+        },
+        {
+          "year": 2018,
+          "nat": "American"
+        },
+        {
+          "year": 2019,
+          "nat": "French"
+        },
+        {
+          "year": 2020,
+          "nat": "American"
+        },
+        {
+          "year": 2021,
+          "nat": "American"
+        },
+        {
+          "year": 2022,
+          "nat": "American"
+        },
+        {
+          "year": 2023,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2024,
+          "nat": "American"
+        },
+        {
+          "year": 2025,
+          "nat": "Mexican"
+        }
+      ],
+      "thirds": [
+        {
+          "year": 1990,
+          "nat": "American"
+        },
+        {
+          "year": 1991,
+          "nat": "American"
+        },
+        {
+          "year": 1992,
+          "nat": "American"
+        },
+        {
+          "year": 1993,
+          "nat": "Canadian"
+        },
+        {
+          "year": 1994,
+          "nat": "Canadian"
+        },
+        {
+          "year": 1995,
+          "nat": "American"
+        },
+        {
+          "year": 1996,
+          "nat": "Italian",
+          "credit": 0.5
+        },
+        {
+          "year": 1996,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 1997,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 1998,
+          "nat": "British",
+          "credit": 0.5
+        },
+        {
+          "year": 1998,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 1999,
+          "nat": "Canadian",
+          "credit": 0.5
+        },
+        {
+          "year": 1999,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 2000,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2000,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 2001,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 2001,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 2002,
+          "nat": "Canadian",
+          "credit": 0.5
+        },
+        {
+          "year": 2002,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2003,
+          "nat": "Mexican",
+          "credit": 0.5
+        },
+        {
+          "year": 2003,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2004,
+          "nat": "Canadian",
+          "credit": 0.5
+        },
+        {
+          "year": 2004,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 2005,
+          "nat": "British",
+          "credit": 0.5
+        },
+        {
+          "year": 2005,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 2006,
+          "nat": "American",
+          "credit": 0.5
+        },
+        {
+          "year": 2006,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2007,
+          "nat": "Dutch",
+          "credit": 0.5
+        },
+        {
+          "year": 2007,
+          "nat": "Brazilian",
+          "credit": 0.5
+        },
+        {
+          "year": 2008,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2009,
+          "nat": "Australian"
+        },
+        {
+          "year": 2010,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2011,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2012,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2013,
+          "nat": "French"
+        },
+        {
+          "year": 2014,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2015,
+          "nat": "Australian"
+        },
+        {
+          "year": 2016,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2017,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2018,
+          "nat": "Australian"
+        },
+        {
+          "year": 2019,
+          "nat": "American"
+        },
+        {
+          "year": 2020,
+          "nat": "American"
+        },
+        {
+          "year": 2021,
+          "nat": "Mexican"
+        },
+        {
+          "year": 2022,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2023,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2024,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2025,
+          "nat": "New Zealander"
+        }
       ]
     },
     {
@@ -716,6 +2028,294 @@
           "year": 2025,
           "nat": "Polish"
         }
+      ],
+      "runners_up": [
+        {
+          "year": 1991,
+          "nat": "Swedish"
+        },
+        {
+          "year": 1992,
+          "nat": "Swedish"
+        },
+        {
+          "year": 1993,
+          "nat": "Danish"
+        },
+        {
+          "year": 1994,
+          "nat": "Danish"
+        },
+        {
+          "year": 1995,
+          "nat": "Swedish"
+        },
+        {
+          "year": 1996,
+          "nat": "Danish"
+        },
+        {
+          "year": 1997,
+          "nat": "American"
+        },
+        {
+          "year": 1998,
+          "nat": "Swedish"
+        },
+        {
+          "year": 1999,
+          "nat": "Polish"
+        },
+        {
+          "year": 2000,
+          "nat": "American"
+        },
+        {
+          "year": 2001,
+          "nat": "Australian"
+        },
+        {
+          "year": 2002,
+          "nat": "Australian"
+        },
+        {
+          "year": 2003,
+          "nat": "Australian"
+        },
+        {
+          "year": 2004,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2005,
+          "nat": "Australian"
+        },
+        {
+          "year": 2006,
+          "nat": "American"
+        },
+        {
+          "year": 2007,
+          "nat": "Australian"
+        },
+        {
+          "year": 2008,
+          "nat": "Australian"
+        },
+        {
+          "year": 2009,
+          "nat": "Polish"
+        },
+        {
+          "year": 2010,
+          "nat": "Polish"
+        },
+        {
+          "year": 2011,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2012,
+          "nat": "Danish"
+        },
+        {
+          "year": 2013,
+          "nat": "Polish"
+        },
+        {
+          "year": 2014,
+          "nat": "Polish"
+        },
+        {
+          "year": 2015,
+          "nat": "American"
+        },
+        {
+          "year": 2016,
+          "nat": "British"
+        },
+        {
+          "year": 2017,
+          "nat": "Polish"
+        },
+        {
+          "year": 2018,
+          "nat": "Polish"
+        },
+        {
+          "year": 2019,
+          "nat": "Danish"
+        },
+        {
+          "year": 2020,
+          "nat": "British"
+        },
+        {
+          "year": 2021,
+          "nat": "Polish"
+        },
+        {
+          "year": 2022,
+          "nat": "Danish"
+        },
+        {
+          "year": 2023,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2024,
+          "nat": "British"
+        },
+        {
+          "year": 2025,
+          "nat": "Australian"
+        }
+      ],
+      "thirds": [
+        {
+          "year": 1990,
+          "nat": "Australian"
+        },
+        {
+          "year": 1991,
+          "nat": "Danish"
+        },
+        {
+          "year": 1992,
+          "nat": "Danish"
+        },
+        {
+          "year": 1993,
+          "nat": "British"
+        },
+        {
+          "year": 1994,
+          "nat": "Australian"
+        },
+        {
+          "year": 1995,
+          "nat": "American"
+        },
+        {
+          "year": 1996,
+          "nat": "American"
+        },
+        {
+          "year": 1997,
+          "nat": "Polish"
+        },
+        {
+          "year": 1998,
+          "nat": "Polish"
+        },
+        {
+          "year": 1999,
+          "nat": "Danish"
+        },
+        {
+          "year": 2000,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2001,
+          "nat": "Polish"
+        },
+        {
+          "year": 2002,
+          "nat": "Australian"
+        },
+        {
+          "year": 2003,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2004,
+          "nat": "American"
+        },
+        {
+          "year": 2005,
+          "nat": "Australian"
+        },
+        {
+          "year": 2006,
+          "nat": "Danish"
+        },
+        {
+          "year": 2007,
+          "nat": "Australian"
+        },
+        {
+          "year": 2008,
+          "nat": "Polish"
+        },
+        {
+          "year": 2009,
+          "nat": "Russian"
+        },
+        {
+          "year": 2010,
+          "nat": "Australian"
+        },
+        {
+          "year": 2011,
+          "nat": "Polish"
+        },
+        {
+          "year": 2012,
+          "nat": "American"
+        },
+        {
+          "year": 2013,
+          "nat": "Danish"
+        },
+        {
+          "year": 2014,
+          "nat": "Danish"
+        },
+        {
+          "year": 2015,
+          "nat": "Danish"
+        },
+        {
+          "year": 2016,
+          "nat": "Polish"
+        },
+        {
+          "year": 2017,
+          "nat": "British"
+        },
+        {
+          "year": 2018,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2019,
+          "nat": "Russian"
+        },
+        {
+          "year": 2020,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2021,
+          "nat": "Russian"
+        },
+        {
+          "year": 2022,
+          "nat": "Polish"
+        },
+        {
+          "year": 2023,
+          "nat": "Slovak"
+        },
+        {
+          "year": 2024,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2025,
+          "nat": "British"
+        }
       ]
     },
     {
@@ -768,6 +2368,98 @@
           "year": 2025,
           "nat": "British"
         }
+      ],
+      "runners_up": [
+        {
+          "year": 2015,
+          "nat": "Swiss"
+        },
+        {
+          "year": 2016,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2017,
+          "nat": "Swiss"
+        },
+        {
+          "year": 2018,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2019,
+          "nat": "Swiss"
+        },
+        {
+          "year": 2020,
+          "nat": "Belgian"
+        },
+        {
+          "year": 2021,
+          "nat": "Swiss"
+        },
+        {
+          "year": 2022,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2023,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2024,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2025,
+          "nat": "New Zealander"
+        }
+      ],
+      "thirds": [
+        {
+          "year": 2015,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2016,
+          "nat": "French"
+        },
+        {
+          "year": 2017,
+          "nat": "Swedish"
+        },
+        {
+          "year": 2018,
+          "nat": "British"
+        },
+        {
+          "year": 2019,
+          "nat": "Brazilian"
+        },
+        {
+          "year": 2020,
+          "nat": "French"
+        },
+        {
+          "year": 2021,
+          "nat": "British"
+        },
+        {
+          "year": 2022,
+          "nat": "Swiss"
+        },
+        {
+          "year": 2023,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2024,
+          "nat": "New Zealander"
+        },
+        {
+          "year": 2025,
+          "nat": "German"
+        }
       ]
     },
     {
@@ -776,6 +2468,298 @@
       "weight": 0.4,
       "why": "The largest stock car championship in the world and the second most watched motorsport on television, but a domestic field: every Cup champion since 1990 has been American. The weight matches IndyCar's, which races the same country with a field drawn from five continents. Champions are recorded by year and nationality only, because the nationality has been American in every season in the window and no attribution question turns on which American won.",
       "champions": [
+        {
+          "year": 1990,
+          "nat": "American"
+        },
+        {
+          "year": 1991,
+          "nat": "American"
+        },
+        {
+          "year": 1992,
+          "nat": "American"
+        },
+        {
+          "year": 1993,
+          "nat": "American"
+        },
+        {
+          "year": 1994,
+          "nat": "American"
+        },
+        {
+          "year": 1995,
+          "nat": "American"
+        },
+        {
+          "year": 1996,
+          "nat": "American"
+        },
+        {
+          "year": 1997,
+          "nat": "American"
+        },
+        {
+          "year": 1998,
+          "nat": "American"
+        },
+        {
+          "year": 1999,
+          "nat": "American"
+        },
+        {
+          "year": 2000,
+          "nat": "American"
+        },
+        {
+          "year": 2001,
+          "nat": "American"
+        },
+        {
+          "year": 2002,
+          "nat": "American"
+        },
+        {
+          "year": 2003,
+          "nat": "American"
+        },
+        {
+          "year": 2004,
+          "nat": "American"
+        },
+        {
+          "year": 2005,
+          "nat": "American"
+        },
+        {
+          "year": 2006,
+          "nat": "American"
+        },
+        {
+          "year": 2007,
+          "nat": "American"
+        },
+        {
+          "year": 2008,
+          "nat": "American"
+        },
+        {
+          "year": 2009,
+          "nat": "American"
+        },
+        {
+          "year": 2010,
+          "nat": "American"
+        },
+        {
+          "year": 2011,
+          "nat": "American"
+        },
+        {
+          "year": 2012,
+          "nat": "American"
+        },
+        {
+          "year": 2013,
+          "nat": "American"
+        },
+        {
+          "year": 2014,
+          "nat": "American"
+        },
+        {
+          "year": 2015,
+          "nat": "American"
+        },
+        {
+          "year": 2016,
+          "nat": "American"
+        },
+        {
+          "year": 2017,
+          "nat": "American"
+        },
+        {
+          "year": 2018,
+          "nat": "American"
+        },
+        {
+          "year": 2019,
+          "nat": "American"
+        },
+        {
+          "year": 2020,
+          "nat": "American"
+        },
+        {
+          "year": 2021,
+          "nat": "American"
+        },
+        {
+          "year": 2022,
+          "nat": "American"
+        },
+        {
+          "year": 2023,
+          "nat": "American"
+        },
+        {
+          "year": 2024,
+          "nat": "American"
+        },
+        {
+          "year": 2025,
+          "nat": "American"
+        }
+      ],
+      "runners_up": [
+        {
+          "year": 1990,
+          "nat": "American"
+        },
+        {
+          "year": 1991,
+          "nat": "American"
+        },
+        {
+          "year": 1992,
+          "nat": "American"
+        },
+        {
+          "year": 1993,
+          "nat": "American"
+        },
+        {
+          "year": 1994,
+          "nat": "American"
+        },
+        {
+          "year": 1995,
+          "nat": "American"
+        },
+        {
+          "year": 1996,
+          "nat": "American"
+        },
+        {
+          "year": 1997,
+          "nat": "American"
+        },
+        {
+          "year": 1998,
+          "nat": "American"
+        },
+        {
+          "year": 1999,
+          "nat": "American"
+        },
+        {
+          "year": 2000,
+          "nat": "American"
+        },
+        {
+          "year": 2001,
+          "nat": "American"
+        },
+        {
+          "year": 2002,
+          "nat": "American"
+        },
+        {
+          "year": 2003,
+          "nat": "American"
+        },
+        {
+          "year": 2004,
+          "nat": "American"
+        },
+        {
+          "year": 2005,
+          "nat": "American"
+        },
+        {
+          "year": 2006,
+          "nat": "American"
+        },
+        {
+          "year": 2007,
+          "nat": "American"
+        },
+        {
+          "year": 2008,
+          "nat": "American"
+        },
+        {
+          "year": 2009,
+          "nat": "American"
+        },
+        {
+          "year": 2010,
+          "nat": "American"
+        },
+        {
+          "year": 2011,
+          "nat": "American"
+        },
+        {
+          "year": 2012,
+          "nat": "American"
+        },
+        {
+          "year": 2013,
+          "nat": "American"
+        },
+        {
+          "year": 2014,
+          "nat": "American"
+        },
+        {
+          "year": 2015,
+          "nat": "American"
+        },
+        {
+          "year": 2016,
+          "nat": "American"
+        },
+        {
+          "year": 2017,
+          "nat": "American"
+        },
+        {
+          "year": 2018,
+          "nat": "American"
+        },
+        {
+          "year": 2019,
+          "nat": "American"
+        },
+        {
+          "year": 2020,
+          "nat": "American"
+        },
+        {
+          "year": 2021,
+          "nat": "American"
+        },
+        {
+          "year": 2022,
+          "nat": "American"
+        },
+        {
+          "year": 2023,
+          "nat": "American"
+        },
+        {
+          "year": 2024,
+          "nat": "American"
+        },
+        {
+          "year": 2025,
+          "nat": "American"
+        }
+      ],
+      "thirds": [
         {
           "year": 1990,
           "nat": "American"

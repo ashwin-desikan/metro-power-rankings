@@ -244,17 +244,24 @@ NATIONAL_SPORTS = [
 # BETA is anchored against the existing national-sport tokens, which run 2.5
 # (hurling) to 25.0 (American football, the USA's biggest domestic sport). CAP
 # binds only on a genuine dynasty across several series at once.
-# Raised 2.0 to 2.3 on 2026-09-04. The argument, from Gemini and accepted by
-# Ashwin, is footprint: Formula 1 alone runs a year-round professional economy
-# above a billion and a half viewers, and motorsport was scoring below swimming
-# and level with wrestling, two sports with little professional life outside the
-# Games. The reservation stands and is worth writing down rather than burying:
-# this is a ranking of nations, and motorsport's national unit is the weakest on
-# the board, a driver's passport attached to a company's car. The raise is a
-# judgement about how much of the sporting world the row should represent, not a
-# claim that the attribution problem got better.
-MOTORSPORT_BETA = 2.3
-MOTORSPORT_CAP = 18.0
+# BETA returned to 2.0 on 2026-09-04, having briefly been 2.3. The 2.3 was a
+# thumb on the scale to answer a complaint that motorsport sat too low, and the
+# complaint turned out to be right about the conclusion and wrong about the
+# cause. Motorsport already had the highest points per nation on the board; what
+# it lacked was the rest of the podium, which every other pillar counts. Fixing
+# that raises the row on the same methodology as every other sport, so the thumb
+# comes off.
+MOTORSPORT_BETA = 2.0
+# Raised 18.0 to 26.0 when the podium data landed. At 18.0 the cap had stopped
+# being a guard and started being an answer: the United States and Great Britain
+# both came out at exactly 18.0, which is not a tie, it is two different numbers
+# truncated to the same one. Their real figures are 20.4 and 18.6. A cap that
+# binds on the top two is hiding the thing the row exists to show.
+MOTORSPORT_CAP = 26.0
+# Champion, runner-up, third. The same 1 : 0.5 : 0.25 ratio as the world tier in
+# TIER, so a motorsport podium is worth what a world-championship podium is worth
+# anywhere else on this board.
+MOTORSPORT_PLACE = {"champions": 1.0, "runners_up": 0.5, "thirds": 0.25}
 MOTORSPORT_SERIES_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "data", "motorsport-series.json")
 
@@ -270,41 +277,54 @@ MOTORSPORT_NAT_SLUG = {
     "Colombian": "colombia", "Swiss": "switzerland", "Portuguese": "portugal",
     "Belgian": "belgium", "Estonian": "estonia", "Norwegian": "norway",
     "Danish": "denmark", "Polish": "poland", "Russian": "russia",
+    "Japanese": "japan", "Monegasque": "monaco", "Slovak": "slovakia",
+    "Norwegian": "norway", "Estonian": "estonia", "Colombian": "colombia",
+    "Belgian": "belgium", "Swiss": "switzerland", "Portuguese": "portugal",
+    "Latvian": "latvia", "Lithuanian": "lithuania", "Belarusian": "belarus",
+    "Swedish": "sweden", "Kazakh": "kazakhstan", "Ecuadorian": "ecuador",
+    "Luxembourgish": "luxembourg", "Venezuelan": "venezuela",
 }
 # Kept under the old name so anything still importing it does not break.
 F1_NAT_SLUG = MOTORSPORT_NAT_SLUG
 
 
 def _motorsport_series():
-    """Every credited series as (label, weight, [(year, nat, credit)]).
+    """Every credited series as (label, weight, [(year, nat, credit, place)]).
 
-    Formula 1 comes from the live pipeline; the rest from the curated file. A
-    missing or unreadable source returns nothing for that series rather than
-    raising: the Cup should still build, one line lighter.
+    Formula 1 champions come from the live pipeline; every other result, the rest
+    of the Formula 1 podium included, from the curated file. A missing or
+    unreadable source drops that part rather than raising: the Cup should still
+    build, one line lighter.
     """
     out = []
     path = os.path.join(D, "f1", "data.json")
+    live_f1 = []
     if not os.path.exists(path):
-        print("  motorsport: f1/data.json missing, Formula 1 skipped")
+        print("  motorsport: f1/data.json missing, Formula 1 titles skipped")
     else:
         try:
             champs = json.load(open(path, encoding="utf-8")).get("champions") or []
-            out.append(("Formula 1", 1.0,
-                        [(r.get("season"), r.get("driver_nat"), 1.0) for r in champs]))
+            live_f1 = [(r.get("season"), r.get("driver_nat"), 1.0, "champions")
+                       for r in champs]
         except (ValueError, OSError) as e:
-            print(f"  motorsport: f1/data.json unreadable ({e}), Formula 1 skipped")
+            print(f"  motorsport: f1/data.json unreadable ({e}), Formula 1 titles skipped")
     if not os.path.exists(MOTORSPORT_SERIES_FILE):
         print("  motorsport: motorsport-series.json missing, only Formula 1 counted")
-        return out
+        return [("Formula 1", 1.0, live_f1)] if live_f1 else []
     try:
         doc = json.load(open(MOTORSPORT_SERIES_FILE, encoding="utf-8"))
     except (ValueError, OSError) as e:
         print(f"  motorsport: motorsport-series.json unreadable ({e}), only Formula 1 counted")
-        return out
+        return [("Formula 1", 1.0, live_f1)] if live_f1 else []
     for sr in doc.get("series") or []:
-        out.append((sr["label"], float(sr["weight"]),
-                    [(c.get("year"), c.get("nat"), float(c.get("credit", 1.0)))
-                     for c in sr.get("champions") or []]))
+        rows = []
+        for place in MOTORSPORT_PLACE:
+            for c in sr.get(place) or []:
+                rows.append((c.get("year"), c.get("nat"),
+                             float(c.get("credit", 1.0)), place))
+        if sr.get("championsFrom"):
+            rows.extend(live_f1)
+        out.append((sr["label"], float(sr["weight"]), rows))
     return out
 
 
@@ -318,14 +338,15 @@ def motorsport_bonus(detail=False):
     unmapped, dec = set(), defaultdict(float)
     by_series = defaultdict(lambda: defaultdict(float))
     for label, weight, rows in _motorsport_series():
-        for yr, nat, credit in rows:
+        for yr, nat, credit, place in rows:
             if not nat or not yr:
                 continue
             slug = MOTORSPORT_NAT_SLUG.get(nat)
             if not slug:
                 unmapped.add(nat)
                 continue
-            v = weight * credit * 0.5 ** ((NOW - int(yr)) / HALFLIFE_LOCKED)
+            v = (weight * credit * MOTORSPORT_PLACE[place]
+                 * 0.5 ** ((NOW - int(yr)) / HALFLIFE_LOCKED))
             dec[fold(slug)] += v
             by_series[label][fold(slug)] += v
     if unmapped:
@@ -830,7 +851,7 @@ def road_cycling_contribs(boost):
         print(f"  road cycling: road-cycling.json unreadable ({e}), pillar skipped")
         return []
     nat_slug = dict(MOTORSPORT_NAT_SLUG)
-    nat_slug.update(ROAD_NAT_EXTRA)
+    nat_slug.update(ROAD_NAT_EXTRA)   # kept: harmless, and documents the cycling set
     unmapped, acc = set(), defaultdict(float)
 
     def credit(nat, year, key):

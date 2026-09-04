@@ -184,11 +184,13 @@ export default async function ZoneZeroCupPage() {
             <p>
               Motorsport is a bonus for the opposite reason. It is global, but the constructor is a company and the
               driver&apos;s nationality is a passport, so there is no national competition to build a pillar on. The row
-              is decayed drivers&apos; titles across seven championships: Formula 1 at full weight, then MotoGP, the
-              World Rally Championship, IndyCar, NASCAR, Speedway and Formula E, each weighted for how deep and how
-              international its field is. A domestic series is not excluded, it is weighted as one, which is why NASCAR
-              carries IndyCar&apos;s weight rather than Formula 1&apos;s. Endurance racing is left out for a different
-              reason: its titles are won by mixed-nationality crews, so there is no one country to credit.
+              is decayed championship podiums across seven series: Formula 1 at full weight, then MotoGP, the World
+              Rally Championship, IndyCar, NASCAR, Speedway and Formula E, each weighted for how deep and how
+              international its field is. Champion, runner-up and third score 1, a half and a quarter, the same ratio a
+              world championship podium earns anywhere else on this board. A domestic series is not excluded, it is
+              weighted as one, which is why NASCAR carries IndyCar&apos;s weight rather than Formula 1&apos;s.
+              Endurance racing is left out for a different reason: its titles are won by mixed-nationality crews, so
+              there is no one country to credit.
             </p>
             <p>
               Road cycling is a scoring pillar again rather than an Olympic footnote. It had been counted from Games
