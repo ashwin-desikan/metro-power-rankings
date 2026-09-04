@@ -40,12 +40,13 @@ import { LedgerRow } from "../_shared/rows";
 import { getPlExpectation } from "@/lib/plExpectation";
 import { getNflExpectation } from "@/lib/nflExpectation";
 import { getPlPredictions } from "@/lib/plSim";
-import { getNflPredictions } from "@/lib/nflSim";
+import { getNflMetaMarket, getNflPredictions } from "@/lib/nflSim";
 import { getCfbPredictions } from "@/lib/cfbSim";
 import { getForecastScoreboard, nextToSettle, awaitingResults, longDate } from "@/lib/forecastScoreboard";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 import { SectionHead } from "@/app/_shared/SectionHead";
+import { DivergingBar } from "@/app/_shared/DataBar";
 export const revalidate = 21600;
 
 const PATH = "/predictions/scoreboard";
@@ -180,14 +181,44 @@ function NoteRow({ league, sub, note, href }: { league: ReactNode; sub?: ReactNo
 }
 
 export default async function LedgerPage() {
-  const [plExp, nflExp, plLive, nflLive, cfbLive, elec] = await Promise.all([
+  const [plExp, nflExp, plLive, nflLive, cfbLive, elec, meta] = await Promise.all([
     getPlExpectation(),
     getNflExpectation(),
     getPlPredictions(),
     getNflPredictions(),
     getCfbPredictions(),
     getForecastScoreboard(),
+    getNflMetaMarket(),
   ]);
+
+  // ---- The books. One row per book: how many of the upcoming games it priced
+  // and how far it sits from its peers on them.
+  const bookRows = (meta?.meta.books ?? [])
+    .filter((b) => b.games > 0)
+    .map((b) => {
+      const he = meta?.house_effects?.[b.key];
+      // A book whose every price is a translation of a spread gets no lean by
+      // construction: derived prices are excluded from the consensus, so they
+      // never appear in house_effects. Saying so beats an empty cell.
+      const derivedOnly =
+        !he &&
+        (meta?.games ?? []).some((g) => g.books[b.key]?.derived) &&
+        !(meta?.games ?? []).some((g) => g.books[b.key] && !g.books[b.key].derived);
+      return {
+        key: b.key,
+        label: b.label,
+        kind: b.kind,
+        games: b.games,
+        lean: he ? he.lean_pp : null,
+        derivedOnly,
+      };
+    })
+    .sort((a, b) => b.games - a.games || a.label.localeCompare(b.label));
+  // 🔴 One max over the FULL set of leans, computed once, so the bars compare.
+  const leanMax = Math.max(
+    ...bookRows.map((b) => Math.abs(b.lean ?? 0)),
+    0.5,
+  );
 
   // ---- Elections. Four races settle between 4 October and 20 November 2026,
   // so this row exists before any of them rather than after.
@@ -427,6 +458,7 @@ export default async function LedgerPage() {
           { label: "Calibration", href: "#calibration" },
           { label: "The seasons we won", href: "#won" },
           { label: "This season", href: "#live" },
+          ...(meta && meta.games.length > 0 ? [{ label: "The four books", href: "#books" }] : []),
           { label: "Your own calls", href: "#you" },
           { label: "What this cannot tell you", href: "#method" },
         ]}
@@ -909,6 +941,97 @@ export default async function LedgerPage() {
           </table>
         </ResponsiveTable>
         </Disclosure>
+
+      {/* ---------------------------------------------------------------- */}
+      {meta && meta.games.length > 0 && (
+        <Disclosure
+          id="books"
+          title="The market is four markets, and they disagree"
+          meta={plural(bookRows.length, "books", "book")}
+          className="mb-10"
+          bodyClassName="p-4 sm:p-5"
+        >
+          <SectionHead
+            id="books-head"
+            title="The market is four markets, and they disagree"
+            sub="Every posted price we can read on the same NFL game, and how each one leans."
+            more={
+              "Until now 'the market' on this site meant whatever single price ESPN was carrying, which is DraftKings. " +
+              "That is a market the way one poll is an electorate. This board prices each game at four books, removes each " +
+              "book's margin by the power method rather than proportionally (proportional de-vig leaves longshots too high, " +
+              "because books load their margin onto longshots), and averages what is left in log-odds. " +
+              "A book's lean is measured against the consensus of the OTHER books on the same game, never against a consensus " +
+              "that includes itself: including it drags every book's own baseline toward its own number and shrinks the very " +
+              "thing being measured. Positive means the book sits higher on the home side than its peers. " +
+              "A price we had to translate from a spread is shown but never votes, and never earns a lean."
+            }
+          />
+
+          <ResponsiveTable
+            variant="list"
+            mobileNoun="books"
+            className="rounded-xl border"
+            style={CARD}
+            mobileRows={bookRows.map((b) => (
+              <div key={b.key} className="px-3 py-2.5 border-b last:border-0" style={BORD}>
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="font-semibold">{b.label}</span>
+                  <span className="text-[11px] text-[var(--text-dim)]">{b.kind}</span>
+                </div>
+                <div className="mt-1 text-[13px] text-[var(--text-muted)] tabular-nums" style={MONO}>
+                  {b.games} priced
+                  {b.lean == null ? " · no lean yet" : ` · lean ${b.lean > 0 ? "+" : ""}${b.lean.toFixed(2)}pp`}
+                </div>
+              </div>
+            ))}
+          >
+            <table className="w-full text-xs sm:text-sm">
+              <thead>
+                <tr className="text-left" style={{ background: "var(--bg-card-hover)" }}>
+                  <th className="px-3 py-2 font-semibold">Book</th>
+                  <th className="px-3 py-2 font-semibold hidden sm:table-cell">Kind</th>
+                  <th className="px-3 py-2 text-right font-semibold">Games</th>
+                  <th className="px-3 py-2 font-semibold">Lean against its peers</th>
+                </tr>
+              </thead>
+              <tbody>
+                {bookRows.map((b) => (
+                  <tr key={b.key} className="border-t" style={BORD}>
+                    <td className="px-3 py-2.5 whitespace-nowrap font-semibold">
+                      {b.label}
+                      {b.derivedOnly && (
+                        <span className="ml-1.5 text-[11px] font-normal text-[var(--text-dim)]">
+                          translated from the spread
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-3 py-2.5 text-[var(--text-muted)] hidden sm:table-cell">{b.kind}</td>
+                    <td className="px-3 py-2.5 text-right tabular-nums" style={MONO}>{b.games}</td>
+                    <td className="px-3 py-2.5">
+                      {b.lean == null ? (
+                        <span className="text-[var(--text-dim)] text-xs">
+                          {b.derivedOnly ? "a translation does not get a lean" : "not enough shared games"}
+                        </span>
+                      ) : (
+                        <DivergingBar v={b.lean} max={leanMax} dp={2} suffix="pp" label={`${b.label} lean`} />
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </ResponsiveTable>
+
+          <p className="text-xs text-[var(--text-dim)] mt-3 max-w-3xl">
+            {meta.meta.games_multi_book} of {meta.meta.games} games in the next {meta.meta.window_days} days
+            carry two or more books. Leans are in percentage points at an even game, which is the one
+            place a log-odds difference reads unambiguously in points.
+            {meta.meta.refused_matches.length > 0
+              ? ` ${meta.meta.refused_matches.length} book listing${meta.meta.refused_matches.length === 1 ? " was" : "s were"} refused as a bad match rather than guessed at.`
+              : ""}
+          </p>
+        </Disclosure>
+      )}
 
       {/* ---------------------------------------------------------------- */}
         <Disclosure id="you" title="Your own calls land on this axis too" className="mb-10" bodyClassName="p-5 sm:p-6">

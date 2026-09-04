@@ -99,6 +99,66 @@ export type NflPredictionEntry = {
   neutral?: true;
   lite_brier?: number;
   leverage?: { home: number; away: number; game: number };
+  /** The four-book consensus frozen with the call (2026-09-04 on). `books` is
+   *  how many POSTED prices went into it; a spread put through Phi is carried
+   *  in nfl-meta-market.json but never votes. */
+  meta_market?: {
+    pH: number;
+    books?: number;
+    sd_logodds?: number | null;
+    derived_only?: true;
+    backfilled?: string;
+  };
+  meta_brier?: number;
+};
+
+/** public/data/nfl-meta-market.json — four books on the same game. */
+export type MetaBookPrice = {
+  p_home: number;
+  source: string;
+  raw?: number[];
+  overround?: number;
+  spread?: number;
+  /** Present when the price is a translation of a spread, not a posted price. */
+  derived?: string;
+  note?: string;
+};
+
+export type MetaMarketGame = {
+  event_id: string;
+  date: string;
+  kickoff: string;
+  home: string;
+  away: string;
+  home_abbr: string;
+  away_abbr: string;
+  neutral?: true;
+  books: Record<string, MetaBookPrice>;
+  consensus?: {
+    p_home: number;
+    books: number;
+    sd_logodds: number | null;
+    derived_only?: true;
+    excluded_derived?: string[];
+  };
+};
+
+export type MetaMarketFile = {
+  meta: {
+    league: string;
+    season: number;
+    generated_at: string;
+    window_days: number;
+    devig: string;
+    consensus: string;
+    house_effects: string;
+    books: { key: string; label: string; kind: string; source: string; state: string; games: number }[];
+    games: number;
+    games_multi_book: number;
+    refused_matches: string[];
+  };
+  house_effects: Record<string, { games: number; lean_logodds: number; lean_pp: number }>;
+  games: MetaMarketGame[];
 };
 
 export type NflPredictionsFile = {
@@ -110,7 +170,9 @@ export type NflPredictionsFile = {
     odds_source: string;
     results_source: string;
     // points-v3, optional
-    tiers?: ("lite" | "classic" | "market" | "blend")[];
+    tiers?: ("lite" | "classic" | "market" | "meta" | "blend")[];
+    meta_market_source?: string;
+    meta_market_games?: number;
   };
   record: {
     graded: number;
@@ -121,6 +183,8 @@ export type NflPredictionsFile = {
     market_brier: number | null;
     // points-v3, optional
     lite_brier?: number | null;
+    meta_graded?: number;
+    meta_brier?: number | null;
   };
   ledger: NflPredictionEntry[];
 };
@@ -191,4 +255,8 @@ export async function getNflPredictions(): Promise<NflPredictionsFile | null> {
 
 export async function getNflSimHistory(): Promise<SimHistoryFile | null> {
   return load<SimHistoryFile>("nfl-sim-history.json");
+}
+
+export async function getNflMetaMarket(): Promise<MetaMarketFile | null> {
+  return load<MetaMarketFile>("nfl-meta-market.json");
 }

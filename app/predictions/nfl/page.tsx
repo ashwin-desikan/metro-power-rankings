@@ -265,6 +265,13 @@ export default async function NflPredictionsPage() {
   const graded = ledger.filter((e) => e.result && e.result !== "T").slice(-10).reverse();
   const rec = preds?.record ?? null;
   const anyMarket = upcoming.some((e) => e.market);
+  // The four-book consensus, shown as its own column beside the model rather
+  // than folded into "Market". They are different objects: `market` is the one
+  // price ESPN carries (DraftKings, and in week 1 of 2026 a spread put through
+  // a normal curve because no moneyline was posted), while `Books` is the
+  // consensus of the prices that were actually quoted, across DraftKings,
+  // FanDuel, Kalshi and Polymarket.
+  const anyMeta = upcoming.some((e) => e.meta_market);
 
   const liteRows = tierDisplayRows(rows, sim?.tiers?.lite);
   const leverageGames = upcoming
@@ -357,7 +364,10 @@ export default async function NflPredictionsPage() {
                 <div className="mt-2 text-sm text-[var(--text-muted)]">
                   {anyMarket
                     ? "The pick blends the model and the posted line 50/50."
-                    : "The market column joins once lines are posted."} Every prediction is frozen when
+                    : "The market column joins once lines are posted."}{" "}
+                  {anyMeta
+                    ? "Books is the consensus of every posted price we can read \u2014 DraftKings, FanDuel, Kalshi and Polymarket \u2014 de-vigged by the power method and averaged in log-odds. It is not in the pick: the pick still blends the model with the single posted line, so the record stays comparable with every call made before the consensus existed. A price we had to translate from a spread is carried on the Ledger but never votes here."
+                    : ""} Every prediction is frozen when
                   first published and graded against the final score below.
                 </div>
               </details>
@@ -374,7 +384,13 @@ export default async function NflPredictionsPage() {
                     neutral={e.neutral}
                     kickoff={fmtDate(e.date)}
                     modelPct={`Model ${ppct(e.model.pH)}`}
-                    marketPct={anyMarket ? (e.market ? `Market ${ppct(e.market.pH)}` : "Market —") : undefined}
+                    marketPct={anyMeta
+                      ? (e.meta_market
+                          ? `Books ${ppct(e.meta_market.pH)}${e.meta_market.books ? ` (${e.meta_market.books})` : ""}`
+                          : "Books —")
+                      : anyMarket
+                        ? (e.market ? `Market ${ppct(e.market.pH)}` : "Market —")
+                        : undefined}
                     pick={PICK_LABEL(e)}
                   />
                 ))}
@@ -386,6 +402,7 @@ export default async function NflPredictionsPage() {
                       <th className="px-3 py-2 font-semibold">Game</th>
                       <th className="px-3 py-2 text-right font-semibold">Model (home)</th>
                       {anyMarket && <th className="px-3 py-2 text-right font-semibold">Market (home)</th>}
+                      {anyMeta && <th className="px-3 py-2 text-right font-semibold">Books (home)</th>}
                       <th className="px-3 py-2 font-semibold">Pick</th>
                     </tr>
                   </thead>
@@ -408,6 +425,23 @@ export default async function NflPredictionsPage() {
                         {anyMarket && (
                           <td className="px-3 py-2 text-right" style={{ ...MONO, color: "var(--text-muted)" }}>
                             {e.market ? ppct(e.market.pH) : "—"}
+                          </td>
+                        )}
+                        {anyMeta && (
+                          <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
+                            {e.meta_market ? (
+                              <>
+                                {ppct(e.meta_market.pH)}
+                                {e.meta_market.books ? (
+                                  <span className="ml-1 text-[11px] text-[var(--text-dim)]">
+                                    {e.meta_market.books}
+                                    {e.meta_market.derived_only ? "*" : ""}
+                                  </span>
+                                ) : null}
+                              </>
+                            ) : (
+                              <span style={{ color: "var(--text-dim)" }}>—</span>
+                            )}
                           </td>
                         )}
                         <td className="px-3 py-2 font-semibold" style={{ color: "var(--accent)" }}>{PICK_LABEL(e)}</td>

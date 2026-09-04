@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-04",
-    headline: "Boards you can read at a glance, not decode",
+    headline: "Four books on every game, and boards that show their shape",
     items: [
-      "Tables across the site now draw the number as well as print it. The bar sits in the cell you were already reading, so a runaway leader or a tight middle shows before you scan the column.",
-      "Live Standings, the badge boards, the US governors and senators tables and the audience builder join that pass. Every bar is scaled to its own column, so the rows stay comparable.",
-      "Methodology moved below the board it explains. The line above each table is now one clause, with the derivation a click away rather than in front of the numbers.",
-      "The chart palette was rebuilt and checked: two of the old colours read as grey, and two more were indistinguishable to a reader with full colour vision.",
+      "The market on the NFL hub is now four markets. Every game is priced at DraftKings, FanDuel, Kalshi and Polymarket, each book's margin removed, and the consensus sits beside the model.",
+      "The Ledger shows how far each book leans from the other three on the same games. The Champions League league phase now keeps a graded ledger too, and has joined the picks game.",
+      "Tables across the site draw the number as well as print it: a bar in the cell you were already reading, so a runaway leader shows before you scan the column.",
+      "Games you have already played move to a Results section at the bottom of each picks tab, so the slate stays the games you can still call.",
     ],
   },
   {

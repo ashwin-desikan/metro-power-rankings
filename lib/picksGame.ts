@@ -20,9 +20,17 @@
 
 export type PickCode = "H" | "D" | "A";
 export type RadarSide = "model" | "market";
-export type PicksLeague = "pl" | "nfl" | "cfb" | "mlb";
+export type PicksLeague = "pl" | "nfl" | "cfb" | "mlb" | "ucl";
 
-export const ALL_LEAGUES = ["pl", "nfl", "cfb", "mlb"] as const;
+export const ALL_LEAGUES = ["pl", "nfl", "cfb", "mlb", "ucl"] as const;
+
+/** Football can be drawn, so its slate is three-way and its scoring is too.
+ *  This is the one property that separates the leagues; branching on the
+ *  league name at each call site is how the Champions League would have been
+ *  quietly added as a two-way competition. */
+export function isThreeWay(league: PicksLeague): boolean {
+  return league === "pl" || league === "ucl";
+}
 
 export type LedgerEntry = {
   event_id?: string; // NFL (ESPN); PL entries key on date:home_slug
@@ -83,8 +91,9 @@ export const RADAR_SIZE = 5;
 export const RADAR_LEAGUES = ["nfl", "cfb"] as const;
 
 export function eventKey(league: PicksLeague, e: LedgerEntry): string {
-  // NFL and CFB ledgers key on the ESPN event id; PL keys on date:home_slug
-  // (changing PL's key would orphan every stored pick).
+  // NFL and CFB key on the ESPN event id, the Champions League on the
+  // api-football fixture id; PL keys on date:home_slug (changing PL's key would
+  // orphan every stored pick, so it stays as it is).
   return league !== "pl" && e.event_id ? e.event_id : `${e.date}:${e.home_slug}`;
 }
 
@@ -109,7 +118,7 @@ export function pickIsValid(p: StoredPick, e: LedgerEntry): boolean {
 
 /** Probability the model assigns to a given slate pick. */
 export function pickProb(league: PicksLeague, e: LedgerEntry, pick: PickCode): number {
-  if (league === "pl") {
+  if (isThreeWay(league)) {
     if (pick === "H") return e.model.pH;
     if (pick === "A") return e.model.pA ?? 0;
     return e.model.pD ?? 0;

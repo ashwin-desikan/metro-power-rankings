@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getSupabase } from "@/lib/supabaseClient";
 import { PredCrumbs, PredHeader, SourcesCard } from "@/app/predictions/_shared/ui";
+import { CappedList, Disclosure } from "@/app/_shared/Disclosure";
 import PredictionsNav from "@/app/predictions/_shared/PredictionsNav";
 import {
   RADAR_POINTS,
@@ -12,6 +13,7 @@ import {
   computeLeaderboard,
   eventKey,
   gradeRadar,
+  isThreeWay,
   gradeSeries,
   gradeSlate,
   isLocked,
@@ -97,6 +99,10 @@ const keyOf = (p: StoredPick) => `${p.league}:${p.season}:${p.event_key}:${p.mod
 
 const CARD = { background: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const MONO = { fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)" } as const;
+// How many graded games the Results archive keeps in the DOM. A Premier
+// League season is 380 matches and the Ledger already holds the full history,
+// so the archive is a recent tail, not a second copy of the season.
+const ARCHIVE_MAX = 24;
 
 type Tab = "slate" | "confidence" | "radar" | "season";
 
@@ -104,6 +110,11 @@ const LEAGUE_META: Record<PicksLeague, { label: string; emoji: string; note: str
   pl: { label: "Premier League", emoji: "\u{26BD}", note: "Matchweek slate · three-way", file: "pl-predictions.json", ways: 3 },
   nfl: { label: "NFL", emoji: "\u{1F3C8}", note: "Weekly slate · two-way", file: "nfl-predictions.json", ways: 2 },
   cfb: { label: "College Football", emoji: "\u{1F3C8}", note: "AP Top 25 slate · two-way", file: "cfb-predictions.json", ways: 2 },
+  // The Champions League ledger freezes a call when a tie enters the 10-day
+  // horizon, so the slate is a matchday at a time. Three-way, like the PL, and
+  // model-only: no public odds file carries the competition, so there is no
+  // market column and the Upset Radar cannot include it.
+  ucl: { label: "Champions League", emoji: "\u{1F3C6}", note: "Matchday slate · three-way · model only", file: "ucl-predictions.json", ways: 3 },
   // The MLB tab stays hidden until its October ledger carries a series or a
   // game — the COMING chip advertises it in the meantime.
   mlb: { label: "MLB Postseason", emoji: "\u{26BE}", note: "October series + game picks", file: "mlb-predictions.json", ways: 2 },
@@ -111,7 +122,6 @@ const LEAGUE_META: Record<PicksLeague, { label: string; emoji: string; note: str
 
 const COMING: { label: string; emoji: string; note: string }[] = [
   { label: "MLB Postseason", emoji: "\u{26BE}", note: "series + game picks in October" },
-  { label: "UCL", emoji: "\u{1F3C6}", note: "after the draw" },
 ];
 
 function fmtDate(d: string): string {
@@ -125,7 +135,7 @@ function fmtDate(d: string): string {
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 
 function modelPickLabel(league: PicksLeague, e: LedgerEntry): string {
-  if (league === "pl") {
+  if (isThreeWay(league)) {
     const { pH, pD = 0, pA = 0 } = e.model;
     const top = Math.max(pH, pD, pA);
     return top === pH ? e.home : top === pA ? e.away : "Draw";
@@ -503,8 +513,9 @@ export default function PicksClient() {
       <div className="mt-10">
         <SourcesCard title="How this game works">
           <p>
-            <b>The Slate</b> pays {SLATE_POINTS} points per correct call: Premier League games are three-way (home, draw, away)
-            and a correct draw call scores exactly like a correct win call; NFL and College Football games are two-way, and a tie grades nobody correct. The College Football slate covers AP Top 25 games only, published fresh after each week's poll.
+            <b>The Slate</b> pays {SLATE_POINTS} points per correct call: Premier League and Champions League games are three-way (home, draw, away)
+            and a correct draw call scores exactly like a correct win call; NFL and College Football games are two-way, and a tie grades nobody correct. The College Football slate covers AP Top 25 games only, published fresh after each week's poll,
+            and the Champions League slate is the league phase, a matchday at a time, scored against the model alone because no public odds file carries the competition.
             Picks are blind: the model&rsquo;s probabilities reveal after you commit. <b>Confidence</b> ranks your slate. The slot
             value is a bonus on top of the base points when that pick lands. <b>Upset Radar</b> lists the games where our model and
             the betting market disagree most; side with either for +{RADAR_POINTS} when it grades closer to the result (lower Brier,
@@ -512,7 +523,7 @@ export default function PicksClient() {
             series before Game 1 for +{SERIES_POINTS}, while the games themselves run as an ordinary daily slate.
           </p>
           <p>
-            Games lock at kickoff, or at 00:00 UTC on match day when the ledger carries no kickoff time. Signed out, picks live only in this browser. Sign in with Google (the same
+            Played games move to Results at the bottom of each tab, so the slate stays the games you can still call. Games lock at kickoff, or at 00:00 UTC on match day when the ledger carries no kickoff time. Signed out, picks live only in this browser. Sign in with Google (the same
             account that syncs your <Link href="/me" className="underline">follows</Link>) to join the global leaderboard: picks
             made in this browser merge into your account, and only picks stamped before a game locks can score.
           </p>
@@ -552,21 +563,54 @@ function SlateTab({
   removePick: (p: StoredPick) => void;
 }) {
   const ways = LEAGUE_META[league].ways;
-  const picked = entries.filter((e) => pickFor(league, e));
+
+  // A ledger only grows, so a flat list buries the open slate one round deeper
+  // every week. Ashwin, 2026-09-04: "I still see the matches that have already
+  // occurred... this should be focused on games happening that weekend or will
+  // happen". Three states, and only the first is what this page is for:
+  //   OPEN  not locked yet, still pickable      -> leads, always visible
+  //   LIVE  locked, awaiting the grade          -> under it, open by default
+  //   DONE  graded                              -> archive, closed on EVERY
+  //                                                viewport (desktopOpen=false)
+  const { openGames, liveGames, doneGames } = useMemo(() => {
+    const openGames: LedgerEntry[] = [];
+    const liveGames: LedgerEntry[] = [];
+    const doneGames: LedgerEntry[] = [];
+    for (const e of entries) {
+      if (e.result != null) doneGames.push(e);
+      else if (isLocked(e, now)) liveGames.push(e);
+      else openGames.push(e);
+    }
+    doneGames.reverse(); // newest result first: an archive reads backwards
+    return { openGames, liveGames, doneGames };
+  }, [entries, now]);
+
+  // Denominators count what could still be picked, not the whole season. A
+  // "Picked 3/180" in March would be arithmetically true and useless.
+  const pickable = useMemo(() => [...openGames, ...liveGames], [openGames, liveGames]);
+  const picked = pickable.filter((e) => pickFor(league, e));
   const agree = picked.filter((e) => pickFor(league, e)!.pick === e.pick);
+  const archive = useMemo(() => {
+    let won = 0;
+    let lost = 0;
+    for (const e of doneGames) {
+      const my = pickFor(league, e);
+      if (!my) continue;
+      if (e.result !== "T" && my.pick === e.result) won += 1;
+      else lost += 1;
+    }
+    return { won, lost, played: won + lost };
+  }, [doneGames, pickFor, league]);
 
   if (!entries.length) {
     return <div className="rounded-xl border border-dashed p-6 text-sm text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>Loading the slate…</div>;
   }
 
-  let lastDate = "";
-  return (
-    <>
-      <div className="flex gap-4 flex-wrap items-center text-[13px] text-[var(--text-muted)] mb-3">
-        <span>Picked <b className="text-[var(--text)]">{picked.length}</b>/{entries.length}</span>
-        <span>Agreeing with the model: <b className="text-[var(--text)]">{picked.length ? `${agree.length}/${picked.length}` : "–"}</b></span>
-      </div>
-      {entries.map((e) => {
+  // Date headers restart inside each group, so the archive does not inherit a
+  // heading from the open slate above it.
+  const renderGroup = (list: LedgerEntry[]) => {
+    let lastDate = "";
+    return list.map((e) => {
         const head = e.date !== lastDate ? fmtDate(e.date) : null;
         lastDate = e.date;
         const my = pickFor(league, e);
@@ -584,7 +628,7 @@ function SlateTab({
             >
               <div className="flex items-center justify-between gap-2 flex-wrap">
                 <div className="font-semibold text-[14.5px] min-w-0">
-                  {league !== "pl" ? (
+                  {!isThreeWay(league) ? (
                     <>
                       {e.ap?.away ? <span className="text-[13px] text-[var(--text-dim)]" style={MONO}>#{e.ap.away} </span> : null}{e.away}{" "}
                       <span className="font-normal text-[13px] text-[var(--text-dim)]">{e.neutral ? "vs" : "at"}</span>{" "}
@@ -650,13 +694,62 @@ function SlateTab({
             </div>
           </div>
         );
-      })}
+      });
+  };
+
+  return (
+    <>
+      <div className="flex gap-4 flex-wrap items-center text-[13px] text-[var(--text-muted)] mb-3">
+        <span>Picked <b className="text-[var(--text)]">{picked.length}</b>/{pickable.length}</span>
+        <span>Agreeing with the model: <b className="text-[var(--text)]">{picked.length ? `${agree.length}/${picked.length}` : "–"}</b></span>
+      </div>
+
+      {pickable.length === 0 && (
+        <div className="rounded-xl border border-dashed p-6 text-sm text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
+          Nothing is open right now. The next slate appears here as soon as the
+          model publishes the coming round{doneGames.length ? ", and your graded calls are in Results below" : ""}.
+        </div>
+      )}
+
+      {renderGroup(openGames)}
+
+      {liveGames.length > 0 && (
+        <Disclosure
+          id={`picks-live-${league}`}
+          title="In play"
+          meta={`${liveGames.length} locked`}
+          defaultOpen
+          className="mt-4"
+        >
+          {renderGroup(liveGames)}
+        </Disclosure>
+      )}
+
+      {doneGames.length > 0 && (
+        <Disclosure
+          id={`picks-results-${league}`}
+          title="Results"
+          meta={archive.played
+            ? `${doneGames.length} graded \u00b7 you ${archive.won}-${archive.lost}`
+            : `${doneGames.length} graded`}
+          desktopOpen={false}
+          className="mt-4"
+        >
+          <CappedList items={renderGroup(doneGames.slice(0, ARCHIVE_MAX))} initial={6} noun="results" />
+          {doneGames.length > ARCHIVE_MAX && (
+            <div className="text-[13px] text-[var(--text-dim)] mt-2">
+              The {ARCHIVE_MAX} most recent are here. Every graded call this season, model and market,
+              is on the <Link href="/predictions/scoreboard" className="text-[var(--accent)] hover:underline">Ledger</Link>.
+            </div>
+          )}
+        </Disclosure>
+      )}
     </>
   );
 }
 
 function ProbBar({ league, e }: { league: PicksLeague; e: LedgerEntry }) {
-  if (league === "pl") {
+  if (isThreeWay(league)) {
     const { pH, pD = 0, pA = 0 } = e.model;
     return (
       <>
@@ -700,7 +793,14 @@ function ConfidenceTab({
   pickFor: (lg: PicksLeague, e: LedgerEntry) => StoredPick | undefined;
   setConfidenceOrder: (lg: PicksLeague, orderedKeys: string[]) => void;
 }) {
-  const picked = entries.filter((e) => pickFor(league, e));
+  // "this slate" means the games still in play, not every pick since August.
+  // Left unscoped, the slot ladder grows with the season: by March a Premier
+  // League player would be ranking 180 picks and the top slot alone would pay
+  // 180 bonus points, which is not what "Max bonus this slate" says or means.
+  const live = entries.filter((e) => e.result == null);
+  const settled = entries.filter((e) => e.result != null && pickFor(league, e));
+  settled.reverse(); // newest first, matching the Slate archive
+  const picked = live.filter((e) => pickFor(league, e));
   const unlocked = picked.filter((e) => !isLocked(e, now));
   const locked = picked.filter((e) => isLocked(e, now));
 
@@ -764,7 +864,7 @@ function ConfidenceTab({
             <div className="flex-1 min-w-0 text-[13.5px]">
               <b>{pickLab}</b>{" "}
               <span className="text-[13px] text-[var(--text-dim)]">
-                ({league !== "pl" ? `${e.away} ${e.neutral ? "vs" : "at"} ${e.home}` : `${e.home} v ${e.away}`} · model gives your pick {pct(pickProb(league, e, p.pick as PickCode))})
+                ({!isThreeWay(league) ? `${e.away} ${e.neutral ? "vs" : "at"} ${e.home}` : `${e.home} v ${e.away}`} · model gives your pick {pct(pickProb(league, e, p.pick as PickCode))})
               </span>
               {graded && (
                 <div className="text-[13px] text-[var(--text-dim)]">
@@ -789,6 +889,42 @@ function ConfidenceTab({
           </div>
         );
       })}
+
+      {settled.length > 0 && (
+        <Disclosure
+          id={`picks-confidence-results-${league}`}
+          title="Settled slots"
+          meta={`${settled.length} graded`}
+          desktopOpen={false}
+          className="mt-4"
+        >
+          <CappedList
+            noun="settled picks"
+            initial={6}
+            items={settled.slice(0, ARCHIVE_MAX).map((e) => {
+              const p = pickFor(league, e)!;
+              const won = e.result !== "T" && p.pick === e.result;
+              const pickLab = p.pick === "H" ? e.home : p.pick === "A" ? e.away : "Draw";
+              return (
+                <div
+                  key={eventKey(league, e)}
+                  className="flex items-center gap-3 rounded-xl border px-3 py-2.5 mb-1.5"
+                  style={{ ...CARD, borderColor: won ? "#10b981" : "#E2628B" }}
+                >
+                  <div className="w-9 text-center text-lg font-extrabold text-[var(--text-dim)]" style={MONO}>{p.confidence ?? "–"}</div>
+                  <div className="flex-1 min-w-0 text-[13.5px]">
+                    <b>{pickLab}</b>{" "}
+                    <span className="text-[13px] text-[var(--text-dim)]">{fmtDate(e.date)}</span>
+                    <div className="text-[13px] text-[var(--text-dim)]">
+                      {won ? <span className="text-[#10b981]">landed: +{p.confidence}</span> : "missed: 0"}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          />
+        </Disclosure>
+      )}
     </>
   );
 }
