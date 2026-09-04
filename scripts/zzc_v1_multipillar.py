@@ -67,7 +67,8 @@ TIER = {                      # (champion, runner_up, third)  [pre-boost]
 PRESTIGE = {
     "Football": 3.0, "Cricket": 2.0, "Basketball": 2.0,
     "Rugby Union": 1.5, "Ice Hockey": 1.5, "Baseball": 1.5,
-    "Women's Football": 1.5,   # own pillar, parallel to men's Football (x3)
+    "Women's Football": 1.25,  # own pillar; deliberately below the half-of-men's
+                               # pattern the other women's lines follow (Ashwin, 2026-09-04)
     "Volleyball": 1.2, "Handball": 1.2,
     "Athletics": 1.0,   # the foundational Olympic sport (track & field); lifted above the 0.5 Olympic default
     "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
