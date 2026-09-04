@@ -69,6 +69,15 @@ function buildSections(): Section[] {
       ],
     },
     {
+      label: 'Political order',
+      items: [
+        { href: '/order', label: '🧭 The Order layer' },
+        { href: '/order/grid', label: 'The Order Grid' },
+        { href: '/order/trajectory', label: 'Direction of Travel' },
+        { href: '/order/recognition-gap', label: 'The Recognition Gap' },
+      ],
+    },
+    {
       label: 'Across time',
       items: [
         { href: '/time-machine', label: '🕰️ The Time Machine' },

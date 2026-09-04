@@ -41,6 +41,7 @@ const PEOPLE: Card[] = [
 const GEOPOLITICS: Card[] = [
   { emoji: "🤝", title: "Alliances & Orgs", desc: "NATO, the UN, the EU, and the blocs that bind states together.", href: "/orgs" },
   { emoji: "⚔️", title: "Interstate Wars", desc: "The wars fought between states, mapped and ranked.", href: "/conflicts" },
+  { emoji: "🧭", title: "The Order layer", desc: "Every state on two axes, what it can do and what binds it, and the gap between weight and standing.", href: "/order" },
 ];
 const MORE: Card[] = [
   { emoji: "🏅", title: "Badges", desc: "The same geography reframed through categorical lenses.", href: "/badges" },

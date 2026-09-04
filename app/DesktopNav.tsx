@@ -255,6 +255,14 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuGroupLabel>Geopolitics</MenuGroupLabel>
             <MenuLink href="/orgs" title="Alliances &amp; Orgs" />
             <MenuLink href="/conflicts" title="Interstate Wars" />
+            {/* The Order layer reads business, sport and culture as well as
+                geography, so /order is a peer route rather than a child of
+                this hub. It sits here until it has enough boards to earn its
+                own top-level menu. */}
+            <MenuGroupLabel>Political order</MenuGroupLabel>
+            <MenuLink href="/order" title="🧭 The Order layer" />
+            <MenuLink href="/order/grid" title="The Order Grid" />
+            <MenuLink href="/order/trajectory" title="Direction of Travel" />
             {/* The past and the future, side by side. /predictions had the
                 same orphan bug the Time Machine hub was built to fix: it was
                 in neither nav and reachable only by knowing the URL. */}
