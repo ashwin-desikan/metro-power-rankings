@@ -15,6 +15,16 @@ export type SportGroup = "team" | "summer" | "winter" | "national" | "retired";
  */
 export type SportFilter = SportGroup | "all" | "womens";
 
+/**
+ * A second, independent axis: not what the Cup does with a sport, but what the
+ * sport is. Lenses cut across every group, they compose with the group filter
+ * rather than replacing it, and only one is on at a time. They exist because the
+ * board is more interesting read sideways, and because a couple of them settle
+ * arguments: the football family is one tree, and a surprising share of the
+ * medal table is awarded by opinion.
+ */
+export type SportLens = "seated" | "football" | "judged" | "combat" | "weapons" | "animal";
+
 export type NationLike = {
   name: string;
   countrySlug: string | null;
@@ -27,7 +37,6 @@ export type NationLike = {
 export type SportRow = {
   sport: string;
   kind: SportKind;
-  group: SportGroup;
   /**
    * Every group this sport belongs to. NOT exclusive: football is a team sport
    * and a summer Olympic one, ice hockey is a team sport and a winter Olympic
@@ -37,6 +46,8 @@ export type SportRow = {
   groups: SportGroup[];
   /** Scored as its own women's pillar, rather than pooled with the men's. */
   womens: boolean;
+  /** Every lens this sport falls under. Overlapping by design. */
+  lenses: SportLens[];
   /** For a bonus row, which kind of bonus it is. Null for a scoring pillar. */
   bonusKind: "national" | "motorsport" | null;
   total: number;
@@ -63,11 +74,11 @@ export const GROUP_LABEL: Record<SportFilter, string> = {
 
 export const GROUP_BLURB: Record<SportFilter, string> = {
   all: "Every discipline the Cup scores, plus the national sports it recognises. The filters overlap, so their counts do not add up to this one.",
-  womens: "The eight codes the Cup scores as their own pillar, separately from the men's. Every other discipline here, athletics and swimming and tennis and rowing among them, is one pillar covering both, so the women's half of it cannot be pulled out. This filter shows where the Cup counts women's sport separately, not where women compete.",
+  womens: "Two kinds of row. Eight codes the Cup scores as their own pillar, separately from the men's, and four contested only by women, which is why their names never needed the qualifier: netball, rhythmic gymnastics, softball and artistic swimming. Every other discipline here, athletics and swimming and tennis and rowing among them, is one pillar covering both, so the women's half of it cannot be pulled out. This filter shows where the Cup counts women's sport separately, not where women compete.",
   team: "Codes played club and country, in a league and for a flag. Most are also Olympic sports and appear under those filters too.",
   summer: "Everything contested at the Summer Games, the team codes included, plus the racquet and precision sports whose own majors matter more than the Olympic title.",
   winter: "Everything contested at the Winter Games, ice hockey and curling included.",
-  national: "Recognition bonuses, added on top of a nation's ten scoring slots rather than competing for one. National sports are domestically major and internationally negligible, which is why one country can hold all of a sport. Motorsport is here for the opposite reason: it is global, but the constructor is a company and the driver's nationality is a passport, so there is no national competition to build a pillar on.",
+  national: "Recognition bonuses, added on top of a nation's ten scoring slots rather than competing for one. National sports are domestically major and internationally negligible, which is why one country can hold all of a sport, and why stock car racing sits here rather than under motorsport. Motorsport is here for the opposite reason: it is global, but the constructor is a company and the driver's nationality is a passport, so there is no national competition to build a pillar on.",
   retired: "Contested at a Games once and never since. They score nothing today and stay on the board because leaving them off would be a tidier record and a less true one.",
 };
 
@@ -125,13 +136,93 @@ const RETIRED = new Set([
   "Equestrian Vaulting", "Equestrian Driving",
 ]);
 
+export const LENS_LABEL: Record<SportLens, string> = {
+  seated: "Seated",
+  football: "Football",
+  judged: "Judged",
+  combat: "Combat",
+  weapons: "Weapons",
+  animal: "Animal",
+};
+
+export const LENS_BLURB: Record<SportLens, string> = {
+  seated: "Won sitting down, in or on the thing that carries you. Skeleton is not here: head first and face down is not sitting. Nor is equestrian vaulting, which is gymnastics performed standing on a moving horse.",
+  football: "One family tree. The 1863 Football Association split gave association football and, through the clubs that would not accept the handling ban, rugby union, and rugby union in turn gave rugby league in 1895 and the gridiron codes in North America. Australian rules was codified in 1859 from the same English folk game and Gaelic football in 1884 as a deliberate national alternative to it, so both are cousins rather than descendants. Ten codes, one argument about whether you may pick the ball up.",
+  judged: "The winner is decided by a panel's opinion of how it looked, not by a clock, a distance or a goal. Worth knowing how much of an Olympic medal table this is. Ski jumping is here because style points sit alongside the distance, and boxing because ringside judges have always decided the ones that go the distance.",
+  combat: "The obstacle is another person, on purpose. Fencing counts and so does sumo; wrestling and judo are the oldest events on the programme.",
+  weapons: "Contested with a blade, a bow or a gun. Modern pentathlon carries two of the three.",
+  animal: "A second species is competing, and in dressage and jumping it is the one being scored.",
+};
+
+// Membership is by hand and by name, because every one of these is a claim about
+// what a sport is rather than something derivable from a label. A sport missing
+// from every set simply carries no lens.
+const LENS_MEMBERS: Record<SportLens, Set<string>> = {
+  seated: new Set([
+    "Rowing", "Canoe Sprint", "Canoe Slalom", "Sailing", "Motorboating",
+    "Cycling Road", "Cycling Track", "Cycling Mountain Bike",
+    "Cycling BMX Racing", "Cycling BMX Freestyle",
+    "Equestrian Dressage", "Equestrian Eventing", "Equestrian Jumping",
+    "Equestrian Driving", "Polo",
+    "Bobsleigh", "Luge", "Motorsport", "Stock Car Racing",
+  ]),
+  football: new Set([
+    "Football", "Women's Football", "Futsal",
+    "Rugby Union", "Women's Rugby", "Rugby League",
+    "American Football", "Canadian Football",
+    "Australian Rules Football", "Gaelic Football",
+  ]),
+  judged: new Set([
+    "Artistic Gymnastics", "Rhythmic Gymnastics", "Trampolining",
+    "Diving", "Figure Skating", "Artistic Swimming",
+    "Freestyle Skiing", "Snowboarding", "Ski Jumping",
+    "Surfing", "Skateboarding", "Breaking", "Cycling BMX Freestyle",
+    "Equestrian Dressage", "Equestrian Vaulting", "Boxing",
+  ]),
+  combat: new Set(["Boxing", "Judo", "Taekwondo", "Karate", "Wrestling", "Fencing", "Sumo"]),
+  weapons: new Set(["Fencing", "Shooting", "Archery", "Biathlon", "Modern Pentathlon"]),
+  animal: new Set([
+    "Equestrian Dressage", "Equestrian Eventing", "Equestrian Jumping",
+    "Equestrian Vaulting", "Equestrian Driving", "Polo",
+  ]),
+};
+
+export const LENS_ORDER: SportLens[] = ["football", "judged", "seated", "combat", "weapons", "animal"];
+
+/** Every lens a sport falls under. Empty for most of the board. */
+export function lensesFor(sport: string): SportLens[] {
+  return LENS_ORDER.filter((l) => LENS_MEMBERS[l].has(sport));
+}
+
 /**
- * Derived from the label rather than a hand-kept list, so a pillar the pipeline
- * adds later (a Women's Baseball, say) is picked up without anyone remembering
- * to edit this file.
+ * Codes contested only by women, whose names do not say so. The prefix rule below
+ * catches every pillar the Cup scores twice, once per gender, and misses every
+ * sport that never needed the qualifier because there is no men's competition to
+ * distinguish it from. Those are listed here by hand, with the reason, because
+ * each is a judgement about a governing body's programme rather than a fact
+ * derivable from a label.
+ *
+ *  - Netball: the international game, the World Cup and the Commonwealth Games
+ *    title, is women's. Men's netball is played and has no world championship.
+ *  - Rhythmic Gymnastics: women only on the Olympic programme and at the FIG
+ *    world championships, which are the two sources this pillar reads.
+ *  - Softball: Olympic softball has been a women's event in all five Games it has
+ *    appeared at. The WBSC does run a men's world cup; it is not a source here.
+ *  - Artistic Swimming: every Olympic medal ever awarded in it has gone to a
+ *    woman. Paris 2024 opened the team event to men and none entered. Revisit
+ *    this entry when that changes rather than before.
+ */
+const WOMENS_ONLY = new Set([
+  "Netball", "Rhythmic Gymnastics", "Softball", "Artistic Swimming",
+]);
+
+/**
+ * Mostly derived from the label, so a pillar the pipeline adds later (a Women's
+ * Baseball, say) is picked up without anyone remembering to edit this file. The
+ * exceptions are the hand-kept set above.
  */
 export function isWomens(sport: string): boolean {
-  return sport.startsWith("Women's ");
+  return sport.startsWith("Women's ") || WOMENS_ONLY.has(sport);
 }
 
 /**
@@ -196,6 +287,7 @@ export function buildSportRows(nations: NationLike[], prestige: Record<string, n
         kind,
         groups: classify(sport, kind),
         womens: isWomens(sport),
+        lenses: lensesFor(sport),
         bonusKind: kind === "national" ? ((a.bonus.has("motorsport") ? "motorsport" : "national") as "national" | "motorsport") : null,
         total: a.total,
         share: (a.total / grand) * 100,

@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { DataBar } from "@/app/_shared/DataBar";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { TableScroll } from "@/app/_shared/TableScroll";
-import { GROUP_BLURB, GROUP_LABEL, type SportFilter, type SportRow } from "./sportGroups";
+import {
+  GROUP_BLURB, GROUP_LABEL, LENS_BLURB, LENS_LABEL, LENS_ORDER,
+  type SportFilter, type SportLens, type SportRow,
+} from "./sportGroups";
 
 // The Cup read down the other axis. The table above asks how much merit a nation
 // holds; this asks how much a SPORT holds and who holds it. Both come from the
@@ -22,6 +24,29 @@ const ORDER: SportFilter[] = ["all", "team", "summer", "winter", "womens", "nati
 
 const matches = (r: SportRow, f: SportFilter) =>
   f === "all" ? true : f === "womens" ? r.womens : r.groups.includes(f);
+
+// A chip. Both rows use it, so the two cannot drift apart visually. min-h-11 is
+// the 44px touch target DESIGN-STANDARDS requires and is not negotiable here.
+function Chip({
+  label, count, active, onClick,
+}: { label: string; count: number; active: boolean; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className="inline-flex items-center gap-1.5 min-h-11 px-3 rounded-lg border text-sm font-semibold transition-colors"
+      style={{
+        backgroundColor: active ? "var(--accent)" : "var(--bg-card)",
+        borderColor: active ? "var(--accent)" : "var(--border)",
+        color: active ? "#08080D" : "var(--text-muted)",
+      }}
+    >
+      {label}
+      <span className="tabular-nums text-xs" style={{ opacity: 0.75 }}>{count}</span>
+    </button>
+  );
+}
 
 function Leaders({ row }: { row: SportRow }) {
   return (
@@ -49,37 +74,40 @@ function Weight({ row }: { row: SportRow }) {
 
 export default function SportTotals({ rows }: { rows: SportRow[] }) {
   const [group, setGroup] = useState<SportFilter>("all");
-  const shown = rows.filter((r) => matches(r, group));
+  // The lens is a second axis, not a seventh group. It composes with the group
+  // rather than replacing it, so Team plus Football codes is a legal question to
+  // ask of the board. Clicking the active lens turns it off.
+  const [lens, setLens] = useState<SportLens | null>(null);
+  const shown = rows.filter((r) => matches(r, group) && (!lens || r.lenses.includes(lens)));
+  // Each row's own count is what that chip would show on its own, so a count
+  // never depends on what else is selected and the row cannot mislead.
   const counts = ORDER.map((g) => rows.filter((r) => matches(r, g)).length);
-  // The bar is scaled to the whole board, not to the filtered slice, so
-  // switching filter never makes a sport look bigger than it is.
-  const maxTotal = Math.max(...rows.map((r) => r.total));
+  const lensCounts = LENS_ORDER.map((l) => rows.filter((r) => r.lenses.includes(l)).length);
 
   return (
     <>
-      <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter by kind of sport">
-        {ORDER.map((g, i) => {
-          const active = g === group;
-          return (
-            <button
-              key={g}
-              type="button"
-              onClick={() => setGroup(g)}
-              aria-pressed={active}
-              className="inline-flex items-center gap-1.5 min-h-11 px-3 rounded-lg border text-sm font-semibold transition-colors"
-              style={{
-                backgroundColor: active ? "var(--accent)" : "var(--bg-card)",
-                borderColor: active ? "var(--accent)" : "var(--border)",
-                color: active ? "#08080D" : "var(--text-muted)",
-              }}
-            >
-              {GROUP_LABEL[g]}
-              <span className="tabular-nums text-xs" style={{ opacity: 0.75 }}>{counts[i]}</span>
-            </button>
-          );
-        })}
+      <p className="mt-4 text-[11px] uppercase tracking-wider text-[var(--text-dim)]">How the Cup counts it</p>
+      <div className="mt-1.5 flex flex-wrap gap-2" role="group" aria-label="Filter by kind of sport">
+        {ORDER.map((g, i) => (
+          <Chip key={g} label={GROUP_LABEL[g]} count={counts[i]} active={g === group} onClick={() => setGroup(g)} />
+        ))}
+      </div>
+      <p className="mt-3 text-[11px] uppercase tracking-wider text-[var(--text-dim)]">What the sport is</p>
+      <div className="mt-1.5 flex flex-wrap gap-2" role="group" aria-label="Filter by what the sport is">
+        {LENS_ORDER.map((l, i) => (
+          <Chip
+            key={l}
+            label={LENS_LABEL[l]}
+            count={lensCounts[i]}
+            active={l === lens}
+            onClick={() => setLens(l === lens ? null : l)}
+          />
+        ))}
       </div>
       <p className="mt-2 text-[13px] text-[var(--text-muted)] max-w-3xl">{GROUP_BLURB[group]}</p>
+      {lens ? (
+        <p className="mt-1.5 text-[13px] text-[var(--text-muted)] max-w-3xl">{LENS_BLURB[lens]}</p>
+      ) : null}
 
       <TableScroll className="mt-4 hidden sm:block rounded-xl border" style={CARD}>
         <table className="w-full text-sm" data-sticky-col={2}>
@@ -87,7 +115,7 @@ export default function SportTotals({ rows }: { rows: SportRow[] }) {
             <tr>
               <th className="px-3 py-2 w-10">#</th>
               <th className="px-3 py-2">Sport</th>
-              <th className="px-3 py-2">Points</th>
+              <th className="px-3 py-2 text-right">Points</th>
               <th className="px-3 py-2 text-right">Share</th>
               <th className="px-3 py-2 text-right">Nations</th>
               <th className="px-3 py-2 text-right">Top four hold</th>
@@ -105,9 +133,7 @@ export default function SportTotals({ rows }: { rows: SportRow[] }) {
                     <>{" "}<span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{r.bonusKind}</span></>
                   ) : null}
                 </td>
-                <td className="px-3 py-2.5">
-                  <DataBar v={r.total} max={maxTotal} dp={1} width={110} label={`${r.sport} total points`} />
-                </td>
+                <td className="px-3 py-2.5 text-right tabular-nums">{r.total.toFixed(1)}</td>
                 <td className="px-3 py-2.5 text-right tabular-nums text-[var(--text-muted)]">{r.share.toFixed(1)}%</td>
                 <td className="px-3 py-2.5 text-right tabular-nums">{r.nations}</td>
                 <td className="px-3 py-2.5 text-right tabular-nums">

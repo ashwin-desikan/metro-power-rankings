@@ -240,6 +240,13 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/expandable-map" title="Expandable Map" />
             <MenuLink href="/compare" title="Compare metros" />
             <MenuLink href="/matchups/london-vs-new-york" title="Matchups" />
+            {/* The past and the future, side by side. /predictions had the
+                same orphan bug the Time Machine hub was built to fix: it was
+                in neither nav and reachable only by knowing the URL. */}
+            <MenuGroupLabel>🕰️ Across time</MenuGroupLabel>
+            <MenuLink href="/time-machine" title="The Time Machine" />
+            <MenuLink href="/predictions" title="🔮 Predictions" />
+            <MenuLink href="/predictions/scoreboard" title="📓 The Ledger" />
           </div>
           <div>
             <MenuGroupLabel>👑 Power &amp; people</MenuGroupLabel>
@@ -263,13 +270,6 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/order" title="🧭 The Order layer" />
             <MenuLink href="/order/grid" title="The Order Grid" />
             <MenuLink href="/order/trajectory" title="Direction of Travel" />
-            {/* The past and the future, side by side. /predictions had the
-                same orphan bug the Time Machine hub was built to fix: it was
-                in neither nav and reachable only by knowing the URL. */}
-            <MenuGroupLabel>🕰️ Across time</MenuGroupLabel>
-            <MenuLink href="/time-machine" title="The Time Machine" />
-            <MenuLink href="/predictions" title="🔮 Predictions" />
-            <MenuLink href="/predictions/scoreboard" title="📓 The Ledger" />
           </div>
         </div>
         <div className="border-t px-2 py-1.5 flex gap-2" style={{ borderColor: "var(--border)" }}>

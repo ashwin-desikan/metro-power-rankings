@@ -21,10 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-09-04",
     headline: "Four books on every game, and a map of political order",
     items: [
-      "Every NFL game is now priced at four books with each margin removed, and the Ledger shows how far each one leans from the other three. The Champions League has a graded ledger of its own.",
-      "NFL standings were showing preseason records as the season. ESPN stopped saying which season type it serves and its default was the preseason, so every NFL table now asks for the regular season.",
-      "The Zone Zero Cup now reads by sport as well as by nation: what each sport holds, how concentrated it is, and who leads it, filterable by kind. Women's football is reweighted, which moves 61 nations a place or two.",
+      "Every NFL game is now priced at four books with each margin removed, and the Ledger shows how far each leans from the other three. NFL tables also stopped serving preseason records as the season.",
       "A new Order section places every country on two measures, what a state can do and what holds it in check, and a second board tracks which way each one has been moving.",
+      "The Cup now reads by sport as well as by nation. Motorsport counts six championships rather than one, NASCAR joins the national sports, and short track and the marathon swim merge into the sports they are.",
+      "Filter that board by what a sport is: the football family tree, the ones a panel decides, the ones won sitting down. In-cell bars are gone from every table, having only repeated the number beside them.",
     ],
   },
   {
