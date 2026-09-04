@@ -1,72 +1,27 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { DataBar } from "@/app/_shared/DataBar";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { TableScroll } from "@/app/_shared/TableScroll";
-import type { ZzcNation } from "@/lib/zoneZeroCup";
+import { GROUP_BLURB, GROUP_LABEL, type SportFilter, type SportRow } from "./sportGroups";
 
-// The Cup read down the other axis. The main table asks how much merit a nation
-// holds; this asks how much merit a SPORT holds, and who holds it. Both come
-// from the same sportMerit map, so the two can never disagree.
+// The Cup read down the other axis. The table above asks how much merit a nation
+// holds; this asks how much a SPORT holds and who holds it. Both come from the
+// same sportMerit map plus the same national-sport bonuses, so the two can never
+// disagree.
 //
-// Computed here at render rather than baked into zone-zero-cup.json on purpose:
-// it is one pass over ~250 nations, the page already has the data in memory, and
-// keeping it out of the weekly Python build means a change to the presentation
-// never waits on a pipeline run.
+// Client only for the filter. The rows are built on the server and passed in
+// whole; nothing is fetched or recomputed here, and the filter is a plain
+// array filter over ~106 rows.
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const CARD = { borderColor: "var(--border)", backgroundColor: "var(--bg-card)" } as const;
+const ORDER: SportFilter[] = ["all", "team", "summer", "winter", "womens", "national", "retired"];
 
-export type SportRow = {
-  sport: string;
-  total: number;
-  share: number;
-  nations: number;
-  topFourShare: number;
-  weight: number | null;
-  leaders: { name: string; slug: string | null; pts: number; defunct: boolean; suspended: boolean }[];
-};
-
-export function buildSportRows(nations: ZzcNation[], prestige: Record<string, number>): SportRow[] {
-  const acc = new Map<string, { total: number; holders: ZzcNation[] }>();
-  for (const n of nations) {
-    // No `?? {}`: sportMerit is a required Record on ZzcNation, and the union
-    // with an empty object is what makes Object.entries infer `unknown` values.
-    for (const [sport, pts] of Object.entries(n.sportMerit)) {
-      const a = acc.get(sport) ?? { total: 0, holders: [] };
-      a.total += pts;
-      a.holders.push(n);
-      acc.set(sport, a);
-    }
-  }
-  const grand = [...acc.values()].reduce((s, a) => s + a.total, 0) || 1;
-
-  return [...acc.entries()]
-    .map(([sport, a]) => {
-      const ranked = [...a.holders].sort(
-        (x, y) => (y.sportMerit[sport] ?? 0) - (x.sportMerit[sport] ?? 0),
-      );
-      const top = ranked.slice(0, 4);
-      const topSum = top.reduce((s, n) => s + (n.sportMerit[sport] ?? 0), 0);
-      return {
-        sport,
-        total: a.total,
-        share: (a.total / grand) * 100,
-        nations: a.holders.length,
-        // A sport with no points at all is not concentrated, it is empty. Zero
-        // over zero would render as NaN%, so it reads as a dash instead.
-        topFourShare: a.total > 0 ? (topSum / a.total) * 100 : 0,
-        weight: prestige[sport] ?? null,
-        leaders: top.map((n) => ({
-          name: n.name,
-          slug: n.countrySlug,
-          pts: n.sportMerit[sport] ?? 0,
-          defunct: !!n.defunct,
-          suspended: !!n.suspended,
-        })),
-      };
-    })
-    .sort((a, b) => b.total - a.total);
-}
+const matches = (r: SportRow, f: SportFilter) =>
+  f === "all" ? true : f === "womens" ? r.womens : r.group === f;
 
 function Leaders({ row }: { row: SportRow }) {
   return (
@@ -87,10 +42,45 @@ function Leaders({ row }: { row: SportRow }) {
   );
 }
 
+function Weight({ row }: { row: SportRow }) {
+  if (row.kind === "national") return <span className="text-[var(--text-dim)]">bonus</span>;
+  return <>{row.weight != null ? `${row.weight.toFixed(2).replace(/0$/, "")}×` : "—"}</>;
+}
+
 export default function SportTotals({ rows }: { rows: SportRow[] }) {
+  const [group, setGroup] = useState<SportFilter>("all");
+  const shown = rows.filter((r) => matches(r, group));
+  const counts = ORDER.map((g) => rows.filter((r) => matches(r, g)).length);
+  // The bar is scaled to the whole board, not to the filtered slice, so
+  // switching filter never makes a sport look bigger than it is.
   const maxTotal = Math.max(...rows.map((r) => r.total));
+
   return (
     <>
+      <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter by kind of sport">
+        {ORDER.map((g, i) => {
+          const active = g === group;
+          return (
+            <button
+              key={g}
+              type="button"
+              onClick={() => setGroup(g)}
+              aria-pressed={active}
+              className="inline-flex items-center gap-1.5 min-h-11 px-3 rounded-lg border text-sm font-semibold transition-colors"
+              style={{
+                backgroundColor: active ? "var(--accent)" : "var(--bg-card)",
+                borderColor: active ? "var(--accent)" : "var(--border)",
+                color: active ? "#08080D" : "var(--text-muted)",
+              }}
+            >
+              {GROUP_LABEL[g]}
+              <span className="tabular-nums text-xs" style={{ opacity: 0.75 }}>{counts[i]}</span>
+            </button>
+          );
+        })}
+      </div>
+      <p className="mt-2 text-[13px] text-[var(--text-muted)] max-w-3xl">{GROUP_BLURB[group]}</p>
+
       <TableScroll className="mt-4 hidden sm:block rounded-xl border" style={CARD}>
         <table className="w-full text-sm" data-sticky-col={2}>
           <thead className="text-left text-xs uppercase tracking-wider text-[var(--text-muted)]">
@@ -106,10 +96,15 @@ export default function SportTotals({ rows }: { rows: SportRow[] }) {
             </tr>
           </thead>
           <tbody>
-            {rows.map((r, i) => (
+            {shown.map((r, i) => (
               <tr key={r.sport} className="border-t" style={{ borderColor: "var(--border)" }}>
                 <td className="px-3 py-2.5 tabular-nums text-[var(--text-dim)]">{i + 1}</td>
-                <td className="px-3 py-2.5 font-medium whitespace-nowrap">{r.sport}</td>
+                <td className="px-3 py-2.5 font-medium whitespace-nowrap">
+                  {r.sport}
+                  {r.kind === "national" && group === "all" ? (
+                    <>{" "}<span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">national</span></>
+                  ) : null}
+                </td>
                 <td className="px-3 py-2.5">
                   <DataBar v={r.total} max={maxTotal} dp={1} width={110} label={`${r.sport} total points`} />
                 </td>
@@ -119,7 +114,7 @@ export default function SportTotals({ rows }: { rows: SportRow[] }) {
                   {r.total > 0 ? `${r.topFourShare.toFixed(0)}%` : "—"}
                 </td>
                 <td className="px-3 py-2.5 text-right tabular-nums text-[var(--text-muted)]" style={MONO}>
-                  {r.weight != null ? `${r.weight.toFixed(1)}×` : "—"}
+                  <Weight row={r} />
                 </td>
                 <td className="px-3 py-2.5 text-[var(--text-muted)]"><Leaders row={r} /></td>
               </tr>
@@ -134,20 +129,23 @@ export default function SportTotals({ rows }: { rows: SportRow[] }) {
           noun="sports"
           className="rounded-lg border border-[var(--border)]"
           bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
-          items={rows.map((r, i) => (
+          items={shown.map((r, i) => (
             <div key={r.sport} className="rounded-lg border p-3" style={CARD}>
               <div className="flex items-baseline justify-between gap-2">
                 <span className="min-w-0 font-medium text-[var(--text)]">
                   <span className="mr-2 text-xs tabular-nums text-[var(--text-dim)]">{i + 1}</span>
                   {r.sport}
+                  {r.kind === "national" && group === "all" ? (
+                    <>{" "}<span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">national</span></>
+                  ) : null}
                 </span>
                 <span className="shrink-0 text-lg font-bold tabular-nums text-[var(--text)]">{r.total.toFixed(1)}</span>
               </div>
               <div className="mt-1 flex flex-wrap gap-x-4 text-xs tabular-nums text-[var(--text-muted)]">
                 <span>{r.share.toFixed(1)}% of the Cup</span>
-                <span>{r.nations} nations</span>
+                <span>{r.nations} {r.nations === 1 ? "nation" : "nations"}</span>
                 {r.total > 0 ? <span>top four hold {r.topFourShare.toFixed(0)}%</span> : null}
-                {r.weight != null ? <span>weight {r.weight.toFixed(1)}×</span> : null}
+                <span>weight <Weight row={r} /></span>
               </div>
               <div className="mt-1.5 text-xs text-[var(--text-muted)] leading-snug"><Leaders row={r} /></div>
             </div>

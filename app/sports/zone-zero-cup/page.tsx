@@ -4,7 +4,8 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getZoneZeroNations, getZoneZeroMeta, getZoneZeroRegions } from "@/lib/zoneZeroCup";
 import HubNav from "@/app/teams/HubNav";
 import ZoneZeroTable, { type ZzcRow } from "./ZoneZeroTable";
-import SportTotals, { buildSportRows } from "./SportTotals";
+import SportTotals from "./SportTotals";
+import { buildSportRows } from "./sportGroups";
 import { flagCdnUrl } from "@/lib/international-display";
 
 export const dynamicParams = false;
@@ -173,6 +174,12 @@ export default async function ZoneZeroCupPage() {
               leaders take of the sport&apos;s own total, which is the difference between a sport a handful of
               countries own and one the world shares. Weight is the prestige multiplier the method applies to a
               sport&apos;s flagship title, where it has one.
+            </p>
+            <p>
+              National sports are in the table too, marked as such. They are a fixed recognition bonus rather than a
+              scoring pillar: they never compete for a nation&apos;s ten scoring slots, which is why American football
+              is a row held entirely by one country. Where a national sport is also a pillar, as rugby league is, the
+              bonus is folded into that pillar&apos;s row rather than counted twice.
             </p>
             <p>
               All {sportRows.length} disciplines are listed, including the {sportRows.length - scoredSports} carrying
