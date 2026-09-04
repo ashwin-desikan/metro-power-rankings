@@ -4,7 +4,7 @@ import SoundNav from '../SoundNav';
 
 interface M { slug: string; metro: string; us_score: number; uk_score: number; combined: number; lenses: { origin: unknown | null } }
 async function load(): Promise<M[]> { return JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', 'metros_unified.json'), 'utf8')); }
-export const metadata = { title: 'The Transatlantic Divide — Sound of the Metros' };
+export const metadata = { title: 'The Transatlantic Divide: Sound of the Metros' };
 const muted = { color: 'var(--text-muted)' } as const;
 
 export default async function TransatlanticPage() {

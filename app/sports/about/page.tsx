@@ -65,10 +65,9 @@ export default function ZoneZeroAboutPage() {
         <h2 className="text-xl font-semibold mb-3">The idea</h2>
         <p className="text-[var(--text-muted)] mb-3">
           Most sports clubs derive their identity from fixed ground: a parish, a postcode, a piece of Victorian
-          real estate. Identity flows from the dirt. Even the most storied institutions in a sport often carry the
-          name of a place they have long since left, because in sport the name and the history are the asset and the
-          ground beneath is incidental. Zone Zero severs that. We are built on network centrality instead of inherited
-          geography.
+          real estate. Even the most storied institutions often carry the name of a place they have long since
+          left, because the name and the history are the asset and the ground beneath is incidental. Zone Zero
+          severs that: we are built on network centrality instead of inherited geography.
         </p>
         <p className="text-[var(--text-muted)]">
           We belong to the dense core of the global network, where value concentrates, rather than to any single
@@ -180,7 +179,7 @@ export default function ZoneZeroAboutPage() {
               <a href={r.href} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">
                 {r.label}
               </a>{" "}
-              <span className="text-[var(--text-dim)]">&mdash; {r.note}</span>
+              <span className="text-[var(--text-dim)]">: {r.note}</span>
             </li>
           ))}
         </ul>

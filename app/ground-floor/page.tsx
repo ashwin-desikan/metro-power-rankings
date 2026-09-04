@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { SectionHead } from "@/app/_shared/SectionHead";
 import {
   getGroundFloor, biggestGaps, smallestGaps, bestConditions,
   fmtPm, fmtShare, fmtGap, type GfRow,
@@ -36,14 +37,6 @@ const TD = "px-3 py-2";
 const TDR = "px-3 py-2 text-right";
 const SMCOL = "hidden sm:table-cell";
 
-function SectionHead({ title, sub }: { title: string; sub: string }) {
-  return (
-    <>
-      <h2 className="text-2xl font-bold mb-1">{title}</h2>
-      <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">{sub}</p>
-    </>
-  );
-}
 
 function MetroLink({ name, slug }: { name: string; slug: string }) {
   return <Link href={`/rankings/${slug}`} className="hover:underline">{name}</Link>;
@@ -154,8 +147,7 @@ export default function GroundFloorPage() {
           <span aria-hidden>&#127961;&#65039;</span> The Ground Floor
         </h1>
         <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
-          The power ranking measures accumulation: what a metro has gathered. This board measures
-          the other question separately, which is what it is like to live there. The two are never
+          The power ranking measures accumulation: what a metro has gathered. The two are never
           merged, because the distance between them is the only thing worth publishing.
         </p>
         <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3" style={MONO}>
@@ -163,25 +155,11 @@ export default function GroundFloorPage() {
         </p>
       </header>
 
-      <section id="position" className="rounded-2xl border p-5 mb-10" style={CARD}>
-        <p className="text-[13.5px] leading-relaxed text-[var(--text-muted)] max-w-3xl">
-          The power ranking is a good instrument for one question and a useless one for any other.
-          It cannot tell you whether the people living somewhere breathe clean air, can reach work,
-          or can afford to live near it. We rank each metro on each condition independently and take
-          the median of those ranks. There are no weights, because we are not in a position to tell
-          you that clean air matters more than water.
-        </p>
-        <p className="text-[13.5px] leading-relaxed mt-3 max-w-3xl">
-          The position underneath this is stated rather than concealed: a metro that concentrates
-          extraordinary capital while failing the people inside it is not succeeding, whatever its
-          rank says.
-        </p>
-      </section>
-
       <section id="gap" className="mb-12">
         <SectionHead
           title="The gap"
-          sub="Among the hundred biggest accumulators, the metros whose conditions sit furthest below what they have gathered. Gap is measured in percentile points: the distance between a metro's place on the power ranking and its place here."
+          sub="The hundred biggest accumulators, ranked by how far conditions fall short of what they've gathered."
+          more="Gap is measured in percentile points: the distance between a metro's place on the power ranking and its place here."
         />
         <GapTable rows={worst} />
       </section>
@@ -189,7 +167,8 @@ export default function GroundFloorPage() {
       <section id="closest" className="mb-12">
         <SectionHead
           title="Closest to their weight"
-          sub="The same hundred metros from the other end, the ones whose conditions come nearest to matching what they accumulate. Note that every one is still positive: no large metro delivers better than it accumulates."
+          sub="The same hundred metros, ranked by how close conditions come to matching what they accumulate."
+          more="Every one is still positive: no large metro delivers better than it accumulates."
         />
         <GapTable rows={closest} />
       </section>
@@ -197,7 +176,8 @@ export default function GroundFloorPage() {
       <section id="best" className="mb-12">
         <SectionHead
           title="Best conditions"
-          sub="Ranked on conditions alone, among metros inside the top 1,500 by accumulation so the board is not filled with hamlets."
+          sub="Ranked on conditions alone, among the 1,500 biggest accumulators."
+          more="Restricted to the top 1,500 by accumulation so the board is not filled with hamlets."
         />
         <ConditionsTable rows={best} />
       </section>
@@ -205,6 +185,16 @@ export default function GroundFloorPage() {
       <section id="method" className="rounded-2xl border p-5" style={CARD}>
         <h2 className="text-lg font-bold mb-3">How this board works</h2>
         <div className="text-[13.5px] leading-relaxed text-[var(--text-muted)] space-y-3 max-w-3xl">
+          <p>
+            The power ranking is a good instrument for one question and a useless one for any
+            other. It cannot tell you whether the people living somewhere breathe clean air, can
+            reach work, or can afford to live near it. We rank each metro on each condition
+            independently and take the median of those ranks. There are no weights, because we
+            are not in a position to tell you that clean air matters more than water. The
+            position underneath this is stated rather than concealed: a metro that concentrates
+            extraordinary capital while failing the people inside it is not succeeding, whatever
+            its rank says.
+          </p>
           <p>
             Three dimensions, each measured the same way for every metro in the set, each ranked
             independently. A metro&apos;s Ground Floor rank is the median of its three dimension

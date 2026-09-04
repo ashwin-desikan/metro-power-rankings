@@ -204,6 +204,27 @@ explicit — apply it before touching any refresh script:
   page.** It is the full look-and-feel contract (skeleton, nav idioms,
   theme tokens, table rules, disclosure primitives, mobile checklist). The
   bullets here are only the non-negotiable core.
+- **ONE CLAUSE ABOVE THE BOARD, then the board, then the essay.** A `sub` is
+  the reading key (what the unit is, how to read the column), under 20 words.
+  Derivation, caveats and exclusions go in `SectionHead`'s `more`, which
+  collapses on every viewport. Sources and references belong at the BOTTOM of
+  the page or on their own page, never high on a main page. `/methodology`,
+  `/about` and `/sports/about` are exempt: there the prose is the product.
+  Measured 2026-09-03 and fixed sitewide. See DESIGN-STANDARDS.md 2A.
+- **No em dash in user-visible prose** — comma, colon, or a new sentence.
+  🔴 But **never touch a null-fallback glyph** (`?? "—"`, `return "—"`,
+  `: "—"`, `>—<`): those are empty-cell markers and replacing them breaks
+  tables. 217 of them; that count is the invariant after any sweep.
+- **Chart colour is computed, never chosen.** Use `--cat-1..6`, `--seq-1..5`,
+  `--div-neg/mid/pos` from globals.css. Before changing one, re-run the
+  `dataviz` skill's `validate_palette.js`. Categorical order is the
+  colourblind-safety mechanism, so assign in sequence and never cycle; maps and
+  scatter are capped at `--cat-1..3`. A value keeps a text token, never the
+  series colour.
+- **A numeric column wants an in-cell bar, not a chart page.** Use
+  `app/_shared/DataBar.tsx` (`DataBar`, `DivergingBar`). `max` is the column's
+  maximum and must be the same for every row. A diverging bar always draws its
+  zero line: that line is the secondary encoding the palette legally requires.
 - **Phone-clean at 390px, always: no page-level horizontal scroll.** Any
   grid child containing a table needs `min-w-0` (grid items default to
   `min-width:auto`, so a wide table otherwise drags the whole page

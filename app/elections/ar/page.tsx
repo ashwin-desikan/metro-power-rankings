@@ -15,7 +15,7 @@ import { StatTile, JumpNav, RecordsGrid, HowItWorks, HubFooter, HubTitle } from 
 const PATH = "/elections/ar";
 const TITLE = "Argentine Presidential Elections";
 const DESC =
-  "Every Argentine presidential election from 1826 to Milei's runoff of 2023 — the electoral college of the oligarchic republic, the secret-ballot revolution of 1916, Perón's rise, the proscription years stated plainly, and the unbroken democracy since 1983.";
+  "Every Argentine presidential election from 1826 to Milei's runoff of 2023: the electoral college of the oligarchic republic, the secret-ballot revolution of 1916, Perón's rise, the proscription years stated plainly, and the unbroken democracy since 1983.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -89,7 +89,7 @@ export default function ArElectionsPage() {
       .map((e) => {
         const w = arWinnerOf(e);
         const s = w ? (w.r2Share ?? w.r1Share) : null;
-        return w && s != null ? { x: e.year, y: s, label: `${e.label} — ${w.name}` } : null;
+        return w && s != null ? { x: e.year, y: s, label: `${e.label}, ${w.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -127,7 +127,7 @@ export default function ArElectionsPage() {
       <section id="chronology" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Every presidential election</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          All {elections.length} contests, newest first — with the arranged successions of the
+          All {elections.length} contests, newest first, with the arranged successions of the
           oligarchic republic, the fraud of the Infamous Decade and the proscription-era votes
           labelled for what they were.
         </p>
@@ -156,7 +156,7 @@ export default function ArElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since the secret ballot</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Compulsory voting has kept Argentine turnout high since 1912 — above 80% for most of
+              Compulsory voting has kept Argentine turnout high since 1912, above 80% for most of
               the democratic era, easing only in recent contests.
             </p>
             <LineChart series={[turnout]} yMax={100} yTicks={[50, 75]} />
@@ -165,7 +165,7 @@ export default function ArElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">What it takes to win</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               The winner&apos;s decisive share since 1983: Alfonsín and Menem&apos;s majorities, Kirchner&apos;s
-              22% walkover after Menem withdrew, and the runoff era&apos;s duels — capped by Milei&apos;s
+              22% walkover after Menem withdrew, and the runoff era&apos;s duels, capped by Milei&apos;s
               55.7% in 2023.
             </p>
             <LineChart series={[winShare]} yMax={70} yTicks={[25, 50]} />
@@ -179,9 +179,9 @@ export default function ArElectionsPage() {
         title="How Argentine presidential elections work"
         cards={[
           ["The ballotage rules", "Since 1994 a candidate wins outright with 45%, or with 40% and a ten-point lead; otherwise the top two meet in a runoff. The thresholds are why 2003's runoff evaporated when Menem withdrew, and why 2015 and 2023 went the distance."],
-          ["Compulsory, and primary-tested", "Voting is compulsory from 16 to 70, and since 2011 every party's candidates first face the open PASO primaries — a nationwide dress rehearsal that has repeatedly upended the race before it formally began."],
+          ["Compulsory, and primary-tested", "Voting is compulsory from 16 to 70, and since 2011 every party's candidates first face the open PASO primaries, a nationwide dress rehearsal that has repeatedly upended the race before it formally began."],
           ["From electors to voters", "Until 1912 presidents were chosen by an electoral college elected on a public ballot the ruling machine controlled. The Sáenz Peña Law's secret, universal, compulsory male vote turned Argentine elections into real contests overnight."],
-          ["The Peronist constant", "Since 1946 Argentine politics has been organised for or against Peronism — banned from the ballot for eighteen years, and the winner of ten of the fourteen free presidential elections it has contested."],
+          ["The Peronist constant", "Since 1946 Argentine politics has been organised for or against Peronism, banned from the ballot for eighteen years, and the winner of ten of the fourteen free presidential elections it has contested."],
         ]}
       />
 

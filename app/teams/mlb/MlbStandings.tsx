@@ -14,6 +14,7 @@ import { getCurrentMlbStandings, type TeamStanding } from "@/lib/mlb-standings";
 import { getAllFranchises, logoUrlFor, monogramFor } from "@/lib/mlb";
 import { getMlbSim, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 type Region = "East" | "Central" | "West" | "Other";
 
@@ -158,7 +159,7 @@ export default async function MlbStandings() {
             {oddsAsOf && (
               <>
                 {" "}Playoff and World Series odds are our own simulation of the remaining schedule
-                ({sim!.meta.sims.toLocaleString()} runs, {oddsAsOf}) —{" "}
+                ({sim!.meta.sims.toLocaleString()} runs, {oddsAsOf}):{" "}
                 <Link href="/predictions" className="text-[var(--accent)] hover:underline">
                   how it works
                 </Link>.
@@ -212,6 +213,10 @@ export default async function MlbStandings() {
                   const inField = t.playoff_seed !== null && t.playoff_seed <= 6;
                   return { t, slug, logo, mono, displayShort, pct, gbLabel, po, ws, inField };
                 });
+                // Pct is the board's argument: teams are sorted desc by win_pct
+                // above. colMax is this division's own max, computed once over
+                // the full rowsData set, before the row map below.
+                const colMax = Math.max(...rowsData.map((r) => r.t.win_pct), 0.001);
 
                 const TeamIdentity = ({ slug, logo, mono, displayShort }: (typeof rowsData)[number]) => (
                   slug ? (
@@ -334,7 +339,9 @@ export default async function MlbStandings() {
                               </td>
                               <td className="py-1 px-1 text-right">{row.t.wins}</td>
                               <td className="py-1 px-1 text-right">{row.t.losses}</td>
-                              <td className="py-1 px-1 text-right text-[var(--text-muted)]">{row.pct}</td>
+                              <td className="py-1 px-1 text-right">
+                                <DataBar v={row.t.win_pct} max={colMax} dp={3} width={70} label="win percentage" />
+                              </td>
                               <td className="py-1 pl-1 text-right text-[var(--text-muted)]">{row.gbLabel}</td>
                               {showOdds && (
                                 <td

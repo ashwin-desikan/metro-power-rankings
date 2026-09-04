@@ -142,7 +142,7 @@ export default function BritishHomeChampionshipPage() {
           ))}
         </ul>
         <p className="mt-3 text-xs text-[var(--text-dim)]">
-          These titles are not counted toward each team&apos;s main honors totals — the BHC and Rous Cup are shown here as historical record only.
+          These titles are not counted toward each team&apos;s main honors totals: the BHC and Rous Cup are shown here as historical record only.
         </p>
       </section>
 

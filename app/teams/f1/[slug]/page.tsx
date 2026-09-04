@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const data = getF1CircuitBySlug(slug);
   if (!data) return { title: "Circuit not found" };
   const name = data.circuit.circuit_name ?? "Circuit";
-  const title = `${name} — F1`;
+  const title = `${name}: F1`;
   const desc = `Formula 1 race history at ${name}${data.circuit.metro ? ` (${data.circuit.metro})` : ""}: ${data.circuit.races} World Championship Grands Prix, ${data.circuit.first_year}–${data.circuit.last_year}.`;
   return {
     title, description: desc,

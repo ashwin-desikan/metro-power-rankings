@@ -9,6 +9,7 @@ import Link from "next/link";
 import { getCurrentNflStandings, type TeamStanding } from "@/lib/standings";
 import { getAllFranchises, logoUrlFor, monogramFor, type Franchise } from "@/lib/nfl";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 const DIVISION_ORDER = [
   "AFC East", "AFC North", "AFC South", "AFC West",
@@ -76,6 +77,10 @@ export default async function NflStandings() {
             }
             return a.f.name.localeCompare(b.f.name);
           });
+          // Pct is the board's argument: rows are sorted by win_pct desc
+          // whenever live data exists. colMax is this division's own max,
+          // computed once over the full `rows` set above, before the row map.
+          const colMax = hasLive ? Math.max(...rows.map((r) => r.t?.win_pct ?? 0), 0.001) : 1;
           return (
             <div key={divName} className="rounded-xl border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               <h3 className="text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] mb-2">{divName}</h3>
@@ -149,7 +154,9 @@ export default async function NflStandings() {
                         <td className="py-1 px-1 text-right">{showRec ? t!.wins : "—"}</td>
                         <td className="py-1 px-1 text-right">{showRec ? t!.losses : "—"}</td>
                         <td className="py-1 px-1 text-right text-[var(--text-muted)]">{showRec ? t!.ties : "—"}</td>
-                        <td className="py-1 pl-1 text-right text-[var(--text-muted)]">{showRec ? fmtPct(t!.win_pct) : "—"}</td>
+                        <td className="py-1 pl-1 text-right">
+                          <DataBar v={showRec ? t!.win_pct : null} max={colMax} dp={3} width={70} label="win percentage" />
+                        </td>
                       </tr>
                     );
                   })}

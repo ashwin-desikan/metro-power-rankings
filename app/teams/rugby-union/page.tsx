@@ -11,6 +11,7 @@ import RugbyFixtures from "@/app/teams/rugby-union/RugbyFixtures";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export const dynamicParams = false;
 const PATH = "/teams/rugby-union";
@@ -46,6 +47,11 @@ export default async function RugbyUnionHubPage() {
     .sort((a, b) => (a.ranking && a.ranking.current ? a.ranking.current : 99) - (b.ranking && b.ranking.current ? b.ranking.current : 99));
   const rest = teams.filter((t) => !t.six_nations && !t.sanzaar && t.record)
     .sort((a, b) => (b.record ? b.record.m : 0) - (a.record ? a.record.m : 0));
+  // Tests is the "rest" table's argument (it's what the table is sorted
+  // by); Weeks is the "weeks at number one" board's argument. Each max is
+  // that column's own maximum, computed once over the full row set.
+  const restTestsMax = Math.max(...rest.map((t) => t.record?.m ?? 0), 1);
+  const weeksMax = Math.max(...hub.number_ones.map((r) => r.weeks), 1);
 
   const teamLink = (name: string) => {
     const slug = slugByName.get(name);
@@ -76,7 +82,7 @@ export default async function RugbyUnionHubPage() {
           Test rugby from the first international in 1871: {hub.totals.matches.toLocaleString()} matches,
           every season of the Home, Five and Six Nations and of the Tri Nations and Rugby
           Championship, all the Rugby World Cup finals, and the weekly World Rugby rankings
-          since 2003 — with a page for every test nation on file.
+          since 2003. A page for every test nation on file.
         </p>
       </header>
 
@@ -111,7 +117,7 @@ export default async function RugbyUnionHubPage() {
               <div>
                 <div className="font-semibold text-base">Domestic Rugby →</div>
                 <div className="text-xs text-[var(--text-muted)] mt-1">
-                  The club game&apos;s honours boards: {comps.map((k) => clubs.labels[k]).join(", ")} —
+                  The club game&apos;s honours boards: {comps.map((k) => clubs.labels[k]).join(", ")},
                   every champion since 1892, linked to their metros.
                 </div>
               </div>
@@ -204,7 +210,7 @@ export default async function RugbyUnionHubPage() {
                 {hub.number_ones.map((r) => (
                   <tr key={r.team} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1 pr-2">{teamLink(r.team)}</td>
-                    <td className="py-1 pr-2 text-right tabular-nums" style={mono}>{r.weeks}</td>
+                    <td className="py-1 pr-2 text-right"><DataBar v={r.weeks} max={weeksMax} width={72} label="weeks" /></td>
                     <td className="py-1 pr-2 text-right tabular-nums" style={mono}>{r.longest}</td>
                     <td className="py-1 text-right tabular-nums" style={mono}>{r.last}</td>
                   </tr>
@@ -366,21 +372,28 @@ export default async function RugbyUnionHubPage() {
       {/* ---------------- Greatest Games ---------------- */}
       <section className="mb-10">
         <h2 id="greatest-games" className="text-lg font-semibold mb-1">The greatest tests</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-3">
-          Every men&apos;s international since 1871 ranked by a computed Game Score: how close the match
-          was, what was at stake, how strong both sides were on the day, and how much rugby was actually
-          played, with team strength measured by a continuous Elo rating spanning the whole history.
-          Closeness is judged against the match&apos;s own scoring, so a twelve-point margin in a
-          seventy-four-point semi-final is not treated as a blowout, and total points earns a bonus so
-          that open games are not buried under one-score kicking duels. What the score still cannot see
-          is tries, lead changes and ball-in-play time: none of those are in the results data.
-          A shock result earns its own bonus, measured against what the ratings expected before
-          kick-off, so a win nobody saw coming is no longer penalised for the weakness of the side
-          that pulled it off. A star marks a curated row: either an all-time classic lifted onto the
-          board, or one of three World Cup finals placed at a fixed rank by hand. Hover the score of
-          any starred row to see where the model itself put it. Filter by decade; hover any score for
-          its components.
+        <p className="text-xs text-[var(--text-muted)] mb-1">
+          Every men&apos;s international since 1871 ranked by a computed Game Score blending closeness,
+          stakes and team strength.
         </p>
+        <details className="mb-3 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-xs text-[var(--text-muted)]">
+            Team strength is a continuous Elo rating spanning the whole history. Closeness is judged
+            against the match&apos;s own scoring, so a twelve-point margin in a seventy-four-point
+            semi-final is not treated as a blowout, and total points earns a bonus so that open games
+            are not buried under one-score kicking duels. A shock result earns its own bonus, measured
+            against what the ratings expected before kick-off, so a win nobody saw coming is no longer
+            penalised for the weakness of the side that pulled it off. What the score still cannot see
+            is tries, lead changes and ball-in-play time: none of those are in the results data. A
+            star marks a curated row: either an all-time classic lifted onto the board, or one of
+            three World Cup finals placed at a fixed rank by hand. Hover the score of any starred row
+            to see where the model itself put it. Filter by decade; hover any score for its
+            components.
+          </div>
+        </details>
         <RugbyGreatestGames top={rg.top} decades={rg.by_decade} limit={50} />
       </section>
 
@@ -510,7 +523,7 @@ export default async function RugbyUnionHubPage() {
                       </Link>
                     </td>
                     <td className="py-1.5 px-3 tabular-nums" style={mono}>{spanStr(r.first, r.last)}</td>
-                    <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.m}</td>
+                    <td className="py-1.5 px-3 text-right"><DataBar v={r.m} max={restTestsMax} width={80} label="tests" /></td>
                     <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.w}</td>
                     <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.l}</td>
                     <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.d}</td>

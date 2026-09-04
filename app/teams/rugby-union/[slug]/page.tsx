@@ -18,6 +18,7 @@ import { getRugbyGamesForTeam } from "@/lib/rugbyGames";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // dynamicParams=true since 2026-08-07: this portal's data is now read at runtime
 // (lib/liveData), so the weekly refresh can introduce a nation between builds.
@@ -40,7 +41,7 @@ export async function generateMetadata(
   const path = `/teams/rugby-union/${slug}`;
   const desc = `${team.name} test rugby: all-time record, championship and World Cup honours, season-by-season standings, head-to-head ledgers and recent results.`;
   return {
-    title: `${team.name} — International Rugby Union`,
+    title: `${team.name}: International Rugby Union`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
@@ -92,6 +93,10 @@ export default async function RugbyTeamPage(
   const c = team.championships;
   const w = team.rwc;
   const h2hEntries = Object.entries(detail.h2h);
+  // Tests is this table's argument (how many times each rivalry has been
+  // played); max is the column's own maximum, computed once over every
+  // opponent row.
+  const h2hTestsMax = Math.max(...h2hEntries.map(([, r]) => r.m), 1);
   const teamGames = getRugbyGamesForTeam(slug);
 
   return (
@@ -360,7 +365,7 @@ export default async function RugbyTeamPage(
                 {h2hEntries.map(([opp, r]) => (
                   <tr key={opp} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1.5 px-3 font-medium">{opp}</td>
-                    <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.m}</td>
+                    <td className="py-1.5 px-3 text-right"><DataBar v={r.m} max={h2hTestsMax} width={72} label="tests" /></td>
                     <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.w}</td>
                     <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.l}</td>
                     <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.d}</td>

@@ -216,6 +216,55 @@ The measurement framework that turns the YouTube go/no-go from a vibes call into
 **Verified absent 2026-08-07:** `experiments/2026-Q3-validation.md` absent; there is no `experiments/` directory at project root at all (it is listed in `.gitignore` but was never created).
 **Priority:** P1
 
+### Songbook: style derivation layer
+
+`scripts/sound/derive_style.py`. Given a `(metro_slug, event year)` pair, emit a music style
+brief: genre and instrumentation descriptors, tempo and register, drawn from the metro's own
+charting artists in that event's decade. The key is `artists_by_period.json` `decades[<event
+decade>]` filtered on `metro_slug`, with `scenes.json` overriding where a named scene covers
+the year. Never emit living artist names, which breaches Suno terms and invites takedowns.
+`distinctiveness` from `metros.json` is a shortlist score, not a style input.
+
+This is the cheap, independent half of the Songbook and it stands alone: it costs nothing,
+needs no account, no budget and no channel decision, and it either proves or kills the whole
+concept. Ship it before anything else in the track.
+
+**Verified 2026-09-03:** `scripts/sound/` does not exist; no derivation script anywhere under
+`scripts/`. The inputs are all present in `public/data/sound/`. Derivation tested by hand and
+it works: Seattle 1990s returns Sir Mix-a-Lot, Pearl Jam, Heart, Nirvana; Detroit 1960s returns
+the Supremes, Temptations, Stevie Wonder, Aretha, Four Tops. It also beat the human guess, New
+Orleans 2000s returning Cash Money and bounce rather than the assumed brass band.
+🔴 `signature_decade` is the WRONG key and must not be used: it reads 1950s for Seattle, 1950s
+for New Orleans, 2020s for Manchester.
+**Priority:** P2
+
+### Songbook: production track (gated)
+
+Sports and music history turned into songs, each in the musical idiom of that team's city in
+that team's year, with a data-scene video and a channel. Full scope in `SONGBOOK-SPEC.md` at
+repo root, sections 1 to 12. Pilot is the same format three times: Seattle 1995 as grunge,
+Detroit 1968 as Motown, the 1983 America's Cup as a sea shanty.
+
+Gated. Do not start until all three clear:
+1. The Substack is publishing again, three consecutive weeks. See
+   `internal/relaunch-plan-2026-09.md`. Standing up a new channel while the free one that
+   already has a playbook sits idle is accumulation, not distribution.
+2. Suno is on Pro or Premier. The account is on the free tier, which grants no commercial
+   rights, so nothing generated to date can be monetised.
+3. A Higgsfield credit budget exists. The account is on the free plan.
+
+Gate to continue past the pilot: inherit the TikTok and Reels gate above, and add one that
+matters more, at least one video driving measurable UTM traffic to a metro or team page.
+
+**Verified 2026-09-03:** Suno has no public API, so the audio step is manual and cannot be
+pipelined; invite-only partners, and third-party resellers breach their terms. Higgsfield is a
+connected MCP with reference-driven models that hold character identity, so capability is not
+the open question, budget is. **`scripts/reel/build_reel.py` already exists and is the video
+spine** (Playwright site screenshots, Ken Burns, PNG captions, ffmpeg assembly, vertical
+1080x1920). Extend it rather than building a Remotion app: swap ElevenLabs narration for a Suno
+track keyed to song timestamps, add a 16:9 output, add a Higgsfield-asset segment type.
+**Priority:** P3
+
 ## YouTube long-form (Phase 2, conditional)
 
 All twelve items in this track are gated behind the 90-day validation experiment above,

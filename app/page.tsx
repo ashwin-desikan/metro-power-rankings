@@ -425,7 +425,7 @@ export default async function Home() {
     { n: '03', title: 'Zone Zero Cup', desc: 'National sporting merit across fourteen pillars, ten-year half-life.', stat: '200+ nations', href: '/sports/zone-zero-cup', emoji: '🏆', preview: topNations() },
     { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', preview: topArtists() },
     { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from the Renaissance to today.', stat: '526 years · 1500–now', href: '/power-atlas', emoji: '🏛️', preview: topPowers() },
-    { n: '06', title: 'The Election Atlas', desc: 'Every election in 35 countries and the EU — parties, leaders, turnout, and the results.', stat: '35 polities', href: '/elections', emoji: '🗳️', isNew: true, preview: topElections(forecast) },
+    { n: '06', title: 'The Election Atlas', desc: 'Every election in 35 countries and the EU: parties, leaders, turnout, and the results.', stat: '35 polities', href: '/elections', emoji: '🗳️', isNew: true, preview: topElections(forecast) },
     { n: '07', title: 'The Screen of the Metros', desc: 'A century of box office and Oscar prestige, credited back to the metros that made it.', stat: '1927–now', href: '/screen', emoji: '🎬', isNew: true, preview: topFilmMetros() },
   ];
 
@@ -497,7 +497,7 @@ export default async function Home() {
                   })}
                 </div>
                 <div className="mt-3 pt-2.5 border-t text-[11px]" style={{ ...MONO, color: 'var(--text-muted)', borderColor: 'var(--border)' }}>
-                  Seven live boards — metros, people, nations, artists, power, elections, screen <span className="group-hover:text-[var(--accent)] transition-colors" aria-hidden>↓</span>
+                  Seven live boards: metros, people, nations, artists, power, elections, screen <span className="group-hover:text-[var(--accent)] transition-colors" aria-hidden>↓</span>
                 </div>
               </a>
               {games.length > 0 && (
@@ -506,7 +506,7 @@ export default async function Home() {
                     <span aria-hidden className="text-sm leading-none flex-shrink-0">🎬</span>
                     <span className="text-[13px] min-w-0">
                       <span className="font-semibold">The Greatest Games</span>
-                      <span className="text-[var(--text-muted)]"> — every sport&rsquo;s all-time best, ranked by Game Score</span>
+                      <span className="text-[var(--text-muted)]">: every sport&rsquo;s all-time best, ranked by Game Score</span>
                     </span>
                   </span>
                   <span className="text-xs text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors flex-shrink-0" style={MONO} aria-hidden>↓</span>
@@ -601,7 +601,7 @@ export default async function Home() {
                             ? { ...MONO, fontSize: 12, padding: '5px 12px', color: '#F5F4EE', background: 'rgba(168,85,247,0.22)', border: '1px solid #a855f7', fontWeight: 600 }
                             : { ...MONO, fontSize: 12, padding: '4px 11px', color: 'var(--text)', background: 'var(--bg-card)', border: '1px solid var(--border)' }
                         }
-                        title={l.status ? `${l.name} — ${l.status.label}` : l.name}
+                        title={l.status ? `${l.name}: ${l.status.label}` : l.name}
                       >
                         <span aria-hidden>{l.emoji}</span>
                         <span>{isWC ? (l.status?.label?.replace('Live - ', '') ?? l.name) : l.name}</span>

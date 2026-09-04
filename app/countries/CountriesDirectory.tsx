@@ -8,6 +8,7 @@ import { useMemo, useState } from "react";
 import { useSessionState } from "@/lib/useSessionState";
 import { flagUrl, flagSrcSet } from "@/lib/flags";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export type DirectoryCountry = {
   slug: string;
@@ -149,6 +150,16 @@ export default function CountriesDirectory({
     return sorted;
   }, [countries, continent, search, sortKey, sortDir]);
 
+  // Score is the board's argument (default sort, the Global Metro Power
+  // Rankings aggregate), so it is the one column that gets an in-cell bar.
+  // max is the column's own maximum across the current filtered/sorted
+  // parent rows, computed once here so bars stay comparable as the table
+  // re-sorts or filters. Power already carries its own tier colour chip, so
+  // it is left alone rather than double-encoded.
+  const colMax = useMemo(
+    () => Math.max(...filtered.map((c) => c.scoreTotal ?? 0), 1),
+    [filtered]);
+
   function arrow(key: SortKey): string {
     if (sortKey !== key) return "";
     return sortDir === "desc" ? " ↓" : " ↑";
@@ -288,6 +299,7 @@ export default function CountriesDirectory({
                   isOpen={isOpen}
                   hasChildren={hasChildren}
                   onToggle={() => toggleExpand(c.slug)}
+                  colMax={colMax}
                 />
               );
             })}
@@ -315,12 +327,14 @@ function CountryRows({
   isOpen,
   hasChildren,
   onToggle,
+  colMax,
 }: {
   country: DirectoryCountry;
   visibleChildren: DirectoryCountry[];
   isOpen: boolean;
   hasChildren: boolean;
   onToggle: () => void;
+  colMax: number;
 }) {
   return (
     <>
@@ -364,7 +378,9 @@ function CountryRows({
         </td>
         <td className="px-2 sm:px-4 py-3 text-right text-[var(--text)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{fmtPop(country.pop)}</td>
         <td className="hidden sm:table-cell px-4 py-3 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{country.metroCount}</td>
-        <td className="hidden sm:table-cell px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(country.scoreTotal)}</td>
+        <td className="hidden sm:table-cell px-4 py-3 text-right" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          <DataBar v={country.scoreTotal} max={colMax} dp={1} color="var(--seq-4)" width={104} label="score" />
+        </td>
         <td className="px-2 sm:px-4 py-3 text-right" style={{ fontFamily: "'JetBrains Mono', monospace" }}><PowerCell power={country.power} /></td>
       </tr>
       {isOpen ? (

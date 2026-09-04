@@ -68,7 +68,7 @@ export default async function MarketsPage() {
       <TabHeader
         emoji="🌐"
         title="Markets"
-        sub="Every major stock market is a metro institution: the S&P 500 and Nasdaq belong to New York the way the Nikkei belongs to Tokyo and the Bovespa to São Paulo. The world's benchmark indices tied back to their home metros, plus the commodities that move economies."
+        sub="Every major stock market is a metro institution: the S&P 500 and Nasdaq belong to New York the way the Nikkei belongs to Tokyo and the Bovespa to São Paulo. Benchmark indices tied back to their home metros, plus the commodities that move economies."
         stamp={data ? `as of ${data.meta.as_of} · ${data.meta.indices} indices · ${data.meta.commodities} commodities · refreshed daily` : null}
       />
       <BusinessNav />
@@ -129,7 +129,11 @@ export default async function MarketsPage() {
           </section>
 
           <section className="mb-10">
-            <SectionHead title="Commodities" sub="The raw materials under everything above - priced in dollars, mostly out of New York and Chicago trading pits that no longer exist." />
+            <SectionHead
+              title="Commodities"
+              sub="The raw materials under everything above."
+              more="Priced in dollars, mostly out of New York and Chicago trading pits that no longer exist."
+            />
             <TableBox>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
@@ -167,7 +171,8 @@ export default async function MarketsPage() {
             <section className="mb-10">
               <SectionHead
                 title="Crypto"
-                sub="The exception that proves the board. Every other row here belongs to a city with a trading floor in it; this one belongs nowhere, and trades every day of the year."
+                sub="The exception that proves the board."
+                more="Every other row here belongs to a city with a trading floor in it; this one belongs nowhere, and trades every day of the year."
               />
               <TableBox>
                 <thead>

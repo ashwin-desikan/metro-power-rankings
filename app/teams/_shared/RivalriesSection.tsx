@@ -27,7 +27,7 @@ export default function RivalriesSection({
         const marker = r.mutual ? "⇄" : "→";
         const tip = r.mutual
           ? `Mutual rivalry with ${r.rivalName}`
-          : `One-sided — considers ${r.rivalName} a rival (not mutual)`;
+          : `One-sided: considers ${r.rivalName} a rival (not mutual)`;
         const chip = (
           <span
             className="inline-flex items-baseline gap-1 rounded-full border px-2.5 py-1 text-xs"

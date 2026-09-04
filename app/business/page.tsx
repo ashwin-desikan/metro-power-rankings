@@ -83,7 +83,7 @@ export default async function BusinessOverview() {
       <TabHeader
         emoji="💼"
         title="Business of the Metros"
-        sub="Every metro page credits its public companies; this hub is the whole board at once. The world's listed companies (plus the big unicorns and private giants), credited back to the metros they run from - with tabs for the full universe, the private markets, the S&P 500, market indices, currencies, and the crossovers into everything else this site tracks."
+        sub="Every metro page credits its public companies; this hub is the whole board at once. The world's listed companies, plus the big unicorns and private giants, credited back to the metros they run from, with tabs for the private markets, the S&P 500, markets, currencies and crossovers into everything else this site tracks."
         stamp={meta ? `snapshot ${meta.as_of} · ${meta.companies.toLocaleString()} companies · refreshes weekly` : null}
       />
       <BusinessNav />
@@ -207,7 +207,8 @@ export default async function BusinessOverview() {
           <section className="mb-10" id="countries">
             <SectionHead
               title="Countries and regions"
-              sub="The same value rolled up a level: which economies the tracked companies actually answer to. The Currencies tab takes this further, into exchange rates and market-cap-to-GDP."
+              sub="The same value rolled up a level: which economies the tracked companies actually answer to."
+              more="The Currencies tab takes this further, into exchange rates and market-cap-to-GDP."
             />
             <div className="flex flex-wrap gap-2 mb-4">
               {biz.regions.map((r) => (
@@ -248,7 +249,8 @@ export default async function BusinessOverview() {
             <section className="mb-10" id="per-person">
               <SectionHead
                 title="The same board, per person"
-                sub={`Market cap divided by population. A total mostly ranks countries by how many people they contain; this asks how much listed value each one carries per head, which is a different question with a different answer. Places under a million people or with fewer than ${PER_HEAD_MIN_COMPANIES} tracked companies are left out: without that floor the board opens with Bermuda and the Cayman Islands, which are where companies are registered rather than where anything is run.`}
+                sub="Market cap divided by population: how much listed value each place carries per head."
+                more={`A total mostly ranks countries by how many people they contain; dividing by population asks a different question with a different answer. Places under a million people or with fewer than ${PER_HEAD_MIN_COMPANIES} tracked companies are left out: without that floor the board opens with Bermuda and the Cayman Islands, which are where companies are registered rather than where anything is run.`}
               />
               <TableBox stickyCol={2}>
                 <thead>

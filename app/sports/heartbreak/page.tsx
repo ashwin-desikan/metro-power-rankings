@@ -8,6 +8,7 @@ import { SITE_NAME } from "@/lib/seo";
 import { resolveTeamLink } from "@/lib/teamLinks";
 import HeartbreakBoard, { type BoardRow } from "./HeartbreakBoard";
 
+import { SectionHead } from "@/app/_shared/SectionHead";
 const PAGE_PATH = "/sports/heartbreak";
 const PAGE_TITLE = "The Heartbreak Index";
 const PAGE_DESCRIPTION =
@@ -144,7 +145,7 @@ function teamHref(sport: string, name: string): string | undefined {
 function longingText(c: ClubRow): string {
   if (!c.longing.length) return c.last_won ? `won ${c.last_won}` : "never won it";
   const l = c.longing[0];
-  if (l.honour.startsWith("first ")) return `never won — est. ${l.since}`;
+  if (l.honour.startsWith("first ")) return `never won, est. ${l.since}`;
   const honour = l.honour === "league" ? "league title" : l.honour === "champions-league" ? "European Cup" : l.honour;
   return `${honour} ${l.since}`;
 }
@@ -158,14 +159,6 @@ function Stat({ v, k }: { v: string; k: string }) {
   );
 }
 
-function SectionHead({ title, sub }: { title: string; sub: string }) {
-  return (
-    <div className="mb-4">
-      <h2 className="text-2xl font-bold mb-1.5">{title}</h2>
-      <p className="text-[14px] text-[var(--text-muted)] max-w-3xl">{sub}</p>
-    </div>
-  );
-}
 
 function Th({ children }: { children: React.ReactNode }) {
   return <th className="py-2 px-2 border-b" style={BORD}>{children}</th>;
@@ -215,7 +208,7 @@ export default function HeartbreakPage() {
         <p className="mt-2 text-[15px] text-[var(--text-muted)] max-w-3xl">
           Which fanbases actually suffer most. One published formula scores every club&rsquo;s longing
           (droughts, matured over a fan generation), wounds (lost finals, relegations, blown near-misses,
-          healed only when avenged) and grind (playoff exile, losing seasons) — with hope making every
+          healed only when avenged) and grind (playoff exile, losing seasons), with hope making every
           wound worse, and consolations, dynasties and faded aspirations making them bearable.
         </p>
         <div className="mt-2 text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
@@ -243,7 +236,8 @@ export default function HeartbreakPage() {
       <section id="board" className="mb-12 scroll-mt-24">
         <SectionHead
           title="The board"
-          sub="Every professional club with a heartbreak score, worldwide, on one scale. Agony is hope crushed: longing plus unavenged wounds. Despair is hopelessness: playoff exile and losing streaks. Filter by sport, and within football by country — ranks stay global."
+          sub="Every professional club with a heartbreak score, on one global scale."
+          more="Agony is hope crushed: longing plus unavenged wounds. Despair is hopelessness: playoff exile and losing streaks. Filter by sport, and within football by country; ranks stay global."
         />
         <HeartbreakBoard rows={boardRows} />
       </section>
@@ -251,7 +245,8 @@ export default function HeartbreakPage() {
       <section id="never" className="mb-12 scroll-mt-24">
         <SectionHead
           title="The never-winners"
-          sub="Current US-major franchises still waiting for their first title, ranked by finals lost while waiting. No formula required; the table is the heartbreak."
+          sub="Current US-major franchises still waiting for their first title."
+          more="Ranked by finals lost while waiting. No formula required: the table is the heartbreak."
         />
         <TableScroll className="rounded-xl border" style={CARD}>
           <table className="w-full text-[13px]" data-sticky-col="2">
@@ -289,7 +284,8 @@ export default function HeartbreakPage() {
       <section id="quadrants" className="mb-12 scroll-mt-24">
         <SectionHead
           title="The four quadrants"
-          sub="Agony against Despair. The Tortured hope and lose; The Damned do both kinds of suffering; The Numb have stopped expecting; The Blessed would not know."
+          sub="Agony against Despair, the two axes of suffering."
+          more="The Tortured hope and lose. The Damned do both kinds of suffering. The Numb have stopped expecting. The Blessed would not know."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {(["The Tortured", "The Damned", "The Numb", "The Blessed"] as const).map((q) => (
@@ -306,7 +302,8 @@ export default function HeartbreakPage() {
       <section id="nations" className="mb-12 scroll-mt-24">
         <SectionHead
           title="Nations"
-          sub="National-team heartbreak across football, cricket, rugby and more: title droughts matured over a fan generation, plus finals lost weighted by how close they came — penalty shootouts hurt double."
+          sub="National-team heartbreak across football, cricket, rugby and more."
+          more="Title droughts matured over a fan generation, plus finals lost weighted by how close they came: penalty shootouts hurt double."
         />
         <TableScroll className="rounded-xl border" style={CARD}>
           <table className="w-full text-[13px]" data-sticky-col="2">
@@ -343,7 +340,8 @@ export default function HeartbreakPage() {
       <section id="parade" className="mb-12 scroll-mt-24">
         <SectionHead
           title="Parade droughts"
-          sub="The one metro-level lens that survives: years since a metro last won anything at all in a top competition. More teams can only shorten this clock, never pad it."
+          sub="Years since a metro last won anything, in a top competition."
+          more="The one metro-level lens that survives. More teams can only shorten this clock, never pad it."
         />
         <TableScroll className="rounded-xl border" style={CARD}>
           <table className="w-full text-[13px]" data-sticky-col="2">
@@ -374,24 +372,24 @@ export default function HeartbreakPage() {
           <h3 className="text-sm font-semibold text-[var(--text)] mb-2">How this board works</h3>
           <p className="mb-2">
             Heartbreak = longing + wounds + grind. <b>Longing</b>: for football the headline clock is the
-            major trophy drought — any real silverware stops it — with title and European Cup longing riding
+            major trophy drought, any real silverware stops it, with title and European Cup longing riding
             on top at half weight, scaled by whether the club can realistically win them in the modern era.
             For the US majors it is the title drought plus, at half weight, the wait for a finals
             appearance. All longing matures over a sixty-year fan generation, is discounted by dynasty
             pedigree and consolations, and fades when a club has not contended within living memory.
             <b> Wounds</b> are lost finals, near-misses, relegations (habituated for yo-yo clubs, refunded
-            on an immediate bounce-back) and early playoff exits — each multiplied by the hope preceding
+            on an immediate bounce-back) and early playoff exits, each multiplied by the hope preceding
             it, decayed on a 25-year half-life, and healed to 15% once avenged. <b>Grind</b> is playoff
             exile and losing streaks.
           </p>
           <p className="mb-2">
             More rules keep it honest. <b>Afterglow</b>: a club that won its ultimate honour within
-            the last five years is celebrating, not suffering — and for serial domestic champions the
+            the last five years is celebrating, not suffering, and for serial domestic champions the
             ultimate honour is the European one, which is why Benfica still qualify. <b>Local currency</b>:
             the four US majors weigh equally (to each fanbase, their league is the league), with a
             heartland bump pricing the Maple Leafs&rsquo; wait in Canadian terms. <b>Size of the fanbase</b>:
             US franchises scale by valuation percentile, football clubs by the weight of the trophy
-            cabinet — the same drought is heavier at Goodison than at a club that never expected to win.
+            cabinet: the same drought is heavier at Goodison than at a club that never expected to win.
             <b> Relocation</b>: moved franchises inherit their pre-move history at 30%, with San Diego and
             Los Angeles ruled one Southern California market.
           </p>
@@ -402,8 +400,8 @@ export default function HeartbreakPage() {
             for now. Every weight in the formula is a published constant in the dataset itself.
           </p>
           <p>
-            This is a working preview of the model output. The curated agony layer — the blown leads and
-            bracket-busters, scored in pangs — arrives in a later phase, calibrated so that Syracuse&rsquo;s
+            This is a working preview of the model output. The curated agony layer, the blown leads and
+            bracket-busters, scored in pangs, arrives in a later phase, calibrated so that Syracuse&rsquo;s
             1996 tournament run equals exactly 1.00 pang.
           </p>
         </div>

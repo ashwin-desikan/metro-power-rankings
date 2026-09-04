@@ -7,6 +7,7 @@ import Link from "next/link";
 import { getCurrentNhlStandings, type TeamStanding } from "@/lib/nhl-standings";
 import { getAllFranchises, logoUrlFor, monogramFor } from "@/lib/nhl";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 type Region = "Atlantic" | "Metropolitan" | "Central" | "Pacific" | "Other";
 
@@ -114,6 +115,9 @@ export default async function NhlStandings() {
 
   function renderBucket(b: Bucket) {
     if (b.teams.length === 0) return null;
+    // Points is what these mini-tables are sorted by; max is this table's
+    // own division bucket, computed once, never per row.
+    const ptsMax = Math.max(...b.teams.map((t) => t.points), 1);
     return (
       <div
         key={`${b.conf}-${b.division}`}
@@ -219,7 +223,9 @@ export default async function NhlStandings() {
                   <td className="py-1 px-1 text-right">{t.wins}</td>
                   <td className="py-1 px-1 text-right">{t.losses}</td>
                   <td className="py-1 px-1 text-right">{t.ot_losses}</td>
-                  <td className="py-1 pl-1 text-right font-semibold">{t.points}</td>
+                  <td className="py-1 pl-1 text-right font-semibold">
+                    <DataBar v={t.points} max={ptsMax} color="var(--seq-4)" width={72} label="points" />
+                  </td>
                 </tr>
               );
             })}

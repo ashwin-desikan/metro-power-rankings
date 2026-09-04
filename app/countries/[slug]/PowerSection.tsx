@@ -78,8 +78,8 @@ export default function PowerSection({ series, name }: { series: PowerPoint[]; n
             <div className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Latent vs recognised</div>
             <div className="mt-0.5 text-sm">
               {gapNow > 0
-                ? <span><span className="font-semibold" style={{ color: LATENT }}>Under-recognised</span> <span className="text-[var(--text-muted)]">— more mass than standing</span></span>
-                : <span><span className="font-semibold" style={{ color: RECOGNIZED }}>Punches above its mass</span> <span className="text-[var(--text-muted)]">— standing beats material weight</span></span>}
+                ? <span><span className="font-semibold" style={{ color: LATENT }}>Under-recognised</span><span className="text-[var(--text-muted)]">: more mass than standing</span></span>
+                : <span><span className="font-semibold" style={{ color: RECOGNIZED }}>Punches above its mass</span><span className="text-[var(--text-muted)]">: standing beats material weight</span></span>}
             </div>
           </div>
         )}

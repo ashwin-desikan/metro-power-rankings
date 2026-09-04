@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { flagCdnUrl } from "@/lib/international-display";
 import type { RugbyGame } from "@/lib/rugbyGames";
+import { DataBar } from "@/app/_shared/DataBar";
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -65,9 +66,9 @@ function scoreTitle(g: RugbyGame): string {
   if (g.vol != null) bits.push(`Scoring volume ${g.vol}`);
   if (g.up != null) bits.push(`Upset ${g.up}`);
   if (g.pin != null && g.base != null) {
-    bits.push(`Placed at #${g.pin} by hand — model score ${g.base.toFixed(1)}`);
+    bits.push(`Placed at #${g.pin} by hand: model score ${g.base.toFixed(1)}`);
   } else if (g.editorPick && g.base != null && g.floor != null && g.floor > g.base) {
-    bits.push(`Curated floor ${g.floor} — model score ${g.base.toFixed(1)}`);
+    bits.push(`Curated floor ${g.floor}: model score ${g.base.toFixed(1)}`);
   }
   return bits.join(" · ");
 }
@@ -90,7 +91,7 @@ function rowInfo(g: RugbyGame, highlight?: string) {
   return { c, order, isBold, score, ctx, clip };
 }
 
-function Row({ g, rank, highlight }: { g: RugbyGame; rank: number; highlight?: string }) {
+function Row({ g, rank, highlight, gsMax }: { g: RugbyGame; rank: number; highlight?: string; gsMax: number }) {
   const { c, order, isBold, score, ctx, clip } = rowInfo(g, highlight);
   return (
     <tr className="border-t" style={{ borderColor: "var(--border)" }}>
@@ -112,7 +113,9 @@ function Row({ g, rank, highlight }: { g: RugbyGame; rank: number; highlight?: s
         </div>
         <div className="text-[11px] text-[var(--text-dim)] mt-0.5 truncate max-w-[64ch]"><span style={MONO}>{fmtDay(g.date)}</span>{` · ${[score, ...(ctx ? [ctx] : [])].join(" · ")}`}</div>
       </td>
-      <td className="py-2 pr-3 text-right tabular-nums align-top font-semibold" style={{ ...MONO, color: "var(--accent)" }} title={scoreTitle(g)}>{g.norm.toFixed(0)}</td>
+      <td className="py-2 pr-3 text-right align-top" title={scoreTitle(g)}>
+        <DataBar v={g.norm} max={gsMax} dp={0} width={80} label="game score" />
+      </td>
     </tr>
   );
 }
@@ -161,6 +164,10 @@ function GameCard({ g, rank, highlight }: { g: RugbyGame; rank: number; highligh
 }
 
 function Table({ games, highlight }: { games: RugbyGame[]; highlight?: string }) {
+  // Game Score is this board's argument (rows are already ranked by it);
+  // max is this current view's own maximum, computed once over the rows
+  // actually rendered, never per row.
+  const gsMax = Math.max(...games.map((g) => g.norm), 1);
   return (
     <>
       {/* Mobile: one card per game instead of the 3-column table. */}
@@ -183,7 +190,7 @@ function Table({ games, highlight }: { games: RugbyGame[]; highlight?: string })
           </thead>
           <tbody>
             {games.map((g, i) => (
-              <Row key={`${g.date}-${g.teamSlug}-${g.oppSlug}`} g={g} rank={i + 1} highlight={highlight} />
+              <Row key={`${g.date}-${g.teamSlug}-${g.oppSlug}`} g={g} rank={i + 1} highlight={highlight} gsMax={gsMax} />
             ))}
           </tbody>
         </table>

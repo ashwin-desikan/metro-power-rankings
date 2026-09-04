@@ -155,7 +155,7 @@ export default function AboutPage() {
                     isitaderby.co.uk
                   </a>
                   <span className="text-[var(--text-muted)]">
-                    {" "}— Tim Norris-Wiles&apos;s side project on football
+                    : Tim Norris-Wiles&apos;s side project on football
                     derbies. The treatment of methodology as a first-class
                     page, the named-tier verdict system, and the willingness
                     to declare editorial overrides openly all came from
@@ -173,7 +173,7 @@ export default function AboutPage() {
                     GaWC
                   </a>
                   <span className="text-[var(--text-muted)]">
-                    {" "}— the Globalization and World Cities Research
+                    : the Globalization and World Cities Research
                     Network at Loughborough University. The alpha/beta/gamma
                     classification convention is a clear academic precedent
                     for the named score tiers used here.
@@ -189,7 +189,7 @@ export default function AboutPage() {
                     citypopulation.de
                   </a>
                   <span className="text-[var(--text-muted)]">
-                    {" "}— Thomas Brinkhoff&apos;s exhaustive metropolitan
+                    : Thomas Brinkhoff&apos;s exhaustive metropolitan
                     population dataset. The population dimension across the
                     full metro corpus would not be tractable without it.
                   </span>
@@ -204,7 +204,7 @@ export default function AboutPage() {
                     Wikidata
                   </a>
                   <span className="text-[var(--text-muted)]">
-                    {" "}— canonical entity references for metros and sports
+                    : canonical entity references for metros and sports
                     teams, linked from the structured data emitted on every
                     metro page.
                   </span>

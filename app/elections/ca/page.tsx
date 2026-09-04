@@ -16,7 +16,7 @@ import LineChart, { type ChartSeries } from "../LineChart";
 const PATH = "/elections/ca";
 const TITLE = "Canadian Federal Elections";
 const DESC =
-  "Every Canadian federal election from Confederation in 1867 to 2025: the results, the leaders, the turnout, the governments they made, and the story of each — from Macdonald's Dominion to the 45th Parliament.";
+  "Every Canadian federal election from Confederation in 1867 to 2025: the results, the leaders, the turnout, the governments they made, and the story of each, from Macdonald's Dominion to the 45th Parliament.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -137,7 +137,7 @@ export default function CaElectionsPage() {
         <StatTile label="General elections" value={String(elections.length)} hint={`${elections[0].year}–${last.year}`} />
         <StatTile label="Latest" value={last.label} hint={`${last.seatLeader ?? ""} · ${last.pmAfter ? last.pmAfter.name : ""}`} />
         <StatTile label="Commons seats today" value={fmtInt(last.totalSeats)} hint={last.majoritySeats ? `${last.majoritySeats} for a majority` : undefined} />
-        <StatTile label="Minority parliaments" value={String(elections.filter((e) => e.government?.type === "minority").length)} hint="of 45 elections — a Canadian specialty" />
+        <StatTile label="Minority parliaments" value={String(elections.filter((e) => e.government?.type === "minority").length)} hint="of 45 elections, a Canadian specialty" />
       </div>
 
       {/* jump nav */}
@@ -238,7 +238,7 @@ export default function CaElectionsPage() {
             <p className="text-xs text-[var(--text-muted)] mb-2">
               Seats won by the movements that broke the duopoly: the Progressives&apos; 1921 revolt, Social
               Credit and the CCF from the Depression, Réal Caouette&apos;s créditistes, Reform and the Bloc
-              from the 1993 collapse, and the NDP&apos;s 2011 orange wave — followed by the near-extinction
+              from the 1993 collapse, and the NDP&apos;s 2011 orange wave, followed by the near-extinction
               of them all in 2025.
             </p>
             <LineChart series={thirdForces} yMax={110} yTicks={[25, 50, 75, 100]} unit="" />
@@ -246,7 +246,7 @@ export default function CaElectionsPage() {
           <div className="rounded-xl border p-4 lg:col-span-2" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Votes versus seats, {last.year}</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Each bar pair shows a party&apos;s vote share (muted) against its seat share (solid) —
+              Each bar pair shows a party&apos;s vote share (muted) against its seat share (solid):
               first-past-the-post rewards the concentrated Bloc vote and punishes the spread-out NDP vote.
             </p>
             <div className="space-y-2 mt-3">
@@ -298,10 +298,10 @@ export default function CaElectionsPage() {
         <h2 className="text-2xl font-bold mb-4 text-[var(--text)]">How Canadian federal elections work</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
           {[
-            ["First past the post", "One MP per riding; the candidate with the most votes wins. As in Britain, the system rewards regionally concentrated parties — the Bloc's Quebec fortress — and punishes evenly spread support like the NDP's."],
+            ["First past the post", "One MP per riding; the candidate with the most votes wins. As in Britain, the system rewards regionally concentrated parties, the Bloc's Quebec fortress, and punishes evenly spread support like the NDP's."],
             ["343 ridings", "The House of Commons has grown with the country, from 180 seats in 1867 to 343 in 2025. Seats are redistributed after each census, with floors guaranteeing smaller provinces their historic representation."],
-            ["The timetable", "Parliaments run a maximum of five years, with fixed election dates every four years since 2007 — though a Prime Minister can still seek early dissolution, and minority parliaments rarely last half their term."],
-            ["Minority rule, often", "No country does minority government more: 16 of 45 elections left the governing party short of the majority line. Conventions matter — in 1925 Mackenzie King governed from second place, a precedent every hung parliament since has invoked."],
+            ["The timetable", "Parliaments run a maximum of five years, with fixed election dates every four years since 2007, though a Prime Minister can still seek early dissolution, and minority parliaments rarely last half their term."],
+            ["Minority rule, often", "No country does minority government more: 16 of 45 elections left the governing party short of the majority line. Conventions matter: in 1925 Mackenzie King governed from second place, a precedent every hung parliament since has invoked."],
           ].map(([h, b]) => (
             <div key={h} className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
               <p className="font-bold text-[var(--text)] mb-1">{h}</p>

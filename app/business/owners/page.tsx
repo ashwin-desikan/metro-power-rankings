@@ -63,7 +63,7 @@ export default async function OwnersPage() {
       <TabHeader
         emoji="🏦"
         title="The Owners"
-        sub="Every quarter, every institution managing over $100M tells the SEC exactly what it holds. This board reduces all of those filings to the questions this site cares about: who manages the most money, which metros they run it from, what everyone owns, and who holds the giants."
+        sub="Every quarter, every institution managing over $100M tells the SEC exactly what it holds. This board reduces those filings to who manages the most money, from which metros, what everyone owns, and who holds the giants."
         stamp={
           data
             ? `${quarterLabel(data.meta.as_of)} holdings (as of ${data.meta.as_of}) · ${data.meta.filings.toLocaleString()} filings · ${fmtCap(data.meta.totalValue)} reported · source: SEC Form 13F`
@@ -92,7 +92,8 @@ export default async function OwnersPage() {
           <section className="mb-10" id="capitals">
             <SectionHead
               title="Asset-manager capitals"
-              sub="Metros ranked by the 13F value their institutions manage. New York is the vault of the world; the surprise is how much of it sits in Vanguard's Philadelphia and fund-country Boston."
+              sub="Metros ranked by the 13F value their institutions manage."
+              more="New York is the vault of the world; the surprise is how much of it sits in Vanguard's Philadelphia and fund-country Boston."
             />
             <TableBox stickyCol={2}>
               <thead>
@@ -121,7 +122,8 @@ export default async function OwnersPage() {
           <section className="mb-10" id="managers">
             <SectionHead
               title="The manager league table"
-              sub="The biggest institutional managers on Earth by reported 13F value, with the metro each files from. A consolidated filing counts once, at headquarters."
+              sub="The biggest institutional managers on Earth by reported 13F value, with the metro each files from."
+              more="A consolidated filing counts once, at headquarters."
             />
             <TableBox stickyCol={2}>
               <thead>
@@ -152,7 +154,9 @@ export default async function OwnersPage() {
           <section className="mb-10" id="widely-held">
             <SectionHead
               title="What everyone owns"
-              sub="Stocks ranked by how many separate institutions report a position. Share classes count separately - both Alphabet lines make the list on their own."
+              sub="Stocks ranked by how many separate institutions report a position."
+              more="Share classes count separately - both Alphabet lines make the list on their own."
+              moreLabel="What counts separately"
             />
             <TableBox stickyCol={2}>
               <thead>
@@ -179,7 +183,9 @@ export default async function OwnersPage() {
           <section className="mb-10" id="giants">
             <SectionHead
               title="Who owns the giants"
-              sub="The biggest companies in the site universe and their largest reporting holders. The index-fund trinity - BlackRock, Vanguard, State Street - tops almost every card, which is the story."
+              sub="The biggest companies in the site universe and their largest reporting holders."
+              more="The index-fund trinity - BlackRock, Vanguard, State Street - tops almost every card, which is the story."
+              moreLabel="Why the same names repeat"
             />
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {giants.map((g) => (

@@ -49,10 +49,10 @@ export default async function CompareMarketsPage() {
           <span aria-hidden>⚖️</span> Compare markets
         </h1>
         <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
-          Index levels are not comparable with each other. The Nikkei is tens of thousands, the FTSE
-          five figures, copper under five dollars. So everything here is rebased to 100 at a date you
-          choose, which turns the question from which number is bigger into what each one would have
-          done to the same money over the same years.
+          Index levels are not comparable with each other, so everything here is rebased to 100 at a
+          date you choose, turning which number is bigger into what each would have done to the same
+          money over the same years. The Nikkei is tens of thousands, the FTSE five figures, copper
+          under five dollars.
         </p>
         {all.length > 0 && (
           <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3" style={MONO}>

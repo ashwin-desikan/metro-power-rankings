@@ -7,9 +7,9 @@ import CanonView from "./CanonView";
 
 export const dynamic = "force-static";
 
-const TITLE = "Screen of the Metros — The 500 Greatest Films";
+const TITLE = "Screen of the Metros: The 500 Greatest Films";
 const DESC =
-  "The critical canon crossed with metro geography: the 500 greatest films of all time, each credited to its director and the metro that raised them — browsable by decade and year, with TMDb ratings and the box office hits marked.";
+  "The critical canon crossed with metro geography: the 500 greatest films of all time, each credited to its director and the metro that raised them, browsable by decade and year, with TMDb ratings and the box office hits marked.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -33,13 +33,13 @@ export default function ScreenCanonPage() {
         <h1 className="text-2xl font-bold tracking-tight text-[var(--text)]">The 500 greatest films</h1>
         <p className="mt-2 max-w-3xl text-sm text-[var(--text-muted)]">
           The critical canon, placed on the map: {c.films.length} films, {withSetting} located in a
-          real metro ({setCount} by where they are set, the rest by where they were filmed —
+          real metro ({setCount} by where they are set, the rest by where they were filmed,
           marked). The unlocated remainder live in fictional or unplaceable worlds. Only {hits} of
-          the 500 were also top-ten grossers of their year — the canon and the box office are
+          the 500 were also top-ten grossers of their year: the canon and the box office are
           different worlds. List:{" "}
           <a href={c.sourceUrl} className="underline hover:text-[var(--accent)]" rel="noopener noreferrer" target="_blank">
             Digital Dream Door&apos;s 500 Greatest Movies
-          </a>, used with attribution — the film analogue of the{" "}
+          </a>, used with attribution, the film analogue of the{" "}
           <Link href="/sound/rolling-stone-500" className="underline hover:text-[var(--accent)]">RS 500</Link> in Sound.
         </p>
       </header>

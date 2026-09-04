@@ -34,7 +34,7 @@ const TOPICS: { key: string; label: string }[] = [
 const GROUPS: { key: Group; title: string; sub: string }[] = [
   { key: "learn", title: "🌍 Learn & Play", sub: "Geography, history and the wider world, through real countries, empires and teams." },
   { key: "civics", title: "🏛️ Who Runs the Country?", sub: "Presidents, Prime Ministers, Kings and Queens, with real leaders from history." },
-  { key: "think", title: "🔢 Count & Think", sub: "Place value, times tables, fractions, shapes, time and charts — the core four go up to 🚀 Expert." },
+  { key: "think", title: "🔢 Count & Think", sub: "Place value, times tables, fractions, shapes, time and charts: the core four go up to 🚀 Expert." },
   { key: "coder", title: "🧠 Think Like a Coder", sub: "AND/OR/NOT logic, binary search, and the champion's gauntlet." },
   { key: "rules", title: "🟨 Be the Ref", sub: "Make the call and learn the rules of each sport." },
   { key: "older", title: "🎧 For older fans", sub: "Pitched at grown-ups and older kids." },
@@ -167,7 +167,7 @@ export default function PlayBrowser({ games }: { games: Game[] }) {
         <Grid games={matches} />
       ) : (
         <p style={{ color: slate, marginTop: 20, fontWeight: 700 }}>
-          No games match those filters yet — try a different combination.
+          No games match those filters yet. Try a different combination.
         </p>
       )}
 

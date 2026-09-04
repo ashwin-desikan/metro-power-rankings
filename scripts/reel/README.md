@@ -11,10 +11,70 @@ python3 scripts/reel/build_reel.py all --script scripts/reel/reel-2026-09.json
 # or one step at a time -- each is independently re-runnable
 python3 scripts/reel/build_reel.py shots    --script scripts/reel/reel-2026-09.json
 python3 scripts/reel/build_reel.py narrate  --script ...   # COSTS (ElevenLabs)
+python3 scripts/reel/build_reel.py clips    --script ...   # motion, see below
 python3 scripts/reel/build_reel.py captions --script ...
 python3 scripts/reel/build_reel.py music    --script ...   # COSTS (ElevenLabs)
 python3 scripts/reel/build_reel.py assemble --script ...
 ```
+
+## Motion: the `clips` step
+
+The first two reels were stills with a Ken Burns push, and the note back was
+that they "just took screenshots". A still of a table is indistinguishable from
+a PDF. The `clips` step records a real interaction instead: the board actually
+re-sorts, the filter actually redraws, the year actually steps.
+
+Add an `act` list to any segment and it gets recorded rather than stilled.
+Segments with no `act` fall through to `shots` unchanged, so this is additive
+and a mixed reel is fine.
+
+```json
+{"n": 5, "slug": "05-ledger", "url": "https://rankings.citizenofnowhere.org/predictions/scoreboard",
+ "caption": "Every forecast, graded", "vo": "...",
+ "act": [{"at": 1.2, "scroll": "+520"},
+         {"at": 3.0, "click": "th[data-sort='skill']"},
+         {"at": 5.0, "scroll": 0}]}
+```
+
+Verbs, each with `at` in seconds from the start of the clip:
+
+| verb | value | note |
+|---|---|---|
+| `scroll` | `900`, or `"+520"` / `"-300"` | absolute or relative. Always works, needs no selector. |
+| `click` | css selector | scrolled into view first, then clicked |
+| `hover` | css selector | dispatches `mouseover`, for tooltip reveals |
+| `eval` | raw javascript | escape hatch |
+
+`clip_s` sets the clip length. Leave it out and it defaults to the narration
+length once `narrate` has run, which is what you usually want: **run `narrate`
+before `clips`** and each clip matches its own voiceover exactly.
+
+If a selector matches nothing the step prints `MISSED` and names it. The clip
+still records, the interaction just did not happen, so fix the selector and
+rerun that segment with `--force`.
+
+Start with `scroll` on every segment. It needs no selector, it cannot miss, and
+scrolling a real board already reads as a product rather than a document. Add
+`click` once you have the selector in front of you from devtools.
+
+Needs `pip install websocket-client`. Nothing else; Playwright is still not
+used and still not installed.
+
+### Motion gotchas, each of which cost an hour
+
+* **`--remote-allow-origins=*`.** Chrome >= 111 rejects a CDP websocket whose
+  Origin it does not recognise, with a bare 403 that reads exactly like
+  "Chrome never started".
+* **`Emulation.setDeviceMetricsOverride`, not `--window-size`.** `--window-size`
+  is the WINDOW. Headless gives 540x820 of *page* for a 540x960 window, and the
+  missing 140 CSS px come back as black bars top and bottom after the pad.
+  Verified: the capture is 1080x1640 without the override, 1080x1920 with it.
+* **The CDP endpoint is on loopback.** Any ambient HTTP proxy will happily
+  reject 127.0.0.1, and that failure also looks like "Chrome never started".
+  The HTTP call goes through an opener with proxies explicitly disabled.
+* **Chrome is no longer hardcoded to the macOS path.** `find_chrome()` resolves
+  macOS, Linux and Windows; `REEL_CHROME` overrides. The old constant meant
+  this file only ever ran on the Mac.
 
 Output lands in `reel-build/` (gitignored); the deliverable is
 `reel-build/reel_final.mp4`. Steps skip work that already exists — pass

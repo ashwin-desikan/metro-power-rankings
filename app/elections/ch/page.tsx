@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/ch";
 const TITLE = 'Swiss Federal Elections';
 const DESC =
-  "Every Swiss federal election from the founding vote of 1848 to 2023 — seventy years of Radical rule, the PR revolution of 1919, the magic formula that made elections consequence-free, and the SVP era that broke it. The world's most stable democracy, charted in full.";
+  "Every Swiss federal election from the founding vote of 1848 to 2023: seventy years of Radical rule, the PR revolution of 1919, the magic formula that made elections consequence-free, and the SVP era that broke it. The world's most stable democracy, charted in full.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -38,7 +38,7 @@ export default function ChElectionsPage() {
         const p = e.parties
           .filter((p) => p.share != null)
           .sort((a, b) => (b.share ?? 0) - (a.share ?? 0))[0];
-        return p ? { x: e.year, y: p.share as number, label: `${e.label} — ${p.name}` } : null;
+        return p ? { x: e.year, y: p.share as number, label: `${e.label}, ${p.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -87,7 +87,7 @@ export default function ChElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since 1919</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              The world's gentlest decline: from over 80% between the wars to under 50% today — Swiss voters save their energy for the referendums held four times a year.
+              The world's gentlest decline: from over 80% between the wars to under 50% today: Swiss voters save their energy for the referendums held four times a year.
             </p>
             <LineChart series={[turnout]} yMax={100} yTicks={[50, 75]} />
           </div>
@@ -108,7 +108,7 @@ export default function ChElectionsPage() {
         cards={[
           [
                     "An election that changes little",
-                    "Voters elect the 200-seat National Council by open-list PR, but the seven-member Federal Council is a permanent all-party coalition chosen by parliament. No election has ever removed a government — power shifts by fractions of a Council seat."
+                    "Voters elect the 200-seat National Council by open-list PR, but the seven-member Federal Council is a permanent all-party coalition chosen by parliament. No election has ever removed a government: power shifts by fractions of a Council seat."
           ],
           [
                     "The magic formula",

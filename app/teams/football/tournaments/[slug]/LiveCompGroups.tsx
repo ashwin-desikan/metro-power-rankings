@@ -3,6 +3,7 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { getFootballClubByName, monogramForFootball } from "@/lib/football";
 import type { LiveComp, LiveRow } from "@/lib/clubFootballLive";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Live group / league-phase tables for a continental competition, fed from the
 // api-football -> Supabase -> ISR bundle. Server component (resolves crest + club
@@ -29,7 +30,11 @@ export default function LiveCompGroups({ comp, season, note }: { comp: LiveComp;
         {season ? `${season} ` : ""}{heading} <span className="text-[var(--text-muted)] font-normal text-sm">· {note ?? "live"}</span>
       </h2>
       <div className={comp.groups.length > 1 ? "grid grid-cols-1 sm:grid-cols-2 gap-3 items-start" : ""}>
-        {comp.groups.slice().sort((a, b) => a.group_label.localeCompare(b.group_label)).map((g) => (
+        {comp.groups.slice().sort((a, b) => a.group_label.localeCompare(b.group_label)).map((g) => {
+          // Points is this group's argument; max is this group's own
+          // maximum, computed once per group, never per row.
+          const ptsMax = Math.max(...g.rows.map((r) => r.points ?? 0), 1);
+          return (
           <div key={g.group_label} className="rounded-xl border p-3" style={cardStyle}>
             {comp.groups.length > 1 && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{g.group_label}</div>}
             <ResponsiveTable
@@ -80,7 +85,13 @@ export default function LiveCompGroups({ comp, season, note }: { comp: LiveComp;
                           </span>
                         </td>
                         {[n(r.played), n(r.win), n(r.draw), n(r.lose), n(r.gd), n(r.points)].map((v, j) => (
-                          <td key={j} className={`py-1.5 text-right tabular-nums ${COLS[j] === "Pts" ? "font-semibold" : ""}`} style={mono}>{v}</td>
+                          COLS[j] === "Pts" ? (
+                            <td key={j} className="py-1.5 text-right">
+                              <DataBar v={r.points} max={ptsMax} width={72} label="points" />
+                            </td>
+                          ) : (
+                            <td key={j} className="py-1.5 text-right tabular-nums" style={mono}>{v}</td>
+                          )
                         ))}
                       </tr>
                     );
@@ -89,7 +100,8 @@ export default function LiveCompGroups({ comp, season, note }: { comp: LiveComp;
               </table>
             </ResponsiveTable>
           </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

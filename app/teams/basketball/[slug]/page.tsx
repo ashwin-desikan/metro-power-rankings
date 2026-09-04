@@ -34,7 +34,7 @@ export async function generateMetadata(
   const path = `/teams/basketball/${slug}`;
   const desc = `${team.name} in international basketball: FIBA World Cup campaigns, Olympic medals, and finals history.`;
   return {
-    title: `${team.name} — International Basketball`,
+    title: `${team.name}: International Basketball`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },

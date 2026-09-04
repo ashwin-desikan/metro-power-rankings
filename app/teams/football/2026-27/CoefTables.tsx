@@ -4,6 +4,7 @@ import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Ranking + coefficient tables for the LIVE 2026-27 hub. Deliberately not the
 // shared 2025-26 RankingTable: that renders a COMPLETED season (club power
@@ -68,6 +69,9 @@ function CountryTable({
   rows: CoefCountryRow[]; seasons: string[]; current: string | null; valueLabel: string;
 }) {
   const latest = seasons[seasons.length - 1];
+  // Coef is this table's argument (rows are rank-ordered by it); max is the
+  // column's own maximum, computed once over the full row set.
+  const coefMax = Math.max(...rows.map((c) => c.coef), 0.001);
   return (
     <ResponsiveTable
       compact
@@ -99,7 +103,7 @@ function CountryTable({
             {seasons.map((s) => (
               <td key={s} className="py-1.5 px-2 text-right tabular-nums" style={{ ...mono, color: s === current ? "var(--accent)" : "var(--text-muted)" }}>{fmt(c.seasons[s])}</td>
             ))}
-            <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={mono}>{fmt(c.coef)}</td>
+            <td className="py-1.5 px-2 text-right"><DataBar v={c.coef} max={coefMax} dp={3} width={96} label="coefficient" /></td>
           </tr>))}</tbody>
       </table>
     </ResponsiveTable>
@@ -129,6 +133,12 @@ export default function CoefTables({
   const clubCountries = Array.from(new Set(clubs.map((c) => c.country).filter((c): c is string => !!c))).sort();
   const clubRows = country ? clubs.filter((c) => c.country === country) : clubs.slice(0, 100);
   const powerRows = power.slice(0, 100);
+  // Coef (trank) is the club-coefficient view's argument; Score is the power
+  // ranking's argument. Each max is that view's own maximum, computed once
+  // over the currently shown rows so bars stay comparable as the country
+  // filter or the "top 100" slice changes the row set.
+  const trankMax = Math.max(...clubRows.map((c) => c.trank), 0.001);
+  const powerScoreMax = Math.max(...powerRows.map((c) => c.score), 0.001);
   const medianWt = hasPower ? [...power].sort((a, b) => a.wt - b.wt)[Math.floor(power.length / 2)].wt : 0;
 
   const items = [
@@ -193,7 +203,7 @@ export default function CoefTables({
                   {liveSeasons.map((s) => (
                     <td key={s} className="py-1.5 px-2 text-right tabular-nums" style={{ ...mono, color: s === currentSeason ? "var(--accent)" : "var(--text-muted)" }}>{fmt(c.seasons[s], 2)}</td>
                   ))}
-                  <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={mono}>{fmt(c.trank, 2)}</td>
+                  <td className="py-1.5 px-2 text-right"><DataBar v={c.trank} max={trankMax} dp={2} width={96} label="coefficient" /></td>
                 </tr>))}</tbody>
             </table>
           </ResponsiveTable>
@@ -270,7 +280,7 @@ export default function CoefTables({
                   <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{c.ped.toFixed(2)}</td>
                   <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{c.wt.toFixed(2)}</td>
                   <td className="py-1.5 px-2 text-right tabular-nums text-[var(--accent)]" style={mono}>{c.tb > 0 ? `+${c.tb.toFixed(2)}` : DASH}</td>
-                  <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={mono}>{c.score.toFixed(3)}</td>
+                  <td className="py-1.5 px-2 text-right"><DataBar v={c.score} max={powerScoreMax} dp={3} width={104} label="score" /></td>
                 </tr>))}</tbody>
             </table>
           </ResponsiveTable>

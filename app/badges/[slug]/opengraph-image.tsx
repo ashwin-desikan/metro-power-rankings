@@ -8,7 +8,7 @@ import {
 // Per-badge Open Graph share card, auto-discovered by Next.js for
 // /badges/[slug]. Pre-rendered at build time for live badges.
 
-export const alt = "Citizen of Nowhere — Badge share card";
+export const alt = "Citizen of Nowhere: Badge share card";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

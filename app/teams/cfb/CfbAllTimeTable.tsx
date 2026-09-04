@@ -5,6 +5,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { CfbTeam } from "@/lib/cfbShared";
+import { DataBar } from "@/app/_shared/DataBar";
 
 type Col = { key: string; label: string; get: (t: CfbTeam) => number | string; num: boolean; hide?: string };
 const COLS: Col[] = [
@@ -41,6 +42,11 @@ export default function CfbAllTimeTable({ teams }: { teams: CfbTeam[] }) {
       return asc ? c : -c;
     });
   }, [scoped, conf, sort, asc]);
+
+  // Natl (national championships) is this board's default-sort argument;
+  // max is the column's own maximum over the current filtered/sorted rows,
+  // computed once, never per row.
+  const natlMax = useMemo(() => Math.max(...rows.map((t) => t.nat_champ_years.length), 1), [rows]);
 
   const fmt = (t: CfbTeam, key: string): string => {
     if (key === "conf") return t.conference ?? "";
@@ -122,9 +128,10 @@ export default function CfbAllTimeTable({ teams }: { teams: CfbTeam[] }) {
                   {!t.current_fbs && <span className="ml-1.5 text-[9px] uppercase text-[var(--text-dim)]">{t.fbs_fcs || "former"}</span>}
                 </td>
                 {COLS.slice(1).map((c) => (
-                  <td key={c.key} className={`px-2 py-1.5 ${c.key === "conf" ? "text-left" : "text-right"} ${c.hide ?? ""} ${c.key === "nat_champ_count" ? "font-semibold" : "text-[var(--text-muted)]"}`}
-                    style={c.key === "nat_champ_count" ? { color: t.nat_champ_years.length ? "var(--accent)" : "var(--text-dim)" } : undefined}>
-                    {fmt(t, c.key)}
+                  <td key={c.key} className={`px-2 py-1.5 ${c.key === "conf" ? "text-left" : "text-right"} ${c.hide ?? ""} ${c.key === "nat_champ_count" ? "font-semibold" : "text-[var(--text-muted)]"}`}>
+                    {c.key === "nat_champ_count" ? (
+                      <DataBar v={t.nat_champ_years.length} max={natlMax} dp={0} color="var(--seq-4)" width={72} label="national championships" />
+                    ) : fmt(t, c.key)}
                   </td>
                 ))}
               </tr>

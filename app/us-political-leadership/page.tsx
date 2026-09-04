@@ -18,7 +18,7 @@ import { getConstitutionDocuments, getCountryConstitution } from "@/lib/constitu
 const PATH = "/us-political-leadership";
 const TITLE = "United States Political Leadership";
 const DESC =
-  "Who holds power in the United States: the President, Vice President and Cabinet; the nine Supreme Court justices; every state governor; all 100 US senators; and House leadership — with party balance and, where it applies, the Metro Power score of the places they represent.";
+  "Who holds power in the United States: the President, Vice President and Cabinet; the nine Supreme Court justices; every state governor; all 100 US senators; and House leadership, with party balance and, where it applies, the Metro Power score of the places they represent.";
 
 export const metadata: Metadata = {
   title: TITLE,

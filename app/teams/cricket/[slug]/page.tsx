@@ -42,7 +42,7 @@ export async function generateMetadata(
   const path = `/teams/cricket/${slug}`;
   const desc = `${team.name} men's international cricket: all-time Test, ODI and T20I records, recomputed ranking history, major-tournament honours, head-to-head ledgers and recent results.`;
   return {
-    title: `${team.name} — International Cricket`,
+    title: `${team.name}: International Cricket`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
@@ -391,7 +391,7 @@ export default async function CricketTeamPage(
                       <span className={f.outcome === "Won" || f.outcome === "Shared" ? "font-semibold" : "text-[var(--text-muted)]"}>
                         {f.outcome}
                       </span>
-                      <span className="text-xs text-[var(--text-dim)]"> — {f.detail}</span>
+                      <span className="text-xs text-[var(--text-dim)]">: {f.detail}</span>
                     </td>
                   </tr>
                 ))}

@@ -79,7 +79,7 @@ export default function NbaIndexPage() {
         <h1 className="text-4xl font-bold tracking-tight mb-2">NBA franchises</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           All 30 active franchises, sorted by championships across the Basketball Association of America (BAA, 1947-49),
-          National Basketball Association (NBA, 1949+), and American Basketball Association (ABA, 1968-76 — merged into NBA in 1976).
+          National Basketball Association (NBA, 1949+), and American Basketball Association (ABA, 1968-76, merged into NBA in 1976).
           Click any franchise for full history, arena timeline, awards, and All-NBA selections.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">

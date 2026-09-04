@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/be";
 const TITLE = 'Belgian Federal Elections';
 const DESC =
-  "Every Belgian general and federal election from 1831 to 2024 — the censitaire kingdom's Catholic–Liberal duels, plural voting, the arrival of one man one vote, the linguistic fracture that split every party in two, and the record-breaking coalition deadlocks of the federal era.";
+  "Every Belgian general and federal election from 1831 to 2024: the censitaire kingdom's Catholic–Liberal duels, plural voting, the arrival of one man one vote, the linguistic fracture that split every party in two, and the record-breaking coalition deadlocks of the federal era.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -38,7 +38,7 @@ export default function BeElectionsPage() {
         const p = e.parties
           .filter((p) => p.share != null)
           .sort((a, b) => (b.share ?? 0) - (a.share ?? 0))[0];
-        return p ? { x: e.year, y: p.share as number, label: `${e.label} — ${p.name}` } : null;
+        return p ? { x: e.year, y: p.share as number, label: `${e.label}, ${p.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -61,7 +61,7 @@ export default function BeElectionsPage() {
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
         <StatTile label='Elections' value={String(elections.length)} hint={`${elections[0].year}–${last.year}`} />
         <StatTile label="Latest" value={last.label} hint={`${last.seatLeader ?? ""} largest${last.pmAfter ? ` · ${last.pmAfter.name}` : ""}`} />
-        <StatTile label='Formation record' value='541 days' hint='the post-2010 deadlock — a world record' />
+        <StatTile label='Formation record' value='541 days' hint='the post-2010 deadlock, a world record' />
         <StatTile label='Party systems' value='2' hint='one Dutch-speaking, one French-speaking, since 1968–78' />
       </div>
 
@@ -87,7 +87,7 @@ export default function BeElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since 1919</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Voting has been compulsory since 1893, so Belgian turnout lives between 85 and 95 per cent — among the highest sustained participation ever recorded.
+              Voting has been compulsory since 1893, so Belgian turnout lives between 85 and 95 per cent, among the highest sustained participation ever recorded.
             </p>
             <LineChart series={[turnout]} yMax={100} yTicks={[50, 75]} />
           </div>
@@ -108,7 +108,7 @@ export default function BeElectionsPage() {
         cards={[
           [
                     "Compulsory voting, PR chambers",
-                    "The 150-seat Chamber is elected by proportional representation in eleven constituencies, with a 5% provincial threshold. Voting has been compulsory for men since 1893 and for everyone since 1949 — turnout is a constant, not a variable."
+                    "The 150-seat Chamber is elected by proportional representation in eleven constituencies, with a 5% provincial threshold. Voting has been compulsory for men since 1893 and for everyone since 1949: turnout is a constant, not a variable."
           ],
           [
                     "Two electorates, one country",
@@ -116,7 +116,7 @@ export default function BeElectionsPage() {
           ],
           [
                     "The formation is the ordeal",
-                    "No party approaches a majority, so governments need six or seven partners across the language line. The negotiations have twice passed a year — 541 days after 2010, 494 after 2019 — while caretaker cabinets minded the shop."
+                    "No party approaches a majority, so governments need six or seven partners across the language line. The negotiations have twice passed a year: 541 days after 2010, 494 after 2019, while caretaker cabinets minded the shop."
           ],
           [
                     "From census to universal",

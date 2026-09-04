@@ -194,6 +194,74 @@ already have, as /neighborhoods now carries — not truncating the content.
 
 ---
 
+## 2A. Prose density — the wall of text rule
+
+Added 2026-09-03, after a measured pass. Section 2 governs vertical length on a
+phone. This one governs the thing that made the release reels look like a PDF:
+**every board was putting its methodology essay above the table the reader came
+for.** They arrive for the board and get a defence of the board.
+
+What the audit found across `app/`: ~21,900 words of prose in 123 files, a mean of
+61 words above the fold per hub, and **1,635 of those words sitting in `sub=` props
+alone** across 51 files, rendering as a paragraph wedged between a heading and its
+table.
+
+### The order, and it is not negotiable
+
+**One clause, stat tiles, the board, then the essay.** Currently-wrong is essay,
+then board.
+
+1. **One line above the board.** The sharpest sentence, not the fullest. It is the
+   *reading key* — what the unit is, how to read the column — never the
+   justification. Under 20 words.
+2. **Stat tiles second** where the page has four countable facts. Four numbers
+   outperform the paragraph that was above them.
+3. **The board third, above the fold.** The board is the product.
+4. **The essay last**, in a disclosure. Nothing is deleted; it moves.
+
+### How
+
+`app/_shared/SectionHead.tsx` enforces it. `sub` is the reading key; `more` takes
+the derivation, the caveats and the exclusions and collapses them behind "How this
+is measured" (`moreLabel` overrides the verb).
+
+`more` is collapsed **on every viewport**, unlike `Disclosure` in the same folder,
+which opens on desktop by default. That is deliberate and is the whole point: the
+desktop wall of text is the thing being fixed, so opening it on desktop would fix
+nothing. Use `Disclosure` for a bottom-of-page methodology or sources card; use
+`SectionHead`'s `more` for the note that belongs to one board.
+
+Do not add a sixth local copy of a section heading. Five had already drifted before
+they were consolidated.
+
+### Sources and references live at the bottom
+
+Provenance, "what this excludes", licence notes and source lists go in a collapsed
+block at the END of the page, or on their own page. Never high on a main page.
+
+### Exempt
+
+`/methodology`, `/about` and `/sports/about`. There the prose *is* the product.
+Do not gut them.
+
+### Em dashes
+
+**No em dash in user-visible prose.** Use a comma, a colon before a list or an
+explanation, or a full stop and a new sentence. 618 were removed on 2026-09-03.
+
+Three buckets exist and only one is editable. Get this wrong and you break tables:
+
+| Bucket | Rule |
+|---|---|
+| **Null-fallback / empty-cell glyph** — `?? "—"`, `return "—"`, `: "—"`, `>—<` | **NEVER TOUCH.** 217 of these. This count is the invariant to check after any sweep; the tell for real breakage is `?? ","`. |
+| **Inline separator** — `<span>— </span>` between two pieces of text | This is prose. Make it a colon or comma. |
+| **Inside `//` or `/* */`** | Invisible. Leave it. |
+
+A raw count of "placeholder-shaped" dashes will drift when separators are correctly
+fixed. That is not damage. Check the null-fallback count instead.
+
+---
+
 ## 3. Width — never scroll the page sideways
 
 **At 390px, `document.scrollingElement.scrollWidth` must be ≤ 390 on every
@@ -349,7 +417,35 @@ never does.
   `--text-muted`, `--text-dim`, `--accent`, plus the region palette.
 - **Numbers render in JetBrains Mono** (the shared `MONO` style const) and
   `tabular-nums` wherever they align in a column.
-- **Positive/negative deltas**: `#10b981` / `#E2628B`.
+- **Positive/negative deltas**: `var(--div-pos)` / `var(--div-neg)`. The old
+  `#10b981` / `#E2628B` pair is superseded and must not come back; it was a raw
+  hex two lines below "never hardcode colour".
+- **Chart colour is computed, never chosen.** The tokens `--cat-1..6`,
+  `--seq-1..5` and `--div-neg/mid/pos` in globals.css were validated on
+  2026-09-03 and carry their evidence in a comment there. Before changing any of
+  them, re-run the validator from the bundled `dataviz` skill:
+  `node scripts/validate_palette.js "<hex,...>" --mode dark --surface "#12121A"`.
+  **Never reason about colour separation by hand.** The palette this replaced
+  failed four of five checks, including two colours indistinguishable to a reader
+  with full colour vision.
+- **The categorical ORDER is the safety mechanism, not decoration.** Assign
+  `--cat-1` upward in sequence and never cycle. A seventh series folds into
+  "Other" or becomes small multiples.
+- **Maps, scatter, bubble and small multiples are capped at three series** —
+  only `--cat-1..3` clear the all-pairs test. More than three means fewer series
+  or facets, never a palette change.
+- **Text wears text tokens, never the series colour.** A value keeps `--text` or
+  `--text-muted`; the coloured mark beside it carries the identity. Colouring the
+  figure spends the identity channel twice and vanishes in forced-colors.
+- **One axis, ever.** No dual-axis chart. Two measures of different scale become
+  two charts, small multiples, or an indexed common base.
+- **Colour follows the entity, never its rank.** A filter that changes the series
+  count must not repaint the survivors — a live risk on every sortable board here.
+- **Sequential is one hue light to dark. Diverging is two hues plus a neutral grey
+  midpoint.** Never a hue at the midpoint, never a rainbow.
+- **Two or more series always carry a legend**, and four or fewer are also direct
+  labelled, so identity is never colour alone. Status colours (good, warning,
+  serious, critical) are reserved and never reused as "series four".
 - **Cards**: `rounded-xl` border with the shared `CARD` style.
 - **Body text is ≥13px; 10px is for uppercase mono stamps only**, never for
   prose or a value a reader must read.
@@ -368,6 +464,37 @@ never does.
   internal panes cannot paint over the nav. Do not remove it.
 - Images carry `loading="lazy"`, `decoding="async"`, and explicit
   `width`/`height` to avoid layout shift.
+
+### In-cell bars — the default answer to "this board is just numbers"
+
+Measured 2026-09-03: of 364 routes, 130 carry a table, 7% carry any bar, 1% a
+sparkline, and **113 are a table with no visual encoding at all**. A ranked row
+shows its rank only if the reader reads every number in the column.
+
+**Encode in the row that already exists.** Do not add a chart page: a site whose
+atomic unit is a ranked row does not want a bolted-on dashboard, and a separate
+chart page is one more surface nobody visits.
+
+`app/_shared/DataBar.tsx`:
+
+- `DataBar` — magnitude. A left-anchored bar plus the value.
+- `DivergingBar` — polarity around a zero baseline. Anything signed: skill against
+  market, over- and under-performance, net spend, rank movement.
+
+Rules the components enforce, so a call site cannot get them wrong:
+
+- **`max` is the column's own maximum and must be identical for every row in that
+  column.** Compute it once above the map. Per-row maxima make the bars
+  incomparable, which removes the entire reason for drawing them.
+- **The number keeps a text token.** See section 7.
+- **A diverging bar always draws its zero line.** This is not styling. The two
+  poles sit in the colourblind floor band, where the palette is legal *only* with
+  a secondary encoding, and direction from the baseline is that encoding. Remove
+  the line and the pair becomes illegal, not merely worse.
+- `scale` is display-only: a 0..1 ratio shown as a percentage passes `100`.
+
+Worked references: `/predictions/scoreboard` (diverging) and `/sports/expectation`
+(magnitude). Copy one of those before inventing a new bar.
 
 ---
 

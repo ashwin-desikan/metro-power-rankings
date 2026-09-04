@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/jp";
 const TITLE = "Japanese General Elections";
 const DESC =
-  "Every Japanese general election from 1890 — Asia's first national parliament — to the snap election of 2026: the party governments of Taishō, the 1955 system, the reform era and the LDP's long dominance, for novices and experts alike.";
+  "Every Japanese general election from 1890, Asia's first national parliament, to the snap election of 2026: the party governments of Taishō, the 1955 system, the reform era and the LDP's long dominance, for novices and experts alike.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -80,7 +80,7 @@ export default function JpElectionsPage() {
         colorOf={jpPartyColor}
         fmtPct={jpFmtPct}
         leaderTag="PM"
-        intro="Every general election for the House of Representatives, newest first, across seven eras — including, clearly labelled, the managed wartime vote of 1942. Click any election for the full result and the story."
+        intro="Every general election for the House of Representatives, newest first, across seven eras, including, clearly labelled, the managed wartime vote of 1942. Click any election for the full result and the story."
       />
 
       {/* ---------- charts ---------- */}
@@ -93,7 +93,7 @@ export default function JpElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout, 1890–2026</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              The postwar decades routinely cleared 70%; the modern era has settled in the 50s — 2024&apos;s
+              The postwar decades routinely cleared 70%; the modern era has settled in the 50s: 2024&apos;s
               53.8% was among the lowest ever recorded.
             </p>
             <LineChart series={[turnoutSeries]} yMax={100} yTicks={[50, 75]} />
@@ -102,7 +102,7 @@ export default function JpElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">The LDP&apos;s share of the House, 1955–2026</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               Seven decades as the largest party in all but two elections: the 1993 fall, the 2009 landslide
-              defeat, the Abe restoration — and the swings of the 2020s on either side of it.
+              defeat, the Abe restoration, and the swings of the 2020s on either side of it.
             </p>
             <LineChart series={[ldpSeats]} yMax={100} yTicks={[25, 50, 75]} />
           </div>
@@ -115,9 +115,9 @@ export default function JpElectionsPage() {
         title="How Japanese general elections work"
         cards={[
           ["Districts plus blocks", "Since 1996 voters cast two ballots: one for a single-member district, one for a party in a regional proportional block. The mix replaced the old multi-member districts that had fuelled intra-party factionalism and money politics."],
-          ["The Diet chooses the PM", "The House of Representatives elects the Prime Minister, and its majority rules: governments in Japan have more often changed between elections — through party splits and coalition shuffles — than at them."],
-          ["The 1955 system's long shadow", "The LDP's merger in 1955 created a dominant party that has governed for all but roughly four of the past seventy years, usually with a coalition partner since 1999 — a dominance no other G7 democracy matches."],
-          ["Snap elections", "The PM can dissolve the House at any time, and almost every election since the war has been a snap election — called at the government's moment of choosing, which is a large part of how the LDP's record was built."],
+          ["The Diet chooses the PM", "The House of Representatives elects the Prime Minister, and its majority rules: governments in Japan have more often changed between elections, through party splits and coalition shuffles, than at them."],
+          ["The 1955 system's long shadow", "The LDP's merger in 1955 created a dominant party that has governed for all but roughly four of the past seventy years, usually with a coalition partner since 1999, a dominance no other G7 democracy matches."],
+          ["Snap elections", "The PM can dissolve the House at any time, and almost every election since the war has been a snap election, called at the government's moment of choosing, which is a large part of how the LDP's record was built."],
         ]}
       />
 

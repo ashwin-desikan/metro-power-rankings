@@ -230,7 +230,7 @@ export default async function NhlTeamPage({ params }: Props) {
                 return (
                   <span
                     key={`cup-${i}`}
-                    title={c ? `${c.year} ${era === "avco" ? "Avco Cup" : "Stanley Cup"} — ${c.city} ${c.team}` : ""}
+                    title={c ? `${c.year} ${era === "avco" ? "Avco Cup" : "Stanley Cup"}, ${c.city} ${c.team}` : ""}
                     className="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded"
                     style={{ background: colors.bg, color: colors.text }}
                   >
@@ -591,7 +591,7 @@ function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
       <p className="text-xs text-[var(--text-dim)] mt-10">
         Source: <Link href="/methodology" className="hover:text-[var(--text-muted)]">methodology</Link>.
         Workbook canonical key: <code className="text-[10px]">{h.canonical}</code>.
-        Defunct franchise — see all of them at{" "}
+        Defunct franchise: see all of them at{" "}
         <Link href="/teams/nhl/historical" className="hover:text-[var(--text-muted)]">/teams/nhl/historical</Link>.
       </p>
     </main>

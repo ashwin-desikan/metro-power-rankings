@@ -9,9 +9,9 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 // public metro product stays clean; the martech surfaces live here.
 
 const PATH = "/studio";
-const TITLE = "Studio — A Martech Reference Implementation";
+const TITLE = "Studio: A Martech Reference Implementation";
 const DESC =
-  "How a fragmented fan-data stack becomes one resolved, governed, activated system. A working reference implementation of the fan-data lifecycle — ingestion, identity resolution, consent governance, audience building, and reverse-ETL activation — built on the metro and sports dataset as a stand-in first-party audience.";
+  "How a fragmented fan-data stack becomes one resolved, governed, activated system. A working reference implementation of the fan-data lifecycle: ingestion, identity resolution, consent governance, audience building, and reverse-ETL activation, built on the metro and sports dataset as a stand-in first-party audience.";
 
 export const metadata: Metadata = {
   title: TITLE,

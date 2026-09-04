@@ -222,3 +222,6 @@ SAIS-Organization-Spotlight-Answers.md
 # Release-highlights reel working dir (screenshots, narration, music, cuts).
 # Regenerate with scripts/reel/build_reel.py; the mp4 is a deliverable, not source.
 reel-build/
+
+# disposable output of npm run probe:mobile
+.probe-shots/

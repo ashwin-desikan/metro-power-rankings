@@ -35,6 +35,7 @@ import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // api-football league ids for the hub countries' top flights, so the country
 // switcher can default to this hub's own league before falling back to tier 1.
@@ -539,6 +540,9 @@ function CurrentStandings({
   if (hub.current_standings.length === 0) {
     return null;
   }
+  // Points is the standings' argument; max is this season's own maximum,
+  // computed once over the full row set.
+  const ptsMax = Math.max(...hub.current_standings.map((s) => s.pts ?? 0), 1);
   return (
     <section
       className="rounded-xl border p-5 mb-6"
@@ -664,7 +668,7 @@ function CurrentStandings({
                 <td className="py-1.5 text-right tabular-nums">{s.w ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.d ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.l ?? "-"}</td>
-                <td className="py-1.5 text-right tabular-nums">{s.pts ?? "-"}</td>
+                <td className="py-1.5 text-right"><DataBar v={s.pts} max={ptsMax} width={80} label="points" /></td>
                 <td className="py-1.5 text-right tabular-nums hidden sm:table-cell">{s.gf ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums hidden sm:table-cell">{s.ga ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.gd ?? "-"}</td>

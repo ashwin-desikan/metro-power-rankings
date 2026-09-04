@@ -15,7 +15,7 @@ import { Disclosure } from "@/app/_shared/Disclosure";
 const PATH = "/uk-political-leadership";
 const TITLE = "United Kingdom Political Leadership";
 const DESC =
-  "Who holds power in the United Kingdom: the Sovereign, the Prime Minister and the Great Offices of State, the composition of the Houses of Commons and Lords, the Leader of the Opposition, and the devolved First Ministers — with a time machine back to the early 18th century.";
+  "Who holds power in the United Kingdom: the Sovereign, the Prime Minister and the Great Offices of State, the composition of the Houses of Commons and Lords, the Leader of the Opposition, and the devolved First Ministers, with a time machine back to the early 18th century.";
 
 export const metadata: Metadata = {
   title: TITLE,

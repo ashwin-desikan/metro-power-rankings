@@ -75,7 +75,7 @@ export default function DecadesView({ data }: { data: DecadesData }) {
                 <span className="mr-1 text-xs tabular-nums" style={muted}>{i + 1}</span>
                 &ldquo;{s.single}&rdquo;{' '}
                 <span className="text-xs" style={muted}>
-                  — {s.artist} · {s.metro} · {s.chart} #{s.peak} ({s.year})
+                  : {s.artist} · {s.metro} · {s.chart} #{s.peak} ({s.year})
                 </span>
               </li>
             ))}

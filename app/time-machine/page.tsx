@@ -299,10 +299,10 @@ export default async function TimeMachineHub({
         <h2 className="text-lg font-bold mb-2">Where these come from</h2>
         <p className="text-[13px] text-[var(--text-muted)] leading-relaxed max-w-3xl">
           The panels and the &ldquo;also in&rdquo; strip are read live from the same files their own
-          boards read, so this page cannot disagree with what it points at — and the strip draws a
+          boards read, so this page cannot disagree with what it points at, and the strip draws a
           fresh handful from a wide pool each visit, so the same year tells a different story twice.
-          The boards start in different centuries — power in 1500, population in 1800, champions in
-          1860, film in 1920 — and a panel outside its range says so rather than going blank. Five
+          The boards start in different centuries: power in 1500, population in 1800, champions in
+          1860, film in 1920, and a panel outside its range says so rather than going blank. Five
           boards open directly on your chosen year; the rest open at their own default until they
           learn to read a year from the address bar.
         </p>

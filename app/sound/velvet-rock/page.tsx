@@ -15,7 +15,7 @@ const muted = { color: 'var(--text-muted)' } as const;
 const gold = '#ffb64f';
 
 export const metadata = {
-  title: 'Velvet Rock — The Sound of the Metros',
+  title: 'Velvet Rock: The Sound of the Metros',
   description: 'The producer-driven, studio-luxe adult-pop economy of 1974 to 1989, read as a map of studios from Los Angeles to Tokyo rather than a genre.',
 };
 

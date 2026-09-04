@@ -120,8 +120,8 @@ export default function VolleyballHubPage() {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">International Volleyball</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          The national-team game: every men&apos;s Olympic podium since 1964 — the sport&apos;s
-          ultimate trophy — alongside the FIVB World Championship since 1949. Soviet,
+          The national-team game: every men&apos;s Olympic podium since 1964, the sport&apos;s
+          ultimate trophy, alongside the FIVB World Championship since 1949. Soviet,
           Yugoslav and German lineages fold into their modern successors, per edition.
         </p>
       </header>

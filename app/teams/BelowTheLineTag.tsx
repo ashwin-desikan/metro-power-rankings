@@ -9,7 +9,7 @@ export default function BelowTheLineTag({ className = "" }: { className?: string
   return (
     <Link
       href="/sports#league-directory"
-      title="Active club, below this sport's tracked level — not in the Sports directory"
+      title="Active club, below this sport's tracked level, not in the Sports directory"
       className={`inline-flex items-baseline gap-1 rounded-full border px-2.5 py-0.5 text-sm font-semibold align-middle transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] ${className}`}
       style={{ borderColor: "var(--border)", background: "var(--bg-card)", color: "var(--text)" }}
     >

@@ -7,7 +7,7 @@ import { getAppleCharts } from "@/lib/appleCharts";
 export const revalidate = 10800;
 
 export const metadata: Metadata = {
-  title: "Live Charts — Apple Music Top Songs",
+  title: "Live Charts: Apple Music Top Songs",
   description:
     "This week's most-played songs on Apple Music in the US and UK, updated daily. Apple Music's chart (not the official Billboard Hot 100 or UK Official Singles Chart), with links to both official charts.",
   alternates: { canonical: "/sound/charts" },

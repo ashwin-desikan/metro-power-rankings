@@ -8,7 +8,7 @@ interface N { metro: string; count: number }
 async function j<T>(f: string): Promise<T> {
   return JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', f), 'utf8')) as T;
 }
-export const metadata = { title: 'Number-One Machines — Sound of the Metros' };
+export const metadata = { title: 'Number-One Machines: Sound of the Metros' };
 const muted = { color: 'var(--text-muted)' } as const;
 const A_COLS: Col[] = [
   { key: 'rank', label: '#', kind: 'rank', align: 'right' },

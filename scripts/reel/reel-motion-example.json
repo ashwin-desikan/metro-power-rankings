@@ -1,0 +1,184 @@
+[
+ {
+  "n": 1,
+  "slug": "01-hook",
+  "url": "https://rankings.citizenofnowhere.org/",
+  "caption": "One month of releases",
+  "vo": "One month at Citizen of Nowhere. Thirty releases. Here is what shipped."
+ },
+ {
+  "n": 2,
+  "slug": "02-constitutions",
+  "url": "https://rankings.citizenofnowhere.org/constitutions",
+  "caption": "Constitutions",
+  "vo": "Since seventeen eighty-nine the world has written seven hundred and fifty-eight constitutions and replaced five hundred and fifty-five. Half are gone within fourteen years.",
+  "act": [
+   {
+    "at": 1.1,
+    "scroll": "+460"
+   },
+   {
+    "at": 3.4,
+    "scroll": "+420"
+   },
+   {
+    "at": 5.6,
+    "scroll": 0
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "slug": "03-games",
+  "url": "https://rankings.citizenofnowhere.org/sports/games",
+  "caption": "260,000 matches, ranked",
+  "vo": "The greatest club football games. Two hundred and sixty thousand matches since eighteen seventy-one, scored on closeness, stakes and quality.",
+  "act": [
+   {
+    "at": 1.1,
+    "scroll": "+460"
+   },
+   {
+    "at": 3.4,
+    "scroll": "+420"
+   },
+   {
+    "at": 5.6,
+    "scroll": 0
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "slug": "04-ucl",
+  "url": "https://rankings.citizenofnowhere.org/predictions/ucl",
+  "caption": "Live UEFA hubs",
+  "vo": "The Champions League, Europa and Conference hubs go live, each with a standings table and a bracket that updates as results land.",
+  "act": [
+   {
+    "at": 1.1,
+    "scroll": "+460"
+   },
+   {
+    "at": 3.4,
+    "scroll": "+420"
+   },
+   {
+    "at": 5.6,
+    "scroll": 0
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "slug": "05-ledger",
+  "url": "https://rankings.citizenofnowhere.org/predictions/scoreboard",
+  "caption": "Every forecast, graded",
+  "vo": "And every forecast this site publishes is graded against the closing market. Twenty thousand nine hundred games scored, and the model beat the market in just nine seasons out of seventy-one.",
+  "act": [
+   {
+    "at": 1.1,
+    "scroll": "+460"
+   },
+   {
+    "at": 3.4,
+    "scroll": "+420"
+   },
+   {
+    "at": 5.6,
+    "scroll": 0
+   }
+  ]
+ },
+ {
+  "n": 6,
+  "slug": "06-champions",
+  "url": "https://rankings.citizenofnowhere.org/sports/champions",
+  "caption": "Any month, back to 1860",
+  "vo": "A time machine for champions. Pick any month back to eighteen sixty and see who held every trophy at that moment.",
+  "act": [
+   {
+    "at": 1.1,
+    "scroll": "+460"
+   },
+   {
+    "at": 3.4,
+    "scroll": "+420"
+   },
+   {
+    "at": 5.6,
+    "scroll": 0
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "slug": "07-companies",
+  "url": "https://rankings.citizenofnowhere.org/business/companies",
+  "caption": "Back to 1955",
+  "vo": "Every year's biggest American companies since nineteen fifty-five, as the list was published at the time. Bethlehem Steel, Pan Am and Enron all still on it.",
+  "act": [
+   {
+    "at": 1.1,
+    "scroll": "+460"
+   },
+   {
+    "at": 3.4,
+    "scroll": "+420"
+   },
+   {
+    "at": 5.6,
+    "scroll": 0
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "slug": "08-skyscrapers",
+  "url": "https://rankings.citizenofnowhere.org/skyscrapers",
+  "caption": "The vertical world",
+  "vo": "Every building over three hundred and fifty metres. Half of Dubai's skyline has risen since twenty ten. A quarter of Hong Kong's.",
+  "act": [
+   {
+    "at": 1.1,
+    "scroll": "+460"
+   },
+   {
+    "at": 3.4,
+    "scroll": "+420"
+   },
+   {
+    "at": 5.6,
+    "scroll": 0
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "slug": "09-elections",
+  "url": "https://rankings.citizenofnowhere.org/elections",
+  "caption": "Six new countries",
+  "vo": "Elections adds six countries, each with its full run of national contests and a page scoring how faithfully votes become seats.",
+  "act": [
+   {
+    "at": 1.1,
+    "scroll": "+460"
+   },
+   {
+    "at": 3.4,
+    "scroll": "+420"
+   },
+   {
+    "at": 5.6,
+    "scroll": 0
+   }
+  ]
+ },
+ {
+  "n": 10,
+  "slug": "10-outro",
+  "url": "https://rankings.citizenofnowhere.org/updates",
+  "caption": "rankings.citizenofnowhere.org",
+  "vo": "All of it, every day, at rankings dot citizen of nowhere dot org."
+ }
+]

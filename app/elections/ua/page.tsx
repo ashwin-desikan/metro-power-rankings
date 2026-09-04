@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/ua";
 const TITLE = "Ukrainian Elections";
 const DESC =
-  "Every Ukrainian national election since independence: seven presidential races and eight Rada contests — the independence-day vote of 1991, the falsified runoff that sparked the Orange Revolution, the wartime ballots of 2014 and 2019, and the Zelenskyy landslide. Elections are suspended under martial law until the war ends.";
+  "Every Ukrainian national election since independence: seven presidential races and eight Rada contests: the independence-day vote of 1991, the falsified runoff that sparked the Orange Revolution, the wartime ballots of 2014 and 2019, and the Zelenskyy landslide. Elections are suspended under martial law until the war ends.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -114,7 +114,7 @@ export default function UaElectionsPage() {
           <span className="font-bold" style={{ color: "#D97706" }}>Elections suspended.</span>{" "}
           Ukraine has held no national election since 2019: the constitution bars elections under
           martial law, in force since Russia&apos;s full-scale invasion of February 2022. This is a
-          democracy&apos;s wartime pause, not a closure — every completed election here was
+          democracy&apos;s wartime pause, not a closure: every completed election here was
           competitive, and three sitting presidents have lost at the ballot box, a post-Soviet
           record. The next vote awaits the end of martial law.
         </p>
@@ -123,8 +123,8 @@ export default function UaElectionsPage() {
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
         <StatTile label="Presidential elections" value={String(presidential.length)} hint="1991–2019, every one competitive" />
         <StatTile label="Rada elections" value={String(legislative.length)} hint="1994–2019, majoritarian to full party-list and back to mixed" />
-        <StatTile label="Incumbents defeated" value="3" hint="Kravchuk, Yushchenko, Poroshenko — only Kuchma won re-election" />
-        <StatTile label="Revolutions forced by fraud" value="1" hint="the Orange Revolution of 2004 — a falsified runoff, annulled and re-run" />
+        <StatTile label="Incumbents defeated" value="3" hint="Kravchuk, Yushchenko, Poroshenko, only Kuchma won re-election" />
+        <StatTile label="Revolutions forced by fraud" value="1" hint="the Orange Revolution of 2004, a falsified runoff, annulled and re-run" />
       </div>
 
       <JumpNav items={[["#presidential", "Presidential races"], ["#chronology", "Rada elections"], ["#charts", "The long arc in charts"], ["#records", "The numbers to know"], ["#how-it-works", "How it works"]]} />
@@ -133,7 +133,7 @@ export default function UaElectionsPage() {
       <section id="presidential" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential races</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          All {presidential.length} contests, newest first — every one of them a real race, and
+          All {presidential.length} contests, newest first, every one of them a real race, and
           most of them decided in a runoff between east and west.
         </p>
         {presByEra.map(({ era, list }) => (
@@ -160,7 +160,7 @@ export default function UaElectionsPage() {
         fmtPct={uaFmtPct}
         leaderTag="PM"
         headline="Rada elections"
-        intro="Every Verkhovna Rada election, newest first — from the fragmented majoritarian chambers of the 1990s through the Orange-era party-list duels to the wartime Rada of 2019, elected without Crimea and the occupied Donbas."
+        intro="Every Verkhovna Rada election, newest first, from the fragmented majoritarian chambers of the 1990s through the Orange-era party-list duels to the wartime Rada of 2019, elected without Crimea and the occupied Donbas."
       />
 
       {/* ---------- charts ---------- */}
@@ -173,7 +173,7 @@ export default function UaElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout, 1991–2019</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              From 84% on independence day to 49% in the 2019 Rada election — a familiar
+              From 84% on independence day to 49% in the 2019 Rada election, a familiar
               democratic slide, steepened after 2014 by the loss of voters in Crimea and the
               occupied Donbas.
             </p>
@@ -184,11 +184,11 @@ export default function UaElectionsPage() {
             <p className="text-xs text-[var(--text-muted)] mb-2">
               For two decades every close race split along the same line: the west and centre
               against the south and east. The runoffs of 1994, 2004 and 2010 were all decided by
-              a few points across that divide. 2019 broke the pattern — Zelenskyy carried every
+              a few points across that divide. 2019 broke the pattern: Zelenskyy carried every
               region but one, the first truly national mandate in Ukraine&apos;s history.
             </p>
             <div className="text-xs text-[var(--text-dim)] mt-6">
-              Open any race above for the full candidate table — every table sorts.
+              Open any race above for the full candidate table: every table sorts.
             </div>
           </div>
         </div>
@@ -200,9 +200,9 @@ export default function UaElectionsPage() {
         title="How Ukrainian elections work"
         cards={[
           ["The presidency", "Directly elected for five years in a two-round system: an absolute majority in the first round or a runoff between the top two. Since 1991 only the 1991 and 2014 races have been settled in one round."],
-          ["The Verkhovna Rada", "450 seats, one chamber. The rules have swung between pure majoritarian (1994), mixed (1998–2002, 2012–2019) and full party-list PR (2006–2007), with a 5% threshold — and 26 seats representing occupied territory have sat empty since 2014."],
+          ["The Verkhovna Rada", "450 seats, one chamber. The rules have swung between pure majoritarian (1994), mixed (1998–2002, 2012–2019) and full party-list PR (2006–2007), with a 5% threshold, and 26 seats representing occupied territory have sat empty since 2014."],
           ["Martial law and the pause", "The constitution forbids national elections under martial law, continuously in force since 24 February 2022. Zelenskyy's five-year term has been extended by that provision, a suspension accepted by parliament and opposition alike; a post-war election will follow the lifting of martial law."],
-          ["Why the record matters", "Ukraine is the post-Soviet state where elections stayed real: incumbents lose, courts have annulled a stolen runoff, and power has changed hands peacefully in every decade — the habit Russia's invasion was in part meant to extinguish."],
+          ["Why the record matters", "Ukraine is the post-Soviet state where elections stayed real: incumbents lose, courts have annulled a stolen runoff, and power has changed hands peacefully in every decade, the habit Russia's invasion was in part meant to extinguish."],
         ]}
       />
 

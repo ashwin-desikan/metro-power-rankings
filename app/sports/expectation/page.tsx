@@ -9,6 +9,8 @@ import { getPlExpectation } from "@/lib/plExpectation";
 import { getNflExpectation } from "@/lib/nflExpectation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
+import { SectionHead } from "@/app/_shared/SectionHead";
+import { DataBar } from "@/app/_shared/DataBar";
 // The one place the expectation ledgers answer for themselves.
 //
 // 🔴 THIS IS NOT A BOARD OF BOARDS. Ashwin, on the NFL-only page this one
@@ -49,8 +51,9 @@ export const revalidate = 86400;
 const MONO: CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
 const CARD: CSSProperties = { background: "var(--bg-card)", borderColor: "var(--border)" };
 const BORD: CSSProperties = { borderColor: "var(--border)" };
-const UP = "#10b981";
-const DOWN = "#E2628B";
+// Validated diverging tokens; see globals.css. Never a raw hex.
+const UP = "var(--div-pos)";
+const DOWN = "var(--div-neg)";
 
 function signed(v: number, dp = 1) {
   return `${v >= 0 ? "+" : "−"}${Math.abs(v).toFixed(dp)}`;
@@ -66,14 +69,6 @@ function Stat({ v, k, sub }: { v: string; k: string; sub?: string }) {
   );
 }
 
-function SectionHead({ title, sub, id }: { title: string; sub: string; id: string }) {
-  return (
-    <>
-      <h2 id={id} className="text-2xl font-bold scroll-mt-24">{title}</h2>
-      <p className="mt-1 mb-4 text-sm text-[var(--text-muted)] max-w-3xl">{sub}</p>
-    </>
-  );
-}
 
 function Delta({ v, dp = 1 }: { v: number; dp?: number }) {
   return (
@@ -146,8 +141,8 @@ export default async function ExpectationPage() {
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">🎲 Against Expectation</h1>
         <p className="mt-2 text-[15px] text-[var(--text-muted)] max-w-3xl">
           The record book says who won. It cannot say who was lucky, who was robbed, or which result
-          was genuinely impossible. Every English top-flight match since 1888 and every NFL game
-          since 1920 is scored here against the chance it was given before kick-off — which turns out
+          was genuinely impossible, and every English top-flight match since 1888 and every NFL game
+          since 1920 is scored here against the chance it was given before kick-off, which turns out
           to reveal something neither league has ever announced.
         </p>
         <div className="mt-2 text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
@@ -200,7 +195,8 @@ export default async function ExpectationPage() {
         <SectionHead
           id="home-advantage"
           title="Home advantage is dying, in both sports at once"
-          sub="Not a rule change, not a season, and not one league. Two sports on different continents, with nothing in common but crowds and travel, both peaked around the same moment and have been falling ever since."
+          sub="Not a rule change, not a season, not one league."
+          more="Two sports on different continents, with nothing in common but crowds and travel, both peaked around the same moment and have been falling ever since."
         />
         <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>
           {ha ? <HomeAdvantageChart series={ha.series} /> : (
@@ -219,7 +215,7 @@ export default async function ExpectationPage() {
                 <span className="tabular-nums text-[var(--text)]" style={MONO}>{Math.round(nfShape.peak.hfa)}</span>{" "}
                 in {nfShape.peak.season} to{" "}
                 <span className="tabular-nums text-[var(--text)]" style={MONO}>{Math.round(nfShape.last.hfa)}</span>{" "}
-                in {nfShape.last.season} — close enough to nothing that playing at home is now worth
+                in {nfShape.last.season}, close enough to nothing that playing at home is now worth
                 less than the gap between two mid-table sides.
               </>
             ) : null}
@@ -241,7 +237,8 @@ export default async function ExpectationPage() {
         <SectionHead
           id="upsets"
           title="The longest odds ever beaten"
-          sub="Nobody curated these. The model went looking for improbability and came back holding matches both sports already tell stories about, which is the best evidence it has taste."
+          sub="Nobody curated these; the model went looking for improbability."
+          more="It came back holding matches both sports already tell stories about, which is the best evidence it has taste."
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="min-w-0">
@@ -257,7 +254,9 @@ export default async function ExpectationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {(pl?.upsets ?? []).slice(0, 10).map((u, i) => (
+                  {(() => { const rows = (pl?.upsets ?? []).slice(0, 10);
+                    const colMax = Math.max(...rows.map((r) => r.p_winner), 0.0001);
+                    return rows.map((u, i) => (
                     <tr key={u.date + u.home} className="border-t" style={BORD}>
                       <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
                       <td className="py-1.5 px-3 whitespace-nowrap">
@@ -271,14 +270,15 @@ export default async function ExpectationPage() {
                           won {u.at_home ? "at home" : "away"}
                         </span>
                       </td>
-                      <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={{ ...MONO, color: DOWN }}>
-                        {(u.p_winner * 100).toFixed(1)}%
+                      <td className="py-1.5 px-3">
+                        <DataBar v={u.p_winner} max={colMax} dp={1} suffix="%" scale={100}
+                                 color="var(--div-neg)" width={104} label="chance the winner had" />
                       </td>
                       <td className="py-1.5 px-3 text-[var(--text-muted)] tabular-nums hidden sm:table-cell whitespace-nowrap" style={MONO}>
                         {u.date}
                       </td>
                     </tr>
-                  ))}
+                  )); })()}
                 </tbody>
               </table>
             </TableScroll>
@@ -296,7 +296,9 @@ export default async function ExpectationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {(nfl?.upsets ?? []).slice(0, 10).map((u, i) => (
+                  {(() => { const rows = (nfl?.upsets ?? []).slice(0, 10);
+                    const colMax = Math.max(...rows.map((r) => r.p_winner), 0.0001);
+                    return rows.map((u, i) => (
                     <tr key={u.game_id} className="border-t" style={BORD}>
                       <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
                       <td className="py-1.5 px-3 whitespace-nowrap">
@@ -306,14 +308,15 @@ export default async function ExpectationPage() {
                         <span className="tabular-nums text-[var(--text-dim)]" style={MONO}>{u.score}</span>
                         <span className="block text-[11px] text-[var(--text-muted)]">beat {u.loser}</span>
                       </td>
-                      <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={{ ...MONO, color: DOWN }}>
-                        {(u.p_winner * 100).toFixed(1)}%
+                      <td className="py-1.5 px-3">
+                        <DataBar v={u.p_winner} max={colMax} dp={1} suffix="%" scale={100}
+                                 color="var(--div-neg)" width={104} label="chance the winner had" />
                       </td>
                       <td className="py-1.5 px-3 text-[var(--text-muted)] tabular-nums hidden sm:table-cell whitespace-nowrap" style={MONO}>
                         {u.date ?? String(u.season)}
                       </td>
                     </tr>
-                  ))}
+                  )); })()}
                 </tbody>
               </table>
             </TableScroll>
@@ -326,7 +329,8 @@ export default async function ExpectationPage() {
         <SectionHead
           id="seasons"
           title="The seasons that broke the model"
-          sub="Watching every match as it happened, the ratings still could not see these coming. Football is measured in league points under that season's own scoring; the NFL in wins. The two are not the same quantity and are never added."
+          sub="The ratings still could not see these coming."
+          more="Football is measured in league points under that season's own scoring; the NFL in wins. The two are not the same quantity and are never added."
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="min-w-0">
@@ -401,7 +405,8 @@ export default async function ExpectationPage() {
         <SectionHead
           id="metros"
           title="By metro, and the thing size does not buy"
-          sub="Both ledgers agree on something the league tables never say: the biggest metro is not the one that beats its odds. London sits barely above par across more than twenty thousand club-matches, and New York is the NFL's biggest underachiever."
+          sub="The biggest metro is not the one that beats its odds."
+          more="Both ledgers agree on something the league tables never say. London sits barely above par across more than twenty thousand club-matches, and New York is the NFL's biggest underachiever."
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="min-w-0">
@@ -472,8 +477,9 @@ export default async function ExpectationPage() {
         <SectionHead
           id="market"
           title="Against the market, which usually wins"
-          sub={
-            "A model that only ever showed its own scoreboard would be worth nothing. Both ledgers are graded against the betting market on every match it priced, and on balance both lose." +
+          sub="Both ledgers are graded against the betting market, and on balance both lose."
+          more={
+            "A model that only ever showed its own scoreboard would be worth nothing." +
             (plMarket?.closing != null
               ? ` Football carries a true closing price on ${plMarket.closing.toLocaleString()} of ${plMarket.matches.toLocaleString()} priced matches; the rest are pre-match prices, which is all that exists for them.`
               : "")
@@ -487,7 +493,7 @@ export default async function ExpectationPage() {
                 <p className="mt-2 text-sm text-[var(--text-muted)]">
                   {plMarket.seasons} seasons priced, {plMarket.matches.toLocaleString()} matches. The model
                   was closer in {plMarket.modelBetter} of them
-                  {plMarket.modelBetter === 1 && plMarket.bestSeason ? <> — {plMarket.bestSeason}</> : null}.
+                  {plMarket.modelBetter === 1 && plMarket.bestSeason ? <>: {plMarket.bestSeason}</> : null}.
                 </p>
                 <p className="mt-2 text-xs text-[var(--text-muted)]">
                   Over those matches the model scores{" "}
@@ -561,7 +567,7 @@ export default async function ExpectationPage() {
             <p>
               Nothing is held out: the handful of settings were fitted on the whole history, so treat
               this as a description of the record rather than a forecast. And the football model has
-              almost no skill before about 1960 — knowing the era&rsquo;s home-and-away split is nearly
+              almost no skill before about 1960: knowing the era&rsquo;s home-and-away split is nearly
               as good as knowing which two clubs are playing. It earns its keep from roughly the 1960s
               on, and most of it in the last twenty-five years.
             </p>
@@ -572,7 +578,7 @@ export default async function ExpectationPage() {
               Every season&rsquo;s league table is rebuilt from the matches and compared against the
               table this site already publishes on its own season hubs
               {pl ? (
-                <> — {pl.meta.reconciliation.seasons} seasons, {pl.meta.reconciliation.club_seasons.toLocaleString()}{" "}
+                <>: {pl.meta.reconciliation.seasons} seasons, {pl.meta.reconciliation.club_seasons.toLocaleString()}{" "}
                   club-seasons, {pl.meta.reconciliation.unmatched_names} unmatched club names</>
               ) : null}
               . Separately, every club&rsquo;s count of top-flight seasons is compared against the
@@ -588,8 +594,8 @@ export default async function ExpectationPage() {
               {pl ? (
                 <>
                   The checks leave {pl.meta.reconciliation.known_bad_fixtures} fixtures in the football
-                  source that are recorded the wrong way round — both legs of the tie logged at one
-                  ground, so one of them has the result reversed — across{" "}
+                  source that are recorded the wrong way round: both legs of the tie logged at one
+                  ground, so one of them has the result reversed, across{" "}
                   {pl.meta.reconciliation.seasons_implicated.length} seasons between{" "}
                   {pl.meta.reconciliation.seasons_implicated[0]} and{" "}
                   {pl.meta.reconciliation.seasons_implicated[pl.meta.reconciliation.seasons_implicated.length - 1]}.
@@ -606,7 +612,7 @@ export default async function ExpectationPage() {
             <p>
               A football win was worth two league points until 1981-82 and three after, so league
               points cannot be summed down the length of the series. Club and metro totals use match
-              points instead — a win is 1, a draw 0.5 — which every era shares. The NFL is in wins.
+              points instead: a win is 1, a draw 0.5, which every era shares. The NFL is in wins.
               A page that added them together would be inventing a quantity.
             </p>
           </div>
@@ -614,7 +620,7 @@ export default async function ExpectationPage() {
             <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Sources</h3>
             <p>
               English top-flight results from this site&rsquo;s own match log, extended from 2023-24
-              with football-data.co.uk, which also supplies the prices — closing where it publishes
+              with football-data.co.uk, which also supplies the prices: closing where it publishes
               one, pre-match before 2012-13, never the two conflated. NFL results and
               pre-game probabilities from the site&rsquo;s NFL workbook, with closing spreads loaded
               from published historical odds.{" "}

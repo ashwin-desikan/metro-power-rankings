@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/ng";
 const TITLE = "Nigerian Elections";
 const DESC =
-  "Nigerian elections from Africa's first colonial vote in 1923 to the three-way contest of 2023 — the regional politics that broke the First Republic, the annulled June 12 election, and the Fourth Republic's unbroken run in Africa's largest democracy.";
+  "Nigerian elections from Africa's first colonial vote in 1923 to the three-way contest of 2023: the regional politics that broke the First Republic, the annulled June 12 election, and the Fourth Republic's unbroken run in Africa's largest democracy.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -115,7 +115,7 @@ export default function NgElectionsPage() {
       <section id="presidential" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential elections</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          All {presidential.length} presidential contests, newest first — with the rigged 1983
+          All {presidential.length} presidential contests, newest first, with the rigged 1983
           re-election, the annulled election of June 12, 1993 and the flawed 2007 handover labelled
           for what they were.
         </p>
@@ -143,7 +143,7 @@ export default function NgElectionsPage() {
         fmtPct={ngFmtPct}
         leaderTag="PM"
         headline="Parliamentary elections"
-        intro="Every legislative election, newest first — the Legislative Council's four elected seats, the regional parliaments of the First Republic, and the National Assembly since 1979."
+        intro="Every legislative election, newest first: the Legislative Council's four elected seats, the regional parliaments of the First Republic, and the National Assembly since 1979."
       />
 
       {/* ---------- charts ---------- */}
@@ -156,7 +156,7 @@ export default function NgElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">The turnout collapse</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Nigerian presidential turnout has fallen at almost every Fourth Republic election —
+              Nigerian presidential turnout has fallen at almost every Fourth Republic election,
               from above 50% in 2003 to 26.7% in 2023, the era&apos;s starkest warning sign.
             </p>
             <LineChart series={[presTurnout]} yMax={100} yTicks={[25, 50, 75]} />
@@ -165,7 +165,7 @@ export default function NgElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">From two parties to three</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               The PDP dominated 1999–2011; the APC merger won in 2015 and 2019; and in 2023 Peter
-              Obi&apos;s Labour surge broke the duopoly, carrying Lagos and the capital — explore each
+              Obi&apos;s Labour surge broke the duopoly, carrying Lagos and the capital. Explore each
               contest above for the full result.
             </p>
             <div className="text-xs text-[var(--text-dim)] mt-6">
@@ -180,10 +180,10 @@ export default function NgElectionsPage() {
       <HowItWorks
         title="How Nigerian elections work"
         cards={[
-          ["The federal spread rule", "Winning the presidency takes the most votes plus a quarter of the vote in two-thirds of the 36 states — a federal-character rule born of the 1979 'twelve two-thirds' dispute, designed to force coalitions across region and religion."],
-          ["One day, three ballots", "Presidential, Senate and House elections are held together: 109 senators (three per state) and 360 representatives. Governorships follow weeks later — Nigeria elects almost everything in a single season."],
+          ["The federal spread rule", "Winning the presidency takes the most votes plus a quarter of the vote in two-thirds of the 36 states, a federal-character rule born of the 1979 'twelve two-thirds' dispute, designed to force coalitions across region and religion."],
+          ["One day, three ballots", "Presidential, Senate and House elections are held together: 109 senators (three per state) and 360 representatives. Governorships follow weeks later: Nigeria elects almost everything in a single season."],
           ["June 12", "The freest election Nigeria had held was annulled in 1993 by the military regime that organised it. Its winner died in detention; its date is now Democracy Day, and its memory is the Fourth Republic's founding grievance."],
-          ["Region is the fault line", "From the NPC-NCNC-AG triangle of the 1950s to today's north–south zoning conventions, Nigerian elections are won by assembling regional coalitions — the informal rule that the presidency rotates between north and south still shapes every contest."],
+          ["Region is the fault line", "From the NPC-NCNC-AG triangle of the 1950s to today's north–south zoning conventions, Nigerian elections are won by assembling regional coalitions, the informal rule that the presidency rotates between north and south still shapes every contest."],
         ]}
       />
 

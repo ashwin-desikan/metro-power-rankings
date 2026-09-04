@@ -20,10 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!n) return { title: "Nation not found" };
   const desc = `${n.name} at the FIFA Women's World Cup: ${n.appearances} appearances, ${n.titles} title${n.titles === 1 ? "" : "s"}, ${n.finals} final${n.finals === 1 ? "" : "s"}, best finish ${n.best_finish}.`;
   return {
-    title: `${n.name} — Women's World Cup`,
+    title: `${n.name}: Women's World Cup`,
     description: desc,
     alternates: { canonical: `/teams/national/womens-world-cup/${n.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${n.name} — Women's World Cup | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/national/womens-world-cup/${n.slug}`, type: "website" },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${n.name}: Women's World Cup | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/national/womens-world-cup/${n.slug}`, type: "website" },
   };
 }
 

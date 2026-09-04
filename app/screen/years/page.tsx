@@ -6,9 +6,9 @@ import YearsView from "./YearsView";
 
 export const dynamic = "force-static";
 
-const TITLE = "Screen of the Metros — Year by Year";
+const TITLE = "Screen of the Metros: Year by Year";
 const DESC =
-  "The top ten at the box office and the night's big Oscar winners, for every year since 1920 — browse the whole century decade by decade.";
+  "The top ten at the box office and the night's big Oscar winners, for every year since 1920: browse the whole century decade by decade.";
 
 export const metadata: Metadata = {
   title: TITLE,

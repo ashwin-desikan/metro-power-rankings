@@ -5,9 +5,9 @@ import ScreenNav from "../ScreenNav";
 
 export const dynamic = "force-static";
 
-const TITLE = "Screen of the Metros — The Academy";
+const TITLE = "Screen of the Metros: The Academy";
 const DESC =
-  "The Academy versus the box office: how Best Picture winners stopped being hits, decade by decade — and where the Academy's nominees are born, from a Hollywood company town to a global institution.";
+  "The Academy versus the box office: how Best Picture winners stopped being hits, decade by decade, and where the Academy's nominees are born, from a Hollywood company town to a global institution.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -79,8 +79,8 @@ export default function ScreenAcademyPage() {
           <h2 className="text-xl font-bold mb-1 text-[var(--text)]">The Academy vs the box office</h2>
           <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
             Share of Best Picture winners that were also top-ten grossers of their year. The
-            Academy and the audience agreed for half a century — every 1970s winner was a box
-            office hit — then parted ways: not one 2010s Best Picture cracked its year&apos;s top
+            Academy and the audience agreed for half a century. Every 1970s winner was a box
+            office hit, then parted ways: not one 2010s Best Picture cracked its year&apos;s top
             ten worldwide.
           </p>
           <div className="grid gap-4 lg:grid-cols-2">
@@ -123,7 +123,7 @@ export default function ScreenAcademyPage() {
         <h2 className="text-xl font-bold mb-1 text-[var(--text)]">Where the Academy&apos;s nominees are born</h2>
         <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
           Share of Oscar nomination slots by nominees&apos; birthplace, per decade. The American
-          share has fallen from three-quarters in the 1950s to under half in the 2020s — the
+          share has fallen from three-quarters in the 1950s to under half in the 2020s: the
           Academy&apos;s slow globalisation, visible in one chart.
         </p>
         <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>

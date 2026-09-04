@@ -13,7 +13,7 @@ function aslug(name: string) { return name.normalize('NFKD').replace(/[̀-ͯ]/g,
 export async function generateStaticParams() { return (await j<Scene[]>('scenes.json')).map((s) => ({ slug: s.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const s = (await j<Scene[]>('scenes.json')).find((x) => x.slug === slug);
-  return { title: s ? `${s.name} — Sound of the Metros` : 'Scene' };
+  return { title: s ? `${s.name}: Sound of the Metros` : 'Scene' };
 }
 const muted = { color: 'var(--text-muted)' } as const;
 
@@ -47,7 +47,7 @@ export default async function ScenePage({ params }: { params: Promise<{ slug: st
         <section>
           <h2 className="mb-2 text-sm font-bold uppercase tracking-wide" style={muted}>Signature songs</h2>
           <ol className="space-y-1 text-sm">{songs.map((sg, i) => (
-            <li key={i} className="truncate">&ldquo;{sg.single}&rdquo; <span className="text-xs" style={muted}>— {sg.artist} · {sg.chart} #{sg.peak} ({sg.year})</span></li>))}</ol>
+            <li key={i} className="truncate">&ldquo;{sg.single}&rdquo; <span className="text-xs" style={muted}>: {sg.artist} · {sg.chart} #{sg.peak} ({sg.year})</span></li>))}</ol>
         </section>
       </div>
     </main>

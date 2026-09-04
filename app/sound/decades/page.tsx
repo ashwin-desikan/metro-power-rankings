@@ -9,7 +9,7 @@ async function load(): Promise<DecadesData> {
 }
 
 export const metadata = {
-  title: 'Sound of the Metros — Decades',
+  title: 'Sound of the Metros: Decades',
   description: 'Which metro owned each decade, 1950s to 2020s, with the era-defining artists and songs.',
 };
 

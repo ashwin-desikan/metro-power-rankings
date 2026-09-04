@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/it";
 const TITLE = "Italian General Elections";
 const DESC =
-  "Every Italian general election from unification in 1861 to 2022 — the Liberal monarchy, the Fascist seizure and its plebiscites labelled as such, the First Republic's Christian Democratic decades and the Second Republic's upheavals — for novices and experts alike.";
+  "Every Italian general election from unification in 1861 to 2022: the Liberal monarchy, the Fascist seizure and its plebiscites labelled as such, the First Republic's Christian Democratic decades and the Second Republic's upheavals, for novices and experts alike.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -82,7 +82,7 @@ export default function ItElectionsPage() {
         colorOf={itPartyColor}
         fmtPct={itFmtPct}
         leaderTag="PM"
-        intro="Every general election, newest first, across six eras — including, clearly labelled, the Fascist plebiscites of 1929 and 1934. Click any election for the full result and the story."
+        intro="Every general election, newest first, across six eras, including, clearly labelled, the Fascist plebiscites of 1929 and 1934. Click any election for the full result and the story."
       />
 
       {/* ---------- charts ---------- */}
@@ -96,7 +96,7 @@ export default function ItElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout, 1861–2022</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               A two-percent franchise in 1861, mass suffrage from 1913, then the First Republic&apos;s
-              extraordinary 90-plus percent — and the modern slide to 63.9% in 2022, the lowest ever.
+              extraordinary 90-plus percent, and the modern slide to 63.9% in 2022, the lowest ever.
             </p>
             <LineChart series={[turnoutSeries]} yMax={100} yTicks={[50, 75]} />
           </div>
@@ -104,7 +104,7 @@ export default function ItElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">The DC and the PCI, 1946–1992</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               The First Republic in two lines: Christian Democracy never out of power, the West&apos;s
-              largest Communist party never in it — closest in 1976, both destroyed by 1994.
+              largest Communist party never in it, closest in 1976, both destroyed by 1994.
             </p>
             <LineChart series={[dcShare, pciShare]} yMax={60} yTicks={[15, 30, 45]} />
           </div>
@@ -116,10 +116,10 @@ export default function ItElectionsPage() {
       <HowItWorks
         title="How Italian general elections work"
         cards={[
-          ["A land of electoral laws", "Italy rewrites its electoral system more than any comparable democracy — pure PR until 1993, then mixed systems nicknamed Mattarellum, Porcellum and Rosatellum. Each rewrite reshapes coalitions before a single vote is cast."],
-          ["Two chambers, equal power", "The Chamber and Senate have identical powers and both invest the government — so a majority in one and not the other, as in 2013, means paralysis. Reforms in 2020 cut the chambers to 400 and 200 seats."],
-          ["Coalitions before the vote", "Since 1994 parties have run in pre-electoral coalitions of left and right, so election night usually crowns an alliance rather than a party — though the governments that follow often outlive neither."],
-          ["Governments between elections", "Italy has had nearly seventy governments since 1946 but only nineteen elections: most cabinets change between votes, through party splits and palace crises — the elections set the board, not the game."],
+          ["A land of electoral laws", "Italy rewrites its electoral system more than any comparable democracy: pure PR until 1993, then mixed systems nicknamed Mattarellum, Porcellum and Rosatellum. Each rewrite reshapes coalitions before a single vote is cast."],
+          ["Two chambers, equal power", "The Chamber and Senate have identical powers and both invest the government, so a majority in one and not the other, as in 2013, means paralysis. Reforms in 2020 cut the chambers to 400 and 200 seats."],
+          ["Coalitions before the vote", "Since 1994 parties have run in pre-electoral coalitions of left and right, so election night usually crowns an alliance rather than a party, though the governments that follow often outlive neither."],
+          ["Governments between elections", "Italy has had nearly seventy governments since 1946 but only nineteen elections: most cabinets change between votes, through party splits and palace crises: the elections set the board, not the game."],
         ]}
       />
 

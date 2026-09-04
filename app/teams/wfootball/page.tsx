@@ -85,7 +85,7 @@ export default async function WFootballHubPage() {
             <span className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={{ background: "rgba(168,85,247,0.16)", color: "#a855f7" }}>National teams</span>
           </div>
           <div className="text-xs text-[var(--text-muted)] mt-1">
-            The Women&apos;s World Cup, Olympic football, the UEFA Women&apos;s Euros, and the Finalissima — every final and the honour tables.
+            The Women&apos;s World Cup, Olympic football, the UEFA Women&apos;s Euros, and the Finalissima: every final and the honour tables.
           </div>
         </Link>
       </section>

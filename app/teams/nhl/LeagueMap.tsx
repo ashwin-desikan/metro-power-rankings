@@ -62,7 +62,7 @@ export default function LeagueMap({ franchises }: Props) {
   const venuePoints: MapPoint[] = sy === null
     ? INTL_VENUES.map((v, i) => ({
         slug: `intl-venue-${i}`,
-        name: `${v.name} — ${v.city}`,
+        name: `${v.name}, ${v.city}`,
         lat: v.lat,
         lon: v.lng,
         color: VENUE_COLOR,

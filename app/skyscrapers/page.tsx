@@ -6,6 +6,7 @@ import { getSkydb, getSupertalls } from "@/lib/skyscrapers";
 import { SITE_NAME } from "@/lib/seo";
 import StructuresBoard from "./StructuresBoard";
 
+import { SectionHead } from "@/app/_shared/SectionHead";
 const PAGE_PATH = "/skyscrapers";
 const PAGE_TITLE = "Supertall Skyscrapers";
 const PAGE_DESCRIPTION =
@@ -42,14 +43,6 @@ function Stat({ v, k }: { v: string; k: string }) {
   );
 }
 
-function SectionHead({ title, sub }: { title: string; sub: string }) {
-  return (
-    <div className="mb-4">
-      <h2 className="text-2xl font-bold mb-1.5">{title}</h2>
-      <p className="text-[14px] text-[var(--text-muted)] max-w-3xl">{sub}</p>
-    </div>
-  );
-}
 
 export default function SkyscrapersPage() {
   const { retrieved, structures, structuresUrl, buildings, buildingsUrl } = getSupertalls();
@@ -96,7 +89,8 @@ export default function SkyscrapersPage() {
       <section id="buildings" className="mb-12 scroll-mt-24">
         <SectionHead
           title="The tallest buildings on Earth"
-          sub="Every building at 350 metres or more of architectural height, the CTBUH measure: spires count, antennas do not. This is the board to quote when someone says tallest building."
+          sub="Every building at 350 metres or more of architectural height, the CTBUH measure."
+          more="Spires count, antennas do not. This is the board to quote when someone says tallest building."
         />
         <TableScroll className="rounded-xl border" style={CARD}>
           <table className="w-full text-[13px]" data-sticky-col="2">
@@ -139,7 +133,8 @@ export default function SkyscrapersPage() {
       <section id="structures" className="mb-12 scroll-mt-24">
         <SectionHead
           title="Every standing structure over 350 metres"
-          sub="Pinnacle height, tip of the antenna included. This is a tallest-structures board, not the tallest-buildings ranking: Willis Tower reads 527.0 m here and 442.1 m above, and the 85-metre difference is entirely its twin antennas. Guyed television masts dominate the list."
+          sub="Pinnacle height, tip of the antenna included, not the tallest-buildings ranking above."
+          more="Willis Tower reads 527.0 m here and 442.1 m on the buildings board, and the 85-metre difference is entirely its twin antennas. Guyed television masts dominate the list."
         />
         <StructuresBoard rows={structures} />
       </section>
@@ -147,7 +142,8 @@ export default function SkyscrapersPage() {
       <section id="density" className="mb-12 scroll-mt-24">
         <SectionHead
           title="Skyline density by metro"
-          sub="How many towers each metro has actually built, from SKYDB's structure census: counts at 150, 200 and 300 metres of architectural height, with the era the skyline was built. Aggregates only, per SKYDB's licence."
+          sub="How many towers each metro has actually built, from SKYDB's structure census."
+          more="Counts at 150, 200 and 300 metres of architectural height, with the era the skyline was built. Aggregates only, per SKYDB's licence."
         />
         <TableScroll className="rounded-xl border" style={CARD}>
           <table className="w-full text-[13px]" data-sticky-col="2">

@@ -38,8 +38,8 @@ export default function MetroBoard({ data }: { data: RankingMetrosFile }) {
     <section id="metros" className="mt-10">
       <SectionHead
         title="Where the giants were"
-        sub={'Every company placed in the metro it was headquartered in that year. '
-          + 'A company that moved counts for each metro it actually occupied, so '
+        sub="Every company placed in the metro it was headquartered in that year."
+        more={'A company that moved counts for each metro it actually occupied, so '
           + 'Atlantic Richfield is Philadelphia in 1960 and Los Angeles in 1980 '
           + 'rather than one or the other throughout.'}
       />

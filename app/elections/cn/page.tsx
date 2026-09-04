@@ -7,7 +7,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/cn";
 const TITLE = "Chinese National Congresses";
 const DESC =
-  "The People's Republic of China holds no competitive national elections. This hub records what exists instead: the fifteen national congresses since 1949 — how the National People's Congress is assembled, whom it seats, and what its choreography of unanimity reveals.";
+  "The People's Republic of China holds no competitive national elections. This hub records what exists instead: the fifteen national congresses since 1949: how the National People's Congress is assembled, whom it seats, and what its choreography of unanimity reveals.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -46,8 +46,8 @@ export default function CnElectionsPage() {
           delegates are chosen through tiers of party-managed indirect selection; the eight licensed
           minor parties all formally accept Communist Party leadership, and no opposition is
           permitted at any stage. These pages record the composition and choreography of each
-          congress because the institution matters — it is the constitutional face of the world&apos;s
-          largest one-party state — not because its members were elected in any competitive sense.
+          congress because the institution matters: it is the constitutional face of the world&apos;s
+          largest one-party state, not because its members were elected in any competitive sense.
         </p>
       </div>
 
@@ -68,7 +68,7 @@ export default function CnElectionsPage() {
         fmtPct={cnFmtPct}
         leaderTag="Chairman"
         headline="The congresses"
-        intro="Every national congress, newest first — each one an indirect, party-controlled selection, labelled as such. Click any congress for its composition and its story."
+        intro="Every national congress, newest first, each one an indirect, party-controlled selection, labelled as such. Click any congress for its composition and its story."
       />
 
       <RecordsGrid records={records} hrefBase={PATH} headline="The numbers to know" />
@@ -76,8 +76,8 @@ export default function CnElectionsPage() {
       <HowItWorks
         title="How the National People's Congress is assembled"
         cards={[
-          ["Tiers, not ballots", "Citizens vote directly only for the lowest local congresses. Each tier then elects the one above it, four steps removed from any voter by the time the NPC is reached — with party committees vetting candidacies at every level."],
-          ["The united front", "Eight minor parties hold seats by allocation, not competition. They are heirs of the 1949 coalition, preserved as the 'united front' — their charters accept Communist Party leadership, and their delegates are selected through the same managed process."],
+          ["Tiers, not ballots", "Citizens vote directly only for the lowest local congresses. Each tier then elects the one above it, four steps removed from any voter by the time the NPC is reached, with party committees vetting candidacies at every level."],
+          ["The united front", "Eight minor parties hold seats by allocation, not competition. They are heirs of the 1949 coalition, preserved as the 'united front', their charters accept Communist Party leadership, and their delegates are selected through the same managed process."],
           ["What the NPC actually does", "It convenes each March for about a week, approves the budget and the work reports, and confirms leadership choices already made by the party. Dissenting votes are rare enough to be news: two delegates opposed ending presidential term limits in 2018."],
           ["Why record it here", "Because the absence is the story. Set beside the contested elections elsewhere on this site, the unanimity of a 2,977-member chamber documents how the world's second-largest economy is actually governed."],
         ]}

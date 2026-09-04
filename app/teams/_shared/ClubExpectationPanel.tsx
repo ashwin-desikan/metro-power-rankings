@@ -102,7 +102,7 @@ export default function ClubExpectationPanel({ entry }: { entry: PlClubEntry | n
         Season points use that season&rsquo;s own scoring, two for a win before 1981-82 and three after;
         the bars use match points so the whole series is comparable.
         {eraNames ? <> Played as {eraNames.join(", then ")}.</> : null}{" "}
-        The rating only starts telling you much after about 1960 &mdash; before that, knowing the era&rsquo;s
+        The rating only starts telling you much after about 1960. Before that, knowing the era&rsquo;s
         home-and-away split is almost as good as knowing the teams.
       </p>
 

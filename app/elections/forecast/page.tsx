@@ -13,7 +13,7 @@ export const revalidate = 21600; // pick up the weekly data refresh without a bu
 const PATH = "/elections/forecast";
 const TITLE = "Election Forecasts";
 const DESC =
-  "The road to the next elections, forecast honestly: weighted polling averages, seat ranges from thousands of simulations, and uncertainty stated as plainly as the numbers. Covering the 2026 US midterms — House, Senate and governors — the next UK general election, and the 2026 votes in Brazil, Israel and New Zealand — plus an early read on France 2027. Ranges first, probabilities second, humility throughout.";
+  "The road to the next elections, forecast honestly: weighted polling averages, seat ranges from thousands of simulations, and uncertainty stated as plainly as the numbers. Covering the 2026 US midterms: House, Senate and governors. The next UK general election, and the 2026 votes in Brazil, Israel and New Zealand, plus an early read on France 2027. Ranges first, probabilities second, humility throughout.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -104,7 +104,7 @@ function MatchupRow({ m }: { m: Matchup }) {
   );
 }
 
-function CountryHeader({ flag, title, sub }: { flag: string; title: string; sub: string }) {
+function CountryHeader({ flag, title, sub, more }: { flag: string; title: string; sub: string; more?: string }) {
   return (
     <div className="mb-5">
       <div className="flex items-center gap-3 mb-1">
@@ -121,6 +121,14 @@ function CountryHeader({ flag, title, sub }: { flag: string; title: string; sub:
         <h2 className="text-2xl font-bold text-[var(--text)]">{title}</h2>
       </div>
       <p className="text-sm text-[var(--text-muted)] max-w-3xl">{sub}</p>
+      {more ? (
+        <details className="mt-1.5 max-w-3xl">
+          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+            How this is measured
+          </summary>
+          <div className="mt-2 text-sm text-[var(--text-muted)]">{more}</div>
+        </details>
+      ) : null}
     </div>
   );
 }
@@ -215,7 +223,7 @@ export default async function ForecastPage() {
         <p className="text-[var(--text-muted)]">
           <span className="font-bold" style={{ color: "#D97706" }}>A forecast is labelled speculation.</span>{" "}
           Everything else in this atlas records what happened; this page estimates what might. The
-          ranges are wide because they should be — polls taken months or years before an election
+          ranges are wide because they should be: polls taken months or years before an election
           have missed by six points and more, and every number below carries that history. When the
           ranges look absurdly wide, they are working correctly.
         </p>
@@ -231,11 +239,19 @@ export default async function ForecastPage() {
       {ledger && (ledger.resolved.length > 0 || ledger.pending.length > 0) ? (
         <section id="ledger" className="mb-8 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <h2 className="text-xl font-bold text-[var(--text)] mb-1">Scored in public</h2>
-          <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
-            Each forecast below is written to disk before its election and never touched again,
-            so nothing on this page can be improved after the result is known. Once the count is
-            final the frozen call is graded and the number stands, whichever way it falls.
+          <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-1">
+            Each forecast is frozen before its election and graded once the result is known.
           </p>
+          <details className="mb-4 max-w-3xl">
+            <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+              How this is measured
+            </summary>
+            <div className="mt-2 text-sm text-[var(--text-muted)]">
+              Written to disk and never touched again, so nothing on this page can be improved
+              after the result is known. Once the count is final the frozen call stands, whichever
+              way it falls.
+            </div>
+          </details>
 
           {ledger.resolved.length ? (
             <div className="grid gap-3 sm:grid-cols-2 mb-4">
@@ -306,8 +322,9 @@ export default async function ForecastPage() {
       <section id="us" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
         <CountryHeader
           flag="us"
-          title="United States — the 2026 midterms"
-          sub={`3 November 2026, ${us?.monthsOut ?? "?"} months away. Democrats lead the generic congressional ballot by ${us && us.margin > 0 ? `+${us.margin.toFixed(1)}` : us?.margin.toFixed(1)} across the major aggregators — and the president's party has lost House seats in almost every midterm since the Civil War.`}
+          title="United States: the 2026 midterms"
+          sub={`3 November 2026, ${us?.monthsOut ?? "?"} months away.`}
+          more={`Democrats lead the generic congressional ballot by ${us && us.margin > 0 ? `+${us.margin.toFixed(1)}` : us?.margin.toFixed(1)} across the major aggregators, and the president's party has lost House seats in almost every midterm since the Civil War.`}
         />
 
         {us ? (
@@ -325,7 +342,7 @@ export default async function ForecastPage() {
                 />
                 <p className="text-xs text-[var(--text-dim)] mt-3">
                   Median and 90% range of {us.sims.toLocaleString("en-US")} simulations. Democrats
-                  take the House in {us.pDemHouse}% of them — a lead, not a lock: the generic ballot
+                  take the House in {us.pDemHouse}% of them. A lead, not a lock: the generic ballot
                   at this range still misses by ±{us.sigma} points.
                 </p>
               </div>
@@ -380,7 +397,7 @@ export default async function ForecastPage() {
                     <p className="text-xs text-[var(--text-dim)] mt-3">
                       From today&apos;s {sen.senateNow.R}–{sen.senateNow.D}: {sen.seatsUp.R} Republican
                       and {sen.seatsUp.D} Democratic seats are on the ballot. The map, not the
-                      national mood, is the obstacle — Democrats can win the night and still miss
+                      national mood, is the obstacle. Democrats can win the night and still miss
                       the majority.
                     </p>
                   </div>
@@ -425,7 +442,7 @@ export default async function ForecastPage() {
                       From today&apos;s {gov.governorsNow.R}–{gov.governorsNow.D}: {gov.seatsUp.R} Republican and{" "}
                       {gov.seatsUp.D} Democratic mansions are on the ballot; the other {gov.carryover.R + gov.carryover.D} carry
                       over. Governorships are independent state offices, so &quot;majority&quot; means most of the fifty, not
-                      control of anything — and the two figures fall short of 100% by the odds of an exact 25–25 split.
+                      control of anything, and the two figures fall short of 100% by the odds of an exact 25–25 split.
                     </p>
                   </div>
                   <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -460,8 +477,9 @@ export default async function ForecastPage() {
       <section id="uk" className="mb-10 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
         <CountryHeader
           flag="gb"
-          title="United Kingdom — the next general election"
-          sub={`Due by August 2029 (${forecastDateLabel(uk)}), ${uk.sim.monthsOut} months away. Average of the latest poll from each of ${uk.pollsters} pollsters, recency-weighted; latest poll ${uk.latestPollDate}.`}
+          title="United Kingdom: the next general election"
+          sub={`Due by August 2029 (${forecastDateLabel(uk)}), ${uk.sim.monthsOut} months away.`}
+          more={`Average of the latest poll from each of ${uk.pollsters} pollsters, recency-weighted; latest poll ${uk.latestPollDate}.`}
         />
 
         <div className="grid gap-4 lg:grid-cols-2 mb-6">
@@ -477,7 +495,7 @@ export default async function ForecastPage() {
               ))}
             </div>
             <p className="text-xs text-[var(--text-dim)] mt-3">
-              Five parties within thirteen points of the lead — the most fragmented polling picture
+              Five parties within thirteen points of the lead: the most fragmented polling picture
               in modern British history, in a system built for two parties.
             </p>
           </div>
@@ -532,8 +550,9 @@ export default async function ForecastPage() {
         <section id="br" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <CountryHeader
             flag="br"
-            title="Brazil — the 2026 presidential election"
-            sub={`First round 4 October 2026, ${br.monthsOut} months away. Recency-weighted average of ${br.firstRound.polls} first-round polls from the last 45 days; latest ${br.firstRound.latest}.`}
+            title="Brazil: the 2026 presidential election"
+            sub={`First round 4 October 2026, ${br.monthsOut} months away.`}
+            more={`Recency-weighted average of ${br.firstRound.polls} first-round polls from the last 45 days; latest ${br.firstRound.latest}.`}
           />
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -552,7 +571,7 @@ export default async function ForecastPage() {
               )}
               <p className="text-xs text-[var(--text-dim)] mt-3">
                 Head-to-head averages simulated with the historical error of Brazilian polls at this
-                horizon — an 8-point first-round lead is far from safe once the field consolidates.
+                horizon: an 8-point first-round lead is far from safe once the field consolidates.
               </p>
             </div>
           </div>
@@ -564,8 +583,9 @@ export default async function ForecastPage() {
         <section id="il" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <CountryHeader
             flag="il"
-            title="Israel — the 2026 Knesset election"
-            sub={`Set for ${forecastDateLabel(il)}, ${il.monthsOut} months away, after the Knesset dissolved itself on 17 July 2026. Israeli pollsters publish seat projections directly; this is the recency-weighted average of ${il.polls} published seat polls (a thin base — the cycle's polling has only just begun), renormalised to the Knesset's 120 seats.`}
+            title="Israel: the 2026 Knesset election"
+            sub={`Set for ${forecastDateLabel(il)}, ${il.monthsOut} months away, after the Knesset dissolved itself on 17 July 2026.`}
+            more={`Israeli pollsters publish seat projections directly; this is the recency-weighted average of ${il.polls} published seat polls (a thin base, since the cycle's polling has only just begun), renormalised to the Knesset's 120 seats.`}
           />
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -586,7 +606,7 @@ export default async function ForecastPage() {
                     The polls&apos; own tally of the current government bloc averages{" "}
                     <span className="font-semibold text-[var(--text)]">{il.gov.avg} of 120 seats</span>
                     {il.gov.pMajority != null ? (
-                      <> — reaching 61 in <span className="font-semibold text-[var(--text)]">{il.gov.pMajority}%</span> of simulations at today&apos;s numbers</>
+                      <>, reaching 61 in <span className="font-semibold text-[var(--text)]">{il.gov.pMajority}%</span> of simulations at today&apos;s numbers</>
                     ) : null}
                     .
                   </p>
@@ -609,8 +629,9 @@ export default async function ForecastPage() {
         <section id="nz" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <CountryHeader
             flag="nz"
-            title="New Zealand — the 2026 general election"
-            sub={`Set for ${forecastDateLabel(nz)}, ${nz.monthsOut} months away. Latest poll from each of ${nz.pollsters} pollsters, recency-weighted; latest ${nz.latestPollDate}. Seats via Sainte-Laguë with the 5% threshold (electorate-seat waiver assumed for ACT and Te Pāti Māori).`}
+            title="New Zealand: the 2026 general election"
+            sub={`Set for ${forecastDateLabel(nz)}, ${nz.monthsOut} months away.`}
+            more={`Latest poll from each of ${nz.pollsters} pollsters, recency-weighted; latest ${nz.latestPollDate}. Seats via Sainte-Laguë with the 5% threshold (electorate-seat waiver assumed for ACT and Te Pāti Māori).`}
           />
           <div className="grid gap-4 lg:grid-cols-2 mb-4">
             <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -635,11 +656,11 @@ export default async function ForecastPage() {
                 Across {nz.sims.toLocaleString("en-US")} simulated elections:{" "}
                 <span className="font-semibold text-[var(--text)]">the governing right bloc holds its majority {nz.pRightBloc}%</span> of the time
                 {" · "}the left bloc takes one {nz.pLeftBloc}%
-                {" · "}neither reaches 61 in {nz.pNeither}% — a genuine three-way coin flip.
+                {" · "}neither reaches 61 in {nz.pNeither}%, a genuine three-way coin flip.
               </p>
               <p className="text-xs text-[var(--text-dim)] mt-3">
                 120 seats, 61 for a majority. Overhang seats and electorate-level upsets are not
-                modelled — they have decided NZ coalitions before.
+                modelled: they have decided NZ coalitions before.
               </p>
             </div>
           </div>
@@ -657,8 +678,9 @@ export default async function ForecastPage() {
         <section id="fr" className="mb-10 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <CountryHeader
             flag="fr"
-            title="France — the 2027 presidential election"
-            sub={`Due spring 2027 (${forecastDateLabel(fr)}), ${fr.monthsOut} months away. The heaviest caveat on this page: no candidate has been formally nominated, so pollsters test hypothetical fields. These are scenario averages, not a forecast of a settled race.`}
+            title="France: the 2027 presidential election"
+            sub={`Due spring 2027 (${forecastDateLabel(fr)}), ${fr.monthsOut} months away.`}
+            more="The heaviest caveat on this page: no candidate has been formally nominated, so pollsters test hypothetical fields. These are scenario averages, not a forecast of a settled race."
           />
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -668,7 +690,7 @@ export default async function ForecastPage() {
               ))}
               <p className="text-xs text-[var(--text-dim)] mt-3">
                 {fr.firstRound.polls} scenario polls; latest {fr.firstRound.latest}. The top two
-                advance to the runoff — and second place is wide open.
+                advance to the runoff, and second place is wide open.
               </p>
             </div>
             <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -688,8 +710,8 @@ export default async function ForecastPage() {
       <HowItWorks
         title="How these forecasts work"
         cards={[
-          ["The averages", "Each pollster's latest poll within 45 days, weighted by recency (14-day half-life) and sample size. A simple transparent average — validated on 22 past elections across four countries, where it called 87% of winners within 1.3 points."],
-          ["Seats from votes", "US House: the generic-ballot margin mapped through the 2012–2024 seats-votes relationship. US Senate and governors: the ratings agencies' consensus per race, converted to win probabilities and simulated with a shared national swing — the governors aggregated to mansions held out of 50, starting from today's 26–24 Republican edge. UK: each party's national movement applied proportionally to its 2024 result in all 632 GB constituencies (Commons Library data). New Zealand: Sainte-Laguë over the simulated party vote. Israel: the pollsters' own seat projections, averaged. Brazil and France: round-by-round candidate averages."],
+          ["The averages", "Each pollster's latest poll within 45 days, weighted by recency (14-day half-life) and sample size. A simple transparent average, validated on 22 past elections across four countries, where it called 87% of winners within 1.3 points."],
+          ["Seats from votes", "US House: the generic-ballot margin mapped through the 2012–2024 seats-votes relationship. US Senate and governors: the ratings agencies' consensus per race, converted to win probabilities and simulated with a shared national swing, the governors aggregated to mansions held out of 50, starting from today's 26–24 Republican edge. UK: each party's national movement applied proportionally to its 2024 result in all 632 GB constituencies (Commons Library data). New Zealand: Sainte-Laguë over the simulated party vote. Israel: the pollsters' own seat projections, averaged. Brazil and France: round-by-round candidate averages."],
           ["Why the ranges are wide", "Polls this far from polling day are weather, not prophecy: three years out, national surveys have missed final results by six points and more (FiveThirtyEight's raw-polls archive; Jennings & Wlezien). The error scales into every simulation, which is why the honest answer is a range."],
           ["Sources and refresh", "Polling and ratings tables from Wikipedia (CC BY-SA 4.0); GE2024 constituency results from the House of Commons Library (Open Parliament Licence); historical calibration from FiveThirtyEight's open archive (CC BY 4.0). A scheduled job (Mon/Wed/Fri) re-scrapes, re-simulates and republishes."],
         ]}

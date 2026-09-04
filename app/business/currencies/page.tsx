@@ -43,7 +43,7 @@ export default async function CurrenciesPage() {
       <TabHeader
         emoji="💱"
         title="Currencies"
-        sub="Every market cap on this site is a dollar number, so here is the dollar's relationship with everyone else - each currency tied back to the countries that use it, with the site's own daily history building movement over time."
+        sub="Every market cap on this site is a dollar number, so here is the dollar's relationship with everyone else. Each currency ties back to the countries that use it, with the site's own daily history behind every one."
         stamp={fx ? `as of ${fx.meta.as_of} · ${fx.meta.count} currencies vs USD · source: exchangerate-api.com` : null}
       />
       <BusinessNav />
@@ -77,7 +77,8 @@ export default async function CurrenciesPage() {
           <section className="mb-10">
             <SectionHead
               title="Every currency"
-              sub="All tracked currencies against the dollar, linked to the countries that use them - the euro to twenty economies, the CFA francs to whole regions, the rest to their home pages."
+              sub="All tracked currencies against the dollar, linked to the countries that use them."
+              more="For example, the euro links to twenty economies, the CFA francs to whole regions, and the rest to their home pages."
             />
             <TableBox>
               <thead>
@@ -116,7 +117,8 @@ export default async function CurrenciesPage() {
             <section className="mb-10">
               <SectionHead
                 title="Market cap vs GDP"
-                sub="The Buffett indicator, per country: the value of a country's listed companies against the size of its economy. High ratios mean expensive markets or global companies that happen to be listed there - Amsterdam hosts giants that sell everywhere, which is exactly the caveat."
+                sub="The Buffett indicator, per country: the value of a country's listed companies against the size of its economy."
+                more="High ratios mean expensive markets or global companies that happen to be listed there - Amsterdam hosts giants that sell everywhere, which is exactly the caveat."
               />
               <TableBox stickyCol={2}>
                 <thead>

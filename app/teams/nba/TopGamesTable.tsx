@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/nba";
 import { WatchButton, type GameVideo } from "@/app/teams/_shared/GameVideo";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { DataBar } from "@/app/_shared/DataBar";
 
 const US_STATE_ABBR: Record<string, string> = {
   Alabama: "AL", Alaska: "AK", Arizona: "AZ", Arkansas: "AR",
@@ -63,6 +64,10 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
   const [bucket, setBucket] = useState<string>("all");
   const rows = bucket === "all" ? allTime : (byDecade[bucket] ?? []);
   const decades = decadeKeys(byDecade);
+  // Game Score is the board's argument ("Ranked by Game Score"); max is
+  // this column's own maximum over the current (all-time or per-decade)
+  // row set, computed once, never per row.
+  const colMax = Math.max(...rows.map((g) => g.game_score ?? 0), 0.001);
 
   return (
     <section
@@ -71,7 +76,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
     >
       <h2 className="text-base font-semibold">Top games of all-time</h2>
       <p className="text-xs text-[var(--text-muted)] mt-1 mb-3">
-        Ranked by Game Score — a composite of game stakes, quality, and matchup
+        Ranked by Game Score: a composite of game stakes, quality, and matchup
         strength weighted by round and ELO. Switch the filter for the top 10 of
         any decade.{" "}
         <a
@@ -272,7 +277,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                       }}
                       title={[(g.arena_as_of || g.arena_canonical), g.arena_metro, g.arena_state]
                         .filter(Boolean)
-                        .join(" — ")}
+                        .join(", ")}
                     >
                       {g.arena_as_of || g.arena_canonical}
                       {g.arena_metro ? (
@@ -286,7 +291,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                   {g.video ? <WatchButton video={g.video} /> : null}
                 </td>
                 <td className="py-2 text-right font-semibold">
-                  {g.game_score != null ? g.game_score.toFixed(3) : "—"}
+                  <DataBar v={g.game_score} max={colMax} dp={3} color="var(--seq-4)" width={104} label="game score" />
                 </td>
               </tr>
             ))}

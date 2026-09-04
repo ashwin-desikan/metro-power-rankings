@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { PowerEntry, DroppedEntry } from "@/lib/powerRanking";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { Sparkline } from "@/app/_shared/Sparkline";
 
 const CAT: Record<string, string> = {
   National: "text-blue-700 dark:text-blue-300 bg-blue-500/10",
@@ -42,7 +43,12 @@ function Move({ r }: { r: PowerEntry }) {
   return <span className="text-[10px] font-semibold tabular-nums text-red-600 dark:text-red-400" title={`Down ${Math.abs(d)}`}>▼{Math.abs(d)}</span>;
 }
 
-export default function PowerTable({ rows, dropped = [], prevSnapshotDate = null }: { rows: PowerEntry[]; dropped?: DroppedEntry[]; prevSnapshotDate?: string | null }) {
+export default function PowerTable({ rows, dropped = [], prevSnapshotDate = null, history = {}, historyDates = [] }: { rows: PowerEntry[]; dropped?: DroppedEntry[]; prevSnapshotDate?: string | null; history?: Record<string, (number | null)[]>; historyDates?: string[] }) {
+  // Rank series per person, keyed by bare name. A one-step delta answers "did
+  // they move"; the sparkline answers "which way have they been going", which is
+  // the question a returning reader actually has.
+  const trendOf = (name: string) =>
+    history[name.replace(/[\u26a0\u{1F451}]\ufe0f?/gu, "").trim().toLowerCase()];
   const [view, setView] = useState<"all" | "core">("all");
   const shown = view === "core" ? rows.filter((r) => CORE.has(r.category)) : rows;
   const max = shown.length ? Math.max(...shown.map((r) => r.power)) : 1;
@@ -129,6 +135,7 @@ export default function PowerTable({ rows, dropped = [], prevSnapshotDate = null
               <th className="py-2 px-4 hidden sm:table-cell">Category</th>
               <th className="py-2 px-4 hidden sm:table-cell">Metro</th>
               <th className="py-2 px-4 hidden md:table-cell">Jurisdiction</th>
+              <th className="py-2 px-4 hidden lg:table-cell">Trend</th>
               <th className="py-2 px-4 text-right">Power</th>
             </tr>
           </thead>
@@ -162,6 +169,14 @@ export default function PowerTable({ rows, dropped = [], prevSnapshotDate = null
                   {r.jurisdictionHref ? (
                     <a href={r.jurisdictionHref} className="hover:text-[var(--accent)] hover:underline">{r.jurisdiction}</a>
                   ) : r.jurisdiction}
+                </td>
+                <td className="py-2 px-4 hidden lg:table-cell">
+                  {historyDates.length > 1 && trendOf(r.name) ? (
+                    <Sparkline values={trendOf(r.name)!} invert
+                               label={`rank across ${historyDates.length} snapshots, ${historyDates[0]} to ${historyDates[historyDates.length - 1]}`} />
+                  ) : (
+                    <span className="text-[var(--text-dim)] text-xs">\u2014</span>
+                  )}
                 </td>
                 <td className="py-2 px-4 text-right">
                   <div className="flex items-center justify-end gap-2">

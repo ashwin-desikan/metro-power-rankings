@@ -28,7 +28,7 @@ export async function generateMetadata(
   const path = `/teams/baseball/${slug}`;
   const desc = `${team.name} at the World Baseball Classic: every campaign and game since 2006, all-time record, and finals history.`;
   return {
-    title: `${team.name} — International Baseball`,
+    title: `${team.name}: International Baseball`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },

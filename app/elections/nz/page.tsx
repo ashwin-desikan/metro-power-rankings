@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/nz";
 const TITLE = "New Zealand General Elections";
 const DESC =
-  "Every New Zealand general election from 1853 to 2023 — the colonial parliaments, the world's first election with women's suffrage in 1893, the first Labour government, four decades of two-party rule, and the coalition politics of the MMP era.";
+  "Every New Zealand general election from 1853 to 2023: the colonial parliaments, the world's first election with women's suffrage in 1893, the first Labour government, four decades of two-party rule, and the coalition politics of the MMP era.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -84,7 +84,7 @@ export default function NzElectionsPage() {
         colorOf={nzPartyColor}
         fmtPct={nzFmtPct}
         leaderTag="PM"
-        intro="Every general election, newest first, across six eras — from the multi-day polls of the 1850s to MMP's coalition mathematics. Click any election for the full result and the story."
+        intro="Every general election, newest first, across six eras, from the multi-day polls of the 1850s to MMP's coalition mathematics. Click any election for the full result and the story."
       />
 
       {/* ---------- charts ---------- */}
@@ -98,7 +98,7 @@ export default function NzElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since 1890</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               New Zealand&apos;s turnout has been among the democratic world&apos;s highest for over a
-              century — peaking at 93.7% in the snap election of 1984 and holding near 80% in the
+              century, peaking at 93.7% in the snap election of 1984 and holding near 80% in the
               MMP era.
             </p>
             <LineChart series={[turnout]} yMax={100} yTicks={[50, 75]} />
@@ -107,7 +107,7 @@ export default function NzElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Labour against National</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               The two-party duel from Labour&apos;s rise to the MMP era, where shares in the 30s and 40s
-              decide who assembles a coalition — including Labour&apos;s 50% in 2020, MMP&apos;s only
+              decide who assembles a coalition, including Labour&apos;s 50% in 2020, MMP&apos;s only
               single-party majority.
             </p>
             <LineChart series={[labour, national]} yMax={60} yTicks={[15, 30, 45]} />
@@ -121,9 +121,9 @@ export default function NzElectionsPage() {
         title="How New Zealand elections work"
         cards={[
           ["Two votes under MMP", "Since 1996 each voter casts an electorate vote and a party vote. The party vote sets the House's proportions: 72 electorate seats are topped up from party lists to 120 seats, with a 5% threshold waived for parties that win an electorate."],
-          ["The Māori seats", "Māori electorates have existed since 1868 — decades before comparable representation anywhere in the British Empire. Māori voters choose which roll to enrol on, and the number of Māori seats moves with that choice; there are currently seven."],
+          ["The Māori seats", "Māori electorates have existed since 1868, decades before comparable representation anywhere in the British Empire. Māori voters choose which roll to enrol on, and the number of Māori seats moves with that choice; there are currently seven."],
           ["Three-year terms", "New Zealand's parliamentary term is among the world's shortest. Governments campaign almost permanently, and the country has voted more than fifty times since 1853."],
-          ["No upper house, no constitution", "The Legislative Council was abolished in 1951 and there is no single written constitution — Parliament is close to sovereign, which made the referendum-driven switch to MMP in 1993 all the more remarkable."],
+          ["No upper house, no constitution", "The Legislative Council was abolished in 1951 and there is no single written constitution: Parliament is close to sovereign, which made the referendum-driven switch to MMP in 1993 all the more remarkable."],
         ]}
       />
 

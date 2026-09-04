@@ -7,7 +7,7 @@ import { peopleCols, directorCols, personRow } from "../shared";
 
 export const dynamic = "force-static";
 
-const TITLE = "Screen of the Metros — People";
+const TITLE = "Screen of the Metros: People";
 const DESC =
   "The actors, directors and craft nominees behind a century of hits and Oscar nights, scored by era-normalized box office credit and award prestige, each mapped to the metro that raised them.";
 

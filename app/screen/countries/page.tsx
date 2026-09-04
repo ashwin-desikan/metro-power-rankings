@@ -6,7 +6,7 @@ import ScreenNav from "../ScreenNav";
 
 export const dynamic = "force-static";
 
-const TITLE = "Screen of the Metros — Rankings by Country";
+const TITLE = "Screen of the Metros: Rankings by Country";
 const DESC =
   "Every country scored by the film talent it raised: its metros' filmmakers summed into one national total, from box office to Academy prestige to cinematic-consensus significance.";
 

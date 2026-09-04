@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/dk";
 const TITLE = 'Danish General Elections';
 const DESC =
-  "Every Danish election from the June Constitution of 1849 to the snap vote of March 2026 — the constitutional struggle, the change of system, Stauning's long reign, the 1973 earthquake that doubled the party system overnight, and the bloc politics of the present.";
+  "Every Danish election from the June Constitution of 1849 to the snap vote of March 2026: the constitutional struggle, the change of system, Stauning's long reign, the 1973 earthquake that doubled the party system overnight, and the bloc politics of the present.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -38,7 +38,7 @@ export default function DkElectionsPage() {
         const p = e.parties
           .filter((p) => p.share != null)
           .sort((a, b) => (b.share ?? 0) - (a.share ?? 0))[0];
-        return p ? { x: e.year, y: p.share as number, label: `${e.label} — ${p.name}` } : null;
+        return p ? { x: e.year, y: p.share as number, label: `${e.label}, ${p.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -87,14 +87,14 @@ export default function DkElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since 1918</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Danish turnout has lived between 80 and 90 per cent for a century without compulsion — among the healthiest voluntary participation in the democratic world.
+              Danish turnout has lived between 80 and 90 per cent for a century without compulsion, among the healthiest voluntary participation in the democratic world.
             </p>
             <LineChart series={[turnout]} yMax={100} yTicks={[50, 75]} />
           </div>
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">The largest party's share</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Stauning's 46% in 1935 remains the ceiling; the floor keeps dropping — the Social Democrats' winning share in March 2026 was their lowest since 1903.
+              Stauning's 46% in 1935 remains the ceiling; the floor keeps dropping: the Social Democrats' winning share in March 2026 was their lowest since 1903.
             </p>
             <LineChart series={[largest]} yMax={80} yTicks={[20, 40, 60]} />
           </div>
@@ -108,11 +108,11 @@ export default function DkElectionsPage() {
         cards={[
           [
                     "Hyper-proportional, hyper-responsive",
-                    "175 Danish seats (plus two each for Greenland and the Faroe Islands) are allocated by PR with compensatory seats and a 2% threshold — low enough that new parties enter easily, which Danish voters use freely."
+                    "175 Danish seats (plus two each for Greenland and the Faroe Islands) are allocated by PR with compensatory seats and a 2% threshold, low enough that new parties enter easily, which Danish voters use freely."
           ],
           [
                     "Minority government as a way of life",
-                    "Majority coalitions are rare; most Danish governments rule from a minority, negotiating each bill. The blocs — red and blue — are the real units, and elections are duels between them."
+                    "Majority coalitions are rare; most Danish governments rule from a minority, negotiating each bill. The blocs, red and blue, are the real units, and elections are duels between them."
           ],
           [
                     "The king who lost",
@@ -120,7 +120,7 @@ export default function DkElectionsPage() {
           ],
           [
                     "Three in one year",
-                    "The Easter Crisis of 1920 — a royal dismissal of a government that had parliament's confidence — forced three elections in six months and settled, permanently, that Danish kings reign but do not rule."
+                    "The Easter Crisis of 1920, a royal dismissal of a government that had parliament's confidence, forced three elections in six months and settled, permanently, that Danish kings reign but do not rule."
           ]
         ]}
       />

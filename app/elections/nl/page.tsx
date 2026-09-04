@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/nl";
 const TITLE = "Dutch General Elections";
 const DESC =
-  "Every Dutch general election from 1886 to 2025 — the census-suffrage school struggle, the great Pacification of 1917, the pillarised decades, purple cabinets and the Fortuyn revolt, and the fragmented coalition politics of the present.";
+  "Every Dutch general election from 1886 to 2025: the census-suffrage school struggle, the great Pacification of 1917, the pillarised decades, purple cabinets and the Fortuyn revolt, and the fragmented coalition politics of the present.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -38,7 +38,7 @@ export default function NlElectionsPage() {
         const p = e.parties
           .filter((p) => p.share != null)
           .sort((a, b) => (b.share ?? 0) - (a.share ?? 0))[0];
-        return p ? { x: e.year, y: p.share as number, label: `${e.label} — ${p.name}` } : null;
+        return p ? { x: e.year, y: p.share as number, label: `${e.label}, ${p.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -74,7 +74,7 @@ export default function NlElectionsPage() {
         colorOf={nlPartyColor}
         fmtPct={nlFmtPct}
         leaderTag="PM"
-        intro="Every general election, newest first, across six eras — from two-round district contests on a tax-based franchise to the world's purest proportional system. Click any election for the full result and the story."
+        intro="Every general election, newest first, across six eras, from two-round district contests on a tax-based franchise to the world's purest proportional system. Click any election for the full result and the story."
       />
 
       {/* ---------- charts ---------- */}
@@ -87,7 +87,7 @@ export default function NlElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since 1918</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Voting was compulsory until 1970 — turnout above 90% for half a century — and even
+              Voting was compulsory until 1970, turnout above 90% for half a century, and even
               without the duty, Dutch turnout stays close to 80%.
             </p>
             <LineChart series={[turnout]} yMax={100} yTicks={[50, 75]} />
@@ -96,7 +96,7 @@ export default function NlElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">The shrinking largest party</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               The winning party&apos;s share has fallen from the Catholic 30%-plus of the pillarised
-              decades to D66&apos;s 16.9% in 2025 — the lowest ever for a Dutch first-place party, and
+              decades to D66&apos;s 16.9% in 2025, the lowest ever for a Dutch first-place party, and
               the arithmetic behind four-party cabinets.
             </p>
             <LineChart series={[largest]} yMax={40} yTicks={[10, 20, 30]} />
@@ -109,10 +109,10 @@ export default function NlElectionsPage() {
       <HowItWorks
         title="How Dutch general elections work"
         cards={[
-          ["The purest proportionality", "The whole country is effectively one district: 150 seats divided by national vote share, with no threshold beyond the quota for a single seat — about 0.67%. It is among the most proportional systems on earth, and parliament's fragmentation shows it."],
-          ["The formation is the real contest", "No Dutch party has ever won a majority, so the months after the vote — the formatie, with its informateurs and coalition agreements — decide who governs. Formations have taken as long as 299 days."],
+          ["The purest proportionality", "The whole country is effectively one district: 150 seats divided by national vote share, with no threshold beyond the quota for a single seat, about 0.67%. It is among the most proportional systems on earth, and parliament's fragmentation shows it."],
+          ["The formation is the real contest", "No Dutch party has ever won a majority, so the months after the vote, the formatie, with its informateurs and coalition agreements, decide who governs. Formations have taken as long as 299 days."],
           ["Pillars, then fragments", "For half a century Catholics, Protestants, socialists and liberals each voted for their own pillar's party. Depillarisation dissolved those loyalties, and the Dutch electorate is now among Europe's most volatile."],
-          ["The Prime Minister emerges", "Voters elect only the House. The Prime Minister is whoever the coalition puts forward — usually the largest government party's leader, but 2023 produced an unaffiliated PM heading a cabinet of four parties."],
+          ["The Prime Minister emerges", "Voters elect only the House. The Prime Minister is whoever the coalition puts forward, usually the largest government party's leader, but 2023 produced an unaffiliated PM heading a cabinet of four parties."],
         ]}
       />
 

@@ -25,11 +25,13 @@ function formatAsOf(iso?: string): string | null {
 }
 
 import IndexSwitcher from "@/app/IndexSwitcher";
+import { getPowerRankHistory } from "@/lib/powerRankHistory";
 
 export default async function PowerPage() {
   const data = await getPowerRanking();
   const rows = data?.ranking ?? [];
 
+  const hist = getPowerRankHistory();
   return (
     <main className="mx-auto max-w-4xl px-4 pb-8 pt-4">
       <div className="mb-4"><IndexSwitcher current="people" /></div>
@@ -63,7 +65,8 @@ export default async function PowerPage() {
       </header>
 
       {rows.length ? (
-        <PowerTable rows={rows} dropped={data?.dropped ?? []} prevSnapshotDate={data?.prevSnapshotDate ?? null} />
+        <PowerTable rows={rows} dropped={data?.dropped ?? []} prevSnapshotDate={data?.prevSnapshotDate ?? null}
+                    history={hist.series} historyDates={hist.dates} />
       ) : (
         <p className="text-[var(--text-muted)]">Ranking unavailable.</p>
       )}

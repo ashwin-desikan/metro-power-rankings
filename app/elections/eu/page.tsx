@@ -181,7 +181,7 @@ export default function EuElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout, 1979–2024</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Eight consecutive declines from 62% to 42.5% — then a reversal in 2019, the first rise in the
+              Eight consecutive declines from 62% to 42.5%, then a reversal in 2019, the first rise in the
               Parliament&apos;s history, sustained in 2024.
             </p>
             <LineChart series={[turnoutSeries]} yMax={80} yTicks={[40, 60]} />
@@ -197,7 +197,7 @@ export default function EuElectionsPage() {
           <div className="rounded-xl border p-4 lg:col-span-2" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">The chamber grows with the Union</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              From 410 seats for nine states in 1979 to a peak of 751 for twenty-eight — then the first
+              From 410 seats for nine states in 1979 to a peak of 751 for twenty-eight, then the first
               shrinkage in 2024&apos;s post-Brexit Parliament of 720. Hover for the member-state count at
               each election.
             </p>
@@ -211,9 +211,9 @@ export default function EuElectionsPage() {
         <h2 className="text-2xl font-bold mb-4 text-[var(--text)]">How European Parliament elections work</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
           {[
-            ["27 national elections at once", "There is no single European ballot: each member state elects its MEPs under its own rules over a four-day window, using some form of proportional representation — a requirement since 1999, which is why Britain's 1989 Greens won 15% and zero seats."],
+            ["27 national elections at once", "There is no single European ballot: each member state elects its MEPs under its own rules over a four-day window, using some form of proportional representation, a requirement since 1999, which is why Britain's 1989 Greens won 15% and zero seats."],
             ["Degressive proportionality", "Seats are allocated to states by population, but smaller states get more MEPs per citizen: Malta's six seats represent about 90,000 people each, Germany's 96 nearly 900,000."],
-            ["National parties, European groups", "Voters choose among national parties, which then sit in transnational groups — a group needs 23 MEPs from at least a quarter of member states. Groups control speaking time, committee chairs and the money."],
+            ["National parties, European groups", "Voters choose among national parties, which then sit in transnational groups: a group needs 23 MEPs from at least a quarter of member states. Groups control speaking time, committee chairs and the money."],
             ["The Parliament's power", "Once a talking shop, now co-legislator on most EU law: it amends and can veto legislation and budgets, confirms and can dismiss the European Commission, and since 2014 has fought the Council over who picks the Commission president."],
           ].map(([h, b]) => (
             <div key={h} className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>

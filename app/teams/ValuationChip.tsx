@@ -21,7 +21,7 @@ export default function ValuationChip({
   return (
     <Link
       href={`/sports/valuations#${v.anchor}`}
-      title={`Estimated valuation${v.year ? ` (${v.year})` : ""} — see all team valuations`}
+      title={`Estimated valuation${v.year ? ` (${v.year})` : ""}: see all team valuations`}
       className={`inline-flex items-baseline gap-1 rounded-full border px-2.5 py-0.5 text-sm font-semibold tabular-nums align-middle transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] ${className}`}
       style={{ borderColor: "var(--border)", background: "var(--bg-card)", color: "var(--text)" }}
     >

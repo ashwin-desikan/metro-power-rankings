@@ -14,7 +14,7 @@ import { StatTile, JumpNav, RecordsGrid, HowItWorks, HubFooter, HubTitle } from 
 const PATH = "/elections/tw";
 const TITLE = "Taiwanese Presidential Elections";
 const DESC =
-  "The Republic of China's presidential elections from Sun Yat-sen's 1911 vote to Taiwan's 2024 contest — the Beiyang parliaments and the bribery election, the 'eternal' National Assembly's rituals stated plainly, and the direct-election democracy born under missile fire in 1996.";
+  "The Republic of China's presidential elections from Sun Yat-sen's 1911 vote to Taiwan's 2024 contest: the Beiyang parliaments and the bribery election, the 'eternal' National Assembly's rituals stated plainly, and the direct-election democracy born under missile fire in 1996.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -87,7 +87,7 @@ export default function TwElectionsPage() {
     points: direct
       .map((e) => {
         const c = e.candidates.find((c) => /Democratic Progressive|DPP/i.test(c.party ?? ""));
-        return c && c.r1Share != null ? { x: e.year, y: c.r1Share, label: `${e.label} — ${c.name}` } : null;
+        return c && c.r1Share != null ? { x: e.year, y: c.r1Share, label: `${e.label}, ${c.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -97,7 +97,7 @@ export default function TwElectionsPage() {
     points: direct
       .map((e) => {
         const c = e.candidates.find((c) => /Kuomintang|KMT/i.test(c.party ?? ""));
-        return c && c.r1Share != null ? { x: e.year, y: c.r1Share, label: `${e.label} — ${c.name}` } : null;
+        return c && c.r1Share != null ? { x: e.year, y: c.r1Share, label: `${e.label}, ${c.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -124,9 +124,9 @@ export default function TwElectionsPage() {
 
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
         <StatTile label="Presidential elections" value={String(elections.length)} hint={`${elections[0].year}–${last.year}, across the ROC's whole lineage`} />
-        <StatTile label="President today" value={last.presAfter?.name ?? "—"} hint={`elected ${last.year} — a third consecutive DPP term`} />
+        <StatTile label="President today" value={last.presAfter?.name ?? "—"} hint={`elected ${last.year}, a third consecutive DPP term`} />
         <StatTile label="First direct election" value="1996" hint="held under PLA missile tests" />
-        <StatTile label="Transfers of power" value="3" hint="2000, 2008 and 2016 — each peaceful" />
+        <StatTile label="Transfers of power" value="3" hint="2000, 2008 and 2016, each peaceful" />
       </div>
 
       <JumpNav items={[["#chronology", "Chronology"], ["#charts", "The long arc in charts"], ["#records", "Records"], ["#how-it-works", "How it works"]]} />
@@ -135,7 +135,7 @@ export default function TwElectionsPage() {
       <section id="chronology" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Every presidential election</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          All {elections.length} contests, newest first — the direct votes of Taiwan&apos;s democracy,
+          All {elections.length} contests, newest first: the direct votes of Taiwan&apos;s democracy,
           then the National Assembly&apos;s uncontested rituals and the early Chinese Republic&apos;s
           indirect elections, each labelled for what it was.
         </p>
@@ -164,7 +164,7 @@ export default function TwElectionsPage() {
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout since 1996</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
-              Taiwan&apos;s young democracy began above 80% and eased into the 70s — still among Asia&apos;s
+              Taiwan&apos;s young democracy began above 80% and eased into the 70s, still among Asia&apos;s
               highest, with no compulsory voting and millions returning home to vote in person.
             </p>
             <LineChart series={[turnout]} yMax={100} yTicks={[50, 75]} />
@@ -186,9 +186,9 @@ export default function TwElectionsPage() {
         title="How Taiwanese presidential elections work"
         cards={[
           ["One round, plurality", "The president is directly elected every four years in a single round: the highest total wins, however split the field. Chen Shui-bian's 39.3% in 2000 and Lai Ching-te's 40% in 2024 both sufficed."],
-          ["A young direct mandate", "Constitutional reform in 1994 replaced the National Assembly's role with direct election. The 1996 vote made Lee Teng-hui the first directly chosen Chinese head of state in history — as the PLA fired missiles into the strait to deter it."],
-          ["The lineage question", "Taiwan's government is the Republic of China, founded in 1911 — so this hub carries the whole constitutional line, from Nanjing's provisional vote through the Beiyang parliaments to the frozen Assembly's rituals on Taiwan, each labelled honestly."],
-          ["Identity is the axis", "Elections turn less on left and right than on the China question: the DPP's Taiwan-centred identity against the KMT's heritage of cross-strait engagement, with third forces — Soong in 2000, Ko in 2024 — repeatedly scrambling the arithmetic."],
+          ["A young direct mandate", "Constitutional reform in 1994 replaced the National Assembly's role with direct election. The 1996 vote made Lee Teng-hui the first directly chosen Chinese head of state in history, as the PLA fired missiles into the strait to deter it."],
+          ["The lineage question", "Taiwan's government is the Republic of China, founded in 1911, so this hub carries the whole constitutional line, from Nanjing's provisional vote through the Beiyang parliaments to the frozen Assembly's rituals on Taiwan, each labelled honestly."],
+          ["Identity is the axis", "Elections turn less on left and right than on the China question: the DPP's Taiwan-centred identity against the KMT's heritage of cross-strait engagement, with third forces, Soong in 2000, Ko in 2024, repeatedly scrambling the arithmetic."],
         ]}
       />
 

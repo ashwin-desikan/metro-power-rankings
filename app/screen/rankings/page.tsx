@@ -6,7 +6,7 @@ import ScreenNav from "../ScreenNav";
 
 export const dynamic = "force-static";
 
-const TITLE = "Screen of the Metros — Rankings by Metro";
+const TITLE = "Screen of the Metros: Rankings by Metro";
 const DESC =
   "Every metro scored by the film people it raised: era-normalized box office credit plus Academy Award prestige, summed over a century of directors, actors and craft nominees.";
 

@@ -3,7 +3,7 @@ import path from 'path';
 import SoundNav from '../SoundNav';
 import RS500View, { type RSAlbum } from './RS500View';
 
-export const metadata = { title: "Rolling Stone's 500 Greatest Albums — Sound of the Metros" };
+export const metadata = { title: "Rolling Stone's 500 Greatest Albums: Sound of the Metros" };
 
 export default async function RS500Page() {
   const data = JSON.parse(

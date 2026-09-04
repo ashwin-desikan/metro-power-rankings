@@ -4,6 +4,7 @@ import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 export type RankedClub = { rank: number; name: string; slug: string | null; country: string; mp: number; w: number; d: number; l: number; form: number; ped: number; tb: number; score: number; deltaRank?: number | null };
 export type CoefCountry = { rank: number; country: string; seasons: Record<string, number | null>; coef: number };
@@ -14,7 +15,7 @@ const DASH = "—";
 function DeltaCell({ d }: { d?: number | null }) {
   if (d == null) return <span className="text-[var(--text-dim)]">·</span>;
   if (d === 0) return <span className="text-[var(--text-dim)]">–</span>;
-  return <span style={{ color: d > 0 ? "#22c55e" : "#ef4444" }}>{d > 0 ? "▲" : "▼"}{Math.abs(d)}</span>;
+  return <span style={{ color: d > 0 ? "var(--div-pos)" : "var(--div-neg)" }}>{d > 0 ? "▲" : "▼"}{Math.abs(d)}</span>;
 }
 
 export default function RankingTable({ clubs, countries, clubSeasons, pendingNote, top5 }: { clubs: RankedClub[]; countries: CoefCountry[]; clubSeasons: string[]; pendingNote?: string; top5?: string[] }) {
@@ -30,6 +31,10 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
       ? clubs.filter((c) => c.country === country)
       : clubs.slice(0, 100);
   const anyDelta = clubs.some((c) => c.deltaRank != null);
+  // Score is the ranking's argument (the table is sorted by it); max is this
+  // view's own maximum, computed once over the currently shown rows so bars
+  // stay comparable as the country filter changes the row set.
+  const scoreMax = Math.max(...rows.map((c) => c.score), 0.001);
   return (
     <div>
       <Tabs
@@ -102,13 +107,18 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
                   <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{c.form.toFixed(2)}</td>
                   <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{c.ped.toFixed(2)}</td>
                   <td className="py-1.5 px-2 text-right tabular-nums text-[var(--accent)]" style={mono}>{c.tb > 0 ? `+${c.tb.toFixed(2)}` : "—"}</td>
-                  <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={mono}>{c.score.toFixed(3)}</td>
+                  <td className="py-1.5 px-2 text-right"><DataBar v={c.score} max={scoreMax} dp={3} width={104} label="score" /></td>
                 </tr>))}</tbody>
             </table>
           </ResponsiveTable>
         </>
         )
-      ) : (
+      ) : (() => {
+        // Coefficient is this table's argument (it's what "country coefficients"
+        // sorts by); max is the column's own maximum, computed once over the
+        // full country list, never per row.
+        const coefMax = Math.max(...countries.map((c) => c.coef), 0.001);
+        return (
         <ResponsiveTable
           compact
           variant="list"
@@ -138,11 +148,12 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
                 <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{c.rank}</td>
                 <td className="py-1.5 px-2 font-medium whitespace-nowrap">{c.country}</td>
                 {clubSeasons.map((s) => <td key={s} className="py-1.5 px-2 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{c.seasons[s] == null ? DASH : (c.seasons[s] as number).toFixed(3)}</td>)}
-                <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={mono}>{c.coef.toFixed(3)}</td>
+                <td className="py-1.5 px-2 text-right"><DataBar v={c.coef} max={coefMax} dp={3} width={104} label="coefficient" /></td>
               </tr>))}</tbody>
           </table>
         </ResponsiveTable>
-      )}
+        );
+      })()}
     </div>
   );
 }

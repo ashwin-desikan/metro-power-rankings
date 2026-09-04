@@ -17,7 +17,7 @@ export const revalidate = 3600;
 const PATH = "/teams/baseball/npb";
 const TITLE = "Nippon Professional Baseball (NPB)";
 const DESC =
-  "Japan's top baseball league: every Japan Series champion since 1950, Central and Pacific League pennants, and the all-time record of the 12 clubs — historical franchises folded into their modern successors.";
+  "Japan's top baseball league: every Japan Series champion since 1950, Central and Pacific League pennants, and the all-time record of the 12 clubs, historical franchises folded into their modern successors.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -191,7 +191,7 @@ export default async function NpbHubPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Nippon Professional Baseball</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           Japan&apos;s top flight, split into the Central and Pacific Leagues. Every Japan
-          Series champion since 1950 — the headline honour — alongside league pennants and
+          Series champion since 1950, the headline honour, alongside league pennants and
           the all-time record of the 12 clubs, with historical franchises folded into their
           modern successors.
         </p>

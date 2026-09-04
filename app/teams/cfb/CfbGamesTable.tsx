@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { CfbGame } from "@/lib/cfbShared";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
 
 const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 function fmtDate(d: string | null): string | null {
@@ -24,6 +25,10 @@ function tags(g: CfbGame): { label: string; cls: string }[] {
 
 export default function CfbGamesTable({ games, linkSlugs = [] }: { games: CfbGame[]; linkSlugs?: string[] }) {
   const has = new Set(linkSlugs);
+  // Both callers rank this table by Game Score ("Top 50 all-time" / a
+  // team's top games); max is this column's own maximum over the full
+  // `games` row set already passed in, computed once, never per row.
+  const gsMax = Math.max(...games.map((g) => g.gs ?? 0), 0.01);
   const name = (n: string, slug: string, bold: boolean) => {
     const cls = bold ? "font-semibold" : "text-[var(--text-muted)]";
     return (
@@ -131,7 +136,9 @@ export default function CfbGamesTable({ games, linkSlugs = [] }: { games: CfbGam
                       {t.map((x) => <span key={x.label} className={x.cls}>{x.label}</span>)}
                     </div>
                   </td>
-                  <td className="px-2 py-2 text-right text-[var(--accent)] font-medium">{g.gs.toFixed(2)}</td>
+                  <td className="px-2 py-2 text-right">
+                    <DataBar v={g.gs} max={gsMax} dp={2} color="var(--seq-4)" width={88} label="game score" />
+                  </td>
                 </tr>
               );
             })}

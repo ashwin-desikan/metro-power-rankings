@@ -76,7 +76,7 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
               {f.active ? "Active" : "Defunct"}
             </span>
             {topMetro && (
-              <Link href={`/top-teams#${topTeamAnchorId(topMetro)}`} className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded hover:brightness-110 transition" style={{ background: "rgba(245,158,11,0.16)", color: "#fbbf24" }} title={`Top sporting team of ${topMetro} — see The Team That Wins the City`}>
+              <Link href={`/top-teams#${topTeamAnchorId(topMetro)}`} className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded hover:brightness-110 transition" style={{ background: "rgba(245,158,11,0.16)", color: "#fbbf24" }} title={`Top sporting team of ${topMetro}: see The Team That Wins the City`}>
                 <span aria-hidden>{"\u2654"}</span> Top Team · {topMetro}
               </Link>
             )}

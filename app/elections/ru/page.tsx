@@ -14,7 +14,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/ru";
 const TITLE = "Russian & Soviet Elections";
 const DESC =
-  "Russian voting from the Tsar's Dumas to the present, recorded honestly: the class-weighted imperial elections, the free 1917 vote the Bolsheviks overturned, the USSR's single-list rituals, the contested 1990s — and the managed votes that have kept one man in the Kremlin since 2000.";
+  "Russian voting from the Tsar's Dumas to the present, recorded honestly: the class-weighted imperial elections, the free 1917 vote the Bolsheviks overturned, the USSR's single-list rituals, the contested 1990s, and the managed votes that have kept one man in the Kremlin since 2000.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -87,7 +87,7 @@ export default function RuElectionsPage() {
         const w = e.candidates
           .filter((c) => (c.r2Share ?? c.r1Share) != null)
           .sort((a, b) => ((b.r2Share ?? b.r1Share) ?? 0) - ((a.r2Share ?? a.r1Share) ?? 0))[0];
-        return w ? { x: e.year, y: (w.r2Share ?? w.r1Share) as number, label: `${e.label} — ${w.name}` } : null;
+        return w ? { x: e.year, y: (w.r2Share ?? w.r1Share) as number, label: `${e.label}, ${w.name}` } : null;
       })
       .filter((p): p is { x: number; y: number; label: string } => p != null),
   };
@@ -121,7 +121,7 @@ export default function RuElectionsPage() {
           Most of the votes recorded here were not free contests. Soviet elections offered one
           approved name per seat; Russian elections have been progressively managed since 2000 and
           are no longer competitive. The numbers are preserved because they are historically
-          revealing — announced turnout and announced majorities measured the state&apos;s reach, not
+          revealing: announced turnout and announced majorities measured the state&apos;s reach, not
           the people&apos;s choice. Every entry carries its honest label: only the Constituent
           Assembly election of 1917 and the contested votes of the 1989–2003 window are treated as
           real races, and the caveats say exactly how real each one was.
@@ -131,7 +131,7 @@ export default function RuElectionsPage() {
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
         <StatTile label="Presidential votes" value={String(presidential.length)} hint={`1990–${lastPres.year}, of which two were genuinely free`} />
         <StatTile label="Legislative elections" value={String(legislative.length)} hint="1906–2021: imperial Dumas, Soviet rituals, the Duma of today" />
-        <StatTile label="Fully free presidential elections" value="1" hint="June 1991 — Yeltsin, while the USSR still stood" />
+        <StatTile label="Fully free presidential elections" value="1" hint="June 1991, Yeltsin, while the USSR still stood" />
         <StatTile label="Kremlin incumbency" value="25 yrs" hint="one man in or behind the presidency since 2000" />
       </div>
 
@@ -141,7 +141,7 @@ export default function RuElectionsPage() {
       <section id="presidential" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Presidential votes</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          All {presidential.length} contests for the Soviet and Russian presidency, newest first —
+          All {presidential.length} contests for the Soviet and Russian presidency, newest first,
           from Gorbachev&apos;s uncontested election by the deputies to the wartime ritual of 2024.
         </p>
         {presByEra.map(({ era, list }) => (
@@ -168,7 +168,7 @@ export default function RuElectionsPage() {
         fmtPct={ruFmtPct}
         leaderTag="PM"
         headline="Legislative elections"
-        intro="Every national legislative vote, newest first — the managed Duma of the Putin era, the real and chaotic contests of the 1990s, the Soviet single-list rituals, the free 1917 election the Bolsheviks overturned, and the Tsar's four class-weighted Dumas, each labelled for what it was."
+        intro="Every national legislative vote, newest first: the managed Duma of the Putin era, the real and chaotic contests of the 1990s, the Soviet single-list rituals, the free 1917 election the Bolsheviks overturned, and the Tsar's four class-weighted Dumas, each labelled for what it was."
       />
 
       {/* ---------- charts ---------- */}
@@ -182,7 +182,7 @@ export default function RuElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">The winner&apos;s share, 1991–2024</h3>
             <p className="text-xs text-[var(--text-muted)] mb-2">
               The chart of managed democracy: Yeltsin&apos;s contested 57% and 54%, Putin&apos;s
-              first bare majority — and then a line that only rises as competition is removed,
+              first bare majority, and then a line that only rises as competition is removed,
               to an announced 88% in 2024.
             </p>
             <LineChart series={[winnerShare]} yMax={100} yTicks={[25, 50, 75]} />
@@ -192,11 +192,11 @@ export default function RuElectionsPage() {
             <p className="text-xs text-[var(--text-muted)] mb-2">
               Soviet elections reported turnout of 99.99%; the 2024 vote reported 77% during a war,
               with balloting extended into occupied territory. These figures are recorded in each
-              entry, labelled as announcements of the state rather than measurements of behaviour —
+              entry, labelled as announcements of the state rather than measurements of behaviour,
               which is why no Soviet-era turnout chart appears here.
             </p>
             <div className="text-xs text-[var(--text-dim)] mt-6">
-              Explore the chronologies above — every table sorts, and every entry carries its label.
+              Explore the chronologies above: every table sorts, and every entry carries its label.
             </div>
           </div>
         </div>
@@ -207,10 +207,10 @@ export default function RuElectionsPage() {
       <HowItWorks
         title="How Russian and Soviet votes worked"
         cards={[
-          ["The Soviet method", "From 1937, every seat had exactly one candidate, nominated by the party or its organisations. Voting against meant using a screened booth to cross out the name — an observable act. Turnout and approval near 100% were the products of that design."],
-          ["The 1990s window", "For one decade Russia held real elections: 1991's founding vote, the flawed but contested 1996 runoff, and Duma elections with genuine opposition. The window closed by stages — media first, then governors, then candidate registration itself."],
-          ["Managed democracy", "Modern Russian elections keep the form of competition: several candidates, campaigns, observers. The substance is controlled upstream — who may run, who may broadcast, who counts. Since 2012 the strongest potential opponents have been excluded before a single vote was cast."],
-          ["Why record them at all", "Because the numbers are evidence. The rising announced majorities, the turnout in occupied territory, the two-vote dissents — unfree elections document the state that stages them, and that is how this hub presents them."],
+          ["The Soviet method", "From 1937, every seat had exactly one candidate, nominated by the party or its organisations. Voting against meant using a screened booth to cross out the name, an observable act. Turnout and approval near 100% were the products of that design."],
+          ["The 1990s window", "For one decade Russia held real elections: 1991's founding vote, the flawed but contested 1996 runoff, and Duma elections with genuine opposition. The window closed by stages: media first, then governors, then candidate registration itself."],
+          ["Managed democracy", "Modern Russian elections keep the form of competition: several candidates, campaigns, observers. The substance is controlled upstream: who may run, who may broadcast, who counts. Since 2012 the strongest potential opponents have been excluded before a single vote was cast."],
+          ["Why record them at all", "Because the numbers are evidence. The rising announced majorities, the turnout in occupied territory, the two-vote dissents: unfree elections document the state that stages them, and that is how this hub presents them."],
         ]}
       />
 

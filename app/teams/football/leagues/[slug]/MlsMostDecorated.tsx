@@ -7,6 +7,7 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // MLS all-time table: every franchise by honors, including defunct clubs.
 // A Current/All filter toggles defunct clubs; defunct clubs are tagged.
@@ -31,6 +32,10 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
   const defunctCount = rows.filter((r) => r.defunct).length;
   const visible = view === "all" ? rows : rows.filter((r) => !r.defunct);
   const sorted = [...visible].sort((a, b) => (b[sortKey] - a[sortKey]) || (b.mls_cups - a.mls_cups) || (b.supporters_shields - a.supporters_shields) || a.cur_name.localeCompare(b.cur_name));
+  // MLS Cups is this "all-time table"'s argument — the trophy the table's
+  // default sort and name are built around; max is this view's own maximum,
+  // computed once over the currently visible (current/all) rows.
+  const cupsMax = Math.max(...visible.map((r) => r.mls_cups), 1);
   const Th = ({ k, label }: { k: SortKey; label: string }) => (
     <th className="py-3 px-2 text-right font-medium cursor-pointer select-none hover:text-[var(--text)]" onClick={() => setSortKey(k)} style={{ color: sortKey === k ? "var(--text)" : undefined }}>
       <span className="inline-flex items-center gap-1 justify-end">{label}{sortKey === k && <span aria-hidden style={{ color: "var(--accent)" }}>▼</span>}</span>
@@ -137,7 +142,7 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
                   </span>
                 </td>
                 <td className="py-1.5 px-2 text-[var(--text-muted)]">{r.metro || <span className="text-[var(--text-dim)]">—</span>}</td>
-                <td className="py-1.5 px-2 text-right font-semibold">{r.mls_cups || "—"}</td>
+                <td className="py-1.5 px-2 text-right"><DataBar v={r.mls_cups} max={cupsMax} width={72} label="MLS Cups" /></td>
                 <td className="py-1.5 px-2 text-right">{r.supporters_shields || "—"}</td>
                 <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.finals || "—"}</td>
                 <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.playoffs || "—"}</td>

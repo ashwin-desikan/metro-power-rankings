@@ -15,7 +15,7 @@ const PAGE_PATH = "/badges";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Badges";
 const PAGE_DESCRIPTION =
-  "Categorical lenses over the global metro composite. Each badge reframes the same dataset through a different question — university towns, megacities, finance capitals, sports meccas, and more.";
+  "Categorical lenses over the global metro composite. Each badge reframes the same dataset through a different question: university towns, megacities, finance capitals, sports meccas, and more.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

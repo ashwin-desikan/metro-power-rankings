@@ -28,7 +28,7 @@ export async function generateMetadata(
   const path = `/teams/hockey/${slug}`;
   const desc = `${team.name} in international ice hockey: Olympic medals, Canada Cup / World Cup honours, and IIHF World Championship record.`;
   return {
-    title: `${team.name} — International Ice Hockey`,
+    title: `${team.name}: International Ice Hockey`,
     description: desc,
     alternates: { canonical: path },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },

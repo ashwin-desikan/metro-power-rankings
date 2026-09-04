@@ -6,7 +6,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 const PAGE_PATH = "/leaders/changes";
 const PAGE_TITLE = "Leadership changes";
 const PAGE_DESCRIPTION =
-  "A running log of national leadership changes we track — who took office, who they replaced, and when — refreshed weekly from Wikidata and curated sources.";
+  "A running log of national leadership changes we track: who took office, who they replaced, and when, refreshed weekly from Wikidata and curated sources.";
 
 export const revalidate = 3600;
 

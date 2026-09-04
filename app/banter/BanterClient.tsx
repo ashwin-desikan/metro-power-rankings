@@ -175,7 +175,7 @@ export default function BanterClient() {
         setThreads(seeded);
         setSc(j.detail[0] ?? null);
       })
-      .catch(() => setErr("Couldn't load scenarios — refresh to retry."))
+      .catch(() => setErr("Couldn't load scenarios. Refresh to retry."))
       .finally(() => setLoadingScenes(false));
   }, []);
 
@@ -298,7 +298,7 @@ export default function BanterClient() {
       if (r.status === 429) {
         const j = (await r.json().catch(() => ({}))) as { error?: string; retryAfter?: number };
         setCooldown(Math.max(1, Number(j.retryAfter) || 5));
-        throw new Error(j.error ?? "Easy on — one at a time.");
+        throw new Error(j.error ?? "Easy on, one at a time.");
       }
 
       const ctype = r.headers.get("content-type") ?? "";
@@ -413,7 +413,7 @@ export default function BanterClient() {
           🍻 The Banter Engine
         </h1>
         <p className="mt-1 text-[15px] text-[var(--text-muted)] max-w-2xl">
-          Pull up a stool in another time and place — or tonight — and argue sport, music and
+          Pull up a stool in another time and place, or tonight, and argue sport, music and
           history with a local who only knows what was knowable that day.
         </p>
         <p className="mt-2 text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
@@ -445,8 +445,8 @@ export default function BanterClient() {
               {keyState === "checking"
                 ? "checking…"
                 : keyState === "bad"
-                  ? "not recognised — check your invite"
-                  : "from your invite — saved on this device so you only enter it once"}
+                  ? "not recognised, check your invite"
+                  : "from your invite, saved on this device so you only enter it once"}
             </span>
           </>
         ) : (
@@ -606,7 +606,7 @@ export default function BanterClient() {
           </div>
           <p className="mt-2 text-[11px] text-[var(--text-dim)]" style={MONO}>
             A fictional conversation with an AI character, anchored to real, dated facts. It can be
-            wrong — that is half the fun.
+            wrong. That is half the fun.
           </p>
           {/* Openers always; the second tier appears once the conversation has
               actually started, which is precisely when the first five run out.
@@ -797,7 +797,7 @@ export default function BanterClient() {
           onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); void send(); } }}
           placeholder={
             cooldown > 0
-              ? `Steady on — back in ${cooldown}s`
+              ? `Steady on, back in ${cooldown}s`
               : recording ? "Listening…" : "Say something to the local…"
           }
           className="min-h-[52px] min-w-0 flex-1 resize-none overflow-y-auto rounded-lg border border-[var(--border)]
@@ -829,7 +829,7 @@ export default function BanterClient() {
           &quot;today&quot; local knows recent events only as far as the site&apos;s data reaches. Your
           passphrase is stored on this device only; conversations stay in this browser tab and are not
           saved to the server. Conversations may be logged without content (sizes and timings only) to
-          keep the beta healthy — please report anything odd or unpleasant.
+          keep the beta healthy. Please report anything odd or unpleasant.
         </p>
       </section>
     </main>

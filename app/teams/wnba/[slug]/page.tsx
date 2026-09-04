@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!f) return { title: "Franchise not found" };
   const desc = `${f.name}: ${f.titles} WNBA title${f.titles === 1 ? "" : "s"}, ${f.finals} finals, ${f.playoff_appearances} playoff appearances` + (f.city ? `, based in ${f.city}.` : ".");
   return {
-    title: `${f.name} — WNBA`,
+    title: `${f.name}: WNBA`,
     description: desc,
     alternates: { canonical: `/teams/wnba/${f.slug}` },
     openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wnba/${f.slug}`, type: "website" },

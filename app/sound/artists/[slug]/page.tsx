@@ -41,7 +41,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = (await readAll())[slug];
-  return { title: a ? `${a.name} — Sound of the Metros` : 'Artist — Sound of the Metros' };
+  return { title: a ? `${a.name}: Sound of the Metros` : 'Artist: Sound of the Metros' };
 }
 const muted = { color: 'var(--text-muted)' } as const;
 const SONG_COLS: Col[] = [

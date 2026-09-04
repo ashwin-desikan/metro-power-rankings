@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import type { ClubGame } from "@/lib/clubGames";
+import { DataBar } from "@/app/_shared/DataBar";
 
 // Per-club "greatest games" on a club page: this club's top matches by the
 // unified club Game Score, this-club perspective, mirroring the national-team
@@ -14,6 +15,9 @@ const RES: Record<string, { label: string; color: string }> = {
 
 export default function TeamGreatestGames({ rows, slug, teamName }: { rows: ClubGame[]; slug: string; teamName: string }) {
   if (!rows || rows.length === 0) return null;
+  // Game Score is this board's argument (the rows are already ranked by it);
+  // max is the column's own maximum over the full row set, computed once.
+  const gsMax = Math.max(...rows.map((g) => g.gs), 0.1);
   return (
     <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
       <h2 className="text-base font-semibold">Greatest games</h2>
@@ -63,7 +67,7 @@ export default function TeamGreatestGames({ rows, slug, teamName }: { rows: Club
                     {g.pens ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">(pens {g.pens})</span> : null}
                     {g.floored ? <span className="ml-1" title={`All-time classic (curated floor); model score ${g.base.toFixed(1)}`} style={{ color: "#e0a83e" }}>&#9733;</span> : null}
                   </td>
-                  <td className="py-2 text-right font-semibold" style={{ color: "var(--accent)" }}>{g.gs.toFixed(1)}</td>
+                  <td className="py-2 text-right"><DataBar v={g.gs} max={gsMax} dp={1} width={88} label="game score" /></td>
                 </tr>
               );
             })}

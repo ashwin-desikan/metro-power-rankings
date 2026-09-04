@@ -54,7 +54,7 @@ export default function DomesticRugbyPage() {
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           Club rugby&apos;s honours boards: every champion of the seven competitions we
           track, from the first French final in 1892 to last month&apos;s League One
-          decider. Winners only, by design — tables and seasons live with the clubs.
+          decider. Winners only, by design: tables and seasons live with the clubs.
           Champions link to their metro pages; title chips appear on each club&apos;s
           metro card.
         </p>

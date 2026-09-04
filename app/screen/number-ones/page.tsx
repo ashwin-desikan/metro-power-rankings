@@ -8,9 +8,9 @@ import NumberOnesView from "./NumberOnesView";
 // Tuesday [vercel skip] data refresh shows without a Vercel build (see lib/screen.ts).
 export const revalidate = 3600;
 
-const TITLE = "Screen of the Metros — US Number Ones";
+const TITLE = "Screen of the Metros: US Number Ones";
 const DESC =
-  "Every film to top the US box office since 1946 — four thousand chart weeks, browsable by decade and year, with the all-time reign leaderboards. Updated weekly during the current year.";
+  "Every film to top the US box office since 1946: four thousand chart weeks, browsable by decade and year, with the all-time reign leaderboards. Updated weekly during the current year.";
 
 export const metadata: Metadata = {
   title: TITLE,

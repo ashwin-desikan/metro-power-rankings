@@ -20,7 +20,7 @@ export default function HeartbreakTag({
   return (
     <Link
       href="/sports/heartbreak"
-      title={`#${h.rank} of ${h.outOf.toLocaleString()} on The Heartbreak Index — ${h.total.toFixed(1)} points of accumulated ache`}
+      title={`#${h.rank} of ${h.outOf.toLocaleString()} on The Heartbreak Index: ${h.total.toFixed(1)} points of accumulated ache`}
       className={`inline-flex items-baseline gap-1.5 rounded-full border px-2.5 py-0.5 text-sm font-semibold align-middle transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] ${className}`}
       style={{ borderColor: "var(--border)", background: "var(--bg-card)", color: "var(--text)" }}
     >

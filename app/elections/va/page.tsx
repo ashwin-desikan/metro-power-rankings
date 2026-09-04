@@ -15,7 +15,7 @@ import { StatTile, JumpNav, RecordsGrid, HowItWorks, HubFooter, HubTitle } from 
 const PATH = "/elections/va";
 const TITLE = "Papal Conclaves";
 const DESC =
-  "Almost a millennium of the world's oldest surviving electoral system: every papal election since the cardinals became the electorate in 1059 — the 33-month deadlock that invented the conclave, the schism that produced three rival popes, the crown vetoes and marathon stalemates, and the two-day conclaves of the modern age, through Leo XIV in 2025.";
+  "Almost a millennium of the world's oldest surviving electoral system: every papal election since the cardinals became the electorate in 1059: the 33-month deadlock that invented the conclave, the schism that produced three rival popes, the crown vetoes and marathon stalemates, and the two-day conclaves of the modern age, through Leo XIV in 2025.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -97,7 +97,7 @@ export default function VaElectionsPage() {
         <p className="text-[var(--text-muted)]">
           <span className="font-bold text-[var(--text)]">How to read this hub.</span>{" "}
           A conclave is an election with no parties, no campaign and an electorate of around a
-          hundred men choosing an absolute monarch for life — the one contest in this atlas where
+          hundred men choosing an absolute monarch for life, the one contest in this atlas where
           secrecy is the design rather than the defect. The record here is what the Church itself
           documents: dates, duration, electors, ballots where known, and the pope produced. Votes
           cast for individual candidates are burned, so the tables of this hub count days and
@@ -108,7 +108,7 @@ export default function VaElectionsPage() {
       <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
         <StatTile label="Elections recorded" value={vaFmtInt(elections.length)} hint={`1061–2025, of which ${conclaves} were conclaves under the locked-door rules`} />
         <StatTile label="Span" value="964 yrs" hint="the oldest electoral system still in continuous use" />
-        <StatTile label="Longest deadlock" value="33 mo" hint="1268–71 — ended by a removed roof, cut rations and a compromise committee" />
+        <StatTile label="Longest deadlock" value="33 mo" hint="1268–71, ended by a removed roof, cut rations and a compromise committee" />
         <StatTile label="The latest" value={latest.label} hint={`${latest.pope}, elected on the ${latest.ballots ?? "?"}th ballot by ${latest.electors ?? "?"} electors`} />
       </div>
 
@@ -118,7 +118,7 @@ export default function VaElectionsPage() {
       <section id="chronology" className="mb-12">
         <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Every conclave and papal election</h2>
         <p className="text-sm text-[var(--text-muted)] mb-6 max-w-3xl">
-          Newest first within each era. The bar under each entry is the length of the gathering —
+          Newest first within each era. The bar under each entry is the length of the gathering:
           gold for the routine, amber for the deadlocks that ran past a month.
         </p>
         {byEra.map(({ era, list }) => (
@@ -141,10 +141,10 @@ export default function VaElectionsPage() {
       <HowItWorks
         title="How a conclave works"
         cards={[
-          ["The electorate", "Cardinals under the age of eighty — 133 of them in 2025, appointed by previous popes and drawn from over seventy countries. Before 1059 popes were chosen by Roman clergy, mobs and emperors; In nomine Domini gave the choice to the cardinals, and Ubi periculum (1274) locked them in until they decided."],
-          ["The rules", "Two-thirds of the votes present, by secret written ballot in the Sistine Chapel, up to four ballots a day. Black smoke means no decision; white smoke, with the bells of St Peter's, means a pope. The elected man need not be a cardinal — though every one since 1378 has been."],
-          ["The pressure of the lock", "The word conclave means 'with a key'. The rules exist because medieval elections ran for years: Viterbo's magistrates removed the roof over the cardinals in 1270 and cut their food to bread and water. Modern conclaves feel the same pressure politely — none since 1831 has lasted a week."],
-          ["Why it belongs in this atlas", "It is the oldest continuously operating electoral system on earth, and the purest counter-example: a real election with no electorate to persuade beyond the room itself. Its history — vetoes by kings, factions of crowns, schisms with three simultaneous winners — is electoral politics distilled."],
+          ["The electorate", "Cardinals under the age of eighty, 133 of them in 2025, appointed by previous popes and drawn from over seventy countries. Before 1059 popes were chosen by Roman clergy, mobs and emperors; In nomine Domini gave the choice to the cardinals, and Ubi periculum (1274) locked them in until they decided."],
+          ["The rules", "Two-thirds of the votes present, by secret written ballot in the Sistine Chapel, up to four ballots a day. Black smoke means no decision; white smoke, with the bells of St Peter's, means a pope. The elected man need not be a cardinal, though every one since 1378 has been."],
+          ["The pressure of the lock", "The word conclave means 'with a key'. The rules exist because medieval elections ran for years: Viterbo's magistrates removed the roof over the cardinals in 1270 and cut their food to bread and water. Modern conclaves feel the same pressure politely: none since 1831 has lasted a week."],
+          ["Why it belongs in this atlas", "It is the oldest continuously operating electoral system on earth, and the purest counter-example: a real election with no electorate to persuade beyond the room itself. Its history, vetoes by kings, factions of crowns, schisms with three simultaneous winners, is electoral politics distilled."],
         ]}
       />
 

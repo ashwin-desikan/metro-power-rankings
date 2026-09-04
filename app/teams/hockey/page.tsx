@@ -12,7 +12,7 @@ export const dynamicParams = false;
 const PATH = "/teams/hockey";
 const TITLE = "International Ice Hockey";
 const DESC =
-  "National-team ice hockey: every Olympic podium since 1920 (the ultimate trophy), the Canada Cup and World Cup of Hockey, and the annual IIHF World Championship — with Soviet and Czechoslovak lineages folded into modern nations.";
+  "National-team ice hockey: every Olympic podium since 1920 (the ultimate trophy), the Canada Cup and World Cup of Hockey, and the annual IIHF World Championship, with Soviet and Czechoslovak lineages folded into modern nations.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -63,8 +63,8 @@ export default function HockeyHubPage() {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">International Ice Hockey</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          The national-team game: every Olympic podium since 1920 — the sport&apos;s
-          ultimate trophy — alongside the Canada Cup and World Cup of Hockey and the
+          The national-team game: every Olympic podium since 1920, the sport&apos;s
+          ultimate trophy, alongside the Canada Cup and World Cup of Hockey and the
           annual IIHF World Championship. Soviet and Czechoslovak lineages fold into
           their modern successors, attributed per edition.
         </p>

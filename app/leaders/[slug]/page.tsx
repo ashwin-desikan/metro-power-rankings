@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const e = await getEntity(slug);
   if (!e) return {};
-  const title = `${e.name} — Leadership History`;
+  const title = `${e.name}: Leadership History`;
   const desc = e.current
     ? `Every recorded holder of ${e.name}'s highest offices, through ${e.current.name} (${e.current.role}) today.`
     : `Every recorded holder of ${e.name}'s highest offices.`;
@@ -103,7 +103,7 @@ export default async function LeaderProfilePage({ params }: { params: Promise<{ 
           {byRole.size} office{byRole.size === 1 ? "" : "s"}
           {e.current ? (
             <>
-              {" — led today by "}
+              {", led today by "}
               <span className="text-[var(--text)] font-semibold">{e.current.name}</span> ({e.current.role}
               {e.current.since ? `, since ${e.current.since}` : ""})
               {e.current.second ? (

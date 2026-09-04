@@ -14,7 +14,7 @@ export const dynamicParams = false;
 const PATH = "/teams/wnational";
 const TITLE = "Women's International";
 const DESC =
-  "Women's national-team football in one place: the World Cup, Olympic football, the UEFA Women's Euros, and the Finalissima — every final and an all-time honour table across the lot.";
+  "Women's national-team football in one place: the World Cup, Olympic football, the UEFA Women's Euros, and the Finalissima: every final and an all-time honour table across the lot.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -112,7 +112,7 @@ export default function WomensInternationalPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Women&apos;s International</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The women&apos;s national-team game in one place: the World Cup, Olympic football, the
-          UEFA Women&apos;s Euros, and the Finalissima — every final and an all-time honour table
+          UEFA Women&apos;s Euros, and the Finalissima: every final and an all-time honour table
           across the lot. For women&apos;s club competitions, see{" "}
           <Link href="/teams/wfootball" className="underline hover:text-[var(--accent)]">Women&apos;s Club</Link>.
         </p>
@@ -421,7 +421,7 @@ export default function WomensInternationalPage() {
           </p>
           <div className="rounded-xl border p-4" style={card}>
             <div className="text-sm">
-              <span className="font-semibold tabular-nums" style={mono}>{fin.finals[0].year}</span>{" — "}
+              <span className="font-semibold tabular-nums" style={mono}>{fin.finals[0].year}</span>{": "}
               <span className="font-semibold" style={{ color: "#d4af37" }}>{nationLink(fin.finals[0].champion)}</span>
               <span className="text-xs text-[var(--text-muted)]"> bt {nationLink(fin.finals[0].runner_up)} {fin.finals[0].score}</span>
             </div>
