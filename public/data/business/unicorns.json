@@ -1,7 +1,7 @@
 {
  "meta": {
-  "as_of": "2026-08-29",
-  "generated_at": "2026-08-29T18:24:09Z",
+  "as_of": "2026-09-05",
+  "generated_at": "2026-09-05T09:01:13Z",
   "unicorns": 1397,
   "graduated": 7,
   "private": 372
@@ -15386,7 +15386,7 @@
    "investors": "Durable Capital Partners, Adjacent, Creator Partners",
    "metro": "Milan",
    "metroSlug": "milan",
-   "publicCap": 27689209856.0
+   "publicCap": 25141981184.0
   },
   {
    "name": "Navan",
@@ -15398,7 +15398,7 @@
    "investors": "Andreessen Horowitz, Lightspeed Venture Partners, Zeev Ventures",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 7248440832.0
+   "publicCap": 7065322496.0
   },
   {
    "name": "Netskope",
@@ -15410,7 +15410,7 @@
    "investors": "Lightspeed Venture Partners, Social Capital, Accel",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 6095207936.0
+   "publicCap": 5695712768.0
   },
   {
    "name": "HeartFlow",
@@ -15422,7 +15422,7 @@
    "investors": "BlueCross BlueShield Venture Partners, US Venture Partners",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 4154643968.0
+   "publicCap": 4252901632.0
   },
   {
    "name": "Firefly Aerospace",
@@ -15434,7 +15434,7 @@
    "investors": "Noosphere Ventures, RPM Ventures, SMS Capital Investment",
    "metro": "Austin",
    "metroSlug": "austin",
-   "publicCap": 3559022592.0
+   "publicCap": 3627658496.0
   },
   {
    "name": "Ionic Digital",
@@ -15446,7 +15446,7 @@
    "investors": "Attestor, Citadel, Oaktree Capital Management",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 3203346944.0
+   "publicCap": 3427358720.0
   },
   {
    "name": "Mercor",
@@ -15458,7 +15458,7 @@
    "investors": "Felicis, Benchmark",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 61810153.0
+   "publicCap": 60565164.0
   }
  ],
  "private": [
@@ -16404,8 +16404,8 @@
    "name": "Ashley Furniture Industries",
    "cap": 32100000000.0,
    "country": "United States",
-   "metro": null,
-   "metroSlug": ""
+   "metro": "Winona",
+   "metroSlug": "winona"
   },
   {
    "name": "Republic National Distributing Company",
@@ -17573,15 +17573,15 @@
    "name": "Rosen's Diversified",
    "cap": 9300000000.0,
    "country": "United States",
-   "metro": null,
-   "metroSlug": ""
+   "metro": "Fairmont (MN)",
+   "metroSlug": "fairmont-mn"
   },
   {
    "name": "Simmons Foods",
    "cap": 9300000000.0,
    "country": "United States",
-   "metro": null,
-   "metroSlug": ""
+   "metro": "Fayetteville",
+   "metroSlug": "fayetteville"
   },
   {
    "name": "Trammo",

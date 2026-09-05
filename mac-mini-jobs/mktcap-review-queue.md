@@ -1,13 +1,3 @@
-# mktcap-refresh review queue -- 2026-08-29
+# mktcap-refresh review queue -- 2026-09-05
 # Overwritten every run. 'none' below means nothing needs review this week.
-#
-# CLOSED 2026-08-29: all 22 companies from the 09:02Z run's ntfy alert are
-# now mapped in mktcap_geo. 20 via claude-researched pass (sourced against
-# official company sites / SEC EDGAR / exchange filings, checked against
-# mktcap_valid_metros + existing satellite-city precedent). Final 2 ruled
-# by Ashwin: JustSystems Corporation [4686.T] -> Tokyo (operational HQ over
-# the Tokushima legal/registered address); First Breach Inc. [FBDT] ->
-# Washington-Baltimore (Hagerstown MD folded into the broader Census CSA
-# definition despite being ~75mi from DC/Baltimore proper). Invariant
-# re-checked clean: 0 mapped metros outside mktcap_valid_metros.
-- METRO QUEUE (new, unmapped — for Ashwin): none
+- METRO QUEUE (unmapped — for Ashwin): Boehringer Ingelheim [Boehringer Ingelheim] (Germany), Dot Foods [Dot Foods] (United States), Chaozhou Three-Circle [300408.SZ] (China), Zangge Mining Company [000408.SZ] (China), Arctic Slope Regional Corporation [Arctic Slope Regional Corporation] (United States), The Yates Companies [The Yates Companies] (United States), Anhui Conch Cement [600585.SS] (China), Chifeng Jilong Gold Mining [600988.SS] (China), Tongling Nonferrous Metals Group Co.,Ltd. [000630.SZ] (China), Pershing Square Holdings [PSHD.L] (United States), Jack Henry &amp; Associates [JKHY] (United States), Petro Rabigh [2380.SR] (Saudi Arabia), DigiKey [DigiKey] (United States), Southern Tire Mart [Southern Tire Mart] (United States), Zhaojin Mining Industry Company [1818.HK] (China), AL Sydbank A/S [ALSYDB.CO] (Denmark), Mohawk Industries [MHK] (United States), Life Care Centers of America [Life Care Centers of America] (United States), Hualu Hengsheng [600426.SS] (China), Oil India [OIL.NS] (India), SalMar ASA [SALM.OL] (Norway), St. James's Place [STJ.L] (United Kingdom), Swissquote [SQN.SW] (Switzerland), Empire Company [EMP-A.TO] (Canada), Haworth [Haworth] (United States), The Gunma Bank [8334.T] (Japan), Rainbow Robotics [277810.KQ] (South Korea), Compagnie de l'Odet [ODET.PA] (France), Andersen Group [ANDG] (United States), Glanbia plc [GL9.IR] (Ireland), United Internet [UTDI.F] (Germany), Bechtle [BC8.F] (Germany), Xinjiang Daqo New Energy Co.,Ltd. [688303.SS] (China), Granite Construction [GVA] (United States), Garrett Motion [GTX] (Switzerland), INFICON [IFCN.SW] (Switzerland), Formosa Sumco Technology [3532.TW] (Taiwan), Gentex [GNTX] (United States), 1&1 [1U1.DE] (Germany), BRP (Bombardier Recreational Products) [DOO] (Canada)
