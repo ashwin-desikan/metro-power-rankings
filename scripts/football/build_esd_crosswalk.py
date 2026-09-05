@@ -39,8 +39,12 @@ METROS = os.path.join(ROOT, "public", "data", "metros.json")
 LEDGERS = os.path.join(ROOT, "public", "data", "football", "expectation", "intl")
 OUT = os.path.join(HERE, "esd-club-crosswalk.json")
 
+# slug -> the country name the site club index uses. England is here for
+# build_club_value.py, which resolves against the same index; the ledger loop
+# below iterates LEDGER_COUNTRIES, not this.
 COUNTRY = {"spain": "Spain", "italy": "Italy", "germany": "Germany",
-           "france": "France", "holland": "Netherlands"}
+           "france": "France", "holland": "Netherlands", "england": "England"}
+LEDGER_COUNTRIES = ("spain", "italy", "germany", "france", "holland")
 
 # Tokens that identify a legal form, a founding year or a sponsor, never a club.
 NOISE = {
@@ -354,7 +358,7 @@ def main():
         metro_slug_by_name.setdefault((r.get("country"), r.get("name")), slug)
 
     out, stats, pending = {}, defaultdict(int), defaultdict(list)
-    for cs in COUNTRY:
+    for cs in LEDGER_COUNTRIES:
         p = json.load(open(os.path.join(LEDGERS, "%s.json" % cs), encoding="utf-8"))
         for cl in p["clubs"]:
             name = cl["club"]

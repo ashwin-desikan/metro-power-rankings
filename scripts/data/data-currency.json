@@ -161,6 +161,13 @@
       "file": "public/data/football/expectation/intl/index.json",
       "maxAgeDays": 420,
       "why": "engsoccerdata ships one batch a season, so the ledger for Spain, Italy, Germany, France and the Netherlands is only as current as the last annual pull into data/football/esd/."
+    },
+    {
+      "key": "club-value",
+      "label": "Club squad market value, six leagues",
+      "file": "public/data/football/value/index.json",
+      "maxAgeDays": 120,
+      "why": "Transfermarkt reprices in waves each December and June with continuous revaluation between, so a corpus more than four months old is missing a repricing. The upstream transfermarkt-datasets pipeline has been paused since July 2026; when this goes overdue that is the reason to check."
     }
   ]
 }
