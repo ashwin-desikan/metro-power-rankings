@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-05T07:30:15.448225+00:00",
+  "generated_at": "2026-09-05T09:06:28.631319+00:00",
   "jobs": [
-    {
-      "id": "mktcap-refresh",
-      "label": "Company market caps",
-      "schedule_text": "Sat at 09:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "09:00"
-      ],
-      "weekdays": [
-        6
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T09:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-29",
-        "status": "ok",
-        "slot": "2026-08-29T09:00:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -421,6 +401,26 @@
         "date": "2026-09-04",
         "status": "ok",
         "slot": "2026-09-04T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "mktcap-refresh",
+      "label": "Company market caps",
+      "schedule_text": "Sat at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        6
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-12T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T09:00:00+00:00"
       }
     },
     {
