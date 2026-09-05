@@ -53,10 +53,13 @@ run_soft() {
   note "step: $label (timeout ${step_timeout}s)"
   "$@" &
   local pid=$!
+  # Redirected: killing $watcher reaps the subshell but not the sleep it
+  # forked, and an orphan still holding this pipe keeps the dispatcher's
+  # capture_output read blocked until the full timeout elapses.
   ( sleep "$step_timeout"
     if kill -0 "$pid" 2>/dev/null; then
       kill -TERM "$pid" 2>/dev/null; sleep 3; kill -KILL "$pid" 2>/dev/null
-    fi ) &
+    fi ) >/dev/null 2>&1 &
   local watcher=$!
   if wait "$pid" 2>/dev/null; then
     kill "$watcher" 2>/dev/null; wait "$watcher" 2>/dev/null
