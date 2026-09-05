@@ -1,13 +1,153 @@
 {
-  "generatedAt": "2026-09-04",
+  "generatedAt": "2026-09-05",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-05",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "b4ad0e3be"
+    },
     {
       "date": "2026-09-04",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "b19ff7d46"
+      "text": "Data refreshed — Football, Basketball, Elections, AFL, and 3 more.",
+      "commit": "420298065"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": null,
+      "text": "The FIBA women's loop closes, the pasted rankings become data, and five weights move.",
+      "commit": "17e1c6f94"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Motorsport counts the whole podium, and the thumb comes off the scale.",
+      "commit": "d9158468c"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": null,
+      "text": "The women's ice hockey worlds, real women's rankings, and gymnastics at 0.75.",
+      "commit": "eacae17ea"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": null,
+      "text": "Swimming leaves the bare Olympic default at 0.5 for 0.75.",
+      "commit": "6fd996ea7"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Road cycling becomes a pillar, NASCAR rejoins motorsport, women's ice hockey splits out.",
+      "commit": "292c69bcc"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "In-cell bars go, and the Cup by sport gains a second axis.",
+      "commit": "a7cc5d908"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Motorsport widens to six championships, and two disciplines rejoin their sports.",
+      "commit": "d46c6813c"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Release 1a, motorsport enters the Cup as a bonus rather than a pillar.",
+      "commit": "42706ee2d"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "The Cup's sport filters overlap instead of partitioning.",
+      "commit": "1e8a9808c"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "The by-sport board gains national sports and a filter row.",
+      "commit": "8d505248c"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "The Zone Zero Cup reads by sport as well as by nation.",
+      "commit": "3bb7965c3"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": null,
+      "text": "Icons on the menu headings and lists that had none.",
+      "commit": "92b77e1d2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Order",
+      "text": "The Order pages join the house skeleton, and a flat sparkline stops drawing.",
+      "commit": "3c5992116"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "new-hub",
+      "hub": "Order",
+      "text": "New hub: Order.",
+      "commit": "68ba461a0"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Multi-book meta-market for NFL and CFB, per-book house effects.",
+      "commit": "65183ebe7"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Stop presenting preseason records as the 2026 season.",
+      "commit": "c7487ffa7"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Show the four books, open the Champions League slate, archive played picks.",
+      "commit": "3c434fdb7"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "In-cell bars on the four boards that still had none, and the MLB pennant header.",
+      "commit": "337418799"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "hub",
+      "hub": "About",
+      "text": "Copy density pass, in-cell bars, sparklines, design standards.",
+      "commit": "2e21b1cf3"
     },
     {
       "date": "2026-09-03",
@@ -4061,146 +4201,6 @@
       "hub": "Rankings",
       "text": "Restore formatDimensionName helper lost during prior recovery.",
       "commit": "c1b83d6a1"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "NFL polish: ISO dates on top games, franchise badges on metro pages, ETL candidate path for NFL_all_copy.xlsx.",
-      "commit": "a4693d31d"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "Fix Vercel build: remove duplicate StatCell, scope logoUrlFor NFT trace to public/data/nfl/logos/.",
-      "commit": "3f281ea78"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "NFL team pages: Top 12 games per franchise plus Top 50 all-time league table with decade filter, ranked by DU Game Score.",
-      "commit": "f129fda51"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "NFL team pages v1: index, per-franchise pages, and historical index with the Pottsville stolen-title treatment.",
-      "commit": "0b85edd8b"
-    },
-    {
-      "date": "2026-05-10",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Boundary expansion: 498 new polygons across Brazil, China, Switzerland, Australia, Austria, South Korea.",
-      "commit": "6aff300fa"
-    },
-    {
-      "date": "2026-05-10",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Football clubs render as Major League markers; FootballClub_Data lat/lng backfill.",
-      "commit": "400bcdd15"
-    },
-    {
-      "date": "2026-05-10",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Populations.",
-      "commit": "c545b1990"
-    },
-    {
-      "date": "2026-05-10",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Workbook sync 2026-05-10: Armidale + Udupi, 20 new polygons, ETL refresh.",
-      "commit": "bbfba6c57"
-    },
-    {
-      "date": "2026-05-09",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Data refresh + university markers on metro maps, ETL university lat/lng.",
-      "commit": "0b1957d9c"
-    },
-    {
-      "date": "2026-05-09",
-      "category": "hub",
-      "hub": null,
-      "text": "Quiz V1 data layer: forward queue generator, render module, CI guard, ETL hook.",
-      "commit": "b8ce97161"
-    },
-    {
-      "date": "2026-05-09",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "/updates: 2026-05-09 - add internal entry for backlog reconciliation, news peg watchlist, GBA audit.",
-      "commit": "37c6f8f48"
-    },
-    {
-      "date": "2026-05-09",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "/updates: 2026-05-09 - add Substack auto-sync to today's entry.",
-      "commit": "e341f8df0"
-    },
-    {
-      "date": "2026-05-09",
-      "category": "hub",
-      "hub": null,
-      "text": "Featured Articles: drive home-page strip from Substack RSS + manual rebuild helper.",
-      "commit": "c41285a17"
-    },
-    {
-      "date": "2026-05-09",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Frozen Conurbations badge plus Greying Power Substack assets.",
-      "commit": "e6ae615a8"
-    },
-    {
-      "date": "2026-05-09",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Data refresh + UI polish across rankings, matchups, compare, and state/map components.",
-      "commit": "3025614db"
-    },
-    {
-      "date": "2026-05-08",
-      "category": "fix",
-      "hub": "Release Notes",
-      "text": "Fix /updates brevity violation on 2026-05-08 entry.",
-      "commit": "956895f35"
-    },
-    {
-      "date": "2026-05-08",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Boundary expansion: 43 new countries, 555 metros gain real polygons.",
-      "commit": "8cfef5523"
-    },
-    {
-      "date": "2026-05-07",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Promote three OEGCI-inspired archetype badges to live.",
-      "commit": "3c1c10a49"
-    },
-    {
-      "date": "2026-05-07",
-      "category": "hub",
-      "hub": "Methodology",
-      "text": "Add peer-index comparison to /methodology.",
-      "commit": "f61989771"
-    },
-    {
-      "date": "2026-05-06",
-      "category": "hub",
-      "hub": "Countries",
-      "text": "Wire JP+NL boundary builder; absorb 2026-05-06 xlsx; country-map selector below map.",
-      "commit": "174eb279a"
     }
   ]
 }
