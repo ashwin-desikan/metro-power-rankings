@@ -65,7 +65,20 @@ it to be re-reviewed forever:
     update mktcap_geo set mapped_by='no-metro', mapped_at=current_date
       where symbol='XYZ';   -- metro stays null
 `no-metro` is the queue's terminal state and build_merged.py drops those rows
-from it. It is a decision, not a guess: the never-guesses rule is about the
+from it.
+
+There is a third state for a different situation. When the HQ is in a real city
+that `mktcap_valid_metros` simply does not list yet, that is a gap in the metro
+list, not a fact about the company, and `no-metro` would make it permanent:
+    update mktcap_geo set mapped_by='metro-gap', mapped_at=current_date
+      where symbol='XYZ';   -- metro stays null
+`metro-gap` is a HOLD, not a resolution. It leaves the weekly queue like
+`no-metro` but is counted separately (`held-metro-gap=` in METRO QUEUE COUNTS)
+and named on its own report line, so it can be re-entered the day the metro is
+added. Used 2026-09-05 for Chaozhou Three-Circle (Chaozhou ~2.5M), Chifeng
+Jilong Gold (Chifeng) and Tongling Nonferrous (Tongling) -- all absent from the
+list while comparable Huainan and Bengbu are in it. **Adding metro areas is its
+own decision with its own criteria; do not add one just to clear a company.** It is a decision, not a guess: the never-guesses rule is about the
 pipeline inventing a metro, not about a human recording that none exists. Leave
 `auto-stub`/`seed` in place when you simply have not looked yet.
 

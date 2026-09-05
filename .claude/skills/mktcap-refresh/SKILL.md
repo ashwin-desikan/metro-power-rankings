@@ -92,7 +92,10 @@ separate subprocess that aborts the whole run non-zero on failure.
      scripts/mktcap/README.md. Assigning one is a direct SQL `update mktcap_geo set metro=...`
      via the Supabase MCP, not a script. When you have looked and no valid
      metro applies, set `mapped_by='no-metro'` (metro stays null) — that is the
-     queue's terminal state and drops the row from every future report.
+     queue's terminal state and drops the row from every future report. If the
+     HQ city is real but missing from `mktcap_valid_metros`, use `metro-gap`
+     instead: a hold, counted separately, re-entered when the metro is added.
+     Never add a metro area just to clear a company.
    - "possible ticker renames (REVIEW, not auto-applied)" — flag these to
      the user; they are not safe to apply without confirmation.
    - Point out `out/mktcap_export.csv` exists but has NOT been imported into

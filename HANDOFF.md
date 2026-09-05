@@ -9898,3 +9898,35 @@ some entries are polycentric regions -- Rhine-Neckar and Rhine-Ruhr say so,
 The guardrail is written down with it: this applies only where the metro
 genuinely is a region. Monett, Missouri stays a `no-metro` at ~60km from
 Springfield (MO), because Springfield is a city metro and Monett is not in it.
+
+### 10. A third queue state, because "not yet" is not "never"
+
+Ashwin: adding metro areas needs its own decisioning and is not happening soon.
+That left the three Chinese companies from section 8 nowhere to sit -- all are
+above the $10B notable floor, so they would have nagged in the weekly alert
+indefinitely, which is exactly the failure section 7 set out to fix.
+
+New state `mapped_by='metro-gap'`, applied to Chaozhou Three-Circle
+[300408.SZ] $32.3B, Chifeng Jilong Gold [600988.SS] $13.0B and Tongling
+Nonferrous [000630.SZ] $12.8B.
+
+It is deliberately NOT `no-metro`. The two look identical in the table -- metro
+null, out of the queue -- and mean opposite things:
+
+| state | meaning | ends when |
+|---|---|---|
+| `no-metro` | reviewed, no metro will ever apply | never; terminal |
+| `metro-gap` | reviewed, HQ city is real but not in `mktcap_valid_metros` | the metro area is added |
+
+`metro-gap` rows are **counted separately** (`held-metro-gap=` in METRO QUEUE
+COUNTS) and **named on their own report line**, because a hold nobody can see is
+a hold that never gets lifted. Migration
+`document_metro_gap_hold_state_on_mktcap_geo` puts both states on the column;
+README and the skill carry the same warning: **never add a metro area just to
+clear a company.**
+
+Verified on the stubbed harness: a metro-gap row is absent from unmapped,
+notable and the standing list, present in the counts and on the held line.
+
+Notable queue is now **1**: Pershing Square Holdings, still awaiting a policy on
+fund vehicles versus their managers.

@@ -28,6 +28,16 @@ NOTABLE_CAP_USD = 10e9   # 14 companies today; below this is a small-cap tail
 # pipeline inventing a metro, not about a human recording that none applies.
 NO_METRO = "no-metro"
 
+# HELD, not resolved. The company's HQ is known and sits in a real city that is
+# simply absent from mktcap_valid_metros -- Chaozhou (~2.5M), Chifeng, Tongling.
+# The absence is patchy rather than principled (Huainan and Bengbu are listed,
+# Tongling and Anqing are not; Shantou is, Chaozhou is not), so 'no-metro' would
+# encode a gap in the metro list as a permanent fact about the company. Adding
+# metro areas is its own decision with its own criteria and is not on the near
+# horizon, so these sit out of the weekly alert but stay COUNTED and named in
+# the report, ready to re-enter the queue the day their metro is added.
+METRO_GAP = "metro-gap"
+
 TODAY = datetime.date.today().isoformat()
 
 def load_sources():
@@ -135,6 +145,7 @@ def main(write=False):
 
     geo_map = {g["symbol"]: g["metro"] for g in geo}
     no_metro = {g["symbol"] for g in geo if (g.get("mapped_by") or "") == NO_METRO}
+    metro_gap = {g["symbol"] for g in geo if (g.get("mapped_by") or "") == METRO_GAP}
     cur_ids = {c["company_id"] for c in current}
     active_ids = {c["company_id"] for c in current if c["is_active"]}
     new_ids = [m for m in merged if m["company_id"] not in cur_ids]
@@ -165,7 +176,9 @@ def main(write=False):
     # Reviewed-and-no-metro drops out of the queue for good; everything else
     # without a metro stays in it, however long it has been there.
     still_unmapped = [m for m in merged
-                      if not geo_map.get(m["symbol"]) and m["symbol"] not in no_metro]
+                      if not geo_map.get(m["symbol"])
+                      and m["symbol"] not in no_metro and m["symbol"] not in metro_gap]
+    held = [m for m in merged if m["symbol"] in metro_gap]
     new_id_set = {m["company_id"] for m in new_ids}
     queue_new = [m for m in still_unmapped if m["company_id"] in new_id_set]
     queue_notable = [m for m in still_unmapped
@@ -190,7 +203,11 @@ def main(write=False):
            # say how big the backlog is instead of showing forty of it.
            f"- METRO QUEUE COUNTS: unmapped={len(still_unmapped)} new={len(queue_new)} "
            f"notable={len(queue_notable)} (>=${NOTABLE_CAP_USD/1e9:.0f}B) "
-           f"resolved-no-metro={len(no_metro)}",
+           f"resolved-no-metro={len(no_metro)} held-metro-gap={len(metro_gap)}",
+           # Named, not just counted: a hold that nobody can see is a hold that
+           # never gets lifted when the metro list finally moves.
+           f"- METRO QUEUE (held, awaiting a metro area): " +
+           (", ".join(f'{m["name"]} [{m["symbol"]}] {m["country"]}' for m in held[:40]) or "none"),
            f"- METRO QUEUE (new this run): " +
            (", ".join(f'{m["name"]} [{m["symbol"]}] ({m["country"]})' for m in queue_new[:40]) or "none"),
            f"- METRO QUEUE (notable, unmapped): " +
