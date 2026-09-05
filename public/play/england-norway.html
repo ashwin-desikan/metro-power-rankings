@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#5FC8E8">
+<meta name="description" content="A cartoon football quiz about England v Norway.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Alex's Big Football Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Luckiest+Guy&display=swap">
+
+<style>
+  :root {
+    --sky:      #5FC8E8;
+    --sky-deep: #33A7CC;
+    --grass:    #4CAF52;
+    --grass-dk: #2F7D3A;
+    --cream:    #FFF7E8;
+    --sun:      #FFC93C;
+    --sun-dk:   #E8A317;
+    --red:      #E8453C;
+    --red-dk:   #B9302A;
+    --navy:     #1D2B3A;
+    --purple:   #7B5EA7;
+    --ink:      #12202E;
+
+    --toon:  "Luckiest Guy", "Comic Sans MS", cursive;
+    --round: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+
+    --stroke: 4px solid var(--navy);
+    --pop: 0 5px 0 var(--navy);
+  }
+
+  body {
+    background: var(--sky);
+    background-image:
+      radial-gradient(circle at 12% 14%, rgba(255,255,255,.85) 0 42px, transparent 43px),
+      radial-gradient(circle at 18% 12%, rgba(255,255,255,.85) 0 34px, transparent 35px),
+      radial-gradient(circle at 86% 20%, rgba(255,255,255,.7) 0 38px, transparent 39px),
+      radial-gradient(circle at 92% 17%, rgba(255,255,255,.7) 0 28px, transparent 29px),
+      linear-gradient(var(--sky) 0%, var(--sky) 55%, var(--grass) 55%, var(--grass-dk) 100%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--round);
+    font-size: 1.05rem;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .shell {
+    max-width: 34rem;
+    margin: 0 auto;
+    padding: 1.4rem 1rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  /* ---------- banner ---------- */
+
+  .banner {
+    background: var(--cream);
+    border: var(--stroke);
+    border-radius: 26px;
+    box-shadow: var(--pop);
+    padding: 1.1rem 1.2rem 1.3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  h1 {
+    font-family: var(--toon);
+    font-size: clamp(2rem, 8.5vw, 2.9rem);
+    line-height: 1;
+    letter-spacing: .01em;
+    margin: 0;
+    color: var(--red);
+    text-shadow: 3px 3px 0 var(--navy);
+    text-wrap: balance;
+  }
+  h1 span { color: var(--purple); display: block; }
+
+  .sub {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--navy);
+    max-width: 26ch;
+  }
+
+  .players { width: 100%; max-width: 21rem; height: auto; display: block; }
+
+  /* ---------- big buttons ---------- */
+
+  .big {
+    font-family: var(--toon);
+    font-size: 1.5rem;
+    letter-spacing: .02em;
+    color: #fff;
+    background: var(--red);
+    border: var(--stroke);
+    border-radius: 999px;
+    box-shadow: var(--pop);
+    padding: .75rem 2rem;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .big:hover { background: var(--red-dk); }
+  .big:active { transform: translateY(5px); box-shadow: 0 0 0 var(--navy); }
+  .big.green { background: var(--grass); }
+  .big.green:hover { background: var(--grass-dk); }
+
+  :focus-visible { outline: 4px solid var(--purple); outline-offset: 3px; }
+
+  /* ---------- scoreboard ---------- */
+
+  .scorebar {
+    background: var(--navy);
+    border: var(--stroke);
+    border-radius: 18px;
+    box-shadow: var(--pop);
+    padding: .6rem .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+    color: #fff;
+  }
+  .scorebar .label {
+    font-family: var(--toon);
+    font-size: 1rem;
+    letter-spacing: .04em;
+    color: var(--sun);
+  }
+  .balls { display: flex; gap: 5px; flex-wrap: wrap; }
+  .balls i {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: #3B4B5C;
+    border: 2px solid #0C1723;
+    display: block;
+  }
+  .balls i.on  { background: var(--sun); }
+  .balls i.off { background: var(--red); }
+  .tally {
+    font-family: var(--toon);
+    font-size: 1.5rem;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    flex: none;
+  }
+
+  /* ---------- question card ---------- */
+
+  .card {
+    background: var(--cream);
+    border: var(--stroke);
+    border-radius: 26px;
+    box-shadow: var(--pop);
+    padding: 1.2rem 1.1rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .scene { display: flex; justify-content: center; }
+  .scene svg { width: 100%; max-width: 15rem; height: auto; }
+
+  .q {
+    font-family: var(--toon);
+    font-size: clamp(1.35rem, 5.5vw, 1.7rem);
+    line-height: 1.2;
+    text-align: center;
+    margin: 0;
+    color: var(--navy);
+    text-wrap: balance;
+  }
+
+  .opts { display: flex; flex-direction: column; gap: .7rem; }
+
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: .85rem;
+    width: 100%;
+    text-align: left;
+    font-family: var(--round);
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--navy);
+    background: #fff;
+    border: var(--stroke);
+    border-radius: 18px;
+    box-shadow: 0 4px 0 var(--navy);
+    padding: .7rem .9rem;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .opt:hover:not(:disabled) { background: var(--sun); }
+  .opt:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 0 0 var(--navy); }
+  .opt:disabled { cursor: default; }
+  .opt .pic { width: 46px; height: 34px; flex: none; }
+  .opt .pic svg, .opt .pic img { display: block; width: 100%; height: 100%; }
+  .opt .num {
+    font-family: var(--toon);
+    font-size: 1.7rem;
+    width: 46px;
+    text-align: center;
+    flex: none;
+    color: var(--purple);
+  }
+  .opt.right { background: #B9F0C4; }
+  .opt.wrong { background: #FFC7C3; }
+  .opt.dim { opacity: .5; }
+
+  .mark {
+    margin-left: auto;
+    font-family: var(--toon);
+    font-size: 1.4rem;
+    flex: none;
+  }
+  .opt.right .mark { color: var(--grass-dk); }
+  .opt.wrong .mark { color: var(--red-dk); }
+
+  /* ---------- feedback ---------- */
+
+  .say {
+    border: var(--stroke);
+    border-radius: 18px;
+    padding: .85rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    background: #fff;
+  }
+  .say.good { background: #DDF7E2; }
+  .say.oops { background: #FFE7E5; }
+  .say h2 {
+    font-family: var(--toon);
+    font-size: 1.35rem;
+    margin: 0;
+    color: var(--grass-dk);
+  }
+  .say.oops h2 { color: var(--red-dk); }
+  .say p { margin: 0; font-weight: 500; line-height: 1.45; }
+
+  .foot { display: flex; justify-content: center; }
+
+  /* ---------- end screen ---------- */
+
+  .end { text-align: center; align-items: center; }
+  .end .trophy { width: 8rem; height: auto; }
+  .end .bigscore {
+    font-family: var(--toon);
+    font-size: 3.2rem;
+    line-height: 1;
+    margin: 0;
+    color: var(--purple);
+    text-shadow: 3px 3px 0 var(--navy);
+  }
+  .end .cheer {
+    font-family: var(--toon);
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--navy);
+    text-wrap: balance;
+  }
+  .end p.note { margin: 0; font-weight: 500; max-width: 30ch; }
+
+  /* ---------- confetti ---------- */
+
+  #confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 50;
+  }
+  .bit {
+    position: absolute;
+    width: 12px;
+    height: 16px;
+    border: 2px solid var(--navy);
+    border-radius: 3px;
+    animation: fall 1.5s linear forwards;
+  }
+  @keyframes fall {
+    from { transform: translateY(-40px) rotate(0deg); opacity: 1; }
+    to   { transform: translateY(105vh) rotate(540deg); opacity: 1; }
+  }
+
+  @keyframes pop {
+    0%   { transform: scale(.85); }
+    60%  { transform: scale(1.04); }
+    100% { transform: scale(1); }
+  }
+  .popin { animation: pop .3s ease-out both; }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+  }
+  .bob { animation: bob 2.4s ease-in-out infinite; transform-origin: 50% 100%; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .popin, .bob, .bit { animation: none; }
+    .big, .opt { transition: none; }
+    #confetti { display: none; }
+  }
+</style>
+
+</head>
+<body>
+
+<div id="confetti"></div>
+
+<main class="shell">
+
+  <div class="banner">
+    <svg class="players" viewBox="0 0 340 150" role="img" aria-label="Two cartoon footballers, one in England kit and one in Norway kit, with a football between them">
+      <ellipse cx="170" cy="141" rx="150" ry="9" fill="#2F7D3A" opacity=".25"/>
+      <!-- England player -->
+      <g class="bob">
+        <path d="M62 132 L52 132 L58 100 L72 100 Z" fill="#E8453C" stroke="#1D2B3A" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M96 132 L86 132 L80 100 L94 100 Z" fill="#E8453C" stroke="#1D2B3A" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="46" y="126" width="26" height="12" rx="6" fill="#1D2B3A"/>
+        <rect x="80" y="126" width="26" height="12" rx="6" fill="#1D2B3A"/>
+        <path d="M52 62 q22-12 44 0 l8 44 h-60 Z" fill="#FFFFFF" stroke="#1D2B3A" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M74 64 v42" stroke="#E8453C" stroke-width="7"/>
+        <path d="M56 84 h36" stroke="#E8453C" stroke-width="7"/>
+        <path d="M52 62 q22-12 44 0" fill="none" stroke="#1D2B3A" stroke-width="4"/>
+        <circle cx="74" cy="40" r="21" fill="#F2C39B" stroke="#1D2B3A" stroke-width="4"/>
+        <path d="M53 36 q21-24 42 0 q-8-10-21-10 t-21 10Z" fill="#6B4A2F" stroke="#1D2B3A" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="66" cy="42" r="3.2" fill="#1D2B3A"/>
+        <circle cx="82" cy="42" r="3.2" fill="#1D2B3A"/>
+        <path d="M66 50 q8 7 16 0" fill="none" stroke="#1D2B3A" stroke-width="3.5" stroke-linecap="round"/>
+      </g>
+      <!-- Ball -->
+      <g class="bob" style="animation-delay:-1.2s">
+        <circle cx="170" cy="112" r="24" fill="#FFFFFF" stroke="#1D2B3A" stroke-width="4"/>
+        <path d="M170 96 l13 9 -5 15 h-16 l-5-15 Z" fill="#1D2B3A"/>
+        <path d="M170 88 v8 M155 122 l-9 7 M185 122 l9 7" stroke="#1D2B3A" stroke-width="3.5" stroke-linecap="round"/>
+      </g>
+      <!-- Norway player -->
+      <g class="bob" style="animation-delay:-.6s">
+        <path d="M248 132 L238 132 L244 100 L258 100 Z" fill="#2C4B8C" stroke="#1D2B3A" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M282 132 L272 132 L266 100 L280 100 Z" fill="#2C4B8C" stroke="#1D2B3A" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="232" y="126" width="26" height="12" rx="6" fill="#1D2B3A"/>
+        <rect x="266" y="126" width="26" height="12" rx="6" fill="#1D2B3A"/>
+        <path d="M238 62 q22-12 44 0 l8 44 h-60 Z" fill="#E8453C" stroke="#1D2B3A" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M258 64 v42" stroke="#FFFFFF" stroke-width="9"/>
+        <path d="M242 84 h44" stroke="#FFFFFF" stroke-width="9"/>
+        <path d="M258 64 v42" stroke="#2C4B8C" stroke-width="4"/>
+        <path d="M242 84 h44" stroke="#2C4B8C" stroke-width="4"/>
+        <path d="M238 62 q22-12 44 0" fill="none" stroke="#1D2B3A" stroke-width="4"/>
+        <circle cx="260" cy="40" r="21" fill="#F7D3B0" stroke="#1D2B3A" stroke-width="4"/>
+        <path d="M239 36 q21-24 42 0 q-8-10-21-10 t-21 10Z" fill="#E8C25A" stroke="#1D2B3A" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="252" cy="42" r="3.2" fill="#1D2B3A"/>
+        <circle cx="268" cy="42" r="3.2" fill="#1D2B3A"/>
+        <path d="M252 50 q8 7 16 0" fill="none" stroke="#1D2B3A" stroke-width="3.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+
+    <h1>England <span>v Norway</span></h1>
+    <p class="sub" id="tagline">Eight questions about a very big football match. Ready?</p>
+    <button class="big green" id="kickoff">Play!</button>
+  </div>
+
+  <div class="scorebar" id="scorebar" hidden>
+    <span class="label">Score</span>
+    <span class="balls" id="balls"></span>
+    <span class="tally" id="tally">0</span>
+  </div>
+
+  <div class="card" id="quiz" hidden>
+    <div class="scene" id="scene"></div>
+    <h2 class="q" id="q"></h2>
+    <div class="opts" id="opts"></div>
+    <div class="say" id="say" hidden>
+      <h2 id="sayHead"></h2>
+      <p id="sayText"></p>
+    </div>
+    <div class="foot"><button class="big green" id="next" hidden>Next</button></div>
+  </div>
+
+  <div class="card end" id="end" hidden>
+    <svg class="trophy" viewBox="0 0 120 130" role="img" aria-label="Gold trophy">
+      <path d="M30 18h60v26a30 30 0 0 1-60 0Z" fill="#FFC93C" stroke="#1D2B3A" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M30 24H18a14 14 0 0 0 14 22" fill="none" stroke="#1D2B3A" stroke-width="5" stroke-linecap="round"/>
+      <path d="M90 24h12a14 14 0 0 1-14 22" fill="none" stroke="#1D2B3A" stroke-width="5" stroke-linecap="round"/>
+      <rect x="52" y="72" width="16" height="20" fill="#E8A317" stroke="#1D2B3A" stroke-width="5"/>
+      <rect x="34" y="92" width="52" height="14" rx="4" fill="#FFC93C" stroke="#1D2B3A" stroke-width="5"/>
+      <rect x="26" y="106" width="68" height="16" rx="5" fill="#E8A317" stroke="#1D2B3A" stroke-width="5"/>
+      <path d="M46 30l5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2Z" fill="#FFF7E8" stroke="#1D2B3A" stroke-width="3.5" stroke-linejoin="round"/>
+    </svg>
+    <p class="bigscore" id="bigscore">0 / 8</p>
+    <p class="cheer" id="cheer"></p>
+    <p class="note" id="endnote"></p>
+    <button class="big" id="again">Play again</button>
+  </div>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var ENG_FLAG = '<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff" stroke="#1D2B3A" stroke-width="4"/><rect x="24" width="12" height="40" fill="#E8453C"/><rect y="14" width="60" height="12" fill="#E8453C"/></svg>';
+  var NOR_FLAG = '<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#E8453C" stroke="#1D2B3A" stroke-width="4"/><rect x="16" width="12" height="40" fill="#fff"/><rect y="14" width="60" height="12" fill="#fff"/><rect x="19" width="6" height="40" fill="#2C4B8C"/><rect y="17" width="60" height="6" fill="#2C4B8C"/></svg>';
+
+  var SCENE = {
+    ball: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="46" fill="#fff" stroke="#1D2B3A" stroke-width="6"/><path d="M60 30l25 18-9 29H44l-9-29Z" fill="#1D2B3A"/><path d="M60 14v16M22 48l14 10M98 48l-14 10M36 106l8-14M84 106l-8-14" stroke="#1D2B3A" stroke-width="6" stroke-linecap="round"/></svg>',
+    goal: '<svg viewBox="0 0 160 110"><rect x="14" y="18" width="132" height="72" fill="#EAF6FF" stroke="#1D2B3A" stroke-width="6"/><path d="M34 18v72M56 18v72M78 18v72M100 18v72M122 18v72M14 38h132M14 58h132M14 78h132" stroke="#9BC2D8" stroke-width="3"/><circle cx="112" cy="66" r="17" fill="#fff" stroke="#1D2B3A" stroke-width="5"/><path d="M112 52l9 7-3 11h-12l-3-11Z" fill="#1D2B3A"/></svg>',
+    whistle: '<svg viewBox="0 0 140 110"><circle cx="52" cy="62" r="32" fill="#FFC93C" stroke="#1D2B3A" stroke-width="6"/><circle cx="52" cy="62" r="11" fill="#FFF7E8" stroke="#1D2B3A" stroke-width="5"/><path d="M80 44h44v26H84Z" fill="#FFC93C" stroke="#1D2B3A" stroke-width="6" stroke-linejoin="round"/><path d="M126 30l14-8M130 56h14M126 82l14 8" stroke="#1D2B3A" stroke-width="6" stroke-linecap="round"/></svg>',
+    clock: '<svg viewBox="0 0 120 120"><circle cx="60" cy="62" r="45" fill="#FFF7E8" stroke="#1D2B3A" stroke-width="6"/><path d="M60 34v28l20 12" fill="none" stroke="#E8453C" stroke-width="7" stroke-linecap="round"/><path d="M44 12h32M60 12v8" stroke="#1D2B3A" stroke-width="6" stroke-linecap="round"/></svg>',
+    boot:  '<svg viewBox="0 0 150 110"><path d="M18 30h44l16 26 40 8c10 2 16 10 16 20v10H18Z" fill="#E8453C" stroke="#1D2B3A" stroke-width="6" stroke-linejoin="round"/><path d="M18 84h116" stroke="#1D2B3A" stroke-width="6"/><circle cx="42" cy="98" r="6" fill="#1D2B3A"/><circle cx="70" cy="98" r="6" fill="#1D2B3A"/><circle cx="98" cy="98" r="6" fill="#1D2B3A"/><path d="M34 42l14 10M46 34l14 10" stroke="#FFF7E8" stroke-width="5" stroke-linecap="round"/></svg>',
+    shirt: '<svg viewBox="0 0 130 120"><path d="M40 18l25 10 25-10 28 18-14 22-12-6v56H38V52l-12 6-14-22Z" fill="#fff" stroke="#1D2B3A" stroke-width="6" stroke-linejoin="round"/><path d="M65 40v58M38 62h54" stroke="#E8453C" stroke-width="9"/><text x="65" y="92" font-family="Luckiest Guy, cursive" font-size="30" fill="#1D2B3A" text-anchor="middle">9</text></svg>'
+  };
+
+  /* Every fact below is real. Kept short and simple on purpose. */
+  var QUESTIONS = [
+    {
+      scene: "goal",
+      q: "In July 2026, England played Norway in the World Cup. Who won?",
+      kind: "flag",
+      opts: [
+        { label: "England", flag: ENG_FLAG, ok: true },
+        { label: "Norway",  flag: NOR_FLAG, ok: false }
+      ],
+      good: "Yes! England won 2 goals to 1.",
+      oops: "England won it, 2 goals to 1.",
+      more: "It was very close. Norway scored first!"
+    },
+    {
+      scene: "boot",
+      q: "Jude Bellingham scored for England that day. How many goals did he get?",
+      kind: "num",
+      unit: "goals",
+      opts: [ { label: "2", ok: true }, { label: "1", ok: false }, { label: "4", ok: false } ],
+      good: "Two goals! Both of England's goals were his.",
+      oops: "He scored 2. Both of England's goals!",
+      more: "One right before half time, and one in extra time."
+    },
+    {
+      scene: "clock",
+      q: "The score was 1 goal each. So what did the teams do?",
+      kind: "text",
+      opts: [
+        { label: "Played extra time", ok: true },
+        { label: "Went home", ok: false },
+        { label: "Started again tomorrow", ok: false }
+      ],
+      good: "Right! They played extra time, and Bellingham scored again.",
+      oops: "They played extra time. Then Bellingham scored again!",
+      more: "Extra time is 30 more minutes of football."
+    },
+    {
+      scene: "shirt",
+      q: "Erling Haaland is a famous striker. Which team does he play for?",
+      kind: "flag",
+      opts: [
+        { label: "Norway", flag: NOR_FLAG, ok: true },
+        { label: "England", flag: ENG_FLAG, ok: false }
+      ],
+      good: "Correct! Haaland plays for Norway.",
+      oops: "Haaland plays for Norway.",
+      more: "He plays his club football in England, though."
+    },
+    {
+      scene: "ball",
+      q: "A long time ago, England beat Norway 6 goals to 1. One player scored FOUR of them. How many is that out of six?",
+      kind: "num",
+      unit: "goals",
+      opts: [ { label: "4", ok: true }, { label: "2", ok: false }, { label: "6", ok: false } ],
+      good: "Four goals in one game! That player was Jimmy Greaves.",
+      oops: "It was 4 goals, all by Jimmy Greaves.",
+      more: "That was in 1966, the year England won the World Cup."
+    },
+    {
+      scene: "whistle",
+      q: "Norway scored a goal, but the referee said no. Why?",
+      kind: "text",
+      opts: [
+        { label: "A Norway player pushed someone", ok: true },
+        { label: "The ball was too fast", ok: false },
+        { label: "It started raining", ok: false }
+      ],
+      good: "Yes! It was a foul, so the goal did not count.",
+      oops: "A Norway player fouled an England player first.",
+      more: "The referee can take a goal away if there was a foul."
+    },
+    {
+      scene: "ball",
+      q: "England and Norway have played each other 13 times. How many times has Norway won?",
+      kind: "num",
+      unit: "times",
+      opts: [ { label: "2", ok: true }, { label: "9", ok: false }, { label: "6", ok: false } ],
+      good: "Just 2 wins for Norway. England have won 8!",
+      oops: "Norway have won only 2 times. England have won 8.",
+      more: "The other 3 games finished as a draw."
+    },
+    {
+      scene: "goal",
+      q: "The 2026 match was in Miami, in America. What was the final score?",
+      kind: "text",
+      opts: [
+        { label: "Norway 1 – England 2", ok: true },
+        { label: "Norway 3 – England 0", ok: false },
+        { label: "Norway 2 – England 2", ok: false }
+      ],
+      good: "That's it! Norway 1, England 2.",
+      oops: "It finished Norway 1, England 2.",
+      more: "Over 64,000 people were there watching."
+    }
+  ];
+
+  var order = [], idx = 0, score = 0, marks = [];
+
+  var el = {
+    banner: document.querySelector(".banner"),
+    tagline: document.getElementById("tagline"),
+    kickoff: document.getElementById("kickoff"),
+    scorebar: document.getElementById("scorebar"),
+    balls: document.getElementById("balls"),
+    tally: document.getElementById("tally"),
+    quiz: document.getElementById("quiz"),
+    scene: document.getElementById("scene"),
+    q: document.getElementById("q"),
+    opts: document.getElementById("opts"),
+    say: document.getElementById("say"),
+    sayHead: document.getElementById("sayHead"),
+    sayText: document.getElementById("sayText"),
+    next: document.getElementById("next"),
+    end: document.getElementById("end"),
+    bigscore: document.getElementById("bigscore"),
+    cheer: document.getElementById("cheer"),
+    endnote: document.getElementById("endnote"),
+    again: document.getElementById("again"),
+    confetti: document.getElementById("confetti")
+  };
+
+  function shuffle(list) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  for (var b = 0; b < QUESTIONS.length; b++) {
+    el.balls.appendChild(document.createElement("i"));
+  }
+
+  function paintBalls() {
+    var kids = el.balls.children;
+    for (var i = 0; i < kids.length; i++) {
+      kids[i].className = marks[i] === true ? "on" : marks[i] === false ? "off" : "";
+    }
+  }
+
+  function confetti() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var colors = ["#FFC93C", "#E8453C", "#4CAF52", "#7B5EA7", "#5FC8E8"];
+    for (var i = 0; i < 34; i++) {
+      var bit = document.createElement("div");
+      bit.className = "bit";
+      bit.style.left = Math.random() * 100 + "vw";
+      bit.style.background = colors[i % colors.length];
+      bit.style.animationDelay = (Math.random() * .35) + "s";
+      bit.style.animationDuration = (1.1 + Math.random() * .7) + "s";
+      el.confetti.appendChild(bit);
+      (function (node) {
+        setTimeout(function () { node.remove(); }, 2400);
+      })(bit);
+    }
+  }
+
+  function render() {
+    var q = QUESTIONS[order[idx]];
+    el.scene.innerHTML = SCENE[q.scene];
+    el.q.textContent = q.q;
+    el.opts.innerHTML = "";
+    el.say.hidden = true;
+    el.next.hidden = true;
+    el.tally.textContent = score;
+    paintBalls();
+
+    el.quiz.classList.remove("popin");
+    void el.quiz.offsetWidth;
+    el.quiz.classList.add("popin");
+
+    shuffle(q.opts).forEach(function (o) {
+      var btn = document.createElement("button");
+      btn.className = "opt";
+      btn.type = "button";
+
+      if (q.kind === "flag") {
+        var pic = document.createElement("span");
+        pic.className = "pic";
+        pic.innerHTML = o.flag;
+        btn.appendChild(pic);
+      } else if (q.kind === "num") {
+        var n = document.createElement("span");
+        n.className = "num";
+        n.textContent = o.label;
+        btn.appendChild(n);
+      }
+
+      var txt = document.createElement("span");
+      txt.textContent = q.kind === "num" ? q.unit : o.label;
+      btn.appendChild(txt);
+
+      var mark = document.createElement("span");
+      mark.className = "mark";
+      btn.appendChild(mark);
+
+      if (o.ok) btn.dataset.ok = "1";
+      btn.addEventListener("click", function () { answer(btn, o.ok, q); });
+      el.opts.appendChild(btn);
+    });
+  }
+
+  function answer(clicked, ok, q) {
+    var kids = el.opts.children;
+    for (var i = 0; i < kids.length; i++) {
+      kids[i].disabled = true;
+      kids[i].classList.add("dim");
+    }
+    clicked.classList.remove("dim");
+    clicked.classList.add(ok ? "right" : "wrong");
+    clicked.querySelector(".mark").textContent = ok ? "✓" : "✗";
+
+    if (!ok) {
+      for (var j = 0; j < kids.length; j++) {
+        if (kids[j] !== clicked && kids[j].dataset.ok === "1") {
+          kids[j].classList.remove("dim");
+          kids[j].classList.add("right");
+          kids[j].querySelector(".mark").textContent = "✓";
+        }
+      }
+    }
+
+    marks[idx] = ok;
+    if (ok) { score++; confetti(); }
+    el.tally.textContent = score;
+    paintBalls();
+
+    el.say.className = "say " + (ok ? "good" : "oops");
+    el.sayHead.textContent = ok ? "Nice one!" : "Good try!";
+    el.sayText.textContent = (ok ? q.good : q.oops) + " " + q.more;
+    el.say.hidden = false;
+    el.next.hidden = false;
+    el.next.textContent = idx === QUESTIONS.length - 1 ? "See my score" : "Next";
+    el.next.focus();
+  }
+
+  var CHEERS = [
+    { min: 8, head: "Perfect score!",      note: "Eight out of eight. You know this match better than most grown-ups." },
+    { min: 6, head: "Brilliant!",          note: "Nearly all of them. Have another go and try for the lot." },
+    { min: 4, head: "Good going!",         note: "More than half. The answers are a bit different each time, so play again." },
+    { min: 0, head: "Nice try!",           note: "Every question tells you the answer, so you will get more next time." }
+  ];
+
+  function finish() {
+    el.quiz.hidden = true;
+    el.scorebar.hidden = true;
+    el.end.hidden = false;
+    el.end.classList.add("popin");
+    el.bigscore.textContent = score + " / " + QUESTIONS.length;
+    for (var i = 0; i < CHEERS.length; i++) {
+      if (score >= CHEERS[i].min) {
+        el.cheer.textContent = CHEERS[i].head;
+        el.endnote.textContent = CHEERS[i].note;
+        break;
+      }
+    }
+    if (score >= 6) confetti();
+  }
+
+  function start() {
+    order = shuffle(QUESTIONS.map(function (_, i) { return i; }));
+    idx = 0; score = 0; marks = [];
+    el.banner.hidden = true;
+    el.end.hidden = true;
+    el.scorebar.hidden = false;
+    el.quiz.hidden = false;
+    render();
+  }
+
+  el.next.addEventListener("click", function () {
+    if (idx === QUESTIONS.length - 1) { finish(); return; }
+    idx++;
+    render();
+  });
+
+  el.kickoff.addEventListener("click", start);
+  el.again.addEventListener("click", start);
+})();
+</script>
+
+</body>
+</html>
