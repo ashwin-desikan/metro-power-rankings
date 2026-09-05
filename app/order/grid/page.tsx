@@ -212,8 +212,11 @@ export default function OrderGridPage() {
                     <td className="px-3 py-2.5 tabular-nums text-[var(--text-muted)]">{c.vanguardDistance.toFixed(1)}</td>
                     <td className="px-3 py-2.5 text-[var(--text-muted)]">{c.cellName}</td>
                     <td className="px-3 py-2.5 tabular-nums text-[var(--text-muted)]">
-                      {c.cellMargin.toFixed(1)}
-                      <span className="ml-1 text-[10px] uppercase tracking-wide text-[var(--text-dim)]">
+                      {/* A real space, not just `ml-1`: the CSS margin looks right but leaves
+                          the number and the axis word touching for a screen reader and for
+                          anyone copying the table out ("18.6integrity"). */}
+                      {c.cellMargin.toFixed(1)}{" "}
+                      <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">
                         {c.cellMarginAxis}
                       </span>
                     </td>
