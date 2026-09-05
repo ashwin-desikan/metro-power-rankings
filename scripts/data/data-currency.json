@@ -154,6 +154,13 @@
       "file": "public/data/rankings/zzc-extra.json",
       "maxAgeDays": 300,
       "why": "Hand-maintained. The whole point of the limit is that nothing else will remind anyone."
+    },
+    {
+      "key": "expectation-intl",
+      "label": "Against Expectation, five continental leagues",
+      "file": "public/data/football/expectation/intl/index.json",
+      "maxAgeDays": 420,
+      "why": "engsoccerdata ships one batch a season, so the ledger for Spain, Italy, Germany, France and the Netherlands is only as current as the last annual pull into data/football/esd/."
     }
   ]
 }
