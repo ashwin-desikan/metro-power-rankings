@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-05T07:09:54.064598+00:00",
+  "generated_at": "2026-09-05T07:30:15.448225+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T07:20:00+00:00"
-      }
-    },
     {
       "id": "mktcap-refresh",
       "label": "Company market caps",
@@ -195,6 +177,24 @@
         "date": "2026-09-05",
         "status": "ok",
         "slot": "2026-09-05T06:00:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-06T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T07:20:00+00:00"
       }
     },
     {
