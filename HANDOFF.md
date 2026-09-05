@@ -9629,3 +9629,52 @@ renders the four new fields yet — but the refreshed values for the *existing*
 indicators will not appear on country pages until the next production build
 happens for some other reason. 09-04 spent 6 builds against the 2/day budget, so
 this is not worth one of its own.
+
+### 4. The wfootball ratchet: an alert path, and a worse bug underneath it
+
+Sweep item 3 said the ratchet is silent -- `RATCHET HELD` is a `log()` call and
+the runner only pushes on a non-zero exit, so Liga F held and cleared over three
+days with nobody told either way. That is true. Checking it turned up something
+the sweep got wrong, though: **"the ratchet did its job, nothing to restore" is
+not what happened.**
+
+Traced through the committed bundles, Liga F (id 142) read like this:
+
+```
+09-02 12:03Z .. 09-04 12:04Z   label 2026-27  placeholder false  played 30/30  <- the COMPLETED 2025-26 table
+09-04 18:08Z onwards           label 2026-27  placeholder false  played 1/1    <- the real one
+```
+
+The ratchet only ever relabelled. On a hold it kept `was_season` and cleared the
+placeholder flag but left `groups` as whatever the API had just served -- the
+completed 2025-26 table -- so for two days the hub presented last season's final
+standings *as* 2026-27. Going backwards visibly would have been better.
+
+Both fixed in `refresh_women.py`:
+- `committed_seasons()` -> `committed_entries()`, which now carries the published
+  `groups` and `season_label`, not just the season number. A hold republishes the
+  **last good table**.
+- New pure `ratchet_action(prev, placeholder, season)` -> `hold` | `refuse` |
+  `none`. It **refuses** when the stored table is not itself fresh
+  (`looks_fresh`), because a ratchet clamped onto a stale bundle preserves the
+  poison forever, and lets the regression through instead. Pure so the self-test
+  can reach it; the old branch only ran against a live response.
+- `bump_hold()` counts consecutive held runs in a `_ratchet_holds` key on the
+  bundle (survives runs, no new file, visible in git history). At 24h the script
+  exits **4** -- bundle still written -- and `run-football-standings.sh` turns
+  that into an ntfy warning and carries on, the same shape as refresh.py's rc=3.
+  The alert fires ONCE per unbroken hold, not four times a day forever.
+
+Verified: `--self-test` extended (5 `ratchet_action` cases + 5 `bump_hold`) and
+green under `.venv/bin/python`, the interpreter the job actually uses. A stubbed
+integration run over all four paths: hold republishes played=1 not played=30;
+refuse ships the placeholder and clears the hold; a 25h hold returns 4 once then
+0; recovery empties `_ratchet_holds`. Live dry run against api-football clean --
+4 competitions, no regressions today, FA WSL correctly not ratcheted (it has
+never published a real season). `check:public-data` OK.
+
+Note for whoever runs the gates: `npm run test:python` cannot run on this mini,
+neither `python3` nor `.venv/bin/python` has pytest. Nothing in `scripts/tests`
+covers `refresh_women.py` anyway -- its gate is the built-in `--self-test` -- but
+the suite as a whole is unrunnable here until `scripts/requirements-dev.txt` is
+installed, and I did not install into the production venv unasked.

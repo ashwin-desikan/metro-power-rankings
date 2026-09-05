@@ -61,7 +61,17 @@ log "exporting frontend bundles"
 # Women's hub: bundle-direct (no Supabase), writes wlive-2026.json. Its WSL auto-watch
 # swaps FA WSL to 2026-27 the day api-football publishes that table -- so it must run
 # daily, not once. lib/wLive.ts ISR-reads the bundle from GitHub raw ([vercel skip]).
-"$PY" scripts/apifootball/refresh_women.py --write 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "women's refresh failed"
+# Exit 4 is the ratchet WARN path (the refresh.py rc=3 precedent): the bundle WAS
+# written, but a league has been held on last season's table for 24h+ and upstream
+# needs a human. Anything else non-zero is a real failure.
+"$PY" scripts/apifootball/refresh_women.py --write 2>&1 | tee -a "$LOG"; wrc=${PIPESTATUS[0]}
+if [ "$wrc" -eq 4 ]; then
+  held=$(grep -h "RATCHET ALERT" "$LOG" | tail -1 | sed 's/.*RATCHET ALERT[^:]*: //')
+  log "  WARN: women's season ratchet has been holding for 24h+ -- $held"
+  push "wfootball: season ratchet held 24h+" high warning "api-football is still not serving the current table, so the hub is republishing the last good one. Check the league upstream: $held"
+elif [ "$wrc" -ne 0 ]; then
+  fail "women's refresh failed"
+fi
 # UEFA country + club coefficients (Kassiesa method5). Reads Supabase ONLY -- the
 # football_fixtures/football_standings rows refresh.py wrote above -- and makes no
 # api-football calls, so it is free to run on all four daily slots. It writes
