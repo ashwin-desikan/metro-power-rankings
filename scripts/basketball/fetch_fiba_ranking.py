@@ -52,7 +52,20 @@ GENDERS = {
 }
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) MetroPowerRankingsBot/1.0 "
       "(FIBA ranking refresh; https://github.com/ashwin-desikan)")
-MIN_TEAMS = 120
+# 🔴 PER GENDER, because the two tables are not the same size and one global
+# floor cannot serve both. The women's table is genuinely 119 long: verified
+# 2026-09-05 against fiba.basketball/en/ranking/women, which lists ranks 1 to
+# 119 with Georgia last on 19.5 points. A single MIN_TEAMS of 120 therefore
+# failed a HEALTHY parse for a year, and the temptation on seeing "119 < 120"
+# is to drop the number by one, which would leave the gate one team from
+# useless.
+#
+# These are SET from observed table sizes with headroom, not derived: men 154
+# on 2026-07-13 and 159 on 2026-09-01, women 119 on 2026-04-01. The floor
+# catches a CLEAN truncation (a top-ten parse has contiguous ranks and would
+# pass every other gate); the contiguity assert below catches a gappy one.
+# Re-observe before moving either, and say which of the two a new number is.
+MIN_TEAMS = {"men": 140, "women": 105}
 
 _MONTHS = {m: i for i, m in enumerate(
     ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -140,10 +153,20 @@ def main():
         })
     teams.sort(key=lambda t: t["rank"])
 
-    assert len(teams) >= MIN_TEAMS, "sanity: only %d teams (< %d)" % (len(teams), MIN_TEAMS)
+    floor = MIN_TEAMS[gender]
+    assert len(teams) >= floor, (
+        "sanity: only %d %s teams (< %d). If the federation really did shrink "
+        "the table, re-observe the live page and move the floor deliberately; "
+        "do not shave it to clear this run." % (len(teams), gender, floor))
     assert teams[0]["rank"] == 1, "sanity: no rank-1 team"
     ranks = [t["rank"] for t in teams]
     assert ranks == sorted(set(ranks)), "sanity: duplicate or non-monotonic ranks"
+    # FIBA publishes an unbroken 1..N on both tables (men 1..154 on 2026-07-13,
+    # women 1..119 on 2026-04-01). A hole means the record regex stopped
+    # matching partway, which no count floor would catch.
+    assert ranks == list(range(1, len(teams) + 1)), (
+        "sanity: ranks are not contiguous 1..%d, so the parse dropped rows "
+        "mid-table" % len(teams))
     assert teams[0]["pts"] >= teams[-1]["pts"], "sanity: points not descending with rank"
 
     dl = _ranking_date(html)
