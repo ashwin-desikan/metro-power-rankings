@@ -10156,3 +10156,173 @@ writing `.next`, and background processes do not survive between `device_bash` c
   in no registry, so nothing on the site links to them.
 - This session resolved a pre-existing merge conflict in HANDOFF.md between the 09-04 (night)
   cowork entry and the mini's 09-05 entry. Both were kept in date order, nothing dropped.
+
+---
+
+## 2026-09-05 — cowork (cloud, bridged to the Windows box) → mini and next session: AGAINST EXPECTATION LEAVES ENGLAND, AND A SQUAD-VALUE SERIES ARRIVES
+
+Five commits, pushed. Ashwin approved the push explicitly.
+
+### 🔴 Read this before you run git in a bridged session
+
+**Git through the Cowork bridge lies about the working tree.** The Windows
+checkout has `core.autocrlf = true`; the bridge mounts the same files into a
+Linux VM that does not apply it, so bridge git sees every CRLF file as rewritten.
+Measured this session: bridge `git diff --shortstat` reported **1,846 files
+changed, 2,881,455 insertions, 2,881,438 deletions**. Native, same moment: **2
+files, 19 insertions**. `git add -A` from the bridge would have produced an
+1,846-file line-ending commit.
+
+Worse: **`git status --porcelain` through the bridge returns EMPTY and exits 0.**
+The warning flood goes to stderr and the command gives up refreshing the index.
+An empty result is not a clean tree. This session reported "working tree clean"
+on that basis in its first turn; it happened to be true and the method could not
+have known.
+
+Do git natively, via a `-File .ps1` through Desktop Commander. Inline
+`powershell -Command` is unusable through the bridge: `$` and `2>` get stripped
+and every variable and redirect mangles. `git diff --stat -- <explicit paths>`
+IS reliable from the bridge, because naming paths skips the whole-tree walk.
+
+Also: `git fetch` from the bridge fails with **"Host key verification failed"**
+(origin is SSH, no key in that sandbox), so `origin/main` in a bridged session is
+whatever the last native fetch left. And egress is allowlisted in both the bridge
+VM and the cloud container: arbitrary hosts return `403 blocked-by-allowlist`.
+Downloading a dataset means a native `Invoke-WebRequest` in a `.ps1` writing into
+a connected folder. Written up in project memory as
+`feedback_git_through_the_cowork_bridge.md`.
+
+### The Cup work from 2026-09-04 is live, and the mini shipped that morning
+All fifteen Cup commits reached production and `/sports/zone-zero-cup` renders:
+249 nations, fourteen pillars, US 183 / GB 138 / Spain 135. That closes the
+"`next build` never ran" flag from the last handoff. The mini separately shipped
+the Order-grid fiscal-capacity work and the women's-table staleness fix on the
+morning of 05-09, which the bridge could not see because it cannot fetch.
+
+### Against Expectation now covers six leagues, not one
+`scripts/football/build_expectation_intl.py`. Spain 1928-29, Italy 1929-30,
+Germany 1963-64, France 1932-33, Netherlands 1956-57. **125,745 matches across
+405 seasons**, against England's 51,330. Payloads in
+`public/data/football/expectation/intl/`.
+
+**The model is IMPORTED from `build_expectation`, never copied.** `run`,
+`davidson`, `trailing_params`, `gmul`, `brier3` are the same objects the English
+ledger uses and the self-test asserts `run is be.run`. If this ever grows its own
+`run()` the two ledgers drift and nobody notices until the numbers disagree in
+public. England was not touched.
+
+| League | Span | Seasons | Matches | Log loss | Baseline | Skill |
+|---|---|---|---|---|---|---|
+| Netherlands | 1956-57..2024-25 | 69 | 20,776 | 0.96312 | 1.04861 | +0.0815 |
+| Italy | 1929-30..2024-25 | 94 | 28,822 | 0.97231 | 1.03053 | +0.0565 |
+| Spain | 1928-29..2024-25 | 94 | 27,335 | 0.94115 | 0.98804 | +0.0475 |
+| Germany | 1963-64..2024-25 | 62 | 18,874 | 0.98676 | 1.02894 | +0.0410 |
+| France | 1932-33..2024-25 | 86 | 29,938 | 0.98659 | 1.01673 | +0.0296 |
+| England | 1888-89..2025-26 | 127 | 51,330 | 0.99912 | 1.03184 | +0.0317 |
+
+Nothing was tuned toward outputs. Best seasons fall out as Girona 2023-24,
+Inter 1988-89, Leverkusen 2023-24, Montpellier 2011-12, Feyenoord 1973-74. The
+worst German season on record comes back as **Tasmania 1900 Berlin 1965-66**,
+which is the best available sanity check for a German football model.
+
+`PARAMS` are England-fitted and reused unchanged. **That is a stated choice, not
+a derived one.** Skill is positive everywhere so they transfer; refitting per
+league is available and not done.
+
+### The gates found seven defects in a source that looked clean
+Written to refuse rather than guess, and they earned it.
+- **Six club-seasons recorded under two names.** Brest and Racing Paris twice
+  each, Red Star 1945-46, Cannes 1946-47. These prove themselves: each pair's
+  game counts sum to EXACTLY the league's modal games that season, and merging
+  restores the right club count and match total. Re-checked at build time.
+- **Germany 1991-92 is truncated.** All 20 clubs on exactly 34 of 38, source
+  stops dead 1992-04-25. That is the season Stuttgart took on the final day, so
+  the source's table does not end where the season did.
+- **France 1946-47** four matchdays short, and one round carries the placeholder
+  date 1946-03-10, five months before the season's real start.
+- **Italy 1945-46** is two regional groups plus a final round, 25 clubs, so
+  `expected = k*(k-1)` is wrong by construction. Declared as a format rather than
+  widening the club cap for everyone — widening it would have hidden the France gap.
+- **Two rows put Venezia and Brescia in the 1947-48 Serie A on one match each.**
+  Dropped, echoed in `meta.dropped_rows`, ruled by Ashwin.
+
+### France 1994-95 is no longer a hole
+It was absent from engsoccerdata although it was played. Ashwin supplied the
+football-data.co.uk 1994-95 all-Europe archive (Joe Buchdahl), sheet F1.
+`scripts/football/france-1994-95.csv`, **tracked**, because unlike the E0 cache it
+cannot be re-fetched from a URL. 380 matches, 20 clubs, 38 each, and the table it
+produces puts Nantes top on 79 and Sochaux bottom on 23, which is the real table.
+All 20 names attested in the adjacent seasons. The loader refuses on any label it
+cannot place, the `E0_TO_CLUB` rule. France is now 86 seasons.
+
+### The metro crosswalk, and the bug it shipped with
+`scripts/football/build_esd_crosswalk.py` places all **356** clubs on the metro
+board against the site's own club index. 169 exact, 91 loose, 28 containment,
+35 city, 33 hand-checked. None left without a metro.
+
+🔴 **It never matches on a similarity score, and one commit proved why that is
+not enough.** `b8deca76a` mapped **Bayern Munchen to TSV 1860 München**:
+containment stripped `TSV` as a legal token and `1860` as a founding year,
+leaving `munchen`, a subset of `bayern munchen`. Bayern's whole record pointed at
+1860's page. Fixed in `0cbf660ec`: **containment now refuses when the shorter key
+is only place names. A town locates a club, it does not identify one.** Ten
+matches fell out and all ten landed correctly on a metro with no club page.
+
+Measured facts that make a scorer untenable here: token overlap puts *Espanyol
+Barcelona* closer to FC Barcelona (0.50) than to RCD Espanyol (0.33), and
+*Atlético Tetuán*, a club that played out of Morocco, closest to Atlético Madrid.
+
+A `--self-test` guards all three known failures. **A club earns a metro on weaker
+evidence than it earns a club page**: 15 clubs carry a metro with a null slug.
+
+Ashwin ruled the four this script had called unresolvable, and all four had a
+metro: Tetuán, Kerkrade, FC Dordrecht, SVV. The Kerkrade one was in the file
+already — Roda JC, the successor, was sitting in the Kerkrade metro.
+
+### Squad market value, the second axis
+`scripts/football/build_club_value.py`. **194 clubs, six countries, monthly
+2012-07 to 2026-06**, in `public/data/football/value/`.
+
+🔴 **Attribution is on `current_club_name`, NEVER `current_club_id`.** The name is
+carried per dated valuation entry from Transfermarkt's own history, genuinely
+point-in-time, populated on all 656,300 usable rows. The id is derived by joining
+the most recent transfer before the valuation date and **falling back to the
+club TODAY** when none precedes it, which would put a 2013 valuation at a club
+the player joined in 2021.
+
+🔴 **Coverage is published, not hidden.** Below 15 valued players a club-month is
+null, and every surviving month carries its player count `n`. A thin month
+otherwise reads as a cheap squad.
+
+🔴 **The series does not start where the data does.** Rows go back to 2000 but
+only for players still in the corpus later, so early totals are a survivorship
+artefact sloping upward for a reason that is not football getting richer. 65
+clubs clear the floor in June 2008, 275 in June 2012, 754 in June 2024. The
+2012-07 floor is a judgement.
+
+Render as a **step line, never smoothed**: Transfermarkt reprices globally each
+December and June and revalues continuously between. Peaks land right: Real
+Madrid 1392m, Liverpool 1383m, PSG 1370m, Bayern 1044m, Juventus 821m, Ajax 523m.
+
+Upstream `transfermarkt-datasets` has been **paused since July 2026**; the series
+ends where it ends until it restarts. In the currency manifest at 120 days.
+
+### Both axes joined, 2024-25, 79 clubs
+Napoli won Serie A with the 8th most valuable squad and +4.75. Utrecht 60th on
+value at +3.81. **Girona is the pair that justifies having both**: +7.01 in
+2023-24, the best in the Spanish ledger, then 16th on value and -5.93 the year
+after. Elo says they regressed; the value line says the market repriced them first.
+
+### Nothing renders any of this
+No routes exist for either dataset. The surfacing scope is
+`Football expansion - surfacing scope - 2026-09-05.md` in the Claude Projects
+folder: seven work packages, build order, and the rule that decides placement
+(**history gets the ledger, the last fourteen years get the money**; the value
+column must be ABSENT, not blank, before 2012-13).
+
+### Licensing that must ride with the data
+Results compiled by **James Curley, github.com/jalapic/engsoccerdata**, carried in
+`meta.source_credit` and it must render wherever the data does. That repo's
+licence is unresolved: package metadata says GPL >= 2, the README says
+non-commercial with attribution, no LICENSE file. Valuations are Transfermarkt
+via `dcaribou/transfermarkt-datasets` (repo CC0, upstream terms not retrievable).
