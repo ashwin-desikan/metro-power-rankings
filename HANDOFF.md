@@ -9717,3 +9717,44 @@ gets broken a second time, so it is corrected in place rather than left.
 Remaining advisor items, all accepted: 8 INFO as above, 4 SECURITY DEFINER
 function WARNs as above, and leaked-password protection disabled -- an Auth
 dashboard toggle, not SQL, on a project with no user sign-in. Left for Ashwin.
+
+### 6. The board now says how close each position is to another, and names the case it gets wrong
+
+Checking the two cell changes from section 3 turned up something structural.
+Both were **edge crossings, not re-evaluations**: Singapore fell 12.7 points and
+landed 1.7 BELOW the 66.7 band edge; New Zealand rose 5.3 and landed 4.5 above
+it, having been 0.8 below. Their integrity scores did not move at all.
+
+And they fail in opposite directions, both traceable to the same definitional
+bias:
+- **Singapore is a false negative of the measure.** Tax 13.6% of GDP, government
+  consumption 10.3%, government expense 17.1% -- all three agree, and all three
+  are wrong about a state nobody would call administratively weak. It funds
+  itself substantially off the tax line (land sales, returns on reserves,
+  mandatory savings). The reading is accurate; the inference from it is not.
+- **New Zealand is the mirror of the Germany/US problem.** Tax 29.5% puts it in
+  the 97.5th percentile because it is unitary -- no provincial layer, so central
+  government tax is effectively general government tax. It is flattered by
+  exactly the bias that penalises federal states.
+
+Then the general case: **72 of 173 states sit within five points of a band edge,
+and 12 within one.** Albania is 0.4 away. The nine positions are tertiles of a
+continuous score, so for a large minority of the board the LABEL is decided by a
+margin smaller than the measurement error in the inputs, while the score is not
+in doubt at all. The board was presenting that as a categorical fact.
+
+Both shipped:
+- New pure `edge_margin(force, integrity)` -> `(margin, axis)`, self-tested,
+  5 cases. Every row carries `cellMargin` and `cellMarginAxis`; coverage carries
+  `cellMarginUnder5` and `cellMarginUnder1`.
+- `/order/grid` gains a **Held by** column (desktop table and phone card), a note
+  on the section head saying what it is and is NOT -- it is not a confidence
+  score for the numbers, which are the same either way -- and two disclosures:
+  "How close each position is to another" and "Where the fiscal reading
+  understates a state", the latter naming Singapore and the federal bias
+  together.
+
+Verified: self-test PASS, typecheck clean, 154 vitest, table-scroll and mobile
+gates green (the new column lives inside the existing TableScroll), all other
+static gates green, `next build` clean across 5,092 pages. Release note for
+09-05 amended in place to a fourth bullet, still inside the limits.

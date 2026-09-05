@@ -165,6 +165,23 @@ def force_score(rec_pct: float, tax_pct, gov_pct) -> float:
     return FORCE_W["rec"] * rec_pct + (1.0 - FORCE_W["rec"]) * admin
 
 
+EDGES = (100.0 / 3.0, 200.0 / 3.0)
+
+
+def edge_margin(force_pct: float, integrity_pct: float):
+    """How far a country sits from a DIFFERENT cell, and which axis decides it.
+
+    Cell membership is a tertile of each axis, so a country 0.4 from a band
+    edge holds its position by a margin far smaller than the measurement error
+    in its inputs, while the score itself is not in doubt at all. Publishing
+    the position without this reads a knife edge as a settled fact -- and the
+    2026-09-05 Force change moved 24 countries across an edge without moving
+    most of them very far."""
+    df = min(abs(force_pct - e) for e in EDGES)
+    di = min(abs(integrity_pct - e) for e in EDGES)
+    return round(min(df, di), 1), ("force" if df <= di else "integrity")
+
+
 def band(pct: float) -> int:
     """Tertile of the percentile axis: 0 low, 1 mid, 2 high."""
     if pct < 100.0 / 3.0:
@@ -322,6 +339,7 @@ def build_grid():
         f = round(force_pct[s], 1)
         i = round(integ_pct[s], 1)
         key, name, blurb = CELLS[(band(f), band(i))]
+        margin, margin_axis = edge_margin(f, i)
         row = dict(v)
         row.update({
             "force": f,
@@ -332,6 +350,8 @@ def build_grid():
             "integrityRaw": round(integ_raw[s], 4),
             "cell": key,
             "cellName": name,
+            "cellMargin": margin,
+            "cellMarginAxis": margin_axis,
             "cellBlurb": blurb,
             "vanguardDistance": vanguard_distance(v["rec"], integ_raw[s]),
             "imbalance": round(f - i, 1),
@@ -385,6 +405,23 @@ def build_grid():
                 "0 to 1 composite. Not derived from the percentile axes, which would put the "
                 "leader of any field a whisker from the ideal."
             ),
+            "bandMargin": (
+                "Each axis is cut into thirds, so the nine positions are labels on a continuous "
+                "score. A country sitting a fraction of a point from a band edge holds its "
+                "position by less than the measurement error in its own inputs, while its score "
+                "is not in doubt at all. Every row carries how far it is from a different "
+                "position, and which of the two axes decides it, so a knife edge does not read "
+                "as a settled fact."
+            ),
+            "fiscalUnderstatement": (
+                "The administrative leg is what a state raises and spends as a share of GDP, and "
+                "that understates any state funded off the tax line. Singapore is the clear case: "
+                "tax revenue 13.6% of GDP and government consumption 10.3%, both near the bottom "
+                "of the field, for a state nobody would call administratively weak. It funds "
+                "itself substantially from land sales, returns on its reserves, and mandatory "
+                "savings that are not counted as tax. The reading is accurate and the inference "
+                "from it is wrong, which is why the leg is a quarter of the axis rather than half."
+            ),
             "notAMoralityRanking": (
                 "Force is not goodness and integrity is not virtue. A state can be capable, bound "
                 "by law, and still do great harm. This describes conditions, never worth."
@@ -421,6 +458,8 @@ def build_grid():
                 "durabilityUncodified": sum(1 for r in out if r["durabilitySource"] == "uncodified"),
                 "durabilityUnavailable": sum(1 for r in out if r["durabilitySource"] == "unavailable"),
                 "cellCounts": counts,
+                "cellMarginUnder5": sum(1 for r in out if r["cellMargin"] < 5.0),
+                "cellMarginUnder1": sum(1 for r in out if r["cellMargin"] < 1.0),
                 "vanguardCount": 0,
                 "closestDistance": min((r["vanguardDistance"] for r in out), default=None),
                 "closestName": (min(out, key=lambda r: r["vanguardDistance"])["name"] if out else None),
@@ -539,6 +578,19 @@ def self_test() -> int:
         fails.append("a single present reading must carry the full administrative quarter")
     if abs(force_score(50.0, 20.0, 80.0) - force_score(50.0, 50.0, 50.0)) > 1e-9:
         fails.append("two present readings are averaged, half each")
+
+    m, ax = edge_margin(33.7, 90.0)
+    if m != 0.4 or ax != "force":
+        fails.append(f"edge margin should read 0.4 on force, got {m} on {ax}")
+    m, ax = edge_margin(50.0, 67.0)
+    if ax != "integrity":
+        fails.append("the binding axis is whichever edge is nearer, here integrity")
+    if edge_margin(50.0, 50.0)[0] != round(200.0 / 3.0 - 50.0, 1):
+        fails.append("the middle of a band is its own distance from the nearer edge")
+    if edge_margin(66.7, 33.3)[0] > 0.1:
+        fails.append("a country sitting on both edges has no margin at all")
+    if edge_margin(0.0, 100.0)[0] != round(100.0 / 3.0, 1):
+        fails.append("the extremes are a full third from the nearest edge")
 
     if band(0) != 0 or band(50) != 1 or band(99.9) != 2:
         fails.append("band thresholds wrong")

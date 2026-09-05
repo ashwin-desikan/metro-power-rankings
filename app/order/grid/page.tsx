@@ -170,11 +170,19 @@ export default function OrderGridPage() {
             title="Capacity against constraint"
             sub="Positive means a state can do more than anything binding it, negative the reverse."
             more={
-              <p>
-                This is the column the three-legged argument is actually about. A high reading on both axes is less
-                interesting than a wide gap between them, in either direction. The zero line is where a state&apos;s
-                reach and its restraints sit at the same percentile.
-              </p>
+              <>
+                <p>
+                  This is the column the three-legged argument is actually about. A high reading on both axes is less
+                  interesting than a wide gap between them, in either direction. The zero line is where a state&apos;s
+                  reach and its restraints sit at the same percentile.
+                </p>
+                <p className="mt-2">
+                  <strong className="text-[var(--text)]">Held by</strong> is how far the country is from a different
+                  position, on whichever axis is nearer a band edge. It is not a confidence score for the numbers,
+                  which are the same either way: it says how much of the position is the reading and how much is the
+                  cut.
+                </p>
+              </>
             }
           />
           <TableScroll className="mt-4 hidden sm:block rounded-xl border" style={CARD}>
@@ -188,6 +196,7 @@ export default function OrderGridPage() {
                   <th className="px-3 py-2">Integrity</th>
                   <th className="px-3 py-2">From the Vanguard</th>
                   <th className="px-3 py-2">Position</th>
+                  <th className="px-3 py-2">Held by</th>
                 </tr>
               </thead>
               <tbody>
@@ -202,6 +211,12 @@ export default function OrderGridPage() {
                     <td className="px-3 py-2.5"><DataBar v={c.integrity} max={100} dp={0} width={80} color="var(--seq-2)" label={`${c.name} integrity percentile`} /></td>
                     <td className="px-3 py-2.5 tabular-nums text-[var(--text-muted)]">{c.vanguardDistance.toFixed(1)}</td>
                     <td className="px-3 py-2.5 text-[var(--text-muted)]">{c.cellName}</td>
+                    <td className="px-3 py-2.5 tabular-nums text-[var(--text-muted)]">
+                      {c.cellMargin.toFixed(1)}
+                      <span className="ml-1 text-[10px] uppercase tracking-wide text-[var(--text-dim)]">
+                        {c.cellMarginAxis}
+                      </span>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -230,6 +245,7 @@ export default function OrderGridPage() {
                     <span>integrity {Math.round(c.integrity)}</span>
                     <span>{c.vanguardDistance.toFixed(0)} from the corner</span>
                     <span className="tracking-normal">{c.cellName}</span>
+                    <span>{c.cellMargin.toFixed(1)} from another position</span>
                   </div>
                 </div>
               ))}
@@ -331,6 +347,39 @@ export default function OrderGridPage() {
               <ul className="list-disc pl-5 space-y-1">
                 {grid.meta.sources.map((s) => <li key={s}>{s}</li>)}
               </ul>
+            </div>
+          </Disclosure>
+
+          <Disclosure
+            title="How close each position is to another"
+            meta={`${cov.cellMarginUnder5} of ${cov.scored} within 5 points`}
+          >
+            <div className="space-y-3 text-sm text-[var(--text-muted)]">
+              <p>{grid.meta.bandMargin}</p>
+              <p>
+                {cov.cellMarginUnder5} of the {cov.scored} states placed here sit within five points of a band edge,
+                and {cov.cellMarginUnder1} within one. Those {cov.cellMarginUnder1} are named by a margin thinner than
+                the difference between two adjacent countries in the same list. The scores behind them are not close
+                calls; the labels are.
+              </p>
+              <p>
+                Read the <strong className="text-[var(--text)]">Held by</strong> column with the position, never
+                without it. A state 15 points clear of any edge is where the board says it is. A state 0.4 from one is
+                a state the next data refresh may move, without anything about it having changed.
+              </p>
+            </div>
+          </Disclosure>
+
+          <Disclosure title="Where the fiscal reading understates a state" meta="Singapore is the clear case">
+            <div className="space-y-3 text-sm text-[var(--text-muted)]">
+              <p>{grid.meta.fiscalUnderstatement}</p>
+              <p>
+                This cuts the other way too. The tax series counts what the CENTRAL government takes, so a federal
+                state whose provinces collect the rest reads lower than a unitary one at the same real tax take:
+                Germany and the United States both sit near the bottom fifth on that leg, below Brazil. Pairing it with
+                general government consumption softens the effect without curing it, and the pairing is why the leg is
+                two readings rather than one.
+              </p>
             </div>
           </Disclosure>
 

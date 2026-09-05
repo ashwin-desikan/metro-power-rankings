@@ -29,6 +29,20 @@ export type OrderCountry = {
   cell: OrderCell;
   cellName: string;
   cellBlurb: string;
+  /** How far this country is from a DIFFERENT cell, on whichever axis is nearer
+   *  a band edge. The nine positions are tertiles of a continuous score, so a
+   *  margin of 0.4 is a knife edge and a margin of 15 is a settled placement. */
+  cellMargin: number;
+  cellMarginAxis: "force" | "integrity";
+  /** The three legs behind `force`, each a percentile, null where the World Bank
+   *  has no reading. Published so the axis can be audited, not rendered raw. */
+  forceRecPct: number;
+  forceTaxPct: number | null;
+  forceGovConsPct: number | null;
+  taxRevenuePct: number | null;
+  taxRevenueYear: string | null;
+  govConsumptionPct: number | null;
+  govConsumptionYear: string | null;
   rec: number;
   lat: number | null;
   share: number | null;
@@ -60,6 +74,8 @@ export type OrderGrid = {
     axes: { force: string; integrity: string };
     vanguard: { key: string; name: string; blurb: string; occupiable: false; why: string };
     vanguardDistance: string;
+    bandMargin: string;
+    fiscalUnderstatement: string;
     notAMoralityRanking: string;
     pending: string[];
     sources: string[];
@@ -72,6 +88,11 @@ export type OrderGrid = {
       durabilityUncodified: number;
       durabilityUnavailable: number;
       cellCounts: Record<string, number>;
+      cellMarginUnder5: number;
+      cellMarginUnder1: number;
+      forceWithBothLegs: number;
+      forceWithOneLeg: number;
+      forceRecOnly: number;
       vanguardCount: number;
       closestDistance: number | null;
       closestName: string | null;
