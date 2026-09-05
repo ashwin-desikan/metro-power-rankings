@@ -170,10 +170,20 @@ export default function PicksClient() {
       fetchLedger("pl-predictions.json"),
       fetchLedger("nfl-predictions.json"),
       fetchLedger("cfb-predictions.json"),
+      // UCL was in LEAGUE_META and on the tab bar but never in this fetch list,
+      // so ledgers.ucl stayed undefined and the tab sat on "Loading the slate…"
+      // for ever. The ledger file has shipped since 2026-09-04.
+      fetchLedger("ucl-predictions.json"),
       fetchLedger("mlb-predictions.json"),
-    ]).then(([pl, nfl, cfb, mlb]) => {
+    ]).then(([pl, nfl, cfb, ucl, mlb]) => {
       if (!mounted) return;
-      setLedgers({ pl: pl ?? undefined, nfl: nfl ?? undefined, cfb: cfb ?? undefined, mlb: mlb ?? undefined });
+      setLedgers({
+        pl: pl ?? undefined,
+        nfl: nfl ?? undefined,
+        cfb: cfb ?? undefined,
+        ucl: ucl ?? undefined,
+        mlb: mlb ?? undefined,
+      });
     });
     const t = setInterval(() => setNow(Date.now()), 60_000);
     return () => {
