@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-05",
+    headline: "What a state can raise, and truer women's tables",
+    items: [
+      "The Order grid now weighs what a state actually collects and spends alongside its reach and mass, so a country sitting on size without the machinery to use it no longer scores as though it had both.",
+      "Two fiscal readings carry that measure rather than one, because a tax figure alone counts only what the central government takes and reads federal countries such as Germany as far weaker than they are.",
+      "Women's league tables had been showing last season's finished standings under this season's label when the data source lapsed. They now keep the last real table and flag the wait instead.",
+      "Each country on the grid now shows how far it sits from a different position. The nine positions are cuts through a continuous score, and 72 of 173 states sit within five points of a line.",
+    ],
+  },
+  {
     date: "2026-09-04",
     headline: "Four books on every game, and a map of political order",
     items: [

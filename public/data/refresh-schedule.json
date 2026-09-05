@@ -1,135 +1,6 @@
 {
-  "generated_at": "2026-09-04T17:08:06.148852+00:00",
+  "generated_at": "2026-09-05T11:08:04.186357+00:00",
   "jobs": [
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-04T23:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T17:00:00+00:00"
-      }
-    },
-    {
-      "id": "daily-ops-sweep",
-      "label": "Daily ops sweep (report-only)",
-      "schedule_text": "Daily at 01:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "01:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T01:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T01:00:00+00:00"
-      }
-    },
-    {
-      "id": "activity-feed",
-      "label": "Site activity feed",
-      "schedule_text": "Daily at 02:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "02:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T02:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T02:30:00+00:00"
-      }
-    },
-    {
-      "id": "euro-comps",
-      "label": "UEFA club competitions",
-      "schedule_text": "Daily at 04:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "04:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T04:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T04:00:00+00:00"
-      }
-    },
-    {
-      "id": "gap-league-watch",
-      "label": "Football gap-league watch",
-      "schedule_text": "Daily at 05:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T05:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T05:00:00+00:00"
-      }
-    },
-    {
-      "id": "business-daily",
-      "label": "Business markets + FX",
-      "schedule_text": "Daily at 05:50 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:50"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T05:50:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T05:50:00+00:00"
-      }
-    },
-    {
-      "id": "substack-daily",
-      "label": "Substack feed sync",
-      "schedule_text": "Daily at 06:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "06:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T06:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T06:00:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -152,11 +23,140 @@
         11
       ],
       "days_of_month": [],
-      "next_run": "2026-09-05T07:00:00+00:00",
+      "next_run": "2026-09-05T14:30:00+00:00",
       "last_run": {
-        "date": "2026-09-04",
+        "date": "2026-09-05",
         "status": "ok",
-        "slot": "2026-09-04T14:30:00+00:00"
+        "slot": "2026-09-05T07:00:00+00:00"
+      }
+    },
+    {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-05T17:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T11:00:00+00:00"
+      }
+    },
+    {
+      "id": "daily-ops-sweep",
+      "label": "Daily ops sweep (report-only)",
+      "schedule_text": "Daily at 01:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "01:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-06T01:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T01:00:00+00:00"
+      }
+    },
+    {
+      "id": "activity-feed",
+      "label": "Site activity feed",
+      "schedule_text": "Daily at 02:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "02:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-06T02:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T02:30:00+00:00"
+      }
+    },
+    {
+      "id": "euro-comps",
+      "label": "UEFA club competitions",
+      "schedule_text": "Daily at 04:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "04:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-06T04:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T04:00:00+00:00"
+      }
+    },
+    {
+      "id": "gap-league-watch",
+      "label": "Football gap-league watch",
+      "schedule_text": "Daily at 05:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-06T05:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "business-daily",
+      "label": "Business markets + FX",
+      "schedule_text": "Daily at 05:50 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:50"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-06T05:50:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T05:50:00+00:00"
+      }
+    },
+    {
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-06T06:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T06:00:00+00:00"
       }
     },
     {
@@ -170,31 +170,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-05T07:20:00+00:00",
+      "next_run": "2026-09-06T07:20:00+00:00",
       "last_run": {
-        "date": "2026-09-04",
+        "date": "2026-09-05",
         "status": "ok",
-        "slot": "2026-09-04T07:20:00+00:00"
-      }
-    },
-    {
-      "id": "mktcap-refresh",
-      "label": "Company market caps",
-      "schedule_text": "Sat at 09:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "09:00"
-      ],
-      "weekdays": [
-        6
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-05T09:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-29",
-        "status": "ok",
-        "slot": "2026-08-29T09:00:00+00:00"
+        "slot": "2026-09-05T07:20:00+00:00"
       }
     },
     {
@@ -421,6 +401,26 @@
         "date": "2026-09-04",
         "status": "ok",
         "slot": "2026-09-04T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "mktcap-refresh",
+      "label": "Company market caps",
+      "schedule_text": "Sat at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        6
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-12T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T09:00:00+00:00"
       }
     },
     {

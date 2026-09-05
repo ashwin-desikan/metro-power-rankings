@@ -9661,3 +9661,498 @@ right); `SportRow.group` was a vestigial field failing typecheck on `main`;
   single gap on the board.
 - `.git` on the Windows checkout has ~46 stale lock and temp files the mount
   would not let git delete. Harmless, but clean them from Windows.
+## 2026-09-05 — mini → Windows and next session: THE WATCHDOG'S ORPHANED SLEEP IS FIXED, AND THE FISCAL LEG HAS LANDED BUT IS NOT WIRED
+
+Acting on the 09-05 daily ops sweep and on the 🔴 the 09-04 evening Order entry
+left for the mini. Both are `[vercel skip]`; no build was spent.
+
+### 1. The watchdog fix, applied to all three call sites
+
+The sweep's diagnosis is confirmed in the code. `( sleep "$TIMEOUT"; ... ) &`
+was backgrounded with no redirection, so it inherited the job's stdout;
+`kill "$watcher"` reaps the subshell but not the `sleep` it forked, and the
+orphan keeps the write end of the pipe open. `dispatcher.py:261` reads with
+`capture_output=True`, which blocks until EOF — so the dispatcher waited out the
+full timeout no matter when the work finished. That is the `mlb-sim ok 1826s`
+twice, byte-identical, for ~7.5 minutes of work.
+
+Redirected the watchdog subshell at `runners/_common.sh:62` (`guarded`),
+`runners/mlb-sim.sh:59` (`run_soft`) and `metro-mini-refresh.sh:96`
+(`run_step`) — the last of which runs at 09:00Z tomorrow. Three-line comment
+above each so it does not get tidied away.
+
+**Measured, on a harness carrying the real function body, called the way the
+dispatcher calls it:**
+
+| | success path (3s work, timeout 20s) | timeout path (30s work, timeout 5s) |
+|---|---|---|
+| before | caller saw **20.0s** | 8.0s, killed, `TIMED OUT` |
+| after | caller saw **3.0s** | 5.0s, killed, `TIMED OUT` |
+
+The kill path is unchanged and still fires: rc and the `TIMED OUT` message are
+identical, and the timeout path got tighter because the 3s grace `sleep` was
+being orphaned too. `bash -n` clean on all three.
+
+Verify on the next `mlb-sim` line: it should report ~450-500s, not 1826s.
+
+### 2. The four fiscal indicators landed
+
+Ashwin ran `python3 scripts/build-country-indicators.py` on the mini (the box
+with egress). All four are in `public/data/country-indicators.json`, fetched
+2026-09-05T06:45Z, nested under `indicators` as `{value, year}` like the rest:
+
+| indicator | coverage | median | range | year span |
+|---|---|---|---|---|
+| taxRevenuePct | 154/211 | 17.0 | 0.6–35.4 | 2007–2024 |
+| govExpensePct | 155/211 | 26.1 | 3.8–83.7 | 2006–2024 |
+| govDebtPct | **81/211** | 51.2 | 1.8–174.7 | 2007–2024 |
+| govConsumptionPct | 182/211 | 16.4 | 0.0–60.6 | 2007–2025 |
+
+Two things the next session should know before leaning on them. **`govDebtPct`
+covers 81 of 211** and is not usable as a general axis. And these are the `GC.*`
+**central** government series, not general government: the US reads tax 10.8%
+of GDP and France's debt is absent, so federal states understate against
+unitary ones and the measure is not clean cross-country as it stands.
+
+### 3. 🔴 But the Force axis does not read it yet
+
+`build_order_data.py`'s docstring says the administrative leg "joins the axis on
+the next successful run". It does not. `FORCE_W = {"rec": 1.0}` — Force is still
+100% recognised power share, the script loads `country-indicators.json` at line
+203 for other fields, and no line references `taxRevenuePct`. The wiring that
+exists is the *fetch*, in `build-country-indicators.py`. Adding the leg is a
+modelling decision (weight, and what to do about 154/211 coverage and the
+central-government definition), so it is left for whoever owns the grid rather
+than guessed at here. `order-grid.json` was **not** regenerated; it would be
+byte-identical.
+
+### Note on the data reaching the site
+
+`country-indicators.json` is read by `readFileSync` in `lib/countries.ts:134`
+and `lib/business.ts:617`, so it is in the baked-at-build-time majority, not the
+ISR-from-raw minority. This commit is correctly `[vercel skip]` — nothing
+renders the four new fields yet — but the refreshed values for the *existing*
+indicators will not appear on country pages until the next production build
+happens for some other reason. 09-04 spent 6 builds against the 2/day budget, so
+this is not worth one of its own.
+
+### 4. The wfootball ratchet: an alert path, and a worse bug underneath it
+
+Sweep item 3 said the ratchet is silent -- `RATCHET HELD` is a `log()` call and
+the runner only pushes on a non-zero exit, so Liga F held and cleared over three
+days with nobody told either way. That is true. Checking it turned up something
+the sweep got wrong, though: **"the ratchet did its job, nothing to restore" is
+not what happened.**
+
+Traced through the committed bundles, Liga F (id 142) read like this:
+
+```
+09-02 12:03Z .. 09-04 12:04Z   label 2026-27  placeholder false  played 30/30  <- the COMPLETED 2025-26 table
+09-04 18:08Z onwards           label 2026-27  placeholder false  played 1/1    <- the real one
+```
+
+The ratchet only ever relabelled. On a hold it kept `was_season` and cleared the
+placeholder flag but left `groups` as whatever the API had just served -- the
+completed 2025-26 table -- so for two days the hub presented last season's final
+standings *as* 2026-27. Going backwards visibly would have been better.
+
+Both fixed in `refresh_women.py`:
+- `committed_seasons()` -> `committed_entries()`, which now carries the published
+  `groups` and `season_label`, not just the season number. A hold republishes the
+  **last good table**.
+- New pure `ratchet_action(prev, placeholder, season)` -> `hold` | `refuse` |
+  `none`. It **refuses** when the stored table is not itself fresh
+  (`looks_fresh`), because a ratchet clamped onto a stale bundle preserves the
+  poison forever, and lets the regression through instead. Pure so the self-test
+  can reach it; the old branch only ran against a live response.
+- `bump_hold()` counts consecutive held runs in a `_ratchet_holds` key on the
+  bundle (survives runs, no new file, visible in git history). At 24h the script
+  exits **4** -- bundle still written -- and `run-football-standings.sh` turns
+  that into an ntfy warning and carries on, the same shape as refresh.py's rc=3.
+  The alert fires ONCE per unbroken hold, not four times a day forever.
+
+Verified: `--self-test` extended (5 `ratchet_action` cases + 5 `bump_hold`) and
+green under `.venv/bin/python`, the interpreter the job actually uses. A stubbed
+integration run over all four paths: hold republishes played=1 not played=30;
+refuse ships the placeholder and clears the hold; a 25h hold returns 4 once then
+0; recovery empties `_ratchet_holds`. Live dry run against api-football clean --
+4 competitions, no regressions today, FA WSL correctly not ratcheted (it has
+never published a real season). `check:public-data` OK.
+
+Note for whoever runs the gates: `npm run test:python` cannot run on this mini,
+neither `python3` nor `.venv/bin/python` has pytest. Nothing in `scripts/tests`
+covers `refresh_women.py` anyway -- its gate is the built-in `--self-test` -- but
+the suite as a whole is unrunnable here until `scripts/requirements-dev.txt` is
+installed, and I did not install into the production venv unasked.
+
+### 5. The Supabase RLS thread is closed, and it was not what the note said
+
+Carried since 07-30 as "RLS advisory on 8 tables, SQL drafted, not applied".
+Pulled the live advisor. **There is nothing to enable.** The 8 findings are
+`rls_enabled_no_policy` at INFO, which means RLS is already ON with zero
+policies -- the correct posture for a table only the service key writes, and the
+one the 08-06 entry already confirmed ("anon still gets 0 rows"). There is no
+`rls_disabled_in_public` finding anywhere. Whatever the drafted SQL was, adding
+policies to those 8 would have LOOSENED them. Tables: TestCricket,
+champion_competitions, champions, football_lookup_bak_apiname2,
+football_team_bak_apiname2, page_visits, place_ids, skydb_structures.
+
+**The one real finding, now fixed.** `public.football_league_anchor` was the
+only ERROR: a view created SECURITY DEFINER, so it ran as postgres and bypassed
+RLS on `cl_league_history` and `uefa_country_coeff_history` for every caller.
+Migration `set_security_invoker_on_football_league_anchor` applied. Zero
+behaviour change, and checked rather than assumed: both base tables already
+carry a `public read` SELECT policy with qual `true`, and `set role anon` still
+returns all 66,391 rows through the view afterwards. Nothing in the repo
+references it. Advisor re-run: the ERROR is gone.
+
+**The four SECURITY DEFINER function warnings are ACCEPTED, not outstanding,
+and must not be "fixed".** `track_visit` executable by anon is load-bearing:
+`app/VisitBeacon.tsx` calls the RPC browser-direct with the anon key, and
+revoking that grant is exactly what `lock_down_track_visit_rpc` did on 08-02 --
+page_visits recorded nothing for four days because the beacon's `.catch(){}`
+swallowed every rejection, and `restore_anon_execute_on_track_visit` put it back
+on 08-06. `get_visit_stats` readable by anon was explicitly accepted by Ashwin
+in the 08-06 entry.
+
+🔴 The comment at the top of `app/api/v/route.ts` asserted the opposite --
+that track_visit is EXECUTE-restricted to service_role and that the route is the
+live path. Both false: nothing posts to /api/v at all. That comment is how this
+gets broken a second time, so it is corrected in place rather than left.
+
+Remaining advisor items, all accepted: 8 INFO as above, 4 SECURITY DEFINER
+function WARNs as above, and leaked-password protection disabled -- an Auth
+dashboard toggle, not SQL, on a project with no user sign-in. Left for Ashwin.
+
+### 6. The board now says how close each position is to another, and names the case it gets wrong
+
+Checking the two cell changes from section 3 turned up something structural.
+Both were **edge crossings, not re-evaluations**: Singapore fell 12.7 points and
+landed 1.7 BELOW the 66.7 band edge; New Zealand rose 5.3 and landed 4.5 above
+it, having been 0.8 below. Their integrity scores did not move at all.
+
+And they fail in opposite directions, both traceable to the same definitional
+bias:
+- **Singapore is a false negative of the measure.** Tax 13.6% of GDP, government
+  consumption 10.3%, government expense 17.1% -- all three agree, and all three
+  are wrong about a state nobody would call administratively weak. It funds
+  itself substantially off the tax line (land sales, returns on reserves,
+  mandatory savings). The reading is accurate; the inference from it is not.
+- **New Zealand is the mirror of the Germany/US problem.** Tax 29.5% puts it in
+  the 97.5th percentile because it is unitary -- no provincial layer, so central
+  government tax is effectively general government tax. It is flattered by
+  exactly the bias that penalises federal states.
+
+Then the general case: **72 of 173 states sit within five points of a band edge,
+and 12 within one.** Albania is 0.4 away. The nine positions are tertiles of a
+continuous score, so for a large minority of the board the LABEL is decided by a
+margin smaller than the measurement error in the inputs, while the score is not
+in doubt at all. The board was presenting that as a categorical fact.
+
+Both shipped:
+- New pure `edge_margin(force, integrity)` -> `(margin, axis)`, self-tested,
+  5 cases. Every row carries `cellMargin` and `cellMarginAxis`; coverage carries
+  `cellMarginUnder5` and `cellMarginUnder1`.
+- `/order/grid` gains a **Held by** column (desktop table and phone card), a note
+  on the section head saying what it is and is NOT -- it is not a confidence
+  score for the numbers, which are the same either way -- and two disclosures:
+  "How close each position is to another" and "Where the fiscal reading
+  understates a state", the latter naming Singapore and the federal bias
+  together.
+
+Verified: self-test PASS, typecheck clean, 154 vitest, table-scroll and mobile
+gates green (the new column lives inside the existing TableScroll), all other
+static gates green, `next build` clean across 5,092 pages. Release note for
+09-05 amended in place to a fourth bullet, still inside the limits.
+
+### 7. The mktcap metro queue: the alert was lying about what it was
+
+Ashwin asked why he got an ntfy about unmapped companies when a mapping process
+already exists. The process exists and works. The alert was the problem.
+
+**Diagnosis.** `build_merged.py`'s 08-29 fix changed the queue from
+`unmapped_new` (symbols new to mktcap_companies THIS run) to `still_unmapped`
+(everything in the merge with no metro). That fix was right -- a stubbed company
+had been dropping out of the queue forever with metro still null. But the
+runner's ntfy title still said **"new companies to map"** and the list was
+capped at 40 with no total. So 09-05's alert carried 40 names of which **2 were
+new**: ten of the top twelve carry `first_seen = 2026-07-18`. Last Saturday
+reported `none` under the old logic, which is why it looked like a break.
+
+**The real numbers.** 6,805 of 12,996 active companies unmapped (52%), but only
+**3.11% of world market cap** -- $5.66T of $181.93T. And the backlog is not the
+pipeline falling behind:
+
+| mapped_by | rows | without metro |
+|---|---|---|
+| seed | 12,157 | 7,720 |
+| excel-sync | 1,905 | 59 |
+| auto-stub | 53 | 53 |
+| claude-researched | 48 | 1 |
+| ashwin | 3 | 0 |
+
+7,720 arrived unmapped in the 2026-07-23 workbook seed and were never mapped in
+the source either. Only ~53 were ever queued by this pipeline.
+
+🔴 **And the queue could never reach zero.** There was no state for "reviewed,
+no valid metro applies". Dot Foods is in Mount Sterling, Illinois; Arctic Slope
+Regional is in Utqiagvik. Under "when uncertain leave null and skip" they stayed
+null and returned to the top of the queue every week, indistinguishable from one
+nobody had looked at.
+
+**Three changes, all `[vercel skip]`, none touching the never-guesses rule:**
+1. `build_merged.py` splits the queue: a machine-readable `METRO QUEUE COUNTS`
+   line, `(new this run)`, `(notable, unmapped)` at `NOTABLE_CAP_USD = $10B`
+   (14 companies today), and the standing list LAST -- because the runner greps
+   `METRO QUEUE (unmapped` and `tail -1` into mktcap-review-queue.md, and that
+   file is the only channel the `mktcap-weekly-metro-mapping-research` cloud
+   routine can read. Its cap went 40 -> 200: it is a work queue for a machine,
+   not a phone notification.
+2. New terminal state `mapped_by='no-metro'` (metro stays null), excluded from
+   the queue. Migration `document_no_metro_terminal_state_on_mktcap_geo` puts the
+   convention on the column itself; README and the mktcap-refresh skill updated.
+   Recording that no metro applies is a decision, not a guess.
+3. The ntfy is now built from the counts: title
+   `mktcap-refresh: N new, M notable to map`, body carrying the total plus only
+   the actionable lines. **A week with 0 new and 0 notable pushes nothing** and
+   logs a line instead. A missing COUNTS line still alerts -- the shape-changed
+   fail-loud posture is preserved.
+
+Verified offline against the real `build()` (network + merge stubbed, fixtures
+covering mapped / unmapped-old / unmapped-new / notable / no-metro): counts read
+`unmapped=4 new=2 notable=2 resolved-no-metro=1`, the no-metro row appears in no
+queue line, and the standing list is last. The swing gate fired correctly on a
+first attempt before being relaxed for the harness. The runner's parsing was
+then exercised on three logs: new+notable pushes, a quiet week pushes nothing,
+and a missing COUNTS line still alerts.
+
+**Not done:** no company was curated. The mechanism now exists; filling it in is
+Ashwin's call or the research routine's work. The 14 notable unmapped are led by
+Boehringer Ingelheim $63.9B, Dot Foods $34.2B and Chaozhou Three-Circle $32.3B.
+
+### 8. Worked the notable metro queue: 14 -> 5
+
+Curation only, no code. Protocol followed as written: strict HQ-in-metro
+(~30km), metro must exist in `mktcap_valid_metros` (4,314 entries), uncertain
+means leave it alone.
+
+**Mapped (1).** Anhui Conch Cement [600585.SS] $14.1B -> **Wuhu**. Its geo row
+had no city at all. HQ confirmed as 39 Wenhua Rd, Wuhu, Anhui 241000 (Wikipedia,
+China Daily); Wuhu is a valid metro and the HQ is inside it. `claude-researched`.
+
+**no-metro (8).** Ashwin marked Dot Foods (Mt. Sterling, Illinois) and Arctic
+Slope Regional (Barrow, Alaska) himself; I added six on the same test, each a
+small place with no valid metro anywhere near it:
+
+| company | HQ | nearest valid metro |
+|---|---|---|
+| Zangge Mining [000408.SZ] | Golmud, Qinghai | Xining ~780km |
+| The Yates Companies | Philadelphia, Mississippi (pop ~7k) | Meridian ~60km |
+| Jack Henry [JKHY] | Monett, Missouri (~9k) | Springfield (MO) / Joplin ~60km |
+| Petro Rabigh [2380.SR] | Rabigh | Jeddah ~150km |
+| DigiKey | Thief River Falls, Minnesota (~8.5k) | Grand Forks ~90km |
+| Southern Tire Mart | Columbia, Mississippi (~6k) | Hattiesburg ~60km |
+
+🔴 **Three deliberately NOT marked, because no-metro would encode a gap in the
+metro list rather than a fact about the company.** Chaozhou Three-Circle
+[300408.SZ] $32.3B (Chaozhou, ~2.5M), Chifeng Jilong Gold [600988.SS] $13.0B
+(Chifeng, ~4.3M prefecture) and Tongling Nonferrous [000630.SZ] $12.8B
+(Tongling, ~1.3M) all sit in substantial Chinese cities that are simply absent
+from `mktcap_valid_metros`. The absence is patchy, not principled: Huainan and
+Bengbu are in the list, Tongling and Anqing are not; Shantou is in, Chaozhou and
+Jieyang are not. `no-metro` is the queue's terminal state, so marking these
+would permanently hide the omission. The fix belongs in the metro list.
+
+**Two left for a ruling, both genuinely uncertain:**
+- **Boehringer Ingelheim $63.9B**, the largest unmapped company on the board.
+  Ingelheim am Rhein is ~45km from Frankfurt, beyond the ~30km rule. But the
+  table already maps **Mainz -> Frankfurt** at ~35km, set by `excel-sync`, i.e.
+  from Ashwin's own workbook -- so the house appears to read "Frankfurt" as the
+  Rhein-Main region, which does officially include Ingelheim (Mainz-Bingen). One
+  ruling settles it and probably settles Rhein-Main generally.
+- **Pershing Square Holdings [PSHD.L] $12.2B.** No city recorded. A
+  Guernsey-domiciled closed-end fund, LSE/Euronext listed, whose investment
+  manager sits in New York; the seed recorded country as United States. Needs a
+  policy for fund vehicles vs their managers before anything is written.
+
+Nothing found to reverse Ashwin's two. Dot Foods is clean (Quincy ~64km, and
+Brown County is outside the Quincy MSA either way). Arctic Slope rests on the
+seed's own `city = Barrow`; the only thing that would reverse it is a policy
+choice to follow principal business offices, since ASRC's are in Anchorage and
+Anchorage IS a valid metro.
+
+### 9. Boehringer Ingelheim mapped, and the rule that allowed it written down
+
+Ashwin ruled: Boehringer Ingelheim [Boehringer Ingelheim] $63.9B, HQ Ingelheim
+am Rhein, maps to **Frankfurt**. `mapped_by='ashwin'` -- the judgment is his, the
+SQL was mine. That clears the largest unmapped company on the board and takes
+the notable queue to 4.
+
+It cascades almost not at all: the remaining unmapped German companies with a
+recorded city are Montabaur (United Internet $5.5B, 1&1 $4.8B), Neckarsulm
+(Bechtle $5.3B), Salzgitter ($3.8B) and Büdelsdorf (Freenet $3.4B) -- none in
+Rhein-Main, all under the $10B notable floor.
+
+What it does leave is a precedent worth having in writing, so
+`scripts/mktcap/README.md` gains a **Region vs radius** section (and the
+mktcap-refresh skill a pointer to it): the ~30km is a default for a metro named
+after one city, not the test. The test is whether the HQ is IN the metro, and
+some entries are polycentric regions -- Rhine-Neckar and Rhine-Ruhr say so,
+`Frankfurt` is read as Rhein-Main. Two rows now record that reading, Mainz at
+~35km from the workbook and Ingelheim at ~45km from this ruling.
+
+The guardrail is written down with it: this applies only where the metro
+genuinely is a region. Monett, Missouri stays a `no-metro` at ~60km from
+Springfield (MO), because Springfield is a city metro and Monett is not in it.
+
+### 10. A third queue state, because "not yet" is not "never"
+
+Ashwin: adding metro areas needs its own decisioning and is not happening soon.
+That left the three Chinese companies from section 8 nowhere to sit -- all are
+above the $10B notable floor, so they would have nagged in the weekly alert
+indefinitely, which is exactly the failure section 7 set out to fix.
+
+New state `mapped_by='metro-gap'`, applied to Chaozhou Three-Circle
+[300408.SZ] $32.3B, Chifeng Jilong Gold [600988.SS] $13.0B and Tongling
+Nonferrous [000630.SZ] $12.8B.
+
+It is deliberately NOT `no-metro`. The two look identical in the table -- metro
+null, out of the queue -- and mean opposite things:
+
+| state | meaning | ends when |
+|---|---|---|
+| `no-metro` | reviewed, no metro will ever apply | never; terminal |
+| `metro-gap` | reviewed, HQ city is real but not in `mktcap_valid_metros` | the metro area is added |
+
+`metro-gap` rows are **counted separately** (`held-metro-gap=` in METRO QUEUE
+COUNTS) and **named on their own report line**, because a hold nobody can see is
+a hold that never gets lifted. Migration
+`document_metro_gap_hold_state_on_mktcap_geo` puts both states on the column;
+README and the skill carry the same warning: **never add a metro area just to
+clear a company.**
+
+Verified on the stubbed harness: a metro-gap row is absent from unmapped,
+notable and the standing list, present in the counts and on the held line.
+
+Notable queue is now **1**: Pershing Square Holdings, still awaiting a policy on
+fund vehicles versus their managers.
+
+### 11. Notable queue at zero
+
+Ashwin ruled: Pershing Square Holdings [PSHD.L] $12.2B is **New York** -- the
+manager's seat, not the Guernsey domicile or the London listing.
+`mapped_by='ashwin'`. That is the fund-vehicle policy question from section 8
+answered by precedent: for a listed fund, map where it is run.
+
+**The notable queue (>= $10B unmapped) is now 0**, from 14 this morning:
+
+| outcome | n |
+|---|---|
+| mapped | 3 (Anhui Conch -> Wuhu researched; Boehringer Ingelheim -> Frankfurt, Pershing Square -> New York, both Ashwin's rulings) |
+| `no-metro`, terminal | 8 |
+| `metro-gap`, held for a metro-area decision | 3 |
+
+Whole-table state: 6,194 mapped, 6,791 still unmapped (the small-cap tail, 3.1%
+of world market cap), 8 no-metro, 3 metro-gap.
+
+Next Saturday's run should push nothing at all unless a genuinely new company
+arrives or something crosses $10B -- which is the behaviour section 7 was aiming
+at, now actually reachable because the queue has terminal states.
+
+## 2026-09-05 (evening) — cowork (cloud, bridged to the Windows box) → mini and next session: ELEVEN /play GAMES HARDENED, AND AN EXPERT TIER ON THE ADULT ARCADE
+
+Ashwin sat with Alex and had him name the games that were too easy. This entry is
+the wave that followed. One commit, one real build (touches `app/` and `public/`).
+
+### 🔴 Two corrections to things previously written down
+
+1. **Never quote a game's pool size without checking that the HTML loads the pool.**
+   The four rules games (offside-or-onside, hows-that, ball-or-strike,
+   catch-or-no-catch) were recorded as holding "12 hand-drawn scenarios each". Wrong.
+   That came from counting legacy `pools/<slug>.js` files those games stopped loading.
+   All four have generated their freeze-frames procedurally from `makeScenario(kind)`
+   all along. The legacy pool files are still on disk, still unreferenced. Leave them.
+2. **Champions Duel holds 459 finals across eight competitions**, not 63. World Series
+   121, Stanley Cup 99, NBA Finals 77, Super Bowl 60, Champions League 34, European Cup
+   29, World Cup 22, Euros 17.
+
+### 🔴 Committing from a Cowork session: use `-c core.autocrlf=input`
+
+`git diff` from the cloud bridge reports ~1,013 files changed and ~369k lines either
+way, on files nobody touched. The repo is checked out CRLF on Windows; the Linux VM
+behind `device_bash` reads it with `core.autocrlf` unset, so every line looks changed.
+`git -c core.autocrlf=input add` collapses it to the real diff and stores LF, matching
+the rest of the repo. Without that flag a commit from here rewrites the whole repo's
+line endings. `git status` also takes over two minutes on this mount; scope diffs to a
+path instead.
+
+### The diagnosis, which was not the August one
+
+August's Honest Answer loop fixed HOW an answer is rewarded. It did not change WHAT is
+asked. Three causes: pools that run dry, binary answers a coin flip wins half the time,
+and one-hop questions that end where Alex's knowledge starts.
+
+**The fix that generalised is the second hop.** After the first answer, ask what lies
+behind it as a second scored round: which year, which city, by how many, which rule
+decided it. Guessing the binary stops winning the round. Nine of the eleven use it, and
+scenario counts were halved so session length holds.
+
+### What changed
+
+- **whos-the-boss** 15 cards to three levels. New `scripts/games/build_whos_the_boss.py`
+  emits `pools/whos-the-boss.js`, **201 real leaders** from `public/data/leaders/_current.json`
+  joined to `countries.json` + `country-facts.json`. **Use `country-facts.json`'s `iso3166`
+  for flags: `countries.json`'s own `isoCode` field is NOT a real ISO code in this dataset**,
+  it duplicates the country name for every country except the UK.
+- **us-or-uk** 20 binary items to 98 with a third "Both" option, plus 48 British/American
+  word pairs.
+- **champions-duel** winner pick then year/score/margin on the same final. Crests take a
+  `.locked` guard during part two, or a stray tap re-scores the first question.
+- **penalty-shootout** 🔥 Sudden Death: two-hop chains, all 28 clubs mapped to city,
+  country and league.
+- **champions** 🥇 Medal Table from `scripts/games/build_champions.py` to `pools/champions.js`:
+  142 Olympic nations, 108 questions.
+- **chart-champions** Expert round "Is this chart being fair?": truncated axis, uneven year
+  spacing, picture bars scaled in two dimensions, no axis labels. Each redraws honestly.
+- **champion-challenge** North or South and Trophy Count swapped for Riddle Stadium and
+  Word Machine. That needed `vq-engine.js` and a `#vis` mount instead of `engine.js`.
+  New Expert decathlon at POOL_PICK 16.
+- **the four rules games** second-hop rule question, a level picker with a genuinely
+  marginal Expert tier (margins 45-90 units down to 0-10), and more cases: offside 5 to 10
+  (throw-in, goal kick, corner, keeper upfield teaching the SECOND-last opponent, deliberate
+  play resets), hows-that 6 to 11 (inside edge, impact outside off, no-ball, stumped,
+  umpire's call at Expert), ball-or-strike 7 to 11 (**the zone is now sized to the batter,
+  so the same pitch is a strike to one hitter and a ball to the next** — best teach in the
+  wave; `isStrike` refactored to take a zone argument), catch 6 to 10 (end zone, football
+  move, trapped, and a college case where the prompt names the league).
+- **`app/play/arcade/page.tsx`** new `expert` section surfacing eight of these on the adult
+  Games page as `static: true` links to `/play/games/<slug>.html`. They stay in `/play`
+  unchanged. Chart Champions is retitled "Is This Chart Being Fair?" there only.
+  **Watch the filename collision:** `public/play/higher-or-lower.html` (Metro Higher or
+  Lower, adult) and `public/play/games/higher-or-lower.html` (the kids game) are different
+  games one directory apart.
+- **`app/play/page.tsx`** levels and age bands raised for all eleven.
+
+### Verification
+
+All eleven driven in headless Chromium at 390px from a `python3 -m http.server`: full
+scored-question counts reached, finale reached, no page errors, no horizontal scroll.
+`node_modules/.bin/tsc --noEmit -p tsconfig.json` clean.
+
+Two harness lessons. Write the option selector from **each game's own classes** — a generic
+`.opt, .card` list misses Champions Duel's `.club` and reports a working game as broken.
+And when a game disables its buttons during a ball-flight animation, wait and retry rather
+than calling it a stall. Both produced false alarms.
+
+`next dev` does NOT run on this mount: it dies with `Permission denied (os error 13)`
+writing `.next`, and background processes do not survive between `device_bash` calls.
+
+### Open questions for whoever is next
+
+- The thinnest pool in the arcade is now **leader-time-machine at 8 rounds**. It is also the
+  cheapest fix left, because the 201-leader generator it needs already exists.
+- **north-or-south** is the last 50/50 left in play. Three cities to order, not two to compare.
+- **bigger-city.html** (260 items) and **five-oceans.html** are built and playable but appear
+  in no registry, so nothing on the site links to them.
+- This session resolved a pre-existing merge conflict in HANDOFF.md between the 09-04 (night)
+  cowork entry and the mini's 09-05 entry. Both were kept in date order, nothing dropped.

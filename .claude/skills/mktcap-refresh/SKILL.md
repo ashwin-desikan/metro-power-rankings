@@ -81,10 +81,21 @@ separate subprocess that aborts the whole run non-zero on failure.
    own code first") — do not add a flag to force past it.
 
 3. **After a `--write` run.** Report:
-   - New companies and the **METRO QUEUE** list (unmapped, `mapped_by='auto-stub'`).
+   - New companies and the **METRO QUEUE COUNTS** line. The queue is a standing
+     backlog of thousands (mostly `mapped_by='seed'` rows that arrived unmapped
+     in the 2026-07-23 workbook seed), so report `new` and `notable` — not the
+     whole list, which is the same names every week.
      These need a human HQ-in-metro (~30km) call — the pipeline never
-     guesses. Assigning one is a direct SQL `update mktcap_geo set metro=...`
-     via the Supabase MCP, not a script.
+     guesses. The ~30km is a default, not the test: where the metro is a
+     polycentric REGION (Rhine-Neckar, Rhine-Ruhr, and `Frankfurt` = Rhein-Main)
+     an HQ inside the region maps even past 30km. See "Region vs radius" in
+     scripts/mktcap/README.md. Assigning one is a direct SQL `update mktcap_geo set metro=...`
+     via the Supabase MCP, not a script. When you have looked and no valid
+     metro applies, set `mapped_by='no-metro'` (metro stays null) — that is the
+     queue's terminal state and drops the row from every future report. If the
+     HQ city is real but missing from `mktcap_valid_metros`, use `metro-gap`
+     instead: a hold, counted separately, re-entered when the metro is added.
+     Never add a metro area just to clear a company.
    - "possible ticker renames (REVIEW, not auto-applied)" — flag these to
      the user; they are not safe to apply without confirmation.
    - Point out `out/mktcap_export.csv` exists but has NOT been imported into

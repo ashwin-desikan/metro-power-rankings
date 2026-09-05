@@ -10,6 +10,34 @@ from common import rest, select, select_all, log, in_list
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out")
 SWING_LIMIT = 0.05   # abort if any source count moves >5% week-over-week
+
+# The metro curation queue is a STANDING BACKLOG, not a weekly delta. 6,805 of
+# the 12,996 active companies have no metro, and 7,720 of those geo rows carry
+# mapped_by='seed' -- they arrived unmapped in the 2026-07-23 workbook seed and
+# were never mapped there either. Only ~53 were ever queued by this pipeline.
+# Reporting all of them every Saturday is the same forty names forever, so the
+# report separates what is actionable this week from the standing list.
+NOTABLE_CAP_USD = 10e9   # 14 companies today; below this is a small-cap tail
+
+# Terminal state for the queue. A company whose HQ is in no valid metro -- Dot
+# Foods in Mount Sterling, Illinois, Arctic Slope Regional in Utqiagvik -- is
+# never going to get one, and under "leave null and skip" it reappeared at the
+# top of the queue every week, indistinguishable from one nobody had looked at.
+# mapped_by='no-metro' with metro still null records that REVIEW, which is a
+# decision and not a guess: the "pipeline NEVER guesses" rule is about the
+# pipeline inventing a metro, not about a human recording that none applies.
+NO_METRO = "no-metro"
+
+# HELD, not resolved. The company's HQ is known and sits in a real city that is
+# simply absent from mktcap_valid_metros -- Chaozhou (~2.5M), Chifeng, Tongling.
+# The absence is patchy rather than principled (Huainan and Bengbu are listed,
+# Tongling and Anqing are not; Shantou is, Chaozhou is not), so 'no-metro' would
+# encode a gap in the metro list as a permanent fact about the company. Adding
+# metro areas is its own decision with its own criteria and is not on the near
+# horizon, so these sit out of the weekly alert but stay COUNTED and named in
+# the report, ready to re-enter the queue the day their metro is added.
+METRO_GAP = "metro-gap"
+
 TODAY = datetime.date.today().isoformat()
 
 def load_sources():
@@ -98,7 +126,7 @@ def main(write=False):
     changes = select_all("/rest/v1/mktcap_symbol_changes?select=old_symbol,new_symbol", "old_symbol")
     overrides = select("/rest/v1/mktcap_overrides?select=symbol,field,value")
     current = select_all("/rest/v1/mktcap_companies?select=company_id,symbol,name,source,is_active", "company_id")
-    geo = select_all("/rest/v1/mktcap_geo?select=symbol,metro", "symbol")
+    geo = select_all("/rest/v1/mktcap_geo?select=symbol,metro,mapped_by", "symbol")
     metros = {m["metro"] for m in select_all("/rest/v1/mktcap_valid_metros?select=metro", "metro")}
     prev = {c["source"]: 0 for c in current}
     for c in current:
@@ -116,6 +144,8 @@ def main(write=False):
                      f"Inspect out/source_*.csv — likely a fetch/parse problem, not reality.")
 
     geo_map = {g["symbol"]: g["metro"] for g in geo}
+    no_metro = {g["symbol"] for g in geo if (g.get("mapped_by") or "") == NO_METRO}
+    metro_gap = {g["symbol"] for g in geo if (g.get("mapped_by") or "") == METRO_GAP}
     cur_ids = {c["company_id"] for c in current}
     active_ids = {c["company_id"] for c in current if c["is_active"]}
     new_ids = [m for m in merged if m["company_id"] not in cur_ids]
@@ -143,7 +173,16 @@ def main(write=False):
     # until it actually gets a metro. Caught when two same-day re-runs (after
     # the first found 22 unmapped) both reported "none" although nothing had
     # been mapped in between.
-    still_unmapped = [m for m in merged if not geo_map.get(m["symbol"])]
+    # Reviewed-and-no-metro drops out of the queue for good; everything else
+    # without a metro stays in it, however long it has been there.
+    still_unmapped = [m for m in merged
+                      if not geo_map.get(m["symbol"])
+                      and m["symbol"] not in no_metro and m["symbol"] not in metro_gap]
+    held = [m for m in merged if m["symbol"] in metro_gap]
+    new_id_set = {m["company_id"] for m in new_ids}
+    queue_new = [m for m in still_unmapped if m["company_id"] in new_id_set]
+    queue_notable = [m for m in still_unmapped
+                     if float(m.get("marketcap") or 0) >= NOTABLE_CAP_USD]
     invalid = sorted({v for v in (geo_map.get(m["symbol"]) for m in merged) if v and v not in metros})
     mapped = sum(1 for m in merged if geo_map.get(m["symbol"]))
     renames = [(m["symbol"], c["symbol"]) for m in new_ids for c in current
@@ -159,8 +198,28 @@ def main(write=False):
            f"- possible ticker renames (REVIEW, not auto-applied): {renames[:8]}",
            f"- rename guard: {len(skipped_renames)} recycled-ticker renames skipped: {skipped_renames[:8]}",
            f"- deactivation guard: {len(spared)} kept active (symbol live in feed): {spared[:8]}",
+           # Machine-readable first: run-mktcap-refresh.sh builds the ntfy from
+           # these counts rather than from the name list, so the phone alert can
+           # say how big the backlog is instead of showing forty of it.
+           f"- METRO QUEUE COUNTS: unmapped={len(still_unmapped)} new={len(queue_new)} "
+           f"notable={len(queue_notable)} (>=${NOTABLE_CAP_USD/1e9:.0f}B) "
+           f"resolved-no-metro={len(no_metro)} held-metro-gap={len(metro_gap)}",
+           # Named, not just counted: a hold that nobody can see is a hold that
+           # never gets lifted when the metro list finally moves.
+           f"- METRO QUEUE (held, awaiting a metro area): " +
+           (", ".join(f'{m["name"]} [{m["symbol"]}] {m["country"]}' for m in held[:40]) or "none"),
+           f"- METRO QUEUE (new this run): " +
+           (", ".join(f'{m["name"]} [{m["symbol"]}] ({m["country"]})' for m in queue_new[:40]) or "none"),
+           f"- METRO QUEUE (notable, unmapped): " +
+           (", ".join(f'{m["name"]} [{m["symbol"]}] ${float(m["marketcap"] or 0)/1e9:.1f}B ({m["country"]})'
+                      for m in queue_notable[:40]) or "none"),
+           # LAST on purpose: run-mktcap-refresh.sh greps `METRO QUEUE | tail -1`
+           # into mktcap-review-queue.md, which is the only channel the
+           # mktcap-weekly-metro-mapping-research cloud routine can read (its
+           # sandbox cannot reach ntfy). Capped at 200, not 40, because that
+           # file is a work queue for a machine, not a phone notification.
            f"- METRO QUEUE (unmapped — for Ashwin): " +
-           (", ".join(f'{m["name"]} [{m["symbol"]}] ({m["country"]})' for m in still_unmapped[:40]) or "none")]
+           (", ".join(f'{m["name"]} [{m["symbol"]}] ({m["country"]})' for m in still_unmapped[:200]) or "none")]
     report = "\n".join(rep)
     print(report)
     open(os.path.join(OUT, "report.md"), "w", encoding="utf-8").write(report + "\n")

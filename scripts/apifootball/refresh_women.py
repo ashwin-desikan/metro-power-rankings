@@ -18,13 +18,24 @@ Modes:
   python refresh_women.py               DRY RUN: fetch + report, NO file write
   python refresh_women.py --write       fetch + overwrite wlive-2026.json
 
+Exit codes: 0 normal. 4 = the bundle was written, but a season ratchet has been
+holding for HOLD_ALERT_HOURS or more and a human should look at upstream. The
+runner turns 4 into an ntfy warning and carries on -- see run-football-standings.sh.
+
+SEASON RATCHET: once a league has published a real season, a run that would drop
+it back to a placeholder republishes the last good table instead of going
+backwards -- but only if that stored table is itself a season in progress. If it
+is not, the hold is REFUSED and the regression is allowed through, because a
+ratchet clamped onto a stale table preserves it forever. Liga F did exactly that
+between 09-02 and 09-04: label 2026-27, placeholder false, every club at 30 of 30.
+
 WSL auto-watch: the WSL entry carries season 2025 (2025-26, last season) as a
 placeholder plus watch_season 2026. Each run first probes the watch season; the
 moment api-football publishes a non-empty 2026-27 table the bundle swaps to it and
 clears the placeholder flag automatically. No code change needed at kickoff.
 """
 import os, sys, json, time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -32,6 +43,10 @@ from refresh import api_get, api_key, parse_standings, parse_fixtures  # reuse t
 
 OUT = os.path.abspath(os.path.join(HERE, "..", "..", "public", "data", "football"))
 BUNDLE = os.path.join(OUT, "wlive-2026.json")
+
+# How long an unbroken ratchet hold may run before it stops being "upstream is
+# a few hours late" and starts being something a human should look at.
+HOLD_ALERT_HOURS = 24
 
 
 def log(m):
@@ -96,22 +111,69 @@ def fixture_rows(rows, teams):
     return out
 
 
-def committed_seasons():
-    """{league_id: (season, placeholder)} from the bundle already on disk.
+def committed_entries():
+    """{league_id: {season, placeholder, season_label, groups}} from the bundle
+    already on disk.
 
     The season ratchet needs to know what we last PUBLISHED, not just what the
-    API says today. Missing or unreadable bundle -> {}, which disables the
-    ratchet rather than blocking a first build."""
+    API says today -- and it needs the TABLE, not only the season number: a
+    hold that keeps the label while shipping whatever the API served today is
+    how Liga F sat on a completed 2025-26 table under a 2026-27 label for two
+    days (09-02 to 09-04). Missing or unreadable bundle -> {}, which disables
+    the ratchet rather than blocking a first build."""
     try:
         with open(BUNDLE, encoding="utf-8") as f:
             doc = json.load(f)
     except (OSError, ValueError):
-        return {}
+        return {}, {}
     out = {}
     for row in (doc.get("leagues") or []) + (doc.get("competitions") or []):
         if isinstance(row, dict) and row.get("league_id") is not None:
-            out[row["league_id"]] = (row.get("season"), bool(row.get("placeholder")))
-    return out
+            out[row["league_id"]] = {
+                "season": row.get("season"),
+                "placeholder": bool(row.get("placeholder")),
+                "season_label": row.get("season_label"),
+                "groups": row.get("groups") or [],
+            }
+    holds = doc.get("_ratchet_holds")
+    return out, (holds if isinstance(holds, dict) else {})
+
+
+def ratchet_action(prev, placeholder, season):
+    """What the season ratchet should do: 'hold', 'refuse' or 'none'.
+
+    Pure so the self-test can reach it -- the bug this guards against lived in
+    a branch that only ran against a live api-football response."""
+    if not prev:
+        return "none"
+    was_season, was_placeholder = prev.get("season"), prev.get("placeholder", True)
+    if not (placeholder and not was_placeholder
+            and was_season is not None and season != was_season):
+        return "none"
+    return "hold" if looks_fresh(prev.get("groups") or []) else "refuse"
+
+
+def bump_hold(holds, lid, now):
+    """Count one more consecutive run held for this league.
+
+    Returns (hours_held, is_first_alert). The alert fires ONCE per unbroken
+    hold, not every run: a league that is legitimately waiting on upstream
+    should not push four notifications a day forever."""
+    key = str(lid)
+    h = holds.get(key)
+    if not isinstance(h, dict) or not h.get("since"):
+        h = {"since": now.isoformat(), "runs": 0, "alerted": False}
+        holds[key] = h
+    h["runs"] = int(h.get("runs") or 0) + 1
+    try:
+        hours = (now - datetime.fromisoformat(h["since"])).total_seconds() / 3600.0
+    except (TypeError, ValueError):
+        h["since"] = now.isoformat()
+        hours = 0.0
+    first = hours >= HOLD_ALERT_HOURS and not h.get("alerted")
+    if first:
+        h["alerted"] = True
+    return hours, first
 
 
 def fetch_standings(entry, akey):
@@ -147,8 +209,9 @@ def build(write):
     entries = json.load(open(os.path.join(HERE, "wleagues.json"), encoding="utf-8"))
     akey = api_key()
     leagues, competitions = [], []
-    published = committed_seasons()
-    regressions = []
+    published, holds = committed_entries()
+    now = datetime.now(timezone.utc)
+    regressions, refusals, alerts = [], [], []
     log(f"refresh start ({len(entries)} women's competitions, write={write})")
     for e in entries:
         lid = e["league_id"]
@@ -164,13 +227,33 @@ def build(write):
         # Once a real season has been published, never return to a placeholder
         # for it -- the same "must never lose them" invariant the conflicts,
         # champions and euroleague builders got this week.
-        was_season, was_placeholder = published.get(lid, (None, True))
-        if placeholder and not was_placeholder and was_season is not None and season != was_season:
+        prev = published.get(lid) or {}
+        was_season = prev.get("season")
+        action = ratchet_action(prev, placeholder, season)
+        if action == "hold":
+            # The hold must republish the LAST GOOD TABLE, not merely relabel
+            # whatever the API served this run -- and it must first check that
+            # the stored table is itself a season in progress. Holding on a
+            # stale bundle preserves the poison indefinitely, which is the one
+            # failure mode a ratchet can create that a plain regression cannot.
+            hours, first_alert = bump_hold(holds, lid, now)
             regressions.append(
                 f"{e['name']} (id {lid}): published season {was_season} -> "
-                f"{season} placeholder; upstream regressed, keeping {was_season}")
+                f"{season} placeholder; upstream regressed, republishing the last "
+                f"good {prev.get('season_label')} table (held {hours:.1f}h)")
+            if first_alert:
+                alerts.append(f"{e['name']} (id {lid}), held {hours:.0f}h")
             season, placeholder = was_season, False
-            label = e.get("watch_season_label", str(was_season)) if was_season == e.get("watch_season") else label
+            label = prev.get("season_label") or label
+            groups = prev.get("groups") or []
+        elif action == "refuse":
+            refusals.append(
+                f"{e['name']} (id {lid}): upstream regressed to a placeholder AND the "
+                f"published {prev.get('season_label')} table is itself a completed one "
+                f"-- refusing to hold a poisoned bundle; showing {label}")
+            holds.pop(str(lid), None)
+        else:
+            holds.pop(str(lid), None)
 
         n = sum(len(g["rows"]) for g in groups)
         if e.get("continental"):
@@ -212,19 +295,27 @@ def build(write):
     if regressions:
         log(f"  {len(regressions)} league(s) would have gone backwards this run "
             f"-- upstream is serving a completed table under the new season id")
+    for r in refusals:
+        log(f"  RATCHET REFUSED: {r}")
+    if alerts:
+        log("  RATCHET ALERT (%dh+): %s" % (HOLD_ALERT_HOURS, "; ".join(alerts)))
 
     bundle = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "season": "2026-27",
         "leagues": leagues,
         "competitions": competitions,
+        "_ratchet_holds": holds,
     }
     if not write:
         log("DRY RUN — no file written. Pass --write to overwrite the bundle.")
-        return
+        return 0
     os.makedirs(OUT, exist_ok=True)
     json.dump(bundle, open(BUNDLE, "w", encoding="utf-8"), ensure_ascii=False)
     log(f"WROTE {BUNDLE}: {len(leagues)} leagues, {len(competitions)} competitions")
+    # The bundle is written either way: a stuck ratchet is a thing to be told
+    # about, not a reason to ship nothing. Exit 4 is the runner's WARN path.
+    return 4 if alerts else 0
 
 
 def selftest():
@@ -270,13 +361,40 @@ def selftest():
     fx = fixture_rows(frows, fteams)
     assert len(fx) == 1 and fx[0]["home"]["name"] == "Barcelona" and fx[0]["away"]["name"] == "Lyon", fx
     assert fx[0]["home_goals"] == 2 and fx[0]["status"] == "FT", fx
+
+    # SEASON RATCHET (Liga F, held 09-02 to 09-04 while shipping a completed
+    # table under a 2026-27 label -- the hold must carry the last GOOD table)
+    good = {"season": 2026, "placeholder": False, "season_label": "2026-27", "groups": mid}
+    poisoned = {"season": 2026, "placeholder": False, "season_label": "2026-27", "groups": stale}
+    assert ratchet_action(good, placeholder=True, season=2025) == "hold"
+    assert ratchet_action(poisoned, placeholder=True, season=2025) == "refuse", \
+        "a hold on an already-stale table would preserve the poison forever"
+    assert ratchet_action(good, placeholder=False, season=2026) == "none"
+    assert ratchet_action({}, placeholder=True, season=2025) == "none", "no bundle, no ratchet"
+    assert ratchet_action({"season": 2025, "placeholder": True, "groups": mid},
+                          placeholder=True, season=2025) == "none", \
+        "never published a real season -> nothing to hold"
+
+    # the 24h alert fires once per unbroken hold, not on every run
+    t0 = datetime(2026, 9, 2, 12, 0, tzinfo=timezone.utc)
+    holds = {}
+    assert bump_hold(holds, 142, t0) == (0.0, False)
+    assert bump_hold(holds, 142, t0 + timedelta(hours=6))[1] is False
+    hours, first = bump_hold(holds, 142, t0 + timedelta(hours=25))
+    assert first is True and round(hours) == 25, (hours, first)
+    assert bump_hold(holds, 142, t0 + timedelta(hours=31))[1] is False, "alert must not repeat"
+    assert holds["142"]["runs"] == 4
+    holds.pop("142")                      # upstream recovers
+    assert bump_hold(holds, 142, t0 + timedelta(hours=40)) == (0.0, False), \
+        "a cleared hold starts its clock again"
+
     print("self-test OK")
 
 
 def main():
     if "--self-test" in sys.argv:
         return selftest()
-    build("--write" in sys.argv)
+    sys.exit(build("--write" in sys.argv) or 0)
 
 
 if __name__ == "__main__":
