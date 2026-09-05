@@ -37,6 +37,28 @@ The report lists them. Assign via any Claude session / SQL:
 Rules: strict HQ-in-metro (~30km); metro must exist in mktcap_valid_metros;
 when uncertain leave null and skip. The pipeline NEVER guesses.
 
+**Region vs radius.** The ~30km is a default for a metro named after one city,
+not the test itself. The test is whether the HQ is IN the metro, and some
+entries in mktcap_valid_metros are polycentric regions rather than cities --
+Rhine-Neckar and Rhine-Ruhr say so in their names, and `Frankfurt` is read as
+the Rhein-Main region. Inside a region the distance to its largest city can
+exceed 30km and the mapping is still right. Two rows record that reading:
+
+| company | HQ | metro | distance | set by |
+|---|---|---|---|---|
+| (workbook row) | Mainz | Frankfurt | ~35km | excel-sync |
+| Boehringer Ingelheim | Ingelheim am Rhein | Frankfurt | ~45km | ashwin, 2026-09-05 |
+
+Ingelheim is in the Mainz-Bingen district, which is part of the official
+Frankfurt Rhein-Main region, so it is inside the metro on the region reading and
+outside it on the radius one. Ashwin ruled for the region.
+
+The guardrail is that this applies only where the metro genuinely IS a region --
+named as one, or officially polycentric. It is not licence to stretch a
+single-city metro to whatever sits 45km away: Monett, Missouri is ~60km from
+Springfield (MO) and that is a `no-metro`, not a Springfield mapping, because
+Springfield is a city metro and Monett is not in it.
+
 When you have LOOKED and no valid metro applies -- Dot Foods in Mount Sterling,
 Illinois; Arctic Slope Regional in Utqiagvik -- record that instead of leaving
 it to be re-reviewed forever:

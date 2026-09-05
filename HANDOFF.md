@@ -9874,3 +9874,27 @@ Brown County is outside the Quincy MSA either way). Arctic Slope rests on the
 seed's own `city = Barrow`; the only thing that would reverse it is a policy
 choice to follow principal business offices, since ASRC's are in Anchorage and
 Anchorage IS a valid metro.
+
+### 9. Boehringer Ingelheim mapped, and the rule that allowed it written down
+
+Ashwin ruled: Boehringer Ingelheim [Boehringer Ingelheim] $63.9B, HQ Ingelheim
+am Rhein, maps to **Frankfurt**. `mapped_by='ashwin'` -- the judgment is his, the
+SQL was mine. That clears the largest unmapped company on the board and takes
+the notable queue to 4.
+
+It cascades almost not at all: the remaining unmapped German companies with a
+recorded city are Montabaur (United Internet $5.5B, 1&1 $4.8B), Neckarsulm
+(Bechtle $5.3B), Salzgitter ($3.8B) and Büdelsdorf (Freenet $3.4B) -- none in
+Rhein-Main, all under the $10B notable floor.
+
+What it does leave is a precedent worth having in writing, so
+`scripts/mktcap/README.md` gains a **Region vs radius** section (and the
+mktcap-refresh skill a pointer to it): the ~30km is a default for a metro named
+after one city, not the test. The test is whether the HQ is IN the metro, and
+some entries are polycentric regions -- Rhine-Neckar and Rhine-Ruhr say so,
+`Frankfurt` is read as Rhein-Main. Two rows now record that reading, Mainz at
+~35km from the workbook and Ingelheim at ~45km from this ruling.
+
+The guardrail is written down with it: this applies only where the metro
+genuinely is a region. Monett, Missouri stays a `no-metro` at ~60km from
+Springfield (MO), because Springfield is a city metro and Monett is not in it.

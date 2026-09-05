@@ -86,7 +86,10 @@ separate subprocess that aborts the whole run non-zero on failure.
      in the 2026-07-23 workbook seed), so report `new` and `notable` — not the
      whole list, which is the same names every week.
      These need a human HQ-in-metro (~30km) call — the pipeline never
-     guesses. Assigning one is a direct SQL `update mktcap_geo set metro=...`
+     guesses. The ~30km is a default, not the test: where the metro is a
+     polycentric REGION (Rhine-Neckar, Rhine-Ruhr, and `Frankfurt` = Rhein-Main)
+     an HQ inside the region maps even past 30km. See "Region vs radius" in
+     scripts/mktcap/README.md. Assigning one is a direct SQL `update mktcap_geo set metro=...`
      via the Supabase MCP, not a script. When you have looked and no valid
      metro applies, set `mapped_by='no-metro'` (metro stays null) — that is the
      queue's terminal state and drops the row from every future report.
