@@ -215,18 +215,36 @@ MANUAL = {
         "a Rotterdam club; the index carries only the later merged XerxesDZB"),
     ("holland", "Xerxes/D.H.C."): M(None, "rotterdam-the-hague",
         "the Xerxes and DHC combination, Rotterdam and Delft, inside one metro"),
+    # --- ruled by Ashwin, 2026-09-05. All four were declared unresolvable by
+    # this script and all four were wrong to be: the metro existed each time.
+    # Two of them he settled by naming the club current name, which is the
+    # index own vocabulary, and two by naming the town.
+    ("spain", "Atletico Tetuan"): M(None, "tetouan",
+        "Tetouan. The index also carries Moghreb Tetouan, filed under country "
+        "Spain with metro Tetouan, which looks like the successor club; the "
+        "lineage was not ruled on, so no slug is asserted"),
+    ("holland", "Rapid JC Heerlen"): M(None, "kerkrade",
+        "Kerkrade. Consistent with Roda JC, the successor club, which the index "
+        "already places in the Kerkrade metro"),
+    ("holland", "Drechtsteden '79"): M("fc-dordrecht", "rotterdam-the-hague",
+        "current name FC Dordrecht, which the index places in Rotterdam-The Hague"),
+    ("holland", "SHS"): M("svv", "rotterdam-the-hague",
+        "current name SVV, which the index places in Rotterdam-The Hague"),
 }
 
 # Declared as having no metro on this site. The build refuses on anything that
 # is neither resolved nor listed here. These are not failures to try: in each
 # case the town is known and the site simply publishes no metro for it, so
 # inventing one would put a club in a place the rest of the site disagrees with.
-UNRESOLVED = {
-    ("spain", "Atletico Tetuan"): "played in Tetuan, then Spanish Morocco; no Spanish metro applies",
-    ("holland", "Rapid JC Heerlen"): "Heerlen; the site publishes no Heerlen metro and Kerkrade is a different town",
-    ("holland", "Drechtsteden '79"): "the Drechtsteden around Dordrecht; the site publishes no Dordrecht metro",
-    ("holland", "SHS"): "one season, 1958-59; the club town is not established well enough to assert",
-}
+UNRESOLVED = {}
+
+
+def _all_places(ctry, toks, place):
+    """True when every token names a town or metro in this country. Such a key
+    locates a club, it does not identify one."""
+    return bool(toks) and all((ctry, t) in place or
+                              (ctry, CITY_ALIAS.get((ctry, t), t)) in place
+                              for t in toks)
 
 
 def resolve(country_slug, name, site_exact, site_loose, place):
@@ -246,9 +264,25 @@ def resolve(country_slug, name, site_exact, site_loose, place):
     # `Espanyol Barcelona` still does not reach FC Barcelona: neither name
     # contains the other.
     mine = set(key_loose(name).split())
-    if mine:
-        hit = [c for k, cl in site_loose[ctry].items() for c in cl
-               if k and (mine < set(k.split()) or set(k.split()) < mine)]
+    if mine and not _all_places(ctry, mine, place):
+        hit = []
+        for k, cl in site_loose[ctry].items():
+            if not k:
+                continue
+            theirs = set(k.split())
+            if not (mine < theirs or theirs < mine):
+                continue
+            # 🔴 THE SMALLER SIDE MUST CARRY IDENTITY, NOT JUST A PLACE.
+            # `TSV 1860 München` reduces to `munchen` once the legal token and
+            # the founding year are stripped, and `munchen` is a subset of
+            # `bayern munchen`. Containment therefore handed Bayern Munich's
+            # entire record to 1860 Munich. A town name is not a club name: if
+            # the shorter key is nothing but places, this is a coincidence of
+            # geography and the match is refused.
+            smaller = mine if len(mine) < len(theirs) else theirs
+            if _all_places(ctry, smaller, place):
+                continue
+            hit += cl if False else [c for c in cl]
         uniq = {c["slug"]: c for c in hit if c.get("slug")}
         if len(uniq) == 1:
             c = next(iter(uniq.values()))
@@ -270,13 +304,48 @@ def resolve(country_slug, name, site_exact, site_loose, place):
     return None
 
 
+def self_test():
+    """Regression guards for the two ways this script has been wrong."""
+    ok = True
+    site_exact, site_loose = load_site()
+    place, _ = load_metros()
+
+    # 1. A place-only key must never carry identity. `TSV 1860 München` reduces
+    # to `munchen`, which is a subset of `bayern munchen`; before the guard,
+    # containment handed Bayern Munich's whole record to 1860 Munich.
+    r = resolve("germany", "Bayern Munchen", site_exact, site_loose, place)
+    if r and r.get("slug") == "tsv-1860-munchen":
+        ok = False; print("  FAIL Bayern Munchen resolves to TSV 1860 Munchen")
+    elif r and r.get("metro_slug") == "munich" and not r.get("slug"):
+        print("  ok  Bayern Munchen takes the Munich metro and no club page")
+    else:
+        ok = False; print("  FAIL Bayern Munchen resolved to %r" % (r,))
+
+    # 2. The pair that made a similarity score untenable.
+    r = resolve("spain", "Espanyol Barcelona", site_exact, site_loose, place)
+    if not r or r.get("slug") != "rcd-espanyol":
+        ok = False; print("  FAIL Espanyol Barcelona resolved to %r" % (r,))
+    else:
+        print("  ok  Espanyol Barcelona resolves to RCD Espanyol, not Barcelona")
+
+    # 3. A name made entirely of otherwise-noise words must keep a key.
+    if not key_loose("Real Union"):
+        ok = False; print("  FAIL 'Real Union' reduces to an empty key")
+    else:
+        print("  ok  an all-noise name keeps its tokens")
+    return 0 if ok else 1
+
+
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--dry", action="store_true")
     ap.add_argument("--write", action="store_true")
     a = ap.parse_args()
+    if getattr(a, "self_test"):
+        return self_test()
     if not (a.dry or a.write):
-        ap.error("pass --dry or --write")
+        ap.error("pass --self-test, --dry or --write")
 
     site_exact, site_loose = load_site()
     place, by_slug = load_metros()

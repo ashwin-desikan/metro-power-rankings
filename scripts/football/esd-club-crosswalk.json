@@ -469,11 +469,11 @@
   "slug": "sr-colmar"
  },
  "france/Sporting Toulon Var": {
-  "method": "contains",
+  "method": "city",
   "metro": "Toulon",
   "metro_slug": "toulon",
-  "site_name": "SC Toulon",
-  "slug": "sc-toulon"
+  "site_name": null,
+  "slug": null
  },
  "france/Stade Brest": {
   "method": "city",
@@ -574,11 +574,11 @@
   "slug": "us-boulogne"
  },
  "france/US Valenciennes-Anzin": {
-  "method": "contains",
+  "method": "city",
   "metro": "Valenciennes",
   "metro_slug": "valenciennes",
-  "site_name": "Valenciennes FC",
-  "slug": "valenciennes-fc"
+  "site_name": null,
+  "slug": null
  },
  "france/Valenciennes FC": {
   "method": "exact",
@@ -616,11 +616,11 @@
   "slug": "1-fc-nurnberg"
  },
  "germany/1. FC Saarbrucken": {
-  "method": "contains",
+  "method": "city",
   "metro": "Saarbrücken",
   "metro_slug": "saarbrucken",
-  "site_name": "FC Saarbrücken",
-  "slug": "fc-saarbrucken"
+  "site_name": null,
+  "slug": null
  },
  "germany/1. FC Union Berlin": {
   "method": "city",
@@ -672,11 +672,11 @@
   "slug": "bayer-leverkusen"
  },
  "germany/Bayern Munchen": {
-  "method": "contains",
+  "method": "city",
   "metro": "Munich",
   "metro_slug": "munich",
-  "site_name": "TSV 1860 München",
-  "slug": "tsv-1860-munchen"
+  "site_name": null,
+  "slug": null
  },
  "germany/Blau-Weiss 90 Berlin": {
   "method": "loose",
@@ -1078,18 +1078,18 @@
   "slug": "blauw-wit-amsterdam"
  },
  "holland/DOS Utrecht": {
-  "method": "contains",
+  "method": "city",
   "metro": "Utrecht",
   "metro_slug": "utrecht",
-  "site_name": "FC Utrecht",
-  "slug": "fc-utrecht"
- },
- "holland/DWS Amsterdam": {
-  "method": "city",
-  "metro": "Amsterdam",
-  "metro_slug": "amsterdam",
   "site_name": null,
   "slug": null
+ },
+ "holland/DWS Amsterdam": {
+  "method": "contains",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "DWS",
+  "slug": "dws"
  },
  "holland/De Graafschap": {
   "method": "exact",
@@ -1113,11 +1113,11 @@
   "slug": "fc-dordrecht"
  },
  "holland/Drechtsteden '79": {
-  "method": "unresolved",
-  "metro": null,
-  "metro_slug": null,
-  "slug": null,
-  "why": "the Drechtsteden around Dordrecht; the site publishes no Dordrecht metro"
+  "method": "manual",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "slug": "fc-dordrecht",
+  "why": "current name FC Dordrecht, which the index places in Rotterdam-The Hague"
  },
  "holland/FC Amsterdam": {
   "method": "exact",
@@ -1211,11 +1211,11 @@
   "why": "a Rotterdam club; the index carries only the later merged XerxesDZB"
  },
  "holland/FC Zwolle": {
-  "method": "contains",
+  "method": "city",
   "metro": "Zwolle",
   "metro_slug": "zwolle",
-  "site_name": "PEC Zwolle",
-  "slug": "pec-zwolle"
+  "site_name": null,
+  "slug": null
  },
  "holland/FSC Geleen": {
   "method": "city",
@@ -1246,11 +1246,11 @@
   "slug": "fortuna-sittard"
  },
  "holland/GVAV Groningen": {
-  "method": "contains",
+  "method": "city",
   "metro": "Groningen",
   "metro_slug": "groningen",
-  "site_name": "FC Groningen",
-  "slug": "fc-groningen"
+  "site_name": null,
+  "slug": null
  },
  "holland/Go Ahead Eagles": {
   "method": "exact",
@@ -1365,11 +1365,11 @@
   "slug": "rkc-waalwijk"
  },
  "holland/Rapid JC Heerlen": {
-  "method": "unresolved",
-  "metro": null,
-  "metro_slug": null,
+  "method": "manual",
+  "metro": "Kerkrade",
+  "metro_slug": "kerkrade",
   "slug": null,
-  "why": "Heerlen; the site publishes no Heerlen metro and Kerkrade is a different town"
+  "why": "Kerkrade. Consistent with Roda JC, the successor club, which the index already places in the Kerkrade metro"
  },
  "holland/Roda JC Kerkrade": {
   "method": "contains",
@@ -1414,11 +1414,11 @@
   "slug": "fc-eindhoven"
  },
  "holland/SHS": {
-  "method": "unresolved",
-  "metro": null,
-  "metro_slug": null,
-  "slug": null,
-  "why": "one season, 1958-59; the club town is not established well enough to assert"
+  "method": "manual",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "slug": "svv",
+  "why": "current name SVV, which the index places in Rotterdam-The Hague"
  },
  "holland/SVV Schiedam": {
   "method": "contains",
@@ -1442,11 +1442,11 @@
   "slug": "sparta-rotterdam"
  },
  "holland/Sportclub Enschede": {
-  "method": "contains",
+  "method": "city",
   "metro": "Enschede",
   "metro_slug": "enschede",
-  "site_name": "SC Enschede",
-  "slug": "sc-enschede"
+  "site_name": null,
+  "slug": null
  },
  "holland/Telstar": {
   "method": "loose",
@@ -1512,11 +1512,11 @@
   "slug": "sc-heerenveen"
  },
  "italy/A.C.R. Messina": {
-  "method": "contains",
+  "method": "city",
   "metro": "Messina",
   "metro_slug": "messina",
-  "site_name": "Messina",
-  "slug": "messina"
+  "site_name": null,
+  "slug": null
  },
  "italy/AC Cesena": {
   "method": "exact",
@@ -1757,11 +1757,11 @@
   "slug": "frosinone"
  },
  "italy/Genoa CFC": {
-  "method": "contains",
+  "method": "city",
   "metro": "Genoa",
   "metro_slug": "genoa",
-  "site_name": "Genoa",
-  "slug": "genoa"
+  "site_name": null,
+  "slug": null
  },
  "italy/Genova 1893 Circolo del Calcio": {
   "method": "city",
@@ -1792,18 +1792,18 @@
   "slug": "juventus"
  },
  "italy/Lanerossi Vicenza": {
-  "method": "contains",
+  "method": "city",
   "metro": "Vicenza",
   "metro_slug": "vicenza",
-  "site_name": "Vicenza",
-  "slug": "vicenza"
- },
- "italy/Lazio Roma": {
-  "method": "city",
-  "metro": "Rome",
-  "metro_slug": "rome",
   "site_name": null,
   "slug": null
+ },
+ "italy/Lazio Roma": {
+  "method": "contains",
+  "metro": "Rome",
+  "metro_slug": "rome",
+  "site_name": "Lazio",
+  "slug": "lazio"
  },
  "italy/Legnano": {
   "method": "exact",
@@ -2058,11 +2058,11 @@
   "slug": "ad-almeria"
  },
  "spain/Albacete": {
-  "method": "contains",
+  "method": "city",
   "metro": "Albacete",
   "metro_slug": "albacete",
-  "site_name": "Albacete Balompie",
-  "slug": "albacete-balompie"
+  "site_name": null,
+  "slug": null
  },
  "spain/Arenas de Getxo": {
   "method": "manual",
@@ -2086,11 +2086,11 @@
   "slug": null
  },
  "spain/Atletico Tetuan": {
-  "method": "unresolved",
-  "metro": null,
-  "metro_slug": null,
+  "method": "manual",
+  "metro": "Tétouan",
+  "metro_slug": "tetouan",
   "slug": null,
-  "why": "played in Tetuan, then Spanish Morocco; no Spanish metro applies"
+  "why": "Tetouan. The index also carries Moghreb Tetouan, filed under country Spain with metro Tetouan, which looks like the successor club; the lineage was not ruled on, so no slug is asserted"
  },
  "spain/Burgos CF": {
   "method": "exact",
@@ -2198,11 +2198,11 @@
   "slug": "extremadura"
  },
  "spain/CP Merida": {
-  "method": "contains",
+  "method": "city",
   "metro": "Mérida",
   "metro_slug": "merida-spain",
-  "site_name": "Merida",
-  "slug": "merida"
+  "site_name": null,
+  "slug": null
  },
  "spain/Cadiz CF": {
   "method": "exact",
@@ -2240,11 +2240,11 @@
   "slug": "elche-cf"
  },
  "spain/Espanyol Barcelona": {
-  "method": "city",
+  "method": "contains",
   "metro": "Barcelona",
   "metro_slug": "barcelona",
-  "site_name": null,
-  "slug": null
+  "site_name": "RCD Espanyol",
+  "slug": "rcd-espanyol"
  },
  "spain/FC Barcelona": {
   "method": "exact",
