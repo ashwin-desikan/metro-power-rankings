@@ -116,15 +116,41 @@ else
   log "WARN: $EXPORT_CSV not found after refresh.py --write; skipping export commit"
 fi
 
-# Surface anything Ashwin should look at, without treating it as a failure:
-# new geo stubs to curate. "none" is the only clean value; anything else
-# (including grep finding nothing, which would mean the line's shape changed)
-# is worth a look, not a silent pass.
-QUEUE_LINE="$(grep 'METRO QUEUE' "$LOG" | tail -1)"
-case "$QUEUE_LINE" in
-  *": none"*) : ;;
-  *) push "mktcap-refresh: new companies to map -- $DATE" default warning "${QUEUE_LINE:-METRO QUEUE line not found in log}" ;;
-esac
+# Surface anything Ashwin should look at, without treating it as a failure.
+#
+# 2026-09-05: this used to push the whole METRO QUEUE line under the title "new
+# companies to map". Both halves were wrong after build_merged.py's 08-29 fix
+# changed the queue from "new this run" to "everything still unmapped": the
+# alert then carried forty names of which two were new, the other thirty-eight
+# having sat unmapped since the 2026-07-23 workbook seed, and it would have
+# carried the same forty every Saturday forever. The queue is a standing
+# backlog of ~6,800, not a weekly delta.
+#
+# So the push is driven by the COUNTS line and carries only what is actionable:
+# what arrived this week, and anything big enough to move a metro. The full
+# standing list still goes to mktcap-review-queue.md below, which is what the
+# cloud research routine actually reads.
+COUNTS_LINE="$(grep 'METRO QUEUE COUNTS' "$LOG" | tail -1)"
+NEW_LINE="$(grep 'METRO QUEUE (new this run)' "$LOG" | tail -1)"
+NOTABLE_LINE="$(grep 'METRO QUEUE (notable' "$LOG" | tail -1)"
+QUEUE_LINE="$(grep 'METRO QUEUE (unmapped' "$LOG" | tail -1)"
+n_new="$(printf '%s' "$COUNTS_LINE" | sed -n 's/.*new=\([0-9]*\).*/\1/p')"
+n_notable="$(printf '%s' "$COUNTS_LINE" | sed -n 's/.*notable=\([0-9]*\).*/\1/p')"
+n_unmapped="$(printf '%s' "$COUNTS_LINE" | sed -n 's/.*unmapped=\([0-9]*\).*/\1/p')"
+if [ -z "$COUNTS_LINE" ]; then
+  # grep finding nothing means the report's shape changed -- worth a look, not
+  # a silent pass. Same posture the old case statement took.
+  push "mktcap-refresh: queue line not found -- $DATE" default warning \
+"No 'METRO QUEUE COUNTS' line in $LOG. build_merged.py's report shape changed; the queue was NOT checked this run."
+elif [ "${n_new:-0}" -gt 0 ] || [ "${n_notable:-0}" -gt 0 ]; then
+  push "mktcap-refresh: ${n_new:-0} new, ${n_notable:-0} notable to map -- $DATE" default warning \
+"${n_unmapped:-?} companies are unmapped in total -- these are the ones worth your time.
+${NEW_LINE}
+${NOTABLE_LINE}
+Standing list (for the research routine): mac-mini-jobs/mktcap-review-queue.md"
+else
+  log "  metro queue: nothing actionable this week (${n_unmapped:-?} unmapped in total, 0 new, 0 over the notable floor)"
+fi
 
 # Committed alongside the data, not just pushed to ntfy: the
 # mktcap-weekly-metro-mapping-research cloud routine cannot reach ntfy.sh at
@@ -136,6 +162,21 @@ esac
 {
   echo "# mktcap-refresh review queue -- $DATE"
   echo "# Overwritten every run. 'none' below means nothing needs review this week."
+  echo "#"
+  echo "# The standing list is a BACKLOG, not a weekly delta: most of it is"
+  echo "# mapped_by='seed' rows that arrived unmapped in the 2026-07-23 workbook"
+  echo "# seed. Work it top-down (the list is ordered by market cap) rather than"
+  echo "# expecting to clear it. Two outcomes are both correct:"
+  echo "#   update mktcap_geo set metro='...', city='...', state='...',"
+  echo "#     mapped_by='claude-researched', mapped_at=current_date where symbol='X';"
+  echo "#   update mktcap_geo set mapped_by='no-metro', mapped_at=current_date"
+  echo "#     where symbol='X';   -- looked, HQ is in no valid metro; metro stays null"
+  echo "# 'no-metro' is the terminal state and drops the row from every future run."
+  echo "# Rules unchanged: strict HQ-in-metro (~30km), metro must exist in"
+  echo "# mktcap_valid_metros, and when genuinely uncertain leave it alone."
+  if [ -n "$COUNTS_LINE" ]; then printf '%s\n' "$COUNTS_LINE"; fi
+  if [ -n "$NEW_LINE" ]; then printf '%s\n' "$NEW_LINE"; fi
+  if [ -n "$NOTABLE_LINE" ]; then printf '%s\n' "$NOTABLE_LINE"; fi
   if [ -n "$QUEUE_LINE" ]; then printf '%s\n' "$QUEUE_LINE"; else echo "none"; fi
 } > "$REPO/mac-mini-jobs/mktcap-review-queue.md"
 

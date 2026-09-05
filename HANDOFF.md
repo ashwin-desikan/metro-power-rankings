@@ -9758,3 +9758,68 @@ Verified: self-test PASS, typecheck clean, 154 vitest, table-scroll and mobile
 gates green (the new column lives inside the existing TableScroll), all other
 static gates green, `next build` clean across 5,092 pages. Release note for
 09-05 amended in place to a fourth bullet, still inside the limits.
+
+### 7. The mktcap metro queue: the alert was lying about what it was
+
+Ashwin asked why he got an ntfy about unmapped companies when a mapping process
+already exists. The process exists and works. The alert was the problem.
+
+**Diagnosis.** `build_merged.py`'s 08-29 fix changed the queue from
+`unmapped_new` (symbols new to mktcap_companies THIS run) to `still_unmapped`
+(everything in the merge with no metro). That fix was right -- a stubbed company
+had been dropping out of the queue forever with metro still null. But the
+runner's ntfy title still said **"new companies to map"** and the list was
+capped at 40 with no total. So 09-05's alert carried 40 names of which **2 were
+new**: ten of the top twelve carry `first_seen = 2026-07-18`. Last Saturday
+reported `none` under the old logic, which is why it looked like a break.
+
+**The real numbers.** 6,805 of 12,996 active companies unmapped (52%), but only
+**3.11% of world market cap** -- $5.66T of $181.93T. And the backlog is not the
+pipeline falling behind:
+
+| mapped_by | rows | without metro |
+|---|---|---|
+| seed | 12,157 | 7,720 |
+| excel-sync | 1,905 | 59 |
+| auto-stub | 53 | 53 |
+| claude-researched | 48 | 1 |
+| ashwin | 3 | 0 |
+
+7,720 arrived unmapped in the 2026-07-23 workbook seed and were never mapped in
+the source either. Only ~53 were ever queued by this pipeline.
+
+🔴 **And the queue could never reach zero.** There was no state for "reviewed,
+no valid metro applies". Dot Foods is in Mount Sterling, Illinois; Arctic Slope
+Regional is in Utqiagvik. Under "when uncertain leave null and skip" they stayed
+null and returned to the top of the queue every week, indistinguishable from one
+nobody had looked at.
+
+**Three changes, all `[vercel skip]`, none touching the never-guesses rule:**
+1. `build_merged.py` splits the queue: a machine-readable `METRO QUEUE COUNTS`
+   line, `(new this run)`, `(notable, unmapped)` at `NOTABLE_CAP_USD = $10B`
+   (14 companies today), and the standing list LAST -- because the runner greps
+   `METRO QUEUE (unmapped` and `tail -1` into mktcap-review-queue.md, and that
+   file is the only channel the `mktcap-weekly-metro-mapping-research` cloud
+   routine can read. Its cap went 40 -> 200: it is a work queue for a machine,
+   not a phone notification.
+2. New terminal state `mapped_by='no-metro'` (metro stays null), excluded from
+   the queue. Migration `document_no_metro_terminal_state_on_mktcap_geo` puts the
+   convention on the column itself; README and the mktcap-refresh skill updated.
+   Recording that no metro applies is a decision, not a guess.
+3. The ntfy is now built from the counts: title
+   `mktcap-refresh: N new, M notable to map`, body carrying the total plus only
+   the actionable lines. **A week with 0 new and 0 notable pushes nothing** and
+   logs a line instead. A missing COUNTS line still alerts -- the shape-changed
+   fail-loud posture is preserved.
+
+Verified offline against the real `build()` (network + merge stubbed, fixtures
+covering mapped / unmapped-old / unmapped-new / notable / no-metro): counts read
+`unmapped=4 new=2 notable=2 resolved-no-metro=1`, the no-metro row appears in no
+queue line, and the standing list is last. The swing gate fired correctly on a
+first attempt before being relaxed for the harness. The runner's parsing was
+then exercised on three logs: new+notable pushes, a quiet week pushes nothing,
+and a missing COUNTS line still alerts.
+
+**Not done:** no company was curated. The mechanism now exists; filling it in is
+Ashwin's call or the research routine's work. The 14 notable unmapped are led by
+Boehringer Ingelheim $63.9B, Dot Foods $34.2B and Chaozhou Three-Circle $32.3B.

@@ -81,10 +81,15 @@ separate subprocess that aborts the whole run non-zero on failure.
    own code first") — do not add a flag to force past it.
 
 3. **After a `--write` run.** Report:
-   - New companies and the **METRO QUEUE** list (unmapped, `mapped_by='auto-stub'`).
+   - New companies and the **METRO QUEUE COUNTS** line. The queue is a standing
+     backlog of thousands (mostly `mapped_by='seed'` rows that arrived unmapped
+     in the 2026-07-23 workbook seed), so report `new` and `notable` — not the
+     whole list, which is the same names every week.
      These need a human HQ-in-metro (~30km) call — the pipeline never
      guesses. Assigning one is a direct SQL `update mktcap_geo set metro=...`
-     via the Supabase MCP, not a script.
+     via the Supabase MCP, not a script. When you have looked and no valid
+     metro applies, set `mapped_by='no-metro'` (metro stays null) — that is the
+     queue's terminal state and drops the row from every future report.
    - "possible ticker renames (REVIEW, not auto-applied)" — flag these to
      the user; they are not safe to apply without confirmation.
    - Point out `out/mktcap_export.csv` exists but has NOT been imported into

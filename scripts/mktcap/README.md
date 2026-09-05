@@ -37,6 +37,27 @@ The report lists them. Assign via any Claude session / SQL:
 Rules: strict HQ-in-metro (~30km); metro must exist in mktcap_valid_metros;
 when uncertain leave null and skip. The pipeline NEVER guesses.
 
+When you have LOOKED and no valid metro applies -- Dot Foods in Mount Sterling,
+Illinois; Arctic Slope Regional in Utqiagvik -- record that instead of leaving
+it to be re-reviewed forever:
+    update mktcap_geo set mapped_by='no-metro', mapped_at=current_date
+      where symbol='XYZ';   -- metro stays null
+`no-metro` is the queue's terminal state and build_merged.py drops those rows
+from it. It is a decision, not a guess: the never-guesses rule is about the
+pipeline inventing a metro, not about a human recording that none exists. Leave
+`auto-stub`/`seed` in place when you simply have not looked yet.
+
+The queue is a STANDING BACKLOG, not a weekly delta. As of 2026-09-05, 6,805 of
+12,996 active companies have no metro -- but 7,720 of those geo rows are
+`mapped_by='seed'`, i.e. they arrived unmapped in the 2026-07-23 workbook seed
+and were never mapped there either; only ~53 were ever queued by this pipeline.
+By weight the gap is small: the unmapped tail is 3.1% of world market cap
+($5.66T of $181.93T). The weekly ntfy therefore reports COUNTS plus what is
+actionable (new this run, and anything at or above `NOTABLE_CAP_USD`, $10B,
+which is 14 companies today); the full standing list goes to
+mac-mini-jobs/mktcap-review-queue.md, which is the channel the
+mktcap-weekly-metro-mapping-research cloud routine reads.
+
 ## MetroAreas.xlsx import contract (verified 2026-07-23)
 MktCap_Data holds A:D = Metro Area / Valuation / Company Name / Source; stamps
 E1 (ISO date), E2 (display), K1/K2 mirror, K4 auto-COUNTA. Metro Areas AT/AU are
