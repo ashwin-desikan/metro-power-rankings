@@ -9930,3 +9930,25 @@ notable and the standing list, present in the counts and on the held line.
 
 Notable queue is now **1**: Pershing Square Holdings, still awaiting a policy on
 fund vehicles versus their managers.
+
+### 11. Notable queue at zero
+
+Ashwin ruled: Pershing Square Holdings [PSHD.L] $12.2B is **New York** -- the
+manager's seat, not the Guernsey domicile or the London listing.
+`mapped_by='ashwin'`. That is the fund-vehicle policy question from section 8
+answered by precedent: for a listed fund, map where it is run.
+
+**The notable queue (>= $10B unmapped) is now 0**, from 14 this morning:
+
+| outcome | n |
+|---|---|
+| mapped | 3 (Anhui Conch -> Wuhu researched; Boehringer Ingelheim -> Frankfurt, Pershing Square -> New York, both Ashwin's rulings) |
+| `no-metro`, terminal | 8 |
+| `metro-gap`, held for a metro-area decision | 3 |
+
+Whole-table state: 6,194 mapped, 6,791 still unmapped (the small-cap tail, 3.1%
+of world market cap), 8 no-metro, 3 metro-gap.
+
+Next Saturday's run should push nothing at all unless a genuinely new company
+arrives or something crosses $10B -- which is the behaviour section 7 was aiming
+at, now actually reachable because the queue has terminal states.
