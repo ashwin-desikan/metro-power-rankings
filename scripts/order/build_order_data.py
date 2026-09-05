@@ -25,10 +25,13 @@ artefact.
 
 WHAT IS DELIBERATELY MISSING IN v1
 ----------------------------------
-Force currently carries reach and material mass only. The administrative leg
-of state capacity, tax revenue as a share of GDP, is not on the site yet;
-build-country-indicators.py has been wired for it and it joins the axis on the
-next successful run. Integrity is a single V-Dem cross-section plus
+Force carries reach, material mass and, since 2026-09-05, an administrative leg
+weighted 0.25 against 0.75 for recognised power. That quarter is split half and
+half between tax revenue and general government final consumption, because the
+tax series is CENTRAL government and on its own reads federal states low for a
+definitional reason rather than a real one -- Germany 19th percentile, the
+United States 18th, below Brazil. A country with neither reading is scored on
+recognised power alone. Integrity is a single V-Dem cross-section plus
 constitutional durability, so the grid is one year, not a panel. The full
 V-Dem panel (v2clrspct, v2x_corr, v2xlg_legcon) is what turns it into a time
 series. Both gaps are stated on the page rather than papered over.
@@ -96,7 +99,7 @@ VANGUARD = {
 # the build stops rather than quietly publishing an arrival.
 MIN_PLAUSIBLE_DISTANCE = 25.0
 
-FORCE_W = {"rec": 1.0}
+FORCE_W = {"rec": 0.75, "tax": 0.125, "govcons": 0.125}
 INTEGRITY_W = {"ruleOfLaw": 0.65, "durability": 0.25, "stability": 0.10}
 
 
@@ -128,6 +131,38 @@ def plotting_position(values: dict[str, float]) -> dict[str, float]:
             out[ordered[k][0]] = pos
         i = j + 1
     return out
+
+
+def force_score(rec_pct: float, tax_pct, gov_pct) -> float:
+    """Force on 0..100: recognised power blended with an administrative leg,
+    all three as percentiles against contemporaries.
+
+    Reach and mass are what a state HAS; what it can collect and spend is what
+    it can REACH INTO, and a state that cannot do that cannot do much with the
+    mass it sits on. Weighted 3:1 towards recognised power, which covers every
+    country on the board where the fiscal readings do not.
+
+    The administrative quarter is carried by TWO readings, half each, because
+    neither is clean alone. Tax revenue is the CENTRAL government series, so it
+    reads federal states low for a definitional reason and not a real one:
+    Germany sits at the 19th percentile on it and the United States at the
+    18th, below Brazil, because the Laender and the states collect the rest.
+    Government consumption is general-government and covers 28 more countries,
+    but it is spending rather than the capacity to raise it. Together they
+    disagree in the right places.
+
+    Reweight rather than impute, the same rule the Integrity axis uses: the
+    administrative quarter goes to whichever readings exist, and a country with
+    neither is scored on recognised power alone rather than on a guess that
+    would place it by invention.
+    """
+    legs = [(FORCE_W["tax"], tax_pct), (FORCE_W["govcons"], gov_pct)]
+    present = [(w, v) for w, v in legs if v is not None]
+    if not present:
+        return rec_pct
+    mass = sum(w for w, _ in present)
+    admin = sum(w * v for w, v in present) / mass
+    return FORCE_W["rec"] * rec_pct + (1.0 - FORCE_W["rec"]) * admin
 
 
 def band(pct: float) -> int:
@@ -211,7 +246,10 @@ def build_grid():
         if rec is None:
             continue
         c = const.get(slug) or {}
-        rl = ((ind.get(slug) or {}).get("indicators") or {}).get("ruleOfLaw", {}).get("value")
+        inds = (ind.get(slug) or {}).get("indicators") or {}
+        rl = inds.get("ruleOfLaw", {}).get("value")
+        tax = inds.get("taxRevenuePct", {}).get("value")
+        govcons = inds.get("govConsumptionPct", {}).get("value")
         dur, dur_source = durability(c)
         stab = stability(c.get("suspensions"), c.get("interims"))
         raw[slug] = {
@@ -224,6 +262,10 @@ def build_grid():
             "powerRank": r.get("rank"),
             "tier": r.get("tier"),
             "ruleOfLaw": rl,
+            "taxRevenuePct": tax,
+            "taxRevenueYear": inds.get("taxRevenuePct", {}).get("year"),
+            "govConsumptionPct": govcons,
+            "govConsumptionYear": inds.get("govConsumptionPct", {}).get("year"),
             "constitutionAge": c.get("ageYears"),
             "constitutionAdopted": c.get("adopted"),
             "suspensions": c.get("suspensions"),
@@ -248,7 +290,15 @@ def build_grid():
     # scored on a thinner basis that would not be comparable.
     scored = {s: v for s, v in raw.items() if v["ruleOfLaw"] is not None}
 
-    force_pct = plotting_position({s: v["rec"] for s, v in scored.items()})
+    # Two percentile legs, each ranked over the countries that have it. The tax
+    # leg is ranked among its own 154 rather than against the whole board, so a
+    # missing reading never reads as a low one.
+    rec_pct = plotting_position({s: v["rec"] for s, v in scored.items()})
+    tax_pct = plotting_position(
+        {s: v["taxRevenuePct"] for s, v in scored.items() if v["taxRevenuePct"] is not None})
+    gov_pct = plotting_position(
+        {s: v["govConsumptionPct"] for s, v in scored.items() if v["govConsumptionPct"] is not None})
+    force_pct = {s: force_score(rec_pct[s], tax_pct.get(s), gov_pct.get(s)) for s in scored}
     integ_raw = {}
     for s, v in scored.items():
         if v["durability"] is None:
@@ -275,6 +325,9 @@ def build_grid():
         row = dict(v)
         row.update({
             "force": f,
+            "forceRecPct": round(rec_pct[s], 1),
+            "forceTaxPct": None if s not in tax_pct else round(tax_pct[s], 1),
+            "forceGovConsPct": None if s not in gov_pct else round(gov_pct[s], 1),
             "integrity": i,
             "integrityRaw": round(integ_raw[s], 4),
             "cell": key,
@@ -322,7 +375,7 @@ def build_grid():
         "meta": {
             "title": "The Order Grid",
             "axes": {
-                "force": "Recognised power in the Power Atlas: spending, productive economy, reach and standing. Percentile against contemporaries.",
+                "force": "Recognised power in the Power Atlas (0.75) -- spending, productive economy, reach and standing -- blended with an administrative leg (0.25) carried half and half by tax revenue and government consumption, both as a share of GDP. Each a percentile against contemporaries. Two fiscal readings rather than one because tax revenue is the central government series and reads federal states low for a definitional reason; a country with neither reading is scored on recognised power alone rather than on a guess.",
                 "integrity": "V-Dem rule of law (0.65), constitutional durability (0.25) and freedom from suspension (0.10). Percentile against contemporaries.",
             },
             "vanguard": VANGUARD,
@@ -337,13 +390,17 @@ def build_grid():
                 "by law, and still do great harm. This describes conditions, never worth."
             ),
             "pending": [
-                "Tax revenue as a share of GDP, the administrative leg of Force. Wired into build-country-indicators.py, lands on its next run.",
+                "A general-government TAX series. The one behind the Force axis is central "
+                "government (GC.TAX.TOTL.GD.ZS), which reads federal states low for a "
+                "definitional reason; pairing it with general-government consumption softens "
+                "that without curing it.",
                 "The full V-Dem panel, which turns one cross-section into a time series.",
             ],
             "sources": [
                 "Correlates of War National Material Capabilities v6.0 and Maddison Project Database 2023, via the site Power Atlas",
                 "V-Dem rule of law via Our World in Data",
                 "Comparative Constitutions Project, Chronology of Constitutional Events v6.0",
+                "World Bank Open Data, tax revenue and general government final consumption (% of GDP), via build-country-indicators.py",
             ],
             "weights": {"force": FORCE_W, "integrity": INTEGRITY_W},
             "cells": [
@@ -354,6 +411,12 @@ def build_grid():
                 "inPowerAtlas": len(raw),
                 "scored": len(out),
                 "unscored": len(unscored),
+                "forceWithBothLegs": sum(1 for r in out
+                                         if r["forceTaxPct"] is not None and r["forceGovConsPct"] is not None),
+                "forceWithOneLeg": sum(1 for r in out
+                                       if (r["forceTaxPct"] is None) != (r["forceGovConsPct"] is None)),
+                "forceRecOnly": sum(1 for r in out
+                                    if r["forceTaxPct"] is None and r["forceGovConsPct"] is None),
                 "durabilityFromAge": sum(1 for r in out if r["durabilitySource"] == "age"),
                 "durabilityUncodified": sum(1 for r in out if r["durabilitySource"] == "uncodified"),
                 "durabilityUnavailable": sum(1 for r in out if r["durabilitySource"] == "unavailable"),
@@ -453,6 +516,30 @@ def self_test() -> int:
     if vanguard_distance(0.05, 0.99) <= vanguard_distance(0.35, 0.99):
         fails.append("distance must fall as capacity rises, all else equal")
 
+    if abs(sum(FORCE_W.values()) - 1.0) > 1e-9:
+        fails.append(f"the Force weights must sum to 1: {FORCE_W}")
+    if FORCE_W["tax"] != FORCE_W["govcons"]:
+        fails.append("the two fiscal readings are half each of one leg; neither leads")
+    if force_score(60.0, None, None) != 60.0:
+        fails.append("no fiscal reading at all must reweight onto recognised power, not impute")
+    if force_score(90.0, None, None) <= force_score(90.0, 10.0, 10.0):
+        fails.append("a missing reading must never score worse than a low one")
+    if abs(force_score(100.0, 0.0, 0.0) - 75.0) > 1e-9 or abs(force_score(0.0, 100.0, 100.0) - 25.0) > 1e-9:
+        fails.append("Force blend is not 0.75 recognised power / 0.25 administrative")
+    if abs(force_score(40.0, 40.0, 40.0) - 40.0) > 1e-9:
+        fails.append("three equal legs must leave the score where it was")
+    if not (force_score(50.0, 10.0, 10.0) < force_score(50.0, 50.0, 50.0) < force_score(50.0, 90.0, 90.0)):
+        fails.append("Force must rise with the administrative leg, all else equal")
+    # one reading present carries the whole administrative quarter -- the
+    # federal-state artifact is why neither is allowed to be the only one when
+    # both exist, but a country with one reading is not penalised for the other.
+    if abs(force_score(50.0, 90.0, None) - force_score(50.0, None, 90.0)) > 1e-9:
+        fails.append("the two fiscal legs must be interchangeable when only one is present")
+    if abs(force_score(50.0, 90.0, None) - (0.75 * 50.0 + 0.25 * 90.0)) > 1e-9:
+        fails.append("a single present reading must carry the full administrative quarter")
+    if abs(force_score(50.0, 20.0, 80.0) - force_score(50.0, 50.0, 50.0)) > 1e-9:
+        fails.append("two present readings are averaged, half each")
+
     if band(0) != 0 or band(50) != 1 or band(99.9) != 2:
         fails.append("band thresholds wrong")
 
@@ -506,6 +593,9 @@ def main() -> int:
 
     cov = grid["meta"]["coverage"]
     print(f"grid  year {grid['year']}: {cov['scored']} scored, {cov['unscored']} unscored")
+    print(f"  Force: {cov['forceWithBothLegs']} on both fiscal legs, "
+          f"{cov['forceWithOneLeg']} on one, "
+          f"{cov['forceRecOnly']} on recognised power alone")
     print(f"  Vanguard: {cov['vanguardCount']} states. Closest anything gets is "
           f"{cov['closestName']} at {cov['closestDistance']}, median {cov['medianDistance']}.")
     for c in grid["meta"]["cells"]:
