@@ -9552,3 +9552,80 @@ canon currently forbids naming living public figures on the site while the site
 has been flagging thirteen of them for months; the recommendation is a narrow
 carve-out permitting person-level flags that meet a written criterion, carry
 dated sourced acts, and are applied by the same test to everyone in scope.
+
+---
+
+## 2026-09-05 — mini → Windows and next session: THE WATCHDOG'S ORPHANED SLEEP IS FIXED, AND THE FISCAL LEG HAS LANDED BUT IS NOT WIRED
+
+Acting on the 09-05 daily ops sweep and on the 🔴 the 09-04 evening Order entry
+left for the mini. Both are `[vercel skip]`; no build was spent.
+
+### 1. The watchdog fix, applied to all three call sites
+
+The sweep's diagnosis is confirmed in the code. `( sleep "$TIMEOUT"; ... ) &`
+was backgrounded with no redirection, so it inherited the job's stdout;
+`kill "$watcher"` reaps the subshell but not the `sleep` it forked, and the
+orphan keeps the write end of the pipe open. `dispatcher.py:261` reads with
+`capture_output=True`, which blocks until EOF — so the dispatcher waited out the
+full timeout no matter when the work finished. That is the `mlb-sim ok 1826s`
+twice, byte-identical, for ~7.5 minutes of work.
+
+Redirected the watchdog subshell at `runners/_common.sh:62` (`guarded`),
+`runners/mlb-sim.sh:59` (`run_soft`) and `metro-mini-refresh.sh:96`
+(`run_step`) — the last of which runs at 09:00Z tomorrow. Three-line comment
+above each so it does not get tidied away.
+
+**Measured, on a harness carrying the real function body, called the way the
+dispatcher calls it:**
+
+| | success path (3s work, timeout 20s) | timeout path (30s work, timeout 5s) |
+|---|---|---|
+| before | caller saw **20.0s** | 8.0s, killed, `TIMED OUT` |
+| after | caller saw **3.0s** | 5.0s, killed, `TIMED OUT` |
+
+The kill path is unchanged and still fires: rc and the `TIMED OUT` message are
+identical, and the timeout path got tighter because the 3s grace `sleep` was
+being orphaned too. `bash -n` clean on all three.
+
+Verify on the next `mlb-sim` line: it should report ~450-500s, not 1826s.
+
+### 2. The four fiscal indicators landed
+
+Ashwin ran `python3 scripts/build-country-indicators.py` on the mini (the box
+with egress). All four are in `public/data/country-indicators.json`, fetched
+2026-09-05T06:45Z, nested under `indicators` as `{value, year}` like the rest:
+
+| indicator | coverage | median | range | year span |
+|---|---|---|---|---|
+| taxRevenuePct | 154/211 | 17.0 | 0.6–35.4 | 2007–2024 |
+| govExpensePct | 155/211 | 26.1 | 3.8–83.7 | 2006–2024 |
+| govDebtPct | **81/211** | 51.2 | 1.8–174.7 | 2007–2024 |
+| govConsumptionPct | 182/211 | 16.4 | 0.0–60.6 | 2007–2025 |
+
+Two things the next session should know before leaning on them. **`govDebtPct`
+covers 81 of 211** and is not usable as a general axis. And these are the `GC.*`
+**central** government series, not general government: the US reads tax 10.8%
+of GDP and France's debt is absent, so federal states understate against
+unitary ones and the measure is not clean cross-country as it stands.
+
+### 3. 🔴 But the Force axis does not read it yet
+
+`build_order_data.py`'s docstring says the administrative leg "joins the axis on
+the next successful run". It does not. `FORCE_W = {"rec": 1.0}` — Force is still
+100% recognised power share, the script loads `country-indicators.json` at line
+203 for other fields, and no line references `taxRevenuePct`. The wiring that
+exists is the *fetch*, in `build-country-indicators.py`. Adding the leg is a
+modelling decision (weight, and what to do about 154/211 coverage and the
+central-government definition), so it is left for whoever owns the grid rather
+than guessed at here. `order-grid.json` was **not** regenerated; it would be
+byte-identical.
+
+### Note on the data reaching the site
+
+`country-indicators.json` is read by `readFileSync` in `lib/countries.ts:134`
+and `lib/business.ts:617`, so it is in the baked-at-build-time majority, not the
+ISR-from-raw minority. This commit is correctly `[vercel skip]` — nothing
+renders the four new fields yet — but the refreshed values for the *existing*
+indicators will not appear on country pages until the next production build
+happens for some other reason. 09-04 spent 6 builds against the 2/day budget, so
+this is not worth one of its own.
