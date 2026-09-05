@@ -5,6 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Champion Challenge — Play and Learn</title>
 <link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* visual-quiz additions for the vq engine (riddle-stadium / word-machine items) */
+  .vis{margin:6px 0 0}
+  .opts.tiles{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .opts.tiles .opt{flex:0 1 auto;min-width:76px;min-height:70px;font-size:1.7rem;border-radius:16px;padding:12px 18px}
+  .wrow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin-top:8px}
+  .wgroup{display:inline-flex;gap:5px}
+  .wt{min-width:40px;height:50px;padding:0 6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;color:var(--navy);background:#f3f7fb;border-radius:10px;box-shadow:0 4px 0 #c9d8e6;text-transform:uppercase}
+  .wt.gap{background:#fff3d6;box-shadow:0 4px 0 #eccb84;color:#c98a00;animation:bob 1.8s ease-in-out infinite}
+  .wt.mid{background:#e3f9f2;box-shadow:0 4px 0 #86dcc6;color:#06372c}
+  .warrow{font-size:1.6rem}
+  .strain{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;margin-top:8px}
+  .sloco{font-size:2.1rem}
+  .swag{min-width:50px;padding:10px 8px;background:#f3f7fb;border-radius:12px 12px 8px 8px;box-shadow:0 4px 0 #c9d8e6;font-weight:800;font-size:1.25rem;color:var(--navy)}
+  .swag.q{background:#fff3d6;box-shadow:0 4px 0 #eccb84;color:#c98a00;animation:bob 1.6s ease-in-out infinite}
+  .rrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:8px}
+  .rcard{background:#f3f7fb;border-radius:14px;box-shadow:0 4px 0 #c9d8e6;padding:8px 10px;min-width:78px}
+  .rface{font-size:1.7rem;line-height:1.2}
+  .rname{font-weight:800;color:var(--navy);font-size:.88rem}
+  .ritems{font-size:.82rem;margin-top:2px;font-weight:800;color:#1f9e82;min-height:1.1em;word-break:break-all}
+  .ritems.unk{color:#c98a00;font-size:1.05rem}
+  .rchip{display:inline-block;background:#fff3d6;color:#c98a00;border-radius:8px;padding:1px 7px;font-size:.78rem;font-weight:800;margin-top:3px}
+  /* Expert decathlon start cover */
+  .ccstart{position:fixed;inset:0;background:linear-gradient(180deg,var(--sky1),var(--sky2));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:50}
+  .ccstart h1{font-size:1.9rem;color:var(--navy);margin:.2em 0}
+  .ccstart p{font-size:1.02rem;font-weight:700;color:#2c4a63;max-width:440px;margin:4px 0 16px}
+  .ccbtn{display:block;width:min(340px,88vw);margin:8px auto;border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.15rem;padding:15px 20px;cursor:pointer;background:#fff;color:var(--navy);box-shadow:0 6px 0 #0002;text-align:center}
+  .ccbtn small{display:block;font-size:.82rem;font-weight:700;color:#5b7b97;margin-top:2px}
+  .ccbtn.go{background:var(--coral);color:#fff;box-shadow:0 6px 0 #d2453f}
+  .ccbtn.go small{color:#ffe0e0}
+  .hidden{display:none!important}
+</style>
 </head>
 <body>
 <header>
@@ -14,6 +46,13 @@
     <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
   </div>
 </header>
+<div class="ccstart" id="ccstart">
+  <div style="font-size:3.4rem">🏆🔥</div>
+  <h1>Champion Challenge</h1>
+  <p>The decathlon of the arcade — the hardest questions from across every Play &amp; Learn game, ramping from warm-up to expert.</p>
+  <button class="ccbtn" id="ccNormal">🏆 Decathlon<small>10 mixed questions, warm-up to hard</small></button>
+  <button class="ccbtn go" id="ccExpert">🚀 Expert decathlon<small>16 questions, only the harder half of every game</small></button>
+</div>
 <div class="passport" id="passport"></div>
 <main>
   <div class="card" id="card">
@@ -23,6 +62,7 @@
       <svg class="pip" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#ffd23f" stroke="#16324f" stroke-width="4"/><path d="M30 34h40v10a20 20 0 0 1-40 0z" fill="#fff" stroke="#16324f" stroke-width="3"/><path d="M30 38h-8a10 10 0 0 0 10 12M70 38h8a10 10 0 0 1-10 12" fill="none" stroke="#16324f" stroke-width="3"/><rect x="44" y="62" width="12" height="10" fill="#16324f"/><rect x="36" y="72" width="28" height="6" rx="3" fill="#16324f"/><circle cx="42" cy="42" r="3" fill="#16324f"/><circle cx="58" cy="42" r="3" fill="#16324f"/><path d="M42 50q8 6 16 0" fill="none" stroke="#16324f" stroke-width="3" stroke-linecap="round"/></svg>
     </div>
     <div class="place" id="place">—<small id="sub">—</small></div>
+    <div class="vis" id="vis"></div>
     <div class="q" id="q">Loading…</div>
     <button class="readbtn" id="read">🔊 Read it to me</button>
     <div class="opts" id="opts"></div>
@@ -40,10 +80,27 @@
 <p class="grown" id="grownText"></p>
 
 <!-- Cross-game mixer: load each source pool, grab its items, then hand a merged,
-     difficulty-tagged pool to the standard MCQ engine. Levels ramp 1->3 via the
-     engine's stratified `lvl` sampling. -->
+     difficulty-tagged pool to the shared vq engine (a superset of the plain MCQ
+     engine — it renders everything the plain engine does, plus an optional
+     `vis` visual pane, so both plain pools and visual-quiz pools work here).
+     Levels ramp via the engine's stratified `lvl` sampling.
+
+     2026-09-05 — swapped the two easiest sources (North or South?, Trophy
+     Count: 2-option recall/compare) for the two hardest available (Riddle
+     Stadium's logic chains/deduction grids, Word Machine's verbal-reasoning
+     puzzles). Spot the Pattern and Higher or Lower were also candidates but
+     don't fit here: Spot the Pattern's and Word Machine's OWN sequences only
+     ever live in `vis` (never in the plain `q` text) — which is exactly why
+     this page now renders `vis` too — but Spot the Pattern's number-train
+     puzzles are pure times-table arithmetic, too easy a target for a player
+     who already multiplies and divides quickly, so Word Machine (letter
+     logic, not arithmetic) earns the second slot instead. Higher or Lower
+     isn't a multiple-choice pool at all (`window.HLGAME`/`ROUNDS`, a
+     number-line guessing widget, no `opts`/`ans`) and can't be wired into
+     this engine without rebuilding its own UI, so it was left out. -->
 <script>
   var __CH = [];
+  var __CH_FULL = {};   // name -> full lvl-tagged pool, kept for Expert's "harder half" re-sample
   function grab(name, lvl, cap, keep) {
     var g = window.GAME; window.GAME = undefined;
     if (!g || !g.POOL) return;
@@ -58,28 +115,29 @@
     }
     // shuffle, cap per source so every game shows up
     for (var a = items.length - 1; a > 0; a--) { var b = Math.floor(Math.random() * (a + 1)); var t = items[a]; items[a] = items[b]; items[b] = t; }
+    __CH_FULL[name] = items;
     __CH.push.apply(__CH, items.slice(0, cap));
   }
 </script>
-<script src="pools/north-or-south.js"></script>
-<script>grab("North or South?", 1, 8);</script>
 <script src="pools/find-the-teams-home.js"></script>
 <script>grab("Find the Team's Home", 1, 8);</script>
-<script src="pools/trophy-count.js"></script>
-<script>grab("Trophy Count", 1, 8);</script>
+<script src="pools/riddle-stadium.js"></script>
+<script>grab("Riddle Stadium", null, 8, function (x) { return x.lvl + 2; });</script>
 <script src="pools/odd-one-out.js"></script>
 <script>grab("Odd One Out", 2, 8);</script>
 <script src="pools/times-bigger.js"></script>
 <script>grab("How Many Times Bigger?", null, 10, function (x) { return x.lvl >= 2 ? x.lvl : null; });</script>
 <script src="pools/in-the-club.js"></script>
 <script>grab("In the Club", null, 10, function (x) { return x.lvl >= 3 ? x.lvl - 1 : null; });</script>
+<script src="pools/word-machine.js"></script>
+<script>grab("Word Machine", null, 8, function (x) { return x.lvl + 2; });</script>
 <script>
   window.GAME = {
     BASE: "https://rankings.citizenofnowhere.org",
     HEADER: {
       logoEmoji: "🏆", logoText: "Champion Challenge",
       title: "Champion Challenge — Play and Learn",
-      grown: "For grown-ups: the decathlon of the arcade — a mixed run of the harder questions from across the Play & Learn games: club logic (and/or/not), ratios, geography, rivalries, money and more, ramping from warm-up to expert. For players who find the single games easy. Ages 7–10.",
+      grown: "For grown-ups: the decathlon of the arcade — a mixed run of the harder questions from across the Play & Learn games: club logic (and/or/not), ratios, geography, rivalries, logic-chain riddles and verbal reasoning, ramping from warm-up to expert. Expert decathlon lengthens the run and draws only from the harder half of every source. For players who find the single games easy. Ages 8–11.",
       finaleH: "🏆 Champion of champions!",
       finaleP: "You beat the hardest questions from every game in the arcade!",
       again: "Play again 🔁"
@@ -87,8 +145,39 @@
     POOL_PICK: 10,
     POOL: __CH
   };
+  // Expert decathlon: for every source, keep only its own harder half (by the
+  // `lvl` grab() already tagged it with) rather than the flat 8-10 sample
+  // above, and let the run go longer.
+  function buildExpertPool() {
+    var out = [];
+    Object.keys(__CH_FULL).forEach(function (name) {
+      var items = __CH_FULL[name].slice().sort(function (a, b) { return (b.lvl || 0) - (a.lvl || 0); });
+      var halfN = Math.max(4, Math.ceil(items.length / 2));
+      out.push.apply(out, items.slice(0, Math.min(halfN, 14)));
+    });
+    return out;
+  }
+  function loadEngine() {
+    var s1 = document.createElement("script"); s1.src = "assets/scoring.js";
+    s1.onload = function () {
+      var s2 = document.createElement("script"); s2.src = "assets/vq-engine.js";
+      document.body.appendChild(s2);
+    };
+    document.body.appendChild(s1);
+  }
+  document.getElementById("ccNormal").onclick = function () {
+    document.getElementById("ccstart").classList.add("hidden");
+    loadEngine();
+  };
+  document.getElementById("ccExpert").onclick = function () {
+    window.GAME.POOL = buildExpertPool();
+    window.GAME.POOL_PICK = 16;
+    window.GAME.HEADER.logoText = "Champion Challenge 🚀";
+    window.GAME.HEADER.finaleH = "🚀 Expert champion of champions!";
+    window.GAME.HEADER.finaleP = "Sixteen questions, only the harder half of every game — you beat all of it!";
+    document.getElementById("ccstart").classList.add("hidden");
+    loadEngine();
+  };
 </script>
-<script src="assets/scoring.js"></script>
-<script src="assets/engine.js"></script>
 </body>
 </html>

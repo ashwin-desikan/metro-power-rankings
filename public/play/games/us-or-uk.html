@@ -16,15 +16,20 @@
   main{max-width:560px;margin:0 auto;padding:0 14px 20px;text-align:center}
   .ask{font-size:1.02rem;font-weight:800;margin:0 0 8px;color:#5b7b97}
   .item{background:#fff;border-radius:20px;box-shadow:0 8px 20px #16324f1c;padding:18px 14px;margin-bottom:12px}
-  .item .em{font-size:2.8rem;animation:drop .4s cubic-bezier(.2,1.3,.4,1)}
+  .item .em{font-size:2.8rem;animation:drop .4s cubic-bezier(.2,1.3,.4,1);min-height:1.1em}
   @keyframes drop{0%{transform:translateY(-22px) scale(.6);opacity:0}}
   .item .txt{font-size:1.3rem;font-weight:900;margin-top:4px;min-height:1.6em}
+  .wflag{width:72px;height:48px;border-radius:8px;object-fit:cover;box-shadow:0 0 0 3px #dcebf6;margin:0 auto}
   .read{border:none;background:#eef6fc;border-radius:12px;font-size:1rem;padding:5px 12px;cursor:pointer;font-weight:800;color:var(--ink)}
-  .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
-  .opt{border:none;border-radius:18px;background:#fff;box-shadow:0 6px 0 #d7e6f2;cursor:pointer;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;font-family:inherit;font-weight:900;color:var(--ink);font-size:1.1rem;transition:transform .12s}
+  .opts{display:grid;gap:10px;margin-top:4px}
+  .opts.opts3{grid-template-columns:repeat(3,1fr)}
+  .opts.wopts{grid-template-columns:1fr 1fr}
+  .opt{border:none;border-radius:16px;background:#fff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:10px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-family:inherit;font-weight:900;color:var(--ink);font-size:.84rem;line-height:1.2;transition:transform .12s}
   .opt:active{transform:scale(.95)}
-  .opt img.fl{width:96px;height:64px;border-radius:9px;object-fit:cover;box-shadow:0 0 0 3px #dcebf6}
-  .opt.good{background:#e8fbf4;box-shadow:0 6px 0 #bfe6da,0 0 0 4px var(--accent)}
+  .opt img.fl{width:64px;height:43px;border-radius:7px;object-fit:cover;box-shadow:0 0 0 2px #dcebf6}
+  .opt .bothico{font-size:1.9rem}
+  .opts.wopts .opt{font-size:1.05rem;padding:14px 8px;white-space:normal}
+  .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
   .opt.bad{animation:shake .4s}
   @keyframes shake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
   .reveal{min-height:1.5em;font-weight:800;color:var(--accent);margin-top:10px}
@@ -38,7 +43,7 @@
   .toast.show{opacity:1}
   .conf{position:fixed;top:-12px;font-size:1.3rem;pointer-events:none;z-index:15;animation:fall linear forwards}
   @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
-  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20;overflow:auto}
   .cover h1{font-size:2.1rem;margin:8px 0}
   .cover p{font-size:1.08rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 18px}
   .bigbtn{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.25rem;padding:15px 28px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d}
@@ -54,6 +59,7 @@
   .learned .lh{font-weight:900;color:#7a5b00;margin-bottom:4px}
   .learned ul{margin:0;padding-left:20px}
   .learned li{font-weight:700;color:#7a5b00;line-height:1.35;margin:3px 0}
+  .grown{font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px;line-height:1.45}
   .hidden{display:none !important}
 </style>
 </head>
@@ -63,13 +69,18 @@
   <div class="hbtns"><a class="backb" id="back" href="/play">←</a><button class="snd" id="snd">🔊</button></div>
 </header>
 <main>
-  <div class="ask">Which country does this belong to? Tap the flag!</div>
-  <div class="item"><div class="em" id="em"></div><div class="txt" id="txt"></div>
-    <button class="read" id="read">🔊 Read it to me</button></div>
-  <div class="opts">
-    <button class="opt" id="o-us"><img class="fl" src="https://flagcdn.com/w320/us.png" alt="US flag" onerror="this.style.display='none'">United States</button>
-    <button class="opt" id="o-uk"><img class="fl" src="https://flagcdn.com/w320/gb.png" alt="UK flag" onerror="this.style.display='none'">United Kingdom</button>
+  <div class="ask" id="ask">Which country does this belong to? Tap the flag!</div>
+  <div class="item">
+    <img class="wflag hidden" id="wflag" alt="">
+    <div class="em" id="em"></div><div class="txt" id="txt"></div>
+    <button class="read" id="read">🔊 Read it to me</button>
   </div>
+  <div class="opts opts3" id="opts-sort">
+    <button class="opt" id="o-us"><img class="fl" src="https://flagcdn.com/w160/us.png" alt="US flag" onerror="this.style.display='none'">United States</button>
+    <button class="opt" id="o-uk"><img class="fl" src="https://flagcdn.com/w160/gb.png" alt="UK flag" onerror="this.style.display='none'">United Kingdom</button>
+    <button class="opt" id="o-both"><span class="bothico">🤝</span>Both</button>
+  </div>
+  <div class="opts wopts hidden" id="opts-word"></div>
   <div class="reveal" id="reveal"></div>
   <button class="next" id="next" disabled>Next →</button>
   <div class="pass" id="pass"></div>
@@ -77,25 +88,28 @@
 <div class="toast" id="toast"></div>
 
 <div class="cover" id="start">
-  <div style="font-size:3.8rem">🗽🎡</div>
+  <div style="font-size:3.6rem">🗽🎡🤝</div>
   <h1>US or UK?</h1>
-  <p>Two countries, two ways of doing things. Sort each one to the right flag, and watch out for the <b>tricky ones</b>!</p>
+  <p>Two countries, two ways of doing things — and sometimes BOTH! Sort each fact to the right flag (or both), then swap words: what do the British call it?</p>
   <button class="bigbtn" id="go">Start sorting! 🚀</button>
 </div>
 
 <div class="cover hidden" id="finale">
   <div style="font-size:4rem">🗽🎡⭐</div>
   <h1>Dual-Country Champion!</h1>
-  <p>You know both countries inside out.</p>
+  <p>You know both countries inside out — and the words that trip everyone else up.</p>
+  <div id="tallybox"></div>
   <button class="bigbtn" id="again">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
+
+<p class="grown" id="grownText">For grown-ups: classification with THREE categories instead of two — US, UK, or Both — so a right answer has to rule something IN as well as out, across government and law, geography, money and units, school, sport, food, holidays, transport, famous buildings and history (90+ real facts). A second round alternates in British/American vocabulary pairs (sidewalk/pavement, chips/crisps and more), with distractors drawn from other real words in the list so a correct guess takes recall, not elimination. Ages 7–10.</p>
 
 <script src="assets/scoring.js"></script>
 <script>
 const ITEMS=[
  {em:"🗺️", t:"Has 50 states", a:"us", f:"From Alaska to Florida. The UK has 4 nations instead."},
- {em:"🏴󠁧󠁢󠁳󠁣󠁴󠁿", t:"Made of 4 nations", a:"uk", f:"England, Scotland, Wales and Northern Ireland."},
+ {em:"🏴", t:"Made of 4 nations", a:"uk", f:"England, Scotland, Wales and Northern Ireland."},
  {em:"🏛️", t:"Laws are made by Congress", a:"us", f:"Congress meets in the Capitol Building in Washington, D.C."},
  {em:"🕰️", t:"Laws are made by Parliament", a:"uk", f:"Parliament meets by Big Ben, in the Palace of Westminster."},
  {em:"🏦", t:"The Senate", a:"us", f:"Two senators for every state: 100 in all."},
@@ -114,36 +128,184 @@ const ITEMS=[
  {em:"⚖️", t:"Its top court is the Supreme Court of nine justices", a:"us", f:"Nine justices serve for life."},
  {em:"📅", t:"Picks its President every 4 years", a:"us", f:"Always in November of a leap-ish year: 2024, 2028…"},
  {em:"🗳️", t:"Must hold a General Election at least every 5 years", a:"uk", f:"The Prime Minister can also call one earlier."},
+ {em:"🧩", t:"Has an upper AND a lower house in its legislature", a:"both", f:"The US Congress has the Senate and the House; the UK Parliament has the Lords and the Commons."},
+ {em:"📜", t:"Has a single written constitution", a:"us", f:"The US Constitution was written in 1787. Britain has never written all its rules down in one document!"},
+ {em:"🧑‍⚖️", t:"Has a Supreme Court", a:"both", f:"The US Supreme Court dates to 1789. The UK's own Supreme Court is much newer — it opened in 2009!"},
+ {em:"🎯", t:"Its head of state is also its head of government", a:"us", f:"The US President does both jobs. Britain splits them: the King is head of state, the PM runs the government."},
+ {em:"🗓️", t:"Its Parliament can be dissolved early for a snap election", a:"uk", f:"The Prime Minister can call a UK election before the usual five years are up."},
+ {em:"👴", t:"Justices on its top court serve for life", a:"us", f:"US Supreme Court justices serve until they retire or die. UK judges must retire, usually by 75."},
+ {em:"📚", t:"Has NO single written constitution", a:"uk", f:"Britain's rules come from laws, tradition and court rulings built up over centuries, not one document."},
+ {em:"🎶", t:"Has its own national anthem", a:"both", f:"The Star-Spangled Banner for the US; God Save the King for the UK."},
+ {em:"💵", t:"Its money is the dollar", a:"us", f:"US dollar bills are all the same size and mostly green."},
+ {em:"💷", t:"Its money is the pound sterling", a:"uk", f:"British pound notes come in different sizes and colours for each value."},
+ {em:"🛣️", t:"Measures road distances in miles, not kilometres", a:"both", f:"Almost every other country uses kilometres. The US and UK both still use miles on road signs!"},
+ {em:"⚖️", t:"Weighs people in stones and pounds", a:"uk", f:"A British stone is 14 pounds. Americans just use pounds."},
+ {em:"🌡️", t:"Uses Fahrenheit for everyday temperatures", a:"us", f:"0°F is very cold and 100°F is very hot. Britain uses Celsius instead."},
+ {em:"🍺", t:"Sells milk and beer in pints", a:"both", f:"A US pint and a UK pint are actually different sizes — the British pint is bigger!"},
+ {em:"🪙", t:"Uses the cent as its smallest coin", a:"us", f:"100 cents make one dollar."},
+ {em:"🪙", t:"Uses the penny as its smallest coin", a:"uk", f:"100 pence make one pound."},
+ {em:"🖼️", t:"Puts past presidents' faces on its coins", a:"us", f:"Lincoln is on the penny, Washington on the quarter."},
+ {em:"👑", t:"Puts the reigning monarch's face on its coins", a:"uk", f:"Every UK coin shows the King or Queen who was on the throne when it was made."},
+ {em:"🔢", t:"Calls a school year a 'grade', like 5th grade", a:"us", f:"American kids count up through 12 grades before graduating."},
+ {em:"📘", t:"Calls a school year a 'Year', like Year 5", a:"uk", f:"British kids go from Year 1 all the way to Year 13."},
+ {em:"🅰️", t:"Grades tests with letters: A, B, C, D, F", a:"us", f:"An F means you failed. British schools mostly use numbers or percentages instead."},
+ {em:"📝", t:"Takes GCSE exams around age 16", a:"uk", f:"GCSEs are the big exams British teenagers sit before choosing what to study next."},
+ {em:"🏃", t:"Calls school break time 'recess'", a:"us", f:"British schools call the same thing 'break' or 'playtime'."},
+ {em:"🏫", t:"Calls the school boss a 'headteacher', not a 'principal'", a:"uk", f:"Americans call the boss of the school the principal."},
+ {em:"🚌", t:"Rides a big yellow school bus", a:"us", f:"Yellow school buses are a very American sight. British kids are far more likely to walk or take a normal bus."},
+ {em:"🎒", t:"Wears a backpack to carry books", a:"both", f:"Kids in both countries lug their books around in a backpack (Brits sometimes call it a rucksack)."},
+ {em:"👔", t:"Wears a school uniform almost everywhere", a:"uk", f:"Most British schools require a uniform. Most American schools do not."},
+ {em:"⚽", t:"Calls the world's most popular sport 'soccer'", a:"us", f:"Americans say soccer so it isn't confused with American football."},
+ {em:"⚽", t:"Just calls it 'football'", a:"uk", f:"To the British, football has always meant what Americans call soccer."},
+ {em:"🏈", t:"Its most popular sport to watch is (American) football", a:"us", f:"The Super Bowl is the biggest sports day of the year in America."},
+ {em:"🏏", t:"Invented cricket", a:"uk", f:"Cricket has been played in England since at least the 1500s."},
+ {em:"⚾", t:"Plays the World Series in baseball", a:"us", f:"Despite the name, only US and Canadian teams play in it!"},
+ {em:"🎾", t:"Plays Wimbledon, the oldest tennis tournament", a:"uk", f:"Wimbledon has been played in London since 1877."},
+ {em:"🏅", t:"Has hosted the Summer Olympics multiple times", a:"both", f:"The US has hosted the Olympics five times; the UK has hosted three, most recently London 2012."},
+ {em:"📏", t:"Measures a football field in yards", a:"us", f:"An American football field is 100 yards long, end zone to end zone."},
+ {em:"⬇️", t:"Has promotion and relegation in its football league", a:"uk", f:"The worst teams in the Premier League drop down a division every year. US sports leagues don't do this."},
+ {em:"🏆", t:"Plays the Super Bowl", a:"us", f:"The championship game of the NFL, played every February."},
+ {em:"🐟", t:"Calls hot, thick fried potatoes 'chips'", a:"uk", f:"Fish and chips is a British classic. What Americans call fries, the British call chips!"},
+ {em:"🍟", t:"Calls thin fried potatoes 'french fries'", a:"us", f:"In Britain those are just called chips."},
+ {em:"🥔", t:"Calls crunchy bagged potato snacks 'crisps'", a:"uk", f:"What Americans call potato chips, the British call crisps."},
+ {em:"🍪", t:"Calls a sweet baked treat with chocolate chips a 'cookie'", a:"us", f:"The British call the same treat a biscuit."},
+ {em:"🫖", t:"Drinks the most tea per person in the world", a:"uk", f:"The British drink tea with milk, often several cups a day."},
+ {em:"🍔", t:"Turned the hamburger into a fast-food classic", a:"us", f:"Burgers became a huge American fast-food staple in the 20th century."},
+ {em:"🍗", t:"Eats a roast dinner with Yorkshire pudding on Sundays", a:"uk", f:"A Sunday roast usually has roast meat, potatoes, veg and gravy."},
+ {em:"🍕", t:"Loves pizza as a takeaway favourite", a:"both", f:"Pizza started in Italy but is now a favourite takeaway in both the US and the UK."},
+ {em:"🥤", t:"Calls a sweet fizzy drink 'soda' or 'pop'", a:"us", f:"The British usually call it a fizzy drink or a soft drink."},
+ {em:"🎆", t:"Celebrates the Fourth of July with fireworks", a:"us", f:"Independence Day marks the US declaring independence from Britain in 1776."},
+ {em:"🏦", t:"Has bank holidays instead of federal holidays", a:"uk", f:"The UK calls its public holidays 'bank holidays' — most banks and shops used to close on them."},
+ {em:"🎃", t:"Celebrates Halloween by trick-or-treating", a:"both", f:"Halloween is huge in the US and has become very popular in Britain too."},
+ {em:"🛍️", t:"Started Black Friday, the big shopping day after Thanksgiving", a:"us", f:"Black Friday started in American stores, though UK shops have joined in more recently."},
+ {em:"🎉", t:"Pulls Christmas crackers at the dinner table", a:"uk", f:"A cracker snaps open with a bang, a paper hat, a joke and a small toy inside — a British Christmas tradition."},
+ {em:"🎇", t:"Watches the ball drop in Times Square on New Year's Eve", a:"us", f:"Times Square in New York City hosts the famous countdown."},
+ {em:"🎄", t:"Celebrates Christmas on 25 December", a:"both", f:"Christmas Day is a public holiday in both countries."},
+ {em:"🎺", t:"Celebrates the King's Official Birthday with Trooping the Colour", a:"uk", f:"A big parade in London each June, even though it isn't the King's actual birthday."},
+ {em:"🚗", t:"Drives on the left-hand side of the road", a:"uk", f:"Most of Europe and the US drive on the right. Britain (and places it used to rule) drive on the left."},
+ {em:"🚙", t:"Drives on the right-hand side of the road", a:"us", f:"Like most of the world outside Britain and a few other countries."},
+ {em:"🚘", t:"Calls the storage space at the back of a car the 'boot'", a:"uk", f:"And the front part that covers the engine is called the 'bonnet'!"},
+ {em:"🚗", t:"Calls the storage space at the back of a car the 'trunk'", a:"us", f:"And the front part that covers the engine is called the 'hood'."},
+ {em:"🚇", t:"Calls its underground trains 'the Tube'", a:"uk", f:"The London Underground opened in 1863 — the world's first metro system!"},
+ {em:"🚆", t:"Calls its underground trains 'the subway'", a:"us", f:"New York's subway is one of the biggest in the world."},
+ {em:"🚕", t:"Has famous yellow taxi cabs in its biggest city", a:"us", f:"New York's yellow cabs are famous around the world."},
+ {em:"🚖", t:"Has famous black cabs in its capital city", a:"uk", f:"London's black cabs (taxis) are a classic sight."},
+ {em:"🏁", t:"Shows its speed limits in miles per hour", a:"both", f:"Speed limit signs say mph in both the US and the UK."},
+ {em:"🗽", t:"Home to the Statue of Liberty", a:"us", f:"A gift from France, standing in New York Harbor since 1886."},
+ {em:"🕰️", t:"Home to Big Ben and the Houses of Parliament", a:"uk", f:"Big Ben is actually the name of the huge bell inside the clock tower!"},
+ {em:"🏢", t:"Home to the Empire State Building", a:"us", f:"For nearly 40 years it was the tallest building in the world."},
+ {em:"🏰", t:"Home to Buckingham Palace", a:"uk", f:"The King's official London home, with over 750 rooms."},
+ {em:"🏠", t:"Home to the White House", a:"us", f:"Every US President has lived there since John Adams in 1800."},
+ {em:"🗼", t:"Home to the Tower of London", a:"uk", f:"Nearly 1,000 years old, and where the Crown Jewels are kept."},
+ {em:"🗿", t:"Home to Mount Rushmore, with four presidents carved in stone", a:"us", f:"Washington, Jefferson, Roosevelt and Lincoln, carved into a mountainside in South Dakota."},
+ {em:"🪨", t:"Home to Stonehenge, a stone circle over 4,500 years old", a:"uk", f:"Nobody is completely sure why it was built!"},
+ {em:"📜", t:"Declared independence from Britain in 1776", a:"us", f:"The Declaration of Independence was signed on 4 July 1776."},
+ {em:"👑", t:"Has had the same royal family's line on the throne for over 1,000 years", a:"uk", f:"The British monarchy traces back to before 1066, with a few big changes along the way."},
+ {em:"⚔️", t:"Fought a Civil War between the North and the South", a:"us", f:"Fought from 1861 to 1865, partly over slavery."},
+ {em:"💣", t:"Was bombed heavily during the Blitz in World War 2", a:"uk", f:"German bombing raids hit London and other British cities in 1940–41."},
+ {em:"🚀", t:"Put the first astronauts on the Moon", a:"us", f:"Apollo 11 landed in 1969 — Neil Armstrong was the first to step out."},
+ {em:"🌍", t:"Once ruled an empire covering about a quarter of the world", a:"uk", f:"It used to be said the sun never set on the British Empire."},
+ {em:"🤝", t:"Fought together as allies in both World Wars", a:"both", f:"The US and UK have been close allies since World War 1 and World War 2."},
 ];
-const N=12;
+const PAIRS=[
+ {us:"sidewalk", uk:"pavement", f:"In America you walk on the sidewalk. In Britain, it's the pavement."},
+ {us:"elevator", uk:"lift", f:"Same box that goes up and down between floors — Americans call it an elevator, the British a lift."},
+ {us:"truck", uk:"lorry", f:"A big delivery vehicle: an American calls it a truck, a Brit calls it a lorry."},
+ {us:"soccer", uk:"football", f:"Americans say soccer so it isn't confused with American football. The British just call it football."},
+ {us:"math", uk:"maths", f:"Americans drop the 's'. Brits keep it, since 'mathematics' already sounds plural to them!"},
+ {us:"fall", uk:"autumn", f:"Both are real English words for the season after summer — Americans usually say fall, the British usually say autumn."},
+ {us:"gas", uk:"petrol", f:"What you put in a car: gas (short for gasoline) in America, petrol in Britain."},
+ {us:"apartment", uk:"flat", f:"A home that's one floor of a bigger building: an apartment in the US, a flat in the UK."},
+ {us:"cookie", uk:"biscuit", f:"A small sweet baked treat: a cookie in America, a biscuit in Britain."},
+ {us:"french fries", uk:"chips", f:"Thin fried potatoes: french fries in America. In Britain, chips are hot, thick-cut and served with fish!"},
+ {us:"potato chips", uk:"crisps", f:"Thin crunchy potato snacks from a bag: potato chips in America, crisps in Britain."},
+ {us:"trash", uk:"rubbish", f:"Stuff you throw away: trash in America, rubbish in Britain."},
+ {us:"vacation", uk:"holiday", f:"Time off from school or work: a vacation in America, a holiday in Britain."},
+ {us:"diaper", uk:"nappy", f:"What a baby wears: a diaper in America, a nappy in Britain."},
+ {us:"flashlight", uk:"torch", f:"A handheld light: a flashlight in America, a torch in Britain."},
+ {us:"line", uk:"queue", f:"People waiting their turn: a line in America, a queue in Britain."},
+ {us:"candy", uk:"sweets", f:"Sugary treats: candy in America, sweets in Britain."},
+ {us:"movie theater", uk:"cinema", f:"Where you watch films on a big screen: a movie theater in America, a cinema in Britain."},
+ {us:"subway", uk:"underground", f:"An underground train system: the subway in America (especially New York), the Underground — or 'the Tube' — in Britain."},
+ {us:"zip code", uk:"postcode", f:"The letters and numbers at the end of an address: a zip code in America, a postcode in Britain."},
+ {us:"cell phone", uk:"mobile", f:"A phone you carry around: a cell phone in America, a mobile in Britain."},
+ {us:"soccer field", uk:"pitch", f:"Where a football match is played: a soccer field in America, a pitch in Britain."},
+ {us:"eraser", uk:"rubber", f:"What rubs out pencil marks: an eraser in America. Careful in Britain — they call it a rubber!"},
+ {us:"drugstore", uk:"chemist", f:"Where you buy medicine: a drugstore in America, a chemist's in Britain."},
+ {us:"faucet", uk:"tap", f:"Where water comes out of a sink: a faucet in America, a tap in Britain."},
+ {us:"closet", uk:"wardrobe", f:"Where you hang your clothes: a closet in America, a wardrobe in Britain."},
+ {us:"hood", uk:"bonnet", f:"The front part of a car that covers the engine: the hood in America, the bonnet in Britain."},
+ {us:"trunk", uk:"boot", f:"The storage space at the back of a car: the trunk in America, the boot in Britain."},
+ {us:"garbage can", uk:"bin", f:"Where you throw rubbish: a garbage can in America, a bin in Britain."},
+ {us:"mail", uk:"post", f:"Letters and parcels delivered to your house: mail in America, post in Britain."},
+ {us:"sweater", uk:"jumper", f:"A warm knitted top: a sweater in America, a jumper in Britain."},
+ {us:"sneakers", uk:"trainers", f:"Sporty shoes: sneakers in America, trainers in Britain."},
+ {us:"pants", uk:"trousers", f:"Careful with this one! In America, pants means trousers. In Britain, pants means underwear — trousers are the outer garment."},
+ {us:"undershirt", uk:"vest", f:"A sleeveless top worn under a shirt: an undershirt in America, a vest in Britain."},
+ {us:"stroller", uk:"pushchair", f:"What you push a baby around in: a stroller in America, a pushchair (or buggy) in Britain."},
+ {us:"pacifier", uk:"dummy", f:"What a baby sucks on to stay calm: a pacifier in America, a dummy in Britain."},
+ {us:"period", uk:"full stop", f:"The punctuation mark at the end of a sentence: a period in America, a full stop in Britain."},
+ {us:"checkers", uk:"draughts", f:"The board game with red and black discs: checkers in America, draughts in Britain."},
+ {us:"jello", uk:"jelly", f:"Wobbly fruit dessert: jello in America. Watch out — in Britain jelly means this wobbly dessert, but in America jelly means the fruit spread you put on toast!"},
+ {us:"band-aid", uk:"plaster", f:"A small sticky bandage for a cut: a Band-Aid in America, a plaster in Britain."},
+ {us:"restroom", uk:"toilet", f:"Where you go to use the loo: a restroom in America, a toilet (or loo) in Britain."},
+ {us:"crib", uk:"cot", f:"A baby's bed with bars: a crib in America, a cot in Britain."},
+ {us:"purse", uk:"handbag", f:"A bag someone carries their things in: a purse in America, a handbag in Britain."},
+ {us:"soda", uk:"fizzy drink", f:"A sweet bubbly drink: soda (or pop) in America, a fizzy drink in Britain."},
+ {us:"cilantro", uk:"coriander", f:"The leafy herb used in cooking: cilantro in America, coriander in Britain."},
+ {us:"eggplant", uk:"aubergine", f:"The purple vegetable: eggplant in America, aubergine in Britain."},
+ {us:"zucchini", uk:"courgette", f:"The green vegetable: zucchini in America, courgette in Britain."},
+ {us:"takeout", uk:"takeaway", f:"Food you order from a restaurant to eat at home: takeout in America, takeaway in Britain."},
+];
+const N=14;
 const $=id=>document.getElementById(id);
-let sound=true,idx=0,order=[],done=false;
+let sound=true,idx=0,order=[],done=false,currentPrompt="";
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function nameOf(a){return a==="us"?"the United States":a==="uk"?"the United Kingdom":"both countries";}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
 function speakThen(t){if(!sound||!("speechSynthesis" in window)){Scoring.readEnded();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;u.onend=()=>Scoring.readEnded();u.onerror=()=>Scoring.readEnded();speechSynthesis.speak(u);}catch(e){Scoring.readEnded();}}
 function confetti(n){const em=["🗽","🎡","⭐","🎉"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
 function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");const r=Scoring._state.rounds[i];d.className="stamp"+(r?" "+Scoring.tierClass(r.tier):"");d.textContent=r?(r.tier==="grey"?"🆕":"🌟"):"🌟";d.title=r?({gold:"Knew it",silver:"Worked it out",grey:"Learned it"})[r.tier]:"";el.appendChild(d);}}
+function showMode(mode){
+  $("opts-sort").classList.toggle("hidden", mode!=="sort");
+  $("opts-word").classList.toggle("hidden", mode!=="word");
+}
+/* Rounds alternate: sort (US / UK / Both) on even indices, word-pair swap on
+   odd indices — a plain shuffle would clump one mode together some runs. */
+function buildOrder(){
+  const sorts=shuffle(ITEMS).slice(0,Math.ceil(N/2)).map(it=>({kind:"sort",item:it}));
+  const words=shuffle(PAIRS).slice(0,Math.floor(N/2)).map(p=>({kind:"word",pair:p,dir:Math.random()<0.5?"us2uk":"uk2us"}));
+  const out=[];
+  for(let i=0;i<N;i++) out.push(i%2===0 ? sorts[i>>1] : words[(i-1)>>1]);
+  return out;
+}
 function render(){
-  done=false; const c=order[idx];
+  done=false; $("reveal").textContent=""; $("next").disabled=true;
+  const r=order[idx];
+  if(r.kind==="sort") renderSort(r.item); else renderWord(r);
+  buildPass();
+}
+/* ---------------- sort mode: US / UK / Both ---------------- */
+function renderSort(c){
+  showMode("sort");
+  $("wflag").classList.add("hidden");
   Scoring.beginRound(Scoring.idOf({q:c.t}), c.t);
+  $("ask").textContent="Which country does this belong to? US, UK, or both?";
   $("em").textContent=c.em; $("txt").textContent=c.t;
-  ["us","uk"].forEach(k=>$("o-"+k).classList.remove("good","bad","shown","picked"));
-  $("reveal").textContent=""; $("next").disabled=true;
-  buildPass(); speak(c.t+". US, or UK?");
+  ["us","uk","both"].forEach(k=>$("o-"+k).classList.remove("good","bad","shown","picked"));
+  currentPrompt=c.t+". US, UK, or both?";
+  speak(currentPrompt);
 }
 /* Honest Answer loop — PLAY-MASTERY-SPEC.md §1. One tap per round. A miss shows
-   the right answer and still gives the fact, so it teaches instead of stalling.
-   Previously a wrong tap cost nothing and the round would not advance until the
-   answer was right, which made tapping-until-green the winning strategy here:
-   with only 2 options, guessing beat knowing. */
-function choose(k){
+   the right answer and still gives the fact, so it teaches instead of stalling. */
+function chooseSort(k){
   if(Scoring.answered()||!Scoring.armed())return;
-  const c=order[idx], correct=(k===c.a);
+  const c=order[idx].item, correct=(k===c.a);
   const res=Scoring.answer(correct);
   done=true;
-  ["us","uk"].forEach(x=>{
+  ["us","uk","both"].forEach(x=>{
     if(x===c.a) $("o-"+x).classList.add(correct?"good":"shown");
     else if(x===k) $("o-"+x).classList.add("picked");
   });
@@ -152,21 +314,65 @@ function choose(k){
     toast(res.tier==="gold"?pick(["You knew it! 🎉","Straight away! ⭐"]):"Worked it out! 👍");
     speak("Yes! "+c.f); confetti(9);
   }else{
-    const name=(c.a==="us"?"the United States":"the United Kingdom");
-    $("reveal").textContent="🆕 It's "+name+". "+c.f;
+    $("reveal").textContent="🆕 It's "+nameOf(c.a)+". "+c.f;
     toast("Now you know it! 🆕");
-    speak("It's "+name+". "+c.f);
+    speak("It's "+nameOf(c.a)+". "+c.f);
   }
-  $("next").disabled=false;
-  idx++; buildPass();
+  $("next").disabled=false; idx++; buildPass();
+}
+$("o-us").onclick=()=>chooseSort("us"); $("o-uk").onclick=()=>chooseSort("uk"); $("o-both").onclick=()=>chooseSort("both");
+
+/* ---------------- word mode: US <-> UK vocabulary swap ---------------- */
+function renderWord(r){
+  showMode("word");
+  const p=r.pair, dir=r.dir;
+  const shown = dir==="us2uk" ? p.us : p.uk;
+  const correct = dir==="us2uk" ? p.uk : p.us;
+  const askTxt = dir==="us2uk" ? "What do the British call this?" : "What do Americans call this?";
+  Scoring.beginRound(Scoring.idOf({q:"word:"+p.us+"/"+p.uk+":"+dir}), shown+" → "+correct);
+  $("ask").textContent=askTxt;
+  $("em").textContent=""; $("txt").textContent=shown;
+  const flag=$("wflag"); flag.src="https://flagcdn.com/w160/"+(dir==="us2uk"?"us":"gb")+".png"; flag.alt=(dir==="us2uk"?"US":"UK")+" flag"; flag.classList.remove("hidden");
+  const otherSide=PAIRS.map(x=>dir==="us2uk"?x.uk:x.us);
+  const pool=[...new Set(otherSide.filter(w=>w!==correct))];
+  const distractors=shuffle(pool).slice(0,3);
+  const options=shuffle([correct].concat(distractors));
+  const wrap=$("opts-word"); wrap.innerHTML="";
+  options.forEach(w=>{
+    const b=document.createElement("button");
+    b.className="opt"; b.textContent=w; b.dataset.word=w;
+    b.onclick=()=>chooseWord(w===correct,p,dir,correct,b);
+    wrap.appendChild(b);
+  });
+  currentPrompt=askTxt+" "+shown;
+  speak(currentPrompt);
+}
+function chooseWord(correct,p,dir,correctWord,btnEl){
+  if(Scoring.answered()||!Scoring.armed())return;
+  const res=Scoring.answer(correct);
+  done=true;
+  Array.from($("opts-word").children).forEach(b=>{
+    if(b.dataset.word===correctWord) b.classList.add(correct?"good":"shown");
+    else if(b===btnEl) b.classList.add("picked");
+  });
+  const who = dir==="us2uk" ? "The British say" : "Americans say";
+  if(correct){
+    $("reveal").textContent=(res.tier==="gold"?"⭐ ":"👍 ")+p.f;
+    toast(res.tier==="gold"?pick(["You knew it! 🎉","Straight away! ⭐"]):"Worked it out! 👍");
+    speak("Yes! "+p.f); confetti(9);
+  }else{
+    $("reveal").textContent="🆕 "+who+" '"+correctWord+"'. "+p.f;
+    toast("Now you know it! 🆕");
+    speak(who+" "+correctWord+". "+p.f);
+  }
+  $("next").disabled=false; idx++; buildPass();
 }
 
-$("o-us").onclick=()=>choose("us"); $("o-uk").onclick=()=>choose("uk");
 $("next").onclick=()=>{ if(idx>=N){ $("finale").classList.remove("hidden"); showTally(); confetti(24); speak("Dual country champion!"); } else render(); };
-$("go").onclick=()=>{ $("start").classList.add("hidden"); order=shuffle(ITEMS).slice(0,N); idx=0; Scoring.init({slug:"us-or-uk",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}}); render(); };
-function showTally(){const h=$("finale").querySelector("h1");if(h)h.textContent=Scoring.headline();let box=document.getElementById("tallybox");if(!box){box=document.createElement("div");box.id="tallybox";$("again").parentNode.insertBefore(box,$("again"));}box.innerHTML=Scoring.finaleHTML();}
-$("again").onclick=()=>{ $("finale").classList.add("hidden"); order=shuffle(ITEMS).slice(0,N); idx=0; Scoring.init({slug:"us-or-uk",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}}); render(); };
-$("read").onclick=()=>{ Scoring.readStarted(); speakThen(order[idx].t+". US, or UK?"); };
+$("go").onclick=()=>{ $("start").classList.add("hidden"); order=buildOrder(); idx=0; Scoring.init({slug:"us-or-uk",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}}); render(); };
+function showTally(){const h=$("finale").querySelector("h1");if(h)h.textContent=Scoring.headline();$("tallybox").innerHTML=Scoring.finaleHTML();}
+$("again").onclick=()=>{ $("finale").classList.add("hidden"); order=buildOrder(); idx=0; Scoring.init({slug:"us-or-uk",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}}); render(); };
+$("read").onclick=()=>{ Scoring.readStarted(); speakThen(currentPrompt); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
 buildPass();

@@ -53,6 +53,16 @@
   .finale{position:fixed;inset:0;background:#fffef7;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
   .finale.show{display:flex}
   .btn{border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:12px 22px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  [hidden]{display:none}
+  /* Part two: the follow-up (year / score / margin) about the same final */
+  .fu{margin-top:14px;padding-top:10px;border-top:2px dashed #cfe0ee}
+  .fuchip{display:inline-block;background:#fff;border-radius:12px;padding:3px 12px;font-weight:900;font-size:.8rem;color:#5b7b97;box-shadow:0 3px 0 #cfe0ee;margin-bottom:6px}
+  .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
+  .opt{border:none;border-radius:16px;background:#fff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:12px 8px;font-family:inherit;font-weight:800;color:var(--ink);font-size:1rem;transition:transform .12s}
+  .opt:active{transform:scale(.95)}
+  .opt.shown{outline:3px dashed #17a88c88;outline-offset:-4px}
+  .opt.picked{opacity:.5}
+  .club.locked{pointer-events:none}
 </style>
 </head>
 <body>
@@ -71,15 +81,22 @@
   <div class="q">Who won the final? Tap the winner!</div>
   <button class="read" id="read">🔊 Read it to me</button>
   <div class="reveal" id="reveal"></div>
+  <div class="fu" id="fu" hidden>
+    <div class="fuchip">🔍 Follow-up</div>
+    <div class="q" id="fuQ"></div>
+    <button class="read" id="fuRead">🔊 Read it to me</button>
+    <div class="opts" id="fuOpts"></div>
+    <div class="reveal" id="fuReveal"></div>
+  </div>
   <button class="next" id="next" disabled>Next final →</button>
   <div class="pass" id="pass"></div>
 </main>
-<p style="font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px">For grown-ups: real finals from eight competitions — the Champions League and European Cup, World Cup and Euros, Super Bowl, NBA Finals, World Series and Stanley Cup. History, recall and reasoning from real results. Ages 6–10.</p>
+<p class="grown" style="font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px">For grown-ups: real finals from up to eight competitions — the Champions League and European Cup, World Cup and Euros, Super Bowl, NBA Finals, World Series and Stanley Cup. Tap the winner, then a follow-up about the SAME final — the year, the final score, or the winning margin — scored as its own question, so knowing the winner and knowing the detail are counted separately. Score follow-ups only appear where a real score exists (the four football finals); other sports get a year follow-up. History, recall and reasoning from real results. Ages 7–11.</p>
 <div class="toast" id="toast"></div>
 <div class="finale" id="finale">
   <div style="font-size:4rem">🏆✨</div>
   <h1 style="font-size:2.2rem">Duel Champion!</h1>
-  <p style="font-size:1.15rem;font-weight:800">Football, gridiron, hoops, baseball, hockey — you know your finals!</p>
+  <p style="font-size:1.15rem;font-weight:800">Football, gridiron, hoops, baseball, hockey — the winners, the years, the scores. You know your finals!</p>
   <button class="btn" onclick="location.reload()">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
@@ -87,19 +104,30 @@
 <script src="pools/champions-duel-data.js"></script>
 <script>
 const FINALS=(window.DUEL||{FINALS:[]}).FINALS;
-const N=8;
+const N=6;
 const $=id=>document.getElementById(id);
-let sound=true, order=[], idx=0, solved=0, cur=null, done=false, actx=null;
+let sound=true, order=[], idx=0, solved=0, cur=null, done=false, actx=null, stage1Correct=false, stage="winner";
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
-function ctx(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();return actx;}catch(e){return null;}}
+function ctx(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();if(actx.state==="suspended")actx.resume();return actx;}catch(e){return null;}}
 function tone(f,d,type,when,g){if(!sound)return;const a=ctx();if(!a)return;const o=a.createOscillator(),gn=a.createGain();o.type=type||"sine";o.frequency.value=f;gn.gain.value=g||.12;o.connect(gn);gn.connect(a.destination);const t=a.currentTime+(when||0);o.start(t);gn.gain.setValueAtTime(gn.gain.value,t);gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.stop(t+d);}
 function cheer(){[523,659,784,1047].forEach((f,k)=>tone(f,.25,"triangle",k*.09,.14));}
 function learn(){[392,523].forEach((f,k)=>tone(f,.22,"triangle",k*.11,.11));}
 function confetti(n){const em=["🏆","⭐","🎉","⚽","🏈","🏀","⚾","🏒"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
-function buildPass(){const el=$("pass");el.innerHTML="";order.forEach((f,i)=>{const d=document.createElement("div");const r=Scoring._state.rounds[i];d.className="stamp"+(r?" "+Scoring.tierClass(r.tier):"");d.textContent=r?(r.tier==="grey"?"🆕":f.sport):"🏆";d.title=r?({gold:"Knew it",silver:"Worked it out",grey:"Learned it"})[r.tier]:"";el.appendChild(d);});}
+function buildPass(){
+ const el=$("pass"); el.innerHTML="";
+ const total=order.length*2;
+ for(let k=0;k<total;k++){
+   const d=document.createElement("div"); const r=Scoring._state.rounds[k];
+   const f=order[Math.floor(k/2)];
+   d.className="stamp"+(r?" "+Scoring.tierClass(r.tier):"");
+   d.textContent=r?(r.tier==="grey"?"🆕":(k%2===0?f.sport:"❓")):"🏆";
+   d.title=r?({gold:"Knew it",silver:"Worked it out",grey:"Learned it"})[r.tier]:"";
+   el.appendChild(d);
+ }
+}
 function scoreLine(f){
  const wName=f.w===0?f.h:f.a, lName=f.w===0?f.a:f.h;
  if(f.note)return f.note;
@@ -110,8 +138,83 @@ function scoreLine(f){
  if(hg===ag)return wName+" came out on top after a "+hg+"–"+ag+" thriller!";
  return wName+" won "+Math.max(hg,ag)+"–"+Math.min(hg,ag)+"!";
 }
+
+/* ---------- follow-up (Part 2): year / score / margin about the SAME final ----------
+   A miss here is a fine outcome when the winner was already known, and the
+   copy in chooseFu() says so — this is scored as its own Honest Answer round. */
+function yearOptions(final){
+ const trueY=final.end;
+ const sameClubs=FINALS.filter(f=>f!==final&&((f.h===final.h&&f.a===final.a)||(f.h===final.a&&f.a===final.h)));
+ const excluded=new Set(sameClubs.map(f=>f.end)); excluded.add(trueY);
+ let range=[];
+ for(let d=1;d<=12;d++){ [trueY-d,trueY+d].forEach(y=>{ if(!excluded.has(y)) range.push(y); }); }
+ let extra=13;
+ while(range.length<3&&extra<=30){ [trueY-extra,trueY+extra].forEach(y=>{ if(!excluded.has(y)&&!range.includes(y)) range.push(y); }); extra++; }
+ const decoys=shuffle(range).slice(0,3);
+ const opts=shuffle([trueY,...decoys]);
+ return {opts:opts.map(String), ans:opts.indexOf(trueY)};
+}
+function scoreDecoyPairs(hg,ag){
+ const cands=[[hg+1,ag],[hg,ag+1],[Math.max(hg-1,0),ag],[hg,Math.max(ag-1,0)],[hg+1,ag+1],[ag,hg],[hg+2,ag],[hg,ag+2]];
+ const seen=new Set([hg+"-"+ag]); const out=[];
+ cands.forEach(([a,b])=>{ if(a>=0&&b>=0){ const k=a+"-"+b; if(!seen.has(k)){ seen.add(k); out.push(a+"-"+b); } } });
+ return shuffle(out).slice(0,3);
+}
+function penDisplay(p){ const [pw,pl]=p.split("-").map(Number); return Math.max(pw,pl)+"–"+Math.min(pw,pl); }
+function scoreOptions(final){
+ const [hg,ag]=final.s.split("-").map(Number);
+ if(final.p){
+   const trueLabel=final.s+" ("+penDisplay(final.p)+" pens)";
+   const [pw,pl]=final.p.split("-").map(Number);
+   const altPen=Math.min(pw,pl)+"–"+Math.max(pw,pl);
+   const decoy1=final.s;
+   const decoy2=final.s+" ("+altPen+" pens)";
+   const other=scoreDecoyPairs(hg,ag)[0]||((hg+1)+"-"+ag);
+   const opts=shuffle([trueLabel,decoy1,decoy2,other]);
+   return {opts, ans:opts.indexOf(trueLabel)};
+ }
+ const trueLabel=final.s;
+ const decoys=scoreDecoyPairs(hg,ag);
+ const opts=shuffle([trueLabel,...decoys]);
+ return {opts, ans:opts.indexOf(trueLabel)};
+}
+function marginOptions(final){
+ const [hg,ag]=final.s.split("-").map(Number);
+ const trueMargin=Math.abs(hg-ag);
+ const top=Math.max(6,trueMargin+3);
+ const cand=[]; for(let m=1;m<=top;m++){ if(m!==trueMargin) cand.push(m); }
+ const decoys=shuffle(cand).slice(0,3);
+ const nums=shuffle([trueMargin,...decoys]);
+ const opts=nums.map(n=>n+(n===1?" goal":" goals"));
+ return {opts, ans:nums.indexOf(trueMargin)};
+}
+function fuTypeFor(final,desired){
+ if(!final.s) return "year";
+ const [hg,ag]=final.s.split("-").map(Number);
+ if(desired==="margin"&&hg===ag) return "score";
+ return desired;
+}
+function buildFollowup(final){
+ const type=final._fu;
+ if(type==="year"){
+   const r=yearOptions(final);
+   return {type, q:"When was this final?", say:"When was this final?", opts:r.opts, ans:r.ans, fact:"It was "+final.end+"."};
+ }
+ if(type==="score"){
+   const r=scoreOptions(final);
+   return {type, q:"How did it finish?", say:"How did it finish?", opts:r.opts, ans:r.ans, fact:scoreLine(final)};
+ }
+ const r=marginOptions(final);
+ return {type:"margin", q:"How many goals did the winner win by?", say:"How many goals did the winner win by?", opts:r.opts, ans:r.ans, fact:scoreLine(final)};
+}
+function fuLabel(type){ return type==="year"?"the year":type==="score"?"the score":"the margin"; }
+
+function stage1Say(){
+ const yr = cur._fu==="year" ? "" : ("The "+cur.end+" ");
+ return yr+cur.comp+". "+cur.h+", or "+cur.a+". Who won?";
+}
 function render(){
- done=false; cur=order[idx];
+ done=false; cur=order[idx]; stage1Correct=false;
  Scoring.beginRound(Scoring.idOf({q:cur.comp+" "+cur.end+" "+cur.h+" v "+cur.a}), cur.end+" "+cur.comp+": "+cur.h+" v "+cur.a+"");
  const flip=Math.random()<.5;
  cur.disp=flip?[1,0]:[0,1];   // disp[buttonIdx] = final side index (0=h,1=a)
@@ -124,21 +227,26 @@ function render(){
    $("n"+b).textContent=names[side];
    $("c"+b).classList.remove("win","bad","shown","picked");
  });
- $("year").textContent=cur.end;
+ $("year").textContent = cur._fu==="year" ? "❓" : cur.end;
  $("comp").textContent=cur.sport+" "+cur.comp;
  $("reveal").textContent=""; $("next").disabled=true;
+ $("fu").hidden=true; $("fuReveal").textContent=""; $("fuOpts").innerHTML=""; $("fuQ").textContent="";
+ $("c0").classList.remove("locked"); $("c1").classList.remove("locked");
+ stage="winner";
  buildPass();
- speak("The "+cur.end+" "+cur.comp+". "+cur.h+", or "+cur.a+". Who won?");
+ speak(stage1Say());
 }
-/* Honest Answer loop — PLAY-MASTERY-SPEC.md §1. This game is BINARY, so under the
-   old loop (retry free, round will not advance until correct) guessing needed on
-   average 1.5 taps and paid exactly the same trophy as knowing. One tap now. A
-   miss still reveals the winner and reads the score line, so it teaches. */
+/* Honest Answer loop — PLAY-MASTERY-SPEC.md §1. Part one (tap the winner) is
+   scored on its own. It used to end the round — this game was a straight
+   coin flip. Now it starts the round: part two immediately follows with a
+   scored follow-up about the SAME final (year, score or margin). Knowing the
+   winner and missing the follow-up is a fine outcome, and chooseFu() says so. */
 function choose(b){
+ if(stage!=="winner")return;
  if(Scoring.answered()||!Scoring.armed())return;
  const side=cur.disp[b], correct=(side===cur.w);
  const res=Scoring.answer(correct);
- done=true;
+ stage1Correct=correct; done=true;
  const winBtn = cur.disp[0]===cur.w ? 0 : 1;
  if(correct){
    $("c"+b).classList.add("win");
@@ -154,6 +262,43 @@ function choose(b){
    toast("Now you know it! 🆕");
    speak(scoreLine(cur));
  }
+ stage="followup";
+ $("c0").classList.add("locked"); $("c1").classList.add("locked");
+ buildPass();
+ setTimeout(startFollowup, correct?1100:1900);
+}
+function startFollowup(){
+ const fu=buildFollowup(cur); cur._fuq=fu;
+ $("fuQ").innerHTML=fu.q;
+ const o=$("fuOpts"); o.innerHTML="";
+ fu.opts.forEach((label,i)=>{
+   const btn=document.createElement("button"); btn.className="opt";
+   btn.innerHTML="<span>"+label+"</span>";
+   btn.onclick=()=>chooseFu(i,fu); o.appendChild(btn);
+ });
+ $("fu").hidden=false;
+ Scoring.beginRound(Scoring.idOf({q:cur.comp+" "+cur.end+" "+cur.h+" v "+cur.a+" "+fu.type}), fu.type+" — "+cur.end+" "+cur.comp);
+ speak(fu.say);
+}
+function chooseFu(i,fu){
+ if(stage!=="followup")return;
+ if(Scoring.answered()||!Scoring.armed())return;
+ const followupCorrect=(i===fu.ans);
+ Scoring.answer(followupCorrect);
+ document.querySelectorAll("#fuOpts .opt").forEach((el,k)=>{
+   if(k===fu.ans) el.classList.add("shown");
+   else if(k===i) el.classList.add("picked");
+ });
+ $("year").textContent=cur.end;
+ const label=fuLabel(fu.type);
+ let msg, sayMsg;
+ if(stage1Correct&&followupCorrect){ msg="🏆 Full marks! "+fu.fact; sayMsg=fu.fact; cheer(); confetti(10); }
+ else if(stage1Correct&&!followupCorrect){ msg="👍 You knew the winner. Now you know "+label+" too: "+fu.fact; sayMsg="You knew the winner. Now you know "+label+" too. "+fu.fact; learn(); }
+ else if(!stage1Correct&&followupCorrect){ msg="⭐ You knew "+label+"! And now you know the winner too."; sayMsg="You knew "+label+"! And now you know the winner too."; cheer(); confetti(6); }
+ else { msg="🆕 Now you know the winner and "+label+": "+fu.fact; sayMsg="Now you know the winner and "+label+". "+fu.fact; learn(); }
+ $("fuReveal").textContent=msg;
+ toast(stage1Correct&&followupCorrect?"Full marks! 🏆":(stage1Correct?"Half the picture! 👍":(followupCorrect?"You knew "+label+"! ⭐":"Now you know both! 🆕")));
+ speak(sayMsg);
  $("next").disabled=false; solved=Math.max(solved,idx+1);
  buildPass();
 }
@@ -169,13 +314,19 @@ $("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {
 } };
 $("read").onclick=()=>{ if(!cur)return; Scoring.readStarted();
  if(!sound||!("speechSynthesis" in window)){Scoring.readEnded();return;}
- try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance("The "+cur.end+" "+cur.comp+". "+cur.h+", or "+cur.a+". Who won?");
+ try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(stage1Say());
+  u.rate=.95;u.pitch=1.1;u.onend=()=>Scoring.readEnded();u.onerror=()=>Scoring.readEnded();speechSynthesis.speak(u);}
+ catch(e){Scoring.readEnded();} };
+$("fuRead").onclick=()=>{ if(!cur||!cur._fuq)return; Scoring.readStarted();
+ if(!sound||!("speechSynthesis" in window)){Scoring.readEnded();return;}
+ try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(cur._fuq.say);
   u.rate=.95;u.pitch=1.1;u.onend=()=>Scoring.readEnded();u.onerror=()=>Scoring.readEnded();speechSynthesis.speak(u);}
  catch(e){Scoring.readEnded();} };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
-/* Balanced sampling: one final from each competition (8 comps = 8 rounds),
-   weighted toward the modern era so most names are recognisable. */
+/* Balanced sampling: one final per competition (up to 8), sliced to N=6 so
+   the two-part round (winner + follow-up = 12 scored questions) stays about
+   the same session length as the old 8-question version. */
 (function(){
  const groups={};
  FINALS.forEach(f=>{(groups[f.comp]=groups[f.comp]||[]).push(f);});
@@ -189,7 +340,9 @@ if(location.protocol==="file:")$("back").setAttribute("href","index.html");
    picks.push(Scoring.weightedSample(pool,1,f=>Scoring.idOf({q:f.comp+" "+f.end+" "+f.h+" v "+f.a}))[0]||pick(pool));
  });
  order=shuffle(picks).slice(0,N);
- Scoring.init({slug:"champions-duel",total:order.length,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
+ const cycle=shuffle(["year","score","margin","year","score","margin"]);
+ order.forEach((f,i)=>{ f._fu=fuTypeFor(f,cycle[i%cycle.length]); });
+ Scoring.init({slug:"champions-duel",total:order.length*2,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"},noun:"fact"});
 })();
 render();
 </script>

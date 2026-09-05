@@ -70,6 +70,20 @@
   .mtable th{background:#f6fbff;text-transform:uppercase;font-size:.7rem;letter-spacing:1px;color:#5b7b97}
   .mtable td.num{font-size:1.1rem;font-weight:900;text-align:right}
   svg.tg{width:min(340px,86vw);height:auto;margin-top:12px}
+  .chbar{position:relative;width:44px;background:var(--blue);border-radius:5px 5px 0 0;transition:height .5s}
+  .chbar.honest{background:var(--accent)}
+  .chval{position:absolute;top:-20px;left:0;right:0;text-align:center;font-weight:900;font-size:.78rem;color:var(--ink)}
+  .chnm{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font-size:.62rem;font-weight:800;color:#5b7b97;white-space:nowrap}
+  .fairstack{margin-top:10px}
+  .fairlabel{font-size:.85rem;font-weight:900;color:#5b7b97;margin:18px 0 2px}
+  .fairhonest .chart{border-bottom-color:var(--accent)}
+  .chpicwrap{display:flex;justify-content:center;align-items:flex-end;gap:28px;height:150px;margin-top:14px}
+  .chpic{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .chpicbox{background:linear-gradient(180deg,#3b6fd4,#274a91);border-radius:4px}
+  .chpicval{font-weight:900;font-size:.9rem}
+  .chpicnm{font-size:.72rem;font-weight:800;color:#5b7b97}
+  .chlinewrap{margin-top:10px}
+  .chyr{font-size:.62rem;font-weight:800;color:#5b7b97}
 </style>
 </head>
 <body>
@@ -96,7 +110,7 @@
   <p>Real league titles and real skyscraper skylines, turned into bar charts, pictograms and tables. Read the scale, tap the right bar!</p>
   <button class="lvlbtn go" id="lvl3">⭐ Year 3<small>Bar charts · pictograms with half-symbols · tables · one-step questions</small></button>
   <button class="lvlbtn" id="lvl4">🌟 Year 4<small>Time graphs · two-step chart problems · trickier scales</small></button>
-  <button class="lvlbtn" id="lvl5">🚀 Expert<small>Real city scales to 600 · big differences · millions on the axis</small></button>
+  <button class="lvlbtn" id="lvl5">🚀 Expert<small>Real city scales to 600 · exact populations into the tens of millions · two series on one chart · spot the misleading chart</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
@@ -190,11 +204,11 @@ function mcq(options,ans,msg,say){
     btns.push(b);o.appendChild(b);});
   $("zone").appendChild(o);
 }
-const LABEL={tapbar:"reading a bar chart",diff:"comparing two bars",picto:"reading a pictogram",table:"reading a table",time:"reading a time graph",two:"a two-step chart total",skybar:"reading a big-scale bar chart",skydiff:"comparing two big-scale bars",popbar:"reading a population bar chart",two5:"a two-step total from real data"};
+const LABEL={tapbar:"reading a bar chart",diff:"comparing two bars",picto:"reading a pictogram",table:"reading a table",time:"reading a time graph",two:"a two-step chart total",skybar:"reading a big-scale bar chart",skydiff:"comparing two big-scale bars",popbar:"reading a population bar chart",two5:"a two-step total from real data",fairtrunc:"spotting a truncated axis",fairspace:"spotting uneven axis spacing",fairpicto:"spotting a stretched picture chart",fairnolabel:"spotting a chart with no axis labels",twoseries:"reading two series off one chart",bigraw:"reading exact populations"};
 function makeRounds(){
   const kinds=LEVEL===3?["tapbar","diff","picto","table","tapbar","picto","diff","table"]
              :LEVEL===4?["tapbar","diff","picto","table","time","two","time","diff"]
-                       :["skybar","skydiff","popbar","two5","skydiff","popbar","skybar","two5"];
+                       :shuffle(["skybar","skydiff","popbar","two5","fairtrunc","fairspace","fairpicto","fairnolabel","twoseries","bigraw"]).slice(0,8);
   rounds=shuffle(kinds);
 }
 /* Plausible-error options, randomized position — never symmetric ans±k. */
@@ -214,7 +228,7 @@ function render(){
   done=false;nudges=0;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
   const kind=rounds[idx];
   Scoring.beginRound(Scoring.idOf({q:kind}), LABEL[kind]);
-  ({tapbar:rTapBar,diff:rDiff,picto:rPicto,table:rTable,time:rTime,two:rTwo,skybar:rSkyBar,skydiff:rSkyDiff,popbar:rPopBar,two5:rTwoFive})[kind]();
+  ({tapbar:rTapBar,diff:rDiff,picto:rPicto,table:rTable,time:rTime,two:rTwo,skybar:rSkyBar,skydiff:rSkyDiff,popbar:rPopBar,two5:rTwoFive,fairtrunc:rFairTrunc,fairspace:rFairSpace,fairpicto:rFairPicto,fairnolabel:rFairNoLabel,twoseries:rTwoSeries,bigraw:rBigRaw})[kind]();
 }
 function drawBars(data,maxV,step,clickable,onPick){
   const wrap=document.createElement("div");
@@ -388,6 +402,190 @@ function rTwoFive(){
   const sum=data[0][2]+data[1][2];
   const opts=opts3(ans,[sum,ans+10,ans-10,ans+100,sum+data[2][2]]);
   mcq(opts.map(fmt),opts.indexOf(ans),"("+data[0][2]+" + "+data[1][2]+") − "+data[2][2]+" = "+fmt(ans),"Add first, then subtract!");
+}
+/* ---- "Is this chart being fair?" (2026-09-05) — Expert tier -----------------
+   Four real charting tricks, one per question type. Each reveal names the
+   trick plainly and redraws the SAME data honestly right below it, so a miss
+   still teaches the fix, not just the flaw. */
+function miniBars(zone,data,minV,maxV,gridStep,honest){
+  const wrap=document.createElement("div");wrap.className="fairstack"+(honest?" fairhonest":"");
+  const ch=document.createElement("div");ch.className="chart";
+  const range=maxV-minV||1;
+  if(gridStep){
+    for(let g=Math.ceil(minV/gridStep)*gridStep;g<=maxV+0.001;g+=gridStep){
+      const gl=document.createElement("div");gl.className="gl";gl.style.bottom=((g-minV)/range*100)+"%";
+      gl.innerHTML="<span>"+fmt(Math.round(g))+"</span>";ch.appendChild(gl);
+    }
+  }
+  data.forEach(d=>{
+    const b=document.createElement("div");b.className="chbar"+(honest?" honest":"");
+    b.style.height=Math.max(4,(d[1]-minV)/range*100)+"%";
+    b.innerHTML=(gridStep?('<span class="chval">'+fmt(d[1])+'</span>'):'')+'<span class="chnm">'+d[0]+'</span>';
+    ch.appendChild(b);
+  });
+  wrap.appendChild(ch);
+  const pad=document.createElement("div");pad.className="chartpad";wrap.appendChild(pad);
+  zone.appendChild(wrap);
+}
+/* Trick 1: the y-axis starts well above zero, so a small real gap fills the
+   whole chart and looks huge. */
+function rFairTrunc(){
+  const close=POPM.filter((a,i)=>POPM.some((b,j)=>j>i&&Math.max(a[2],b[2])/Math.min(a[2],b[2])<1.35));
+  let pair=shuffle(close.length?close:POPM).slice(0,2);
+  if(pair[0][2]===pair[1][2])return rFairTrunc();
+  if(pair[0][2]<pair[1][2])pair=[pair[1],pair[0]];
+  const [hi,lo]=pair;
+  const start=Math.max(0,Math.floor((lo[2]-5)/5)*5);
+  $("q").innerHTML="Look at this chart of real city populations (millions). Is it being FAIR?";
+  window._say="This chart compares "+hi[0]+" and "+lo[0]+". Is it a fair chart?";speak(_say);
+  miniBars($("zone"),[[hi[0],hi[2]],[lo[0],lo[2]]],start,hi[2]+3,5,false);
+  const msg="The bottom of this chart starts at "+start+" million, not 0 — that makes "+hi[0]+"'s small lead over "+lo[0]+" look huge. Here it is again, starting at 0.";
+  const say="The chart's bottom starts at "+start+", not zero. That makes a small gap look much bigger than it really is.";
+  const opts4=shuffle([
+    {t:"The bottom of the chart doesn't start at 0",ok:true},
+    {t:"The bars are the wrong colour"},
+    {t:"There are too few cities on the chart"},
+    {t:"The city names are spelled wrong"},
+  ]);
+  const box=document.createElement("div");box.className="opts wide";
+  const btns=[];
+  opts4.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o.t;
+    b.onclick=()=>{if(done||!Scoring.armed())return;
+      $("zone").insertAdjacentHTML("beforeend",'<div class="fairlabel">Here it is again, starting at 0 — the honest version:</div>');
+      miniBars($("zone"),[[hi[0],hi[2]],[lo[0],lo[2]]],0,hi[2]+3,5,true);
+      if(o.ok){b.classList.add("good");btns.forEach(x=>{if(x!==b)x.classList.add("dim");});onCorrect(msg,say);}
+      else{b.classList.add("picked");btns.find(x=>x.textContent===opts4.find(y=>y.ok).t).classList.add("shown");onMiss(msg,say);}
+    };
+    btns.push(b);box.appendChild(b);});
+  $("zone").appendChild(box);
+}
+/* Trick 2: the x-axis spaces every point equally even though the real gaps
+   between them are wildly different, hiding how fast things actually changed. */
+function rFairSpace(){
+  const yrs=[2000,2001,2002,2010];
+  const vals=[ri(20,30),ri(24,34),ri(28,40),ri(70,90)];
+  $("q").innerHTML="A shop tracked how many footballs it sold each year. Is this chart FAIR?";
+  window._say="Look at the years along the bottom: 2000, 2001, 2002, 2010. Is that a fair chart?";speak(_say);
+  const w=document.createElement("div");w.className="chlinewrap";
+  const maxV=Math.max(...vals)+10;
+  let svg='<svg class="tg" viewBox="0 0 340 200"><rect width="340" height="200" fill="#fff" rx="12"/>';
+  const pts=vals.map((v,i)=>[60+i*70,180-v/maxV*150]);
+  svg+='<polyline points="'+pts.map(p=>p.join(",")).join(" ")+'" fill="none" stroke="#1f9e82" stroke-width="4" stroke-linejoin="round"/>';
+  pts.forEach((p,i)=>{svg+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="6" fill="#1f9e82" stroke="#fff" stroke-width="2"/><text x="'+p[0]+'" y="196" text-anchor="middle" font-size="12" font-weight="800" fill="#5b7b97">'+yrs[i]+'</text>';});
+  svg+='</svg>';
+  w.innerHTML=svg;$("zone").appendChild(w);
+  const msg="The years along the bottom aren't evenly spaced in real life — 2000 to 2002 is only 1 year at a time, but 2002 to 2010 is 8 years, yet they're drawn the same width. That makes the last jump look much faster than it really was.";
+  const say="2000, 2001 and 2002 are one year apart each, but 2002 to 2010 is eight years — drawn as if it were the same gap. That hides how slow the real change was.";
+  const opts4=shuffle([
+    {t:"2002 to 2010 is drawn the same width as one year, but it's really 8 years",ok:true},
+    {t:"The line is drawn in the wrong colour"},
+    {t:"There should be more dots on the line"},
+    {t:"The shop sold zero footballs one year"},
+  ]);
+  const box=document.createElement("div");box.className="opts wide";const btns=[];
+  opts4.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o.t;
+    b.onclick=()=>{if(done||!Scoring.armed())return;
+      $("zone").insertAdjacentHTML("beforeend",'<div class="fairlabel">Here it is again, with the years honestly spaced out:</div>');
+      const w2=document.createElement("div");w2.className="chlinewrap";
+      const span=yrs[3]-yrs[0];
+      let svg2='<svg class="tg" viewBox="0 0 340 200"><rect width="340" height="200" fill="#fff" rx="12"/>';
+      const pts2=vals.map((v,i)=>[40+(yrs[i]-yrs[0])/span*260,180-v/maxV*150]);
+      svg2+='<polyline points="'+pts2.map(p=>p.join(",")).join(" ")+'" fill="none" stroke="#3b6fd4" stroke-width="4" stroke-linejoin="round"/>';
+      pts2.forEach((p,i)=>{svg2+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="6" fill="#3b6fd4" stroke="#fff" stroke-width="2"/><text x="'+p[0]+'" y="196" text-anchor="middle" font-size="11" font-weight="800" fill="#5b7b97">'+yrs[i]+'</text>';});
+      svg2+='</svg>';w2.innerHTML=svg2;$("zone").appendChild(w2);
+      if(o.ok){b.classList.add("good");btns.forEach(x=>{if(x!==b)x.classList.add("dim");});onCorrect(msg,say);}
+      else{b.classList.add("picked");btns.find(x=>x.textContent===opts4.find(y=>y.ok).t).classList.add("shown");onMiss(msg,say);}
+    };
+    btns.push(b);box.appendChild(b);});
+  $("zone").appendChild(box);
+}
+/* Trick 3: the picture is scaled in BOTH width and height, so doubling the
+   value roughly quadruples the ink — much more than doubling. */
+function rFairPicto(){
+  const two=shuffle(SKY).slice(0,2);
+  const [big,small]=two[0][1]>=two[1][1]?two:[two[1],two[0]];
+  $("q").innerHTML="Real skyscraper counts, as pictures! Is this chart FAIR?";
+  window._say=big[0]+" has "+big[1]+" skyscrapers, "+small[0]+" has "+small[1]+". Is this a fair way to show it?";speak(_say);
+  const scale=90/big[1];
+  const wrap=document.createElement("div");wrap.className="chpicwrap";
+  [big,small].forEach(d=>{
+    const side=Math.max(16,Math.round(d[1]*scale));
+    wrap.insertAdjacentHTML("beforeend",'<div class="chpic"><div class="chpicbox" style="width:'+side+'px;height:'+side+'px"></div><div class="chpicval">'+d[1]+'</div><div class="chpicnm">'+d[0]+'</div></div>');
+  });
+  $("zone").appendChild(wrap);
+  const ratio=(big[1]/small[1]).toFixed(1);
+  const msg="The picture for "+big[0]+" is stretched both WIDER and TALLER than "+small[0]+"'s. "+big[0]+" really has about "+ratio+"× as many skyscrapers — but because both sides grew, the picture's AREA is about "+(ratio*ratio).toFixed(0)+"× bigger, so the difference looks far larger than it is.";
+  const say="Stretching a picture in both directions makes the area grow much faster than the real number does.";
+  const opts4=shuffle([
+    {t:"The picture is stretched wider AND taller, so the area grows way faster than the real number",ok:true},
+    {t:"The two pictures are different shapes"},
+    {t:"The numbers underneath are missing"},
+    {t:"The colours don't match the flags"},
+  ]);
+  const box=document.createElement("div");box.className="opts wide";const btns=[];
+  opts4.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o.t;
+    b.onclick=()=>{if(done||!Scoring.armed())return;
+      $("zone").insertAdjacentHTML("beforeend",'<div class="fairlabel">Here it is again, as an honest bar chart — height only:</div>');
+      miniBars($("zone"),[[big[0],big[1]],[small[0],small[1]]],0,big[1]+40,100,true);
+      if(o.ok){b.classList.add("good");btns.forEach(x=>{if(x!==b)x.classList.add("dim");});onCorrect(msg,say);}
+      else{b.classList.add("picked");btns.find(x=>x.textContent===opts4.find(y=>y.ok).t).classList.add("shown");onMiss(msg,say);}
+    };
+    btns.push(b);box.appendChild(b);});
+  $("zone").appendChild(box);
+}
+/* Trick 4: no numbers anywhere on the axis, so you can compare which bar
+   LOOKS taller but never know by how much. */
+function rFairNoLabel(){
+  const data=shuffle(TITLES).slice(0,4);
+  $("q").innerHTML="Real league titles — but is this chart FAIR?";
+  window._say="This chart has bars but no numbers anywhere. Is that fair?";speak(_say);
+  miniBars($("zone"),data.map(d=>[d[0],d[2]]),0,24,0,false);
+  const msg="There are no numbers on this chart at all — not on the axis, not on the bars. You can see which club's bar is taller, but you can never tell by HOW much. Here it is again with the real numbers added.";
+  const say="A chart with no numbers on it can't really be read — you can only guess, not know.";
+  const opts4=shuffle([
+    {t:"There are no numbers anywhere, so you can't tell the real difference",ok:true},
+    {t:"The bars are too close together"},
+    {t:"The club badges are missing"},
+    {t:"The chart is too short"},
+  ]);
+  const box=document.createElement("div");box.className="opts wide";const btns=[];
+  opts4.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o.t;
+    b.onclick=()=>{if(done||!Scoring.armed())return;
+      $("zone").insertAdjacentHTML("beforeend",'<div class="fairlabel">Here it is again, with the real numbers on show:</div>');
+      miniBars($("zone"),data.map(d=>[d[0],d[2]]),0,24,4,true);
+      if(o.ok){b.classList.add("good");btns.forEach(x=>{if(x!==b)x.classList.add("dim");});onCorrect(msg,say);}
+      else{b.classList.add("picked");btns.find(x=>x.textContent===opts4.find(y=>y.ok).t).classList.add("shown");onMiss(msg,say);}
+    };
+    btns.push(b);box.appendChild(b);});
+  $("zone").appendChild(box);
+}
+/* ---- Two series on one chart, and a bigger-number ceiling ------------------ */
+const OVERLAP=SKYC.map(s=>[s,POPM.find(p=>p[0]===s[0])]).filter(x=>x[1]);
+function rTwoSeries(){
+  const [sky,pop]=pick(OVERLAP);
+  const ratio=sky[2]/pop[2];
+  let k=pick([5,10,15]),tries=0;
+  while(Math.abs(ratio-k)<1.5&&tries++<8)k=pick([5,10,15,20]);
+  const ans=ratio>k?0:1;
+  $("q").innerHTML="This chart shows TWO real things about <b>"+sky[0]+"</b>: its skyscrapers and its population (millions). Read BOTH bars!";
+  window._say="For "+sky[0]+", is the skyscraper count more than "+k+" times its population in millions, or less?";speak(_say);
+  const maxV=Math.max(sky[2],pop[2])*1.15;
+  drawBars([["🏙️ Skyscrapers","sky-"+sky[1],sky[2]],["👥 Population (M)","pop-"+sky[1],pop[2]]],maxV,Math.ceil(maxV/5),false);
+  revealVals();
+  $("zone").insertAdjacentHTML("beforeend",'<div class="chlegend">🏙️ Skyscrapers: '+fmt(sky[2])+' &nbsp; 👥 Population: '+fmt(pop[2])+' million</div>');
+  const opts=["More than "+k+"×","Less than "+k+"×"];
+  mcq(opts,ans,sky[0]+" has "+fmt(sky[2])+" skyscrapers and "+fmt(pop[2])+" million people — that's about "+ratio.toFixed(1)+"× as many skyscrapers as millions of people, so it's "+opts[ans].toLowerCase()+".","Read both bars, then compare!");
+}
+const METROS_RAW=[["Tokyo",40317972],["Delhi",36790184],["Jakarta",36157354],["Mexico City",26370664],["Seoul",26043325],["Cairo",23708237],["New York",22342624],["Sao Paulo",22305115],["Moscow",21534777],["Los Angeles",18507255],["London",16821649],["Paris",12878104],["Chicago",9941597],["Hong Kong",7411945],["Madrid",6930703],["Sydney",5497131]];
+function rBigRaw(){
+  const data=shuffle(METROS_RAW).slice(0,5);
+  const target=pick(data);
+  $("q").innerHTML="EXACT real populations this time — no rounding! About how many people live in <b>"+target[0]+"</b>'s metro area?";
+  window._say="The bars show exact metro populations. Read "+target[0]+"'s bar against the scale.";speak(_say);
+  const maxV=41000000;
+  miniBars($("zone"),data.map(d=>[d[0],d[1]]),0,maxV,10000000,false);
+  const opts=opts3(target[1],[target[1]+5000000,target[1]-5000000,target[1]+9000000,Math.round(target[1]/2)]);
+  mcq(opts.map(fmt),opts.indexOf(target[1]),target[0]+"'s metro area holds exactly "+fmt(target[1])+" people","About "+fmt(target[1])+" people!");
 }
 $("read").onclick=()=>{if(window._say)speak(_say);};
 

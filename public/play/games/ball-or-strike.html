@@ -14,7 +14,8 @@
   .hbtns{display:flex;gap:8px}
   .snd,.backb{border:none;background:#fff;border-radius:14px;font-size:1.15rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer;text-decoration:none;color:var(--ink);font-weight:900}
   main{max-width:560px;margin:0 auto;padding:0 12px 20px;text-align:center}
-  .ask{font-size:1.05rem;font-weight:800;margin:0 0 8px}
+  .ask{font-size:1.05rem;font-weight:800;margin:0 0 4px}
+  .lvlchip{display:inline-block;background:#fff;border-radius:12px;padding:3px 12px;font-weight:900;font-size:.82rem;color:#5b7b97;box-shadow:0 3px 0 #cfe0ee;margin-bottom:8px}
   .parkwrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #16324f22;background:#1d3557}
   svg{display:block;width:100%;height:auto}
   .count{display:flex;justify-content:center;gap:14px;margin-top:10px;font-weight:900;font-size:1.05rem}
@@ -27,6 +28,15 @@
   .call.ball{background:var(--blue);box-shadow:0 6px 0 #24509e}
   .call:disabled{opacity:.5;cursor:default}
   .verdict{min-height:1.6em;font-weight:900;font-size:1.05rem;margin-top:10px;color:var(--accent)}
+  .rulewrap{margin-top:10px;background:#fff;border-radius:16px;padding:12px;box-shadow:0 4px 0 #cfe0ee;text-align:left}
+  .rulewrap.hidden{display:none}
+  .ruleq{font-weight:900;font-size:.98rem;margin-bottom:8px;text-align:center;color:var(--ink)}
+  .ruleopts{display:flex;flex-direction:column;gap:8px}
+  .ropt{border:none;border-radius:14px;background:#f6fbff;box-shadow:0 4px 0 #d7e6f2;cursor:pointer;padding:10px 12px;font-family:inherit;font-weight:800;color:var(--ink);font-size:.92rem;text-align:left;line-height:1.3}
+  .ropt:disabled{cursor:default}
+  .ropt.good{background:#e8fbf4;box-shadow:0 4px 0 #bfe6da,0 0 0 3px var(--accent)}
+  .ropt.bad{background:#fff3f0;box-shadow:0 4px 0 #f3d2ca;opacity:.75}
+  .rulefeedback{margin-top:8px;font-weight:800;font-size:.95rem;color:var(--accent);text-align:center}
   .next{margin-top:8px;border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:11px 26px;cursor:pointer;background:var(--ink);color:#fff;box-shadow:0 6px 0 #0b1a29;visibility:hidden}
   .next.show{visibility:visible}
   .pass{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px}
@@ -40,10 +50,12 @@
   .bigcall.walk{background:#3b6fd4}
   .conf{position:fixed;top:-12px;font-size:1.3rem;pointer-events:none;z-index:15;animation:fall linear forwards}
   @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
-  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20;overflow:auto}
   .cover h1{font-size:2.1rem;margin:8px 0}
   .cover p{font-size:1.08rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 18px}
-  .big{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.25rem;padding:15px 28px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d}
+  .big{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.2rem;padding:15px 28px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d;display:block;width:min(320px,84vw);margin:7px auto}
+  .big.expert{background:#5b7b97;box-shadow:0 7px 0 #3f5771}
+  .big small{display:block;font-size:.78rem;font-weight:800;margin-top:3px;opacity:.9}
   .hidden{display:none !important}
   .grown{font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px}
 </style>
@@ -55,6 +67,7 @@
 </header>
 <main>
   <div class="ask">You're behind the plate, ump. <b>Watch the pitch, make the call!</b></div>
+  <div class="lvlchip" id="lvlchip"></div>
   <div class="parkwrap">
     <svg id="park" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
       <!-- night sky + stands -->
@@ -67,13 +80,17 @@
       <ellipse cx="200" cy="180" rx="46" ry="20" fill="#c98a4b"/>
       <!-- pitcher -->
       <text x="200" y="172" text-anchor="middle" font-size="30">🤾</text>
-      <!-- batter (side depends on scenario) -->
+      <!-- batter (side and size depend on scenario) -->
       <g id="batter"><text id="batterEmoji" x="90" y="330" text-anchor="middle" font-size="56">🧍</text></g>
+      <!-- swing indicator (check swing) -->
+      <g id="batGroup" opacity="0"><rect x="-3" y="-42" width="6" height="46" rx="3" fill="#c9a06a" stroke="#7a5223" stroke-width="1"/></g>
+      <!-- breaking-ball tag -->
+      <text id="curveTag" x="200" y="140" text-anchor="middle" font-size="20" opacity="0">🌀</text>
       <!-- home plate -->
       <path d="M170 496 L230 496 L230 508 L200 518 L170 508 Z" fill="#fff" stroke="#adb5bd" stroke-width="2"/>
-      <!-- strike zone -->
+      <!-- strike zone (size/position set per batter) -->
       <rect id="zone" x="150" y="230" width="100" height="170" fill="#ffffff10" stroke="#ffe45e" stroke-width="3" stroke-dasharray="10 7"/>
-      <text x="200" y="222" text-anchor="middle" font-size="13" fill="#ffe45e" font-weight="900">STRIKE ZONE</text>
+      <text id="zoneLabel" x="200" y="222" text-anchor="middle" font-size="13" fill="#ffe45e" font-weight="900">STRIKE ZONE</text>
       <!-- catcher's mitt -->
       <text id="mitt" x="200" y="470" text-anchor="middle" font-size="34">🧤</text>
       <!-- pitch ball -->
@@ -92,6 +109,11 @@
     <button class="call ball" id="bBall">🫱 BALL</button>
   </div>
   <div class="verdict" id="verdict"></div>
+  <div class="rulewrap hidden" id="ruleWrap">
+    <div class="ruleq">🧠 Which part of the rule decided it?</div>
+    <div class="ruleopts" id="ruleOpts"></div>
+    <div class="rulefeedback" id="ruleFeedback"></div>
+  </div>
   <button class="next" id="next">Next pitch →</button>
   <div class="pass" id="pass"></div>
 </main>
@@ -101,8 +123,9 @@
 <div class="cover" id="start">
   <div style="font-size:3.8rem">⚾🧢</div>
   <h1>Ball or Strike?</h1>
-  <p>You're the umpire! Watch each pitch fly in, then call <b>STRIKE</b> (in the yellow zone — even just clipping it!) or <b>BALL</b> (outside). Three strikes is an OUT, four balls is a WALK. Call a whole inning of nine pitches!</p>
-  <button class="big" id="go">Play ball! ⚾</button>
+  <p>You're the umpire! Watch each pitch fly in, call it, then say <b>which part of the rule</b> made it a ball or a strike. Six pitches, twelve calls in all.</p>
+  <button class="big" id="lvl1">⚾ Batting practice<small>The classic calls — corners, dirt, and wide ones</small></button>
+  <button class="big expert" id="lvl2">🔍 Replay booth<small>Expert — razor-thin edges, no easy blowouts</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
@@ -113,16 +136,14 @@
   <button class="big" id="again">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
-<p class="grown">For grown-ups: the real strike zone, called pitch by pitch — a pitch that clips any part of the zone is a strike; three strikes make an out, four balls a walk. Judging edges and boundaries, visually. Ages 6–10.</p>
+<p class="grown">For grown-ups: the real strike zone, called pitch by pitch — a pitch that clips any part of the zone is a strike; three strikes make an out, four balls a walk. Also: the zone is sized to the batter, a swing is always a strike, and a pitch only has to clip the front edge of the box over the plate. Replay booth tightens every margin for a genuine perception task. Ages 6–10.</p>
 
 <script src="assets/scoring.js"></script>
 <script>
 const $=id=>document.getElementById(id);
-const ROUNDS=9;
-let sound=true,idx=0,cur=null,locked=true,firstTry=true,perfect=0,actx=null;
+const ROUNDS=6, TOTALQ=ROUNDS*2;
+let sound=true,idx=0,cur=null,perfect=0,actx=null,callWasCorrect=false;
 let balls=0,strikes=0,outs=0,walks=0;
-function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
 function ctx(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();return actx;}catch(e){return null;}}
 function tone(f,d,type,when,g){if(!sound)return;const a=ctx();if(!a)return;const o=a.createOscillator(),gn=a.createGain();o.type=type||"sine";o.frequency.value=f;gn.gain.value=g||.12;o.connect(gn);gn.connect(a.destination);const t=a.currentTime+(when||0);o.start(t);gn.gain.setValueAtTime(gn.gain.value,t);gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.stop(t+d);}
@@ -133,7 +154,7 @@ let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("sho
 function bigCall(txt,walk){const e=$("bigcall");e.textContent=txt;e.classList.toggle("walk",!!walk);e.classList.add("show");setTimeout(()=>e.classList.remove("show"),1600);}
 function buildPass(){
   const el=$("pass"); el.innerHTML="";
-  for(let i=0;i<ROUNDS;i++){
+  for(let i=0;i<TOTALQ;i++){
     const d=document.createElement("div");
     const r=Scoring._state.rounds[i];
     if(r){ d.className="stamp "+Scoring.tierClass(r.tier); d.textContent=r.tier==="grey"?"🆕":"⚾"; }
@@ -143,45 +164,112 @@ function buildPass(){
 }
 function updCount(){$("cBalls").textContent=balls;$("cStrikes").textContent=strikes;$("cOuts").textContent=outs;$("cWalks").textContent=walks;}
 
+/* ===== PURE-LOGIC:START — plain JS, no DOM. The offline test harness
+   extracts exactly this block and runs it under Node, so nothing between
+   the markers may touch document/window/Scoring. ===== */
+let LEVEL=1;
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function rx(a,b){return a+Math.random()*(b-a);}
+
 /* Strike zone geometry (SVG units). A pitch is a STRIKE if the ball circle
-   touches the zone rectangle at all — "clipping the corner counts". */
-const Z={x1:150,y1:230,x2:250,y2:400}, R=10;
-function isStrike(x,y){
-  const cx=Math.max(Z.x1,Math.min(Z.x2,x)), cy=Math.max(Z.y1,Math.min(Z.y2,y));
+   touches the zone rectangle at all — "clipping the corner counts". The
+   zone itself is not one fixed box: it is sized to the batter (rule
+   change 3), so isStrike takes the zone as an argument instead of reading
+   a module-level constant. */
+const R=10;
+const Z_BASE={x1:150,y1:230,x2:250,y2:400};
+const Z_TALL={x1:150,y1:192,x2:250,y2:382};   // taller batter: zone stretches higher
+const Z_SHORT={x1:150,y1:268,x2:250,y2:408};  // shorter batter: zone sits lower, smaller
+function isStrike(x,y,zone){
+  zone=zone||Z_BASE;
+  const cx=Math.max(zone.x1,Math.min(zone.x2,x)), cy=Math.max(zone.y1,Math.min(zone.y2,y));
   const dx=x-cx, dy=y-cy;
   return dx*dx+dy*dy<=R*R;
 }
-function rx(a,b){return a+Math.random()*(b-a);}
-/* Case generators — each returns {x,y,kind}. */
-const CASES=["mid","corner","paint","high","low","wide","close"];
+function zoneFor(kind){
+  if(kind==="tallBatter") return Z_TALL;
+  if(kind==="shortBatter") return Z_SHORT;
+  return Z_BASE;
+}
+
+const CASES_NORMAL=["mid","corner","paint","high","low","wide","close","tallBatter","shortBatter","checkSwing","frontDoor"];
+const CASES_EXPERT=["mid","corner","paint","close","tallBatter","shortBatter","checkSwing","frontDoor"]; // no easy high/low/wide blowouts
+function casesForLevel(){ return LEVEL===2 ? CASES_EXPERT : CASES_NORMAL; }
+
+/* Case generators — each returns {x,y,kind,zone,strike}. */
 function makeScenario(kind){
-  let x,y;
-  if(kind==="mid"){ x=rx(Z.x1+30,Z.x2-30); y=rx(Z.y1+35,Z.y2-35); }
+  const zone=zoneFor(kind);
+  let x,y,forceStrike=null;
+  if(kind==="mid"){ x=rx(zone.x1+30,zone.x2-30); y=rx(zone.y1+35,zone.y2-35); }
   else if(kind==="corner"){
-    const cx=pick([Z.x1,Z.x2]), cy=pick([Z.y1,Z.y2]);
-    x=cx+(cx===Z.x1?rx(4,12):-rx(4,12)); y=cy+(cy===Z.y1?rx(4,12):-rx(4,12));
+    const cx=pick([zone.x1,zone.x2]), cy=pick([zone.y1,zone.y2]);
+    x=cx+(cx===zone.x1?rx(4,12):-rx(4,12)); y=cy+(cy===zone.y1?rx(4,12):-rx(4,12));
   }
   else if(kind==="paint"){ // centre just OUTSIDE, but the ball still clips the line
     const side=pick(["l","r","t","b"]);
-    const off=rx(2,R-3);
-    if(side==="l"){x=Z.x1-off;y=rx(Z.y1+20,Z.y2-20);}
-    else if(side==="r"){x=Z.x2+off;y=rx(Z.y1+20,Z.y2-20);}
-    else if(side==="t"){y=Z.y1-off;x=rx(Z.x1+20,Z.x2-20);}
-    else {y=Z.y2+off;x=rx(Z.x1+20,Z.x2-20);}
+    const off = LEVEL===2 ? rx(R-2,R-0.5) : rx(2,R-3); // Expert: overlap only 0.5–2 units
+    if(side==="l"){x=zone.x1-off;y=rx(zone.y1+20,zone.y2-20);}
+    else if(side==="r"){x=zone.x2+off;y=rx(zone.y1+20,zone.y2-20);}
+    else if(side==="t"){y=zone.y1-off;x=rx(zone.x1+20,zone.x2-20);}
+    else {y=zone.y2+off;x=rx(zone.x1+20,zone.x2-20);}
   }
-  else if(kind==="high"){ x=rx(Z.x1,Z.x2); y=Z.y1-rx(45,85); }
-  else if(kind==="low"){ x=rx(Z.x1,Z.x2); y=Z.y2+rx(45,80); }
-  else if(kind==="wide"){ x=pick([Z.x1-rx(50,85),Z.x2+rx(50,85)]); y=rx(Z.y1,Z.y2); }
-  else { // close — a real ball, but only just
+  else if(kind==="high"){ x=rx(zone.x1,zone.x2); y=zone.y1-rx(45,85); }
+  else if(kind==="low"){ x=rx(zone.x1,zone.x2); y=zone.y2+rx(45,80); }
+  else if(kind==="wide"){ x=pick([zone.x1-rx(50,85),zone.x2+rx(50,85)]); y=rx(zone.y1,zone.y2); }
+  else if(kind==="close"){ // a real ball, but only just
     const side=pick(["l","r","t","b"]);
-    const off=R+rx(8,22);
-    if(side==="l"){x=Z.x1-off;y=rx(Z.y1+10,Z.y2-10);}
-    else if(side==="r"){x=Z.x2+off;y=rx(Z.y1+10,Z.y2-10);}
-    else if(side==="t"){y=Z.y1-off;x=rx(Z.x1+10,Z.x2-10);}
-    else {y=Z.y2+off;x=rx(Z.x1+10,Z.x2-10);}
+    const off = R + (LEVEL===2 ? rx(0.5,2) : rx(8,22)); // Expert: miss by 0.5–2 units
+    if(side==="l"){x=zone.x1-off;y=rx(zone.y1+10,zone.y2-10);}
+    else if(side==="r"){x=zone.x2+off;y=rx(zone.y1+10,zone.y2-10);}
+    else if(side==="t"){y=zone.y1-off;x=rx(zone.x1+10,zone.x2-10);}
+    else {y=zone.y2+off;x=rx(zone.x1+10,zone.x2-10);}
   }
-  return {x:x,y:y,kind:kind,strike:isStrike(x,y)};
+  else if(kind==="tallBatter"||kind==="shortBatter"){
+    // the SAME pitch height for both cases — the batter's own zone is what decides it
+    x=rx(170,230); y=rx(246,254);
+  }
+  else if(kind==="checkSwing"){ // location outside the zone, but the swing overrides it
+    x=pick([zone.x1-rx(30,70), zone.x2+rx(30,70)]);
+    y=rx(zone.y1-20, zone.y2+20);
+    forceStrike=true;
+  }
+  else if(kind==="frontDoor"){ // breaking ball clipping the front edge
+    const side=pick(["l","r"]);
+    const off=rx(1,4);
+    x = side==="l" ? zone.x1-off : zone.x2+off;
+    y=rx(zone.y1+15,zone.y2-15);
+  }
+  else { x=rx(zone.x1,zone.x2); y=rx(zone.y1,zone.y2); }
+  const strike = forceStrike!==null ? forceStrike : isStrike(x,y,zone);
+  return {x:x,y:y,kind:kind,zone:zone,strike:strike};
 }
+
+/* Rule quiz (change 1): after the call, ask which real rule decided it.
+   Distractors are always genuine rules from this sport's own list. */
+const RULES_BB={
+  zoneTouch:"Touching any part of the strike zone — even just the corner — counts as a strike.",
+  zoneTop:"The top of the strike zone is the batter's chest.",
+  zoneBottom:"The bottom of the strike zone is the hollow below the kneecap.",
+  zoneWidth:"The strike zone is only as wide as home plate.",
+  zoneMiss:"A pitch that never touches the zone is a ball, even if it looks close.",
+  batterSized:"The size of the strike zone is set by the batter's own height, torso to knee.",
+  swingRule:"If the batter swings, it's a strike no matter where the pitch crossed the plate."
+};
+const CASE_RULE_BB={
+  mid:"zoneTouch", corner:"zoneTouch", paint:"zoneTouch", frontDoor:"zoneTouch",
+  close:"zoneMiss", high:"zoneTop", low:"zoneBottom", wide:"zoneWidth",
+  tallBatter:"batterSized", shortBatter:"batterSized", checkSwing:"swingRule"
+};
+function ruleIdFor(kind){ return CASE_RULE_BB[kind] || "zoneTouch"; }
+function buildRuleOptions(kind){
+  const correctId=ruleIdFor(kind);
+  const others=shuffle(Object.keys(RULES_BB).filter(function(id){return id!==correctId;})).slice(0,3);
+  const all=shuffle([correctId].concat(others));
+  return { correctId:correctId, options: all.map(function(id){ return {id:id,text:RULES_BB[id]}; }) };
+}
+/* ===== PURE-LOGIC:END ===== */
+
 const WHY={
   mid:"Strike! Right down the middle — easy call.",
   corner:"Strike! It caught the corner of the zone. Corners count!",
@@ -189,7 +277,11 @@ const WHY={
   high:"Ball! Too high — the zone stops at the batter's chest.",
   low:"Ball! In the dirt — below the knees is out of the zone.",
   wide:"Ball! Way outside — the zone is only as wide as home plate.",
-  close:"Ball! Just missed the edge — great eyes, ump."
+  close:"Ball! Just missed the edge — great eyes, ump.",
+  tallBatter:"Strike! For a tall batter the zone stretches higher — from the middle of his torso to his knee.",
+  shortBatter:"Ball! For a shorter batter the zone sits lower and is smaller — the exact same pitch can miss it.",
+  checkSwing:"Strike! He swung at it — once the bat comes around, it's a strike no matter where the pitch was.",
+  frontDoor:"Strike! That breaking ball clipped the front edge of the zone on its way in — the zone is a box over the whole plate, not a flat line."
 };
 const LABEL={
   mid:"Strike down the middle",
@@ -198,27 +290,77 @@ const LABEL={
   high:"Ball too high",
   low:"Ball in the dirt",
   wide:"Ball way outside",
-  close:"Ball just off the edge"
+  close:"Ball just off the edge",
+  tallBatter:"Strike for a tall batter",
+  shortBatter:"Ball for a short batter",
+  checkSwing:"Strike on a check swing",
+  frontDoor:"Strike on a front-door breaker"
 };
+
 function render(){
-  locked=true; firstTry=true;
-  cur=seq[idx]?makeScenario(seq[idx]):makeScenario(pick(CASES));
-  Scoring.beginRound(Scoring.idOf({q:cur.kind}), LABEL[cur.kind]);
-  window.__case={kind:cur.kind, strike:cur.strike}; // test/debug hook
-  $("batterEmoji").setAttribute("x", Math.random()<.5?90:310);
+  cur=seq[idx]?makeScenario(seq[idx]):makeScenario(pick(casesForLevel()));
+  Scoring.beginRound(Scoring.idOf({q:"call:"+cur.kind}), LABEL[cur.kind]);
+  cur.side = Math.random()<.5?90:310;
+  window.__case={kind:cur.kind, strike:cur.strike, zone:cur.zone, level:LEVEL, x:cur.x, y:cur.y}; // test/debug hook
+
+  const be=$("batterEmoji");
+  be.setAttribute("x", cur.side);
+  let fsize=56, by=330;
+  if(cur.kind==="tallBatter"){ fsize=72; by=308; }
+  else if(cur.kind==="shortBatter"){ fsize=42; by=345; }
+  be.setAttribute("font-size",fsize);
+  be.setAttribute("y",by);
+
+  const z=cur.zone;
+  $("zone").setAttribute("x",z.x1); $("zone").setAttribute("y",z.y1);
+  $("zone").setAttribute("width", z.x2-z.x1); $("zone").setAttribute("height", z.y2-z.y1);
+  $("zoneLabel").setAttribute("y", z.y1-8);
+
+  $("batGroup").style.transition="none";
+  $("batGroup").setAttribute("opacity",0);
+  $("batGroup").setAttribute("transform","translate("+cur.side+","+(by-14)+") rotate(0)");
+  $("curveTag").setAttribute("opacity",0);
+
   const b=$("pball");
   b.style.transition="none";
   b.setAttribute("cx",200); b.setAttribute("cy",160); b.setAttribute("r",4); b.setAttribute("opacity",1);
   $("ring").setAttribute("opacity",0);
   $("zone").setAttribute("stroke","#ffe45e");
   $("verdict").textContent=""; $("next").classList.remove("show");
+  $("ruleWrap").classList.add("hidden"); $("ruleFeedback").textContent="";
   $("bStrike").disabled=true; $("bBall").disabled=true;
   buildPass();
+
   setTimeout(()=>{
-    b.style.transition="cx .55s cubic-bezier(.3,.7,.4,1), cy .55s cubic-bezier(.3,.7,.4,1), r .55s linear";
-    requestAnimationFrame(()=>{ b.setAttribute("cx",cur.x); b.setAttribute("cy",cur.y); b.setAttribute("r",R); });
-    setTimeout(()=>{ popMitt(); locked=false; $("bStrike").disabled=false; $("bBall").disabled=false;
-      speak("Here's the pitch. Ball, or strike?"); },600);
+    if(cur.kind==="frontDoor"){
+      const midX = cur.x + (cur.x<200 ? 45 : -45);
+      b.style.transition="cx .3s ease-out, cy .3s ease-out, r .3s linear";
+      requestAnimationFrame(()=>{ b.setAttribute("cx",midX); b.setAttribute("cy",cur.y-45); b.setAttribute("r",R); });
+      setTimeout(()=>{
+        b.style.transition="cx .3s ease-in, cy .3s ease-in";
+        requestAnimationFrame(()=>{ b.setAttribute("cx",cur.x); b.setAttribute("cy",cur.y); });
+      },320);
+    } else {
+      b.style.transition="cx .55s cubic-bezier(.3,.7,.4,1), cy .55s cubic-bezier(.3,.7,.4,1), r .55s linear";
+      requestAnimationFrame(()=>{ b.setAttribute("cx",cur.x); b.setAttribute("cy",cur.y); b.setAttribute("r",R); });
+    }
+    const wait = cur.kind==="frontDoor" ? 700 : 600;
+    setTimeout(()=>{
+      popMitt(); $("bStrike").disabled=false; $("bBall").disabled=false;
+      if(cur.kind==="checkSwing"){
+        $("batGroup").setAttribute("opacity",1);
+        requestAnimationFrame(()=>{
+          $("batGroup").style.transition="transform .22s ease-out";
+          $("batGroup").setAttribute("transform","translate("+cur.side+","+(by-14)+") rotate(-95)");
+        });
+        speak("He swings! Ball, or strike?");
+      } else if(cur.kind==="frontDoor"){
+        $("curveTag").setAttribute("opacity",1);
+        speak("Here comes the breaking ball. Ball, or strike?");
+      } else {
+        speak("Here's the pitch. Ball, or strike?");
+      }
+    },wait);
   },350);
 }
 function reveal(){
@@ -233,37 +375,66 @@ function advanceCount(){
 function choose(callStrike){
   if(Scoring.answered()||!Scoring.armed())return;
   const correct=callStrike===cur.strike;
-  var res=Scoring.answer(correct);
-  locked=true;
+  const res=Scoring.answer(correct);
+  callWasCorrect=correct;
+  $("bStrike").disabled=true; $("bBall").disabled=true;
+  reveal();
+  const why=WHY[cur.kind];
+  $("verdict").textContent=(cur.strike?"🔥 ":"🫱 ")+why;
   if(correct){
-    if(firstTry)perfect++;
-    reveal();
-    $("bStrike").disabled=true; $("bBall").disabled=true;
-    const why=WHY[cur.kind];
-    $("verdict").textContent=(cur.strike?"🔥 ":"🫱 ")+why;
     toast(res.tier==="gold"?pick(["Great call, blue! 🎉","Sharp eyes! ⭐","Just like a big-league ump! 🙌"]):pick(["Nice work getting there! 👍","Worked it out! ⭐"]));
     speak(why); confetti(8); cheer();
-    advanceCount();
-    idx++; buildPass();
-    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next pitch →";
-    $("next").classList.add("show");
   } else {
-    reveal();
-    $("bStrike").disabled=true; $("bBall").disabled=true;
-    const why=WHY[cur.kind];
-    $("verdict").textContent=(cur.strike?"🔥 ":"🫱 ")+why;
     toast("Now you know it! 🆕");
     speak(why);
-    advanceCount();
-    idx++; buildPass();
-    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next pitch →";
-    $("next").classList.add("show");
   }
+  advanceCount();
+  showRuleQuestion();
+}
+function showRuleQuestion(){
+  const rq=buildRuleOptions(cur.kind);
+  cur.correctRuleId=rq.correctId;
+  Scoring.beginRound(Scoring.idOf({q:"rule:"+cur.kind}), "Rule: "+LABEL[cur.kind]);
+  $("ruleWrap").classList.remove("hidden");
+  const optsEl=$("ruleOpts"); optsEl.innerHTML="";
+  $("ruleFeedback").textContent="";
+  rq.options.forEach(opt=>{
+    const b=document.createElement("button");
+    b.className="ropt"; b.type="button"; b.textContent=opt.text; b.dataset.id=opt.id;
+    b.onclick=()=>ruleChoose(opt.id,b);
+    optsEl.appendChild(b);
+  });
+}
+function ruleChoose(pickedId,btnEl){
+  if(Scoring.answered()||!Scoring.armed())return;
+  const correct = pickedId===cur.correctRuleId;
+  const res=Scoring.answer(correct);
+  Array.from($("ruleOpts").children).forEach(b=>{
+    b.disabled=true;
+    if(b.dataset.id===cur.correctRuleId) b.classList.add("good");
+    else if(b===btnEl) b.classList.add("bad");
+  });
+  let msg;
+  if(callWasCorrect && correct) msg="Right call. Now you know the rule behind it too.";
+  else if(callWasCorrect && !correct) msg="Right call! Here's the rule that actually decided it.";
+  else if(!callWasCorrect && correct) msg="You've got the rule down — now you'll spot the call too.";
+  else msg="Now you know both: the call and the rule behind it.";
+  $("ruleFeedback").textContent=msg;
+  toast(res.tier==="gold"?pick(["Rule master! 🧠","Exactly right! ⭐"]):(correct?"Worked it out! ⭐":"Now you know it! 🆕"));
+  if(correct){ cheer(); confetti(6); if(callWasCorrect) perfect++; }
+  speak(msg);
+  idx++; buildPass();
+  $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next pitch →";
+  $("next").classList.add("show");
 }
 let seq=[];
-function startRun(){
-  Scoring.init({slug:"ball-or-strike", total:ROUNDS, noun:"call", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
-  seq=shuffle(CASES.concat(shuffle(CASES).slice(0,ROUNDS-CASES.length)));
+function startRun(lv){
+  LEVEL=lv;
+  $("lvlchip").textContent = lv===2 ? "🔍 Replay booth" : "⚾ Batting practice";
+  $("start").classList.add("hidden");
+  ctx();
+  Scoring.init({slug:"ball-or-strike", total:TOTALQ, noun:"call", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
+  seq = shuffle(casesForLevel()).slice(0,ROUNDS);
   idx=0; perfect=0; balls=0; strikes=0; outs=0; walks=0; updCount(); render();
 }
 $("bStrike").onclick=()=>choose(true);
@@ -271,11 +442,12 @@ $("bBall").onclick=()=>choose(false);
 $("next").onclick=()=>{ if(idx>=ROUNDS){
     document.querySelector("#finale h1").textContent=Scoring.headline();
     $("scoreboard").innerHTML=Scoring.finaleHTML();
-    $("finp").textContent=(perfect>=8?"Perfect calls on "+perfect+" of 9 pitches — the big leagues need you!":"All 9 pitches called, "+perfect+" on the first look. ")+" Your inning: "+outs+" strikeout"+(outs===1?"":"s")+" and "+walks+" walk"+(walks===1?"":"s")+".";
+    $("finp").textContent=(perfect>=ROUNDS-1?"Clean sweeps (call + rule) on "+perfect+" of "+ROUNDS+" pitches — the big leagues need you!":"All "+ROUNDS+" pitches called, "+perfect+" clean sweep"+(perfect===1?"":"s")+" of call-and-rule. ")+" Your inning: "+outs+" strikeout"+(outs===1?"":"s")+" and "+walks+" walk"+(walks===1?"":"s")+".";
     $("finale").classList.remove("hidden"); confetti(24); speak("Top umpire!");
   } else render(); };
-$("go").onclick=()=>{ $("start").classList.add("hidden"); ctx(); startRun(); };
-$("again").onclick=()=>{ $("finale").classList.add("hidden"); startRun(); };
+$("lvl1").onclick=()=>startRun(1);
+$("lvl2").onclick=()=>startRun(2);
+$("again").onclick=()=>{ $("finale").classList.add("hidden"); $("start").classList.remove("hidden"); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
 buildPass();

@@ -14,6 +14,7 @@
   .hbtns{display:flex;gap:8px}
   .snd,.backb{border:none;background:#fff;border-radius:14px;font-size:1.15rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer;text-decoration:none;color:var(--ink);font-weight:900}
   main{max-width:560px;margin:0 auto;padding:0 12px 20px;text-align:center}
+  .lvlchip{display:inline-block;background:#fff;border-radius:12px;padding:3px 12px;font-weight:900;font-size:.85rem;color:#5b7b97;box-shadow:0 3px 0 #cfe0ee;margin-bottom:6px}
   .ask{font-size:1.05rem;font-weight:800;margin:0 0 8px}
   .pitchwrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #16324f22;background:#2f9e54}
   svg{display:block;width:100%;height:auto}
@@ -24,6 +25,14 @@
   .call.off{background:var(--hot);box-shadow:0 6px 0 #b34545}
   .call:disabled{opacity:.5;cursor:default}
   .verdict{min-height:1.6em;font-weight:900;font-size:1.1rem;margin-top:10px;color:var(--accent)}
+  .rulewrap{margin-top:10px}
+  .ruleq{font-weight:800;font-size:1rem;margin:6px 0 2px}
+  .opts{display:grid;grid-template-columns:1fr;gap:9px;margin-top:8px}
+  .opt{border:none;border-radius:16px;background:#fff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:11px 14px;font-family:inherit;font-weight:800;color:var(--ink);font-size:.92rem;text-align:left;line-height:1.25;transition:transform .12s}
+  .opt:active{transform:scale(.97)}
+  .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
+  .opt.bad{opacity:.55}
+  .opt:disabled{cursor:default}
   .next{margin-top:8px;border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:11px 26px;cursor:pointer;background:var(--ink);color:#fff;box-shadow:0 6px 0 #0b1a29;visibility:hidden}
   .next.show{visibility:visible}
   .pass{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px}
@@ -34,10 +43,14 @@
   .toast.show{opacity:1}
   .conf{position:fixed;top:-12px;font-size:1.3rem;pointer-events:none;z-index:15;animation:fall linear forwards}
   @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
-  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20;overflow:auto}
   .cover h1{font-size:2.1rem;margin:8px 0}
   .cover p{font-size:1.08rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 18px}
   .big{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.25rem;padding:15px 28px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d}
+  .lvlbtn{display:block;width:min(330px,86vw);margin:7px auto;border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.18rem;padding:14px 20px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 6px 0 #cfe0ee;text-align:center}
+  .lvlbtn.go{background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .lvlbtn small{display:block;font-size:.82rem;font-weight:800;color:#5b7b97}
+  .lvlbtn.go small{color:#d6f5ec}
   .hidden{display:none !important}
 </style>
 </head>
@@ -47,6 +60,7 @@
   <div class="hbtns"><a class="backb" id="back" href="/play">←</a><button class="snd" id="snd">🔊</button></div>
 </header>
 <main>
+  <div class="lvlchip" id="lvlchip"></div>
   <div class="ask">The pass is about to be played. <b>Make the call!</b></div>
   <div class="pitchwrap">
     <svg id="pitch" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
@@ -65,6 +79,11 @@
       <!-- goal -->
       <rect x="160" y="4" width="80" height="9" fill="#fff" stroke="#d7e6f2" stroke-width="2"/>
       <text x="200" y="500" text-anchor="middle" font-size="15" fill="#ffffffaa" font-weight="800">⬆ attacking this way ⬆</text>
+      <!-- restart / context caption (visible before the call for cases that need it) -->
+      <g id="capg" opacity="0">
+        <rect x="12" y="12" width="176" height="24" rx="8" fill="#16324fcc"/>
+        <text id="capt" x="100" y="28" text-anchor="middle" font-size="12" font-weight="900" fill="#fff"></text>
+      </g>
       <!-- offside line (hidden until reveal) -->
       <line id="oline" x1="12" y1="0" x2="388" y2="0" stroke="#ffe45e" stroke-width="3" stroke-dasharray="10 8" opacity="0"/>
       <text id="olabel" x="380" y="0" text-anchor="end" font-size="14" fill="#ffe45e" font-weight="900" opacity="0">last defender</text>
@@ -78,6 +97,11 @@
     <button class="call off" id="bOff">🚩 OFFSIDE</button>
   </div>
   <div class="verdict" id="verdict"></div>
+  <div class="rulewrap hidden" id="rulewrap">
+    <div class="ruleq">Which rule decided it?</div>
+    <div class="opts" id="ruleopts"></div>
+    <div class="verdict" id="verdict2"></div>
+  </div>
   <button class="next" id="next">Next play →</button>
   <div class="pass" id="pass"></div>
 </main>
@@ -86,8 +110,9 @@
 <div class="cover" id="start">
   <div style="font-size:3.8rem">🚩⚽</div>
   <h1>Offside or Onside?</h1>
-  <p>You're the linesman! Look at the freeze-frame, then tap <b>ONSIDE</b> or <b>OFFSIDE</b>. The yellow line shows you the answer after every call.</p>
-  <button class="big" id="go">Raise your flag! 🚩</button>
+  <p>You're the linesman! Look at the freeze-frame, tap <b>ONSIDE</b> or <b>OFFSIDE</b> — then say which rule decided it. The yellow line always shows you the answer.</p>
+  <button class="lvlbtn go" id="lvlMatch">🚩 Match day<small>Clear calls — the warm-up</small></button>
+  <button class="lvlbtn" id="lvlExpert">🔍 VAR review<small>Expert — margins get tight!</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
@@ -102,8 +127,8 @@
 <script src="assets/scoring.js"></script>
 <script>
 const $=id=>document.getElementById(id);
-const ROUNDS=8;
-let sound=true,idx=0,cur=null,locked=false,firstTry=true,perfect=0;
+const SCENARIOS=6, TOTAL=SCENARIOS*2;
+let sound=true,idx=0,cur=null,locked=false,LEVEL="match";
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
@@ -111,7 +136,7 @@ function confetti(n){const em=["🚩","⭐","⚽","🎉"];for(let i=0;i<n;i++){c
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
 function buildPass(){
   const el=$("pass"); el.innerHTML="";
-  for(let i=0;i<ROUNDS;i++){
+  for(let i=0;i<TOTAL;i++){
     const d=document.createElement("div");
     const r=Scoring._state.rounds[i];
     if(r){ d.className="stamp "+Scoring.tierClass(r.tier); d.textContent=r.tier==="grey"?"🆕":"🚩"; }
@@ -121,44 +146,84 @@ function buildPass(){
 }
 
 /* scenario cases:
-   off  — attacker beyond the last defender (OFFSIDE)
-   lvl  — level with last defender (ONSIDE)
-   behind — behind the defender line (ONSIDE)
-   own  — beyond the line but in own half (ONSIDE)
-   ball — beyond the line but behind the ball (ONSIDE) */
-const CASES=["off","lvl","behind","own","ball"];
+   off        — attacker beyond the second-last opponent when the ball was played (OFFSIDE)
+   lvl        — level with the second-last opponent counts as onside (ONSIDE)
+   behind     — behind the defenders when the ball was played (ONSIDE)
+   own        — beyond the line but in own half (ONSIDE — never offside in your own half)
+   ball       — beyond the line but behind the ball (ONSIDE — you can't be offside from behind the ball)
+   throwIn    — beyond the line, but the ball came from a throw-in (ONSIDE — no offside from a throw-in)
+   goalKick   — beyond the line, but the ball came from a goal kick (ONSIDE — no offside from a goal kick)
+   corner     — beyond the line, but the ball came from a corner (ONSIDE — no offside from a corner)
+   keeper     — the keeper has pushed upfield, so the two deepest opponents are outfielders; the
+                attacker is nearer goal than the keeper but still behind the second-last opponent (ONSIDE)
+   deliberate — a defender deliberately plays the ball to an attacker in an offside position (ONSIDE —
+                a deliberate defensive play resets offside) */
+const CASES=["off","lvl","behind","own","ball","throwIn","goalKick","corner","keeper","deliberate"];
 const WHY={
-  off:"Offside! He was past the last defender when the ball was kicked.",
-  lvl:"Onside! Level with the last defender counts as onside.",
+  off:"Offside! He was past the second-last opponent when the ball was kicked.",
+  lvl:"Onside! Level with the second-last opponent counts as onside.",
   behind:"Onside! He was behind the defenders when the ball was kicked.",
   own:"Onside! You can never be offside in your own half.",
-  ball:"Onside! He was behind the ball. That is always onside."
+  ball:"Onside! He was behind the ball. That is always onside.",
+  throwIn:"Onside! You can never be offside straight from a throw-in.",
+  goalKick:"Onside! You can never be offside straight from a goal kick.",
+  corner:"Onside! You can never be offside straight from a corner.",
+  keeper:"Onside! The keeper pushed upfield, so the line is set by the second-last opponent — the last outfield defender — not by the keeper.",
+  deliberate:"Onside! A defender deliberately played the ball to him. A deliberate play by a defender resets offside, even from an offside position."
 };
 const LABEL={
-  off:"Offside, past the last defender",
-  lvl:"Onside, level with the defender",
+  off:"Offside, past the second-last opponent",
+  lvl:"Onside, level with the second-last opponent",
   behind:"Onside, behind the defender",
   own:"Onside, in his own half",
-  ball:"Onside, behind the ball"
+  ball:"Onside, behind the ball",
+  throwIn:"Onside, straight from a throw-in",
+  goalKick:"Onside, straight from a goal kick",
+  corner:"Onside, straight from a corner",
+  keeper:"Onside, keeper upfield — second-last opponent sets the line",
+  deliberate:"Onside, a defender's deliberate touch resets it"
 };
+const RULEOPT={
+  off:"Beyond the second-last opponent when the ball was played",
+  lvl:"Level with the second-last opponent — that still counts as onside",
+  behind:"Behind the second-last opponent when the ball was played",
+  own:"You can never be offside in your own half",
+  ball:"Behind the ball when it was played — always onside",
+  throwIn:"There is no offside from a throw-in",
+  goalKick:"There is no offside from a goal kick",
+  corner:"There is no offside from a corner",
+  keeper:"The offside line is the second-last opponent, not the keeper",
+  deliberate:"A defender's deliberate play resets offside"
+};
+const CAPTION={ throwIn:"🤾 throw-in", goalKick:"🥅 goal kick", corner:"🚩 corner", deliberate:"🛡️ defender's touch", keeper:"🧤 keeper is upfield" };
 function rx(min,max){return min+Math.random()*(max-min);}
+function offMargin(){ return LEVEL==="expert" ? [3,10] : [45,80]; }
+function behindMargin(){ return LEVEL==="expert" ? [3,10] : [45,90]; }
 function makeScenario(kind){
-  let Dy, Ay, Py, Ax=rx(120,280), Px;
-  if(kind==="own"){ Dy=rx(420,450); Ay=rx(360,Dy-40); Py=rx(Ay+40,495); }
-  else{
-    Dy=rx(150,240);
-    if(kind==="off") Ay=Dy-rx(45,80);
-    else if(kind==="lvl") Ay=Dy;
-    else if(kind==="behind") Ay=Dy+rx(45,90);
-    else Ay=Dy-rx(45,80); // ball case: beyond line
+  let Dy, Ay, Py, Ax=rx(120,280), Px, defs, keeper={x:200,y:26};
+  if(kind==="own"){
+    Dy=rx(420,450); Ay=rx(360,Dy-40); Py=rx(Ay+40,495);
+  } else if(kind==="keeper"){
+    const Dy1=rx(40,80), Dy2=rx(100,150);
+    keeper={x:rx(150,250), y:rx(230,280)};
+    Dy=Dy2; // offside line = second-last opponent (the keeper is no longer in the back two)
+    Ay=rx(Dy2+20, keeper.y-25);
     Py=rx(Math.max(Ay+60,300),480);
-    if(kind==="ball"){ Py=Ay-rx(35,60); } // passer even closer to goal
+    defs=[{x:rx(60,140),y:Dy1},{x:rx(230,340),y:Dy2}];
+  } else {
+    Dy=rx(150,240);
+    if(kind==="off"||kind==="deliberate"){ const m=offMargin(); Ay=Dy-rx(m[0],m[1]); }
+    else if(kind==="lvl") Ay=Dy;
+    else if(kind==="behind"){ const m=behindMargin(); Ay=Dy+rx(m[0],m[1]); }
+    else if(kind==="ball") Ay=Dy-rx(45,80);
+    else Ay=Dy-rx(45,80); // throwIn / goalKick / corner: clearly beyond the line, restart negates it
+    Py=rx(Math.max(Ay+60,300),480);
+    if(kind==="ball") Py=Ay-rx(35,60);
   }
   Py=Math.min(Py,468);
   Px=Ax<200?rx(Ax+60,340):rx(60,Ax-60);
-  const defs=[{x:rx(60,140),y:Dy},{x:rx(230,340),y:Math.min(Dy+rx(14,40),466)},{x:rx(150,240),y:Math.min(Dy+rx(40,80),466)}];
-  // ensure the line defender is the closest-to-goal outfielder
-  return {kind, Dy, Ay, Ax, Py, Px, defs, offside: kind==="off"};
+  if(!defs) defs=[{x:rx(60,140),y:Dy},{x:rx(230,340),y:Math.min(Dy+rx(14,40),466)},{x:rx(150,240),y:Math.min(Dy+rx(40,80),466)}];
+  return {kind, Dy, Ay, Ax, Py, Px, defs, keeper, caption:CAPTION[kind]||null, offside: kind==="off"};
 }
 function jersey(g,x,y,color,num,ring){
   const NS="http://www.w3.org/2000/svg";
@@ -172,27 +237,33 @@ function jersey(g,x,y,color,num,ring){
   t.textContent=num; g.appendChild(t);
 }
 function render(){
-  locked=false; firstTry=true;
+  locked=false;
   cur=seq[idx]?makeScenario(seq[idx]):makeScenario(pick(CASES));
+  window.__case={kind:cur.kind,offside:cur.offside}; // test/debug hook
   Scoring.beginRound(Scoring.idOf({q:cur.kind}), LABEL[cur.kind]);
   const g=$("players"); g.innerHTML="";
-  jersey(g,200,26,"#f0c33c","1","#b78a00");                 // keeper
+  jersey(g,cur.keeper.x,cur.keeper.y,"#f0c33c","1","#b78a00");                 // keeper
   cur.defs.forEach((d,i)=>jersey(g,d.x,d.y,"#3b6fd4",String(i+2)));
   jersey(g,cur.Ax,cur.Ay,"#e04848","9");                     // striker
-  jersey(g,cur.Px,cur.Py,"#e04848","10");                    // passer
+  const passerColor=cur.kind==="deliberate"?"#3b6fd4":"#e04848", passerNum=cur.kind==="deliberate"?"5":"10";
+  jersey(g,cur.Px,cur.Py,passerColor,passerNum);
   const b=$("ball"); b.setAttribute("cx",cur.Px+16); b.setAttribute("cy",cur.Py); b.setAttribute("opacity",1);
   b.style.transition="none";
   $("oline").setAttribute("opacity",0); $("olabel").setAttribute("opacity",0);
   $("flagman").setAttribute("opacity",0);
-  $("verdict").textContent=""; $("next").classList.remove("show");
+  if(cur.caption){ $("capt").textContent=cur.caption; $("capg").setAttribute("opacity",1); }
+  else { $("capg").setAttribute("opacity",0); }
+  $("verdict").textContent=""; $("verdict2").textContent=""; $("next").classList.remove("show");
+  $("rulewrap").classList.add("hidden"); $("ruleopts").innerHTML="";
   $("bOn").disabled=false; $("bOff").disabled=false;
   buildPass();
   speak("Number ten is about to pass to number nine. Onside, or offside?");
 }
 function reveal(){
-  const lineY=cur.kind==="own"?cur.Dy:cur.Dy;      // last outfield defender line
+  const lineY=cur.Dy;
   $("oline").setAttribute("y1",lineY); $("oline").setAttribute("y2",lineY);
   $("oline").setAttribute("opacity",1);
+  $("olabel").textContent = cur.kind==="keeper" ? "second-last opponent" : "last defender";
   $("olabel").setAttribute("y",lineY-8); $("olabel").setAttribute("opacity",1);
   // animate ball to the striker
   const b=$("ball");
@@ -200,46 +271,76 @@ function reveal(){
   requestAnimationFrame(()=>{ b.setAttribute("cx",cur.Ax); b.setAttribute("cy",cur.Ay); });
   if(cur.offside){ $("flagman").setAttribute("y",cur.Dy); $("flagman").setAttribute("opacity",1); }
 }
+function ruleOptionsFor(kind){
+  const others=CASES.filter(k=>k!==kind);
+  const wrong=shuffle(others).slice(0,3);
+  return shuffle([kind,...wrong]);
+}
+function showRuleQuestion(callWasCorrect){
+  const kinds=ruleOptionsFor(cur.kind);
+  Scoring.beginRound(Scoring.idOf({q:cur.kind+"_rule"}), "Rule: "+LABEL[cur.kind]);
+  const wrap=$("ruleopts"); wrap.innerHTML="";
+  const btns=[];
+  kinds.forEach(k=>{
+    const b=document.createElement("button");
+    b.className="opt"; b.textContent=RULEOPT[k];
+    b.onclick=()=>{
+      if(Scoring.answered()||!Scoring.armed())return;
+      const correct=k===cur.kind;
+      const res=Scoring.answer(correct);
+      btns.forEach(x=>x.disabled=true);
+      if(correct) b.classList.add("good");
+      else { b.classList.add("bad"); btns[kinds.indexOf(cur.kind)].classList.add("good"); }
+      const why=WHY[cur.kind];
+      let msg;
+      if(callWasCorrect&&correct) msg="You made the right call. Now you know the rule behind it too. "+why;
+      else if(callWasCorrect&&!correct) msg="You made the right call! Here's the rule behind it: "+why;
+      else if(!callWasCorrect&&correct) msg="You've got the rule! "+why;
+      else msg="Now you know both: "+why;
+      $("verdict2").textContent=msg;
+      toast(correct?(res.tier==="gold"?pick(["Rule mastered! 🧠","Exactly right! ⭐","You know your laws! 🙌"]):pick(["Worked it out! 👍","Nice reasoning! ⭐"])):"Now you know the rule too! 🆕");
+      speak(msg);
+      if(correct) confetti(8);
+      idx++; buildPass();
+      $("next").textContent = idx>=SCENARIOS ? "See my score →" : "Next play →";
+      $("next").classList.add("show");
+    };
+    btns.push(b); wrap.appendChild(b);
+  });
+  $("rulewrap").classList.remove("hidden");
+}
 function choose(callOffside){
   if(Scoring.answered()||!Scoring.armed())return;
   const correct = callOffside===cur.offside;
   var res=Scoring.answer(correct);
   locked=true;
+  reveal();
+  $("bOn").disabled=true; $("bOff").disabled=true;
+  const why=WHY[cur.kind];
+  $("verdict").textContent=(cur.offside?"🚩 ":"✅ ")+why;
   if(correct){
-    if(firstTry)perfect++;
-    reveal();
-    $("bOn").disabled=true; $("bOff").disabled=true;
-    const why=WHY[cur.kind];
-    $("verdict").textContent=(cur.offside?"🚩 ":"✅ ")+why;
     toast(res.tier==="gold"?pick(["Great call! 🎉","Sharp eyes! ⭐","Just like a real ref! 🙌"]):pick(["Nice work getting there! 👍","Worked it out! ⭐"]));
     speak(why); confetti(10);
-    idx++; buildPass();
-    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next play →";
-    $("next").classList.add("show");
   } else {
-    reveal();
-    $("bOn").disabled=true; $("bOff").disabled=true;
-    const why=WHY[cur.kind];
-    $("verdict").textContent=(cur.offside?"🚩 ":"✅ ")+why;
     toast("Now you know it! 🆕");
     speak(why);
-    idx++; buildPass();
-    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next play →";
-    $("next").classList.add("show");
   }
+  showRuleQuestion(correct);
 }
 let seq=[];
-function startRun(){
-  Scoring.init({slug:"offside-or-onside", total:ROUNDS, noun:"call", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
-  // guarantee variety: all five cases + 3 random
-  seq=shuffle(CASES.concat(shuffle(CASES).slice(0,ROUNDS-CASES.length)));
-  idx=0; perfect=0; render();
+function startRun(level){
+  LEVEL=level;
+  $("lvlchip").textContent = LEVEL==="expert" ? "🔍 VAR review" : "🚩 Match day";
+  Scoring.init({slug:"offside-or-onside", total:TOTAL, noun:"rule", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
+  seq=shuffle(CASES).slice(0,SCENARIOS);
+  idx=0; render();
 }
 $("bOn").onclick=()=>choose(false);
 $("bOff").onclick=()=>choose(true);
-$("next").onclick=()=>{ if(idx>=ROUNDS){ document.querySelector("#finale h1").textContent=Scoring.headline(); $("scoreboard").innerHTML=Scoring.finaleHTML(); $("finp").textContent = perfect>=7 ? "Perfect calls on "+perfect+" of 8. FIFA, call this kid!" : "You got all 8, with "+perfect+" first-time calls. Play again to go perfect!"; $("finale").classList.remove("hidden"); confetti(24); speak("Top linesman!"); } else render(); };
-$("go").onclick=()=>{ $("start").classList.add("hidden"); startRun(); };
-$("again").onclick=()=>{ $("finale").classList.add("hidden"); startRun(); };
+$("next").onclick=()=>{ if(idx>=SCENARIOS){ document.querySelector("#finale h1").textContent=Scoring.headline(); $("scoreboard").innerHTML=Scoring.finaleHTML(); const t=Scoring.tally(); const bothRight=t.gold+t.silver; $("finp").textContent = bothRight>=TOTAL-1 ? "Nearly perfect across "+SCENARIOS+" plays — FIFA, call this kid!" : "You called all "+SCENARIOS+" plays and worked the rules out too. Play again to go perfect!"; $("finale").classList.remove("hidden"); confetti(24); speak("Top linesman!"); } else render(); };
+$("lvlMatch").onclick=()=>{ $("start").classList.add("hidden"); startRun("match"); };
+$("lvlExpert").onclick=()=>{ $("start").classList.add("hidden"); startRun("expert"); };
+$("again").onclick=()=>{ $("finale").classList.add("hidden"); $("start").classList.remove("hidden"); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
 buildPass();

@@ -5,11 +5,11 @@ import TodayStrip from "./TodayStrip";
 export const metadata: Metadata = {
   title: "Games",
   description:
-    "Daily and endless games built from the Citizen of Nowhere data: Citizen of Nowhere Picks against the Premier League and NFL models, Metro Globle, Metro and Sports immaculate grids, Metro Higher or Lower, and the football, cricket, baseball and NFL Rules Labs.",
+    "Daily and endless games built from the Citizen of Nowhere data: Citizen of Nowhere Picks against the Premier League and NFL models, Metro Globle, Metro and Sports immaculate grids, Metro Higher or Lower, an Expert tier of the hardest Play & Learn games, and the football, cricket, baseball and NFL Rules Labs.",
   alternates: { canonical: "/play/arcade" },
 };
 
-type Section = "model" | "daily" | "endless" | "rules";
+type Section = "model" | "daily" | "endless" | "expert" | "rules";
 type Game = { href: string; title: string; emoji: string; blurb: string; section: Section; static?: boolean };
 
 // Citizen of Nowhere Picks replaced the per-league Beat the Model cards on
@@ -28,6 +28,17 @@ const GAMES: Game[] = [
   { href: "/play/cricket-rules-lab.html", title: "Cricket Rules Lab", emoji: "\u{1F3CF}", section: "rules", blurb: "The LBW Lab, the key Laws, real situations, and how cricket's rules changed.", static: true },
   { href: "/play/baseball-rules-lab.html", title: "Baseball Rules Lab", emoji: "\u{26BE}", section: "rules", blurb: "The Strike Zone Lab, the key rules, real calls, and how baseball's rules changed.", static: true },
   { href: "/play/nfl-rules-lab.html", title: "NFL Rules Lab", emoji: "\u{1F3C8}", section: "rules", blurb: "The Catch Lab, the key rules, real officiating calls, and how the NFL's rules changed.", static: true },
+  // Expert tier — the hardest settings of the Play & Learn games, surfaced here for
+  // grown-ups. Same files as /play; these link straight to the game, which opens on
+  // its own level picker. Added 2026-09-05 after the difficulty wave.
+  { href: "/play/games/champions-duel.html", title: "Champions Duel", emoji: "\u{1F3C6}", section: "expert", blurb: "459 finals across eight competitions. Name the winner, then the year, the score or the margin. Harder than it sounds once the 1970s come up.", static: true },
+  { href: "/play/games/whos-the-boss.html", title: "Who's the Boss?", emoji: "\u{1F3DB}\u{FE0F}", section: "expert", blurb: "201 current heads of state and government. Name the country from the leader, then name the job. Most people find out here that they know about twenty.", static: true },
+  { href: "/play/games/ball-or-strike.html", title: "Ball or Strike?", emoji: "\u{26BE}", section: "expert", blurb: "Call the zone in the Replay booth, where the ball misses by under two units. The zone is sized to the batter, so the same pitch is a strike to one hitter and a ball to the next.", static: true },
+  { href: "/play/games/catch-or-no-catch.html", title: "Catch or No Catch?", emoji: "\u{1F3C8}", section: "expert", blurb: "Two feet, control, the football move, surviving the ground, and the sideline to within a unit. The rule that decides it is the second question every time.", static: true },
+  { href: "/play/games/offside-or-onside.html", title: "Offside or Onside?", emoji: "\u{1F6A9}", section: "expert", blurb: "VAR review margins: three units, not forty. Then name the law behind the call, including the ones most fans get wrong about throw-ins and the second-last defender.", static: true },
+  { href: "/play/games/hows-that.html", title: "How's That?", emoji: "\u{1F3CF}", section: "expert", blurb: "Third umpire mode. Bowled, caught behind, LBW, inside edge, no-ball and stumped, with the tracking shaving leg stump and umpire's call in play.", static: true },
+  { href: "/play/games/chart-champions.html", title: "Is This Chart Being Fair?", emoji: "\u{1F4CA}", section: "expert", blurb: "The Expert tier is a data-literacy test: truncated axes, uneven year spacing, picture bars scaled in two dimensions. Each one redraws honestly after your answer.", static: true },
+  { href: "/play/games/champion-challenge.html", title: "Champion Challenge", emoji: "\u{1F396}\u{FE0F}", section: "expert", blurb: "The decathlon. Sixteen rounds drawn from the hard half of six games: set logic, ratios, deduction, verbal reasoning and geography, back to back.", static: true },
   { href: "/teams/national/quiz", title: "International Football Honours Quiz", emoji: "\u{1F3C6}", section: "rules", blurb: "Test yourself on national-team trophies and tournament history." },
 ];
 
@@ -35,6 +46,7 @@ const SECTIONS: { id: Section; title: string; note: string }[] = [
   { id: "model", title: "Beat the model", note: "Weekly picks against our simulators: call the games blind, then watch the refreshed ledger grade you and the machine by the same rules." },
   { id: "daily", title: "Daily challenges", note: "A fresh puzzle every day, the same for everyone. Come back tomorrow for a new one." },
   { id: "endless", title: "Endless", note: "Play as long as your streak holds." },
+  { id: "expert", title: "Expert tier", note: "The hardest settings of the Play & Learn games, pulled out for grown-ups. Every one opens on its own level picker: choose the Expert tier and the margins get thin. They are still in Kids Games too." },
   { id: "rules", title: "Learn the rules", note: "Interactive labs and quizzes for football, cricket and baseball, in kids and adults modes." },
 ];
 

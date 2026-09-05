@@ -14,6 +14,7 @@
   .hbtns{display:flex;gap:8px}
   .snd,.backb{border:none;background:#fff;border-radius:14px;font-size:1.15rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer;text-decoration:none;color:var(--ink);font-weight:900}
   main{max-width:560px;margin:0 auto;padding:0 12px 20px;text-align:center}
+  .lvlchip{display:inline-block;background:#fff;border-radius:12px;padding:3px 12px;font-weight:900;font-size:.85rem;color:#5b7b97;box-shadow:0 3px 0 #cfe0ee;margin-bottom:6px}
   .ask{font-size:1.05rem;font-weight:800;margin:0 0 8px}
   .pitchwrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #16324f22;background:#2f9450}
   svg{display:block;width:100%;height:auto}
@@ -24,6 +25,14 @@
   .call.notout{background:var(--accent);box-shadow:0 6px 0 #15705d}
   .call:disabled{opacity:.5;cursor:default}
   .verdict{min-height:1.6em;font-weight:900;font-size:1.05rem;margin-top:10px;color:var(--accent)}
+  .rulewrap{margin-top:10px}
+  .ruleq{font-weight:800;font-size:1rem;margin:6px 0 2px}
+  .opts{display:grid;grid-template-columns:1fr;gap:9px;margin-top:8px}
+  .opt{border:none;border-radius:16px;background:#fff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:11px 14px;font-family:inherit;font-weight:800;color:var(--ink);font-size:.92rem;text-align:left;line-height:1.25;transition:transform .12s}
+  .opt:active{transform:scale(.97)}
+  .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
+  .opt.bad{opacity:.55}
+  .opt:disabled{cursor:default}
   .next{margin-top:8px;border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:11px 26px;cursor:pointer;background:var(--ink);color:#fff;box-shadow:0 6px 0 #0b1a29;visibility:hidden}
   .next.show{visibility:visible}
   .pass{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px}
@@ -34,10 +43,14 @@
   .toast.show{opacity:1}
   .conf{position:fixed;top:-12px;font-size:1.3rem;pointer-events:none;z-index:15;animation:fall linear forwards}
   @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
-  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20;overflow:auto}
   .cover h1{font-size:2.1rem;margin:8px 0}
   .cover p{font-size:1.08rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 18px}
   .big{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.25rem;padding:15px 28px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d}
+  .lvlbtn{display:block;width:min(330px,86vw);margin:7px auto;border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.18rem;padding:14px 20px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 6px 0 #cfe0ee;text-align:center}
+  .lvlbtn.go{background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .lvlbtn small{display:block;font-size:.82rem;font-weight:800;color:#5b7b97}
+  .lvlbtn.go small{color:#d6f5ec}
   .hidden{display:none !important}
   .grown{font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px}
   .drsband{position:absolute;left:0;right:0;top:0;background:#16324fd9;color:#fff;font-weight:900;font-size:1rem;padding:7px 0;letter-spacing:2px;opacity:0;transition:opacity .3s}
@@ -50,6 +63,7 @@
   <div class="hbtns"><a class="backb" id="back" href="/play">←</a><button class="snd" id="snd">🔊</button></div>
 </header>
 <main>
+  <div class="lvlchip" id="lvlchip"></div>
   <div class="ask">The bowler appeals — <b>HOWZAT?!</b> You're the umpire. Out, or not out?</div>
   <div class="pitchwrap">
     <div class="drsband" id="drsband">📺 UMPIRE REVIEW</div>
@@ -62,11 +76,28 @@
       <rect x="130" y="0" width="140" height="520" fill="#d9b877"/>
       <rect x="130" y="0" width="140" height="520" fill="none" stroke="#c9a55f" stroke-width="3"/>
       <!-- creases -->
-      <line x1="130" y1="128" x2="270" y2="128" stroke="#ffffffdd" stroke-width="4"/>
+      <line id="batcrease" x1="130" y1="128" x2="270" y2="128" stroke="#ffffffdd" stroke-width="4"/>
       <line x1="130" y1="470" x2="270" y2="470" stroke="#ffffffdd" stroke-width="4"/>
+      <!-- restart / context caption (visible before the call for cases that need it) -->
+      <g id="capg" opacity="0">
+        <rect x="12" y="118" width="150" height="24" rx="8" fill="#16324fcc"/>
+        <text id="capt" x="87" y="134" text-anchor="middle" font-size="12" font-weight="900" fill="#fff"></text>
+      </g>
+      <!-- front-foot no-ball indicator (visible before the call) -->
+      <g id="footg" opacity="0">
+        <text x="200" y="463" text-anchor="middle" font-size="24">👟</text>
+        <text x="200" y="490" text-anchor="middle" font-size="10" font-weight="900" fill="#5c4300">front foot over the line!</text>
+      </g>
+      <!-- out-of-crease label for stumping (reveal) -->
+      <text id="creaselab" x="200" y="150" text-anchor="middle" font-size="11" font-weight="900" fill="#f6b93b" opacity="0">out of the crease!</text>
       <!-- leg-side guide (hidden until reveal) -->
       <line id="legline" x1="216" y1="0" x2="216" y2="520" stroke="#ff8f8f" stroke-width="2" stroke-dasharray="8 7" opacity="0"/>
       <text id="leglab" x="224" y="300" font-size="13" fill="#b34545" font-weight="900" opacity="0">leg side ➡</text>
+      <!-- off-side guide (hidden until reveal) -->
+      <line id="offline" x1="176" y1="0" x2="176" y2="520" stroke="#8fd1ff" stroke-width="2" stroke-dasharray="8 7" opacity="0"/>
+      <text id="offlab" x="168" y="300" text-anchor="end" font-size="13" fill="#2b6ea3" font-weight="900" opacity="0">⬅ off side</text>
+      <!-- impact marker for impact-outside-off (reveal) -->
+      <circle id="impactmark" r="9" fill="none" stroke="#2b6ea3" stroke-width="3" opacity="0"/>
       <!-- keeper -->
       <text id="keeper" x="200" y="36" text-anchor="middle" font-size="30">🧤</text>
       <!-- stumps -->
@@ -89,6 +120,7 @@
       <line id="proj" x1="0" y1="0" x2="0" y2="0" stroke="#ff4d4d" stroke-width="4" stroke-dasharray="7 7" opacity="0"/>
       <!-- edge spark + fielder -->
       <text id="spark" x="0" y="0" text-anchor="middle" font-size="24" opacity="0">✨</text>
+      <text id="sparklab" x="0" y="0" text-anchor="middle" font-size="10" font-weight="900" fill="#fff" opacity="0"></text>
       <text id="fielder" x="330" y="200" text-anchor="middle" font-size="28" opacity="0">🙌</text>
       <!-- the ball -->
       <circle id="cball" r="8" fill="#c1121f" stroke="#7a0c15" stroke-width="2" opacity="0"/>
@@ -99,6 +131,11 @@
     <button class="call notout" id="bNot">🙅 NOT OUT</button>
   </div>
   <div class="verdict" id="verdict"></div>
+  <div class="rulewrap hidden" id="rulewrap">
+    <div class="ruleq">Which rule decided it?</div>
+    <div class="opts" id="ruleopts"></div>
+    <div class="verdict" id="verdict2"></div>
+  </div>
   <button class="next" id="next">Next ball →</button>
   <div class="pass" id="pass"></div>
 </main>
@@ -107,8 +144,9 @@
 <div class="cover" id="start">
   <div style="font-size:3.8rem">🏏👆</div>
   <h1>How's That?</h1>
-  <p>You're the umpire at the bowler's end! Watch each delivery, listen to the appeal, then raise the finger for <b>OUT</b> or shake it off with <b>NOT OUT</b>. After every call the TV review shows the ball-tracking, just like the real thing.</p>
-  <button class="big" id="go">Start the over! 🏏</button>
+  <p>You're the umpire at the bowler's end! Watch each delivery, listen to the appeal, then raise the finger for <b>OUT</b> or shake it off with <b>NOT OUT</b> — then say which rule decided it. The TV review always shows the ball-tracking, just like the real thing.</p>
+  <button class="lvlbtn go" id="lvlMatch">🏏 Match day<small>Clear calls — the warm-up</small></button>
+  <button class="lvlbtn" id="lvlExpert">🎥 Third umpire<small>Expert — the tracking gets tight!</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
@@ -119,13 +157,13 @@
   <button class="big" id="again">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
-<p class="grown">For grown-ups: the real dismissal laws, judged visually with a DRS-style review — bowled, caught behind off the edge, LBW hitting or missing, the pitched-outside-leg rule, and why a bounced catch is never out. Ages 6–10.</p>
+<p class="grown">For grown-ups: the real dismissal laws, judged visually with a DRS-style review — bowled, caught behind off the edge, LBW hitting or missing, pitched outside leg, impact outside off, no-balls, stumpings, and Umpire's Call. Ages 6–10.</p>
 
 <script src="assets/scoring.js"></script>
 <script>
 const $=id=>document.getElementById(id);
-const ROUNDS=8;
-let sound=true,idx=0,cur=null,locked=true,firstTry=true,perfect=0,actx=null;
+const SCENARIOS=6, TOTAL=SCENARIOS*2;
+let sound=true,idx=0,cur=null,locked=true,actx=null,LEVEL="match";
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
@@ -137,7 +175,7 @@ function confetti(n){const em=["🏏","⭐","👆","🎉"];for(let i=0;i<n;i++){
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
 function buildPass(){
   const el=$("pass"); el.innerHTML="";
-  for(let i=0;i<ROUNDS;i++){
+  for(let i=0;i<TOTAL;i++){
     const d=document.createElement("div");
     const r=Scoring._state.rounds[i];
     if(r){ d.className="stamp "+Scoring.tierClass(r.tier); d.textContent=r.tier==="grey"?"🆕":"🏏"; }
@@ -147,16 +185,21 @@ function buildPass(){
 }
 
 /* Geometry: bowler's-end view. Stumps occupy x 183..216, y 62..110.
-   Leg stump line = x 216; pitching right of it = outside leg (right-handed batter). */
+   Leg stump line ≈ x 216 (right); off stump line ≈ x 176 (left) for a right-handed batter. */
 const STUMPS={x1:183,x2:216,y:100};
-const CASES=["bowled","lbwOut","lbwMiss","outsideLeg","edge","bump"];
+const CASES=["bowled","lbwOut","lbwMiss","outsideLeg","edge","bump","insideEdge","impactOutsideOff","noBall","stumped"];
 const WHY={
   bowled:"OUT — bowled! The ball crashed into the stumps. The simplest out in cricket.",
   lbwOut:"OUT — LBW! The ball hit the pad in front of the stumps, and the tracking shows it was HITTING. Leg Before Wicket.",
   lbwMiss:"NOT OUT! The pad stopped it, but the tracking shows the ball was MISSING the stumps. No wicket.",
   outsideLeg:"NOT OUT! The ball PITCHED outside leg stump — see the yellow bounce past the red line? That can never be LBW, however plumb it looks.",
   edge:"OUT — caught behind! It kissed the edge of the bat (see the spark ✨) and the keeper held on. Any touch of the bat plus a catch is out.",
-  bump:"NOT OUT! It came off the bat but BOUNCED before the fielder grabbed it. A catch only counts on the full."
+  bump:"NOT OUT! It came off the bat but BOUNCED before the fielder grabbed it. A catch only counts on the full.",
+  insideEdge:"NOT OUT! The ball hit the bat first, then the pad. Once it has touched the bat, LBW can never apply — and nobody caught it either.",
+  impactOutsideOff:"NOT OUT! He was playing a shot, and the ball struck him outside the line of off stump. LBW can never be given there when a shot is offered.",
+  noBall:"NOT OUT — no ball! The bowler's front foot landed over the popping crease. No dismissal, bowled or LBW, can stand off a no-ball.",
+  stumped:"OUT — stumped! He was out of his ground and the keeper whipped off the bails before he could get back.",
+  umpiresCall:"Given either way — Umpire's Call! The tracking shows the ball only just clipping leg stump. When it's this close, the on-field umpire's original decision stands."
 };
 const LABEL={
   bowled:"Out, bowled",
@@ -164,34 +207,72 @@ const LABEL={
   lbwMiss:"Not out, LBW missing the stumps",
   outsideLeg:"Not out, pitched outside leg",
   edge:"Out, caught behind off the edge",
-  bump:"Not out, bounced before the catch"
+  bump:"Not out, bounced before the catch",
+  insideEdge:"Not out, inside edge before the pad",
+  impactOutsideOff:"Not out, impact outside off while playing a shot",
+  noBall:"Not out, no ball — front foot over the line",
+  stumped:"Out, stumped — out of the crease",
+  umpiresCall:"Given either way — umpire's call, only just clipping"
 };
+const RULEOPT={
+  bowled:"The ball hit the stumps directly",
+  lbwOut:"Ball tracking shows it hitting the stumps",
+  lbwMiss:"Ball tracking shows it missing the stumps",
+  outsideLeg:"The ball pitched outside leg stump",
+  edge:"It touched the bat and was caught on the full",
+  bump:"The catch bounced before it was taken",
+  insideEdge:"It hit the bat before the pad",
+  impactOutsideOff:"Impact was outside off stump while a shot was played",
+  noBall:"The bowler overstepped the popping crease",
+  stumped:"The batter was out of the crease when the bails came off",
+  umpiresCall:"The tracking was too close to overturn the on-field call"
+};
+const CAPTION={ impactOutsideOff:"🏏 shot offered", stumped:"👟 out of the crease" };
 function rx(a,b){return a+Math.random()*(b-a);}
+function lbwGeom(kind){
+  if(LEVEL==="expert"){
+    const bx=rx(195,205);
+    if(kind==="lbwOut") return {bx, ex:rx(212,216), ey:120};
+    if(kind==="lbwMiss") return {bx, ex:rx(217,222), ey:120};
+    if(kind==="umpiresCall") return {bx, ex:rx(214,218), ey:120};
+  }
+  if(kind==="lbwOut") return {bx:rx(186,214), ex:rx(190,214), ey:120};
+  return {bx:rx(150,182), ex:rx(228,246), ey:120}; // lbwMiss at match level
+}
+function poolForLevel(){ return LEVEL==="expert" ? CASES.concat(["umpiresCall"]) : CASES; }
 function makeScenario(kind){
   // ball starts bottom, bounces at (bx,by), ends at (ex,ey)
   let bx,by,ex,ey,sx;      // sx = start x
   by=rx(250,330);
   if(kind==="bowled"){ bx=rx(186,214); ex=rx(188,212); ey=STUMPS.y; }
-  else if(kind==="lbwOut"){ bx=rx(186,214); ex=rx(190,214); ey=120; }              // pad in front, hitting
-  else if(kind==="lbwMiss"){ bx=rx(150,182); ex=rx(228,246); ey=120; }             // sliding past off/leg, missing
+  else if(kind==="lbwOut"||kind==="lbwMiss"||kind==="umpiresCall"){ const g=lbwGeom(kind); bx=g.bx; ex=g.ex; ey=g.ey; }
   else if(kind==="outsideLeg"){ bx=rx(228,252); ex=rx(198,214); ey=120; }          // pitched outside leg!
   else if(kind==="edge"){ bx=rx(210,235); ex=240; ey=112; }                        // past the bat's edge
-  else { bx=rx(215,240); ex=246; ey=112; }                                          // bump ball off the bat
+  else if(kind==="bump"){ bx=rx(215,240); ex=246; ey=112; }                        // bump ball off the bat
+  else if(kind==="insideEdge"){ bx=rx(210,235); ex=240; ey=112; }                  // bat first, same contact point as edge
+  else if(kind==="impactOutsideOff"){ bx=rx(190,210); ex=rx(140,168); ey=120; }    // in line, but pad struck well outside off
+  else if(kind==="noBall"){ bx=rx(186,214); ex=rx(188,212); ey=STUMPS.y; }         // looks bowled — but the front foot was over
+  else { bx=rx(200,230); ex=rx(195,215); ey=55; }                                  // stumped: beats the bat, carries to the keeper
   sx=rx(185,215);
-  return {kind,sx,bx,by,ex,ey,out:(kind==="bowled"||kind==="lbwOut"||kind==="edge")};
+  const isOut = kind==="bowled"||kind==="lbwOut"||kind==="edge"||kind==="stumped";
+  return {kind,sx,bx,by,ex,ey,out:isOut,caption:CAPTION[kind]||null};
 }
 function setBall(x,y){const b=$("cball");b.setAttribute("cx",x);b.setAttribute("cy",y);}
 function render(){
-  locked=true; firstTry=true;
+  locked=true;
   cur=seq[idx]?makeScenario(seq[idx]):makeScenario(pick(CASES));
-  Scoring.beginRound(Scoring.idOf({q:cur.kind}), LABEL[cur.kind]);
   window.__case={kind:cur.kind,out:cur.out}; // test/debug hook
-  ["legline","leglab","hitbox","hitlab","bounce","track","proj","spark","fielder"].forEach(id=>$(id).setAttribute("opacity",0));
+  Scoring.beginRound(Scoring.idOf({q:cur.kind}), LABEL[cur.kind]);
+  ["legline","leglab","offline","offlab","impactmark","hitbox","hitlab","bounce","track","proj","spark","sparklab","fielder","creaselab"].forEach(id=>$(id).setAttribute("opacity",0));
   $("bail1").setAttribute("transform",""); $("bail2").setAttribute("transform","");
   $("hitbox").setAttribute("stroke","#7CFC9B"); $("hitlab").setAttribute("fill","#7CFC9B"); $("hitlab").textContent="HITTING";
+  $("batcrease").setAttribute("stroke","#ffffffdd"); $("batcrease").setAttribute("stroke-width","4");
   $("drsband").classList.remove("show");
+  $("footg").setAttribute("opacity", cur.kind==="noBall"?1:0);
+  if(cur.caption){ $("capt").textContent=cur.caption; $("capg").setAttribute("opacity",1); } else { $("capg").setAttribute("opacity",0); }
   const b=$("cball"); b.style.transition="none"; setBall(cur.sx,505); b.setAttribute("opacity",1);
-  $("verdict").textContent=""; $("next").classList.remove("show");
+  $("verdict").textContent=""; $("verdict2").textContent=""; $("next").classList.remove("show");
+  $("rulewrap").classList.add("hidden"); $("ruleopts").innerHTML="";
   $("bOut").disabled=true; $("bNot").disabled=true;
   buildPass();
   // animate: start -> bounce -> end
@@ -209,26 +290,35 @@ function render(){
 }
 function afterDelivery(){
   const k=cur.kind;
-  if(k==="bowled"){
+  if(k==="bowled"||k==="noBall"){
     $("bail1").setAttribute("transform","translate(-16,-26) rotate(-40 191 59)");
     $("bail2").setAttribute("transform","translate(18,-30) rotate(35 208 59)");
     tone(600,.1,"square",0,.15);
   }
-  if(k==="edge"||k==="bump"){
+  if(k==="edge"||k==="bump"||k==="insideEdge"){
     $("spark").setAttribute("x",cur.ex-4); $("spark").setAttribute("y",cur.ey); $("spark").setAttribute("opacity",1);
     knock();
     const b=$("cball");
     if(k==="edge"){ // carries to the keeper on the full
       b.style.transition="cx .4s ease, cy .4s ease";
       requestAnimationFrame(()=>setBall(203,34));
-    } else {        // bounces first, then a fielder collects
+    } else if(k==="insideEdge"){ // deflects down onto the pad, no catch
+      $("sparklab").setAttribute("x",cur.ex-4); $("sparklab").setAttribute("y",cur.ey-14); $("sparklab").textContent="bat → pad"; $("sparklab").setAttribute("opacity",1);
+      b.style.transition="cx .3s ease-in, cy .3s ease-in";
+      requestAnimationFrame(()=>setBall(228,150));
+    } else {        // bump: bounces first, then a fielder collects
       b.style.transition="cx .3s ease-in, cy .3s ease-in";
       requestAnimationFrame(()=>setBall(290,170));
       setTimeout(()=>{ $("bounce").setAttribute("cx",290); $("bounce").setAttribute("cy",170); knock();
         b.style.transition="cx .3s ease-out, cy .3s ease-out";
         requestAnimationFrame(()=>setBall(330,205)); $("fielder").setAttribute("opacity",1); },320);
     }
-    if(k==="edge")$("fielder").setAttribute("opacity",0);
+    if(k==="edge"||k==="insideEdge")$("fielder").setAttribute("opacity",0);
+  }
+  if(k==="stumped"){
+    $("bail1").setAttribute("transform","translate(-12,-20) rotate(-30 191 59)");
+    $("bail2").setAttribute("transform","translate(14,-22) rotate(28 208 59)");
+    tone(520,.1,"square",0,.13);
   }
   setTimeout(()=>{
     locked=false; $("bOut").disabled=false; $("bNot").disabled=false;
@@ -242,7 +332,7 @@ function reveal(){
   $("track").setAttribute("points",cur.sx+",505 "+cur.bx+","+cur.by+" "+cur.ex+","+cur.ey);
   $("track").setAttribute("opacity",.9);
   const k=cur.kind;
-  if(k==="lbwOut"||k==="lbwMiss"){
+  if(k==="lbwOut"||k==="lbwMiss"||k==="umpiresCall"){
     // projection from the pad onwards
     const dx=cur.ex-cur.bx, dy=cur.ey-cur.by, len=Math.sqrt(dx*dx+dy*dy)||1;
     const px=cur.ex+dx/len*46, py=Math.max(58,cur.ey+dy/len*46);
@@ -252,54 +342,94 @@ function reveal(){
     const hitting=k==="lbwOut";
     $("hitbox").setAttribute("stroke",hitting?"#7CFC9B":"#c9d3dc");
     $("hitlab").setAttribute("fill",hitting?"#7CFC9B":"#e9edf1");
-    $("hitlab").textContent=hitting?"HITTING":"MISSING";
+    $("hitlab").textContent = k==="umpiresCall" ? "UMPIRE'S CALL" : (hitting?"HITTING":"MISSING");
     $("hitbox").setAttribute("opacity",1); $("hitlab").setAttribute("opacity",1);
   }
   if(k==="outsideLeg"){
     $("legline").setAttribute("opacity",1); $("leglab").setAttribute("opacity",1);
     $("bounce").setAttribute("opacity",1);
   }
-  if(k==="bowled"){ $("hitbox").setAttribute("opacity",1); $("hitlab").setAttribute("opacity",1); }
+  if(k==="impactOutsideOff"){
+    $("offline").setAttribute("opacity",1); $("offlab").setAttribute("opacity",1);
+    $("impactmark").setAttribute("cx",cur.ex); $("impactmark").setAttribute("cy",cur.ey); $("impactmark").setAttribute("opacity",1);
+  }
+  if(k==="bowled"||k==="noBall"){ $("hitbox").setAttribute("opacity",1); $("hitlab").setAttribute("opacity",1); $("hitlab").textContent="HITTING"; $("hitbox").setAttribute("stroke","#7CFC9B"); $("hitlab").setAttribute("fill","#7CFC9B"); }
+  if(k==="stumped"){ $("creaselab").setAttribute("opacity",1); $("batcrease").setAttribute("stroke","#f6b93b"); $("batcrease").setAttribute("stroke-width","5"); }
+  else { $("batcrease").setAttribute("stroke","#ffffffdd"); $("batcrease").setAttribute("stroke-width","4"); }
+}
+function ruleOptionsFor(kind){
+  const pool=Object.keys(RULEOPT);
+  const others=pool.filter(k=>k!==kind);
+  const wrong=shuffle(others).slice(0,3);
+  return shuffle([kind,...wrong]);
+}
+function showRuleQuestion(callWasCorrect){
+  const kinds=ruleOptionsFor(cur.kind);
+  Scoring.beginRound(Scoring.idOf({q:cur.kind+"_rule"}), "Rule: "+LABEL[cur.kind]);
+  const wrap=$("ruleopts"); wrap.innerHTML="";
+  const btns=[];
+  kinds.forEach(k=>{
+    const b=document.createElement("button");
+    b.className="opt"; b.textContent=RULEOPT[k];
+    b.onclick=()=>{
+      if(Scoring.answered()||!Scoring.armed())return;
+      const correct=k===cur.kind;
+      const res=Scoring.answer(correct);
+      btns.forEach(x=>x.disabled=true);
+      if(correct) b.classList.add("good");
+      else { b.classList.add("bad"); btns[kinds.indexOf(cur.kind)].classList.add("good"); }
+      const why=WHY[cur.kind];
+      let msg;
+      if(callWasCorrect&&correct) msg="You made the right call. Now you know the rule behind it too. "+why;
+      else if(callWasCorrect&&!correct) msg="You made the right call! Here's the rule behind it: "+why;
+      else if(!callWasCorrect&&correct) msg="You've got the rule! "+why;
+      else msg="Now you know both: "+why;
+      $("verdict2").textContent=msg;
+      toast(correct?(res.tier==="gold"?pick(["Rule mastered! 🧠","Exactly right! ⭐","You know your laws! 🙌"]):pick(["Worked it out! 👍","Nice reasoning! ⭐"])):"Now you know the rule too! 🆕");
+      speak(msg);
+      if(correct){ confetti(8); cheer(); }
+      idx++; buildPass();
+      $("next").textContent = idx>=SCENARIOS ? "See my score →" : "Next ball →";
+      $("next").classList.add("show");
+    };
+    btns.push(b); wrap.appendChild(b);
+  });
+  $("rulewrap").classList.remove("hidden");
 }
 function choose(callOut){
   if(Scoring.answered()||!Scoring.armed())return;
-  const correct=callOut===cur.out;
+  const correct = cur.kind==="umpiresCall" ? true : (callOut===cur.out);
   var res=Scoring.answer(correct);
   locked=true;
+  reveal();
+  $("bOut").disabled=true; $("bNot").disabled=true;
+  const why=WHY[cur.kind];
+  const icon = cur.kind==="umpiresCall" ? "📺 " : (cur.out?"👆 ":"🙅 ");
+  $("verdict").textContent=icon+why;
   if(correct){
-    if(firstTry)perfect++;
-    reveal();
-    $("bOut").disabled=true; $("bNot").disabled=true;
-    const why=WHY[cur.kind];
-    $("verdict").textContent=(cur.out?"👆 ":"🙅 ")+why;
-    toast(res.tier==="gold"?pick(["Great decision! 🎉","The review agrees! 📺","Elite umpiring! 🙌"]):pick(["Nice work getting there! 👍","Worked it out! ⭐"]));
-    speak(why); confetti(10); cheer();
-    idx++; buildPass();
-    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next ball →";
-    $("next").classList.add("show");
+    if(cur.kind==="umpiresCall") toast("Good instinct — either call was fair here! 🤝");
+    else toast(res.tier==="gold"?pick(["Great decision! 🎉","The review agrees! 📺","Elite umpiring! 🙌"]):pick(["Nice work getting there! 👍","Worked it out! ⭐"]));
+    speak(why); confetti(10);
   } else {
-    reveal();
-    $("bOut").disabled=true; $("bNot").disabled=true;
-    const why=WHY[cur.kind];
-    $("verdict").textContent=(cur.out?"👆 ":"🙅 ")+why;
     toast("Now you know it! 🆕");
     speak(why);
-    idx++; buildPass();
-    $("next").textContent = idx>=ROUNDS ? "See my score →" : "Next ball →";
-    $("next").classList.add("show");
   }
+  showRuleQuestion(correct);
 }
 let seq=[];
-function startRun(){
-  Scoring.init({slug:"hows-that", total:ROUNDS, noun:"call", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
-  seq=shuffle(CASES.concat(shuffle(CASES).slice(0,ROUNDS-CASES.length)));
-  idx=0; perfect=0; render();
+function startRun(level){
+  LEVEL=level;
+  $("lvlchip").textContent = LEVEL==="expert" ? "🎥 Third umpire" : "🏏 Match day";
+  Scoring.init({slug:"hows-that", total:TOTAL, noun:"rule", stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
+  seq=shuffle(poolForLevel()).slice(0,SCENARIOS);
+  idx=0; render();
 }
 $("bOut").onclick=()=>choose(true);
 $("bNot").onclick=()=>choose(false);
-$("next").onclick=()=>{ if(idx>=ROUNDS){ document.querySelector("#finale h1").textContent=Scoring.headline(); $("scoreboard").innerHTML=Scoring.finaleHTML(); $("finp").textContent = perfect>=7 ? "Perfect reviews on "+perfect+" of 8 — the ICC elite panel calls!" : "All 8 appeals answered, "+perfect+" on the first look. Play again to go perfect!"; $("finale").classList.remove("hidden"); confetti(24); speak("Elite umpire!"); } else render(); };
-$("go").onclick=()=>{ $("start").classList.add("hidden"); ctx(); startRun(); };
-$("again").onclick=()=>{ $("finale").classList.add("hidden"); startRun(); };
+$("next").onclick=()=>{ if(idx>=SCENARIOS){ document.querySelector("#finale h1").textContent=Scoring.headline(); $("scoreboard").innerHTML=Scoring.finaleHTML(); const t=Scoring.tally(); const bothRight=t.gold+t.silver; $("finp").textContent = bothRight>=TOTAL-1 ? "Nearly perfect across "+SCENARIOS+" appeals — the ICC elite panel calls!" : "All "+SCENARIOS+" appeals answered, and you worked out the rules too. Play again to go perfect!"; $("finale").classList.remove("hidden"); confetti(24); speak("Elite umpire!"); } else render(); };
+$("lvlMatch").onclick=()=>{ $("start").classList.add("hidden"); ctx(); startRun("match"); };
+$("lvlExpert").onclick=()=>{ $("start").classList.add("hidden"); ctx(); startRun("expert"); };
+$("again").onclick=()=>{ $("finale").classList.add("hidden"); $("start").classList.remove("hidden"); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
 buildPass();

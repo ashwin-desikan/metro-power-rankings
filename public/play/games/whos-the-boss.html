@@ -14,17 +14,22 @@
   .hbtns{display:flex;gap:8px}
   .snd,.backb{border:none;background:#fff;border-radius:14px;font-size:1.15rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer;text-decoration:none;color:var(--ink);font-weight:900}
   main{max-width:560px;margin:0 auto;padding:0 14px 20px;text-align:center}
+  .lvlchip{display:inline-block;background:#fff;border-radius:12px;padding:3px 12px;font-weight:900;font-size:.85rem;color:#5b7b97;box-shadow:0 3px 0 #cfe0ee;margin-bottom:6px}
   .ask{font-size:1.02rem;font-weight:800;margin:0 0 8px;color:#5b7b97}
   .job{background:#fff;border-radius:20px;box-shadow:0 8px 20px #16324f1c;padding:18px 14px;margin-bottom:12px}
   .job .em{font-size:2.6rem}
   .job .txt{font-size:1.2rem;font-weight:900;margin-top:4px;min-height:2.4em;display:flex;align-items:center;justify-content:center}
+  .jobflag{width:96px;height:64px;border-radius:9px;object-fit:cover;box-shadow:0 0 0 3px #dcebf6;margin:0 auto}
   .read{border:none;background:#eef6fc;border-radius:12px;font-size:1rem;padding:5px 12px;cursor:pointer;font-weight:800;color:var(--ink)}
   .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+  .opts.opts4{grid-template-columns:1fr 1fr}
   .opt{border:none;border-radius:16px;background:#fff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:inherit;font-weight:900;color:var(--ink);font-size:.95rem;transition:transform .12s}
   .opt:active{transform:scale(.95)}
   .opt .big{font-size:2.1rem}
   .opt img.fl{width:46px;height:31px;border-radius:5px;object-fit:cover;box-shadow:0 0 0 2px #dcebf6}
   .opt .sub{font-size:.76rem;color:#5b7b97;font-weight:800}
+  .opt .sub2{font-size:.88rem;color:var(--ink);font-weight:900;line-height:1.2}
+  .opt.ropt{font-size:1.02rem;padding:16px 8px;white-space:normal}
   .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
   .opt.bad{animation:shake .4s}
   @keyframes shake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
@@ -39,10 +44,14 @@
   .toast.show{opacity:1}
   .conf{position:fixed;top:-12px;font-size:1.3rem;pointer-events:none;z-index:15;animation:fall linear forwards}
   @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
-  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20;overflow:auto}
   .cover h1{font-size:2.1rem;margin:8px 0}
   .cover p{font-size:1.08rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 18px}
   .bigbtn{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.25rem;padding:15px 28px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d}
+  .lvlbtn{display:block;width:min(330px,86vw);margin:7px auto;border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.18rem;padding:14px 20px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 6px 0 #cfe0ee;text-align:center}
+  .lvlbtn.go{background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .lvlbtn small{display:block;font-size:.82rem;font-weight:800;color:#5b7b97}
+  .lvlbtn.go small{color:#d6f5ec}
   /* Honest Answer tiers — PLAY-MASTERY-SPEC.md §1.2. Gold = knew it,
      silver = worked it out, amber = learned it just now. No red, no cross. */
   .stamp.silver{opacity:1;filter:none;box-shadow:inset 0 0 0 3px #9fb6ca;animation:pop .4s}
@@ -55,6 +64,7 @@
   .learned .lh{font-weight:900;color:#7a5b00;margin-bottom:4px}
   .learned ul{margin:0;padding-left:20px}
   .learned li{font-weight:700;color:#7a5b00;line-height:1.35;margin:3px 0}
+  .grown{font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px;line-height:1.45}
   .hidden{display:none !important}
 </style>
 </head>
@@ -64,14 +74,20 @@
   <div class="hbtns"><a class="backb" id="back" href="/play">←</a><button class="snd" id="snd">🔊</button></div>
 </header>
 <main>
-  <div class="ask">Whose job is this? Tap the right leader!</div>
-  <div class="job"><div class="em" id="em"></div><div class="txt" id="txt"></div>
-    <button class="read" id="read">🔊 Read it to me</button></div>
-  <div class="opts">
+  <div class="lvlchip" id="lvlchip"></div>
+  <div class="ask" id="ask">Whose job is this? Tap the right leader!</div>
+  <div class="job">
+    <img class="jobflag hidden" id="jobflag" alt="">
+    <div class="em" id="em"></div><div class="txt" id="txt"></div>
+    <button class="read" id="read">🔊 Read it to me</button>
+  </div>
+  <div class="opts" id="opts-l1">
     <button class="opt" id="o-pres"><span class="big">🦅</span><img class="fl" src="https://flagcdn.com/w160/us.png" alt="US flag" onerror="this.style.display='none'">The President<span class="sub">The White House</span></button>
     <button class="opt" id="o-pm"><span class="big">🚪</span><img class="fl" src="https://flagcdn.com/w160/gb.png" alt="UK flag" onerror="this.style.display='none'">The Prime Minister<span class="sub">10 Downing Street</span></button>
     <button class="opt" id="o-king"><span class="big">👑</span><img class="fl" src="https://flagcdn.com/w160/gb.png" alt="UK flag" onerror="this.style.display='none'">The King<span class="sub">Buckingham Palace</span></button>
   </div>
+  <div class="opts opts4 hidden" id="opts-l2"></div>
+  <div class="opts opts4 hidden" id="opts-l3"></div>
   <div class="reveal" id="reveal"></div>
   <button class="next" id="next" disabled>Next job →</button>
   <div class="pass" id="pass"></div>
@@ -81,18 +97,24 @@
 <div class="cover" id="start">
   <div style="font-size:3.8rem">🦅🚪👑</div>
   <h1>Who's the Boss?</h1>
-  <p>America has a <b>President</b>. Britain has a <b>Prime Minister</b> AND a <b>King</b>. Ten jobs — who does each one?</p>
-  <button class="bigbtn" id="go">Let's find out! 🏛️</button>
+  <p>America has a <b>President</b>. Britain has a <b>Prime Minister</b> AND a <b>King</b>. Pick a level — real leaders, real jobs, from all over the world.</p>
+  <button class="lvlbtn go" id="lvl1">⭐ Two Countries<small>US President · UK PM · UK King — the classics</small></button>
+  <button class="lvlbtn" id="lvl2">🌟 Who Leads?<small>200+ real leaders, every continent — match the name to the country</small></button>
+  <button class="lvlbtn" id="lvl3">🚀 What's the Job?<small>President, PM, King or Queen, Chancellor, Supreme Leader — name the job</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
   <div style="font-size:4rem">🏛️⭐</div>
   <h1>Boss of the Bosses!</h1>
-  <p>You know exactly who does what, in both countries.</p>
+  <p>You know who runs the show, all over the world.</p>
+  <div id="tallybox"></div>
   <button class="bigbtn" id="again">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
 
+<p class="grown" id="grownText">For grown-ups: real-world civics through real, current heads of state and government — 200+ leaders across every continent, sourced from the site's own leaders dataset. Level 1 (ages 5–7) is the classic US/UK three-way split. Level 2, "Who Leads?" (ages 7–10), pairs a leader's name with their country, with same-continent distractors so a correct guess takes geography, not luck. Level 3, "What's the Job?" (ages 8–11), is the real lesson: President, Prime Minister, King or Queen, Chancellor and Supreme Leader are different jobs, and dozens of countries — the UK included — split head of state and head of government between two different people. Distractors and question order are Leitner-weighted per PLAY-MASTERY-SPEC.md §1.7, so a missed leader resurfaces sooner than one already known cold.</p>
+
+<script src="pools/whos-the-boss.js"></script>
 <script src="assets/scoring.js"></script>
 <script>
 const CARDS=[
@@ -113,30 +135,66 @@ const CARDS=[
  {em:"🎂", t:"Has two birthdays every year", a:"king", f:"A real birthday, and an official one in June with a big parade."},
 ];
 const NAMES={pres:"the President 🦅",pm:"the Prime Minister 🚪",king:"the King 👑"};
+const NAMED=["President","Prime Minister","King or Queen","Chancellor","Supreme Leader"];
+const POOL2=(window.BOSS&&window.BOSS.LEADERS)?window.BOSS.LEADERS.slice():[];
+const POOL3=POOL2.filter(function(x){return NAMED.indexOf(x.roleLabel)>-1;});
+const LVLCHIP={1:"⭐ Two Countries",2:"🌟 Who Leads?",3:"🚀 What's the Job?"};
 const N=10;
 const $=id=>document.getElementById(id);
-let sound=true,idx=0,order=[],done=false;
+let sound=true,idx=0,order=[],done=false,LEVEL=1,currentPrompt="";
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
+/* Biased pick: favours the front of an array that is already ordered by fame
+   (countries.json order — see build_whos_the_boss.py), without ever making
+   the same three distractors show up every time. */
+function sampleBiased(arr,k){
+  const p=arr.slice(),out=[];
+  for(let i=0;i<k&&p.length;i++){const j=Math.min(p.length-1,Math.floor(Math.pow(Math.random(),1.7)*p.length));out.push(p[j]);p.splice(j,1);}
+  return out;
+}
+function continentDistractors(target,n){
+  let cand=POOL2.filter(function(x){return x.continent===target.continent&&x.slug!==target.slug;});
+  if(cand.length<n) cand=POOL2.filter(function(x){return x.slug!==target.slug;});
+  return sampleBiased(cand,n);
+}
+function roleDistractors(correctLabel,n){
+  const others=NAMED.filter(function(r){return r!==correctLabel;});
+  return shuffle(others).slice(0,n);
+}
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
 function speakThen(t){if(!sound||!("speechSynthesis" in window)){Scoring.readEnded();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;u.onend=()=>Scoring.readEnded();u.onerror=()=>Scoring.readEnded();speechSynthesis.speak(u);}catch(e){Scoring.readEnded();}}
 function confetti(n){const em=["🏛️","⭐","🎉","👑"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
 function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");const r=Scoring._state.rounds[i];d.className="stamp"+(r?" "+Scoring.tierClass(r.tier):"");d.textContent=r?(r.tier==="grey"?"🆕":"🏛️"):"🏛️";d.title=r?({gold:"Knew it",silver:"Worked it out",grey:"Learned it"})[r.tier]:"";el.appendChild(d);}}
+function showOpts(which){
+  ["opts-l1","opts-l2","opts-l3"].forEach(id=>$(id).classList.toggle("hidden",id!==which));
+}
 function render(){
-  done=false; const c=order[idx];
+  done=false;
+  $("reveal").textContent=""; $("next").disabled=true;
+  if(LEVEL===1) renderL1();
+  else if(LEVEL===2) renderL2();
+  else renderL3();
+  buildPass();
+}
+/* ---------------- Level 1: Two Countries (unchanged 15-card warm-up) ---------------- */
+function renderL1(){
+  showOpts("opts-l1");
+  $("jobflag").classList.add("hidden");
+  const c=order[idx];
   Scoring.beginRound(Scoring.idOf({q:c.t}), c.t);
+  $("ask").textContent="Whose job is this? Tap the right leader!";
   $("em").textContent=c.em; $("txt").textContent=c.t;
   ["pres","pm","king"].forEach(k=>$("o-"+k).classList.remove("good","bad","shown","picked"));
-  $("reveal").textContent=""; $("next").disabled=true;
-  buildPass(); speak(c.t+". Whose job is that?");
+  currentPrompt=c.t+". Whose job is that?";
+  speak(currentPrompt);
 }
 /* Honest Answer loop — PLAY-MASTERY-SPEC.md §1. One tap per round. A miss shows
    the right answer and still gives the fact, so it teaches instead of stalling.
    Previously a wrong tap cost nothing and the round would not advance until the
    answer was right, which made tapping-until-green the winning strategy here:
    with only 3 options, guessing beat knowing. */
-function choose(k){
+function chooseL1(k){
   if(Scoring.answered()||!Scoring.armed())return;
   const c=order[idx], correct=(k===c.a);
   const res=Scoring.answer(correct);
@@ -157,15 +215,126 @@ function choose(k){
   $("next").disabled=false;
   idx++; buildPass();
 }
+["pres","pm","king"].forEach(k=>$("o-"+k).onclick=()=>chooseL1(k));
 
-["pres","pm","king"].forEach(k=>$("o-"+k).onclick=()=>choose(k));
+/* ---------------- Level 2: Who Leads? (name -> country, same-continent distractors) ---------------- */
+function renderL2(){
+  showOpts("opts-l2");
+  $("jobflag").classList.add("hidden");
+  const c=order[idx];
+  Scoring.beginRound(Scoring.idOf({q:"boss2:"+c.slug}), c.name+" leads "+c.country);
+  $("ask").textContent="Which country does this leader run?";
+  $("em").textContent="🧑‍💼"; $("txt").textContent=c.name;
+  const distractors=continentDistractors(c,3);
+  const options=shuffle([c].concat(distractors));
+  const wrap=$("opts-l2"); wrap.innerHTML="";
+  options.forEach(o=>{
+    const b=document.createElement("button");
+    b.className="opt"; b.dataset.slug=o.slug;
+    const img=document.createElement("img");
+    img.className="fl"; img.alt=o.country+" flag"; img.src="https://flagcdn.com/w160/"+o.iso+".png";
+    img.onerror=function(){this.style.display="none";};
+    const lab=document.createElement("span"); lab.className="sub2"; lab.textContent=o.country;
+    b.appendChild(img); b.appendChild(lab);
+    b.onclick=()=>chooseL2(o.slug===c.slug,o,c,b);
+    wrap.appendChild(b);
+  });
+  currentPrompt=c.name+". Which country does this leader run?";
+  speak(currentPrompt);
+}
+function bossFact(target){
+  return target.name+" has been "+target.roleLabel+" of "+target.country+" since "+target.since+".";
+}
+function chooseL2(correct,opt,target,btnEl){
+  if(Scoring.answered()||!Scoring.armed())return;
+  const res=Scoring.answer(correct);
+  done=true;
+  Array.from($("opts-l2").children).forEach(b=>{
+    if(b.dataset.slug===target.slug) b.classList.add(correct?"good":"shown");
+    else if(b===btnEl) b.classList.add("picked");
+  });
+  const fact=bossFact(target);
+  if(correct){
+    $("reveal").textContent=(res.tier==="gold"?"⭐ ":"👍 ")+fact;
+    toast(res.tier==="gold"?pick(["You knew it! 🎉","Straight away! ⭐"]):"Worked it out! 👍");
+    speak("Yes! "+fact); confetti(9);
+  }else{
+    $("reveal").textContent="🆕 It's "+target.country+". "+fact;
+    toast("Now you know it! 🆕");
+    speak("It's "+target.country+". "+fact);
+  }
+  $("next").disabled=false;
+  idx++; buildPass();
+}
+
+/* ---------------- Level 3: What's the Job? (country -> role, real civics lesson) ---------------- */
+function renderL3(){
+  showOpts("opts-l3");
+  const c=order[idx];
+  Scoring.beginRound(Scoring.idOf({q:"boss3:"+c.slug}), c.country+"'s leader is "+c.roleLabel);
+  $("ask").textContent="What is this country's leader called?";
+  const flag=$("jobflag"); flag.src="https://flagcdn.com/w160/"+c.iso+".png"; flag.alt=c.country+" flag"; flag.classList.remove("hidden");
+  flag.onerror=function(){this.classList.add("hidden");};
+  $("em").textContent=""; $("txt").textContent=c.country;
+  const distractors=roleDistractors(c.roleLabel,3);
+  const options=shuffle([c.roleLabel].concat(distractors));
+  const wrap=$("opts-l3"); wrap.innerHTML="";
+  options.forEach(role=>{
+    const b=document.createElement("button");
+    b.className="opt ropt"; b.textContent=role; b.dataset.role=role;
+    b.onclick=()=>chooseL3(role===c.roleLabel,role,c,b);
+    wrap.appendChild(b);
+  });
+  currentPrompt="What is "+c.country+"'s leader called?";
+  speak(currentPrompt);
+}
+function chooseL3(correct,role,c,btnEl){
+  if(Scoring.answered()||!Scoring.armed())return;
+  const res=Scoring.answer(correct);
+  done=true;
+  Array.from($("opts-l3").children).forEach(b=>{
+    if(b.dataset.role===c.roleLabel) b.classList.add(correct?"good":"shown");
+    else if(b===btnEl) b.classList.add("picked");
+  });
+  let fact=bossFact(c);
+  if(c.second){
+    fact+=" "+c.country+" has both: "+c.name+" is "+c.roleLabel+", and "+c.second.name+" is "+c.second.roleLabel+".";
+  }
+  if(correct){
+    $("reveal").textContent=(res.tier==="gold"?"⭐ ":"👍 ")+fact;
+    toast(res.tier==="gold"?pick(["You knew it! 🎉","Straight away! ⭐"]):"Worked it out! 👍");
+    speak("Yes! "+fact); confetti(9);
+  }else{
+    $("reveal").textContent="🆕 It's "+c.roleLabel+". "+fact;
+    toast("Now you know it! 🆕");
+    speak("It's "+c.roleLabel+". "+fact);
+  }
+  $("next").disabled=false;
+  idx++; buildPass();
+}
+
+/* ---------------- level select / run lifecycle ---------------- */
+function ordersFor(level){
+  if(level===1) return shuffle(CARDS).slice(0,N);
+  if(level===2) return Scoring.weightedSample(POOL2,N,function(x){return Scoring.idOf({q:"boss2:"+x.slug});});
+  return Scoring.weightedSample(POOL3,N,function(x){return Scoring.idOf({q:"boss3:"+x.slug});});
+}
+function beginRun(level){
+  LEVEL=level; idx=0; order=ordersFor(level);
+  $("lvlchip").textContent=LVLCHIP[level];
+  Scoring.init({slug:"whos-the-boss",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}});
+  render();
+}
 $("next").onclick=()=>{ if(idx>=N){ $("finale").classList.remove("hidden"); showTally(); confetti(24); speak("Boss of the bosses! Amazing!"); } else render(); };
-$("go").onclick=()=>{ $("start").classList.add("hidden"); order=shuffle(CARDS).slice(0,N); idx=0; Scoring.init({slug:"whos-the-boss",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}}); render(); };
-function showTally(){const h=$("finale").querySelector("h1");if(h)h.textContent=Scoring.headline();let box=document.getElementById("tallybox");if(!box){box=document.createElement("div");box.id="tallybox";$("again").parentNode.insertBefore(box,$("again"));}box.innerHTML=Scoring.finaleHTML();}
-$("again").onclick=()=>{ $("finale").classList.add("hidden"); order=shuffle(CARDS).slice(0,N); idx=0; Scoring.init({slug:"whos-the-boss",total:N,stampClasses:{base:"stamp",gold:"on",silver:"silver",grey:"miss"}}); render(); };
-$("read").onclick=()=>{ Scoring.readStarted(); speakThen(order[idx].t+". Whose job is that?"); };
+$("lvl1").onclick=()=>{ $("start").classList.add("hidden"); beginRun(1); };
+$("lvl2").onclick=()=>{ $("start").classList.add("hidden"); beginRun(2); };
+$("lvl3").onclick=()=>{ $("start").classList.add("hidden"); beginRun(3); };
+function showTally(){const h=$("finale").querySelector("h1");if(h)h.textContent=Scoring.headline();$("tallybox").innerHTML=Scoring.finaleHTML();}
+$("again").onclick=()=>{ $("finale").classList.add("hidden"); beginRun(LEVEL); };
+$("read").onclick=()=>{ Scoring.readStarted(); speakThen(currentPrompt); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
+if(POOL2.length===0){ $("lvl2").disabled=true; $("lvl3").disabled=true; $("lvl2").querySelector("small").textContent="Pool not loaded — check pools/whos-the-boss.js"; }
 buildPass();
 </script>
 </body>
