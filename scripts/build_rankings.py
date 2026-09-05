@@ -191,6 +191,7 @@ HOCKEY_SUSPENDED, _, _, _ = load_manual("hockey_suspended")
 BASEBALL, BASEBALL_ASOF, BASEBALL_SRC, _ = load_manual("baseball")
 WOMENS, WOMENS_ASOF, WOMENS_SRC, WOMENS_SEP = load_manual("womens")
 VOLLEYBALL, VOLLEY_ASOF, VOLLEY_SRC, VOLLEY_SEP = load_manual("volleyball")
+VOLLEY_SUSPENDED, _, _, _ = load_manual("volleyball_suspended")
 HANDBALL, HANDBALL_ASOF, HANDBALL_SRC, HANDBALL_SEP = load_manual("handball")
 
 hockey = build_named(HOCKEY, HOCKEY_SEP)
@@ -200,5 +201,8 @@ emit("hockey-men", HOCKEY_SRC, HOCKEY_ASOF, hockey,
                  "engineSlug": r["engineSlug"]} for r in hockey_susp])
 emit("baseball-men", BASEBALL_SRC, BASEBALL_ASOF, build_baseball(BASEBALL))
 emit("womens-football", WOMENS_SRC, WOMENS_ASOF, build_named(WOMENS, WOMENS_SEP))
-emit("volleyball-men", VOLLEY_SRC, VOLLEY_ASOF, build_named(VOLLEYBALL, VOLLEY_SEP))
+volley_susp = build_named(VOLLEY_SUSPENDED, VOLLEY_SEP)
+emit("volleyball-men", VOLLEY_SRC, VOLLEY_ASOF, build_named(VOLLEYBALL, VOLLEY_SEP),
+     suspended=[{"name": r["name"], "points": r["points"], "slug": r["slug"],
+                 "engineSlug": r["engineSlug"]} for r in volley_susp])
 emit("handball-men", HANDBALL_SRC, HANDBALL_ASOF, build_named(HANDBALL, HANDBALL_SEP))

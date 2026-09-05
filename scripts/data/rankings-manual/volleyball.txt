@@ -1,35 +1,149 @@
 # FIVB Senior World Ranking
-# url: https://www.volleyball.fivb.com
-# asOf: 2025-10-05
+# url: https://en.volleyballworld.com/volleyball/world-ranking/men/
+# asOf: 2026-09-05
 # separator: |
 # Edit this file to update the ranking. It is data, not code.
-Poland|390.96
-Italy|385.02
-Brazil|338.4
-France|328.22
-United States|324.35
-Slovenia|303.61
-Japan|294.77
-Argentina|269
-Bulgaria|261.3
-Canada|252.99
-Germany|247.4
-Cuba|243.14
-Serbia|233.34
-Turkey|230.09
-Belgium|225.86
-Iran|209.02
-Ukraine|202.85
-Czech Republic|201.25
-Finland|188.93
-Netherlands|180.95
-Qatar|164.99
-Puerto Rico|147.9
-Portugal|145.04
-Romania|141.7
-Greece|137.44
-South Korea|137.28
+# Russia and Belarus are SUSPENDED IN THE CUP and live in
+# volleyball_suspended.txt, the same treatment as futsal and women's ice
+# hockey. FIVB still ranks them: Russia 3rd on 352.10, Belarus 38th.
+Poland|407.56
+Italy|355.84
+Slovenia|344.53
+United States|344.41
+Japan|333.34
+Brazil|312.13
+France|302.59
+Bulgaria|272.25
+Turkey|268.49
+Ukraine|247.16
+Germany|241.87
+Serbia|234.98
+Argentina|232.41
+Cuba|224.23
+Finland|218.01
+Belgium|211.6
+Canada|209.21
+Iran|207.39
+Czech Republic|203.22
+Netherlands|194.97
+Puerto Rico|167.72
+Greece|148.96
+Mexico|145.1
+South Korea|144.1
+Portugal|138.86
 Egypt|136.56
-China|129.01
-Chile|125.32
-Mexico|121.91
+Switzerland|134.76
+Qatar|133.67
+Israel|133.53
+Estonia|133.14
+Denmark|130.79
+China|130.08
+Sweden|125.29
+Chile|125.06
+Romania|124.47
+Spain|121.73
+Pakistan|116.69
+Croatia|112.96
+Colombia|111.26
+Tunisia|108.93
+Slovakia|108.8
+Australia|104.31
+Indonesia|102.51
+Dominican Republic|95.99
+Hungary|94.3
+India|92.94
+Latvia|92.47
+Bahrain|92.16
+Venezuela|88.42
+Thailand|84.31
+Nigeria|83.59
+North Macedonia|83.17
+Cameroon|79.27
+Austria|77.03
+Bolivia|76.35
+San Marino|74.81
+Vietnam|73.58
+Dominica|73.07
+St. Vincent & the Grenadines|71.51
+Taiwan|70.6
+Scotland|67.7
+Oman|67.64
+Curaçao|67.05
+Saint Lucia|66.71
+Kenya|66.38
+Montenegro|64.18
+Belize|63.09
+Barbados|61.87
+Costa Rica|61.13
+Benin|59.42
+Zambia|58.13
+Zimbabwe|57.63
+Cyprus|56.82
+Guam|55.78
+Papua New Guinea|55.67
+Jamaica|55.33
+Kazakhstan|54.36
+Turkmenistan|53.47
+Bermuda|53.2
+Kyrgyzstan|53.17
+Saudi Arabia|52.43
+Albania|52.21
+Bangladesh|50.1
+Nicaragua|49.81
+England|48.99
+Niger|48.12
+United Arab Emirates|48.01
+Namibia|47.58
+Antigua & Barbuda|47.07
+Cook Islands|45.99
+Côte d'Ivoire|45.94
+British Virgin Islands|45.22
+Cape Verde|43.98
+Sri Lanka|43.81
+Palau|43.71
+Guatemala|43.49
+Liechtenstein|42.98
+Norway|42.9
+Bosnia-Herzegovina|42.78
+Myanmar|41.97
+Senegal|41.83
+Northern Ireland|41.75
+Libya|40.62
+Greenland|39
+Syria|38.84
+Anguilla|38.55
+Uganda|38.5
+Grenada|37.86
+Philippines|37.36
+Iraq|37.34
+Kuwait|37.09
+Malawi|36.66
+Togo|36.59
+American Samoa|36.38
+Guinea-Bissau|35.31
+Jordan|35.14
+Faroe Islands|34.91
+El Salvador|34.02
+Gambia|32.36
+Paraguay|31.84
+Nepal|29.21
+Bahamas|28.39
+Guadeloupe|27.64
+Burkina Faso|24.26
+Peru|23.12
+Macau|21.41
+Hong Kong|20.62
+Morocco|20.48
+Luxembourg|19.71
+Algeria|18.48
+Uzbekistan|17.7
+Mongolia|17.37
+Ireland|17.27
+South Sudan|16.89
+Kosovo|16.43
+New Zealand|11.97
+Suriname|10.22
+Trinidad & Tobago|9.63
+Lebanon|8.66
+Burundi|6.2
+Cambodia|3.83

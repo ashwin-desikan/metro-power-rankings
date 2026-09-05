@@ -16,6 +16,8 @@ Provenance (captured 2026-06-20):
                 champions); rest approximate competitive order.
   Badminton   - approximate men's national strength (BWF is player-level; no
                 clean nation ranking). Refine when convenient.
+  W volleyball- FIVB Senior Women's World Ranking (5 Sep 2026), all 132 published
+                nations less Russia and Belarus, who are suspended in the Cup.
 Refresh: replace any list with the official current order, re-run this script,
 then scripts/zzc_v1_multipillar.py.
 """
@@ -47,18 +49,56 @@ SPORTS = {
                 "uganda","trinidad-tobago","fiji","wales","scotland","northern-ireland"],
     "Women's Cricket": ["australia","england","india","new-zealand","south-africa",
                         "west-indies","pakistan","sri-lanka","bangladesh","ireland"],
-    "Women's Basketball": ["united-states","australia","china","france","belgium","spain",
-                           "serbia","canada","nigeria","japan"],
-    "Women's Volleyball": ["italy","brazil","united-states","turkey","china","poland",
-                           "japan","serbia","netherlands","dominican-republic"],
+    # 🔴 Women's Basketball is DELIBERATELY ABSENT. It used to be a hand-kept
+    # top ten here, and scripts/basketball/apply_womens_ranking.py now writes
+    # the full FIBA 119 over this file after it runs. A literal here would be
+    # dead data that reads as live.
+    "Women's Volleyball": [
+        "italy", "brazil", "turkey", "poland", "united-states", "japan",
+        "china", "canada", "serbia", "netherlands", "germany", "thailand",
+        "dominican-republic", "czech-republic", "belgium", "france", "slovenia", "sweden",
+        "argentina", "colombia", "cuba", "ukraine", "kenya", "mexico",
+        "greece", "puerto-rico", "south-korea", "bulgaria", "switzerland", "romania",
+        "vietnam", "finland", "hungary", "slovakia", "taiwan", "croatia",
+        "iran", "egypt", "cameroon", "peru", "kazakhstan", "spain",
+        "azerbaijan", "portugal", "bosnia-herzegovina", "scotland", "bermuda", "saint-lucia",
+        "san-marino", "austria", "indonesia", "antigua-barbuda", "latvia", "philippines",
+        "barbados", "montenegro", "rwanda", "nicaragua", "cote-divoire", "jamaica",
+        "cape-verde", "nigeria", "lithuania", "zimbabwe", "honduras", "chile",
+        "ghana", "nepal", "dominica", "guam", "india", "palau",
+        "jordan", "american-samoa", "malta", "namibia", "liechtenstein", "tunisia",
+        "anguilla", "british-virgin-islands", "guadeloupe", "guinea", "marshall-islands", "israel",
+        "algeria", "ireland", "benin", "suriname", "costa-rica", "uganda",
+        "trinidad-tobago", "maldives", "qatar", "singapore", "zambia", "iraq",
+        "new-zealand", "cook-islands", "congo", "andorra", "guinea-bissau", "mali",
+        "el-salvador", "malawi", "venezuela", "togo", "estonia", "bolivia",
+        "bahamas", "sri-lanka", "senegal", "australia", "bangladesh", "kyrgyzstan",
+        "northern-ireland", "cyprus", "lebanon", "albania", "macau", "kosovo",
+        "tajikistan", "grenada", "ecuador", "hong-kong", "faroe-islands", "denmark",
+        "mongolia", "georgia", "luxembourg", "uzbekistan",
+    ],
     "Women's Hockey": ["netherlands","argentina","australia","england","belgium","germany",
                        "spain","china","india","new-zealand"],
     "Women's Rugby": ["england","canada","new-zealand","france","australia","ireland",
                       "italy","united-states","wales","scotland"],
 }
 
-data = {"_meta": {"asof": "2026-06", "note": "men's national rankings; ranking-only ZZC feed"},
-        "sports": {sp: {"ranks": [[slug, i + 1] for i, slug in enumerate(lst)]} for sp, lst in SPORTS.items()}}
+# 🔴 CARRY FORWARD what other scripts own. scripts/basketball/apply_womens_ranking.py
+# writes the full FIBA women's basketball ranking (119 nations) into this file
+# AFTER this script runs. Rebuilding `sports` purely from SPORTS would silently
+# revert it to whatever literal lived here, which is why that literal is gone.
+# Any sport already in the output and absent from SPORTS is preserved.
+prev = {}
+if os.path.exists(OUT):
+    try:
+        prev = json.load(open(OUT, encoding="utf-8")).get("sports", {})
+    except Exception:
+        prev = {}
+
+data = {"_meta": {"asof": "2026-06", "note": "national rankings, ranking-only ZZC feed. Women's volleyball is the FIVB Senior World Ranking as of 2026-09-05 (en.volleyballworld.com), 130 nations, replacing a hand-kept top ten; Russia and Belarus are suspended in the Cup and therefore absent, the same treatment as futsal and women's ice hockey."},
+        "sports": {**{sp: v for sp, v in prev.items() if sp not in SPORTS},
+                   **{sp: {"ranks": [[slug, i + 1] for i, slug in enumerate(lst)]}
+                      for sp, lst in SPORTS.items()}}}
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 json.dump(data, open(OUT, "w"), ensure_ascii=False, separators=(",", ":"))
 print("wrote", OUT, "-", {sp: len(v["ranks"]) for sp, v in data["sports"].items()})
