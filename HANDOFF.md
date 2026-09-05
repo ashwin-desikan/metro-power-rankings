@@ -9823,3 +9823,54 @@ and a missing COUNTS line still alerts.
 **Not done:** no company was curated. The mechanism now exists; filling it in is
 Ashwin's call or the research routine's work. The 14 notable unmapped are led by
 Boehringer Ingelheim $63.9B, Dot Foods $34.2B and Chaozhou Three-Circle $32.3B.
+
+### 8. Worked the notable metro queue: 14 -> 5
+
+Curation only, no code. Protocol followed as written: strict HQ-in-metro
+(~30km), metro must exist in `mktcap_valid_metros` (4,314 entries), uncertain
+means leave it alone.
+
+**Mapped (1).** Anhui Conch Cement [600585.SS] $14.1B -> **Wuhu**. Its geo row
+had no city at all. HQ confirmed as 39 Wenhua Rd, Wuhu, Anhui 241000 (Wikipedia,
+China Daily); Wuhu is a valid metro and the HQ is inside it. `claude-researched`.
+
+**no-metro (8).** Ashwin marked Dot Foods (Mt. Sterling, Illinois) and Arctic
+Slope Regional (Barrow, Alaska) himself; I added six on the same test, each a
+small place with no valid metro anywhere near it:
+
+| company | HQ | nearest valid metro |
+|---|---|---|
+| Zangge Mining [000408.SZ] | Golmud, Qinghai | Xining ~780km |
+| The Yates Companies | Philadelphia, Mississippi (pop ~7k) | Meridian ~60km |
+| Jack Henry [JKHY] | Monett, Missouri (~9k) | Springfield (MO) / Joplin ~60km |
+| Petro Rabigh [2380.SR] | Rabigh | Jeddah ~150km |
+| DigiKey | Thief River Falls, Minnesota (~8.5k) | Grand Forks ~90km |
+| Southern Tire Mart | Columbia, Mississippi (~6k) | Hattiesburg ~60km |
+
+🔴 **Three deliberately NOT marked, because no-metro would encode a gap in the
+metro list rather than a fact about the company.** Chaozhou Three-Circle
+[300408.SZ] $32.3B (Chaozhou, ~2.5M), Chifeng Jilong Gold [600988.SS] $13.0B
+(Chifeng, ~4.3M prefecture) and Tongling Nonferrous [000630.SZ] $12.8B
+(Tongling, ~1.3M) all sit in substantial Chinese cities that are simply absent
+from `mktcap_valid_metros`. The absence is patchy, not principled: Huainan and
+Bengbu are in the list, Tongling and Anqing are not; Shantou is in, Chaozhou and
+Jieyang are not. `no-metro` is the queue's terminal state, so marking these
+would permanently hide the omission. The fix belongs in the metro list.
+
+**Two left for a ruling, both genuinely uncertain:**
+- **Boehringer Ingelheim $63.9B**, the largest unmapped company on the board.
+  Ingelheim am Rhein is ~45km from Frankfurt, beyond the ~30km rule. But the
+  table already maps **Mainz -> Frankfurt** at ~35km, set by `excel-sync`, i.e.
+  from Ashwin's own workbook -- so the house appears to read "Frankfurt" as the
+  Rhein-Main region, which does officially include Ingelheim (Mainz-Bingen). One
+  ruling settles it and probably settles Rhein-Main generally.
+- **Pershing Square Holdings [PSHD.L] $12.2B.** No city recorded. A
+  Guernsey-domiciled closed-end fund, LSE/Euronext listed, whose investment
+  manager sits in New York; the seed recorded country as United States. Needs a
+  policy for fund vehicles vs their managers before anything is written.
+
+Nothing found to reverse Ashwin's two. Dot Foods is clean (Quincy ~64km, and
+Brown County is outside the Quincy MSA either way). Arctic Slope rests on the
+seed's own `city = Barrow`; the only thing that would reverse it is a policy
+choice to follow principal business offices, since ASRC's are in Anchorage and
+Anchorage IS a valid metro.
