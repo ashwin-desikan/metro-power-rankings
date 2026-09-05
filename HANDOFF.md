@@ -9678,3 +9678,42 @@ neither `python3` nor `.venv/bin/python` has pytest. Nothing in `scripts/tests`
 covers `refresh_women.py` anyway -- its gate is the built-in `--self-test` -- but
 the suite as a whole is unrunnable here until `scripts/requirements-dev.txt` is
 installed, and I did not install into the production venv unasked.
+
+### 5. The Supabase RLS thread is closed, and it was not what the note said
+
+Carried since 07-30 as "RLS advisory on 8 tables, SQL drafted, not applied".
+Pulled the live advisor. **There is nothing to enable.** The 8 findings are
+`rls_enabled_no_policy` at INFO, which means RLS is already ON with zero
+policies -- the correct posture for a table only the service key writes, and the
+one the 08-06 entry already confirmed ("anon still gets 0 rows"). There is no
+`rls_disabled_in_public` finding anywhere. Whatever the drafted SQL was, adding
+policies to those 8 would have LOOSENED them. Tables: TestCricket,
+champion_competitions, champions, football_lookup_bak_apiname2,
+football_team_bak_apiname2, page_visits, place_ids, skydb_structures.
+
+**The one real finding, now fixed.** `public.football_league_anchor` was the
+only ERROR: a view created SECURITY DEFINER, so it ran as postgres and bypassed
+RLS on `cl_league_history` and `uefa_country_coeff_history` for every caller.
+Migration `set_security_invoker_on_football_league_anchor` applied. Zero
+behaviour change, and checked rather than assumed: both base tables already
+carry a `public read` SELECT policy with qual `true`, and `set role anon` still
+returns all 66,391 rows through the view afterwards. Nothing in the repo
+references it. Advisor re-run: the ERROR is gone.
+
+**The four SECURITY DEFINER function warnings are ACCEPTED, not outstanding,
+and must not be "fixed".** `track_visit` executable by anon is load-bearing:
+`app/VisitBeacon.tsx` calls the RPC browser-direct with the anon key, and
+revoking that grant is exactly what `lock_down_track_visit_rpc` did on 08-02 --
+page_visits recorded nothing for four days because the beacon's `.catch(){}`
+swallowed every rejection, and `restore_anon_execute_on_track_visit` put it back
+on 08-06. `get_visit_stats` readable by anon was explicitly accepted by Ashwin
+in the 08-06 entry.
+
+🔴 The comment at the top of `app/api/v/route.ts` asserted the opposite --
+that track_visit is EXECUTE-restricted to service_role and that the route is the
+live path. Both false: nothing posts to /api/v at all. That comment is how this
+gets broken a second time, so it is corrected in place rather than left.
+
+Remaining advisor items, all accepted: 8 INFO as above, 4 SECURITY DEFINER
+function WARNs as above, and leaked-password protection disabled -- an Auth
+dashboard toggle, not SQL, on a project with no user sign-in. Left for Ashwin.
