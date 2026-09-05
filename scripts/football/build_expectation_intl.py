@@ -51,6 +51,7 @@ from build_expectation import (  # noqa: E402  the one model, imported not copie
 
 SRC_DIR = os.path.join(ROOT, "data", "football", "esd")
 OUT_DIR = os.path.join(ROOT, "public", "data", "football", "expectation", "intl")
+CROSSWALK = os.path.join(HERE, "esd-club-crosswalk.json")
 
 SOURCE_CREDIT = ("Historical results compiled by James Curley, "
                  "github.com/jalapic/engsoccerdata")
@@ -92,12 +93,28 @@ MISSING_SEASONS = {
     ("france", 1939): "Second World War", ("france", 1940): "Second World War",
     ("france", 1941): "Second World War", ("france", 1942): "Second World War",
     ("france", 1943): "Second World War", ("france", 1944): "Second World War",
-    # 🔴 NOT a war and NOT an abandonment. 1994-95 Division 1 was played in
-    # full and Nantes won it. The 380 matches are simply absent from
-    # engsoccerdata. Every French rating carries a one-season hole here and the
-    # payload says so; fill it from another source before anyone cites a French
-    # career total across 1994.
-    ("france", 1994): "DATA GAP: season was played, source does not carry it",
+    # 1994-95 Division 1 is absent from engsoccerdata although it was played.
+    # It is no longer a hole: SUPPLEMENTS below carries the full 380 matches.
+    # Left here as the record of why that file exists.
+}
+
+# Seasons engsoccerdata does not carry, supplied from another source and
+# TRACKED in git, because unlike the E0 cache they cannot be re-fetched from a
+# URL. The loader refuses on any club label it cannot place, the same rule as
+# E0_TO_CLUB in the English build: a wrong club silently rewrites a rating
+# history.
+SUPPLEMENTS = {
+    ("france", 1994): {
+        "file": "france-1994-95.csv",
+        "source": "football-data.co.uk 1994-95 all-Europe archive (sheet F1), "
+                  "compiled by Joe Buchdahl; supplied by Ashwin 2026-09-05",
+        # Verified before it was written: 380 matches, 20 clubs, 38 games each,
+        # and the table it produces puts Nantes top on 79 and Sochaux bottom on
+        # 23, which is the real 1994-95 Division 1 table. All 20 club names are
+        # attested in france.csv for 1993-94 or 1995-96, so the season stitches
+        # into the existing series without inventing a club.
+        "expect_matches": 380, "expect_clubs": 20,
+    },
 }
 
 # Part-played seasons: real matches, no full fixture list. Kept, and flagged.
@@ -207,6 +224,36 @@ def read_country(country, src_dir=SRC_DIR):
                     "season": season_label(yr), "start_year": yr,
                     "home": home, "away": away,
                     "hg": int(hg), "ag": int(ag)})
+    for (sc, yr), spec in SUPPLEMENTS.items():
+        if sc != country:
+            continue
+        sp = os.path.join(HERE, spec["file"])
+        if not os.path.exists(sp):
+            raise SystemExit("%s: supplement for %d is missing at %s"
+                             % (country, yr, sp))
+        known = {m["home"] for m in out} | {m["away"] for m in out}
+        add, clubs = [], set()
+        with open(sp, "rt", encoding="utf-8", newline="") as fh:
+            for r in csv.DictReader(fh):
+                if int(r["Season"]) != yr or str(r["tier"]).strip() != "1":
+                    continue
+                h, aw = r["home"].strip(), r["visitor"].strip()
+                for lbl in (h, aw):
+                    if lbl not in known:
+                        raise SystemExit(
+                            "%s supplement %d: club %r appears in no other season "
+                            "of the source. Map it or fix it; do not invent a club."
+                            % (country, yr, lbl))
+                y, m, dd = (int(x) for x in r["Date"].split("-"))
+                add.append({"y": y, "m": m, "d": dd, "season": season_label(yr),
+                            "start_year": yr, "home": h, "away": aw,
+                            "hg": int(r["hgoal"]), "ag": int(r["vgoal"])})
+                clubs |= {h, aw}
+        if len(add) != spec["expect_matches"] or len(clubs) != spec["expect_clubs"]:
+            raise SystemExit("%s supplement %d: got %d matches / %d clubs, "
+                             "expected %d / %d" % (country, yr, len(add), len(clubs),
+                                                   spec["expect_matches"], spec["expect_clubs"]))
+        out += add
     out.sort(key=lambda x: (x["y"], x["m"], x["d"], x["home"]))
     return out, dropped
 
@@ -346,10 +393,27 @@ def build_country(country, src_dir=SRC_DIR):
         e["seasons"].append(row_out(c, country))
         e["total_surplus"] += c["surplus"]
         e["club_matches"] += c["gp"]
-    clubs = [{"club": k, "metro": None, "metro_slug": None,
-              "total_surplus": round(v["total_surplus"], 2),
-              "club_matches": v["club_matches"], "seasons": v["seasons"]}
-             for k, v in sorted(per_club.items())]
+    # Metros come from build_esd_crosswalk.py, which resolves against the
+    # site's own club index. A club missing from it is a build failure, not a
+    # null: an unmapped club would silently drop off the metro board.
+    xw = {}
+    if os.path.exists(CROSSWALK):
+        xw = json.load(open(CROSSWALK, encoding="utf-8"))
+    clubs, unmapped = [], []
+    for k, v in sorted(per_club.items()):
+        e = xw.get("%s/%s" % (country, k))
+        if e is None:
+            unmapped.append(k)
+            e = {}
+        clubs.append({"club": k, "slug": e.get("slug"), "metro": e.get("metro"),
+                      "metro_slug": e.get("metro_slug"),
+                      "metro_method": e.get("method"),
+                      "total_surplus": round(v["total_surplus"], 2),
+                      "club_matches": v["club_matches"], "seasons": v["seasons"]})
+    if xw and unmapped:
+        raise SystemExit("%s: %d club(s) absent from the crosswalk: %r. Run "
+                         "build_esd_crosswalk.py; it refuses on anything it "
+                         "cannot place." % (country, len(unmapped), unmapped[:8]))
     ranked = sorted(cs.values(), key=lambda c: c["surplus"], reverse=True)
     seasons = sorted({m["season"] for m in M}, key=lambda s: int(s[:4]))
     payload = {
@@ -371,8 +435,13 @@ def build_country(country, src_dir=SRC_DIR):
             "baseline_log_loss": round(base, 5),
             "skill_vs_era_baseline": round((base - ll) / base, 4),
             "market": None,
-            "metros_resolved": False,
+            "metros_resolved": bool(xw),
+            "metros_missing": sum(1 for c in clubs if not c["metro_slug"]),
             "missing_seasons": missing,
+            "supplemented_seasons": [
+                {"season": season_label(y), "source": sp["source"],
+                 "matches": sp["expect_matches"]}
+                for (c2, y), sp in SUPPLEMENTS.items() if c2 == country],
             "partial_seasons": partial,
             "grouped_seasons": grouped,
             "dropped_rows": dropped,

@@ -1,0 +1,2494 @@
+{
+ "france/AC Ajaccio": {
+  "method": "exact",
+  "metro": "Ajaccio",
+  "metro_slug": "ajaccio",
+  "site_name": "AC Ajaccio",
+  "slug": "ac-ajaccio"
+ },
+ "france/AC Arles-Avignon": {
+  "method": "exact",
+  "metro": "Avignon",
+  "metro_slug": "avignon",
+  "site_name": "AC Arles-Avignon",
+  "slug": "ac-arles-avignon"
+ },
+ "france/AJ Auxerre": {
+  "method": "exact",
+  "metro": "Auxerre",
+  "metro_slug": "auxerre",
+  "site_name": "AJ Auxerre",
+  "slug": "aj-auxerre"
+ },
+ "france/AS Aixoise": {
+  "method": "manual",
+  "metro": "Marseille",
+  "metro_slug": "marseille",
+  "slug": null,
+  "why": "one season, 1967-68, Aix-en-Provence, which this site covers inside Marseille"
+ },
+ "france/AS Angouleme": {
+  "method": "loose",
+  "metro": "Angoulème",
+  "metro_slug": "angouleme",
+  "site_name": "Angoulème",
+  "slug": "angouleme"
+ },
+ "france/AS Beziers": {
+  "method": "loose",
+  "metro": "Béziers",
+  "metro_slug": "beziers",
+  "site_name": "Béziers",
+  "slug": "beziers"
+ },
+ "france/AS Cannes": {
+  "method": "exact",
+  "metro": "Nice",
+  "metro_slug": "nice",
+  "site_name": "AS Cannes",
+  "slug": "as-cannes"
+ },
+ "france/AS Cannes-Grasse": {
+  "method": "contains",
+  "metro": "Nice",
+  "metro_slug": "nice",
+  "site_name": "AS Cannes",
+  "slug": "as-cannes"
+ },
+ "france/AS Monaco": {
+  "method": "manual",
+  "metro": "Monaco",
+  "metro_slug": "monaco",
+  "slug": "as-monaco",
+  "why": "French league club, Monaco metro, filed under country Monaco"
+ },
+ "france/AS Nancy": {
+  "method": "exact",
+  "metro": "Nancy",
+  "metro_slug": "nancy",
+  "site_name": "AS Nancy",
+  "slug": "as-nancy"
+ },
+ "france/AS Saint-Etienne": {
+  "method": "exact",
+  "metro": "Saint Étienne",
+  "metro_slug": "saint-etienne",
+  "site_name": "AS Saint-Étienne",
+  "slug": "as-saint-etienne"
+ },
+ "france/AS Troyes-Savinienne": {
+  "method": "city",
+  "metro": "Troyes",
+  "metro_slug": "troyes",
+  "site_name": null,
+  "slug": null
+ },
+ "france/ATAC Troyes": {
+  "method": "city",
+  "metro": "Troyes",
+  "metro_slug": "troyes",
+  "site_name": null,
+  "slug": null
+ },
+ "france/Amiens SC": {
+  "method": "exact",
+  "metro": "Amiens",
+  "metro_slug": "amiens",
+  "site_name": "Amiens SC",
+  "slug": "amiens-sc"
+ },
+ "france/Angers SCO": {
+  "method": "exact",
+  "metro": "Angers",
+  "metro_slug": "angers",
+  "site_name": "Angers SCO",
+  "slug": "angers-sco"
+ },
+ "france/Association Sportive Avignonaise": {
+  "method": "manual",
+  "metro": "Avignon",
+  "metro_slug": "avignon",
+  "slug": null,
+  "why": "an Avignon club; no index entry"
+ },
+ "france/Brest Armorique FC": {
+  "method": "city",
+  "metro": "Brest",
+  "metro_slug": "brest",
+  "site_name": null,
+  "slug": null
+ },
+ "france/CA Paris (alt)": {
+  "method": "city",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "site_name": null,
+  "slug": null
+ },
+ "france/CS Sedan": {
+  "method": "exact",
+  "metro": "Sedan",
+  "metro_slug": "sedan",
+  "site_name": "CS Sedan",
+  "slug": "cs-sedan"
+ },
+ "france/Chamois Niortais": {
+  "method": "manual",
+  "metro": "Niort",
+  "metro_slug": "niort",
+  "slug": "chamois-niort-fc",
+  "why": "index carries Chamois Niort FC, city Niort"
+ },
+ "france/Clermont Foot 63": {
+  "method": "loose",
+  "metro": "Clermont-Ferrand",
+  "metro_slug": "clermont-ferrand",
+  "site_name": "Clermont Foot",
+  "slug": "clermont-foot"
+ },
+ "france/Dijon FCO": {
+  "method": "exact",
+  "metro": "Dijon",
+  "metro_slug": "dijon",
+  "site_name": "Dijon FCO",
+  "slug": "dijon-fco"
+ },
+ "france/EA Guingamp": {
+  "method": "city",
+  "metro": "Guingamp",
+  "metro_slug": "guingamp",
+  "site_name": null,
+  "slug": null
+ },
+ "france/ESTAC Troyes": {
+  "method": "city",
+  "metro": "Troyes",
+  "metro_slug": "troyes",
+  "site_name": null,
+  "slug": null
+ },
+ "france/Evian Thonon Gaillard": {
+  "method": "loose",
+  "metro": "Thonon-les-Bains",
+  "metro_slug": "thonon-les-bains",
+  "site_name": "Évian Thonon Gaillard FC",
+  "slug": "evian-thonon-gaillard-fc"
+ },
+ "france/Excelsior Roubaix": {
+  "method": "exact",
+  "metro": "Lille",
+  "metro_slug": "lille",
+  "site_name": "Excelsior Roubaix",
+  "slug": "excelsior-roubaix"
+ },
+ "france/FC Antibes": {
+  "method": "exact",
+  "metro": "Nice",
+  "metro_slug": "nice",
+  "site_name": "FC Antibes",
+  "slug": "fc-antibes"
+ },
+ "france/FC Gueugnon": {
+  "method": "exact",
+  "metro": "Charolles",
+  "metro_slug": "charolles",
+  "site_name": "FC Gueugnon",
+  "slug": "fc-gueugnon"
+ },
+ "france/FC Istres": {
+  "method": "exact",
+  "metro": "Marseille",
+  "metro_slug": "marseille",
+  "site_name": "FC Istres",
+  "slug": "fc-istres"
+ },
+ "france/FC Lorient": {
+  "method": "exact",
+  "metro": "Lorient",
+  "metro_slug": "lorient",
+  "site_name": "FC Lorient",
+  "slug": "fc-lorient"
+ },
+ "france/FC Martigues": {
+  "method": "exact",
+  "metro": "Marseille",
+  "metro_slug": "marseille",
+  "site_name": "FC Martigues",
+  "slug": "fc-martigues"
+ },
+ "france/FC Metz": {
+  "method": "exact",
+  "metro": "Metz",
+  "metro_slug": "metz",
+  "site_name": "FC Metz",
+  "slug": "fc-metz"
+ },
+ "france/FC Mulhouse": {
+  "method": "exact",
+  "metro": "Mulhouse",
+  "metro_slug": "mulhouse",
+  "site_name": "FC Mulhouse",
+  "slug": "fc-mulhouse"
+ },
+ "france/FC Nantes": {
+  "method": "exact",
+  "metro": "Nantes",
+  "metro_slug": "nantes",
+  "site_name": "FC Nantes",
+  "slug": "fc-nantes"
+ },
+ "france/FC Rouen": {
+  "method": "exact",
+  "metro": "Rouen",
+  "metro_slug": "rouen",
+  "site_name": "FC Rouen",
+  "slug": "fc-rouen"
+ },
+ "france/FC Sete": {
+  "method": "exact",
+  "metro": "Montpellier",
+  "metro_slug": "montpellier",
+  "site_name": "FC Sète",
+  "slug": "fc-sete"
+ },
+ "france/FC Sochaux": {
+  "method": "contains",
+  "metro": "Montbéliard",
+  "metro_slug": "montbeliard",
+  "site_name": "FC Sochaux-Montbéliard",
+  "slug": "fc-sochaux-montbeliard"
+ },
+ "france/Girondins Bordeaux": {
+  "method": "loose",
+  "metro": "Bordeaux",
+  "metro_slug": "bordeaux",
+  "site_name": "FC Girondins de Bordeaux",
+  "slug": "fc-girondins-de-bordeaux"
+ },
+ "france/Grenoble Foot 38": {
+  "method": "loose",
+  "metro": "Grenoble",
+  "metro_slug": "grenoble",
+  "site_name": "Grenoble Foot",
+  "slug": "grenoble-foot"
+ },
+ "france/LB Chateauroux": {
+  "method": "exact",
+  "metro": "Châteauroux",
+  "metro_slug": "chateauroux",
+  "site_name": "LB Châteauroux",
+  "slug": "lb-chateauroux"
+ },
+ "france/Le Havre AC": {
+  "method": "exact",
+  "metro": "Le Havre",
+  "metro_slug": "le-havre",
+  "site_name": "Le Havre AC",
+  "slug": "le-havre-ac"
+ },
+ "france/Le Mans UC 72": {
+  "method": "city",
+  "metro": "Le Mans",
+  "metro_slug": "le-mans",
+  "site_name": null,
+  "slug": null
+ },
+ "france/Lille OSC": {
+  "method": "exact",
+  "metro": "Lille",
+  "metro_slug": "lille",
+  "site_name": "Lille OSC",
+  "slug": "lille-osc"
+ },
+ "france/Limoges FC": {
+  "method": "loose",
+  "metro": "Limoges",
+  "metro_slug": "limoges",
+  "site_name": "Limoges",
+  "slug": "limoges"
+ },
+ "france/Matra Racing": {
+  "method": "manual",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "slug": null,
+  "why": "one season, 1987-88, the Paris Racing club under its sponsor name"
+ },
+ "france/Montpellier HSC": {
+  "method": "exact",
+  "metro": "Montpellier",
+  "metro_slug": "montpellier",
+  "site_name": "Montpellier HSC",
+  "slug": "montpellier-hsc"
+ },
+ "france/Montpellier La Paillade SC": {
+  "method": "manual",
+  "metro": "Montpellier",
+  "metro_slug": "montpellier",
+  "slug": "montpellier-hsc",
+  "why": "the earlier name of Montpellier HSC"
+ },
+ "france/Nimes Olympique": {
+  "method": "exact",
+  "metro": "Nîmes",
+  "metro_slug": "nimes",
+  "site_name": "Nîmes Olympique",
+  "slug": "nimes-olympique"
+ },
+ "france/OGC Nice": {
+  "method": "exact",
+  "metro": "Nice",
+  "metro_slug": "nice",
+  "site_name": "OGC Nice",
+  "slug": "ogc-nice"
+ },
+ "france/Olympique Ales": {
+  "method": "exact",
+  "metro": "Alès",
+  "metro_slug": "ales",
+  "site_name": "Olympique Alès",
+  "slug": "olympique-ales"
+ },
+ "france/Olympique Lillois Lille": {
+  "method": "contains",
+  "metro": "Lille",
+  "metro_slug": "lille",
+  "site_name": "Olympique Lillois",
+  "slug": "olympique-lillois"
+ },
+ "france/Olympique Lyon": {
+  "method": "loose",
+  "metro": "Lyon",
+  "metro_slug": "lyon",
+  "site_name": "FC Lyon",
+  "slug": "fc-lyon"
+ },
+ "france/Olympique Marseille": {
+  "method": "exact",
+  "metro": "Marseille",
+  "metro_slug": "marseille",
+  "site_name": "Olympique Marseille",
+  "slug": "olympique-marseille"
+ },
+ "france/Paris FC": {
+  "method": "exact",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "site_name": "Paris FC",
+  "slug": "paris-fc"
+ },
+ "france/Paris Saint-Germain": {
+  "method": "exact",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "site_name": "Paris Saint-Germain",
+  "slug": "paris-saint-germain"
+ },
+ "france/RC Lens": {
+  "method": "exact",
+  "metro": "Lens",
+  "metro_slug": "lens",
+  "site_name": "RC Lens",
+  "slug": "rc-lens"
+ },
+ "france/RC Roubaix": {
+  "method": "exact",
+  "metro": "Lille",
+  "metro_slug": "lille",
+  "site_name": "RC Roubaix",
+  "slug": "rc-roubaix"
+ },
+ "france/RC Strasbourg": {
+  "method": "exact",
+  "metro": "Strasbourg",
+  "metro_slug": "strasbourg",
+  "site_name": "RC Strasbourg",
+  "slug": "rc-strasbourg"
+ },
+ "france/Racing Club de France": {
+  "method": "manual",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "slug": "rc-france",
+  "why": "index carries RC France but with no metro; the club is Paris"
+ },
+ "france/Red Star FC": {
+  "method": "loose",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "site_name": "Red Star",
+  "slug": "red-star"
+ },
+ "france/Red Star Olympique": {
+  "method": "loose",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "site_name": "Red Star",
+  "slug": "red-star"
+ },
+ "france/Red Star Olympique Audonien": {
+  "method": "contains",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "site_name": "Red Star",
+  "slug": "red-star"
+ },
+ "france/SC Bastia": {
+  "method": "exact",
+  "metro": "Bastia",
+  "metro_slug": "bastia",
+  "site_name": "SC Bastia",
+  "slug": "sc-bastia"
+ },
+ "france/SC Fives Lille": {
+  "method": "contains",
+  "metro": "Lille",
+  "metro_slug": "lille",
+  "site_name": "SC Fives",
+  "slug": "sc-fives"
+ },
+ "france/SC Nimes": {
+  "method": "loose",
+  "metro": "Nîmes",
+  "metro_slug": "nimes",
+  "site_name": "Nîmes Olympique",
+  "slug": "nimes-olympique"
+ },
+ "france/SM Caen": {
+  "method": "exact",
+  "metro": "Caen",
+  "metro_slug": "caen",
+  "site_name": "SM Caen",
+  "slug": "sm-caen"
+ },
+ "france/SR Colmar": {
+  "method": "exact",
+  "metro": "Colmar",
+  "metro_slug": "colmar",
+  "site_name": "SR Colmar",
+  "slug": "sr-colmar"
+ },
+ "france/Sporting Toulon Var": {
+  "method": "contains",
+  "metro": "Toulon",
+  "metro_slug": "toulon",
+  "site_name": "SC Toulon",
+  "slug": "sc-toulon"
+ },
+ "france/Stade Brest": {
+  "method": "city",
+  "metro": "Brest",
+  "metro_slug": "brest",
+  "site_name": null,
+  "slug": null
+ },
+ "france/Stade Francais": {
+  "method": "exact",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "site_name": "Stade Français",
+  "slug": "stade-francais"
+ },
+ "france/Stade Francais FC": {
+  "method": "manual",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "slug": "stade-francais",
+  "why": "index carries Stade Francais, city Paris"
+ },
+ "france/Stade Laval": {
+  "method": "city",
+  "metro": "Laval",
+  "metro_slug": "laval",
+  "site_name": null,
+  "slug": null
+ },
+ "france/Stade Olympique Montpellierain": {
+  "method": "manual",
+  "metro": "Montpellier",
+  "metro_slug": "montpellier",
+  "slug": null,
+  "why": "a Montpellier club; identity against Montpellier HSC not asserted"
+ },
+ "france/Stade Red Star": {
+  "method": "loose",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "site_name": "Red Star",
+  "slug": "red-star"
+ },
+ "france/Stade Reims": {
+  "method": "exact",
+  "metro": "Reims",
+  "metro_slug": "reims",
+  "site_name": "Stade Reims",
+  "slug": "stade-reims"
+ },
+ "france/Stade Rennes": {
+  "method": "city",
+  "metro": "Rennes",
+  "metro_slug": "rennes",
+  "site_name": null,
+  "slug": null
+ },
+ "france/Stade de Paris FC": {
+  "method": "manual",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "slug": null,
+  "why": "a Paris club; the index carries several and none is a clear match"
+ },
+ "france/Toulouse FC": {
+  "method": "exact",
+  "metro": "Toulouse",
+  "metro_slug": "toulouse",
+  "site_name": "Toulouse FC",
+  "slug": "toulouse-fc"
+ },
+ "france/Tours FC": {
+  "method": "exact",
+  "metro": "Tours",
+  "metro_slug": "tours",
+  "site_name": "Tours FC",
+  "slug": "tours-fc"
+ },
+ "france/Troyes AF": {
+  "method": "city",
+  "metro": "Troyes",
+  "metro_slug": "troyes",
+  "site_name": null,
+  "slug": null
+ },
+ "france/UA Sedan-Torcy": {
+  "method": "city",
+  "metro": "Sedan",
+  "metro_slug": "sedan",
+  "site_name": null,
+  "slug": null
+ },
+ "france/US Boulogne": {
+  "method": "exact",
+  "metro": "Boulogne-sur-Mer",
+  "metro_slug": "boulogne-sur-mer",
+  "site_name": "US Boulogne",
+  "slug": "us-boulogne"
+ },
+ "france/US Valenciennes-Anzin": {
+  "method": "contains",
+  "metro": "Valenciennes",
+  "metro_slug": "valenciennes",
+  "site_name": "Valenciennes FC",
+  "slug": "valenciennes-fc"
+ },
+ "france/Valenciennes FC": {
+  "method": "exact",
+  "metro": "Valenciennes",
+  "metro_slug": "valenciennes",
+  "site_name": "Valenciennes FC",
+  "slug": "valenciennes-fc"
+ },
+ "germany/1. FC Heidenheim": {
+  "method": "contains",
+  "metro": "Stuttgart",
+  "metro_slug": "stuttgart",
+  "site_name": "FC Heidenheim",
+  "slug": "fc-heidenheim"
+ },
+ "germany/1. FC Kaiserslautern": {
+  "method": "exact",
+  "metro": "Kaiserslautern",
+  "metro_slug": "kaiserslautern",
+  "site_name": "1. FC Kaiserslautern",
+  "slug": "1-fc-kaiserslautern"
+ },
+ "germany/1. FC Koln": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "1. FC Köln",
+  "slug": "1-fc-koln"
+ },
+ "germany/1. FC Nurnberg": {
+  "method": "exact",
+  "metro": "Nuremberg",
+  "metro_slug": "nuremberg",
+  "site_name": "1. FC Nürnberg",
+  "slug": "1-fc-nurnberg"
+ },
+ "germany/1. FC Saarbrucken": {
+  "method": "contains",
+  "metro": "Saarbrücken",
+  "metro_slug": "saarbrucken",
+  "site_name": "FC Saarbrücken",
+  "slug": "fc-saarbrucken"
+ },
+ "germany/1. FC Union Berlin": {
+  "method": "city",
+  "metro": "Berlin",
+  "metro_slug": "berlin",
+  "site_name": null,
+  "slug": null
+ },
+ "germany/1. FSV Mainz 05": {
+  "method": "contains",
+  "metro": "Frankfurt",
+  "metro_slug": "frankfurt",
+  "site_name": "Mainz 05",
+  "slug": "mainz-05"
+ },
+ "germany/1899 Hoffenheim": {
+  "method": "loose",
+  "metro": "Rhine-Neckar",
+  "metro_slug": "rhine-neckar",
+  "site_name": "TSG Hoffenheim",
+  "slug": "tsg-hoffenheim"
+ },
+ "germany/Alemannia Aachen": {
+  "method": "loose",
+  "metro": "Aachen",
+  "metro_slug": "aachen",
+  "site_name": "TSV Alemannia Aachen",
+  "slug": "tsv-alemannia-aachen"
+ },
+ "germany/Arminia Bielefeld": {
+  "method": "loose",
+  "metro": "Bielefeld",
+  "metro_slug": "bielefeld",
+  "site_name": "DSC Arminia Bielefeld",
+  "slug": "dsc-arminia-bielefeld"
+ },
+ "germany/Bayer 05 Uerdingen": {
+  "method": "contains",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "KFC Uerdingen",
+  "slug": "kfc-uerdingen"
+ },
+ "germany/Bayer Leverkusen": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "Bayer Leverkusen",
+  "slug": "bayer-leverkusen"
+ },
+ "germany/Bayern Munchen": {
+  "method": "contains",
+  "metro": "Munich",
+  "metro_slug": "munich",
+  "site_name": "TSV 1860 München",
+  "slug": "tsv-1860-munchen"
+ },
+ "germany/Blau-Weiss 90 Berlin": {
+  "method": "loose",
+  "metro": "Berlin",
+  "metro_slug": "berlin",
+  "site_name": "Blau-Weiss Berlin",
+  "slug": "blau-weiss-berlin"
+ },
+ "germany/Bor. Monchengladbach": {
+  "method": "manual",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "slug": "borussia-monchengladbach",
+  "why": "Bor. is the standard abbreviation of Borussia"
+ },
+ "germany/Borussia Dortmund": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "Borussia Dortmund",
+  "slug": "borussia-dortmund"
+ },
+ "germany/Borussia Neunkirchen": {
+  "method": "exact",
+  "metro": "Neunkirchen",
+  "metro_slug": "neunkirchen",
+  "site_name": "Borussia Neunkirchen",
+  "slug": "borussia-neunkirchen"
+ },
+ "germany/Dynamo Dresden": {
+  "method": "exact",
+  "metro": "Dresden",
+  "metro_slug": "dresden",
+  "site_name": "Dynamo Dresden",
+  "slug": "dynamo-dresden"
+ },
+ "germany/Eintracht Braunschweig": {
+  "method": "exact",
+  "metro": "Hannover-Brunswick",
+  "metro_slug": "hannover-brunswick",
+  "site_name": "Eintracht Braunschweig",
+  "slug": "eintracht-braunschweig"
+ },
+ "germany/Eintracht Frankfurt": {
+  "method": "exact",
+  "metro": "Frankfurt",
+  "metro_slug": "frankfurt",
+  "site_name": "Eintracht Frankfurt",
+  "slug": "eintracht-frankfurt"
+ },
+ "germany/Energie Cottbus": {
+  "method": "exact",
+  "metro": "Cottbus",
+  "metro_slug": "cottbus",
+  "site_name": "Energie Cottbus",
+  "slug": "energie-cottbus"
+ },
+ "germany/FC 08 Homburg": {
+  "method": "loose",
+  "metro": "Homburg",
+  "metro_slug": "homburg",
+  "site_name": "FC Homburg",
+  "slug": "fc-homburg"
+ },
+ "germany/FC Augsburg": {
+  "method": "exact",
+  "metro": "Munich",
+  "metro_slug": "munich",
+  "site_name": "FC Augsburg",
+  "slug": "fc-augsburg"
+ },
+ "germany/FC Ingolstadt 04": {
+  "method": "exact",
+  "metro": "Munich",
+  "metro_slug": "munich",
+  "site_name": "FC Ingolstadt 04",
+  "slug": "fc-ingolstadt-04"
+ },
+ "germany/FC Schalke 04": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "FC Schalke 04",
+  "slug": "fc-schalke-04"
+ },
+ "germany/FC St. Pauli": {
+  "method": "exact",
+  "metro": "Hamburg",
+  "metro_slug": "hamburg",
+  "site_name": "FC St. Pauli",
+  "slug": "fc-st-pauli"
+ },
+ "germany/Fortuna Dusseldorf": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "Fortuna Düsseldorf",
+  "slug": "fortuna-dusseldorf"
+ },
+ "germany/Fortuna Koln": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "Fortuna Köln",
+  "slug": "fortuna-koln"
+ },
+ "germany/Frankfurter SG Eintracht": {
+  "method": "manual",
+  "metro": "Frankfurt",
+  "metro_slug": "frankfurt",
+  "slug": "eintracht-frankfurt",
+  "why": "the club formal name; the index carries Eintracht Frankfurt"
+ },
+ "germany/Hamburger SV": {
+  "method": "exact",
+  "metro": "Hamburg",
+  "metro_slug": "hamburg",
+  "site_name": "Hamburger SV",
+  "slug": "hamburger-sv"
+ },
+ "germany/Hannover 96": {
+  "method": "exact",
+  "metro": "Hannover-Brunswick",
+  "metro_slug": "hannover-brunswick",
+  "site_name": "Hannover 96",
+  "slug": "hannover-96"
+ },
+ "germany/Hansa Rostock": {
+  "method": "loose",
+  "metro": "Rostock",
+  "metro_slug": "rostock",
+  "site_name": "FC Hansa Rostock",
+  "slug": "fc-hansa-rostock"
+ },
+ "germany/Hertha BSC": {
+  "method": "contains",
+  "metro": "Berlin",
+  "metro_slug": "berlin",
+  "site_name": "Hertha BSC Berlin",
+  "slug": "hertha-bsc-berlin"
+ },
+ "germany/Holstein Kiel": {
+  "method": "loose",
+  "metro": "Kiel",
+  "metro_slug": "kiel",
+  "site_name": "FC Holstein Kiel",
+  "slug": "fc-holstein-kiel"
+ },
+ "germany/Karlsruher SC": {
+  "method": "exact",
+  "metro": "Karlsruhe",
+  "metro_slug": "karlsruhe",
+  "site_name": "Karlsruher SC",
+  "slug": "karlsruher-sc"
+ },
+ "germany/Kickers Offenbach": {
+  "method": "exact",
+  "metro": "Frankfurt",
+  "metro_slug": "frankfurt",
+  "site_name": "Kickers Offenbach",
+  "slug": "kickers-offenbach"
+ },
+ "germany/MSV Duisburg": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "MSV Duisburg",
+  "slug": "msv-duisburg"
+ },
+ "germany/Meidericher SV": {
+  "method": "manual",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "slug": "msv-duisburg",
+  "why": "Meiderich is a Duisburg district; the club became MSV Duisburg in 1967"
+ },
+ "germany/Preussen Munster": {
+  "method": "loose",
+  "metro": "Munster",
+  "metro_slug": "munster",
+  "site_name": "SC Preussen Munster",
+  "slug": "sc-preussen-munster"
+ },
+ "germany/RasenBallsport Leipzig": {
+  "method": "city",
+  "metro": "Saxon Triangle",
+  "metro_slug": "saxon-triangle",
+  "site_name": null,
+  "slug": null
+ },
+ "germany/Rot-Weiss Essen": {
+  "method": "manual",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "slug": "rot-weiss-essen",
+  "why": "index spells it Rot-Weiss Essen with an eszett"
+ },
+ "germany/Rot-Weiss Oberhausen": {
+  "method": "manual",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "slug": "rot-weiss-oberhausen",
+  "why": "index spells it Rot-Weiss Oberhausen with an eszett"
+ },
+ "germany/SC Freiburg": {
+  "method": "exact",
+  "metro": "Freiburg",
+  "metro_slug": "freiburg",
+  "site_name": "SC Freiburg",
+  "slug": "sc-freiburg"
+ },
+ "germany/SC Paderborn 07": {
+  "method": "exact",
+  "metro": "Paderborn",
+  "metro_slug": "paderborn",
+  "site_name": "SC Paderborn 07",
+  "slug": "sc-paderborn-07"
+ },
+ "germany/SG Wattenscheid 09": {
+  "method": "loose",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "SG Wattenscheid",
+  "slug": "sg-wattenscheid"
+ },
+ "germany/SSV Ulm 1846": {
+  "method": "loose",
+  "metro": "Ulm",
+  "metro_slug": "ulm",
+  "site_name": "SSV Ulm",
+  "slug": "ssv-ulm"
+ },
+ "germany/SV Bayer 04 Leverkusen": {
+  "method": "loose",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "Bayer Leverkusen",
+  "slug": "bayer-leverkusen"
+ },
+ "germany/SV Darmstadt 98": {
+  "method": "loose",
+  "metro": "Frankfurt",
+  "metro_slug": "frankfurt",
+  "site_name": "SV Darmstadt",
+  "slug": "sv-darmstadt"
+ },
+ "germany/SpVgg Greuther Furth": {
+  "method": "exact",
+  "metro": "Nuremberg",
+  "metro_slug": "nuremberg",
+  "site_name": "SpVgg Greuther Fürth",
+  "slug": "spvgg-greuther-furth"
+ },
+ "germany/SpVgg Unterhaching": {
+  "method": "exact",
+  "metro": "Munich",
+  "metro_slug": "munich",
+  "site_name": "SpVgg Unterhaching",
+  "slug": "spvgg-unterhaching"
+ },
+ "germany/Stuttgarter Kickers": {
+  "method": "exact",
+  "metro": "Stuttgart",
+  "metro_slug": "stuttgart",
+  "site_name": "Stuttgarter Kickers",
+  "slug": "stuttgarter-kickers"
+ },
+ "germany/TSV 1860 Munchen": {
+  "method": "exact",
+  "metro": "Munich",
+  "metro_slug": "munich",
+  "site_name": "TSV 1860 München",
+  "slug": "tsv-1860-munchen"
+ },
+ "germany/Tasmania 1900 Berlin": {
+  "method": "exact",
+  "metro": "Berlin",
+  "metro_slug": "berlin",
+  "site_name": "Tasmania 1900 Berlin",
+  "slug": "tasmania-1900-berlin"
+ },
+ "germany/TeBe Berlin": {
+  "method": "city",
+  "metro": "Berlin",
+  "metro_slug": "berlin",
+  "site_name": null,
+  "slug": null
+ },
+ "germany/VfB Leipzig": {
+  "method": "exact",
+  "metro": "Saxon Triangle",
+  "metro_slug": "saxon-triangle",
+  "site_name": "VfB Leipzig",
+  "slug": "vfb-leipzig"
+ },
+ "germany/VfB Stuttgart": {
+  "method": "exact",
+  "metro": "Stuttgart",
+  "metro_slug": "stuttgart",
+  "site_name": "VfB Stuttgart",
+  "slug": "vfb-stuttgart"
+ },
+ "germany/VfL Bochum": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "VfL Bochum",
+  "slug": "vfl-bochum"
+ },
+ "germany/VfL Wolfsburg": {
+  "method": "exact",
+  "metro": "Hannover-Brunswick",
+  "metro_slug": "hannover-brunswick",
+  "site_name": "VfL Wolfsburg",
+  "slug": "vfl-wolfsburg"
+ },
+ "germany/Waldhof Mannheim": {
+  "method": "loose",
+  "metro": "Rhine-Neckar",
+  "metro_slug": "rhine-neckar",
+  "site_name": "SV Waldhof Mannheim",
+  "slug": "sv-waldhof-mannheim"
+ },
+ "germany/Werder Bremen": {
+  "method": "exact",
+  "metro": "Bremen",
+  "metro_slug": "bremen",
+  "site_name": "Werder Bremen",
+  "slug": "werder-bremen"
+ },
+ "germany/Wuppertaler SV": {
+  "method": "exact",
+  "metro": "Rhine-Ruhr",
+  "metro_slug": "rhine-ruhr",
+  "site_name": "Wuppertaler SV",
+  "slug": "wuppertaler-sv"
+ },
+ "holland/ADO Den Haag": {
+  "method": "exact",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": "ADO Den Haag",
+  "slug": "ado-den-haag"
+ },
+ "holland/AFC Ajax": {
+  "method": "loose",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "Ajax",
+  "slug": "ajax"
+ },
+ "holland/AZ '67 Alkmaar": {
+  "method": "loose",
+  "metro": "Alkmaar",
+  "metro_slug": "alkmaar",
+  "site_name": "AZ Alkmaar",
+  "slug": "az-alkmaar"
+ },
+ "holland/AZ Alkmaar": {
+  "method": "exact",
+  "metro": "Alkmaar",
+  "metro_slug": "alkmaar",
+  "site_name": "AZ Alkmaar",
+  "slug": "az-alkmaar"
+ },
+ "holland/Almere City": {
+  "method": "loose",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "Almere City FC",
+  "slug": "almere-city-fc"
+ },
+ "holland/BV Veendam": {
+  "method": "loose",
+  "metro": "Veendam",
+  "metro_slug": "veendam",
+  "site_name": "SC Veendam",
+  "slug": "sc-veendam"
+ },
+ "holland/BVV": {
+  "method": "manual",
+  "metro": "Den Bosch",
+  "metro_slug": "den-bosch",
+  "slug": "bvv-den-bosch",
+  "why": "two seasons 1956-58; the index carries BVV Den Bosch"
+ },
+ "holland/BVV Den Bosch": {
+  "method": "exact",
+  "metro": "Den Bosch",
+  "metro_slug": "den-bosch",
+  "site_name": "BVV Den Bosch",
+  "slug": "bvv-den-bosch"
+ },
+ "holland/Blauw Wit": {
+  "method": "contains",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "Blauw-Wit Amsterdam",
+  "slug": "blauw-wit-amsterdam"
+ },
+ "holland/DOS Utrecht": {
+  "method": "contains",
+  "metro": "Utrecht",
+  "metro_slug": "utrecht",
+  "site_name": "FC Utrecht",
+  "slug": "fc-utrecht"
+ },
+ "holland/DWS Amsterdam": {
+  "method": "city",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": null,
+  "slug": null
+ },
+ "holland/De Graafschap": {
+  "method": "exact",
+  "metro": "Doetinchem",
+  "metro_slug": "doetinchem",
+  "site_name": "De Graafschap",
+  "slug": "de-graafschap"
+ },
+ "holland/De Volewijckers": {
+  "method": "loose",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "Volewijckers",
+  "slug": "volewijckers"
+ },
+ "holland/Dordrecht '90": {
+  "method": "loose",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": "FC Dordrecht",
+  "slug": "fc-dordrecht"
+ },
+ "holland/Drechtsteden '79": {
+  "method": "unresolved",
+  "metro": null,
+  "metro_slug": null,
+  "slug": null,
+  "why": "the Drechtsteden around Dordrecht; the site publishes no Dordrecht metro"
+ },
+ "holland/FC Amsterdam": {
+  "method": "exact",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "FC Amsterdam",
+  "slug": "fc-amsterdam"
+ },
+ "holland/FC Den Bosch": {
+  "method": "exact",
+  "metro": "Den Bosch",
+  "metro_slug": "den-bosch",
+  "site_name": "FC Den Bosch",
+  "slug": "fc-den-bosch"
+ },
+ "holland/FC Den Bosch '67": {
+  "method": "manual",
+  "metro": "Den Bosch",
+  "metro_slug": "den-bosch",
+  "slug": "fc-den-bosch",
+  "why": "index carries FC Den Bosch, city Den Bosch"
+ },
+ "holland/FC Den Haag": {
+  "method": "city",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": null,
+  "slug": null
+ },
+ "holland/FC Den Haag-ADO": {
+  "method": "city",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": null,
+  "slug": null
+ },
+ "holland/FC Dordrecht": {
+  "method": "exact",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": "FC Dordrecht",
+  "slug": "fc-dordrecht"
+ },
+ "holland/FC Emmen": {
+  "method": "exact",
+  "metro": "Emmen",
+  "metro_slug": "emmen",
+  "site_name": "FC Emmen",
+  "slug": "fc-emmen"
+ },
+ "holland/FC Groningen": {
+  "method": "exact",
+  "metro": "Groningen",
+  "metro_slug": "groningen",
+  "site_name": "FC Groningen",
+  "slug": "fc-groningen"
+ },
+ "holland/FC Twente": {
+  "method": "exact",
+  "metro": "Enschede",
+  "metro_slug": "enschede",
+  "site_name": "FC Twente",
+  "slug": "fc-twente"
+ },
+ "holland/FC Utrecht": {
+  "method": "exact",
+  "metro": "Utrecht",
+  "metro_slug": "utrecht",
+  "site_name": "FC Utrecht",
+  "slug": "fc-utrecht"
+ },
+ "holland/FC Volendam": {
+  "method": "exact",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "FC Volendam",
+  "slug": "fc-volendam"
+ },
+ "holland/FC Wageningen": {
+  "method": "city",
+  "metro": "Wageningen",
+  "metro_slug": "wageningen",
+  "site_name": null,
+  "slug": null
+ },
+ "holland/FC Xerxes": {
+  "method": "manual",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "slug": null,
+  "why": "a Rotterdam club; the index carries only the later merged XerxesDZB"
+ },
+ "holland/FC Zwolle": {
+  "method": "contains",
+  "metro": "Zwolle",
+  "metro_slug": "zwolle",
+  "site_name": "PEC Zwolle",
+  "slug": "pec-zwolle"
+ },
+ "holland/FSC Geleen": {
+  "method": "city",
+  "metro": "Sittard-Geleen",
+  "metro_slug": "sittard-geleen",
+  "site_name": null,
+  "slug": null
+ },
+ "holland/Feijenoord": {
+  "method": "manual",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "slug": "feyenoord",
+  "why": "the pre-1974 spelling of Feyenoord"
+ },
+ "holland/Feyenoord": {
+  "method": "exact",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": "Feyenoord",
+  "slug": "feyenoord"
+ },
+ "holland/Fortuna Sittard": {
+  "method": "exact",
+  "metro": "Sittard-Geleen",
+  "metro_slug": "sittard-geleen",
+  "site_name": "Fortuna Sittard",
+  "slug": "fortuna-sittard"
+ },
+ "holland/GVAV Groningen": {
+  "method": "contains",
+  "metro": "Groningen",
+  "metro_slug": "groningen",
+  "site_name": "FC Groningen",
+  "slug": "fc-groningen"
+ },
+ "holland/Go Ahead Eagles": {
+  "method": "exact",
+  "metro": "Deventer",
+  "metro_slug": "deventer",
+  "site_name": "Go Ahead Eagles",
+  "slug": "go-ahead-eagles"
+ },
+ "holland/Groninger VAV": {
+  "method": "manual",
+  "metro": "Groningen",
+  "metro_slug": "groningen",
+  "slug": null,
+  "why": "GVAV, the Groningen club that became FC Groningen in 1971; lineage not asserted"
+ },
+ "holland/HFC Haarlem": {
+  "method": "exact",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "HFC Haarlem",
+  "slug": "hfc-haarlem"
+ },
+ "holland/Helmond Sport": {
+  "method": "exact",
+  "metro": "Eindhoven",
+  "metro_slug": "eindhoven",
+  "site_name": "Helmond Sport",
+  "slug": "helmond-sport"
+ },
+ "holland/Heracles": {
+  "method": "contains",
+  "metro": "Almelo",
+  "metro_slug": "almelo",
+  "site_name": "Heracles Almelo",
+  "slug": "heracles-almelo"
+ },
+ "holland/Heracles Almelo": {
+  "method": "exact",
+  "metro": "Almelo",
+  "metro_slug": "almelo",
+  "site_name": "Heracles Almelo",
+  "slug": "heracles-almelo"
+ },
+ "holland/Holland Sport": {
+  "method": "exact",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": "Holland Sport",
+  "slug": "holland-sport"
+ },
+ "holland/MVV": {
+  "method": "exact",
+  "metro": "Maastricht",
+  "metro_slug": "maastricht",
+  "site_name": "MVV",
+  "slug": "mvv"
+ },
+ "holland/NAC Breda": {
+  "method": "exact",
+  "metro": "Breda",
+  "metro_slug": "breda",
+  "site_name": "NAC Breda",
+  "slug": "nac-breda"
+ },
+ "holland/NEC Nijmegen": {
+  "method": "exact",
+  "metro": "Arnhem-Nijmegen",
+  "metro_slug": "arnhem-nijmegen",
+  "site_name": "NEC Nijmegen",
+  "slug": "nec-nijmegen"
+ },
+ "holland/NOAD Tilburg": {
+  "method": "contains",
+  "metro": "Breda",
+  "metro_slug": "breda",
+  "site_name": "NOAD",
+  "slug": "noad"
+ },
+ "holland/PEC Zwolle": {
+  "method": "exact",
+  "metro": "Zwolle",
+  "metro_slug": "zwolle",
+  "site_name": "PEC Zwolle",
+  "slug": "pec-zwolle"
+ },
+ "holland/PEC Zwolle '82": {
+  "method": "loose",
+  "metro": "Zwolle",
+  "metro_slug": "zwolle",
+  "site_name": "PEC Zwolle",
+  "slug": "pec-zwolle"
+ },
+ "holland/PSV Eindhoven": {
+  "method": "exact",
+  "metro": "Eindhoven",
+  "metro_slug": "eindhoven",
+  "site_name": "PSV Eindhoven",
+  "slug": "psv-eindhoven"
+ },
+ "holland/RBC Roosendaal": {
+  "method": "exact",
+  "metro": "Roosendaal",
+  "metro_slug": "roosendaal",
+  "site_name": "RBC Roosendaal",
+  "slug": "rbc-roosendaal"
+ },
+ "holland/RKC Waalwijk": {
+  "method": "exact",
+  "metro": "Waalwijk",
+  "metro_slug": "waalwijk",
+  "site_name": "RKC Waalwijk",
+  "slug": "rkc-waalwijk"
+ },
+ "holland/Rapid JC Heerlen": {
+  "method": "unresolved",
+  "metro": null,
+  "metro_slug": null,
+  "slug": null,
+  "why": "Heerlen; the site publishes no Heerlen metro and Kerkrade is a different town"
+ },
+ "holland/Roda JC Kerkrade": {
+  "method": "contains",
+  "metro": "Kerkrade",
+  "metro_slug": "kerkrade",
+  "site_name": "Roda JC",
+  "slug": "roda-jc"
+ },
+ "holland/S.V.V./Dordrecht '90": {
+  "method": "contains",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": "FC Dordrecht",
+  "slug": "fc-dordrecht"
+ },
+ "holland/SBV Excelsior": {
+  "method": "manual",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "slug": "excelsior-rotterdam",
+  "why": "SBV Excelsior is the Rotterdam Excelsior, not the Haarlem one"
+ },
+ "holland/SBV Haarlem": {
+  "method": "manual",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "slug": "hfc-haarlem",
+  "why": "the Haarlem club the index carries as HFC Haarlem"
+ },
+ "holland/SC Cambuur": {
+  "method": "contains",
+  "metro": "Leeuwarden",
+  "metro_slug": "leeuwarden",
+  "site_name": "Cambuur Leeuwarden",
+  "slug": "cambuur-leeuwarden"
+ },
+ "holland/SC Eindhoven": {
+  "method": "loose",
+  "metro": "Eindhoven",
+  "metro_slug": "eindhoven",
+  "site_name": "FC Eindhoven",
+  "slug": "fc-eindhoven"
+ },
+ "holland/SHS": {
+  "method": "unresolved",
+  "metro": null,
+  "metro_slug": null,
+  "slug": null,
+  "why": "one season, 1958-59; the club town is not established well enough to assert"
+ },
+ "holland/SVV Schiedam": {
+  "method": "contains",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": "SVV",
+  "slug": "svv"
+ },
+ "holland/Sittardia": {
+  "method": "exact",
+  "metro": "Sittard-Geleen",
+  "metro_slug": "sittard-geleen",
+  "site_name": "Sittardia",
+  "slug": "sittardia"
+ },
+ "holland/Sparta Rotterdam": {
+  "method": "exact",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "site_name": "Sparta Rotterdam",
+  "slug": "sparta-rotterdam"
+ },
+ "holland/Sportclub Enschede": {
+  "method": "contains",
+  "metro": "Enschede",
+  "metro_slug": "enschede",
+  "site_name": "SC Enschede",
+  "slug": "sc-enschede"
+ },
+ "holland/Telstar": {
+  "method": "loose",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "site_name": "SC Telstar",
+  "slug": "sc-telstar"
+ },
+ "holland/USV Elinkwijk": {
+  "method": "contains",
+  "metro": "Utrecht",
+  "metro_slug": "utrecht",
+  "site_name": "Elinkwijk",
+  "slug": "elinkwijk"
+ },
+ "holland/VV Alkmaar '54": {
+  "method": "loose",
+  "metro": "Alkmaar",
+  "metro_slug": "alkmaar",
+  "site_name": "Alkmaar '54",
+  "slug": "alkmaar-54"
+ },
+ "holland/VVV-Venlo": {
+  "method": "exact",
+  "metro": "Venlo",
+  "metro_slug": "venlo",
+  "site_name": "VVV Venlo",
+  "slug": "vvv-venlo"
+ },
+ "holland/Vitesse": {
+  "method": "contains",
+  "metro": "Arnhem-Nijmegen",
+  "metro_slug": "arnhem-nijmegen",
+  "site_name": "Vitesse Arnhem",
+  "slug": "vitesse-arnhem"
+ },
+ "holland/WVV Wageningen": {
+  "method": "exact",
+  "metro": "Wageningen",
+  "metro_slug": "wageningen",
+  "site_name": "WVV Wageningen",
+  "slug": "wvv-wageningen"
+ },
+ "holland/Willem II": {
+  "method": "contains",
+  "metro": "Tilburg",
+  "metro_slug": "tilburg",
+  "site_name": "Willem II Tilburg",
+  "slug": "willem-ii-tilburg"
+ },
+ "holland/Xerxes/D.H.C.": {
+  "method": "manual",
+  "metro": "Rotterdam-The Hague",
+  "metro_slug": "rotterdam-the-hague",
+  "slug": null,
+  "why": "the Xerxes and DHC combination, Rotterdam and Delft, inside one metro"
+ },
+ "holland/sc Heerenveen": {
+  "method": "exact",
+  "metro": "Heerenveen",
+  "metro_slug": "heerenveen",
+  "site_name": "SC Heerenveen",
+  "slug": "sc-heerenveen"
+ },
+ "italy/A.C.R. Messina": {
+  "method": "contains",
+  "metro": "Messina",
+  "metro_slug": "messina",
+  "site_name": "Messina",
+  "slug": "messina"
+ },
+ "italy/AC Cesena": {
+  "method": "exact",
+  "metro": "Cesena",
+  "metro_slug": "cesena",
+  "site_name": "AC Cesena",
+  "slug": "ac-cesena"
+ },
+ "italy/AC Liguria": {
+  "method": "manual",
+  "metro": "Genoa",
+  "metro_slug": "genoa",
+  "slug": null,
+  "why": "five seasons 1937-38 to 1942-43, a Genoa club of that era; no index entry"
+ },
+ "italy/AC Mantova": {
+  "method": "loose",
+  "metro": "Mantua",
+  "metro_slug": "mantua",
+  "site_name": "Mantova",
+  "slug": "mantova"
+ },
+ "italy/AC Milan": {
+  "method": "exact",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "site_name": "AC Milan",
+  "slug": "ac-milan"
+ },
+ "italy/AC Monza": {
+  "method": "loose",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "site_name": "Monza",
+  "slug": "monza"
+ },
+ "italy/AC Perugia": {
+  "method": "loose",
+  "metro": "Perugia",
+  "metro_slug": "perugia",
+  "site_name": "Perugia",
+  "slug": "perugia"
+ },
+ "italy/AC Pistoiese": {
+  "method": "loose",
+  "metro": "Florence",
+  "metro_slug": "florence",
+  "site_name": "Pistoiese",
+  "slug": "pistoiese"
+ },
+ "italy/AC Reggiana": {
+  "method": "loose",
+  "metro": "Reggio Emilia",
+  "metro_slug": "reggio-emilia",
+  "site_name": "Reggiana",
+  "slug": "reggiana"
+ },
+ "italy/AC Siena": {
+  "method": "loose",
+  "metro": "Siena",
+  "metro_slug": "siena",
+  "site_name": "Siena",
+  "slug": "siena"
+ },
+ "italy/AC Venezia": {
+  "method": "loose",
+  "metro": "Padua-Venice",
+  "metro_slug": "padua-venice",
+  "site_name": "Venezia",
+  "slug": "venezia"
+ },
+ "italy/ACF Fiorentina": {
+  "method": "loose",
+  "metro": "Florence",
+  "metro_slug": "florence",
+  "site_name": "Fiorentina",
+  "slug": "fiorentina"
+ },
+ "italy/AS Bari": {
+  "method": "loose",
+  "metro": "Bari",
+  "metro_slug": "bari",
+  "site_name": "Bari",
+  "slug": "bari"
+ },
+ "italy/AS Livorno": {
+  "method": "loose",
+  "metro": "Pisa-Livorno",
+  "metro_slug": "pisa-livorno",
+  "site_name": "Livorno",
+  "slug": "livorno"
+ },
+ "italy/AS Roma": {
+  "method": "exact",
+  "metro": "Rome",
+  "metro_slug": "rome",
+  "site_name": "AS Roma",
+  "slug": "as-roma"
+ },
+ "italy/AS Varese 1910": {
+  "method": "loose",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "site_name": "Varese",
+  "slug": "varese"
+ },
+ "italy/Ancona Calcio": {
+  "method": "loose",
+  "metro": "Ancona",
+  "metro_slug": "ancona",
+  "site_name": "Ancona",
+  "slug": "ancona"
+ },
+ "italy/Andrea Doria": {
+  "method": "exact",
+  "metro": "Genoa",
+  "metro_slug": "genoa",
+  "site_name": "Andrea Doria",
+  "slug": "andrea-doria"
+ },
+ "italy/Ascoli Calcio": {
+  "method": "loose",
+  "metro": "Ascoli Piceno",
+  "metro_slug": "ascoli-piceno",
+  "site_name": "Ascoli",
+  "slug": "ascoli"
+ },
+ "italy/Atalanta": {
+  "method": "exact",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "site_name": "Atalanta",
+  "slug": "atalanta"
+ },
+ "italy/Benevento": {
+  "method": "exact",
+  "metro": "Benevento",
+  "metro_slug": "benevento",
+  "site_name": "Benevento",
+  "slug": "benevento"
+ },
+ "italy/Bologna FC": {
+  "method": "loose",
+  "metro": "Bologna",
+  "metro_slug": "bologna",
+  "site_name": "Bologna",
+  "slug": "bologna"
+ },
+ "italy/Brescia Calcio": {
+  "method": "loose",
+  "metro": "Brescia",
+  "metro_slug": "brescia",
+  "site_name": "Brescia",
+  "slug": "brescia"
+ },
+ "italy/Cagliari Calcio": {
+  "method": "loose",
+  "metro": "Cagliari",
+  "metro_slug": "cagliari",
+  "site_name": "Cagliari",
+  "slug": "cagliari"
+ },
+ "italy/Calcio Catania": {
+  "method": "loose",
+  "metro": "Catania",
+  "metro_slug": "catania",
+  "site_name": "Catania",
+  "slug": "catania"
+ },
+ "italy/Calcio Lecco 1912": {
+  "method": "loose",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "site_name": "Lecco",
+  "slug": "lecco"
+ },
+ "italy/Calcio Padova": {
+  "method": "loose",
+  "metro": "Padua-Venice",
+  "metro_slug": "padua-venice",
+  "site_name": "Padova",
+  "slug": "padova"
+ },
+ "italy/Carpi FC": {
+  "method": "exact",
+  "metro": "Modena",
+  "metro_slug": "modena",
+  "site_name": "Carpi FC",
+  "slug": "carpi-fc"
+ },
+ "italy/Casale": {
+  "method": "exact",
+  "metro": "Alessandria",
+  "metro_slug": "alessandria",
+  "site_name": "Casale",
+  "slug": "casale"
+ },
+ "italy/Chievo Verona": {
+  "method": "contains",
+  "metro": "Verona",
+  "metro_slug": "verona",
+  "site_name": "Chievo",
+  "slug": "chievo"
+ },
+ "italy/Como Calcio": {
+  "method": "loose",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "site_name": "Como",
+  "slug": "como"
+ },
+ "italy/Empoli FC": {
+  "method": "loose",
+  "metro": "Florence",
+  "metro_slug": "florence",
+  "site_name": "Empoli",
+  "slug": "empoli"
+ },
+ "italy/FC Crotone": {
+  "method": "loose",
+  "metro": "Crotone",
+  "metro_slug": "crotone",
+  "site_name": "Crotone",
+  "slug": "crotone"
+ },
+ "italy/FC Messina": {
+  "method": "loose",
+  "metro": "Messina",
+  "metro_slug": "messina",
+  "site_name": "Messina",
+  "slug": "messina"
+ },
+ "italy/Frosinone Calcio": {
+  "method": "loose",
+  "metro": "Frosinone",
+  "metro_slug": "frosinone",
+  "site_name": "Frosinone",
+  "slug": "frosinone"
+ },
+ "italy/Genoa CFC": {
+  "method": "contains",
+  "metro": "Genoa",
+  "metro_slug": "genoa",
+  "site_name": "Genoa",
+  "slug": "genoa"
+ },
+ "italy/Genova 1893 Circolo del Calcio": {
+  "method": "city",
+  "metro": "Genoa",
+  "metro_slug": "genoa",
+  "site_name": null,
+  "slug": null
+ },
+ "italy/Hellas Verona": {
+  "method": "exact",
+  "metro": "Verona",
+  "metro_slug": "verona",
+  "site_name": "Hellas Verona",
+  "slug": "hellas-verona"
+ },
+ "italy/Inter": {
+  "method": "manual",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "slug": "internazionale",
+  "why": "94 seasons, 1929-30 to 2024-25, i.e. every Serie A season: Internazionale"
+ },
+ "italy/Juventus": {
+  "method": "exact",
+  "metro": "Turin",
+  "metro_slug": "turin",
+  "site_name": "Juventus",
+  "slug": "juventus"
+ },
+ "italy/Lanerossi Vicenza": {
+  "method": "contains",
+  "metro": "Vicenza",
+  "metro_slug": "vicenza",
+  "site_name": "Vicenza",
+  "slug": "vicenza"
+ },
+ "italy/Lazio Roma": {
+  "method": "city",
+  "metro": "Rome",
+  "metro_slug": "rome",
+  "site_name": null,
+  "slug": null
+ },
+ "italy/Legnano": {
+  "method": "exact",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "site_name": "Legnano",
+  "slug": "legnano"
+ },
+ "italy/Lucchese": {
+  "method": "exact",
+  "metro": "Lucca",
+  "metro_slug": "lucca",
+  "site_name": "Lucchese",
+  "slug": "lucchese"
+ },
+ "italy/Modena FC": {
+  "method": "loose",
+  "metro": "Modena",
+  "metro_slug": "modena",
+  "site_name": "Modena",
+  "slug": "modena"
+ },
+ "italy/Novara Calcio": {
+  "method": "loose",
+  "metro": "Novara",
+  "metro_slug": "novara",
+  "site_name": "Novara",
+  "slug": "novara"
+ },
+ "italy/Parma AC": {
+  "method": "loose",
+  "metro": "Parma",
+  "metro_slug": "parma",
+  "site_name": "Parma",
+  "slug": "parma"
+ },
+ "italy/Parma FC": {
+  "method": "loose",
+  "metro": "Parma",
+  "metro_slug": "parma",
+  "site_name": "Parma",
+  "slug": "parma"
+ },
+ "italy/Pescara Calcio": {
+  "method": "loose",
+  "metro": "Pescara",
+  "metro_slug": "pescara",
+  "site_name": "Pescara",
+  "slug": "pescara"
+ },
+ "italy/Piacenza Calcio": {
+  "method": "loose",
+  "metro": "Piacenza",
+  "metro_slug": "piacenza",
+  "site_name": "Piacenza",
+  "slug": "piacenza"
+ },
+ "italy/Pisa SC": {
+  "method": "loose",
+  "metro": "Pisa-Livorno",
+  "metro_slug": "pisa-livorno",
+  "site_name": "Pisa",
+  "slug": "pisa"
+ },
+ "italy/Pro Patria": {
+  "method": "exact",
+  "metro": "Milan",
+  "metro_slug": "milan",
+  "site_name": "Pro Patria",
+  "slug": "pro-patria"
+ },
+ "italy/Pro Vercelli": {
+  "method": "exact",
+  "metro": "Vercelli",
+  "metro_slug": "vercelli",
+  "site_name": "Pro Vercelli",
+  "slug": "pro-vercelli"
+ },
+ "italy/Reggina Calcio": {
+  "method": "loose",
+  "metro": "Reggio Calabria",
+  "metro_slug": "reggio-calabria",
+  "site_name": "Reggina",
+  "slug": "reggina"
+ },
+ "italy/SPAL 1907 Ferrara": {
+  "method": "manual",
+  "metro": "Ferrara",
+  "metro_slug": "ferrara",
+  "slug": "spal",
+  "why": "index carries Spal but with no metro; the club is Ferrara"
+ },
+ "italy/SSC Napoli": {
+  "method": "exact",
+  "metro": "Naples",
+  "metro_slug": "naples",
+  "site_name": "SSC Napoli",
+  "slug": "ssc-napoli"
+ },
+ "italy/Salernitana Calcio 1919": {
+  "method": "loose",
+  "metro": "Salerno",
+  "metro_slug": "salerno",
+  "site_name": "Salernitana",
+  "slug": "salernitana"
+ },
+ "italy/Salernitana Sport": {
+  "method": "loose",
+  "metro": "Salerno",
+  "metro_slug": "salerno",
+  "site_name": "Salernitana",
+  "slug": "salernitana"
+ },
+ "italy/Sampdoria": {
+  "method": "exact",
+  "metro": "Genoa",
+  "metro_slug": "genoa",
+  "site_name": "Sampdoria",
+  "slug": "sampdoria"
+ },
+ "italy/Sampierdarenese": {
+  "method": "exact",
+  "metro": "Genoa",
+  "metro_slug": "genoa",
+  "site_name": "Sampierdarenese",
+  "slug": "sampierdarenese"
+ },
+ "italy/Sassuolo Calcio": {
+  "method": "loose",
+  "metro": "Modena",
+  "metro_slug": "modena",
+  "site_name": "Sassuolo",
+  "slug": "sassuolo"
+ },
+ "italy/Spezia Calcio": {
+  "method": "loose",
+  "metro": "La Spezia",
+  "metro_slug": "la-spezia",
+  "site_name": "Spezia",
+  "slug": "spezia"
+ },
+ "italy/Ternana Calcio": {
+  "method": "loose",
+  "metro": "Terni",
+  "metro_slug": "terni",
+  "site_name": "Ternana",
+  "slug": "ternana"
+ },
+ "italy/Torino FC": {
+  "method": "exact",
+  "metro": "Turin",
+  "metro_slug": "turin",
+  "site_name": "Torino FC",
+  "slug": "torino-fc"
+ },
+ "italy/Treviso FBC": {
+  "method": "contains",
+  "metro": "Padua-Venice",
+  "metro_slug": "padua-venice",
+  "site_name": "Treviso",
+  "slug": "treviso"
+ },
+ "italy/US Alessandria 1912": {
+  "method": "loose",
+  "metro": "Alessandria",
+  "metro_slug": "alessandria",
+  "site_name": "Alessandria",
+  "slug": "alessandria"
+ },
+ "italy/US Anconitana": {
+  "method": "manual",
+  "metro": "Ancona",
+  "metro_slug": "ancona",
+  "slug": null,
+  "why": "one season, 1945-46, in Ancona; club lineage to the modern Ancona not asserted"
+ },
+ "italy/US Avellino": {
+  "method": "loose",
+  "metro": "Avellino",
+  "metro_slug": "avellino",
+  "site_name": "Avellino",
+  "slug": "avellino"
+ },
+ "italy/US Catanzaro": {
+  "method": "loose",
+  "metro": "Catanzaro",
+  "metro_slug": "catanzaro",
+  "site_name": "Catanzaro",
+  "slug": "catanzaro"
+ },
+ "italy/US Cremonese": {
+  "method": "exact",
+  "metro": "Cremona",
+  "metro_slug": "cremona",
+  "site_name": "US Cremonese",
+  "slug": "us-cremonese"
+ },
+ "italy/US Foggia": {
+  "method": "exact",
+  "metro": "Foggia",
+  "metro_slug": "foggia",
+  "site_name": "US Foggia",
+  "slug": "us-foggia"
+ },
+ "italy/US Lecce": {
+  "method": "exact",
+  "metro": "Lecce",
+  "metro_slug": "lecce",
+  "site_name": "US Lecce",
+  "slug": "us-lecce"
+ },
+ "italy/US Livorno": {
+  "method": "loose",
+  "metro": "Pisa-Livorno",
+  "metro_slug": "pisa-livorno",
+  "site_name": "Livorno",
+  "slug": "livorno"
+ },
+ "italy/US Palermo": {
+  "method": "loose",
+  "metro": "Palermo",
+  "metro_slug": "palermo",
+  "site_name": "Palermo",
+  "slug": "palermo"
+ },
+ "italy/Udinese Calcio": {
+  "method": "loose",
+  "metro": "Udine",
+  "metro_slug": "udine",
+  "site_name": "Udinese",
+  "slug": "udinese"
+ },
+ "italy/Unione Triestina": {
+  "method": "loose",
+  "metro": "Trieste",
+  "metro_slug": "trieste",
+  "site_name": "Triestina",
+  "slug": "triestina"
+ },
+ "italy/Vicenza Calcio": {
+  "method": "loose",
+  "metro": "Vicenza",
+  "metro_slug": "vicenza",
+  "site_name": "Vicenza",
+  "slug": "vicenza"
+ },
+ "spain/AD Almeria": {
+  "method": "exact",
+  "metro": "Almería",
+  "metro_slug": "almeria",
+  "site_name": "AD Almería",
+  "slug": "ad-almeria"
+ },
+ "spain/Albacete": {
+  "method": "contains",
+  "metro": "Albacete",
+  "metro_slug": "albacete",
+  "site_name": "Albacete Balompie",
+  "slug": "albacete-balompie"
+ },
+ "spain/Arenas de Getxo": {
+  "method": "manual",
+  "metro": "Bilbao",
+  "metro_slug": "bilbao",
+  "slug": "arenas-de-guecho",
+  "why": "same club; the index carries the Spanish spelling Guecho and gives city=Getxo"
+ },
+ "spain/Athletic Bilbao": {
+  "method": "exact",
+  "metro": "Bilbao",
+  "metro_slug": "bilbao",
+  "site_name": "Athletic Bilbao",
+  "slug": "athletic-bilbao"
+ },
+ "spain/Atletico Madrid": {
+  "method": "city",
+  "metro": "Madrid",
+  "metro_slug": "madrid",
+  "site_name": null,
+  "slug": null
+ },
+ "spain/Atletico Tetuan": {
+  "method": "unresolved",
+  "metro": null,
+  "metro_slug": null,
+  "slug": null,
+  "why": "played in Tetuan, then Spanish Morocco; no Spanish metro applies"
+ },
+ "spain/Burgos CF": {
+  "method": "exact",
+  "metro": "Burgos",
+  "metro_slug": "burgos",
+  "site_name": "Burgos CF",
+  "slug": "burgos-cf"
+ },
+ "spain/CA Osasuna": {
+  "method": "exact",
+  "metro": "Pamplona",
+  "metro_slug": "pamplona",
+  "site_name": "CA Osasuna",
+  "slug": "ca-osasuna"
+ },
+ "spain/CD Alaves": {
+  "method": "contains",
+  "metro": "Vitoria-Gasteiz",
+  "metro_slug": "vitoria-gasteiz",
+  "site_name": "Deportivo Alavés",
+  "slug": "deportivo-alaves"
+ },
+ "spain/CD Alcoyano": {
+  "method": "exact",
+  "metro": "Alcoy",
+  "metro_slug": "alcoy",
+  "site_name": "CD Alcoyano",
+  "slug": "cd-alcoyano"
+ },
+ "spain/CD Castellon": {
+  "method": "exact",
+  "metro": "Castellon",
+  "metro_slug": "castellon",
+  "site_name": "CD Castellón",
+  "slug": "cd-castellon"
+ },
+ "spain/CD Condal": {
+  "method": "loose",
+  "metro": "Barcelona",
+  "metro_slug": "barcelona",
+  "site_name": "Condal",
+  "slug": "condal"
+ },
+ "spain/CD Leganes": {
+  "method": "exact",
+  "metro": "Madrid",
+  "metro_slug": "madrid",
+  "site_name": "CD Leganés",
+  "slug": "cd-leganes"
+ },
+ "spain/CD Leonesa": {
+  "method": "contains",
+  "metro": "León",
+  "metro_slug": "leon",
+  "site_name": "Cultural Leonesa",
+  "slug": "cultural-leonesa"
+ },
+ "spain/CD Logrones": {
+  "method": "exact",
+  "metro": "Logroño",
+  "metro_slug": "logrono",
+  "site_name": "CD Logroñés",
+  "slug": "cd-logrones"
+ },
+ "spain/CD Malaga": {
+  "method": "loose",
+  "metro": "Málaga",
+  "metro_slug": "malaga",
+  "site_name": "Málaga CF",
+  "slug": "malaga-cf"
+ },
+ "spain/CD Numancia": {
+  "method": "exact",
+  "metro": "Soria",
+  "metro_slug": "soria",
+  "site_name": "CD Numancia",
+  "slug": "cd-numancia"
+ },
+ "spain/CD Tenerife": {
+  "method": "exact",
+  "metro": "Tenerife",
+  "metro_slug": "tenerife",
+  "site_name": "CD Tenerife",
+  "slug": "cd-tenerife"
+ },
+ "spain/CE Europa": {
+  "method": "contains",
+  "metro": "Barcelona",
+  "metro_slug": "barcelona",
+  "site_name": "Europa Barcelona",
+  "slug": "europa-barcelona"
+ },
+ "spain/CE Sabadell": {
+  "method": "exact",
+  "metro": "Barcelona",
+  "metro_slug": "barcelona",
+  "site_name": "CE Sabadell",
+  "slug": "ce-sabadell"
+ },
+ "spain/CF Extremadura": {
+  "method": "loose",
+  "metro": "Almendralejo",
+  "metro_slug": "almendralejo",
+  "site_name": "Extremadura",
+  "slug": "extremadura"
+ },
+ "spain/CP Merida": {
+  "method": "contains",
+  "metro": "Mérida",
+  "metro_slug": "merida-spain",
+  "site_name": "Merida",
+  "slug": "merida"
+ },
+ "spain/Cadiz CF": {
+  "method": "exact",
+  "metro": "Cádiz",
+  "metro_slug": "cadiz",
+  "site_name": "Cadiz CF",
+  "slug": "cadiz-cf"
+ },
+ "spain/Celta Vigo": {
+  "method": "loose",
+  "metro": "Vigo",
+  "metro_slug": "vigo",
+  "site_name": "Celta de Vigo",
+  "slug": "celta-de-vigo"
+ },
+ "spain/Cordoba CF": {
+  "method": "exact",
+  "metro": "Cordova",
+  "metro_slug": "cordova",
+  "site_name": "Córdoba CF",
+  "slug": "cordoba-cf"
+ },
+ "spain/Deportivo La Coruna": {
+  "method": "loose",
+  "metro": "Corunna",
+  "metro_slug": "corunna",
+  "site_name": "Deportivo de La Coruña",
+  "slug": "deportivo-de-la-coruna"
+ },
+ "spain/Elche CF": {
+  "method": "exact",
+  "metro": "Elche",
+  "metro_slug": "elche",
+  "site_name": "Elche CF",
+  "slug": "elche-cf"
+ },
+ "spain/Espanyol Barcelona": {
+  "method": "city",
+  "metro": "Barcelona",
+  "metro_slug": "barcelona",
+  "site_name": null,
+  "slug": null
+ },
+ "spain/FC Barcelona": {
+  "method": "exact",
+  "metro": "Barcelona",
+  "metro_slug": "barcelona",
+  "site_name": "FC Barcelona",
+  "slug": "fc-barcelona"
+ },
+ "spain/Getafe CF": {
+  "method": "loose",
+  "metro": "Madrid",
+  "metro_slug": "madrid",
+  "site_name": "Getafe",
+  "slug": "getafe"
+ },
+ "spain/Gimnastic": {
+  "method": "contains",
+  "metro": "Tarragona",
+  "metro_slug": "tarragona",
+  "site_name": "Gimnàstic de Tarragona",
+  "slug": "gimnastic-de-tarragona"
+ },
+ "spain/Girona": {
+  "method": "loose",
+  "metro": "Girona",
+  "metro_slug": "girona",
+  "site_name": "Girona FC",
+  "slug": "girona-fc"
+ },
+ "spain/Granada CF": {
+  "method": "exact",
+  "metro": "Granada",
+  "metro_slug": "granada",
+  "site_name": "Granada CF",
+  "slug": "granada-cf"
+ },
+ "spain/Hercules CF": {
+  "method": "exact",
+  "metro": "Alicante",
+  "metro_slug": "alicante",
+  "site_name": "Hercules CF",
+  "slug": "hercules-cf"
+ },
+ "spain/Levante UD": {
+  "method": "exact",
+  "metro": "Valencia",
+  "metro_slug": "valencia",
+  "site_name": "Levante UD",
+  "slug": "levante-ud"
+ },
+ "spain/Malaga CF": {
+  "method": "exact",
+  "metro": "Málaga",
+  "metro_slug": "malaga",
+  "site_name": "Málaga CF",
+  "slug": "malaga-cf"
+ },
+ "spain/Pontevedra CF": {
+  "method": "exact",
+  "metro": "Pontevedra",
+  "metro_slug": "pontevedra",
+  "site_name": "Pontevedra CF",
+  "slug": "pontevedra-cf"
+ },
+ "spain/RCD Mallorca": {
+  "method": "exact",
+  "metro": "Palma de Mallorca",
+  "metro_slug": "palma-de-mallorca",
+  "site_name": "RCD Mallorca",
+  "slug": "rcd-mallorca"
+ },
+ "spain/Racing Santander": {
+  "method": "exact",
+  "metro": "Santander",
+  "metro_slug": "santander",
+  "site_name": "Racing Santander",
+  "slug": "racing-santander"
+ },
+ "spain/Rayo Vallecano": {
+  "method": "exact",
+  "metro": "Madrid",
+  "metro_slug": "madrid",
+  "site_name": "Rayo Vallecano",
+  "slug": "rayo-vallecano"
+ },
+ "spain/Real Betis": {
+  "method": "exact",
+  "metro": "Seville",
+  "metro_slug": "seville",
+  "site_name": "Real Betis",
+  "slug": "real-betis"
+ },
+ "spain/Real Burgos": {
+  "method": "city",
+  "metro": "Burgos",
+  "metro_slug": "burgos",
+  "site_name": null,
+  "slug": null
+ },
+ "spain/Real Jaen": {
+  "method": "exact",
+  "metro": "Jaen",
+  "metro_slug": "jaen",
+  "site_name": "Real Jaén",
+  "slug": "real-jaen"
+ },
+ "spain/Real Madrid": {
+  "method": "exact",
+  "metro": "Madrid",
+  "metro_slug": "madrid",
+  "site_name": "Real Madrid",
+  "slug": "real-madrid"
+ },
+ "spain/Real Murcia": {
+  "method": "loose",
+  "metro": "Murcia",
+  "metro_slug": "murcia",
+  "site_name": "Murcia",
+  "slug": "murcia"
+ },
+ "spain/Real Oviedo": {
+  "method": "exact",
+  "metro": "Oviedo",
+  "metro_slug": "oviedo",
+  "site_name": "Real Oviedo",
+  "slug": "real-oviedo"
+ },
+ "spain/Real Sociedad": {
+  "method": "exact",
+  "metro": "San Sebastián",
+  "metro_slug": "san-sebastian",
+  "site_name": "Real Sociedad",
+  "slug": "real-sociedad"
+ },
+ "spain/Real Union": {
+  "method": "manual",
+  "metro": "San Sebastián",
+  "metro_slug": "san-sebastian",
+  "slug": "real-union-irun",
+  "why": "the index carries Real Union Irun; Irun sits in the San Sebastian metro"
+ },
+ "spain/Real Valladolid": {
+  "method": "exact",
+  "metro": "Valladolid",
+  "metro_slug": "valladolid",
+  "site_name": "Real Valladolid",
+  "slug": "real-valladolid"
+ },
+ "spain/Real Zaragoza": {
+  "method": "exact",
+  "metro": "Zaragoza",
+  "metro_slug": "zaragoza",
+  "site_name": "Real Zaragoza",
+  "slug": "real-zaragoza"
+ },
+ "spain/Recreativo Huelva": {
+  "method": "loose",
+  "metro": "Huelva",
+  "metro_slug": "huelva",
+  "site_name": "Recreativo de Huelva",
+  "slug": "recreativo-de-huelva"
+ },
+ "spain/SD Compostela": {
+  "method": "exact",
+  "metro": "Santiago de Compostela",
+  "metro_slug": "santiago-de-compostela",
+  "site_name": "SD Compostela",
+  "slug": "sd-compostela"
+ },
+ "spain/SD Eibar": {
+  "method": "exact",
+  "metro": "Eibar",
+  "metro_slug": "eibar",
+  "site_name": "SD Eibar",
+  "slug": "sd-eibar"
+ },
+ "spain/SD Huesca": {
+  "method": "exact",
+  "metro": "Huesca",
+  "metro_slug": "huesca",
+  "site_name": "SD Huesca",
+  "slug": "sd-huesca"
+ },
+ "spain/Sevilla FC": {
+  "method": "exact",
+  "metro": "Seville",
+  "metro_slug": "seville",
+  "site_name": "Sevilla FC",
+  "slug": "sevilla-fc"
+ },
+ "spain/Sporting Gijon": {
+  "method": "exact",
+  "metro": "Gijón",
+  "metro_slug": "gijon",
+  "site_name": "Sporting Gijon",
+  "slug": "sporting-gijon"
+ },
+ "spain/UD Almeria": {
+  "method": "exact",
+  "metro": "Almería",
+  "metro_slug": "almeria",
+  "site_name": "UD Almería",
+  "slug": "ud-almeria"
+ },
+ "spain/UD Las Palmas": {
+  "method": "exact",
+  "metro": "Las Palmas",
+  "metro_slug": "las-palmas",
+  "site_name": "UD Las Palmas",
+  "slug": "ud-las-palmas"
+ },
+ "spain/UD Salamanca": {
+  "method": "exact",
+  "metro": "Salamanca",
+  "metro_slug": "salamanca",
+  "site_name": "UD Salamanca",
+  "slug": "ud-salamanca"
+ },
+ "spain/UE Lleida": {
+  "method": "exact",
+  "metro": "Lleida",
+  "metro_slug": "lleida",
+  "site_name": "UE Lleida",
+  "slug": "ue-lleida"
+ },
+ "spain/Valencia CF": {
+  "method": "loose",
+  "metro": "Valencia",
+  "metro_slug": "valencia",
+  "site_name": "Valencia",
+  "slug": "valencia"
+ },
+ "spain/Villarreal CF": {
+  "method": "loose",
+  "metro": "Castellon",
+  "metro_slug": "castellon",
+  "site_name": "Villarreal",
+  "slug": "villarreal"
+ },
+ "spain/Xerez CD": {
+  "method": "exact",
+  "metro": "Jerez",
+  "metro_slug": "jerez",
+  "site_name": "Xerez CD",
+  "slug": "xerez-cd"
+ }
+}
