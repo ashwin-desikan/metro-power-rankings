@@ -224,14 +224,79 @@ WOMENS_TEAM_CANON = {
     "Ice Hockey": "Women's Ice Hockey",
 }
 
+# 🔴 ONE ROW PER COUNTRY, AND THE COUNTRIES HUB DECIDES ITS NAME.
+# Every Cup slug must be the countries.json slug for that country, with ONE
+# exception: Great Britain, which is a real competing entity the home nations
+# fold into and which countries.json calls United Kingdom.
+#
+# This map used to fold the OTHER way for two of them (czech-republic ->
+# czechia, cote-d-ivoire -> ivory-coast), and seven more countries were never
+# folded at all, so they sat on the board TWICE with their record split between
+# the two rows. Taiwan was the worst: `chinese-taipei` 44th on 21.70 merit and
+# `taiwan` 153rd on 1.00, one country, two lines, neither of them right.
+# Trinidad & Tobago was 8.50 and 2.80, Cote d'Ivoire 4.90 and 1.90.
+#
+# The pattern is "X and Y" against "X Y", plus endonym against exonym. The gate
+# in emit_json now refuses the build if any two rows share a countrySlug, so a
+# new source spelling cannot reopen this quietly.
 FOLD = {
+    # the Great Britain exception
     "england": "great-britain", "scotland": "great-britain",
     "wales": "great-britain", "northern-ireland": "great-britain",
-    "ireland": "ireland",
-    "czech-republic": "czechia", "cote-d-ivoire": "ivory-coast",
     "united-kingdom": "great-britain",
+    "ireland": "ireland",
+    # fold to the countries.json slug, never away from it
+    "czechia": "czech-republic",
+    "ivory-coast": "cote-divoire", "cote-d-ivoire": "cote-divoire",
+    "chinese-taipei": "taiwan",
+    "trinidad-and-tobago": "trinidad-tobago",
+    "antigua-and-barbuda": "antigua-barbuda",
+    "st-kitts-and-nevis": "st-kitts-nevis",
+    "st-vincent-and-the-grenadines": "st-vincent-the-grenadines",
+    "united-states-virgin-islands": "us-virgin-islands",
+    "turks-and-caicos-islands": "turks-caicos-islands",
+    # A dissolved state folds into its successor, the same rule that already
+    # puts the Soviet Union under Russia and Yugoslavia under Serbia. The
+    # Netherlands Antilles dissolved in 2010 and Curacao is the successor that
+    # inherited its Olympic committee. Its 0.1 of sailing merit joins Curacao's
+    # 1.4 rather than sitting on a country that no longer exists.
+    "netherlands-antilles": "curacao",
+    # A real country that was sitting orphaned with no link to its own page,
+    # because countries.json spells it out in full.
+    "micronesia": "federated-states-of-micronesia",
 }
-COMPOSITE = {"west-indies", "team-europe"}   # multi-nation teams (distributed, see below)
+
+# Rows that legitimately have no country behind them: dissolved states kept as
+# historical entities, multi-nation and neutral delegations, and non-sovereign
+# teams. Anything else without a countrySlug is an ORPHAN - a real country the
+# Cup failed to match to the Countries hub, which is how Micronesia sat
+# unlinked. The gate in emit_json refuses on anything not named here.
+NON_COUNTRY_ROWS = {
+    "east-germany",                 # dissolved, kept as its own historical record
+    "west-indies-federation",       # dissolved federation
+    "zanzibar",                     # pre-union
+    "tibet",                        # non-sovereign
+    "haudenosaunee",                # non-sovereign
+    "refugee-olympic-team",
+    "individual-neutral-athletes",
+    "independent-olympic-athletes",
+    "mixed-team",
+}
+# Australasia was Australia and New Zealand as ONE Olympic team in 1908 and
+# 1912. It is not a country and should not hold a line on a board of countries,
+# so it is distributed the way West Indies cricket is: by what each nation
+# actually contributed. Australasia won 12 medals; THREE were won by New
+# Zealanders (Harry Kerr, 3500m walk bronze 1908; Malcolm Champion, 4x200m
+# freestyle relay gold 1912; Anthony Wilding, indoor tennis bronze 1912) and the
+# other nine by Australians. Source: en.wikipedia.org/wiki/Australasia_at_the_Olympics.
+# The relay gold is credited to the swimmer's nation, the same rule the Cup uses
+# for the America's Cup and for motorsport podiums.
+# 🔴 Australasia's merit is 0.0 today: 1908-1912 results decay to nothing under
+# the 8-year half-life. So this split is STRUCTURAL, not numerical, and the 9:3
+# weight only starts to matter if the decay or the era weighting ever changes.
+AUSTRALASIA_DISTRIBUTE = {"australia": 9, "new-zealand": 3}
+
+COMPOSITE = {"west-indies", "team-europe", "australasia"}   # multi-nation teams (distributed, see below)
 # West Indies cricket (a multi-nation side) is distributed equally across its core
 # cricketing member nations rather than parked on a composite entry, so the islands
 # that supply the players get the credit and appear in the per-capita view. The
@@ -248,7 +313,8 @@ WI_DISTRIBUTE = {"barbados": 98, "jamaica": 83, "trinidad-tobago": 83, "guyana":
 # rather than standing as a "country" of its own.
 EUROPE_DISTRIBUTE = {n: 1 for n in ["germany", "switzerland", "denmark", "slovakia",
                                     "slovenia", "france", "norway", "austria"]}
-COMPOSITE_DISTRIBUTE = {"west-indies": WI_DISTRIBUTE, "team-europe": EUROPE_DISTRIBUTE}
+COMPOSITE_DISTRIBUTE = {"west-indies": WI_DISTRIBUTE, "team-europe": EUROPE_DISTRIBUTE,
+                        "australasia": AUSTRALASIA_DISTRIBUTE}
 # On top of the proportional split, every West Indies cricketing member gets a flat
 # cricket upweight so each has a meaningful score (smallest floored at ~2.1). (user-set)
 WI_CRICKET_FLOOR_BONUS = 1.8
@@ -451,6 +517,15 @@ def years(v):
 
 def fold(slug):
     return FOLD.get(slug, slug)
+
+
+# 🔴 ANY DICT KEYED BY A COUNTRY SLUG MUST BE FOLDED TOO, or a rename silently
+# drops what it holds. COUNTRY_SPORT_PRESTIGE was keyed on `chinese-taipei`;
+# the moment that folded into `taiwan` the 2.0 multiplier on Taiwanese baseball
+# stopped matching and baseball fell from 5.4 to 4.1 merit with nothing in the
+# output to say why. Folding the keys here makes the map rename-proof.
+COUNTRY_SPORT_PRESTIGE = {(fold(_s), _sp): _v
+                          for (_s, _sp), _v in COUNTRY_SPORT_PRESTIGE.items()}
 
 
 def tier_pts(tier, finish, boost):
@@ -1191,12 +1266,9 @@ def emit_json(merit, tops, special, name, sportmap):
     countries = json.load(open(os.path.join(D, "countries.json"), encoding="utf-8"))
     cmap = {c["slug"]: c for c in countries}
     # cup slug -> countries.json slug for genuine name divergences (no name match)
-    ALIAS = {
-        "great-britain": "united-kingdom",
-        "czechia": "czech-republic",
-        "chinese-taipei": "taiwan",
-        "united-states-virgin-islands": "us-virgin-islands",
-    }
+    # Only the Great Britain exception survives here. Everything else is folded
+    # to its countries.json slug in FOLD, upstream of merit, so it cannot split.
+    ALIAS = {"great-britain": "united-kingdom"}
 
     def _norm(s):
         s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
@@ -1272,7 +1344,12 @@ def emit_json(merit, tops, special, name, sportmap):
         rows.append({
             "slug": slug,
             "countrySlug": rslug.get(slug),
-            "name": name.get(slug) or cname.get(slug) or slug.replace("-", " ").title(),
+            # 🔴 The Countries hub owns the name. Great Britain is the one
+            # exception: it is a real competing entity that the home nations
+            # fold into, and countries.json calls it United Kingdom.
+            "name": (name.get(slug) if slug == "great-britain"
+                     else cname.get(slug) or name.get(slug))
+                    or slug.replace("-", " ").title(),
             "continent": continent.get(slug),
             "merit": round(mt, 1),
             "rank": orank[slug],
@@ -1308,6 +1385,31 @@ def emit_json(merit, tops, special, name, sportmap):
         },
         "nations": rows,
     }
+    # 🔴 ONE ROW PER COUNTRY. Seven countries sat on this board twice for
+    # years, their record split between two spellings of the same name, because
+    # the merge happened for the /countries/ route and never for the merit.
+    # Taiwan was 44th on 21.70 AND 153rd on 1.00 at the same time. A new source
+    # spelling must not be able to reopen that quietly.
+    seen = {}
+    for r in rows:
+        cs = r.get("countrySlug")
+        if not cs:
+            continue          # East Germany, Refugee Team, Zanzibar and the like
+        if cs in seen:
+            raise SystemExit(
+                "REFUSING: %r and %r are both the country %r. One country, one "
+                "row. Fold the new spelling into the countries.json slug in "
+                "FOLD." % (seen[cs], r["slug"], cs))
+        seen[cs] = r["slug"]
+    orphans = sorted(r["slug"] for r in rows
+                     if not r.get("countrySlug") and r["slug"] not in NON_COUNTRY_ROWS)
+    if orphans:
+        raise SystemExit(
+            "REFUSING: %r have no country and are not declared in "
+            "NON_COUNTRY_ROWS. Either they are real countries the Cup failed to "
+            "match to countries.json, in which case fold them in FOLD, or they "
+            "are historical entities, in which case name them." % orphans)
+
     json.dump(out, open(OUT_JSON, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     return len(rows)
 
