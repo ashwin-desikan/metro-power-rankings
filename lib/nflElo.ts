@@ -97,7 +97,15 @@ export type NflEloMeta = {
   notes: string;
 };
 
-export type NflEloSeasonStatus = "final" | "seeded" | "broken";
+/**
+ * `final`  every week carries a plausible, varying rating from the workbook
+ * `live`   the season is under way and the chain is carried in Python from the
+ *          week-0 seed and the game log, because the workbook's weekly rating
+ *          is a formula and a formula is stale until Excel opens the file
+ * `seeded` week 0 is sound and nothing after it is: a season not yet played
+ * `broken` week 0 is unusable too
+ */
+export type NflEloSeasonStatus = "final" | "live" | "seeded" | "broken";
 
 export type NflEloSeason = {
   meta: NflEloMeta;

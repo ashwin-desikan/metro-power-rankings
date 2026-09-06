@@ -89,7 +89,12 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
   ]);
   if (!data) notFound();
 
-  const seeded = data.status !== "final";
+  // 🔴 A LIVE SEASON IS A PLAYED SEASON. This read `!== "final"`, which was
+  // right while the only two states were finished and not-yet-started. A season
+  // carried in Python week by week is neither: it has real weekly ratings and
+  // must render the weekly chart, the movers and everything else a finished
+  // season gets. Only a season with nothing after its seed is "seeded".
+  const seeded = data.status === "seeded" || data.status === "broken";
 
   // Identity and colour are resolved ONCE per season, server side, because both
   // touch the filesystem (logoUrlFor stats a path) and the chart alone would

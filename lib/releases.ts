@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-06",
-    headline: "Five more leagues, and a century of NFL seasons",
+    headline: "A century of NFL seasons, and two silent data faults",
     items: [
-      "Clubs in the Spanish, Italian, German, French and Dutch top flights, and the 198 metros they play in, now carry the same against-expectation record English clubs have, a century of seasons scored against the odds.",
-      "Every NFL season since 1920 has its own page: each team's rating week by week, the standings, and the years the AAFC and the AFL ran alongside the NFL, all rated against each other in one pool.",
-      "A new board puts six leagues on one model and one axis. The Eredivisie is the most predictable of the six and Ligue 1 the least, which nobody else publishes.",
-      "Wide tables no longer drag the page sideways on a phone. An invisible one-pixel label inside them had been pushing the whole page past the edge of the screen on every board wide enough to scroll.",
+      "Every NFL season since 1920 has its own page: the week-by-week ratings, the final standings, the playoff seeds and the honours each team won, with the AAFC and AFL years rated against the NFL in one pool.",
+      "College football standings were showing no points for or against for any team in the country, and team pages sat at 0-0 all autumn. Both now read the live table.",
+      "The NFL hub leads with the current ratings beside the standings, carrying playoff and title odds from our own simulation of the rest of the season.",
+      "Fifteen NFL clubs had been drawing themselves white on the season charts, and long sections on the sports hubs now fold away on a phone rather than running to nine screens.",
     ],
   },
   {
