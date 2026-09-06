@@ -104,6 +104,17 @@ body {
 .overflow-hidden:has(> table) {
   max-height: 80vh;
   overflow: auto;
+  /* 🔴 CONTAINING BLOCK, NOT DECORATION. Without this, an absolutely
+     positioned descendant has no positioned ancestor, so its containing block
+     is the ICB and this box does NOT clip it: a scroller only clips what it is
+     in the containing-block chain for. `.sr-only` is position:absolute, so
+     every screen-reader label inside a wide table resolved to its static
+     position out at the table's full width and dragged <html> sideways while
+     <body> stayed correct. Measured 2026-09-06 on /teams/football/*: the
+     document ran to 572px at a 390px viewport off a 1px invisible span
+     reading "game score". No static gate can see this; it only exists once a
+     browser resolves the containing-block chain. */
+  position: relative;
 }
 table thead th {
   position: sticky;

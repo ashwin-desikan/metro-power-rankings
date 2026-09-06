@@ -129,12 +129,30 @@ function measure() {
         const style = getComputedStyle(el);
         // An element inside its own horizontal scroll box is contained by
         // design; that is the whole point of TableScroll.
+        //
+        // 🔴 BUT ONLY IF THE SCROLLER IS IN ITS CONTAINING-BLOCK CHAIN. An
+        // absolutely positioned element is laid out against its nearest
+        // POSITIONED ancestor (offsetParent; null means the ICB), and a
+        // scroller below that point does not clip it however its computed
+        // overflow reads. Walking parents blindly reported `.sr-only` inside a
+        // wide table as contained when it was escaping to <html> and taking
+        // the page sideways with it — 2026-09-06, /teams/football/*, five
+        // diagnostic runs before this line existed. A fixed element is never
+        // contained by an ancestor scroller.
+        const pos = style.position;
+        const isAbs = pos === "absolute";
+        const cb = isAbs ? el.offsetParent : null;
         let contained = false;
-        for (let p = el.parentElement; p; p = p.parentElement) {
-          const ps = getComputedStyle(p);
-          if (ps.overflowX === "auto" || ps.overflowX === "scroll" || ps.overflowX === "hidden") {
-            contained = true;
-            break;
+        if (pos !== "fixed") {
+          let atOrAboveCB = !isAbs;
+          for (let p = el.parentElement; p; p = p.parentElement) {
+            if (isAbs && p === cb) atOrAboveCB = true;
+            if (!atOrAboveCB) continue;
+            const ps = getComputedStyle(p);
+            if (ps.overflowX === "auto" || ps.overflowX === "scroll" || ps.overflowX === "hidden") {
+              contained = true;
+              break;
+            }
           }
         }
         if (contained) continue;
