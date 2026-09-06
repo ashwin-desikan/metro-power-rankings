@@ -21,8 +21,8 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-08-31",
-  "prevSnapshotDate": "2026-08-30",
+  "asOf": "2026-09-06",
+  "prevSnapshotDate": "2026-08-31",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -127,9 +127,9 @@
       "jurisdiction": "United States",
       "metro": "Austin",
       "metroSlug": "austin",
-      "jscore": 869.9,
+      "jscore": 891.9,
       "weight": 0.45,
-      "power": 391.5,
+      "power": 401.4,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
       "prevRank": 7,
@@ -937,22 +937,6 @@
       "delta": 0
     },
     {
-      "name": "Larry Page",
-      "role": "Billionaire (Technology)",
-      "category": "Billionaire",
-      "jurisdiction": "United States",
-      "metro": "San Francisco-San Jose",
-      "metroSlug": "san-francisco-san-jose",
-      "jscore": 283.3,
-      "weight": 0.45,
-      "power": 127.5,
-      "jurisdictionHref": "/countries/united-states",
-      "transition": "",
-      "prevRank": 58,
-      "isNew": false,
-      "delta": 0
-    },
-    {
       "name": "Volodymyr Zelenskyy",
       "role": "Pres., Ukraine",
       "category": "National",
@@ -966,7 +950,23 @@
       "transition": "",
       "prevRank": 59,
       "isNew": false,
-      "delta": 0
+      "delta": 1
+    },
+    {
+      "name": "Larry Page",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "metro": "San Francisco-San Jose",
+      "metroSlug": "san-francisco-san-jose",
+      "jscore": 277.2,
+      "weight": 0.45,
+      "power": 124.8,
+      "jurisdictionHref": "/countries/united-states",
+      "transition": "",
+      "prevRank": 58,
+      "isNew": false,
+      "delta": -1
     },
     {
       "name": "Jeff Bezos",
@@ -975,9 +975,9 @@
       "jurisdiction": "United States",
       "metro": "Seattle",
       "metroSlug": "seattle",
-      "jscore": 272.4,
+      "jscore": 267.6,
       "weight": 0.45,
-      "power": 122.6,
+      "power": 120.4,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
       "prevRank": 60,
@@ -1023,28 +1023,12 @@
       "jurisdiction": "United States",
       "metro": "San Francisco-San Jose",
       "metroSlug": "san-francisco-san-jose",
-      "jscore": 261.4,
+      "jscore": 255.8,
       "weight": 0.45,
-      "power": 117.6,
+      "power": 115.1,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
       "prevRank": 63,
-      "isNew": false,
-      "delta": 0
-    },
-    {
-      "name": "Michael Dell",
-      "role": "Billionaire (Technology)",
-      "category": "Billionaire",
-      "jurisdiction": "United States",
-      "metro": "Austin",
-      "metroSlug": "austin",
-      "jscore": 260.7,
-      "weight": 0.45,
-      "power": 117.3,
-      "jurisdictionHref": "/countries/united-states",
-      "transition": "",
-      "prevRank": 64,
       "isNew": false,
       "delta": 0
     },
@@ -1062,7 +1046,7 @@
       "transition": "Seeking a 4th term; Texas gubernatorial election, 3 Nov 2026",
       "prevRank": 65,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Ron O'Hanley",
@@ -1078,7 +1062,7 @@
       "transition": "",
       "prevRank": 66,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Brian Roberts",
@@ -1094,7 +1078,23 @@
       "transition": "",
       "prevRank": 67,
       "isNew": false,
-      "delta": 0
+      "delta": 1
+    },
+    {
+      "name": "Michael Dell",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "metro": "Austin",
+      "metroSlug": "austin",
+      "jscore": 240.6,
+      "weight": 0.45,
+      "power": 108.3,
+      "jurisdictionHref": "/countries/united-states",
+      "transition": "",
+      "prevRank": 64,
+      "isNew": false,
+      "delta": -3
     },
     {
       "name": "Lionel Messi",
@@ -1273,22 +1273,6 @@
       "delta": 0
     },
     {
-      "name": "Mark Zuckerberg",
-      "role": "Billionaire (Technology)",
-      "category": "Billionaire",
-      "jurisdiction": "United States",
-      "metro": "San Francisco-San Jose",
-      "metroSlug": "san-francisco-san-jose",
-      "jscore": 204.3,
-      "weight": 0.45,
-      "power": 91.9,
-      "jurisdictionHref": "/countries/united-states",
-      "transition": "",
-      "prevRank": 79,
-      "isNew": false,
-      "delta": 0
-    },
-    {
       "name": "Daniel Lurie",
       "role": "Mayor of San Francisco",
       "category": "Mayor",
@@ -1302,7 +1286,7 @@
       "transition": "",
       "prevRank": 80,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "👑 Naruhito",
@@ -1318,7 +1302,7 @@
       "transition": "",
       "prevRank": 81,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Kathy Hochul",
@@ -1334,23 +1318,7 @@
       "transition": "Seeking re-election; New York gubernatorial election, 3 Nov 2026",
       "prevRank": 82,
       "isNew": false,
-      "delta": 0
-    },
-    {
-      "name": "Larry Ellison",
-      "role": "Billionaire (Technology)",
-      "category": "Billionaire",
-      "jurisdiction": "United States",
-      "metro": "Austin",
-      "metroSlug": "austin",
-      "jscore": 198.5,
-      "weight": 0.45,
-      "power": 89.3,
-      "jurisdictionHref": "/countries/united-states",
-      "transition": "",
-      "prevRank": 83,
-      "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Asif Ali Zardari",
@@ -1366,7 +1334,23 @@
       "transition": "",
       "prevRank": 84,
       "isNew": false,
-      "delta": 0
+      "delta": 2
+    },
+    {
+      "name": "Mark Zuckerberg",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "metro": "San Francisco-San Jose",
+      "metroSlug": "san-francisco-san-jose",
+      "jscore": 196.6,
+      "weight": 0.45,
+      "power": 88.5,
+      "jurisdictionHref": "/countries/united-states",
+      "transition": "",
+      "prevRank": 79,
+      "isNew": false,
+      "delta": -4
     },
     {
       "name": "Hock Tan",
@@ -1382,7 +1366,7 @@
       "transition": "",
       "prevRank": 85,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "David Zaslav",
@@ -1398,7 +1382,7 @@
       "transition": "",
       "prevRank": 86,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Ahmed el-Tayeb",
@@ -1414,7 +1398,7 @@
       "transition": "",
       "prevRank": 87,
       "isNew": false,
-      "delta": 0
+      "delta": 1
     },
     {
       "name": "Andrew Bailey",
@@ -1430,7 +1414,23 @@
       "transition": "",
       "prevRank": 88,
       "isNew": false,
-      "delta": 0
+      "delta": 1
+    },
+    {
+      "name": "Larry Ellison",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "metro": "Austin",
+      "metroSlug": "austin",
+      "jscore": 192.5,
+      "weight": 0.45,
+      "power": 86.6,
+      "jurisdictionHref": "/countries/united-states",
+      "transition": "",
+      "prevRank": 83,
+      "isNew": false,
+      "delta": -5
     },
     {
       "name": "Amin H. Nasser",
