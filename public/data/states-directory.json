@@ -8,7 +8,7 @@
 "continent": "North America",
 "pop": 39431263,
 "metroCount": 22,
-"score": 329.0,
+"score": 329.4,
 "weighted": true,
 "rank": 1
 },
@@ -21,7 +21,7 @@
 "continent": "North America",
 "pop": 31290831,
 "metroCount": 48,
-"score": 208.57,
+"score": 208.77,
 "weighted": true,
 "rank": 2
 },
@@ -73,7 +73,7 @@
 "continent": "Asia",
 "pop": 126012510,
 "metroCount": 9,
-"score": 148.6,
+"score": 149.3,
 "weighted": true,
 "rank": 6
 },
@@ -86,7 +86,7 @@
 "continent": "Europe",
 "pop": 12380964,
 "metroCount": 1,
-"score": 138.54,
+"score": 138.44,
 "weighted": true,
 "rank": 7
 },
@@ -125,7 +125,7 @@
 "continent": "Asia",
 "pop": 21893095,
 "metroCount": 1,
-"score": 110.63,
+"score": 110.72,
 "weighted": true,
 "rank": 10
 },
@@ -138,7 +138,7 @@
 "continent": "North America",
 "pop": 12710158,
 "metroCount": 21,
-"score": 104.36,
+"score": 104.41,
 "weighted": true,
 "rank": 11
 },
@@ -190,7 +190,7 @@
 "continent": "North America",
 "pop": 702250,
 "metroCount": 1,
-"score": 94.1,
+"score": 94.0,
 "weighted": false,
 "rank": 15
 },
@@ -203,7 +203,7 @@
 "continent": "South America",
 "pop": 46081801,
 "metroCount": 29,
-"score": 90.73,
+"score": 90.83,
 "weighted": true,
 "rank": 16
 },
@@ -255,7 +255,7 @@
 "continent": "North America",
 "pop": 11883304,
 "metroCount": 17,
-"score": 83.22,
+"score": 83.32,
 "weighted": true,
 "rank": 20
 },
@@ -268,7 +268,7 @@
 "continent": "Europe",
 "pop": 13248928,
 "metroCount": 18,
-"score": 79.97,
+"score": 79.98,
 "weighted": true,
 "rank": 21
 },
@@ -307,7 +307,7 @@
 "continent": "North America",
 "pop": 7958180,
 "metroCount": 13,
-"score": 76.3,
+"score": 76.0,
 "weighted": true,
 "rank": 24
 },
@@ -359,7 +359,7 @@
 "continent": "North America",
 "pop": 8811195,
 "metroCount": 15,
-"score": 69.22,
+"score": 69.19,
 "weighted": true,
 "rank": 28
 },
@@ -424,7 +424,7 @@
 "continent": "Asia",
 "pop": 42591407,
 "metroCount": 8,
-"score": 62.7,
+"score": 62.8,
 "weighted": true,
 "rank": 33
 },
@@ -554,7 +554,7 @@
 "continent": "North America",
 "pop": 10140459,
 "metroCount": 19,
-"score": 57.64,
+"score": 57.74,
 "weighted": true,
 "rank": 43
 },
@@ -585,19 +585,6 @@
 "rank": 45
 },
 {
-"slug": "tennessee",
-"name": "Tennessee",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 7227750,
-"metroCount": 15,
-"score": 55.98,
-"weighted": true,
-"rank": 46
-},
-{
 "slug": "shanghai",
 "name": "Shanghai",
 "country": "China",
@@ -607,6 +594,19 @@
 "pop": 24870895,
 "metroCount": 1,
 "score": 55.96,
+"weighted": true,
+"rank": 46
+},
+{
+"slug": "tennessee",
+"name": "Tennessee",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 7227750,
+"metroCount": 15,
+"score": 55.88,
 "weighted": true,
 "rank": 47
 },
@@ -619,7 +619,7 @@
 "continent": "North America",
 "pop": 6263220,
 "metroCount": 5,
-"score": 54.92,
+"score": 54.86,
 "weighted": true,
 "rank": 48
 },
@@ -749,7 +749,7 @@
 "continent": "Asia",
 "pop": 74610235,
 "metroCount": 9,
-"score": 47.95,
+"score": 47.96,
 "weighted": true,
 "rank": 58
 },
@@ -801,7 +801,7 @@
 "continent": "Asia",
 "pop": 14047594,
 "metroCount": 1,
-"score": 46.79,
+"score": 46.83,
 "weighted": true,
 "rank": 62
 },
@@ -827,7 +827,7 @@
 "continent": "Europe",
 "pop": 6280793,
 "metroCount": 4,
-"score": 43.86,
+"score": 43.94,
 "weighted": true,
 "rank": 64
 },
@@ -1087,7 +1087,7 @@
 "continent": "Asia",
 "pop": 235687000,
 "metroCount": 11,
-"score": 37.61,
+"score": 37.79,
 "weighted": true,
 "rank": 84
 },
@@ -1204,7 +1204,7 @@
 "continent": "North America",
 "pop": 4272371,
 "metroCount": 15,
-"score": 35.36,
+"score": 35.37,
 "weighted": true,
 "rank": 93
 },
@@ -1230,7 +1230,7 @@
 "continent": "Europe",
 "pop": 5510527,
 "metroCount": 4,
-"score": 33.9,
+"score": 34.0,
 "weighted": true,
 "rank": 95
 },
@@ -1373,7 +1373,7 @@
 "continent": "Asia",
 "pop": 9237337,
 "metroCount": 1,
-"score": 30.77,
+"score": 30.79,
 "weighted": true,
 "rank": 106
 },
@@ -1711,7 +1711,7 @@
 "continent": "Asia",
 "pop": 7344765,
 "metroCount": 1,
-"score": 24.47,
+"score": 24.48,
 "weighted": true,
 "rank": 132
 },
@@ -1724,7 +1724,7 @@
 "continent": "Europe",
 "pop": 1714354,
 "metroCount": 1,
-"score": 24.0,
+"score": 23.9,
 "weighted": true,
 "rank": 133
 },
@@ -1820,6 +1820,19 @@
 "rank": 140
 },
 {
+"slug": "national-capital-territory",
+"name": "National Capital Territory",
+"country": "India",
+"countrySlug": "india",
+"type": "Union Territory",
+"continent": "Asia",
+"pop": 21359000,
+"metroCount": 1,
+"score": 21.81,
+"weighted": true,
+"rank": 141
+},
+{
 "slug": "karnataka",
 "name": "Karnataka",
 "country": "India",
@@ -1829,19 +1842,6 @@
 "pop": 67692000,
 "metroCount": 5,
 "score": 21.7,
-"weighted": true,
-"rank": 141
-},
-{
-"slug": "national-capital-territory",
-"name": "National Capital Territory",
-"country": "India",
-"countrySlug": "india",
-"type": "Union Territory",
-"continent": "Asia",
-"pop": 21359000,
-"metroCount": 1,
-"score": 21.54,
 "weighted": true,
 "rank": 142
 },
@@ -1880,7 +1880,7 @@
 "continent": "Asia",
 "pop": 6284480,
 "metroCount": 1,
-"score": 20.93,
+"score": 20.95,
 "weighted": true,
 "rank": 145
 },
@@ -2067,6 +2067,19 @@
 "rank": 159
 },
 {
+"slug": "iowa",
+"name": "Iowa",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 3241488,
+"metroCount": 16,
+"score": 19.38,
+"weighted": true,
+"rank": 160
+},
+{
 "slug": "hyogo",
 "name": "Hyogo",
 "country": "Japan",
@@ -2076,19 +2089,6 @@
 "pop": 5465002,
 "metroCount": 1,
 "score": 19.35,
-"weighted": true,
-"rank": 160
-},
-{
-"slug": "iowa",
-"name": "Iowa",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 3241488,
-"metroCount": 16,
-"score": 19.33,
 "weighted": true,
 "rank": 161
 },
@@ -2283,7 +2283,7 @@
 "continent": "Asia",
 "pop": 4030954,
 "metroCount": 1,
-"score": 17.92,
+"score": 17.87,
 "weighted": true,
 "rank": 176
 },
@@ -2535,19 +2535,6 @@
 "rank": 195
 },
 {
-"slug": "nebraska",
-"name": "Nebraska",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 2005465,
-"metroCount": 11,
-"score": 16.16,
-"weighted": true,
-"rank": 196
-},
-{
 "slug": "goias",
 "name": "Goiás",
 "country": "Brazil",
@@ -2557,6 +2544,19 @@
 "pop": 7423629,
 "metroCount": 9,
 "score": 16.08,
+"weighted": true,
+"rank": 196
+},
+{
+"slug": "nebraska",
+"name": "Nebraska",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 2005465,
+"metroCount": 11,
+"score": 16.06,
 "weighted": true,
 "rank": 197
 },
@@ -2829,7 +2829,7 @@
 "continent": "Europe",
 "pop": 4129569,
 "metroCount": 7,
-"score": 14.04,
+"score": 14.05,
 "weighted": true,
 "rank": 218
 },
@@ -2899,6 +2899,19 @@
 "rank": 223
 },
 {
+"slug": "idaho",
+"name": "Idaho",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 2001619,
+"metroCount": 12,
+"score": 13.49,
+"weighted": true,
+"rank": 224
+},
+{
 "slug": "surrey",
 "name": "Surrey",
 "country": "United Kingdom",
@@ -2909,7 +2922,7 @@
 "metroCount": 1,
 "score": 13.41,
 "weighted": true,
-"rank": 224
+"rank": 225
 },
 {
 "slug": "gaoxiong-shi-kaohsiung-shih",
@@ -2920,20 +2933,7 @@
 "continent": "Asia",
 "pop": 2765932,
 "metroCount": 1,
-"score": 13.4,
-"weighted": true,
-"rank": 225
-},
-{
-"slug": "idaho",
-"name": "Idaho",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 2001619,
-"metroCount": 12,
-"score": 13.4,
+"score": 13.3,
 "weighted": true,
 "rank": 226
 },
@@ -3037,7 +3037,7 @@
 "continent": "North America",
 "pop": 3088354,
 "metroCount": 19,
-"score": 12.68,
+"score": 12.77,
 "weighted": true,
 "rank": 234
 },
@@ -3224,6 +3224,19 @@
 "rank": 248
 },
 {
+"slug": "haryana",
+"name": "Haryana",
+"country": "India",
+"countrySlug": "india",
+"type": "State",
+"continent": "Asia",
+"pop": 30209000,
+"metroCount": 1,
+"score": 11.6,
+"weighted": true,
+"rank": 249
+},
+{
 "slug": "ar-rayyan",
 "name": "Ar-Rayyān",
 "country": "Qatar",
@@ -3234,7 +3247,7 @@
 "metroCount": 1,
 "score": 11.58,
 "weighted": true,
-"rank": 249
+"rank": 250
 },
 {
 "slug": "australian-capital-territory",
@@ -3244,19 +3257,6 @@
 "type": "Territory",
 "continent": "Asia",
 "pop": 473855,
-"metroCount": 1,
-"score": 11.57,
-"weighted": true,
-"rank": 250
-},
-{
-"slug": "taibei-shi-taipei-shih",
-"name": "Taibei Shi [Taipei Shih]",
-"country": "Taiwan",
-"countrySlug": "taiwan",
-"type": "Special Municipality",
-"continent": "Asia",
-"pop": 2602418,
 "metroCount": 1,
 "score": 11.57,
 "weighted": true,
@@ -3276,6 +3276,19 @@
 "rank": 252
 },
 {
+"slug": "taibei-shi-taipei-shih",
+"name": "Taibei Shi [Taipei Shih]",
+"country": "Taiwan",
+"countrySlug": "taiwan",
+"type": "Special Municipality",
+"continent": "Asia",
+"pop": 2602418,
+"metroCount": 1,
+"score": 11.54,
+"weighted": true,
+"rank": 253
+},
+{
 "slug": "oslo",
 "name": "Oslo",
 "country": "Norway",
@@ -3285,19 +3298,6 @@
 "pop": 699827,
 "metroCount": 1,
 "score": 11.48,
-"weighted": true,
-"rank": 253
-},
-{
-"slug": "haryana",
-"name": "Haryana",
-"country": "India",
-"countrySlug": "india",
-"type": "State",
-"continent": "Asia",
-"pop": 30209000,
-"metroCount": 1,
-"score": 11.45,
 "weighted": true,
 "rank": 254
 },
@@ -3648,9 +3648,22 @@
 "continent": "Asia",
 "pop": 2268807,
 "metroCount": 1,
-"score": 10.08,
+"score": 10.06,
 "weighted": true,
 "rank": 281
+},
+{
+"slug": "cambridgeshire",
+"name": "Cambridgeshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 699573,
+"metroCount": 3,
+"score": 9.92,
+"weighted": true,
+"rank": 282
 },
 {
 "slug": "alexandria",
@@ -3662,19 +3675,6 @@
 "pop": 5441866,
 "metroCount": 1,
 "score": 9.86,
-"weighted": true,
-"rank": 282
-},
-{
-"slug": "cambridgeshire",
-"name": "Cambridgeshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 699573,
-"metroCount": 3,
-"score": 9.82,
 "weighted": true,
 "rank": 283
 },
@@ -4511,19 +4511,6 @@
 "rank": 347
 },
 {
-"slug": "west-virginia",
-"name": "West Virginia",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 1769979,
-"metroCount": 13,
-"score": 7.45,
-"weighted": true,
-"rank": 348
-},
-{
 "slug": "delaware",
 "name": "Delaware",
 "country": "United States",
@@ -4533,6 +4520,19 @@
 "pop": 1051917,
 "metroCount": 3,
 "score": 7.45,
+"weighted": true,
+"rank": 348
+},
+{
+"slug": "west-virginia",
+"name": "West Virginia",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 1769979,
+"metroCount": 13,
+"score": 7.44,
 "weighted": true,
 "rank": 349
 },
@@ -5408,6 +5408,19 @@
 "rank": 416
 },
 {
+"slug": "xinzhu-hsinchu",
+"name": "Xinzhu [Hsinchu]",
+"country": "Taiwan",
+"countrySlug": "taiwan",
+"type": "County (Xian)",
+"continent": "Asia",
+"pop": 570775,
+"metroCount": 1,
+"score": 5.75,
+"weighted": true,
+"rank": 417
+},
+{
 "slug": "flevoland",
 "name": "Flevoland",
 "country": "Netherlands",
@@ -5418,7 +5431,7 @@
 "metroCount": 1,
 "score": 5.73,
 "weighted": true,
-"rank": 417
+"rank": 418
 },
 {
 "slug": "marche",
@@ -5431,7 +5444,7 @@
 "metroCount": 5,
 "score": 5.7,
 "weighted": true,
-"rank": 418
+"rank": 419
 },
 {
 "slug": "canterbury",
@@ -5444,7 +5457,7 @@
 "metroCount": 1,
 "score": 5.7,
 "weighted": true,
-"rank": 419
+"rank": 420
 },
 {
 "slug": "kigali",
@@ -5454,19 +5467,6 @@
 "type": "City",
 "continent": "Africa",
 "pop": 1745555,
-"metroCount": 1,
-"score": 5.7,
-"weighted": true,
-"rank": 420
-},
-{
-"slug": "xinzhu-hsinchu",
-"name": "Xinzhu [Hsinchu]",
-"country": "Taiwan",
-"countrySlug": "taiwan",
-"type": "County (Xian)",
-"continent": "Asia",
-"pop": 570775,
 "metroCount": 1,
 "score": 5.7,
 "weighted": true,
@@ -6214,6 +6214,19 @@
 "rank": 478
 },
 {
+"slug": "xinzhu-shi-hsinchu-shih",
+"name": "Xinzhu Shi [Hsinchu Shih]",
+"country": "Taiwan",
+"countrySlug": "taiwan",
+"type": "Provincial City",
+"continent": "Asia",
+"pop": 451412,
+"metroCount": 1,
+"score": 4.55,
+"weighted": true,
+"rank": 479
+},
+{
 "slug": "kabul",
 "name": "Kābul",
 "country": "Afghanistan",
@@ -6224,7 +6237,7 @@
 "metroCount": 1,
 "score": 4.5,
 "weighted": true,
-"rank": 479
+"rank": 480
 },
 {
 "slug": "new-providence",
@@ -6237,7 +6250,7 @@
 "metroCount": 1,
 "score": 4.5,
 "weighted": true,
-"rank": 480
+"rank": 481
 },
 {
 "slug": "valparaiso",
@@ -6250,7 +6263,7 @@
 "metroCount": 2,
 "score": 4.5,
 "weighted": true,
-"rank": 481
+"rank": 482
 },
 {
 "slug": "la-altagracia",
@@ -6260,19 +6273,6 @@
 "type": "Province",
 "continent": "North America",
 "pop": 345822,
-"metroCount": 1,
-"score": 4.5,
-"weighted": true,
-"rank": 482
-},
-{
-"slug": "xinzhu-shi-hsinchu-shih",
-"name": "Xinzhu Shi [Hsinchu Shih]",
-"country": "Taiwan",
-"countrySlug": "taiwan",
-"type": "Provincial City",
-"continent": "Asia",
-"pop": 451412,
 "metroCount": 1,
 "score": 4.5,
 "weighted": true,

@@ -991,7 +991,7 @@
   },
   "arkansas": {
     "metros": 19,
-    "score": 12.68,
+    "score": 12.77,
     "weighted": true
   },
   "arkhangelsk-oblast": {
@@ -1721,7 +1721,7 @@
   },
   "bavaria": {
     "metros": 18,
-    "score": 79.97,
+    "score": 79.98,
     "weighted": true
   },
   "bay": {
@@ -1766,7 +1766,7 @@
   },
   "beijing": {
     "metros": 1,
-    "score": 110.63,
+    "score": 110.72,
     "weighted": true
   },
   "beja-portugal": {
@@ -2646,7 +2646,7 @@
   },
   "california": {
     "metros": 22,
-    "score": 329.0,
+    "score": 329.4,
     "weighted": true
   },
   "callao-provincia-constitutional-del-callao": {
@@ -2661,7 +2661,7 @@
   },
   "cambridgeshire": {
     "metros": 2,
-    "score": 9.82,
+    "score": 9.92,
     "weighted": true
   },
   "campania": {
@@ -3231,7 +3231,7 @@
   },
   "chiba": {
     "metros": 1,
-    "score": 20.93,
+    "score": 20.95,
     "weighted": true
   },
   "chiesanuova": {
@@ -3926,7 +3926,7 @@
   },
   "dc": {
     "metros": 1,
-    "score": 94.1,
+    "score": 94.0,
     "weighted": false
   },
   "debubawi-keyih-bahri": {
@@ -5176,7 +5176,7 @@
   },
   "gaoxiong-shi-kaohsiung-shih": {
     "metros": 1,
-    "score": 13.4,
+    "score": 13.3,
     "weighted": true
   },
   "garff": {
@@ -5666,7 +5666,7 @@
   },
   "guangdong": {
     "metros": 9,
-    "score": 148.6,
+    "score": 149.3,
     "weighted": true
   },
   "guangxi": {
@@ -6011,7 +6011,7 @@
   },
   "haryana": {
     "metros": 1,
-    "score": 11.45,
+    "score": 11.6,
     "weighted": true
   },
   "haskovo": {
@@ -6111,7 +6111,7 @@
   },
   "hebei": {
     "metros": 9,
-    "score": 47.95,
+    "score": 47.96,
     "weighted": true
   },
   "heilongjiang": {
@@ -6166,7 +6166,7 @@
   },
   "hesse": {
     "metros": 4,
-    "score": 43.86,
+    "score": 43.94,
     "weighted": true
   },
   "heves": {
@@ -6401,7 +6401,7 @@
   },
   "idaho": {
     "metros": 12,
-    "score": 13.4,
+    "score": 13.49,
     "weighted": true
   },
   "idlib": {
@@ -6436,7 +6436,7 @@
   },
   "ile-de-france": {
     "metros": 1,
-    "score": 138.54,
+    "score": 138.44,
     "weighted": true
   },
   "ilfov": {
@@ -6446,7 +6446,7 @@
   },
   "illinois": {
     "metros": 21,
-    "score": 104.36,
+    "score": 104.41,
     "weighted": true
   },
   "illizi": {
@@ -6561,7 +6561,7 @@
   },
   "iowa": {
     "metros": 16,
-    "score": 19.33,
+    "score": 19.38,
     "weighted": true
   },
   "iringa": {
@@ -7111,7 +7111,7 @@
   },
   "kanagawa": {
     "metros": 1,
-    "score": 30.77,
+    "score": 30.79,
     "weighted": true
   },
   "kandahar": {
@@ -8351,7 +8351,7 @@
   },
   "liaoning": {
     "metros": 8,
-    "score": 62.7,
+    "score": 62.8,
     "weighted": true
   },
   "lib": {
@@ -9191,7 +9191,7 @@
   },
   "maryland-united-states": {
     "metros": 5,
-    "score": 54.92,
+    "score": 54.86,
     "weighted": true
   },
   "masaya": {
@@ -9226,7 +9226,7 @@
   },
   "masovian": {
     "metros": 4,
-    "score": 33.9,
+    "score": 34.0,
     "weighted": true
   },
   "masqat-muscat": {
@@ -9501,7 +9501,7 @@
   },
   "michigan": {
     "metros": 19,
-    "score": 57.64,
+    "score": 57.74,
     "weighted": true
   },
   "michoacan": {
@@ -10266,7 +10266,7 @@
   },
   "national-capital-territory": {
     "metros": 1,
-    "score": 21.54,
+    "score": 21.81,
     "weighted": true
   },
   "navarre": {
@@ -10311,7 +10311,7 @@
   },
   "nebraska": {
     "metros": 11,
-    "score": 16.16,
+    "score": 16.06,
     "weighted": true
   },
   "neembucu": {
@@ -11281,7 +11281,7 @@
   },
   "ohio": {
     "metros": 17,
-    "score": 83.22,
+    "score": 83.32,
     "weighted": true
   },
   "oichili-dimani": {
@@ -11411,7 +11411,7 @@
   },
   "oregon": {
     "metros": 15,
-    "score": 35.36,
+    "score": 35.37,
     "weighted": true
   },
   "orellana": {
@@ -12666,7 +12666,7 @@
   },
   "rhineland-palatinate": {
     "metros": 7,
-    "score": 14.04,
+    "score": 14.05,
     "weighted": true
   },
   "rhode-island": {
@@ -13136,7 +13136,7 @@
   },
   "saitama": {
     "metros": 1,
-    "score": 24.47,
+    "score": 24.48,
     "weighted": true
   },
   "sakarya": {
@@ -13556,7 +13556,7 @@
   },
   "sao-paulo": {
     "metros": 28,
-    "score": 90.73,
+    "score": 90.83,
     "weighted": true
   },
   "sao-vicente-incl-santa-luzia-branco-raso": {
@@ -15111,7 +15111,7 @@
   },
   "taibei-shi-taipei-shih": {
     "metros": 1,
-    "score": 11.57,
+    "score": 11.54,
     "weighted": true
   },
   "taidong-taitung": {
@@ -15241,7 +15241,7 @@
   },
   "taoyuan-shi": {
     "metros": 1,
-    "score": 10.08,
+    "score": 10.06,
     "weighted": true
   },
   "taraba": {
@@ -15401,7 +15401,7 @@
   },
   "tennessee": {
     "metros": 15,
-    "score": 55.98,
+    "score": 55.88,
     "weighted": true
   },
   "terengganu": {
@@ -15421,7 +15421,7 @@
   },
   "texas": {
     "metros": 48,
-    "score": 208.57,
+    "score": 208.77,
     "weighted": true
   },
   "thaa-kolhumadulu": {
@@ -15631,7 +15631,7 @@
   },
   "tokyo": {
     "metros": 1,
-    "score": 46.79,
+    "score": 46.83,
     "weighted": true
   },
   "toledo": {
@@ -16146,7 +16146,7 @@
   },
   "uttar-pradesh": {
     "metros": 11,
-    "score": 37.61,
+    "score": 37.79,
     "weighted": true
   },
   "uttarakhand": {
@@ -16156,7 +16156,7 @@
   },
   "uusimaa": {
     "metros": 1,
-    "score": 24.0,
+    "score": 23.9,
     "weighted": true
   },
   "uva": {
@@ -16516,7 +16516,7 @@
   },
   "virginia": {
     "metros": 15,
-    "score": 69.22,
+    "score": 69.19,
     "weighted": true
   },
   "virovitica-podravina": {
@@ -16666,7 +16666,7 @@
   },
   "washington": {
     "metros": 13,
-    "score": 76.3,
+    "score": 76.0,
     "weighted": true
   },
   "wasit": {
@@ -16836,7 +16836,7 @@
   },
   "west-virginia": {
     "metros": 13,
-    "score": 7.45,
+    "score": 7.44,
     "weighted": true
   },
   "west-yorkshire": {
@@ -17041,7 +17041,7 @@
   },
   "xinbei-shi-new-taipei-city": {
     "metros": 1,
-    "score": 17.92,
+    "score": 17.87,
     "weighted": true
   },
   "xinjiang": {
@@ -17051,12 +17051,12 @@
   },
   "xinzhu-hsinchu": {
     "metros": 1,
-    "score": 5.7,
+    "score": 5.75,
     "weighted": true
   },
   "xinzhu-shi-hsinchu-shih": {
     "metros": 1,
-    "score": 4.5,
+    "score": 4.55,
     "weighted": true
   },
   "xorazm-khorezm": {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T19:27:13+00:00",
+  "generatedAt": "2026-09-06T10:21:54+00:00",
   "schemaVersion": 1,
   "issues": [
     {
@@ -4116,7 +4116,7 @@
     {
       "issue": 233,
       "date": "2026-08-31",
-      "lockedAt": null,
+      "lockedAt": "2026-09-06T10:21:54+00:00",
       "questions": [
         {
           "mode": "pinpoint",
@@ -4164,7 +4164,7 @@
     {
       "issue": 234,
       "date": "2026-09-01",
-      "lockedAt": null,
+      "lockedAt": "2026-09-06T10:21:54+00:00",
       "questions": [
         {
           "mode": "badge-holder",
@@ -4215,7 +4215,7 @@
     {
       "issue": 235,
       "date": "2026-09-02",
-      "lockedAt": null,
+      "lockedAt": "2026-09-06T10:21:54+00:00",
       "questions": [
         {
           "mode": "pinpoint",
@@ -4263,7 +4263,7 @@
     {
       "issue": 236,
       "date": "2026-09-03",
-      "lockedAt": null,
+      "lockedAt": "2026-09-06T10:21:54+00:00",
       "questions": [
         {
           "mode": "pinpoint",
@@ -4311,7 +4311,7 @@
     {
       "issue": 237,
       "date": "2026-09-04",
-      "lockedAt": null,
+      "lockedAt": "2026-09-06T10:21:54+00:00",
       "questions": [
         {
           "mode": "badge-holder",
@@ -4359,7 +4359,7 @@
     {
       "issue": 238,
       "date": "2026-09-05",
-      "lockedAt": null,
+      "lockedAt": "2026-09-06T10:21:54+00:00",
       "questions": [
         {
           "mode": "pinpoint",
@@ -4407,7 +4407,7 @@
     {
       "issue": 239,
       "date": "2026-09-06",
-      "lockedAt": null,
+      "lockedAt": "2026-09-06T10:21:54+00:00",
       "questions": [
         {
           "mode": "pinpoint",
@@ -4455,7 +4455,7 @@
     {
       "issue": 240,
       "date": "2026-09-07",
-      "lockedAt": null,
+      "lockedAt": "2026-09-06T10:21:54+00:00",
       "questions": [
         {
           "mode": "pinpoint",
@@ -4509,46 +4509,46 @@
         {
           "mode": "badge-holder",
           "multiplier": 1,
-          "answerSlug": "manama",
-          "clueTemplate": "badge-holder:twin-metros",
+          "answerSlug": "reykjavik",
+          "clueTemplate": "badge-holder:conurbations",
           "extra": {
-            "badge": "twin-metros"
+            "badge": "conurbations"
           }
         },
         {
           "mode": "tier-reveal",
           "multiplier": 1,
-          "answerSlug": "monterrey",
+          "answerSlug": "johor-bahru",
           "clueTemplate": "tier-reveal:second-ranked-in-country",
           "extra": {
             "variant": "second-ranked-in-country"
           }
         },
         {
-          "mode": "top-teams",
+          "mode": "conurbation-member",
           "multiplier": 2,
-          "answerSlug": "columbus",
+          "answerSlug": "hangzhou",
+          "clueTemplate": "conurbation-member:c022",
+          "extra": {
+            "clusterId": "c022"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "chicago",
           "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "team": "Columbus Blue Jackets"
+            "team": "Chicago Bears"
           }
         },
         {
           "mode": "dimension-capital",
           "multiplier": 3,
-          "answerSlug": "philadelphia",
-          "clueTemplate": "dimension-capital:topUniHospResearch:top-50",
-          "hookDimension": "topUniHospResearch",
-          "tierBand": "top-50"
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "guangzhou",
-          "clueTemplate": "conurbation-member:c001",
-          "extra": {
-            "clusterId": "c001"
-          }
+          "answerSlug": "moscow",
+          "clueTemplate": "dimension-capital:museumsLandmarks:top-10",
+          "hookDimension": "museumsLandmarks",
+          "tierBand": "top-10"
         }
       ]
     },
@@ -4560,45 +4560,45 @@
         {
           "mode": "badge-holder",
           "multiplier": 1,
-          "answerSlug": "haikou",
-          "clueTemplate": "badge-holder:skyline-cities",
+          "answerSlug": "maastricht",
+          "clueTemplate": "badge-holder:academic-gravity-wells",
           "extra": {
-            "badge": "skyline-cities"
+            "badge": "academic-gravity-wells"
           }
         },
         {
           "mode": "tier-reveal",
           "multiplier": 1,
-          "answerSlug": "hanoi",
+          "answerSlug": "montreal",
           "clueTemplate": "tier-reveal:second-ranked-in-country",
           "extra": {
             "variant": "second-ranked-in-country"
           }
         },
         {
-          "mode": "conurbation-member",
+          "mode": "top-teams",
           "multiplier": 2,
-          "answerSlug": "edinburgh",
-          "clueTemplate": "conurbation-member:c039",
+          "answerSlug": "nashville",
+          "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "clusterId": "c039"
+            "team": "Tennessee Titans"
           }
         },
         {
           "mode": "dimension-capital",
           "multiplier": 3,
-          "answerSlug": "houston",
+          "answerSlug": "dallas",
           "clueTemplate": "dimension-capital:museumsLandmarks:top-50",
           "hookDimension": "museumsLandmarks",
           "tierBand": "top-50"
         },
         {
-          "mode": "top-teams",
+          "mode": "conurbation-member",
           "multiplier": 3,
-          "answerSlug": "washington-baltimore",
-          "clueTemplate": "top-teams:marquee-team",
+          "answerSlug": "dubai-sharjah",
+          "clueTemplate": "conurbation-member:c010",
           "extra": {
-            "team": "Baltimore Ravens"
+            "clusterId": "c010"
           }
         }
       ]
@@ -4609,44 +4609,47 @@
       "lockedAt": null,
       "questions": [
         {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "newcastle-maitland",
-          "clueTemplate": "pinpoint"
-        },
-        {
           "mode": "badge-holder",
           "multiplier": 1,
-          "answerSlug": "austin",
-          "clueTemplate": "badge-holder:overperformer",
+          "answerSlug": "colombo",
+          "clueTemplate": "badge-holder:skyline-cities",
           "extra": {
-            "badge": "overperformer"
+            "badge": "skyline-cities"
           }
         },
         {
           "mode": "tier-reveal",
-          "multiplier": 2,
-          "answerSlug": "jeddah",
+          "multiplier": 1,
+          "answerSlug": "delhi",
           "clueTemplate": "tier-reveal:second-ranked-in-country",
           "extra": {
             "variant": "second-ranked-in-country"
           }
         },
         {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "birmingham",
+          "clueTemplate": "conurbation-member:c042",
+          "extra": {
+            "clusterId": "c042"
+          }
+        },
+        {
           "mode": "dimension-capital",
           "multiplier": 3,
-          "answerSlug": "rhine-ruhr",
-          "clueTemplate": "dimension-capital:airportScore:top-50",
-          "hookDimension": "airportScore",
+          "answerSlug": "boston",
+          "clueTemplate": "dimension-capital:museumsLandmarks:top-50",
+          "hookDimension": "museumsLandmarks",
           "tierBand": "top-50"
         },
         {
           "mode": "top-teams",
           "multiplier": 3,
-          "answerSlug": "miami",
+          "answerSlug": "san-francisco-san-jose",
           "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "team": "Miami Dolphins"
+            "team": "San Francisco 49ers"
           }
         }
       ]
@@ -4659,42 +4662,45 @@
         {
           "mode": "badge-holder",
           "multiplier": 1,
-          "answerSlug": "astana",
-          "clueTemplate": "badge-holder:skyline-cities",
+          "answerSlug": "lexington",
+          "clueTemplate": "badge-holder:academic-gravity-wells",
           "extra": {
-            "badge": "skyline-cities"
+            "badge": "academic-gravity-wells"
           }
         },
         {
-          "mode": "pinpoint",
+          "mode": "tier-reveal",
           "multiplier": 1,
-          "answerSlug": "warsaw",
-          "clueTemplate": "pinpoint"
-        },
-        {
-          "mode": "top-teams",
-          "multiplier": 2,
-          "answerSlug": "new-orleans",
-          "clueTemplate": "top-teams:marquee-team",
+          "answerSlug": "geneva",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
           "extra": {
-            "team": "New Orleans Saints"
+            "variant": "second-ranked-in-country"
           }
         },
         {
           "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "sao-paulo",
-          "clueTemplate": "conurbation-member:c008",
+          "multiplier": 2,
+          "answerSlug": "vancouver",
+          "clueTemplate": "conurbation-member:c023",
           "extra": {
-            "clusterId": "c008"
+            "clusterId": "c023"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "atlanta",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Atlanta Falcons"
           }
         },
         {
           "mode": "dimension-capital",
           "multiplier": 3,
-          "answerSlug": "beijing",
-          "clueTemplate": "dimension-capital:museumsLandmarks:top-10",
-          "hookDimension": "museumsLandmarks",
+          "answerSlug": "seoul",
+          "clueTemplate": "dimension-capital:metroStations:top-10",
+          "hookDimension": "metroStations",
           "tierBand": "top-10"
         }
       ]
@@ -4705,47 +4711,44 @@
       "lockedAt": null,
       "questions": [
         {
-          "mode": "badge-holder",
+          "mode": "pinpoint",
           "multiplier": 1,
-          "answerSlug": "nantes",
-          "clueTemplate": "badge-holder:twin-metros",
-          "extra": {
-            "badge": "twin-metros"
-          }
+          "answerSlug": "amman",
+          "clueTemplate": "pinpoint"
         },
         {
-          "mode": "tier-reveal",
+          "mode": "badge-holder",
           "multiplier": 1,
-          "answerSlug": "thessaloniki",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "answerSlug": "bogota",
+          "clueTemplate": "badge-holder:global-gateway",
           "extra": {
-            "variant": "second-ranked-in-country"
+            "badge": "global-gateway"
           }
         },
         {
           "mode": "top-teams",
           "multiplier": 2,
-          "answerSlug": "pittsburgh",
+          "answerSlug": "denver",
           "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "team": "Pittsburgh Steelers"
+            "team": "Denver Broncos"
           }
         },
         {
           "mode": "dimension-capital",
           "multiplier": 3,
           "answerSlug": "istanbul",
-          "clueTemplate": "dimension-capital:culturalEvents:top-50",
-          "hookDimension": "culturalEvents",
+          "clueTemplate": "dimension-capital:trainHubs:top-50",
+          "hookDimension": "trainHubs",
           "tierBand": "top-50"
         },
         {
           "mode": "conurbation-member",
           "multiplier": 3,
-          "answerSlug": "buenos-aires",
-          "clueTemplate": "conurbation-member:c014",
+          "answerSlug": "dubai-sharjah",
+          "clueTemplate": "conurbation-member:c010",
           "extra": {
-            "clusterId": "c014"
+            "clusterId": "c010"
           }
         }
       ]
@@ -4756,15 +4759,168 @@
       "lockedAt": null,
       "questions": [
         {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "dhaka",
+          "clueTemplate": "badge-holder:twin-metros",
+          "extra": {
+            "badge": "twin-metros"
+          }
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "ankara",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "marseille",
+          "clueTemplate": "conurbation-member:c056",
+          "extra": {
+            "clusterId": "c056"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "bangkok",
+          "clueTemplate": "dimension-capital:companies:top-50",
+          "hookDimension": "companies",
+          "tierBand": "top-50"
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "london",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Essex"
+          }
+        }
+      ]
+    },
+    {
+      "issue": 328,
+      "date": "2026-09-14",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "addis-ababa",
+          "clueTemplate": "badge-holder:isolated-capital",
+          "extra": {
+            "badge": "isolated-capital"
+          }
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "abu-dhabi",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "doha",
+          "clueTemplate": "conurbation-member:c027",
+          "extra": {
+            "clusterId": "c027"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "sydney",
+          "clueTemplate": "dimension-capital:topUniHospResearch:top-50",
+          "hookDimension": "topUniHospResearch",
+          "tierBand": "top-50"
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "san-francisco-san-jose",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "San Francisco 49ers"
+          }
+        }
+      ]
+    },
+    {
+      "issue": 329,
+      "date": "2026-09-15",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "phnom-penh",
+          "clueTemplate": "badge-holder:skyline-cities",
+          "extra": {
+            "badge": "skyline-cities"
+          }
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "alexandria",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "liverpool",
+          "clueTemplate": "conurbation-member:c050",
+          "extra": {
+            "clusterId": "c050"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "boston",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "New England Patriots"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "sydney",
+          "clueTemplate": "dimension-capital:airportScore:top-50",
+          "hookDimension": "airportScore",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 330,
+      "date": "2026-09-16",
+      "lockedAt": null,
+      "questions": [
+        {
           "mode": "pinpoint",
           "multiplier": 1,
-          "answerSlug": "dakar",
+          "answerSlug": "zibo",
           "clueTemplate": "pinpoint"
         },
         {
           "mode": "badge-holder",
           "multiplier": 1,
-          "answerSlug": "naples",
+          "answerSlug": "caracas",
           "clueTemplate": "badge-holder:conurbations",
           "extra": {
             "badge": "conurbations"
@@ -4773,7 +4929,7 @@
         {
           "mode": "tier-reveal",
           "multiplier": 2,
-          "answerSlug": "manchester",
+          "answerSlug": "porto",
           "clueTemplate": "tier-reveal:second-ranked-in-country",
           "extra": {
             "variant": "second-ranked-in-country"
@@ -4782,9 +4938,642 @@
         {
           "mode": "dimension-capital",
           "multiplier": 3,
+          "answerSlug": "miami",
+          "clueTemplate": "dimension-capital:portsExchangesInfra:top-10",
+          "hookDimension": "portsExchangesInfra",
+          "tierBand": "top-10"
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "dallas",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Dallas Cowboys"
+          }
+        }
+      ]
+    },
+    {
+      "issue": 354,
+      "date": "2026-09-17",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "kunming",
+          "clueTemplate": "badge-holder:global-gateway",
+          "extra": {
+            "badge": "global-gateway"
+          }
+        },
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "dammam",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 2,
+          "answerSlug": "auckland",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "New Zealand Warriors"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "osaka-kyoto-kobe",
+          "clueTemplate": "dimension-capital:skyscrapers:top-50",
+          "hookDimension": "skyscrapers",
+          "tierBand": "top-50"
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 3,
+          "answerSlug": "boston",
+          "clueTemplate": "conurbation-member:c002",
+          "extra": {
+            "clusterId": "c002"
+          }
+        }
+      ]
+    },
+    {
+      "issue": 355,
+      "date": "2026-09-18",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "nottingham",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "chennai",
+          "clueTemplate": "badge-holder:rail-hub",
+          "extra": {
+            "badge": "rail-hub"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "ho-chi-minh-city",
+          "clueTemplate": "conurbation-member:c051",
+          "extra": {
+            "clusterId": "c051"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "atlanta",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Atlanta Falcons"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "madrid",
+          "clueTemplate": "dimension-capital:metroStations:top-50",
+          "hookDimension": "metroStations",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 356,
+      "date": "2026-09-19",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "puerto-vallarta",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "upper-silesian",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "cairo",
+          "clueTemplate": "conurbation-member:c019",
+          "extra": {
+            "clusterId": "c019"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "chicago",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Chicago Bears"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
           "answerSlug": "istanbul",
+          "clueTemplate": "dimension-capital:trainHubs:top-50",
+          "hookDimension": "trainHubs",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 357,
+      "date": "2026-09-20",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "bangalore",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "tehran",
+          "clueTemplate": "badge-holder:rail-hub",
+          "extra": {
+            "badge": "rail-hub"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 2,
+          "answerSlug": "charlotte",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Carolina Panthers"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 3,
+          "answerSlug": "madrid",
+          "clueTemplate": "conurbation-member:c004",
+          "extra": {
+            "clusterId": "c004"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "washington-baltimore",
+          "clueTemplate": "dimension-capital:marketCap:top-50",
+          "hookDimension": "marketCap",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 358,
+      "date": "2026-09-21",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "taiyuan",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "taichung",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 2,
+          "answerSlug": "san-diego",
+          "clueTemplate": "badge-holder:overperformer",
+          "extra": {
+            "badge": "overperformer"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "barcelona",
+          "clueTemplate": "dimension-capital:metroStations:top-50",
+          "hookDimension": "metroStations",
+          "tierBand": "top-50"
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "san-francisco-san-jose",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "San Francisco 49ers"
+          }
+        }
+      ]
+    },
+    {
+      "issue": 359,
+      "date": "2026-09-22",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "edmonton",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "busan-ulsan",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 2,
+          "answerSlug": "kansas-city",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Kansas City Chiefs"
+          }
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 3,
+          "answerSlug": "berlin",
+          "clueTemplate": "badge-holder:overperformer",
+          "extra": {
+            "badge": "overperformer"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "mumbai",
+          "clueTemplate": "dimension-capital:marketCap:top-50",
+          "hookDimension": "marketCap",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 360,
+      "date": "2026-09-23",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "sanya",
+          "clueTemplate": "badge-holder:culture-capital",
+          "extra": {
+            "badge": "culture-capital"
+          }
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "bergen",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "dublin",
+          "clueTemplate": "conurbation-member:c036",
+          "extra": {
+            "clusterId": "c036"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "bangkok",
           "clueTemplate": "dimension-capital:culturalEvents:top-50",
           "hookDimension": "culturalEvents",
+          "tierBand": "top-50"
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "los-angeles",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Los Angeles Chargers"
+          }
+        }
+      ]
+    },
+    {
+      "issue": 386,
+      "date": "2026-09-24",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "albany",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "karachi",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 2,
+          "answerSlug": "taipei",
+          "clueTemplate": "badge-holder:twin-metros",
+          "extra": {
+            "badge": "twin-metros"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "miami",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Miami Dolphins"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "milan",
+          "clueTemplate": "dimension-capital:culturalEvents:top-50",
+          "hookDimension": "culturalEvents",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 387,
+      "date": "2026-09-25",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "port-elizabeth",
+          "clueTemplate": "badge-holder:conurbations",
+          "extra": {
+            "badge": "conurbations"
+          }
+        },
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "ahmedabad",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 2,
+          "answerSlug": "las-vegas",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Las Vegas Raiders"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 3,
+          "answerSlug": "madrid",
+          "clueTemplate": "conurbation-member:c004",
+          "extra": {
+            "clusterId": "c004"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "istanbul",
+          "clueTemplate": "dimension-capital:majorLeagueTeams:top-50",
+          "hookDimension": "majorLeagueTeams",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 388,
+      "date": "2026-09-26",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "ulm",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "budapest",
+          "clueTemplate": "badge-holder:culture-capital",
+          "extra": {
+            "badge": "culture-capital"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 2,
+          "answerSlug": "portland",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Portland Trail Blazers"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "hong-kong",
+          "clueTemplate": "dimension-capital:companies:top-50",
+          "hookDimension": "companies",
+          "tierBand": "top-50"
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 3,
+          "answerSlug": "sao-paulo",
+          "clueTemplate": "conurbation-member:c008",
+          "extra": {
+            "clusterId": "c008"
+          }
+        }
+      ]
+    },
+    {
+      "issue": 389,
+      "date": "2026-09-27",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "zhenjiang",
+          "clueTemplate": "badge-holder:skyline-cities",
+          "extra": {
+            "badge": "skyline-cities"
+          }
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "st-petersburg",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "leeds-bradford",
+          "clueTemplate": "conurbation-member:c061",
+          "extra": {
+            "clusterId": "c061"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "washington-baltimore",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Baltimore Ravens"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "new-york",
+          "clueTemplate": "dimension-capital:marketCap:top-3",
+          "hookDimension": "marketCap",
+          "tierBand": "top-3"
+        }
+      ]
+    },
+    {
+      "issue": 390,
+      "date": "2026-09-28",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "algiers",
+          "clueTemplate": "badge-holder:isolated-capital",
+          "extra": {
+            "badge": "isolated-capital"
+          }
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 1,
+          "answerSlug": "manchester",
+          "clueTemplate": "tier-reveal:second-ranked-in-country",
+          "extra": {
+            "variant": "second-ranked-in-country"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 2,
+          "answerSlug": "calgary",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Calgary Flames"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 3,
+          "answerSlug": "hong-kong",
+          "clueTemplate": "conurbation-member:c003",
+          "extra": {
+            "clusterId": "c003"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "shanghai",
+          "clueTemplate": "dimension-capital:companies:top-50",
+          "hookDimension": "companies",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 420,
+      "date": "2026-09-29",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "lucerne",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "genoa",
+          "clueTemplate": "badge-holder:conurbations",
+          "extra": {
+            "badge": "conurbations"
+          }
+        },
+        {
+          "mode": "tier-reveal",
+          "multiplier": 2,
+          "answerSlug": "hong-kong",
+          "clueTemplate": "tier-reveal:only-continental-city-in-country",
+          "extra": {
+            "variant": "only-continental-city-in-country"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "barcelona",
+          "clueTemplate": "dimension-capital:airportScore:top-50",
+          "hookDimension": "airportScore",
           "tierBand": "top-50"
         },
         {
@@ -4799,114 +5588,309 @@
       ]
     },
     {
-      "issue": 328,
-      "date": "2026-09-14",
+      "issue": 443,
+      "date": "2026-09-30",
       "lockedAt": null,
       "questions": [
         {
           "mode": "pinpoint",
           "multiplier": 1,
-          "answerSlug": "pohang",
+          "answerSlug": "halifax-ns",
           "clueTemplate": "pinpoint"
         },
         {
           "mode": "tier-reveal",
           "multiplier": 1,
-          "answerSlug": "antwerp",
+          "answerSlug": "jeddah",
           "clueTemplate": "tier-reveal:second-ranked-in-country",
           "extra": {
             "variant": "second-ranked-in-country"
           }
         },
         {
-          "mode": "top-teams",
+          "mode": "conurbation-member",
           "multiplier": 2,
-          "answerSlug": "perth",
+          "answerSlug": "tel-aviv",
+          "clueTemplate": "conurbation-member:c029",
+          "extra": {
+            "clusterId": "c029"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "seattle",
           "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "team": "Fremantle"
+            "team": "Seattle Seahawks"
+          }
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 3,
+          "answerSlug": "amsterdam",
+          "clueTemplate": "badge-holder:finance-capital",
+          "extra": {
+            "badge": "finance-capital"
+          }
+        }
+      ]
+    },
+    {
+      "issue": 444,
+      "date": "2026-10-01",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "daytona-beach",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "cardiff",
+          "clueTemplate": "badge-holder:conurbations",
+          "extra": {
+            "badge": "conurbations"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "ningbo",
+          "clueTemplate": "conurbation-member:c059",
+          "extra": {
+            "clusterId": "c059"
           }
         },
         {
           "mode": "dimension-capital",
           "multiplier": 3,
-          "answerSlug": "amsterdam",
-          "clueTemplate": "dimension-capital:trainHubs:top-50",
-          "hookDimension": "trainHubs",
+          "answerSlug": "houston",
+          "clueTemplate": "dimension-capital:topUniHospResearch:top-50",
+          "hookDimension": "topUniHospResearch",
           "tierBand": "top-50"
         },
         {
-          "mode": "conurbation-member",
+          "mode": "top-teams",
           "multiplier": 3,
-          "answerSlug": "barcelona",
-          "clueTemplate": "conurbation-member:c011",
+          "answerSlug": "boston",
+          "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "clusterId": "c011"
+            "team": "New England Patriots"
           }
         }
       ]
     },
     {
-      "issue": 329,
-      "date": "2026-09-15",
+      "issue": 445,
+      "date": "2026-10-02",
       "lockedAt": null,
       "questions": [
         {
           "mode": "pinpoint",
           "multiplier": 1,
-          "answerSlug": "ottawa",
+          "answerSlug": "charleston",
           "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "lausanne",
+          "clueTemplate": "badge-holder:overperformer",
+          "extra": {
+            "badge": "overperformer"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 2,
+          "answerSlug": "detroit",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Detroit Lions"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 3,
+          "answerSlug": "hong-kong",
+          "clueTemplate": "conurbation-member:c003",
+          "extra": {
+            "clusterId": "c003"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "rhine-ruhr",
+          "clueTemplate": "dimension-capital:majorLeagueTeams:top-50",
+          "hookDimension": "majorLeagueTeams",
+          "tierBand": "top-50"
+        }
+      ]
+    },
+    {
+      "issue": 446,
+      "date": "2026-10-03",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "huzhou",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "vienna",
+          "clueTemplate": "badge-holder:culture-capital",
+          "extra": {
+            "badge": "culture-capital"
+          }
+        },
+        {
+          "mode": "conurbation-member",
+          "multiplier": 2,
+          "answerSlug": "xiamen",
+          "clueTemplate": "conurbation-member:c047",
+          "extra": {
+            "clusterId": "c047"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 3,
+          "answerSlug": "chicago",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Chicago Bears"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "new-york",
+          "clueTemplate": "dimension-capital:majorSportingEvents:top-10",
+          "hookDimension": "majorSportingEvents",
+          "tierBand": "top-10"
+        }
+      ]
+    },
+    {
+      "issue": 447,
+      "date": "2026-10-04",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "champaign",
+          "clueTemplate": "badge-holder:academic-gravity-wells",
+          "extra": {
+            "badge": "academic-gravity-wells"
+          }
         },
         {
           "mode": "tier-reveal",
           "multiplier": 1,
-          "answerSlug": "surabaya",
+          "answerSlug": "delhi",
           "clueTemplate": "tier-reveal:second-ranked-in-country",
           "extra": {
             "variant": "second-ranked-in-country"
           }
         },
         {
-          "mode": "top-teams",
+          "mode": "conurbation-member",
           "multiplier": 2,
-          "answerSlug": "minneapolis",
-          "clueTemplate": "top-teams:marquee-team",
+          "answerSlug": "prague",
+          "clueTemplate": "conurbation-member:c040",
           "extra": {
-            "team": "Minnesota Vikings"
+            "clusterId": "c040"
           }
         },
         {
-          "mode": "badge-holder",
+          "mode": "top-teams",
           "multiplier": 3,
-          "answerSlug": "mexico-city",
-          "clueTemplate": "badge-holder:isolated-capital",
+          "answerSlug": "houston",
+          "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "badge": "isolated-capital"
+            "team": "Houston Texans"
           }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "london",
+          "clueTemplate": "dimension-capital:portsExchangesInfra:top-3",
+          "hookDimension": "portsExchangesInfra",
+          "tierBand": "top-3"
+        }
+      ]
+    },
+    {
+      "issue": 448,
+      "date": "2026-10-05",
+      "lockedAt": null,
+      "questions": [
+        {
+          "mode": "pinpoint",
+          "multiplier": 1,
+          "answerSlug": "bern",
+          "clueTemplate": "pinpoint"
+        },
+        {
+          "mode": "badge-holder",
+          "multiplier": 1,
+          "answerSlug": "lille",
+          "clueTemplate": "badge-holder:rail-hub",
+          "extra": {
+            "badge": "rail-hub"
+          }
+        },
+        {
+          "mode": "top-teams",
+          "multiplier": 2,
+          "answerSlug": "indianapolis",
+          "clueTemplate": "top-teams:marquee-team",
+          "extra": {
+            "team": "Indianapolis Colts"
+          }
+        },
+        {
+          "mode": "dimension-capital",
+          "multiplier": 3,
+          "answerSlug": "kuala-lumpur",
+          "clueTemplate": "dimension-capital:airportScore:top-50",
+          "hookDimension": "airportScore",
+          "tierBand": "top-50"
         },
         {
           "mode": "conurbation-member",
           "multiplier": 3,
-          "answerSlug": "bangkok",
-          "clueTemplate": "conurbation-member:c012",
+          "answerSlug": "dubai-sharjah",
+          "clueTemplate": "conurbation-member:c010",
           "extra": {
-            "clusterId": "c012"
+            "clusterId": "c010"
           }
         }
       ]
     },
     {
-      "issue": 330,
-      "date": "2026-09-16",
+      "issue": 449,
+      "date": "2026-10-06",
       "lockedAt": null,
       "questions": [
         {
           "mode": "badge-holder",
           "multiplier": 1,
-          "answerSlug": "gainesville",
-          "clueTemplate": "badge-holder:conurbations",
+          "answerSlug": "luanda",
+          "clueTemplate": "badge-holder:isolated-capital",
           "extra": {
-            "badge": "conurbations"
+            "badge": "isolated-capital"
           }
         },
         {
@@ -4919,668 +5903,81 @@
           }
         },
         {
-          "mode": "top-teams",
-          "multiplier": 2,
-          "answerSlug": "cincinnati",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Cincinnati Bengals"
-          }
-        },
-        {
           "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "melbourne",
-          "clueTemplate": "conurbation-member:c009",
+          "multiplier": 2,
+          "answerSlug": "copenhagen",
+          "clueTemplate": "conurbation-member:c031",
           "extra": {
-            "clusterId": "c009"
+            "clusterId": "c031"
           }
         },
         {
           "mode": "dimension-capital",
           "multiplier": 3,
-          "answerSlug": "shanghai",
-          "clueTemplate": "dimension-capital:topUniHospResearch:top-10",
-          "hookDimension": "topUniHospResearch",
-          "tierBand": "top-10"
-        }
-      ]
-    },
-    {
-      "issue": 354,
-      "date": "2026-09-17",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "gwangju",
-          "clueTemplate": "pinpoint"
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 1,
-          "answerSlug": "thessaloniki",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
-          "extra": {
-            "variant": "second-ranked-in-country"
-          }
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 2,
-          "answerSlug": "valencia",
-          "clueTemplate": "conurbation-member:c043",
-          "extra": {
-            "clusterId": "c043"
-          }
-        },
-        {
-          "mode": "top-teams",
-          "multiplier": 3,
-          "answerSlug": "melbourne",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Carlton"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "mumbai",
+          "answerSlug": "madrid",
           "clueTemplate": "dimension-capital:marketCap:top-50",
           "hookDimension": "marketCap",
           "tierBand": "top-50"
-        }
-      ]
-    },
-    {
-      "issue": 355,
-      "date": "2026-09-18",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "quebec-city",
-          "clueTemplate": "badge-holder:academic-gravity-wells",
-          "extra": {
-            "badge": "academic-gravity-wells"
-          }
-        },
-        {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "guiyang",
-          "clueTemplate": "pinpoint"
         },
         {
           "mode": "top-teams",
-          "multiplier": 2,
-          "answerSlug": "brisbane",
+          "multiplier": 3,
+          "answerSlug": "miami",
           "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "team": "Brisbane Lions"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "istanbul",
-          "clueTemplate": "dimension-capital:skyscrapers:top-50",
-          "hookDimension": "skyscrapers",
-          "tierBand": "top-50"
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "hong-kong",
-          "clueTemplate": "conurbation-member:c003",
-          "extra": {
-            "clusterId": "c003"
+            "team": "Miami Dolphins"
           }
         }
       ]
     },
     {
-      "issue": 356,
-      "date": "2026-09-19",
+      "issue": 450,
+      "date": "2026-10-07",
       "lockedAt": null,
       "questions": [
         {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "george-town",
-          "clueTemplate": "pinpoint"
-        },
-        {
           "mode": "badge-holder",
           "multiplier": 1,
-          "answerSlug": "goiania",
+          "answerSlug": "daejeon",
           "clueTemplate": "badge-holder:skyline-cities",
           "extra": {
             "badge": "skyline-cities"
           }
         },
         {
-          "mode": "conurbation-member",
-          "multiplier": 2,
-          "answerSlug": "nagoya",
-          "clueTemplate": "conurbation-member:c028",
-          "extra": {
-            "clusterId": "c028"
-          }
-        },
-        {
-          "mode": "top-teams",
-          "multiplier": 3,
-          "answerSlug": "boston",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "New England Patriots"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "paris",
-          "clueTemplate": "dimension-capital:marketCap:top-10",
-          "hookDimension": "marketCap",
-          "tierBand": "top-10"
-        }
-      ]
-    },
-    {
-      "issue": 357,
-      "date": "2026-09-20",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "baku",
-          "clueTemplate": "pinpoint"
-        },
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "stuttgart",
-          "clueTemplate": "badge-holder:rail-hub",
-          "extra": {
-            "badge": "rail-hub"
-          }
-        },
-        {
           "mode": "tier-reveal",
-          "multiplier": 2,
-          "answerSlug": "barcelona",
+          "multiplier": 1,
+          "answerSlug": "monterrey",
           "clueTemplate": "tier-reveal:second-ranked-in-country",
           "extra": {
             "variant": "second-ranked-in-country"
           }
         },
         {
-          "mode": "top-teams",
-          "multiplier": 3,
-          "answerSlug": "houston",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Houston Texans"
-          }
-        },
-        {
           "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "boston",
-          "clueTemplate": "conurbation-member:c002",
-          "extra": {
-            "clusterId": "c002"
-          }
-        }
-      ]
-    },
-    {
-      "issue": 358,
-      "date": "2026-09-21",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "karlsruhe",
-          "clueTemplate": "badge-holder:academic-gravity-wells",
-          "extra": {
-            "badge": "academic-gravity-wells"
-          }
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 1,
-          "answerSlug": "rotterdam-the-hague",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
-          "extra": {
-            "variant": "second-ranked-in-country"
-          }
-        },
-        {
-          "mode": "top-teams",
           "multiplier": 2,
-          "answerSlug": "tampa",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Tampa Bay Buccaneers"
-          }
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "milan",
-          "clueTemplate": "conurbation-member:c005",
-          "extra": {
-            "clusterId": "c005"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "hong-kong",
-          "clueTemplate": "dimension-capital:culturalEvents:top-50",
-          "hookDimension": "culturalEvents",
-          "tierBand": "top-50"
-        }
-      ]
-    },
-    {
-      "issue": 359,
-      "date": "2026-09-22",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "bilbao",
-          "clueTemplate": "badge-holder:greying-power",
-          "extra": {
-            "badge": "greying-power"
-          }
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 1,
-          "answerSlug": "gothenburg",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
-          "extra": {
-            "variant": "second-ranked-in-country"
-          }
-        },
-        {
-          "mode": "top-teams",
-          "multiplier": 2,
-          "answerSlug": "seattle",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Seattle Seahawks"
-          }
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "manila",
-          "clueTemplate": "conurbation-member:c017",
-          "extra": {
-            "clusterId": "c017"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "boston",
-          "clueTemplate": "dimension-capital:culturalEvents:top-50",
-          "hookDimension": "culturalEvents",
-          "tierBand": "top-50"
-        }
-      ]
-    },
-    {
-      "issue": 360,
-      "date": "2026-09-23",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "stavanger",
-          "clueTemplate": "pinpoint"
-        },
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "kuwait-city",
-          "clueTemplate": "badge-holder:isolated-capital",
-          "extra": {
-            "badge": "isolated-capital"
-          }
-        },
-        {
-          "mode": "top-teams",
-          "multiplier": 2,
-          "answerSlug": "melbourne",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Carlton"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "mumbai",
-          "clueTemplate": "dimension-capital:culturalEvents:top-50",
-          "hookDimension": "culturalEvents",
-          "tierBand": "top-50"
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "guangzhou",
-          "clueTemplate": "conurbation-member:c001",
-          "extra": {
-            "clusterId": "c001"
-          }
-        }
-      ]
-    },
-    {
-      "issue": 386,
-      "date": "2026-09-24",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "fayetteville",
-          "clueTemplate": "badge-holder:finance-capital",
-          "extra": {
-            "badge": "finance-capital"
-          }
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 1,
-          "answerSlug": "lyon",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
-          "extra": {
-            "variant": "second-ranked-in-country"
-          }
-        },
-        {
-          "mode": "top-teams",
-          "multiplier": 2,
-          "answerSlug": "atlanta",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Atlanta Falcons"
-          }
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "hong-kong",
+          "answerSlug": "macau",
           "clueTemplate": "conurbation-member:c003",
           "extra": {
             "clusterId": "c003"
           }
         },
         {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "osaka-kyoto-kobe",
-          "clueTemplate": "dimension-capital:universities:top-10",
-          "hookDimension": "universities",
-          "tierBand": "top-10"
-        }
-      ]
-    },
-    {
-      "issue": 387,
-      "date": "2026-09-25",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "lahore",
-          "clueTemplate": "badge-holder:frozen-conurbations",
-          "extra": {
-            "badge": "frozen-conurbations"
-          }
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 1,
-          "answerSlug": "cape-town",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
-          "extra": {
-            "variant": "second-ranked-in-country"
-          }
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 2,
-          "answerSlug": "nice",
-          "clueTemplate": "conurbation-member:c060",
-          "extra": {
-            "clusterId": "c060"
-          }
-        },
-        {
           "mode": "top-teams",
           "multiplier": 3,
-          "answerSlug": "boston",
+          "answerSlug": "dallas",
           "clueTemplate": "top-teams:marquee-team",
           "extra": {
-            "team": "New England Patriots"
+            "team": "Dallas Cowboys"
           }
         },
         {
           "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "munich",
-          "clueTemplate": "dimension-capital:luxuryStars:top-50",
-          "hookDimension": "luxuryStars",
-          "tierBand": "top-50"
-        }
-      ]
-    },
-    {
-      "issue": 388,
-      "date": "2026-09-26",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "southampton",
-          "clueTemplate": "badge-holder:megaregions",
-          "extra": {
-            "badge": "megaregions"
-          }
-        },
-        {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "tulsa",
-          "clueTemplate": "pinpoint"
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 2,
-          "answerSlug": "hong-kong",
-          "clueTemplate": "tier-reveal:only-continental-city-in-country",
-          "extra": {
-            "variant": "only-continental-city-in-country"
-          }
-        },
-        {
-          "mode": "top-teams",
           "multiplier": 3,
           "answerSlug": "houston",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Houston Texans"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "singapore",
-          "clueTemplate": "dimension-capital:luxuryStars:top-50",
-          "hookDimension": "luxuryStars",
+          "clueTemplate": "dimension-capital:airportScore:top-50",
+          "hookDimension": "airportScore",
           "tierBand": "top-50"
-        }
-      ]
-    },
-    {
-      "issue": 389,
-      "date": "2026-09-27",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "norfolk",
-          "clueTemplate": "pinpoint"
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 1,
-          "answerSlug": "cape-town",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
-          "extra": {
-            "variant": "second-ranked-in-country"
-          }
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 2,
-          "answerSlug": "jinan",
-          "clueTemplate": "conurbation-member:c052",
-          "extra": {
-            "clusterId": "c052"
-          }
-        },
-        {
-          "mode": "badge-holder",
-          "multiplier": 3,
-          "answerSlug": "sao-paulo",
-          "clueTemplate": "badge-holder:culture-capital",
-          "extra": {
-            "badge": "culture-capital"
-          }
-        },
-        {
-          "mode": "top-teams",
-          "multiplier": 3,
-          "answerSlug": "toronto",
-          "clueTemplate": "top-teams:marquee-team",
-          "extra": {
-            "team": "Toronto Blue Jays"
-          }
-        }
-      ]
-    },
-    {
-      "issue": 390,
-      "date": "2026-09-28",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "jinhua",
-          "clueTemplate": "pinpoint"
-        },
-        {
-          "mode": "badge-holder",
-          "multiplier": 1,
-          "answerSlug": "seville",
-          "clueTemplate": "badge-holder:cosmopolitan-capital",
-          "extra": {
-            "badge": "cosmopolitan-capital"
-          }
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 2,
-          "answerSlug": "rio-de-janeiro",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
-          "extra": {
-            "variant": "second-ranked-in-country"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "sydney",
-          "clueTemplate": "dimension-capital:topUniHospResearch:top-50",
-          "hookDimension": "topUniHospResearch",
-          "tierBand": "top-50"
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "hong-kong",
-          "clueTemplate": "conurbation-member:c003",
-          "extra": {
-            "clusterId": "c003"
-          }
-        }
-      ]
-    },
-    {
-      "issue": 420,
-      "date": "2026-09-29",
-      "lockedAt": null,
-      "questions": [
-        {
-          "mode": "pinpoint",
-          "multiplier": 1,
-          "answerSlug": "santos",
-          "clueTemplate": "pinpoint"
-        },
-        {
-          "mode": "tier-reveal",
-          "multiplier": 1,
-          "answerSlug": "rome",
-          "clueTemplate": "tier-reveal:second-ranked-in-country",
-          "extra": {
-            "variant": "second-ranked-in-country"
-          }
-        },
-        {
-          "mode": "badge-holder",
-          "multiplier": 2,
-          "answerSlug": "padua-venice",
-          "clueTemplate": "badge-holder:culture-capital",
-          "extra": {
-            "badge": "culture-capital"
-          }
-        },
-        {
-          "mode": "dimension-capital",
-          "multiplier": 3,
-          "answerSlug": "washington-baltimore",
-          "clueTemplate": "dimension-capital:companies:top-50",
-          "hookDimension": "companies",
-          "tierBand": "top-50"
-        },
-        {
-          "mode": "conurbation-member",
-          "multiplier": 3,
-          "answerSlug": "boston",
-          "clueTemplate": "conurbation-member:c002",
-          "extra": {
-            "clusterId": "c002"
-          }
         }
       ]
     }
