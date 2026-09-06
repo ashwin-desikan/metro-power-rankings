@@ -133,7 +133,7 @@ export default async function NflIndexPage() {
         {/* The four layers, as stat-cards that double as section nav - the numbers ARE the pitch. */}
         <div className="grid gap-2.5 grid-cols-2 lg:grid-cols-4">
           {[
-            { href: "#power", emoji: "\u{1F4C8}", stat: String(seasons.length || 107), label: "seasons rated", blurb: `One Elo model from ${firstSeason} to today, ${(index?.meta.team_weeks ?? 48636).toLocaleString("en-US")} team-weeks of it.` },
+            { href: "#now", emoji: "\u{1F4C8}", stat: String(seasons.length || 107), label: "seasons rated", blurb: `One Elo model from ${firstSeason} to today, ${(index?.meta.team_weeks ?? 48636).toLocaleString("en-US")} team-weeks of it.` },
             { href: "#all-time", emoji: "\u{1F3C6}", stat: String(totalChamps), label: "titles won", blurb: `Across the NFL, AAFC, AFL and Super Bowl era, shared by ${withChamps} of the ${franchises.length} franchises.` },
             { href: "#map", emoji: "\u{1F5FA}\uFE0F", stat: String(franchises.length), label: "active franchises", blurb: "Pinned where they play, with every city each one has left behind." },
             { href: "/teams/nfl/historical", emoji: "\u{1F47B}", stat: String(defunct.length), label: "franchises gone", blurb: "The Akron Pros to the Baltimore Colts: every club that stopped." },
@@ -157,8 +157,7 @@ export default async function NflIndexPage() {
 
       <HubNav
         items={[
-          { label: "Power rankings", href: "#power" },
-          { label: "Standings", href: "#standings" },
+          { label: "Rankings & standings", href: "#now" },
           { label: "Seasons since 1920", href: "/teams/nfl/season" },
           { label: "Map", href: "#map" },
           { label: "All-time table", href: "#all-time" },
@@ -169,21 +168,48 @@ export default async function NflIndexPage() {
         ]}
       />
 
-      <EloPowerRankings />
-
-      {/* Collapsible on Ashwin's call: the eight division tables are the longest
-          block on the page and the reader who wants them knows they want them.
-          desktopOpen={false} because the request was to collapse it, not to
-          collapse it on phones only. */}
-      <div id="standings" className="mb-10">
-        <Disclosure
-          title={<span className="text-base font-semibold">Current standings</span>}
-          meta="8 divisions"
-          desktopOpen={false}
-        >
-          <NflStandings />
-        </Disclosure>
-      </div>
+      {/* 🔴 THE TWO BOARDS ANSWER THE SAME QUESTION DIFFERENTLY, SO THEY SIT
+          SIDE BY SIDE. Stacked, a reader had to scroll a screen between "who is
+          rated highest" and "who is actually winning", which is exactly the
+          comparison worth making: the standings are what happened, the ratings
+          are how it happened, and the interesting teams are the ones where the
+          two disagree. They stack below xl, where there is no room for two. */}
+      <section className="mb-10">
+        <SectionHead
+          id="now"
+          title={`The ${live?.season ?? new Date().getFullYear()} season, two ways`}
+          sub="What the table says, and what the model says. The gap between them is the story."
+          more={
+            "Standings are the record: live from ESPN, refreshed hourly, with our own simulation of the rest of the schedule " +
+            "attached as playoff and title odds. The Elo board is the rating, which moves on margin and on who the result came " +
+            "against rather than on wins alone. A team high in one and low in the other is either being carried by its schedule " +
+            "or being wasted by it, and that is usually the most interesting team in the league."
+          }
+        />
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 items-start">
+          <div className="min-w-0">
+            <h3 className="text-sm font-semibold mb-2">Elo power rankings</h3>
+            <EloPowerRankings columns={2} bare />
+          </div>
+          <div className="min-w-0">
+            <h3 className="text-sm font-semibold mb-2">Current standings</h3>
+            <Disclosure
+              title={<span className="text-sm font-medium text-[var(--text-muted)]">Show the eight divisions</span>}
+              meta="live from ESPN"
+              /* 🔴 OPEN WHERE THE COMPARISON FITS, ONE TAP AWAY WHERE IT DOES
+                 NOT. Side by side on a desktop the two boards ARE the feature,
+                 so the standings are expanded and toggle-free there. Stacked on
+                 a phone they turned the hub into 9.4 screens, so the phone gets
+                 the control instead. §2, exactly. */
+              desktopOpen
+            >
+              <div className="p-3">
+                <NflStandings columns={2} bare />
+              </div>
+            </Disclosure>
+          </div>
+        </div>
+      </section>
 
       {/* 32-team sortable table. Logo and monogram maps are computed
           server-side so the client component never has to touch the

@@ -3,7 +3,6 @@ import type { CSSProperties } from "react";
 import { getNflEloIndex, getNflEloSeason } from "@/lib/nflElo";
 import { nflSlugForCanonical, logoUrlFor, monogramFor, MONOGRAM_BY_SLUG } from "@/lib/nfl";
 import { SectionHead } from "@/app/_shared/SectionHead";
-import { CappedList } from "@/app/_shared/Disclosure";
 
 // The live season's Elo, on the hub, all season long.
 //
@@ -17,13 +16,46 @@ import { CappedList } from "@/app/_shared/Disclosure";
 //
 // 🔴 MOVEMENT IS AGAINST LAST WEEK, NOT AGAINST THE SEED. "Up 4 since August"
 // stops being interesting in October. Where there is no previous rated week -
-// the whole preseason - no movement column is drawn rather than a column of
-// zeroes.
+// the whole preseason - no movement is drawn rather than a column of zeroes.
+//
+// 🔴 A 32-ROW LIST IS A COLUMN PROBLEM, NOT A DISCLOSURE PROBLEM. The first
+// build ran one row per team down the full width: 32 rows of 38px, most of it
+// empty, and the rest of the hub pushed a screen and a half down. A ranked list
+// reads perfectly well in columns, so it is now 2 columns on a phone and 4 on a
+// desktop, filled DOWN each column so 1 to 8 still reads top to bottom. Every
+// team stays on the page at every width; nothing is hidden behind a control,
+// which is what §2's "same information, different density" actually asks for.
+// Desktop height: about 250px for all 32.
 
 const MONO: CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
 const CARD: CSSProperties = { background: "var(--bg-card)", borderColor: "var(--border)" };
 
-export default async function EloPowerRankings() {
+/** Split into `n` runs so a column-major grid still reads 1, 2, 3 downward. */
+function chunk<T>(xs: T[], n: number): T[][] {
+  const size = Math.ceil(xs.length / n);
+  return Array.from({ length: n }, (_, i) => xs.slice(i * size, (i + 1) * size));
+}
+
+/** A row that is a link when the franchise has a page, and a div when it does
+ *  not, so the tap target is the row either way. */
+function RowTag({ href, children, ...rest }: { href?: string } & React.ComponentProps<"div">) {
+  if (href) {
+    const { className, style, title } = rest;
+    return <Link href={href} className={className} style={style} title={title}>{children}</Link>;
+  }
+  return <div {...rest}>{children}</div>;
+}
+
+export default async function EloPowerRankings({
+  columns = 4,
+  bare = false,
+}: {
+  /** Ranked columns at the widest breakpoint. 2 when the board sits beside the
+   *  standings rather than across the page. */
+  columns?: 2 | 4;
+  /** Drop the SectionHead: the page is heading the pair instead. */
+  bare?: boolean;
+} = {}) {
   const index = await getNflEloIndex().catch(() => null);
   const latest = index?.seasons[index.seasons.length - 1];
   if (!latest) return null;
@@ -37,56 +69,31 @@ export default async function EloPowerRankings() {
       const slug = nflSlugForCanonical(t.name);
       return {
         name: t.name,
-        label: [t.city, t.team].filter(Boolean).join(" ") || t.name,
+        short: t.team ?? t.name,
+        full: [t.city, t.team].filter(Boolean).join(" ") || t.name,
         div: t.div,
         elo: w?.e ?? t.end,
         rec: w?.rec,
-        move: prev && !w?.seed ? (w!.e - prev.e) : null,
+        move: prev && !w?.seed ? w!.e - prev.e : null,
         week: w?.w ?? 0,
         slug,
         logo: slug ? logoUrlFor(slug) : null,
         mono: slug && MONOGRAM_BY_SLUG[slug] ? monogramFor(slug) : null,
       };
     })
-    .sort((a, b) => b.elo - a.elo);
+    .sort((a, b) => b.elo - a.elo)
+    .map((r, i) => ({ ...r, rank: i + 1 }));
 
   const week = Math.max(...rows.map((r) => r.week));
   const played = week > 0;
   const anyMove = rows.some((r) => r.move != null);
-
-  const items = rows.map((r, i) => (
-    <div key={r.name} className="flex items-center gap-3 px-3 py-2 border-t first:border-t-0" style={{ borderColor: "var(--border)" }}>
-      <span className="w-6 text-right tabular-nums text-[var(--text-dim)] text-xs flex-shrink-0" style={MONO}>{i + 1}</span>
-      {r.logo ? (
-        <img src={r.logo} alt="" width={22} height={22} className="flex-shrink-0 object-contain" style={{ width: 22, height: 22 }} loading="lazy" decoding="async" />
-      ) : r.mono ? (
-        <span aria-hidden className="inline-grid place-items-center rounded-full flex-shrink-0"
-          style={{ background: r.mono.bg, color: r.mono.fg, width: 22, height: 22, fontSize: 8, fontWeight: 700 }}>{r.mono.mono}</span>
-      ) : (
-        <span aria-hidden className="rounded-full flex-shrink-0" style={{ width: 22, height: 22, border: "1px solid var(--border)" }} />
-      )}
-      <span className="min-w-0 flex-1 text-sm truncate">
-        {r.slug ? (
-          <Link href={`/teams/nfl/${r.slug}`} className="hover:text-[var(--accent)] hover:underline">{r.label}</Link>
-        ) : r.label}
-        {r.rec ? (
-          <span className="ml-2 text-xs text-[var(--text-dim)] tabular-nums" style={MONO}>
-            {r.rec[0]}-{r.rec[1]}{r.rec[2] ? `-${r.rec[2]}` : ""}
-          </span>
-        ) : null}
-      </span>
-      {anyMove ? (
-        <span className="w-12 text-right text-xs tabular-nums flex-shrink-0" style={{ ...MONO, color: r.move == null ? "var(--text-dim)" : r.move > 0 ? "var(--div-pos)" : r.move < 0 ? "var(--div-neg)" : "var(--text-dim)" }}>
-          {r.move == null ? "—" : `${r.move > 0 ? "+" : r.move < 0 ? "−" : ""}${Math.abs(r.move).toFixed(0)}`}
-        </span>
-      ) : null}
-      <span className="w-14 text-right text-sm font-semibold tabular-nums flex-shrink-0" style={MONO}>{r.elo.toFixed(0)}</span>
-    </div>
-  ));
+  // 4 columns is the widest layout, so the runs are cut for it; at narrower
+  // widths the same four runs stack, and the order still reads 1 to 32.
+  const runs = chunk(rows, columns);
 
   return (
-    <section className="mb-10">
-      <SectionHead
+    <section className={bare ? "" : "mb-10"}>
+      {bare ? null : <SectionHead
         id="power"
         title={`Elo power rankings, ${latest.season}`}
         sub={played
@@ -97,17 +104,49 @@ export default async function EloPowerRankings() {
           "“how good is this team right now” rather than a table of who has won most. 1500 is the league average by " +
           "construction. It is the same rating that runs the season pages back to 1920, so a 2026 team and a 1966 team are on one scale."
         }
-      />
+      />}
       <div className="rounded-xl border overflow-hidden" style={CARD}>
-        <div className="flex items-center justify-between gap-3 px-3 py-2 text-[11px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
+        <div className="flex items-center justify-between gap-3 px-3 py-1.5 text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
           <span style={MONO}>{played ? `after week ${week}` : "preseason seed"}</span>
-          <span style={MONO}>{anyMove ? "week · rating" : "rating"}</span>
+          <span style={MONO}>{anyMove ? "on the week · rating" : "rating"}</span>
         </div>
-        {/* A div list, not an <ol>: CappedList inserts a <details> among the
-            rows and only <li> may sit inside an <ol>. The rank is printed, so
-            nothing is lost. */}
-        <div>
-          <CappedList items={items} initial={10} noun="teams" />
+        <div className={`grid grid-cols-2 ${columns === 4 ? "md:grid-cols-3 xl:grid-cols-4" : ""}`}>
+          {runs.map((run, ci) => (
+            <div key={ci} className={ci ? "border-t sm:border-t-0 md:border-l" : ""} style={{ borderColor: "var(--border)" }}>
+              {run.map((r) => (
+                <RowTag
+                  key={r.name}
+                  {...(r.slug ? { href: `/teams/nfl/${r.slug}` } : {})}
+                  title={`${r.full}${r.div ? ` · ${r.div}` : ""}${r.rec ? ` · ${r.rec[0]}-${r.rec[1]}${r.rec[2] ? `-${r.rec[2]}` : ""}` : ""} · rating ${r.elo.toFixed(0)}${r.move != null ? `, ${r.move >= 0 ? "up" : "down"} ${Math.abs(r.move).toFixed(0)} on the week` : ""}`}
+                  /* 🔴 THE ROW IS THE TAP TARGET, NOT THE NAME IN IT. §6: a
+                     link wrapped around 20px of text in a dense row gives the
+                     thumb a third of the row. The whole row is the link, and it
+                     clears 44px on a phone while staying 26px where a pointer
+                     does the aiming. */
+                  className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 min-h-11 sm:min-h-0 border-t first:border-t-0 hover:bg-[var(--bg-card-hover)] transition-colors"
+                  style={{ borderColor: "var(--border)" }}
+                >
+                  <span className="w-4 text-right tabular-nums text-[var(--text-dim)] text-[10px] flex-shrink-0" style={MONO}>{r.rank}</span>
+                  {r.logo ? (
+                    <img src={r.logo} alt="" width={18} height={18} className="flex-shrink-0 object-contain" style={{ width: 18, height: 18 }} loading="lazy" decoding="async" />
+                  ) : r.mono ? (
+                    <span aria-hidden className="inline-grid place-items-center rounded-full flex-shrink-0"
+                      style={{ background: r.mono.bg, color: r.mono.fg, width: 18, height: 18, fontSize: 7, fontWeight: 700 }}>{r.mono.mono}</span>
+                  ) : (
+                    <span aria-hidden className="rounded-full flex-shrink-0" style={{ width: 18, height: 18, border: "1px solid var(--border)" }} />
+                  )}
+                  <span className="min-w-0 flex-1 text-[12.5px] truncate">{r.short}</span>
+                  {anyMove ? (
+                    <span className="w-8 text-right text-[10px] tabular-nums flex-shrink-0 hidden sm:inline"
+                      style={{ ...MONO, color: r.move == null ? "var(--text-dim)" : r.move > 0 ? "var(--div-pos)" : r.move < 0 ? "var(--div-neg)" : "var(--text-dim)" }}>
+                      {r.move == null ? "" : `${r.move > 0 ? "+" : r.move < 0 ? "−" : ""}${Math.abs(r.move).toFixed(0)}`}
+                    </span>
+                  ) : null}
+                  <span className="w-10 text-right text-[12.5px] font-semibold tabular-nums flex-shrink-0" style={MONO}>{r.elo.toFixed(0)}</span>
+                </RowTag>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
       <p className="mt-2 text-xs text-[var(--text-dim)]">

@@ -10,6 +10,8 @@ import { getCurrentNflStandings, type TeamStanding } from "@/lib/standings";
 import { getAllFranchises, logoUrlFor, monogramFor, type Franchise } from "@/lib/nfl";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { DataBar } from "@/app/_shared/DataBar";
+import { getNflSim } from "@/lib/nflSim";
+import { fmtOdds } from "@/lib/mlbSim";
 
 const DIVISION_ORDER = [
   "AFC East", "AFC North", "AFC South", "AFC West",
@@ -21,8 +23,27 @@ function fmtPct(p: number | null | undefined): string {
   return p.toFixed(3).replace(/^0/, "");
 }
 
-export default async function NflStandings() {
-  const standings = await getCurrentNflStandings();
+// 🔴 THE ODDS ARE SHOWN IN THE PRESEASON, UNLIKE MLB'S. MlbStandings gates its
+// playoff odds on games_played > 0 because a baseball sim run on a 0-0 table is
+// its own prior and nothing else. The NFL sim is not that: it blends a market
+// rating from posted lines and Super Bowl futures, so a week-0 number is the
+// market's own view of the season and is worth printing. It says "projected"
+// until a game is played, and it names the day it was run either way.
+
+export default async function NflStandings({
+  columns = 4,
+  bare = false,
+}: {
+  /** Division cards per row at the widest breakpoint. 2 when the standings sit
+   *  beside the power rankings rather than across the page. */
+  columns?: 2 | 4;
+  /** Drop the component's own h2 and lede: the page is already heading it. */
+  bare?: boolean;
+} = {}) {
+  const [standings, sim] = await Promise.all([
+    getCurrentNflStandings(),
+    getNflSim().catch(() => null),
+  ]);
   const now = new Date();
   const currentYear = now.getFullYear();
   // The NFL season runs early September through early February. In the
@@ -52,6 +73,15 @@ export default async function NflStandings() {
     byDivision.get(key)!.push(f);
   }
 
+  // Playoff and Super Bowl odds from our own simulation of the remaining
+  // schedule (scripts/predictions/build_nfl_sim.py). Keyed on slug, which is
+  // the same key the franchise rows carry.
+  const odds = new Map((sim?.table ?? []).map((r) => [r.slug, r]));
+  const simIsThisSeason = sim?.meta.season === currentYear;
+  const showOdds = simIsThisSeason && odds.size >= 30;
+  const oddsAsOf = showOdds ? sim!.meta.generated_at : null;
+  const oddsPlayed = (sim?.meta.games_played ?? 0) > 0;
+
   const fetchedDate = (() => {
     try {
       return new Date(standings.fetched_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -59,21 +89,26 @@ export default async function NflStandings() {
   })();
 
   return (
-    <section className="mb-8">
+    <section className={bare ? "" : "mb-8"}>
       <header className="mb-3 flex items-baseline justify-between gap-4 flex-wrap">
         <div>
-          <h2 className="text-lg font-bold tracking-tight">{currentYear} NFL Standings</h2>
+          {bare ? null : <h2 className="text-lg font-bold tracking-tight">{currentYear} NFL Standings</h2>}
           <p className="text-xs text-[var(--text-muted)]">
             {hasLive
               ? <>Live from ESPN, refreshed hourly{fetchedDate ? `. As of ${fetchedDate}.` : "."}</>
               : <>The {currentYear} regular season has not started yet
-                  {opensLabel ? <> — it opens on {opensLabel}</> : null}. Live standings from ESPN appear here once Week 1 begins.</>}
+                  {opensLabel ? <>. It opens on {opensLabel}</> : null}. Live standings from ESPN appear here once Week 1 begins.</>}
+            {oddsAsOf ? (
+              <> Playoff and {sim!.meta.title_game ?? "Super Bowl"} odds are our own simulation of the remaining
+                schedule ({sim!.meta.sims.toLocaleString()} runs, {oddsAsOf}), blended with the market
+                {oddsPlayed ? "" : ", and projected rather than earned until a game is played"}.</>
+            ) : null}
           </p>
         </div>
         <a href="https://www.espn.com/nfl/standings" target="_blank" rel="noreferrer" className="text-xs text-[var(--accent)] hover:underline whitespace-nowrap">Full standings on ESPN &rarr;</a>
       </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 ${columns === 4 ? "lg:grid-cols-4" : "xl:grid-cols-2"}`}>
         {DIVISION_ORDER.map((divName) => {
           const teams = byDivision.get(divName) ?? [];
           if (teams.length === 0) return null;
@@ -126,6 +161,14 @@ export default async function NflStandings() {
                       <span className="tabular-nums text-xs text-[var(--text-muted)] flex-shrink-0 w-10 text-right">
                         {showRec ? fmtPct(t!.win_pct) : "—"}
                       </span>
+                      {/* 🔴 THE PHONE GETS THE ODDS TOO. §2: same information,
+                          different density. The win percentage is the column
+                          that gives way, not the one a reader came for. */}
+                      {showOdds ? (
+                        <span className="tabular-nums text-xs flex-shrink-0 w-9 text-right" title="chance of reaching the playoffs">
+                          {fmtOdds(odds.get(f.slug)?.p_playoffs)}
+                        </span>
+                      ) : null}
                     </Link>
                   );
                 })}
@@ -140,7 +183,9 @@ export default async function NflStandings() {
                     <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">W</th>
                     <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">L</th>
                     <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">T</th>
-                    <th className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider">Pct</th>
+                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">Pct</th>
+                    {showOdds ? <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider" title="chance of reaching the playoffs">Play</th> : null}
+                    {showOdds ? <th className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider" title={`chance of winning the ${sim!.meta.title_game ?? "Super Bowl"}`}>Title</th> : null}
                   </tr>
                 </thead>
                 <tbody>
@@ -164,9 +209,19 @@ export default async function NflStandings() {
                         <td className="py-1 px-1 text-right">{showRec ? t!.wins : "—"}</td>
                         <td className="py-1 px-1 text-right">{showRec ? t!.losses : "—"}</td>
                         <td className="py-1 px-1 text-right text-[var(--text-muted)]">{showRec ? t!.ties : "—"}</td>
-                        <td className="py-1 pl-1 text-right">
+                        <td className="py-1 px-1 text-right">
                           <DataBar v={showRec ? t!.win_pct : null} max={colMax} dp={3} width={70} label="win percentage" />
                         </td>
+                        {showOdds ? (
+                          <td className="py-1 px-1 text-right" style={{ color: "var(--text)" }}>
+                            {fmtOdds(odds.get(f.slug)?.p_playoffs)}
+                          </td>
+                        ) : null}
+                        {showOdds ? (
+                          <td className="py-1 pl-1 text-right text-[var(--text-muted)]">
+                            {fmtOdds(odds.get(f.slug)?.p_sb)}
+                          </td>
+                        ) : null}
                       </tr>
                     );
                   })}
