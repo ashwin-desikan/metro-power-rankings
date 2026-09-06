@@ -2,4 +2,4 @@
 // concurrent [vercel skip] data push canceled. NOT imported anywhere — it exists
 // only so a re-trigger commit touches a build-relevant path (lib/) and Vercel's
 // ignoreCommand rebuilds the latest code. See run-deploy-watch.sh.
-export const DEPLOY_RETRY = "df1db8447-1";
+export const DEPLOY_RETRY = "b40726b7b-1";
