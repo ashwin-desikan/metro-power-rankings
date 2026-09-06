@@ -897,6 +897,26 @@ def build_top_games_all_time(all_games, top_n=50):
     return sorted(all_games, key=lambda g: -g["du"])[:top_n]
 
 
+def build_top_games_by_year(all_games, top_n_per_year=10):
+    """The same board as all-time and by-decade, grouped by season, for the
+    season hubs at /teams/nfl/season/[year].
+
+    🔴 No season filter is needed here and none should be added. read_top_games
+    already drops any row whose Game Score is blank or a non-numeric Excel
+    error, which is exactly what keeps 2026 out: all 544 of its rows carry
+    #DIV/0! because the score depends on pre-game ratings that do not exist
+    until the games are played. A season with no rateable game simply has no
+    key, and the page renders nothing rather than a board of zeros.
+    """
+    by_year = defaultdict(list)
+    for g in all_games:
+        by_year[g["year"]].append(g)
+    return {
+        str(year): sorted(games, key=lambda g: -g["du"])[:top_n_per_year]
+        for year, games in sorted(by_year.items())
+    }
+
+
 def build_top_games_by_decade(all_games, top_n_per_decade=10):
     """Top N games per decade. 1920s bucket = years 1920-1929, etc."""
     by_decade = defaultdict(list)
@@ -1036,6 +1056,9 @@ def main():
 
     top_by_decade = build_top_games_by_decade(all_games, top_n_per_decade=10)
     (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    top_by_year = build_top_games_by_year(all_games, top_n_per_year=10)
+    (OUT_DIR / "top-games-by-year.json").write_text(json.dumps(top_by_year, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print("\nWrote:")
     for f in sorted(OUT_DIR.glob("*.json")):

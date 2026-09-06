@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-06",
-    headline: "Five more leagues measured against expectation",
+    headline: "Five more leagues, and a century of NFL seasons",
     items: [
-      "Clubs in the Spanish, Italian, German, French and Dutch top flights now carry the same against-expectation record English clubs have, a century of seasons scored against the odds each side went in with.",
-      "Metro pages gain it too: 198 places now show how the clubs based there have fared against their odds, from Madrid at the top of the board to Padua-Venice at the bottom.",
+      "Clubs in the Spanish, Italian, German, French and Dutch top flights, and the 198 metros they play in, now carry the same against-expectation record English clubs have, a century of seasons scored against the odds.",
+      "Every NFL season since 1920 has its own page: each team's rating week by week, the standings, and the years the AAFC and the AFL ran alongside the NFL, all rated against each other in one pool.",
       "A new board puts six leagues on one model and one axis. The Eredivisie is the most predictable of the six and Ligue 1 the least, which nobody else publishes.",
-      "Feyenoord in 1973-74 is the best continental season on record against expectation, and Sochaux in 1945-46 the worst of the five leagues.",
+      "Wide tables no longer drag the page sideways on a phone. An invisible one-pixel label inside them had been pushing the whole page past the edge of the screen on every board wide enough to scroll.",
     ],
   },
   {

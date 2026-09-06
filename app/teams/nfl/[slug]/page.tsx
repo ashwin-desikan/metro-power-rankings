@@ -35,6 +35,9 @@ import {
 } from "@/lib/nfl";
 import { getCurrentNflStandings } from "@/lib/standings";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
+import FranchiseEloTracker from "../_shared/FranchiseEloTracker";
+import { getNflFranchiseElo } from "@/lib/nflElo";
+import type { NflFranchise } from "@/lib/nflElo";
 import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 import { CappedList } from "@/app/_shared/Disclosure";
@@ -134,11 +137,17 @@ export default async function FranchisePage({ params }: Props) {
     // Not one of the 32 active franchises. Try to resolve a defunct
     // franchise by its derived slug; render the historical page if found.
     const h = getHistoricalBySlug(slug);
-    if (h) return <DefunctFranchisePage h={h} slug={slug} />;
+    if (h) {
+      const elo = await getNflFranchiseElo(h.canonical).catch(() => null);
+      return <DefunctFranchisePage h={h} slug={slug} elo={elo} />;
+    }
     notFound();
   }
 
   const champs = getChampionships(f.canonical);
+  // The whole-life Elo strip. Keyed on the canonical name, which is the
+  // workbook's own join key, so a franchise that moved city still resolves.
+  const franchiseElo = await getNflFranchiseElo(f.canonical).catch(() => null);
   const champAppearances = getChampionshipAppearances(f.canonical);
   const stadiums = getStadiumHistory(f.canonical);
   const awards = getAwards(f.canonical);
@@ -364,6 +373,8 @@ export default async function FranchisePage({ params }: Props) {
           )}
         </div>
       </header>
+
+      <FranchiseEloTracker entry={franchiseElo} displayName={f.name} />
 
       <RivalriesSection rivals={getRivalries(f.canonical, "American Football", "NFL")} />
 
@@ -822,7 +833,7 @@ export default async function FranchisePage({ params }: Props) {
 // record card, Championships section (when data exists), and the shared
 // SeasonsByTeamTable. Sections with no historical data — stadium history,
 // awards, top games, live standings, map — are omitted by design.
-function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: string }) {
+function DefunctFranchisePage({ h, slug, elo }: { h: HistoricalFranchise; slug: string; elo: NflFranchise | null }) {
   const hName = h.display_name ?? h.name;
   const seasons = getHistoricalSeasonsFor(h.canonical);
   const champs: Championship[] = getHistoricalChampionshipsFor(h.canonical);
@@ -975,6 +986,10 @@ function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: strin
           </tbody>
         </table>
       </Block>
+
+      <div className="mt-6">
+        <FranchiseEloTracker entry={elo} displayName={hName} />
+      </div>
 
       {/* Season-by-season — reuses the shared SeasonsByTeamTable. No live
           row for a defunct franchise, so no standings source is passed. */}

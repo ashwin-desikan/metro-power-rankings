@@ -66,12 +66,16 @@ export default function NflIndexPage() {
           <div>
             Against expectation: <Link href="/sports/expectation" className="text-[var(--accent)] hover:underline">/sports/expectation</Link>
           </div>
+          <div>
+            Every season since 1920: <Link href="/teams/nfl/season" className="text-[var(--accent)] hover:underline">/teams/nfl/season</Link>
+          </div>
         </div>
       </header>
 
       <HubNav
         items={[
           { label: "Current Standings", href: "#standings" },
+          { label: "Seasons 1920–today", href: "/teams/nfl/season" },
           { label: "Map", href: "#map" },
           { label: "All-Time Table", href: "#all-time" },
           { label: "Top Games", href: "#top-games" },

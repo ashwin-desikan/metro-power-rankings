@@ -215,6 +215,7 @@ let _proBowlCounts: Record<string, number> | null = null;
 let _topGamesByTeam: Record<string, TopGameTeamRow[]> | null = null;
 let _topGamesAllTime: TopGameLeagueRow[] | null = null;
 let _topGamesByDecade: Record<string, TopGameLeagueRow[]> | null = null;
+let _topGamesByYear: Record<string, TopGameLeagueRow[]> | null = null;
 
 function read<T>(filename: string): T {
   const path = join(process.cwd(), "public", "data", "nfl", filename);
@@ -313,6 +314,15 @@ export function getTopGamesAllTime(): TopGameLeagueRow[] {
 export function getTopGamesByDecade(): Record<string, TopGameLeagueRow[]> {
   if (!_topGamesByDecade) _topGamesByDecade = read<Record<string, TopGameLeagueRow[]>>("top-games-by-decade.json");
   return _topGamesByDecade;
+}
+
+/** The ten best games of one season, by Game Score. Empty for a season with
+ *  no rateable game: 2026's rows all carry #DIV/0! because the score depends on
+ *  pre-game ratings that do not exist until the games are played, so the
+ *  builder drops them and the key is simply absent. */
+export function getTopGamesForYear(year: number): TopGameLeagueRow[] {
+  if (!_topGamesByYear) _topGamesByYear = read<Record<string, TopGameLeagueRow[]>>("top-games-by-year.json");
+  return _topGamesByYear[String(year)] ?? [];
 }
 
 export function getProBowlCount(canonical: string): number {
