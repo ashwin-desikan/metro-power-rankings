@@ -68,6 +68,18 @@ export type NflEloTeam = {
    *  script tests `== "Y"` explicitly; storing the raw cell made every team a
    *  1966 champion, because "0" is a non-empty string. */
   flags?: Partial<Record<NflHonour, true>>;
+  /** Final regular-season record, [W, L, T].
+   *
+   *  🔴 THE LAST WEEK THAT HAS ONE, NOT THE LAST WEEK. The workbook stops
+   *  writing W/L/T once a team's regular season ends, so reading the final week
+   *  gave every team that reached January a blank record. */
+  rec?: [number, number, number];
+  /** Points [for, against] at the same week as `rec`. */
+  pts?: [number, number];
+  /** Playoff seed, from the game log rather than the standings sheet: NFL
+   *  Standings' "Play Pos." column is empty in every season. Absent for a team
+   *  that did not reach the playoffs, and for the eras that had none. */
+  seed?: number;
   start: number;
   end: number;
   peak: { w: number; e: number };

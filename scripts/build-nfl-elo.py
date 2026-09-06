@@ -266,6 +266,7 @@ def classify(season: int, weeks: dict[int, list[dict]]) -> tuple[str, set[int]]:
 
 
 def build(book: Book) -> dict:
+    seeds = read_playoff_seeds(book)
     by_season: dict[int, dict[str, dict]] = defaultdict(dict)
     weeks_by_season: dict[int, dict[int, list]] = defaultdict(lambda: defaultdict(list))
     total = 0
@@ -346,7 +347,15 @@ def build(book: Book) -> dict:
             rated = [x for x in wks if not x.get("carried")]
             peak = max(rated or wks, key=lambda x: x["e"])
             trough = min(rated or wks, key=lambda x: x["e"])
-            teams_out.append({
+            # 🔴 THE RECORD IS THE LAST WEEK THAT HAS ONE, NOT THE LAST WEEK.
+            # The workbook stops writing W/L/T once a team's regular season is
+            # over, so a team that went deep into January carries no record on
+            # its final week. Reading the last week gave every playoff team a
+            # blank record on its own standings row, which is the one number a
+            # standings table exists to show.
+            with_rec = [x for x in wks if x.get("rec")]
+            with_pts = [x for x in wks if x.get("pts")]
+            entry_out = {
                 "name": nm, "city": t["city"], "team": t["team"],
                 "league": t["league"], "conf": t["conf"], "div": t["div"],
                 "flags": {k: True for k, v in t["flags"].items() if v is True},
@@ -354,7 +363,15 @@ def build(book: Book) -> dict:
                 "peak": {"w": peak["w"], "e": peak["e"]},
                 "trough": {"w": trough["w"], "e": trough["e"]},
                 "weeks": wks,
-            })
+            }
+            if with_rec:
+                entry_out["rec"] = with_rec[-1]["rec"]
+            if with_pts:
+                entry_out["pts"] = with_pts[-1]["pts"]
+            sd = seeds.get((se, nm))
+            if sd is not None:
+                entry_out["seed"] = sd
+            teams_out.append(entry_out)
             franchise_seasons[nm].append({
                 "season": se,
                 "start": wks[0]["e"], "end": wks[-1]["e"],
@@ -410,10 +427,42 @@ def build(book: Book) -> dict:
 
 
 # Regular Season columns, for the schedule pass.
-G = {"season": "B", "week": "D", "phase": "E", "date": "H", "city": "K", "team": "L",
+G = {"season": "B", "week": "D", "phase": "E", "date": "H", "seed": "J",
+     "city": "K", "team": "L",
      "opp_city": "O", "opp_team": "P", "pf": "Q", "pa": "R", "ha": "W",
      "name": "DK", "opp": "DL", "gid": "EE"}
 G_WANT = set(G.values())
+
+
+def read_playoff_seeds(book: Book) -> dict[tuple[int, str], int]:
+    """Playoff seed per (season, franchise), from the game log.
+
+    🔴 THE SEED IS ON THE GAME ROW, NOT ON THE STANDINGS ROW. NFL Standings has
+    a "Play Pos." column (AK) and it is empty in every season. Regular Season
+    carries the seed on each playoff row instead (column J), so a team's seed is
+    read off its FIRST playoff game: the top seeds enter in the divisional round
+    and would otherwise be missed by looking at the wild-card week alone.
+    """
+    out: dict[tuple[int, str], int] = {}
+    first: dict[tuple[int, str], int] = {}
+    header = False
+    inv = {v: k for k, v in G.items()}
+    for _, d in book.rows("Regular Season", G_WANT):
+        if not header:
+            header = True
+            continue
+        row = {inv[k]: v for k, v in d.items()}
+        se, wk, sd = num(row.get("season")), num(row.get("week")), num(row.get("seed"))
+        nm = row.get("name")
+        if se is None or wk is None or sd is None or not nm:
+            continue
+        if not str(row.get("phase") or "").strip().lower().startswith("play"):
+            continue
+        key = (int(se), str(nm))
+        if key not in first or wk < first[key]:
+            first[key] = int(wk)
+            out[key] = int(sd)
+    return out
 
 
 def read_schedule(book: Book, season: int):
@@ -462,6 +511,105 @@ def read_schedule(book: Book, season: int):
             "away_pts": int(pa) if pa is not None else None,
         }
     return sorted(seen.values(), key=lambda g: (g["week"], g["date"] or "", g["home"]))
+
+
+K_BASE = 20.0
+
+
+def elo_shift(margin: float, result: float, prob: float,
+              elo_for: float, elo_against: float, home: float) -> float:
+    """The workbook's DP column, in Python.
+
+    A literal port of
+
+      20*(LN(MAX(ABS(AC),1)+1)
+          *(2.2/((IF(DR=0.5,1,IF(DR=1,(DM-DN+DS*65),-(DM-DN+DS*65))))*0.001+2.2)))
+          *(DR-DO)
+
+    proved against 36,935 workbook games by scripts/nfl/elo_replay.py: exact to
+    3.6e-15 on the formula, and 0.65 Elo mean error over 106 seasons when the
+    whole chain is carried from a week-0 seed and never looks at a pasted value
+    again. That second number is the licence for what follows.
+    """
+    edge = elo_for - elo_against + home * HFA
+    if result == 0.5:
+        k = 1.0
+    elif result == 1.0:
+        k = edge
+    else:
+        k = -edge
+    mov = math.log(max(abs(margin), 1.0) + 1.0) * (2.2 / (k * 0.001 + 2.2))
+    return K_BASE * mov * (result - prob)
+
+
+def live_chain(book: Book, season: int, seeds: dict[str, float]) -> dict:
+    """Carry a season's Elo forward from its week-0 seed, in Python.
+
+    🔴 WHY THIS EXISTS, AND WHY IT IS NOT A SECOND MODEL. In the live season the
+    workbook computes its weekly rating with a formula: NFL Standings AI sums
+    Regular Season DQ for that team and week, and DQ is DM+DP. Formulas do not
+    evaluate unless Excel opens the file, so a rating written on a Tuesday by a
+    scheduled job would sit in the workbook as a stale cached number until a
+    human double-clicked it. That is exactly the human step the whole job exists
+    to remove.
+
+    So for the live season the site derives the same chain the workbook would
+    have produced, from the same inputs it would have used: the week-0 seed and
+    the game log. Nothing here is fitted, chosen or tuned. Run it over a
+    finished season and it reproduces that season's published ratings; that is
+    what --self-test checks.
+
+    Returns {"games": [...], "weeks": {team: {week: (elo, carried)}}, "last": w}.
+    """
+    rating = dict(seeds)
+    games = sorted(read_schedule(book, season),
+                   key=lambda g: (g["date"] or "", g["week"], g["home"]))
+    out_games = []
+    # rating after the last game played in each week, per team
+    after: dict[str, dict[int, float]] = defaultdict(dict)
+    last_played = 0
+
+    for g in games:
+        hp, ap = g["home_pts"], g["away_pts"]
+        rh, ra = rating.get(g["home"]), rating.get(g["away"])
+        if rh is None or ra is None:
+            continue
+        home = 0.0 if g["neutral"] else 1.0
+        if hp is None or ap is None:
+            # Not played. Priced, never rated.
+            out_games.append({**g, "home_pre": rh, "away_pre": ra,
+                              "p_home": win_probability(rh, ra, int(home)),
+                              "played": False})
+            continue
+        margin = hp - ap
+        result = 1.0 if margin > 0 else (0.0 if margin < 0 else 0.5)
+        p = 1.0 / (1.0 + 10.0 ** (-(rh - ra + home * HFA) / 400.0))
+        d = elo_shift(margin, result, p, rh, ra, home)
+        rating[g["home"]] = rh + d
+        rating[g["away"]] = ra - d
+        after[g["home"]][g["week"]] = rating[g["home"]]
+        after[g["away"]][g["week"]] = rating[g["away"]]
+        out_games.append({**g, "home_pre": rh, "away_pre": ra, "p_home": p,
+                          "shift": d, "home_post": rating[g["home"]],
+                          "away_post": rating[g["away"]], "played": True})
+        last_played = max(last_played, g["week"])
+
+    # 🔴 A BYE IS A CARRIED WEEK, NOT A MISSING ONE. Every team gets a row for
+    # every week up to the last one played, and a week with no game inherits the
+    # previous rating and is marked carried, which is how the charts know to
+    # draw it as held rather than measured.
+    weeks: dict[str, dict[int, tuple[float, bool]]] = {}
+    for team, seed in seeds.items():
+        cur = seed
+        row: dict[int, tuple[float, bool]] = {0: (seed, False)}
+        for w in range(1, last_played + 1):
+            if w in after.get(team, {}):
+                cur = after[team][w]
+                row[w] = (cur, False)
+            else:
+                row[w] = (cur, True)
+        weeks[team] = row
+    return {"games": out_games, "weeks": weeks, "last": last_played}
 
 
 def build_upcoming(book: Book, season: int, season_shard: dict) -> dict:

@@ -6,11 +6,12 @@ import HubNav from "@/app/teams/HubNav";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
-import { getNflEloIndex, getNflEloSeason, getNflUpcoming, byLeague } from "@/lib/nflElo";
-import type { NflEloTeam } from "@/lib/nflElo";
+import { getNflEloIndex, getNflEloSeason, getNflUpcoming } from "@/lib/nflElo";
 import WeeklyEloChart from "../_shared/WeeklyEloChart";
 import TeamCell, { type TeamIdent } from "../_shared/TeamCell";
-import HonoursStrip, { HonoursLegend, seasonHasHonours } from "../_shared/HonoursStrip";
+import { seasonHasHonours } from "../_shared/HonoursStrip";
+import SeasonStandings, { type StandingsTeam } from "../_shared/SeasonStandings";
+import ExpectationPreview from "../_shared/ExpectationPreview";
 import {
   getTopGamesForYear, getNflSlugByTeamName, nflSlugForCanonical, nflLineColor,
   logoUrlFor, monogramFor, MONOGRAM_BY_SLUG,
@@ -73,13 +74,6 @@ export async function generateMetadata({ params }: { params: Promise<{ year: str
   };
 }
 
-function fmtRec(t: NflEloTeam): string {
-  const last = t.weeks[t.weeks.length - 1];
-  if (!last?.rec) return "";
-  const [w, l, ties] = last.rec;
-  return ties ? `${w}-${l}-${ties}` : `${w}-${l}`;
-}
-
 export default async function NflSeasonPage({ params }: { params: Promise<{ year: string }> }) {
   const { year } = await params;
   const season = parseYear(year);
@@ -93,7 +87,6 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
   if (!data) notFound();
 
   const seeded = data.status !== "final";
-  const groups = byLeague(data.teams);
 
   // Identity and colour are resolved ONCE per season, server side, because both
   // touch the filesystem (logoUrlFor stats a path) and the chart alone would
@@ -111,6 +104,13 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
     colorByName[t.name] = nflLineColor(slug);
   }
   const showHonours = seasonHasHonours(data.teams);
+  const standingsTeams: StandingsTeam[] = data.teams.map((t) => ({
+    name: t.name, city: t.city, team: t.team,
+    league: t.league, conf: t.conf, div: t.div,
+    end: t.end, rec: t.rec, pts: t.pts, seed: t.seed, flags: t.flags,
+    slug: ident[t.name].slug, logo: ident[t.name].logo, mono: ident[t.name].mono,
+  }));
+  const showSeeds = data.teams.some((t) => t.seed != null);
   const ranked = [...data.teams].sort((a, b) => b.end - a.end);
   const movers = [...data.teams]
     .map((t) => ({ t, delta: t.end - t.start }))
@@ -169,6 +169,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
         ...(wk1.length ? [{ label: "Week 1, priced", href: "#week1" }] : []),
         { label: "Standings", href: "#standings" },
         ...(bestGames.length ? [{ label: "Greatest games", href: "#games" }] : []),
+        { label: "Against expectation", href: "#expectation" },
         ...(seeded ? [] : [{ label: "Biggest movers", href: "#movers" }]),
         { label: "Where this comes from", href: "#method" },
       ]} />
@@ -270,57 +271,22 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
       <section className="mb-12">
         <SectionHead
           id="standings"
-          title={data.leagues.length > 1 ? "Standings, one league at a time" : "Standings"}
-          sub={data.leagues.length > 1 ? `${data.leagues.join(" and ")} ran side by side; the ratings do not.` : "Ordered by rating, not by record."}
-          more={
+          title="Standings"
+          sub={
             data.leagues.length > 1
-              ? "The two leagues are shown apart because their tables were never one table. The ratings ARE one pool: a team is rated against everyone playing that year, which is the only way to ask how the leagues compared. The strip on each row is the season a team actually had: playoffs, division, best record in its conference, conference final, championship game, championship."
-              : "Ordering by rating rather than by record is deliberate: two teams on the same record did not necessarily have the same season. The strip on each row fills in from the left as a team goes further: playoffs, division, best record in its conference, conference final, championship game, championship. An asterisk on a record is the best record in the league."
+              ? `${data.leagues.join(" and ")} ran side by side; the ratings do not.`
+              : "Record, points, rating and what the season came to, grouped however you want to read it."
+          }
+          more={
+            (data.leagues.length > 1
+              ? "The two leagues are shown apart because their tables were never one table. The ratings ARE one pool: a team is rated against everyone playing that year, which is the only way to ask how the leagues compared. "
+              : "") +
+            "The record is the final regular-season record. The strip on each row fills in from the left as a team went further: playoffs, division, best record in its conference, conference final, championship game, championship. " +
+            "An asterisk on a record is the best record in the league, and a seed is the number a team carried into the playoffs. " +
+            "Teams level on record are ordered by rating: the league's own tiebreakers are not in this workbook, so the order inside a tie is not authoritative. The division flag is."
           }
         />
-        <div className={data.leagues.length > 1 ? "grid grid-cols-1 lg:grid-cols-2 gap-6" : ""}>
-          {groups.map((g) => (
-            <div key={g.league} className="min-w-0">
-              {data.leagues.length > 1 ? <h3 className="text-sm font-semibold mb-2">{g.league}</h3> : null}
-              <TableScroll className="rounded-xl border" style={CARD}>
-                <table className="w-full text-xs" data-sticky-col="2">
-                  <thead>
-                    <tr className="text-[var(--text-dim)] text-left">
-                      <th className="py-2 px-3 font-medium">#</th>
-                      <th className="py-2 px-3 font-medium">Team</th>
-                      <th className="py-2 px-3 font-medium text-right">Rating</th>
-                      <th className="py-2 px-3 font-medium text-right">Record</th>
-                      {showHonours ? <th className="py-2 px-3 font-medium whitespace-nowrap">Season</th> : null}
-                      <th className="py-2 px-3 font-medium hidden md:table-cell">Division</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {g.teams.map((t, i) => (
-                      <tr key={t.name} className="border-t" style={BORD}>
-                        <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
-                        <td className="py-1.5 px-3 whitespace-nowrap">
-                          <TeamCell city={t.city} team={t.team} name={t.name} ident={ident[t.name]} />
-                        </td>
-                        <td className="py-1.5 px-3 text-right">
-                          <DataBar v={t.end} dp={0} label="Elo rating at the end of the season" />
-                        </td>
-                        <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] whitespace-nowrap" style={MONO}>
-                          {fmtRec(t)}
-                          {t.flags?.best_rec ? (
-                            <span title="best record in the league" className="ml-1 text-[var(--accent)]" aria-label="best record in the league">*</span>
-                          ) : null}
-                        </td>
-                        {showHonours ? <td className="py-1.5 px-3"><HonoursStrip team={t} /></td> : null}
-                        <td className="py-1.5 px-3 text-[var(--text-muted)] hidden md:table-cell whitespace-nowrap">{t.div}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </TableScroll>
-              {showHonours ? <HonoursLegend /> : null}
-            </div>
-          ))}
-        </div>
+        <SeasonStandings teams={standingsTeams} showHonours={showHonours} showSeeds={showSeeds} />
       </section>
 
       {/* --------------------------------------------------------- games */}
@@ -423,6 +389,21 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           </TableScroll>
         </section>
       ) : null}
+
+      {/* ------------------------------------------------- against expectation */}
+      <section className="mb-12">
+        <SectionHead
+          id="expectation"
+          title="What a model that had to say so beforehand made of it"
+          sub="Every game of the season, priced before kick-off and scored afterwards."
+          more={
+            "The rating on this page is a description of what happened. Turning it into a probability BEFORE a game and then " +
+            "grading that probability is a different and much harder claim, and it is the one the game log makes. " +
+            "The comparison is against the closing betting line, which is the number to beat, and mostly it wins."
+          }
+        />
+        <ExpectationPreview season={season} />
+      </section>
 
       {/* ---------------------------------------------------------- method */}
       <section className="mb-6">

@@ -5,8 +5,12 @@ import HubNav from "@/app/teams/HubNav";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { getNflEloIndex } from "@/lib/nflElo";
-import BestTeamChart from "./_shared/BestTeamChart";
-import { nflSlugForCanonical } from "@/lib/nfl";
+import ExpectationChart from "./_shared/ExpectationChart";
+import TeamCell, { type TeamIdent } from "./_shared/TeamCell";
+import { getNflExpectation } from "@/lib/nflExpectation";
+import {
+  nflSlugForCanonical, nflLineColor, logoUrlFor, monogramFor, MONOGRAM_BY_SLUG,
+} from "@/lib/nfl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 // The discovery surface for 107 season hubs. Without it /teams/nfl/season is a
@@ -44,9 +48,26 @@ export const metadata: Metadata = {
 };
 
 export default async function NflSeasonsIndex() {
-  const index = await getNflEloIndex().catch(() => null);
+  const [index, exp] = await Promise.all([
+    getNflEloIndex().catch(() => null),
+    getNflExpectation().catch(() => null),
+  ]);
   const rows = index?.seasons ?? [];
   if (!rows.length) return null;
+
+  // Crest, link and club colour for every franchise this page names, resolved
+  // once. logoUrlFor stats the filesystem, so it is not called per render.
+  const ident: Record<string, TeamIdent> = {};
+  const colour: Record<string, string | null> = {};
+  for (const nm of new Set(rows.flatMap((r) => [r.top?.name, r.champion?.name]).filter(Boolean) as string[])) {
+    const slug = nflSlugForCanonical(nm);
+    ident[nm] = {
+      slug,
+      logo: slug ? logoUrlFor(slug) : null,
+      mono: slug && MONOGRAM_BY_SLUG[slug] ? monogramFor(slug) : null,
+    };
+    colour[nm] = nflLineColor(slug);
+  }
 
   const decades = new Map<number, typeof rows>();
   for (const r of rows) {
@@ -86,7 +107,8 @@ export default async function NflSeasonsIndex() {
 
       <HubNav items={[
         { label: "Browse a season", href: "#decades" },
-        { label: "The best team, every year", href: "#ceiling" },
+        { label: "The best team, every year", href: "#belt" },
+        { label: "Against expectation", href: "#expectation" },
         { label: "When the best team lost", href: "#robbed" },
         ...(multi.length ? [{ label: "Two leagues at once", href: "#rivals" }] : []),
         { label: "NFL hub", href: "/teams/nfl" },
@@ -139,22 +161,127 @@ export default async function NflSeasonsIndex() {
         </div>
       </section>
 
-      {/* ----------------------------------------------------- the ceiling */}
+      {/* --------------------------------------------------------- the belt */}
       <section className="mb-12">
         <SectionHead
-          id="ceiling"
-          title="The best team in the league, every season"
-          sub="How far the top of the league has sat above an average team, 1920 to today."
+          id="belt"
+          title="The belt: the best team in the league, season by season"
+          sub="One square per season, in that team's own colour. Runs of dominance are the point."
           more={
-            "Elo is centred on 1500 in every era by construction, so this line is not measuring inflation: it is measuring how far " +
-            "one team was allowed to get ahead of the field. Small leagues with uneven schedules let a team run further, which is why " +
-            "the 1920s sit high; a 32-team league with a common draft and a salary cap pulls the ceiling down toward the middle."
+            "Highest rating at the end of the season, which is not the same as champion and disagrees 25 times. " +
+            "Reading across, a colour that holds for four squares is a dynasty and a wall of different colours is a decade nobody owned. " +
+            "A franchise with no stored colour keeps the neutral border rather than being assigned one."
           }
         />
-        <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>
-          <BestTeamChart rows={rows} />
+        {/* 🔴 A WALL OF SQUARES, NOT A LINE CHART. The first build put the top
+            rating on a 107-point line, which answers "how far ahead was the best
+            team" and hides the thing a reader actually wants, which is WHO. The
+            club-football belt solves it: one card per season carrying the year
+            and the club, tinted with the club's own colour, so four Packers
+            squares in a row read as four Packers squares in a row. */}
+        <div className="flex flex-wrap gap-1.5">
+          {rows.map((r) => {
+            const nm = r.top?.name;
+            const col = nm ? colour[nm] : null;
+            const short = r.top?.team ?? nm ?? null;
+            const won = r.champion && r.top && r.champion.name === r.top.name;
+            return (
+              <Link
+                key={r.season}
+                href={`/teams/nfl/season/${r.season}`}
+                title={[
+                  short ? `${r.season}: ${[r.top?.city, r.top?.team].filter(Boolean).join(" ") || short} ${r.top!.elo.toFixed(0)}` : String(r.season),
+                  r.champion ? (won ? "and won it" : `champion: ${[r.champion.city, r.champion.team].filter(Boolean).join(" ")}`) : (r.complete ? null : "not played yet"),
+                ].filter(Boolean).join(" · ")}
+                className="inline-flex flex-col items-center rounded-md border px-2 py-1 text-center min-w-[68px] min-h-11 sm:min-h-0 justify-center transition hover:border-[var(--accent)]"
+                style={{
+                  borderColor: col ?? "var(--border)",
+                  background: "var(--bg-card)",
+                  boxShadow: col ? `inset 3px 0 0 ${col}` : undefined,
+                }}
+              >
+                <span className="text-[9px] text-[var(--text-dim)] tabular-nums" style={MONO}>{r.season}</span>
+                <span className="text-[11px] font-semibold leading-tight" style={{ color: col ?? "var(--text-muted)" }}>
+                  {short ?? "—"}
+                  {won ? <span className="ml-0.5" style={{ color: "#D4AF37" }} title="won the championship too">★</span> : null}
+                </span>
+              </Link>
+            );
+          })}
         </div>
+        <p className="mt-2 text-[12px] text-[var(--text-dim)]">
+          A star marks a season where the best-rated team also won the championship. It happens in{" "}
+          {agreed - disagree.length} of {agreed} finished seasons.
+        </p>
       </section>
+
+      {/* ------------------------------------------------- against expectation */}
+      {exp?.seasons?.length ? (
+        <section className="mb-12">
+          <SectionHead
+            id="expectation"
+            title="Against expectation, a century of it"
+            sub="Every game priced before kick-off, and scored afterwards against the closing line."
+            more={
+              "Brier is the squared error of a probability: give a team 0.8 and it wins, you are charged 0.04; give it 0.8 and it loses, you are charged 0.64. " +
+              "Lower is better, so this chart is drawn upside down and a higher line is a better forecast. " +
+              "The market is the number to beat and mostly it wins, which is the honest headline. Every season has its own priced game log."
+            }
+          />
+          <div className="rounded-xl border p-4 sm:p-5 min-w-0 mb-3" style={CARD}>
+            <ExpectationChart rows={exp.seasons} />
+          </div>
+          {exp.upsets?.length ? (
+            <>
+              <div className="text-[11px] uppercase tracking-wider text-[var(--text-dim)] mb-1.5" style={MONO}>
+                The results a century of Elo got most wrong
+              </div>
+              <TableScroll className="rounded-xl border" style={CARD}>
+                <table className="w-full text-xs" data-sticky-col="1">
+                  <thead>
+                    <tr className="text-[var(--text-dim)] text-left">
+                      <th className="py-2 px-3 font-medium">Season</th>
+                      <th className="py-2 px-3 font-medium">Winner</th>
+                      <th className="py-2 px-3 font-medium">Beat</th>
+                      <th className="py-2 px-3 font-medium text-right">Given</th>
+                      <th className="py-2 px-3 font-medium hidden sm:table-cell">Where</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {exp.upsets.slice(0, 8).map((u) => (
+                      <tr key={u.game_id} className="border-t" style={BORD}>
+                        <td className="py-1.5 px-3 tabular-nums" style={MONO}>
+                          <Link href={`/teams/nfl/season/${u.season}`} className="text-[var(--accent)] hover:underline">{u.season}</Link>
+                        </td>
+                        <td className="py-1.5 px-3 whitespace-nowrap">
+                          <TeamCell name={u.winner} team={u.winner} size={18}
+                            ident={{ slug: u.winner_slug, logo: u.winner_slug ? logoUrlFor(u.winner_slug) : null,
+                              mono: u.winner_slug && MONOGRAM_BY_SLUG[u.winner_slug] ? monogramFor(u.winner_slug) : null }} />
+                        </td>
+                        <td className="py-1.5 px-3 whitespace-nowrap text-[var(--text-muted)]">
+                          <TeamCell name={u.loser} team={u.loser} size={18}
+                            ident={{ slug: u.loser_slug, logo: u.loser_slug ? logoUrlFor(u.loser_slug) : null,
+                              mono: u.loser_slug && MONOGRAM_BY_SLUG[u.loser_slug] ? monogramFor(u.loser_slug) : null }} />
+                          {u.score ? <span className="ml-2 tabular-nums text-[var(--text-dim)]" style={MONO}>{u.score}</span> : null}
+                        </td>
+                        <td className="py-1.5 px-3 text-right tabular-nums" style={MONO}>{(u.p_winner * 100).toFixed(0)}%</td>
+                        <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">
+                          {u.playoff ? `${u.round ?? "playoff"} · ` : ""}{u.metro ?? u.venue ?? ""}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </TableScroll>
+            </>
+          ) : null}
+          <p className="mt-2 text-xs text-[var(--text-dim)]">
+            The full method, the market comparison and the metro rollups are on{" "}
+            <Link href="/sports/expectation" className="text-[var(--accent)] hover:underline">Against Expectation</Link>.
+            Each season&rsquo;s own priced game log is linked from its season page.
+          </p>
+        </section>
+      ) : null}
 
       {/* ------------------------------------------------- champion vs best */}
       <section className="mb-12">
@@ -179,26 +306,20 @@ export default async function NflSeasonsIndex() {
               </tr>
             </thead>
             <tbody>
-              {disagree.slice().reverse().map((r) => {
-                const ts = nflSlugForCanonical(r.top!.name);
-                const cs = nflSlugForCanonical(r.champion!.name);
-                const who = [r.top!.city, r.top!.team].filter(Boolean).join(" ") || r.top!.name;
-                const champ = [r.champion!.city, r.champion!.team].filter(Boolean).join(" ") || r.champion!.name;
-                return (
-                  <tr key={r.season} className="border-t" style={BORD}>
-                    <td className="py-1.5 px-3 tabular-nums" style={MONO}>
-                      <Link href={`/teams/nfl/season/${r.season}`} className="text-[var(--accent)] hover:underline">{r.season}</Link>
-                    </td>
-                    <td className="py-1.5 px-3 whitespace-nowrap">
-                      {ts ? <Link href={`/teams/nfl/${ts}`} className="hover:text-[var(--accent)] hover:underline">{who}</Link> : who}
-                    </td>
-                    <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={MONO}>{r.top!.elo.toFixed(0)}</td>
-                    <td className="py-1.5 px-3 whitespace-nowrap text-[var(--text-muted)]">
-                      {cs ? <Link href={`/teams/nfl/${cs}`} className="hover:text-[var(--accent)] hover:underline">{champ}</Link> : champ}
-                    </td>
-                  </tr>
-                );
-              })}
+              {disagree.slice().reverse().map((r) => (
+                <tr key={r.season} className="border-t" style={BORD}>
+                  <td className="py-1.5 px-3 tabular-nums" style={MONO}>
+                    <Link href={`/teams/nfl/season/${r.season}`} className="text-[var(--accent)] hover:underline">{r.season}</Link>
+                  </td>
+                  <td className="py-1.5 px-3 whitespace-nowrap">
+                    <TeamCell city={r.top!.city} team={r.top!.team} name={r.top!.name} ident={ident[r.top!.name]} size={18} />
+                  </td>
+                  <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={MONO}>{r.top!.elo.toFixed(0)}</td>
+                  <td className="py-1.5 px-3 whitespace-nowrap text-[var(--text-muted)]">
+                    <TeamCell city={r.champion!.city} team={r.champion!.team} name={r.champion!.name} ident={ident[r.champion!.name]} size={18} />
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </TableScroll>

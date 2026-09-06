@@ -18,6 +18,14 @@ import type { NflEloTeam } from "@/lib/nflElo";
 // chart while one is held. No client JavaScript: this is a server component and
 // the whole interaction is CSS.
 //
+// 🔴 END LABELS ARE DECONFLICTED, NOT DROPPED. Four teams inside 20 Elo of each
+// other put four labels inside 6px of each other, which is four labels nobody
+// can read. The emphasised labels are pushed apart to a minimum gap in one pass
+// and a leader line is drawn from the point to wherever the label ended up, so
+// the label still says which line it belongs to. While a line is hovered every
+// OTHER label is hidden outright rather than dimmed, because a hovered label
+// with nothing beside it cannot collide with anything.
+//
 // 🔴 A CARRIED WEEK IS DRAWN AS HELD. Byes and post-elimination weeks inherit
 // the previous rating, so the segment into one is dashed. A solid line there
 // would assert a measurement nobody took.
@@ -26,6 +34,27 @@ const W = 940;
 const H = 380;
 const M = { top: 14, right: 128, bottom: 30, left: 44 };
 const MONO = "'JetBrains Mono', monospace";
+
+/**
+ * Push a set of label positions apart to `gap`, keeping their order and staying
+ * inside [lo, hi]. One down pass, one clamp, one up pass: the standard
+ * one-dimensional label placement, and enough for at most a dozen labels.
+ */
+function deconflict(items: { key: string; y: number }[], gap: number, lo: number, hi: number) {
+  const xs = [...items].sort((a, b) => a.y - b.y).map((i) => ({ ...i }));
+  if (!xs.length) return new Map<string, number>();
+  for (let i = 1; i < xs.length; i++) {
+    if (xs[i].y - xs[i - 1].y < gap) xs[i].y = xs[i - 1].y + gap;
+  }
+  const over = xs[xs.length - 1].y - hi;
+  if (over > 0) for (const x of xs) x.y -= over;
+  for (let i = xs.length - 2; i >= 0; i--) {
+    if (xs[i + 1].y - xs[i].y < gap) xs[i].y = xs[i + 1].y - gap;
+  }
+  const under = lo - xs[0].y;
+  if (under > 0) for (const x of xs) x.y += under;
+  return new Map(xs.map((x) => [x.key, x.y]));
+}
 
 function ord(n: number): string {
   const s = ["th", "st", "nd", "rd"];
@@ -77,6 +106,18 @@ export default function WeeklyEloChart({
 
   const uid = `elo${season}`;
 
+  // The emphasised labels are the only ones on screen at rest, so they are the
+  // only ones that can collide at rest. 12px is the 11px type plus a hairline.
+  const labelY = deconflict(
+    ranked.slice(0, emphasise).map((t) => ({
+      key: t.name,
+      y: py(t.weeks[t.weeks.length - 1].e) + 3.5,
+    })),
+    12,
+    M.top + 8,
+    H - M.bottom - 2,
+  );
+
   return (
     <figure className="m-0 min-w-0">
       <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs mb-2 text-[var(--text-muted)]">
@@ -96,6 +137,9 @@ export default function WeeklyEloChart({
           .${uid} .ln .lbl { opacity: 0; }
           .${uid} .ln.lead .lbl { opacity: 1; }
           .${uid}:has(.ln:hover) .ln { opacity: 0.12; }
+          /* Not dimmed - removed. A dimmed label still overlaps the hovered one. */
+          .${uid}:has(.ln:hover) .ln:not(:hover) .lbl,
+          .${uid}:has(.ln:hover) .ln:not(:hover) .lead-line { opacity: 0; }
           .${uid}:has(.ln:hover) .ln:hover { opacity: 1; }
           .${uid} .ln:hover .stroke { stroke-width: 3.2; }
           .${uid} .ln:hover .lbl { opacity: 1; }
@@ -144,6 +188,9 @@ export default function WeeklyEloChart({
           const all = t.weeks.map((w, i) => `${i ? "L" : "M"}${px(w.w).toFixed(1)},${py(w.e).toFixed(1)}`).join("");
           const last = t.weeks[t.weeks.length - 1];
           const rec = last.rec ? `${last.rec[0]}-${last.rec[1]}${last.rec[2] ? `-${last.rec[2]}` : ""}` : "";
+          // Deconflicted for the emphasised few; every other label appears only
+          // on hover, alone, so its own point is the right place for it.
+          const ly = labelY.get(t.name) ?? null;
           return (
             <g key={t.name} className={`ln${isLead ? " lead" : ""}`} style={{ opacity: isLead ? 1 : 0.55 }}>
               <title>
@@ -155,7 +202,18 @@ export default function WeeklyEloChart({
               <path className="stroke" d={solid.join("")} fill="none" stroke={color} strokeWidth={isLead ? 2.4 : 1.4} strokeLinecap="round" strokeLinejoin="round" />
               {held.length ? <path className="stroke" d={held.join("")} fill="none" stroke={color} strokeWidth={isLead ? 2.4 : 1.4} strokeDasharray="3 3" /> : null}
               <circle className="dot" cx={px(last.w)} cy={py(last.e)} r={isLead ? 3 : 2} fill={color} />
-              <text className="lbl" x={px(last.w) + 7} y={py(last.e) + 3.5} fontSize={11} fill="var(--text)" style={{ fontFamily: MONO }}>
+              {ly !== null && Math.abs(ly - (py(last.e) + 3.5)) > 1.5 ? (
+                <polyline
+                  className="lead-line"
+                  points={`${(px(last.w) + 4).toFixed(1)},${py(last.e).toFixed(1)} ${(px(last.w) + 9).toFixed(1)},${(ly - 3.5).toFixed(1)} ${(px(last.w) + 13).toFixed(1)},${(ly - 3.5).toFixed(1)}`}
+                  fill="none"
+                  stroke={color}
+                  strokeWidth={1}
+                  strokeOpacity={0.7}
+                />
+              ) : null}
+              <text className="lbl" x={px(last.w) + (ly !== null && Math.abs(ly - (py(last.e) + 3.5)) > 1.5 ? 16 : 7)}
+                y={ly ?? py(last.e) + 3.5} fontSize={11} fill="var(--text)" style={{ fontFamily: MONO }}>
                 {t.team ?? t.name}
               </text>
             </g>
