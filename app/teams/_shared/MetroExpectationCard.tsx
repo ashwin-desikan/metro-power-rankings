@@ -1,18 +1,21 @@
 import Link from "next/link";
 import type { MetroRow as NflMetroRow } from "@/lib/nflExpectation";
 import type { PlMetroRow } from "@/lib/plExpectation";
+import type { IntlMetroRow } from "@/lib/intlExpectation";
+import { joinCountries } from "@/lib/intlExpectation";
 
 // The metro's sporting record against what was expected of it, in one card.
 //
-// 🔴 ONE SHARED COMPONENT, NOT A PER-SPORT COPY. Two sports, and more will
-// follow; a second inline block on /rankings/[slug] is how the site ends up
-// with two answers a scroll apart.
+// 🔴 ONE SHARED COMPONENT, NOT A PER-SPORT COPY. Three ledgers now, and more
+// will follow; a second inline block on /rankings/[slug] is how the site ends
+// up with two answers a scroll apart.
 //
-// 🔴 THE TWO UNITS ARE NOT THE SAME QUANTITY and the card never adds them.
-// The NFL ledger measures WINS above expectation; the English top-flight one
-// measures MATCH POINTS (win 1, draw 0.5), because football has draws and a
-// league win was worth two points until 1980-81 and three after. Each line
-// names its own unit.
+// 🔴 THE UNITS ARE NOT THE SAME QUANTITY and the card never adds them.
+// The NFL ledger measures WINS above expectation; the football ones measure
+// MATCH POINTS (win 1, draw 0.5), because football has draws and a league win
+// was worth two points before the three-point switch and three after, and that
+// switch fell in a different season in every country. Each line names its own
+// unit and its own competition.
 
 const POS = "#10b981";
 const NEG = "#E2628B";
@@ -26,16 +29,25 @@ function Amount({ v }: { v: number }) {
   );
 }
 
+/** "1928-29" -> "1928". The card talks in years, the data in seasons. */
+function startYear(season: string): string {
+  return season.slice(0, 4);
+}
+
 export default function MetroExpectationCard({
   metroName,
   nfl,
   football,
+  continental,
 }: {
   metroName: string;
   nfl?: NflMetroRow | null;
   football?: PlMetroRow | null;
+  /** Spain, Italy, Germany, France, the Netherlands. Never England: that is
+   *  the `football` line, on a separate ledger with a market layer. */
+  continental?: IntlMetroRow | null;
 }) {
-  if (!nfl && !football) return null;
+  if (!nfl && !football && !continental) return null;
   return (
     <section>
       <div
@@ -54,6 +66,17 @@ export default function MetroExpectationCard({
               {football.surplus >= 0 ? "beaten" : "fallen short of"} their pre-match odds by{" "}
               <Amount v={football.surplus} /> match points across {football.club_matches.toLocaleString()}{" "}
               club-matches since 1888.
+            </li>
+          )}
+          {continental && (
+            <li className="text-[var(--text-muted)]">
+              <span aria-hidden className="mr-1.5">⚽</span>
+              {joinCountries(continental.countries)} top-flight clubs based here have{" "}
+              {continental.surplus >= 0 ? "beaten" : "fallen short of"} their pre-match odds by{" "}
+              <Amount v={continental.surplus} /> match points across{" "}
+              {continental.club_matches.toLocaleString()} club-matches since{" "}
+              {startYear(continental.first_season)}
+              {continental.clubs > 1 ? <>, across {continental.clubs} clubs</> : null}.
             </li>
           )}
           {nfl && (

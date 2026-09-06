@@ -75,6 +75,7 @@ import { getWcbbForMetro, getFormerWcbbForMetro, type WcbbCard, type FormerWcbbC
 import { getNflEuropeForMetro } from "@/lib/nflEurope";
 import { getNflExpectation } from "@/lib/nflExpectation";
 import { getPlExpectation } from "@/lib/plExpectation";
+import { getIntlExpectationMetro } from "@/lib/intlExpectation";
 import MetroExpectationCard from "@/app/teams/_shared/MetroExpectationCard";
 import { getCollegeHockeyForMetro, type CollegeHockeyCard } from "@/lib/collegeHockey";
 import BadgeChips from "./BadgeChips";
@@ -245,11 +246,13 @@ export default async function MetroDetailPage({ params }: PageProps) {
   const sound = await getSoundForMetro(slug);
   const screen = getScreenForMetro(slug);
   const mayor = await getMayor(slug);
-  // The expectation rollups: NFL (53 metros) and the English top flight (39).
-  // One ISR-cached fetch each serves every metro page; misses render nothing.
-  const [nflExpMetro, plExpMetro] = await Promise.all([
+  // The expectation rollups: NFL (53 metros), the English top flight (39) and
+  // the five continental top flights (197). One ISR-cached read each serves
+  // every metro page; misses render nothing.
+  const [nflExpMetro, plExpMetro, intlExpMetro] = await Promise.all([
     getNflExpectation().catch(() => null).then((d) => d?.metros.find((m) => m.metro_slug === slug) ?? null),
     getPlExpectation().catch(() => null).then((d) => d?.metros.find((m) => m.metro_slug === slug) ?? null),
+    getIntlExpectationMetro(slug).catch(() => null),
   ]);
 
   if (!detail) {
@@ -1021,7 +1024,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   apart. It sits INSIDE Sports: as a sibling it used to render
                   under the (now collapsed) Sports heading, reading as loose
                   sports content belonging to nothing. */}
-              <MetroExpectationCard metroName={metro.name} nfl={nflExpMetro} football={plExpMetro} />
+              <MetroExpectationCard metroName={metro.name} nfl={nflExpMetro} football={plExpMetro} continental={intlExpMetro} />
             </Disclosure>
           );
         })()}

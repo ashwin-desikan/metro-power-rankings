@@ -7,6 +7,7 @@ import HomeAdvantageChart from "@/app/teams/_shared/HomeAdvantageChart";
 import { getHomeAdvantage, seriesShape } from "@/lib/expectation";
 import { getPlExpectation } from "@/lib/plExpectation";
 import { getNflExpectation } from "@/lib/nflExpectation";
+import { getIntlExpectation } from "@/lib/intlExpectation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 import { SectionHead } from "@/app/_shared/SectionHead";
@@ -25,7 +26,7 @@ import { DataBar } from "@/app/_shared/DataBar";
 const PAGE_PATH = "/sports/expectation";
 const PAGE_TITLE = "Against Expectation";
 const PAGE_DESCRIPTION =
-  "Every English top-flight match since 1888 and every NFL game since 1920, scored against the chance it was given before kick-off. Home advantage has collapsed in both sports, and the record book never mentions it.";
+  "Six European top flights since 1888 and every NFL game since 1920, scored against the chance each result was given before kick-off, on one model. Home advantage has collapsed in both sports, and the Eredivisie turns out to be the most predictable of the six.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -79,10 +80,13 @@ function Delta({ v, dp = 1 }: { v: number; dp?: number }) {
 }
 
 export default async function ExpectationPage() {
-  const [ha, pl, nfl] = await Promise.all([
+  const [ha, pl, nfl, intl] = await Promise.all([
     getHomeAdvantage().catch(() => null),
     getPlExpectation().catch(() => null),
     getNflExpectation().catch(() => null),
+    // Spain, Italy, Germany, France, the Netherlands. Same model as the
+    // English ledger, imported rather than copied, and with NO market layer.
+    getIntlExpectation().catch(() => null),
   ]);
 
   const fb = ha?.series.find((s) => s.key === "football") ?? null;
@@ -121,10 +125,70 @@ export default async function ExpectationPage() {
     : null;
 
   const plBest = pl?.best_seasons?.[0];
+
+  // The six football leagues on one axis: skill against each league's OWN era
+  // baseline, so a century of Serie A and sixty years of the Bundesliga can
+  // sit in one column. England joins from its own ledger, same quantity.
+  const leagues = intl
+    ? [
+        ...(pl
+          ? [{
+              key: "England",
+              competition: "English top flight",
+              seasons: pl.meta.seasons,
+              season_count: pl.meta.season_count,
+              matches: pl.meta.matches,
+              skill: pl.meta.skill_vs_era_baseline,
+            }]
+          : []),
+        ...intl.metas.map((m) => ({
+          key: m.country,
+          competition: m.competition,
+          seasons: m.seasons,
+          season_count: m.season_count,
+          matches: m.matches,
+          skill: m.skill_vs_era_baseline,
+        })),
+      ].sort((a, b) => b.skill - a.skill)
+    : [];
+  const mostPredictable = leagues[0] ?? null;
+  const leastPredictable = leagues.length > 1 ? leagues[leagues.length - 1] : null;
+
+  // Five best and five worst continental seasons, ranked on MATCH points. The
+  // three-point switch landed in 1994-95 in France and Italy and 1995-96 in
+  // Spain, Germany and the Netherlands, so league points cannot rank across
+  // these five leagues and match points can.
+  const intlSeasons = [
+    ...(intl?.best_seasons ?? []).slice(0, 5),
+    ...(intl?.worst_seasons ?? []).slice(0, 5),
+  ];
+
+  // Every season in these five payloads whose table is not final, named where
+  // its numbers appear rather than in a footnote nobody opens.
+  // Depth and dominance are different quantities, and the metro layer is the
+  // only place the difference can be said. Both rows are LOOKED UP, never
+  // quoted from a scoping note: the note this was built from had the
+  // most-clubs metro's surplus and club count both wrong.
+  const intlTopMetro = intl?.metros?.[0] ?? null;
+  const intlDeepestMetro = (intl?.metros ?? []).reduce<typeof intlTopMetro>(
+    (a, b) => (a && a.clubs >= b.clubs ? a : b),
+    null,
+  );
+
+  const intlCaveats = (intl?.metas ?? []).flatMap((m) => [
+    ...m.partial_seasons.map((x) => ({ country: m.country, season: x.season, note: x.reason })),
+    ...m.grouped_seasons.map((x) => ({ country: m.country, season: x.season, note: x.reason })),
+  ]);
   const stamp = [
     pl ? `${pl.meta.matches.toLocaleString()} English top-flight matches ${pl.meta.seasons[0]}–${pl.meta.seasons[1]}` : null,
+    intl ? `${intl.totals.matches.toLocaleString()} matches in ${intl.totals.leagues} continental top flights ${intl.totals.first_season}–${intl.totals.last_season}` : null,
     nfl ? `${nfl.meta.games.toLocaleString()} NFL games ${nfl.meta.seasons[0]}–${nfl.meta.seasons[1]}` : null,
-    pl ? `built ${pl.meta.generated_at.slice(0, 10)}` : null,
+    // The newest of the ledgers actually on the page, not England's alone:
+    // the continental five were built after it and the stamp must not age them.
+    (() => {
+      const built = [pl?.meta.generated_at, intl?.totals.generated_at].filter(Boolean).sort();
+      return built.length ? `built ${String(built[built.length - 1]).slice(0, 10)}` : null;
+    })(),
   ].filter(Boolean).join(" · ");
 
   return (
@@ -141,9 +205,9 @@ export default async function ExpectationPage() {
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">🎲 Against Expectation</h1>
         <p className="mt-2 text-[15px] text-[var(--text-muted)] max-w-3xl">
           The record book says who won. It cannot say who was lucky, who was robbed, or which result
-          was genuinely impossible, and every English top-flight match since 1888 and every NFL game
-          since 1920 is scored here against the chance it was given before kick-off, which turns out
-          to reveal something neither league has ever announced.
+          was genuinely impossible. Every match in six European top flights since 1888 and every NFL
+          game since 1920 is scored here against the chance it was given before kick-off, on one
+          model, which turns out to reveal several things none of those leagues has ever announced.
         </p>
         <div className="mt-2 text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
           {stamp}
@@ -154,6 +218,7 @@ export default async function ExpectationPage() {
         { label: "Home advantage is dying", href: "#home-advantage" },
         { label: "Longest odds beaten", href: "#upsets" },
         { label: "Seasons that broke the model", href: "#seasons" },
+        { label: "Six leagues, one model", href: "#leagues" },
         { label: "By metro", href: "#metros" },
         { label: "Against the market", href: "#market" },
         { label: "Where the numbers come from", href: "#method" },
@@ -330,7 +395,7 @@ export default async function ExpectationPage() {
           id="seasons"
           title="The seasons that broke the model"
           sub="The ratings still could not see these coming."
-          more="Football is measured in league points under that season's own scoring; the NFL in wins. The two are not the same quantity and are never added."
+          more="England is measured in league points under that season's own scoring; the NFL in wins; the five continental leagues in match points, because they switched to three points for a win in three different seasons and league points cannot rank across them. None of the three is added to another."
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="min-w-0">
@@ -366,6 +431,40 @@ export default async function ExpectationPage() {
             </TableScroll>
           </div>
           <div className="min-w-0">
+            <h3 className="text-sm font-semibold mb-2">Spain, Italy, Germany, France and the Netherlands, match points vs expected</h3>
+            <TableScroll className="rounded-xl border" style={CARD}>
+              <table className="w-full text-xs" data-sticky-col="2">
+                <thead>
+                  <tr className="text-[var(--text-dim)] text-left">
+                    <th className="py-2 px-3 font-medium">#</th>
+                    <th className="py-2 px-3 font-medium">Club</th>
+                    <th className="py-2 px-3 font-medium text-right">vs expected</th>
+                    <th className="py-2 px-3 font-medium hidden sm:table-cell">League</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {intlSeasons.map((r, i) => (
+                    <tr key={`${r.country}-${r.season}-${r.club}`} className="border-t" style={BORD}>
+                      <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i < 5 ? i + 1 : ""}</td>
+                      <td className="py-1.5 px-3 whitespace-nowrap">
+                        <span className="tabular-nums text-[var(--text-dim)] mr-1.5" style={MONO}>{r.season}</span>
+                        {/* 🔴 The board rows carry the ERA name and no slug. The
+                            link exists only where that name resolves to exactly
+                            one club in the same league's own list. */}
+                        {r.slug ? (
+                          <Link href={`/teams/football/${r.slug}`} className="text-[var(--accent)] hover:underline">{r.club}</Link>
+                        ) : r.club}
+                      </td>
+                      <td className="py-1.5 px-3 text-right"><Delta v={r.surplus} dp={2} /></td>
+                      <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{r.competition}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </TableScroll>
+          </div>
+
+          <div className="min-w-0">
             <h3 className="text-sm font-semibold mb-2">NFL, wins vs expected</h3>
             <TableScroll className="rounded-xl border" style={CARD}>
               <table className="w-full text-xs" data-sticky-col="2">
@@ -399,6 +498,80 @@ export default async function ExpectationPage() {
           </div>
         </div>
       </section>
+
+      {/* ---------------------------------------------- six leagues */}
+      {leagues.length > 1 ? (
+        <section className="mb-12">
+          <SectionHead
+            id="leagues"
+            title="Six leagues, one model, and the most predictable league in Europe"
+            sub="Skill is how much the ratings knew that the era's home-and-away split did not."
+            more="Every league is scored against its OWN era baseline, so a century of Serie A and sixty years of the Bundesliga can share a column. The five continental ledgers import the English model rather than copying it, so this is one model applied six times, not six models compared. Surplus totals, by contrast, are comparable within a league and only loosely across them, because league size and era differ."
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="min-w-0">
+              <TableScroll className="rounded-xl border" style={CARD}>
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="text-[var(--text-dim)] text-left">
+                      <th className="py-2 px-3 font-medium">League</th>
+                      <th className="py-2 px-3 font-medium text-right">Skill</th>
+                      <th className="py-2 px-3 font-medium hidden sm:table-cell">Span</th>
+                      <th className="py-2 px-3 font-medium text-right hidden sm:table-cell">Seasons</th>
+                      <th className="py-2 px-3 font-medium text-right hidden sm:table-cell">Matches</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {leagues.map((l) => (
+                      <tr key={l.key} className="border-t" style={BORD}>
+                        <td className="py-1.5 px-3 whitespace-nowrap">
+                          {l.key}
+                          <span className="block text-[11px] text-[var(--text-muted)]">{l.competition}</span>
+                        </td>
+                        <td className="py-1.5 px-3 text-right">
+                          <DataBar v={l.skill} dp={2} suffix="%" scale={100}
+                                   label="skill against that league's own era baseline" />
+                        </td>
+                        <td className="py-1.5 px-3 text-[var(--text-muted)] tabular-nums hidden sm:table-cell whitespace-nowrap" style={MONO}>
+                          {l.seasons[0]}–{l.seasons[1]}
+                        </td>
+                        <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={MONO}>{l.season_count}</td>
+                        <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={MONO}>
+                          {l.matches.toLocaleString()}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </TableScroll>
+            </div>
+            <div className="min-w-0 text-sm text-[var(--text-muted)] space-y-3">
+              {mostPredictable && leastPredictable ? (
+                <p>
+                  The {mostPredictable.competition} is the most predictable of the six and the{" "}
+                  {leastPredictable.competition} the least. Predictable is not a judgement on the
+                  football. It means the same model, fitted the same way, learns more from the same
+                  number of matches, which usually points at a settled gap between a few clubs and
+                  the rest rather than at the quality of the play.
+                </p>
+              ) : null}
+              <p>
+                The number is the improvement on a baseline that knows nothing about the two clubs,
+                only how often that era&rsquo;s matches ended home, away or drawn. A league at{" "}
+                <span className="tabular-nums text-[var(--text)]" style={MONO}>0%</span> would be one
+                where knowing who is playing tells you nothing you did not already know from the
+                fixture list.
+              </p>
+              <p>
+                Nobody publishes this comparison, which is mostly because nobody runs one model
+                across six leagues and a century. The settings were fitted on England and reused
+                unchanged, so the transfer is a stated choice rather than a tuned result: skill is
+                positive in all six, and refitting per league is available and not done.
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* ---------------------------------------------------- by metro */}
       <section className="mb-12">
@@ -441,6 +614,38 @@ export default async function ExpectationPage() {
             </TableScroll>
           </div>
           <div className="min-w-0">
+            <h3 className="text-sm font-semibold mb-2">The five continental top flights, match points vs expected</h3>
+            <TableScroll className="rounded-xl border" style={CARD}>
+              <table className="w-full text-xs" data-sticky-col="2">
+                <thead>
+                  <tr className="text-[var(--text-dim)] text-left">
+                    <th className="py-2 px-3 font-medium">#</th>
+                    <th className="py-2 px-3 font-medium">Metro</th>
+                    <th className="py-2 px-3 font-medium text-right">vs expected</th>
+                    <th className="py-2 px-3 font-medium text-right hidden sm:table-cell">Clubs</th>
+                    <th className="py-2 px-3 font-medium text-right hidden sm:table-cell">Club-matches</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(intl?.metros ?? []).slice(0, 8).concat((intl?.metros ?? []).slice(-4)).map((m, i) => (
+                    <tr key={m.metro_slug} className="border-t" style={BORD}>
+                      <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i < 8 ? i + 1 : ""}</td>
+                      <td className="py-1.5 px-3 whitespace-nowrap">
+                        <Link href={`/rankings/${m.metro_slug}`} className="text-[var(--accent)] hover:underline">{m.metro}</Link>
+                      </td>
+                      <td className="py-1.5 px-3 text-right"><Delta v={m.surplus} /></td>
+                      <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={MONO}>{m.clubs}</td>
+                      <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={MONO}>
+                        {m.club_matches.toLocaleString()}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </TableScroll>
+          </div>
+
+          <div className="min-w-0">
             <h3 className="text-sm font-semibold mb-2">NFL, wins vs expected</h3>
             <TableScroll className="rounded-xl border" style={CARD}>
               <table className="w-full text-xs" data-sticky-col="2">
@@ -470,6 +675,16 @@ export default async function ExpectationPage() {
             </TableScroll>
           </div>
         </div>
+        {intlTopMetro && intlDeepestMetro && intlDeepestMetro.metro_slug !== intlTopMetro.metro_slug ? (
+          <p className="mt-4 text-sm text-[var(--text-muted)] max-w-3xl">
+            {intlTopMetro.metro} tops the continental board at <Delta v={intlTopMetro.surplus} /> match
+            points from {intlTopMetro.clubs} club{intlTopMetro.clubs === 1 ? "" : "s"}.{" "}
+            {intlDeepestMetro.metro} has {intlDeepestMetro.clubs} clubs in these leagues, more than
+            anywhere else, and sits at <Delta v={intlDeepestMetro.surplus} />. Depth and dominance are
+            different quantities and a league table cannot separate them. Totals are safe to compare
+            within a league and only loosely across them, because league size and era differ.
+          </p>
+        ) : null}
       </section>
 
       {/* ---------------------------------------------------- vs market */}
@@ -534,6 +749,14 @@ export default async function ExpectationPage() {
             ) : null}
           </div>
         </div>
+        {intl ? (
+          <p className="mt-4 text-sm text-[var(--text-muted)] max-w-3xl">
+            There is no third card, because there is no third market. The five continental ledgers
+            carry no price at all, so Spain, Italy, Germany, France and the Netherlands are measured
+            against the model and nothing else. A continental line on this section would be an
+            implication the data cannot support.
+          </p>
+        ) : null}
         <p className="mt-4 text-sm text-[var(--text-muted)] max-w-3xl">
           Your own calls land on the same axis:{" "}
           <Link href="/play/picks" className="text-[var(--accent)] hover:underline">Citizen of Nowhere Picks</Link>{" "}
@@ -607,13 +830,52 @@ export default async function ExpectationPage() {
               what a club earned on the pitch, with the deduction named beside it.
             </p>
           </div>
+          {intl ? (
+            <div>
+              <h3 className="text-[var(--text)] font-semibold text-sm mb-1">The five continental ledgers</h3>
+              <p>
+                Spain, Italy, Germany, France and the Netherlands are scored by the SAME model as
+                England, imported rather than copied: the build asserts it is running the English
+                ledger&rsquo;s own functions, so the two cannot quietly drift apart. Results are
+                compiled by James Curley, {" "}
+                <a href="https://github.com/jalapic/engsoccerdata" rel="nofollow noopener"
+                   className="text-[var(--accent)] hover:underline">github.com/jalapic/engsoccerdata</a>
+                {intl.metas.some((m) => m.supplemented_seasons.length) ? (
+                  <>
+                    , with{" "}
+                    {intl.metas
+                      .flatMap((m) => m.supplemented_seasons.map((x) => `${m.country} ${x.season}`))
+                      .join(", ")}{" "}
+                    supplied separately because the source does not carry it
+                  </>
+                ) : null}
+                . The settings were fitted on England and reused unchanged, which is a stated choice
+                and not a derived one.
+              </p>
+              {intlCaveats.length ? (
+                <p className="mt-2">
+                  {intlCaveats.length} season{intlCaveats.length === 1 ? " is" : "s are"} recorded
+                  here whose TABLE is not final, although the ratings from them are sound:{" "}
+                  {intlCaveats.map((c, i) => (
+                    <span key={`${c.country}-${c.season}`}>
+                      {i > 0 ? "; " : ""}
+                      <span className="text-[var(--text)]">{c.country} {c.season}</span>, {c.note}
+                    </span>
+                  ))}
+                  . They are labelled wherever their numbers appear rather than quietly averaged in.
+                </p>
+              ) : null}
+            </div>
+          ) : null}
           <div>
             <h3 className="text-[var(--text)] font-semibold text-sm mb-1">Two units, never added</h3>
             <p>
-              A football win was worth two league points until 1981-82 and three after, so league
-              points cannot be summed down the length of the series. Club and metro totals use match
-              points instead: a win is 1, a draw 0.5, which every era shares. The NFL is in wins.
-              A page that added them together would be inventing a quantity.
+              A football win was worth two league points until 1981-82 in England, and the same
+              switch landed in 1994-95 in France and Italy and 1995-96 in Spain, Germany and the
+              Netherlands. So league points cannot be summed down the length of one series, nor
+              ranked across six of them. Club and metro totals use match points instead: a win is 1,
+              a draw 0.5, which every era and every league shares. The NFL is in wins. A page that
+              added them together would be inventing a quantity.
             </p>
           </div>
           <div>
@@ -631,9 +893,10 @@ export default async function ExpectationPage() {
         </div>
 
         <p className="mt-4 text-sm text-[var(--text-muted)]">
-          The same measure appears one sentence at a time on every English club page and on the metro
+          The same measure appears one sentence at a time on every covered club page and on the metro
           pages, where it belongs to the club or the place rather than to the model. See it on{" "}
           <Link href="/teams/football/leicester-city" className="text-[var(--accent)] hover:underline">Leicester City</Link>,{" "}
+          <Link href="/teams/football/girona-fc" className="text-[var(--accent)] hover:underline">Girona</Link>,{" "}
           <Link href="/rankings/liverpool" className="text-[var(--accent)] hover:underline">Liverpool</Link>{" "}
           or{" "}
           <Link href="/rankings/green-bay" className="text-[var(--accent)] hover:underline">Green Bay</Link>.

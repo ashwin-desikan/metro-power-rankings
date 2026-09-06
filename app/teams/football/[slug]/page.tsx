@@ -16,6 +16,7 @@ import ClubExpectationPanel from "@/app/teams/_shared/ClubExpectationPanel";
 import TeamGreatestGames from "../TeamGreatestGames";
 import { getClubGamesForTeam } from "@/lib/clubGames";
 import { getPlExpectationClub } from "@/lib/plExpectation";
+import { getIntlExpectationClub } from "@/lib/intlExpectation";
 import { notFound } from "next/navigation";
 import { colorForFootballClub } from "@/lib/football-colors";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
@@ -113,7 +114,14 @@ export default async function FootballClubPage({ params }: Props) {
   // silently drop their panels the day that filing changed. A club with no
   // top-flight history simply has no entry, and lib/plExpectation holds one
   // parse of the file for the whole server process.
-  const expectation = await getPlExpectationClub(slug);
+  // 🔴 Both ledgers, one lookup each, and NO country guard on either. A club
+  // with no top-flight history in a covered league simply has no entry, and a
+  // guard on `country` would silently drop a panel the day a filing changed.
+  // A club appears in at most one of the two, so the panel renders once.
+  const [expectation, intlExpectation] = await Promise.all([
+    getPlExpectationClub(slug).catch(() => null),
+    getIntlExpectationClub(slug).catch(() => null),
+  ]);
   const topGames = getClubGamesForTeam(slug);
 
   let seasons = getSeasonsForClub(slug);
@@ -284,7 +292,7 @@ export default async function FootballClubPage({ params }: Props) {
         </section>
       )}
 
-      <ClubExpectationPanel entry={expectation} />
+      <ClubExpectationPanel entry={expectation} intl={intlExpectation} />
 
       <TeamGreatestGames rows={topGames} slug={club.slug} teamName={club.cur_name} />
 
