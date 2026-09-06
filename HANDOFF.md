@@ -10532,8 +10532,60 @@ analysable map, or move these readers to GitHub raw the way `lib/nflElo.ts`
 already does. Until then, any new value-importer of `lib/data` inherits the
 whole tree.
 
+
+### 🔴 The deploy watcher retried a build that had genuinely FAILED (do this first)
+
+Three notifications reached Ashwin inside twenty minutes for one fault: two
+Vercel build-failure emails and one ntfy titled **"Vercel auto-retry"**. All
+three trace to the 255 MB function limit above, but the third one is a defect in
+our own tooling and it is the cheapest thing on this list to fix.
+
+Timeline, BST:
+
+| Time | Event |
+|---|---|
+| 17:09 | 21 commits pushed, ending on `b40726b7b` |
+| ~17:12 | Vercel BUILT it cleanly, then failed at the deploy step (255.19 MB) |
+| 17:31 | `mac-mini-jobs/run-deploy-watch.sh` saw a build-relevant commit that was not live after 20 minutes, assumed CANCELLED, pushed `1291a3818` to re-trigger it, and sent the ntfy |
+| ~17:32 | That retry **also ERRORed**, identically, because it rebuilt the same broken code |
+| 17:48 | `ebbdd66d6` (the fix) deployed READY |
+
+**The gap.** The watcher is built for one failure mode and says so in its own
+header: Vercel cancels an in-progress build when a newer commit lands, the ~19
+data jobs push all day, so app builds get cancelled and silently never deploy.
+It reconciles desired-versus-live and re-triggers. It never asks WHY the target
+is not live. From the outside an ERRORed deployment and a CANCELLED one look
+identical, so a genuine failure gets retried up to `MAX_ATTEMPTS=3`, each attempt
+burning a production build against a 2/day budget and each one certain to fail
+the same way. This one stopped at attempt 1 only because the fix happened to
+land before the next tick.
+
+**The fix, about fifteen lines in `mac-mini-jobs/run-deploy-watch.sh`.** Before
+re-triggering, query the deployment state for TARGET:
+
+- `CANCELED` -> retry. This is the case the script was written for.
+- `ERROR` -> do NOT retry. Retrying a failed build cannot help. Alert loudly
+  instead: "build FAILED, deploy manually", with the commit and a link to the
+  build log. That is also a strictly better notification than the current one,
+  which said "Re-triggered canceled build of b40726b7b" when nothing had been
+  cancelled, and sent Ashwin looking in the wrong direction.
+
+It is mini-side, so it needs the mini and its own test. It was not done in this
+session because the session was being closed out.
+
+**Budget accounting, worth knowing.** The deploy-discipline rule in CLAUDE.md
+says to count `state: READY` and treats `CANCELED` as free. That is right as far
+as it goes, but it has no entry for `ERROR`, which is not free: a failed build
+consumes minutes and produces nothing. The day's real ledger was **24 production
+deployments: 2 ERROR, 2 READY, 20 CANCELED.** The twenty cancellations are the
+`[vercel skip]` discipline working exactly as intended. The two READY builds sat
+on budget, but only because the second one was the fix for the first one's
+failure. Count ERROR alongside READY when judging how much room is left.
+
 ### Open threads
 
+- **The deploy watcher retrying failed builds (above).** Cheapest fix on this
+  list and it protects the build budget. Do it before the Tuesday automation.
 - The Tuesday automation above.
 - 2019 Cowboys wk15 and the other seven single-game divergences the replay
   names: worth one pass through `elo_replay.py` to decide whether they are
