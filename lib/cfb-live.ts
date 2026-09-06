@@ -159,6 +159,18 @@ export async function getCfbStandings(): Promise<CfbStandingsSnapshot> {
         const sType = asStr(s.type);
         const display = asStr(s.displayValue);
         const value = asNum(s.value, 0);
+        // 🔴 MATCH ON TYPE, NOT ON NAME. ESPN repeats EVERY stat name once per
+        // split: `pointsFor` appears as type `pointsfor` (the real one) and
+        // again as `homerecord_pointsfor`, `awayrecord_pointsfor`,
+        // `vsconf_pointsfor`, `vsaprankedteams_pointsfor` and
+        // `vsusarankedteams_pointsfor`. Matching on the NAME meant the last
+        // occurrence won, and the last block is vs-ranked-teams, which is all
+        // zeroes in September. That is why Alabama showed 1-0 with no points
+        // for or against: the W-L was rescued by the `total` display string and
+        // everything numeric was overwritten with a zero from a split nobody
+        // asked for. A split's type always carries an underscore; the real one
+        // never does.
+        if (sType.includes("_")) continue;
         if (sType === "total" || sName === "overall") overall = display || overall;
         else if (sType === "vsconf") conf = display || conf;
         else if (sName === "wins") wins = value;

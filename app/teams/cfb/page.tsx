@@ -4,7 +4,9 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
 import { getAllCfbTeams, getAllCfbSlugs, getCfbTopGames, getCfbGamesByDecade, getCfbNationalChampions, type CfbTeam } from "@/lib/cfb";
-import { getCfbStandings, getCfbRankings, type CfbPoll, type CfbConference } from "@/lib/cfb-live";
+import { getCfbStandings, getCfbRankings, type CfbConference } from "@/lib/cfb-live";
+import { getCfbSim, type CfbSimRow } from "@/lib/cfbSim";
+import { fmtOdds } from "@/lib/mlbSim";
 import CfbAllTimeTable from "./CfbAllTimeTable";
 import CfbGames from "./CfbGames";
 import { CappedList } from "@/app/_shared/Disclosure";
@@ -27,35 +29,77 @@ export const metadata: Metadata = {
 const pollDate = (iso: string | null) =>
   iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : null;
 
-function PollTable({ poll }: { poll: CfbPoll }) {
+// 🔴 ONE BOARD, NOT THREE TOP 25s. Three stacked poll tables is 75 rows that
+// repeat the same 25 schools three times, and a third poll arrives in November
+// when the CFP rankings start, which would have made it 100. One row per school
+// with a rank column per poll says everything the three tables said in a third
+// of the height, and it says something they could not: where the polls disagree.
+//
+// 🔴 IT CARRIES OUR OWN NUMBERS TOO. A poll is somebody else's opinion. The
+// playoff and title odds beside it are this site's simulation of the rest of the
+// season, which is the reason a reader is here rather than on ESPN.
+
+type PollAgg = {
+  school: string;
+  slug: string | null;
+  record: string;
+  ranks: (number | null)[];
+  votes: number;
+  sim: CfbSimRow | null;
+};
+
+function PollBoard({
+  columns,
+  rows,
+  leadLabel,
+  showOdds,
+}: {
+  columns: string[];
+  rows: PollAgg[];
+  leadLabel: string;
+  showOdds: boolean;
+}) {
   return (
-    <div className="rounded-lg border" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
-      <div className="px-3 py-2 border-b" style={{ borderColor: "var(--border)" }}>
-        <div className="text-sm font-semibold">{poll.name}</div>
-        <div className="text-[10px] text-[var(--text-dim)]">
-          {[poll.week_label, pollDate(poll.date)].filter(Boolean).join(" \u00b7 ")}
-        </div>
-      </div>
-      <ol className="px-2 py-2 space-y-0.5">
-        {poll.rows.map((r) => (
-          <li key={r.rank} className="flex items-baseline gap-2 text-sm px-1">
-            <span className="w-5 text-[11px] tabular-nums text-[var(--text-dim)] text-right">{r.rank}</span>
-            <CrestIcon name={r.school} size={15} className="self-center" />
-            <span className="flex-1 truncate">
-              {r.slug
-                ? <Link href={`/teams/cfb/${r.slug}`} className="hover:text-[var(--accent)]">{r.school}</Link>
-                : r.school}
-              {r.first_place_votes > 0 && <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.first_place_votes})</span>}
-            </span>
-            <span className="tabular-nums text-xs text-[var(--text-muted)]">{r.record}</span>
-          </li>
-        ))}
-      </ol>
+    <div className="rounded-lg border overflow-x-auto" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
+      <table className="w-full text-xs min-w-[360px]">
+        <thead>
+          <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
+            <th className="px-2 py-1.5 text-right" title={leadLabel}>{columns[0]}</th>
+            <th className="px-2 py-1.5">School</th>
+            {columns.slice(1).map((c) => (
+              <th key={c} className="px-2 py-1.5 text-right">{c}</th>
+            ))}
+            <th className="px-2 py-1.5 text-right">Rec</th>
+            {showOdds ? <th className="px-2 py-1.5 text-right" title="chance of reaching the 12-team playoff, our simulation">Play</th> : null}
+            {showOdds ? <th className="px-2 py-1.5 text-right hidden sm:table-cell" title="chance of winning the national title, our simulation">Natty</th> : null}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((a) => (
+            <tr key={a.school} className="border-t hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)" }}>
+              <td className="px-2 py-1 text-right tabular-nums text-[var(--text-dim)]">{a.ranks[0] ?? "\u2014"}</td>
+              <td className="px-2 py-1 whitespace-nowrap">
+                <CrestIcon name={a.school} size={14} className="mr-1 align-[-2px]" />
+                {a.slug
+                  ? <Link href={`/teams/cfb/${a.slug}`} className="hover:text-[var(--accent)]">{a.school}</Link>
+                  : a.school}
+                {a.votes > 0 && <span className="ml-1 text-[10px] text-[var(--text-dim)]" title="first-place votes">({a.votes})</span>}
+              </td>
+              {a.ranks.slice(1).map((r, i) => (
+                <td key={i} className="px-2 py-1 text-right tabular-nums text-[var(--text-muted)]">{r ?? "\u2014"}</td>
+              ))}
+              <td className="px-2 py-1 text-right tabular-nums">{a.record || "\u2014"}</td>
+              {showOdds ? <td className="px-2 py-1 text-right tabular-nums">{fmtOdds(a.sim?.p_playoff)}</td> : null}
+              {showOdds ? <td className="px-2 py-1 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell">{fmtOdds(a.sim?.p_natty)}</td> : null}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
 
-function ConferenceTable({ conf }: { conf: CfbConference }) {
+function ConferenceTable({ conf, odds }: { conf: CfbConference; odds: Map<string, CfbSimRow> | null }) {
   return (
     <details className="rounded-lg border overflow-hidden" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
       <summary className="cursor-pointer select-none px-3 py-2 flex items-center justify-between gap-2">
@@ -73,6 +117,8 @@ function ConferenceTable({ conf }: { conf: CfbConference }) {
               <th className="px-2 py-1.5 text-right hidden sm:table-cell">PF</th>
               <th className="px-2 py-1.5 text-right hidden sm:table-cell">PA</th>
               <th className="px-2 py-1.5 text-right">Strk</th>
+              {odds ? <th className="px-2 py-1.5 text-right" title="chance of reaching the 12-team playoff, our simulation">Play</th> : null}
+              {odds ? <th className="px-2 py-1.5 text-right hidden sm:table-cell" title="chance of winning the national title, our simulation">Natty</th> : null}
             </tr>
           </thead>
           <tbody>
@@ -87,9 +133,15 @@ function ConferenceTable({ conf }: { conf: CfbConference }) {
                 </td>
                 <td className="px-2 py-1 text-right tabular-nums">{t.conf || "\u2014"}</td>
                 <td className="px-2 py-1 text-right tabular-nums">{t.overall}</td>
-                <td className="px-2 py-1 text-right tabular-nums hidden sm:table-cell">{t.points_for || "\u2014"}</td>
-                <td className="px-2 py-1 text-right tabular-nums hidden sm:table-cell">{t.points_against || "\u2014"}</td>
+                {/* 🔴 A ZERO IS A SCORE, NOT A GAP. `t.points_for || "—"` printed a
+                    dash for a team that had been shut out, which is the one
+                    result worth seeing. Only a team that has not played gets
+                    the dash. */}
+                <td className="px-2 py-1 text-right tabular-nums hidden sm:table-cell">{t.wins + t.losses > 0 ? t.points_for : "\u2014"}</td>
+                <td className="px-2 py-1 text-right tabular-nums hidden sm:table-cell">{t.wins + t.losses > 0 ? t.points_against : "\u2014"}</td>
                 <td className="px-2 py-1 text-right tabular-nums">{t.streak ?? "\u2014"}</td>
+                {odds ? <td className="px-2 py-1 text-right tabular-nums">{fmtOdds(odds.get(t.slug ?? t.school)?.p_playoff)}</td> : null}
+                {odds ? <td className="px-2 py-1 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell">{fmtOdds(odds.get(t.slug ?? t.school)?.p_natty)}</td> : null}
               </tr>
             ))}
           </tbody>
@@ -117,7 +169,40 @@ function Leader({ title, rows }: { title: string; rows: { name: string; slug: st
 }
 
 export default async function CfbHubPage() {
-  const [rankings, standings] = await Promise.all([getCfbRankings(), getCfbStandings()]);
+  const [rankings, standings, sim] = await Promise.all([
+    getCfbRankings(), getCfbStandings(), getCfbSim().catch(() => null),
+  ]);
+  // Our own simulation of the rest of the season, keyed on slug where a program
+  // resolves and on name where it does not, which is how the standings rows are
+  // keyed too.
+  const simRows = sim?.table ?? [];
+  const showOdds = simRows.length >= 100 && sim!.meta.season === (standings.season_year || sim!.meta.season);
+  const simByKey = showOdds
+    ? new Map<string, CfbSimRow>(simRows.flatMap((r) => (r.slug ? [[r.slug, r] as const, [r.name, r] as const] : [[r.name, r] as const])))
+    : null;
+
+  // One combined poll board. The lead poll is the CFP ranking once it is live,
+  // otherwise the AP, matching the /sports/standings idiom.
+  const COL: Record<string, string> = { cfp: "CFP", ap: "AP", coaches: "Coach" };
+  const bySchool = new Map<string, PollAgg>();
+  rankings.polls.forEach((p, pi) => {
+    for (const r of p.rows) {
+      let a = bySchool.get(r.school);
+      if (!a) {
+        a = { school: r.school, slug: r.slug, record: r.record, ranks: rankings.polls.map(() => null), votes: 0, sim: null };
+        bySchool.set(r.school, a);
+      }
+      a.ranks[pi] = r.rank;
+      if (r.record) a.record = r.record;
+      if (pi === 0) a.votes = r.first_place_votes;
+    }
+  });
+  const bestRank = (a: PollAgg) => Math.min(...a.ranks.map((x) => x ?? 99));
+  const pollRows = [...bySchool.values()]
+    .map((a) => ({ ...a, sim: simByKey?.get(a.slug ?? a.school) ?? null }))
+    .sort((a, b) => (a.ranks[0] ?? 99) - (b.ranks[0] ?? 99) || bestRank(a) - bestRank(b) || a.school.localeCompare(b.school));
+  const leadPoll = rankings.polls[0] ?? null;
+  const pollColumns = rankings.polls.map((p) => COL[p.kind] ?? p.name);
   const teams = getAllCfbTeams();
   const slugs = getAllCfbSlugs();
   const topGames = getCfbTopGames();
@@ -155,12 +240,17 @@ export default async function CfbHubPage() {
       {rankings.polls.length > 0 && (
         <section id="rankings" className="mb-12 scroll-mt-20">
           <h2 className="text-lg font-semibold mb-1">Rankings</h2>
-          <p className="text-xs text-[var(--text-muted)] mb-4">
-            The current Top 25s, straight from the polls: the College Football Playoff ranking when it is live, the AP Top 25 and the Coaches Poll. First-place votes in parentheses; each poll shows its own date.
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            Every current Top 25 on one board, ranked by{" "}
+            {leadPoll ? <span className="text-[var(--text)]">{COL[leadPoll.kind] ?? leadPoll.name}</span> : "the lead poll"}
+            {leadPoll ? <> ({[leadPoll.week_label, pollDate(leadPoll.date)].filter(Boolean).join(" \u00b7 ")})</> : null}
+            , with each other poll as its own column so the disagreements are visible. First-place votes in
+            parentheses. The College Football Playoff ranking joins as a column when it goes live in November.
+            {showOdds ? <> Playoff and national-title odds are our own simulation of the rest of the season
+              ({sim!.meta.sims.toLocaleString()} runs, {sim!.meta.generated_at}).</> : null}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-start">
-            {rankings.polls.map((p) => <PollTable key={p.kind} poll={p} />)}
-          </div>
+          <PollBoard columns={pollColumns} rows={pollRows} showOdds={Boolean(simByKey)}
+            leadLabel={leadPoll ? `${COL[leadPoll.kind] ?? leadPoll.name} rank` : "rank"} />
         </section>
       )}
 
@@ -170,6 +260,7 @@ export default async function CfbHubPage() {
           <p className="text-xs text-[var(--text-muted)] mb-4">
             {standings.season_year ? `FBS conference standings, ${standings.season_year} season. ` : "FBS conference standings. "}
             Ordered by conference record. Notre Dame sits with the Power 4; the other independents with the Group of 5. Tap a conference to open it, and a school for its program page.
+            {showOdds ? ` Playoff and national-title odds are our own simulation of the remaining schedule (${sim!.meta.sims.toLocaleString()} runs, ${sim!.meta.generated_at}), not a poll.` : ""}
           </p>
           {[
             { title: "Power 4", confs: standings.conferences.filter((c) => c.power4) },
@@ -179,10 +270,10 @@ export default async function CfbHubPage() {
               <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2">{tier.title}</div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
                 <div className="space-y-3">
-                  {tier.confs.filter((_, i) => i % 2 === 0).map((c) => <ConferenceTable key={`${c.short}-${c.power4}`} conf={c} />)}
+                  {tier.confs.filter((_, i) => i % 2 === 0).map((c) => <ConferenceTable key={`${c.short}-${c.power4}`} conf={c} odds={simByKey} />)}
                 </div>
                 <div className="space-y-3">
-                  {tier.confs.filter((_, i) => i % 2 === 1).map((c) => <ConferenceTable key={`${c.short}-${c.power4}`} conf={c} />)}
+                  {tier.confs.filter((_, i) => i % 2 === 1).map((c) => <ConferenceTable key={`${c.short}-${c.power4}`} conf={c} odds={simByKey} />)}
                 </div>
               </div>
             </div>

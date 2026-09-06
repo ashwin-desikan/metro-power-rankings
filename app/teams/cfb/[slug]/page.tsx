@@ -10,6 +10,7 @@ import TopTeamChip from "@/app/teams/TopTeamChip";
 import HeartbreakTag from "@/app/teams/HeartbreakTag";
 import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import { getAllCfbSlugs, getAllCfbTeams, getCfbTeamBySlug, getCfbSeasons, getCfbAwards, getCfbRivalries, getCfbTeamGames, cfbMonogram } from "@/lib/cfb";
+import { getCfbStandings } from "@/lib/cfb-live";
 import CfbGamesTable from "../CfbGamesTable";
 import { CappedList } from "@/app/_shared/Disclosure";
 
@@ -18,7 +19,12 @@ import { CappedList } from "@/app/_shared/Disclosure";
 // first request and the long revalidate caches the result, same pattern as
 // app/states/[slug]/page.tsx.
 export const dynamicParams = true;
-export const revalidate = 31536000; // 1 year — effectively static
+// 🔴 NOT A YEAR ANY MORE. This was 31536000, effectively static, which is right
+// for a page of curated history and wrong the moment a live row appears on it:
+// Alabama sat at 0-0 through September because the HTML was a year old, not
+// because the data was missing. An hour matches the ESPN standings cache the
+// live row reads from.
+export const revalidate = 3600;
 export function generateStaticParams() {
   return getAllCfbTeams().filter((t) => t.current_fbs).sort((a, b) => (b.w ?? 0) - (a.w ?? 0)).slice(0, 100).map((t) => ({ slug: t.slug }));
 }
@@ -74,7 +80,36 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
   const t = getCfbTeamBySlug(slug);
   if (!t) notFound();
   const seasons = getCfbSeasons(slug);
+  // 🔴 THE CURRENT SEASON COMES FROM ESPN, NOT FROM THE WORKBOOK. The curated
+  // database is written after a season, so the live year sits in it as 0-0 all
+  // autumn. Where ESPN has a record for this school in the current season, it
+  // replaces the workbook's placeholder row and is labelled live.
+  const live = await getCfbStandings().catch(() => null);
+  const liveRow = live?.season_year
+    ? live.conferences.flatMap((c) => c.rows).find((r) => r.slug === slug) ?? null
+    : null;
+  const liveSeason = live?.season_year ?? 0;
+  const livePlayed = liveRow ? liveRow.wins + liveRow.losses > 0 : false;
   const games = getCfbTeamGames(slug);
+  const seasonsShown = livePlayed && liveRow
+    ? seasons.map((sn) =>
+        sn.year === liveSeason
+          ? {
+              ...sn,
+              w: liveRow.wins,
+              l: liveRow.losses,
+              // ESPN's conference record is a display string; parse it or leave
+              // the workbook's zeroes alone rather than inventing a number.
+              ...(() => {
+                const m = (liveRow.conf || "").match(/^(\d+)-(\d+)(?:-(\d+))?$/);
+                return m
+                  ? { conf_w: Number(m[1]), conf_l: Number(m[2]), conf_t: Number(m[3] ?? 0) }
+                  : {};
+              })(),
+            }
+          : sn,
+      )
+    : seasons;
   const awards = getCfbAwards(slug);
   const rivalries = getCfbRivalries(slug);
   const slugs = new Set(getAllCfbSlugs());
@@ -111,6 +146,20 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
           {t.nat_champ_years.length > 0 && (
             <p className="text-sm mt-2"><span className="text-[var(--text-dim)]">National titles:</span> <span className="text-[var(--accent)] font-medium tabular-nums">{t.nat_champ_years.join(", ")}</span></p>
           )}
+          {livePlayed && liveRow ? (
+            <p className="text-sm mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span className="text-[9px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded-full border"
+                style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>Live</span>
+              <span className="text-[var(--text-dim)]">{liveSeason}:</span>
+              <span className="font-medium tabular-nums">{liveRow.overall}</span>
+              {liveRow.conf ? <span className="text-[var(--text-muted)] tabular-nums">({liveRow.conf} in conference)</span> : null}
+              {liveRow.points_for || liveRow.points_against ? (
+                <span className="text-[var(--text-muted)] tabular-nums">{liveRow.points_for}&ndash;{liveRow.points_against}</span>
+              ) : null}
+              {liveRow.streak ? <span className="text-[var(--text-muted)]">{liveRow.streak}</span> : null}
+              <span className="text-[var(--text-dim)] text-xs">from ESPN, hourly</span>
+            </p>
+          ) : null}
         </div>
       </header>
 
@@ -157,7 +206,7 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
         {/* Mobile: one card per season. Same `seasons` array/order that
             drives the desktop table below - every column reappears here. */}
         <div className="grid grid-cols-1 gap-2 md:hidden max-h-[70vh] overflow-auto rounded-lg border p-2" style={{ borderColor: "var(--border)" }}>
-          {seasons.map((sn) => {
+          {seasonsShown.map((sn) => {
             const confRecord = sn.conf_w || sn.conf_l || sn.conf_t ? `${sn.conf_w}-${sn.conf_l}${sn.conf_t ? `-${sn.conf_t}` : ""}` : "—";
             return (
               <div key={sn.year} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -208,7 +257,7 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
               </tr>
             </thead>
             <tbody>
-              {seasons.map((sn) => (
+              {seasonsShown.map((sn) => (
                 <tr key={sn.year} className="border-b last:border-0 hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)" }}>
                   <td className="px-2 py-1.5"><a href={`https://www.sports-reference.com/cfb/years/${sn.year}.html`} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] hover:underline" title={`${sn.year} college football season on Sports Reference`}>{sn.year}</a></td>
                   <td className="px-2 py-1.5 text-[var(--text-muted)]">{sn.school}</td>
