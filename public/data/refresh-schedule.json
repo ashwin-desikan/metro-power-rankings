@@ -1,27 +1,6 @@
 {
-  "generated_at": "2026-09-06T09:03:57.531447+00:00",
+  "generated_at": "2026-09-06T11:05:32.438219+00:00",
   "jobs": [
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-06T11:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-06",
-        "status": "ok",
-        "slot": "2026-09-06T05:00:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -49,6 +28,27 @@
         "date": "2026-09-06",
         "status": "ok",
         "slot": "2026-09-06T07:00:00+00:00"
+      }
+    },
+    {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-06T17:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-06",
+        "status": "ok",
+        "slot": "2026-09-06T11:00:00+00:00"
       }
     },
     {
