@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-06T07:11:37.426285+00:00",
+  "generated_at": "2026-09-06T07:21:56.451098+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-06T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-05",
-        "status": "ok",
-        "slot": "2026-09-05T07:20:00+00:00"
-      }
-    },
     {
       "id": "egress-refresh",
       "label": "Civic data (leaders, governors, congress, mayors)",
@@ -261,6 +243,24 @@
         "date": "2026-09-04",
         "status": "ok",
         "slot": "2026-09-04T06:10:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-07T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-06",
+        "status": "ok",
+        "slot": "2026-09-06T07:20:00+00:00"
       }
     },
     {
