@@ -10326,3 +10326,186 @@ Results compiled by **James Curley, github.com/jalapic/engsoccerdata**, carried 
 licence is unresolved: package metadata says GPL >= 2, the README says
 non-commercial with attribution, no LICENSE file. Valuations are Transfermarkt
 via `dcaribou/transfermarkt-datasets` (repo CC0, upstream terms not retrievable).
+
+---
+
+## 2026-09-06 — windows/cowork → next session (NFL hub + season pages rebuilt, two silent data bugs, live-chain gate)
+
+Long Cowork session, all pushed in ONE push (one production build; the day's
+budget had one READY build already, from the mini's build-time-read refresh).
+Everything below is live unless it says otherwise.
+
+### The two bugs worth remembering, because both produced plausible wrong data
+
+🔴 **ESPN repeats every stat name once per split.** In the standings payloads
+`pointsFor` arrives as type `pointsfor` (the real one) and again as
+`homerecord_pointsfor`, `awayrecord_pointsfor`, `vsconf_pointsfor`,
+`vsaprankedteams_pointsfor` and `vsusarankedteams_pointsfor`. `lib/cfb-live.ts`
+matched on the stat NAME, so the LAST occurrence won and the last block is
+vs-ranked-teams, which is all zeroes in September. Points for, points against,
+streak and playoff seed were zero for every team in college football. The W-L
+survived only because it is rescued separately from the `total` display string,
+which is exactly why it looked like a points bug rather than a parser bug. Fix:
+skip any stat whose `type` contains an underscore. **Check any other ESPN
+standings parser you touch for the same shape.**
+
+🔴 **`scripts/stage-leagues.py` looked for the workbooks in ONE place.** On a
+bridged Cowork session the connected folders mount side by side, so
+`Excel Files` is a sibling of `Projects/`, not of the project directory.
+Staging failed for exactly one workbook, quietly, and I rebuilt the whole NFL
+Elo spine from an August copy that had never heard of 2026 before noticing. It
+now walks the ancestors. **After any `build-nfl-elo.py` run, read the season
+count it prints (107 today) before trusting the output.**
+
+Both are written up in CLAUDE.md under "Two traps that cost a day each".
+
+### NFL Elo: the live season is now carried in Python, and there is a gate for it
+
+`scripts/build-nfl-elo.py --replay` replays finished seasons from their week-0
+seed and the game log alone, never looking at a published rating again, and
+scores the result against the workbook. Last ten seasons: **mean under 1 Elo,
+p95 under 5**, worst single team-week 77.7 (2019 Cowboys wk15, which traces to
+ONE game where the source disagrees with its own formula and is then carried by
+that team for the rest of the season). The gate passes on mean/p95 and prints
+the max with the team and week named. Read the max, not the mean.
+
+That licenses `live_chain()`, now wired into `build()`: a season that is not
+final and HAS results in its game log is carried in Python and the workbook's
+weekly Elo is ignored. **Why:** `NFL Standings!AI` is a FORMULA in the live
+season (it sums `Regular Season!DQ`), and a formula holds whatever Excel last
+wrote, so a Tuesday job that adds Sunday's results leaves every rating stale
+until a human opens the workbook. That human step is the whole thing the
+automation exists to remove.
+
+**It is inert today.** The 2026 game log has no results, so the chain reports
+nothing played and 2026 stays the preseason board it is. Status gained a `live`
+value alongside `final`/`seeded`/`broken`; `[year]/page.tsx` now tests
+`status === "seeded"` rather than `!== "final"`, so a live season renders the
+weekly chart and the movers rather than the preseason board.
+
+### What the 2026 automation still needs (NOT built)
+
+The workbook analysis is done and settled. For 2026 the workbook is fully
+self-computing once four things are entered per game: **Q (PF), R (PA), M
+(W/L/T) and DM/DN/DO (pre-game Elo, opponent pre-game Elo, win probability)**.
+`AC`, `DP`, `DQ`, `Standings!AI` and `Standings!AJ` are all formulas that
+consume them. DM/DN/DO are PASTED VALUES in every prior season, so writing
+computed values there matches the workbook's own convention rather than
+fighting it.
+
+Remaining work, in order:
+1. `scripts/nfl/fetch_espn_results.py` — completed games for the live season,
+   mapped to workbook canonical names. Testable against 2025 today.
+2. `scripts/nfl/write_workbook_2026.py` — write Q/R/M and DM/DN/DO into the
+   2026 rows by editing sheet XML in the zip, the technique
+   `scripts/nfl/fix_2026_elo_rank.py` already uses. `--dry-run` by default.
+   **Guard on the `~$NFL_all.xlsx` lockfile and abort if Excel is open.**
+3. `scripts/nfl/tuesday_update.py` — stage, fetch, write, rebuild, verify,
+   commit `[vercel skip]`, notify only on failure.
+4. Scheduling. **The site half does not need the workbook**: consider committing
+   a small 2026 spine (schedule + week-0 seeds) so a GitHub Action can carry the
+   chain from ESPN with no dependency on the Windows box being awake. The
+   workbook half then runs on Windows when the machine is available, and if it
+   does not run the site is still right. `.github/workflows/footy-refresh.yml`
+   is the closest existing model.
+
+None of it can be tested end to end until week 1 of 2026 is played.
+
+### NFL hub, season pages, season archive
+
+- Hub opens with the banded `HubHero` (was a paragraph, loose stats and six
+  links printing their own URLs). Elo power rankings and the live standings sit
+  under one heading, four columns of eight and the standings beneath, both
+  folded on a phone.
+- **Standings cards are two across, not four, and the arithmetic is the reason:**
+  the container caps at `max-w-6xl`, so four cards is 247px inside padding
+  against ~176px of fixed columns, leaving 71px for a name. Nicknames, no
+  truncation, and record + pct + playoff% + title% visible at every width.
+  Odds come from `public/data/nfl-sim.json` and are shown in the preseason
+  (unlike MLB's gate) because the NFL sim blends posted lines and futures.
+- Season pages: records (taken from the last week that HAS one, because the
+  workbook stops writing W/L/T when a team's regular season ends), division and
+  conference grouping, playoff seeds (read from `Regular Season!J` on each
+  team's FIRST playoff game; `Standings!AK` is empty in every season), the
+  honours strip from AR-AX, and an Against Expectation preview.
+- **Standings ORDER is a ruling:** division winners lead their division whatever
+  their record; conferences order by record, not by seed; a playoff team is
+  placed above a non-playoff team on the same record. The league's real
+  tiebreakers are not in the workbook and the copy says so.
+- Season archive: the club-football "belt", one square per season in that team's
+  colour, replaced the best-team line chart. The chart space went to model vs
+  market Brier by season, drawn inverted because lower is better.
+- Every season page carries a jumper to all 107 seasons.
+
+### Charts
+
+`WeeklyEloChart` is now a client component. Per-POINT tooltips (week, rating,
+rank, record, points, phase), filters by conference/division/playoff fate built
+from the season itself, and a pin: click a line or use the select, and the pin
+outranks hover so it survives the cursor travelling back to it. **The hover bug
+was a one-word thing:** base opacity was an inline style, which beats a
+stylesheet rule, so neither the dim nor the highlight could touch a line and
+hovering did nothing at all. `PreseasonChart` gives a seeded season a dot plot,
+because a line through one point is not a line.
+
+🔴 **`nflLineColor` was returning white for 15 of 31 franchises.** It scored both
+stored colours against the card and took whichever contrasted MOST, and white
+wins that every time. Six teams had a primary that already cleared the floor and
+it was discarded anyway. Now: primary if it clears 3:1, else secondary if it
+clears and is not white, else the primary lifted along its own hue. Zero white,
+28 distinct colours, verified in the built HTML.
+
+### Era names
+
+`nflSlugForEraTeam(city, team)` in `lib/nfl.ts` resolves a club by the name its
+own era used, so "San Diego Chargers" reaches the Chargers page. Nickname plus a
+former city gets the movers, historical `display_name` gets the pre-war clubs,
+and eight documented renames (Redskins, Oilers, Spartans, Staleys,
+All-Americans, Legion) are in one auditable table. **2,822 of the 2,824 team
+references in the game files now resolve.** The two that do not are the Cleveland
+Bulldogs, whose lineage is contested and on which the workbook takes no
+position — left unlinked deliberately, do not "fix" it without a ruling.
+`withTeamSlugs` now uses it too; its old comment about defunct clubs 404ing was
+stale from before the historical hub shipped.
+
+### Collapsible sections
+
+`app/_shared/CollapsibleSection.tsx` composes `SectionHead` (which keeps the
+anchor id on the HEADING, so tab-row deep links never land on a closed box) with
+`Disclosure`. Applied across the NFL and CFB hubs; `/sports/standings` league
+accordions now use `data-desktop-open` so they are collapsed on a phone and open
+on a desktop. Measured at 390px: **/teams/nfl 9.4 screens → 3.2, /teams/cfb 7.2
+→ 2.3, /sports/standings 21.2 → 4.0.**
+
+### NRL
+
+The regular season is over on the ladder but our copy is one ingest behind (13
+clubs on 24 games, 4 on 23; Penrith 2nd on 23). `footy-refresh.yml` picks the
+last round up on its 22:00 UTC run. The real defect was in
+`scripts/ingest/footy_finalize.py`: the minor premiership was gated on ESPN
+having filed a finals draw, which can be days after the honour is settled. There
+is now a second path needing nothing from ESPN — every club on the same number
+of games AND that number equal to the league's full count (**AFL 23, NRL 24**,
+verified against every completed season since 2023). A bye round cannot satisfy
+it. Self-test 19 checks. **I did NOT hand-write Penrith's minor premiership;**
+the next scheduled run stamps it, and hand-writing would have been overwritten.
+
+### CFB
+
+Three stacked Top 25s became one board (one row per school, a rank column per
+poll, room for the CFP ranking as a fourth column in November rather than a
+fourth table), carrying the record plus our own playoff and national-title odds.
+Team pages read the live year from ESPN into both the header and the
+season-by-season table; `revalidate` dropped from a year to an hour, which is
+what actually made Alabama show 1-0 rather than 0-0.
+
+### Open threads
+
+- The Tuesday automation above.
+- 2019 Cowboys wk15 and the other seven single-game divergences the replay
+  names: worth one pass through `elo_replay.py` to decide whether they are
+  workbook data errors or genuine Paine adjustments.
+- `/teams/football/seasons` still reports ~115 sub-40px tap targets. The season
+  chips are fixed; the remainder are in `SeasonTrends`/`SeasonSuperlatives` and
+  predate this session.
+- Cleveland Bulldogs lineage, above.
