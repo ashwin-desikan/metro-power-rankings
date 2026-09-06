@@ -219,6 +219,27 @@ explicit — apply it before touching any refresh script:
 - `package.json` scripts — `npm run verify` is the full local proof gate for
   frontend work.
 
+## Two traps that cost a day each, 2026-09-06
+
+**ESPN repeats every stat name once per split.** In the standings payloads,
+`pointsFor` arrives as type `pointsfor` (the real one) and again as
+`homerecord_pointsfor`, `awayrecord_pointsfor`, `vsconf_pointsfor`,
+`vsaprankedteams_pointsfor` and `vsusarankedteams_pointsfor`. A parser that
+matches on the stat NAME takes the last occurrence, which is a vs-ranked-teams
+split and is all zeroes for most of a season. The tell is a table with correct
+W-L and zero everything else, because the record is usually rescued separately
+from the `total` display string. **Match on `type`, and skip any type containing
+an underscore.** Fixed in `lib/cfb-live.ts`; check any other ESPN standings
+parser you touch.
+
+**`scripts/stage-leagues.py` looked for the workbooks in one place.** On a
+bridged session the connected folders mount side by side, so `Excel Files` is a
+sibling of `Projects/`, not of the project directory. Staging failed for exactly
+one workbook, quietly, and the NFL Elo spine was rebuilt from an August copy
+that had never heard of 2026. It now walks the ancestors. **After any
+`build-nfl-elo.py` run, check the season count it prints** (107 today) before
+trusting the output.
+
 ## Slow-moving data (add it to the currency manifest)
 
 Data that updates less often than weekly and has no scheduled job behind it does
