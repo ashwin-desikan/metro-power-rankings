@@ -83,8 +83,8 @@ function Strip({ t }: { t: StandingsTeam }) {
     <span className="inline-flex items-center gap-[3px] align-middle" title={words}>
       <span className="sr-only">{words}</span>
       {HONOURS.map((h) => (
-        <span key={h.key} aria-hidden style={{
-          width: 8, height: 8, borderRadius: 2, display: "inline-block",
+        <span key={h.key} aria-hidden className="h-2.5 w-2.5 sm:h-2 sm:w-2" style={{
+          borderRadius: 2, display: "inline-block",
           background: f[h.key] ? h.color : "transparent",
           border: f[h.key] ? "none" : "1px solid var(--border)",
         }} />
@@ -122,8 +122,32 @@ export default function SeasonStandings({
   const hasConf = teams.some((t) => t.conf);
   const [view, setView] = useState<View>(hasDiv ? "division" : hasConf ? "conference" : "rating");
 
+  // 🔴 ORDER IS A RULING, NOT A SORT KEY.
+  //
+  // Division: the division winner is first, whatever its record. Carolina went
+  // 9-8 and finished third on record in the 2025 NFC South and still won the
+  // division, and a standings table that lists the winner third is wrong in the
+  // only way a standings table can be wrong.
+  //
+  // Conference: by RECORD, not by seed. Division winners take the top four
+  // seeds, so seeding order would put a 9-8 champion above a 13-4 wild card and
+  // quietly answer a different question from the one the column asks.
+  //
+  // Ties: a team that reached the playoffs is placed above one that did not on
+  // the same record. That is not a tiebreaker, it is the RESULT of the
+  // tiebreakers, which this workbook does not carry. Where two teams tie and
+  // both or neither made it, rating breaks it and the note under the table says
+  // the order inside a tie is not authoritative.
+  const madePlayoffs = (t: StandingsTeam) => (t.flags?.play_app ? 1 : 0);
+  const wonDivision = (t: StandingsTeam) => (t.flags?.div_title ? 1 : 0);
+
   const byRecord = (a: StandingsTeam, b: StandingsTeam) =>
-    winPct(b) - winPct(a) || (b.rec?.[0] ?? 0) - (a.rec?.[0] ?? 0) || b.end - a.end;
+    winPct(b) - winPct(a)
+    || (b.rec?.[0] ?? 0) - (a.rec?.[0] ?? 0)
+    || madePlayoffs(b) - madePlayoffs(a)
+    || b.end - a.end;
+  const byDivision = (a: StandingsTeam, b: StandingsTeam) =>
+    wonDivision(b) - wonDivision(a) || byRecord(a, b);
   const byRating = (a: StandingsTeam, b: StandingsTeam) => b.end - a.end;
 
   const keyFor = (t: StandingsTeam) =>
@@ -137,7 +161,10 @@ export default function SeasonStandings({
     (groups.get(k) ?? groups.set(k, []).get(k)!).push(t);
   }
   const ordered = [...groups.entries()]
-    .map(([k, ts]) => ({ key: k, teams: [...ts].sort(view === "rating" ? byRating : byRecord) }))
+    .map(([k, ts]) => ({
+      key: k,
+      teams: [...ts].sort(view === "rating" ? byRating : view === "division" ? byDivision : byRecord),
+    }))
     // NFL groups first in the years two leagues ran, then alphabetical, which
     // puts AFC before NFC and East before West without a hand-written order.
     .sort((a, b) => {
@@ -175,64 +202,88 @@ export default function SeasonStandings({
         ))}
       </div>
 
+      {/* 🔴 IT HAS TO FIT. Eight division tables in two columns is 546px of
+          usable width each, and the first build spent 641px on eight columns
+          with px-3 padding, so every division scrolled sideways inside its own
+          box. Eight boxes, eight scrolls, to read one season.
+
+          The budget, and what it bought: the rank column went (a four-team
+          division does not need one, and the seed column carries playoff order
+          anyway), the city went (the crest carries it), points for and against
+          became one cell, and the padding dropped to px-2. That is 427px, which
+          fits with room. On a phone the two widest numeric columns move into a
+          second line under the team name rather than off the edge, so the phone
+          still gets every number the desktop does. */}
       <div className={cols}>
         {ordered.map((g) => (
           <div key={g.key} className="min-w-0">
             <h3 className="text-sm font-semibold mb-2">{g.key}</h3>
             <TableScroll className="rounded-xl border" style={CARD}>
-              <table className="w-full text-xs" data-sticky-col="2">
+              <table className="w-full text-xs" data-sticky-col="1">
                 <thead>
                   <tr className="text-[var(--text-dim)] text-left">
-                    <th className="py-2 px-3 font-medium">#</th>
-                    <th className="py-2 px-3 font-medium">Team</th>
-                    <th className="py-2 px-3 font-medium text-right">W-L-T</th>
-                    <th className="py-2 px-3 font-medium text-right hidden sm:table-cell">PF</th>
-                    <th className="py-2 px-3 font-medium text-right hidden sm:table-cell">PA</th>
-                    <th className="py-2 px-3 font-medium text-right">Elo</th>
-                    {showSeeds ? <th className="py-2 px-3 font-medium text-right">Seed</th> : null}
-                    {showHonours ? <th className="py-2 px-3 font-medium whitespace-nowrap">Season</th> : null}
+                    <th className="py-2 px-2 font-medium">Team</th>
+                    <th className="py-2 px-2 font-medium text-right">W-L-T</th>
+                    <th className="py-2 px-2 font-medium text-right hidden sm:table-cell">PF-PA</th>
+                    <th className="py-2 px-2 font-medium text-right">Elo</th>
+                    {showSeeds ? <th className="py-2 px-2 font-medium text-right hidden sm:table-cell">Seed</th> : null}
+                    {showHonours ? <th className="py-2 px-2 font-medium whitespace-nowrap">Season</th> : null}
                   </tr>
                 </thead>
                 <tbody>
-                  {g.teams.map((t, i) => (
-                    <tr key={t.name} className="border-t" style={BORD}>
-                      <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
-                      <td className="py-1.5 px-3 whitespace-nowrap">
-                        <span className="inline-flex items-center gap-2 min-w-0">
-                          <Crest t={t} />
+                  {g.teams.map((t) => (
+                    /* 🔴 THE ROW IS THE TAP TARGET ON A PHONE. A 28px table row
+                       with a 60px link in it gives a thumb about a fifth of the
+                       row and puts the rest of the misses on nothing. `tap-row`
+                       + `tap-target` (globals.css) is the site's answer for a
+                       row a link cannot wrap: the link grows a pseudo-element
+                       over the whole row while keeping its inline styling. The
+                       row also clears 44px on a phone and stays compact where a
+                       pointer is doing the aiming. */
+                    <tr key={t.name} className="border-t tap-row" style={BORD}>
+                      <td className="py-2 sm:py-1.5 px-2 align-middle" style={{ minHeight: 44 }}>
+                        <span className="inline-flex items-center gap-1.5">
+                          <Crest t={t} size={18} />
                           {t.slug ? (
-                            <Link href={`/teams/nfl/${t.slug}`} className="hover:text-[var(--accent)] hover:underline truncate">
-                              {[t.city, t.team].filter(Boolean).join(" ") || t.name}
+                            <Link href={`/teams/nfl/${t.slug}`} className="tap-target hover:text-[var(--accent)] hover:underline whitespace-nowrap"
+                              title={[t.city, t.team].filter(Boolean).join(" ") || t.name}>
+                              {t.team ?? t.name}
                             </Link>
                           ) : (
-                            <span className="truncate">{[t.city, t.team].filter(Boolean).join(" ") || t.name}</span>
+                            <span className="whitespace-nowrap">{t.team ?? t.name}</span>
                           )}
                           {t.flags?.div_title ? (
                             <span title="won its division" className="text-[9px] uppercase tracking-wider px-1 rounded border flex-shrink-0"
                               style={{ borderColor: "var(--seq-3)", color: "var(--seq-4)" }}>div</span>
                           ) : null}
                         </span>
+                        {/* The phone's second line: nothing is dropped, it moves. */}
+                        <span className="sm:hidden block mt-0.5 pl-[26px] text-[12px] text-[var(--text-dim)] tabular-nums" style={MONO}>
+                          {t.pts ? `${t.pts[0]}-${t.pts[1]}` : "no points recorded"}
+                          {t.seed ? ` · ${t.seed} seed` : ""}
+                        </span>
                       </td>
-                      <td className="py-1.5 px-3 text-right tabular-nums whitespace-nowrap" style={MONO}>
-                        {fmtRec(t) || <span className="text-[var(--text-dim)]">—</span>}
+                      <td className="py-2 sm:py-1.5 px-2 text-right tabular-nums whitespace-nowrap align-middle" style={MONO}>
+                        {fmtRec(t) || <span className="text-[var(--text-dim)]">&mdash;</span>}
                         {t.flags?.best_rec ? (
-                          <span title="best record in the league" className="ml-1 text-[var(--accent)]">*</span>
+                          <span title="best record in the league" className="ml-0.5 text-[var(--accent)]">*</span>
                         ) : null}
                       </td>
-                      <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={MONO}>{t.pts?.[0] ?? ""}</td>
-                      <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={MONO}>{t.pts?.[1] ?? ""}</td>
-                      <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={MONO}>{t.end.toFixed(0)}</td>
+                      <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap" style={MONO}>
+                        {t.pts ? `${t.pts[0]}-${t.pts[1]}` : ""}
+                      </td>
+                      <td className="py-2 sm:py-1.5 px-2 text-right tabular-nums font-semibold align-middle" style={MONO}>{t.end.toFixed(0)}</td>
                       {showSeeds ? (
-                        <td className="py-1.5 px-3 text-right tabular-nums" style={MONO}>
+                        <td className="py-1.5 px-2 text-right tabular-nums hidden sm:table-cell" style={MONO}>
                           {t.seed ? (
                             <span className="inline-grid place-items-center rounded-full" title={`entered the playoffs as the ${t.seed} seed`}
-                              style={{ width: 18, height: 18, background: "var(--bg-card-hover)", border: "1px solid var(--border)", fontSize: 10 }}>
+                              style={{ width: 17, height: 17, background: "var(--bg-card-hover)", border: "1px solid var(--border)", fontSize: 10 }}>
                               {t.seed}
                             </span>
-                          ) : <span className="text-[var(--text-dim)]">—</span>}
+                          ) : <span className="text-[var(--text-dim)]">&mdash;</span>}
                         </td>
                       ) : null}
-                      {showHonours ? <td className="py-1.5 px-3"><Strip t={t} /></td> : null}
+                      {showHonours ? <td className="py-2 sm:py-1.5 px-2 align-middle"><Strip t={t} /></td> : null}
                     </tr>
                   ))}
                 </tbody>

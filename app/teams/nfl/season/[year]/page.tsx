@@ -4,16 +4,19 @@ import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import HubNav from "@/app/teams/HubNav";
 import { SectionHead } from "@/app/_shared/SectionHead";
+import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 import { getNflEloIndex, getNflEloSeason, getNflUpcoming } from "@/lib/nflElo";
 import WeeklyEloChart from "../_shared/WeeklyEloChart";
+import PreseasonChart from "../_shared/PreseasonChart";
 import TeamCell, { type TeamIdent } from "../_shared/TeamCell";
 import { seasonHasHonours } from "../_shared/HonoursStrip";
 import SeasonStandings, { type StandingsTeam } from "../_shared/SeasonStandings";
 import ExpectationPreview from "../_shared/ExpectationPreview";
+import SeasonJumper from "../_shared/SeasonJumper";
 import {
-  getTopGamesForYear, getNflSlugByTeamName, nflSlugForCanonical, nflLineColor,
+  getTopGamesForYear, nflSlugForEraTeam, nflSlugForCanonical, nflLineColor,
   logoUrlFor, monogramFor, MONOGRAM_BY_SLUG,
 } from "@/lib/nfl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -111,7 +114,6 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
     slug: ident[t.name].slug, logo: ident[t.name].logo, mono: ident[t.name].mono,
   }));
   const showSeeds = data.teams.some((t) => t.seed != null);
-  const ranked = [...data.teams].sort((a, b) => b.end - a.end);
   const movers = [...data.teams]
     .map((t) => ({ t, delta: t.end - t.start }))
     .sort((a, b) => b.delta - a.delta);
@@ -161,7 +163,9 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           {prev ? <Link href={`/teams/nfl/season/${prev.season}`} className="text-[var(--accent)] hover:underline">&larr; {prev.season}</Link> : null}
           {next ? <Link href={`/teams/nfl/season/${next.season}`} className="text-[var(--accent)] hover:underline">{next.season} &rarr;</Link> : null}
           <Link href={`/teams/nfl/expectation/${season}`} className="text-[var(--accent)] hover:underline">Against expectation, {season}</Link>
+          <Link href="/teams/nfl/season" className="text-[var(--accent)] hover:underline">All seasons</Link>
         </div>
+        <SeasonJumper rows={rows} current={season} />
       </header>
 
       <HubNav items={[
@@ -188,32 +192,13 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           }
         />
         {seeded ? (
-          <TableScroll className="rounded-xl border" style={CARD}>
-            <table className="w-full text-xs" data-sticky-col="2">
-              <thead>
-                <tr className="text-[var(--text-dim)] text-left">
-                  <th className="py-2 px-3 font-medium">#</th>
-                  <th className="py-2 px-3 font-medium">Team</th>
-                  <th className="py-2 px-3 font-medium text-right">Rating</th>
-                  <th className="py-2 px-3 font-medium hidden sm:table-cell">Division</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ranked.map((t, i) => (
-                  <tr key={t.name} className="border-t" style={BORD}>
-                    <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
-                    <td className="py-1.5 px-3 whitespace-nowrap">
-                      <TeamCell city={t.city} team={t.team} name={t.name} ident={ident[t.name]} />
-                    </td>
-                    <td className="py-1.5 px-3 text-right">
-                      <DataBar v={t.end} dp={0} label="Elo rating going into the season" />
-                    </td>
-                    <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{t.div}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableScroll>
+          /* 🔴 A SEEDED SEASON GETS A CHART TOO. The board is kept underneath
+             because a reader who wants the number in a row should not have to
+             read it off an axis, but the chart is what answers "how far ahead is
+             the top of this league before anyone has played". */
+          <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>
+            <PreseasonChart teams={data.teams} season={season} colorByName={colorByName} />
+          </div>
         ) : (
           <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>
             <WeeklyEloChart teams={data.teams} season={season} colorByName={colorByName} regEndWeek={data.reg_end_week} />
@@ -268,9 +253,10 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
       ) : null}
 
       {/* ------------------------------------------------------- standings */}
-      <section className="mb-12">
-        <SectionHead
-          id="standings"
+      <CollapsibleSection
+        defaultOpen
+        meta={`${data.teams.length} teams`}
+        id="standings"
           title="Standings"
           sub={
             data.leagues.length > 1
@@ -285,9 +271,9 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
             "An asterisk on a record is the best record in the league, and a seed is the number a team carried into the playoffs. " +
             "Teams level on record are ordered by rating: the league's own tiebreakers are not in this workbook, so the order inside a tie is not authoritative. The division flag is."
           }
-        />
+        >
         <SeasonStandings teams={standingsTeams} showHonours={showHonours} showSeeds={showSeeds} />
-      </section>
+      </CollapsibleSection>
 
       {/* --------------------------------------------------------- games */}
       {bestGames.length ? (
@@ -314,24 +300,47 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               </thead>
               <tbody>
                 {bestGames.map((g, i) => {
-                  const ws = getNflSlugByTeamName(`${g.winner_city} ${g.winner_team}`);
-                  const ls = getNflSlugByTeamName(`${g.loser_city} ${g.loser_team}`);
-                  const wl = ws ? logoUrlFor(ws) : null;
+                  const wName = [g.winner_city, g.winner_team].filter(Boolean).join(" ");
+                  const lName = [g.loser_city, g.loser_team].filter(Boolean).join(" ");
+                  // Era names, so a 1994 row finds the San Diego Chargers and a
+                  // 1925 row finds the Pottsville Maroons.
+                  const ws = nflSlugForEraTeam(g.winner_city, g.winner_team);
+                  const ls = nflSlugForEraTeam(g.loser_city, g.loser_team);
+                  // 🔴 BOTH SIDES GET A CREST AND A FULL NAME. A game has two
+                  // teams in it. Crowning only the winner with a badge and
+                  // shortening both to nicknames made the row read as a result
+                  // rather than as a fixture, and there is room for neither
+                  // economy: this column is the widest on the page.
+                  const crest = (slug: string | null) => {
+                    const src = slug ? logoUrlFor(slug) : null;
+                    if (src) {
+                      return <img src={src} alt="" width={18} height={18} className="inline-block align-text-bottom mr-1.5 object-contain" style={{ width: 18, height: 18 }} loading="lazy" decoding="async" />;
+                    }
+                    // A relocated club keeps its modern crest; a defunct one has
+                    // none, so it wears the same monogram the rest of the site
+                    // gives it rather than an empty gap.
+                    const m = slug && MONOGRAM_BY_SLUG[slug] ? monogramFor(slug) : null;
+                    return m ? (
+                      <span aria-hidden className="inline-grid place-items-center rounded-full mr-1.5 align-text-bottom"
+                        style={{ background: m.bg, color: m.fg, width: 18, height: 18, fontSize: 7, fontWeight: 700 }}>{m.mono}</span>
+                    ) : null;
+                  };
                   return (
                     <tr key={`${g.date}-${g.winner_team}`} className="border-t" style={BORD}>
                       <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
                       <td className="py-1.5 px-3 whitespace-nowrap">
-                        {wl ? <img src={wl} alt="" width={18} height={18} className="inline-block align-text-bottom mr-1.5 object-contain" style={{ width: 18, height: 18 }} loading="lazy" decoding="async" /> : null}
+                        {crest(ws)}
                         {ws ? (
-                          <Link href={`/teams/nfl/${ws}`} className="text-[var(--accent)] hover:underline">{g.winner_team}</Link>
-                        ) : g.winner_team}{" "}
+                          <Link href={`/teams/nfl/${ws}`} className="text-[var(--accent)] hover:underline">{wName}</Link>
+                        ) : wName}{" "}
                         <span className="tabular-nums text-[var(--text-dim)]" style={MONO}>
                           {g.winner_score}-{g.loser_score}
                         </span>{" "}
-                        <span className="text-[var(--text-muted)]">
-                          {g.is_tie ? "tied with" : "beat"}{" "}
-                          {ls ? <Link href={`/teams/nfl/${ls}`} className="hover:text-[var(--accent)] hover:underline">{g.loser_team}</Link> : g.loser_team}
-                        </span>
+                        <span className="text-[var(--text-muted)]">{g.is_tie ? "tied with" : "beat"}</span>{" "}
+                        {crest(ls)}
+                        {ls ? (
+                          <Link href={`/teams/nfl/${ls}`} className="hover:text-[var(--accent)] hover:underline">{lName}</Link>
+                        ) : <span className="text-[var(--text-muted)]">{lName}</span>}
                         {g.ot ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">OT</span> : null}
                       </td>
                       <td className="py-1.5 px-3 text-right">
