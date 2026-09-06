@@ -39,9 +39,19 @@ export type NflEloWeek = {
   dv?: string;
   /** Week-ending date, ISO. */
   d?: string;
+  /** The workbook's phase label for that week: "Preseason", "Reg. Season",
+   *  "Playoff", "Champ". Never filter weeks on this - week 0 is labelled
+   *  "Reg. Season" from 2025 on. It is for annotation only. */
+  ph?: string;
   carried?: true;
   seed?: true;
 };
+
+/** The year-end honours the workbook records, in the order they escalate. */
+export const NFL_HONOURS = [
+  "play_app", "div_title", "best_conf", "best_rec", "cf_app", "champ_app", "champ",
+] as const;
+export type NflHonour = (typeof NFL_HONOURS)[number];
 
 export type NflEloTeam = {
   /** Canonical franchise name, the workbook's join key. */
@@ -51,6 +61,13 @@ export type NflEloTeam = {
   league: string | null;
   conf: string | null;
   div: string | null;
+  /** Year-end honours, straight from the workbook's AR-AX columns. A key is
+   *  present ONLY when the team earned it, so every key is `true`.
+   *
+   *  🔴 THE WORKBOOK'S VOCABULARY IS "Y" OR "0", NOT "Y" OR BLANK. The build
+   *  script tests `== "Y"` explicitly; storing the raw cell made every team a
+   *  1966 champion, because "0" is a non-empty string. */
+  flags?: Partial<Record<NflHonour, true>>;
   start: number;
   end: number;
   peak: { w: number; e: number };
@@ -75,6 +92,12 @@ export type NflEloSeason = {
   season: number;
   status: NflEloSeasonStatus;
   leagues: string[];
+  /** League to the last week labelled regular season, week 0 excluded. Two
+   *  entries in the years two leagues ran and did not finish together. */
+  reg_end_week: Record<string, number>;
+  /** 🔴 THE GATE FOR ANYTHING THAT SUMMARISES A WHOLE SEASON. True only once
+   *  a champion is flagged, so 2026 gets no greatest-games board in November. */
+  complete: boolean;
   teams: NflEloTeam[];
   dropped_weeks: number[];
 };
@@ -86,7 +109,9 @@ export type NflEloIndexRow = {
   teams: number;
   weeks: number;
   dropped_weeks: number[];
-  top: { name: string; elo: number } | null;
+  complete: boolean;
+  champion: { name: string; city: string | null; team: string | null } | null;
+  top: { name: string; city: string | null; team: string | null; elo: number } | null;
 };
 
 export type NflEloIndex = { meta: NflEloMeta; seasons: NflEloIndexRow[] };

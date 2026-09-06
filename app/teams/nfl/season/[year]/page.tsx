@@ -9,7 +9,12 @@ import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 import { getNflEloIndex, getNflEloSeason, getNflUpcoming, byLeague } from "@/lib/nflElo";
 import type { NflEloTeam } from "@/lib/nflElo";
 import WeeklyEloChart from "../_shared/WeeklyEloChart";
-import { getTopGamesForYear, getNflSlugByTeamName } from "@/lib/nfl";
+import TeamCell, { type TeamIdent } from "../_shared/TeamCell";
+import HonoursStrip, { HonoursLegend, seasonHasHonours } from "../_shared/HonoursStrip";
+import {
+  getTopGamesForYear, getNflSlugByTeamName, nflSlugForCanonical, nflLineColor,
+  logoUrlFor, monogramFor, MONOGRAM_BY_SLUG,
+} from "@/lib/nfl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 // One NFL season, from the weekly Elo spine.
@@ -89,6 +94,23 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
 
   const seeded = data.status !== "final";
   const groups = byLeague(data.teams);
+
+  // Identity and colour are resolved ONCE per season, server side, because both
+  // touch the filesystem (logoUrlFor stats a path) and the chart alone would
+  // otherwise ask 32 times. Keyed on the workbook's canonical name, which is
+  // the only join key the Elo spine carries.
+  const ident: Record<string, TeamIdent> = {};
+  const colorByName: Record<string, string | null> = {};
+  for (const t of data.teams) {
+    const slug = nflSlugForCanonical(t.name);
+    ident[t.name] = {
+      slug,
+      logo: slug ? logoUrlFor(slug) : null,
+      mono: slug && MONOGRAM_BY_SLUG[slug] ? monogramFor(slug) : null,
+    };
+    colorByName[t.name] = nflLineColor(slug);
+  }
+  const showHonours = seasonHasHonours(data.teams);
   const ranked = [...data.teams].sort((a, b) => b.end - a.end);
   const movers = [...data.teams]
     .map((t) => ({ t, delta: t.end - t.start }))
@@ -99,7 +121,10 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
   const prev = rows.filter((r) => r.season < season).slice(-1)[0] ?? null;
   const next = rows.find((r) => r.season > season) ?? null;
 
-  const bestGames = getTopGamesForYear(season);
+  // 🔴 GATED ON THE CHAMPIONSHIP, NOT ON THE CALENDAR. A "best games of 2026"
+  // board in November would rank three weeks of football against a finished
+  // season, so the board waits until a champion is flagged in the workbook.
+  const bestGames = data.complete ? getTopGamesForYear(season) : [];
 
   const wk1 = seeded && upcoming?.season === season
     ? upcoming.schedule.filter((g) => g.p_home != null).sort((a, b) => (a.date || "").localeCompare(b.date || ""))
@@ -176,7 +201,9 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
                 {ranked.map((t, i) => (
                   <tr key={t.name} className="border-t" style={BORD}>
                     <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
-                    <td className="py-1.5 px-3 whitespace-nowrap">{t.city} {t.team}</td>
+                    <td className="py-1.5 px-3 whitespace-nowrap">
+                      <TeamCell city={t.city} team={t.team} name={t.name} ident={ident[t.name]} />
+                    </td>
                     <td className="py-1.5 px-3 text-right">
                       <DataBar v={t.end} dp={0} label="Elo rating going into the season" />
                     </td>
@@ -188,7 +215,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           </TableScroll>
         ) : (
           <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>
-            <WeeklyEloChart teams={data.teams} season={season} />
+            <WeeklyEloChart teams={data.teams} season={season} colorByName={colorByName} regEndWeek={data.reg_end_week} />
           </div>
         )}
       </section>
@@ -247,8 +274,8 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           sub={data.leagues.length > 1 ? `${data.leagues.join(" and ")} ran side by side; the ratings do not.` : "Ordered by rating, not by record."}
           more={
             data.leagues.length > 1
-              ? "The two leagues are shown apart because their tables were never one table. The ratings ARE one pool: a team is rated against everyone playing that year, which is the only way to ask how the leagues compared."
-              : "Ordering by rating rather than by record is deliberate: two teams on the same record did not necessarily have the same season."
+              ? "The two leagues are shown apart because their tables were never one table. The ratings ARE one pool: a team is rated against everyone playing that year, which is the only way to ask how the leagues compared. The strip on each row is the season a team actually had: playoffs, division, best record in its conference, conference final, championship game, championship."
+              : "Ordering by rating rather than by record is deliberate: two teams on the same record did not necessarily have the same season. The strip on each row fills in from the left as a team goes further: playoffs, division, best record in its conference, conference final, championship game, championship. An asterisk on a record is the best record in the league."
           }
         />
         <div className={data.leagues.length > 1 ? "grid grid-cols-1 lg:grid-cols-2 gap-6" : ""}>
@@ -262,25 +289,35 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
                       <th className="py-2 px-3 font-medium">#</th>
                       <th className="py-2 px-3 font-medium">Team</th>
                       <th className="py-2 px-3 font-medium text-right">Rating</th>
-                      <th className="py-2 px-3 font-medium text-right hidden sm:table-cell">Record</th>
-                      <th className="py-2 px-3 font-medium hidden sm:table-cell">Division</th>
+                      <th className="py-2 px-3 font-medium text-right">Record</th>
+                      {showHonours ? <th className="py-2 px-3 font-medium whitespace-nowrap">Season</th> : null}
+                      <th className="py-2 px-3 font-medium hidden md:table-cell">Division</th>
                     </tr>
                   </thead>
                   <tbody>
                     {g.teams.map((t, i) => (
                       <tr key={t.name} className="border-t" style={BORD}>
                         <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
-                        <td className="py-1.5 px-3 whitespace-nowrap">{t.city} {t.team}</td>
+                        <td className="py-1.5 px-3 whitespace-nowrap">
+                          <TeamCell city={t.city} team={t.team} name={t.name} ident={ident[t.name]} />
+                        </td>
                         <td className="py-1.5 px-3 text-right">
                           <DataBar v={t.end} dp={0} label="Elo rating at the end of the season" />
                         </td>
-                        <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={MONO}>{fmtRec(t)}</td>
-                        <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{t.div}</td>
+                        <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] whitespace-nowrap" style={MONO}>
+                          {fmtRec(t)}
+                          {t.flags?.best_rec ? (
+                            <span title="best record in the league" className="ml-1 text-[var(--accent)]" aria-label="best record in the league">*</span>
+                          ) : null}
+                        </td>
+                        {showHonours ? <td className="py-1.5 px-3"><HonoursStrip team={t} /></td> : null}
+                        <td className="py-1.5 px-3 text-[var(--text-muted)] hidden md:table-cell whitespace-nowrap">{t.div}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </TableScroll>
+              {showHonours ? <HonoursLegend /> : null}
             </div>
           ))}
         </div>
@@ -312,17 +349,23 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               <tbody>
                 {bestGames.map((g, i) => {
                   const ws = getNflSlugByTeamName(`${g.winner_city} ${g.winner_team}`);
+                  const ls = getNflSlugByTeamName(`${g.loser_city} ${g.loser_team}`);
+                  const wl = ws ? logoUrlFor(ws) : null;
                   return (
                     <tr key={`${g.date}-${g.winner_team}`} className="border-t" style={BORD}>
                       <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
                       <td className="py-1.5 px-3 whitespace-nowrap">
+                        {wl ? <img src={wl} alt="" width={18} height={18} className="inline-block align-text-bottom mr-1.5 object-contain" style={{ width: 18, height: 18 }} loading="lazy" decoding="async" /> : null}
                         {ws ? (
                           <Link href={`/teams/nfl/${ws}`} className="text-[var(--accent)] hover:underline">{g.winner_team}</Link>
                         ) : g.winner_team}{" "}
                         <span className="tabular-nums text-[var(--text-dim)]" style={MONO}>
                           {g.winner_score}-{g.loser_score}
                         </span>{" "}
-                        <span className="text-[var(--text-muted)]">{g.is_tie ? "tied with" : "beat"} {g.loser_team}</span>
+                        <span className="text-[var(--text-muted)]">
+                          {g.is_tie ? "tied with" : "beat"}{" "}
+                          {ls ? <Link href={`/teams/nfl/${ls}`} className="hover:text-[var(--accent)] hover:underline">{g.loser_team}</Link> : g.loser_team}
+                        </span>
                         {g.ot ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">OT</span> : null}
                       </td>
                       <td className="py-1.5 px-3 text-right">
@@ -364,7 +407,9 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
                 {movers.slice(0, 5).concat(movers.slice(-5)).map((m, i) => (
                   <tr key={m.t.name} className="border-t" style={BORD}>
                     <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i < 5 ? i + 1 : ""}</td>
-                    <td className="py-1.5 px-3 whitespace-nowrap">{m.t.city} {m.t.team}</td>
+                    <td className="py-1.5 px-3 whitespace-nowrap">
+                      <TeamCell city={m.t.city} team={m.t.team} name={m.t.name} ident={ident[m.t.name]} />
+                    </td>
                     <td className="py-1.5 px-3 text-right">
                       <DivergingBar v={m.delta} max={moversMax} dp={0} suffix="" label="Elo gained or lost across the season" />
                     </td>
@@ -396,6 +441,14 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               {data.dropped_weeks.length} week{data.dropped_weeks.length === 1 ? " was" : "s were"} held back
               because every team shared one rating in {data.dropped_weeks.length === 1 ? "it" : "them"}, which
               carries no information whatever the number is. A rating is published only where the teams differ.
+            </p>
+          ) : null}
+          {!data.complete ? (
+            <p>
+              <span className="text-[var(--text)]">There is no best-games board for {season} yet.</span>{" "}
+              Game Score ranks a game against a finished season, so a board built in
+              week three would be ranking three weeks of football. It appears once the
+              championship is played and the workbook records a champion.
             </p>
           ) : null}
           <p>

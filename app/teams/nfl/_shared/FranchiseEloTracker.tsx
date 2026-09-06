@@ -18,11 +18,22 @@ import type { NflFranchise } from "@/lib/nflElo";
 // 🔴 A GAP IS DRAWN AS A GAP. Canton played 1920-23 and 1925-26. Joining 1923
 // to 1925 with a straight line asserts a season that did not happen.
 //
+// 🔴 THE HOVER TARGET IS A COLUMN, NOT A DOT. The first build put a 5px circle
+// on each point, which on a 105-season franchise is a 5px target every 8px and
+// misses more often than it hits. Each season now owns a full-height band from
+// midpoint to midpoint, so anywhere above or below the line reports that
+// season. `:has()` lifts the marker and the read-out; no client JavaScript.
+//
+// 🔴 DECADES ARE DRAWN BECAUSE THE X AXIS IS 105 YEARS LONG. Two end labels
+// cannot answer "when was that dip", so every decade boundary is a rule and a
+// label. They are --border, quieter than the mean line, because they are
+// wayfinding rather than a comparison.
+//
 // Server-rendered, no client JavaScript. Hover is a native <title> per season.
 
 const W = 900;
 const H = 170;
-const M = { top: 12, right: 12, bottom: 22, left: 40 };
+const M = { top: 14, right: 12, bottom: 26, left: 40 };
 const MONO = "'JetBrains Mono', monospace";
 const POS = "var(--div-pos)";
 const NEG = "var(--div-neg)";
@@ -60,6 +71,17 @@ export default function FranchiseEloTracker({
   if (run.length) runs.push(run);
 
   const above = rows.filter((r) => r.end >= MEAN).length;
+  const uid = `fr${entry.name.replace(/\W/g, "")}`;
+
+  // Decade boundaries inside the franchise's own life, never outside it.
+  const decades: number[] = [];
+  for (let d = Math.ceil(x0 / 10) * 10; d <= x1; d += 10) decades.push(d);
+  // Every decade is labelled when there is room for it; otherwise every other.
+  const step = (W - M.left - M.right) / Math.max(decades.length, 1);
+  const labelEvery = step >= 44 ? 1 : step >= 22 ? 2 : 5;
+
+  const half = (W - M.left - M.right) / Math.max((x1 - x0) * 2, 1);
+  const bandW = Math.max(half * 2, 3);
   const peak = entry.peak;
   const trough = entry.trough;
   const yMean = py(MEAN);
@@ -81,10 +103,17 @@ export default function FranchiseEloTracker({
       <figure className="m-0 mt-3 min-w-0">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="w-full h-auto"
+          className={`w-full h-auto ${uid}`}
           role="img"
           aria-label={`${displayName} Elo rating at the end of each season from ${x0} to ${x1}. Peak ${peak?.elo ?? "unknown"} in ${peak?.season ?? "unknown"}.`}
         >
+          <style>{`
+            .${uid} .bd .hit { fill: transparent; }
+            .${uid} .bd .mk, .${uid} .bd .rd { opacity: 0; }
+            .${uid} .bd:hover .mk, .${uid} .bd:hover .rd { opacity: 1; }
+            .${uid} .bd:hover .gd { stroke: var(--text-dim); }
+          `}</style>
+
           <defs>
             <clipPath id={`above-${entry.name.replace(/\W/g, "")}`}>
               <rect x={0} y={M.top} width={W} height={Math.max(yMean - M.top, 0)} />
@@ -93,6 +122,17 @@ export default function FranchiseEloTracker({
               <rect x={0} y={yMean} width={W} height={Math.max(H - M.bottom - yMean, 0)} />
             </clipPath>
           </defs>
+
+          {decades.map((d, i) => (
+            <g key={d}>
+              <line x1={px(d)} x2={px(d)} y1={M.top} y2={H - M.bottom} stroke="var(--border)" strokeWidth={1} />
+              {i % labelEvery === 0 ? (
+                <text x={px(d)} y={H - 6} textAnchor="middle" fontSize={9} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
+                  {`${String(d).slice(2)}s`}
+                </text>
+              ) : null}
+            </g>
+          ))}
 
           {[lo, MEAN, hi].filter((v, i, a) => a.indexOf(v) === i).map((v) => (
             <text key={v} x={M.left - 6} y={py(v) + 3} textAnchor="end" fontSize={9} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
@@ -116,18 +156,38 @@ export default function FranchiseEloTracker({
           {/* The league mean, drawn because a diverging fill is only legal with it. */}
           <line x1={M.left} x2={W - M.right} y1={yMean} y2={yMean} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="3 3" />
 
-          {rows.map((r) => (
-            <g key={r.season}>
-              <circle cx={px(r.season)} cy={py(r.end)} r={5} fill="transparent" />
-              <title>{`${r.season}: ended ${r.end}${r.rank_end ? `, ${r.rank_end}${ord(r.rank_end)} in the league` : ""} · peak ${r.peak} at week ${r.peak_w}`}</title>
-            </g>
-          ))}
+          {rows.map((r) => {
+            const cx = px(r.season);
+            const cy = py(r.end);
+            const move = r.end - r.start;
+            const right = cx > W - M.right - 120;
+            return (
+              <g key={r.season} className="bd">
+                <title>
+                  {`${r.season}` +
+                   `\nended ${r.end.toFixed(0)}${r.rank_end ? `, ${r.rank_end}${ord(r.rank_end)} in the league` : ""}` +
+                   `\nstarted ${r.start.toFixed(0)} · ${move >= 0 ? "+" : ""}${move.toFixed(0)} across the season` +
+                   `\npeak ${r.peak.toFixed(0)} at week ${r.peak_w} · low ${r.trough.toFixed(0)} at week ${r.trough_w}` +
+                   `${r.status === "final" ? "" : "\npreseason rating only"}`}
+                </title>
+                <line className="gd" x1={cx} x2={cx} y1={M.top} y2={H - M.bottom} stroke="transparent" strokeWidth={1} />
+                <circle className="mk" cx={cx} cy={cy} r={3.2} fill="var(--text)" />
+                <text className="rd" x={right ? cx - 6 : cx + 6} y={M.top + 9} textAnchor={right ? "end" : "start"}
+                  fontSize={10} fill="var(--text)" style={{ fontFamily: MONO }}>
+                  {`${r.season}  ${r.end.toFixed(0)}`}
+                </text>
+                <rect className="hit" x={cx - bandW / 2} y={M.top} width={bandW} height={H - M.top - M.bottom} />
+              </g>
+            );
+          })}
 
-          {peak ? <circle cx={px(peak.season)} cy={py(peak.elo)} r={3} fill={POS} /> : null}
-          {trough ? <circle cx={px(trough.season)} cy={py(trough.elo)} r={3} fill={NEG} /> : null}
+          {/* Painted over the hover bands, so they must not swallow the hover. */}
+          {peak ? <circle cx={px(peak.season)} cy={py(peak.elo)} r={3} fill={POS} pointerEvents="none" /> : null}
+          {trough ? <circle cx={px(trough.season)} cy={py(trough.elo)} r={3} fill={NEG} pointerEvents="none" /> : null}
 
-          <text x={M.left} y={H - 6} fontSize={9} fill="var(--text-dim)" style={{ fontFamily: MONO }}>{x0}</text>
-          <text x={W - M.right} y={H - 6} textAnchor="end" fontSize={9} fill="var(--text-dim)" style={{ fontFamily: MONO }}>{x1}</text>
+          {/* The franchise's own first and last year, which a decade rule never is. */}
+          <text x={M.left} y={H - 6} fontSize={9} fill="var(--text-muted)" style={{ fontFamily: MONO }}>{x0}</text>
+          <text x={W - M.right} y={H - 6} textAnchor="end" fontSize={9} fill="var(--text-muted)" style={{ fontFamily: MONO }}>{x1}</text>
         </svg>
       </figure>
 
@@ -155,8 +215,9 @@ export default function FranchiseEloTracker({
       </div>
 
       <p className="mt-3 text-[12.5px] text-[var(--text-dim)]">
-        One point per season, at the rating it finished on. 1500 is the league average by
-        construction, not a chosen line. The week-by-week detail for any season is on its own{" "}
+        One point per season, at the rating it finished on, with a rule at every decade.
+        Hover any year for what it started on, where it peaked and where it finished.
+        1500 is the league average by construction, not a chosen line. The week-by-week detail for any season is on its own{" "}
         <Link href="/teams/nfl/season" className="text-[var(--accent)] hover:underline">season page</Link>.
       </p>
     </section>

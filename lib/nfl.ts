@@ -532,6 +532,61 @@ export function lookupStadiumLocation(name: string | null | undefined):
   return _stadiumIndex.get(k) || EXTRA_STADIUM_LOCATIONS[k] || null;
 }
 
+// ---------------------------------------------------------------------------
+// Canonical name -> site identity. The Elo spine keys everything on the
+// workbook's canonical franchise name; the site keys everything on a slug.
+// This is the one bridge, and it covers defunct franchises as well as the 32,
+// because /teams/nfl/[slug] serves both.
+let _canonMap: Record<string, string> | null = null;
+function canonMap(): Record<string, string> {
+  if (_canonMap) return _canonMap;
+  const m: Record<string, string> = {};
+  for (const f of getAllFranchises()) m[f.canonical] = f.slug;
+  for (const h of getHistoricalFranchises()) if (!m[h.canonical]) m[h.canonical] = defunctSlug(h);
+  _canonMap = m;
+  return m;
+}
+
+/** The site slug for a workbook canonical name, or null when it has no page. */
+export function nflSlugForCanonical(canonical: string): string | null {
+  if (!canonical) return null;
+  return canonMap()[canonical] ?? null;
+}
+
+/**
+ * A line colour for a team, legible on --bg-card (#12121A).
+ *
+ * 🔴 NOT A CATEGORICAL PALETTE. These are real club colours, which is the point,
+ * but half of them are near-black (Bears #0B162A, Raiders #000000) and would
+ * vanish on a dark card. So each team offers two stored colours and this picks
+ * whichever actually reads, falling back to the neutral border token when
+ * neither does. A team with no stored colour stays grey rather than being
+ * assigned one, because inventing a club colour is worse than not having it.
+ */
+const CARD_L = 0.012; // approximate relative luminance of --bg-card
+function luminance(hex: string): number {
+  const h = hex.replace("#", "");
+  if (h.length !== 6) return 0;
+  const v = [0, 2, 4].map((i) => {
+    const c = parseInt(h.slice(i, i + 2), 16) / 255;
+    return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2];
+}
+function contrast(hex: string): number {
+  const l = luminance(hex);
+  return (Math.max(l, CARD_L) + 0.05) / (Math.min(l, CARD_L) + 0.05);
+}
+export function nflLineColor(slug: string | null): string | null {
+  if (!slug) return null;
+  const m = MONOGRAM_BY_SLUG[slug];
+  if (!m) return null;
+  const cands = [m.bg, m.fg].filter((c) => /^#[0-9a-f]{6}$/i.test(c));
+  const best = cands.map((c) => [c, contrast(c)] as const).sort((a, b) => b[1] - a[1])[0];
+  // 3:1 is the non-text contrast floor; below it the line is not a line.
+  return best && best[1] >= 3 ? best[0] : null;
+}
+
 export function getFranchiseByCanonical(canonical: string): Franchise | undefined {
   return indices().byCanonical.get(canonical);
 }

@@ -2,38 +2,51 @@ import type { NflEloTeam } from "@/lib/nflElo";
 
 // One season's Elo, week by week, every team on one axis.
 //
-// FORM: change over time for many comparable series. A line chart, and the
-// series legitimately share a scale because Elo is one pool per season by
-// ruling, including the years the NFL ran alongside the AAFC or the AFL.
+// FORM: a level over time for many comparable series, so a line chart, and they
+// legitimately share a scale because Elo is one pool per season by ruling,
+// including the years the NFL ran alongside the AAFC or the AFL.
 //
-// 🔴 NOT 32 COLOURS. The palette is six categorical tokens and the ordering IS
-// the colourblind-safety mechanism, so a 32-series rainbow is not a worse
-// chart, it is an illegal one. This is highlight-in-context: every team is
-// drawn in the border token as shape, and the few that ended highest take
-// --cat-1..4 in sequence with a direct label at the line's end. Identity is
-// carried twice for those, colour plus label, so nobody has to separate hues.
+// 🔴 THESE ARE CLUB COLOURS, NOT A CATEGORICAL PALETTE, and that is why 32 of
+// them is allowed. The palette rules cap categorical assignment at six because
+// the ORDER carries colourblind safety; a team's own colour carries identity
+// instead, and identity is reinforced twice more, by the hover label and the
+// tooltip. A franchise with no stored colour stays neutral rather than being
+// assigned one: inventing a club colour is worse than not having it.
+//
+// 🔴 EVERY TEAM IS HOVERABLE, not just the four labelled by default. Each line
+// carries a transparent 12px hit stroke, and `:has()` dims the rest of the
+// chart while one is held. No client JavaScript: this is a server component and
+// the whole interaction is CSS.
 //
 // 🔴 A CARRIED WEEK IS DRAWN AS HELD. Byes and post-elimination weeks inherit
-// the previous rating; they are real rows but not fresh measurements, so the
-// segment into a carried week is dashed. A solid line there would assert a
-// measurement nobody took.
-//
-// Server-rendered, no client JavaScript. Hover is a native <title> per line.
+// the previous rating, so the segment into one is dashed. A solid line there
+// would assert a measurement nobody took.
 
 const W = 940;
-const H = 360;
-const M = { top: 14, right: 132, bottom: 28, left: 44 };
+const H = 380;
+const M = { top: 14, right: 128, bottom: 30, left: 44 };
 const MONO = "'JetBrains Mono', monospace";
-const HILITE = ["var(--cat-1)", "var(--cat-2)", "var(--cat-3)", "var(--cat-4)"];
+
+function ord(n: number): string {
+  const s = ["th", "st", "nd", "rd"];
+  const v = n % 100;
+  return s[(v - 20) % 10] || s[v] || s[0];
+}
 
 export default function WeeklyEloChart({
   teams,
   season,
-  highlight = 4,
+  colorByName = {},
+  regEndWeek = {},
+  emphasise = 4,
 }: {
   teams: NflEloTeam[];
   season: number;
-  highlight?: number;
+  /** Canonical franchise name to a club colour that reads on the card, or null. */
+  colorByName?: Record<string, string | null>;
+  /** League to the last regular-season week. Two entries when two leagues ran. */
+  regEndWeek?: Record<string, number>;
+  emphasise?: number;
 }) {
   const rated = teams.filter((t) => t.weeks.length >= 3);
   if (rated.length < 2) return null;
@@ -42,7 +55,6 @@ export default function WeeklyEloChart({
   const x0 = Math.min(...weeks);
   const x1 = Math.max(...weeks);
   const elos = rated.flatMap((t) => t.weeks.map((w) => w.e));
-  // Pad the band so the extremes are not welded to the frame.
   const lo = Math.floor((Math.min(...elos) - 15) / 25) * 25;
   const hi = Math.ceil((Math.max(...elos) + 15) / 25) * 25;
 
@@ -50,87 +62,102 @@ export default function WeeklyEloChart({
   const py = (e: number) => M.top + (1 - (e - lo) / (hi - lo)) * (H - M.top - M.bottom);
 
   const ranked = [...rated].sort((a, b) => b.end - a.end);
-  const top = ranked.slice(0, Math.min(highlight, HILITE.length));
-  const topNames = new Set(top.map((t) => t.name));
+  const lead = new Set(ranked.slice(0, emphasise).map((t) => t.name));
 
   const yTicks: number[] = [];
   for (let v = lo; v <= hi; v += hi - lo > 400 ? 100 : 50) yTicks.push(v);
-  const xTicks = [x0, ...Array.from({ length: 10 }, (_, i) => i + 1).filter((w) => w % 4 === 0 && w <= x1), x1]
-    .filter((v, i, a) => a.indexOf(v) === i)
-    .sort((a, b) => a - b);
+  const xTicks = Array.from(new Set([x0, ...Array.from({ length: 24 }, (_, i) => i).filter((w) => w > 0 && w % 4 === 0 && w <= x1), x1])).sort((a, b) => a - b);
 
-  /** Solid path for measured segments, dashed for carried ones. */
-  function paths(t: NflEloTeam) {
-    const solid: string[] = [];
-    const held: string[] = [];
-    for (let i = 1; i < t.weeks.length; i++) {
-      const a = t.weeks[i - 1];
-      const b = t.weeks[i];
-      const seg = `M${px(a.w).toFixed(1)},${py(a.e).toFixed(1)}L${px(b.w).toFixed(1)},${py(b.e).toFixed(1)}`;
-      (b.carried ? held : solid).push(seg);
-    }
-    return { solid: solid.join(""), held: held.join("") };
-  }
+  // Where the regular season stopped. Two entries when two leagues ran and did
+  // not finish together, which is why this is not a single number.
+  const dividers = Object.entries(regEndWeek)
+    .filter(([, w]) => w > 0 && w < x1)
+    .sort((a, b) => a[1] - b[1]);
+  const oneDivider = dividers.length > 0 && new Set(dividers.map(([, w]) => w)).size === 1;
+
+  const uid = `elo${season}`;
 
   return (
     <figure className="m-0 min-w-0">
-      <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs mb-2">
-        {top.map((t, i) => (
-          <span key={t.name} className="inline-flex items-center gap-1.5 text-[var(--text-muted)]">
-            <span aria-hidden style={{ background: HILITE[i], width: 14, height: 3, borderRadius: 2, display: "inline-block" }} />
+      <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs mb-2 text-[var(--text-muted)]">
+        {ranked.slice(0, emphasise).map((t) => (
+          <span key={t.name} className="inline-flex items-center gap-1.5">
+            <span aria-hidden style={{ background: colorByName[t.name] || "var(--text-dim)", width: 14, height: 3, borderRadius: 2, display: "inline-block" }} />
             {t.team ?? t.name}
           </span>
         ))}
-        <span className="text-[var(--text-dim)]">every other team in grey</span>
+        <span className="text-[var(--text-dim)]">hover any line to isolate it</span>
       </figcaption>
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        className="w-full h-auto"
-        role="img"
-        aria-label={`Elo rating by week for every team in the ${season} season. ${top.map((t) => `${t.team ?? t.name} ended on ${t.end}`).join("; ")}.`}
-      >
+
+      <svg viewBox={`0 0 ${W} ${H}`} className={`w-full h-auto ${uid}`} role="img"
+        aria-label={`Elo rating by week for all ${rated.length} teams in the ${season} season. ${ranked.slice(0, emphasise).map((t) => `${t.team ?? t.name} ended on ${t.end}`).join("; ")}.`}>
+        <style>{`
+          .${uid} .ln .hit { stroke: transparent; stroke-width: 12; fill: none; pointer-events: stroke; }
+          .${uid} .ln .lbl { opacity: 0; }
+          .${uid} .ln.lead .lbl { opacity: 1; }
+          .${uid}:has(.ln:hover) .ln { opacity: 0.12; }
+          .${uid}:has(.ln:hover) .ln:hover { opacity: 1; }
+          .${uid} .ln:hover .stroke { stroke-width: 3.2; }
+          .${uid} .ln:hover .lbl { opacity: 1; }
+          .${uid} .ln:hover .dot { r: 4; }
+          @media (prefers-reduced-motion: no-preference) { .${uid} .ln { transition: opacity .12s ease; } }
+        `}</style>
+
         {yTicks.map((v) => (
           <g key={v}>
             <line x1={M.left} x2={W - M.right} y1={py(v)} y2={py(v)} stroke="var(--border)" strokeWidth={1} />
-            <text x={M.left - 8} y={py(v) + 3} textAnchor="end" fontSize={10} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
-              {v}
-            </text>
+            <text x={M.left - 8} y={py(v) + 3} textAnchor="end" fontSize={10} fill="var(--text-dim)" style={{ fontFamily: MONO }}>{v}</text>
           </g>
         ))}
-        {/* 1500 is the league mean by construction: the line every rating is measured against. */}
         {1500 >= lo && 1500 <= hi ? (
           <line x1={M.left} x2={W - M.right} y1={py(1500)} y2={py(1500)} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="2 3" />
         ) : null}
+
+        {/* Where the regular season ended. Labelled per league when they differ. */}
+        {dividers.map(([lg, w]) => (
+          <g key={lg}>
+            <line x1={px(w + 0.5)} x2={px(w + 0.5)} y1={M.top} y2={H - M.bottom} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="4 4" />
+            <text x={px(w + 0.5) + 4} y={M.top + 10} fontSize={9} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
+              {oneDivider ? "playoffs" : `${lg} playoffs`}
+            </text>
+          </g>
+        ))}
+
         {xTicks.map((w) => (
-          <text key={w} x={px(w)} y={H - 8} textAnchor="middle" fontSize={10} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
+          <text key={w} x={px(w)} y={H - 10} textAnchor="middle" fontSize={10} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
             {w === 0 ? "seed" : `wk ${w}`}
           </text>
         ))}
 
-        {/* Context first, so the highlighted lines paint over it. */}
-        {rated.filter((t) => !topNames.has(t.name)).map((t) => {
-          const p = paths(t);
-          return (
-            <g key={t.name}>
-              <path d={p.solid} fill="none" stroke="var(--border)" strokeWidth={1.25} strokeLinecap="round" />
-              {p.held ? <path d={p.held} fill="none" stroke="var(--border)" strokeWidth={1.25} strokeDasharray="3 3" /> : null}
-              <title>{`${t.city ?? ""} ${t.team ?? t.name}: ${t.start} to ${t.end}, peak ${t.peak.e} at week ${t.peak.w}`}</title>
-            </g>
-          );
-        })}
-
-        {top.map((t, i) => {
-          const p = paths(t);
+        {/* Trailing teams first so the emphasised four paint on top. */}
+        {[...rated].sort((a, b) => (lead.has(a.name) ? 1 : 0) - (lead.has(b.name) ? 1 : 0)).map((t) => {
+          const color = colorByName[t.name] || "var(--border)";
+          const isLead = lead.has(t.name);
+          const solid: string[] = [];
+          const held: string[] = [];
+          for (let i = 1; i < t.weeks.length; i++) {
+            const a = t.weeks[i - 1];
+            const b = t.weeks[i];
+            (b.carried ? held : solid).push(
+              `M${px(a.w).toFixed(1)},${py(a.e).toFixed(1)}L${px(b.w).toFixed(1)},${py(b.e).toFixed(1)}`);
+          }
+          const all = t.weeks.map((w, i) => `${i ? "L" : "M"}${px(w.w).toFixed(1)},${py(w.e).toFixed(1)}`).join("");
           const last = t.weeks[t.weeks.length - 1];
+          const rec = last.rec ? `${last.rec[0]}-${last.rec[1]}${last.rec[2] ? `-${last.rec[2]}` : ""}` : "";
           return (
-            <g key={t.name}>
-              <path d={p.solid} fill="none" stroke={HILITE[i]} strokeWidth={2.25} strokeLinecap="round" strokeLinejoin="round" />
-              {p.held ? <path d={p.held} fill="none" stroke={HILITE[i]} strokeWidth={2.25} strokeDasharray="3 3" /> : null}
-              <circle cx={px(last.w)} cy={py(last.e)} r={3} fill={HILITE[i]} />
-              <text x={px(last.w) + 8} y={py(last.e) + 3.5} fontSize={11} fill="var(--text)" style={{ fontFamily: MONO }}>
+            <g key={t.name} className={`ln${isLead ? " lead" : ""}`} style={{ opacity: isLead ? 1 : 0.55 }}>
+              <title>
+                {`${t.city ?? ""} ${t.team ?? t.name}${t.league ? ` (${t.league})` : ""}` +
+                 `\nfinished ${last.e}${last.r ? `, ${last.r}${ord(last.r)} of ${rated.length}` : ""}${rec ? ` · ${rec}` : ""}` +
+                 `\nstarted ${t.start} · peak ${t.peak.e} at week ${t.peak.w} · low ${t.trough.e} at week ${t.trough.w}`}
+              </title>
+              <path className="hit" d={all} />
+              <path className="stroke" d={solid.join("")} fill="none" stroke={color} strokeWidth={isLead ? 2.4 : 1.4} strokeLinecap="round" strokeLinejoin="round" />
+              {held.length ? <path className="stroke" d={held.join("")} fill="none" stroke={color} strokeWidth={isLead ? 2.4 : 1.4} strokeDasharray="3 3" /> : null}
+              <circle className="dot" cx={px(last.w)} cy={py(last.e)} r={isLead ? 3 : 2} fill={color} />
+              <text className="lbl" x={px(last.w) + 7} y={py(last.e) + 3.5} fontSize={11} fill="var(--text)" style={{ fontFamily: MONO }}>
                 {t.team ?? t.name}
               </text>
-              <title>{`${t.city ?? ""} ${t.team ?? t.name}: ${t.start} to ${t.end}, peak ${t.peak.e} at week ${t.peak.w}`}</title>
             </g>
           );
         })}
