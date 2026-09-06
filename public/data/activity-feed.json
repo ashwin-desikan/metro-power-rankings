@@ -1,13 +1,62 @@
 {
-  "generatedAt": "2026-09-05",
+  "generatedAt": "2026-09-06",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-06",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "1384d9e43"
+    },
     {
       "date": "2026-09-05",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "b4ad0e3be"
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "9743b36fe"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "hub",
+      "hub": "Play",
+      "text": "The Champions League tab was never asking for its ledger.",
+      "commit": "f4ac0552d"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Eleven games hardened, and an Expert tier on the adult arcade.",
+      "commit": "a80428dbf"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "hub",
+      "hub": "Order",
+      "text": "A real space between the margin and its axis word.",
+      "commit": "6df8fca13"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "hub",
+      "hub": "Order",
+      "text": "Say how close each position is to another, and name the case the measure gets wrong.",
+      "commit": "923d17f68"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Close the RLS thread, and correct the comment that would reopen it.",
+      "commit": "5536a1793"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "hub",
+      "hub": null,
+      "text": "The Force axis learns what a state can raise and spend.",
+      "commit": "8ab21bf26"
     },
     {
       "date": "2026-09-04",
@@ -4152,55 +4201,6 @@
       "hub": "Club Football",
       "text": "Live NFL standings on franchise pages: lib/standings.ts pulls ESPN at build time with hourly ISR, CurrentSeasonBlock shows record/division…",
       "commit": "a41d2e688"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Sports + game-score table polish: top-teams logos and NFL links via lib/teamLinks; game-score scoreline with linked winner+loser, stadium a…",
-      "commit": "27b6c5f75"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "NFL pages: rankings/ metro link, inline scoreline match cell, SB 50 not SB L, show total championship appearances.",
-      "commit": "eb383029a"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "Fix client/server module boundary: server-only on lib/nfl, lib/badges, lib/substack; inline TITLE_COLORS in HistoricalTable; add check:clie…",
-      "commit": "f7575120a"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "NFL pages: fix metro link, drop Historical from Sports nav, attribute 1925 to Bulldogs (Boston), sortable defunct table with first/last yea…",
-      "commit": "f39a26ed0"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": null,
-      "text": "Ship NFL historical-seasons data + ETL + logo fetcher stranded by recovery.",
-      "commit": "9d4b7f2ae"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Ship the 2026-05-12 nav refactor and FranchiseTable that never made it past recovery.",
-      "commit": "b87f18f59"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Restore formatDimensionName helper lost during prior recovery.",
-      "commit": "c1b83d6a1"
     }
   ]
 }
