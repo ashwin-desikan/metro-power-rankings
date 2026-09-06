@@ -46,6 +46,25 @@ const nextConfig: NextConfig = {
   // (lib/useMetroBoundaries.ts); no server function reads it via fs, so
   // keep it out of every serverless function trace. Honored under the
   // webpack builder (see build script); Turbopack ignores this today.
+  // 🔴 lib/data.ts BUILDS ITS PATHS AT RUNTIME, so the tracer cannot see which
+  // files it reads and bundles the WHOLE of public/data (259 MB) into every
+  // function that imports it. On 2026-09-06 api/og/compare crossed Vercel's
+  // 250 MB uncompressed function limit at 255.19 MB and the deploy FAILED
+  // AFTER a successful build. `npm run verify` cannot catch that: the limit is
+  // a deploy-time check, so the Vercel build log is the only place it shows up.
+  //
+  // Per-route `outputFileTracingExcludes` was tried as the fix and DOES NOT
+  // WORK for App Router handlers here, on either "/api/og/compare" or
+  // "/api/og/compare/route". The "*" rule below does work, which is how we
+  // know the mechanism is fine and the route key is not. Do not spend the hour
+  // again. The route was fixed instead by making it fetch its data rather than
+  // read it (see app/api/og/compare/route.tsx).
+  //
+  // 🔴 THE NEXT FUNCTION TO CROSS 250 MB WILL FAIL THE SAME SILENT WAY. Any
+  // route that imports lib/data as a VALUE carries all of public/data, and
+  // public/data only grows. The durable fix is for lib/data.ts to read through
+  // a statically analysable map, or for these readers to fetch from GitHub raw
+  // the way lib/nflElo.ts already does.
   outputFileTracingExcludes: {
     "*": ["public/data/boundaries-simplified.json"],
   },

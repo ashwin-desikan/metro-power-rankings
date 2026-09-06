@@ -1,6 +1,40 @@
 import { ImageResponse } from "next/og";
-import { getMetroDetail } from "@/lib/data";
+import type { MetroDetail } from "@/lib/data";
 import { computeTier } from "@/lib/tiers";
+
+// 🔴 THIS ROUTE FETCHES ITS DATA, IT DOES NOT READ IT FROM DISK. It used to
+// call into lib/data, which builds its paths at runtime
+// (`join(dataDir, "details", slug + ".json")`). Next's tracer cannot resolve
+// that, so it bundles the WHOLE of public/data into every function that
+// imports lib/data. On 2026-09-06 this function reached 255.19 MB against
+// Vercel's 250 MB uncompressed limit and the deploy FAILED AFTER a successful
+// build. `npm run verify` cannot catch it: the limit is checked at deploy
+// time, not at build time, so the build logs are the only place it appears.
+//
+// The type import above is erased at compile time, so nothing of lib/data
+// survives into the bundle. The detail JSON comes over the wire from the same
+// GitHub raw base lib/nflElo.ts already uses, and caches on the URL. For a
+// social card that is the right trade: an OG image is allowed to be a network
+// call, and it is not allowed to carry a quarter of a gigabyte.
+//
+// 🔴 A VALUE IMPORT FROM lib/data HERE BRINGS THE 255 MB BACK. Per-route
+// `outputFileTracingExcludes` was tried first and does not take effect for App
+// Router handlers under this Next version, on either key spelling.
+const DATA_BASE =
+  "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
+
+async function fetchMetroDetail(slug: string): Promise<MetroDetail | null> {
+  if (!/^[a-z0-9-]+$/.test(slug)) return null;
+  try {
+    const res = await fetch(`${DATA_BASE}/details/${slug}.json`, {
+      next: { revalidate: 86400 },
+    });
+    if (!res.ok) return null;
+    return (await res.json()) as MetroDetail;
+  } catch {
+    return null;
+  }
+}
 
 // Comparison OG card. Accepts up to four metro slugs via the `m` query param
 // (comma-separated): /api/og/compare?m=london,new-york
@@ -89,9 +123,8 @@ export async function GET(request: Request) {
   if (slugs.length < 2) {
     return fallbackImage("Global Metro Power Rankings");
   }
-  const details = slugs
-    .map((slug) => getMetroDetail(slug))
-    .filter((d): d is NonNullable<ReturnType<typeof getMetroDetail>> => Boolean(d));
+  const details = (await Promise.all(slugs.map(fetchMetroDetail)))
+    .filter((d): d is MetroDetail => Boolean(d));
   if (details.length < 2) {
     return fallbackImage("Comparison unavailable");
   }
@@ -109,8 +142,8 @@ export async function GET(request: Request) {
 // ============================================================================
 
 function renderTwoMetro(
-  a: NonNullable<ReturnType<typeof getMetroDetail>>,
-  b: NonNullable<ReturnType<typeof getMetroDetail>>,
+  a: MetroDetail,
+  b: MetroDetail,
 ) {
   const tierA = computeTier(a.metro.score);
   const tierB = computeTier(b.metro.score);
@@ -446,7 +479,7 @@ function renderTwoMetro(
 // ============================================================================
 
 function renderGrid(
-  details: Array<NonNullable<ReturnType<typeof getMetroDetail>>>,
+  details: Array<MetroDetail>,
 ) {
   return new ImageResponse(
     (
