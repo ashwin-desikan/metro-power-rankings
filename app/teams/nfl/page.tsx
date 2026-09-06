@@ -6,6 +6,12 @@ import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
 import NflStandings from "./NflStandings";
 import HubNav from "@/app/teams/HubNav";
+import { HubHero } from "@/app/teams/_shared/HubHero";
+import { sportGlyph } from "@/app/teams/_shared/SportIcon";
+import { Disclosure } from "@/app/_shared/Disclosure";
+import { SectionHead } from "@/app/_shared/SectionHead";
+import EloPowerRankings from "./EloPowerRankings";
+import { getNflEloIndex } from "@/lib/nflElo";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -33,7 +39,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NflIndexPage() {
+export default async function NflIndexPage() {
   const franchises = getAllFranchises();
   // Pre-sorted by champs desc, then win pct desc, in the ETL.
   const totalChamps = franchises.reduce((s, f) => s + f.championships, 0);
@@ -41,52 +47,142 @@ export default function NflIndexPage() {
   const champAppMap = Object.fromEntries(
     franchises.map(f => [f.slug, getChampionshipAppearances(f.canonical).length])
   );
-  const sbEra = totalChamps; // approximate; the page is for context, not stat-checking
+  const defunct = getHistoricalFranchises();
+
+  // The Elo spine is what the hero counts from, because it is the only thing on
+  // the page that knows how many seasons there are.
+  const index = await getNflEloIndex().catch(() => null);
+  const seasons = index?.seasons ?? [];
+  const live = seasons[seasons.length - 1] ?? null;
+  const firstSeason = seasons[0]?.season ?? 1920;
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      {/* Header */}
-      <header className="mb-8">
-        <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">National Football League</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">NFL franchises</h1>
-        <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          All 32 active franchises, sorted by championships won across the NFL, AAFC, AFL, and Super Bowl era.
-          Click any franchise for full history, stadium timeline, and award winners.
-        </p>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">
-          <div><strong className="text-[var(--text)] text-sm">{franchises.length}</strong> active franchises</div>
-          <div><strong className="text-[var(--text)] text-sm">{withChamps}</strong> with at least one championship</div>
-          <div><strong className="text-[var(--text)] text-sm">{totalChamps}</strong> combined titles (pre-Super Bowl + Super Bowl era)</div>
-          <div>
-            Defunct franchises: <Link href="/teams/nfl/historical" className="text-[var(--accent)] hover:underline">/teams/nfl/historical</Link>
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <nav className="text-xs text-[var(--text-muted)] mb-4">
+        <Link href="/" className="hover:underline">Home</Link>{" / "}
+        <Link href="/sports" className="hover:underline">Sports</Link>{" / "}
+        <span>NFL</span>
+      </nav>
+
+      {/* 🔴 THE HERO IS THE SITE'S HERO, NOT A SECOND ONE. This page opened with
+          a paragraph, a row of loose statistics and six links that printed their
+          own URLs at the reader. Every one of those links is now either a card
+          with a reason to click it or an entry in the tab row below, and the
+          header uses the same banded HubHero every football hub uses. */}
+      <HubHero
+        eyebrow="National Football League"
+        icon={sportGlyph("nfl")}
+        title={<h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">NFL</h1>}
+        subtitle={
+          <>Every franchise, every season back to {firstSeason}, and one rating that runs the whole way
+            through, so a 1925 team and a {live?.season ?? "2026"} team are measured the same way.</>
+        }
+        cta={
+          <a
+            href="/play/nfl-rules-lab.html"
+            className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)] flex-shrink-0"
+            style={{ background: "var(--bg-card-hover)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            New to the NFL? Rules Lab &rarr;
+          </a>
+        }
+      >
+        {live ? (
+          <Link
+            href={`/teams/nfl/season/${live.season}`}
+            className="block rounded-xl border-2 p-4 transition hover:brightness-110"
+            style={{ background: "var(--bg-card-hover)", borderColor: "var(--accent)" }}
+          >
+            <div className="flex items-center justify-between gap-3 flex-wrap">
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded-full border"
+                    style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
+                    {live.status === "final" ? "Final" : "Live"}
+                  </span>
+                  <span className="text-lg font-semibold">The {live.season} season</span>
+                </div>
+                <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl">
+                  {live.status === "final"
+                    ? "Every team's rating week by week, the final standings and the best games of the year."
+                    : `Every team's rating week by week as it happens, with next week's games priced before they are played.`}
+                  {live.top ? <> Top rated right now: {[live.top.city, live.top.team].filter(Boolean).join(" ") || live.top.name}.</> : null}
+                </p>
+              </div>
+              <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Open the season hub &rarr;</span>
+            </div>
+          </Link>
+        ) : null}
+
+        <Link
+          href="/teams/nfl/season"
+          className="block rounded-xl border p-3 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        >
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <span className="text-sm font-semibold">
+              Season archive
+              <span className="font-normal text-[var(--text-muted)]">
+                {" "}&middot; all {seasons.length || 107} seasons since {firstSeason}, and the 25 years the best team did not win
+              </span>
+            </span>
+            <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Browse every season &rarr;</span>
           </div>
-          <div>
-            International: <Link href="/teams/nfl/international" className="text-[var(--accent)] hover:underline">/teams/nfl/international</Link>
-          </div>
-          <div>
-            Against expectation: <Link href="/sports/expectation" className="text-[var(--accent)] hover:underline">/sports/expectation</Link>
-          </div>
-          <div>
-            Every season since 1920: <Link href="/teams/nfl/season" className="text-[var(--accent)] hover:underline">/teams/nfl/season</Link>
-          </div>
+        </Link>
+
+        {/* The four layers, as stat-cards that double as section nav - the numbers ARE the pitch. */}
+        <div className="grid gap-2.5 grid-cols-2 lg:grid-cols-4">
+          {[
+            { href: "#power", emoji: "\u{1F4C8}", stat: String(seasons.length || 107), label: "seasons rated", blurb: `One Elo model from ${firstSeason} to today, ${(index?.meta.team_weeks ?? 48636).toLocaleString("en-US")} team-weeks of it.` },
+            { href: "#all-time", emoji: "\u{1F3C6}", stat: String(totalChamps), label: "titles won", blurb: `Across the NFL, AAFC, AFL and Super Bowl era, shared by ${withChamps} of the ${franchises.length} franchises.` },
+            { href: "#map", emoji: "\u{1F5FA}\uFE0F", stat: String(franchises.length), label: "active franchises", blurb: "Pinned where they play, with every city each one has left behind." },
+            { href: "/teams/nfl/historical", emoji: "\u{1F47B}", stat: String(defunct.length), label: "franchises gone", blurb: "The Akron Pros to the Baltimore Colts: every club that stopped." },
+          ].map((c) => (
+            <a
+              key={c.href}
+              href={c.href}
+              className="rounded-xl border p-3.5 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+              style={{ background: "var(--bg)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-baseline gap-2">
+                <span className="text-lg leading-none" aria-hidden>{c.emoji}</span>
+                <span className="text-2xl font-bold tabular-nums tracking-tight">{c.stat}</span>
+              </div>
+              <div className="text-xs font-semibold mt-0.5">{c.label}</div>
+              <div className="text-[11px] text-[var(--text-muted)] mt-1 leading-snug">{c.blurb}</div>
+            </a>
+          ))}
         </div>
-      </header>
+      </HubHero>
 
       <HubNav
         items={[
-          { label: "Current Standings", href: "#standings" },
-          { label: "Seasons 1920–today", href: "/teams/nfl/season" },
+          { label: "Power rankings", href: "#power" },
+          { label: "Standings", href: "#standings" },
+          { label: "Seasons since 1920", href: "/teams/nfl/season" },
           { label: "Map", href: "#map" },
-          { label: "All-Time Table", href: "#all-time" },
-          { label: "Top Games", href: "#top-games" },
-          { label: "Against Expectation", href: "/sports/expectation" },
+          { label: "All-time table", href: "#all-time" },
+          { label: "Top games", href: "#top-games" },
+          { label: "Against expectation", href: "/sports/expectation" },
           { label: "International", href: "/teams/nfl/international" },
-          { label: "🔮 Predictions", href: "/predictions/nfl" },
+          { label: "Predictions", href: "/predictions/nfl" },
         ]}
       />
 
-      <div id="standings">
-        <NflStandings />
+      <EloPowerRankings />
+
+      {/* Collapsible on Ashwin's call: the eight division tables are the longest
+          block on the page and the reader who wants them knows they want them.
+          desktopOpen={false} because the request was to collapse it, not to
+          collapse it on phones only. */}
+      <div id="standings" className="mb-10">
+        <Disclosure
+          title={<span className="text-base font-semibold">Current standings</span>}
+          meta="8 divisions"
+          desktopOpen={false}
+        >
+          <NflStandings />
+        </Disclosure>
       </div>
 
       {/* 32-team sortable table. Logo and monogram maps are computed
@@ -119,13 +215,23 @@ export default function NflIndexPage() {
         />
       </div>
 
-      <p className="text-xs text-[var(--text-dim)] mt-8">
-        New: <a href="/play/nfl-rules-lab.html" className="text-[var(--accent)] hover:underline">the NFL Rules Lab &rarr;</a> the Catch Lab, key rules, real calls and how the rules changed (kids and adults modes).
-      </p>
-      <p className="text-xs text-[var(--text-dim)] mt-2">
-        Source: <a href="/methodology" className="hover:text-[var(--text-muted)]">methodology</a>.
-        Franchise totals from NFL_all workbook, last refreshed 2026-05-12.
-      </p>
+      <section className="mb-6 mt-10">
+        <SectionHead id="method" title="Where these numbers come from" sub="Enough to disbelieve this page on purpose rather than by accident." />
+        <div className="rounded-2xl border p-5 text-[13.5px] text-[var(--text-muted)] space-y-3 max-w-4xl"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          <p>
+            Franchise records, championships, stadiums and awards come from this site&rsquo;s own NFL workbook,
+            curated by hand over many years. Ratings are Neil Paine&rsquo;s NFL Elo carried in the same workbook:{" "}
+            {(index?.meta.team_weeks ?? 48636).toLocaleString("en-US")} team-weeks from {firstSeason} to{" "}
+            {live?.season ?? 2026}, one rating and one league rank on every week.
+          </p>
+          <p>
+            Current standings are live from ESPN&rsquo;s public feed and refresh hourly; everything else refreshes
+            when the workbook does{index ? <>, last on {index.meta.generated_at.slice(0, 10)}</> : null}. Full method on the{" "}
+            <a href="/methodology" className="text-[var(--accent)] hover:underline">methodology page</a>.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
