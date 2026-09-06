@@ -97,7 +97,14 @@ def candidate_sources(short_name: str) -> list[Path]:
     home = Path.home()
     cands.append(home / "OneDrive" / "Excel Files" / filename)
     cands.append(home / "Excel Files" / filename)
-    cands.append(project_root.parent / "Excel Files" / filename)
+    # 🔴 WALK THE ANCESTORS, DO NOT NAME ONE. The bridge mounts each connected
+    # folder side by side under a session-specific root, so 'Excel Files' is a
+    # SIBLING of Projects/, not of the project directory: one hardcoded parent
+    # found the football workbook and missed NFL_all.xlsx entirely, and the
+    # NFL Elo spine was rebuilt from an Aug-19 copy without a word of warning.
+    for anc in [project_root, *project_root.parents]:
+        cands.append(anc.parent / "Excel Files" / filename)
+        cands.append(anc / "Excel Files" / filename)
     return cands
 
 

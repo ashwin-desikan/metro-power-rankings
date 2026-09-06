@@ -182,6 +182,10 @@ S = {
     "city": "H", "team": "I", "w": "J", "l": "K", "t": "L", "pf": "N", "pa": "O",
     "divpos": "S", "gb_div": "T", "wc": "U", "gb_wc": "V",
     "week_end": "AG", "phase": "AH", "elo": "AI", "rank": "AJ", "seed": "AK",
+    # AR-AX are the year-end context VLOOKUP'd from Year by Year, identical on
+    # every week row of a team-season: what the season ended up being.
+    "play_app": "AR", "div_title": "AS", "best_conf": "AT", "best_rec": "AU",
+    "cf_app": "AV", "champ_app": "AW", "champ": "AX",
     "name": "AY",
 }
 S_WANT = set(S.values())
@@ -219,6 +223,9 @@ def read_standings(book: Book):
             "wc": row.get("wc") or None,
             "seed": row.get("seed") or None,
             "phase": row.get("phase") or None,
+            "flags": {k: row.get(k) for k in
+                      ("play_app", "div_title", "best_conf", "best_rec",
+                       "cf_app", "champ_app", "champ")},
             "date": serial_to_iso(row.get("week_end")),
             "elo": num(row.get("elo")),
             "rank": num(row.get("rank")),
@@ -269,8 +276,17 @@ def build(book: Book) -> dict:
         t = by_season[se].setdefault(nm, {
             "name": nm, "city": row["city"], "team": row["team"],
             "league": row["league"], "conf": row["conf"], "div": row["div"],
-            "weeks": {},
+            "flags": {}, "weeks": {},
         })
+        # Year-end context, identical on every week row of a team-season.
+        # 🔴 THE VOCABULARY IS "Y" OR "0", NOT "Y" OR BLANK. Storing the raw
+        # cell made every flag truthy, because "0" is a non-empty string: the
+        # first build had all 24 teams winning the 1966 championship and the
+        # 49ers winning 2026 before a snap. Normalise to a real boolean here,
+        # once, so no consumer can repeat the mistake.
+        for fk, fv in (row.get("flags") or {}).items():
+            if str(fv).strip().upper() == "Y":
+                t["flags"][fk] = True
         # Later rows win on identity, so a team that changed city mid-history
         # shows the name it carried that season.
         for k in ("city", "team", "league", "conf", "div"):
@@ -317,6 +333,12 @@ def build(book: Book) -> dict:
                     entry["carried"] = True
                 if wk == 0:
                     entry["seed"] = True
+                # 🔴 The phase is what tells a chart where the regular season
+                # stopped. It cannot be inferred from the week number: the week
+                # the playoffs start moved repeatedly, and in 1946-49 and
+                # 1960-69 the two leagues did not start theirs together.
+                if r["phase"]:
+                    entry["ph"] = r["phase"]
                 wks.append(entry)
                 prev_elo = elo
             if not wks:
@@ -327,6 +349,7 @@ def build(book: Book) -> dict:
             teams_out.append({
                 "name": nm, "city": t["city"], "team": t["team"],
                 "league": t["league"], "conf": t["conf"], "div": t["div"],
+                "flags": {k: True for k, v in t["flags"].items() if v is True},
                 "start": wks[0]["e"], "end": wks[-1]["e"],
                 "peak": {"w": peak["w"], "e": peak["e"]},
                 "trough": {"w": trough["w"], "e": trough["e"]},
@@ -342,18 +365,39 @@ def build(book: Book) -> dict:
                 "status": status,
             })
 
+        # The last week any team in a league was still in the regular season.
+        # Per league, because in 1946-49 and 1960-69 they diverged.
+        # 🔴 Week 0 is the preseason seed and is labelled "Reg. Season" from
+        # 2025 on, so it must be excluded or a season with only a seed reports
+        # its regular season ending at week 0.
+        reg_end = {}
+        for t in teams_out:
+            lg = t["league"] or "NFL"
+            for w in t["weeks"]:
+                if w["w"] > 0 and (w.get("ph") or "").startswith("Reg"):
+                    reg_end[lg] = max(reg_end.get(lg, 0), w["w"])
         leagues = sorted({t["league"] for t in teams_out if t["league"]})
         seasons_out.append({
             "season": se, "status": status, "leagues": leagues,
+            "reg_end_week": reg_end,
+            # 🔴 A season is COMPLETE only when someone is flagged champion.
+            # That is the gate for anything that summarises a whole season,
+            # greatest games above all: 2026 must not get a board in November.
+            "complete": any(t["flags"].get("champ") for t in teams_out),
             "teams": teams_out,
             "dropped_weeks": sorted(bad),
         })
+        champ = next((t for t in teams_out if t["flags"].get("champ")), None)
         index_rows.append({
             "season": se, "status": status, "leagues": leagues,
+            "complete": bool(champ),
+            "champion": None if not champ else {
+                "name": champ["name"], "city": champ["city"], "team": champ["team"]},
             "teams": len(teams_out),
             "weeks": max((w["w"] for t in teams_out for w in t["weeks"]), default=0),
             "dropped_weeks": sorted(bad),
-            "top": (lambda t: {"name": t["name"], "elo": t["end"]} if t else None)(
+            "top": (lambda t: {"name": t["name"], "city": t["city"],
+                               "team": t["team"], "elo": t["end"]} if t else None)(
                 max(teams_out, key=lambda x: x["end"]) if teams_out else None),
         })
 
