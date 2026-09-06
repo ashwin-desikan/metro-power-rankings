@@ -10499,6 +10499,39 @@ Team pages read the live year from ESPN into both the header and the
 season-by-season table; `revalidate` dropped from a year to an hour, which is
 what actually made Alabama show 1-0 rather than 0-0.
 
+
+### 🔴 The deploy that failed after a successful build (read this first)
+
+The first push of this session BUILT fine on Vercel and then failed at the
+deploy step: **"The Vercel Function api/og/compare is 255.19mb uncompressed
+which exceeds the maximum uncompressed size limit of 250mb."** Production kept
+serving the previous build until the follow-up fix landed.
+
+**`npm run verify` cannot catch this.** The limit is checked at deploy time, not
+build time, so the Vercel build log is the only place it appears. After any push
+that adds to `public/data`, look at the deployment state, not just at the build.
+
+Cause: `lib/data.ts` builds its paths at runtime
+(`join(dataDir, "details", slug + ".json")`), the tracer cannot resolve that, so
+it bundles **all 259 MB of `public/data`** into every function that imports
+`lib/data` as a VALUE. `public/data` only grows, so this was always going to
+happen to whichever function sat closest to the line.
+
+Fix applied: `app/api/og/compare/route.tsx` now takes a TYPE-only import from
+`lib/data` and fetches the detail JSON from the GitHub raw base instead of
+reading it. Traced size 271.5 MB to 55.8 MB locally.
+
+**Do not repeat the hour I lost:** per-route `outputFileTracingExcludes` does
+NOT take effect for App Router handlers here, on either `"/api/og/compare"` or
+`"/api/og/compare/route"`. The `"*"` key does work, which is how we know the
+mechanism is fine and the route key is not. There is a comment saying so in
+`next.config.ts`.
+
+The durable fix, still open: have `lib/data.ts` read through a statically
+analysable map, or move these readers to GitHub raw the way `lib/nflElo.ts`
+already does. Until then, any new value-importer of `lib/data` inherits the
+whole tree.
+
 ### Open threads
 
 - The Tuesday automation above.
