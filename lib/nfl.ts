@@ -553,38 +553,237 @@ export function nflSlugForCanonical(canonical: string): string | null {
   return canonMap()[canonical] ?? null;
 }
 
+// ---------------------------------------------------------------------------
+// Era name -> site identity.
+//
+// 🔴 A GAME LOG IS WRITTEN IN THE NAMES OF ITS OWN ERA. "San Diego Chargers"
+// beat somebody in 1994 and no franchise is called that today, so the current-
+// name lookup returned nothing and the row rendered as plain text with no crest.
+// The team has a page; the row just could not find it. Every moved franchise had
+// the same problem, and so did every defunct one, whose pages have existed under
+// /teams/nfl/[slug] since the historical hub shipped.
+//
+// Resolution order, most specific first:
+//   1. the current full name, for a club that never moved
+//   2. the workbook canonical, which is the nickname for the 32 and a
+//      disambiguated form ("Bulldogs (Canton)") for the defunct
+//   3. nickname plus a city the club used to play in (prior_cities)
+//   4. nickname alone, when exactly one franchise in history owns it
+// A nickname owned by two franchises with no city match resolves to neither,
+// because linking the wrong Bulldogs is worse than linking none.
+// 🔴 A RENAME IS NOT DERIVABLE, SO IT IS WRITTEN DOWN. Nickname plus city gets
+// a relocated club (San Diego Chargers) and the display names get most of the
+// pre-war ones, but a club that changed its NAME where it stood leaves no trace
+// either can follow. These eight are the ones the game log actually contains,
+// each one a documented continuation of the same franchise:
+//
+//   Washington/Boston Redskins  the Commanders, renamed 2020, in Boston to 1936
+//   Houston Oilers              the Titans, moved 1997 and renamed 1999
+//   Portsmouth Spartans         the Lions, moved to Detroit in 1934
+//   Chicago/Decatur Staleys     the Bears, renamed 1922
+//   Buffalo All-Americans       the Bisons, renamed 1924
+//   Racine Legion               the Racine Tornadoes, renamed 1926
+//
+// The Cleveland Bulldogs are deliberately absent. Whether that club is the
+// Canton franchise relocated or a separate one is contested, the workbook takes
+// no position, and linking the wrong Bulldogs is worse than linking none.
+const ERA_ALIASES: Record<string, string> = {
+  "washington|redskins": "washington-commanders",
+  "boston|redskins": "washington-commanders",
+  "houston|oilers": "tennessee-titans",
+  "portsmouth|spartans": "detroit-lions",
+  "chicago|staleys": "chicago-bears",
+  "decatur|staleys": "chicago-bears",
+};
+/** Era names that map to a DEFUNCT franchise, by that franchise's canonical. */
+const ERA_ALIASES_HISTORICAL: Record<string, string> = {
+  "buffalo|all-americans": "Bisons",
+  "racine|legion": "Tornadoes",
+};
+
+let _eraIndex: {
+  byNickCity: Map<string, string>;
+  byNick: Map<string, string[]>;
+} | null = null;
+
+function eraIndex() {
+  if (_eraIndex) return _eraIndex;
+  const byNickCity = new Map<string, string>();
+  const byNick = new Map<string, string[]>();
+  const add = (nick: string | null | undefined, cities: (string | null | undefined)[], slug: string) => {
+    if (!nick) return;
+    const n = nick.trim().toLowerCase();
+    if (!n) return;
+    for (const c of cities) {
+      // A historical "city" can be a slash-joined move list: "Pottsville/Boston".
+      for (const part of String(c ?? "").split("/")) {
+        const city = part.trim().toLowerCase();
+        if (city) byNickCity.set(`${city}|${n}`, slug);
+      }
+    }
+    const seen = byNick.get(n) ?? [];
+    if (!seen.includes(slug)) byNick.set(n, [...seen, slug]);
+  };
+  for (const f of getAllFranchises()) {
+    add(f.team, [f.city, ...(f.prior_cities ?? [])], f.slug);
+  }
+  for (const h of getHistoricalFranchises()) {
+    // The historical rows carry no `team`, so the nickname is the canonical
+    // with any "(Qualifier)" or " (D)" stripped: "Bulldogs (Canton)" -> Bulldogs.
+    const nick = String(h.canonical ?? "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+    add(nick, [h.city], defunctSlug(h));
+    // `display_name` is the club as the era wrote it ("Dayton Triangles"),
+    // which is exactly the form a game log carries and is often nothing like
+    // the workbook's canonical ("Tigers"). Index the last word as the nickname
+    // and everything before it as the city.
+    const disp = String(h.display_name ?? "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+    const parts = disp.split(/\s+/);
+    if (parts.length >= 2) {
+      add(parts[parts.length - 1], [parts.slice(0, -1).join(" ")], defunctSlug(h));
+    }
+  }
+  for (const [key, canonical] of Object.entries(ERA_ALIASES_HISTORICAL)) {
+    const h = getHistoricalFranchises().find((x) => x.canonical === canonical);
+    if (h) byNickCity.set(key, defunctSlug(h));
+  }
+  for (const [key, slug] of Object.entries(ERA_ALIASES)) byNickCity.set(key, slug);
+  _eraIndex = { byNickCity, byNick };
+  return _eraIndex;
+}
+
+/**
+ * The site slug for a team as a game log names it, moved and defunct included.
+ * Pass the era city and the era nickname, e.g. ("San Diego", "Chargers").
+ */
+export function nflSlugForEraTeam(
+  city: string | null | undefined,
+  team: string | null | undefined,
+): string | null {
+  const nick = (team ?? "").trim();
+  if (!nick) return null;
+  const full = [city, nick].filter(Boolean).join(" ").trim();
+  const current = full ? getNflSlugByTeamName(full) : undefined;
+  if (current) return current;
+  const canon = nflSlugForCanonical(nick);
+  if (canon) return canon;
+  const { byNickCity, byNick } = eraIndex();
+  const c = (city ?? "").trim().toLowerCase();
+  const n = nick.toLowerCase();
+  if (c) {
+    for (const part of c.split("/")) {
+      const hit = byNickCity.get(`${part.trim()}|${n}`);
+      if (hit) return hit;
+    }
+  }
+  const owners = byNick.get(n) ?? [];
+  return owners.length === 1 ? owners[0] : null;
+}
+
 /**
  * A line colour for a team, legible on --bg-card (#12121A).
  *
- * 🔴 NOT A CATEGORICAL PALETTE. These are real club colours, which is the point,
- * but half of them are near-black (Bears #0B162A, Raiders #000000) and would
- * vanish on a dark card. So each team offers two stored colours and this picks
- * whichever actually reads, falling back to the neutral border token when
- * neither does. A team with no stored colour stays grey rather than being
- * assigned one, because inventing a club colour is worse than not having it.
+ * 🔴 NEVER WHITE. The first version scored both stored colours against the card
+ * and took whichever contrasted MOST, which is white every single time it is one
+ * of the two: 15 of the 31 franchises came out white, including six whose own
+ * primary already cleared the floor comfortably (Broncos 5.0, Dolphins 4.3,
+ * Panthers 4.2, Chiefs 3.6, Bucs 3.1, Bengals 5.0). Fifteen identical white
+ * lines on a chart of club colours is worse than no colours at all.
+ *
+ * The order is therefore identity first, legibility second:
+ *
+ *   1. The primary, if it clears 3:1 against the card. Six teams land here that
+ *      the old rule threw away.
+ *   2. The secondary, if it clears and is not white or near-white. This is what
+ *      gives the Packers their gold and the Bears their orange, which is right:
+ *      both are real club colours and both are the one that reads on black.
+ *   3. Otherwise the primary, lightened along its own hue until it clears. A
+ *      lifted Cowboys navy is still a Cowboys blue; white is nobody's.
+ *
+ * 3:1 is the non-text contrast floor. A franchise with no stored colour at all
+ * still returns null: inventing a club colour is worse than not having one.
  */
 const CARD_L = 0.012; // approximate relative luminance of --bg-card
-function luminance(hex: string): number {
+const MIN_CONTRAST = 3;
+
+function srgbToLinear(c: number): number {
+  return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+}
+function rgbOf(hex: string): [number, number, number] | null {
   const h = hex.replace("#", "");
-  if (h.length !== 6) return 0;
-  const v = [0, 2, 4].map((i) => {
-    const c = parseInt(h.slice(i, i + 2), 16) / 255;
-    return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-  });
-  return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2];
+  if (h.length !== 6) return null;
+  return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255) as [number, number, number];
+}
+function luminance(hex: string): number {
+  const rgb = rgbOf(hex);
+  if (!rgb) return 0;
+  const [r, g, b] = rgb.map(srgbToLinear);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 function contrast(hex: string): number {
   const l = luminance(hex);
   return (Math.max(l, CARD_L) + 0.05) / (Math.min(l, CARD_L) + 0.05);
 }
+
+function toHsl(hex: string): { h: number; s: number; l: number } | null {
+  const rgb = rgbOf(hex);
+  if (!rgb) return null;
+  const [r, g, b] = rgb;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const l = (max + min) / 2;
+  const d = max - min;
+  if (d === 0) return { h: 0, s: 0, l };
+  const s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+  let h: number;
+  if (max === r) h = ((g - b) / d + (g < b ? 6 : 0)) / 6;
+  else if (max === g) h = ((b - r) / d + 2) / 6;
+  else h = ((r - g) / d + 4) / 6;
+  return { h, s, l };
+}
+function hslToHex(h: number, s: number, l: number): string {
+  const f = (n: number) => {
+    const k = (n + h * 12) % 12;
+    const a = s * Math.min(l, 1 - l);
+    const v = l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1));
+    return Math.round(Math.min(Math.max(v, 0), 1) * 255).toString(16).padStart(2, "0");
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+/** Lift a colour along its own hue until it clears the contrast floor. */
+function liftToContrast(hex: string): string | null {
+  const hsl = toHsl(hex);
+  if (!hsl) return null;
+  // A pure black primary (the Raiders) has no hue to lift, so it stays a
+  // neutral rather than becoming an arbitrary grey pretending to be a colour.
+  if (hsl.s < 0.05) return null;
+  for (let l = hsl.l; l <= 0.9; l += 0.02) {
+    const c = hslToHex(hsl.h, Math.max(hsl.s, 0.45), l);
+    if (contrast(c) >= MIN_CONTRAST) return c;
+  }
+  return null;
+}
+
+const NEAR_WHITE = 0.75; // luminance above which a colour is "white enough"
+
 export function nflLineColor(slug: string | null): string | null {
   if (!slug) return null;
   const m = MONOGRAM_BY_SLUG[slug];
   if (!m) return null;
-  const cands = [m.bg, m.fg].filter((c) => /^#[0-9a-f]{6}$/i.test(c));
-  const best = cands.map((c) => [c, contrast(c)] as const).sort((a, b) => b[1] - a[1])[0];
-  // 3:1 is the non-text contrast floor; below it the line is not a line.
-  return best && best[1] >= 3 ? best[0] : null;
+  const valid = (c: string) => /^#[0-9a-f]{6}$/i.test(c);
+  const primary = valid(m.bg) ? m.bg : null;
+  const secondary = valid(m.fg) ? m.fg : null;
+
+  if (primary && contrast(primary) >= MIN_CONTRAST) return primary;
+  if (secondary && luminance(secondary) < NEAR_WHITE && contrast(secondary) >= MIN_CONTRAST) {
+    return secondary;
+  }
+  if (primary) {
+    const lifted = liftToContrast(primary);
+    if (lifted) return lifted;
+  }
+  if (secondary && contrast(secondary) >= MIN_CONTRAST) return secondary;
+  return null;
 }
 
 export function getFranchiseByCanonical(canonical: string): Franchise | undefined {
@@ -597,16 +796,34 @@ export function getFranchiseByCanonical(canonical: string): Franchise | undefine
 // intentionally left null so the client renderer doesn't link to a 404.
 export function withTeamSlugs<T extends Record<string, unknown>>(rows: T[]): T[] {
   const { byCanonical } = indices();
+  // 🔴 DEFUNCT AND MOVED CLUBS GET LINKS NOW. This used to resolve only the 32
+  // active franchises, on the stated reasoning that a defunct opponent would
+  // link to a 404. That stopped being true when /teams/nfl/[slug] started
+  // serving all 78, so the rule was quietly costing every pre-war game row its
+  // link and its crest. `nflSlugForEraTeam` covers both, and still returns null
+  // where a nickname is genuinely ambiguous.
+  const resolve = (canonical: unknown, city: unknown, team: unknown): string | null => {
+    if (typeof canonical === "string") {
+      const active = byCanonical.get(canonical)?.slug;
+      if (active) return active;
+      const canon = nflSlugForCanonical(canonical);
+      if (canon) return canon;
+    }
+    return nflSlugForEraTeam(
+      typeof city === "string" ? city : null,
+      typeof team === "string" ? team : null,
+    );
+  };
   return rows.map((r) => {
     const out: Record<string, unknown> = { ...r };
-    if (typeof r.winner_canonical === "string") {
-      out.winner_slug = byCanonical.get(r.winner_canonical)?.slug ?? null;
+    if ("winner_canonical" in r || "winner_team" in r) {
+      out.winner_slug = resolve(r.winner_canonical, r.winner_city, r.winner_team);
     }
-    if (typeof r.loser_canonical === "string") {
-      out.loser_slug = byCanonical.get(r.loser_canonical)?.slug ?? null;
+    if ("loser_canonical" in r || "loser_team" in r) {
+      out.loser_slug = resolve(r.loser_canonical, r.loser_city, r.loser_team);
     }
-    if (typeof r.opp_canonical === "string") {
-      out.opp_slug = byCanonical.get(r.opp_canonical)?.slug ?? null;
+    if ("opp_canonical" in r || "opp_team" in r) {
+      out.opp_slug = resolve(r.opp_canonical, r.opp_city, r.opp_team);
     }
     return out as T;
   });
