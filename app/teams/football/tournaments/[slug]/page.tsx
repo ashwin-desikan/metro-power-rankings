@@ -18,7 +18,7 @@ import LiveCompGroups from "./LiveCompGroups";
 import LiveCompFixtures, { compHasLive } from "./LiveCompFixtures";
 import LiveCompBracket from "./LiveCompBracket";
 import HubNav from "@/app/teams/HubNav";
-import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { HubHero } from "@/app/teams/_shared/HubHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
@@ -125,7 +125,7 @@ export default async function ClubTournamentHubPage({ params }: Props) {
 
       <FootballHubNav current="competitions" showBack={false} />
 
-      <FootballHero
+      <HubHero
         eyebrow={hub.active ? "Tournament Hub" : "Discontinued Competition"}
         title={
           <>
@@ -227,7 +227,7 @@ function ContinentalHubView({ hub }: { hub: NonNullable<ReturnType<typeof getEur
         <Link href="/teams/football/tournaments" className="hover:underline">Tournaments</Link>{" / "}
         <span>{hub.short_label}</span>
       </nav>
-      <FootballHero
+      <HubHero
         eyebrow="Continental Finals"
         title={<h1 className="text-3xl font-semibold tracking-tight">{hub.label}</h1>}
         subtitle={hub.era_notes}

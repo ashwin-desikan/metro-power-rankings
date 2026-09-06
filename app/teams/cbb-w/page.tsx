@@ -5,6 +5,7 @@ import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getAllWcbbTeams, getWcbbNationalChampions } from "@/lib/wcbb";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/cbb-w";
@@ -49,7 +50,10 @@ export default function WcbbHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Women's College Basketball</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="cbb-w" />
+          <h1 className="text-3xl font-semibold tracking-tight">Women's College Basketball</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           Every NCAA Division I program by its all-time tournament record: national
           titles, Final Fours and tournament appearances since the first NCAA women's

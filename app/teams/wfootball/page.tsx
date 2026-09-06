@@ -6,6 +6,7 @@ import { getWLiveLeagues, getWLiveCompetition, getWLiveOdds } from "@/lib/wLive"
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedClubsTable from "@/app/teams/wfootball/MostDecoratedClubsTable";
 import WLiveHub from "@/app/teams/wfootball/WLiveHub";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 const PAGE_PATH = "/teams/wfootball";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
@@ -45,7 +46,10 @@ export default async function WFootballHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">{PAGE_TITLE}</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="wfootball" />
+          <h1 className="text-3xl font-semibold tracking-tight">{PAGE_TITLE}</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The women&apos;s club game. Club tournament hubs carry every UEFA Women&apos;s Champions League
           and FIFA Women&apos;s Champions Cup edition, and league hubs group each country&apos;s domestic

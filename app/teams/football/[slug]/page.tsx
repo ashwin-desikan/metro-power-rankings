@@ -19,7 +19,7 @@ import { getPlExpectationClub } from "@/lib/plExpectation";
 import { getIntlExpectationClub } from "@/lib/intlExpectation";
 import { notFound } from "next/navigation";
 import { colorForFootballClub } from "@/lib/football-colors";
-import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { HubHero } from "@/app/teams/_shared/HubHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import { DataBar } from "@/app/_shared/DataBar";
@@ -213,7 +213,7 @@ export default async function FootballClubPage({ params }: Props) {
 
       <FootballHubNav showBack={false} />
 
-      <FootballHero
+      <HubHero
         accent={colorForFootballClub(club.slug).bg}
         title={
           <>

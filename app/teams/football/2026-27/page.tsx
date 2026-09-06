@@ -12,7 +12,8 @@ import { getFootballClubByName } from "@/lib/football";
 import { getClubStandings, getClubCompetitions, getSuperCups, getDomesticCups, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
 import Hub2027Client, { type HubConf, type HubLeague, type HubGroup, type HubRow } from "./Hub2027Client";
 import { SuperCupsSection, DomesticCupsSection } from "./LiveCups";
-import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { HubHero } from "@/app/teams/_shared/HubHero";
+import { sportGlyph } from "@/app/teams/_shared/SportIcon";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
@@ -325,7 +326,8 @@ export default async function ClubFootball2027Page() {
 
       <FootballHubNav current="season" />
 
-      <FootballHero
+      <HubHero
+        icon={sportGlyph("football")}
         eyebrow={<span className="inline-flex items-center gap-1.5"><Badge variant="live" dot>Live</Badge> 2026-27 Season</span>}
         title={<h1 className="text-3xl font-semibold tracking-tight">2026-27 Club Football</h1>}
         subtitle={

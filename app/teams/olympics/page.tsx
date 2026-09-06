@@ -5,6 +5,7 @@ import { getAllOlympicTeams, getOlympicsHub } from "@/lib/olympics";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import AllTimeTable from "./AllTimeTable";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/olympics";
@@ -52,7 +53,10 @@ export default function OlympicsHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Olympics</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="olympics" />
+          <h1 className="text-3xl font-semibold tracking-tight">Olympics</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The complete medal record: all {hub.totals.editions} Games from Athens 1896
           through Milano-Cortina 2026, every Summer and Winter edition plus the 1906

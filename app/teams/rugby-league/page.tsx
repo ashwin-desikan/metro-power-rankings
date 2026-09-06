@@ -5,6 +5,7 @@ import { getAllRlNations, getRlHub } from "@/lib/rugbyLeagueIntl";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/rugby-league";
@@ -53,7 +54,10 @@ export default function InternationalRugbyLeaguePage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">International Rugby League</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="rugby-league" />
+          <h1 className="text-3xl font-semibold tracking-tight">International Rugby League</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The Rugby League World Cup, complete: all {hub.total_editions} editions from the
           inaugural 1954 tournament in France through 2021, every final, the all-time

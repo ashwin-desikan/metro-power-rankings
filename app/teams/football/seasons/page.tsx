@@ -46,7 +46,10 @@ export default function SeasonsIndex() {
             <div className="flex flex-wrap gap-1.5">
               {SEASONS.filter((s) => Math.floor((+s.slug.slice(0, 4) + 1) / 10) * 10 === dec).map((s) => (
                 <Link key={s.slug} href={`/teams/football/${s.slug}`} title={s.note}
-                  className="text-xs px-2.5 py-1 rounded-md border transition hover:border-[var(--accent)] hover:text-[var(--accent)] inline-flex items-center gap-1.5" style={cardStyle}>
+                  /* 44px on a phone, the compact chip on a pointer. Same rule and
+                     same fix as the NFL season index: a season chip is a standalone
+                     navigation link, not text in a paragraph. */
+                  className="text-xs px-3 min-h-11 sm:min-h-0 sm:px-2.5 sm:py-1 rounded-md border transition hover:border-[var(--accent)] hover:text-[var(--accent)] inline-flex items-center gap-1.5" style={cardStyle}>
                   {s.label}{s.live && <span className="text-[9px] px-1 py-px rounded-full border" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>LIVE</span>}
                 </Link>
               ))}

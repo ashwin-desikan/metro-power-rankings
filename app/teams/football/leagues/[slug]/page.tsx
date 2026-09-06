@@ -31,7 +31,7 @@ import { getClubStandings, getEuropeBadges, getCupAlive, getDomesticCups, type L
 import { liveMembershipBySlug, LIVE_SEASON_END_YEAR } from "@/lib/footballLiveMembership";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { leagueStatusFor } from "@/lib/leagueStatus";
-import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { HubHero } from "@/app/teams/_shared/HubHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
@@ -208,7 +208,7 @@ export default async function FootballLeagueHubPage({ params }: Props) {
 
       <FootballHubNav current="leagues" />
 
-      <FootballHero
+      <HubHero
         eyebrow={hub.country}
         title={
           <>
@@ -311,7 +311,7 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
         <Link href="/teams/football" className="hover:underline">Football clubs</Link>{" / "}
         <span>{hub.league}</span>
       </nav>
-      <FootballHero
+      <HubHero
         eyebrow={hub.country}
         title={
           <>

@@ -10,6 +10,7 @@ import type { FootyCopy } from "./config";
 import FootyAllTimeTable from "./FootyAllTimeTable";
 import FootyFinalsBracket from "./FootyFinalsBracket";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 function Badge({ color, color2, abbr, size = 26 }: { color: string; color2: string; abbr: string; size?: number }) {
   return (
@@ -47,7 +48,10 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
 
       <header className="mb-8">
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">{copy.eyebrow}</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">{copy.fullName}</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport={lg} />
+          <h1 className="text-4xl font-bold tracking-tight">{copy.fullName}</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">{copy.blurb}</p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">
           <div><strong className="text-[var(--text)] text-sm">{meta.active_teams}</strong> current clubs</div>

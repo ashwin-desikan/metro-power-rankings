@@ -6,6 +6,7 @@ import { flagCdnUrl, HISTORICAL_FLAG } from "@/lib/international-display";
 import FibaRankingTable from "./FibaRankingTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/basketball";
@@ -71,7 +72,10 @@ export default async function BasketballHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">International Basketball</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="basketball" />
+          <h1 className="text-3xl font-semibold tracking-tight">International Basketball</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The national-team game: FIBA World Cup finals and full campaigns for the
           editions on file, every Olympic podium since 1936, and pages for all{" "}

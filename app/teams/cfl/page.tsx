@@ -16,6 +16,7 @@ import CflAllTimeTable from "./CflAllTimeTable";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 
@@ -86,7 +87,10 @@ export default async function CflPage() {
 
       <header className="mb-8">
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">Canadian Football · Canada</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Canadian Football League</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="cfl" />
+          <h1 className="text-4xl font-bold tracking-tight">Canadian Football League</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           Nine teams across two divisions play three downs on a wider, longer field for the Grey Cup,
           first contested in 1909 and the oldest trophy in North American professional football still

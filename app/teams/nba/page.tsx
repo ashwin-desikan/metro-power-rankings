@@ -17,6 +17,7 @@ import LeagueMap from "./LeagueMap";
 import PlayoffBracket from "./PlayoffBracket";
 import TopGamesTable from "./TopGamesTable";
 import HubNav from "@/app/teams/HubNav";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 
@@ -76,7 +77,10 @@ export default function NbaIndexPage() {
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">
           National Basketball Association
         </div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">NBA franchises</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="nba" />
+          <h1 className="text-4xl font-bold tracking-tight">NBA franchises</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           All 30 active franchises, sorted by championships across the Basketball Association of America (BAA, 1947-49),
           National Basketball Association (NBA, 1949+), and American Basketball Association (ABA, 1968-76, merged into NBA in 1976).

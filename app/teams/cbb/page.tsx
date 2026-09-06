@@ -7,6 +7,7 @@ import { getAllCbbTeams, getAllCbbSlugs, getCbbTopGames, getCbbGamesByDecade, ge
 import CbbAllTimeTable from "./CbbAllTimeTable";
 import CbbGames from "./CbbGames";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PAGE_PATH = "/teams/cbb";
@@ -52,7 +53,10 @@ export default function CbbHubPage() {
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-6">
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">College Basketball</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Men&rsquo;s College Basketball</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="cbb" />
+          <h1 className="text-4xl font-bold tracking-tight">Men&rsquo;s College Basketball</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           Every Division I program through history, with full all-time records and tournament honors, the 15-year dynasty rankings, the greatest tournament games by Game Score, and the NBA draft pipeline.
         </p>

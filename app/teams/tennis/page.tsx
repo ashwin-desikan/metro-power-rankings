@@ -6,6 +6,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TennisChampionsTable, { type EditionRow, type ChampCell } from "./TennisChampionsTable";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/tennis";
@@ -185,7 +186,10 @@ export default function TennisHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Tennis&apos;s Grand Slams</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="tennis" />
+          <h1 className="text-3xl font-semibold tracking-tight">Tennis&apos;s Grand Slams</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The sport measured by its summit: the all-time Grand Slam leaders, the reigning champions
           of the four majors, and one filterable ledger of every men&apos;s and women&apos;s singles

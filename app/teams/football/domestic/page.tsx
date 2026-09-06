@@ -4,7 +4,8 @@ import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getDomesticClubs, getDomesticFacets } from "@/lib/domesticFootball";
-import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { HubHero } from "@/app/teams/_shared/HubHero";
+import { sportGlyph } from "@/app/teams/_shared/SportIcon";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import DomesticLeaguesTable from "./DomesticLeaguesTable";
 
@@ -41,7 +42,8 @@ export default function DomesticLeaguesPage() {
 
       <FootballHubNav current="domestic" />
 
-      <FootballHero
+      <HubHero
+        icon={sportGlyph("football")}
         eyebrow="Club Football"
         title={<h1 className="text-3xl font-semibold tracking-tight">Domestic Leagues Worldwide</h1>}
         subtitle={

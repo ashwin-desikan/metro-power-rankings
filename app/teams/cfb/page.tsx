@@ -8,6 +8,7 @@ import { getCfbStandings, getCfbRankings, type CfbPoll, type CfbConference } fro
 import CfbAllTimeTable from "./CfbAllTimeTable";
 import CfbGames from "./CfbGames";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 // Live standings/rankings ISR window (ESPN feeds via lib/cfb-live).
@@ -130,7 +131,10 @@ export default async function CfbHubPage() {
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-6">
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">College Football</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">College Football</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="cfb" />
+          <h1 className="text-4xl font-bold tracking-tight">College Football</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           Every major program through history, with full all-time records and honors, AP poll dominance, and the
           greatest games of all time by Game Score.

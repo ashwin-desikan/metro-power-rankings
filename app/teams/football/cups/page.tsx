@@ -4,7 +4,8 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import { getDomesticCupCompetitions, getDomesticCupAggregate } from "@/lib/football";
-import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { HubHero } from "@/app/teams/_shared/HubHero";
+import { sportGlyph } from "@/app/teams/_shared/SportIcon";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import CupsClient from "./CupsClient";
 
@@ -49,7 +50,8 @@ export default function DomesticCupsPage() {
 
       <FootballHubNav current="cups" />
 
-      <FootballHero
+      <HubHero
+        icon={sportGlyph("football")}
         eyebrow="Club Football"
         title={<h1 className="text-3xl font-semibold tracking-tight">English Domestic Cups</h1>}
         subtitle={

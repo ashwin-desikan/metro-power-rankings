@@ -11,6 +11,7 @@ import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getPagedF1Constructors } from "@/lib/f1Constructors";
 import TeamName from "@/app/teams/_shared/F1TeamName";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 // "2026-06-28" -> "28 Jun" for upcoming races (shown in place of a winner).
 const F1_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -90,7 +91,10 @@ export default async function F1Page() {
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-6">
         <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "var(--text-dim)" }}>Motorsport · Formula 1</p>
-        <h1 className="text-3xl sm:text-4xl font-extrabold" style={{ color: "var(--text)" }}>Formula 1</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="f1" />
+          <h1 className="text-3xl sm:text-4xl font-extrabold" style={{ color: "var(--text)" }}>Formula 1</h1>
+        </div>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
           The Drivers&rsquo; and Constructors&rsquo; World Championships since 1950, seen through the metros that host them.
           Live standings, the full roll of champions, all-time win leaders, and a host-metro league table linking every

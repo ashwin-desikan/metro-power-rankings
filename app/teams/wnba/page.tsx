@@ -8,6 +8,7 @@ import { getSeasonSim, simIsCurrent, simByName, fmtOdds } from "@/lib/seasonSim"
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import WnbaFranchiseTable from "./WnbaFranchiseTable";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PAGE_PATH = "/teams/wnba";
@@ -95,7 +96,10 @@ export default async function WnbaPage() {
 
       <header className="mb-8">
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">Basketball · Women&apos;s · United States</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Women&apos;s National Basketball Association</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="wnba" />
+          <h1 className="text-4xl font-bold tracking-tight">Women&apos;s National Basketball Association</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           The premier women&apos;s professional basketball league, founded by the NBA in 1996 and first
           played in 1997. Franchise identity folds relocations and renames into one lineage, so the

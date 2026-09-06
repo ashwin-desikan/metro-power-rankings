@@ -6,6 +6,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import GolfChampionsTable, { type GolfRow } from "./GolfChampionsTable";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/golf";
@@ -194,7 +195,10 @@ export default function GolfHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Golf&apos;s Majors</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="golf" />
+          <h1 className="text-3xl font-semibold tracking-tight">Golf&apos;s Majors</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The four men&apos;s majors since 1860, read through the lens this project cares about:
           the all-time leaders, the reigning champions, and one filterable ledger of every winner,

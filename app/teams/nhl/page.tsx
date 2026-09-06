@@ -15,6 +15,7 @@ import LeagueMap from "./LeagueMap";
 import NhlPlayoffBracket from "./NhlPlayoffBracket";
 import HubNav from "@/app/teams/HubNav";
 import CupPresentationTable from "./CupPresentationTable";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 
@@ -58,7 +59,10 @@ export default function NhlIndexPage() {
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">
           National Hockey League
         </div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">NHL franchises</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="nhl" />
+          <h1 className="text-4xl font-bold tracking-tight">NHL franchises</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           All 32 active franchises, sorted by Stanley Cup wins from 1910 onwards across the National Hockey Association (NHA),
           Pacific Coast Hockey Association (PCHA), Western Canada Hockey League (WCHL), and the NHL (1917+).

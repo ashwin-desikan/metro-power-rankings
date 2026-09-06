@@ -10,6 +10,7 @@ import {
 } from "@/lib/ipl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 
@@ -85,7 +86,10 @@ export default function IplPage() {
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">
           Cricket · T20 · India
         </div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Indian Premier League</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="ipl" />
+          <h1 className="text-4xl font-bold tracking-tight">Indian Premier League</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           The world's highest-attended T20 franchise league, launched by the BCCI in 2008.
           Ten city franchises compete each spring in a double round-robin group stage, followed

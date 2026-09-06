@@ -9,6 +9,7 @@ import { getWorldRanking } from "@/lib/worldRankings";
 import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/wnational";
@@ -109,7 +110,10 @@ export default function WomensInternationalPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Women&apos;s International</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="wnational" />
+          <h1 className="text-3xl font-semibold tracking-tight">Women&apos;s International</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The women&apos;s national-team game in one place: the World Cup, Olympic football, the
           UEFA Women&apos;s Euros, and the Finalissima: every final and an all-time honour table

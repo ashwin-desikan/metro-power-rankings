@@ -23,6 +23,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import NationalIndexClient, { type IndexTeam } from "./NationalIndexClient";
 import WorldCup2026 from "./WorldCup2026";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const metadata: Metadata = {
   title: "International Football",
@@ -246,7 +247,10 @@ export default async function NationalIndexPage() {
 
       <header className="mb-8">
         <div className="flex items-baseline justify-between flex-wrap gap-3">
-          <h1 className="text-3xl font-semibold tracking-tight">International Football</h1>
+          <div className="flex items-center gap-3 mb-2">
+            <SportBadge sport="national" />
+            <h1 className="text-3xl font-semibold tracking-tight">International Football</h1>
+          </div>
           <div className="flex flex-wrap gap-2">
             <Link
               href="/teams/national/quiz"

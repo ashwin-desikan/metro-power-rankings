@@ -12,6 +12,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { DataBar } from "@/app/_shared/DataBar";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/rugby-union";
@@ -77,7 +78,10 @@ export default async function RugbyUnionHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">International Rugby Union</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="rugby-union" />
+          <h1 className="text-3xl font-semibold tracking-tight">International Rugby Union</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           Test rugby from the first international in 1871: {hub.totals.matches.toLocaleString()} matches,
           every season of the Home, Five and Six Nations and of the Tri Nations and Rugby

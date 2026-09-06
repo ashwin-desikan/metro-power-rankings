@@ -7,6 +7,7 @@ import { getWorldRanking } from "@/lib/worldRankings";
 import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 const PATH = "/teams/hockey";
@@ -61,7 +62,10 @@ export default function HockeyHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">International Ice Hockey</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="hockey" />
+          <h1 className="text-3xl font-semibold tracking-tight">International Ice Hockey</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           The national-team game: every Olympic podium since 1920, the sport&apos;s
           ultimate trophy, alongside the Canada Cup and World Cup of Hockey and the

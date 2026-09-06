@@ -16,6 +16,7 @@ import LeagueMap from "./LeagueMap";
 import MlbStandings from "./MlbStandings";
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 
@@ -73,7 +74,10 @@ export default async function MlbIndexPage() {
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-8">
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">Major League Baseball</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">MLB franchises</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="mlb" />
+          <h1 className="text-4xl font-bold tracking-tight">MLB franchises</h1>
+        </div>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           All 30 active franchises, sorted by World Series titles across the National League (1876+), American League (1901+), and the modern World Series era (1903+).
           Click any franchise for full history, stadium timeline, and award winners.

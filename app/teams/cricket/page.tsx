@@ -16,6 +16,7 @@ import { getCricketFixtures } from "@/lib/cricketFixtures";
 import CricketFixtures from "@/app/teams/cricket/CricketFixtures";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
 // Live WTC standings are fetched at request time and cached by ISR, refreshing
@@ -108,7 +109,10 @@ export default async function CricketHubPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">International Cricket</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <SportBadge sport="cricket" />
+          <h1 className="text-3xl font-semibold tracking-tight">International Cricket</h1>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           Every men&apos;s international on file from the first Test in 1877 to this
           week&apos;s fixtures: {hub.totals.matches.toLocaleString()} matches across Tests,

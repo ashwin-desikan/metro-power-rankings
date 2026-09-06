@@ -7,7 +7,8 @@ import { getClubStandings } from "@/lib/clubFootballLive";
 import { liveMembershipBySlug, LIVE_MAP_COUNTRIES, LIVE_SEASON_END_YEAR } from "@/lib/footballLiveMembership";
 import { leagueStatusFor } from "@/lib/leagueStatus";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { HubHero } from "@/app/teams/_shared/HubHero";
+import { sportGlyph } from "@/app/teams/_shared/SportIcon";
 import { Badge } from "@/app/teams/_shared/Badge";
 import FootballIndexClient, { type IndexClub } from "./FootballIndexClient";
 import ClubGreatestGames from "./ClubGreatestGames";
@@ -92,7 +93,8 @@ export default async function FootballIndex() {
 
       <FootballHubNav current="overview" backHref="/sports" backLabel="All Sports" />
 
-      <FootballHero
+      <HubHero
+        icon={sportGlyph("football")}
         eyebrow="Club Football"
         title={<h1 className="text-3xl font-semibold tracking-tight">Football</h1>}
         subtitle={
@@ -166,7 +168,7 @@ export default async function FootballIndex() {
             </a>
           ))}
         </div>
-      </FootballHero>
+      </HubHero>
 
       <details className="group mb-8 rounded-xl border" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-5 py-3.5 flex items-center justify-between gap-3">
