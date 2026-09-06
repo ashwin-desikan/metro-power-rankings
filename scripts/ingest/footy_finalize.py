@@ -104,15 +104,48 @@ def get_all(path, params):
 
 # ---------------------------------------------------------- pure decisions --
 
-def season_complete(ladder_rows, finals_bundle):
-    """True only when every club has played the same number of games AND ESPN
-    has filed post-season fixtures. Both legs matter: equal `played` alone
-    also holds mid-bye-round in the NRL; finals fixtures alone appear while
-    round 27 is still running."""
-    if not ladder_rows or not finals_bundle or not finals_bundle.get("weeks"):
+# Home-and-away games each club plays, per league. AFL 2026 runs 23 under the
+# 24-round wildcard format; the NRL runs 24 across its 27 rounds with three
+# byes. Verified against public/data/{afl,nrl}/data.json, where every club in
+# every completed season since 2023 carries exactly these counts.
+#
+# 🔴 REVISIT THIS WHEN A LEAGUE CHANGES ITS FORMAT. A wrong number here does not
+# corrupt anything: too high and the honours simply wait for the finals feed, as
+# they did before; too low and `equal played` still has to hold, which it does
+# not during a bye round.
+FULL_SEASON = {"afl": 23, "nrl": 24}
+
+
+def season_complete(ladder_rows, finals_bundle, league=None):
+    """True when the home-and-away season is over.
+
+    Two ways to know, and either is enough:
+
+      a) Every club has played the same number of games AND that number is the
+         league's full home-and-away count. This is exact and needs nothing from
+         ESPN beyond the ladder itself.
+      b) Every club has played the same number of games AND ESPN has filed
+         post-season fixtures.
+
+    🔴 (a) EXISTS BECAUSE THE MINOR PREMIERSHIP IS NOT A FINALS RESULT. The first
+    version had only (b), so the McClelland Trophy and the J.J. Giltinan Shield
+    waited on ESPN publishing a finals draw, which can be days after the last
+    home-and-away game is played and the honour is mathematically settled. In
+    2026 the NRL's regular season ended with the finals draw still unfiled and
+    the ladder leader went unstamped.
+
+    Equal `played` alone is still not enough on its own: it also holds in the
+    middle of an NRL bye round, which is why both legs of each test survive."""
+    if not ladder_rows:
         return False
     played = {r.get("played") for r in ladder_rows}
-    return len(played) == 1 and None not in played
+    if len(played) != 1 or None in played:
+        return False
+    n = next(iter(played))
+    full = FULL_SEASON.get((league or "").lower())
+    if full is not None and isinstance(n, int) and n >= full:
+        return True
+    return bool(finals_bundle and finals_bundle.get("weeks"))
 
 
 def flag_updates(ladder_rows, spots, gf=None):
@@ -207,7 +240,7 @@ def run(league, write):
     ladder = get_all("afl_nrl_ladders", {
         "select": "id,team,rank,played,minor_prem,finals,grand_final_app,premiership",
         "sport": "eq.%s" % SPORT[league], "season": "eq.%d" % season, "order": "rank"})
-    if not season_complete(ladder, bundle):
+    if not season_complete(ladder, bundle, league):
         print("[%s] %d regular season not complete (or no finals fixtures); no flags yet" % (league, season))
         return
 
@@ -315,7 +348,17 @@ def self_test():
     check("season complete", season_complete(L, fin))
     check("unequal played -> incomplete", not season_complete(
         [dict(L[0]), {**L[1], "played": 22}], fin))
-    check("no finals fixtures -> incomplete", not season_complete(L, {"weeks": []}))
+    check("no finals fixtures, unknown league -> incomplete",
+          not season_complete(L, {"weeks": []}))
+    # The 2026 NRL case: the home-and-away season is over on the ladder and
+    # ESPN has not filed the finals draw. The minor premiership is settled.
+    NRL = [{**r, "played": 24} for r in L]
+    check("full NRL season, no finals feed -> complete",
+          season_complete(NRL, {"weeks": []}, "nrl"))
+    check("AFL at 23 with no finals feed -> complete",
+          season_complete(L, {"weeks": []}, "afl"))
+    check("NRL bye round (equal but short) -> incomplete",
+          not season_complete([{**r, "played": 22} for r in L], {"weeks": []}, "nrl"))
 
     ups = dict(flag_updates(L, 10))
     check("leader gets minor_prem", ups[1] == {"minor_prem": True, "finals": True})
