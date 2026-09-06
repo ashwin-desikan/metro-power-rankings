@@ -239,7 +239,20 @@ function NameCell({ r }: { r: SRow }) {
 function LeagueAccordion({ block }: { block: Block }) {
   if (block.subTables.length === 0) return null;
   return (
-    <details open={block.open} className="rounded-xl border overflow-hidden" style={cardStyle}>
+    /* 🔴 COLLAPSED ON A PHONE, OPEN ON A DESKTOP. This page carries about
+       twenty-five leagues; with every in-season one expanded it opened at 21
+       screens on a 390px viewport and a reader had to scroll past four sports
+       to reach the fifth. `data-desktop-open` is the site's own mechanism for
+       exactly this (globals.css): the server renders one tree and CSS decides
+       the density, so a phone gets a list of leagues to choose from and a
+       desktop gets everything at once, with no JavaScript and no hydration
+       flash. An offseason league carries neither attribute and stays
+       collapsible at every width, which it always was. */
+    <details
+      data-desktop-open={block.open ? "" : undefined}
+      className="rounded-xl border overflow-hidden jump-open"
+      style={cardStyle}
+    >
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
         <span className="font-semibold text-sm flex items-center gap-1.5">
           {block.live && (

@@ -10,6 +10,7 @@ import { HubHero } from "@/app/teams/_shared/HubHero";
 import { sportGlyph } from "@/app/teams/_shared/SportIcon";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
+import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 import EloPowerRankings from "./EloPowerRankings";
 import { getNflEloIndex } from "@/lib/nflElo";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -174,6 +175,12 @@ export default async function NflIndexPage() {
           comparison worth making: the standings are what happened, the ratings
           are how it happened, and the interesting teams are the ones where the
           two disagree. They stack below xl, where there is no room for two. */}
+      {/* 🔴 STACKED, NOT SIDE BY SIDE. Two columns put the standings in a
+          280px-wide box where the playoff and title columns fell off the end,
+          which is the opposite of the point: the comparison needs BOTH sets of
+          numbers legible at once. Four columns of eight rankings is one compact
+          block, and the full-width standings sit directly under it, so the two
+          are still a screen apart at most and every column is readable. */}
       <section className="mb-10">
         <SectionHead
           id="now"
@@ -186,39 +193,45 @@ export default async function NflIndexPage() {
             "or being wasted by it, and that is usually the most interesting team in the league."
           }
         />
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 items-start">
-          <div className="min-w-0">
-            <h3 className="text-sm font-semibold mb-2">Elo power rankings</h3>
-            <EloPowerRankings columns={2} bare />
+        <Disclosure
+          title={<span className="text-base font-semibold">Elo power rankings</span>}
+          meta={live ? `${live.season} · all 32` : "all 32"}
+        >
+          <div className="p-3">
+            <EloPowerRankings columns={4} bare />
           </div>
-          <div className="min-w-0">
-            <h3 className="text-sm font-semibold mb-2">Current standings</h3>
-            <Disclosure
-              title={<span className="text-sm font-medium text-[var(--text-muted)]">Show the eight divisions</span>}
-              meta="live from ESPN"
-              /* 🔴 OPEN WHERE THE COMPARISON FITS, ONE TAP AWAY WHERE IT DOES
-                 NOT. Side by side on a desktop the two boards ARE the feature,
-                 so the standings are expanded and toggle-free there. Stacked on
-                 a phone they turned the hub into 9.4 screens, so the phone gets
-                 the control instead. §2, exactly. */
-              desktopOpen
-            >
-              <div className="p-3">
-                <NflStandings columns={2} bare />
-              </div>
-            </Disclosure>
-          </div>
+        </Disclosure>
+
+        <div className="mt-4">
+          <Disclosure
+            title={<span className="text-base font-semibold">Current standings</span>}
+            meta="8 divisions · live from ESPN"
+          >
+            <div className="p-3">
+              <NflStandings columns={4} bare />
+            </div>
+          </Disclosure>
         </div>
       </section>
 
       {/* 32-team sortable table. Logo and monogram maps are computed
           server-side so the client component never has to touch the
           filesystem; sorting state lives entirely in the client. */}
-      <div id="map">
+      <CollapsibleSection
+        id="map"
+        title="Where they play"
+        sub="Every active franchise, pinned in the metro that hosts it."
+        meta={`${franchises.length} clubs`}
+      >
         <LeagueMap franchises={franchises} />
-      </div>
+      </CollapsibleSection>
 
-      <div id="all-time">
+      <CollapsibleSection
+        id="all-time"
+        title="The all-time table"
+        sub="Every franchise, active and defunct, by championships won."
+        meta={`${franchises.length} active · ${defunct.length} gone`}
+      >
         <FranchiseTable
           franchises={franchises}
           historical={getHistoricalFranchises()}
@@ -227,9 +240,14 @@ export default async function NflIndexPage() {
           champAppMap={champAppMap}
           defunctSlugMap={Object.fromEntries(getHistoricalFranchises().map(h => [h.canonical, defunctSlug(h)]))}
         />
-      </div>
+      </CollapsibleSection>
 
-      <div id="top-games">
+      <CollapsibleSection
+        id="top-games"
+        title="The greatest games"
+        sub="Ranked by Game Score, which nobody voted on."
+        more="Game Score is built from the two ratings going in, how close the result was, what was at stake and how far the winner was from being favourite, so a tight upset in a Super Bowl scores above a blowout in week 3 without anyone deciding it should."
+      >
         <TopGamesTable
           allTime={withTeamSlugs(withStadiumLocations(getTopGamesAllTime()))}
           byDecade={Object.fromEntries(
@@ -239,7 +257,7 @@ export default async function NflIndexPage() {
             ])
           )}
         />
-      </div>
+      </CollapsibleSection>
 
       <section className="mb-6 mt-10">
         <SectionHead id="method" title="Where these numbers come from" sub="Enough to disbelieve this page on purpose rather than by accident." />

@@ -1,4 +1,4 @@
-// NflStandings — current-season standings widget for the /teams/nfl index.
+// NflStandings - current-season standings widget for the /teams/nfl index.
 // Mirrors MlbStandings in position and style. The 8 divisions are anchored on
 // the franchise workbook so all 32 teams render even before the season starts
 // ("in place"); live records are overlaid from @/lib/standings (ESPN public
@@ -8,8 +8,6 @@
 import Link from "next/link";
 import { getCurrentNflStandings, type TeamStanding } from "@/lib/standings";
 import { getAllFranchises, logoUrlFor, monogramFor, type Franchise } from "@/lib/nfl";
-import { CappedList } from "@/app/_shared/Disclosure";
-import { DataBar } from "@/app/_shared/DataBar";
 import { getNflSim } from "@/lib/nflSim";
 import { fmtOdds } from "@/lib/mlbSim";
 
@@ -108,7 +106,19 @@ export default async function NflStandings({
         <a href="https://www.espn.com/nfl/standings" target="_blank" rel="noreferrer" className="text-xs text-[var(--accent)] hover:underline whitespace-nowrap">Full standings on ESPN &rarr;</a>
       </header>
 
-      <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 ${columns === 4 ? "lg:grid-cols-4" : "xl:grid-cols-2"}`}>
+      {/* 🔴 TWO ACROSS, AND THE ARITHMETIC IS WHY. The page container caps at
+          max-w-6xl, so it is 1,120px of usable width at EVERY viewport above
+          1,152px. Four cards across that is 271px, 247px inside the padding, and
+          the five things a standings row owes the reader (crest, name, record,
+          win percentage, playoff and title odds) need about 176px of fixed
+          columns. That left 71px for a name, so "Commanders" and "Buccaneers"
+          were cut off and no width would have saved them. Two across gives the
+          name 200px or more and nothing truncates at any width.
+
+          🔴 THE NICKNAME, NOT THE FULL NAME. The crest beside it already carries
+          the city, and the nickname is what fits without ellipsis at 390px. The
+          full name is on the row's title attribute and on the team page. */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {DIVISION_ORDER.map((divName) => {
           const teams = byDivision.get(divName) ?? [];
           if (teams.length === 0) return null;
@@ -120,113 +130,78 @@ export default async function NflStandings({
               const awn = a.t?.wins ?? 0, bwn = b.t?.wins ?? 0;
               if (bwn !== awn) return bwn - awn;
             }
+            // Before a snap, the model's own order is more informative than the
+            // alphabet: the division reads as the simulation ranks it.
+            if (showOdds) {
+              const ao = odds.get(a.f.slug)?.p_playoffs ?? -1;
+              const bo = odds.get(b.f.slug)?.p_playoffs ?? -1;
+              if (bo !== ao) return bo - ao;
+            }
             return a.f.name.localeCompare(b.f.name);
           });
-          // Pct is the board's argument: rows are sorted by win_pct desc
-          // whenever live data exists. colMax is this division's own max,
-          // computed once over the full `rows` set above, before the row map.
-          const colMax = hasLive ? Math.max(...rows.map((r) => r.t?.win_pct ?? 0), 0.001) : 1;
           return (
             <div key={divName} className="rounded-xl border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-              <h3 className="text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] mb-2">{divName}</h3>
+              <div className="flex items-baseline justify-between gap-2 mb-1.5">
+                <h3 className="text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)]">{divName}</h3>
+                <span className="text-[9px] uppercase tracking-wider text-[var(--text-dim)]">
+                  {showOdds ? (oddsPlayed ? "odds" : "projected") : ""}
+                </span>
+              </div>
 
-              {/* Mobile: compact stacked rows instead of a cramped 5-column
-                  table. Same rows/order as the desktop table below. */}
-              <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
-                <CappedList
-                  initial={12}
-                  noun="teams"
-                  bodyClassName="divide-y"
-                  items={rows.map(({ f, t }) => {
+              {/* ONE tree, two densities: the same five values at every width.
+                  Only the column widths change, so nothing is hidden on a phone
+                  that a desktop shows. */}
+              <div className="flex items-center gap-2 pb-1 text-[9px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
+                <span className="flex-1">Team</span>
+                <span className="w-11 text-right">Rec</span>
+                <span className="w-9 text-right">Pct</span>
+                {showOdds ? <span className="w-9 text-right" title="chance of reaching the playoffs">Play</span> : null}
+                {showOdds ? <span className="w-9 text-right" title={`chance of winning the ${sim!.meta.title_game ?? "Super Bowl"}`}>Title</span> : null}
+              </div>
+
+              <div>
+                {rows.map(({ f, t }) => {
                   const logo = logoUrlFor(f.slug);
                   const mono = monogramFor(f.slug);
                   const showRec = hasLive && t != null && t.games_played > 0;
+                  const o = odds.get(f.slug);
                   return (
                     <Link
                       key={f.slug}
                       href={`/teams/nfl/${f.slug}`}
-                      className="flex items-center gap-2 py-2 hover:text-[var(--accent)] transition-colors"
+                      title={`${f.name}${showRec ? ` · ${t!.wins}-${t!.losses}${t!.ties ? `-${t!.ties}` : ""}` : ""}${o ? ` · playoffs ${fmtOdds(o.p_playoffs)}, title ${fmtOdds(o.p_sb)}` : ""}`}
+                      className="flex items-center gap-2 py-1 min-h-11 sm:min-h-0 sm:py-1.5 border-b last:border-b-0 hover:text-[var(--accent)] transition-colors"
                       style={{ borderColor: "var(--border)" }}
                     >
                       {logo ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
+                        <img src={logo} alt="" width={18} height={18} className="flex-shrink-0 object-contain" style={{ width: 18, height: 18 }} loading="lazy" decoding="async" />
                       ) : (
-                        <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono.bg, color: mono.fg, width: 16, height: 16, fontSize: 7, fontWeight: 700 }} aria-hidden>{mono.mono}</span>
+                        <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono.bg, color: mono.fg, width: 18, height: 18, fontSize: 7, fontWeight: 700 }} aria-hidden>{mono.mono}</span>
                       )}
-                      <span className="truncate text-xs flex-1 min-w-0">{f.name}</span>
-                      <span className="tabular-nums text-xs flex-shrink-0" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                        {showRec ? `${t!.wins}-${t!.losses}${t!.ties ? `-${t!.ties}` : ""}` : "—"}
+                      {/* No `truncate`: the column is sized so the longest
+                          nickname in the league fits whole. If a future name
+                          does not, widen the column rather than clipping it. */}
+                      <span className="flex-1 text-xs whitespace-nowrap">{f.team}</span>
+                      <span className="w-11 text-right text-xs tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                        {showRec ? `${t!.wins}-${t!.losses}${t!.ties ? `-${t!.ties}` : ""}` : "\u2014"}
                       </span>
-                      <span className="tabular-nums text-xs text-[var(--text-muted)] flex-shrink-0 w-10 text-right">
-                        {showRec ? fmtPct(t!.win_pct) : "—"}
+                      <span className="w-9 text-right text-xs tabular-nums text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                        {showRec ? fmtPct(t!.win_pct) : "\u2014"}
                       </span>
-                      {/* 🔴 THE PHONE GETS THE ODDS TOO. §2: same information,
-                          different density. The win percentage is the column
-                          that gives way, not the one a reader came for. */}
                       {showOdds ? (
-                        <span className="tabular-nums text-xs flex-shrink-0 w-9 text-right" title="chance of reaching the playoffs">
-                          {fmtOdds(odds.get(f.slug)?.p_playoffs)}
+                        <span className="w-9 text-right text-xs tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                          {fmtOdds(o?.p_playoffs)}
+                        </span>
+                      ) : null}
+                      {showOdds ? (
+                        <span className="w-9 text-right text-xs tabular-nums text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                          {fmtOdds(o?.p_sb)}
                         </span>
                       ) : null}
                     </Link>
                   );
                 })}
-                />
-              </div>
-
-              <div className="overflow-x-auto hidden sm:block">
-              <table className="w-full text-xs tabular-nums">
-                <thead className="text-[var(--text-muted)]">
-                  <tr className="border-b" style={{ borderColor: "var(--border)" }}>
-                    <th className="text-left py-1 pr-1 font-medium text-[9px] uppercase tracking-wider">Team</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">W</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">L</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">T</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">Pct</th>
-                    {showOdds ? <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider" title="chance of reaching the playoffs">Play</th> : null}
-                    {showOdds ? <th className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider" title={`chance of winning the ${sim!.meta.title_game ?? "Super Bowl"}`}>Title</th> : null}
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map(({ f, t }) => {
-                    const logo = logoUrlFor(f.slug);
-                    const mono = monogramFor(f.slug);
-                    const showRec = hasLive && t != null && t.games_played > 0;
-                    return (
-                      <tr key={f.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
-                        <td className="py-2 pr-1">
-                          <Link href={`/teams/nfl/${f.slug}`} className="flex items-center gap-1.5 hover:text-[var(--accent)] transition-colors">
-                            {logo ? (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
-                            ) : (
-                              <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono.bg, color: mono.fg, width: 16, height: 16, fontSize: 7, fontWeight: 700 }} aria-hidden>{mono.mono}</span>
-                            )}
-                            <span className="truncate">{f.name}</span>
-                          </Link>
-                        </td>
-                        <td className="py-1 px-1 text-right">{showRec ? t!.wins : "—"}</td>
-                        <td className="py-1 px-1 text-right">{showRec ? t!.losses : "—"}</td>
-                        <td className="py-1 px-1 text-right text-[var(--text-muted)]">{showRec ? t!.ties : "—"}</td>
-                        <td className="py-1 px-1 text-right">
-                          <DataBar v={showRec ? t!.win_pct : null} max={colMax} dp={3} width={70} label="win percentage" />
-                        </td>
-                        {showOdds ? (
-                          <td className="py-1 px-1 text-right" style={{ color: "var(--text)" }}>
-                            {fmtOdds(odds.get(f.slug)?.p_playoffs)}
-                          </td>
-                        ) : null}
-                        {showOdds ? (
-                          <td className="py-1 pl-1 text-right text-[var(--text-muted)]">
-                            {fmtOdds(odds.get(f.slug)?.p_sb)}
-                          </td>
-                        ) : null}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
               </div>
             </div>
           );

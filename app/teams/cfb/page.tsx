@@ -11,6 +11,7 @@ import CfbAllTimeTable from "./CfbAllTimeTable";
 import CfbGames from "./CfbGames";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { SportBadge } from "@/app/teams/_shared/SportIcon";
+import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 
 export const dynamicParams = false;
 // Live standings/rankings ISR window (ESPN feeds via lib/cfb-live).
@@ -238,30 +239,35 @@ export default async function CfbHubPage() {
         { label: "🔮 Predictions", href: "/predictions/cfb" }]} />
 
       {rankings.polls.length > 0 && (
-        <section id="rankings" className="mb-12 scroll-mt-20">
-          <h2 className="text-lg font-semibold mb-1">Rankings</h2>
-          <p className="text-xs text-[var(--text-muted)] mb-3">
-            Every current Top 25 on one board, ranked by{" "}
-            {leadPoll ? <span className="text-[var(--text)]">{COL[leadPoll.kind] ?? leadPoll.name}</span> : "the lead poll"}
-            {leadPoll ? <> ({[leadPoll.week_label, pollDate(leadPoll.date)].filter(Boolean).join(" \u00b7 ")})</> : null}
-            , with each other poll as its own column so the disagreements are visible. First-place votes in
-            parentheses. The College Football Playoff ranking joins as a column when it goes live in November.
-            {showOdds ? <> Playoff and national-title odds are our own simulation of the rest of the season
-              ({sim!.meta.sims.toLocaleString()} runs, {sim!.meta.generated_at}).</> : null}
-          </p>
+        <CollapsibleSection
+          id="rankings"
+          className="mb-12"
+          title="Rankings"
+          meta={`${rankings.polls.length} polls`}
+          sub={`Every current Top 25 on one board, ranked by ${leadPoll ? (COL[leadPoll.kind] ?? leadPoll.name) : "the lead poll"}${leadPoll ? ` (${[leadPoll.week_label, pollDate(leadPoll.date)].filter(Boolean).join(" \u00b7 ")})` : ""}.`}
+          more={
+            <>
+              With each other poll as its own column so the disagreements are visible. First-place votes in
+              parentheses. The College Football Playoff ranking joins as a column when it goes live in November.
+              {showOdds ? <> Playoff and national-title odds are our own simulation of the rest of the season
+                ({sim!.meta.sims.toLocaleString()} runs, {sim!.meta.generated_at}).</> : null}
+            </>
+          }
+        >
           <PollBoard columns={pollColumns} rows={pollRows} showOdds={Boolean(simByKey)}
             leadLabel={leadPoll ? `${COL[leadPoll.kind] ?? leadPoll.name} rank` : "rank"} />
-        </section>
+        </CollapsibleSection>
       )}
 
       {standings.conferences.length > 0 && (
-        <section id="standings" className="mb-12 scroll-mt-20">
-          <h2 className="text-lg font-semibold mb-1">Standings</h2>
-          <p className="text-xs text-[var(--text-muted)] mb-4">
-            {standings.season_year ? `FBS conference standings, ${standings.season_year} season. ` : "FBS conference standings. "}
-            Ordered by conference record. Notre Dame sits with the Power 4; the other independents with the Group of 5. Tap a conference to open it, and a school for its program page.
-            {showOdds ? ` Playoff and national-title odds are our own simulation of the remaining schedule (${sim!.meta.sims.toLocaleString()} runs, ${sim!.meta.generated_at}), not a poll.` : ""}
-          </p>
+        <CollapsibleSection
+          id="standings"
+          className="mb-12"
+          title="Standings"
+          meta={`${standings.conferences.length} conferences`}
+          sub={standings.season_year ? `FBS conference standings, ${standings.season_year} season.` : "FBS conference standings."}
+          more={`Ordered by conference record. Notre Dame sits with the Power 4; the other independents with the Group of 5. Tap a conference to open it, and a school for its program page.${showOdds ? ` Playoff and national-title odds are our own simulation of the remaining schedule (${sim!.meta.sims.toLocaleString()} runs, ${sim!.meta.generated_at}), not a poll.` : ""}`}
+        >
           {[
             { title: "Power 4", confs: standings.conferences.filter((c) => c.power4) },
             { title: "Group of 5", confs: standings.conferences.filter((c) => !c.power4) },
@@ -278,19 +284,27 @@ export default async function CfbHubPage() {
               </div>
             </div>
           ))}
-        </section>
+        </CollapsibleSection>
       )}
 
-      <section id="all-time" className="mb-12 scroll-mt-20">
-        <h2 className="text-lg font-semibold mb-1">All-time programs</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-4">Current FBS by default; switch to all major programs in history. Click a column to sort.</p>
+      <CollapsibleSection
+        id="all-time"
+        className="mb-12"
+        title="All-time programs"
+        sub="Current FBS by default; switch to all major programs in history."
+        more="Click a column to sort."
+      >
         <CfbAllTimeTable teams={teams} />
-      </section>
+      </CollapsibleSection>
 
       {natChamps.length > 0 && (
-        <section id="champions" className="mb-12 scroll-mt-20">
-          <h2 className="text-lg font-semibold mb-1">National champions</h2>
-          <p className="text-xs text-[var(--text-muted)] mb-4">Recognized national champions by season, with the selectors in parentheses and the Heisman winner. Tap a school to open its program page.</p>
+        <CollapsibleSection
+          id="champions"
+          className="mb-12"
+          title="National champions"
+          sub="Recognized national champions by season, with the selectors in parentheses and the Heisman winner."
+          more="Tap a school to open its program page."
+        >
 
           {/* Mobile: one card per season. Same `natChamps` array/order that
               drives the desktop table below. */}
@@ -351,24 +365,30 @@ export default async function CfbHubPage() {
               </tbody>
             </table>
           </div>
-        </section>
+        </CollapsibleSection>
       )}
 
-      <section id="games" className="mb-12 scroll-mt-20">
-        <h2 className="text-lg font-semibold mb-1">The greatest games</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-4">Ranked by Game Score across all of college football history. Filter to a decade; each game shows the date, bowl, venue, and rivalry.</p>
+      <CollapsibleSection
+        id="games"
+        className="mb-12"
+        title="Greatest games"
+        sub="Ranked by Game Score across all of college football history."
+        more="Filter to a decade; each game shows the date, bowl, venue, and rivalry."
+      >
         <CfbGames topOverall={topGames} byDecade={byDecade} linkSlugs={slugs} />
-      </section>
+      </CollapsibleSection>
 
-      <section id="polls" className="mb-10 scroll-mt-20">
-        <h2 className="text-lg font-semibold mb-1">AP poll history</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-4">All-time AP poll dominance since 1936.</p>
+      <CollapsibleSection
+        id="polls"
+        title="AP polls"
+        sub="All-time AP poll dominance since 1936."
+      >
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <Leader title="Weeks at #1" rows={lead((t) => t.weeks_at_1)} />
           <Leader title="Weeks ranked" rows={lead((t) => t.weeks_ranked)} />
           <Leader title="Final AP #1 (titles)" rows={lead((t) => t.final_ap1)} />
         </div>
-      </section>
+      </CollapsibleSection>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Records, polls, and games from a hand-curated college football database. The season log covers major (FBS-designated) seasons only. Game Score rates each game by the quality and stakes of the matchup.

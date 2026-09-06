@@ -17,6 +17,15 @@ import { SectionHead } from "@/app/_shared/SectionHead";
 // 🔴 MOVEMENT IS AGAINST LAST WEEK, NOT AGAINST THE SEED. "Up 4 since August"
 // stops being interesting in October. Where there is no previous rated week -
 // the whole preseason - no movement is drawn rather than a column of zeroes.
+// The first movement of a season is therefore week 1 against the preseason
+// seed, which is a real week of football; the seed itself is a carry-over from
+// the last Super Bowl and moves nobody, so nothing is drawn for it.
+//
+// 🔴 AN ARROW AND A NUMBER, NOT A SIGNED NUMBER. Direction is the thing read
+// first and colour alone cannot carry it: the site's palette rules put the
+// diverging pair in the colourblind floor band, where a second encoding is
+// required rather than optional. The triangle IS that encoding, which is the
+// same bargain DivergingBar makes with its zero line.
 //
 // 🔴 A 32-ROW LIST IS A COLUMN PROBLEM, NOT A DISCLOSURE PROBLEM. The first
 // build ran one row per team down the full width: 32 rows of 38px, most of it
@@ -75,6 +84,9 @@ export default async function EloPowerRankings({
         elo: w?.e ?? t.end,
         rec: w?.rec,
         move: prev && !w?.seed ? w!.e - prev.e : null,
+        // Rank change over the same week, which is what "moved up" means to a
+        // reader even though the rating is what actually moved.
+        prevElo: prev && !w?.seed ? prev.e : null,
         week: w?.w ?? 0,
         slug,
         logo: slug ? logoUrlFor(slug) : null,
@@ -83,6 +95,14 @@ export default async function EloPowerRankings({
     })
     .sort((a, b) => b.elo - a.elo)
     .map((r, i) => ({ ...r, rank: i + 1 }));
+
+  // Last week's order, so a row can say it climbed four places and not only
+  // that it gained eleven rating points.
+  const prevOrder = rows
+    .filter((r) => r.prevElo != null)
+    .sort((a, b) => (b.prevElo ?? 0) - (a.prevElo ?? 0))
+    .map((r) => r.name);
+  const prevRank = new Map(prevOrder.map((n, i) => [n, i + 1]));
 
   const week = Math.max(...rows.map((r) => r.week));
   const played = week > 0;
@@ -108,7 +128,7 @@ export default async function EloPowerRankings({
       <div className="rounded-xl border overflow-hidden" style={CARD}>
         <div className="flex items-center justify-between gap-3 px-3 py-1.5 text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
           <span style={MONO}>{played ? `after week ${week}` : "preseason seed"}</span>
-          <span style={MONO}>{anyMove ? "on the week · rating" : "rating"}</span>
+          <span style={MONO}>{anyMove ? "week · rating" : "rating"}</span>
         </div>
         <div className={`grid grid-cols-2 ${columns === 4 ? "md:grid-cols-3 xl:grid-cols-4" : ""}`}>
           {runs.map((run, ci) => (
@@ -117,7 +137,17 @@ export default async function EloPowerRankings({
                 <RowTag
                   key={r.name}
                   {...(r.slug ? { href: `/teams/nfl/${r.slug}` } : {})}
-                  title={`${r.full}${r.div ? ` · ${r.div}` : ""}${r.rec ? ` · ${r.rec[0]}-${r.rec[1]}${r.rec[2] ? `-${r.rec[2]}` : ""}` : ""} · rating ${r.elo.toFixed(0)}${r.move != null ? `, ${r.move >= 0 ? "up" : "down"} ${Math.abs(r.move).toFixed(0)} on the week` : ""}`}
+                  title={(() => {
+                    const was = prevRank.get(r.name);
+                    const places = was ? was - r.rank : null;
+                    return `${r.full}${r.div ? ` · ${r.div}` : ""}` +
+                      `${r.rec ? ` · ${r.rec[0]}-${r.rec[1]}${r.rec[2] ? `-${r.rec[2]}` : ""}` : ""}` +
+                      ` · rating ${r.elo.toFixed(0)}` +
+                      (r.move != null
+                        ? `, ${r.move >= 0 ? "up" : "down"} ${Math.abs(r.move).toFixed(0)} on the week` +
+                          (places ? ` and ${places > 0 ? "up" : "down"} ${Math.abs(places)} ${Math.abs(places) === 1 ? "place" : "places"}` : ", no change of place")
+                        : "");
+                  })()}
                   /* 🔴 THE ROW IS THE TAP TARGET, NOT THE NAME IN IT. §6: a
                      link wrapped around 20px of text in a dense row gives the
                      thumb a third of the row. The whole row is the link, and it
@@ -137,9 +167,19 @@ export default async function EloPowerRankings({
                   )}
                   <span className="min-w-0 flex-1 text-[12.5px] truncate">{r.short}</span>
                   {anyMove ? (
-                    <span className="w-8 text-right text-[10px] tabular-nums flex-shrink-0 hidden sm:inline"
-                      style={{ ...MONO, color: r.move == null ? "var(--text-dim)" : r.move > 0 ? "var(--div-pos)" : r.move < 0 ? "var(--div-neg)" : "var(--text-dim)" }}>
-                      {r.move == null ? "" : `${r.move > 0 ? "+" : r.move < 0 ? "−" : ""}${Math.abs(r.move).toFixed(0)}`}
+                    <span className="w-12 text-right text-[11px] tabular-nums flex-shrink-0 whitespace-nowrap"
+                      style={{ ...MONO, color: r.move == null || Math.abs(r.move) < 0.5 ? "var(--text-dim)" : r.move > 0 ? "var(--div-pos)" : "var(--div-neg)" }}>
+                      {r.move == null ? (
+                        ""
+                      ) : Math.abs(r.move) < 0.5 ? (
+                        <span title="unchanged on the week">&ndash;</span>
+                      ) : (
+                        <>
+                          <span aria-hidden>{r.move > 0 ? "\u25B2" : "\u25BC"}</span>
+                          <span className="sr-only">{r.move > 0 ? "up" : "down"} </span>
+                          {Math.abs(r.move).toFixed(0)}
+                        </>
+                      )}
                     </span>
                   ) : null}
                   <span className="w-10 text-right text-[12.5px] font-semibold tabular-nums flex-shrink-0" style={MONO}>{r.elo.toFixed(0)}</span>
