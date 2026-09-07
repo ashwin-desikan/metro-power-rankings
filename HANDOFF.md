@@ -10594,3 +10594,46 @@ failure. Count ERROR alongside READY when judging how much room is left.
   chips are fixed; the remainder are in `SeasonTrends`/`SeasonSuperlatives` and
   predate this session.
 - Cleveland Bulldogs lineage, above.
+
+### 12. Audited every forecast fetch for hardcoded date headings
+
+Follow-on from the France break. Result: **Brazil had the same defect, nothing
+else did**, and the fixes are provably no-ops on today's data.
+
+| country | how it finds its polls | exposure |
+|---|---|---|
+| US Senate, US governors, Israel | scans every table for one whose CONTENT identifies it (`USRaceRating`+`Cook`+`Sabato`; `likud`+`fieldwork`) | none -- no headings involved |
+| UK | `== National poll results ==` then a generic `=== 20\d\d ===` split, each year passed correctly, `or wt` fallback | low; this is the pattern France should have had |
+| US House, NZ | topical headings that do not age, but pinned to a LEVEL, with whole-article fallbacks | low |
+| **Brazil** | **`=== 2026 ===`, hardcoded year, NO fallback** | **same as France** |
+
+Brazil's asymmetry was France's exactly: if that heading were renamed, `y26`
+empties, `r1sec` empties, and the first round publishes nothing while the
+runoffs carry on through the three-deep fallback chain added after their own
+August incident. It also warned loudly on runoffs-missing-but-first-round-present
+and said nothing about the reverse -- the case that actually happened.
+
+Changes, all behaviour-preserving:
+- New shared `dated_subsections(sec)`: walks whatever headings exist, gives each
+  its OWN year, and lets a heading own its whole subtree so Brazil's L4 month
+  sections ("Aug-Oct (Campaign period)") inherit the L3 year. France now uses it
+  too, which it needs the day that article grows month subsections.
+- Brazil: `find_section("First round")` + `dated_subsections`, and a hard exit
+  naming the article when 0 rows parse.
+- France: same hard exit (added 09-07).
+- US House and NZ: `section_slice` -> `find_section`, so a heading LEVEL change
+  cannot break them either. Their whole-article fallbacks stay. Noted in the NZ
+  comment that its `or wt` fallback is not free -- `extract_polls` stamps
+  undated rows 2026, so if that article ever grows year subsections the fallback
+  would mis-date the old ones.
+
+Proof: after the refactor, `nz/br/fr/il/us_polls.json` are **byte-identical** to
+the committed baseline; UK moved 465 -> 467 rows, which is two polls published
+upstream since the 07:12Z fetch, not the refactor. Both new FATAL guards fire on
+a stubbed restructured article (exit 1, article named). Build + health green,
+Lula 39.3 / Bolsonaro 33.4 and Le Pen 33.4 unchanged.
+
+Severity was always bounded, worth recording: `SPEC` in check_forecast_health.py
+marks `firstRound.shares` REQUIRED for both br and fr, and a required field going
+empty is an error, so either break stops the publish rather than shipping a
+hollow block. The failure mode is a stalled forecast, never a wrong one.
