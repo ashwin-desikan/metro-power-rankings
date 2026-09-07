@@ -1302,6 +1302,17 @@
    "act": 10.5,
    "nzf": 7.5,
    "tpm": 1.5
+  },
+  {
+   "date": "2026-09-03",
+   "pollster": "Taxpayers' Union–Curia",
+   "sample": 1000,
+   "nat": 29.0,
+   "lab": 25.9,
+   "grn": 13.9,
+   "act": 10.5,
+   "nzf": 8.4,
+   "tpm": 2.0
   }
  ]
 }

@@ -5,15 +5,15 @@
    "code": "br",
    "country": "Brazil",
    "election": "2026-10-04",
-   "daysAway": 30,
-   "forecastFrom": "2026-09-04",
+   "daysAway": 27,
+   "forecastFrom": "2026-09-07",
    "awaitingResult": false
   },
   {
    "code": "il",
    "country": "Israel",
    "election": "2026-10-27",
-   "daysAway": 53,
+   "daysAway": 50,
    "forecastFrom": "2026-09-04",
    "awaitingResult": false
   },
@@ -21,32 +21,32 @@
    "code": "us",
    "country": "United States",
    "election": "2026-11-03",
-   "daysAway": 60,
-   "forecastFrom": "2026-09-04",
+   "daysAway": 57,
+   "forecastFrom": "2026-09-07",
    "awaitingResult": false
   },
   {
    "code": "nz",
    "country": "New Zealand",
    "election": "2026-11-07",
-   "daysAway": 64,
-   "forecastFrom": "2026-09-04",
+   "daysAway": 61,
+   "forecastFrom": "2026-09-07",
    "awaitingResult": false
   },
   {
    "code": "fr",
    "country": "France",
    "election": "2027-04-11",
-   "daysAway": 219,
-   "forecastFrom": "2026-09-04",
+   "daysAway": 216,
+   "forecastFrom": "2026-09-07",
    "awaitingResult": false
   },
   {
    "code": "uk",
    "country": "United Kingdom",
    "election": "2029-05-03",
-   "daysAway": 972,
-   "forecastFrom": "2026-09-04",
+   "daysAway": 969,
+   "forecastFrom": "2026-09-07",
    "awaitingResult": false
   }
  ],
@@ -56,5 +56,5 @@
   "races": 0
  },
  "calibration": [],
- "built": "2026-09-04"
+ "built": "2026-09-07"
 }

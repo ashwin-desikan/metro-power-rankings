@@ -2,22 +2,22 @@
  "code": "nz",
  "election": "2026-11-07",
  "confidence": "confirmed",
- "built": "2026-09-04",
- "daysBefore": 64,
+ "built": "2026-09-07",
+ "daysBefore": 61,
  "block": {
   "electionAssumed": "2026-11-07",
   "electionDate": "2026-11-07",
   "electionConfidence": "confirmed",
   "average": {
-   "nat": 29.8,
-   "lab": 29.8,
-   "grn": 11.3,
-   "act": 8.4,
-   "nzf": 10.1,
-   "tpm": 2.1
+   "nat": 29.4,
+   "lab": 28.8,
+   "grn": 12.2,
+   "act": 9.1,
+   "nzf": 9.7,
+   "tpm": 2.2
   },
   "pollsters": 6,
-  "latestPollDate": "2026-08-23",
+  "latestPollDate": "2026-09-03",
   "seats": {
    "nat": {
     "median": 39,
@@ -25,24 +25,24 @@
     "hi": 43
    },
    "lab": {
-    "median": 39,
-    "lo": 35,
-    "hi": 43
+    "median": 38,
+    "lo": 34,
+    "hi": 42
    },
    "grn": {
-    "median": 15,
-    "lo": 12,
-    "hi": 17
+    "median": 16,
+    "lo": 14,
+    "hi": 18
    },
    "act": {
-    "median": 11,
+    "median": 12,
     "lo": 9,
-    "hi": 13
+    "hi": 14
    },
    "nzf": {
     "median": 13,
-    "lo": 11,
-    "hi": 16
+    "lo": 10,
+    "hi": 15
    },
    "tpm": {
     "median": 3,
@@ -55,10 +55,10 @@
     "hi": 0
    }
   },
-  "pRightBloc": 86.0,
-  "pLeftBloc": 7.3,
-  "pNeither": 6.7,
-  "monthsOut": 2.1,
+  "pRightBloc": 85.9,
+  "pLeftBloc": 7.0,
+  "pNeither": 7.1,
+  "monthsOut": 2.0,
   "sims": 10000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)"

@@ -4,6 +4,7 @@
   "Likud",
   "Together",
   "RZP- Zehut",
+  "RZP- Zehut",
   "Otzma",
   "Blue & White",
   "Shas",
@@ -13,32 +14,9 @@
   "Joint List",
   "Dems",
   "Yashar",
-  "Zionist Home",
-  "Unity",
+  "Reserv.- NEP",
+  "Reserv.- NEP",
   "Amcha Yisrael"
  ],
- "polls": [
-  {
-   "date": "2026-09-03",
-   "pollster": "Yossi Tatika",
-   "seats": {
-    "Likud": 22,
-    "Together": 15,
-    "RZP- Zehut": 5,
-    "Otzma": 6,
-    "Blue & White": 0,
-    "Shas": 9,
-    "UTJ": 8,
-    "Yisrael Beiteinu": 10,
-    "Ra'am": 5,
-    "Joint List": 6,
-    "Dems": 8,
-    "Yashar": 22,
-    "Zionist Home": 4,
-    "Unity": 0,
-    "Amcha Yisrael": 0
-   },
-   "gov": 50
-  }
- ]
+ "polls": []
 }

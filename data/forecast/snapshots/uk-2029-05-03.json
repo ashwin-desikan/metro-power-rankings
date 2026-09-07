@@ -2,8 +2,8 @@
  "code": "uk",
  "election": "2029-05-03",
  "confidence": "assumed",
- "built": "2026-09-04",
- "daysBefore": 972,
+ "built": "2026-09-07",
+ "daysBefore": 969,
  "block": {
   "electionAssumed": "2029-05-03",
   "electionDate": "2029-05-03",
@@ -619,16 +619,16 @@
     "con": 22.2,
     "lab": 42.5,
     "ld": 0.0,
-    "ref": 35.1,
+    "ref": 35.2,
     "grn": 0.1
    },
    "pMajority": {
     "con": 6.9,
     "lab": 23.8,
-    "ref": 15.7
+    "ref": 15.8
    },
-   "pHung": 53.6,
-   "monthsOut": 31.9,
+   "pHung": 53.5,
+   "monthsOut": 31.8,
    "sims": 4000,
    "nat2024": {
     "con": 23.6,
