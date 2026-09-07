@@ -1,0 +1,4690 @@
+{
+ "meta": {
+  "title": "Hungarian Parliamentary Elections",
+  "sources": [
+   "Wikipedia: Hungarian parliamentary election articles 1825-2026 (results tables and infoboxes)",
+   "National Election Office figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "eras": [
+  {
+   "key": "reform",
+   "label": "The Reform Diets",
+   "span": "1825–1848",
+   "blurb": "The Diet of Hungary met when the Habsburg emperor summoned it and was elected by the counties, which meant by the nobility. What the period lacks in franchise it makes up in consequence: these are the assemblies of Széchenyi and Kossuth, where the Hungarian language replaced Latin and serfdom was argued out of existence. The election of 1848 was the first held on anything resembling a modern register, and the revolution it belonged to was crushed within eighteen months."
+  },
+  {
+   "key": "dualism",
+   "label": "Dualism",
+   "span": "1861–1910",
+   "blurb": "The Compromise of 1867 gave Hungary its own parliament inside the Habsburg monarchy, and the parliament spent fifty years arguing about the Compromise. A property and tax franchise kept the electorate to roughly six per cent of the population, voting outside the towns was open rather than secret, and the Liberal Party won every election but two. The one it lost, in 1905, produced a constitutional crisis the crown resolved by appointing a government the chamber had rejected."
+  },
+  {
+   "key": "horthy",
+   "label": "The Horthy era",
+   "span": "1920–1939",
+   "blurb": "Hungary emerged from war, revolution and Trianon as a kingdom without a king, governed by an admiral without a navy. Elections continued, on a franchise that was secret in Budapest and open in the countryside, and the government party won all six of them. The last, in 1939, brought the Arrow Cross into parliament with the third largest vote."
+  },
+  {
+   "key": "postwar",
+   "label": "Between the armies",
+   "span": "1944–1947",
+   "blurb": "The Provisional National Assembly of 1944 was assembled at public meetings in Soviet-held territory. The 1945 election that followed was the freest Hungary had ever held and was won outright by the Smallholders with 57%, which the Communists answered by carving the state up anyway. By 1947 the Communists were running the interior ministry and the count, and the election is remembered by the blue ballot papers that let their supporters vote in constituencies where they did not live."
+  },
+  {
+   "key": "communist",
+   "label": "One list",
+   "span": "1949–1985",
+   "blurb": "Nine elections in thirty-six years, none of them contests. Voters were handed a single list from the People's Front and asked to approve it; approval ran between 96 and 99% and turnout was reported above 94% every time. From 1966 a constituency could in principle field two candidates from the same front, which changed the seating plan and nothing else."
+  },
+  {
+   "key": "republic",
+   "label": "The third republic",
+   "span": "1990–2010",
+   "blurb": "Free elections returned in March 1990 and immediately produced the pattern that held for twenty years: every governing party lost the next election. A mixed system of constituency seats, county lists and a national compensation list gave majorities to whoever came first, and power alternated between the Socialists and Fidesz at every cycle but one."
+  },
+  {
+   "key": "orban",
+   "label": "The two-thirds years",
+   "span": "2014–2026",
+   "blurb": "The 2011 electoral law halved the chamber to 199 seats, dropped the second round, and added the winner's surplus constituency votes to its list total. Fidesz won three consecutive two-thirds majorities under it. In April 2026 the same system delivered 141 seats to Péter Magyar's Tisza Party on 53% of the list vote, which is the first time it has worked for somebody else."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1825",
+   "label": "1825",
+   "year": 1825,
+   "kind": "legislative",
+   "date": "August 1825",
+   "era": "reform",
+   "totalSeats": 219,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Royalists",
+     "leader": null,
+     "seats": 157,
+     "seatChange": null,
+     "votes": 25,
+     "share": 44.64,
+     "swing": null
+    },
+    {
+     "name": "Constitutionalists",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 20,
+     "share": 35.71,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 11,
+     "share": 19.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Royalists finished first with 157 of 219 seats on 44.6% of the vote.",
+   "seatLeader": "Royalists",
+   "caveat": "The Diet was elected by the counties, which in practice meant by the nobility; there was no popular franchise.",
+   "unfree": null
+  },
+  {
+   "id": "1830",
+   "label": "1830",
+   "year": 1830,
+   "kind": "legislative",
+   "date": "August 1830",
+   "era": "reform",
+   "totalSeats": 213,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A hungarian election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "The Diet was elected by the counties, which in practice meant by the nobility; there was no popular franchise.",
+   "unfree": null
+  },
+  {
+   "id": "1832",
+   "label": "1832",
+   "year": 1832,
+   "kind": "legislative",
+   "date": "November 1832",
+   "era": "reform",
+   "totalSeats": 216,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Reformers",
+     "leader": null,
+     "seats": 116,
+     "seatChange": null,
+     "votes": 21,
+     "share": 37.5,
+     "swing": null
+    },
+    {
+     "name": "Conservatives",
+     "leader": null,
+     "seats": 68,
+     "seatChange": null,
+     "votes": 19,
+     "share": 33.93,
+     "swing": null
+    },
+    {
+     "name": "Centrists",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": 16,
+     "share": 28.57,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Reformers finished first with 116 of 216 seats on 37.5% of the vote.",
+   "seatLeader": "Reformers",
+   "caveat": "The Diet was elected by the counties, which in practice meant by the nobility; there was no popular franchise.",
+   "unfree": null
+  },
+  {
+   "id": "1839",
+   "label": "1839",
+   "year": 1839,
+   "kind": "legislative",
+   "date": "May 1839",
+   "era": "reform",
+   "totalSeats": 209,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservatives",
+     "leader": null,
+     "seats": 72,
+     "seatChange": 4,
+     "votes": 23,
+     "share": 39.66,
+     "swing": null
+    },
+    {
+     "name": "Reformers",
+     "leader": null,
+     "seats": 112,
+     "seatChange": -4,
+     "votes": 22,
+     "share": 37.93,
+     "swing": null
+    },
+    {
+     "name": "Centrists",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -7,
+     "votes": 13,
+     "share": 22.41,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Reformers finished first with 112 of 209 seats on 37.9% of the vote.",
+   "seatLeader": "Reformers",
+   "caveat": "The Diet was elected by the counties, which in practice meant by the nobility; there was no popular franchise.",
+   "unfree": null
+  },
+  {
+   "id": "1843",
+   "label": "1843",
+   "year": 1843,
+   "kind": "legislative",
+   "date": "April 1843",
+   "era": "reform",
+   "totalSeats": 210,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Reformers",
+     "leader": null,
+     "seats": 114,
+     "seatChange": 2,
+     "votes": 21,
+     "share": 37.5,
+     "swing": null
+    },
+    {
+     "name": "Conservatives",
+     "leader": null,
+     "seats": 64,
+     "seatChange": -8,
+     "votes": 19,
+     "share": 33.93,
+     "swing": null
+    },
+    {
+     "name": "Centrists",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 7,
+     "votes": 16,
+     "share": 28.57,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Reformers finished first with 114 of 210 seats on 37.5% of the vote.",
+   "seatLeader": "Reformers",
+   "caveat": "The Diet was elected by the counties, which in practice meant by the nobility; there was no popular franchise.",
+   "unfree": null
+  },
+  {
+   "id": "1847",
+   "label": "1847",
+   "year": 1847,
+   "kind": "legislative",
+   "date": "August 1847",
+   "era": "reform",
+   "totalSeats": 205,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": 2,
+     "votes": 22,
+     "share": 39.29,
+     "swing": null
+    },
+    {
+     "name": "Opposition Party",
+     "leader": null,
+     "seats": 110,
+     "seatChange": -4,
+     "votes": 20,
+     "share": 35.71,
+     "swing": null
+    },
+    {
+     "name": "Centrists",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -3,
+     "votes": 14,
+     "share": 25.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Opposition Party finished first with 110 of 205 seats on 35.7% of the vote.",
+   "seatLeader": "Opposition Party",
+   "caveat": "The Diet was elected by the counties, which in practice meant by the nobility; there was no popular franchise.",
+   "unfree": null
+  },
+  {
+   "id": "1848",
+   "label": "1848",
+   "year": 1848,
+   "kind": "legislative",
+   "date": "2 June–9 July 1848",
+   "era": "reform",
+   "totalSeats": 411,
+   "majoritySeats": 206,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "Lajos Batthyány",
+    "party": "EP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A hungarian election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "The Diet was elected by the counties, which in practice meant by the nobility; there was no popular franchise.",
+   "unfree": null
+  },
+  {
+   "id": "1861",
+   "label": "1861",
+   "year": 1861,
+   "kind": "legislative",
+   "date": "1 March – 7 April 1861",
+   "era": "dualism",
+   "totalSeats": 332,
+   "majoritySeats": 167,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Resolution Party",
+     "leader": null,
+     "seats": 170,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Address Party",
+     "leader": null,
+     "seats": 160,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Slovaks",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Resolution Party finished first with 170 of 332 seats.",
+   "seatLeader": "Resolution Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1865",
+   "label": "1865",
+   "year": 1865,
+   "kind": "legislative",
+   "date": "10 November–11 December 1865",
+   "era": "dualism",
+   "totalSeats": 409,
+   "majoritySeats": 205,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Deák Party",
+     "leader": null,
+     "seats": 268,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Left Centre",
+     "leader": null,
+     "seats": 92,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Far Left",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Romanians",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative '47ers",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Serbs",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Slovaks",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Deák Party finished first with 268 of 409 seats.",
+   "seatLeader": "Deák Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1869",
+   "label": "1869",
+   "year": 1869,
+   "kind": "legislative",
+   "date": "9 March–13 April 1869",
+   "era": "dualism",
+   "totalSeats": 409,
+   "majoritySeats": 205,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Deák Party",
+     "leader": null,
+     "seats": 246,
+     "seatChange": -22,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Left Centre",
+     "leader": null,
+     "seats": 112,
+     "seatChange": 20,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of 1848",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 15,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Romanians in Hungary",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Serbian People's Liberal Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Romanians in Transylvania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '49ers",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gyula Andrássy",
+    "party": "DP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Deák Party finished first with 246 of 409 seats.",
+   "seatLeader": "Deák Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1872",
+   "label": "1872",
+   "year": 1872,
+   "kind": "legislative",
+   "date": "12 June – 9 July 1872",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Deák Party",
+     "leader": null,
+     "seats": 252,
+     "seatChange": 6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Left Centre",
+     "leader": null,
+     "seats": 110,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of 1848",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reform Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Romanians in Hungary",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Serbian People's Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Romanians in Transylvania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Menyhért Lónyay",
+    "party": "DP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Deák Party finished first with 252 of 413 seats.",
+   "seatLeader": "Deák Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1875",
+   "label": "1875",
+   "year": 1875,
+   "kind": "legislative",
+   "date": "1 July–18 August 1875",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 328,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Right-Wing Opposition",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of 1848",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -27,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Saxons",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Romanians in Hungary",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Serbian People's Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Romanians in Transylvania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Béla Wenckheim",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 328 of 413 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1878",
+   "label": "1878",
+   "year": 1878,
+   "kind": "legislative",
+   "date": "5–14 August 1878",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 237,
+     "seatChange": -91,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Opposition",
+     "leader": null,
+     "seats": 82,
+     "seatChange": 62,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence",
+     "leader": null,
+     "seats": 69,
+     "seatChange": 41,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 12,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Serbian People's Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of 1848",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -8,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '48ers",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Romanians in Hungary",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kálmán Tisza",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 237 of 413 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1881",
+   "label": "1881",
+   "year": 1881,
+   "kind": "legislative",
+   "date": "24 June–3 July 1881",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 236,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence",
+     "leader": null,
+     "seats": 91,
+     "seatChange": 22,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate Opposition",
+     "leader": null,
+     "seats": 70,
+     "seatChange": -12,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Serbian People's Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kálmán Tisza",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 236 of 413 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1884",
+   "label": "1884",
+   "year": 1884,
+   "kind": "legislative",
+   "date": "13–22 June 1884",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 235,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence",
+     "leader": null,
+     "seats": 76,
+     "seatChange": -15,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate Opposition",
+     "leader": null,
+     "seats": 59,
+     "seatChange": -11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Antisemitic Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of 1848",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Saxon People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kálmán Tisza",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 235 of 413 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1887",
+   "label": "1887",
+   "year": 1887,
+   "kind": "legislative",
+   "date": "17–26 July 1887",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 256,
+     "seatChange": 21,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "'48ers Party of Independence",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate Opposition",
+     "leader": null,
+     "seats": 47,
+     "seatChange": -12,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Antisemitic Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kálmán Tisza",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 256 of 413 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1892",
+   "label": "1892",
+   "year": 1892,
+   "kind": "legislative",
+   "date": "29 January–3 February 1892",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 245,
+     "seatChange": -11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "'48ers Party of Independence",
+     "leader": null,
+     "seats": 87,
+     "seatChange": 8,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 15,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "'48ers Ugron Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gyula Szapáry",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 245 of 413 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1896",
+   "label": "1896",
+   "year": 1896,
+   "kind": "legislative",
+   "date": "29 October–4 November 1896",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 291,
+     "seatChange": 46,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence and '48",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -39,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": -29,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ugron Party of Independence and '48",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '48ers",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Dezső Bánffy",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 291 of 413 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1901",
+   "label": "1901",
+   "year": 1901,
+   "kind": "legislative",
+   "date": "2–9 October 1901",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 280,
+     "seatChange": -11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence and '48",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 28,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ugron Party of Independence and '48",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Saxons",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Serb People's Radical Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kálmán Széll",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 280 of 413 seats.",
+   "seatLeader": "Liberal Party",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "kind": "legislative",
+   "date": "26 January–4 February 1905",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Party of Independence and '48",
+     "leader": null,
+     "seats": 168,
+     "seatChange": 92,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 157,
+     "seatChange": -123,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party dissidents",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 8,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reorganized Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '48ers",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Serb People's Radical Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "István Tisza",
+    "party": "SZP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Party of Independence and '48 finished first with 168 of 413 seats.",
+   "seatLeader": "Party of Independence and '48",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1906",
+   "label": "1906",
+   "year": 1906,
+   "kind": "legislative",
+   "date": "29 April–8 May 1906",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Party of Independence and '48",
+     "leader": null,
+     "seats": 250,
+     "seatChange": 82,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Constitution Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": 51,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Serb People's Radical Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reorganized Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Independent Socialist Peasant Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Géza Fejérváry",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Party of Independence and '48 finished first with 250 of 413 seats.",
+   "seatLeader": "Party of Independence and '48",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "kind": "legislative",
+   "date": "1–10 June 1910",
+   "era": "dualism",
+   "totalSeats": 413,
+   "majoritySeats": 207,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Party of Work",
+     "leader": null,
+     "seats": 256,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independence Kossuth Party of '48",
+     "leader": null,
+     "seats": 54,
+     "seatChange": -196,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Justh Party of Independence and '48",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '67ers",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 17,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -21,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent '48ers",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Independence Farmer Party for '48",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Independent Socialist Peasant Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Christian Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent moderate",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -21,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Károly Khuen-Héderváry",
+    "party": "NMP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Party of Work finished first with 256 of 413 seats.",
+   "seatLeader": "National Party of Work",
+   "caveat": "A property and tax franchise held the electorate to about six per cent of the population, and voting outside the towns was open rather than secret.",
+   "unfree": null
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "25 and 26 January 1920",
+   "era": "horthy",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "OKgFP",
+     "leader": "István Szabó",
+     "seats": null,
+     "seatChange": null,
+     "votes": 637168,
+     "share": 45.84,
+     "swing": null
+    },
+    {
+     "name": "KNEP",
+     "leader": "Károly Wolff",
+     "seats": null,
+     "seatChange": null,
+     "votes": 514006,
+     "share": 36.98,
+     "swing": null
+    },
+    {
+     "name": "NDP",
+     "leader": "Gábor Ugron",
+     "seats": null,
+     "seatChange": null,
+     "votes": 68009,
+     "share": 4.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Károly Huszár",
+    "party": "KNEP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "OKgFP led the poll with 45.8%.",
+   "seatLeader": null,
+   "caveat": "The secret ballot applied only in the larger cities; elsewhere voters declared their choice in front of officials, and the government party won every time.",
+   "unfree": null
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "legislative",
+   "date": "28 May–2 June 1922",
+   "era": "horthy",
+   "totalSeats": 245,
+   "majoritySeats": 123,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Unity Party",
+     "leader": null,
+     "seats": 140,
+     "seatChange": 28,
+     "votes": 623201,
+     "share": 38.18,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 277481,
+     "share": 17.0,
+     "swing": null
+    },
+    {
+     "name": "Andrássy-Friedrich Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 103705,
+     "share": 6.35,
+     "swing": null
+    },
+    {
+     "name": "United National Democratic and Liberal Opposition",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1,
+     "votes": 79434,
+     "share": 4.87,
+     "swing": null
+    },
+    {
+     "name": "Christian National Union Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -72,
+     "votes": 70748,
+     "share": 4.33,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders, Agrarian Workers and Civic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 66693,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Christian Socialist Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 3,
+     "votes": 65325,
+     "share": 4.0,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Christian Unity",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 59508,
+     "share": 3.65,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence and '48",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 33220,
+     "share": 2.04,
+     "swing": null
+    },
+    {
+     "name": "'48 Smallholders Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 26972,
+     "share": 1.65,
+     "swing": null
+    },
+    {
+     "name": "National Civic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 22764,
+     "share": 1.39,
+     "swing": null
+    },
+    {
+     "name": "Christian Opposition",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 20610,
+     "share": 1.26,
+     "swing": null
+    },
+    {
+     "name": "National Defence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8067,
+     "share": 0.49,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Workers' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7768,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Christian Agricultural Workers and Craftsmen Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3584,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Liberal Opposition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 2929,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1944,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Economic Policy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7545,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Christian National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 3547,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Hungarian National Socialist Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1423,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 14,
+     "votes": 145836,
+     "share": 8.93,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "István Bethlen",
+    "party": "KKFKgP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Unity Party finished first with 140 of 245 seats on 38.2% of the vote.",
+   "seatLeader": "Unity Party",
+   "caveat": "The secret ballot applied only in the larger cities; elsewhere voters declared their choice in front of officials, and the government party won every time.",
+   "unfree": null
+  },
+  {
+   "id": "1926",
+   "label": "1926",
+   "year": 1926,
+   "kind": "legislative",
+   "date": "8–15 December 1926",
+   "era": "horthy",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 76.72,
+   "parties": [
+    {
+     "name": "Unity Party",
+     "leader": null,
+     "seats": 161,
+     "seatChange": 21,
+     "votes": 482086,
+     "share": 42.16,
+     "swing": null
+    },
+    {
+     "name": "Christian National Economic Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 175275,
+     "share": 15.33,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -11,
+     "votes": 126824,
+     "share": 11.09,
+     "swing": null
+    },
+    {
+     "name": "Unofficial Unity Party candidates",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 97474,
+     "share": 8.52,
+     "swing": null
+    },
+    {
+     "name": "United Left (FKFPP–NDP)",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2,
+     "votes": 90132,
+     "share": 7.88,
+     "swing": null
+    },
+    {
+     "name": "Hungarian National Independence Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 43263,
+     "share": 3.78,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 16355,
+     "share": 1.43,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence and '48",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 13564,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "Independent '48 Smallholders Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9963,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Agricultural Labourers and Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4317,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Hungarian National Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1118,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "National Party of the Lower-Middle Class",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -16,
+     "votes": 83148,
+     "share": 7.27,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "István Bethlen",
+    "party": "KKFKgP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Unity Party finished first with 161 seats on 42.2% of the vote. Turnout 76.7%.",
+   "seatLeader": "Unity Party",
+   "caveat": "The secret ballot applied only in the larger cities; elsewhere voters declared their choice in front of officials, and the government party won every time.",
+   "unfree": null
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "28–30 June 1931",
+   "era": "horthy",
+   "totalSeats": 245,
+   "majoritySeats": 123,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Unity Party",
+     "leader": null,
+     "seats": 149,
+     "seatChange": -12,
+     "votes": 603576,
+     "share": 39.96,
+     "swing": null
+    },
+    {
+     "name": "Christian Economic and Social Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -3,
+     "votes": 184618,
+     "share": 12.22,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 173477,
+     "share": 11.48,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0,
+     "votes": 165794,
+     "share": 10.98,
+     "swing": null
+    },
+    {
+     "name": "Unofficial Unity Party candidates",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -1,
+     "votes": 84156,
+     "share": 5.57,
+     "swing": null
+    },
+    {
+     "name": "Unified Liberal Democratic Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 45977,
+     "share": 3.04,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence and '48",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 28518,
+     "share": 1.89,
+     "swing": null
+    },
+    {
+     "name": "Christian Opposition",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 17880,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 15930,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Christian Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 10996,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "Independent Civic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 7316,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Christian Economic Opposition Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 7109,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "National Radical Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 6057,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Christian National Opposition Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5318,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Independent Left Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5213,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Agricultural Labourers and Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5198,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Allied Civic Parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6929,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "United National Party of Front Veterans",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4804,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Racist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4362,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Smallholders",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3735,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Agro-Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3567,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "United Opposition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 2891,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Christian Social and Economic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2343,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Independent Christian Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2096,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Győr City Economic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1936,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Smallholders, Craftsmen and Agricultural Workers Nagyatádi Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1586,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 6,
+     "votes": 109127,
+     "share": 7.22,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "István Bethlen",
+    "party": "KKFKgP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Unity Party finished first with 149 of 245 seats on 40.0% of the vote.",
+   "seatLeader": "Unity Party",
+   "caveat": "The secret ballot applied only in the larger cities; elsewhere voters declared their choice in front of officials, and the government party won every time.",
+   "unfree": null
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "31 March – 7 April 1935",
+   "era": "horthy",
+   "totalSeats": 245,
+   "majoritySeats": 123,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Party of National Unity",
+     "leader": null,
+     "seats": 164,
+     "seatChange": 15,
+     "votes": 879474,
+     "share": 44.55,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 12,
+     "votes": 387351,
+     "share": 19.62,
+     "swing": null
+    },
+    {
+     "name": "Christian Economic and Social Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -18,
+     "votes": 175165,
+     "share": 8.87,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -3,
+     "votes": 132052,
+     "share": 6.69,
+     "swing": null
+    },
+    {
+     "name": "Hungarian National Socialist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 75318,
+     "share": 3.82,
+     "swing": null
+    },
+    {
+     "name": "Liberal and Democratic Opposition (ESZDP–NDP)",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1,
+     "votes": 72407,
+     "share": 3.67,
+     "swing": null
+    },
+    {
+     "name": "Unofficial Party of National Unity candidates",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -2,
+     "votes": 56249,
+     "share": 2.85,
+     "swing": null
+    },
+    {
+     "name": "National Legitimist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 40025,
+     "share": 2.03,
+     "swing": null
+    },
+    {
+     "name": "National Radical Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 17031,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "Reform Generation",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 14478,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Agricultural Labourers and Workers Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 11004,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "Christian Opposition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 9151,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Christian National Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8526,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Party of National Will",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 7431,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Party of Independence and '48",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 5648,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "National Agrarian Opposition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5320,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Free Civic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2527,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Unified National Party of Workers and Lower Middle Class",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 915,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Truth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 546,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -6,
+     "votes": 73471,
+     "share": 3.72,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gyula Gömbös",
+    "party": "NEP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Party of National Unity finished first with 164 of 245 seats on 44.5% of the vote.",
+   "seatLeader": "Party of National Unity",
+   "caveat": "The secret ballot applied only in the larger cities; elsewhere voters declared their choice in front of officials, and the government party won every time.",
+   "unfree": null
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "legislative",
+   "date": "28–29 May 1939",
+   "era": "horthy",
+   "totalSeats": 257,
+   "majoritySeats": null,
+   "turnout": 89.72,
+   "parties": [
+    {
+     "name": "Party of Hungarian Life",
+     "leader": null,
+     "seats": 181,
+     "seatChange": 17,
+     "votes": 1824573,
+     "share": 49.49,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -8,
+     "votes": 569054,
+     "share": 15.44,
+     "swing": null
+    },
+    {
+     "name": "Arrow Cross Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 530405,
+     "share": 14.39,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -6,
+     "votes": 126237,
+     "share": 3.42,
+     "swing": null
+    },
+    {
+     "name": "Christian National Socialist Front",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 87533,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "United Hungarian National Socialist Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 78806,
+     "share": 2.14,
+     "swing": null
+    },
+    {
+     "name": "National Front",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 64355,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Civic Freedom Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 58639,
+     "share": 1.59,
+     "swing": null
+    },
+    {
+     "name": "United Christian Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -11,
+     "votes": 56943,
+     "share": 1.54,
+     "swing": null
+    },
+    {
+     "name": "Unofficial Party of Hungarian Life candidates",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 46802,
+     "share": 1.27,
+     "swing": null
+    },
+    {
+     "name": "National Reform Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22122,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Christian National Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14024,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Hungarian National Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 10872,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "People's Will Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8970,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "National Smallholders, Craftsmen and Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6110,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Independent People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3568,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "National Agricultural Labourers, Craftsmen and Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3453,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Christian Opposition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 2384,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Race Protection Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1288,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Far-right independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 108937,
+     "share": 2.95,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -8,
+     "votes": 25391,
+     "share": 0.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Pál Teleki",
+    "party": "MÉP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Party of Hungarian Life finished first with 181 of 257 seats on 49.5% of the vote. Turnout 89.7%.",
+   "seatLeader": "Party of Hungarian Life",
+   "caveat": "The secret ballot applied only in the larger cities; elsewhere voters declared their choice in front of officials, and the government party won every time.",
+   "unfree": null
+  },
+  {
+   "id": "1944",
+   "label": "1944",
+   "year": 1944,
+   "kind": "legislative",
+   "date": "1944",
+   "era": "postwar",
+   "totalSeats": 498,
+   "majoritySeats": 250,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Hungarian Communist Party",
+     "leader": null,
+     "seats": 166,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 125,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders Party",
+     "leader": null,
+     "seats": 124,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ferenc Szálasi",
+    "party": "NYKP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Communist Party finished first with 166 of 498 seats.",
+   "seatLeader": "Hungarian Communist Party",
+   "caveat": "The Provisional National Assembly was chosen at public meetings in Soviet-held territory rather than by ballot.",
+   "unfree": null
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "4 November 1945",
+   "era": "postwar",
+   "totalSeats": 409,
+   "majoritySeats": 205,
+   "turnout": 92.5,
+   "parties": [
+    {
+     "name": "Independent Smallholders Party",
+     "leader": null,
+     "seats": 245,
+     "seatChange": null,
+     "votes": 2697137,
+     "share": 57.03,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 69,
+     "seatChange": null,
+     "votes": 823250,
+     "share": 17.41,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Communist Party",
+     "leader": null,
+     "seats": 70,
+     "seatChange": null,
+     "votes": 801986,
+     "share": 16.96,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 324772,
+     "share": 6.87,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 76393,
+     "share": 1.62,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Radical Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5763,
+     "share": 0.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Béla Miklós",
+    "party": "Military"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independent Smallholders Party finished first with 245 of 409 seats on 57.0% of the vote. Turnout 92.5%.",
+   "seatLeader": "Independent Smallholders Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "kind": "legislative",
+   "date": "31 August 1947",
+   "era": "postwar",
+   "totalSeats": 411,
+   "majoritySeats": 206,
+   "turnout": 92.3,
+   "parties": [
+    {
+     "name": "Hungarian Communist Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": 1111001,
+     "share": 22.25,
+     "swing": null
+    },
+    {
+     "name": "Democratic People's Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": null,
+     "votes": 824259,
+     "share": 16.5,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": null,
+     "votes": 766000,
+     "share": 15.34,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 53,
+     "seatChange": null,
+     "votes": 742171,
+     "share": 14.86,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Independence Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": 670751,
+     "share": 13.43,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 413409,
+     "share": 8.28,
+     "swing": null
+    },
+    {
+     "name": "Independent Hungarian Democratic Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 262109,
+     "share": 5.25,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Radical Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 85535,
+     "share": 1.71,
+     "swing": null
+    },
+    {
+     "name": "Christian Women's League",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 69363,
+     "share": 1.39,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 49740,
+     "share": 1.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lajos Dinnyés",
+    "party": "FKGP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Communist Party finished first with 79 of 411 seats on 22.2% of the vote. Turnout 92.3%.",
+   "seatLeader": "Hungarian Communist Party",
+   "caveat": "The Communists issued blue ballot papers that let their supporters vote in constituencies where they did not live, and they controlled the ministry that ran the count.",
+   "unfree": null
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "15 May 1949",
+   "era": "communist",
+   "totalSeats": 402,
+   "majoritySeats": null,
+   "turnout": 94.66,
+   "parties": [
+    {
+     "name": "Hungarian Working People's Party",
+     "leader": null,
+     "seats": 285,
+     "seatChange": null,
+     "votes": 5478515,
+     "share": 97.07,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Hungarian Democratic Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Radical Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "István Dobi",
+    "party": "FKGP"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Working People's Party finished first with 285 of 402 seats on 97.1% of the vote. Turnout 94.7%.",
+   "seatLeader": "Hungarian Working People's Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "legislative",
+   "date": "17 May 1953",
+   "era": "communist",
+   "totalSeats": 298,
+   "majoritySeats": null,
+   "turnout": 97.98,
+   "parties": [
+    {
+     "name": "Hungarian Working People's Party",
+     "leader": null,
+     "seats": 206,
+     "seatChange": -79,
+     "votes": 6256653,
+     "share": 99.03,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 92,
+     "seatChange": -25,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Working People's Party finished first with 206 of 298 seats on 99.0% of the vote. Turnout 98.0%.",
+   "seatLeader": "Hungarian Working People's Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "16 November 1958",
+   "era": "communist",
+   "totalSeats": 338,
+   "majoritySeats": null,
+   "turnout": 98.38,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Workers' Party",
+     "leader": null,
+     "seats": 276,
+     "seatChange": 70,
+     "votes": 6431832,
+     "share": 99.56,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 62,
+     "seatChange": -30,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Workers' Party finished first with 276 of 338 seats on 99.6% of the vote. Turnout 98.4%.",
+   "seatLeader": "Hungarian Socialist Workers' Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "24 February 1963",
+   "era": "communist",
+   "totalSeats": 340,
+   "majoritySeats": null,
+   "turnout": 97.2,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Workers' Party",
+     "leader": null,
+     "seats": 252,
+     "seatChange": -24,
+     "votes": 6813058,
+     "share": 98.9,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 88,
+     "seatChange": 26,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Workers' Party finished first with 252 of 340 seats on 98.9% of the vote. Turnout 97.2%.",
+   "seatLeader": "Hungarian Socialist Workers' Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "legislative",
+   "date": "19 March 1967",
+   "era": "communist",
+   "totalSeats": 349,
+   "majoritySeats": null,
+   "turnout": 98.83,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Workers' Party",
+     "leader": null,
+     "seats": 259,
+     "seatChange": 7,
+     "votes": 7086596,
+     "share": 99.73,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 90,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Workers' Party finished first with 259 of 349 seats on 99.7% of the vote. Turnout 98.8%.",
+   "seatLeader": "Hungarian Socialist Workers' Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "25 April 1971",
+   "era": "communist",
+   "totalSeats": 352,
+   "majoritySeats": null,
+   "turnout": 98.69,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Workers' Party",
+     "leader": null,
+     "seats": 224,
+     "seatChange": -35,
+     "votes": 7189125,
+     "share": 99.05,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 128,
+     "seatChange": 38,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Workers' Party finished first with 224 of 352 seats on 99.0% of the vote. Turnout 98.7%.",
+   "seatLeader": "Hungarian Socialist Workers' Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "kind": "legislative",
+   "date": "15 June 1975",
+   "era": "communist",
+   "totalSeats": 352,
+   "majoritySeats": null,
+   "turnout": 96.99,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Workers' Party",
+     "leader": null,
+     "seats": 215,
+     "seatChange": -9,
+     "votes": null,
+     "share": 99.6,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 137,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Workers' Party finished first with 215 of 352 seats on 99.6% of the vote. Turnout 97.0%.",
+   "seatLeader": "Hungarian Socialist Workers' Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "legislative",
+   "date": "8 June 1980",
+   "era": "communist",
+   "totalSeats": 352,
+   "majoritySeats": null,
+   "turnout": 97.03,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Workers' Party",
+     "leader": null,
+     "seats": 252,
+     "seatChange": 37,
+     "votes": 7462593,
+     "share": 99.28,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 100,
+     "seatChange": -37,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Workers' Party finished first with 252 of 352 seats on 99.3% of the vote. Turnout 97.0%.",
+   "seatLeader": "Hungarian Socialist Workers' Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "8 June 1985",
+   "era": "communist",
+   "totalSeats": 387,
+   "majoritySeats": null,
+   "turnout": 94.02,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Workers' Party",
+     "leader": null,
+     "seats": 288,
+     "seatChange": 36,
+     "votes": 6636685,
+     "share": 98.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Workers' Party finished first with 288 of 387 seats on 98.8% of the vote. Turnout 94.0%.",
+   "seatLeader": "Hungarian Socialist Workers' Party",
+   "caveat": "One list, presented by the People's Front, was put to voters for approval; it was approved every time with between 96 and 99%.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "25 March 1990",
+   "era": "republic",
+   "totalSeats": 376,
+   "majoritySeats": null,
+   "turnout": 65.11,
+   "parties": [
+    {
+     "name": "Hungarian Democratic Forum",
+     "leader": null,
+     "seats": 164,
+     "seatChange": null,
+     "votes": 1214359,
+     "share": 24.73,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Free Democrats",
+     "leader": null,
+     "seats": 92,
+     "seatChange": null,
+     "votes": 1050799,
+     "share": 21.4,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders' Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": 576315,
+     "share": 11.73,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Socialist Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 535064,
+     "share": 10.89,
+     "swing": null
+    },
+    {
+     "name": "Fidesz",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 439649,
+     "share": 8.95,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 317278,
+     "share": 6.46,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Socialist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 180964,
+     "share": 3.68,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 174434,
+     "share": 3.55,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 154004,
+     "share": 3.14,
+     "swing": null
+    },
+    {
+     "name": "Entrepreneurs' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 92689,
+     "share": 1.89,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Electoral Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 91922,
+     "share": 1.87,
+     "swing": null
+    },
+    {
+     "name": "Hungarian People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37047,
+     "share": 0.75,
+     "swing": null
+    },
+    {
+     "name": "National Smallholders' and Civic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9944,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Independent Hungarian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2954,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Democratic Forum finished first with 164 of 376 seats on 24.7% of the vote. Turnout 65.1%.",
+   "seatLeader": "Hungarian Democratic Forum",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "legislative",
+   "date": "8 May 1994",
+   "era": "republic",
+   "totalSeats": 385,
+   "majoritySeats": 194,
+   "turnout": 68.92,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Party",
+     "leader": null,
+     "seats": 209,
+     "seatChange": 176,
+     "votes": 1781504,
+     "share": 32.99,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Free Democrats",
+     "leader": null,
+     "seats": 69,
+     "seatChange": -25,
+     "votes": 1065889,
+     "share": 19.74,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Democratic Forum",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -126,
+     "votes": 633770,
+     "share": 11.74,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders' Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -18,
+     "votes": 476272,
+     "share": 8.82,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 1,
+     "votes": 379523,
+     "share": 7.03,
+     "swing": null
+    },
+    {
+     "name": "Fidesz",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -2,
+     "votes": 379344,
+     "share": 7.02,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 172109,
+     "share": 3.19,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 137561,
+     "share": 2.55,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 113384,
+     "share": 2.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Party finished first with 209 of 385 seats on 33.0% of the vote. Turnout 68.9%.",
+   "seatLeader": "Hungarian Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "10 May 1998",
+   "era": "republic",
+   "totalSeats": 385,
+   "majoritySeats": 194,
+   "turnout": 56.21,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Party",
+     "leader": null,
+     "seats": 134,
+     "seatChange": -75,
+     "votes": 1497231,
+     "share": 32.92,
+     "swing": null
+    },
+    {
+     "name": "Fidesz",
+     "leader": null,
+     "seats": 148,
+     "seatChange": 128,
+     "votes": 1340826,
+     "share": 29.48,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders' Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 22,
+     "votes": 597820,
+     "share": 13.15,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Free Democrats",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -45,
+     "votes": 344352,
+     "share": 7.57,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Justice and Life Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 14,
+     "votes": 248901,
+     "share": 5.47,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 179672,
+     "share": 3.95,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Democratic Forum",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -21,
+     "votes": 127118,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -22,
+     "votes": 104892,
+     "share": 2.31,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Democratic People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61004,
+     "share": 1.34,
+     "swing": null
+    },
+    {
+     "name": "New Alliance for Hungary",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22220,
+     "share": 0.49,
+     "swing": null
+    },
+    {
+     "name": "Union for Hungary",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8786,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Forum of National Minorities",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5895,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Hungary",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3504,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Social Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3052,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Entrepreneurs' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2409,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fidesz finished first with 148 of 385 seats on 29.5% of the vote. Turnout 56.2%.",
+   "seatLeader": "Fidesz",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "7 April 2002",
+   "era": "republic",
+   "totalSeats": 385,
+   "majoritySeats": null,
+   "turnout": 70.53,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Party",
+     "leader": null,
+     "seats": 178,
+     "seatChange": 44,
+     "votes": 2361997,
+     "share": 42.05,
+     "swing": null
+    },
+    {
+     "name": "Fidesz–Hungarian Democratic Forum",
+     "leader": null,
+     "seats": 188,
+     "seatChange": 23,
+     "votes": 2306763,
+     "share": 41.07,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Free Democrats",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -5,
+     "votes": 313084,
+     "share": 5.57,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Justice and Life Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -14,
+     "votes": 245326,
+     "share": 4.37,
+     "swing": null
+    },
+    {
+     "name": "Centre Party–Christian Democratic People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 219029,
+     "share": 3.9,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -48,
+     "votes": 42338,
+     "share": 0.75,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fidesz–Hungarian Democratic Forum finished first with 188 of 385 seats on 41.1% of the vote. Turnout 70.5%.",
+   "seatLeader": "Fidesz–Hungarian Democratic Forum",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "9 April 2006",
+   "era": "republic",
+   "totalSeats": 379,
+   "majoritySeats": null,
+   "turnout": 67.83,
+   "parties": [
+    {
+     "name": "Hungarian Socialist Party",
+     "leader": null,
+     "seats": 186,
+     "seatChange": 8,
+     "votes": 2336705,
+     "share": 43.21,
+     "swing": null
+    },
+    {
+     "name": "Fidesz–KDNP",
+     "leader": null,
+     "seats": 164,
+     "seatChange": -15,
+     "votes": 2272979,
+     "share": 42.03,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Free Democrats",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -1,
+     "votes": 351612,
+     "share": 6.5,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Democratic Forum",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2,
+     "votes": 272831,
+     "share": 5.04,
+     "swing": null
+    },
+    {
+     "name": "MIÉP–Jobbik Third Way Alliance of Parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 119007,
+     "share": 2.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hungarian Socialist Party finished first with 186 of 379 seats on 43.2% of the vote. Turnout 67.8%.",
+   "seatLeader": "Hungarian Socialist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "2010",
+   "era": "republic",
+   "totalSeats": 386,
+   "majoritySeats": 194,
+   "turnout": 64.38,
+   "parties": [
+    {
+     "name": "Fidesz–KDNP",
+     "leader": null,
+     "seats": 262,
+     "seatChange": 99,
+     "votes": 2706292,
+     "share": 52.73,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Socialist Party",
+     "leader": null,
+     "seats": 59,
+     "seatChange": -131,
+     "votes": 990428,
+     "share": 19.3,
+     "swing": null
+    },
+    {
+     "name": "Jobbik",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 47,
+     "votes": 855436,
+     "share": 16.67,
+     "swing": null
+    },
+    {
+     "name": "Politics Can Be Different",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 16,
+     "votes": 383876,
+     "share": 7.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fidesz–KDNP finished first with 262 of 386 seats on 52.7% of the vote. Turnout 64.4%.",
+   "seatLeader": "Fidesz–KDNP",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "legislative",
+   "date": "6 April 2014",
+   "era": "orban",
+   "totalSeats": 199,
+   "majoritySeats": 100,
+   "turnout": 61.73,
+   "parties": [
+    {
+     "name": "Fidesz–KDNP",
+     "leader": null,
+     "seats": 133,
+     "seatChange": -130,
+     "votes": 2264780,
+     "share": 44.87,
+     "swing": null
+    },
+    {
+     "name": "Unity",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -21,
+     "votes": 1290806,
+     "share": 25.57,
+     "swing": null
+    },
+    {
+     "name": "Jobbik",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -24,
+     "votes": 1020476,
+     "share": 20.22,
+     "swing": null
+    },
+    {
+     "name": "Politics Can Be Different",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -11,
+     "votes": 269414,
+     "share": 5.34,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28323,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "Homeland Not For Sale Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23507,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Mária Seres",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22219,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Party of Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18557,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Hungarian Civic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15073,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Together 2014",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14085,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Party for a Sporty and Healthy Hungary",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12563,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Community for Social Justice People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10969,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Democratic Community of Welfare and Freedom",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9925,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Gypsy Party of Hungary",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8810,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Independent Smallholders Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8083,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6552,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "New Dimension Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2100,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "New Hungary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1578,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fidesz–KDNP finished first with 133 of 199 seats on 44.9% of the vote. Turnout 61.7%.",
+   "seatLeader": "Fidesz–KDNP",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "8 April 2018",
+   "era": "orban",
+   "totalSeats": 199,
+   "majoritySeats": 100,
+   "turnout": 69.73,
+   "parties": [
+    {
+     "name": "Fidesz–KDNP",
+     "leader": null,
+     "seats": 133,
+     "seatChange": 0,
+     "votes": 2824551,
+     "share": 49.27,
+     "swing": null
+    },
+    {
+     "name": "Jobbik",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 3,
+     "votes": 1092806,
+     "share": 19.06,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Socialist Party–Dialogue for Hungary",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -11,
+     "votes": 682701,
+     "share": 11.91,
+     "swing": null
+    },
+    {
+     "name": "Politics Can Be Different",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 3,
+     "votes": 404429,
+     "share": 7.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Coalition",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 5,
+     "votes": 308161,
+     "share": 5.38,
+     "swing": null
+    },
+    {
+     "name": "Momentum Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 175229,
+     "share": 3.06,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Two Tailed Dog Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 99414,
+     "share": 1.73,
+     "swing": null
+    },
+    {
+     "name": "Together",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": 37562,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15640,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Family Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10641,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Justice and Life Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8712,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Party for a Fit and Healthy Hungary",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7309,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Tenni Akarás Mozgalom",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5312,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Gypsy Party of Hungary",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4109,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Common Ground",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3894,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "For Hungary's Poor People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3048,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "We need Cooperation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2722,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Iránytű",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2001,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Order Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1708,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1407,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Medete Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1292,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party for the Betterment of European Roma Christians",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1003,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Net Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1100,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fidesz–KDNP finished first with 133 of 199 seats on 49.3% of the vote. Turnout 69.7%.",
+   "seatLeader": "Fidesz–KDNP",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "legislative",
+   "date": "3 April 2022",
+   "era": "orban",
+   "totalSeats": 199,
+   "majoritySeats": 100,
+   "turnout": 69.59,
+   "parties": [
+    {
+     "name": "Fidesz–KDNP",
+     "leader": null,
+     "seats": 135,
+     "seatChange": 2,
+     "votes": 3060706,
+     "share": 54.13,
+     "swing": null
+    },
+    {
+     "name": "United for Hungary",
+     "leader": null,
+     "seats": 57,
+     "seatChange": -8,
+     "votes": 1947331,
+     "share": 34.44,
+     "swing": null
+    },
+    {
+     "name": "Our Homeland Movement",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 332487,
+     "share": 5.88,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Two-Tailed Dog Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 185052,
+     "share": 3.27,
+     "swing": null
+    },
+    {
+     "name": "Solution Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 58929,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "Party of Normal Life",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39720,
+     "share": 0.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Fidesz–KDNP finished first with 135 of 199 seats on 54.1% of the vote. Turnout 69.6%.",
+   "seatLeader": "Fidesz–KDNP",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "legislative",
+   "date": "12 April 2026",
+   "era": "orban",
+   "totalSeats": 199,
+   "majoritySeats": 100,
+   "turnout": 78.99,
+   "parties": [
+    {
+     "name": "Tisza Party",
+     "leader": null,
+     "seats": 141,
+     "seatChange": null,
+     "votes": 3385890,
+     "share": 53.18,
+     "swing": null
+    },
+    {
+     "name": "Fidesz–KDNP",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -83,
+     "votes": 2458337,
+     "share": 38.61,
+     "swing": null
+    },
+    {
+     "name": "Our Homeland Movement",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0,
+     "votes": 358372,
+     "share": 5.63,
+     "swing": null
+    },
+    {
+     "name": "Democratic Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -15,
+     "votes": 70298,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Two Tailed Dog Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 51965,
+     "share": 0.82,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Tisza Party finished first with 141 of 199 seats on 53.2% of the vote. Turnout 79.0%.",
+   "seatLeader": "Tisza Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

@@ -6,11 +6,38 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
-import { DataBar } from "@/app/_shared/DataBar";
+import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 
-export type HubRow = { rank: number | null; name: string; slug: string | null; cells: (number | string)[]; champ?: boolean };
+// 🔴 THE TWO LEDGER COLUMNS ARE DECIDED PER SEASON, NEVER PER ROW.
+// `showSurplus` / `showValue` live on the LEAGUE, so a season before 2012-13
+// renders no Value column at all rather than a column of blanks, and a league
+// with no ledger renders no vs-Exp column. A row inside a league that carries
+// the column but has no figure of its own gets the empty-cell glyph.
+export type HubRowValue = { eur_m: number; n: number };
+export type HubRow = {
+  rank: number | null;
+  name: string;
+  slug: string | null;
+  cells: (number | string)[];
+  champ?: boolean;
+  /** Match points earned minus expected, that club-season. */
+  surplus?: number | null;
+  /** Squad value at the season's June reading, with the players valued. */
+  value?: HubRowValue | null;
+};
 export type HubGroup = { label: string | null; rows: HubRow[] };
-export type HubLeague = { id: number; name: string; level: number | null; groups: HubGroup[]; end_year?: number; hubSlug?: string | null };
+export type HubLeague = {
+  id: number;
+  name: string;
+  level: number | null;
+  groups: HubGroup[];
+  end_year?: number;
+  hubSlug?: string | null;
+  showSurplus?: boolean;
+  showValue?: boolean;
+  /** One line under the table when the season's table is partial or grouped. */
+  ledgerNote?: string | null;
+};
 export type HubCountry = { country: string; leagues: HubLeague[] };
 export type HubConf = { confederation: string; countries: HubCountry[] };
 
@@ -32,7 +59,17 @@ function ClubLabel({ r }: { r: HubRow }) {
   );
 }
 
-function StandingsTable({ group }: { group: HubGroup }) {
+const eurM = (v: number) => `€${v >= 1000 ? Math.round(v).toLocaleString("en-GB") : v.toFixed(0)}m`;
+
+function StandingsTable({
+  group,
+  showSurplus = false,
+  showValue = false,
+}: {
+  group: HubGroup;
+  showSurplus?: boolean;
+  showValue?: boolean;
+}) {
   // Points (cells[7]) is the standings' argument — the column the table is
   // sorted by. max is this group's own maximum, computed once per group
   // (each StandingsTable call renders exactly one table), never per row.
@@ -51,7 +88,19 @@ function StandingsTable({ group }: { group: HubGroup }) {
           key={`${r.name}-${i}`}
           rank={r.rank ?? i + 1}
           name={<ClubLabel r={r} />}
-          sub={<>{r.cells[0]} P · {r.cells[1]}-{r.cells[2]}-{r.cells[3]} · {typeof r.cells[6] === "number" && r.cells[6] > 0 ? `+${r.cells[6]}` : r.cells[6]} GD</>}
+          sub={
+            <>
+              {r.cells[0]} P · {r.cells[1]}-{r.cells[2]}-{r.cells[3]} · {typeof r.cells[6] === "number" && r.cells[6] > 0 ? `+${r.cells[6]}` : r.cells[6]} GD
+              {/* The phone carries the same numbers as the table, per
+                  DESIGN-STANDARDS §2: same information, different density. */}
+              {showSurplus && (
+                <> · <DivergingBar v={r.surplus} dp={2} suffix="" label="match points against expectation" /> vs exp</>
+              )}
+              {showValue && (
+                <> · {r.value ? `${eurM(r.value.eur_m)} (n ${r.value.n})` : "—"}</>
+              )}
+            </>
+          }
           right={r.cells[7]}
           rightSub="pts"
           highlight={r.champ}
@@ -66,6 +115,12 @@ function StandingsTable({ group }: { group: HubGroup }) {
             {COLS.map((c) => (
               <th key={c} className="py-1 px-1.5 font-medium text-right tabular-nums">{c}</th>
             ))}
+            {showSurplus && (
+              <th className="py-1 px-1.5 font-medium text-right whitespace-nowrap" title="Match points earned minus expected">vs Exp</th>
+            )}
+            {showValue && (
+              <th className="py-1 px-1.5 font-medium text-right whitespace-nowrap hidden sm:table-cell" title="Squad value at the end of the season, EUR millions, with players valued">Value</th>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -84,6 +139,29 @@ function StandingsTable({ group }: { group: HubGroup }) {
                   <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{c}</td>
                 )
               ))}
+              {showSurplus && (
+                <td className="py-1 px-1.5 text-right">
+                  <DivergingBar
+                    v={r.surplus}
+                    dp={2}
+                    suffix=""
+                    label="match points against expectation"
+                    style={r.surplus == null ? undefined : { color: r.surplus >= 0 ? "var(--div-pos)" : "var(--div-neg)" }}
+                  />
+                </td>
+              )}
+              {showValue && (
+                <td className="py-1 px-1.5 text-right whitespace-nowrap hidden sm:table-cell" style={mono}>
+                  {r.value ? (
+                    <span className="tabular-nums text-xs text-[var(--text-muted)]">
+                      {eurM(r.value.eur_m)}
+                      <span className="ml-1 text-[10px] text-[var(--text-dim)]">n {r.value.n}</span>
+                    </span>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )}
+                </td>
+              )}
             </tr>
           ))}
         </tbody>
@@ -118,11 +196,16 @@ function LeagueCard({ league, season }: { league: HubLeague; season?: string }) 
       </summary>
       <div className="border-t px-3 py-3 space-y-4" style={{ borderColor: "var(--border)" }}>
         {league.groups.map((g, gi) => (
-          <div key={gi}>
+          <div key={gi} className="min-w-0">
             {g.label && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{g.label}</div>}
-            <StandingsTable group={g} />
+            <StandingsTable group={g} showSurplus={league.showSurplus} showValue={league.showValue} />
           </div>
         ))}
+        {/* A season flagged partial or grouped is labelled wherever its
+            numbers appear, per the 2026-09-05 scoping note. */}
+        {league.ledgerNote && (
+          <p className="text-[11px] leading-snug text-[var(--text-dim)]">{league.ledgerNote}</p>
+        )}
       </div>
     </details>
   );

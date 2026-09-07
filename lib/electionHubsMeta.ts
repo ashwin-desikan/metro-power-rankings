@@ -37,8 +37,9 @@ export type ElectionHubMeta = {
   //                `nextDate` is absent and the hub sorts last.
   nextDate?: string;                                       // ISO yyyy-mm-dd
   nextConfidence?: "confirmed" | "expected" | "unscheduled";
-  tier?: "compact"; // compact hubs appear on the landing page as name links only
-  // and stay out of its map/timeline/charts; absence means a full featured card.
+  tier?: "compact"; // compact hubs appear on the landing page as name links only,
+  // with no featured card; their ballots still count on the map, the timeline
+  // and the freedom charts (since 2026-09-07). Absence means a featured card.
   // This is the scaling pattern: new hubs join as compact by default, and a hub
   // is promoted to featured by removing the flag (plus writing its card).
   // --- system of government --------------------------------------------------
@@ -97,6 +98,14 @@ export const HUB_CAPITALS: Record<string, { slug: string; name: string }> = {
   ie: { slug: "dublin", name: "Dublin" },
   ph: { slug: "manila", name: "Manila" },
   eg: { slug: "cairo", name: "Cairo" },
+  hu: { slug: "budapest", name: "Budapest" },
+  no: { slug: "oslo", name: "Oslo" },
+  se: { slug: "stockholm", name: "Stockholm" },
+  co: { slug: "bogota", name: "Bogota" },
+  cd: { slug: "kinshasa", name: "Kinshasa" },
+  cl: { slug: "santiago", name: "Santiago" },
+  ir: { slug: "tehran", name: "Tehran" },
+  pk: { slug: "islamabad", name: "Islamabad" },
 };
 
 
@@ -108,16 +117,19 @@ export const HUB_REGION: Record<string, string> = {
   es: "Europe", pl: "Europe", nl: "Europe", ru: "Europe", ua: "Europe",
   ch: "Europe", be: "Europe", dk: "Europe", va: "Europe",
   gr: "Europe", at: "Europe", pt: "Europe", ie: "Europe",
+  hu: "Europe", no: "Europe", se: "Europe",
   in: "Asia & Oceania", jp: "Asia & Oceania", au: "Asia & Oceania",
   nz: "Asia & Oceania", kr: "Asia & Oceania", id: "Asia & Oceania",
   tw: "Asia & Oceania", cn: "Asia & Oceania", sg: "Asia & Oceania",
-  my: "Asia & Oceania", ph: "Asia & Oceania",
+  my: "Asia & Oceania", ph: "Asia & Oceania", pk: "Asia & Oceania",
   il: "Middle East & Africa", za: "Middle East & Africa",
   ng: "Middle East & Africa", tr: "Middle East & Africa",
   iq: "Middle East & Africa", ps: "Middle East & Africa",
-  eg: "Middle East & Africa",
+  eg: "Middle East & Africa", cd: "Middle East & Africa",
+  ir: "Middle East & Africa",
   us: "The Americas", ca: "The Americas", mx: "The Americas",
-  br: "The Americas", ar: "The Americas",
+  br: "The Americas", ar: "The Americas", co: "The Americas",
+  cl: "The Americas",
 };
 
 export const ELECTION_HUBS: Record<string, ElectionHubMeta> = {
@@ -162,6 +174,25 @@ export const ELECTION_HUBS: Record<string, ElectionHubMeta> = {
   ie: { code: "ie", flag: "ie", name: "Ireland", href: "/elections/ie", last: "general election, 29 November 2024", next: "general election, due by 2030", nextDate: "2030-02-28", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
   ph: { code: "ph", flag: "ph", name: "Philippines", href: "/elections/ph", last: "presidential, 9 May 2022", next: "presidential, May 2028", nextDate: "2028-05-08", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },
   eg: { code: "eg", flag: "eg", name: "Egypt", href: "/elections/eg", last: "presidential, 10-12 December 2023", next: "presidential, expected 2030", nextDate: "2030-12-31", nextConfidence: "expected", note: "Managed elections", tier: "compact", governmentType: "presidential" },
+  hu: { code: "hu", flag: "hu", name: "Hungary", href: "/elections/hu", last: "parliamentary, 12 April 2026", next: "parliamentary, expected 2030", nextDate: "2030-04-30", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  // Norway's polling day is fixed by statute to a Monday in September; the 2029
+  // day itself is not named in the source, so it sorts as expected.
+  no: { code: "no", flag: "no", name: "Norway", href: "/elections/no", last: "parliamentary, 8 September 2025", next: "parliamentary, September 2029", nextDate: "2029-09-10", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  // Sweden votes on the second Sunday of September every fourth year, which the
+  // 2022 article states outright. For 2026 that is 13 September.
+  se: { code: "se", flag: "se", name: "Sweden", href: "/elections/se", last: "general election, 11 September 2022", next: "general election, 13 September 2026", nextDate: "2026-09-13", nextConfidence: "confirmed", tier: "compact", governmentType: "parliamentary" },
+  co: { code: "co", flag: "co", name: "Colombia", href: "/elections/co", last: "presidential runoff, 21 June 2026", next: "congressional and presidential, expected 2030", nextDate: "2030-03-10", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },
+  cd: { code: "cd", flag: "cd", name: "DR Congo", href: "/elections/cd", last: "general election, 20 December 2023", next: "general election, expected December 2028", nextDate: "2028-12-20", nextConfidence: "expected", tier: "compact", governmentType: "semi-presidential" },
+  cl: { code: "cl", flag: "cl", name: "Chile", href: "/elections/cl", last: "presidential runoff, 14 December 2025", next: "general election, expected 2029", nextDate: "2029-11-18", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },
+  // Iran is filed as `other` rather than presidential. The president is
+  // directly elected and there is no prime minister, which looks presidential,
+  // but the executive answers to an unelected Supreme Leader who commands the
+  // armed forces and appoints half the council that vets every candidate.
+  // Calling it presidential would name who runs the ministries, not who governs.
+  ir: { code: "ir", flag: "ir", name: "Iran", href: "/elections/ir", last: "presidential snap election, 5 July 2024", next: "Majlis election, expected 2028", nextDate: "2028-03-01", nextConfidence: "expected", note: "Vetted candidates", tier: "compact", governmentType: "other", governmentLabel: "Islamic republic, vetted candidates" },
+  // Five years from the Assembly's first sitting (29 February 2024), so the
+  // latest permissible polling day is early 2029; no date is set.
+  pk: { code: "pk", flag: "pk", name: "Pakistan", href: "/elections/pk", last: "general election, 8 February 2024", next: "general election, expected 2029", nextDate: "2029-04-30", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
 };
 
 // ---------------------------------------------------------------------------

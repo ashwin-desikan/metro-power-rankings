@@ -1,0 +1,5790 @@
+{
+ "meta": {
+  "title": "Swedish General Elections",
+  "sources": [
+   "Wikipedia: Swedish general election articles 1866-2022 (results tables and infoboxes)",
+   "Valmyndigheten and Statistics Sweden figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "eras": [
+  {
+   "key": "andrakammaren",
+   "label": "The Second Chamber",
+   "span": "1866–1908",
+   "blurb": "The four-estate Riksdag was replaced in 1866 by two chambers, the second of them elected on an income and property qualification that left about a fifth of adult men on the register and a far smaller share actually voting. Turnout below 25% was normal. The Lantmanna Party of the landowning farmers dominated the chamber and the great argument of the period was free trade against protection, which produced two elections in 1887 and settled nothing."
+  },
+  {
+   "key": "breakthrough",
+   "label": "The democratic breakthrough",
+   "span": "1911–1920",
+   "blurb": "Proportional representation arrived in 1909 and universal male suffrage with it, and the first PR election in 1911 immediately tripled the Social Democratic vote. The constitutional crisis of 1914 produced two elections in one year, the second of which the Social Democrats won. Parliamentary government was conceded in 1917 and the franchise was extended to women in 1921."
+  },
+  {
+   "key": "folkhemmet",
+   "label": "Folkhemmet",
+   "span": "1921–1968",
+   "blurb": "The Social Democrats came first at every one of these fourteen elections and governed for all but a handful of the years between them, the longest continuous run of any democratic party in Europe. Per Albin Hansson's phrase for it, the people's home, described a project that ran from pensions and housing to the supplementary pension fight of 1957 to 1960. Turnout climbed from 55% to 89% across the period."
+  },
+  {
+   "key": "unicameral",
+   "label": "One chamber",
+   "span": "1970–1988",
+   "blurb": "The upper house was abolished in 1970 and the whole Riksdag was elected at once, on a four per cent threshold that has shaped Swedish politics ever since. Turnout peaked at 91.8% in 1976, the year the Social Democrats finally lost, and the nuclear referendum and the wage-earner funds dominated the decade that followed."
+  },
+  {
+   "key": "modern",
+   "label": "The bloc years",
+   "span": "1991–2010",
+   "blurb": "A banking crisis, an EU referendum and the arrival and departure of New Democracy broke the old five-party arrangement. From 2006 the four centre-right parties campaigned as a single Alliance and won twice, which is the only time the Swedish right has managed consecutive terms."
+  },
+  {
+   "key": "current",
+   "label": "After the Sweden Democrats",
+   "span": "2014–2022",
+   "blurb": "The Sweden Democrats entered the Riksdag in 2010 and every election since has turned on who will and will not deal with them. In 2022 they finished second with 20.5% and supported a government from outside it under a written agreement, the arrangement that ended thirty years of the parties refusing to speak to them."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1866",
+   "label": "1866",
+   "year": 1866,
+   "kind": "legislative",
+   "date": "1866",
+   "era": "andrakammaren",
+   "totalSeats": 190,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Lantmanna Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ministerial Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 71,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Lantmanna Party finished first with 81 of 190 seats.",
+   "seatLeader": "Lantmanna Party",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1869",
+   "label": "1869",
+   "year": 1869,
+   "kind": "legislative",
+   "date": "1869",
+   "era": "andrakammaren",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A swedish election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1872",
+   "label": "1872",
+   "year": 1872,
+   "kind": "legislative",
+   "date": "1872",
+   "era": "andrakammaren",
+   "totalSeats": 194,
+   "majoritySeats": null,
+   "turnout": 19.14,
+   "parties": [
+    {
+     "name": "Lantmanna Party",
+     "leader": null,
+     "seats": 90,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 83,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Lantmanna Party finished first with 90 of 194 seats. Turnout 19.1%.",
+   "seatLeader": "Lantmanna Party",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1875",
+   "label": "1875",
+   "year": 1875,
+   "kind": "legislative",
+   "date": "1875",
+   "era": "andrakammaren",
+   "totalSeats": 198,
+   "majoritySeats": null,
+   "turnout": 19.47,
+   "parties": [
+    {
+     "name": "Lantmanna Party",
+     "leader": null,
+     "seats": 92,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 76,
+     "seatChange": -7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Lantmanna Party finished first with 92 of 198 seats. Turnout 19.5%.",
+   "seatLeader": "Lantmanna Party",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1878",
+   "label": "1878",
+   "year": 1878,
+   "kind": "legislative",
+   "date": "1878",
+   "era": "andrakammaren",
+   "totalSeats": 204,
+   "majoritySeats": null,
+   "turnout": 20.28,
+   "parties": [
+    {
+     "name": "Lantmanna Party",
+     "leader": null,
+     "seats": 92,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 78,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Lantmanna Party finished first with 92 of 204 seats. Turnout 20.3%.",
+   "seatLeader": "Lantmanna Party",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1881",
+   "label": "1881",
+   "year": 1881,
+   "kind": "legislative",
+   "date": "1881",
+   "era": "andrakammaren",
+   "totalSeats": 206,
+   "majoritySeats": null,
+   "turnout": 23.68,
+   "parties": [
+    {
+     "name": "Lantmanna Party",
+     "leader": null,
+     "seats": 101,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Lantmanna Party finished first with 101 of 206 seats. Turnout 23.7%.",
+   "seatLeader": "Lantmanna Party",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1884",
+   "label": "1884",
+   "year": 1884,
+   "kind": "legislative",
+   "date": "1884",
+   "era": "andrakammaren",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A swedish election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1887-august",
+   "label": "August 1887",
+   "year": 1887,
+   "kind": "legislative",
+   "date": "August and September 1887",
+   "era": "andrakammaren",
+   "totalSeats": 221,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free traders",
+     "leader": null,
+     "seats": 136,
+     "seatChange": 34,
+     "votes": 50959,
+     "share": 53.15,
+     "swing": null
+    },
+    {
+     "name": "Protectionists",
+     "leader": null,
+     "seats": 85,
+     "seatChange": -27,
+     "votes": 44915,
+     "share": 46.85,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Free traders finished first with 136 of 221 seats on 53.1% of the vote.",
+   "seatLeader": "Free traders",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1887-march",
+   "label": "March 1887",
+   "year": 1887,
+   "kind": "legislative",
+   "date": "March and April 1887",
+   "era": "andrakammaren",
+   "totalSeats": 214,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free traders",
+     "leader": null,
+     "seats": 102,
+     "seatChange": null,
+     "votes": 76025,
+     "share": 58.61,
+     "swing": null
+    },
+    {
+     "name": "Protectionists",
+     "leader": null,
+     "seats": 112,
+     "seatChange": null,
+     "votes": 53692,
+     "share": 41.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Protectionists finished first with 112 of 214 seats on 41.4% of the vote.",
+   "seatLeader": "Protectionists",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "kind": "legislative",
+   "date": "1890",
+   "era": "andrakammaren",
+   "totalSeats": 228,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free traders",
+     "leader": null,
+     "seats": 140,
+     "seatChange": 4,
+     "votes": 60658,
+     "share": 57.33,
+     "swing": null
+    },
+    {
+     "name": "Protectionists",
+     "leader": null,
+     "seats": 88,
+     "seatChange": 3,
+     "votes": 45149,
+     "share": 42.67,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Free traders finished first with 140 of 228 seats on 57.3% of the vote.",
+   "seatLeader": "Free traders",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1893",
+   "label": "1893",
+   "year": 1893,
+   "kind": "legislative",
+   "date": "September 1893",
+   "era": "andrakammaren",
+   "totalSeats": 228,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Protectionists",
+     "leader": null,
+     "seats": 86,
+     "seatChange": -2,
+     "votes": 48963,
+     "share": 38.67,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 76,
+     "seatChange": null,
+     "votes": 44618,
+     "share": 35.24,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate Free Traders",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": 33036,
+     "share": 26.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Protectionists finished first with 86 of 228 seats on 38.7% of the vote.",
+   "seatLeader": "Protectionists",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1896",
+   "label": "1896",
+   "year": 1896,
+   "kind": "legislative",
+   "date": "September 1896",
+   "era": "andrakammaren",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Lantmanna Party",
+     "leader": null,
+     "seats": 98,
+     "seatChange": 12,
+     "votes": 54282,
+     "share": 38.61,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 73,
+     "seatChange": -3,
+     "votes": 53388,
+     "share": 37.97,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate Free Traders",
+     "leader": null,
+     "seats": 58,
+     "seatChange": -8,
+     "votes": 32918,
+     "share": 23.41,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Lantmanna Party finished first with 98 of 230 seats on 38.6% of the vote.",
+   "seatLeader": "Lantmanna Party",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1899",
+   "label": "1899",
+   "year": 1899,
+   "kind": "legislative",
+   "date": "22 September 1899",
+   "era": "andrakammaren",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Lantmanna Party",
+     "leader": null,
+     "seats": 137,
+     "seatChange": 39,
+     "votes": 72800,
+     "share": 53.16,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 92,
+     "seatChange": 19,
+     "votes": 64145,
+     "share": 46.84,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Lantmanna Party finished first with 137 of 230 seats on 53.2% of the vote.",
+   "seatLeader": "Lantmanna Party",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1902",
+   "label": "1902",
+   "year": 1902,
+   "kind": "legislative",
+   "date": "September 1902",
+   "era": "andrakammaren",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 107,
+     "seatChange": 15,
+     "votes": 92503,
+     "share": 51.24,
+     "swing": null
+    },
+    {
+     "name": "Lantmanna Party",
+     "leader": null,
+     "seats": 119,
+     "seatChange": -18,
+     "votes": 81703,
+     "share": 45.26,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3,
+     "votes": 6321,
+     "share": 3.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Lantmanna Party finished first with 119 of 230 seats on 45.3% of the vote.",
+   "seatLeader": "Lantmanna Party",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "kind": "legislative",
+   "date": "September 1905",
+   "era": "andrakammaren",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 108,
+     "seatChange": -11,
+     "votes": 98359,
+     "share": 45.26,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 109,
+     "seatChange": 2,
+     "votes": 98287,
+     "share": 45.23,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 9,
+     "votes": 20677,
+     "share": 9.51,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Free-minded National Association finished first with 109 of 230 seats on 45.2% of the vote.",
+   "seatLeader": "Free-minded National Association",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1908",
+   "label": "1908",
+   "year": 1908,
+   "kind": "legislative",
+   "date": "September 1908",
+   "era": "andrakammaren",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 105,
+     "seatChange": -4,
+     "votes": 144426,
+     "share": 46.83,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 91,
+     "seatChange": -17,
+     "votes": 118808,
+     "share": 38.53,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 21,
+     "votes": 45155,
+     "share": 14.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Free-minded National Association finished first with 105 of 230 seats on 46.8% of the vote.",
+   "seatLeader": "Free-minded National Association",
+   "caveat": "The franchise was tied to income and property, so roughly one adult man in five could vote and far fewer did.",
+   "unfree": null
+  },
+  {
+   "id": "1911",
+   "label": "1911",
+   "year": 1911,
+   "kind": "legislative",
+   "date": "10 September 1911",
+   "era": "breakthrough",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 56.98,
+   "parties": [
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 102,
+     "seatChange": -3,
+     "votes": 242795,
+     "share": 40.2,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 64,
+     "seatChange": -27,
+     "votes": 188691,
+     "share": 31.24,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 64,
+     "seatChange": 30,
+     "votes": 172196,
+     "share": 28.51,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 292,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Free-minded National Association finished first with 102 of 230 seats on 40.2% of the vote. Turnout 57.0%.",
+   "seatLeader": "Free-minded National Association",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1914-march",
+   "label": "March 1914",
+   "year": 1914,
+   "kind": "legislative",
+   "date": "27 March 1914",
+   "era": "breakthrough",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 69.88,
+   "parties": [
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 22,
+     "votes": 286250,
+     "share": 37.65,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 71,
+     "seatChange": -31,
+     "votes": 245107,
+     "share": 32.24,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 9,
+     "votes": 228712,
+     "share": 30.09,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 125,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Karl Staaff",
+    "party": "Free-minded"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General Electoral League finished first with 86 of 230 seats on 37.6% of the vote. Turnout 69.9%.",
+   "seatLeader": "General Electoral League",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1914-september",
+   "label": "September 1914",
+   "year": 1914,
+   "kind": "legislative",
+   "date": "5 September 1914",
+   "era": "breakthrough",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 66.15,
+   "parties": [
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 0,
+     "votes": 267124,
+     "share": 36.52,
+     "swing": null
+    },
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 87,
+     "seatChange": 13,
+     "votes": 266133,
+     "share": 36.39,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 57,
+     "seatChange": -13,
+     "votes": 196493,
+     "share": 26.87,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1507,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 104,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hjalmar Hammarskjöld",
+    "party": "Electoral League"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 87 of 230 seats on 36.4% of the vote. Turnout 66.2%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1917",
+   "label": "1917",
+   "year": 1917,
+   "kind": "legislative",
+   "date": "1 September 1917",
+   "era": "breakthrough",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 65.75,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": -1,
+     "votes": 228777,
+     "share": 31.08,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 5,
+     "votes": 202936,
+     "share": 27.57,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 57,
+     "seatChange": -29,
+     "votes": 182070,
+     "share": 24.74,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Left Party of Sweden",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 59243,
+     "share": 8.05,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 9,
+     "votes": 39262,
+     "share": 5.33,
+     "swing": null
+    },
+    {
+     "name": "National Farmers' Association",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 22659,
+     "share": 3.08,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1037,
+     "share": 0.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Carl Swartz",
+    "party": "Electoral League"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 86 of 230 seats on 31.1% of the vote. Turnout 65.8%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "4 September 1920",
+   "era": "breakthrough",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 55.34,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": -11,
+     "votes": 195121,
+     "share": 29.65,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 14,
+     "votes": 183019,
+     "share": 27.81,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 47,
+     "seatChange": -15,
+     "votes": 143355,
+     "share": 21.78,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 9,
+     "votes": 52318,
+     "share": 7.95,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Left Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -4,
+     "votes": 42056,
+     "share": 6.39,
+     "swing": null
+    },
+    {
+     "name": "National Farmers' Association",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 5,
+     "votes": 40623,
+     "share": 6.17,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1691,
+     "share": 0.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hjalmar Branting",
+    "party": "Social Democrats"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 75 of 230 seats on 29.6% of the vote. Turnout 55.3%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "kind": "legislative",
+   "date": "10 September 1921",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 54.22,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 93,
+     "seatChange": 18,
+     "votes": 630855,
+     "share": 36.22,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 62,
+     "seatChange": -9,
+     "votes": 449302,
+     "share": 25.79,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -6,
+     "votes": 325608,
+     "share": 18.69,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -9,
+     "votes": 192269,
+     "share": 11.04,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0,
+     "votes": 80355,
+     "share": 4.61,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Left Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 56241,
+     "share": 3.23,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7322,
+     "share": 0.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Oscar von Sydow",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 93 of 230 seats on 36.2% of the vote. Turnout 54.2%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "legislative",
+   "date": "19–21 September 1924",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 53.04,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 104,
+     "seatChange": 11,
+     "votes": 725407,
+     "share": 41.09,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 3,
+     "votes": 461257,
+     "share": 26.12,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -12,
+     "votes": 228913,
+     "share": 12.97,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 2,
+     "votes": 190396,
+     "share": 10.78,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 69627,
+     "share": 3.94,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -3,
+     "votes": 63601,
+     "share": 3.6,
+     "swing": null
+    },
+    {
+     "name": "Communist Party (Höglund Tendency)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 26301,
+     "share": 1.49,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 84,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ernst Trygger",
+    "party": "Electoral League"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 104 of 230 seats on 41.1% of the vote. Turnout 53.0%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "legislative",
+   "date": "15 September 1928",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 67.41,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 90,
+     "seatChange": -14,
+     "votes": 873931,
+     "share": 37.05,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 8,
+     "votes": 692434,
+     "share": 29.36,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -1,
+     "votes": 303995,
+     "share": 12.89,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 4,
+     "votes": 263501,
+     "share": 11.17,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 4,
+     "votes": 151567,
+     "share": 6.43,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0,
+     "votes": 70820,
+     "share": 3.0,
+     "swing": null
+    },
+    {
+     "name": "Peace and Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1037,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Free List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 301,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Women's List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 186,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Västgöta Almogen Free Group",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 175,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 152,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Carl Gustaf Ekman",
+    "party": "Free-minded"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 90 of 230 seats on 37.0% of the vote. Turnout 67.4%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "kind": "legislative",
+   "date": "17 September 1932",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": null,
+   "turnout": 67.62,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 104,
+     "seatChange": 14,
+     "votes": 1040689,
+     "share": 41.71,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 58,
+     "seatChange": -15,
+     "votes": 585248,
+     "share": 23.46,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 9,
+     "votes": 351215,
+     "share": 14.08,
+     "swing": null
+    },
+    {
+     "name": "Free-minded National Association",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -8,
+     "votes": 244577,
+     "share": 9.8,
+     "swing": null
+    },
+    {
+     "name": "Communist Party (Kilbommare)",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 132564,
+     "share": 5.31,
+     "swing": null
+    },
+    {
+     "name": "Communist Party (Sillénare)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -6,
+     "votes": 74245,
+     "share": 2.98,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0,
+     "votes": 48722,
+     "share": 1.95,
+     "swing": null
+    },
+    {
+     "name": "Swedish National Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15170,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2501,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 175,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Felix Hamrin",
+    "party": "Free-minded"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 104 of 230 seats on 41.7% of the vote. Turnout 67.6%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "20 September 1936",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 74.55,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 112,
+     "seatChange": 8,
+     "votes": 1338120,
+     "share": 45.86,
+     "swing": null
+    },
+    {
+     "name": "General Electoral League",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -14,
+     "votes": 512781,
+     "share": 17.57,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 0,
+     "votes": 418840,
+     "share": 14.35,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 3,
+     "votes": 376161,
+     "share": 12.89,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0,
+     "votes": 127832,
+     "share": 4.38,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 3,
+     "votes": 96519,
+     "share": 3.31,
+     "swing": null
+    },
+    {
+     "name": "National League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26750,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "National Socialist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17483,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Swedish National Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3025,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 96,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 146,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 112 of 230 seats on 45.9% of the vote. Turnout 74.5%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1940",
+   "label": "1940",
+   "year": 1940,
+   "kind": "legislative",
+   "date": "15 September 1940",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 70.28,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 134,
+     "seatChange": 22,
+     "votes": 1546804,
+     "share": 53.81,
+     "swing": null
+    },
+    {
+     "name": "National Organisation of the Right",
+     "leader": null,
+     "seats": 42,
+     "seatChange": -2,
+     "votes": 518346,
+     "share": 18.03,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -8,
+     "votes": 344345,
+     "share": 11.98,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -4,
+     "votes": 344113,
+     "share": 11.97,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -2,
+     "votes": 101424,
+     "share": 3.53,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 18430,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 898,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 57,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Per Albin Hansson",
+    "party": "Social Democrats"
+   },
+   "pmAfter": {
+    "name": "Per Albin Hansson",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 134 of 230 seats on 53.8% of the vote. Turnout 70.3%. Per Albin Hansson stayed in office.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1944",
+   "label": "1944",
+   "year": 1944,
+   "kind": "legislative",
+   "date": "17 September 1944",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 71.9,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 115,
+     "seatChange": -19,
+     "votes": 1436571,
+     "share": 46.55,
+     "swing": null
+    },
+    {
+     "name": "National Organization of the Right",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -3,
+     "votes": 488921,
+     "share": 15.84,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 7,
+     "votes": 421094,
+     "share": 13.64,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 3,
+     "votes": 398293,
+     "share": 12.91,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 12,
+     "votes": 318466,
+     "share": 10.32,
+     "swing": null
+    },
+    {
+     "name": "Radical National Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6775,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5279,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Swedish Socialist Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4204,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "National League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3819,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1677,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1205,
+     "share": 0.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 115 of 230 seats on 46.5% of the vote. Turnout 71.9%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "19 September 1948",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 82.74,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 112,
+     "seatChange": -3,
+     "votes": 1789459,
+     "share": 46.13,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 31,
+     "votes": 882437,
+     "share": 22.75,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 30,
+     "seatChange": -5,
+     "votes": 480421,
+     "share": 12.39,
+     "swing": null
+    },
+    {
+     "name": "National Organisation of the Right",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -16,
+     "votes": 478786,
+     "share": 12.34,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -7,
+     "votes": 244826,
+     "share": 6.31,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2943,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 119,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 112 of 230 seats on 46.1% of the vote. Turnout 82.7%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "legislative",
+   "date": "21 September 1952",
+   "era": "folkhemmet",
+   "totalSeats": 230,
+   "majoritySeats": 116,
+   "turnout": 79.11,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 110,
+     "seatChange": -2,
+     "votes": 1742284,
+     "share": 46.05,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": 1,
+     "votes": 924819,
+     "share": 24.44,
+     "swing": null
+    },
+    {
+     "name": "Right Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 8,
+     "votes": 543825,
+     "share": 14.37,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -4,
+     "votes": 406183,
+     "share": 10.74,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -3,
+     "votes": 164194,
+     "share": 4.34,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2302,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 100,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "pmAfter": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 110 of 230 seats on 46.0% of the vote. Turnout 79.1%. Tage Erlander stayed in office.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "legislative",
+   "date": "16 September 1956",
+   "era": "folkhemmet",
+   "totalSeats": 231,
+   "majoritySeats": 116,
+   "turnout": 79.84,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 106,
+     "seatChange": -4,
+     "votes": 1729463,
+     "share": 44.58,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": 0,
+     "votes": 923564,
+     "share": 23.81,
+     "swing": null
+    },
+    {
+     "name": "Right Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 11,
+     "votes": 663693,
+     "share": 17.11,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -7,
+     "votes": 366612,
+     "share": 9.45,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1,
+     "votes": 194016,
+     "share": 5.0,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1252,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Samlingspartiet",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 635,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 95,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "pmAfter": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 106 of 231 seats on 44.6% of the vote. Turnout 79.8%. Tage Erlander stayed in office.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "1 June 1958",
+   "era": "folkhemmet",
+   "totalSeats": 231,
+   "majoritySeats": 116,
+   "turnout": 77.42,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 111,
+     "seatChange": 5,
+     "votes": 1776667,
+     "share": 46.22,
+     "swing": null
+    },
+    {
+     "name": "Rightist Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 3,
+     "votes": 750332,
+     "share": 19.52,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -20,
+     "votes": 700019,
+     "share": 18.21,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 13,
+     "votes": 486760,
+     "share": 12.66,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -1,
+     "votes": 129319,
+     "share": 3.36,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1008,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 147,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "pmAfter": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 111 of 231 seats on 46.2% of the vote. Turnout 77.4%. Tage Erlander stayed in office.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "kind": "legislative",
+   "date": "18 September 1960",
+   "era": "folkhemmet",
+   "totalSeats": 232,
+   "majoritySeats": 117,
+   "turnout": 85.91,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 114,
+     "seatChange": 3,
+     "votes": 2033016,
+     "share": 47.79,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 2,
+     "votes": 744142,
+     "share": 17.49,
+     "swing": null
+    },
+    {
+     "name": "Rightist Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -6,
+     "votes": 704365,
+     "share": 16.56,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 2,
+     "votes": 579007,
+     "share": 13.61,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": 190560,
+     "share": 4.48,
+     "swing": null
+    },
+    {
+     "name": "Progress Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1375,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Corporate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 614,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 176,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 859,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "pmAfter": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 114 of 232 seats on 47.8% of the vote. Turnout 85.9%. Tage Erlander stayed in office.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "20 September 1964",
+   "era": "folkhemmet",
+   "totalSeats": 233,
+   "majoritySeats": 117,
+   "turnout": 83.86,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 113,
+     "seatChange": -1,
+     "votes": 2006923,
+     "share": 47.27,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 3,
+     "votes": 720733,
+     "share": 16.98,
+     "swing": null
+    },
+    {
+     "name": "Right Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": -6,
+     "votes": 582609,
+     "share": 13.72,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 1,
+     "votes": 559632,
+     "share": 13.18,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 3,
+     "votes": 221746,
+     "share": 5.22,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 75389,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "Civic Unity",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 64807,
+     "share": 1.53,
+     "swing": null
+    },
+    {
+     "name": "Middle Parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13557,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 384,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "pmAfter": {
+    "name": "Tage Erlander",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 113 of 233 seats on 47.3% of the vote. Turnout 83.9%. Tage Erlander stayed in office.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1968",
+   "label": "1968",
+   "year": 1968,
+   "kind": "legislative",
+   "date": "15 September 1968",
+   "era": "folkhemmet",
+   "totalSeats": 233,
+   "majoritySeats": 117,
+   "turnout": 89.29,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 125,
+     "seatChange": 12,
+     "votes": 2420277,
+     "share": 50.12,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 3,
+     "votes": 757215,
+     "share": 15.68,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -9,
+     "votes": 688456,
+     "share": 14.26,
+     "swing": null
+    },
+    {
+     "name": "Right Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -1,
+     "votes": 621031,
+     "share": 12.86,
+     "swing": null
+    },
+    {
+     "name": "Left Party Communists",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -5,
+     "votes": 145172,
+     "share": 3.01,
+     "swing": null
+    },
+    {
+     "name": "Civic Unity",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 82082,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 72377,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Middle Parties",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 41307,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1462,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 125 of 233 seats on 50.1% of the vote. Turnout 89.3%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "legislative",
+   "date": "20 September 1970",
+   "era": "unicameral",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 88.28,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 163,
+     "seatChange": 38,
+     "votes": 2256369,
+     "share": 45.34,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 32,
+     "votes": 991208,
+     "share": 19.92,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": 24,
+     "votes": 806667,
+     "share": 16.21,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 9,
+     "votes": 573812,
+     "share": 11.53,
+     "swing": null
+    },
+    {
+     "name": "Left Party Communists",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 14,
+     "votes": 236659,
+     "share": 4.76,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 88770,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "Communist League Marxist–Leninist",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21238,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1473,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 163 of 350 seats on 45.3% of the vote. Turnout 88.3%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "16 September 1973",
+   "era": "unicameral",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 90.84,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 156,
+     "seatChange": -7,
+     "votes": 2247727,
+     "share": 43.56,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 90,
+     "seatChange": 19,
+     "votes": 1295246,
+     "share": 25.1,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 10,
+     "votes": 737584,
+     "share": 14.29,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -24,
+     "votes": 486028,
+     "share": 9.42,
+     "swing": null
+    },
+    {
+     "name": "Left Party Communists",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 2,
+     "votes": 274929,
+     "share": 5.33,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 90388,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18923,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Communist League Marxist-Leninist (Revolutionaries)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8014,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1307,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 156 of 350 seats on 43.6% of the vote. Turnout 90.8%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "19 September 1976",
+   "era": "unicameral",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 91.76,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 152,
+     "seatChange": -4,
+     "votes": 2324603,
+     "share": 42.75,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": -4,
+     "votes": 1309669,
+     "share": 24.08,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 4,
+     "votes": 847672,
+     "share": 15.59,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 5,
+     "votes": 601556,
+     "share": 11.06,
+     "swing": null
+    },
+    {
+     "name": "Left Party Communists",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -2,
+     "votes": 258432,
+     "share": 4.75,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 73844,
+     "share": 1.36,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17309,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4663,
+     "share": 0.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 152 of 349 seats on 42.8% of the vote. Turnout 91.8%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "16 September 1979",
+   "era": "unicameral",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 90.72,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 154,
+     "seatChange": 2,
+     "votes": 2356234,
+     "share": 43.24,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 18,
+     "votes": 1108406,
+     "share": 20.34,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 64,
+     "seatChange": -22,
+     "votes": 984589,
+     "share": 18.07,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -1,
+     "votes": 577063,
+     "share": 10.59,
+     "swing": null
+    },
+    {
+     "name": "Left Party Communists",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 3,
+     "votes": 305420,
+     "share": 5.61,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 75993,
+     "share": 1.39,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10862,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Workers Party Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10725,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19346,
+     "share": 0.36,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 154 of 349 seats on 43.2% of the vote. Turnout 90.7%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1982",
+   "label": "1982",
+   "year": 1982,
+   "kind": "legislative",
+   "date": "19 September 1982",
+   "era": "unicameral",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 91.45,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 166,
+     "seatChange": 12,
+     "votes": 2533250,
+     "share": 45.61,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 13,
+     "votes": 1313337,
+     "share": 23.64,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": -8,
+     "votes": 859618,
+     "share": 15.48,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -17,
+     "votes": 327770,
+     "share": 5.9,
+     "swing": null
+    },
+    {
+     "name": "Left Party Communists",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 0,
+     "votes": 308899,
+     "share": 5.56,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 103820,
+     "share": 1.87,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 91787,
+     "share": 1.65,
+     "swing": null
+    },
+    {
+     "name": "Workers Party Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5745,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10376,
+     "share": 0.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 166 of 349 seats on 45.6% of the vote. Turnout 91.5%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "15 September 1985",
+   "era": "unicameral",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 89.85,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 159,
+     "seatChange": -7,
+     "votes": 2487551,
+     "share": 44.68,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 76,
+     "seatChange": -10,
+     "votes": 1187335,
+     "share": 21.33,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 30,
+     "votes": 792268,
+     "share": 14.23,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": -13,
+     "votes": 490999,
+     "share": 8.82,
+     "swing": null
+    },
+    {
+     "name": "Left Party Communists",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -1,
+     "votes": 298419,
+     "share": 5.36,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 131548,
+     "share": 2.36,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 83645,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Centre (CDU–C)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 73711,
+     "share": 1.32,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21546,
+     "share": 0.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 159 of 349 seats on 44.7% of the vote. Turnout 89.8%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "18 September 1988",
+   "era": "unicameral",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 85.96,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 156,
+     "seatChange": -3,
+     "votes": 2321826,
+     "share": 43.21,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": -10,
+     "votes": 983226,
+     "share": 18.3,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -7,
+     "votes": 655720,
+     "share": 12.2,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": -1,
+     "votes": 607240,
+     "share": 11.3,
+     "swing": null
+    },
+    {
+     "name": "Left Party Communists",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 2,
+     "votes": 314031,
+     "share": 5.84,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 20,
+     "votes": 296935,
+     "share": 5.53,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 158182,
+     "share": 2.94,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 36559,
+     "share": 0.68,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 156 of 349 seats on 43.2% of the vote. Turnout 86.0%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "legislative",
+   "date": "15 September 1991",
+   "era": "modern",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 86.74,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 138,
+     "seatChange": -18,
+     "votes": 2062761,
+     "share": 37.71,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 14,
+     "votes": 1199394,
+     "share": 21.92,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": -11,
+     "votes": 499356,
+     "share": 9.13,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -11,
+     "votes": 465175,
+     "share": 8.5,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Society Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 26,
+     "votes": 390351,
+     "share": 7.14,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 368281,
+     "share": 6.73,
+     "swing": null
+    },
+    {
+     "name": "Left Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -5,
+     "votes": 246905,
+     "share": 4.51,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -20,
+     "votes": 185051,
+     "share": 3.38,
+     "swing": null
+    },
+    {
+     "name": "Sjöbopartiet",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27635,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4877,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Labour List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3645,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Workers Party – Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2969,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14361,
+     "share": 0.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ingvar Carlsson",
+    "party": "Social Democrats"
+   },
+   "pmAfter": {
+    "name": "Carl Bildt",
+    "party": "Moderate"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 138 of 349 seats on 37.7% of the vote. Turnout 86.7%. Carl Bildt replaced Ingvar Carlsson.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "legislative",
+   "date": "18 September 1994",
+   "era": "modern",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 86.83,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 161,
+     "seatChange": 23,
+     "votes": 2513905,
+     "share": 45.25,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 0,
+     "votes": 1243253,
+     "share": 22.38,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -4,
+     "votes": 425153,
+     "share": 7.65,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -7,
+     "votes": 399556,
+     "share": 7.19,
+     "swing": null
+    },
+    {
+     "name": "Left Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 6,
+     "votes": 342988,
+     "share": 6.17,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 18,
+     "votes": 279042,
+     "share": 5.02,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Society Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -11,
+     "votes": 225974,
+     "share": 4.07,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -25,
+     "votes": 68663,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 57006,
+     "share": 1.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 161 of 349 seats on 45.2% of the vote. Turnout 86.8%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "20 September 1998",
+   "era": "modern",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 81.38,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 131,
+     "seatChange": -30,
+     "votes": 1914426,
+     "share": 36.4,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 82,
+     "seatChange": 2,
+     "votes": 1204926,
+     "share": 22.91,
+     "swing": null
+    },
+    {
+     "name": "Left Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 21,
+     "votes": 631011,
+     "share": 12.0,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 27,
+     "votes": 618033,
+     "share": 11.75,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -9,
+     "votes": 269762,
+     "share": 5.13,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -9,
+     "votes": 248076,
+     "share": 4.72,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -2,
+     "votes": 236699,
+     "share": 4.5,
+     "swing": null
+    },
+    {
+     "name": "Swedish Senior Citizen Interest Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 52869,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "The New Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25276,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19624,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "New Future",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9171,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8297,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Senior Citizen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6865,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Socialist Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3044,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1868,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1725,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1466,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6971,
+     "share": 0.13,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 131 of 349 seats on 36.4% of the vote. Turnout 81.4%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "15 September 2002",
+   "era": "modern",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 80.11,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 144,
+     "seatChange": 13,
+     "votes": 2113560,
+     "share": 39.85,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": -27,
+     "votes": 809041,
+     "share": 15.26,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 31,
+     "votes": 710312,
+     "share": 13.39,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 33,
+     "seatChange": -9,
+     "votes": 485235,
+     "share": 9.15,
+     "swing": null
+    },
+    {
+     "name": "Left Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": -13,
+     "votes": 444854,
+     "share": 8.39,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 4,
+     "votes": 328428,
+     "share": 6.19,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 1,
+     "votes": 246392,
+     "share": 4.65,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 76300,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "Swedish Senior Citizen Interest Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 37573,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "Norrbotten Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14854,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "New Future",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9337,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Scania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4564,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "National Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4122,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3213,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Socialist Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1519,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1182,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 603,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Free List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 274,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Voice of the Free People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 207,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "European Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 163,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 106,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Welfare Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 94,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 87,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Alliance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 58,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Skåne Federalists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 52,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Citizens Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Householders",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tax Reformists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Popular Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "New Swedes D.P.N.S.",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Donald Duck Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of Love",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Populist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sports Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Preschool Party - Children's Voice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "God-Trolls-Witches-Beings and Cosmic Powers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "ATP Pensions And Widows' Pensions Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Singles Party-Sorry, but we exist too",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Cloning, no Thanks I am a Unique Person Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Animal Welfare Party-A Loving Life for our Animals",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Beach Protection Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Viking Party-Sweden Out of the EU",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Dog Party-The Dog, Man's Best Friend",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Shaman's Indigenous Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Crisis",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Dust Online",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Santa Party: Children's and Animals' Best Friend",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Dentist High Cost Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Land we Inherited Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "The Boiled Frog Dance Party. The Swedish Man Today",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Football Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10861,
+     "share": 0.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 144 of 349 seats on 39.9% of the vote. Turnout 80.1%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "17 September 2006",
+   "era": "modern",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 81.99,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 130,
+     "seatChange": -14,
+     "votes": 1942625,
+     "share": 34.99,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 97,
+     "seatChange": 42,
+     "votes": 1456014,
+     "share": 26.23,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 7,
+     "votes": 437389,
+     "share": 7.88,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -20,
+     "votes": 418395,
+     "share": 7.54,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -9,
+     "votes": 365998,
+     "share": 6.59,
+     "swing": null
+    },
+    {
+     "name": "Left Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -8,
+     "votes": 324722,
+     "share": 5.85,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 2,
+     "votes": 291121,
+     "share": 5.24,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 162463,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "Feminist Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37954,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34918,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Swedish Senior Citizen Interest Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28806,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "June List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26072,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Health Care Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11519,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "National Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3064,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2648,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "National Socialist Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1417,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "New Future",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1171,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Socialist Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1097,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "People's Will",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 881,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 438,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Unique Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 222,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Classical Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 202,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Alliance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 133,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Women's Power",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 116,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "European Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 83,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Direct Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 81,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sweden out of the EU / Freedom and Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 75,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 68,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Partiet.se",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "September List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 30,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Nordic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Scania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tax Reformists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Rikshushållarna",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Miata Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "New Swedes D.P.N.S.",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Fårgutapartiet",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Palmes Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Viking Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Write-in votes",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1365,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Göran Persson",
+    "party": "Social Democrats"
+   },
+   "pmAfter": {
+    "name": "Fredrik Reinfeldt",
+    "party": "Moderate"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 130 of 349 seats on 35.0% of the vote. Turnout 82.0%. Fredrik Reinfeldt replaced Göran Persson.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "19 September 2010",
+   "era": "modern",
+   "totalSeats": 349,
+   "majoritySeats": null,
+   "turnout": 84.6,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 112,
+     "seatChange": -18,
+     "votes": 1827497,
+     "share": 30.66,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 107,
+     "seatChange": 10,
+     "votes": 1791766,
+     "share": 30.06,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 6,
+     "votes": 437435,
+     "share": 7.34,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -4,
+     "votes": 420524,
+     "share": 7.06,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -6,
+     "votes": 390804,
+     "share": 6.56,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 20,
+     "votes": 339610,
+     "share": 5.7,
+     "swing": null
+    },
+    {
+     "name": "Left Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -3,
+     "votes": 334053,
+     "share": 5.6,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -5,
+     "votes": 333696,
+     "share": 5.6,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 38491,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Feminist Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 24139,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Swedish Senior Citizen Interest Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11078,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Rural Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1565,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Socialist Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1507,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Norrländska Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1456,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "National Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1141,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Classical Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 716,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 688,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Party of the Swedes",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 681,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 632,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 375,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Spirits Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 237,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "European Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 187,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Health Care Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 185,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Alliance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 87,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Direct Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 76,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 63,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Population Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Scania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Nordic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Alexander's Lista",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Li Yu Chen Andersson Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Rikshushållarna",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Labour Market Party UPI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Parties not on the ballot",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1580,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Fredrik Reinfeldt",
+    "party": "Moderate"
+   },
+   "pmAfter": {
+    "name": "Fredrik Reinfeldt",
+    "party": "Moderate"
+   },
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 112 of 349 seats on 30.7% of the vote. Turnout 84.6%. Fredrik Reinfeldt stayed in office.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "legislative",
+   "date": "14 September 2014",
+   "era": "current",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 85.8,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party",
+     "leader": null,
+     "seats": 113,
+     "seatChange": 0,
+     "votes": 1932711,
+     "share": 31.01,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": -7,
+     "votes": 1453517,
+     "share": 23.33,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 7,
+     "votes": 801178,
+     "share": 12.86,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 0,
+     "votes": 429275,
+     "share": 6.89,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 0,
+     "votes": 380937,
+     "share": 6.11,
+     "swing": null
+    },
+    {
+     "name": "Left Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 0,
+     "votes": 356331,
+     "share": 5.72,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -2,
+     "votes": 337773,
+     "share": 5.42,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -1,
+     "votes": 284806,
+     "share": 4.57,
+     "swing": null
+    },
+    {
+     "name": "Feminist Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 3,
+     "votes": 194719,
+     "share": 3.12,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26515,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6277,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Party of the Swedes",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4189,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Animals' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4093,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Christian Values Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3553,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Independent Rural Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3450,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Swedish Senior Citizen Interest Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3369,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Direct Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1417,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Classical Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1210,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Vägvalet",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1037,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Socialist Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 791,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 558,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 196,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "European Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 140,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Health Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 131,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Peace Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 56,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Yellow Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "New Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Libertarian Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Scania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "The New Swedes",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Reformist Neutral Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Animal Owner Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Human Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Write-in votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": 0,
+     "votes": 3174,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Fredrik Reinfeldt",
+    "party": "Moderate"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party finished first with 113 of 349 seats on 31.0% of the vote. Turnout 85.8%.",
+   "seatLeader": "Swedish Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "9 September 2018",
+   "era": "current",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 87.1,
+   "parties": [
+    {
+     "name": "Swedish Social Democratic Party (S)",
+     "leader": null,
+     "seats": 100,
+     "seatChange": -13,
+     "votes": 1830386,
+     "share": 28.26,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party (M)",
+     "leader": null,
+     "seats": 70,
+     "seatChange": -14,
+     "votes": 1284698,
+     "share": 19.84,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats (SD)",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 13,
+     "votes": 1135627,
+     "share": 17.53,
+     "swing": null
+    },
+    {
+     "name": "Centre Party (C)",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 9,
+     "votes": 557500,
+     "share": 8.61,
+     "swing": null
+    },
+    {
+     "name": "Left Party (V)",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 7,
+     "votes": 518454,
+     "share": 8.0,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats (KD)",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 6,
+     "votes": 409478,
+     "share": 6.32,
+     "swing": null
+    },
+    {
+     "name": "Liberals (L)",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 1,
+     "votes": 355546,
+     "share": 5.49,
+     "swing": null
+    },
+    {
+     "name": "Green Party (MP)",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -9,
+     "votes": 285899,
+     "share": 4.41,
+     "swing": null
+    },
+    {
+     "name": "Feminist Initiative (FI)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 29665,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Alternative for Sweden (AfS)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20290,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Coalition (MED)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13056,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party (PP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7326,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Direct Democrats (DD)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5153,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Independent Rural Party (LPo)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4962,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Enhet (ENH)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4647,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Animals' Party (DjuP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3648,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Christian Values Party  (KRVP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3202,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Nordic Resistance Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2106,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Classical Liberal Party (KLP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1504,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Sweden (SKP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 702,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Basic Income Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 632,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 615,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Security Party  (TRP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 511,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Scania Party (SkåP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 296,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Norrlandspartiet",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 60,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Libertarian Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 53,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "European Workers Party (EAP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 52,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "NY Reform",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Common Sense in Sweden",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Our Country – Sweden",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Reformist Neutral Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "People's Home Sweden",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Yellow Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Parties not on the ballot",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 588,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Stefan Löfven",
+    "party": "Social Democrats"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Swedish Social Democratic Party (S) finished first with 100 of 349 seats on 28.3% of the vote. Turnout 87.1%.",
+   "seatLeader": "Swedish Social Democratic Party (S)",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "legislative",
+   "date": "11 September 2022",
+   "era": "current",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 84.2,
+   "parties": [
+    {
+     "name": "Social Democrats (S)",
+     "leader": null,
+     "seats": 107,
+     "seatChange": 7,
+     "votes": 1964474,
+     "share": 30.33,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats (SD)",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 11,
+     "votes": 1330325,
+     "share": 20.54,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party (M)",
+     "leader": null,
+     "seats": 68,
+     "seatChange": -2,
+     "votes": 1237428,
+     "share": 19.1,
+     "swing": null
+    },
+    {
+     "name": "Left Party (V)",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -4,
+     "votes": 437050,
+     "share": 6.75,
+     "swing": null
+    },
+    {
+     "name": "Centre Party (C)",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -7,
+     "votes": 434945,
+     "share": 6.71,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats (KD)",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -3,
+     "votes": 345712,
+     "share": 5.34,
+     "swing": null
+    },
+    {
+     "name": "Green Party (MP)",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 2,
+     "votes": 329242,
+     "share": 5.08,
+     "swing": null
+    },
+    {
+     "name": "Liberals (L)",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -4,
+     "votes": 298542,
+     "share": 4.61,
+     "swing": null
+    },
+    {
+     "name": "Nuance Party (PNy)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28352,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Alternative for Sweden (AfS)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16646,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Coalition (MED)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12882,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party (PP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9135,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Human Rights and Democracy  (MoD)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6077,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Christian Values Party  (KRVP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5983,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Knapptryckarna  (Kn)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5493,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Feminist Initiative (FI)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3157,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Independent Rural Party (LPo)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2215,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Direct Democrats (DD)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1755,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Climate Alliance (KA)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1702,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Unity (ENH)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1356,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Sweden (SKP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1181,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "68 other parties (fewer than 1,000 votes)",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 4318,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Magdalena Andersson",
+    "party": "Social Democrats"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democrats (S) finished first with 107 of 349 seats on 30.3% of the vote. Turnout 84.2%.",
+   "seatLeader": "Social Democrats (S)",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

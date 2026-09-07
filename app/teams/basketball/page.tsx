@@ -26,6 +26,41 @@ const card = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const GOLD = "#d4af37";
 
+// Compact hub tile for the four basketball destinations. Replaces the
+// stacked full-width cards (each ~90px tall with a paragraph) that made
+// the four hubs run the whole page length; this fits four to a row on
+// desktop, two on a phone, at min-h-11 tap-target height.
+function HubTile({
+  href,
+  title,
+  sub,
+  meta,
+}: {
+  href: string;
+  title: string;
+  sub: string;
+  meta?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="block rounded-xl border p-3 min-h-11 transition hover:border-[var(--accent)]"
+      style={card}
+    >
+      <div className="flex items-center justify-between gap-2">
+        <div className="text-sm font-semibold">{title}</div>
+        <span aria-hidden className="text-[var(--text-dim)]">→</span>
+      </div>
+      <div className="mt-1 text-[11px] text-[var(--text-muted)]">{sub}</div>
+      {meta ? (
+        <div className="mt-1.5 text-[10px] text-[var(--text-dim)]" style={mono}>
+          {meta}
+        </div>
+      ) : null}
+    </Link>
+  );
+}
+
 export default async function BasketballHubPage() {
   const hub = await getBasketballHub();
   const nations = await getAllBasketballNations();
@@ -94,67 +129,38 @@ export default async function BasketballHubPage() {
         ]}
       />
 
-      {/* ---------------- NBA card ---------------- */}
-      <Link
-        href="/teams/nba"
-        className="block rounded-xl border p-4 mb-4 transition hover:border-[var(--accent)]"
-        style={card}
-      >
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <div className="font-semibold text-base">National Basketball Association →</div>
-            <div className="text-xs text-[var(--text-muted)] mt-1">
-              The world&apos;s top club league: every NBA (and BAA/ABA) champion and the
-              all-time record of all 30 franchises, by metro.
-            </div>
-          </div>
-          <div className="text-xs text-[var(--text-dim)]" style={mono}>
-            United States &amp; Canada
-          </div>
-        </div>
-      </Link>
-
-      {/* ---------------- EuroLeague card ---------------- */}
-      {el ? (
-        <Link
-          href="/teams/basketball/euroleague"
-          className="block rounded-xl border p-4 mb-8 transition hover:border-[var(--accent)]"
-          style={card}
-        >
-          <div className="flex items-center justify-between gap-3 flex-wrap">
-            <div>
-              <div className="font-semibold text-base">EuroLeague →</div>
-              <div className="text-xs text-[var(--text-muted)] mt-1">
-                Europe&apos;s club crown: {el.seasons} seasons of champions, Final Four
-                history, and the all-time table.
-              </div>
-            </div>
-            {el.roll[0] ? (
-              <div className="text-xs text-[var(--text-dim)]" style={mono}>
-                Latest: {el.roll[0].champion} {el.roll[0].season}
-              </div>
-            ) : null}
-          </div>
-        </Link>
-      ) : null}
-
-      {/* ---------------- Domestic Basketball card ---------------- */}
-      <Link
-        href="/teams/basketball/domestic"
-        className="block rounded-xl border p-4 mb-8 transition hover:border-[var(--accent)]"
-        style={card}
-      >
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <div className="font-semibold text-base">Domestic Basketball →</div>
-            <div className="text-xs text-[var(--text-muted)] mt-1">
-              Club basketball beyond the NBA and EuroLeague: champions and runners-up
-              from Spain, Italy, Greece, Turkey, France, Russia, Lithuania, Israel,
-              the Adriatic League and China.
-            </div>
-          </div>
-        </div>
-      </Link>
+      {/* ---------------- Hub tiles ---------------- */}
+      <p className="text-[10px] uppercase tracking-widest mb-2" style={{ ...mono, color: "var(--text-dim)" }}>
+        Hubs
+      </p>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+        <HubTile
+          href="/teams/nba"
+          title="National Basketball Association"
+          sub="Every NBA (and BAA/ABA) champion and all-time franchise records."
+          meta="United States & Canada"
+        />
+        {el ? (
+          <HubTile
+            href="/teams/basketball/euroleague"
+            title="EuroLeague"
+            sub={`Europe's club crown across ${el.seasons} seasons, Final Four history included.`}
+            meta={el.roll[0] ? `Latest: ${el.roll[0].champion} ${el.roll[0].season}` : undefined}
+          />
+        ) : null}
+        <HubTile
+          href="/teams/basketball/domestic"
+          title="Domestic Basketball"
+          sub="Champions and runners-up beyond the NBA and EuroLeague."
+          meta="Ten leagues"
+        />
+        <HubTile
+          href="/teams/basketball/women"
+          title="Women's International Basketball"
+          sub="Olympic podiums from 1976, every World Cup final four since 1953, and the FIBA women's ranking."
+          meta="Women's international"
+        />
+      </div>
 
       {/* ---------------- FIBA World Ranking ---------------- */}
       {fiba ? (

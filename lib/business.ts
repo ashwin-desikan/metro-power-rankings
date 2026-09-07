@@ -185,8 +185,23 @@ export async function getBusiness(): Promise<BusinessFile | null> {
   return load<BusinessFile>("business.json");
 }
 
+// Wikipedia's constituents list carries editor-to-editor HTML comments on two
+// tickers (BRK.B and BF.B: "DO NOT CHANGE THIS TICKER ... YOU'VE BEEN
+// WARNED!"). build_sp500.py strips them at source since 2026-09-07, but the
+// GitHub-raw copy this loader prefers can lag a fix by a day, so the page
+// sanitises what it shows as well. A comment is never content.
+const HTML_COMMENT = /<!--[\s\S]*?-->/g;
+function scrubSp500(f: Sp500File | null): Sp500File | null {
+  if (!f) return f;
+  for (const c of f.constituents ?? []) {
+    if (typeof c.symbol === "string" && c.symbol.includes("<!--")) c.symbol = c.symbol.replace(HTML_COMMENT, "").trim();
+    if (typeof c.name === "string" && c.name.includes("<!--")) c.name = c.name.replace(HTML_COMMENT, "").trim();
+  }
+  return f;
+}
+
 export async function getSp500(): Promise<Sp500File | null> {
-  return load<Sp500File>("sp500.json");
+  return scrubSp500(await load<Sp500File>("sp500.json"));
 }
 
 // ---------------------------------------------------------------------------

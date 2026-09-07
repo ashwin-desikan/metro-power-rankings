@@ -646,7 +646,7 @@ def read_schedule_all(book: Book) -> dict[int, list[dict]]:
     return out
 
 
-def live_chain(book: Book, season: int, seeds: dict[str, float],
+def live_chain(book: Book | None, season: int, seeds: dict[str, float],
                games_in: list[dict] | None = None) -> dict:
     """Carry a season's Elo forward from its week-0 seed, in Python.
 
@@ -663,6 +663,12 @@ def live_chain(book: Book, season: int, seeds: dict[str, float],
     the game log. Nothing here is fitted, chosen or tuned. Run it over a
     finished season and it reproduces that season's published ratings; that is
     what --self-test checks.
+
+    `book` is used for ONE thing and only when `games_in` is None: reading the
+    schedule out of the workbook. Pass `games_in` and `book` may be None, which
+    is what scripts/nfl/nfl_live_update.py does when it carries the live season
+    from ESPN with no workbook on the machine at all. The arithmetic below is
+    identical either way; only where the games came from differs.
 
     Returns {"games": [...], "weeks": {team: {week: (elo, carried)}}, "last": w}.
     """
@@ -717,8 +723,13 @@ def live_chain(book: Book, season: int, seeds: dict[str, float],
     return {"games": out_games, "weeks": weeks, "last": last_played}
 
 
-def build_upcoming(book: Book, season: int, season_shard: dict) -> dict:
+def build_upcoming(book: Book | None, season: int, season_shard: dict,
+                   games_in: list[dict] | None = None) -> dict:
     """The schedule with a pre-game probability wherever both ratings are known.
+
+    Like live_chain, `book` is only ever the source of the schedule: pass
+    `games_in` (as scripts/nfl/nfl_live_update.py does, from ESPN) and it may be
+    None. The pricing below is untouched by which one supplied the games.
 
     🔴 A probability is published ONLY where both pre-game ratings are facts.
     After week 1 of an unplayed season that means nothing, because week 2's
@@ -735,7 +746,7 @@ def build_upcoming(book: Book, season: int, season_shard: dict) -> dict:
     last_known = max(known_weeks) if known_weeks else None
 
     games = []
-    for g in read_schedule(book, season):
+    for g in (games_in if games_in is not None else read_schedule(book, season)):
         # The rating that applies before week N is the one carried out of N-1.
         prior = g["week"] - 1
         he = elo_at.get((g["home"], prior))

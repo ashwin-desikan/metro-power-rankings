@@ -10812,3 +10812,455 @@ alongside READY.
   flag-link rows and chips; the controls are 44px, the visible labels are not.
 - WP5 to WP7 of the football surfacing scope.
 - The Tuesday NFL automation from the 09-06 entry, still not built.
+
+### E. Wave 2a: seven more hubs, 390 contests, Sweden on the countdown at six days
+
+Ashwin sent seven concatenated dumps mid-session (Hungary, Norway, Sweden,
+Colombia, DR Congo, then Chile and Iran). All seven are live in the tree as
+`tier: "compact"`, wired everywhere Wave 1 was (ELECTION_HUBS with
+`governmentType`, HUB_CAPITALS, HUB_REGION, the landing CAPITALS table and
+`more` lists, HUB_COUNTRY_SLUGS, electionCensus, SYSTEMS, the CSV). The atlas is
+now **48 hubs**; `check-election-dates` reports 48, 12 with a confirmed date.
+
+| hub | shape | contests | span | government |
+|---|---|---|---|---|
+| hu Hungary | leg | 50 | 1825-2026 | parliamentary |
+| no Norway | leg | 63 | 1815-2025 | parliamentary |
+| se Sweden | leg | 51 | 1866-2022 | parliamentary |
+| co Colombia | combined, pres first | 85 | 1825-2026 | presidential |
+| cd DR Congo | combined, pres first | 18 | 1960-2023 | semi-presidential |
+| cl Chile | combined, pres first | 72 | 1826-2025 | presidential |
+| ir Iran | combined, pres first | 51 | 1906-2024 | other: "Islamic republic, vetted candidates" |
+
+**Sweden votes 13 September 2026** (the statutory second Sunday of September,
+stated in the 2022 article), filed `confirmed`, first on the countdown and in
+both calendar feeds. There is no 2026 article in the dump; `last` is 2022.
+
+Decisions worth knowing:
+- **Colombia's legislative series is the Senate throughout.** Two articles
+  print the Chamber first, so "take the first table" put one row of a
+  ninety-year series on the wrong house; `prefer="leg-small"` picks by seat sum.
+- **DRC 1960 and 1965 are legislative only** (indirect presidency). Norway's two
+  1814 Constituent Assembly votes are excluded.
+- **Chile 1988** is in as `pres-1988`, partial, because the source files it
+  under presidential elections and it decided who held the presidency; 1980 is
+  a constitutional referendum in the source and is out; 1978 is not in the dump.
+- **Iran is `other`, not semi-presidential or presidential**: a directly
+  elected president with no prime minister, answerable to an unelected Supreme
+  Leader whose Guardian Council vets every candidate before the vote. Every
+  post-1979 contest is `partial` at era level; per-election overrides only
+  where the article records something specific (2009, 2021, the 2024 snap
+  election after Raisi's death, the 2024 Majlis at ~41%).
+- Honesty labels `unfree`: Hungary 1949-1985 (nine single-list ballots), Mobutu's
+  three plebiscites and five one-party legislatures, Colombia 1949 (Liberal
+  boycott, the article's own lead), Chile 1929, Iran 1975 (Rastakhiz). Full
+  list with reasons in `scripts/elections/build_hub_json.py`.
+
+🔴 **Two scorer corrections came out of Iran and are general** (`build_systems.py`,
+self-test 16 to 19 cases): a single list holding ~all votes and ~all seats no
+longer scores (it returned a perfect 0.00 and made Iran the most proportional
+system in the atlas), and a "Percentage" column that equals the SEAT share for
+every party is dropped rather than published as a vote share (Iran 2004 read
+"196 of 243" and 0.04; it now reads "196 of 290 seats" and no index). Gallagher
+medians: se 2.81, co 3.42, no 4.86, cd 5.78, cl 6.81, hu 14.66, ir none.
+**Wave 1 medians unchanged** (AT 2.90, IE 4.27, PT 6.53, EG 12.27).
+
+🔴 **The Wave 1 dumps are not on disk, so the byte-diff of gr/at/pt/ie/ph/eg
+through the changed parser was NOT run.** Three parser changes could in
+principle touch Wave 1 output (a header-glue guard, a two-cell spacer-row
+shift, short-row right-alignment); each is a strict correction and the Wave 1
+JSONs on disk were never rewritten, but whoever holds those dumps should re-run
+and diff. `build_hub_json.py` now merges every `/tmp/hubs/wave*-drafts.json`
+present and skips hubs with no drafts.
+
+Also: `HUB_COUNTRY_SLUGS` had never been given the six Wave 1 hubs; they are
+registered now, so their cards get leader links. `app/sitemap.ts` lists no
+election hubs at all, old or new; pre-existing, not fixed. Unconfirmed from the
+dumps: the exact 2029 Norwegian, 2029 Chilean, 2030 Hungarian and 2028 Iranian
+polling days (all filed `expected`); `pmAfter` missing on several recent
+Hungarian and Norwegian rows.
+
+Verified in the container: tsc clean, gates green, vitest 175/175, pytest
+112/112, `build_all_csv --self-test` 2,145 rows across 48 hubs, `next build`
+**5160/5160**, `probe:mobile` clean on all seven hubs plus /elections (7.4
+screens), /elections/all and /elections/systems; Sweden's VEVENT present in
+`/elections/calendar.ics` (12 events) and `/elections/calendar/se.ics`.
+
+### F. Pakistan, the eighth hub, and a tiered-table reader
+
+`pk` Pakistan, legislative, 14 contests 1962-2024, `tier: "compact"`, Asia &
+Oceania, metro Islamabad, `governmentType: parliamentary`. Last 8 February 2024,
+next expected 2029 (sort key 2029-04-30, no date set). The 1947 and 1955
+Constituent Assembly elections are excluded (indirect, no result tables). Six
+`partial` labels, each in the article's own words: 1962 and 1965 (Basic
+Democracies college, parties banned), 1977 (PNA rejected the count), 1985
+(nonpartisan under Zia, MRD boycott), 2018 (EU observer mission findings),
+2024 (PTI stripped of its symbol, candidates stood as independents). No
+`unfree`: every one had contested seats. Gallagher median **11.79**, between
+the UK and India, which is where an FPTP system should sit. The atlas is now
+**49 hubs, 404 new contests across the eight**, CSV 2,159 rows.
+
+🔴 **Pakistan's modern result tables are tiered** (Party | Votes | % | Seats
+over General | Women | Minority | Total). Read flat they gave PTI 118 seats in
+2018 instead of 151 and dropped the 70 reserved seats, which left a 20.5%
+residual that made the Gallagher index refuse every election after 2002. A
+`leg-tiered` preference in `build_wikidump_hub.py` reads the Total column.
+Also: an "All N seats" infobox line now outranks a majority quoted on a
+narrower base (Pakistan 1962: 156 seats, majority quoted on the 150 general
+ones). Both changes re-run byte-neutral on the other seven Wave 2a hubs; Wave 1
+medians unchanged (dk 1.15, at 2.90, ie 4.27, pt 6.53, gr 7.58, eg 12.27).
+
+🔴 **The cloud container can no longer run `next build` for this tree**: the
+bash cgroup caps at 6.27 GB and the webpack worker now peaks above it (SIGKILL
+three times, at 6144 and 4500 MB heaps). The three earlier builds today passed
+by a margin that the eight hubs consumed. The Pakistan build was therefore run
+NATIVELY on the Windows box, see below. Next session: treat the container as a
+typecheck-and-probe box, and build natively from the start.
+
+### G. The rest of the session: NFL live chain, football WP5 and WP6, and a function-size gate
+
+Ashwin asked for as much as would fit before the push. Three more items, all
+verified in the container (tsc, gates, vitest 175/175, pytest 112/112) and by a
+native `next build` on the Windows box.
+
+**NFL 2026: the site half of the Tuesday automation is built and NOT yet
+dispatched.** `scripts/nfl/nfl_live_update.py` (dry-run by default, `--write`,
+`--fixtures DIR`, `--self-test` 27 checks) reads the 32 week-0 seeds from
+`public/data/nfl/elo/seasons/2026.json`, builds the schedule from ESPN's
+scoreboard week by week (seasontype=2, no `limit=`, NO User-Agent), maps ESPN
+names to the shard's canonical names through an explicit 32-row table proven a
+bijection both ways, feeds completed games to `live_chain(games_in=...)`, and
+rewrites the shard (weeks with byes carried, status `live` once anything is
+played, records and points derived from the same results) plus
+`upcoming.json`. It refuses to write if the played-game count would fall.
+`.github/workflows/nfl-live-refresh.yml` runs it Tue and Fri 09:30 UTC Sep to
+Feb and commits `public/data/nfl/elo/**` with `[vercel skip]` (verified:
+`lib/nflElo.ts` fetches the shards from GitHub raw with ISR). `live_chain` and
+`build_upcoming` gained an optional `games_in` so `book` may be None; numerics
+untouched, `build-nfl-elo.py --self-test` 8/8.
+
+🔴 Cross-check worth knowing: carrying 2025 week 1 from the published seeds and
+ESPN alone reproduces the workbook's week-1 ratings to mean 0.08 Elo, except
+the Chargers +0.9 and Chiefs -0.8, which is Sao Paulo: ESPN flags it neutral
+and this path drops the 65-point home edge; the workbook gave the Chargers a
+home game. Same will show at Melbourne, London, Berlin and Madrid. A ruling,
+not arithmetic. 🔴 **Not tested live**: the container cannot reach ESPN (403);
+fixtures were fetched natively with `node` (PowerShell's Invoke-WebRequest gets
+403 from ESPN whatever the UA; Node's fetch with no UA gets 200). First real
+dispatch after Thursday's game is the proof. **The workbook half (Q/R/M and
+DM/DN/DO into NFL_all.xlsx) is still open.**
+
+**Football WP5 and WP6 are live in the tree.** `lib/footballSeasonExpectation.ts`
+transposes the six ledgers per season. Every one of the 67 year hubs from
+1959-60 carries "Beat expectation by most" and "Fell short by most"; 393
+league-seasons get a vs-Expectation column and 79 league-seasons (2012-13 on)
+a Squad value column with `n`, presence decided per league per season, never
+per row, so no pre-2012 hub renders a value column. Partial labels land on
+Germany 1991-92, France 2019-20 and the Netherlands 2019-20. The six league
+hubs gain "How predictable is this league" (skill vs era baseline read from the
+payloads: NL +0.0815, IT +0.0565, ES +0.0475, DE +0.0410, EN +0.0317, FR
++0.0296) and a squad-value concentration line (top club's share of the
+league's June value: PSG 35.1% of Ligue 1, Real Madrid 25.5%, PSV 22.8%,
+Leverkusen 19.5%, Juventus 17.2%, Manchester City 10.6%). Both fold on a
+phone. `SeasonSuperlatives.tsx` is the cross-season board on /teams/football/
+seasons and was left alone; the per-hub rows live in a new
+`SeasonAgainstExpectation.tsx`. WP7 (map shading, 2026-27 starting line) not
+built.
+
+**`npm run check:function-size` is the last step of `verify`.** It walks every
+route's `.nft.json` trace after `next build`, sums what each function bundles,
+and reports the ten largest with their `public/data` share: WARN 220 MB, FAIL
+245 MB (235 under `--strict`), skip when there is no build. 🔴 **Measured on
+the native build: 106 routes at 230 to 238 MB local, every one carrying all of
+`public/data` (227 MB) because `lib/data.ts` builds its paths at runtime.**
+Local runs a few percent above Vercel, so that is roughly 20 MB of headroom on
+a tree the data jobs grow daily. Excluding `metro-boundaries` (24.5 MB) is NOT
+safe: `/rankings/[slug]` revalidates daily and reads them through
+`country-boundaries.ts` at request time. The durable fix (a statically
+analysable read map in `lib/data.ts`, or GitHub-raw reads the way `nflElo.ts`
+and the expectation libs already do) is the next infrastructure job and it is
+not optional.
+
+Also: `app/sitemap.ts` now lists all 49 election hubs and the seven family
+pages (it listed none before); the flag links on /elections and the chips and
+view toggle on /elections/all are 44px controls now.
+
+Measured natively on the Windows box after the final build (5162/5162,
+`check:function-size` OK at 219.9 MB max): `probe:mobile` at 390px clean on
+/teams/football/1963-64 (6.4 screens), /teams/football/2024-25 (7.2),
+/teams/football/leagues/premier-league (5.6), /teams/football/leagues/serie-a
+(5.2), /teams/football/2026-27 (11.3), /elections (7.0), /elections/all (3.6,
+taps<40 down from 31 to 10). The football hubs' 60 to 89 sub-40px targets are
+the pre-existing SeasonTrends chips noted on 2026-09-06, not new.
+
+Late addition, at Ashwin's request: the "Two centuries of ballots" timeline and
+both "How much of the world voted freely" charts now include every hub, compact
+or featured (the compact filter on `tlRows` is gone, and the eight Wave 2a hubs
+are in `HUB_COUNTRY_SLUG` for the population weighting, DRC as `congo-dr`).
+The header's contest count now agrees with the map's for the first time.
+
+### H. The hub tiles became a directory
+
+Ashwin: the "hubs by region" tiles were busy, hard to read and too tall on
+both widths. Thirty 150px cards in four columns, plus a "Featured hubs" pair
+that duplicated the forecast card above them, are gone. `HubDirectory.tsx`
+renders all 49 hubs once: on desktop one table grouped by region (Polity,
+System, Last held, Next with the Set / Term running / No date badge, Head of
+government, Contests) inside the free 80vh scroll box; on a phone a
+`ListLabel` per region and a `CappedList` of one-line rows (initial 8). The
+thirty hand-written card blurbs are retained in `HUB_BLURBS` in page.tsx and
+surface as the polity link's `title`; the hub pages can adopt them.
+`HubCardClient.tsx` is deleted (page.tsx was its only importer). `HubTitle` now
+prints the MONO as-of stamp on every polity hub page (`meta.built`, contest
+count from the census, last election, source), which was the one skeleton item
+the 49 hub pages were missing. Checked in the built-in browser at 576px and
+1280px: table full width, no sideways scroll.
+
+### I. The directory became sortable and ranked; NRL needs nothing; NFL playoffs are wired for January
+
+Ashwin's follow-ups on the directory: the United States, United Kingdom and
+European Union are pinned at the top on both widths whatever the sort or
+filter; every other hub follows in the Countries hub's `scoreRank` order
+(joined through `HUB_COUNTRY_SLUGS`, unranked hubs last, alphabetical); one
+flat table with a Region column and region filter chips (Europe, Asia &
+Oceania, Middle East & Africa, The Americas); every column sortable with
+`aria-sort`, the phone list carrying the same sort through the `<select>` and
+direction idiom. `HubDirectory` is now a client component fed plain rows from
+page.tsx. Section retitled "Every hub, in ranking order". The "Two centuries of
+ballots" strip is ordered the same way: US, UK, EU first, then the rest grouped
+by region in that order with a MONO group label and separator drawn in the SVG.
+
+**NRL finals: nothing to build.** The AFL finals area Ashwin liked is
+`FootyHub` + `FootyFinalsBracket` fed by `scripts/ingest/footy_finals.py` on
+`footy-refresh.yml` (daily, plus 06:00 and 12:00 UTC in Sep and Oct). The NRL
+hub already renders the same component from `public/data/nrl/finals.json`,
+with NRL round labels and the Origin exclusion self-tested; `weeks` is empty
+today only because ESPN has not filed the NRL finals draw. It appears on its
+own the day the first final is listed.
+
+**NFL playoffs, the same idiom, dormant until January.** The bracket renderer
+moved to `app/teams/_shared/FinalsBracket.tsx` with every league-specific
+value a prop; `FootyFinalsBracket` is a 55-line adapter and its output was
+proved byte-identical by `renderToStaticMarkup` across eight AFL and NRL cases.
+`scripts/nfl/nfl_playoffs.py` (fixtures, dry-run, self-test) reads ESPN
+seasontype=3 weeks 1 to 5, drops the Pro Bowl by three independent tests, and
+writes `public/data/nfl/playoffs.json` in exactly the finals.json shape;
+seeded with the real 2025 postseason (13 games, Seahawks 29 Patriots 13 in
+Super Bowl LX). `lib/nflPlayoffs.ts` reads it from GitHub raw with ISR, so
+`[vercel skip]` is right, and `playoffsIsCurrent` is false until a payload for
+the current season exists, so the NFL hub renders nothing today, not a
+placeholder. `nfl-live-refresh.yml` gained a January and February cron and a
+month-gated playoff step. ESPN's postseason payload carries no seeds
+(`curatedRank 99`); the renderer draws them when they appear. 🔴 Never
+measured at 390px because the gate keeps it unrendered; measure the first week
+of January.
+
+### J. Evening batch: women's international basketball, EuroLeague live table, four fixes
+
+- **Women's international basketball hub** at `/teams/basketball/women` (+
+  `/women/[slug]`), built from two Wikipedia dumps Ashwin supplied with its own
+  parser (`scripts/basketball/build_intl_wbasketball.py`, self-tested against
+  1976, 1953, 2022 and the Soviet-to-Russia lineage): 13 Olympic editions from
+  1976, 19 World Cup editions 1953-2022, 20 nations, the FIBA women's ranking
+  (119/119 mapped; the slug universe had to be widened by six engine spellings
+  or Czechia, a 2010 runner-up, silently vanished). `wc_apps` is null and says
+  so: the World Cup table knows only the final four. Olympic hosts for 1992,
+  1996 and 2012 are hand-filled (the dump has none). `lib/wbasketball.ts` reads
+  via GitHub raw with ISR.
+- **2026 Women's World Cup tracker**: `scripts/basketball/track_wwc.py` reads
+  the Wikipedia article through the MediaWiki API, exits 0 "not played yet"
+  until the final has a score, exit 2 when the section exists but does not
+  parse, exit 1 on fetch failure; appends the 2026 edition and rebuilds;
+  `wwc-2026-tracker.yml` runs daily 06:00 UTC 8-30 Sep with `[vercel skip]`.
+  In the currency manifest (`wwc`, due 15 Sep 2026, quadrennial). 🔴 Never run
+  against the live article (no egress here); the four fixtures are shaped from
+  the 2022 article. First real run is the proof; if it exits 2, the heading or
+  template shape changed and the parser needs the real wikitext.
+- **/teams/basketball**: the four stacked hub cards became a four-tile grid
+  (`HubTile`), one clause each.
+- **/teams/basketball/euroleague**: the live table from /sports/standings now
+  sits first on the hub (`EuroleagueLiveTable.tsx`, same loader, liveness
+  rule, colours and playoff cut; "Offseason, last table shown" when dormant);
+  the page gained a sources card it never had.
+- **WNBA phase**: ESPN's `season.type` said postseason while every team had
+  regular-season games left (the league paused for the World Cup). Same trap
+  as the NFL preseason on 09-04. `lib/wnba-standings.ts` now derives the phase
+  from games played against `WNBA_REGULAR_SEASON_GAMES = 44`; below it the
+  label stays "Standings" and the field stays a projection.
+- **/business/sp500**: Wikipedia's S&P list carries an editor comment on BRK.B
+  and BF.B ("DO NOT CHANGE THIS TICKER ... YOU'VE BEEN WARNED!") and
+  `build_sp500.py` shipped it inside the symbol. HTML comments are stripped
+  before any other markup now; the JSON was patched by hand for tonight.
+- **/teams/football/2026-27**: the league-phase Champions, Europa and
+  Conference League tables (one 36-club table each) were sitting in a
+  two-column card grid inside a two-column group grid, a quarter of the row,
+  showing the club column with the record behind a sideways scroll. A
+  single-table competition now spans the row and fills its card.
+- Release block rewritten to cover the day in four bullets (elections, women's
+  basketball, football, owners); NFL playoffs and the watcher stay out of it
+  until they show a reader something.
+
+### K. Late evening: the directory gets its power column, Milei is flagged, Belgium is corrected
+
+- **Directory ("Every hub, in power order")**: default order is now the Power
+  Atlas rank (`getCurrentPowerBySlug`, the /countries "Power" column; the
+  Countries scoreRank only where the atlas has no row), with a sortable Power
+  column showing share and tier dot. US, UK, EU stay pinned. Column widths are
+  fixed (Region was cut to 95px and truncated "Middle East & Africa"; Next was
+  taking a third of the table). A name no longer yields to its badge: China and
+  Russia were rendering as flag plus tag with no name because a truncating name
+  sat beside a shrink-0 badge. Every head of government prints the office in
+  full ("Prime Minister", "President", "Chancellor") from the feed's
+  abbreviation via `leaderTitle()`; the EU row joins the Commission President
+  from `org-leaders.json` (`/orgs#eu`).
+- **Timeline**: group bands are 30px with the label left-aligned in the gutter
+  and a tinted band, so a continent label no longer blends into the first
+  country; label gutter widened to 132px, rows to 18px.
+- **⚠️ Javier Milei** flagged at Ashwin's instruction: `scripts/data/warn-flags.json`
+  entry with status "needs evidence" and an open acts list (the file's own rule
+  is that the criterion and dated, sourced acts are the editor's to write);
+  glyph applied in `leaders/argentina.json` and `_current.json`, and the
+  weekly refresh re-applies it from the warn list. 🔴 `order/trajectory.json`
+  still says "Thirteen sitting leaders"; the mini's next Order build picks up
+  the fourteenth.
+- **Belgium**: the September Wikidata feed resolved P6 to King Philippe with
+  role "Pres." and no head of government at all. `_current.json` corrected to
+  Bart De Wever (PM since 2025-02-03, as `leaders/belgium.json` already
+  records) with the King as `second`, and a `CURATED_OVERRIDES` entry pins it
+  until the P6 claim comes back clean. 🔴 Worth a sanity-check rule: a name
+  carrying the crown, or a monarch's Wikidata class, must never be filed as
+  "Pres.".
+- `lib/currentLeaders.ts` now prefers the working copy in development (the
+  rule `lib/powerRanking.ts` already had) and falls back to it when the raw
+  fetch fails; production still reads GitHub raw with ISR. Without this the
+  dev server hid every unpushed correction behind the copy on main.
+
+- **/sports/standings**: Formula 1 is now `collapse(f1)` like every other long
+  board (it was force-opened on desktop with two twenty-row tables side by
+  side and could not be folded). The Women's Champions League block has no
+  table because api-football publishes the UWCL league-phase standings only
+  after the draw (2026-27: after the second qualifying round, mid-September);
+  the block and the women's hub now say "qualifying; table appears after the
+  draw" instead of looking forgotten, and the hub renders a single
+  league-phase table full width when it arrives. Nothing to fetch until then;
+  `refresh_women.py` already asks for it daily.
+
+### L. The Heartbreak Index: one board, nations included, scarcity and healing
+
+Ashwin, on /sports/heartbreak: clubs and national teams belong in one table.
+- `HeartbreakBoard` rows carry `kind: club | nation`; the 37 nations join the
+  1,148 clubs on ONE global rank. A nation row rolls every sport its fans
+  suffer in into one score, so it carries `nationSports` for the filter (a
+  "National teams" group chip with Football / Cricket / Rugby / Basketball /
+  Baseball beneath it), a flag instead of a crest, and its worst drought and
+  worst lost final in the club columns; agony, despair and quadrant print a
+  dash. The separate Nations section and its jump-nav entry are gone.
+- The league column shows the SPORT's glyph, not the country flag (Ashwin:
+  the flag says where a club plays, the glyph says what it plays).
+- **Scoring, two new nation rules in `build_heartbreak.py`, both in `params`:**
+  *scarcity* scales each drought and lost final by the competition's cadence,
+  `cadence ** 0.25` (four-year tournaments 1.41x, two-year 1.19x); Ashwin's
+  calibration point was "England should approach the Maple Leafs", and it
+  does: **England 45.43 against the Leafs' 46.2**. *Healing*: a title in the
+  same sport at equal or higher tier restarts every drought clock in that
+  sport and applies `HEALED_FACTOR` to earlier lost finals, the club engine's
+  own rule. Ashwin's case was France carrying a Euro drought from 2000 through
+  the 2018 World Cup: France now reads 8.7 (was 19.4), the 2022 final standing,
+  2006 healed, the Euro clock from 2018. The women's World Cup is its own sport
+  and team; a men's title heals nothing for it. Argentina and Germany left the
+  top ten for the same reason (2022 and 2014).
+- The rebuild also moved 88 club totals by under a point (the engine reads
+  live season data and the last build was older); not a scoring change.
+- Method prose on the page carries both rules in one paragraph.
+- Then Ashwin's second ruling: a national team is a nation in ONE sport, never a
+  roll-up. `score_nations` keys by (nation, sport) and emits one row per team
+  (47 rows: England Football 41.8, Uruguay Football 38.5, Russia Football 25.6,
+  West Indies Cricket 15.8, Serbia Basketball 14.7). England Football sits
+  second on the board behind the Maple Leafs; England Cricket and England
+  Rugby are their own rows further down.
+
+### M. Heartbreak Index: nations per sport, cricket peers, parade links (cowork, 2026-09-07, later)
+- Nation rows are keyed (nation, sport): 180 rows, one global rank with the clubs.
+  England Football 46.41 (Maple Leafs 46.2, Ashwin's calibration point), Belgium
+  34.44, Netherlands 33.44, Uruguay 11.84, France 6.39. `SCARCITY_EXP = 0.03`
+  (four-year 1.04x, two-year 1.02x); params recorded in heartbreak.json.
+- Football droughts from `international/appearances.json`: WC, Euros, Copa, plus
+  AFCON / Asian Cup / Gold Cup (tier 3, in the ledger already, now with cadence
+  and sport entries so they heal and scale). Never-won waits from first
+  appearance; continental titles console the WC wait (`NATION_CONSOL 0.25`,
+  every title, recency-weighted); a WC restarts the continental clock.
+- Cricket from `cricket/teams.json` + `team-detail/*.json`. 🔴 Ashwin ruling:
+  the ODI World Cup and the T20 World Cup are PEERS, a title in either restarts
+  both clocks. Pakistan 8.23 -> 4.88, West Indies 8.68 -> 1.47, New Zealand
+  17.57 (never won either), South Africa 7.89. CT and WTC console only.
+  🔴 South Africa understates: the cricket ledger holds finals, not semi-finals,
+  so 1992/1999/2007/2015/2023 are not priced. Needs a per-edition knockout
+  ledger; comment in `score_cricket_nations`.
+- Parade droughts table: every metro now links to `/rankings/<slug>` (slug from
+  all-teams `metro_slug`, ledger `metroSlug` as fallback; all 60 resolve).
+- Verified in the container: tsc clean, check:mobile OK, check:public-data OK,
+  vitest green. Native build + probe of /sports/heartbreak pending on the
+  Windows tree (this batch, uncommitted since 81f57c446).
+- 🔴 Bigness now (Ashwin, later the same evening): football clubs carry a
+  present-tense STATURE multiplier, 0.7x to 1.5x, on top of the cabinet
+  expectation factor. Signals: European presence over the last 10 completed
+  seasons from `seasons.json` `eur_qual` (CL 1.0, EL 0.6, ECL 0.35, top flight
+  0.1) averaged with the Europe-wide squad-value percentile from
+  `football/value/*.json` where priced (Portugal and Scotland run on presence
+  alone). Damped under dynastic insulation like expectation. Result: Marseille
+  34.5 (1st football), Benfica 29.8 (2nd, was 10th behind West Brom, Sunderland
+  and Genoa), Genoa 26.3, Sunderland 27.0, West Brom 22.2, Tottenham 20.9.
+  Params `foot_stature_*` in heartbreak.json; `stature` on each club row.
+- 🔴 Runner-up under a hegemon (Ashwin: Marseille could not be top on five
+  second places behind PSG). `RUNNER_UP_HEGEMON = 0.35` when the champion of
+  that season holds >=5 of the last 8 titles (`HEGEMON_RUN`, separate from the
+  club's own 3-in-15 realism test so Sporting's three titles do not discount
+  a real Portuguese race). Football board now: Torino 29.4, Benfica 28.8,
+  Sheffield United 28.8, Marseille 28.0, Wolves 27.6, Sunderland 27.0, Genoa
+  26.2. Coverage unchanged: 815 clubs across the eight countries; the biggest
+  clubs sit low because nearly all of them won something in the last five
+  seasons (afterglow). Not covered at all: Turkey, Belgium, Greece, the
+  Americas, so Fenerbahce (no title since 2014 under Galatasaray) is the
+  obvious absentee.
+- 🔴 Second Heartbreak round, same evening, all Ashwin rulings:
+  * Every nation the site holds a ledger for is scored (`score_ledger_nation`,
+    one scorer for rugby-union/teams.json + hub rwc_finals, basketball/nations.json
+    + nation-detail podiums, baseball/teams.json, womens-world-cup.json +
+    wintl/euros.json + wintl/olympics.json). 295 nation rows (was 180).
+    Each sport's ultimate honour is TIER 0 (RWC, Olympic basketball, Classic,
+    Cricket WC; T20 and FIBA WC tier 1); a nation's lost final weighs the tier.
+    Annual honours console at `NATION_CONSOL_ANNUAL 0.10` (Six Nations, TRC).
+    France Basketball 37.3 (never won, four Olympic finals lost) is 6th overall;
+    New Zealand Cricket 25.1; Argentina Rugby 12.1, France Rugby 9.5, Wales 6.7;
+    Sweden Women 23.4; Puerto Rico Baseball 8.6 (the Classic is only 20 years old).
+  * Nation rows carry `last_won` (any counted competition in the sport) and
+    `first`; the board's "waiting since" reads "last trophy 1988" for the
+    Netherlands and "never won, entered 1948" for France basketball.
+  * `FOOT_LONGING_CAP_YEARS = 40`: football trophy and final-appearance clocks
+    stop growing at forty years (living memory). Stature gains stadium
+    capacity (team-metadata.json, 220 of 1034 clubs) as a third signal.
+    Everton 24.3, 13th of football; the four bigger-stadium clubs above it have
+    waited 15 to 60 years longer. Flagged to Ashwin as the honest limit.
+  * College relevance: agony and grind x (0.4 to 1.3) by NCAA bids / AP finishes
+    and conference titles over 25 seasons. Dartmouth 8.5 -> 3.4 (52nd of CBB);
+    Gonzaga 13.8, Purdue 11.9, Wisconsin 9.5, Houston 8.7.
+  * Lions: two curated agony events added to agony-events.json (2023 NFC
+    Championship 24-7 collapse, 1.0 pang; 2024 15-2 one-and-done, 0.7) and
+    `FAVOURITE_WIN_PCT 0.75`: an early exit after a .750 season carries full
+    hope. Lions 27.8 -> 33.0, 12th overall; Bills 43.6 (four Super Bowls lost
+    plus three curated events). The pang values await Ashwin's calibration.
+- 🔴 Third Heartbreak round (Ashwin, closing the session):
+  * `hegemon_factor`: where one nation holds >=60% of the last 8 editions AND
+    2 of the last 3, every other nation's wait and lost final in that
+    competition is priced at 0.35 (the club runner-up rule). Fires today for
+    the US men at the Olympics only (Germany's women's Euros run is history,
+    South Africa is 4 of 8). France Basketball 37.3 -> 14.8.
+  * `NATION_SPORT_SCALE = {"wfootball": 0.5}`: women's football halved, order
+    unchanged (Sweden 11.7, Italy 8.2, Denmark 7.6).
+  * Rugby stature: 0.4 + 1.0 x (0.6 x caps relative to the most-capped nation
+    + 0.4 x peak-ranking score). `NATION_CONSOL_ANNUAL` 0.10 -> 0.05. Rugby now
+    France 15.2, England 13.0, Wales 11.9, Australia 11.7, Argentina 10.7.
+  * Every nation with a ledger keeps a row, champions included (Venezuela
+    Baseball 0.0, Japan 0.26): 318 nation rows.
+  * Everton stays at 24.3 / 13th of football: the honest limit, see above.
+    Ashwin asked for a calibration point; none given yet.

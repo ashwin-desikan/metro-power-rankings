@@ -7,6 +7,17 @@
 
 Two always-on jobs for the Mac mini, both grounded in how the repo already works.
 
+> **NFL 2026, which half runs where.** The SITE half is a GitHub Action,
+> `.github/workflows/nfl-live-refresh.yml`, running
+> `scripts/nfl/nfl_live_update.py`: it carries the live season's Elo from the
+> published week-0 seeds and ESPN's scoreboard, with no workbook and no mini,
+> and commits `public/data/nfl/elo/**` with `[vercel skip]`. The WORKBOOK half
+> is NOT that job and remains open: writing Q (PF), R (PA), M (W/L/T) and
+> DM/DN/DO (pre-game Elo, opponent Elo, win probability) into the 2026 rows of
+> `NFL_all.xlsx` still has to run on a machine that holds the workbook, and it
+> is unbuilt. See HANDOFF 2026-09-06, "What the 2026 automation still needs".
+> If it never runs, the site is still right; that is why the halves are split.
+
 **Caveat:** these were written and syntax-checked on a Windows machine, not the
 mini. Test each one by hand (steps below) before loading it into `launchd`. The
 ESPN standings validator was verified against the live payload; the scoreboard,

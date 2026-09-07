@@ -27,6 +27,11 @@ API = ("https://en.wikipedia.org/w/api.php?action=parse&page=List_of_S%26P_500_c
 # ---------------- wikitext helpers ----------------
 
 def strip_markup(s):
+    # HTML comments are editor-to-editor notes and never content. The S&P list
+    # carries one on BRK.B and BF.B ("DO NOT CHANGE THIS TICKER ... YOU'VE BEEN
+    # WARNED!") that shipped on /business/sp500 as part of the symbol on
+    # 2026-09-07. Strip them before anything else looks at the cell.
+    s = re.sub(r"<!--.*?-->", "", s, flags=re.S)
     s = re.sub(r"<ref[^>]*/>", "", s)
     s = re.sub(r"<ref[^>]*>.*?</ref>", "", s, flags=re.S)
     # Exchange-symbol templates: {{NyseSymbol|MMM}}, {{NasdaqSymbol|ADBE}}, {{NYSE|X}}, ...

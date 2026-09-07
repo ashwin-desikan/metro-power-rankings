@@ -114,6 +114,14 @@ SYSTEMS = {
     "ie": ("stv", "174 seats in 3-, 4- and 5-seat constituencies, single transferable vote", None, "The only national PR-STV system in this atlas. Seats follow the final count, not first preferences."),
     "ph": ("fptp", "Presidency by simple plurality, one six-year term", None, "No runoff, so pluralities under 40% have repeatedly been enough to win."),
     "eg": ("other", "596 seats: individual constituencies plus absolute-majority closed lists", None, "A list plurality takes every seat on the list, which is why the pro-government coalition has swept them since 2015."),
+    "hu": ("mmm", "199 seats: 106 single-member constituencies plus 93 by national list", "5% party, 10% two-party alliance", "The winner's surplus constituency votes are added to its list total, so coming first is rewarded twice. The chamber was 386 seats with a second round until the 2011 reform."),
+    "no": ("list-pr", "150 district seats over 19 counties plus 19 levelling seats, modified Sainte-Lague", "4% for levelling seats", "The Storting cannot be dissolved, so every term runs four years and minority government is normal."),
+    "se": ("list-pr", "310 constituency seats plus 39 adjustment seats, modified Sainte-Lague", "4% nationally or 12% in one constituency", "One chamber since 1970; before that only the Second Chamber was directly elected, on a graded franchise until 1911."),
+    "co": ("list-pr", "100 senators elected in a single national district, plus reserved seats", "3% of the national vote since 2003", "The congressional series here is the Senate. Before 2003 parties could run unlimited personal lists, which is why the field ran to sixty-odd parties."),
+    "cd": ("list-pr", "500 seats in constituencies from one to seventeen members, open list", "no effective threshold", "More than a hundred parties won seats in 2011. Vote shares survive for 1960, 1965, 1970, 1977 and 2023; the other six assemblies record seats only, so they carry no index."),
+    "cl": ("list-pr", "155 deputies over 28 districts, D'Hondt with open lists", "no national threshold", "The dictatorship's binomial system paired every district from 1989 to 2013 and handed the second seat to the runner-up list unless the leader doubled its vote; proportional districts replaced it in 2017."),
+    "pk": ("fptp", "266 single-member seats by plurality, plus 70 reserved seats shared out in proportion", None, "The reserved bench of 60 women's and 10 minority seats is allocated on the general seats each party won, so it amplifies whoever came first. The 1962 and 1965 assemblies were chosen by an electoral college and carry no vote shares."),
+    "ir": ("two-round", "290 seats, multi-member districts, absolute majority with a second round", "20% of the vote in the first round", "No index. The Majlis articles report blocs and their seats, and where a Percentage row exists it is usually the share of seats rather than of votes, so there is nothing to compare a seat share against. The Guardian Council vets every candidate in any case, so the field is settled before the count."),
 }
 
 
@@ -132,6 +140,14 @@ def gallagher(pairs, total_seats):
         return None, "no vote shares recorded"
     listed_votes = sum(v for v, _ in pairs if v is not None)
     listed_seats = sum(s for _, s in pairs if s is not None)
+    # A single list holding effectively all the votes and all the seats is not a
+    # measurable contest: it scores a perfect zero and would have made Iran the
+    # most proportional system in the atlas on the strength of three one-row
+    # tables. Zaire's 1977 assembly and Hungary's People's Front years are the
+    # same shape.
+    scoring = [(v, sp) for v, sp in pairs if v is not None]
+    if len(scoring) == 1 and scoring[0][0] >= 95.0:
+        return None, "single-list result"
     if listed_votes < MIN_VOTE_COVERAGE:
         return None, "vote coverage %.1f%%" % listed_votes
     if listed_votes > 105.0:
@@ -349,13 +365,21 @@ def _self_test():
     # managed system cannot flatter its own headline number.
     doc2 = {"elections": [
         {"id": "a", "year": 2000, "totalSeats": 100, "label": "A", "unfree": "unfree",
-         "parties": [{"share": 99.0, "seats": 100}]},
+         "parties": [{"share": 90.0, "seats": 99}, {"share": 10.0, "seats": 1}]},
         {"id": "b", "year": 2004, "totalSeats": 100, "label": "B",
          "parties": [{"share": 50.0, "seats": 50}, {"share": 50.0, "seats": 50}]}]}
     out = build(lambda c: doc2, ["za"], date(2026, 8, 30))
     h = out["hubs"][0]
     check("both scored", h["scored"], 2)
     check("median excludes the unfree row", h["median"], 0.0)
+
+    # A single list holding all the votes and all the seats is not measurable
+    # proportionality, and scoring it as a perfect zero made Iran the most
+    # proportional system in the atlas off three one-row tables.
+    check("single list not scored", gallagher([(99.0, 100)], 100)[0], None)
+    check("single list says why", gallagher([(99.0, 100)], 100)[1], "single-list result")
+    check("a genuine one-party sweep with a rival still scores",
+          gallagher([(90.0, 99), (10.0, 1)], 100)[0] is not None, True)
 
     # Turnout: rituals stay in the extremes and out of the median.
     t = turnout_stats([
@@ -375,7 +399,7 @@ def _self_test():
         for f in fails:
             print("  -", f)
         return 1
-    print("build_systems self-test OK (16 checks)")
+    print("build_systems self-test OK (19 checks)")
     return 0
 
 

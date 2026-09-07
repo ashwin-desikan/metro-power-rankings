@@ -48,7 +48,7 @@
     "since": "2014-06-13"
   },
   "argentina": {
-    "name": "Javier Milei",
+    "name": "⚠️ Javier Milei",
     "role": "Pres.",
     "since": "2023-12-10"
   },
@@ -114,9 +114,13 @@
     "since": "1994-07-20"
   },
   "belgium": {
-    "name": "Philippe of Belgium",
-    "role": "Pres.",
-    "since": "2013-07-21"
+    "name": "Bart De Wever",
+    "role": "PM",
+    "second": {
+      "name": "👑 Philippe",
+      "role": "Monarch"
+    },
+    "since": "2025-02-03"
   },
   "belize": {
     "name": "Johnny Briceño",

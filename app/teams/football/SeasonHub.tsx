@@ -10,6 +10,8 @@ import RankingTable, { type RankedClub } from "./2025-26/RankingTable";
 import fs from "fs";
 import path from "path";
 import SeasonSnapshot, { type SnapshotChampion, type SnapshotMover } from "./SeasonSnapshot";
+import SeasonAgainstExpectation from "./SeasonAgainstExpectation";
+import { getSeasonLedger, type SeasonLedger } from "@/lib/footballSeasonExpectation";
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
@@ -85,7 +87,7 @@ function uefaTier(country: string, endYear: number | undefined, startYear: numbe
   if (endYear != null) return endYear === startYear ? "Spring-Summer" : "Secondary";
   return UEFA_TIERS[country]?.tier ?? "Secondary";   // fallback only when end_year is absent
 }
-function buildConfs(leagues: League[], countryRank: Map<string, number>, season: string): HubConf[] {
+function buildConfs(leagues: League[], countryRank: Map<string, number>, season: string, ledger: SeasonLedger): HubConf[] {
   const startYear = parseInt(season.slice(0, 4), 10);
   // Classify each country by the calendar of its top-level (lowest level number) league so every
   // division of a country lands in the same section.
@@ -97,16 +99,43 @@ function buildConfs(leagues: League[], countryRank: Map<string, number>, season:
   }
   const byConf = new Map<string, Map<string, HubLeague[]>>();
   for (const lg of leagues) {
+    // 🔴 COLUMN PRESENCE IS A PER-SEASON, PER-LEAGUE DECISION, never a per-row
+    // one. `led` is this league's ledger cut for THIS season: absent for every
+    // league outside the six top flights, and its `value` map is empty for
+    // every season before 2012-13, so those hubs render no Value column at all.
+    const led = lg.level === 1 && lg.country ? ledger.leagues.get(lg.country) : undefined;
+    const showSurplus = !!led && led.surplus.size > 0;
+    const showValue = !!led && ledger.hasValue && led.value.size > 0;
     const groups: HubGroup[] = lg.groups.map((g): HubGroup => ({
       label: lg.groups.length > 1 ? g.label : null,
-      rows: g.rows.map((r): HubRow => { const c = resolveClub(r.name, r.lookup); return { rank: r.rank, name: c.name, slug: c.slug, cells: [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points)], champ: r.champ }; }),
+      rows: g.rows.map((r): HubRow => {
+        const c = resolveClub(r.name, r.lookup);
+        return {
+          rank: r.rank,
+          name: c.name,
+          slug: c.slug,
+          cells: [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points)],
+          champ: r.champ,
+          surplus: showSurplus && c.slug ? (led!.surplus.get(c.slug) ?? null) : null,
+          value: showValue && c.slug ? (led!.value.get(c.slug) ?? null) : null,
+        };
+      }),
     })).filter((g) => g.rows.length > 0);
     if (!groups.length) continue;
     const conf = lg.confed === "UEFA" ? `UEFA · ${uefaTier(lg.country ?? "", topEnd.get(lg.country ?? ""), startYear)}` : lg.confed;
     const country = lg.country ?? DASH;
     if (!byConf.has(conf)) byConf.set(conf, new Map());
     const m = byConf.get(conf)!; if (!m.has(country)) m.set(country, []);
-    m.get(country)!.push({ id: lg.league_id, name: lg.name ?? DASH, level: lg.level, groups, end_year: lg.end_year });
+    m.get(country)!.push({
+      id: lg.league_id,
+      name: lg.name ?? DASH,
+      level: lg.level,
+      groups,
+      end_year: lg.end_year,
+      showSurplus,
+      showValue,
+      ledgerNote: showSurplus ? (led?.note ?? null) : null,
+    });
   }
   const ord = (c: string) => { const i = CONF_ORDER.indexOf(c); return i === -1 ? 99 : i; };
   return [...byConf.entries()].sort((a, b) => ord(a[0]) - ord(b[0])).map(([confederation, m]) => ({
@@ -299,9 +328,14 @@ function SeasonPager({ season }: { season: string }) {
   );
 }
 
-export default function SeasonHub({ hub }: { hub: Hub }) {
+export default async function SeasonHub({ hub }: { hub: Hub }) {
   const countryRank = new Map(hub.countries.map((c) => [c.country, c.rank] as const));
-  const confs = buildConfs(hub.leagues, countryRank, hub.season);
+  // The six against-expectation ledgers, cut to this season. Every hub from
+  // 1959-60 carries at least five of the six leagues; the squad-value half
+  // exists only from 2012-13 (lib/clubValue's 2012-07 floor).
+  const ledger = await getSeasonLedger(hub.season);
+  const confs = buildConfs(hub.leagues, countryRank, hub.season, ledger);
+  const ledgerLeagues = [...ledger.leagues.values()].map((l) => `${l.competition} (${l.country})`);
   const { ranks: prevRank, gaps: prevGap } = loadPrevSeason(hub.season);
   const deltaOf = (lookup: string, rank: number): number | null => { const p = prevRank.get(lookup); return p == null ? null : p - rank; };
   const ranked: RankedClub[] = hub.clubs.map((c) => { const r = resolveClub(c.name, c.lookup); return { rank: c.rank, name: r.name, slug: r.slug, country: c.country, mp: c.mp, w: c.w, d: c.d, l: c.l, form: c.form, ped: c.ped, tb: c.tb ?? 0, score: c.score, deltaRank: deltaOf(c.lookup, c.rank) }; });
@@ -453,7 +487,20 @@ export default function SeasonHub({ hub }: { hub: Hub }) {
           </div>))}</div>
         )}
       </section>
-      <section id="leagues" className="scroll-mt-24 mb-10"><h2 className="text-lg font-semibold mb-3">Final domestic tables</h2><Hub2027Client confs={confs} season={hub.season} /></section>
+      <section id="leagues" className="scroll-mt-24 mb-10">
+        <h2 className="text-lg font-semibold mb-3">Final domestic tables</h2>
+        <SeasonAgainstExpectation
+          season={hub.season}
+          best={ledger.best}
+          worst={ledger.worst}
+          leagueNames={ledgerLeagues}
+          sourceCredit={ledger.sourceCredit}
+        />
+        <Hub2027Client confs={confs} season={hub.season} />
+        {ledger.hasValue && ledger.valueCredit ? (
+          <p className="mt-3 text-[11px] text-[var(--text-dim)]">Squad value: {ledger.valueCredit}</p>
+        ) : null}
+      </section>
       <section id="cups" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-3">Cup competitions</h2>
         <ResponsiveTable

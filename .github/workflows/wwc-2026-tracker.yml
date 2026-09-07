@@ -1,0 +1,64 @@
+name: 2026 Women's Basketball World Cup tracker
+
+# The 2026 FIBA Women's Basketball World Cup is being played in Germany in
+# September 2026. This job asks Wikipedia once a day whether the final has a
+# score yet, and the day it does, writes the edition into the committed
+# results dump and rebuilds public/data/wbasketball.
+#
+# WHY THE COMMIT CARRIES [vercel skip]. lib/wbasketball.ts reads every one of
+# its files through lib/liveData (GitHub raw + ISR, bundled copy only as a
+# fallback), so a data-only commit reaches readers without a production build.
+# That is checked, not assumed: there is no readFileSync in lib/wbasketball.ts,
+# and scripts/check-live-data.mjs enforces it. If that ever changes, DROP THE
+# SKIP TAG in the same commit, or the result sits in the repo unread.
+#
+# The self-test runs first and gates the write. track_wwc.py exits 2 when the
+# article has a Final section it cannot parse, which fails this job loudly
+# rather than reporting "not played yet" for the rest of the tournament.
+
+on:
+  schedule:
+    - cron: "0 6 8-30 9 *"   # 06:00 UTC daily, 8-30 September
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wwc-2026-tracker
+  cancel-in-progress: false
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Self-test the builder and the tracker
+        run: |
+          python3 scripts/basketball/build_intl_wbasketball.py --self-test
+          python3 scripts/basketball/track_wwc.py --self-test
+
+      - name: Track the final
+        run: python3 scripts/basketball/track_wwc.py --write
+
+      - name: Commit and push only if the result landed
+        run: |
+          if git diff --quiet -- public/data/wbasketball scripts/basketball/wbasketball_worldcup.txt; then
+            echo "No 2026 result yet; nothing to commit."
+            exit 0
+          fi
+          git config user.name "wwc-2026-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/wbasketball scripts/basketball/wbasketball_worldcup.txt
+          git commit -m "Auto: 2026 Women's Basketball World Cup result [vercel skip]"
+          git push

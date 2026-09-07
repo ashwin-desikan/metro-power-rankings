@@ -2,8 +2,9 @@
 """Assemble election-hub JSON from a Wikipedia dump."""
 import sys, re, json
 sys.path.insert(0, '/tmp/hubs')
-from parse_dump import (articles, find_tables, infobox, title_bits, clean,
-                        num, delta, parse_table, norm_head)
+from parse_dump import (articles, find_tables, find_tiered, infobox, title_bits, MONTHS,
+                        clean, num, delta, parse_table, norm_head, lead_date,
+                        plebiscite_table)
 
 IRISH_HEAD = re.compile(r"^Party\tLeader\t")
 
@@ -100,7 +101,71 @@ INFOBOX_ROWS = {
     "leader": "leader", "party": "name", "seats won": "seats",
     "seats after": "seats", "seat change": "seatChange",
     "popular vote": "votes", "percentage": "share",
+    # Iran's Majlis infoboxes name the alliance and not the party, because that
+    # is the unit Iranian legislative elections are reported in. Used only when
+    # no Party row exists in the same block.
+    "alliance": "altname",
 }
+
+
+CAND_PARTY_HEAD = re.compile(r"^Party\tCandidate\t", re.I)
+
+
+def candidate_party_table(lines):
+    """A presidential table headed "Party | Candidate | Votes | %".
+
+    Iran reports its presidential results party-first, and two of the articles
+    widen it to "Party | Candidate | Nohlen et al | ISSDP" over "Votes | % |
+    Votes | %" because two scholarly counts disagree in the fourth decimal.
+    Read the candidate as the name and take the FIRST pair of figures. Without
+    this the candidate column was read as the party and seven Iranian
+    presidential elections came through with no result at all.
+    """
+    for i, l in enumerate(lines):
+        if not CAND_PARTY_HEAD.match(l):
+            continue
+        head = [clean(c) for c in l.split("\t")]
+        j = i + 1
+        # An optional sub-header row of Votes/% pairs.
+        while j < len(lines) and j < i + 3:
+            cells = [clean(c) for c in lines[j].split("\t")]
+            if all(norm_head(c) in ("votes", "share") for c in cells if c):
+                head = head[:2] + cells
+                j += 1
+                continue
+            break
+        cols = {}
+        for k, h in enumerate(head[2:], start=2):
+            key = norm_head(h)
+            if key in ("votes", "share") and key not in cols:
+                cols[key] = k
+        if "votes" not in cols or "share" not in cols:
+            continue
+        rows = []
+        while j < len(lines):
+            line = lines[j]
+            if not line.strip() or "\t" not in line:
+                break
+            cells = line.split("\t")
+            label = clean(cells[0])
+            if not label or label.lower().startswith(("total", "blank", "invalid",
+                                                      "registered", "source",
+                                                      "valid", "turnout")):
+                break
+            if len(cells) > 3 and not clean(cells[1]):
+                cells = [cells[0]] + cells[2:]      # rendered spacer column
+            if max(cols.values()) >= len(cells) or len(cells) < 3:
+                break
+            rows.append({
+                "name": clean(cells[1]),
+                "party": label,
+                "votes": cells[cols["votes"]],
+                "share": cells[cols["share"]],
+            })
+            j += 1
+        if len(rows) >= 2:
+            return rows
+    return None
 
 
 def infobox_parties(lines):
@@ -138,7 +203,7 @@ def infobox_parties(lines):
 
     rows = []
     for b in blocks:
-        names = b.get("name") or []
+        names = b.get("name") or b.get("altname") or []
         for k, nm in enumerate(names):
             if not nm or nm.lower() in ("did not exist", "n/a", "—", "-"):
                 continue
@@ -221,7 +286,22 @@ def nominee_parties(lines):
     return out
 
 
-def best_table(lines):
+# Which header a series wants. A general-election article carries BOTH tables:
+# the DRC's 2023 page has "Candidate | Party | Votes | %" for the presidency and
+# "Party or alliance | Votes | % | Seats | +/-" for the National Assembly, and
+# without this the presidential series was filled with the assembly's seat
+# counts. "first" also settles Colombia, whose congressional articles print the
+# Senate table and then the Chamber one; the Senate comes first and stays first.
+PRES_HEAD = ("candidate", "nominee")
+LEG_HEAD = ("party", "party or alliance", "party and faction", "party or faction",
+            "alliance", "coalition", "parties")
+
+
+def _head_word(lines, i):
+    return clean(lines[i].split("\t")[0]).lower()
+
+
+def best_table(lines, prefer=None):
     pres, pres_turnout = irish_pres_table(lines)
     if pres:
         parties = nominee_parties(lines)
@@ -233,15 +313,104 @@ def best_table(lines):
             r = irish_table(lines, i)
             if r and len(r) >= 3:
                 return r, {}
-    tabs = find_tables(lines)
-    if not tabs:
-        return infobox_parties(lines), {}
+
     # Prefer a table with seats AND votes, then the longest.
     def score(t):
         keys = t[3]
         return (("seats" in keys) + ("votes" in keys), len(t[1]))
-    i, rows, totals, keys = max(tabs, key=score)
-    return rows, totals
+
+    def usable(rows):
+        return any(num(r.get(k)) is not None
+                   for r in rows for k in ("seats", "votes", "share"))
+
+    words = PRES_HEAD if prefer == "pres" else LEG_HEAD if prefer and prefer.startswith("leg") else None
+
+    def head_ok_early(i):
+        return words is None or _head_word(lines, i) in words
+
+    if prefer == "leg-tiered":
+        # Pakistan's modern tables are headed "Party | Votes | % | Seats" over
+        # "General | Women | Minority | Total", so a flat reading takes the
+        # general seats and drops the 70 reserved ones that are shared out in
+        # proportion to them. PTI held 151 of 342 seats in 2018, not 118, and
+        # with the reserved bench missing the proportionality index refused to
+        # score any election after 2002.
+        early = find_tiered(lines, head_ok_early)
+        if early:
+            return early, {}
+
+    def head_ok(i):
+        return words is None or _head_word(lines, i) in words
+
+    def pick(tabs):
+        tabs = [t for t in tabs if head_ok(t[0]) and usable(t[1])]
+        if not tabs:
+            return None
+        # A series that asked for one of the two tables a general-election
+        # article carries takes the FIRST qualifying one, not the longest: the
+        # chamber an article leads with is the one it treats as the headline,
+        # which is how Colombia's congressional pages stay on the Senate across
+        # seventy years. Where no preference applies, the old rule stands.
+        if words is not None:
+            full = [t for t in tabs if {"votes", "seats"} <= t[3]]
+            # "leg-small" picks the smaller chamber where an article prints
+            # both. Colombia's congressional pages carry the Senate and the
+            # Chamber of Representatives, usually in that order but not in 2006
+            # or 2026, and the Senate is always the smaller house: 102 or 108
+            # seats against 158 to 210. Taking the first table put one row of a
+            # ninety-year Senate series on the wrong chamber.
+            if prefer == "pres" and len(tabs) > 1:
+                # A presidential article can carry party primaries in the same
+                # shape as the result: Chile 1993 prints two of them before the
+                # real six-candidate table. The election is the one with the
+                # full field, so take the longest that reports both votes and
+                # shares rather than the first that appears.
+                rich = [t for t in tabs if {"votes", "share"} <= t[3]] or tabs
+                return max(rich, key=lambda t: len(t[1]))
+            if prefer == "leg-small" and len(full) > 1:
+                def seat_sum(t):
+                    return sum(num(r.get("seats")) or 0 for r in t[1])
+                return min(full, key=seat_sum)
+            return (full or tabs)[0]
+        return max(tabs, key=score)
+
+    # A series with a stated preference reads the single-row tables too: Iran's
+    # 1975 Majlis table has exactly one party in it (that was the point of the
+    # Rastakhiz Party) and being skipped for having one row handed the hub the
+    # Senate table printed underneath it.
+    tabs = find_tables(lines, min_rows=1 if words is not None else 2)
+    best = pick(tabs)
+    # A plain single-tier table that names both votes and seats is the article's
+    # own summary and always beats a stacked one, which reports a single tier.
+    # Where it does not exist, a stacked header is read positionally: Hungary's
+    # 2010 summary table headed "Party | Proportional | ... | Seats" otherwise
+    # yields Fidesz on 2,732,965 seats, and 2026's list-quotient table yields
+    # Tisza on 45 rather than 141.
+    if best and {"votes", "seats"} <= best[3]:
+        return best[1], best[2]
+    tiered = find_tiered(lines, head_ok)
+    if tiered:
+        return tiered, (best[2] if best else {})
+    if best:
+        return best[1], best[2]
+    if prefer == "pres":
+        # After the two-round reader, never before it: an article can also carry
+        # a party primary in this exact shape, and Colombia's 2018 page does.
+        cp = candidate_party_table(lines)
+        if cp:
+            return cp, {}
+    one = pick(find_tables(lines, min_rows=1))
+    if one:
+        return one[1], one[2]
+    if prefer != "leg":
+        pleb = plebiscite_table(lines)
+        if pleb:
+            return pleb, {}
+    if prefer == "pres":
+        # Never fall back to the infobox for a presidential series: the box on a
+        # general-election page describes the parties, not the candidates.
+        return None, {}
+    return infobox_parties(lines), {}
 
 
 def to_party(r):
@@ -271,38 +440,66 @@ def turnout_from_totals(totals):
     return None
 
 
-def build(path, want, kind_of):
-    """want(title) -> True to include. kind_of(title) -> 'leg' | 'pres'."""
+def build(path, want, kind_of, prefer=None):
+    """want(title) -> True to include. kind_of(title) -> 'leg' | 'pres'.
+
+    prefer picks between the two results tables a general-election article
+    carries: "pres" takes the candidate-headed one, "leg" the party-headed one.
+    """
     out = []
     seen = set()
+    seen_titles = set()
     for title, lines in articles(path):
         if not title or not want(title):
             continue
+        # Colombia's dump carries two articles twice (the 1970 general election
+        # and the 1974 presidential), which without this became 1970b and 1974b.
         year, month = title_bits(title)
         if year is None:
             continue
         ib = infobox(lines)
-        rows, totals = best_table(lines)
+        date = ib["date"] or lead_date(lines) or ib["dateLoose"] or str(year)
+        # Colombia's dump carries two articles twice (the 1970 general election
+        # and the 1974 presidential). The date is part of the key because a
+        # rebuilt title cannot tell Sweden's two 1887 elections apart, and they
+        # are two different elections, not one article printed twice.
+        if (title, date) in seen_titles:
+            continue
+        seen_titles.add((title, date))
+        rows, totals = best_table(lines, prefer)
         parties = [to_party(r) for r in rows] if rows else []
         parties = [p for p in parties
                    if p["name"] and len(p["name"]) < 70
                    and (p["seats"] is not None or p["votes"] is not None or p["share"] is not None)]
         turnout = ib["turnout"] if ib["turnout"] is not None else turnout_from_totals(totals)
+        # The table's own Total row. Colombia's infobox gives the size of the
+        # Chamber while the table beneath it is the Senate, so a hub can ask for
+        # the house the table actually describes.
+        table_seats = None
+        for cell in reversed(totals.get("total") or []):
+            v = num(cell)
+            if v is not None and 1 < v < 5000 and float(v).is_integer():
+                table_seats = int(v)
+                break
         total_seats = ib["totalSeats"]
+        seat_total_source = "infobox" if total_seats is not None else None
         if total_seats is None and parties and all(p["seats"] is not None for p in parties):
             s = sum(p["seats"] for p in parties)
             total_seats = s if s > 1 else None
-        eid = ("%s-%s" % (year, month.lower())) if month else str(year)
-        if eid in seen:
-            eid = eid + "b"
-        seen.add(eid)
+            seat_total_source = "sum" if total_seats is not None else None
+        if month is None:
+            m = re.search(r"\b(%s)\b" % "|".join(MONTHS), date)
+            month = m.group(1) if m else None
         out.append({
-            "id": eid,
-            "label": ("%s %s" % (month, year)) if month else str(year),
+            "id": None,
+            "label": None,
+            "_month": month,
             "year": year,
-            "date": ib["date"] or str(year),
+            "date": date,
             "kind": kind_of(title),
             "totalSeats": total_seats,
+            "tableSeats": table_seats,
+            "seatTotalSource": seat_total_source,
             "majoritySeats": ib["majoritySeats"],
             "turnout": turnout,
             "parties": parties,
@@ -313,5 +510,23 @@ def build(path, want, kind_of):
             "caveat": None,
             "sourceTitle": title,
         })
+    # Ids are assigned in a second pass, because whether a year needs its month
+    # is a fact about the whole series. Sweden went to the polls twice in 1887
+    # and Greece twice in 2023; a year that happened once stays a bare year.
+    counts = {}
+    for e in out:
+        counts[e["year"]] = counts.get(e["year"], 0) + 1
+    seen = set()
+    for e in out:
+        month = e.pop("_month")
+        if counts[e["year"]] > 1 and month:
+            eid = "%s-%s" % (e["year"], month.lower())
+            label = "%s %s" % (month, e["year"])
+        else:
+            eid, label = str(e["year"]), str(e["year"])
+        while eid in seen:
+            eid += "b"
+        seen.add(eid)
+        e["id"], e["label"] = eid, label
     out.sort(key=lambda e: (e["year"], e["id"]))
     return out

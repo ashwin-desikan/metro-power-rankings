@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-07",
-    headline: "Elections rebuilt, squads priced, owners updated",
+    headline: "Eight new election hubs, heartbreak rebuilt, squads priced",
     items: [
-      "The Elections hub has a tab row, an as-of stamp and honest date badges on every countdown, plus a calendar feed you can subscribe to for every officially set election date, sitewide or per country.",
-      "The all-hubs directory filters by system of government, electoral family, regime and voting year, switches to a compact table, exports every contest as CSV, and any polity can be followed from its hub into your page.",
-      "Football club pages now chart what the squad was worth month by month since 2012, and a new board sets each club's squad value against how far it beat expectation in the same season.",
-      "The owners board catches a record summer: the Angels join the watchlist on the Kroenke deal, West Ham confirms Kretinsky as its largest shareholder, and Columbus Crew leaves the list.",
+      "Eight more election hubs, Sweden first on the countdown at six days, a sortable ranked directory of all 49, honest date badges, and a calendar feed you can subscribe to for every officially set election date.",
+      "A women's international basketball hub: every World Cup final four since 1953, every Olympic podium since 1976, the FIBA women's ranking and a page per nation, with the current World Cup tracked to its final.",
+      "Football club pages chart what each squad was worth month by month since 2012, year and league hubs gain against-expectation and value columns, and the continental tables on the 2026-27 hub show the full record again.",
+      "The Heartbreak Index now seats 318 national teams beside the clubs, one row per sport, weighs how big a club is today, and stops counting second place behind a dynasty as a lost race.",
     ],
   },
   {

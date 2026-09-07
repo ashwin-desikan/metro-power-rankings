@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllMetros } from "@/lib/data";
+import { ELECTION_HUBS } from "@/lib/electionHubsMeta";
 import { getLiveBadgeSlugs } from "@/lib/badges";
 import { getAllCountrySlugs } from "@/lib/countries";
 import { getAllCompSlugs } from "@/lib/championsHistory";
@@ -348,8 +349,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
+  // Elections hub. Landing page + the fixed sub-pages, then one entry per
+  // hub in ELECTION_HUBS at its own href. Mirrors the countryEntries/
+  // franchiseEntries shape: a hub family is one map over its metadata table,
+  // never a hand-typed list that drifts from it. Detail pages (the per-year
+  // election results under each hub) are not enumerated here, the same way
+  // matchup-style leaf pages are handled per family rather than by default.
+  const electionSubpages = [
+    "/forecast", "/track-record", "/all", "/systems", "/under-fire", "/referendums",
+  ];
+  const electionEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/elections`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    ...electionSubpages.map((t) => ({
+      url: `${BASE_URL}/elections${t}`,
+      lastModified: stamp,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+    ...Object.values(ELECTION_HUBS).map((h) => ({
+      url: `${BASE_URL}${h.href}`,
+      lastModified: stamp,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
+
   return [
     ...staticEntries,
+    ...electionEntries,
     ...businessEntries,
     ...championsEntries,
     ...olympicsEntries,

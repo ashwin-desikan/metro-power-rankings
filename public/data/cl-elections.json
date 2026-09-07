@@ -1,0 +1,6344 @@
+{
+ "meta": {
+  "title": "Chilean Elections",
+  "sources": [
+   "Wikipedia: Chilean presidential and parliamentary election articles 1826-2025",
+   "Servicio Electoral de Chile figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "presEras": [
+  {
+   "key": "temprana",
+   "label": "The early republic",
+   "span": "1826–1851",
+   "blurb": "Congress chose the first two presidents outright; after that a college of electors did it, chosen parish by parish on a franchise limited to propertied literate men. Portales gave the republic a constitution in 1833 that let a president serve two five-year terms and effectively name his successor, and four presidents in a row did exactly that."
+  },
+  {
+   "key": "liberal",
+   "label": "The Conservative and Liberal republics",
+   "span": "1856–1886",
+   "blurb": "Thirty years of decennial presidencies, still decided by electors, in which the Liberals slowly prised the church out of the state and Chile fought and won the War of the Pacific. Two of the elections on this page had a single candidate and were settled before polling day."
+  },
+  {
+   "key": "parlamentaria",
+   "label": "The Parliamentary Republic",
+   "span": "1891–1920",
+   "blurb": "Balmaceda's quarrel with Congress ended in the civil war of 1891 and his suicide, and for the next thirty years Congress rather than the president ran the country: cabinets fell constantly and the presidency became an office of arbitration. The elections stayed indirect throughout."
+  },
+  {
+   "key": "presidencial",
+   "label": "The presidential republic",
+   "span": "1925–1970",
+   "blurb": "The 1925 constitution gave Chile its first direct presidential election and a strong executive to go with it. What followed was the most competitive stretch in Latin America: a Popular Front in 1938, a Christian Democratic reform government in 1964, and in 1970 Salvador Allende elected on 36.6% and confirmed by Congress, which chose between the top two whenever nobody won a majority."
+  },
+  {
+   "key": "dictadura",
+   "label": "The dictatorship",
+   "span": "1973–1988",
+   "blurb": "Allende was overthrown on 11 September 1973 and Chile held no competitive national election for sixteen years. The single entry here is the plebiscite of October 1988, held under the constitution the regime itself had written, offering one name and a yes or no answer. The No won with 56% and the regime accepted it."
+  },
+  {
+   "key": "transicion",
+   "label": "The return to democracy",
+   "span": "1989–2025",
+   "blurb": "Two rounds since 1989, and the Concertación held the presidency for twenty years before the alternation began in earnest. Voting became voluntary in 2012 and turnout collapsed to the forties; compulsory voting with automatic registration returned for 2025 and turnout went back above 85%. In December 2025 José Antonio Kast took 58.2% in the runoff."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "parlamentaria",
+   "label": "Congress in charge",
+   "span": "1909–1921",
+   "blurb": "During the Parliamentary Republic the Chamber of Deputies made and unmade ministries, and the elections that filled it were organised by the parties that already held the machinery. Turnout figures of the period cover a small registered electorate."
+  },
+  {
+   "key": "presidencial",
+   "label": "The presidential republic",
+   "span": "1925–1973",
+   "blurb": "Proportional representation from 1925, a Communist Party banned from 1948 to 1958, women voting in national elections from 1952, and a party system that settled into three blocs of roughly equal size. The last election of the period, in March 1973, gave Allende's coalition 43% and neither side a way out."
+  },
+  {
+   "key": "transicion",
+   "label": "The binomial system and after",
+   "span": "1989–2025",
+   "blurb": "The dictatorship left behind two-member districts that handed the second seat to the runner-up list unless the leader doubled its vote, an arrangement that froze the party system for twenty-four years. It was replaced in 2017 by proportional representation in larger districts, and the chamber has fragmented at every election since."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1826",
+   "label": "1826",
+   "year": 1826,
+   "kind": "presidential",
+   "date": "July 8, 1826",
+   "era": "temprana",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Agustín Eyzaguirre",
+     "party": null,
+     "r1Votes": 12,
+     "r1Share": 31.58,
+     "r2Votes": 22,
+     "r2Share": 57.89
+    },
+    {
+     "name": "Francisco Antonio Pinto",
+     "party": null,
+     "r1Votes": 8,
+     "r1Share": 21.05,
+     "r2Votes": 15,
+     "r2Share": 39.47
+    },
+    {
+     "name": "José Silvestre Lazo",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 15.79,
+     "r2Votes": 1,
+     "r2Share": 2.63
+    },
+    {
+     "name": "José Manuel Borgoño",
+     "party": null,
+     "r1Votes": 5,
+     "r1Share": 13.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Diego José Benavente",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 7.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Ruiz-Tagle",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 5.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enrique Campino",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 2.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Pio de Silva Cienfuegos",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 2.63,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Manuel Blanco Encalada",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Agustín Eyzaguirre won in the runoff with 57.89% against Francisco Antonio Pinto on 39.47%.",
+   "caveat": "The president was chosen by a college of electors picked parish by parish, on a franchise limited to propertied literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1827",
+   "label": "1827",
+   "year": 1827,
+   "kind": "presidential",
+   "date": "February 13, 1827",
+   "era": "temprana",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ramón Freire",
+     "party": "Pipiolos",
+     "r1Votes": 37,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ramón Freire",
+    "party": "Pipiolos"
+   },
+   "presAfter": {
+    "name": "Ramón Freire",
+    "party": "Pipiolos"
+   },
+   "knownAs": null,
+   "summary": "Ramón Freire won with 100.00%.",
+   "caveat": "The president was chosen by a college of electors picked parish by parish, on a franchise limited to propertied literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1829",
+   "label": "1829",
+   "year": 1829,
+   "kind": "presidential",
+   "date": "1829",
+   "era": "temprana",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Francisco Antonio Pinto",
+     "party": null,
+     "r1Votes": 118,
+     "r1Share": 29.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Ruiz-Tagle",
+     "party": null,
+     "r1Votes": 98,
+     "r1Share": 24.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Joaquín Prieto",
+     "party": null,
+     "r1Votes": 61,
+     "r1Share": 15.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquín Vicuña",
+     "party": null,
+     "r1Votes": 48,
+     "r1Share": 11.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Gregorio Argomedo",
+     "party": null,
+     "r1Votes": 33,
+     "r1Share": 8.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan de Dios Rivera",
+     "party": null,
+     "r1Votes": 11,
+     "r1Share": 2.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Miguel Infante",
+     "party": null,
+     "r1Votes": 8,
+     "r1Share": 1.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Diego José Benavente",
+     "party": null,
+     "r1Votes": 7,
+     "r1Share": 1.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria Solar",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 1.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": null,
+     "r1Votes": 16,
+     "r1Share": 3.94,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Francisco Antonio Pinto won with 29.06% against Francisco Ruiz-Tagle on 24.14%.",
+   "caveat": "The president was chosen by a college of electors picked parish by parish, on a franchise limited to propertied literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1831",
+   "label": "1831",
+   "year": 1831,
+   "kind": "presidential",
+   "date": "5 April 1831",
+   "era": "temprana",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Joaquín Prieto",
+     "party": null,
+     "r1Votes": 207,
+     "r1Share": 50.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Diego Portales",
+     "party": null,
+     "r1Votes": 186,
+     "r1Share": 44.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Ruiz-Tagle",
+     "party": null,
+     "r1Votes": 18,
+     "r1Share": 4.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ambrosio Aldunate",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Errázuriz Aldunate",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Joaquín Prieto won with 50.00% against Diego Portales on 44.93%.",
+   "caveat": "The president was chosen by a college of electors picked parish by parish, on a franchise limited to propertied literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1836",
+   "label": "1836",
+   "year": 1836,
+   "kind": "presidential",
+   "date": "March 31, 1836",
+   "era": "temprana",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Joaquín Prieto",
+     "party": null,
+     "r1Votes": 143,
+     "r1Share": 91.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Miguel Infante",
+     "party": null,
+     "r1Votes": 11,
+     "r1Share": 7.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Manuel Borgoño",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 1.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Diego Portales",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.64,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Joaquín Prieto",
+    "party": "Conservative"
+   },
+   "presAfter": {
+    "name": "Joaquín Prieto",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "Joaquín Prieto won with 91.08% against José Miguel Infante on 7.01%.",
+   "caveat": "The president was chosen by a college of electors picked parish by parish, on a franchise limited to propertied literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1841",
+   "label": "1841",
+   "year": 1841,
+   "kind": "presidential",
+   "date": "June and July 1841",
+   "era": "temprana",
+   "turnout": 97.62,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Bulnes",
+     "party": "Independent (Conservative)",
+     "r1Votes": 154,
+     "r1Share": 93.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Antonio Pinto",
+     "party": "Independent (Liberal)",
+     "r1Votes": 9,
+     "r1Share": 5.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bernardo O'Higgins",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.61,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Manuel Bulnes won with 93.90% against Francisco Antonio Pinto on 5.49%. Turnout 97.6%.",
+   "caveat": "The president was chosen by a college of electors picked parish by parish, on a franchise limited to propertied literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1846",
+   "label": "1846",
+   "year": 1846,
+   "kind": "presidential",
+   "date": "1846",
+   "era": "temprana",
+   "turnout": 98.17,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Bulnes",
+     "party": "Independent (Conservative)",
+     "r1Votes": 161,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Manuel Bulnes won with 100.00%. Turnout 98.2%.",
+   "caveat": "The president was chosen by a college of electors picked parish by parish, on a franchise limited to propertied literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1851",
+   "label": "1851",
+   "year": 1851,
+   "kind": "presidential",
+   "date": "July 1851",
+   "era": "temprana",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Montt",
+     "party": "Independent (Conservative)",
+     "r1Votes": 132,
+     "r1Share": 81.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José María de la Cruz",
+     "party": "Liberal Party",
+     "r1Votes": 29,
+     "r1Share": 17.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Errázuriz",
+     "party": "Independent (Conservative)",
+     "r1Votes": 1,
+     "r1Share": 0.62,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Manuel Montt won with 81.48% against José María de la Cruz on 17.90%.",
+   "caveat": "The president was chosen by a college of electors picked parish by parish, on a franchise limited to propertied literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1856",
+   "label": "1856",
+   "year": 1856,
+   "kind": "presidential",
+   "date": "25 July 1856",
+   "era": "liberal",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Montt",
+     "party": "Independent (Conservative)",
+     "r1Votes": 207,
+     "r1Share": 99.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Santiago Aldunate",
+     "party": "Conservative Party",
+     "r1Votes": 2,
+     "r1Share": 0.96,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Manuel Montt won with 99.04% against José Santiago Aldunate on 0.96%.",
+   "caveat": "Still an indirect election through a college of electors, and two of these contests had a single candidate.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1861",
+   "label": "1861",
+   "year": 1861,
+   "kind": "presidential",
+   "date": "1861",
+   "era": "liberal",
+   "turnout": 99.07,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Joaquín Pérez",
+     "party": "Conservative–Liberal–National",
+     "r1Votes": 214,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "José Joaquín Pérez won with 100.00%. Turnout 99.1%.",
+   "caveat": "Still an indirect election through a college of electors, and two of these contests had a single candidate.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1866",
+   "label": "1866",
+   "year": 1866,
+   "kind": "presidential",
+   "date": "1866",
+   "era": "liberal",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Joaquín Pérez",
+     "party": "Liberal–Conservative",
+     "r1Votes": 191,
+     "r1Share": 88.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Bulnes",
+     "party": "Conservative Party",
+     "r1Votes": 15,
+     "r1Share": 6.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro León",
+     "party": "Radical Party",
+     "r1Votes": 11,
+     "r1Share": 5.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "José Joaquín Pérez won with 88.02% against Manuel Bulnes on 6.91%.",
+   "caveat": "Still an indirect election through a college of electors, and two of these contests had a single candidate.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1871",
+   "label": "1871",
+   "year": 1871,
+   "kind": "presidential",
+   "date": "1871",
+   "era": "liberal",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Federico Errázuriz Zañartu",
+     "party": "Liberal–Conservative",
+     "r1Votes": 226,
+     "r1Share": 79.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Tomás de Urmeneta",
+     "party": "National–Radical–Liberal",
+     "r1Votes": 58,
+     "r1Share": 20.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Covarrubias",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.35,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Federico Errázuriz Zañartu won with 79.30% against José Tomás de Urmeneta on 20.35%.",
+   "caveat": "Still an indirect election through a college of electors, and two of these contests had a single candidate.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1876",
+   "label": "1876",
+   "year": 1876,
+   "kind": "presidential",
+   "date": "1876",
+   "era": "liberal",
+   "turnout": 42.48,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Aníbal Pinto",
+     "party": "National–Liberal",
+     "r1Votes": 45114,
+     "r1Share": 100.0,
+     "r2Votes": 293,
+     "r2Share": 100.0
+    }
+   ],
+   "presBefore": {
+    "name": "Federico Errázuriz Zañartu",
+    "party": "Liberal–Conservative"
+   },
+   "presAfter": {
+    "name": "Aníbal Pinto",
+    "party": "National–Liberal"
+   },
+   "knownAs": null,
+   "summary": "Aníbal Pinto won in the runoff with 100.00%. Turnout 42.5%.",
+   "caveat": "Still an indirect election through a college of electors, and two of these contests had a single candidate.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1881",
+   "label": "1881",
+   "year": 1881,
+   "kind": "presidential",
+   "date": "1881",
+   "era": "liberal",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Domingo Santa María",
+     "party": "Liberal Alliance (PL–PR)",
+     "r1Votes": 255,
+     "r1Share": 95.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Baquedano",
+     "party": "Conservative–Liberal",
+     "r1Votes": 12,
+     "r1Share": 4.49,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Aníbal Pinto",
+    "party": "National–Liberal"
+   },
+   "presAfter": {
+    "name": "Domingo Santa María",
+    "party": "Liberal–Radical"
+   },
+   "knownAs": null,
+   "summary": "Domingo Santa María won with 95.51% against Manuel Baquedano on 4.49%.",
+   "caveat": "Still an indirect election through a college of electors, and two of these contests had a single candidate.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1886",
+   "label": "1886",
+   "year": 1886,
+   "kind": "presidential",
+   "date": "1886",
+   "era": "liberal",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Manuel Balmaceda",
+     "party": "Liberal Party",
+     "r1Votes": 324,
+     "r1Share": 98.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Francisco Vergara",
+     "party": "Radical–National",
+     "r1Votes": 6,
+     "r1Share": 1.82,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Domingo Santa María",
+    "party": "Liberal Alliance (PL–PR)"
+   },
+   "presAfter": {
+    "name": "José Manuel Balmaceda",
+    "party": "Liberal Party"
+   },
+   "knownAs": null,
+   "summary": "José Manuel Balmaceda won with 98.18% against José Francisco Vergara on 1.82%.",
+   "caveat": "Still an indirect election through a college of electors, and two of these contests had a single candidate.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1891-july",
+   "label": "July 1891",
+   "year": 1891,
+   "kind": "presidential",
+   "date": "25 July 1891",
+   "era": "parlamentaria",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "TBD",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "Chile did not elect a president directly until 1925; every contest here was settled by a college of electors.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1891-october",
+   "label": "October 1891",
+   "year": 1891,
+   "kind": "presidential",
+   "date": "18 October 1891",
+   "era": "parlamentaria",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Jorge Montt",
+     "party": "Liberal–Radical–Conservative",
+     "r1Votes": 255,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Claudio Vicuña Guerrero",
+    "party": "Liberal Party"
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Jorge Montt won with 100.00%.",
+   "caveat": "Chile did not elect a president directly until 1925; every contest here was settled by a college of electors.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1896",
+   "label": "1896",
+   "year": 1896,
+   "kind": "presidential",
+   "date": "1896",
+   "era": "parlamentaria",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Federico Errázuriz Echaurren",
+     "party": "Coalition",
+     "r1Votes": 137,
+     "r1Share": 50.55,
+     "r2Votes": 62,
+     "r2Share": 50.82
+    },
+    {
+     "name": "Vicente Reyes",
+     "party": "Liberal Alliance",
+     "r1Votes": 134,
+     "r1Share": 49.45,
+     "r2Votes": 60,
+     "r2Share": 49.18
+    }
+   ],
+   "presBefore": {
+    "name": "Jorge Montt",
+    "party": "Liberal–Radical–Conservative"
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Federico Errázuriz Echaurren won in the runoff with 50.82% against Vicente Reyes on 49.18%.",
+   "caveat": "Chile did not elect a president directly until 1925; every contest here was settled by a college of electors.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1901",
+   "label": "1901",
+   "year": 1901,
+   "kind": "presidential",
+   "date": "25 June 1901",
+   "era": "parlamentaria",
+   "turnout": 95.7,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Germán Riesco",
+     "party": "Liberal Alliance",
+     "r1Votes": 184,
+     "r1Share": 68.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Montt",
+     "party": "Coalition",
+     "r1Votes": 83,
+     "r1Share": 31.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Aníbal Zañartu",
+    "party": "Liberal Party"
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Germán Riesco won with 68.91% against Pedro Montt on 31.09%. Turnout 95.7%.",
+   "caveat": "Chile did not elect a president directly until 1925; every contest here was settled by a college of electors.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1906",
+   "label": "1906",
+   "year": 1906,
+   "kind": "presidential",
+   "date": "25 June 1906",
+   "era": "parlamentaria",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Pedro Montt",
+     "party": "Liberal Alliance",
+     "r1Votes": 164,
+     "r1Share": 62.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Lazcano Echaurren",
+     "party": "Coalition",
+     "r1Votes": 97,
+     "r1Share": 37.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Zenón Torrealba",
+     "party": "Democrat Party",
+     "r1Votes": 1,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Germán Riesco",
+    "party": "Liberal Party"
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Pedro Montt won with 62.60% against Fernando Lazcano Echaurren on 37.02%.",
+   "caveat": "Chile did not elect a president directly until 1925; every contest here was settled by a college of electors.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1910",
+   "label": "1910",
+   "year": 1910,
+   "kind": "presidential",
+   "date": "15 October 1910",
+   "era": "parlamentaria",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ramón Barros Luco",
+     "party": "Liberal Alliance–Coalition",
+     "r1Votes": 268,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Emiliano Figueroa",
+    "party": "Liberal Democratic"
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Ramón Barros Luco won with 100.00%.",
+   "caveat": "Chile did not elect a president directly until 1925; every contest here was settled by a college of electors.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1915",
+   "label": "1915",
+   "year": 1915,
+   "kind": "presidential",
+   "date": "25 June 1915",
+   "era": "parlamentaria",
+   "turnout": 81.28,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juan Luis Sanfuentes",
+     "party": "Coalition",
+     "r1Votes": 174,
+     "r1Share": 50.14,
+     "r2Votes": 77,
+     "r2Share": 65.25
+    },
+    {
+     "name": "Javier Ángel Figueroa",
+     "party": "Liberal Alliance",
+     "r1Votes": 173,
+     "r1Share": 49.86,
+     "r2Votes": 41,
+     "r2Share": 34.75
+    }
+   ],
+   "presBefore": {
+    "name": "Ramón Barros Luco",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Juan Luis Sanfuentes",
+    "party": "Liberal Democratic"
+   },
+   "knownAs": null,
+   "summary": "Juan Luis Sanfuentes won in the runoff with 65.25% against Javier Ángel Figueroa on 34.75%. Turnout 81.3%.",
+   "caveat": "Chile did not elect a president directly until 1925; every contest here was settled by a college of electors.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "presidential",
+   "date": "June 25, 1920",
+   "era": "parlamentaria",
+   "turnout": 45.07,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Arturo Alessandri",
+     "party": null,
+     "r1Votes": 407,
+     "r1Share": 34.32,
+     "r2Votes": 801,
+     "r2Share": 65.66
+    },
+    {
+     "name": "Enrique Mac Iver",
+     "party": null,
+     "r1Votes": 294,
+     "r1Share": 24.79,
+     "r2Votes": 50,
+     "r2Share": 4.1
+    },
+    {
+     "name": "Artemio Gutiérrez Vidal",
+     "party": null,
+     "r1Votes": 277,
+     "r1Share": 23.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eliodoro Yáñez",
+     "party": null,
+     "r1Votes": 102,
+     "r1Share": 8.6,
+     "r2Votes": 261,
+     "r2Share": 21.39
+    },
+    {
+     "name": "José María Valderrama Lira",
+     "party": null,
+     "r1Votes": 42,
+     "r1Share": 3.54,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Emilio Bello Codesido",
+     "party": null,
+     "r1Votes": 34,
+     "r1Share": 2.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Armando Quezada Acharán",
+     "party": null,
+     "r1Votes": 30,
+     "r1Share": 2.53,
+     "r2Votes": 108,
+     "r2Share": 8.85
+    }
+   ],
+   "presBefore": {
+    "name": "Juan Luis Sanfuentes",
+    "party": "Liberal Democratic"
+   },
+   "presAfter": {
+    "name": "Arturo Alessandri",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Arturo Alessandri won in the runoff with 65.66% against Artemio Gutiérrez Vidal on 23.36%. Turnout 45.1%.",
+   "caveat": "Chile did not elect a president directly until 1925; every contest here was settled by a college of electors.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1925",
+   "label": "1925",
+   "year": 1925,
+   "kind": "presidential",
+   "date": "22 October 1925",
+   "era": "presidencial",
+   "turnout": 86.35,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Emiliano Figueroa",
+     "party": "Independent",
+     "r1Votes": 186187,
+     "r1Share": 71.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Santos Salas",
+     "party": "Social-Republican Union of the Wage Earners of Chile",
+     "r1Votes": 74091,
+     "r1Share": 28.47,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Luis Barros Borgoño (acting)",
+    "party": "Liberal Party"
+   },
+   "presAfter": {
+    "name": "Emiliano Figueroa",
+    "party": "Liberal Democratic"
+   },
+   "knownAs": null,
+   "summary": "Emiliano Figueroa won with 71.53% against José Santos Salas on 28.47%. Turnout 86.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "presidential",
+   "date": "22 May 1927",
+   "era": "presidencial",
+   "turnout": 70.39,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Ibáñez del Campo",
+     "party": "Independent",
+     "r1Votes": 223741,
+     "r1Share": 97.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Elías Lafertte",
+     "party": "Communist Party",
+     "r1Votes": 4627,
+     "r1Share": 2.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Ibáñez (acting)",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Carlos Ibáñez",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Carlos Ibáñez del Campo won with 97.97% against Elías Lafertte on 2.03%. Turnout 70.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "presidential",
+   "date": "4 October 1931",
+   "era": "presidencial",
+   "turnout": 73.47,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juan Esteban Montero",
+     "party": "Radical Party",
+     "r1Votes": 182177,
+     "r1Share": 63.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arturo Alessandri",
+     "party": "Liberal Party",
+     "r1Votes": 99075,
+     "r1Share": 34.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Elías Lafertte",
+     "party": "Communist Party",
+     "r1Votes": 2434,
+     "r1Share": 0.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Hidalgo",
+     "party": "Communist Left",
+     "r1Votes": 1226,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel Trucco (acting)",
+    "party": "Radical"
+   },
+   "presAfter": {
+    "name": "Juan Esteban Montero",
+    "party": "Radical"
+   },
+   "knownAs": null,
+   "summary": "Juan Esteban Montero won with 63.94% against Arturo Alessandri on 34.77%. Turnout 73.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1932",
+   "label": "1932",
+   "year": 1932,
+   "kind": "presidential",
+   "date": "30 October 1932",
+   "era": "presidencial",
+   "turnout": 74.4,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Arturo Alessandri",
+     "party": "Liberal Party",
+     "r1Votes": 189914,
+     "r1Share": 55.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marmaduke Grove",
+     "party": "New Public Action",
+     "r1Votes": 60856,
+     "r1Share": 17.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Héctor Rodríguez de la Sotta",
+     "party": "Conservative Party",
+     "r1Votes": 47207,
+     "r1Share": 13.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enrique Zañartu Prieto",
+     "party": "United Liberal Party",
+     "r1Votes": 42885,
+     "r1Share": 12.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Elías Lafertte",
+     "party": "Communist Party",
+     "r1Votes": 4128,
+     "r1Share": 1.2,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Abraham Oyanedel (acting)",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Arturo Alessandri",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Arturo Alessandri won with 55.05% against Marmaduke Grove on 17.64%. Turnout 74.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "presidential",
+   "date": "25 October 1938",
+   "era": "presidencial",
+   "turnout": 88.4,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Pedro Aguirre Cerda",
+     "party": "Radical Party",
+     "r1Votes": 222720,
+     "r1Share": 50.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gustavo Ross",
+     "party": "Liberal Party",
+     "r1Votes": 218609,
+     "r1Share": 49.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Ibáñez del Campo",
+     "party": "Popular Freedom Alliance",
+     "r1Votes": 112,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Arturo Alessandri",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Pedro Aguirre Cerda",
+    "party": "Radical"
+   },
+   "knownAs": null,
+   "summary": "Pedro Aguirre Cerda won with 50.45% against Gustavo Ross on 49.52%. Turnout 88.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1942",
+   "label": "1942",
+   "year": 1942,
+   "kind": "presidential",
+   "date": "1 February 1942",
+   "era": "presidencial",
+   "turnout": 80.23,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juan Antonio Ríos",
+     "party": "Radical Party",
+     "r1Votes": 260034,
+     "r1Share": 55.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Ibáñez del Campo",
+     "party": "Independent",
+     "r1Votes": 204635,
+     "r1Share": 44.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "124",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jerónimo Méndez (acting)",
+    "party": "Radical"
+   },
+   "presAfter": {
+    "name": "Juan Antonio Ríos",
+    "party": "Radical"
+   },
+   "knownAs": null,
+   "summary": "Juan Antonio Ríos won with 55.95% against Carlos Ibáñez del Campo on 44.03%. Turnout 80.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "presidential",
+   "date": "4 September 1946",
+   "era": "presidencial",
+   "turnout": 75.93,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Gabriel González Videla",
+     "party": "Radical Party",
+     "r1Votes": 192207,
+     "r1Share": 40.23,
+     "r2Votes": 138,
+     "r2Share": 75.0
+    },
+    {
+     "name": "Eduardo Cruz-Coke",
+     "party": "Conservative Party",
+     "r1Votes": 142441,
+     "r1Share": 29.81,
+     "r2Votes": 46,
+     "r2Share": 25.0
+    },
+    {
+     "name": "Fernando Alessandri",
+     "party": "Liberal Party",
+     "r1Votes": 131023,
+     "r1Share": 27.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bernardo Ibáñez",
+     "party": "Socialist Party",
+     "r1Votes": 12114,
+     "r1Share": 2.54,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alfredo Duhalde (acting)",
+    "party": "Radical"
+   },
+   "presAfter": {
+    "name": "Gabriel González Videla",
+    "party": "Radical"
+   },
+   "knownAs": null,
+   "summary": "Gabriel González Videla won in the runoff with 75.00% against Fernando Alessandri on 27.42%. Turnout 75.9%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "presidential",
+   "date": "4 September 1952",
+   "era": "presidencial",
+   "turnout": 86.61,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Ibáñez del Campo",
+     "party": "Independent",
+     "r1Votes": 446439,
+     "r1Share": 46.79,
+     "r2Votes": 132,
+     "r2Share": 91.67
+    },
+    {
+     "name": "Arturo Matte Larraín",
+     "party": "Liberal Party",
+     "r1Votes": 265357,
+     "r1Share": 27.81,
+     "r2Votes": 12,
+     "r2Share": 8.33
+    },
+    {
+     "name": "Pedro Enrique Alfonso Barrios",
+     "party": "Radical Party",
+     "r1Votes": 190360,
+     "r1Share": 19.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Salvador Allende",
+     "party": "Socialist Party",
+     "r1Votes": 51975,
+     "r1Share": 5.45,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gabriel González Videla",
+    "party": "Radical"
+   },
+   "presAfter": {
+    "name": "Carlos Ibáñez del Campo",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Carlos Ibáñez del Campo won in the runoff with 91.67% against Pedro Enrique Alfonso Barrios on 19.95%. Turnout 86.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "presidential",
+   "date": "4 September 1958",
+   "era": "presidencial",
+   "turnout": 83.5,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Jorge Alessandri",
+     "party": "Independent (Liberal–Conservative)",
+     "r1Votes": 389909,
+     "r1Share": 31.56,
+     "r2Votes": 147,
+     "r2Share": 84.97
+    },
+    {
+     "name": "Salvador Allende",
+     "party": "Socialist Party",
+     "r1Votes": 356493,
+     "r1Share": 28.85,
+     "r2Votes": 26,
+     "r2Share": 15.03
+    },
+    {
+     "name": "Eduardo Frei Montalva",
+     "party": "Christian Democratic Party",
+     "r1Votes": 255769,
+     "r1Share": 20.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Bossay",
+     "party": "Radical Party",
+     "r1Votes": 192077,
+     "r1Share": 15.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Zamorano",
+     "party": "Independent",
+     "r1Votes": 41304,
+     "r1Share": 3.34,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Ibáñez del Campo",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Jorge Alessandri",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Jorge Alessandri won in the runoff with 84.97% against Eduardo Frei Montalva on 20.70%. Turnout 83.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "presidential",
+   "date": "4 September 1964",
+   "era": "presidencial",
+   "turnout": 86.81,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Eduardo Frei Montalva",
+     "party": "Christian Democratic Party",
+     "r1Votes": 1409012,
+     "r1Share": 56.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Salvador Allende",
+     "party": "Socialist Party",
+     "r1Votes": 977902,
+     "r1Share": 38.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Julio Durán",
+     "party": "Radical Party",
+     "r1Votes": 125233,
+     "r1Share": 4.99,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jorge Alessandri",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Eduardo Frei Montalva",
+    "party": "PDC"
+   },
+   "knownAs": null,
+   "summary": "Eduardo Frei Montalva won with 56.09% against Salvador Allende on 38.93%. Turnout 86.8%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "presidential",
+   "date": "4 September 1970",
+   "era": "presidencial",
+   "turnout": 83.47,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Salvador Allende",
+     "party": "Popular Unity",
+     "r1Votes": 1070334,
+     "r1Share": 36.61,
+     "r2Votes": 153,
+     "r2Share": 81.38
+    },
+    {
+     "name": "Jorge Alessandri",
+     "party": "Independent (National Party)",
+     "r1Votes": 1031159,
+     "r1Share": 35.27,
+     "r2Votes": 35,
+     "r2Share": 18.62
+    },
+    {
+     "name": "Radomiro Tomic",
+     "party": "Christian Democratic Party",
+     "r1Votes": 821801,
+     "r1Share": 28.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Eduardo Frei Montalva",
+    "party": "PDC"
+   },
+   "presAfter": {
+    "name": "Salvador Allende",
+    "party": "Socialist"
+   },
+   "knownAs": null,
+   "summary": "Salvador Allende won in the runoff with 81.38% against Radomiro Tomic on 28.11%. Turnout 83.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "presidential",
+   "date": "5 October 1988",
+   "era": "dictadura",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Yes",
+     "party": null,
+     "r1Votes": 3119110,
+     "r1Share": 44.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "No",
+     "party": null,
+     "r1Votes": 3967579,
+     "r1Share": 55.99,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "No won with 55.99% against Yes on 44.01%.",
+   "caveat": "A plebiscite held under the constitution the military government had written, offering one name and a yes or no answer. The No won with 56% and the regime accepted the result.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "presidential",
+   "date": "14 December 1989",
+   "era": "transicion",
+   "turnout": 94.72,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Patricio Aylwin",
+     "party": "Concertación (PDC)",
+     "r1Votes": 3850571,
+     "r1Share": 55.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hernán Büchi",
+     "party": "Democracy and Progress (Ind.)",
+     "r1Votes": 2052116,
+     "r1Share": 29.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Javier Errázuriz",
+     "party": "Independent",
+     "r1Votes": 1077172,
+     "r1Share": 15.43,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Augusto Pinochet",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Patricio Aylwin",
+    "party": "PDC"
+   },
+   "knownAs": null,
+   "summary": "Patricio Aylwin won with 55.17% against Hernán Büchi on 29.40%. Turnout 94.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "presidential",
+   "date": "11 December 1993 to elect the President",
+   "era": "transicion",
+   "turnout": 91.23,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Eduardo Frei Ruiz-Tagle",
+     "party": "Concertación (PDC)",
+     "r1Votes": 4040497,
+     "r1Share": 57.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arturo Alessandri Besa",
+     "party": "Union for the Progress of Chile (Ind.)",
+     "r1Votes": 1701324,
+     "r1Share": 24.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Piñera",
+     "party": "Independent",
+     "r1Votes": 430950,
+     "r1Share": 6.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manfred Max Neef",
+     "party": "Ecologist Movement (ECO)",
+     "r1Votes": 387102,
+     "r1Share": 5.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eugenio Pizarro",
+     "party": "Leftist Democratic Alternative (Ind.)",
+     "r1Votes": 327402,
+     "r1Share": 4.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cristián Reitze",
+     "party": "Humanist Green Alliance (AHV)",
+     "r1Votes": 81675,
+     "r1Share": 1.17,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Patricio Aylwin",
+    "party": "PDC"
+   },
+   "presAfter": {
+    "name": "Eduardo Frei Ruiz-Tagle",
+    "party": "PDC"
+   },
+   "knownAs": null,
+   "summary": "Eduardo Frei Ruiz-Tagle won with 57.98% against Arturo Alessandri Besa on 24.41%. Turnout 91.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "presidential",
+   "date": "12 December 1999",
+   "era": "transicion",
+   "turnout": 89.95,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ricardo Lagos",
+     "party": "Concertación (PPD)",
+     "r1Votes": 3383339,
+     "r1Share": 47.96,
+     "r2Votes": 3683158,
+     "r2Share": 51.31
+    },
+    {
+     "name": "Joaquín Lavín",
+     "party": "Alliance for Chile (UDI)",
+     "r1Votes": 3352199,
+     "r1Share": 47.51,
+     "r2Votes": 3495569,
+     "r2Share": 48.69
+    },
+    {
+     "name": "Gladys Marín",
+     "party": "The Left (PCCh)",
+     "r1Votes": 225224,
+     "r1Share": 3.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tomás Hirsch",
+     "party": "Humanist Green Alliance (PH)",
+     "r1Votes": 36235,
+     "r1Share": 0.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sara Larraín",
+     "party": "Independent",
+     "r1Votes": 31319,
+     "r1Share": 0.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arturo Frei Bolívar",
+     "party": "Independent",
+     "r1Votes": 26812,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Eduardo Frei Ruiz-Tagle",
+    "party": "PDC"
+   },
+   "presAfter": {
+    "name": "Ricardo Lagos",
+    "party": "PPD"
+   },
+   "knownAs": null,
+   "summary": "Ricardo Lagos won in the runoff with 51.31% against Joaquín Lavín on 48.69%. Turnout 90.0%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "presidential",
+   "date": "11 December 2005",
+   "era": "transicion",
+   "turnout": 87.67,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Michelle Bachelet",
+     "party": "Concertación (PS)",
+     "r1Votes": 3190691,
+     "r1Share": 45.96,
+     "r2Votes": 3723019,
+     "r2Share": 53.5
+    },
+    {
+     "name": "Sebastián Piñera",
+     "party": "National Renewal",
+     "r1Votes": 1763694,
+     "r1Share": 25.41,
+     "r2Votes": 3236394,
+     "r2Share": 46.5
+    },
+    {
+     "name": "Joaquín Lavín",
+     "party": "Independent Democratic Union",
+     "r1Votes": 1612608,
+     "r1Share": 23.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tomás Hirsch",
+     "party": "Juntos Podemos Más (PH)",
+     "r1Votes": 375048,
+     "r1Share": 5.4,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ricardo Lagos",
+    "party": "For Democracy"
+   },
+   "presAfter": {
+    "name": "Michelle Bachelet",
+    "party": "Socialist"
+   },
+   "knownAs": null,
+   "summary": "Michelle Bachelet won in the runoff with 53.50% against Sebastián Piñera on 46.50%. Turnout 87.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "presidential",
+   "date": "Sunday 13 December 2009 to elect the president",
+   "era": "transicion",
+   "turnout": 87.68,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Sebastián Piñera",
+     "party": "Coalition for Change (RN)",
+     "r1Votes": 3074164,
+     "r1Share": 44.06,
+     "r2Votes": 3591182,
+     "r2Share": 51.61
+    },
+    {
+     "name": "Eduardo Frei Ruiz-Tagle",
+     "party": "Concertación (PDC)",
+     "r1Votes": 2065061,
+     "r1Share": 29.6,
+     "r2Votes": 3367790,
+     "r2Share": 48.39
+    },
+    {
+     "name": "Marco Enríquez-Ominami",
+     "party": "New Majority for Chile (Ind.)",
+     "r1Votes": 1405124,
+     "r1Share": 20.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Arrate",
+     "party": "Juntos Podemos Más (PCCh)",
+     "r1Votes": 433195,
+     "r1Share": 6.21,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Michelle Bachelet",
+    "party": "Socialist"
+   },
+   "presAfter": {
+    "name": "Sebastián Piñera",
+    "party": "National Renewal"
+   },
+   "knownAs": null,
+   "summary": "Sebastián Piñera won in the runoff with 51.61% against Eduardo Frei Ruiz-Tagle on 48.39%. Turnout 87.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "presidential",
+   "date": "17 November 2013 to elect the president",
+   "era": "transicion",
+   "turnout": 49.35,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Michelle Bachelet",
+     "party": "Nueva Mayoría",
+     "r1Votes": 3075839,
+     "r1Share": 46.7,
+     "r2Votes": 3470379,
+     "r2Share": 62.17
+    },
+    {
+     "name": "Evelyn Matthei",
+     "party": "Alliance",
+     "r1Votes": 1648481,
+     "r1Share": 25.03,
+     "r2Votes": 2111891,
+     "r2Share": 37.83
+    },
+    {
+     "name": "Marco Enríquez-Ominami",
+     "party": "If You Want It, Chile Changes",
+     "r1Votes": 723542,
+     "r1Share": 10.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marcel Claude",
+     "party": "Everyone to La Moneda",
+     "r1Votes": 185072,
+     "r1Share": 2.81,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Sebastián Piñera",
+    "party": "National Renewal"
+   },
+   "presAfter": {
+    "name": "Michelle Bachelet",
+    "party": "Socialist"
+   },
+   "knownAs": null,
+   "summary": "Michelle Bachelet won in the runoff with 62.17% against Evelyn Matthei on 37.83%. Turnout 49.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "presidential",
+   "date": "19 November 2017 to elect the president",
+   "era": "transicion",
+   "turnout": 46.72,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Sebastián Piñera",
+     "party": "Independent (Chile Vamos)",
+     "r1Votes": 2418540,
+     "r1Share": 36.64,
+     "r2Votes": 3796918,
+     "r2Share": 54.57
+    },
+    {
+     "name": "Alejandro Guillier",
+     "party": "Independent (The Force of the Majority)",
+     "r1Votes": 1498040,
+     "r1Share": 22.7,
+     "r2Votes": 3160628,
+     "r2Share": 45.43
+    },
+    {
+     "name": "Beatriz Sánchez",
+     "party": "Independent (Broad Front)",
+     "r1Votes": 1338037,
+     "r1Share": 20.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Antonio Kast",
+     "party": "Independent",
+     "r1Votes": 523375,
+     "r1Share": 7.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carolina Goic",
+     "party": "Christian Democratic Party",
+     "r1Votes": 387784,
+     "r1Share": 5.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marco Enríquez-Ominami",
+     "party": "Progressive Party",
+     "r1Votes": 376871,
+     "r1Share": 5.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Artés",
+     "party": "Patriotic Union",
+     "r1Votes": 33665,
+     "r1Share": 0.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Navarro",
+     "party": "País",
+     "r1Votes": 23968,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Michelle Bachelet",
+    "party": "Socialist"
+   },
+   "presAfter": {
+    "name": "Sebastián Piñera",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Sebastián Piñera won in the runoff with 54.57% against Alejandro Guillier on 45.43%. Turnout 46.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "presidential",
+   "date": "21 November 2021",
+   "era": "transicion",
+   "turnout": 47.33,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Antonio Kast",
+     "party": "Christian Social Front (PLR)",
+     "r1Votes": 1961779,
+     "r1Share": 27.91,
+     "r2Votes": 3650088,
+     "r2Share": 44.13
+    },
+    {
+     "name": "Gabriel Boric",
+     "party": "Apruebo Dignidad (CS)",
+     "r1Votes": 1815024,
+     "r1Share": 25.82,
+     "r2Votes": 4620890,
+     "r2Share": 55.87
+    },
+    {
+     "name": "Franco Parisi",
+     "party": "Party of the People",
+     "r1Votes": 900064,
+     "r1Share": 12.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sebastián Sichel",
+     "party": "Chile Podemos Más",
+     "r1Votes": 898635,
+     "r1Share": 12.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yasna Provoste",
+     "party": "New Social Pact (PDC)",
+     "r1Votes": 815563,
+     "r1Share": 11.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marco Enríquez-Ominami",
+     "party": "Progressive Party",
+     "r1Votes": 534383,
+     "r1Share": 7.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Artés",
+     "party": "Patriotic Union (PC-AP)",
+     "r1Votes": 102897,
+     "r1Share": 1.46,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Sebastián Piñera",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Gabriel Boric",
+    "party": "Social Convergence"
+   },
+   "knownAs": null,
+   "summary": "Gabriel Boric won in the runoff with 55.87% against José Antonio Kast on 44.13%. Turnout 47.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "presidential",
+   "date": "16 November 2025",
+   "era": "transicion",
+   "turnout": 85.42,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Jeannette Jara",
+     "party": "Communist Party (UpCh)",
+     "r1Votes": 3483490,
+     "r1Share": 26.85,
+     "r2Votes": 5222558,
+     "r2Share": 41.83
+    },
+    {
+     "name": "José Antonio Kast",
+     "party": "Republican Party (CpCh)",
+     "r1Votes": 3104458,
+     "r1Share": 23.93,
+     "r2Votes": 7263236,
+     "r2Share": 58.17
+    },
+    {
+     "name": "Franco Parisi",
+     "party": "Party of the People",
+     "r1Votes": 2557737,
+     "r1Share": 19.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Johannes Kaiser",
+     "party": "National Libertarian Party (CpCh)",
+     "r1Votes": 1808434,
+     "r1Share": 13.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Evelyn Matthei",
+     "party": "Independent Democratic Union (ChGU)",
+     "r1Votes": 1617720,
+     "r1Share": 12.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Harold Mayne-Nicholls",
+     "party": "Independent",
+     "r1Votes": 163105,
+     "r1Share": 1.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marco Enríquez-Ominami",
+     "party": "Independent",
+     "r1Votes": 154698,
+     "r1Share": 1.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Artés",
+     "party": "Independent (PC-AP)",
+     "r1Votes": 85392,
+     "r1Share": 0.66,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gabriel Boric",
+    "party": "FA–UpCh"
+   },
+   "presAfter": {
+    "name": "José Antonio Kast",
+    "party": "PRCh–CpCh"
+   },
+   "knownAs": null,
+   "summary": "José Antonio Kast won in the runoff with 58.17% against Jeannette Jara on 41.83%. Turnout 85.4%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1909",
+   "label": "1909",
+   "year": 1909,
+   "kind": "legislative",
+   "date": "7 March 1909",
+   "era": "parlamentaria",
+   "totalSeats": 95,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal (Alliance)",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal (Coalition)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Conservative finished first with 23 of 95 seats.",
+   "seatLeader": "Conservative",
+   "caveat": "Congress made and unmade ministries, and the parties that held the machinery organised the elections that filled it.",
+   "unfree": null
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "legislative",
+   "date": "3 March 1912",
+   "era": "parlamentaria",
+   "totalSeats": 118,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 213383,
+     "share": 18.3,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 190080,
+     "share": 16.3,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 152819,
+     "share": 13.1,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 247007,
+     "share": 21.18,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 215602,
+     "share": 18.49,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 69772,
+     "share": 5.98,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1008,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 76548,
+     "share": 6.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Conservative Party finished first with 25 of 118 seats on 21.2% of the vote.",
+   "seatLeader": "Conservative Party",
+   "caveat": "Congress made and unmade ministries, and the parties that held the machinery organised the elections that filled it.",
+   "unfree": null
+  },
+  {
+   "id": "1915",
+   "label": "1915",
+   "year": 1915,
+   "kind": "legislative",
+   "date": "7 March 1915",
+   "era": "parlamentaria",
+   "totalSeats": 116,
+   "majoritySeats": null,
+   "turnout": 81.3,
+   "parties": [
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 32264,
+     "share": 21.39,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 31755,
+     "share": 21.06,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 26022,
+     "share": 17.26,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 23428,
+     "share": 15.54,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 14530,
+     "share": 9.63,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 11882,
+     "share": 7.88,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 509,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 629,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9787,
+     "share": 6.49,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Conservative Party finished first with 28 of 116 seats on 21.4% of the vote. Turnout 81.3%.",
+   "seatLeader": "Conservative Party",
+   "caveat": "Congress made and unmade ministries, and the parties that held the machinery organised the elections that filled it.",
+   "unfree": null
+  },
+  {
+   "id": "1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "legislative",
+   "date": "3 March 1918",
+   "era": "parlamentaria",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 53.1,
+   "parties": [
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 44915,
+     "share": 24.74,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 35901,
+     "share": 19.77,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 35066,
+     "share": 19.31,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 23833,
+     "share": 13.13,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 19911,
+     "share": 10.97,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 11828,
+     "share": 6.52,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party (Aliancistas)",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 2751,
+     "share": 1.52,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 1758,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers' Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 548,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 153,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 4886,
+     "share": 2.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Radical Party led the poll with 24.7%. Turnout 53.1%.",
+   "seatLeader": null,
+   "caveat": "Congress made and unmade ministries, and the parties that held the machinery organised the elections that filled it.",
+   "unfree": null
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "kind": "legislative",
+   "date": "6 March 1921",
+   "era": "parlamentaria",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 60095,
+     "share": 30.58,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 37722,
+     "share": 19.19,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 24469,
+     "share": 12.45,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party (Aliancistas)",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 24104,
+     "share": 12.26,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party (Unionistas)",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 17378,
+     "share": 8.84,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 16750,
+     "share": 8.52,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 8361,
+     "share": 4.25,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party (Aliancistas)",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 3146,
+     "share": 1.6,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers' Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 2084,
+     "share": 1.06,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 344,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 2084,
+     "share": 1.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Radical Party led the poll with 30.6%.",
+   "seatLeader": null,
+   "caveat": "Congress made and unmade ministries, and the parties that held the machinery organised the elections that filled it.",
+   "unfree": null
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "kind": "legislative",
+   "date": "22 November 1925",
+   "era": "presidencial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 86.59,
+   "parties": [
+    {
+     "name": "6",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 2,
+     "share": 15.0,
+     "swing": null
+    },
+    {
+     "name": "0",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": -1,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "1",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 1,
+     "share": 8.0,
+     "swing": null
+    },
+    {
+     "name": "0",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 56001,
+     "share": 21.39,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 51902,
+     "share": 19.82,
+     "swing": null
+    },
+    {
+     "name": "45",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 8,
+     "share": 132.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "45 led the poll with 132.0%. Turnout 86.6%.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "kind": "legislative",
+   "date": "1929",
+   "era": "presidencial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A chilean election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "The article records that the elections were neither free nor fair: the parties agreed a single candidate for each district with the Ibanez government to keep socialists out.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "kind": "legislative",
+   "date": "30 October 1932",
+   "era": "presidencial",
+   "totalSeats": 142,
+   "majoritySeats": null,
+   "turnout": 74.4,
+   "parties": [
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -5,
+     "votes": 59413,
+     "share": 18.1,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 6,
+     "votes": 55260,
+     "share": 16.84,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -16,
+     "votes": 32645,
+     "share": 9.95,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 25221,
+     "share": 7.68,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -15,
+     "votes": 19819,
+     "share": 6.04,
+     "swing": null
+    },
+    {
+     "name": "United Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 18885,
+     "share": 5.75,
+     "swing": null
+    },
+    {
+     "name": "Socialist parties",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 18642,
+     "share": 5.68,
+     "swing": null
+    },
+    {
+     "name": "Socialist Radical Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 18174,
+     "share": 5.54,
+     "swing": null
+    },
+    {
+     "name": "Republican Social Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 7009,
+     "share": 2.14,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 6580,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberal Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 5643,
+     "share": 1.72,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3350,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "Social Democracy Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3029,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 1686,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19735,
+     "share": 6.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 33116,
+     "share": 10.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Abraham Oyanedel (acting)",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Arturo Alessandri",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Radical Party finished first with 34 of 142 seats on 18.1% of the vote. Turnout 74.4%. Arturo Alessandri replaced Abraham Oyanedel (acting).",
+   "seatLeader": "Radical Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "kind": "legislative",
+   "date": "7 March 1937",
+   "era": "presidencial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 38.68,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 46223,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 41473,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 26193,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 7543,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 7004,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6103,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5758,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Socialist Movement",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 3858,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 2187,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 2578,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 7 seats. Turnout 38.7%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1941",
+   "label": "1941",
+   "year": 1941,
+   "kind": "legislative",
+   "date": "2 March 1941",
+   "era": "presidencial",
+   "totalSeats": 20,
+   "majoritySeats": null,
+   "turnout": 41.43,
+   "parties": [
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 52540,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 49719,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 37965,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 37857,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 28449,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12924,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Laborista Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5877,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3855,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2339,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Falange",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1228,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Freedom Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 762,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Radical Party finished first with 6 of 20 seats. Turnout 41.4%.",
+   "seatLeader": "Radical Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "4 March 1945",
+   "era": "presidencial",
+   "totalSeats": 25,
+   "majoritySeats": null,
+   "turnout": 34.64,
+   "parties": [
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 48941,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 43819,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 35730,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 25708,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressive Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 16854,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 12625,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8105,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Falange",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7959,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2120,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Freedom Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1531,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 688,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4029,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Radical Party finished first with 7 of 25 seats. Turnout 34.6%.",
+   "seatLeader": "Radical Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "6 March 1949",
+   "era": "presidencial",
+   "totalSeats": 20,
+   "majoritySeats": null,
+   "turnout": 79.99,
+   "parties": [
+    {
+     "name": "Social Christian Conservative Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 55825,
+     "share": 22.28,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 42930,
+     "share": 17.13,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Labor Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 42230,
+     "share": 16.85,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 42125,
+     "share": 16.81,
+     "swing": null
+    },
+    {
+     "name": "Authentic Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15318,
+     "share": 6.11,
+     "swing": null
+    },
+    {
+     "name": "Radical Democracy",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 10445,
+     "share": 4.17,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9252,
+     "share": 3.69,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8772,
+     "share": 3.5,
+     "swing": null
+    },
+    {
+     "name": "Radical Doctrinaire Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8613,
+     "share": 3.44,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6818,
+     "share": 2.72,
+     "swing": null
+    },
+    {
+     "name": "Progressive Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6002,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "National Falange",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 2222,
+     "share": 0.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 6 of 20 seats on 17.1% of the vote. Turnout 80.0%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "legislative",
+   "date": "1 March 1953",
+   "era": "presidencial",
+   "totalSeats": 24,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 59270,
+     "share": 17.62,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Labor Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 55775,
+     "share": 16.58,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 42993,
+     "share": 12.78,
+     "swing": null
+    },
+    {
+     "name": "Traditionalist Conservative Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 41278,
+     "share": 12.27,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 31608,
+     "share": 9.4,
+     "swing": null
+    },
+    {
+     "name": "National Ibañista Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 29861,
+     "share": 8.88,
+     "swing": null
+    },
+    {
+     "name": "Social Christian Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19123,
+     "share": 5.69,
+     "swing": null
+    },
+    {
+     "name": "People's Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 17138,
+     "share": 5.1,
+     "swing": null
+    },
+    {
+     "name": "National Union of Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 11342,
+     "share": 3.37,
+     "swing": null
+    },
+    {
+     "name": "People's National Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 10556,
+     "share": 3.14,
+     "swing": null
+    },
+    {
+     "name": "Chilean Renovating Action",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6915,
+     "share": 2.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3840,
+     "share": 1.14,
+     "swing": null
+    },
+    {
+     "name": "National Falange",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3276,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Christian National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1931,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Radical Doctrinaire Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1230,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Laborista Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 205,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "National Movement of Pensioners",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 5 of 24 seats on 12.8% of the vote.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "3 March 1957",
+   "era": "presidencial",
+   "totalSeats": 147,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 18,
+     "votes": 188526,
+     "share": 21.47,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 7,
+     "votes": 134741,
+     "share": 15.34,
+     "swing": null
+    },
+    {
+     "name": "United Conservative Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 121223,
+     "share": 13.8,
+     "swing": null
+    },
+    {
+     "name": "National Falange",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 14,
+     "votes": 82710,
+     "share": 9.42,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Labor Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -16,
+     "votes": 68602,
+     "share": 7.81,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -15,
+     "votes": 55004,
+     "share": 6.26,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 4,
+     "votes": 44213,
+     "share": 5.03,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -2,
+     "votes": 38783,
+     "share": 4.42,
+     "swing": null
+    },
+    {
+     "name": "National Union of Independents",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 2,
+     "votes": 37975,
+     "share": 4.32,
+     "swing": null
+    },
+    {
+     "name": "Social Christian Conservative Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 33654,
+     "share": 3.83,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 17785,
+     "share": 2.03,
+     "swing": null
+    },
+    {
+     "name": "Republican Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 10393,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "Christian National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 9085,
+     "share": 1.03,
+     "swing": null
+    },
+    {
+     "name": "Laborista Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 8010,
+     "share": 0.91,
+     "swing": null
+    },
+    {
+     "name": "Radical Doctrinaire Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 5577,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Doctrinaire Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3302,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "People's National Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 1342,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 17304,
+     "share": 1.97,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Radical Party finished first with 36 of 147 seats on 21.5% of the vote.",
+   "seatLeader": "Radical Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "5 March 1961",
+   "era": "presidencial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 75.48,
+   "parties": [
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 146373,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 103688,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 90211,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 83456,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Conservative Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 79303,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 75123,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 17325,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Vanguard of the People",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 17299,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 2594,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Turnout 75.5%.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "7 March 1965",
+   "era": "presidencial",
+   "totalSeats": 147,
+   "majoritySeats": null,
+   "turnout": 80.57,
+   "parties": [
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 82,
+     "seatChange": 59,
+     "votes": 995187,
+     "share": 43.6,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -19,
+     "votes": 312912,
+     "share": 13.71,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 2,
+     "votes": 290635,
+     "share": 12.73,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 3,
+     "votes": 241593,
+     "share": 10.58,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -22,
+     "votes": 171979,
+     "share": 7.53,
+     "swing": null
+    },
+    {
+     "name": "United Conservative Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -14,
+     "votes": 121882,
+     "share": 5.34,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -9,
+     "votes": 74585,
+     "share": 3.27,
+     "swing": null
+    },
+    {
+     "name": "Labour Agrarian Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22552,
+     "share": 0.99,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21518,
+     "share": 0.94,
+     "swing": null
+    },
+    {
+     "name": "National Action",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15173,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "National Vanguard of the People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5637,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Popular Command",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3121,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5669,
+     "share": 0.25,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Christian Democratic Party finished first with 82 of 147 seats on 43.6% of the vote. Turnout 80.6%.",
+   "seatLeader": "Christian Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "2 March 1969",
+   "era": "presidencial",
+   "totalSeats": 150,
+   "majoritySeats": null,
+   "turnout": 74.15,
+   "parties": [
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": -26,
+     "votes": 716547,
+     "share": 31.05,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 24,
+     "votes": 480523,
+     "share": 20.82,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 4,
+     "votes": 383049,
+     "share": 16.6,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 4,
+     "votes": 313559,
+     "share": 13.59,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0,
+     "votes": 294448,
+     "share": 12.76,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51904,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 44818,
+     "share": 1.94,
+     "swing": null
+    },
+    {
+     "name": "Social Democrat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20560,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2104,
+     "share": 0.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Christian Democratic Party finished first with 56 of 150 seats on 31.1% of the vote. Turnout 74.2%.",
+   "seatLeader": "Christian Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "4 March 1973",
+   "era": "transicion",
+   "totalSeats": 150,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 417311,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical Democracy",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 47992,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical Left Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 34334,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CODE list votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 14432,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 380460,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 126961,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Unitary Action Movement",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 23191,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Unity list votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 17431,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A chilean election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "14 December 1989",
+   "era": "transicion",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 94.72,
+   "parties": [
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 2188329,
+     "share": 32.18,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 820393,
+     "share": 12.06,
+     "swing": null
+    },
+    {
+     "name": "Radical Party of Chile",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 147364,
+     "share": 2.17,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35534,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 523369,
+     "share": 7.7,
+     "swing": null
+    },
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 731678,
+     "share": 10.76,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 347445,
+     "share": 5.11,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 1290886,
+     "share": 18.98,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10129,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Chilean Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4254,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 199618,
+     "share": 2.94,
+     "swing": null
+    },
+    {
+     "name": "Radical Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28695,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "National Advance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 697,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 62015,
+     "share": 0.91,
+     "swing": null
+    },
+    {
+     "name": "Broad Party of Socialist Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 288397,
+     "share": 4.24,
+     "swing": null
+    },
+    {
+     "name": "Party of the South",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 45584,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43741,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32282,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Appointed senators",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Augusto Pinochet",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Patricio Aylwin",
+    "party": "PDC"
+   },
+   "knownAs": null,
+   "summary": "Christian Democratic Party finished first with 13 of 120 seats on 32.2% of the vote. Turnout 94.7%. Patricio Aylwin replaced Augusto Pinochet.",
+   "seatLeader": "Christian Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "11 December 1993 to elect the President",
+   "era": "transicion",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 91.23,
+   "parties": [
+    {
+     "name": "Concertación",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Chile",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 238405,
+     "share": 12.72,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 275727,
+     "share": 14.71,
+     "swing": null
+    },
+    {
+     "name": "Radical Party of Chile",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 119459,
+     "share": 6.37,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 27253,
+     "share": 1.45,
+     "swing": null
+    },
+    {
+     "name": "Union for the Progress of Chile",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 190283,
+     "share": 10.15,
+     "swing": null
+    },
+    {
+     "name": "Party of the South",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 52509,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Union of the Centrist Center",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 46455,
+     "share": 2.48,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 130587,
+     "share": 6.97,
+     "swing": null
+    },
+    {
+     "name": "Leftist Democratic Alternative",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Unitary Action Movement",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 3030,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 13278,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "The New Left",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 3740,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 41233,
+     "share": 2.2,
+     "swing": null
+    },
+    {
+     "name": "0",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 8,
+     "share": 8.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Patricio Aylwin",
+    "party": "PDC"
+   },
+   "pmAfter": {
+    "name": "Eduardo Frei Ruiz-Tagle",
+    "party": "PDC"
+   },
+   "knownAs": null,
+   "summary": "Party for Democracy led the poll with 14.7%. Turnout 91.2%. Eduardo Frei Ruiz-Tagle replaced Patricio Aylwin.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "11 December 1997",
+   "era": "transicion",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 88.06,
+   "parties": [
+    {
+     "name": "Concertación",
+     "leader": null,
+     "seats": 1238540,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Chile",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 617947,
+     "share": 14.58,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 182076,
+     "share": 4.29,
+     "swing": null
+    },
+    {
+     "name": "Social Democrat Radical Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 76091,
+     "share": 1.79,
+     "swing": null
+    },
+    {
+     "name": "Union for Chile",
+     "leader": null,
+     "seats": 728680,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 629394,
+     "share": 14.85,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 195118,
+     "share": 4.6,
+     "swing": null
+    },
+    {
+     "name": "The Left",
+     "leader": null,
+     "seats": 357825,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8406,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Chile 2000",
+     "leader": null,
+     "seats": 18023,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 93150,
+     "share": 2.2,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 94116,
+     "share": 2.22,
+     "swing": null
+    },
+    {
+     "name": "9",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 0,
+     "share": 9.0,
+     "swing": null
+    },
+    {
+     "name": "1",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 0,
+     "share": 1.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Concertación finished first with 1238540 seats. Turnout 88.1%.",
+   "seatLeader": "Concertación",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "kind": "legislative",
+   "date": "16 December 2001",
+   "era": "transicion",
+   "totalSeats": 120,
+   "majoritySeats": null,
+   "turnout": 87.11,
+   "parties": [
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -15,
+     "votes": 1162210,
+     "share": 18.92,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 4,
+     "votes": 782333,
+     "share": 12.73,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -1,
+     "votes": 614434,
+     "share": 10.0,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Radical Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2,
+     "votes": 248821,
+     "share": 4.05,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3,
+     "votes": 135191,
+     "share": 2.2,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 14,
+     "votes": 1547209,
+     "share": 25.18,
+     "swing": null
+    },
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -5,
+     "votes": 845865,
+     "share": 13.77,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 2,
+     "votes": 327121,
+     "share": 5.32,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 320688,
+     "share": 5.22,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 69692,
+     "share": 1.13,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3475,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 86964,
+     "share": 1.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independent Democratic Union finished first with 31 of 120 seats on 25.2% of the vote. Turnout 87.1%.",
+   "seatLeader": "Independent Democratic Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "11 December 2005",
+   "era": "transicion",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 87.67,
+   "parties": [
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -3,
+     "votes": 1370501,
+     "share": 20.76,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 1,
+     "votes": 1017956,
+     "share": 15.42,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Chile",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 5,
+     "votes": 663561,
+     "share": 10.05,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Radical Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1,
+     "votes": 233564,
+     "share": 3.54,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1,
+     "votes": 131625,
+     "share": 1.99,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 2,
+     "votes": 1475901,
+     "share": 22.36,
+     "swing": null
+    },
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 1,
+     "votes": 932422,
+     "share": 14.12,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -6,
+     "votes": 148063,
+     "share": 2.24,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Chile",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 339547,
+     "share": 5.14,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 102842,
+     "share": 1.56,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46229,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Regionalist Action Party of Chile",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 26698,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "National Alliance of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20191,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30324,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 62387,
+     "share": 0.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ricardo Lagos",
+    "party": "For Democracy"
+   },
+   "pmAfter": {
+    "name": "Michelle Bachelet",
+    "party": "Socialist"
+   },
+   "knownAs": null,
+   "summary": "Independent Democratic Union finished first with 33 of 120 seats on 22.4% of the vote. Turnout 87.7%. Michelle Bachelet replaced Ricardo Lagos.",
+   "seatLeader": "Independent Democratic Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "legislative",
+   "date": "Sunday 13 December 2009 to elect the president",
+   "era": "transicion",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 87.68,
+   "parties": [
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -1,
+     "votes": 940265,
+     "share": 14.21,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -3,
+     "votes": 839744,
+     "share": 12.69,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -4,
+     "votes": 653367,
+     "share": 9.88,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Radical Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -2,
+     "votes": 251456,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Chile",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3,
+     "votes": 133718,
+     "share": 2.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 115828,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 4,
+     "votes": 1525000,
+     "share": 23.05,
+     "swing": null
+    },
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -1,
+     "votes": 1178392,
+     "share": 17.81,
+     "swing": null
+    },
+    {
+     "name": "ChileFirst",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18021,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1,
+     "votes": 153261,
+     "share": 2.32,
+     "swing": null
+    },
+    {
+     "name": "Regionalist Independent Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 264466,
+     "share": 4.0,
+     "swing": null
+    },
+    {
+     "name": "Broad Social Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26440,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 65892,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 95177,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3815,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 203635,
+     "share": 3.08,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 147379,
+     "share": 2.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Michelle Bachelet",
+    "party": "Socialist"
+   },
+   "pmAfter": {
+    "name": "Sebastián Piñera",
+    "party": "National Renewal"
+   },
+   "knownAs": null,
+   "summary": "Independent Democratic Union finished first with 37 of 120 seats on 23.1% of the vote. Turnout 87.7%. Sebastián Piñera replaced Michelle Bachelet.",
+   "seatLeader": "Independent Democratic Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "legislative",
+   "date": "17 November 2013 to elect the president",
+   "era": "transicion",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 49.35,
+   "parties": [
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 967003,
+     "share": 15.55,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 691713,
+     "share": 11.12,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 685804,
+     "share": 11.03,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 255914,
+     "share": 4.11,
+     "swing": null
+    },
+    {
+     "name": "Social Democrat Radical Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 225955,
+     "share": 3.63,
+     "swing": null
+    },
+    {
+     "name": "Broad Social Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6387,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 135120,
+     "share": 2.17,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 1179342,
+     "share": 18.96,
+     "swing": null
+    },
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 928037,
+     "share": 14.92,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 146402,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 235722,
+     "share": 3.79,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 16664,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 85437,
+     "share": 1.37,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 208879,
+     "share": 3.36,
+     "swing": null
+    },
+    {
+     "name": "Equality Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 67094,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "Green Ecologist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32762,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 73047,
+     "share": 1.17,
+     "swing": null
+    },
+    {
+     "name": "Regionalist Party of the Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 72306,
+     "share": 1.16,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 206634,
+     "share": 3.32,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sebastián Piñera",
+    "party": "National Renewal"
+   },
+   "pmAfter": {
+    "name": "Michelle Bachelet",
+    "party": "Socialist"
+   },
+   "knownAs": null,
+   "summary": "Independent Democratic Union finished first with 29 of 120 seats on 19.0% of the vote. Turnout 49.4%. Michelle Bachelet replaced Sebastián Piñera.",
+   "seatLeader": "Independent Democratic Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "legislative",
+   "date": "19 November 2017 to elect the president",
+   "era": "transicion",
+   "totalSeats": 155,
+   "majoritySeats": 78,
+   "turnout": 46.72,
+   "parties": [
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": 1067270,
+     "share": 17.8,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 957245,
+     "share": 15.96,
+     "swing": null
+    },
+    {
+     "name": "Evópoli",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 255221,
+     "share": 4.26,
+     "swing": null
+    },
+    {
+     "name": "Independent Regionalist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39692,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 585128,
+     "share": 9.76,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 365988,
+     "share": 6.1,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 275096,
+     "share": 4.59,
+     "swing": null
+    },
+    {
+     "name": "Social Democrat Radical Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 216355,
+     "share": 3.61,
+     "swing": null
+    },
+    {
+     "name": "Democratic Revolution",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 343019,
+     "share": 5.72,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 253787,
+     "share": 4.23,
+     "swing": null
+    },
+    {
+     "name": "Equality Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 129232,
+     "share": 2.16,
+     "swing": null
+    },
+    {
+     "name": "Green Ecologist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 128629,
+     "share": 2.14,
+     "swing": null
+    },
+    {
+     "name": "Citizen Power",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 87456,
+     "share": 1.46,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 46605,
+     "share": 0.78,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 616550,
+     "share": 10.28,
+     "swing": null
+    },
+    {
+     "name": "Citizen Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14358,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "MAS Region",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9582,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 199566,
+     "share": 3.33,
+     "swing": null
+    },
+    {
+     "name": "País",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35469,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Social Green Regionalist Federation",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 94666,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Patagonian Regional Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20575,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Amplitude",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61319,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "Citizens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30286,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Everybody",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2888,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51348,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4663,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 104717,
+     "share": 1.75,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Michelle Bachelet",
+    "party": "Socialist"
+   },
+   "pmAfter": {
+    "name": "Sebastián Piñera",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "National Renewal finished first with 36 of 155 seats on 17.8% of the vote. Turnout 46.7%. Sebastián Piñera replaced Michelle Bachelet.",
+   "seatLeader": "National Renewal",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "21 November 2021",
+   "era": "transicion",
+   "totalSeats": 155,
+   "majoritySeats": 78,
+   "turnout": 47.33,
+   "parties": [
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -11,
+     "votes": 693474,
+     "share": 10.96,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -7,
+     "votes": 671502,
+     "share": 10.61,
+     "swing": null
+    },
+    {
+     "name": "Evópoli",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -2,
+     "votes": 221284,
+     "share": 3.5,
+     "swing": null
+    },
+    {
+     "name": "Democratic Independent Regionalist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 23222,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Comunes",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 5,
+     "votes": 207607,
+     "share": 3.28,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 4,
+     "votes": 464885,
+     "share": 7.35,
+     "swing": null
+    },
+    {
+     "name": "Social Convergence",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 287190,
+     "share": 4.54,
+     "swing": null
+    },
+    {
+     "name": "Democratic Revolution",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -2,
+     "votes": 257854,
+     "share": 4.07,
+     "swing": null
+    },
+    {
+     "name": "Social Green Regionalist Federation",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -2,
+     "votes": 107696,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -6,
+     "votes": 343437,
+     "share": 5.43,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -6,
+     "votes": 264985,
+     "share": 4.19,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -1,
+     "votes": 242927,
+     "share": 3.84,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -4,
+     "votes": 111117,
+     "share": 1.76,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 96010,
+     "share": 1.52,
+     "swing": null
+    },
+    {
+     "name": "Citizens",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 27502,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 666726,
+     "share": 10.54,
+     "swing": null
+    },
+    {
+     "name": "Christian Conservative Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 40560,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Party of the People",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 534881,
+     "share": 8.45,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -2,
+     "votes": 195409,
+     "share": 3.09,
+     "swing": null
+    },
+    {
+     "name": "Equality Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 127506,
+     "share": 2.01,
+     "swing": null
+    },
+    {
+     "name": "Green Ecologist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 305443,
+     "share": 4.83,
+     "swing": null
+    },
+    {
+     "name": "United Centre",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 177105,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "National Citizen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10291,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 56506,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 51075,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 46422,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "New Time",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4420,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 90960,
+     "share": 1.44,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sebastián Piñera",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Gabriel Boric",
+    "party": "Social Convergence"
+   },
+   "knownAs": null,
+   "summary": "National Renewal finished first with 25 of 155 seats on 11.0% of the vote. Turnout 47.3%. Gabriel Boric replaced Sebastián Piñera.",
+   "seatLeader": "National Renewal",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "legislative",
+   "date": "16 November 2025",
+   "era": "transicion",
+   "totalSeats": 155,
+   "majoritySeats": 78,
+   "turnout": 85.42,
+   "parties": [
+    {
+     "name": "Frente Amplio",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -6,
+     "votes": 807731,
+     "share": 7.54,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -2,
+     "votes": 586348,
+     "share": 5.47,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -1,
+     "votes": 538793,
+     "share": 5.03,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": 454544,
+     "share": 4.24,
+     "swing": null
+    },
+    {
+     "name": "Party for Democracy",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2,
+     "votes": 430524,
+     "share": 4.02,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 237343,
+     "share": 2.21,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -2,
+     "votes": 225361,
+     "share": 2.1,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 17,
+     "votes": 1424832,
+     "share": 13.29,
+     "swing": null
+    },
+    {
+     "name": "National Libertarian Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 679500,
+     "share": 6.34,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 362888,
+     "share": 3.39,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Union",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -5,
+     "votes": 895233,
+     "share": 8.35,
+     "swing": null
+    },
+    {
+     "name": "National Renewal",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -12,
+     "votes": 868240,
+     "share": 8.1,
+     "swing": null
+    },
+    {
+     "name": "Evópoli",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -2,
+     "votes": 280261,
+     "share": 2.61,
+     "swing": null
+    },
+    {
+     "name": "Democrats",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 212930,
+     "share": 1.99,
+     "swing": null
+    },
+    {
+     "name": "Party of the People",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 8,
+     "votes": 1285464,
+     "share": 11.99,
+     "swing": null
+    },
+    {
+     "name": "Social Green Regionalist Federation",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 458537,
+     "share": 4.28,
+     "swing": null
+    },
+    {
+     "name": "Humanist Action",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 282468,
+     "share": 2.64,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 199680,
+     "share": 1.86,
+     "swing": null
+    },
+    {
+     "name": "Equality Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 79871,
+     "share": 0.75,
+     "swing": null
+    },
+    {
+     "name": "Green Ecologist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 88431,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "Amarillos por Chile",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 87744,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "Popular Green Alliance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 69410,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 65058,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23365,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 73475,
+     "share": 0.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gabriel Boric",
+    "party": "FA–UpCh"
+   },
+   "pmAfter": {
+    "name": "José Antonio Kast",
+    "party": "PRCh–CpCh"
+   },
+   "knownAs": null,
+   "summary": "Republican Party finished first with 31 of 155 seats on 13.3% of the vote. Turnout 85.4%. José Antonio Kast replaced Gabriel Boric.",
+   "seatLeader": "Republican Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Build public/data/elections-all.csv: one flat table of every election on
-file across all 41 hubs, for readers who want the atlas as a spreadsheet
-rather than 41 pages.
+file across all 49 hubs, for readers who want the atlas as a spreadsheet
+rather than 49 pages.
 
 WHY A SEPARATE BUILD FROM THE CENSUS
 -------------------------------------
@@ -339,7 +339,7 @@ def _self_test():
     names = hub_names_from_ts()
     check("us name", names.get("us"), "United States")
     check("uk name", names.get("uk"), "United Kingdom")
-    check("41 hubs named", len(names), 41)
+    check("49 hubs named", len(names), 49)
 
     # Row-count parity against the census-equivalent count, hub by hub,
     # everywhere the census counts the hub (everywhere but the Vatican).

@@ -67,6 +67,13 @@ const OUT_OF_BAND = [
     refreshedBy: "mac-mini-jobs/run-scraper-refresh.sh fiba",
   },
   {
+    lib: "lib/wbasketball.ts",
+    paths: ["wbasketball/nations.json", "wbasketball/hub.json",
+            "wbasketball/fiba_ranking.json"],
+    refreshedBy: ".github/workflows/wwc-2026-tracker.yml (and the weekly "
+      + "women's FIBA ranking refresh)",
+  },
+  {
     lib: "lib/refreshSchedule.ts",
     paths: ["refresh-schedule.json"],
     refreshedBy: "mac-mini-jobs/export_schedule.py (run after every dispatcher tick, not a jobs.toml entry)",

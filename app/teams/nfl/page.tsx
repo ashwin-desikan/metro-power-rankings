@@ -12,7 +12,9 @@ import { Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 import EloPowerRankings from "./EloPowerRankings";
+import NflPlayoffsBracket from "./NflPlayoffsBracket";
 import { getNflEloIndex } from "@/lib/nflElo";
+import { getNflPlayoffs, playoffsIsCurrent } from "@/lib/nflPlayoffs";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -53,6 +55,12 @@ export default async function NflIndexPage() {
   // The Elo spine is what the hero counts from, because it is the only thing on
   // the page that knows how many seasons there are.
   const index = await getNflEloIndex().catch(() => null);
+  // The postseason bracket, the same component the AFL and NRL hubs draw. It is
+  // dormant for ten months of the year: playoffsIsCurrent is false unless the
+  // payload describes THIS season's playoffs, so before January the section is
+  // not rendered at all rather than rendered empty.
+  const playoffsRaw = await getNflPlayoffs().catch(() => null);
+  const playoffs = playoffsIsCurrent(playoffsRaw) ? playoffsRaw : null;
   const seasons = index?.seasons ?? [];
   const live = seasons[seasons.length - 1] ?? null;
   const firstSeason = seasons[0]?.season ?? 1920;
@@ -158,6 +166,7 @@ export default async function NflIndexPage() {
 
       <HubNav
         items={[
+          ...(playoffs ? [{ label: `${playoffs.meta.season + 1} Playoffs`, href: "#playoffs-bracket" }] : []),
           { label: "Rankings & standings", href: "#now" },
           { label: "Seasons since 1920", href: "/teams/nfl/season" },
           { label: "Map", href: "#map" },
@@ -168,6 +177,14 @@ export default async function NflIndexPage() {
           { label: "Predictions", href: "/predictions/nfl" },
         ]}
       />
+
+      {/* ── Playoff bracket (January and February; scripts/nfl/nfl_playoffs.py) ──
+          Above the season boards, exactly where the AFL and NRL hubs put their
+          finals bracket relative to the ladder: while the playoffs are on, the
+          bracket is what the reader came for and the regular-season boards are
+          the background to it. Rendered only when the payload is this season's;
+          the rest of the year nothing is emitted here at all. */}
+      {playoffs && <NflPlayoffsBracket bundle={playoffs} franchises={franchises} />}
 
       {/* 🔴 THE TWO BOARDS ANSWER THE SAME QUESTION DIFFERENTLY, SO THEY SIT
           SIDE BY SIDE. Stacked, a reader had to scroll a screen between "who is

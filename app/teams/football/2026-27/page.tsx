@@ -235,6 +235,14 @@ function CompCard({ comp }: { comp: LiveComp }) {
   };
   const hub = COMP_HUB[comp.league_id];
   return (
+    // League-phase competitions (the Champions, Europa and Conference Leagues
+    // since 2024-25) carry ONE 36-club table, not eight groups. Inside a
+    // two-column card grid and a two-column group grid that table was getting a
+    // quarter of the row and showed the club column alone with the record
+    // hidden behind a sideways scroll (Ashwin, 2026-09-07). A single-table
+    // competition now fills its card, and every card takes the whole row: the
+    // Libertadores' eight group tables were 329px wide in 226px cells at the
+    // half-row width, so they scrolled sideways too.
     <details className="rounded-xl border overflow-hidden" style={cardStyle} open={comp.groups.length > 0 && !isLibertadores}>
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
         <span className="font-semibold text-sm">{name}</span>
@@ -242,7 +250,7 @@ function CompCard({ comp }: { comp: LiveComp }) {
       </summary>
       <div className="border-t px-3 py-3 space-y-3" style={{ borderColor: "var(--border)" }}>
         {comp.groups.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className={comp.groups.length === 1 ? "grid grid-cols-1 gap-3" : "grid grid-cols-1 sm:grid-cols-2 gap-3"}>
             {comp.groups.slice().sort((a, b) => a.group_label.localeCompare(b.group_label)).map((g) => (
               <div key={g.group_label}>
                 <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{g.group_label}</div>
@@ -380,7 +388,7 @@ export default async function ClubFootball2027Page() {
       {orderedComps.length > 0 && (
         <section id="competitions" className="scroll-mt-24 mb-10">
           <h2 className="text-lg font-semibold mb-3">Continental competitions</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+          <div className="grid grid-cols-1 gap-3 items-start">
             {orderedComps.map((c) => <CompCard key={c.league_id} comp={c} />)}
           </div>
         </section>

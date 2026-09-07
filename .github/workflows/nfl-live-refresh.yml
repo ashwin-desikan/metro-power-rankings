@@ -1,0 +1,126 @@
+name: NFL live Elo refresh
+
+# The SITE half of the 2026 NFL automation, and it needs no workbook and no
+# Mac mini.
+#
+# scripts/nfl/nfl_live_update.py reads the week-0 seeds out of the published
+# season shard, pulls ESPN's scoreboard week by week (seasontype=2, weeks 1-18,
+# no User-Agent, no limit=), and carries the ratings forward with the SAME
+# live_chain()/elo_shift() that scripts/build-nfl-elo.py uses. It then rewrites
+# public/data/nfl/elo/seasons/<year>.json, upcoming.json and the committed
+# spine (spine-<year>.json = seeds + schedule), which is what makes this job
+# independent of NFL_all.xlsx entirely.
+#
+# 🔴 THE WORKBOOK HALF IS NOT THIS JOB AND REMAINS OPEN. Writing Q (PF), R (PA),
+# M (W/L/T) and DM/DN/DO (pre-game Elo, opponent Elo, win probability) back into
+# NFL_all.xlsx runs on the Windows box and is still unbuilt: see HANDOFF
+# 2026-09-06, "What the 2026 automation still needs". If it never runs, the site
+# is still right, which is the entire point of splitting the two halves.
+#
+# 🔴 [vercel skip] IS CORRECT HERE, AND IT WAS CHECKED. lib/nflElo.ts fetches
+# every one of these files from GitHub raw with `next: { revalidate: 86400 }`
+# and only falls back to the build-time copy when that fetch fails, so a data
+# commit reaches the season page through ISR without a production build. If that
+# ever changes to a build-time read, this tag has to change with it.
+#
+# CADENCE: Tuesday and Friday at 09:30 UTC, September through February. Tuesday
+# picks up the whole weekend plus Monday night; Friday picks up Thursday night
+# and re-prices the coming weekend from ratings that are now facts. January and
+# February add a Monday at the same time, because playoff weekends finish on
+# Sunday night and the bracket is the thing readers open on Monday morning.
+#
+# THE SECOND JOB: the postseason bracket. scripts/nfl/nfl_playoffs.py reads
+# ESPN's seasontype=3 scoreboard (weeks 1-5, never week 4, which is the Pro Bowl)
+# and writes public/data/nfl/playoffs.json in the same bundle shape the AFL and
+# NRL finals feed uses, so app/teams/_shared/FinalsBracket.tsx draws all three.
+# It runs only in January and February, exits 0 with "no postseason yet" when
+# ESPN lists no games, and refuses to write if completed games would go down.
+#
+# 🔴 [vercel skip] IS STILL CORRECT WITH playoffs.json IN THE COMMIT, AND IT WAS
+# CHECKED. lib/nflPlayoffs.ts reads it from GitHub raw with
+# `next: { revalidate: 900 }` and falls back to the build-time copy only when
+# that fetch fails, exactly like lib/footyFinals.ts. A data commit therefore
+# reaches the hub through ISR with no production build. If that read ever
+# becomes build-time only, this tag has to change with it.
+
+on:
+  schedule:
+    - cron: "30 9 * 9-12,1,2 2"   # Tuesdays, in season
+    - cron: "30 9 * 9-12,1,2 5"   # Fridays, in season
+    - cron: "30 9 * 1,2 1"       # Mondays, Jan-Feb: the morning after a playoff weekend
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Season to carry (default 2026)"
+        required: false
+        default: "2026"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-live-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-test (pure logic; runs before ESPN is called)
+        run: python3 scripts/nfl/nfl_live_update.py --self-test
+
+      - name: Carry the live season from ESPN
+        run: |
+          python3 scripts/nfl/nfl_live_update.py \
+            --season "${{ github.event.inputs.season || '2026' }}" --write
+
+      # January and February only. Outside those months the postseason does not
+      # exist and there is nothing for ESPN to answer, so the call is not made
+      # at all rather than made and discarded.
+      - name: Refresh the postseason bracket (January and February)
+        run: |
+          MONTH=$(date -u +%m)
+          if [ "$MONTH" != "01" ] && [ "$MONTH" != "02" ]; then
+            echo "Month $MONTH: outside the postseason window; bracket not refreshed."
+            exit 0
+          fi
+          python3 scripts/nfl/nfl_playoffs.py --self-test
+          # No --season on a scheduled run: the script's own current_season()
+          # knows that January and February belong to the PREVIOUS season year,
+          # which a hardcoded default would get wrong every January.
+          if [ -n "${{ github.event.inputs.season }}" ]; then
+            python3 scripts/nfl/nfl_playoffs.py \
+              --season "${{ github.event.inputs.season }}" --write
+          else
+            python3 scripts/nfl/nfl_playoffs.py --write
+          fi
+
+      - name: Commit and push only if the data changed
+        run: |
+          PATHS="public/data/nfl/elo public/data/nfl/playoffs.json"
+          if git diff --quiet -- $PATHS; then
+            echo "No change in the NFL Elo spine or the playoff bracket; nothing to deploy."
+            exit 0
+          fi
+          # Shards, the spine, upcoming.json and playoffs.json are all read via
+          # GitHub raw with ISR, so this never needs a production build.
+          MSG="Auto: carry the live NFL season from ESPN [vercel skip]"
+          git config user.name "nfl-live-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add $PATHS
+          git commit -m "$MSG"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

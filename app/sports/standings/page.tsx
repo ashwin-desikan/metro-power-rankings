@@ -626,7 +626,12 @@ function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | 
   const subTables = [...groupTables, mk("Live", liveFx, true), mk("Upcoming", upcoming, false), mk("Recent", recent, true)]
     .filter((st): st is SubTable => st !== null);
   if (subTables.length === 0) return null;
-  return { league: "Women's Champions League", href: "/teams/wfootball", note: c.seasonLabel, open: false, live: liveFx.length > 0 || upcoming.length > 0, subTables };
+  // api-football publishes the UWCL league-phase table only after the draw
+  // (2026-27: mid-September, once the second qualifying round is done), so
+  // until then the block carries fixtures alone and says so, rather than
+  // looking like the table was forgotten (Ashwin, 2026-09-07).
+  const note = groupTables.length ? c.seasonLabel : `${c.seasonLabel} · qualifying; league-phase table appears after the draw`;
+  return { league: "Women's Champions League", href: "/teams/wfootball", note, open: false, live: liveFx.length > 0 || upcoming.length > 0, subTables };
 }
 
 async function npbBlock(): Promise<Block | null> {
@@ -1264,7 +1269,10 @@ export default async function LiveStandingsPage() {
     // Women's Football (below Football, all collapsed by default; feeds are the
     // same wlive bundle that powers /teams/wfootball).
     { sport: "Women's Football", blocks: [wsl, ligaF, nwslW, uwcl].map(collapse) },
-    { sport: "Motorsport", blocks: [f1] },
+    // F1 is collapsed like every other long board: two tables of twenty-plus
+    // rows side by side, force-opened on desktop, was a wall the reader could
+    // not fold (Ashwin, 2026-09-07). The green dot still says it is in season.
+    { sport: "Motorsport", blocks: [collapse(f1)] },
     { sport: "Golf", blocks: [golf] },
     { sport: "Tennis", blocks: [tennis] },
     { sport: "Gridiron", blocks: [nfl, cfb, cfl] },

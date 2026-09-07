@@ -90,7 +90,7 @@ function Chip({
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className="min-h-9 rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors"
+      className="inline-flex min-h-11 items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors"
       style={{
         borderColor: active ? "var(--accent)" : "var(--border)",
         color: active ? "var(--accent)" : "var(--text-muted)",
@@ -308,7 +308,7 @@ export default function HubIndex({
               type="button"
               aria-pressed={view === v}
               onClick={() => setView(v)}
-              className="min-h-9 px-3 py-1.5 text-xs font-semibold transition-colors"
+              className="inline-flex min-h-11 items-center px-3 py-1.5 text-xs font-semibold transition-colors"
               style={{
                 backgroundColor: view === v ? "var(--accent)" : "var(--bg-card)",
                 color: view === v ? "#08080D" : "var(--text-muted)",

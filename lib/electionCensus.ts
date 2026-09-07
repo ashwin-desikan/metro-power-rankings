@@ -39,6 +39,14 @@ import { getPtElections } from "./ptElections";
 import { getIeElections } from "./ieElections";
 import { getPhElections } from "./phElections";
 import { getEgElections } from "./egElections";
+import { getHuElections } from "./huElections";
+import { getNoElections } from "./noElections";
+import { getSeElections } from "./seElections";
+import { getCoElections } from "./coElections";
+import { getCdElections } from "./cdElections";
+import { getClElections } from "./clElections";
+import { getIrElections } from "./irElections";
+import { getPkElections } from "./pkElections";
 import { ELECTION_HUBS } from "./electionHubsMeta";
 // The Vatican hub is deliberately absent: conclaves are not polity-wide ballots,
 // so they stay out of the timeline, turnout and wartime joins.
@@ -91,6 +99,8 @@ export function getElectionCensus(): CensusRow[] {
   const ua = getUaElections(), iq = getIqElections(), ps = getPsElections();
   const at = getAtElections(), pt = getPtElections(), ie = getIeElections(), eg = getEgElections();
   const de = getDeElections();
+  const co = getCoElections(), cd = getCdElections();
+  const cl = getClElections(), ir = getIrElections();
   _census = [
     row("us", usd.elections.map((e) => ({
       id: e.id, year: e.year, label: e.label, winner: e.winner.name,
@@ -135,6 +145,14 @@ export function getElectionCensus(): CensusRow[] {
     row("ch", leg(getChElections().elections, "Switzerland")),
     row("be", leg(getBeElections().elections, "Belgium")),
     row("dk", leg(getDkElections().elections, "Denmark")),
+    row("hu", leg(getHuElections().elections, "Hungary")),
+    row("no", leg(getNoElections().elections, "Norway")),
+    row("se", leg(getSeElections().elections, "Sweden")),
+    row("co", [...leg(co.legislative, "Colombia"), ...pres(co.presidential, "Colombia")]),
+    row("cd", [...leg(cd.legislative, "DR Congo"), ...pres(cd.presidential, "DR Congo")]),
+    row("cl", [...leg(cl.legislative, "Chile"), ...pres(cl.presidential, "Chile")]),
+    row("pk", leg(getPkElections().elections, "Pakistan")),
+    row("ir", [...leg(ir.legislative, "Iran"), ...pres(ir.presidential, "Iran")]),
   ];
   return _census;
 }

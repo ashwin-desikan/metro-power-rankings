@@ -1,9 +1,10 @@
 {
  "meta": {
-  "generated_at": "2026-09-05T09:01:17Z",
+  "generated_at": "2026-09-07T20:45:12Z",
   "source": "Wikipedia: List of S&P 500 companies (constituents); changes: weekly constituent diff (Wikipedia's own changes table was removed 2026-08-17)",
   "count": 503,
-  "matched": 496
+  "matched": 496,
+  "note": ""
  },
  "constituents": [
   {
@@ -6965,7 +6966,7 @@
    "metroSlug": ""
   },
   {
-   "symbol": "BRK.B <!-- DO NOT CHANGE THIS TICKER TO BRK-B. IT IS NOT CORRECT AND WILL BE REVERTED. YOU'VE BEEN WARNED! -->",
+   "symbol": "BRK.B",
    "name": "Berkshire Hathaway",
    "sector": "Financials",
    "subIndustry": "Multi-Sector Holdings",
@@ -6979,7 +6980,7 @@
    "metroSlug": ""
   },
   {
-   "symbol": "BF.B <!-- DO NOT CHANGE THIS TICKER TO BF-B. IT IS NOT CORRECT AND WILL BE REVERTED. YOU'VE BEEN WARNED! -->",
+   "symbol": "BF.B",
    "name": "Brown–Forman",
    "sector": "Consumer Staples",
    "subIndustry": "Distillers & Vintners",

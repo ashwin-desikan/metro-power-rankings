@@ -30,6 +30,9 @@ export type WnbaStandingsSnapshot = {
   source_label: string;
 };
 
+// Regular-season length; /sports/standings uses the same number for its
+// liveness rule. Update when the league changes its schedule.
+export const WNBA_REGULAR_SEASON_GAMES = 44;
 const ESPN_STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/basketball/wnba/standings";
 const REVALIDATE_SECONDS = 1800;
 
@@ -65,7 +68,7 @@ function shape(raw: unknown): WnbaStandingsSnapshot {
   const root = asObj(raw);
   if (!root) return empty();
   const seasonYear = pickSeasonYear(root);
-  const seasonType = pickSeasonType(root);
+  const espnSeasonType = pickSeasonType(root);
   const rows: WnbaLiveRow[] = [];
 
   for (const childRaw of asArr(root.children)) {
@@ -96,6 +99,19 @@ function shape(raw: unknown): WnbaStandingsSnapshot {
       });
     }
   }
+
+  // 🔴 ESPN's season.type follows ESPN's calendar, not the league's. On
+  // 2026-09-07 it reported the WNBA as postseason while every team still had
+  // regular-season games left: the league had paused for the FIBA Women's
+  // World Cup and was coming back to finish the schedule. Same trap as the NFL
+  // preseason on 2026-09-04. The regular season is over when the games say so,
+  // never when the calendar does: below the full 44-game count, the label
+  // stays "Standings" and the playoff field is still a projection.
+  const maxPlayed = rows.reduce((m, r) => Math.max(m, r.games_played), 0);
+  const seasonType: WnbaSeasonType =
+    espnSeasonType === "postseason" && maxPlayed > 0 && maxPlayed < WNBA_REGULAR_SEASON_GAMES
+      ? "regular"
+      : espnSeasonType;
 
   const label = seasonYear
     ? (seasonType === "postseason" ? `${seasonYear} Playoffs`

@@ -43,6 +43,20 @@ export const HUB_COUNTRY_SLUGS: Record<string, string[]> = {
   "/elections/ch": ["switzerland"],
   "/elections/be": ["belgium"],
   "/elections/dk": ["denmark"],
+  "/elections/gr": ["greece"],
+  "/elections/at": ["austria"],
+  "/elections/pt": ["portugal"],
+  "/elections/ie": ["ireland"],
+  "/elections/ph": ["philippines"],
+  "/elections/eg": ["egypt"],
+  "/elections/hu": ["hungary"],
+  "/elections/no": ["norway"],
+  "/elections/se": ["sweden"],
+  "/elections/co": ["colombia"],
+  "/elections/cd": ["congo-dr"],
+  "/elections/cl": ["chile"],
+  "/elections/ir": ["iran"],
+  "/elections/pk": ["pakistan"],
 };
 
 // Major wars only — border skirmishes would tag half the dataset and dilute

@@ -25,6 +25,8 @@ import { flagCdnUrl } from "@/lib/international-display";
 
 export interface BoardRow {
   rank: number;
+  /** A club, or a national team rolled up across its sports. */
+  kind: "club" | "nation";
   name: string;
   href?: string;
   /** The league: NFL, CBB, Football, ... */
@@ -37,9 +39,11 @@ export interface BoardRow {
    */
   sportGroup: string;
   country?: string;
+  /** Nations only: every sport the score draws on, for the sub-filter. */
+  nationSports?: string[];
   total: number;
-  agony: number;
-  despair: number;
+  agony: number | null;
+  despair: number | null;
   quadrant?: string;
   waiting: string;
   wound: string;
@@ -55,8 +59,20 @@ const ALL = "All";
 // first. Anything not listed sorts to the end alphabetically.
 const GROUP_ORDER = [
   "Football", "American Football", "Basketball", "Baseball",
-  "Ice Hockey", "Australian Rules", "Rugby League", "Cricket",
+  "Ice Hockey", "Australian Rules", "Rugby League", "Cricket", "National teams",
 ];
+// The sport's own glyph beside the league, in place of a country flag: a
+// flag says where a club plays, the glyph says what it plays, and the second
+// is the thing the board is sorted across (Ashwin, 2026-09-07).
+const SPORT_EMOJI: Record<string, string> = {
+  "Football": "\u26BD", "American Football": "\uD83C\uDFC8", "Basketball": "\uD83C\uDFC0", "Baseball": "\u26BE",
+  "Ice Hockey": "\uD83C\uDFD2", "Australian Rules": "\uD83C\uDFC9", "Rugby League": "\uD83C\uDFC9", "Rugby": "\uD83C\uDFC9",
+  "Cricket": "\uD83C\uDFCF",
+};
+function sportEmoji(r: BoardRow): string {
+  const g = r.kind === "nation" ? r.sport : r.sportGroup;
+  return SPORT_EMOJI[g] ?? "\uD83C\uDFC6";
+}
 
 function slugifyCountry(c: string): string {
   return c.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -150,6 +166,10 @@ export default function HeartbreakBoard({ rows }: { rows: BoardRow[] }) {
   // it. Football is the group whose second level is a country, handled below.
   const leagues = useMemo(() => {
     if (group === ALL || group === "Football") return [];
+    if (group === "National teams") {
+      const seen = [...new Set(rows.filter((r) => r.kind === "nation").flatMap((r) => r.nationSports ?? []))].sort();
+      return seen.length > 1 ? [ALL, ...seen] : [];
+    }
     const seen = [...new Set(rows.filter((r) => r.sportGroup === group).map((r) => r.sport))].sort();
     return seen.length > 1 ? [ALL, ...seen] : [];
   }, [rows, group]);
@@ -163,7 +183,7 @@ export default function HeartbreakBoard({ rows }: { rows: BoardRow[] }) {
   const filtered = rows.filter(
     (r) =>
       (group === ALL || r.sportGroup === group) &&
-      (league === ALL || r.sport === league) &&
+      (league === ALL || (r.kind === "nation" ? (r.nationSports ?? []).includes(league) : r.sport === league)) &&
       (group !== "Football" || country === ALL || r.country === country),
   );
 
@@ -191,7 +211,7 @@ export default function HeartbreakBoard({ rows }: { rows: BoardRow[] }) {
         </div>
       )}
       <div className="text-[11px] uppercase tracking-wider text-[var(--text-dim)] mb-2" style={MONO}>
-        {filtered.length} of {rows.length} clubs · ranks are global
+        {filtered.length} of {rows.length} teams · ranks are global
       </div>
       <TableScroll className="rounded-xl border" style={CARD}>
         <table className="w-full text-[13px]" data-sticky-col="2">
@@ -214,19 +234,21 @@ export default function HeartbreakBoard({ rows }: { rows: BoardRow[] }) {
                 <td className="py-1.5 px-2 border-b text-[var(--text-dim)]" style={{ ...BORD, ...MONO }}>{r.rank}</td>
                 <td className="py-1.5 px-2 border-b font-medium" style={BORD}>
                   <span className="inline-flex items-center gap-1.5 min-w-0">
-                    <Crest name={r.name} />
+                    {r.kind === "nation" ? <CountryFlag country={r.country} /> : <Crest name={r.name} />}
                     {r.href ? <Link href={r.href} className="hover:underline">{r.name}</Link> : r.name}
                   </span>
                 </td>
                 <td className="py-1.5 px-2 border-b text-[var(--text-muted)] whitespace-nowrap" style={BORD}>
                   <span className="inline-flex items-center gap-1.5">
-                    <CountryFlag country={r.country} />
-                    {r.sport === "Football" ? r.country ?? "Football" : r.sport}
+                    <span aria-hidden>{sportEmoji(r)}</span>
+                    {r.kind === "nation"
+                      ? `National team · ${r.sport}`
+                      : r.sport === "Football" ? r.country ?? "Football" : r.sport}
                   </span>
                 </td>
                 <td className="py-1.5 px-2 border-b font-bold" style={{ ...BORD, ...MONO }}>{r.total.toFixed(1)}</td>
-                <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={{ ...BORD, ...MONO }}>{r.agony.toFixed(1)}</td>
-                <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={{ ...BORD, ...MONO }}>{r.despair.toFixed(1)}</td>
+                <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={{ ...BORD, ...MONO }}>{r.agony != null ? r.agony.toFixed(1) : "\u2013"}</td>
+                <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={{ ...BORD, ...MONO }}>{r.despair != null ? r.despair.toFixed(1) : "\u2013"}</td>
                 <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={BORD}>{r.quadrant ?? "–"}</td>
                 <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={BORD}>{r.waiting}</td>
                 <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={BORD}>{r.wound}</td>

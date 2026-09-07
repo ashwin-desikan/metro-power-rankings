@@ -4,6 +4,7 @@ import HubNav from "@/app/teams/HubNav";
 import { getEuroleague } from "@/lib/basketball";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import EuroleagueClubsTable from "./EuroleagueClubsTable";
+import EuroleagueLiveTable from "./EuroleagueLiveTable";
 import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
@@ -59,10 +60,14 @@ export default function EuroleaguePage() {
 
       <HubNav
         items={[
+          { label: "Live Standings", href: "#live-standings" },
           { label: "Champions", href: "#champions" },
           { label: "All-time Clubs", href: "#clubs" },
         ]}
       />
+
+      {/* ---------------- Live standings ---------------- */}
+      <EuroleagueLiveTable />
 
       {/* ---------------- Champions roll ---------------- */}
       <section className="mb-10">
@@ -144,6 +149,17 @@ export default function EuroleaguePage() {
           (this season&apos;s clubs) or show all teams.
         </p>
         <EuroleagueClubsTable clubs={el.clubs} />
+      </section>
+
+      {/* ---------------- Sources ---------------- */}
+      <section className="rounded-xl border p-5 text-sm" style={card}>
+        <h2 className="text-base font-semibold mb-2">Sources &amp; methodology</h2>
+        <p className="text-[var(--text-muted)]">
+          Champions, Final Four history and all-time club records come from the
+          season-by-season workbook sheet. The live standings table above is
+          fetched from EuroLeague&apos;s own feed, api-live.euroleague.net (XML),
+          refreshed every 15 minutes during the season.
+        </p>
       </section>
     </main>
   );

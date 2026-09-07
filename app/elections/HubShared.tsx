@@ -1,7 +1,25 @@
 import Link from "next/link";
+import { readFileSync } from "fs";
+import path from "path";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { ELECTION_HUBS, HUB_CAPITALS } from "@/lib/electionHubsMeta";
+import { getElectionCensus } from "@/lib/electionCensus";
+import { MONO } from "./_shared/ui";
 import FollowPolityButton from "./FollowPolityButton";
+
+// Reads `meta.built` from a hub's own public/data/<code>-elections.json:
+// one small readFileSync at build time, per hub. Absent or unreadable
+// (should not happen; every hub's JSON carries it as of 2026-09-07) simply
+// omits the "AS OF" fragment from the stamp rather than failing the page.
+function hubBuiltDate(code: string): string | null {
+  try {
+    const raw = readFileSync(path.join(process.cwd(), "public", "data", `${code}-elections.json`), "utf-8");
+    const parsed = JSON.parse(raw) as { meta?: { built?: string } };
+    return parsed.meta?.built ?? null;
+  } catch {
+    return null;
+  }
+}
 
 // Shared server-side building blocks for the election hub pages.
 // Purely presentational; each hub page supplies its own data, colors and prose.
@@ -59,6 +77,14 @@ export function DetailPager({
 // images, never emoji (Windows renders flag emoji as letter pairs).
 export function HubTitle({ code, title }: { code: string; title: string }) {
   const meta = ELECTION_HUBS[code];
+  const built = hubBuiltDate(code);
+  const contests = getElectionCensus().find((r) => r.code === code)?.items.length;
+  const stamp = [
+    built ? `AS OF ${built}` : null,
+    contests != null ? `${contests} CONTESTS` : null,
+    meta ? meta.last : null,
+    "WIKIPEDIA, NATIONAL ELECTORAL AUTHORITIES",
+  ].filter(Boolean).join(" · ");
   return (
     <>
       <div className="mb-3">
@@ -100,6 +126,9 @@ export function HubTitle({ code, title }: { code: string; title: string }) {
           </span>
         ) : null}
       </div>
+      <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2" style={MONO}>
+        {stamp}
+      </p>
       {meta ? (
         <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2">
           Next election{" · "}

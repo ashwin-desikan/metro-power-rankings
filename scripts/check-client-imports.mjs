@@ -87,6 +87,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/rugbyClubs",
   "@/lib/cricketClubs",
   "@/lib/basketball",
+  "@/lib/wbasketball",
   "@/lib/hockey",
   "@/lib/majors",
   "@/lib/npb",
@@ -102,7 +103,9 @@ const SERVER_ONLY_MODULES = [
   "@/lib/domesticHonours",
   "@/lib/leadersAll",
   "@/lib/footyFinals",
+  "@/lib/nflPlayoffs",
   "@/lib/clubValue",
+  "@/lib/footballSeasonExpectation",
 ];
 
 const SCAN_DIRS = ["app", "components"];

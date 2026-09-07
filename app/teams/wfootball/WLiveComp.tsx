@@ -68,8 +68,16 @@ export default function WLiveComp({ comp }: { comp: WLiveCompVM }) {
 
   return (
     <div className="space-y-4">
+      {groups.length === 0 && comp.fixtures.length > 0 && (
+        <p className="text-xs text-[var(--text-muted)]">
+          Qualifying rounds in progress. The league-phase table arrives with the draw and then
+          renders here, in the same shape as the men&apos;s Champions League table.
+        </p>
+      )}
       {groups.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        // A single league-phase table (the format since 2025-26) takes the full
+        // width; only a group-stage format splits into two columns.
+        <div className={groups.length === 1 ? "grid grid-cols-1 gap-3" : "grid grid-cols-1 sm:grid-cols-2 gap-3"}>
           {groups.slice().sort((a, b) => (a.label ?? "").localeCompare(b.label ?? "")).map((g, gi) => (
             <div key={gi}>
               {g.label && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{g.label}</div>}

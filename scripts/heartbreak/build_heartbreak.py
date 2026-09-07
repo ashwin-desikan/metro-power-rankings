@@ -157,9 +157,29 @@ ASPIRATION_FLOOR = 0.15       # faded aspiration never fully disappears
 IN_THE_ROOM = 0.5             # being currently at the honour's level reawakens at least half the dream
 AFTERGLOW_YEARS = 5           # winning your ULTIMATE honour suppresses agony, fading back over 5y
 HEGEMON_TITLES_IN_15 = 3      # >=3 league titles in 15y: league wins are maintenance; ceiling = Europe
+RUNNER_UP_HEGEMON = 0.35      # second behind a hegemon champion is the ceiling, not a lost race:
+                              # Marseille's five runner-up seasons under PSG are not five
+                              # heartbreaks (Ashwin, 2026-09-07, Marseille could not sit top)
+HEGEMON_RUN = (5, 8)          # ...where a hegemon champion holds >=5 of the last 8 titles
+                              # including this one (PSG, Bayern, City, Juventus 2012-20,
+                              # Celtic), not merely 3 in 15, which would catch a rival in a
+                              # three-club league (Sporting) and discount a real race.
 REALISM_FLOOR = 0.35          # modern-era realism floor on title/UCL longing
+# College relevance (Ashwin, 2026-09-07: Dartmouth, two lost finals in the
+# 1940s and no tournament since 1959, belongs nowhere near Purdue, Gonzaga and
+# Houston). A program's ache scales by how much it competes NOW: the share of
+# the last COLLEGE_RELEVANCE_SEASONS with an NCAA bid (CBB) or a final AP
+# ranking (CFB), averaged with the share carrying a conference title. From
+# COLLEGE_RELEVANCE_FLOOR (a program that has left the stage) to
+# COLLEGE_RELEVANCE_FLOOR + COLLEGE_RELEVANCE_RANGE, on agony AND grind.
+COLLEGE_RELEVANCE_SEASONS = 25
+COLLEGE_RELEVANCE_FLOOR = 0.4
+COLLEGE_RELEVANCE_RANGE = 0.9
 REALISM_WINDOW = 15           # seasons over which contention share defines realistic aspiration
 EARLY_EXIT_REL = 0.12         # US: playoff run ending before the conference final (the Leafs tax)
+FAVOURITE_WIN_PCT = 0.75      # US: a playoff exit after a season this good (the Lions' 15-2 of
+                              # 2024, one and done as the top seed) carries FULL hope whatever
+                              # the previous decade looked like (Ashwin, 2026-09-07)
 LEVELS_SHARE = 0.5            # football: ultimate (title/UCL) longing rides at half weight on top of
                               # the MAJOR TROPHY drought, which is the headline clock (Ashwin ruling)
 # --- v3.9 dials (Gemini round three, amended) ---
@@ -188,11 +208,32 @@ PANG_POINTS = 3.0
 # 1939 NCAA tournament — pre-1939 rows (Helms-era retro-selections) never start
 # a drought clock. Football keeps its full range: contemporaneous claims existed.
 CBB_TOURNAMENT_ERA = 1939
+FOOT_LONGING_CAP_YEARS = 40   # football: a wait past forty years is history, not memory. The
+                              # square-root clock stops growing there, so a 31-year wait at a
+                              # big club (Everton) is not outweighed by a century at a club
+                              # whose fans never saw the last one (Ashwin, 2026-09-07: Everton,
+                              # Villa before 2025, Newcastle before 2025 belong near the top).
 MAJOR_RAMP_YEARS = 25         # a TROPHY drought matures fast — full agony after a generation of
                               # season tickets, unlike the 60y horizon for ultimate-honour longing
 EXPECTATION_FLOOR = 0.5       # football: heartbreak needs a big fanbase to break — clubs that
 EXPECTATION_RANGE = 0.9       # never expected to win scale to 0.5x; big cabinets up to 1.4x
 EXPECTATION_CAP = 20          # honours count at which the expectation factor maxes out
+# Bigness, present tense (Ashwin, 2026-09-07): the cabinet says what a club
+# once was; STATURE says what it is now. Benfica lose European finals they
+# actually reach, West Brom and Genoa do not compete for the major trophies
+# any more, and Arsenal's 2004-2025 wait hurt more than Genoa's century
+# because Arsenal were one of the biggest clubs in the world while waiting.
+# Two present-tense signals, both Europe-wide so a Benfica outranks a West
+# Brom: European presence over the last STATURE_SEASONS completed seasons
+# (Champions League 1.0, Europa League 0.6, Conference League 0.35, top
+# flight without Europe 0.1, below it 0), and squad-value percentile across
+# every priced club (Transfermarkt, six leagues; Portugal and Scotland run on
+# presence alone). Multiplier from STATURE_FLOOR to STATURE_FLOOR + STATURE_RANGE.
+STATURE_SEASONS = 10
+STATURE_FLOOR = 0.7
+STATURE_RANGE = 0.8
+STATURE_EUR = {"CL": 1.0, "EL": 0.6, "ECL": 0.35}
+STATURE_TOP_FLIGHT = 0.1
 APPEARANCE_SHARE = 0.5        # US: longing for a FINALS APPEARANCE runs at half title-longing weight
 
 # Heartbreak is priced in local currency: leagues weigh one tier heavier in their
@@ -280,6 +321,69 @@ def expectation_factor(n_majors: int) -> float:
     The trophy cabinet scales agony from 0.5x (never expected to win anything)
     to 1.4x (a big club's drought is a heavier failure)."""
     return EXPECTATION_FLOOR + EXPECTATION_RANGE * min(1.0, n_majors / EXPECTATION_CAP)
+
+
+def european_presence(rows, now=NOW) -> float:
+    """Share of the last STATURE_SEASONS completed seasons spent in Europe,
+    weighted by competition; 0 for a club below the top flight."""
+    recent = sorted((r for r in rows if (r.get("year") or 0) <= now), key=lambda r: r["year"])[-STATURE_SEASONS:]
+    if not recent:
+        return 0.0
+    tot = 0.0
+    for r in recent:
+        q = r.get("eur_qual")
+        if q in STATURE_EUR:
+            tot += STATURE_EUR[q]
+        elif r.get("level") == 1:
+            tot += STATURE_TOP_FLIGHT
+    return tot / STATURE_SEASONS
+
+
+def foot_stature_factor(presence: float, value_pct, capacity_pct=None) -> float:
+    """Present-tense bigness: European presence, the Europe-wide squad-value
+    percentile where the club is priced, and the stadium-capacity percentile
+    where the site holds a ground (the fanbase a club can seat: Everton's
+    40,000 against Sparta Rotterdam's 12,000). Mean of whichever exist."""
+    sig = [presence] + [x for x in (value_pct, capacity_pct) if x is not None]
+    raw = sum(sig) / len(sig)
+    return STATURE_FLOOR + STATURE_RANGE * min(1.0, max(0.0, raw))
+
+
+def load_capacity_percentiles(data_dir, names):
+    """club name -> percentile (0..1) of stadium capacity among the tracked
+    clubs that team-metadata.json holds a ground for."""
+    try:
+        meta = load(data_dir, "sports/team-metadata.json").get("teams", {})
+    except Exception:
+        return {}
+    caps = {n: meta[n]["capacity"] for n in names if isinstance(meta.get(n), dict) and meta[n].get("capacity")}
+    if not caps:
+        return {}
+    ordered = sorted(caps.values())
+    n = len(ordered)
+    return {k: sum(1 for x in ordered if x <= v) / n for k, v in caps.items()}
+
+
+def load_value_percentiles(data_dir):
+    """slug -> percentile (0..1) of the latest twelve-month mean squad value,
+    across every priced club in every country file. Missing files -> {}."""
+    vals = {}
+    vdir = os.path.join(data_dir, "football", "value")
+    if not os.path.isdir(vdir):
+        return {}
+    for fn in os.listdir(vdir):
+        if not fn.endswith(".json") or fn == "index.json":
+            continue
+        d = load(data_dir, "football/value/%s" % fn)
+        for c in d.get("clubs", []):
+            ser = [x["v"] for x in (c.get("series") or [])[-12:] if x.get("v") is not None]
+            if c.get("slug") and ser:
+                vals[c["slug"]] = sum(ser) / len(ser)
+    if not vals:
+        return {}
+    ordered = sorted(vals.values())
+    n = len(ordered)
+    return {k: sum(1 for x in ordered if x <= v) / n for k, v in vals.items()}
 
 
 def pedigree_factor(win_years, now=NOW) -> float:
@@ -523,6 +627,9 @@ def score_football(data_dir):
         if ctry and (r.get("year") or 9999) <= NOW:
             ledger_titles[(ctry, norm(str(r.get("canonical") or "")))].append(r["year"])
 
+    value_pct = load_value_percentiles(data_dir)
+    capacity_pct = load_capacity_percentiles(
+        data_dir, {rows_[0].get("cur_name") for rows_ in seasons.values() if rows_})
     euro_wins = collections.defaultdict(list)    # slug -> [(comp_slug, year)]
     euro_losses = collections.defaultdict(list)
     for comp_slug, cfg in EURO.items():
@@ -535,6 +642,23 @@ def score_football(data_dir):
         for e in comp.get("finalists", []):
             if e.get("year") and e["year"] <= NOW:
                 euro_losses[e["slug"]].append((comp_slug, e["year"]))
+
+    # Top-flight champion per (country, year), with each champion's title years,
+    # so a runner-up season can ask whether it lost a race or met a hegemon.
+    champ_of = {}
+    champ_titles = collections.defaultdict(list)
+    for rows_ in seasons.values():
+        for r in rows_:
+            if played(r) and r.get("level") == 1 and r.get("place") == 1:
+                champ_of[(r.get("country"), r["year"])] = r.get("cur_name")
+                champ_titles[(r.get("country"), r.get("cur_name"))].append(r["year"])
+
+    def behind_hegemon(country_, year_):
+        c = champ_of.get((country_, year_))
+        if not c:
+            return False
+        need, span = HEGEMON_RUN
+        return sum(1 for y in champ_titles[(country_, c)] if 0 <= year_ - y < span) >= need
 
     # League size per (country, level, year) — needed to spot relegation scares
     league_size = {}
@@ -618,7 +742,8 @@ def score_football(data_dir):
         # League runner-up seasons (healed by a later league title)
         for r in rows:
             if r.get("level") == 1 and r.get("place") == 2:
-                add_wound("runner_up", r["year"], w_top, REL["runner_up"], l1_titles)
+                add_wound("runner_up", r["year"], w_top, REL["runner_up"], l1_titles,
+                          factor=RUNNER_UP_HEGEMON if behind_hegemon(country, r["year"]) else 1.0)
 
         # Relegation scares (the Everton anxiety): survived a top-flight season within
         # two places of the drop. Famine context amplifies; a later trophy heals.
@@ -673,7 +798,7 @@ def score_football(data_dir):
         if major_wins:
             start = major_wins[-1]
             mat = memory_ramp(NOW - start, MAJOR_RAMP_YEARS) * pedigree_factor(major_wins) * fade
-            pts = longing_points(w_top, NOW - start) * mat
+            pts = longing_points(w_top, min(NOW - start, FOOT_LONGING_CAP_YEARS)) * mat
             longing.append({"honour": "major trophy", "since": start,
                             "maturity": round(mat, 3), "fade": round(fade, 3),
                             "points": round(pts, 3)})
@@ -682,7 +807,7 @@ def score_football(data_dir):
             first = years[0]
             if NOW > first:
                 mat = memory_ramp(NOW - first, MAJOR_RAMP_YEARS) * fade
-                pts = longing_points(w_top, NOW - first) * mat
+                pts = longing_points(w_top, min(NOW - first, FOOT_LONGING_CAP_YEARS)) * mat
                 longing.append({"honour": "first major trophy", "since": first,
                                 "maturity": round(mat, 3), "fade": round(fade, 3),
                                 "points": round(pts, 3)})
@@ -694,7 +819,7 @@ def score_football(data_dir):
         if final_apps:
             start = final_apps[-1]
             mat = memory_ramp(NOW - start, MAJOR_RAMP_YEARS) * fade
-            pts = longing_points(w_top, NOW - start) * APPEARANCE_SHARE * mat
+            pts = longing_points(w_top, min(NOW - start, FOOT_LONGING_CAP_YEARS)) * APPEARANCE_SHARE * mat
             if pts > 0.05:
                 longing.append({"honour": "major final appearance", "since": start,
                                 "maturity": round(mat, 3), "fade": round(fade, 3),
@@ -743,13 +868,16 @@ def score_football(data_dir):
         longing.sort(key=lambda l: -l["points"])
         expectation = damp_bonus(expectation_factor(len(major_wins)),
                                  insulated(l1_titles + ucl_wins))
-        agony = (sum(l["points"] for l in longing) + sum(w["points"] for w in wounds)) * glow * expectation
+        stature = damp_bonus(foot_stature_factor(european_presence(rows), value_pct.get(slug), capacity_pct.get(name)),
+                             insulated(l1_titles + ucl_wins))
+        agony = (sum(l["points"] for l in longing) + sum(w["points"] for w in wounds)) * glow * expectation * stature
         out.append({
             "slug": slug, "name": name, "sport": "Football", "country": country,
             "group": "football",
             "agony": round(agony, 2), "despair": round(grind, 2),
             "total": round(agony + grind, 2),
             "afterglow": round(glow, 3), "expectation": round(expectation, 3),
+            "stature": round(stature, 3),
             "last_won": major_wins[-1] if major_wins else None,
             "longing": longing,
             "wounds": sorted(wounds, key=lambda w: -w["points"])[:12],
@@ -899,7 +1027,10 @@ def score_us(data_dir):
                     elif r.get("playoff"):
                         # The Leafs/Sabres tax: a playoff berth that dies early is hope
                         # bought and burned — and it compounds deep into a drought
-                        pts = (w * EARLY_EXIT_REL * hope_multiplier(competitive_share(y)) * ctx
+                        share = competitive_share(y)
+                        if (r.get("win_pct") or 0) >= FAVOURITE_WIN_PCT:
+                            share = 1.0
+                        pts = (w * EARLY_EXIT_REL * hope_multiplier(share) * ctx
                                * decay(NOW - y) * heal_factor(y, titles) * reloc_factor(y, move_year))
                         wounds.append({"kind": "early_exit", "year": y, "points": round(pts, 3)})
 
@@ -1056,6 +1187,414 @@ TEAM_NAT = {"FIFA World Cup", "UEFA European Championship", "Copa América", "Cr
             "Olympic men's basketball"}
 
 
+# Scarcity. A club plays for its title every year; a nation plays for the
+# World Cup once in four, and a generation of fans gets a dozen chances in a
+# lifetime rather than fifty. Each of those chances carries more, and the
+# wait between them is measured in tournaments missed, not seasons. So a
+# nation's longing and its lost finals are scaled by the cadence of the
+# competition: cadence ** SCARCITY_EXP. Ashwin's calibration point, 2026-09-07:
+# England's footballers should approach the Maple Leafs (46.2 on the club
+# board) without passing them. Once the never-won European Championship wait
+# and the appearances ledger were in, England sat at 63 with a 0.25 exponent;
+# 0.05 (a four-year tournament 1.07x, a two-year one 1.04x) puts England near
+# 48. The exponent is a calibration, recorded in params.
+NATION_CADENCE_YEARS = {
+    "World Cup": 4, "FIFA World Cup": 4, "FIFA Women's World Cup": 4,
+    "European Championship": 4, "UEFA European Championship": 4, "Copa América": 4,
+    "Africa Cup of Nations": 2, "AFC Asian Cup": 4, "CONCACAF Gold Cup": 2,
+    "Cricket World Cup": 4, "T20 World Cup": 2, "Rugby World Cup": 4,
+    "Olympic men's basketball": 4, "World Baseball Classic": 4,
+    "FIBA Basketball World Cup": 4, "UEFA Women's Championship": 4,
+}
+SCARCITY_EXP = 0.03
+
+# Which sport, and which team, each national competition belongs to. A win in
+# a competition of equal or higher tier in the SAME sport restarts every
+# drought clock in that sport and heals every earlier lost final in it: France
+# won the 2018 World Cup, so its fans were not carrying a European
+# Championship drought from 2000 through it, and the 2006 final they lost was
+# avenged (Ashwin, 2026-09-07). The women's World Cup is its own team and its
+# own sport here; a men's title heals nothing for it.
+LEDGER_SPORTS = {"football", "cricket", "rugby", "basketball", "baseball", "wfootball"}
+NATION_SPORT = {
+    "FIFA World Cup": "football", "World Cup": "football",
+    "UEFA European Championship": "football", "European Championship": "football", "Copa América": "football",
+    "Africa Cup of Nations": "football", "AFC Asian Cup": "football", "CONCACAF Gold Cup": "football",
+    "FIFA Women's World Cup": "wfootball",
+    "Cricket World Cup": "cricket", "T20 World Cup": "cricket",
+    "Rugby World Cup": "rugby", "Olympic men's basketball": "basketball", "World Baseball Classic": "baseball",
+    "FIBA Basketball World Cup": "basketball", "UEFA Women's Championship": "wfootball",
+}
+
+
+def scarcity(comp):
+    return NATION_CADENCE_YEARS.get(comp, 4) ** SCARCITY_EXP
+
+
+# Football national teams are scored from the appearances ledger
+# (international/appearances.json: every team, every tournament, the round
+# reached), not from the champions list alone. Two things the champions list
+# cannot say (Ashwin, 2026-09-07): a team that has NEVER won still waits, from
+# its first appearance, with the club engine's aspiration fade so a side that
+# has never been near a semi-final aches at the floor rather than at full
+# weight; and a continental title CONSOLES a World Cup drought (Uruguay's six
+# Copas since 1950) through the same consolation_discount the clubs use, while
+# a World Cup title restarts the continental clock outright.
+FOOT_COMPS = {
+    "WC": ("FIFA World Cup", 0),
+    "EUROS": ("UEFA European Championship", 1),
+    "COPA": ("Copa América", 2),
+    "AFCON": ("Africa Cup of Nations", 3),
+    "ASIAN": ("AFC Asian Cup", 3),
+    "GOLD": ("CONCACAF Gold Cup", 3),
+}
+CONTENTION_ROUNDS = {"Semifinal", "Final", "Champion"}
+NATION_CONSOL = 0.25          # a continental title consoles the World Cup wait, per title, recency-weighted
+# A HEGEMON competition (Ashwin, 2026-09-07: the US men have won seven of the
+# last eight Olympic basketball golds, so nobody else's wait or lost final in it
+# is a heartbreak on the football scale). When one nation holds at least
+# NATION_HEGEMON_SHARE of the last NATION_HEGEMON_EDITIONS editions, every
+# OTHER nation's drought and lost final in that competition is priced at
+# NATION_HEGEMON_FACTOR, the club board's runner-up-under-a-hegemon rule.
+NATION_HEGEMON_EDITIONS = 8
+NATION_HEGEMON_SHARE = 0.6
+NATION_HEGEMON_FACTOR = 0.35
+# Depth of the field, per sport (Ashwin, 2026-09-07): the women's game is
+# contested at the top by a handful of nations, so its waits are priced at
+# half; order unchanged. Recorded in params.
+NATION_SPORT_SCALE = {"wfootball": 0.5}
+# Rugby stature: how much a nation has invested in the game, from the caps it
+# has played (percentile) and the peak of its world ranking, so France and
+# Wales, who have never won but have lived in the top four for a century,
+# outweigh a side with a third of the matches (Ashwin, 2026-09-07).
+RUGBY_STATURE_FLOOR = 0.4
+RUGBY_STATURE_RANGE = 1.0
+NATION_CONSOL_ANNUAL = 0.05   # an ANNUAL honour (Six Nations, Rugby Championship) consoles less per
+                              # title: France's three Six Nations in five years are not three Copas
+
+
+def score_football_nations(data_dir, score, det, finals_last, meta=None):
+    apps = load(data_dir, "international/appearances.json")
+    for slug, rows in apps.items():
+        # Same derivation the finals loop uses, so droughts and lost finals
+        # land on one row.
+        name = slug.replace("-", " ").title()
+        by = collections.defaultdict(list)
+        for a in rows:
+            cat = a.get("category")
+            if cat in FOOT_COMPS and (a.get("year") or 9999) <= NOW:
+                by[cat].append(a)
+        if "WC" not in by and not any(c in by for c in FOOT_COMPS):
+            continue
+        wins = {cat: max((a["year"] for a in rs if a.get("champion")), default=None) for cat, rs in by.items()}
+        all_wins = {cat: sorted(a["year"] for a in rs if a.get("champion")) for cat, rs in by.items()}
+        wc_win = wins.get("WC")
+        if meta is not None:
+            every = sorted(y for ys in all_wins.values() for y in ys)
+            meta[(name, "football")] = {"last_won": every[-1] if every else None,
+                                        "first": min(a["year"] for rs in by.values() for a in rs)}
+            score[(name, "football")] += 0.0
+        for cat, rs in by.items():
+            comp, tier = FOOT_COMPS[cat]
+            first = min(a["year"] for a in rs)
+            last_win = wins.get(cat)
+            # A World Cup restarts every continental clock (equal or higher tier).
+            if cat != "WC" and wc_win and (last_win is None or wc_win > last_win):
+                last_win = wc_win
+            start = last_win if last_win else first
+            years = NOW - start
+            if years <= 0:
+                continue
+            contended = [a["year"] for a in rs if a.get("round_reached") in CONTENTION_ROUNDS and a["year"] > start]
+            last_cont = max(contended) if contended else (start if last_win else None)
+            # "At the level" for a nation is a quarter-final or better within the
+            # last two editions, not merely qualifying: forty-eight teams reach
+            # a World Cup, and a side that goes out in the round of sixteen every
+            # time is not in the room where the dream is (Mexico, Scotland).
+            at_level = any(a["round_reached"] in ("Quarterfinal", "Semifinal", "Final", "Champion")
+                           and (NOW - a["year"]) <= 8 for a in rs)
+            fade = aspiration_fade(last_cont, at_level)
+            consol = 1.0
+            if cat == "WC":
+                cons = [(NATION_CONSOL, y) for c2, ys in all_wins.items() if c2 != "WC" for y in ys if y > start]
+                consol = consolation_discount(cons, start)
+            pts = longing_points(TIER_W[tier], years) * memory_ramp(years) * fade * consol * scarcity(comp)
+            if pts <= 0.05:
+                continue
+            score[(name, "football")] += pts
+            det[(name, "football")].append({
+                "kind": "drought", "comp": comp, "since": start, "never": last_win is None,
+                "points": round(pts, 2)})
+            finals_last[(name, comp)] = last_win
+    return score, det
+
+
+# Cricket national teams: the cricket hub's own honours and finals ledgers
+# (public/data/cricket) rather than the champions list, so a team that has
+# never won still waits from its first match in the format. Each sport's
+# ULTIMATE honour is tier 0 like the FIFA World Cup (the Cricket World Cup,
+# the Rugby World Cup, Olympic gold and the FIBA World Cup, the Classic); a
+# nation's lost final weighs the tier too. Ashwin, 2026-09-07: these come once
+# in four years and the ache is not smaller for it. Only the two
+# World Cups are droughts, and they are PEERS (Ashwin, 2026-09-07): either
+# title is a world championship, so a win in one restarts BOTH clocks
+# (England's 2022 T20 title reset its ODI wait; Australia's 2023 ODI title
+# reset its T20 wait). The Champions Trophy and the World Test Championship
+# only console them (South Africa 1998 and 2025). 🔴 The ledger
+# holds finals, not semi-finals, so the exits that define South Africa's
+# reputation (1992, 1999, 2007, 2015, 2023) are NOT priced yet; when a
+# per-edition knockout ledger exists the aspiration fade will read it.
+CRICKET_COMPS = {
+    "wc": ("Cricket World Cup", 0, "ODI"),
+    "t20wc": ("T20 World Cup", 1, "T20I"),
+}
+CRICKET_CONSOL_KEYS = ("ct", "wtc")
+
+
+def _years(v):
+    out = []
+    for tok in str(v or "").replace("*", "").split(","):
+        tok = tok.strip()
+        if tok[:4].isdigit():
+            out.append(int(tok[:4]))
+    return out
+
+
+def score_cricket_nations(data_dir, score, det, meta=None):
+    teams = load(data_dir, "cricket/teams.json")
+    teams = teams if isinstance(teams, list) else teams.get("teams", [])
+    for t in teams:
+        if not t.get("full_member") or not t.get("honours"):
+            continue
+        name = t["name"]
+        key = (name, "cricket")
+        h = t["honours"]
+        detail_path = os.path.join(data_dir, "cricket", "team-detail", "%s.json" % t["slug"])
+        finals = load(data_dir, "cricket/team-detail/%s.json" % t["slug"]).get("finals", []) if os.path.exists(detail_path) else []
+        final_years = [f["year"] for f in finals if f.get("year") and f["year"] <= NOW]
+        consol_years = [y for k in CRICKET_CONSOL_KEYS for y in _years((h.get(k) or {}).get("title_years")) if y <= NOW]
+        any_world_title = max((y for hk in CRICKET_COMPS for y in _years((h.get(hk) or {}).get("title_years")) if y <= NOW), default=None)
+        if meta is not None:
+            firsts = [int(((t.get("formats", {}).get(fmt) or {}).get("first") or "9999")[:4]) for _, (_, _, fmt) in CRICKET_COMPS.items()]
+            meta[key] = {"last_won": any_world_title, "first": min(firsts) if min(firsts) < 9999 else None}
+            score[key] += 0.0
+        for hk, (comp, tier, fmt) in CRICKET_COMPS.items():
+            first = (t.get("formats", {}).get(fmt) or {}).get("first")
+            if not first:
+                continue
+            first_year = int(first[:4])
+            wins = [y for y in _years((h.get(hk) or {}).get("title_years")) if y <= NOW]
+            # Peer rule: the clock runs from the latest title in EITHER format.
+            start = any_world_title if any_world_title else first_year
+            if start < first_year:
+                start = first_year
+            years = NOW - start
+            if years <= 0:
+                continue
+            contended = [y for y in final_years if y > start]
+            last_cont = max(contended) if contended else (start if any_world_title else None)
+            at_level = any((NOW - y) <= 8 for y in final_years)
+            fade = aspiration_fade(last_cont, at_level)
+            consol = consolation_discount([(NATION_CONSOL, y) for y in consol_years if y > start], start)
+            pts = longing_points(TIER_W[tier], years) * memory_ramp(years) * fade * consol * scarcity(comp)
+            if pts <= 0.05:
+                continue
+            score[key] += pts
+            det[key].append({"kind": "drought", "comp": comp, "since": start, "never": not any_world_title, "points": round(pts, 2)})
+        for f in finals:
+            if f.get("won") or not f.get("year") or f["year"] > NOW:
+                continue
+            major = str(f.get("major") or "")
+            if "World Cup" not in major:
+                continue
+            avenged = any(y > f["year"] for hk in CRICKET_COMPS for y in _years((h.get(hk) or {}).get("title_years")))
+            ftier = 0 if "T20" not in major else 1
+            pts = TIER_W[ftier] * decay(NOW - f["year"]) * scarcity(major) * (HEALED_FACTOR if avenged else 1.0)
+            score[key] += pts
+            det[key].append({"kind": "final_lost", "comp": major, "year": f["year"], "points": round(pts, 2)})
+    return score, det
+
+
+# ---------------------------------------------------------------------------
+# One ledger scorer for every national team the site holds a ledger for.
+# Ashwin, 2026-09-07: the champions list only knows winners, so Wales and
+# France (rugby), France and Lithuania (basketball), Puerto Rico and Cuba
+# (baseball), England and France (women's football) were missing outright, and
+# the sports read as tiny. A nation that has never won waits from its FIRST
+# appearance, faded like a club that has not been near the semi-finals; a lost
+# final is a wound; lesser honours console. Within a sport the listed
+# competitions are PEERS when peers=True (cricket's two World Cups, basketball's
+# Olympic gold and World Cup): a title in any restarts every clock. Otherwise
+# (football, men's and women's) a higher-tier title restarts a lower-tier clock
+# and a lower-tier title only consoles.
+# ---------------------------------------------------------------------------
+
+def hegemon_factor(champions_by_year, editions=NATION_HEGEMON_EDITIONS):
+    """champions_by_year: {year: nation} for one competition. Returns
+    NATION_HEGEMON_FACTOR when one nation holds NATION_HEGEMON_SHARE of the
+    last `editions` editions, else 1.0, with the hegemon's name."""
+    recent = [champions_by_year[y] for y in sorted(champions_by_year) if y <= NOW][-editions:]
+    if len(recent) < editions:
+        return 1.0, None
+    top, n = collections.Counter(recent).most_common(1)[0]
+    current = recent[-3:].count(top) >= 2      # a hegemon that stopped winning is history
+    return (NATION_HEGEMON_FACTOR, top) if n / editions >= NATION_HEGEMON_SHARE and current else (1.0, None)
+
+
+def score_ledger_nation(score, det, meta, name, sport, comps, peers=False, stature=1.0):
+    """comps: list of dicts with comp, tier, wins, first, finals_lost, semis, qfs,
+    consol ([(weight, year)]), and optionally hegemon (factor, nation)."""
+    key = (name, sport)
+    comps = [c for c in comps if c.get("first")]
+    if not comps:
+        return
+    all_wins = sorted(y for c in comps for y in c["wins"] if y <= NOW)
+    meta[key] = {"last_won": all_wins[-1] if all_wins else None,
+                 "first": min(c["first"] for c in comps)}
+    score[key] += 0.0    # every nation with a ledger gets a row, champions included
+    scale = NATION_SPORT_SCALE.get(sport, 1.0) * stature
+    for c in comps:
+        heg, heg_who = c.get("hegemon") or (1.0, None)
+        if heg_who == name:
+            heg = 1.0
+        comp, tier = c["comp"], c["tier"]
+        wins = [y for y in c["wins"] if y <= NOW]
+        heal_years = [y for c2 in comps for y in c2["wins"]
+                      if y <= NOW and (peers or c2["tier"] <= tier)]
+        start = max(heal_years) if heal_years else c["first"]
+        years = NOW - start
+        if years <= 0:
+            continue
+        contended = [y for y in c["finals_lost"] + c["semis"] if start < y <= NOW]
+        last_cont = max(contended) if contended else (start if heal_years else None)
+        at_level = any(NOW - y <= 8 for y in c["finals_lost"] + c["semis"] + c["qfs"] if y <= NOW)
+        fade = aspiration_fade(last_cont, at_level)
+        cons = list(c.get("consol") or [])
+        if not peers:
+            cons += [(NATION_CONSOL, y) for c2 in comps for y in c2["wins"]
+                     if c2["tier"] > tier and y <= NOW]
+        consol = consolation_discount([(w, y) for w, y in cons if y > start], start)
+        pts = longing_points(TIER_W[tier], years) * memory_ramp(years) * fade * consol * scarcity(comp) * heg * scale
+        if pts <= 0.05:
+            continue
+        score[key] += pts
+        det[key].append({"kind": "drought", "comp": comp, "since": start,
+                         "never": not heal_years, "points": round(pts, 2)})
+        for y in c["finals_lost"]:
+            if y > NOW:
+                continue
+            avenged = any(y2 > y for y2 in heal_years)
+            fpts = TIER_W[tier] * decay(NOW - y) * scarcity(comp) * (HEALED_FACTOR if avenged else 1.0) * heg * scale
+            score[key] += fpts
+            det[key].append({"kind": "final_lost", "comp": comp, "year": y, "points": round(fpts, 2)})
+
+
+def _yrs(v):
+    return sorted(int(str(x)[:4]) for x in (v or []) if str(x)[:4].isdigit())
+
+
+def score_rugby_nations(data_dir, score, det, meta):
+    teams = load(data_dir, "rugby-union/teams.json")
+    finals = load(data_dir, "rugby-union/hub.json").get("rwc_finals", [])
+    lost = collections.defaultdict(list)
+    for f in finals:
+        if f.get("runner_up") and f.get("year"):
+            lost[f["runner_up"]].append(int(f["year"]))
+    caps = sorted((t.get("record") or {}).get("m") or 0 for t in teams)
+    heg = hegemon_factor({int(f["year"]): f["winner"] for f in finals if f.get("year") and f.get("winner")})
+    for t in teams:
+        rwc = t.get("rwc") or {}
+        if not rwc.get("apps"):
+            continue
+        m = (t.get("record") or {}).get("m") or 0
+        cap_rel = m / max(caps) if caps and max(caps) else 0.0     # share of the most-capped nation
+        peak = (t.get("ranking") or {}).get("peak") or 99
+        peak_score = 1.0 if peak <= 2 else 0.6 if peak <= 5 else 0.25
+        stature = RUGBY_STATURE_FLOOR + RUGBY_STATURE_RANGE * (0.6 * cap_rel + 0.4 * peak_score)
+        detail = os.path.join(data_dir, "rugby-union", "team-detail", "%s.json" % t["slug"])
+        seasons = load(data_dir, "rugby-union/team-detail/%s.json" % t["slug"]).get("seasons", []) if os.path.exists(detail) else []
+        rwc_rows = [r for r in seasons if "Rugby World Cup" in str(r.get("comp", ""))]
+        first = min((r["season"] for r in rwc_rows), default=None)
+        if first is None:
+            first = 1987 if rwc.get("apps", 0) >= 10 else None
+        ch = t.get("championships") or {}
+        consol = [(NATION_CONSOL_ANNUAL, y) for y in _yrs(ch.get("five_six_years")) + _yrs(ch.get("trc_years"))]
+        score_ledger_nation(score, det, meta, t["name"], "rugby", [{
+            "comp": "Rugby World Cup", "tier": 0, "wins": _yrs(rwc.get("title_years")), "first": first,
+            "finals_lost": lost.get(t["name"], []),
+            "semis": [r["season"] for r in rwc_rows if r.get("rwc_sf")],
+            "qfs": [r["season"] for r in rwc_rows if r.get("rwc_qf")],
+            "consol": consol, "hegemon": heg}], stature=stature)
+
+
+def score_basketball_nations(data_dir, score, det, meta):
+    nations = load(data_dir, "basketball/nations.json")
+    heg_oly = hegemon_factor({y: n["name"] for n in nations for y in _yrs(n.get("gold_years"))})
+    heg_wc = hegemon_factor({y: n["name"] for n in nations for y in _yrs(n.get("wc_title_years"))})
+    for n in nations:
+        detail = os.path.join(data_dir, "basketball", "nation-detail", "%s.json" % n["slug"])
+        d = load(data_dir, "basketball/nation-detail/%s.json" % n["slug"]) if os.path.exists(detail) else {}
+        camp = [c["year"] for c in d.get("campaigns", []) if c.get("year")]
+        pod = d.get("podium_years") or {}
+        silver, bronze = _yrs(pod.get("silver")), _yrs(pod.get("bronze"))
+        oly_first = min(_yrs(pod.get("gold")) + silver + bronze, default=None)
+        if not camp and oly_first is None:
+            continue
+        wc_first = min(camp) if camp else None
+        score_ledger_nation(score, det, meta, n["name"], "basketball", [
+            {"comp": "Olympic men's basketball", "tier": 0, "wins": _yrs(n.get("gold_years")),
+             "first": oly_first or wc_first, "finals_lost": silver, "semis": bronze, "qfs": [], "consol": [],
+             "hegemon": heg_oly},
+            {"comp": "FIBA Basketball World Cup", "tier": 1, "wins": _yrs(n.get("wc_title_years")),
+             "first": wc_first or oly_first, "finals_lost": _yrs(n.get("wc_ru_years")),
+             "semis": [c["year"] for c in d.get("campaigns", []) if str(c.get("finish") or "").startswith(("Third", "Fourth", "Semi"))],
+             "qfs": [], "consol": [], "hegemon": heg_wc},
+        ], peers=True)
+
+
+def score_baseball_nations(data_dir, score, det, meta):
+    teams = load(data_dir, "baseball/teams.json")
+    heg = hegemon_factor({y: t["name"] for t in teams for y in _yrs(t.get("title_years"))})
+    for t in teams:
+        if not t.get("first"):
+            continue
+        detail = os.path.join(data_dir, "baseball", "team-detail", "%s.json" % t["slug"])
+        camp = load(data_dir, "baseball/team-detail/%s.json" % t["slug"]).get("campaigns", []) if os.path.exists(detail) else []
+        score_ledger_nation(score, det, meta, t["name"], "baseball", [{
+            "comp": "World Baseball Classic", "tier": 0, "wins": _yrs(t.get("title_years")), "first": t["first"],
+            "finals_lost": _yrs(t.get("ru_years")),
+            "semis": [c["year"] for c in camp if str(c.get("finish") or "").startswith("Semi")],
+            "qfs": [c["year"] for c in camp if str(c.get("finish") or "").startswith("Quarter")],
+            "consol": [], "hegemon": heg}])
+
+
+def score_wfootball_nations(data_dir, score, det, meta):
+    wwc = {n["name"]: n for n in load(data_dir, "football/womens-world-cup.json").get("nations", [])}
+    eur = {n["name"]: n for n in load(data_dir, "wintl/euros.json").get("nations", [])}
+    oly = {n["name"]: n for n in load(data_dir, "wintl/olympics.json").get("nations", [])}
+    heg_wwc = hegemon_factor({y: n["name"] for n in wwc.values() for y in _yrs(n.get("title_years"))})
+    heg_eur = hegemon_factor({y: n["name"] for n in eur.values() for y in _yrs(n.get("title_years"))})
+    for name in sorted(set(wwc) | set(eur)):
+        comps = []
+        w = wwc.get(name)
+        if w and w.get("first_appearance"):
+            res = w.get("results", [])
+            comps.append({"comp": "FIFA Women's World Cup", "tier": 0, "wins": _yrs(w.get("title_years")),
+                          "first": int(w["first_appearance"]),
+                          "finals_lost": [int(r["year"]) for r in res if r.get("rank") == 2],
+                          "semis": [int(r["year"]) for r in res if r.get("rank") in (3, 4)],
+                          "qfs": [int(r["year"]) for r in res if r.get("rank") and r["rank"] <= 8],
+                          "consol": [(NATION_CONSOL, y) for y in _yrs((oly.get(name) or {}).get("gold_years"))],
+                          "hegemon": heg_wwc})
+        e = eur.get(name)
+        if e and e.get("first"):
+            comps.append({"comp": "UEFA Women's Championship", "tier": 1, "wins": _yrs(e.get("title_years")),
+                          "first": int(e["first"]), "finals_lost": _yrs(e.get("ru_years")),
+                          "semis": _yrs(e.get("semi_years")), "qfs": _yrs(e.get("semi_years")) + _yrs(e.get("ru_years")),
+                          "consol": [], "hegemon": heg_eur})
+        score_ledger_nation(score, det, meta, name, "wfootball", comps)
+
+
 def score_nations(data_dir):
     ch = load(data_dir, "champions-history.json")
     comp_tier = {}
@@ -1076,10 +1615,44 @@ def score_nations(data_dir):
             last[(nat, c)] = y
     score = collections.defaultdict(float)
     det = collections.defaultdict(list)
+    meta = {}
+
+    def heals(n, c, y):
+        """Latest year a win in the same sport, at equal or higher tier, resets
+        the clock for competition c: the later of c's own last win and any
+        such win. A lower-tier win (a T20 title against a World Cup drought)
+        does not count."""
+        sport = NATION_SPORT.get(c)
+        best = y
+        if sport is None:
+            return best
+        for (n2, c2), y2 in last.items():
+            if n2 != n or c2 == c or NATION_SPORT.get(c2) != sport:
+                continue
+            if comp_tier[c2][0] <= comp_tier[c][0] and y2 > best:
+                best = y2
+        return best
+
+    # One row per TEAM, and a national team is a nation in ONE sport: England's
+    # footballers, cricketers and rugby players are three fanbases with three
+    # waits, not one (Ashwin, 2026-09-07). Keys are (nation, sport).
     for (n, c), y in last.items():
-        pts = longing_points(TIER_W[comp_tier[c][0]], NOW - y) * memory_ramp(NOW - y)
-        score[n] += pts
-        det[n].append({"kind": "drought", "comp": c, "since": y, "points": round(pts, 2)})
+        if NATION_SPORT.get(c) in LEDGER_SPORTS:
+            continue  # scored from their own ledgers below
+        y_eff = heals(n, c, y)
+        pts = longing_points(TIER_W[comp_tier[c][0]], NOW - y_eff) * memory_ramp(NOW - y_eff) * scarcity(c)
+        if pts <= 0:
+            continue
+        key = (n, NATION_SPORT.get(c, "other"))
+        score[key] += pts
+        det[key].append({"kind": "drought", "comp": c, "since": y_eff, "points": round(pts, 2)})
+    finals_last = {}
+    score_football_nations(data_dir, score, det, finals_last, meta)
+    score_cricket_nations(data_dir, score, det, meta)
+    score_rugby_nations(data_dir, score, det, meta)
+    score_basketball_nations(data_dir, score, det, meta)
+    score_baseball_nations(data_dir, score, det, meta)
+    score_wfootball_nations(data_dir, score, det, meta)
     fin = load(data_dir, "international/finals.json")
     keep = {"World Cup", "European Championship", "Copa América", "FIFA World Cup"}
     for slug, fl in fin.items():
@@ -1098,13 +1671,32 @@ def score_nations(data_dir):
                     close = 1.5 if m <= 1 else (0.75 if m >= 3 else 1.0)
                 except Exception:
                     pass
-            pts = 2.0 * close * decay(NOW - f["year"])
-            score[name] += pts
-            det[name].append({"kind": "final_lost", "comp": f.get("competition"),
-                              "year": f["year"], "points": round(pts, 2)})
-    return [{"nation": n, "total": round(s, 2),
-             "detail": sorted(det[n], key=lambda d: -d["points"])[:6]}
-            for n, s in sorted(score.items(), key=lambda kv: -kv[1])]
+            pts = 2.0 * close * decay(NOW - f["year"]) * scarcity(str(f.get("competition") or ""))
+            # A final lost and then avenged by a later title in the same sport
+            # (any competition of equal or higher tier) is a healed wound, the
+            # club engine's own rule. France 2006 after 2018; not France 2022.
+            fcomp = str(f.get("competition") or "")
+            fsport = next((sp for k, sp in NATION_SPORT.items() if k.lower() in fcomp.lower()), None)
+            ftier = next((comp_tier[k][0] for k in comp_tier if k.lower() in fcomp.lower() or fcomp.lower() in k.lower()), None)
+            if fsport is not None:
+                avenged = any(
+                    n2 == name and NATION_SPORT.get(c2) == fsport and y2 > f["year"]
+                    and (ftier is None or comp_tier[c2][0] <= ftier)
+                    for (n2, c2), y2 in last.items()
+                )
+                if avenged:
+                    pts *= HEALED_FACTOR
+            key = (name, fsport or "football")
+            score[key] += pts
+            det[key].append({"kind": "final_lost", "comp": f.get("competition"),
+                             "year": f["year"], "points": round(pts, 2)})
+    SPORT_LABEL = {"football": "Football", "wfootball": "Women's football", "cricket": "Cricket",
+                   "rugby": "Rugby", "basketball": "Basketball", "baseball": "Baseball", "other": "Other"}
+    return [{"nation": n, "sport": SPORT_LABEL.get(sp, sp), "total": round(s, 2),
+             "last_won": (meta.get((n, sp)) or {}).get("last_won"),
+             "first": (meta.get((n, sp)) or {}).get("first"),
+             "detail": sorted(det[(n, sp)], key=lambda d: -d["points"])[:6]}
+            for (n, sp), s in sorted(score.items(), key=lambda kv: -kv[1])]
 
 
 def parade_drought(data_dir):
@@ -1202,7 +1794,17 @@ def parade_drought(data_dir):
             m = str(r.get("metro") or "")
             if m and r["year"] > mlast.get(m, 0):
                 mlast[m] = r["year"]
-    board = [{"metro": m, "last": y, "years": NOW - y} for m, y in mlast.items() if m in pro_metros]
+    # Metro page slug (/rankings/<slug>), from the team list first and the
+    # champions ledger second; a metro with no slug on either renders unlinked.
+    metro_slug = {}
+    for t in at:
+        if t.get("metro") and t.get("metro_slug"):
+            metro_slug.setdefault(t["metro"], t["metro_slug"])
+    for r in ch:
+        if r.get("metro") and r.get("metroSlug"):
+            metro_slug.setdefault(str(r["metro"]), r["metroSlug"])
+    board = [{"metro": m, "slug": metro_slug.get(m), "last": y, "years": NOW - y}
+             for m, y in mlast.items() if m in pro_metros]
     board.sort(key=lambda e: -e["years"])
     return board
 
@@ -1231,7 +1833,7 @@ GFL_W = 2.0   # grand-final leagues price in local currency like everyone else
 
 def _gfl_record(slug, name, sport, country, titles, first, gf_years, loss_events,
                 contention_years, exit_years, deep_exit_years=None, group="gfl",
-                closed=False, title_contention_years=None):
+                closed=False, title_contention_years=None, relevance=1.0):
     """Shared scorer for grand-final leagues (AFL, NRL, CFL, NPB) and college.
     loss_events: [(year, closeness)] finals lost. exit_years: campaigns that died
     early (0.12). deep_exit_years: one round short of the final (0.4).
@@ -1303,13 +1905,14 @@ def _gfl_record(slug, name, sport, country, titles, first, gf_years, loss_events
     glow = afterglow(titles[-1] if titles else None)
     expectation = 1.0 if closed else expectation_factor(len(titles))
     longing.sort(key=lambda l: -l["points"])
-    agony = (sum(l["points"] for l in longing) + sum(w["points"] for w in wounds)) * glow * expectation
+    agony = (sum(l["points"] for l in longing) + sum(w["points"] for w in wounds)) * glow * expectation * relevance
+    grind *= relevance
     return {
         "slug": slug, "name": name, "sport": sport, "group": group, "country": country,
         "agony": round(agony, 2), "despair": round(grind, 2),
         "total": round(agony + grind, 2),
         "afterglow": round(glow, 3), "expectation": round(expectation, 3),
-        "realism": round(real, 3),
+        "realism": round(real, 3), "relevance": round(relevance, 3),
         "last_won": titles[-1] if titles else None,
         "longing": longing,
         "wounds": sorted(wounds, key=lambda w: -w["points"])[:12],
@@ -1527,11 +2130,20 @@ def score_college_clubs(data_dir):
                               or (r.get("seed") or 99) <= 4]
             if not titles and not app_years and not deep_exits:
                 continue    # never loved-and-lost at this level
+            recent = [r for r in rows if NOW - COLLEGE_RELEVANCE_SEASONS < r["year"] <= NOW]
+            if sport == "CFB":
+                stage = sum(1 for r in recent if r.get("fin_ap"))
+                conf = sum(1 for r in recent if r.get("conf_champ"))
+            else:
+                stage = sum(1 for r in recent if r.get("ncaa") and not r.get("vacated"))
+                conf = sum(1 for r in recent if (r.get("reg_champ") or r.get("conf_tour_champ")) and not r.get("vacated"))
+            raw = 0.5 * (stage / COLLEGE_RELEVANCE_SEASONS) + 0.5 * min(1.0, conf / (COLLEGE_RELEVANCE_SEASONS * 0.4))
+            relevance = COLLEGE_RELEVANCE_FLOOR + COLLEGE_RELEVANCE_RANGE * min(1.0, raw)
             rec = _gfl_record(f"{sport.lower()}-{norm(school).replace(' ', '-')}",
                               school, sport, "United States", titles, first,
                               app_years, losses, contention, early,
                               deep_exit_years=deep_exits, group="college",
-                              title_contention_years=title_cont)
+                              title_contention_years=title_cont, relevance=relevance)
             out.append(rec)
     return out
 
@@ -1638,13 +2250,14 @@ def main():
                    "cup_consolations": CUP_CONSOL, "consol_floor": CONSOL_FLOOR,
                    "decay_half_life": DECAY_HALF_LIFE, "decay_floor": DECAY_FLOOR,
                    "hope_max_bonus": HOPE_MAX_BONUS, "habituation_window": HABIT_WINDOW,
+                   "nation_scarcity_exp": SCARCITY_EXP, "nation_consol": NATION_CONSOL, "nation_consol_annual": NATION_CONSOL_ANNUAL, "nation_hegemon": [NATION_HEGEMON_EDITIONS, NATION_HEGEMON_SHARE, NATION_HEGEMON_FACTOR], "nation_sport_scale": NATION_SPORT_SCALE, "rugby_stature": [RUGBY_STATURE_FLOOR, RUGBY_STATURE_RANGE], "nation_cadence_years": NATION_CADENCE_YEARS,
                    "healed_factor": HEALED_FACTOR, "reloc_discount": RELOC_DISCOUNT,
                    "league_as_consol": LEAGUE_AS_CONSOL,
                    "living_memory_years": LIVING_MEMORY_YEARS, "pedigree_step": PEDIGREE_STEP,
                    "aspiration_half_life": ASPIRATION_HALF_LIFE, "aspiration_floor": ASPIRATION_FLOOR,
                    "in_the_room": IN_THE_ROOM, "afterglow_years": AFTERGLOW_YEARS,
-                   "hegemon_titles_in_15": HEGEMON_TITLES_IN_15, "realism_floor": REALISM_FLOOR,
-                   "realism_window": REALISM_WINDOW, "early_exit_rel": EARLY_EXIT_REL,
+                   "hegemon_titles_in_15": HEGEMON_TITLES_IN_15, "runner_up_hegemon": RUNNER_UP_HEGEMON, "hegemon_run": HEGEMON_RUN, "realism_floor": REALISM_FLOOR,
+                   "realism_window": REALISM_WINDOW, "early_exit_rel": EARLY_EXIT_REL, "favourite_win_pct": FAVOURITE_WIN_PCT, "foot_longing_cap_years": FOOT_LONGING_CAP_YEARS, "college_relevance": [COLLEGE_RELEVANCE_SEASONS, COLLEGE_RELEVANCE_FLOOR, COLLEGE_RELEVANCE_RANGE],
                    "appearance_share": APPEARANCE_SHARE, "levels_share": LEVELS_SHARE,
                    "stature_max": STATURE_MAX, "conf_appearance_share": CONF_APPEARANCE_SHARE,
                    "cup_consol": CUP_CONSOL, "cup_wound_rel": CUP_WOUND_REL,
@@ -1661,6 +2274,8 @@ def main():
                    "context_base": CONTEXT_BASE, "context_span": CONTEXT_SPAN,
                    "context_horizon": CONTEXT_HORIZON,
                    "pedigree_window": PEDIGREE_WINDOW, "foot_heartbreak_w": FOOT_HEARTBREAK_W,
+                   "foot_stature_floor": STATURE_FLOOR, "foot_stature_range": STATURE_RANGE,
+                   "foot_stature_seasons": STATURE_SEASONS, "foot_stature_eur": STATURE_EUR,
                    "pang_points": PANG_POINTS,
                    "heartland_metros": {k: sorted(v) for k, v in HEARTLAND_METROS.items()},
                    "promotion_refund": PROMO_REFUND, "grind_share": GRIND_SHARE,

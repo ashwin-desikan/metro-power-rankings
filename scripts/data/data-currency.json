@@ -110,6 +110,16 @@
       "probe": "womensHockeyWorlds",
       "endsMonthDay": "12-01",
       "graceDays": 45
+    },
+    {
+      "key": "wwc",
+      "label": "FIBA Women's Basketball World Cup",
+      "probe": "womensBasketballWorldCup",
+      "endsMonthDay": "09-13",
+      "graceDays": 2,
+      "everyYears": 4,
+      "baseYear": 2026,
+      "why": "Quadrennial, so everyYears keeps a non-World-Cup year from demanding a row. The 2026 edition (Germany) is on the clock from 15 September 2026, which is when .github/workflows/wwc-2026-tracker.yml should have found a final; a missing row after that is the tracker having failed quietly."
     }
   ],
   "snapshots": [

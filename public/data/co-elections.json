@@ -1,0 +1,7756 @@
+{
+ "meta": {
+  "title": "Colombian Elections",
+  "sources": [
+   "Wikipedia: Colombian presidential and parliamentary election articles 1825-2026",
+   "Registraduria Nacional del Estado Civil figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "presEras": [
+  {
+   "key": "colegios",
+   "label": "Election by the colleges",
+   "span": "1825–1856",
+   "blurb": "For its first thirty years the republic chose presidents through provincial electoral colleges and, when they failed to produce a majority, through congress. The figures here are the electors' votes, not a popular ballot, and the men in them are the founders: Bolívar, Santander, Páez, Márquez, Mosquera."
+  },
+  {
+   "key": "estados",
+   "label": "The sovereign states",
+   "span": "1860–1884",
+   "blurb": "Under the federal constitutions of 1858 and 1863 the president was chosen by the nine states, each casting one vote, and a candidate needed five. These contests have no popular vote at all and appear here with the winner and no figures, because the article records states won rather than ballots cast. Presidential terms ran two years and the country fought several civil wars across the period."
+  },
+  {
+   "key": "hegemonia",
+   "label": "Regeneration and the Conservative hegemony",
+   "span": "1886–1930",
+   "blurb": "Núñez's Regeneration replaced the federal republic with a centralised one in 1886 and the Conservatives held the presidency for forty-four years. The Thousand Days' War and the loss of Panama fall inside the period, and it ends when the Conservatives split in 1930 and let Olaya Herrera through on 45%."
+  },
+  {
+   "key": "violencia",
+   "label": "The Liberal Republic and the Violencia",
+   "span": "1934–1949",
+   "blurb": "Sixteen years of Liberal presidents, then the split of 1946 that let the Conservatives back in on a minority, then the assassination of Jorge Eliécer Gaitán in April 1948 and the undeclared civil war that killed perhaps two hundred thousand people. The 1949 election was contested by one candidate because the Liberals refused to take part in it."
+  },
+  {
+   "key": "frente",
+   "label": "The National Front",
+   "span": "1958–1974",
+   "blurb": "The parties agreed in 1957 to alternate the presidency between them for sixteen years and to divide every elected body equally. Four presidents were elected under it, each of them the only candidate his half of the pact could nominate. The last of the four contests, in 1970, was won by 1.6 points against a former dictator whose supporters believed the count had been altered, and a guerrilla movement took its name from the date."
+  },
+  {
+   "key": "abierta",
+   "label": "The open contest",
+   "span": "1978–1990",
+   "blurb": "The pact lapsed and the presidency became a real two-party race again, decided in one round by simple plurality. Three presidential candidates were murdered in the run-up to the 1990 election."
+  },
+  {
+   "key": "balotaje",
+   "label": "Two rounds",
+   "span": "1994–2026",
+   "blurb": "The 1991 constitution introduced a runoff, and every election since has gone to one. It has produced the widest swings in Colombian politics: Uribe's outright first-round win in 2002, the peace referendum that followed Santos, Gustavo Petro as the first left-wing president in 2022, and in June 2026 Abelardo de la Espriella beating Iván Cepeda by less than a point."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "early",
+   "label": "The republic's first congress",
+   "span": "1825",
+   "blurb": "Gran Colombia's congress and presidency were chosen by provincial electoral colleges rather than by voters, and the record of the period that survives in this atlas is a single election. The century that followed had congressional elections too; the articles for them are not in the source used here, which is why the legislative series restarts in 1931."
+  },
+  {
+   "key": "liberal",
+   "label": "The Liberal Republic",
+   "span": "1931–1949",
+   "blurb": "The Liberals took congress in 1931 after fifty years of Conservative hegemony and held it at every election for eighteen years, with universal male suffrage from 1936 and majorities above 60%. The period ends badly: Gaitán's murder in 1948, the Violencia that followed, and the closure of congress by President Gómez in 1949."
+  },
+  {
+   "key": "dictatorship",
+   "label": "Rojas and the junta",
+   "span": "1951–1953",
+   "blurb": "Congress was shut in November 1949 and the elections of 1951 and 1953 were contested by the Conservatives alone, the Liberals having withdrawn. General Rojas Pinilla took power in 1953 and the Constituent Assembly that confirmed him was appointed rather than elected."
+  },
+  {
+   "key": "frente",
+   "label": "The National Front",
+   "span": "1958–1974",
+   "blurb": "The two parties ended the Violencia by agreeing to share everything: the seats in congress were split equally between Liberals and Conservatives for sixteen years, and voters chose between factions of their own party rather than between parties. The tables here show that, faction by faction. Everyone outside the pact, including the ANAPO movement that grew to a fifth of the vote, could win support but not seats."
+  },
+  {
+   "key": "open",
+   "label": "After the pact",
+   "span": "1978–1990",
+   "blurb": "Competition returned and the Liberals won every congressional election of the period, usually with a majority of the Senate. It was also the most violent electoral era in Colombian history: the Unión Patriótica, formed out of the 1985 peace talks, had thousands of its members and two of its presidential candidates murdered."
+  },
+  {
+   "key": "modern",
+   "label": "The 1991 constitution",
+   "span": "1991–2026",
+   "blurb": "The new constitution created a 100-seat Senate elected as a single national district, which was meant to break the regional machines and instead produced hundreds of personal lists. The 2003 reform imposed a threshold and forced parties to run one list each, cutting the field from sixty-odd parties to about twenty. In 2026 the Historic Pact topped the Senate poll with 25 of the 100 elected seats, the best result the Colombian left has recorded."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1825",
+   "label": "1825",
+   "year": 1825,
+   "kind": "presidential",
+   "date": "1825 to elect the presidency and Congress",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Francisco de Paula Santander",
+     "party": null,
+     "r1Votes": 285,
+     "r1Share": 46.57,
+     "r2Votes": 70,
+     "r2Share": 71.43
+    },
+    {
+     "name": "Pedro Briceño",
+     "party": null,
+     "r1Votes": 79,
+     "r1Share": 12.91,
+     "r2Votes": 6,
+     "r2Share": 6.12
+    },
+    {
+     "name": "José María Castillo",
+     "party": null,
+     "r1Votes": 56,
+     "r1Share": 9.15,
+     "r2Votes": 22,
+     "r2Share": 22.45
+    },
+    {
+     "name": "Luis A Baralt",
+     "party": null,
+     "r1Votes": 50,
+     "r1Share": 8.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Jose Sucre",
+     "party": null,
+     "r1Votes": 39,
+     "r1Share": 6.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cristóbal Mendoza",
+     "party": null,
+     "r1Votes": 26,
+     "r1Share": 4.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Domingo Caicedo",
+     "party": null,
+     "r1Votes": 25,
+     "r1Share": 4.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Soublette",
+     "party": null,
+     "r1Votes": 19,
+     "r1Share": 3.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Carabaño",
+     "party": null,
+     "r1Votes": 7,
+     "r1Share": 1.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquín Mosquera",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 0.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Gual Escandón",
+     "party": null,
+     "r1Votes": 5,
+     "r1Share": 0.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Montilla",
+     "party": null,
+     "r1Votes": 4,
+     "r1Share": 0.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Antonio Páez",
+     "party": null,
+     "r1Votes": 4,
+     "r1Share": 0.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vicente Aguirre",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Urdaneta",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Fortoul",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Guerrero",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Santiago Mariño",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Simón Bolívar",
+    "party": "Simón Bolívar"
+   },
+   "presAfter": {
+    "name": "Simón Bolívar",
+    "party": "This article is part of a series on the"
+   },
+   "knownAs": null,
+   "summary": "Francisco de Paula Santander won in the runoff with 71.43% against José María Castillo on 22.45%.",
+   "caveat": "The president was chosen by provincial electoral colleges and, failing a majority there, by congress; the figures are electors' votes.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1830",
+   "label": "1830",
+   "year": 1830,
+   "kind": "presidential",
+   "date": "4 May 1830",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Eusebio Canabal",
+     "party": null,
+     "r1Votes": 17,
+     "r1Share": 35.42,
+     "r2Votes": 14,
+     "r2Share": 29.17
+    },
+    {
+     "name": "Joaquín Mosquera",
+     "party": null,
+     "r1Votes": 27,
+     "r1Share": 56.25,
+     "r2Votes": 34,
+     "r2Share": 70.83
+    },
+    {
+     "name": "Domingo Caycedo",
+     "party": null,
+     "r1Votes": 4,
+     "r1Share": 8.33,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Joaquín Mosquera won in the runoff with 70.83% against Eusebio Canabal on 29.17%.",
+   "caveat": "The president was chosen by provincial electoral colleges and, failing a majority there, by congress; the figures are electors' votes.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1832",
+   "label": "1832",
+   "year": 1832,
+   "kind": "presidential",
+   "date": "9 March 1832",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Francisco de Paula Santander",
+     "party": null,
+     "r1Votes": 49,
+     "r1Share": 75.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquín Mosquera",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 9.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": null,
+     "r1Votes": 10,
+     "r1Share": 15.38,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Francisco de Paula Santander won with 75.38% against Others on 15.38%.",
+   "caveat": "The president was chosen by provincial electoral colleges and, failing a majority there, by congress; the figures are electors' votes.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1833",
+   "label": "1833",
+   "year": 1833,
+   "kind": "presidential",
+   "date": "1833",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Ignacio de Márquez",
+     "party": null,
+     "r1Votes": 422,
+     "r1Share": 34.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquín Mosquera",
+     "party": null,
+     "r1Votes": 217,
+     "r1Share": 17.71,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "José Ignacio de Márquez won with 34.45% against Joaquín Mosquera on 17.71%.",
+   "caveat": "The president was chosen by provincial electoral colleges and, failing a majority there, by congress; the figures are electors' votes.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1848",
+   "label": "1848",
+   "year": 1848,
+   "kind": "presidential",
+   "date": "1848 and 1849",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Hilario López",
+     "party": null,
+     "r1Votes": 42,
+     "r1Share": 50.0,
+     "r2Votes": 45,
+     "r2Share": 53.57
+    },
+    {
+     "name": "Rufino Cuervo",
+     "party": null,
+     "r1Votes": 39,
+     "r1Share": 46.43,
+     "r2Votes": 39,
+     "r2Share": 46.43
+    }
+   ],
+   "presBefore": {
+    "name": "Pedro Alcántara Herrán",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "José Hilario López",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "José Hilario López won in the runoff with 53.57% against Rufino Cuervo on 46.43%.",
+   "caveat": "The president was chosen by provincial electoral colleges and, failing a majority there, by congress; the figures are electors' votes.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1852",
+   "label": "1852",
+   "year": 1852,
+   "kind": "presidential",
+   "date": "1852 and 1853",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José María Obando",
+     "party": "Liberal",
+     "r1Votes": 1548,
+     "r1Share": 77.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tomás de Herrera",
+     "party": "Liberal",
+     "r1Votes": 329,
+     "r1Share": 16.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Ospina Rodríguez",
+     "party": null,
+     "r1Votes": 36,
+     "r1Share": 1.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rufino Cuervo y Barreto",
+     "party": null,
+     "r1Votes": 16,
+     "r1Share": 0.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vicente Borrero",
+     "party": null,
+     "r1Votes": 8,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Olano",
+     "party": null,
+     "r1Votes": 8,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel José Mosquera",
+     "party": null,
+     "r1Votes": 4,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan de Francisco Martín",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Florentino González",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquín París Ricaurte",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Evaristo Azuero",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Nepomuceno Azuero",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Murillo Turo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonino Olano",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Clímaco Ordóñez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José de Jesús Quijano",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Venancio Restrepo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Urquinaona",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "J.M.O.",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Hilario López",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "José María Obando",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "José María Obando won with 77.09% against Tomás de Herrera on 16.38%.",
+   "caveat": "The president was chosen by provincial electoral colleges and, failing a majority there, by congress; the figures are electors' votes.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1856",
+   "label": "1856",
+   "year": 1856,
+   "kind": "presidential",
+   "date": "1856",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mariano Ospina Rodríguez",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 96651,
+     "r1Share": 46.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Murillo Toro",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 79411,
+     "r1Share": 38.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tomás Cipriano de Mosquera",
+     "party": "National Party",
+     "r1Votes": 32713,
+     "r1Share": 15.66,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Ospina",
+     "party": null,
+     "r1Votes": 83,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Patrocinio Cuéllar",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel A. Murillo de Torres",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vicente Cárdena",
+     "party": null,
+     "r1Votes": 4,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan A. Arias",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Casto Celedón",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José María Obando",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ezequiel Rojas",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Florentino González",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco F. Martínez",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Alcántara Herrán",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Julio Arboleda Pombo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benedicto Arias",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Demetrio Arizabaleta",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Justo Arosemena Quesada",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "J. Antonio de la Barrera",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Martín Barros",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Simón Belacázar",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gabriel Bermúdez Santos",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel José Bonilla",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Burbano",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Campos",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Celedonio Castillo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Celadón Fernández",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Ezequiel Corrales",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rufino Díaz",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José María Franco",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis María Galindo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Reyes Gamboa",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael María Giraldo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Narciso Gómez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Gómez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Góngora",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "J. María Jovane Arce",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel S. Jurado",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Lara",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José María Llanos",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Montaña",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquín Mosquera",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Muriilo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Murillo Tero",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel U. Orna",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan de D. Ortiz",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Oscorio Aldana",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Ospina Rodríguez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pastor Ospina",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Emigdio Palau",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco A. Palau",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquín Paris",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Piedrahíta",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Pinto",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Saturnino Rincón",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manual Ma. Rodríguez Y.",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Rubiano de Rivariv",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Salcedo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Sánchez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leando Sánchez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Proto Sandoval",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Manuel Suárez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dionisio E. Vélez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marcos Veloza",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Hilario López",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "José María Obando",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Mariano Ospina Rodríguez won with 46.26% against Manuel Murillo Toro on 38.01%.",
+   "caveat": "The president was chosen by provincial electoral colleges and, failing a majority there, by congress; the figures are electors' votes.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1860",
+   "label": "1860",
+   "year": 1860,
+   "kind": "presidential",
+   "date": "1860",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Julio Arboleda Pombo",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 58506,
+     "r1Share": 73.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Alcántara Herrán",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 21390,
+     "r1Share": 26.77,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Julio Arboleda Pombo won with 73.23% against Pedro Alcántara Herrán on 26.77%.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1864",
+   "label": "1864",
+   "year": 1864,
+   "kind": "presidential",
+   "date": "1864",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1865",
+   "label": "1865",
+   "year": 1865,
+   "kind": "presidential",
+   "date": "1865 and February 1866",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1867",
+   "label": "1867",
+   "year": 1867,
+   "kind": "presidential",
+   "date": "1867 and 1868",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1869",
+   "label": "1869",
+   "year": 1869,
+   "kind": "presidential",
+   "date": "1869 and 1870",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1871",
+   "label": "1871",
+   "year": 1871,
+   "kind": "presidential",
+   "date": "1871 and 1872",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1873",
+   "label": "1873",
+   "year": 1873,
+   "kind": "presidential",
+   "date": "1873 and 1874",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1875",
+   "label": "1875",
+   "year": 1875,
+   "kind": "presidential",
+   "date": "1875 and 1876",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1878",
+   "label": "1878",
+   "year": 1878,
+   "kind": "presidential",
+   "date": "1878",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1880",
+   "label": "1880",
+   "year": 1880,
+   "kind": "presidential",
+   "date": "1880",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1882",
+   "label": "1882",
+   "year": 1882,
+   "kind": "presidential",
+   "date": "1882",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1884",
+   "label": "1884",
+   "year": 1884,
+   "kind": "presidential",
+   "date": "1884",
+   "era": "estados",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The nine sovereign states each cast a single vote for president, so no popular ballot was held.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1886",
+   "label": "1886",
+   "year": 1886,
+   "kind": "presidential",
+   "date": "1886",
+   "era": "hegemonia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José María Campo Serrano",
+     "party": null,
+     "r1Votes": 17,
+     "r1Share": 94.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Roldán Betancourt",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 5.56,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "José María Campo Serrano won with 94.44% against Antonio Roldán Betancourt on 5.56%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1891",
+   "label": "1891",
+   "year": 1891,
+   "kind": "presidential",
+   "date": "two stages in 1891 and 1892",
+   "era": "hegemonia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rafael Núñez",
+     "party": "National Party",
+     "r1Votes": 2075,
+     "r1Share": 80.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marceliano Vélez",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 509,
+     "r1Share": 19.7,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Holguín Mallarino",
+    "party": "Conservative"
+   },
+   "presAfter": {
+    "name": "Rafael Núñez",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "Rafael Núñez won with 80.30% against Marceliano Vélez on 19.70%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1897",
+   "label": "1897",
+   "year": 1897,
+   "kind": "presidential",
+   "date": "two stages in 1897 and 1898",
+   "era": "hegemonia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Antonio Sanclemente",
+     "party": "National Party",
+     "r1Votes": 1606,
+     "r1Share": 78.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Samper Agudelo",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 318,
+     "r1Share": 15.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Reyes",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 121,
+     "r1Share": 5.92,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Manuel Antonio Sanclemente won with 78.53% against Miguel Samper Agudelo on 15.55%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1904",
+   "label": "1904",
+   "year": 1904,
+   "kind": "presidential",
+   "date": "1904",
+   "era": "hegemonia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rafael Reyes",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 994,
+     "r1Share": 43.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marceliano Vélez",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 982,
+     "r1Share": 43.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aristides Fernandez",
+     "party": null,
+     "r1Votes": 145,
+     "r1Share": 6.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Antonio Caro",
+     "party": null,
+     "r1Votes": 70,
+     "r1Share": 3.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Nel Ospina Vázquez",
+     "party": null,
+     "r1Votes": 40,
+     "r1Share": 1.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Uribe Uribe",
+     "party": null,
+     "r1Votes": 11,
+     "r1Share": 0.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Quintero Calderón",
+     "party": null,
+     "r1Votes": 7,
+     "r1Share": 0.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Rico",
+     "party": null,
+     "r1Votes": 5,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro A. Molina",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón González Valencia",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergio Camargo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Cadavid",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José A. Pinto",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Rafael Reyes won with 43.94% against Marceliano Vélez on 43.41%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1914",
+   "label": "1914",
+   "year": 1914,
+   "kind": "presidential",
+   "date": "10 February 1914",
+   "era": "hegemonia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Vicente Concha",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 300735,
+     "r1Share": 89.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolás Esguerra",
+     "party": "Colombian Liberal Party–Republican Party",
+     "r1Votes": 36763,
+     "r1Share": 10.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": "99",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Eugenio Restrepo",
+    "party": "Conservative"
+   },
+   "presAfter": {
+    "name": "José Vicente Concha",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "José Vicente Concha won with 89.08% against Nicolás Esguerra on 10.89%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "presidential",
+   "date": "10 February 1918",
+   "era": "hegemonia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Marco Fidel Suárez",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 214839,
+     "r1Share": 52.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Valencia",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 168254,
+     "r1Share": 41.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Lombana",
+     "party": "Independent",
+     "r1Votes": 24041,
+     "r1Share": 5.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": "42",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Marco Fidel Suárez won with 52.76% against Guillermo Valencia on 41.32%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "presidential",
+   "date": "February 1922",
+   "era": "hegemonia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Pedro Nel Ospina",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 413619,
+     "r1Share": 61.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benjamín Herrera",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 256231,
+     "r1Share": 38.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Vicente Concha",
+     "party": null,
+     "r1Votes": 118,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": "81",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Pedro Nel Ospina won with 61.73% against Benjamín Herrera on 38.24%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1926",
+   "label": "1926",
+   "year": 1926,
+   "kind": "presidential",
+   "date": "14 February 1926",
+   "era": "hegemonia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Miguel Abadía Méndez",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 370494,
+     "r1Share": 99.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": "432",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Miguel Abadía Méndez won with 99.88%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1930",
+   "label": "1930",
+   "year": 1930,
+   "kind": "presidential",
+   "date": "9 February 1930",
+   "era": "hegemonia",
+   "turnout": 83.49,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Enrique Olaya Herrera",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 369934,
+     "r1Share": 44.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Valencia",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 240360,
+     "r1Share": 29.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfredo Vásquez Cobo",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 213470,
+     "r1Share": 25.91,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Enrique Olaya Herrera won with 44.91% against Guillermo Valencia on 29.18%. Turnout 83.5%.",
+   "caveat": "The Conservative Party held the presidency for forty-four years under a constitution written to keep it there.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1934",
+   "label": "1934",
+   "year": 1934,
+   "kind": "presidential",
+   "date": "11 February 1934",
+   "era": "violencia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alfonso López Pumarejo",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 938608,
+     "r1Share": 99.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eutiquio Timoté",
+     "party": "Colombian Communist Party",
+     "r1Votes": 1974,
+     "r1Share": 0.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": "1,427",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Alfonso López Pumarejo won with 99.64% against Eutiquio Timoté on 0.21%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "presidential",
+   "date": "1 May 1938",
+   "era": "violencia",
+   "turnout": 30.2,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Eduardo Santos",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 511947,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Eduardo Santos won with 100.00%. Turnout 30.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1942",
+   "label": "1942",
+   "year": 1942,
+   "kind": "presidential",
+   "date": "3 May 1942",
+   "era": "violencia",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alfonso López Pumarejo",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 673169,
+     "r1Share": 58.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Arango Vélez",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 474637,
+     "r1Share": 41.35,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Alfonso López Pumarejo won with 58.65% against Carlos Arango Vélez on 41.35%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "presidential",
+   "date": "5 May 1946",
+   "era": "violencia",
+   "turnout": 55.75,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mariano Ospina Pérez",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 565939,
+     "r1Share": 41.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gabriel Turbay",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 441199,
+     "r1Share": 32.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Eliécer Gaitán Ayala",
+     "party": "Colombian Liberal Party dissident",
+     "r1Votes": 358957,
+     "r1Share": 26.28,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alfonso López Pumarejo",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Mariano Ospina Pérez",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "Mariano Ospina Pérez won with 41.43% against Gabriel Turbay on 32.30%. Turnout 55.8%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "presidential",
+   "date": "27 November 1949",
+   "era": "violencia",
+   "turnout": 39.79,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Laureano Gómez",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 1140122,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": "23",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mariano Ospina Pérez",
+    "party": "Conservative"
+   },
+   "presAfter": {
+    "name": "Laureano Gómez",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "Laureano Gómez won with 100.00%. Turnout 39.8%.",
+   "caveat": "The Liberal Party withdrew and called a boycott, and Laureano Gomez received all but 23 of the 1.1 million votes cast.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "presidential",
+   "date": "4 May 1958",
+   "era": "frente",
+   "turnout": 57.71,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alberto Lleras Camargo",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 2482948,
+     "r1Share": 80.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Leyva Urdaneta",
+     "party": "Colombian Conservative Party dissidents",
+     "r1Votes": 614861,
+     "r1Share": 19.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": "290",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gabriel París Gordillo",
+    "party": "Military regime"
+   },
+   "presAfter": {
+    "name": "Alberto Lleras Camargo",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Alberto Lleras Camargo won with 80.14% against Jorge Leyva Urdaneta on 19.85%. Turnout 57.7%.",
+   "caveat": "The two parties had agreed to alternate the presidency between them, so only one candidate from the designated party could win.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "presidential",
+   "date": "6 May 1962",
+   "era": "frente",
+   "turnout": 48.75,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Guillermo León Valencia",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 1636081,
+     "r1Share": 84.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfonso López Michelsen",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 625630,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Leyva Urdaneta",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 308992,
+     "r1Share": 15.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gustavo Rojas Pinilla",
+     "party": "National Popular Alliance",
+     "r1Votes": 54562,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": "509",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Guillermo León Valencia won with 84.09% against Jorge Leyva Urdaneta on 15.88%. Turnout 48.8%.",
+   "caveat": "The two parties had agreed to alternate the presidency between them, so only one candidate from the designated party could win.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "presidential",
+   "date": "1 May 1966",
+   "era": "frente",
+   "turnout": 40.07,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Lleras Restrepo",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 1891175,
+     "r1Share": 71.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Jaramillo Giraldo",
+     "party": "National Popular Alliance",
+     "r1Votes": 742133,
+     "r1Share": 28.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Goyeneche",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 597,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Guillermo León Valencia",
+    "party": "Conservative"
+   },
+   "presAfter": {
+    "name": "Carlos Lleras Restrepo",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Carlos Lleras Restrepo won with 71.80% against José Jaramillo Giraldo on 28.18%. Turnout 40.1%.",
+   "caveat": "The two parties had agreed to alternate the presidency between them, so only one candidate from the designated party could win.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "presidential",
+   "date": "19 April 1970",
+   "era": "frente",
+   "turnout": 52.53,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Misael Pastrana Borrero",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 1625025,
+     "r1Share": 40.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gustavo Rojas Pinilla",
+     "party": "National Popular Alliance",
+     "r1Votes": 1561468,
+     "r1Share": 39.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Belisario Betancur",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 471350,
+     "r1Share": 11.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Evaristo Sourdis Juliao",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 336286,
+     "r1Share": 8.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Corredor",
+     "party": "Independent",
+     "r1Votes": 11,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Lleras Restrepo",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Misael Pastrana Borrero",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "Misael Pastrana Borrero won with 40.69% against Gustavo Rojas Pinilla on 39.09%. Turnout 52.5%.",
+   "caveat": "Rojas Pinilla lost by 1.6 points on a count his supporters said had been altered; a minister of the day later published a book admitting fraud.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "presidential",
+   "date": "21 April 1974",
+   "era": "frente",
+   "turnout": 58.14,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alfonso López Michelsen",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 2929719,
+     "r1Share": 56.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Gómez Hurtado",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 1634879,
+     "r1Share": 31.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "María Eugenia Rojas Correa",
+     "party": "National Popular Alliance",
+     "r1Votes": 492166,
+     "r1Share": 9.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hernando Echeverri Meija",
+     "party": "National Opposition Union",
+     "r1Votes": 137054,
+     "r1Share": 2.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hermes Duarte Arias",
+     "party": "Christian Democratic Party",
+     "r1Votes": 5718,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Córdoba",
+     "party": "Independent",
+     "r1Votes": 6,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Misael Pastrana Borrero",
+    "party": "Conservative"
+   },
+   "presAfter": {
+    "name": "Alfonso López Michelsen",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Alfonso López Michelsen won with 56.35% against Álvaro Gómez Hurtado on 31.44%. Turnout 58.1%.",
+   "caveat": "The two parties had agreed to alternate the presidency between them, so only one candidate from the designated party could win.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "presidential",
+   "date": "4 June 1978",
+   "era": "abierta",
+   "turnout": 40.34,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Julio César Turbay Ayala",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 2503681,
+     "r1Share": 49.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Belisario Betancur",
+     "party": "Colombian Conservative Party–National Movement",
+     "r1Votes": 2356620,
+     "r1Share": 46.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Julio César Pernía",
+     "party": "National Opposition Union",
+     "r1Votes": 97234,
+     "r1Share": 1.92,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Valencia Tovar",
+     "party": "National Renovation Movement",
+     "r1Votes": 65961,
+     "r1Share": 1.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jaime Piedrahíta Cardona",
+     "party": "People's Unity Front",
+     "r1Votes": 27059,
+     "r1Share": 0.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luz del Socorro Ramírez",
+     "party": "Labour and Socialist Union",
+     "r1Votes": 6643,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Victor Julio Gómez Hoyos",
+     "party": "National Civic Action Movement",
+     "r1Votes": 587,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Regina Betancur de Liska",
+     "party": "Reginista Unitary Movement",
+     "r1Votes": 126,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jesús Arena Fajardo",
+     "party": "Labour Movement",
+     "r1Votes": 14,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alfonso López Michelsen",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Julio César Turbay Ayala",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Julio César Turbay Ayala won with 49.50% against Belisario Betancur on 46.59%. Turnout 40.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1982",
+   "label": "1982",
+   "year": 1982,
+   "kind": "presidential",
+   "date": "30 May 1982",
+   "era": "abierta",
+   "turnout": 49.81,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Belisario Betancur",
+     "party": "Colombian Conservative Party–National Movement",
+     "r1Votes": 3189278,
+     "r1Share": 46.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfonso López Michelsen",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 2797627,
+     "r1Share": 41.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Carlos Galán",
+     "party": "New Liberalism",
+     "r1Votes": 745738,
+     "r1Share": 10.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gerardo Molina",
+     "party": "Democratic Front",
+     "r1Votes": 82858,
+     "r1Share": 1.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Florentino Porras Pardo",
+     "party": "Popular Claim",
+     "r1Votes": 159,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Write-ins",
+     "party": "6,142",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Julio César Turbay Ayala",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Belisario Betancur",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "Belisario Betancur won with 46.75% against Alfonso López Michelsen on 41.01%. Turnout 49.8%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "presidential",
+   "date": "25 May 1986",
+   "era": "abierta",
+   "turnout": 45.64,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Virgilio Barco Vargas",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 4214510,
+     "r1Share": 58.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Gómez Hurtado",
+     "party": "Conservative Party–National Participation Movement",
+     "r1Votes": 2588050,
+     "r1Share": 35.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jaime Pardo Leal",
+     "party": "Patriotic Union",
+     "r1Votes": 328752,
+     "r1Share": 4.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Regina Betancur de Liska",
+     "party": "Metapolitical Unitary Movement",
+     "r1Votes": 46811,
+     "r1Share": 0.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan David Pérez Gaviria",
+     "party": "Humanist Party",
+     "r1Votes": 229,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Write-ins",
+     "party": "1,261",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Belisario Betancur",
+    "party": "Conservative"
+   },
+   "presAfter": {
+    "name": "Virgilio Barco Vargas",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Virgilio Barco Vargas won with 58.36% against Álvaro Gómez Hurtado on 35.84%. Turnout 45.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "presidential",
+   "date": "27 May 1990",
+   "era": "abierta",
+   "turnout": 43.5,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "César Gaviria",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 2891808,
+     "r1Share": 48.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Gómez Hurtado",
+     "party": "National Salvation Movement",
+     "r1Votes": 1433913,
+     "r1Share": 23.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Navarro Wolff",
+     "party": "Democratic Alliance M-19",
+     "r1Votes": 754740,
+     "r1Share": 12.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rodrigo Hernán Lloreda Caicedo",
+     "party": "Social Conservative Party",
+     "r1Votes": 735374,
+     "r1Share": 12.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Regina Betancur de Liska",
+     "party": "Metapolitical Unitary Movement",
+     "r1Votes": 37537,
+     "r1Share": 0.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Claudia Rodríguez de Castellanos",
+     "party": "Christian National Party",
+     "r1Votes": 33645,
+     "r1Share": 0.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oscar Loaiza",
+     "party": "Natural Party",
+     "r1Votes": 9468,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Agustín Linares",
+     "party": "Christian Democratic Party",
+     "r1Votes": 9048,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Carlos Valencia",
+     "party": "Socialist Workers' Party",
+     "r1Votes": 8168,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Alemán",
+     "party": "Ecological Orientation Movement",
+     "r1Votes": 7429,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jesús García",
+     "party": "Love for Colombia",
+     "r1Votes": 2411,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jairo Rodríguez",
+     "party": "88 Meeting Movement",
+     "r1Votes": 996,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Virgilio Barco Vargas",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "César Gaviria",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "César Gaviria won with 48.18% against Álvaro Gómez Hurtado on 23.89%. Turnout 43.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "presidential",
+   "date": "29 May 1994",
+   "era": "balotaje",
+   "turnout": 33.95,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ernesto Samper",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 2623210,
+     "r1Share": 45.3,
+     "r2Votes": 3733336,
+     "r2Share": 50.57
+    },
+    {
+     "name": "Andrés Pastrana",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 2604771,
+     "r1Share": 44.98,
+     "r2Votes": 3576781,
+     "r2Share": 48.45
+    },
+    {
+     "name": "Antonio Navarro Wolff",
+     "party": "Colombian Compromise (AD/M-19–ASI)",
+     "r1Votes": 219241,
+     "r1Share": 3.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Regina Betancur",
+     "party": "Metapolitical Unitary Movement",
+     "r1Votes": 64131,
+     "r1Share": 1.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Alfredo Maza Márquez",
+     "party": "Civic People's Convergence",
+     "r1Votes": 55190,
+     "r1Share": 0.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Mendoza Morales",
+     "party": "National Convergence–Patriotic Union–PCC",
+     "r1Votes": 34437,
+     "r1Share": 0.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enrique Parejo González",
+     "party": "Democratic Alternative",
+     "r1Votes": 29246,
+     "r1Share": 0.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Alemán",
+     "party": "Ecological Orientation Movement",
+     "r1Votes": 22923,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gloria Gaitán",
+     "party": "Jorge Eliecer Gaitán Movement",
+     "r1Votes": 17397,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Antonio Cortes Huertas",
+     "party": "Civic and Christian Commitment for the Community",
+     "r1Votes": 11704,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Zamora Ávila",
+     "party": "Let's Protest",
+     "r1Votes": 9059,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Galat",
+     "party": "Moral Front",
+     "r1Votes": 9055,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Doris de Castro",
+     "party": "Independent Christian Movement",
+     "r1Votes": 6020,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Rodríguez Orjuela",
+     "party": "Progressive National Movement",
+     "r1Votes": 5711,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oscar Rojas Masso",
+     "party": "We are Free",
+     "r1Votes": 4368,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Guillermo Barnosa Millan",
+     "party": "Organisation for National Peace",
+     "r1Votes": 3797,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mario Diazgranados Llinas",
+     "party": "Christian CGT",
+     "r1Votes": 3319,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Efraín Torres Plazas",
+     "party": "Believe – No to the War",
+     "r1Votes": 2637,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "César Gaviria",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Ernesto Samper",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Ernesto Samper won in the runoff with 50.57% against Andrés Pastrana on 48.45%. Turnout 34.0%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "presidential",
+   "date": "31 May 1998",
+   "era": "balotaje",
+   "turnout": 51.55,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Horacio Serpa",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 3696334,
+     "r1Share": 34.78,
+     "r2Votes": 5658518,
+     "r2Share": 46.58
+    },
+    {
+     "name": "Andrés Pastrana Arango",
+     "party": "Great Alliance for Change",
+     "r1Votes": 3653048,
+     "r1Share": 34.37,
+     "r2Votes": 6114752,
+     "r2Share": 50.34
+    },
+    {
+     "name": "Noemí Sanín",
+     "party": "Yes Colombia",
+     "r1Votes": 2845750,
+     "r1Share": 26.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Harold Bedoya Pizarro",
+     "party": "Force Colombia",
+     "r1Votes": 193037,
+     "r1Share": 1.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Beatriz Cuellar",
+     "party": "Christian Union Movement",
+     "r1Votes": 30832,
+     "r1Share": 0.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Germán Rojas Niño",
+     "party": "19th of April Movement",
+     "r1Votes": 16072,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Hernán Betancur",
+     "party": "Metapolitical Unitary Movement",
+     "r1Votes": 13892,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jesús Antonio Lozano",
+     "party": "National Movement of Black Communities",
+     "r1Votes": 11834,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Pulecio",
+     "party": "People's Participation Movement",
+     "r1Votes": 11500,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Alemán",
+     "party": "Ecological Orientation Movement",
+     "r1Votes": 9885,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Efraín Díaz Valderrama",
+     "party": "Citizens in Training Movement",
+     "r1Votes": 9255,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Nanneti",
+     "party": "Progressive National Movement–Coalition for Peace",
+     "r1Votes": 8862,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Córdoba Zartha",
+     "party": "Seventh Ballot Movement",
+     "r1Votes": 5891,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ernesto Samper",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Andrés Pastrana Arango",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "Andrés Pastrana Arango won in the runoff with 50.34% against Horacio Serpa on 46.58%. Turnout 51.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "presidential",
+   "date": "26 May 2002",
+   "era": "balotaje",
+   "turnout": 46.47,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Álvaro Uribe",
+     "party": "Colombia First",
+     "r1Votes": 5862655,
+     "r1Share": 53.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Horacio Serpa",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 3514779,
+     "r1Share": 31.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Eduardo Garzón",
+     "party": "Independent Democratic Pole",
+     "r1Votes": 680245,
+     "r1Share": 6.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Noemí Sanín",
+     "party": "Yes Colombia",
+     "r1Votes": 641884,
+     "r1Share": 5.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Íngrid Betancourt",
+     "party": "Oxygen Green Party",
+     "r1Votes": 53922,
+     "r1Share": 0.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Harold Bedoya Pizarro",
+     "party": "Force Colombia",
+     "r1Votes": 50763,
+     "r1Share": 0.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Tovar",
+     "party": "Civic Defence Movement",
+     "r1Votes": 16333,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Augusto Guillermo Lora",
+     "party": "19th of April Movement",
+     "r1Votes": 10987,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Cristancho",
+     "party": "Common Participation Movement",
+     "r1Votes": 9627,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Antonio Cardona",
+     "party": "Colombian Community and Communal Political Movement",
+     "r1Votes": 8023,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rodolfo Rincón",
+     "party": "Community Participation",
+     "r1Votes": 6311,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Andrés Pastrana Arango",
+    "party": "Conservative"
+   },
+   "presAfter": {
+    "name": "Álvaro Uribe",
+    "party": "Colombia First"
+   },
+   "knownAs": null,
+   "summary": "Álvaro Uribe won with 53.05% against Horacio Serpa on 31.80%. Turnout 46.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "presidential",
+   "date": "28 May 2006",
+   "era": "balotaje",
+   "turnout": 45.05,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Álvaro Uribe",
+     "party": "Colombia First",
+     "r1Votes": 7397835,
+     "r1Share": 62.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Gaviria Díaz",
+     "party": "Alternative Democratic Pole",
+     "r1Votes": 2613157,
+     "r1Share": 22.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Horacio Serpa",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 1404235,
+     "r1Share": 11.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antanas Mockus",
+     "party": "Independent Social Alliance Movement",
+     "r1Votes": 146583,
+     "r1Share": 1.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enrique Parejo González",
+     "party": "National Democratic Reconstruction",
+     "r1Votes": 42652,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Leyva",
+     "party": "National Movement for Reconciliation",
+     "r1Votes": 18263,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Arturo Rincón Barreto",
+     "party": "Colombian Community and Communal Political Movement",
+     "r1Votes": 15388,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Álvaro Uribe",
+    "party": "Colombia First"
+   },
+   "presAfter": {
+    "name": "Álvaro Uribe",
+    "party": "Colombia First"
+   },
+   "knownAs": null,
+   "summary": "Álvaro Uribe won with 62.35% against Carlos Gaviria Díaz on 22.03%. Turnout 45.0%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "presidential",
+   "date": "2010",
+   "era": "balotaje",
+   "turnout": 49.3,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juan Manuel Santos",
+     "party": "Social Party of National Unity",
+     "r1Votes": 6802043,
+     "r1Share": 46.68,
+     "r2Votes": 9028943,
+     "r2Share": 69.13
+    },
+    {
+     "name": "Antanas Mockus",
+     "party": "Green Party",
+     "r1Votes": 3134222,
+     "r1Share": 21.51,
+     "r2Votes": 3587975,
+     "r2Share": 27.47
+    },
+    {
+     "name": "Germán Vargas Lleras",
+     "party": "Radical Change",
+     "r1Votes": 1473627,
+     "r1Share": 10.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gustavo Petro",
+     "party": "Alternative Democratic Pole",
+     "r1Votes": 1331267,
+     "r1Share": 9.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Noemí Sanín",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 893819,
+     "r1Share": 6.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Pardo",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 638302,
+     "r1Share": 4.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Róbinson Devia",
+     "party": "Voice of Conscience Movement",
+     "r1Votes": 31338,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jairo Calderón",
+     "party": "Liberal Opening Movement",
+     "r1Votes": 29151,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jaime Araújo",
+     "party": "Afro-Colombian Social Alliance",
+     "r1Votes": 14847,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Álvaro Uribe",
+    "party": "Colombia First"
+   },
+   "presAfter": {
+    "name": "Juan Manuel Santos",
+    "party": "Party of the U"
+   },
+   "knownAs": null,
+   "summary": "Juan Manuel Santos won in the runoff with 69.13% against Antanas Mockus on 27.47%. Turnout 49.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "25 May 2014",
+   "era": "balotaje",
+   "turnout": 40.1,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juan Manuel Santos",
+     "party": "Social Party of National Unity",
+     "r1Votes": 3310794,
+     "r1Share": 25.72,
+     "r2Votes": 7839342,
+     "r2Share": 50.99
+    },
+    {
+     "name": "Óscar Iván Zuluaga",
+     "party": "Democratic Center",
+     "r1Votes": 3769005,
+     "r1Share": 29.28,
+     "r2Votes": 6917001,
+     "r2Share": 44.99
+    },
+    {
+     "name": "Marta Lucía Ramírez",
+     "party": "Colombian Conservative Party",
+     "r1Votes": 1997980,
+     "r1Share": 15.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Clara López",
+     "party": "Alternative Democratic Pole",
+     "r1Votes": 1958518,
+     "r1Share": 15.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enrique Peñalosa",
+     "party": "Green Party",
+     "r1Votes": 1064758,
+     "r1Share": 8.27,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Juan Manuel Santos",
+    "party": "Party of the U"
+   },
+   "presAfter": {
+    "name": "Juan Manuel Santos",
+    "party": "Party of the U"
+   },
+   "knownAs": null,
+   "summary": "Juan Manuel Santos won in the runoff with 50.99% against Óscar Iván Zuluaga on 44.99%. Turnout 40.1%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "27 May 2018",
+   "era": "balotaje",
+   "turnout": 53.4,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Iván Duque",
+     "party": "Democratic Center",
+     "r1Votes": 7616857,
+     "r1Share": 39.36,
+     "r2Votes": 10398689,
+     "r2Share": 54.03
+    },
+    {
+     "name": "Gustavo Petro",
+     "party": "Humane Colombia",
+     "r1Votes": 4855069,
+     "r1Share": 25.09,
+     "r2Votes": 8040449,
+     "r2Share": 41.77
+    },
+    {
+     "name": "Sergio Fajardo",
+     "party": "Citizens' Compromise",
+     "r1Votes": 4602916,
+     "r1Share": 23.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Germán Vargas Lleras",
+     "party": "Independent",
+     "r1Votes": 1412392,
+     "r1Share": 7.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Humberto De la Calle",
+     "party": "Colombian Liberal Party",
+     "r1Votes": 396151,
+     "r1Share": 2.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Trujillo",
+     "party": "We Are All Colombia",
+     "r1Votes": 65767,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Viviane Morales Hoyos",
+     "party": "Somos Región Colombia",
+     "r1Votes": 36138,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Promotores Voto En Blanco",
+     "party": "Party of Ethnic Reclamation",
+     "r1Votes": 30128,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Juan Manuel Santos",
+    "party": "Party of the U"
+   },
+   "presAfter": {
+    "name": "Iván Duque",
+    "party": "Democratic Centre"
+   },
+   "knownAs": null,
+   "summary": "Iván Duque won in the runoff with 54.03% against Gustavo Petro on 41.77%. Turnout 53.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "29 May 2022",
+   "era": "balotaje",
+   "turnout": 54.98,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Gustavo Petro",
+     "party": "Humane Colombia",
+     "r1Votes": 8542020,
+     "r1Share": 40.34,
+     "r2Votes": 11292758,
+     "r2Share": 50.42
+    },
+    {
+     "name": "Rodolfo Hernández",
+     "party": "Independent",
+     "r1Votes": 5965531,
+     "r1Share": 28.17,
+     "r2Votes": 10604656,
+     "r2Share": 47.35
+    },
+    {
+     "name": "Federico Gutiérrez",
+     "party": "Creemos Colombia",
+     "r1Votes": 5069526,
+     "r1Share": 23.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergio Fajardo",
+     "party": "Independent Social Alliance",
+     "r1Votes": 885291,
+     "r1Share": 4.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "John Milton Rodríguez",
+     "party": "Colombia Justa Libres",
+     "r1Votes": 271386,
+     "r1Share": 1.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enrique Gómez Martínez",
+     "party": "National Salvation Movement",
+     "r1Votes": 48643,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Íngrid Betancourt",
+     "party": "Oxygen Green Party",
+     "r1Votes": 14161,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Pérez Gutiérrez",
+     "party": "Independent",
+     "r1Votes": 11507,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Iván Duque",
+    "party": "Democratic Centre"
+   },
+   "presAfter": {
+    "name": "Gustavo Petro",
+    "party": "Humane Colombia"
+   },
+   "knownAs": null,
+   "summary": "Gustavo Petro won in the runoff with 50.42% against Rodolfo Hernández on 47.35%. Turnout 55.0%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "presidential",
+   "date": "31 May 2026",
+   "era": "balotaje",
+   "turnout": 57.89,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Abelardo de la Espriella",
+     "party": "Independent",
+     "r1Votes": 10361499,
+     "r1Share": 43.75,
+     "r2Votes": 12960166,
+     "r2Share": 49.66
+    },
+    {
+     "name": "Iván Cepeda",
+     "party": "Historic Pact",
+     "r1Votes": 9688361,
+     "r1Share": 40.9,
+     "r2Votes": 12708312,
+     "r2Share": 48.7
+    },
+    {
+     "name": "Paloma Valencia",
+     "party": "Democratic Centre",
+     "r1Votes": 1639685,
+     "r1Share": 6.92,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergio Fajardo",
+     "party": "Dignity and Commitment",
+     "r1Votes": 1009073,
+     "r1Share": 4.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Claudia López",
+     "party": "Independent",
+     "r1Votes": 225517,
+     "r1Share": 0.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Santiago Botero Jaramillo",
+     "party": "Independent",
+     "r1Votes": 206140,
+     "r1Share": 0.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mauricio Lizcano",
+     "party": "Independent",
+     "r1Votes": 53839,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Uribe Londoño",
+     "party": "Colombian Democratic Party",
+     "r1Votes": 28657,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sondra Macollins Garvin",
+     "party": "Independent",
+     "r1Votes": 19889,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roy Barreras",
+     "party": "The Force",
+     "r1Votes": 14108,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Gilberto Murillo",
+     "party": "Independent",
+     "r1Votes": 13270,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Caicedo",
+     "party": "Independent",
+     "r1Votes": 12694,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gustavo Matamoros Camacho",
+     "party": "Colombian Ecologist Party",
+     "r1Votes": 5627,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gustavo Petro",
+    "party": "Historic Pact"
+   },
+   "presAfter": {
+    "name": "Abelardo de la Espriella",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Abelardo de la Espriella won in the runoff with 49.66% against Iván Cepeda on 48.70%. Turnout 57.9%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1825",
+   "label": "1825",
+   "year": 1825,
+   "kind": "legislative",
+   "date": "1825 to elect the presidency and Congress",
+   "era": "early",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "Simón Bolívar",
+    "party": "Simón Bolívar"
+   },
+   "pmAfter": {
+    "name": "Simón Bolívar",
+    "party": "This article is part of a series on the"
+   },
+   "knownAs": null,
+   "summary": "Simón Bolívar stayed in office.",
+   "seatLeader": null,
+   "caveat": "Congress was chosen by provincial electoral colleges rather than by a popular ballot.",
+   "unfree": null
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "10 May 1931 to elect the Chamber of Representatives",
+   "era": "liberal",
+   "totalSeats": 118,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": 401993,
+     "share": 51.07,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": 384948,
+     "share": 48.9,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 216,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 59 of 118 seats on 51.1% of the vote.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "legislative",
+   "date": "14 May 1933 to elect the Chamber of Representatives",
+   "era": "liberal",
+   "totalSeats": 118,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": null,
+     "votes": 604372,
+     "share": 62.44,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": 361571,
+     "share": 37.36,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1923,
+     "share": 0.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 74 of 118 seats on 62.4% of the vote.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "26 May 1935",
+   "era": "liberal",
+   "totalSeats": 100,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 420547,
+     "share": 97.64,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 10181,
+     "share": 2.36,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party led the poll with 97.6%.",
+   "seatLeader": null,
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "kind": "legislative",
+   "date": "1937",
+   "era": "liberal",
+   "totalSeats": 118,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 118,
+     "seatChange": null,
+     "votes": 550726,
+     "share": 100.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 118 of 118 seats on 100.0% of the vote.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "legislative",
+   "date": "1939",
+   "era": "liberal",
+   "totalSeats": 118,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": 592283,
+     "share": 64.41,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": 322825,
+     "share": 35.11,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4461,
+     "share": 0.49,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 79 of 118 seats on 64.4% of the vote.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1941",
+   "label": "1941",
+   "year": 1941,
+   "kind": "legislative",
+   "date": "16 March 1941 to elect the Chamber of Representatives",
+   "era": "liberal",
+   "totalSeats": 131,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 82,
+     "seatChange": null,
+     "votes": 565237,
+     "share": 63.83,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": null,
+     "votes": 316185,
+     "share": 35.71,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4103,
+     "share": 0.46,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 82 of 131 seats on 63.8% of the vote.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "kind": "legislative",
+   "date": "February 1943 to elect the Chamber of Representatives",
+   "era": "liberal",
+   "totalSeats": 131,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": null,
+     "votes": 568317,
+     "share": 64.39,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": 298644,
+     "share": 33.84,
+     "swing": null
+    },
+    {
+     "name": "Colombian Communist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 15686,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 84 of 131 seats on 64.4% of the vote.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "February 1945 to elect the Chamber of Representatives",
+   "era": "liberal",
+   "totalSeats": 131,
+   "majoritySeats": null,
+   "turnout": 38.42,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": null,
+     "votes": 551224,
+     "share": 62.95,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": 294237,
+     "share": 33.6,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 27696,
+     "share": 3.16,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2522,
+     "share": 0.29,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 80 of 131 seats on 63.0% of the vote. Turnout 38.4%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "kind": "legislative",
+   "date": "1947",
+   "era": "liberal",
+   "totalSeats": 63,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -7,
+     "votes": 805874,
+     "share": 54.97,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 7,
+     "votes": 653716,
+     "share": 44.59,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6422,
+     "share": 0.44,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 34 of 63 seats on 55.0% of the vote.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "5 June 1949 to elect the Chamber of Representatives",
+   "era": "liberal",
+   "totalSeats": 132,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 69,
+     "seatChange": -4,
+     "votes": 937600,
+     "share": 53.52,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": 5,
+     "votes": 806759,
+     "share": 46.05,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6747,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 698,
+     "share": 0.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 69 of 132 seats on 53.5% of the vote.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "kind": "legislative",
+   "date": "1951",
+   "era": "dictatorship",
+   "totalSeats": 62,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 11,
+     "votes": 922607,
+     "share": 98.99,
+     "swing": null
+    },
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -34,
+     "votes": 5586,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Colombian Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3856,
+     "share": 0.41,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Conservative Party finished first with 40 of 62 seats on 99.0% of the vote.",
+   "seatLeader": "Colombian Conservative Party",
+   "caveat": "The Liberal Party boycotted, though some Liberals of the Populares faction stood; the seats reserved for the minority party were left vacant.",
+   "unfree": null
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "legislative",
+   "date": "15 March 1953 to elect the Chamber of Representatives",
+   "era": "dictatorship",
+   "totalSeats": 132,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 5,
+     "votes": 1025409,
+     "share": 100.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Conservative Party finished first with 76 of 132 seats on 100.0% of the vote.",
+   "seatLeader": "Colombian Conservative Party",
+   "caveat": "The Liberal and Communist parties both boycotted, and the seats reserved for the minority party were left vacant.",
+   "unfree": null
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "1958",
+   "era": "frente",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 68.13,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 2105171,
+     "share": 57.67,
+     "swing": null
+    },
+    {
+     "name": "Laureanistas",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 1545262,
+     "share": 42.33,
+     "swing": null
+    },
+    {
+     "name": "Ospinistas",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independientes",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 40 seats on 57.7% of the vote. Turnout 68.1%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": "Seats were divided equally between Liberals and Conservatives by constitutional pact, so voters chose between factions of one party rather than between parties.",
+   "unfree": null
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "kind": "legislative",
+   "date": "20 March 1960 to elect the Chamber of Representatives",
+   "era": "frente",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 57.82,
+   "parties": [
+    {
+     "name": "Oficialistas",
+     "leader": null,
+     "seats": 58,
+     "seatChange": null,
+     "votes": 1106678,
+     "share": 43.61,
+     "swing": null
+    },
+    {
+     "name": "Liberal Revolutionary Movement",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 354560,
+     "share": 13.97,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17165,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Alzaospinistas",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 567087,
+     "share": 22.35,
+     "swing": null
+    },
+    {
+     "name": "Doctrinarios",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -11,
+     "votes": 446393,
+     "share": 17.59,
+     "swing": null
+    },
+    {
+     "name": "Leyvistas",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 37020,
+     "share": 1.46,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8870,
+     "share": 0.35,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Oficialistas finished first with 58 seats on 43.6% of the vote. Turnout 57.8%.",
+   "seatLeader": "Oficialistas",
+   "caveat": "Seats were divided equally between Liberals and Conservatives by constitutional pact, so voters chose between factions of one party rather than between parties.",
+   "unfree": null
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "1962",
+   "era": "frente",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 57.69,
+   "parties": [
+    {
+     "name": "Oficialistas",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 1076151,
+     "share": 34.96,
+     "swing": null
+    },
+    {
+     "name": "Liberal Revolutionary Movement",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 601063,
+     "share": 19.53,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2376,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Unionistas",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 797341,
+     "share": 25.91,
+     "swing": null
+    },
+    {
+     "name": "Doctrinarios",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 491731,
+     "share": 15.98,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 104829,
+     "share": 3.41,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4450,
+     "share": 0.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Oficialistas finished first with 37 seats on 35.0% of the vote. Turnout 57.7%.",
+   "seatLeader": "Oficialistas",
+   "caveat": "Seats were divided equally between Liberals and Conservatives by constitutional pact, so voters chose between factions of one party rather than between parties.",
+   "unfree": null
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "15 March 1964 to elect the Chamber of Representatives",
+   "era": "frente",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 36.85,
+   "parties": [
+    {
+     "name": "Frentenacionalistas",
+     "leader": null,
+     "seats": 59,
+     "seatChange": 0,
+     "votes": 738437,
+     "share": 32.77,
+     "swing": null
+    },
+    {
+     "name": "Liberal Revolutionary Movement (soft)",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 284952,
+     "share": 12.65,
+     "swing": null
+    },
+    {
+     "name": "Liberal Revolutionary Movement (hard)",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 96895,
+     "share": 4.3,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 16495,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "Liberal Independent Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 7129,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14090,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Frentenacionalistas",
+     "leader": null,
+     "seats": 65,
+     "seatChange": -21,
+     "votes": 794000,
+     "share": 35.23,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 20,
+     "votes": 293183,
+     "share": 13.01,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 8282,
+     "share": 0.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Frentenacionalistas finished first with 65 seats on 35.2% of the vote. Turnout 36.9%.",
+   "seatLeader": "Frentenacionalistas",
+   "caveat": "Seats were divided equally between Liberals and Conservatives by constitutional pact, so voters chose between factions of one party rather than between parties.",
+   "unfree": null
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "legislative",
+   "date": "1966",
+   "era": "frente",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 44.15,
+   "parties": [
+    {
+     "name": "Oficialistas",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 9,
+     "votes": 1120394,
+     "share": 38.51,
+     "swing": null
+    },
+    {
+     "name": "Liberal Revolutionary Movement (soft)",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 367457,
+     "share": 12.63,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10283,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 347,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31009,
+     "share": 1.07,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 16,
+     "votes": 474489,
+     "share": 16.31,
+     "swing": null
+    },
+    {
+     "name": "Unionistas",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -11,
+     "votes": 472876,
+     "share": 16.25,
+     "swing": null
+    },
+    {
+     "name": "Lauro-Alzatistas",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 339809,
+     "share": 11.68,
+     "swing": null
+    },
+    {
+     "name": "Leyvistas",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6984,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3960,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 81586,
+     "share": 2.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Oficialistas finished first with 46 seats on 38.5% of the vote. Turnout 44.1%.",
+   "seatLeader": "Oficialistas",
+   "caveat": "Seats were divided equally between Liberals and Conservatives by constitutional pact, so voters chose between factions of one party rather than between parties.",
+   "unfree": null
+  },
+  {
+   "id": "1968",
+   "label": "1968",
+   "year": 1968,
+   "kind": "legislative",
+   "date": "17 March 1968 to elect the Chamber of Representatives",
+   "era": "frente",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 37.28,
+   "parties": [
+    {
+     "name": "Oficialistas",
+     "leader": null,
+     "seats": 77,
+     "seatChange": 8,
+     "votes": 988540,
+     "share": 39.72,
+     "swing": null
+    },
+    {
+     "name": "Oficialistas disidentes",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 196457,
+     "share": 7.89,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2,
+     "votes": 82294,
+     "share": 3.31,
+     "swing": null
+    },
+    {
+     "name": "People's Liberal Revolutionary Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 55984,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5351,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Unionistas",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 14,
+     "votes": 578485,
+     "share": 23.24,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -5,
+     "votes": 319609,
+     "share": 12.84,
+     "swing": null
+    },
+    {
+     "name": "Lauro-Alzatistas",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -20,
+     "votes": 48087,
+     "share": 1.93,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 14937,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 18,
+     "votes": 199330,
+     "share": 8.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Oficialistas finished first with 77 seats on 39.7% of the vote. Turnout 37.3%.",
+   "seatLeader": "Oficialistas",
+   "caveat": "Seats were divided equally between Liberals and Conservatives by constitutional pact, so voters chose between factions of one party rather than between parties.",
+   "unfree": null
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "legislative",
+   "date": "19 April 1970",
+   "era": "frente",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 52.53,
+   "parties": [
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 8,
+     "votes": 1036650,
+     "share": 26.23,
+     "swing": null
+    },
+    {
+     "name": "Pastranistas",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 586131,
+     "share": 14.83,
+     "swing": null
+    },
+    {
+     "name": "Belisaristas",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 294185,
+     "share": 7.44,
+     "swing": null
+    },
+    {
+     "name": "Sourdistas",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 185206,
+     "share": 4.69,
+     "swing": null
+    },
+    {
+     "name": "Pastranistas",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": 1074059,
+     "share": 27.18,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 12,
+     "votes": 382777,
+     "share": 9.69,
+     "swing": null
+    },
+    {
+     "name": "Sourdistas",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 152506,
+     "share": 3.86,
+     "swing": null
+    },
+    {
+     "name": "Belisaristas",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 131430,
+     "share": 3.33,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 108653,
+     "share": 2.75,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Carlos Lleras Restrepo",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Misael Pastrana Borrero",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "Pastranistas finished first with 39 seats on 27.2% of the vote. Turnout 52.5%. Misael Pastrana Borrero replaced Carlos Lleras Restrepo.",
+   "seatLeader": "Pastranistas",
+   "caveat": "Seats were divided equally between Liberals and Conservatives by constitutional pact, so voters chose between factions of one party rather than between parties.",
+   "unfree": null
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "legislative",
+   "date": "1978",
+   "era": "open",
+   "totalSeats": 112,
+   "majoritySeats": null,
+   "turnout": 33.31,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": -4,
+     "votes": 2297534,
+     "share": 55.23,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 12,
+     "votes": 1650429,
+     "share": 39.68,
+     "swing": null
+    },
+    {
+     "name": "National Opposition Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 126553,
+     "share": 3.04,
+     "swing": null
+    },
+    {
+     "name": "People's Unity Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49058,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36272,
+     "share": 0.87,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 62 of 112 seats on 55.2% of the vote. Turnout 33.3%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1982",
+   "label": "1982",
+   "year": 1982,
+   "kind": "legislative",
+   "date": "1982",
+   "era": "open",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 40.66,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": -7,
+     "votes": 2582116,
+     "share": 46.38,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 0,
+     "votes": 2252601,
+     "share": 40.46,
+     "swing": null
+    },
+    {
+     "name": "New Liberalism",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 567600,
+     "share": 10.2,
+     "swing": null
+    },
+    {
+     "name": "Democratic Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 75615,
+     "share": 1.36,
+     "swing": null
+    },
+    {
+     "name": "Civic Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 24890,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "People's Unity Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18741,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17427,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Democratic Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10978,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17230,
+     "share": 0.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 55 seats on 46.4% of the vote. Turnout 40.7%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "1986",
+   "era": "open",
+   "totalSeats": 114,
+   "majoritySeats": null,
+   "turnout": 43.37,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": 3,
+     "votes": 3382406,
+     "share": 49.32,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": -6,
+     "votes": 2541094,
+     "share": 37.05,
+     "swing": null
+    },
+    {
+     "name": "New Liberalism",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -2,
+     "votes": 453550,
+     "share": 6.61,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 103001,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 362783,
+     "share": 5.29,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 58 of 114 seats on 49.3% of the vote. Turnout 43.4%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "11 March 1990",
+   "era": "open",
+   "totalSeats": 114,
+   "majoritySeats": null,
+   "turnout": 55.49,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": 8,
+     "votes": 4470853,
+     "share": 58.54,
+     "swing": null
+    },
+    {
+     "name": "Social Conservative Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -5,
+     "votes": 2383363,
+     "share": 31.21,
+     "swing": null
+    },
+    {
+     "name": "Conservative National Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 147953,
+     "share": 1.94,
+     "swing": null
+    },
+    {
+     "name": "Colombian Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35274,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Metapolitical Unitary Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23264,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 492,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Coalitions of parties",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 358246,
+     "share": 4.69,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 207458,
+     "share": 2.72,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 66 of 114 seats on 58.5% of the vote. Turnout 55.5%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "legislative",
+   "date": "1991",
+   "era": "modern",
+   "totalSeats": 102,
+   "majoritySeats": null,
+   "turnout": 36.48,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": -10,
+     "votes": 2263398,
+     "share": 42.52,
+     "swing": null
+    },
+    {
+     "name": "19th of April Movement",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 454467,
+     "share": 8.54,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Force",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 436562,
+     "share": 8.2,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -29,
+     "votes": 346749,
+     "share": 6.51,
+     "swing": null
+    },
+    {
+     "name": "National Salvation Movement",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 234358,
+     "share": 4.4,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 79753,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Christian Union Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 67885,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "Conservative National Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 58012,
+     "share": 1.09,
+     "swing": null
+    },
+    {
+     "name": "Progressive Force",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 49902,
+     "share": 0.94,
+     "swing": null
+    },
+    {
+     "name": "Laicists for Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 49789,
+     "share": 0.94,
+     "swing": null
+    },
+    {
+     "name": "Progressive National Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44693,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Independent Conservatism",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 43172,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberal Restoration Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 40990,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Conservative Reintegration Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 37027,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Metapolitical Unitary Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 31080,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Indigenous Authorities of Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 30312,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "National Indigenous Organization of Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 30020,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "Christian National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 27276,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "United Movement for Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 27267,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Alliance Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 26493,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 482497,
+     "share": 9.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 56 of 102 seats on 42.5% of the vote. Turnout 36.5%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "legislative",
+   "date": "1994",
+   "era": "modern",
+   "totalSeats": 102,
+   "majoritySeats": null,
+   "turnout": 32.69,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 0,
+     "votes": 2648731,
+     "share": 50.74,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 11,
+     "votes": 979097,
+     "share": 18.76,
+     "swing": null
+    },
+    {
+     "name": "19th of April Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -9,
+     "votes": 140819,
+     "share": 2.7,
+     "swing": null
+    },
+    {
+     "name": "National Salvation Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -3,
+     "votes": 100385,
+     "share": 1.92,
+     "swing": null
+    },
+    {
+     "name": "Christian Union Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 58857,
+     "share": 1.13,
+     "swing": null
+    },
+    {
+     "name": "C4",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 52748,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "Laicists for Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 51177,
+     "share": 0.98,
+     "swing": null
+    },
+    {
+     "name": "Colombian Communist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 51032,
+     "share": 0.98,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 49732,
+     "share": 0.95,
+     "swing": null
+    },
+    {
+     "name": "New Colombia Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 45783,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberal Restoration Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 45732,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "Indigenous Authorities of Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 40779,
+     "share": 0.78,
+     "swing": null
+    },
+    {
+     "name": "Progressive National Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 40085,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Alliance Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 36626,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Unique Movement of Conservative Renovation",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 31589,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Independent Civic Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 31455,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Conservative National Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 31304,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Metapolitical Unitary Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 27082,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "Independent Conservatism",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 26341,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Christian National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 21325,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Democratic Renovation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19640,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alternative Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18501,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Indigenous Community",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 14245,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "National Civic Concentration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4326,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Coalitions",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 79553,
+     "share": 1.52,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 424882,
+     "share": 8.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 56 of 102 seats on 50.7% of the vote. Turnout 32.7%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "1998",
+   "era": "modern",
+   "totalSeats": 102,
+   "majoritySeats": null,
+   "turnout": 45.43,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -8,
+     "votes": 3897272,
+     "share": 44.88,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -5,
+     "votes": 1000032,
+     "share": 11.52,
+     "swing": null
+    },
+    {
+     "name": "Conservative National Movement",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 6,
+     "votes": 442767,
+     "share": 5.1,
+     "swing": null
+    },
+    {
+     "name": "Liberal Oxygen Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 158184,
+     "share": 1.82,
+     "swing": null
+    },
+    {
+     "name": "Civic Defence Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 127248,
+     "share": 1.47,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 111531,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "Progressive National Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 108607,
+     "share": 1.25,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 107680,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "Civic People's Convergence",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 104836,
+     "share": 1.21,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Force",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 100643,
+     "share": 1.16,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Alliance Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 95523,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Reconstruction",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 83707,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "National Salvation Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 82687,
+     "share": 0.95,
+     "swing": null
+    },
+    {
+     "name": "Bolivarian Movement for the New Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 70581,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "Vamos Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 65824,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Christian Union Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 53753,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Movement '98",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 46648,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "C4",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 44859,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "Force Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 44587,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Colombian People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44510,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Education and Social Change",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44347,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Independent Conservatism",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 43908,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Front of Hope",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 41608,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Colombia My Country",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 40661,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Participation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39276,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Laicists for Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 38412,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Humbertista Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37782,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberal Restoration Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 36194,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Political Attitudes Renovation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36194,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Independent Labour Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35956,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "The Collective Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32459,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Solidarity Option Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30952,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "National Civic Concentration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25967,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Independent Civic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 25387,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Progressive Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23961,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Colombian Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 23613,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Democratic Renovation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20888,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "National Reserves' Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20512,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Women 2000",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19791,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Colombian Community and Communal Political Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19510,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Indigenous Authorities of Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 18224,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Hands Together Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17797,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Colombian Collective Mission Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17677,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Colombian Indigenous Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 17381,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Metapolitical Unitary Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 16363,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Convergence",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15312,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Palenque Black Communities",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13797,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Socialist Renovation Current",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13254,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance M19",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13166,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Citizens in Training Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12845,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "For Recreation and Sport",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8965,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "New Colombia Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 8707,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Democratic Integration Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8472,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "National Integration Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7737,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Serious Civic Movement for Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7276,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "19th of April Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5459,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Ecological Civic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3915,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Colombian Agricultural Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3381,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "People's Participation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3241,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Ecological Orientation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1642,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Coalitions",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 5,
+     "votes": 609972,
+     "share": 7.02,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 67380,
+     "share": 0.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 48 of 102 seats on 44.9% of the vote. Turnout 45.4%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "2002",
+   "era": "modern",
+   "totalSeats": 102,
+   "majoritySeats": null,
+   "turnout": 42.91,
+   "parties": [
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -19,
+     "votes": 2710599,
+     "share": 29.19,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -2,
+     "votes": 885263,
+     "share": 9.53,
+     "swing": null
+    },
+    {
+     "name": "Coalition",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -1,
+     "votes": 565222,
+     "share": 6.09,
+     "swing": null
+    },
+    {
+     "name": "National Movement",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 411029,
+     "share": 4.43,
+     "swing": null
+    },
+    {
+     "name": "Team Colombia",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 297538,
+     "share": 3.2,
+     "swing": null
+    },
+    {
+     "name": "Colombia Always",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 255691,
+     "share": 2.75,
+     "swing": null
+    },
+    {
+     "name": "People's Integration Movement",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 254616,
+     "share": 2.74,
+     "swing": null
+    },
+    {
+     "name": "Radical Change",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 222484,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "United People's Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 172717,
+     "share": 1.86,
+     "swing": null
+    },
+    {
+     "name": "Renovation Movement Labour Action",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 152481,
+     "share": 1.64,
+     "swing": null
+    },
+    {
+     "name": "Social and Political Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 128079,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Force",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 124130,
+     "share": 1.34,
+     "swing": null
+    },
+    {
+     "name": "National Popular Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 119022,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Alliance Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 103370,
+     "share": 1.11,
+     "swing": null
+    },
+    {
+     "name": "Colombian Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 101660,
+     "share": 1.09,
+     "swing": null
+    },
+    {
+     "name": "Progressive Force",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 96787,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "New Liberalism",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 93987,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Convergence",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 91131,
+     "share": 0.98,
+     "swing": null
+    },
+    {
+     "name": "Civic People's Convergence",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 85764,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "Unionist Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 85713,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "Independent Movement of Absolute Renovation",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 81061,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "Progressive National Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 80300,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "National Salvation Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 78080,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Alternative for Social Advance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 77916,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Let the Moreno Play Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 71623,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Political Movement for Social Security",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 70704,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "We are Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 70699,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Vamos Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 66512,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "C4",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 65294,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "People's Will Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 63533,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Footprint Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 63165,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Colombian Community and Communal Political Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 56363,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Yes Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 55835,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 51504,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "Democratic Unity Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 48939,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Front of Hope",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 46298,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Independent Labour Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 45703,
+     "share": 0.49,
+     "swing": null
+    },
+    {
+     "name": "Independent Civic Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 43265,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Political Movement for Bocaya",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 42954,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Democratic Progressivity",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 41672,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Christian National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 40460,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Laicists for Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 37125,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Christian Union Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 36675,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Indigenous Authorities of Colombia",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 35215,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Democratic Renovation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 34049,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "National Union for Social Security",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29430,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Community Participation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28319,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Colombia My Country",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 23770,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alternative Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23271,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "National Civic Concentration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21191,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Independent Conservatism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 20503,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Humbertista Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19868,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "ANUPAC",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13387,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Reconstruction",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 12693,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Civic Defence Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 12015,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11279,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Colombian Indigenous Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11266,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Autonomous Citizens' Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6845,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "People's Participation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6762,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Force Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4707,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Revolution Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3899,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberal Restoration Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1442,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Colombian People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 1400,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 217161,
+     "share": 2.34,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Colombian Liberal Party finished first with 29 of 102 seats on 29.2% of the vote. Turnout 42.9%.",
+   "seatLeader": "Colombian Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "2006",
+   "era": "modern",
+   "totalSeats": 100,
+   "majoritySeats": null,
+   "turnout": 40.58,
+   "parties": [
+    {
+     "name": "Social Party of National Unity",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 1591775,
+     "share": 17.3,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 1470029,
+     "share": 15.98,
+     "swing": null
+    },
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 1436657,
+     "share": 15.62,
+     "swing": null
+    },
+    {
+     "name": "Radical Change",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 1211457,
+     "share": 13.17,
+     "swing": null
+    },
+    {
+     "name": "Alternative Democratic Pole",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 875451,
+     "share": 9.52,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Convergence",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 566823,
+     "share": 6.16,
+     "swing": null
+    },
+    {
+     "name": "Wings – Team Colombia",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 418124,
+     "share": 4.54,
+     "swing": null
+    },
+    {
+     "name": "Democratic Colombia Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 272524,
+     "share": 2.96,
+     "swing": null
+    },
+    {
+     "name": "Independent Movement of Absolute Renovation",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 237512,
+     "share": 2.58,
+     "swing": null
+    },
+    {
+     "name": "Living Colombia Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 229556,
+     "share": 2.5,
+     "swing": null
+    },
+    {
+     "name": "For the Country of Our Dreams",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 165981,
+     "share": 1.8,
+     "swing": null
+    },
+    {
+     "name": "Let the Moreno Play Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 136636,
+     "share": 1.49,
+     "swing": null
+    },
+    {
+     "name": "C4",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 86609,
+     "share": 0.94,
+     "swing": null
+    },
+    {
+     "name": "Visionaries with Antanas Mockus",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 71843,
+     "share": 0.78,
+     "swing": null
+    },
+    {
+     "name": "Community Participation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 54356,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Colombian Community and Communal Political Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37545,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Colombia Unite",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15568,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Independent Conservatism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13221,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Progressive National Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8794,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Reconstruction",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7751,
+     "share": 0.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Party of National Unity finished first with 20 of 100 seats on 17.3% of the vote. Turnout 40.6%.",
+   "seatLeader": "Social Party of National Unity",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "14 March 2010",
+   "era": "modern",
+   "totalSeats": 100,
+   "majoritySeats": null,
+   "turnout": 43.62,
+   "parties": [
+    {
+     "name": "Social Party of National Unity",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 2792944,
+     "share": 25.48,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 2257335,
+     "share": 20.59,
+     "swing": null
+    },
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 1724151,
+     "share": 15.73,
+     "swing": null
+    },
+    {
+     "name": "National Integration Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 892720,
+     "share": 8.14,
+     "swing": null
+    },
+    {
+     "name": "Radical Change",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 861816,
+     "share": 7.86,
+     "swing": null
+    },
+    {
+     "name": "Alternative Democratic Pole",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 824948,
+     "share": 7.53,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 521503,
+     "share": 4.76,
+     "swing": null
+    },
+    {
+     "name": "Independent Movement of Absolute Renovation",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 324109,
+     "share": 2.96,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Compromise for Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 181513,
+     "share": 1.66,
+     "swing": null
+    },
+    {
+     "name": "Liberal Opening Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 87009,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "Christian Party of Transformation and Order",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57981,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Alternative for Social Advance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38248,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Colombian Party of Social Integration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12348,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Afro-Colombian Social Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11636,
+     "share": 0.11,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Party of National Unity finished first with 28 of 100 seats on 25.5% of the vote. Turnout 43.6%.",
+   "seatLeader": "Social Party of National Unity",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "legislative",
+   "date": "9 March 2014",
+   "era": "modern",
+   "totalSeats": 100,
+   "majoritySeats": null,
+   "turnout": 42.99,
+   "parties": [
+    {
+     "name": "Social Party of National Unity",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -7,
+     "votes": 2268911,
+     "share": 19.12,
+     "swing": null
+    },
+    {
+     "name": "Democratic Center",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 2113347,
+     "share": 17.81,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -4,
+     "votes": 1973009,
+     "share": 16.63,
+     "swing": null
+    },
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0,
+     "votes": 1768825,
+     "share": 14.91,
+     "swing": null
+    },
+    {
+     "name": "Radical Change",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1,
+     "votes": 1006260,
+     "share": 8.48,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": 567102,
+     "share": 4.78,
+     "swing": null
+    },
+    {
+     "name": "Alternative Democratic Pole",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -3,
+     "votes": 540709,
+     "share": 4.56,
+     "swing": null
+    },
+    {
+     "name": "Citizen Option",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -4,
+     "votes": 534250,
+     "share": 4.5,
+     "swing": null
+    },
+    {
+     "name": "Independent Movement of Absolute Renovation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 334836,
+     "share": 2.82,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Party of National Unity finished first with 21 of 100 seats on 19.1% of the vote. Turnout 43.0%.",
+   "seatLeader": "Social Party of National Unity",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "11 March 2018",
+   "era": "modern",
+   "totalSeats": 106,
+   "majoritySeats": null,
+   "turnout": 47.25,
+   "parties": [
+    {
+     "name": "Democratic Center",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 2501995,
+     "share": 16.39,
+     "swing": null
+    },
+    {
+     "name": "Radical Change",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 2142040,
+     "share": 14.03,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 1931140,
+     "share": 12.65,
+     "swing": null
+    },
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 1886895,
+     "share": 12.36,
+     "swing": null
+    },
+    {
+     "name": "Social Party of National Unity",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 1844847,
+     "share": 12.08,
+     "swing": null
+    },
+    {
+     "name": "Green Alliance",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 1308208,
+     "share": 8.57,
+     "swing": null
+    },
+    {
+     "name": "Alternative Democratic Pole",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 722987,
+     "share": 4.74,
+     "swing": null
+    },
+    {
+     "name": "List of Decency Coalition (ASI–UP–MAIS)",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 519262,
+     "share": 3.4,
+     "swing": null
+    },
+    {
+     "name": "Independent Movement of Absolute Renovation",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 495506,
+     "share": 3.25,
+     "swing": null
+    },
+    {
+     "name": "Colombia Justa Libres",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 463521,
+     "share": 3.04,
+     "swing": null
+    },
+    {
+     "name": "Citizen Option",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 346398,
+     "share": 2.27,
+     "swing": null
+    },
+    {
+     "name": "Partido Somos",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 102969,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "Todos Somos Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57465,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Common Alternative Revolutionary Force",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 55400,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Union for Fortaleza",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34275,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Si Se Puede",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13196,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Presidential election runner-up",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Democratic Center finished first with 19 of 106 seats on 16.4% of the vote. Turnout 47.2%.",
+   "seatLeader": "Democratic Center",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "legislative",
+   "date": "13 March 2022",
+   "era": "modern",
+   "totalSeats": 106,
+   "majoritySeats": null,
+   "turnout": 45.86,
+   "parties": [
+    {
+     "name": "Historic Pact for Colombia",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 2880254,
+     "share": 16.95,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 2238678,
+     "share": 13.18,
+     "swing": null
+    },
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 2112528,
+     "share": 12.43,
+     "swing": null
+    },
+    {
+     "name": "Hope Center–Green Alliance",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 1958369,
+     "share": 11.53,
+     "swing": null
+    },
+    {
+     "name": "Democratic Center",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 1949905,
+     "share": 11.48,
+     "swing": null
+    },
+    {
+     "name": "Radical Change",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 1609173,
+     "share": 9.47,
+     "swing": null
+    },
+    {
+     "name": "Union Party for the People",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 1506567,
+     "share": 8.87,
+     "swing": null
+    },
+    {
+     "name": "MIRA–Fair and Free Colombia",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 584806,
+     "share": 3.44,
+     "swing": null
+    },
+    {
+     "name": "Civic Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 431166,
+     "share": 2.54,
+     "swing": null
+    },
+    {
+     "name": "New Liberalism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 368345,
+     "share": 2.17,
+     "swing": null
+    },
+    {
+     "name": "We are Ready Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 115120,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "SOS Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 56767,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "New People Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37063,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "National Salvation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31289,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Commons",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 25708,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Metapolitical Unitary Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12165,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Presidential election runner-up",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Historic Pact for Colombia finished first with 20 of 106 seats on 16.9% of the vote. Turnout 45.9%.",
+   "seatLeader": "Historic Pact for Colombia",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "legislative",
+   "date": "8 March 2026",
+   "era": "modern",
+   "totalSeats": 100,
+   "majoritySeats": null,
+   "turnout": 50.62,
+   "parties": [
+    {
+     "name": "Historic Pact",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 4471238,
+     "share": 22.95,
+     "swing": null
+    },
+    {
+     "name": "Democratic Centre",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 3072702,
+     "share": 15.77,
+     "swing": null
+    },
+    {
+     "name": "Colombian Liberal Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 2276223,
+     "share": 11.68,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Colombia",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 1905680,
+     "share": 9.78,
+     "swing": null
+    },
+    {
+     "name": "Colombian Conservative Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 1853403,
+     "share": 9.51,
+     "swing": null
+    },
+    {
+     "name": "Party of the U",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 1554812,
+     "share": 7.98,
+     "swing": null
+    },
+    {
+     "name": "Radical Change–ALMA Coalition",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 1241509,
+     "share": 6.37,
+     "swing": null
+    },
+    {
+     "name": "Colombia Now",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 891907,
+     "share": 4.58,
+     "swing": null
+    },
+    {
+     "name": "National Salvation Movement",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 707764,
+     "share": 3.63,
+     "swing": null
+    },
+    {
+     "name": "Frente Amplio Unitario",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 396042,
+     "share": 2.03,
+     "swing": null
+    },
+    {
+     "name": "Creemos Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 227957,
+     "share": 1.17,
+     "swing": null
+    },
+    {
+     "name": "Coalición Fuerza Ciudadana",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 114722,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Con Toda por Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 105393,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "Oxygen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27879,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Patriots",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10755,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Secure and Prosperous Colombia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10754,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Historic Pact finished first with 25 of 100 seats on 22.9% of the vote. Turnout 50.6%.",
+   "seatLeader": "Historic Pact",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

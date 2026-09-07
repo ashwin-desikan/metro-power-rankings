@@ -70,6 +70,13 @@ CURATED_OVERRIDES = {
     # 2026-08-03). Remove once Wikidata's claim is corrected.
     "kuwait": {"name": "Ahmad Al-Abdullah Al-Sabah", "role": "PM", "since": "2024-05-15",
                "second": {"name": "👑 Mishal Al-Ahmad Al-Jaber Al-Sabah", "role": "Monarch"}},
+    # Wikidata's P6 for Belgium resolved to King Philippe with role "Pres." on the
+    # 2026-09 feed: a monarch filed as a president, and no head of government at
+    # all. Bart De Wever has been Prime Minister since 2025-02-03 (the country's
+    # own history file, public/data/leaders/belgium.json, already says so).
+    # Remove once the P6 claim comes back clean (Ashwin caught it 2026-09-07).
+    "belgium": {"name": "Bart De Wever", "role": "PM", "since": "2025-02-03",
+                "second": {"name": "👑 Philippe", "role": "Monarch"}},
 }
 # Monarchies whose Wikidata P122 label doesn't say "monarchy" (missing or an
 # unusual label), which degraded their sovereign to a bare "President" row.

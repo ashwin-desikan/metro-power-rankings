@@ -25,7 +25,32 @@ function Delta({ d }: { d: number }) {
   return <span className="text-[var(--text-dim)]">–</span>;
 }
 
-export default function FibaRankingTable({ ranking }: { ranking: FibaRanking }) {
+// The women's hub reuses this table, so the footer's label, link and the
+// Russia note are props with the men's values as defaults. Nothing about the
+// men's hub changes by adding them.
+const GENDER = {
+  men: {
+    label: "FIBA World Ranking (Men) presented by Nike",
+    href: "https://www.fiba.basketball/en/ranking/men",
+    note: "Russia is currently absent from the FIBA ranking.",
+  },
+  women: {
+    label: "FIBA Women's World Ranking presented by Nike",
+    href: "https://www.fiba.basketball/en/ranking/women",
+    note: "Russia is currently absent from the FIBA ranking.",
+  },
+} as const;
+
+export default function FibaRankingTable({
+  ranking,
+  gender = "men",
+  teamHrefBase = "/teams/basketball",
+}: {
+  ranking: FibaRanking;
+  gender?: keyof typeof GENDER;
+  teamHrefBase?: string;
+}) {
+  const g = GENDER[gender];
   const [zone, setZone] = useState<Zone>("World");
   const rows = zone === "World" ? ranking.teams : ranking.teams.filter((t) => t.zone === zone);
 
@@ -76,7 +101,7 @@ export default function FibaRankingTable({ ranking }: { ranking: FibaRanking }) 
                 ) : null}
                 <span className="truncate">
                   {t.slug
-                    ? <Link href={`/teams/basketball/${t.slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>
+                    ? <Link href={`${teamHrefBase}/${t.slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>
                     : t.country_slug
                       ? <Link href={`/countries/${t.country_slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>
                       : t.country}
@@ -125,7 +150,7 @@ export default function FibaRankingTable({ ranking }: { ranking: FibaRanking }) 
                       <img src={flagCdnUrl(t.country_slug ?? t.slug ?? "")!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
                     ) : null}
                     {t.slug
-                      ? <Link href={`/teams/basketball/${t.slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>
+                      ? <Link href={`${teamHrefBase}/${t.slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>
                       : t.country_slug
                         ? <Link href={`/countries/${t.country_slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>
                         : t.country}
@@ -144,10 +169,10 @@ export default function FibaRankingTable({ ranking }: { ranking: FibaRanking }) 
 
       <p className="text-[11px] text-[var(--text-dim)] mt-2">
         Source:{" "}
-        <a href="https://www.fiba.basketball/en/ranking/men" target="_blank" rel="noopener noreferrer" className="hover:underline">
-          FIBA World Ranking (Men) presented by Nike
+        <a href={g.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
+          {g.label}
         </a>
-        , as of {ranking.label}. Movement is versus the previous release. Russia is currently absent from the FIBA ranking.
+        , as of {ranking.label}. Movement is versus the previous release. {g.note}
       </p>
     </div>
   );

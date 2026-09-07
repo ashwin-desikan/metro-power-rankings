@@ -36,6 +36,8 @@ import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import { DataBar } from "@/app/_shared/DataBar";
+import LeagueLedgerSections from "./LeagueLedgerSections";
+import { LEAGUE_HUB_COUNTRY } from "@/lib/footballSeasonExpectation";
 
 // api-football league ids for the hub countries' top flights, so the country
 // switcher can default to this hub's own league before falling back to tier 1.
@@ -144,6 +146,10 @@ export default async function FootballLeagueHubPage({ params }: Props) {
     ? LEAGUE_ID_BY_SLUG[hub.slug]
     : (countryTables[0]?.id ?? 0);
 
+  // The six top flights that carry an against-expectation ledger and a squad
+  // value series. Every other league hub renders neither strip.
+  const hasLedger = LEAGUE_HUB_COUNTRY[hub.slug] === hub.country;
+
   // Hero stats: live/offseason status, most-decorated club, earliest title year.
   const heroStatus = leagueStatusFor(`/teams/football/leagues/${hub.slug}`);
   const isLive = heroStatus ? heroStatus.tone !== "offseason" : countryTables.length > 0;
@@ -231,6 +237,12 @@ export default async function FootballLeagueHubPage({ params }: Props) {
         items={[
           ...(hub.country === "England" ? [{ label: "Domestic Cups", href: "#domestic-cups" }] : []),
           { label: "Current Standings", href: "#standings" },
+          ...(hasLedger
+            ? [
+                { label: "Predictability", href: "#predictability" },
+                { label: "Concentration", href: "#concentration" },
+              ]
+            : []),
           { label: "Map", href: "#map" },
           { label: "All-Time Champions", href: "#champions" },
         ]}
@@ -256,6 +268,9 @@ export default async function FootballLeagueHubPage({ params }: Props) {
           <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
         )}
       </div>
+      {hasLedger && (
+        <LeagueLedgerSections hubSlug={hub.slug} country={hub.country} league={hub.league} />
+      )}
       <div id="map">
         <LeagueHubMap country={hub.country} clubs={hubClubs} />
       </div>

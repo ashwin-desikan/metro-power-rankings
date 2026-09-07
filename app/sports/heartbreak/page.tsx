@@ -76,8 +76,17 @@ interface NeverRow {
   agony: number;
 }
 interface CollegeRow { name: string; since: number; years: number; points: number }
-interface NationRow { nation: string; total: number; detail: { kind: string; comp?: string; since?: number; year?: number; points: number }[] }
-interface ParadeRow { metro: string; last: number; years: number }
+interface NationRow {
+  nation: string;
+  sport: string;
+  total: number;
+  /** Latest title in any competition this team's sport counts (the Euros count for the Netherlands). */
+  last_won?: number | null;
+  /** First appearance in any counted competition; the clock for a team that has never won. */
+  first?: number | null;
+  detail: { kind: string; comp?: string; since?: number; year?: number; never?: boolean; points: number }[];
+}
+interface ParadeRow { metro: string; slug?: string | null; last: number; years: number }
 interface HeartbreakData {
   params: Record<string, unknown>;
   clubs: ClubRow[];
@@ -142,6 +151,8 @@ function teamHref(sport: string, name: string): string | undefined {
   return a ? (resolveTeamLink(a[0], name, a[1])?.href ?? undefined) : undefined;
 }
 
+const NATIONS_GROUP = "National teams";
+
 function longingText(c: ClubRow): string {
   if (!c.longing.length) return c.last_won ? `won ${c.last_won}` : "never won it";
   const l = c.longing[0];
@@ -170,8 +181,13 @@ export default function HeartbreakPage() {
   // a shape of suffering and a club with none has no place in one. The BOARD
   // takes everything, including the 0.0s. See the note in HeartbreakBoard.
   const board = data.clubs.filter((c) => c.total > 0).slice(0, 100);
-  const boardRows: BoardRow[] = data.clubs.map((c, i) => ({
-    rank: i + 1,
+  // Clubs and nations on ONE board, one global rank (Ashwin, 2026-09-07: a
+  // separate nations table hid that England's wait sits between the Maple
+  // Leafs and the rest). A nation row is one national TEAM, a nation in one
+  // sport; its worst drought and worst final stand in for the club columns.
+  const clubRows: BoardRow[] = data.clubs.map((c) => ({
+    rank: 0,
+    kind: "club",
     name: c.name,
     href: teamHref(c.sport, c.name),
     sport: c.sport,
@@ -184,7 +200,42 @@ export default function HeartbreakPage() {
     waiting: longingText(c),
     wound: woundText(c.wounds[0]),
   }));
-  const nations = data.nations.slice(0, 25);
+  const nationRows: BoardRow[] = data.nations.map((n) => {
+    // One row per national TEAM: the engine keys nations by sport, so England
+    // arrives three times, and each row carries its own wait.
+    const sports = [n.sport];
+    const drought = n.detail.filter((d) => d.kind === "drought").sort((a, b) => b.points - a.points)[0];
+    const final = n.detail.filter((d) => d.kind === "final_lost").sort((a, b) => b.points - a.points)[0];
+    return {
+      rank: 0,
+      kind: "nation",
+      name: n.nation,
+      href: undefined,
+      sport: n.sport,
+      sportGroup: NATIONS_GROUP,
+      nationSports: sports,
+      country: n.nation,
+      total: n.total,
+      agony: null,
+      despair: null,
+      quadrant: undefined,
+      // One rule for every team (Ashwin, 2026-09-07): the wait runs from the last
+      // trophy in ANY competition the sport counts, and a team that has never
+      // won waits from its first entry. The Netherlands wait since the 1988
+      // Euros, not "never" because the World Cup is still unwon.
+      waiting: n.last_won
+        ? `last trophy ${n.last_won}`
+        : n.first
+          ? `never won, entered ${n.first}`
+          : drought
+            ? `${drought.comp} since ${drought.since}`
+            : "\u2013",
+      wound: final ? `lost the ${final.comp} final ${final.year}` : "\u2013",
+    };
+  });
+  const boardRows: BoardRow[] = [...clubRows, ...nationRows]
+    .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name))
+    .map((r, i) => ({ ...r, rank: i + 1 }));
   const parade = data.parade_drought.slice(0, 30);
   const quadrants: Record<string, ClubRow[]> = {};
   for (const c of board) {
@@ -221,7 +272,6 @@ export default function HeartbreakPage() {
         { label: "The board", href: "#board" },
         { label: "Never winners", href: "#never" },
         { label: "Quadrants", href: "#quadrants" },
-        { label: "Nations", href: "#nations" },
         { label: "Parade droughts", href: "#parade" },
         { label: "How it works", href: "#method" },
       ]} />
@@ -236,8 +286,8 @@ export default function HeartbreakPage() {
       <section id="board" className="mb-12 scroll-mt-24">
         <SectionHead
           title="The board"
-          sub="Every professional club with a heartbreak score, on one global scale."
-          more="Agony is hope crushed: longing plus unavenged wounds. Despair is hopelessness: playoff exile and losing streaks. Filter by sport, and within football by country; ranks stay global."
+          sub="Every professional club and national team with a heartbreak score, on one global scale."
+          more="Agony is hope crushed: longing plus unavenged wounds. Despair is hopelessness: playoff exile and losing streaks. Each national team is scored on its own, England the footballers apart from England the cricketers, and carries a drought and a lost final in place of the club columns. Filter by sport, within football by country, and within national teams by sport; ranks stay global."
         />
         <HeartbreakBoard rows={boardRows} />
       </section>
@@ -299,44 +349,6 @@ export default function HeartbreakPage() {
         </div>
       </section>
 
-      <section id="nations" className="mb-12 scroll-mt-24">
-        <SectionHead
-          title="Nations"
-          sub="National-team heartbreak across football, cricket, rugby and more."
-          more="Title droughts matured over a fan generation, plus finals lost weighted by how close they came: penalty shootouts hurt double."
-        />
-        <TableScroll className="rounded-xl border" style={CARD}>
-          <table className="w-full text-[13px]" data-sticky-col="2">
-            <thead>
-              <tr className="text-left text-[10.5px] uppercase tracking-wider text-[var(--text-dim)]">
-                <Th>#</Th>
-                <Th>Nation</Th>
-                <Th>Heartbreak</Th>
-                <Th>Biggest source</Th>
-              </tr>
-            </thead>
-            <tbody>
-              {nations.map((n, i) => {
-                const d = n.detail[0];
-                const src = d
-                  ? d.kind === "drought"
-                    ? `${d.comp} drought since ${d.since}`
-                    : `lost the ${d.comp} final ${d.year}`
-                  : "–";
-                return (
-                  <tr key={n.nation}>
-                    <td className="py-1.5 px-2 border-b text-[var(--text-dim)]" style={{ ...BORD, ...MONO }}>{i + 1}</td>
-                    <td className="py-1.5 px-2 border-b font-medium" style={BORD}>{n.nation}</td>
-                    <td className="py-1.5 px-2 border-b font-bold" style={{ ...BORD, ...MONO }}>{n.total.toFixed(1)}</td>
-                    <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={BORD}>{src}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </TableScroll>
-      </section>
-
       <section id="parade" className="mb-12 scroll-mt-24">
         <SectionHead
           title="Parade droughts"
@@ -357,7 +369,11 @@ export default function HeartbreakPage() {
               {parade.map((p, i) => (
                 <tr key={p.metro}>
                   <td className="py-1.5 px-2 border-b text-[var(--text-dim)]" style={{ ...BORD, ...MONO }}>{i + 1}</td>
-                  <td className="py-1.5 px-2 border-b font-medium" style={BORD}>{p.metro}</td>
+                  <td className="py-1.5 px-2 border-b font-medium" style={BORD}>
+                    {p.slug ? (
+                      <Link href={`/rankings/${p.slug}`} className="hover:underline">{p.metro}</Link>
+                    ) : p.metro}
+                  </td>
                   <td className="py-1.5 px-2 border-b font-bold" style={{ ...BORD, ...MONO }}>{p.years}</td>
                   <td className="py-1.5 px-2 border-b text-[var(--text-muted)]" style={{ ...BORD, ...MONO }}>{p.last}</td>
                 </tr>
@@ -379,7 +395,9 @@ export default function HeartbreakPage() {
             pedigree and consolations, and fades when a club has not contended within living memory.
             <b> Wounds</b> are lost finals, near-misses, relegations (habituated for yo-yo clubs, refunded
             on an immediate bounce-back) and early playoff exits, each multiplied by the hope preceding
-            it, decayed on a 25-year half-life, and healed to 15% once avenged. <b>Grind</b> is playoff
+            it, decayed on a 25-year half-life, and healed to 15% once avenged. A runner-up season behind
+            a hegemon (a champion holding five of the last eight titles) counts at 35%: second to PSG or
+            Bayern is the ceiling, not a race lost. <b>Grind</b> is playoff
             exile and losing streaks.
           </p>
           <p className="mb-2">
@@ -390,14 +408,50 @@ export default function HeartbreakPage() {
             heartland bump pricing the Maple Leafs&rsquo; wait in Canadian terms. <b>Size of the fanbase</b>:
             US franchises scale by valuation percentile, football clubs by the weight of the trophy
             cabinet: the same drought is heavier at Goodison than at a club that never expected to win.
+            <b> Bigness now</b>: football clubs also scale by present stature, from 0.7 to 1.5 times, read from
+            European presence over the last ten seasons, Europe-wide squad value where a club is priced, and
+            the ground a club can fill,
+            so Benfica losing the finals it reaches outweighs a club that no longer competes for the big
+            trophies, and Arsenal&rsquo;s 2004 to 2025 wait counted for more than a century at Genoa.
             <b> Relocation</b>: moved franchises inherit their pre-move history at 30%, with San Diego and
-            Los Angeles ruled one Southern California market.
+            Los Angeles ruled one Southern California market. <b>Living memory</b>: a football trophy clock
+            stops growing at forty years, so a century at a small club does not outweigh a generation at a big
+            one. <b>Relevance</b>: a college program scales, from 0.4 to 1.3 times, by how often it has made the
+            tournament and won its conference in the last 25 seasons, so two lost finals in the 1940s do not
+            keep Dartmouth beside Purdue.
           </p>
           <p className="mb-2">
             Coverage is stated honestly: England and the four US majors run the full model including cups
             and second-tier pain; Scotland, Spain, Germany, Italy, France, the Netherlands and Portugal run
             leagues, relegations and European finals; everywhere else only droughts and known finals count
             for now. Every weight in the formula is a published constant in the dataset itself.
+          </p>
+          <p className="mb-2">
+            National teams sit on the same board, one row per team and sport, so England&rsquo;s footballers
+            and cricketers wait separately, and every team the site holds a ledger for is scored, not only
+            past winners: Wales and France in rugby, France in basketball, Puerto Rico at the Classic,
+            England and Italy in the women&rsquo;s game. Each sport&rsquo;s ultimate honour weighs like the World
+            Cup, its lost finals with it. The wait shown runs from the last trophy in any competition the
+            sport counts, or from first entry for a team that has never won. Football counts the World Cup and the continental championship
+            (Euros, Copa América, and where the ledger reaches, AFCON, the Asian Cup and the Gold Cup); a nation
+            that has never won waits from its first appearance, faded like a club that has not been near the
+            semi-finals. A continental title consoles the World Cup wait rather than ending it, which is why
+            Uruguay&rsquo;s six Copas since 1950 keep it well down the board. Cricket counts both World Cups as
+            peers: a title in either restarts both clocks, and the Champions Trophy and the World Test
+            Championship console. Rugby counts the World Cup, consoled lightly by Six Nations and Rugby
+            Championship titles and scaled by how much a nation has invested in the game (caps played, peak
+            ranking), which is how France and Wales sit above Argentina; basketball counts Olympic gold and
+            the World Cup as peers; women&rsquo;s football counts the World Cup and the Euros, with Olympic
+            gold as consolation, priced at half for the depth of the field. <b>Hegemon</b>: where one nation has
+            won most of the last eight editions and is still winning (the US men at the Olympics), everyone
+            else&rsquo;s wait and lost finals in that competition count at 35%: second to a dynasty is the
+            ceiling, not heartbreak. Champions stay on the board at the bottom rather than vanishing. Scarcity: a nation plays for its title once in four years, not every season,
+            so each drought and each lost final carries a small cadence premium (four-year tournaments 1.04
+            times, two-year ones 1.02), calibrated so England&rsquo;s wait sits beside Toronto&rsquo;s. Healing: a
+            title in the same sport at equal or higher standing restarts every drought clock in that sport and
+            mostly closes the earlier lost finals, so France&rsquo;s 2018 World Cup ended its European
+            Championship wait and avenged 2006, while the 2022 final still stands. Semi-final exits are not yet
+            priced for cricket, so South Africa reads lighter than its reputation until that ledger exists.
           </p>
           <p>
             This is a working preview of the model output. The curated agony layer, the blown leads and

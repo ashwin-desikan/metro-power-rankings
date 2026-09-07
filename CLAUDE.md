@@ -150,6 +150,20 @@ explicit — apply it before touching any refresh script:
   deployment at all, the shape a canceled-by-newer-push build leaves, is
   retried. Verified against the real API on 2026-09-07 (`b40726b7b` and its
   retry both read `failure`; skipped commits carry no deployment).
+- **`npm run check:function-size`** (last step of `npm run verify`, after
+  `next build --webpack`) is the standing gate against a repeat of the
+  api/og/compare 255.19 MB failure: it walks every route's `.next/server/
+  app/**/*.nft.json` trace, sums the real size of every file each route
+  bundles, and reports the ten biggest with their `public/data` share. It
+  WARNs at 220 MB per route and FAILs at 245 MB (235 MB under `--strict`),
+  and skips itself with a message when there's no build to read yet. A
+  local audit the day of the incident found 106 routes already sitting
+  around 230 MB, about 20 MB under Vercel's line, with `public/data` growing
+  every day the pipeline runs - the next route to cross 250 MB was always
+  going to be a matter of when, not if. A red result here means shrink the
+  function before pushing, never push and hope: Vercel enforces its limit
+  AFTER a successful build, so a push that passes every local gate can still
+  fail at deploy and spend a production build for nothing.
 - `scripts/vercel-ignore.sh` **fails closed**: if it cannot resolve the base
   commit it skips rather than builds, because a missed deploy is auto-healed by
   `mac-mini-jobs/run-deploy-watch.sh` and a spurious deploy is healed by

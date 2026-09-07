@@ -1,0 +1,4508 @@
+{
+ "meta": {
+  "title": "Pakistani General Elections",
+  "sources": [
+   "Wikipedia: Pakistani general election articles 1962-2024 (results tables and infoboxes)",
+   "Election Commission of Pakistan figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "eras": [
+  {
+   "key": "basic",
+   "label": "Basic Democracies",
+   "span": "1962–1965",
+   "blurb": "Ayub Khan's 1962 constitution had the National Assembly chosen not by voters but by an electoral college of eighty thousand Basic Democrats, themselves elected in the union councils. Political parties were banned outright for the 1962 election and readmitted for 1965, and both assemblies were dominated by the president's Convention Muslim League."
+  },
+  {
+   "key": "first",
+   "label": "One person, one vote",
+   "span": "1970–1977",
+   "blurb": "The 1970 election was the first held on universal adult suffrage anywhere in Pakistan's history, and it broke the country: the Awami League won 167 of the 313 seats on an entirely East Pakistani vote, the result was not honoured, and Bangladesh was independent within a year. The 1977 election that followed gave Bhutto a landslide his opponents refused to accept, and the army removed him in July."
+  },
+  {
+   "key": "zia",
+   "label": "Under Zia",
+   "span": "1985",
+   "blurb": "Eight years of martial law produced one election, held on a nonpartisan basis with candidates standing as individuals and amendments written to keep the opposition off the ballot. The Movement for the Restoration of Democracy boycotted it. Almost every member returned supported the regime."
+  },
+  {
+   "key": "decade",
+   "label": "The democratic decade",
+   "span": "1988–1997",
+   "blurb": "Four elections in nine years and not one of the assemblies they produced served a full term: Benazir Bhutto and Nawaz Sharif alternated twice each, and every government in between was dismissed by a president using the powers Zia had left behind. Turnout fell at every election of the period, to 35.8% in 1997."
+  },
+  {
+   "key": "musharraf",
+   "label": "Under Musharraf",
+   "span": "2002",
+   "blurb": "The 1999 coup was followed three years later by an election held under a president who had granted himself the power to dissolve the assembly, with the two main party leaders in exile and a graduation requirement that disqualified most of the political class. A new pro-government Muslim League came first."
+  },
+  {
+   "key": "current",
+   "label": "The civilian era",
+   "span": "2008–2024",
+   "blurb": "Since 2008 every National Assembly has handed over to the next, which had never happened before, and every one of those elections has been contested as unfair by the side that lost. Pakistan Tehreek-e-Insaf came first in 2018 and, stripped of its party symbol by the courts, again in 2024 with its candidates standing as independents."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "28 March 1962",
+   "era": "basic",
+   "totalSeats": 156,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "Ayub Khan",
+    "party": "Martial law"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A pakistani election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Political parties were banned and the election was held on a non-partisan basis, with the Assembly chosen indirectly by the Basic Democracies electoral college.",
+   "unfree": null
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "21 March 1965",
+   "era": "basic",
+   "totalSeats": 156,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Convention Muslim League",
+     "leader": null,
+     "seats": 120,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Combined Opposition Parties",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Front",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ayub Khan",
+    "party": "PMLC"
+   },
+   "pmAfter": {
+    "name": "Ayub Khan",
+    "party": "PMLC"
+   },
+   "knownAs": null,
+   "summary": "Convention Muslim League finished first with 120 of 156 seats. Ayub Khan stayed in office.",
+   "seatLeader": "Convention Muslim League",
+   "caveat": "The Assembly was elected indirectly by the Basic Democracies electoral college, whose own members had been chosen in October and November 1964.",
+   "unfree": null
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "legislative",
+   "date": "7 December 1970",
+   "era": "first",
+   "totalSeats": 313,
+   "majoritySeats": null,
+   "turnout": 57.96,
+   "parties": [
+    {
+     "name": "All-Pakistan Awami League",
+     "leader": null,
+     "seats": 167,
+     "seatChange": null,
+     "votes": 12937162,
+     "share": 39.2,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": 6148923,
+     "share": 18.63,
+     "swing": null
+    },
+    {
+     "name": "Jamaat-e-Islami",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 1989461,
+     "share": 6.03,
+     "swing": null
+    },
+    {
+     "name": "Council Muslim League",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 1965689,
+     "share": 5.96,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Qayyum)",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 1473749,
+     "share": 4.47,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 1315071,
+     "share": 3.98,
+     "swing": null
+    },
+    {
+     "name": "Markazi Jamiat Ulema-e-Pakistan",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 1299858,
+     "share": 3.94,
+     "swing": null
+    },
+    {
+     "name": "Convention Muslim League",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 1102815,
+     "share": 3.34,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Wali)",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 801355,
+     "share": 2.43,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 737958,
+     "share": 2.24,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (Thanvi)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 521764,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 387919,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 2322341,
+     "share": 7.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yahya Khan",
+    "party": "Martial law"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "All-Pakistan Awami League finished first with 167 of 313 seats on 39.2% of the vote. Turnout 58.0%.",
+   "seatLeader": "All-Pakistan Awami League",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "kind": "legislative",
+   "date": "7 March 1977",
+   "era": "first",
+   "totalSeats": 216,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Pakistan Peoples Party",
+     "leader": null,
+     "seats": 171,
+     "seatChange": 85,
+     "votes": 10093868,
+     "share": 59.74,
+     "swing": null
+    },
+    {
+     "name": "Pakistan National Alliance",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 24,
+     "votes": 6154921,
+     "share": 36.43,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Qayyum)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -8,
+     "votes": 157370,
+     "share": 0.93,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Pakhtunkhwa National Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48145,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (Hazarvi)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7595,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Inqlabi Mahaz",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6494,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Tahafuz-e-Islam",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5206,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Worker's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1716,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1060,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jammaat-e-Aalia Mujahideen",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 808,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -8,
+     "votes": 417808,
+     "share": 2.47,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Zulfikar Ali Bhutto",
+    "party": "PPP"
+   },
+   "pmAfter": {
+    "name": "Zulfikar Ali Bhutto",
+    "party": "PPP"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Peoples Party finished first with 171 of 216 seats on 59.7% of the vote. Zulfikar Ali Bhutto stayed in office.",
+   "seatLeader": "Pakistan Peoples Party",
+   "caveat": "The Pakistan National Alliance accused the Pakistan Peoples Party of rigging the result and refused to accept it, and the source files this election under electoral fraud in Pakistan.",
+   "unfree": null
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "25 February 1985",
+   "era": "zia",
+   "totalSeats": 237,
+   "majoritySeats": null,
+   "turnout": 53.7,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 217,
+     "seatChange": null,
+     "votes": 16889392,
+     "share": 100.0,
+     "swing": null
+    },
+    {
+     "name": "Seats reserved for women",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "None",
+    "party": "Muhammad Khan Junejo"
+   },
+   "pmAfter": {
+    "name": "Muhammad Khan Junejo",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Independents finished first with 217 of 237 seats on 100.0% of the vote. Turnout 53.7%. Muhammad Khan Junejo replaced None.",
+   "seatLeader": "Independents",
+   "caveat": "Held under Zia-ul-Haq's military government on a nonpartisan basis, with amendments to the Political Parties Act written to disqualify opposition candidates; the Movement for the Restoration of Democracy boycotted, and most of those returned supported the regime.",
+   "unfree": null
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "16 November 1988",
+   "era": "decade",
+   "totalSeats": 237,
+   "majoritySeats": null,
+   "turnout": 42.75,
+   "parties": [
+    {
+     "name": "Pakistan Peoples Party",
+     "leader": null,
+     "seats": 93,
+     "seatChange": null,
+     "votes": 7546561,
+     "share": 37.66,
+     "swing": null
+    },
+    {
+     "name": "Islami Jamhoori Ittehad",
+     "leader": null,
+     "seats": 54,
+     "seatChange": null,
+     "votes": 5908742,
+     "share": 29.48,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Ittehad",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 857684,
+     "share": 4.28,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 409555,
+     "share": 2.04,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (F)",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 360526,
+     "share": 1.8,
+     "swing": null
+    },
+    {
+     "name": "Punjabi Pakhtun Ittehad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 105061,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "Pakistan National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 104442,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "National Peoples Party (Khar)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 97990,
+     "share": 0.49,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 80473,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Alliance",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 71058,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (MQ)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 55052,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Milli Awai Ittehad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46562,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (Darkhasti)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44964,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Jafaria (Arif Hussaini)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 42216,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "United Christians Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 15918,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "All Pakistan Christians Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15449,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14960,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Mazdoor Kissan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6652,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Jamaat-e-Ahl-e-Hadees Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5225,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Masihi League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4324,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Christians National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3386,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Inqalab-Islam Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2807,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Qayyum)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2196,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Hazara Front (Mahaz-e-Hazara)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1814,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Forward Block)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1713,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party (Ainee Group)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1018,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Qaumi Mahaz-e-Azadi",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 999,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan National Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 388,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jamaat-e-Ahl-e-Sunnat Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 351,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Muslim League (Muhasba Group)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 282,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Wattan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 184,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 48,
+     "seatChange": null,
+     "votes": 4232679,
+     "share": 21.12,
+     "swing": null
+    },
+    {
+     "name": "Seats reserved for women",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "None (presidential rule)",
+    "party": "Benazir Bhutto"
+   },
+   "pmAfter": {
+    "name": "Benazir Bhutto",
+    "party": "PPP"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Peoples Party finished first with 93 of 237 seats on 37.7% of the vote. Turnout 42.8%. Benazir Bhutto replaced None (presidential rule).",
+   "seatLeader": "Pakistan Peoples Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "24 October 1990",
+   "era": "decade",
+   "totalSeats": 217,
+   "majoritySeats": null,
+   "turnout": 45.17,
+   "parties": [
+    {
+     "name": "Islami Jamhoori Ittehad",
+     "leader": null,
+     "seats": 106,
+     "seatChange": 50,
+     "votes": 7908492,
+     "share": 36.54,
+     "swing": null
+    },
+    {
+     "name": "People's Democratic Alliance",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -50,
+     "votes": 7796238,
+     "share": 36.02,
+     "swing": null
+    },
+    {
+     "name": "Haq Parast",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 1171525,
+     "share": 5.41,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (F)",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -1,
+     "votes": 622214,
+     "share": 2.87,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 4,
+     "votes": 356160,
+     "share": 1.65,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Pakistan (Noorani)",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 310953,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Tehrik",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 237492,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Jamhoori Wattan Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 129431,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Pakistan National Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 127287,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Pashtunkhwa Milli Awami Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 73635,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Sindh National Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51990,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 51645,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51297,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Hindu Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 33847,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Sindh National Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31125,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Masihi Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 23050,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Masihi Ittehad",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 19534,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Punjabi Pakhtun Ittehad (Sarwar Awan Group)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17967,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "United Christians Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 14594,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Awami Tehreek (Paleejo Group)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14307,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Christian Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14271,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Qaumi Inqilab Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12931,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Qayyum)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8521,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Punjabi Pakhtun Ittehad (Mir Hazar Khan)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2489,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Seriaki Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2160,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Saraiki Qaumi Ittehad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2023,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jamaat-e-Ahl-e-Sunnat Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1992,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Aqiliati Ittehad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1969,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Christian Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 835,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hazara Front (Mahaz-e-Hazara)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 678,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Mazdoor Kissan Party (Fatehyab Group)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 647,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Pakistan (Niazi)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 412,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 204,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sindh National Alliance (Hamida Khuro Group)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 139,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -19,
+     "votes": 2554201,
+     "share": 11.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benazir Bhutto",
+    "party": "PPP"
+   },
+   "pmAfter": {
+    "name": "Nawaz Sharif",
+    "party": "IJI"
+   },
+   "knownAs": null,
+   "summary": "Islami Jamhoori Ittehad finished first with 106 of 217 seats on 36.5% of the vote. Turnout 45.2%. Nawaz Sharif replaced Benazir Bhutto.",
+   "seatLeader": "Islami Jamhoori Ittehad",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "6 October 1993",
+   "era": "decade",
+   "totalSeats": 217,
+   "majoritySeats": 109,
+   "turnout": 40.02,
+   "parties": [
+    {
+     "name": "Pakistan Muslim League (N)",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": 7980229,
+     "share": 38.96,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party",
+     "leader": null,
+     "seats": 89,
+     "seatChange": null,
+     "votes": 7578635,
+     "share": 37.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (J)",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 781652,
+     "share": 3.82,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Islamic Front",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 645278,
+     "share": 3.15,
+     "swing": null
+    },
+    {
+     "name": "Islamic Jamhoori Mahaz",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 480099,
+     "share": 2.34,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -3,
+     "votes": 335094,
+     "share": 1.64,
+     "swing": null
+    },
+    {
+     "name": "Mutehda Deeni Mahaz",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 216937,
+     "share": 1.06,
+     "swing": null
+    },
+    {
+     "name": "Pashtunkhwa Milli Awami Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 97541,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 64713,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Jamhoori Wattan Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 54607,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Pakhtun-khwa Qaumi Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 54144,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "National Peoples Party (Khar)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 48721,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Movement (Hayee)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 47648,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Movement (Mengal)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 45228,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 107979,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Independents (Muslims)",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -6,
+     "votes": 1482033,
+     "share": 7.24,
+     "swing": null
+    },
+    {
+     "name": "Non-Muslim seats",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": 460454,
+     "share": 2.25,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nawaz Sharif",
+    "party": "IJI"
+   },
+   "pmAfter": {
+    "name": "Benazir Bhutto",
+    "party": "PPP"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Peoples Party finished first with 89 of 217 seats on 37.0% of the vote. Turnout 40.0%. Benazir Bhutto replaced Nawaz Sharif.",
+   "seatLeader": "Pakistan Peoples Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "3 February 1997",
+   "era": "decade",
+   "totalSeats": 217,
+   "majoritySeats": 109,
+   "turnout": 35.79,
+   "parties": [
+    {
+     "name": "Pakistan Muslim League (N)",
+     "leader": null,
+     "seats": 135,
+     "seatChange": 62,
+     "votes": 8751793,
+     "share": 44.88,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -71,
+     "votes": 4152209,
+     "share": 21.29,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Qaumi Movement",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 764207,
+     "share": 3.92,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (J)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 624286,
+     "share": 3.2,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 6,
+     "votes": 357002,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party (Shaheed Bhutto)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 377228,
+     "share": 1.93,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (F)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 325910,
+     "share": 1.67,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehreek-e-Insaf",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 314820,
+     "share": 1.61,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 124754,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "National Peoples Party (Khar)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 85121,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Baloch National Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 72354,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Jamhoori Wattan Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 66128,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Pashtunkhwa Milli Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 58552,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Muslim Ittehad Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49601,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (S)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48838,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 47153,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Qayyum)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37723,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31615,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "30 other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 88429,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Independents (Muslims)",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 5,
+     "votes": 2690164,
+     "share": 13.8,
+     "swing": null
+    },
+    {
+     "name": "Non-Muslim seats",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": 432553,
+     "share": 2.22,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benazir Bhutto",
+    "party": "PPP"
+   },
+   "pmAfter": {
+    "name": "Nawaz Sharif",
+    "party": "PML(N)"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Muslim League (N) finished first with 135 of 217 seats on 44.9% of the vote. Turnout 35.8%. Nawaz Sharif replaced Benazir Bhutto.",
+   "seatLeader": "Pakistan Muslim League (N)",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "10 October 2002",
+   "era": "musharraf",
+   "totalSeats": 342,
+   "majoritySeats": 172,
+   "turnout": 41.76,
+   "parties": [
+    {
+     "name": "Pakistan Peoples Party Parliamentarians",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": 7616033,
+     "share": 26.05,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Q)",
+     "leader": null,
+     "seats": 105,
+     "seatChange": null,
+     "votes": 7500797,
+     "share": 25.66,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (N)",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 3409805,
+     "share": 11.66,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Majlis-e-Amal",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": 3335643,
+     "share": 11.41,
+     "swing": null
+    },
+    {
+     "name": "National Alliance",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 1395398,
+     "share": 4.77,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Qaumi Movement",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 932166,
+     "share": 3.19,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (F)",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 328923,
+     "share": 1.13,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 299067,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (J)",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 283755,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehreek-e-Insaf",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 209514,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Tehreek",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 202845,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 107355,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party (Sherpao)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 98476,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Pashtunkhwa Milli Awami Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 96252,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Jamhoori Wattan Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 96240,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 83976,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Z)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 78798,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Sunni Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 72583,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 57865,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Qaumi Movement Pakistan",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 54007,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Istiqlal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43400,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Shia Political Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 42855,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Saleem Pakistan Tehreek-e-Insaf",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32958,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party (Shaheed Bhutto)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31208,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Pak Muslim Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22637,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15291,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Kazmi Nazim-e-Mistafa",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11728,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Jamote Qaumi Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6240,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Qaumi Jamhoori Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6224,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Nizam-e-Mustafa Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5154,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Kakar Jamhoori Party Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4074,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Mohib-e-Wattan Nowjawan Inqilabion Ki Anjuman (Mnaka)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3806,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Hazara Qaumi Mahaz",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3480,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pak Wattan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3097,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2993,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Awami Qiadat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2987,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National People Party Worker Group",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2515,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1861,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1832,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Ittehad Milli Hazara",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1552,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Labour Party Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1464,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Mazdoor Kissan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1437,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tameer-e-Pakistan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 909,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tehreek Hussainia Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 616,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Pakistan (Nifaz-e-Shariat)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 581,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 520,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Qaumi Inqilab Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 496,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Gharib Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 422,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Saraiki Sooba Movement Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 348,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Shan-e-Pakistan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 276,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Mohajir Ittehad Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 262,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Seriaki Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 225,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Shah Moosvi Awami Qiadat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 202,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sindh Urban-rurel Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 165,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Labour Party Pakistan (Krandi)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 164,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Istiqlil Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 151,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Ittehad Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 145,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 105,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Tehreek-e-Inqilab",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 75,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Zaheer Markazi Jamat-al-hadais",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Qaumi Tahaffaz Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 2722669,
+     "share": 9.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Pervez Musharraf (as Chief Executive)",
+    "party": "Pakistan Armed Forces"
+   },
+   "pmAfter": {
+    "name": "Zafarullah Khan Jamali",
+    "party": "PML (Q)"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Muslim League (Q) finished first with 105 of 342 seats on 25.7% of the vote. Turnout 41.8%. Zafarullah Khan Jamali replaced Pervez Musharraf (as Chief Executive).",
+   "seatLeader": "Pakistan Muslim League (Q)",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "kind": "legislative",
+   "date": "18 February 2008",
+   "era": "current",
+   "totalSeats": 342,
+   "majoritySeats": 172,
+   "turnout": 44.34,
+   "parties": [
+    {
+     "name": "Pakistan Peoples Party",
+     "leader": null,
+     "seats": 116,
+     "seatChange": null,
+     "votes": 10666548,
+     "share": 30.77,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Q)",
+     "leader": null,
+     "seats": 54,
+     "seatChange": null,
+     "votes": 7962473,
+     "share": 22.97,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (N)",
+     "leader": null,
+     "seats": 88,
+     "seatChange": null,
+     "votes": 6917752,
+     "share": 19.95,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Qaumi Movement",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 2573795,
+     "share": 7.42,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Majlis-e-Amal",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 769638,
+     "share": 2.22,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 704811,
+     "share": 2.03,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (F)",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 685684,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "National Peoples Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 148892,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party (Sherpao)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 141975,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Party (Awami)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 72956,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 64505,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Sindh United Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33642,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27076,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19248,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party (Shaheed Bhutto)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14292,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Citizen Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5441,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Bachao Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5147,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jamit Ahle Hadith Pakistan-Elahi Zheer",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4008,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (S)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3885,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Hazara Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3174,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Awami Himayat Tehreek Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2929,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pasban",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2318,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Punjab National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2152,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jamhoori Wattan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2054,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehrek-e-Inqalab",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1670,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sunni Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1501,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Azad Pakistan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1492,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muhafiz Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1480,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pak Muslim Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 874,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Ittehad Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 235,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Gharib Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 215,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Markazi Jamiat Ulema-e-Pakistan FK",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 197,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Aman Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 181,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Qaumi Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 99,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Qaumi League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 72,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 3826490,
+     "share": 11.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shaukat Aziz",
+    "party": "PML(Q)"
+   },
+   "pmAfter": {
+    "name": "Yousaf Raza Gillani",
+    "party": "PPP"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Peoples Party finished first with 116 of 342 seats on 30.8% of the vote. Turnout 44.3%. Yousaf Raza Gillani replaced Shaukat Aziz.",
+   "seatLeader": "Pakistan Peoples Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "legislative",
+   "date": "11 May 2013",
+   "era": "current",
+   "totalSeats": 342,
+   "majoritySeats": 172,
+   "turnout": 55.02,
+   "parties": [
+    {
+     "name": "Pakistan Muslim League (N)",
+     "leader": null,
+     "seats": 166,
+     "seatChange": 78,
+     "votes": 14874104,
+     "share": 32.77,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehreek-e-Insaf",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 7679954,
+     "share": 16.92,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": -74,
+     "votes": 6911218,
+     "share": 15.23,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Qaumi Movement – London",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -1,
+     "votes": 2456153,
+     "share": 5.41,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (F)",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 1461371,
+     "share": 3.22,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Q)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -52,
+     "votes": 1409905,
+     "share": 3.11,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (F)",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1,
+     "votes": 1072846,
+     "share": 2.36,
+     "swing": null
+    },
+    {
+     "name": "Jamaat-e-Islami Pakistan",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 963909,
+     "share": 2.12,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -10,
+     "votes": 453057,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Majlis-e-Amal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 360297,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "Pashtunkhwa Milli Awami Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 214631,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "National Peoples Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 197829,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Z)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 128510,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Bahawalpur National Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 113365,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulama-e-Islam Nazryati",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 103098,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Awami Muslim League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 93046,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Sindh United Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 82634,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Tahaffuz-e-Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 76358,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (J)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 71773,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Awami Jamhuri Ittehad Pakistan",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 71175,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 67966,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 63979,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 61148,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "All Pakistan Muslim League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 54231,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Pakistan National Muslim League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 52398,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party (Shaheed Bhutto)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 50046,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Qaumi Watan Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 46574,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Suba Hazara",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43265,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Majlis Wahdat-e-Muslimeen",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 41520,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Sunni Ittehad Council",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37732,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Sunni Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25485,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Sindh Taraqi Passand Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23397,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Qoumi Wattan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19253,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Awami Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18650,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Party (Awami)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 12866,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Hazara Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11052,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Mohajir Qaumi Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10575,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Jamote Qaumi Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10468,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Saraiki Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5236,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Kissan Ittehad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4367,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Falah Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4207,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Awami Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3803,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3230,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Islami Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2694,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Christian Progressive Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2523,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Mohib-e-Wattan Nowjawan Inqilabion Ki Anjuman",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2503,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Mutahidda Qabil Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2399,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Qaumi Tahaffaz Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2202,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Mustaqbil Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2052,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sairkistan Qaumi Ittehad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1890,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Seraiki Sooba Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1797,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Awami Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1657,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jamhoori Wattan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1632,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Karwan-i-Millat",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1412,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jannat Pakistan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1269,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tehreek Tabdili Nizam",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1164,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (SB)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1063,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Insani Haqook Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 989,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Patriotic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 948,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (S)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 890,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Markazi Jamiat Mushaikh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 833,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 794,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Istehkaam",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 651,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Islamic Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 631,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehrek-e-Inqalab",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 593,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Ittehad Ummat",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 583,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pak Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 537,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 502,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Roshan Pakistan Muhaibban Wattan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 493,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (H)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 472,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Mutahida Baloch Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 471,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Menecracy Action Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 447,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Awami Himayat Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 330,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Islami Inqalab Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 274,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Human Rights Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 266,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (S)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 258,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Gharib Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 256,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sindh Dost Ittehad Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 250,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Istehkaam-e-Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 240,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pak Wattan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 220,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 218,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hazara Awami Ittehad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 214,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 191,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 191,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Ghareeb Awam Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 174,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (M)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 172,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (C)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 152,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Afgan Qomi Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 152,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Brohi Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 149,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muhajir League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 134,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muhafiz Watan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 126,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Azad Pakistan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 116,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Zehri)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 101,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Masawaat",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 99,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "All Pakistan Bayrozgar Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 89,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Aman Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 71,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Majlis-e-Amal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 69,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Motherland Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 68,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (H)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 64,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Qaumi Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 55,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Islami Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 54,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Wafaq",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Salam Pakistan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Aap Janab Sarkar Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulma-e-Pakistan (Niazi)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muhammadi Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Aalay Kalam Ullah Farman Rasool",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "All Pakistan Youth Working Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Punjab National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Quwat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Inqalab",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -3,
+     "votes": 5880658,
+     "share": 12.96,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Raja Pervez Ashraf",
+    "party": "PPP"
+   },
+   "pmAfter": {
+    "name": "Nawaz Sharif",
+    "party": "PML(N)"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Muslim League (N) finished first with 166 of 342 seats on 32.8% of the vote. Turnout 55.0%. Nawaz Sharif replaced Raja Pervez Ashraf.",
+   "seatLeader": "Pakistan Muslim League (N)",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "25 July 2018",
+   "era": "current",
+   "totalSeats": 342,
+   "majoritySeats": 172,
+   "turnout": 51.7,
+   "parties": [
+    {
+     "name": "Pakistan Tehreek-e-Insaf",
+     "leader": null,
+     "seats": 151,
+     "seatChange": null,
+     "votes": 16903702,
+     "share": 31.82,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (N)",
+     "leader": null,
+     "seats": 83,
+     "seatChange": null,
+     "votes": 12934589,
+     "share": 24.35,
+     "swing": null
+    },
+    {
+     "name": "Pakistan People's Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": null,
+     "votes": 6924356,
+     "share": 13.03,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Majlis-e-Amal",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 2573939,
+     "share": 4.85,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Labbaik Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2234316,
+     "share": 4.21,
+     "swing": null
+    },
+    {
+     "name": "Grand Democratic Alliance",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 1260147,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 815998,
+     "share": 1.54,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Qaumi Movement – Pakistan",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 733245,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Q)",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 517408,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Balochistan Awami Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 319348,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Party (Mengal)",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 238817,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Allah-o-Akbar Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 172120,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Sindh United Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 140303,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Pashtunkhwa Milli Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 134846,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Pak Sarzameen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 126128,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Awami Muslim League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 119362,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Awami Raj Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 115226,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (F)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 72553,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Qaumi Watan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57249,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Rah-e-Haq Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 55859,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Party (Awami)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 55206,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Labbaik Islam",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 55155,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "All Pakistan Muslim League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36566,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Pakistan National Muslim League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35415,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulama-e-Islam Nazryati",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34247,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Human Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34246,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33432,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Qaumi Movement - London",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28469,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (S)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24582,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Jamhoori Wattan Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 23274,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Pakistan (Noorani)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22145,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Mohajir Qaumi Movement Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21521,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Majlis Wahdat-e-Muslimeen",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19615,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Awami Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17935,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Justice and Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12637,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Kissan Ittehad (Ch. Anwar)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12255,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party (Shaheed Bhutto)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10032,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Hazara Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7942,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehreek-e-Insaf Nazriati",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6755,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6703,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Siraiki Party (T)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6523,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Sunni Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5943,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Sunni Ittehad Council",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5939,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Tehreek Jawanan Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5841,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami Inqelabi League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5046,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Roshan Pakistan League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4267,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Tehreek Tabdili Nizam Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4161,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehreek-e-Insaf-Gulalai",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4146,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3971,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Tabdeeli Pasand Party Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3698,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Amun Taraqqi Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3646,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jamote Qaumi Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3269,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Barabri Party Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2702,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Move On Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2580,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "All Pakistan Muslim League (Jinnah)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2418,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Falah Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2167,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pasban Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2154,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Awami League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1780,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Aman Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1718,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Peoples Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1587,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Qaumi Yakjehti Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1571,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Z)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1406,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Sher-e-Bangal)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1332,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Freedom Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1096,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Mustaqbil Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1053,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Humdardan-e-Watan Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 936,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Aman Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 852,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Aam Admi Tehreek Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 828,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Awami Justice Party Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 730,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Saraiskistan Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 724,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Supreme Democratic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 708,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Aam Log Party Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 606,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Suba Hazara Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 545,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Awam League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 493,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Welfare Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 426,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Aam Awam Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 364,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jannat Pakistan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 248,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Peace Council Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 242,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Front National (Pakistan)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 233,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 211,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "All Pakistan Tehreek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 155,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Human Rights Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 139,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehreek-e-Insaniat",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 98,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League Council",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 91,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Peoples Movement of Pakistan (PMP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 6087410,
+     "share": 11.46,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shahid Khaqan Abbasi",
+    "party": "PML(N)"
+   },
+   "pmAfter": {
+    "name": "Imran Khan",
+    "party": "PTI"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Tehreek-e-Insaf finished first with 151 of 342 seats on 31.8% of the vote. Turnout 51.7%. Imran Khan replaced Shahid Khaqan Abbasi.",
+   "seatLeader": "Pakistan Tehreek-e-Insaf",
+   "caveat": "The European Union observer mission reported systematic attempts to undermine the ruling party, a lack of equality of opportunity, pressure on the media and judicial conduct that had all negatively influenced the campaign.",
+   "unfree": null
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "8 February 2024",
+   "era": "current",
+   "totalSeats": 336,
+   "majoritySeats": 169,
+   "turnout": 47.8,
+   "parties": [
+    {
+     "name": "Pakistan Tehreek-e-Insaf independents",
+     "leader": null,
+     "seats": 93,
+     "seatChange": null,
+     "votes": 18457567,
+     "share": 31.17,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (N)",
+     "leader": null,
+     "seats": 98,
+     "seatChange": null,
+     "votes": 13999656,
+     "share": 23.64,
+     "swing": null
+    },
+    {
+     "name": "Pakistan People's Party",
+     "leader": null,
+     "seats": 68,
+     "seatChange": null,
+     "votes": 8244944,
+     "share": 13.92,
+     "swing": null
+    },
+    {
+     "name": "Tehreek-e-Labbaik Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2888619,
+     "share": 4.88,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam (F)",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 2163160,
+     "share": 3.65,
+     "swing": null
+    },
+    {
+     "name": "Jamaat-e-Islami Pakistan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1336698,
+     "share": 2.26,
+     "swing": null
+    },
+    {
+     "name": "Grand Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1180866,
+     "share": 1.99,
+     "swing": null
+    },
+    {
+     "name": "Muttahida Qaumi Movement – Pakistan",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 1119962,
+     "share": 1.89,
+     "swing": null
+    },
+    {
+     "name": "Istehkam-e-Pakistan Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 648827,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Awami National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 622115,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Q)",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 339518,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Markazi Muslim League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 205768,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Pashtunkhwa National Awami Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 166640,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Balochistan National Party (Mengal)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 162988,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Rah-e-Haq Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 119864,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Muslim League (Z)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 109570,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Pakistan Tehreek-e-Insaf Parliamentarians",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 96089,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Balochistan Awami Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 90985,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 68741,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Pashtunkhwa Milli Awami Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 64544,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Majlis Wahdat-e-Muslimeen",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 61899,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 507571,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 6564486,
+     "share": 11.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Shehbaz Sharif",
+    "party": "PML(N)"
+   },
+   "knownAs": null,
+   "summary": "Pakistan Muslim League (N) finished first with 98 of 336 seats on 23.6% of the vote. Turnout 47.8%. Shehbaz Sharif took office.",
+   "seatLeader": "Pakistan Muslim League (N)",
+   "caveat": "A Supreme Court ruling stripped Pakistan Tehreek-e-Insaf of its electoral symbol before the vote, so its candidates stood as independents, and the party's website and voter helpline were blocked in the country.",
+   "unfree": null
+  }
+ ]
+}

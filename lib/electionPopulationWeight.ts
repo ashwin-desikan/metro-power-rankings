@@ -35,6 +35,9 @@ export const HUB_COUNTRY_SLUG: Record<string, string> = {
   sg: "singapore", my: "malaysia", ch: "switzerland", be: "belgium",
   dk: "denmark", gr: "greece", at: "austria", pt: "portugal", ie: "ireland",
   ph: "philippines", eg: "egypt",
+  // Wave 2a, 2026-09-07.
+  hu: "hungary", no: "norway", se: "sweden", co: "colombia", cd: "congo-dr",
+  cl: "chile", ir: "iran", pk: "pakistan",
 };
 
 let _pop: PopFile | null = null;

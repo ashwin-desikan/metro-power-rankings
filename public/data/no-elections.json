@@ -1,0 +1,6269 @@
+{
+ "meta": {
+  "title": "Norwegian Parliamentary Elections",
+  "sources": [
+   "Wikipedia: Norwegian parliamentary election articles 1815-2025 (results tables and infoboxes)",
+   "Statistics Norway figures as reported there"
+  ],
+  "built": "2026-08-30"
+ },
+ "eras": [
+  {
+   "key": "embete",
+   "label": "The officials' Storting",
+   "span": "1815–1879",
+   "blurb": "Norway kept its own constitution and parliament through the union with Sweden, and elected them in two stages: voters chose electors, electors chose members. The franchise reached farmers who owned their land, townsmen of property and public officials, which in practice was a few per cent of the population, and no parties existed to organise any of it. Almost every member on this page is listed as an independent because that is what they were."
+  },
+  {
+   "key": "parliamentarism",
+   "label": "Parliamentarism and the union's end",
+   "span": "1882–1918",
+   "blurb": "The impeachment of the Selmer cabinet in 1884 established that a Norwegian government answers to the Storting rather than to the king in Stockholm, and Venstre and Høyre were founded within weeks of each other to fight over it. Universal male suffrage arrived in 1898 and turnout promptly passed 80%. The union with Sweden was dissolved in 1905 and women received the vote in 1913."
+  },
+  {
+   "key": "interwar",
+   "label": "Between the wars",
+   "span": "1921–1936",
+   "blurb": "Proportional representation replaced single-member districts in 1921 and the Storting fragmented at once. Labour grew from a revolutionary party that had joined the Comintern into the largest in the country, took office briefly in 1928, and returned in 1935 on a crisis pact with the Agrarians that ended a decade of minority governments."
+  },
+  {
+   "key": "postwar",
+   "label": "Labour's long ascendancy",
+   "span": "1945–1981",
+   "blurb": "Labour governed alone for the twenty years after the occupation, holding an absolute majority of seats at six consecutive elections, and built the Norwegian welfare state while doing it. The EEC referendum of 1972 split the country along a line that has never quite closed, and the oil began to arrive in the same decade."
+  },
+  {
+   "key": "modern",
+   "label": "The four-party system and after",
+   "span": "1985–2013",
+   "blurb": "Labour's majorities went and did not come back. The Progress Party turned tax and immigration into a permanent bloc on the right, the Centre Party carried rural Norway against Europe in a second referendum in 1994, and government became a matter of assembling three or four parties rather than winning."
+  },
+  {
+   "key": "current",
+   "label": "The present Storting",
+   "span": "2017–2025",
+   "blurb": "Erna Solberg's right-wing coalition held for eight years, Labour's Jonas Gahr Støre took it back in 2021 and lost his Centre Party partner over energy prices in 2025. That September the Progress Party finished second with 47 seats, its best result, and Labour was returned as a minority government all the same."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1815",
+   "label": "1815",
+   "year": 1815,
+   "kind": "legislative",
+   "date": "1815",
+   "era": "embete",
+   "totalSeats": 87,
+   "majoritySeats": 44,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Peder Anker",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 85 of 87 seats.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1817",
+   "label": "1817",
+   "year": 1817,
+   "kind": "legislative",
+   "date": "August 1817–26 February 1818",
+   "era": "embete",
+   "totalSeats": 78,
+   "majoritySeats": 40,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 78,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Peder Anker",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 78 of 78 seats.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1820",
+   "label": "1820",
+   "year": 1820,
+   "kind": "legislative",
+   "date": "May 1820–14 February 1821",
+   "era": "embete",
+   "totalSeats": 77,
+   "majoritySeats": 39,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 77,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Peder Anker",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 77 of 77 seats.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1823",
+   "label": "1823",
+   "year": 1823,
+   "kind": "legislative",
+   "date": "June 1823–20 February 1824",
+   "era": "embete",
+   "totalSeats": 77,
+   "majoritySeats": 39,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 77,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Peder Anker",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 77 of 77 seats.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1826",
+   "label": "1826",
+   "year": 1826,
+   "kind": "legislative",
+   "date": "June–1 December 1826",
+   "era": "embete",
+   "totalSeats": 79,
+   "majoritySeats": 40,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mathias Sommerhielm",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 79 of 79 seats.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1829",
+   "label": "1829",
+   "year": 1829,
+   "kind": "legislative",
+   "date": "June–28 November 1829",
+   "era": "embete",
+   "totalSeats": 81,
+   "majoritySeats": 41,
+   "turnout": 45.26,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mathias Sommerhielm",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 81 of 81 seats. Turnout 45.3%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1832",
+   "label": "1832",
+   "year": 1832,
+   "kind": "legislative",
+   "date": "June–20 November 1832",
+   "era": "embete",
+   "totalSeats": 95,
+   "majoritySeats": 48,
+   "turnout": 48.02,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 95,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Severin Løvenskiold",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 95 of 95 seats. Turnout 48.0%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1835",
+   "label": "1835",
+   "year": 1835,
+   "kind": "legislative",
+   "date": "June–7 December 1835",
+   "era": "embete",
+   "totalSeats": 96,
+   "majoritySeats": 49,
+   "turnout": 52.27,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Severin Løvenskiold",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 96 of 96 seats. Turnout 52.3%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1838",
+   "label": "1838",
+   "year": 1838,
+   "kind": "legislative",
+   "date": "June–8 November 1838",
+   "era": "embete",
+   "totalSeats": 99,
+   "majoritySeats": 50,
+   "turnout": 50.17,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 99,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Severin Løvenskiold",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 99 of 99 seats. Turnout 50.2%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1841",
+   "label": "1841",
+   "year": 1841,
+   "kind": "legislative",
+   "date": "June–12 November 1841",
+   "era": "embete",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 51.06,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Severin Løvenskiold",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 100 of 100 seats. Turnout 51.1%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1844",
+   "label": "1844",
+   "year": 1844,
+   "kind": "legislative",
+   "date": "May–16 October 1844",
+   "era": "embete",
+   "totalSeats": 102,
+   "majoritySeats": 52,
+   "turnout": 49.39,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 102,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 102 of 102 seats. Turnout 49.4%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1847",
+   "label": "1847",
+   "year": 1847,
+   "kind": "legislative",
+   "date": "May–30 September 1847",
+   "era": "embete",
+   "totalSeats": 105,
+   "majoritySeats": 53,
+   "turnout": 49.07,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 105,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 105 of 105 seats. Turnout 49.1%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1850",
+   "label": "1850",
+   "year": 1850,
+   "kind": "legislative",
+   "date": "May–21 October 1850",
+   "era": "embete",
+   "totalSeats": 106,
+   "majoritySeats": 54,
+   "turnout": 50.28,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 106,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 106 of 106 seats. Turnout 50.3%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1853",
+   "label": "1853",
+   "year": 1853,
+   "kind": "legislative",
+   "date": "Mai–14 November 1853",
+   "era": "embete",
+   "totalSeats": 107,
+   "majoritySeats": 54,
+   "turnout": 45.45,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 107,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 107 of 107 seats. Turnout 45.5%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1856",
+   "label": "1856",
+   "year": 1856,
+   "kind": "legislative",
+   "date": "May–3 November 1856",
+   "era": "embete",
+   "totalSeats": 111,
+   "majoritySeats": 56,
+   "turnout": 44.08,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 111,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 111 of 111 seats. Turnout 44.1%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1859",
+   "label": "1859",
+   "year": 1859,
+   "kind": "legislative",
+   "date": "March–23 June 1859",
+   "era": "embete",
+   "totalSeats": 117,
+   "majoritySeats": 59,
+   "turnout": 47.68,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 117,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 117 of 117 seats. Turnout 47.7%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1862",
+   "label": "1862",
+   "year": 1862,
+   "kind": "legislative",
+   "date": "January–4 July 1862",
+   "era": "embete",
+   "totalSeats": 111,
+   "majoritySeats": 56,
+   "turnout": 44.59,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 111,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 111 of 111 seats. Turnout 44.6%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1865",
+   "label": "1865",
+   "year": 1865,
+   "kind": "legislative",
+   "date": "February–6 June 1865",
+   "era": "embete",
+   "totalSeats": 111,
+   "majoritySeats": 56,
+   "turnout": 41.82,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 111,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 111 of 111 seats. Turnout 41.8%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1868",
+   "label": "1868",
+   "year": 1868,
+   "kind": "legislative",
+   "date": "February–5 July 1868",
+   "era": "embete",
+   "totalSeats": 111,
+   "majoritySeats": 56,
+   "turnout": 47.64,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 111,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 111 of 111 seats. Turnout 47.6%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1870",
+   "label": "1870",
+   "year": 1870,
+   "kind": "legislative",
+   "date": "May 1870–14 February 1871",
+   "era": "embete",
+   "totalSeats": 111,
+   "majoritySeats": 55,
+   "turnout": 45.06,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 111,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 111 of 111 seats. Turnout 45.1%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1873",
+   "label": "1873",
+   "year": 1873,
+   "kind": "legislative",
+   "date": "May 1873–14 February 1874",
+   "era": "embete",
+   "totalSeats": 111,
+   "majoritySeats": 56,
+   "turnout": 45.63,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 111,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 111 of 111 seats. Turnout 45.6%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1876",
+   "label": "1876",
+   "year": 1876,
+   "kind": "legislative",
+   "date": "June 1876–26 February 1877",
+   "era": "embete",
+   "totalSeats": 111,
+   "majoritySeats": 56,
+   "turnout": 43.14,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 111,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 111 of 111 seats. Turnout 43.1%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1879",
+   "label": "1879",
+   "year": 1879,
+   "kind": "legislative",
+   "date": "1879",
+   "era": "embete",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": 48.67,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 114,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Frederik Gottschalck Haxthausen Due",
+    "party": "Prime Minister after election"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 114 of 114 seats. Turnout 48.7%.",
+   "seatLeader": "Independents",
+   "caveat": "Voting was indirect and the franchise reached only landowning farmers, townsmen of property and public officials, a few per cent of the population.",
+   "unfree": null
+  },
+  {
+   "id": "1882",
+   "label": "1882",
+   "year": 1882,
+   "kind": "legislative",
+   "date": "1882",
+   "era": "parliamentarism",
+   "totalSeats": 114,
+   "majoritySeats": 57,
+   "turnout": 72.49,
+   "parties": [
+    {
+     "name": "Liberals (those forming the Liberal Party in 1884)",
+     "leader": null,
+     "seats": 83,
+     "seatChange": null,
+     "votes": 44803,
+     "share": 62.83,
+     "swing": null
+    },
+    {
+     "name": "Conservatives (those forming the Conservative Party in 1884)",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 26501,
+     "share": 37.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberals (those forming the Liberal Party in 1884) finished first with 83 of 114 seats on 62.8% of the vote. Turnout 72.5%.",
+   "seatLeader": "Liberals (those forming the Liberal Party in 1884)",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1885",
+   "label": "1885",
+   "year": 1885,
+   "kind": "legislative",
+   "date": "1885",
+   "era": "parliamentarism",
+   "totalSeats": 114,
+   "majoritySeats": 57,
+   "turnout": 75.08,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": 1,
+     "votes": 57683,
+     "share": 63.41,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": -1,
+     "votes": 33284,
+     "share": 36.59,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johan Sverdrup",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 84 of 114 seats on 63.4% of the vote. Turnout 75.1%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1888",
+   "label": "1888",
+   "year": 1888,
+   "kind": "legislative",
+   "date": "1888",
+   "era": "parliamentarism",
+   "totalSeats": 114,
+   "majoritySeats": 57,
+   "turnout": 70.43,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -46,
+     "votes": 37320,
+     "share": 41.78,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 21,
+     "votes": 34564,
+     "share": 38.69,
+     "swing": null
+    },
+    {
+     "name": "Moderate Liberal Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 17445,
+     "share": 19.53,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johan Sverdrup",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Conservative Party finished first with 51 of 114 seats on 38.7% of the vote. Turnout 70.4%.",
+   "seatLeader": "Conservative Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1891",
+   "label": "1891",
+   "year": 1891,
+   "kind": "legislative",
+   "date": "1891",
+   "era": "parliamentarism",
+   "totalSeats": 114,
+   "majoritySeats": 57,
+   "turnout": 80.18,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": 25,
+     "votes": 51780,
+     "share": 50.84,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": -16,
+     "votes": 50059,
+     "share": 49.16,
+     "swing": null
+    },
+    {
+     "name": "Moderate Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Emil Stang",
+    "party": "Conservative"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 63 of 114 seats on 50.8% of the vote. Turnout 80.2%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1894",
+   "label": "1894",
+   "year": 1894,
+   "kind": "legislative",
+   "date": "1894",
+   "era": "parliamentarism",
+   "totalSeats": 114,
+   "majoritySeats": 57,
+   "turnout": 90.16,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 59,
+     "seatChange": -4,
+     "votes": 83165,
+     "share": 50.36,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 5,
+     "votes": 81462,
+     "share": 49.33,
+     "swing": null
+    },
+    {
+     "name": "Moderate Liberal Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 520,
+     "share": 0.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Emil Stang",
+    "party": "Conservative"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 59 of 114 seats on 50.4% of the vote. Turnout 90.2%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1897",
+   "label": "1897",
+   "year": 1897,
+   "kind": "legislative",
+   "date": "1897",
+   "era": "parliamentarism",
+   "totalSeats": 114,
+   "majoritySeats": 57,
+   "turnout": 85.33,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": 20,
+     "votes": 87548,
+     "share": 52.68,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -15,
+     "votes": 77682,
+     "share": 46.75,
+     "swing": null
+    },
+    {
+     "name": "Moderate Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 947,
+     "share": 0.57,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francis Hagerup",
+    "party": "Conservative"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 79 of 114 seats on 52.7% of the vote. Turnout 85.3%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1900",
+   "label": "1900",
+   "year": 1900,
+   "kind": "legislative",
+   "date": "1900",
+   "era": "parliamentarism",
+   "totalSeats": 114,
+   "majoritySeats": 57,
+   "turnout": 57.28,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 77,
+     "seatChange": -2,
+     "votes": 127142,
+     "share": 54.01,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 6,
+     "votes": 96092,
+     "share": 40.82,
+     "swing": null
+    },
+    {
+     "name": "Moderate Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7013,
+     "share": 2.98,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5163,
+     "share": 2.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johannes Steen",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 77 of 114 seats on 54.0% of the vote. Turnout 57.3%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1903",
+   "label": "1903",
+   "year": 1903,
+   "kind": "legislative",
+   "date": "6 August−16 September 1903",
+   "era": "parliamentarism",
+   "totalSeats": 117,
+   "majoritySeats": 59,
+   "turnout": 55.51,
+   "parties": [
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 16,
+     "votes": 106042,
+     "share": 44.81,
+     "swing": null
+    },
+    {
+     "name": "Moderate Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Coalition Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 5,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -29,
+     "votes": 101142,
+     "share": 42.74,
+     "swing": null
+    },
+    {
+     "name": "Labour Democrats",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5,
+     "votes": 22948,
+     "share": 9.7,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6509,
+     "share": 2.75,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto Blehr",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 48 of 117 seats on 42.7% of the vote. Turnout 55.5%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1906",
+   "label": "1906",
+   "year": 1906,
+   "kind": "legislative",
+   "date": "5−27 August 1906",
+   "era": "parliamentarism",
+   "totalSeats": 123,
+   "majoritySeats": 62,
+   "turnout": 60.88,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 25,
+     "votes": 121562,
+     "share": 45.14,
+     "swing": null
+    },
+    {
+     "name": "Coalition Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": -26,
+     "votes": 88323,
+     "share": 32.8,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 5,
+     "votes": 43134,
+     "share": 16.02,
+     "swing": null
+    },
+    {
+     "name": "Labour Democrats",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 12819,
+     "share": 4.76,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3443,
+     "share": 1.28,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francis Hagerup",
+    "party": "Coalition"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 73 of 123 seats on 45.1% of the vote. Turnout 60.9%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1909",
+   "label": "1909",
+   "year": 1909,
+   "kind": "legislative",
+   "date": "2−25 October 1909",
+   "era": "parliamentarism",
+   "totalSeats": 123,
+   "majoritySeats": 62,
+   "turnout": 56.56,
+   "parties": [
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 5,
+     "votes": 175388,
+     "share": 41.49,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 23,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": -27,
+     "votes": 128367,
+     "share": 30.37,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1,
+     "votes": 91268,
+     "share": 21.59,
+     "swing": null
+    },
+    {
+     "name": "Labour Democrats",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -2,
+     "votes": 15550,
+     "share": 3.68,
+     "swing": null
+    },
+    {
+     "name": "Teetotaler Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5076,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Church Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3748,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Independent Left Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2267,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 942,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 78,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gunnar Knudsen",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 46 of 123 seats on 30.4% of the vote. Turnout 56.6%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "legislative",
+   "date": "21 October 1912",
+   "era": "parliamentarism",
+   "totalSeats": 123,
+   "majoritySeats": null,
+   "turnout": 61.16,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 70,
+     "seatChange": 24,
+     "votes": 195526,
+     "share": 39.99,
+     "swing": null
+    },
+    {
+     "name": "Labour Democrats",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -21,
+     "votes": 162074,
+     "share": 33.15,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -19,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 12,
+     "votes": 128455,
+     "share": 26.27,
+     "swing": null
+    },
+    {
+     "name": "Riksmål Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1033,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Teetotaler Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 884,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Independent Left Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 528,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Church Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 367,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 36,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jens Bratlie",
+    "party": "Conservative"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 70 of 123 seats on 40.0% of the vote. Turnout 61.2%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1915",
+   "label": "1915",
+   "year": 1915,
+   "kind": "legislative",
+   "date": "21 October 1915",
+   "era": "parliamentarism",
+   "totalSeats": 123,
+   "majoritySeats": 62,
+   "turnout": 57.6,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 4,
+     "votes": 204243,
+     "share": 33.07,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -4,
+     "votes": 198111,
+     "share": 32.07,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 0,
+     "votes": 179028,
+     "share": 28.98,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Democrats",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0,
+     "votes": 25658,
+     "share": 4.15,
+     "swing": null
+    },
+    {
+     "name": "Norwegian Agrarian Association",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 6351,
+     "share": 1.03,
+     "swing": null
+    },
+    {
+     "name": "Teetotaler Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3820,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Peace Candidate",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 413,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 46,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gunnar Knudsen",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 74 of 123 seats on 33.1% of the vote. Turnout 57.6%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "legislative",
+   "date": "21 October 1918",
+   "era": "parliamentarism",
+   "totalSeats": 126,
+   "majoritySeats": 64,
+   "turnout": 56.92,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -1,
+     "votes": 209560,
+     "share": 31.63,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 20,
+     "votes": 201325,
+     "share": 30.39,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -23,
+     "votes": 187657,
+     "share": 28.32,
+     "swing": null
+    },
+    {
+     "name": "Norwegian Agrarian Association",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 30925,
+     "share": 4.67,
+     "swing": null
+    },
+    {
+     "name": "Labour Democrats",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -3,
+     "votes": 21980,
+     "share": 3.32,
+     "swing": null
+    },
+    {
+     "name": "Other parties and independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 11074,
+     "share": 1.67,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gunnar Knudsen",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Party finished first with 51 of 126 seats on 28.3% of the vote. Turnout 56.9%.",
+   "seatLeader": "Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "kind": "legislative",
+   "date": "24 October 1921",
+   "era": "interwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 67.92,
+   "parties": [
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 2,
+     "votes": 301372,
+     "share": 33.31,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 11,
+     "votes": 192616,
+     "share": 21.29,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": -14,
+     "votes": 181989,
+     "share": 20.12,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 14,
+     "votes": 118657,
+     "share": 13.12,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Labour Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 83629,
+     "share": 9.24,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1,
+     "votes": 22970,
+     "share": 2.54,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2811,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 655,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto Albert Blehr",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Conservative Party finished first with 42 of 150 seats on 33.3% of the vote. Turnout 67.9%.",
+   "seatLeader": "Conservative Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "legislative",
+   "date": "21 October 1924",
+   "era": "interwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 69.8,
+   "parties": [
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 1,
+     "votes": 316846,
+     "share": 32.53,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -3,
+     "votes": 180979,
+     "share": 18.58,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -5,
+     "votes": 179567,
+     "share": 18.44,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 5,
+     "votes": 131706,
+     "share": 13.52,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Labour Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": 85743,
+     "share": 8.8,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 59401,
+     "share": 6.1,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 17144,
+     "share": 1.76,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2493,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 62,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johan Ludwig Mowinckel",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Conservative Party finished first with 43 of 150 seats on 32.5% of the vote. Turnout 69.8%.",
+   "seatLeader": "Conservative Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "17 October 1927",
+   "era": "interwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 68.0,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 59,
+     "seatChange": 35,
+     "votes": 368106,
+     "share": 36.84,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -14,
+     "votes": 240091,
+     "share": 24.03,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 1,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": -4,
+     "votes": 172568,
+     "share": 17.27,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 4,
+     "votes": 149026,
+     "share": 14.91,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -3,
+     "votes": 40075,
+     "share": 4.01,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 14439,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 13459,
+     "share": 1.35,
+     "swing": null
+    },
+    {
+     "name": "National Legion",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1210,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Fishermen and the Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 308,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 15,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ivar Lykke",
+    "party": "Conservative"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 59 of 150 seats on 36.8% of the vote. Turnout 68.0%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1930",
+   "label": "1930",
+   "year": 1930,
+   "kind": "legislative",
+   "date": "20 October 1930",
+   "era": "interwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 77.5,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": -12,
+     "votes": 374854,
+     "share": 31.37,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 10,
+     "votes": 327731,
+     "share": 27.43,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 3,
+     "votes": 241355,
+     "share": 20.2,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -1,
+     "votes": 190220,
+     "share": 15.92,
+     "swing": null
+    },
+    {
+     "name": "Free-minded Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 31003,
+     "share": 2.59,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 20351,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9228,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 13,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johan Ludwig Mowinckel",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 47 of 150 seats on 31.4% of the vote. Turnout 77.5%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "legislative",
+   "date": "16 October 1933",
+   "era": "interwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 76.3,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 69,
+     "seatChange": 22,
+     "votes": 500526,
+     "share": 40.08,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": -9,
+     "votes": 252506,
+     "share": 20.22,
+     "swing": null
+    },
+    {
+     "name": "Free-minded People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -9,
+     "votes": 213153,
+     "share": 17.07,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -2,
+     "votes": 173634,
+     "share": 13.91,
+     "swing": null
+    },
+    {
+     "name": "Nasjonal Samling",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27850,
+     "share": 2.23,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22773,
+     "share": 1.82,
+     "swing": null
+    },
+    {
+     "name": "Free-minded People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": 20184,
+     "share": 1.62,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 18786,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 10272,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6858,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2130,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 14,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johan Ludwig Mowinckel",
+    "party": "Liberal"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 69 of 150 seats on 40.1% of the vote. Turnout 76.3%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "19 October 1936",
+   "era": "interwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 84.0,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 70,
+     "seatChange": 1,
+     "votes": 618616,
+     "share": 42.51,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party–Free-minded People's Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 6,
+     "votes": 310324,
+     "share": 21.32,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -1,
+     "votes": 232784,
+     "share": 16.0,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -5,
+     "votes": 168038,
+     "share": 11.55,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 45109,
+     "share": 3.1,
+     "swing": null
+    },
+    {
+     "name": "Nasjonal Samling",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26577,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 19612,
+     "share": 1.35,
+     "swing": null
+    },
+    {
+     "name": "Free-minded People's Party–Fatherland League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19236,
+     "share": 1.32,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 6407,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4376,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4132,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 27,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johan Nygaardsvold",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 70 of 150 seats on 42.5% of the vote. Turnout 84.0%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "8 October 1945",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": null,
+   "turnout": 76.4,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 6,
+     "votes": 609348,
+     "share": 41.03,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -11,
+     "votes": 252608,
+     "share": 17.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -3,
+     "votes": 204852,
+     "share": 13.79,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 11,
+     "votes": 176535,
+     "share": 11.89,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -8,
+     "votes": 119362,
+     "share": 8.04,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 6,
+     "votes": 117813,
+     "share": 7.93,
+     "swing": null
+    },
+    {
+     "name": "New Norway",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 1845,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2809,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 53,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Einar Gerhardsen",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 76 of 150 seats on 41.0% of the vote. Turnout 76.4%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "10 October 1949",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": null,
+   "turnout": 82.02,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 85,
+     "seatChange": 9,
+     "votes": 803471,
+     "share": 45.69,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -2,
+     "votes": 279790,
+     "share": 15.91,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 1,
+     "votes": 218866,
+     "share": 12.45,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1,
+     "votes": 147068,
+     "share": 8.36,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -11,
+     "votes": 102722,
+     "share": 5.84,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2,
+     "votes": 85418,
+     "share": 4.86,
+     "swing": null
+    },
+    {
+     "name": "Farmers–Conservatives–Liberals",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 45311,
+     "share": 2.58,
+     "swing": null
+    },
+    {
+     "name": "Farmers–Conservatives",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 35860,
+     "share": 2.04,
+     "swing": null
+    },
+    {
+     "name": "Farmers–Liberals",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 22408,
+     "share": 1.27,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13088,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Christians–Liberals",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4334,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 30,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Einar Gerhardsen",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 85 of 150 seats on 45.7% of the vote. Turnout 82.0%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "legislative",
+   "date": "12 October 1953",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 79.33,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 77,
+     "seatChange": -8,
+     "votes": 830448,
+     "share": 46.66,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 4,
+     "votes": 327971,
+     "share": 18.43,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 5,
+     "votes": 186627,
+     "share": 10.49,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -6,
+     "votes": 177662,
+     "share": 9.98,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2,
+     "votes": 157018,
+     "share": 8.82,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3,
+     "votes": 90422,
+     "share": 5.08,
+     "swing": null
+    },
+    {
+     "name": "Farmers–Conservatives",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 9661,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 22,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Oscar Torp",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 77 of 150 seats on 46.7% of the vote. Turnout 79.3%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "7 October 1957",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 78.32,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 78,
+     "seatChange": 1,
+     "votes": 865675,
+     "share": 48.33,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 2,
+     "votes": 301395,
+     "share": 16.83,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -2,
+     "votes": 183243,
+     "share": 10.23,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0,
+     "votes": 171407,
+     "share": 9.57,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 1,
+     "votes": 154761,
+     "share": 8.64,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": 60060,
+     "share": 3.35,
+     "swing": null
+    },
+    {
+     "name": "Farmers'–Conservatives",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 45476,
+     "share": 2.54,
+     "swing": null
+    },
+    {
+     "name": "Liberals–Conservatives",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5884,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Norwegian Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2855,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 249,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 105,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 18,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Einar Gerhardsen",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 78 of 150 seats on 48.3% of the vote. Turnout 78.3%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "11 September 1961",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 79.07,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": -4,
+     "votes": 860526,
+     "share": 46.76,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 0,
+     "votes": 354369,
+     "share": 19.26,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 3,
+     "votes": 171451,
+     "share": 9.32,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -1,
+     "votes": 132429,
+     "share": 7.2,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1,
+     "votes": 125643,
+     "share": 6.83,
+     "swing": null
+    },
+    {
+     "name": "Centrists–Liberals",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 75822,
+     "share": 4.12,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 53678,
+     "share": 2.92,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 43996,
+     "share": 2.39,
+     "swing": null
+    },
+    {
+     "name": "Christians–Conservatives",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 19409,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Free Left Electorate's List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2360,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Norwegian Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 478,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 64,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Einar Gerhardsen",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 74 of 150 seats on 46.8% of the vote. Turnout 79.1%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "12 and 13 September 1965",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 85.4,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 68,
+     "seatChange": -6,
+     "votes": 883320,
+     "share": 43.14,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 2,
+     "votes": 415612,
+     "share": 20.3,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 4,
+     "votes": 207834,
+     "share": 10.15,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 2,
+     "votes": 191702,
+     "share": 9.36,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -2,
+     "votes": 160331,
+     "share": 7.83,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 122721,
+     "share": 5.99,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 27996,
+     "share": 1.37,
+     "swing": null
+    },
+    {
+     "name": "Christians–Conservatives",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 22800,
+     "share": 1.11,
+     "swing": null
+    },
+    {
+     "name": "Centrists–Liberals",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 14713,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 194,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Freedom Protectors",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 163,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 8,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Einar Gerhardsen",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 68 of 150 seats on 43.1% of the vote. Turnout 85.4%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "7 and 8 September 1969",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 83.8,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 6,
+     "votes": 1004348,
+     "share": 46.53,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -2,
+     "votes": 406209,
+     "share": 18.82,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -5,
+     "votes": 202553,
+     "share": 9.38,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 2,
+     "votes": 194128,
+     "share": 8.99,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1,
+     "votes": 169303,
+     "share": 7.84,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 73284,
+     "share": 3.39,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21517,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Christians–Conservatives",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 83073,
+     "share": 3.85,
+     "swing": null
+    },
+    {
+     "name": "Centrists–Christians",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 4,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialists–Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3203,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 561,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Lapp People's List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 527,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Wild votes",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 6,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Per Borten",
+    "party": "Centre"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 74 of 150 seats on 46.5% of the vote. Turnout 83.8%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "9-10 September 1973",
+   "era": "postwar",
+   "totalSeats": 155,
+   "majoritySeats": 78,
+   "turnout": 80.2,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": -12,
+     "votes": 759499,
+     "share": 35.29,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 0,
+     "votes": 370370,
+     "share": 17.21,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 6,
+     "votes": 255456,
+     "share": 11.87,
+     "swing": null
+    },
+    {
+     "name": "Socialist Electoral League",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 16,
+     "votes": 241851,
+     "share": 11.24,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 1,
+     "votes": 146312,
+     "share": 6.8,
+     "swing": null
+    },
+    {
+     "name": "Anders Lange's Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 107784,
+     "share": 5.01,
+     "swing": null
+    },
+    {
+     "name": "Centrists–Liberals",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 97639,
+     "share": 4.54,
+     "swing": null
+    },
+    {
+     "name": "New People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 73854,
+     "share": 3.43,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -11,
+     "votes": 49668,
+     "share": 2.31,
+     "swing": null
+    },
+    {
+     "name": "Centrists–Liberals–Christians",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 21783,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "Red Electoral Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9360,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Conservatives–Christians",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8669,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Single Person's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5113,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2125,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Women's Free Deputies",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1866,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Lapp People's List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 849,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lars Korvald",
+    "party": "Christian Democratic"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 62 of 155 seats on 35.3% of the vote. Turnout 80.2%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "kind": "legislative",
+   "date": "11 and 12 September 1977",
+   "era": "postwar",
+   "totalSeats": 155,
+   "majoritySeats": 78,
+   "turnout": 82.9,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 14,
+     "votes": 972434,
+     "share": 42.26,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 12,
+     "votes": 563783,
+     "share": 24.5,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 2,
+     "votes": 224355,
+     "share": 9.75,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -9,
+     "votes": 184087,
+     "share": 8.0,
+     "swing": null
+    },
+    {
+     "name": "Non-socialist joint lists",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 111412,
+     "share": 4.84,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -14,
+     "votes": 96248,
+     "share": 4.18,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 54243,
+     "share": 2.36,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 43351,
+     "share": 1.88,
+     "swing": null
+    },
+    {
+     "name": "New People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 22524,
+     "share": 0.98,
+     "swing": null
+    },
+    {
+     "name": "Red Electoral Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14515,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8448,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Single Person's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2740,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1322,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Freely Elected Representatives",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1149,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Lapp People's List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 499,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Odvar Nordli",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 76 of 155 seats on 42.3% of the vote. Turnout 82.9%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "13 and 14 September 1981",
+   "era": "postwar",
+   "totalSeats": 155,
+   "majoritySeats": 78,
+   "turnout": 82.0,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": -10,
+     "votes": 914749,
+     "share": 37.2,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 12,
+     "votes": 780372,
+     "share": 31.74,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -7,
+     "votes": 219179,
+     "share": 8.91,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 121561,
+     "share": 4.94,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 109564,
+     "share": 4.46,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -1,
+     "votes": 103753,
+     "share": 4.22,
+     "swing": null
+    },
+    {
+     "name": "Non-socialist joint lists",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 88969,
+     "share": 3.62,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 79064,
+     "share": 3.22,
+     "swing": null
+    },
+    {
+     "name": "Red Electoral Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17844,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13344,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6673,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Plebiscite Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1145,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Tom A. Schanke's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 826,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Freely Elected Representatives",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 801,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Lapp People's List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 594,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Broad-Based Non-Partisan List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 383,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gro Harlem Brundtland",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 66 of 155 seats on 37.2% of the vote. Turnout 82.0%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "8-9 September 1985",
+   "era": "modern",
+   "totalSeats": 157,
+   "majoritySeats": 79,
+   "turnout": 84.0,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 5,
+     "votes": 1061712,
+     "share": 40.81,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": -3,
+     "votes": 791537,
+     "share": 30.42,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 1,
+     "votes": 214969,
+     "share": 8.26,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1,
+     "votes": 171770,
+     "share": 6.6,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2,
+     "votes": 141950,
+     "share": 5.46,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -2,
+     "votes": 96797,
+     "share": 3.72,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 81202,
+     "share": 3.12,
+     "swing": null
+    },
+    {
+     "name": "Red Electoral Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14818,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12958,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7846,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4245,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Sunnmøre List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2013,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Freely Elected Representatives",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Non-Partisan List",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kåre Willoch",
+    "party": "Conservative"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 71 of 157 seats on 40.8% of the vote. Turnout 84.0%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "10 and 11 September 1989",
+   "era": "modern",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 83.16,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": -8,
+     "votes": 907393,
+     "share": 34.27,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": -13,
+     "votes": 588682,
+     "share": 22.23,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 20,
+     "votes": 345185,
+     "share": 13.04,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 11,
+     "votes": 266782,
+     "share": 10.08,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -2,
+     "votes": 224852,
+     "share": 8.49,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -1,
+     "votes": 171269,
+     "share": 6.47,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 84740,
+     "share": 3.2,
+     "swing": null
+    },
+    {
+     "name": "County Lists for Environment and Solidarity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22139,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Environment Party The Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10136,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Stop the Immigration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8963,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Future for Finnmark",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8817,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7863,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Liberals – Europe Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 470,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Common Future",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 313,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gro Harlem Brundtland",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 63 of 165 seats on 34.3% of the vote. Turnout 83.2%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "12–13 September 1993",
+   "era": "modern",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 75.85,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 67,
+     "seatChange": 4,
+     "votes": 908724,
+     "share": 36.91,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -9,
+     "votes": 419373,
+     "share": 17.03,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 21,
+     "votes": 412187,
+     "share": 16.74,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -4,
+     "votes": 194633,
+     "share": 7.91,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -1,
+     "votes": 193885,
+     "share": 7.88,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -12,
+     "votes": 154497,
+     "share": 6.28,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 88985,
+     "share": 3.61,
+     "swing": null
+    },
+    {
+     "name": "Red Electoral Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 26360,
+     "share": 1.07,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25835,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Fatherland Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11694,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "New Future Coalition Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8777,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Environment Party The Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3054,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Christian Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1974,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Stop the Immigration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1952,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Natural Law Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1853,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party against the EF Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 774,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 725,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Common Future",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 548,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 361,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 95,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Common List against Foreign Immigration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5663,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Christian Unity Party",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Political Alternative Hordaland",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party–Common Future",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gro Harlem Brundtland",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 67 of 165 seats on 36.9% of the vote. Turnout 75.8%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "15 September 1997",
+   "era": "modern",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 78.33,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 65,
+     "seatChange": -2,
+     "votes": 904362,
+     "share": 35.0,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 15,
+     "votes": 395376,
+     "share": 15.3,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -5,
+     "votes": 370441,
+     "share": 14.34,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 12,
+     "votes": 353082,
+     "share": 13.66,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -21,
+     "votes": 204824,
+     "share": 7.93,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -4,
+     "votes": 155307,
+     "share": 6.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 5,
+     "votes": 115077,
+     "share": 4.45,
+     "swing": null
+    },
+    {
+     "name": "Red Electoral Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 43252,
+     "share": 1.67,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16031,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Non-Partisan Deputies",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 9195,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Environment Party The Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5884,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Fatherland Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3805,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Natural Law Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2207,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1979,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Christian Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1386,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "New Future Coalition Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 491,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "White Electoral Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 463,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 281,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 258,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Children–Elderly",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 246,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 214,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thorbjørn Jagland",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 65 of 165 seats on 35.0% of the vote. Turnout 78.3%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "kind": "legislative",
+   "date": "9–10 September 2001",
+   "era": "modern",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 75.54,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": -22,
+     "votes": 612632,
+     "share": 24.29,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 15,
+     "votes": 534852,
+     "share": 21.21,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 1,
+     "votes": 369236,
+     "share": 14.64,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 14,
+     "votes": 316397,
+     "share": 12.55,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -3,
+     "votes": 312839,
+     "share": 12.41,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -1,
+     "votes": 140287,
+     "share": 5.56,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -4,
+     "votes": 98486,
+     "share": 3.91,
+     "swing": null
+    },
+    {
+     "name": "Coastal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44010,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Red Electoral Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 30015,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "The Political Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19457,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17940,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "Christian Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6731,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Environment Party The Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3785,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Sørland List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2407,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Fatherland Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2353,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Hospital List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2141,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1726,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Norwegian People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1609,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Non-Partisan Coastal and Rural District Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1052,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "People's Action No to More Road Tolls",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 692,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Sámi People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 564,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Oslo List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 396,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Hordaland List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 389,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 351,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Natural Law Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 269,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Sørland List Aust-Agder",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 211,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Østfold List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 179,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Oppland List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 170,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 166,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 138,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Nordland List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 111,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hedmark List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 93,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Tromsø List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 70,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 66,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jens Stoltenberg",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 43 of 165 seats on 24.3% of the vote. Turnout 75.5%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "11–12 September 2005",
+   "era": "modern",
+   "totalSeats": 169,
+   "majoritySeats": 85,
+   "turnout": 77.43,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 61,
+     "seatChange": 18,
+     "votes": 862456,
+     "share": 32.69,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 12,
+     "votes": 581896,
+     "share": 22.06,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -15,
+     "votes": 371948,
+     "share": 14.1,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -8,
+     "votes": 232971,
+     "share": 8.83,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -11,
+     "votes": 178885,
+     "share": 6.78,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1,
+     "votes": 171063,
+     "share": 6.48,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 8,
+     "votes": 156113,
+     "share": 5.92,
+     "swing": null
+    },
+    {
+     "name": "Red Electoral Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 32355,
+     "share": 1.23,
+     "swing": null
+    },
+    {
+     "name": "Coastal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 21948,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13556,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Christian Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3911,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Environment Party The Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3652,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2705,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Abortion Opponents' List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1934,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1070,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Reform Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 727,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Sámi People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 659,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 213,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Norwegian Republican Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 92,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Beer Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 65,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 44,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kjell Magne Bondevik",
+    "party": "Christian Democratic"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 61 of 169 seats on 32.7% of the vote. Turnout 77.4%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "legislative",
+   "date": "13 and 14 September 2009",
+   "era": "modern",
+   "totalSeats": 169,
+   "majoritySeats": 85,
+   "turnout": 76.37,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 64,
+     "seatChange": 3,
+     "votes": 949049,
+     "share": 35.37,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 3,
+     "votes": 614717,
+     "share": 22.91,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 7,
+     "votes": 462458,
+     "share": 17.24,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -4,
+     "votes": 166361,
+     "share": 6.2,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0,
+     "votes": 165006,
+     "share": 6.15,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -1,
+     "votes": 148748,
+     "share": 5.54,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -8,
+     "votes": 104144,
+     "share": 3.88,
+     "swing": null
+    },
+    {
+     "name": "Red Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 36219,
+     "share": 1.35,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11900,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9286,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Coastal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5341,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Christian Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4936,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2285,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 697,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 350,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Contemporary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 264,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Center Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 241,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Norwegian Patriots",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 183,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Vigrid",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 179,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Abortion Opponents' List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 178,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 140,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "One (Written) Language",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 103,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Non-Partisan Deputies",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 64,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Norwegian Republican Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 54,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jens Stoltenberg",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 64 of 169 seats on 35.4% of the vote. Turnout 76.4%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "legislative",
+   "date": "8 and 9 September 2013",
+   "era": "modern",
+   "totalSeats": 169,
+   "majoritySeats": 85,
+   "turnout": 78.32,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": -9,
+     "votes": 874769,
+     "share": 30.84,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 18,
+     "votes": 760232,
+     "share": 26.81,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -12,
+     "votes": 463560,
+     "share": 16.35,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": 158475,
+     "share": 5.59,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -1,
+     "votes": 155357,
+     "share": 5.48,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 7,
+     "votes": 148275,
+     "share": 5.23,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -4,
+     "votes": 116021,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 79152,
+     "share": 2.79,
+     "swing": null
+    },
+    {
+     "name": "Red Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 30751,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "The Christians",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17731,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11865,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9869,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Coastal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3311,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Democrats in Norway",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2214,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Christian Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1722,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 909,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 611,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Hospital to Alta",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 467,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 295,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "LoVeSe",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 268,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "People's Power",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 175,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jens Stoltenberg",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 55 of 169 seats on 30.8% of the vote. Turnout 78.3%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "legislative",
+   "date": "11 September 2017",
+   "era": "current",
+   "totalSeats": 169,
+   "majoritySeats": null,
+   "turnout": 78.36,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": -6,
+     "votes": 800947,
+     "share": 27.37,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": -3,
+     "votes": 732895,
+     "share": 25.04,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -2,
+     "votes": 444681,
+     "share": 15.19,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 9,
+     "votes": 302017,
+     "share": 10.32,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 4,
+     "votes": 176222,
+     "share": 6.02,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -1,
+     "votes": 127910,
+     "share": 4.37,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -2,
+     "votes": 122797,
+     "share": 4.2,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 94788,
+     "share": 3.24,
+     "swing": null
+    },
+    {
+     "name": "Red Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 70522,
+     "share": 2.41,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12855,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Health Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10337,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "The Christians",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8700,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Capitalist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5599,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Democrats in Norway",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3830,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3356,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "The Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3311,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Coastal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2467,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Nordmøre List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2135,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Feminist Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 696,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 309,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Norway Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 151,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Party of Values",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 148,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 104,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Northern Assembly",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 59,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Erna Solberg",
+    "party": "Conservative"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 49 of 169 seats on 27.4% of the vote. Turnout 78.4%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "13 September 2021",
+   "era": "current",
+   "totalSeats": 169,
+   "majoritySeats": null,
+   "turnout": 77.17,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -1,
+     "votes": 783394,
+     "share": 26.25,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": -9,
+     "votes": 607316,
+     "share": 20.35,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 9,
+     "votes": 402961,
+     "share": 13.5,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -6,
+     "votes": 346474,
+     "share": 11.61,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 2,
+     "votes": 228063,
+     "share": 7.64,
+     "swing": null
+    },
+    {
+     "name": "Red Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 7,
+     "votes": 140931,
+     "share": 4.72,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": 137433,
+     "share": 4.61,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 117647,
+     "share": 3.94,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -5,
+     "votes": 113344,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "Democrats in Norway",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 34068,
+     "share": 1.14,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19006,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "The Christians",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10448,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Industry and Business Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10031,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Center Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7836,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Health Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6490,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Patient Focus",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 4950,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Capitalist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4520,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "People's Action No to More Road Tolls",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3435,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Alliance – Alternative for Norway",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2489,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2308,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Norway",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 301,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Feminist Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 275,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Generation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 199,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Coastal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 171,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Save Nature",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 97,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Erna Solberg",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Jonas Gahr Støre",
+    "party": "Labour"
+   },
+   "knownAs": null,
+   "summary": "Labour Party finished first with 48 of 169 seats on 26.2% of the vote. Turnout 77.2%. Jonas Gahr Støre replaced Erna Solberg.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "legislative",
+   "date": "8 September 2025",
+   "era": "current",
+   "totalSeats": 169,
+   "majoritySeats": 85,
+   "turnout": 80.11,
+   "parties": [
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 5,
+     "votes": 902296,
+     "share": 28.02,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 26,
+     "votes": 767903,
+     "share": 23.85,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -12,
+     "votes": 471602,
+     "share": 14.65,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -4,
+     "votes": 181192,
+     "share": 5.63,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -19,
+     "votes": 179994,
+     "share": 5.59,
+     "swing": null
+    },
+    {
+     "name": "Red Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1,
+     "votes": 171342,
+     "share": 5.32,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 5,
+     "votes": 152782,
+     "share": 4.74,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 4,
+     "votes": 135230,
+     "share": 4.2,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -5,
+     "votes": 118941,
+     "share": 3.69,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26839,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "Norway Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23260,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Generation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21589,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "Industry and Business Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18771,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Konservativt",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15507,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Peace and Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9430,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Partiet Sentrum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5701,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "DNI Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5280,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Welfare and Innovation Party [no; nn]",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4932,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Patient Focus",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 4174,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Save Ullevål Hospital",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2361,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Loneliness Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 712,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Norway",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 50,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jonas Gahr Støre",
+    "party": "Labour"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Labour Party finished first with 53 of 169 seats on 28.0% of the vote. Turnout 80.1%.",
+   "seatLeader": "Labour Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

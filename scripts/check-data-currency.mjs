@@ -96,12 +96,20 @@ function probeWomensHockeyWorlds() {
   return y == null ? { error: "womens-nations.json has no medal years" } : { year: y };
 }
 
+function probeWomensBasketballWorldCup() {
+  const hub = readJson("public/data/wbasketball/hub.json");
+  const years = (hub.wc_finals || []).map((r) => Number(r.year)).filter(Boolean);
+  const y = maxOr(years);
+  return y == null ? { error: "wbasketball/hub.json has no wc_finals" } : { year: y };
+}
+
 function runProbe(probe) {
   try {
     if (probe.startsWith("motorsport:")) return probeMotorsport(probe.slice(11));
     if (probe.startsWith("cycling:")) return probeCycling(probe.slice(8));
     if (probe === "tourDeFrance") return probeTourDeFrance();
     if (probe === "womensHockeyWorlds") return probeWomensHockeyWorlds();
+    if (probe === "womensBasketballWorldCup") return probeWomensBasketballWorldCup();
     return { error: `unknown probe '${probe}'` };
   } catch (e) {
     return { error: `probe '${probe}' failed: ${e.message}` };
@@ -113,9 +121,16 @@ function runProbe(probe) {
  * from this year rather than assuming, so a January run does not demand a row
  * for a season that ends in December.
  */
-function dueYear({ endsMonthDay, graceDays }) {
+function dueYear({ endsMonthDay, graceDays, everyYears, baseYear }) {
   const [m, d] = endsMonthDay.split("-").map(Number);
-  for (let y = TODAY.getUTCFullYear(); y > TODAY.getUTCFullYear() - 3; y--) {
+  // An event that is not annual (the Women's Basketball World Cup is every
+  // four years) would otherwise be reported overdue every year it is not
+  // held, because the newest edition on file is by definition older than
+  // "this year". everyYears + baseYear skip the years it is not contested.
+  const span = everyYears && baseYear ? everyYears : 1;
+  const back = span * 3;
+  for (let y = TODAY.getUTCFullYear(); y > TODAY.getUTCFullYear() - back; y--) {
+    if (span > 1 && (((y - baseYear) % span) + span) % span !== 0) continue;
     const due = new Date(Date.UTC(y, m - 1, d));
     due.setUTCDate(due.getUTCDate() + graceDays);
     if (due <= TODAY) return y;
