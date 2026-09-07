@@ -95,8 +95,9 @@ explicit — apply it before touching any refresh script:
 > `feedback_vercel_build_budget_incident` and the HANDOFF entry of that date.
 >
 > **Check, don't assume.** Count builds with the Vercel MCP
-> (`list_deployments`, count `state: READY` — `CANCELED` is free) at the start
-> and end of any session with more than ~3 pushes. Do **not** count GitHub
+> (`list_deployments`, count `state: READY` AND `state: ERROR`; `CANCELED` is
+> free, a failed build is not, it spent the minutes and produced nothing) at the
+> start and end of any session with more than ~3 pushes. Do **not** count GitHub
 > `deployment_status` events: that endpoint returns **404 under secondary rate
 > limiting**, which reads as "no builds" when it means "no answer". That is
 > exactly how the 13 went unnoticed for three hours.
@@ -140,6 +141,15 @@ explicit — apply it before touching any refresh script:
   newest-first, so the first line is HEAD) has no `[vercel skip]`. Recovery is
   an empty commit whose subject carries `[deploy-retry]`, which is rule 3 and
   always builds. This has bitten on 2026-08-18 and again on 2026-09-04.
+- **A build that FAILS (function too large, `RELEASE_NOTES_VIOLATION`, a
+  type error the local gate missed) is not a build that was CANCELED.**
+  `mac-mini-jobs/run-deploy-watch.sh` now asks GitHub's deployment status
+  before re-triggering: `success` means live-check lag, `failure` means do NOT
+  retry (the same code fails the same way, each attempt is a production build)
+  and it alerts "deploy manually" once per sha instead. Only a commit with no
+  deployment at all, the shape a canceled-by-newer-push build leaves, is
+  retried. Verified against the real API on 2026-09-07 (`b40726b7b` and its
+  retry both read `failure`; skipped commits carry no deployment).
 - `scripts/vercel-ignore.sh` **fails closed**: if it cannot resolve the base
   commit it skips rather than builds, because a missed deploy is auto-healed by
   `mac-mini-jobs/run-deploy-watch.sh` and a spurious deploy is healed by

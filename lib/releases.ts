@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-07",
-    headline: "The owners board catches a record summer",
+    headline: "Elections rebuilt, squads priced, owners updated",
     items: [
-      "The Angels join the ownership watchlist: Arte Moreno agreed to sell control to Stan Kroenke's group at a record valuation for a baseball club, with league approval and an early 2027 close still ahead.",
-      "West Ham's stalemate turned: the club confirmed Daniel Kretinsky has agreed to become its largest shareholder at about 46%, after the Staveley purchase died in pre-emption.",
-      "Columbus Crew leaves the watchlist, with Nationwide's 37% purchase completed in June and the Haslams keeping control.",
-      "The Lakers sale now has a date, with NBA owners set to vote at their mid-September meeting, and the Falcons show Arctos's agreed 10% stake.",
+      "The Elections hub has a tab row, an as-of stamp and honest date badges on every countdown, plus a calendar feed you can subscribe to for every officially set election date, sitewide or per country.",
+      "The all-hubs directory filters by system of government, electoral family, regime and voting year, switches to a compact table, exports every contest as CSV, and any polity can be followed from its hub into your page.",
+      "Football club pages now chart what the squad was worth month by month since 2012, and a new board sets each club's squad value against how far it beat expectation in the same season.",
+      "The owners board catches a record summer: the Angels join the watchlist on the Kroenke deal, West Ham confirms Kretinsky as its largest shareholder, and Columbus Crew leaves the list.",
     ],
   },
   {

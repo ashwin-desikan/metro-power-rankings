@@ -1,0 +1,1756 @@
+hub_code,hub_name,series,election_id,year,date,type_or_label,winner_or_largest,turnout,seats_total,seat_share_or_vote_share_of_winner,freedom_label,url
+ar,Argentina,presidential,1826,1826,7 February 1826 / 27 February 1826,1826,Bernardino Rivadavia,,,92.11,partial,/elections/ar/1826
+ar,Argentina,presidential,1853,1853,1 November 1853,1853,Justo José de Urquiza,,,88.35,partial,/elections/ar/1853
+ar,Argentina,presidential,1859,1859,"5, 6 and 7 September 1859",1859,Santiago Derqui,,,57.60,partial,/elections/ar/1859
+ar,Argentina,presidential,1862,1862,"27, 28 and 29 July 1862",1862,Bartolomé Mitre,,,100.00,partial,/elections/ar/1862
+ar,Argentina,presidential,1868,1868,12 April 1868,1868,Domingo Faustino Sarmiento,,,60.31,partial,/elections/ar/1868
+ar,Argentina,presidential,1874,1874,12 April 1874,1874,Nicolás Avellaneda,,,64.73,partial,/elections/ar/1874
+ar,Argentina,presidential,1880,1880,11 April 1880,1880,Julio Argentino Roca,,,68.89,partial,/elections/ar/1880
+ar,Argentina,presidential,1886,1886,11 April 1886,1886,Miguel Ángel Juárez,,,78.87,partial,/elections/ar/1886
+ar,Argentina,presidential,1892,1892,10 April 1892,1892,Luis Sáenz Peña,,,95.02,partial,/elections/ar/1892
+ar,Argentina,presidential,1898,1898,10 April 1898,1898,Julio Argentino Roca,,,85.16,partial,/elections/ar/1898
+ar,Argentina,presidential,1904,1904,10 April 1904,1904,Manuel Quintana,,,81.36,partial,/elections/ar/1904
+ar,Argentina,presidential,1910,1910,1910,1910,Roque Sáenz Peña,,,99.62,partial,/elections/ar/1910
+ar,Argentina,presidential,1916,1916,2 April 1916,1916,Hipólito Yrigoyen,65.59,,47.25,free,/elections/ar/1916
+ar,Argentina,presidential,1922,1922,2 April 1922,1922,Marcelo Torcuato de Alvear,56.41,,50.49,free,/elections/ar/1922
+ar,Argentina,presidential,1928,1928,1928,1928,Hipólito Yrigoyen,83.12,,61.42,free,/elections/ar/1928
+ar,Argentina,presidential,1931,1931,8 November 1931,1931,Agustín P. Justo,73.81,,61.44,partial,/elections/ar/1931
+ar,Argentina,presidential,1937,1937,5 September 1937,1937,Roberto M. Ortiz,76.17,,55.77,partial,/elections/ar/1937
+ar,Argentina,presidential,1946,1946,24 February 1946,1946,Juan Perón,82.25,,53.71,free,/elections/ar/1946
+ar,Argentina,presidential,1951,1951,1951,1951,Juan Perón,88.46,,63.51,partial,/elections/ar/1951
+ar,Argentina,presidential,1954,1954,25 April 1954,1954,Alberto Teisaire,86.0,,64.52,partial,/elections/ar/1954
+ar,Argentina,presidential,1958,1958,1958,1958,Arturo Frondizi,90.86,,49.49,partial,/elections/ar/1958
+ar,Argentina,presidential,1963,1963,7 July 1963,1963,Arturo Illia,85.48,,31.90,partial,/elections/ar/1963
+ar,Argentina,presidential,1973-mar,1973,11 March 1973,March 1973,Héctor Cámpora,85.55,,49.53,free,/elections/ar/1973-mar
+ar,Argentina,presidential,1973-sep,1973,23 September 1973,September 1973,Juan Perón,,,61.86,free,/elections/ar/1973-sep
+ar,Argentina,presidential,1983,1983,30 October 1983,1983,Raúl Alfonsín,85.61,,51.75,free,/elections/ar/1983
+ar,Argentina,presidential,1989,1989,14 May 1989,1989,Carlos Menem,85.31,,47.51,free,/elections/ar/1989
+ar,Argentina,presidential,1995,1995,14 May 1995,1995,Carlos Menem,82.08,,49.94,free,/elections/ar/1995
+ar,Argentina,presidential,1999,1999,24 October 1999,1999,Fernando de la Rúa,82.27,,48.37,free,/elections/ar/1999
+ar,Argentina,presidential,2003,2003,27 April 2003,2003,Néstor Kirchner,71.88,,22.25,free,/elections/ar/2003
+ar,Argentina,presidential,2007,2007,28 October 2007,2007,Cristina Fernández de Kirchner,76.21,,45.28,free,/elections/ar/2007
+ar,Argentina,presidential,2011,2011,23 October 2011,2011,Cristina Fernández de Kirchner,81.75,,54.11,free,/elections/ar/2011
+ar,Argentina,presidential,2015,2015,25 October and 22 November 2015,2015,Mauricio Macri,79.83,,51.34,free,/elections/ar/2015
+ar,Argentina,presidential,2019,2019,27 October 2019,2019,Alberto Fernández,78.27,,48.24,free,/elections/ar/2019
+ar,Argentina,presidential,2023,2023,22 October 2023,2023,Javier Milei,78.3,,55.65,free,/elections/ar/2023
+at,Austria,presidential,pres-1951,1951,4 June 1951,1951,Theodor Körner,,,,free,/elections/at/pres-1951
+at,Austria,presidential,pres-1957,1957,5 May 1957,1957,Adolf Schärf,97.16,,51.12,free,/elections/at/pres-1957
+at,Austria,presidential,pres-1963,1963,28 April 1963,1963,Adolf Schärf,95.59,,55.41,free,/elections/at/pres-1963
+at,Austria,presidential,pres-1965,1965,23 May 1965,1965,Franz Jonas,95.99,,50.69,free,/elections/at/pres-1965
+at,Austria,presidential,pres-1971,1971,25 April 1971,1971,Franz Jonas,95.29,,52.78,free,/elections/at/pres-1971
+at,Austria,presidential,pres-1974,1974,23 June 1974,1974,Rudolf Kirchschläger,94.06,,51.66,free,/elections/at/pres-1974
+at,Austria,presidential,pres-1980,1980,18 May 1980,1980,Rudolf Kirchschläger,91.63,,79.87,free,/elections/at/pres-1980
+at,Austria,presidential,pres-1986,1986,"August 19, 2026",1986,Kurt Waldheim,,,,free,/elections/at/pres-1986
+at,Austria,presidential,pres-1992,1992,"August 19, 2026",1992,Thomas Klestil,,,,free,/elections/at/pres-1992
+at,Austria,presidential,pres-1998,1998,19 April 1998,1998,Thomas Klestil,74.4,,63.42,free,/elections/at/pres-1998
+at,Austria,presidential,pres-2004,2004,25 April 2004,2004,Heinz Fischer,71.6,,52.39,free,/elections/at/pres-2004
+at,Austria,presidential,pres-2010,2010,25 April 2010,2010,Heinz Fischer,53.57,,79.33,free,/elections/at/pres-2010
+at,Austria,presidential,pres-2016,2016,22 May 2016,2016,Alexander Van der Bellen,68.5,,,free,/elections/at/pres-2016
+at,Austria,presidential,pres-2022,2022,9 October 2022,2022,Alexander Van der Bellen,65.19,,56.69,free,/elections/at/pres-2022
+at,Austria,legislative,1897,1897,March 1897,1897,Bohemian Club,,425,14.12,partial,/elections/at/1897
+at,Austria,legislative,1900-01,1900,12 December 1900 to 18 January 1901,1900–01,Poland Club,,425,15.29,partial,/elections/at/1900-01
+at,Austria,legislative,1907,1907,14 & 23 May 1907,1907,Christian Social Union,84.6,516,18.60,free,/elections/at/1907
+at,Austria,legislative,1911,1911,June & July 1911,1911,Deutscher Nationalverband,80.2,516,19.38,free,/elections/at/1911
+at,Austria,legislative,1920,1920,17 October 1920,1920,Christian Social Party,80.27,183,46.45,free,/elections/at/1920
+at,Austria,legislative,1923,1923,21 October 1923,1923,Christian Social Party,87.05,165,49.70,free,/elections/at/1923
+at,Austria,legislative,1927,1927,24 April 1927,1927,Unity List (CS–GDVP),89.27,165,51.52,free,/elections/at/1927
+at,Austria,legislative,1930,1930,9 November 1930,1930,Social Democratic Workers' Party,90.17,165,43.64,free,/elections/at/1930
+at,Austria,legislative,1945,1945,25 November 1945,1945,Austrian People's Party,94.31,165,51.52,free,/elections/at/1945
+at,Austria,legislative,1949,1949,9 October 1949,1949,Austrian People's Party,96.78,165,46.67,free,/elections/at/1949
+at,Austria,legislative,1953,1953,22 February 1953,1953,Austrian People's Party,95.83,165,44.85,free,/elections/at/1953
+at,Austria,legislative,1956,1956,13 May 1956,1956,Austrian People's Party,95.95,165,49.70,free,/elections/at/1956
+at,Austria,legislative,1959,1959,10 May 1959,1959,Austrian People's Party,94.21,165,47.88,free,/elections/at/1959
+at,Austria,legislative,1962,1962,18 November 1962,1962,Austrian People's Party,93.77,165,49.09,free,/elections/at/1962
+at,Austria,legislative,1966,1966,6 March 1966,1966,Austrian People's Party,93.8,165,51.52,free,/elections/at/1966
+at,Austria,legislative,1970,1970,1 March 1970,1970,Socialist Party of Austria,91.78,165,49.09,free,/elections/at/1970
+at,Austria,legislative,1971,1971,10 October 1971,1971,Socialist Party of Austria,92.44,183,50.82,free,/elections/at/1971
+at,Austria,legislative,1975,1975,5 October 1975,1975,Socialist Party of Austria,92.9,183,50.82,free,/elections/at/1975
+at,Austria,legislative,1979,1979,6 May 1979,1979,Social Democratic Party of Austria,92.24,183,51.91,free,/elections/at/1979
+at,Austria,legislative,1983,1983,24 April 1983,1983,Socialist Party of Austria,92.59,183,49.18,free,/elections/at/1983
+at,Austria,legislative,1986,1986,23 November 1986,1986,Socialist Party of Austria,90.46,183,43.72,free,/elections/at/1986
+at,Austria,legislative,1990,1990,7 October 1990,1990,Socialist Party of Austria,86.14,183,43.72,free,/elections/at/1990
+at,Austria,legislative,1994,1994,9 October 1994,1994,Social Democratic Party of Austria,81.94,183,35.52,free,/elections/at/1994
+at,Austria,legislative,1995,1995,17 December 1995,1995,Social Democratic Party of Austria,85.98,183,38.80,free,/elections/at/1995
+at,Austria,legislative,1999,1999,3 October 1999,1999,Social Democratic Party of Austria,80.42,183,35.52,free,/elections/at/1999
+at,Austria,legislative,2002,2002,24 November 2002,2002,Austrian People's Party,84.27,183,43.17,free,/elections/at/2002
+at,Austria,legislative,2006,2006,1 October 2006,2006,Social Democratic Party of Austria,78.5,183,37.16,free,/elections/at/2006
+at,Austria,legislative,2008,2008,28 September 2008,2008,Social Democratic Party of Austria,78.8,183,31.15,free,/elections/at/2008
+at,Austria,legislative,2013,2013,29 September 2013,2013,Social Democratic Party of Austria,74.9,183,28.42,free,/elections/at/2013
+at,Austria,legislative,2017,2017,15 October 2017,2017,Austrian People's Party,80.0,183,33.88,free,/elections/at/2017
+at,Austria,legislative,2019,2019,29 September 2019,2019,Austrian People's Party,75.6,183,38.80,free,/elections/at/2019
+at,Austria,legislative,2024,2024,29 September 2024,2024,Freedom Party of Austria,77.7,183,31.15,free,/elections/at/2024
+au,Australia,legislative,1901,1901,29–30 March 1901,1901,Protectionist,51.39,75,42.67,free,/elections/au/1901
+au,Australia,legislative,1903,1903,16 December 1903,1903,Protectionist,39.05,75,34.67,free,/elections/au/1903
+au,Australia,legislative,1906,1906,12 December 1906,1906,Labour,47.48,75,34.67,free,/elections/au/1906
+au,Australia,legislative,1910,1910,13 April 1910,1910,Labour,59.52,75,56.00,free,/elections/au/1910
+au,Australia,legislative,1913,1913,31 May 1913,1913,Liberal,73.49,75,50.67,free,/elections/au/1913
+au,Australia,legislative,1914,1914,5 September 1914,1914,Labor,73.53,75,56.00,free,/elections/au/1914
+au,Australia,legislative,1917,1917,5 May 1917,1917,Nationalist,78.3,75,70.67,free,/elections/au/1917
+au,Australia,legislative,1919,1919,13 December 1919,1919,Nationalist,71.59,75,49.33,free,/elections/au/1919
+au,Australia,legislative,1922,1922,16 December 1922,1922,Labor,59.36,76,38.16,free,/elections/au/1922
+au,Australia,legislative,1925,1925,14 November 1925,1925,Nationalist,91.39,75,49.33,free,/elections/au/1925
+au,Australia,legislative,1928,1928,17 November 1928,1928,Labor,93.64,75,41.33,free,/elections/au/1928
+au,Australia,legislative,1929,1929,12 October 1929,1929,Labor,94.85,75,61.33,free,/elections/au/1929
+au,Australia,legislative,1931,1931,19 December 1931,1931,United Australia,95.04,75,44.00,free,/elections/au/1931
+au,Australia,legislative,1934,1934,15 September 1934,1934,United Australia,95.17,74,44.59,free,/elections/au/1934
+au,Australia,legislative,1937,1937,23 October 1937,1937,United Australia–Country Coalition,96.13,74,58.11,free,/elections/au/1937
+au,Australia,legislative,1940,1940,21 September 1940,1940,United Australia–Country Coalition,94.82,74,48.65,free,/elections/au/1940
+au,Australia,legislative,1943,1943,21 August 1943,1943,Labor,96.32,74,66.22,free,/elections/au/1943
+au,Australia,legislative,1946,1946,28 September 1946,1946,Labor,93.97,74,58.11,free,/elections/au/1946
+au,Australia,legislative,1949,1949,10 December 1949,1949,Liberal–Country Coalition,95.97,121,61.16,free,/elections/au/1949
+au,Australia,legislative,1951,1951,28 April 1951,1951,Liberal–Country Coalition,96.0,121,57.02,free,/elections/au/1951
+au,Australia,legislative,1954,1954,29 May 1954,1954,Liberal–Country Coalition,96.09,121,52.89,free,/elections/au/1954
+au,Australia,legislative,1955,1955,10 December 1955,1955,Liberal–Country Coalition,95.0,122,61.48,free,/elections/au/1955
+au,Australia,legislative,1958,1958,22 November 1958,1958,Liberal–Country Coalition,95.48,122,63.11,free,/elections/au/1958
+au,Australia,legislative,1961,1961,9 December 1961,1961,Liberal–Country Coalition,95.27,122,50.82,free,/elections/au/1961
+au,Australia,legislative,1963,1963,30 November 1963,1963,Liberal–Country Coalition,95.73,122,59.02,free,/elections/au/1963
+au,Australia,legislative,1966,1966,26 November 1966,1966,Liberal–Country Coalition,95.13,124,66.13,free,/elections/au/1966
+au,Australia,legislative,1969,1969,25 October 1969,1969,Liberal–Country Coalition,94.97,125,52.80,free,/elections/au/1969
+au,Australia,legislative,1972,1972,2 December 1972,1972,Labor,95.38,125,53.60,free,/elections/au/1972
+au,Australia,legislative,1974,1974,18 May 1974,1974,Labor,95.42,127,51.97,free,/elections/au/1974
+au,Australia,legislative,1975,1975,13 December 1975,1975,Liberal–National Country Coalition,95.39,127,71.65,free,/elections/au/1975
+au,Australia,legislative,1977,1977,10 December 1977,1977,Liberal–National Country Coalition,95.08,124,69.35,free,/elections/au/1977
+au,Australia,legislative,1980,1980,18 October 1980,1980,Liberal–National Country Coalition,94.35,125,59.20,free,/elections/au/1980
+au,Australia,legislative,1983,1983,5 March 1983,1983,Labor,94.64,125,60.00,free,/elections/au/1983
+au,Australia,legislative,1984,1984,1 December 1984,1984,Labor,94.19,148,55.41,free,/elections/au/1984
+au,Australia,legislative,1987,1987,11 July 1987,1987,Labor,93.84,148,58.11,free,/elections/au/1987
+au,Australia,legislative,1990,1990,24 March 1990,1990,Labor,95.31,148,52.70,free,/elections/au/1990
+au,Australia,legislative,1993,1993,13 March 1993,1993,Labor,95.75,147,54.42,free,/elections/au/1993
+au,Australia,legislative,1996,1996,2 March 1996,1996,Liberal–National Coalition,95.77,148,63.51,free,/elections/au/1996
+au,Australia,legislative,1998,1998,3 October 1998,1998,Liberal–National Coalition,94.99,148,54.05,free,/elections/au/1998
+au,Australia,legislative,2001,2001,10 November 2001,2001,Liberal–National Coalition,94.85,150,54.67,free,/elections/au/2001
+au,Australia,legislative,2004,2004,9 October 2004,2004,Liberal–National Coalition,94.32,150,58.00,free,/elections/au/2004
+au,Australia,legislative,2007,2007,24 November 2007,2007,Labor,94.72,150,55.33,free,/elections/au/2007
+au,Australia,legislative,2010,2010,21 August 2010,2010,Labor,93.22,150,48.00,free,/elections/au/2010
+au,Australia,legislative,2013,2013,7 September 2013,2013,Liberal–National Coalition,93.23,150,60.00,free,/elections/au/2013
+au,Australia,legislative,2016,2016,2 July 2016,2016,Liberal–National Coalition,91.01,150,50.67,free,/elections/au/2016
+au,Australia,legislative,2019,2019,18 May 2019,2019,Liberal–National Coalition,91.89,151,50.99,free,/elections/au/2019
+au,Australia,legislative,2022,2022,21 May 2022,2022,Labor,89.82,151,50.99,free,/elections/au/2022
+au,Australia,legislative,2025,2025,3 May 2025,2025,Labor,90.7,150,62.67,free,/elections/au/2025
+be,Belgium,legislative,1831,1831,29 August 1831,1831,Catholics,,102,30.39,unfree,/elections/be/1831
+be,Belgium,legislative,1833,1833,23 May 1833,1833,,,102,,unfree,/elections/be/1833
+be,Belgium,legislative,1835,1835,9 June 1835,1835,,,51,,unfree,/elections/be/1835
+be,Belgium,legislative,1837,1837,13 June 1837,1837,,,51,,unfree,/elections/be/1837
+be,Belgium,legislative,1839,1839,11 June 1839,1839,Catholics,,47,57.45,unfree,/elections/be/1839
+be,Belgium,legislative,1841,1841,8 June 1841,1841,,,48,,unfree,/elections/be/1841
+be,Belgium,legislative,1843,1843,13 June 1843,1843,Catholics,,47,68.09,unfree,/elections/be/1843
+be,Belgium,legislative,1845,1845,10 June 1845,1845,,,48,,unfree,/elections/be/1845
+be,Belgium,legislative,1847,1847,8 June 1847,1847,Liberal Association,,54,61.11,unfree,/elections/be/1847
+be,Belgium,legislative,1848,1848,13 June 1848,1848,Liberal Party,,108,76.85,unfree,/elections/be/1848
+be,Belgium,legislative,1850,1850,11 June 1850,1850,Liberal Party,,54,59.26,unfree,/elections/be/1850
+be,Belgium,legislative,1852,1852,8 June 1852,1852,Liberal Party,,54,57.41,unfree,/elections/be/1852
+be,Belgium,legislative,1854,1854,13 June 1854,1854,Liberal Party,,54,51.85,unfree,/elections/be/1854
+be,Belgium,legislative,1856,1856,10 June 1856,1856,Catholics,,54,61.11,unfree,/elections/be/1856
+be,Belgium,legislative,1857,1857,10 December 1857,1857,Liberal Party,,108,64.81,unfree,/elections/be/1857
+be,Belgium,legislative,1859,1859,14 June 1859,1859,Liberal Party,,58,53.45,unfree,/elections/be/1859
+be,Belgium,legislative,1861,1861,11 June 1861,1861,Liberal Party,,58,62.07,unfree,/elections/be/1861
+be,Belgium,legislative,1863,1863,9 June 1863,1863,Catholics,,58,58.62,unfree,/elections/be/1863
+be,Belgium,legislative,1864,1864,11 August 1864,1864,Liberal Party,,116,55.17,unfree,/elections/be/1864
+be,Belgium,legislative,1866,1866,12 June 1866,1866,Liberal Party,,61,70.49,unfree,/elections/be/1866
+be,Belgium,legislative,1868,1868,9 June 1868,1868,Catholics,,63,52.38,unfree,/elections/be/1868
+be,Belgium,legislative,1870-jun,1870,14 June 1870,June 1870,Liberal Party,,61,50.82,unfree,/elections/be/1870-jun
+be,Belgium,legislative,1870-aug,1870,2 August 1870,August 1870,Catholic Party,,124,58.06,unfree,/elections/be/1870-aug
+be,Belgium,legislative,1872,1872,11 June 1872,1872,Catholic Party,,63,68.25,unfree,/elections/be/1872
+be,Belgium,legislative,1874,1874,9 June 1874,1874,Liberal Party,,61,57.38,unfree,/elections/be/1874
+be,Belgium,legislative,1876,1876,13 June 1876,1876,Catholic Party,,63,66.67,unfree,/elections/be/1876
+be,Belgium,legislative,1878,1878,11 June 1878,1878,Liberal Party,,66,72.73,unfree,/elections/be/1878
+be,Belgium,legislative,1880,1880,8 June 1880,1880,Catholic Party,,66,60.61,unfree,/elections/be/1880
+be,Belgium,legislative,1882,1882,13 June 1882,1882,Liberal Party,,69,71.01,unfree,/elections/be/1882
+be,Belgium,legislative,1884,1884,15 July 1884 (Senate run-off),1884,Catholic Party,,69,97.10,unfree,/elections/be/1884
+be,Belgium,legislative,1886,1886,8 June 1886,1886,Liberal Party,,69,53.62,unfree,/elections/be/1886
+be,Belgium,legislative,1888,1888,12 June 1888,1888,Catholic Party,,69,95.65,unfree,/elections/be/1888
+be,Belgium,legislative,1890,1890,10 June 1890,1890,Liberal Party,,69,57.97,unfree,/elections/be/1890
+be,Belgium,legislative,1892,1892,14 June 1892,1892,Catholic Party,,152,60.53,unfree,/elections/be/1892
+be,Belgium,legislative,1894,1894,14 October 1894,1894,Catholic Party,,152,67.11,partial,/elections/be/1894
+be,Belgium,legislative,1896,1896,5 July 1896,1896,Catholic Party,,77,93.51,partial,/elections/be/1896
+be,Belgium,legislative,1898,1898,22 May 1898,1898,Catholic Party,,75,48.00,partial,/elections/be/1898
+be,Belgium,legislative,1900,1900,27 May 1900,1900,Catholic Party,,152,56.58,partial,/elections/be/1900
+be,Belgium,legislative,1902,1902,25 May 1902,1902,Catholic Party,,85,63.53,partial,/elections/be/1902
+be,Belgium,legislative,1904,1904,29 May 1904,1904,Catholic Party,,81,46.91,partial,/elections/be/1904
+be,Belgium,legislative,1906,1906,27 May 1906,1906,Catholic Party,,83,49.40,partial,/elections/be/1906
+be,Belgium,legislative,1908,1908,24 May 1908,1908,Catholic Party,,81,45.68,partial,/elections/be/1908
+be,Belgium,legislative,1910,1910,22 May 1910,1910,Catholic Party,,87,56.32,partial,/elections/be/1910
+be,Belgium,legislative,1912,1912,2 June 1912,1912,Catholic Party,,186,54.30,partial,/elections/be/1912
+be,Belgium,legislative,1914,1914,24 May 1914,1914,Catholic Party,,88,46.59,free,/elections/be/1914
+be,Belgium,legislative,1919,1919,16 November 1919,1919,Belgian Labour Party,,186,37.63,free,/elections/be/1919
+be,Belgium,legislative,1921,1921,20 November 1921,1921,Catholic Party,,186,41.94,free,/elections/be/1921
+be,Belgium,legislative,1925,1925,5 April 1925,1925,Belgian Labour Party,,187,41.71,free,/elections/be/1925
+be,Belgium,legislative,1929,1929,26 May 1929,1929,Catholic Party,,187,37.97,free,/elections/be/1929
+be,Belgium,legislative,1932,1932,27 November 1932,1932,Catholic Party,,187,42.25,free,/elections/be/1932
+be,Belgium,legislative,1936,1936,24 May 1936,1936,Belgian Labour Party,,202,34.65,free,/elections/be/1936
+be,Belgium,legislative,1939,1939,2 April 1939,1939,Catholic Party,,202,33.17,free,/elections/be/1939
+be,Belgium,legislative,1946,1946,17 February 1946,1946,Christian Social Party,,202,45.54,free,/elections/be/1946
+be,Belgium,legislative,1949,1949,26 June 1949,1949,Christian Social Party,,212,49.53,free,/elections/be/1949
+be,Belgium,legislative,1950,1950,4 June 1950,1950,Christian Social Party,,212,50.94,free,/elections/be/1950
+be,Belgium,legislative,1954,1954,11 April 1954,1954,Christian Social Party,,212,44.81,free,/elections/be/1954
+be,Belgium,legislative,1958,1958,1 June 1958,1958,Christian Social Party,,212,49.06,free,/elections/be/1958
+be,Belgium,legislative,1961,1961,26 March 1961,1961,Christian Social Party,,212,45.28,free,/elections/be/1961
+be,Belgium,legislative,1965,1965,23 May 1965,1965,Christian Social Party,,212,36.32,free,/elections/be/1965
+be,Belgium,legislative,1968,1968,31 March 1968,1968,Christian Social Party,,212,32.55,free,/elections/be/1968
+be,Belgium,legislative,1971,1971,7 November 1971,1971,Belgian Socialist Party,,212,26.89,free,/elections/be/1971
+be,Belgium,legislative,1974,1974,10 March 1974,1974,Belgian Socialist Party,,212,27.83,free,/elections/be/1974
+be,Belgium,legislative,1977,1977,17 April 1977,1977,CVP,,212,26.42,free,/elections/be/1977
+be,Belgium,legislative,1978,1978,17 December 1978,1978,Christian People's Party,,212,26.89,free,/elections/be/1978
+be,Belgium,legislative,1981,1981,8 November 1981,1981,Christian People's Party,,212,20.28,free,/elections/be/1981
+be,Belgium,legislative,1985,1985,13 October 1985,1985,Christian People's Party,,212,23.11,free,/elections/be/1985
+be,Belgium,legislative,1987,1987,13 December 1987,1987,Christian People's Party,93.39,212,20.28,free,/elections/be/1987
+be,Belgium,legislative,1991,1991,24 November 1991,1991,Christian People Party,92.72,212,18.40,free,/elections/be/1991
+be,Belgium,legislative,1995,1995,21 May 1995,1995,Christian People's Party,91.15,150,19.33,free,/elections/be/1995
+be,Belgium,legislative,1999,1999,13 June 1999,1999,Flemish Liberals and Democrats,90.57,150,15.33,free,/elections/be/1999
+be,Belgium,legislative,2003,2003,18 May 2003,2003,VLD,91.63,150,16.67,free,/elections/be/2003
+be,Belgium,legislative,2007,2007,10 June 2007,2007,CD&V–N-VA,91.08,150,20.00,free,/elections/be/2007
+be,Belgium,legislative,2010,2010,13 June 2010,2010,N-VA,89.22,150,18.00,free,/elections/be/2010
+be,Belgium,legislative,2014,2014,25 May 2014,2014,N-VA,89.37,150,22.00,free,/elections/be/2014
+be,Belgium,legislative,2019,2019,26 May 2019,2019,New Flemish Alliance,88.38,150,16.67,free,/elections/be/2019
+be,Belgium,legislative,2024,2024,9 June 2024,2024,N-VA,88.45,150,16.00,free,/elections/be/2024
+br,Brazil,presidential,pres-1891,1891,February 1891,1891,Deodoro da Fonseca,,,55.60,partial,/elections/br/pres-1891
+br,Brazil,presidential,pres-1894,1894,1894,1894,Prudente de Morais,,,80.15,partial,/elections/br/pres-1894
+br,Brazil,presidential,pres-1898,1898,1 March 1898,1898,Campos Sales,,,90.90,partial,/elections/br/pres-1898
+br,Brazil,presidential,pres-1902,1902,1 March 1902,1902,Rodrigues Alves,,,91.71,partial,/elections/br/pres-1902
+br,Brazil,presidential,pres-1906,1906,1 March 1906,1906,Afonso Pena,,,97.92,partial,/elections/br/pres-1906
+br,Brazil,presidential,pres-1910,1910,1 March 1910,1910,Hermes da Fonseca,,,57.07,partial,/elections/br/pres-1910
+br,Brazil,presidential,pres-1914,1914,1 March 1914,1914,Venceslau Brás,,,91.60,partial,/elections/br/pres-1914
+br,Brazil,presidential,pres-1918,1918,1 March 1918,1918,Rodrigues Alves,,,99.06,partial,/elections/br/pres-1918
+br,Brazil,presidential,pres-1919,1919,13 April 1919,1919,Epitácio Pessoa,,,71.00,partial,/elections/br/pres-1919
+br,Brazil,presidential,pres-1922,1922,1922,1922,Artur Bernardes,,,56.03,partial,/elections/br/pres-1922
+br,Brazil,presidential,pres-1926,1926,1 March 1926,1926,Washington Luís,,,98.00,partial,/elections/br/pres-1926
+br,Brazil,presidential,pres-1930,1930,1 March 1930,1930,Júlio Prestes,,,57.68,partial,/elections/br/pres-1930
+br,Brazil,presidential,pres-1934,1934,17 July 1934,1934,Getúlio Vargas,,,70.56,partial,/elections/br/pres-1934
+br,Brazil,presidential,pres-1945,1945,2 December 1945,1945,Eurico Gaspar Dutra,82.13,,55.39,free,/elections/br/pres-1945
+br,Brazil,presidential,pres-1950,1950,3 October 1950,1950,Getúlio Vargas,,,48.73,free,/elections/br/pres-1950
+br,Brazil,presidential,pres-1955,1955,3 October 1955,1955,Juscelino Kubitschek,,,35.68,free,/elections/br/pres-1955
+br,Brazil,presidential,pres-1960,1960,3 October 1960,1960,Jânio Quadros,,,48.26,free,/elections/br/pres-1960
+br,Brazil,presidential,pres-1964,1964,11 April 1964,1964,Humberto Castelo Branco,,,,partial,/elections/br/pres-1964
+br,Brazil,presidential,pres-1966,1966,3 October 1966,1966,Artur da Costa e Silva,,,100.00,partial,/elections/br/pres-1966
+br,Brazil,presidential,pres-1969,1969,25 October 1969,1969,Emílio Garrastazu Médici,,,100.00,partial,/elections/br/pres-1969
+br,Brazil,presidential,pres-1974,1974,15 January 1974,1974,Ernesto Geisel,,,84.03,partial,/elections/br/pres-1974
+br,Brazil,presidential,pres-1978,1978,15 October 1978,1978,João Figueiredo,,,61.10,partial,/elections/br/pres-1978
+br,Brazil,presidential,pres-1985,1985,15 January 1985,1985,Tancredo Neves,,,72.73,partial,/elections/br/pres-1985
+br,Brazil,presidential,pres-1989,1989,15 November and 17 December 1989,1989,Fernando Collor,88.08,,53.03,free,/elections/br/pres-1989
+br,Brazil,presidential,pres-1994,1994,1994,1994,Fernando Henrique Cardoso,82.24,,54.28,free,/elections/br/pres-1994
+br,Brazil,presidential,pres-1998,1998,4 October 1998,1998,Fernando Henrique Cardoso,78.51,,53.06,free,/elections/br/pres-1998
+br,Brazil,presidential,pres-2002,2002,6 October and 27 October 2002,2002,Luiz Inácio Lula da Silva,82.26,,61.27,free,/elections/br/pres-2002
+br,Brazil,presidential,pres-2006,2006,1 October and 29 October 2006,2006,Lula da Silva,83.25,,,free,/elections/br/pres-2006
+br,Brazil,presidential,pres-2010,2010,3 October and 31 October 2010,2010,Dilma Rousseff,81.88,,56.05,free,/elections/br/pres-2010
+br,Brazil,presidential,pres-2014,2014,5 October and 26 October 2014,2014,Dilma Rousseff,80.61,,51.64,free,/elections/br/pres-2014
+br,Brazil,presidential,pres-2018,2018,7 October and 28 October 2018,2018,Jair Bolsonaro,79.67,,55.13,free,/elections/br/pres-2018
+br,Brazil,presidential,pres-2022,2022,2 October and 30 October 2022,2022,Luiz Inácio Lula da Silva,79.05,,50.90,free,/elections/br/pres-2022
+br,Brazil,legislative,1934,1934,1934,1934,People's Slate,,2,100.00,free,/elections/br/1934
+br,Brazil,legislative,1945,1945,2 December 1945,1945,Social Democratic Party,82.13,286,52.80,free,/elections/br/1945
+br,Brazil,legislative,1947,1947,19 January 1947,1947,,,,,free,/elections/br/1947
+br,Brazil,legislative,1950,1950,3 October 1950,1950,Social Democratic Party,,304,36.84,free,/elections/br/1950
+br,Brazil,legislative,1954,1954,3 October 1954,1954,Social Democratic Party,,326,34.97,free,/elections/br/1954
+br,Brazil,legislative,1958,1958,3 October 1958,1958,National Democratic Union,,326,2.45,free,/elections/br/1958
+br,Brazil,legislative,1962,1962,7 October 1962,1962,Social Democratic Party,,409,3.91,free,/elections/br/1962
+br,Brazil,legislative,1966,1966,15 November 1966,1966,National Renewal Alliance,,409,67.73,partial,/elections/br/1966
+br,Brazil,legislative,1970,1970,15 November 1970,1970,National Renewal Alliance,,310,71.94,partial,/elections/br/1970
+br,Brazil,legislative,1974,1974,15 November 1974,1974,National Renewal Alliance,,364,55.77,partial,/elections/br/1974
+br,Brazil,legislative,1978,1978,15 November 1978,1978,National Renewal Alliance,,422,54.74,partial,/elections/br/1978
+br,Brazil,legislative,1982,1982,15 November 1982,1982,Democratic Social Party,,479,49.06,free,/elections/br/1982
+br,Brazil,legislative,1986,1986,15 November 1986,1986,Brazilian Democratic Movement Party,,487,53.39,free,/elections/br/1986
+br,Brazil,legislative,1990,1990,3 October 1990,1990,Brazilian Democratic Movement Party,,503,21.47,free,/elections/br/1990
+ca,Canada,legislative,1867,1867,"August 7 – September 20, 1867",1867,Conservative,74.3,180,55.56,free,/elections/ca/1867
+ca,Canada,legislative,1872,1872,"July 20–October 12, 1872",1872,Conservative,70.3,200,50.00,free,/elections/ca/1872
+ca,Canada,legislative,1874,1874,"January 22, 1874",1874,Liberal,69.6,206,62.62,free,/elections/ca/1874
+ca,Canada,legislative,1878,1878,"September 17, 1878",1878,Conservative,69.1,206,65.05,free,/elections/ca/1878
+ca,Canada,legislative,1882,1882,"June 20, 1882",1882,Conservative,70.3,211,63.03,free,/elections/ca/1882
+ca,Canada,legislative,1887,1887,"February 22, 1887",1887,Conservative,70.1,215,57.21,free,/elections/ca/1887
+ca,Canada,legislative,1891,1891,"March 5, 1891",1891,Conservative,64.4,215,54.42,free,/elections/ca/1891
+ca,Canada,legislative,1896,1896,"June 23, 1896",1896,Liberal,62.9,213,54.93,free,/elections/ca/1896
+ca,Canada,legislative,1900,1900,"November 7, 1900",1900,Liberal,77.4,213,60.09,free,/elections/ca/1900
+ca,Canada,legislative,1904,1904,"November 3, 1904",1904,Liberal,71.6,214,64.02,free,/elections/ca/1904
+ca,Canada,legislative,1908,1908,"October 26, 1908",1908,Liberal,70.3,221,60.18,free,/elections/ca/1908
+ca,Canada,legislative,1911,1911,"September 21, 1911",1911,Conservative,70.2,221,59.73,free,/elections/ca/1911
+ca,Canada,legislative,1917,1917,"December 17, 1917",1917,Unionist,75.0,235,65.11,free,/elections/ca/1917
+ca,Canada,legislative,1921,1921,"December 6, 1921",1921,Liberal,67.7,235,50.21,free,/elections/ca/1921
+ca,Canada,legislative,1925,1925,"October 29, 1925",1925,Conservative,66.4,245,46.94,free,/elections/ca/1925
+ca,Canada,legislative,1926,1926,"September 14, 1926",1926,Liberal,67.7,245,47.35,free,/elections/ca/1926
+ca,Canada,legislative,1930,1930,"July 28, 1930",1930,Conservative,73.5,245,55.92,free,/elections/ca/1930
+ca,Canada,legislative,1935,1935,"October 14, 1935",1935,Liberal,74.2,245,70.61,free,/elections/ca/1935
+ca,Canada,legislative,1940,1940,"March 26, 1940",1940,Liberal,69.9,245,73.06,free,/elections/ca/1940
+ca,Canada,legislative,1945,1945,"June 11, 1945",1945,Liberal,75.3,245,48.16,free,/elections/ca/1945
+ca,Canada,legislative,1949,1949,"June 27, 1949",1949,Liberal,73.8,262,72.90,free,/elections/ca/1949
+ca,Canada,legislative,1953,1953,"August 10, 1953",1953,Liberal,67.5,265,63.77,free,/elections/ca/1953
+ca,Canada,legislative,1957,1957,"June 10, 1957",1957,Progressive Conservative,74.1,265,42.26,free,/elections/ca/1957
+ca,Canada,legislative,1958,1958,"March 31, 1958",1958,Progressive Conservative,79.4,265,78.49,free,/elections/ca/1958
+ca,Canada,legislative,1962,1962,"June 18, 1962",1962,Progressive Conservative,79.0,265,43.77,free,/elections/ca/1962
+ca,Canada,legislative,1963,1963,"April 8, 1963",1963,Liberal,79.2,265,48.30,free,/elections/ca/1963
+ca,Canada,legislative,1965,1965,"November 8, 1965",1965,Liberal,74.8,265,49.43,free,/elections/ca/1965
+ca,Canada,legislative,1968,1968,"June 25, 1968",1968,Liberal,75.7,264,58.33,free,/elections/ca/1968
+ca,Canada,legislative,1972,1972,"October 30, 1972",1972,Liberal,76.7,264,41.29,free,/elections/ca/1972
+ca,Canada,legislative,1974,1974,"July 8, 1974",1974,Liberal,71.0,264,53.41,free,/elections/ca/1974
+ca,Canada,legislative,1979,1979,"May 22, 1979",1979,Progressive Conservative,75.7,282,48.23,free,/elections/ca/1979
+ca,Canada,legislative,1980,1980,"February 18, 1980",1980,Liberal,69.3,282,52.13,free,/elections/ca/1980
+ca,Canada,legislative,1984,1984,"September 4, 1984",1984,Progressive Conservative,75.3,282,74.82,free,/elections/ca/1984
+ca,Canada,legislative,1988,1988,"November 21, 1988",1988,Progressive Conservative,75.3,295,57.29,free,/elections/ca/1988
+ca,Canada,legislative,1993,1993,"October 25, 1993",1993,Liberal,69.6,295,60.00,free,/elections/ca/1993
+ca,Canada,legislative,1997,1997,"June 2, 1997",1997,Liberal,67.0,301,51.50,free,/elections/ca/1997
+ca,Canada,legislative,2000,2000,"November 27, 2000",2000,Liberal,64.1,301,57.14,free,/elections/ca/2000
+ca,Canada,legislative,2004,2004,"June 28, 2004",2004,Liberal,60.9,308,43.83,free,/elections/ca/2004
+ca,Canada,legislative,2006,2006,"January 23, 2006",2006,Conservative,64.7,308,40.26,free,/elections/ca/2006
+ca,Canada,legislative,2008,2008,"October 14, 2008",2008,Conservative,58.8,308,46.43,free,/elections/ca/2008
+ca,Canada,legislative,2011,2011,"May 2, 2011",2011,Conservative,61.1,308,53.90,free,/elections/ca/2011
+ca,Canada,legislative,2015,2015,"October 19, 2015",2015,Liberal,68.3,338,54.44,free,/elections/ca/2015
+ca,Canada,legislative,2019,2019,"October 21, 2019",2019,Liberal,67.0,338,46.45,free,/elections/ca/2019
+ca,Canada,legislative,2021,2021,"September 20, 2021",2021,Liberal,62.3,338,47.34,free,/elections/ca/2021
+ca,Canada,legislative,2025,2025,"April 28, 2025",2025,Liberal,69.5,343,49.27,free,/elections/ca/2025
+ch,Switzerland,legislative,1848,1848,1848,1848,Radical Left,,111,71.17,free,/elections/ch/1848
+ch,Switzerland,legislative,1851,1851,1851,1851,Radical Left,,120,65.00,free,/elections/ch/1851
+ch,Switzerland,legislative,1854,1854,1854,1854,Radical Left,,120,66.67,free,/elections/ch/1854
+ch,Switzerland,legislative,1857,1857,1857,1857,Radical Left,,120,66.67,free,/elections/ch/1857
+ch,Switzerland,legislative,1860,1860,1860,1860,,,,,free,/elections/ch/1860
+ch,Switzerland,legislative,1863,1863,1863,1863,Radical Left,,128,46.09,free,/elections/ch/1863
+ch,Switzerland,legislative,1866,1866,1866,1866,Radical Left,,128,41.41,free,/elections/ch/1866
+ch,Switzerland,legislative,1869,1869,1869,1869,,,,,free,/elections/ch/1869
+ch,Switzerland,legislative,1872,1872,1872,1872,Radical Left,,135,44.44,free,/elections/ch/1872
+ch,Switzerland,legislative,1875,1875,1875,1875,Radical Left,,135,46.67,free,/elections/ch/1875
+ch,Switzerland,legislative,1878,1878,1878,1878,Radical Left,,135,42.22,free,/elections/ch/1878
+ch,Switzerland,legislative,1881,1881,1881,1881,Radical Left,,145,51.72,free,/elections/ch/1881
+ch,Switzerland,legislative,1884,1884,1884,1884,Radical Left,,145,51.03,free,/elections/ch/1884
+ch,Switzerland,legislative,1887,1887,1887,1887,Radical Left,,145,50.34,free,/elections/ch/1887
+ch,Switzerland,legislative,1890,1890,1890,1890,Radical Left,,147,50.34,free,/elections/ch/1890
+ch,Switzerland,legislative,1893,1893,1893,1893,Radical Left,,147,50.34,free,/elections/ch/1893
+ch,Switzerland,legislative,1896,1896,1896,1896,Free Democratic Party,,147,58.50,free,/elections/ch/1896
+ch,Switzerland,legislative,1899,1899,1899,1899,Free Democratic Party,,147,57.14,free,/elections/ch/1899
+ch,Switzerland,legislative,1902,1902,1902,1902,Free Democratic Party,,167,59.88,free,/elections/ch/1902
+ch,Switzerland,legislative,1905,1905,1905,1905,Free Democratic Party,,167,62.28,free,/elections/ch/1905
+ch,Switzerland,legislative,1908,1908,1908,1908,Free Democratic Party,,167,62.87,free,/elections/ch/1908
+ch,Switzerland,legislative,1911,1911,1911,1911,Free Democratic Party,,189,60.85,free,/elections/ch/1911
+ch,Switzerland,legislative,1914,1914,1914,1914,Free Democratic Party,,188,59.57,free,/elections/ch/1914
+ch,Switzerland,legislative,1917,1917,28 October 1917,1917,Free Democratic Party,,188,54.79,free,/elections/ch/1917
+ch,Switzerland,legislative,1919,1919,26 October 1919,1919,Free Democratic Party,,189,31.75,free,/elections/ch/1919
+ch,Switzerland,legislative,1922,1922,1922,1922,Free Democratic Party,,198,30.30,free,/elections/ch/1922
+ch,Switzerland,legislative,1925,1925,1925,1925,Free Democratic Party,,198,30.30,free,/elections/ch/1925
+ch,Switzerland,legislative,1928,1928,28 October 1928,1928,Free Democratic Party,,198,29.29,free,/elections/ch/1928
+ch,Switzerland,legislative,1931,1931,1931,1931,Free Democratic Party,,187,27.81,free,/elections/ch/1931
+ch,Switzerland,legislative,1935,1935,1935,1935,Social Democratic Party,,186,26.88,free,/elections/ch/1935
+ch,Switzerland,legislative,1939,1939,29 October 1939,1939,Free Democratic Party,,187,26.20,free,/elections/ch/1939
+ch,Switzerland,legislative,1943,1943,1943,1943,Social Democratic Party,,194,28.87,free,/elections/ch/1943
+ch,Switzerland,legislative,1947,1947,1947,1947,Free Democratic Party,,194,26.80,free,/elections/ch/1947
+ch,Switzerland,legislative,1951,1951,1951,1951,Free Democratic Party,,196,26.02,free,/elections/ch/1951
+ch,Switzerland,legislative,1955,1955,1955,1955,Social Democratic Party,,196,27.04,free,/elections/ch/1955
+ch,Switzerland,legislative,1959,1959,1959,1959,Social Democratic Party,,196,26.02,free,/elections/ch/1959
+ch,Switzerland,legislative,1963,1963,1963,1963,Social Democratic Party,,200,26.50,free,/elections/ch/1963
+ch,Switzerland,legislative,1967,1967,1967,1967,Social Democratic Party,,200,25.00,free,/elections/ch/1967
+ch,Switzerland,legislative,1971,1971,31 October 1971,1971,Free Democratic Party,,200,24.50,free,/elections/ch/1971
+ch,Switzerland,legislative,1975,1975,1975,1975,Social Democratic Party,,200,27.50,free,/elections/ch/1975
+ch,Switzerland,legislative,1979,1979,21 October 1979,1979,Social Democratic Party,48.05,200,25.50,free,/elections/ch/1979
+ch,Switzerland,legislative,1983,1983,23 October 1983,1983,Free Democratic Party,48.9,200,27.00,free,/elections/ch/1983
+ch,Switzerland,legislative,1987,1987,18 October 1987,1987,Free Democratic Party,46.5,200,25.50,free,/elections/ch/1987
+ch,Switzerland,legislative,1991,1991,20 October 1991,1991,Free Democratic Party,46.0,200,22.00,free,/elections/ch/1991
+ch,Switzerland,legislative,1995,1995,22 October 1995,1995,Social Democratic Party,42.22,200,27.00,free,/elections/ch/1995
+ch,Switzerland,legislative,1999,1999,24 October 1999,1999,Social Democratic Party,43.3,200,25.50,free,/elections/ch/1999
+ch,Switzerland,legislative,2003,2003,19 October 2003,2003,Swiss People's Party,45.23,200,27.50,free,/elections/ch/2003
+ch,Switzerland,legislative,2007,2007,21 October 2007,2007,Swiss People's Party,48.3,200,31.00,free,/elections/ch/2007
+ch,Switzerland,legislative,2011,2011,23 October 2011,2011,Swiss People's Party,48.5,200,27.00,free,/elections/ch/2011
+ch,Switzerland,legislative,2015,2015,18 October 2015,2015,Swiss People's Party,47.62,200,32.50,free,/elections/ch/2015
+ch,Switzerland,legislative,2019,2019,20 October 2019,2019,Swiss People's Party,45.11,200,26.50,free,/elections/ch/2019
+ch,Switzerland,legislative,2023,2023,22 October 2023,2023,Swiss People's Party,46.6,200,31.00,free,/elections/ch/2023
+cn,China,legislative,1949,1949,convened 21 September 1949,1st CPPCC,,,662,,unfree,/elections/cn/1949
+cn,China,legislative,1954,1954,convened 15 September 1954,1st NPC,Chinese Communist Party,,1226,85.48,unfree,/elections/cn/1954
+cn,China,legislative,1959,1959,convened 18 April 1959,2nd NPC,Chinese Communist Party,,1235,84.78,unfree,/elections/cn/1959
+cn,China,legislative,1964,1964,convened 21 December 1964,3rd NPC,Chinese Communist Party,,3040,87.76,unfree,/elections/cn/1964
+cn,China,legislative,1975,1975,convened 13 January 1975,4th NPC,Chinese Communist Party,,2864,,unfree,/elections/cn/1975
+cn,China,legislative,1978,1978,convened 26 February 1978,5th NPC,Chinese Communist Party,,3497,,unfree,/elections/cn/1978
+cn,China,legislative,1983,1983,convened 6 June 1983,6th NPC,Chinese Communist Party,,2884,64.53,unfree,/elections/cn/1983
+cn,China,legislative,1988,1988,convened 25 March 1988,7th NPC,Chinese Communist Party,,2892,,unfree,/elections/cn/1988
+cn,China,legislative,1993,1993,convened 15 March 1993,8th NPC,Chinese Communist Party,,2977,68.42,unfree,/elections/cn/1993
+cn,China,legislative,1998,1998,convened 5 March 1998,9th NPC,Chinese Communist Party,,2979,71.50,unfree,/elections/cn/1998
+cn,China,legislative,2003,2003,convened 5 March 2003,10th NPC,Chinese Communist Party,,2985,72.96,unfree,/elections/cn/2003
+cn,China,legislative,2008,2008,convened 5 March 2008,11th NPC,Chinese Communist Party,,2987,70.27,unfree,/elections/cn/2008
+cn,China,legislative,2013,2013,convened 5 March 2013,12th NPC,Chinese Communist Party,,2987,72.21,unfree,/elections/cn/2013
+cn,China,legislative,2018,2018,convened 5 March 2018,13th NPC,Chinese Communist Party,,2980,71.11,unfree,/elections/cn/2018
+cn,China,legislative,2023,2023,delegates chosen October 2022 to February 2023; convened 5 March 2023,14th NPC,Chinese Communist Party,,2977,,unfree,/elections/cn/2023
+de,Germany,legislative,1848,1848,1 May 1848,1848,,75.0,649,,free,/elections/de/1848
+de,Germany,legislative,1867-feb,1867,12 February 1867,February 1867,National Liberal Party,65.0,297,26.26,free,/elections/de/1867-feb
+de,Germany,legislative,1867-aug,1867,31 August 1867,August 1867,NlP,,297,26.94,free,/elections/de/1867-aug
+de,Germany,legislative,1868,1868,February–March 1868,1868,National Liberal Party,,85,9.41,free,/elections/de/1868
+de,Germany,legislative,1871,1871,3 March 1871,1871,NlP,51.01,382,30.63,free,/elections/de/1871
+de,Germany,legislative,1874,1874,10 January 1874,1874,NlP,61.24,397,37.03,free,/elections/de/1874
+de,Germany,legislative,1877,1877,10 January 1877,1877,NlP,60.64,397,31.99,free,/elections/de/1877
+de,Germany,legislative,1878,1878,30 July 1878,1878,NlP,63.33,397,24.43,free,/elections/de/1878
+de,Germany,legislative,1881,1881,27 October 1881,1881,Centre,56.3,397,25.19,free,/elections/de/1881
+de,Germany,legislative,1884,1884,28 October 1884,1884,Centre,60.55,397,24.94,free,/elections/de/1884
+de,Germany,legislative,1887,1887,21 February 1887,1887,NLP,77.49,397,24.69,free,/elections/de/1887
+de,Germany,legislative,1890,1890,20 February 1890,1890,Centre,71.58,397,26.95,free,/elections/de/1890
+de,Germany,legislative,1893,1893,15 June 1893,1893,Centre,72.47,397,24.18,free,/elections/de/1893
+de,Germany,legislative,1898,1898,16 June 1898,1898,Centre,68.06,397,25.69,free,/elections/de/1898
+de,Germany,legislative,1903,1903,16 June 1903,1903,Centre,76.08,397,25.19,free,/elections/de/1903
+de,Germany,legislative,1907,1907,25 January 1907,1907,Centre,84.65,397,25.44,free,/elections/de/1907
+de,Germany,legislative,1912,1912,12 January 1912,1912,SPD,84.89,397,27.71,free,/elections/de/1912
+de,Germany,legislative,1919,1919,19 January 1919,1919,SPD,83.0,423,39.01,free,/elections/de/1919
+de,Germany,legislative,1920,1920,6 June 1920,1920,SPD,79.2,459,22.44,free,/elections/de/1920
+de,Germany,legislative,1924-may,1924,4 May 1924,May 1924,SPD,77.4,472,21.19,free,/elections/de/1924-may
+de,Germany,legislative,1924-dec,1924,7 December 1924,December 1924,SPD,78.8,493,26.57,free,/elections/de/1924-dec
+de,Germany,legislative,1928,1928,20 May 1928,1928,SPD,75.6,491,31.16,free,/elections/de/1928
+de,Germany,legislative,1930,1930,14 September 1930,1930,SPD,82.0,577,24.78,free,/elections/de/1930
+de,Germany,legislative,1932-jul,1932,31 July 1932,July 1932,NSDAP,84.1,608,37.83,free,/elections/de/1932-jul
+de,Germany,legislative,1932-nov,1932,6 November 1932,November 1932,NSDAP,80.6,584,33.56,free,/elections/de/1932-nov
+de,Germany,legislative,1933-mar,1933,5 March 1933,March 1933,NSDAP,88.7,647,44.51,unfree,/elections/de/1933-mar
+de,Germany,legislative,1933-nov,1933,12 November 1933,November 1933,Nazi Party and guests,95.3,661,100.00,unfree,/elections/de/1933-nov
+de,Germany,legislative,1936,1936,29 March 1936,1936,Nazi Party and guests,99.0,741,100.00,unfree,/elections/de/1936
+de,Germany,legislative,1938,1938,10 April 1938,1938,Nazi Party and guests,99.6,814,100.00,unfree,/elections/de/1938
+de,Germany,legislative,1949,1949,14 August 1949,1949,CDU/CSU,78.5,402,34.58,free,/elections/de/1949
+de,Germany,legislative,1953,1953,6 September 1953,1953,CDU/CSU,86.0,487,49.90,free,/elections/de/1953
+de,Germany,legislative,1957,1957,15 September 1957,1957,CDU/CSU,87.8,497,54.33,free,/elections/de/1957
+de,Germany,legislative,1961,1961,17 September 1961,1961,CDU/CSU,87.7,499,48.50,free,/elections/de/1961
+de,Germany,legislative,1965,1965,19 September 1965,1965,CDU/CSU,86.8,496,49.40,free,/elections/de/1965
+de,Germany,legislative,1969,1969,28 September 1969,1969,CDU/CSU,86.7,496,48.79,free,/elections/de/1969
+de,Germany,legislative,1972,1972,19 November 1972,1972,SPD,91.1,496,46.37,free,/elections/de/1972
+de,Germany,legislative,1976,1976,3 October 1976,1976,CDU/CSU,90.7,496,48.99,free,/elections/de/1976
+de,Germany,legislative,1980,1980,5 October 1980,1980,CDU/CSU,88.6,497,45.47,free,/elections/de/1980
+de,Germany,legislative,1983,1983,6 March 1983,1983,CDU/CSU,89.1,498,49.00,free,/elections/de/1983
+de,Germany,legislative,1987,1987,25 January 1987,1987,CDU/CSU,84.3,497,44.87,free,/elections/de/1987
+de,Germany,legislative,1990,1990,2 December 1990,1990,CDU/CSU,77.8,662,48.19,free,/elections/de/1990
+de,Germany,legislative,1994,1994,16 October 1994,1994,CDU/CSU,79.0,672,43.75,free,/elections/de/1994
+de,Germany,legislative,1998,1998,27 September 1998,1998,SPD,82.2,669,44.54,free,/elections/de/1998
+de,Germany,legislative,2002,2002,22 September 2002,2002,SPD,79.1,603,41.63,free,/elections/de/2002
+de,Germany,legislative,2005,2005,18 September 2005,2005,CDU/CSU,77.7,614,36.81,free,/elections/de/2005
+de,Germany,legislative,2009,2009,27 September 2009,2009,CDU/CSU,70.8,622,38.42,free,/elections/de/2009
+de,Germany,legislative,2013,2013,22 September 2013,2013,CDU/CSU,71.5,631,49.29,free,/elections/de/2013
+de,Germany,legislative,2017,2017,24 September 2017,2017,CDU/CSU,76.2,709,34.70,free,/elections/de/2017
+de,Germany,legislative,2021,2021,26 September 2021,2021,SPD,76.4,735,28.03,free,/elections/de/2021
+de,Germany,legislative,2025,2025,23 February 2025,2025,CDU/CSU,82.5,630,33.02,free,/elections/de/2025
+de,Germany,presidential,pres-1954,1954,17 July 1954,1954,Theodor Heuss,,,85.60,free,/elections/de/pres-1954
+de,Germany,presidential,pres-1959,1959,1 July 1959,1959,Heinrich Lübke,,,50.70,free,/elections/de/pres-1959
+de,Germany,presidential,pres-1964,1964,1 July 1964,1964,Heinrich Lübke,,,68.10,free,/elections/de/pres-1964
+de,Germany,presidential,pres-1969,1969,5 March 1969,1969,Gustav Heinemann,,,49.40,free,/elections/de/pres-1969
+de,Germany,presidential,pres-1974,1974,15 May 1974,1974,Walter Scheel,,,51.20,free,/elections/de/pres-1974
+de,Germany,presidential,pres-1979,1979,23 May 1979,1979,Karl Carstens,,,51.00,free,/elections/de/pres-1979
+de,Germany,presidential,pres-1984,1984,23 May 1984,1984,Richard von Weizsäcker,,,80.00,free,/elections/de/pres-1984
+de,Germany,presidential,pres-1989,1989,23 May 1989,1989,Richard von Weizsäcker,,,84.90,free,/elections/de/pres-1989
+de,Germany,presidential,pres-1994,1994,23 May 1994,1994,Roman Herzog,,,52.60,free,/elections/de/pres-1994
+de,Germany,presidential,pres-1999,1999,23 May 1999,1999,Johannes Rau,,,51.60,free,/elections/de/pres-1999
+de,Germany,presidential,pres-2004,2004,23 May 2004,2004,Horst Köhler,,,,partial,/elections/de/pres-2004
+de,Germany,presidential,pres-2009,2009,23 May 2009,2009,Horst Köhler,,,,partial,/elections/de/pres-2009
+de,Germany,presidential,pres-2010,2010,30 June 2010,2010,Christian Wulff,,,50.20,free,/elections/de/pres-2010
+de,Germany,presidential,pres-2012,2012,18 March 2012,2012,Joachim Gauck,,,79.92,free,/elections/de/pres-2012
+de,Germany,presidential,pres-2017,2017,12 February 2017,2017,Frank-Walter Steinmeier,,,73.89,free,/elections/de/pres-2017
+de,Germany,presidential,pres-2022,2022,13 February 2022,2022,Frank-Walter Steinmeier,,,78.04,free,/elections/de/pres-2022
+dk,Denmark,legislative,1849,1849,1849,1849,Society of the Friends of Peasants,,,,free,/elections/dk/1849
+dk,Denmark,legislative,1852,1852,1852,1852,,,,,free,/elections/dk/1852
+dk,Denmark,legislative,1853-feb,1853,26 February 1853,February 1853,,,,,free,/elections/dk/1853-feb
+dk,Denmark,legislative,1853-may,1853,27 May 1853,May 1853,,,,,free,/elections/dk/1853-may
+dk,Denmark,legislative,1854,1854,1854,1854,,,,,free,/elections/dk/1854
+dk,Denmark,legislative,1855,1855,1855,1855,,,,,free,/elections/dk/1855
+dk,Denmark,legislative,1858,1858,1858,1858,,,,,free,/elections/dk/1858
+dk,Denmark,legislative,1861,1861,1861,1861,,,,,free,/elections/dk/1861
+dk,Denmark,legislative,1864,1864,1864,1864,,,,,free,/elections/dk/1864
+dk,Denmark,legislative,1866-jun,1866,1866,June 1866,,,,,free,/elections/dk/1866-jun
+dk,Denmark,legislative,1866-oct,1866,12 October 1866,October 1866,,,,,free,/elections/dk/1866-oct
+dk,Denmark,legislative,1869,1869,1869,1869,,,,,free,/elections/dk/1869
+dk,Denmark,legislative,1872,1872,1872,1872,,,,,free,/elections/dk/1872
+dk,Denmark,legislative,1873,1873,1873,1873,,,,,free,/elections/dk/1873
+dk,Denmark,legislative,1876,1876,1876,1876,Liberals,,,,free,/elections/dk/1876
+dk,Denmark,legislative,1879,1879,3 January 1879,1879,,47.2,,,free,/elections/dk/1879
+dk,Denmark,legislative,1881-may,1881,24 May 1881,May 1881,,47.8,,,free,/elections/dk/1881-may
+dk,Denmark,legislative,1881-jul,1881,May 1881,July 1881,,55.6,,,free,/elections/dk/1881-jul
+dk,Denmark,legislative,1884,1884,1884,1884,Venstre Reform Party,,102,79.41,free,/elections/dk/1884
+dk,Denmark,legislative,1887,1887,28 January 1887,1887,Venstre Reform Party,,102,72.55,free,/elections/dk/1887
+dk,Denmark,legislative,1890,1890,21 January 1890,1890,Venstre Reform Party,,102,73.53,free,/elections/dk/1890
+dk,Denmark,legislative,1892,1892,20 April 1892,1892,Moderate Venstre,,102,38.24,free,/elections/dk/1892
+dk,Denmark,legislative,1895,1895,9 April 1895,1895,Venstre Reform Party,,114,46.49,free,/elections/dk/1895
+dk,Denmark,legislative,1898,1898,5 April 1898,1898,Venstre Reform Party,,114,55.26,free,/elections/dk/1898
+dk,Denmark,legislative,1901,1901,3 April 1901,1901,Venstre Reform Party,,114,66.67,free,/elections/dk/1901
+dk,Denmark,legislative,1903,1903,16 June 1903,1903,Venstre Reform Party,,114,64.04,free,/elections/dk/1903
+dk,Denmark,legislative,1906,1906,29 May 1906,1906,Venstre Reform Party,,114,49.12,free,/elections/dk/1906
+dk,Denmark,legislative,1909,1909,25 May 1909,1909,Venstre Reform Party,,114,32.46,free,/elections/dk/1909
+dk,Denmark,legislative,1910,1910,20 May 1910,1910,Venstre,,114,50.00,free,/elections/dk/1910
+dk,Denmark,legislative,1913,1913,20 May 1913,1913,Venstre,,114,38.60,free,/elections/dk/1913
+dk,Denmark,legislative,1915,1915,7 May 1915,1915,,,114,,free,/elections/dk/1915
+dk,Denmark,legislative,1918,1918,22 April 1918,1918,Venstre,,140,32.14,free,/elections/dk/1918
+dk,Denmark,legislative,1920-apr,1920,26 April 1920,April 1920,Venstre,,140,34.29,free,/elections/dk/1920-apr
+dk,Denmark,legislative,1920-jul,1920,April 1920,July 1920,Venstre,,140,36.43,free,/elections/dk/1920-jul
+dk,Denmark,legislative,1920-sep,1920,July 1920,September 1920,Venstre,,149,34.23,free,/elections/dk/1920-sep
+dk,Denmark,legislative,1924,1924,11 April 1924,1924,Social Democratic Party,,149,36.91,free,/elections/dk/1924
+dk,Denmark,legislative,1926,1926,2 December 1926,1926,Social Democratic Party,,149,35.57,free,/elections/dk/1926
+dk,Denmark,legislative,1929,1929,24 April 1929,1929,Social Democratic Party,,149,40.94,free,/elections/dk/1929
+dk,Denmark,legislative,1932,1932,16 November 1932,1932,Social Democratic Party,,149,41.61,free,/elections/dk/1932
+dk,Denmark,legislative,1935,1935,22 October 1935,1935,Social Democratic Party,,149,45.64,free,/elections/dk/1935
+dk,Denmark,legislative,1939,1939,3 April 1939,1939,Social Democratic Party,,149,42.95,free,/elections/dk/1939
+dk,Denmark,legislative,1943,1943,23 March 1943,1943,Social Democrats,,149,44.30,partial,/elections/dk/1943
+dk,Denmark,legislative,1945,1945,30 October 1945,1945,Social Democrats,,149,32.21,free,/elections/dk/1945
+dk,Denmark,legislative,1947,1947,28 October 1947,1947,Social Democrats,,150,38.00,free,/elections/dk/1947
+dk,Denmark,legislative,1950,1950,5 September 1950,1950,Social Democrats,81.87,151,39.07,free,/elections/dk/1950
+dk,Denmark,legislative,1953-apr,1953,21 April 1953,April 1953,Social Democrats,80.8,151,40.40,free,/elections/dk/1953-apr
+dk,Denmark,legislative,1953-sep,1953,April 1953,September 1953,Social Democrats,80.58,179,41.34,free,/elections/dk/1953-sep
+dk,Denmark,legislative,1957,1957,14 May 1957,1957,Social Democrats,83.73,179,39.11,free,/elections/dk/1957
+dk,Denmark,legislative,1960,1960,15 November 1960,1960,Social Democrats,85.84,179,42.46,free,/elections/dk/1960
+dk,Denmark,legislative,1964,1964,22 September 1964,1964,Social Democrats,85.51,179,42.46,free,/elections/dk/1964
+dk,Denmark,legislative,1966,1966,22 November 1966,1966,Social Democrats,88.61,179,38.55,free,/elections/dk/1966
+dk,Denmark,legislative,1968,1968,23 January 1968,1968,Social Democrats,89.28,179,34.64,free,/elections/dk/1968
+dk,Denmark,legislative,1971,1971,21 September 1971,1971,Social Democrats,87.16,179,39.11,free,/elections/dk/1971
+dk,Denmark,legislative,1973,1973,4 December 1973,1973,Social Democrats,88.32,179,25.70,free,/elections/dk/1973
+dk,Denmark,legislative,1975,1975,9 January 1975,1975,Social Democrats,88.23,179,29.61,free,/elections/dk/1975
+dk,Denmark,legislative,1977,1977,15 February 1977,1977,Social Democrats,88.7,179,36.31,free,/elections/dk/1977
+dk,Denmark,legislative,1979,1979,23 October 1979,1979,Social Democrats,85.62,179,37.99,free,/elections/dk/1979
+dk,Denmark,legislative,1981,1981,8 December 1981,1981,Social Democrats,83.26,179,32.96,free,/elections/dk/1981
+dk,Denmark,legislative,1984,1984,10 January 1984,1984,Social Democrats,88.01,179,31.28,free,/elections/dk/1984
+dk,Denmark,legislative,1987,1987,8 September 1987,1987,Social Democrats,86.74,179,30.17,free,/elections/dk/1987
+dk,Denmark,legislative,1988,1988,10 May 1988,1988,Social Democrats,85.7,179,30.73,free,/elections/dk/1988
+dk,Denmark,legislative,1990,1990,12 December 1990,1990,Social Democrats,82.84,179,38.55,free,/elections/dk/1990
+dk,Denmark,legislative,1994,1994,21 September 1994,1994,Social Democrats,84.25,179,34.64,free,/elections/dk/1994
+dk,Denmark,legislative,1998,1998,11 March 1998,1998,Social Democrats,85.95,179,35.20,free,/elections/dk/1998
+dk,Denmark,legislative,2001,2001,20 November 2001,2001,Venstre,87.15,179,31.28,free,/elections/dk/2001
+dk,Denmark,legislative,2005,2005,8 February 2005,2005,Venstre,84.2,179,29.05,free,/elections/dk/2005
+dk,Denmark,legislative,2007,2007,13 November 2007,2007,Venstre,86.59,179,25.70,free,/elections/dk/2007
+dk,Denmark,legislative,2011,2011,15 September 2011,2011,Venstre,87.21,179,26.26,free,/elections/dk/2011
+dk,Denmark,legislative,2015,2015,18 June 2015,2015,Social Democrats,85.89,179,26.26,free,/elections/dk/2015
+dk,Denmark,legislative,2019,2019,5 June 2019,2019,Social Democrats,84.6,179,26.82,free,/elections/dk/2019
+dk,Denmark,legislative,2022,2022,1 November 2022,2022,Social Democrats,84.16,179,27.93,free,/elections/dk/2022
+dk,Denmark,legislative,2026,2026,24 March 2026,2026,Social Democrats,83.99,179,21.23,free,/elections/dk/2026
+eg,Egypt,presidential,pres-2005,2005,7 September 2005,2005,Hosni Mubarak,22.95,,88.57,partial,/elections/eg/pres-2005
+eg,Egypt,presidential,pres-2012,2012,2012,2012,Freedom and Justice,46.42,,51.73,free,/elections/eg/pres-2012
+eg,Egypt,presidential,pres-2014,2014,26–28 May 2014,2014,Abdel Fattah el-Sisi,47.5,,96.91,unfree,/elections/eg/pres-2014
+eg,Egypt,presidential,pres-2018,2018,26–28 March 2018,2018,Abdel Fattah el-Sisi,41.05,,97.08,unfree,/elections/eg/pres-2018
+eg,Egypt,presidential,pres-2023,2023,10–12 December 2023,2023,Abdel Fattah el-Sisi,66.88,,89.65,unfree,/elections/eg/pres-2023
+eg,Egypt,legislative,1923,1923,"February 4, 2026",1923,Wafd Party,96.86,211,84.83,partial,/elections/eg/1923
+eg,Egypt,legislative,1925,1925,23 March 1925,1925,Wafd Party,95.47,211,53.55,partial,/elections/eg/1925
+eg,Egypt,legislative,1926,1926,22 May 1926,1926,Wafd Party,63.35,211,81.04,partial,/elections/eg/1926
+eg,Egypt,legislative,1929,1929,21 December 1929,1929,Wafd Party,64.01,232,93.10,partial,/elections/eg/1929
+eg,Egypt,legislative,1931,1931,1 June 1931,1931,People's Party,95.44,150,56.00,partial,/elections/eg/1931
+eg,Egypt,legislative,1936,1936,"April 20, 2026",1936,Wafd Party,59.48,232,81.90,partial,/elections/eg/1936
+eg,Egypt,legislative,1938,1938,6 April 1938,1938,Qawmiyyun,59.26,264,39.77,partial,/elections/eg/1938
+eg,Egypt,legislative,1942,1942,24 March 1942,1942,Wafd Party,56.9,264,87.88,partial,/elections/eg/1942
+eg,Egypt,legislative,1945,1945,9 January 1945,1945,Saadist Institutional Party,54.74,264,47.73,partial,/elections/eg/1945
+eg,Egypt,legislative,1950,1950,16 January 1950,1950,Wafd Party,60.49,319,70.85,partial,/elections/eg/1950
+eg,Egypt,legislative,1957,1957,6 June 1957,1957,NU,,350,100.00,unfree,/elections/eg/1957
+eg,Egypt,legislative,1964,1964,10 March 1964,1964,Arab Socialist Union,,360,97.22,unfree,/elections/eg/1964
+eg,Egypt,legislative,1969,1969,8 January 1969,1969,Arab Socialist Union,88.22,350,100.00,unfree,/elections/eg/1969
+eg,Egypt,legislative,1971,1971,27 October 1971,1971,Arab Socialist Union,,360,97.22,partial,/elections/eg/1971
+eg,Egypt,legislative,1976,1976,"August 24, 2026",1976,Arab Socialist Organisation,39.77,,295.00,partial,/elections/eg/1976
+eg,Egypt,legislative,1979,1979,"April 9, 2025",1979,National Democratic Party,,392,88.52,partial,/elections/eg/1979
+eg,Egypt,legislative,1984,1984,27 May 1984,1984,National Democratic Party,43.14,458,85.15,partial,/elections/eg/1984
+eg,Egypt,legislative,1987,1987,6 and 13 April 1987,1987,National Democratic Party,50.46,,69.62,partial,/elections/eg/1987
+eg,Egypt,legislative,1990,1990,"June 27, 2026",1990,National Democratic Party,44.43,454,348.00,partial,/elections/eg/1990
+eg,Egypt,legislative,1995,1995,"June 27, 2026",1995,National Democratic Party,47.99,454,318.00,partial,/elections/eg/1995
+eg,Egypt,legislative,2000,2000,18 October–8 November 2000,2000,National Democratic Party,,454,77.75,partial,/elections/eg/2000
+eg,Egypt,legislative,2005,2005,9 November – 7 December 2005,2005,National Democratic Party,28.13,,324.00,partial,/elections/eg/2005
+eg,Egypt,legislative,2010,2010,29 November 2010,2010,National Democratic Party,,518,81.85,partial,/elections/eg/2010
+eg,Egypt,legislative,2011,2011,28 November 2011 – 11 January 2012,2011,Freedom and Justice1,,,,partial,/elections/eg/2011
+eg,Egypt,legislative,2015,2015,17 October – 2 December 2015,2015,Independents,28.27,596,42.11,partial,/elections/eg/2015
+eg,Egypt,legislative,2020,2020,26 April 2019,2020,Nation's Future,,596,53.02,partial,/elections/eg/2020
+eg,Egypt,legislative,2025,2025,25 November 2025,2025,Homeland Defenders Party,,596,0.84,partial,/elections/eg/2025
+es,Spain,legislative,1867,1867,10–13 March 1867,1867,,51.8,352,,free,/elections/es/1867
+es,Spain,legislative,1869,1869,30 May – 1 June 1869,1869,Monarchist–Democratic,77.5,381,67.98,free,/elections/es/1869
+es,Spain,legislative,1871,1871,20–23 June 1871,1871,Monarchist–Democratic,,424,55.42,free,/elections/es/1871
+es,Spain,legislative,1872-apr,1872,2–5 April 1872,April 1872,Conservative–Constitutional,,424,55.66,free,/elections/es/1872-apr
+es,Spain,legislative,1872-aug,1872,1872,August 1872,Radical,,424,64.62,free,/elections/es/1872-aug
+es,Spain,legislative,1873,1873,1873,1873,Republican,,424,80.90,free,/elections/es/1873
+es,Spain,legislative,1876,1876,15–18 February 1876,1876,Conservative,,424,74.76,partial,/elections/es/1876
+es,Spain,legislative,1879,1879,20 April 1879,1879,Conservative,65.3,431,66.82,partial,/elections/es/1879
+es,Spain,legislative,1881,1881,21 August 1881,1881,Fusionist,71.4,,,partial,/elections/es/1881
+es,Spain,legislative,1884,1884,27 April 1884,1884,Conservative,72.7,,,partial,/elections/es/1884
+es,Spain,legislative,1886,1886,4 April 1886,1886,Liberal,58.9,,,partial,/elections/es/1886
+es,Spain,legislative,1891,1891,1 February 1891,1891,Conservative,,446,63.68,partial,/elections/es/1891
+es,Spain,legislative,1893,1893,5 March 1893,1893,Liberal,68.4,447,66.67,partial,/elections/es/1893
+es,Spain,legislative,1896,1896,12 April 1896,1896,Conservative,,447,68.68,partial,/elections/es/1896
+es,Spain,legislative,1898,1898,27 March 1898,1898,Liberal,,447,72.48,partial,/elections/es/1898
+es,Spain,legislative,1899,1899,16 April 1899,1899,Conservative (Silvelist),,402,59.70,partial,/elections/es/1899
+es,Spain,legislative,1901,1901,19 May 1901,1901,Liberal,,402,61.19,partial,/elections/es/1901
+es,Spain,legislative,1903,1903,26 April 1903,1903,Conservative,,403,56.58,partial,/elections/es/1903
+es,Spain,legislative,1905,1905,10 September 1905,1905,Liberal–Democratic,,404,55.94,partial,/elections/es/1905
+es,Spain,legislative,1907,1907,21 April 1907,1907,Conservative,,404,63.37,partial,/elections/es/1907
+es,Spain,legislative,1910,1910,8 May 1910,1910,Democratic–Liberal,,404,55.20,partial,/elections/es/1910
+es,Spain,legislative,1914,1914,8 March 1914,1914,Conservative,,408,55.15,partial,/elections/es/1914
+es,Spain,legislative,1916,1916,9 April 1916,1916,Liberal–Democratic,,409,55.75,partial,/elections/es/1916
+es,Spain,legislative,1918,1918,24 February 1918,1918,Conservative,,409,25.43,partial,/elections/es/1918
+es,Spain,legislative,1919,1919,1 June 1919,1919,Maurist–Ciervist,64.2,409,25.67,partial,/elections/es/1919
+es,Spain,legislative,1920,1920,19 December 1920,1920,Conservative,,409,44.50,partial,/elections/es/1920
+es,Spain,legislative,1923,1923,29 April 1923,1923,Liberal Union,65.7,409,54.52,partial,/elections/es/1923
+es,Spain,legislative,1931,1931,28 June 1931,1931,PSOE,70.13,470,24.47,free,/elections/es/1931
+es,Spain,legislative,1933,1933,19 November 1933,1933,CEDA,67.31,473,24.31,free,/elections/es/1933
+es,Spain,legislative,1936,1936,16 February 1936,1936,PSOE,72.95,473,20.93,free,/elections/es/1936
+es,Spain,legislative,1967,1967,10 October 1967,1967,National Movement,64.3,102,552.94,partial,/elections/es/1967
+es,Spain,legislative,1971,1971,29 September 1971,1971,National Movement,42.28,104,539.42,partial,/elections/es/1971
+es,Spain,legislative,1977,1977,15 June 1977,1977,UCD,78.8,350,47.14,free,/elections/es/1977
+es,Spain,legislative,1979,1979,1 March 1979,1979,UCD,68.0,350,48.00,free,/elections/es/1979
+es,Spain,legislative,1982,1982,28 October 1982,1982,PSOE,80.0,350,57.71,free,/elections/es/1982
+es,Spain,legislative,1986,1986,22 June 1986,1986,PSOE,70.5,350,52.57,free,/elections/es/1986
+es,Spain,legislative,1989,1989,29 October 1989,1989,PSOE,69.7,350,50.00,free,/elections/es/1989
+es,Spain,legislative,1993,1993,6 June 1993,1993,PSOE,76.4,350,45.43,free,/elections/es/1993
+es,Spain,legislative,1996,1996,3 March 1996,1996,PP,77.4,350,44.57,free,/elections/es/1996
+es,Spain,legislative,2000,2000,12 March 2000,2000,PP,68.7,350,52.29,free,/elections/es/2000
+es,Spain,legislative,2004,2004,14 March 2004,2004,PSOE,75.7,350,46.86,free,/elections/es/2004
+es,Spain,legislative,2008,2008,9 March 2008,2008,PSOE,73.8,350,48.29,free,/elections/es/2008
+es,Spain,legislative,2011,2011,20 November 2011,2011,PP,68.9,350,53.14,free,/elections/es/2011
+es,Spain,legislative,2015,2015,20 December 2015,2015,PP,69.7,350,35.14,free,/elections/es/2015
+es,Spain,legislative,2016,2016,26 June 2016,2016,PP,66.5,350,39.14,free,/elections/es/2016
+es,Spain,legislative,2019-apr,2019,28 April 2019,April 2019,PSOE,71.8,350,35.14,free,/elections/es/2019-apr
+es,Spain,legislative,2019-nov,2019,10 November 2019,November 2019,PSOE,66.2,350,34.29,free,/elections/es/2019-nov
+es,Spain,legislative,2023,2023,23 July 2023,2023,PP,66.6,350,39.14,free,/elections/es/2023
+eu,European Union,general,1979,1979,7–10 June 1979,1979,,,,,free,/elections/eu/1979
+eu,European Union,general,1984,1984,14–17 June 1984,1984,,,,,free,/elections/eu/1984
+eu,European Union,general,1989,1989,15–18 June 1989,1989,,,,,free,/elections/eu/1989
+eu,European Union,general,1994,1994,9–12 June 1994,1994,,,,,free,/elections/eu/1994
+eu,European Union,general,1999,1999,10–13 June 1999,1999,,,,,free,/elections/eu/1999
+eu,European Union,general,2004,2004,10–13 June 2004,2004,,,,,free,/elections/eu/2004
+eu,European Union,general,2009,2009,4–7 June 2009,2009,,,,,free,/elections/eu/2009
+eu,European Union,general,2014,2014,22–25 May 2014,2014,,,,,free,/elections/eu/2014
+eu,European Union,general,2019,2019,23–26 May 2019,2019,,,,,free,/elections/eu/2019
+eu,European Union,general,2024,2024,6–9 June 2024,2024,,,,,free,/elections/eu/2024
+fr,France,legislative,1791,1791,29 August–5 September 1791,1791,,,745,,free,/elections/fr/1791
+fr,France,legislative,1792,1792,September 1792 (electoral colleges),1792,,,749,,free,/elections/fr/1792
+fr,France,legislative,1795,1795,12–21 October 1795,1795,Thermidorians,,,,free,/elections/fr/1795
+fr,France,legislative,1797,1797,21 March – 2 April 1797,1797,Constitutional monarchists,,,,free,/elections/fr/1797
+fr,France,legislative,1798,1798,9–18 April 1798,1798,,,298,,free,/elections/fr/1798
+fr,France,legislative,1799,1799,9–16 April 1799,1799,,,,,free,/elections/fr/1799
+fr,France,legislative,1815-may,1815,8–22 May 1815,May 1815,Jacobins,,629,4.77,free,/elections/fr/1815-may
+fr,France,legislative,1815,1815,May 1815,1815,Ultra-royalist,,400,87.50,free,/elections/fr/1815
+fr,France,legislative,1816,1816,25 September and 4 October 1816,1816,Doctrinaires,,258,52.71,free,/elections/fr/1816
+fr,France,legislative,1817,1817,20 September 1817,1817,,,,,free,/elections/fr/1817
+fr,France,legislative,1818,1818,17 June – 19 July 1818,1818,Liberals,,,,free,/elections/fr/1818
+fr,France,legislative,1819,1819,11 September 1819,1819,Liberal Party,,49,75.51,free,/elections/fr/1819
+fr,France,legislative,1820,1820,4 and 13 November 1820,1820,Rightists,,,,free,/elections/fr/1820
+fr,France,legislative,1824,1824,25 February 1824 and 6 March 1824,1824,Rightists,,428,96.03,free,/elections/fr/1824
+fr,France,legislative,1827,1827,17 and 24 November 1827,1827,Left-wing opposition,,430,46.28,free,/elections/fr/1827
+fr,France,legislative,1830,1830,and and 19 July 1830,1830,,,417,,free,/elections/fr/1830
+fr,France,legislative,1831,1831,5 July 1831,1831,Liberals,,,,free,/elections/fr/1831
+fr,France,legislative,1834,1834,21 June 1834,1834,,,,,free,/elections/fr/1834
+fr,France,legislative,1837,1837,4 November 1837,1837,Votes,,459,35.51,free,/elections/fr/1837
+fr,France,legislative,1839,1839,2 and 6 March 1839,1839,Opposition,,,,free,/elections/fr/1839
+fr,France,legislative,1842,1842,9 July 1842,1842,Resistance Party,,,,free,/elections/fr/1842
+fr,France,legislative,1846,1846,1 August 1846,1846,Resistance Party,,,,free,/elections/fr/1846
+fr,France,legislative,1848,1848,23 and 24 April 1848,1848,Moderate Republicans,,880,68.18,free,/elections/fr/1848
+fr,France,legislative,1849,1849,13 and 14 May 1849,1849,Party of Order,,705,63.83,free,/elections/fr/1849
+fr,France,legislative,1852,1852,29 February 1852 and 14 March 1852,1852,Bonapartists,61.3,,,free,/elections/fr/1852
+fr,France,legislative,1857,1857,28 February 1857 and 5 March 1857,1857,Bonapartists,,283,97.53,free,/elections/fr/1857
+fr,France,legislative,1863,1863,5–6 July 1863,1863,Bonapartists,,268,93.66,free,/elections/fr/1863
+fr,France,legislative,1869,1869,and and 7 June 1869,1869,Liberal Bonapartists,,161,74.53,free,/elections/fr/1869
+fr,France,legislative,1871,1871,8 February 1871,1871,Republicans,,758,32.85,free,/elections/fr/1871
+fr,France,legislative,1876,1876,20 February and 5 March 1876,1876,Republican Left,75.9,533,36.21,free,/elections/fr/1876
+fr,France,legislative,1877,1877,14–28 October 1877,1877,Republican Union,,521,60.08,free,/elections/fr/1877
+fr,France,legislative,1881,1881,21 August and 4 September 1881,1881,Republican Union,,545,37.43,free,/elections/fr/1881
+fr,France,legislative,1885,1885,4–18 October 1885,1885,Opportunist Republicans,,584,34.25,free,/elections/fr/1885
+fr,France,legislative,1889,1889,22 September and 6 October 1889,1889,Moderate Republicans,,576,37.50,free,/elections/fr/1889
+fr,France,legislative,1893,1893,20 August and 3 September 1893,1893,Moderate Republicans,,566,49.29,free,/elections/fr/1893
+fr,France,legislative,1898,1898,8 and 22 May 1898,1898,Progressives,75.2,585,43.42,free,/elections/fr/1898
+fr,France,legislative,1902,1902,27 April and 11 May 1902,1902,Left Bloc,,527,64.14,free,/elections/fr/1902
+fr,France,legislative,1906,1906,6 and 20 May 1906,1906,Left Bloc,,585,61.03,free,/elections/fr/1906
+fr,France,legislative,1910,1910,24 April 1910 and 8 May 1910,1910,Radical Socialists,77.41,587,25.21,free,/elections/fr/1910
+fr,France,legislative,1914,1914,26 April and 10 May 1914,1914,"Republican, Radical and Radical-Socialist Party",,592,23.65,free,/elections/fr/1914
+fr,France,legislative,1919,1919,16 and 30 November 1919,1919,Republican Union,72.08,613,32.79,free,/elections/fr/1919
+fr,France,legislative,1924,1924,11 and 25 May 1924,1924,Democratic and Republican Union,83.03,574,35.54,free,/elections/fr/1924
+fr,France,legislative,1928,1928,22 and 29 April 1928,1928,Democratic and Republican Union,83.79,604,30.13,free,/elections/fr/1928
+fr,France,legislative,1932,1932,1 and 8 May 1932,1932,PRRRS,81.6,607,52.72,free,/elections/fr/1932
+fr,France,legislative,1936,1936,26 April 1936 and 3 May 1936,1936,SFIO,84.45,612,24.35,free,/elections/fr/1936
+fr,France,legislative,1945,1945,21 October 1945,1945,French Communist Party,81.85,522,28.35,free,/elections/fr/1945
+fr,France,legislative,1951,1951,November 1946,1951,Rally of the French People,80.19,625,17.12,free,/elections/fr/1951
+fr,France,legislative,1956,1956,2 January 1956,1956,French Communist Party,81.98,544,27.02,free,/elections/fr/1956
+fr,France,legislative,1958,1958,23 and 30 November 1958,1958,UNR,77.1,576,32.81,free,/elections/fr/1958
+fr,France,legislative,1962,1962,18 November and 25 November 1962,1962,UNR,68.7,,31.94,free,/elections/fr/1962
+fr,France,legislative,1967,1967,5 and 12 March 1967,1967,UDR,80.9,487,49.28,free,/elections/fr/1967
+fr,France,legislative,1968,1968,23 June and 30 June 1968,1968,UDR,80.0,487,72.69,free,/elections/fr/1968
+fr,France,legislative,1973,1973,4 March and 11 March 1973,1973,UDR,81.2,491,55.40,free,/elections/fr/1973
+fr,France,legislative,1978,1978,12 and 19 March 1978,1978,RPR,82.8,491,30.55,free,/elections/fr/1978
+fr,France,legislative,1981,1981,14 June and 21 June 1981,1981,PS,70.3,491,54.79,free,/elections/fr/1981
+fr,France,legislative,1986,1986,16 March 1986,1986,UOR,78.12,573,48.34,free,/elections/fr/1986
+fr,France,legislative,1988,1988,5 and 12 June 1988,1988,PS,65.7,577,45.41,free,/elections/fr/1988
+fr,France,legislative,1993,1993,21 and 28 March 1993,1993,RPR,68.93,577,42.81,free,/elections/fr/1993
+fr,France,legislative,1997,1997,25 May and 1 June 1997,1997,PS,67.9,577,44.19,free,/elections/fr/1997
+fr,France,legislative,2002,2002,9 and 16 June 2002,2002,UMP,64.42,577,61.87,free,/elections/fr/2002
+fr,France,legislative,2007,2007,10 June and 17 June 2007,2007,UMP,60.4,577,54.25,free,/elections/fr/2007
+fr,France,legislative,2012,2012,10 and 17 June 2012,2012,PS,57.2,577,48.53,free,/elections/fr/2012
+fr,France,legislative,2017,2017,11 and 18 June 2017,2017,LREM,48.7,577,60.66,free,/elections/fr/2017
+fr,France,legislative,2022,2022,12 and 19 June 2022,2022,LREM,47.5,577,42.46,free,/elections/fr/2022
+fr,France,legislative,2024,2024,30 June 2024 and 7 July 2024,2024,NFP,66.71,577,31.20,free,/elections/fr/2024
+fr,France,presidential,pres-1958,1958,21 December 1958,1958,Charles de Gaulle,99.42,,78.51,free,/elections/fr/pres-1958
+fr,France,presidential,pres-1965,1965,5 and 19 December 1965,1965,Charles de Gaulle,84.75,,55.20,free,/elections/fr/pres-1965
+fr,France,presidential,pres-1969,1969,1 and 15 June 1969,1969,Georges Pompidou,77.59,,58.21,free,/elections/fr/pres-1969
+fr,France,presidential,pres-1974,1974,5 and 19 May 1974,1974,Valéry Giscard d'Estaing,84.23,,50.81,free,/elections/fr/pres-1974
+fr,France,presidential,pres-1981,1981,26 April 1981 and 10 May 1981,1981,François Mitterrand,81.09,,51.76,free,/elections/fr/pres-1981
+fr,France,presidential,pres-1988,1988,24 April 1988 and 8 May 1988,1988,François Mitterrand,81.38,,54.02,free,/elections/fr/pres-1988
+fr,France,presidential,pres-1995,1995,23 April 1995 and 7 May 1995,1995,Jacques Chirac,78.38,,52.64,free,/elections/fr/pres-1995
+fr,France,presidential,pres-2002,2002,21 April 2002 and 5 May 2002,2002,Jacques Chirac,71.6,,82.21,free,/elections/fr/pres-2002
+fr,France,presidential,pres-2007,2007,22 April 2007 and 6 May 2007,2007,Nicolas Sarkozy,83.77,,53.06,free,/elections/fr/pres-2007
+fr,France,presidential,pres-2012,2012,22 April 2012 and 6 May 2012,2012,François Hollande,79.48,,51.64,free,/elections/fr/pres-2012
+fr,France,presidential,pres-2017,2017,23 April 2017 and 7 May 2017,2017,Emmanuel Macron,77.77,,66.10,free,/elections/fr/pres-2017
+fr,France,presidential,pres-2022,2022,10 and 24 April 2022,2022,Emmanuel Macron,73.69,,58.55,free,/elections/fr/pres-2022
+gr,Greece,legislative,1862,1862,24–27 November 1862,1862,,,,,partial,/elections/gr/1862
+gr,Greece,legislative,1865,1865,14 May 1865,1865,Russian Party,,170,55.88,partial,/elections/gr/1865
+gr,Greece,legislative,1868,1868,21 March 1868,1868,Koumoundouros and Voulgaris supporters,,184,61.96,partial,/elections/gr/1868
+gr,Greece,legislative,1869,1869,16 May 1869,1869,English Party,,187,53.48,partial,/elections/gr/1869
+gr,Greece,legislative,1872,1872,25 February 1872,1872,Supporters of Alexandros Koumoundouros,,190,34.21,partial,/elections/gr/1872
+gr,Greece,legislative,1873,1873,27 January 1873,1873,United Opposition,,190,50.00,partial,/elections/gr/1873
+gr,Greece,legislative,1874,1874,"August 29, 2026",1874,United Opposition,,190,50.53,partial,/elections/gr/1874
+gr,Greece,legislative,1875,1875,18 July 1875,1875,Supporters of Alexandros Koumoundouros,,190,42.11,partial,/elections/gr/1875
+gr,Greece,legislative,1879,1879,23 September 1879,1879,Supporters of Koumoundouros and Deligiannis,,207,48.31,partial,/elections/gr/1879
+gr,Greece,legislative,1881,1881,20 December 1881,1881,Supporters of Charilaos Trikoupis,,245,51.02,partial,/elections/gr/1881
+gr,Greece,legislative,1885,1885,7 April 1885,1885,Supporters of Theodoros Deligiannis,,245,69.39,partial,/elections/gr/1885
+gr,Greece,legislative,1887,1887,4 January 1887,1887,Supporters of Charilaos Trikoupis,,150,60.00,partial,/elections/gr/1887
+gr,Greece,legislative,1890,1890,14 October 1890,1890,Supporters of Theodoros Deligiannis,,150,66.67,partial,/elections/gr/1890
+gr,Greece,legislative,1892,1892,3 May 1892,1892,Supporters of Charilaos Trikoupis,,207,77.29,partial,/elections/gr/1892
+gr,Greece,legislative,1895,1895,16 April 1895,1895,Supporters of Theodoros Deligiannis,,207,72.46,partial,/elections/gr/1895
+gr,Greece,legislative,1899,1899,7 February 1899,1899,Supporters of Georgios Theotokis,,235,46.81,partial,/elections/gr/1899
+gr,Greece,legislative,1902,1902,17 November 1902,1902,Supporters of Theodoros Deligiannis,,235,43.40,partial,/elections/gr/1902
+gr,Greece,legislative,1905,1905,20 February 1905,1905,Supporters of Theodoros Deligiannis,,235,61.28,partial,/elections/gr/1905
+gr,Greece,legislative,1906,1906,26 March 1906,1906,Supporters of Dimitrios Rallis,,177,26.55,partial,/elections/gr/1906
+gr,Greece,legislative,1910-august,1910,21 November 2017,August 1910,United Parties,,,,partial,/elections/gr/1910-august
+gr,Greece,legislative,1910-november,1910,"August 29, 2026",November 1910,Liberal Party,,362,84.81,partial,/elections/gr/1910-november
+gr,Greece,legislative,1912,1912,"August 29, 2026",1912,Liberal Party,,181,80.66,partial,/elections/gr/1912
+gr,Greece,legislative,1915-december,1915,"August 29, 2026",December 1915,Nationalists,,335,256.00,partial,/elections/gr/1915-december
+gr,Greece,legislative,1915-may,1915,"August 29, 2026",May 1915,Liberal Party,,316,187.00,partial,/elections/gr/1915-may
+gr,Greece,legislative,1920,1920,14 November 1920,1920,United Opposition,,369,68.02,partial,/elections/gr/1920
+gr,Greece,legislative,1923,1923,16 December 1923,1923,Liberal Party,,398,250.00,partial,/elections/gr/1923
+gr,Greece,legislative,1926,1926,7 November 1926,1926,Liberal Union,61.4,286,37.76,partial,/elections/gr/1926
+gr,Greece,legislative,1928,1928,19 August 1928,1928,Liberal Party,,250,71.20,partial,/elections/gr/1928
+gr,Greece,legislative,1932,1932,25 September 1932,1932,Liberal Party,,250,39.20,partial,/elections/gr/1932
+gr,Greece,legislative,1933,1933,5 March 1933,1933,People's Party,,248,47.58,partial,/elections/gr/1933
+gr,Greece,legislative,1935,1935,9 June 1935,1935,People's Party–National Radical Party,,300,95.67,partial,/elections/gr/1935
+gr,Greece,legislative,1936,1936,26 January 1936,1936,Liberal Party,,300,42.00,partial,/elections/gr/1936
+gr,Greece,legislative,1946,1946,31 March 1946,1946,United Alignment of Nationalists,,354,58.19,partial,/elections/gr/1946
+gr,Greece,legislative,1950,1950,5 March 1950,1950,People's Party,,250,24.80,free,/elections/gr/1950
+gr,Greece,legislative,1951,1951,9 September 1951,1951,Greek Rally,77.2,258,44.19,free,/elections/gr/1951
+gr,Greece,legislative,1952,1952,16 November 1952,1952,Greek Rally,75.37,300,82.33,free,/elections/gr/1952
+gr,Greece,legislative,1956,1956,19 February 1956,1956,National Radical Union,74.97,300,55.00,free,/elections/gr/1956
+gr,Greece,legislative,1958,1958,11 May 1958,1958,National Radical Union,75.48,300,57.00,free,/elections/gr/1958
+gr,Greece,legislative,1961,1961,29 October 1961,1961,National Radical Union,81.6,300,58.67,free,/elections/gr/1961
+gr,Greece,legislative,1963,1963,3 November 1963,1963,Centre Union,83.15,300,46.00,free,/elections/gr/1963
+gr,Greece,legislative,1964,1964,16 February 1964,1964,Centre Union,81.71,300,57.00,free,/elections/gr/1964
+gr,Greece,legislative,1974,1974,17 November 1974,1974,New Democracy,79.53,300,73.33,free,/elections/gr/1974
+gr,Greece,legislative,1977,1977,20 November 1977,1977,New Democracy,81.11,300,57.00,free,/elections/gr/1977
+gr,Greece,legislative,1981,1981,18 October 1981,1981,PASOK,81.5,300,57.33,free,/elections/gr/1981
+gr,Greece,legislative,1985,1985,2 June 1985,1985,PASOK,80.19,300,53.67,free,/elections/gr/1985
+gr,Greece,legislative,1989-june,1989,18 June 1989,June 1989,New Democracy,80.33,300,48.33,free,/elections/gr/1989-june
+gr,Greece,legislative,1989-november,1989,5 November 1989,November 1989,New Democracy,80.7,300,49.33,free,/elections/gr/1989-november
+gr,Greece,legislative,1990,1990,8 April 1990,1990,New Democracy,79.24,300,50.00,free,/elections/gr/1990
+gr,Greece,legislative,1993,1993,10 October 1993,1993,Panhellenic Socialist Movement,79.22,300,56.67,free,/elections/gr/1993
+gr,Greece,legislative,1996,1996,22 September 1996,1996,PASOK,76.34,300,54.00,free,/elections/gr/1996
+gr,Greece,legislative,2000,2000,9 April 2000,2000,PASOK,75.74,300,52.67,free,/elections/gr/2000
+gr,Greece,legislative,2004,2004,7 March 2004,2004,New Democracy,76.62,300,55.00,free,/elections/gr/2004
+gr,Greece,legislative,2007,2007,16 September 2007,2007,New Democracy,74.15,300,50.67,free,/elections/gr/2007
+gr,Greece,legislative,2009,2009,4 October 2009,2009,PASOK,70.95,300,53.33,free,/elections/gr/2009
+gr,Greece,legislative,2012-june,2012,17 June 2012,June 2012,New Democracy,62.49,300,43.00,free,/elections/gr/2012-june
+gr,Greece,legislative,2012-may,2012,6 May 2012,May 2012,New Democracy,65.12,300,36.00,free,/elections/gr/2012-may
+gr,Greece,legislative,2015-january,2015,25 January 2015,January 2015,Syriza,63.62,300,49.67,free,/elections/gr/2015-january
+gr,Greece,legislative,2015-september,2015,20 September 2015,September 2015,Syriza,56.16,300,48.33,free,/elections/gr/2015-september
+gr,Greece,legislative,2019,2019,7 July 2019,2019,New Democracy,57.78,300,52.67,free,/elections/gr/2019
+gr,Greece,legislative,2023-june,2023,25 June 2023,June 2023,New Democracy,53.74,300,52.67,free,/elections/gr/2023-june
+gr,Greece,legislative,2023-may,2023,21 May 2023,May 2023,New Democracy,61.76,300,48.67,free,/elections/gr/2023-may
+id,Indonesia,presidential,pres-1999,1999,20 October 1999,1999,Abdurrahman Wahid,97.86,,54.37,partial,/elections/id/pres-1999
+id,Indonesia,presidential,pres-2004,2004,2004,2004,Susilo Bambang Yudhoyono,,,60.62,free,/elections/id/pres-2004
+id,Indonesia,presidential,pres-2009,2009,8 July 2009,2009,Susilo Bambang Yudhoyono,72.57,,60.80,free,/elections/id/pres-2009
+id,Indonesia,presidential,pres-2014,2014,9 July 2014,2014,Joko Widodo,69.58,,53.15,free,/elections/id/pres-2014
+id,Indonesia,presidential,pres-2019,2019,17 April 2019,2019,Joko Widodo,81.69,,55.50,free,/elections/id/pres-2019
+id,Indonesia,presidential,pres-2024,2024,14 February 2024,2024,Prabowo Subianto,82.39,,58.59,free,/elections/id/pres-2024
+id,Indonesia,legislative,1917,1917,16 October 1917,1917,,,22,,partial,/elections/id/1917
+id,Indonesia,legislative,1921,1921,1921,1921,,,27,,partial,/elections/id/1921
+id,Indonesia,legislative,1924,1924,1924,1924,,,27,,partial,/elections/id/1924
+id,Indonesia,legislative,1927,1927,1927,1927,,,37,,partial,/elections/id/1927
+id,Indonesia,legislative,1931,1931,1931,1931,,,38,,partial,/elections/id/1931
+id,Indonesia,legislative,1935,1935,1935,1935,,,38,,partial,/elections/id/1935
+id,Indonesia,legislative,1939,1939,1939,1939,,,38,,partial,/elections/id/1939
+id,Indonesia,legislative,1955,1955,29 September 1955,1955,Indonesian National Party,91.54,257,22.18,free,/elections/id/1955
+id,Indonesia,legislative,1971,1971,3 July 1971,1971,Golkar,,360,65.56,partial,/elections/id/1971
+id,Indonesia,legislative,1977,1977,2 May 1977,1977,Golkar,90.93,360,64.44,partial,/elections/id/1977
+id,Indonesia,legislative,1982,1982,4 May 1982,1982,Golkar,,360,67.22,partial,/elections/id/1982
+id,Indonesia,legislative,1987,1987,23 April 1987,1987,Golkar,91.38,400,74.75,partial,/elections/id/1987
+id,Indonesia,legislative,1992,1992,9 June 1992,1992,Golkar,,400,70.50,partial,/elections/id/1992
+id,Indonesia,legislative,1997,1997,29 May 1997,1997,Golkar,,425,76.47,partial,/elections/id/1997
+id,Indonesia,legislative,1999,1999,7 June 1999,1999,Indonesian Democratic Party of Struggle,,462,33.12,free,/elections/id/1999
+id,Indonesia,legislative,2004,2004,5 April 2004,2004,Golkar,84.07,550,23.27,free,/elections/id/2004
+id,Indonesia,legislative,2009,2009,9 April 2009,2009,Democratic Party,70.99,560,26.43,free,/elections/id/2009
+id,Indonesia,legislative,2014,2014,9 April 2014,2014,PDI-P,74.53,560,19.46,free,/elections/id/2014
+id,Indonesia,legislative,2019,2019,17 April 2019,2019,PDI-P,81.69,575,22.26,free,/elections/id/2019
+id,Indonesia,legislative,2024,2024,14 February 2024,2024,PDI-P,82.03,580,18.97,free,/elections/id/2024
+ie,Ireland,presidential,pres-1952,1952,25 June 1952,1952,Seán T. O'Kelly,,,,free,/elections/ie/pres-1952
+ie,Ireland,presidential,pres-1959,1959,17 June 1959,1959,Éamon de Valera,58.3,,56.30,free,/elections/ie/pres-1959
+ie,Ireland,presidential,pres-1966,1966,1 June 1966,1966,Éamon de Valera,65.4,,50.48,free,/elections/ie/pres-1966
+ie,Ireland,presidential,pres-1973,1973,30 May 1973,1973,Erskine H. Childers,62.2,,51.97,free,/elections/ie/pres-1973
+ie,Ireland,presidential,pres-1974,1974,19 December 1974,1974,Cearbhall Ó Dálaigh,,,,free,/elections/ie/pres-1974
+ie,Ireland,presidential,pres-1976,1976,"July 1, 2026",1976,Patrick Hillery,,,,free,/elections/ie/pres-1976
+ie,Ireland,presidential,pres-1983,1983,7 October 1983,1983,Patrick Hillery,,,,free,/elections/ie/pres-1983
+ie,Ireland,presidential,pres-1990,1990,7 November 1990,1990,Mary Robinson,64.1,,38.90,free,/elections/ie/pres-1990
+ie,Ireland,presidential,pres-1997,1997,30 October 1997,1997,Mary McAleese,47.6,,45.20,free,/elections/ie/pres-1997
+ie,Ireland,presidential,pres-2004,2004,"July 19, 2026",2004,Mary McAleese,,,,free,/elections/ie/pres-2004
+ie,Ireland,presidential,pres-2011,2011,27 October 2011,2011,Michael D. Higgins,56.1,,39.60,free,/elections/ie/pres-2011
+ie,Ireland,presidential,pres-2018,2018,26 October 2018,2018,Michael D. Higgins,43.9,,55.81,free,/elections/ie/pres-2018
+ie,Ireland,presidential,pres-2025,2025,24 October 2025,2025,Catherine Connolly,45.8,,63.36,free,/elections/ie/pres-2025
+ie,Ireland,legislative,1922,1922,16 June 1922,1922,Sinn Féin (Pro-Treaty),62.5,128,45.31,free,/elections/ie/1922
+ie,Ireland,legislative,1923,1923,27 August 1923,1923,Cumann na nGaedheal,61.3,153,41.18,free,/elections/ie/1923
+ie,Ireland,legislative,1927-june,1927,9 June 1927,June 1927,Cumann na nGaedheal,68.1,153,30.72,free,/elections/ie/1927-june
+ie,Ireland,legislative,1927-september,1927,15 September 1927,September 1927,Cumann na nGaedheal,69.0,153,40.52,free,/elections/ie/1927-september
+ie,Ireland,legislative,1932,1932,16 February 1932,1932,Fianna Fáil,76.5,153,47.06,free,/elections/ie/1932
+ie,Ireland,legislative,1933,1933,24 January 1933,1933,Fianna Fáil,81.3,153,50.33,free,/elections/ie/1933
+ie,Ireland,legislative,1937,1937,1 July 1937,1937,Fianna Fáil,76.2,138,50.00,free,/elections/ie/1937
+ie,Ireland,legislative,1938,1938,17 June 1938,1938,Fianna Fáil,76.7,138,55.80,free,/elections/ie/1938
+ie,Ireland,legislative,1943,1943,23 June 1943,1943,Fianna Fáil,74.2,138,48.55,free,/elections/ie/1943
+ie,Ireland,legislative,1944,1944,30 May 1944,1944,Fianna Fáil,69.2,138,55.07,free,/elections/ie/1944
+ie,Ireland,legislative,1948,1948,4 February 1948,1948,Fianna Fáil,74.2,147,46.26,free,/elections/ie/1948
+ie,Ireland,legislative,1951,1951,30 May 1951,1951,Fianna Fáil,75.3,147,46.94,free,/elections/ie/1951
+ie,Ireland,legislative,1954,1954,18 May 1954,1954,Fianna Fáil,76.5,147,44.22,free,/elections/ie/1954
+ie,Ireland,legislative,1957,1957,5 March 1957,1957,Fianna Fáil,71.3,147,53.06,free,/elections/ie/1957
+ie,Ireland,legislative,1961,1961,4 October 1961,1961,Fianna Fáil,70.6,144,48.61,free,/elections/ie/1961
+ie,Ireland,legislative,1965,1965,7 April 1965,1965,Fianna Fáil,75.1,144,50.00,free,/elections/ie/1965
+ie,Ireland,legislative,1969,1969,18 June 1969,1969,Fianna Fáil,76.9,144,52.08,free,/elections/ie/1969
+ie,Ireland,legislative,1973,1973,28 February 1973,1973,Fianna Fáil,76.6,144,47.92,free,/elections/ie/1973
+ie,Ireland,legislative,1977,1977,16 June 1977,1977,Fianna Fáil,76.3,148,56.76,free,/elections/ie/1977
+ie,Ireland,legislative,1981,1981,11 June 1981,1981,Fianna Fáil,76.2,166,46.99,free,/elections/ie/1981
+ie,Ireland,legislative,1982-february,1982,18 February 1982,February 1982,Fianna Fáil,73.8,166,48.80,free,/elections/ie/1982-february
+ie,Ireland,legislative,1982-november,1982,24 November 1982,November 1982,Fianna Fáil,72.9,166,45.18,free,/elections/ie/1982-november
+ie,Ireland,legislative,1987,1987,17 February 1987,1987,Fianna Fáil,73.3,166,48.80,free,/elections/ie/1987
+ie,Ireland,legislative,1989,1989,15 June 1989,1989,Fianna Fáil,68.5,166,46.39,free,/elections/ie/1989
+ie,Ireland,legislative,1992,1992,25 November 1992,1992,Fianna Fáil,68.5,166,40.96,free,/elections/ie/1992
+ie,Ireland,legislative,1997,1997,6 June 1997,1997,Fianna Fáil,65.9,166,46.39,free,/elections/ie/1997
+ie,Ireland,legislative,2002,2002,17 May 2002,2002,Fianna Fáil,62.6,166,48.80,free,/elections/ie/2002
+ie,Ireland,legislative,2007,2007,24 May 2007,2007,Fianna Fáil,67.0,166,46.99,free,/elections/ie/2007
+ie,Ireland,legislative,2011,2011,25 February 2011,2011,Fine Gael,69.9,166,45.78,free,/elections/ie/2011
+ie,Ireland,legislative,2016,2016,26 February 2016,2016,Fine Gael,65.1,158,31.65,free,/elections/ie/2016
+ie,Ireland,legislative,2020,2020,8 February 2020,2020,Fianna Fáil,62.7,160,23.75,free,/elections/ie/2020
+ie,Ireland,legislative,2024,2024,29 November 2024,2024,Fianna Fáil,59.7,174,27.59,free,/elections/ie/2024
+il,Israel,legislative,1920,1920,19 April–3 May 1920,1920,,,314,,partial,/elections/il/1920
+il,Israel,legislative,1925,1925,6 December 1925,1925,Ahdut HaAvoda,57.0,221,24.43,partial,/elections/il/1925
+il,Israel,legislative,1931,1931,5 January 1931,1931,Mapai,67.21,71,38.03,partial,/elections/il/1931
+il,Israel,legislative,1944,1944,2 August 1944,1944,Mapai,,173,36.99,partial,/elections/il/1944
+il,Israel,legislative,1949,1949,25 January 1949,1949,Mapai,86.88,120,38.33,free,/elections/il/1949
+il,Israel,legislative,1951,1951,30 July 1951,1951,Mapai,75.15,120,37.50,free,/elections/il/1951
+il,Israel,legislative,1955,1955,26 July 1955,1955,Mapai,82.83,120,33.33,free,/elections/il/1955
+il,Israel,legislative,1959,1959,3 November 1959,1959,Mapai,81.6,120,39.17,free,/elections/il/1959
+il,Israel,legislative,1961,1961,15 August 1961,1961,Mapai,81.57,120,35.00,free,/elections/il/1961
+il,Israel,legislative,1965,1965,2 November 1965,1965,Labour Alignment,85.86,120,37.50,free,/elections/il/1965
+il,Israel,legislative,1969,1969,28 October 1969,1969,Alignment,81.66,120,46.67,free,/elections/il/1969
+il,Israel,legislative,1973,1973,31 December 1973,1973,Alignment,78.58,120,42.50,free,/elections/il/1973
+il,Israel,legislative,1977,1977,17 May 1977,1977,Likud,79.23,120,35.83,free,/elections/il/1977
+il,Israel,legislative,1981,1981,30 June 1981,1981,Likud,78.5,120,40.00,free,/elections/il/1981
+il,Israel,legislative,1984,1984,23 July 1984,1984,Alignment,78.8,120,36.67,free,/elections/il/1984
+il,Israel,legislative,1988,1988,1 November 1988,1988,Likud,79.66,120,33.33,free,/elections/il/1988
+il,Israel,legislative,1992,1992,23 June 1992,1992,Labor Party,77.38,120,36.67,free,/elections/il/1992
+il,Israel,legislative,1996,1996,29 May 1996,1996,Labor Party,,120,28.33,free,/elections/il/1996
+il,Israel,legislative,1999,1999,1999,1999,One Israel,78.71,120,21.67,free,/elections/il/1999
+il,Israel,legislative,2001,2001,6 February 2001,2001,,62.29,,,partial,/elections/il/2001
+il,Israel,legislative,2003,2003,28 January 2003,2003,Likud,67.81,120,31.67,free,/elections/il/2003
+il,Israel,legislative,2006,2006,28 March 2006,2006,Kadima,63.55,120,24.17,free,/elections/il/2006
+il,Israel,legislative,2009,2009,10 February 2009,2009,Kadima,64.72,120,23.33,free,/elections/il/2009
+il,Israel,legislative,2013,2013,22 January 2013,2013,Likud Yisrael Beiteinu,67.77,120,25.83,free,/elections/il/2013
+il,Israel,legislative,2015,2015,17 March 2015,2015,Likud,72.34,120,25.00,free,/elections/il/2015
+il,Israel,legislative,2019-apr,2019,9 April 2019,April 2019,Likud,68.46,120,29.17,free,/elections/il/2019-apr
+il,Israel,legislative,2019-sep,2019,17 September 2019,September 2019,Blue and White,69.83,120,27.50,free,/elections/il/2019-sep
+il,Israel,legislative,2020,2020,2 March 2020,2020,Likud,71.52,120,30.00,free,/elections/il/2020
+il,Israel,legislative,2021,2021,23 March 2021,2021,Likud,67.44,120,25.00,free,/elections/il/2021
+il,Israel,legislative,2022,2022,1 November 2022,2022,Likud,70.63,120,26.67,free,/elections/il/2022
+in,India,legislative,1920,1920,1920,1920,DP,,104,46.15,free,/elections/in/1920
+in,India,legislative,1923,1923,1923,1923,SP,,105,36.19,free,/elections/in/1923
+in,India,legislative,1926,1926,1926,1926,SP,,105,36.19,free,/elections/in/1926
+in,India,legislative,1930,1930,1930,1930,NP,,104,38.46,free,/elections/in/1930
+in,India,legislative,1934,1934,1934,1934,INC,,147,28.57,free,/elections/in/1934
+in,India,legislative,1945,1945,December 1945,1945,INC,,102,55.88,free,/elections/in/1945
+in,India,legislative,1946,1946,July 1946,1946,INC,,296,71.28,free,/elections/in/1946
+in,India,legislative,1951,1951,25 October 1951 – 21 February 1952,1951–52,Indian National Congress,,489,74.44,free,/elections/in/1951
+in,India,legislative,1957,1957,1951–52,1957,Indian National Congress,45.44,494,75.10,free,/elections/in/1957
+in,India,legislative,1962,1962,19–25 February 1962,1962,Indian National Congress,55.42,494,73.08,free,/elections/in/1962
+in,India,legislative,1967,1967,17–21 February 1967,1967,Indian National Congress,61.04,520,54.42,free,/elections/in/1967
+in,India,legislative,1971,1971,1–10 March 1971,1971,Indian National Congress (R),55.27,518,67.95,free,/elections/in/1971
+in,India,legislative,1977,1977,16–20 March 1977,1977,Janata Party,60.49,542,54.43,free,/elections/in/1977
+in,India,legislative,1980,1980,3 and 6 January 1980,1980,Indian National Congress (Indira),56.92,529,66.73,free,/elections/in/1980
+in,India,legislative,1984,1984,"24, 27 and 28 December 1984",1984,Indian National Congress (Indira),64.01,541,74.68,free,/elections/in/1984
+in,India,legislative,1989,1989,22 and 26 November 1989,1989,Indian National Congress (Indira),61.95,529,37.24,free,/elections/in/1989
+in,India,legislative,1991,1991,19 February 1992 (Punjab),1991,Indian National Congress (Indira),56.73,534,43.45,free,/elections/in/1991
+in,India,legislative,1996,1996,"27 April, 2 May and 7 May 1996",1996,Bharatiya Janata Party,57.94,543,29.65,free,/elections/in/1996
+in,India,legislative,1998,1998,"16, 22 and 28 February 1998",1998,Bharatiya Janata Party,61.97,543,33.52,free,/elections/in/1998
+in,India,legislative,1999,1999,5 September–3 October 1999,1999,Bharatiya Janata Party,59.99,543,33.52,free,/elections/in/1999
+in,India,legislative,2004,2004,"20 April 26 April, 5 and 10 May 2004",2004,Indian National Congress,58.07,543,26.70,free,/elections/in/2004
+in,India,legislative,2009,2009,16 April 2009 – 13 May 2009,2009,Indian National Congress,58.21,543,37.94,free,/elections/in/2009
+in,India,legislative,2014,2014,7 April 2014 – 12 May 2014,2014,Bharatiya Janata Party,66.44,543,51.93,free,/elections/in/2014
+in,India,legislative,2019,2019,11 April – 19 May 2019,2019,Bharatiya Janata Party,67.4,543,55.80,free,/elections/in/2019
+in,India,legislative,2024,2024,19 April – 1 June 2024,2024,BJP,66.1,543,44.20,free,/elections/in/2024
+iq,Iraq,presidential,pres-1995,1995,"October 15, 1995",1995,Saddam Hussein,,,99.99,unfree,/elections/iq/pres-1995
+iq,Iraq,presidential,pres-2002,2002,"October 16, 2002",2002,Saddam Hussein,100.0,,100.00,unfree,/elections/iq/pres-2002
+iq,Iraq,presidential,pres-2014,2014,24 July 2014,2014,Fuad Masum,,,92.86,partial,/elections/iq/pres-2014
+iq,Iraq,presidential,pres-2018,2018,2 October 2018,2018,Barham Salih,,,90.87,partial,/elections/iq/pres-2018
+iq,Iraq,presidential,pres-2022,2022,13 October 2022,2022,Abdul Latif Rashid,,,62.07,partial,/elections/iq/pres-2022
+iq,Iraq,presidential,pres-2026,2026,11 April 2026,2026,Nizar Amidi,,,90.08,partial,/elections/iq/pres-2026
+iq,Iraq,legislative,1946-47,1947,December 1946 – March 1947,1946–47,,,,,unfree,/elections/iq/1946-47
+iq,Iraq,legislative,1948,1948,1948,1948,Independence,,138,3.62,unfree,/elections/iq/1948
+iq,Iraq,legislative,1953,1953,17 January 1953,1953,CUP,,135,49.63,unfree,/elections/iq/1953
+iq,Iraq,legislative,jun-1954,1954,9 June 1954,June 1954,CUP,,135,37.04,unfree,/elections/iq/jun-1954
+iq,Iraq,legislative,sep-1954,1954,12 September 1954,September 1954,CUP,,135,69.63,unfree,/elections/iq/sep-1954
+iq,Iraq,legislative,1958,1958,5 May 1958,1958,Pro-government,,145,96.55,unfree,/elections/iq/1958
+iq,Iraq,legislative,1980,1980,20 June 1980,1980,Ba'ath Party,,250,74.80,unfree,/elections/iq/1980
+iq,Iraq,legislative,1984,1984,20 October 1984,1984,Ba'ath Party,,250,73.20,unfree,/elections/iq/1984
+iq,Iraq,legislative,1989,1989,1 April 1989,1989,Ba'ath Party,,250,82.80,unfree,/elections/iq/1989
+iq,Iraq,legislative,1996,1996,24 March 1996,1996,Ba'ath Party,,250,64.40,unfree,/elections/iq/1996
+iq,Iraq,legislative,2000,2000,27 March 2000,2000,Ba'ath Party,,250,66.00,unfree,/elections/iq/2000
+iq,Iraq,legislative,jan-2005,2005,30 January 2005,January 2005,United Iraqi Alliance,,275,50.91,partial,/elections/iq/jan-2005
+iq,Iraq,legislative,dec-2005,2005,15 December 2005,December 2005,United Iraqi Alliance,,275,46.55,free,/elections/iq/dec-2005
+iq,Iraq,legislative,2010,2010,7 March 2010,2010,Iraqi National Movement,,325,28.00,free,/elections/iq/2010
+iq,Iraq,legislative,2014,2014,30 April 2014,2014,State of Law Coalition,62.0,328,28.05,partial,/elections/iq/2014
+iq,Iraq,legislative,2018,2018,12 May 2018,2018,Alliance Towards Reforms,,329,16.41,free,/elections/iq/2018
+iq,Iraq,legislative,2021,2021,10 October 2021,2021,Sadrist Movement,43.3,329,22.19,free,/elections/iq/2021
+iq,Iraq,legislative,2025,2025,11 November 2025,2025,Reconstruction and Development Coalition,56.04,329,13.98,free,/elections/iq/2025
+it,Italy,legislative,1861,1861,3 February 1861,1861,Historical Right,,443,77.20,free,/elections/it/1861
+it,Italy,legislative,1865,1865,29 October 1865,1865,Historical Right,,443,41.31,free,/elections/it/1865
+it,Italy,legislative,1867,1867,17 March 1867,1867,Historical Left,,493,45.64,free,/elections/it/1867
+it,Italy,legislative,1870,1870,27 November 1870,1870,Historical Right,,508,45.87,free,/elections/it/1870
+it,Italy,legislative,1874,1874,15 November 1874,1874,Historical Right,,508,54.33,free,/elections/it/1874
+it,Italy,legislative,1876,1876,12 November 1876,1876,Historical Left,,508,81.50,free,/elections/it/1876
+it,Italy,legislative,1880,1880,23 May 1880,1880,Historical Left,,508,42.91,free,/elections/it/1880
+it,Italy,legislative,1882,1882,5 November 1882,1882,Historical Left,,508,56.89,free,/elections/it/1882
+it,Italy,legislative,1886,1886,30 May 1886,1886,Historical Left,,508,57.48,free,/elections/it/1886
+it,Italy,legislative,1890,1890,30 November 1890,1890,Historical Left,,508,78.94,free,/elections/it/1890
+it,Italy,legislative,1892,1892,13 November 1892,1892,Historical Left,,508,63.58,free,/elections/it/1892
+it,Italy,legislative,1895,1895,2 June 1895,1895,Historical Left,,508,65.75,free,/elections/it/1895
+it,Italy,legislative,1897,1897,28 March 1897,1897,Historical Left,,508,64.37,free,/elections/it/1897
+it,Italy,legislative,1900,1900,10 June 1900,1900,Ministerials,,508,58.27,free,/elections/it/1900
+it,Italy,legislative,1904,1904,13 November 1904,1904,Ministerials,,508,66.73,free,/elections/it/1904
+it,Italy,legislative,1909,1909,14 March 1909,1909,Ministerials,,508,66.14,free,/elections/it/1909
+it,Italy,legislative,1913,1913,2 November 1913,1913,Liberal Party,,508,53.15,free,/elections/it/1913
+it,Italy,legislative,1919,1919,16 November 1919,1919,Italian Socialist Party,56.58,508,30.71,free,/elections/it/1919
+it,Italy,legislative,1921,1921,15 May 1921,1921,Italian Socialist Party,,535,22.99,free,/elections/it/1921
+it,Italy,legislative,1924,1924,6 April 1924,1924,National List,,535,66.36,partial,/elections/it/1924
+it,Italy,legislative,1929,1929,24 March 1929,1929,National Fascist Party,,400,100.00,unfree,/elections/it/1929
+it,Italy,legislative,1934,1934,25 March 1934,1934,National Fascist Party,,400,100.00,unfree,/elections/it/1934
+it,Italy,legislative,1946,1946,2–3 June 1946,1946,Christian Democracy,89.08,556,37.23,free,/elections/it/1946
+it,Italy,legislative,1948,1948,18 April 1948,1948,Christian Democracy,92.2,574,53.14,free,/elections/it/1948
+it,Italy,legislative,1953,1953,7 June 1953,1953,DC,93.8,590,44.58,free,/elections/it/1953
+it,Italy,legislative,1958,1958,25 May 1958,1958,Christian Democracy,93.8,596,45.81,free,/elections/it/1958
+it,Italy,legislative,1963,1963,28 April 1963,1963,Christian Democracy,92.9,630,41.27,free,/elections/it/1963
+it,Italy,legislative,1968,1968,19 May 1968,1968,DC,92.8,630,42.22,free,/elections/it/1968
+it,Italy,legislative,1972,1972,7 May 1972,1972,Christian Democracy (DC),93.2,630,42.22,free,/elections/it/1972
+it,Italy,legislative,1976,1976,20 June 1976,1976,Christian Democracy (DC),93.4,630,41.59,free,/elections/it/1976
+it,Italy,legislative,1979,1979,3 June 1979,1979,Christian Democracy (DC),90.6,630,41.59,free,/elections/it/1979
+it,Italy,legislative,1983,1983,26 June 1983,1983,Christian Democracy,88.0,630,35.71,free,/elections/it/1983
+it,Italy,legislative,1987,1987,14–15 June 1987,1987,DC,88.8,630,37.14,free,/elections/it/1987
+it,Italy,legislative,1992,1992,5–6 April 1992,1992,Christian Democracy,87.4,630,32.70,free,/elections/it/1992
+it,Italy,legislative,1994,1994,27–28 March 1994,1994,Democratic Party of the Left (PDS),86.3,630,6.03,free,/elections/it/1994
+it,Italy,legislative,1996,1996,21 April 1996,1996,Independent,82.9,630,45.24,free,/elections/it/1996
+it,Italy,legislative,2001,2001,13 May 2001,2001,The Daisy,81.4,630,38.25,free,/elections/it/2001
+it,Italy,legislative,2006,2006,9–10 April 2006,2006,Independent,83.6,630,55.24,free,/elections/it/2006
+it,Italy,legislative,2008,2008,13–14 April 2008,2008,People of Freedom,80.5,630,54.60,free,/elections/it/2008
+it,Italy,legislative,2013,2013,24–25 February 2013,2013,Democratic Party,75.2,630,54.76,free,/elections/it/2013
+it,Italy,legislative,2018,2018,4 March 2018,2018,Five Star Movement (M5S),72.94,630,21.11,free,/elections/it/2018
+it,Italy,legislative,2022,2022,25 September 2022,2022,Brothers of Italy (FdI),63.85,400,17.25,free,/elections/it/2022
+jp,Japan,legislative,1890,1890,1 July 1890,1890,Liberal,,300,43.33,free,/elections/jp/1890
+jp,Japan,legislative,1892,1892,15 February 1892,1892,Liberal,,300,31.33,free,/elections/jp/1892
+jp,Japan,legislative,1894-mar,1894,1 March 1894,March 1894,Liberal,,300,40.00,free,/elections/jp/1894-mar
+jp,Japan,legislative,1894-sep,1894,September 1894,September 1894,Liberal,,300,35.67,free,/elections/jp/1894-sep
+jp,Japan,legislative,1898-mar,1898,March 1898,March 1898,Liberal,,300,35.00,free,/elections/jp/1898-mar
+jp,Japan,legislative,1898-aug,1898,August 1898,August 1898,Kenseitō,,300,81.33,free,/elections/jp/1898-aug
+jp,Japan,legislative,1902,1902,1902,1902,Rikken Seiyūkai,,376,50.80,free,/elections/jp/1902
+jp,Japan,legislative,1903,1903,1 March 1903,1903,Rikken Seiyūkai,,376,46.54,free,/elections/jp/1903
+jp,Japan,legislative,1904,1904,1 March 1904,1904,Rikken Seiyūkai,,379,35.09,free,/elections/jp/1904
+jp,Japan,legislative,1908,1908,15 May 1908,1908,Rikken Seiyūkai,,379,49.34,free,/elections/jp/1908
+jp,Japan,legislative,1912,1912,15 May 1912,1912,Rikken Seiyūkai,,381,54.86,free,/elections/jp/1912
+jp,Japan,legislative,1915,1915,25 March 1915,1915,Rikken Dōshikai,,381,40.16,free,/elections/jp/1915
+jp,Japan,legislative,1917,1917,20 April 1917,1917,Rikken Seiyūkai,,381,43.31,free,/elections/jp/1917
+jp,Japan,legislative,1920,1920,10 May 1920,1920,Rikken Seiyūkai,,464,59.91,free,/elections/jp/1920
+jp,Japan,legislative,1924,1924,10 May 1924,1924,Kenseikai,,464,32.54,free,/elections/jp/1924
+jp,Japan,legislative,1928,1928,20 February 1928,1928,Rikken Seiyūkai,,466,46.57,free,/elections/jp/1928
+jp,Japan,legislative,1930,1930,20 February 1930,1930,Constitutional Democratic Party,82.29,466,58.58,free,/elections/jp/1930
+jp,Japan,legislative,1932,1932,20 February 1932,1932,Rikken Seiyūkai,,466,64.59,free,/elections/jp/1932
+jp,Japan,legislative,1936,1936,20 February 1936,1936,Rikken Minseitō,,466,43.99,free,/elections/jp/1936
+jp,Japan,legislative,1937,1937,30 April 1937,1937,Rikken Minseitō,71.64,466,38.41,free,/elections/jp/1937
+jp,Japan,legislative,1942,1942,30 April 1942,1942,Taisei Yokusankai,,466,81.76,partial,/elections/jp/1942
+jp,Japan,legislative,1946,1946,10 April 1946,1946,Liberal Party,72.08,468,30.13,free,/elections/jp/1946
+jp,Japan,legislative,1947,1947,25 April 1947,1947,Japan Socialist Party,67.95,468,30.56,free,/elections/jp/1947
+jp,Japan,legislative,1949,1949,23 January 1949,1949,Democratic Liberal Party,74.04,466,56.65,free,/elections/jp/1949
+jp,Japan,legislative,1952,1952,1 October 1952,1952,Liberal Party,76.43,466,51.50,free,/elections/jp/1952
+jp,Japan,legislative,1953,1953,19 April 1953,1953,Liberal Party,74.21,466,42.70,free,/elections/jp/1953
+jp,Japan,legislative,1955,1955,27 February 1955,1955,Democratic Party,75.83,467,39.61,free,/elections/jp/1955
+jp,Japan,legislative,1958,1958,22 May 1958,1958,Liberal Democratic Party,76.98,467,61.46,free,/elections/jp/1958
+jp,Japan,legislative,1960,1960,20 November 1960,1960,Liberal Democratic Party,73.5,467,63.38,free,/elections/jp/1960
+jp,Japan,legislative,1963,1963,21 November 1963,1963,Liberal Democratic Party,71.14,467,60.60,free,/elections/jp/1963
+jp,Japan,legislative,1967,1967,29 January 1967,1967,Liberal Democratic Party,73.98,486,57.00,free,/elections/jp/1967
+jp,Japan,legislative,1969,1969,27 December 1969,1969,Liberal Democratic Party,68.51,486,59.26,free,/elections/jp/1969
+jp,Japan,legislative,1972,1972,10 December 1972,1972,Liberal Democratic Party,71.76,491,55.19,free,/elections/jp/1972
+jp,Japan,legislative,1976,1976,5 December 1976,1976,Liberal Democratic Party,73.45,511,48.73,free,/elections/jp/1976
+jp,Japan,legislative,1979,1979,7 October 1979,1979,Liberal Democratic Party,68.01,511,48.53,free,/elections/jp/1979
+jp,Japan,legislative,1980,1980,22 June 1980,1980,Liberal Democratic Party,74.57,511,55.58,free,/elections/jp/1980
+jp,Japan,legislative,1983,1983,18 December 1983,1983,Liberal Democratic Party,67.94,511,48.92,free,/elections/jp/1983
+jp,Japan,legislative,1986,1986,6 July 1986,1986,Liberal Democratic Party,71.4,512,58.59,free,/elections/jp/1986
+jp,Japan,legislative,1990,1990,18 February 1990,1990,Liberal Democratic Party,73.31,512,53.71,free,/elections/jp/1990
+jp,Japan,legislative,1993,1993,18 July 1993,1993,Liberal Democratic Party,66.99,511,43.64,free,/elections/jp/1993
+jp,Japan,legislative,1996,1996,20 October 1996,1996,LDP,59.65,500,47.80,free,/elections/jp/1996
+jp,Japan,legislative,2000,2000,25 June 2000,2000,LDP,62.49,480,48.54,free,/elections/jp/2000
+jp,Japan,legislative,2003,2003,9 November 2003,2003,LDP,59.85,480,49.38,free,/elections/jp/2003
+jp,Japan,legislative,2005,2005,11 September 2005,2005,LDP,67.51,480,61.67,free,/elections/jp/2005
+jp,Japan,legislative,2009,2009,30 August 2009,2009,Democratic,69.19,480,64.17,free,/elections/jp/2009
+jp,Japan,legislative,2012,2012,16 December 2012,2012,LDP,59.32,480,61.25,free,/elections/jp/2012
+jp,Japan,legislative,2014,2014,14 December 2014,2014,LDP,52.65,475,61.26,free,/elections/jp/2014
+jp,Japan,legislative,2017,2017,22 October 2017,2017,LDP,53.68,465,61.08,free,/elections/jp/2017
+jp,Japan,legislative,2021,2021,31 October 2021,2021,LDP,55.98,465,55.70,free,/elections/jp/2021
+jp,Japan,legislative,2024,2024,27 October 2024,2024,LDP,53.84,465,41.08,free,/elections/jp/2024
+jp,Japan,legislative,2026,2026,8 February 2026,2026,LDP,56.26,465,67.96,free,/elections/jp/2026
+kr,South Korea,presidential,pres-1948,1948,20 July 1948,1948,Syngman Rhee,,,92.31,partial,/elections/kr/pres-1948
+kr,South Korea,presidential,pres-1952,1952,5 August 1952,1952,Syngman Rhee,,,74.62,free,/elections/kr/pres-1952
+kr,South Korea,presidential,pres-1956,1956,15 May 1956,1956,Syngman Rhee,,,69.99,free,/elections/kr/pres-1956
+kr,South Korea,presidential,pres-1960-mar,1960,15 March 1960,March 1960,Syngman Rhee,,,100.00,partial,/elections/kr/pres-1960-mar
+kr,South Korea,presidential,pres-1960-aug,1960,12 August 1960,August 1960,Yun Posun,,,82.21,partial,/elections/kr/pres-1960-aug
+kr,South Korea,presidential,pres-1963,1963,15 October 1963,1963,Park Chung Hee,,,46.65,free,/elections/kr/pres-1963
+kr,South Korea,presidential,pres-1967,1967,3 May 1967,1967,Park Chung Hee,,,51.44,free,/elections/kr/pres-1967
+kr,South Korea,presidential,pres-1971,1971,27 April 1971,1971,Park Chung Hee,,,53.20,free,/elections/kr/pres-1971
+kr,South Korea,presidential,pres-1972,1972,23 December 1972,1972,Park Chung-hee,,,100.00,partial,/elections/kr/pres-1972
+kr,South Korea,presidential,pres-1978,1978,6 July 1978,1978,Park Chung-hee,,,100.00,partial,/elections/kr/pres-1978
+kr,South Korea,presidential,pres-1979,1979,6 December 1979,1979,Choi Kyu-hah,,,100.00,partial,/elections/kr/pres-1979
+kr,South Korea,presidential,pres-1980,1980,27 August 1980,1980,Chun Doo-hwan,,,100.00,partial,/elections/kr/pres-1980
+kr,South Korea,presidential,pres-1981,1981,1981,1981,Chun Doo-hwan,78.12,,90.23,partial,/elections/kr/pres-1981
+kr,South Korea,presidential,pres-1987,1987,16 December 1987,1987,Roh Tae-woo,89.15,,36.64,free,/elections/kr/pres-1987
+kr,South Korea,presidential,pres-1992,1992,18 December 1992,1992,Kim Young-sam,81.89,,41.96,free,/elections/kr/pres-1992
+kr,South Korea,presidential,pres-1997,1997,18 December 1997,1997,Kim Dae-jung,80.65,,40.27,free,/elections/kr/pres-1997
+kr,South Korea,presidential,pres-2002,2002,19 December 2002,2002,Roh Moo-hyun,70.83,,48.91,free,/elections/kr/pres-2002
+kr,South Korea,presidential,pres-2007,2007,19 December 2007,2007,Lee Myung-bak,63.03,,48.67,free,/elections/kr/pres-2007
+kr,South Korea,presidential,pres-2012,2012,19 December 2012,2012,Park Geun-hye,75.84,,51.56,free,/elections/kr/pres-2012
+kr,South Korea,presidential,pres-2017,2017,9 May 2017,2017,Moon Jae-in,77.23,,41.09,free,/elections/kr/pres-2017
+kr,South Korea,presidential,pres-2022,2022,9 March 2022,2022,Yoon Suk Yeol,77.08,,48.56,free,/elections/kr/pres-2022
+kr,South Korea,presidential,pres-2025,2025,3 June 2025,2025,Lee Jae Myung,79.38,,49.42,free,/elections/kr/pres-2025
+kr,South Korea,legislative,1946,1946,1946,1946,,,,,partial,/elections/kr/1946
+kr,South Korea,legislative,1948,1948,10 May 1948,1948,Independents,95.5,200,42.50,free,/elections/kr/1948
+kr,South Korea,legislative,1950,1950,30 May 1950,1950,Independents,91.91,210,60.00,free,/elections/kr/1950
+kr,South Korea,legislative,1954,1954,20 May 1954,1954,Liberal Party,91.14,203,56.16,free,/elections/kr/1954
+kr,South Korea,legislative,1958,1958,2 May 1958,1958,Liberal Party,87.8,233,54.08,free,/elections/kr/1958
+kr,South Korea,legislative,1960,1960,29 June 1960,1960,Democratic Party,84.3,233,75.11,free,/elections/kr/1960
+kr,South Korea,legislative,1963,1963,26 November 1963,1963,Democratic Republican Party,72.11,175,50.29,free,/elections/kr/1963
+kr,South Korea,legislative,1967,1967,8 June 1967,1967,Democratic Republican Party,76.12,175,58.29,free,/elections/kr/1967
+kr,South Korea,legislative,1971,1971,25 May 1971,1971,Democratic Republican Party,73.22,204,42.16,free,/elections/kr/1971
+kr,South Korea,legislative,1973,1973,27 February 1973,1973,Democratic Republican Party,71.36,146,50.00,partial,/elections/kr/1973
+kr,South Korea,legislative,1978,1978,12 December 1978,1978,Democratic Republican Party,77.08,154,44.16,partial,/elections/kr/1978
+kr,South Korea,legislative,1981,1981,25 March 1981,1981,Democratic Justice Party,77.74,276,32.61,partial,/elections/kr/1981
+kr,South Korea,legislative,1985,1985,12 February 1985,1985,Democratic Justice Party,84.57,276,31.52,partial,/elections/kr/1985
+kr,South Korea,legislative,1988,1988,26 April 1988,1988,Democratic Justice Party,75.77,299,29.10,free,/elections/kr/1988
+kr,South Korea,legislative,1992,1992,24 March 1992,1992,Democratic Liberal Party,71.86,299,38.80,free,/elections/kr/1992
+kr,South Korea,legislative,1996,1996,11 April 1996,1996,New Korea Party,63.91,299,40.47,free,/elections/kr/1996
+kr,South Korea,legislative,2000,2000,13 April 2000,2000,Grand National,57.22,273,48.72,free,/elections/kr/2000
+kr,South Korea,legislative,2004,2004,15 April 2004,2004,Uri,60.63,299,50.84,free,/elections/kr/2004
+kr,South Korea,legislative,2008,2008,9 April 2008,2008,Grand National,46.08,299,51.17,free,/elections/kr/2008
+kr,South Korea,legislative,2012,2012,11 April 2012,2012,Saenuri,54.24,300,50.67,free,/elections/kr/2012
+kr,South Korea,legislative,2016,2016,13 April 2016,2016,Democratic,58.15,300,41.00,free,/elections/kr/2016
+kr,South Korea,legislative,2020,2020,15 April 2020,2020,Democratic,66.19,300,60.00,free,/elections/kr/2020
+kr,South Korea,legislative,2024,2024,10 April 2024,2024,Democratic,66.97,300,57.67,free,/elections/kr/2024
+mx,Mexico,presidential,pres-1853,1853,April 1853,1853,Antonio López de Santa Anna,,,,partial,/elections/mx/pres-1853
+mx,Mexico,presidential,pres-1857,1857,1857,1857,Ignacio Comonfort,,,92.67,partial,/elections/mx/pres-1857
+mx,Mexico,presidential,pres-1861,1861,1861,1861,Benito Juárez,,,53.41,partial,/elections/mx/pres-1861
+mx,Mexico,presidential,pres-1867,1867,October 1867,1867,Benito Juárez,,,71.50,partial,/elections/mx/pres-1867
+mx,Mexico,presidential,pres-1871,1871,1871,1871,Benito Juárez,,,47.63,partial,/elections/mx/pres-1871
+mx,Mexico,presidential,pres-1872,1872,1872,1872,Sebastián Lerdo de Tejada,,,92.32,partial,/elections/mx/pres-1872
+mx,Mexico,presidential,pres-1876,1876,1876,1876,Sebastián Lerdo de Tejada,,,90.93,partial,/elections/mx/pres-1876
+mx,Mexico,presidential,pres-1877,1877,1877,1877,Porfirio Díaz,,,96.40,partial,/elections/mx/pres-1877
+mx,Mexico,presidential,pres-1880,1880,1880,1880,Manuel González Flores,,,76.72,partial,/elections/mx/pres-1880
+mx,Mexico,presidential,pres-1884,1884,1884,1884,Porfirio Díaz,,,98.83,partial,/elections/mx/pres-1884
+mx,Mexico,presidential,pres-1888,1888,1888,1888,Porfirio Díaz,,,99.72,partial,/elections/mx/pres-1888
+mx,Mexico,presidential,pres-1892,1892,1892,1892,Porfirio Díaz,,,99.88,partial,/elections/mx/pres-1892
+mx,Mexico,presidential,pres-1896,1896,1896,1896,Porfirio Díaz,,,100.00,partial,/elections/mx/pres-1896
+mx,Mexico,presidential,pres-1900,1900,1900,1900,Porfirio Díaz,,,100.00,partial,/elections/mx/pres-1900
+mx,Mexico,presidential,pres-1904,1904,11 July 1904,1904,Porfirio Díaz,,,100.00,partial,/elections/mx/pres-1904
+mx,Mexico,presidential,pres-1910,1910,1910,1910,Porfirio Díaz,,,98.93,partial,/elections/mx/pres-1910
+mx,Mexico,presidential,pres-1911,1911,1911,1911,Francisco I. Madero,,,99.27,free,/elections/mx/pres-1911
+mx,Mexico,presidential,pres-1917,1917,1917,1917,Venustiano Carranza,,,97.17,partial,/elections/mx/pres-1917
+mx,Mexico,presidential,pres-1920,1920,5 September 1920,1920,Álvaro Obregón,,,95.79,free,/elections/mx/pres-1920
+mx,Mexico,presidential,pres-1924,1924,6 July 1924,1924,Plutarco Elías Calles,,,84.14,free,/elections/mx/pres-1924
+mx,Mexico,presidential,pres-1928,1928,1 July 1928,1928,Álvaro Obregón assassinated,,,,free,/elections/mx/pres-1928
+mx,Mexico,presidential,pres-1929,1929,17 November 1929,1929,Pascual Ortiz Rubio,,,93.55,partial,/elections/mx/pres-1929
+mx,Mexico,presidential,pres-1934,1934,1934,1934,Lázaro Cárdenas,,,98.19,partial,/elections/mx/pres-1934
+mx,Mexico,presidential,pres-1940,1940,7 July 1940,1940,Manuel Ávila Camacho,,,93.90,partial,/elections/mx/pres-1940
+mx,Mexico,presidential,pres-1946,1946,1946,1946,Miguel Alemán Valdés,,,77.87,partial,/elections/mx/pres-1946
+mx,Mexico,presidential,pres-1952,1952,7 July 1952,1952,Adolfo Ruiz Cortines,,,74.31,partial,/elections/mx/pres-1952
+mx,Mexico,presidential,pres-1958,1958,6 July 1958,1958,Adolfo López Mateos,,,90.44,partial,/elections/mx/pres-1958
+mx,Mexico,presidential,pres-1964,1964,1964,1964,Gustavo Díaz Ordaz,,,88.82,partial,/elections/mx/pres-1964
+mx,Mexico,presidential,pres-1970,1970,5 July 1970,1970,Luis Echeverría,,,86.02,partial,/elections/mx/pres-1970
+mx,Mexico,presidential,pres-1976,1976,4 July 1976,1976,José López Portillo,,,92.27,partial,/elections/mx/pres-1976
+mx,Mexico,presidential,pres-1982,1982,4 July 1982,1982,Miguel de la Madrid,74.84,,74.31,partial,/elections/mx/pres-1982
+mx,Mexico,presidential,pres-1988,1988,6 July 1988,1988,Carlos Salinas de Gortari,52.01,,50.71,partial,/elections/mx/pres-1988
+mx,Mexico,presidential,pres-1994,1994,21 August 1994,1994,Ernesto Zedillo,77.16,,50.13,free,/elections/mx/pres-1994
+mx,Mexico,presidential,pres-2000,2000,2 July 2000,2000,Vicente Fox,63.97,,43.43,free,/elections/mx/pres-2000
+mx,Mexico,presidential,pres-2006,2006,2 July 2006,2006,Felipe Calderón,58.55,,36.69,free,/elections/mx/pres-2006
+mx,Mexico,presidential,pres-2012,2012,2012,2012,Enrique Peña Nieto,63.08,,39.17,free,/elections/mx/pres-2012
+mx,Mexico,presidential,pres-2018,2018,1 July 2018,2018,Andrés Manuel López Obrador,63.43,,54.71,free,/elections/mx/pres-2018
+mx,Mexico,presidential,pres-2024,2024,2 June 2024,2024,Claudia Sheinbaum,61.05,,61.18,free,/elections/mx/pres-2024
+mx,Mexico,legislative,1943,1943,1943,1943,Party of the Mexican Revolution,,147,100.00,partial,/elections/mx/1943
+mx,Mexico,legislative,1949,1949,3 July 1949,1949,Institutional Revolutionary Party,,147,96.60,partial,/elections/mx/1949
+mx,Mexico,legislative,1955,1955,4 July 1955,1955,Institutional Revolutionary Party (PRI),,162,94.44,partial,/elections/mx/1955
+mx,Mexico,legislative,1961,1961,1961,1961,Institutional Revolutionary Party (PRI),,178,96.63,partial,/elections/mx/1961
+mx,Mexico,legislative,1967,1967,1967,1967,Institutional Revolutionary Party,,212,83.49,partial,/elections/mx/1967
+mx,Mexico,legislative,1973,1973,1973,1973,Institutional Revolutionary Party,,231,81.82,partial,/elections/mx/1973
+mx,Mexico,legislative,1979,1979,1979,1979,,,,,partial,/elections/mx/1979
+mx,Mexico,legislative,1985,1985,1985,1985,Institutional Revolutionary Party,,400,73.00,partial,/elections/mx/1985
+mx,Mexico,legislative,1991,1991,18 August 1991,1991,Institutional Revolutionary Party,,500,6.20,free,/elections/mx/1991
+mx,Mexico,legislative,1997,1997,6 July 1997,1997,Institutional Revolutionary Party,,500,2.60,free,/elections/mx/1997
+mx,Mexico,legislative,2003,2003,2003,2003,Institutional Revolutionary Party,,500,44.80,free,/elections/mx/2003
+mx,Mexico,legislative,2009,2009,5 July 2009,2009,PRI,,500,47.40,free,/elections/mx/2009
+mx,Mexico,legislative,2015,2015,7 June 2015,2015,PRI,47.72,500,40.60,free,/elections/mx/2015
+mx,Mexico,legislative,2021,2021,6 June 2021,2021,MORENA,52.7,500,39.60,free,/elections/mx/2021
+my,Malaysia,legislative,1955,1955,27 July 1955,1955,Alliance (UMNO–MCA–MIC),82.84,52,98.08,partial,/elections/my/1955
+my,Malaysia,legislative,1959,1959,19 August 1959,1959,Alliance,73.34,104,71.15,free,/elections/my/1959
+my,Malaysia,legislative,1964,1964,25 April 1964,1964,Alliance,80.03,104,85.58,partial,/elections/my/1964
+my,Malaysia,legislative,1969,1969,10 May 1969 – 4 July 1970,1969,Alliance,73.59,144,51.39,partial,/elections/my/1969
+my,Malaysia,legislative,1974,1974,24 August – 14 September 1974,1974,BN,75.01,154,87.66,partial,/elections/my/1974
+my,Malaysia,legislative,1978,1978,8–22 July 1978,1978,BN,75.3,154,84.42,partial,/elections/my/1978
+my,Malaysia,legislative,1982,1982,22–26 April 1982,1982,UMNO,74.39,154,85.71,partial,/elections/my/1982
+my,Malaysia,legislative,1986,1986,2–3 August 1986,1986,BN,69.97,177,83.62,partial,/elections/my/1986
+my,Malaysia,legislative,1990,1990,20–21 October 1990,1990,UMNO,,180,70.56,partial,/elections/my/1990
+my,Malaysia,legislative,1995,1995,24–25 April 1995,1995,UMNO,,192,84.38,partial,/elections/my/1995
+my,Malaysia,legislative,1999,1999,29 November 1999,1999,UMNO,71.19,193,76.68,partial,/elections/my/1999
+my,Malaysia,legislative,2004,2004,21 March 2004,2004,UMNO,72.95,219,90.41,partial,/elections/my/2004
+my,Malaysia,legislative,2008,2008,8 March 2008,2008,UMNO,75.38,222,63.06,free,/elections/my/2008
+my,Malaysia,legislative,2013,2013,5 May 2013,2013,UMNO,84.6,222,59.91,partial,/elections/my/2013
+my,Malaysia,legislative,2018,2018,9 May 2018,2018,BERSATU,82.32,222,50.90,free,/elections/my/2018
+my,Malaysia,legislative,2022,2022,19 November 2022,2022,PKR,74.13,222,36.94,free,/elections/my/2022
+ng,Nigeria,presidential,pres-1979,1979,11 August 1979,1979,Shehu Shagari,,,33.77,free,/elections/ng/pres-1979
+ng,Nigeria,presidential,pres-1983,1983,6 August 1983,1983,Shehu Shagari,,,47.51,partial,/elections/ng/pres-1983
+ng,Nigeria,presidential,pres-1993,1993,12 June 1993,1993,Moshood Abiola,,,58.36,partial,/elections/ng/pres-1993
+ng,Nigeria,presidential,pres-1999,1999,27 February 1999,1999,Olusegun Obasanjo,52.26,,62.78,free,/elections/ng/pres-1999
+ng,Nigeria,presidential,pres-2003,2003,19 April 2003,2003,Olusegun Obasanjo,69.08,,61.94,free,/elections/ng/pres-2003
+ng,Nigeria,presidential,pres-2007,2007,21 April 2007,2007,Umaru Yar'Adua,,,69.60,partial,/elections/ng/pres-2007
+ng,Nigeria,presidential,pres-2011,2011,16 April 2011,2011,Goodluck Jonathan,53.68,,58.87,free,/elections/ng/pres-2011
+ng,Nigeria,presidential,pres-2015,2015,28–29 March 2015,2015,Muhammadu Buhari,43.65,,57.20,free,/elections/ng/pres-2015
+ng,Nigeria,presidential,pres-2019,2019,23–24 February 2019,2019,Muhammadu Buhari,34.75,,55.60,free,/elections/ng/pres-2019
+ng,Nigeria,presidential,pres-2023,2023,25 February 2023,2023,Bola Tinubu,26.71,,36.61,free,/elections/ng/pres-2023
+ng,Nigeria,legislative,1923,1923,1923,1923,Nigerian National Democratic Party,,4,75.00,partial,/elections/ng/1923
+ng,Nigeria,legislative,1928,1928,1928,1928,Nigerian National Democratic Party,,3,100.00,partial,/elections/ng/1928
+ng,Nigeria,legislative,1933,1933,1933,1933,Nigerian National Democratic Party,,4,75.00,partial,/elections/ng/1933
+ng,Nigeria,legislative,1938,1938,1938,1938,Nigerian Youth Movement,,3,100.00,partial,/elections/ng/1938
+ng,Nigeria,legislative,1943,1943,1943,1943,Independents,,2,100.00,partial,/elections/ng/1943
+ng,Nigeria,legislative,1947,1947,1947,1947,Nigerian National Democratic Party,,4,75.00,partial,/elections/ng/1947
+ng,Nigeria,legislative,1954,1954,1954,1954,Northern People's Congress,,,,free,/elections/ng/1954
+ng,Nigeria,legislative,1959,1959,12 December 1959,1959,Northern People's Congress,,302,44.37,free,/elections/ng/1959
+ng,Nigeria,legislative,1964,1964,30 December 1964,1964,Northern People's Congress,,312,51.92,partial,/elections/ng/1964
+ng,Nigeria,legislative,1979,1979,7 July 1979,1979,National Party of Nigeria,,95,37.89,free,/elections/ng/1979
+ng,Nigeria,legislative,1983,1983,1983,1983,National Party of Nigeria,,,,partial,/elections/ng/1983
+ng,Nigeria,legislative,1992,1992,4 July 1992,1992,Social Democratic Party,,89,58.43,partial,/elections/ng/1992
+ng,Nigeria,legislative,1998,1998,25 April 1998,1998,United Nigeria Congress Party,,,,partial,/elections/ng/1998
+ng,Nigeria,legislative,1999,1999,20 February 1999,1999,People's Democratic Party,,,,free,/elections/ng/1999
+ng,Nigeria,legislative,2003,2003,2003,2003,People's Democratic Party,,109,69.72,free,/elections/ng/2003
+ng,Nigeria,legislative,2007,2007,21 April 2007,2007,People's Democratic Party,,360,72.78,partial,/elections/ng/2007
+ng,Nigeria,legislative,2011,2011,9 April 2011,2011,People's Democratic Party,,360,56.39,free,/elections/ng/2011
+ng,Nigeria,legislative,2015,2015,28–29 March 2015,2015,All Progressives Congress,,360,58.89,free,/elections/ng/2015
+ng,Nigeria,legislative,2019,2019,23–24 February 2019,2019,APC,,360,56.11,free,/elections/ng/2019
+ng,Nigeria,legislative,2023,2023,25 February 2023,2023,APC,,360,48.89,free,/elections/ng/2023
+nl,Netherlands,legislative,1886,1886,29 June 1886,1886,LU,75.58,86,54.65,free,/elections/nl/1886
+nl,Netherlands,legislative,1887,1887,14 September 1887,1887,LU,55.14,86,55.81,free,/elections/nl/1887
+nl,Netherlands,legislative,1888,1888,20 March 1888,1888,LU,81.41,100,45.00,free,/elections/nl/1888
+nl,Netherlands,legislative,1891,1891,23 June 1891,1891,LU,71.64,100,54.00,free,/elections/nl/1891
+nl,Netherlands,legislative,1894,1894,24 April 1894,1894,Lib,57.21,100,31.00,free,/elections/nl/1894
+nl,Netherlands,legislative,1897,1897,25 June 1897,1897,LU,78.04,100,38.00,free,/elections/nl/1897
+nl,Netherlands,legislative,1901,1901,27 June 1901,1901,Catholic,73.05,100,25.00,free,/elections/nl/1901
+nl,Netherlands,legislative,1905,1905,28 June 1905,1905,LU,82.98,100,25.00,free,/elections/nl/1905
+nl,Netherlands,legislative,1909,1909,23 June 1909,1909,AB,78.76,100,25.00,free,/elections/nl/1909
+nl,Netherlands,legislative,1913,1913,25 June 1913,1913,AB,84.62,100,25.00,free,/elections/nl/1913
+nl,Netherlands,legislative,1917,1917,22 June 1917,1917,AB,38.0,100,25.00,free,/elections/nl/1917
+nl,Netherlands,legislative,1918,1918,3 July 1918,1918,AB,,100,30.00,free,/elections/nl/1918
+nl,Netherlands,legislative,1922,1922,5 July 1922,1922,AB,,100,32.00,free,/elections/nl/1922
+nl,Netherlands,legislative,1925,1925,1 July 1925,1925,General League,91.35,100,30.00,free,/elections/nl/1925
+nl,Netherlands,legislative,1929,1929,3 July 1929,1929,RKSP,92.68,100,30.00,free,/elections/nl/1929
+nl,Netherlands,legislative,1933,1933,26 April 1933,1933,RKSP,94.22,100,28.00,free,/elections/nl/1933
+nl,Netherlands,legislative,1937,1937,26 May 1937,1937,RKSP,94.4,100,31.00,free,/elections/nl/1937
+nl,Netherlands,legislative,1946,1946,17 May 1946,1946,KVP,93.1,100,32.00,free,/elections/nl/1946
+nl,Netherlands,legislative,1948,1948,7 July 1948,1948,KVP,93.67,100,32.00,free,/elections/nl/1948
+nl,Netherlands,legislative,1952,1952,25 June 1952,1952,PvdA,94.98,100,30.00,free,/elections/nl/1952
+nl,Netherlands,legislative,1956,1956,13 June 1956,1956,PvdA,95.5,100,34.00,free,/elections/nl/1956
+nl,Netherlands,legislative,1959,1959,12 March 1959,1959,KVP,95.57,150,32.67,free,/elections/nl/1959
+nl,Netherlands,legislative,1963,1963,15 May 1963,1963,KVP,95.13,150,33.33,free,/elections/nl/1963
+nl,Netherlands,legislative,1967,1967,15 February 1967,1967,KVP,94.9,150,28.00,free,/elections/nl/1967
+nl,Netherlands,legislative,1971,1971,28 April 1971,1971,PvdA,79.12,150,26.00,free,/elections/nl/1971
+nl,Netherlands,legislative,1972,1972,29 November 1972,1972,PvdA,83.5,150,28.67,free,/elections/nl/1972
+nl,Netherlands,legislative,1977,1977,25 May 1977,1977,PvdA,88.1,150,35.33,free,/elections/nl/1977
+nl,Netherlands,legislative,1981,1981,26 May 1981,1981,CDA,87.0,150,32.00,free,/elections/nl/1981
+nl,Netherlands,legislative,1982,1982,8 September 1982,1982,PvdA,80.98,150,31.33,free,/elections/nl/1982
+nl,Netherlands,legislative,1986,1986,21 May 1986,1986,CDA,85.76,150,36.00,free,/elections/nl/1986
+nl,Netherlands,legislative,1989,1989,6 September 1989,1989,CDA,80.3,150,36.00,free,/elections/nl/1989
+nl,Netherlands,legislative,1994,1994,3 May 1994,1994,PvdA,78.8,150,24.67,free,/elections/nl/1994
+nl,Netherlands,legislative,1998,1998,6 May 1998,1998,PvdA,73.35,150,30.00,free,/elections/nl/1998
+nl,Netherlands,legislative,2002,2002,15 May 2002,2002,CDA,79.06,150,28.67,free,/elections/nl/2002
+nl,Netherlands,legislative,2003,2003,22 January 2003,2003,CDA,80.04,150,29.33,free,/elections/nl/2003
+nl,Netherlands,legislative,2006,2006,22 November 2006,2006,CDA,80.35,150,27.33,free,/elections/nl/2006
+nl,Netherlands,legislative,2010,2010,9 June 2010,2010,VVD,75.4,150,20.67,free,/elections/nl/2010
+nl,Netherlands,legislative,2012,2012,12 September 2012,2012,VVD,74.6,150,27.33,free,/elections/nl/2012
+nl,Netherlands,legislative,2017,2017,15 March 2017,2017,VVD,81.93,150,22.00,free,/elections/nl/2017
+nl,Netherlands,legislative,2021,2021,15–17 March 2021,2021,VVD,78.71,150,22.67,free,/elections/nl/2021
+nl,Netherlands,legislative,2023,2023,22 November 2023,2023,PVV,77.75,150,24.67,free,/elections/nl/2023
+nl,Netherlands,legislative,2025,2025,29 October 2025,2025,D66,78.3,150,17.33,free,/elections/nl/2025
+nz,New Zealand,legislative,1853,1853,14 July – 1 October 1853,1853,Independent,,37,100.00,free,/elections/nz/1853
+nz,New Zealand,legislative,1855,1855,26 October – 28 December 1855,1855,Independent,,37,100.00,free,/elections/nz/1855
+nz,New Zealand,legislative,1860,1860,12 December 1860 – 28 March 1861,1860–61,Independent,,53,100.00,free,/elections/nz/1860
+nz,New Zealand,legislative,1866,1866,1866,1866,Independent,,70,100.00,free,/elections/nz/1866
+nz,New Zealand,legislative,1871,1871,1871,1871,Independent,,78,100.00,free,/elections/nz/1871
+nz,New Zealand,legislative,1875,1875,20 December 1875 – 29 January 1876,1875–76,Independent,,88,100.00,free,/elections/nz/1875
+nz,New Zealand,legislative,1879,1879,28 August and 15 September 1879,1879,Conservative Independents,66.5,88,51.14,free,/elections/nz/1879
+nz,New Zealand,legislative,1881,1881,8 (Māori) & 9 (general) December 1881,1881,Conservative Independents,66.5,95,47.37,free,/elections/nz/1881
+nz,New Zealand,legislative,1884,1884,21 (Māori) & 22 (general) July 1884,1884,Stout–Vogelites,60.6,95,60.00,free,/elections/nz/1884
+nz,New Zealand,legislative,1887,1887,7 (Māori) & 26 (general) September 1887,1887,Conservatives,67.1,95,54.74,free,/elections/nz/1887
+nz,New Zealand,legislative,1890,1890,27 November (Māori) & 5 December (general) 1890,1890,Liberal,80.4,74,54.05,free,/elections/nz/1890
+nz,New Zealand,legislative,1893,1893,28 November (general) & 20 December (Māori) 1893,1893,Liberal,75.3,74,68.92,free,/elections/nz/1893
+nz,New Zealand,legislative,1896,1896,4 (general) & 19 December (Māori) 1896,1896,Liberal,76.1,74,52.70,free,/elections/nz/1896
+nz,New Zealand,legislative,1899,1899,6 (general) & 19 December (Māori) 1899,1899,Liberal,77.6,74,66.22,free,/elections/nz/1899
+nz,New Zealand,legislative,1902,1902,25 November (general) & 22 December (Māori) 1902,1902,Liberal,76.7,80,58.75,free,/elections/nz/1902
+nz,New Zealand,legislative,1905,1905,6 (general) & 20 December (Māori) 1905,1905,Liberal,83.3,80,72.50,free,/elections/nz/1905
+nz,New Zealand,legislative,1908,1908,17 November to 2 December 1908,1908,Liberal,79.8,80,62.50,free,/elections/nz/1908
+nz,New Zealand,legislative,1911,1911,7 to 19 December 1911,1911,Reform,83.5,80,46.25,free,/elections/nz/1911
+nz,New Zealand,legislative,1914,1914,10 & 11 December 1914,1914,Reform,84.7,80,50.00,free,/elections/nz/1914
+nz,New Zealand,legislative,1919,1919,16 (Māori) & 17 December (general) 1919,1919,Reform,80.5,80,56.25,free,/elections/nz/1919
+nz,New Zealand,legislative,1922,1922,6 (Māori) & 7 December (general) 1922,1922,Reform,87.7,80,46.25,free,/elections/nz/1922
+nz,New Zealand,legislative,1925,1925,3 (Māori) & 4 November (general) 1925,1925,Reform,90.02,80,68.75,free,/elections/nz/1925
+nz,New Zealand,legislative,1928,1928,13 (Māori) & 14 November (general) 1928,1928,Reform,88.01,80,35.00,free,/elections/nz/1928
+nz,New Zealand,legislative,1931,1931,1 (Māori) & 2 December (general) 1931,1931,Reform,83.3,80,35.00,free,/elections/nz/1931
+nz,New Zealand,legislative,1935,1935,26 (Māori) & 27 November (general) 1935,1935,Labour,90.75,80,66.25,free,/elections/nz/1935
+nz,New Zealand,legislative,1938,1938,14 (Māori) & 15 October (general) 1938,1938,Labour,92.9,80,66.25,free,/elections/nz/1938
+nz,New Zealand,legislative,1943,1943,24 (Māori) & 25 September (general) 1943,1943,Labour,82.8,80,56.25,free,/elections/nz/1943
+nz,New Zealand,legislative,1946,1946,27 November 1946 (general),1946,Labour,93.5,80,52.50,free,/elections/nz/1946
+nz,New Zealand,legislative,1949,1949,29 (Māori) & 30 November (general) 1949,1949,National,96.3,80,57.50,free,/elections/nz/1949
+nz,New Zealand,legislative,1951,1951,1 September 1951,1951,National,89.1,80,62.50,free,/elections/nz/1951
+nz,New Zealand,legislative,1954,1954,13 November 1954,1954,National,91.4,80,56.25,free,/elections/nz/1954
+nz,New Zealand,legislative,1957,1957,30 November 1957,1957,Labour,92.9,80,51.25,free,/elections/nz/1957
+nz,New Zealand,legislative,1960,1960,26 November 1960,1960,National,89.8,80,57.50,free,/elections/nz/1960
+nz,New Zealand,legislative,1963,1963,30 November 1963,1963,National,89.6,80,56.25,free,/elections/nz/1963
+nz,New Zealand,legislative,1966,1966,26 November 1966,1966,National,86.0,80,55.00,free,/elections/nz/1966
+nz,New Zealand,legislative,1969,1969,29 November 1969,1969,National,88.94,84,53.57,free,/elections/nz/1969
+nz,New Zealand,legislative,1972,1972,25 November 1972,1972,Labour,88.94,87,63.22,free,/elections/nz/1972
+nz,New Zealand,legislative,1975,1975,29 November 1975,1975,National,82.11,87,63.22,free,/elections/nz/1975
+nz,New Zealand,legislative,1978,1978,25 November 1978,1978,National,68.7,92,55.43,free,/elections/nz/1978
+nz,New Zealand,legislative,1981,1981,28 November 1981,1981,National,,92,51.09,free,/elections/nz/1981
+nz,New Zealand,legislative,1984,1984,14 July 1984,1984,Labour,93.7,95,58.95,free,/elections/nz/1984
+nz,New Zealand,legislative,1987,1987,15 August 1987,1987,Labour,89.1,97,58.76,free,/elections/nz/1987
+nz,New Zealand,legislative,1990,1990,27 October 1990,1990,National,,97,69.07,free,/elections/nz/1990
+nz,New Zealand,legislative,1993,1993,6 November 1993,1993,National,82.82,99,50.51,free,/elections/nz/1993
+nz,New Zealand,legislative,1996,1996,12 October 1996,1996,National,88.28,120,36.67,free,/elections/nz/1996
+nz,New Zealand,legislative,1999,1999,27 November 1999,1999,Labour,84.77,120,40.83,free,/elections/nz/1999
+nz,New Zealand,legislative,2002,2002,27 July 2002,2002,Labour,76.98,120,43.33,free,/elections/nz/2002
+nz,New Zealand,legislative,2005,2005,17 September 2005,2005,Labour,80.92,121,41.32,free,/elections/nz/2005
+nz,New Zealand,legislative,2008,2008,8 November 2008,2008,National,79.46,122,47.54,free,/elections/nz/2008
+nz,New Zealand,legislative,2011,2011,26 November 2011,2011,National,74.21,121,48.76,free,/elections/nz/2011
+nz,New Zealand,legislative,2014,2014,20 September 2014,2014,National,77.9,121,49.59,free,/elections/nz/2014
+nz,New Zealand,legislative,2017,2017,23 September 2017,2017,National,79.8,120,46.67,free,/elections/nz/2017
+nz,New Zealand,legislative,2020,2020,17 October 2020,2020,Labour,82.24,120,54.17,free,/elections/nz/2020
+nz,New Zealand,legislative,2023,2023,14 October 2023,2023,National,78.2,123,39.02,free,/elections/nz/2023
+ph,Philippines,presidential,1935,1935,"September 16, 1935",1935,Manuel L. Quezon,,,67.98,free,/elections/ph/1935
+ph,Philippines,presidential,1941,1941,"November 11, 1941",1941,Manuel L. Quezon,,,80.14,free,/elections/ph/1941
+ph,Philippines,presidential,1943,1943,"September 25, 1943",1943,Jose P. Laurel,,,,unfree,/elections/ph/1943
+ph,Philippines,presidential,1946,1946,"April 23, 1946",1946,Manuel Roxas,89.59,,53.93,free,/elections/ph/1946
+ph,Philippines,presidential,1949,1949,"November 8, 1949",1949,Elpidio Quirino,69.7,,,free,/elections/ph/1949
+ph,Philippines,presidential,1953,1953,"November 10, 1953",1953,Ramon Magsaysay,77.22,,,free,/elections/ph/1953
+ph,Philippines,presidential,1957,1957,"November 12, 1957",1957,Carlos P. Garcia,75.52,,,free,/elections/ph/1957
+ph,Philippines,presidential,1961,1961,"November 14, 1961",1961,Diosdado Macapagal,79.4,,,free,/elections/ph/1961
+ph,Philippines,presidential,1965,1965,"November 9, 1965",1965,Ferdinand E. Marcos,76.4,,,free,/elections/ph/1965
+ph,Philippines,presidential,1969,1969,"November 11, 1969",1969,Ferdinand Marcos,79.6,,,free,/elections/ph/1969
+ph,Philippines,presidential,1981,1981,"June 16, 1981",1981,Ferdinand Marcos,80.9,,,unfree,/elections/ph/1981
+ph,Philippines,presidential,1986,1986,"February 7, 1986",1986,Corazon Aquino,78.8,,,partial,/elections/ph/1986
+ph,Philippines,presidential,1992,1992,"May 11, 1992",1992,Fidel V. Ramos,75.5,,23.58,free,/elections/ph/1992
+ph,Philippines,presidential,1998,1998,"May 11, 1998",1998,Joseph Estrada,86.5,,39.86,free,/elections/ph/1998
+ph,Philippines,presidential,2004,2004,"May 10, 2004",2004,Gloria Macapagal Arroyo,76.3,,,free,/elections/ph/2004
+ph,Philippines,presidential,2010,2010,"May 10, 2010",2010,Benigno Aquino III,74.34,,42.08,free,/elections/ph/2010
+ph,Philippines,presidential,2016,2016,"May 9, 2016",2016,Rodrigo Duterte,80.69,,,free,/elections/ph/2016
+ph,Philippines,presidential,2022,2022,"May 9, 2022",2022,Bongbong Marcos,83.07,,58.77,free,/elections/ph/2022
+pl,Poland,presidential,pres-1573,1573,"April 5, 1573 – May 16, 1573",1573,Henri de Valois,,,,partial,/elections/pl/pres-1573
+pl,Poland,presidential,pres-1576,1576,"November 8, 1575 – February 1, 1576",1576,Anna Jagiellon,,,,partial,/elections/pl/pres-1576
+pl,Poland,presidential,pres-1587,1587,"June 30, 1587 - August 19, 1587",1587,Sigismund III Vasa,,,,partial,/elections/pl/pres-1587
+pl,Poland,presidential,pres-1632,1632,"September 27, 1632 – November 8, 1632",1632,Władysław IV Vasa,,,,partial,/elections/pl/pres-1632
+pl,Poland,presidential,pres-1648,1648,"October 6, 1648 – November 17, 1648",1648,John II Casimir Vasa,,,,partial,/elections/pl/pres-1648
+pl,Poland,presidential,pres-1669,1669,"May 1, 1669 – June 19, 1669",1669,Michael I,,,,partial,/elections/pl/pres-1669
+pl,Poland,presidential,pres-1674,1674,"June 19, 1674 – June 21, 1674",1674,John III,,,,partial,/elections/pl/pres-1674
+pl,Poland,presidential,pres-1697,1697,"June 27, 1697",1697,Augustus II,,,,partial,/elections/pl/pres-1697
+pl,Poland,presidential,pres-1704,1704,"July 12, 1704",1704,Stanisław I,,,,partial,/elections/pl/pres-1704
+pl,Poland,presidential,pres-1733,1733,"September 12, 1733",1733,Stanisław I,,,,partial,/elections/pl/pres-1733
+pl,Poland,presidential,pres-1764,1764,1764,1764,Stanisław II Augustus,,,,partial,/elections/pl/pres-1764
+pl,Poland,presidential,pres-1922,1922,9 December 1922,1922,Gabriel Narutowicz,,,27.81,partial,/elections/pl/pres-1922
+pl,Poland,presidential,pres-1926,1926,31 May 1926,1926,Maciej Rataj (acting),,,,partial,/elections/pl/pres-1926
+pl,Poland,presidential,pres-1933,1933,8 May 1933,1933,Ignacy Mościcki,,,100.00,partial,/elections/pl/pres-1933
+pl,Poland,presidential,pres-1947,1947,5 February 1947,1947,Bolesław Bierut,,,94.44,partial,/elections/pl/pres-1947
+pl,Poland,presidential,pres-1989,1989,19 July 1989,1989,Wojciech Jaruzelski,,,50.28,partial,/elections/pl/pres-1989
+pl,Poland,presidential,pres-1990,1990,25 November and 9 December 1990,1990,Lech Wałęsa,60.63,,74.25,free,/elections/pl/pres-1990
+pl,Poland,presidential,pres-1995,1995,5 November and 19 November 1995,1995,Aleksander Kwaśniewski,64.7,,51.72,free,/elections/pl/pres-1995
+pl,Poland,presidential,pres-2000,2000,8 October 2000,2000,Aleksander Kwaśniewski,61.08,,53.90,free,/elections/pl/pres-2000
+pl,Poland,presidential,pres-2005,2005,9 October and 23 October 2005,2005,Lech Kaczyński,49.72,,54.04,free,/elections/pl/pres-2005
+pl,Poland,presidential,pres-2010,2010,20 June and 4 July 2010,2010,Bronisław Komorowski,54.92,,53.01,free,/elections/pl/pres-2010
+pl,Poland,presidential,pres-2015,2015,10 May and 24 May 2015,2015,Andrzej Duda,48.96,,51.55,free,/elections/pl/pres-2015
+pl,Poland,presidential,pres-2020,2020,28 June and 12 July 2020,2020,Andrzej Duda,64.51,,51.03,free,/elections/pl/pres-2020
+pl,Poland,presidential,pres-2025,2025,18 May and 1 June 2025,2025,Karol Nawrocki,67.31,,50.89,free,/elections/pl/pres-2025
+pl,Poland,legislative,1919,1919,26 January 1919,1919,Popular National Union,,394,35.53,free,/elections/pl/1919
+pl,Poland,legislative,1922,1922,12 November 1922 (Senat),1922,ChZJN,67.9,444,36.71,free,/elections/pl/1922
+pl,Poland,legislative,1928,1928,11 March 1928 (Senat),1928,BBWR,78.5,444,28.15,free,/elections/pl/1928
+pl,Poland,legislative,1930,1930,23 November 1930 (Senate),1930,BBWR,63.43,444,56.08,partial,/elections/pl/1930
+pl,Poland,legislative,1935,1935,15 September 1935,1935,Nonpartisan Bloc for Cooperation with the Government,45.95,208,87.02,partial,/elections/pl/1935
+pl,Poland,legislative,1938,1938,6 November 1938,1938,OZN,67.09,208,78.85,partial,/elections/pl/1938
+pl,Poland,legislative,1947,1947,17 January 1947,1947,Democratic Bloc,,444,88.74,partial,/elections/pl/1947
+pl,Poland,legislative,1952,1952,26 October 1952,1952,PZPR,95.03,425,64.24,partial,/elections/pl/1952
+pl,Poland,legislative,1957,1957,"January 20, 1957",1957,PZPR,94.14,459,100.00,partial,/elections/pl/1957
+pl,Poland,legislative,1961,1961,16 April 1961,1961,PZPR,,460,100.00,partial,/elections/pl/1961
+pl,Poland,legislative,1965,1965,30 June 1965,1965,PZPR,,460,100.00,partial,/elections/pl/1965
+pl,Poland,legislative,1969,1969,1 June 1969,1969,PZPR,,460,55.43,partial,/elections/pl/1969
+pl,Poland,legislative,1972,1972,19 March 1972,1972,PZPR,,460,55.43,partial,/elections/pl/1972
+pl,Poland,legislative,1976,1976,21 March 1976,1976,PZPR,,460,56.74,partial,/elections/pl/1976
+pl,Poland,legislative,1980,1980,23 March 1980,1980,PZPR,,460,56.74,partial,/elections/pl/1980
+pl,Poland,legislative,1985,1985,13 October 1985,1985,PZPR,,460,53.26,partial,/elections/pl/1985
+pl,Poland,legislative,1989,1989,4 June and 18 June 1989,1989,,62.7,460,,partial,/elections/pl/1989
+pl,Poland,legislative,1991,1991,27 October 1991,1991,Democratic Union,43.2,460,13.48,free,/elections/pl/1991
+pl,Poland,legislative,1993,1993,19 September 1993,1993,SLD,52.1,460,37.17,free,/elections/pl/1993
+pl,Poland,legislative,1997,1997,21 September 1997,1997,Solidarity Electoral Action,47.83,460,43.70,free,/elections/pl/1997
+pl,Poland,legislative,2001,2001,23 September 2001,2001,Democratic Left Alliance – Labour Union,46.15,460,46.96,free,/elections/pl/2001
+pl,Poland,legislative,2005,2005,25 September 2005,2005,Law and Justice,40.49,460,33.70,free,/elections/pl/2005
+pl,Poland,legislative,2007,2007,21 October 2007,2007,Civic Platform,53.81,460,45.43,free,/elections/pl/2007
+pl,Poland,legislative,2011,2011,9 October 2011,2011,Civic Platform,48.92,460,45.00,free,/elections/pl/2011
+pl,Poland,legislative,2015,2015,25 October 2015,2015,United Right,50.92,460,51.09,free,/elections/pl/2015
+pl,Poland,legislative,2019,2019,13 October 2019,2019,Law and Justice,61.74,460,51.09,free,/elections/pl/2019
+pl,Poland,legislative,2023,2023,15 October 2023,2023,United Right,74.31,460,42.17,free,/elections/pl/2023
+ps,Palestine,presidential,pres-1996,1996,20 January 1996,1996,Yasser Arafat,71.66,,89.82,partial,/elections/ps/pres-1996
+ps,Palestine,presidential,pres-2005,2005,9 January 2005,2005,Mahmoud Abbas,73.42,,67.38,partial,/elections/ps/pres-2005
+ps,Palestine,legislative,1923,1923,February–March 1923,1923,,,23,,unfree,/elections/ps/1923
+ps,Palestine,legislative,1996,1996,20 January 1996,1996,Fatah,71.66,88,56.82,partial,/elections/ps/1996
+ps,Palestine,legislative,2006,2006,25 January 2006,2006,Hamas,71.18,132,56.06,partial,/elections/ps/2006
+pt,Portugal,presidential,pres-1911,1911,"February 18, 2025",1911,Manuel de Arriaga,,,55.76,unfree,/elections/pt/pres-1911
+pt,Portugal,presidential,pres-1915-august,1915,6 August 1915,August 1915,Bernardino Machado,,,,unfree,/elections/pt/pres-1915-august
+pt,Portugal,presidential,pres-1915-may,1915,29 May 1915,May 1915,Teófilo Braga,,,96.08,unfree,/elections/pt/pres-1915-may
+pt,Portugal,presidential,pres-1918,1918,16 December 1918,1918,João do Canto e Castro,,,,unfree,/elections/pt/pres-1918
+pt,Portugal,presidential,pres-1919,1919,6 December 1919,1919,António José de Almeida,,,,unfree,/elections/pt/pres-1919
+pt,Portugal,presidential,pres-1923,1923,6 August 1923,1923,Manuel Teixeira Gomes,,,,unfree,/elections/pt/pres-1923
+pt,Portugal,presidential,pres-1925,1925,11 December 1925,1925,Bernardino Machado,,,,unfree,/elections/pt/pres-1925
+pt,Portugal,presidential,pres-1928,1928,25 March 1928,1928,Óscar Carmona,69.97,,,unfree,/elections/pt/pres-1928
+pt,Portugal,presidential,pres-1935,1935,17 February 1935,1935,Óscar Carmona,84.29,,,unfree,/elections/pt/pres-1935
+pt,Portugal,presidential,pres-1942,1942,8 February 1942,1942,Óscar Carmona,91.12,,,unfree,/elections/pt/pres-1942
+pt,Portugal,presidential,pres-1949,1949,13 February 1949,1949,Óscar Carmona,77.61,,,unfree,/elections/pt/pres-1949
+pt,Portugal,presidential,pres-1951,1951,22 July 1951,1951,Francisco Craveiro Lopes,77.17,,,unfree,/elections/pt/pres-1951
+pt,Portugal,presidential,pres-1958,1958,8 June 1958,1958,Américo Tomás,77.35,,76.42,unfree,/elections/pt/pres-1958
+pt,Portugal,presidential,pres-1965,1965,25 July 1965,1965,Américo Tomás,,,,free,/elections/pt/pres-1965
+pt,Portugal,presidential,pres-1972,1972,25 July 1972,1972,Américo Tomás,,,95.50,free,/elections/pt/pres-1972
+pt,Portugal,presidential,pres-1976,1976,27 June 1976,1976,António Ramalho Eanes,75.47,,61.59,free,/elections/pt/pres-1976
+pt,Portugal,presidential,pres-1980,1980,7 December 1980,1980,António Ramalho Eanes,84.39,,56.44,free,/elections/pt/pres-1980
+pt,Portugal,presidential,pres-1986,1986,1986,1986,Mário Soares,75.39,,,free,/elections/pt/pres-1986
+pt,Portugal,presidential,pres-1991,1991,13 January 1991,1991,Mário Soares,62.16,,70.35,free,/elections/pt/pres-1991
+pt,Portugal,presidential,pres-1996,1996,14 January 1996,1996,Jorge Sampaio,66.29,,53.91,free,/elections/pt/pres-1996
+pt,Portugal,presidential,pres-2001,2001,14 January 2001,2001,Jorge Sampaio,49.71,,55.55,free,/elections/pt/pres-2001
+pt,Portugal,presidential,pres-2006,2006,22 January 2006,2006,Aníbal Cavaco Silva,61.53,,50.54,free,/elections/pt/pres-2006
+pt,Portugal,presidential,pres-2011,2011,23 January 2011,2011,Aníbal Cavaco Silva,46.52,,52.95,free,/elections/pt/pres-2011
+pt,Portugal,presidential,pres-2016,2016,24 January 2016,2016,Marcelo Rebelo de Sousa,48.66,,52.00,free,/elections/pt/pres-2016
+pt,Portugal,presidential,pres-2021,2021,24 January 2021,2021,Marcelo Rebelo de Sousa,39.26,,60.67,free,/elections/pt/pres-2021
+pt,Portugal,presidential,pres-2026,2026,18 January 2026,2026,António José Seguro,52.39,,,free,/elections/pt/pres-2026
+pt,Portugal,legislative,1918,1918,28 April 1918,1918,National Republican Party,,155,108.00,partial,/elections/pt/1918
+pt,Portugal,legislative,1919,1919,11 May 1919,1919,Democratic Party,,163,52.76,partial,/elections/pt/1919
+pt,Portugal,legislative,1921,1921,10 July 1921,1921,Republican Liberal Party,,163,48.47,partial,/elections/pt/1921
+pt,Portugal,legislative,1922,1922,29 January 1922,1922,Democratic Party,,163,45.40,partial,/elections/pt/1922
+pt,Portugal,legislative,1925,1925,8 November 1925,1925,Other parties and independents,71.04,163,19.00,partial,/elections/pt/1925
+pt,Portugal,legislative,1934,1934,16 December 1934,1934,UN,,100,100.00,unfree,/elections/pt/1934
+pt,Portugal,legislative,1938,1938,30 October 1938,1938,UN,,100,100.00,unfree,/elections/pt/1938
+pt,Portugal,legislative,1942,1942,1 November 1942,1942,UN,,100,100.00,unfree,/elections/pt/1942
+pt,Portugal,legislative,1945,1945,18 November 1945,1945,UN,,120,100.00,unfree,/elections/pt/1945
+pt,Portugal,legislative,1949,1949,13 November 1949,1949,,,120,,unfree,/elections/pt/1949
+pt,Portugal,legislative,1953,1953,8 November 1953,1953,National Union,68.2,120,120.00,unfree,/elections/pt/1953
+pt,Portugal,legislative,1957,1957,3 November 1957,1957,National Union,70.43,120,120.00,unfree,/elections/pt/1957
+pt,Portugal,legislative,1961,1961,12 November 1961,1961,UN,,130,100.00,unfree,/elections/pt/1961
+pt,Portugal,legislative,1965,1965,7 November 1965,1965,,,130,,unfree,/elections/pt/1965
+pt,Portugal,legislative,1969,1969,26 October 1969,1969,National Union,62.5,130,100.00,unfree,/elections/pt/1969
+pt,Portugal,legislative,1973,1973,28 October 1973,1973,ANP,,150,100.00,unfree,/elections/pt/1973
+pt,Portugal,legislative,1975,1975,25 April 1975,1975,Socialist Party,91.66,250,46.40,free,/elections/pt/1975
+pt,Portugal,legislative,1976,1976,25 April 1976,1976,Socialist Party,83.53,263,40.68,free,/elections/pt/1976
+pt,Portugal,legislative,1979,1979,2 December 1979,1979,Socialist Party,82.87,250,29.60,free,/elections/pt/1979
+pt,Portugal,legislative,1980,1980,5 October 1980,1980,Democratic Alliance,83.94,250,17.60,free,/elections/pt/1980
+pt,Portugal,legislative,1983,1983,25 April 1983,1983,Socialist Party,77.79,250,40.40,free,/elections/pt/1983
+pt,Portugal,legislative,1985,1985,6 October 1985,1985,Social Democratic Party,74.16,250,35.20,free,/elections/pt/1985
+pt,Portugal,legislative,1987,1987,19 July 1987,1987,Social Democratic Party,71.57,250,59.20,free,/elections/pt/1987
+pt,Portugal,legislative,1991,1991,6 October 1991,1991,Social Democratic Party,67.78,230,58.70,free,/elections/pt/1991
+pt,Portugal,legislative,1995,1995,1 October 1995,1995,Socialist Party,66.3,230,48.70,free,/elections/pt/1995
+pt,Portugal,legislative,1999,1999,10 October 1999,1999,Socialist Party,61.09,230,50.00,free,/elections/pt/1999
+pt,Portugal,legislative,2002,2002,17 March 2002,2002,Social Democratic Party,61.47,230,45.65,free,/elections/pt/2002
+pt,Portugal,legislative,2005,2005,20 February 2005,2005,Socialist Party,64.26,230,52.61,free,/elections/pt/2005
+pt,Portugal,legislative,2009,2009,27 September 2009,2009,Socialist Party,59.68,230,42.17,free,/elections/pt/2009
+pt,Portugal,legislative,2011,2011,5 June 2011,2011,Social Democratic Party,58.03,230,46.96,free,/elections/pt/2011
+pt,Portugal,legislative,2015,2015,4 October 2015,2015,Socialist Party,55.84,230,37.39,free,/elections/pt/2015
+pt,Portugal,legislative,2019,2019,6 October 2019,2019,Socialist Party,48.6,230,46.96,free,/elections/pt/2019
+pt,Portugal,legislative,2022,2022,30 January 2022,2022,Socialist Party,51.46,230,52.17,free,/elections/pt/2022
+pt,Portugal,legislative,2024,2024,10 March 2024,2024,Socialist Party,59.9,230,33.91,free,/elections/pt/2024
+pt,Portugal,legislative,2025,2025,18 May 2025,2025,Chega,58.25,230,26.09,free,/elections/pt/2025
+ru,Russia,presidential,pres-1990,1990,14 March 1990,1990,Mikhail Gorbachev,,,72.86,unfree,/elections/ru/pres-1990
+ru,Russia,presidential,pres-1991,1991,12 June 1991,1991,Boris Yeltsin,74.67,,58.56,free,/elections/ru/pres-1991
+ru,Russia,presidential,pres-1996,1996,16 June and 3 July 1996,1996,Boris Yeltsin,69.67,,54.40,partial,/elections/ru/pres-1996
+ru,Russia,presidential,pres-2000,2000,26 March 2000,2000,Vladimir Putin,68.64,,53.44,partial,/elections/ru/pres-2000
+ru,Russia,presidential,pres-2004,2004,14 March 2004,2004,Vladimir Putin,64.32,,71.91,partial,/elections/ru/pres-2004
+ru,Russia,presidential,pres-2008,2008,2 March 2008,2008,Dmitry Medvedev,69.71,,71.25,unfree,/elections/ru/pres-2008
+ru,Russia,presidential,pres-2012,2012,4 March 2012,2012,Vladimir Putin,65.27,,64.35,unfree,/elections/ru/pres-2012
+ru,Russia,presidential,pres-2018,2018,18 March 2018,2018,Vladimir Putin,67.5,,77.53,unfree,/elections/ru/pres-2018
+ru,Russia,presidential,pres-2024,2024,15–17 March 2024,2024,Vladimir Putin,77.49,,88.48,unfree,/elections/ru/pres-2024
+ru,Russia,legislative,1906,1906,March 1906,1906,Kadets,,477,38.57,partial,/elections/ru/1906
+ru,Russia,legislative,1907-jan,1907,January 1907,January 1907,Trudoviks,,518,20.08,partial,/elections/ru/1907-jan
+ru,Russia,legislative,1907-oct,1907,October 1907,October 1907,Octobrist,,442,34.84,unfree,/elections/ru/1907-oct
+ru,Russia,legislative,1912,1912,1912,1912,Octobrist,,442,22.17,unfree,/elections/ru/1912
+ru,Russia,legislative,1917,1917,25 November 1917,1917,SRs,64.0,767,42.24,partial,/elections/ru/1917
+ru,Russia,legislative,1921,1921,1921,1921,,,,,unfree,/elections/ru/1921
+ru,Russia,legislative,1922,1922,30 December 1922,1922,RKP(b),22.3,2214,94.04,unfree,/elections/ru/1922
+ru,Russia,legislative,1924,1924,1924,1924,,,,,unfree,/elections/ru/1924
+ru,Russia,legislative,1927,1927,1927,1927,,,,,unfree,/elections/ru/1927
+ru,Russia,legislative,1929,1929,1929,1929,,,,,unfree,/elections/ru/1929
+ru,Russia,legislative,1931,1931,February 1931,1931,VKP(b),,1576,73.03,unfree,/elections/ru/1931
+ru,Russia,legislative,1935,1935,January 1935,1935,VKP(b),,2022,74.09,unfree,/elections/ru/1935
+ru,Russia,legislative,1936,1936,November 1936,1936,VKP(b),,2025,71.51,unfree,/elections/ru/1936
+ru,Russia,legislative,1937,1937,12 December 1937,1937,All-Union Communist Party (Bolsheviks),,569,81.02,unfree,/elections/ru/1937
+ru,Russia,legislative,1946,1946,10 February 1946,1946,All-Union Communist Party (Bolsheviks),,682,84.46,unfree,/elections/ru/1946
+ru,Russia,legislative,1950,1950,12 March 1950,1950,All-Union Communist Party (Bolsheviks),,678,85.55,unfree,/elections/ru/1950
+ru,Russia,legislative,1954,1954,14 March 1954,1954,Communist Party,,708,79.80,unfree,/elections/ru/1954
+ru,Russia,legislative,1958,1958,16 March 1958,1958,Communist Party,,738,76.29,unfree,/elections/ru/1958
+ru,Russia,legislative,1962,1962,18 March 1962,1962,Communist Party,,791,76.36,unfree,/elections/ru/1962
+ru,Russia,legislative,1966,1966,12 June 1966,1966,Communist Party of the Soviet Union,,767,74.71,unfree,/elections/ru/1966
+ru,Russia,legislative,1970,1970,14 June 1970,1970,Communist Party,,767,73.27,unfree,/elections/ru/1970
+ru,Russia,legislative,1974,1974,16 June 1974,1974,Communist Party of the Soviet Union,,767,73.27,unfree,/elections/ru/1974
+ru,Russia,legislative,1979,1979,4 March 1979,1979,Communist Party of the Soviet Union,,750,73.20,unfree,/elections/ru/1979
+ru,Russia,legislative,1984,1984,4 March 1984,1984,Communist Party of the Soviet Union,,750,73.47,unfree,/elections/ru/1984
+ru,Russia,legislative,1989,1989,26 March 1989,1989,CPSU,89.8,2250,87.02,partial,/elections/ru/1989
+ru,Russia,legislative,1993,1993,12 December 1993,1993,Independents,54.33,450,38.00,partial,/elections/ru/1993
+ru,Russia,legislative,1995,1995,17 December 1995,1995,KPRF,64.38,450,34.89,free,/elections/ru/1995
+ru,Russia,legislative,1999,1999,19 December 1999,1999,CPRF,61.85,450,25.11,free,/elections/ru/1999
+ru,Russia,legislative,2003,2003,7 December 2003,2003,United Russia,55.75,450,49.56,partial,/elections/ru/2003
+ru,Russia,legislative,2007,2007,2 December 2007,2007,United Russia,63.71,450,70.00,unfree,/elections/ru/2007
+ru,Russia,legislative,2011,2011,4 December 2011,2011,United Russia,60.1,450,52.89,unfree,/elections/ru/2011
+ru,Russia,legislative,2016,2016,18 September 2016,2016,United Russia,47.88,450,76.22,unfree,/elections/ru/2016
+ru,Russia,legislative,2021,2021,17–19 September 2021,2021,United Russia,51.72,450,72.00,unfree,/elections/ru/2021
+sg,Singapore,legislative,1948,1948,20 March 1948,1948,Independents,63.25,6,50.00,unfree,/elections/sg/1948
+sg,Singapore,legislative,1951,1951,10 April 1951,1951,Progressive Party,52.05,9,66.67,unfree,/elections/sg/1951
+sg,Singapore,legislative,1955,1955,2 April 1955,1955,Labour Front,52.66,25,40.00,free,/elections/sg/1955
+sg,Singapore,legislative,1959,1959,30 May 1959,1959,People's Action Party,90.07,51,84.31,free,/elections/sg/1959
+sg,Singapore,legislative,1963,1963,21 September 1963,1963,People's Action Party,95.11,51,72.55,partial,/elections/sg/1963
+sg,Singapore,legislative,1968,1968,13 April 1968,1968,PAP,91.83,,86.72,partial,/elections/sg/1968
+sg,Singapore,legislative,1972,1972,2 September 1972,1972,PAP,93.55,,70.43,partial,/elections/sg/1972
+sg,Singapore,legislative,1976,1976,23 December 1976,1976,PAP,95.08,,74.09,partial,/elections/sg/1976
+sg,Singapore,legislative,1980,1980,23 December 1980,1980,PAP,95.5,,77.66,partial,/elections/sg/1980
+sg,Singapore,legislative,1984,1984,22 December 1984,1984,PAP,95.65,,64.83,partial,/elections/sg/1984
+sg,Singapore,legislative,1988,1988,3 September 1988,1988,PAP,94.7,,63.17,partial,/elections/sg/1988
+sg,Singapore,legislative,1991,1991,31 August 1991,1991,PAP,95.03,,60.97,partial,/elections/sg/1991
+sg,Singapore,legislative,1997,1997,2 January 1997,1997,PAP,95.91,,64.98,partial,/elections/sg/1997
+sg,Singapore,legislative,2001,2001,3 November 2001,2001,PAP,94.61,,75.29,partial,/elections/sg/2001
+sg,Singapore,legislative,2006,2006,6 May 2006,2006,PAP,94.0,,66.60,partial,/elections/sg/2006
+sg,Singapore,legislative,2011,2011,7 May 2011,2011,People's Action Party,93.18,90,90.00,partial,/elections/sg/2011
+sg,Singapore,legislative,2015,2015,11 September 2015,2015,People's Action Party,93.7,92,90.22,partial,/elections/sg/2015
+sg,Singapore,legislative,2020,2020,10 July 2020,2020,PAP,95.81,,61.23,partial,/elections/sg/2020
+sg,Singapore,legislative,2025,2025,3 May 2025,2025,PAP,92.83,,65.57,partial,/elections/sg/2025
+tr,Turkey,presidential,pres-1923,1923,29 October 1923,1923,Mustafa Kemal Atatürk,,,100.00,partial,/elections/tr/pres-1923
+tr,Turkey,presidential,pres-1927,1927,1 November 1927,1927,Mustafa Kemal Atatürk,,,100.00,partial,/elections/tr/pres-1927
+tr,Turkey,presidential,pres-1931,1931,4 May 1931,1931,Mustafa Kemal Atatürk,,,100.00,partial,/elections/tr/pres-1931
+tr,Turkey,presidential,pres-1935,1935,1 March 1935,1935,Mustafa Kemal Atatürk,,,100.00,partial,/elections/tr/pres-1935
+tr,Turkey,presidential,pres-1938,1938,11 November 1938,1938,İsmet İnönü,,,100.00,partial,/elections/tr/pres-1938
+tr,Turkey,presidential,pres-1939,1939,3 April 1939,1939,İsmet İnönü,,,100.00,partial,/elections/tr/pres-1939
+tr,Turkey,presidential,pres-1943,1943,8 March 1943,1943,İsmet İnönü,,,100.00,partial,/elections/tr/pres-1943
+tr,Turkey,presidential,pres-1946,1946,5 August 1946,1946,İsmet İnönü,,,86.41,partial,/elections/tr/pres-1946
+tr,Turkey,presidential,pres-1950,1950,22 May 1950,1950,Celâl Bayar,,,85.43,partial,/elections/tr/pres-1950
+tr,Turkey,presidential,pres-1954,1954,14 May 1954,1954,Celâl Bayar,,,94.74,partial,/elections/tr/pres-1954
+tr,Turkey,presidential,pres-1957,1957,1 November 1957,1957,Celâl Bayar,,,100.00,partial,/elections/tr/pres-1957
+tr,Turkey,presidential,pres-1961,1961,"October 26, 1961",1961,Cemal Gürsel,,,68.00,partial,/elections/tr/pres-1961
+tr,Turkey,presidential,pres-1966,1966,"March 28th, 1966",1966,Cevdet Sunay,,,72.70,partial,/elections/tr/pres-1966
+tr,Turkey,presidential,pres-1973,1973,1973,1973,Fahri Korutürk,,,57.50,partial,/elections/tr/pres-1973
+tr,Turkey,presidential,pres-1980,1980,12 March 1980,1980,,,,,partial,/elections/tr/pres-1980
+tr,Turkey,presidential,pres-1989,1989,31 October 1989,1989,Turgut Özal,63.33,,94.95,partial,/elections/tr/pres-1989
+tr,Turkey,presidential,pres-1993,1993,8–16 May 1993,1993,Süleyman Demirel,91.56,,58.17,partial,/elections/tr/pres-1993
+tr,Turkey,presidential,pres-2000,2000,27 April 2000 to 5 May 2000,2000,Ahmet Necdet Sezer,96.91,,59.58,partial,/elections/tr/pres-2000
+tr,Turkey,presidential,pres-2007,2007,20–28 August 2007,2007,Abdullah Gül,81.45,,79.86,partial,/elections/tr/pres-2007
+tr,Turkey,presidential,pres-2014,2014,10 August 2014,2014,Recep Tayyip Erdoğan,74.13,,51.79,free,/elections/tr/pres-2014
+tr,Turkey,presidential,pres-2018,2018,24 June 2018,2018,Recep Tayyip Erdoğan,86.24,,52.59,partial,/elections/tr/pres-2018
+tr,Turkey,presidential,pres-2023,2023,14–28 May 2023,2023,Recep Tayyip Erdoğan,,,52.18,partial,/elections/tr/pres-2023
+tr,Turkey,legislative,1877-1,1877,1877,1877 (first),,,,,partial,/elections/tr/1877-1
+tr,Turkey,legislative,1877-2,1877,1877,1877 (second),,,,,partial,/elections/tr/1877-2
+tr,Turkey,legislative,1908,1908,November–December 1908,1908,,,275,,partial,/elections/tr/1908
+tr,Turkey,legislative,1912,1912,April 1912,1912,CUP,,275,97.82,partial,/elections/tr/1912
+tr,Turkey,legislative,1914,1914,January 1914,1914,,,275,,partial,/elections/tr/1914
+tr,Turkey,legislative,1919,1919,1919,1919,,,168,,partial,/elections/tr/1919
+tr,Turkey,legislative,1920,1920,1920,1920,,,436,,free,/elections/tr/1920
+tr,Turkey,legislative,1923,1923,28 June 1923,1923,ARMHC,,333,85.59,partial,/elections/tr/1923
+tr,Turkey,legislative,1927,1927,20 July 1927,1927,CHP,20.0,,,partial,/elections/tr/1927
+tr,Turkey,legislative,1931,1931,25 April 1931,1931,CHP,88.0,317,90.54,partial,/elections/tr/1931
+tr,Turkey,legislative,1935,1935,8 February 1935,1935,,,399,,partial,/elections/tr/1935
+tr,Turkey,legislative,1939,1939,26 March 1939,1939,,77.8,429,,partial,/elections/tr/1939
+tr,Turkey,legislative,1943,1943,28 February 1943,1943,,,455,,partial,/elections/tr/1943
+tr,Turkey,legislative,1946,1946,21 July 1946,1946,CHP,,465,84.95,partial,/elections/tr/1946
+tr,Turkey,legislative,1950,1950,14 May 1950,1950,Democrat Party,89.3,487,85.42,free,/elections/tr/1950
+tr,Turkey,legislative,1954,1954,2 May 1954,1954,Democrat Party,88.6,541,92.98,free,/elections/tr/1954
+tr,Turkey,legislative,1957,1957,27 October 1957,1957,Democrat Party,76.6,610,69.51,free,/elections/tr/1957
+tr,Turkey,legislative,1961,1961,15 October 1961,1961,Republican People's Party,81.41,450,38.44,free,/elections/tr/1961
+tr,Turkey,legislative,1965,1965,10 October 1965,1965,Justice Party,71.26,450,53.33,free,/elections/tr/1965
+tr,Turkey,legislative,1969,1969,12 October 1969,1969,Justice Party,64.35,450,56.89,free,/elections/tr/1969
+tr,Turkey,legislative,1973,1973,14 October 1973,1973,Republican People's Party,66.82,450,41.11,free,/elections/tr/1973
+tr,Turkey,legislative,1977,1977,5 June 1977,1977,Republican People's Party,72.42,450,47.33,free,/elections/tr/1977
+tr,Turkey,legislative,1983,1983,6 November 1983,1983,Motherland Party,92.27,400,52.75,partial,/elections/tr/1983
+tr,Turkey,legislative,1987,1987,29 November 1987,1987,Motherland Party,93.28,450,64.89,free,/elections/tr/1987
+tr,Turkey,legislative,1991,1991,20 October 1991,1991,True Path Party,83.92,450,39.56,free,/elections/tr/1991
+tr,Turkey,legislative,1995,1995,24 December 1995,1995,Welfare Party,85.2,550,28.73,free,/elections/tr/1995
+tr,Turkey,legislative,1999,1999,18 April 1999,1999,Democratic Left Party,87.09,550,24.73,free,/elections/tr/1999
+tr,Turkey,legislative,2002,2002,3 November 2002,2002,Justice and Development Party,79.14,550,66.00,free,/elections/tr/2002
+tr,Turkey,legislative,2007,2007,22 July 2007,2007,Justice and Development Party,84.25,550,62.00,free,/elections/tr/2007
+tr,Turkey,legislative,2011,2011,12 June 2011,2011,Justice and Development Party,83.16,550,59.45,free,/elections/tr/2011
+tr,Turkey,legislative,2015-jun,2015,7 June 2015,June 2015,Justice and Development Party,83.92,550,46.91,free,/elections/tr/2015-jun
+tr,Turkey,legislative,2015-nov,2015,1 November 2015,November 2015,AK Party,85.23,550,57.64,free,/elections/tr/2015-nov
+tr,Turkey,legislative,2018,2018,24 June 2018,2018,AK Party,86.22,600,49.17,partial,/elections/tr/2018
+tr,Turkey,legislative,2023,2023,14 May 2023,2023,AK Party,87.05,600,44.67,partial,/elections/tr/2023
+tw,Taiwan,presidential,1911,1911,29 December 1911,1911,Sun Yat-sen,,,94.12,partial,/elections/tw/1911
+tw,Taiwan,presidential,1912,1912,15 & 20 February 1912,1912,Yuan Shikai,,,100.00,partial,/elections/tw/1912
+tw,Taiwan,presidential,1913,1913,6 and 7 October 1913,1913,Yuan Shikai,,,71.12,partial,/elections/tw/1913
+tw,Taiwan,presidential,1918,1918,4 September 1918,1918,Xu Shichang,,,98.15,partial,/elections/tw/1918
+tw,Taiwan,presidential,1923,1923,5 October 1923,1923,Cao Kun,,,83.04,partial,/elections/tw/1923
+tw,Taiwan,presidential,1948,1948,"April 20, 1948",1948,Chiang Kai-shek,,,90.03,partial,/elections/tw/1948
+tw,Taiwan,presidential,1954,1954,"March 22, 1954",1954,Chiang Kai-shek,53.19,,96.91,partial,/elections/tw/1954
+tw,Taiwan,presidential,1960,1960,"March 21, 1960",1960,Chiang Kai-shek,,,100.00,partial,/elections/tw/1960
+tw,Taiwan,presidential,1966,1966,"March 21, 1966",1966,Chiang Kai-shek,,,100.00,partial,/elections/tw/1966
+tw,Taiwan,presidential,1972,1972,"March 21, 1972",1972,Chiang Kai-shek,,,100.00,partial,/elections/tw/1972
+tw,Taiwan,presidential,1978,1978,"March 21, 1978",1978,Chiang Ching-kuo,,,100.00,partial,/elections/tw/1978
+tw,Taiwan,presidential,1984,1984,"March 21, 1984",1984,Chiang Ching-kuo,,,100.00,partial,/elections/tw/1984
+tw,Taiwan,presidential,1990,1990,"March 21, 1990",1990,Lee Teng-hui,,,100.00,partial,/elections/tw/1990
+tw,Taiwan,presidential,1996,1996,23 March 1996,1996,Lee Teng-hui,76.04,,54.00,free,/elections/tw/1996
+tw,Taiwan,presidential,2000,2000,18 March 2000,2000,Chen Shui-bian,82.69,,39.30,free,/elections/tw/2000
+tw,Taiwan,presidential,2004,2004,20 March 2004,2004,Chen Shui-bian,80.28,,50.11,free,/elections/tw/2004
+tw,Taiwan,presidential,2008,2008,22 March 2008,2008,Ma Ying-jeou,76.33,,58.45,free,/elections/tw/2008
+tw,Taiwan,presidential,2012,2012,14 January 2012,2012,Ma Ying-jeou,74.38,,51.60,free,/elections/tw/2012
+tw,Taiwan,presidential,2016,2016,16 January 2016,2016,Tsai Ing-wen,66.27,,56.12,free,/elections/tw/2016
+tw,Taiwan,presidential,2020,2020,11 January 2020,2020,Tsai Ing-wen,74.9,,57.13,free,/elections/tw/2020
+tw,Taiwan,presidential,2024,2024,13 January 2024,2024,Lai Ching-te,71.86,,40.05,free,/elections/tw/2024
+ua,Ukraine,presidential,pres-1991,1991,1 December 1991,1991,Leonid Kravchuk,84.18,,61.59,free,/elections/ua/pres-1991
+ua,Ukraine,presidential,pres-1994,1994,10 July 1994 (second round),1994,Leonid Kuchma,70.37,,52.35,free,/elections/ua/pres-1994
+ua,Ukraine,presidential,pres-1999,1999,14 November 1999 (second round),1999,Leonid Kuchma,70.15,,57.70,free,/elections/ua/pres-1999
+ua,Ukraine,presidential,pres-2004,2004,26 December 2004 (second round re-run),2004,Viktor Yushchenko,74.54,,52.77,partial,/elections/ua/pres-2004
+ua,Ukraine,presidential,pres-2010,2010,7 February 2010 (second round),2010,Viktor Yanukovych,66.51,,49.55,free,/elections/ua/pres-2010
+ua,Ukraine,presidential,pres-2014,2014,25 May 2014,2014,Petro Poroshenko,59.88,,55.46,partial,/elections/ua/pres-2014
+ua,Ukraine,presidential,pres-2019,2019,21 April 2019 (second round),2019,Volodymyr Zelenskyy,62.88,,74.96,partial,/elections/ua/pres-2019
+ua,Ukraine,legislative,1994,1994,2–10 April 1994 (second round),1994,Independents,75.81,450,37.33,free,/elections/ua/1994
+ua,Ukraine,legislative,1998,1998,29 March 1998,1998,KPU,70.78,450,26.89,free,/elections/ua/1998
+ua,Ukraine,legislative,2002,2002,31 March 2002,2002,Our Ukraine Bloc,69.27,450,25.11,free,/elections/ua/2002
+ua,Ukraine,legislative,2006,2006,26 March 2006,2006,Party of Regions,67.55,450,41.33,free,/elections/ua/2006
+ua,Ukraine,legislative,2007,2007,30 September 2007,2007,Party of Regions,62.03,450,38.89,free,/elections/ua/2007
+ua,Ukraine,legislative,2012,2012,28 October 2012,2012,Party of Regions,57.43,450,41.11,partial,/elections/ua/2012
+ua,Ukraine,legislative,2014,2014,26 October 2014,2014,Petro Poroshenko Bloc,51.91,423,30.97,partial,/elections/ua/2014
+ua,Ukraine,legislative,2019,2019,21 July 2019,2019,Servant of the People,49.24,424,59.91,partial,/elections/ua/2019
+uk,United Kingdom,legislative,1802,1802,5 July – 28 August 1802,1802,Addingtonian,,658,70.97,free,/elections/uk/1802
+uk,United Kingdom,legislative,1806,1806,29 October – 17 December 1806,1806,Whig,,658,65.50,free,/elections/uk/1806
+uk,United Kingdom,legislative,1807,1807,4 May – 9 June 1807,1807,Tory,,658,32.83,free,/elections/uk/1807
+uk,United Kingdom,legislative,1812,1812,5 October – 10 November 1812,1812,Tory,,658,60.64,free,/elections/uk/1812
+uk,United Kingdom,legislative,1818,1818,17 June – 18 July 1818,1818,Tory (Pittite),,658,42.55,free,/elections/uk/1818
+uk,United Kingdom,legislative,1820,1820,6 March – 14 April 1820,1820,Tory,,658,51.82,free,/elections/uk/1820
+uk,United Kingdom,legislative,1826,1826,7 June – 12 July 1826,1826,Tory,,658,65.05,free,/elections/uk/1826
+uk,United Kingdom,legislative,1830,1830,29 July – 1 September 1830,1830,Tory,,658,37.99,free,/elections/uk/1830
+uk,United Kingdom,legislative,1831,1831,28 April – 1 June 1831,1831,Whig,,658,56.23,free,/elections/uk/1831
+uk,United Kingdom,legislative,1832,1832,22 November 1830,1832,Whig,,658,67.02,free,/elections/uk/1832
+uk,United Kingdom,legislative,1835,1835,6 January – 6 February 1835,1835,Whig,,658,58.51,free,/elections/uk/1835
+uk,United Kingdom,legislative,1837,1837,24 July – 18 August 1837,1837,Whig,,658,52.28,free,/elections/uk/1837
+uk,United Kingdom,legislative,1841,1841,29 June – 22 July 1841,1841,Conservative,63.5,658,55.78,free,/elections/uk/1841
+uk,United Kingdom,legislative,1847,1847,29 July – 26 August 1847,1847,Conservative,,656,49.54,free,/elections/uk/1847
+uk,United Kingdom,legislative,1852,1852,7–31 July 1852,1852,Conservative,,654,50.46,free,/elections/uk/1852
+uk,United Kingdom,legislative,1857,1857,27 March – 24 April 1857,1857,Whig,,654,57.65,free,/elections/uk/1857
+uk,United Kingdom,legislative,1859,1859,28 April – 18 May 1859,1859,Liberal,,654,54.43,free,/elections/uk/1859
+uk,United Kingdom,legislative,1865,1865,11–24 July 1865,1865,Liberal,,658,56.08,free,/elections/uk/1865
+uk,United Kingdom,legislative,1868,1868,17 November – 7 December 1868,1868,Liberal,,658,58.81,free,/elections/uk/1868
+uk,United Kingdom,legislative,1874,1874,31 January – 17 February 1874,1874,Conservative,,652,53.68,free,/elections/uk/1874
+uk,United Kingdom,legislative,1880,1880,31 March – 27 April 1880,1880,Liberal,,652,53.99,free,/elections/uk/1880
+uk,United Kingdom,legislative,1885,1885,24 November – 18 December 1885,1885,Liberal,81.2,670,47.61,free,/elections/uk/1885
+uk,United Kingdom,legislative,1886,1886,1–27 July 1886,1886,Conservative and Liberal Unionist,74.2,670,58.66,free,/elections/uk/1886
+uk,United Kingdom,legislative,1892,1892,4–26 July 1892,1892,Conservative and Liberal Unionist,77.4,670,46.87,free,/elections/uk/1892
+uk,United Kingdom,legislative,1895,1895,13 July – 7 August 1895,1895,Conservative and Liberal Unionist,78.4,670,61.34,free,/elections/uk/1895
+uk,United Kingdom,legislative,1900,1900,26 September – 24 October 1900,1900,Conservative and Liberal Unionist,75.1,670,60.00,free,/elections/uk/1900
+uk,United Kingdom,legislative,1906,1906,12 January – 8 February 1906,1906,Liberal,83.2,670,59.25,free,/elections/uk/1906
+uk,United Kingdom,legislative,1910-jan,1910,15 January – 10 February 1910,January 1910,Liberal,86.8,670,40.90,free,/elections/uk/1910-jan
+uk,United Kingdom,legislative,1910-dec,1910,3–19 December 1910,December 1910,Liberal,81.6,670,40.60,free,/elections/uk/1910-dec
+uk,United Kingdom,legislative,1918,1918,14 December 1918,1918,Conservative,57.2,707,53.61,free,/elections/uk/1918
+uk,United Kingdom,legislative,1922,1922,15 November 1922,1922,Conservative,73.0,615,55.93,free,/elections/uk/1922
+uk,United Kingdom,legislative,1923,1923,6 December 1923,1923,Conservative,71.1,615,41.95,free,/elections/uk/1923
+uk,United Kingdom,legislative,1924,1924,29 October 1924,1924,Conservative,77.0,615,66.99,free,/elections/uk/1924
+uk,United Kingdom,legislative,1929,1929,30 May 1929,1929,Labour,76.3,615,46.67,free,/elections/uk/1929
+uk,United Kingdom,legislative,1931,1931,27 October 1931,1931,Conservative,76.4,615,76.42,free,/elections/uk/1931
+uk,United Kingdom,legislative,1935,1935,14 November 1935,1935,Conservative,71.1,615,62.93,free,/elections/uk/1935
+uk,United Kingdom,legislative,1945,1945,5 July 1945,1945,Labour,72.8,640,61.41,free,/elections/uk/1945
+uk,United Kingdom,legislative,1950,1950,23 February 1950,1950,Labour,83.9,625,50.40,free,/elections/uk/1950
+uk,United Kingdom,legislative,1951,1951,25 October 1951,1951,Conservative,82.6,625,51.36,free,/elections/uk/1951
+uk,United Kingdom,legislative,1955,1955,26 May 1955,1955,Conservative,76.8,630,54.76,free,/elections/uk/1955
+uk,United Kingdom,legislative,1959,1959,8 October 1959,1959,Conservative,78.7,630,57.94,free,/elections/uk/1959
+uk,United Kingdom,legislative,1964,1964,15 October 1964,1964,Labour,77.1,630,50.32,free,/elections/uk/1964
+uk,United Kingdom,legislative,1966,1966,31 March 1966,1966,Labour,75.8,630,57.78,free,/elections/uk/1966
+uk,United Kingdom,legislative,1970,1970,18 June 1970,1970,Conservative,72.0,630,52.38,free,/elections/uk/1970
+uk,United Kingdom,legislative,1974-feb,1974,28 February 1974,February 1974,Labour,78.8,635,47.40,free,/elections/uk/1974-feb
+uk,United Kingdom,legislative,1974-oct,1974,10 October 1974,October 1974,Labour,72.8,635,50.24,free,/elections/uk/1974-oct
+uk,United Kingdom,legislative,1979,1979,3 May 1979,1979,Conservative,76.0,635,53.39,free,/elections/uk/1979
+uk,United Kingdom,legislative,1983,1983,9 June 1983,1983,Conservative,72.7,650,61.08,free,/elections/uk/1983
+uk,United Kingdom,legislative,1987,1987,11 June 1987,1987,Conservative,75.3,650,57.85,free,/elections/uk/1987
+uk,United Kingdom,legislative,1992,1992,9 April 1992,1992,Conservative,77.7,651,51.61,free,/elections/uk/1992
+uk,United Kingdom,legislative,1997,1997,1 May 1997,1997,Labour,71.4,659,63.43,free,/elections/uk/1997
+uk,United Kingdom,legislative,2001,2001,7 June 2001,2001,Labour,59.4,659,62.52,free,/elections/uk/2001
+uk,United Kingdom,legislative,2005,2005,5 May 2005,2005,Labour,61.4,646,54.95,free,/elections/uk/2005
+uk,United Kingdom,legislative,2010,2010,6 May 2010,2010,Conservative,65.1,650,47.08,free,/elections/uk/2010
+uk,United Kingdom,legislative,2015,2015,7 May 2015,2015,Conservative,66.2,650,50.77,free,/elections/uk/2015
+uk,United Kingdom,legislative,2017,2017,8 June 2017,2017,Conservative,68.8,650,48.77,free,/elections/uk/2017
+uk,United Kingdom,legislative,2019,2019,12 December 2019,2019,Conservative,67.3,650,56.15,free,/elections/uk/2019
+uk,United Kingdom,legislative,2024,2024,4 July 2024,2024,Labour,59.7,650,63.23,free,/elections/uk/2024
+us,United States,presidential,1788,1788,"December 15, 1788 – January 7, 1789",1788–89,George Washington,11.6,,100.00,free,/elections/us/1788
+us,United States,presidential,1792,1792,"November 2 – December 5, 1792",1792,George Washington,6.3,,100.00,free,/elections/us/1792
+us,United States,presidential,1796,1796,"November 4 – December 7, 1796",1796,John Adams,20.1,,53.40,free,/elections/us/1796
+us,United States,presidential,1800,1800,"October 30 – December 3, 1800",1800,Thomas Jefferson,32.3,,61.40,free,/elections/us/1800
+us,United States,presidential,1804,1804,"November 1 – December 4, 1804",1804,Thomas Jefferson,23.8,,72.80,free,/elections/us/1804
+us,United States,presidential,1808,1808,"November 4 – December 7, 1808",1808,James Madison,36.8,,64.70,free,/elections/us/1808
+us,United States,presidential,1812,1812,"October 30 – December 2, 1812",1812,James Madison,40.4,,50.40,free,/elections/us/1812
+us,United States,presidential,1816,1816,"November 1 – December 3, 1816",1816,James Monroe,16.9,,68.20,free,/elections/us/1816
+us,United States,presidential,1820,1820,"November 1 – December 6, 1820",1820,James Monroe,10.1,,80.60,free,/elections/us/1820
+us,United States,presidential,1824,1824,"October 26 – December 2, 1824",1824,John Quincy Adams,26.9,,30.90,free,/elections/us/1824
+us,United States,presidential,1828,1828,"October 31 – December 2, 1828",1828,Andrew Jackson,57.3,,56.00,free,/elections/us/1828
+us,United States,presidential,1832,1832,"November 2 – December 5, 1832",1832,Andrew Jackson,57.0,,54.20,free,/elections/us/1832
+us,United States,presidential,1836,1836,"February 8, 1837",1836,Martin Van Buren,56.5,,56.00,free,/elections/us/1836
+us,United States,presidential,1840,1840,"October 30 – November 23, 1840",1840,William Henry Harrison,80.3,,52.90,free,/elections/us/1840
+us,United States,presidential,1844,1844,"November 1 – December 1, 1844",1844,James K. Polk,79.2,,49.50,free,/elections/us/1844
+us,United States,presidential,1848,1848,"November 7, 1848",1848,Zachary Taylor,72.8,,47.30,free,/elections/us/1848
+us,United States,presidential,1852,1852,"November 2, 1852",1852,Franklin Pierce,69.5,,50.80,free,/elections/us/1852
+us,United States,presidential,1856,1856,"November 4, 1856",1856,James Buchanan,79.4,,45.30,free,/elections/us/1856
+us,United States,presidential,1860,1860,"November 6, 1860",1860,Abraham Lincoln,81.8,,39.80,free,/elections/us/1860
+us,United States,presidential,1864,1864,"November 8, 1864",1864,Abraham Lincoln,73.8,,55.00,free,/elections/us/1864
+us,United States,presidential,1868,1868,"November 3, 1868",1868,Ulysses S. Grant,80.9,,52.70,free,/elections/us/1868
+us,United States,presidential,1872,1872,"November 5, 1872",1872,Ulysses S. Grant,72.1,,55.60,free,/elections/us/1872
+us,United States,presidential,1876,1876,"November 7, 1876",1876,Rutherford B. Hayes,82.6,,47.90,free,/elections/us/1876
+us,United States,presidential,1880,1880,"November 2, 1880",1880,James A. Garfield,79.4,,48.30,free,/elections/us/1880
+us,United States,presidential,1884,1884,"November 4, 1884",1884,Grover Cleveland,77.5,,48.90,free,/elections/us/1884
+us,United States,presidential,1888,1888,"November 6, 1888",1888,Benjamin Harrison,80.5,,47.80,free,/elections/us/1888
+us,United States,presidential,1892,1892,"November 8, 1892",1892,Grover Cleveland,75.8,,46.00,free,/elections/us/1892
+us,United States,presidential,1896,1896,"November 3, 1896",1896,William McKinley,79.6,,51.00,free,/elections/us/1896
+us,United States,presidential,1900,1900,"November 6, 1900",1900,William McKinley,73.7,,51.60,free,/elections/us/1900
+us,United States,presidential,1904,1904,"November 8, 1904",1904,Theodore Roosevelt,65.5,,56.40,free,/elections/us/1904
+us,United States,presidential,1908,1908,"November 3, 1908",1908,William Howard Taft,65.7,,51.60,free,/elections/us/1908
+us,United States,presidential,1912,1912,"November 5, 1912",1912,Woodrow Wilson,59.0,,41.80,free,/elections/us/1912
+us,United States,presidential,1916,1916,"November 7, 1916",1916,Woodrow Wilson,61.8,,49.20,free,/elections/us/1916
+us,United States,presidential,1920,1920,"November 2, 1920",1920,Warren G. Harding,49.2,,60.30,free,/elections/us/1920
+us,United States,presidential,1924,1924,"November 4, 1924",1924,Calvin Coolidge,48.9,,54.00,free,/elections/us/1924
+us,United States,presidential,1928,1928,"November 6, 1928",1928,Herbert Hoover,56.9,,58.20,free,/elections/us/1928
+us,United States,presidential,1932,1932,"November 8, 1932",1932,Franklin D. Roosevelt,56.8,,57.40,free,/elections/us/1932
+us,United States,presidential,1936,1936,"November 3, 1936",1936,Franklin D. Roosevelt,61.0,,60.80,free,/elections/us/1936
+us,United States,presidential,1940,1940,"November 5, 1940",1940,Franklin D. Roosevelt,62.5,,54.70,free,/elections/us/1940
+us,United States,presidential,1944,1944,"November 7, 1944",1944,Franklin D. Roosevelt,55.9,,53.40,free,/elections/us/1944
+us,United States,presidential,1948,1948,"November 2, 1948",1948,Harry S. Truman,52.2,,49.60,free,/elections/us/1948
+us,United States,presidential,1952,1952,"November 4, 1952",1952,Dwight D. Eisenhower,63.3,,55.20,free,/elections/us/1952
+us,United States,presidential,1956,1956,"November 6, 1956",1956,Dwight D. Eisenhower,60.2,,57.40,free,/elections/us/1956
+us,United States,presidential,1960,1960,"November 8, 1960",1960,John F. Kennedy,63.8,,49.70,free,/elections/us/1960
+us,United States,presidential,1964,1964,"November 3, 1964",1964,Lyndon B. Johnson,62.8,,61.00,free,/elections/us/1964
+us,United States,presidential,1968,1968,"November 5, 1968",1968,Richard Nixon,62.5,,43.40,free,/elections/us/1968
+us,United States,presidential,1972,1972,"November 7, 1972",1972,Richard Nixon,56.2,,60.70,free,/elections/us/1972
+us,United States,presidential,1976,1976,"November 2, 1976",1976,Jimmy Carter,54.8,,50.10,free,/elections/us/1976
+us,United States,presidential,1980,1980,"November 4, 1980",1980,Ronald Reagan,54.2,,50.70,free,/elections/us/1980
+us,United States,presidential,1984,1984,"November 6, 1984",1984,Ronald Reagan,55.2,,58.80,free,/elections/us/1984
+us,United States,presidential,1988,1988,"November 8, 1988",1988,George H. W. Bush,52.8,,53.40,free,/elections/us/1988
+us,United States,presidential,1992,1992,"November 3, 1992",1992,Bill Clinton,58.1,,43.00,free,/elections/us/1992
+us,United States,presidential,1996,1996,"November 5, 1996",1996,Bill Clinton,51.7,,49.20,free,/elections/us/1996
+us,United States,presidential,2000,2000,"November 7, 2000",2000,George W. Bush,54.2,,47.90,free,/elections/us/2000
+us,United States,presidential,2004,2004,"November 2, 2004",2004,George W. Bush,60.1,,50.70,free,/elections/us/2004
+us,United States,presidential,2008,2008,"November 4, 2008",2008,Barack Obama,61.6,,52.90,free,/elections/us/2008
+us,United States,presidential,2012,2012,"November 6, 2012",2012,Barack Obama,58.6,,51.10,free,/elections/us/2012
+us,United States,presidential,2016,2016,"November 8, 2016",2016,Donald Trump,60.1,,46.09,free,/elections/us/2016
+us,United States,presidential,2020,2020,"November 3, 2020",2020,Joe Biden,66.6,,51.31,free,/elections/us/2020
+us,United States,presidential,2024,2024,"November 5, 2024",2024,Donald Trump,64.3,,49.74,free,/elections/us/2024
+va,Vatican City,general,1061,1061,30 September 1061,1061,Alexander II,,,,,/elections/va/1061
+va,Vatican City,general,1073,1073,22 April 1073,1073,Gregory VII,,,,,/elections/va/1073
+va,Vatican City,general,1086,1086,24 May 1086,1086,Victor III,,,,,/elections/va/1086
+va,Vatican City,general,1088,1088,12 March 1088,1088,Urban II,,,,,/elections/va/1088
+va,Vatican City,general,1099,1099,13 August 1099,1099,Paschal II,,,,,/elections/va/1099
+va,Vatican City,general,1118,1118,24 January 1118,1118,Gelasius II,,,,,/elections/va/1118
+va,Vatican City,general,1119,1119,29 January – 2 February 1119,1119,Callixtus II,,,,,/elections/va/1119
+va,Vatican City,general,1124,1124,16–21 December 1124,1124,Honorius II,,,,,/elections/va/1124
+va,Vatican City,general,1130,1130,14 February 1130,1130,Innocent II,,,,,/elections/va/1130
+va,Vatican City,general,1143,1143,26 September 1143,1143,Celestine II,,,,,/elections/va/1143
+va,Vatican City,general,1144,1144,9 March 1144,1144,Lucius II,,,,,/elections/va/1144
+va,Vatican City,general,1145,1145,15 February 1145,1145,Eugene III,,,,,/elections/va/1145
+va,Vatican City,general,1153,1153,8 July 1153,1153,Anastasius IV,,,,,/elections/va/1153
+va,Vatican City,general,1154,1154,4 December 1154,1154,Adrian IV,,,,,/elections/va/1154
+va,Vatican City,general,1159,1159,4–7 September 1159,1159,Alexander III,,,,,/elections/va/1159
+va,Vatican City,general,1181,1181,1 September 1181,1181,Lucius III,,,,,/elections/va/1181
+va,Vatican City,general,1185,1185,25 November 1185,1185,Urban III,,,,,/elections/va/1185
+va,Vatican City,general,1187-10,1187,21 October 1187,October 1187,Gregory VIII,,,,,/elections/va/1187-10
+va,Vatican City,general,1187-12,1187,19 December 1187,December 1187,Clement III,,,,,/elections/va/1187-12
+va,Vatican City,general,1191,1191,21 March 1191,1191,Celestine III,,,,,/elections/va/1191
+va,Vatican City,general,1198,1198,8 January 1198,1198,Innocent III,,,,,/elections/va/1198
+va,Vatican City,general,1216,1216,18 July 1216,1216,Honorius III,,,,,/elections/va/1216
+va,Vatican City,general,1227,1227,19 March 1227,1227,Gregory IX,,,,,/elections/va/1227
+va,Vatican City,general,1241,1241,21 September – 25 October 1241,1241,Celestine IV,,,,,/elections/va/1241
+va,Vatican City,general,1243,1243,16 May–25 June 1243,1243,Innocent IV,,,,,/elections/va/1243
+va,Vatican City,general,1254,1254,11–12 December 1254,1254,Alexander IV,,,,,/elections/va/1254
+va,Vatican City,general,1261,1261,26 May – 29 August 1261,1261,Urban IV,,,,,/elections/va/1261
+va,Vatican City,general,1264-1265,1265,12 October 1264 – 5 February 1265,1264–1265,Clement IV,,,,,/elections/va/1264-1265
+va,Vatican City,general,1268-1271,1271,1 December 1268 – 1 September 1271,1268–1271,Gregory X,,,,,/elections/va/1268-1271
+va,Vatican City,general,1276-01,1276,21–22 January 1276,January 1276,Innocent V,,,,,/elections/va/1276-01
+va,Vatican City,general,1276-07,1276,July 1276,July 1276,Adrian V,,,,,/elections/va/1276-07
+va,Vatican City,general,1276-09,1276,1276,September 1276,John XXI,,,,,/elections/va/1276-09
+va,Vatican City,general,1277,1277,30 May – 25 November 1277,1277,Nicholas III,,,,,/elections/va/1277
+va,Vatican City,general,1280-1281,1281,"22 September 1280 – February 22, 1281",1280–1281,Martin IV,,,,,/elections/va/1280-1281
+va,Vatican City,general,1285,1285,1–2 April 1285,1285,Honorius IV,,,,,/elections/va/1285
+va,Vatican City,general,1287-1288,1288,4 April 1287 – 22 February 1288,1287–1288,Nicholas IV,,,,,/elections/va/1287-1288
+va,Vatican City,general,1292-1294,1294,5 April 1292 – 5 July 1294,1292–1294,Celestine V,,,,,/elections/va/1292-1294
+va,Vatican City,general,1294,1294,23–24 December 1294,1294,Boniface VIII,,,,,/elections/va/1294
+va,Vatican City,general,1303,1303,21–22 October 1303,1303,Benedict XI,,,,,/elections/va/1303
+va,Vatican City,general,1304-1305,1305,10/17 July 1304 – 5 June 1305,1304–1305,Clement V,,,,,/elections/va/1304-1305
+va,Vatican City,general,1314-1316,1316,1 May 1314 – 7 August 1316,1314–1316,John XXII,,,,,/elections/va/1314-1316
+va,Vatican City,general,1334,1334,13–20 December 1334,1334,Benedict XII,,,,,/elections/va/1334
+va,Vatican City,general,1342,1342,5–7 May 1342,1342,Clement VI,,,,,/elections/va/1342
+va,Vatican City,general,1352,1352,16–18 December 1352,1352,Innocent VI,,,,,/elections/va/1352
+va,Vatican City,general,1362,1362,22 September – 28 October 1362,1362,Urban V,,,,,/elections/va/1362
+va,Vatican City,general,1370,1370,29–30 December 1370,1370,Gregory XI,,,,,/elections/va/1370
+va,Vatican City,general,1378,1378,7–9 April 1378,1378,Urban VI,,,,,/elections/va/1378
+va,Vatican City,general,1389,1389,25 October – 2 November 1389,1389,Boniface IX,,,,,/elections/va/1389
+va,Vatican City,general,1404,1404,10–17 October 1404,1404,Innocent VII,,,,,/elections/va/1404
+va,Vatican City,general,1406,1406,18–30 November 1406,1406,Gregory XII,,,,,/elections/va/1406
+va,Vatican City,general,1417,1417,8–11 November 1417,1417 (Constance),Martin V,,,,,/elections/va/1417
+va,Vatican City,general,1431,1431,2–3 March 1431,1431,Eugene IV,,,,,/elections/va/1431
+va,Vatican City,general,1447,1447,4–6 March 1447,1447,Nicholas V,,,,,/elections/va/1447
+va,Vatican City,general,1455,1455,4–8 April 1455,1455,Callixtus III,,,,,/elections/va/1455
+va,Vatican City,general,1458,1458,16–19 August 1458,1458,Pius II,,,,,/elections/va/1458
+va,Vatican City,general,1464,1464,28–30 August 1464,1464,Paul II,,,,,/elections/va/1464
+va,Vatican City,general,1471,1471,6–9 August 1471,1471,Sixtus IV,,,,,/elections/va/1471
+va,Vatican City,general,1484,1484,26–29 August 1484,1484,Innocent VIII,,,,,/elections/va/1484
+va,Vatican City,general,1492,1492,6–11 August 1492,1492,Alexander VI,,,,,/elections/va/1492
+va,Vatican City,general,1503-09,1503,16–22 September 1503,September 1503,Pius III,,,,,/elections/va/1503-09
+va,Vatican City,general,1503-10,1503,31 October – 1 November 1503,October 1503,Julius II,,,,,/elections/va/1503-10
+va,Vatican City,general,1513,1513,4–11 March 1513,1513,Leo X,,,,,/elections/va/1513
+va,Vatican City,general,1521-1522,1522,28 December 1521 – 9 January 1522,1521–1522,Adrian VI,,,,,/elections/va/1521-1522
+va,Vatican City,general,1523,1523,1 October – 19 November 1523,1523,Clement VII,,,,,/elections/va/1523
+va,Vatican City,general,1534,1534,11–13 October 1534,1534,Paul III,,,,,/elections/va/1534
+va,Vatican City,general,1549-1550,1550,29 November 1549 – 7 February 1550,1549–1550,Julius III,,,,,/elections/va/1549-1550
+va,Vatican City,general,1555-04,1555,5–9 April 1555,April 1555,Marcellus II,,,,,/elections/va/1555-04
+va,Vatican City,general,1555-05,1555,15–23 May 1555,May 1555,Paul IV,,,,,/elections/va/1555-05
+va,Vatican City,general,1559,1559,5 September – 25 December 1559,1559,Pius IV,,,,,/elections/va/1559
+va,Vatican City,general,1565-1566,1566,20 December 1565 – 7 January 1566,1565–1566,Pius V,,,,,/elections/va/1565-1566
+va,Vatican City,general,1572,1572,12–13 May 1572,1572,Gregory XIII,,,,,/elections/va/1572
+va,Vatican City,general,1585,1585,21–24 April 1585,1585,Sixtus V,,,,,/elections/va/1585
+va,Vatican City,general,1590-09,1590,7–15 September 1590,September 1590,Urban VII,,,,,/elections/va/1590-09
+va,Vatican City,general,1590-12,1590,8 October – 5 December 1590,October–December 1590,Gregory XIV,,,,,/elections/va/1590-12
+va,Vatican City,general,1591,1591,27–29 October 1591,1591,Innocent IX,,,,,/elections/va/1591
+va,Vatican City,general,1592,1592,10–30 January 1592,1592,Clement VIII,,,,,/elections/va/1592
+va,Vatican City,general,1605-04,1605,14 March – 1 April 1605,March–April 1605,Leo XI,,,,,/elections/va/1605-04
+va,Vatican City,general,1605-05,1605,8–16 May 1605,May 1605,Paul V,,,,,/elections/va/1605-05
+va,Vatican City,general,1621,1621,8–9 February 1621,1621,Gregory XV,,,,,/elections/va/1621
+va,Vatican City,general,1623,1623,19 July – 6 August 1623,1623,Urban VIII,,,,,/elections/va/1623
+va,Vatican City,general,1644,1644,9 August – 15 September 1644,1644,Innocent X,,,,,/elections/va/1644
+va,Vatican City,general,1655,1655,18 January – 7 April 1655,1655,Alexander VII,,,,,/elections/va/1655
+va,Vatican City,general,1667,1667,2–20 June 1667,1667,Clement IX,,,,,/elections/va/1667
+va,Vatican City,general,1669-1670,1670,21 December 1669 – 29 April 1670,1669–1670,Clement X,,,,,/elections/va/1669-1670
+va,Vatican City,general,1676,1676,2 August – 21 September 1676,1676,Innocent XI,,,,,/elections/va/1676
+va,Vatican City,general,1689,1689,23 August – 6 October 1689,1689,Alexander VIII,,,,,/elections/va/1689
+va,Vatican City,general,1691,1691,12 February – 12 July 1691,1691,Innocent XII,,,,,/elections/va/1691
+va,Vatican City,general,1700,1700,9 October – 23 November 1700,1700,Clement XI,,,,,/elections/va/1700
+va,Vatican City,general,1721,1721,31 March – 8 May 1721,1721,Innocent XIII,,,,,/elections/va/1721
+va,Vatican City,general,1724,1724,20 March – 28 May 1724,1724,Benedict XIII,,,,,/elections/va/1724
+va,Vatican City,general,1730,1730,5 March – 12 July 1730,1730,Clement XII,,,,,/elections/va/1730
+va,Vatican City,general,1740,1740,18 February – 17 August 1740,1740,Benedict XIV,,,,,/elections/va/1740
+va,Vatican City,general,1758,1758,15 May – 6 July 1758,1758,Clement XIII,,,,,/elections/va/1758
+va,Vatican City,general,1769,1769,15 February – 19 May 1769,1769,Clement XIV,,,,,/elections/va/1769
+va,Vatican City,general,1774-1775,1775,5 October 1774 – 15 February 1775,1774–1775,Pius VI,,,,,/elections/va/1774-1775
+va,Vatican City,general,1799-1800,1800,30 November 1799 – 14 March 1800,1799–1800,Pius VII,,,,,/elections/va/1799-1800
+va,Vatican City,general,1823,1823,2–28 September 1823,1823,Leo XII,,,,,/elections/va/1823
+va,Vatican City,general,1829,1829,24 February – 31 March 1829,1829,Pius VIII,,,,,/elections/va/1829
+va,Vatican City,general,1830-1831,1831,14 December 1830 – 2 February 1831,1830–1831,Gregory XVI,,,,,/elections/va/1830-1831
+va,Vatican City,general,1846,1846,14–16 June 1846,1846,Pius IX,,,,,/elections/va/1846
+va,Vatican City,general,1878,1878,18–20 February 1878,1878,Leo XIII,,,,,/elections/va/1878
+va,Vatican City,general,1903,1903,31 July – 4 August 1903,1903,Pius X,,,,,/elections/va/1903
+va,Vatican City,general,1914,1914,31 August – 3 September 1914,1914,Benedict XV,,,,,/elections/va/1914
+va,Vatican City,general,1922,1922,2–6 February 1922,1922,Pius XI,,,,,/elections/va/1922
+va,Vatican City,general,1939,1939,1–2 March 1939,1939,Pius XII,,,,,/elections/va/1939
+va,Vatican City,general,1958,1958,25–28 October 1958,1958,John XXIII,,,,,/elections/va/1958
+va,Vatican City,general,1963,1963,19–21 June 1963,1963,Paul VI,,,,,/elections/va/1963
+va,Vatican City,general,1978-08,1978,25–26 August 1978,August 1978,John Paul I,,,,,/elections/va/1978-08
+va,Vatican City,general,1978-10,1978,14–16 October 1978,October 1978,John Paul II,,,,,/elections/va/1978-10
+va,Vatican City,general,2005,2005,18–19 April 2005,2005,Benedict XVI,,,,,/elections/va/2005
+va,Vatican City,general,2013,2013,12–13 March 2013,2013,Francis,,,,,/elections/va/2013
+va,Vatican City,general,2025,2025,7–8 May 2025,2025,Leo XIV,,,,,/elections/va/2025
+za,South Africa,legislative,1910,1910,15 September 1910,1910,South African National Party,,121,54.55,partial,/elections/za/1910
+za,South Africa,legislative,1915,1915,20 October 1915,1915,South African Party,71.57,130,41.54,partial,/elections/za/1915
+za,South Africa,legislative,1920,1920,10 March 1920,1920,National Party,66.94,134,32.09,partial,/elections/za/1920
+za,South Africa,legislative,1921,1921,8 February 1921,1921,South African Party,55.6,134,57.46,partial,/elections/za/1921
+za,South Africa,legislative,1924,1924,17 June 1924,1924,National Party,77.23,135,46.67,partial,/elections/za/1924
+za,South Africa,legislative,1929,1929,12 June 1929,1929,National Party,75.34,148,52.70,partial,/elections/za/1929
+za,South Africa,legislative,1933,1933,17 May 1933,1933,National Party,33.77,150,50.00,partial,/elections/za/1933
+za,South Africa,legislative,1938,1938,18 May 1938,1938,United Party,79.36,150,74.00,partial,/elections/za/1938
+za,South Africa,legislative,1943,1943,7 July 1943,1943,United Party,79.49,150,59.33,partial,/elections/za/1943
+za,South Africa,legislative,1948,1948,26 May 1948,1948,Herenigde Nasionale Party,80.25,150,46.67,partial,/elections/za/1948
+za,South Africa,legislative,1953,1953,15 April 1953,1953,National Party,87.95,156,60.26,partial,/elections/za/1953
+za,South Africa,legislative,1958,1958,16 April 1958,1958,National Party,74.42,156,66.03,partial,/elections/za/1958
+za,South Africa,legislative,1961,1961,18 October 1961,1961,National Party,44.55,156,67.31,partial,/elections/za/1961
+za,South Africa,legislative,1966,1966,30 March 1966,1966,National Party,68.48,166,75.90,partial,/elections/za/1966
+za,South Africa,legislative,1970,1970,22 April 1970,1970,National Party,69.76,166,70.48,partial,/elections/za/1970
+za,South Africa,legislative,1974,1974,24 April 1974,1974,National Party,51.87,169,72.19,partial,/elections/za/1974
+za,South Africa,legislative,1977,1977,30 November 1977,1977,National Party,48.52,164,81.71,partial,/elections/za/1977
+za,South Africa,legislative,1981,1981,29 April 1981,1981,National Party,59.9,165,79.39,partial,/elections/za/1981
+za,South Africa,legislative,1987,1987,6 May 1987,1987,National Party,67.84,166,74.10,partial,/elections/za/1987
+za,South Africa,legislative,1989,1989,6 September 1989,1989,National Party,23.29,166,56.63,partial,/elections/za/1989
+za,South Africa,legislative,1994,1994,26–29 April 1994,1994,African National Congress,86.9,400,63.00,free,/elections/za/1994
+za,South Africa,legislative,1999,1999,2 June 1999,1999,African National Congress,89.3,400,66.50,free,/elections/za/1999
+za,South Africa,legislative,2004,2004,14 April 2004,2004,African National Congress,76.7,400,69.75,free,/elections/za/2004
+za,South Africa,legislative,2009,2009,22 April 2009,2009,African National Congress,77.3,400,66.00,free,/elections/za/2009
+za,South Africa,legislative,2014,2014,7 May 2014,2014,African National Congress,73.48,400,62.25,free,/elections/za/2014
+za,South Africa,legislative,2019,2019,8 May 2019,2019,ANC,66.05,400,57.50,free,/elections/za/2019
+za,South Africa,legislative,2024,2024,29 May 2024,2024,ANC,58.64,400,39.75,free,/elections/za/2024

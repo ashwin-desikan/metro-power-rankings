@@ -13,6 +13,7 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import ClubHistoryChart from "../ClubHistoryChart";
 import ClubExpectationPanel from "@/app/teams/_shared/ClubExpectationPanel";
+import ClubValuePanel from "@/app/teams/_shared/ClubValuePanel";
 import TeamGreatestGames from "../TeamGreatestGames";
 import { getClubGamesForTeam } from "@/lib/clubGames";
 import { getPlExpectationClub } from "@/lib/plExpectation";
@@ -293,6 +294,8 @@ export default async function FootballClubPage({ params }: Props) {
       )}
 
       <ClubExpectationPanel entry={expectation} intl={intlExpectation} />
+
+      <ClubValuePanel slug={club.slug} />
 
       <TeamGreatestGames rows={topGames} slug={club.slug} teamName={club.cur_name} />
 

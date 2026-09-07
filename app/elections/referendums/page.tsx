@@ -4,13 +4,14 @@ import { getReferendums } from "@/lib/referendums";
 import { ELECTION_HUBS } from "@/lib/electionHubsMeta";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { BackButton } from "../HubShared";
+import { ElectionsCrumbs } from "../_shared/ui";
+import ElectionsNav from "../_shared/ElectionsNav";
 import SortableTable from "../SortableTable";
 
 const PATH = "/elections/referendums";
 const TITLE = "Landmark Referendums";
 const DESC =
-  "The votes where the people decided directly: Brexit and the near-miss in Quebec, the plebiscite that ended Pinochet, the ballot that abolished the Italian monarchy, Ireland's double rejection in 2024, Italy's judicial reform thrown out in 2026 — a century of landmark referendums with results, turnout and what happened next.";
+  "The votes where the people decided directly: Brexit and the near-miss in Quebec, the plebiscite that ended Pinochet, the ballot that abolished the Italian monarchy, Ireland's double rejection in 2024, Italy's judicial reform thrown out in 2026: a century of landmark referendums with results, turnout and what happened next.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -29,19 +30,7 @@ export default function ReferendumsPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>
-        {" / "}
-        <Link href="/elections" className="hover:underline">Elections</Link>
-        {" / "}
-        <span>Referendums</span>
-      </nav>
-
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <BackButton href="/elections" label="All election hubs" />
-        <BackButton href="/elections/under-fire" label="Elections under fire" />
-        <BackButton href="/elections/systems" label="Electoral systems" />
-      </div>
+      <ElectionsCrumbs tab="Referendums" />
 
       <header className="mb-6">
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
@@ -50,6 +39,7 @@ export default function ReferendumsPage() {
           {referendums.length} referendums · closest result: {closest.country} {closest.year}, {closest.result} {pct(closest.resultPct)} · every column sorts
         </p>
       </header>
+      <ElectionsNav />
 
       <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
         <SortableTable
@@ -121,7 +111,7 @@ export default function ReferendumsPage() {
 
       <footer className="mt-10 pt-6 border-t text-xs text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
         {meta.note} {meta.sources[0]}. Poland 2015&apos;s 7.8% turnout is the lowest here; Chile
-        1988&apos;s 97.5% the highest. Germany holds no national referendums at all — a deliberate
+        1988&apos;s 97.5% the highest. Germany holds no national referendums at all, a deliberate
         postwar choice. Two rows here were decided by a rule rather than a majority:
         Italy&apos;s 2025 questions carried 65–88% of the votes cast and still fell to the 50%
         quorum, and Taiwan&apos;s 2025 nuclear question won three to one but missed the

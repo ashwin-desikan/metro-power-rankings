@@ -1,5 +1,5 @@
 #!/bin/bash
-# Auto-heal canceled/failed Vercel production builds — no workflow change.
+# Auto-heal CANCELED Vercel production builds; alert on FAILED ones. No workflow change.
 #
 # Vercel cancels an in-progress build when a newer commit is pushed. Because the
 # ~19 data jobs push [vercel skip] commits all day, an app-code build can get
@@ -72,7 +72,7 @@ git cat-file -e "${LIVE}^{commit}" 2>/dev/null || { echo "live sha ${LIVE:0:9} n
 
 if git merge-base --is-ancestor "$TARGET" "$LIVE" 2>/dev/null; then
   echo "up to date: TARGET ${TARGET:0:9} is live (serving ${LIVE:0:9})"
-  rm -f "$STATE"; exit 0
+  rm -f "$STATE" "$STATE.failed"; exit 0
 fi
 
 NOW=$(date +%s); TARGET_TS=$(git log -1 --format=%ct "$TARGET"); AGE_MIN=$(( (NOW - TARGET_TS) / 60 ))
@@ -81,33 +81,72 @@ if [ "$AGE_MIN" -lt "$STALE_MIN" ]; then
   exit 0
 fi
 
-# Duplicate-build guard: before spending a build, ask GitHub whether TARGET
-# already has a successful Vercel production deployment. If it does, the build
-# finished and only the live check lagged (alias flip, edge cache) — a
-# re-trigger would just duplicate a completed build (burned ~8 min on
-# 2026-08-03). Repo is public; unauthenticated API is fine at this rate.
-DEPLOY_OK="$(curl -fsS --max-time 15 \
+# Deployment-state guard: before spending a build, ask GitHub what happened to
+# TARGET's production deployment. Vercel posts one deployment per push HEAD
+# and a status on it, and the status answers the question this watcher used
+# to skip: WHY is TARGET not live?
+#
+#   success        -> the build finished; only the live check lagged (alias
+#                     flip, edge cache). No re-trigger: it would duplicate a
+#                     completed build (burned ~8 min on 2026-08-03).
+#   failure/error  -> the build genuinely FAILED. No re-trigger: rebuilding
+#                     the same code fails the same way, and each attempt is a
+#                     production build against the 2/day budget. On 2026-09-06
+#                     the api/og/compare function exceeded 250 MB, the watcher
+#                     read "not live after 20 minutes" as CANCELED, retried it
+#                     (attempt 1 also failed), and sent Ashwin a "re-triggered
+#                     canceled build" ntfy that pointed him the wrong way.
+#                     Alert loudly instead, with the commit and the build log.
+#   none/unknown   -> no deployment reached GitHub (a skipped build posts
+#                     nothing) or the API did not answer (404 under secondary
+#                     rate limiting reads as "no deployments", see CLAUDE.md).
+#                     Fall through to the retry path, which is the case this
+#                     watcher was written for: a build canceled by a newer
+#                     [vercel skip] push.
+#
+# Measured 2026-09-07 against the real API: b40726b7b and its retry 1291a3818
+# both carry a single status `failure` ("Deployment has failed"); ebbdd66d6
+# carries `success`; commits Vercel skipped carry no deployment at all. A
+# build canceled mid-flight by a newer push was NOT observed in that sample,
+# so that state is inferred to land in "none/unknown", not proven.
+# Repo is public; unauthenticated API is fine at this rate.
+DEPLOY_STATE="$(curl -fsS --max-time 15 \
   "https://api.github.com/repos/ashwin-desikan/metro-power-rankings/deployments?sha=$TARGET&environment=Production&per_page=5" \
   | python3 -c '
 import sys, json, urllib.request
-ok = ""
+verdict = ""
 try:
     deps = json.load(sys.stdin)
+    states = []
     for d in (deps if isinstance(deps, list) else []):
         try:
             with urllib.request.urlopen(d.get("statuses_url", ""), timeout=15) as r:
-                if any(s.get("state") == "success" for s in json.load(r)):
-                    ok = "yes"
-                    break
+                for s in json.load(r):
+                    states.append((s.get("state") or "", (s.get("description") or "").lower()))
         except Exception:
             pass
+    if any(st == "success" for st, _ in states):
+        verdict = "success"
+    elif any(st in ("failure", "error") and "cancel" not in desc for st, desc in states):
+        verdict = "failed"
 except Exception:
     pass
-print(ok)' 2>/dev/null || true)"
-if [ "$DEPLOY_OK" = "yes" ]; then
-  echo "TARGET ${TARGET:0:9} already has a successful production deployment — live check lag, not a canceled build; no re-trigger"
-  exit 0
-fi
+print(verdict)' 2>/dev/null || true)"
+case "$DEPLOY_STATE" in
+  success)
+    echo "TARGET ${TARGET:0:9} already has a successful production deployment - live check lag, not a canceled build; no re-trigger"
+    exit 0 ;;
+  failed)
+    echo "TARGET ${TARGET:0:9} BUILD FAILED on Vercel - not retrying (a retry would fail the same way and spend a build)"
+    # Alert once per failed sha, not once per 10-minute tick.
+    FAILED_MARK="$STATE.failed"
+    if [ ! -f "$FAILED_MARK" ] || [ "$(cat "$FAILED_MARK" 2>/dev/null)" != "$TARGET" ]; then
+      printf '%s\n' "$TARGET" > "$FAILED_MARK"
+      push "[ALERT] Vercel build FAILED - deploy manually" rotating_light \
+        "Build of ${TARGET:0:9} ($TARGET_SUBJ) FAILED. Not retried: the same code would fail again. Read the build log at https://vercel.com/ashwin-desikans-projects/metro-power-rankings/deployments, fix, push (the fix must be the push HEAD)."
+    fi
+    exit 0 ;;
+esac
 
 # Stale and not live => its build was canceled/failed. Re-trigger, guarded.
 LAST_SHA=""; LAST_TS=0; ATTEMPTS=0

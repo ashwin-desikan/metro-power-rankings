@@ -8,10 +8,12 @@ import { getHomeAdvantage, seriesShape } from "@/lib/expectation";
 import { getPlExpectation } from "@/lib/plExpectation";
 import { getNflExpectation } from "@/lib/nflExpectation";
 import { getIntlExpectation } from "@/lib/intlExpectation";
+import { getClubValueIndex, joinValueAndSurplus } from "@/lib/clubValue";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 import { SectionHead } from "@/app/_shared/SectionHead";
-import { DataBar } from "@/app/_shared/DataBar";
+import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 // The one place the expectation ledgers answer for themselves.
 //
 // 🔴 THIS IS NOT A BOARD OF BOARDS. Ashwin, on the NFL-only page this one
@@ -126,6 +128,31 @@ export default async function ExpectationPage() {
 
   const plBest = pl?.best_seasons?.[0];
 
+  // 🔴 COMPUTED, NEVER HARDCODED. The latest season present in the intl
+  // ledger, taken as the max of each league's own last season (a string
+  // compare is safe: "YYYY-YY" sorts correctly on the leading year). Today
+  // that resolves to 2024-25; there is no 2026-27 surplus row to join yet.
+  const valueSeason = intl?.metas.length
+    ? intl.metas.reduce((a, m) => (m.seasons[1] > a ? m.seasons[1] : a), intl.metas[0].seasons[1])
+    : null;
+  const [valueIdx, valueJoined] = await Promise.all([
+    getClubValueIndex().catch(() => null),
+    valueSeason ? joinValueAndSurplus(valueSeason).catch(() => []) : Promise.resolve([]),
+  ]);
+  // The board is the GAP, so it sorts on the gap: the club that beat its
+  // money by most at the top, the one that underspent its way to the bottom at
+  // the foot. Value rank stays a column, within each league, so the two ranks
+  // the gap is made of are both on the row.
+  const withGap = valueJoined
+    .map((r) => ({ ...r, gap: r.value_rank - r.surplus_rank_in_league }))
+    .sort((a, b) => b.gap - a.gap || b.value_eur_m - a.value_eur_m);
+  const biggestOverperformer = withGap.length
+    ? withGap.reduce((a, b) => (b.gap > a.gap ? b : a))
+    : null;
+  const biggestUnderperformer = withGap.length
+    ? withGap.reduce((a, b) => (b.gap < a.gap ? b : a))
+    : null;
+
   // The six football leagues on one axis: skill against each league's OWN era
   // baseline, so a century of Serie A and sixty years of the Bundesliga can
   // sit in one column. England joins from its own ledger, same quantity.
@@ -183,6 +210,7 @@ export default async function ExpectationPage() {
     pl ? `${pl.meta.matches.toLocaleString()} English top-flight matches ${pl.meta.seasons[0]}–${pl.meta.seasons[1]}` : null,
     intl ? `${intl.totals.matches.toLocaleString()} matches in ${intl.totals.leagues} continental top flights ${intl.totals.first_season}–${intl.totals.last_season}` : null,
     nfl ? `${nfl.meta.games.toLocaleString()} NFL games ${nfl.meta.seasons[0]}–${nfl.meta.seasons[1]}` : null,
+    valueIdx ? `squad value through ${valueIdx.end}` : null,
     // The newest of the ledgers actually on the page, not England's alone:
     // the continental five were built after it and the stamp must not age them.
     (() => {
@@ -220,6 +248,7 @@ export default async function ExpectationPage() {
         { label: "Seasons that broke the model", href: "#seasons" },
         { label: "Six leagues, one model", href: "#leagues" },
         { label: "By metro", href: "#metros" },
+        { label: "Form against money", href: "#value" },
         { label: "Against the market", href: "#market" },
         { label: "Where the numbers come from", href: "#method" },
       ]} />
@@ -687,6 +716,109 @@ export default async function ExpectationPage() {
         ) : null}
       </section>
 
+      {/* ------------------------------------------ form against money */}
+      {withGap.length > 0 && valueSeason ? (
+        <section className="mb-12">
+          <SectionHead
+            id="value"
+            title="Form against money"
+            sub={`Squad value at the end of ${valueSeason} against that same season's surplus, for every club the two ledgers share.`}
+            more={
+              <>
+                Value rank and surplus rank are both computed WITHIN one league, never across the five:
+                league size and era already make surplus only loosely comparable across leagues, and
+                mixing a La Liga euro figure with a Bundesliga one would compound that. Gap is value
+                rank minus surplus rank, so a positive gap is a club that finished above where its squad value sat and
+                a negative one finished below it. Squad value is Transfermarkt via{" "}
+                <a
+                  href="https://github.com/dcaribou/transfermarkt-datasets"
+                  rel="nofollow noopener"
+                  className="text-[var(--accent)] hover:underline"
+                >
+                  dcaribou/transfermarkt-datasets
+                </a>
+                , EUR millions, read at the end of the season (June); the number beside it is how many
+                players were priced that month, since a value below a 15-player floor is withheld
+                rather than shown as artificially cheap.
+              </>
+            }
+          />
+          {biggestOverperformer && biggestUnderperformer ? (
+            <p className="mb-3 text-sm text-[var(--text-muted)] max-w-3xl">
+              {biggestOverperformer.club} outperformed its money by the most in {valueSeason}: ranked{" "}
+              {biggestOverperformer.value_rank}
+              {biggestOverperformer.value_rank === 1 ? "st" : biggestOverperformer.value_rank === 2 ? "nd" : biggestOverperformer.value_rank === 3 ? "rd" : "th"}{" "}
+              on squad value in the {biggestOverperformer.league} but{" "}
+              {biggestOverperformer.surplus_rank_in_league}
+              {biggestOverperformer.surplus_rank_in_league === 1 ? "st" : biggestOverperformer.surplus_rank_in_league === 2 ? "nd" : biggestOverperformer.surplus_rank_in_league === 3 ? "rd" : "th"}{" "}
+              on surplus, a gap of <Delta v={biggestOverperformer.gap} dp={0} />.{" "}
+              {biggestUnderperformer.club} sits furthest the other way, a gap of{" "}
+              <Delta v={biggestUnderperformer.gap} dp={0} /> between its {biggestUnderperformer.league}{" "}
+              value rank ({biggestUnderperformer.value_rank}) and its surplus rank (
+              {biggestUnderperformer.surplus_rank_in_league}).
+            </p>
+          ) : null}
+          <ResponsiveTable
+            variant="list"
+            mobileNoun="clubs"
+            mobileInitial={12}
+            mobileRows={withGap.map((r, i) => (
+              <RankRow
+                key={`${r.league}-${r.slug}`}
+                rank={i + 1}
+                name={
+                  <>
+                    <Link href={`/teams/football/${r.slug}`} className="truncate text-[var(--accent)] hover:underline">
+                      {r.club}
+                    </Link>
+                    <span className="flex-shrink-0 text-[var(--text-dim)]">{r.league}</span>
+                  </>
+                }
+                sub={
+                  <>
+                    surplus <Delta v={r.surplus} dp={2} /> · rank {r.surplus_rank_in_league} · gap {r.gap >= 0 ? "+" : "−"}{Math.abs(r.gap)}
+                  </>
+                }
+                right={<DataBar v={r.value_eur_m} dp={0} format={(v) => `€${v.toFixed(0)}m`} />}
+                rightSub={`${r.n} valued`}
+              />
+            ))}
+          >
+            <table className="w-full text-xs" data-sticky-col="2">
+              <thead>
+                <tr className="text-[var(--text-dim)] text-left">
+                  <th className="py-2 px-3 font-medium">#</th>
+                  <th className="py-2 px-3 font-medium">Club</th>
+                  <th className="py-2 px-3 font-medium hidden sm:table-cell">League</th>
+                  <th className="py-2 px-3 font-medium text-right">Squad value</th>
+                  <th className="py-2 px-3 font-medium text-right hidden sm:table-cell">Value rank</th>
+                  <th className="py-2 px-3 font-medium text-right">Surplus</th>
+                  <th className="py-2 px-3 font-medium text-right">Gap</th>
+                </tr>
+              </thead>
+              <tbody>
+                {withGap.map((r, i) => (
+                  <tr key={`${r.league}-${r.slug}`} className="border-t" style={BORD}>
+                    <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
+                    <td className="py-1.5 px-3 whitespace-nowrap">
+                      <Link href={`/teams/football/${r.slug}`} className="text-[var(--accent)] hover:underline">{r.club}</Link>
+                    </td>
+                    <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{r.league}</td>
+                    <td className="py-1.5 px-3 text-right">
+                      <DataBar v={r.value_eur_m} dp={0} format={(v) => `€${v.toFixed(0)}m`} label={`${r.n} players valued`} />
+                      <span className="ml-1.5 text-[10px] text-[var(--text-dim)]" style={MONO}>{r.n}p</span>
+                    </td>
+                    <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell" style={MONO}>{r.value_rank}</td>
+                    <td className="py-1.5 px-3 text-right"><DivergingBar v={r.surplus} dp={2} suffix="" /></td>
+                    <td className="py-1.5 px-3 text-right tabular-nums" style={MONO}>{r.gap >= 0 ? "+" : "−"}{Math.abs(r.gap)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </ResponsiveTable>
+        </section>
+      ) : null}
+
       {/* ---------------------------------------------------- vs market */}
       <section className="mb-12">
         <SectionHead
@@ -888,6 +1020,12 @@ export default async function ExpectationPage() {
               from published historical odds.{" "}
               {pl ? <>Football ledger built {pl.meta.generated_at.slice(0, 10)}</> : null}
               {nfl ? <>; NFL ledger built {nfl.meta.generated_at.slice(0, 10)}</> : null}.
+              {valueIdx ? (
+                <>
+                  {" "}{valueIdx._meta.source_credit}, {valueIdx.start} through {valueIdx.end}; paused
+                  upstream since July 2026, so the series ends where the source ends.
+                </>
+              ) : null}
             </p>
           </div>
         </div>

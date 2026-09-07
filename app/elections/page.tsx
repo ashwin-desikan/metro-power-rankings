@@ -36,11 +36,16 @@ import HubCardClient from "./HubCardClient";
 import { getUsElections } from "@/lib/usElections";
 import ElectionsWorldMap, { type HubMarker } from "./ElectionsWorldMap";
 import TimelineStrip, { TimelineLegend, type TlDot, type TlRow } from "./TimelineStrip";
-import { BackButton } from "./HubShared";
 import { getElectionCensus } from "@/lib/electionCensus";
 import { weightedFreedomDecades } from "@/lib/electionPopulationWeight";
 import { getForecast, FORECAST_COLORS, FORECAST_NAMES, NZ_COLORS, NZ_NAMES } from "@/lib/forecast";
+import { getCurrentLeaderOverlay } from "@/lib/currentLeaders";
+import { HUB_COUNTRY_SLUGS } from "@/lib/electionConflicts";
 import LineChart, { type ChartSeries } from "./LineChart";
+import { SectionHead } from "@/app/_shared/SectionHead";
+import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
+import { ElectionsCrumbs, ElectionsHeader, SiblingHubs, SourcesCard, MONO } from "./_shared/ui";
+import ElectionsNav from "./_shared/ElectionsNav";
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -51,10 +56,25 @@ function fullDate(iso: string): string {
   return `${d} ${MONTHS[m - 1]} ${y}`;
 }
 
+// Number of hubs, spelled out for the metadata description (never a
+// hardcoded digit or word - both are derived from ELECTION_HUBS).
+const ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+const TEENS = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+function numberToWords(n: number): string {
+  if (n < 10) return ONES[n];
+  if (n < 20) return TEENS[n - 10];
+  const tens = Math.floor(n / 10);
+  const ones = n % 10;
+  return ones ? `${TENS[tens]}-${ONES[ones]}` : TENS[tens];
+}
+
+const HUB_COUNT = Object.keys(ELECTION_HUBS).length;
+
 const PATH = "/elections";
 const TITLE = "Elections";
 const DESC =
-  "Election history hubs for thirty-five polities: every general election, the parties, the leaders, the turnout and the results, with unfree and managed votes labelled as such. For novices who want the story and experts who want the numbers.";
+  `Election history hubs for ${numberToWords(HUB_COUNT)} polities: every general election, the parties, the leaders, the turnout and the results, with unfree and managed votes labelled as such. For novices who want the story and experts who want the numbers.`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -93,8 +113,13 @@ CAPITALS.eu = [48.5734, 7.7521];
 
 // Cards are collapsed by default (flag, headline, last and next elections);
 // the description expands on click. Interactivity lives in HubCardClient.
-function HubCard({ c }: { c: Card }) {
+// `leaders` is the current-leader overlay from lib/currentLeaders, keyed by
+// country slug (lib/electionConflicts's HUB_COUNTRY_SLUGS joins a hub to its
+// slugs); a hub with no resolvable leader simply renders no leader line.
+function HubCard({ c, leaders }: { c: Card; leaders: Record<string, { name: string; role: string }> }) {
   const meta = ELECTION_HUBS[c.hub];
+  const countrySlug = HUB_COUNTRY_SLUGS[meta.href]?.[0];
+  const cl = countrySlug ? leaders[countrySlug] : undefined;
   return (
     <HubCardClient
       href={meta.href}
@@ -107,6 +132,7 @@ function HubCard({ c }: { c: Card }) {
       body={c.body}
       last={meta.last}
       next={meta.next}
+      leader={cl && countrySlug ? { name: cl.name, role: cl.role, href: `/leaders/${countrySlug}` } : null}
     />
   );
 }
@@ -179,7 +205,7 @@ function MiniRange({ label, color, median, lo, hi, max, right }: { label: string
 }
 
 export default async function ElectionsPage() {
-  const forecast = await getForecast();
+  const [forecast, leaders] = await Promise.all([getForecast(), getCurrentLeaderOverlay()]);
   const uk = getUkElections();
   const ukFirst = uk.elections[0];
   const ukLast = uk.elections[uk.elections.length - 1];
@@ -463,53 +489,43 @@ export default async function ElectionsPage() {
     { title: "The Americas", cards: americas, more: [] },
   ];
 
+  const stamp = `AS OF ${forecast?.built ?? "UNKNOWN"} · ${HUB_COUNT} HUBS · ${totalContests.toLocaleString("en-US")} CONTESTS · WIKIPEDIA, NATIONAL ELECTORAL AUTHORITIES`;
+
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>
-        {" / "}
-        <span>{TITLE}</span>
-      </nav>
-
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <BackButton href="/" label="Back to rankings" />
-        <BackButton href="/elections/all" label="All hubs A–Z" />
-        <BackButton href="/leaders" label="World Leaders" />
-        <BackButton href="/countries" label="Countries" />
-        <BackButton href="/conflicts" label="Conflicts" />
-      </div>
-
-      <header className="mb-6">
-        <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
-        <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
-      </header>
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <ElectionsCrumbs />
+      <ElectionsHeader
+        emoji="🗳️"
+        title={TITLE}
+        sub="Every general election in the atlas, live forecasts for the next ones, and a public record of how those forecasts did."
+        stamp={stamp}
+      />
+      <ElectionsNav />
+      <SiblingHubs />
 
       {/* ---------- forecast previews: the permanent US & UK window + the rotating tracker ---------- */}
       {forecast ? (
-        <section className="mb-8 grid gap-4">
+        <section className="mb-8">
+          <SectionHead
+            title="Forecasts"
+            sub="Seat ranges from thousands of simulations, updated weekly: ranges first, probabilities second."
+            more={`Every average is a recency-weighted mean of each pollster's latest poll within a 45-day window, 14-day half-life. Labelled as speculation, not a claim about the outcome. Updated ${forecast.built}.`}
+          />
+          <div className="grid gap-4">
           <Link
             href="/elections/forecast"
             className="block rounded-2xl border p-5 transition-colors hover:border-[var(--accent)]"
             style={{ borderColor: "#B4540A", backgroundColor: "rgba(217,119,6,0.04)" }}
           >
             <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1">
-              <h2 className="text-xl font-bold text-[var(--text)]">
-                Forecasts <span className="text-sm font-normal" style={{ color: "#D97706" }}>· United States &amp; United Kingdom, always on</span>
-              </h2>
+              <h3 className="text-xl font-bold text-[var(--text)]">
+                United States &amp; United Kingdom <span className="text-sm font-normal" style={{ color: "#D97706" }}>· always on</span>
+              </h3>
               <span className="text-xs text-[var(--accent)]">Open the full forecast →</span>
             </div>
-            <p className="text-xs text-[var(--text-muted)] mb-1 max-w-3xl">
+            <p className="text-xs text-[var(--text-muted)] mb-3 max-w-3xl">
               Whatever the next US and UK elections are, they live here permanently.
             </p>
-            <details className="mb-4 max-w-3xl">
-              <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
-                How this is measured
-              </summary>
-              <div className="mt-2 text-xs text-[var(--text-muted)]">
-                Seat ranges from thousands of simulations, updated weekly: ranges first, probabilities
-                second, and labelled as speculation. Updated {forecast.built}.
-              </div>
-            </details>
             <div className="grid gap-5 md:grid-cols-2">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2">United States · 2026 midterms · 3 November</p>
@@ -523,6 +539,9 @@ export default async function ElectionsPage() {
                         <MiniRange label="Rep Senate" color={FORECAST_COLORS.rep} median={100 - forecast.us.senate.demSeats.median} lo={100 - forecast.us.senate.demSeats.hi} hi={100 - forecast.us.senate.demSeats.lo} max={100} right={`control ${(100 - forecast.us.senate.pDemControl).toFixed(1)}%`} />
                       </>
                     ) : null}
+                    <p className="text-[10px] text-[var(--text-dim)] mt-1.5">
+                      House: generic ballot margin through the 2012–2024 seats-votes relationship.
+                    </p>
                   </>
                 ) : null}
               </div>
@@ -545,6 +564,9 @@ export default async function ElectionsPage() {
                       right={forecast.uk.sim.pLargest[k] != null ? `largest ${forecast.uk.sim.pLargest[k]}%` : ""}
                     />
                   ))}
+                <p className="text-[10px] text-[var(--text-dim)] mt-1.5">
+                  Proportional swing from the 2024 result in all 632 GB constituencies.
+                </p>
               </div>
             </div>
           </Link>
@@ -556,14 +578,15 @@ export default async function ElectionsPage() {
               style={{ borderColor: "var(--border)" }}
             >
               <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1">
-                <h2 className="text-lg font-bold text-[var(--text)]">
+                <h3 className="text-lg font-bold text-[var(--text)]">
                   Tracking now <span className="text-sm font-normal text-[var(--text-dim)]">· elections on the near horizon</span>
-                </h2>
+                </h3>
                 <span className="text-xs text-[var(--accent)]">Full forecasts →</span>
               </div>
               <p className="text-xs text-[var(--text-muted)] mb-4 max-w-3xl">
-                Every other race we currently forecast. Each preview retires from this window once
-                its election has been run, and new races rotate in as their polling begins.
+                A race is tracked when its date is confirmed within twelve months and it has a poll series
+                we parse. Next to rotate in: Nigeria (16 January 2027) as a scenario board, Germany&apos;s
+                Federal Convention (30 January 2027).
               </p>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {forecast.br ? (
@@ -609,9 +632,9 @@ export default async function ElectionsPage() {
               </div>
             </Link>
           ) : null}
+          </div>
         </section>
       ) : null}
-
 
       {/* ---------- the countdown board ----------
           Sorted on ELECTION_HUBS.nextDate, the one place election dates live.
@@ -621,76 +644,108 @@ export default async function ElectionsPage() {
           needs filing, and scripts/check-election-dates.mjs fails the build if
           it stays that way for a fortnight. */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Next to vote</h2>
-        <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
-          The twelve soonest contests in the atlas. Dates in white are officially set; the rest
-          are the term running its course, and say so rather than inventing a day.
-        </p>
+        <SectionHead
+          title="Next to vote"
+          sub="The twelve soonest contests in the atlas, badged by how firm their date is."
+          more={`${confirmedCount} of the ${allNext.length} hubs have an officially set date (badged Set). The rest show the term running its course (Term running) or have no scheduled vote at all (No date), which is what is actually known, never a guessed day. A Set date that has passed with no result filed shows "result due" until it is.`}
+        />
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {countdown.map((r) => (
-            <Link
-              key={r.code}
-              href={r.href}
-              className="flex items-center gap-3 rounded-xl border p-3 transition-colors hover:border-[var(--accent)]"
-              style={{ borderColor: r.overdue ? "#B4540A" : "var(--border)", backgroundColor: "var(--bg-card)" }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={flagUrlByCode(r.flag)} srcSet={flagSrcSetByCode(r.flag)} alt="" width={26} height={19} className="rounded-[2px] shrink-0" />
-              <span className="min-w-0 flex-1">
-                <span className="block font-semibold text-[var(--text)] truncate">{r.name}</span>
-                <span className="block text-xs text-[var(--text-dim)] truncate">
-                  {r.confidence === "confirmed" && r.date ? fullDate(r.date) : r.next}
-                </span>
-              </span>
-              <span className="shrink-0 text-right tabular-nums text-xs">
-                {r.overdue ? (
-                  <span className="font-semibold" style={{ color: "#D97706" }}>result due</span>
-                ) : r.daysAway == null ? (
-                  <span className="text-[var(--text-dim)]">no date</span>
-                ) : (
-                  <>
-                    <span className={r.confidence === "confirmed" ? "font-bold text-[var(--text)]" : "text-[var(--text-muted)]"}>
-                      {r.daysAway === 0 ? "today" : r.daysAway.toLocaleString("en-US")}
+          {countdown.map((r) => {
+            const badge = r.confidence === "confirmed" ? "Set" : r.confidence === "expected" ? "Term running" : "No date";
+            const badgeColor = r.confidence === "confirmed" ? "#4ECDC4" : "var(--text-dim)";
+            return (
+              <div
+                key={r.code}
+                className="tap-row flex items-center gap-2 rounded-xl border p-3 transition-colors hover:border-[var(--accent)]"
+                style={{ borderColor: r.overdue ? "#B4540A" : "var(--border)", backgroundColor: "var(--bg-card)" }}
+              >
+                <Link href={r.href} className="tap-target flex min-h-11 min-w-0 flex-1 items-center gap-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={flagUrlByCode(r.flag)} srcSet={flagSrcSetByCode(r.flag)} alt="" width={26} height={19} className="rounded-[2px] shrink-0" />
+                  <span className="min-w-0 flex-1">
+                    <span className="flex items-center gap-1.5 min-w-0">
+                      <span className="font-semibold text-[var(--text)] truncate">{r.name}</span>
+                      <span
+                        className="shrink-0 rounded px-1 py-0.5 text-[9px] font-semibold uppercase tracking-widest"
+                        style={{ ...MONO, color: badgeColor, backgroundColor: "var(--bg-card-hover)" }}
+                      >
+                        {badge}
+                      </span>
                     </span>
-                    {r.daysAway === 0 ? null : <span className="block text-[10px] text-[var(--text-dim)]">days</span>}
-                  </>
-                )}
-              </span>
-            </Link>
-          ))}
+                    <span className="block text-xs text-[var(--text-dim)] truncate">
+                      {r.confidence === "confirmed" && r.date ? fullDate(r.date) : r.next}
+                    </span>
+                  </span>
+                  <span className="shrink-0 text-right tabular-nums text-xs">
+                    {r.overdue ? (
+                      <span className="font-semibold" style={{ color: "#D97706" }}>result due</span>
+                    ) : r.daysAway == null ? (
+                      <span className="text-[var(--text-dim)]">·</span>
+                    ) : (
+                      <>
+                        <span className="text-[var(--text-muted)]">
+                          {r.daysAway === 0 ? "today" : r.daysAway.toLocaleString("en-US")}
+                        </span>
+                        {r.daysAway === 0 ? null : <span className="block text-[10px] text-[var(--text-dim)]">days</span>}
+                      </>
+                    )}
+                  </span>
+                </Link>
+                {r.confidence === "confirmed" && !r.overdue ? (
+                  <Link
+                    href={`/elections/calendar/${r.code}.ics`}
+                    className="shrink-0 inline-flex min-h-11 items-center rounded px-1.5 text-[10px] font-semibold uppercase tracking-widest text-[var(--accent)] hover:underline"
+                    title={`Add ${r.name} to your calendar`}
+                  >
+                    Calendar
+                  </Link>
+                ) : null}
+              </div>
+            );
+          })}
         </div>
-        <p className="text-xs text-[var(--text-dim)] mt-2">
-          {confirmedCount} of the {allNext.length} hubs have an officially set date. The others show the
-          term running out, which is what is actually known.
-        </p>
       </section>
       {/* ---------- world map ---------- */}
       <section className="mb-10">
+        <SectionHead
+          title="World map"
+          sub={`${markers.length} election hubs, ${totalContests.toLocaleString("en-US")} contests. Click any marker to open its hub.`}
+        />
         <ElectionsWorldMap markers={markers} />
         <p className="text-xs text-[var(--text-muted)] mt-2">
-          {markers.length} election hubs, {totalContests.toLocaleString("en-US")} contests.{" "}
-          <span className="inline-flex items-center gap-1.5 ml-1">
+          <span className="inline-flex items-center gap-1.5">
             <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: "#4ECDC4" }} /> competitive democracies
           </span>
           <span className="inline-flex items-center gap-1.5 ml-3">
             <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: "#D97706" }} /> managed systems
           </span>
-          <span className="ml-3 text-[var(--text-dim)]">Click any marker to open its hub.</span>
         </p>
       </section>
 
-      <div className="grid gap-4 sm:grid-cols-2 mb-10">
-        {top.map((c) => <HubCard key={c.hub} c={c} />)}
-      </div>
+      <section className="mb-10">
+        <SectionHead title="Featured hubs" sub="The two deepest records in the atlas, and the current head of government where we track one." />
+        <div className="grid gap-4 sm:grid-cols-2">
+          {top.map((c) => <HubCard key={c.hub} c={c} leaders={leaders} />)}
+        </div>
+      </section>
 
       {/* Regions side by side: each region is a column with its hubs stacked,
-          so every region is visible at once instead of section after section. */}
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4 mb-10 items-start">
+          so every region is visible at once instead of section after section.
+          Folded on a phone (measured 2026-09-07: the open page ran 21 screens
+          at 390px), open on a desktop, per DESIGN-STANDARDS section 2. */}
+      <CollapsibleSection
+        id="regions"
+        title="Hubs by region"
+        sub={`${HUB_COUNT} polities in four regions; the compact links are hubs without a featured card.`}
+        meta={`${HUB_COUNT} hubs`}
+        bodyClassName="p-0 sm:p-0 pt-3"
+      >
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4 items-start">
         {regions.map((r) => (
           <section key={r.title}>
-            <h2 className="text-xl font-bold mb-3 text-[var(--text)]">{r.title}</h2>
+            <h3 className="text-xl font-bold mb-3 text-[var(--text)]">{r.title}</h3>
             <div className="grid gap-4">
-              {r.cards.map((c) => <HubCard key={c.hub} c={c} />)}
+              {r.cards.map((c) => <HubCard key={c.hub} c={c} leaders={leaders} />)}
             </div>
             {r.more.length ? (
               <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 items-center">
@@ -722,24 +777,16 @@ export default async function ElectionsPage() {
           </section>
         ))}
       </div>
+      </CollapsibleSection>
 
       {/* ---------- every election ever ---------- */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Two centuries of ballots</h2>
-        <p className="text-sm text-[var(--text-muted)] mb-1 max-w-3xl">
-          Every one of the {totalContests.toLocaleString("en-US")} contests in the atlas on one
-          timeline, newest first.
-        </p>
-        <details className="mb-4 max-w-3xl">
-          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
-            How to read it
-          </summary>
-          <div className="mt-2 text-sm text-[var(--text-muted)]">
-            The postwar democratic wave, the cluster of 1989–91, the solid amber-and-red rows of
-            the managed systems, and New Zealand&apos;s unbroken teal line back to 1853. Scroll
-            right to travel back in time.
-          </div>
-        </details>
+        <SectionHead
+          title="Two centuries of ballots"
+          sub={`Every one of the ${totalContests.toLocaleString("en-US")} contests in the atlas, newest first.`}
+          more="The postwar democratic wave, the cluster of 1989-91, the solid amber-and-red rows of the managed systems, and New Zealand's unbroken teal line back to 1853. Scroll right to travel back in time."
+          moreLabel="How to read it"
+        />
         <TimelineStrip rows={tlRows} />
         <TimelineLegend />
         <p className="text-sm mt-3 flex flex-wrap gap-x-5 gap-y-1">
@@ -762,8 +809,12 @@ export default async function ElectionsPage() {
       </section>
 
       {/* ---------- cross-polity charts ---------- */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4 text-[var(--text)]">The world compared</h2>
+      <CollapsibleSection
+        id="compared"
+        title="The world compared"
+        sub="Turnout across six long-running democracies, and how much of the world voted freely, by decade."
+        bodyClassName="p-0 sm:p-0 pt-3"
+      >
         <div className="grid gap-4 lg:grid-cols-2 items-start">
           <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <h3 className="font-bold text-[var(--text)] mb-1">Turnout across six democracies, 1900–2026</h3>
@@ -834,11 +885,31 @@ export default async function ElectionsPage() {
             </p>
           </div>
         </div>
-      </section>
+      </CollapsibleSection>
 
-      <section className="mt-2 text-sm text-[var(--text-muted)]">
+      <SourcesCard>
         <p>
-          Related: <Link href="/uk-political-leadership" className="text-[var(--accent)] hover:underline">UK Political Leadership</Link>
+          Every hub is built from Wikipedia&apos;s election articles cross-checked against each polity&apos;s
+          national electoral authority, with unfree and managed votes labelled as such rather than
+          folded in as if they were competitive contests. Forecasts on this page are this site&apos;s
+          own aggregation model, rebuilt weekly; the ledger of how those forecasts have done is on{" "}
+          <Link href="/elections/track-record" className="text-[var(--accent)] hover:underline">Track record</Link>.
+        </p>
+        <p>
+          <Link href="/data/elections-all.csv" className="text-[var(--accent)] hover:underline">
+            Download every hub as CSV
+          </Link>
+          {" · "}
+          <Link href="/elections/calendar.ics" className="text-[var(--accent)] hover:underline">
+            Subscribe to the election calendar
+          </Link>{" "}
+          <span className="text-[var(--text-dim)]">
+            (in most calendar apps, paste the link with <code>https</code> replaced by <code>webcal</code>)
+          </span>
+        </p>
+        <p>
+          Related:{" "}
+          <Link href="/uk-political-leadership" className="text-[var(--accent)] hover:underline">UK Political Leadership</Link>
           {" · "}
           <Link href="/us-political-leadership" className="text-[var(--accent)] hover:underline">US Political Leadership</Link>
           {" · "}
@@ -852,7 +923,7 @@ export default async function ElectionsPage() {
           {" · "}
           <Link href="/orgs" className="text-[var(--accent)] hover:underline">Organisations</Link>
         </p>
-      </section>
+      </SourcesCard>
     </main>
   );
 }

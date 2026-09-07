@@ -6,12 +6,13 @@ import { getElectionCensus, type CensusItem } from "@/lib/electionCensus";
 import { ELECTION_HUBS } from "@/lib/electionHubsMeta";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { BackButton } from "../HubShared";
+import { ElectionsCrumbs } from "../_shared/ui";
+import ElectionsNav from "../_shared/ElectionsNav";
 
 const PATH = "/elections/under-fire";
 const TITLE = "Elections Under Fire";
 const DESC =
-  "Every election in the atlas held while the country was fighting a major war — from Lincoln's 1864 re-election mid-Civil War and Britain's coupon election of 1918 to Israel's wartime ballots and Russia's 2024 ritual. Voting during wartime is democracy's hardest test; here is every time it was taken.";
+  "Every election in the atlas held while the country was fighting a major war, from Lincoln's 1864 re-election mid-Civil War and Britain's coupon election of 1918 to Israel's wartime ballots and Russia's 2024 ritual. Voting during wartime is democracy's hardest test; here is every time it was taken.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -50,18 +51,7 @@ export default async function UnderFirePage() {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>
-        {" / "}
-        <Link href="/elections" className="hover:underline">Elections</Link>
-        {" / "}
-        <span>Under fire</span>
-      </nav>
-
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <BackButton href="/elections" label="All election hubs" />
-        <BackButton href="/conflicts" label="Interstate wars" />
-      </div>
+      <ElectionsCrumbs tab="Under fire" />
 
       <header className="mb-6">
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
@@ -70,6 +60,7 @@ export default async function UnderFirePage() {
           {totalBallots} wartime ballots · {freeBallots} held as free contests · {sections.length} major wars
         </p>
       </header>
+      <ElectionsNav />
 
       <div className="flex items-center gap-4 flex-wrap text-xs text-[var(--text-muted)] mb-8">
         {( [0, 1, 2] as const ).map((f) => (
@@ -128,10 +119,10 @@ export default async function UnderFirePage() {
       ))}
 
       <footer className="mt-10 pt-6 border-t text-xs text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-        A ballot appears here when its polity was a belligerent in a major war — interstate, or a
-        civil war fought on its own soil — whose span includes the election year. War data:{" "}
+        A ballot appears here when its polity was a belligerent in a major war, interstate or a
+        civil war fought on its own soil, whose span includes the election year. War data:{" "}
         <Link href="/conflicts" className="hover:text-[var(--accent)]">Wars since 1500</Link>.
-        The dot carries the election&apos;s honesty label from its hub — wartime votes under
+        The dot carries the election&apos;s honesty label from its hub: wartime votes under
         dictatorship were rituals, and are marked as such.
       </footer>
     </main>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { ELECTION_HUBS, HUB_CAPITALS } from "@/lib/electionHubsMeta";
+import FollowPolityButton from "./FollowPolityButton";
 
 // Shared server-side building blocks for the election hub pages.
 // Purely presentational; each hub page supplies its own data, colors and prose.
@@ -82,6 +83,9 @@ export function HubTitle({ code, title }: { code: string; title: string }) {
           />
         ) : null}
         <h1 className="min-w-0 text-2xl sm:text-3xl font-bold text-[var(--text)]">{title}</h1>
+        {meta ? (
+          <FollowPolityButton slug={meta.code} name={meta.name} href={meta.href} />
+        ) : null}
         {meta?.note ? (
           <span
             className="text-[10px] uppercase tracking-wider rounded-full border px-2.5 py-1 shrink-0 font-semibold"
@@ -90,7 +94,7 @@ export function HubTitle({ code, title }: { code: string; title: string }) {
               : { borderColor: "#B4540A", color: "#D97706", backgroundColor: "rgba(217,119,6,0.08)" }}
             title={meta.noteTone === "neutral"
               ? "A descriptive label, not a fairness warning."
-              : "National votes here are not free, competitive contests — every entry carries the honest label."}
+              : "National votes here are not free, competitive contests: every entry carries the honest label."}
           >
             {meta.note}
           </span>

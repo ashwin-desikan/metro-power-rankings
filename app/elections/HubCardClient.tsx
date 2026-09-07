@@ -7,6 +7,8 @@ import Link from "next/link";
 // headline link, and the Last/Next election lines. Clicking the card expands
 // the description; clicking the headline navigates to the hub.
 
+export type HubCardLeader = { name: string; role: string; href: string };
+
 export type HubCardProps = {
   href: string;
   flagSrc: string;
@@ -18,6 +20,8 @@ export type HubCardProps = {
   body: string;
   last: string;
   next: string;
+  /** Current head of government, when lib/currentLeaders has one for this hub. */
+  leader?: HubCardLeader | null;
 };
 
 export default function HubCard(p: HubCardProps) {
@@ -83,6 +87,18 @@ export default function HubCard(p: HubCardProps) {
         Next{" · "}
         <span className="text-[var(--text-muted)]">{p.next}</span>
       </p>
+      {p.leader ? (
+        <p className="text-xs text-[var(--text-dim)] mt-0.5">
+          Head of government{" · "}
+          <Link
+            href={p.leader.href}
+            onClick={(e) => e.stopPropagation()}
+            className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline"
+          >
+            {p.leader.name} <span aria-hidden>&rarr;</span>
+          </Link>
+        </p>
+      ) : null}
     </div>
   );
 }

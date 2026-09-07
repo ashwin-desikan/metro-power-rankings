@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useFollowing, type FollowItem } from "@/lib/useFollowing";
+import { nextElections } from "@/lib/electionHubsMeta";
 
 function Section({
   title,
@@ -40,6 +41,66 @@ function Section({
             </button>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function PolitySection({
+  items,
+  onRemove,
+}: {
+  items: FollowItem[];
+  onRemove: (type: FollowItem["type"], slug: string) => void;
+}) {
+  // One source of truth for "when does this polity vote next"
+  // (lib/electionHubsMeta.ts) — the same table the elections hubs and the
+  // forecast pipeline read, so a countdown here never drifts from the hub
+  // page it links to.
+  const byCode = new Map(nextElections().map((e) => [e.code, e]));
+  return (
+    <section className="mb-10">
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-3">
+        🗳️ Elections you follow <span className="text-[var(--text-dim)]">({items.length})</span>
+      </h2>
+      <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))" }}>
+        {items.map((i) => {
+          const e = byCode.get(i.slug);
+          const countdown =
+            e && e.confidence === "confirmed" && e.daysAway != null
+              ? e.overdue
+                ? "result due"
+                : `${e.daysAway.toLocaleString("en-US")} day${e.daysAway === 1 ? "" : "s"} away`
+              : null;
+          return (
+            <div
+              key={`${i.type}:${i.slug}`}
+              className="rounded-lg border px-3 py-2.5"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <Link href={i.href} className="text-[14px] font-medium truncate hover:text-[var(--accent)]">
+                  {i.name}
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => onRemove(i.type, i.slug)}
+                  title={`Unfollow ${i.name}`}
+                  aria-label={`Unfollow ${i.name}`}
+                  className="shrink-0 text-[var(--text-dim)] hover:text-[var(--text)] text-sm leading-none px-1"
+                >
+                  ✕
+                </button>
+              </div>
+              <p className="mt-1 text-xs text-[var(--text-muted)]">{e?.next ?? "Next election: not tracked"}</p>
+              {countdown ? (
+                <p className="mt-0.5 text-[11px] tabular-nums text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                  {countdown}
+                </p>
+              ) : null}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
@@ -97,6 +158,7 @@ export default function MePage() {
   const { items, ready, remove } = useFollowing();
   const metros = items.filter((i) => i.type === "metro");
   const teams = items.filter((i) => i.type === "team");
+  const polities = items.filter((i) => i.type === "polity");
 
   return (
     <div style={{ backgroundColor: "var(--bg)", color: "var(--text)", minHeight: "100vh" }}>
@@ -119,6 +181,7 @@ export default function MePage() {
 
         {metros.length > 0 && <Section title="Metros" emoji="🏙️" items={metros} onRemove={remove} />}
         {teams.length > 0 && <Section title="Teams" emoji="🏟️" items={teams} onRemove={remove} />}
+        {polities.length > 0 && <PolitySection items={polities} onRemove={remove} />}
       </div>
     </div>
   );

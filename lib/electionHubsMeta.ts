@@ -6,6 +6,15 @@
 // `note` marks polities whose national votes are not free contests — the
 // landing card and hub title carry it as a visible badge.
 
+export type GovernmentType = "parliamentary" | "presidential" | "semi-presidential" | "other";
+
+export const GOVERNMENT_TYPE_LABELS: Record<GovernmentType, string> = {
+  parliamentary: "Parliamentary",
+  presidential: "Presidential",
+  "semi-presidential": "Semi-presidential",
+  other: "Other",
+};
+
 export type ElectionHubMeta = {
   code: string; // hub route segment
   flag: string; // flagcdn code
@@ -32,6 +41,16 @@ export type ElectionHubMeta = {
   // and stay out of its map/timeline/charts; absence means a full featured card.
   // This is the scaling pattern: new hubs join as compact by default, and a hub
   // is promoted to featured by removing the flag (plus writing its card).
+  // --- system of government --------------------------------------------------
+  // Who makes the government: a legislature (parliamentary), a directly elected
+  // executive (presidential), or both with real powers (semi-presidential).
+  // `other` covers the cases a three-way split misdescribes, and then
+  // `governmentLabel` says what it is instead. Classification is by how the
+  // head of government is actually chosen, not by the constitution's own name
+  // for itself: Austria has a directly elected president and is filed as
+  // parliamentary; Turkey has been presidential since the 2018 switch.
+  governmentType: GovernmentType;
+  governmentLabel?: string;
 };
 
 // Capital-metro links: joins each hub to the metro rankings. Slugs verified
@@ -102,47 +121,47 @@ export const HUB_REGION: Record<string, string> = {
 };
 
 export const ELECTION_HUBS: Record<string, ElectionHubMeta> = {
-  us: { code: "us", flag: "us", name: "United States", href: "/elections/us", last: "presidential, 5 November 2024", next: "2026 midterms, 3 November", nextDate: "2026-11-03", nextConfidence: "confirmed" },
-  uk: { code: "uk", flag: "gb", name: "United Kingdom", href: "/elections/uk", last: "general election, 4 July 2024", next: "general election, expected 2029", nextDate: "2029-08-15", nextConfidence: "expected" },
-  ca: { code: "ca", flag: "ca", name: "Canada", href: "/elections/ca", last: "federal election, 28 April 2025", next: "federal election, expected 2029", nextDate: "2029-10-15", nextConfidence: "expected" },
-  eu: { code: "eu", flag: "eu", name: "European Union", href: "/elections/eu", last: "European Parliament, June 2024", next: "European Parliament, June 2029", nextDate: "2029-06-07", nextConfidence: "expected" },
-  mx: { code: "mx", flag: "mx", name: "Mexico", href: "/elections/mx", last: "general election, 2 June 2024", next: "midterms, June 2027", nextDate: "2027-06-06", nextConfidence: "confirmed" },
-  br: { code: "br", flag: "br", name: "Brazil", href: "/elections/br", last: "general election, October 2022", next: "general election, 4 October 2026", nextDate: "2026-10-04", nextConfidence: "confirmed" },
-  ar: { code: "ar", flag: "ar", name: "Argentina", href: "/elections/ar", last: "general election, October–November 2023", next: "general election, October 2027", nextDate: "2027-10-24", nextConfidence: "confirmed" },
-  de: { code: "de", flag: "de", name: "Germany", href: "/elections/de", last: "federal election, 23 February 2025", next: "federal election, expected 2029", nextDate: "2029-03-25", nextConfidence: "expected" },
-  fr: { code: "fr", flag: "fr", name: "France", href: "/elections/fr", last: "legislative, June–July 2024", next: "presidential, April 2027", nextDate: "2027-04-11", nextConfidence: "expected" },
-  it: { code: "it", flag: "it", name: "Italy", href: "/elections/it", last: "general election, 25 September 2022", next: "general election, expected 2027", nextDate: "2027-12-22", nextConfidence: "expected" },
-  es: { code: "es", flag: "es", name: "Spain", href: "/elections/es", last: "general election, 23 July 2023", next: "general election, expected 2027", nextDate: "2027-08-22", nextConfidence: "expected" },
-  pl: { code: "pl", flag: "pl", name: "Poland", href: "/elections/pl", last: "presidential runoff, 1 June 2025", next: "parliamentary, autumn 2027", nextDate: "2027-11-07", nextConfidence: "expected" },
-  nl: { code: "nl", flag: "nl", name: "Netherlands", href: "/elections/nl", last: "general election, 29 October 2025", next: "general election, expected 2029", nextDate: "2029-10-31", nextConfidence: "expected" },
-  ru: { code: "ru", flag: "ru", name: "Russia", href: "/elections/ru", last: "presidential, March 2024 (managed)", next: "Duma election, 20 September 2026", nextDate: "2026-09-20", nextConfidence: "confirmed", note: "Managed elections" },
-  il: { code: "il", flag: "il", name: "Israel", href: "/elections/il", last: "Knesset election, 1 November 2022", next: "Knesset election, 27 October 2026", nextDate: "2026-10-27", nextConfidence: "confirmed" },
-  za: { code: "za", flag: "za", name: "South Africa", href: "/elections/za", last: "general election, 29 May 2024", next: "general election, expected 2029", nextDate: "2029-07-31", nextConfidence: "expected" },
-  ng: { code: "ng", flag: "ng", name: "Nigeria", href: "/elections/ng", last: "general election, 25 February 2023", next: "presidential & National Assembly, 16 January 2027", nextDate: "2027-01-16", nextConfidence: "confirmed" },
-  tr: { code: "tr", flag: "tr", name: "Turkey", href: "/elections/tr", last: "presidential & parliamentary, May 2023", next: "presidential & parliamentary, expected 2028", nextDate: "2028-05-14", nextConfidence: "expected" },
-  in: { code: "in", flag: "in", name: "India", href: "/elections/in", last: "general election, April–June 2024", next: "general election, expected 2029", nextDate: "2029-06-16", nextConfidence: "expected" },
-  jp: { code: "jp", flag: "jp", name: "Japan", href: "/elections/jp", last: "general election, 8 February 2026", next: "general election, due by 2030", nextDate: "2030-02-08", nextConfidence: "expected" },
-  au: { code: "au", flag: "au", name: "Australia", href: "/elections/au", last: "federal election, 3 May 2025", next: "federal election, expected 2028", nextDate: "2028-09-30", nextConfidence: "expected" },
-  nz: { code: "nz", flag: "nz", name: "New Zealand", href: "/elections/nz", last: "general election, 14 October 2023", next: "general election, 7 November 2026", nextDate: "2026-11-07", nextConfidence: "confirmed" },
-  kr: { code: "kr", flag: "kr", name: "South Korea", href: "/elections/kr", last: "presidential, 3 June 2025", next: "Assembly election, April 2028", nextDate: "2028-04-12", nextConfidence: "confirmed" },
-  id: { code: "id", flag: "id", name: "Indonesia", href: "/elections/id", last: "general election, 14 February 2024", next: "general election, February 2029", nextDate: "2029-02-14", nextConfidence: "expected" },
-  tw: { code: "tw", flag: "tw", name: "Taiwan", href: "/elections/tw", last: "presidential & legislative, 13 January 2024", next: "presidential & legislative, January 2028", nextDate: "2028-01-08", nextConfidence: "expected" },
-  cn: { code: "cn", flag: "cn", name: "China", href: "/elections/cn", last: "14th NPC convened, March 2023", next: "15th NPC convenes, March 2028", nextDate: "2028-03-05", nextConfidence: "expected", note: "No competitive elections" },
-  ua: { code: "ua", flag: "ua", name: "Ukraine", href: "/elections/ua", last: "presidential & Rada, spring–summer 2019", next: "suspended under martial law — after the war", nextConfidence: "unscheduled" },
-  iq: { code: "iq", flag: "iq", name: "Iraq", href: "/elections/iq", last: "parliamentary, 11 November 2025", next: "parliamentary, expected 2029", nextDate: "2029-11-11", nextConfidence: "expected" },
-  ps: { code: "ps", flag: "ps", name: "Palestine", href: "/elections/ps", last: "legislative, 25 January 2006", next: "PLC election, 28 November 2026", nextDate: "2026-11-28", nextConfidence: "confirmed" },
-  va: { code: "va", flag: "va", name: "Vatican City", href: "/elections/va", last: "conclave, 7–8 May 2025 (Leo XIV)", next: "on the death or resignation of the pope", nextConfidence: "unscheduled", note: "Electoral monarchy", noteTone: "neutral" },
-  sg: { code: "sg", flag: "sg", name: "Singapore", href: "/elections/sg", last: "general election, 3 May 2025", next: "general election, due by 2030", nextDate: "2030-12-31", nextConfidence: "expected", tier: "compact" },
-  my: { code: "my", flag: "my", name: "Malaysia", href: "/elections/my", last: "general election, 19 November 2022", next: "general election, due by early 2028", nextDate: "2028-02-29", nextConfidence: "expected", tier: "compact" },
-  ch: { code: "ch", flag: "ch", name: "Switzerland", href: "/elections/ch", last: "federal election, 22 October 2023", next: "federal election, October 2027", nextDate: "2027-10-24", nextConfidence: "confirmed", tier: "compact" },
-  be: { code: "be", flag: "be", name: "Belgium", href: "/elections/be", last: "federal election, 9 June 2024", next: "federal election, expected 2029", nextDate: "2029-06-10", nextConfidence: "expected", tier: "compact" },
-  dk: { code: "dk", flag: "dk", name: "Denmark", href: "/elections/dk", last: "general election, 24 March 2026", next: "general election, due by 2030", nextDate: "2030-03-24", nextConfidence: "expected", tier: "compact" },
-  gr: { code: "gr", flag: "gr", name: "Greece", href: "/elections/gr", last: "parliamentary, 25 June 2023", next: "parliamentary, expected 2027", nextDate: "2027-07-04", nextConfidence: "expected", tier: "compact" },
-  at: { code: "at", flag: "at", name: "Austria", href: "/elections/at", last: "legislative, 29 September 2024", next: "legislative, expected 2029", nextDate: "2029-09-30", nextConfidence: "expected", tier: "compact" },
-  pt: { code: "pt", flag: "pt", name: "Portugal", href: "/elections/pt", last: "legislative, 18 May 2025", next: "legislative, expected 2029", nextDate: "2029-05-31", nextConfidence: "expected", tier: "compact" },
-  ie: { code: "ie", flag: "ie", name: "Ireland", href: "/elections/ie", last: "general election, 29 November 2024", next: "general election, due by 2030", nextDate: "2030-02-28", nextConfidence: "expected", tier: "compact" },
-  ph: { code: "ph", flag: "ph", name: "Philippines", href: "/elections/ph", last: "presidential, 9 May 2022", next: "presidential, May 2028", nextDate: "2028-05-08", nextConfidence: "expected", tier: "compact" },
-  eg: { code: "eg", flag: "eg", name: "Egypt", href: "/elections/eg", last: "presidential, 10-12 December 2023", next: "presidential, expected 2030", nextDate: "2030-12-31", nextConfidence: "expected", note: "Managed elections", tier: "compact" },
+  us: { code: "us", flag: "us", name: "United States", href: "/elections/us", last: "presidential, 5 November 2024", next: "2026 midterms, 3 November", nextDate: "2026-11-03", nextConfidence: "confirmed", governmentType: "presidential" },
+  uk: { code: "uk", flag: "gb", name: "United Kingdom", href: "/elections/uk", last: "general election, 4 July 2024", next: "general election, expected 2029", nextDate: "2029-08-15", nextConfidence: "expected", governmentType: "parliamentary" },
+  ca: { code: "ca", flag: "ca", name: "Canada", href: "/elections/ca", last: "federal election, 28 April 2025", next: "federal election, expected 2029", nextDate: "2029-10-15", nextConfidence: "expected", governmentType: "parliamentary" },
+  eu: { code: "eu", flag: "eu", name: "European Union", href: "/elections/eu", last: "European Parliament, June 2024", next: "European Parliament, June 2029", nextDate: "2029-06-07", nextConfidence: "expected", governmentType: "other", governmentLabel: "Supranational parliament" },
+  mx: { code: "mx", flag: "mx", name: "Mexico", href: "/elections/mx", last: "general election, 2 June 2024", next: "midterms, June 2027", nextDate: "2027-06-06", nextConfidence: "confirmed", governmentType: "presidential" },
+  br: { code: "br", flag: "br", name: "Brazil", href: "/elections/br", last: "general election, October 2022", next: "general election, 4 October 2026", nextDate: "2026-10-04", nextConfidence: "confirmed", governmentType: "presidential" },
+  ar: { code: "ar", flag: "ar", name: "Argentina", href: "/elections/ar", last: "general election, October–November 2023", next: "general election, October 2027", nextDate: "2027-10-24", nextConfidence: "confirmed", governmentType: "presidential" },
+  de: { code: "de", flag: "de", name: "Germany", href: "/elections/de", last: "federal election, 23 February 2025", next: "federal election, expected 2029", nextDate: "2029-03-25", nextConfidence: "expected", governmentType: "parliamentary" },
+  fr: { code: "fr", flag: "fr", name: "France", href: "/elections/fr", last: "legislative, June–July 2024", next: "presidential, April 2027", nextDate: "2027-04-11", nextConfidence: "expected", governmentType: "semi-presidential" },
+  it: { code: "it", flag: "it", name: "Italy", href: "/elections/it", last: "general election, 25 September 2022", next: "general election, expected 2027", nextDate: "2027-12-22", nextConfidence: "expected", governmentType: "parliamentary" },
+  es: { code: "es", flag: "es", name: "Spain", href: "/elections/es", last: "general election, 23 July 2023", next: "general election, expected 2027", nextDate: "2027-08-22", nextConfidence: "expected", governmentType: "parliamentary" },
+  pl: { code: "pl", flag: "pl", name: "Poland", href: "/elections/pl", last: "presidential runoff, 1 June 2025", next: "parliamentary, autumn 2027", nextDate: "2027-11-07", nextConfidence: "expected", governmentType: "semi-presidential" },
+  nl: { code: "nl", flag: "nl", name: "Netherlands", href: "/elections/nl", last: "general election, 29 October 2025", next: "general election, expected 2029", nextDate: "2029-10-31", nextConfidence: "expected", governmentType: "parliamentary" },
+  ru: { code: "ru", flag: "ru", name: "Russia", href: "/elections/ru", last: "presidential, March 2024 (managed)", next: "Duma election, 20 September 2026", nextDate: "2026-09-20", nextConfidence: "confirmed", note: "Managed elections", governmentType: "semi-presidential" },
+  il: { code: "il", flag: "il", name: "Israel", href: "/elections/il", last: "Knesset election, 1 November 2022", next: "Knesset election, 27 October 2026", nextDate: "2026-10-27", nextConfidence: "confirmed", governmentType: "parliamentary" },
+  za: { code: "za", flag: "za", name: "South Africa", href: "/elections/za", last: "general election, 29 May 2024", next: "general election, expected 2029", nextDate: "2029-07-31", nextConfidence: "expected", governmentType: "parliamentary" },
+  ng: { code: "ng", flag: "ng", name: "Nigeria", href: "/elections/ng", last: "general election, 25 February 2023", next: "presidential & National Assembly, 16 January 2027", nextDate: "2027-01-16", nextConfidence: "confirmed", governmentType: "presidential" },
+  tr: { code: "tr", flag: "tr", name: "Turkey", href: "/elections/tr", last: "presidential & parliamentary, May 2023", next: "presidential & parliamentary, expected 2028", nextDate: "2028-05-14", nextConfidence: "expected", governmentType: "presidential" },
+  in: { code: "in", flag: "in", name: "India", href: "/elections/in", last: "general election, April–June 2024", next: "general election, expected 2029", nextDate: "2029-06-16", nextConfidence: "expected", governmentType: "parliamentary" },
+  jp: { code: "jp", flag: "jp", name: "Japan", href: "/elections/jp", last: "general election, 8 February 2026", next: "general election, due by 2030", nextDate: "2030-02-08", nextConfidence: "expected", governmentType: "parliamentary" },
+  au: { code: "au", flag: "au", name: "Australia", href: "/elections/au", last: "federal election, 3 May 2025", next: "federal election, expected 2028", nextDate: "2028-09-30", nextConfidence: "expected", governmentType: "parliamentary" },
+  nz: { code: "nz", flag: "nz", name: "New Zealand", href: "/elections/nz", last: "general election, 14 October 2023", next: "general election, 7 November 2026", nextDate: "2026-11-07", nextConfidence: "confirmed", governmentType: "parliamentary" },
+  kr: { code: "kr", flag: "kr", name: "South Korea", href: "/elections/kr", last: "presidential, 3 June 2025", next: "Assembly election, April 2028", nextDate: "2028-04-12", nextConfidence: "confirmed", governmentType: "presidential" },
+  id: { code: "id", flag: "id", name: "Indonesia", href: "/elections/id", last: "general election, 14 February 2024", next: "general election, February 2029", nextDate: "2029-02-14", nextConfidence: "expected", governmentType: "presidential" },
+  tw: { code: "tw", flag: "tw", name: "Taiwan", href: "/elections/tw", last: "presidential & legislative, 13 January 2024", next: "presidential & legislative, January 2028", nextDate: "2028-01-08", nextConfidence: "expected", governmentType: "semi-presidential" },
+  cn: { code: "cn", flag: "cn", name: "China", href: "/elections/cn", last: "14th NPC convened, March 2023", next: "15th NPC convenes, March 2028", nextDate: "2028-03-05", nextConfidence: "expected", note: "No competitive elections", governmentType: "other", governmentLabel: "One-party state" },
+  ua: { code: "ua", flag: "ua", name: "Ukraine", href: "/elections/ua", last: "presidential & Rada, spring–summer 2019", next: "suspended under martial law, after the war", nextConfidence: "unscheduled", governmentType: "semi-presidential" },
+  iq: { code: "iq", flag: "iq", name: "Iraq", href: "/elections/iq", last: "parliamentary, 11 November 2025", next: "parliamentary, expected 2029", nextDate: "2029-11-11", nextConfidence: "expected", governmentType: "parliamentary" },
+  ps: { code: "ps", flag: "ps", name: "Palestine", href: "/elections/ps", last: "legislative, 25 January 2006", next: "PLC election, 28 November 2026", nextDate: "2026-11-28", nextConfidence: "confirmed", governmentType: "semi-presidential" },
+  va: { code: "va", flag: "va", name: "Vatican City", href: "/elections/va", last: "conclave, 7–8 May 2025 (Leo XIV)", next: "on the death or resignation of the pope", nextConfidence: "unscheduled", note: "Electoral monarchy", noteTone: "neutral", governmentType: "other", governmentLabel: "Electoral monarchy" },
+  sg: { code: "sg", flag: "sg", name: "Singapore", href: "/elections/sg", last: "general election, 3 May 2025", next: "general election, due by 2030", nextDate: "2030-12-31", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  my: { code: "my", flag: "my", name: "Malaysia", href: "/elections/my", last: "general election, 19 November 2022", next: "general election, due by early 2028", nextDate: "2028-02-29", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  ch: { code: "ch", flag: "ch", name: "Switzerland", href: "/elections/ch", last: "federal election, 22 October 2023", next: "federal election, October 2027", nextDate: "2027-10-24", nextConfidence: "confirmed", tier: "compact", governmentType: "other", governmentLabel: "Collegial executive" },
+  be: { code: "be", flag: "be", name: "Belgium", href: "/elections/be", last: "federal election, 9 June 2024", next: "federal election, expected 2029", nextDate: "2029-06-10", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  dk: { code: "dk", flag: "dk", name: "Denmark", href: "/elections/dk", last: "general election, 24 March 2026", next: "general election, due by 2030", nextDate: "2030-03-24", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  gr: { code: "gr", flag: "gr", name: "Greece", href: "/elections/gr", last: "parliamentary, 25 June 2023", next: "parliamentary, expected 2027", nextDate: "2027-07-04", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  at: { code: "at", flag: "at", name: "Austria", href: "/elections/at", last: "legislative, 29 September 2024", next: "legislative, expected 2029", nextDate: "2029-09-30", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  pt: { code: "pt", flag: "pt", name: "Portugal", href: "/elections/pt", last: "legislative, 18 May 2025", next: "legislative, expected 2029", nextDate: "2029-05-31", nextConfidence: "expected", tier: "compact", governmentType: "semi-presidential" },
+  ie: { code: "ie", flag: "ie", name: "Ireland", href: "/elections/ie", last: "general election, 29 November 2024", next: "general election, due by 2030", nextDate: "2030-02-28", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  ph: { code: "ph", flag: "ph", name: "Philippines", href: "/elections/ph", last: "presidential, 9 May 2022", next: "presidential, May 2028", nextDate: "2028-05-08", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },
+  eg: { code: "eg", flag: "eg", name: "Egypt", href: "/elections/eg", last: "presidential, 10-12 December 2023", next: "presidential, expected 2030", nextDate: "2030-12-31", nextConfidence: "expected", note: "Managed elections", tier: "compact", governmentType: "presidential" },
 };
 
 // ---------------------------------------------------------------------------

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabase } from "@/lib/supabaseClient";
 
-export type FollowType = "metro" | "team";
+export type FollowType = "metro" | "team" | "polity";
 export type FollowItem = { type: FollowType; slug: string; name: string; href: string };
 export type FollowUser = { id: string; email: string | null; name: string | null; avatar: string | null };
 
@@ -11,11 +11,22 @@ const KEY = "con-following-v1";
 const EVT = "con-following-change";
 const idOf = (t: FollowType, s: string) => `${t}:${s}`;
 
+// The storage key and item shape are unchanged from before "polity" existed,
+// so old stored records (metro/team only) keep working with no migration.
+// A record whose `type` isn't one this build recognises (a rolled-back
+// deploy re-reading a newer type, or hand-edited storage) is dropped rather
+// than crashing the reader.
+const KNOWN_TYPES: readonly FollowType[] = ["metro", "team", "polity"];
+
 function readLocal(): FollowItem[] {
   if (typeof window === "undefined") return [];
   try {
     const arr = JSON.parse(window.localStorage.getItem(KEY) || "[]");
-    return Array.isArray(arr) ? arr.filter((x) => x && x.type && x.slug && x.name && x.href) : [];
+    return Array.isArray(arr)
+      ? arr.filter(
+          (x) => x && KNOWN_TYPES.includes(x.type) && x.slug && x.name && x.href,
+        )
+      : [];
   } catch {
     return [];
   }

@@ -4,7 +4,8 @@ import { getElectionSystems, band, type SystemHub } from "@/lib/electionSystems"
 import { ELECTION_HUBS } from "@/lib/electionHubsMeta";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { BackButton } from "../HubShared";
+import { ElectionsCrumbs } from "../_shared/ui";
+import ElectionsNav from "../_shared/ElectionsNav";
 import SortableTable from "../SortableTable";
 
 const PATH = "/elections/systems";
@@ -81,19 +82,7 @@ export default function SystemsPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>
-        {" / "}
-        <Link href="/elections" className="hover:underline">Elections</Link>
-        {" / "}
-        <span>Systems</span>
-      </nav>
-
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <BackButton href="/elections" label="All election hubs" />
-        <BackButton href="/elections/all" label="Hubs A–Z" />
-        <BackButton href="/elections/referendums" label="Referendums" />
-      </div>
+      <ElectionsCrumbs tab="Systems" />
 
       <header className="mb-6">
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
@@ -103,6 +92,7 @@ export default function SystemsPage() {
           {withSeries.length} polities · built {built}
         </p>
       </header>
+      <ElectionsNav />
 
       {/* ---------- what the number means ---------- */}
       <section className="mb-8 rounded-2xl border p-5" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>

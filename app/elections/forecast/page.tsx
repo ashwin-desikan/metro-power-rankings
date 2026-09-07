@@ -6,7 +6,9 @@ import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import LineChart, { type ChartSeries } from "../LineChart";
 import SortableTable from "../SortableTable";
-import { BackButton, HowItWorks } from "../HubShared";
+import { HowItWorks } from "../HubShared";
+import { ElectionsCrumbs } from "../_shared/ui";
+import ElectionsNav from "../_shared/ElectionsNav";
 
 export const revalidate = 21600; // pick up the weekly data refresh without a build
 
@@ -170,19 +172,7 @@ export default async function ForecastPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <nav className="text-xs text-[var(--text-muted)] mb-4">
-        <Link href="/" className="hover:underline">Home</Link>
-        {" / "}
-        <Link href="/elections" className="hover:underline">Elections</Link>
-        {" / "}
-        <span>Forecasts</span>
-      </nav>
-
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <BackButton href="/elections" label="All election hubs" />
-        <BackButton href="/elections/us" label="US elections" />
-        <BackButton href="/elections/uk" label="UK elections" />
-      </div>
+      <ElectionsCrumbs tab="Forecasts" />
 
       <header className="mb-6">
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
@@ -218,6 +208,7 @@ export default async function ForecastPage() {
           US &amp; UK always on · other races join as votes near, retire once counted · updated {f.built} · refreshes weekly
         </p>
       </header>
+      <ElectionsNav />
 
       <div className="rounded-xl border p-4 mb-8 max-w-3xl text-sm" style={{ borderColor: "#B4540A", backgroundColor: "rgba(217,119,6,0.06)" }}>
         <p className="text-[var(--text-muted)]">
