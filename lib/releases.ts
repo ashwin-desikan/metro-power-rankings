@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-07",
+    headline: "The owners board catches a record summer",
+    items: [
+      "The Angels join the ownership watchlist: Arte Moreno agreed to sell control to Stan Kroenke's group at a record valuation for a baseball club, with league approval and an early 2027 close still ahead.",
+      "West Ham's stalemate turned: the club confirmed Daniel Kretinsky has agreed to become its largest shareholder at about 46%, after the Staveley purchase died in pre-emption.",
+      "Columbus Crew leaves the watchlist, with Nationwide's 37% purchase completed in June and the Haslams keeping control.",
+      "The Lakers sale now has a date, with NBA owners set to vote at their mid-September meeting, and the Falcons show Arctos's agreed 10% stake.",
+    ],
+  },
+  {
     date: "2026-09-06",
     headline: "A century of NFL seasons, and two silent data faults",
     items: [

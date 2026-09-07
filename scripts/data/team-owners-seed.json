@@ -256,11 +256,11 @@
    "confidence": "contested",
    "co_controllers": "",
    "minority": "Daniel Kretinsky (27%), Vanessa Gold family trust (25.1%), WHU LLC / Tripp Smith (8%)",
-   "note": "CONTROL UNRESOLVED. Sullivan stepped down as chairman in Jun 2026. Around 1 Aug 2026 the Gold family agreed to sell its 25.1% to an Amanda Staveley-led consortium; Staveley then bid for Sullivan's entire holding. A two-month pre-emption process was running when this data was compiled.",
-   "source_url": "https://www.skysports.com/football/news/11685/13569061/west-ham-vanessa-gold-agrees-to-sell-stake-in-championship-club-to-former-newcastle-co-owner-amanda-staveley-led-consortium",
-   "source_date": "2026-08-01",
-   "pending_summary": "Amanda Staveley-led consortium agreed to buy the Gold family's 25.1%; Staveley then bid for Sullivan's 38.8%",
-   "pending_when": "Two-month pre-emption window from 1 Aug 2026",
+   "note": "CONTROL IN TRANSITION. Sullivan stepped down as chairman in Jun 2026. The Aug 2026 Staveley bids were defeated when existing shareholders exercised pre-emption rights: on 3 Sep 2026 the club confirmed that Daniel Kretinsky, via 1890s Holdings, reached an agreement to acquire enough shares to become the single largest shareholder, reported at about 46%. Sullivan retains a large stake and, per the club, no operational role. The transaction had not closed when this data was compiled.",
+   "source_url": "https://www.insideworldfootball.com/2026/09/04/daniel-kretinsky-ups-west-ham-united-shareholding-to-46",
+   "source_date": "2026-09-04",
+   "pending_summary": "Kretinsky (1890s Holdings) agreed to buy shares taking him to ~46% and single largest shareholder; Staveley purchase blocked in pre-emption",
+   "pending_when": "Agreement confirmed by the club 3 Sep 2026; not yet closed",
    "pending_kind": "contested control",
    "pending_review_by": "2026-10-02"
   },
@@ -842,12 +842,16 @@
    "owner_type": "individual",
    "stake_label": "100%",
    "stake_pct": 100.0,
-   "confidence": "cross-checked",
+   "confidence": "contested",
    "co_controllers": "",
    "minority": "",
-   "note": "",
-   "source_url": "https://fanancialsports.com/team-owners",
-   "source_date": "2026-08-11"
+   "note": "SALE PENDING. Moreno agreed on 1 Sep 2026 to sell controlling ownership to Kroenke Sports & Entertainment at a ~$4B valuation, a record for an MLB club. KSE expects to close in early 2027, subject to MLB owners' approval; Moreno remains the control person until then. KSE also owns the LA Rams, Arsenal, Denver Nuggets, Colorado Avalanche and Colorado Rapids, so approval would add a sixth club to that portfolio.",
+   "source_url": "https://www.sportico.com/business/team-sales/2026/stan-kroenke-buy-los-angeles-angels-moreno-1234943636/",
+   "source_date": "2026-09-01",
+   "pending_summary": "Kroenke Sports & Entertainment agreed to buy control from Arte Moreno at a record ~$4B valuation",
+   "pending_when": "Announced 1 Sep 2026; MLB owners' approval pending, closing expected early 2027",
+   "pending_kind": "control sale",
+   "pending_review_by": "2026-12-01"
   },
   {
    "team": "Los Angeles Dodgers",
@@ -1340,13 +1344,13 @@
    "confidence": "contested",
    "co_controllers": "Jeanie Buss (Governor)",
    "minority": "Buss family trusts",
-   "note": "SALE PENDING. Walter's own purchase closed 30 Oct 2025 at roughly $10B after a unanimous NBA vote. On 12 Aug 2026, fourteen months later, he agreed to sell the controlling stake to Josh Kushner and Bob Iger at a reported $12.5B, a record for a US sports franchise. The Dodgers and the Sparks are not part of that deal. Jeanie Buss remains team Governor and the buyers have said they intend to honour the pact that keeps her there, so the split between economic control and league governance survives the change. The NBA Board of Governors had not voted when this data was compiled.",
-   "source_url": "https://www.cbssports.com/nba/news/lakers-sold-josh-kushner-bob-iger/",
+   "note": "SALE PENDING. Walter's own purchase closed 30 Oct 2025 at roughly $10B after a unanimous NBA vote. On 12 Aug 2026, fourteen months later, he agreed to sell the controlling stake to Josh Kushner and Bob Iger at a reported $12.5B, a record for a US sports franchise. The Dodgers and the Sparks are not part of that deal. Jeanie Buss remains team Governor and the buyers have said they intend to honour the pact that keeps her there, so the split between economic control and league governance survives the change. The vote is expected at the NBA Board of Governors meeting of 15-16 Sep 2026 in New York; Kushner must first divest his Miami Heat stake under the league's one-franchise rule.",
+   "source_url": "https://www.espn.com/nba/story/_/id/49590362/josh-kushner-bob-iger-buy-lakers-12b",
    "source_date": "2026-08-12",
    "pending_summary": "Josh Kushner and Bob Iger, ~$12.5bn, for Mark Walter's controlling stake",
-   "pending_when": "NBA Board of Governors vote, no date announced",
+   "pending_when": "NBA Board of Governors vote expected 15-16 Sep 2026; Kushner must first divest his Miami Heat stake",
    "pending_kind": "control sale",
-   "pending_review_by": "2026-10-01"
+   "pending_review_by": "2026-09-18"
   },
   {
    "team": "Memphis Grizzlies",
@@ -1617,8 +1621,8 @@
    "stake_pct": null,
    "confidence": "sourced",
    "co_controllers": "",
-   "minority": "Warrick Dunn, Will Packer, Dominique Dawes, Rosalind Brewer, Rashaun Williams",
-   "note": "AMB Sports & Entertainment also holds Atlanta United and a sub-10% stake in Aberdeen FC.",
+   "minority": "Arctos (10% agreed Aug 2026, pending NFL approval); Warrick Dunn, Will Packer, Dominique Dawes, Rosalind Brewer, Rashaun Williams",
+   "note": "AMB Sports & Entertainment also holds Atlanta United and a sub-10% stake in Aberdeen FC. Arctos agreed in Aug 2026 to buy 10% in two tranches at a $10.6B valuation (CNBC, 20 Aug 2026), with an NFL vote expected in Oct 2026; Blank retains control, so this is a minority change only.",
    "source_url": "https://blankfamilyofbusinesses.com/company/amb-sports-entertainment/",
    "source_date": "2026-08-11"
   },
@@ -2721,9 +2725,9 @@
    "source_url": "https://www.eldesmarque.com/futbol/20250327/cifras-numeros-porcentajes-capital-social-sevilla-fc_18_017223179.html",
    "source_date": "2025-03-27",
    "pending_summary": "Unnamed Western investment fund, letter of intent for ~85% of capital",
-   "pending_when": "Targeted early Aug 2026, not confirmed closed",
+   "pending_when": "Not confirmed closed as of 7 Sep 2026; Spanish fan media report four bidders and a September target, unconfirmed by the club or a tier-one outlet",
    "pending_kind": "contested control",
-   "pending_review_by": "2026-09-01"
+   "pending_review_by": "2026-10-01"
   },
   {
    "team": "Galatasaray SK",
@@ -2836,18 +2840,14 @@
    "owner_display": "Dee and Jimmy Haslam (Haslam Sports Group)",
    "owner_key": "haslam-sports-group",
    "owner_type": "family",
-   "stake_label": "Majority (~40% after the pending sale)",
+   "stake_label": "Majority (~40%)",
    "stake_pct": null,
-   "confidence": "contested",
+   "confidence": "sourced",
    "co_controllers": "",
-   "minority": "Nationwide (37%, pending), Edwards family",
-   "note": "MINORITY SALE PENDING. Announced 29 May 2026: Nationwide to buy 37% at a ~$900m valuation, subject to MLS Board of Governors approval. The Haslams retain control. HSG also owns the Cleveland Browns and a minority stake in the Milwaukee Bucks.",
-   "source_url": "https://www.sportico.com/business/team-sales/2026/mls-columbus-crew-nationwide-stake-sale-1234901712/",
-   "source_date": "2026-05-29",
-   "pending_summary": "Nationwide to buy 37% at a ~$900m valuation; Haslams retain control",
-   "pending_when": "MLS Board of Governors approval pending",
-   "pending_kind": "minority sale",
-   "pending_review_by": "2026-10-01"
+   "minority": "Nationwide (37%), Edwards family",
+   "note": "Nationwide completed its purchase on 25 Jun 2026; the company did not disclose terms, and Sportico reported 37% at a ~$900m valuation (30% from the Haslams, 7% from the Edwards family). The Haslams retain control at about 40%. HSG also owns the Cleveland Browns and a minority stake in the Milwaukee Bucks.",
+   "source_url": "https://news.nationwide.com/nationwide-joins-columbus-crew-ownership-group/",
+   "source_date": "2026-06-25"
   },
   {
    "team": "DC United",

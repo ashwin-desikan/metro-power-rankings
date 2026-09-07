@@ -10594,3 +10594,16 @@ failure. Count ERROR alongside READY when judging how much room is left.
   chips are fixed; the remainder are in `SeasonTrends`/`SeasonSuperlatives` and
   predate this session.
 - Cleveland Bulldogs lineage, above.
+
+## 2026-09-07 — cloud (owners weekly) → next session (owners board applied on Ashwin's instruction)
+
+The Monday owners routine ran proposal-only as designed, then Ashwin said in-session that the task should apply its findings, so this session applied them and is updating the trigger prompt so future Mondays commit directly. Six rows changed in `scripts/data/team-owners-seed.json`, rebuilt `public/data/owners/team-owners.json` (self-test PASS, 220 rows, watchlist checker green, 11 contested):
+
+- **NEW watchlist: LA Angels** — Moreno agreed 1 Sep to sell control to Kroenke Sports & Entertainment, ~$4B record MLB valuation; MLB approval pending, close expected early 2027 (Sportico). Row cross-checked → contested, review_by 2026-12-01.
+- **NEW minority: Falcons** — Arctos agreed ~20 Aug to 10% in two tranches at $10.6B valuation, NFL vote expected Oct (CNBC). Row stays sourced; minority list updated.
+- **MOVED: West Ham** — pre-emption killed the Staveley purchase; club confirmed 3 Sep that Kretinsky (1890s Holdings) agreed to become single largest shareholder at ~46%. Not closed; still contested, review_by 2026-10-02 unchanged.
+- **MOVED: Lakers** — BoG vote expected 15-16 Sep in New York; Kushner must divest Heat stake first. review_by pulled in to 2026-09-18.
+- **MOVED: Sevilla** — lapsed review_by 2026-09-01 pushed to 2026-10-01; no confirmed close, only fan-media reports of four bidders.
+- **RESOLVED: Columbus Crew** — Nationwide completed 25 Jun (company release); contested → sourced, pending_* removed.
+
+This commit needs a REAL build (`lib/teamOwners.ts` reads the owners JSON via readFileSync at build time), so no `[vercel skip]`, release-notes entry for 2026-09-07 added in the same commit, and it is the push HEAD. Next owners run: watch the 15-16 Sep BoG votes (Lakers, Wolves/Lynx) and the West Ham closing.
