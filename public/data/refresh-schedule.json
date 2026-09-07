@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T17:04:44.694411+00:00",
+  "generated_at": "2026-09-07T07:20:53.358993+00:00",
   "jobs": [
     {
       "id": "football-standings",
@@ -15,103 +15,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-06T23:00:00+00:00",
+      "next_run": "2026-09-07T11:00:00+00:00",
       "last_run": {
-        "date": "2026-09-06",
+        "date": "2026-09-07",
         "status": "ok",
-        "slot": "2026-09-06T17:00:00+00:00"
-      }
-    },
-    {
-      "id": "cfb-sun",
-      "label": "CFB predictions (grade the week, publish AP-25 slate)",
-      "schedule_text": "Sun at 23:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "23:40"
-      ],
-      "weekdays": [
-        7
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-06T23:40:00+00:00",
-      "last_run": {
-        "date": "2026-08-30",
-        "status": "ok (manual)",
-        "slot": "2026-08-30T23:40:00+00:00"
-      }
-    },
-    {
-      "id": "daily-ops-sweep",
-      "label": "Daily ops sweep (report-only)",
-      "schedule_text": "Daily at 01:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "01:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-07T01:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-06",
-        "status": "ok",
-        "slot": "2026-09-06T01:00:00+00:00"
-      }
-    },
-    {
-      "id": "activity-feed",
-      "label": "Site activity feed",
-      "schedule_text": "Daily at 02:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "02:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-07T02:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-06",
-        "status": "ok",
-        "slot": "2026-09-06T02:30:00+00:00"
-      }
-    },
-    {
-      "id": "euro-comps",
-      "label": "UEFA club competitions",
-      "schedule_text": "Daily at 04:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "04:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-07T04:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-06",
-        "status": "ok",
-        "slot": "2026-09-06T04:00:00+00:00"
-      }
-    },
-    {
-      "id": "gap-league-watch",
-      "label": "Football gap-league watch",
-      "schedule_text": "Daily at 05:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-07T05:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-06",
-        "status": "ok",
-        "slot": "2026-09-06T05:00:00+00:00"
+        "slot": "2026-09-07T05:00:00+00:00"
       }
     },
     {
@@ -131,69 +39,11 @@
       ],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-07T05:00:00+00:00",
+      "next_run": "2026-09-07T13:00:00+00:00",
       "last_run": {
-        "date": "2026-09-02",
+        "date": "2026-09-07",
         "status": "ok",
-        "slot": "2026-09-02T21:00:00+00:00"
-      }
-    },
-    {
-      "id": "business-daily",
-      "label": "Business markets + FX",
-      "schedule_text": "Daily at 05:50 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:50"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-07T05:50:00+00:00",
-      "last_run": {
-        "date": "2026-09-06",
-        "status": "ok",
-        "slot": "2026-09-06T05:50:00+00:00"
-      }
-    },
-    {
-      "id": "substack-daily",
-      "label": "Substack feed sync",
-      "schedule_text": "Daily at 06:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "06:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-07T06:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-06",
-        "status": "ok",
-        "slot": "2026-09-06T06:00:00+00:00"
-      }
-    },
-    {
-      "id": "forecast",
-      "label": "Election forecast",
-      "schedule_text": "Mon/Wed/Fri at 06:10 UTC",
-      "cadence": "weekly",
-      "times": [
-        "06:10"
-      ],
-      "weekdays": [
-        1,
-        3,
-        5
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-07T06:10:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T06:10:00+00:00"
+        "slot": "2026-09-07T05:00:00+00:00"
       }
     },
     {
@@ -218,29 +68,119 @@
         11
       ],
       "days_of_month": [],
-      "next_run": "2026-09-07T07:00:00+00:00",
+      "next_run": "2026-09-07T14:30:00+00:00",
       "last_run": {
-        "date": "2026-09-06",
+        "date": "2026-09-07",
         "status": "ok",
-        "slot": "2026-09-06T14:30:00+00:00"
+        "slot": "2026-09-07T07:00:00+00:00"
       }
     },
     {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
+      "id": "daily-ops-sweep",
+      "label": "Daily ops sweep (report-only)",
+      "schedule_text": "Daily at 01:00 UTC",
       "cadence": "daily",
       "times": [
-        "07:20"
+        "01:00"
       ],
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-07T07:20:00+00:00",
+      "next_run": "2026-09-08T01:00:00+00:00",
       "last_run": {
-        "date": "2026-09-06",
+        "date": "2026-09-07",
         "status": "ok",
-        "slot": "2026-09-06T07:20:00+00:00"
+        "slot": "2026-09-07T01:00:00+00:00"
+      }
+    },
+    {
+      "id": "activity-feed",
+      "label": "Site activity feed",
+      "schedule_text": "Daily at 02:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "02:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T02:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-07",
+        "status": "ok",
+        "slot": "2026-09-07T02:30:00+00:00"
+      }
+    },
+    {
+      "id": "euro-comps",
+      "label": "UEFA club competitions",
+      "schedule_text": "Daily at 04:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "04:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T04:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-07",
+        "status": "ok",
+        "slot": "2026-09-07T04:00:00+00:00"
+      }
+    },
+    {
+      "id": "gap-league-watch",
+      "label": "Football gap-league watch",
+      "schedule_text": "Daily at 05:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T05:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-07",
+        "status": "ok",
+        "slot": "2026-09-07T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "business-daily",
+      "label": "Business markets + FX",
+      "schedule_text": "Daily at 05:50 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:50"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T05:50:00+00:00",
+      "last_run": {
+        "date": "2026-09-07",
+        "status": "ok",
+        "slot": "2026-09-07T05:50:00+00:00"
+      }
+    },
+    {
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T06:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-07",
+        "status": "ok",
+        "slot": "2026-09-07T06:00:00+00:00"
       }
     },
     {
@@ -284,6 +224,24 @@
       }
     },
     {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-08T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-07",
+        "status": "ok",
+        "slot": "2026-09-07T07:20:00+00:00"
+      }
+    },
+    {
       "id": "cricket-weekly",
       "label": "Cricket results + rankings",
       "schedule_text": "Tue at 09:00 UTC",
@@ -301,6 +259,28 @@
         "date": "2026-09-01",
         "status": "ok",
         "slot": "2026-09-01T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "forecast",
+      "label": "Election forecast",
+      "schedule_text": "Mon/Wed/Fri at 06:10 UTC",
+      "cadence": "weekly",
+      "times": [
+        "06:10"
+      ],
+      "weekdays": [
+        1,
+        3,
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-09T06:10:00+00:00",
+      "last_run": {
+        "date": "2026-09-07",
+        "status": "failed",
+        "slot": "2026-09-07T06:10:00+00:00"
       }
     },
     {
@@ -421,6 +401,26 @@
         "date": "2026-09-06",
         "status": "ok",
         "slot": "2026-09-06T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "cfb-sun",
+      "label": "CFB predictions (grade the week, publish AP-25 slate)",
+      "schedule_text": "Sun at 23:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "23:40"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-13T23:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-06",
+        "status": "ok",
+        "slot": "2026-09-06T23:40:00+00:00"
       }
     },
     {
