@@ -10607,3 +10607,208 @@ The Monday owners routine ran proposal-only as designed, then Ashwin said in-ses
 - **RESOLVED: Columbus Crew** — Nationwide completed 25 Jun (company release); contested → sourced, pending_* removed.
 
 This commit needs a REAL build (`lib/teamOwners.ts` reads the owners JSON via readFileSync at build time), so no `[vercel skip]`, release-notes entry for 2026-09-07 added in the same commit, and it is the push HEAD. Next owners run: watch the 15-16 Sep BoG votes (Lakers, Wolves/Lynx) and the West Ham closing.
+
+## 2026-09-07 — mini → Windows and next session: FORECAST FETCHES AUDITED FOR HARDCODED DATE HEADINGS (continues the 09-05 mini entry, sections 1-11)
+
+### 12. Audited every forecast fetch for hardcoded date headings
+
+Follow-on from the France break. Result: **Brazil had the same defect, nothing
+else did**, and the fixes are provably no-ops on today's data.
+
+| country | how it finds its polls | exposure |
+|---|---|---|
+| US Senate, US governors, Israel | scans every table for one whose CONTENT identifies it (`USRaceRating`+`Cook`+`Sabato`; `likud`+`fieldwork`) | none -- no headings involved |
+| UK | `== National poll results ==` then a generic `=== 20\d\d ===` split, each year passed correctly, `or wt` fallback | low; this is the pattern France should have had |
+| US House, NZ | topical headings that do not age, but pinned to a LEVEL, with whole-article fallbacks | low |
+| **Brazil** | **`=== 2026 ===`, hardcoded year, NO fallback** | **same as France** |
+
+Brazil's asymmetry was France's exactly: if that heading were renamed, `y26`
+empties, `r1sec` empties, and the first round publishes nothing while the
+runoffs carry on through the three-deep fallback chain added after their own
+August incident. It also warned loudly on runoffs-missing-but-first-round-present
+and said nothing about the reverse -- the case that actually happened.
+
+Changes, all behaviour-preserving:
+- New shared `dated_subsections(sec)`: walks whatever headings exist, gives each
+  its OWN year, and lets a heading own its whole subtree so Brazil's L4 month
+  sections ("Aug-Oct (Campaign period)") inherit the L3 year. France now uses it
+  too, which it needs the day that article grows month subsections.
+- Brazil: `find_section("First round")` + `dated_subsections`, and a hard exit
+  naming the article when 0 rows parse.
+- France: same hard exit (added 09-07).
+- US House and NZ: `section_slice` -> `find_section`, so a heading LEVEL change
+  cannot break them either. Their whole-article fallbacks stay. Noted in the NZ
+  comment that its `or wt` fallback is not free -- `extract_polls` stamps
+  undated rows 2026, so if that article ever grows year subsections the fallback
+  would mis-date the old ones.
+
+Proof: after the refactor, `nz/br/fr/il/us_polls.json` are **byte-identical** to
+the committed baseline; UK moved 465 -> 467 rows, which is two polls published
+upstream since the 07:12Z fetch, not the refactor. Both new FATAL guards fire on
+a stubbed restructured article (exit 1, article named). Build + health green,
+Lula 39.3 / Bolsonaro 33.4 and Le Pen 33.4 unchanged.
+
+Severity was always bounded, worth recording: `SPEC` in check_forecast_health.py
+marks `firstRound.shares` REQUIRED for both br and fr, and a required field going
+empty is an error, so either break stops the publish rather than shipping a
+hollow block. The failure mode is a stalled forecast, never a wrong one.
+
+## 2026-09-07 — cowork (cloud, bridged to the Windows box) → mini and next session: THE ELECTIONS FAMILY JOINS THE HUB DESIGN, SQUADS GET A PRICE, AND THE WATCHER STOPS RETRYING FAILURES
+
+Built in a fresh clone of origin/main `8b8316c8f` inside the Cowork cloud
+container (the bridged VM cannot run `next build`), then copied onto the Windows
+tree. Everything below is build-relevant, so it ships as ONE push with the app
+commit at HEAD. `[vercel skip]` on nothing here.
+
+### Verified, in the container, on the final tree
+`tsc` clean · 12/12 `check:*` (release-notes SKIPPED on the shallow clone, so
+read the 09-07 block by eye: 4 bullets, longest 216 chars, headline 6 words) ·
+**vitest 175/175** (13 files; +13 clubValue, +8 electionIcs) · **pytest 112/112**
+· `next build --webpack` **5146/5146 pages**, `/elections/calendar.ics`,
+`/elections/calendar/[file]` (41 static params) and `/elections/track-record`
+in the route table · `probe:mobile` at 390px, ten routes, all clean:
+
+| route | screens | mobile:desktop | taps<40 |
+|---|---|---|---|
+| /elections | **7.4** (was 21 before the regions grid and the compared charts were folded on a phone) | 0.7x | 22 |
+| /elections/all | 3.6 | 0.7x | 31 |
+| /elections/track-record | 2 | 1.6x | 13 |
+| /elections/forecast | 9.7 | 1.6x | 19 |
+| /elections/systems | 6.5 | 1.6x | 8 |
+| /elections/uk · /elections/us | 17.9 · 16.3 | 1.7x · 1.6x | 10 · 6 |
+| /sports/expectation | 13 | 1.7x | 28 |
+| /teams/football/girona-fc | 4.6 | 1.2x | 19 |
+| /me | 1.3 | 1.1x | 2 |
+
+The `taps<40` counts on /elections (22) and /elections/all (31) are the region
+"More hubs" flag links and the filter chips: 44px on the control, smaller on
+the visible label. Not fixed this session.
+
+### A. The elections family, on the September hub skeleton
+Triage of an external (Gemini) review is in the Claude Projects folder,
+`Elections Hub - Gemini review triage - 2026-09-07.md`. Half of it was already
+built and not surfaced; this is the half that was not.
+
+- `app/elections/_shared/ui.tsx` + `ElectionsNav.tsx`: crumbs, header with the
+  MONO as-of stamp, a seven-tab row (Overview, Forecasts, Track record, All
+  hubs, Systems, Under fire, Referendums) and `SiblingHubs`, the pill row that
+  replaces the five back-arrows. Applied to all seven family pages. The 41
+  polity hubs are content, not tabs.
+- The landing page description said "thirty-five" while the map counted 41.
+  Both now derive from `ELECTION_HUBS`; a `numberToWords` helper spells it.
+- "Next to vote" cards carry an explicit badge from `nextConfidence` (Set /
+  Term running / No date) instead of white-vs-grey text, and a Calendar link
+  on every Set date. An `expected` date still never prints as a date.
+- Forecast previews say their method in one clause each (UK: proportional swing
+  on 2024 in 632 GB seats; US House: generic ballot through the 2012-2024
+  seats-votes curve; 45-day window, 14-day half-life). "Tracking now" states
+  the horizon rule: a confirmed date within twelve months plus a poll series we
+  parse; next in are Nigeria (16 Jan 2027, scenario board) and the German
+  Federal Convention (30 Jan 2027).
+- Featured and regional cards name the current head of government, joined
+  through `HUB_COUNTRY_SLUGS` to `lib/currentLeaders.ts`, linking to
+  `/leaders/<slug>`. A hub with no resolvable leader renders no line.
+- **Calendar feeds**: `/elections/calendar.ics` (every confirmed date) and
+  `/elections/calendar/<code>.ics` per hub, both `force-static`. Only
+  `nextConfidence === "confirmed"` hubs produce a VEVENT; a per-hub feed with
+  no confirmed date returns a valid EMPTY calendar, not a 404, so a
+  subscription survives until a date is set. All-day events carry DTEND (next
+  day, exclusive) and 75-octet folding (`lib/electionIcs.ts`, 8 tests).
+  🔴 The dynamic segment is `[file]`, not `[code].ics`: Next only treats a
+  whole segment as dynamic, and the first attempt shipped a `[code].ics`
+  folder that the build's type validator rejected. The param carries the
+  extension.
+- **`/elections/track-record`**: reads `forecast-scoreboard.json`. Zero
+  resolved races today, so it renders the pending table and computes the first
+  resolution (Brazil, 4 Oct) rather than hiding. Resolved stats, Brier,
+  coverage and calibration render from the payload once `results/` has facts.
+- **`/elections/all`** is now the directory: search, four multi-select chip
+  groups (System from the new `governmentType` field, Electoral family from
+  `election-systems.json`, Regime from `note`, Horizon from `nextDate`), a
+  Cards/Table toggle with a sortable six-column table on desktop and the
+  `<select>` + direction idiom on the phone, capped at 12.
+- **`governmentType`** on all 41 rows of `lib/electionHubsMeta.ts`:
+  parliamentary / presidential / semi-presidential / other, classified by how
+  the head of government is actually chosen (Austria parliamentary despite the
+  elected president; Turkey presidential since 2018; Poland, Portugal, Taiwan,
+  Ukraine, Palestine semi-presidential; EU, China, Vatican, Switzerland
+  `other` with a `governmentLabel`). Judgement calls, easy to reverse.
+- **Follow a polity**: `FollowType` gains `"polity"`; a star in `HubTitle`
+  reaches all 41 hubs; `/me` gets "Elections you follow" with the `next` prose
+  and a countdown only when the date is confirmed. `readLocal()` now drops an
+  unrecognised stored type instead of crashing.
+  🔴 **Supabase `follows.type` had a CHECK constraint of metro|team. Migration
+  `follows_allow_polity_type` APPLIED live 2026-09-07** (widening only). Without
+  it a signed-in polity follow would have failed server-side while local
+  storage looked fine.
+- **Unified export**: `scripts/elections/build_all_csv.py` writes
+  `public/data/elections-all.csv`, **1,755 rows** (1,643 match the census
+  hub-by-hub; the other 112 are Vatican conclaves, which the census excludes
+  on purpose and an "every election on file" export should not). `--self-test`
+  checks parity against a Python mirror of `lib/electionCensus.ts`. Not in the
+  currency manifest: it has no probe type for a derived CSV.
+
+Deferred with reasons (in the triage doc): house effects on 3 to 6 firms per
+race, an incumbent survival index (no incumbent flag exists on 1,145 contests),
+weighted global turnout until Wave 2.
+
+### B. Squad value renders (WP3 + WP4 of the 2026-09-05 surfacing scope)
+- `lib/clubValueShape.ts` (pure: season-to-month mapping, `seasonValue`, the
+  join and ranking) + `lib/clubValue.ts` (`server-only`, ISR read of
+  `public/data/football/value/<country>.json`, the intlExpectation pattern).
+  Split because the `server-only` package throws outside a bundler and vitest
+  would not load it; same reason `standingsShape.ts` exists.
+  `scripts/check-client-imports.mjs` registers `@/lib/clubValue`.
+- `ValueStepChart.tsx`: a STEP line, `var(--cat-1)`, December and June reprice
+  ticks, y from 0, hover shows month, value and `n`. `ClubValuePanel.tsx`
+  sits after `ClubExpectationPanel` on every club page and returns null when a
+  club has no series, so pre-2012 hubs and unpriced clubs show nothing rather
+  than a blank.
+- `/sports/expectation` gains "Form against money": the latest season in the
+  intl ledger (computed: 2024-25), 79 clubs joined on slug, sorted on GAP
+  (value rank minus surplus rank, both WITHIN league), callout computed from
+  the data. Transfermarkt credit on the sources card; as-of stamp carries the
+  series end month.
+- Sanity against the scoping note: Girona 2023-24 **+7.009**, 2024-25
+  **-5.933**; Napoli 2024-25 **+4.754**; 79 joined. The note's "Girona 16th on
+  value, Napoli 8th" were ranks across all 79; within league they are 9th of 19
+  and 4th of 15, which is what the board shows and labels.
+- Not built: WP5 (season hubs), WP6 (league predictability strip and
+  concentration), WP7 (map shading, 2026-27 starting line).
+
+### C. 🔴 The deploy watcher no longer retries a build that FAILED
+`mac-mini-jobs/run-deploy-watch.sh`: the GitHub deployment-status query it
+already made for the duplicate-build guard now returns a verdict. `success`
+means live-check lag, no retry. `failure`/`error` (description not containing
+"cancel") means the build FAILED: no retry, one ntfy per sha titled "Vercel
+build FAILED - deploy manually" with the commit and the deployments URL, marker
+in `$STATE.failed`, cleared when TARGET goes live. Anything else (no deployment
+posted, or the API 404ing under rate limit) falls through to the retry path
+this watcher exists for.
+
+Measured against the real API from the Windows VM on 2026-09-07: `b40726b7b`
+and its retry `1291a3818` both read `failure` ("Deployment has failed");
+`ebbdd66d6` reads `success`; `[vercel skip]` commits carry no deployment at
+all. **A build canceled by a newer push was not in the sample**, so "canceled
+lands in the retry path" is inferred from Vercel posting nothing for skipped
+builds, not proven. `bash -n` clean. **Mini-side: it needs the mini to pull
+before its next tick.** CLAUDE.md's deploy block now says to count ERROR
+alongside READY.
+
+### D. Housekeeping found on the way
+- The Windows checkout was mid-merge when this session opened: `UU HANDOFF.md`
+  with the mini's forecast commits staged and the owners commit `fec7feb5c`
+  plus a merge commit unpushed. The conflict was two entries appended at the
+  same point; the mini's "### 12. Audited every forecast fetch" had no dated
+  `##` heading of its own and read as part of the 09-06 Windows entry. Both
+  kept, heading added.
+- Release note for 2026-09-07 merged into ONE block with the owners entry from
+  the cloud session (four bullets, owners compressed to one).
+- Five pre-existing em dashes in user-visible prose removed on the files this
+  session touched (HubShared, referendums, under-fire, the Ukraine `next`).
+
+### Open
+- `/elections` and `/elections/all` still report sub-40px tap targets on the
+  flag-link rows and chips; the controls are 44px, the visible labels are not.
+- WP5 to WP7 of the football surfacing scope.
+- The Tuesday NFL automation from the 09-06 entry, still not built.

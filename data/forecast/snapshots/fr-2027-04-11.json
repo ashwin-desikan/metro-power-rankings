@@ -2,29 +2,31 @@
  "code": "fr",
  "election": "2027-04-11",
  "confidence": "assumed",
- "built": "2026-09-04",
- "daysBefore": 219,
+ "built": "2026-09-07",
+ "daysBefore": 216,
  "block": {
   "electionAssumed": "2027-04-11",
   "electionDate": "2027-04-11",
   "electionConfidence": "assumed",
   "firstRound": {
    "shares": {
-    "Marine Le Pen": 33.9,
-    "Édouard Philippe": 15.6,
-    "Jean-Luc Mélenchon": 15.3,
-    "Raphaël Glucksmann": 10.8,
-    "Gabriel Attal": 8.3,
-    "Bruno Retailleau": 6.5,
-    "Éric Zemmour": 3.6,
+    "Marine Le Pen": 33.4,
+    "Jean-Luc Mélenchon": 16.1,
+    "Édouard Philippe": 15.9,
+    "Raphaël Glucksmann": 11.5,
+    "Gabriel Attal": 9.5,
+    "Bruno Retailleau": 7.5,
+    "François Hollande": 7.0,
+    "Sarah Knafo": 4.8,
+    "Éric Zemmour": 3.3,
     "Marine Tondelier": 3.2,
+    "Dominique de Villepin": 2.8,
     "Fabien Roussel": 2.6,
-    "Nicolas Dupont-Aignan": 2.2,
-    "Dominique de Villepin": 2.2,
-    "Nathalie Arthaud": 1.0
+    "Nicolas Dupont-Aignan": 2.3,
+    "Nathalie Arthaud": 0.9
    },
-   "polls": 9,
-   "latest": "2026-08-28"
+   "polls": 15,
+   "latest": "2026-09-03"
   },
   "runoffs": [
    {
@@ -32,7 +34,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 78.6,
+    "pA": 78.8,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -41,7 +43,7 @@
     "b": "Attal RE",
     "avgA": 54.9,
     "avgB": 45.1,
-    "pA": 93.8,
+    "pA": 93.9,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -59,7 +61,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 81.8,
+    "pA": 82.7,
     "polls": 4,
     "latest": "2026-05-27"
    },
@@ -68,7 +70,7 @@
     "b": "Attal RE",
     "avgA": 57.0,
     "avgB": 43.0,
-    "pA": 98.9,
+    "pA": 98.6,
     "polls": 1,
     "latest": "2026-05-27"
    },
@@ -95,12 +97,12 @@
     "b": "Retailleau LR",
     "avgA": 58.0,
     "avgB": 42.0,
-    "pA": 99.3,
+    "pA": 99.5,
     "polls": 1,
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 7.2,
+  "monthsOut": 7.1,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]

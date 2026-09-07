@@ -55,7 +55,7 @@
    "state": "Georgia",
    "incumbentParty": "D",
    "nRatings": 11,
-   "score": 1.59,
+   "score": 1.68,
    "retiring": false
   },
   {
@@ -118,7 +118,7 @@
    "state": "Michigan",
    "incumbentParty": "D",
    "nRatings": 11,
-   "score": 0.41,
+   "score": 0.55,
    "retiring": true
   },
   {
@@ -132,7 +132,7 @@
    "state": "Mississippi",
    "incumbentParty": "R",
    "nRatings": 11,
-   "score": -2.73,
+   "score": -2.82,
    "retiring": false
   },
   {
@@ -181,7 +181,7 @@
    "state": "Ohio",
    "incumbentParty": "R",
    "nRatings": 11,
-   "score": 0.23,
+   "score": 0.45,
    "retiring": false
   },
   {
@@ -230,7 +230,7 @@
    "state": "Texas",
    "incumbentParty": "R",
    "nRatings": 11,
-   "score": 0.09,
+   "score": 0.14,
    "retiring": false
   },
   {

@@ -2,6 +2,413 @@
  "source": "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)",
  "firstRound": [
   {
+   "date": "2023-03-31",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 2.5,
+    "Fabien Roussel French Communist Party (PCF)": 5.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 17.0,
+    "Olivier Faure Socialist Party (France) (PS)": 3.0,
+    "Marine Tondelier The Ecologists (LE)": 1.0,
+    "Édouard Philippe Horizons (political party) (HOR)": 26.0,
+    "Jean LassalleRésistons (RES)": 2.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 5.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 2.5,
+    "Marine Le Pen National Rally (RN)": 29.0,
+    "Éric Zemmour Reconquête (R!)": 6.0
+   }
+  },
+  {
+   "date": "2023-04-07",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 1.0,
+    "Fabien Roussel French Communist Party (PCF)": 4.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 16.0,
+    "Bernard Cazeneuve La Convention (LC)": 5.0,
+    "Yannick Jadot The Ecologists (LE)": 4.0,
+    "Édouard Philippe Horizons (political party) (HOR)": 24.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 5.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 2.0,
+    "Marine Le Pen National Rally (RN)": 30.0,
+    "Éric Zemmour Reconquête (R!)": 7.0
+   }
+  },
+  {
+   "date": "2023-04-13",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 3.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 17.0,
+    "Olivier Faure Socialist Party (France) (PS)": 6.0,
+    "Sandrine Rousseau The Ecologists (LE)": 2.0,
+    "Édouard Philippe Horizons (political party) (HOR)": 32.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 7.0,
+    "Jordan Bardella National Rally (RN)": 23.0,
+    "Éric Zemmour Reconquête (R!)": 9.0
+   }
+  },
+  {
+   "date": "2023-09-04",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 2.0,
+    "Fabien Roussel French Communist Party (PCF)": 6.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 16.0,
+    "Bernard Cazeneuve La Convention (LC)": 7.0,
+    "Yannick Jadot The Ecologists (LE)": 5.0,
+    "Bruno Le Maire Renaissance (French political party) (RE)": 16.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 7.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 2.0,
+    "Marine Le Pen National Rally (RN)": 32.0,
+    "Éric Zemmour Reconquête (R!)": 6.0
+   }
+  },
+  {
+   "date": "2023-10-25",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 1.0,
+    "Fabien Roussel French Communist Party (PCF)": 6.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 14.0,
+    "Olivier Faure Socialist Party (France) (PS)": 5.0,
+    "Marine Tondelier The Ecologists (LE)": 2.0,
+    "Gabriel Attal Renaissance (French political party) (RE)": 19.0,
+    "Jean LassalleRésistons (RES)": 4.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 6.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 3.0,
+    "Marine Le Pen National Rally (RN)": 33.0,
+    "Éric Zemmour Reconquête (R!)": 6.0
+   }
+  },
+  {
+   "date": "2024-01-10",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 2.0,
+    "Fabien Roussel French Communist Party (PCF)": 5.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 14.5,
+    "Olivier Faure Socialist Party (France) (PS)": 4.0,
+    "Marine Tondelier The Ecologists (LE)": 1.0,
+    "Gabriel Attal Renaissance (French political party) (RE)": 24.0,
+    "Jean LassalleRésistons (RES)": 2.5,
+    "Laurent Wauquiez The Republicans (France) (LR)": 6.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 3.0,
+    "Jordan Bardella National Rally (RN)": 28.0,
+    "Éric Zemmour Reconquête (R!)": 9.0
+   }
+  },
+  {
+   "date": "2024-02-01",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.5,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 1.5,
+    "Fabien Roussel French Communist Party (PCF)": 4.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 14.0,
+    "Olivier Faure Socialist Party (France) (PS)": 2.0,
+    "Marine Tondelier The Ecologists (LE)": 2.0,
+    "Gabriel Attal Renaissance (French political party) (RE)": 22.0,
+    "Jean LassalleRésistons (RES)": 3.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 5.5,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 2.5,
+    "Marine Le Pen National Rally (RN)": 36.0,
+    "Éric Zemmour Reconquête (R!)": 6.0
+   }
+  },
+  {
+   "date": "2024-04-05",
+   "shares": {
+    "Philippe Poutou New Anticapitalist Party (NPA)": 2.0,
+    "François Ruffin Debout ! (D!)": 29.0,
+    "Édouard Philippe Horizons (political party) (HOR)": 25.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 4.5,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 3.0,
+    "Marine Le Pen National Rally (RN)": 31.0,
+    "Éric Zemmour Reconquête (R!)": 6.5
+   }
+  },
+  {
+   "date": "2024-04-18",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 2.0,
+    "Fabien Roussel French Communist Party (PCF)": 5.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 13.0,
+    "Olivier Faure Socialist Party (France) (PS)": 3.0,
+    "Marine Tondelier The Ecologists (LE)": 2.0,
+    "Gabriel Attal Renaissance (French political party) (RE)": 22.0,
+    "Jean LassalleRésistons (RES)": 2.5,
+    "Laurent Wauquiez The Republicans (France) (LR)": 8.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 2.5,
+    "Jordan Bardella National Rally (RN)": 30.0,
+    "Éric Zemmour Reconquête (R!)": 9.0
+   }
+  },
+  {
+   "date": "2024-07-08",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 2.0,
+    "Fabien Roussel French Communist Party (PCF)": 3.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 15.0,
+    "Raphaël Glucksmann Place Publique (PP)": 14.0,
+    "Marine Tondelier The Ecologists (LE)": 3.0,
+    "Gabriel Attal Renaissance (French political party) (RE)": 20.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 5.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 2.0,
+    "Marine Le Pen National Rally (RN)": 31.0,
+    "Éric Zemmour Reconquête (R!)": 4.0
+   }
+  },
+  {
+   "date": "2024-09-09",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 1.0,
+    "Fabien Roussel French Communist Party (PCF)": 6.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 10.0,
+    "Olivier Faure Socialist Party (France) (PS)": 4.0,
+    "Marine Tondelier The Ecologists (LE)": 6.0,
+    "Gabriel Attal Renaissance (French political party) (RE)": 24.0,
+    "Jean LassalleRésistons (RES)": 3.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 5.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 2.0,
+    "Marine Le Pen National Rally (RN)": 35.0,
+    "Éric Zemmour Reconquête (R!)": 3.0
+   }
+  },
+  {
+   "date": "2024-09-12",
+   "shares": {
+    "Fabien Roussel French Communist Party (PCF)": 4.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 10.0,
+    "Raphaël Glucksmann Place Publique (PP)": 14.0,
+    "Sandrine Rousseau The Ecologists (LE)": 1.0,
+    "Édouard Philippe Horizons (political party) (HOR)": 26.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 5.0,
+    "Marine Le Pen National Rally (RN)": 35.0,
+    "Éric Zemmour Reconquête (R!)": 5.0
+   }
+  },
+  {
+   "date": "2024-12-09",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 0.5,
+    "Fabien Roussel French Communist Party (PCF)": 3.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 12.0,
+    "Olivier Faure Socialist Party (France) (PS)": 5.0,
+    "Marine Tondelier The Ecologists (LE)": 4.5,
+    "Gabriel Attal Renaissance (French political party) (RE)": 20.0,
+    "Jean LassalleRésistons (RES)": 1.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 8.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 3.0,
+    "Marine Le Pen National Rally (RN)": 38.0,
+    "Éric Zemmour Reconquête (R!)": 4.0
+   }
+  },
+  {
+   "date": "2025-03-27",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 1.0,
+    "Fabien Roussel French Communist Party (PCF)": 4.0,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 12.0,
+    "Olivier Faure Socialist Party (France) (PS)": 4.0,
+    "Marine Tondelier The Ecologists (LE)": 3.0,
+    "Édouard Philippe Horizons (political party) (HOR)": 25.0,
+    "Laurent Wauquiez The Republicans (France) (LR)": 5.0,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 4.0,
+    "Marine Le Pen National Rally (RN)": 36.0,
+    "Éric Zemmour Reconquête (R!)": 5.0
+   }
+  },
+  {
+   "date": "2025-04-04",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Philippe Poutou": 2.0,
+    "Fabien Roussel": 6.0,
+    "Jean-Luc Mélenchon": 10.0,
+    "Olivier Faure": 5.5,
+    "Marine Tondelier": 5.5,
+    "Édouard Philippe": 23.5,
+    "Bruno Retailleau": 8.0,
+    "Nicolas Dupont-Aignan": 3.0,
+    "Marine Le Pen": 32.0,
+    "Éric Zemmour": 3.5
+   }
+  },
+  {
+   "date": "2025-04-18",
+   "shares": {
+    "Nathalie Arthaud": 0.5,
+    "Fabien Roussel": 2.0,
+    "Jean-Luc Mélenchon": 10.0,
+    "François Ruffin": 5.5,
+    "Raphaël Glucksmann": 10.0,
+    "Édouard Philippe": 21.0,
+    "Bruno Retailleau": 9.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 32.0,
+    "Éric Zemmour": 4.0
+   }
+  },
+  {
+   "date": "2025-04-24",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Philippe Poutou": 2.0,
+    "Fabien Roussel": 3.0,
+    "Jean-Luc Mélenchon": 12.0,
+    "Raphaël Glucksmann": 11.5,
+    "Marine Tondelier": 3.0,
+    "Édouard Philippe": 20.5,
+    "Bruno Retailleau": 10.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 32.0,
+    "Éric Zemmour": 3.0
+   }
+  },
+  {
+   "date": "2025-05-20",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 3.0,
+    "Jean-Luc Mélenchon": 13.5,
+    "Olivier Faure": 4.5,
+    "Marine Tondelier": 5.0,
+    "Édouard Philippe": 21.0,
+    "Bruno Retailleau": 16.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 31.0,
+    "Éric Zemmour": 3.0
+   }
+  },
+  {
+   "date": "2025-09-25",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 3.0,
+    "Jean-Luc Mélenchon": 12.0,
+    "Raphaël Glucksmann": 15.0,
+    "Édouard Philippe": 16.0,
+    "Dominique de Villepin": 5.0,
+    "Bruno Retailleau": 9.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 33.0,
+    "Éric Zemmour": 4.0
+   }
+  },
+  {
+   "date": "2025-10-01",
+   "shares": {
+    "Nathalie Arthaud": 1.5,
+    "Fabien Roussel": 3.0,
+    "Jean-Luc Mélenchon": 15.0,
+    "Raphaël Glucksmann": 15.0,
+    "Gabriel Attal": 12.0,
+    "Bruno Retailleau": 14.0,
+    "Nicolas Dupont-Aignan": 3.5,
+    "Marine Le Pen": 30.5,
+    "Éric Zemmour": 5.5
+   }
+  },
+  {
+   "date": "2025-10-31",
+   "shares": {
+    "Nathalie Arthaud": 1.5,
+    "Fabien Roussel": 3.0,
+    "Jean-Luc Mélenchon": 11.5,
+    "Raphaël Glucksmann": 12.0,
+    "Marine Tondelier": 4.5,
+    "Gabriel Attal": 12.5,
+    "Dominique de Villepin": 5.0,
+    "Bruno Retailleau": 8.0,
+    "Nicolas Dupont-Aignan": 2.5,
+    "Marine Le Pen": 34.0,
+    "Sarah Knafo": 6.5
+   }
+  },
+  {
+   "date": "2026-02-27",
+   "shares": {
+    "Nathalie Arthaud": 2.0,
+    "Fabien Roussel": 2.0,
+    "Jean-Luc Mélenchon": 11.0,
+    "Raphaël Glucksmann": 12.0,
+    "Marine Tondelier": 4.5,
+    "Gabriel Attal": 10.0,
+    "Dominique de Villepin": 4.5,
+    "Bruno Retailleau": 12.0,
+    "Nicolas Dupont-Aignan": 3.0,
+    "Marine Le Pen": 35.0,
+    "Sarah Knafo": 4.0
+   }
+  },
+  {
+   "date": "2026-03-27",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 2.5,
+    "Jean-Luc Mélenchon": 12.0,
+    "Raphaël Glucksmann": 12.5,
+    "Marine Tondelier": 4.0,
+    "Gabriel Attal": 11.5,
+    "Dominique de Villepin": 6.0,
+    "Bruno Retailleau": 10.0,
+    "Nicolas Dupont-Aignan": 2.5,
+    "Marine Le Pen": 34.0,
+    "Sarah Knafo": 4.0
+   }
+  },
+  {
+   "date": "2026-05-27",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 4.0,
+    "Jean-Luc Mélenchon": 15.0,
+    "Raphaël Glucksmann": 11.0,
+    "Marine Tondelier": 3.0,
+    "Gabriel Attal": 15.0,
+    "Bruno Retailleau": 11.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 32.0,
+    "Sarah Knafo": 6.0
+   }
+  },
+  {
+   "date": "2026-05-28",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 4.0,
+    "Jean-Luc Mélenchon": 13.5,
+    "François Hollande": 7.0,
+    "Marine Tondelier": 4.0,
+    "Gabriel Attal": 9.5,
+    "Édouard Philippe": 14.5,
+    "Bruno Retailleau": 8.5,
+    "Nicolas Dupont-Aignan": 1.5,
+    "Marine Le Pen": 32.0,
+    "Sarah Knafo": 4.5
+   }
+  },
+  {
+   "date": "2026-05-28",
+   "shares": {
+    "Nathalie Arthaud": 0.5,
+    "Fabien Roussel": 3.0,
+    "Jean-Luc Mélenchon": 13.0,
+    "Raphaël Glucksmann": 11.5,
+    "Marine Tondelier": 3.5,
+    "Gabriel Attal": 16.0,
+    "Bruno Retailleau": 11.5,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 32.0,
+    "Sarah Knafo": 4.0
+   }
+  },
+  {
    "date": "2026-07-08",
    "shares": {
     "Nathalie Arthaud": 1.0,
@@ -138,6 +545,52 @@
     "Nicolas Dupont-Aignan": 3.0,
     "Marine Le Pen": 34.0,
     "Éric Zemmour": 4.0
+   }
+  },
+  {
+   "date": "2026-09-01",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Jean-Luc Mélenchon": 18.0,
+    "Fabien Roussel": 2.0,
+    "Marine Tondelier": 2.0,
+    "Raphaël Glucksmann": 11.5,
+    "Édouard Philippe": 18.0,
+    "Dominique de Villepin": 3.5,
+    "Bruno Retailleau": 7.5,
+    "Nicolas Dupont-Aignan": 3.0,
+    "Marine Le Pen": 30.0,
+    "Éric Zemmour": 3.5
+   }
+  },
+  {
+   "date": "2026-09-02",
+   "shares": {
+    "Nathalie Arthaud": 0.5,
+    "Jean-Luc Mélenchon": 15.0,
+    "Fabien Roussel": 2.5,
+    "Marine Tondelier": 3.5,
+    "Raphaël Glucksmann": 11.5,
+    "Gabriel Attal": 7.5,
+    "Édouard Philippe": 14.5,
+    "Bruno Retailleau": 6.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 34.0,
+    "Éric Zemmour": 3.0
+   }
+  },
+  {
+   "date": "2026-09-03",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Jean-Luc Mélenchon": 17.0,
+    "Fabien Roussel": 3.0,
+    "Marine Tondelier": 4.0,
+    "Raphaël Glucksmann": 13.0,
+    "Gabriel Attal": 13.0,
+    "Bruno Retailleau": 11.0,
+    "Marine Le Pen": 35.0,
+    "Éric Zemmour": 3.0
    }
   }
  ],

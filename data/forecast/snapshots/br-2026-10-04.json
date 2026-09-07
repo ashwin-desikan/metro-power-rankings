@@ -2,8 +2,8 @@
  "code": "br",
  "election": "2026-10-04",
  "confidence": "confirmed",
- "built": "2026-09-04",
- "daysBefore": 30,
+ "built": "2026-09-07",
+ "daysBefore": 27,
  "block": {
   "election": "2026-10-04",
   "electionDate": "2026-10-04",
@@ -17,7 +17,7 @@
     "Caiado": 3.9,
     "Zema": 2.0
    },
-   "polls": 27,
+   "polls": 26,
    "latest": "2026-09-02"
   },
   "runoffs": [
@@ -26,12 +26,12 @@
     "b": "F. Bolsonaro",
     "avgA": 45.5,
     "avgB": 43.3,
-    "pA": 71.3,
-    "polls": 72,
+    "pA": 72.6,
+    "polls": 70,
     "latest": "2026-09-02"
    }
   ],
-  "monthsOut": 1.0,
+  "monthsOut": 0.9,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
   ]

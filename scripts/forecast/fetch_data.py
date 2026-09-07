@@ -289,6 +289,43 @@ def find_section(wt, title_pat, flags=re.I):
     return ""
 
 
+def dated_subsections(sec):
+    """Yield (title, chunk, year) for every heading in `sec` carrying a year.
+
+    A heading owns its whole subtree, down to the next heading of the same or
+    higher level, so a year at L3 covers month subsections at L4 that have no
+    year of their own -- which is how Brazil's article is built ("=== 2026 ===",
+    then "==== Aug-Oct (Campaign period) ===="). The year is the LAST one in the
+    title, so a range like "July 2026 - August 2026" resolves to its end.
+
+    Why this exists: Wikipedia renames dated headings as time passes. France was
+    pinned to "=== Since July 2026 ===", the editors closed it to "July 2026 -
+    August 2026" and opened "Since September 2026" above it on 2026-09-06, and
+    the fetch went to 0 rows until the health gate stopped the publish. Walking
+    whatever headings exist survives that. Passing each subsection its OWN year
+    is the other half and matters more: candidate_tables()' default_year fills
+    in rows whose date cell omits the year, so parsing a 2025 table as 2026
+    stamps old polls as current and drops them into the live window at full
+    weight -- worse than an empty parse, because nothing catches it.
+    """
+    heads = list(HEADING.finditer(sec))
+    consumed_to = 0
+    for i, m in enumerate(heads):
+        if m.start() < consumed_to:
+            continue                       # already inside a subtree we yielded
+        years = [int(y) for y in re.findall(r"20\d\d", m.group("title"))]
+        if not years:
+            continue
+        level = len(m.group("eq"))
+        end = len(sec)
+        for nxt in heads[i + 1:]:
+            if len(nxt.group("eq")) <= level:
+                end = nxt.start()
+                break
+        consumed_to = end
+        yield m.group("title"), sec[m.end():end], max(years)
+
+
 # ---------------- UK ----------------
 
 def fetch_uk():
@@ -325,7 +362,10 @@ def fetch_us():
     input is the set of aggregator averages — labelled as such downstream.
     Any individual-poll tables that appear later are picked up too."""
     wt = wikitext("2026 United States House of Representatives elections")
-    sec = section_slice(wt, r"==\s*Opinion polling\s*==", [r"\n==[^=]"])
+    # find_section, not section_slice: the latter pins the heading LEVEL into
+    # the pattern, which is how Brazil's runoff tables vanished when the article
+    # moved them from L4 to L3. The whole-article fallback below stays.
+    sec = find_section(wt, r"^Opinion polling$")
     if not sec:
         sec = wt
     aggs = []
@@ -543,7 +583,12 @@ def fetch_uk_base():
 
 def fetch_nz():
     wt = wikitext("Opinion polling for the 2026 New Zealand general election")
-    sec = section_slice(wt, r"===\s*Table of polls\s*===", [r"\n==[^=]"])
+    # find_section over section_slice for the same reason as fetch_us(): the
+    # heading title is stable, its LEVEL is not. NB the `or wt` fallback is not
+    # free here -- extract_polls stamps undated rows 2026, so if this article
+    # ever grows year subsections the fallback would mis-date the older ones.
+    # It is the right trade while the article carries one undivided table.
+    sec = find_section(wt, r"^Table of polls$")
     polls = extract_polls(sec or wt, ["nat", "lab", "grn", "act", "nzf", "tpm", "top"], 2026)
     json.dump({"source": "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)",
                "parties": ["nat", "lab", "grn", "act", "nzf", "tpm", "top"],
@@ -655,8 +700,16 @@ RUNOFF_HEADING = r"(second|2nd)[\s\-]*round|run[\s\-]?off|segundo\s+turno"
 
 def fetch_br():
     wt = wikitext("Opinion polling for the 2026 Brazilian presidential election")
-    y26 = section_slice(wt, r"===\s*2026\s*===", [r"\n===\s*2025", r"\n==[^=]"])
-    r1sec = section_slice(y26, r"====\s*First round\s*====", [r"\n====", r"\n==="]) or y26
+    # Was pinned to `=== 2026 ===` with NO fallback: if that heading were ever
+    # renamed, y26 went empty, r1sec went empty, and the first round published
+    # nothing while the runoffs carried on via their fallback chain below --
+    # exactly the asymmetry France showed on 2026-09-07. Walk the dated
+    # subsections under "First round" instead, each with its own year. Brazil's
+    # year headings sit at L3 with month subsections at L4 ("Aug-Oct (Campaign
+    # period)"), which carry no year of their own; dated_subsections() gives a
+    # heading its whole subtree, so those inherit 2026 correctly.
+    r1sec = find_section(wt, r"^First round$")
+    y26 = find_section(r1sec, r"^\s*2026\s*$") or r1sec
     # Try the historical heading first, then any runoff-shaped heading inside
     # the 2026 section, then the article as a whole (some cycles keep a single
     # runoff section above the year split). RUNOFF_HEADING stays deliberately
@@ -665,10 +718,15 @@ def fetch_br():
     r2sec = (section_slice(y26, r"====\s*Second round\s*====", [r"\n====", r"\n==="])
              or find_section(y26, RUNOFF_HEADING)
              or find_section(wt, RUNOFF_HEADING))
-    first = []
-    for cands, rows in candidate_tables(r1sec, 2026):
-        for r in rows:
-            first.append({"date": r["date"], "shares": {clean_cand(k): v for k, v in r["shares"].items()}})
+    first, used = [], []
+    for title, chunk, year in dated_subsections(r1sec):
+        got = []
+        for cands, rows in candidate_tables(chunk, year):
+            for r in rows:
+                got.append({"date": r["date"], "shares": {clean_cand(k): v for k, v in r["shares"].items()}})
+        if got:
+            used.append("%s (%d)" % (title, len(got)))
+            first.extend(got)
     matchups = []
     if r2sec:
         for cands, rows in candidate_tables(r2sec, 2026):
@@ -679,20 +737,49 @@ def fetch_br():
                "firstRound": sorted(first, key=lambda p: p["date"]), "matchups": matchups},
               open(os.path.join(OUT, "br_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("BR first-round poll rows:", len(first), "runoff tables:", len(matchups))
+    print("  BR first-round subsections:", "; ".join(used) or "none")
+    if not first:
+        sys.exit("FATAL: Brazil first-round parse found 0 rows under '== First round =='. "
+                 "The article structure changed -- check the subsection headings at "
+                 "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election")
     if first and not matchups:
         # Not fatal: the first round still publishes. But a Brazilian cycle with
         # first-round polling and no runoff polling is a scrape failure, not a
         # fact about Brazil, and it must never pass in silence again.
         print("  WARNING: first-round rows but NO runoff tables -- check the article headings")
     if first:
-        print("  latest R1:", first[-1])
+        print("  latest R1:", max(first, key=lambda p: p["date"]))
 
 def fetch_fr():
     wt = wikitext("Opinion polling for the 2027 French presidential election")
-    r1sec = section_slice(wt, r"===\s*Since July 2026\s*===", [r"\n===[^=]", r"\n==[^=]"])
-    first = []
-    for cands, rows in candidate_tables(r1sec, 2026):
-        first.extend(rows)
+    # Was pinned to `=== Since July 2026 ===`. On 2026-09-06 the editors renamed
+    # that heading to "July 2026 - August 2026" and opened "Since September 2026"
+    # above it; the slice went empty, firstRound came back 0 rows, and the health
+    # gate stopped the 09-07 publish. Exactly the failure the Brazil note on
+    # find_section() records, one article over.
+    #
+    # So: every dated subsection under "First round", each parsed with its OWN
+    # year. candidate_tables()' default_year only fills in rows whose date cell
+    # omits the year, so running the 2025 tables under default_year=2026 would
+    # stamp old polls as current and drop them straight into the live window --
+    # worse than the empty parse this replaces. Recency is the model's job, not
+    # the scraper's: fr_forecast() runs weighted_recent(window=120,
+    # half_life=14), so anything past 120 days is discarded rather than averaged
+    # and the extra history costs nothing.
+    r1sec = find_section(wt, r"^First round$")
+    first, used = [], []
+    for title, chunk, year in dated_subsections(r1sec):
+        rows = []
+        for cands, got in candidate_tables(chunk, year):
+            rows.extend(got)
+        if rows:
+            used.append("%s (%d)" % (title, len(rows)))
+            first.extend(rows)
+    if not first:
+        sys.exit("FATAL: France first-round parse found 0 rows under '== First round =='. "
+                 "The article structure changed again -- check the subsection headings at "
+                 "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election")
+    print("  FR first-round subsections:", "; ".join(used))
     # second-round head-to-heads: every 'X vs. Y' subsection
     r2 = section_slice(wt, r"==\s*Second round\s*==", [r"\n==[^=]"])
     matchups = []
@@ -712,7 +799,9 @@ def fetch_fr():
               open(os.path.join(OUT, "fr_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("FR first-round scenario rows:", len(first), "head-to-heads:", len(matchups))
     if first:
-        print("  latest R1:", first[-1])
+        # first[] is appended in section order, oldest section last, so index -1
+        # is the OLDEST row rather than the newest. Say which one this is.
+        print("  latest R1:", max(first, key=lambda p: p["date"]))
 
 # ---------------------------------------------------------------- self-test --
 # Pure parsing logic only, no network. Cases are the ones that have actually
