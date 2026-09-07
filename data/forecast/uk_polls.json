@@ -5054,6 +5054,28 @@
    "ld": 12.0,
    "grn": 13.0,
    "snp": 3.0
+  },
+  {
+   "date": "2026-09-01",
+   "pollster": "Lord Ashcroft Polls",
+   "sample": 5063,
+   "lab": 28.0,
+   "con": 21.0,
+   "ref": 20.0,
+   "ld": 8.0,
+   "grn": 14.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-09-04",
+   "pollster": "Opinium",
+   "sample": 2003,
+   "lab": 28.0,
+   "con": 18.0,
+   "ref": 24.0,
+   "ld": 11.0,
+   "grn": 11.0,
+   "snp": 3.0
   }
  ]
 }
