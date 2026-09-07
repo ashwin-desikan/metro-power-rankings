@@ -689,10 +689,40 @@ def fetch_br():
 
 def fetch_fr():
     wt = wikitext("Opinion polling for the 2027 French presidential election")
-    r1sec = section_slice(wt, r"===\s*Since July 2026\s*===", [r"\n===[^=]", r"\n==[^=]"])
-    first = []
-    for cands, rows in candidate_tables(r1sec, 2026):
-        first.extend(rows)
+    # Was pinned to `=== Since July 2026 ===`. On 2026-09-06 the editors renamed
+    # that heading to "July 2026 - August 2026" and opened "Since September 2026"
+    # above it; the slice went empty, firstRound came back 0 rows, and the health
+    # gate stopped the 09-07 publish. Exactly the failure the Brazil note on
+    # find_section() records, one article over.
+    #
+    # So: every dated subsection under "First round", each parsed with its OWN
+    # year. candidate_tables()' default_year only fills in rows whose date cell
+    # omits the year, so running the 2025 tables under default_year=2026 would
+    # stamp old polls as current and drop them straight into the live window --
+    # worse than the empty parse this replaces. Recency is the model's job, not
+    # the scraper's: fr_forecast() runs weighted_recent(window=120,
+    # half_life=14), so anything past 120 days is discarded rather than averaged
+    # and the extra history costs nothing.
+    r1sec = find_section(wt, r"^First round$")
+    heads = list(HEADING.finditer(r1sec))
+    first, used = [], []
+    for i, mh in enumerate(heads):
+        end = heads[i + 1].start() if i + 1 < len(heads) else len(r1sec)
+        title = mh.group("title")
+        years = [int(y) for y in re.findall(r"20\d\d", title)]
+        if not years:
+            continue                      # no year in the heading: nothing to trust
+        rows = []
+        for cands, got in candidate_tables(r1sec[mh.end():end], max(years)):
+            rows.extend(got)
+        if rows:
+            used.append("%s (%d)" % (title, len(rows)))
+            first.extend(rows)
+    if not first:
+        sys.exit("FATAL: France first-round parse found 0 rows under '== First round =='. "
+                 "The article structure changed again -- check the subsection headings at "
+                 "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_French_presidential_election")
+    print("  FR first-round subsections:", "; ".join(used))
     # second-round head-to-heads: every 'X vs. Y' subsection
     r2 = section_slice(wt, r"==\s*Second round\s*==", [r"\n==[^=]"])
     matchups = []
@@ -712,7 +742,9 @@ def fetch_fr():
               open(os.path.join(OUT, "fr_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("FR first-round scenario rows:", len(first), "head-to-heads:", len(matchups))
     if first:
-        print("  latest R1:", first[-1])
+        # first[] is appended in section order, oldest section last, so index -1
+        # is the OLDEST row rather than the newest. Say which one this is.
+        print("  latest R1:", max(first, key=lambda p: p["date"]))
 
 # ---------------------------------------------------------------- self-test --
 # Pure parsing logic only, no network. Cases are the ones that have actually
