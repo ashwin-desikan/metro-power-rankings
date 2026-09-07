@@ -1,13 +1,118 @@
 {
-  "generatedAt": "2026-09-06",
+  "generatedAt": "2026-09-07",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-07",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, College football.",
+      "commit": "8edc1bdfc"
+    },
     {
       "date": "2026-09-06",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "1384d9e43"
+      "text": "Data refreshed — Football, Basketball, F1, Leaders, and 4 more.",
+      "commit": "0f0698bc8"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "fix",
+      "hub": "Api",
+      "text": "An OG card was carrying a quarter of a gigabyte, and the deploy failed for it.",
+      "commit": "ebbdd66d6"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "A season can be live, not only finished or unplayed.",
+      "commit": "b40726b7b"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Fold what a phone cannot use, and stop squeezing the standings.",
+      "commit": "411ba9e0a"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "The season chart answers the point you are pointing at, and holds still.",
+      "commit": "ce142020e"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": null,
+      "text": "Fifteen franchises were drawing themselves white.",
+      "commit": "d6704c3ce"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "The rankings and the standings, side by side.",
+      "commit": "6d6efc8c6"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "The season pages get records, a belt, and the game log they were hiding.",
+      "commit": "d4f61524b"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "The standings were reading the wrong half of ESPN's payload.",
+      "commit": "467b7555e"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "A hub that looks like something worth scrolling.",
+      "commit": "892cd9d0e"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "The season pages get club colours, honours, crests and a reason to exist.",
+      "commit": "e983afbe2"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Every hub says which sport it is, from one registry.",
+      "commit": "49ad83c9b"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "A century of weekly Elo, 107 season hubs, and 2026 priced before a snap.",
+      "commit": "00568eb70"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "fix",
+      "hub": null,
+      "text": "An invisible label was dragging every wide table off the screen.",
+      "commit": "e5887b62f"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Against Expectation reaches five more leagues, on the club and metro pages.",
+      "commit": "6522e9cb3"
     },
     {
       "date": "2026-09-05",
@@ -4096,111 +4201,6 @@
       "hub": "Release Notes",
       "text": "Weave Substack publishes into /updates timeline.",
       "commit": "bfde09b2f"
-    },
-    {
-      "date": "2026-05-14",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "NBA hotfix v1.1: metros + arena lat/lng from MetroAreas Team List, Season-by-season collapsible with Team / PF-PA per game, arena history s…",
-      "commit": "0a88bfe2c"
-    },
-    {
-      "date": "2026-05-14",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "NBA hotfix v1.1: metros + arena lat/lng from MetroAreas Team List, Season-by-season collapsible with Team / PF-PA per game, arena history s…",
-      "commit": "d5ccb448d"
-    },
-    {
-      "date": "2026-05-14",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "NBA hotfix v1.1: metros + arena lat/lng from MetroAreas Team List, Season-by-season now collapsible with Team column, All-NBA in 3-col colu…",
-      "commit": "712b265a3"
-    },
-    {
-      "date": "2026-05-14",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "NBA hotfix v1.1: metros + arena lat/lng now sourced from MetroAreas.xlsx Team List, seasonLabel '2025-25' off-by-one fixed, playoff elim in…",
-      "commit": "b3f8cb83c"
-    },
-    {
-      "date": "2026-05-14",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "NBA hotfix: trim /updates bullet under 220 char cap, gate playoff-state elim on result=L.",
-      "commit": "0d100c046"
-    },
-    {
-      "date": "2026-05-14",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "NBA team pages v1: 30 franchises with ABA cups, All-NBA block, live playoff status, league map.",
-      "commit": "e428b5e08"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "Team pages v1.5: Top Team lookup scans TOP_TEAMS by team name with metro-preference tie-break so cross-metro picks surface (Packers as Milw…",
-      "commit": "eb1742397"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Team pages v1.4: BR-standings year links + AA pre-1903 routing, prominent Season-by-season summary bar, reverse-chronological MLB stadium h…",
-      "commit": "2c0b013c7"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "Team pages v1.3: flip Season-by-Season above Awards, compact Awards via CSS columns, fix 2026 live-row gate (drop season_type, require curr…",
-      "commit": "d95ecd3f4"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "fix",
-      "hub": "Rankings",
-      "text": "Team pages v1.2: hero says Founded+Metro Area separately, MLB Pennants block, tiebreaker badge for missed-playoffs cases, stadium hero link…",
-      "commit": "f33577877"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "MLB team pages v1.1: surface MVP/Cy/ROY/MOY by combining league+award, replace Division Titles with Pennants, brand-name display overrides…",
-      "commit": "84483ff2d"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "MLB team pages v1: /teams/mlb index, /teams/mlb/[slug] per-franchise, /teams/mlb/historical defunct index, sortable Season-by-season with R…",
-      "commit": "24b53e28e"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "NFL team pages: remove live hero block, fold ESPN current-season into a sortable Season-by-season table with PF/PA columns; in-progress row…",
-      "commit": "1adf9c99d"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — NFL.",
-      "commit": "12ef6ab29"
-    },
-    {
-      "date": "2026-05-13",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Live NFL standings on franchise pages: lib/standings.ts pulls ESPN at build time with hourly ISR, CurrentSeasonBlock shows record/division…",
-      "commit": "a41d2e688"
     }
   ]
 }
