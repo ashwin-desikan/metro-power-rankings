@@ -1,13 +1,41 @@
 {
-  "generatedAt": "2026-09-07",
+  "generatedAt": "2026-09-08",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-08",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "60dc8aad1"
+    },
     {
       "date": "2026-09-07",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, College football.",
-      "commit": "8edc1bdfc"
+      "text": "Data refreshed — Football, Basketball, Elections, Screen of the Metros, and 3 more.",
+      "commit": "930807dc7"
+    },
+    {
+      "date": "2026-09-07",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "Elections directory, women's basketball, NFL bracket, heartbreak rebuilt.",
+      "commit": "c2db399ab"
+    },
+    {
+      "date": "2026-09-07",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "The family joins the hub design, squads get a price, the watcher stops retrying failed builds.",
+      "commit": "81f57c446"
+    },
+    {
+      "date": "2026-09-07",
+      "category": "hub",
+      "hub": null,
+      "text": "Angels sale pending, West Ham to Kretinsky, Crew resolved.",
+      "commit": "fec7feb5c"
     },
     {
       "date": "2026-09-06",
@@ -4173,34 +4201,6 @@
       "hub": "Sports",
       "text": "Sports polish: Euroleague added to /sports (886 markers), Sport filter promoted to always-visible chip row above the map (More filters coll…",
       "commit": "c79db0def"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "fix",
-      "hub": "Sports",
-      "text": "Fix /sports prerender: wrap SportsExplorer in Suspense boundary so Next 16's static prerender contract is satisfied for useSearchParams() c…",
-      "commit": "a260dbd7e"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "new-hub",
-      "hub": "Sports",
-      "text": "New hub: Sports.",
-      "commit": "31b261d4d"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Hotfix: truncate orphan JSX block in app/updates/page.tsx (lines 456-499) that survived the prior edit and broke the Vercel build at parse…",
-      "commit": "79b9d81d5"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Weave Substack publishes into /updates timeline.",
-      "commit": "bfde09b2f"
     }
   ]
 }
