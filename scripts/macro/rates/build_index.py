@@ -1,5 +1,13 @@
 """Builds public/data/business/economy/rates/index.json from every bank file
 already written to that directory, per RATES-CONTRACT.md.
+
+One row per central bank: a bis-<iso2> file superseded by an own-spine bank
+(carries "listed": false, "superseded_by": "<code>") is excluded entirely,
+not just marked. power_rank is joined in here from public/data/countries.json
+so common.py stays free of that file. Any bank whose data has gone stale
+(more than 400 days with no update) and carries no `ended` date is printed,
+never silently reclassified -- the contract's "print so I can decide,
+default to leaving them as they are" rule.
 """
 
 import argparse
@@ -8,6 +16,8 @@ import json
 import os
 
 import common as c
+
+STALE_DAYS = 400
 
 
 def load_all_banks(out_dir=c.OUT_DIR):
@@ -20,11 +30,51 @@ def load_all_banks(out_dir=c.OUT_DIR):
     return banks
 
 
+def print_stale_without_ended(banks, built=c.BUILT_DATE):
+    """Diagnostic only, per the contract: a bank whose series stopped more
+    than STALE_DAYS before the build date, with no `ended` date, might be
+    mislabeled hold/market rather than genuinely inactive. Print it; never
+    change its direction_12m here."""
+    stale = []
+    for b in banks:
+        if not b.get("listed", True) or b.get("ended"):
+            continue
+        gap = (c.parse_iso(built) - c.parse_iso(b["last_change"])).days
+        if gap > STALE_DAYS:
+            stale.append((b["code"], b["country"], b["last_change"], gap))
+    if stale:
+        print("  Stale, no ended date set (last data > {} days before build; "
+              "left as-is, review and decide):".format(STALE_DAYS))
+        for code, country, last, gap in sorted(stale, key=lambda r: -r[3]):
+            print("    {:<10} {:<20} last_change={} ({} days stale)".format(
+                code, country, last, gap))
+    return stale
+
+
 def build(write=True, out_dir=c.OUT_DIR):
     banks = load_all_banks(out_dir)
     if not banks:
         raise RuntimeError("no bank files found in {}".format(out_dir))
-    entries = [c.compute_index_entry(b) for b in banks]
+
+    print_stale_without_ended(banks)
+
+    listed_banks = [b for b in banks if b.get("listed", True)]
+    ranks_by_name = c.load_power_ranks()
+
+    entries = []
+    missing_rank = []
+    for b in listed_banks:
+        entry = c.compute_index_entry(b)
+        entry["power_rank"] = c.power_rank_for(b["country"], ranks_by_name)
+        if entry["power_rank"] is None and b["country"] != "Euro area":
+            missing_rank.append((entry["code"], b["country"]))
+        entries.append(entry)
+
+    if missing_rank:
+        print("  Banks with no power_rank match:")
+        for code, country in missing_rank:
+            print("    {:<10} {}".format(code, country))
+
     entries.sort(key=lambda e: e["code"])
     index = {"built": c.BUILT_DATE, "banks": entries}
     if not write:
@@ -50,6 +100,7 @@ def self_test():
     # compute_index_entry on a synthetic all-policy bank
     bank = {
         "code": "test", "name": "Test Bank", "short": "TB", "iso2": "TT",
+        "country": "Testland",
         "founded": "2000-01-01", "first_change": "2000-01-01",
         "last_change": "2026-08-01", "built": "2026-09-08",
         "coverage": {"spine": "own"},
@@ -69,11 +120,14 @@ def self_test():
     assert entry["direction_12m"] == "cutting"
     assert entry["series_from"] == "2000-01-01"
     assert entry["founded"] == "2000-01-01"
+    assert entry["country"] == "Testland"
+    assert entry["ended"] is None
 
     # a bank whose latest era is market: direction_12m must be "market" and
     # level must come from the market summary, not a stale policy row
     market_bank = {
         "code": "mkt", "name": "Market Bank", "short": "MB", "iso2": "MM",
+        "country": "Marketland",
         "founded": None, "first_change": "2000-01-01",
         "last_change": "2020-06-01", "built": "2026-09-08",
         "coverage": {"spine": "bis"},
@@ -99,6 +153,41 @@ def self_test():
     assert aentry["direction_12m"] == "market"
     assert aentry["level"] == 4.5
 
+    # an ended bank (euro adoption): forced to "ended", hold_days null,
+    # changes_12m 0, level frozen at the last pre-end row even if a stray
+    # post-end row exists
+    ended_bank = {
+        "code": "at", "name": "Test Euro Joiner", "short": "TEJ", "iso2": "AT",
+        "country": "Austria",
+        "founded": None, "first_change": "1990-01-01",
+        "last_change": "1998-12-31", "built": "2026-09-08",
+        "coverage": {"spine": "bis"},
+        "ended": "1998-12-31",
+        "ended_note": "Joined the euro on 1 January 1999; the ECB sets the rate since.",
+        "instruments": [{"from": "1990-01-01", "to": None, "name": "X", "text": "X", "kind": "policy"}],
+        "changes": [
+            {"date": "1990-01-01", "level": 8.0, "change": None, "era": 0},
+            {"date": "1998-06-01", "level": 3.0, "change": -5.0, "era": 0},
+        ],
+        "market": [],
+    }
+    eentry = c.compute_index_entry(ended_bank)
+    assert eentry["direction_12m"] == "ended"
+    assert eentry["hold_days"] is None
+    assert eentry["changes_12m"] == 0
+    assert eentry["level"] == 3.0
+    assert eentry["ended"] == "1998-12-31"
+
+    # power_rank aliasing
+    ranks = {"Czech Republic": 30, "Hong Kong": 40, "South Korea": 12, "Turkey": 18, "France": 5}
+    assert c.power_rank_for("Czechia", ranks) == 30
+    assert c.power_rank_for("Hong Kong SAR", ranks) == 40
+    assert c.power_rank_for("Korea", ranks) == 12
+    assert c.power_rank_for("Turkiye", ranks) == 18
+    assert c.power_rank_for("Euro area", ranks) is None
+    assert c.power_rank_for("France", ranks) == 5
+    assert c.power_rank_for("Nowhereland", ranks) is None
+
     print("build_index self-test OK")
 
 
@@ -111,12 +200,15 @@ def main():
         return
     path, index = build()
     print("Wrote {}".format(path))
-    print("  {} banks".format(len(index["banks"])))
+    print("  {} banks listed".format(len(index["banks"])))
+    print()
+    print("  {:<10} {:<20} {:>4} {:>8} {:<10} {:>9} {}".format(
+        "code", "country", "rank", "level", "direction", "hold_days", "ended"))
     for e in index["banks"]:
-        print("  {:<10} {:<28} level={:<7} changes={:<5} 12m={:<3} spine={:<5} hold_days={:<5} founded={:<12} series_from={:<10} dir={}".format(
-            e["code"], e["name"][:28], e["level"], e["changes"], e["changes_12m"],
-            e["spine"], e["hold_days"] if e["hold_days"] is not None else "-",
-            e["founded"] or "-", e["series_from"], e["direction_12m"]))
+        print("  {:<10} {:<20} {:>4} {:>8} {:<10} {:>9} {}".format(
+            e["code"], e["country"][:20], e["power_rank"] if e["power_rank"] is not None else "-",
+            e["level"] if e["level"] is not None else "-", e["direction_12m"],
+            e["hold_days"] if e["hold_days"] is not None else "-", e["ended"] or "-"))
 
 
 if __name__ == "__main__":

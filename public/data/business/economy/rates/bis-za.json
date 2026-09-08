@@ -1,6 +1,6 @@
 {
   "code": "bis-za",
-  "name": "South Africa",
+  "name": "South African Reserve Bank",
   "short": "South Africa",
   "country": "South Africa",
   "iso2": "ZA",
@@ -4632,5 +4632,9 @@
       "label": "BIS central bank policy rates (CBPOL), South Africa",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

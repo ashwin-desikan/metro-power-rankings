@@ -1,6 +1,6 @@
 {
   "code": "bis-mx",
-  "name": "Mexico",
+  "name": "Banco de Mexico",
   "short": "Mexico",
   "country": "Mexico",
   "iso2": "MX",
@@ -17515,5 +17515,9 @@
       "label": "BIS central bank policy rates (CBPOL), Mexico",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

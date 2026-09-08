@@ -1,8 +1,8 @@
 {
   "code": "bis-hk",
-  "name": "Hong Kong SAR",
-  "short": "Hong Kong SAR",
-  "country": "Hong Kong SAR",
+  "name": "Hong Kong Monetary Authority",
+  "short": "Hong Kong",
+  "country": "Hong Kong",
   "iso2": "HK",
   "currency": "HKD",
   "founded": null,
@@ -1629,8 +1629,12 @@
   },
   "sources": [
     {
-      "label": "BIS central bank policy rates (CBPOL), Hong Kong SAR",
+      "label": "BIS central bank policy rates (CBPOL), Hong Kong",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

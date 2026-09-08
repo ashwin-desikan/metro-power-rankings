@@ -1,6 +1,6 @@
 {
   "code": "bis-pl",
-  "name": "Poland",
+  "name": "National Bank of Poland",
   "short": "Poland",
   "country": "Poland",
   "iso2": "PL",
@@ -1075,5 +1075,9 @@
       "label": "BIS central bank policy rates (CBPOL), Poland",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

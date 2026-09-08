@@ -1,6 +1,6 @@
 {
   "code": "bis-th",
-  "name": "Thailand",
+  "name": "Bank of Thailand",
   "short": "Thailand",
   "country": "Thailand",
   "iso2": "TH",
@@ -722,5 +722,9 @@
       "label": "BIS central bank policy rates (CBPOL), Thailand",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

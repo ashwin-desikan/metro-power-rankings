@@ -3698,5 +3698,9 @@
       "label": "BIS central bank policy rates (CBPOL), New Zealand",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "rbnz",
+  "ended": null,
+  "ended_note": null
 }

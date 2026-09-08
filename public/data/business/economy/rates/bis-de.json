@@ -2645,5 +2645,9 @@
       "label": "BIS central bank policy rates (CBPOL), Germany",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "buba",
+  "ended": "1998-12-31",
+  "ended_note": "Joined the euro on 1 January 1999; the ECB sets the rate since."
 }

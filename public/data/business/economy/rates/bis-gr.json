@@ -1,6 +1,6 @@
 {
   "code": "bis-gr",
-  "name": "Greece",
+  "name": "Bank of Greece",
   "short": "Greece",
   "country": "Greece",
   "iso2": "GR",
@@ -819,5 +819,9 @@
       "label": "BIS central bank policy rates (CBPOL), Greece",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": "2000-12-31",
+  "ended_note": "Joined the euro on 1 January 2001; the ECB sets the rate since."
 }

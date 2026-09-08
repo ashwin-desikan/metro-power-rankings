@@ -1,6 +1,6 @@
 {
   "code": "bis-cn",
-  "name": "China",
+  "name": "People's Bank of China",
   "short": "China",
   "country": "China",
   "iso2": "CN",
@@ -535,5 +535,9 @@
       "label": "BIS central bank policy rates (CBPOL), China",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

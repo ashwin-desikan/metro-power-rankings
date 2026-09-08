@@ -1,6 +1,6 @@
 {
   "code": "bis-dk",
-  "name": "Denmark",
+  "name": "Danmarks Nationalbank",
   "short": "Denmark",
   "country": "Denmark",
   "iso2": "DK",
@@ -2598,5 +2598,9 @@
       "label": "BIS central bank policy rates (CBPOL), Denmark",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

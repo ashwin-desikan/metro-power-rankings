@@ -1,6 +1,6 @@
 {
   "code": "bis-my",
-  "name": "Malaysia",
+  "name": "Bank Negara Malaysia",
   "short": "Malaysia",
   "country": "Malaysia",
   "iso2": "MY",
@@ -883,5 +883,9 @@
       "label": "BIS central bank policy rates (CBPOL), Malaysia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

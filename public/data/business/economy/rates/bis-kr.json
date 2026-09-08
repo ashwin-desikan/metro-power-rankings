@@ -1,8 +1,8 @@
 {
   "code": "bis-kr",
-  "name": "Korea",
-  "short": "Korea",
-  "country": "Korea",
+  "name": "Bank of Korea",
+  "short": "South Korea",
+  "country": "South Korea",
   "iso2": "KR",
   "currency": "KRW",
   "founded": null,
@@ -642,8 +642,12 @@
   },
   "sources": [
     {
-      "label": "BIS central bank policy rates (CBPOL), Korea",
+      "label": "BIS central bank policy rates (CBPOL), South Korea",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

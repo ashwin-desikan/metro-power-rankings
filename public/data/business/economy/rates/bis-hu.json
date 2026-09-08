@@ -1,6 +1,6 @@
 {
   "code": "bis-hu",
-  "name": "Hungary",
+  "name": "Magyar Nemzeti Bank",
   "short": "Hungary",
   "country": "Hungary",
   "iso2": "HU",
@@ -1672,5 +1672,9 @@
       "label": "BIS central bank policy rates (CBPOL), Hungary",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

@@ -3324,5 +3324,9 @@
       "label": "BIS central bank policy rates (CBPOL), United Kingdom",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "boe",
+  "ended": null,
+  "ended_note": null
 }

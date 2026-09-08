@@ -59,22 +59,38 @@ export type BankFile = {
   path: [string, number][];
   coverage: { spine: "own" | "bis" | "mixed"; note: string };
   sources: RateSource[];
+  // Whether this file is one of the 49 index-listed banks (true) or a
+  // BIS-derived duplicate of an own-spine bank kept on disk but dropped from
+  // index.json (false) - see superseded_by for which listed code replaces it.
+  // getBank() already refuses unlisted codes, so callers rarely see false.
+  listed: boolean;
+  superseded_by: string | null;
+  // Non-null for a bank whose own currency/mandate ended (the ten euro
+  // joiners: AT, BE, ES, FR, GR, HR, IT, NL, PT, plus the Bundesbank).
+  ended: string | null;
+  ended_note: string | null;
 };
 
 export type RatesIndexEntry = {
   code: string;
   name: string;
   short: string;
+  country: string;
   iso2: string;
   founded: string | null;
   series_from: string;
   last_change: string;
+  spine: "own" | "bis" | "mixed";
+  // Rank by /countries' scoreRank; null only for the ECB, which has no single
+  // country. Ascending = more powerful.
+  power_rank: number | null;
+  ended: string | null;
+  ended_note: string | null;
   level: number;
   changes: number;
   changes_12m: number;
-  spine: "own" | "bis" | "mixed";
   hold_days: number | null;
-  direction_12m: "cutting" | "hiking" | "hold" | "mixed" | "market";
+  direction_12m: "cutting" | "hiking" | "hold" | "mixed" | "market" | "ended";
 };
 
 export type RatesIndex = {

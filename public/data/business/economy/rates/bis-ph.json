@@ -1,6 +1,6 @@
 {
   "code": "bis-ph",
-  "name": "Philippines",
+  "name": "Bangko Sentral ng Pilipinas",
   "short": "Philippines",
   "country": "Philippines",
   "iso2": "PH",
@@ -9822,5 +9822,9 @@
       "label": "BIS central bank policy rates (CBPOL), Philippines",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

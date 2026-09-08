@@ -1038,6 +1038,10 @@
       "url": "https://data.bis.org/topics/CBPOL"
     }
   ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": "1998-12-31",
+  "ended_note": "Joined the euro on 1 January 1999; the ECB sets the rate since.",
   "dissolved": "1998-12-31",
   "dissolved_note": "The Bundesbank set the discount and lombard rates for the last time on 1996-04-19 (held to 1998-12-31); euro-area monetary policy passed to the European Central Bank on 1999-01-01."
 }

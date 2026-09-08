@@ -671,6 +671,10 @@
       "url": "https://data.bis.org/topics/CBPOL"
     }
   ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null,
   "secondary": {
     "name": "Main refinancing rate",
     "changes": [

@@ -1,6 +1,6 @@
 {
   "code": "bis-in",
-  "name": "India",
+  "name": "Reserve Bank of India",
   "short": "India",
   "country": "India",
   "iso2": "IN",
@@ -1005,5 +1005,9 @@
       "label": "BIS central bank policy rates (CBPOL), India",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

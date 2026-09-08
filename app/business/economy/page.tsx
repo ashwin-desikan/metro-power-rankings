@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getRatesIndex, getBank, bankHref, type RatesIndexEntry, type BankFile } from "@/lib/economyRates";
-import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
+import { getRatesIndex, getBank, bankHref, type BankFile } from "@/lib/economyRates";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import BusinessNav from "../BusinessNav";
-import { MONO, CARD, TH, THR, TD, TDR, SectionHead, Crumbs, TabHeader, TableBox, SMCOL } from "../ui";
+import { MONO, CARD, TH, THR, TD, TDR, SectionHead, Crumbs, TabHeader, TableBox } from "../ui";
 import EconomyNav from "./EconomyNav";
-import { CappedList } from "@/app/_shared/Disclosure";
-import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
+import { DataBar } from "@/app/_shared/DataBar";
+import RatesTable, { type RateRow } from "./RatesTable";
 
 export const revalidate = 21600;
 
 const PATH = "/business/economy";
 const TITLE = "Policy Rates";
 const DESC =
-  "Every central bank's policy rate, tracked back to its own founding where the bank has published its own history: the Bank of England from 1694, the Fed from 1913, sixty banks total joined by the BIS.";
+  "Every central bank's policy rate, tracked back to its own founding where the bank has published its own history: the Bank of England from 1694, the Fed from 1913, forty-nine banks joined by the BIS.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Business of the Metros`,
@@ -24,25 +23,12 @@ export const metadata: Metadata = {
   twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
-function fullDate(iso: string): string {
-  const d = new Date(`${iso}T00:00:00Z`);
-  return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
-}
-
 // 2dp normally, 3dp when the value carries a real third decimal (e.g. the
 // Riksbank's 3.625%) - never trailing-zero-pad a 2dp figure to 3.
 function fmtPct(n: number): string {
   const dp = Math.abs(Math.round(n * 1000) - Math.round(n * 100) * 10) > 0.5 ? 3 : 2;
   return `${n.toFixed(dp)}%`;
 }
-
-const DIRECTION_LABEL: Record<RatesIndexEntry["direction_12m"], string> = {
-  cutting: "cutting",
-  hiking: "hiking",
-  hold: "on hold",
-  mixed: "mixed",
-  market: "market rate",
-};
 
 // Sentences for the eleven banks with founding dates on record, per the
 // scoping doc (RATES-CONTRACT.md, "Sources of record"). Static because the
@@ -75,63 +61,56 @@ export default async function EconomyPage() {
   const banks = index?.banks ?? [];
   const founded = banks.filter((b) => b.founded);
   // Full bank files are needed only for the last decision's signed change
-  // (not carried in the index); 60 files at ~53KB average is well inside the
+  // (not carried in the index); 49 files at ~50KB average is well inside the
   // function-size budget for one route. See lib/economyRates.ts.
   const full = new Map(banks.map((b) => [b.code, getBank(b.code)]));
 
-  const byLevel = [...banks].sort((a, b) => b.level - a.level);
-  const movers = banks.filter((b) => b.changes_12m > 0);
+  const rows: RateRow[] = banks.map((b) => {
+    const move = lastMove(full.get(b.code) ?? null);
+    return {
+      code: b.code,
+      name: b.name,
+      short: b.short,
+      iso2: b.iso2,
+      founded: b.founded,
+      series_from: b.series_from,
+      last_change: b.last_change,
+      level: b.level,
+      changes_12m: b.changes_12m,
+      hold_days: b.hold_days,
+      direction_12m: b.direction_12m,
+      power_rank: b.power_rank,
+      ended: b.ended,
+      ended_note: b.ended_note,
+      moveDate: move?.date ?? null,
+      moveChange: move?.change ?? null,
+    };
+  });
+
+  // Ended banks (the ten euro joiners) no longer make decisions, so they are
+  // excluded from both "who moved" and "the longest holds" - both boards are
+  // about live policy behaviour, not superseded history.
+  const living = banks.filter((b) => !b.ended);
+  const movers = living.filter((b) => b.changes_12m > 0);
   const cutting = movers.filter((b) => b.direction_12m === "cutting");
   const hiking = movers.filter((b) => b.direction_12m === "hiking");
   const mixed = movers.filter((b) => b.direction_12m === "mixed");
-  const longestHolds = banks
+  const longestHolds = living
     .filter((b) => b.hold_days != null && b.direction_12m !== "market")
     .sort((a, b) => (b.hold_days ?? 0) - (a.hold_days ?? 0))
     .slice(0, 10);
 
-  const stamp = index
-    ? `as of ${index.built} · ${banks.length} central banks · ${founded.length} with their own history to founding · BIS join layer`
-    : null;
-
-  function BankName({ b }: { b: RatesIndexEntry }) {
+  function BankLink({ b }: { b: { code: string; name: string; short: string } }) {
     return (
-      <Link href={bankHref(b.code)} className="hover:underline font-semibold inline-flex items-center gap-1.5" style={{ color: "var(--accent)" }}>
-        <img src={flagUrlByCode(b.iso2.toLowerCase())} srcSet={flagSrcSetByCode(b.iso2.toLowerCase())} alt="" width={16} height={12} className="rounded-[2px] flex-shrink-0" loading="lazy" decoding="async" />
-        <span className="truncate">{b.name}</span>
+      <Link href={bankHref(b.code)} className="hover:underline font-semibold" style={{ color: "var(--accent)" }}>
+        {b.name}
       </Link>
     );
   }
 
-  function SinceCell({ b }: { b: RatesIndexEntry }) {
-    return b.founded ? (
-      <span title={fullDate(b.founded)}>Founded {b.founded.slice(0, 4)}</span>
-    ) : (
-      <span className="text-[var(--text-dim)]">series from {b.series_from.slice(0, 4)}</span>
-    );
-  }
-
-  function RowCard({ b }: { b: RatesIndexEntry }) {
-    const move = lastMove(full.get(b.code) ?? null);
-    return (
-      <div className="p-3">
-        <div className="flex items-center justify-between gap-2 mb-1">
-          <BankName b={b} />
-          <span className="font-bold tabular-nums" style={MONO}><DataBar v={b.level} format={fmtPct} label="policy rate" /></span>
-        </div>
-        <div className="text-xs text-[var(--text-muted)] flex flex-wrap gap-x-3 gap-y-0.5" style={MONO}>
-          <span>{DIRECTION_LABEL[b.direction_12m]}</span>
-          {move && (
-            <span className="inline-flex items-center gap-1.5">
-              {move.date}
-              {move.change != null && (
-                <DivergingBar v={move.change} dp={2} suffix="%" style={{ color: move.change >= 0 ? "var(--div-pos)" : "var(--div-neg)" }} />
-              )}
-            </span>
-          )}
-        </div>
-      </div>
-    );
-  }
+  const stamp = index
+    ? `as of ${index.built} · ${banks.length} central banks · ${founded.length} with their own history to founding · BIS join layer`
+    : null;
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -149,68 +128,33 @@ export default async function EconomyPage() {
         <p className="text-sm text-[var(--text-muted)]">The rates dataset has not loaded; try again shortly.</p>
       ) : (
         <>
+          <section className="mb-8 rounded-2xl border p-4 sm:p-5 flex flex-wrap items-baseline justify-between gap-2" style={CARD}>
+            <p className="text-[13.5px] text-[var(--text-muted)] max-w-2xl">
+              Every bank below opens its own decision history, step-charted since its first change.
+              Or put several on one axis, in their own per cent terms.
+            </p>
+            <Link
+              href="/business/economy/compare"
+              className="rounded-md border px-3 py-1.5 text-xs font-medium whitespace-nowrap"
+              style={{ borderColor: "var(--accent)", color: "var(--accent)", background: "var(--bg-card)" }}
+            >
+              Compare central banks →
+            </Link>
+          </section>
+
           <section className="mb-10">
             <SectionHead
               title="Where rates stand"
-              sub="Every tracked central bank, ranked by policy level, with the last decision and how long it has held."
-              more="Level is the current policy rate (or the latest BIS-observed market rate where the bank has no policy instrument today). Trailing year reads the sign of moves over the last 365 days from the sign of moves in that window."
+              sub="Every tracked central bank, sortable by level, last move, direction or hold."
+              more="Level is the current policy rate (or the latest BIS-observed market rate where the bank has no policy instrument today). Trailing year reads the sign of moves over the last 365 days. The default order leads with the Fed, the ECB and the Bank of England, then every other bank by its power rank, with the ten banks superseded by the euro listed last."
             />
-            <div className="hidden sm:block">
-              <TableBox>
-                <thead>
-                  <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-                    <th className={TH}>Bank</th>
-                    <th className={THR}>Level</th>
-                    <th className={TH}>Last move</th>
-                    <th className={TH}>Trailing year</th>
-                    <th className={`${THR} ${SMCOL}`}>Hold</th>
-                    <th className={`${TH} ${SMCOL}`}>Since</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {byLevel.map((b) => {
-                    const move = lastMove(full.get(b.code) ?? null);
-                    return (
-                      <tr key={b.code} className="border-t" style={{ borderColor: "var(--border)" }}>
-                        <td className={`${TD} whitespace-nowrap`}><BankName b={b} /></td>
-                        <td className={TDR} style={MONO}><DataBar v={b.level} format={fmtPct} label="policy rate" /></td>
-                        <td className={`${TD} whitespace-nowrap`} style={MONO}>
-                          {move ? (
-                            <>
-                              {move.date}
-                              {move.change != null && (
-                                <span className="ml-2">
-                                  <DivergingBar v={move.change} dp={2} suffix="%" style={{ color: move.change >= 0 ? "var(--div-pos)" : "var(--div-neg)" }} />
-                                </span>
-                              )}
-                            </>
-                          ) : (
-                            <span className="text-[var(--text-dim)]">—</span>
-                          )}
-                        </td>
-                        <td className={TD}>{DIRECTION_LABEL[b.direction_12m]}</td>
-                        <td className={`${TDR} ${SMCOL}`} style={MONO}>{b.hold_days != null ? `${b.hold_days}d` : "—"}</td>
-                        <td className={`${TD} ${SMCOL} text-[var(--text-muted)]`}><SinceCell b={b} /></td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </TableBox>
-            </div>
-            <div className="sm:hidden rounded-xl border divide-y divide-[var(--border)] min-w-0" style={{ borderColor: "var(--border)" }}>
-              <CappedList
-                initial={12}
-                noun="central banks"
-                bodyClassName="divide-y divide-[var(--border)]"
-                items={byLevel.map((b) => <RowCard key={b.code} b={b} />)}
-              />
-            </div>
+            <RatesTable rows={rows} />
           </section>
 
           <section className="mb-10">
             <SectionHead
               title="Who moved this year"
-              sub="Banks with at least one decision in the trailing 365 days, grouped by direction."
+              sub="Live banks with at least one decision in the trailing 365 days, grouped by direction."
             />
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-3">
               {[
@@ -246,7 +190,7 @@ export default async function EconomyPage() {
           <section className="mb-10">
             <SectionHead
               title="The longest holds"
-              sub="Top ten among policy-rate banks by days since the last decision."
+              sub="Top ten among live policy-rate banks by days since the last decision."
             />
             <div className="hidden sm:block">
               <TableBox>
@@ -261,7 +205,7 @@ export default async function EconomyPage() {
                 <tbody>
                   {longestHolds.map((b) => (
                     <tr key={b.code} className="border-t" style={{ borderColor: "var(--border)" }}>
-                      <td className={`${TD} whitespace-nowrap`}><BankName b={b} /></td>
+                      <td className={`${TD} whitespace-nowrap`}><BankLink b={b} /></td>
                       <td className={TDR} style={MONO}><DataBar v={b.level} format={fmtPct} label="policy rate" /></td>
                       <td className={TDR} style={MONO}>{b.hold_days}d</td>
                       <td className={`${TD} text-[var(--text-muted)]`}>{b.last_change}</td>
@@ -275,7 +219,7 @@ export default async function EconomyPage() {
               {longestHolds.map((b) => (
                 <div key={b.code} className="p-3">
                   <div className="flex items-center justify-between gap-2 mb-1">
-                    <BankName b={b} />
+                    <BankLink b={b} />
                     <span className="font-bold tabular-nums" style={MONO}><DataBar v={b.level} format={fmtPct} label="policy rate" /></span>
                   </div>
                   <div className="text-xs text-[var(--text-muted)]" style={MONO}>{b.hold_days}d since {b.last_change}</div>

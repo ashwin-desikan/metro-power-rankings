@@ -1,7 +1,7 @@
 {
   "code": "bis-xm",
   "name": "Euro area (BIS)",
-  "short": "Euro area (BIS)",
+  "short": "Euro area",
   "country": "Euro area",
   "iso2": "XM",
   "currency": "EUR",
@@ -684,8 +684,12 @@
   },
   "sources": [
     {
-      "label": "BIS central bank policy rates (CBPOL), Euro area (BIS)",
+      "label": "BIS central bank policy rates (CBPOL), Euro area",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "ecb",
+  "ended": null,
+  "ended_note": null
 }

@@ -354,6 +354,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.7,
     },
+    {
+      url: `${BASE_URL}/business/economy/compare`,
+      lastModified: stamp,
+      changeFrequency: "daily" as const,
+      priority: 0.6,
+    },
     ...(getRatesIndex()?.banks ?? []).map((b) => ({
       url: `${BASE_URL}/business/economy/rates/${b.code}`,
       lastModified: stamp,

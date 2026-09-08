@@ -1,6 +1,6 @@
 {
   "code": "bis-rs",
-  "name": "Serbia",
+  "name": "National Bank of Serbia",
   "short": "Serbia",
   "country": "Serbia",
   "iso2": "RS",
@@ -1665,5 +1665,9 @@
       "label": "BIS central bank policy rates (CBPOL), Serbia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

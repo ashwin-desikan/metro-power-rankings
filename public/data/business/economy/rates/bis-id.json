@@ -1,6 +1,6 @@
 {
   "code": "bis-id",
-  "name": "Indonesia",
+  "name": "Bank Indonesia",
   "short": "Indonesia",
   "country": "Indonesia",
   "iso2": "ID",
@@ -945,5 +945,9 @@
       "label": "BIS central bank policy rates (CBPOL), Indonesia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

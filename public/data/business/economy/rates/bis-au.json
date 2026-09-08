@@ -4279,5 +4279,9 @@
       "label": "BIS central bank policy rates (CBPOL), Australia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "rba",
+  "ended": null,
+  "ended_note": null
 }

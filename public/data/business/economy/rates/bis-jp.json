@@ -1049,5 +1049,9 @@
       "label": "BIS central bank policy rates (CBPOL), Japan",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "boj",
+  "ended": null,
+  "ended_note": null
 }

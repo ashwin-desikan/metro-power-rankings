@@ -1,6 +1,6 @@
 {
   "code": "bis-ru",
-  "name": "Russia",
+  "name": "Bank of Russia",
   "short": "Russia",
   "country": "Russia",
   "iso2": "RU",
@@ -1565,5 +1565,9 @@
       "label": "BIS central bank policy rates (CBPOL), Russia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

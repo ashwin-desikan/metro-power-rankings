@@ -61,7 +61,7 @@ export default async function OwnersPage() {
     <main className="mx-auto max-w-6xl px-4 py-8">
       <Crumbs tab="Owners" />
       <TabHeader
-        emoji="🏦"
+        emoji="👑"
         title="The Owners"
         sub="Every quarter, every institution managing over $100M tells the SEC exactly what it holds. This board reduces those filings to who manages the most money, from which metros, what everyone owns, and who holds the giants."
         stamp={

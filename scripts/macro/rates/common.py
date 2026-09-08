@@ -41,14 +41,14 @@ BIS_ECONOMIES = {
     "CL": "Chile",
     "CN": "China",
     "CO": "Colombia",
-    "CZ": "Czechia",
+    "CZ": "Czech Republic",
     "DE": "Germany",
     "DK": "Denmark",
     "ES": "Spain",
     "FR": "France",
     "GB": "United Kingdom",
     "GR": "Greece",
-    "HK": "Hong Kong SAR",
+    "HK": "Hong Kong",
     "HR": "Croatia",
     "HU": "Hungary",
     "ID": "Indonesia",
@@ -57,7 +57,7 @@ BIS_ECONOMIES = {
     "IS": "Iceland",
     "IT": "Italy",
     "JP": "Japan",
-    "KR": "Korea",
+    "KR": "South Korea",
     "KW": "Kuwait",
     "MA": "Morocco",
     "MK": "North Macedonia",
@@ -76,7 +76,7 @@ BIS_ECONOMIES = {
     "SA": "Saudi Arabia",
     "SE": "Sweden",
     "TH": "Thailand",
-    "TR": "Turkiye",
+    "TR": "Turkey",
     "US": "United States",
     "XM": "Euro area",
     "ZA": "South Africa",
@@ -107,10 +107,128 @@ def bis_code_for(iso2):
     return "bis-" + iso2.lower()
 
 
+# The central bank's actual name, for every bis-<iso2> file NOT superseded
+# by an own-spine bank (see ISO2_SUPERSEDED_BY below). A superseded file
+# (GB, US, XM, JP, CH, SE, CA, AU, NZ, NO, DE) keeps whatever bis_name_for
+# already returns for it (the country name, or the XM override) since it's
+# a cross-check file only, never displayed as a listing of its own.
+BIS_BANK_NAMES = {
+    "AR": "Central Bank of Argentina",
+    "AT": "Oesterreichische Nationalbank",
+    "BE": "National Bank of Belgium",
+    "BR": "Central Bank of Brazil",
+    "CL": "Central Bank of Chile",
+    "CN": "People's Bank of China",
+    "CO": "Bank of the Republic (Colombia)",
+    "CZ": "Czech National Bank",
+    "DK": "Danmarks Nationalbank",
+    "ES": "Bank of Spain",
+    "FR": "Banque de France",
+    "GR": "Bank of Greece",
+    "HK": "Hong Kong Monetary Authority",
+    "HR": "Croatian National Bank",
+    "HU": "Magyar Nemzeti Bank",
+    "ID": "Bank Indonesia",
+    "IL": "Bank of Israel",
+    "IN": "Reserve Bank of India",
+    "IS": "Central Bank of Iceland",
+    "IT": "Banca d'Italia",
+    "KR": "Bank of Korea",
+    "KW": "Central Bank of Kuwait",
+    "MA": "Bank Al-Maghrib",
+    "MK": "National Bank of North Macedonia",
+    "MX": "Banco de Mexico",
+    "MY": "Bank Negara Malaysia",
+    "NL": "De Nederlandsche Bank",
+    "PE": "Central Reserve Bank of Peru",
+    "PH": "Bangko Sentral ng Pilipinas",
+    "PL": "National Bank of Poland",
+    "PT": "Banco de Portugal",
+    "RO": "National Bank of Romania",
+    "RS": "National Bank of Serbia",
+    "RU": "Bank of Russia",
+    "SA": "Saudi Central Bank",
+    "TH": "Bank of Thailand",
+    "TR": "Central Bank of the Republic of Turkey",
+    "ZA": "South African Reserve Bank",
+}
+
+
 def bis_name_for(iso2):
+    """The bank `name` field for a bis-<iso2> file: the central bank's
+    actual name for a listed file, the country name (or XM's override) for
+    a superseded one."""
+    if iso2 in BIS_BANK_NAMES:
+        return BIS_BANK_NAMES[iso2]
     if iso2 in BIS_CODE_OVERRIDES:
         return BIS_CODE_OVERRIDES[iso2]["name"]
     return BIS_ECONOMIES[iso2]
+
+
+def bis_short_for(iso2):
+    """The bank `short` field: the short country-style label used in
+    charts (e.g. "China"), always the country name -- never the central
+    bank's own name, listed or not."""
+    return BIS_ECONOMIES[iso2]
+
+
+# ---------------------------------------------------------------------------
+# Own-spine supersession: a bis-<iso2> file for an economy that also has an
+# own-spine bank is still written (it is the cross-check input), but is not
+# a second listing of the same central bank.
+ISO2_SUPERSEDED_BY = {
+    "GB": "boe", "US": "fed", "XM": "ecb", "JP": "boj", "CH": "snb",
+    "SE": "riksbank", "CA": "boc", "AU": "rba", "NZ": "rbnz",
+    "NO": "norges", "DE": "buba",
+}
+
+# ---------------------------------------------------------------------------
+# Euro adoption: the currency this bank set is no longer set by it. Keyed by
+# iso2 so it applies uniformly to a country's own-spine file (buba, iso2
+# "DE") and its bis-<iso2> cross-check file alike, with no per-builder
+# wiring needed -- write_bank looks this up from the `iso2` it is given.
+ISO2_ENDED = {
+    "AT": ("1998-12-31", "Joined the euro on 1 January 1999; the ECB sets the rate since."),
+    "BE": ("1998-12-31", "Joined the euro on 1 January 1999; the ECB sets the rate since."),
+    "DE": ("1998-12-31", "Joined the euro on 1 January 1999; the ECB sets the rate since."),
+    "ES": ("1998-12-31", "Joined the euro on 1 January 1999; the ECB sets the rate since."),
+    "FR": ("1998-12-31", "Joined the euro on 1 January 1999; the ECB sets the rate since."),
+    "IT": ("1998-12-31", "Joined the euro on 1 January 1999; the ECB sets the rate since."),
+    "NL": ("1998-12-31", "Joined the euro on 1 January 1999; the ECB sets the rate since."),
+    "PT": ("1998-12-31", "Joined the euro on 1 January 1999; the ECB sets the rate since."),
+    "GR": ("2000-12-31", "Joined the euro on 1 January 2001; the ECB sets the rate since."),
+    "HR": ("2022-12-31", "Joined the euro on 1 January 2023; the ECB sets the rate since."),
+}
+
+# ---------------------------------------------------------------------------
+# Power rank: public/data/countries.json scoreRank, joined on the bank
+# file's `country` name.
+COUNTRIES_JSON = os.path.join(REPO_ROOT, "public", "data", "countries.json")
+
+COUNTRY_ALIASES = {
+    "Czechia": "Czech Republic",
+    "Hong Kong SAR": "Hong Kong",
+    "Korea": "South Korea",
+    "Turkiye": "Turkey",
+    "Euro area": None,  # no country, no rank -- always null, not "missing"
+}
+
+
+def load_power_ranks():
+    """{country name: scoreRank} from public/data/countries.json."""
+    with open(COUNTRIES_JSON, encoding="utf-8") as f:
+        countries = json.load(f)
+    return {c["name"]: c.get("scoreRank") for c in countries}
+
+
+def power_rank_for(country, ranks_by_name):
+    if country in COUNTRY_ALIASES:
+        name = COUNTRY_ALIASES[country]
+        if name is None:
+            return None
+    else:
+        name = country
+    return ranks_by_name.get(name)
 
 
 # ---------------------------------------------------------------------------
@@ -381,7 +499,8 @@ def derive_short_name(text):
 
 
 def write_bank(code, name, short, country, iso2, currency, founded,
-                instruments, changes, coverage, sources, out_dir=OUT_DIR):
+                instruments, changes, coverage, sources, out_dir=OUT_DIR,
+                listed=True, superseded_by=None, ended=None, ended_note=None):
     """Validates and writes public/data/business/economy/rates/<code>.json.
 
     `instruments` comes in as [{'from','to','name'}] (the builder's era
@@ -528,7 +647,17 @@ def write_bank(code, name, short, country, iso2, currency, founded,
         "path": path,
         "coverage": coverage,
         "sources": sources,
+        "listed": listed,
+        "superseded_by": superseded_by,
     }
+
+    # Euro adoption: applies uniformly by iso2 (a country's own-spine file
+    # and its bis-<iso2> cross-check file both pick this up automatically),
+    # unless the builder already passed an explicit ended/ended_note.
+    if ended is None and iso2 in ISO2_ENDED:
+        ended, ended_note = ISO2_ENDED[iso2]
+    data["ended"] = ended
+    data["ended_note"] = ended_note
 
     path_out = os.path.join(out_dir, "{}.json".format(code))
     with open(path_out, "w", encoding="utf-8") as f:
@@ -580,21 +709,51 @@ def compute_index_entry(bank):
     overall span start (first_change: real founding for own-spine banks
     where known, a BIS series start otherwise); `founded` is the real
     institutional founding date and is null when the builder doesn't know
-    one (every BIS-only file)."""
+    one (every BIS-only file). `power_rank` is left null here; build_index
+    fills it in from public/data/countries.json so this function stays
+    free of that file.
+
+    A bank with `ended` set (its currency was replaced by the euro) is no
+    longer "on hold": changes_12m is forced to 0, hold_days to null,
+    direction_12m to "ended", and level is the last level as of the end
+    date, not a stale post-end row if one somehow exists."""
     policy_changes = [c for c in bank["changes"] if not c.get("break")]
     instruments = bank.get("instruments") or []
     latest_kind = instruments[-1]["kind"] if instruments else None
+    ended = bank.get("ended")
 
     entry = {
         "code": bank["code"],
         "name": bank["name"],
         "short": bank["short"],
+        "country": bank["country"],
         "iso2": bank["iso2"],
         "founded": bank.get("founded"),
         "series_from": bank["first_change"],
         "last_change": bank["last_change"],
         "spine": bank["coverage"]["spine"],
+        "power_rank": None,
+        "ended": ended,
+        "ended_note": bank.get("ended_note"),
     }
+
+    if ended:
+        before_end = [c for c in policy_changes if c["date"] <= ended]
+        last = before_end[-1] if before_end else (policy_changes[-1] if policy_changes else None)
+        if last:
+            level = last["level"]
+        elif bank.get("market"):
+            level = bank["market"][-1]["last"]
+        else:
+            level = None
+        entry.update({
+            "level": level,
+            "changes": len(policy_changes),
+            "changes_12m": 0,
+            "hold_days": None,
+            "direction_12m": "ended",
+        })
+        return entry
 
     if policy_changes:
         last = policy_changes[-1]

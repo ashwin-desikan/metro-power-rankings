@@ -1,6 +1,6 @@
 {
   "code": "bis-sa",
-  "name": "Saudi Arabia",
+  "name": "Saudi Central Bank",
   "short": "Saudi Arabia",
   "country": "Saudi Arabia",
   "iso2": "SA",
@@ -662,5 +662,9 @@
       "label": "BIS central bank policy rates (CBPOL), Saudi Arabia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

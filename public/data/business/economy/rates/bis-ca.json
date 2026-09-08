@@ -10895,5 +10895,9 @@
       "label": "BIS central bank policy rates (CBPOL), Canada",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "boc",
+  "ended": null,
+  "ended_note": null
 }

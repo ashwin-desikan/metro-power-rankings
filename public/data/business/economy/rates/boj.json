@@ -2023,5 +2023,9 @@
       "label": "BIS central bank policy rates (CBPOL), Japan",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

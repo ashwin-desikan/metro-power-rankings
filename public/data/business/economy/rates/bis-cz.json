@@ -1,8 +1,8 @@
 {
   "code": "bis-cz",
-  "name": "Czechia",
-  "short": "Czechia",
-  "country": "Czechia",
+  "name": "Czech National Bank",
+  "short": "Czech Republic",
+  "country": "Czech Republic",
   "iso2": "CZ",
   "currency": "CZK",
   "founded": null,
@@ -1199,8 +1199,12 @@
   },
   "sources": [
     {
-      "label": "BIS central bank policy rates (CBPOL), Czechia",
+      "label": "BIS central bank policy rates (CBPOL), Czech Republic",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

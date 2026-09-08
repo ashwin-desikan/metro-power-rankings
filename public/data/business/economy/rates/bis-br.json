@@ -1,6 +1,6 @@
 {
   "code": "bis-br",
-  "name": "Brazil",
+  "name": "Central Bank of Brazil",
   "short": "Brazil",
   "country": "Brazil",
   "iso2": "BR",
@@ -23538,5 +23538,9 @@
       "label": "BIS central bank policy rates (CBPOL), Brazil",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

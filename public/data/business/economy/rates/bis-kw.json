@@ -1,6 +1,6 @@
 {
   "code": "bis-kw",
-  "name": "Kuwait",
+  "name": "Central Bank of Kuwait",
   "short": "Kuwait",
   "country": "Kuwait",
   "iso2": "KW",
@@ -432,5 +432,9 @@
       "label": "BIS central bank policy rates (CBPOL), Kuwait",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

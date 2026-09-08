@@ -1,6 +1,6 @@
 {
   "code": "bis-hr",
-  "name": "Croatia",
+  "name": "Croatian National Bank",
   "short": "Croatia",
   "country": "Croatia",
   "iso2": "HR",
@@ -4609,5 +4609,9 @@
       "label": "BIS central bank policy rates (CBPOL), Croatia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": "2022-12-31",
+  "ended_note": "Joined the euro on 1 January 2023; the ECB sets the rate since."
 }

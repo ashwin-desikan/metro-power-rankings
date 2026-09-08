@@ -228,48 +228,50 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
     // render anyway and the two overlapped. MobileMenu — which mirrors these
     // same sections from lib/sportsCatalog — covers that band instead.
     <div className="hidden lg:flex gap-4 lg:gap-5 items-center">
-      <Dropdown id="data" label="Geography" href="/geography" openId={openId} setOpenId={setOpenId} minWidth={480}>
+      <Dropdown id="data" label="Geography" href="/geography" openId={openId} setOpenId={setOpenId} minWidth={520}>
         <div className="p-2 grid grid-cols-2 gap-x-4">
           <div>
             <MenuGroupLabel>🗺️ Places &amp; directories</MenuGroupLabel>
-            <MenuLink href="/rankings" title="Metro Power Rankings" />
-            <MenuLink href="/ground-floor" title="The Ground Floor" />
-            <MenuLink href="/countries" title="Countries" />
-            <MenuLink href="/states" title="States &amp; Provinces" />
-            <MenuLink href="/skyscrapers" title="Supertall Skyscrapers" />
-            <MenuLink href="/expandable-map" title="Expandable Map" />
-            <MenuLink href="/compare" title="Compare metros" />
-            <MenuLink href="/matchups/london-vs-new-york" title="Matchups" />
+            <MenuLink href="/rankings" title="🌐 Metro Power Rankings" />
+            <MenuLink href="/ground-floor" title="🏗️ The Ground Floor" />
+            <MenuLink href="/countries" title="🏳️ Countries" />
+            <MenuLink href="/states" title="🗺️ States &amp; Provinces" />
+            <MenuLink href="/skyscrapers" title="🏙️ Supertall Skyscrapers" />
+            <MenuLink href="/expandable-map" title="🧭 Expandable Map" />
+            <MenuLink href="/compare" title="⚖️ Compare metros" />
+            <MenuLink href="/matchups/london-vs-new-york" title="🥊 Matchups" />
+            <MenuLink href="/neighborhoods" title="🏘️ Neighborhoods" />
             {/* The past and the future, side by side. /predictions had the
                 same orphan bug the Time Machine hub was built to fix: it was
                 in neither nav and reachable only by knowing the URL. */}
             <MenuGroupLabel>🕰️ Across time</MenuGroupLabel>
-            <MenuLink href="/time-machine" title="The Time Machine" />
+            <MenuLink href="/time-machine" title="🕰️ The Time Machine" />
             <MenuLink href="/predictions" title="🔮 Predictions" />
             <MenuLink href="/predictions/scoreboard" title="📓 The Ledger" />
+            <MenuGroupLabel>🤝 Geopolitics</MenuGroupLabel>
+            <MenuLink href="/orgs" title="🤝 Alliances &amp; Orgs" />
+            <MenuLink href="/conflicts" title="⚔️ Interstate Wars" />
           </div>
           <div>
             <MenuGroupLabel>👑 Power &amp; people</MenuGroupLabel>
-            <MenuLink href="/power" title="The Nowhere 100" />
-            <MenuLink href="/leaders" title="World Leaders" />
-            <MenuLink href="/power-atlas" title="The Power Atlas" />
-            <MenuLink href="/us-political-leadership" title="US Political Leadership" />
-            <MenuLink href="/uk-political-leadership" title="UK Political Leadership" />
-            <MenuLink href="/elections" title="Elections" />
-            <MenuLink href="/constitutions" title={"The World's Constitutions"} />
-            <MenuLink href="/constitutions/leaders" title="Who Outlasts Whom" />
-            <MenuLink href="/mayors" title="Mayors of the World" />
-            <MenuGroupLabel>🤝 Geopolitics</MenuGroupLabel>
-            <MenuLink href="/orgs" title="Alliances &amp; Orgs" />
-            <MenuLink href="/conflicts" title="Interstate Wars" />
+            <MenuLink href="/power" title="👑 The Nowhere 100" />
+            <MenuLink href="/leaders" title="🎖️ World Leaders" />
+            <MenuLink href="/power-atlas" title="🏛️ The Power Atlas" />
+            <MenuLink href="/us-political-leadership" title="🏛️ US Political Leadership" />
+            <MenuLink href="/uk-political-leadership" title="🏛️ UK Political Leadership" />
+            <MenuLink href="/elections" title="🗳️ Elections" />
+            <MenuLink href="/constitutions" title={"📜 The World's Constitutions"} />
+            <MenuLink href="/constitutions/leaders" title="⏳ Who Outlasts Whom" />
+            <MenuLink href="/mayors" title="🏙️ Mayors of the World" />
             {/* The Order layer reads business, sport and culture as well as
                 geography, so /order is a peer route rather than a child of
                 this hub. It sits here until it has enough boards to earn its
                 own top-level menu. */}
             <MenuGroupLabel>⚖️ Political order</MenuGroupLabel>
             <MenuLink href="/order" title="🧭 The Order layer" />
-            <MenuLink href="/order/grid" title="The Order Grid" />
-            <MenuLink href="/order/trajectory" title="Direction of Travel" />
+            <MenuLink href="/order/grid" title="🔲 The Order Grid" />
+            <MenuLink href="/order/trajectory" title="📉 Direction of Travel" />
+            <MenuLink href="/order/recognition-gap" title="⚖️ The Recognition Gap" />
           </div>
         </div>
         <div className="border-t px-2 py-1.5 flex gap-2" style={{ borderColor: "var(--border)" }}>
@@ -312,7 +314,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       {/* Culture: Sound (music) and Screen (film) side by side. Curated to the
           marquee destinations only — each hub's own tab nav and "More from"
           cards carry the long tail, so this menu stays scannable. */}
-      <Dropdown id="culture" label="Culture" openId={openId} setOpenId={setOpenId} minWidth={540}>
+      <Dropdown id="culture" label="Culture" openId={openId} setOpenId={setOpenId} minWidth={580}>
         <div className="p-2 grid grid-cols-2 gap-x-4">
           <div>
             <MenuGroupLabel>🎵 Music</MenuGroupLabel>
@@ -320,14 +322,17 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
               href="/sound"
               className="block px-2 py-1.5 rounded text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
             >
-              The Sound of the Metros <span aria-hidden className="text-[var(--text-dim)]">→</span>
+              🎵 The Sound of the Metros <span aria-hidden className="text-[var(--text-dim)]">→</span>
             </a>
-            <MenuLink href="/sound/charts" title="Live Charts" />
-            <MenuLink href="/sound/rankings" title="Rankings by Metro" />
-            <MenuLink href="/sound/artists" title="Artists" />
-            <MenuLink href="/sound/grammys" title="Awards History" />
-            <MenuLink href="/sound/number-ones" title="Number-One Machines" />
-            <MenuLink href="/sound/rolling-stone-500" title="RS 500 Greatest Albums" />
+            <MenuLink href="/sound/charts" title="📡 Live Charts" />
+            <MenuLink href="/sound/rankings" title="📊 Rankings by Metro" />
+            <MenuLink href="/sound/artists" title="🎤 Artists" />
+            <MenuLink href="/sound/grammys" title="🏆 Awards History" />
+            <MenuLink href="/sound/number-ones" title="1️⃣ Number-One Machines" />
+            <MenuLink href="/sound/rolling-stone-500" title="📀 RS 500 Greatest Albums" />
+            <MenuLink href="/sound/decades" title="📅 Decades" />
+            <MenuLink href="/sound/scenes" title="🏙️ Scenes" />
+            <MenuLink href="/sound/velvet-rock" title="🎸 Velvet Rock" />
           </div>
           <div>
             <MenuGroupLabel>
@@ -337,13 +342,17 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
               href="/screen"
               className="block px-2 py-1.5 rounded text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
             >
-              The Screen of the Metros <span aria-hidden className="text-[var(--text-dim)]">→</span>
+              🎬 The Screen of the Metros <span aria-hidden className="text-[var(--text-dim)]">→</span>
             </a>
-            <MenuLink href="/screen/rankings" title="Rankings by Metro" />
-            <MenuLink href="/screen/years" title="Year by Year" />
-            <MenuLink href="/screen/number-ones" title="US Number Ones" />
-            <MenuLink href="/screen/oscars" title="Oscar Winners" />
-            <MenuLink href="/screen/canon" title="500 Greatest Films" />
+            <MenuLink href="/screen/rankings" title="📊 Rankings by Metro" />
+            <MenuLink href="/screen/countries" title="🌍 Rankings by Country" />
+            <MenuLink href="/screen/people" title="🎭 People" />
+            <MenuLink href="/screen/films" title="🎞️ Films" />
+            <MenuLink href="/screen/years" title="📅 Year by Year" />
+            <MenuLink href="/screen/number-ones" title="1️⃣ US Number Ones" />
+            <MenuLink href="/screen/oscars" title="🏆 Oscar Winners" />
+            <MenuLink href="/screen/academy" title="🎓 The Academy" />
+            <MenuLink href="/screen/canon" title="📽️ 500 Greatest Films" />
           </div>
         </div>
         <div className="border-t px-3 py-2 flex gap-4 text-xs" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -360,10 +369,12 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/business/companies" title="🏢 Companies" />
         <DropdownItem href="/business/private" title="🦄 Private & Unicorns" />
         <DropdownItem href="/business/sp500" title="📈 S&P 500" />
-        <DropdownItem href="/business/owners" title="🏦 Owners" />
-        <DropdownItem href="/business/markets" title="📊 Markets" />
+        <DropdownItem href="/business/rankings" title="🏛️ Rankings" />
+        <DropdownItem href="/business/owners" title="👑 Owners" />
+        <DropdownItem href="/business/markets" title="🌐 Markets" />
         <DropdownItem href="/business/currencies" title="💱 Currencies" />
-        <DropdownItem href="/business/leaders" title="👔 Leaders" />
+        <DropdownItem href="/business/economy" title="🏦 Economy" />
+        <DropdownItem href="/business/leaders" title="🎩 Leaders" />
         <DropdownItem href="/business/crossovers" title="🔀 Crossovers" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/billionaires" title="💰 Billionaires" />

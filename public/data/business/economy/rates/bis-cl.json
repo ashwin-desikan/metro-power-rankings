@@ -1,6 +1,6 @@
 {
   "code": "bis-cl",
-  "name": "Chile",
+  "name": "Central Bank of Chile",
   "short": "Chile",
   "country": "Chile",
   "iso2": "CL",
@@ -1272,5 +1272,9 @@
       "label": "BIS central bank policy rates (CBPOL), Chile",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

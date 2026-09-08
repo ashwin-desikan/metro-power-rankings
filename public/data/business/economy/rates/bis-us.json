@@ -7288,5 +7288,9 @@
       "label": "BIS central bank policy rates (CBPOL), United States",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "fed",
+  "ended": null,
+  "ended_note": null
 }

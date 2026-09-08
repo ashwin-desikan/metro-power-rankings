@@ -1,6 +1,6 @@
 {
   "code": "bis-is",
-  "name": "Iceland",
+  "name": "Central Bank of Iceland",
   "short": "Iceland",
   "country": "Iceland",
   "iso2": "IS",
@@ -1221,5 +1221,9 @@
       "label": "BIS central bank policy rates (CBPOL), Iceland",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

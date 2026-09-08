@@ -11499,3 +11499,32 @@ placeholders before).
   has not ruled on those.
 - Release note amended (one block for the day, four bullets, 204 to 215
   characters).
+- **Finals strips on /sports/standings no longer scroll.** Each finals week
+  is its own sub-table (`fixtures: true`): the week label moves to the title,
+  the match cell wraps, the rank column is dropped and the first column pins.
+  Measured on the dev server: 1280px finals tables 464/464 (no overflow),
+  390px cards unclipped, page 390 wide. Native build of the afternoon tree:
+  tsc clean, 67 hubs / 16 confirmed dates, mobile and table-scroll checks
+  OK, `next build` OK, function-size 224.2 MB max (WARN; 304 routes now sit
+  at or above 220 MB, the football season pages first: `lib/data.ts`
+  per-file loaders remain the open fix), probe 18/18 clean at 390px.
+- **Evening review round (Ashwin).** Rates board: one row per bank (the
+  eleven bis-* duplicates of own-spine banks carry `listed: false` and
+  are out of the index), sortable (`RatesTable.tsx`, leaders idiom), default
+  order Fed, ECB, BoE pinned then `power_rank` from /countries' scoreRank,
+  euro joiners (AT, BE, DE, ES, FR, IT, NL, PT 1998-12-31; GR 2000-12-31;
+  HR 2022-12-31) carry `ended` and read "Joined the euro" instead of a
+  hold; BIS-only banks named as banks (People's Bank of China), countries
+  spelled as /countries spells them. `/business/economy/compare`: step
+  overlay of up to six banks' raw levels, no rebase, 150 KB payload.
+  Top menu: every Geography, Culture and Business item carries its page's
+  own emoji; Business gains Rankings and Economy, Culture gains the missing
+  Sound and Screen tabs, Geography gains Neighborhoods and the Recognition
+  Gap; MobileMenu mirrors. Trap hit twice today: a client component that
+  imports anything but types from a server-only lib fails `next build`
+  (RatesTable imported `bankHref`); `check:client-imports` did not catch
+  it. Also: re-sending a changed file through the bridge under the SAME
+  staged path once delivered the old bytes; use a fresh staged path and
+  `findstr` the Windows copy before building. Native build clean, probe
+  9/9 (economy, compare, three bank pages, owners, standings, home,
+  business).

@@ -955,5 +955,9 @@
       "label": "BIS central bank policy rates (CBPOL), Switzerland",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": false,
+  "superseded_by": "snb",
+  "ended": null,
+  "ended_note": null
 }

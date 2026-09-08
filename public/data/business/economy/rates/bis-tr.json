@@ -1,8 +1,8 @@
 {
   "code": "bis-tr",
-  "name": "Turkiye",
-  "short": "Turkiye",
-  "country": "Turkiye",
+  "name": "Central Bank of the Republic of Turkey",
+  "short": "Turkey",
+  "country": "Turkey",
   "iso2": "TR",
   "currency": "TRY",
   "founded": null,
@@ -1122,8 +1122,12 @@
   },
   "sources": [
     {
-      "label": "BIS central bank policy rates (CBPOL), Turkiye",
+      "label": "BIS central bank policy rates (CBPOL), Turkey",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

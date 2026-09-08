@@ -1,6 +1,6 @@
 {
   "code": "bis-pe",
-  "name": "Peru",
+  "name": "Central Reserve Bank of Peru",
   "short": "Peru",
   "country": "Peru",
   "iso2": "PE",
@@ -882,5 +882,9 @@
       "label": "BIS central bank policy rates (CBPOL), Peru",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

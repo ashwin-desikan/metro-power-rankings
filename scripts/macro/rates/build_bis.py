@@ -86,6 +86,8 @@ def build_one(iso2, write=True, daily_rows=None, compilation=None):
 
     code = c.bis_code_for(iso2)
     name = c.bis_name_for(iso2)
+    short = c.bis_short_for(iso2)
+    country = c.BIS_ECONOMIES[iso2]
     currency = c.CURRENCY_BY_ISO2.get(iso2, "")
 
     note = (
@@ -105,7 +107,7 @@ def build_one(iso2, write=True, daily_rows=None, compilation=None):
     coverage = {"spine": "bis", "note": note}
     sources = [
         {
-            "label": "BIS central bank policy rates (CBPOL), {}".format(name),
+            "label": "BIS central bank policy rates (CBPOL), {}".format(country),
             "url": "https://data.bis.org/topics/CBPOL",
         },
     ]
@@ -114,11 +116,14 @@ def build_one(iso2, write=True, daily_rows=None, compilation=None):
         return changes, instruments, coverage
 
     out_dir = c.OUT_DIR
+    superseded_by = c.ISO2_SUPERSEDED_BY.get(iso2)
     path = c.write_bank(
-        code=code, name=name, short=name, country=c.BIS_ECONOMIES[iso2],
+        code=code, name=name, short=short, country=country,
         iso2=iso2, currency=currency, founded=None,
         instruments=instruments, changes=changes, coverage=coverage, sources=sources,
         out_dir=out_dir,
+        listed=superseded_by is None,
+        superseded_by=superseded_by,
     )
     return path, changes
 

@@ -1,6 +1,6 @@
 {
   "code": "bis-fr",
-  "name": "France",
+  "name": "Banque de France",
   "short": "France",
   "country": "France",
   "iso2": "FR",
@@ -2695,5 +2695,9 @@
       "label": "BIS central bank policy rates (CBPOL), France",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": "1998-12-31",
+  "ended_note": "Joined the euro on 1 January 1999; the ECB sets the rate since."
 }

@@ -1,6 +1,6 @@
 {
   "code": "bis-ar",
-  "name": "Argentina",
+  "name": "Central Bank of Argentina",
   "short": "Argentina",
   "country": "Argentina",
   "iso2": "AR",
@@ -29588,5 +29588,9 @@
       "label": "BIS central bank policy rates (CBPOL), Argentina",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

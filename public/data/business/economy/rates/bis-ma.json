@@ -1,6 +1,6 @@
 {
   "code": "bis-ma",
-  "name": "Morocco",
+  "name": "Bank Al-Maghrib",
   "short": "Morocco",
   "country": "Morocco",
   "iso2": "MA",
@@ -222,5 +222,9 @@
       "label": "BIS central bank policy rates (CBPOL), Morocco",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

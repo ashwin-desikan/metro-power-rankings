@@ -1,6 +1,6 @@
 {
   "code": "bis-mk",
-  "name": "North Macedonia",
+  "name": "National Bank of North Macedonia",
   "short": "North Macedonia",
   "country": "North Macedonia",
   "iso2": "MK",
@@ -3872,5 +3872,9 @@
       "label": "BIS central bank policy rates (CBPOL), North Macedonia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }

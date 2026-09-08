@@ -1,6 +1,6 @@
 {
   "code": "bis-co",
-  "name": "Colombia",
+  "name": "Bank of the Republic (Colombia)",
   "short": "Colombia",
   "country": "Colombia",
   "iso2": "CO",
@@ -1492,5 +1492,9 @@
       "label": "BIS central bank policy rates (CBPOL), Colombia",
       "url": "https://data.bis.org/topics/CBPOL"
     }
-  ]
+  ],
+  "listed": true,
+  "superseded_by": null,
+  "ended": null,
+  "ended_note": null
 }
