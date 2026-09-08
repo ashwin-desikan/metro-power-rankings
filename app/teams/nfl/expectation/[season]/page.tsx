@@ -9,6 +9,7 @@ import {
   getNflExpectationSeason,
   getNflExpectationTeams,
   gameKey,
+  scoreAwayFirst,
   type GameRow,
 } from "@/lib/nflExpectation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -298,7 +299,7 @@ export default async function NflExpectationSeasonPage({
                       {g.model ? pct(g.model.pH) : ""}
                     </td>
                     <td className="py-1.5 px-3 text-right tabular-nums whitespace-nowrap" style={mono}>
-                      {g.score ?? (g.result ? g.result : "")}
+                      {scoreAwayFirst(g) ?? (g.result ? g.result : "")}
                     </td>
                     <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">
                       {g.playoff ? (g.round ?? "playoff") : typeof g.week === "number" ? `wk ${g.week}` : g.week ?? ""}

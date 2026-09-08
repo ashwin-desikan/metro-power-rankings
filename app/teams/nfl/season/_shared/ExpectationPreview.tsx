@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { getNflExpectation, getNflExpectationSeason, gameKey } from "@/lib/nflExpectation";
+import { getNflExpectation, getNflExpectationSeason, gameKey, scoreWinnerFirst } from "@/lib/nflExpectation";
 
 // What the season looked like to a model that had to say so beforehand.
 //
@@ -92,7 +92,7 @@ export default async function ExpectationPreview({ season }: { season: number })
                       <Link href={`/teams/nfl/${wSlug}`} className="hover:text-[var(--accent)] hover:underline">{winner}</Link>
                     ) : winner}
                     <span className="text-[var(--text-muted)]"> beat {loser}</span>
-                    {g.score ? <span className="ml-1.5 tabular-nums text-[var(--text-dim)]" style={MONO}>{g.score}</span> : null}
+                    {scoreWinnerFirst(g) ? <span className="ml-1.5 tabular-nums text-[var(--text-dim)]" style={MONO}>{scoreWinnerFirst(g)}</span> : null}
                     {g.rest?.home || g.rest?.away ? (
                       <span
                         className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded-full border text-[var(--text-muted)] whitespace-nowrap align-middle"

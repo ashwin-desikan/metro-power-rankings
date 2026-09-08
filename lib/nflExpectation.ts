@@ -155,6 +155,23 @@ export function gameKey(g: Pick<GameRow, "date" | "home" | "away">): string {
   return `${g.date ?? ""}|${g.home}|${g.away}`;
 }
 
+/**
+ * `score` is stored HOME-first ("home-away"). Every printed score must follow
+ * the order the names are printed in, so a row that reads "Away at Home"
+ * prints away-first and a line that reads "Winner beat Loser" prints the
+ * winner's points first. Never print `g.score` raw beside a name pair.
+ */
+export function scoreAwayFirst(g: Pick<GameRow, "score">): string | null {
+  if (!g.score) return null;
+  const [h, a] = g.score.split("-");
+  return a != null ? `${a}-${h}` : g.score;
+}
+
+export function scoreWinnerFirst(g: Pick<GameRow, "score" | "result">): string | null {
+  if (!g.score) return null;
+  return g.result === "A" ? scoreAwayFirst(g) : g.score;
+}
+
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
