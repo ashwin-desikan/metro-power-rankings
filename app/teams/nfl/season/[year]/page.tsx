@@ -227,12 +227,12 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           <SectionHead
             id="towers"
             title="The season as a shape"
-            sub="Wins stack up, losses hang down; the taller the box, the less anyone saw it coming."
+            sub="One box per week, week 1 at the bottom: green a win, red a loss; bright and outlined means nobody saw it coming."
             more={
-              "Regular-season games only, one box per game, stacked in the order they were played. A box's height is the surprise of its result: " +
-              "1 minus the probability the model gave the actual winner, so a blowout of a bad team is a short box and a coin-flip upset is a tall one, " +
-              "on the same win or loss it would be either way. Ties draw as a thin box on the baseline. Teams are ordered by wins, then by where the " +
-              "season's own standings put them, so the shape reads left to right the way the table above does."
+              "Regular-season games only, one row per week, stacked bottom to top from week 1 so every team's column is the same height and lines up " +
+              "on the same week axis. A box's colour is win or loss; its shade is how surprising the result was, from the probability the model gave " +
+              "the side that actually won, banded into expected (60% or better), toss-up, and shock (under 40%, which also gets an outline and a corner " +
+              "dot so it still reads without colour). A bye is an empty dashed slot, and a tie is a thin grey box. Teams are ordered by wins."
             }
           />
           <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>
