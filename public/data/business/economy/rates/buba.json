@@ -1,0 +1,1043 @@
+{
+  "code": "buba",
+  "name": "Deutsche Bundesbank",
+  "short": "Bundesbank",
+  "country": "Germany",
+  "iso2": "DE",
+  "currency": "EUR",
+  "founded": "1948-07-01",
+  "first_change": "1948-07-01",
+  "last_change": "1996-04-19",
+  "built": "2026-09-08",
+  "instruments": [
+    {
+      "from": "1948-07-01",
+      "to": "1998-12-31",
+      "name": "Discount rate",
+      "text": "Discount rate",
+      "kind": "policy"
+    }
+  ],
+  "changes": [
+    {
+      "date": "1948-07-01",
+      "level": 5.0,
+      "change": null,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1949-05-27",
+      "level": 4.5,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1949-07-14",
+      "level": 4.0,
+      "change": -0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1950-10-27",
+      "level": 6.0,
+      "change": 2.0,
+      "secondary": 7.0,
+      "era": 0
+    },
+    {
+      "date": "1952-05-29",
+      "level": 5.0,
+      "change": -1.0,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1952-08-21",
+      "level": 4.5,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1953-01-08",
+      "level": 4.0,
+      "change": -0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1953-06-11",
+      "level": 3.5,
+      "change": -0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1954-05-20",
+      "level": 3.0,
+      "change": -0.5,
+      "secondary": 4.0,
+      "era": 0
+    },
+    {
+      "date": "1955-08-04",
+      "level": 3.5,
+      "change": 0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1956-03-08",
+      "level": 4.5,
+      "change": 1.0,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1956-04-19",
+      "level": 5.5,
+      "change": 1.0,
+      "secondary": 6.5,
+      "era": 0
+    },
+    {
+      "date": "1956-05-06",
+      "level": 5.0,
+      "change": -0.5,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1957-01-11",
+      "level": 4.5,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1957-09-19",
+      "level": 4.0,
+      "change": -0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1958-01-17",
+      "level": 3.5,
+      "change": -0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1958-06-27",
+      "level": 3.0,
+      "change": -0.5,
+      "secondary": 4.0,
+      "era": 0
+    },
+    {
+      "date": "1959-01-10",
+      "level": 2.75,
+      "change": -0.25,
+      "secondary": 3.75,
+      "era": 0
+    },
+    {
+      "date": "1959-09-04",
+      "level": 3.0,
+      "change": 0.25,
+      "secondary": 4.0,
+      "era": 0
+    },
+    {
+      "date": "1959-10-23",
+      "level": 4.0,
+      "change": 1.0,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1960-06-03",
+      "level": 5.0,
+      "change": 1.0,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1960-11-11",
+      "level": 4.0,
+      "change": -1.0,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1961-01-20",
+      "level": 3.5,
+      "change": -0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1961-05-05",
+      "level": 3.0,
+      "change": -0.5,
+      "secondary": 4.0,
+      "era": 0
+    },
+    {
+      "date": "1965-01-22",
+      "level": 3.5,
+      "change": 0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1965-08-13",
+      "level": 4.0,
+      "change": 0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1966-05-27",
+      "level": 5.0,
+      "change": 1.0,
+      "secondary": 6.25,
+      "era": 0
+    },
+    {
+      "date": "1967-01-06",
+      "level": 4.5,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1967-02-17",
+      "level": 4.0,
+      "change": -0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1967-04-14",
+      "level": 3.5,
+      "change": -0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1967-05-12",
+      "level": 3.0,
+      "change": -0.5,
+      "secondary": 4.0,
+      "era": 0
+    },
+    {
+      "date": "1969-04-18",
+      "level": 4.0,
+      "change": 1.0,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1969-06-20",
+      "level": 5.0,
+      "change": 1.0,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1969-09-11",
+      "level": 6.0,
+      "change": 1.0,
+      "secondary": 7.5,
+      "era": 0
+    },
+    {
+      "date": "1970-03-09",
+      "level": 7.5,
+      "change": 1.5,
+      "secondary": 9.5,
+      "era": 0
+    },
+    {
+      "date": "1970-07-16",
+      "level": 7.0,
+      "change": -0.5,
+      "secondary": 9.0,
+      "era": 0
+    },
+    {
+      "date": "1970-11-18",
+      "level": 6.5,
+      "change": -0.5,
+      "secondary": 8.0,
+      "era": 0
+    },
+    {
+      "date": "1970-12-03",
+      "level": 6.0,
+      "change": -0.5,
+      "secondary": 7.5,
+      "era": 0
+    },
+    {
+      "date": "1971-04-01",
+      "level": 5.0,
+      "change": -1.0,
+      "secondary": 6.5,
+      "era": 0
+    },
+    {
+      "date": "1971-10-14",
+      "level": 4.5,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1971-12-23",
+      "level": 4.0,
+      "change": -0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1972-02-25",
+      "level": 3.0,
+      "change": -1.0,
+      "secondary": 4.0,
+      "era": 0
+    },
+    {
+      "date": "1972-10-09",
+      "level": 3.5,
+      "change": 0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1972-11-03",
+      "level": 4.0,
+      "change": 0.5,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1972-12-01",
+      "level": 4.5,
+      "change": 0.5,
+      "secondary": 6.5,
+      "era": 0
+    },
+    {
+      "date": "1973-01-12",
+      "level": 5.0,
+      "change": 0.5,
+      "secondary": 7.0,
+      "era": 0
+    },
+    {
+      "date": "1973-05-04",
+      "level": 6.0,
+      "change": 1.0,
+      "secondary": 8.0,
+      "era": 0
+    },
+    {
+      "date": "1973-06-01",
+      "level": 7.0,
+      "change": 1.0,
+      "secondary": 9.0,
+      "era": 0
+    },
+    {
+      "date": "1974-10-25",
+      "level": 6.5,
+      "change": -0.5,
+      "secondary": 8.5,
+      "era": 0
+    },
+    {
+      "date": "1974-12-20",
+      "level": 6.0,
+      "change": -0.5,
+      "secondary": 8.0,
+      "era": 0
+    },
+    {
+      "date": "1975-02-07",
+      "level": 5.5,
+      "change": -0.5,
+      "secondary": 7.5,
+      "era": 0
+    },
+    {
+      "date": "1975-03-07",
+      "level": 5.0,
+      "change": -0.5,
+      "secondary": 6.5,
+      "era": 0
+    },
+    {
+      "date": "1975-05-23",
+      "level": 4.5,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1975-08-15",
+      "level": 4.0,
+      "change": -0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1975-09-12",
+      "level": 3.5,
+      "change": -0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1977-12-16",
+      "level": 3.0,
+      "change": -0.5,
+      "secondary": 3.5,
+      "era": 0
+    },
+    {
+      "date": "1979-03-30",
+      "level": 4.0,
+      "change": 1.0,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1979-07-13",
+      "level": 5.0,
+      "change": 1.0,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1979-11-01",
+      "level": 6.0,
+      "change": 1.0,
+      "secondary": 7.0,
+      "era": 0
+    },
+    {
+      "date": "1980-02-29",
+      "level": 7.0,
+      "change": 1.0,
+      "secondary": 8.5,
+      "era": 0
+    },
+    {
+      "date": "1980-05-02",
+      "level": 7.5,
+      "change": 0.5,
+      "secondary": 9.5,
+      "era": 0
+    },
+    {
+      "date": "1983-03-18",
+      "level": 4.0,
+      "change": -3.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1984-06-29",
+      "level": 4.5,
+      "change": 0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1985-08-16",
+      "level": 4.0,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1986-03-07",
+      "level": 3.5,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1987-01-23",
+      "level": 3.0,
+      "change": -0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1987-12-04",
+      "level": 2.5,
+      "change": -0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1988-07-01",
+      "level": 3.0,
+      "change": 0.5,
+      "secondary": 4.5,
+      "era": 0
+    },
+    {
+      "date": "1988-08-26",
+      "level": 3.5,
+      "change": 0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1989-01-20",
+      "level": 4.0,
+      "change": 0.5,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1989-04-21",
+      "level": 4.5,
+      "change": 0.5,
+      "secondary": 6.5,
+      "era": 0
+    },
+    {
+      "date": "1989-06-30",
+      "level": 5.0,
+      "change": 0.5,
+      "secondary": 7.0,
+      "era": 0
+    },
+    {
+      "date": "1989-10-06",
+      "level": 6.0,
+      "change": 1.0,
+      "secondary": 8.0,
+      "era": 0
+    },
+    {
+      "date": "1991-02-01",
+      "level": 6.5,
+      "change": 0.5,
+      "secondary": 9.0,
+      "era": 0
+    },
+    {
+      "date": "1991-08-16",
+      "level": 7.5,
+      "change": 1.0,
+      "secondary": 9.25,
+      "era": 0
+    },
+    {
+      "date": "1991-12-20",
+      "level": 8.0,
+      "change": 0.5,
+      "secondary": 9.75,
+      "era": 0
+    },
+    {
+      "date": "1992-07-17",
+      "level": 8.75,
+      "change": 0.75,
+      "secondary": 9.75,
+      "era": 0
+    },
+    {
+      "date": "1992-09-15",
+      "level": 8.25,
+      "change": -0.5,
+      "secondary": 9.5,
+      "era": 0
+    },
+    {
+      "date": "1993-02-05",
+      "level": 8.0,
+      "change": -0.25,
+      "secondary": 9.0,
+      "era": 0
+    },
+    {
+      "date": "1993-03-19",
+      "level": 7.5,
+      "change": -0.5,
+      "secondary": 9.0,
+      "era": 0
+    },
+    {
+      "date": "1993-04-23",
+      "level": 7.25,
+      "change": -0.25,
+      "secondary": 8.5,
+      "era": 0
+    },
+    {
+      "date": "1993-07-02",
+      "level": 6.75,
+      "change": -0.5,
+      "secondary": 8.25,
+      "era": 0
+    },
+    {
+      "date": "1993-09-10",
+      "level": 6.25,
+      "change": -0.5,
+      "secondary": 7.25,
+      "era": 0
+    },
+    {
+      "date": "1993-10-22",
+      "level": 5.75,
+      "change": -0.5,
+      "secondary": 6.75,
+      "era": 0
+    },
+    {
+      "date": "1994-02-18",
+      "level": 5.25,
+      "change": -0.5,
+      "secondary": 6.75,
+      "era": 0
+    },
+    {
+      "date": "1994-04-15",
+      "level": 5.0,
+      "change": -0.25,
+      "secondary": 6.5,
+      "era": 0
+    },
+    {
+      "date": "1994-05-13",
+      "level": 4.5,
+      "change": -0.5,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1995-03-31",
+      "level": 4.0,
+      "change": -0.5,
+      "secondary": 6.0,
+      "era": 0
+    },
+    {
+      "date": "1995-08-25",
+      "level": 3.5,
+      "change": -0.5,
+      "secondary": 5.5,
+      "era": 0
+    },
+    {
+      "date": "1995-12-15",
+      "level": 3.0,
+      "change": -0.5,
+      "secondary": 5.0,
+      "era": 0
+    },
+    {
+      "date": "1996-04-19",
+      "level": 2.5,
+      "change": -0.5,
+      "secondary": 4.5,
+      "era": 0
+    }
+  ],
+  "market": [],
+  "path": [
+    [
+      "1948-07-01",
+      5.0
+    ],
+    [
+      "1949-05-27",
+      4.5
+    ],
+    [
+      "1949-07-14",
+      4.0
+    ],
+    [
+      "1950-10-27",
+      6.0
+    ],
+    [
+      "1952-05-29",
+      5.0
+    ],
+    [
+      "1952-08-21",
+      4.5
+    ],
+    [
+      "1953-01-08",
+      4.0
+    ],
+    [
+      "1953-06-11",
+      3.5
+    ],
+    [
+      "1954-05-20",
+      3.0
+    ],
+    [
+      "1955-08-04",
+      3.5
+    ],
+    [
+      "1956-03-08",
+      4.5
+    ],
+    [
+      "1956-04-19",
+      5.5
+    ],
+    [
+      "1956-05-06",
+      5.0
+    ],
+    [
+      "1957-01-11",
+      4.5
+    ],
+    [
+      "1957-09-19",
+      4.0
+    ],
+    [
+      "1958-01-17",
+      3.5
+    ],
+    [
+      "1958-06-27",
+      3.0
+    ],
+    [
+      "1959-01-10",
+      2.75
+    ],
+    [
+      "1959-09-04",
+      3.0
+    ],
+    [
+      "1959-10-23",
+      4.0
+    ],
+    [
+      "1960-06-03",
+      5.0
+    ],
+    [
+      "1960-11-11",
+      4.0
+    ],
+    [
+      "1961-01-20",
+      3.5
+    ],
+    [
+      "1961-05-05",
+      3.0
+    ],
+    [
+      "1965-01-22",
+      3.5
+    ],
+    [
+      "1965-08-13",
+      4.0
+    ],
+    [
+      "1966-05-27",
+      5.0
+    ],
+    [
+      "1967-01-06",
+      4.5
+    ],
+    [
+      "1967-02-17",
+      4.0
+    ],
+    [
+      "1967-04-14",
+      3.5
+    ],
+    [
+      "1967-05-12",
+      3.0
+    ],
+    [
+      "1969-04-18",
+      4.0
+    ],
+    [
+      "1969-06-20",
+      5.0
+    ],
+    [
+      "1969-09-11",
+      6.0
+    ],
+    [
+      "1970-03-09",
+      7.5
+    ],
+    [
+      "1970-07-16",
+      7.0
+    ],
+    [
+      "1970-11-18",
+      6.5
+    ],
+    [
+      "1970-12-03",
+      6.0
+    ],
+    [
+      "1971-04-01",
+      5.0
+    ],
+    [
+      "1971-10-14",
+      4.5
+    ],
+    [
+      "1971-12-23",
+      4.0
+    ],
+    [
+      "1972-02-25",
+      3.0
+    ],
+    [
+      "1972-10-09",
+      3.5
+    ],
+    [
+      "1972-11-03",
+      4.0
+    ],
+    [
+      "1972-12-01",
+      4.5
+    ],
+    [
+      "1973-01-12",
+      5.0
+    ],
+    [
+      "1973-05-04",
+      6.0
+    ],
+    [
+      "1973-06-01",
+      7.0
+    ],
+    [
+      "1974-10-25",
+      6.5
+    ],
+    [
+      "1974-12-20",
+      6.0
+    ],
+    [
+      "1975-02-07",
+      5.5
+    ],
+    [
+      "1975-03-07",
+      5.0
+    ],
+    [
+      "1975-05-23",
+      4.5
+    ],
+    [
+      "1975-08-15",
+      4.0
+    ],
+    [
+      "1975-09-12",
+      3.5
+    ],
+    [
+      "1977-12-16",
+      3.0
+    ],
+    [
+      "1979-03-30",
+      4.0
+    ],
+    [
+      "1979-07-13",
+      5.0
+    ],
+    [
+      "1979-11-01",
+      6.0
+    ],
+    [
+      "1980-02-29",
+      7.0
+    ],
+    [
+      "1980-05-02",
+      7.5
+    ],
+    [
+      "1983-03-18",
+      4.0
+    ],
+    [
+      "1984-06-29",
+      4.5
+    ],
+    [
+      "1985-08-16",
+      4.0
+    ],
+    [
+      "1986-03-07",
+      3.5
+    ],
+    [
+      "1987-01-23",
+      3.0
+    ],
+    [
+      "1987-12-04",
+      2.5
+    ],
+    [
+      "1988-07-01",
+      3.0
+    ],
+    [
+      "1988-08-26",
+      3.5
+    ],
+    [
+      "1989-01-20",
+      4.0
+    ],
+    [
+      "1989-04-21",
+      4.5
+    ],
+    [
+      "1989-06-30",
+      5.0
+    ],
+    [
+      "1989-10-06",
+      6.0
+    ],
+    [
+      "1991-02-01",
+      6.5
+    ],
+    [
+      "1991-08-16",
+      7.5
+    ],
+    [
+      "1991-12-20",
+      8.0
+    ],
+    [
+      "1992-07-17",
+      8.75
+    ],
+    [
+      "1992-09-15",
+      8.25
+    ],
+    [
+      "1993-02-05",
+      8.0
+    ],
+    [
+      "1993-03-19",
+      7.5
+    ],
+    [
+      "1993-04-23",
+      7.25
+    ],
+    [
+      "1993-07-02",
+      6.75
+    ],
+    [
+      "1993-09-10",
+      6.25
+    ],
+    [
+      "1993-10-22",
+      5.75
+    ],
+    [
+      "1994-02-18",
+      5.25
+    ],
+    [
+      "1994-04-15",
+      5.0
+    ],
+    [
+      "1994-05-13",
+      4.5
+    ],
+    [
+      "1995-03-31",
+      4.0
+    ],
+    [
+      "1995-08-25",
+      3.5
+    ],
+    [
+      "1995-12-15",
+      3.0
+    ],
+    [
+      "1996-04-19",
+      2.5
+    ]
+  ],
+  "coverage": {
+    "spine": "own",
+    "note": "Every change from the Bundesbank's own discount and lombard rate table, 1948-07-01 to 1996-04-19 (held at that level through 1998-12-31, the Bank's last day of independent rate-setting before the ECB took over on 1999-01-01). The lombard rate is carried on each row as secondary. BIS Germany daily matches our discount level on 53 of 60 overlapping change dates and matches our lombard level (the binding rate during the 1979-1980 and 1991 tightening episodes and the 1983-03-18 cut) on 6 more; 1 dates match neither."
+  },
+  "sources": [
+    {
+      "label": "Deutsche Bundesbank, discount and lombard rates (table)",
+      "url": "https://www.bundesbank.de/resource/blob/651504/9dad568ed96af0fda517b17a3fe7f1cf/mL/s510ttdiscount-data.pdf"
+    },
+    {
+      "label": "BIS central bank policy rates (CBPOL), Germany",
+      "url": "https://data.bis.org/topics/CBPOL"
+    }
+  ],
+  "dissolved": "1998-12-31",
+  "dissolved_note": "The Bundesbank set the discount and lombard rates for the last time on 1996-04-19 (held to 1998-12-31); euro-area monetary policy passed to the European Central Bank on 1999-01-01."
+}

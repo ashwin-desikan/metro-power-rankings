@@ -1,0 +1,691 @@
+{
+  "code": "bis-xm",
+  "name": "Euro area (BIS)",
+  "short": "Euro area (BIS)",
+  "country": "Euro area",
+  "iso2": "XM",
+  "currency": "EUR",
+  "founded": null,
+  "first_change": "1999-01-01",
+  "last_change": "2026-06-17",
+  "built": "2026-09-08",
+  "instruments": [
+    {
+      "from": "1999-01-01",
+      "to": "2000-06-27",
+      "name": "official central bank liquidity provi...",
+      "text": "official central bank liquidity providing, main refinancing operations, fixed rate",
+      "kind": "policy"
+    },
+    {
+      "from": "2000-06-28",
+      "to": "2008-10-14",
+      "name": "official central bank liquidity provi...",
+      "text": "official central bank liquidity providing, main refinancing operations, minimum bid rate",
+      "kind": "policy"
+    },
+    {
+      "from": "2008-10-15",
+      "to": "2024-09-17",
+      "name": "official central bank liquidity provi...",
+      "text": "official central bank liquidity providing, main refinancing operations, fixed rate",
+      "kind": "policy"
+    },
+    {
+      "from": "2024-09-18",
+      "to": null,
+      "name": "official central bank steering rate i...",
+      "text": "official central bank steering rate is the deposit facility rate, fixed rate",
+      "kind": "policy"
+    }
+  ],
+  "changes": [
+    {
+      "date": "1999-01-01",
+      "level": 3.0,
+      "change": null,
+      "era": 0
+    },
+    {
+      "date": "1999-04-09",
+      "break": true,
+      "note": "Instrument switched from official central bank steering rate is the deposit facility rate, fixed rate to official central bank liquidity providing, main refinancing operations, fixed rate, per BIS's own era text.",
+      "era": 0
+    },
+    {
+      "date": "1999-04-09",
+      "level": 2.5,
+      "change": null,
+      "era": 0
+    },
+    {
+      "date": "1999-11-05",
+      "level": 3.0,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "2000-02-04",
+      "level": 3.25,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2000-03-17",
+      "level": 3.5,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2000-04-28",
+      "level": 3.75,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2000-06-09",
+      "level": 4.25,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "2000-09-01",
+      "break": true,
+      "note": "Instrument switched from official central bank liquidity providing, main refinancing operations, fixed rate to official central bank liquidity providing, main refinancing operations, minimum bid rate, per BIS's own era text.",
+      "era": 1
+    },
+    {
+      "date": "2000-09-01",
+      "level": 4.5,
+      "change": null,
+      "era": 1
+    },
+    {
+      "date": "2000-10-06",
+      "level": 4.75,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2001-05-11",
+      "level": 4.5,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2001-08-31",
+      "level": 4.25,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2001-09-18",
+      "level": 3.75,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2001-11-09",
+      "level": 3.25,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2002-12-06",
+      "level": 2.75,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2003-03-07",
+      "level": 2.5,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2003-06-06",
+      "level": 2.0,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2005-12-06",
+      "level": 2.25,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2006-03-08",
+      "level": 2.5,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2006-06-15",
+      "level": 2.75,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2006-08-09",
+      "level": 3.0,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2006-10-11",
+      "level": 3.25,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2006-12-13",
+      "level": 3.5,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2007-03-14",
+      "level": 3.75,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2007-06-13",
+      "level": 4.0,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2008-07-09",
+      "level": 4.25,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2008-10-15",
+      "break": true,
+      "note": "Instrument switched from official central bank liquidity providing, main refinancing operations, minimum bid rate to official central bank liquidity providing, main refinancing operations, fixed rate, per BIS's own era text.",
+      "era": 2
+    },
+    {
+      "date": "2008-10-15",
+      "level": 3.75,
+      "change": null,
+      "era": 2
+    },
+    {
+      "date": "2008-11-12",
+      "level": 3.25,
+      "change": -0.5,
+      "era": 2
+    },
+    {
+      "date": "2008-12-10",
+      "level": 2.5,
+      "change": -0.75,
+      "era": 2
+    },
+    {
+      "date": "2009-01-21",
+      "level": 2.0,
+      "change": -0.5,
+      "era": 2
+    },
+    {
+      "date": "2009-03-11",
+      "level": 1.5,
+      "change": -0.5,
+      "era": 2
+    },
+    {
+      "date": "2009-04-08",
+      "level": 1.25,
+      "change": -0.25,
+      "era": 2
+    },
+    {
+      "date": "2009-05-13",
+      "level": 1.0,
+      "change": -0.25,
+      "era": 2
+    },
+    {
+      "date": "2011-04-13",
+      "level": 1.25,
+      "change": 0.25,
+      "era": 2
+    },
+    {
+      "date": "2011-07-13",
+      "level": 1.5,
+      "change": 0.25,
+      "era": 2
+    },
+    {
+      "date": "2011-11-09",
+      "level": 1.25,
+      "change": -0.25,
+      "era": 2
+    },
+    {
+      "date": "2011-12-14",
+      "level": 1.0,
+      "change": -0.25,
+      "era": 2
+    },
+    {
+      "date": "2012-07-11",
+      "level": 0.75,
+      "change": -0.25,
+      "era": 2
+    },
+    {
+      "date": "2013-05-08",
+      "level": 0.5,
+      "change": -0.25,
+      "era": 2
+    },
+    {
+      "date": "2013-11-13",
+      "level": 0.25,
+      "change": -0.25,
+      "era": 2
+    },
+    {
+      "date": "2014-06-11",
+      "level": 0.15,
+      "change": -0.1,
+      "era": 2
+    },
+    {
+      "date": "2014-09-10",
+      "level": 0.05,
+      "change": -0.1,
+      "era": 2
+    },
+    {
+      "date": "2016-03-16",
+      "level": 0.0,
+      "change": -0.05,
+      "era": 2
+    },
+    {
+      "date": "2022-07-27",
+      "level": 0.5,
+      "change": 0.5,
+      "era": 2
+    },
+    {
+      "date": "2022-09-14",
+      "level": 1.25,
+      "change": 0.75,
+      "era": 2
+    },
+    {
+      "date": "2022-11-02",
+      "level": 2.0,
+      "change": 0.75,
+      "era": 2
+    },
+    {
+      "date": "2022-12-21",
+      "level": 2.5,
+      "change": 0.5,
+      "era": 2
+    },
+    {
+      "date": "2023-02-08",
+      "level": 3.0,
+      "change": 0.5,
+      "era": 2
+    },
+    {
+      "date": "2023-03-22",
+      "level": 3.5,
+      "change": 0.5,
+      "era": 2
+    },
+    {
+      "date": "2023-05-10",
+      "level": 3.75,
+      "change": 0.25,
+      "era": 2
+    },
+    {
+      "date": "2023-06-21",
+      "level": 4.0,
+      "change": 0.25,
+      "era": 2
+    },
+    {
+      "date": "2023-08-02",
+      "level": 4.25,
+      "change": 0.25,
+      "era": 2
+    },
+    {
+      "date": "2023-09-20",
+      "level": 4.5,
+      "change": 0.25,
+      "era": 2
+    },
+    {
+      "date": "2024-06-12",
+      "level": 4.25,
+      "change": -0.25,
+      "era": 2
+    },
+    {
+      "date": "2024-09-18",
+      "break": true,
+      "note": "Instrument switched from official central bank liquidity providing, main refinancing operations, fixed rate to official central bank steering rate is the deposit facility rate, fixed rate, per BIS's own era text.",
+      "era": 3
+    },
+    {
+      "date": "2024-09-18",
+      "level": 3.5,
+      "change": null,
+      "era": 3
+    },
+    {
+      "date": "2024-10-23",
+      "level": 3.25,
+      "change": -0.25,
+      "era": 3
+    },
+    {
+      "date": "2024-12-18",
+      "level": 3.0,
+      "change": -0.25,
+      "era": 3
+    },
+    {
+      "date": "2025-02-05",
+      "level": 2.75,
+      "change": -0.25,
+      "era": 3
+    },
+    {
+      "date": "2025-03-12",
+      "level": 2.5,
+      "change": -0.25,
+      "era": 3
+    },
+    {
+      "date": "2025-04-23",
+      "level": 2.25,
+      "change": -0.25,
+      "era": 3
+    },
+    {
+      "date": "2025-06-11",
+      "level": 2.0,
+      "change": -0.25,
+      "era": 3
+    },
+    {
+      "date": "2026-06-17",
+      "level": 2.25,
+      "change": 0.25,
+      "era": 3
+    }
+  ],
+  "market": [],
+  "path": [
+    [
+      "1999-01-01",
+      3.0
+    ],
+    [
+      "1999-04-09",
+      2.5
+    ],
+    [
+      "1999-11-05",
+      3.0
+    ],
+    [
+      "2000-02-04",
+      3.25
+    ],
+    [
+      "2000-03-17",
+      3.5
+    ],
+    [
+      "2000-04-28",
+      3.75
+    ],
+    [
+      "2000-06-09",
+      4.25
+    ],
+    [
+      "2000-09-01",
+      4.5
+    ],
+    [
+      "2000-10-06",
+      4.75
+    ],
+    [
+      "2001-05-11",
+      4.5
+    ],
+    [
+      "2001-08-31",
+      4.25
+    ],
+    [
+      "2001-09-18",
+      3.75
+    ],
+    [
+      "2001-11-09",
+      3.25
+    ],
+    [
+      "2002-12-06",
+      2.75
+    ],
+    [
+      "2003-03-07",
+      2.5
+    ],
+    [
+      "2003-06-06",
+      2.0
+    ],
+    [
+      "2005-12-06",
+      2.25
+    ],
+    [
+      "2006-03-08",
+      2.5
+    ],
+    [
+      "2006-06-15",
+      2.75
+    ],
+    [
+      "2006-08-09",
+      3.0
+    ],
+    [
+      "2006-10-11",
+      3.25
+    ],
+    [
+      "2006-12-13",
+      3.5
+    ],
+    [
+      "2007-03-14",
+      3.75
+    ],
+    [
+      "2007-06-13",
+      4.0
+    ],
+    [
+      "2008-07-09",
+      4.25
+    ],
+    [
+      "2008-10-15",
+      3.75
+    ],
+    [
+      "2008-11-12",
+      3.25
+    ],
+    [
+      "2008-12-10",
+      2.5
+    ],
+    [
+      "2009-01-21",
+      2.0
+    ],
+    [
+      "2009-03-11",
+      1.5
+    ],
+    [
+      "2009-04-08",
+      1.25
+    ],
+    [
+      "2009-05-13",
+      1.0
+    ],
+    [
+      "2011-04-13",
+      1.25
+    ],
+    [
+      "2011-07-13",
+      1.5
+    ],
+    [
+      "2011-11-09",
+      1.25
+    ],
+    [
+      "2011-12-14",
+      1.0
+    ],
+    [
+      "2012-07-11",
+      0.75
+    ],
+    [
+      "2013-05-08",
+      0.5
+    ],
+    [
+      "2013-11-13",
+      0.25
+    ],
+    [
+      "2014-06-11",
+      0.15
+    ],
+    [
+      "2014-09-10",
+      0.05
+    ],
+    [
+      "2016-03-16",
+      0.0
+    ],
+    [
+      "2022-07-27",
+      0.5
+    ],
+    [
+      "2022-09-14",
+      1.25
+    ],
+    [
+      "2022-11-02",
+      2.0
+    ],
+    [
+      "2022-12-21",
+      2.5
+    ],
+    [
+      "2023-02-08",
+      3.0
+    ],
+    [
+      "2023-03-22",
+      3.5
+    ],
+    [
+      "2023-05-10",
+      3.75
+    ],
+    [
+      "2023-06-21",
+      4.0
+    ],
+    [
+      "2023-08-02",
+      4.25
+    ],
+    [
+      "2023-09-20",
+      4.5
+    ],
+    [
+      "2024-06-12",
+      4.25
+    ],
+    [
+      "2024-09-18",
+      3.5
+    ],
+    [
+      "2024-10-23",
+      3.25
+    ],
+    [
+      "2024-12-18",
+      3.0
+    ],
+    [
+      "2025-02-05",
+      2.75
+    ],
+    [
+      "2025-03-12",
+      2.5
+    ],
+    [
+      "2025-04-23",
+      2.25
+    ],
+    [
+      "2025-06-11",
+      2.0
+    ],
+    [
+      "2026-06-17",
+      2.25
+    ]
+  ],
+  "coverage": {
+    "spine": "bis",
+    "note": "Derived entirely from BIS daily policy-rate levels (WS_CBPOL); every day the level differs from the prior day is a change day. Instrument eras parsed from the BIS COMPILATION field (4 era(s))."
+  },
+  "sources": [
+    {
+      "label": "BIS central bank policy rates (CBPOL), Euro area (BIS)",
+      "url": "https://data.bis.org/topics/CBPOL"
+    }
+  ]
+}

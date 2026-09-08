@@ -1,0 +1,226 @@
+{
+  "code": "bis-ma",
+  "name": "Morocco",
+  "short": "Morocco",
+  "country": "Morocco",
+  "iso2": "MA",
+  "currency": "MAD",
+  "founded": null,
+  "first_change": "2001-01-01",
+  "last_change": "2025-03-20",
+  "built": "2026-09-08",
+  "instruments": [
+    {
+      "from": "2001-01-01",
+      "to": null,
+      "name": "interest rate, 7-day advances",
+      "text": "interest rate, 7-day advances (Taux directeur)",
+      "kind": "policy"
+    }
+  ],
+  "changes": [
+    {
+      "date": "2001-01-01",
+      "level": 5.0,
+      "change": null,
+      "era": 0
+    },
+    {
+      "date": "2001-03-21",
+      "level": 4.75,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2001-11-08",
+      "level": 4.25,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2002-03-19",
+      "level": 3.75,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2002-12-26",
+      "level": 3.25,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2008-06-17",
+      "level": 3.5,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2009-03-24",
+      "level": 3.25,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2012-03-27",
+      "level": 3.0,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2014-09-23",
+      "level": 2.75,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2014-12-16",
+      "level": 2.5,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2016-03-22",
+      "level": 2.25,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2020-03-17",
+      "level": 2.0,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2020-06-18",
+      "level": 1.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2022-09-29",
+      "level": 2.0,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "2022-12-22",
+      "level": 2.5,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "2023-03-23",
+      "level": 3.0,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "2024-06-27",
+      "level": 2.75,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2024-12-19",
+      "level": 2.5,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2025-03-20",
+      "level": 2.25,
+      "change": -0.25,
+      "era": 0
+    }
+  ],
+  "market": [],
+  "path": [
+    [
+      "2001-01-01",
+      5.0
+    ],
+    [
+      "2001-03-21",
+      4.75
+    ],
+    [
+      "2001-11-08",
+      4.25
+    ],
+    [
+      "2002-03-19",
+      3.75
+    ],
+    [
+      "2002-12-26",
+      3.25
+    ],
+    [
+      "2008-06-17",
+      3.5
+    ],
+    [
+      "2009-03-24",
+      3.25
+    ],
+    [
+      "2012-03-27",
+      3.0
+    ],
+    [
+      "2014-09-23",
+      2.75
+    ],
+    [
+      "2014-12-16",
+      2.5
+    ],
+    [
+      "2016-03-22",
+      2.25
+    ],
+    [
+      "2020-03-17",
+      2.0
+    ],
+    [
+      "2020-06-18",
+      1.5
+    ],
+    [
+      "2022-09-29",
+      2.0
+    ],
+    [
+      "2022-12-22",
+      2.5
+    ],
+    [
+      "2023-03-23",
+      3.0
+    ],
+    [
+      "2024-06-27",
+      2.75
+    ],
+    [
+      "2024-12-19",
+      2.5
+    ],
+    [
+      "2025-03-20",
+      2.25
+    ]
+  ],
+  "coverage": {
+    "spine": "bis",
+    "note": "Derived entirely from BIS daily policy-rate levels (WS_CBPOL); every day the level differs from the prior day is a change day. Instrument eras parsed from the BIS COMPILATION field (1 era(s))."
+  },
+  "sources": [
+    {
+      "label": "BIS central bank policy rates (CBPOL), Morocco",
+      "url": "https://data.bis.org/topics/CBPOL"
+    }
+  ]
+}

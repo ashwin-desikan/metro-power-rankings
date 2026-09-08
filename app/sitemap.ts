@@ -8,6 +8,7 @@ import { competitionHasHub } from "@/lib/competitionLinks";
 import { getStateSlugsWithMetros } from "@/lib/states";
 import { MARKET_PAGE_SLUGS } from "@/lib/marketPages";
 import { CURRENCY_PAGE_CODES } from "@/lib/currencyPages";
+import { getRatesIndex } from "@/lib/economyRates";
 import { getAllFranchiseSlugs as getNflSlugs } from "@/lib/nfl";
 import { getAllFranchiseSlugs as getNbaSlugs } from "@/lib/nba";
 import { getAllFranchiseSlugs as getMlbSlugs } from "@/lib/mlb";
@@ -346,6 +347,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: stamp,
       changeFrequency: "daily" as const,
       priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/business/economy`,
+      lastModified: stamp,
+      changeFrequency: "daily" as const,
+      priority: 0.7,
+    },
+    ...(getRatesIndex()?.banks ?? []).map((b) => ({
+      url: `${BASE_URL}/business/economy/rates/${b.code}`,
+      lastModified: stamp,
+      changeFrequency: "daily" as const,
+      priority: 0.55,
     })),
   ];
 

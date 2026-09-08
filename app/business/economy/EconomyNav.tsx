@@ -3,28 +3,20 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-// /business hub tab nav, same idiom as SoundNav/ScreenNav: subroutes with an
-// active underline. Add a tab here when a new board ships.
+// Second-level tab row under /business/economy, same idiom as BusinessNav.
+// Rates is the only sub-family that has shipped; Prices, Housing, Yields and
+// Countries join this list as they ship. Do not render a tab with no page
+// behind it.
 const TABS: [string, string][] = [
-  ['/business', 'Overview'],
-  ['/business/companies', 'Companies'],
-  ['/business/private', 'Private & Unicorns'],
-  ['/business/sp500', 'S&P 500'],
-  ['/business/rankings', 'Rankings'],
-  ['/business/owners', 'Owners'],
-  ['/business/markets', 'Markets'],
-  ['/business/currencies', 'Currencies'],
-  ['/business/economy', 'Economy'],
-  ['/business/leaders', 'Leaders'],
-  ['/business/crossovers', 'Crossovers'],
+  ['/business/economy', 'Rates'],
 ];
 
-export default function BusinessNav() {
+export default function EconomyNav() {
   const pathname = usePathname();
   return (
     <nav className="mb-6 flex flex-wrap gap-1 border-b" style={{ borderColor: 'var(--border, #222b36)' }}>
       {TABS.map(([href, label]) => {
-        const active = href === '/business' ? pathname === '/business' : pathname.startsWith(href);
+        const active = href === '/business/economy' ? pathname.startsWith('/business/economy') : pathname.startsWith(href);
         return (
           <Link
             key={href}

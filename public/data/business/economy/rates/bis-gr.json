@@ -1,0 +1,823 @@
+{
+  "code": "bis-gr",
+  "name": "Greece",
+  "short": "Greece",
+  "country": "Greece",
+  "iso2": "GR",
+  "currency": "EUR",
+  "founded": null,
+  "first_change": "1956-05-01",
+  "last_change": "2000-12-27",
+  "built": "2026-09-08",
+  "instruments": [
+    {
+      "from": "1841-03-30",
+      "to": "1940-12-31",
+      "name": "rate imposed on trade advances at the...",
+      "text": "rate imposed on trade advances at the head offices of the National Bank of Greece (NBG) in Athens and the discount rate by the Bank of Greece sourced from Lazaretou (2014). Between 1956 and 1993, the day the rate becomes effective is assumed to be the first day of the month.  Before 1956, whenever the day of changes is not available, it is set to the end-of-month",
+      "kind": "policy"
+    },
+    {
+      "from": "1941-01-01",
+      "to": "1956-04-30",
+      "name": "no data available",
+      "text": "no data available",
+      "kind": "policy"
+    },
+    {
+      "from": "1956-05-01",
+      "to": "1995-01-01",
+      "name": "discount rate of the Bank of Greece",
+      "text": "discount rate of the Bank of Greece",
+      "kind": "policy"
+    },
+    {
+      "from": "1995-01-02",
+      "to": "1997-03-27",
+      "name": "overnight intervention (mid) rate",
+      "text": "overnight intervention (mid) rate",
+      "kind": "policy"
+    },
+    {
+      "from": "1997-03-28",
+      "to": "2000-12-31",
+      "name": "overnight deposit facility - 1st tier",
+      "text": "overnight deposit facility - 1st tier",
+      "kind": "policy"
+    },
+    {
+      "from": "2001-01-01",
+      "to": null,
+      "name": "the series is discontinued as Greece...",
+      "text": "the series is discontinued as Greece joined the euro area",
+      "kind": "policy"
+    }
+  ],
+  "changes": [
+    {
+      "date": "1956-05-01",
+      "level": 11.0,
+      "change": null,
+      "era": 2
+    },
+    {
+      "date": "1959-04-01",
+      "level": 10.0,
+      "change": -1.0,
+      "era": 2
+    },
+    {
+      "date": "1959-10-01",
+      "level": 9.0,
+      "change": -1.0,
+      "era": 2
+    },
+    {
+      "date": "1960-04-01",
+      "level": 7.0,
+      "change": -2.0,
+      "era": 2
+    },
+    {
+      "date": "1960-11-01",
+      "level": 6.0,
+      "change": -1.0,
+      "era": 2
+    },
+    {
+      "date": "1963-04-01",
+      "level": 5.5,
+      "change": -0.5,
+      "era": 2
+    },
+    {
+      "date": "1967-07-01",
+      "level": 4.5,
+      "change": -1.0,
+      "era": 2
+    },
+    {
+      "date": "1968-06-01",
+      "level": 5.0,
+      "change": 0.5,
+      "era": 2
+    },
+    {
+      "date": "1969-02-01",
+      "level": 5.5,
+      "change": 0.5,
+      "era": 2
+    },
+    {
+      "date": "1969-07-01",
+      "level": 6.0,
+      "change": 0.5,
+      "era": 2
+    },
+    {
+      "date": "1969-09-01",
+      "level": 6.5,
+      "change": 0.5,
+      "era": 2
+    },
+    {
+      "date": "1973-05-01",
+      "level": 7.5,
+      "change": 1.0,
+      "era": 2
+    },
+    {
+      "date": "1973-07-01",
+      "level": 9.0,
+      "change": 1.5,
+      "era": 2
+    },
+    {
+      "date": "1974-02-01",
+      "level": 11.0,
+      "change": 2.0,
+      "era": 2
+    },
+    {
+      "date": "1974-09-01",
+      "level": 8.0,
+      "change": -3.0,
+      "era": 2
+    },
+    {
+      "date": "1975-10-01",
+      "level": 10.0,
+      "change": 2.0,
+      "era": 2
+    },
+    {
+      "date": "1977-01-01",
+      "level": 11.0,
+      "change": 1.0,
+      "era": 2
+    },
+    {
+      "date": "1978-06-01",
+      "level": 14.0,
+      "change": 3.0,
+      "era": 2
+    },
+    {
+      "date": "1979-06-01",
+      "level": 15.0,
+      "change": 1.0,
+      "era": 2
+    },
+    {
+      "date": "1979-09-01",
+      "level": 19.0,
+      "change": 4.0,
+      "era": 2
+    },
+    {
+      "date": "1980-07-01",
+      "level": 20.5,
+      "change": 1.5,
+      "era": 2
+    },
+    {
+      "date": "1988-01-01",
+      "level": 19.0,
+      "change": -1.5,
+      "era": 2
+    },
+    {
+      "date": "1993-06-16",
+      "level": 21.5,
+      "change": 2.5,
+      "era": 2
+    },
+    {
+      "date": "1993-08-13",
+      "level": 21.0,
+      "change": -0.5,
+      "era": 2
+    },
+    {
+      "date": "1993-10-01",
+      "level": 22.0,
+      "change": 1.0,
+      "era": 2
+    },
+    {
+      "date": "1993-10-26",
+      "level": 21.5,
+      "change": -0.5,
+      "era": 2
+    },
+    {
+      "date": "1994-05-16",
+      "level": 22.5,
+      "change": 1.0,
+      "era": 2
+    },
+    {
+      "date": "1994-09-28",
+      "level": 21.5,
+      "change": -1.0,
+      "era": 2
+    },
+    {
+      "date": "1994-11-21",
+      "level": 20.5,
+      "change": -1.0,
+      "era": 2
+    },
+    {
+      "date": "1995-01-02",
+      "break": true,
+      "note": "Instrument switched from discount rate of the Bank of Greece to overnight intervention (mid) rate, per BIS's own era text.",
+      "era": 3
+    },
+    {
+      "date": "1995-01-02",
+      "level": 17.0,
+      "change": null,
+      "era": 3
+    },
+    {
+      "date": "1995-01-05",
+      "level": 16.5,
+      "change": -0.5,
+      "era": 3
+    },
+    {
+      "date": "1995-01-10",
+      "level": 16.75,
+      "change": 0.25,
+      "era": 3
+    },
+    {
+      "date": "1995-03-24",
+      "level": 16.3,
+      "change": -0.45,
+      "era": 3
+    },
+    {
+      "date": "1995-04-20",
+      "level": 16.0,
+      "change": -0.3,
+      "era": 3
+    },
+    {
+      "date": "1995-05-12",
+      "level": 15.8,
+      "change": -0.2,
+      "era": 3
+    },
+    {
+      "date": "1995-06-09",
+      "level": 15.6,
+      "change": -0.2,
+      "era": 3
+    },
+    {
+      "date": "1995-06-23",
+      "level": 15.5,
+      "change": -0.1,
+      "era": 3
+    },
+    {
+      "date": "1995-08-04",
+      "level": 15.2,
+      "change": -0.3,
+      "era": 3
+    },
+    {
+      "date": "1995-08-25",
+      "level": 14.9,
+      "change": -0.3,
+      "era": 3
+    },
+    {
+      "date": "1995-11-17",
+      "level": 14.7,
+      "change": -0.2,
+      "era": 3
+    },
+    {
+      "date": "1995-12-11",
+      "level": 14.4,
+      "change": -0.3,
+      "era": 3
+    },
+    {
+      "date": "1995-12-15",
+      "level": 14.1,
+      "change": -0.3,
+      "era": 3
+    },
+    {
+      "date": "1995-12-29",
+      "level": 14.0,
+      "change": -0.1,
+      "era": 3
+    },
+    {
+      "date": "1996-01-22",
+      "level": 13.75,
+      "change": -0.25,
+      "era": 3
+    },
+    {
+      "date": "1996-04-05",
+      "level": 13.6,
+      "change": -0.15,
+      "era": 3
+    },
+    {
+      "date": "1996-04-19",
+      "level": 13.4,
+      "change": -0.2,
+      "era": 3
+    },
+    {
+      "date": "1996-07-02",
+      "level": 14.0,
+      "change": 0.6,
+      "era": 3
+    },
+    {
+      "date": "1996-07-03",
+      "level": 13.0,
+      "change": -1.0,
+      "era": 3
+    },
+    {
+      "date": "1996-08-08",
+      "level": 12.8,
+      "change": -0.2,
+      "era": 3
+    },
+    {
+      "date": "1996-08-23",
+      "level": 12.6,
+      "change": -0.2,
+      "era": 3
+    },
+    {
+      "date": "1996-08-29",
+      "level": 12.4,
+      "change": -0.2,
+      "era": 3
+    },
+    {
+      "date": "1996-09-30",
+      "level": 13.4,
+      "change": 1.0,
+      "era": 3
+    },
+    {
+      "date": "1996-10-09",
+      "level": 12.4,
+      "change": -1.0,
+      "era": 3
+    },
+    {
+      "date": "1996-10-31",
+      "level": 13.4,
+      "change": 1.0,
+      "era": 3
+    },
+    {
+      "date": "1996-12-11",
+      "level": 12.4,
+      "change": -1.0,
+      "era": 3
+    },
+    {
+      "date": "1997-02-14",
+      "level": 11.9,
+      "change": -0.5,
+      "era": 3
+    },
+    {
+      "date": "1997-07-24",
+      "break": true,
+      "note": "Instrument switched from overnight intervention (mid) rate to overnight deposit facility - 1st tier, per BIS's own era text.",
+      "era": 4
+    },
+    {
+      "date": "1997-07-24",
+      "level": 11.6,
+      "change": null,
+      "era": 4
+    },
+    {
+      "date": "1997-08-18",
+      "level": 11.3,
+      "change": -0.3,
+      "era": 4
+    },
+    {
+      "date": "1997-10-08",
+      "level": 10.9,
+      "change": -0.4,
+      "era": 4
+    },
+    {
+      "date": "1998-04-23",
+      "level": 11.5,
+      "change": 0.6,
+      "era": 4
+    },
+    {
+      "date": "1998-07-08",
+      "level": 11.9,
+      "change": 0.4,
+      "era": 4
+    },
+    {
+      "date": "1998-12-09",
+      "level": 11.6,
+      "change": -0.3,
+      "era": 4
+    },
+    {
+      "date": "1999-01-14",
+      "level": 11.5,
+      "change": -0.1,
+      "era": 4
+    },
+    {
+      "date": "1999-10-21",
+      "level": 11.0,
+      "change": -0.5,
+      "era": 4
+    },
+    {
+      "date": "1999-12-16",
+      "level": 10.25,
+      "change": -0.75,
+      "era": 4
+    },
+    {
+      "date": "2000-01-27",
+      "level": 9.5,
+      "change": -0.75,
+      "era": 4
+    },
+    {
+      "date": "2000-03-09",
+      "level": 8.75,
+      "change": -0.75,
+      "era": 4
+    },
+    {
+      "date": "2000-04-20",
+      "level": 8.0,
+      "change": -0.75,
+      "era": 4
+    },
+    {
+      "date": "2000-06-29",
+      "level": 7.25,
+      "change": -0.75,
+      "era": 4
+    },
+    {
+      "date": "2000-09-06",
+      "level": 6.5,
+      "change": -0.75,
+      "era": 4
+    },
+    {
+      "date": "2000-11-15",
+      "level": 6.0,
+      "change": -0.5,
+      "era": 4
+    },
+    {
+      "date": "2000-11-29",
+      "level": 5.5,
+      "change": -0.5,
+      "era": 4
+    },
+    {
+      "date": "2000-12-13",
+      "level": 4.75,
+      "change": -0.75,
+      "era": 4
+    },
+    {
+      "date": "2000-12-27",
+      "level": 3.75,
+      "change": -1.0,
+      "era": 4
+    }
+  ],
+  "market": [],
+  "path": [
+    [
+      "1956-05-01",
+      11.0
+    ],
+    [
+      "1959-04-01",
+      10.0
+    ],
+    [
+      "1959-10-01",
+      9.0
+    ],
+    [
+      "1960-04-01",
+      7.0
+    ],
+    [
+      "1960-11-01",
+      6.0
+    ],
+    [
+      "1963-04-01",
+      5.5
+    ],
+    [
+      "1967-07-01",
+      4.5
+    ],
+    [
+      "1968-06-01",
+      5.0
+    ],
+    [
+      "1969-02-01",
+      5.5
+    ],
+    [
+      "1969-07-01",
+      6.0
+    ],
+    [
+      "1969-09-01",
+      6.5
+    ],
+    [
+      "1973-05-01",
+      7.5
+    ],
+    [
+      "1973-07-01",
+      9.0
+    ],
+    [
+      "1974-02-01",
+      11.0
+    ],
+    [
+      "1974-09-01",
+      8.0
+    ],
+    [
+      "1975-10-01",
+      10.0
+    ],
+    [
+      "1977-01-01",
+      11.0
+    ],
+    [
+      "1978-06-01",
+      14.0
+    ],
+    [
+      "1979-06-01",
+      15.0
+    ],
+    [
+      "1979-09-01",
+      19.0
+    ],
+    [
+      "1980-07-01",
+      20.5
+    ],
+    [
+      "1988-01-01",
+      19.0
+    ],
+    [
+      "1993-06-16",
+      21.5
+    ],
+    [
+      "1993-08-13",
+      21.0
+    ],
+    [
+      "1993-10-01",
+      22.0
+    ],
+    [
+      "1993-10-26",
+      21.5
+    ],
+    [
+      "1994-05-16",
+      22.5
+    ],
+    [
+      "1994-09-28",
+      21.5
+    ],
+    [
+      "1994-11-21",
+      20.5
+    ],
+    [
+      "1995-01-02",
+      17.0
+    ],
+    [
+      "1995-01-05",
+      16.5
+    ],
+    [
+      "1995-01-10",
+      16.75
+    ],
+    [
+      "1995-03-24",
+      16.3
+    ],
+    [
+      "1995-04-20",
+      16.0
+    ],
+    [
+      "1995-05-12",
+      15.8
+    ],
+    [
+      "1995-06-09",
+      15.6
+    ],
+    [
+      "1995-06-23",
+      15.5
+    ],
+    [
+      "1995-08-04",
+      15.2
+    ],
+    [
+      "1995-08-25",
+      14.9
+    ],
+    [
+      "1995-11-17",
+      14.7
+    ],
+    [
+      "1995-12-11",
+      14.4
+    ],
+    [
+      "1995-12-15",
+      14.1
+    ],
+    [
+      "1995-12-29",
+      14.0
+    ],
+    [
+      "1996-01-22",
+      13.75
+    ],
+    [
+      "1996-04-05",
+      13.6
+    ],
+    [
+      "1996-04-19",
+      13.4
+    ],
+    [
+      "1996-07-02",
+      14.0
+    ],
+    [
+      "1996-07-03",
+      13.0
+    ],
+    [
+      "1996-08-08",
+      12.8
+    ],
+    [
+      "1996-08-23",
+      12.6
+    ],
+    [
+      "1996-08-29",
+      12.4
+    ],
+    [
+      "1996-09-30",
+      13.4
+    ],
+    [
+      "1996-10-09",
+      12.4
+    ],
+    [
+      "1996-10-31",
+      13.4
+    ],
+    [
+      "1996-12-11",
+      12.4
+    ],
+    [
+      "1997-02-14",
+      11.9
+    ],
+    [
+      "1997-07-24",
+      11.6
+    ],
+    [
+      "1997-08-18",
+      11.3
+    ],
+    [
+      "1997-10-08",
+      10.9
+    ],
+    [
+      "1998-04-23",
+      11.5
+    ],
+    [
+      "1998-07-08",
+      11.9
+    ],
+    [
+      "1998-12-09",
+      11.6
+    ],
+    [
+      "1999-01-14",
+      11.5
+    ],
+    [
+      "1999-10-21",
+      11.0
+    ],
+    [
+      "1999-12-16",
+      10.25
+    ],
+    [
+      "2000-01-27",
+      9.5
+    ],
+    [
+      "2000-03-09",
+      8.75
+    ],
+    [
+      "2000-04-20",
+      8.0
+    ],
+    [
+      "2000-06-29",
+      7.25
+    ],
+    [
+      "2000-09-06",
+      6.5
+    ],
+    [
+      "2000-11-15",
+      6.0
+    ],
+    [
+      "2000-11-29",
+      5.5
+    ],
+    [
+      "2000-12-13",
+      4.75
+    ],
+    [
+      "2000-12-27",
+      3.75
+    ]
+  ],
+  "coverage": {
+    "spine": "bis",
+    "note": "Derived entirely from BIS daily policy-rate levels (WS_CBPOL); every day the level differs from the prior day is a change day. Instrument eras parsed from the BIS COMPILATION field (6 era(s))."
+  },
+  "sources": [
+    {
+      "label": "BIS central bank policy rates (CBPOL), Greece",
+      "url": "https://data.bis.org/topics/CBPOL"
+    }
+  ]
+}

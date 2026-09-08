@@ -1,0 +1,1053 @@
+{
+  "code": "bis-jp",
+  "name": "Japan",
+  "short": "Japan",
+  "country": "Japan",
+  "iso2": "JP",
+  "currency": "JPY",
+  "founded": null,
+  "first_change": "1946-01-01",
+  "last_change": "2026-06-17",
+  "built": "2026-09-08",
+  "instruments": [
+    {
+      "from": "1946-01-01",
+      "to": "2008-10-30",
+      "name": "Policy rate",
+      "text": "Policy rate (not itemised by BIS before 2008-10-30)",
+      "kind": "policy"
+    },
+    {
+      "from": "2008-10-31",
+      "to": "2008-12-18",
+      "name": "the BOJ encouraged the UOCR to remain...",
+      "text": "the BOJ encouraged the UOCR to remain at around 0.3%",
+      "kind": "policy"
+    },
+    {
+      "from": "2008-12-19",
+      "to": "2010-10-04",
+      "name": "the BOJ encouraged the UOCR to remain...",
+      "text": "the BOJ encouraged the UOCR to remain at around 0. %",
+      "kind": "policy"
+    },
+    {
+      "from": "2010-10-05",
+      "to": "2013-04-03",
+      "name": "the BOJ encouraged the UOCR to remain...",
+      "text": "the BOJ encouraged the UOCR to remain at around 0 to 0.1%",
+      "kind": "policy"
+    },
+    {
+      "from": "2013-04-04",
+      "to": "2016-09-20",
+      "name": "no policy rate",
+      "text": "no policy rate",
+      "kind": "policy"
+    },
+    {
+      "from": "2016-09-21",
+      "to": "2024-07-31",
+      "name": "the BOJ set the guideline for market...",
+      "text": "the BOJ set the guideline for market operations which specifies a short-term policy interest rate at minus 0.1% and a target level of 10-year JGB yields at around 0%. Short-term policy interest rate",
+      "kind": "policy"
+    },
+    {
+      "from": "2024-08-01",
+      "to": "2025-01-26",
+      "name": "the BOJ encouraged the UOCR to remain...",
+      "text": "the BOJ encouraged the UOCR to remain at around 0.25%",
+      "kind": "policy"
+    },
+    {
+      "from": "2025-01-27",
+      "to": "2025-12-21",
+      "name": "the BOJ encourages the uncollateraliz...",
+      "text": "the BOJ encourages the uncollateralized overnight call rate to remain at around 0.50 percent",
+      "kind": "policy"
+    },
+    {
+      "from": "2025-12-22",
+      "to": "2026-06-16",
+      "name": "the BOJ encourages the uncollateraliz...",
+      "text": "the BOJ encourages the uncollateralized overnight call rate to remain at around 0.75 percent",
+      "kind": "policy"
+    },
+    {
+      "from": "2026-06-17",
+      "to": null,
+      "name": "the BOJ encourages the uncollateraliz...",
+      "text": "the BOJ encourages the uncollateralized overnight call rate to remain at around 1.00 percent",
+      "kind": "policy"
+    }
+  ],
+  "changes": [
+    {
+      "date": "1946-01-01",
+      "level": 3.29,
+      "change": null,
+      "era": 0
+    },
+    {
+      "date": "1946-10-14",
+      "level": 3.65,
+      "change": 0.36,
+      "era": 0
+    },
+    {
+      "date": "1948-04-26",
+      "level": 4.38,
+      "change": 0.73,
+      "era": 0
+    },
+    {
+      "date": "1948-07-05",
+      "level": 5.11,
+      "change": 0.73,
+      "era": 0
+    },
+    {
+      "date": "1951-10-01",
+      "level": 5.84,
+      "change": 0.73,
+      "era": 0
+    },
+    {
+      "date": "1955-08-10",
+      "level": 7.3,
+      "change": 1.46,
+      "era": 0
+    },
+    {
+      "date": "1957-03-20",
+      "level": 7.67,
+      "change": 0.37,
+      "era": 0
+    },
+    {
+      "date": "1957-05-08",
+      "level": 8.4,
+      "change": 0.73,
+      "era": 0
+    },
+    {
+      "date": "1958-06-18",
+      "level": 7.67,
+      "change": -0.73,
+      "era": 0
+    },
+    {
+      "date": "1958-09-05",
+      "level": 7.3,
+      "change": -0.37,
+      "era": 0
+    },
+    {
+      "date": "1959-02-19",
+      "level": 6.94,
+      "change": -0.36,
+      "era": 0
+    },
+    {
+      "date": "1959-12-02",
+      "level": 7.3,
+      "change": 0.36,
+      "era": 0
+    },
+    {
+      "date": "1960-08-24",
+      "level": 6.94,
+      "change": -0.36,
+      "era": 0
+    },
+    {
+      "date": "1961-01-26",
+      "level": 6.57,
+      "change": -0.37,
+      "era": 0
+    },
+    {
+      "date": "1961-07-22",
+      "level": 6.94,
+      "change": 0.37,
+      "era": 0
+    },
+    {
+      "date": "1961-09-29",
+      "level": 7.3,
+      "change": 0.36,
+      "era": 0
+    },
+    {
+      "date": "1962-10-27",
+      "level": 6.94,
+      "change": -0.36,
+      "era": 0
+    },
+    {
+      "date": "1962-11-27",
+      "level": 6.57,
+      "change": -0.37,
+      "era": 0
+    },
+    {
+      "date": "1963-03-20",
+      "level": 6.21,
+      "change": -0.36,
+      "era": 0
+    },
+    {
+      "date": "1963-04-20",
+      "level": 5.84,
+      "change": -0.37,
+      "era": 0
+    },
+    {
+      "date": "1964-03-18",
+      "level": 6.57,
+      "change": 0.73,
+      "era": 0
+    },
+    {
+      "date": "1965-01-09",
+      "level": 6.21,
+      "change": -0.36,
+      "era": 0
+    },
+    {
+      "date": "1965-04-03",
+      "level": 5.84,
+      "change": -0.37,
+      "era": 0
+    },
+    {
+      "date": "1965-06-26",
+      "level": 5.48,
+      "change": -0.36,
+      "era": 0
+    },
+    {
+      "date": "1967-09-01",
+      "level": 5.84,
+      "change": 0.36,
+      "era": 0
+    },
+    {
+      "date": "1968-01-06",
+      "level": 6.21,
+      "change": 0.37,
+      "era": 0
+    },
+    {
+      "date": "1968-08-07",
+      "level": 5.84,
+      "change": -0.37,
+      "era": 0
+    },
+    {
+      "date": "1969-09-01",
+      "level": 6.25,
+      "change": 0.41,
+      "era": 0
+    },
+    {
+      "date": "1970-10-28",
+      "level": 6.0,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "1971-01-20",
+      "level": 5.75,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "1971-05-08",
+      "level": 5.5,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "1971-07-28",
+      "level": 5.25,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "1971-12-29",
+      "level": 4.75,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1972-06-24",
+      "level": 4.25,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1973-04-02",
+      "level": 5.0,
+      "change": 0.75,
+      "era": 0
+    },
+    {
+      "date": "1973-05-30",
+      "level": 5.5,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "1973-07-02",
+      "level": 6.0,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "1973-08-29",
+      "level": 7.0,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1973-12-22",
+      "level": 9.0,
+      "change": 2.0,
+      "era": 0
+    },
+    {
+      "date": "1975-04-16",
+      "level": 8.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1975-06-07",
+      "level": 8.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1975-08-13",
+      "level": 7.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1975-10-24",
+      "level": 6.5,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1977-03-12",
+      "level": 6.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1977-04-19",
+      "level": 5.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1977-09-05",
+      "level": 4.25,
+      "change": -0.75,
+      "era": 0
+    },
+    {
+      "date": "1978-03-16",
+      "level": 3.5,
+      "change": -0.75,
+      "era": 0
+    },
+    {
+      "date": "1979-04-17",
+      "level": 4.25,
+      "change": 0.75,
+      "era": 0
+    },
+    {
+      "date": "1979-07-24",
+      "level": 5.25,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1979-11-02",
+      "level": 6.25,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1980-02-19",
+      "level": 7.25,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1980-03-19",
+      "level": 9.0,
+      "change": 1.75,
+      "era": 0
+    },
+    {
+      "date": "1980-08-20",
+      "level": 8.25,
+      "change": -0.75,
+      "era": 0
+    },
+    {
+      "date": "1980-11-06",
+      "level": 7.25,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1981-03-18",
+      "level": 6.25,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1981-12-11",
+      "level": 5.5,
+      "change": -0.75,
+      "era": 0
+    },
+    {
+      "date": "1983-10-22",
+      "level": 5.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1986-01-30",
+      "level": 4.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1986-03-10",
+      "level": 4.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1986-04-21",
+      "level": 3.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1986-11-01",
+      "level": 3.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1987-02-23",
+      "level": 2.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1989-05-31",
+      "level": 3.25,
+      "change": 0.75,
+      "era": 0
+    },
+    {
+      "date": "1989-10-11",
+      "level": 3.75,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "1989-12-25",
+      "level": 4.25,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "1990-03-20",
+      "level": 5.25,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1990-08-30",
+      "level": 6.0,
+      "change": 0.75,
+      "era": 0
+    },
+    {
+      "date": "1991-07-01",
+      "level": 5.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1991-11-14",
+      "level": 5.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1991-12-30",
+      "level": 4.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1992-04-01",
+      "level": 3.75,
+      "change": -0.75,
+      "era": 0
+    },
+    {
+      "date": "1992-07-27",
+      "level": 3.25,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1993-02-04",
+      "level": 2.5,
+      "change": -0.75,
+      "era": 0
+    },
+    {
+      "date": "1993-09-21",
+      "level": 1.75,
+      "change": -0.75,
+      "era": 0
+    },
+    {
+      "date": "1995-04-14",
+      "level": 1.0,
+      "change": -0.75,
+      "era": 0
+    },
+    {
+      "date": "1995-09-08",
+      "level": 0.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1998-09-09",
+      "level": 0.25,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2001-02-28",
+      "level": 0.15,
+      "change": -0.1,
+      "era": 0
+    },
+    {
+      "date": "2006-03-09",
+      "level": 0.0,
+      "change": -0.15,
+      "era": 0
+    },
+    {
+      "date": "2006-07-14",
+      "level": 0.25,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2007-02-21",
+      "level": 0.5,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2008-10-31",
+      "break": true,
+      "note": "Instrument switched from Policy rate (not itemised by BIS before 2008-10-30) to the BOJ encouraged the UOCR to remain at around 0.3%, per BIS's own era text.",
+      "era": 1
+    },
+    {
+      "date": "2008-10-31",
+      "level": 0.3,
+      "change": null,
+      "era": 1
+    },
+    {
+      "date": "2008-12-19",
+      "break": true,
+      "note": "Instrument switched from the BOJ encouraged the UOCR to remain at around 0.3% to the BOJ encouraged the UOCR to remain at around 0. %, per BIS's own era text.",
+      "era": 2
+    },
+    {
+      "date": "2008-12-19",
+      "level": 0.1,
+      "change": null,
+      "era": 2
+    },
+    {
+      "date": "2010-10-05",
+      "break": true,
+      "note": "Instrument switched from the BOJ encouraged the UOCR to remain at around 0. % to the BOJ encouraged the UOCR to remain at around 0 to 0.1%, per BIS's own era text.",
+      "era": 3
+    },
+    {
+      "date": "2010-10-05",
+      "level": 0.05,
+      "change": null,
+      "era": 3
+    },
+    {
+      "date": "2016-09-21",
+      "break": true,
+      "note": "Instrument switched from the BOJ encouraged the UOCR to remain at around 0 to 0.1% to the BOJ set the guideline for market operations which specifies a short-term policy interest rate at minus 0.1% and a target level of 10-year JGB yields at around 0%. Short-term policy interest rate, per BIS's own era text.",
+      "era": 5
+    },
+    {
+      "date": "2016-09-21",
+      "level": -0.1,
+      "change": null,
+      "era": 5
+    },
+    {
+      "date": "2024-03-21",
+      "break": true,
+      "note": "Instrument switched from the BOJ set the guideline for market operations which specifies a short-term policy interest rate at minus 0.1% and a target level of 10-year JGB yields at around 0%. Short-term policy interest rate to the BOJ encourages the uncollateralized overnight call rate to remain at around 1.00 percent, per BIS's own era text.",
+      "era": 5
+    },
+    {
+      "date": "2024-03-21",
+      "level": 0.05,
+      "change": null,
+      "era": 5
+    },
+    {
+      "date": "2024-08-01",
+      "break": true,
+      "note": "Instrument switched from the BOJ encourages the uncollateralized overnight call rate to remain at around 1.00 percent to the BOJ encouraged the UOCR to remain at around 0.25%, per BIS's own era text.",
+      "era": 6
+    },
+    {
+      "date": "2024-08-01",
+      "level": 0.25,
+      "change": null,
+      "era": 6
+    },
+    {
+      "date": "2025-01-27",
+      "break": true,
+      "note": "Instrument switched from the BOJ encouraged the UOCR to remain at around 0.25% to the BOJ encourages the uncollateralized overnight call rate to remain at around 0.50 percent, per BIS's own era text.",
+      "era": 7
+    },
+    {
+      "date": "2025-01-27",
+      "level": 0.5,
+      "change": null,
+      "era": 7
+    },
+    {
+      "date": "2025-12-22",
+      "break": true,
+      "note": "Instrument switched from the BOJ encourages the uncollateralized overnight call rate to remain at around 0.50 percent to the BOJ encourages the uncollateralized overnight call rate to remain at around 0.75 percent, per BIS's own era text.",
+      "era": 8
+    },
+    {
+      "date": "2025-12-22",
+      "level": 0.75,
+      "change": null,
+      "era": 8
+    },
+    {
+      "date": "2026-06-17",
+      "break": true,
+      "note": "Instrument switched from the BOJ encourages the uncollateralized overnight call rate to remain at around 0.75 percent to the BOJ encourages the uncollateralized overnight call rate to remain at around 1.00 percent, per BIS's own era text.",
+      "era": 9
+    },
+    {
+      "date": "2026-06-17",
+      "level": 1.0,
+      "change": null,
+      "era": 9
+    }
+  ],
+  "market": [],
+  "path": [
+    [
+      "1946-01-01",
+      3.29
+    ],
+    [
+      "1946-10-14",
+      3.65
+    ],
+    [
+      "1948-04-26",
+      4.38
+    ],
+    [
+      "1948-07-05",
+      5.11
+    ],
+    [
+      "1951-10-01",
+      5.84
+    ],
+    [
+      "1955-08-10",
+      7.3
+    ],
+    [
+      "1957-03-20",
+      7.67
+    ],
+    [
+      "1957-05-08",
+      8.4
+    ],
+    [
+      "1958-06-18",
+      7.67
+    ],
+    [
+      "1958-09-05",
+      7.3
+    ],
+    [
+      "1959-02-19",
+      6.94
+    ],
+    [
+      "1959-12-02",
+      7.3
+    ],
+    [
+      "1960-08-24",
+      6.94
+    ],
+    [
+      "1961-01-26",
+      6.57
+    ],
+    [
+      "1961-07-22",
+      6.94
+    ],
+    [
+      "1961-09-29",
+      7.3
+    ],
+    [
+      "1962-10-27",
+      6.94
+    ],
+    [
+      "1962-11-27",
+      6.57
+    ],
+    [
+      "1963-03-20",
+      6.21
+    ],
+    [
+      "1963-04-20",
+      5.84
+    ],
+    [
+      "1964-03-18",
+      6.57
+    ],
+    [
+      "1965-01-09",
+      6.21
+    ],
+    [
+      "1965-04-03",
+      5.84
+    ],
+    [
+      "1965-06-26",
+      5.48
+    ],
+    [
+      "1967-09-01",
+      5.84
+    ],
+    [
+      "1968-01-06",
+      6.21
+    ],
+    [
+      "1968-08-07",
+      5.84
+    ],
+    [
+      "1969-09-01",
+      6.25
+    ],
+    [
+      "1970-10-28",
+      6.0
+    ],
+    [
+      "1971-01-20",
+      5.75
+    ],
+    [
+      "1971-05-08",
+      5.5
+    ],
+    [
+      "1971-07-28",
+      5.25
+    ],
+    [
+      "1971-12-29",
+      4.75
+    ],
+    [
+      "1972-06-24",
+      4.25
+    ],
+    [
+      "1973-04-02",
+      5.0
+    ],
+    [
+      "1973-05-30",
+      5.5
+    ],
+    [
+      "1973-07-02",
+      6.0
+    ],
+    [
+      "1973-08-29",
+      7.0
+    ],
+    [
+      "1973-12-22",
+      9.0
+    ],
+    [
+      "1975-04-16",
+      8.5
+    ],
+    [
+      "1975-06-07",
+      8.0
+    ],
+    [
+      "1975-08-13",
+      7.5
+    ],
+    [
+      "1975-10-24",
+      6.5
+    ],
+    [
+      "1977-03-12",
+      6.0
+    ],
+    [
+      "1977-04-19",
+      5.0
+    ],
+    [
+      "1977-09-05",
+      4.25
+    ],
+    [
+      "1978-03-16",
+      3.5
+    ],
+    [
+      "1979-04-17",
+      4.25
+    ],
+    [
+      "1979-07-24",
+      5.25
+    ],
+    [
+      "1979-11-02",
+      6.25
+    ],
+    [
+      "1980-02-19",
+      7.25
+    ],
+    [
+      "1980-03-19",
+      9.0
+    ],
+    [
+      "1980-08-20",
+      8.25
+    ],
+    [
+      "1980-11-06",
+      7.25
+    ],
+    [
+      "1981-03-18",
+      6.25
+    ],
+    [
+      "1981-12-11",
+      5.5
+    ],
+    [
+      "1983-10-22",
+      5.0
+    ],
+    [
+      "1986-01-30",
+      4.5
+    ],
+    [
+      "1986-03-10",
+      4.0
+    ],
+    [
+      "1986-04-21",
+      3.5
+    ],
+    [
+      "1986-11-01",
+      3.0
+    ],
+    [
+      "1987-02-23",
+      2.5
+    ],
+    [
+      "1989-05-31",
+      3.25
+    ],
+    [
+      "1989-10-11",
+      3.75
+    ],
+    [
+      "1989-12-25",
+      4.25
+    ],
+    [
+      "1990-03-20",
+      5.25
+    ],
+    [
+      "1990-08-30",
+      6.0
+    ],
+    [
+      "1991-07-01",
+      5.5
+    ],
+    [
+      "1991-11-14",
+      5.0
+    ],
+    [
+      "1991-12-30",
+      4.5
+    ],
+    [
+      "1992-04-01",
+      3.75
+    ],
+    [
+      "1992-07-27",
+      3.25
+    ],
+    [
+      "1993-02-04",
+      2.5
+    ],
+    [
+      "1993-09-21",
+      1.75
+    ],
+    [
+      "1995-04-14",
+      1.0
+    ],
+    [
+      "1995-09-08",
+      0.5
+    ],
+    [
+      "1998-09-09",
+      0.25
+    ],
+    [
+      "2001-02-28",
+      0.15
+    ],
+    [
+      "2006-03-09",
+      0.0
+    ],
+    [
+      "2006-07-14",
+      0.25
+    ],
+    [
+      "2007-02-21",
+      0.5
+    ],
+    [
+      "2008-10-31",
+      0.3
+    ],
+    [
+      "2008-12-19",
+      0.1
+    ],
+    [
+      "2010-10-05",
+      0.05
+    ],
+    [
+      "2016-09-21",
+      -0.1
+    ],
+    [
+      "2024-03-21",
+      0.05
+    ],
+    [
+      "2024-08-01",
+      0.25
+    ],
+    [
+      "2025-01-27",
+      0.5
+    ],
+    [
+      "2025-12-22",
+      0.75
+    ],
+    [
+      "2026-06-17",
+      1.0
+    ]
+  ],
+  "coverage": {
+    "spine": "bis",
+    "note": "Derived entirely from BIS daily policy-rate levels (WS_CBPOL); every day the level differs from the prior day is a change day. Instrument eras parsed from the BIS COMPILATION field (10 era(s))."
+  },
+  "sources": [
+    {
+      "label": "BIS central bank policy rates (CBPOL), Japan",
+      "url": "https://data.bis.org/topics/CBPOL"
+    }
+  ]
+}

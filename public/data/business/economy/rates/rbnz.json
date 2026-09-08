@@ -1,0 +1,833 @@
+{
+  "code": "rbnz",
+  "name": "Reserve Bank of New Zealand",
+  "short": "RBNZ",
+  "country": "New Zealand",
+  "iso2": "NZ",
+  "currency": "NZD",
+  "founded": "1934-08-01",
+  "first_change": "1999-03-17",
+  "last_change": "2026-09-02",
+  "built": "2026-09-08",
+  "instruments": [
+    {
+      "from": "1999-03-17",
+      "to": "2009-10-28",
+      "name": "Official Cash Rate (BIS-derived)",
+      "text": "Official Cash Rate (BIS-derived)",
+      "kind": "policy"
+    },
+    {
+      "from": "2009-10-29",
+      "to": null,
+      "name": "Official Cash Rate",
+      "text": "Official Cash Rate",
+      "kind": "policy"
+    }
+  ],
+  "changes": [
+    {
+      "date": "1999-03-17",
+      "level": 4.5,
+      "change": null,
+      "era": 0
+    },
+    {
+      "date": "1999-11-17",
+      "level": 5.0,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "2000-01-19",
+      "level": 5.25,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2000-03-15",
+      "level": 5.75,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "2000-04-19",
+      "level": 6.0,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2000-05-17",
+      "level": 6.5,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "2001-03-14",
+      "level": 6.25,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2001-04-19",
+      "level": 6.0,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2001-05-16",
+      "level": 5.75,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2001-09-19",
+      "level": 5.25,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2001-11-14",
+      "level": 4.75,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2002-03-20",
+      "level": 5.0,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2002-04-17",
+      "level": 5.25,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2002-05-15",
+      "level": 5.5,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2002-07-03",
+      "level": 5.75,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2003-04-24",
+      "level": 5.5,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2003-06-05",
+      "level": 5.25,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2003-07-24",
+      "level": 5.0,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2004-01-29",
+      "level": 5.25,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2004-04-29",
+      "level": 5.5,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2004-06-10",
+      "level": 5.75,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2004-07-29",
+      "level": 6.0,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2004-09-09",
+      "level": 6.25,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2004-10-28",
+      "level": 6.5,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2005-03-10",
+      "level": 6.75,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2005-10-27",
+      "level": 7.0,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2005-12-08",
+      "level": 7.25,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2007-03-08",
+      "level": 7.5,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2007-04-26",
+      "level": 7.75,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2007-06-07",
+      "level": 8.0,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2007-07-26",
+      "level": 8.25,
+      "change": 0.25,
+      "era": 0
+    },
+    {
+      "date": "2008-07-24",
+      "level": 8.0,
+      "change": -0.25,
+      "era": 0
+    },
+    {
+      "date": "2008-09-11",
+      "level": 7.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2008-10-23",
+      "level": 6.5,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "2008-12-04",
+      "level": 5.0,
+      "change": -1.5,
+      "era": 0
+    },
+    {
+      "date": "2009-01-29",
+      "level": 3.5,
+      "change": -1.5,
+      "era": 0
+    },
+    {
+      "date": "2009-03-12",
+      "level": 3.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2009-04-30",
+      "level": 2.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "2009-10-29",
+      "break": true,
+      "note": "From here every decision date is the RBNZ's own published OCR history (rbnz.govt.nz/monetary-policy/monetary-policy-decisions); before it, BIS New Zealand daily (the Bank's own B2 wholesale-rates workbooks were unreachable on two attempts).",
+      "era": 1
+    },
+    {
+      "date": "2010-06-10",
+      "level": 2.75,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2010-07-29",
+      "level": 3.0,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2011-03-10",
+      "level": 2.5,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2014-03-13",
+      "level": 2.75,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2014-04-24",
+      "level": 3.0,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2014-06-12",
+      "level": 3.25,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2014-07-24",
+      "level": 3.5,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2015-06-11",
+      "level": 3.25,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2015-07-23",
+      "level": 3.0,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2015-09-10",
+      "level": 2.75,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2015-12-10",
+      "level": 2.5,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2016-03-10",
+      "level": 2.25,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2016-08-11",
+      "level": 2.0,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2016-11-10",
+      "level": 1.75,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2019-05-08",
+      "level": 1.5,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2019-08-07",
+      "level": 1.0,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2020-03-16",
+      "level": 0.25,
+      "change": -0.75,
+      "era": 1
+    },
+    {
+      "date": "2021-10-06",
+      "level": 0.5,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2021-11-24",
+      "level": 0.75,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2022-02-23",
+      "level": 1.0,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2022-04-13",
+      "level": 1.5,
+      "change": 0.5,
+      "era": 1
+    },
+    {
+      "date": "2022-05-25",
+      "level": 2.0,
+      "change": 0.5,
+      "era": 1
+    },
+    {
+      "date": "2022-07-13",
+      "level": 2.5,
+      "change": 0.5,
+      "era": 1
+    },
+    {
+      "date": "2022-08-17",
+      "level": 3.0,
+      "change": 0.5,
+      "era": 1
+    },
+    {
+      "date": "2022-10-05",
+      "level": 3.5,
+      "change": 0.5,
+      "era": 1
+    },
+    {
+      "date": "2022-11-23",
+      "level": 4.25,
+      "change": 0.75,
+      "era": 1
+    },
+    {
+      "date": "2023-02-22",
+      "level": 4.75,
+      "change": 0.5,
+      "era": 1
+    },
+    {
+      "date": "2023-04-05",
+      "level": 5.25,
+      "change": 0.5,
+      "era": 1
+    },
+    {
+      "date": "2023-05-24",
+      "level": 5.5,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2024-08-14",
+      "level": 5.25,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2024-10-09",
+      "level": 4.75,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2024-11-27",
+      "level": 4.25,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2025-02-19",
+      "level": 3.75,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2025-04-09",
+      "level": 3.5,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2025-05-28",
+      "level": 3.25,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2025-08-20",
+      "level": 3.0,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2025-10-08",
+      "level": 2.5,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "2025-11-26",
+      "level": 2.25,
+      "change": -0.25,
+      "era": 1
+    },
+    {
+      "date": "2026-07-08",
+      "level": 2.5,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2026-09-02",
+      "level": 2.75,
+      "change": 0.25,
+      "era": 1
+    }
+  ],
+  "market": [],
+  "path": [
+    [
+      "1999-03-17",
+      4.5
+    ],
+    [
+      "1999-11-17",
+      5.0
+    ],
+    [
+      "2000-01-19",
+      5.25
+    ],
+    [
+      "2000-03-15",
+      5.75
+    ],
+    [
+      "2000-04-19",
+      6.0
+    ],
+    [
+      "2000-05-17",
+      6.5
+    ],
+    [
+      "2001-03-14",
+      6.25
+    ],
+    [
+      "2001-04-19",
+      6.0
+    ],
+    [
+      "2001-05-16",
+      5.75
+    ],
+    [
+      "2001-09-19",
+      5.25
+    ],
+    [
+      "2001-11-14",
+      4.75
+    ],
+    [
+      "2002-03-20",
+      5.0
+    ],
+    [
+      "2002-04-17",
+      5.25
+    ],
+    [
+      "2002-05-15",
+      5.5
+    ],
+    [
+      "2002-07-03",
+      5.75
+    ],
+    [
+      "2003-04-24",
+      5.5
+    ],
+    [
+      "2003-06-05",
+      5.25
+    ],
+    [
+      "2003-07-24",
+      5.0
+    ],
+    [
+      "2004-01-29",
+      5.25
+    ],
+    [
+      "2004-04-29",
+      5.5
+    ],
+    [
+      "2004-06-10",
+      5.75
+    ],
+    [
+      "2004-07-29",
+      6.0
+    ],
+    [
+      "2004-09-09",
+      6.25
+    ],
+    [
+      "2004-10-28",
+      6.5
+    ],
+    [
+      "2005-03-10",
+      6.75
+    ],
+    [
+      "2005-10-27",
+      7.0
+    ],
+    [
+      "2005-12-08",
+      7.25
+    ],
+    [
+      "2007-03-08",
+      7.5
+    ],
+    [
+      "2007-04-26",
+      7.75
+    ],
+    [
+      "2007-06-07",
+      8.0
+    ],
+    [
+      "2007-07-26",
+      8.25
+    ],
+    [
+      "2008-07-24",
+      8.0
+    ],
+    [
+      "2008-09-11",
+      7.5
+    ],
+    [
+      "2008-10-23",
+      6.5
+    ],
+    [
+      "2008-12-04",
+      5.0
+    ],
+    [
+      "2009-01-29",
+      3.5
+    ],
+    [
+      "2009-03-12",
+      3.0
+    ],
+    [
+      "2009-04-30",
+      2.5
+    ],
+    [
+      "2010-06-10",
+      2.75
+    ],
+    [
+      "2010-07-29",
+      3.0
+    ],
+    [
+      "2011-03-10",
+      2.5
+    ],
+    [
+      "2014-03-13",
+      2.75
+    ],
+    [
+      "2014-04-24",
+      3.0
+    ],
+    [
+      "2014-06-12",
+      3.25
+    ],
+    [
+      "2014-07-24",
+      3.5
+    ],
+    [
+      "2015-06-11",
+      3.25
+    ],
+    [
+      "2015-07-23",
+      3.0
+    ],
+    [
+      "2015-09-10",
+      2.75
+    ],
+    [
+      "2015-12-10",
+      2.5
+    ],
+    [
+      "2016-03-10",
+      2.25
+    ],
+    [
+      "2016-08-11",
+      2.0
+    ],
+    [
+      "2016-11-10",
+      1.75
+    ],
+    [
+      "2019-05-08",
+      1.5
+    ],
+    [
+      "2019-08-07",
+      1.0
+    ],
+    [
+      "2020-03-16",
+      0.25
+    ],
+    [
+      "2021-10-06",
+      0.5
+    ],
+    [
+      "2021-11-24",
+      0.75
+    ],
+    [
+      "2022-02-23",
+      1.0
+    ],
+    [
+      "2022-04-13",
+      1.5
+    ],
+    [
+      "2022-05-25",
+      2.0
+    ],
+    [
+      "2022-07-13",
+      2.5
+    ],
+    [
+      "2022-08-17",
+      3.0
+    ],
+    [
+      "2022-10-05",
+      3.5
+    ],
+    [
+      "2022-11-23",
+      4.25
+    ],
+    [
+      "2023-02-22",
+      4.75
+    ],
+    [
+      "2023-04-05",
+      5.25
+    ],
+    [
+      "2023-05-24",
+      5.5
+    ],
+    [
+      "2024-08-14",
+      5.25
+    ],
+    [
+      "2024-10-09",
+      4.75
+    ],
+    [
+      "2024-11-27",
+      4.25
+    ],
+    [
+      "2025-02-19",
+      3.75
+    ],
+    [
+      "2025-04-09",
+      3.5
+    ],
+    [
+      "2025-05-28",
+      3.25
+    ],
+    [
+      "2025-08-20",
+      3.0
+    ],
+    [
+      "2025-10-08",
+      2.5
+    ],
+    [
+      "2025-11-26",
+      2.25
+    ],
+    [
+      "2026-07-08",
+      2.5
+    ],
+    [
+      "2026-09-02",
+      2.75
+    ]
+  ],
+  "coverage": {
+    "spine": "mixed",
+    "note": "BIS New Zealand daily from 1999-03-17 (the OCR's introduction) to 2009-10-28, standing in for the RBNZ's own B2 wholesale-rates workbooks, which returned 'Website unavailable' on two separate download attempts. From 2009-10-29 every decision date and level is the RBNZ's own published OCR history. No rate table survives from before the OCR era, so founding (1934) to 1999 is left uncovered rather than guessed. BIS New Zealand daily agrees on 14 of 14 overlapping change dates checked from the own-data start (0.0% disagreement)."
+  },
+  "sources": [
+    {
+      "label": "Reserve Bank of New Zealand, past monetary policy decisions",
+      "url": "https://www.rbnz.govt.nz/monetary-policy/monetary-policy-decisions"
+    },
+    {
+      "label": "BIS central bank policy rates (CBPOL), New Zealand",
+      "url": "https://data.bis.org/topics/CBPOL"
+    }
+  ]
+}

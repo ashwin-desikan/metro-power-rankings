@@ -1,0 +1,766 @@
+{
+  "code": "bis-it",
+  "name": "Italy",
+  "short": "Italy",
+  "country": "Italy",
+  "iso2": "IT",
+  "currency": "EUR",
+  "founded": null,
+  "first_change": "1945-01-01",
+  "last_change": "1998-12-28",
+  "built": "2026-09-08",
+  "instruments": [
+    {
+      "from": "1945-01-01",
+      "to": "1991-12-31",
+      "name": "the official interest rate of Bank of...",
+      "text": "the official interest rate of Bank of Italy was applied to the discounting of banks' ordinary portfolios",
+      "kind": "policy"
+    },
+    {
+      "from": "1992-01-01",
+      "to": "1998-12-31",
+      "name": "the official discount rate and the ra...",
+      "text": "the official discount rate and the rate for fixed-term advances were respectively the lower and upper limits of the so-called corridor of official rates",
+      "kind": "policy"
+    },
+    {
+      "from": "1999-01-01",
+      "to": null,
+      "name": "the series is discontinued as Italy j...",
+      "text": "the series is discontinued as Italy joined the euro area",
+      "kind": "policy"
+    }
+  ],
+  "changes": [
+    {
+      "date": "1945-01-01",
+      "level": 4.0,
+      "change": null,
+      "era": 0
+    },
+    {
+      "date": "1947-09-06",
+      "level": 5.5,
+      "change": 1.5,
+      "era": 0
+    },
+    {
+      "date": "1949-04-09",
+      "level": 4.5,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1950-04-06",
+      "level": 4.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1958-06-07",
+      "level": 3.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1969-08-18",
+      "level": 4.0,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "1970-03-09",
+      "level": 5.5,
+      "change": 1.5,
+      "era": 0
+    },
+    {
+      "date": "1971-04-06",
+      "level": 5.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1971-10-14",
+      "level": 4.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1972-04-10",
+      "level": 4.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1973-09-17",
+      "level": 6.5,
+      "change": 2.5,
+      "era": 0
+    },
+    {
+      "date": "1974-03-19",
+      "level": 9.0,
+      "change": 2.5,
+      "era": 0
+    },
+    {
+      "date": "1974-12-27",
+      "level": 8.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1975-05-28",
+      "level": 7.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1975-09-15",
+      "level": 6.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1976-02-02",
+      "level": 7.0,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1976-02-25",
+      "level": 8.0,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1976-03-18",
+      "level": 12.0,
+      "change": 4.0,
+      "era": 0
+    },
+    {
+      "date": "1976-10-01",
+      "level": 15.0,
+      "change": 3.0,
+      "era": 0
+    },
+    {
+      "date": "1977-06-13",
+      "level": 13.0,
+      "change": -2.0,
+      "era": 0
+    },
+    {
+      "date": "1977-08-29",
+      "level": 11.5,
+      "change": -1.5,
+      "era": 0
+    },
+    {
+      "date": "1978-09-04",
+      "level": 10.5,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1979-10-08",
+      "level": 12.0,
+      "change": 1.5,
+      "era": 0
+    },
+    {
+      "date": "1979-12-06",
+      "level": 15.0,
+      "change": 3.0,
+      "era": 0
+    },
+    {
+      "date": "1980-09-29",
+      "level": 16.5,
+      "change": 1.5,
+      "era": 0
+    },
+    {
+      "date": "1981-03-23",
+      "level": 19.0,
+      "change": 2.5,
+      "era": 0
+    },
+    {
+      "date": "1982-08-25",
+      "level": 18.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1983-04-11",
+      "level": 17.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1984-02-16",
+      "level": 16.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1984-05-07",
+      "level": 15.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1984-09-04",
+      "level": 16.5,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1985-01-04",
+      "level": 15.5,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1985-11-08",
+      "level": 15.0,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1986-03-24",
+      "level": 14.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1986-04-28",
+      "level": 13.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1986-05-27",
+      "level": 12.0,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1987-03-16",
+      "level": 11.5,
+      "change": -0.5,
+      "era": 0
+    },
+    {
+      "date": "1987-08-28",
+      "level": 12.0,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "1988-08-26",
+      "level": 12.5,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "1989-03-06",
+      "level": 13.5,
+      "change": 1.0,
+      "era": 0
+    },
+    {
+      "date": "1990-05-21",
+      "level": 12.5,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1991-05-13",
+      "level": 11.5,
+      "change": -1.0,
+      "era": 0
+    },
+    {
+      "date": "1991-12-23",
+      "level": 12.0,
+      "change": 0.5,
+      "era": 0
+    },
+    {
+      "date": "1992-07-06",
+      "break": true,
+      "note": "Instrument switched from the official interest rate of Bank of Italy was applied to the discounting of banks' ordinary portfolios to the official discount rate and the rate for fixed-term advances were respectively the lower and upper limits of the so-called corridor of official rates, per BIS's own era text.",
+      "era": 1
+    },
+    {
+      "date": "1992-07-06",
+      "level": 13.0,
+      "change": null,
+      "era": 1
+    },
+    {
+      "date": "1992-07-17",
+      "level": 13.75,
+      "change": 0.75,
+      "era": 1
+    },
+    {
+      "date": "1992-08-04",
+      "level": 13.25,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1992-09-04",
+      "level": 15.0,
+      "change": 1.75,
+      "era": 1
+    },
+    {
+      "date": "1992-10-26",
+      "level": 14.0,
+      "change": -1.0,
+      "era": 1
+    },
+    {
+      "date": "1992-11-13",
+      "level": 13.0,
+      "change": -1.0,
+      "era": 1
+    },
+    {
+      "date": "1992-12-23",
+      "level": 12.0,
+      "change": -1.0,
+      "era": 1
+    },
+    {
+      "date": "1993-02-04",
+      "level": 11.5,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1993-04-23",
+      "level": 11.0,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1993-05-21",
+      "level": 10.5,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1993-06-14",
+      "level": 10.0,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1993-07-06",
+      "level": 9.0,
+      "change": -1.0,
+      "era": 1
+    },
+    {
+      "date": "1993-09-10",
+      "level": 8.5,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1993-10-22",
+      "level": 8.0,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1994-02-18",
+      "level": 7.5,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1994-05-12",
+      "level": 7.0,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1994-08-12",
+      "level": 7.5,
+      "change": 0.5,
+      "era": 1
+    },
+    {
+      "date": "1995-02-22",
+      "level": 8.25,
+      "change": 0.75,
+      "era": 1
+    },
+    {
+      "date": "1995-05-29",
+      "level": 9.0,
+      "change": 0.75,
+      "era": 1
+    },
+    {
+      "date": "1996-07-24",
+      "level": 8.25,
+      "change": -0.75,
+      "era": 1
+    },
+    {
+      "date": "1996-10-24",
+      "level": 7.5,
+      "change": -0.75,
+      "era": 1
+    },
+    {
+      "date": "1997-01-22",
+      "level": 6.75,
+      "change": -0.75,
+      "era": 1
+    },
+    {
+      "date": "1997-06-30",
+      "level": 6.25,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1997-12-24",
+      "level": 5.5,
+      "change": -0.75,
+      "era": 1
+    },
+    {
+      "date": "1998-04-22",
+      "level": 5.0,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1998-10-27",
+      "level": 4.0,
+      "change": -1.0,
+      "era": 1
+    },
+    {
+      "date": "1998-12-04",
+      "level": 3.5,
+      "change": -0.5,
+      "era": 1
+    },
+    {
+      "date": "1998-12-28",
+      "level": 3.0,
+      "change": -0.5,
+      "era": 1
+    }
+  ],
+  "market": [],
+  "path": [
+    [
+      "1945-01-01",
+      4.0
+    ],
+    [
+      "1947-09-06",
+      5.5
+    ],
+    [
+      "1949-04-09",
+      4.5
+    ],
+    [
+      "1950-04-06",
+      4.0
+    ],
+    [
+      "1958-06-07",
+      3.5
+    ],
+    [
+      "1969-08-18",
+      4.0
+    ],
+    [
+      "1970-03-09",
+      5.5
+    ],
+    [
+      "1971-04-06",
+      5.0
+    ],
+    [
+      "1971-10-14",
+      4.5
+    ],
+    [
+      "1972-04-10",
+      4.0
+    ],
+    [
+      "1973-09-17",
+      6.5
+    ],
+    [
+      "1974-03-19",
+      9.0
+    ],
+    [
+      "1974-12-27",
+      8.0
+    ],
+    [
+      "1975-05-28",
+      7.0
+    ],
+    [
+      "1975-09-15",
+      6.0
+    ],
+    [
+      "1976-02-02",
+      7.0
+    ],
+    [
+      "1976-02-25",
+      8.0
+    ],
+    [
+      "1976-03-18",
+      12.0
+    ],
+    [
+      "1976-10-01",
+      15.0
+    ],
+    [
+      "1977-06-13",
+      13.0
+    ],
+    [
+      "1977-08-29",
+      11.5
+    ],
+    [
+      "1978-09-04",
+      10.5
+    ],
+    [
+      "1979-10-08",
+      12.0
+    ],
+    [
+      "1979-12-06",
+      15.0
+    ],
+    [
+      "1980-09-29",
+      16.5
+    ],
+    [
+      "1981-03-23",
+      19.0
+    ],
+    [
+      "1982-08-25",
+      18.0
+    ],
+    [
+      "1983-04-11",
+      17.0
+    ],
+    [
+      "1984-02-16",
+      16.0
+    ],
+    [
+      "1984-05-07",
+      15.5
+    ],
+    [
+      "1984-09-04",
+      16.5
+    ],
+    [
+      "1985-01-04",
+      15.5
+    ],
+    [
+      "1985-11-08",
+      15.0
+    ],
+    [
+      "1986-03-24",
+      14.0
+    ],
+    [
+      "1986-04-28",
+      13.0
+    ],
+    [
+      "1986-05-27",
+      12.0
+    ],
+    [
+      "1987-03-16",
+      11.5
+    ],
+    [
+      "1987-08-28",
+      12.0
+    ],
+    [
+      "1988-08-26",
+      12.5
+    ],
+    [
+      "1989-03-06",
+      13.5
+    ],
+    [
+      "1990-05-21",
+      12.5
+    ],
+    [
+      "1991-05-13",
+      11.5
+    ],
+    [
+      "1991-12-23",
+      12.0
+    ],
+    [
+      "1992-07-06",
+      13.0
+    ],
+    [
+      "1992-07-17",
+      13.75
+    ],
+    [
+      "1992-08-04",
+      13.25
+    ],
+    [
+      "1992-09-04",
+      15.0
+    ],
+    [
+      "1992-10-26",
+      14.0
+    ],
+    [
+      "1992-11-13",
+      13.0
+    ],
+    [
+      "1992-12-23",
+      12.0
+    ],
+    [
+      "1993-02-04",
+      11.5
+    ],
+    [
+      "1993-04-23",
+      11.0
+    ],
+    [
+      "1993-05-21",
+      10.5
+    ],
+    [
+      "1993-06-14",
+      10.0
+    ],
+    [
+      "1993-07-06",
+      9.0
+    ],
+    [
+      "1993-09-10",
+      8.5
+    ],
+    [
+      "1993-10-22",
+      8.0
+    ],
+    [
+      "1994-02-18",
+      7.5
+    ],
+    [
+      "1994-05-12",
+      7.0
+    ],
+    [
+      "1994-08-12",
+      7.5
+    ],
+    [
+      "1995-02-22",
+      8.25
+    ],
+    [
+      "1995-05-29",
+      9.0
+    ],
+    [
+      "1996-07-24",
+      8.25
+    ],
+    [
+      "1996-10-24",
+      7.5
+    ],
+    [
+      "1997-01-22",
+      6.75
+    ],
+    [
+      "1997-06-30",
+      6.25
+    ],
+    [
+      "1997-12-24",
+      5.5
+    ],
+    [
+      "1998-04-22",
+      5.0
+    ],
+    [
+      "1998-10-27",
+      4.0
+    ],
+    [
+      "1998-12-04",
+      3.5
+    ],
+    [
+      "1998-12-28",
+      3.0
+    ]
+  ],
+  "coverage": {
+    "spine": "bis",
+    "note": "Derived entirely from BIS daily policy-rate levels (WS_CBPOL); every day the level differs from the prior day is a change day. Instrument eras parsed from the BIS COMPILATION field (3 era(s))."
+  },
+  "sources": [
+    {
+      "label": "BIS central bank policy rates (CBPOL), Italy",
+      "url": "https://data.bis.org/topics/CBPOL"
+    }
+  ]
+}
