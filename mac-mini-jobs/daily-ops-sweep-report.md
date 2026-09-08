@@ -1,190 +1,184 @@
-# Daily Ops Sweep -- 2026-09-07
+# Daily Ops Sweep -- 2026-09-08
 
-Window: 2026-09-05T23:03Z to 2026-09-07T01:03Z (trailing 26h). Read-only run,
-no writes made except this file.
+Window: `2026-09-06T23:04Z` -> `2026-09-08T01:04Z` (trailing 26h), selected on each
+dispatcher.log line's own UTC timestamp. Read-only run: nothing was re-run, pinged,
+written or fixed. This file is the only thing this sweep touched.
 
-## Jobs this window: 19 ok, 0 failed, 2 flagged
+## Jobs this window: 18 ok, 1 failed, 2 flagged
 
-**Dispatcher jobs (16 runs, all DONE ok, zero FAIL, zero MISSED):**
+Nineteen completed dispatcher runs, plus this sweep. **Zero MISSED**, and
+`dispatcher.py --status` reports every job `already-ran` with no drift between the
+live copy and the repo checkout.
 
-| Slot (UTC) | Job | Result |
+| job | slot (UTC) | result |
 |---|---|---|
-| 09-05 23:00 | football-standings | ok 87s |
-| 09-06 01:00 | daily-ops-sweep | ok 438s |
-| 09-06 02:30 | activity-feed | ok 5s |
-| 09-06 04:00 | euro-comps | ok 5s |
-| 09-06 05:00 | gap-league-watch | ok 3s |
-| 09-06 05:00 | football-standings | ok 88s |
-| 09-06 05:50 | business-daily | ok 337s |
-| 09-06 06:00 | substack-daily | ok 4s |
-| 09-06 07:00 | mlb-sim | ok 448s |
-| 09-06 07:20 | feed-monitor | ok 16s |
-| 09-06 09:00 | egress-refresh | ok 116s |
-| 09-06 11:00 | football-standings | ok 89s |
-| 09-06 14:30 | mlb-sim | ok 444s |
-| 09-06 17:00 | football-standings | ok 95s |
-| 09-06 23:00 | football-standings | ok 85s |
-| 09-06 23:40 | cfb-sun | ok 401s |
+| football-standings | 09-06 23:00 | DONE 85s |
+| cfb-sun | 09-06 23:40 | DONE 401s |
+| daily-ops-sweep | 09-07 01:00 | DONE 688s |
+| activity-feed | 09-07 02:30 | DONE 5s |
+| euro-comps | 09-07 04:00 | DONE 5s |
+| gap-league-watch | 09-07 05:00 | DONE 3s |
+| football-standings | 09-07 05:00 | DONE 87s |
+| screen-number-ones | 09-07 05:00 | DONE 16s |
+| business-daily | 09-07 05:50 | DONE 336s |
+| substack-daily | 09-07 06:00 | DONE 4s |
+| **forecast** | **09-07 06:10** | **FAIL exit 1 after 15s** |
+| mlb-sim | 09-07 07:00 | DONE 459s |
+| feed-monitor | 09-07 07:20 | DONE 16s |
+| football-standings | 09-07 11:00 | DONE 89s |
+| screen-number-ones | 09-07 13:00 | DONE 17s |
+| mlb-sim | 09-07 14:30 | DONE 457s |
+| football-standings | 09-07 17:00 | DONE 90s |
+| screen-number-ones | 09-07 21:00 | DONE 16s |
+| football-standings | 09-07 23:00 | DONE 85s |
 
-**Non-dispatcher services (3, all healthy):**
+**Non-dispatcher services, all healthy.** `f1-weekly` (hourly launchd) idle all
+window, correctly: R13 Italian GP at Monza was 4-6 Sep and synced on 09-06.
+`deploy-watch` (600s) clean, no re-triggers, `/tmp/deploy-watch.err` unchanged since
+09-06 17:31. `heartbeat` (900s) last exit 0, empty stderr. `newsletter-podcast`
+completed 09-07 (episode `1MurdylD42MC1AbOjE6hXP` READY, both Gmail drafts created).
 
-- **f1-weekly** (hourly launchd, not dispatcher-managed, so it is absent from
-  `state.json` by design): ~26 ticks, all clean. Ingested a new race at
-  09-06 22:54Z: `2026 R13 (Italian Grand Prix)`, results +22, poles +1,
-  driverStand 23, constructorStand 11, 0 unresolved metros. Verified against
-  the real world: Monza was Round 13 of the 2026 season on 2026-09-06, won by
-  Kimi Antonelli, on a 22-car / 11-team grid. Counts match. Its `[vercel skip]`
-  is correct, `lib/f1.ts:100` reads `public/data/f1/data.json` from GitHub raw
-  (ISR), not at build time.
-- **newsletter-podcast** (daily): 09-06 run clean, episode
-  `spotify:episode:4QQqkc35KOIhjQPEEpyPMy` reached READY, both Gmail drafts
-  created. No 09-07 log yet, it runs later this morning.
-- **deploy-watch** (10-min launchd): ~156 ticks. Fired one retry, see flagged
-  item 1. Production is currently live and correct: last tick reads
-  `up to date: TARGET ebbdd66d6 is live (serving ebbdd66d6)`.
+**Job-script `push()` alerts fired this window: none.** `gap-league-watch` logged
+"no state transitions this run" (India ISL still `awaiting_target`, api-football has
+no 2026 season yet -- working as designed). `football-standings` logged
+`unmatched=0 collisions=0` on all five runs. No mktcap METRO QUEUE nudge, no
+business-daily geo-stub notice.
 
-**No job-script `push()` alerts fired this window.** The only alert-adjacent
-log lines were `[gap-watch] India L1 Indian Super League -> awaiting_target`
-(2026 not yet published upstream, `no state transitions this run`, so no push),
-the citypopulation watcher reporting no new in-coverage updates, and
-`check-leaders-sanity: OK`.
+**Standing gates, all green:** `check:release-notes` OK (130 entries, newest
+2026-09-07, so yesterday's shipping day is covered). `check:data-currency` 24
+current / 0 overdue / 0 unreadable. Working tree clean.
 
-**Nothing was silently skipped.** Every job whose `last_run_date` looks stale is
-on a weekly or monthly cadence and ran on its correct slot: `mktcap-refresh` is
-`weekdays = [6]` (Saturday) and ran 09-05, `egress-refresh` is `weekdays = [7]`
-(Sunday) and ran 09-06. 09-05 was a Saturday and 09-06 a Sunday, so both are on
-time. Next mktcap run is Saturday 09-12.
+**Vercel build ledger:** the last ~17h of deployments are **1 READY, 0 ERROR, 19
+CANCELED** -- one production build (`c2db399ab`, Ashwin's elections/heartbreak
+commit), comfortably inside the 2/day budget. I chased an apparent 3.7h gap where
+`fec7feb5c` (owners, build-relevant, no skip marker) had no deployment, and it is a
+false alarm: `deploy-watch.out` shows TARGET going straight from `ebbdd66d6` to
+`c2db399ab` with a single "not live, 4m old" tick, which means the whole chain
+`fec7feb5c -> ddb802577 -> 31f4fd739 -> 81f57c446 -> bc84ab6c7 -> c2db399ab` reached
+origin in **one push with the app commit at HEAD**. That is the CLAUDE.md rule
+followed correctly, not broken. No build was missed.
 
 ## Self-healed (informational only, no action needed)
 
-- **The 250 MB function-limit deploy failure (09-06).** Two production
-  deployments ERRORed: `dpl_J5tyi4v...` (commit `b40726b7b`, 16:10Z) and
-  `dpl_F2hkf3e...` (the retry commit `1291a3818`, 16:31Z). Both were the OG
-  comparison card pulling all of `public/data` into the function bundle.
-  Ashwin diagnosed and fixed it the same afternoon in `ebbdd66d6`, which
-  deployed READY at 16:48Z and is what production serves now. No action left
-  on the failure itself. The watcher's behaviour during it is flagged below.
-- **Nothing app-side is unshipped.** Every commit after `ebbdd66d6` that touches
-  a build-relevant path is an ISR-backed `[vercel skip]` data refresh
-  (`git log ebbdd66d6..HEAD -- app lib public ...` returns 10 commits, all
-  `[vercel skip]`). The site is fully up to date with the day's work.
-- **Release notes are satisfied.** 09-06 shipped a lot of `app/`+`lib/` work and
-  does have its `lib/releases.ts` entry. `npm run check:release-notes` passes:
-  `OK (129 entries, newest 2026-09-06)`.
-- **Build budget.** UTC day 09-06: 2 READY, 2 ERROR, 20 CANCELED. Both READY
-  builds were justified (`599d58a51`, egress-refresh's build-time-read data
-  change, by design; and `ebbdd66d6`, the fix for the ERRORs). UTC day 09-07 so
-  far: 5 deployments, all CANCELED, 0 READY, 0 ERROR. The `[vercel skip]`
-  discipline is working.
+**1. `forecast` FAIL 09-07 06:10Z -- diagnosed and fixed the same morning, by hand.**
+
+The health gate rejected the build with `ERROR France: required firstRound.shares is
+empty`; the run had already printed `FR R1: {} runoffs: 8`. The gate sits between
+build and commit, so **nothing was published** -- the failure mode was a stalled
+forecast, never a wrong one. The job exited in 15s instead of its usual ~607s
+precisely because it aborted before the commit/CDN-flush steps.
+
+Root cause (from `48ecffabd`): `fetch_fr()` sliced the first round with a hardcoded
+date-stamped heading, `=== Since July 2026 ===`. Wikipedia's editors rolled that
+heading forward over the weekend to "July 2026 - August 2026" with a new "Since
+September 2026" above it, so the slice returned empty. The runoffs key off undated
+"X vs. Y" subsections, which is why they still parsed 8/8 and the fetch printed a
+cheerful "FR OK" -- the asymmetry that hid it.
+
+Fixed same morning by the mini session, in two commits: `48ecffabd` (France moved to
+`find_section()` + per-subsection years, plus a hard fail naming the article when a
+section yields 0 rows) and `e5555ad49` (audited all nine fetches; Brazil had the
+identical defect, `=== 2026 ===` hardcoded with no fallback, and was fixed the same
+way). Data verified live in this sweep: `public/data/forecast.json` `built:
+2026-09-07`, `fr.firstRound.shares` holds 14 candidates, Le Pen 33.4. Written up in
+HANDOFF.md under "2026-09-07 -- mini -> Windows ... FORECAST FETCHES AUDITED".
+
+Note the cadence: `forecast` runs Mon/Wed/Fri 06:10Z, so **no later scheduled run
+existed inside this window to self-heal it** -- the recovery was the manual session,
+not the schedule. Next scheduled run is Wed 09-09 06:10Z and should pass.
+
+**2. FA WSL flipped from placeholder to real 2026-27 data, mid-morning 09-07.**
+
+Carried as a flagged item by the 09-06 and 09-07 sweeps. It resolved itself between
+the 06:05Z and 12:01Z `football-standings` runs:
+
+```
+06:05Z  [wfootball]  FA WSL (id 44): 12 standings rows [2025-26] PLACEHOLDER
+        [wfootball]  awaiting 2026-27 in api-football: FA WSL (showing 2025-26)
+12:01Z  [wfootball]  FA WSL (id 44): 14 standings rows [2026-27]
+```
+
+api-football published the season. The latest bundle
+(`public/data/football/wlive-2026.json`, generated 09-07T23:03Z) carries
+`placeholder: false`, `_ratchet_holds: {}`, and the "awaiting 2026-27" line is gone,
+replaced by `all leagues on their current season`.
+
+I checked the 14 rows against the real world rather than trusting the row count. The
+WSL did expand from 12 to 14 clubs for 2026-27; Birmingham City and Crystal Palace
+went up automatically as WSL2 winner and runner-up (2 May 2026), and Charlton
+Athletic took the fourteenth place by beating Leicester City in the promotion/
+relegation play-off on 23 May 2026 (0-0, 2-1 on penalties), sending Leicester down.
+All fourteen clubs in the bundle match that, matchday 1 played. **The data is
+correct, not a scraper artefact.** Sources:
+[ESPN on the expansion vote](https://www.espn.com/soccer/story/_/id/45523903/wsl-clubs-vote-expand-league-14-teams-2026-27-season),
+[Sky Sports on FA approval](https://www.skysports.com/football/news/11095/13386295/fa-approves-womens-super-league-expansion-to-14-teams-from-2026-27-season),
+[2026-27 WSL](https://en.wikipedia.org/wiki/2026%E2%80%9327_Women%27s_Super_League).
+
+The blind spot yesterday's sweep named still exists in principle (`_ratchet_holds`
+only fires on a regression, so a placeholder-before-kickoff never records a hold),
+but the case that prompted it has resolved and the proposed ~10-day check would not
+have fired until 09-14. Nothing owed this week.
+
+**3. The deploy watcher fix is applied.** Yesterday's sweep flagged that
+`run-deploy-watch.sh` was still unchanged since `3b6a60d5d`. Ashwin shipped it in
+`81f57c446` on 09-07: the watcher now asks GitHub for the deployment state and
+treats `failure`/`error` as do-not-retry with a one-per-sha "deploy manually" alert.
+On the residual 429 case, he considered the recommendation and deliberately kept
+`none/unknown` falling through to the retry path, documenting why in the comment
+(a build canceled by a newer push is the case the watcher exists for). That
+exposure is bounded by `MAX_ATTEMPTS=3` and `COOLDOWN_MIN=18`. **Recorded as his
+decision, not re-raised.**
+
+**4. `empty:ESPN PGA scoreboard` in feed-monitor -- correct, not a break.** Has read
+`empty` since 09-02; the monitor scores it as ok, distinct from `FAIL` (the endpoint
+answers with valid shape and zero events). The FedEx Cup season has ended and the
+next PGA Tour event is 17 September, so an empty scoreboard the week of 7 September
+is the right answer. Expect it to return to `ok` around 09-17. Every other probe
+green, including AFL, which came back on 08-31.
 
 ## Needs Ashwin's attention
 
-### 1. The deploy watcher still cannot tell CANCELED from ERROR, and its own safety check silently failed open
+**One item, and it is bookkeeping only.**
 
-**What happened.** You wrote this up yourself last night in HANDOFF
-(`7dc5e4d7d`, "The deploy watcher retried a build that had genuinely FAILED"),
-so the diagnosis is yours and this entry exists to confirm two things: the fix
-is still not applied, and there is a second defect underneath it that the
-write-up does not cover.
+**`forecast` is still pinned at `last_status: "failed"` in `state.json`.**
 
-**Still unfixed, confirmed.** `mac-mini-jobs/run-deploy-watch.sh` is unchanged
-since `3b6a60d5d` (2026-08-06); `git status --porcelain` on it is clean. The
-launchd job `com.citizenofnowhere.deploy-watch` is loaded and firing every 600s.
-So the exposure is live: a genuinely failing build still gets retried up to
-`MAX_ATTEMPTS=3`, each attempt a production build that is certain to fail the
-same way.
-
-**The second defect, which is new information.** The script has a guard at
-lines 89-110 that is supposed to prevent exactly this class of pointless retry:
-before re-triggering, it asks the GitHub deployments API whether TARGET already
-has a successful production deployment. At the moment it mattered, that call
-was rate-limited. `/tmp/deploy-watch.err` contains:
+*What happened.* The 09-07 06:10Z slot genuinely failed, so the dispatcher correctly
+recorded `failed`. The fix landed by hand (commits `48ecffabd` / `e5555ad49` /
+`7de55bfdd` / `019c090ee`) rather than by re-running the ~10-minute job, so nothing
+ever overwrote that status. `dispatcher.py --status` therefore still shows:
 
 ```
-curl: (56) The requested URL returned error: 429
-post-commit CHECK: OK (touches_build=1 tagged=0)
+forecast    09-07 06:10  2026-09-07   failed    already-ran
 ```
 
-with mtime `2026-09-06 17:31:29` BST, which is the exact minute of
-`re-triggered build of b40726b7b (attempt 1)`, and the `post-commit CHECK`
-lines immediately after it are that retry commit's own git hook. So the
-sequence was: guard call 429s, guard returns empty, script reads empty as "no
-successful deployment", script retries.
+*Root cause.* This is the exact situation `--mark-ok` was added for on 2026-08-30,
+after `egress-refresh`'s sanity gate was resolved the same way. It is the same call
+made for `cfb-sun` on 08-31 and for `conflicts-monthly` / `fiba-weekly`, both of
+which currently read `ok (manual)`.
 
-The guard cannot distinguish those two states. The python it pipes through
-swallows every exception (`except Exception: pass`) and the whole call ends in
-`2>/dev/null || true`, so an HTTP failure and a definitive "this commit never
-deployed" produce the identical empty string. It **fails open into a retry**.
+*Impact: cosmetic only.* I read `mark_ok()`'s docstring and confirmed the claim
+rather than assuming it -- `last_status` is pure bookkeeping and **is never read by
+`decide()`**, which uses only `last_run_date` and `last_slot`. So this cannot
+suppress, delay or double-fire Wednesday's run. The only cost is that the next
+sweep, and any `--status` you run, will keep reporting a failure that was fixed
+twelve hours later, which is the alert-fatigue problem this job exists to reduce.
 
-This did not change the outcome on 09-06, because that build had genuinely
-ERRORed and the guard would have returned empty anyway. But it is the exact
-failure mode the guard was added to prevent (its own comment cites ~8 minutes
-burned on 2026-08-03): on a day when the build actually succeeded and only the
-live check lags, a 429 causes a spurious retry and a wasted production build.
-This also matches the standing CLAUDE.md warning that the GitHub deployment
-endpoint gives misleading answers under secondary rate limiting (404 there, 429
-here) and should not be trusted as a source of build truth.
+*Recommended fix.* One command on the mini, no repo change, no build:
 
-**Recommended fix**, extending the one you already specified:
-
-1. Your fifteen-liner: before re-triggering, query the deployment *state* for
-   TARGET. `CANCELED` retries; `ERROR` does not retry and instead pushes a loud
-   "build FAILED, deploy manually" ntfy with the commit and the inspector URL.
-2. Additionally, make the pre-check **fail closed**. Have the python emit three
-   distinguishable values, `yes` / `no` / `unknown`, and treat `unknown` (any
-   HTTP or parse failure, including 429) as "do not retry this tick, try again
-   in 10 minutes". A missed retry self-heals on the next tick; a spurious retry
-   costs a production build and heals nothing. This is the same fail-closed
-   reasoning already applied to `scripts/vercel-ignore.sh`.
-3. Prefer the Vercel API over the GitHub deployments endpoint for both
-   questions. It answers state directly and is not the endpoint CLAUDE.md
-   already warns about.
-
-Per the repo convention this is mini-side and needs its own test before it goes
-live.
-
-**Minor, unexplained, low impact.** `$HOME/metro-mini-jobs/.deploy-watch-state`
-does not currently exist, although the 16:31Z retry should have written it
-(`printf ... > "$STATE"` at line 147 runs immediately before the
-`re-triggered build of...` line that is in the log). Nothing in the repo deletes
-it, so it was most likely removed by hand while you were investigating last
-night. Practical impact is close to nil, since the attempts counter resets on a
-new TARGET sha anyway. Worth knowing only because if that file is ever
-*unwritable* rather than merely absent, `ATTEMPTS` reads 0 every tick, and both
-`MAX_ATTEMPTS` and `COOLDOWN_MIN` stop bounding the retry loop.
-
-### 2. FA WSL is still on the 2025-26 placeholder, and still cannot alert (carried from 09-06)
-
-**Unchanged from yesterday's sweep, re-verified today, no action taken.**
-Today's `football-standings` run at 09-07 00:06Z still logs:
-
-```
-[wfootball]   FA WSL (id 44): 12 standings rows [2025-26] PLACEHOLDER
+```bash
+python3 ~/metro-mini-jobs/dispatcher.py --mark-ok forecast
 ```
 
-Read-only api-football check this run confirms the upstream state is identical
-to yesterday's:
+That sets it to `ok (manual)` -- deliberately distinct from a plain `ok`, so the
+record still says a human resolved it -- and writes a `MARK-OK` line to
+dispatcher.log. I did not run it: this sweep makes no writes, even mechanical ones.
 
-| season | start | current | coverage.standings | /standings rows |
-|---|---|---|---|---|
-| 2025 | 2025-09-05 | false | true | (last season) |
-| 2026 | 2026-09-04 | **true** | **false** | **0** |
+*Optional, only if you want it to stop recurring.* The general gap is that a job
+fixed outside its wrapper never clears its own status. If that becomes a pattern
+worth automating, the smallest reversible change is for the forecast wrapper to
+call `--mark-ok` on itself after a successful manual rebuild -- but with three
+instances in six weeks, doing it by hand is probably still the right cost.
 
-So the 2026-27 season is live upstream and 3 days past kickoff, but the provider
-has not enabled standings coverage. The site's labelled 2025-26 fallback is
-correct behaviour and will self-clear when coverage flips.
-
-**Why nothing will ever alert.** The `_ratchet_holds` alert fires only on a
-*regression*. FA WSL was a declared placeholder before kickoff, so it takes the
-`pick_effective` fall-through and no hold is ever recorded. A season can sit on
-last year's table indefinitely without anyone being told.
-
-**Recommended fix (unchanged, and now with the field confirmed present).**
-`/leagues?id=44` returns `seasons[].start`, verified today as `2026-09-04`.
-Compare against it and push one ntfy when a watched season is ~10 days past
-kickoff with no standings rows. At 10 days that alert would first fire on
-2026-09-14, so there is no urgency this week, but it needs building before the
-next league does the same thing quietly.
-
-**Not urgent, do not rush it.** The user-facing page is correct and honest
-today. This is about closing a blind spot, not repairing broken output.
+---
+*Read-only sweep. No jobs re-run, no healthchecks pinged, no Supabase writes, no
+data or script changes. Only this file was written and committed.*
