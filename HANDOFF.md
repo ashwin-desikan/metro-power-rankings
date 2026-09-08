@@ -11683,3 +11683,52 @@ placeholders before).
 - ECB row carries the EU flag (`FLAG_CODE_ALIAS xm -> eu` in lib/flags.ts).
 - The NFL live refresh's failure email is the 13:47 UTC 403 run; fixed in
   e4c9500a0, unpushed. Friday's run fails again unless the push lands first.
+
+### T. Close of session, 2026-09-08 (cowork, bridged to the Windows box)
+
+**Pushed** `9d2301a2a..0fb71d152` at about 21:15 UTC after a rebase onto 17
+automated data commits (one conflict, `public/data/nrl/finals.json`, kept
+the four fixtures over the workflow's empty file). Ten untagged app commits,
+HEAD `0fb71d152` "The season as a shape", so ONE production build for the
+day; every earlier deployment today was CANCELED by the guard. Build result:
+see the Vercel note at the end of this entry.
+
+**State at close.** Windows tree clean at `0fb71d152` = origin/main. Atlas
+67 election hubs, 16 confirmed dates. /business/economy live with 49 listed
+banks (60 files), compare page, sortable board. Function-size: no route
+above 220 MB (largest 121.7). Geography of Erasure on the 89-move ledger.
+NFL season hubs carry the week grid. Tuesday NFL job fixed for Friday.
+NRL bracket reads local fixtures over an empty remote.
+
+**Watch on the first runs after this push**
+- Fri 09:30 UTC `nfl-live-refresh.yml`: first run with the User-Agent fix
+  and the first with results (Thursday opener). Expect `public/data/nfl/
+  elo/**` committed `[vercel skip]` and the 2026 hub to flip to `live`, the
+  week grid and "What is left" to appear. If it 403s again, the UA policy
+  moved once more: measure from a box with curl and adjust the token.
+- Next `footy-refresh.yml` cron (06:00 UTC) with the parser fix: origin's
+  `nrl/finals.json` should carry the four qualifying finals; the AFL bundle
+  should be unchanged.
+- Mini: `economy-rates` is registered for Fridays 07:30 but has NEVER run.
+  Before it fires: apply `supabase/migrations/20260908120000_policy_rate_
+  tables.sql`, run `python3 scripts/macro/rates/refresh.py` (dry run) on
+  the mini and read the NEW RATE DECISIONS block, then `--write`, then
+  `load_policy_rates.py --write` once. If BIS's SDMX URL shape has drifted
+  the run fails loudly as SourceUnreachable, never silently.
+- The deploy watcher: this push's build must read READY; if the function
+  size gate ever fails at deploy again, `check:data-reads` is the first
+  thing to run.
+
+**Open, carried forward** (also in the next-session prompt in the Claude
+Projects folder): Finland 1994-2018 presidential dumps; Wave 1-4 parser
+re-diff; pre-1901 Romania; Czech indirect presidencies; ke 2002 LDP row;
+ro 1922 seats; vd 1967 parties; NRL/CFL/WNBA/IPL/AFL relocations absent
+from the moves ledger until their workbooks encode a move; the RBNZ
+2009-onward table transcribed from a rendered page (spot-check); Riksbank
+pre-1907; Everton calibration and Lions pang values from 09-07; the macro
+hub's Housing, Prices, Yields and Countries tabs; a week scrubber on the
+NFL Elo race; game-row box-score links on the expectation pages.
+
+Vercel: `dpl_8BP4f56iheoFsauEyxkmv9J5Eogj` for `0fb71d152` read READY at
+about 21:22 UTC, four Node functions, the only READY build of 2026-09-08
+(every other deployment today was CANCELED by the guard). No ERROR.
