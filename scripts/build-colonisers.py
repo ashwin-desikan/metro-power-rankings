@@ -84,11 +84,18 @@ MIN_COLONIES = 2
 # Confederation, Federation, dominion status. Argue with them here rather than
 # in the rendering code.
 DOMINIONS = [
-    {"slug": "canada", "from": 1867, "of": "United Kingdom"},
-    {"slug": "australia", "from": 1901, "of": "United Kingdom"},
-    {"slug": "new-zealand", "from": 1907, "of": "United Kingdom"},
-    # `to` is the last year the label applies. South Africa became a republic
+    # `to` is the last year the "dominion of the United Kingdom" label
+    # applies. The label ends when the dominion gained full legislative
+    # sovereignty under the Statute of Westminster: Canada on its passage in
+    # 1931, Australia on adopting it in 1942, New Zealand on adopting it in
+    # 1947. They stay Commonwealth realms with the same monarch, but a realm
+    # is a sovereign state, not a dominion of another; the time machine reads
+    # them as sovereign from the year after. South Africa became a republic
     # on 31 May 1961 and left the Commonwealth; from 1962 it is sovereign.
+    # Ruled by Ashwin, 2026-09-08.
+    {"slug": "canada", "from": 1867, "to": 1931, "of": "United Kingdom"},
+    {"slug": "australia", "from": 1901, "to": 1942, "of": "United Kingdom"},
+    {"slug": "new-zealand", "from": 1907, "to": 1947, "of": "United Kingdom"},
     {"slug": "south-africa", "from": 1910, "to": 1961, "of": "United Kingdom"},
 ]
 

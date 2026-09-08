@@ -20,16 +20,16 @@ function Team({ name, score }: { name: string; score: string | null }) {
 function Row({ m }: { m: CricketMatch }) {
   const day = m.date ? new Date(m.date).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "";
   return (
-    <div className="flex items-center justify-between gap-3 py-2 border-b last:border-0" style={{ borderColor: "var(--border)" }}>
+    <div className="flex items-center justify-between gap-3 py-2 border-b last:border-0 min-w-0" style={{ borderColor: "var(--border)" }}>
       <div className="flex items-center gap-2 text-sm flex-wrap">
         <span className="text-[10px] px-1.5 py-0.5 rounded border flex-shrink-0" style={{ borderColor: "var(--border)", color: "var(--text-dim)", ...mono }}>{m.format}</span>
         <Team name={m.teamA} score={m.scoreA} />
         <span className="text-[var(--text-dim)]">v</span>
         <Team name={m.teamB} score={m.scoreB} />
       </div>
-      <div className="text-right text-xs flex-shrink-0">
+      <div className="text-right text-xs min-w-0 shrink">
         <div className="text-[var(--text-muted)]">{m.status === "live" ? <span style={{ color: "#10b981" }}>● LIVE</span> : day}</div>
-        <div className="text-[var(--text-dim)] truncate max-w-[15rem]">{m.competition}{m.city ? ` · ${m.city}` : ""}</div>
+        <div className="text-[var(--text-dim)] truncate max-w-[9rem] sm:max-w-[15rem]">{m.competition}{m.city ? ` · ${m.city}` : ""}</div>
       </div>
     </div>
   );

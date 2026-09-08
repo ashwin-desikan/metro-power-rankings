@@ -129,7 +129,7 @@ function AuthBar() {
           <button
             type="button"
             onClick={() => signOut()}
-            className="shrink-0 text-[12px] rounded-full border px-3 py-1.5 hover:border-[var(--accent)] transition-colors"
+            className="shrink-0 inline-flex items-center min-h-[44px] text-[12px] rounded-full border px-3 py-1.5 hover:border-[var(--accent)] transition-colors"
             style={{ borderColor: "var(--border)" }}
           >
             Sign out

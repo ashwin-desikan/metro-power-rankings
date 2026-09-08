@@ -46,11 +46,11 @@ export { SectionHead } from "@/app/_shared/SectionHead";
 export function Crumbs({ tab }: { tab?: string }) {
   return (
     <nav className="text-xs text-[var(--text-muted)] mb-4">
-      <Link href="/" className="hover:underline">Home</Link>
+      <Link href="/" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Home</Link>
       {" / "}
       {tab ? (
         <>
-          <Link href="/business" className="hover:underline">Business</Link>
+          <Link href="/business" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Business</Link>
           {" / "}
           <span>{tab}</span>
         </>

@@ -35,7 +35,7 @@ export default function ElectionsNav() {
           <Link
             key={href}
             href={href}
-            className="px-3 py-2 text-sm font-semibold"
+            className="min-h-[44px] inline-flex items-center px-3 text-sm font-semibold"
             style={{
               color: active ? "var(--text)" : "var(--text-muted)",
               borderBottom: active ? "2px solid var(--accent)" : "2px solid transparent",

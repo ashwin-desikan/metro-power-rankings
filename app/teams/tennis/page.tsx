@@ -378,7 +378,7 @@ export default function TennisHubPage() {
         </p>
         <div className="flex flex-wrap gap-2">
           {data.hostMetros.map((m) => (
-            <Link key={m.metroSlug} href={`/rankings/${m.metroSlug}#sports`} className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:text-[var(--text)] hover:border-[var(--text-dim)]"
+            <Link key={m.metroSlug} href={`/rankings/${m.metroSlug}#sports`} className="inline-flex items-center min-h-[44px] text-xs px-3 py-1.5 rounded-full border transition-colors hover:text-[var(--text)] hover:border-[var(--text-dim)]"
               style={{ background: "var(--bg-card)", color: "var(--text-muted)", borderColor: "var(--border)" }}>
               {m.metroName} <span style={mono} className="text-[var(--text-dim)]">{m.count}</span>
             </Link>

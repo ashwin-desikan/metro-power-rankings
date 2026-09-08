@@ -105,7 +105,7 @@ export function BackButton({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold text-[var(--text-muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+      className="inline-flex items-center min-h-[44px] gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold text-[var(--text-muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
       style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
     >
       <span aria-hidden>←</span> {label}
@@ -137,7 +137,7 @@ export function DetailPager({
         {next ? (
           <Link
             href={`${hubHref}/${next.id}`}
-            className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold text-[var(--text-muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            className="inline-flex items-center min-h-[44px] gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold text-[var(--text-muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
             style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
           >
             {next.label}{tag} <span aria-hidden>→</span>

@@ -11,7 +11,7 @@ import {
 import { TOP_TEAMS, topTeamAnchorId } from "@/lib/topTeams";
 import { resolveTeamLink } from "@/lib/teamLinks";
 import { normalizeSport } from "@/lib/sportLabels";
-import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import PicksList, { type TopTeamPickData } from "./PicksList";
 
 export const dynamicParams = false;
 
@@ -153,9 +153,36 @@ function buildSummary() {
   return { total, sportCounts, dominantSport, contestedCount };
 }
 
+// Build the plain, serializable data each card needs. All server-only
+// resolution (resolveTeamLink, slug lookup) happens here; PicksList (a
+// client component, for the paging/deep-link behaviour) only maps this
+// data to markup.
+function buildPicksData(slugIndex: Map<string, string>): TopTeamPickData[] {
+  return TOP_TEAMS.map((t) => {
+    const slug = resolveSlug(t.metro, slugIndex);
+    const teamParts = t.team.split("/").map((p) => p.trim()).filter(Boolean);
+    const sportParts = t.sport.split("/").map((s) => s.trim()).filter(Boolean);
+    return {
+      rank: t.rank,
+      metro: t.metro,
+      metroHref: slug ? `/rankings/${slug}` : null,
+      anchorId: topTeamAnchorId(t.metro),
+      sportLabel: sportLabel(t.sport),
+      isContested: t.team.includes("/"),
+      rationale: t.rationale,
+      teamParts: teamParts.map((part, idx) => {
+        const partSport = sportParts.length === teamParts.length ? sportParts[idx] : (sportParts[0] ?? t.sport);
+        const link = resolveTeamLink(partSport, part);
+        return { name: part, href: link?.href ?? null, logoUrl: link?.logoUrl ?? null };
+      }),
+    };
+  });
+}
+
 export default function TopTeamsPage() {
   const slugIndex = buildSlugIndex();
   const summary = buildSummary();
+  const picksData = buildPicksData(slugIndex);
 
   // Breadcrumb JSON-LD
   const breadcrumbLd = {
@@ -392,131 +419,7 @@ export default function TopTeamsPage() {
             </span>
           </div>
 
-          <div className="grid gap-5">
-            {TOP_TEAMS.map((t) => {
-              const slug = resolveSlug(t.metro, slugIndex);
-              const isContested = t.team.includes("/");
-              return (
-                <article
-                  key={`${t.rank}-${t.metro}`}
-                  id={topTeamAnchorId(t.metro)}
-                  className="rounded-lg border p-5 sm:p-6 transition hover:border-[var(--accent)] scroll-mt-24"
-                  style={{
-                    borderColor: "var(--border)",
-                    backgroundColor: "var(--bg-card)",
-                  }}
-                >
-                  <header className="flex items-start gap-4 mb-3 flex-wrap">
-                    <div
-                      className="text-xs font-semibold px-2.5 py-1 rounded border whitespace-nowrap"
-                      style={{
-                        color: "var(--accent)",
-                        borderColor: "var(--border)",
-                        fontFamily: "'JetBrains Mono', monospace",
-                      }}
-                    >
-                      #{t.rank}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3
-                        className="text-lg sm:text-xl font-bold tracking-tight leading-snug"
-                        style={{ color: "var(--text)" }}
-                      >
-                        {slug ? (
-                          <Link
-                            href={`/rankings/${slug}`}
-                            className="hover:text-[var(--accent)] transition-colors"
-                          >
-                            {t.metro}
-                          </Link>
-                        ) : (
-                          t.metro
-                        )}
-                      </h3>
-                      <div
-                        className="text-sm mt-1 flex flex-wrap items-center gap-2"
-                        style={{ color: "var(--text-muted)" }}
-                      >
-                        {(() => {
-                          // Split co-equal "A / B" picks so each named team links to
-                          // its own page. The sport is split in parallel for cross-sport
-                          // split cities (e.g. "Basketball / Baseball" -> Lakers, Dodgers);
-                          // a single sport applies to every part otherwise. resolveTeamLink
-                          // returns null where no page exists, so those parts stay text.
-                          const teamParts = t.team.split("/").map((p) => p.trim()).filter(Boolean);
-                          const sportParts = t.sport.split("/").map((s) => s.trim()).filter(Boolean);
-                          return (
-                            <span className="inline-flex flex-wrap items-center gap-x-1.5 gap-y-1 font-semibold" style={{ color: "var(--text)" }}>
-                              {teamParts.map((part, idx) => {
-                                const partSport = sportParts.length === teamParts.length ? sportParts[idx] : (sportParts[0] ?? t.sport);
-                                const link = resolveTeamLink(partSport, part);
-                                return (
-                                  <span key={part} className="inline-flex items-center gap-1.5">
-                                    {idx > 0 ? <span className="text-[var(--text-dim)]">/</span> : null}
-                                    {link ? (
-                                      <Link
-                                        href={link.href}
-                                        className="inline-flex items-center gap-1.5 underline decoration-dotted underline-offset-2 hover:opacity-80 transition-opacity"
-                                        style={{ color: "var(--accent)" }}
-                                      >
-                                        {link.logoUrl ? (
-                                          <img src={link.logoUrl} alt="" width={18} height={18} className="inline-block flex-shrink-0 object-contain" aria-hidden loading="lazy" decoding="async" />
-                                        ) : (
-                                          <CrestIcon name={part} size={18} className="flex-shrink-0" />
-                                        )}
-                                        <span>{part}</span>
-                                      </Link>
-                                    ) : (
-                                      <span className="inline-flex items-center" style={{ color: "var(--text)" }}>
-                                        <CrestIcon name={part} size={18} className="mr-1.5 align-middle" />
-                                        <span>{part}</span>
-                                      </span>
-                                    )}
-                                  </span>
-                                );
-                              })}
-                            </span>
-                          );
-                        })()}
-                        {t.sport && (
-                          <span
-                            className="inline-block text-[10px] uppercase tracking-widest border rounded px-2 py-0.5"
-                            style={{
-                              borderColor: "var(--border)",
-                              color: "var(--text-muted)",
-                              fontFamily: "'JetBrains Mono', monospace",
-                            }}
-                          >
-                            {sportLabel(t.sport)}
-                          </span>
-                        )}
-                        {isContested && (
-                          <span
-                            className="inline-block text-[10px] uppercase tracking-widest border rounded px-2 py-0.5"
-                            style={{
-                              borderColor: "var(--accent)",
-                              color: "var(--accent)",
-                              fontFamily: "'JetBrains Mono', monospace",
-                            }}
-                          >
-                            Co-equal
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </header>
-                  {t.rationale && (
-                    <p
-                      className="text-sm leading-relaxed"
-                      style={{ color: "var(--text)" }}
-                    >
-                      {t.rationale}
-                    </p>
-                  )}
-                </article>
-              );
-            })}
-          </div>
+          <PicksList picks={picksData} />
         </section>
       </div>
     </main>

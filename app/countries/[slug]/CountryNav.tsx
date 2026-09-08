@@ -129,7 +129,7 @@ export default function CountryNav({ items }: { items: CountryNavItem[] }) {
                   key={it.href}
                   href={it.href}
                   aria-current={on ? "true" : undefined}
-                  className="text-xs px-3 py-1.5 rounded-full border transition-colors whitespace-nowrap hover:text-[var(--text)] hover:border-[var(--text-dim)]"
+                  className="inline-flex items-center min-h-[44px] text-xs px-3 py-1.5 rounded-full border transition-colors whitespace-nowrap hover:text-[var(--text)] hover:border-[var(--text-dim)]"
                   style={{
                     background: on ? "var(--accent)" : "var(--bg-card)",
                     color: on ? "#fff" : "var(--text-muted)",

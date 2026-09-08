@@ -40,7 +40,7 @@ export default function StructuresBoard({ rows }: { rows: Supertall[] }) {
               key={id}
               type="button"
               onClick={() => setKind(id)}
-              className={`rounded-full border px-3 py-1.5 text-[12.5px] transition-colors ${kind === id ? "font-semibold" : "text-[var(--text-muted)] hover:border-[var(--accent-dim)]"}`}
+              className={`inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-[12.5px] transition-colors ${kind === id ? "font-semibold" : "text-[var(--text-muted)] hover:border-[var(--accent-dim)]"}`}
               style={kind === id ? { background: "var(--accent)", color: "#08080D", borderColor: "var(--accent)" } : CARD}
             >
               {label} <span style={MONO}>{n}</span>

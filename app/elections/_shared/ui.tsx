@@ -12,11 +12,11 @@ export { MONO, CARD, TH, THR, TD, TDR, SMCOL };
 export function ElectionsCrumbs({ tab }: { tab?: string }) {
   return (
     <nav className="text-xs text-[var(--text-muted)] mb-4">
-      <Link href="/" className="hover:underline">Home</Link>
+      <Link href="/" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Home</Link>
       {" / "}
       {tab ? (
         <>
-          <Link href="/elections" className="hover:underline">Elections</Link>
+          <Link href="/elections" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Elections</Link>
           {" / "}
           <span>{tab}</span>
         </>
@@ -82,7 +82,7 @@ export function SiblingHubs() {
         <Link
           key={href}
           href={href}
-          className="inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold text-[var(--text-muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs font-semibold text-[var(--text-muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
           style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
         >
           {label}

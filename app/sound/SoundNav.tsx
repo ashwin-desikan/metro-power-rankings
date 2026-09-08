@@ -25,7 +25,7 @@ export default function SoundNav() {
           <Link
             key={href}
             href={href}
-            className="px-3 py-2 text-sm font-semibold"
+            className="min-h-[44px] inline-flex items-center px-3 text-sm font-semibold"
             style={{
               color: active ? 'var(--text, #e6edf3)' : 'var(--text-muted)',
               borderBottom: active ? '2px solid var(--accent, #4f9dff)' : '2px solid transparent',

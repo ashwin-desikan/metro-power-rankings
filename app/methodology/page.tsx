@@ -117,77 +117,77 @@ export default function MethodologyPage() {
             <div className="flex flex-wrap gap-2 p-4">
                 <a
                   href="#premise"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   The premise
                 </a>
                 <a
                   href="#dimensions"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   The sixteen dimensions
                 </a>
                 <a
                   href="#tiers"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   Score tiers
                 </a>
                 <a
                   href="#adjustments"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   Adjustments and design choices
                 </a>
                 <a
                   href="#editorial"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   Declared editorial decisions
                 </a>
                 <a
                   href="#limitations"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   Known limitations
                 </a>
                 <a
                   href="#peers"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   How this index relates to other major metro rankings
                 </a>
                 <a
                   href="#velvet-rock"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   The Velvet Rock Index
                 </a>
                 <a
                   href="#zone-zero-cup"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   The Zone Zero Cup
                 </a>
                 <a
                   href="#vintage"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   Data vintage and refresh cadence
                 </a>
                 <a
                   href="#version"
-                  className="rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center min-h-[44px] rounded-full border px-3 py-1.5 text-xs transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
                 >
                   This methodology version

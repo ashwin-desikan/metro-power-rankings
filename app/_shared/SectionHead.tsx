@@ -60,7 +60,7 @@ export function SectionHead({
       <p className="mt-1 text-sm text-[var(--text-muted)] max-w-3xl">{sub}</p>
       {more ? (
         <details className="mt-1.5 max-w-3xl">
-          <summary className="text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
+          <summary className="min-h-[44px] flex items-center text-xs text-[var(--text-dim)] cursor-pointer hover:text-[var(--accent)]">
             {moreLabel}
           </summary>
           <div className="mt-2 text-sm text-[var(--text-muted)]">{more}</div>

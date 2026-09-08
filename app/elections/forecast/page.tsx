@@ -194,7 +194,7 @@ export default async function ForecastPage() {
             <a
               key={c.id}
               href={`#${c.id}`}
-              className="inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              className="inline-flex items-center min-h-[44px] gap-2 rounded-full border px-3 py-1.5 text-xs transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
               style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

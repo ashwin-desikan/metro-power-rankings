@@ -24,15 +24,15 @@ function Row({ m }: { m: RugbyMatch }) {
   const bWin = m.scoreA !== null && m.scoreB !== null && m.scoreB > m.scoreA;
   const day = new Date(m.date + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
   return (
-    <div className="flex items-center justify-between gap-3 py-1 border-b last:border-0" style={{ borderColor: "var(--border)" }}>
+    <div className="flex items-center justify-between gap-3 py-1 border-b last:border-0 min-w-0" style={{ borderColor: "var(--border)" }}>
       <div className="flex items-center gap-2.5 text-sm flex-wrap">
         <Team name={m.teamA} score={m.scoreA} win={aWin} />
         <span className="text-[var(--text-dim)]">v</span>
         <Team name={m.teamB} score={m.scoreB} win={bWin} />
       </div>
-      <div className="text-right text-xs flex-shrink-0">
+      <div className="text-right text-xs min-w-0 shrink">
         <div className="text-[var(--text-muted)]">{m.status === "live" ? <span style={{ color: "#10b981" }}>● LIVE</span> : day}</div>
-        <div className="text-[var(--text-dim)] truncate max-w-[15rem]">{m.competition}{m.city ? ` · ${m.city}` : ""}</div>
+        <div className="text-[var(--text-dim)] truncate max-w-[9rem] sm:max-w-[15rem]">{m.competition}{m.city ? ` · ${m.city}` : ""}</div>
       </div>
     </div>
   );

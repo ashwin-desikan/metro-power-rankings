@@ -31,7 +31,7 @@ export function Tabs({
             type="button"
             aria-selected={on}
             onClick={() => onChange(it.key)}
-            className={`inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border transition-colors ${
+            className={`inline-flex items-center min-h-[44px] gap-1.5 text-xs px-3 py-1.5 rounded-full border transition-colors ${
               on ? "font-semibold" : "hover:text-[var(--text)] hover:border-[var(--text-dim)]"
             }`}
             style={{

@@ -16,11 +16,11 @@ export { MONO, CARD, SourcesCard };
 export function OrderCrumbs({ tab }: { tab?: string }) {
   return (
     <nav className="text-xs text-[var(--text-muted)] mb-4">
-      <Link href="/" className="hover:underline">Home</Link>
+      <Link href="/" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Home</Link>
       {" / "}
       {tab ? (
         <>
-          <Link href="/order" className="hover:underline">Order</Link>
+          <Link href="/order" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Order</Link>
           {" / "}
           <span>{tab}</span>
         </>

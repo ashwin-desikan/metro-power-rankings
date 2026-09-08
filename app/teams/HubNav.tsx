@@ -20,7 +20,7 @@ export default function HubNav({ items }: { items: HubNavItem[] }) {
         <a
           key={it.href}
           href={it.href}
-          className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:text-[var(--text)] hover:border-[var(--text-dim)]"
+          className="inline-flex items-center min-h-[44px] text-xs px-3 py-1.5 rounded-full border transition-colors hover:text-[var(--text)] hover:border-[var(--text-dim)]"
           style={{
             background: "var(--bg-card)",
             color: "var(--text-muted)",

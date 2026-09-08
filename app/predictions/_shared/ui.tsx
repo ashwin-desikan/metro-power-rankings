@@ -25,11 +25,11 @@ export function PredCrumbs({
 }) {
   return (
     <nav className="text-xs text-[var(--text-muted)] mb-4">
-      <Link href="/" className="hover:underline">Home</Link>
+      <Link href="/" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Home</Link>
       {" / "}
       {tab ? (
         <>
-          <Link href={root.href} className="hover:underline">{root.label}</Link>
+          <Link href={root.href} className="inline-flex items-center min-h-[44px] -my-2 hover:underline">{root.label}</Link>
           {" / "}
           <span>{tab}</span>
         </>

@@ -11577,3 +11577,26 @@ placeholders before).
   page was not touched today and had never been probed; open). `/top-teams`
   runs 91 phone screens (warn, pre-existing). Canada, Australia and New
   Zealand still read as dominions to 2026; Ashwin has not ruled.
+
+### Q. The four leftovers, closed (Ashwin: "fix all of these")
+
+- **Dominions.** Canada closes 1931 (Statute of Westminster), Australia 1942
+  and New Zealand 1947 (their adoption of it), South Africa 1961 (republic);
+  `to` in `scripts/build-colonisers.py` DOMINIONS and `country-colonisers.json`,
+  reasoning in the script comment. Realms are sovereign states, not
+  dominions of another, so the time machine reads them as sovereign from
+  the year after.
+- **Cricket hub 430px** (and the identical rugby fixtures row): the
+  right-hand competition block was `flex-shrink-0` with a 15rem truncate;
+  now `min-w-0 shrink`, 9rem on phones, row `min-w-0`. Measured 430 -> 390.
+- **/top-teams 91 phone screens**: `PicksList.tsx` pages the metro cards
+  40 at a time with rank-band chips (44px) and Show-more/Show-all; deep
+  links via `#<topTeamAnchorId>` expand the window and scroll. Measured
+  77,128 -> 13,646px at 390 (16 screens), 9,125 at 1280.
+- **Tap targets on the shared idioms**: tab rows in seven *Nav components
+  (`min-h-[44px] inline-flex items-center`), crumbs in four ui.tsx files
+  (`-my-2` keeps the baseline), SectionHead summary, and the rounded chip
+  links in twelve files. /elections 21 -> 18 small taps (14 left are inline
+  prose links inside collapsed "more" text, plus the wordmark and the sort
+  select), /elections/all 4 -> 2. check:mobile and check:table-scroll
+  unchanged.
