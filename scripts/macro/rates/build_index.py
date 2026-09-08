@@ -23,7 +23,10 @@ STALE_DAYS = 400
 def load_all_banks(out_dir=c.OUT_DIR):
     banks = []
     for path in sorted(glob.glob(os.path.join(out_dir, "*.json"))):
-        if os.path.basename(path) == "index.json":
+        # index.json is this script's own output; changelog.json is
+        # refresh.py's watcher log (scripts/macro/rates/refresh.py), a flat
+        # list of decisions, not a bank file -- neither belongs in the scan.
+        if os.path.basename(path) in ("index.json", "changelog.json"):
             continue
         with open(path, encoding="utf-8") as f:
             banks.append(json.load(f))

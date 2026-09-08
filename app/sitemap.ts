@@ -32,7 +32,7 @@ function lastUpdateIso(): string {
   return new Date().toISOString();
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const stamp = lastUpdateIso();
   const metros = getAllMetros();
 
@@ -360,7 +360,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.6,
     },
-    ...(getRatesIndex()?.banks ?? []).map((b) => ({
+    ...((await getRatesIndex())?.banks ?? []).map((b) => ({
       url: `${BASE_URL}/business/economy/rates/${b.code}`,
       lastModified: stamp,
       changeFrequency: "daily" as const,

@@ -818,14 +818,18 @@ def stream_bis_daily(iso2_filter=None):
 def load_bis_daily(iso2):
     """Convenience: one BIS economy's full daily series as a list of
     {'date','level'} dicts sorted ascending, plus its COMPILATION text
-    (taken from the first row that carries one)."""
+    (taken from the first row that carries one).
+
+    Merges in the incremental refresh cache (see BIS_CACHE_DIR below) on top
+    of the bulk CSV, so a builder run after refresh.py --write sees the
+    latest fetched levels without needing a fresh 470MB bulk download."""
     rows = []
     compilation = ""
     for area, d, level, comp in stream_bis_daily({iso2}):
         rows.append({"date": d, "level": level})
         if comp and not compilation:
             compilation = comp
-    rows.sort(key=lambda r: r["date"])
+    rows = merge_bis_cache(rows, iso2)
     return rows, compilation
 
 
@@ -833,7 +837,10 @@ def load_bis_daily_all(iso2_list=None):
     """One streaming pass over the 470MB BIS CSV, returning every requested
     economy's daily series at once: {iso2: (rows, compilation)}. Use this
     instead of calling load_bis_daily() in a loop -- each load_bis_daily
-    call is its own full pass, and 49 of them is far slower than one."""
+    call is its own full pass, and 49 of them is far slower than one.
+
+    Also merges each economy's incremental refresh cache, same as
+    load_bis_daily()."""
     keep = set(iso2_list) if iso2_list else None
     buckets = {}
     compilations = {}
@@ -841,9 +848,47 @@ def load_bis_daily_all(iso2_list=None):
         buckets.setdefault(area, []).append({"date": d, "level": level})
         if comp and area not in compilations:
             compilations[area] = comp
-    for area in buckets:
-        buckets[area].sort(key=lambda r: r["date"])
-    return {area: (buckets[area], compilations.get(area, "")) for area in buckets}
+    out = {}
+    covered = keep if keep is not None else set(BIS_ECONOMIES)
+    for area in covered:
+        rows = merge_bis_cache(buckets.get(area, []), area)
+        out[area] = (rows, compilations.get(area, ""))
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Incremental BIS cache (scripts/macro/rates/refresh.py)
+#
+# refresh.py fetches only the last N days from the BIS SDMX API (never the
+# 470MB bulk file) and writes a compact per-economy cache here:
+#   scripts/macro/rates/cache/bis-daily/<ISO2>.json  ->  {"rows": [{"date","level"}, ...]}
+# load_bis_daily/load_bis_daily_all both merge this cache on top of the bulk
+# CSV (cache rows win on a shared date, since they are the fresher fetch),
+# so every builder sees the latest levels without ever needing to redownload
+# WS_CBPOL_csv_flat.csv. See scripts/macro/rates/refresh.py's own docstring.
+
+BIS_CACHE_DIR = os.path.join(HERE, "cache", "bis-daily")
+
+
+def load_bis_cache(iso2):
+    path = os.path.join(BIS_CACHE_DIR, "{}.json".format(iso2))
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    return data.get("rows", [])
+
+
+def merge_bis_cache(rows, iso2):
+    cache_rows = load_bis_cache(iso2)
+    if not cache_rows:
+        return sorted(rows, key=lambda r: r["date"])
+    by_date = {r["date"]: r["level"] for r in rows}
+    for r in cache_rows:
+        by_date[r["date"]] = r["level"]
+    merged = [{"date": d, "level": lvl} for d, lvl in by_date.items()]
+    merged.sort(key=lambda r: r["date"])
+    return merged
 
 
 # ---------------------------------------------------------------------------

@@ -142,6 +142,7 @@ reader can actually see.
     runners/forecast.sh                      port of forecast-weekly.yml
     runners/predictions.sh                   port of predictions-refresh.yml (both slots)
     runners/mlb-sim.sh                       port of mlb-sim-refresh.yml
+    runners/economy-rates.sh                 policy-rate refresh, id "economy-rates" (NEW, see below)
     com.citizenofnowhere.dispatcher.plist    StartInterval 600
 
 Each runner is a **literal** port of its workflow: same step order, same
@@ -149,6 +150,18 @@ self-test gate, same early-exit when nothing changed, same five-attempt
 pull-rebase-push loop, same fail-open revalidate ping after the 300 second
 GitHub-raw CDN sleep. Do not paraphrase those guards; each exists because of a
 specific incident documented in the YAML.
+
+`runners/economy-rates.sh` (id `economy-rates`, jobs.toml) is not a port of
+any prior Action -- it is new, commissioned 2026-09-08 alongside
+`scripts/macro/rates/refresh.py`. Fridays 07:30 UTC, since BIS publishes
+WS_CBPOL weekly on Thursday. It fetches the last 90 days from the BIS SDMX
+API plus each own-spine bank's own small source (FRED, ECB Data Portal,
+Riksbank SWEA, Bank of Canada Valet, Norges Bank open data), reruns every
+builder under `scripts/macro/rates/`, commits `public/data/business/economy/
+rates/**`, and appends `changelog.json` with any newly detected decision --
+which the runner also pushes as a notify.py alert, separate from the
+fail-only `alert()` in `_common.sh`. See `refresh.py`'s own docstring for the
+full source table and `RATES-CONTRACT.md` for the data shape.
 
 ### Install
 

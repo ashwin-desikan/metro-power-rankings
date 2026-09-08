@@ -3663,24 +3663,6 @@
 }
 }
 ],
-"portsmouth": [
-{
-"league": "nfl",
-"sport": "American Football",
-"name": "Portsmouth Spartans",
-"years": "1930–1933",
-"href": "/teams/nfl/detroit-lions",
-"kind": "relocated",
-"relocated": true,
-"defunct": false,
-"stats": {
-"champ": 0,
-"div": 0,
-"finals": 1,
-"pct": 0.618
-}
-}
-],
 "pottsville": [
 {
 "league": "nfl",
@@ -5349,6 +5331,24 @@
 "seasons": 17,
 "gf": 0,
 "pct": 0.404
+}
+}
+],
+"portsmouth-oh": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Portsmouth Spartans",
+"years": "1930–1933",
+"href": "/teams/nfl/detroit-lions",
+"kind": "relocated",
+"relocated": true,
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 1,
+"pct": 0.618
 }
 }
 ]

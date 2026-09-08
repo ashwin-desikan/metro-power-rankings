@@ -7,8 +7,19 @@ import { join } from "path";
 // Deliberately NOT one loader that globs and imports all 60 files: this
 // directory is 6.5 MB, and the site's function-size gate fails a route around
 // 245 MB (check:function-size in CLAUDE.md). getBank() reads exactly one file.
+//
+// GitHub-raw-first ISR, same idiom as lib/nflElo.ts and lib/footyFinals.ts:
+// scripts/macro/rates/refresh.py commits a weekly data update with
+// `[vercel skip]`, so no production build follows it. Without this the
+// commit would sit unread until the next real build - the site's 2-builds-a-
+// day budget forbids using a build to surface a weekly data refresh. Prefer
+// the GitHub raw copy when its `built` date is newer than the local
+// build-time copy; fall back to local (offline, or raw fetch failing) so the
+// page never goes blank.
 
 const DIR = join(process.cwd(), "public", "data", "business", "economy", "rates");
+const GH_BASE =
+  "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/business/economy/rates";
 
 export type RateInstrument = {
   from: string;
@@ -98,28 +109,51 @@ export type RatesIndex = {
   banks: RatesIndexEntry[];
 };
 
-let indexCache: RatesIndex | null | undefined;
-
-export function getRatesIndex(): RatesIndex | null {
-  if (indexCache !== undefined) return indexCache;
+// readLocal is a literal per-file readFileSync (never a helper taking a
+// dynamic filename) so the Vercel file tracer scopes each route to just the
+// file(s) it reads - see scripts/DATA-READS-RECIPE.md. Mirrors lib/nflElo.ts's
+// load() helper: local copy first (so a build always has a fallback), then a
+// tagged GitHub-raw fetch preferred only when it is actually newer.
+async function load<T extends { built: string }>(
+  file: string,
+  readLocal: () => T,
+): Promise<T | null> {
+  let local: T | null = null;
   try {
-    indexCache = JSON.parse(readFileSync(join(DIR, "index.json"), "utf-8")) as RatesIndex;
+    local = readLocal();
   } catch {
-    indexCache = null;
+    /* no build-time copy */
   }
-  return indexCache;
+  try {
+    const res = await fetch(`${GH_BASE}/${file}`, {
+      next: { revalidate: 3600, tags: ["economy-rates"] },
+    });
+    if (res.ok) {
+      const remote = (await res.json()) as T;
+      if (remote && remote.built && (!local || remote.built > local.built)) {
+        return remote;
+      }
+    }
+  } catch {
+    /* offline: local only */
+  }
+  return local;
+}
+
+export async function getRatesIndex(): Promise<RatesIndex | null> {
+  return load<RatesIndex>("index.json", () =>
+    JSON.parse(readFileSync(join(DIR, "index.json"), "utf-8")) as RatesIndex,
+  );
 }
 
 // Reads exactly ONE bank file, validated against the index first so a bad
 // code (or a code with no file) returns null rather than throwing.
-export function getBank(code: string): BankFile | null {
-  const index = getRatesIndex();
+export async function getBank(code: string): Promise<BankFile | null> {
+  const index = await getRatesIndex();
   if (!index || !index.banks.some((b) => b.code === code)) return null;
-  try {
-    return JSON.parse(readFileSync(join(DIR, `${code}.json`), "utf-8")) as BankFile;
-  } catch {
-    return null;
-  }
+  return load<BankFile>(`${code}.json`, () =>
+    JSON.parse(readFileSync(join(DIR, `${code}.json`), "utf-8")) as BankFile,
+  );
 }
 
 export function bankHref(code: string): string {

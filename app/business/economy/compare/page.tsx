@@ -53,10 +53,11 @@ function thinMonthly(path: [string, number][]): [string, number][] {
 }
 
 export default async function CompareRatesPage() {
-  const index = getRatesIndex();
+  const index = await getRatesIndex();
   const banks = index?.banks ?? [];
-  const all: CompareBank[] = banks.flatMap((b) => {
-    const file = getBank(b.code);
+  const files = await Promise.all(banks.map((b) => getBank(b.code)));
+  const all: CompareBank[] = banks.flatMap((b, i) => {
+    const file = files[i];
     if (!file) return [];
     return [{
       code: b.code,

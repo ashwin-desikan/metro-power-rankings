@@ -14,7 +14,7 @@ import type { MovesData } from "./movesShared";
 // this file re-exports them for server-side callers' convenience.
 
 export type {
-  Move, MoveEnd, MetroTally, MoveSummaryEntry, MovesSummary, MovesData,
+  Move, MoveEnd, ViaStop, TemporaryHome, MetroTally, MoveSummaryEntry, MovesSummary, MovesData,
 } from "./movesShared";
 export { LEAGUE_LABEL, leagueLabel } from "./movesShared";
 

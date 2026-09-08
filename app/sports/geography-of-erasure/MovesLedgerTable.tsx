@@ -13,6 +13,32 @@ function dash(v: number | null | undefined): string {
   return v == null ? "—" : String(v);
 }
 
+function MetroLink({ metro, slug }: { metro: string; slug: string | null }) {
+  if (!slug) return <span>{metro}</span>;
+  return (
+    <Link href={`/rankings/${slug}`} className="hover:text-[var(--accent)] hover:underline">
+      {metro}
+    </Link>
+  );
+}
+
+// "via Memphis (1 season)" - a stopover collapsed into this move, shown
+// under To rather than as its own row (the ledger's unit is the move from
+// origin to final home, not every stint in between).
+function ViaLine({ via }: { via: Move["via"] }) {
+  if (!via || via.length === 0) return null;
+  return (
+    <div className="text-xs text-[var(--text-dim)] mt-0.5">
+      via {via.map((v, i) => (
+        <span key={v.metro_slug ?? v.metro}>
+          {i > 0 ? ", " : ""}
+          <MetroLink metro={v.metro} slug={v.metro_slug} /> ({v.seasons} season{v.seasons === 1 ? "" : "s"})
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function MovesLedgerTable({ moves }: { moves: Move[] }) {
   const [sortKey, setSortKey] = useState<SortKey>("year");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
@@ -103,8 +129,9 @@ export default function MovesLedgerTable({ moves }: { moves: Move[] }) {
               </div>
               <div className="text-xs text-[var(--text-dim)] uppercase tracking-wide mt-0.5">{leagueLabel(m.league)}</div>
               <div className="text-sm text-[var(--text-muted)] mt-1">
-                {m.from.city} <span className="text-[var(--text-dim)]">to</span> {m.to.city}
+                <MetroLink metro={m.from.metro} slug={m.from.metro_slug} /> <span className="text-[var(--text-dim)]">to</span> <MetroLink metro={m.to.metro} slug={m.to.metro_slug} />
               </div>
+              <ViaLine via={m.via} />
               <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-[var(--text-muted)]" style={MONO}>
                 <span>{m.distance_km != null ? `${m.distance_km.toLocaleString()} km` : "—"}</span>
                 <span>Titles {dash(m.titles_before)}/{dash(m.titles_after)}</span>
@@ -139,10 +166,11 @@ export default function MovesLedgerTable({ moves }: { moves: Move[] }) {
                   <Link href={m.href} className="hover:text-[var(--accent)] transition-colors font-medium">{m.franchise_now}</Link>
                   {m.returned ? <span className="ml-1.5 text-[10px] uppercase tracking-wide text-[var(--accent)]">returned</span> : null}
                 </td>
-                <td className="px-3 py-2 text-[var(--text-muted)]">{m.from.city}</td>
+                <td className="px-3 py-2 text-[var(--text-muted)]"><MetroLink metro={m.from.metro} slug={m.from.metro_slug} /></td>
                 <td className="px-3 py-2 text-[var(--text-muted)]">
-                  {m.to.city}
+                  <MetroLink metro={m.to.metro} slug={m.to.metro_slug} />
                   {m.same_metro ? <span className="ml-1.5 text-[10px] uppercase tracking-wide text-[var(--text-dim)]">same metro</span> : null}
+                  <ViaLine via={m.via} />
                 </td>
                 <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]" style={MONO}>
                   {m.distance_km != null ? `${m.distance_km.toLocaleString()} km` : <span className="text-[var(--text-dim)]">—</span>}

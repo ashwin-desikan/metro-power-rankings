@@ -11636,3 +11636,50 @@ placeholders before).
   written up for Ashwin with six adaptations that stay ours (expectation
   tower, week scrubber on the Elo race, remaining-schedule strip, game-row
   box-score links, opponent-metro colouring); none built.
+
+### S. Night: the moves ledger done properly, the economy refresh, the towers
+
+- **Moves ledger v2** (Ashwin: from and to must be metros; name changes are
+  not moves). `build-moves.py` now derives every big-four relocation from
+  `relocations-by-metro.json`'s metro-keyed tiles plus the franchise files'
+  current home, never from the per-season city string (which had counted
+  Pittsburg/Pittsburgh, Boston to New England, Phoenix to Arizona, Anaheim
+  to Los Angeles as moves and left "NO/Oklahoma City", "The" and Newark half
+  resolved). Two rules on top: a stint of at most 3 seasons that returns to
+  the origin is a TEMPORARY HOME (Bears Champaign 2002, Saints 2005,
+  Hornets Oklahoma City, Blue Jays Buffalo, Raptors Tampa, Whalers
+  Springfield 1979), listed in their own section, never a move; a stint of
+  at most 2 seasons on the way to a third metro is a STOPOVER collapsed into
+  one move with `via` (Titans via Memphis, Hurricanes via Greensboro, Expos
+  via San Juan). 126 -> 112 -> 89 moves, 6 temporary episodes, 10
+  stopovers. Portsmouth Spartans now Portsmouth (OH): `NA_DISAMBIG` in
+  build-relocations.py and the JSON key renamed; the next workbook sync
+  regenerates it the same way. Decade labels read 1970s (were 197s).
+  Design audit against DESIGN-STANDARDS in full: the three species sections
+  moved onto SectionHead with a sub under 20 words (new `sub` field in
+  GHOST_SPECIES), the chart's decade toggles to 44px, three 10/11px value
+  texts to 12px; everything else passed. Measured built: 16.8 screens at
+  390, decade labels correct, no Pittsburg row, no Boston to New England.
+- **Economy refresh pipeline** (Ashwin asked; there was none): 
+  `scripts/macro/rates/refresh.py` (incremental BIS SDMX `D.` last 90 days,
+  FRED, ECB, datahub, Riksbank, BoC, Norges APIs; BIS tail for boe, boj,
+  snb, rba, rbnz; dry-run default, --write, --fixtures for offline
+  self-test), Supabase migration `policy_rate_changes` + `policy_rate_daily`
+  with `load_policy_rates.py` seeder, `changelog.json` plus an alert block
+  for new decisions, `runners/economy-rates.sh` and jobs.toml `economy-rates`
+  Fridays 07:30, README row. `lib/economyRates.ts` is GitHub-raw-first ISR
+  (tag `economy-rates`, registered in /api/revalidate), so weekly data
+  commits need no build. 🔴 NOT run live anywhere yet: the container is
+  egress-blocked for every source. Mini to do: live dry run, first --write
+  with the service key, apply the migration, confirm the Friday slot.
+- **Expectation towers** on every NFL season hub (`ExpectationTowers.tsx`,
+  section "The season as a shape", id towers): one column per team, wins up
+  and losses down, box height = surprise of the result, --div tokens,
+  hover titles; 2024 renders 544 boxes at 1078px wide on desktop and scrolls
+  inside its box at 18px per column on a phone. `WhatIsLeft.tsx` (remaining
+  schedule by opponent Elo) is wired for a live season and dormant until
+  2026 has games. Idea credited to Carlo De Marchis's Season Tower; the axis
+  is ours.
+- ECB row carries the EU flag (`FLAG_CODE_ALIAS xm -> eu` in lib/flags.ts).
+- The NFL live refresh's failure email is the 13:47 UTC 403 run; fixed in
+  e4c9500a0, unpushed. Friday's run fails again unless the push lands first.

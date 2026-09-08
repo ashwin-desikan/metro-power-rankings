@@ -8,8 +8,11 @@ import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 import { getNflEloIndex, getNflEloSeason, getNflUpcoming } from "@/lib/nflElo";
+import { getNflExpectationSeason } from "@/lib/nflExpectation";
 import WeeklyEloChart from "../_shared/WeeklyEloChart";
 import PreseasonChart from "../_shared/PreseasonChart";
+import ExpectationTowers from "../_shared/ExpectationTowers";
+import WhatIsLeft from "../_shared/WhatIsLeft";
 import TeamCell, { type TeamIdent } from "../_shared/TeamCell";
 import { seasonHasHonours } from "../_shared/HonoursStrip";
 import SeasonStandings, { type StandingsTeam } from "../_shared/SeasonStandings";
@@ -82,12 +85,18 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
   const season = parseYear(year);
   if (!season) notFound();
 
-  const [data, index, upcoming] = await Promise.all([
+  const [data, index, upcoming, expectationFile] = await Promise.all([
     getNflEloSeason(season).catch(() => null),
     getNflEloIndex().catch(() => null),
     getNflUpcoming().catch(() => null),
+    getNflExpectationSeason(season).catch(() => null),
   ]);
   if (!data) notFound();
+
+  // The towers section skips silently when the shard has no graded
+  // regular-season game yet (2026 today), so the nav does not link to
+  // nothing.
+  const hasTowers = (expectationFile?.games ?? []).some((g) => g.result && !g.playoff);
 
   // 🔴 A LIVE SEASON IS A PLAYED SEASON. This read `!== "final"`, which was
   // right while the only two states were finished and not-yet-started. A season
@@ -175,6 +184,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
 
       <HubNav items={[
         { label: seeded ? "Preseason board" : "The season, week by week", href: "#race" },
+        { label: "The season as a shape", href: "#towers" },
         ...(wk1.length ? [{ label: "Week 1, priced", href: "#week1" }] : []),
         { label: "Standings", href: "#standings" },
         ...(bestGames.length ? [{ label: "Greatest games", href: "#games" }] : []),
@@ -210,6 +220,37 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           </div>
         )}
       </section>
+
+      {/* ---------------------------------------------- the season as a shape */}
+      {hasTowers ? (
+        <section className="mb-12">
+          <SectionHead
+            id="towers"
+            title="The season as a shape"
+            sub="Wins stack up, losses hang down; the taller the box, the less anyone saw it coming."
+            more={
+              "Regular-season games only, one box per game, stacked in the order they were played. A box's height is the surprise of its result: " +
+              "1 minus the probability the model gave the actual winner, so a blowout of a bad team is a short box and a coin-flip upset is a tall one, " +
+              "on the same win or loss it would be either way. Ties draw as a thin box on the baseline. Teams are ordered by wins, then by where the " +
+              "season's own standings put them, so the shape reads left to right the way the table above does."
+            }
+          />
+          <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>
+            <ExpectationTowers season={season} teams={data.teams} ident={ident} file={expectationFile} />
+          </div>
+          {data.status === "live" && upcoming?.schedule?.length ? (
+            <div className="mt-4">
+              <SectionHead
+                title="What is left"
+                sub="Each team's remaining regular-season games, sized by the opponent's current rating."
+                moreLabel="How this is measured"
+                more="A remaining game is a small faded box; a wider box is a tougher opponent by current Elo. Remaining difficulty is the mean rating of the opponents still on the schedule, and teams are sorted by it, hardest first."
+              />
+              <WhatIsLeft season={season} status={data.status} teams={data.teams} ident={ident} upcoming={upcoming} />
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
       {/* --------------------------------------------------- week 1 pricing */}
       {wk1.length ? (

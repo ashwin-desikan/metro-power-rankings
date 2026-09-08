@@ -190,6 +190,10 @@ scripts/apifootball/_scratch/
 scripts/apifootball/__pycache__/
 
 
+# Policy-rate incremental refresh cache (scripts/macro/rates/refresh.py):
+# regenerable BIS daily levels, one file per economy. README.md stays tracked.
+scripts/macro/rates/cache/bis-daily/*.json
+
 # uefa European-match archive: local scratch (regenerable crosswalk/dumps + parsed rows).
 # The parser, loader, dump scripts and data/*.txt sources ARE tracked; only _-prefixed
 # intermediates are ignored. Regenerate with dump_eursummary.py then parse_kassiesa.py.

@@ -10,6 +10,8 @@ export type MoveEnd = {
   name: string;
 };
 
+export type ViaStop = { metro: string; metro_slug: string | null; seasons: number | null };
+
 export type Move = {
   league: string;
   sport: string;
@@ -25,8 +27,27 @@ export type Move = {
   seasons_before: number | null;
   titles_before: number | null;
   titles_after: number | null;
+  // A stopover collapsed into this move: a stint of at most 2 seasons on
+  // the way to `to`, kept out of `from`/`to` but named here (empty when the
+  // move is direct). Distance and year are still origin-to-final.
+  via?: ViaStop[];
   returned: boolean;
   replaced_by: { name: string; year: number } | null;
+};
+
+// A TEMPORARY HOME: a franchise that left its metro for at most 3 seasons
+// and came straight back (Bears Chicago -> Champaign -> Chicago). Neither
+// leg is a move, so these live in their own list, not in `moves`.
+export type TemporaryHome = {
+  league: string;
+  franchise_slug: string;
+  franchise_now: string;
+  href: string;
+  home: { metro: string; metro_slug: string | null };
+  temporary: { metro: string; metro_slug: string | null; seasons: number | null; years: string }[];
+  years: string;
+  seasons: number;
+  reason: string | null;
 };
 
 export type MetroTally = {
@@ -62,6 +83,7 @@ export type MovesData = {
   as_of: string;
   count: number;
   moves: Move[];
+  temporary: TemporaryHome[];
   summary: MovesSummary;
 };
 

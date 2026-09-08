@@ -91,7 +91,7 @@ export default function DecadeStackChart({
                 );
               })}
               <text x={x + bwInner / 2} y={H - 10} textAnchor="middle" fontSize={9} fill="var(--text-dim)">
-                {r.decade.replace("0s", "s")}
+                {r.decade}
               </text>
             </g>
           );
@@ -107,7 +107,7 @@ export default function DecadeStackChart({
             key={r.decade}
             type="button"
             onClick={() => setHover(hover === r.decade ? null : r.decade)}
-            className="w-full flex items-center gap-2 text-left min-h-[28px]"
+            className="w-full flex items-center gap-2 text-left min-h-11"
           >
             <span className="w-12 flex-shrink-0 text-[10px] tabular-nums text-[var(--text-dim)]">{r.decade}</span>
             <span className="flex-1 flex h-4 rounded-sm overflow-hidden" style={{ background: "var(--border)" }}>
@@ -123,7 +123,7 @@ export default function DecadeStackChart({
                 );
               })}
             </span>
-            <span className="w-6 flex-shrink-0 text-right text-[10px] tabular-nums text-[var(--text-muted)]">{r.total}</span>
+            <span className="w-8 flex-shrink-0 text-right text-xs tabular-nums text-[var(--text-muted)]">{r.total}</span>
           </button>
         ))}
       </div>

@@ -1,12 +1,12 @@
 {
 "as_of": "2026-09-08",
-"count": 126,
+"count": 89,
 "moves": [
 {
 "league": "mlb",
 "sport": "Baseball",
 "franchise_slug": "hartfords",
-"franchise_now": "Hartford/Brooklyn Hartfords (NL, 1876–1877)",
+"franchise_now": "Brooklyn Hartfords",
 "href": "/teams/mlb/hartfords",
 "from": {
 "city": "Hartford",
@@ -15,7 +15,7 @@
 "name": "Hartford Dark Blues"
 },
 "to": {
-"city": "Brooklyn",
+"city": "New York",
 "metro": "New York",
 "metro_slug": "new-york",
 "name": "Brooklyn Hartfords"
@@ -27,91 +27,8 @@
 "seasons_before": 1,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": false,
-"replaced_by": null
-},
-{
-"league": "mlb",
-"sport": "Baseball",
-"franchise_slug": "pirates",
-"franchise_now": "Pirates",
-"href": "/teams/mlb/pirates",
-"from": {
-"city": "Pittsburgh",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburgh Alleghenys"
-},
-"to": {
-"city": "Pittsburg",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburg Innocents"
-},
-"year": 1890,
-"decade": "1890s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 8,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": null
-},
-{
-"league": "mlb",
-"sport": "Baseball",
-"franchise_slug": "pirates",
-"franchise_now": "Pirates",
-"href": "/teams/mlb/pirates",
-"from": {
-"city": "Pittsburg",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburg Pirates"
-},
-"to": {
-"city": "Pittsburgh",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburgh Pirates"
-},
-"year": 1900,
-"decade": "1900s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 10,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": null
-},
-{
-"league": "mlb",
-"sport": "Baseball",
-"franchise_slug": "pirates",
-"franchise_now": "Pirates",
-"href": "/teams/mlb/pirates",
-"from": {
-"city": "Pittsburgh",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburgh Pirates"
-},
-"to": {
-"city": "Pittsburg",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburg Pirates"
-},
-"year": 1901,
-"decade": "1900s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 1,
-"returned": true,
 "replaced_by": null
 },
 {
@@ -138,7 +55,8 @@
 "distance_km": 527.1,
 "seasons_before": 1,
 "titles_before": 0,
-"titles_after": 0,
+"titles_after": 3,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Braves",
@@ -152,7 +70,7 @@
 "franchise_now": "Yankees",
 "href": "/teams/mlb/yankees",
 "from": {
-"city": "Baltimore",
+"city": "Washington-Baltimore",
 "metro": "Washington-Baltimore",
 "metro_slug": "washington-baltimore",
 "name": "Baltimore Orioles"
@@ -161,7 +79,7 @@
 "city": "New York",
 "metro": "New York",
 "metro_slug": "new-york",
-"name": "New York Highlanders"
+"name": "Yankees"
 },
 "year": 1903,
 "decade": "1900s",
@@ -170,39 +88,12 @@
 "seasons_before": 2,
 "titles_before": 0,
 "titles_after": 27,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Orioles",
 "year": 1954
 }
-},
-{
-"league": "mlb",
-"sport": "Baseball",
-"franchise_slug": "pirates",
-"franchise_now": "Pirates",
-"href": "/teams/mlb/pirates",
-"from": {
-"city": "Pittsburg",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburg Pirates"
-},
-"to": {
-"city": "Pittsburgh",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburgh Pirates"
-},
-"year": 1911,
-"decade": "1910s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 10,
-"titles_before": 1,
-"titles_after": 4,
-"returned": false,
-"replaced_by": null
 },
 {
 "league": "nhl",
@@ -211,9 +102,9 @@
 "franchise_now": "Red Wings",
 "href": "/teams/nhl/red-wings",
 "from": {
-"city": "New Westminster",
-"metro": "New Westminster",
-"metro_slug": null,
+"city": "Vancouver",
+"metro": "Vancouver",
+"metro_slug": "vancouver",
 "name": "New Westminster Royals"
 },
 "to": {
@@ -225,10 +116,11 @@
 "year": 1915,
 "decade": "1910s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 420.7,
 "seasons_before": 3,
 "titles_before": 0,
-"titles_after": 0,
+"titles_after": 12,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -236,7 +128,7 @@
 "league": "nhl",
 "sport": "Hockey",
 "franchise_slug": "canaries",
-"franchise_now": "Victoria Aristocrats",
+"franchise_now": "Spokane Canaries",
 "href": "/teams/nhl/canaries",
 "from": {
 "city": "Victoria",
@@ -257,6 +149,7 @@
 "seasons_before": 5,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Red Wings",
@@ -279,7 +172,7 @@
 "city": "Victoria",
 "metro": "Victoria",
 "metro_slug": "victoria",
-"name": "Victoria Aristocrats"
+"name": "Victoria Cougars"
 },
 "year": 1919,
 "decade": "1910s",
@@ -287,12 +180,10 @@
 "distance_km": 328.6,
 "seasons_before": 4,
 "titles_before": 0,
-"titles_after": 1,
-"returned": true,
-"replaced_by": {
-"name": "Blackhawks",
-"year": 1926
-}
+"titles_after": 12,
+"via": [],
+"returned": false,
+"replaced_by": null
 },
 {
 "league": "nfl",
@@ -310,7 +201,7 @@
 "city": "Chicago",
 "metro": "Chicago",
 "metro_slug": "chicago",
-"name": "Chicago Staleys"
+"name": "Chicago Bears"
 },
 "year": 1921,
 "decade": "1920s",
@@ -319,6 +210,7 @@
 "seasons_before": 1,
 "titles_before": 0,
 "titles_after": 9,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -326,12 +218,12 @@
 "league": "nhl",
 "sport": "Hockey",
 "franchise_slug": "tigers-ham",
-"franchise_now": "Quebec Bulldogs/Hamilton Tigers",
+"franchise_now": "Hamilton Tigers",
 "href": "/teams/nhl/tigers-ham",
 "from": {
-"city": "Quebec",
-"metro": "Quebec",
-"metro_slug": null,
+"city": "Quebec City",
+"metro": "Quebec City",
+"metro_slug": "quebec-city",
 "name": "Quebec Bulldogs"
 },
 "to": {
@@ -343,10 +235,40 @@
 "year": 1921,
 "decade": "1920s",
 "same_metro": false,
-"distance_km": null,
-"seasons_before": 30,
+"distance_km": 786.5,
+"seasons_before": 10,
 "titles_before": 2,
 "titles_after": 0,
+"via": [],
+"returned": false,
+"replaced_by": null
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"franchise_slug": "crescents",
+"franchise_now": "Saskatoon Crescents",
+"href": "/teams/nhl/crescents",
+"from": {
+"city": "Moose Jaw",
+"metro": "Moose Jaw",
+"metro_slug": "moose-jaw",
+"name": "Saskatoon Shieks"
+},
+"to": {
+"city": "Saskatoon",
+"metro": "Saskatoon",
+"metro_slug": "saskatoon",
+"name": "Saskatoon Crescents"
+},
+"year": 1922,
+"decade": "1920s",
+"same_metro": false,
+"distance_km": 209.5,
+"seasons_before": 1,
+"titles_before": 0,
+"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -354,7 +276,7 @@
 "league": "nfl",
 "sport": "American Football",
 "franchise_slug": "maroons",
-"franchise_now": "Toledo Maroons",
+"franchise_now": "Kenosha Maroons",
 "href": "/teams/nfl/maroons",
 "from": {
 "city": "Toledo",
@@ -363,18 +285,19 @@
 "name": "Toledo Maroons"
 },
 "to": {
-"city": "Kenosha",
-"metro": "Kenosha",
-"metro_slug": null,
+"city": "Chicago",
+"metro": "Chicago",
+"metro_slug": "chicago",
 "name": "Kenosha Maroons"
 },
 "year": 1924,
 "decade": "1920s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 336.5,
 "seasons_before": 2,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -391,51 +314,27 @@
 "name": "Regina Capitals"
 },
 "to": {
-"city": "Portland",
-"metro": "Portland",
-"metro_slug": "portland",
-"name": "Portland Rosebuds"
-},
-"year": 1926,
-"decade": "1920s",
-"same_metro": false,
-"distance_km": 1445.9,
-"seasons_before": 4,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "stapletons",
-"franchise_now": "Staten Island Stapletons",
-"href": "/teams/nfl/stapletons",
-"from": {
-"city": "Brooklyn",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "Brooklyn Lions"
-},
-"to": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Yankees"
+"city": "Chicago",
+"metro": "Chicago",
+"metro_slug": "chicago",
+"name": "Blackhawks"
 },
 "year": 1927,
 "decade": "1920s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 1,
+"same_metro": false,
+"distance_km": 1612.3,
+"seasons_before": 4,
 "titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "Dayton Triangles",
-"year": 1930
+"titles_after": 6,
+"via": [
+{
+"metro": "Portland",
+"metro_slug": "portland",
+"seasons": 1
 }
+],
+"returned": false,
+"replaced_by": null
 },
 {
 "league": "nhl",
@@ -453,7 +352,7 @@
 "city": "Detroit",
 "metro": "Detroit",
 "metro_slug": "detroit",
-"name": "Detroit Cougars"
+"name": "Red Wings"
 },
 "year": 1927,
 "decade": "1920s",
@@ -462,34 +361,7 @@
 "seasons_before": 8,
 "titles_before": 1,
 "titles_after": 11,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "blackhawks",
-"franchise_now": "Blackhawks",
-"href": "/teams/nhl/blackhawks",
-"from": {
-"city": "Portland",
-"metro": "Portland",
-"metro_slug": "portland",
-"name": "Portland Rosebuds"
-},
-"to": {
-"city": "Chicago",
-"metro": "Chicago",
-"metro_slug": "chicago",
-"name": "Chicago Black Hawks"
-},
-"year": 1927,
-"decade": "1920s",
-"same_metro": false,
-"distance_km": 2822.2,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 6,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -515,9 +387,39 @@
 "decade": "1920s",
 "same_metro": false,
 "distance_km": 145.1,
-"seasons_before": 4,
+"seasons_before": 5,
 "titles_before": 1,
 "titles_after": 0,
+"via": [],
+"returned": false,
+"replaced_by": null
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"franchise_slug": "tornadoes-nj",
+"franchise_now": "Newark Tornadoes",
+"href": "/teams/nfl/tornadoes-nj",
+"from": {
+"city": "Duluth",
+"metro": "Duluth",
+"metro_slug": "duluth",
+"name": "Duluth Eskimos"
+},
+"to": {
+"city": "New York",
+"metro": "New York",
+"metro_slug": "new-york",
+"name": "Newark Tornadoes"
+},
+"year": 1929,
+"decade": "1920s",
+"same_metro": false,
+"distance_km": 1597.7,
+"seasons_before": 5,
+"titles_before": 0,
+"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -525,7 +427,7 @@
 "league": "nfl",
 "sport": "American Football",
 "franchise_slug": "bulldogs-boston",
-"franchise_now": "Pottsville Maroons",
+"franchise_now": "Boston Bulldogs",
 "href": "/teams/nfl/bulldogs-boston",
 "from": {
 "city": "Pottsville",
@@ -544,67 +446,9 @@
 "same_metro": false,
 "distance_km": 466.3,
 "seasons_before": 4,
-"titles_before": 0,
+"titles_before": 1,
 "titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "stapletons",
-"franchise_now": "Staten Island Stapletons",
-"href": "/teams/nfl/stapletons",
-"from": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Yankees"
-},
-"to": {
-"city": "Staten Island",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "Staten Island Stapletons"
-},
-"year": 1929,
-"decade": "1920s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 2,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "Dayton Triangles",
-"year": 1930
-}
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "tornadoes-nj",
-"franchise_now": "Duluth Eskimos",
-"href": "/teams/nfl/tornadoes-nj",
-"from": {
-"city": "Duluth",
-"metro": "Duluth",
-"metro_slug": "duluth",
-"name": "Duluth Eskimos"
-},
-"to": {
-"city": "Orange",
-"metro": "Orange",
-"metro_slug": null,
-"name": "Orange Tornadoes"
-},
-"year": 1929,
-"decade": "1920s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 5,
-"titles_before": 0,
-"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -612,7 +456,7 @@
 "league": "nfl",
 "sport": "American Football",
 "franchise_slug": "tigers",
-"franchise_now": "Dayton Triangles",
+"franchise_now": "Brooklyn Dodgers / Brooklyn Tigers",
 "href": "/teams/nfl/tigers",
 "from": {
 "city": "Dayton",
@@ -621,10 +465,10 @@
 "name": "Dayton Triangles"
 },
 "to": {
-"city": "Brooklyn",
+"city": "New York",
 "metro": "New York",
 "metro_slug": "new-york",
-"name": "Brooklyn Dodgers"
+"name": "Brooklyn Dodgers / Brooklyn Tigers"
 },
 "year": 1930,
 "decade": "1930s",
@@ -633,34 +477,7 @@
 "seasons_before": 10,
 "titles_before": 0,
 "titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "tornadoes-nj",
-"franchise_now": "Duluth Eskimos",
-"href": "/teams/nfl/tornadoes-nj",
-"from": {
-"city": "Orange",
-"metro": "Orange",
-"metro_slug": null,
-"name": "Orange Tornadoes"
-},
-"to": {
-"city": "Newark",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "Newark Tornadoes"
-},
-"year": 1930,
-"decade": "1930s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -668,7 +485,7 @@
 "league": "nhl",
 "sport": "Hockey",
 "franchise_slug": "quakers",
-"franchise_now": "Pittsburgh Pirates (NHL)",
+"franchise_now": "Philadelphia Quakers",
 "href": "/teams/nhl/quakers",
 "from": {
 "city": "Pittsburgh",
@@ -689,6 +506,36 @@
 "seasons_before": 5,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
+"returned": false,
+"replaced_by": null
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"franchise_slug": "gunners",
+"franchise_now": "St.Louis Gunners",
+"href": "/teams/nfl/gunners",
+"from": {
+"city": "Cincinnati",
+"metro": "Cincinnati",
+"metro_slug": "cincinnati",
+"name": "Cincy Reds"
+},
+"to": {
+"city": "St. Louis",
+"metro": "St. Louis",
+"metro_slug": "st-louis",
+"name": "St.Louis Gunners"
+},
+"year": 1934,
+"decade": "1930s",
+"same_metro": false,
+"distance_km": 495.2,
+"seasons_before": 2,
+"titles_before": 0,
+"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -699,9 +546,9 @@
 "franchise_now": "Detroit Lions",
 "href": "/teams/nfl/detroit-lions",
 "from": {
-"city": "Portsmouth",
-"metro": "Portsmouth",
-"metro_slug": "portsmouth",
+"city": "Portsmouth (OH)",
+"metro": "Portsmouth (OH)",
+"metro_slug": "portsmouth-oh",
 "name": "Portsmouth Spartans"
 },
 "to": {
@@ -713,38 +560,11 @@
 "year": 1934,
 "decade": "1930s",
 "same_metro": false,
-"distance_km": 6008.0,
+"distance_km": 400.3,
 "seasons_before": 4,
 "titles_before": 0,
 "titles_after": 4,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "gunners",
-"franchise_now": "Cincinnati Reds",
-"href": "/teams/nfl/gunners",
-"from": {
-"city": "Cincinnati",
-"metro": "Cincinnati",
-"metro_slug": "cincinnati",
-"name": "Cincinnati Reds"
-},
-"to": {
-"city": "Cincy/St.Louis",
-"metro": "Cincy/St.Louis",
-"metro_slug": null,
-"name": "Cincy/St.Louis Reds/Gunners"
-},
-"year": 1934,
-"decade": "1930s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -752,7 +572,7 @@
 "league": "nhl",
 "sport": "Hockey",
 "franchise_slug": "senators-org",
-"franchise_now": "Ottawa Senators (original)",
+"franchise_now": "St. Louis Eagles",
 "href": "/teams/nhl/senators-org",
 "from": {
 "city": "Ottawa",
@@ -770,11 +590,15 @@
 "decade": "1930s",
 "same_metro": false,
 "distance_km": 1413.0,
-"seasons_before": 45,
+"seasons_before": 48,
 "titles_before": 11,
 "titles_after": 0,
-"returned": false,
-"replaced_by": null
+"via": [],
+"returned": true,
+"replaced_by": {
+"name": "Ottawa Civics",
+"year": 1976
+}
 },
 {
 "league": "nfl",
@@ -789,10 +613,10 @@
 "name": "Boston Redskins"
 },
 "to": {
-"city": "Washington",
+"city": "Washington-Baltimore",
 "metro": "Washington-Baltimore",
 "metro_slug": "washington-baltimore",
-"name": "Washington Redskins"
+"name": "Washington Commanders"
 },
 "year": 1937,
 "decade": "1930s",
@@ -801,37 +625,7 @@
 "seasons_before": 5,
 "titles_before": 0,
 "titles_after": 5,
-"returned": true,
-"replaced_by": {
-"name": "New England Patriots",
-"year": 1971
-}
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "americans",
-"franchise_now": "New York Americans",
-"href": "/teams/nhl/americans",
-"from": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Americans"
-},
-"to": {
-"city": "Brooklyn",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "Brooklyn Americans"
-},
-"year": 1942,
-"decade": "1940s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 16,
-"titles_before": 0,
-"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -857,9 +651,10 @@
 "decade": "1940s",
 "same_metro": false,
 "distance_km": 3290.9,
-"seasons_before": 8,
+"seasons_before": 9,
 "titles_before": 1,
-"titles_after": 1,
+"titles_after": 3,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -867,72 +662,13 @@
 "league": "nfl",
 "sport": "American Football",
 "franchise_slug": "texans-d",
-"franchise_now": "Dallas Texans (1952)",
+"franchise_now": "Dallas Texans",
 "href": "/teams/nfl/texans-d",
 "from": {
 "city": "Boston",
 "metro": "Boston",
 "metro_slug": "boston",
 "name": "Boston Yanks"
-},
-"to": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Bulldogs"
-},
-"year": 1949,
-"decade": "1940s",
-"same_metro": false,
-"distance_km": 306.1,
-"seasons_before": 5,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "New England Patriots",
-"year": 1971
-}
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "yankees",
-"franchise_now": "New York Yankees (AAFC)",
-"href": "/teams/nfl/yankees",
-"from": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Yankees"
-},
-"to": {
-"city": "Brk/New York",
-"metro": "Brk/New York",
-"metro_slug": null,
-"name": "Brk/New York Yankees"
-},
-"year": 1949,
-"decade": "1940s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 3,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "texans-d",
-"franchise_now": "Dallas Texans (1952)",
-"href": "/teams/nfl/texans-d",
-"from": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Yanks"
 },
 "to": {
 "city": "Dallas",
@@ -943,10 +679,17 @@
 "year": 1952,
 "decade": "1950s",
 "same_metro": false,
-"distance_km": 2205.7,
-"seasons_before": 3,
+"distance_km": 2493.1,
+"seasons_before": 5,
 "titles_before": 0,
 "titles_after": 0,
+"via": [
+{
+"metro": "New York",
+"metro_slug": "new-york",
+"seasons": 2
+}
+],
 "returned": false,
 "replaced_by": null
 },
@@ -957,9 +700,9 @@
 "franchise_now": "Hawks",
 "href": "/teams/nba/hawks",
 "from": {
-"city": "Tri-Cities",
-"metro": "Tri-Cities",
-"metro_slug": "quad-cities",
+"city": "Davenport",
+"metro": "Davenport",
+"metro_slug": "davenport",
 "name": "Tri-Cities Blackhawks"
 },
 "to": {
@@ -971,10 +714,11 @@
 "year": 1952,
 "decade": "1950s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 276.9,
 "seasons_before": 2,
 "titles_before": 0,
-"titles_after": 0,
+"titles_after": 1,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1002,7 +746,8 @@
 "distance_km": 1376.5,
 "seasons_before": 77,
 "titles_before": 1,
-"titles_after": 1,
+"titles_after": 3,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1019,10 +764,10 @@
 "name": "St. Louis Browns"
 },
 "to": {
-"city": "Baltimore",
+"city": "Washington-Baltimore",
 "metro": "Washington-Baltimore",
 "metro_slug": "washington-baltimore",
-"name": "Baltimore Orioles"
+"name": "Orioles"
 },
 "year": 1954,
 "decade": "1950s",
@@ -1031,6 +776,7 @@
 "seasons_before": 52,
 "titles_before": 0,
 "titles_after": 3,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1058,7 +804,8 @@
 "distance_km": 1664.5,
 "seasons_before": 54,
 "titles_before": 5,
-"titles_after": 0,
+"titles_after": 4,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1087,34 +834,7 @@
 "seasons_before": 4,
 "titles_before": 0,
 "titles_after": 1,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "pistons",
-"franchise_now": "Pistons",
-"href": "/teams/nba/pistons",
-"from": {
-"city": "Fort Wayne",
-"metro": "Fort Wayne",
-"metro_slug": "fort-wayne",
-"name": "Fort Wayne Pistons"
-},
-"to": {
-"city": "Detroit",
-"metro": "Detroit",
-"metro_slug": "detroit",
-"name": "Detroit Pistons"
-},
-"year": 1958,
-"decade": "1950s",
-"same_metro": false,
-"distance_km": 222.7,
-"seasons_before": 9,
-"titles_before": 0,
-"titles_after": 3,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1143,6 +863,36 @@
 "seasons_before": 9,
 "titles_before": 1,
 "titles_after": 0,
+"via": [],
+"returned": false,
+"replaced_by": null
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"franchise_slug": "pistons",
+"franchise_now": "Pistons",
+"href": "/teams/nba/pistons",
+"from": {
+"city": "Fort Wayne",
+"metro": "Fort Wayne",
+"metro_slug": "fort-wayne",
+"name": "Fort Wayne Pistons"
+},
+"to": {
+"city": "Detroit",
+"metro": "Detroit",
+"metro_slug": "detroit",
+"name": "Pistons"
+},
+"year": 1958,
+"decade": "1950s",
+"same_metro": false,
+"distance_km": 222.7,
+"seasons_before": 9,
+"titles_before": 0,
+"titles_after": 3,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1153,7 +903,7 @@
 "franchise_now": "Dodgers",
 "href": "/teams/mlb/dodgers",
 "from": {
-"city": "Brooklyn",
+"city": "New York",
 "metro": "New York",
 "metro_slug": "new-york",
 "name": "Brooklyn Dodgers"
@@ -1162,7 +912,7 @@
 "city": "Los Angeles",
 "metro": "Los Angeles",
 "metro_slug": "los-angeles",
-"name": "Los Angeles Dodgers"
+"name": "Dodgers"
 },
 "year": 1958,
 "decade": "1950s",
@@ -1171,6 +921,7 @@
 "seasons_before": 74,
 "titles_before": 1,
 "titles_after": 8,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1187,10 +938,10 @@
 "name": "New York Giants"
 },
 "to": {
-"city": "San Francisco",
+"city": "San Francisco-San Jose",
 "metro": "San Francisco-San Jose",
 "metro_slug": "san-francisco-san-jose",
-"name": "San Francisco Giants"
+"name": "Giants"
 },
 "year": 1958,
 "decade": "1950s",
@@ -1199,6 +950,7 @@
 "seasons_before": 75,
 "titles_before": 5,
 "titles_after": 3,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1224,9 +976,10 @@
 "decade": "1960s",
 "same_metro": false,
 "distance_km": 422.1,
-"seasons_before": 39,
+"seasons_before": 40,
 "titles_before": 2,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1255,6 +1008,7 @@
 "seasons_before": 1,
 "titles_before": 0,
 "titles_after": 1,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Las Vegas Raiders",
@@ -1277,7 +1031,7 @@
 "city": "Los Angeles",
 "metro": "Los Angeles",
 "metro_slug": "los-angeles",
-"name": "Los Angeles Lakers"
+"name": "Lakers"
 },
 "year": 1961,
 "decade": "1960s",
@@ -1286,6 +1040,7 @@
 "seasons_before": 12,
 "titles_before": 5,
 "titles_after": 12,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1296,24 +1051,25 @@
 "franchise_now": "Twins",
 "href": "/teams/mlb/twins",
 "from": {
-"city": "Washington",
+"city": "Washington-Baltimore",
 "metro": "Washington-Baltimore",
 "metro_slug": "washington-baltimore",
 "name": "Washington Senators"
 },
 "to": {
-"city": "Minnesota",
-"metro": "Minnesota",
-"metro_slug": "minneapolis-st-paul",
-"name": "Minnesota Twins"
+"city": "Minneapolis",
+"metro": "Minneapolis",
+"metro_slug": "minneapolis",
+"name": "Twins"
 },
 "year": 1961,
 "decade": "1960s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 1498.7,
 "seasons_before": 60,
 "titles_before": 1,
 "titles_after": 2,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Nationals",
@@ -1345,6 +1101,7 @@
 "seasons_before": 3,
 "titles_before": 1,
 "titles_after": 4,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1361,10 +1118,10 @@
 "name": "Philadelphia Warriors"
 },
 "to": {
-"city": "San Francisco",
+"city": "San Francisco-San Jose",
 "metro": "San Francisco-San Jose",
 "metro_slug": "san-francisco-san-jose",
-"name": "San Francisco Warriors"
+"name": "Warriors"
 },
 "year": 1963,
 "decade": "1960s",
@@ -1372,12 +1129,42 @@
 "distance_km": 4050.4,
 "seasons_before": 16,
 "titles_before": 2,
-"titles_after": 0,
+"titles_after": 5,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "76ers",
 "year": 1964
 }
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"franchise_slug": "wizards",
+"franchise_now": "Wizards",
+"href": "/teams/nba/wizards",
+"from": {
+"city": "Chicago",
+"metro": "Chicago",
+"metro_slug": "chicago",
+"name": "Chicago Zephyrs"
+},
+"to": {
+"city": "Washington-Baltimore",
+"metro": "Washington-Baltimore",
+"metro_slug": "washington-baltimore",
+"name": "Wizards"
+},
+"year": 1964,
+"decade": "1960s",
+"same_metro": false,
+"distance_km": 955.2,
+"seasons_before": 2,
+"titles_before": 0,
+"titles_after": 1,
+"via": [],
+"returned": false,
+"replaced_by": null
 },
 {
 "league": "nba",
@@ -1395,7 +1182,7 @@
 "city": "Philadelphia",
 "metro": "Philadelphia",
 "metro_slug": "philadelphia",
-"name": "Philadelphia 76ers"
+"name": "76ers"
 },
 "year": 1964,
 "decade": "1960s",
@@ -1404,63 +1191,8 @@
 "seasons_before": 14,
 "titles_before": 1,
 "titles_after": 2,
+"via": [],
 "returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "wizards",
-"franchise_now": "Wizards",
-"href": "/teams/nba/wizards",
-"from": {
-"city": "Chicago",
-"metro": "Chicago",
-"metro_slug": "chicago",
-"name": "Chicago Zephyrs"
-},
-"to": {
-"city": "Baltimore",
-"metro": "Washington-Baltimore",
-"metro_slug": "washington-baltimore",
-"name": "Baltimore Bullets"
-},
-"year": 1964,
-"decade": "1960s",
-"same_metro": false,
-"distance_km": 955.2,
-"seasons_before": 2,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "mlb",
-"sport": "Baseball",
-"franchise_slug": "angels",
-"franchise_now": "Angels",
-"href": "/teams/mlb/angels",
-"from": {
-"city": "Los Angeles",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "Los Angeles Angels"
-},
-"to": {
-"city": "California",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "California Angels"
-},
-"year": 1965,
-"decade": "1960s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 4,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
 "replaced_by": null
 },
 {
@@ -1479,20 +1211,50 @@
 "city": "Atlanta",
 "metro": "Atlanta",
 "metro_slug": "atlanta",
-"name": "Atlanta Braves"
+"name": "Braves"
 },
 "year": 1966,
 "decade": "1960s",
 "same_metro": false,
 "distance_km": 1077.3,
 "seasons_before": 13,
-"titles_before": 1,
+"titles_before": 2,
 "titles_after": 2,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Brewers",
 "year": 1970
 }
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"franchise_slug": "condors",
+"franchise_now": "Pittsburgh Pipers / Condors",
+"href": "/teams/nba/condors",
+"from": {
+"city": "Minneapolis",
+"metro": "Minneapolis",
+"metro_slug": "minneapolis",
+"name": "Minnesota Pipers"
+},
+"to": {
+"city": "Pittsburgh",
+"metro": "Pittsburgh",
+"metro_slug": "pittsburgh",
+"name": "Pittsburgh Pipers / Condors"
+},
+"year": 1968,
+"decade": "1960s",
+"same_metro": false,
+"distance_km": 1193.9,
+"seasons_before": 1,
+"titles_before": 0,
+"titles_after": 0,
+"via": [],
+"returned": false,
+"replaced_by": null
 },
 {
 "league": "mlb",
@@ -1507,7 +1269,7 @@
 "name": "Kansas City Athletics"
 },
 "to": {
-"city": "Oakland",
+"city": "San Francisco-San Jose",
 "metro": "San Francisco-San Jose",
 "metro_slug": "san-francisco-san-jose",
 "name": "Oakland Athletics"
@@ -1517,8 +1279,9 @@
 "same_metro": false,
 "distance_km": 2419.9,
 "seasons_before": 13,
-"titles_before": 0,
+"titles_before": 5,
 "titles_after": 4,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1538,7 +1301,7 @@
 "city": "Atlanta",
 "metro": "Atlanta",
 "metro_slug": "atlanta",
-"name": "Atlanta Hawks"
+"name": "Hawks"
 },
 "year": 1969,
 "decade": "1960s",
@@ -1547,216 +1310,41 @@
 "seasons_before": 13,
 "titles_before": 1,
 "titles_after": 0,
+"via": [],
 "returned": true,
 "replaced_by": {
-"name": "Spirits of St. Louis",
+"name": "St. Louis Spirits",
 "year": 1975
 }
 },
 {
 "league": "nba",
 "sport": "Basketball",
-"franchise_slug": "nets",
-"franchise_now": "Nets",
-"href": "/teams/nba/nets",
-"from": {
-"city": "New Jersey",
-"metro": "New Jersey",
-"metro_slug": null,
-"name": "New Jersey Americans"
-},
-"to": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Nets"
-},
-"year": 1969,
-"decade": "1960s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 2,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "condors",
-"franchise_now": "Pittsburgh Pipers",
-"href": "/teams/nba/condors",
-"from": {
-"city": "Pittsburgh",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburgh Pipers"
-},
-"to": {
-"city": "Minnesota",
-"metro": "Minnesota",
-"metro_slug": "minneapolis-st-paul",
-"name": "Minnesota Pipers"
-},
-"year": 1969,
-"decade": "1960s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
-"titles_before": 1,
-"titles_after": 0,
-"returned": true,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
 "franchise_slug": "the-floridians",
-"franchise_now": "The Floridians",
+"franchise_now": "(Florida) The Floridians",
 "href": "/teams/nba/the-floridians",
 "from": {
-"city": "Minnesota",
-"metro": "Minnesota",
-"metro_slug": "minneapolis-st-paul",
+"city": "Minneapolis",
+"metro": "Minneapolis",
+"metro_slug": "minneapolis",
 "name": "Minnesota Muskies"
 },
 "to": {
 "city": "Miami",
 "metro": "Miami",
 "metro_slug": "miami",
-"name": "Miami Floridians"
+"name": "(Florida) The Floridians"
 },
 "year": 1969,
 "decade": "1960s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 2436.3,
 "seasons_before": 1,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "stars",
-"franchise_now": "Utah Stars",
-"href": "/teams/nba/stars",
-"from": {
-"city": "Anaheim",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "Anaheim Amigos"
-},
-"to": {
-"city": "Los Angeles",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "Los Angeles Stars"
-},
-"year": 1969,
-"decade": "1960s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "Clippers",
-"year": 1985
-}
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "condors",
-"franchise_now": "Pittsburgh Pipers",
-"href": "/teams/nba/condors",
-"from": {
-"city": "Minnesota",
-"metro": "Minnesota",
-"metro_slug": "minneapolis-st-paul",
-"name": "Minnesota Pipers"
-},
-"to": {
-"city": "Pittsburgh",
-"metro": "Pittsburgh",
-"metro_slug": "pittsburgh",
-"name": "Pittsburgh Pipers"
-},
-"year": 1970,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "spirits",
-"franchise_now": "Spirits of St. Louis",
-"href": "/teams/nba/spirits",
-"from": {
-"city": "Houston",
-"metro": "Houston",
-"metro_slug": "houston",
-"name": "Houston Mavericks"
-},
-"to": {
-"city": "Carolina",
-"metro": "Charlotte",
-"metro_slug": "charlotte",
-"name": "Carolina Cougars"
-},
-"year": 1970,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": 1489.9,
-"seasons_before": 2,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "Rockets",
-"year": 1972
-}
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "squires",
-"franchise_now": "Virginia Squires",
-"href": "/teams/nba/squires",
-"from": {
-"city": "Oakland",
-"metro": "San Francisco-San Jose",
-"metro_slug": "san-francisco-san-jose",
-"name": "Oakland Oaks"
-},
-"to": {
-"city": "Washington",
-"metro": "Washington-Baltimore",
-"metro_slug": "washington-baltimore",
-"name": "Washington Capitals"
-},
-"year": 1970,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": 3918.5,
-"seasons_before": 2,
-"titles_before": 1,
-"titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "Warriors",
-"year": 1972
-}
 },
 {
 "league": "mlb",
@@ -1774,7 +1362,7 @@
 "city": "Milwaukee",
 "metro": "Milwaukee",
 "metro_slug": "milwaukee",
-"name": "Milwaukee Brewers"
+"name": "Brewers"
 },
 "year": 1970,
 "decade": "1970s",
@@ -1783,121 +1371,7 @@
 "seasons_before": 1,
 "titles_before": 0,
 "titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "new-england-patriots",
-"franchise_now": "New England Patriots",
-"href": "/teams/nfl/new-england-patriots",
-"from": {
-"city": "Boston",
-"metro": "Boston",
-"metro_slug": "boston",
-"name": "Boston Patriots"
-},
-"to": {
-"city": "New England",
-"metro": "Boston",
-"metro_slug": "boston",
-"name": "New England Patriots"
-},
-"year": 1971,
-"decade": "1970s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 11,
-"titles_before": 0,
-"titles_after": 6,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "spurs",
-"franchise_now": "Spurs",
-"href": "/teams/nba/spurs",
-"from": {
-"city": "Dallas",
-"metro": "Dallas",
-"metro_slug": "dallas",
-"name": "Dallas Chaparrals"
-},
-"to": {
-"city": "Texas",
-"metro": "Texas",
-"metro_slug": "dallas-fort-worth",
-"name": "Texas Chaparrals"
-},
-"year": 1971,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 3,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "sounds",
-"franchise_now": "New Orleans Buccaneers",
-"href": "/teams/nba/sounds",
-"from": {
-"city": "New Orleans",
-"metro": "New Orleans",
-"metro_slug": "new-orleans",
-"name": "New Orleans Buccaneers"
-},
-"to": {
-"city": "Memphis",
-"metro": "Memphis",
-"metro_slug": "memphis",
-"name": "Memphis Pros"
-},
-"year": 1971,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": 573.1,
-"seasons_before": 3,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "Pelicans",
-"year": 2008
-}
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "the-floridians",
-"franchise_now": "The Floridians",
-"href": "/teams/nba/the-floridians",
-"from": {
-"city": "Miami",
-"metro": "Miami",
-"metro_slug": "miami",
-"name": "Miami Floridians"
-},
-"to": {
-"city": "(Florida)",
-"metro": "(Florida)",
-"metro_slug": null,
-"name": "(Florida) The Floridians"
-},
-"year": 1971,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 2,
-"titles_before": 0,
-"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -1914,18 +1388,19 @@
 "name": "Los Angeles Stars"
 },
 "to": {
-"city": "Utah",
-"metro": "Utah",
-"metro_slug": "salt-lake-city",
+"city": "Salt Lake City-Provo",
+"metro": "Salt Lake City-Provo",
+"metro_slug": "salt-lake-city-provo",
 "name": "Utah Stars"
 },
 "year": 1971,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": null,
-"seasons_before": 2,
+"distance_km": 932.8,
+"seasons_before": 3,
 "titles_before": 0,
-"titles_after": 1,
+"titles_after": 0,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Clippers",
@@ -1935,87 +1410,64 @@
 {
 "league": "nba",
 "sport": "Basketball",
-"franchise_slug": "squires",
-"franchise_now": "Virginia Squires",
-"href": "/teams/nba/squires",
+"franchise_slug": "sounds",
+"franchise_now": "Memphis Sounds",
+"href": "/teams/nba/sounds",
 "from": {
-"city": "Washington",
-"metro": "Washington-Baltimore",
-"metro_slug": "washington-baltimore",
-"name": "Washington Capitals"
+"city": "New Orleans",
+"metro": "New Orleans",
+"metro_slug": "new-orleans",
+"name": "New Orleans Buccaneers"
 },
 "to": {
-"city": "Virginia",
-"metro": "Virginia",
-"metro_slug": null,
-"name": "Virginia Squires"
+"city": "Memphis",
+"metro": "Memphis",
+"metro_slug": "memphis",
+"name": "Memphis Sounds"
 },
 "year": 1971,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "Wizards",
-"year": 1974
-}
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "barons",
-"franchise_now": "California Golden Seals",
-"href": "/teams/nhl/barons",
-"from": {
-"city": "Oakland",
-"metro": "San Francisco-San Jose",
-"metro_slug": "san-francisco-san-jose",
-"name": "Oakland Seals"
-},
-"to": {
-"city": "California",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "California Seals"
-},
-"year": 1971,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": 559.1,
+"distance_km": 573.1,
 "seasons_before": 3,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
 {
 "league": "nba",
 "sport": "Basketball",
-"franchise_slug": "warriors",
-"franchise_now": "Warriors",
-"href": "/teams/nba/warriors",
+"franchise_slug": "squires",
+"franchise_now": "Virginia Squires",
+"href": "/teams/nba/squires",
 "from": {
-"city": "San Francisco",
+"city": "San Francisco-San Jose",
 "metro": "San Francisco-San Jose",
 "metro_slug": "san-francisco-san-jose",
-"name": "San Francisco Warriors"
+"name": "Oakland Oaks"
 },
 "to": {
-"city": "Golden State",
-"metro": "San Francisco-San Jose",
-"metro_slug": "san-francisco-san-jose",
-"name": "Golden State Warriors"
+"city": "Norfolk",
+"metro": "Norfolk",
+"metro_slug": "norfolk",
+"name": "Virginia Squires"
 },
-"year": 1972,
+"year": 1971,
 "decade": "1970s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 9,
-"titles_before": 0,
-"titles_after": 5,
+"same_metro": false,
+"distance_km": 4040.0,
+"seasons_before": 2,
+"titles_before": 1,
+"titles_after": 0,
+"via": [
+{
+"metro": "Washington-Baltimore",
+"metro_slug": "washington-baltimore",
+"seasons": 1
+}
+],
 "returned": false,
 "replaced_by": null
 },
@@ -2035,7 +1487,7 @@
 "city": "Houston",
 "metro": "Houston",
 "metro_slug": "houston",
-"name": "Houston Rockets"
+"name": "Rockets"
 },
 "year": 1972,
 "decade": "1970s",
@@ -2044,39 +1496,12 @@
 "seasons_before": 4,
 "titles_before": 0,
 "titles_after": 2,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Clippers",
 "year": 1979
 }
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "spurs",
-"franchise_now": "Spurs",
-"href": "/teams/nba/spurs",
-"from": {
-"city": "Texas",
-"metro": "Texas",
-"metro_slug": "dallas-fort-worth",
-"name": "Texas Chaparrals"
-},
-"to": {
-"city": "Dallas",
-"metro": "Dallas",
-"metro_slug": "dallas",
-"name": "Dallas Chaparrals"
-},
-"year": 1972,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
 },
 {
 "league": "mlb",
@@ -2085,24 +1510,25 @@
 "franchise_now": "Rangers",
 "href": "/teams/mlb/rangers",
 "from": {
-"city": "Washington",
+"city": "Washington-Baltimore",
 "metro": "Washington-Baltimore",
 "metro_slug": "washington-baltimore",
 "name": "Washington Senators"
 },
 "to": {
-"city": "Texas",
-"metro": "Texas",
-"metro_slug": "dallas-fort-worth",
-"name": "Texas Rangers"
+"city": "Dallas",
+"metro": "Dallas",
+"metro_slug": "dallas",
+"name": "Rangers"
 },
 "year": 1972,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 1902.2,
 "seasons_before": 11,
 "titles_before": 0,
 "titles_after": 1,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Nationals",
@@ -2122,18 +1548,19 @@
 "name": "Cincinnati Royals"
 },
 "to": {
-"city": "KC/Omaha",
-"metro": "KC/Omaha",
-"metro_slug": null,
-"name": "KC/Omaha Kings"
+"city": "Kansas City",
+"metro": "Kansas City",
+"metro_slug": "kansas-city",
+"name": "Kansas City Kings"
 },
 "year": 1973,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 868.2,
 "seasons_before": 15,
-"titles_before": 0,
+"titles_before": 1,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2153,71 +1580,16 @@
 "city": "San Antonio",
 "metro": "San Antonio",
 "metro_slug": "san-antonio",
-"name": "San Antonio Spurs"
+"name": "Spurs"
 },
 "year": 1974,
 "decade": "1970s",
 "same_metro": false,
 "distance_km": 403.2,
-"seasons_before": 2,
+"seasons_before": 6,
 "titles_before": 0,
 "titles_after": 5,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "wizards",
-"franchise_now": "Wizards",
-"href": "/teams/nba/wizards",
-"from": {
-"city": "Baltimore",
-"metro": "Washington-Baltimore",
-"metro_slug": "washington-baltimore",
-"name": "Baltimore Bullets"
-},
-"to": {
-"city": "Capital",
-"metro": "Washington-Baltimore",
-"metro_slug": "washington-baltimore",
-"name": "Capital Bullets"
-},
-"year": 1974,
-"decade": "1970s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 10,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": null
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "oilers",
-"franchise_now": "Oilers",
-"href": "/teams/nhl/oilers",
-"from": {
-"city": "Alberta",
-"metro": "Edmonton",
-"metro_slug": "edmonton",
-"name": "Alberta Oilers"
-},
-"to": {
-"city": "Edmonton",
-"metro": "Edmonton",
-"metro_slug": "edmonton",
-"name": "Edmonton Oilers"
-},
-"year": 1974,
-"decade": "1970s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 5,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2246,101 +1618,21 @@
 "seasons_before": 1,
 "titles_before": 0,
 "titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "cowboys-cal",
-"franchise_now": "Calgary Cowboys",
-"href": "/teams/nhl/cowboys-cal",
-"from": {
-"city": "Philadelphia",
-"metro": "Philadelphia",
-"metro_slug": "philadelphia",
-"name": "Philadelphia Blazers"
-},
-"to": {
-"city": "Vancouver",
-"metro": "Vancouver",
-"metro_slug": "vancouver",
-"name": "Vancouver Blazers"
-},
-"year": 1974,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": 3864.5,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "mariners",
-"franchise_now": "San Diego Mariners",
-"href": "/teams/nhl/mariners",
-"from": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Raiders"
-},
-"to": {
-"city": "New York/Jersey",
-"metro": "New York/Jersey",
-"metro_slug": null,
-"name": "New York/Jersey G. Blades/Knights"
-},
-"year": 1974,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "wizards",
-"franchise_now": "Wizards",
-"href": "/teams/nba/wizards",
-"from": {
-"city": "Capital",
-"metro": "Washington-Baltimore",
-"metro_slug": "washington-baltimore",
-"name": "Capital Bullets"
-},
-"to": {
-"city": "Washington",
-"metro": "Washington-Baltimore",
-"metro_slug": "washington-baltimore",
-"name": "Washington Bullets"
-},
-"year": 1975,
-"decade": "1970s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 1,
-"titles_before": 0,
-"titles_after": 1,
-"returned": false,
-"replaced_by": null
+"via": [],
+"returned": true,
+"replaced_by": {
+"name": "Ottawa Civics",
+"year": 1976
+}
 },
 {
 "league": "nba",
 "sport": "Basketball",
 "franchise_slug": "spirits",
-"franchise_now": "Spirits of St. Louis",
+"franchise_now": "St. Louis Spirits",
 "href": "/teams/nba/spirits",
 "from": {
-"city": "Carolina",
+"city": "Charlotte",
 "metro": "Charlotte",
 "metro_slug": "charlotte",
 "name": "Carolina Cougars"
@@ -2358,6 +1650,77 @@
 "seasons_before": 5,
 "titles_before": 0,
 "titles_after": 0,
+"via": [
+{
+"metro": "Houston",
+"metro_slug": "houston",
+"seasons": 2
+}
+],
+"returned": false,
+"replaced_by": null
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"franchise_slug": "hurricanes",
+"franchise_now": "Hurricanes",
+"href": "/teams/nhl/hurricanes",
+"from": {
+"city": "Boston",
+"metro": "Boston",
+"metro_slug": "boston",
+"name": "New England Whalers"
+},
+"to": {
+"city": "Hartford",
+"metro": "Hartford",
+"metro_slug": "hartford",
+"name": "Hartford Whalers"
+},
+"year": 1975,
+"decade": "1970s",
+"same_metro": false,
+"distance_km": 149.5,
+"seasons_before": 2,
+"titles_before": 0,
+"titles_after": 2,
+"via": [],
+"returned": false,
+"replaced_by": null
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"franchise_slug": "blades",
+"franchise_now": "Baltimore Blades",
+"href": "/teams/nhl/blades",
+"from": {
+"city": "Detroit",
+"metro": "Detroit",
+"metro_slug": "detroit",
+"name": "Michigan Stags"
+},
+"to": {
+"city": "Washington-Baltimore",
+"metro": "Washington-Baltimore",
+"metro_slug": "washington-baltimore",
+"name": "Baltimore Blades"
+},
+"year": 1975,
+"decade": "1970s",
+"same_metro": false,
+"distance_km": 633.9,
+"seasons_before": 1,
+"titles_before": 0,
+"titles_after": 0,
+"via": [
+{
+"metro": "Los Angeles",
+"metro_slug": "los-angeles",
+"seasons": 2
+}
+],
 "returned": false,
 "replaced_by": null
 },
@@ -2368,10 +1731,10 @@
 "franchise_now": "San Diego Mariners",
 "href": "/teams/nhl/mariners",
 "from": {
-"city": "New York/Jersey",
-"metro": "New York/Jersey",
-"metro_slug": null,
-"name": "New York/Jersey G. Blades/Knights"
+"city": "New York",
+"metro": "New York",
+"metro_slug": "new-york",
+"name": "New York Golden Blades"
 },
 "to": {
 "city": "San Diego",
@@ -2382,68 +1745,54 @@
 "year": 1975,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": null,
-"seasons_before": 1,
+"distance_km": 3907.2,
+"seasons_before": 2,
 "titles_before": 0,
 "titles_after": 0,
-"returned": false,
-"replaced_by": null
+"via": [
+{
+"metro": "Philadelphia",
+"metro_slug": "philadelphia",
+"seasons": 1
+}
+],
+"returned": true,
+"replaced_by": {
+"name": "Devils",
+"year": 1983
+}
 },
 {
 "league": "nhl",
 "sport": "Hockey",
-"franchise_slug": "blades",
-"franchise_now": "Los Angeles Sharks",
-"href": "/teams/nhl/blades",
+"franchise_slug": "civics",
+"franchise_now": "Ottawa Civics",
+"href": "/teams/nhl/civics",
 "from": {
-"city": "Los Angeles",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "Los Angeles Sharks"
+"city": "Denver",
+"metro": "Denver",
+"metro_slug": "denver",
+"name": "Denver Spurs"
 },
 "to": {
-"city": "Michigan/Baltimore",
-"metro": "Michigan/Baltimore",
-"metro_slug": null,
-"name": "Michigan/Baltimore Stags/Blades"
-},
-"year": 1975,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 2,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "kings",
-"franchise_now": "Kings",
-"href": "/teams/nba/kings",
-"from": {
-"city": "KC/Omaha",
-"metro": "KC/Omaha",
-"metro_slug": null,
-"name": "KC/Omaha Kings"
-},
-"to": {
-"city": "Kansas City",
-"metro": "Kansas City",
-"metro_slug": "kansas-city",
-"name": "Kansas City Kings"
+"city": "Ottawa",
+"metro": "Ottawa",
+"metro_slug": "ottawa",
+"name": "Ottawa Civics"
 },
 "year": 1976,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": null,
-"seasons_before": 3,
+"distance_km": 2465.1,
+"seasons_before": 1,
 "titles_before": 0,
 "titles_after": 0,
-"returned": false,
-"replaced_by": null
+"via": [],
+"returned": true,
+"replaced_by": {
+"name": "Devils",
+"year": 1977
+}
 },
 {
 "league": "nhl",
@@ -2452,10 +1801,10 @@
 "franchise_now": "Calgary Cowboys",
 "href": "/teams/nhl/cowboys-cal",
 "from": {
-"city": "Vancouver",
-"metro": "Vancouver",
-"metro_slug": "vancouver",
-"name": "Vancouver Blazers"
+"city": "Philadelphia",
+"metro": "Philadelphia",
+"metro_slug": "philadelphia",
+"name": "Philadelphia Blazers"
 },
 "to": {
 "city": "Calgary",
@@ -2466,10 +1815,46 @@
 "year": 1976,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": 673.2,
-"seasons_before": 2,
+"distance_km": 3227.5,
+"seasons_before": 1,
 "titles_before": 0,
 "titles_after": 0,
+"via": [
+{
+"metro": "Vancouver",
+"metro_slug": "vancouver",
+"seasons": 2
+}
+],
+"returned": false,
+"replaced_by": null
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"franchise_slug": "fighting-saints-2",
+"franchise_now": "Minnesota Fighting Saints",
+"href": "/teams/nhl/fighting-saints-2",
+"from": {
+"city": "Cleveland",
+"metro": "Cleveland",
+"metro_slug": "cleveland",
+"name": "Cleveland Crusaders"
+},
+"to": {
+"city": "Minneapolis",
+"metro": "Minneapolis",
+"metro_slug": "minneapolis",
+"name": "Minnesota Fighting Saints"
+},
+"year": 1977,
+"decade": "1970s",
+"same_metro": false,
+"distance_km": 1012.8,
+"seasons_before": 4,
+"titles_before": 0,
+"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2486,18 +1871,19 @@
 "name": "Kansas City Scouts"
 },
 "to": {
-"city": "Colorado",
-"metro": "Colorado",
-"metro_slug": null,
+"city": "Denver",
+"metro": "Denver",
+"metro_slug": "denver",
 "name": "Colorado Rockies"
 },
 "year": 1977,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 896.7,
 "seasons_before": 2,
 "titles_before": 0,
-"titles_after": 0,
+"titles_after": 3,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2514,7 +1900,7 @@
 "name": "Toronto Toros"
 },
 "to": {
-"city": "Birmingham",
+"city": "Birmingham (AL)",
 "metro": "Birmingham (AL)",
 "metro_slug": "birmingham-al",
 "name": "Birmingham Bulls"
@@ -2526,6 +1912,7 @@
 "seasons_before": 3,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2533,12 +1920,12 @@
 "league": "nhl",
 "sport": "Hockey",
 "franchise_slug": "barons",
-"franchise_now": "California Golden Seals",
+"franchise_now": "Cleveland Barons",
 "href": "/teams/nhl/barons",
 "from": {
-"city": "California",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
+"city": "San Francisco-San Jose",
+"metro": "San Francisco-San Jose",
+"metro_slug": "san-francisco-san-jose",
 "name": "California Golden Seals"
 },
 "to": {
@@ -2550,67 +1937,12 @@
 "year": 1977,
 "decade": "1970s",
 "same_metro": false,
-"distance_km": 3290.9,
-"seasons_before": 6,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "fighting-saints-2",
-"franchise_now": "Cleveland Crusaders",
-"href": "/teams/nhl/fighting-saints-2",
-"from": {
-"city": "Cleveland",
-"metro": "Cleveland",
-"metro_slug": "cleveland",
-"name": "Cleveland Crusaders"
-},
-"to": {
-"city": "Minnesota",
-"metro": "Minnesota",
-"metro_slug": "minneapolis-st-paul",
-"name": "Minnesota Fighting Saints"
-},
-"year": 1977,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 4,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "nets",
-"franchise_now": "Nets",
-"href": "/teams/nba/nets",
-"from": {
-"city": "New York",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "New York Nets"
-},
-"to": {
-"city": "New Jersey",
-"metro": "New Jersey",
-"metro_slug": null,
-"name": "New Jersey Nets"
-},
-"year": 1978,
-"decade": "1970s",
-"same_metro": false,
-"distance_km": null,
+"distance_km": 3479.5,
 "seasons_before": 9,
-"titles_before": 2,
+"titles_before": 0,
 "titles_after": 0,
-"returned": true,
+"via": [],
+"returned": false,
 "replaced_by": null
 },
 {
@@ -2638,6 +1970,7 @@
 "seasons_before": 8,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2654,49 +1987,19 @@
 "name": "New Orleans Jazz"
 },
 "to": {
-"city": "Utah",
-"metro": "Utah",
-"metro_slug": "salt-lake-city",
-"name": "Utah Jazz"
+"city": "Salt Lake City-Provo",
+"metro": "Salt Lake City-Provo",
+"metro_slug": "salt-lake-city-provo",
+"name": "Jazz"
 },
 "year": 1980,
 "decade": "1980s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 2305.4,
 "seasons_before": 5,
 "titles_before": 0,
 "titles_after": 0,
-"returned": true,
-"replaced_by": {
-"name": "Pelicans",
-"year": 2008
-}
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "hurricanes",
-"franchise_now": "Hurricanes",
-"href": "/teams/nhl/hurricanes",
-"from": {
-"city": "New England",
-"metro": "Boston",
-"metro_slug": "boston",
-"name": "New England Whalers"
-},
-"to": {
-"city": "Hartford",
-"metro": "Hartford",
-"metro_slug": "hartford",
-"name": "Hartford Whalers"
-},
-"year": 1980,
-"decade": "1980s",
-"same_metro": false,
-"distance_km": 149.5,
-"seasons_before": 7,
-"titles_before": 0,
-"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2716,7 +2019,7 @@
 "city": "Calgary",
 "metro": "Calgary",
 "metro_slug": "calgary",
-"name": "Calgary Flames"
+"name": "Flames"
 },
 "year": 1981,
 "decade": "1980s",
@@ -2725,6 +2028,7 @@
 "seasons_before": 8,
 "titles_before": 0,
 "titles_after": 1,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2735,7 +2039,7 @@
 "franchise_now": "Las Vegas Raiders",
 "href": "/teams/nfl/las-vegas-raiders",
 "from": {
-"city": "Oakland",
+"city": "San Francisco-San Jose",
 "metro": "San Francisco-San Jose",
 "metro_slug": "san-francisco-san-jose",
 "name": "Oakland Raiders"
@@ -2751,8 +2055,9 @@
 "same_metro": false,
 "distance_km": 559.1,
 "seasons_before": 22,
-"titles_before": 2,
-"titles_after": 1,
+"titles_before": 0,
+"titles_after": 3,
+"via": [],
 "returned": true,
 "replaced_by": null
 },
@@ -2763,26 +2068,30 @@
 "franchise_now": "Devils",
 "href": "/teams/nhl/devils",
 "from": {
-"city": "Colorado",
-"metro": "Colorado",
-"metro_slug": null,
+"city": "Denver",
+"metro": "Denver",
+"metro_slug": "denver",
 "name": "Colorado Rockies"
 },
 "to": {
-"city": "New Jersey",
-"metro": "New Jersey",
-"metro_slug": null,
-"name": "New Jersey Devils"
+"city": "New York",
+"metro": "New York",
+"metro_slug": "new-york",
+"name": "Devils"
 },
 "year": 1983,
 "decade": "1980s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 2619.1,
 "seasons_before": 6,
 "titles_before": 0,
 "titles_after": 3,
-"returned": false,
-"replaced_by": null
+"via": [],
+"returned": true,
+"replaced_by": {
+"name": "Avalanche",
+"year": 1996
+}
 },
 {
 "league": "nfl",
@@ -2791,7 +2100,7 @@
 "franchise_now": "Indianapolis Colts",
 "href": "/teams/nfl/indianapolis-colts",
 "from": {
-"city": "Baltimore",
+"city": "Washington-Baltimore",
 "metro": "Washington-Baltimore",
 "metro_slug": "washington-baltimore",
 "name": "Baltimore Colts"
@@ -2809,6 +2118,7 @@
 "seasons_before": 31,
 "titles_before": 3,
 "titles_after": 1,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2828,7 +2138,7 @@
 "city": "Los Angeles",
 "metro": "Los Angeles",
 "metro_slug": "los-angeles",
-"name": "Los Angeles Clippers"
+"name": "Clippers"
 },
 "year": 1985,
 "decade": "1980s",
@@ -2837,6 +2147,7 @@
 "seasons_before": 6,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2856,15 +2167,16 @@
 "city": "Sacramento",
 "metro": "Sacramento",
 "metro_slug": "sacramento",
-"name": "Sacramento Kings"
+"name": "Kings"
 },
 "year": 1986,
 "decade": "1980s",
 "same_metro": false,
 "distance_km": 2321.4,
-"seasons_before": 10,
-"titles_before": 0,
+"seasons_before": 13,
+"titles_before": 1,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2884,48 +2196,21 @@
 "city": "Phoenix",
 "metro": "Phoenix",
 "metro_slug": "phoenix",
-"name": "Phoenix Cardinals"
+"name": "Arizona Cardinals"
 },
 "year": 1988,
 "decade": "1980s",
 "same_metro": false,
 "distance_km": 2043.8,
 "seasons_before": 28,
-"titles_before": 0,
+"titles_before": 2,
 "titles_after": 0,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Los Angeles Rams",
 "year": 1995
 }
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "arizona-cardinals",
-"franchise_now": "Arizona Cardinals",
-"href": "/teams/nfl/arizona-cardinals",
-"from": {
-"city": "Phoenix",
-"metro": "Phoenix",
-"metro_slug": "phoenix",
-"name": "Phoenix Cardinals"
-},
-"to": {
-"city": "Arizona",
-"metro": "Phoenix",
-"metro_slug": "phoenix",
-"name": "Arizona Cardinals"
-},
-"year": 1994,
-"decade": "1990s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 6,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
 },
 {
 "league": "nhl",
@@ -2934,24 +2219,25 @@
 "franchise_now": "Stars",
 "href": "/teams/nhl/stars",
 "from": {
-"city": "Minnesota",
-"metro": "Minnesota",
-"metro_slug": "minneapolis-st-paul",
+"city": "Minneapolis",
+"metro": "Minneapolis",
+"metro_slug": "minneapolis",
 "name": "Minnesota North Stars"
 },
 "to": {
 "city": "Dallas",
 "metro": "Dallas",
 "metro_slug": "dallas",
-"name": "Dallas Stars"
+"name": "Stars"
 },
 "year": 1994,
 "decade": "1990s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 1390.3,
 "seasons_before": 26,
 "titles_before": 0,
 "titles_after": 1,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -2979,7 +2265,8 @@
 "distance_km": 2552.4,
 "seasons_before": 49,
 "titles_before": 1,
-"titles_after": 1,
+"titles_after": 3,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Los Angeles Chargers",
@@ -2999,7 +2286,7 @@
 "name": "Los Angeles Raiders"
 },
 "to": {
-"city": "Oakland",
+"city": "San Francisco-San Jose",
 "metro": "San Francisco-San Jose",
 "metro_slug": "san-francisco-san-jose",
 "name": "Oakland Raiders"
@@ -3010,7 +2297,8 @@
 "distance_km": 559.1,
 "seasons_before": 13,
 "titles_before": 1,
-"titles_after": 0,
+"titles_after": 2,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Los Angeles Rams",
@@ -3024,52 +2312,25 @@
 "franchise_now": "Avalanche",
 "href": "/teams/nhl/avalanche",
 "from": {
-"city": "Quebec",
-"metro": "Quebec",
-"metro_slug": null,
+"city": "Quebec City",
+"metro": "Quebec City",
+"metro_slug": "quebec-city",
 "name": "Quebec Nordiques"
 },
 "to": {
-"city": "Colorado",
-"metro": "Colorado",
-"metro_slug": null,
-"name": "Colorado Avalanche"
+"city": "Denver",
+"metro": "Denver",
+"metro_slug": "denver",
+"name": "Avalanche"
 },
 "year": 1996,
 "decade": "1990s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 2821.4,
 "seasons_before": 23,
 "titles_before": 0,
 "titles_after": 3,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"franchise_slug": "tennessee-titans",
-"franchise_now": "Tennessee Titans",
-"href": "/teams/nfl/tennessee-titans",
-"from": {
-"city": "Houston",
-"metro": "Houston",
-"metro_slug": "houston",
-"name": "Houston Oilers"
-},
-"to": {
-"city": "Tennessee",
-"metro": "Nashville",
-"metro_slug": "nashville",
-"name": "Tennessee Oilers"
-},
-"year": 1997,
-"decade": "1990s",
-"same_metro": false,
-"distance_km": 1071.0,
-"seasons_before": 37,
-"titles_before": 2,
-"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -3089,7 +2350,7 @@
 "city": "Phoenix",
 "metro": "Phoenix",
 "metro_slug": "phoenix",
-"name": "Phoenix Coyotes"
+"name": "Arizona Coyotes"
 },
 "year": 1997,
 "decade": "1990s",
@@ -3098,6 +2359,7 @@
 "seasons_before": 24,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": true,
 "replaced_by": {
 "name": "Jets",
@@ -3105,31 +2367,38 @@
 }
 },
 {
-"league": "mlb",
-"sport": "Baseball",
-"franchise_slug": "angels",
-"franchise_now": "Angels",
-"href": "/teams/mlb/angels",
+"league": "nfl",
+"sport": "American Football",
+"franchise_slug": "tennessee-titans",
+"franchise_now": "Tennessee Titans",
+"href": "/teams/nfl/tennessee-titans",
 "from": {
-"city": "California",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "California Angels"
+"city": "Houston",
+"metro": "Houston",
+"metro_slug": "houston",
+"name": "Houston Oilers"
 },
 "to": {
-"city": "Anaheim",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "Anaheim Angels"
+"city": "Nashville",
+"metro": "Nashville",
+"metro_slug": "nashville",
+"name": "Tennessee Titans"
 },
-"year": 1997,
+"year": 1998,
 "decade": "1990s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 32,
-"titles_before": 0,
-"titles_after": 1,
-"returned": true,
+"same_metro": false,
+"distance_km": 1071.0,
+"seasons_before": 37,
+"titles_before": 2,
+"titles_after": 0,
+"via": [
+{
+"metro": "Memphis",
+"metro_slug": "memphis",
+"seasons": 1
+}
+],
+"returned": false,
 "replaced_by": null
 },
 {
@@ -3145,18 +2414,25 @@
 "name": "Hartford Whalers"
 },
 "to": {
-"city": "Carolina",
-"metro": "Charlotte",
-"metro_slug": "charlotte",
-"name": "Carolina Hurricanes"
+"city": "Raleigh-Durham",
+"metro": "Raleigh-Durham",
+"metro_slug": "raleigh-durham",
+"name": "Hurricanes"
 },
-"year": 1998,
-"decade": "1990s",
+"year": 2000,
+"decade": "2000s",
 "same_metro": false,
-"distance_km": 1015.4,
-"seasons_before": 18,
+"distance_km": 841.9,
+"seasons_before": 23,
 "titles_before": 0,
 "titles_after": 2,
+"via": [
+{
+"metro": "Greensboro-Winston Salem",
+"metro_slug": "greensboro-winston-salem",
+"seasons": 2
+}
+],
 "returned": false,
 "replaced_by": null
 },
@@ -3176,7 +2452,7 @@
 "city": "Memphis",
 "metro": "Memphis",
 "metro_slug": "memphis",
-"name": "Memphis Grizzlies"
+"name": "Grizzlies"
 },
 "year": 2002,
 "decade": "2000s",
@@ -3185,6 +2461,7 @@
 "seasons_before": 6,
 "titles_before": 0,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -3192,19 +2469,19 @@
 "league": "football",
 "sport": "Football/Soccer",
 "franchise_slug": "milton-keynes-dons",
-"franchise_now": "Milton Keynes Dons",
+"franchise_now": "Milton Keynes",
 "href": "/teams/football/milton-keynes-dons",
 "from": {
-"city": "Wimbledon F.C.",
+"city": "London",
 "metro": "London",
 "metro_slug": "london",
 "name": "Wimbledon F.C."
 },
 "to": {
-"city": "Milton Keynes Dons",
+"city": "Milton Keynes",
 "metro": "Milton Keynes",
 "metro_slug": "milton-keynes",
-"name": "Milton Keynes Dons"
+"name": "Milton Keynes"
 },
 "year": 2003,
 "decade": "2000s",
@@ -3213,34 +2490,6 @@
 "seasons_before": null,
 "titles_before": 0,
 "titles_after": null,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "mlb",
-"sport": "Baseball",
-"franchise_slug": "angels",
-"franchise_now": "Angels",
-"href": "/teams/mlb/angels",
-"from": {
-"city": "Anaheim",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "Anaheim Angels"
-},
-"to": {
-"city": "Los Angeles",
-"metro": "Los Angeles",
-"metro_slug": "los-angeles",
-"name": "Los Angeles Angels"
-},
-"year": 2005,
-"decade": "2000s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 8,
-"titles_before": 1,
-"titles_after": 0,
 "returned": false,
 "replaced_by": null
 },
@@ -3257,10 +2506,10 @@
 "name": "Montreal Expos"
 },
 "to": {
-"city": "Washington",
+"city": "Washington-Baltimore",
 "metro": "Washington-Baltimore",
 "metro_slug": "washington-baltimore",
-"name": "Washington Nationals"
+"name": "Nationals"
 },
 "year": 2005,
 "decade": "2000s",
@@ -3269,62 +2518,13 @@
 "seasons_before": 36,
 "titles_before": 0,
 "titles_after": 1,
-"returned": false,
-"replaced_by": null
-},
+"via": [
 {
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "pelicans",
-"franchise_now": "Pelicans",
-"href": "/teams/nba/pelicans",
-"from": {
-"city": "New Orleans",
-"metro": "New Orleans",
-"metro_slug": "new-orleans",
-"name": "New Orleans Hornets"
-},
-"to": {
-"city": "NO/Oklahoma City",
-"metro": "NO/Oklahoma City",
-"metro_slug": null,
-"name": "NO/Oklahoma City Hornets"
-},
-"year": 2006,
-"decade": "2000s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 3,
-"titles_before": 0,
-"titles_after": 0,
-"returned": true,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "pelicans",
-"franchise_now": "Pelicans",
-"href": "/teams/nba/pelicans",
-"from": {
-"city": "NO/Oklahoma City",
-"metro": "NO/Oklahoma City",
-"metro_slug": null,
-"name": "NO/Oklahoma City Hornets"
-},
-"to": {
-"city": "New Orleans",
-"metro": "New Orleans",
-"metro_slug": "new-orleans",
-"name": "New Orleans Hornets"
-},
-"year": 2008,
-"decade": "2000s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 2,
-"titles_before": 0,
-"titles_after": 0,
+"metro": "San Juan",
+"metro_slug": "san-juan",
+"seasons": 2
+}
+],
 "returned": false,
 "replaced_by": null
 },
@@ -3344,7 +2544,7 @@
 "city": "Oklahoma City",
 "metro": "Oklahoma City",
 "metro_slug": "oklahoma-city",
-"name": "Oklahoma City Thunder"
+"name": "Thunder"
 },
 "year": 2009,
 "decade": "2000s",
@@ -3353,6 +2553,7 @@
 "seasons_before": 41,
 "titles_before": 1,
 "titles_after": 1,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -3372,127 +2573,16 @@
 "city": "Winnipeg",
 "metro": "Winnipeg",
 "metro_slug": "winnipeg",
-"name": "Winnipeg Jets"
+"name": "Jets"
 },
 "year": 2012,
 "decade": "2010s",
 "same_metro": false,
 "distance_km": 2076.0,
-"seasons_before": 11,
+"seasons_before": 12,
 "titles_before": 0,
 "titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "mlb",
-"sport": "Baseball",
-"franchise_slug": "marlins",
-"franchise_now": "Marlins",
-"href": "/teams/mlb/marlins",
-"from": {
-"city": "Florida",
-"metro": "Miami",
-"metro_slug": "miami",
-"name": "Florida Marlins"
-},
-"to": {
-"city": "Miami",
-"metro": "Miami",
-"metro_slug": "miami",
-"name": "Miami Marlins"
-},
-"year": 2012,
-"decade": "2010s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 19,
-"titles_before": 2,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nba",
-"sport": "Basketball",
-"franchise_slug": "nets",
-"franchise_now": "Nets",
-"href": "/teams/nba/nets",
-"from": {
-"city": "New Jersey",
-"metro": "New Jersey",
-"metro_slug": null,
-"name": "New Jersey Nets"
-},
-"to": {
-"city": "Brooklyn",
-"metro": "New York",
-"metro_slug": "new-york",
-"name": "Brooklyn Nets"
-},
-"year": 2013,
-"decade": "2010s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": 35,
-"titles_before": 0,
-"titles_after": 0,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "rugby-union",
-"sport": "Rugby Union",
-"franchise_slug": "clubs#premiership",
-"franchise_now": "Wasps",
-"href": "/teams/rugby-union/clubs#premiership",
-"from": {
-"city": "Wasps",
-"metro": "London",
-"metro_slug": "london",
-"name": "Wasps"
-},
-"to": {
-"city": "",
-"metro": "",
-"metro_slug": null,
-"name": ""
-},
-"year": 2014,
-"decade": "2010s",
-"same_metro": false,
-"distance_km": null,
-"seasons_before": null,
-"titles_before": 8,
-"titles_after": null,
-"returned": false,
-"replaced_by": null
-},
-{
-"league": "nhl",
-"sport": "Hockey",
-"franchise_slug": "coyotes",
-"franchise_now": "Arizona Coyotes",
-"href": "/teams/nhl/coyotes",
-"from": {
-"city": "Phoenix",
-"metro": "Phoenix",
-"metro_slug": "phoenix",
-"name": "Phoenix Coyotes"
-},
-"to": {
-"city": "Arizona",
-"metro": "Phoenix",
-"metro_slug": "phoenix",
-"name": "Arizona Coyotes"
-},
-"year": 2015,
-"decade": "2010s",
-"same_metro": true,
-"distance_km": 0.0,
-"seasons_before": 17,
-"titles_before": 0,
-"titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -3519,8 +2609,9 @@
 "same_metro": false,
 "distance_km": 2552.4,
 "seasons_before": 21,
-"titles_before": 1,
-"titles_after": 1,
+"titles_before": 2,
+"titles_after": 2,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -3549,6 +2640,7 @@
 "seasons_before": 56,
 "titles_before": 1,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -3559,7 +2651,7 @@
 "franchise_now": "Las Vegas Raiders",
 "href": "/teams/nfl/las-vegas-raiders",
 "from": {
-"city": "Oakland",
+"city": "San Francisco-San Jose",
 "metro": "San Francisco-San Jose",
 "metro_slug": "san-francisco-san-jose",
 "name": "Oakland Raiders"
@@ -3575,8 +2667,9 @@
 "same_metro": false,
 "distance_km": 670.7,
 "seasons_before": 25,
-"titles_before": 0,
+"titles_before": 3,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 },
@@ -3587,116 +2680,236 @@
 "franchise_now": "Athletics",
 "href": "/teams/mlb/athletics",
 "from": {
-"city": "Oakland",
+"city": "San Francisco-San Jose",
 "metro": "San Francisco-San Jose",
 "metro_slug": "san-francisco-san-jose",
 "name": "Oakland Athletics"
 },
 "to": {
-"city": "The",
-"metro": "The",
-"metro_slug": null,
-"name": "The Athletics"
+"city": "Sacramento",
+"metro": "Sacramento",
+"metro_slug": "sacramento",
+"name": "Athletics"
 },
 "year": 2025,
 "decade": "2020s",
 "same_metro": false,
-"distance_km": null,
+"distance_km": 121.1,
 "seasons_before": 57,
-"titles_before": 4,
+"titles_before": 9,
 "titles_after": 0,
+"via": [],
 "returned": false,
 "replaced_by": null
 }
 ],
+"temporary": [
+{
+"league": "nfl",
+"franchise_slug": "new-orleans-saints",
+"franchise_now": "New Orleans Saints",
+"href": "/teams/nfl/new-orleans-saints",
+"home": {
+"metro": "New Orleans",
+"metro_slug": "new-orleans"
+},
+"temporary": [
+{
+"metro": "Baton Rouge",
+"metro_slug": "baton-rouge",
+"seasons": 1,
+"years": "2005"
+},
+{
+"metro": "San Antonio",
+"metro_slug": "san-antonio",
+"seasons": 1,
+"years": "2005"
+}
+],
+"years": "2005–2005",
+"seasons": 2,
+"reason": null
+},
+{
+"league": "nfl",
+"franchise_slug": "chicago-bears",
+"franchise_now": "Chicago Bears",
+"href": "/teams/nfl/chicago-bears",
+"home": {
+"metro": "Chicago",
+"metro_slug": "chicago"
+},
+"temporary": [
+{
+"metro": "Champaign",
+"metro_slug": "champaign",
+"seasons": 1,
+"years": "2002"
+}
+],
+"years": "2002–2002",
+"seasons": 1,
+"reason": null
+},
+{
+"league": "nba",
+"franchise_slug": "pelicans",
+"franchise_now": "Pelicans",
+"href": "/teams/nba/pelicans",
+"home": {
+"metro": "New Orleans",
+"metro_slug": "new-orleans"
+},
+"temporary": [
+{
+"metro": "Oklahoma City",
+"metro_slug": "oklahoma-city",
+"seasons": 2,
+"years": "2006–2007"
+}
+],
+"years": "2006–2007",
+"seasons": 2,
+"reason": null
+},
+{
+"league": "nba",
+"franchise_slug": "raptors",
+"franchise_now": "Raptors",
+"href": "/teams/nba/raptors",
+"home": {
+"metro": "Toronto",
+"metro_slug": "toronto"
+},
+"temporary": [
+{
+"metro": "Tampa",
+"metro_slug": "tampa",
+"seasons": 1,
+"years": "2021"
+}
+],
+"years": "2021–2021",
+"seasons": 1,
+"reason": null
+},
+{
+"league": "nhl",
+"franchise_slug": "hurricanes",
+"franchise_now": "Hurricanes",
+"href": "/teams/nhl/hurricanes",
+"home": {
+"metro": "Hartford",
+"metro_slug": "hartford"
+},
+"temporary": [
+{
+"metro": "Springfield",
+"metro_slug": "springfield",
+"seasons": 1,
+"years": "1979"
+}
+],
+"years": "1979–1979",
+"seasons": 1,
+"reason": null
+},
+{
+"league": "mlb",
+"franchise_slug": "blue-jays",
+"franchise_now": "Blue Jays",
+"href": "/teams/mlb/blue-jays",
+"home": {
+"metro": "Toronto",
+"metro_slug": "toronto"
+},
+"temporary": [
+{
+"metro": "Buffalo",
+"metro_slug": "buffalo",
+"seasons": 1,
+"years": "2020"
+}
+],
+"years": "2020–2020",
+"seasons": 1,
+"reason": null
+}
+],
 "summary": {
 "by_league": {
-"mlb": 23,
-"nhl": 31,
-"nfl": 30,
-"nba": 40,
-"football": 1,
-"rugby-union": 1
+"mlb": 15,
+"nhl": 26,
+"nfl": 23,
+"nba": 24,
+"football": 1
 },
 "by_decade": {
 "1870s": 1,
-"1890s": 1,
-"1900s": 4,
-"1910s": 4,
-"1920s": 11,
-"1930s": 7,
-"1940s": 4,
+"1900s": 2,
+"1910s": 3,
+"1920s": 9,
+"1930s": 6,
+"1940s": 1,
 "1950s": 10,
-"1960s": 16,
-"1970s": 34,
-"1980s": 9,
-"1990s": 9,
-"2000s": 7,
-"2010s": 7,
+"1960s": 13,
+"1970s": 20,
+"1980s": 8,
+"1990s": 6,
+"2000s": 5,
+"2010s": 3,
 "2020s": 2
 },
 "by_sport": {
-"Baseball": 23,
-"Hockey": 31,
-"American Football": 30,
-"Basketball": 40,
-"Football/Soccer": 1,
-"Rugby Union": 1
+"Baseball": 15,
+"Hockey": 26,
+"American Football": 23,
+"Basketball": 24,
+"Football/Soccer": 1
 },
 "top_losing_metros": [
 {
-"metro_slug": "los-angeles",
-"departures": 10,
-"arrivals": 12,
-"net": 2
-},
-{
-"metro_slug": "new-york",
-"departures": 9,
-"arrivals": 10,
-"net": 1
-},
-{
-"metro_slug": "washington-baltimore",
-"departures": 7,
-"arrivals": 7,
-"net": 0
-},
-{
-"metro_slug": "pittsburgh",
-"departures": 6,
-"arrivals": 5,
-"net": -1
-},
-{
 "metro_slug": "san-francisco-san-jose",
-"departures": 6,
-"arrivals": 5,
+"departures": 5,
+"arrivals": 4,
 "net": -1
 },
 {
 "metro_slug": "boston",
-"departures": 5,
-"arrivals": 2,
+"departures": 4,
+"arrivals": 1,
 "net": -3
+},
+{
+"metro_slug": "los-angeles",
+"departures": 4,
+"arrivals": 7,
+"net": 3
+},
+{
+"metro_slug": "minneapolis",
+"departures": 4,
+"arrivals": 2,
+"net": -2
 },
 {
 "metro_slug": "st-louis",
 "departures": 4,
-"arrivals": 6,
-"net": 2
+"arrivals": 7,
+"net": 3
+},
+{
+"metro_slug": "washington-baltimore",
+"departures": 4,
+"arrivals": 5,
+"net": 1
 },
 {
 "metro_slug": "cleveland",
 "departures": 3,
 "arrivals": 1,
 "net": -2
-},
-{
-"metro_slug": "dallas",
-"departures": 3,
-"arrivals": 3,
-"net": 0
 },
 {
 "metro_slug": "kansas-city",
@@ -3711,16 +2924,10 @@
 "net": 0
 },
 {
-"metro_slug": "minneapolis-st-paul",
+"metro_slug": "new-york",
 "departures": 3,
-"arrivals": 3,
-"net": 0
-},
-{
-"metro_slug": "new-orleans",
-"departures": 3,
-"arrivals": 1,
-"net": -2
+"arrivals": 5,
+"net": 2
 },
 {
 "metro_slug": "philadelphia",
@@ -3733,62 +2940,74 @@
 "departures": 3,
 "arrivals": 3,
 "net": 0
+},
+{
+"metro_slug": "atlanta",
+"departures": 2,
+"arrivals": 2,
+"net": 0
+},
+{
+"metro_slug": "chicago",
+"departures": 2,
+"arrivals": 3,
+"net": 1
+},
+{
+"metro_slug": "cincinnati",
+"departures": 2,
+"arrivals": 1,
+"net": -1
 }
 ],
 "top_gaining_metros": [
 {
 "metro_slug": "los-angeles",
-"departures": 10,
-"arrivals": 12,
-"net": 2
-},
-{
-"metro_slug": "new-york",
-"departures": 9,
-"arrivals": 10,
-"net": 1
-},
-{
-"metro_slug": "washington-baltimore",
-"departures": 7,
+"departures": 4,
 "arrivals": 7,
-"net": 0
+"net": 3
 },
 {
 "metro_slug": "st-louis",
 "departures": 4,
-"arrivals": 6,
+"arrivals": 7,
+"net": 3
+},
+{
+"metro_slug": "new-york",
+"departures": 3,
+"arrivals": 5,
 "net": 2
 },
 {
-"metro_slug": "pittsburgh",
-"departures": 6,
+"metro_slug": "washington-baltimore",
+"departures": 4,
 "arrivals": 5,
-"net": -1
-},
-{
-"metro_slug": "san-francisco-san-jose",
-"departures": 6,
-"arrivals": 5,
-"net": -1
+"net": 1
 },
 {
 "metro_slug": "detroit",
-"departures": 0,
+"departures": 1,
 "arrivals": 4,
-"net": 4
+"net": 3
 },
 {
-"metro_slug": "phoenix",
-"departures": 2,
+"metro_slug": "san-francisco-san-jose",
+"departures": 5,
 "arrivals": 4,
-"net": 2
+"net": -1
+},
+{
+"metro_slug": "chicago",
+"departures": 2,
+"arrivals": 3,
+"net": 1
 },
 {
 "metro_slug": "dallas",
-"departures": 3,
+"departures": 2,
 "arrivals": 3,
-"net": 0
+"net": 1
 },
 {
 "metro_slug": "kansas-city",
@@ -3798,12 +3017,6 @@
 },
 {
 "metro_slug": "milwaukee",
-"departures": 3,
-"arrivals": 3,
-"net": 0
-},
-{
-"metro_slug": "minneapolis-st-paul",
 "departures": 3,
 "arrivals": 3,
 "net": 0
@@ -3821,21 +3034,25 @@
 "net": 0
 },
 {
-"metro_slug": "boston",
-"departures": 5,
+"metro_slug": "calgary",
+"departures": 0,
 "arrivals": 2,
-"net": -3
+"net": 2
+},
+{
+"metro_slug": "denver",
+"departures": 2,
+"arrivals": 2,
+"net": 0
+},
+{
+"metro_slug": "memphis",
+"departures": 0,
+"arrivals": 2,
+"net": 2
 }
 ],
 "longest": [
-{
-"franchise": "Detroit Lions",
-"league": "nfl",
-"from": "Portsmouth",
-"to": "Detroit",
-"year": 1934,
-"distance_km": 6008.0
-},
 {
 "franchise": "Giants",
 "league": "mlb",
@@ -3853,6 +3070,14 @@
 "distance_km": 4050.4
 },
 {
+"franchise": "Virginia Squires",
+"league": "nba",
+"from": "San Francisco-San Jose",
+"to": "Norfolk",
+"year": 1971,
+"distance_km": 4040.0
+},
+{
 "franchise": "Dodgers",
 "league": "mlb",
 "from": "New York",
@@ -3861,20 +3086,12 @@
 "distance_km": 3935.7
 },
 {
-"franchise": "Virginia Squires",
-"league": "nba",
-"from": "San Francisco-San Jose",
-"to": "Washington-Baltimore",
-"year": 1970,
-"distance_km": 3918.5
-},
-{
-"franchise": "Calgary Cowboys",
+"franchise": "San Diego Mariners",
 "league": "nhl",
-"from": "Philadelphia",
-"to": "Vancouver",
-"year": 1974,
-"distance_km": 3864.5
+"from": "New York",
+"to": "San Diego",
+"year": 1975,
+"distance_km": 3907.2
 },
 {
 "franchise": "Clippers",
@@ -3885,6 +3102,14 @@
 "distance_km": 3516.4
 },
 {
+"franchise": "Cleveland Barons",
+"league": "nhl",
+"from": "San Francisco-San Jose",
+"to": "Cleveland",
+"year": 1977,
+"distance_km": 3479.5
+},
+{
 "franchise": "Los Angeles Rams",
 "league": "nfl",
 "from": "Cleveland",
@@ -3893,12 +3118,12 @@
 "distance_km": 3290.9
 },
 {
-"franchise": "California Golden Seals",
+"franchise": "Calgary Cowboys",
 "league": "nhl",
-"from": "Los Angeles",
-"to": "Cleveland",
-"year": 1977,
-"distance_km": 3290.9
+"from": "Philadelphia",
+"to": "Calgary",
+"year": 1976,
+"distance_km": 3227.5
 },
 {
 "franchise": "Red Wings",
@@ -3911,84 +3136,84 @@
 ],
 "shortest": [
 {
-"franchise": "Pirates",
-"league": "mlb",
-"from": "Pittsburgh",
-"to": "Pittsburgh",
-"year": 1890,
-"distance_km": 0.0
+"franchise": "Milton Keynes",
+"league": "football",
+"from": "London",
+"to": "Milton Keynes",
+"year": 2003,
+"distance_km": 73.5
 },
 {
-"franchise": "Pirates",
+"franchise": "Athletics",
 "league": "mlb",
-"from": "Pittsburgh",
-"to": "Pittsburgh",
-"year": 1900,
-"distance_km": 0.0
+"from": "San Francisco-San Jose",
+"to": "Sacramento",
+"year": 2025,
+"distance_km": 121.1
 },
 {
-"franchise": "Pirates",
-"league": "mlb",
-"from": "Pittsburgh",
-"to": "Pittsburgh",
-"year": 1901,
-"distance_km": 0.0
-},
-{
-"franchise": "Pirates",
-"league": "mlb",
-"from": "Pittsburgh",
-"to": "Pittsburgh",
-"year": 1911,
-"distance_km": 0.0
-},
-{
-"franchise": "Staten Island Stapletons",
+"franchise": "Detroit Wolverines",
 "league": "nfl",
-"from": "New York",
-"to": "New York",
-"year": 1927,
-"distance_km": 0.0
+"from": "Cleveland",
+"to": "Detroit",
+"year": 1928,
+"distance_km": 145.1
 },
 {
-"franchise": "Staten Island Stapletons",
-"league": "nfl",
-"from": "New York",
-"to": "New York",
-"year": 1929,
-"distance_km": 0.0
-},
-{
-"franchise": "New York Americans",
+"franchise": "Hurricanes",
 "league": "nhl",
-"from": "New York",
-"to": "New York",
-"year": 1942,
-"distance_km": 0.0
-},
-{
-"franchise": "Angels",
-"league": "mlb",
-"from": "Los Angeles",
-"to": "Los Angeles",
-"year": 1965,
-"distance_km": 0.0
-},
-{
-"franchise": "Utah Stars",
-"league": "nba",
-"from": "Los Angeles",
-"to": "Los Angeles",
-"year": 1969,
-"distance_km": 0.0
-},
-{
-"franchise": "New England Patriots",
-"league": "nfl",
 "from": "Boston",
-"to": "Boston",
-"year": 1971,
-"distance_km": 0.0
+"to": "Hartford",
+"year": 1975,
+"distance_km": 149.5
+},
+{
+"franchise": "Brooklyn Hartfords",
+"league": "mlb",
+"from": "Hartford",
+"to": "New York",
+"year": 1877,
+"distance_km": 161.1
+},
+{
+"franchise": "Los Angeles Chargers",
+"league": "nfl",
+"from": "Los Angeles",
+"to": "San Diego",
+"year": 1961,
+"distance_km": 179.4
+},
+{
+"franchise": "Clippers",
+"league": "nba",
+"from": "San Diego",
+"to": "Los Angeles",
+"year": 1985,
+"distance_km": 179.4
+},
+{
+"franchise": "Los Angeles Chargers",
+"league": "nfl",
+"from": "San Diego",
+"to": "Los Angeles",
+"year": 2017,
+"distance_km": 179.4
+},
+{
+"franchise": "Saskatoon Crescents",
+"league": "nhl",
+"from": "Moose Jaw",
+"to": "Saskatoon",
+"year": 1922,
+"distance_km": 209.5
+},
+{
+"franchise": "Pistons",
+"league": "nba",
+"from": "Fort Wayne",
+"to": "Detroit",
+"year": 1958,
+"distance_km": 222.7
 }
 ],
 "busiest_decade_by_league": {
@@ -3996,10 +3221,9 @@
 "nhl": "1970s",
 "nfl": "1920s",
 "nba": "1970s",
-"football": "2000s",
-"rugby-union": "2010s"
+"football": "2000s"
 },
-"returns": 37,
-"total_moves": 126
+"returns": 21,
+"total_moves": 89
 }
 }

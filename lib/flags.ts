@@ -283,10 +283,16 @@ const LOCAL_FLAGS: Record<string, string> = {
   vd: "/flags/vd.svg",
   wi: "/flags/wi.svg",
 };
+// The euro area's BIS/ECB code is XM, which no flag CDN knows; the European
+// Central Bank flies the EU flag (flagcdn serves it as "eu").
+const FLAG_CODE_ALIAS: Record<string, string> = { xm: "eu" };
+
 export function flagUrlByCode(code: string): string {
-  return LOCAL_FLAGS[code] ?? `https://flagcdn.com/20x15/${code}.png`;
+  const c = FLAG_CODE_ALIAS[code] ?? code;
+  return LOCAL_FLAGS[c] ?? `https://flagcdn.com/20x15/${c}.png`;
 }
 export function flagSrcSetByCode(code: string): string {
+  const c = FLAG_CODE_ALIAS[code] ?? code;
   // An SVG scales itself; no 2x candidate is needed or wanted.
-  return LOCAL_FLAGS[code] ? "" : `https://flagcdn.com/40x30/${code}.png 2x`;
+  return LOCAL_FLAGS[c] ? "" : `https://flagcdn.com/40x30/${c}.png 2x`;
 }

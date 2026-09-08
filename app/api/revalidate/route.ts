@@ -24,6 +24,7 @@ const ALLOWED_TAGS = new Set([
   "business-daily",     // business-daily-refresh.yml, 05:50 UTC daily
   "predictions-daily",  // predictions-refresh.yml, Tue 06:40 + Fri 11:40 UTC
   "forecast-weekly",    // forecast-weekly.yml, 06:10 UTC Mon/Wed/Fri
+  "economy-rates",      // economy-rates.sh (mac-mini-jobs), Fridays 07:30 UTC
 ]);
 
 export const runtime = "nodejs";

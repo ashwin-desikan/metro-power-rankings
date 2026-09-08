@@ -18,8 +18,8 @@ import RateChart from "./RateChart";
 export const revalidate = 86400;
 
 export const dynamicParams = false;
-export function generateStaticParams() {
-  const index = getRatesIndex();
+export async function generateStaticParams() {
+  const index = await getRatesIndex();
   return (index?.banks ?? []).map((b) => ({ code: b.code }));
 }
 
@@ -42,7 +42,7 @@ const SPINE_LABEL: Record<string, string> = {
 
 export async function generateMetadata({ params }: { params: Promise<{ code: string }> }): Promise<Metadata> {
   const { code } = await params;
-  const bank = getBank(code);
+  const bank = await getBank(code);
   const name = bank?.name ?? code;
   const from = bank?.first_change.slice(0, 4);
   const title = `${name} Policy Rate, Charted Since ${from ?? ""}`.trim();
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
 
 export default async function BankRatePage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
-  const bankOrNull = getBank(code);
+  const bankOrNull = await getBank(code);
   if (!bankOrNull) notFound();
   // Reassigning to a fresh const captures the non-null narrowing at this
   // point, which nested function declarations below (DecisionRow,

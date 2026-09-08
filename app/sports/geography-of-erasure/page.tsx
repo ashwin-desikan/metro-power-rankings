@@ -63,9 +63,19 @@ function metroName(metros: Map<string, string>, slug: string | null): string {
   return metros.get(slug) ?? slug;
 }
 
+function MetroLink({ metro, slug }: { metro: string; slug: string | null }) {
+  if (!slug) return <span>{metro}</span>;
+  return (
+    <Link href={`/rankings/${slug}`} className="hover:text-[var(--accent)] hover:underline">
+      {metro}
+    </Link>
+  );
+}
+
 export default function GeographyOfErasurePage() {
   const data = getMoves();
   const moves = data.moves;
+  const temporary = data.temporary;
   const summary = data.summary;
   const metros = new Map(getAllMetros().map((m) => [m.slug, m.name]));
 
@@ -181,6 +191,7 @@ export default function GeographyOfErasurePage() {
           { label: "Metros", href: "#metros" },
           { label: "Distance", href: "#distance" },
           { label: "Who came back", href: "#returns" },
+          { label: "Temporary homes", href: "#temporary-homes" },
           ...SPECIES_ORDER.map((s) => ({ label: GHOST_SPECIES[s].label, href: `#${s}` })),
           { label: "Full ledger", href: "#ledger" },
         ]}
@@ -215,7 +226,7 @@ export default function GeographyOfErasurePage() {
         <SectionHead
           title="Every move, by decade"
           sub="One stacked bar per decade, one colour per sport. Height is move count."
-          more="Sports beyond the top five collapse into Other. A move is dated to the arrival year, the first season in the new city, so a franchise that left in December 1994 for a 1995 debut counts in the 1990s."
+          more="Sports beyond the top five collapse into Other. A move is dated to the arrival year in the new metro, so a franchise that left in December 1994 for a 1995 debut counts in the 1990s."
         />
         <DecadeStackChart cats={cats} rows={decadeRows} />
       </section>
@@ -371,8 +382,8 @@ export default function GeographyOfErasurePage() {
                   <tr key={`${m.league}-${m.franchise_slug}-${m.year}`} className="border-b hover:bg-[var(--bg-card-hover)] transition-colors" style={{ borderColor: "var(--border)" }}>
                     <td className="px-3 py-2 text-[var(--text-dim)] tabular-nums" style={MONO}>{i + 1}</td>
                     <td className="px-3 py-2"><Link href={m.href} className="hover:text-[var(--accent)]">{m.franchise_now}</Link></td>
-                    <td className="px-3 py-2 text-[var(--text-muted)]">{m.from.city}</td>
-                    <td className="px-3 py-2 text-[var(--text-muted)]">{m.to.city}</td>
+                    <td className="px-3 py-2 text-[var(--text-muted)]"><MetroLink metro={m.from.metro} slug={m.from.metro_slug} /></td>
+                    <td className="px-3 py-2 text-[var(--text-muted)]"><MetroLink metro={m.to.metro} slug={m.to.metro_slug} /></td>
                     <td className="px-3 py-2 text-right tabular-nums text-[var(--text-dim)]" style={MONO}>{m.year}</td>
                     <td className="px-3 py-2 text-right tabular-nums font-semibold text-[var(--text)]" style={MONO}>{m.distance_km.toLocaleString()} km</td>
                   </tr>
@@ -392,7 +403,7 @@ export default function GeographyOfErasurePage() {
                     <Link href={m.href} className="font-semibold hover:text-[var(--accent)]">{i + 1}. {m.franchise_now}</Link>
                     <span className="text-sm font-semibold tabular-nums" style={MONO}>{m.distance_km.toLocaleString()} km</span>
                   </div>
-                  <div className="text-xs text-[var(--text-muted)] mt-1">{m.from.city} to {m.to.city} · {m.year}</div>
+                  <div className="text-xs text-[var(--text-muted)] mt-1"><MetroLink metro={m.from.metro} slug={m.from.metro_slug} /> to <MetroLink metro={m.to.metro} slug={m.to.metro_slug} /> · {m.year}</div>
                 </div>
               ))}
             />
@@ -419,12 +430,46 @@ export default function GeographyOfErasurePage() {
                   <span className="text-xs tabular-nums text-[var(--text-dim)]" style={MONO}>{m.year}</span>
                 </div>
                 <div className="text-sm text-[var(--text-muted)] mt-1">
-                  Left {m.from.metro} for {m.to.metro}.
+                  Left <MetroLink metro={m.from.metro} slug={m.from.metro_slug} /> for <MetroLink metro={m.to.metro} slug={m.to.metro_slug} />.
                   {m.replaced_by ? (
-                    <> {m.from.metro} was replaced by the <span className="text-[var(--text)]">{m.replaced_by.name}</span> ({m.replaced_by.year}).</>
+                    <> <MetroLink metro={m.from.metro} slug={m.from.metro_slug} /> was replaced by the <span className="text-[var(--text)]">{m.replaced_by.name}</span> ({m.replaced_by.year}).</>
                   ) : (
-                    <> The franchise later played in {m.from.metro} again.</>
+                    <> The franchise later played in <MetroLink metro={m.from.metro} slug={m.from.metro_slug} /> again.</>
                   )}
+                </div>
+              </div>
+            ))}
+          />
+        </div>
+      </section>
+
+      {/* Section 6b: temporary homes - a displacement, not a relocation */}
+      <section id="temporary-homes" className="mb-12 scroll-mt-24">
+        <SectionHead
+          title="Temporary homes"
+          sub="Seasons played away from home and then home again: not relocations."
+        />
+        <div className="grid grid-cols-1 gap-2">
+          <CappedList
+            initial={10}
+            noun="episodes"
+            className="rounded-lg border border-[var(--border)]"
+            bodyClassName="grid grid-cols-1 gap-2 p-2 pt-0"
+            items={temporary.map((t, i) => (
+              <div key={`${t.league}-${t.franchise_slug}-${i}`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
+                <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                  <Link href={t.href} className="font-semibold hover:text-[var(--accent)]">{t.franchise_now}</Link>
+                  <span className="text-xs tabular-nums text-[var(--text-dim)]" style={MONO}>{t.years}</span>
+                </div>
+                <div className="text-sm text-[var(--text-muted)] mt-1">
+                  <MetroLink metro={t.home.metro} slug={t.home.metro_slug} /> away to{" "}
+                  {t.temporary.map((x, j) => (
+                    <span key={x.metro_slug ?? x.metro}>
+                      {j > 0 ? " and " : ""}
+                      <MetroLink metro={x.metro} slug={x.metro_slug} /> ({x.seasons} season{x.seasons === 1 ? "" : "s"})
+                    </span>
+                  ))}
+                  , then home to <MetroLink metro={t.home.metro} slug={t.home.metro_slug} /> again.
                 </div>
               </div>
             ))}
@@ -438,8 +483,7 @@ export default function GeographyOfErasurePage() {
         const meta = GHOST_SPECIES[species];
         return (
           <section key={species} id={species} className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl font-bold mb-1">{meta.label}</h2>
-            <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">{meta.blurb}</p>
+            <SectionHead title={meta.label} sub={meta.sub} more={meta.blurb} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {rows.map((g) => {
                 const href = ghostTeamHref(g);
@@ -480,7 +524,7 @@ export default function GeographyOfErasurePage() {
                       <ul className="mt-1.5 pl-1 text-xs text-[var(--text-dim)] space-y-0.5">
                         {relatedMoves.map((m, i) => (
                           <li key={i} style={MONO}>
-                            {m.year} · {m.from.city} &rarr; {m.to.city}
+                            {m.year} · {m.from.metro} &rarr; {m.to.metro}
                           </li>
                         ))}
                       </ul>
@@ -505,19 +549,23 @@ export default function GeographyOfErasurePage() {
       <Disclosure title="Where these numbers come from" desktopOpen={false}>
         <div className="p-4 text-[13.5px] text-[var(--text-muted)] leading-relaxed space-y-2">
           <p>
-            The big four (NFL, NBA, NHL, MLB) come from each league&apos;s per-season team sheet: a move is a
-            change of city between consecutive seasons of the same franchise, dated to the arrival year. Every
-            other league on record (NRL, CFL, WNBA, IPL, AFL, football, rugby, NPB, T20) comes from the site&apos;s
-            relocations ledger, which is thinner for those leagues, so their share of the {total} moves here is
-            small relative to how many relocations those sports have actually had historically.
+            A move is a change of metro area, never a rename or a spelling variant within the same one. The big
+            four (NFL, NBA, NHL, MLB) come from the site&apos;s own metro-keyed relocation tiles (built from each
+            workbook&apos;s Metro Area column): every metro a franchise has called home, sorted into order and
+            walked for a change of metro, dated to the arrival year. A franchise renamed in place, such as the
+            Boston Patriots becoming the New England Patriots or the Phoenix Cardinals becoming the Arizona
+            Cardinals, carries no tile of its own and so produces no row here. Every other league on record (NRL,
+            CFL, WNBA, IPL, AFL, football, rugby, NPB, T20) comes from the same relocations ledger, which is
+            thinner for those leagues, so their share of the {total} moves here is small relative to how many
+            relocations those sports have actually had historically. A row whose destination metro cannot be
+            resolved is dropped rather than guessed; the build prints which and why.
           </p>
           <p>
-            Distance is the straight-line gap between metro centers, not a road or flight distance. A metro slug
-            can be missing for a handful of very old or oddly-labelled cities in the historical sheets (a WWII
-            merger season, a combined roadshow label like &quot;Cincy/St. Louis&quot;); those rows show a null
-            dash rather than a guessed number. The three species below (true deaths, relocation laundering,
-            living exile) are a curated editorial taxonomy, matched here to the ledger rows for that franchise
-            where the data supports the match.
+            Distance is the straight-line gap between metro centers, not a road or flight distance. Titles before
+            and after a move are drawn from the franchise&apos;s own championship total, split at the point of the
+            move, so they run out (never negative) rather than double count. The three species below (true
+            deaths, relocation laundering, living exile) are a curated editorial taxonomy, matched here to the
+            ledger rows for that franchise where the data supports the match.
           </p>
           <p>
             Built by <code>scripts/build-moves.py</code>. Companion essay on{" "}

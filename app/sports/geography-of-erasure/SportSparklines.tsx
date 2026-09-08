@@ -56,7 +56,7 @@ export default function SportSparklines({
                 );
               })}
             </svg>
-            <p className="mt-1.5 text-[11px] text-[var(--text-dim)]">
+            <p className="mt-1.5 text-xs text-[var(--text-dim)]">
               Busiest decade: <span className="text-[var(--text-muted)] font-medium">{peak ?? "—"}</span>
             </p>
           </div>

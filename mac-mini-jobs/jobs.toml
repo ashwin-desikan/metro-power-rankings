@@ -464,6 +464,17 @@ timeout_minutes = 45
 # never guessed, never wrong on the site.
 #
 [[job]]
+id = "economy-rates"
+label = "Policy rate refresh (/business/economy)"
+time = "07:30"                  # Friday; BIS publishes WS_CBPOL weekly, Thursday
+weekdays = [5]
+command = "runners/economy-rates.sh"
+catchup_hours = 40              # weekly cadence, generous like egress-refresh:
+                                 # worth catching up most of the way to the
+                                 # next Friday rather than skipping a week.
+timeout_minutes = 30
+
+[[job]]
 id = "mktcap-refresh"
 label = "Company market caps"
 time = "09:00"                  # Saturday; matches cricket-weekly's slot on a

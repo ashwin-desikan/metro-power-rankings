@@ -1,0 +1,14 @@
+"TERMS AND CONDITIONS"
+"https://www.bankofcanada.ca/terms/"
+
+"SERIES"
+"id","label","description"
+"V39079","Target for the overnight rate (business daily)","Also called the policy interest rate."
+
+"OBSERVATIONS"
+"date","V39079"
+"2026-08-03","2.25"
+"2026-08-04","2.25"
+"2026-08-05","2.25"
+"2026-08-06","2.25"
+"2026-08-07","2.25"

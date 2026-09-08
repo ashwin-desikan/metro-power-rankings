@@ -26,22 +26,25 @@ export type GhostFranchise = {
 
 export const GHOST_SPECIES: Record<
   GhostSpecies,
-  { label: string; order: number; blurb: string }
+  { label: string; sub: string; order: number; blurb: string }
 > = {
   "true-death": {
     label: "True deaths",
+    sub: "The franchise folded outright, with no heir to keep the legacy alive.",
     order: 0,
     blurb:
       "The franchise folded. The legacy is orphaned, with no heir to keep it alive. These champions exist now only in the record books.",
   },
   "relocation-laundering": {
     label: "Relocation laundering",
+    sub: "The lineage survives under another name; the link below leads to the heir, not the original.",
     order: 1,
     blurb:
       "The lineage survives, but it was moved and renamed. The trophies still count; they just hang in another metro's building. Follow the link and you land on the heir, not the original.",
   },
   "living-exile": {
     label: "Living in exile",
+    sub: "The club still exists intact; it only lost its place at the top.",
     order: 2,
     blurb:
       "The club still exists, intact, with its name and its ground. It simply lost the only thing the corporate game measures: its place at the top.",

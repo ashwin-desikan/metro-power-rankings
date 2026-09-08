@@ -1,0 +1,7 @@
+FREQ,REF_AREA,UNIT_MEASURE,UNIT_MULT,TIME_FORMAT,COMPILATION,DECIMALS,SOURCE_REF,SUPP_INFO_BREAKS,TITLE,TIME_PERIOD,OBS_VALUE,OBS_STATUS,OBS_CONF,OBS_PRE_BREAK
+D,CH,368,0,,From 13 June 2019 onwards SNB Policy rate.,4,Swiss National Bank,,Central bank policy rates - Switzerland - Daily - End of period,2026-09-01,0,A,F,
+D,CH,368,0,,From 13 June 2019 onwards SNB Policy rate.,4,Swiss National Bank,,Central bank policy rates - Switzerland - Daily - End of period,2026-09-02,0,A,F,
+D,JP,368,0,,From 17 Jun 2026 onwards: the BOJ encourages the uncollateralized overnight call rate to remain at around 1.00 percent.,4,Bank of Japan,,Central bank policy rates - Japan - Daily - End of period,2026-09-01,1,A,F,
+D,JP,368,0,,From 17 Jun 2026 onwards: the BOJ encourages the uncollateralized overnight call rate to remain at around 1.00 percent.,4,Bank of Japan,,Central bank policy rates - Japan - Daily - End of period,2026-09-02,1,A,F,
+D,BR,368,0,,From 1999 onwards: SELIC target rate.,4,Central Bank of Brazil,,Central bank policy rates - Brazil - Daily - End of period,2026-09-01,15,A,F,
+D,BR,368,0,,From 1999 onwards: SELIC target rate.,4,Central Bank of Brazil,,Central bank policy rates - Brazil - Daily - End of period,2026-09-02,15,A,F,

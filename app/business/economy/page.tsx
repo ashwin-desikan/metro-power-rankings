@@ -57,13 +57,13 @@ function lastMove(bank: BankFile | null): { date: string; change: number | null 
 }
 
 export default async function EconomyPage() {
-  const index = getRatesIndex();
+  const index = await getRatesIndex();
   const banks = index?.banks ?? [];
   const founded = banks.filter((b) => b.founded);
   // Full bank files are needed only for the last decision's signed change
   // (not carried in the index); 49 files at ~50KB average is well inside the
   // function-size budget for one route. See lib/economyRates.ts.
-  const full = new Map(banks.map((b) => [b.code, getBank(b.code)]));
+  const full = new Map(await Promise.all(banks.map(async (b) => [b.code, await getBank(b.code)] as const)));
 
   const rows: RateRow[] = banks.map((b) => {
     const move = lastMove(full.get(b.code) ?? null);

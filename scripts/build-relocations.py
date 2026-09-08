@@ -105,7 +105,10 @@ for _r in read_csv('aliases.csv'):            # editable workbook-metro-name -> 
 # American, so within this path the bare name always means the US/Canada metro.
 # (Verified the only colliding slug carrying defunct BIG4 teams is Birmingham:
 # Portland/Kansas City/Columbus/Hamilton bare slugs are already the right metro.)
-NA_DISAMBIG={'birmingham':'birmingham-al'}
+NA_DISAMBIG={'birmingham':'birmingham-al',
+             # Portsmouth Spartans (NFL 1930-33, now the Lions) played in Portsmouth, Ohio,
+             # not the English naval city that owns the bare slug (caught 2026-09-08).
+             'portsmouth':'portsmouth-oh'}
 def m2slug(name):
     k=str(name).strip().lower()
     return NA_DISAMBIG.get(k) or EXACT.get(k) or METRO_ALIAS.get(k)
