@@ -63,9 +63,18 @@ export async function getFootyFinals(league: "afl" | "nrl"): Promise<FootyFinals
     });
     if (res.ok) {
       const remote = (await res.json()) as FootyFinalsBundle;
+      // A newer remote wins, EXCEPT an empty one: a feed run that found no
+      // fixtures is not newer information about the finals, it is a run
+      // that failed to see them (2026-09-08: the workflow's 15:40 UTC run,
+      // still on the parser that dropped ESPN's "2026-final-nrl" slug,
+      // committed an empty bundle that then outranked the four real
+      // qualifying finals on disk and blanked the NRL bracket).
+      const remoteHasGames = (remote?.weeks?.length ?? 0) > 0;
+      const localHasGames = (local?.weeks?.length ?? 0) > 0;
       if (
         remote?.meta?.generated_at &&
-        (!local || remote.meta.generated_at >= local.meta.generated_at)
+        (!local || remote.meta.generated_at >= local.meta.generated_at) &&
+        (remoteHasGames || !localHasGames)
       )
         return remote;
     }

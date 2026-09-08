@@ -222,9 +222,14 @@ export default function FinalsBracket({
       )}
 
       <div className="overflow-x-auto pb-2">
+        {/* Each week is a fixed-width column that later rounds add to, never
+            a column that stretches to fill the row: with one week on file
+            (the NRL's qualifying finals, 2026-09-08) flex-1 spread four cards
+            across the whole desktop width while the AFL's four weeks sat at
+            card size. Same width whatever the count. */}
         <div className="flex gap-3" style={{ minWidth: `${bundle.weeks.length * 240}px` }}>
           {bundle.weeks.map((w) => (
-            <div key={w.week} className="flex-1 min-w-[228px]">
+            <div key={w.week} className="w-[240px] flex-none">
               <div className="text-[11px] uppercase tracking-wider font-semibold text-[var(--text-muted)] mb-2">
                 {w.label}
               </div>

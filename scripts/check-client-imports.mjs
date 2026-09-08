@@ -106,6 +106,8 @@ const SERVER_ONLY_MODULES = [
   "@/lib/nflPlayoffs",
   "@/lib/clubValue",
   "@/lib/footballSeasonExpectation",
+  "@/lib/moves",
+  "@/lib/economyRates",
 ];
 
 const SCAN_DIRS = ["app", "components"];

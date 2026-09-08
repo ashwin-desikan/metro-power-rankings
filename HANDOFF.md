@@ -11600,3 +11600,39 @@ placeholders before).
   prose links inside collapsed "more" text, plus the wordmark and the sort
   select), /elections/all 4 -> 2. check:mobile and check:table-scroll
   unchanged.
+
+### R. Late evening: NRL bracket, the Geography of Erasure rebuilt, Carlo's tower
+
+- **NRL finals cards spread across the desktop**: `FinalsBracket` week
+  columns were `flex-1 min-w-[228px]`, so one week filled the row while the
+  AFL's three sat at card width. Columns are now `w-[240px] flex-none`;
+  measured AFL 240/240/240 on the built server. Then the NRL bracket was
+  missing altogether on the built server: the footy workflow's 15:40 UTC
+  run (old parser) pushed an EMPTY finals.json to origin, and
+  `getFootyFinals` let the newer empty remote outrank the four real
+  fixtures on disk. The reader now keeps a non-empty local over an empty
+  remote whatever the timestamps. After the push, dispatch
+  `footy-refresh.yml` (workflow_dispatch) so origin carries the real file
+  before Friday's qualifying finals; the 06:00 UTC cron does it otherwise.
+- **/sports/geography-of-erasure rebuilt on data**: `scripts/build-moves.py`
+  (registered in run-workbook-sync after relocations, --self-test on the
+  Rams, Raiders, Braves and Coyotes/Jets cases) writes
+  `public/data/sports/moves.json`: 126 relocations from the big four's
+  per-season files (NBA 40, NHL 31, NFL 30, MLB 23) plus the two non-big-four
+  rows the relocations file marks as relocated; same-metro moves flagged,
+  distance in km, titles before and after, returns and replacements
+  (Winnipeg gets the Thrashers 2012 against the Jets' 1997 departure).
+  NRL, CFL, WNBA, IPL and AFL only carry defunct tiles in
+  relocations-by-metro, so they are absent from the ledger until their
+  workbooks encode a move. Page: decade stacked bar by sport (SVG,
+  --cat tokens, phone twin), per-league sparklines, lost/gained metro
+  boards, distance board and distribution strip, returns list, the three
+  species essays unchanged with their matched moves, and a sortable full
+  ledger. `lib/moves.ts` literal reads; `lib/movesShared.ts` for client
+  types; `@/lib/moves` and `@/lib/economyRates` added to the client-imports
+  server-only list (the economy one was the gap that cost a rebuild
+  earlier). Probe: 15.6 screens at 390, 8,989px at 1280, 21 SVGs, 4 tables.
+- Carlo De Marchis's NFL Season Tower (nfl.aguywithascarf.com) read and
+  written up for Ashwin with six adaptations that stay ours (expectation
+  tower, week scrubber on the Elo race, remaining-schedule strip, game-row
+  box-score links, opponent-metro colouring); none built.

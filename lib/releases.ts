@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "A new Economy tab under Business: every policy rate decision of 60 central banks, eleven complete to their founding and the Bank of England from 1694, with a step chart and an every-change table per bank.",
       "Eighteen election hubs join the atlas, from Peru and Thailand to Morocco, Cuba and Jamaica; East Germany, South Vietnam and the West Indies Federation stay in full as dissolved states, off the map and the countdown.",
       "NFL upsets in the last two weeks no longer count a clinched team resting its starters as a shock, the shock tag marks one game rather than a whole Sunday, and every printed score follows the order of the names.",
-      "The NRL finals fixtures now reach the live standings and the NRL hub; South Africa stops reading as a dominion after 1961; the countdown names the kind of contest; Czechia carries the Czech flag everywhere.",
+      "The Geography of Erasure now carries every franchise move the site knows, 126 of them, by decade and by league, with the metros that lost and gained the most, the distances, and who came back.",
     ],
   },
   {
