@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-08T07:17:06.227046+00:00",
+  "generated_at": "2026-09-08T07:27:25.927069+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-08T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-07",
-        "status": "ok",
-        "slot": "2026-09-07T07:20:00+00:00"
-      }
-    },
     {
       "id": "cricket-weekly",
       "label": "Cricket results + rankings",
@@ -261,6 +243,24 @@
         "date": "2026-09-02",
         "status": "ok (manual)",
         "slot": "2026-09-02T07:10:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-09T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-08",
+        "status": "ok",
+        "slot": "2026-09-08T07:20:00+00:00"
       }
     },
     {
