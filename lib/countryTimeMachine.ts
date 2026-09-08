@@ -141,8 +141,12 @@ export type Fragmented = { slug: string; from: number; to: number; note: string 
 /** A dependency whose holder changed: wins over the current parent. */
 export type DependencyOverride = { slug: string; from: number; to: number; holder: string };
 
-/** A self-governing dominion: out of its empire's total from `from`. */
-export type Dominion = { slug: string; from: number; of: string };
+/**
+ * A self-governing dominion: out of its empire's total from `from`. `to` is
+ * the last year the label applies (South Africa left on 31 May 1961 as a
+ * republic, so it is a dominion through 1961 and sovereign from 1962).
+ */
+export type Dominion = { slug: string; from: number; to?: number; of: string };
 
 /** slug -> inclusive [from, to, coloniser] runs. */
 export type ColoniserRuns = Record<string, [number, number, string][]>;

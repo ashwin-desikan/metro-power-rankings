@@ -74,7 +74,7 @@ type Timeline = {
   colonisers: Record<string, [number, number, string][]>;
   colonySource: string;
   partitioned: { slug: string; from: number; to: number; between: string[] }[];
-  dominions: { slug: string; from: number; of: string }[];
+  dominions: { slug: string; from: number; to?: number; of: string }[];
   dependencies: Record<string, string>;
   dependencyOverrides: { slug: string; from: number; to: number; holder: string }[];
   dependencySince: Record<string, number>;
@@ -453,7 +453,7 @@ export default function CountryTimeMachine() {
     // India describes neither correctly.
     const dominionOf = new Map<string, string>();
     for (const d of data.dominions) {
-      if (year >= d.from) dominionOf.set(d.slug, d.of);
+      if (year >= d.from && (d.to == null || year <= d.to)) dominionOf.set(d.slug, d.of);
     }
 
     // Who holds what, by METROPOLE SLUG. COLDAT gives the colonies of the

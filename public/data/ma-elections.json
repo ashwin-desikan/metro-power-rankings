@@ -1,0 +1,1994 @@
+{
+ "meta": {
+  "title": "Moroccan General Elections",
+  "sources": [
+   "Wikipedia: Moroccan general election articles 1963-2021 (results tables and infoboxes)",
+   "Ministry of the Interior figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "eras": [
+  {
+   "key": "founding",
+   "label": "The founding vote, and its interruption",
+   "span": "1963",
+   "blurb": "Morocco's first House of Representatives was elected in 1963 under the newly independent kingdom's first constitution, three-quarters of it by direct vote and the rest by an indirectly chosen House of Councillors. King Hassan II dissolved parliament in 1965 and ruled by decree for five years before a new constitution brought the next election in 1970."
+  },
+  {
+   "key": "indirect",
+   "label": "A house shared with the colleges",
+   "span": "1970-1993",
+   "blurb": "A new constitution adopted by referendum in July 1970 gave the House of Representatives a directly elected majority and an indirect minority chosen by communal councillors and by professional colleges representing agriculture, commerce, artisans and trade unions. Istiqlal and the Union of Popular Forces fared poorly under it for two decades before the 1993 election, held after another new constitution, finally split seats close to evenly among several parties."
+  },
+  {
+   "key": "alternance",
+   "label": "A fully elected house again",
+   "span": "1997-2002",
+   "blurb": "The 1997 House was the first since 1963 filled entirely by direct vote, and the Socialist Union of Popular Forces topped it, with Abderrahmane Youssoufi becoming prime minister. The Justice and Development Party won its first seats in 2002, entering third with 42, a result the source calls strong gains for an Islamist party even as USFP's outgoing government kept its plurality."
+  },
+  {
+   "key": "pjd_rise",
+   "label": "The PJD's rise, and 2011's reform",
+   "span": "2007-2011",
+   "blurb": "PJD topped the vote in 2007 but Istiqlal still formed the government on more seats; a BBC correspondent at the time accused the government of redrawing constituencies to keep PJD from winning outright. The 2011 constitution, adopted after protests during the Arab Spring, required the king to appoint his prime minister from the party that had actually won the most votes, and Abdelilah Benkirane's PJD victory that November was the first test of the new rule."
+  },
+  {
+   "key": "pjd_govt",
+   "label": "Two PJD governments",
+   "span": "2016-2021",
+   "blurb": "PJD topped the poll again in 2016, but a coalition deadlock between Benkirane and RNI's Aziz Akhannouch left Morocco without a government for months; the king dismissed Benkirane in March 2017 and installed his own party colleague Saadeddine Othmani, whose cabinet was not sworn in until 5 April. Five years later PJD's seat count collapsed from 125 to 13 as Akhannouch's RNI took first place in 2021, the sharpest reversal in the series."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "17 May 1963",
+   "era": "founding",
+   "totalSeats": 144,
+   "majoritySeats": null,
+   "turnout": 71.79,
+   "parties": [
+    {
+     "name": "Front for the Defence of Constitutional Institutions",
+     "leader": null,
+     "seats": 69,
+     "seatChange": null,
+     "votes": 1159932,
+     "share": 34.78,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": null,
+     "votes": 1000506,
+     "share": 30.0,
+     "swing": null
+    },
+    {
+     "name": "National Union of Popular Forces",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 751056,
+     "share": 22.52,
+     "swing": null
+    },
+    {
+     "name": "Moroccan Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2345,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 421479,
+     "share": 12.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Ahmed Bahnini",
+    "party": "FDIC"
+   },
+   "knownAs": null,
+   "summary": "Front for the Defence of Constitutional Institutions finished first with 69 of 144 seats on 34.8% of the vote. Turnout 71.8%. Ahmed Bahnini took office.",
+   "seatLeader": "Front for the Defence of Constitutional Institutions",
+   "caveat": "A quarter of the House sat alongside an entirely indirectly elected House of Councillors, and the king dissolved parliament and ruled by decree for five years afterward.",
+   "unfree": null
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "legislative",
+   "date": "21 August 1970",
+   "era": "indirect",
+   "totalSeats": 240,
+   "majoritySeats": 121,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "MP",
+     "leader": "Abdelkrim al-Khatib",
+     "seats": 60,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PPS",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal",
+     "leader": "Allal al-Fassi",
+     "seats": 8,
+     "seatChange": -33,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PDC",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UNFP",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -27,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": "–",
+     "seats": 159,
+     "seatChange": 153,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmed Laraki",
+    "party": "Istiqlal"
+   },
+   "pmAfter": {
+    "name": "Ahmed Laraki",
+    "party": "Istiqlal"
+   },
+   "knownAs": null,
+   "summary": "Independents finished first with 159 of 240 seats. Ahmed Laraki stayed in office.",
+   "seatLeader": "Independents",
+   "caveat": "Only a majority of seats were filled by direct vote; the rest went to communal councillors and professional colleges rather than to the electorate.",
+   "unfree": null
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "kind": "legislative",
+   "date": "3 June 1977",
+   "era": "indirect",
+   "totalSeats": 264,
+   "majoritySeats": 133,
+   "turnout": 82.36,
+   "parties": [
+    {
+     "name": "Istiqlal",
+     "leader": "M'hamed Boucetta",
+     "seats": 51,
+     "seatChange": 43,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "USFP",
+     "leader": "Abderrahim Bouabid",
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "MP",
+     "leader": "Abdelkrim al-Khatib",
+     "seats": 44,
+     "seatChange": -16,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PPS",
+     "leader": "Ali Yata",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "MPDC",
+     "leader": "Abdelkrim al-Khatib",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Action Party",
+     "leader": "Abdellah Senhaji",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UMT",
+     "leader": "Mahjoub Ben Seddik",
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": "–",
+     "seats": 141,
+     "seatChange": -18,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmed Osman",
+    "party": "RNI"
+   },
+   "pmAfter": {
+    "name": "Ahmed Osman",
+    "party": "RNI"
+   },
+   "knownAs": null,
+   "summary": "Independents finished first with 141 of 264 seats. Turnout 82.4%. Ahmed Osman stayed in office.",
+   "seatLeader": "Independents",
+   "caveat": "Only a majority of seats were filled by direct vote; the rest went to communal councillors and professional colleges rather than to the electorate.",
+   "unfree": null
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "kind": "legislative",
+   "date": "14 September 1984",
+   "era": "indirect",
+   "totalSeats": 306,
+   "majoritySeats": null,
+   "turnout": 67.43,
+   "parties": [
+    {
+     "name": "Constitutional Union",
+     "leader": null,
+     "seats": 83,
+     "seatChange": null,
+     "votes": 1101502,
+     "share": 24.79,
+     "swing": null
+    },
+    {
+     "name": "National Rally of Independents",
+     "leader": null,
+     "seats": 61,
+     "seatChange": null,
+     "votes": 763395,
+     "share": 17.18,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 3,
+     "votes": 695020,
+     "share": 15.64,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -10,
+     "votes": 681083,
+     "share": 15.33,
+     "swing": null
+    },
+    {
+     "name": "Socialist Union of Popular Forces",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 21,
+     "votes": 550291,
+     "share": 12.39,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 396370,
+     "share": 8.92,
+     "swing": null
+    },
+    {
+     "name": "Party of Progress and Socialism",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 102314,
+     "share": 2.3,
+     "swing": null
+    },
+    {
+     "name": "Constitutional and Democratic Popular Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 69862,
+     "share": 1.57,
+     "swing": null
+    },
+    {
+     "name": "Organisation for Democratic and Popular Action",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 32766,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Action Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 20465,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Democratic Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20126,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Party of Union and National Solidarity",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 9810,
+     "share": 0.22,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mohammed Karim Lamrani",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Mohammed Karim Lamrani",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Constitutional Union finished first with 83 of 306 seats on 24.8% of the vote. Turnout 67.4%. Mohammed Karim Lamrani stayed in office.",
+   "seatLeader": "Constitutional Union",
+   "caveat": "Only a majority of seats were filled by direct vote; the rest went to communal councillors and professional colleges rather than to the electorate.",
+   "unfree": null
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "25 June 1993",
+   "era": "indirect",
+   "totalSeats": 333,
+   "majoritySeats": 167,
+   "turnout": 62.75,
+   "parties": [
+    {
+     "name": "National Rally of Independents",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -19,
+     "votes": 824117,
+     "share": 13.24,
+     "swing": null
+    },
+    {
+     "name": "Socialist Union of Popular Forces",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 17,
+     "votes": 820641,
+     "share": 13.19,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Union",
+     "leader": null,
+     "seats": 54,
+     "seatChange": -28,
+     "votes": 799149,
+     "share": 12.84,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 12,
+     "votes": 760082,
+     "share": 12.22,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 4,
+     "votes": 751864,
+     "share": 12.08,
+     "swing": null
+    },
+    {
+     "name": "National Popular Movement",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 662214,
+     "share": 10.64,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 0,
+     "votes": 500253,
+     "share": 8.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Independence Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 257372,
+     "share": 4.14,
+     "swing": null
+    },
+    {
+     "name": "Party of Progress and Socialism",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 8,
+     "votes": 245064,
+     "share": 3.94,
+     "swing": null
+    },
+    {
+     "name": "Organisation for Democratic and Popular Action",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 196268,
+     "share": 3.15,
+     "swing": null
+    },
+    {
+     "name": "Action Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 145981,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 259213,
+     "share": 4.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mohammed Karim Lamrani",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Mohammed Karim Lamrani",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Constitutional Union finished first with 54 of 333 seats on 12.8% of the vote. Turnout 62.8%. Mohammed Karim Lamrani stayed in office.",
+   "seatLeader": "Constitutional Union",
+   "caveat": "Only a majority of seats were filled by direct vote; the rest went to communal councillors and professional colleges rather than to the electorate.",
+   "unfree": null
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "14 November 1997",
+   "era": "alternance",
+   "totalSeats": 325,
+   "majoritySeats": 163,
+   "turnout": 58.3,
+   "parties": [
+    {
+     "name": "Socialist Union of Popular Forces",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 5,
+     "votes": 884061,
+     "share": 13.87,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -20,
+     "votes": 840315,
+     "share": 13.19,
+     "swing": null
+    },
+    {
+     "name": "National Rally of Independents",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 6,
+     "votes": 705397,
+     "share": 11.07,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -11,
+     "votes": 659331,
+     "share": 10.35,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Union",
+     "leader": null,
+     "seats": 50,
+     "seatChange": -4,
+     "votes": 647746,
+     "share": 10.17,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Movement",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": 603156,
+     "share": 9.47,
+     "swing": null
+    },
+    {
+     "name": "National Popular Movement",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -6,
+     "votes": 431651,
+     "share": 6.77,
+     "swing": null
+    },
+    {
+     "name": "Party of Renewal and Progress",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -1,
+     "votes": 274862,
+     "share": 4.31,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -14,
+     "votes": 270425,
+     "share": 4.24,
+     "swing": null
+    },
+    {
+     "name": "Constitutional and Democratic Popular Movement",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 264324,
+     "share": 4.15,
+     "swing": null
+    },
+    {
+     "name": "Front of Democratic Forces",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 243275,
+     "share": 3.82,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 188520,
+     "share": 2.96,
+     "swing": null
+    },
+    {
+     "name": "Organisation for Democratic and Popular Action",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 184009,
+     "share": 2.89,
+     "swing": null
+    },
+    {
+     "name": "Action Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 89614,
+     "share": 1.41,
+     "swing": null
+    },
+    {
+     "name": "Democratic Independence Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -8,
+     "votes": 76176,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Movement for Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8768,
+     "share": 0.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Abdellatif Filali",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Abderrahmane Youssoufi",
+    "party": "USFP"
+   },
+   "knownAs": null,
+   "summary": "Socialist Union of Popular Forces finished first with 57 of 325 seats on 13.9% of the vote. Turnout 58.3%. Abderrahmane Youssoufi replaced Abdellatif Filali.",
+   "seatLeader": "Socialist Union of Popular Forces",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "27 September 2002",
+   "era": "alternance",
+   "totalSeats": 325,
+   "majoritySeats": 163,
+   "turnout": 51.61,
+   "parties": [
+    {
+     "name": "Socialist Union of Popular Forces",
+     "leader": null,
+     "seats": 50,
+     "seatChange": -7,
+     "votes": 718725,
+     "share": 11.88,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 16,
+     "votes": 598226,
+     "share": 9.89,
+     "swing": null
+    },
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 33,
+     "votes": 595439,
+     "share": 9.84,
+     "swing": null
+    },
+    {
+     "name": "National Rally of Independents",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -5,
+     "votes": 561514,
+     "share": 9.28,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -13,
+     "votes": 396932,
+     "share": 6.56,
+     "swing": null
+    },
+    {
+     "name": "National Popular Movement",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -1,
+     "votes": 312239,
+     "share": 5.16,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Union",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -34,
+     "votes": 310939,
+     "share": 5.14,
+     "swing": null
+    },
+    {
+     "name": "Front of Democratic Forces",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 3,
+     "votes": 296288,
+     "share": 4.9,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 2,
+     "votes": 275884,
+     "share": 4.56,
+     "swing": null
+    },
+    {
+     "name": "Party of Progress and Socialism",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2,
+     "votes": 275024,
+     "share": 4.55,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 244558,
+     "share": 4.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1,
+     "votes": 179131,
+     "share": 2.96,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Movement",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -25,
+     "votes": 163546,
+     "share": 2.7,
+     "swing": null
+    },
+    {
+     "name": "Al-ʽAhd",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 138186,
+     "share": 2.28,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Liberties",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 131796,
+     "share": 2.18,
+     "swing": null
+    },
+    {
+     "name": "National Ittihadi Congress",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 120330,
+     "share": 1.99,
+     "swing": null
+    },
+    {
+     "name": "Reform and Development Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 110633,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Forces",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 104247,
+     "share": 1.72,
+     "swing": null
+    },
+    {
+     "name": "Environment and Development Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 90609,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "Moroccan Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 82088,
+     "share": 1.36,
+     "swing": null
+    },
+    {
+     "name": "Party of the Unified Socialist Left",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -1,
+     "votes": 81985,
+     "share": 1.35,
+     "swing": null
+    },
+    {
+     "name": "Democratic Independence Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 61258,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "Citizen Initiative for Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49710,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "Party of Renewal and Equity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39483,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Action Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 28563,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 83346,
+     "share": 1.38,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Abderrahmane Youssoufi",
+    "party": "USFP"
+   },
+   "pmAfter": {
+    "name": "Driss Jettou",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Socialist Union of Popular Forces finished first with 50 of 325 seats on 11.9% of the vote. Turnout 51.6%. Driss Jettou replaced Abderrahmane Youssoufi.",
+   "seatLeader": "Socialist Union of Popular Forces",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "7 September 2007",
+   "era": "pjd_rise",
+   "totalSeats": 325,
+   "majoritySeats": 163,
+   "turnout": 37.0,
+   "parties": [
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 4,
+     "votes": 545636,
+     "share": 13.35,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 4,
+     "votes": 480561,
+     "share": 11.76,
+     "swing": null
+    },
+    {
+     "name": "National Rally of Independents",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -4,
+     "votes": 429053,
+     "share": 10.5,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 14,
+     "votes": 410197,
+     "share": 10.04,
+     "swing": null
+    },
+    {
+     "name": "Socialist Union of Popular Forces",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -12,
+     "votes": 389471,
+     "share": 9.53,
+     "swing": null
+    },
+    {
+     "name": "Party of Progress and Socialism",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 6,
+     "votes": 253929,
+     "share": 6.21,
+     "swing": null
+    },
+    {
+     "name": "PND–Al-ʽAhd Union",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 217827,
+     "share": 5.33,
+     "swing": null
+    },
+    {
+     "name": "Front of Democratic Forces",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -3,
+     "votes": 200846,
+     "share": 4.91,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Movement",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2,
+     "votes": 163799,
+     "share": 4.01,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5,
+     "votes": 139907,
+     "share": 3.42,
+     "swing": null
+    },
+    {
+     "name": "Environment and Development Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 3,
+     "votes": 133023,
+     "share": 3.26,
+     "swing": null
+    },
+    {
+     "name": "PADS–CNI–PSU Union",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 119688,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "Party of Renewal and Equity",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 95456,
+     "share": 2.34,
+     "swing": null
+    },
+    {
+     "name": "Moroccan Union for Democracy",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 76049,
+     "share": 1.86,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 70607,
+     "share": 1.73,
+     "swing": null
+    },
+    {
+     "name": "Moroccan Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 58419,
+     "share": 1.43,
+     "swing": null
+    },
+    {
+     "name": "Citizen Initiative for Development",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 51217,
+     "share": 1.25,
+     "swing": null
+    },
+    {
+     "name": "Reform and Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 50285,
+     "share": 1.23,
+     "swing": null
+    },
+    {
+     "name": "Party of Renaissance and Virtue",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 39134,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Forces",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 33764,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "Democratic Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 35922,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "Action Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 30789,
+     "share": 0.75,
+     "swing": null
+    },
+    {
+     "name": "Social Centre Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26240,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Party of Hope",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23107,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "Party of Liberty and Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11568,
+     "share": 0.28,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Driss Jettou",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Abbas El Fassi",
+    "party": "Istiqlal"
+   },
+   "knownAs": null,
+   "summary": "Istiqlal Party finished first with 52 of 325 seats on 11.8% of the vote. Turnout 37.0%. Abbas El Fassi replaced Driss Jettou.",
+   "seatLeader": "Istiqlal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "25 November 2011",
+   "era": "pjd_rise",
+   "totalSeats": 395,
+   "majoritySeats": 198,
+   "turnout": 45.5,
+   "parties": [
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 107,
+     "seatChange": 61,
+     "votes": 1080914,
+     "share": 22.78,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 8,
+     "votes": 562720,
+     "share": 11.86,
+     "swing": null
+    },
+    {
+     "name": "National Rally of Independents",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 13,
+     "votes": 537552,
+     "share": 11.33,
+     "swing": null
+    },
+    {
+     "name": "Authenticity and Modernity Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": 524386,
+     "share": 11.05,
+     "swing": null
+    },
+    {
+     "name": "Socialist Union of Popular Forces",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 1,
+     "votes": 408108,
+     "share": 8.6,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -9,
+     "votes": 354468,
+     "share": 7.47,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Union",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -4,
+     "votes": 275137,
+     "share": 5.8,
+     "swing": null
+    },
+    {
+     "name": "Party of Progress and Socialism",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 1,
+     "votes": 269336,
+     "share": 5.68,
+     "swing": null
+    },
+    {
+     "name": "Front of Democratic Forces",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -8,
+     "votes": 135161,
+     "share": 2.85,
+     "swing": null
+    },
+    {
+     "name": "Environment and Development Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -3,
+     "votes": 109335,
+     "share": 2.3,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -1,
+     "votes": 107399,
+     "share": 2.26,
+     "swing": null
+    },
+    {
+     "name": "Al-ʽAhd",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 82213,
+     "share": 1.73,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -7,
+     "votes": 81324,
+     "share": 1.71,
+     "swing": null
+    },
+    {
+     "name": "National Ittihadi Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 56402,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 44278,
+     "share": 0.93,
+     "swing": null
+    },
+    {
+     "name": "Moroccan Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 42313,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Green Left Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 33841,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "Social Centre Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25550,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "Action Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 14916,
+     "share": 0.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Abbas El Fassi",
+    "party": "Istiqlal"
+   },
+   "pmAfter": {
+    "name": "Abdelilah Benkirane",
+    "party": "PJD"
+   },
+   "knownAs": null,
+   "summary": "Justice and Development Party finished first with 107 of 395 seats on 22.8% of the vote. Turnout 45.5%. Abdelilah Benkirane replaced Abbas El Fassi.",
+   "seatLeader": "Justice and Development Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "7 October 2016",
+   "era": "pjd_govt",
+   "totalSeats": 395,
+   "majoritySeats": 198,
+   "turnout": 43.0,
+   "parties": [
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 125,
+     "seatChange": 18,
+     "votes": 1571659,
+     "share": 27.14,
+     "swing": null
+    },
+    {
+     "name": "Authenticity and Modernity Party",
+     "leader": null,
+     "seats": 102,
+     "seatChange": 55,
+     "votes": 1205444,
+     "share": 20.82,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": -14,
+     "votes": 621280,
+     "share": 10.73,
+     "swing": null
+    },
+    {
+     "name": "National Rally of Independents",
+     "leader": null,
+     "seats": 37,
+     "seatChange": -15,
+     "votes": 558875,
+     "share": 9.65,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -5,
+     "votes": 409085,
+     "share": 7.06,
+     "swing": null
+    },
+    {
+     "name": "Socialist Union of Popular Forces",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -19,
+     "votes": 367622,
+     "share": 6.35,
+     "swing": null
+    },
+    {
+     "name": "Party of Progress and Socialism",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -6,
+     "votes": 279226,
+     "share": 4.82,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Union",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -4,
+     "votes": 268813,
+     "share": 4.64,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Democratic Left",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 139793,
+     "share": 2.41,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Movement",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1,
+     "votes": 74472,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "Covenant and Restoration Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49040,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "Front of Democratic Forces",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 51945,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "Environment and Sustainable Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 35645,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Unity and Democracy Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 20240,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17003,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Party of Renaissance and Virtue",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15522,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Party of Liberty and Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 10811,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Democratic Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13097,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Renaissance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11194,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Party of Hope",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7747,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 2910,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Social Centre Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6156,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Moroccan Union for Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5266,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Democratic Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3046,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Reform and Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16501,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Green Left Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 13389,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5115,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9656,
+     "share": 0.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Abdelillah Benkirane",
+    "party": "PJD"
+   },
+   "pmAfter": {
+    "name": "Saadeddine Othmani",
+    "party": "PJD"
+   },
+   "knownAs": null,
+   "summary": "Justice and Development Party finished first with 125 of 395 seats on 27.1% of the vote. Turnout 43.0%. Saadeddine Othmani replaced Abdelillah Benkirane.",
+   "seatLeader": "Justice and Development Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "8 September 2021",
+   "era": "pjd_govt",
+   "totalSeats": 395,
+   "majoritySeats": 198,
+   "turnout": 50.35,
+   "parties": [
+    {
+     "name": "National Rally of Independents",
+     "leader": null,
+     "seats": 102,
+     "seatChange": 65,
+     "votes": 2088548,
+     "share": 27.58,
+     "swing": null
+    },
+    {
+     "name": "Authenticity and Modernity Party",
+     "leader": null,
+     "seats": 87,
+     "seatChange": -15,
+     "votes": 1385230,
+     "share": 18.3,
+     "swing": null
+    },
+    {
+     "name": "Istiqlal Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": 35,
+     "votes": 1267866,
+     "share": 16.74,
+     "swing": null
+    },
+    {
+     "name": "Socialist Union of Popular Forces",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 14,
+     "votes": 590215,
+     "share": 7.8,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 1,
+     "votes": 528261,
+     "share": 6.98,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Union",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -1,
+     "votes": 423067,
+     "share": 5.59,
+     "swing": null
+    },
+    {
+     "name": "Party of Progress and Socialism",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 10,
+     "votes": 389802,
+     "share": 5.15,
+     "swing": null
+    },
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -112,
+     "votes": 325337,
+     "share": 4.3,
+     "swing": null
+    },
+    {
+     "name": "Democratic and Social Movement",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2,
+     "votes": 138648,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Democratic Left",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 83554,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Unified Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 69678,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "Front of Democratic Forces",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3,
+     "votes": 64317,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "New Democrats Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 31258,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Environment and Sustainable Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23813,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Social Centre Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17886,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Hope Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17855,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Equity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17500,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Moroccan Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17116,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Unity and Democracy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 16969,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Moroccan Greens Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 12733,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Democratic Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12448,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Party of Liberty and Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10299,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Action Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9022,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Reform and Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7724,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Renaissance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6679,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Democratic Society Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5883,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Party of Renaissance and Virtue",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5208,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4707,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Saadeddine Othmani",
+    "party": "PJD"
+   },
+   "pmAfter": {
+    "name": "Aziz Akhannouch",
+    "party": "RNI"
+   },
+   "knownAs": null,
+   "summary": "National Rally of Independents finished first with 102 of 395 seats on 27.6% of the vote. Turnout 50.4%. Aziz Akhannouch replaced Saadeddine Othmani.",
+   "seatLeader": "National Rally of Independents",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

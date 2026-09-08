@@ -1,0 +1,1269 @@
+{
+ "meta": {
+  "title": "Jamaican General Elections",
+  "sources": [
+   "Wikipedia: Jamaican general election articles 1944-2025 (results tables and infoboxes)",
+   "Electoral Office of Jamaica figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "eras": [
+  {
+   "key": "colonial",
+   "label": "Universal suffrage under the crown",
+   "span": "1944-1959",
+   "blurb": "Jamaica's first election under universal adult suffrage, in December 1944, launched the two-party system that has run the island ever since: Alexander Bustamante's Jamaica Labour Party against Norman Manley's People's National Party, the two men cousins who had led the 1938 labour disturbances together before splitting into rival parties. Self-government advanced steadily through the 1950s, and by 1959 Jamaica's head of government carried the colonial title of Premier rather than Prime Minister."
+  },
+  {
+   "key": "independence",
+   "label": "Independence and its first alternation",
+   "span": "1962-1980",
+   "blurb": "Jamaica became independent in August 1962, months after Bustamante's JLP won the last election of the colonial era; the two parties traded power twice more before Michael Manley's PNP won a landslide re-election in 1976 on a democratic-socialist platform. The 1980 election that ended it was the most violent in the island's history, fought amid IMF austerity and gun violence that claimed dozens of lives, and it swept Edward Seaga's JLP to power on a reversal of 38 seats."
+  },
+  {
+   "key": "twoparty",
+   "label": "The two-party system since the boycott",
+   "span": "1983-2025",
+   "blurb": "The PNP's boycott of the snap 1983 election left the JLP unopposed for every seat; the two parties returned to genuine competition in 1989 and have alternated in office at nearly every election since, with the National Democratic Movement, a JLP splinter, contesting without winning a seat through the 1990s and 2000s. Andrew Holness's JLP won a third consecutive term in September 2025, Jamaica's most recent election."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1944",
+   "label": "1944",
+   "year": 1944,
+   "kind": "legislative",
+   "date": "12 December 1944",
+   "era": "colonial",
+   "totalSeats": 32,
+   "majoritySeats": 16,
+   "turnout": 58.68,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 144661,
+     "share": 41.44,
+     "swing": null
+    },
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 82029,
+     "share": 23.5,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14123,
+     "share": 4.05,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3500,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 104814,
+     "share": 30.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 22 of 32 seats on 41.4% of the vote. Turnout 58.7%.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "20 December 1949",
+   "era": "colonial",
+   "totalSeats": 32,
+   "majoritySeats": 16,
+   "turnout": 65.16,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 8,
+     "votes": 203048,
+     "share": 43.46,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -5,
+     "votes": 199538,
+     "share": 42.71,
+     "swing": null
+    },
+    {
+     "name": "United Party of Jamaica",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1110,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4693,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -3,
+     "votes": 58790,
+     "share": 12.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 17 of 32 seats on 42.7% of the vote. Turnout 65.2%.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "kind": "legislative",
+   "date": "12 January 1955",
+   "era": "colonial",
+   "totalSeats": 32,
+   "majoritySeats": 16,
+   "turnout": 65.11,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 5,
+     "votes": 245750,
+     "share": 50.5,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -3,
+     "votes": 189929,
+     "share": 39.03,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13258,
+     "share": 2.72,
+     "swing": null
+    },
+    {
+     "name": "National Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6004,
+     "share": 1.23,
+     "swing": null
+    },
+    {
+     "name": "People's Freedom Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 647,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 108,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 30948,
+     "share": 6.36,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's National Party finished first with 18 of 32 seats on 50.5% of the vote. Turnout 65.1%.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "kind": "legislative",
+   "date": "28 July 1959",
+   "era": "colonial",
+   "totalSeats": 45,
+   "majoritySeats": 23,
+   "turnout": 66.09,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 11,
+     "votes": 305642,
+     "share": 54.79,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 2,
+     "votes": 247149,
+     "share": 44.31,
+     "swing": null
+    },
+    {
+     "name": "Independent Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4595,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "Convention Independent Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 196,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Independent Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 115,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 97,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's National Party finished first with 29 of 45 seats on 54.8% of the vote. Turnout 66.1%.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "10 April 1962",
+   "era": "independence",
+   "totalSeats": 45,
+   "majoritySeats": 23,
+   "turnout": 72.88,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 10,
+     "votes": 288130,
+     "share": 50.04,
+     "swing": null
+    },
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -10,
+     "votes": 279771,
+     "share": 48.59,
+     "swing": null
+    },
+    {
+     "name": "People's Political Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4955,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2923,
+     "share": 0.51,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 26 of 45 seats on 50.0% of the vote. Turnout 72.9%.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "legislative",
+   "date": "21 February 1967",
+   "era": "independence",
+   "totalSeats": 53,
+   "majoritySeats": 27,
+   "turnout": 82.24,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 7,
+     "votes": 224180,
+     "share": 50.65,
+     "swing": null
+    },
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 1,
+     "votes": 217207,
+     "share": 49.08,
+     "swing": null
+    },
+    {
+     "name": "Jamaica United Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 163,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Jamaica We Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 133,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 45,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 844,
+     "share": 0.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 33 of 53 seats on 50.6% of the vote. Turnout 82.2%.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "kind": "legislative",
+   "date": "29 February 1972",
+   "era": "independence",
+   "totalSeats": 53,
+   "majoritySeats": 27,
+   "turnout": 78.88,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 17,
+     "votes": 266927,
+     "share": 56.36,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -17,
+     "votes": 205587,
+     "share": 43.4,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 109,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1028,
+     "share": 0.22,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's National Party finished first with 37 of 53 seats on 56.4% of the vote. Turnout 78.9%.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "15 December 1976",
+   "era": "independence",
+   "totalSeats": 60,
+   "majoritySeats": 31,
+   "turnout": 85.21,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 10,
+     "votes": 417768,
+     "share": 56.77,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -3,
+     "votes": 318180,
+     "share": 43.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's National Party finished first with 47 of 60 seats on 56.8% of the vote. Turnout 85.2%.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "legislative",
+   "date": "30 October 1980",
+   "era": "independence",
+   "totalSeats": 60,
+   "majoritySeats": 31,
+   "turnout": 86.91,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 38,
+     "votes": 502115,
+     "share": 58.88,
+     "swing": null
+    },
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -38,
+     "votes": 350064,
+     "share": 41.05,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 527,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Michael Manley",
+    "party": "PNP"
+   },
+   "pmAfter": {
+    "name": "Edward Seaga",
+    "party": "JLP"
+   },
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 51 of 60 seats on 58.9% of the vote. Turnout 86.9%. Edward Seaga replaced Michael Manley.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "15 December 1983",
+   "era": "twoparty",
+   "totalSeats": 60,
+   "majoritySeats": 31,
+   "turnout": 2.68,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 7,
+     "votes": 23363,
+     "share": 89.67,
+     "swing": null
+    },
+    {
+     "name": "Christian Conscience Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 704,
+     "share": 2.7,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 257,
+     "share": 0.99,
+     "swing": null
+    },
+    {
+     "name": "Jamaica United Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 144,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1587,
+     "share": 6.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Edward Seaga",
+    "party": "JLP"
+   },
+   "pmAfter": {
+    "name": "Edward Seaga",
+    "party": "JLP"
+   },
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 60 of 60 seats on 89.7% of the vote. Turnout 2.7%. Edward Seaga stayed in office.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": "The main opposition party, the PNP, boycotted the election to protest the ruling JLP's refusal to update the electoral roll amid allegations of voter fraud; the JLP won all 60 seats with national turnout of about 3%.",
+   "unfree": null
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "9 February 1989",
+   "era": "twoparty",
+   "totalSeats": 60,
+   "majoritySeats": null,
+   "turnout": 78.38,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 45,
+     "votes": 473754,
+     "share": 56.6,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -45,
+     "votes": 362589,
+     "share": 43.32,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 628,
+     "share": 0.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Edward Seaga",
+    "party": "JLP"
+   },
+   "pmAfter": {
+    "name": "Michael Manley",
+    "party": "PNP"
+   },
+   "knownAs": null,
+   "summary": "People's National Party finished first with 45 of 60 seats on 56.6% of the vote. Turnout 78.4%. Michael Manley replaced Edward Seaga.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "30 March 1993",
+   "era": "twoparty",
+   "totalSeats": 60,
+   "majoritySeats": 31,
+   "turnout": 67.35,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 7,
+     "votes": 401131,
+     "share": 59.98,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -7,
+     "votes": 263711,
+     "share": 39.43,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3975,
+     "share": 0.59,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's National Party finished first with 52 of 60 seats on 60.0% of the vote. Turnout 67.3%.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "18 December 1997",
+   "era": "twoparty",
+   "totalSeats": 60,
+   "majoritySeats": 31,
+   "turnout": 65.22,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": -2,
+     "votes": 429805,
+     "share": 56.2,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 2,
+     "votes": 297387,
+     "share": 38.89,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36707,
+     "share": 4.8,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 885,
+     "share": 0.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's National Party finished first with 50 of 60 seats on 56.2% of the vote. Turnout 65.2%.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "16 October 2002",
+   "era": "twoparty",
+   "totalSeats": 60,
+   "majoritySeats": null,
+   "turnout": 59.06,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -16,
+     "votes": 396590,
+     "share": 52.09,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 16,
+     "votes": 360718,
+     "share": 47.38,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Movement–Jamaica National Alliance for Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2895,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "United People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 548,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Imperial Ethiopian World Federation Incorporated Political Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 162,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 452,
+     "share": 0.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "P.J. Patterson",
+    "party": "PNP"
+   },
+   "pmAfter": {
+    "name": "P.J. Patterson",
+    "party": "PNP"
+   },
+   "knownAs": null,
+   "summary": "People's National Party finished first with 34 of 60 seats on 52.1% of the vote. Turnout 59.1%. P.J. Patterson stayed in office.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "3 September 2007",
+   "era": "twoparty",
+   "totalSeats": 60,
+   "majoritySeats": null,
+   "turnout": 61.46,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 6,
+     "votes": 410438,
+     "share": 50.27,
+     "swing": null
+    },
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -6,
+     "votes": 405293,
+     "share": 49.64,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 354,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Imperial Ethiopian World Federation Incorporated Political Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 192,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Jerusalem Bread Foundation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 220,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Portia Simpson-Miller",
+    "party": "PNP"
+   },
+   "pmAfter": {
+    "name": "Bruce Golding",
+    "party": "JLP"
+   },
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 32 of 60 seats on 50.3% of the vote. Turnout 61.5%. Bruce Golding replaced Portia Simpson-Miller.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "29 December 2011",
+   "era": "twoparty",
+   "totalSeats": 63,
+   "majoritySeats": 32,
+   "turnout": 53.17,
+   "parties": [
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 14,
+     "votes": 464064,
+     "share": 53.28,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -11,
+     "votes": 405920,
+     "share": 46.61,
+     "swing": null
+    },
+    {
+     "name": "Marcus Garvey People's Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 420,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 263,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Alliance Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 228,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Andrew Holness",
+    "party": "JLP"
+   },
+   "pmAfter": {
+    "name": "Portia Simpson-Miller",
+    "party": "PNP"
+   },
+   "knownAs": null,
+   "summary": "People's National Party finished first with 42 of 63 seats on 53.3% of the vote. Turnout 53.2%. Portia Simpson-Miller replaced Andrew Holness.",
+   "seatLeader": "People's National Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "25 February 2016",
+   "era": "twoparty",
+   "totalSeats": 63,
+   "majoritySeats": 32,
+   "turnout": 48.4,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 11,
+     "votes": 436972,
+     "share": 50.08,
+     "swing": null
+    },
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -11,
+     "votes": 433735,
+     "share": 49.71,
+     "swing": null
+    },
+    {
+     "name": "Marcus Garvey People's Political Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 260,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 223,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "People's Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 91,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1233,
+     "share": 0.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Portia Simpson-Miller",
+    "party": "PNP"
+   },
+   "pmAfter": {
+    "name": "Andrew Holness",
+    "party": "JLP"
+   },
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 32 of 63 seats on 50.1% of the vote. Turnout 48.4%. Andrew Holness replaced Portia Simpson-Miller.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "legislative",
+   "date": "3 September 2020",
+   "era": "twoparty",
+   "totalSeats": 63,
+   "majoritySeats": 32,
+   "turnout": 37.85,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 7,
+     "votes": 408376,
+     "share": 57.07,
+     "swing": null
+    },
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -7,
+     "votes": 305950,
+     "share": 42.76,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1185,
+     "share": 0.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Andrew Holness",
+    "party": "JLP"
+   },
+   "pmAfter": {
+    "name": "Andrew Holness",
+    "party": "JLP"
+   },
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 49 of 63 seats on 57.1% of the vote. Turnout 37.9%. Andrew Holness stayed in office.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "legislative",
+   "date": "3 September 2025",
+   "era": "twoparty",
+   "totalSeats": 63,
+   "majoritySeats": 32,
+   "turnout": 39.96,
+   "parties": [
+    {
+     "name": "Jamaica Labour Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": -14,
+     "votes": 412705,
+     "share": 50.54,
+     "swing": null
+    },
+    {
+     "name": "People's National Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 14,
+     "votes": 401398,
+     "share": 49.16,
+     "swing": null
+    },
+    {
+     "name": "Jamaica Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2040,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "United Independents' Congress of Jamaica",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 181,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 269,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Andrew Holness",
+    "party": "JLP"
+   },
+   "pmAfter": {
+    "name": "Andrew Holness",
+    "party": "JLP"
+   },
+   "knownAs": null,
+   "summary": "Jamaica Labour Party finished first with 35 of 63 seats on 50.5% of the vote. Turnout 40.0%. Andrew Holness stayed in office.",
+   "seatLeader": "Jamaica Labour Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

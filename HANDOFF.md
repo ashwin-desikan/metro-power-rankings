@@ -11425,3 +11425,77 @@ placeholders before).
 - Countdown cards: the grid child needed `min-w-0` once the kind label made
   the text row long (probe read 571px at 390 until it did). 20/20 routes
   clean on the final native build; function-size 221.0 MB max (WARN line).
+- **"Shock" on every game of a Sunday** (/teams/nfl/expectation/2020 and
+  every other year). Cause: `game_id` in the expectation ledger is a SLATE
+  id, shared by every game played that day (2020: 269 games under 65 ids,
+  up to 15 per id), and the game log matched upsets on it, so one upset
+  tagged the whole day; the same id was the React key on three lists.
+  Fix: `gameKey()` in `lib/nflExpectation.ts` (date|home|away, unique in
+  every season checked) drives the shock test and the row keys in the
+  season log, `ExpectationPreview` and the all-time upsets table on
+  /teams/nfl/season. 2020 now tags exactly five rows. Anyone keying on
+  `game_id` elsewhere (scripts included) should expect the same collision;
+  `rest_adjust.py` already keys on (season, date, home_key, away_key).
+
+### O. Afternoon, same session: the Economy tab, four more hubs, three fixes
+
+- **Commits on Windows so far today**: `ee4b11115` (the morning: fourteen
+  hubs, rest games, shock fix) and `602c589ba` (scores follow the printed
+  name order). Neither pushed; both untagged app commits, so the push will be
+  today's second production build. Everything in this section is in the
+  working tree, awaiting Ashwin's commit call.
+- **`/business/economy`, the macro hub's first tab (Rates).** Data contract
+  in `scripts/macro/RATES-CONTRACT.md`; builders in `scripts/macro/rates/`
+  (`common.py` owns the schema, one `build_<bank>.py` per own-spine bank,
+  `build_bis.py` for the 49 BIS-only economies, `build_index.py`); read
+  models in `public/data/business/economy/rates/` (60 bank files plus
+  `index.json`, 61 files, biggest 428 KB for Argentina). Eleven banks carry
+  their own change-by-change history to founding: BoE 1694 (datahub PDDL),
+  Riksbank 1907 (SWEA API; the API holds nothing before 1907 despite the
+  1668 founding), Norges Bank 1818 (HMS discount rate, then BIS 1987-90,
+  then the key policy rate API from 1991), BoJ 1882 (own discount tables to
+  1995, BIS after), SNB 1907 (own to 1999, BIS after), Fed 1914 (discount
+  rate monthly 1914-34, exact dates 1934-82 via FRED DISCOUNT, DFEDTAR
+  1982-2008, DFEDTARU/L range since), RBNZ (OCR from 1999, own from 2009,
+  BIS 1999-2009), BoC 1935 (Valet), Bundesbank 1948-98 (discount as spine,
+  Lombard secondary, marked dissolved), RBA (cash rate target from 1990,
+  BIS market rate before, spine mixed), ECB 1999 (deposit facility as spine,
+  MRR secondary). Every own spine is diffed against BIS on overlapping
+  change dates; the builder refuses to write above 2% disagreement.
+  Instrument eras carry `kind: policy | market`; market eras (Croatia's
+  interbank rate, the US effective funds rate before 1985, the RBA before
+  1990) contribute a `market[]` summary and a weekly-thinned `path`, never
+  rows in `changes`, so the every-change table lists decisions only. The
+  raw downloads (BIS CBPOL 470 MB flat file, FRED, ECB, datahub) sit in
+  `_scratch/macro/` on the Windows box, untracked; the container cannot
+  reach any of those hosts, so refreshes run from Windows or the mini.
+  UI: `lib/economyRates.ts` (per-file loaders, never a glob),
+  `app/business/economy/{page.tsx,EconomyNav.tsx}`,
+  `app/business/economy/rates/[code]/{page.tsx,RateChart.tsx}` (step chart,
+  era rules, market shading), Business nav gains Economy, sitemap lists
+  every bank. Next tabs per the scoping note: Housing (FHFA purchase-only,
+  CBSA join to metros), Prices, Yields, Countries.
+- **Four election hubs**: ma Morocco (11 general elections 1963-2021; next
+  23 September 2026, confirmed), cu Cuba (combined: 14 republic-era
+  presidential 1901-58, 23 legislative 1901-2023; one-party since 1976,
+  labelled like Vietnam), jm Jamaica (18 general elections 1944-2025), wi
+  West Indies Federation (one election, 25 March 1958; dissolved 31 May
+  1962, defunct like dd/vd; `public/flags/wi.svg`). Atlas 67 hubs, 16
+  confirmed dates. `build_all_csv` count moved to 67. Known soft spot: Cuba
+  1916 has named candidates but no vote count in the source, and the shared
+  summary generator prints the "only one candidate" sentence for it; the
+  hub's caveat corrects it, the generator does not.
+- **NRL finals were invisible** on /sports/standings and /teams/nrl: ESPN
+  tags the NRL post-season `2026-final-nrl` (season type 2), not `post`,
+  and `scripts/ingest/footy_finals.py` kept only slugs containing "post".
+  `_is_finals_slug()` accepts post or final and rejects reg/pre, with a
+  self-test on the real slugs; `public/data/nrl/finals.json` rebuilt from
+  the live payload (four qualifying finals, 11 to 13 September). The
+  workflow's next run will keep it current.
+- **South Africa read as a dominion in 2026**: `Dominion` gained an optional
+  `to` (last year the label applies), South Africa closes at 1961 in
+  `country-colonisers.json`, `scripts/build-colonisers.py` and both readers.
+  Canada, Australia and New Zealand still carry the label to today; Ashwin
+  has not ruled on those.
+- Release note amended (one block for the day, four bullets, 204 to 215
+  characters).

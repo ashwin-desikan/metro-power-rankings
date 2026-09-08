@@ -102,11 +102,22 @@ def _side(comp, home_away, name_map, warn):
     return None
 
 
+def _is_finals_slug(slug):
+    slug = (slug or "").lower()
+    if not slug or "reg" in slug or "pre" in slug:
+        return False
+    return "post" in slug or "final" in slug
+
+
 def parse_finals(data, league, name_map):
     """ESPN scoreboard payload -> (games, warnings). Post-season events only."""
     games, warn = [], []
     for ev in data.get("events", []) or []:
-        if "post" not in ((ev.get("season") or {}).get("slug") or ""):
+        # ESPN's season slug is "2026-post-afl" for the AFL but "2026-final-nrl"
+        # for the NRL (season type 2). Measured 2026-09-08 against the live
+        # rugby-league/3 scoreboard, where the four qualifying finals carried
+        # "2026-final-nrl" and this filter dropped every one of them.
+        if not _is_finals_slug((ev.get("season") or {}).get("slug")):
             continue
         comp = (ev.get("competitions") or [{}])[0]
         names = [((c.get("team") or {}).get("displayName") or "").strip()
@@ -264,6 +275,15 @@ def self_test():
     ]}
     games, warn = parse_finals(payload, "nrl", NRL_CLUBS)
     check("origin excluded", len(games) == 1 and warn == [])
+    # The live NRL slug is "2026-final-nrl"; the regular season is "2026-reg-nrl".
+    payload = {"events": [
+        _ev("2026-final-nrl", 1, "", "Rabbitohs", "Knights"),
+        _ev("2026-reg-nrl", 27, "", "Panthers", "Wests Tigers"),
+    ]}
+    games, _ = parse_finals(payload, "nrl", NRL_CLUBS)
+    check("final slug kept, reg slug dropped", len(games) == 1 and games[0]["home"]["name"] != "Panthers")
+    check("slug rule", _is_finals_slug("2026-post-afl") and _is_finals_slug("2026-final-nrl")
+          and not _is_finals_slug("2026-reg-nrl") and not _is_finals_slug("2026-preseason-nrl") and not _is_finals_slug(None))
     b = to_bundle("nrl", 2026, games)
     check("nrl week-1 fallback label", b["weeks"][0]["label"] == "Qualifying & Elimination Finals")
 

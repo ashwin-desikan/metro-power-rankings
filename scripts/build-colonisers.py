@@ -87,7 +87,9 @@ DOMINIONS = [
     {"slug": "canada", "from": 1867, "of": "United Kingdom"},
     {"slug": "australia", "from": 1901, "of": "United Kingdom"},
     {"slug": "new-zealand", "from": 1907, "of": "United Kingdom"},
-    {"slug": "south-africa", "from": 1910, "of": "United Kingdom"},
+    # `to` is the last year the label applies. South Africa became a republic
+    # on 31 May 1961 and left the Commonwealth; from 1962 it is sovereign.
+    {"slug": "south-africa", "from": 1910, "to": 1961, "of": "United Kingdom"},
 ]
 
 

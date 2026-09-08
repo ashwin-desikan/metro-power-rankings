@@ -61,6 +61,10 @@ import { getRoElections } from "./roElections";
 import { getFiElections } from "./fiElections";
 import { getThElections } from "./thElections";
 import { getVeElections } from "./veElections";
+import { getMaElections } from "./maElections";
+import { getCuElections } from "./cuElections";
+import { getJmElections } from "./jmElections";
+import { getWiElections } from "./wiElections";
 import { ELECTION_HUBS } from "./electionHubsMeta";
 // The Vatican hub is deliberately absent: conclaves are not polity-wide ballots,
 // so they stay out of the timeline, turnout and wartime joins.
@@ -118,6 +122,7 @@ export function getElectionCensus(): CensusRow[] {
   const pe = getPeElections(), ke = getKeElections(), vd = getVdElections();
   const cz = getCzElections(), sk = getSkElections(), ro = getRoElections();
   const fi = getFiElections(), ve = getVeElections();
+  const cu = getCuElections();
   _census = [
     row("us", usd.elections.map((e) => ({
       id: e.id, year: e.year, label: e.label, winner: e.winner.name,
@@ -186,6 +191,12 @@ export function getElectionCensus(): CensusRow[] {
     row("fi", [...leg(fi.legislative, "Finland"), ...pres(fi.presidential, "Finland")]),
     row("th", leg(getThElections().elections, "Thailand")),
     row("ve", [...leg(ve.legislative, "Venezuela"), ...pres(ve.presidential, "Venezuela")]),
+    // Wave 6 (2026-09-08). The West Indies Federation counts in full, like
+    // East Germany and South Vietnam before it: dissolved, not forgotten.
+    row("ma", leg(getMaElections().elections, "Morocco")),
+    row("cu", [...leg(cu.legislative, "Cuba"), ...pres(cu.presidential, "Cuba")]),
+    row("jm", leg(getJmElections().elections, "Jamaica")),
+    row("wi", leg(getWiElections().elections, "West Indies Federation")),
   ];
   return _census;
 }

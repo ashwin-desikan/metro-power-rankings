@@ -1,0 +1,1808 @@
+{
+ "meta": {
+  "title": "Cuban Elections",
+  "sources": [
+   "Wikipedia: Cuban general, parliamentary and presidential election articles 1901-2023 (results tables and infoboxes)",
+   "Dieter Nohlen, Elections in the Americas: A data handbook, as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "presEras": [
+  {
+   "key": "founding",
+   "label": "Palma and the first republic",
+   "span": "1901-1908",
+   "blurb": "Tomás Estrada Palma won Cuba's first presidential election unopposed after his only rival withdrew citing irregularities, and won a second term in 1905 in a vote a US peace commission later found so tainted by fraud that it suspended the Congress the election had also produced."
+  },
+  {
+   "key": "fraud",
+   "label": "A fraudulent decade, then Machado",
+   "span": "1912-1928",
+   "blurb": "Real multi-candidate contests decided the presidency through the 1920s, but 1920's result was accepted only after the US ambassador substantiated Liberal fraud accusations against it, and 1924's, which made Gerardo Machado president, was itself deemed fraudulent before he abolished the one-term pledge he had campaigned on. His 1928 re-election had no other candidate on the ballot at all, and the opposition was repressed."
+  },
+  {
+   "key": "democratic",
+   "label": "The competitive years",
+   "span": "1936-1948",
+   "blurb": "Cuba's most consistently competitive presidential elections, run under the new 1940 constitution, with genuine multi-candidate fields each time and no fraud recorded in the source. 1948's four-way race was the widest field the republic's presidency ever saw."
+  },
+  {
+   "key": "batista",
+   "label": "Batista's return",
+   "span": "1954-1958",
+   "blurb": "Fulgencio Batista seized power in a 1952 coup that pre-empted that year's scheduled election, then won the 1954 vote after the main opposition candidate withdrew before polling day. His chosen successor won the 1958 election against a public rebel boycott call and never took office: the Cuban Revolution triumphed nine weeks after the vote."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "founding",
+   "label": "The young republic",
+   "span": "1901-1908",
+   "blurb": "Cuba's first House of Representatives was elected under American oversight after the 1898 war, and the 1905 election that followed handed the Moderate Party 31 of the House's 32 seats amid an electoral roll a US commission called inflated by 150,000 names. A peace commission sent by Theodore Roosevelt found the 1905 vote so tainted by fraud that it suspended Congress outright the following year."
+  },
+  {
+   "key": "interwar",
+   "label": "Fraud, coalitions and a one-party sham",
+   "span": "1912-1928",
+   "blurb": "Multi-party coalitions filled the House through the 1920s, but the period's two biggest results carry a shadow: the Liberal Party's 1920 accusation of fraud against the ruling Conservatives was substantiated by the US ambassador and forced new elections in four provinces, and the 1924 vote that made Gerardo Machado's coalition the largest in the House was itself deemed fraudulent before he turned the presidency into a dictatorship. No House was elected in 1928 at all; that year's article covers only Machado's unopposed re-election."
+  },
+  {
+   "key": "constitution",
+   "label": "The 1940 constitution's decade",
+   "span": "1936-1958",
+   "blurb": "Women voted for the first time in 1936 and seven were elected to the House that year, and the 1940 constitution that followed brought Cuba's most genuinely competitive stretch of multi-party elections, ending with a four-party presidential field in 1948. Batista's 1952 coup pre-empted the next scheduled vote; 1954's contest went ahead with the main opposition candidate withdrawing before polling day, and 1958's, held against a public rebel boycott call, elected a House and a president who never took office once the revolution triumphed that January."
+  },
+  {
+   "key": "onerule",
+   "label": "The National Assembly of People's Power",
+   "span": "1976-2023",
+   "blurb": "Cuba's post-revolutionary legislature was chosen indirectly through municipal assemblies for its first three elections, 1976 to 1986, before a 1992 electoral law moved to direct election in 1993. Every election since has offered one list, the Communist Party of Cuba and its affiliated mass organisations, and the declared result has always equalled the number of seats: the National Assembly's own size."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1901",
+   "label": "1901",
+   "year": 1901,
+   "kind": "presidential",
+   "date": "31 December 1901",
+   "era": "founding",
+   "turnout": 63.48,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Tomás Estrada Palma",
+     "party": "Independent",
+     "r1Votes": 158116,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Tomás Estrada Palma",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Tomás Estrada Palma won with 158,116 votes. Turnout 63.5%.",
+   "caveat": "The only other candidate, Bartolomé Masó, withdrew from the election citing irregularities, though he still received 55,000 votes.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1905",
+   "label": "1905",
+   "year": 1905,
+   "kind": "presidential",
+   "date": "1 December 1905",
+   "era": "founding",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Tomás Estrada Palma",
+     "party": "Moderate Party",
+     "r1Votes": 306874,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Tomás Estrada Palma",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Tomás Estrada Palma",
+    "party": "Moderate Party"
+   },
+   "knownAs": null,
+   "summary": "Tomás Estrada Palma won with 306,874 votes.",
+   "caveat": "A US peace commission later found the vote so tainted by fraud that it suspended the Congress the election had also produced.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1908",
+   "label": "1908",
+   "year": 1908,
+   "kind": "presidential",
+   "date": "14 November 1908",
+   "era": "founding",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Miguel Gómez",
+     "party": "Liberal Coalition",
+     "r1Votes": 201199,
+     "r1Share": 60.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mario García Menocal",
+     "party": "National Conservative Party",
+     "r1Votes": 130256,
+     "r1Share": 39.3,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Tomás Estrada Palma",
+    "party": "Republican Party of Havana"
+   },
+   "presAfter": {
+    "name": "José Miguel Gómez",
+    "party": "Liberal Party of Cuba"
+   },
+   "knownAs": null,
+   "summary": "José Miguel Gómez won with 60.70% against Mario García Menocal on 39.30%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "presidential",
+   "date": "1 November 1912",
+   "era": "fraud",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mario García Menocal",
+     "party": "Conjunción Patriótica (PCN–PLN)",
+     "r1Votes": 195504,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfredo Zayas y Alfonso",
+     "party": "Liberal Party of Cuba",
+     "r1Votes": 180640,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Miguel Gómez",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Mario García Menocal",
+    "party": "Conjunción Patriótica"
+   },
+   "knownAs": null,
+   "summary": "Mario García Menocal won with 195,504 votes.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1916",
+   "label": "1916",
+   "year": 1916,
+   "kind": "presidential",
+   "date": "1 November 1916",
+   "era": "fraud",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Mario García Menocal",
+    "party": "PNC"
+   },
+   "presAfter": {
+    "name": "Mario García Menocal",
+    "party": "PNC"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The article names Mario García Menocal's re-election over Alfredo Zayas but records no vote count or turnout for this contest.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "presidential",
+   "date": "1 November 1920",
+   "era": "fraud",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alfredo Zayas y Alfonso",
+     "party": "National League (PPC–PCN)",
+     "r1Votes": 148278,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Miguel Gómez",
+     "party": "Liberal Party of Cuba",
+     "r1Votes": 124739,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mario García Menocal",
+    "party": "PNC"
+   },
+   "presAfter": {
+    "name": "Alfredo Zayas y Alfonso",
+    "party": "National League"
+   },
+   "knownAs": null,
+   "summary": "Alfredo Zayas y Alfonso won with 148,278 votes.",
+   "caveat": "The Liberal Party accused the winning candidate and his Conservatives of election fraud, and the US ambassador to Cuba substantiated it.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "presidential",
+   "date": "1 November 1924",
+   "era": "fraud",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Gerardo Machado",
+     "party": "Liberal–Popular Coalition",
+     "r1Votes": 200840,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mario García Menocal",
+     "party": null,
+     "r1Votes": 134154,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alfredo Zayas y Alfonso",
+    "party": "Cuban Popular Party"
+   },
+   "presAfter": {
+    "name": "Gerardo Machado",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Gerardo Machado won with 200,840 votes.",
+   "caveat": "The election was deemed to be fraudulent, and the winner, Gerardo Machado, established a dictatorship that lasted until his overthrow in 1933.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "presidential",
+   "date": "1 November 1928",
+   "era": "fraud",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Gerardo Machado",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Gerardo Machado",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "Machado ran as the only candidate after abandoning his one-term pledge, and the opposition was repressed.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "presidential",
+   "date": "10 January 1936",
+   "era": "democratic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Miguel Mariano Gómez",
+     "party": "Tripartite Coalition (PL–UN–AR)",
+     "r1Votes": 343289,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mario García Menocal",
+     "party": "Democratic National Association",
+     "r1Votes": 256606,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Agripino Barnet",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Miguel Mariano Gómez",
+    "party": "Tripartite Coalition"
+   },
+   "knownAs": null,
+   "summary": "Miguel Mariano Gómez won with 343,289 votes.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1940",
+   "label": "1940",
+   "year": 1940,
+   "kind": "presidential",
+   "date": "14 July 1940",
+   "era": "democratic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fulgencio Batista",
+     "party": "Democratic Socialist Coalition",
+     "r1Votes": 805125,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Grau",
+     "party": "Opposition Front",
+     "r1Votes": 573576,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Federico Laredo Brú",
+    "party": "Republican Action"
+   },
+   "presAfter": {
+    "name": "Fulgencio Batista",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Fulgencio Batista won with 805,125 votes.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1944",
+   "label": "1944",
+   "year": 1944,
+   "kind": "presidential",
+   "date": "1 June 1944",
+   "era": "democratic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ramón Grau",
+     "party": "Auténtico–Republican Alliance",
+     "r1Votes": 1041822,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Saladrigas Zayas",
+     "party": "Democratic Socialist Coalition",
+     "r1Votes": 839220,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Fulgencio Batista",
+    "party": "CSD"
+   },
+   "presAfter": {
+    "name": "Ramón Grau",
+    "party": "Auténtico"
+   },
+   "knownAs": null,
+   "summary": "Ramón Grau won with 1,041,822 votes.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "presidential",
+   "date": "1 June 1948",
+   "era": "democratic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Prío Socarrás",
+     "party": "Auténtico–Republican Alliance",
+     "r1Votes": 905198,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Núñez Portuondo",
+     "party": "Liberal–Democratic Coalition",
+     "r1Votes": 599364,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Chibás",
+     "party": "Partido Ortodoxo",
+     "r1Votes": 324634,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Marinello",
+     "party": "Popular Socialist Party",
+     "r1Votes": 142972,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ramón Grau",
+    "party": "Auténtico"
+   },
+   "presAfter": {
+    "name": "Carlos Prío Socarrás",
+    "party": "Auténtico"
+   },
+   "knownAs": null,
+   "summary": "Carlos Prío Socarrás won with 905,198 votes.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "presidential",
+   "date": "1 November 1954",
+   "era": "batista",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fulgencio Batista",
+     "party": "National Progressive Coalition",
+     "r1Votes": 1262587,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Grau",
+     "party": "Partido Auténtico",
+     "r1Votes": 188209,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Fulgencio Batista",
+    "party": "Progressive Action"
+   },
+   "presAfter": {
+    "name": "Fulgencio Batista",
+    "party": "CPN"
+   },
+   "knownAs": null,
+   "summary": "Fulgencio Batista won with 1,262,587 votes.",
+   "caveat": "The main opposition candidate, Ramón Grau, withdrew his candidacy before election day, after Batista's 1952 coup pre-empted the vote originally scheduled that year.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "presidential",
+   "date": "3 November 1958",
+   "era": "batista",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Andrés Rivero Agüero",
+     "party": "National Progressive Coalition",
+     "r1Votes": 428166,
+     "r1Share": 70.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Márquez Sterling",
+     "party": "Partido del Pueblo Libre",
+     "r1Votes": 95447,
+     "r1Share": 15.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Grau",
+     "party": "Partido Auténtico",
+     "r1Votes": 75789,
+     "r1Share": 12.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Salas Amaro",
+     "party": "Partido Unión Cubana",
+     "r1Votes": 8752,
+     "r1Share": 1.44,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Fulgencio Batista",
+    "party": "Progressive Action Party"
+   },
+   "presAfter": {
+    "name": "Andrés Rivero Agüero",
+    "party": "National Progressive Coalition"
+   },
+   "knownAs": null,
+   "summary": "Andrés Rivero Agüero won with 70.40% against Carlos Márquez Sterling on 15.69%.",
+   "caveat": "Rebels publicly called for an election boycott before the vote, and the declared winner was unable to take office once the Cuban Revolution triumphed nine weeks later.",
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1901",
+   "label": "1901",
+   "year": 1901,
+   "kind": "legislative",
+   "date": "31 December 1901",
+   "era": "founding",
+   "totalSeats": 63,
+   "majoritySeats": null,
+   "turnout": 63.48,
+   "parties": [
+    {
+     "name": "PNC",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Federal Republican",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Tomás Estrada Palma",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "PNC finished first with 27 of 63 seats. Turnout 63.5%. Tomás Estrada Palma took office.",
+   "seatLeader": "PNC",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "kind": "legislative",
+   "date": "1 December 1905",
+   "era": "founding",
+   "totalSeats": 32,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Moderate Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tomás Estrada Palma",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Tomás Estrada Palma",
+    "party": "Moderate Party"
+   },
+   "knownAs": null,
+   "summary": "Moderate Party finished first with 31 of 32 seats. Tomás Estrada Palma stayed in office.",
+   "seatLeader": "Moderate Party",
+   "caveat": "A US peace commission later found the vote so tainted by fraud that it suspended the Congress the election had produced; a Cuban minister told American commissioners it was impossible to hold an election in Cuba without fraud.",
+   "unfree": null
+  },
+  {
+   "id": "1908",
+   "label": "1908",
+   "year": 1908,
+   "kind": "legislative",
+   "date": "14 November 1908",
+   "era": "founding",
+   "totalSeats": 83,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Coalition",
+     "leader": null,
+     "seats": 49,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Conservative Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tomás Estrada Palma",
+    "party": "Republican Party of Havana"
+   },
+   "pmAfter": {
+    "name": "José Miguel Gómez",
+    "party": "Liberal Party of Cuba"
+   },
+   "knownAs": null,
+   "summary": "Liberal Coalition finished first with 49 of 83 seats. José Miguel Gómez replaced Tomás Estrada Palma.",
+   "seatLeader": "Liberal Coalition",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "legislative",
+   "date": "1 November 1912",
+   "era": "interwar",
+   "totalSeats": 50,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Conservative Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "José Miguel Gómez",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Mario García Menocal",
+    "party": "Conjunción Patriótica"
+   },
+   "knownAs": null,
+   "summary": "Liberal Party of Cuba finished first with 24 of 50 seats. Mario García Menocal replaced José Miguel Gómez.",
+   "seatLeader": "Liberal Party of Cuba",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1916",
+   "label": "1916",
+   "year": 1916,
+   "kind": "legislative",
+   "date": "1 November 1916",
+   "era": "interwar",
+   "totalSeats": 60,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Conservative Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Unionist Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Provincial Liberal Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mario García Menocal",
+    "party": "PNC"
+   },
+   "pmAfter": {
+    "name": "Mario García Menocal",
+    "party": "PNC"
+   },
+   "knownAs": null,
+   "summary": "National Conservative Party finished first with 27 of 60 seats. Mario García Menocal stayed in office.",
+   "seatLeader": "National Conservative Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "1 November 1920",
+   "era": "interwar",
+   "totalSeats": 59,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Conservative Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic-Nationalist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mario García Menocal",
+    "party": "PNC"
+   },
+   "pmAfter": {
+    "name": "Alfredo Zayas y Alfonso",
+    "party": "National League"
+   },
+   "knownAs": null,
+   "summary": "Liberal Party of Cuba finished first with 28 of 59 seats. Alfredo Zayas y Alfonso replaced Mario García Menocal.",
+   "seatLeader": "Liberal Party of Cuba",
+   "caveat": "The Liberal Party accused the ruling coalition of election fraud, the US ambassador substantiated it, and new elections were held in four provinces as a result.",
+   "unfree": null
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "legislative",
+   "date": "1 November 1924",
+   "era": "interwar",
+   "totalSeats": 53,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cuban Popular Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Conservative Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alfredo Zayas y Alfonso",
+    "party": "Cuban Popular Party"
+   },
+   "pmAfter": {
+    "name": "Gerardo Machado",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Liberal Party of Cuba finished first with 27 of 53 seats. Gerardo Machado replaced Alfredo Zayas y Alfonso.",
+   "seatLeader": "Liberal Party of Cuba",
+   "caveat": "The election was deemed to be fraudulent, and the winning coalition's leader, Gerardo Machado, established a dictatorship that lasted until his overthrow in 1933.",
+   "unfree": null
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "10 January 1936",
+   "era": "constitution",
+   "totalSeats": 162,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Union",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Action",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic National Association",
+     "leader": null,
+     "seats": 70,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cuban Unionist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "José Agripino Barnet",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Miguel Mariano Gómez",
+    "party": "Tripartite Coalition"
+   },
+   "knownAs": null,
+   "summary": "Democratic National Association finished first with 70 of 162 seats. Miguel Mariano Gómez replaced José Agripino Barnet.",
+   "seatLeader": "Democratic National Association",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1940",
+   "label": "1940",
+   "year": 1940,
+   "kind": "legislative",
+   "date": "14 July 1940",
+   "era": "constitution",
+   "totalSeats": 156,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Democratic Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Union",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic National Association",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Communist Revolutionary Union",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Partido Auténtico",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Action",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ABC",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Federico Laredo Brú",
+    "party": "Republican Action"
+   },
+   "pmAfter": {
+    "name": "Fulgencio Batista",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Partido Auténtico finished first with 34 of 156 seats. Fulgencio Batista replaced Federico Laredo Brú.",
+   "seatLeader": "Partido Auténtico",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1944",
+   "label": "1944",
+   "year": 1944,
+   "kind": "legislative",
+   "date": "1 June 1944",
+   "era": "constitution",
+   "totalSeats": 70,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ABC",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Partido Auténtico",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Fulgencio Batista",
+    "party": "CSD"
+   },
+   "pmAfter": {
+    "name": "Ramón Grau",
+    "party": "Auténtico"
+   },
+   "knownAs": null,
+   "summary": "Partido Auténtico finished first with 19 of 70 seats. Ramón Grau replaced Fulgencio Batista.",
+   "seatLeader": "Partido Auténtico",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "1 June 1948",
+   "era": "constitution",
+   "totalSeats": 70,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Partido Auténtico",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Partido Ortodoxo",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ramón Grau",
+    "party": "Auténtico"
+   },
+   "pmAfter": {
+    "name": "Carlos Prío Socarrás",
+    "party": "Auténtico"
+   },
+   "knownAs": null,
+   "summary": "Partido Auténtico finished first with 29 of 70 seats. Carlos Prío Socarrás replaced Ramón Grau.",
+   "seatLeader": "Partido Auténtico",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "1 November 1954",
+   "era": "constitution",
+   "totalSeats": 130,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Progressive Action Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical Union",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Partido Auténtico",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Fulgencio Batista",
+    "party": "Progressive Action"
+   },
+   "pmAfter": {
+    "name": "Fulgencio Batista",
+    "party": "CPN"
+   },
+   "knownAs": null,
+   "summary": "Progressive Action Party finished first with 60 of 130 seats. Fulgencio Batista stayed in office.",
+   "seatLeader": "Progressive Action Party",
+   "caveat": "Held after Fulgencio Batista's 1952 coup pre-empted the scheduled election, with the main opposition candidate withdrawing his own candidacy before polling day.",
+   "unfree": null
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "3 November 1958",
+   "era": "constitution",
+   "totalSeats": 166,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Progressive Action Party",
+     "leader": null,
+     "seats": 65,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Cuba",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical Union",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Partido Auténtico",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Partido del Pueblo Libre",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Partido Unión Cubana",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Fulgencio Batista",
+    "party": "Progressive Action Party"
+   },
+   "pmAfter": {
+    "name": "Andrés Rivero Agüero",
+    "party": "National Progressive Coalition"
+   },
+   "knownAs": null,
+   "summary": "Progressive Action Party finished first with 65 of 166 seats. Andrés Rivero Agüero replaced Fulgencio Batista.",
+   "seatLeader": "Progressive Action Party",
+   "caveat": "Rebels publicly called for an election boycott before the vote, and the winner and every other elected official were unable to take office once the Cuban Revolution triumphed weeks later.",
+   "unfree": null
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "2 November 1976",
+   "era": "onerule",
+   "totalSeats": 489,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PCC",
+     "leader": "Fidel Castro",
+     "seats": 489,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Fidel Castro",
+    "party": "PCC"
+   },
+   "pmAfter": {
+    "name": "Fidel Castro",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "PCC finished first with 489 of 489 seats. Fidel Castro stayed in office.",
+   "seatLeader": "PCC",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "28 December 1981",
+   "era": "onerule",
+   "totalSeats": 499,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PCC",
+     "leader": "Fidel Castro",
+     "seats": 499,
+     "seatChange": 10,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Fidel Castro",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "PCC finished first with 499 of 499 seats. Fidel Castro took office.",
+   "seatLeader": "PCC",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "27 November 1986",
+   "era": "onerule",
+   "totalSeats": 510,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PCC",
+     "leader": "Fidel Castro",
+     "seats": 510,
+     "seatChange": 11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Fidel Castro",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "PCC finished first with 510 of 510 seats. Fidel Castro took office.",
+   "seatLeader": "PCC",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "24 February 1993",
+   "era": "onerule",
+   "totalSeats": 589,
+   "majoritySeats": null,
+   "turnout": 99.57,
+   "parties": [
+    {
+     "name": "Communist Party of Cuba and affiliated (entire list)",
+     "leader": null,
+     "seats": 589,
+     "seatChange": null,
+     "votes": 6939894,
+     "share": 95.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Fidel Castro",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Cuba and affiliated (entire list) finished first with 589 of 589 seats on 95.1% of the vote. Turnout 99.6%. Fidel Castro took office.",
+   "seatLeader": "Communist Party of Cuba and affiliated (entire list)",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "11 January 1998",
+   "era": "onerule",
+   "totalSeats": 601,
+   "majoritySeats": null,
+   "turnout": 98.35,
+   "parties": [
+    {
+     "name": "Communist Party of Cuba and affiliated (entire list)",
+     "leader": null,
+     "seats": 601,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Fidel Castro",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Cuba and affiliated (entire list) finished first with 601 of 601 seats. Turnout 98.3%. Fidel Castro took office.",
+   "seatLeader": "Communist Party of Cuba and affiliated (entire list)",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "kind": "legislative",
+   "date": "19 January 2003",
+   "era": "onerule",
+   "totalSeats": 609,
+   "majoritySeats": 305,
+   "turnout": 97.64,
+   "parties": [
+    {
+     "name": "Communist Party of Cuba and affiliated (entire list)",
+     "leader": null,
+     "seats": 609,
+     "seatChange": null,
+     "votes": 7128860,
+     "share": 91.35,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Fidel Castro",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Cuba and affiliated (entire list) finished first with 609 of 609 seats on 91.3% of the vote. Turnout 97.6%. Fidel Castro took office.",
+   "seatLeader": "Communist Party of Cuba and affiliated (entire list)",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "kind": "legislative",
+   "date": "20 January 2008",
+   "era": "onerule",
+   "totalSeats": 614,
+   "majoritySeats": 308,
+   "turnout": 96.89,
+   "parties": [
+    {
+     "name": "Communist Party of Cuba and affiliated (entire list)",
+     "leader": null,
+     "seats": 614,
+     "seatChange": null,
+     "votes": 7125752,
+     "share": 90.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Raúl Castro",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Cuba and affiliated (entire list) finished first with 614 of 614 seats on 90.9% of the vote. Turnout 96.9%. Raúl Castro took office.",
+   "seatLeader": "Communist Party of Cuba and affiliated (entire list)",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "legislative",
+   "date": "3 February 2013",
+   "era": "onerule",
+   "totalSeats": 612,
+   "majoritySeats": 307,
+   "turnout": 90.88,
+   "parties": [
+    {
+     "name": "Communist Party of Cuba and affiliated (entire list)",
+     "leader": null,
+     "seats": 612,
+     "seatChange": null,
+     "votes": 6031215,
+     "share": 81.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Raúl Castro",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Cuba and affiliated (entire list) finished first with 612 of 612 seats on 81.3% of the vote. Turnout 90.9%. Raúl Castro took office.",
+   "seatLeader": "Communist Party of Cuba and affiliated (entire list)",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "11 March 2018",
+   "era": "onerule",
+   "totalSeats": 605,
+   "majoritySeats": 303,
+   "turnout": 85.65,
+   "parties": [
+    {
+     "name": "Communist Party of Cuba and affiliated (entire list)",
+     "leader": null,
+     "seats": 605,
+     "seatChange": null,
+     "votes": 5620713,
+     "share": 80.44,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Miguel Díaz-Canel",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Cuba and affiliated (entire list) finished first with 605 of 605 seats on 80.4% of the vote. Turnout 85.7%. Miguel Díaz-Canel took office.",
+   "seatLeader": "Communist Party of Cuba and affiliated (entire list)",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "26 March 2023",
+   "era": "onerule",
+   "totalSeats": 470,
+   "majoritySeats": 236,
+   "turnout": 75.84,
+   "parties": [
+    {
+     "name": "Communist Party of Cuba and affiliated (entire list)",
+     "leader": null,
+     "seats": 470,
+     "seatChange": null,
+     "votes": 4012864,
+     "share": 72.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manuel Marrero Cruz",
+    "party": "PCC"
+   },
+   "pmAfter": {
+    "name": "Manuel Marrero Cruz",
+    "party": "PCC"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Cuba and affiliated (entire list) finished first with 470 of 470 seats on 72.1% of the vote. Turnout 75.8%. Manuel Marrero Cruz stayed in office.",
+   "seatLeader": "Communist Party of Cuba and affiliated (entire list)",
+   "caveat": "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
+   "unfree": "unfree"
+  }
+ ]
+}

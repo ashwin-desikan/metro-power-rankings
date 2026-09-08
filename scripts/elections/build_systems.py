@@ -137,6 +137,11 @@ SYSTEMS = {
     "th": ("mmm", "400 single-member constituencies plus 100 party-list seats, parallel", None, "Parallel and non-compensatory since 2007 and 2011; 2019 briefly used a single-ballot compensatory version before reverting for 2023. The House sits under six coups since 1947."),
     "ve": ("mmm", "277 National Assembly seats, most in single-member and plurinominal districts with a party-list top-up", None, "The president is chosen by simple plurality with no second round. The main opposition boycotted three of the last four legislative elections and disputes the 2024 presidential count, which was never published by precinct."),
     "vd": ("fptp", "Single-member plurality to 1963, then multi-member provinces by d'Hondt in 1966 and by multiple non-transferable vote in 1971", None, "Candidates stood as individuals for the lower house of 1967 and 1971, so those years carry no party shares. The republic ended on 30 April 1975."),
+    # Wave 6 (2026-09-08).
+    "ma": ("list-pr", "305 seats over 92 local constituencies (2-6 seats each), closed lists, plus 90 supplementary list seats", None, "A 2021 law replaced the reserved national list with twelve regional lists and removed the local and national thresholds, previously 6% and 3%. From 1970 to 1993 a large minority of seats were instead chosen by communal councillors and professional colleges rather than by direct vote."),
+    "cu": ("plurality/list", "the National Assembly's single approved list has taken every seat since 1993", None, "One list, no opposition; the republic-era House used first-past-the-post multi-party contests instead."),
+    "jm": ("fptp", "first-past-the-post in single-member constituencies", None, "Two parties, JLP and PNP, have held every seat since 1944 except a handful for minor parties and independents."),
+    "wi": ("fptp", "single- and multi-member constituencies across ten territories", None, "The Federation's only election, in 1958; it dissolved in 1962 before a second could be held."),
 }
 
 

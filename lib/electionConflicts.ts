@@ -73,6 +73,12 @@ export const HUB_COUNTRY_SLUGS: Record<string, string[]> = {
   "/elections/fi": ["finland"],
   "/elections/th": ["thailand"],
   "/elections/ve": ["venezuela"],
+  // Wave 6 (2026-09-08). The West Indies Federation has no living country
+  // page to join, so no leader, no power rank and no country link.
+  "/elections/ma": ["morocco"],
+  "/elections/cu": ["cuba"],
+  "/elections/jm": ["jamaica"],
+  "/elections/wi": [],
 };
 
 // Major wars only — border skirmishes would tag half the dataset and dilute

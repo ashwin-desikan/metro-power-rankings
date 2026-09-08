@@ -339,7 +339,7 @@ def _self_test():
     names = hub_names_from_ts()
     check("us name", names.get("us"), "United States")
     check("uk name", names.get("uk"), "United Kingdom")
-    check("63 hubs named", len(names), 63)
+    check("67 hubs named", len(names), 67)
 
     # Row-count parity against the census-equivalent count, hub by hub,
     # everywhere the census counts the hub (everywhere but the Vatican).

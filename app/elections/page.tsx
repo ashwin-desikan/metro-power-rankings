@@ -141,6 +141,9 @@ const CAPITALS: Record<string, [number, number]> = {
   et: [9.0192, 38.7525], vn: [21.0278, 105.8342], ae: [24.4539, 54.3773],
   cz: [50.0755, 14.4378], sk: [48.1486, 17.1077], ro: [44.4268, 26.1025],
   fi: [60.1699, 24.9384], th: [13.7563, 100.5018], ve: [10.4806, -66.9036],
+  // Wave 6, 2026-09-08. The West Indies Federation is defunct and gets no
+  // marker on purpose: the map is where the world votes today.
+  ma: [34.02, -6.84], cu: [23.11, -82.37], jm: [17.97, -76.79],
 };
 // The EU marker sits at Strasbourg — the Parliament's seat — so Brussels
 // stays legible as Belgium's marker.

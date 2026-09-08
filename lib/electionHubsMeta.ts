@@ -137,6 +137,10 @@ export const HUB_CAPITALS: Record<string, { slug: string; name: string }> = {
   fi: { slug: "helsinki", name: "Helsinki" },
   th: { slug: "bangkok", name: "Bangkok" },
   ve: { slug: "caracas", name: "Caracas" },
+  ma: { slug: "rabat", name: "Rabat" },
+  cu: { slug: "havana", name: "Havana" },
+  jm: { slug: "kingston", name: "Kingston" },
+  wi: { slug: "port-of-spain", name: "Port of Spain" },
 };
 
 
@@ -162,9 +166,10 @@ export const HUB_REGION: Record<string, string> = {
   eg: "Middle East & Africa", cd: "Middle East & Africa",
   ir: "Middle East & Africa", ke: "Middle East & Africa",
   et: "Middle East & Africa", ae: "Middle East & Africa",
+  ma: "Middle East & Africa",
   us: "The Americas", pe: "The Americas", ca: "The Americas", mx: "The Americas",
   br: "The Americas", ar: "The Americas", co: "The Americas",
-  cl: "The Americas",
+  cl: "The Americas", cu: "The Americas", jm: "The Americas", wi: "The Americas",
 };
 
 export const ELECTION_HUBS: Record<string, ElectionHubMeta> = {
@@ -247,6 +252,12 @@ export const ELECTION_HUBS: Record<string, ElectionHubMeta> = {
   fi: { code: "fi", flag: "fi", name: "Finland", href: "/elections/fi", last: "presidential, 28 January and 11 February 2024", next: "parliamentary election, 18 April 2027", nextDate: "2027-04-18", nextConfidence: "confirmed", tier: "compact", governmentType: "parliamentary" },
   th: { code: "th", flag: "th", name: "Thailand", href: "/elections/th", last: "general election, 8 February 2026", next: "general election, expected 2030", nextDate: "2030-03-31", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
   ve: { code: "ve", flag: "ve", name: "Venezuela", href: "/elections/ve", last: "parliamentary, 25 May 2025", next: "presidential, expected 2030", nextDate: "2030-12-31", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },
+  // Wave 6 (2026-09-08): three living hubs, plus the Federation as a third
+  // defunct polity alongside East Germany and South Vietnam.
+  ma: { code: "ma", flag: "ma", name: "Morocco", href: "/elections/ma", last: "legislative, 8 September 2021", next: "general election, 23 September 2026", nextDate: "2026-09-23", nextConfidence: "confirmed", tier: "compact", governmentType: "parliamentary" },
+  cu: { code: "cu", flag: "cu", name: "Cuba", href: "/elections/cu", last: "legislative, 26 March 2023", next: "parliamentary election expected 2028", nextDate: "2028-12-31", nextConfidence: "expected", note: "One-party elections", tier: "compact", governmentType: "other", governmentLabel: "One-party state" },
+  jm: { code: "jm", flag: "jm", name: "Jamaica", href: "/elections/jm", last: "general election, 3 September 2025", next: "general election expected by 2030", nextDate: "2030-12-31", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  wi: { code: "wi", flag: "wi", name: "West Indies Federation", href: "/elections/wi", last: "federal election, 25 March 1958", next: "none: dissolved 31 May 1962", nextConfidence: "dissolved", status: "defunct", dissolved: "31 May 1962", note: "Dissolved 1962", noteTone: "neutral", tier: "compact", governmentType: "parliamentary" },
 };
 
 // ---------------------------------------------------------------------------

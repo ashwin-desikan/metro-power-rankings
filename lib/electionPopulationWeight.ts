@@ -44,6 +44,10 @@ export const HUB_COUNTRY_SLUG: Record<string, string> = {
   pe: "peru", ke: "kenya", bd: "bangladesh", et: "ethiopia", vn: "vietnam",
   ae: "united-arab-emirates", cz: "czech-republic", sk: "slovakia", ro: "romania",
   fi: "finland", th: "thailand", ve: "venezuela",
+  // Wave 6, 2026-09-08. The West Indies Federation has no population series
+  // of its own and stays in the contest-counted chart only, like East
+  // Germany and South Vietnam.
+  ma: "morocco", cu: "cuba", jm: "jamaica",
 };
 
 let _pop: PopFile | null = null;

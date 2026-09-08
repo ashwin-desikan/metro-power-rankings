@@ -554,6 +554,43 @@ co,Colombia,legislative,2014,2014,9 March 2014,2014,Social Party of National Uni
 co,Colombia,legislative,2018,2018,11 March 2018,2018,Democratic Center,47.25,106,17.92,free,/elections/co/2018
 co,Colombia,legislative,2022,2022,13 March 2022,2022,Historic Pact for Colombia,45.86,106,18.87,free,/elections/co/2022
 co,Colombia,legislative,2026,2026,8 March 2026,2026,Historic Pact,50.62,100,25.00,free,/elections/co/2026
+cu,Cuba,presidential,pres-1901,1901,31 December 1901,1901,Tomás Estrada Palma,63.48,,,partial,/elections/cu/pres-1901
+cu,Cuba,presidential,pres-1905,1905,1 December 1905,1905,Tomás Estrada Palma,,,,partial,/elections/cu/pres-1905
+cu,Cuba,presidential,pres-1908,1908,14 November 1908,1908,José Miguel Gómez,,,60.70,free,/elections/cu/pres-1908
+cu,Cuba,presidential,pres-1912,1912,1 November 1912,1912,Mario García Menocal,,,,free,/elections/cu/pres-1912
+cu,Cuba,presidential,pres-1916,1916,1 November 1916,1916,Mario García Menocal,,,,partial,/elections/cu/pres-1916
+cu,Cuba,presidential,pres-1920,1920,1 November 1920,1920,Alfredo Zayas y Alfonso,,,,partial,/elections/cu/pres-1920
+cu,Cuba,presidential,pres-1924,1924,1 November 1924,1924,Gerardo Machado,,,,partial,/elections/cu/pres-1924
+cu,Cuba,presidential,pres-1928,1928,1 November 1928,1928,Gerardo Machado,,,,unfree,/elections/cu/pres-1928
+cu,Cuba,presidential,pres-1936,1936,10 January 1936,1936,Miguel Mariano Gómez,,,,free,/elections/cu/pres-1936
+cu,Cuba,presidential,pres-1940,1940,14 July 1940,1940,Fulgencio Batista,,,,free,/elections/cu/pres-1940
+cu,Cuba,presidential,pres-1944,1944,1 June 1944,1944,Ramón Grau,,,,free,/elections/cu/pres-1944
+cu,Cuba,presidential,pres-1948,1948,1 June 1948,1948,Carlos Prío Socarrás,,,,free,/elections/cu/pres-1948
+cu,Cuba,presidential,pres-1954,1954,1 November 1954,1954,Fulgencio Batista,,,,partial,/elections/cu/pres-1954
+cu,Cuba,presidential,pres-1958,1958,3 November 1958,1958,Andrés Rivero Agüero,,,70.40,partial,/elections/cu/pres-1958
+cu,Cuba,legislative,1901,1901,31 December 1901,1901,PNC,63.48,63,42.86,free,/elections/cu/1901
+cu,Cuba,legislative,1905,1905,1 December 1905,1905,Moderate Party,,32,96.88,partial,/elections/cu/1905
+cu,Cuba,legislative,1908,1908,14 November 1908,1908,Liberal Coalition,,83,59.04,free,/elections/cu/1908
+cu,Cuba,legislative,1912,1912,1 November 1912,1912,Liberal Party of Cuba,,50,48.00,free,/elections/cu/1912
+cu,Cuba,legislative,1916,1916,1 November 1916,1916,National Conservative Party,,60,45.00,free,/elections/cu/1916
+cu,Cuba,legislative,1920,1920,1 November 1920,1920,Liberal Party of Cuba,,59,47.46,partial,/elections/cu/1920
+cu,Cuba,legislative,1924,1924,1 November 1924,1924,Liberal Party of Cuba,,53,50.94,partial,/elections/cu/1924
+cu,Cuba,legislative,1936,1936,10 January 1936,1936,Democratic National Association,,162,43.21,free,/elections/cu/1936
+cu,Cuba,legislative,1940,1940,14 July 1940,1940,Partido Auténtico,,156,21.79,free,/elections/cu/1940
+cu,Cuba,legislative,1944,1944,1 June 1944,1944,Partido Auténtico,,70,27.14,free,/elections/cu/1944
+cu,Cuba,legislative,1948,1948,1 June 1948,1948,Partido Auténtico,,70,41.43,free,/elections/cu/1948
+cu,Cuba,legislative,1954,1954,1 November 1954,1954,Progressive Action Party,,130,46.15,partial,/elections/cu/1954
+cu,Cuba,legislative,1958,1958,3 November 1958,1958,Progressive Action Party,,166,39.16,partial,/elections/cu/1958
+cu,Cuba,legislative,1976,1976,2 November 1976,1976,PCC,,489,100.00,unfree,/elections/cu/1976
+cu,Cuba,legislative,1981,1981,28 December 1981,1981,PCC,,499,100.00,unfree,/elections/cu/1981
+cu,Cuba,legislative,1986,1986,27 November 1986,1986,PCC,,510,100.00,unfree,/elections/cu/1986
+cu,Cuba,legislative,1993,1993,24 February 1993,1993,Communist Party of Cuba and affiliated (entire list),99.57,589,100.00,unfree,/elections/cu/1993
+cu,Cuba,legislative,1998,1998,11 January 1998,1998,Communist Party of Cuba and affiliated (entire list),98.35,601,100.00,unfree,/elections/cu/1998
+cu,Cuba,legislative,2003,2003,19 January 2003,2003,Communist Party of Cuba and affiliated (entire list),97.64,609,100.00,unfree,/elections/cu/2003
+cu,Cuba,legislative,2008,2008,20 January 2008,2008,Communist Party of Cuba and affiliated (entire list),96.89,614,100.00,unfree,/elections/cu/2008
+cu,Cuba,legislative,2013,2013,3 February 2013,2013,Communist Party of Cuba and affiliated (entire list),90.88,612,100.00,unfree,/elections/cu/2013
+cu,Cuba,legislative,2018,2018,11 March 2018,2018,Communist Party of Cuba and affiliated (entire list),85.65,605,100.00,unfree,/elections/cu/2018
+cu,Cuba,legislative,2023,2023,26 March 2023,2023,Communist Party of Cuba and affiliated (entire list),75.84,470,100.00,unfree,/elections/cu/2023
 cz,Czech Republic,presidential,pres-1918,1918,1918,1918,Tomáš Garrigue Masaryk,,,,unfree,/elections/cz/pres-1918
 cz,Czech Republic,presidential,pres-1920,1920,27 May 1920,1920,Tomáš Garrigue Masaryk,,,,partial,/elections/cz/pres-1920
 cz,Czech Republic,presidential,pres-1927,1927,27 May 1927,1927,Tomáš Garrigue Masaryk,96.0,,63.43,partial,/elections/cz/pres-1927
@@ -1324,6 +1361,25 @@ it,Italy,legislative,2008,2008,13–14 April 2008,2008,People of Freedom,80.5,63
 it,Italy,legislative,2013,2013,24–25 February 2013,2013,Democratic Party,75.2,630,54.76,free,/elections/it/2013
 it,Italy,legislative,2018,2018,4 March 2018,2018,Five Star Movement (M5S),72.94,630,21.11,free,/elections/it/2018
 it,Italy,legislative,2022,2022,25 September 2022,2022,Brothers of Italy (FdI),63.85,400,17.25,free,/elections/it/2022
+jm,Jamaica,legislative,1944,1944,12 December 1944,1944,Jamaica Labour Party,58.68,32,68.75,free,/elections/jm/1944
+jm,Jamaica,legislative,1949,1949,20 December 1949,1949,Jamaica Labour Party,65.16,32,53.12,free,/elections/jm/1949
+jm,Jamaica,legislative,1955,1955,12 January 1955,1955,People's National Party,65.11,32,56.25,free,/elections/jm/1955
+jm,Jamaica,legislative,1959,1959,28 July 1959,1959,People's National Party,66.09,45,64.44,free,/elections/jm/1959
+jm,Jamaica,legislative,1962,1962,10 April 1962,1962,Jamaica Labour Party,72.88,45,57.78,free,/elections/jm/1962
+jm,Jamaica,legislative,1967,1967,21 February 1967,1967,Jamaica Labour Party,82.24,53,62.26,free,/elections/jm/1967
+jm,Jamaica,legislative,1972,1972,29 February 1972,1972,People's National Party,78.88,53,69.81,free,/elections/jm/1972
+jm,Jamaica,legislative,1976,1976,15 December 1976,1976,People's National Party,85.21,60,78.33,free,/elections/jm/1976
+jm,Jamaica,legislative,1980,1980,30 October 1980,1980,Jamaica Labour Party,86.91,60,85.00,free,/elections/jm/1980
+jm,Jamaica,legislative,1983,1983,15 December 1983,1983,Jamaica Labour Party,2.68,60,100.00,partial,/elections/jm/1983
+jm,Jamaica,legislative,1989,1989,9 February 1989,1989,People's National Party,78.38,60,75.00,free,/elections/jm/1989
+jm,Jamaica,legislative,1993,1993,30 March 1993,1993,People's National Party,67.35,60,86.67,free,/elections/jm/1993
+jm,Jamaica,legislative,1997,1997,18 December 1997,1997,People's National Party,65.22,60,83.33,free,/elections/jm/1997
+jm,Jamaica,legislative,2002,2002,16 October 2002,2002,People's National Party,59.06,60,56.67,free,/elections/jm/2002
+jm,Jamaica,legislative,2007,2007,3 September 2007,2007,Jamaica Labour Party,61.46,60,53.33,free,/elections/jm/2007
+jm,Jamaica,legislative,2011,2011,29 December 2011,2011,People's National Party,53.17,63,66.67,free,/elections/jm/2011
+jm,Jamaica,legislative,2016,2016,25 February 2016,2016,Jamaica Labour Party,48.4,63,50.79,free,/elections/jm/2016
+jm,Jamaica,legislative,2020,2020,3 September 2020,2020,Jamaica Labour Party,37.85,63,77.78,free,/elections/jm/2020
+jm,Jamaica,legislative,2025,2025,3 September 2025,2025,Jamaica Labour Party,39.96,63,55.56,free,/elections/jm/2025
 jp,Japan,legislative,1890,1890,1 July 1890,1890,Liberal,,300,43.33,free,/elections/jp/1890
 jp,Japan,legislative,1892,1892,15 February 1892,1892,Liberal,,300,31.33,free,/elections/jp/1892
 jp,Japan,legislative,1894-mar,1894,1 March 1894,March 1894,Liberal,,300,40.00,free,/elections/jp/1894-mar
@@ -1453,6 +1509,17 @@ kr,South Korea,legislative,2012,2012,11 April 2012,2012,Saenuri,54.24,300,50.67,
 kr,South Korea,legislative,2016,2016,13 April 2016,2016,Democratic,58.15,300,41.00,free,/elections/kr/2016
 kr,South Korea,legislative,2020,2020,15 April 2020,2020,Democratic,66.19,300,60.00,free,/elections/kr/2020
 kr,South Korea,legislative,2024,2024,10 April 2024,2024,Democratic,66.97,300,57.67,free,/elections/kr/2024
+ma,Morocco,legislative,1963,1963,17 May 1963,1963,Front for the Defence of Constitutional Institutions,71.79,144,47.92,partial,/elections/ma/1963
+ma,Morocco,legislative,1970,1970,21 August 1970,1970,Independents,,240,66.25,partial,/elections/ma/1970
+ma,Morocco,legislative,1977,1977,3 June 1977,1977,Independents,82.36,264,53.41,partial,/elections/ma/1977
+ma,Morocco,legislative,1984,1984,14 September 1984,1984,Constitutional Union,67.43,306,27.12,partial,/elections/ma/1984
+ma,Morocco,legislative,1993,1993,25 June 1993,1993,Constitutional Union,62.75,333,16.22,partial,/elections/ma/1993
+ma,Morocco,legislative,1997,1997,14 November 1997,1997,Socialist Union of Popular Forces,58.3,325,17.54,free,/elections/ma/1997
+ma,Morocco,legislative,2002,2002,27 September 2002,2002,Socialist Union of Popular Forces,51.61,325,15.38,free,/elections/ma/2002
+ma,Morocco,legislative,2007,2007,7 September 2007,2007,Istiqlal Party,37.0,325,16.00,free,/elections/ma/2007
+ma,Morocco,legislative,2011,2011,25 November 2011,2011,Justice and Development Party,45.5,395,27.09,free,/elections/ma/2011
+ma,Morocco,legislative,2016,2016,7 October 2016,2016,Justice and Development Party,43.0,395,31.65,free,/elections/ma/2016
+ma,Morocco,legislative,2021,2021,8 September 2021,2021,National Rally of Independents,50.35,395,25.82,free,/elections/ma/2021
 mx,Mexico,presidential,pres-1853,1853,April 1853,1853,Antonio López de Santa Anna,,,,partial,/elections/mx/pres-1853
 mx,Mexico,presidential,pres-1857,1857,1857,1857,Ignacio Comonfort,,,92.67,partial,/elections/mx/pres-1857
 mx,Mexico,presidential,pres-1861,1861,1861,1861,Benito Juárez,,,53.41,partial,/elections/mx/pres-1861
@@ -2513,6 +2580,7 @@ vn,Vietnam,legislative,2011,2011,22 May 2011,2011,Communist Party of Vietnam,99.
 vn,Vietnam,legislative,2016,2016,22 May 2016,2016,Communist Party of Vietnam,99.35,496,95.77,partial,/elections/vn/2016
 vn,Vietnam,legislative,2021,2021,23 May 2021,2021,Communist Party of Vietnam,99.6,500,97.00,partial,/elections/vn/2021
 vn,Vietnam,legislative,2026,2026,15 March 2026,2026,Communist Party of Vietnam,99.7,500,96.40,partial,/elections/vn/2026
+wi,West Indies Federation,legislative,1958,1958,25 March 1958,1958,West Indies Federal Labour Party,,45,55.56,free,/elections/wi/1958
 za,South Africa,legislative,1910,1910,15 September 1910,1910,South African National Party,,121,54.55,partial,/elections/za/1910
 za,South Africa,legislative,1915,1915,20 October 1915,1915,South African Party,71.57,130,41.54,partial,/elections/za/1915
 za,South Africa,legislative,1920,1920,10 March 1920,1920,National Party,66.94,134,32.09,partial,/elections/za/1920

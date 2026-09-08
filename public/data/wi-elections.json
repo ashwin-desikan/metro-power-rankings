@@ -1,0 +1,72 @@
+{
+ "meta": {
+  "title": "West Indies Federal Elections",
+  "sources": [
+   "Wikipedia: 1958 West Indies federal elections (results tables and infobox)",
+   "The Gleaner and caribbeanelections.com figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "defunct",
+  "dissolved": "1962-05-31"
+ },
+ "eras": [
+  {
+   "key": "only",
+   "label": "The Federation's only election",
+   "span": "1958",
+   "blurb": "Ten British Caribbean territories, from Jamaica to Trinidad and Tobago, elected a single federal House of Representatives on 25 March 1958, the West Indies Federal Labour Party winning 25 of its 45 seats against the Democratic Labour Party's 19 and a single seat for the Barbados National Party. Grantley Adams of Barbados became the Federation's first and only Prime Minister, chosen over Norman Manley and Eric Williams, the premiers of Jamaica and Trinidad, neither of whom had stood for a federal seat and so were ineligible for the post."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "25 March 1958",
+   "era": "only",
+   "totalSeats": 45,
+   "majoritySeats": 23,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "West Indies Federal Labour Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "West Indies Democratic Labour Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Barbados National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Grantley Herbert Adams",
+    "party": "Federalist"
+   },
+   "knownAs": null,
+   "summary": "West Indies Federal Labour Party finished first with 25 of 45 seats. Grantley Herbert Adams took office.",
+   "seatLeader": "West Indies Federal Labour Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

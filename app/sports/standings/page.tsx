@@ -69,7 +69,10 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 type Cell = string | number;
 type Mono = { text: string; bg: string; fg: string };
 type SRow = { rank: number | string | null; name: string; href?: string | null; logoUrl?: string | null; flagUrl?: string | null; crestName?: string | null; monogram?: Mono | null; cells: Cell[]; po?: boolean; cut?: boolean };
-type SubTable = { title: string | null; columns: string[]; rows: SRow[] };
+// `fixtures`: rows are matches, not ranked clubs. No rank column, and the
+// name cell wraps instead of forcing the table wider than its box (a finals
+// week label plus two club names put a scrollbar on the NRL block, 2026-09-08).
+type SubTable = { title: string | null; columns: string[]; rows: SRow[]; fixtures?: boolean };
 type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean; cutNote?: string | null };
 type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]] };
 
@@ -299,8 +302,8 @@ function LeagueAccordion({ block }: { block: Block }) {
                     : { borderColor: "var(--border)" }}>
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-1.5 min-w-0 text-xs font-medium">
-                      <span className="tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.rank ?? i + 1}</span>
-                      <span className="truncate"><NameCell r={r} /></span>
+                      {!st.fixtures && <span className="tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.rank ?? i + 1}</span>}
+                      <span className={st.fixtures ? "min-w-0" : "truncate"}><NameCell r={r} /></span>
                     </div>
                   </div>
                   {st.columns.length > 0 && (
@@ -319,11 +322,11 @@ function LeagueAccordion({ block }: { block: Block }) {
             </div>
 
             <div className="overflow-x-auto hidden sm:block">
-              <table className="w-full text-xs min-w-[320px]" data-sticky-col="2">
+              <table className="w-full text-xs min-w-[320px]" data-sticky-col={st.fixtures ? "1" : "2"}>
                 <thead>
                   <tr className="text-left text-[var(--text-muted)]">
-                    <th className="py-1 px-1.5 font-medium text-right">#</th>
-                    <th className="py-1 px-1.5 font-medium">Club</th>
+                    {!st.fixtures && <th className="py-1 px-1.5 font-medium text-right">#</th>}
+                    <th className="py-1 px-1.5 font-medium">{st.fixtures ? "Match" : "Club"}</th>
                     {st.columns.map((c) => (
                       <th key={c} className="py-1 px-1.5 font-medium text-right tabular-nums">{c}</th>
                     ))}
@@ -339,8 +342,8 @@ function LeagueAccordion({ block }: { block: Block }) {
                         // shadow so the next row's border-t stays intact.
                         ...(r.cut ? { boxShadow: "inset 0 -2px 0 rgba(34,197,94,0.45)" } : null),
                       }}>
-                      <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank ?? i + 1}</td>
-                      <td className="py-1 px-1.5 font-medium whitespace-nowrap"><NameCell r={r} /></td>
+                      {!st.fixtures && <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank ?? i + 1}</td>}
+                      <td className={`py-1 px-1.5 font-medium ${st.fixtures ? "" : "whitespace-nowrap"}`}><NameCell r={r} /></td>
                       {r.cells.map((c, j) => (
                         bar && j === bar.index ? (
                           <td key={j} className="py-1 px-1.5 tabular-nums" style={mono}>
@@ -823,29 +826,28 @@ async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
   if (!s || s.rows.length === 0) return null;
   // September: a finals strip above the ladder (real fixtures from
   // scripts/ingest/footy_finals.py; the full bracket lives on the hub).
-  const finalsSub: SubTable | null = finalsIsCurrent(finals)
-    ? {
-        title: `${finals.meta.season} Finals`,
+  const finalsSubs: SubTable[] = finalsIsCurrent(finals)
+    ? finals.weeks.map((w): SubTable => ({
+        title: `${finals.meta.season} Finals: ${w.label}`,
         columns: ["Result / Date", "Venue"],
-        rows: finals.weeks.flatMap((w) =>
-          w.games.map((g): SRow => {
-            const nm = (side: typeof g.home) => side?.name ?? "TBC";
-            const label = `${g.code ?? w.label} · ${
-              g.completed && g.winner
-                ? `${nm(g.winner === "home" ? g.home : g.away)} def. ${nm(g.winner === "home" ? g.away : g.home)}`
-                : `${nm(g.home)} v ${nm(g.away)}`
-            }`;
-            const when =
-              g.state !== "pre" && g.home?.score !== null && g.home?.score !== undefined && g.away
-                ? `${g.home.score}–${g.away.score}`
-                : g.date
-                  ? new Date(g.date).toLocaleDateString("en-AU", { timeZone: "Australia/Sydney", day: "numeric", month: "short" })
-                  : DASH;
-            return { rank: null, name: label, cells: [when, g.venue ?? DASH] };
-          }),
-        ),
-      }
-    : null;
+        fixtures: true,
+        rows: w.games.map((g): SRow => {
+          const nm = (side: typeof g.home) => side?.name ?? "TBC";
+          const matchup =
+            g.completed && g.winner
+              ? `${nm(g.winner === "home" ? g.home : g.away)} def. ${nm(g.winner === "home" ? g.away : g.home)}`
+              : `${nm(g.home)} v ${nm(g.away)}`;
+          const label = g.code ? `${g.code} · ${matchup}` : matchup;
+          const when =
+            g.state !== "pre" && g.home?.score !== null && g.home?.score !== undefined && g.away
+              ? `${g.home.score}–${g.away.score}`
+              : g.date
+                ? new Date(g.date).toLocaleDateString("en-AU", { timeZone: "Australia/Sydney", day: "numeric", month: "short" })
+                : DASH;
+          return { rank: null, name: label, cells: [when, g.venue ?? DASH] };
+        }),
+      }))
+    : [];
   const footyLive = inSeasonWindow(league); // "afl" | "nrl" are both SeasonKeys
   const showOdds = footyLive && simIsCurrent(sim);
   const odds = simBySlug(sim);
@@ -878,11 +880,11 @@ async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
   if (footyLive) applyPlayoffMarks(s.rows, rows, (t) => (t.rank ?? 99) <= spots);
   return {
     league: league.toUpperCase(), href: `/teams/${league}`,
-    note: finalsSub ? `${s.year} finals` : footyLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`,
+    note: finalsSubs.length ? `${s.year} finals` : footyLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`,
     open: footyLive, live: footyLive,
     subTables: [
-      ...(finalsSub ? [finalsSub] : []),
-      { title: finalsSub ? `${s.year} Ladder` : null, columns: cols, rows },
+      ...finalsSubs,
+      { title: finalsSubs.length ? `${s.year} Ladder` : null, columns: cols, rows },
     ],
   };
 }

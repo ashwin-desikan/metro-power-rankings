@@ -281,6 +281,7 @@ export function flagSrcSet(slug: string): string | null {
 const LOCAL_FLAGS: Record<string, string> = {
   dd: "/flags/dd.svg",
   vd: "/flags/vd.svg",
+  wi: "/flags/wi.svg",
 };
 export function flagUrlByCode(code: string): string {
   return LOCAL_FLAGS[code] ?? `https://flagcdn.com/20x15/${code}.png`;
