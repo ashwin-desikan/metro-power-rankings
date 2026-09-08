@@ -41,7 +41,7 @@ for (const line of src.split(/\r?\n/)) {
   if (!code || !line.includes("href:")) continue;
   const name = /\bname:\s*"((?:[^"\\]|\\.)*)"/.exec(line);
   const date = /\bnextDate:\s*"(\d{4}-\d{2}-\d{2})"/.exec(line);
-  const conf = /\bnextConfidence:\s*"(confirmed|expected|unscheduled)"/.exec(line);
+  const conf = /\bnextConfidence:\s*"(confirmed|expected|unscheduled|dissolved)"/.exec(line);
   rows.push({
     code: code[1],
     name: name ? name[1] : code[1],
@@ -79,6 +79,9 @@ for (const r of rows) {
   }
   if (r.confidence === "unscheduled" && r.date) {
     errors.push(`${r.code} (${r.name}): "unscheduled" but carries nextDate ${r.date}`);
+  }
+  if (r.confidence === "dissolved" && r.date) {
+    errors.push(`${r.code} (${r.name}): "dissolved" but carries nextDate ${r.date}`);
   }
   if (!r.date) continue;
 

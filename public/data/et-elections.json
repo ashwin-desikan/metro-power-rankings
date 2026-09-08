@@ -1,0 +1,2420 @@
+{
+ "meta": {
+  "title": "Ethiopian General Elections",
+  "sources": [
+   "Wikipedia: Ethiopian general election articles 1957-2026 (results tables and infoboxes)",
+   "National Election Board of Ethiopia figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "eras": [
+  {
+   "key": "imperial",
+   "label": "The imperial Chamber of Deputies",
+   "span": "1957-1973",
+   "blurb": "Haile Selassie's 1955 constitution created an elected Chamber of Deputies, but political parties stayed banned, so every seat went to an independent and competition was between individual notables rather than over a program. Candidates needed real property to qualify to run, which the dump's own sources say made the chamber a vehicle for self-promotion among a narrow elite rather than a forum of popular representation, and the Emperor kept naming and dismissing his prime ministers regardless of who won. Two of these five elections, 1961 and 1965 and 1969, survive in the dump only as a paragraph of background prose with no results table at all."
+  },
+  {
+   "key": "derg",
+   "label": "The Derg's single-party vote",
+   "span": "1987",
+   "blurb": "Thirteen years of military rule under the Derg passed with no elections whatsoever before one was finally held in June 1987 to seat the 835-member National Shengo. The Workers' Party of Ethiopia was the only legal party and had already governed unopposed for three years, so its 795 seats on a reported 99.2% of the vote confirmed a result nobody doubted rather than decided one. The Shengo sat for barely four years before the EPRDF's rebels took Addis Ababa in 1991."
+  },
+  {
+   "key": "transition",
+   "label": "Transition and the first multiparty vote",
+   "span": "1994-1995",
+   "blurb": "The Constituent Assembly election of June 1994 was Ethiopia's first ever multiparty vote, called to draft the constitution that would replace the Derg's, and the EPRDF and its ethnic-based allies won 463 of 544 seats against a field still finding its footing after decades of one-party and no-party rule. The following year's Council of Representatives election, the first held under that new constitution, saw four of the country's seven registered national opposition parties boycott outright over what they called unequal conditions, and outside observers called the ruling coalition's majority a foregone conclusion before a vote was cast."
+  },
+  {
+   "key": "eprdf",
+   "label": "EPRDF hegemony",
+   "span": "2000-2015",
+   "blurb": "Four elections under one dominant coalition, each less contested than the last. The 2005 vote briefly looked like a genuine contest, the opposition Coalition for Unity and Democracy swept Addis Ababa, until disputed results, tens of thousands of arrests and dozens of deaths in the protests that followed; by 2015 the EPRDF and its allies took every one of the 547 seats, a result Human Rights Watch called a sham and the United States said was not credible."
+  },
+  {
+   "key": "prosperity",
+   "label": "The Prosperity Party era",
+   "span": "2021-",
+   "blurb": "Abiy Ahmed dissolved the EPRDF into a single Prosperity Party in 2019, and the two elections held since have run alongside civil war rather than instead of it. Voting in 2021 left 74 of 547 seats unfilled where fighting or logistics stopped balloting outright, and by 2026, with Tigray excluded entirely and voting suspended in parts of Amhara and Oromia, 61 seats stood vacant. Opposition parties still won real seats in both, and turnout among those able to vote topped 95% in 2026."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "1 and 30 September 1957",
+   "era": "imperial",
+   "totalSeats": 210,
+   "majoritySeats": 106,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 210,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 210 of 210 seats.",
+   "seatLeader": "Independents",
+   "caveat": "Political parties were banned and candidates needed real property to qualify, so competition was between individual notables rather than a choice of program, and the Emperor kept naming the government regardless of the result.",
+   "unfree": null
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "1961",
+   "era": "imperial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "An Ethiopian election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Political parties were banned and candidates needed real property to qualify, so competition was between individual notables rather than a choice of program, and the Emperor kept naming the government regardless of the result.",
+   "unfree": null
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "1965",
+   "era": "imperial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "An Ethiopian election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Political parties were banned and candidates needed real property to qualify, so competition was between individual notables rather than a choice of program, and the Emperor kept naming the government regardless of the result.",
+   "unfree": null
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "1969",
+   "era": "imperial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "An Ethiopian election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Political parties were banned and candidates needed real property to qualify, so competition was between individual notables rather than a choice of program, and the Emperor kept naming the government regardless of the result.",
+   "unfree": null
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "23 June and 7 July 1973",
+   "era": "imperial",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 250,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 250 of 250 seats.",
+   "seatLeader": "Independents",
+   "caveat": "Political parties were banned and candidates needed real property to qualify, so competition was between individual notables rather than a choice of program, and the Emperor kept naming the government regardless of the result.",
+   "unfree": null
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "legislative",
+   "date": "14 June 1987",
+   "era": "derg",
+   "totalSeats": 835,
+   "majoritySeats": 418,
+   "turnout": 90.53,
+   "parties": [
+    {
+     "name": "Workers' Party of Ethiopia",
+     "leader": null,
+     "seats": 795,
+     "seatChange": null,
+     "votes": 12981957,
+     "share": 99.2,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 104693,
+     "share": 0.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Workers' Party of Ethiopia finished first with 795 of 835 seats on 99.2% of the vote. Turnout 90.5%.",
+   "seatLeader": "Workers' Party of Ethiopia",
+   "caveat": "The Workers' Party of Ethiopia was the sole legal party and took 795 of 835 seats on a reported 99.2% of the vote.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "legislative",
+   "date": "5 June 1994",
+   "era": "transition",
+   "totalSeats": 544,
+   "majoritySeats": 273,
+   "turnout": 87.5,
+   "parties": [
+    {
+     "name": "Oromo People's Democratic Organization",
+     "leader": null,
+     "seats": 179,
+     "seatChange": 179,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Amhara National Democratic Movement",
+     "leader": null,
+     "seats": 134,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tigray People's Liberation Front",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sidama People's Democratic Organization",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Wolayta People's Democratic Organization",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gamo and Gofa People's Democratic Organization",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian People's Revolutionary Democratic Front",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gurage People's Revolutionary Democratic Movement",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hadiya People's Democratic Organization",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Keficho People's Democratic Organization",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gideo People's Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kembata People's Democratic Organization",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dawro People's Democratic Organization",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar People's Democratic Organization",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alaba People's Democratic Organization",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bench People's Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Shekecho People's Democratic Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gambela People's Liberation Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tembaro People's Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Yem People's Democratic Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Konso People's Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kore People's Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Somali Democratic League",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Southern Omo People's Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar Liberation Front",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Benishangul People's Liberation Movement",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Silte, Azernet Berbere, Alico Worero, Meskan Melga, Woloene Gedebano People's Democratic Movement",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gumusz People's Liberation Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Mein People's Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Western Somali Democratic League",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Argoba Nation Unity Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kebena Nationality Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Mareko People's Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Burji People's Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dizi People's Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hareri National League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gamo Democratic Unity",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Oromo People's Democratic Organization finished first with 179 of 544 seats. Turnout 87.5%.",
+   "seatLeader": "Oromo People's Democratic Organization",
+   "caveat": "The EPRDF and its ethnic-based allies dominated both elections of this era; four of Ethiopia's seven registered opposition parties boycotted the 1995 vote outright, alleging unequal conditions.",
+   "unfree": null
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "7–18 May 1995",
+   "era": "transition",
+   "totalSeats": 546,
+   "majoritySeats": 274,
+   "turnout": 93.67,
+   "parties": [
+    {
+     "name": "Oromo Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 176,
+     "seatChange": null,
+     "votes": 16429727,
+     "share": 82.87,
+     "swing": null
+    },
+    {
+     "name": "Amhara National Democratic Movement",
+     "leader": null,
+     "seats": 133,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tigray People's Liberation Front",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian People's Revolutionary Democratic Front",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sidama People's Democratic Organization",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gamo and Gofa People's Democratic Organization",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gurage Peoples' Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Wolayta People's Democratic Organization",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hadiya People's Democratic Organization",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gideo People's Unity Democratic Movement",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Keficho Peoples' Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kembata Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dawro Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alaba Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gambela People's Liberation Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tembaro Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bench Peoples' Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Konso Peoples' Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kore Nationality Unity Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Yem People's Democratic Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Somali Democratic League",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 3396563,
+     "share": 17.13,
+     "swing": null
+    },
+    {
+     "name": "Southern Omo People's Democratic Movement",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Southern Ethiopia People's Democratic Front",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Benishangul North-Western Ethiopia People's Democratic Unity Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Oromo Liberation United Front",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar Liberation Front",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Derashe Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ogaden National Liberation Front",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bench, Sheko, Dizi and Meinit People's Democratic Front",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dizi Peoples' Revolutionary Democratic Organization",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar National Liberation Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Argoba People's Democratic Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Burji Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gambela People's Democratic Unity Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hareri National League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kebena Nationality Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Mareko Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Silte People's Democratic Unity Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Western Somali Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Zeisei Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Oromo Peoples' Democratic Organization finished first with 176 of 546 seats on 82.9% of the vote. Turnout 93.7%.",
+   "seatLeader": "Oromo Peoples' Democratic Organization",
+   "caveat": "Four of the seven registered national opposition parties boycotted, and observers called the ruling coalition's majority a foregone conclusion before voting began.",
+   "unfree": null
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "legislative",
+   "date": "14 May–31 August 2000",
+   "era": "eprdf",
+   "totalSeats": 547,
+   "majoritySeats": 274,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Oromo People's Democratic Organization",
+     "leader": null,
+     "seats": 183,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Amhara National Democratic Movement",
+     "leader": null,
+     "seats": 146,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Southern Ethiopian People's Democratic Movement",
+     "leader": null,
+     "seats": 112,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tigray People's Liberation Front",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Somali People's Democratic Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar National Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Benishangul-Gumuz People's Democratic Unity Front",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Council of Alternative Forces for Peace and Democracy in Ethiopia",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gambela Peoples Democratic Front",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hadiya National Democratic Organization",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Southern Ethiopia Peoples' Democratic Coalition",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Oromo People's Democratic Organization finished first with 183 of 547 seats.",
+   "seatLeader": "Oromo People's Democratic Organization",
+   "caveat": "The European Union, Human Rights Watch and the US State Department all found elections in this era, especially 2005 and 2015, fell short of free and fair, citing fraud, mass arrests and a media crackdown.",
+   "unfree": null
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "15 May 2005",
+   "era": "eprdf",
+   "totalSeats": 547,
+   "majoritySeats": 274,
+   "turnout": 82.6,
+   "parties": [
+    {
+     "name": "Ethiopian People's Revolutionary Democratic Front",
+     "leader": null,
+     "seats": 327,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Coalition for Unity and Democracy",
+     "leader": null,
+     "seats": 109,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Ethiopian Democratic Forces",
+     "leader": null,
+     "seats": 53,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Somali People's Democratic Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Oromo Federalist Democratic Movement",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar National Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Benishangul-Gumuz People's Democratic Unity Front",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gambela People's Democratic Movement",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sheko and Mezenger People's Democratic Unity Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hareri National League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Argoba Nationality Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Meles Zenawi",
+    "party": "EPRDF"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Ethiopian People's Revolutionary Democratic Front finished first with 327 of 547 seats. Turnout 82.6%.",
+   "seatLeader": "Ethiopian People's Revolutionary Democratic Front",
+   "caveat": "The opposition CUD swept Addis Ababa and disputed the declared results; the protests that followed prompted more than 60,000 arrests and dozens of deaths.",
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "23 May 2010",
+   "era": "eprdf",
+   "totalSeats": 547,
+   "majoritySeats": 274,
+   "turnout": 93.44,
+   "parties": [
+    {
+     "name": "Ethiopian People's Revolutionary Democratic Front",
+     "leader": null,
+     "seats": 499,
+     "seatChange": 172,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Somali People's Democratic Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Benishangul-Gumuz People's Democratic Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar National Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gambela People's Democratic Movement",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Argoba People's Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hareri National League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Medrek",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Coalition for Unity and Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -109,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Oromo Federalist Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Ethiopian Democratic Forces",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -53,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Meles Zenawi",
+    "party": "EPRDF"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Ethiopian People's Revolutionary Democratic Front finished first with 499 of 547 seats. Turnout 93.4%.",
+   "seatLeader": "Ethiopian People's Revolutionary Democratic Front",
+   "caveat": "The European Union, Human Rights Watch and the US State Department all found elections in this era, especially 2005 and 2015, fell short of free and fair, citing fraud, mass arrests and a media crackdown.",
+   "unfree": null
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "24 May 2015",
+   "era": "eprdf",
+   "totalSeats": 547,
+   "majoritySeats": 274,
+   "turnout": 93.22,
+   "parties": [
+    {
+     "name": "Ethiopian People's Revolutionary Democratic Front",
+     "leader": null,
+     "seats": 500,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Somali People's Democratic Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Benishangul-Gumuz People's Democratic Unity Front",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar National Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gambela People's Democratic Movement",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Argoba People's Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hareri National League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Agew Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All Ethiopian Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All Ethiopian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All Ethiopian National Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All Oromo People Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All-Amhara People's Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Argoba Nationality Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bench People Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Blue Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Coalition for Unity and Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Denta Dubamo Kichinchila People's Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dilwabi Peoples' Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Donga People Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dube and Degeni Nationality Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopia Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Democratic Unity Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Justice and Democratic Forces Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian National Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Peace and Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Raie Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian's Unity Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Geda System Advancement Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gedeo People Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gumuz People's Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kembata People's Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Medrek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Generation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Oromo Liberation Unity Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Oromo People's Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sidama Hadicho People Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sodo Gordona Peoples' Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tigri Worgi Nationality Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Unity for Democracy and Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Welene People Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Wolayta People Democratic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Undeclared",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hailemariam Desalegn",
+    "party": "EPRDF"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Ethiopian People's Revolutionary Democratic Front finished first with 500 of 547 seats. Turnout 93.2%.",
+   "seatLeader": "Ethiopian People's Revolutionary Democratic Front",
+   "caveat": "The EPRDF and its allies won all 547 seats; Human Rights Watch called the count a sham and the United States said the results were not credible.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "21 June 2021 (most regions) 30 September 2021 (Harari, SNNPR, and Somali)",
+   "era": "prosperity",
+   "totalSeats": 547,
+   "majoritySeats": 274,
+   "turnout": 89.07,
+   "parties": [
+    {
+     "name": "Prosperity Party",
+     "leader": null,
+     "seats": 457,
+     "seatChange": null,
+     "votes": 30018782,
+     "share": 89.18,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Citizens for Social Justice",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 1007136,
+     "share": 2.99,
+     "swing": null
+    },
+    {
+     "name": "National Movement of Amhara",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 658579,
+     "share": 1.96,
+     "swing": null
+    },
+    {
+     "name": "Enat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 259888,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Balderas Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 228187,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Equality Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 123278,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "All Ethiopia Unity Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 119036,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 114364,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Gedeo People's Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 111078,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Hibir Ethiopia Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49168,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Amhara Democratic Power Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39460,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "New Generation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30781,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Afar People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28605,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Kucha People's Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 24192,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian People's Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21870,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Wolaita People's Democratic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20434,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Agew National Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17927,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Gambela People's Liberation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17718,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16174,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Gamo Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14677,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Afar Revolutionary Democratic Unity Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11029,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Afar Liberation Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11015,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Renaissance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10624,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "People's Liberation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10072,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Kimant Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9675,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Sidama People's Unity Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8782,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Sidama Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8310,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Mocha Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7962,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7919,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Oromo Liberation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7393,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Medrek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6363,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Wolaita National Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6313,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Gambela People's Liberation Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5736,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Ogaden National Liberation Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5634,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Kaffa People's Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4758,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Kaffa Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4694,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Raya Rayuma Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4205,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Benshangul People's Freedom Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2789,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Wolene People's Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2579,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Argoba Nationality Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2546,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Donga People's Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2114,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian National Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1646,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Harari Democratic Organization",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 258,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Western Somali Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 68,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 596314,
+     "share": 1.77,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Prosperity Party finished first with 457 of 547 seats on 89.2% of the vote. Turnout 89.1%.",
+   "seatLeader": "Prosperity Party",
+   "caveat": "Voting in Harari, SNNPR and Somali was delayed to September, the Oromo Federalist Congress boycotted, and the US State Department said the process was not free or fair for all Ethiopians.",
+   "unfree": null
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "legislative",
+   "date": "1 June 2026",
+   "era": "prosperity",
+   "totalSeats": 547,
+   "majoritySeats": 274,
+   "turnout": 95.7,
+   "parties": [
+    {
+     "name": "Prosperity Party",
+     "leader": null,
+     "seats": 438,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ethiopian Citizens for Social Justice",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Movement of Amhara",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Amhara Democratic Force Movement",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Medrek",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Equality Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Coalition for Unity and Democracy",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Afar People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Argoba Nationality Democratic Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gedeo People's Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gumuz National Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Generation Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ogaden National Liberation Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peace for Ethiopia Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Somali Federalist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Unity for Democracy and Justice",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Wolaita People's Democratic Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Prosperity Party finished first with 438 of 547 seats. Turnout 95.7%.",
+   "seatLeader": "Prosperity Party",
+   "caveat": "Voting did not take place in Tigray or in parts of Amhara and Oromia because of conflict, leaving 61 of 547 seats vacant.",
+   "unfree": null
+  }
+ ]
+}

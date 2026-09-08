@@ -31,6 +31,15 @@ DUPLICATE HEADER NAMES. `W/L/T`, `PF`, `PA` and `H/A` each appear TWICE in the
 header row; the first is the game value and the second a season-to-date
 restatement. This reads the FIRST deliberately and asserts the duplicate set has
 not changed.
+
+REST ADJUSTMENT. Before each season's rows are written, `rest_adjust.adjust()`
+(scripts/nfl/rest_adjust.py) is applied to them. It adds `model.pH_rest` and
+`rest: {home, away}` to any row where a favoured side is starting a QB other
+than that team-season's primary starter in the final two weeks of the regular
+season, and recomputes `surprise` from the adjusted probability there.
+`model.pH` and `model_brier` are never touched; that column stays Elo. See the
+module docstring there for the measurement behind the 140 Elo-point penalty
+and the exact flagging rule.
 """
 import datetime as _dt
 import io
@@ -41,6 +50,8 @@ import sys
 from collections import defaultdict
 
 import openpyxl
+
+import rest_adjust
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = os.path.join(os.path.expanduser("~"), "OneDrive", "Excel Files", "NFL_all.xlsx")
@@ -399,7 +410,17 @@ def main():
     print("games with unusable probability (excluded from scoring): %d" % excluded_prob)
 
     os.makedirs(OUTDIR, exist_ok=True)
+    # REST ADJUSTMENT. Elo (model.pH) is scored and printed exactly as read
+    # from the workbook. rest_adjust.adjust() only ADDS model.pH_rest + rest{}
+    # on rows where a side is favoured and starting a QB other than that
+    # team-season's primary starter in the final two weeks of the regular
+    # season, and recomputes `surprise` from it there. See
+    # scripts/nfl/rest_adjust.py for the full rule and the measurement behind
+    # it. Applied per season, on the same rows that get written to disk, so
+    # the upsets board built below (which reads `surprise` off `allg`) picks
+    # up the adjustment for free.
     for season, rows in by_season.items():
+        rest_adjust.adjust(rows)
         rows.sort(key=lambda r: (r["date"] or "", r["game_id"]))
         json.dump({"season": season, "games": rows},
                   io.open(os.path.join(OUTDIR, "season-%d.json" % season), "w",

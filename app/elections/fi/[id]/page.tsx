@@ -1,0 +1,81 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import {
+  fiElectionById,
+  fiLegNeighbours,
+  fiPresNeighbours,
+  fiLegEraOf,
+  fiPresEraOf,
+  fiPartyColor,
+  fiFmtInt,
+  fiFmtPct,
+} from "@/lib/fiElections";
+import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import LegElectionDetail from "../../LegDetailShared";
+import PresElectionDetail from "../../PresDetailShared";
+
+export const dynamicParams = true;
+export const revalidate = 604800; // elections are immutable history: prerender none, render + cache on demand (build cost)
+
+export function generateStaticParams() {
+  return []; // ISR: no build-time prerender; ids render on demand
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const e = fiElectionById(id);
+  if (!e) return {};
+  const title = e.kind === "presidential" ? `${e.label} Finnish Presidential Election` : `${e.label} Finnish Parliamentary Election`;
+  const path = `/elections/fi/${e.id}`;
+  return {
+    title,
+    description: e.summary,
+    alternates: { canonical: path },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
+  };
+}
+
+export default async function FiElectionDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const e = fiElectionById(id);
+  if (!e) notFound();
+  if (e.kind === "presidential") {
+    const { prev, next } = fiPresNeighbours(e.id);
+    return (
+      <PresElectionDetail
+        e={e}
+        era={fiPresEraOf(e.era)}
+        prev={prev}
+        next={next}
+        cfg={{
+          hubHref: "/elections/fi",
+          hubName: "Finland",
+          headingSuffix: "Finnish Presidential Election",
+          eraAnchorPrefix: "pres-era-",
+          colorOf: fiPartyColor,
+          fmtInt: fiFmtInt,
+          fmtPct: fiFmtPct,
+        }}
+      />
+    );
+  }
+  const { prev, next } = fiLegNeighbours(e.id);
+  return (
+    <LegElectionDetail
+      e={e}
+      era={fiLegEraOf(e.era)}
+      prev={prev}
+      next={next}
+      cfg={{
+        hubHref: "/elections/fi",
+        hubName: "Finland",
+        headingSuffix: "Finnish Parliamentary Election",
+        roleLabel: "Prime Minister",
+        chamberFallback: "the Eduskunta",
+        colorOf: fiPartyColor,
+        fmtInt: fiFmtInt,
+        fmtPct: fiFmtPct,
+      }}
+    />
+  );
+}

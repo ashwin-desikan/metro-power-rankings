@@ -6,6 +6,12 @@ import HubNav from "@/app/teams/HubNav";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { SITE_NAME } from "@/lib/seo";
 import { resolveTeamLink } from "@/lib/teamLinks";
+import { getAllNationalTeamSlugs } from "@/lib/international";
+import { getAllCricketTeams } from "@/lib/cricket";
+import { getAllRugbyTeams } from "@/lib/rugbyUnion";
+import { getAllBasketballNations } from "@/lib/basketball";
+import { getAllBaseballTeams } from "@/lib/baseball";
+import { getWWCNations } from "@/lib/wnational";
 import HeartbreakBoard, { type BoardRow } from "./HeartbreakBoard";
 
 import { SectionHead } from "@/app/_shared/SectionHead";
@@ -153,6 +159,38 @@ function teamHref(sport: string, name: string): string | undefined {
 
 const NATIONS_GROUP = "National teams";
 
+/**
+ * A national team's page, per sport. The engine names football nations from
+ * the appearances slug (`slug.replace("-", " ").title()`), so the slug is
+ * recoverable and checked against the index before it is linked; every other
+ * sport is keyed by the display name in the ledger the engine read, so the
+ * same file gives the slug. A team with no page (a Euros-only women's side,
+ * a cricket XI) keeps its name and no link, the club rule.
+ */
+async function nationHrefResolver(): Promise<(sport: string, name: string) => string | undefined> {
+  const football = new Set(getAllNationalTeamSlugs());
+  const byName = (rows: { name: string; slug: string }[]) => new Map(rows.map((r) => [r.name, r.slug]));
+  const [cricket, rugby, basketball] = await Promise.all([
+    getAllCricketTeams(), getAllRugbyTeams(), getAllBasketballNations(),
+  ]);
+  const maps: Record<string, [Map<string, string>, string]> = {
+    Cricket: [byName(cricket), "/teams/cricket/"],
+    Rugby: [byName(rugby), "/teams/rugby-union/"],
+    Basketball: [byName(basketball), "/teams/basketball/"],
+    Baseball: [byName(getAllBaseballTeams()), "/teams/baseball/"],
+    "Women's football": [byName(getWWCNations()), "/teams/national/womens-world-cup/"],
+  };
+  return (sport, name) => {
+    if (sport === "Football") {
+      const slug = name.toLowerCase().replace(/\s+/g, "-");
+      return football.has(slug) ? `/teams/national/${slug}` : undefined;
+    }
+    const m = maps[sport];
+    const slug = m?.[0].get(name);
+    return m && slug ? `${m[1]}${slug}` : undefined;
+  };
+}
+
 function longingText(c: ClubRow): string {
   if (!c.longing.length) return c.last_won ? `won ${c.last_won}` : "never won it";
   const l = c.longing[0];
@@ -175,8 +213,9 @@ function Th({ children }: { children: React.ReactNode }) {
   return <th className="py-2 px-2 border-b" style={BORD}>{children}</th>;
 }
 
-export default function HeartbreakPage() {
+export default async function HeartbreakPage() {
   const data = loadHeartbreak();
+  const nationHref = await nationHrefResolver();
   // The QUADRANT cards below still take the scoring clubs only — a quadrant is
   // a shape of suffering and a club with none has no place in one. The BOARD
   // takes everything, including the 0.0s. See the note in HeartbreakBoard.
@@ -210,7 +249,7 @@ export default function HeartbreakPage() {
       rank: 0,
       kind: "nation",
       name: n.nation,
-      href: undefined,
+      href: nationHref(n.sport, n.nation),
       sport: n.sport,
       sportGroup: NATIONS_GROUP,
       nationSports: sports,
@@ -278,7 +317,10 @@ export default function HeartbreakPage() {
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-10">
         <Stat v={board[0]?.name ?? "–"} k="Most heartbroken" />
-        <Stat v={String(data.clubs.length)} k="Clubs scored" />
+        <Stat
+          v={boardRows.length.toLocaleString("en-GB")}
+          k={`Teams scored: ${data.clubs.length.toLocaleString("en-GB")} clubs, ${data.nations.length} national`}
+        />
         <Stat v={data.never_winners[0] ? `${data.never_winners[0].finals_lost} finals` : "–"} k={`Never won: ${data.never_winners[0]?.name ?? ""}`} />
         <Stat v={parade[0] ? `${parade[0].years}y` : "–"} k={`Longest parade drought: ${parade[0]?.metro ?? ""}`} />
       </div>

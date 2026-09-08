@@ -1,0 +1,714 @@
+{
+ "meta": {
+  "title": "Vietnamese National Assembly Elections",
+  "sources": [
+   "Wikipedia: Vietnamese and North Vietnamese National Assembly election articles 1946-2026 (results tables and infoboxes)",
+   "Dieter Nohlen, Florian Grotz and Christof Hartmann, Elections in Asia: A data handbook, Volume II (2001), as cited there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "eras": [
+  {
+   "key": "founding",
+   "label": "The founding assembly",
+   "span": "1946",
+   "blurb": "Ho Chi Minh's Democratic Republic of Vietnam held its first National Assembly election on 6 January 1946 in the areas it controlled, and five parties won seats: the Indochinese Communist Party took the most, followed by the Democratic Party, the Socialist Party, the Vietnam Nationalist Party (Việt Nam Quốc Dân Đảng) and the Revolutionary League. The Viet Minh ran the election and the ballot was not secret, and a further seventy seats went to the Nationalist Party and the Revolutionary League by pre-election agreement rather than by vote."
+  },
+  {
+   "key": "oneList",
+   "label": "One list, one front",
+   "span": "1960-1987",
+   "blurb": "From 1960 the Vietnamese Fatherland Front, the Communist Party's umbrella organisation, was the only body allowed to nominate candidates, and it took every seat at every election, first in North Vietnam alone and then, from the reunification vote of 1976, across the whole country. The 1976 assembly seated 249 members elected in the former North and 243 in the former South under the same single list."
+  },
+  {
+   "key": "doiMoi",
+   "label": "Đổi Mới opens a narrow door",
+   "span": "1992-2011",
+   "blurb": "Non-party and independent candidates were allowed to stand for the first time in 1992, six years into the Đổi Mới economic reforms, though every candidate still had to be nominated through the Fatherland Front. Independents and non-party members won a few dozen seats a cycle at most, and from 2011 a candidate could nominate themselves rather than be put forward by an organisation, though officials cut the self-nominated field hard before it reached the ballot."
+  },
+  {
+   "key": "current",
+   "label": "Self-nomination on a vetted field",
+   "span": "2016-",
+   "blurb": "The ballot has counted self-nominated candidates as their own line since 2016, when 11 stood and 2 won; by 2026 only 5 of 864 candidates were self-nominated. The Communist Party has not fallen below 96% of the seats in any of these elections, and the field it faces is set by the Fatherland Front before campaigning ever begins."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "1946",
+   "era": "founding",
+   "totalSeats": 403,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Indochinese Communist Party",
+     "leader": "Ho Chi Minh",
+     "seats": 182,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Dương Đức Hiền",
+     "seats": 45,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": "Phan Tư Nghĩa",
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Việt Nam Quốc Dân Đảng",
+     "leader": "Vũ Hồng Khanh",
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary League",
+     "leader": "Nguyễn Hải Thần",
+     "seats": 22,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Indochinese Communist Party finished first with 182 of 403 seats.",
+   "seatLeader": "Indochinese Communist Party",
+   "caveat": "The Viet Minh ran the election, the ballot was not secret, and a further seventy seats went to the Vietnam Nationalist Party and the Revolutionary League by pre-election agreement rather than by vote.",
+   "unfree": null
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "kind": "legislative",
+   "date": "8 May 1960",
+   "era": "oneList",
+   "totalSeats": 421,
+   "majoritySeats": null,
+   "turnout": 99.9,
+   "parties": [
+    {
+     "name": "Vietnamese Fatherland Front",
+     "leader": null,
+     "seats": 362,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reserved seats",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Vietnamese Fatherland Front finished first with 362 of 421 seats. Turnout 99.9%.",
+   "seatLeader": "Vietnamese Fatherland Front",
+   "caveat": "The Vietnamese Fatherland Front was the only organisation allowed to nominate candidates, and it took every seat at every election of the period.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "26 April 1964",
+   "era": "oneList",
+   "totalSeats": 366,
+   "majoritySeats": null,
+   "turnout": 98.0,
+   "parties": [
+    {
+     "name": "Vietnamese Fatherland Front",
+     "leader": null,
+     "seats": 366,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Vietnamese Fatherland Front finished first with 366 of 366 seats. Turnout 98.0%.",
+   "seatLeader": "Vietnamese Fatherland Front",
+   "caveat": "The Vietnamese Fatherland Front was the only organisation allowed to nominate candidates, and it took every seat at every election of the period.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "11 April 1971",
+   "era": "oneList",
+   "totalSeats": 420,
+   "majoritySeats": null,
+   "turnout": 98.9,
+   "parties": [
+    {
+     "name": "Vietnamese Fatherland Front",
+     "leader": null,
+     "seats": 420,
+     "seatChange": 54,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Vietnamese Fatherland Front finished first with 420 of 420 seats. Turnout 98.9%.",
+   "seatLeader": "Vietnamese Fatherland Front",
+   "caveat": "The Vietnamese Fatherland Front was the only organisation allowed to nominate candidates, and it took every seat at every election of the period.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "kind": "legislative",
+   "date": "6 April 1975",
+   "era": "oneList",
+   "totalSeats": 424,
+   "majoritySeats": null,
+   "turnout": 98.26,
+   "parties": [
+    {
+     "name": "Vietnamese Fatherland Front",
+     "leader": null,
+     "seats": 424,
+     "seatChange": 4,
+     "votes": 10561364,
+     "share": 100.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Vietnamese Fatherland Front finished first with 424 of 424 seats on 100.0% of the vote. Turnout 98.3%.",
+   "seatLeader": "Vietnamese Fatherland Front",
+   "caveat": "The Vietnamese Fatherland Front was the only organisation allowed to nominate candidates, and it took every seat at every election of the period.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "25 April 1976",
+   "era": "oneList",
+   "totalSeats": 492,
+   "majoritySeats": null,
+   "turnout": 98.77,
+   "parties": [
+    {
+     "name": "Workers' Party of Vietnam and other groups",
+     "leader": null,
+     "seats": 249,
+     "seatChange": null,
+     "votes": 22895611,
+     "share": 100.0,
+     "swing": null
+    },
+    {
+     "name": "National Liberation Front–Vietnam Alliance of National, Democratic and Peaceful Forces",
+     "leader": null,
+     "seats": 243,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Workers' Party of Vietnam and other groups finished first with 249 of 492 seats on 100.0% of the vote. Turnout 98.8%.",
+   "seatLeader": "Workers' Party of Vietnam and other groups",
+   "caveat": "The Vietnamese Fatherland Front was the only organisation allowed to nominate candidates, and it took every seat at every election of the period.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "26 April 1981",
+   "era": "oneList",
+   "totalSeats": 496,
+   "majoritySeats": null,
+   "turnout": 97.96,
+   "parties": [
+    {
+     "name": "Vietnamese Fatherland Front",
+     "leader": null,
+     "seats": 496,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Vietnamese Fatherland Front finished first with 496 of 496 seats. Turnout 98.0%.",
+   "seatLeader": "Vietnamese Fatherland Front",
+   "caveat": "The Vietnamese Fatherland Front was the only organisation allowed to nominate candidates, and it took every seat at every election of the period.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "legislative",
+   "date": "19 April 1987",
+   "era": "oneList",
+   "totalSeats": 496,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Vietnamese Fatherland Front",
+     "leader": null,
+     "seats": 496,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Vietnamese Fatherland Front finished first with 496 of 496 seats.",
+   "seatLeader": "Vietnamese Fatherland Front",
+   "caveat": "The Vietnamese Fatherland Front was the only organisation allowed to nominate candidates, and it took every seat at every election of the period.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "19 July 1992",
+   "era": "doiMoi",
+   "totalSeats": 395,
+   "majoritySeats": 198,
+   "turnout": 99.12,
+   "parties": [
+    {
+     "name": "Communist Party of Vietnam",
+     "leader": null,
+     "seats": 362,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Võ Văn Kiệt",
+    "party": "Communist Party"
+   },
+   "pmAfter": {
+    "name": "Võ Văn Kiệt",
+    "party": "Communist Party"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Vietnam finished first with 362 of 395 seats. Turnout 99.1%. Võ Văn Kiệt stayed in office.",
+   "seatLeader": "Communist Party of Vietnam",
+   "caveat": "Every candidate, party member or not, still had to be nominated through the Communist-led Fatherland Front, and non-party and independent candidates never took more than a few dozen of several hundred seats.",
+   "unfree": null
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "20 July 1997",
+   "era": "doiMoi",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 99.59,
+   "parties": [
+    {
+     "name": "Communist Party of Vietnam",
+     "leader": null,
+     "seats": 384,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Non-party members",
+     "leader": null,
+     "seats": 63,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Võ Văn Kiệt",
+    "party": "Communist Party"
+   },
+   "pmAfter": {
+    "name": "Phan Văn Khải",
+    "party": "Communist Party"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Vietnam finished first with 384 of 450 seats. Turnout 99.6%. Phan Văn Khải replaced Võ Văn Kiệt.",
+   "seatLeader": "Communist Party of Vietnam",
+   "caveat": "Every candidate, party member or not, still had to be nominated through the Communist-led Fatherland Front, and non-party and independent candidates never took more than a few dozen of several hundred seats.",
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "19 May 2002",
+   "era": "doiMoi",
+   "totalSeats": 498,
+   "majoritySeats": 250,
+   "turnout": 98.85,
+   "parties": [
+    {
+     "name": "Communist Party of Vietnam",
+     "leader": null,
+     "seats": 447,
+     "seatChange": 63,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Non-party members",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -12,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Phan Văn Khải",
+    "party": "Communist Party"
+   },
+   "pmAfter": {
+    "name": "Phan Văn Khải",
+    "party": "Communist Party"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Vietnam finished first with 447 of 498 seats. Turnout 98.8%. Phan Văn Khải stayed in office.",
+   "seatLeader": "Communist Party of Vietnam",
+   "caveat": "Every candidate, party member or not, still had to be nominated through the Communist-led Fatherland Front, and non-party and independent candidates never took more than a few dozen of several hundred seats.",
+   "unfree": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "20 May 2007",
+   "era": "doiMoi",
+   "totalSeats": 493,
+   "majoritySeats": 247,
+   "turnout": 99.64,
+   "parties": [
+    {
+     "name": "Communist Party of Vietnam",
+     "leader": null,
+     "seats": 450,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Non-party members",
+     "leader": null,
+     "seats": 42,
+     "seatChange": -9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nguyễn Tấn Dũng",
+    "party": "Communist Party"
+   },
+   "pmAfter": {
+    "name": "Nguyễn Tấn Dũng",
+    "party": "Communist Party"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Vietnam finished first with 450 of 493 seats. Turnout 99.6%. Nguyễn Tấn Dũng stayed in office.",
+   "seatLeader": "Communist Party of Vietnam",
+   "caveat": "Every candidate, party member or not, still had to be nominated through the Communist-led Fatherland Front, and non-party and independent candidates never took more than a few dozen of several hundred seats.",
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "22 May 2011",
+   "era": "doiMoi",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 99.51,
+   "parties": [
+    {
+     "name": "Communist Party of Vietnam",
+     "leader": null,
+     "seats": 454,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Non-party members",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nguyễn Tấn Dũng",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Nguyễn Tấn Dũng",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Vietnam finished first with 454 of 500 seats. Turnout 99.5%. Nguyễn Tấn Dũng stayed in office.",
+   "seatLeader": "Communist Party of Vietnam",
+   "caveat": "82 people applied to run as self-nominated candidates; Fatherland Front officials allowed 15 onto the ballot and 4 were elected, while several pro-democracy figures who were refused approval were later jailed.",
+   "unfree": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "22 May 2016",
+   "era": "current",
+   "totalSeats": 496,
+   "majoritySeats": 249,
+   "turnout": 99.35,
+   "parties": [
+    {
+     "name": "Communist Party of Vietnam",
+     "leader": null,
+     "seats": 475,
+     "seatChange": 21,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents (organization-nominated)",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -23,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents (self-nominated)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nguyễn Xuân Phúc",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Nguyễn Xuân Phúc",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Vietnam finished first with 475 of 496 seats. Turnout 99.3%. Nguyễn Xuân Phúc stayed in office.",
+   "seatLeader": "Communist Party of Vietnam",
+   "caveat": "Self-nominated candidates reach the ballot only after the Fatherland Front's own vetting rounds cut their numbers hard, and the Communist Party has kept well over 95% of the seats at every election since.",
+   "unfree": null
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "23 May 2021",
+   "era": "current",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 99.6,
+   "parties": [
+    {
+     "name": "Communist Party of Vietnam",
+     "leader": null,
+     "seats": 485,
+     "seatChange": 10,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Phạm Minh Chính",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Phạm Minh Chính",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Vietnam finished first with 485 of 500 seats. Turnout 99.6%. Phạm Minh Chính stayed in office.",
+   "seatLeader": "Communist Party of Vietnam",
+   "caveat": "Self-nominated candidates reach the ballot only after the Fatherland Front's own vetting rounds cut their numbers hard, and the Communist Party has kept well over 95% of the seats at every election since.",
+   "unfree": null
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "legislative",
+   "date": "15 March 2026",
+   "era": "current",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 99.7,
+   "parties": [
+    {
+     "name": "Communist Party of Vietnam",
+     "leader": null,
+     "seats": 482,
+     "seatChange": -3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Phạm Minh Chính",
+    "party": "Communist Party"
+   },
+   "pmAfter": {
+    "name": "Lê Minh Hưng",
+    "party": "Communist Party"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Vietnam finished first with 482 of 500 seats. Turnout 99.7%. Lê Minh Hưng replaced Phạm Minh Chính.",
+   "seatLeader": "Communist Party of Vietnam",
+   "caveat": "Nearly 93% of the 864 candidates for 500 seats were Communist Party members and only 5 were self-nominated; an independent journalist was arrested and beaten by police after criticising the election's legitimacy online.",
+   "unfree": null
+  }
+ ]
+}

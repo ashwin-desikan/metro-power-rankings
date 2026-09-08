@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MONO, TH, THR } from "@/app/predictions/_shared/ui";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { TableScroll } from "@/app/_shared/TableScroll";
+import type { NextConfidence } from "@/lib/electionHubsMeta";
 
 // The /elections landing page's "Hubs by region" directory. Client-side
 // (sortable headers, region filter chips) receiving plain, fully-computed
@@ -32,7 +33,7 @@ export type DirRow = {
   lastYear: number | null;
   next: string;
   nextDate: string | null;
-  confidence: "confirmed" | "expected" | "unscheduled";
+  confidence: NextConfidence;
   leader: { name: string; title: string; href: string } | null;
   contests: number | null;
   /** The country power index rank (ascending = more powerful; the Countries
@@ -128,6 +129,7 @@ function compareRows(a: DirRow, b: DirRow, key: SortKey, dir: SortDir): number {
 function badgeFor(confidence: DirRow["confidence"]): { label: string; color: string } {
   if (confidence === "confirmed") return { label: "Set", color: "#4ECDC4" };
   if (confidence === "expected") return { label: "Term running", color: "var(--text-dim)" };
+  if (confidence === "dissolved") return { label: "Dissolved", color: "var(--text-dim)" };
   return { label: "No date", color: "var(--text-dim)" };
 }
 

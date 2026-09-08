@@ -1,0 +1,5041 @@
+{
+ "meta": {
+  "title": "Venezuelan Elections",
+  "sources": [
+   "Wikipedia: Venezuelan presidential and general election articles 1936-2025",
+   "Consejo Nacional Electoral (CNE) figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "presEras": [
+  {
+   "key": "succession",
+   "label": "The Gomez succession and the trienio",
+   "span": "1936-1948",
+   "blurb": "Juan Vicente Gomez ruled Venezuela for twenty-seven years and died in office in December 1935. Congress chose his successors in 1936 and 1941, Eleazar Lopez Contreras and then Isaias Medina Angarita, in indirect votes with no popular ballot. A 1945 coup brought Democratic Action to power, and 1947 was, in the article's own words, the first direct presidential election in Venezuelan history and the first free regular election since independence in 1830; Romulo Gallegos won it with 74% before a 1948 coup ended the three-year period known as the trienio."
+  },
+  {
+   "key": "puntofijo",
+   "label": "Punto Fijo",
+   "span": "1958-1993",
+   "blurb": "The dictatorship of Marcos Perez Jimenez, whose own 1952 plebiscite is not in the source used here, fell in January 1958. The Punto Fijo pact that followed put Democratic Action and Copei in power for every election through 1988, and 1993 broke that duopoly outright: Rafael Caldera won the presidency outside either party at the head of a coalition of seventeen smaller ones, the first time since the pact that neither traditional party's candidate had prevailed."
+  },
+  {
+   "key": "chavez",
+   "label": "The Chavez era",
+   "span": "1998-2012",
+   "blurb": "Hugo Chavez, a former coup leader, won the presidency in 1998 and ended forty years of two-party rule outright. He was re-elected in 2000 under a newly adopted constitution, survived a 2004 recall referendum not tracked in this series, and won again in 2006 and 2012, the last of these his narrowest margin; he died two months into that fourth term."
+  },
+  {
+   "key": "maduro",
+   "label": "The Maduro era",
+   "span": "2013-2025",
+   "blurb": "Nicolas Maduro, Chavez's chosen successor, won a special election in 2013 by under two points. His 2018 re-election was boycotted by the main opposition after leading candidates were barred from running, and in 2024 the National Electoral Council declared him the winner without ever publishing precinct-level tallies, while the opposition's own published tally sheets showed Edmundo Gonzalez comfortably ahead."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "succession",
+   "label": "The trienio Congress",
+   "span": "1947",
+   "blurb": "Congress under Gomez, Lopez Contreras and Medina Angarita is not in the source used here; the record opens with the Constituent Assembly and Chamber elected in 1947, in which Democratic Action's landslide gave it supermajorities of 83 of 110 Chamber seats and 38 of 46 in the Senate before the 1948 coup dissolved it."
+  },
+  {
+   "key": "puntofijo",
+   "label": "Punto Fijo",
+   "span": "1958-1993",
+   "blurb": "Democratic Action and Copei shared or alternated control of a bicameral Congress at every election from 1958 to 1988. In 1993 the Chamber and Senate were elected on separate ballots under a new mixed-member system for the first time, and the two traditional parties' combined seat share fell sharply as Causa R and Caldera's National Convergence broke through."
+  },
+  {
+   "key": "chavez",
+   "label": "The Chavez era",
+   "span": "2000-2010",
+   "blurb": "The 1999 constitution replaced the bicameral Congress with a unicameral National Assembly, first elected the same day as Chavez's 2000 re-election. The opposition boycotted the 2005 election over a disputed voting process, leaving Chavez's Fifth Republic Movement and its allies almost the entire chamber; by 2010 the vote was split almost evenly with the opposition Democratic Unity Roundtable, but the government's list still kept a comfortable majority of seats."
+  },
+  {
+   "key": "maduro",
+   "label": "The Maduro era",
+   "span": "2015-2025",
+   "blurb": "The Democratic Unity Roundtable won an outright majority in 2015, the only opposition win of the Chavista period on this page. The main opposition boycotted both the 2020 and 2025 elections, and the governing coalition's list took the overwhelming majority of seats in the National Assembly both times."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "presidential",
+   "date": "25 April 1936",
+   "era": "succession",
+   "turnout": 99.19,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Eleazar López Contreras",
+     "party": null,
+     "r1Votes": 121,
+     "r1Share": 99.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Néstor Luis Pérez",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.82,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Eleazar López Contreras",
+    "party": "(Provisional)"
+   },
+   "presAfter": {
+    "name": "Eleazar López Contreras",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Eleazar López Contreras won with 99.18% against Néstor Luis Pérez on 0.82%. Turnout 99.2%.",
+   "caveat": "Congress elected Lopez Contreras with 121 of 122 votes; there was no popular ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1941",
+   "label": "1941",
+   "year": 1941,
+   "kind": "presidential",
+   "date": "28 April 1941",
+   "era": "succession",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Isaías Medina Angarita",
+     "party": null,
+     "r1Votes": 120,
+     "r1Share": 87.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rómulo Gallegos",
+     "party": null,
+     "r1Votes": 13,
+     "r1Share": 9.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Diógenes Escalante",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 1.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Gerónimo Pietri",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Izquierdo",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.73,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Eleazar López Contreras",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Isaías Medina Angarita",
+    "party": "PDV"
+   },
+   "knownAs": null,
+   "summary": "Isaías Medina Angarita won with 87.59% against Rómulo Gallegos on 9.49%.",
+   "caveat": "Congress elected Medina Angarita with 120 of 137 votes; there was no popular ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1947",
+   "label": "1947",
+   "year": 1947,
+   "kind": "presidential",
+   "date": "14 December 1947",
+   "era": "succession",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rómulo Gallegos",
+     "party": "Democratic Action",
+     "r1Votes": 871752,
+     "r1Share": 74.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Caldera",
+     "party": "Copei",
+     "r1Votes": 262204,
+     "r1Share": 22.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gustavo Machado Morales",
+     "party": "Communist Party of Venezuela",
+     "r1Votes": 38587,
+     "r1Share": 3.29,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rómulo Betancourt",
+    "party": "Democratic Action"
+   },
+   "presAfter": {
+    "name": "Rómulo Gallegos",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Rómulo Gallegos won with 74.35% against Rafael Caldera on 22.36%.",
+   "caveat": "Congress, not voters, chose the president in 1936 and 1941; only 1947 was a direct popular election, and a coup ended its Congress the following year.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "presidential",
+   "date": "7 December 1958",
+   "era": "puntofijo",
+   "turnout": 93.42,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rómulo Betancourt",
+     "party": "Democratic Action",
+     "r1Votes": 1284092,
+     "r1Share": 49.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Wolfgang Larrazábal",
+     "party": "URD–PCV–MENI",
+     "r1Votes": 903479,
+     "r1Share": 34.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Caldera",
+     "party": "Copei–IR –PST",
+     "r1Votes": 423262,
+     "r1Share": 16.21,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Edgar Sanabria",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Rómulo Betancourt",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Rómulo Betancourt won with 49.18% against Wolfgang Larrazábal on 34.61%. Turnout 93.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "presidential",
+   "date": "1 December 1963",
+   "era": "puntofijo",
+   "turnout": 92.27,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Raúl Leoni",
+     "party": "Democratic Action",
+     "r1Votes": 957574,
+     "r1Share": 32.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Caldera",
+     "party": "Copei",
+     "r1Votes": 589177,
+     "r1Share": 20.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jóvito Villalba",
+     "party": "URD–PSV–MENI",
+     "r1Votes": 551266,
+     "r1Share": 18.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arturo Uslar Pietri",
+     "party": "Independents for the National Front",
+     "r1Votes": 469363,
+     "r1Share": 16.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Wolfgang Larrazábal",
+     "party": "Popular Democratic Front",
+     "r1Votes": 275325,
+     "r1Share": 9.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raúl Ramos Giménez",
+     "party": "Opposition Democratic Action",
+     "r1Votes": 66880,
+     "r1Share": 2.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Germán Borregales",
+     "party": "National Action Movement",
+     "r1Votes": 9292,
+     "r1Share": 0.32,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rómulo Betancourt",
+    "party": "Democratic Action"
+   },
+   "presAfter": {
+    "name": "Raúl Leoni",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Raúl Leoni won with 32.81% against Rafael Caldera on 20.19%. Turnout 92.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1968",
+   "label": "1968",
+   "year": 1968,
+   "kind": "presidential",
+   "date": "1 December 1968",
+   "era": "puntofijo",
+   "turnout": 96.73,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rafael Caldera",
+     "party": "Copei–MDI",
+     "r1Votes": 1083712,
+     "r1Share": 29.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gonzalo Barrios",
+     "party": "AD–API–AIR–OPIR",
+     "r1Votes": 1050806,
+     "r1Share": 28.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Ángel Burelli Rivas",
+     "party": "URD–FDP –FND –MENI",
+     "r1Votes": 826758,
+     "r1Share": 22.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Beltrán Prieto Figueroa",
+     "party": "MEP–PRIN –OPINA",
+     "r1Votes": 719461,
+     "r1Share": 19.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Hernández",
+     "party": "Democratic Socialist Party",
+     "r1Votes": 27336,
+     "r1Share": 0.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Germán Borregales",
+     "party": "National Action Movement",
+     "r1Votes": 12587,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Raúl Leoni",
+    "party": "Democratic Action"
+   },
+   "presAfter": {
+    "name": "Rafael Caldera",
+    "party": "Copei"
+   },
+   "knownAs": null,
+   "summary": "Rafael Caldera won with 29.13% against Gonzalo Barrios on 28.24%. Turnout 96.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "presidential",
+   "date": "9 December 1973",
+   "era": "puntofijo",
+   "turnout": 96.5,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Andrés Pérez",
+     "party": "AD–PRN",
+     "r1Votes": 2130743,
+     "r1Share": 48.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lorenzo Fernández",
+     "party": "Copei–FDP–MPI",
+     "r1Votes": 1605628,
+     "r1Share": 36.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jesús Paz Galarraga",
+     "party": "MEP–PCV",
+     "r1Votes": 221239,
+     "r1Share": 5.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Vicente Rangel",
+     "party": "Movement for Socialism",
+     "r1Votes": 186255,
+     "r1Share": 4.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jóvito Villalba",
+     "party": "Democratic Republican Union",
+     "r1Votes": 134478,
+     "r1Share": 3.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Ángel Burelli Rivas",
+     "party": "National Opinion",
+     "r1Votes": 33977,
+     "r1Share": 0.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Tinoco",
+     "party": "PNI–MD",
+     "r1Votes": 29399,
+     "r1Share": 0.67,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Martín Garcia",
+     "party": "Democratic Socialist Party",
+     "r1Votes": 11965,
+     "r1Share": 0.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Germán Borregales",
+     "party": "National Action Movement",
+     "r1Votes": 9331,
+     "r1Share": 0.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Segnini",
+     "party": "Democratic National Front",
+     "r1Votes": 6176,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raimundo Verde Roja",
+     "party": "Independent Democratic Movement",
+     "r1Votes": 3754,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Solano",
+     "party": "Emancipatory Force",
+     "r1Votes": 1736,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rafael Caldera",
+    "party": "Copei"
+   },
+   "presAfter": {
+    "name": "Carlos Andrés Pérez",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Carlos Andrés Pérez won with 48.71% against Lorenzo Fernández on 36.70%. Turnout 96.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "presidential",
+   "date": "3 December 1978",
+   "era": "puntofijo",
+   "turnout": 87.56,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Luis Herrera Campins",
+     "party": "Copei–URD–FDP –OPINA",
+     "r1Votes": 2487318,
+     "r1Share": 46.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Piñerúa Ordaz",
+     "party": "Democratic Action",
+     "r1Votes": 2309577,
+     "r1Share": 43.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Vicente Rangel",
+     "party": "MAS–VUC",
+     "r1Votes": 276083,
+     "r1Share": 5.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Diego Arria",
+     "party": "Common Cause–MDT",
+     "r1Votes": 90060,
+     "r1Share": 1.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Beltrán Prieto Figueroa",
+     "party": "People's Electoral Movement",
+     "r1Votes": 59747,
+     "r1Share": 1.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Américo Martín",
+     "party": "Revolutionary Left Movement",
+     "r1Votes": 52287,
+     "r1Share": 0.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Héctor Mujica",
+     "party": "Communist Party of Venezuela",
+     "r1Votes": 29305,
+     "r1Share": 0.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leonardo Montiel Ortega",
+     "party": "National Renewal Movement",
+     "r1Votes": 13918,
+     "r1Share": 0.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Gómez",
+     "party": "Nationalist Unity Front",
+     "r1Votes": 8337,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pablo Salas Castillo",
+     "party": "Nationalist Civic Crusade",
+     "r1Votes": 6081,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Andrés Pérez",
+    "party": "Democratic Action"
+   },
+   "presAfter": {
+    "name": "Luis Herrera Campins",
+    "party": "Copei"
+   },
+   "knownAs": null,
+   "summary": "Luis Herrera Campins won with 46.64% against Luis Piñerúa Ordaz on 43.31%. Turnout 87.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "presidential",
+   "date": "4 December 1983",
+   "era": "puntofijo",
+   "turnout": 87.75,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Jaime Lusinchi",
+     "party": "AD–URD–VOI",
+     "r1Votes": 3773731,
+     "r1Share": 56.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Caldera",
+     "party": "Copei–ICC–NGD –CIMA–FUN–MIO",
+     "r1Votes": 2298176,
+     "r1Share": 34.54,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Teodoro Petkoff",
+     "party": "MAS–MIR–IRE",
+     "r1Votes": 277498,
+     "r1Share": 4.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Vicente Rangel",
+     "party": "MEP–PCV–NA–LS–GAR–SI",
+     "r1Votes": 221918,
+     "r1Share": 3.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Olavarria",
+     "party": "National Opinion",
+     "r1Votes": 32254,
+     "r1Share": 0.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gonzalo Pérez Hernández",
+     "party": "National Integration Movement",
+     "r1Votes": 19528,
+     "r1Share": 0.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Rangel",
+     "party": "National Rescue",
+     "r1Votes": 8820,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrés Velásquez",
+     "party": "Radical Cause",
+     "r1Votes": 5917,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vinicio Romero",
+     "party": "National Confidence",
+     "r1Votes": 3236,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Solano",
+     "party": "Emancipatory Force",
+     "r1Votes": 1650,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Félix Díaz Otega",
+     "party": "New Order",
+     "r1Votes": 1610,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Iarra Riverol",
+     "party": "Venezuelan Nationalist Party",
+     "r1Votes": 1363,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adolfo Alcala",
+     "party": "Independent Voters",
+     "r1Votes": 1077,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "6,539",
+     "r1Votes": 0,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Luis Herrera Campins",
+    "party": "Copei"
+   },
+   "presAfter": {
+    "name": "Jaime Lusinchi",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Jaime Lusinchi won with 56.72% against Rafael Caldera on 34.54%. Turnout 87.8%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "presidential",
+   "date": "4 December 1988",
+   "era": "puntofijo",
+   "turnout": 81.85,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Andrés Pérez",
+     "party": "Democratic Action",
+     "r1Votes": 3879024,
+     "r1Share": 52.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Fernández",
+     "party": "Copei",
+     "r1Votes": 2963015,
+     "r1Share": 40.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Teodoro Petkoff",
+     "party": "MAS–MIR",
+     "r1Votes": 200479,
+     "r1Share": 2.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Godofredo Marín",
+     "party": "Authentic Renewal Organization",
+     "r1Votes": 62896,
+     "r1Share": 0.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ismenia Villalba",
+     "party": "Democratic Republican Union",
+     "r1Votes": 61684,
+     "r1Share": 0.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Edmundo Chirinos",
+     "party": "Communist Party of Venezuela",
+     "r1Votes": 59034,
+     "r1Share": 0.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Gessen",
+     "party": "New Democratic Generation",
+     "r1Votes": 27833,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrés Velásquez",
+     "party": "Radical Cause",
+     "r1Votes": 24561,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gastón Guisandes",
+     "party": "National Opinion",
+     "r1Votes": 10720,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "David Nieves",
+     "party": "Socialist League",
+     "r1Votes": 10065,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Olavarria",
+     "party": "New Republic",
+     "r1Votes": 9969,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Marini Urdaneta",
+     "party": "Nationalist Unity Front",
+     "r1Votes": 5821,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Hernández Campos",
+     "party": "Nationalist Civic Crusade",
+     "r1Votes": 2589,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Alfonso Godoy",
+     "party": "Social Power of the Nation",
+     "r1Votes": 2532,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leopoldo Díaz Bruzual",
+     "party": "New Alternative",
+     "r1Votes": 2528,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Peña Esclusa",
+     "party": "Venezuelan Labour Party",
+     "r1Votes": 2168,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rómulo Abrue Duarte",
+     "party": "Guiding Venezuelan Spiritual Force",
+     "r1Votes": 1513,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Rojas Contreras",
+     "party": "New Order",
+     "r1Votes": 1176,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hernández Escarrá Quintara",
+     "party": "Venezuelan National Movement",
+     "r1Votes": 1412,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Solano",
+     "party": "Emancipatory Force",
+     "r1Votes": 818,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Napoleón Barrios",
+     "party": "Movement for the Defence of Nationalist Ideas",
+     "r1Votes": 736,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arévalo Tovar Yajur",
+     "party": "Independent Nationalist Organisation",
+     "r1Votes": 432,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rómulo Yordi Carvajal",
+     "party": "People",
+     "r1Votes": 382,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jaime Lusinchi",
+    "party": "Democratic Action"
+   },
+   "presAfter": {
+    "name": "Carlos Andrés Pérez",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Carlos Andrés Pérez won with 52.91% against Eduardo Fernández on 40.42%. Turnout 81.8%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "presidential",
+   "date": "5 December 1993",
+   "era": "puntofijo",
+   "turnout": 60.16,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rafael Caldera",
+     "party": "National Convergence",
+     "r1Votes": 1710722,
+     "r1Share": 30.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Claudio Fermín",
+     "party": "Democratic Action",
+     "r1Votes": 1325287,
+     "r1Share": 23.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oswaldo Álvarez Paz",
+     "party": "Copei",
+     "r1Votes": 1276506,
+     "r1Share": 22.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrés Velásquez",
+     "party": "Radical Cause",
+     "r1Votes": 1232653,
+     "r1Share": 21.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Modesto Rivero",
+     "party": "Authentic Renewal Organization",
+     "r1Votes": 20814,
+     "r1Share": 0.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nelso Ojeda Valenzuela",
+     "party": "Independent Popular Force",
+     "r1Votes": 18690,
+     "r1Share": 0.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Alberto Machado",
+     "party": "Intelligence Revolution",
+     "r1Votes": 6851,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Bianco",
+     "party": "Community on the Move",
+     "r1Votes": 5590,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Antonio Cova",
+     "party": "New Democratic Generation",
+     "r1Votes": 4937,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gabriel Puerta Aponte",
+     "party": "Movement for Popular Democracy",
+     "r1Votes": 3746,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rhona Ottolina",
+     "party": "Formula 1",
+     "r1Votes": 3633,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Romuló Abreu Duarte",
+     "party": "Guiding Venezuelan Spiritual Force",
+     "r1Votes": 1554,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jesús Tang",
+     "party": "National Party",
+     "r1Votes": 1251,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Blas García Núñez",
+     "party": "Venezuelan Ecological Party",
+     "r1Votes": 1198,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juán Chacín",
+     "party": "Democratic Organised Power of Renewal Structure",
+     "r1Votes": 981,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carmen de González",
+     "party": "Nationalist Civic Crusade",
+     "r1Votes": 866,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Felix Díaz Ortega",
+     "party": "New Order",
+     "r1Votes": 780,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Temistocles Fernández",
+     "party": "Total Independent",
+     "r1Votes": 640,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ramón José Velásquez",
+    "party": "Democratic Action"
+   },
+   "presAfter": {
+    "name": "Rafael Caldera",
+    "party": "CVGC"
+   },
+   "knownAs": null,
+   "summary": "Rafael Caldera won with 30.46% against Claudio Fermín on 23.60%. Turnout 60.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "presidential",
+   "date": "6 December 1998",
+   "era": "chavez",
+   "turnout": 63.45,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Hugo Chávez",
+     "party": "Fifth Republic Movement",
+     "r1Votes": 3673685,
+     "r1Share": 56.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henrique Salas Römer",
+     "party": "Project Venezuela",
+     "r1Votes": 2613161,
+     "r1Share": 39.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Irene Sáez",
+     "party": "Integration, Representation and New Hope",
+     "r1Votes": 184568,
+     "r1Share": 2.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Alfaro Ucero",
+     "party": "Authentic Renewal Organization",
+     "r1Votes": 27586,
+     "r1Share": 0.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Rodríguez Fandeo",
+     "party": "Opening for National Participation",
+     "r1Votes": 19629,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfredo Ramos",
+     "party": "Radical Cause",
+     "r1Votes": 7275,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Radamés Muñoz León",
+     "party": "New Way",
+     "r1Votes": 2919,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oswaldo Sujú Raffo",
+     "party": "Sovereign Front",
+     "r1Votes": 2901,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Peña Esclusa",
+     "party": "Venezuelan Labour Party",
+     "r1Votes": 2424,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Domenico Tanzi",
+     "party": "Complementary Participation",
+     "r1Votes": 1900,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ignacio Quintana",
+     "party": "National Opinion",
+     "r1Votes": 1256,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rafael Caldera",
+    "party": "CVGC"
+   },
+   "presAfter": {
+    "name": "Hugo Chávez",
+    "party": "MVR"
+   },
+   "knownAs": null,
+   "summary": "Hugo Chávez won with 56.20% against Henrique Salas Römer on 39.97%. Turnout 63.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "presidential",
+   "date": "30 July 2000",
+   "era": "chavez",
+   "turnout": 56.63,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Hugo Chávez",
+     "party": "Fifth Republic Movement",
+     "r1Votes": 3757773,
+     "r1Share": 59.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Arias Cárdenas",
+     "party": "Radical Cause",
+     "r1Votes": 2359459,
+     "r1Share": 37.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Claudio Fermín",
+     "party": "National Encounter",
+     "r1Votes": 171346,
+     "r1Share": 2.72,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Hugo Chávez",
+    "party": "PSUV"
+   },
+   "presAfter": {
+    "name": "Hugo Chávez",
+    "party": "PSUV"
+   },
+   "knownAs": null,
+   "summary": "Hugo Chávez won with 59.76% against Francisco Arias Cárdenas on 37.52%. Turnout 56.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "presidential",
+   "date": "3 December 2006",
+   "era": "chavez",
+   "turnout": 74.69,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Hugo Chávez",
+     "party": "Fifth Republic Movement",
+     "r1Votes": 7309080,
+     "r1Share": 62.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Rosales",
+     "party": "A New Era",
+     "r1Votes": 4292466,
+     "r1Share": 36.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Reyes",
+     "party": "Joven",
+     "r1Votes": 4807,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Venezuela Da Silva",
+     "party": "New Social Order",
+     "r1Votes": 3980,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carmelo Romano Pérez",
+     "party": "Liberal United People Movement",
+     "r1Votes": 3735,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro José Suárez Luzardo",
+     "party": "Movimiento Sentir Nacional",
+     "r1Votes": 2956,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eudes Vera",
+     "party": "Independent",
+     "r1Votes": 2806,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carolina Contreras",
+     "party": "Independent",
+     "r1Votes": 2169,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Aranguren",
+     "party": "Movimiento Conciencia de País",
+     "r1Votes": 2064,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Tineo",
+     "party": "Venezuelan Third Millennium National Party",
+     "r1Votes": 1502,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yudith Salazar",
+     "party": "Hijos de la Patria",
+     "r1Votes": 1355,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ángel Yrigoyen",
+     "party": "Let Us Break Chains",
+     "r1Votes": 1316,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Homer Rodríguez",
+     "party": "Out of Love for Venezuela",
+     "r1Votes": 1123,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Isbelia León",
+     "party": "Strength and Peace Institution",
+     "r1Votes": 793,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Hugo Chávez",
+    "party": "MVR"
+   },
+   "presAfter": {
+    "name": "Hugo Chávez",
+    "party": "MVR"
+   },
+   "knownAs": null,
+   "summary": "Hugo Chávez won with 62.85% against Manuel Rosales on 36.91%. Turnout 74.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "presidential",
+   "date": "7 October 2012",
+   "era": "chavez",
+   "turnout": 80.2,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Hugo Chávez",
+     "party": "Great Patriotic Pole",
+     "r1Votes": 8191132,
+     "r1Share": 55.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henrique Capriles",
+     "party": "Democratic Unity Roundtable",
+     "r1Votes": 6591304,
+     "r1Share": 44.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Reina Sequera",
+     "party": "Workers' Power",
+     "r1Votes": 70567,
+     "r1Share": 0.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Reyes",
+     "party": "Authentic Renewal Organization",
+     "r1Votes": 8214,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "María Bolívar",
+     "party": "United Democratic Party for Peace",
+     "r1Votes": 7378,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Orlando Chirinos",
+     "party": "Party for Socialism and Liberty",
+     "r1Votes": 4144,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Hugo Chávez",
+    "party": "PSUV"
+   },
+   "presAfter": {
+    "name": "Hugo Chávez",
+    "party": "PSUV"
+   },
+   "knownAs": null,
+   "summary": "Hugo Chávez won with 55.07% against Henrique Capriles on 44.32%. Turnout 80.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "presidential",
+   "date": "14 April 2013",
+   "era": "maduro",
+   "turnout": 79.65,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nicolás Maduro",
+     "party": "Great Patriotic Pole",
+     "r1Votes": 7587579,
+     "r1Share": 50.62,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henrique Capriles",
+     "party": "Democratic Unity Roundtable",
+     "r1Votes": 7363980,
+     "r1Share": 49.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eusebio Mendez",
+     "party": "New Vision for my Country",
+     "r1Votes": 19498,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "María Bolívar",
+     "party": "United Democratic Party for Peace and Freedom",
+     "r1Votes": 13309,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Reina Sequera",
+     "party": "Worker's Party",
+     "r1Votes": 4241,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Julio Mora",
+     "party": "Democratic Unity Party",
+     "r1Votes": 1936,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nicolás Maduro (acting)",
+    "party": "PSUV"
+   },
+   "presAfter": {
+    "name": "Nicolás Maduro",
+    "party": "PSUV"
+   },
+   "knownAs": null,
+   "summary": "Nicolás Maduro won with 50.62% against Henrique Capriles on 49.12%. Turnout 79.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "20 May 2018",
+   "era": "maduro",
+   "turnout": 45.73,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nicolás Maduro",
+     "party": "United Socialist Party of Venezuela",
+     "r1Votes": 6248864,
+     "r1Share": 67.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henri Falcón",
+     "party": "Progressive Advance",
+     "r1Votes": 1927958,
+     "r1Share": 20.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Javier Bertucci",
+     "party": "Esperanza por El Cambio",
+     "r1Votes": 989761,
+     "r1Share": 10.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Reinaldo Quijada",
+     "party": "Popular Political Unit 89",
+     "r1Votes": 43194,
+     "r1Share": 0.47,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nicolás Maduro",
+    "party": "PSUV"
+   },
+   "presAfter": {
+    "name": "Nicolás Maduro",
+    "party": "PSUV"
+   },
+   "knownAs": null,
+   "summary": "Nicolás Maduro won with 67.85% against Henri Falcón on 20.93%. Turnout 45.7%.",
+   "caveat": "Leading opposition figures were barred from running and the main opposition parties boycotted the vote, which international observers widely declined to recognise.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "presidential",
+   "date": "28 July 2024",
+   "era": "maduro",
+   "turnout": 57.9,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nicolás Maduro",
+     "party": "PSUV",
+     "r1Votes": 6408844,
+     "r1Share": 51.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Edmundo González",
+     "party": "Independent",
+     "r1Votes": 5326104,
+     "r1Share": 43.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Eduardo Martínez",
+     "party": "Democratic Action",
+     "r1Votes": 152360,
+     "r1Share": 1.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Ecarri",
+     "party": "Pencil Alliance",
+     "r1Votes": 116421,
+     "r1Share": 0.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benjamín Rausseo",
+     "party": "National Democratic Confederation",
+     "r1Votes": 92903,
+     "r1Share": 0.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Brito",
+     "party": "Venezuela First",
+     "r1Votes": 84231,
+     "r1Share": 0.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Javier Bertucci",
+     "party": "Hope for Change",
+     "r1Votes": 64452,
+     "r1Share": 0.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Claudio Fermín",
+     "party": "Solutions for Venezuela",
+     "r1Votes": 40902,
+     "r1Share": 0.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enrique Márquez",
+     "party": "Centrados en la Gente",
+     "r1Votes": 29611,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Daniel Ceballos",
+     "party": "Country Renewal and Hope Assembly",
+     "r1Votes": 20056,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nicolás Maduro",
+    "party": "PSUV"
+   },
+   "presAfter": {
+    "name": "Nicolás Maduro (Disputed)",
+    "party": "PSUV"
+   },
+   "knownAs": null,
+   "summary": "Nicolás Maduro won with 51.95% against Edmundo González on 43.18%. Turnout 57.9%.",
+   "caveat": "The National Electoral Council declared Maduro the winner but never published tally sheets or precinct-level results; the opposition published tally sheets covering most polling stations that showed Gonzalez ahead.",
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "kind": "legislative",
+   "date": "14 December 1947",
+   "era": "succession",
+   "totalSeats": 110,
+   "majoritySeats": null,
+   "turnout": 72.13,
+   "parties": [
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 83,
+     "seatChange": null,
+     "votes": 838526,
+     "share": 70.84,
+     "swing": null
+    },
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 200695,
+     "share": 16.95,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 51427,
+     "share": 4.34,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Venezuela",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 43190,
+     "share": 3.65,
+     "swing": null
+    },
+    {
+     "name": "Republican Federal Union",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 39491,
+     "share": 3.34,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Party of the Proletariat (Communist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7068,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Tachira",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1300,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Venezuela",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1207,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Progressive Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 860,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Rómulo Betancourt",
+    "party": "Democratic Action"
+   },
+   "pmAfter": {
+    "name": "Rómulo Gallegos",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 83 of 110 seats on 70.8% of the vote. Turnout 72.1%. Rómulo Gallegos replaced Rómulo Betancourt.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "7 December 1958",
+   "era": "puntofijo",
+   "totalSeats": 132,
+   "majoritySeats": null,
+   "turnout": 93.42,
+   "parties": [
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": 1275973,
+     "share": 49.45,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": 690357,
+     "share": 26.76,
+     "swing": null
+    },
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 392305,
+     "share": 15.2,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Venezuela",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 160791,
+     "share": 6.23,
+     "swing": null
+    },
+    {
+     "name": "Republican Integration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19424,
+     "share": 0.75,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15476,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Independent National Electoral Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14908,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Venezuela",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10983,
+     "share": 0.43,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Edgar Sanabria",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Rómulo Betancourt",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 73 of 132 seats on 49.5% of the vote. Turnout 93.4%. Rómulo Betancourt replaced Edgar Sanabria.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "1 December 1963",
+   "era": "puntofijo",
+   "totalSeats": 179,
+   "majoritySeats": null,
+   "turnout": 92.27,
+   "parties": [
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": 936124,
+     "share": 32.78,
+     "swing": null
+    },
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": 595697,
+     "share": 20.86,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 497454,
+     "share": 17.42,
+     "swing": null
+    },
+    {
+     "name": "Independents for the National Front",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 381600,
+     "share": 13.36,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Front",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 274096,
+     "share": 9.6,
+     "swing": null
+    },
+    {
+     "name": "Opposition Democratic Action",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 93494,
+     "share": 3.27,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Venezuela",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 24670,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "Independent National Electoral Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 18510,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "National Action Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15746,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "National Authentic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14555,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Popular Electoral Crusade Group S",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4230,
+     "share": 0.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Rómulo Betancourt",
+    "party": "Democratic Action"
+   },
+   "pmAfter": {
+    "name": "Raúl Leoni",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 66 of 179 seats on 32.8% of the vote. Turnout 92.3%. Raúl Leoni replaced Rómulo Betancourt.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1968",
+   "label": "1968",
+   "year": 1968,
+   "kind": "legislative",
+   "date": "1 December 1968",
+   "era": "puntofijo",
+   "totalSeats": 214,
+   "majoritySeats": null,
+   "turnout": 96.73,
+   "parties": [
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": 939759,
+     "share": 25.55,
+     "swing": null
+    },
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": 883814,
+     "share": 24.03,
+     "swing": null
+    },
+    {
+     "name": "People's Electoral Movement",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 475909,
+     "share": 12.94,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Civic Crusade",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 402351,
+     "share": 10.94,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 340195,
+     "share": 9.25,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Front",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 194931,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Union for Progress",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 103591,
+     "share": 2.82,
+     "swing": null
+    },
+    {
+     "name": "Democratic National Front",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 96027,
+     "share": 2.61,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Party of Nationalist Integration",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 88509,
+     "share": 2.41,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 29920,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "National Action Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 24407,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18337,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Independent Popular Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18332,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Independent National Electoral Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13847,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Independent Action",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9154,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "National Opinion",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7339,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "18 other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31662,
+     "share": 0.86,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Raúl Leoni",
+    "party": "Democratic Action"
+   },
+   "pmAfter": {
+    "name": "Rafael Caldera",
+    "party": "Copei"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 66 of 214 seats on 25.6% of the vote. Turnout 96.7%. Rafael Caldera replaced Raúl Leoni.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "9 December 1973",
+   "era": "puntofijo",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": 96.5,
+   "parties": [
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 102,
+     "seatChange": null,
+     "votes": 1955439,
+     "share": 44.44,
+     "swing": null
+    },
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 64,
+     "seatChange": null,
+     "votes": 1330514,
+     "share": 30.24,
+     "swing": null
+    },
+    {
+     "name": "Movement for Socialism",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 232756,
+     "share": 5.29,
+     "swing": null
+    },
+    {
+     "name": "People's Electoral Movement",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 218192,
+     "share": 4.96,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Civic Crusade",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 189667,
+     "share": 4.31,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 140462,
+     "share": 3.19,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 54759,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Venezuela",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 52754,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Left Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44012,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "National Opinion",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 32751,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Integrationist National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 30618,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Progressive Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27528,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Unity Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15537,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "National Action Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12588,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12238,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Democratic National Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11313,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Popular Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8324,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "19 other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30313,
+     "share": 0.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Rafael Caldera",
+    "party": "Copei"
+   },
+   "pmAfter": {
+    "name": "Carlos Andrés Pérez",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 102 of 200 seats on 44.4% of the vote. Turnout 96.5%. Carlos Andrés Pérez replaced Rafael Caldera.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "legislative",
+   "date": "3 December 1978",
+   "era": "puntofijo",
+   "totalSeats": 199,
+   "majoritySeats": null,
+   "turnout": 87.56,
+   "parties": [
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 84,
+     "seatChange": null,
+     "votes": 2103004,
+     "share": 39.81,
+     "swing": null
+    },
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 88,
+     "seatChange": null,
+     "votes": 2096512,
+     "share": 39.68,
+     "swing": null
+    },
+    {
+     "name": "Movement for Socialism",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 325328,
+     "share": 6.16,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Left Movement",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 123915,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "People's Electoral Movement",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 117455,
+     "share": 2.22,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 88807,
+     "share": 1.68,
+     "swing": null
+    },
+    {
+     "name": "Common Cause",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 85432,
+     "share": 1.62,
+     "swing": null
+    },
+    {
+     "name": "National Integration Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 83700,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Venezuela",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 55168,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "Communist Unitarian Vanguard",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 46547,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "Socialist League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 30191,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "National Renewal Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26235,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Labour Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22966,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13697,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Unity Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12986,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Radical Cause",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12573,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Civic Crusade",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10906,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Action Group",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9034,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "National Opinion",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7961,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Independents for Community Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6719,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3753,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Carlos Andrés Pérez",
+    "party": "Democratic Action"
+   },
+   "pmAfter": {
+    "name": "Luis Herrera Campins",
+    "party": "Copei"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 88 of 199 seats on 39.7% of the vote. Turnout 87.6%. Luis Herrera Campins replaced Carlos Andrés Pérez.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "4 December 1983",
+   "era": "puntofijo",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": 87.75,
+   "parties": [
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 113,
+     "seatChange": null,
+     "votes": 3284166,
+     "share": 49.9,
+     "swing": null
+    },
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": 1887226,
+     "share": 28.68,
+     "swing": null
+    },
+    {
+     "name": "Movement for Socialism",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 377795,
+     "share": 5.74,
+     "swing": null
+    },
+    {
+     "name": "National Opinion",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 130022,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "People's Electoral Movement",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 129263,
+     "share": 1.96,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 125458,
+     "share": 1.91,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Venezuela",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 115162,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Left Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 103923,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "New Alternative",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 68729,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "Independents with Change",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 63822,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "National Integration Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 59870,
+     "share": 0.91,
+     "swing": null
+    },
+    {
+     "name": "Socialist League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 53506,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "Radical Cause",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35304,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "New Republic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29642,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Majoritarian Independent Committee",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18762,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "National Rescue",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15083,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Action Group",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15033,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Unity Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12262,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Generation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10288,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Organised Independent Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10020,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "29 other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35563,
+     "share": 0.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Luis Herrera Campins",
+    "party": "Copei"
+   },
+   "pmAfter": {
+    "name": "Jaime Lusinchi",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 113 of 200 seats on 49.9% of the vote. Turnout 87.8%. Jaime Lusinchi replaced Luis Herrera Campins.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "4 December 1988",
+   "era": "puntofijo",
+   "totalSeats": 201,
+   "majoritySeats": null,
+   "turnout": 81.85,
+   "parties": [
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 97,
+     "seatChange": null,
+     "votes": 3123790,
+     "share": 43.29,
+     "swing": null
+    },
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 67,
+     "seatChange": null,
+     "votes": 2247236,
+     "share": 31.14,
+     "swing": null
+    },
+    {
+     "name": "MAS–MIR",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 733421,
+     "share": 10.16,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Generation",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 236833,
+     "share": 3.28,
+     "swing": null
+    },
+    {
+     "name": "Radical Cause",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 117562,
+     "share": 1.63,
+     "swing": null
+    },
+    {
+     "name": "People's Electoral Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 116621,
+     "share": 1.62,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 103883,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "Formula 1",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 93228,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "Authentic Renewal Organization",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 92117,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Venezuela",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 70058,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "National Opinion",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 41984,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Socialist League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36394,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "National Integration Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33728,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "New Republic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24596,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Electoral Renewal Integration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18986,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14500,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "51 other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 111463,
+     "share": 1.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jaime Lusinchi",
+    "party": "Democratic Action"
+   },
+   "pmAfter": {
+    "name": "Carlos Andrés Pérez",
+    "party": "Democratic Action"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 97 of 201 seats on 43.3% of the vote. Turnout 81.8%. Carlos Andrés Pérez replaced Jaime Lusinchi.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "5 December 1993",
+   "era": "puntofijo",
+   "totalSeats": 203,
+   "majoritySeats": null,
+   "turnout": 60.16,
+   "parties": [
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 55,
+     "seatChange": -42,
+     "votes": 1099728,
+     "share": 23.34,
+     "swing": null
+    },
+    {
+     "name": "Copei",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -14,
+     "votes": 1065512,
+     "share": 22.62,
+     "swing": null
+    },
+    {
+     "name": "Radical Cause",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 37,
+     "votes": 974190,
+     "share": 20.68,
+     "swing": null
+    },
+    {
+     "name": "National Convergence",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 651918,
+     "share": 13.84,
+     "swing": null
+    },
+    {
+     "name": "Movement for Socialism",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 509068,
+     "share": 10.81,
+     "swing": null
+    },
+    {
+     "name": "Authentic Renewal Organization",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 41085,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "National Integration Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 29433,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "People's Electoral Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 27635,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 26299,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Venezuela",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 21180,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Generation",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -5,
+     "votes": 16680,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "National Opinion",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 13725,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Formula 1",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 13091,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Independent Popular Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12730,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Emerging People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12525,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Community Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10541,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Movement for Popular Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9680,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Nationalist United Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9333,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "PCI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8293,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "National Renewal Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8223,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Advanced Popular",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7754,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "GIRASOL",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6815,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "OCIM",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6685,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Renewal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5538,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "GP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5459,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Venezuelan Ecological Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5363,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "UVI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4853,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Active Democratic Nationalist Organisation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4842,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Socialist League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4063,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "MELI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3995,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Community on the Move",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3558,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3409,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3341,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "CARICUAO DECIDE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2957,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Common Sense",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2915,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "New Order",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2759,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "The People to Power",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2546,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "FT",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2516,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Factor",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2423,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "U",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2281,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "OI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2232,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2059,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Out of Love for Venezuela",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1999,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Social Project",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1986,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Organised Power of Renewal Structure",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1975,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "MACARIO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1962,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Integral Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1910,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "UO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1654,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "CUMANAGATOS",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1611,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Electoral Renewal Integration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1555,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "National Integration Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1495,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "FACTOR E",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1436,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Guiding Venezuelan Spiritual Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1412,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "MRM",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1377,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "ASI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1367,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Republican Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1229,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Independent Nationalist Organisation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1119,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "AGAIN",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1092,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "DE CHACAO 93",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 991,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "FIE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 988,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Union for Progress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 978,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "MAR",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 975,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Civic Crusade",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 970,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "IDEAL",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 944,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "MONCHO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 931,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "PND",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 929,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independent Action Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 914,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "NI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 909,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "UCII",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 883,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "MIPO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 855,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "CD",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 816,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "VO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 814,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Agricultural Action",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 800,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "M93",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 793,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "DCARA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 766,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "GIO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 755,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents with Change",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 719,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "DECISION COJEDENA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 719,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "TMSD",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 702,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "LIDER",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 669,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 629,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "LSN",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 621,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "FURIA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 613,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "UPC",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 548,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "DDP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 536,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Organised Independent Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 518,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "VCI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 506,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "MIAP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 496,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Authentic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 487,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "CPPP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 443,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "PUNI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 440,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "EREDE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 409,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "ACONA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 401,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "MDIPG",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 372,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "MOREPO 34",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 352,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "MRI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 351,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "DAR",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 344,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "EEF 94",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 331,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Majoritarian Independent Committee",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 319,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "MS",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 316,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "VIA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 313,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "ISA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 310,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "VIENE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 308,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Solidarity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 301,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "LVP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 299,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "MIDV",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 296,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "GRITO VECINAL",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 278,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "New Republic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 271,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "FIC",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 258,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Committee",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 251,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "MIL",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 247,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "AMIGOS DE ANZOATEC",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 240,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "PODER 7",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 237,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "PENSAMIENTO NACION",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 233,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "CRA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 226,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "CRA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 219,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "EPI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 218,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MIIDEA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 207,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "REPO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 203,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "CIPREA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 202,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MIRE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 199,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "GEVE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 198,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "GEIJM",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 196,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MNVI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 192,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "PINDD",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 191,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MAP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 188,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "RA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 179,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "GAP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 171,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "FIG",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 139,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "CIN",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 136,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "ORI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 129,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MDV",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 129,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "FUPSSB",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 122,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "PPIM",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 110,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MINERO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 102,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "ARDE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 101,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "SOL",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 99,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MPN",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 97,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "DCA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 95,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "LVY",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 85,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "New Time",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 82,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "VEA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 81,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "PEM",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 81,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "BP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 80,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MICA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 74,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "EEE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 74,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MAI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 69,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "PEIPP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 58,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MOPAIS",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MALU",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 55,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "FEG",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 52,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "CADEM",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "CEMI",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MEIAMA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MIPAYCA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "FOVE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "YIP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Apureño Independent Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "OIPNR",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MAICITO",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "OAP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "CIV",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "MIIDEA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "JL",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "AUV",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Republican Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ramón José Velásquez",
+    "party": "Democratic Action"
+   },
+   "pmAfter": {
+    "name": "Rafael Caldera",
+    "party": "CVGC"
+   },
+   "knownAs": null,
+   "summary": "Democratic Action finished first with 55 of 203 seats on 23.3% of the vote. Turnout 60.2%. Rafael Caldera replaced Ramón José Velásquez.",
+   "seatLeader": "Democratic Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "legislative",
+   "date": "30 July 2000",
+   "era": "chavez",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 56.63,
+   "parties": [
+    {
+     "name": "MVR",
+     "leader": "Hugo Chávez",
+     "seats": 92,
+     "seatChange": null,
+     "votes": null,
+     "share": 44.38,
+     "swing": null
+    },
+    {
+     "name": "Democratic Action",
+     "leader": "Henry Ramos Allup",
+     "seats": 33,
+     "seatChange": null,
+     "votes": null,
+     "share": 16.11,
+     "swing": null
+    },
+    {
+     "name": "PROVE",
+     "leader": "Henrique Salas Römer",
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.94,
+     "swing": null
+    },
+    {
+     "name": "COPEI",
+     "leader": "Luis Ignacio Planas",
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.1,
+     "swing": null
+    },
+    {
+     "name": "MAS",
+     "leader": "Felipe Mujica",
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.03,
+     "swing": null
+    },
+    {
+     "name": "LCR",
+     "leader": "Andrés Velásquez",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.41,
+     "swing": null
+    },
+    {
+     "name": "PJ",
+     "leader": "Henrique Capriles",
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.47,
+     "swing": null
+    },
+    {
+     "name": "PPT",
+     "leader": "José Albornoz",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.27,
+     "swing": null
+    },
+    {
+     "name": "UNT",
+     "leader": "Manuel Rosales",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Convergence",
+     "leader": "Eduardo Lapi",
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.07,
+     "swing": null
+    },
+    {
+     "name": "MIGATO",
+     "leader": "José Gregorio Briceño",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "PUAMA",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "MD",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Indigenous",
+     "leader": "–",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hugo Chávez",
+    "party": "PSUV"
+   },
+   "pmAfter": {
+    "name": "Hugo Chávez",
+    "party": "PSUV"
+   },
+   "knownAs": null,
+   "summary": "MVR finished first with 92 of 165 seats on 44.4% of the vote. Turnout 56.6%. Hugo Chávez stayed in office.",
+   "seatLeader": "MVR",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "4 December 2005",
+   "era": "chavez",
+   "totalSeats": 167,
+   "majoritySeats": 84,
+   "turnout": 25.26,
+   "parties": [
+    {
+     "name": "MVR and allies",
+     "leader": "Hugo Chávez",
+     "seats": 164,
+     "seatChange": null,
+     "votes": null,
+     "share": 85.49,
+     "swing": null
+    },
+    {
+     "name": "MUPI",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "UPPI",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "AMANSA",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "MVR and allies finished first with 164 of 167 seats on 85.5% of the vote. Turnout 25.3%.",
+   "seatLeader": "MVR and allies",
+   "caveat": "Five opposition parties withdrew days before the vote in a dispute over the count's integrity, leaving the governing Fifth Republic Movement and its allies almost the entire National Assembly.",
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "26 September 2010",
+   "era": "chavez",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 66.42,
+   "parties": [
+    {
+     "name": "PSUV",
+     "leader": "Diosdado Cabello",
+     "seats": 98,
+     "seatChange": null,
+     "votes": null,
+     "share": 48.13,
+     "swing": null
+    },
+    {
+     "name": "MUD",
+     "leader": "Ramón Guillermo Aveledo",
+     "seats": 65,
+     "seatChange": null,
+     "votes": null,
+     "share": 47.22,
+     "swing": null
+    },
+    {
+     "name": "PPT",
+     "leader": "José Albornoz",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "PSUV finished first with 98 of 165 seats on 48.1% of the vote. Turnout 66.4%.",
+   "seatLeader": "PSUV",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "6 December 2015",
+   "era": "maduro",
+   "totalSeats": 167,
+   "majoritySeats": 84,
+   "turnout": 74.04,
+   "parties": [
+    {
+     "name": "MUD",
+     "leader": "Henry Ramos Allup",
+     "seats": 112,
+     "seatChange": 47,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "GPPSB",
+     "leader": "Diosdado Cabello",
+     "seats": 55,
+     "seatChange": -43,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "MUD finished first with 112 of 167 seats. Turnout 74.0%.",
+   "seatLeader": "MUD",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "legislative",
+   "date": "6 December 2020",
+   "era": "maduro",
+   "totalSeats": 277,
+   "majoritySeats": 139,
+   "turnout": 30.46,
+   "parties": [
+    {
+     "name": "GPPSB",
+     "leader": "Jorge Rodríguez",
+     "seats": 256,
+     "seatChange": 204,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "AD (ad hoc)",
+     "leader": "José Bernabé Gutiérrez",
+     "seats": 11,
+     "seatChange": -14,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "EL CAMBIO",
+     "leader": "Javier Bertucci",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PV",
+     "leader": "Luis Parra",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "COPEI (ad hoc)",
+     "leader": "Miguel Salazar",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PCV",
+     "leader": "Óscar Figuera",
+     "seats": 1,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "AP",
+     "leader": "Henri Falcón",
+     "seats": 3,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "GPPSB finished first with 256 of 277 seats. Turnout 30.5%.",
+   "seatLeader": "GPPSB",
+   "caveat": "The main opposition coalition boycotted the election, which followed the Supreme Tribunal's replacement of several opposition parties' leaderships.",
+   "unfree": null
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "legislative",
+   "date": "25 May 2025",
+   "era": "maduro",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 42.66,
+   "parties": [
+    {
+     "name": "Great Patriotic Pole",
+     "leader": null,
+     "seats": 256,
+     "seatChange": 0,
+     "votes": 5024475,
+     "share": 83.54,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -7,
+     "votes": 361769,
+     "share": 6.02,
+     "swing": null
+    },
+    {
+     "name": "UNT–UNICA",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 304425,
+     "share": 5.06,
+     "swing": null
+    },
+    {
+     "name": "Neighborhood Force",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 141588,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "Pencil Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 181926,
+     "share": 3.02,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 0,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Indigenous seats",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Great Patriotic Pole finished first with 256 seats on 83.5% of the vote. Turnout 42.7%.",
+   "seatLeader": "Great Patriotic Pole",
+   "caveat": "Leading opposition figures called for a boycott following the disputed 2024 presidential election, and most of the opposition did not take part.",
+   "unfree": null
+  }
+ ]
+}

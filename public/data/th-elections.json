@@ -1,0 +1,4934 @@
+{
+ "meta": {
+  "title": "Thai General Elections",
+  "sources": [
+   "Wikipedia: Siamese and Thai general election articles 1933-2026 (results tables and infoboxes)",
+   "Election Commission of Thailand figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "eras": [
+  {
+   "key": "first",
+   "label": "The 1932 experiment",
+   "span": "1933-1946",
+   "blurb": "Siam's 1932 revolution replaced absolute monarchy with a constitution, and the first House of Representatives split its seats exactly down the middle: half chosen by voters, half appointed by the government, meant as a bridge to full representative rule. It held for four elections, 1933 to 1946, while the country renamed itself Thailand along the way."
+  },
+  {
+   "key": "coup1947",
+   "label": "Coup, and half-appointed houses",
+   "span": "1948-1957",
+   "blurb": "A 1947 coup abolished the parliament elected the year before and installed a new bicameral system, still with a large appointed bloc alongside the elected seats. Turnout in the February 1957 election jumped to 57%, which the source itself calls an indicator of heavy fraud, and Sarit Thanarat's own coup that September forced a rerun that December, the last vote before twelve years without an election."
+  },
+  {
+   "key": "interlude",
+   "label": "The generals' interlude",
+   "span": "1969",
+   "blurb": "Sarit and then Thanom Kittikachorn governed without a parliament for twelve years. When an election finally returned in 1969, it was the first in which every seat was elected rather than appointed, though 72 of 219 went to independents; the House was dissolved again within two years and Thailand went another six years without a vote."
+  },
+  {
+   "key": "brief",
+   "label": "A crowded field, twice",
+   "span": "1975-1976",
+   "blurb": "Elections in January 1975 and again in April 1976, after the House was dissolved early, both returned fractured parliaments of a dozen or more parties and short-lived coalitions. A coup in October 1976 shut elections down again, this time for three years."
+  },
+  {
+   "key": "prem",
+   "label": "The Prem years",
+   "span": "1979-1988",
+   "blurb": "Prem Tinsulanonda governed as an unelected prime minister through elections in 1979, 1983 and 1986 before Chatichai Choonhavan became the first elected prime minister in over a decade in 1988. A coup by the National Peace Keeping Council removed him in February 1991."
+  },
+  {
+   "key": "black_may",
+   "label": "Black May, and its rerun",
+   "span": "1991-2000",
+   "blurb": "The March 1992 election handed power to Suchinda Kraprayoon, the coup leader turned unelected prime minister, and his appointment triggered the Black May protests that forced his resignation within weeks. A caretaker government called a fresh election that September, and two more followed in 1995 and 1996 as coalitions rose and fell within a few years of each other."
+  },
+  {
+   "key": "thaksin",
+   "label": "Thaksin, and a coup",
+   "span": "2001-2006",
+   "blurb": "The 1997 constitution gave Thailand its first 500-seat House with party-list seats alongside constituency ones. Thaksin Shinawatra's Thai Rak Thai won comfortably in 2001 and by landslide in 2005, then won a boycotted, nearly single-party rerun in 2006 that the Constitutional Court annulled months later, shortly before a September coup removed him from power outright."
+  },
+  {
+   "key": "post2006",
+   "label": "Two constitutions, two coups",
+   "span": "2007-2014",
+   "blurb": "A junta-drafted constitution produced the 2007 election, won by a party aligned with the ousted Thaksin, and his sister Yingluck Shinawatra won again in 2011. Her snap election for February 2014 was blocked by opposition protesters occupying polling stations in parts of the country, voided by the Constitutional Court for not being held on a single nationwide day, and never rerun: a May 2014 coup ended the attempt."
+  },
+  {
+   "key": "junta2019",
+   "label": "The junta's constitution",
+   "span": "2019-",
+   "blurb": "The 2017 constitution, drafted under the military government that took power in 2014, let an entirely junta-appointed Senate join the House in choosing the prime minister, and did so in both 2019 and 2023 regardless of which party had actually won the most seats or votes. That provision expired before the 2026 election, the first since 2011 whose result determined the government on its own."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "legislative",
+   "date": "15 November 1933",
+   "era": "first",
+   "totalSeats": 156,
+   "majoritySeats": null,
+   "turnout": 41.45,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 78,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 78 of 156 seats. Turnout 41.5%.",
+   "seatLeader": "Independents",
+   "caveat": "Exactly half the House was appointed by the government rather than put to a vote.",
+   "unfree": null
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "kind": "legislative",
+   "date": "7 November 1937",
+   "era": "first",
+   "totalSeats": 182,
+   "majoritySeats": null,
+   "turnout": 40.22,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 91,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 91 of 182 seats. Turnout 40.2%.",
+   "seatLeader": "Independents",
+   "caveat": "Exactly half the House was appointed by the government rather than put to a vote.",
+   "unfree": null
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "legislative",
+   "date": "12 November 1938",
+   "era": "first",
+   "totalSeats": 182,
+   "majoritySeats": null,
+   "turnout": 35.03,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 91,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 91 of 182 seats. Turnout 35.0%.",
+   "seatLeader": "Independents",
+   "caveat": "Exactly half the House was appointed by the government rather than put to a vote.",
+   "unfree": null
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "6 January 1946",
+   "era": "first",
+   "totalSeats": 192,
+   "majoritySeats": null,
+   "turnout": 32.52,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 96 of 192 seats. Turnout 32.5%.",
+   "seatLeader": "Independents",
+   "caveat": "Exactly half the House was appointed by the government rather than put to a vote.",
+   "unfree": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "29 January 1948",
+   "era": "coup1947",
+   "totalSeats": 186,
+   "majoritySeats": null,
+   "turnout": 29.5,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Thammathipat Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Democrat Party finished first with 53 of 186 seats. Turnout 29.5%.",
+   "seatLeader": "Democrat Party",
+   "caveat": "Roughly half the House was still appointed rather than elected, a holdover from the 1932 constitution's transitional design.",
+   "unfree": null
+  },
+  {
+   "id": "1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "legislative",
+   "date": "26 February 1952",
+   "era": "coup1947",
+   "totalSeats": 246,
+   "majoritySeats": null,
+   "turnout": 38.95,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 123,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 123 of 246 seats. Turnout 39.0%.",
+   "seatLeader": "Independents",
+   "caveat": "Roughly half the House was still appointed rather than elected, a holdover from the 1932 constitution's transitional design.",
+   "unfree": null
+  },
+  {
+   "id": "1957-december",
+   "label": "December 1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "15 December 1957",
+   "era": "coup1947",
+   "totalSeats": 281,
+   "majoritySeats": null,
+   "turnout": 44.07,
+   "parties": [
+    {
+     "name": "Sahaphum Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Economist Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Seri Manangkhasila Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -82,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hyde Park Movement Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 59,
+     "seatChange": 51,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 59 of 281 seats. Turnout 44.1%.",
+   "seatLeader": "Independents",
+   "caveat": "Roughly half the House was still appointed rather than elected, a holdover from the 1932 constitution's transitional design.",
+   "unfree": null
+  },
+  {
+   "id": "1957-february",
+   "label": "February 1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "26 February 1957",
+   "era": "coup1947",
+   "totalSeats": 283,
+   "majoritySeats": null,
+   "turnout": 57.5,
+   "parties": [
+    {
+     "name": "Seri Manangkhasila Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": null,
+     "votes": 137735,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 118457,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Thammathibat",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Economist Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hyde Park Movement Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Seri Manangkhasila Party finished first with 86 of 283 seats. Turnout 57.5%.",
+   "seatLeader": "Seri Manangkhasila Party",
+   "caveat": "Turnout of 57%, far above any earlier election, is described by the source as an indicator of heavy fraud, and 123 of the 283 seats still went to appointees rather than a vote.",
+   "unfree": null
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "10 February 1969",
+   "era": "interlude",
+   "totalSeats": 219,
+   "majoritySeats": 110,
+   "turnout": 49.16,
+   "parties": [
+    {
+     "name": "United Thai People's Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 18,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Front",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Joint Economic Front",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Citizen Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Farmer Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 72,
+     "seatChange": 13,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "United Thai People's Party finished first with 75 of 219 seats. Turnout 49.2%.",
+   "seatLeader": "United Thai People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "kind": "legislative",
+   "date": "26 January 1975",
+   "era": "brief",
+   "totalSeats": 269,
+   "majoritySeats": 135,
+   "turnout": 47.18,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 72,
+     "seatChange": 15,
+     "votes": 3176398,
+     "share": 17.23,
+     "swing": null
+    },
+    {
+     "name": "Social Justice Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": null,
+     "votes": 2669736,
+     "share": 14.48,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 2220897,
+     "share": 12.05,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 1982168,
+     "share": 10.75,
+     "swing": null
+    },
+    {
+     "name": "Social Agrarian Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 1387451,
+     "share": 7.53,
+     "swing": null
+    },
+    {
+     "name": "Social Nationalist Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 1299613,
+     "share": 7.05,
+     "swing": null
+    },
+    {
+     "name": "New Force Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 1113653,
+     "share": 6.04,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Thailand",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 819489,
+     "share": 4.45,
+     "swing": null
+    },
+    {
+     "name": "Socialist Front",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 672313,
+     "share": 3.65,
+     "swing": null
+    },
+    {
+     "name": "Peaceful People's Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 509718,
+     "share": 2.76,
+     "swing": null
+    },
+    {
+     "name": "National Reconstruction",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 369244,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "Thai Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 313904,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "People's Justice Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 297102,
+     "share": 1.61,
+     "swing": null
+    },
+    {
+     "name": "Democracy",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 283990,
+     "share": 1.54,
+     "swing": null
+    },
+    {
+     "name": "Sovereign Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 141607,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 136783,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Golden Cape Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 123948,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "People Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 122033,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Agriculturalist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 116062,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Thai Earth Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 92957,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Free People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 84599,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "People's Force",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 67127,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Economist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 60962,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Provincial Development Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 30103,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "21 other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 343164,
+     "share": 1.86,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sanya Dharmasakti",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Seni Pramoj",
+    "party": "Democrat"
+   },
+   "knownAs": null,
+   "summary": "Democrat Party finished first with 72 of 269 seats on 17.2% of the vote. Turnout 47.2%. Seni Pramoj replaced Sanya Dharmasakti.",
+   "seatLeader": "Democrat Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "4 April 1976",
+   "era": "brief",
+   "totalSeats": 279,
+   "majoritySeats": 140,
+   "turnout": 43.99,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 114,
+     "seatChange": 42,
+     "votes": 4745990,
+     "share": 25.31,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 28,
+     "votes": 3280134,
+     "share": 17.49,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 27,
+     "votes": 3272170,
+     "share": 17.45,
+     "swing": null
+    },
+    {
+     "name": "Social Justice Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -17,
+     "votes": 1725568,
+     "share": 9.2,
+     "swing": null
+    },
+    {
+     "name": "New Force Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -9,
+     "votes": 1276208,
+     "share": 6.81,
+     "swing": null
+    },
+    {
+     "name": "People's Force",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1,
+     "votes": 746985,
+     "share": 3.98,
+     "swing": null
+    },
+    {
+     "name": "Social Agrarian Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -10,
+     "votes": 672259,
+     "share": 3.59,
+     "swing": null
+    },
+    {
+     "name": "Social Nationalist Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -8,
+     "votes": 642078,
+     "share": 3.42,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Thailand",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -13,
+     "votes": 357385,
+     "share": 1.91,
+     "swing": null
+    },
+    {
+     "name": "Dharmacracy Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 264526,
+     "share": 1.41,
+     "swing": null
+    },
+    {
+     "name": "Thai Protection Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 223048,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 196998,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Socialist Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -9,
+     "votes": 174432,
+     "share": 0.93,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 161031,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "Social Thai Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 125037,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "People's Peaceful Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -8,
+     "votes": 104084,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "Provincial Development Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 100162,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 98487,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Free Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 95056,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "National Reconstruction",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 79894,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "New Siam Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 72664,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Democracy",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 59472,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Social Progress Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 25028,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Agriculturalist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 24987,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "People Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11919,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "15 other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 215209,
+     "share": 1.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kukrit Pramoj",
+    "party": "Social Action"
+   },
+   "pmAfter": {
+    "name": "Seni Pramoj",
+    "party": "Democrat"
+   },
+   "knownAs": null,
+   "summary": "Democrat Party finished first with 114 of 279 seats on 25.3% of the vote. Turnout 44.0%. Seni Pramoj replaced Kukrit Pramoj.",
+   "seatLeader": "Democrat Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "22 April 1979",
+   "era": "prem",
+   "totalSeats": 301,
+   "majoritySeats": 151,
+   "turnout": 43.9,
+   "parties": [
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 82,
+     "seatChange": 37,
+     "votes": 4179174,
+     "share": 21.26,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": -81,
+     "votes": 2865248,
+     "share": 14.57,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -18,
+     "votes": 2213299,
+     "share": 11.26,
+     "swing": null
+    },
+    {
+     "name": "Seritham Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 979398,
+     "share": 4.98,
+     "swing": null
+    },
+    {
+     "name": "People's Nation Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 759302,
+     "share": 3.86,
+     "swing": null
+    },
+    {
+     "name": "New Force Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 5,
+     "votes": 544733,
+     "share": 2.77,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": 528210,
+     "share": 2.69,
+     "swing": null
+    },
+    {
+     "name": "Democratic Action",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 274591,
+     "share": 1.4,
+     "swing": null
+    },
+    {
+     "name": "Social Agrarian Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -6,
+     "votes": 239122,
+     "share": 1.22,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 162240,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "United Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 119046,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Siam Reform Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 106916,
+     "share": 0.54,
+     "swing": null
+    },
+    {
+     "name": "Supporting Kriangsak's Policy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 94425,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 397533,
+     "share": 2.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 63,
+     "seatChange": null,
+     "votes": 6197082,
+     "share": 31.52,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kriangsak Chamanan",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Kriangsak Chamanan",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Social Action Party finished first with 82 of 301 seats on 21.3% of the vote. Turnout 43.9%. Kriangsak Chamanan stayed in office.",
+   "seatLeader": "Social Action Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "18 April 1983",
+   "era": "prem",
+   "totalSeats": 324,
+   "majoritySeats": 163,
+   "turnout": 50.76,
+   "parties": [
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 92,
+     "seatChange": 10,
+     "votes": 7103177,
+     "share": 26.78,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 35,
+     "votes": 6315568,
+     "share": 23.81,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 23,
+     "votes": 4144414,
+     "share": 15.63,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 4,
+     "votes": 2395795,
+     "share": 9.03,
+     "swing": null
+    },
+    {
+     "name": "National Democrat Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 2137780,
+     "share": 8.06,
+     "swing": null
+    },
+    {
+     "name": "Siam Democrat Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 839915,
+     "share": 3.17,
+     "swing": null
+    },
+    {
+     "name": "Free People Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 474402,
+     "share": 1.79,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 338140,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 297332,
+     "share": 1.12,
+     "swing": null
+    },
+    {
+     "name": "New Force Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -8,
+     "votes": 195340,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Thai People Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 180364,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "United Nation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14866,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Labour Democrat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1493,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 81845,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -39,
+     "votes": 2000290,
+     "share": 7.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Prem Tinsulanonda",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Prem Tinsulanonda",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Social Action Party finished first with 92 of 324 seats on 26.8% of the vote. Turnout 50.8%. Prem Tinsulanonda stayed in office.",
+   "seatLeader": "Social Action Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "27 July 1986",
+   "era": "prem",
+   "totalSeats": 347,
+   "majoritySeats": 174,
+   "turnout": 61.43,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 100,
+     "seatChange": 44,
+     "votes": 8477701,
+     "share": 22.52,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": -10,
+     "votes": 6496370,
+     "share": 17.26,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -41,
+     "votes": 4560615,
+     "share": 12.12,
+     "swing": null
+    },
+    {
+     "name": "United Democrat Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": 3814651,
+     "share": 10.13,
+     "swing": null
+    },
+    {
+     "name": "People Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 2786105,
+     "share": 7.4,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -12,
+     "votes": 2612717,
+     "share": 6.94,
+     "swing": null
+    },
+    {
+     "name": "Community Action",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 2268346,
+     "share": 6.03,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 6,
+     "votes": 1998721,
+     "share": 5.31,
+     "swing": null
+    },
+    {
+     "name": "Ruam Thai Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 1658812,
+     "share": 4.41,
+     "swing": null
+    },
+    {
+     "name": "National Democrat Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -12,
+     "votes": 1078128,
+     "share": 2.86,
+     "swing": null
+    },
+    {
+     "name": "Mass Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 723758,
+     "share": 1.92,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 404960,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "Labour Democrat Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 246512,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "New Force Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 232027,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Thai People Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -3,
+     "votes": 196527,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "Rak Thai",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 85241,
+     "share": 0.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Prem Tinsulanonda",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Prem Tinsulanonda",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Democrat Party finished first with 100 of 347 seats on 22.5% of the vote. Turnout 61.4%. Prem Tinsulanonda stayed in office.",
+   "seatLeader": "Democrat Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "24 July 1988",
+   "era": "prem",
+   "totalSeats": 357,
+   "majoritySeats": 179,
+   "turnout": 63.56,
+   "parties": [
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 87,
+     "seatChange": 24,
+     "votes": 7612148,
+     "share": 19.29,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": 3,
+     "votes": 4651161,
+     "share": 11.79,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -52,
+     "votes": 4456077,
+     "share": 11.29,
+     "swing": null
+    },
+    {
+     "name": "Ruam Thai Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 15,
+     "votes": 3988941,
+     "share": 10.11,
+     "swing": null
+    },
+    {
+     "name": "Palang Dharma Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 3586878,
+     "share": 9.09,
+     "swing": null
+    },
+    {
+     "name": "Thai People Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 16,
+     "votes": 3143851,
+     "share": 7.97,
+     "swing": null
+    },
+    {
+     "name": "People's",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 19,
+     "votes": 2454870,
+     "share": 6.22,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 7,
+     "votes": 2413520,
+     "share": 6.12,
+     "swing": null
+    },
+    {
+     "name": "People Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 3,
+     "votes": 2336962,
+     "share": 5.92,
+     "swing": null
+    },
+    {
+     "name": "Community Action",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -6,
+     "votes": 1127418,
+     "share": 2.86,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -1,
+     "votes": 1114468,
+     "share": 2.82,
+     "swing": null
+    },
+    {
+     "name": "United Democrat Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -32,
+     "votes": 810547,
+     "share": 2.05,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 690486,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Mass Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2,
+     "votes": 622933,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Force",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 273932,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "Thai Agro Industry",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 179563,
+     "share": 0.46,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Prem Tinsulanonda",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Chatichai Choonhavan",
+    "party": "Chart Thai"
+   },
+   "knownAs": null,
+   "summary": "Thai Nation Party finished first with 87 of 357 seats on 19.3% of the vote. Turnout 63.6%. Chatichai Choonhavan replaced Prem Tinsulanonda.",
+   "seatLeader": "Thai Nation Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1992-march",
+   "label": "March 1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "22 March 1992",
+   "era": "black_may",
+   "totalSeats": 360,
+   "majoritySeats": 181,
+   "turnout": 59.24,
+   "parties": [
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 72,
+     "seatChange": null,
+     "votes": 9980150,
+     "share": 22.42,
+     "swing": null
+    },
+    {
+     "name": "Justice Unity Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": 8578529,
+     "share": 19.27,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": -13,
+     "votes": 7305674,
+     "share": 16.41,
+     "swing": null
+    },
+    {
+     "name": "Palang Dharma Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 27,
+     "votes": 5104849,
+     "share": 11.47,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -4,
+     "votes": 4705376,
+     "share": 10.57,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -23,
+     "votes": 3586714,
+     "share": 8.06,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -24,
+     "votes": 2280887,
+     "share": 5.12,
+     "swing": null
+    },
+    {
+     "name": "Solidarity Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 1315075,
+     "share": 2.95,
+     "swing": null
+    },
+    {
+     "name": "Mass Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -4,
+     "votes": 443568,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "People Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -17,
+     "votes": 376580,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "United New Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 337361,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Thai People Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -16,
+     "votes": 158037,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Local Progress Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 156808,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Free Agriculture Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 152692,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "United Democracy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34651,
+     "share": 0.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Anand Panyarachun",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Suchinda Kraprayoon",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Justice Unity Party finished first with 79 of 360 seats on 19.3% of the vote. Turnout 59.2%. Suchinda Kraprayoon replaced Anand Panyarachun.",
+   "seatLeader": "Justice Unity Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1992-september",
+   "label": "September 1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "13 September 1992",
+   "era": "black_may",
+   "totalSeats": 360,
+   "majoritySeats": 181,
+   "turnout": 61.59,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 79,
+     "seatChange": 35,
+     "votes": 9703672,
+     "share": 21.02,
+     "swing": null
+    },
+    {
+     "name": "Palang Dharma Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 6,
+     "votes": 8293457,
+     "share": 17.96,
+     "swing": null
+    },
+    {
+     "name": "National Development Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 59,
+     "votes": 7332388,
+     "share": 15.88,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 77,
+     "seatChange": 3,
+     "votes": 7274474,
+     "share": 15.76,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -21,
+     "votes": 6576092,
+     "share": 14.24,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -9,
+     "votes": 1863360,
+     "share": 4.04,
+     "swing": null
+    },
+    {
+     "name": "Seritham Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 1645776,
+     "share": 3.56,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -4,
+     "votes": 1413032,
+     "share": 3.06,
+     "swing": null
+    },
+    {
+     "name": "Solidarity Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 2,
+     "votes": 1067237,
+     "share": 2.31,
+     "swing": null
+    },
+    {
+     "name": "Mass Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3,
+     "votes": 681718,
+     "share": 1.48,
+     "swing": null
+    },
+    {
+     "name": "People Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -3,
+     "votes": 242221,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "People's Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 73460,
+     "share": 0.16,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Anand Panyarachun",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Chuan Leekpai",
+    "party": "Democrat"
+   },
+   "knownAs": null,
+   "summary": "Democrat Party finished first with 79 of 360 seats on 21.0% of the vote. Turnout 61.6%. Chuan Leekpai replaced Anand Panyarachun.",
+   "seatLeader": "Democrat Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "2 July 1995",
+   "era": "black_may",
+   "totalSeats": 391,
+   "majoritySeats": 196,
+   "turnout": 62.04,
+   "parties": [
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 92,
+     "seatChange": 15,
+     "votes": 12630074,
+     "share": 22.83,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 7,
+     "votes": 12325423,
+     "share": 22.28,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 6,
+     "votes": 6806621,
+     "share": 12.3,
+     "swing": null
+    },
+    {
+     "name": "National Development Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -7,
+     "votes": 6612504,
+     "share": 11.95,
+     "swing": null
+    },
+    {
+     "name": "Palang Dharma Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -24,
+     "votes": 4209135,
+     "share": 7.61,
+     "swing": null
+    },
+    {
+     "name": "Leading Thai Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 3474142,
+     "share": 6.28,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 15,
+     "votes": 2476218,
+     "share": 4.48,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 0,
+     "votes": 2201218,
+     "share": 3.98,
+     "swing": null
+    },
+    {
+     "name": "Seritham Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 3,
+     "votes": 1716786,
+     "share": 3.1,
+     "swing": null
+    },
+    {
+     "name": "Solidarity Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": 1361719,
+     "share": 2.46,
+     "swing": null
+    },
+    {
+     "name": "Mass Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -1,
+     "votes": 1309381,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "Safeguard Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 195835,
+     "share": 0.35,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Chuan Leekpai",
+    "party": "Democrat"
+   },
+   "pmAfter": {
+    "name": "Banharn Silpa-archa",
+    "party": "Chart Thai"
+   },
+   "knownAs": null,
+   "summary": "Thai Nation Party finished first with 92 of 391 seats on 22.8% of the vote. Turnout 62.0%. Banharn Silpa-archa replaced Chuan Leekpai.",
+   "seatLeader": "Thai Nation Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "17 November 1996",
+   "era": "black_may",
+   "totalSeats": 393,
+   "majoritySeats": 197,
+   "turnout": 62.42,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 123,
+     "seatChange": 37,
+     "votes": 18087006,
+     "share": 31.78,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 125,
+     "seatChange": 68,
+     "votes": 16585528,
+     "share": 29.14,
+     "swing": null
+    },
+    {
+     "name": "National Development Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -1,
+     "votes": 7044304,
+     "share": 12.38,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -53,
+     "votes": 5621890,
+     "share": 9.88,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -2,
+     "votes": 3036544,
+     "share": 5.33,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 0,
+     "votes": 2330135,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Palang Dharma Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -22,
+     "votes": 1550170,
+     "share": 2.72,
+     "swing": null
+    },
+    {
+     "name": "Solidarity Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0,
+     "votes": 1011299,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "Seritham Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -7,
+     "votes": 708430,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "Mass Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1,
+     "votes": 680204,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Thai Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 164464,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democracy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 56804,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40798,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Banharn Silpa-archa",
+    "party": "Chart Thai"
+   },
+   "pmAfter": {
+    "name": "Chavalit Yongchaiyudh",
+    "party": "New Aspiration"
+   },
+   "knownAs": null,
+   "summary": "New Aspiration Party finished first with 125 of 393 seats on 29.1% of the vote. Turnout 62.4%. Chavalit Yongchaiyudh replaced Banharn Silpa-archa.",
+   "seatLeader": "New Aspiration Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "kind": "legislative",
+   "date": "6 January 2001",
+   "era": "thaksin",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 69.43,
+   "parties": [
+    {
+     "name": "Thai Rak Thai",
+     "leader": "Thaksin Shinawatra",
+     "seats": 248,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat",
+     "leader": "Chuan Leekpai",
+     "seats": 128,
+     "seatChange": 5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chart Thai",
+     "leader": "Banharn Silpa-archa",
+     "seats": 41,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration",
+     "leader": "Chavalit Yongchaiyudh",
+     "seats": 36,
+     "seatChange": -89,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Development",
+     "leader": "Korn Dabbaransi",
+     "seats": 29,
+     "seatChange": -23,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Chuan Leekpai",
+    "party": "Democrat"
+   },
+   "pmAfter": {
+    "name": "Thaksin Shinawatra",
+    "party": "Thai Rak Thai"
+   },
+   "knownAs": null,
+   "summary": "Thai Rak Thai finished first with 248 of 500 seats. Turnout 69.4%. Thaksin Shinawatra replaced Chuan Leekpai.",
+   "seatLeader": "Thai Rak Thai",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "6 February 2005",
+   "era": "thaksin",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 72.56,
+   "parties": [
+    {
+     "name": "Thai Rak Thai Party",
+     "leader": null,
+     "seats": 377,
+     "seatChange": 129,
+     "votes": 18993073,
+     "share": 60.48,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 96,
+     "seatChange": -32,
+     "votes": 7210742,
+     "share": 22.96,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -16,
+     "votes": 2061559,
+     "share": 6.56,
+     "swing": null
+    },
+    {
+     "name": "Mahachon Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 1346631,
+     "share": 4.29,
+     "swing": null
+    },
+    {
+     "name": "Farmer Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 298517,
+     "share": 0.95,
+     "swing": null
+    },
+    {
+     "name": "Debt Relief Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 293487,
+     "share": 0.93,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 162225,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 100203,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -36,
+     "votes": 88951,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Phaendin Thai",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 82608,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "National Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 72690,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Prachachon Thai",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61540,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 58721,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Thai Help Thai",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 50127,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 38324,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Thai Natural Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37916,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Rak Thin Thai",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26585,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Kasikorn Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24232,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Third Choice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13237,
+     "share": 0.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thaksin Shinawatra",
+    "party": "Thai Rak Thai"
+   },
+   "pmAfter": {
+    "name": "Thaksin Shinawatra",
+    "party": "Thai Rak Thai"
+   },
+   "knownAs": null,
+   "summary": "Thai Rak Thai Party finished first with 377 of 500 seats on 60.5% of the vote. Turnout 72.6%. Thaksin Shinawatra stayed in office.",
+   "seatLeader": "Thai Rak Thai Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "2 April 2006",
+   "era": "thaksin",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 64.77,
+   "parties": [
+    {
+     "name": "Thai Rak Thai",
+     "leader": "Thaksin Shinawatra",
+     "seats": 461,
+     "seatChange": 84,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Thai Rak Thai finished first with 461 of 500 seats. Turnout 64.8%.",
+   "seatLeader": "Thai Rak Thai",
+   "caveat": "The main opposition boycotted after a rule requiring even an unopposed candidate to clear 20% of the registered vote, leaving 39 seats vacant, and the Constitutional Court annulled the whole result months later.",
+   "unfree": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "23 December 2007",
+   "era": "post2006",
+   "totalSeats": 480,
+   "majoritySeats": 241,
+   "turnout": 72.4,
+   "parties": [
+    {
+     "name": "People's Power",
+     "leader": "Samak Sundaravej",
+     "seats": 233,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democrat",
+     "leader": "Abhisit Vejjajiva",
+     "seats": 165,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chart Thai",
+     "leader": "Banharn Silpa-archa",
+     "seats": 37,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Puea Pandin",
+     "leader": "Suwit Khunkitti",
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ruam Jai Thai Chart Pattana",
+     "leader": "Chettha Thanajaro",
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Neutral Democratic",
+     "leader": "Anongwan Thepsuthin",
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Surayud Chulanont",
+    "party": "Independent (CNS)"
+   },
+   "pmAfter": {
+    "name": "Samak Sundaravej",
+    "party": "People's Power"
+   },
+   "knownAs": null,
+   "summary": "People's Power finished first with 233 of 480 seats. Turnout 72.4%. Samak Sundaravej replaced Surayud Chulanont.",
+   "seatLeader": "People's Power",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "3 July 2011",
+   "era": "post2006",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 75.03,
+   "parties": [
+    {
+     "name": "Pheu Thai Party",
+     "leader": null,
+     "seats": 265,
+     "seatChange": 32,
+     "votes": 15752470,
+     "share": 47.03,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 159,
+     "seatChange": -6,
+     "votes": 11435640,
+     "share": 34.14,
+     "swing": null
+    },
+    {
+     "name": "Bhumjaithai Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": 1281652,
+     "share": 3.83,
+     "swing": null
+    },
+    {
+     "name": "Chartthaipattana Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -18,
+     "votes": 907106,
+     "share": 2.71,
+     "swing": null
+    },
+    {
+     "name": "Chart Pattana Puea Pandin Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -26,
+     "votes": 495762,
+     "share": 1.48,
+     "swing": null
+    },
+    {
+     "name": "Rak Santi Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 284100,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "Matubhum Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 251674,
+     "share": 0.75,
+     "swing": null
+    },
+    {
+     "name": "Phalang Chon Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 178042,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "New Democracy Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 125753,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Social Action Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 81824,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Thaen Khun Phaendin Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57801,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Mass Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 57793,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Thai Por-Pieng Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49065,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Sport Party of Thailand",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39778,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Prachatham Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38748,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Farmer Network of Thailand Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 36931,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 35475,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "New Politics Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34883,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34111,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Thai Pen Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 27193,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21195,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Puen Kasetthai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 15606,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Thai Party for Thai People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15071,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Civil Peace Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12912,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "For Heaven and Earth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12823,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Dumrongthai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12489,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Chartsamuccee Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9601,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Thaipensuk Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9132,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Parung Chownathai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7332,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Better Life Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6882,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Palung Sungkom Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4861,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Thai Sangsun Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2842,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Abhisit Vejjajiva",
+    "party": "Democrat"
+   },
+   "pmAfter": {
+    "name": "Yingluck Shinawatra",
+    "party": "Pheu Thai"
+   },
+   "knownAs": null,
+   "summary": "Pheu Thai Party finished first with 265 of 500 seats on 47.0% of the vote. Turnout 75.0%. Yingluck Shinawatra replaced Abhisit Vejjajiva.",
+   "seatLeader": "Pheu Thai Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "legislative",
+   "date": "2 February 2014",
+   "era": "post2006",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 47.72,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Turnout 47.7%.",
+   "seatLeader": null,
+   "caveat": "Opposition protesters blocked candidate registration and polling in parts of the south, the Constitutional Court voided the result for not being held on a single nationwide day, and a May coup ended the attempt to rerun it before any seat was filled.",
+   "unfree": null
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "24 March 2019",
+   "era": "junta2019",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 74.69,
+   "parties": [
+    {
+     "name": "Palang Pracharat Party",
+     "leader": null,
+     "seats": 116,
+     "seatChange": null,
+     "votes": 8433137,
+     "share": 23.34,
+     "swing": null
+    },
+    {
+     "name": "Pheu Thai Party",
+     "leader": null,
+     "seats": 136,
+     "seatChange": null,
+     "votes": 7920630,
+     "share": 21.92,
+     "swing": null
+    },
+    {
+     "name": "Future Forward Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": 6265950,
+     "share": 17.34,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": null,
+     "votes": 3947726,
+     "share": 10.92,
+     "swing": null
+    },
+    {
+     "name": "Bhumjaithai Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": null,
+     "votes": 3732883,
+     "share": 10.33,
+     "swing": null
+    },
+    {
+     "name": "Thai Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 826530,
+     "share": 2.29,
+     "swing": null
+    },
+    {
+     "name": "Chartthaipattana Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 782031,
+     "share": 2.16,
+     "swing": null
+    },
+    {
+     "name": "New Economics Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 485664,
+     "share": 1.34,
+     "swing": null
+    },
+    {
+     "name": "Prachachart Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 485436,
+     "share": 1.34,
+     "swing": null
+    },
+    {
+     "name": "Puea Chat Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 419393,
+     "share": 1.16,
+     "swing": null
+    },
+    {
+     "name": "Action Coalition for Thailand",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 416324,
+     "share": 1.15,
+     "swing": null
+    },
+    {
+     "name": "Chart Pattana Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 252044,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Thai Local Power Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 213129,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Thai Forest Conservation Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 136597,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Thai People Power Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 81733,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation Power Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 73871,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "People Progressive Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 69417,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Palang Thai Rak Thai Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 60840,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Thai Civilized Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 60421,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Prachaniyom Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 56617,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Thai Teachers for People Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 56339,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Thai People Justice Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 47848,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "People Reform Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 45508,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizens Power Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44766,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "New Democracy Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 39792,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "New Palangdharma Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 35533,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Thairaktham Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33748,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Puea Pandin Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31307,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "New Alternative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29607,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Paradonphab Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27799,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Force Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26617,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Pheu Khon Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26598,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Thai Power Builds the Nation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23059,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22662,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Land of Dharma Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21463,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Mahachon Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17867,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Social Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17683,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "The Farmer Network of Thailand Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17664,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Thaen Khun Phaendin Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17112,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Siam Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16839,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Phuea Tham Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15365,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Ruam Jai Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13457,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Klong Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12946,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Phung Luang Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12576,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Thai Network Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12268,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11839,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Thai Population Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11043,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Thai Ethnic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9757,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Palang Thai Rak Chart Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9685,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Power of Faith Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9561,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9074,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Phuea Thai Pattana Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8095,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Thinkakhao Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6799,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Thai Teacher Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6398,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Thai Morality Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5942,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Glang Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5447,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Thai Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5334,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Commoners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5321,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Foundational Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4786,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Powerful Love Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4624,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Palang Pandinthong Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4568,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Thai Rung Rueng Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4237,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bhumphalangkasettrakonthai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3535,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Rak Thong Thin Thai",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3254,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Thai Power Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2951,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Commoner Party of Thailand",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2353,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Thai Dee Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2536,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Cooperative Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2343,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Phue Cheevitmai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1595,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Thailand Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1079,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Phue Sahagon Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 905,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "People Vote Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 791,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Thai Rubber Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 610,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Democracy for People Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 562,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Raks Tham",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 446,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Kasikornthai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 183,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Thai Future Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 198,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "None of the above",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 605392,
+     "share": 1.68,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Prayut Chan-o-cha",
+    "party": "Independent (NCPO)"
+   },
+   "pmAfter": {
+    "name": "Prayut Chan-o-cha",
+    "party": "Independent (PPRP)"
+   },
+   "knownAs": null,
+   "summary": "Pheu Thai Party finished first with 136 of 500 seats on 21.9% of the vote. Turnout 74.7%. Prayut Chan-o-cha stayed in office.",
+   "seatLeader": "Pheu Thai Party",
+   "caveat": "The 250-seat Senate that would help choose the prime minister was appointed entirely by the outgoing junta and constituency boundaries were redrawn shortly before polling, an arrangement widely described at the time as a skewed race.",
+   "unfree": null
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "14 May 2023",
+   "era": "junta2019",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 75.64,
+   "parties": [
+    {
+     "name": "Move Forward Party",
+     "leader": null,
+     "seats": 151,
+     "seatChange": 70,
+     "votes": 14438851,
+     "share": 37.99,
+     "swing": null
+    },
+    {
+     "name": "Pheu Thai Party",
+     "leader": null,
+     "seats": 141,
+     "seatChange": 5,
+     "votes": 10962522,
+     "share": 28.84,
+     "swing": null
+    },
+    {
+     "name": "United Thai Nation Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": 4766408,
+     "share": 12.54,
+     "swing": null
+    },
+    {
+     "name": "Bhumjaithai Party",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 20,
+     "votes": 1138202,
+     "share": 2.99,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -28,
+     "votes": 925349,
+     "share": 2.43,
+     "swing": null
+    },
+    {
+     "name": "Prachachat Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2,
+     "votes": 602645,
+     "share": 1.59,
+     "swing": null
+    },
+    {
+     "name": "Palang Pracharath Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -76,
+     "votes": 537625,
+     "share": 1.41,
+     "swing": null
+    },
+    {
+     "name": "Thai Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -9,
+     "votes": 351376,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "Thai Sang Thai Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 340178,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "New Democracy Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 273428,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "New Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 249731,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Chart Pattana Kla Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1,
+     "votes": 212676,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "Party of Thai Counties",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 201411,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Chartthaipattana Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0,
+     "votes": 192497,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Fair Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 184817,
+     "share": 0.49,
+     "swing": null
+    },
+    {
+     "name": "New Social Power Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 177379,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Thai Teachers for People Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 175182,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 156493,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Pheu Chart Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 134833,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Nation Building Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 130147,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Thai Pakdee Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 103472,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Thai Prompt Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 82965,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Thailand's Future Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 81718,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "New Alternative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 79190,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Thai Ruam Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 72988,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Ruam Jai Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 72719,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Pheu Thai Ruam Palang",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 67692,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "For the Nation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 59571,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Thai Network Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 58010,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 57098,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Change Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 53706,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Thai Chana Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 45321,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Power Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 44131,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Thai Progress Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35094,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Action Coalition Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 33844,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "New Palangdharma Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 33770,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "New Dimension Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33558,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Thai Population Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 32428,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Thai Civilized Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 23721,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Future Change Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23381,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22047,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Thai Morality Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21022,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "People Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 17686,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Siamese Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17076,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Thai One Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13605,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Thai Forest Conservation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 12601,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Equality Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11816,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Thailand Together Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11010,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10891,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Land of Dharma Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10875,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "The New Way Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10690,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Thai Smart Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10463,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Zen-Dai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 10410,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Cooperative Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10158,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "For the Thai Future Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10001,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Palang Thai Rak Chart Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9174,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Democratic Force Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8818,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Klong Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7959,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Save the Nation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7759,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Commoners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6509,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Rat Withi Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6172,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Thai Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5860,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Social Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5561,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Thinkakhao Chaovilai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5534,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Thai People Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 5022,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Chat Rung Rueang Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4433,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Paradonraphab Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3455,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "None of the above",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 482303,
+     "share": 1.27,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Prayut Chan-o-cha",
+    "party": "United Thai Nation"
+   },
+   "pmAfter": {
+    "name": "Srettha Thavisin",
+    "party": "Pheu Thai"
+   },
+   "knownAs": null,
+   "summary": "Move Forward Party finished first with 151 of 500 seats on 38.0% of the vote. Turnout 75.6%. Srettha Thavisin replaced Prayut Chan-o-cha.",
+   "seatLeader": "Move Forward Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "legislative",
+   "date": "8 February 2026",
+   "era": "junta2019",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 71.42,
+   "parties": [
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 120,
+     "seatChange": -31,
+     "votes": 11043309,
+     "share": 30.56,
+     "swing": null
+    },
+    {
+     "name": "Bhumjaithai Party",
+     "leader": null,
+     "seats": 192,
+     "seatChange": 121,
+     "votes": 6468073,
+     "share": 17.9,
+     "swing": null
+    },
+    {
+     "name": "Pheu Thai Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": -67,
+     "votes": 5575456,
+     "share": 15.43,
+     "swing": null
+    },
+    {
+     "name": "Democrat Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -4,
+     "votes": 3941928,
+     "share": 10.91,
+     "swing": null
+    },
+    {
+     "name": "Economic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3,
+     "votes": 1133055,
+     "share": 3.14,
+     "swing": null
+    },
+    {
+     "name": "United Thai Nation Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -34,
+     "votes": 766078,
+     "share": 2.12,
+     "swing": null
+    },
+    {
+     "name": "Pheu Chart Thai Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 680256,
+     "share": 1.88,
+     "swing": null
+    },
+    {
+     "name": "Kla Tham Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": null,
+     "votes": 648662,
+     "share": 1.79,
+     "swing": null
+    },
+    {
+     "name": "Ruam Jai Thai Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 435225,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Prachachat Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -4,
+     "votes": 428848,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "New Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 314430,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "Thai Subthawee Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 305565,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "New Democracy Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 256221,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "New Dimension Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 247365,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Thai Pakdee Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 246823,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Thai Sang Thai Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -4,
+     "votes": 202626,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "People's Power Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 197510,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "Thai Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 185705,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "New Alternative Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 171061,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Thai Ruam Palang Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 4,
+     "votes": 166723,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Palang Pracharath Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -35,
+     "votes": 141082,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Movement Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 117078,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Thai Kao Mai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 109579,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "New Palangdharma Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 90255,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "New Opportunity Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 80103,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Power Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 72193,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Thai Citizen Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 70567,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Rak Chart Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 68592,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Thai Population Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 64251,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Thai Prompt Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 61958,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Futurise Thailand Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 59873,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Thai Teachers for People Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 56224,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Nation Building Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 54437,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Thaichana Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 52192,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Thai Progress Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 50880,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Party of Thai Counties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 47044,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Vision Mai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43439,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Fair Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 40509,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Klong Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 37088,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Thailand's Future Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 30341,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Thai People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28458,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Party for the Country",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24668,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 24193,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Palang Thai Rak Chart Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 22321,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Thai Morality Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21838,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Thai Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19637,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Independent Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17890,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Prompt Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17657,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Phue Cheevitmai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14089,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Land of Dharma Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14046,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Fusion Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13253,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Plung Sungkom Mai Party [th; fr; ru]",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 11756,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "New Aspiration Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9517,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Farmer Network of Thailand Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9092,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Thai Ruam Thai Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8132,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Thai Nation's People Volunteer Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5766,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Thai Pitak Tham Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5662,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "None of the above",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 1108123,
+     "share": 3.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Anutin Charnvirakul",
+    "party": "Bhumjaithai"
+   },
+   "pmAfter": {
+    "name": "Anutin Charnvirakul",
+    "party": "Bhumjaithai"
+   },
+   "knownAs": null,
+   "summary": "Bhumjaithai Party finished first with 192 of 500 seats on 17.9% of the vote. Turnout 71.4%. Anutin Charnvirakul stayed in office.",
+   "seatLeader": "Bhumjaithai Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

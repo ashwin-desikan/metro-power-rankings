@@ -239,17 +239,22 @@ function NameCell({ r }: { r: SRow }) {
 function LeagueAccordion({ block }: { block: Block }) {
   if (block.subTables.length === 0) return null;
   return (
-    /* 🔴 COLLAPSED ON A PHONE, OPEN ON A DESKTOP. This page carries about
-       twenty-five leagues; with every in-season one expanded it opened at 21
-       screens on a 390px viewport and a reader had to scroll past four sports
-       to reach the fifth. `data-desktop-open` is the site's own mechanism for
-       exactly this (globals.css): the server renders one tree and CSS decides
-       the density, so a phone gets a list of leagues to choose from and a
-       desktop gets everything at once, with no JavaScript and no hydration
-       flash. An offseason league carries neither attribute and stays
-       collapsible at every width, which it always was. */
+    /* 🔴 COLLAPSED ON A PHONE, OPEN BY DEFAULT ON A DESKTOP, AND CLOSABLE ON
+       BOTH. This page carries about twenty-five leagues; with every in-season
+       one expanded it opened at 21 screens on a 390px viewport and a reader had
+       to scroll past four sports to reach the fifth. It first used the site's
+       `data-desktop-open` primitive, which force-reveals the content and sets
+       `pointer-events: none` on the summary above 640px: right for a sources
+       card, wrong here, because a reader on a desktop could not fold the NBA to
+       reach the NHL (Ashwin, 2026-09-08; the F1 board hit the same wall the day
+       before). `data-desktop-default-open` is the variant for a DEFAULT, not a
+       fixed state: globals.css reveals the content above 640px so the first
+       paint is already open, and the inline script at the foot of the page
+       swaps the attribute for a real `open` on desktop viewports, after which
+       every block toggles natively at every width. An offseason league carries
+       neither attribute and stays collapsible, which it always was. */
     <details
-      data-desktop-open={block.open ? "" : undefined}
+      data-desktop-default-open={block.open ? "" : undefined}
       className="rounded-xl border overflow-hidden jump-open"
       style={cardStyle}
     >
@@ -1380,6 +1385,19 @@ export default async function LiveStandingsPage() {
           ))}
         </div>
       )}
+      {/* Runs during parsing, after every accordion exists and before the
+          reader can click one: promote the desktop default to the real `open`
+          attribute and drop the marker, so the CSS reveal hands over to native
+          <details> toggling with no visible change. Server component, so there
+          is nothing for React to hydrate here. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            "(function(){var d=window.matchMedia('(min-width:640px)').matches;" +
+            "document.querySelectorAll('details[data-desktop-default-open]').forEach(function(e){" +
+            "if(d)e.open=true;e.removeAttribute('data-desktop-default-open');});})();",
+        }}
+      />
     </main>
   );
 }

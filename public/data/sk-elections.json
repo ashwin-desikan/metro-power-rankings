@@ -1,0 +1,3967 @@
+{
+ "meta": {
+  "title": "Slovak Elections",
+  "sources": [
+   "Wikipedia: Slovak provincial, parliamentary, National Council and presidential election articles 1928-2024 (results tables and infoboxes)",
+   "Statistical Office of the Slovak Republic and predecessor commission figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "presEras": [
+  {
+   "key": "indirect",
+   "label": "Elected by parliament",
+   "span": "1993-1998",
+   "blurb": "Slovakia's first constitution gave the presidency to the National Council itself, requiring a three-fifths majority. Michal Kováč was elected that way in January 1993, weeks before independence; when his term ended in 1998 parliament tried and failed across nine ballots through the year to find a successor, leaving the office vacant until a constitutional amendment moved the election to the voters."
+  },
+  {
+   "key": "direct",
+   "label": "Direct election, two rounds",
+   "span": "1999-",
+   "blurb": "A 1999 constitutional amendment, passed in direct response to the 1998 deadlock, made the presidency a popular vote decided by an outright majority or a runoff between the top two. Every election since has gone to a second round; Zuzana Čaputová's 2019 win made her the country's first woman president, and Peter Pellegrini's 2024 runoff against Ivan Korčok was the closest and most polarised of the six."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "province",
+   "label": "The Slovak Province",
+   "span": "1928-1935",
+   "blurb": "Two-thirds of the 54-seat Assembly of Slovak Province were elected and a third appointed by the national government in Prague, a compromise struck when the interwar Czechoslovak republic replaced its historic counties with four larger provinces in 1928. Both votes returned a genuinely fragmented field, with Hlinka's Slovak People's Party first among many rather than a majority on its own."
+  },
+  {
+   "key": "wartime",
+   "label": "The Slovak State",
+   "span": "1938",
+   "blurb": "The Munich Agreement and the loss of southern Slovakia to Hungary were followed within weeks by a single-list election for a new Diet, held under the wartime Hlinka-dominated regime that would declare full independence three months later. Voters were offered one slate to approve or reject, and it took 97.5% of the vote."
+  },
+  {
+   "key": "democratic-win",
+   "label": "The Democratic Party's win",
+   "span": "1946",
+   "blurb": "The Slovak National Council elected in August 1946 was the last genuinely contested vote before the Communist coup of February 1948: the Democratic Party won it outright against the Communist Party of Slovakia, the only time a non-Communist party topped a Czechoslovak-era ballot."
+  },
+  {
+   "key": "national-front",
+   "label": "The National Front decades",
+   "span": "1948-1986",
+   "blurb": "Every Slovak National Council election from 1948 to 1986 offered a single National Front list and returned it with support in the high nineties, the same ritual repeated nine times running. These rows are marked unfree."
+  },
+  {
+   "key": "velvet",
+   "label": "The Velvet Revolution and a sovereign Slovakia",
+   "span": "1990-1992",
+   "blurb": "The Slovak National Council elections of 1990 and 1992 were the first free votes since 1946: Public Against Violence swept 1990 on the wave of the revolution, then splintered, and Vladimír Mečiar's Movement for a Democratic Slovakia won 1992 on a platform that led directly to Czechoslovakia's dissolution on 1 January 1993."
+  },
+  {
+   "key": "republic",
+   "label": "The National Council of independent Slovakia",
+   "span": "1994-",
+   "blurb": "Since independence the 150-seat National Council has been elected by closed-list proportional representation with a nationwide 5% threshold, and no election has needed a runoff to form a government because none is held for parliament at all: coalitions are built afterward. Mečiar's HZDS dominated the 1990s, Direction-Social Democracy the 2010s, and the 2023 return of Robert Fico followed the shortest-lived reform government in the country's history."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "presidential",
+   "date": "26 January to 15 February 1993",
+   "era": "indirect",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Michal Kováč",
+     "party": "People's Party – Movement for a Democratic Slovakia",
+     "r1Votes": 106,
+     "r1Share": 73.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Michal Kováč",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Michal Kováč won with 73.10%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "presidential",
+   "date": "20 January to 17 December 1998",
+   "era": "indirect",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Michal Kováč",
+    "party": null
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "No candidate reached the majority required, so the office stayed vacant.",
+   "caveat": "The National Council tried and failed across nine ballots to elect a president with the required three-fifths majority, leaving the office vacant for the rest of the year.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "presidential",
+   "date": "15 May 1999 (first round) 29 May 1999 (second round)",
+   "era": "direct",
+   "turnout": 73.89,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rudolf Schuster",
+     "party": "Party of Civic Understanding",
+     "r1Votes": 1396950,
+     "r1Share": 47.38,
+     "r2Votes": 1727481,
+     "r2Share": 57.18
+    },
+    {
+     "name": "Vladimír Mečiar",
+     "party": "Movement for a Democratic Slovakia",
+     "r1Votes": 1097956,
+     "r1Share": 37.24,
+     "r2Votes": 1293642,
+     "r2Share": 42.82
+    },
+    {
+     "name": "Magdaléna Vášáryová",
+     "party": "Independent",
+     "r1Votes": 194635,
+     "r1Share": 6.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ivan Mjartan",
+     "party": "Independent",
+     "r1Votes": 105903,
+     "r1Share": 3.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ján Slota",
+     "party": "Slovak National Party",
+     "r1Votes": 73836,
+     "r1Share": 2.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Boris Zala",
+     "party": "Independent",
+     "r1Votes": 29697,
+     "r1Share": 1.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juraj Švec",
+     "party": "Independent",
+     "r1Votes": 24077,
+     "r1Share": 0.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juraj Lazarčík",
+     "party": "Independent",
+     "r1Votes": 15386,
+     "r1Share": 0.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michal Kováč",
+     "party": "Independent",
+     "r1Votes": 5425,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ján Demikát",
+     "party": "Slovak National Alternative",
+     "r1Votes": 4537,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mikuláš Dzurinda (acting)",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Rudolf Schuster",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Rudolf Schuster won in the runoff with 57.18% against Vladimír Mečiar on 42.82%. Turnout 73.9%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "3 April 2004 (first round) 17 April 2004 (second round)",
+   "era": "direct",
+   "turnout": 47.94,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Vladimír Mečiar",
+     "party": "People's Party – Movement for a Democratic Slovakia",
+     "r1Votes": 650242,
+     "r1Share": 32.74,
+     "r2Votes": 722368,
+     "r2Share": 40.09
+    },
+    {
+     "name": "Ivan Gašparovič",
+     "party": "Movement for Democracy",
+     "r1Votes": 442564,
+     "r1Share": 22.28,
+     "r2Votes": 1079592,
+     "r2Share": 59.91
+    },
+    {
+     "name": "Eduard Kukan",
+     "party": "Slovak Democratic and Christian Union",
+     "r1Votes": 438920,
+     "r1Share": 22.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rudolf Schuster",
+     "party": "Independent",
+     "r1Votes": 147549,
+     "r1Share": 7.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "František Mikloško",
+     "party": "Christian Democratic Movement",
+     "r1Votes": 129414,
+     "r1Share": 6.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Martin Bútora",
+     "party": "Independent",
+     "r1Votes": 129387,
+     "r1Share": 6.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ján Králik",
+     "party": "Party of the Democratic Left",
+     "r1Votes": 15873,
+     "r1Share": 0.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jozef Kalman",
+     "party": "Left Bloc",
+     "r1Votes": 10221,
+     "r1Share": 0.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Július Kubík",
+     "party": "Independent",
+     "r1Votes": 7734,
+     "r1Share": 0.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jozef Šesták",
+     "party": "Independent",
+     "r1Votes": 6785,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Stanislav Bernát",
+     "party": "Independent",
+     "r1Votes": 5719,
+     "r1Share": 0.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ľubomír Roman",
+     "party": "Alliance of the New Citizen",
+     "r1Votes": 1806,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rudolf Schuster",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Ivan Gašparovič",
+    "party": "HZD"
+   },
+   "knownAs": null,
+   "summary": "Ivan Gašparovič won in the runoff with 59.91% against Vladimír Mečiar on 40.09%. Turnout 47.9%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "presidential",
+   "date": "21 March 2009 (first round) 4 April 2009 (second round)",
+   "era": "direct",
+   "turnout": 43.62,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ivan Gašparovič",
+     "party": "Independent",
+     "r1Votes": 876061,
+     "r1Share": 46.71,
+     "r2Votes": 1234787,
+     "r2Share": 55.53
+    },
+    {
+     "name": "Iveta Radičová",
+     "party": "Slovak Democratic and Christian Union – Democratic Party",
+     "r1Votes": 713735,
+     "r1Share": 38.05,
+     "r2Votes": 988808,
+     "r2Share": 44.47
+    },
+    {
+     "name": "František Mikloško",
+     "party": "Conservative Democrats of Slovakia",
+     "r1Votes": 101573,
+     "r1Share": 5.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Zuzana Martináková",
+     "party": "Free Forum",
+     "r1Votes": 96035,
+     "r1Share": 5.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Milan Melník",
+     "party": "People's Party – Movement for a Democratic Slovakia",
+     "r1Votes": 45985,
+     "r1Share": 2.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dagmara Bollová",
+     "party": "Independent",
+     "r1Votes": 21378,
+     "r1Share": 1.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Milan Sidor",
+     "party": "Communist Party of Slovakia",
+     "r1Votes": 20862,
+     "r1Share": 1.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ivan Gašparovič",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Ivan Gašparovič",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Ivan Gašparovič won in the runoff with 55.53% against Iveta Radičová on 44.47%. Turnout 43.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "15 March 2014 (first round) 29 March 2014 (second round)",
+   "era": "direct",
+   "turnout": 43.39,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Robert Fico",
+     "party": "Direction – Social Democracy",
+     "r1Votes": 531919,
+     "r1Share": 28.01,
+     "r2Votes": 893841,
+     "r2Share": 40.61
+    },
+    {
+     "name": "Andrej Kiska",
+     "party": "Independent",
+     "r1Votes": 455996,
+     "r1Share": 24.01,
+     "r2Votes": 1307065,
+     "r2Share": 59.39
+    },
+    {
+     "name": "Radoslav Procházka",
+     "party": "Independent",
+     "r1Votes": 403548,
+     "r1Share": 21.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Milan Kňažko",
+     "party": "Independent",
+     "r1Votes": 244401,
+     "r1Share": 12.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gyula Bárdos",
+     "party": "Party of the Hungarian Community",
+     "r1Votes": 97035,
+     "r1Share": 5.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pavol Hrušovský",
+     "party": "KDH, SDKÚ–DS, Most",
+     "r1Votes": 63298,
+     "r1Share": 3.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Helena Mezenská",
+     "party": "Independent",
+     "r1Votes": 45180,
+     "r1Share": 2.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ján Jurišta",
+     "party": "Communist Party of Slovakia",
+     "r1Votes": 12209,
+     "r1Share": 0.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ján Čarnogurský",
+     "party": "Independent",
+     "r1Votes": 12207,
+     "r1Share": 0.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Viliam Fischer",
+     "party": "Independent",
+     "r1Votes": 9514,
+     "r1Share": 0.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jozef Behýl",
+     "party": "Independent",
+     "r1Votes": 9126,
+     "r1Share": 0.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Milan Melník",
+     "party": "Independent",
+     "r1Votes": 7678,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jozef Šimko",
+     "party": "Party of Modern Slovakia",
+     "r1Votes": 4674,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Stanislav Martinčko",
+     "party": "Coalition of Citizens of Slovakia",
+     "r1Votes": 2547,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ivan Gašparovič",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Andrej Kiska",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Andrej Kiska won in the runoff with 59.39% against Robert Fico on 40.61%. Turnout 43.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "presidential",
+   "date": "16 March 2019 (first round) 30 March 2019 (second round)",
+   "era": "direct",
+   "turnout": 48.74,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Zuzana Čaputová",
+     "party": "Progressive Slovakia",
+     "r1Votes": 870415,
+     "r1Share": 40.57,
+     "r2Votes": 1056582,
+     "r2Share": 58.41
+    },
+    {
+     "name": "Maroš Šefčovič",
+     "party": "Independent (Smer)",
+     "r1Votes": 400379,
+     "r1Share": 18.66,
+     "r2Votes": 752403,
+     "r2Share": 41.59
+    },
+    {
+     "name": "Štefan Harabin",
+     "party": "Independent",
+     "r1Votes": 307823,
+     "r1Share": 14.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marian Kotleba",
+     "party": "Kotleba – People's Party Our Slovakia",
+     "r1Votes": 222935,
+     "r1Share": 10.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "František Mikloško",
+     "party": "Independent",
+     "r1Votes": 122916,
+     "r1Share": 5.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Béla Bugár",
+     "party": "Most–Híd",
+     "r1Votes": 66667,
+     "r1Share": 3.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Milan Krajniak",
+     "party": "We Are Family",
+     "r1Votes": 59464,
+     "r1Share": 2.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduard Chmelár",
+     "party": "Independent",
+     "r1Votes": 58965,
+     "r1Share": 2.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Martin Daňo",
+     "party": "Independent",
+     "r1Votes": 11146,
+     "r1Share": 0.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Róbert Švec",
+     "party": "Independent",
+     "r1Votes": 6567,
+     "r1Share": 0.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juraj Zábojník",
+     "party": "Independent",
+     "r1Votes": 6219,
+     "r1Share": 0.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ivan Zuzula",
+     "party": "Slovak Conservative Party",
+     "r1Votes": 3807,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bohumila Tauchmannová",
+     "party": "Independent",
+     "r1Votes": 3535,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Robert Mistrík",
+     "party": "Independent",
+     "r1Votes": 3318,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "József Menyhárt",
+     "party": "Party of the Hungarian Community",
+     "r1Votes": 1208,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Andrej Kiska",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Zuzana Čaputová",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "Zuzana Čaputová won in the runoff with 58.41% against Maroš Šefčovič on 41.59%. Turnout 48.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "presidential",
+   "date": "23 March 2024 (first round) 6 April 2024 (second round)",
+   "era": "direct",
+   "turnout": 51.9,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ivan Korčok",
+     "party": "Independent",
+     "r1Votes": 958393,
+     "r1Share": 42.52,
+     "r2Votes": 1243709,
+     "r2Share": 46.88
+    },
+    {
+     "name": "Peter Pellegrini",
+     "party": "Voice – Social Democracy",
+     "r1Votes": 834718,
+     "r1Share": 37.03,
+     "r2Votes": 1409255,
+     "r2Share": 53.12
+    },
+    {
+     "name": "Štefan Harabin",
+     "party": "Independent",
+     "r1Votes": 264579,
+     "r1Share": 11.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Krisztián Forró",
+     "party": "Hungarian Alliance",
+     "r1Votes": 65588,
+     "r1Share": 2.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Igor Matovič",
+     "party": "Slovakia",
+     "r1Votes": 49201,
+     "r1Share": 2.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ján Kubiš",
+     "party": "Independent",
+     "r1Votes": 45957,
+     "r1Share": 2.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Patrik Dubovský",
+     "party": "For the People",
+     "r1Votes": 16107,
+     "r1Share": 0.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marian Kotleba",
+     "party": "Kotlebists – People's Party Our Slovakia",
+     "r1Votes": 12771,
+     "r1Share": 0.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Milan Náhlik",
+     "party": "Independent",
+     "r1Votes": 3111,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrej Danko",
+     "party": "Slovak National Party",
+     "r1Votes": 1905,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Róbert Švec",
+     "party": "Slovak Revival Movement",
+     "r1Votes": 1876,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Zuzana Čaputová",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Peter Pellegrini",
+    "party": "Hlas"
+   },
+   "knownAs": null,
+   "summary": "Peter Pellegrini won in the runoff with 53.12% against Ivan Korčok on 46.88%. Turnout 51.9%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "legislative",
+   "date": "1928",
+   "era": "province",
+   "totalSeats": 54,
+   "majoritySeats": 28,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Hlinka's Slovak People's Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 325588,
+     "share": 24.64,
+     "swing": null
+    },
+    {
+     "name": "Republican Party of Farmers and Peasants",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 271520,
+     "share": 20.55,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 190595,
+     "share": 14.42,
+     "swing": null
+    },
+    {
+     "name": "Provincial Christian-Socialist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 120769,
+     "share": 9.14,
+     "swing": null
+    },
+    {
+     "name": "Hungarian-German Party (MNP–ZDP–MNMP)",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 104106,
+     "share": 7.88,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 96901,
+     "share": 7.33,
+     "swing": null
+    },
+    {
+     "name": "Jewish Party–Jewish Economic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 45244,
+     "share": 3.42,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 43689,
+     "share": 3.31,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Socialist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 36181,
+     "share": 2.74,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 31679,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Democracy",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 26300,
+     "share": 1.99,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Traders' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15371,
+     "share": 1.16,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Smallholder, Craftsman and Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13635,
+     "share": 1.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Republican Party of Farmers and Peasants finished first with 16 of 54 seats on 20.6% of the vote.",
+   "seatLeader": "Republican Party of Farmers and Peasants",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "26 May 1935",
+   "era": "province",
+   "totalSeats": 36,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Hlinka's Slovak People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 430880,
+     "share": 28.51,
+     "swing": null
+    },
+    {
+     "name": "Republican Party of Farmers and Peasants",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 285672,
+     "share": 18.9,
+     "swing": null
+    },
+    {
+     "name": "OKSZP–MNP",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 225407,
+     "share": 14.91,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 185494,
+     "share": 12.27,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 148984,
+     "share": 9.86,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 45134,
+     "share": 2.99,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 40965,
+     "share": 2.71,
+     "swing": null
+    },
+    {
+     "name": "Jewish Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36430,
+     "share": 2.41,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Traders' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 31641,
+     "share": 2.09,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30563,
+     "share": 2.02,
+     "swing": null
+    },
+    {
+     "name": "National Fascist Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26461,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "National Unification",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18579,
+     "share": 1.23,
+     "swing": null
+    },
+    {
+     "name": "Independent National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5302,
+     "share": 0.35,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hlinka's Slovak People's Party finished first with 11 of 36 seats on 28.5% of the vote.",
+   "seatLeader": "Hlinka's Slovak People's Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "legislative",
+   "date": "18 December 1938",
+   "era": "wartime",
+   "totalSeats": 63,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Hlinka's Slovak People's Party – Party of Slovak National Unity",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": null,
+     "share": 97.5,
+     "swing": null
+    },
+    {
+     "name": "German Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Hungarian Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Hlinka's Slovak People's Party – Party of Slovak National Unity finished first with 47 of 63 seats on 97.5% of the vote.",
+   "seatLeader": "Hlinka's Slovak People's Party – Party of Slovak National Unity",
+   "caveat": "A single Hlinka-dominated list was offered for approval, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "14 August 1946",
+   "era": "democratic-win",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": null,
+     "votes": 999622,
+     "share": 62.5,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 489596,
+     "share": 30.61,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 60195,
+     "share": 3.76,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 50079,
+     "share": 3.13,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Democratic Party finished first with 63 of 100 seats on 62.5% of the vote.",
+   "seatLeader": "Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "30 May 1948",
+   "era": "national-front",
+   "totalSeats": 100,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 78,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Communist Party of Slovakia finished first with 78 of 100 seats.",
+   "seatLeader": "Communist Party of Slovakia",
+   "caveat": "A single National Front list was offered for approval at every election from 1948 to 1986, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "28 November 1954",
+   "era": "national-front",
+   "totalSeats": 103,
+   "majoritySeats": null,
+   "turnout": 99.13,
+   "parties": [
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": 2249547,
+     "share": 97.27,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents and others",
+     "leader": null,
+     "seats": 45,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Communist Party of Slovakia finished first with 47 of 103 seats on 97.3% of the vote. Turnout 99.1%.",
+   "seatLeader": "Communist Party of Slovakia",
+   "caveat": "A single National Front list was offered for approval at every election from 1948 to 1986, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "kind": "legislative",
+   "date": "12 June 1960",
+   "era": "national-front",
+   "totalSeats": 87,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 87,
+     "seatChange": null,
+     "votes": 2511281,
+     "share": 99.79,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Communist Party of Slovakia finished first with 87 of 87 seats on 99.8% of the vote.",
+   "seatLeader": "Communist Party of Slovakia",
+   "caveat": "A single National Front list was offered for approval at every election from 1948 to 1986, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "14 June 1964",
+   "era": "national-front",
+   "totalSeats": 92,
+   "majoritySeats": 47,
+   "turnout": 99.42,
+   "parties": [
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 58,
+     "seatChange": null,
+     "votes": 2645843,
+     "share": 99.94,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents and others",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Communist Party of Slovakia finished first with 58 of 92 seats on 99.9% of the vote. Turnout 99.4%.",
+   "seatLeader": "Communist Party of Slovakia",
+   "caveat": "A single National Front list was offered for approval at every election from 1948 to 1986, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "26–27 November 1971",
+   "era": "national-front",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 99.54,
+   "parties": [
+    {
+     "name": "National Front",
+     "leader": null,
+     "seats": 150,
+     "seatChange": 58,
+     "votes": 2983603,
+     "share": 99.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Front finished first with 150 of 150 seats on 99.9% of the vote. Turnout 99.5%.",
+   "seatLeader": "National Front",
+   "caveat": "A single National Front list was offered for approval at every election from 1948 to 1986, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "22–23 October 1976",
+   "era": "national-front",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 99.81,
+   "parties": [
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 101,
+     "seatChange": null,
+     "votes": 3221743,
+     "share": 99.98,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Communist Party of Slovakia finished first with 101 of 150 seats on 100.0% of the vote. Turnout 99.8%.",
+   "seatLeader": "Communist Party of Slovakia",
+   "caveat": "A single National Front list was offered for approval at every election from 1948 to 1986, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "5–6 June 1981",
+   "era": "national-front",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 99.75,
+   "parties": [
+    {
+     "name": "National Front",
+     "leader": null,
+     "seats": 150,
+     "seatChange": 0,
+     "votes": 3366295,
+     "share": 99.98,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Front finished first with 150 of 150 seats on 100.0% of the vote. Turnout 99.8%.",
+   "seatLeader": "National Front",
+   "caveat": "A single National Front list was offered for approval at every election from 1948 to 1986, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "23–24 May 1986",
+   "era": "national-front",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 99.76,
+   "parties": [
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 103,
+     "seatChange": null,
+     "votes": 3487244,
+     "share": 99.96,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Communist Party of Slovakia finished first with 103 of 150 seats on 100.0% of the vote. Turnout 99.8%.",
+   "seatLeader": "Communist Party of Slovakia",
+   "caveat": "A single National Front list was offered for approval at every election from 1948 to 1986, with no opposing slate on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "8–9 June 1990",
+   "era": "velvet",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 95.39,
+   "parties": [
+    {
+     "name": "Public Against Violence",
+     "leader": null,
+     "seats": 48,
+     "seatChange": null,
+     "votes": 991285,
+     "share": 29.35,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 648782,
+     "share": 19.21,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 470984,
+     "share": 13.94,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -81,
+     "votes": 450855,
+     "share": 13.35,
+     "swing": null
+    },
+    {
+     "name": "Coexistence–Hungarian Christian Democratic Movement",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 292636,
+     "share": 8.66,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 148567,
+     "share": 4.4,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 117871,
+     "share": 3.49,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Farmers and the Countryside",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 85060,
+     "share": 2.52,
+     "swing": null
+    },
+    {
+     "name": "Social Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61401,
+     "share": 1.82,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -7,
+     "votes": 60041,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "Romas",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24797,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "Movement of Czechoslovak Understanding",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13417,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "People's Democratic Party–Rally for the Republic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7023,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Free Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3326,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1166,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Democratic Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 515,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Milan Čič",
+    "party": "VPN"
+   },
+   "pmAfter": {
+    "name": "Vladimír Mečiar",
+    "party": "VPN"
+   },
+   "knownAs": null,
+   "summary": "Public Against Violence finished first with 48 of 150 seats on 29.4% of the vote. Turnout 95.4%. Vladimír Mečiar replaced Milan Čič.",
+   "seatLeader": "Public Against Violence",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "5–6 June 1992",
+   "era": "velvet",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 84.17,
+   "parties": [
+    {
+     "name": "Movement for a Democratic Slovakia",
+     "leader": null,
+     "seats": 74,
+     "seatChange": null,
+     "votes": 1148625,
+     "share": 37.26,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Left",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 1,
+     "votes": 453203,
+     "share": 14.7,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -10,
+     "votes": 273945,
+     "share": 8.89,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -6,
+     "votes": 244527,
+     "share": 7.93,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Christian Democratic Movement–Coexistence",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -1,
+     "votes": 228885,
+     "share": 7.42,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 124503,
+     "share": 4.04,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 123426,
+     "share": 4.0,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party–Civic Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 102058,
+     "share": 3.31,
+     "swing": null
+    },
+    {
+     "name": "Slovak Christian Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 94162,
+     "share": 3.05,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Civic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 70689,
+     "share": 2.29,
+     "swing": null
+    },
+    {
+     "name": "Party of Greens in Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 66010,
+     "share": 2.14,
+     "swing": null
+    },
+    {
+     "name": "Party of Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33372,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "Party of Labour and Security",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29818,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia – 91",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23349,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Roma Civic Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18343,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Rally for the Republic – Republican Party of Czechoslovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10069,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Slovak Party of Freedom–Party of National Unification",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9414,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Slovak People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9129,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Movement for Civil Freedom",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7169,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Movement for Autonomous Democracy–Party for Moravia and Silesia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3986,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Movement for Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3411,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "National Liberals",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2500,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Movement for Freedom of Speech–Slovak Republican Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2103,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ján Čarnogurský",
+    "party": "KDH"
+   },
+   "pmAfter": {
+    "name": "Vladimír Mečiar",
+    "party": "HZDS"
+   },
+   "knownAs": null,
+   "summary": "Movement for a Democratic Slovakia finished first with 74 of 150 seats on 37.3% of the vote. Turnout 84.2%. Vladimír Mečiar replaced Ján Čarnogurský.",
+   "seatLeader": "Movement for a Democratic Slovakia",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "legislative",
+   "date": "30 September–1 October 1994",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 75.65,
+   "parties": [
+    {
+     "name": "Movement for a Democratic Slovakia–Peasants' Party of Slovakia",
+     "leader": null,
+     "seats": 61,
+     "seatChange": -2,
+     "votes": 1005488,
+     "share": 34.97,
+     "swing": null
+    },
+    {
+     "name": "Common Choice",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -9,
+     "votes": 299496,
+     "share": 10.42,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Coalition (MKM–E–MPP)",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0,
+     "votes": 292936,
+     "share": 10.19,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 1,
+     "votes": 289987,
+     "share": 10.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovakia",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 246444,
+     "share": 8.57,
+     "swing": null
+    },
+    {
+     "name": "Union of the Workers of Slovakia",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 211321,
+     "share": 7.35,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -3,
+     "votes": 155359,
+     "share": 5.4,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 98555,
+     "share": 3.43,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 2,
+     "votes": 78419,
+     "share": 2.73,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 59217,
+     "share": 2.06,
+     "swing": null
+    },
+    {
+     "name": "New Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38369,
+     "share": 1.33,
+     "swing": null
+    },
+    {
+     "name": "Anti-Corruption Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37929,
+     "share": 1.32,
+     "swing": null
+    },
+    {
+     "name": "Movement for a Prosperous Czech Republic and Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30292,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Roma Civic Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19542,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Social Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7121,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Real Social Democratic Party of Slovaks",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3573,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Rally for the Republic–The Republicans",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1410,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jozef Moravčík",
+    "party": "DEÚS"
+   },
+   "pmAfter": {
+    "name": "Vladimír Mečiar",
+    "party": "HZDS"
+   },
+   "knownAs": null,
+   "summary": "Movement for a Democratic Slovakia–Peasants' Party of Slovakia finished first with 61 of 150 seats on 35.0% of the vote. Turnout 75.7%. Vladimír Mečiar replaced Jozef Moravčík.",
+   "seatLeader": "Movement for a Democratic Slovakia–Peasants' Party of Slovakia",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "25–26 September 1998",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 84.25,
+   "parties": [
+    {
+     "name": "Movement for a Democratic Slovakia",
+     "leader": null,
+     "seats": 43,
+     "seatChange": -8,
+     "votes": 907103,
+     "share": 27.0,
+     "swing": null
+    },
+    {
+     "name": "Slovak Democratic Coalition",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 4,
+     "votes": 884497,
+     "share": 26.33,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Left",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 492507,
+     "share": 14.66,
+     "swing": null
+    },
+    {
+     "name": "Party of the Hungarian Coalition",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -1,
+     "votes": 306623,
+     "share": 9.13,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 4,
+     "votes": 304839,
+     "share": 9.07,
+     "swing": null
+    },
+    {
+     "name": "Party of Civic Understanding",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 269343,
+     "share": 8.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 94015,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Union of the Workers of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 43809,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "Our Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16192,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Slovak People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9227,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Popular Movement for Reconciliation and Prosperity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6587,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Independent Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6232,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4688,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "B–Revolutionary Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4391,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "United Labour Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3574,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Alternative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3034,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Third Way Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2515,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Vladimír Mečiar",
+    "party": "HZDS"
+   },
+   "pmAfter": {
+    "name": "Mikuláš Dzurinda",
+    "party": "KDH"
+   },
+   "knownAs": null,
+   "summary": "Movement for a Democratic Slovakia finished first with 43 of 150 seats on 27.0% of the vote. Turnout 84.2%. Mikuláš Dzurinda replaced Vladimír Mečiar.",
+   "seatLeader": "Movement for a Democratic Slovakia",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "20–21 September 2002",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 70.07,
+   "parties": [
+    {
+     "name": "Movement for a Democratic Slovakia",
+     "leader": null,
+     "seats": 36,
+     "seatChange": -8,
+     "votes": 560691,
+     "share": 19.5,
+     "swing": null
+    },
+    {
+     "name": "Slovak Democratic and Christian Union",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 433953,
+     "share": 15.09,
+     "swing": null
+    },
+    {
+     "name": "Direction",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 387100,
+     "share": 13.46,
+     "swing": null
+    },
+    {
+     "name": "Party of the Hungarian Coalition",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 2,
+     "votes": 321069,
+     "share": 11.17,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 237202,
+     "share": 8.25,
+     "swing": null
+    },
+    {
+     "name": "Alliance of the New Citizen",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 230309,
+     "share": 8.01,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 4,
+     "votes": 181872,
+     "share": 6.33,
+     "swing": null
+    },
+    {
+     "name": "True Slovak National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 105084,
+     "share": 3.65,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 95633,
+     "share": 3.33,
+     "swing": null
+    },
+    {
+     "name": "Movement for Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 94324,
+     "share": 3.28,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Alternative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51649,
+     "share": 1.8,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -13,
+     "votes": 39163,
+     "share": 1.36,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28365,
+     "share": 0.99,
+     "swing": null
+    },
+    {
+     "name": "Independent Civic Party of the Unemployed and Injured",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26205,
+     "share": 0.91,
+     "swing": null
+    },
+    {
+     "name": "Union of the Workers of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 15755,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "Woman and Family",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12646,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Civic Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9422,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party–ROSA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8699,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Roma Civic Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8420,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Party for Democratic Civic Rights",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6716,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6441,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Political Movement of Roma in Slovakia–ROMA",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6234,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4548,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "B–Revolutionary Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2818,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 763,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mikuláš Dzurinda",
+    "party": "SDKÚ"
+   },
+   "pmAfter": {
+    "name": "Mikuláš Dzurinda",
+    "party": "SDKÚ"
+   },
+   "knownAs": null,
+   "summary": "Movement for a Democratic Slovakia finished first with 36 of 150 seats on 19.5% of the vote. Turnout 70.1%. Mikuláš Dzurinda stayed in office.",
+   "seatLeader": "Movement for a Democratic Slovakia",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "17 June 2006",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 54.67,
+   "parties": [
+    {
+     "name": "Direction – Social Democracy",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 16,
+     "votes": 671185,
+     "share": 29.14,
+     "swing": null
+    },
+    {
+     "name": "Slovak Democratic and Christian Union – Democratic Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 3,
+     "votes": 422815,
+     "share": 18.36,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 8,
+     "votes": 270230,
+     "share": 11.73,
+     "swing": null
+    },
+    {
+     "name": "Party of the Hungarian Coalition",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 1,
+     "votes": 269111,
+     "share": 11.68,
+     "swing": null
+    },
+    {
+     "name": "People's Party – Movement for a Democratic Slovakia",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -11,
+     "votes": 202540,
+     "share": 8.79,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0,
+     "votes": 191443,
+     "share": 8.31,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 89418,
+     "share": 3.88,
+     "swing": null
+    },
+    {
+     "name": "Free Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 79963,
+     "share": 3.47,
+     "swing": null
+    },
+    {
+     "name": "Alliance of the New Citizen",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -7,
+     "votes": 32775,
+     "share": 1.42,
+     "swing": null
+    },
+    {
+     "name": "Movement for Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 14728,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Hope",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14595,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9174,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Union of the Workers of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6864,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Civic Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6262,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Coalition–Slovak Reciprocity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4016,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Slovak People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3815,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Agrarian and Countryside Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3160,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Prosperity of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3118,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2906,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Mission 21–New Christian Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2523,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Party of Civic Solidarity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2498,
+     "share": 0.11,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mikuláš Dzurinda",
+    "party": "SDKÚ–DS"
+   },
+   "pmAfter": {
+    "name": "Robert Fico",
+    "party": "Smer"
+   },
+   "knownAs": null,
+   "summary": "Direction – Social Democracy finished first with 50 of 150 seats on 29.1% of the vote. Turnout 54.7%. Robert Fico replaced Mikuláš Dzurinda.",
+   "seatLeader": "Direction – Social Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "12 June 2010",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 58.65,
+   "parties": [
+    {
+     "name": "Direction – Social Democracy",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 6,
+     "votes": 880111,
+     "share": 34.8,
+     "swing": null
+    },
+    {
+     "name": "Slovak Democratic and Christian Union – Democratic Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -3,
+     "votes": 390042,
+     "share": 15.42,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Solidarity",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 307287,
+     "share": 12.15,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0,
+     "votes": 215755,
+     "share": 8.53,
+     "swing": null
+    },
+    {
+     "name": "Most–Híd",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 205538,
+     "share": 8.13,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -7,
+     "votes": 128490,
+     "share": 5.08,
+     "swing": null
+    },
+    {
+     "name": "Party of the Hungarian Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -7,
+     "votes": 109638,
+     "share": 4.33,
+     "swing": null
+    },
+    {
+     "name": "People's Party – Movement for a Democratic Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 109480,
+     "share": 4.33,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 2,
+     "votes": 61137,
+     "share": 2.42,
+     "swing": null
+    },
+    {
+     "name": "People's Party Our Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33724,
+     "share": 1.33,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 21104,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "Union – Party for Slovakia (Free Forum–+1 Voice)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 17741,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Paliho Kapurková, Cheerful Political Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14576,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "European Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10332,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "New Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7962,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6947,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Union of the Workers of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6196,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "AZEN – Alliance for Europe of the Nations",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3325,
+     "share": 0.13,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Fico",
+    "party": "Smer"
+   },
+   "pmAfter": {
+    "name": "Iveta Radičová",
+    "party": "SDKÚ–DS"
+   },
+   "knownAs": null,
+   "summary": "Direction – Social Democracy finished first with 62 of 150 seats on 34.8% of the vote. Turnout 58.6%. Iveta Radičová replaced Robert Fico.",
+   "seatLeader": "Direction – Social Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "legislative",
+   "date": "10 March 2012",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 58.9,
+   "parties": [
+    {
+     "name": "Direction – Social Democracy",
+     "leader": null,
+     "seats": 83,
+     "seatChange": 10,
+     "votes": 1134280,
+     "share": 44.42,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 0,
+     "votes": 225361,
+     "share": 8.82,
+     "swing": null
+    },
+    {
+     "name": "Ordinary People and Independent Personalities",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 218537,
+     "share": 8.56,
+     "swing": null
+    },
+    {
+     "name": "Most–Híd",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -1,
+     "votes": 176088,
+     "share": 6.9,
+     "swing": null
+    },
+    {
+     "name": "Slovak Democratic and Christian Union – Democratic Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -9,
+     "votes": 155744,
+     "share": 6.1,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Solidarity",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -6,
+     "votes": 150266,
+     "share": 5.88,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 116420,
+     "share": 4.56,
+     "swing": null
+    },
+    {
+     "name": "Party of the Hungarian Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 109483,
+     "share": 4.29,
+     "swing": null
+    },
+    {
+     "name": "99% – Civic Voice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40488,
+     "share": 1.59,
+     "swing": null
+    },
+    {
+     "name": "People's Party Our Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 40460,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Zmena zdola",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33155,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "Party of Freedom of Speech – Nora Mojsejová",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31159,
+     "share": 1.22,
+     "swing": null
+    },
+    {
+     "name": "People's Party – Movement for a Democratic Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 23772,
+     "share": 0.93,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18583,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "Nation and Justice – Our party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16234,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10832,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Law and Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10604,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Free Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8908,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7860,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Our Region",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4859,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 4844,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Ordinary People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4320,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Party of Self-Employed of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3963,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Party of Citizens of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3836,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Party of Roma Union of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2891,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Party +1 Voice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 779,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Iveta Radičová",
+    "party": "SDKÚ–DS"
+   },
+   "pmAfter": {
+    "name": "Robert Fico",
+    "party": "Smer"
+   },
+   "knownAs": null,
+   "summary": "Direction – Social Democracy finished first with 83 of 150 seats on 44.4% of the vote. Turnout 58.9%. Robert Fico replaced Iveta Radičová.",
+   "seatLeader": "Direction – Social Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "5 March 2016",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 59.38,
+   "parties": [
+    {
+     "name": "Direction – Social Democracy",
+     "leader": null,
+     "seats": 49,
+     "seatChange": -16,
+     "votes": 737481,
+     "share": 28.28,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Solidarity",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 6,
+     "votes": 315558,
+     "share": 12.1,
+     "swing": null
+    },
+    {
+     "name": "OĽANO–NOVA",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 2,
+     "votes": 287611,
+     "share": 11.03,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 4,
+     "votes": 225386,
+     "share": 8.64,
+     "swing": null
+    },
+    {
+     "name": "Kotleba – People's Party Our Slovakia",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 6,
+     "votes": 209779,
+     "share": 8.04,
+     "swing": null
+    },
+    {
+     "name": "We Are Family",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 172860,
+     "share": 6.63,
+     "swing": null
+    },
+    {
+     "name": "Most–Híd",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0,
+     "votes": 169593,
+     "share": 6.5,
+     "swing": null
+    },
+    {
+     "name": "Network",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 146205,
+     "share": 5.61,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 128908,
+     "share": 4.94,
+     "swing": null
+    },
+    {
+     "name": "Party of the Hungarian Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 105495,
+     "share": 4.05,
+     "swing": null
+    },
+    {
+     "name": "Slovak Civic Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21785,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "TIP Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18845,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Slovak Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17541,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16278,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Slovak Democratic and Christian Union – Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 6938,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "CHANCE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6522,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Party of Modern Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4559,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Direct Democracy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3595,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Courage – Great National and Pro-Russian Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3428,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Resistance – Labor Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3182,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Christian Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2426,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party - Ľudo Kaník",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1998,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Coalition – Together for Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1777,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Fico",
+    "party": "Smer"
+   },
+   "pmAfter": {
+    "name": "Robert Fico",
+    "party": "Smer"
+   },
+   "knownAs": null,
+   "summary": "Direction – Social Democracy finished first with 49 of 150 seats on 28.3% of the vote. Turnout 59.4%. Robert Fico stayed in office.",
+   "seatLeader": "Direction – Social Democracy",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "legislative",
+   "date": "29 February 2020",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 65.75,
+   "parties": [
+    {
+     "name": "OĽANO–NOVA–KÚ–ZZ",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 14,
+     "votes": 721166,
+     "share": 25.03,
+     "swing": null
+    },
+    {
+     "name": "Direction – Social Democracy",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -10,
+     "votes": 527172,
+     "share": 18.29,
+     "swing": null
+    },
+    {
+     "name": "We Are Family",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 2,
+     "votes": 237531,
+     "share": 8.24,
+     "swing": null
+    },
+    {
+     "name": "Kotlebists – People's Party Our Slovakia",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0,
+     "votes": 229660,
+     "share": 7.97,
+     "swing": null
+    },
+    {
+     "name": "Progressive Slovakia–Together coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 200780,
+     "share": 6.97,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Solidarity",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -6,
+     "votes": 179246,
+     "share": 6.22,
+     "swing": null
+    },
+    {
+     "name": "For the People",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 166325,
+     "share": 5.77,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 134099,
+     "share": 4.65,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Community Togetherness",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 112662,
+     "share": 3.91,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 91171,
+     "share": 3.16,
+     "swing": null
+    },
+    {
+     "name": "Good Choice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 88220,
+     "share": 3.06,
+     "swing": null
+    },
+    {
+     "name": "Homeland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 84507,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "Bridge",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 59174,
+     "share": 2.05,
+     "swing": null
+    },
+    {
+     "name": "Socialists.sk",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15925,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "We Have Had Enough!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9260,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Andrej Hlinka's Slovak People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8191,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4194,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Solidarity – Working Poor Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3296,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Mayors and Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2018,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Slovak Revival Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1966,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Voice of the Right",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1887,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Labour of the Slovak Nation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1261,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "99% – Civic Voice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 991,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Slovak League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 809,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Peter Pellegrini",
+    "party": "Smer"
+   },
+   "pmAfter": {
+    "name": "Igor Matovič",
+    "party": "OĽaNO–NOVA–KÚ–ZZ"
+   },
+   "knownAs": null,
+   "summary": "OĽANO–NOVA–KÚ–ZZ finished first with 53 of 150 seats on 25.0% of the vote. Turnout 65.8%. Igor Matovič replaced Peter Pellegrini.",
+   "seatLeader": "OĽANO–NOVA–KÚ–ZZ",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "30 September 2023",
+   "era": "republic",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 68.5,
+   "parties": [
+    {
+     "name": "Direction – Social Democracy",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 4,
+     "votes": 681017,
+     "share": 22.95,
+     "swing": null
+    },
+    {
+     "name": "Progressive Slovakia",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 32,
+     "votes": 533136,
+     "share": 17.96,
+     "swing": null
+    },
+    {
+     "name": "Voice – Social Democracy",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 436415,
+     "share": 14.7,
+     "swing": null
+    },
+    {
+     "name": "OĽaNO and Friends",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -48,
+     "votes": 264137,
+     "share": 8.9,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 12,
+     "votes": 202515,
+     "share": 6.82,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Solidarity",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -2,
+     "votes": 187645,
+     "share": 6.32,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 10,
+     "votes": 166995,
+     "share": 5.63,
+     "swing": null
+    },
+    {
+     "name": "Republic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 141099,
+     "share": 4.75,
+     "swing": null
+    },
+    {
+     "name": "Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 130183,
+     "share": 4.39,
+     "swing": null
+    },
+    {
+     "name": "Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 87006,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "We Are Family",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -17,
+     "votes": 65673,
+     "share": 2.21,
+     "swing": null
+    },
+    {
+     "name": "People's Party Our Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -17,
+     "votes": 25003,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9867,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party – Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9358,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Modrí, Most–Híd",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7935,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3486,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "MySlovensko",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2786,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Karma",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2407,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Together Citizens of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2401,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "HEART Patriots and Pensioners – Slovak National Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2315,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Princíp",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1817,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Spravodlivosť",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1335,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Slovak Revival Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1332,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1262,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Slovak Democratic and Christian Union – Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 771,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ľudovít Ódor (acting)",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Robert Fico",
+    "party": "Smer"
+   },
+   "knownAs": null,
+   "summary": "Direction – Social Democracy finished first with 42 of 150 seats on 22.9% of the vote. Turnout 68.5%. Robert Fico replaced Ľudovít Ódor (acting).",
+   "seatLeader": "Direction – Social Democracy",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

@@ -8,6 +8,7 @@ import {
   getNflExpectation,
   getNflExpectationSeason,
   getNflExpectationTeams,
+  gameKey,
   type GameRow,
 } from "@/lib/nflExpectation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -73,9 +74,18 @@ function signed(n: number, dp = 2) {
   return `${n > 0 ? "+" : ""}${n.toFixed(dp)}`;
 }
 
-/** The winner's pre-game probability, from the home-side model number. */
+/**
+ * The winner's probability, for ranking "how surprising was this". Reads off
+ * `surprise` (1 - winner's probability) when it exists so a rested-starters
+ * discount is reflected here too, since surprise is recomputed from
+ * model.pH_rest on any row with a flagged side; falls back to the raw
+ * model.pH otherwise. Elo (model.pH) itself, printed in the "Home chance"
+ * column, is never touched.
+ */
 function winnerProb(g: GameRow): number | null {
-  if (!g.model || !g.result || g.result === "T") return null;
+  if (!g.result || g.result === "T") return null;
+  if (typeof g.surprise === "number") return 1 - g.surprise;
+  if (!g.model) return null;
   return g.result === "H" ? g.model.pH : 1 - g.model.pH;
 }
 
@@ -117,6 +127,7 @@ export default async function NflExpectationSeasonPage({
     .filter((x): x is { g: GameRow; p: number } => x.p != null)
     .sort((a, b) => a.p - b.p)
     .slice(0, 5);
+  const shockKeys = new Set(upsets.map((u) => gameKey(u.g)));
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -255,11 +266,12 @@ export default async function NflExpectationSeasonPage({
             </thead>
             <tbody>
               {games.map((g) => {
-                const shock = upsets.some((u) => u.g.game_id === g.game_id);
+                const key = gameKey(g);
+                const shock = shockKeys.has(key);
                 const homeWon = g.result === "H";
                 const awayWon = g.result === "A";
                 return (
-                  <tr key={g.game_id} className="border-t" style={{ borderColor: "var(--border)" }}>
+                  <tr key={key} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)] whitespace-nowrap" style={mono}>
                       {g.date ?? ""}
                     </td>
@@ -270,6 +282,15 @@ export default async function NflExpectationSeasonPage({
                       {shock ? (
                         <span className="ml-1.5 text-[10px] uppercase tracking-wide" style={{ color: UP }}>
                           shock
+                        </span>
+                      ) : null}
+                      {g.rest?.home || g.rest?.away ? (
+                        <span
+                          className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded-full border text-[var(--text-muted)] whitespace-nowrap align-middle"
+                          style={{ borderColor: "var(--border)" }}
+                          title="A favoured side started a QB other than that team's primary starter in the final two weeks of the season"
+                        >
+                          starters rested
                         </span>
                       ) : null}
                     </td>

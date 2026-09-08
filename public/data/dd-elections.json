@@ -1,0 +1,1283 @@
+{
+ "meta": {
+  "title": "East German Volkskammer Elections",
+  "sources": [
+   "Wikipedia: East German general election articles 1949-1990 (results tables and infoboxes)",
+   "Nohlen & Stöver, Elections in Europe: A data handbook, as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "defunct",
+  "dissolved": "3 October 1990"
+ },
+ "eras": [
+  {
+   "key": "constituent",
+   "label": "The founding vote",
+   "span": "1949",
+   "blurb": "East Germany's first election chose the Third German People's Congress, which went on to adopt the country's first constitution and proclaim the German Democratic Republic that October. Voters were offered a single Unity List built around the Socialist Unity Party (SED) and asked only to approve or reject it, and it passed with 66.07% in favour, a margin the sources call the lowest any SED-dominated bloc would ever record."
+  },
+  {
+   "key": "nationalfront",
+   "label": "The National Front rituals",
+   "span": "1950–1986",
+   "blurb": "For nine elections running, every seat in the Volkskammer was filled by a single National Front list whose seats were apportioned to each bloc party by a fixed quota before a vote was cast, not by the count itself. Voters could only accept or reject the whole slate, and a No vote meant crossing out every name in a watched booth rather than using a secret ballot box, since separate Yes and No boxes were removed after 1950. The list was reported passing with between 99.46% and 99.95% approval at every one of these nine elections."
+  },
+  {
+   "key": "peaceful",
+   "label": "The free election",
+   "span": "1990",
+   "blurb": "The Volkskammer election of 18 March 1990, called after the Peaceful Revolution swept the SED from its monopoly on power, was the only genuinely competitive vote the German Democratic Republic ever held. The Alliance for Germany, a coalition around a reconstituted Christian Democratic Union campaigning for rapid reunification, won 192 of 400 seats against a Social Democratic Party that had led the early polling. The grand coalition it formed spent four and a half months dismantling the East German state before the Volkskammer voted itself out of existence; the GDR ceased to exist on 3 October 1990."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "15–16 May 1949",
+   "era": "constituent",
+   "totalSeats": 1525,
+   "majoritySeats": null,
+   "turnout": 95.23,
+   "parties": [
+    {
+     "name": "Socialist Unity Party",
+     "leader": null,
+     "seats": 450,
+     "seatChange": null,
+     "votes": 7943949,
+     "share": 66.07,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 225,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 225,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cooperatives",
+     "leader": null,
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Trade Union Federation",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Youth",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peasants Mutual Aid Association",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Union of Persecutees of the Nazi Regime",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party (East Berlin)",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "Socialist Unity Party finished first with 450 of 1525 seats on 66.1% of the vote. Turnout 95.2%. Otto Grotewohl took office.",
+   "seatLeader": "Socialist Unity Party",
+   "caveat": "Voters could only approve or reject a single Unity List dominated by the Socialist Unity Party; it passed with 66.07% in favour, the lowest margin the sources say any SED-dominated bloc would ever record, under conditions they describe as significantly constraining genuine political competition.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "legislative",
+   "date": "15 October 1950",
+   "era": "nationalfront",
+   "totalSeats": 466,
+   "majoritySeats": null,
+   "turnout": 98.5,
+   "parties": [
+    {
+     "name": "Socialist Unity Party of Germany",
+     "leader": null,
+     "seats": 110,
+     "seatChange": null,
+     "votes": 12088745,
+     "share": 99.71,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 67,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party of Germany",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Trade Union Federation",
+     "leader": null,
+     "seats": 49,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party of Germany",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party of Germany",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Youth",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association of the GDR",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League of Germany",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Union of Persecutees of the Nazi Regime",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peasants Mutual Aid Association",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party/SDA (East Berlin)",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "Socialist Unity Party of Germany finished first with 110 of 466 seats on 99.7% of the vote. Turnout 98.5%. Otto Grotewohl stayed in office.",
+   "seatLeader": "Socialist Unity Party of Germany",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "17 October 1954",
+   "era": "nationalfront",
+   "totalSeats": 466,
+   "majoritySeats": null,
+   "turnout": 98.41,
+   "parties": [
+    {
+     "name": "Socialist Unity Party of Germany",
+     "leader": null,
+     "seats": 117,
+     "seatChange": 7,
+     "votes": 11828877,
+     "share": 99.46,
+     "swing": null
+    },
+    {
+     "name": "Free German Trade Union Federation",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -15,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -14,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 17,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 19,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League of Germany",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 9,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Youth",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association of the GDR",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peasants Mutual Aid Association",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "Socialist Unity Party of Germany finished first with 117 of 466 seats on 99.5% of the vote. Turnout 98.4%. Otto Grotewohl stayed in office.",
+   "seatLeader": "Socialist Unity Party of Germany",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "16 November 1958",
+   "era": "nationalfront",
+   "totalSeats": 466,
+   "majoritySeats": null,
+   "turnout": 98.9,
+   "parties": [
+    {
+     "name": "Socialist Unity Party of Germany",
+     "leader": null,
+     "seats": 117,
+     "seatChange": 0,
+     "votes": 11689110,
+     "share": 99.87,
+     "swing": null
+    },
+    {
+     "name": "Free German Trade Union Federation",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League of Germany",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Youth",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association of the GDR",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peasants Mutual Aid Association",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "Socialist Unity Party of Germany finished first with 117 of 466 seats on 99.9% of the vote. Turnout 98.9%. Otto Grotewohl stayed in office.",
+   "seatLeader": "Socialist Unity Party of Germany",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "20 October 1963",
+   "era": "nationalfront",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": 99.25,
+   "parties": [
+    {
+     "name": "Socialist Unity Party of Germany",
+     "leader": null,
+     "seats": 127,
+     "seatChange": 10,
+     "votes": null,
+     "share": 99.95,
+     "swing": null
+    },
+    {
+     "name": "Free German Trade Union Federation",
+     "leader": null,
+     "seats": 68,
+     "seatChange": 15,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Youth",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League of Germany",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association of the GDR",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Otto Grotewohl",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "Socialist Unity Party of Germany finished first with 127 of 500 seats on 100.0% of the vote. Turnout 99.2%. Otto Grotewohl stayed in office.",
+   "seatLeader": "Socialist Unity Party of Germany",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "legislative",
+   "date": "2 July 1967",
+   "era": "nationalfront",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": 98.82,
+   "parties": [
+    {
+     "name": "National Front",
+     "leader": null,
+     "seats": 127,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "National Front finished first with 127 of 500 seats. Turnout 98.8%. Willi Stoph stayed in office.",
+   "seatLeader": "National Front",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "14 November 1971",
+   "era": "nationalfront",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": 98.48,
+   "parties": [
+    {
+     "name": "National Front",
+     "leader": null,
+     "seats": 127,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "National Front finished first with 127 of 500 seats. Turnout 98.5%. Willi Stoph stayed in office.",
+   "seatLeader": "National Front",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "17 October 1976",
+   "era": "nationalfront",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": 98.6,
+   "parties": [
+    {
+     "name": "Socialist Unity Party of Germany",
+     "leader": null,
+     "seats": 127,
+     "seatChange": 0,
+     "votes": 11245023,
+     "share": 99.86,
+     "swing": null
+    },
+    {
+     "name": "Free German Trade Union Federation",
+     "leader": null,
+     "seats": 68,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Youth",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League of Germany",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association of the GDR",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Horst Sindermann",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "Socialist Unity Party of Germany finished first with 127 of 500 seats on 99.9% of the vote. Turnout 98.6%. Willi Stoph replaced Horst Sindermann.",
+   "seatLeader": "Socialist Unity Party of Germany",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "14 June 1981",
+   "era": "nationalfront",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": 99.2,
+   "parties": [
+    {
+     "name": "Socialist Unity Party of Germany",
+     "leader": null,
+     "seats": 127,
+     "seatChange": 0,
+     "votes": 12235515,
+     "share": 99.86,
+     "swing": null
+    },
+    {
+     "name": "Free German Trade Union Federation",
+     "leader": null,
+     "seats": 68,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Youth",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League of Germany",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association of the GDR",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "Socialist Unity Party of Germany finished first with 127 of 500 seats on 99.9% of the vote. Turnout 99.2%. Willi Stoph stayed in office.",
+   "seatLeader": "Socialist Unity Party of Germany",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "8 June 1986",
+   "era": "nationalfront",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": 99.74,
+   "parties": [
+    {
+     "name": "Socialist Unity Party of Germany",
+     "leader": null,
+     "seats": 127,
+     "seatChange": 0,
+     "votes": 12392094,
+     "share": 99.94,
+     "swing": null
+    },
+    {
+     "name": "Free German Trade Union Federation",
+     "leader": null,
+     "seats": 61,
+     "seatChange": -7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party of Germany",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Free German Youth",
+     "leader": null,
+     "seats": 37,
+     "seatChange": -3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League of Germany",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association of the GDR",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peasants Mutual Aid Association",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 14,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "pmAfter": {
+    "name": "Willi Stoph",
+    "party": "SED"
+   },
+   "knownAs": null,
+   "summary": "Socialist Unity Party of Germany finished first with 127 of 500 seats on 99.9% of the vote. Turnout 99.7%. Willi Stoph stayed in office.",
+   "seatLeader": "Socialist Unity Party of Germany",
+   "caveat": "Voters could only accept or reject one preapproved National Front list whose seats were fixed by quota before the vote, not decided by it; a No vote meant crossing out every name in a watched booth, and the list was reported passing with 99% or more of the vote each time.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "18 March 1990",
+   "era": "peaceful",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 93.38,
+   "parties": [
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 163,
+     "seatChange": 111,
+     "votes": 4710598,
+     "share": 40.82,
+     "swing": null
+    },
+    {
+     "name": "German Social Union",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 727730,
+     "share": 6.31,
+     "swing": null
+    },
+    {
+     "name": "Democratic Awakening",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 106146,
+     "share": 0.92,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 88,
+     "seatChange": null,
+     "votes": 2525534,
+     "share": 21.88,
+     "swing": null
+    },
+    {
+     "name": "Party of Democratic Socialism",
+     "leader": null,
+     "seats": 66,
+     "seatChange": -61,
+     "votes": 1892381,
+     "share": 16.4,
+     "swing": null
+    },
+    {
+     "name": "Association of Free Democrats",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -31,
+     "votes": 608935,
+     "share": 5.28,
+     "swing": null
+    },
+    {
+     "name": "Alliance 90",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 336074,
+     "share": 2.91,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmers' Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -43,
+     "votes": 251226,
+     "share": 2.18,
+     "swing": null
+    },
+    {
+     "name": "Green Party–Independent Women's Association",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 226932,
+     "share": 1.97,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -50,
+     "votes": 44292,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Democratic Women's League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -31,
+     "votes": 38192,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "United Left",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 20342,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Alternative Youth List (DJP–GJ–MJV–FDJ)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -37,
+     "votes": 14616,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Christian League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10691,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8819,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3891,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "European Federalist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3636,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Independent People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3007,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "German Beer Drinkers' Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2534,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Spartacist Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2417,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Unity Now",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2396,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Federation of Socialist Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 386,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Association of Working Groups for Work Policy and Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 380,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Christian Democratic Union finished first with 163 of 400 seats on 40.8% of the vote. Turnout 93.4%.",
+   "seatLeader": "Christian Democratic Union",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

@@ -213,6 +213,19 @@ table thead th {
   /* <ShowMore> is the exception: its summary is pure control ("Show all 42
      metros"), and that sentence is false once the desktop shows all 42. */
   details.show-more[data-desktop-open] > summary { display: none; }
+
+  /* `data-desktop-default-open` is the DEFAULT-not-fixed variant, used by the
+     league accordions on /sports/standings: the content is revealed for the
+     first paint exactly as above, but the summary keeps its pointer and its
+     chevron, because an inline script on the page swaps the attribute for a
+     real `open` as soon as the markup exists, and from then on the block
+     toggles natively. Reach for this when "open on desktop" is a starting
+     state the reader may change, and for `data-desktop-open` when it is not. */
+  details[data-desktop-default-open] > *:not(summary) { display: revert; }
+  details[data-desktop-default-open]::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
 }
 
 /* === A jump link reveals what it jumped to ===

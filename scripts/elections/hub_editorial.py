@@ -922,3 +922,46 @@ INTROS = {
  "eg": dict(pres="Egypt's presidential contests, newest first. The half-century of single-candidate confirmations that preceded them is filed under referendums, where it belongs.",
             leg="Every parliamentary election from 1923, newest first. The liberal-monarchy elections are the only ones on this page whose outcome was ever in doubt."),
 }
+
+
+# ------------------------------------------------------------ per-hub files --
+# From Wave 5 (2026-09-08) a hub lives in its own module,
+# scripts/elections/hubs/<cc>.py, so eight hubs can be written in parallel
+# without eight hands in this file. Each module exports:
+#   HUB      the dict that HUBS[cc] would hold (shape, name, adj, ... links)
+#   ERAS     {"leg": [...], "pres": [...]} in the (key, label, span, lo, hi,
+#            blurb) tuple form used above; omit a kind the hub does not have
+#   COLORS   party or candidate-party colour map
+#   INTRO    {"leg": "...", "pres": "..."} chronology intros
+# and optionally ERA_FREEDOM, ERA_CAVEAT and FREEDOM_OVERRIDE keyed exactly as
+# in build_hub_json.py ((cc, kind, era) and (cc, id)), which are merged there.
+# A module can also carry STATUS = "defunct" plus DISSOLVED = "3 October 1990"
+# for a polity that no longer exists; the site reads that from
+# electionHubsMeta, this is only so the hub JSON's meta says so too.
+import importlib.util as _ilu
+import os as _os
+
+HUB_FREEDOM, HUB_CAVEAT, HUB_OVERRIDE, HUB_STATUS = {}, {}, {}, {}
+_HUBDIR = _os.path.join(_os.path.dirname(_os.path.realpath(__file__)), "hubs")
+if _os.path.isdir(_HUBDIR):
+    for _f in sorted(_os.listdir(_HUBDIR)):
+        if not _f.endswith(".py") or _f.startswith("_"):
+            continue
+        _cc = _f[:-3]
+        _spec = _ilu.spec_from_file_location("hub_" + _cc, _os.path.join(_HUBDIR, _f))
+        _m = _ilu.module_from_spec(_spec)
+        try:
+            _spec.loader.exec_module(_m)
+        except Exception as _e:  # a half-written sibling must not take the others down
+            import sys as _sys
+            print("hub module %s skipped: %s" % (_f, _e), file=_sys.stderr)
+            continue
+        HUBS[_cc] = _m.HUB
+        ERAS[_cc] = _m.ERAS
+        COLORS[_cc] = _m.COLORS
+        INTROS[_cc] = _m.INTRO
+        HUB_FREEDOM.update(getattr(_m, "ERA_FREEDOM", {}))
+        HUB_CAVEAT.update(getattr(_m, "ERA_CAVEAT", {}))
+        HUB_OVERRIDE.update(getattr(_m, "FREEDOM_OVERRIDE", {}))
+        if getattr(_m, "STATUS", None):
+            HUB_STATUS[_cc] = {"status": _m.STATUS, "dissolved": getattr(_m, "DISSOLVED", None)}

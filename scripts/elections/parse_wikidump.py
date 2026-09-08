@@ -319,6 +319,17 @@ def parse_table(lines, i):
                     continue
             break
         cells = line.split("\t")
+        # A second chamber's own header row repeats "Party | Votes | % |
+        # Seats" right after the first chamber's Total/turnout rows with no
+        # blank line between them: Czechoslovakia's bicameral articles print
+        # Chamber of Deputies results directly followed by "Senate" and a
+        # second identical header. Reading that header as a data row (with
+        # any carried caption glued on) ran the Senate's rows straight onto
+        # the Chamber's table, doubling every party in the 1920 result. A
+        # repeated header always ends the table here; find_tables picks up
+        # the next chamber's table on its own from this same header line.
+        if norm_head(cells[0]) == "name" and {norm_head(c) for c in cells[1:]} & {"votes", "seats", "share"}:
+            break
         if carry:
             cells = [" ".join(carry + [cells[0]])] + cells[1:]
             carry = []
@@ -337,7 +348,11 @@ def parse_table(lines, i):
         # ending in a vote count keeps the old reading.
         if 1 < len(cells) < width and cols.get("seats") is not None:
             tail = clean(cells[-1]).replace("−", "-").replace("–", "-")
-            if re.match(r"^[+-]?\d{1,4}$", tail):
+            # A trailing "New" is as much a seat-change value as a number:
+            # Vietnam's 2007 table prints "Independents | | 1 | New" for a
+            # party with no prior seats, two blank cells collapsed into one,
+            # and without this the seat count itself fell into the % column.
+            if re.match(r"^[+-]?\d{1,4}$", tail) or tail.lower() in ("new", "steady"):
                 cells = [cells[0]] + [""] * (width - len(cells)) + cells[1:]
         label = clean(cells[0])
         low = label.lower()
@@ -566,7 +581,19 @@ def find_tiered(lines, head_ok=None):
 # ------------------------------------------------------------- infobox -------
 
 SEATS_RE = re.compile(r"All\s+([\d,]+)\s+seats?\s+in\s+(.+?)(?:\s*\[|$)", re.I)
-SEATS_RE2 = re.compile(r"([\d,]+)\s+of\s+the\s+([\d,]+)\s+seats?\s+in\s+(.+?)(?:\s*\[|$)", re.I)
+# "166 of the 174 seats" and "434 out of 500 seats" are the same fact in two
+# phrasings a partly-elected house uses (East Germany's Volkskammer prints
+# the latter for every election that co-opted some seats rather than
+# electing all of them); without "out of" the total silently fell back to
+# summing the parties on the page, which is wrong whenever, as in 1967 and
+# 1971, only one summary row made it into the table.
+# "166 of the 174 seats" and "434 out of 500 seats" are the same fact in two
+# phrasings a partly-elected house uses (East Germany's Volkskammer prints
+# the latter for every election that co-opted some seats rather than
+# electing all of them); without "out of" the total silently fell back to
+# summing the parties on the page, which is wrong whenever, as in 1967 and
+# 1971, only one summary row made it into the table.
+SEATS_RE2 = re.compile(r"([\d,]+)\s+(?:of the|out of)\s+([\d,]+)\s+seats?\s+in\s+(.+?)(?:\s*\[|$)", re.I)
 # "166 seats in Dail Eireann" - no "All", which is how four Irish elections came
 # out with a seat total summed from the listed parties instead of the real house.
 SEATS_RE3 = re.compile(r"^([\d,]{2,4})\s+seats?\s+in\s+(.+?)(?:\s*\[|$)", re.I)
@@ -575,11 +602,36 @@ TURNOUT_RE = re.compile(r"^Turnout\t([\d.]+)\s*%", re.M)
 NAV_RE = re.compile(r"^←\s*[^\t]*\t([^\t]+)\t.*→\s*$")
 
 LEADER_BEFORE = re.compile(
-    r"^(Chancellor|Taoiseach|Prime Minister|President|Premier|Head of Government)"
+    r"^(Chancellor|Taoiseach|Prime Minister|President|Premier|Head of Government"
+    r"|Chairman of the Council of Ministers)"
     r"\s+before\s+(?:the\s+)?election", re.I)
 LEADER_AFTER = re.compile(
+    # Two mutually exclusive infobox shapes, not one with an optional part:
+    # most prefix the role ("Elected Chancellor", "Subsequent Taoiseach", no
+    # "after election" anywhere on the line) while a few, Bangladesh's and
+    # East Germany's included, repeat the bare role name with an "after
+    # election" suffix instead ("Prime Minister after election", "Chairman
+    # of the Council of Ministers after election"). A version that made the
+    # prefix optional but the suffix mandatory (or the reverse) matches only
+    # one shape and silently drops the other: Bangladesh's 1979 "Subsequent
+    # Prime Minister" (no suffix) and 2026's "Prime Minister after election"
+    # (no prefix) cannot both be matched by a single mandatory part, so the
+    # two shapes are kept as a true alternation instead.
     r"^(?:Elected|Subsequent|New|Incoming)\s+"
-    r"(Chancellor|Taoiseach|Prime Minister|President|Premier|Head of Government)", re.I)
+    r"(?:Chancellor|Taoiseach|Prime Minister|President|Premier|Head of Government"
+    r"|Chairman of the Council of Ministers)"
+    r"|^(?:Chancellor|Taoiseach|Prime Minister|President|Premier|Head of Government"
+    r"|Chairman of the Council of Ministers)"
+    r"\s+after\s+(?:the\s+)?election"
+    # A third shape, Thailand's: a bare "Prime Minister-designate" label line
+    # on its own (no "before"/"after election" wording at all), used because
+    # Thai PMs are elected by parliament some weeks after polling day, so the
+    # infobox names a designate rather than a sitting successor. Anchored to
+    # line-start-to-end so it cannot match Romania's unrelated tab-joined
+    # "Prime Minister before\tPrime Minister-designate" header pair, which
+    # begins with "before" and is not this label alone.
+    r"|^(?:Chancellor|Taoiseach|Prime Minister|President|Premier|Head of Government"
+    r"|Chairman of the Council of Ministers)-designate$", re.I)
 
 
 def infobox(lines):
@@ -592,9 +644,20 @@ def infobox(lines):
     if m:
         out["turnout"] = float(m.group(1))
 
-    for l in lines[:220]:
+    for idx, l in enumerate(lines[:220]):
         s = clean(l)
         m = NAV_RE.match(s)
+        if not m and s.startswith("←") and "→" not in s and idx + 1 < len(lines):
+            # The "← prev | date | next →" infobox line sometimes wraps in the
+            # rendered dump, splitting the trailing "(note) →" onto its own
+            # line (e.g. "← 1986\t18 March 1990\t1990" then "(reunification)
+            # →"). Unjoined, the FIRST infobox's date silently fails to match
+            # and the scan falls through to a second infobox later in the
+            # same article (East Germany's 1990 co-optation-into-Bundestag
+            # box), reporting that box's date instead. Rejoin the wrapped
+            # line before matching, only when the plain line didn't already
+            # match and looks like it was cut off mid-arrow.
+            m = NAV_RE.match(s + " " + clean(lines[idx + 1]))
         if m and out["date"] is None:
             d = DATE_RE.search(m.group(1)) or DATE_RE_US.search(m.group(1))
             if d:
@@ -640,8 +703,20 @@ def infobox(lines):
             who = "after"
         if not who or out[who]:
             continue
-        vals = [clean(x) for x in lines[i + 1:i + 5] if clean(x)]
-        vals = [v for v in vals if not v.startswith(("Incumbent", "Elected", "Subsequent"))]
+        window = []
+        for x in lines[i + 1:i + 8]:
+            cs = clean(x)
+            # Stop at the next before/after label rather than reading past it:
+            # when an article states no party for this leader, the very next
+            # non-blank line is the OTHER leader's name (Vietnam's 2011, 2016
+            # and 2021 infoboxes omit "Communist Party" under one of the two
+            # names), and without this boundary that name was read as this
+            # leader's party.
+            if LEADER_BEFORE.match(cs) or LEADER_AFTER.match(cs):
+                break
+            if cs:
+                window.append(cs)
+        vals = [v for v in window if not v.startswith(("Incumbent", "Elected", "Subsequent"))]
         if vals:
             name = vals[0]
             party = vals[1] if len(vals) > 1 and len(vals[1]) < 60 else None

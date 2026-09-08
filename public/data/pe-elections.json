@@ -1,0 +1,5734 @@
+{
+ "meta": {
+  "title": "Peruvian Elections",
+  "sources": [
+   "Wikipedia: Peruvian presidential and general election articles 1866-2026",
+   "Oficina Nacional de Procesos Electorales (ONPE) figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "presEras": [
+  {
+   "key": "colegios",
+   "label": "Caudillos and the electoral college",
+   "span": "1866-1876",
+   "blurb": "The four earliest contests here were run on a franchise limited to literate men, and 1868 was decided, in the article's own words, 'in the electoral college' rather than by a direct national count. Manuel Pardo's win in 1872 was still a real turning point: the first civilian, and the first opposition candidate, to take the presidency from Peru's caudillo generals."
+  },
+  {
+   "key": "aristocratica",
+   "label": "The Aristocratic Republic",
+   "span": "1886-1919",
+   "blurb": "The Civilista Party's landed and mercantile elite held the presidency for most of this period, and six of these nine contests returned a single candidate running unopposed. The franchise stayed restricted to literate men throughout. The one real race, in 1919, put Augusto Leguía in office by a genuine two-candidate vote, and he used it to launch an eleven-year personal dictatorship that called no further election."
+  },
+  {
+   "key": "depression",
+   "label": "Depression, dictatorship and annulled elections",
+   "span": "1931-1963",
+   "blurb": "Still on a literacy-restricted franchise, this generation saw two elections annulled outright: Óscar Benavides stopped the count in 1936 when his chosen successor started losing, and the armed forces annulled Víctor Raúl Haya de la Torre's 1962 plurality, then ran the 1963 rerun themselves to keep him from winning it. Manuel Odría's 1950 return to office had no opponent on the ballot."
+  },
+  {
+   "key": "restaurada",
+   "label": "Civilian rule and the return of the runoff",
+   "span": "1980-1990",
+   "blurb": "The 1979 constitution ended twelve years of military government and, for the first time, let illiterate Peruvians vote; 1980 was the country's first election on a genuinely universal franchise. Belaúnde and García each won outright in one round, and it took Alberto Fujimori's surprise defeat of novelist Mario Vargas Llosa in 1990 to produce Peru's first runoff."
+  },
+  {
+   "key": "unicameral",
+   "label": "The 1993 constitution and a fraud-marred re-election",
+   "span": "1991-2025",
+   "blurb": "Fujimori's 1992 self-coup produced a new constitution the following year, and with it a legal theory that let him seek a third term in 2000 on a campaign the article documents in detail: a forged-signature ring, army pressure on protest leaders, stolen pre-filled ballots and an opposition boycott of the runoff. He resigned by fax from Japan seven months later. Every other election on this stretch of the page was a genuinely competitive two-round contest, through five presidencies in the five years after 2016."
+  },
+  {
+   "key": "bicameral2026",
+   "label": "The Senate returns",
+   "span": "2026-2026",
+   "blurb": "Congress restored a Senate for 2026, overruling the 2018 referendum that had abolished it, against a backdrop The Economist and V-Dem both describe as a hybrid or backsliding democracy. Keiko Fujimori won a runoff decided by roughly fifty thousand votes and settled largely by ballots cast abroad, a result her opponent still disputed after the count closed."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "colegios",
+   "label": "Caudillos and the electoral college",
+   "span": "1866-1876",
+   "blurb": "No Congress results table survives from this period in the source used here; the two general-election articles that do exist carry only the presidential count, on the same literacy-restricted franchise as the era's presidential race."
+  },
+  {
+   "key": "aristocratica",
+   "label": "The Aristocratic Republic",
+   "span": "1886-1919",
+   "blurb": "No congressional results table survives from the Aristocratic Republic in the source used here either. The presidential pattern of the period, an elite party and a restricted franchise, applied equally to the Congress it sat alongside."
+  },
+  {
+   "key": "depression",
+   "label": "A bicameral Congress on a restricted franchise",
+   "span": "1931-1963",
+   "blurb": "Peru's Congress was bicameral throughout this period, a Senate and a larger Chamber of Deputies elected the same day as the president, on the same literacy-restricted franchise. This page reports the Chamber of Deputies. No Chamber table survives for 1936, since Congress annulled that whole election, president and legislature together, before the count finished; the Chamber elected alongside Haya de la Torre's annulled 1962 presidential result was dissolved with it."
+  },
+  {
+   "key": "restaurada",
+   "label": "The bicameral Congress of the restored democracy",
+   "span": "1980, 1990",
+   "blurb": "The Chamber of Deputies grew to 180 seats under the 1979 constitution, elected by open-list proportional representation in regional constituencies, and Popular Action and then APRA took landslide majorities in it alongside their presidential wins. This page continues to report the Chamber of Deputies rather than the smaller Senate elected alongside it."
+  },
+  {
+   "key": "unicameral",
+   "label": "A single chamber, 1995 to 2021",
+   "span": "1995-2021",
+   "blurb": "The 1993 constitution abolished the Senate and left a single 120-seat Congress of the Republic, expanded to 130 seats from 2011. Every seat is contested nationally in open-list proportional representation across regional districts, the same method the Chamber of Deputies had used before it, which is why this page's seat totals run continuously through the change of chamber name."
+  },
+  {
+   "key": "bicameral2026",
+   "label": "A Chamber of Deputies alongside a new Senate",
+   "span": "2026-2026",
+   "blurb": "Congress restored a 60-seat Senate for 2026 while keeping the 130-seat Chamber of Deputies this page has reported all along, so the totals here carry straight on from 2021 with no break in the series."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1866",
+   "label": "1866",
+   "year": 1866,
+   "kind": "presidential",
+   "date": "1866",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mariano Ignacio Prado",
+     "party": null,
+     "r1Votes": 199499,
+     "r1Share": 97.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Castilla",
+     "party": null,
+     "r1Votes": 2299,
+     "r1Share": 1.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Balta",
+     "party": null,
+     "r1Votes": 1405,
+     "r1Share": 0.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Vargas-Machuca",
+     "party": null,
+     "r1Votes": 526,
+     "r1Share": 0.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano H. Ceballos",
+     "party": null,
+     "r1Votes": 258,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Costas Arce",
+     "party": null,
+     "r1Votes": 132,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Freyre",
+     "party": null,
+     "r1Votes": 106,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Rufino Echenique",
+     "party": null,
+     "r1Votes": 80,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Miguel Medina",
+     "party": null,
+     "r1Votes": 69,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Bustamante",
+     "party": null,
+     "r1Votes": 59,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Diez Canseco",
+     "party": null,
+     "r1Votes": 47,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fermín del Castillo",
+     "party": null,
+     "r1Votes": 38,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Santos Quiros",
+     "party": null,
+     "r1Votes": 28,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis La Puerta",
+     "party": null,
+     "r1Votes": 25,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Domingo Laos",
+     "party": null,
+     "r1Votes": 14,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel San Roman",
+     "party": null,
+     "r1Votes": 9,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Arenas",
+     "party": null,
+     "r1Votes": 8,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Felipe Paz Soldán",
+     "party": null,
+     "r1Votes": 8,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejo Bezada",
+     "party": null,
+     "r1Votes": 7,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José F. Alvariño",
+     "party": null,
+     "r1Votes": 7,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Oviedo",
+     "party": null,
+     "r1Votes": 7,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Pío Cornejo",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel I. Vivanco",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": null,
+     "r1Votes": 113,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mariano Ignacio Prado",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Mariano Ignacio Prado",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Mariano Ignacio Prado won with 97.43% against Ramón Castilla on 1.12%.",
+   "caveat": "The franchise was limited to literate men, and 1868 was decided in the electoral college rather than by a direct count.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1868",
+   "label": "1868",
+   "year": 1868,
+   "kind": "presidential",
+   "date": "1868",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Balta",
+     "party": null,
+     "r1Votes": 3168,
+     "r1Share": 81.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Costas Arce",
+     "party": null,
+     "r1Votes": 384,
+     "r1Share": 9.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Toribio Ureta",
+     "party": null,
+     "r1Votes": 153,
+     "r1Share": 3.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": null,
+     "r1Votes": 159,
+     "r1Share": 4.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Pedro Diez Canseco",
+    "party": null
+   },
+   "presAfter": {
+    "name": "José Balta",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "José Balta won with 81.99% against Manuel Costas Arce on 9.94%.",
+   "caveat": "Balta's 82% was, in the article's words, 'the vote in the electoral college,' not a direct national count, on a franchise limited to literate men.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1872",
+   "label": "1872",
+   "year": 1872,
+   "kind": "presidential",
+   "date": "May 1872",
+   "era": "colegios",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Pardo",
+     "party": "Civilista Party",
+     "r1Votes": 2706,
+     "r1Share": 69.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Arenas",
+     "party": null,
+     "r1Votes": 1196,
+     "r1Share": 30.65,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mariano Herencia Zevallos",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Manuel Pardo",
+    "party": "Civilista Party"
+   },
+   "knownAs": null,
+   "summary": "Manuel Pardo won with 69.35% against Antonio Arenas on 30.65%.",
+   "caveat": "The franchise was limited to literate men, and 1868 was decided in the electoral college rather than by a direct count.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1876",
+   "label": "1876",
+   "year": 1876,
+   "kind": "presidential",
+   "date": "7 May 1876",
+   "era": "colegios",
+   "turnout": 67.08,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mariano Ignacio Prado",
+     "party": "Civilista Party",
+     "r1Votes": 3418,
+     "r1Share": 96.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lizardo Montero Flores",
+     "party": "Independent",
+     "r1Votes": 136,
+     "r1Share": 3.83,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel Pardo",
+    "party": "Civilista Party"
+   },
+   "presAfter": {
+    "name": "Mariano Ignacio Prado",
+    "party": "Civilista Party"
+   },
+   "knownAs": null,
+   "summary": "Mariano Ignacio Prado won with 96.17% against Lizardo Montero Flores on 3.83%. Turnout 67.1%.",
+   "caveat": "The franchise was limited to literate men, and 1868 was decided in the electoral college rather than by a direct count.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1886",
+   "label": "1886",
+   "year": 1886,
+   "kind": "presidential",
+   "date": "March 1886",
+   "era": "aristocratica",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "The source records no vote count for this contest.",
+   "caveat": "Andrés Avelino Cáceres was the only candidate after supporters of Nicolás de Piérola's Democratic Party boycotted the vote.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1890",
+   "label": "1890",
+   "year": 1890,
+   "kind": "presidential",
+   "date": "13 April 1890",
+   "era": "aristocratica",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Remigio Morales Bermúdez",
+     "party": "Constitutional Party",
+     "r1Votes": 2899,
+     "r1Share": 67.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Rojas",
+     "party": "Civilista Party",
+     "r1Votes": 1315,
+     "r1Share": 30.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel González Prada",
+     "party": "Independent",
+     "r1Votes": 52,
+     "r1Share": 1.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Remigio Morales Bermúdez won with 67.96% against Francisco Rojas on 30.83%.",
+   "caveat": "The franchise stayed limited to literate men, and the Civilista Party's own machine ran most of these ballots unopposed.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1894",
+   "label": "1894",
+   "year": 1894,
+   "kind": "presidential",
+   "date": "1894",
+   "era": "aristocratica",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Andrés Avelino Cáceres",
+     "party": "Constitutional Party",
+     "r1Votes": 4539,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Andrés Avelino Cáceres won with 100.00%.",
+   "caveat": "Andrés Avelino Cáceres was elected unopposed.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1895",
+   "label": "1895",
+   "year": 1895,
+   "kind": "presidential",
+   "date": "1895",
+   "era": "aristocratica",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nicolás de Piérola",
+     "party": "Democratic Party",
+     "r1Votes": 4150,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel Candamo",
+    "party": "Civilista Party"
+   },
+   "presAfter": {
+    "name": "Nicolás de Piérola",
+    "party": "Democratic"
+   },
+   "knownAs": null,
+   "summary": "Nicolás de Piérola won with 100.00%.",
+   "caveat": "Nicolás de Piérola was elected unopposed.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1899",
+   "label": "1899",
+   "year": 1899,
+   "kind": "presidential",
+   "date": "1899",
+   "era": "aristocratica",
+   "turnout": 53.67,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Eduardo López de Romaña",
+     "party": "Civilista Party",
+     "r1Votes": 55918,
+     "r1Share": 96.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Candamo",
+     "party": "Independent",
+     "r1Votes": 1337,
+     "r1Share": 2.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel González Prada",
+     "party": "Independent",
+     "r1Votes": 549,
+     "r1Share": 0.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Billinghurst",
+     "party": "Independent",
+     "r1Votes": 129,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Eduardo López de Romaña won with 96.52% against Manuel Candamo on 2.31%. Turnout 53.7%.",
+   "caveat": "The franchise stayed limited to literate men, and the Civilista Party's own machine ran most of these ballots unopposed.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1903",
+   "label": "1903",
+   "year": 1903,
+   "kind": "presidential",
+   "date": "1903",
+   "era": "aristocratica",
+   "turnout": 65.51,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Candamo",
+     "party": "Civilista Party",
+     "r1Votes": 92781,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Manuel Candamo won with 100.00%. Turnout 65.5%.",
+   "caveat": "Manuel Candamo was elected unopposed.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1904",
+   "label": "1904",
+   "year": 1904,
+   "kind": "presidential",
+   "date": "1904",
+   "era": "aristocratica",
+   "turnout": 66.48,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Pardo y Barreda",
+     "party": "Civilista Party",
+     "r1Votes": 96430,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Serapio Calderón",
+    "party": "Civilista Party"
+   },
+   "presAfter": {
+    "name": "José Pardo y Barreda",
+    "party": "Civilista Party"
+   },
+   "knownAs": null,
+   "summary": "José Pardo y Barreda won with 100.00%. Turnout 66.5%.",
+   "caveat": "José Pardo y Barreda was elected unopposed.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1908",
+   "label": "1908",
+   "year": 1908,
+   "kind": "presidential",
+   "date": "May 1908",
+   "era": "aristocratica",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Augusto B. Leguía",
+     "party": "Civilista Party",
+     "r1Votes": 133732,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "Augusto B. Leguía won with 100.00%.",
+   "caveat": "Augusto B. Leguía was elected unopposed.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "presidential",
+   "date": "1912",
+   "era": "aristocratica",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "The source records no vote count for this contest.",
+   "caveat": "The franchise stayed limited to literate men, and the Civilista Party's own machine ran most of these ballots unopposed.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1915",
+   "label": "1915",
+   "year": 1915,
+   "kind": "presidential",
+   "date": "16–17 May 1915",
+   "era": "aristocratica",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Pardo y Barreda",
+     "party": "Civilista Party",
+     "r1Votes": 131289,
+     "r1Share": 90.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos de Piérola",
+     "party": "Democratic Party",
+     "r1Votes": 13151,
+     "r1Share": 9.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Óscar R. Benavides",
+    "party": "Military"
+   },
+   "presAfter": {
+    "name": "José Pardo y Barreda",
+    "party": "Civilista Party"
+   },
+   "knownAs": null,
+   "summary": "José Pardo y Barreda won with 90.90% against Carlos de Piérola on 9.10%.",
+   "caveat": "The franchise stayed limited to literate men, and the Civilista Party's own machine ran most of these ballots unopposed.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "presidential",
+   "date": "18 May 1919",
+   "era": "aristocratica",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Augusto B. Leguía",
+     "party": "Independent Party",
+     "r1Votes": 122736,
+     "r1Share": 62.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ántero Aspíllaga Barrera",
+     "party": "Civilista Party",
+     "r1Votes": 64936,
+     "r1Share": 32.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Carlos Bernales",
+     "party": null,
+     "r1Votes": 6038,
+     "r1Share": 3.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Isaías de Piérola",
+     "party": "Democratic Party",
+     "r1Votes": 3167,
+     "r1Share": 1.61,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Pardo y Barreda",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Augusto B. Leguía",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Augusto B. Leguía won with 62.34% against Ántero Aspíllaga Barrera on 32.98%.",
+   "caveat": "The franchise stayed limited to literate men, and the Civilista Party's own machine ran most of these ballots unopposed.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "presidential",
+   "date": "11 October 1931",
+   "era": "depression",
+   "turnout": 82.49,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Luis Miguel Sánchez Cerro",
+     "party": "Revolutionary Union",
+     "r1Votes": 152149,
+     "r1Share": 50.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Víctor Raúl Haya de la Torre",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 106088,
+     "r1Share": 35.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José María de la Jara y Ureta",
+     "party": "Decentralist Party",
+     "r1Votes": 21950,
+     "r1Share": 7.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arturo F. Osores Cabrera",
+     "party": "Constitutional Renewal Party",
+     "r1Votes": 19640,
+     "r1Share": 6.55,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "David Samanez Ocampo",
+    "party": "Military junta"
+   },
+   "presAfter": {
+    "name": "Luis Miguel Sánchez Cerro",
+    "party": "Revolutionary Union"
+   },
+   "knownAs": null,
+   "summary": "Luis Miguel Sánchez Cerro won with 50.75% against Víctor Raúl Haya de la Torre on 35.38%. Turnout 82.5%.",
+   "caveat": "The franchise was still limited to literate men, illiterate Peruvians could not vote until the 1979 constitution.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "presidential",
+   "date": "11 October 1936",
+   "era": "depression",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Luis A. Eguiguren",
+     "party": "Social Democratic Party",
+     "r1Votes": 76042,
+     "r1Share": 35.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis A. Flores",
+     "party": "Conservative Coalition",
+     "r1Votes": 57838,
+     "r1Share": 27.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Prado Ugarteche",
+     "party": "Revolutionary Union",
+     "r1Votes": 46773,
+     "r1Share": 22.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Vicente Villarán",
+     "party": "Independent",
+     "r1Votes": 30803,
+     "r1Share": 14.57,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Óscar R. Benavides",
+    "party": "Military junta"
+   },
+   "presAfter": {
+    "name": "Election results annulled",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Luis A. Eguiguren won with 35.96% against Luis A. Flores on 27.35%.",
+   "caveat": "Outgoing president Benavides ordered the count halted when the opposition candidate appeared to be winning, and Congress annulled the result under his pressure; he stayed in office.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "presidential",
+   "date": "22 October 1939",
+   "era": "depression",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Prado Ugarteche",
+     "party": "Concentración Nacional",
+     "r1Votes": 262971,
+     "r1Share": 77.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Quesada Larrea",
+     "party": "Patriotic Front",
+     "r1Votes": 76222,
+     "r1Share": 22.47,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Óscar R. Benavides",
+    "party": "Military junta"
+   },
+   "presAfter": {
+    "name": "Manuel Prado Ugarteche",
+    "party": "Concentración Nacional"
+   },
+   "knownAs": null,
+   "summary": "Manuel Prado Ugarteche won with 77.53% against José Quesada Larrea on 22.47%.",
+   "caveat": "The franchise was still limited to literate men, illiterate Peruvians could not vote until the 1979 constitution.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "presidential",
+   "date": "10 June 1945",
+   "era": "depression",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José Luis Bustamante y Rivero",
+     "party": "National Democratic Front",
+     "r1Votes": 305590,
+     "r1Share": 66.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eloy G. Ureta",
+     "party": "Revolutionary Union",
+     "r1Votes": 150720,
+     "r1Share": 33.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel Prado Ugarteche",
+    "party": "Concentración Nacional"
+   },
+   "presAfter": {
+    "name": "José Luis Bustamante y Rivero",
+    "party": "FDN"
+   },
+   "knownAs": null,
+   "summary": "José Luis Bustamante y Rivero won with 66.97% against Eloy G. Ureta on 33.03%.",
+   "caveat": "The franchise was still limited to literate men, illiterate Peruvians could not vote until the 1979 constitution.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "presidential",
+   "date": "2 July 1950",
+   "era": "depression",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel A. Odría",
+     "party": "Restoration Party",
+     "r1Votes": 550779,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Zenón Noriega Agüero",
+    "party": "Military Junta"
+   },
+   "presAfter": {
+    "name": "Manuel Odría",
+    "party": "Restoration Party"
+   },
+   "knownAs": null,
+   "summary": "Manuel A. Odría won with 100.00%.",
+   "caveat": "Manuel Odría was the only candidate after the electoral authority invalidated his sole rival's registration.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "presidential",
+   "date": "17 June 1956",
+   "era": "depression",
+   "turnout": 84.04,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Prado Ugarteche",
+     "party": "Pradist Democratic Movement",
+     "r1Votes": 567713,
+     "r1Share": 45.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Belaúnde Terry",
+     "party": "Democratic Youth Front",
+     "r1Votes": 457966,
+     "r1Share": 36.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hernando de Lavalle y García",
+     "party": "National Unity–Democratic Concordance",
+     "r1Votes": 222619,
+     "r1Share": 17.83,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel A. Odría",
+    "party": "Restoration Party"
+   },
+   "presAfter": {
+    "name": "Manuel Prado Ugarteche",
+    "party": "MDP"
+   },
+   "knownAs": null,
+   "summary": "Manuel Prado Ugarteche won with 45.48% against Fernando Belaúnde Terry on 36.69%. Turnout 84.0%.",
+   "caveat": "The franchise was still limited to literate men, illiterate Peruvians could not vote until the 1979 constitution.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "presidential",
+   "date": "10 June 1962",
+   "era": "depression",
+   "turnout": 88.66,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Víctor Raúl Haya de la Torre",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 557007,
+     "r1Share": 32.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Belaúnde Terry",
+     "party": "Popular Action",
+     "r1Votes": 544180,
+     "r1Share": 32.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel A. Odría",
+     "party": "Odriist National Union",
+     "r1Votes": 480378,
+     "r1Share": 28.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Héctor Cornejo Chávez",
+     "party": "Christian Democrat Party",
+     "r1Votes": 48792,
+     "r1Share": 2.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "César Pando Egúsquiza",
+     "party": "National Liberation Front",
+     "r1Votes": 33341,
+     "r1Share": 1.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luciano Castillo Colonna",
+     "party": "Socialist Party",
+     "r1Votes": 16658,
+     "r1Share": 0.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Ruiz Eldredge",
+     "party": "Progressive Social Movement",
+     "r1Votes": 9202,
+     "r1Share": 0.54,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel Prado Ugarteche",
+    "party": "MDP"
+   },
+   "presAfter": {
+    "name": "Election annulled",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Víctor Raúl Haya de la Torre won with 32.97% against Fernando Belaúnde Terry on 32.21%. Turnout 88.7%.",
+   "caveat": "Haya de la Torre's plurality fell just short of the constitutional one-third threshold, and a military coup annulled the result before Congress could settle it.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "presidential",
+   "date": "9 June 1963",
+   "era": "depression",
+   "turnout": 94.38,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fernando Belaúnde Terry",
+     "party": "Popular Action–Christian Democrat Party",
+     "r1Votes": 708662,
+     "r1Share": 39.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Víctor Raúl Haya de la Torre",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 623501,
+     "r1Share": 34.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel A. Odría",
+     "party": "Odriist National Union",
+     "r1Votes": 463085,
+     "r1Share": 25.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mario Samamé Boggio",
+     "party": "Popular Union",
+     "r1Votes": 19320,
+     "r1Share": 1.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nicolás Lindley López",
+    "party": "Military Government Junta"
+   },
+   "presAfter": {
+    "name": "Fernando Belaúnde Terry",
+    "party": "Popular Action"
+   },
+   "knownAs": null,
+   "summary": "Fernando Belaúnde Terry won with 39.05% against Víctor Raúl Haya de la Torre on 34.36%. Turnout 94.4%.",
+   "caveat": "The military junta that had annulled 1962 ran this rerun and, in the article's own words, largely controlled the electoral process to keep Haya de la Torre from winning.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "presidential",
+   "date": "18 May 1980",
+   "era": "restaurada",
+   "turnout": 79.14,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fernando Belaúnde Terry",
+     "party": "Popular Action",
+     "r1Votes": 1793190,
+     "r1Share": 44.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Armando Villanueva",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 1087188,
+     "r1Share": 27.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Bedoya Reyes",
+     "party": "Christian People's Party",
+     "r1Votes": 382547,
+     "r1Share": 9.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hugo Blanco",
+     "party": "Workers' Revolutionary Party",
+     "r1Votes": 160713,
+     "r1Share": 4.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Horacio Zevallos Galdós",
+     "party": "Revolutionary Left Union",
+     "r1Votes": 134321,
+     "r1Share": 3.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leonidas Rodrígyez Figueroa",
+     "party": "United Left",
+     "r1Votes": 116890,
+     "r1Share": 2.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Malpica Santisteban",
+     "party": "Popular Democratic Unity",
+     "r1Votes": 98452,
+     "r1Share": 2.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roger Cáceres Velásquez",
+     "party": "National Front of Workers and Peasants",
+     "r1Votes": 81647,
+     "r1Share": 2.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Genaro Ledesma Izquieta",
+     "party": "Worker Peasant Student and Popular Front",
+     "r1Votes": 60853,
+     "r1Share": 1.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carolos Carrillo Smith",
+     "party": "National Unity",
+     "r1Votes": 18170,
+     "r1Share": 0.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Javier Tanteleán Vanini",
+     "party": "Political Organisation of the Peruvian Revolution",
+     "r1Votes": 17737,
+     "r1Share": 0.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gustavo Mohme Llona",
+     "party": "Socialist Political Action",
+     "r1Votes": 11607,
+     "r1Share": 0.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Tudela Garland",
+     "party": "Pradist Democratic Movement",
+     "r1Votes": 9875,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Waldo Fernández Durán",
+     "party": "Progressive and Social Integration Party",
+     "r1Votes": 9350,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luciano Castillo Colonna",
+     "party": "Socialist Party of Peru",
+     "r1Votes": 8714,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Francisco Morales Bermúdez",
+    "party": "Revolutionary Government of the Armed Forces"
+   },
+   "presAfter": {
+    "name": "Fernando Belaúnde Terry",
+    "party": "Popular Action"
+   },
+   "knownAs": null,
+   "summary": "Fernando Belaúnde Terry won with 44.93% against Armando Villanueva on 27.24%. Turnout 79.1%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "presidential",
+   "date": "14 April 1985",
+   "era": "restaurada",
+   "turnout": 90.59,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alan García",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 3457030,
+     "r1Share": 53.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfonso Barrantes Lingán",
+     "party": "United Left",
+     "r1Votes": 1606914,
+     "r1Share": 24.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Bedoya Reyes",
+     "party": "Democratic Convergence",
+     "r1Votes": 773705,
+     "r1Share": 11.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Javier Alva Orlandini",
+     "party": "Popular Action",
+     "r1Votes": 472627,
+     "r1Share": 7.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roger Cáceres Velásquez",
+     "party": "National Left",
+     "r1Votes": 91986,
+     "r1Share": 1.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Morales Bermúdez",
+     "party": "Democratic Front of National Unity",
+     "r1Votes": 54560,
+     "r1Share": 0.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Campos Arredondo",
+     "party": "National Progressive Party",
+     "r1Votes": 26757,
+     "r1Share": 0.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Enrique Fernández Chacón",
+     "party": "Socialist Workers Party",
+     "r1Votes": 15607,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Peter Uculmana",
+     "party": "National Movement Party 7 June",
+     "r1Votes": 10020,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Fernando Belaúnde Terry",
+    "party": "Popular Action"
+   },
+   "presAfter": {
+    "name": "Alan García",
+    "party": "APRA"
+   },
+   "knownAs": null,
+   "summary": "Alan García won with 53.11% against Alfonso Barrantes Lingán on 24.69%. Turnout 90.6%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "presidential",
+   "date": "8 April 1990 (first round) 10 June 1990 (second round)",
+   "era": "restaurada",
+   "turnout": 78.27,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mario Vargas Llosa",
+     "party": "Democratic Front",
+     "r1Votes": 2163323,
+     "r1Share": 32.57,
+     "r2Votes": 2708291,
+     "r2Share": 37.62
+    },
+    {
+     "name": "Alberto Fujimori",
+     "party": "Cambio 90",
+     "r1Votes": 1932208,
+     "r1Share": 29.09,
+     "r2Votes": 4489897,
+     "r2Share": 62.38
+    },
+    {
+     "name": "Luis Alva Castro",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 1494231,
+     "r1Share": 22.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henry Pease",
+     "party": "United Left",
+     "r1Votes": 544889,
+     "r1Share": 8.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfonso Barrantes",
+     "party": "Socialist Left",
+     "r1Votes": 315038,
+     "r1Share": 4.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roger Cáceres",
+     "party": "National Front of Workers and Peasants",
+     "r1Votes": 86418,
+     "r1Share": 1.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ezequiel Ataucusi Gamonal",
+     "party": "Agricultural People's Front of Peru",
+     "r1Votes": 73974,
+     "r1Share": 1.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dora Narrea",
+     "party": "Odriist National Union",
+     "r1Votes": 21962,
+     "r1Share": 0.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolás de Pierola Balta",
+     "party": "Democratic Union",
+     "r1Votes": 9541,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alan García",
+    "party": "APRA"
+   },
+   "presAfter": {
+    "name": "Alberto Fujimori",
+    "party": "Cambio 90"
+   },
+   "knownAs": null,
+   "summary": "Alberto Fujimori won in the runoff with 62.38% against Mario Vargas Llosa on 37.62%. Turnout 78.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "presidential",
+   "date": "9 April 1995",
+   "era": "unicameral",
+   "turnout": 73.85,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alberto Fujimori",
+     "party": "Cambio 90 – New Majority",
+     "r1Votes": 4798515,
+     "r1Share": 64.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Javier Pérez de Cuéllar",
+     "party": "Union for Peru",
+     "r1Votes": 1624566,
+     "r1Share": 21.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mercedes Cabanillas",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 306108,
+     "r1Share": 4.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Toledo",
+     "party": "Possible Country",
+     "r1Votes": 241598,
+     "r1Share": 3.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Belmont",
+     "party": "National Civic Movement OBRAS",
+     "r1Votes": 192261,
+     "r1Share": 2.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raúl Diez Canseco",
+     "party": "Popular Action",
+     "r1Votes": 122383,
+     "r1Share": 1.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ezequiel Ataucusi",
+     "party": "Agricultural People's Front of Peru",
+     "r1Votes": 57556,
+     "r1Share": 0.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Agustín Haya de la Torre",
+     "party": "United Left",
+     "r1Votes": 42686,
+     "r1Share": 0.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Cáceres Velásquez",
+     "party": "National Front of Workers and Peasants",
+     "r1Votes": 25017,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sixtilio Dalmau",
+     "party": "New Peru Movement",
+     "r1Votes": 9999,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Víctor Echegaray",
+     "party": "Reformist Party of Peru",
+     "r1Votes": 9105,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Edmundo Inga",
+     "party": "Alternative Peru Puma",
+     "r1Votes": 7006,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Campos",
+     "party": "Peace and Development",
+     "r1Votes": 6337,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Cruz",
+     "party": "Independent Front of National Reconciliation",
+     "r1Votes": 5249,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alberto Fujimori",
+    "party": "C90–NM"
+   },
+   "presAfter": {
+    "name": "Alberto Fujimori",
+    "party": "C90–NM"
+   },
+   "knownAs": null,
+   "summary": "Alberto Fujimori won with 64.42% against Javier Pérez de Cuéllar on 21.81%. Turnout 73.8%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "presidential",
+   "date": "9 April 2000",
+   "era": "unicameral",
+   "turnout": 82.83,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alberto Fujimori",
+     "party": "Peru 2000",
+     "r1Votes": 5528568,
+     "r1Share": 49.87,
+     "r2Votes": 6041685,
+     "r2Share": 74.33
+    },
+    {
+     "name": "Alejandro Toledo",
+     "party": "Possible Peru",
+     "r1Votes": 4460895,
+     "r1Share": 40.24,
+     "r2Votes": 2086215,
+     "r2Share": 25.67
+    },
+    {
+     "name": "Alberto Andrade",
+     "party": "We Are Peru",
+     "r1Votes": 333048,
+     "r1Share": 3.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Federico Salas",
+     "party": "Avancemos",
+     "r1Votes": 247054,
+     "r1Share": 2.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Castañeda Lossio",
+     "party": "National Solidarity",
+     "r1Votes": 199814,
+     "r1Share": 1.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abel Salinas",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 153319,
+     "r1Share": 1.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ezequiel Ataucusi Gamonal",
+     "party": "Agricultural People's Front of Peru",
+     "r1Votes": 80106,
+     "r1Share": 0.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Víctor Andrés García Belaúnde",
+     "party": "Popular Action",
+     "r1Votes": 46523,
+     "r1Share": 0.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Máximo San Román",
+     "party": "Union for Peru",
+     "r1Votes": 36543,
+     "r1Share": 0.33,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alberto Fujimori",
+    "party": "Vamos Vecino"
+   },
+   "presAfter": {
+    "name": "Alberto Fujimori",
+    "party": "Peru 2000"
+   },
+   "knownAs": null,
+   "summary": "Alberto Fujimori won in the runoff with 74.33% against Alejandro Toledo on 25.67%. Turnout 82.8%.",
+   "caveat": "Fujimori's third-term bid rested on a legally questionable reading of the term-limit clause; the campaign involved a forged-signature ring, army pressure on protesters and stolen pre-filled ballots, the opposition boycotted the runoff, and an OAS mediation helped force his resignation seven months later.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2001",
+   "label": "2001",
+   "year": 2001,
+   "kind": "presidential",
+   "date": "8 April 2001",
+   "era": "unicameral",
+   "turnout": 82.32,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alejandro Toledo",
+     "party": "Possible Peru",
+     "r1Votes": 3871167,
+     "r1Share": 36.51,
+     "r2Votes": 5548556,
+     "r2Share": 53.08
+    },
+    {
+     "name": "Alan García",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 2732857,
+     "r1Share": 25.78,
+     "r2Votes": 4904929,
+     "r2Share": 46.92
+    },
+    {
+     "name": "Lourdes Flores",
+     "party": "National Unity",
+     "r1Votes": 2576653,
+     "r1Share": 24.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Olivera",
+     "party": "Independent Moralizing Front",
+     "r1Votes": 1044207,
+     "r1Share": 9.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Boloña",
+     "party": "People's Solution",
+     "r1Votes": 179243,
+     "r1Share": 1.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ciro Gálvez",
+     "party": "Andean Renaissance",
+     "r1Votes": 85436,
+     "r1Share": 0.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marco Arrunategui",
+     "party": "Project Country",
+     "r1Votes": 79077,
+     "r1Share": 0.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Noriega",
+     "party": "All for Victory",
+     "r1Votes": 33080,
+     "r1Share": 0.31,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Valentín Paniagua",
+    "party": "Popular Action"
+   },
+   "presAfter": {
+    "name": "Alejandro Toledo",
+    "party": "Possible Peru"
+   },
+   "knownAs": null,
+   "summary": "Alejandro Toledo won in the runoff with 53.08% against Alan García on 46.92%. Turnout 82.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "presidential",
+   "date": "9 April 2006 (first round), 4 June 2006 (second round)",
+   "era": "unicameral",
+   "turnout": 88.71,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ollanta Humala",
+     "party": "Union for Peru",
+     "r1Votes": 3758258,
+     "r1Share": 30.62,
+     "r2Votes": 6270080,
+     "r2Share": 47.37
+    },
+    {
+     "name": "Alan García",
+     "party": "American Popular Revolutionary Alliance",
+     "r1Votes": 2985858,
+     "r1Share": 24.32,
+     "r2Votes": 6965017,
+     "r2Share": 52.63
+    },
+    {
+     "name": "Lourdes Flores",
+     "party": "National Unity",
+     "r1Votes": 2923280,
+     "r1Share": 23.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Martha Chávez",
+     "party": "Alliance for the Future",
+     "r1Votes": 912420,
+     "r1Share": 7.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Valentín Paniagua",
+     "party": "Center Front",
+     "r1Votes": 706156,
+     "r1Share": 5.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Humberto Lay",
+     "party": "National Restoration",
+     "r1Votes": 537564,
+     "r1Share": 4.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Susana Villarán",
+     "party": "Decentralization Coalition",
+     "r1Votes": 76106,
+     "r1Share": 0.62,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jaime Salinas",
+     "party": "National Justice",
+     "r1Votes": 65636,
+     "r1Share": 0.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Javier Diez Canseco",
+     "party": "Socialist Party",
+     "r1Votes": 60955,
+     "r1Share": 0.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Natale Amprimo",
+     "party": "Alliance for Progress",
+     "r1Votes": 49332,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Koechlin von Stein",
+     "party": "With Force Peru",
+     "r1Votes": 38212,
+     "r1Share": 0.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Moreno",
+     "party": "New Left Movement",
+     "r1Votes": 33918,
+     "r1Share": 0.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Borea",
+     "party": "Democratic Force",
+     "r1Votes": 24584,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ulises Humala",
+     "party": "Go on Country",
+     "r1Votes": 24518,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ciro Gálvez",
+     "party": "Andean Renaissance",
+     "r1Votes": 22892,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Javier Espinoza",
+     "party": "Let's Make Progress Peru",
+     "r1Votes": 13965,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Cardó Guarderas",
+     "party": "Democratic Reconstruction",
+     "r1Votes": 11925,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ántero Asto",
+     "party": "Peruvian Resurgence",
+     "r1Votes": 10857,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Wong",
+     "party": "And It's Called Peru",
+     "r1Votes": 10539,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Guerrero",
+     "party": "Peru Now",
+     "r1Votes": 8410,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alejandro Toledo",
+    "party": "Possible Peru"
+   },
+   "presAfter": {
+    "name": "Alan García",
+    "party": "APRA"
+   },
+   "knownAs": null,
+   "summary": "Alan García won in the runoff with 52.63% against Ollanta Humala on 47.37%. Turnout 88.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "presidential",
+   "date": "10 April 2011 (first round), 5 June 2011 (second round)",
+   "era": "unicameral",
+   "turnout": 83.71,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ollanta Humala",
+     "party": "Peru Wins",
+     "r1Votes": 4643064,
+     "r1Share": 31.7,
+     "r2Votes": 7937704,
+     "r2Share": 51.45
+    },
+    {
+     "name": "Keiko Fujimori",
+     "party": "Force 2011",
+     "r1Votes": 3449595,
+     "r1Share": 23.55,
+     "r2Votes": 7490647,
+     "r2Share": 48.55
+    },
+    {
+     "name": "Pedro Pablo Kuczynski",
+     "party": "Alliance for the Great Change",
+     "r1Votes": 2711450,
+     "r1Share": 18.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Toledo",
+     "party": "Possible Peru",
+     "r1Votes": 2289561,
+     "r1Share": 15.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Castañeda Lossio",
+     "party": "National Solidarity Alliance",
+     "r1Votes": 1440143,
+     "r1Share": 9.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Ñique de la Puente",
+     "party": "Fonavistas of Peru",
+     "r1Votes": 37011,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Noriega",
+     "party": "National Awakening Party",
+     "r1Votes": 21574,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Belaúnde Aubry",
+     "party": "Forward Party",
+     "r1Votes": 17301,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juliana Reymer",
+     "party": "National Force Party",
+     "r1Votes": 16831,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Humberto Pinazo",
+     "party": "Justice, Technology, Ecology",
+     "r1Votes": 11275,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Rodríguez Cuadros",
+     "party": "Decentralist Social Force Party",
+     "r1Votes": 9358,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alan García",
+    "party": "APRA"
+   },
+   "presAfter": {
+    "name": "Ollanta Humala",
+    "party": "Peru Wins"
+   },
+   "knownAs": null,
+   "summary": "Ollanta Humala won in the runoff with 51.45% against Keiko Fujimori on 48.55%. Turnout 83.7%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "presidential",
+   "date": "10 April 2016 (first round) 5 June 2016 (second round)",
+   "era": "unicameral",
+   "turnout": 81.8,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Keiko Fujimori",
+     "party": "Popular Force",
+     "r1Votes": 6115073,
+     "r1Share": 39.86,
+     "r2Votes": 8555880,
+     "r2Share": 49.88
+    },
+    {
+     "name": "Pedro Pablo Kuczynski",
+     "party": "Peruvians for Change",
+     "r1Votes": 3228661,
+     "r1Share": 21.05,
+     "r2Votes": 8596937,
+     "r2Share": 50.12
+    },
+    {
+     "name": "Verónika Mendoza",
+     "party": "Broad Front",
+     "r1Votes": 2874940,
+     "r1Share": 18.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfredo Barnechea",
+     "party": "Popular Action",
+     "r1Votes": 1069360,
+     "r1Share": 6.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alan García",
+     "party": "Popular Alliance",
+     "r1Votes": 894278,
+     "r1Share": 5.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gregorio Santos",
+     "party": "Direct Democracy",
+     "r1Votes": 613173,
+     "r1Share": 4.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Olivera",
+     "party": "Hope Front",
+     "r1Votes": 203103,
+     "r1Share": 1.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alejandro Toledo",
+     "party": "Possible Peru",
+     "r1Votes": 200012,
+     "r1Share": 1.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Hilario",
+     "party": "Peru Progressing",
+     "r1Votes": 75870,
+     "r1Share": 0.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antero Flores Aráoz",
+     "party": "Order",
+     "r1Votes": 65673,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ollanta Humala",
+    "party": "Peru Wins"
+   },
+   "presAfter": {
+    "name": "Pedro Pablo Kuczynski",
+    "party": "PPK"
+   },
+   "knownAs": null,
+   "summary": "Pedro Pablo Kuczynski won in the runoff with 50.12% against Keiko Fujimori on 49.88%. Turnout 81.8%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "presidential",
+   "date": "11 April 2021 (first round) 6 June 2021 (second round)",
+   "era": "unicameral",
+   "turnout": 70.05,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Pedro Castillo",
+     "party": "Free Peru",
+     "r1Votes": 2724752,
+     "r1Share": 18.92,
+     "r2Votes": 8836380,
+     "r2Share": 50.13
+    },
+    {
+     "name": "Keiko Fujimori",
+     "party": "Popular Force",
+     "r1Votes": 1930762,
+     "r1Share": 13.41,
+     "r2Votes": 8792117,
+     "r2Share": 49.87
+    },
+    {
+     "name": "Rafael López Aliaga",
+     "party": "Popular Renewal",
+     "r1Votes": 1692279,
+     "r1Share": 11.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hernando de Soto",
+     "party": "Avanza País",
+     "r1Votes": 1674201,
+     "r1Share": 11.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yonhy Lescano",
+     "party": "Popular Action",
+     "r1Votes": 1306288,
+     "r1Share": 9.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Verónika Mendoza",
+     "party": "Together for Peru",
+     "r1Votes": 1132577,
+     "r1Share": 7.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "César Acuña",
+     "party": "Alliance for Progress",
+     "r1Votes": 867025,
+     "r1Share": 6.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "George Forsyth",
+     "party": "National Victory",
+     "r1Votes": 814516,
+     "r1Share": 5.66,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Daniel Urresti",
+     "party": "Podemos Perú",
+     "r1Votes": 812721,
+     "r1Share": 5.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Julio Guzmán",
+     "party": "Purple Party",
+     "r1Votes": 325608,
+     "r1Share": 2.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Beingolea",
+     "party": "Christian People's Party",
+     "r1Votes": 286447,
+     "r1Share": 1.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Daniel Salaverry",
+     "party": "We Are Peru",
+     "r1Votes": 240234,
+     "r1Share": 1.67,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ollanta Humala",
+     "party": "Peruvian Nationalist Party",
+     "r1Votes": 230831,
+     "r1Share": 1.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Vega",
+     "party": "Union for Peru",
+     "r1Votes": 101267,
+     "r1Share": 0.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ciro Gálvez",
+     "party": "National United Renaissance",
+     "r1Votes": 89376,
+     "r1Share": 0.62,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marco Arana",
+     "party": "Broad Front",
+     "r1Votes": 65300,
+     "r1Share": 0.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Santos",
+     "party": "Peru Secure Homeland",
+     "r1Votes": 55644,
+     "r1Share": 0.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrés Alcántara",
+     "party": "Direct Democracy",
+     "r1Votes": 50802,
+     "r1Share": 0.35,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Francisco Sagasti",
+    "party": "Purple Party"
+   },
+   "presAfter": {
+    "name": "Pedro Castillo",
+    "party": "Free Peru"
+   },
+   "knownAs": null,
+   "summary": "Pedro Castillo won in the runoff with 50.13% against Keiko Fujimori on 49.87%. Turnout 70.0%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "presidential",
+   "date": "12–13 April 2026 (first round) 7 June 2026 (second round)",
+   "era": "bicameral2026",
+   "turnout": 73.81,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Keiko Fujimori",
+     "party": null,
+     "r1Votes": 2877678,
+     "r1Share": 17.19,
+     "r2Votes": 9223396,
+     "r2Share": 50.13
+    },
+    {
+     "name": "Roberto Sánchez",
+     "party": null,
+     "r1Votes": 2015114,
+     "r1Share": 12.04,
+     "r2Votes": 9173755,
+     "r2Share": 49.87
+    },
+    {
+     "name": "Rafael López Aliaga",
+     "party": null,
+     "r1Votes": 1993905,
+     "r1Share": 11.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Nieto",
+     "party": null,
+     "r1Votes": 1837517,
+     "r1Share": 10.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Belmont",
+     "party": null,
+     "r1Votes": 1698903,
+     "r1Share": 10.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Álvarez",
+     "party": null,
+     "r1Votes": 1326717,
+     "r1Share": 7.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfonso López Chau",
+     "party": null,
+     "r1Votes": 1221272,
+     "r1Share": 7.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marisol Pérez Tello",
+     "party": null,
+     "r1Votes": 571170,
+     "r1Share": 3.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Espá",
+     "party": null,
+     "r1Votes": 560792,
+     "r1Share": 3.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Olivera",
+     "party": null,
+     "r1Votes": 307880,
+     "r1Share": 1.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Luna",
+     "party": null,
+     "r1Votes": 266768,
+     "r1Share": 1.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yonhy Lescano",
+     "party": null,
+     "r1Votes": 214779,
+     "r1Share": 1.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "César Acuña",
+     "party": null,
+     "r1Votes": 192516,
+     "r1Share": 1.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enrique Valderrama",
+     "party": null,
+     "r1Votes": 161248,
+     "r1Share": 0.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "George Forsyth",
+     "party": null,
+     "r1Votes": 153073,
+     "r1Share": 0.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Herbert Caller",
+     "party": null,
+     "r1Votes": 144183,
+     "r1Share": 0.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mario Vizcarra",
+     "party": null,
+     "r1Votes": 143908,
+     "r1Share": 0.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ronald Atencio [es]",
+     "party": null,
+     "r1Votes": 140174,
+     "r1Share": 0.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rosario Fernández [es]",
+     "party": null,
+     "r1Votes": 128009,
+     "r1Share": 0.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Charlie Carrasco [es]",
+     "party": null,
+     "r1Votes": 119028,
+     "r1Share": 0.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Cerrón",
+     "party": null,
+     "r1Votes": 100073,
+     "r1Share": 0.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mesías Guevara",
+     "party": null,
+     "r1Votes": 82196,
+     "r1Share": 0.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roberto Chiabra [es]",
+     "party": null,
+     "r1Votes": 67939,
+     "r1Share": 0.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paul Jaimes [es]",
+     "party": null,
+     "r1Votes": 66046,
+     "r1Share": 0.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álex Gonzales [es]",
+     "party": null,
+     "r1Votes": 63924,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Wolfgang Grozo [es]",
+     "party": null,
+     "r1Votes": 63751,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rafael Belaúnde Llosa",
+     "party": null,
+     "r1Votes": 40870,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Williams",
+     "party": null,
+     "r1Votes": 32585,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Diez-Canseco [es]",
+     "party": null,
+     "r1Votes": 31710,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fiorella Molinelli",
+     "party": null,
+     "r1Votes": 27217,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Paz de la Barra [es]",
+     "party": null,
+     "r1Votes": 23335,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Armando Massé [es]",
+     "party": null,
+     "r1Votes": 21744,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Ortiz",
+     "party": null,
+     "r1Votes": 17648,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Walter Chirinos",
+     "party": null,
+     "r1Votes": 14566,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Jaico [es]",
+     "party": null,
+     "r1Votes": 9801,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Napoleón Becerra †[b]",
+     "party": null,
+     "r1Votes": 0,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José María Balcázar",
+    "party": "Free Peru"
+   },
+   "presAfter": {
+    "name": "Keiko Fujimori",
+    "party": "FP"
+   },
+   "knownAs": null,
+   "summary": "Keiko Fujimori won in the runoff with 50.13% against Roberto Sánchez on 49.87%. Turnout 73.8%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1866",
+   "label": "1866",
+   "year": 1866,
+   "kind": "legislative",
+   "date": "1866",
+   "era": "colegios",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "Mariano Ignacio Prado",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Mariano Ignacio Prado",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Mariano Ignacio Prado stayed in office.",
+   "seatLeader": null,
+   "caveat": "The franchise was limited to literate men.",
+   "unfree": null
+  },
+  {
+   "id": "1868",
+   "label": "1868",
+   "year": 1868,
+   "kind": "legislative",
+   "date": "1868",
+   "era": "colegios",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "Pedro Diez Canseco",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "José Balta",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "José Balta replaced Pedro Diez Canseco.",
+   "seatLeader": null,
+   "caveat": "Balta's 82% was, in the article's words, 'the vote in the electoral college,' not a direct national count, on a franchise limited to literate men.",
+   "unfree": null
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "11 October 1931",
+   "era": "depression",
+   "totalSeats": 145,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Revolutionary Union",
+     "leader": null,
+     "seats": 57,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "American Popular Revolutionary Alliance",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Decentralist Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Peru",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Coalition",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Social Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Unidentified",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "David Samanez Ocampo",
+    "party": "Military junta"
+   },
+   "pmAfter": {
+    "name": "Luis Miguel Sánchez Cerro",
+    "party": "Revolutionary Union"
+   },
+   "knownAs": null,
+   "summary": "Revolutionary Union finished first with 57 of 145 seats. Luis Miguel Sánchez Cerro replaced David Samanez Ocampo.",
+   "seatLeader": "Revolutionary Union",
+   "caveat": "The franchise was still limited to literate men, illiterate Peruvians could not vote until the 1979 constitution.",
+   "unfree": null
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "11 October 1936",
+   "era": "depression",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "Óscar R. Benavides",
+    "party": "Military junta"
+   },
+   "pmAfter": {
+    "name": "Election results annulled",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Election results annulled replaced Óscar R. Benavides.",
+   "seatLeader": null,
+   "caveat": "Outgoing president Benavides ordered the count halted when the opposition candidate appeared to be winning, and Congress annulled the result under his pressure; he stayed in office.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "legislative",
+   "date": "22 October 1939",
+   "era": "depression",
+   "totalSeats": 140,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Concentración Nacional",
+     "leader": null,
+     "seats": 111,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Renewal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Unidentified",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Óscar R. Benavides",
+    "party": "Military junta"
+   },
+   "pmAfter": {
+    "name": "Manuel Prado Ugarteche",
+    "party": "Concentración Nacional"
+   },
+   "knownAs": null,
+   "summary": "Concentración Nacional finished first with 111 of 140 seats. Manuel Prado Ugarteche replaced Óscar R. Benavides.",
+   "seatLeader": "Concentración Nacional",
+   "caveat": "The franchise was still limited to literate men, illiterate Peruvians could not vote until the 1979 constitution.",
+   "unfree": null
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "10 June 1945",
+   "era": "depression",
+   "totalSeats": 153,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Democratic Front",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Union",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 28,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Peru",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Unidentified",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 34,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manuel Prado Ugarteche",
+    "party": "Concentración Nacional"
+   },
+   "pmAfter": {
+    "name": "José Luis Bustamante y Rivero",
+    "party": "FDN"
+   },
+   "knownAs": null,
+   "summary": "National Democratic Front finished first with 73 of 153 seats. José Luis Bustamante y Rivero replaced Manuel Prado Ugarteche.",
+   "seatLeader": "National Democratic Front",
+   "caveat": "The franchise was still limited to literate men, illiterate Peruvians could not vote until the 1979 constitution.",
+   "unfree": null
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "legislative",
+   "date": "2 July 1950",
+   "era": "depression",
+   "totalSeats": 154,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Odriist lists",
+     "leader": null,
+     "seats": 139,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist lists",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent lists",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 6,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Zenón Noriega Agüero",
+    "party": "Military Junta"
+   },
+   "pmAfter": {
+    "name": "Manuel Odría",
+    "party": "Restoration Party"
+   },
+   "knownAs": null,
+   "summary": "Odriist lists finished first with 139 of 154 seats. Manuel Odría replaced Zenón Noriega Agüero.",
+   "seatLeader": "Odriist lists",
+   "caveat": "Manuel Odría was the only candidate after the electoral authority invalidated his sole rival's registration.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "legislative",
+   "date": "17 June 1956",
+   "era": "depression",
+   "totalSeats": 182,
+   "majoritySeats": null,
+   "turnout": 84.04,
+   "parties": [
+    {
+     "name": "Pradist Democratic Movement",
+     "leader": null,
+     "seats": 64,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Unification",
+     "leader": null,
+     "seats": 41,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Youth Front",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "José Gálvez list",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Augusto Guzmán list",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Rodrigo Alonso list",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Luis González list",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrat Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Wilson Sologuren list",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Edgardo Portaro list",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cuzqueña Democratic Alliance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ayacuchano Electoral Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Juan Lozno list",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Civic Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manuel A. Odría",
+    "party": "Restoration Party"
+   },
+   "pmAfter": {
+    "name": "Manuel Prado Ugarteche",
+    "party": "MDP"
+   },
+   "knownAs": null,
+   "summary": "Pradist Democratic Movement finished first with 64 of 182 seats. Turnout 84.0%. Manuel Prado Ugarteche replaced Manuel A. Odría.",
+   "seatLeader": "Pradist Democratic Movement",
+   "caveat": "The franchise was still limited to literate men, illiterate Peruvians could not vote until the 1979 constitution.",
+   "unfree": null
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "10 June 1962",
+   "era": "depression",
+   "totalSeats": 186,
+   "majoritySeats": null,
+   "turnout": 88.66,
+   "parties": [
+    {
+     "name": "Democratic Alliance (APRA–MDP)",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Action",
+     "leader": null,
+     "seats": 61,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Odriist National Union",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrat Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alcides Spelucín list",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Cuzqueñista Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Huancavelicana Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moqueguano Independent Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Puneñista Parliamentary Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manuel Prado Ugarteche",
+    "party": "MDP"
+   },
+   "pmAfter": {
+    "name": "Election annulled",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Democratic Alliance (APRA–MDP) finished first with 85 of 186 seats. Turnout 88.7%. Election annulled replaced Manuel Prado Ugarteche.",
+   "seatLeader": "Democratic Alliance (APRA–MDP)",
+   "caveat": "Haya de la Torre's plurality fell just short of the constitutional one-third threshold, and a military coup annulled the result before Congress could settle it.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "9 June 1963",
+   "era": "depression",
+   "totalSeats": 139,
+   "majoritySeats": null,
+   "turnout": 94.38,
+   "parties": [
+    {
+     "name": "American Popular Revolutionary Alliance",
+     "leader": null,
+     "seats": 56,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Action",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Odriist National Union",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrat Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Left",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peruvian Democratic Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nicolás Lindley López",
+    "party": "Military Government Junta"
+   },
+   "pmAfter": {
+    "name": "Fernando Belaúnde Terry",
+    "party": "Popular Action"
+   },
+   "knownAs": null,
+   "summary": "American Popular Revolutionary Alliance finished first with 56 of 139 seats. Turnout 94.4%. Fernando Belaúnde Terry replaced Nicolás Lindley López.",
+   "seatLeader": "American Popular Revolutionary Alliance",
+   "caveat": "The military junta that had annulled 1962 ran this rerun and, in the article's own words, largely controlled the electoral process to keep Haya de la Torre from winning.",
+   "unfree": null
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "legislative",
+   "date": "18 May 1980",
+   "era": "restaurada",
+   "totalSeats": 180,
+   "majoritySeats": null,
+   "turnout": 79.14,
+   "parties": [
+    {
+     "name": "Popular Action",
+     "leader": null,
+     "seats": 98,
+     "seatChange": null,
+     "votes": 1413233,
+     "share": 38.92,
+     "swing": null
+    },
+    {
+     "name": "American Popular Revolutionary Alliance",
+     "leader": null,
+     "seats": 58,
+     "seatChange": null,
+     "votes": 962801,
+     "share": 26.51,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 348578,
+     "share": 9.6,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Left Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 172430,
+     "share": 4.75,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 156415,
+     "share": 4.31,
+     "swing": null
+    },
+    {
+     "name": "Workers' Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 151447,
+     "share": 4.17,
+     "swing": null
+    },
+    {
+     "name": "United Left",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 124751,
+     "share": 3.44,
+     "swing": null
+    },
+    {
+     "name": "National Front of Workers and Peasants",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 93416,
+     "share": 2.57,
+     "swing": null
+    },
+    {
+     "name": "Worker Peasant Student and Popular Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61248,
+     "share": 1.69,
+     "swing": null
+    },
+    {
+     "name": "National Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31443,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "Pradist Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22573,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Socialist Political Action",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22708,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Political Organisation of the Peruvian Revolution",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21609,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Progressive and Social Integration Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16493,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9786,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22408,
+     "share": 0.62,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Morales Bermúdez",
+    "party": "Revolutionary Government of the Armed Forces"
+   },
+   "pmAfter": {
+    "name": "Fernando Belaúnde Terry",
+    "party": "Popular Action"
+   },
+   "knownAs": null,
+   "summary": "Popular Action finished first with 98 of 180 seats on 38.9% of the vote. Turnout 79.1%. Fernando Belaúnde Terry replaced Francisco Morales Bermúdez.",
+   "seatLeader": "Popular Action",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "14 April 1985",
+   "era": "restaurada",
+   "totalSeats": 180,
+   "majoritySeats": null,
+   "turnout": 90.59,
+   "parties": [
+    {
+     "name": "American Popular Revolutionary Alliance",
+     "leader": null,
+     "seats": 107,
+     "seatChange": 49,
+     "votes": 2920605,
+     "share": 50.09,
+     "swing": null
+    },
+    {
+     "name": "United Left",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 38,
+     "votes": 1424981,
+     "share": 24.44,
+     "swing": null
+    },
+    {
+     "name": "Democratic Convergence",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 10,
+     "votes": 649404,
+     "share": 11.14,
+     "swing": null
+    },
+    {
+     "name": "Popular Action",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -88,
+     "votes": 491581,
+     "share": 8.43,
+     "swing": null
+    },
+    {
+     "name": "National Left",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -3,
+     "votes": 110695,
+     "share": 1.9,
+     "swing": null
+    },
+    {
+     "name": "Democratic Front of National Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 59455,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "National Movement Party 7 June",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24466,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19131,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16425,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14775,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 99192,
+     "share": 1.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Fernando Belaúnde Terry",
+    "party": "Popular Action"
+   },
+   "pmAfter": {
+    "name": "Alan García",
+    "party": "APRA"
+   },
+   "knownAs": null,
+   "summary": "American Popular Revolutionary Alliance finished first with 107 of 180 seats on 50.1% of the vote. Turnout 90.6%. Alan García replaced Fernando Belaúnde Terry.",
+   "seatLeader": "American Popular Revolutionary Alliance",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "8 April 1990 (first round) 10 June 1990 (second round)",
+   "era": "restaurada",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 78.27,
+   "parties": [
+    {
+     "name": "Democratic Front",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 40,
+     "votes": 1561291,
+     "share": 30.03,
+     "swing": null
+    },
+    {
+     "name": "American Popular Revolutionary Alliance",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -54,
+     "votes": 1288461,
+     "share": 24.78,
+     "swing": null
+    },
+    {
+     "name": "Cambio 90",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": 879949,
+     "share": 16.93,
+     "swing": null
+    },
+    {
+     "name": "United Left",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -32,
+     "votes": 510557,
+     "share": 9.82,
+     "swing": null
+    },
+    {
+     "name": "Independent Moralizing Front",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 309263,
+     "share": 5.95,
+     "swing": null
+    },
+    {
+     "name": "Socialist Left",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 272591,
+     "share": 5.24,
+     "swing": null
+    },
+    {
+     "name": "National Front of Workers and Peasants",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 126067,
+     "share": 2.42,
+     "swing": null
+    },
+    {
+     "name": "Agricultural People's Front of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 63450,
+     "share": 1.22,
+     "swing": null
+    },
+    {
+     "name": "Independent Civic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33819,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Loreto Regionalist Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 24854,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Tacneñista Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 17642,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Popular Agreement Independent List",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 14547,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "In Action Independent Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12614,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Odriist National Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10413,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7738,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Independent Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6106,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Hayist Bases Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5607,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "National Reconstruction Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5588,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4780,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4348,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Lima Defence Front – Provinces",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3739,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Independent Front of Retirees",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3477,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Chavin Region",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3416,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3204,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Agrarian Front \"Atusparia\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3016,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Velasquista Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2228,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "National Cooperation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2136,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Independent List of Socialist Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1942,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Amazonense Independent Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1459,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Renewal Union of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1312,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Huascaran",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1221,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1025,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "United",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1020,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Victors of Ayacucho",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 985,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Chalaco Regional Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 925,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independent Solidarity Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 913,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Integration Movement for the Development of Huanuco",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 817,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Popular Renewal Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 772,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Porteño Renovation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 735,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 675,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Lambayecano Independent Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 671,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Agreement for National Development",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 597,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "North-East Agrarian Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 578,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Andean Nationalist Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 502,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Impetu Regional Independent Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 398,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Popular Peruvian Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 375,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "PASOP party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 357,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Organisation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 342,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Advanced Democratic Integration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 332,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independent Civic Front Strength and Freedom",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 157,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 92,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alan García",
+    "party": "APRA"
+   },
+   "pmAfter": {
+    "name": "Alberto Fujimori",
+    "party": "Cambio 90"
+   },
+   "knownAs": null,
+   "summary": "Democratic Front finished first with 62 seats on 30.0% of the vote. Turnout 78.3%. Alberto Fujimori replaced Alan García.",
+   "seatLeader": "Democratic Front",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "9 April 1995",
+   "era": "unicameral",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 73.85,
+   "parties": [
+    {
+     "name": "C90–NM",
+     "leader": "Alberto Fujimori",
+     "seats": 67,
+     "seatChange": 23,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UPP",
+     "leader": "Javier Pérez de Cuéllar",
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "APRA",
+     "leader": "Agustín Mantilla",
+     "seats": 8,
+     "seatChange": 8,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FIM",
+     "leader": "Fernando Olivera",
+     "seats": 6,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CODE-PC",
+     "leader": "Alejandro Toledo",
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Action",
+     "leader": "Fernando Belaúnde",
+     "seats": 4,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PPC",
+     "leader": "Luis Bedoya Reyes",
+     "seats": 3,
+     "seatChange": -5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Renewal",
+     "leader": "Rafael Rey",
+     "seats": 3,
+     "seatChange": -3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "OBRAS",
+     "leader": "Ricardo Belmont",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Left",
+     "leader": "A. Haya de la Torre",
+     "seats": 2,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FREPAP",
+     "leader": "Ezequiel Ataucusi",
+     "seats": 1,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FRENATRACA",
+     "leader": "Roger Cáceres",
+     "seats": 1,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "MIA",
+     "leader": "Rolando Salvatierra",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alberto Fujimori",
+    "party": "C90–NM"
+   },
+   "pmAfter": {
+    "name": "Alberto Fujimori",
+    "party": "C90–NM"
+   },
+   "knownAs": null,
+   "summary": "C90–NM finished first with 67 of 120 seats. Turnout 73.8%. Alberto Fujimori stayed in office.",
+   "seatLeader": "C90–NM",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "legislative",
+   "date": "9 April 2000",
+   "era": "unicameral",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 82.83,
+   "parties": [
+    {
+     "name": "Peru 2000",
+     "leader": "Alberto Fujimori",
+     "seats": 52,
+     "seatChange": -15,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Possible Peru",
+     "leader": "Alejandro Toledo",
+     "seats": 29,
+     "seatChange": 24,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FIM",
+     "leader": "Fernando Olivera",
+     "seats": 9,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "We Are Peru",
+     "leader": "Alberto Andrade",
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "APRA",
+     "leader": "Jorge Del Castillo",
+     "seats": 6,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Solidarity",
+     "leader": "Luis Castañeda",
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Advancing",
+     "leader": "Federico Salas",
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UPP",
+     "leader": "Daniel Estrada",
+     "seats": 3,
+     "seatChange": -14,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Action",
+     "leader": "Fernando Belaúnde",
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FREPAP",
+     "leader": "Ezequiel Ataucusi",
+     "seats": 2,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alberto Fujimori",
+    "party": "Vamos Vecino"
+   },
+   "pmAfter": {
+    "name": "Alberto Fujimori",
+    "party": "Peru 2000"
+   },
+   "knownAs": null,
+   "summary": "Peru 2000 finished first with 52 of 120 seats. Turnout 82.8%. Alberto Fujimori stayed in office.",
+   "seatLeader": "Peru 2000",
+   "caveat": "Fujimori's third-term bid rested on a legally questionable reading of the term-limit clause; the campaign involved a forged-signature ring, army pressure on protesters and stolen pre-filled ballots, the opposition boycotted the runoff, and an OAS mediation helped force his resignation seven months later.",
+   "unfree": null
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "kind": "legislative",
+   "date": "8 April 2001",
+   "era": "unicameral",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 82.32,
+   "parties": [
+    {
+     "name": "Possible Peru",
+     "leader": "Alejandro Toledo",
+     "seats": 45,
+     "seatChange": 16,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "APRA",
+     "leader": "Alan García",
+     "seats": 28,
+     "seatChange": 22,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Unity",
+     "leader": "Lourdes Flores",
+     "seats": 17,
+     "seatChange": 13,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FIM",
+     "leader": "Fernando Olivera",
+     "seats": 11,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "We Are Peru",
+     "leader": "Alberto Andrade",
+     "seats": 4,
+     "seatChange": -5,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "C90-NM",
+     "leader": "Alberto Fujimori",
+     "seats": 3,
+     "seatChange": -49,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Action",
+     "leader": "Fernando Belaúnde",
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UPP",
+     "leader": "Daniel Estrada",
+     "seats": 6,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's Solution",
+     "leader": "Carlos Boloña",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All for Victory",
+     "leader": "Ricardo Noriega",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "And. Renaissance",
+     "leader": "Ciro Gálvez",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Valentín Paniagua",
+    "party": "Popular Action"
+   },
+   "pmAfter": {
+    "name": "Alejandro Toledo",
+    "party": "Possible Peru"
+   },
+   "knownAs": null,
+   "summary": "Possible Peru finished first with 45 of 120 seats. Turnout 82.3%. Alejandro Toledo replaced Valentín Paniagua.",
+   "seatLeader": "Possible Peru",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "9 April 2006 (first round), 4 June 2006 (second round)",
+   "era": "unicameral",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 88.71,
+   "parties": [
+    {
+     "name": "Union for Peru",
+     "leader": null,
+     "seats": 45,
+     "seatChange": null,
+     "votes": 2274797,
+     "share": 21.15,
+     "swing": null
+    },
+    {
+     "name": "American Popular Revolutionary Alliance",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": 2213623,
+     "share": 20.59,
+     "swing": null
+    },
+    {
+     "name": "National Unity",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 1648717,
+     "share": 15.33,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Future",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 1408069,
+     "share": 13.09,
+     "swing": null
+    },
+    {
+     "name": "Center Front",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 760261,
+     "share": 7.07,
+     "swing": null
+    },
+    {
+     "name": "Possible Peru",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 441462,
+     "share": 4.11,
+     "swing": null
+    },
+    {
+     "name": "National Restoration",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 432209,
+     "share": 4.02,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Progress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 248400,
+     "share": 2.31,
+     "swing": null
+    },
+    {
+     "name": "Democratic Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 153437,
+     "share": 1.43,
+     "swing": null
+    },
+    {
+     "name": "Independent Moralizing Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 156433,
+     "share": 1.45,
+     "swing": null
+    },
+    {
+     "name": "National Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 151167,
+     "share": 1.41,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 134166,
+     "share": 1.25,
+     "swing": null
+    },
+    {
+     "name": "New Left Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 133106,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "Go on Country",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 122654,
+     "share": 1.14,
+     "swing": null
+    },
+    {
+     "name": "Decentralization Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 91784,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "Agricultural People's Front of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 85019,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "Andean Renaissance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 75445,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "With Force Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 71385,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Peru Now",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46443,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Democratic Reconstruction",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28775,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Project Country",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21534,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Peruvian Resurgence",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20579,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Let's Make Progress Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13999,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "And It's Called Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19859,
+     "share": 0.18,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alejandro Toledo",
+    "party": "Possible Peru"
+   },
+   "pmAfter": {
+    "name": "Alan García",
+    "party": "APRA"
+   },
+   "knownAs": null,
+   "summary": "Union for Peru finished first with 45 of 120 seats on 21.1% of the vote. Turnout 88.7%. Alan García replaced Alejandro Toledo.",
+   "seatLeader": "Union for Peru",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "10 April 2011 (first round), 5 June 2011 (second round)",
+   "era": "unicameral",
+   "totalSeats": 130,
+   "majoritySeats": 66,
+   "turnout": 83.71,
+   "parties": [
+    {
+     "name": "Peru Wins",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": 3245003,
+     "share": 25.27,
+     "swing": null
+    },
+    {
+     "name": "Force 2011",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 2948781,
+     "share": 22.97,
+     "swing": null
+    },
+    {
+     "name": "Possible Peru Alliance",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 1904180,
+     "share": 14.83,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Great Change",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 1851080,
+     "share": 14.42,
+     "swing": null
+    },
+    {
+     "name": "National Solidarity Alliance",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 1311766,
+     "share": 10.22,
+     "swing": null
+    },
+    {
+     "name": "American Popular Revolutionary Alliance",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 825030,
+     "share": 6.43,
+     "swing": null
+    },
+    {
+     "name": "Radical Change",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 347475,
+     "share": 2.71,
+     "swing": null
+    },
+    {
+     "name": "Fonavistas of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 170052,
+     "share": 1.32,
+     "swing": null
+    },
+    {
+     "name": "Decentralist Social Force Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 108200,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Forward Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 42276,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "National Force Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37633,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "National Awakening Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30190,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Justice, Technology, Ecology",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17478,
+     "share": 0.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alan García",
+    "party": "APRA"
+   },
+   "pmAfter": {
+    "name": "Ollanta Humala",
+    "party": "Peru Wins"
+   },
+   "knownAs": null,
+   "summary": "Peru Wins finished first with 47 of 130 seats on 25.3% of the vote. Turnout 83.7%. Ollanta Humala replaced Alan García.",
+   "seatLeader": "Peru Wins",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "10 April 2016 (first round) 5 June 2016 (second round)",
+   "era": "unicameral",
+   "totalSeats": 130,
+   "majoritySeats": 66,
+   "turnout": 81.8,
+   "parties": [
+    {
+     "name": "Popular Force",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": 4431077,
+     "share": 36.34,
+     "swing": null
+    },
+    {
+     "name": "Peruvians for Change",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 2007710,
+     "share": 16.46,
+     "swing": null
+    },
+    {
+     "name": "Broad Front",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 1700052,
+     "share": 13.94,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Progress of Peru",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 1125682,
+     "share": 9.23,
+     "swing": null
+    },
+    {
+     "name": "Popular Alliance",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 1013735,
+     "share": 8.31,
+     "swing": null
+    },
+    {
+     "name": "Popular Action",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 877734,
+     "share": 7.2,
+     "swing": null
+    },
+    {
+     "name": "Direct Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 528301,
+     "share": 4.33,
+     "swing": null
+    },
+    {
+     "name": "Possible Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 286980,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "Hope Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 139634,
+     "share": 1.15,
+     "swing": null
+    },
+    {
+     "name": "Order",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 68474,
+     "share": 0.56,
+     "swing": null
+    },
+    {
+     "name": "Peru Progressing",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14663,
+     "share": 0.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ollanta Humala",
+    "party": "Peru Wins"
+   },
+   "pmAfter": {
+    "name": "Pedro Pablo Kuczynski",
+    "party": "PPK"
+   },
+   "knownAs": null,
+   "summary": "Popular Force finished first with 73 of 130 seats on 36.3% of the vote. Turnout 81.8%. Pedro Pablo Kuczynski replaced Ollanta Humala.",
+   "seatLeader": "Popular Force",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "11 April 2021 (first round) 6 June 2021 (second round)",
+   "era": "unicameral",
+   "totalSeats": 130,
+   "majoritySeats": 66,
+   "turnout": 70.05,
+   "parties": [
+    {
+     "name": "Free Peru",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 37,
+     "votes": 1724354,
+     "share": 13.41,
+     "swing": null
+    },
+    {
+     "name": "Popular Force",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 9,
+     "votes": 1457694,
+     "share": 11.34,
+     "swing": null
+    },
+    {
+     "name": "Popular Renewal",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 13,
+     "votes": 1199705,
+     "share": 9.33,
+     "swing": null
+    },
+    {
+     "name": "Popular Action",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -9,
+     "votes": 1159734,
+     "share": 9.02,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Progress",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -7,
+     "votes": 969726,
+     "share": 7.54,
+     "swing": null
+    },
+    {
+     "name": "Avanza País",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 7,
+     "votes": 969092,
+     "share": 7.54,
+     "swing": null
+    },
+    {
+     "name": "Together for Peru",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5,
+     "votes": 847596,
+     "share": 6.59,
+     "swing": null
+    },
+    {
+     "name": "We Are Peru",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -6,
+     "votes": 788522,
+     "share": 6.13,
+     "swing": null
+    },
+    {
+     "name": "Podemos Perú",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -6,
+     "votes": 750262,
+     "share": 5.83,
+     "swing": null
+    },
+    {
+     "name": "Purple Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -6,
+     "votes": 697307,
+     "share": 5.42,
+     "swing": null
+    },
+    {
+     "name": "National Victory",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 638289,
+     "share": 4.96,
+     "swing": null
+    },
+    {
+     "name": "Agricultural People's Front of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -15,
+     "votes": 589018,
+     "share": 4.58,
+     "swing": null
+    },
+    {
+     "name": "Union for Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -13,
+     "votes": 266349,
+     "share": 2.07,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 212820,
+     "share": 1.65,
+     "swing": null
+    },
+    {
+     "name": "Peruvian Nationalist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 195538,
+     "share": 1.52,
+     "swing": null
+    },
+    {
+     "name": "Broad Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -9,
+     "votes": 135104,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Direct Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 100033,
+     "share": 0.78,
+     "swing": null
+    },
+    {
+     "name": "National United Renaissance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 97540,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Peru Secure Homeland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 54859,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Contigo",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5787,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Sagasti",
+    "party": "Purple Party"
+   },
+   "pmAfter": {
+    "name": "Pedro Castillo",
+    "party": "Free Peru"
+   },
+   "knownAs": null,
+   "summary": "Free Peru finished first with 37 of 130 seats on 13.4% of the vote. Turnout 70.0%. Pedro Castillo replaced Francisco Sagasti.",
+   "seatLeader": "Free Peru",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "legislative",
+   "date": "12–13 April 2026 (first round) 7 June 2026 (second round)",
+   "era": "bicameral2026",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 73.81,
+   "parties": [
+    {
+     "name": "Popular Force",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 17,
+     "votes": 2114389,
+     "share": 14.66,
+     "swing": null
+    },
+    {
+     "name": "Popular Renewal",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 2,
+     "votes": 1593041,
+     "share": 11.04,
+     "swing": null
+    },
+    {
+     "name": "Together for Peru",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 27,
+     "votes": 1553154,
+     "share": 10.77,
+     "swing": null
+    },
+    {
+     "name": "Party of Good Government",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 1509987,
+     "share": 10.47,
+     "swing": null
+    },
+    {
+     "name": "Ahora Nación",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 1224556,
+     "share": 8.49,
+     "swing": null
+    },
+    {
+     "name": "Civic Party OBRAS",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 1199888,
+     "share": 8.32,
+     "swing": null
+    },
+    {
+     "name": "Country for All",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 838901,
+     "share": 5.82,
+     "swing": null
+    },
+    {
+     "name": "First the People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 434740,
+     "share": 3.01,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Progress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -15,
+     "votes": 401468,
+     "share": 2.78,
+     "swing": null
+    },
+    {
+     "name": "Podemos Perú",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 379812,
+     "share": 2.63,
+     "swing": null
+    },
+    {
+     "name": "We Are Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 308218,
+     "share": 2.14,
+     "swing": null
+    },
+    {
+     "name": "Agricultural People's Front of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 272759,
+     "share": 1.89,
+     "swing": null
+    },
+    {
+     "name": "Peruvian Aprista Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 268803,
+     "share": 1.86,
+     "swing": null
+    },
+    {
+     "name": "SíCreo Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 244781,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Front of Hope 2021",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 241274,
+     "share": 1.67,
+     "swing": null
+    },
+    {
+     "name": "Peru First",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 197520,
+     "share": 1.37,
+     "swing": null
+    },
+    {
+     "name": "Popular Cooperation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 163734,
+     "share": 1.13,
+     "swing": null
+    },
+    {
+     "name": "Venceremos",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 162492,
+     "share": 1.13,
+     "swing": null
+    },
+    {
+     "name": "Free Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -37,
+     "votes": 138137,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "Progresemos",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 134050,
+     "share": 0.93,
+     "swing": null
+    },
+    {
+     "name": "A Different Path",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 129484,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "Avanza País",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -7,
+     "votes": 120160,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "People's Liberty",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 106347,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Party of Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 99216,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "United Peru Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 93554,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Purple Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 88017,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Green Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 77126,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "National Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 71735,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Democratic Integrity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 60273,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Force and Liberty",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 47969,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "PRIN Political Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28022,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Faith in Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26894,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Federal Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23041,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Let's Save Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21275,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Peru Action",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20566,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Modern Peru",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18508,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Workers and Entrepreneurs Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12567,
+     "share": 0.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "José María Balcázar",
+    "party": "Free Peru"
+   },
+   "pmAfter": {
+    "name": "Keiko Fujimori",
+    "party": "FP"
+   },
+   "knownAs": null,
+   "summary": "Popular Force finished first with 41 seats on 14.7% of the vote. Turnout 73.8%. Keiko Fujimori replaced José María Balcázar.",
+   "seatLeader": "Popular Force",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

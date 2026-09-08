@@ -11264,3 +11264,164 @@ Ashwin, on /sports/heartbreak: clubs and national teams belong in one table.
     Baseball 0.0, Japan 0.26): 318 nation rows.
   * Everton stays at 24.3 / 13th of football: the honest limit, see above.
     Ashwin asked for a calibration point; none given yet.
+
+## 2026-09-08 — cowork (cloud, bridged to the Windows box) → mini and next session: ELEVEN HUBS IN ONE WAVE, TWO DISSOLVED STATES, NFL REST GAMES
+
+Push of `c2db399ab` confirmed at open: one READY build (00:48 BST), every
+later deployment a `[vercel skip]` CANCELED. Built today in a fresh clone in
+the container (tsc, vitest, the check gates, the Python pipelines), copied
+onto the Windows tree, native build and probes on the box. Everything below
+ships as ONE push with the app commit at HEAD; this entry rides inside it.
+
+### A. Morning batch (verified natively before the wave)
+- `/sports/standings`: the league accordions used `data-desktop-open`, whose
+  CSS sets `pointer-events: none` on the summary above 640px, so nothing could
+  be closed on a laptop. New `data-desktop-default-open` (globals.css) reveals
+  content for the first paint and a five-line inline script swaps it for a
+  real `open` on desktop viewports; native toggling everywhere after that.
+  Measured: 1280px 11 blocks open at load, Champions League folds 788px to
+  43px and reopens; 390px all closed, 4.1 screens, no sideways scroll.
+  DESIGN-STANDARDS §2 documents when to use which.
+- Heartbreak: nation rows link to their team pages (football via the
+  appearances slug, cricket / rugby / basketball / baseball / women's WWC via
+  their team files): 316 of 318 resolve (Finland and Austria women are
+  Euros-only). Header tile now "Teams scored" 1,466 (1,148 clubs, 318
+  national); it was `data.clubs.length`, derived but clubs only.
+- NFL hub standings: nickname below 1024px, full name from 1024px (two cards
+  across at 640px give the name 98px; at 1024px 290px). 32 rows, no overflow.
+- Germany: `next` was the 2029 federal election. Now the Federal Convention,
+  30 January 2027, confirmed (Bundestag press release of 26 Feb 2026); 14
+  confirmed dates in the atlas.
+
+### B. NFL against-expectation: rested starters (Ashwin's ask, data-backed)
+Measured before building, 2002-2025: favourites at 65%+ starting a
+non-primary QB in the last two regular-season weeks won 43 of 75 (Elo expected
+57.7, closing market 46.7). Control group with the primary QB: 272 of 368,
+Elo 281.6. Implied discount about 140 Elo. **Before 2002 there is no effect**
+(1950-77: 40 of 49 against 38.9; 1978-2001: 39 of 54 against 39.9), so the
+rule fires from 2002 only. `scripts/nfl/rest_adjust.py` (self-test, `--apply`)
+flags a side when: regular season, week >= max_week - 1, starting QB known and
+not the team-season's primary starter, own Elo p >= 0.5, season >= 2002. It
+writes `rest: {home, away}` and `model.pH_rest`, recomputes `surprise` from
+the discounted probability, leaves `model.pH` and `model_brier` alone, and
+rebuilds index.json's all-time upsets. 149 flagged sides; Chad Henne's 2020
+Chargers game leaves the all-time top ten. Wired into `build_expectation.py`
+for the next workbook run (not exercised here: no workbook in the container).
+Both boards show a "starters rested" pill. 🔴 `game_id` is NOT unique per
+game in the ledger (shared by a day's slate); the module keys on (season,
+date, home_key, away_key).
+
+### C. Wave 5: eleven election hubs, 281 contests, 60 hubs in the atlas
+| hub | shape | contests | span | notes |
+|---|---|---|---|---|
+| pe Peru | combined | 55 | 1866-2026 | Chamber of Deputies throughout (`leg-large`); 2026 runoff Fujimori 50.13 |
+| ke Kenya | combined | 33 | 1920-2022 | colonial LegCo rows summary-only; Oct 2017 rerun its own row |
+| bd Bangladesh | leg | 13 | 1973-2026 | `leg-tiered`; Feb/June 1996 two rows; 12 Feb 2026 BNP 210/350 |
+| et Ethiopia | leg | 14 | 1957-2026 | 1 June 2026 Prosperity 438/547 |
+| vn Vietnam | leg | 16 | 1946-2026 | North Vietnam then unified; 15 Mar 2026 |
+| ae UAE | leg | 5 | 2006-2023 | electorate 6,595 to 398,879; no vote shares by construction |
+| dd East Germany | leg, DEFUNCT | 11 | 1949-1990 | dissolved 3 Oct 1990; 1990 the one scored election |
+| vd South Vietnam | combined, DEFUNCT | 9 | 1956-1971 | dissolved 30 Apr 1975 |
+| cz Czech Republic | combined | 46 | 1918-2025 | Czechoslovakia carried as predecessor (Ashwin); CNC 1968-92 excluded |
+| sk Slovakia | combined | 31 | 1928-2024 | own assemblies from the 1928 provincial vote; 1998 presidency vacant |
+| ro Romania | combined | 48 | 1901-2025 | 2024 first round annulled, 2025 rerun both rows |
+
+**Defunct polities, the durable shape.** `ElectionHubMeta` gains `status:
+"defunct"`, `dissolved`, and `nextConfidence: "dissolved"` (new
+`NextConfidence` type). A dissolved hub keeps every contest and page, the
+directory (badge "Dissolved"), the census, the timeline, the systems table and
+the CSV; it leaves the map (`markers` filter), the countdown
+(`nextElections()` returns it with confidence "dissolved", the landing page
+drops it), the calendar feeds (confirmed only) and the population-weighted
+chart. `note: "Dissolved 1990"` with `noteTone: "neutral"` gives the landing
+card and hub title the badge for free. `/elections/all` gains a "Dissolved"
+horizon chip. `check:election-dates` accepts "dissolved" with no date. Flags:
+flagcdn has no DD/VD, so `lib/flags.ts` `LOCAL_FLAGS` serves
+`public/flags/dd.svg` and `vd.svg`. Next defunct state: three meta fields, one
+SVG, done.
+
+**The pipeline is now file-per-hub.** `scripts/elections/hubs/<cc>.py` (see
+`_template.py`) carries eras, colours, HUB config, intros and honesty labels;
+`hub_editorial.py` loads every module it finds (realpath, so the /tmp/hubs
+symlink works). `gen_hub_code.py <cc>` writes `lib/<cc>Elections.ts` and the
+two pages from the config (reproduces pk/co/ph within a few lines).
+`build_hub_json.py <cc>` builds one hub. `scripts/elections/wave5_driver.py`
+is the driver (copy to `/tmp/hubs/wave5.py`; dumps under `/tmp/hubs/<cc>.txt`,
+`czall.txt` = Czechoslovak + Czech dumps concatenated; the vd dump was given a
+heading for the 1971 lower-house article).
+
+🔴 **Shared parser changes made by the workers, each claimed byte-neutral for
+the other wave-5 hubs but NOT re-verified against Waves 1-4 (no dumps on
+disk):** `best_table` prefers a tiered read only when it captures at least as
+many rows as the plain one; `prefer` may be a per-title callable and
+`leg-large` exists; repeated header row terminates a table (Czechoslovak
+bicameral articles); `LEADER_BEFORE/AFTER` accept "Role before/after election"
+and "Chairman of the Council of Ministers", with an optional Elected/Subsequent
+prefix and a stop at the next label; `NAV_RE` rejoins a wrapped date line;
+`SEATS_RE2` matches "434 out of 500 seats"; party-name length cap 70 to 100;
+row-realignment accepts "New"/"Steady". Whoever holds the Wave 1-4 dumps should
+re-run and diff (the open item from 09-07 grew).
+
+`pres_summary` fallbacks: explicit "none" winner reads "the office stayed
+vacant" (sk 1998, cz 1992), a named winner with no table reads unopposed, no
+winner and no table reads "The source records no vote count". Leg fallback now
+"An Ethiopian election" (article by vowel, demonym capitalised).
+
+Gallagher: cz 5.75 median (n=17), sk 6.57, ro 6.67, pe 13.71, ke 10.44, bd
+17.37, et 23.85, dd 0.24 (1990 only); vn, ae, vd no series. CSV 2,203 rows +
+Vatican across 59 census hubs. `check:election-dates` 60 hubs, 14 confirmed.
+
+Ashwin, on names: "Czechia" and "Czech Republic" are interchangeable
+everywhere on the site; `czechia` now resolves to the Czech flag in
+`lib/flags.ts` and `international-display.ts` (it fell to the 🏛️ / ⌛
+placeholders before).
+
+### Open
+- Pre-1901 Romania: the dump's nav strip lists 1864-1899 (20 contests) plus
+  Moldavia, Wallachia, Bessarabia 1917, Transylvania 1918; needs its own dump.
+- Czech indirect presidencies 1993-2008 not in the dump; presidential intro
+  says so. `presFirst` is not read by the generator (presidential section
+  always first on a combined hub).
+- ke 2002 legislative drops the Liberal Democratic Party (59 seats, nested
+  alliance table); ro 1922 lists 286 of 369 seats; vd 1967 presidential
+  candidates carry no party (table has no party column). All documented in
+  the hub modules.
+- Everything from the 09-07 entry: Everton calibration, Lions pang values,
+  South Africa cricket knockouts, Turkey/Belgium/Greece football, rugby
+  constants, Wave 1 re-diff, `lib/data.ts` per-file loaders (219.8 MB max
+  route, WARN line), NFL workbook half, WP7, Sweden on 13 September.
+
+### N. Late additions, same session (Ashwin, afternoon)
+- Three more hubs: **fi Finland** (39 Eduskunta elections 1907-2023 plus the
+  2024 presidential election, which Ashwin sent as its own article after the
+  first dump turned out to hold only a see-also link to it; Stubb 51.62 over
+  Haavisto in the runoff; the 1994-2018 direct elections and the electoral
+  college era are still to come, so the charts read the legislative series;
+  next 18 April 2027 by statute, confirmed), **th Thailand** (28 House
+  elections 1933-2026 including the two 1957 and two 1992 votes; appointed
+  members stripped from party rows; 8 Feb 2026 last), **ve Venezuela** (18
+  presidential 1936-2024, 15 legislative 1947-2025; 1993 on the Chamber via
+  leg-large; 1947/2000/2005/2010 rebuilt from the compact results boxes;
+  2012 and 2024 candidate tables rebuilt; Perez Jimenez's 1952 vote absent).
+  Atlas 63 hubs, 15 confirmed dates. Gallagher fi 3.03 (n=39), ve 4.67, th 6.41.
+- **Rest games, second ruling.** The 2020 Chargers 38-21 over the 14-1 Chiefs
+  still read 17% after the 140-point discount. `REST_CAP = 0.70`: a rested
+  side is never more than a 70% favourite. Written down as an editorial
+  ceiling, not a fitted one: the ledger holds six rested favourites above 90%
+  Elo and five of them won. Chargers now 30%; the all-time top ten unchanged
+  from the morning list. Note for whoever reads a dev server: `nflExpectation`
+  prefers the GitHub-raw copy when it is newer, so localhost shows the pushed
+  ledger, not the working tree, until this push lands.
+- **Next to vote** prints the kind of contest beside a Set date
+  (`nextKind()` in electionHubsMeta: the clause before the first comma of
+  `next`). US prose is now "midterm elections, 3 November 2026"; Germany's
+  "presidential election by the Federal Convention, 30 January 2027".
+- **NFL season hubs**: the playoff divider sits ON the last regular-season
+  week (`px(w)`, was `px(w + 0.5)`); the belt on /teams/nfl/season shows
+  `complete` seasons only, so 2026 joins it after the Super Bowl.
+- `LineChart` renders "No figures on file" for an empty series instead of
+  crashing the prerender (the UAE has no party shares; the native build
+  caught it).
+- Countdown cards: the grid child needed `min-w-0` once the kind label made
+  the text row long (probe read 571px at 390 until it did). 20/20 routes
+  clean on the final native build; function-size 221.0 MB max (WARN line).

@@ -1,0 +1,3121 @@
+{
+ "meta": {
+  "title": "Kenyan Elections",
+  "sources": [
+   "Wikipedia: Kenyan general and presidential election articles 1920-2022 (results tables and infoboxes)",
+   "Independent Electoral and Boundaries Commission and predecessor commission figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "presEras": [
+  {
+   "key": "unopposed",
+   "label": "The unopposed presidency",
+   "span": "1978-1988",
+   "blurb": "Under the one-party constitution the president was elected unopposed at every general election from 1969 to 1988: KANU nominated one candidate, no other party could contest, and no vote was held. Jomo Kenyatta held the office until his death in 1978; Daniel arap Moi succeeded him and was returned the same way in 1979 and 1983. These rows carry a date and a name and no figures, because none exist to record."
+  },
+  {
+   "key": "multiparty",
+   "label": "Moi, Kibaki and a fractured opposition",
+   "span": "1992-2002",
+   "blurb": "Direct multi-party presidential elections began in 1992. Moi won both 1992 and 1997 with well under half the vote against an opposition split among several candidates; Mwai Kibaki's National Rainbow Coalition finally unified that opposition in 2002 and won by a landslide, ending 24 years of KANU presidents."
+  },
+  {
+   "key": "crisis",
+   "label": "The 2007 crisis",
+   "span": "2007",
+   "blurb": "Kibaki's re-election over Raila Odinga was announced by a divided electoral commission chairman who later said he did not know who had actually won; European Union and United States observers both raised concerns about the count. Odinga rejected the result, and the weeks that followed were the most violent in Kenya's post-independence history. Kofi Annan mediated a power-sharing deal that made Kibaki president and Odinga prime minister rather than settling the count itself."
+  },
+  {
+   "key": "devolved",
+   "label": "The 2010 constitution",
+   "span": "2013-",
+   "blurb": "The 2010 constitution requires an outright majority plus 25% of the vote in at least 24 of Kenya's 47 counties, with a runoff otherwise; no election since has gone to one. Uhuru Kenyatta beat Raila Odinga in 2013 and again in August 2017, when the Supreme Court annulled the result over irregularities in the transmission of results, an unprecedented step for an African presidential election. Odinga withdrew from the October re-run, and William Ruto beat Odinga in 2022 by 1.6 points."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "colonial",
+   "label": "The Legislative Council",
+   "span": "1920-1957",
+   "blurb": "Kenya's Legislative Council was filled by a race-based franchise: eleven European seats were elected outright, with a handful of Indian and Arab seats decided on separate rolls, and the majority Black population had no vote at all, only a few members nominated by the Governor. That changed only at the margins in 1956-57, when eight constituencies elected an African member for the first time. None of these elections were contested on party lines that a results table records, so they appear here as dated, uncontested rows rather than tables of names."
+  },
+  {
+   "key": "transition",
+   "label": "The transfer of power",
+   "span": "1961-1963",
+   "blurb": "The last two colonial elections were genuine multi-party contests fought under a widened, largely non-racial franchise: Jomo Kenyatta's KANU against Ronald Ngala's KADU in 1961, then again in the May 1963 election that carried Kenya to independence in December. KANU has never lost a National Assembly election since."
+  },
+  {
+   "key": "oneparty",
+   "label": "The one-party state",
+   "span": "1969-1988",
+   "blurb": "The Kenya People's Union was banned in October 1969, leaving KANU the only party on the ballot, and Section 2A of the constitution made that arrangement law in 1982. Within it the seat contests were often real: hundreds of KANU candidates stood for nomination at every election, and dozens of sitting MPs, including ministers, lost their seats each time."
+  },
+  {
+   "key": "multiparty",
+   "label": "Multi-party Kenya",
+   "span": "1992-2007",
+   "blurb": "Section 2A was repealed in 1991 under pressure from a pro-democracy movement and foreign donors, and KANU held on through a fractured opposition in 1992 and 1997 before Mwai Kibaki's National Rainbow Coalition ended its 39-year rule in 2002. The 2007 election, contested on a genuinely open field, was followed by a disputed presidential count and the worst post-election violence in Kenya's history; the parliamentary result that year is not itself in dispute in the source, only the presidential one."
+  },
+  {
+   "key": "devolved",
+   "label": "The 2010 constitution",
+   "span": "2013-",
+   "blurb": "The 2013 constitution created the Senate alongside an enlarged National Assembly and devolved counties, so general elections since have elected six offices at once: president, senators, MPs, governors, county women representatives and county assembly members. Uhuru Kenyatta's Jubilee coalition, then William Ruto's Kenya Kwanza, have each organised the National Assembly since, and coalitions rather than single parties now carry most of the chamber."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "presidential",
+   "date": "November 8, 1978",
+   "era": "unopposed",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Daniel Arap Moi",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Daniel Arap Moi",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "KANU's sole nominee stood unopposed and no vote was held.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "presidential",
+   "date": "November 8, 1979",
+   "era": "unopposed",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Daniel Arap Moi",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Daniel Arap Moi",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "KANU's sole nominee stood unopposed and no vote was held.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "presidential",
+   "date": "September 26, 1983",
+   "era": "unopposed",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Daniel Arap Moi",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Daniel Arap Moi",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "KANU's sole nominee stood unopposed and no vote was held.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "presidential",
+   "date": "29 December 1992",
+   "era": "multiparty",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Daniel arap Moi",
+     "party": "Kenya African National Union",
+     "r1Votes": 1962866,
+     "r1Share": 36.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kenneth Matiba",
+     "party": "FORD–Asili",
+     "r1Votes": 1404266,
+     "r1Share": 26.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mwai Kibaki",
+     "party": "Democratic Party",
+     "r1Votes": 1050617,
+     "r1Share": 19.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jaramogi Oginga Odinga",
+     "party": "FORD–Kenya",
+     "r1Votes": 944197,
+     "r1Share": 17.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "George Anyona",
+     "party": "Kenya Social Congress",
+     "r1Votes": 14273,
+     "r1Share": 0.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chibule wa Tsuma",
+     "party": "Kenya National Congress",
+     "r1Votes": 10221,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "John Harun Mwau",
+     "party": "Party of Independent Candidates of Kenya",
+     "r1Votes": 8118,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "David Mukaru Ng'ang'a",
+     "party": "Kenya National Democratic Alliance",
+     "r1Votes": 5766,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Daniel arap Moi",
+    "party": "Kenya African National Union"
+   },
+   "presAfter": {
+    "name": "Daniel arap Moi",
+    "party": "KANU"
+   },
+   "knownAs": null,
+   "summary": "Daniel arap Moi won with 36.35% against Kenneth Matiba on 26.00%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "presidential",
+   "date": "29 December 1997",
+   "era": "multiparty",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Daniel arap Moi",
+     "party": "Kenya African National Union",
+     "r1Votes": 2500865,
+     "r1Share": 40.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mwai Kibaki",
+     "party": "Democratic Party",
+     "r1Votes": 1911742,
+     "r1Share": 30.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raila Odinga",
+     "party": "National Development Party",
+     "r1Votes": 667886,
+     "r1Share": 10.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michael Kijana Wamalwa",
+     "party": "FORD–Kenya",
+     "r1Votes": 505704,
+     "r1Share": 8.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Charity Ngilu",
+     "party": "Social Democratic Party",
+     "r1Votes": 488600,
+     "r1Share": 7.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Martin Shikuku",
+     "party": "FORD–Asili",
+     "r1Votes": 36512,
+     "r1Share": 0.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Katama Mkangi",
+     "party": "Kenya National Congress",
+     "r1Votes": 23554,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "George Anyona",
+     "party": "Kenya Social Congress",
+     "r1Votes": 16428,
+     "r1Share": 0.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kimani wa Nyoike",
+     "party": "FORD–People",
+     "r1Votes": 8306,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Koigi wa Wamwere",
+     "party": "Kenya National Democratic Alliance",
+     "r1Votes": 7745,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Munyua Waiyaki",
+     "party": "United Patriotic Party",
+     "r1Votes": 6194,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Godfrey M' Mwereria",
+     "party": "Green African Party",
+     "r1Votes": 4627,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Wangari Maathai",
+     "party": "Labour Party",
+     "r1Votes": 4246,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Stephen Oludhe",
+     "party": "Independent Economic Party",
+     "r1Votes": 3691,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "David Waweru Ng'ethe",
+     "party": "Umma Patriotic Party",
+     "r1Votes": 3584,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Daniel arap Moi",
+    "party": "Kenya African National Union"
+   },
+   "presAfter": {
+    "name": "Daniel arap Moi",
+    "party": "KANU"
+   },
+   "knownAs": null,
+   "summary": "Daniel arap Moi won with 40.40% against Mwai Kibaki on 30.89%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "presidential",
+   "date": "27 December 2002",
+   "era": "multiparty",
+   "turnout": 57.18,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mwai Kibaki",
+     "party": "National Rainbow Coalition",
+     "r1Votes": 3646277,
+     "r1Share": 62.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Uhuru Kenyatta",
+     "party": "Kenya African National Union",
+     "r1Votes": 1835890,
+     "r1Share": 31.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Simeon Nyachae",
+     "party": "FORD–People",
+     "r1Votes": 345152,
+     "r1Share": 5.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "James Orengo",
+     "party": "Social Democratic Party",
+     "r1Votes": 24524,
+     "r1Share": 0.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "David Ng'ethe",
+     "party": "Chama Cha Uma",
+     "r1Votes": 10061,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Daniel arap Moi",
+    "party": "KANU"
+   },
+   "presAfter": {
+    "name": "Mwai Kibaki",
+    "party": "NARC"
+   },
+   "knownAs": null,
+   "summary": "Mwai Kibaki won with 62.20% against Uhuru Kenyatta on 31.32%. Turnout 57.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "presidential",
+   "date": "27 December 2007",
+   "era": "crisis",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mwai Kibaki",
+     "party": "Party of National Unity",
+     "r1Votes": 4584721,
+     "r1Share": 46.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raila Odinga",
+     "party": "Orange Democratic Movement",
+     "r1Votes": 4352993,
+     "r1Share": 44.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kalonzo Musyoka",
+     "party": "Orange Democratic Movement–Kenya",
+     "r1Votes": 879903,
+     "r1Share": 8.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joseph Karani",
+     "party": "Kenya Patriotic Trust Party",
+     "r1Votes": 21171,
+     "r1Share": 0.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pius Muiru",
+     "party": "Kenya Peoples' Party",
+     "r1Votes": 9667,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nazlin Omar",
+     "party": "Workers Congress Party of Kenya",
+     "r1Votes": 8624,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kenneth Matiba",
+     "party": "Saba Saba Asili",
+     "r1Votes": 8046,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "David Waweru Ng'ethe",
+     "party": "Chama Cha Uma",
+     "r1Votes": 5976,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nixon Kukubo",
+     "party": "Republican Party of Kenya",
+     "r1Votes": 5927,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mwai Kibaki",
+    "party": "PNU"
+   },
+   "presAfter": {
+    "name": "Mwai Kibaki",
+    "party": "PNU"
+   },
+   "knownAs": null,
+   "summary": "Mwai Kibaki won with 46.42% against Raila Odinga on 44.07%.",
+   "caveat": "The result was announced by a divided electoral commission whose own chairman later said he did not know who had won, foreign observers raised concerns about the count, and the dispute was resolved by a power-sharing deal rather than by settling it.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "presidential",
+   "date": "4 March 2013",
+   "era": "devolved",
+   "turnout": 85.91,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Uhuru Kenyatta",
+     "party": "Jubilee Alliance",
+     "r1Votes": 6173433,
+     "r1Share": 50.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raila Odinga",
+     "party": "Coalition for Reforms and Democracy",
+     "r1Votes": 5340546,
+     "r1Share": 43.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Musalia Mudavadi",
+     "party": "Amani Coalition",
+     "r1Votes": 483981,
+     "r1Share": 3.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Peter Kenneth",
+     "party": "Eagle Alliance",
+     "r1Votes": 72786,
+     "r1Share": 0.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mohammed Abduba Dida",
+     "party": "Alliance for Real Change",
+     "r1Votes": 52848,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Martha Karua",
+     "party": "National Rainbow Coalition – Kenya",
+     "r1Votes": 43881,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "James ole Kiyiapi",
+     "party": "Restore and Build Kenya",
+     "r1Votes": 40998,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paul Muite",
+     "party": "Safina",
+     "r1Votes": 12580,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mwai Kibaki",
+    "party": "PNU"
+   },
+   "presAfter": {
+    "name": "Uhuru Kenyatta",
+    "party": "National Alliance"
+   },
+   "knownAs": null,
+   "summary": "Uhuru Kenyatta won with 50.51% against Raila Odinga on 43.70%. Turnout 85.9%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2017-august",
+   "label": "August 2017",
+   "year": 2017,
+   "kind": "presidential",
+   "date": "8 August 2017 to elect the President",
+   "era": "devolved",
+   "turnout": 79.51,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Uhuru Kenyatta",
+     "party": "Jubilee Party",
+     "r1Votes": 8223369,
+     "r1Share": 54.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raila Odinga",
+     "party": "National Super Alliance",
+     "r1Votes": 6822812,
+     "r1Share": 44.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joseph Nyagah",
+     "party": "Independent",
+     "r1Votes": 38029,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abduba Dida",
+     "party": "Alliance for Real Change",
+     "r1Votes": 38004,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ekuru Aukot",
+     "party": "Thirdway Alliance Kenya",
+     "r1Votes": 27400,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Japheth Kaluyu",
+     "party": "Independent",
+     "r1Votes": 11774,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cyrus Jirongo",
+     "party": "United Democratic Party",
+     "r1Votes": 11282,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michael Wainaina",
+     "party": "Independent",
+     "r1Votes": 8870,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Uhuru Kenyatta",
+    "party": "Jubilee"
+   },
+   "presAfter": {
+    "name": "Election results annulled",
+    "party": "Uhuru Kenyatta remains president"
+   },
+   "knownAs": null,
+   "summary": "Uhuru Kenyatta won with 54.17% against Raila Odinga on 44.94%. Turnout 79.5%.",
+   "caveat": "The Supreme Court annulled this result for irregularities in the transmission of results and ordered a fresh election, an unprecedented step for an African presidential election.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2017-october",
+   "label": "October 2017",
+   "year": 2017,
+   "kind": "presidential",
+   "date": "26 October 2017",
+   "era": "devolved",
+   "turnout": 39.03,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Uhuru Kenyatta",
+     "party": "Jubilee Party",
+     "r1Votes": 7483895,
+     "r1Share": 98.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raila Odinga",
+     "party": "National Super Alliance",
+     "r1Votes": 73228,
+     "r1Share": 0.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ekuru Aukot",
+     "party": "Thirdway Alliance Kenya",
+     "r1Votes": 21333,
+     "r1Share": 0.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abduba Dida",
+     "party": "Alliance for Real Change",
+     "r1Votes": 14107,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Japheth Kaluyu",
+     "party": "Independent",
+     "r1Votes": 8261,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michael Wainaina",
+     "party": "Independent",
+     "r1Votes": 6007,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joseph Nyagah",
+     "party": "Independent",
+     "r1Votes": 5554,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cyrus Jirongo",
+     "party": "United Democratic Party",
+     "r1Votes": 3832,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Uhuru Kenyatta",
+    "party": "Jubilee"
+   },
+   "presAfter": {
+    "name": "Uhuru Kenyatta",
+    "party": "Jubilee"
+   },
+   "knownAs": null,
+   "summary": "Uhuru Kenyatta won with 98.26% against Raila Odinga on 0.96%. Turnout 39.0%.",
+   "caveat": "Raila Odinga withdrew before the re-run, saying the electoral commission had not shown it would fix the problems that led to the annulment, leaving Kenyatta to face token opposition.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "9 August 2022",
+   "era": "devolved",
+   "turnout": 64.77,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "William Ruto",
+     "party": "United Democratic Alliance",
+     "r1Votes": 7176141,
+     "r1Share": 50.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raila Odinga",
+     "party": "Azimio la Umoja",
+     "r1Votes": 6942930,
+     "r1Share": 48.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "George Wajackoyah",
+     "party": "Roots Party Kenya",
+     "r1Votes": 61969,
+     "r1Share": 0.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "David Waihiga",
+     "party": "Agano Party",
+     "r1Votes": 31987,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Uhuru Kenyatta",
+    "party": "Jubilee Party"
+   },
+   "presAfter": {
+    "name": "William Ruto",
+    "party": "UDA"
+   },
+   "knownAs": null,
+   "summary": "William Ruto won with 50.49% against Raila Odinga on 48.85%. Turnout 64.8%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "March and April 1920",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "legislative",
+   "date": "2 April 1924",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "12 February 1927",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "1931",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1934",
+   "label": "1934",
+   "year": 1934,
+   "kind": "legislative",
+   "date": "1934",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "legislative",
+   "date": "26 March and 2 April 1938",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1944",
+   "label": "1944",
+   "year": 1944,
+   "kind": "legislative",
+   "date": "September 1944",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "May 1948",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "legislative",
+   "date": "1952",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "legislative",
+   "date": "25 September and 2 October 1956",
+   "era": "colonial",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Kenyan election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Filled by a race-based franchise; the majority Black population had no vote and was represented, if at all, by a handful of members nominated by the Governor.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "February 1961",
+   "era": "transition",
+   "totalSeats": 65,
+   "majoritySeats": null,
+   "turnout": 83.64,
+   "parties": [
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 590661,
+     "share": 67.5,
+     "swing": null
+    },
+    {
+     "name": "Kenya African Democratic Union",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 143079,
+     "share": 16.35,
+     "swing": null
+    },
+    {
+     "name": "Baluhya Political Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 28817,
+     "share": 3.29,
+     "swing": null
+    },
+    {
+     "name": "New Kenya Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 28284,
+     "share": 3.23,
+     "swing": null
+    },
+    {
+     "name": "Kenya Indian Congress",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 10488,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Kenya Coalition",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 8891,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "Kenya Freedom Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 5263,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Kenya National Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4561,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "Shungwaya Freedom Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3748,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Coast People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1693,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Tana River Pokomo Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 699,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "African independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 13917,
+     "share": 1.59,
+     "swing": null
+    },
+    {
+     "name": "Arab independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 5712,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Asian Hindu independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4648,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Asian Muslim independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 11880,
+     "share": 1.36,
+     "swing": null
+    },
+    {
+     "name": "European independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 12768,
+     "share": 1.46,
+     "swing": null
+    },
+    {
+     "name": "Appointed members",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Kenya African National Union finished first with 19 of 65 seats on 67.5% of the vote. Turnout 83.6%.",
+   "seatLeader": "Kenya African National Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "18–26 May 1963",
+   "era": "transition",
+   "totalSeats": 129,
+   "majoritySeats": 65,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 72,
+     "seatChange": null,
+     "votes": 988311,
+     "share": 53.6,
+     "swing": null
+    },
+    {
+     "name": "Kenya African Democratic Union",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": 476218,
+     "share": 25.83,
+     "swing": null
+    },
+    {
+     "name": "African People's Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 137008,
+     "share": 7.43,
+     "swing": null
+    },
+    {
+     "name": "Baluhya Political Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14896,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "Coast People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9135,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 218311,
+     "share": 11.84,
+     "swing": null
+    },
+    {
+     "name": "5",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Kenya African National Union finished first with 72 of 129 seats on 53.6% of the vote.",
+   "seatLeader": "Kenya African National Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "6 December 1969",
+   "era": "oneparty",
+   "totalSeats": 170,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 158,
+     "seatChange": 75,
+     "votes": 1687734,
+     "share": 100.0,
+     "swing": null
+    },
+    {
+     "name": "Appointed members",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Kenya African National Union finished first with 158 of 170 seats on 100.0% of the vote.",
+   "seatLeader": "Kenya African National Union",
+   "caveat": "KANU was the sole legal party, but its own primaries turned over a large share of sitting MPs at every election.",
+   "unfree": null
+  },
+  {
+   "id": "1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "legislative",
+   "date": "14 October 1974",
+   "era": "oneparty",
+   "totalSeats": 170,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 158,
+     "seatChange": 0,
+     "votes": 2627308,
+     "share": 100.0,
+     "swing": null
+    },
+    {
+     "name": "Appointed members",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jomo Kenyatta",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Jomo Kenyatta",
+    "party": "Parliamentary election"
+   },
+   "knownAs": null,
+   "summary": "Kenya African National Union finished first with 158 of 170 seats on 100.0% of the vote. Jomo Kenyatta stayed in office.",
+   "seatLeader": "Kenya African National Union",
+   "caveat": "KANU was the sole legal party, but its own primaries turned over a large share of sitting MPs at every election.",
+   "unfree": null
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "21 March 1988",
+   "era": "oneparty",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": 40.7,
+   "parties": [
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 188,
+     "seatChange": 30,
+     "votes": 2231229,
+     "share": 100.0,
+     "swing": null
+    },
+    {
+     "name": "Appointed members",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Daniel arap Moi",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Daniel arap Moi",
+    "party": "Parliamentary election"
+   },
+   "knownAs": null,
+   "summary": "Kenya African National Union finished first with 188 of 200 seats on 100.0% of the vote. Turnout 40.7%. Daniel arap Moi stayed in office.",
+   "seatLeader": "Kenya African National Union",
+   "caveat": "KANU was the sole legal party, but its own primaries turned over a large share of sitting MPs at every election.",
+   "unfree": null
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "29 December 1992",
+   "era": "multiparty",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–Asili",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–Kenya",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kenya National Congress",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Independent Candidates of Kenya",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kenya Social Congress",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kenya National Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Appointed members",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Daniel arap Moi",
+    "party": "Kenya African National Union"
+   },
+   "pmAfter": {
+    "name": "Daniel arap Moi",
+    "party": "KANU"
+   },
+   "knownAs": null,
+   "summary": "Kenya African National Union finished first with 100 of 200 seats. Daniel arap Moi stayed in office.",
+   "seatLeader": "Kenya African National Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "29 December 1997",
+   "era": "multiparty",
+   "totalSeats": 222,
+   "majoritySeats": null,
+   "turnout": 65.2,
+   "parties": [
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 107,
+     "seatChange": 7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 16,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Development Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–Kenya",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -14,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 15,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Safina",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–People",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–Asili",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -30,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kenya Social Congress",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Shirikisho Party of Kenya",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Appointed members",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Daniel arap Moi",
+    "party": "Kenya African National Union"
+   },
+   "pmAfter": {
+    "name": "Daniel arap Moi",
+    "party": "KANU"
+   },
+   "knownAs": null,
+   "summary": "Kenya African National Union finished first with 107 of 222 seats. Turnout 65.2%. Daniel arap Moi stayed in office.",
+   "seatLeader": "Kenya African National Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "27 December 2002",
+   "era": "multiparty",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 57.18,
+   "parties": [
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–Kenya",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 4,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Party of Kenya",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 64,
+     "seatChange": -43,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–People",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–Asili",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Safina",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sisi Kwa Sisi",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Shirikisho Party of Kenya",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Appointed members",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Daniel arap Moi",
+    "party": "KANU"
+   },
+   "pmAfter": {
+    "name": "Mwai Kibaki",
+    "party": "NARC"
+   },
+   "knownAs": null,
+   "summary": "Kenya African National Union finished first with 64 seats. Turnout 57.2%. Mwai Kibaki replaced Daniel arap Moi.",
+   "seatLeader": "Kenya African National Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "27 December 2007",
+   "era": "multiparty",
+   "totalSeats": 210,
+   "majoritySeats": 106,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "ODM",
+     "leader": "Raila Odinga",
+     "seats": 99,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PNU",
+     "leader": "Mwai Kibaki",
+     "seats": 43,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ODM–Kenya",
+     "leader": "Kalonzo Musyoka",
+     "seats": 16,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "KANU",
+     "leader": "Uhuru Kenyatta",
+     "seats": 15,
+     "seatChange": -49,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Safina",
+     "leader": "Jimmy Wanjigi",
+     "seats": 5,
+     "seatChange": 3,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NARC",
+     "leader": "Charity Ngilu",
+     "seats": 3,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "Joseph K. Munyao",
+     "seats": 2,
+     "seatChange": -37,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–People",
+     "leader": "Simeon Nyachae",
+     "seats": 3,
+     "seatChange": -11,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "KADDU",
+     "leader": "Cyrus Jirongo",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "KENDA",
+     "leader": "Kamlesh Pattni",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NARC–Kenya",
+     "leader": "Martha Karua",
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sisi Kwa Sisi",
+     "leader": "–",
+     "seats": 2,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CCU",
+     "leader": "Wavinya Ndeti",
+     "seats": 2,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UDM",
+     "leader": "Ali Roba",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "MGPK",
+     "leader": "Wangarĩ Maathai",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Ford Kenya",
+     "leader": "Eugene Wamalwa",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PICK",
+     "leader": "John Harun Mwau",
+     "seats": 2,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–Kenya",
+     "leader": "Moses Wetang'ula",
+     "seats": 1,
+     "seatChange": -20,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD–Asili",
+     "leader": "Kenneth Matiba",
+     "seats": 1,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NLP",
+     "leader": "Ananiah Mwaboza",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "KADU–Asili",
+     "leader": "Francis Bayah",
+     "seats": 1,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PDP",
+     "leader": "Richard Momoima",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PPK",
+     "leader": "David Mwaura",
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mwai Kibaki",
+    "party": "PNU"
+   },
+   "pmAfter": {
+    "name": "Mwai Kibaki",
+    "party": "PNU"
+   },
+   "knownAs": null,
+   "summary": "ODM finished first with 99 of 210 seats. Mwai Kibaki stayed in office.",
+   "seatLeader": "ODM",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "legislative",
+   "date": "4 March 2013",
+   "era": "devolved",
+   "totalSeats": 349,
+   "majoritySeats": null,
+   "turnout": 85.91,
+   "parties": [
+    {
+     "name": "The National Alliance",
+     "leader": null,
+     "seats": 88,
+     "seatChange": null,
+     "votes": 3044810,
+     "share": 24.97,
+     "swing": null
+    },
+    {
+     "name": "Orange Democratic Movement",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": 2608898,
+     "share": 21.39,
+     "swing": null
+    },
+    {
+     "name": "United Republican Party",
+     "leader": null,
+     "seats": 76,
+     "seatChange": null,
+     "votes": 1509802,
+     "share": 12.38,
+     "swing": null
+    },
+    {
+     "name": "Wiper Democratic Movement – Kenya",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 682597,
+     "share": 5.6,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Forum Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 452543,
+     "share": 3.71,
+     "swing": null
+    },
+    {
+     "name": "FORD–Kenya",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 429670,
+     "share": 3.52,
+     "swing": null
+    },
+    {
+     "name": "National Rainbow Coalition",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 366256,
+     "share": 3.0,
+     "swing": null
+    },
+    {
+     "name": "Alliance Party of Kenya",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 292652,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 286393,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "Grand National Union of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 260562,
+     "share": 2.14,
+     "swing": null
+    },
+    {
+     "name": "Federal Party of Kenya",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 195742,
+     "share": 1.61,
+     "swing": null
+    },
+    {
+     "name": "Kenya National Congress",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 196609,
+     "share": 1.61,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 174453,
+     "share": 1.43,
+     "swing": null
+    },
+    {
+     "name": "New Ford Kenya",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 143395,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "Chama Cha Uzalendo",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 132246,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "The Independent Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 132159,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "NARC–Kenya",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 99715,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "Peoples Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 92278,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "FORD–People",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 91218,
+     "share": 0.75,
+     "swing": null
+    },
+    {
+     "name": "Muungano Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 77233,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "National Vision Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 74737,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Agano Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 62473,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Party of Independent Candidates of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 54337,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Mazingira Green Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51331,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "National Agenda Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48149,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Restore and Build Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37280,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34904,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Maendeleo Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 34564,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32768,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31328,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Mwangaza Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29670,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Farmers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24776,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Safina",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23529,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "New Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22401,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Kenya National Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22177,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Peoples Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21454,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "KADU–Asili",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 19907,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18284,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Republican Congress Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15733,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Unity Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15215,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Kenya Social Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12663,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Mzalendo Saba Saba",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12131,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Shirikisho Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8610,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "People's Patriotic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7350,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Party of Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7224,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Chama Cha Mapinduzi",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5235,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Mkenya Solidarity Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5223,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "FORD–Asili",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1639,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1443,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 107898,
+     "share": 0.88,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mwai Kibaki",
+    "party": "PNU"
+   },
+   "pmAfter": {
+    "name": "Uhuru Kenyatta",
+    "party": "National Alliance"
+   },
+   "knownAs": null,
+   "summary": "Orange Democratic Movement finished first with 96 of 349 seats on 21.4% of the vote. Turnout 85.9%. Uhuru Kenyatta replaced Mwai Kibaki.",
+   "seatLeader": "Orange Democratic Movement",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "legislative",
+   "date": "8 August 2017 to elect the President",
+   "era": "devolved",
+   "totalSeats": 349,
+   "majoritySeats": null,
+   "turnout": 79.51,
+   "parties": [
+    {
+     "name": "Jubilee Party",
+     "leader": null,
+     "seats": 169,
+     "seatChange": -33,
+     "votes": 6029273,
+     "share": 40.2,
+     "swing": null
+    },
+    {
+     "name": "Orange Democratic Movement",
+     "leader": null,
+     "seats": 77,
+     "seatChange": -20,
+     "votes": 2884267,
+     "share": 19.23,
+     "swing": null
+    },
+    {
+     "name": "Wiper Democratic Movement – Kenya",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -3,
+     "votes": 770875,
+     "share": 5.14,
+     "swing": null
+    },
+    {
+     "name": "Amani National Congress",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 569022,
+     "share": 3.79,
+     "swing": null
+    },
+    {
+     "name": "Forum for the Restoration of Democracy – Kenya",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 2,
+     "votes": 495043,
+     "share": 3.3,
+     "swing": null
+    },
+    {
+     "name": "Kenya African National Union",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 4,
+     "votes": 366808,
+     "share": 2.45,
+     "swing": null
+    },
+    {
+     "name": "Maendeleo Chap Chap Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 251876,
+     "share": 1.68,
+     "swing": null
+    },
+    {
+     "name": "Party of National Unity",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 179130,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "National Rainbow Coalition – Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 122804,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "Chama Cha Mashinani",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 90923,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of Kenya",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 70388,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Party of Development and Reforms",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 67515,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Economic Freedom Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 66711,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Kenya National Congress",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 44222,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Frontier Alliance Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 39462,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Mazingira Green Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34600,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31420,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Chama Cha Uzalendo",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 30926,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Kenya African Democratic Union – Asili",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 27512,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "National Vision Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26081,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "New Democrats",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 24343,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Kenya Patriots Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 23785,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Labour Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21538,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16762,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Restore and Build Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12836,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Safina",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11607,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Diligence Development Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10610,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Federal Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 7605,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Citizens Convention Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7460,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Kenya Social Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6223,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5634,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Party of Independent Candidates of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4816,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Republican Liberty Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3845,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Alternative Leadership Party of Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3660,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3628,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Agano Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3162,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Vibrant Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1821,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Chama Mwangaza Daima",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1244,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Thirdway Alliance Kenya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 10,
+     "votes": 2347061,
+     "share": 15.65,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Uhuru Kenyatta",
+    "party": "Jubilee"
+   },
+   "pmAfter": {
+    "name": "Election results annulled",
+    "party": "Uhuru Kenyatta remains president"
+   },
+   "knownAs": null,
+   "summary": "Jubilee Party finished first with 169 of 349 seats on 40.2% of the vote. Turnout 79.5%. Election results annulled replaced Uhuru Kenyatta.",
+   "seatLeader": "Jubilee Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "legislative",
+   "date": "9 August 2022",
+   "era": "devolved",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 64.77,
+   "parties": [
+    {
+     "name": "UDA",
+     "leader": "William Ruto",
+     "seats": 143,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ODM",
+     "leader": "Raila Odinga",
+     "seats": 89,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jubilee Party",
+     "leader": "Uhuru Kenyatta",
+     "seats": 28,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Wiper",
+     "leader": "Kalonzo Musyoka",
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Amani",
+     "leader": "Musalia Mudavadi",
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UDM",
+     "leader": "Philip Murgor",
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FORD-K",
+     "leader": "Moses Wetangula",
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "DAP",
+     "leader": "Eugene Wamalwa",
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "KANU",
+     "leader": "Gideon Moi",
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PAA",
+     "leader": "Amason Kingi",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "KUP",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "MCC",
+     "leader": "Alfred Mutua",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Service",
+     "leader": "Mwangi Kiunjuri",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UPIA",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UPA",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CCK",
+     "leader": "Moses Kuria",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "GDDP",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "MDG",
+     "leader": "David Ochieng Ouma",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NAP-K",
+     "leader": "Alfayo Alfonze Agufana",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NOPEU",
+     "leader": "Lawrence Mpuru Aburi",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UDP",
+     "leader": "Cyrus Jirongo",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": "–",
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Uhuru Kenyatta",
+    "party": "Jubilee Party"
+   },
+   "pmAfter": {
+    "name": "William Ruto",
+    "party": "UDA"
+   },
+   "knownAs": null,
+   "summary": "UDA finished first with 143 of 349 seats. Turnout 64.8%. William Ruto replaced Uhuru Kenyatta.",
+   "seatLeader": "UDA",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

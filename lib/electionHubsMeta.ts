@@ -15,6 +15,12 @@ export const GOVERNMENT_TYPE_LABELS: Record<GovernmentType, string> = {
   other: "Other",
 };
 
+// The four states a hub's next election can be in. `dissolved` is the polity
+// that no longer exists (East Germany, South Vietnam): it keeps every contest
+// it ever held and every page, and drops out of the map, the countdown and
+// the calendar feeds, because nothing is coming.
+export type NextConfidence = "confirmed" | "expected" | "unscheduled" | "dissolved";
+
 export type ElectionHubMeta = {
   code: string; // hub route segment
   flag: string; // flagcdn code
@@ -35,8 +41,18 @@ export type ElectionHubMeta = {
   //                a sort key. Never print it as a date: print `next`.
   //   unscheduled- no date exists (Ukraine under martial law, a conclave).
   //                `nextDate` is absent and the hub sorts last.
+  //   dissolved  - the polity no longer exists. `nextDate` is absent, `next`
+  //                says when it ended, and `dissolved` carries the date.
   nextDate?: string;                                       // ISO yyyy-mm-dd
-  nextConfidence?: "confirmed" | "expected" | "unscheduled";
+  nextConfidence?: NextConfidence;
+  // --- defunct polities ---------------------------------------------------
+  // A hub for a state that has ceased to exist. The directory, the census,
+  // the timeline, the systems table and the CSV keep it in full; the map,
+  // the countdown, "next to vote" and the calendar feeds leave it out. The
+  // landing card and the hub title carry "Dissolved <year>" as a neutral
+  // badge. Add more with the same three fields; nothing else needs to know.
+  status?: "defunct";
+  dissolved?: string; // "3 October 1990"
   tier?: "compact"; // compact hubs appear on the landing page as name links only,
   // with no featured card; their ballots still count on the map, the timeline
   // and the freedom charts (since 2026-09-07). Absence means a featured card.
@@ -106,6 +122,21 @@ export const HUB_CAPITALS: Record<string, { slug: string; name: string }> = {
   cl: { slug: "santiago", name: "Santiago" },
   ir: { slug: "tehran", name: "Tehran" },
   pk: { slug: "islamabad", name: "Islamabad" },
+  // Wave 5 (2026-09-08).
+  pe: { slug: "lima", name: "Lima" },
+  ke: { slug: "nairobi", name: "Nairobi" },
+  bd: { slug: "dhaka", name: "Dhaka" },
+  et: { slug: "addis-ababa", name: "Addis Ababa" },
+  vn: { slug: "hanoi", name: "Hanoi" },
+  ae: { slug: "abu-dhabi", name: "Abu Dhabi" },
+  dd: { slug: "berlin", name: "East Berlin" },
+  vd: { slug: "ho-chi-minh-city", name: "Saigon" },
+  cz: { slug: "prague", name: "Prague" },
+  sk: { slug: "bratislava", name: "Bratislava" },
+  ro: { slug: "bucharest", name: "Bucharest" },
+  fi: { slug: "helsinki", name: "Helsinki" },
+  th: { slug: "bangkok", name: "Bangkok" },
+  ve: { slug: "caracas", name: "Caracas" },
 };
 
 
@@ -122,25 +153,29 @@ export const HUB_REGION: Record<string, string> = {
   nz: "Asia & Oceania", kr: "Asia & Oceania", id: "Asia & Oceania",
   tw: "Asia & Oceania", cn: "Asia & Oceania", sg: "Asia & Oceania",
   my: "Asia & Oceania", ph: "Asia & Oceania", pk: "Asia & Oceania",
+  bd: "Asia & Oceania", vn: "Asia & Oceania", vd: "Asia & Oceania",
+  dd: "Europe", cz: "Europe", sk: "Europe", ro: "Europe", fi: "Europe",
+  th: "Asia & Oceania", ve: "The Americas",
   il: "Middle East & Africa", za: "Middle East & Africa",
   ng: "Middle East & Africa", tr: "Middle East & Africa",
   iq: "Middle East & Africa", ps: "Middle East & Africa",
   eg: "Middle East & Africa", cd: "Middle East & Africa",
-  ir: "Middle East & Africa",
-  us: "The Americas", ca: "The Americas", mx: "The Americas",
+  ir: "Middle East & Africa", ke: "Middle East & Africa",
+  et: "Middle East & Africa", ae: "Middle East & Africa",
+  us: "The Americas", pe: "The Americas", ca: "The Americas", mx: "The Americas",
   br: "The Americas", ar: "The Americas", co: "The Americas",
   cl: "The Americas",
 };
 
 export const ELECTION_HUBS: Record<string, ElectionHubMeta> = {
-  us: { code: "us", flag: "us", name: "United States", href: "/elections/us", last: "presidential, 5 November 2024", next: "2026 midterms, 3 November", nextDate: "2026-11-03", nextConfidence: "confirmed", governmentType: "presidential" },
+  us: { code: "us", flag: "us", name: "United States", href: "/elections/us", last: "presidential, 5 November 2024", next: "midterm elections, 3 November 2026", nextDate: "2026-11-03", nextConfidence: "confirmed", governmentType: "presidential" },
   uk: { code: "uk", flag: "gb", name: "United Kingdom", href: "/elections/uk", last: "general election, 4 July 2024", next: "general election, expected 2029", nextDate: "2029-08-15", nextConfidence: "expected", governmentType: "parliamentary" },
   ca: { code: "ca", flag: "ca", name: "Canada", href: "/elections/ca", last: "federal election, 28 April 2025", next: "federal election, expected 2029", nextDate: "2029-10-15", nextConfidence: "expected", governmentType: "parliamentary" },
   eu: { code: "eu", flag: "eu", name: "European Union", href: "/elections/eu", last: "European Parliament, June 2024", next: "European Parliament, June 2029", nextDate: "2029-06-07", nextConfidence: "expected", governmentType: "other", governmentLabel: "Supranational parliament" },
-  mx: { code: "mx", flag: "mx", name: "Mexico", href: "/elections/mx", last: "general election, 2 June 2024", next: "midterms, June 2027", nextDate: "2027-06-06", nextConfidence: "confirmed", governmentType: "presidential" },
+  mx: { code: "mx", flag: "mx", name: "Mexico", href: "/elections/mx", last: "general election, 2 June 2024", next: "midterm elections, June 2027", nextDate: "2027-06-06", nextConfidence: "confirmed", governmentType: "presidential" },
   br: { code: "br", flag: "br", name: "Brazil", href: "/elections/br", last: "general election, October 2022", next: "general election, 4 October 2026", nextDate: "2026-10-04", nextConfidence: "confirmed", governmentType: "presidential" },
   ar: { code: "ar", flag: "ar", name: "Argentina", href: "/elections/ar", last: "general election, October–November 2023", next: "general election, October 2027", nextDate: "2027-10-24", nextConfidence: "confirmed", governmentType: "presidential" },
-  de: { code: "de", flag: "de", name: "Germany", href: "/elections/de", last: "federal election, 23 February 2025", next: "federal election, expected 2029", nextDate: "2029-03-25", nextConfidence: "expected", governmentType: "parliamentary" },
+  de: { code: "de", flag: "de", name: "Germany", href: "/elections/de", last: "federal election, 23 February 2025", next: "presidential election by the Federal Convention, 30 January 2027; federal election expected 2029", nextDate: "2027-01-30", nextConfidence: "confirmed", governmentType: "parliamentary" },
   fr: { code: "fr", flag: "fr", name: "France", href: "/elections/fr", last: "legislative, June–July 2024", next: "presidential, April 2027", nextDate: "2027-04-11", nextConfidence: "expected", governmentType: "semi-presidential" },
   it: { code: "it", flag: "it", name: "Italy", href: "/elections/it", last: "general election, 25 September 2022", next: "general election, expected 2027", nextDate: "2027-12-22", nextConfidence: "expected", governmentType: "parliamentary" },
   es: { code: "es", flag: "es", name: "Spain", href: "/elections/es", last: "general election, 23 July 2023", next: "general election, expected 2027", nextDate: "2027-08-22", nextConfidence: "expected", governmentType: "parliamentary" },
@@ -193,6 +228,25 @@ export const ELECTION_HUBS: Record<string, ElectionHubMeta> = {
   // Five years from the Assembly's first sitting (29 February 2024), so the
   // latest permissible polling day is early 2029; no date is set.
   pk: { code: "pk", flag: "pk", name: "Pakistan", href: "/elections/pk", last: "general election, 8 February 2024", next: "general election, expected 2029", nextDate: "2029-04-30", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  // Wave 5 (2026-09-08): eight hubs, two of them for states that no longer exist.
+  pe: { code: "pe", flag: "pe", name: "Peru", href: "/elections/pe", last: "general election, 12 April and 7 June 2026", next: "general election, expected April 2031", nextDate: "2031-04-13", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },
+  ke: { code: "ke", flag: "ke", name: "Kenya", href: "/elections/ke", last: "general election, 9 August 2022", next: "general election, 10 August 2027", nextDate: "2027-08-10", nextConfidence: "confirmed", tier: "compact", governmentType: "presidential" },
+  bd: { code: "bd", flag: "bd", name: "Bangladesh", href: "/elections/bd", last: "general election, 12 February 2026", next: "general election, expected 2031", nextDate: "2031-02-28", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  et: { code: "et", flag: "et", name: "Ethiopia", href: "/elections/et", last: "general election, 1 June 2026", next: "general election, expected 2031", nextDate: "2031-06-30", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  vn: { code: "vn", flag: "vn", name: "Vietnam", href: "/elections/vn", last: "National Assembly, 15 March 2026", next: "National Assembly, expected 2031", nextDate: "2031-05-31", nextConfidence: "expected", note: "One-party elections", tier: "compact", governmentType: "other", governmentLabel: "One-party state" },
+  ae: { code: "ae", flag: "ae", name: "United Arab Emirates", href: "/elections/ae", last: "Federal National Council, 7 October 2023", next: "Federal National Council, expected 2027", nextDate: "2027-12-31", nextConfidence: "expected", note: "Appointed electorate", tier: "compact", governmentType: "other", governmentLabel: "Federal monarchy" },
+  dd: { code: "dd", flag: "dd", name: "East Germany", href: "/elections/dd", last: "Volkskammer, 18 March 1990", next: "none: dissolved 3 October 1990", nextConfidence: "dissolved", status: "defunct", dissolved: "3 October 1990", note: "Dissolved 1990", noteTone: "neutral", tier: "compact", governmentType: "other", governmentLabel: "One-party state to 1990" },
+  vd: { code: "vd", flag: "vd", name: "South Vietnam", href: "/elections/vd", last: "presidential, 2 October 1971", next: "none: dissolved 30 April 1975", nextConfidence: "dissolved", status: "defunct", dissolved: "30 April 1975", note: "Dissolved 1975", noteTone: "neutral", tier: "compact", governmentType: "presidential" },
+  // Czechoslovakia's federal record (1918-1992) is carried on the Czech hub as
+  // its predecessor (Ashwin, 2026-09-08); Slovakia's own assemblies from 1928
+  // are on the Slovak hub. Neither is a defunct hub.
+  cz: { code: "cz", flag: "cz", name: "Czech Republic", href: "/elections/cz", last: "parliamentary, 3 and 4 October 2025", next: "presidential, expected January 2028", nextDate: "2028-01-31", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  sk: { code: "sk", flag: "sk", name: "Slovakia", href: "/elections/sk", last: "presidential, 23 March and 6 April 2024", next: "parliamentary, expected by September 2027", nextDate: "2027-09-30", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  ro: { code: "ro", flag: "ro", name: "Romania", href: "/elections/ro", last: "presidential, 4 and 18 May 2025", next: "parliamentary, expected December 2028", nextDate: "2028-12-31", nextConfidence: "expected", tier: "compact", governmentType: "semi-presidential" },
+  // Finland's Election Act fixes the parliamentary poll on the third Sunday of April every fourth year, so the day is set by statute.
+  fi: { code: "fi", flag: "fi", name: "Finland", href: "/elections/fi", last: "presidential, 28 January and 11 February 2024", next: "parliamentary election, 18 April 2027", nextDate: "2027-04-18", nextConfidence: "confirmed", tier: "compact", governmentType: "parliamentary" },
+  th: { code: "th", flag: "th", name: "Thailand", href: "/elections/th", last: "general election, 8 February 2026", next: "general election, expected 2030", nextDate: "2030-03-31", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
+  ve: { code: "ve", flag: "ve", name: "Venezuela", href: "/elections/ve", last: "parliamentary, 25 May 2025", next: "presidential, expected 2030", nextDate: "2030-12-31", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },
 };
 
 // ---------------------------------------------------------------------------
@@ -211,13 +265,23 @@ export type NextElection = {
   href: string;
   next: string;                 // the prose to display
   date: string | null;          // ISO, null when unscheduled
-  confidence: "confirmed" | "expected" | "unscheduled";
+  confidence: NextConfidence;
   daysAway: number | null;      // negative once the date has passed
   overdue: boolean;             // a date that has passed with no result filed
   note?: string;
   noteTone?: "neutral";
   tier?: "compact";
 };
+
+/** The kind of contest a hub votes in next, read off the `next` prose: the
+ *  clause before the first comma ("midterm elections", "Duma election",
+ *  "presidential election by the Federal Convention"), capitalised. The
+ *  countdown prints it beside a Set date so a reader does not have to know
+ *  that the United States in 2026 means the midterms (Ashwin, 2026-09-08). */
+export function nextKind(next: string): string {
+  const head = next.split(/[,;]/)[0].trim();
+  return head ? head.charAt(0).toUpperCase() + head.slice(1) : "";
+}
 
 // Day-resolution difference in UTC, so the board does not flicker by one day
 // with the viewer's timezone.
@@ -230,6 +294,9 @@ function daysBetween(fromIso: string, to: Date): number {
 
 /** Every hub as a next-election row, soonest first; unscheduled hubs last. */
 export function nextElections(today: Date = new Date()): NextElection[] {
+  // A dissolved polity comes back with confidence "dissolved" and no date,
+  // sorted last, so the directory still lists it; the countdown on the
+  // landing page drops it, because nothing is coming.
   const rows = Object.values(ELECTION_HUBS).map((h) => {
     const confidence = h.nextConfidence ?? "expected";
     const date = h.nextDate ?? null;

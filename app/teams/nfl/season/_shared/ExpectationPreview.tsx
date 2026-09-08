@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { getNflExpectation, getNflExpectationSeason } from "@/lib/nflExpectation";
+import { getNflExpectation, getNflExpectationSeason, gameKey } from "@/lib/nflExpectation";
 
 // What the season looked like to a model that had to say so beforehand.
 //
@@ -83,7 +83,7 @@ export default async function ExpectationPreview({ season }: { season: number })
               const loser = homeWon ? g.away_era : g.home_era;
               const wSlug = homeWon ? g.home_slug : g.away_slug;
               return (
-                <li key={g.game_id} className="flex items-baseline gap-2 py-1 border-t first:border-t-0 text-[13px]" style={{ borderColor: "var(--border)" }}>
+                <li key={gameKey(g)} className="flex items-baseline gap-2 py-1 border-t first:border-t-0 text-[13px]" style={{ borderColor: "var(--border)" }}>
                   <span className="tabular-nums text-[var(--text-dim)] text-[11px] w-16 flex-shrink-0" style={MONO}>
                     {g.playoff ? (g.round ?? "playoff") : `wk ${g.week}`}
                   </span>
@@ -93,6 +93,15 @@ export default async function ExpectationPreview({ season }: { season: number })
                     ) : winner}
                     <span className="text-[var(--text-muted)]"> beat {loser}</span>
                     {g.score ? <span className="ml-1.5 tabular-nums text-[var(--text-dim)]" style={MONO}>{g.score}</span> : null}
+                    {g.rest?.home || g.rest?.away ? (
+                      <span
+                        className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded-full border text-[var(--text-muted)] whitespace-nowrap align-middle"
+                        style={{ borderColor: "var(--border)" }}
+                        title="A favoured side started a QB other than that team's primary starter in the final two weeks of the season"
+                      >
+                        starters rested
+                      </span>
+                    ) : null}
                   </span>
                   <span className="text-[var(--text-muted)] tabular-nums text-[12px] whitespace-nowrap flex-shrink-0" style={MONO}>
                     given {pct(1 - (g.surprise ?? 0))}

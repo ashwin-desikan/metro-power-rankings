@@ -69,7 +69,7 @@ export const COUNTRY_FLAGS: Record<string, string> = {
   china: "🇨🇳", colombia: "🇨🇴", comoros: "🇰🇲", congo: "🇨🇬",
   "congo-dr": "🇨🇩", "cook-islands": "🇨🇰", "costa-rica": "🇨🇷",
   "cote-d-ivoire": "🇨🇮", croatia: "🇭🇷", cuba: "🇨🇺", curacao: "🇨🇼",
-  cyprus: "🇨🇾", "czech-republic": "🇨🇿", denmark: "🇩🇰", djibouti: "🇩🇯",
+  cyprus: "🇨🇾", "czech-republic": "🇨🇿", czechia: "🇨🇿", denmark: "🇩🇰", djibouti: "🇩🇯",
   dominica: "🇩🇲", "dominican-republic": "🇩🇴", "east-timor": "🇹🇱",
   ecuador: "🇪🇨", egypt: "🇪🇬", "el-salvador": "🇸🇻", england: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
   "equatorial-guinea": "🇬🇶", eritrea: "🇪🇷", estonia: "🇪🇪", eswatini: "🇸🇿",

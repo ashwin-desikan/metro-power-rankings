@@ -1,5 +1,5 @@
 {
- "built": "2026-09-07",
+ "built": "2026-09-08",
  "method": "Gallagher least-squares index of disproportionality, computed from the vote shares and seat counts already recorded for every legislative election in this atlas. Unlisted parties are folded into one residual bucket; an election whose listed vote shares total under 80% is not scored.",
  "families": {
   "fptp": "First past the post",
@@ -13,6 +13,99 @@
   "other": "Other or non-competitive"
  },
  "hubs": [
+  {
+   "code": "dd",
+   "family": "other",
+   "familyLabel": "Other or non-competitive",
+   "chamber": "A single National Front list to 1986; party-list proportional representation with no threshold in March 1990",
+   "threshold": null,
+   "note": "No index before 1990: the seats were shared out by quota before the vote and the list was approved by 99% each time. The one free election, 18 March 1990, is scored, and the state was dissolved that October.",
+   "scored": 1,
+   "skipped": 10,
+   "skippedSample": [
+    {
+     "id": "1949",
+     "year": 1949,
+     "why": "vote coverage 66.1%"
+    },
+    {
+     "id": "1950",
+     "year": 1950,
+     "why": "single-list result"
+    },
+    {
+     "id": "1954",
+     "year": 1954,
+     "why": "single-list result"
+    }
+   ],
+   "noVoteShares": 2,
+   "notSeatBased": 0,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 11,
+    "latest": {
+     "year": 1990,
+     "turnout": 93.38
+    },
+    "median": 93.38,
+    "medianPost1945": 93.38,
+    "high": {
+     "year": 1986,
+     "turnout": 99.74,
+     "unfree": "unfree"
+    },
+    "low": {
+     "year": 1990,
+     "turnout": 93.38,
+     "unfree": null
+    }
+   },
+   "median": 0.24,
+   "latest": {
+    "id": "1990",
+    "year": 1990,
+    "label": "1990",
+    "lsq": 0.24,
+    "coverage": 100.0,
+    "turnout": 93.38,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "1990",
+    "year": 1990,
+    "label": "1990",
+    "lsq": 0.24,
+    "coverage": 100.0,
+    "turnout": 93.38,
+    "unfree": null,
+    "caveat": false
+   },
+   "best": {
+    "id": "1990",
+    "year": 1990,
+    "label": "1990",
+    "lsq": 0.24,
+    "coverage": 100.0,
+    "turnout": 93.38,
+    "unfree": null,
+    "caveat": false
+   },
+   "series": [
+    {
+     "id": "1990",
+     "year": 1990,
+     "label": "1990",
+     "lsq": 0.24,
+     "coverage": 100.0,
+     "turnout": 93.38,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
   {
    "code": "dk",
    "family": "list-pr",
@@ -2083,6 +2176,463 @@
      "lsq": 3.24,
      "coverage": 100.0,
      "turnout": 77.7,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
+  {
+   "code": "fi",
+   "family": "list-pr",
+   "familyLabel": "Party-list proportional",
+   "chamber": "200 seats over 13 districts, open lists, D'Hondt",
+   "threshold": null,
+   "note": "No legal threshold, but Finland's small districts set an effective one, and no party has won a majority since 1917; every government is a coalition.",
+   "scored": 39,
+   "skipped": 0,
+   "skippedSample": [],
+   "noVoteShares": 0,
+   "notSeatBased": 0,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 39,
+    "latest": {
+     "year": 2023,
+     "turnout": 72.6
+    },
+    "median": 68.58,
+    "medianPost1945": 74.19,
+    "high": {
+     "year": 1962,
+     "turnout": 85.09,
+     "unfree": null
+    },
+    "low": {
+     "year": 1913,
+     "turnout": 51.09,
+     "unfree": null
+    }
+   },
+   "median": 3.03,
+   "latest": {
+    "id": "2023",
+    "year": 2023,
+    "label": "2023",
+    "lsq": 3.99,
+    "coverage": 100.0,
+    "turnout": 72.6,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "1987",
+    "year": 1987,
+    "label": "1987",
+    "lsq": 4.99,
+    "coverage": 100.0,
+    "turnout": 72.08,
+    "unfree": null,
+    "caveat": false
+   },
+   "best": {
+    "id": "1917",
+    "year": 1917,
+    "label": "1917",
+    "lsq": 1.52,
+    "coverage": 100.0,
+    "turnout": 69.23,
+    "unfree": null,
+    "caveat": true
+   },
+   "series": [
+    {
+     "id": "1907",
+     "year": 1907,
+     "label": "1907",
+     "lsq": 3.2,
+     "coverage": 100.0,
+     "turnout": 70.65,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1908",
+     "year": 1908,
+     "label": "1908",
+     "lsq": 3.02,
+     "coverage": 100.0,
+     "turnout": 64.4,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1909",
+     "year": 1909,
+     "label": "1909",
+     "lsq": 2.21,
+     "coverage": 100.0,
+     "turnout": 65.32,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1910",
+     "year": 1910,
+     "label": "1910",
+     "lsq": 2.65,
+     "coverage": 100.0,
+     "turnout": 60.12,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1911",
+     "year": 1911,
+     "label": "1911",
+     "lsq": 2.5,
+     "coverage": 100.0,
+     "turnout": 59.78,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1913",
+     "year": 1913,
+     "label": "1913",
+     "lsq": 2.15,
+     "coverage": 100.0,
+     "turnout": 51.09,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1916",
+     "year": 1916,
+     "label": "1916",
+     "lsq": 3.42,
+     "coverage": 100.0,
+     "turnout": 55.54,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1917",
+     "year": 1917,
+     "label": "1917",
+     "lsq": 1.52,
+     "coverage": 100.0,
+     "turnout": 69.23,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1919",
+     "year": 1919,
+     "label": "1919",
+     "lsq": 2.27,
+     "coverage": 100.0,
+     "turnout": 67.13,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1922",
+     "year": 1922,
+     "label": "1922",
+     "lsq": 2.46,
+     "coverage": 100.0,
+     "turnout": 58.48,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1924",
+     "year": 1924,
+     "label": "1924",
+     "lsq": 1.84,
+     "coverage": 100.0,
+     "turnout": 57.41,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1927",
+     "year": 1927,
+     "label": "1927",
+     "lsq": 3.38,
+     "coverage": 100.0,
+     "turnout": 53.17,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1929",
+     "year": 1929,
+     "label": "1929",
+     "lsq": 3.82,
+     "coverage": 100.0,
+     "turnout": 55.61,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1930",
+     "year": 1930,
+     "label": "1930",
+     "lsq": 3.06,
+     "coverage": 100.0,
+     "turnout": 65.92,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1933",
+     "year": 1933,
+     "label": "1933",
+     "lsq": 3.66,
+     "coverage": 100.0,
+     "turnout": 62.19,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1936",
+     "year": 1936,
+     "label": "1936",
+     "lsq": 4.33,
+     "coverage": 100.0,
+     "turnout": 62.92,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1939",
+     "year": 1939,
+     "label": "1939",
+     "lsq": 4.86,
+     "coverage": 100.0,
+     "turnout": 66.55,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1945",
+     "year": 1945,
+     "label": "1945",
+     "lsq": 2.72,
+     "coverage": 100.0,
+     "turnout": 74.87,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1948",
+     "year": 1948,
+     "label": "1948",
+     "lsq": 3.07,
+     "coverage": 100.0,
+     "turnout": 78.25,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1951",
+     "year": 1951,
+     "label": "1951",
+     "lsq": 1.75,
+     "coverage": 100.0,
+     "turnout": 74.58,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1954",
+     "year": 1954,
+     "label": "1954",
+     "lsq": 2.2,
+     "coverage": 100.0,
+     "turnout": 79.9,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1958",
+     "year": 1958,
+     "label": "1958",
+     "lsq": 2.19,
+     "coverage": 100.0,
+     "turnout": 74.99,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1962",
+     "year": 1962,
+     "label": "1962",
+     "lsq": 4.02,
+     "coverage": 100.0,
+     "turnout": 85.09,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1966",
+     "year": 1966,
+     "label": "1966",
+     "lsq": 2.93,
+     "coverage": 100.0,
+     "turnout": 84.94,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1970",
+     "year": 1970,
+     "label": "1970",
+     "lsq": 3.0,
+     "coverage": 100.0,
+     "turnout": 82.23,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1972",
+     "year": 1972,
+     "label": "1972",
+     "lsq": 2.35,
+     "coverage": 100.0,
+     "turnout": 81.41,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1975",
+     "year": 1975,
+     "label": "1975",
+     "lsq": 3.25,
+     "coverage": 100.0,
+     "turnout": 73.8,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1979",
+     "year": 1979,
+     "label": "1979",
+     "lsq": 2.67,
+     "coverage": 100.0,
+     "turnout": 75.31,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1983",
+     "year": 1983,
+     "label": "1983",
+     "lsq": 2.18,
+     "coverage": 100.0,
+     "turnout": 75.73,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1987",
+     "year": 1987,
+     "label": "1987",
+     "lsq": 4.99,
+     "coverage": 100.0,
+     "turnout": 72.08,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1991",
+     "year": 1991,
+     "label": "1991",
+     "lsq": 3.04,
+     "coverage": 100.0,
+     "turnout": 68.39,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1995",
+     "year": 1995,
+     "label": "1995",
+     "lsq": 3.78,
+     "coverage": 100.0,
+     "turnout": 68.58,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1999",
+     "year": 1999,
+     "label": "1999",
+     "lsq": 3.25,
+     "coverage": 100.0,
+     "turnout": 65.3,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2003",
+     "year": 2003,
+     "label": "2003",
+     "lsq": 3.18,
+     "coverage": 100.0,
+     "turnout": 66.7,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2007",
+     "year": 2007,
+     "label": "2007",
+     "lsq": 3.2,
+     "coverage": 100.0,
+     "turnout": 65.0,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2011",
+     "year": 2011,
+     "label": "2011",
+     "lsq": 2.95,
+     "coverage": 100.0,
+     "turnout": 70.5,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2015",
+     "year": 2015,
+     "label": "2015",
+     "lsq": 3.03,
+     "coverage": 100.0,
+     "turnout": 70.1,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2019",
+     "year": 2019,
+     "label": "2019",
+     "lsq": 3.55,
+     "coverage": 100.0,
+     "turnout": 72.8,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2023",
+     "year": 2023,
+     "label": "2023",
+     "lsq": 3.99,
+     "coverage": 100.0,
+     "turnout": 72.6,
      "unfree": null,
      "caveat": false
     }
@@ -5183,6 +5733,209 @@
    ]
   },
   {
+   "code": "ve",
+   "family": "mmm",
+   "familyLabel": "Mixed-member majoritarian",
+   "chamber": "277 National Assembly seats, most in single-member and plurinominal districts with a party-list top-up",
+   "threshold": null,
+   "note": "The president is chosen by simple plurality with no second round. The main opposition boycotted three of the last four legislative elections and disputes the 2024 presidential count, which was never published by precinct.",
+   "scored": 12,
+   "skipped": 3,
+   "skippedSample": [
+    {
+     "id": "2015",
+     "year": 2015,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "2020",
+     "year": 2020,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "2025",
+     "year": 2025,
+     "why": "no seat total"
+    }
+   ],
+   "noVoteShares": 2,
+   "notSeatBased": 1,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 15,
+    "latest": {
+     "year": 2025,
+     "turnout": 42.66
+    },
+    "median": 74.04,
+    "medianPost1945": 74.04,
+    "high": {
+     "year": 1968,
+     "turnout": 96.73,
+     "unfree": null
+    },
+    "low": {
+     "year": 2005,
+     "turnout": 25.26,
+     "unfree": null
+    }
+   },
+   "median": 4.67,
+   "latest": {
+    "id": "2010",
+    "year": 2010,
+    "label": "2010",
+    "lsq": 9.85,
+    "coverage": 98.5,
+    "turnout": 66.42,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "2005",
+    "year": 2005,
+    "label": "2005",
+    "lsq": 13.34,
+    "coverage": 86.1,
+    "turnout": 25.26,
+    "unfree": null,
+    "caveat": true
+   },
+   "best": {
+    "id": "1963",
+    "year": 1963,
+    "label": "1963",
+    "lsq": 3.28,
+    "coverage": 100.0,
+    "turnout": 92.27,
+    "unfree": null,
+    "caveat": false
+   },
+   "series": [
+    {
+     "id": "1947",
+     "year": 1947,
+     "label": "1947",
+     "lsq": 3.87,
+     "coverage": 100.0,
+     "turnout": 72.13,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1958",
+     "year": 1958,
+     "label": "1958",
+     "lsq": 4.47,
+     "coverage": 100.0,
+     "turnout": 93.42,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1963",
+     "year": 1963,
+     "label": "1963",
+     "lsq": 3.28,
+     "coverage": 100.0,
+     "turnout": 92.27,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1968",
+     "year": 1968,
+     "label": "1968",
+     "lsq": 4.86,
+     "coverage": 100.0,
+     "turnout": 96.73,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1973",
+     "year": 1973,
+     "label": "1973",
+     "lsq": 5.1,
+     "coverage": 100.0,
+     "turnout": 96.5,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1978",
+     "year": 1978,
+     "label": "1978",
+     "lsq": 3.91,
+     "coverage": 100.0,
+     "turnout": 87.56,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1983",
+     "year": 1983,
+     "label": "1983",
+     "lsq": 4.97,
+     "coverage": 100.0,
+     "turnout": 87.75,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1988",
+     "year": 1988,
+     "label": "1988",
+     "lsq": 4.19,
+     "coverage": 100.0,
+     "turnout": 81.85,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1993",
+     "year": 1993,
+     "label": "1993",
+     "lsq": 3.9,
+     "coverage": 99.9,
+     "turnout": 60.16,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2000",
+     "year": 2000,
+     "label": "2000",
+     "lsq": 11.64,
+     "coverage": 90.0,
+     "turnout": 56.63,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2005",
+     "year": 2005,
+     "label": "2005",
+     "lsq": 13.34,
+     "coverage": 86.1,
+     "turnout": 25.26,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "2010",
+     "year": 2010,
+     "label": "2010",
+     "lsq": 9.85,
+     "coverage": 98.5,
+     "turnout": 66.42,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
+  {
    "code": "no",
    "family": "list-pr",
    "familyLabel": "Party-list proportional",
@@ -5769,6 +6522,259 @@
    ]
   },
   {
+   "code": "cz",
+   "family": "list-pr",
+   "familyLabel": "Party-list proportional",
+   "chamber": "200 seats over 14 regions, D'Hondt",
+   "threshold": "5% for a party, higher for coalitions",
+   "note": "The federal Czechoslovak chamber before 1993 used list PR too; today's Chamber of Deputies succeeds the Czech National Council, renamed at independence in 1993.",
+   "scored": 17,
+   "skipped": 7,
+   "skippedSample": [
+    {
+     "id": "1954",
+     "year": 1954,
+     "why": "single-list result"
+    },
+    {
+     "id": "1960",
+     "year": 1960,
+     "why": "single-list result"
+    },
+    {
+     "id": "1964",
+     "year": 1964,
+     "why": "single-list result"
+    }
+   ],
+   "noVoteShares": 0,
+   "notSeatBased": 0,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 20,
+    "latest": {
+     "year": 2025,
+     "turnout": 68.95
+    },
+    "median": 68.95,
+    "medianPost1945": 67.17,
+    "high": {
+     "year": 1976,
+     "turnout": 99.7,
+     "unfree": "unfree"
+    },
+    "low": {
+     "year": 2002,
+     "turnout": 57.95,
+     "unfree": null
+    }
+   },
+   "median": 5.75,
+   "latest": {
+    "id": "2025",
+    "year": 2025,
+    "label": "2025",
+    "lsq": 5.36,
+    "coverage": 100.0,
+    "turnout": 68.95,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "1948",
+    "year": 1948,
+    "label": "1948",
+    "lsq": 26.51,
+    "coverage": 89.2,
+    "turnout": 92.76,
+    "unfree": "unfree",
+    "caveat": false
+   },
+   "best": {
+    "id": "1946",
+    "year": 1946,
+    "label": "1946",
+    "lsq": 0.39,
+    "coverage": 100.0,
+    "turnout": 93.86,
+    "unfree": null,
+    "caveat": false
+   },
+   "series": [
+    {
+     "id": "1920",
+     "year": 1920,
+     "label": "1920",
+     "lsq": 4.73,
+     "coverage": 100.0,
+     "turnout": null,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1925",
+     "year": 1925,
+     "label": "1925",
+     "lsq": 2.12,
+     "coverage": 100.0,
+     "turnout": null,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1929",
+     "year": 1929,
+     "label": "1929",
+     "lsq": 0.69,
+     "coverage": 100.0,
+     "turnout": 83.67,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1935",
+     "year": 1935,
+     "label": "1935",
+     "lsq": 0.88,
+     "coverage": 100.0,
+     "turnout": null,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1946",
+     "year": 1946,
+     "label": "1946",
+     "lsq": 0.39,
+     "coverage": 100.0,
+     "turnout": 93.86,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1948",
+     "year": 1948,
+     "label": "1948",
+     "lsq": 26.51,
+     "coverage": 89.2,
+     "turnout": 92.76,
+     "unfree": "unfree",
+     "caveat": false
+    },
+    {
+     "id": "1990",
+     "year": 1990,
+     "label": "1990",
+     "lsq": 8.15,
+     "coverage": 100.0,
+     "turnout": 96.24,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1992",
+     "year": 1992,
+     "label": "1992",
+     "lsq": 9.31,
+     "coverage": 100.0,
+     "turnout": 84.68,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1996",
+     "year": 1996,
+     "label": "1996",
+     "lsq": 5.58,
+     "coverage": 100.0,
+     "turnout": 76.29,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1998",
+     "year": 1998,
+     "label": "1998",
+     "lsq": 5.82,
+     "coverage": 100.0,
+     "turnout": 73.86,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2002",
+     "year": 2002,
+     "label": "2002",
+     "lsq": 5.78,
+     "coverage": 100.0,
+     "turnout": 57.95,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2006",
+     "year": 2006,
+     "label": "2006",
+     "lsq": 5.72,
+     "coverage": 100.0,
+     "turnout": 64.42,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2010",
+     "year": 2010,
+     "label": "2010",
+     "lsq": 8.75,
+     "coverage": 100.0,
+     "turnout": 62.55,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2013",
+     "year": 2013,
+     "label": "2013",
+     "lsq": 6.12,
+     "coverage": 100.0,
+     "turnout": 59.44,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2017",
+     "year": 2017,
+     "label": "2017",
+     "lsq": 7.21,
+     "coverage": 100.0,
+     "turnout": 60.79,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2021",
+     "year": 2021,
+     "label": "2021",
+     "lsq": 10.35,
+     "coverage": 99.5,
+     "turnout": 65.39,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2025",
+     "year": 2025,
+     "label": "2025",
+     "lsq": 5.36,
+     "coverage": 100.0,
+     "turnout": 68.95,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
+  {
    "code": "cd",
    "family": "list-pr",
    "familyLabel": "Party-list proportional",
@@ -6085,6 +7091,239 @@
    ]
   },
   {
+   "code": "th",
+   "family": "mmm",
+   "familyLabel": "Mixed-member majoritarian",
+   "chamber": "400 single-member constituencies plus 100 party-list seats, parallel",
+   "threshold": null,
+   "note": "Parallel and non-compensatory since 2007 and 2011; 2019 briefly used a single-ballot compensatory version before reverting for 2023. The House sits under six coups since 1947.",
+   "scored": 15,
+   "skipped": 13,
+   "skippedSample": [
+    {
+     "id": "1933",
+     "year": 1933,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "1937",
+     "year": 1937,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "1938",
+     "year": 1938,
+     "why": "no vote shares recorded"
+    }
+   ],
+   "noVoteShares": 12,
+   "notSeatBased": 0,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 28,
+    "latest": {
+     "year": 2026,
+     "turnout": 71.42
+    },
+    "median": 58.37,
+    "medianPost1945": 61.43,
+    "high": {
+     "year": 2023,
+     "turnout": 75.64,
+     "unfree": null
+    },
+    "low": {
+     "year": 1948,
+     "turnout": 29.5,
+     "unfree": null
+    }
+   },
+   "median": 6.41,
+   "latest": {
+    "id": "2026",
+    "year": 2026,
+    "label": "2026",
+    "lsq": 17.62,
+    "coverage": 100.0,
+    "turnout": 71.42,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "2026",
+    "year": 2026,
+    "label": "2026",
+    "lsq": 17.62,
+    "coverage": 100.0,
+    "turnout": 71.42,
+    "unfree": null,
+    "caveat": false
+   },
+   "best": {
+    "id": "1996",
+    "year": 1996,
+    "label": "1996",
+    "lsq": 2.74,
+    "coverage": 100.0,
+    "turnout": 62.42,
+    "unfree": null,
+    "caveat": false
+   },
+   "series": [
+    {
+     "id": "1975",
+     "year": 1975,
+     "label": "1975",
+     "lsq": 7.97,
+     "coverage": 100.0,
+     "turnout": 47.18,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1976",
+     "year": 1976,
+     "label": "1976",
+     "lsq": 12.24,
+     "coverage": 100.0,
+     "turnout": 43.99,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1979",
+     "year": 1979,
+     "label": "1979",
+     "lsq": 10.74,
+     "coverage": 100.0,
+     "turnout": 43.9,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1983",
+     "year": 1983,
+     "label": "1983",
+     "lsq": 4.02,
+     "coverage": 100.0,
+     "turnout": 50.76,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1986",
+     "year": 1986,
+     "label": "1986",
+     "lsq": 5.92,
+     "coverage": 100.0,
+     "turnout": 61.43,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1988",
+     "year": 1988,
+     "label": "1988",
+     "lsq": 6.64,
+     "coverage": 100.0,
+     "turnout": 63.56,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1992-march",
+     "year": 1992,
+     "label": "March 1992",
+     "lsq": 4.82,
+     "coverage": 100.0,
+     "turnout": 59.24,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1992-september",
+     "year": 1992,
+     "label": "September 1992",
+     "lsq": 5.85,
+     "coverage": 100.0,
+     "turnout": 61.59,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1995",
+     "year": 1995,
+     "label": "1995",
+     "lsq": 3.15,
+     "coverage": 100.0,
+     "turnout": 62.04,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1996",
+     "year": 1996,
+     "label": "1996",
+     "lsq": 2.74,
+     "coverage": 100.0,
+     "turnout": 62.42,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2005",
+     "year": 2005,
+     "label": "2005",
+     "lsq": 11.36,
+     "coverage": 98.8,
+     "turnout": 72.56,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2011",
+     "year": 2011,
+     "label": "2011",
+     "lsq": 6.41,
+     "coverage": 93.6,
+     "turnout": 75.03,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2019",
+     "year": 2019,
+     "label": "2019",
+     "lsq": 3.85,
+     "coverage": 100.0,
+     "turnout": 74.69,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "2023",
+     "year": 2023,
+     "label": "2023",
+     "lsq": 11.62,
+     "coverage": 100.0,
+     "turnout": 75.64,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2026",
+     "year": 2026,
+     "label": "2026",
+     "lsq": 17.62,
+     "coverage": 100.0,
+     "turnout": 71.42,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
+  {
    "code": "pt",
    "family": "list-pr",
    "familyLabel": "Party-list proportional",
@@ -6302,6 +7541,502 @@
      "lsq": 9.81,
      "coverage": 95.1,
      "turnout": 48.6,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
+  {
+   "code": "sk",
+   "family": "list-pr",
+   "familyLabel": "Party-list proportional",
+   "chamber": "150 seats in one nationwide constituency, closed lists",
+   "threshold": "5%",
+   "note": "No runoff or majority rule applies to parliament; coalitions are settled after the count. The presidency is a separate two-round vote, decided by parliament from 1993 to 1998 and by voters since 1999.",
+   "scored": 14,
+   "skipped": 9,
+   "skippedSample": [
+    {
+     "id": "1938",
+     "year": 1938,
+     "why": "single-list result"
+    },
+    {
+     "id": "1948",
+     "year": 1948,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "1954",
+     "year": 1954,
+     "why": "single-list result"
+    }
+   ],
+   "noVoteShares": 1,
+   "notSeatBased": 0,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 17,
+    "latest": {
+     "year": 2023,
+     "turnout": 68.5
+    },
+    "median": 68.5,
+    "medianPost1945": 68.5,
+    "high": {
+     "year": 1976,
+     "turnout": 99.81,
+     "unfree": "unfree"
+    },
+    "low": {
+     "year": 2006,
+     "turnout": 54.67,
+     "unfree": null
+    }
+   },
+   "median": 6.57,
+   "latest": {
+    "id": "2023",
+    "year": 2023,
+    "label": "2023",
+    "lsq": 7.44,
+    "coverage": 100.0,
+    "turnout": 68.5,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "2020",
+    "year": 2020,
+    "label": "2020",
+    "lsq": 12.36,
+    "coverage": 100.0,
+    "turnout": 65.75,
+    "unfree": null,
+    "caveat": false
+   },
+   "best": {
+    "id": "1946",
+    "year": 1946,
+    "label": "1946",
+    "lsq": 0.71,
+    "coverage": 100.0,
+    "turnout": null,
+    "unfree": null,
+    "caveat": false
+   },
+   "series": [
+    {
+     "id": "1928",
+     "year": 1928,
+     "label": "1928",
+     "lsq": 8.24,
+     "coverage": 100.0,
+     "turnout": null,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1935",
+     "year": 1935,
+     "label": "1935",
+     "lsq": 4.22,
+     "coverage": 100.0,
+     "turnout": null,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1946",
+     "year": 1946,
+     "label": "1946",
+     "lsq": 0.71,
+     "coverage": 100.0,
+     "turnout": null,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1990",
+     "year": 1990,
+     "label": "1990",
+     "lsq": 3.59,
+     "coverage": 100.0,
+     "turnout": 95.39,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1992",
+     "year": 1992,
+     "label": "1992",
+     "lsq": 11.2,
+     "coverage": 100.0,
+     "turnout": 84.17,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1994",
+     "year": 1994,
+     "label": "1994",
+     "lsq": 5.94,
+     "coverage": 100.0,
+     "turnout": 75.65,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1998",
+     "year": 1998,
+     "label": "1998",
+     "lsq": 2.94,
+     "coverage": 100.0,
+     "turnout": 84.25,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2002",
+     "year": 2002,
+     "label": "2002",
+     "lsq": 7.04,
+     "coverage": 100.0,
+     "turnout": 70.07,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2006",
+     "year": 2006,
+     "label": "2006",
+     "lsq": 5.53,
+     "coverage": 100.0,
+     "turnout": 54.67,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2010",
+     "year": 2010,
+     "label": "2010",
+     "lsq": 7.45,
+     "coverage": 100.0,
+     "turnout": 58.65,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2012",
+     "year": 2012,
+     "label": "2012",
+     "lsq": 9.58,
+     "coverage": 100.0,
+     "turnout": 58.9,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2016",
+     "year": 2016,
+     "label": "2016",
+     "lsq": 6.1,
+     "coverage": 100.0,
+     "turnout": 59.38,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2020",
+     "year": 2020,
+     "label": "2020",
+     "lsq": 12.36,
+     "coverage": 100.0,
+     "turnout": 65.75,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2023",
+     "year": 2023,
+     "label": "2023",
+     "lsq": 7.44,
+     "coverage": 100.0,
+     "turnout": 68.5,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
+  {
+   "code": "ro",
+   "family": "list-pr",
+   "familyLabel": "Party-list proportional",
+   "chamber": "330 Chamber of Deputies seats, closed-list D'Hondt by county",
+   "threshold": "5%",
+   "note": "The Senate is elected the same way beside it; this hub reports the Chamber. The president is chosen separately by two-round majority.",
+   "scored": 19,
+   "skipped": 19,
+   "skippedSample": [
+    {
+     "id": "1901",
+     "year": 1901,
+     "why": "no seat total"
+    },
+    {
+     "id": "1905",
+     "year": 1905,
+     "why": "no seat total"
+    },
+    {
+     "id": "1907",
+     "year": 1907,
+     "why": "no vote shares recorded"
+    }
+   ],
+   "noVoteShares": 6,
+   "notSeatBased": 2,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 28,
+    "latest": {
+     "year": 2024,
+     "turnout": 52.5
+    },
+    "median": 69.38,
+    "medianPost1945": 55.5,
+    "high": {
+     "year": 1980,
+     "turnout": 99.99,
+     "unfree": "unfree"
+    },
+    "low": {
+     "year": 2020,
+     "turnout": 31.95,
+     "unfree": null
+    }
+   },
+   "median": 6.67,
+   "latest": {
+    "id": "2024",
+    "year": 2024,
+    "label": "2024",
+    "lsq": 4.7,
+    "coverage": 100.0,
+    "turnout": 52.5,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "1946",
+    "year": 1946,
+    "label": "1946",
+    "lsq": 35.8,
+    "coverage": 100.0,
+    "turnout": 88.99,
+    "unfree": "unfree",
+    "caveat": true
+   },
+   "best": {
+    "id": "1990",
+    "year": 1990,
+    "label": "1990",
+    "lsq": 1.71,
+    "coverage": 100.0,
+    "turnout": 86.2,
+    "unfree": null,
+    "caveat": false
+   },
+   "series": [
+    {
+     "id": "1926",
+     "year": 1926,
+     "label": "1926",
+     "lsq": 17.66,
+     "coverage": 100.0,
+     "turnout": 75.0,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1927",
+     "year": 1927,
+     "label": "1927",
+     "lsq": 15.34,
+     "coverage": 100.0,
+     "turnout": 77.0,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1928",
+     "year": 1928,
+     "label": "1928",
+     "lsq": 8.23,
+     "coverage": 100.0,
+     "turnout": 77.37,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1931",
+     "year": 1931,
+     "label": "1931",
+     "lsq": 19.51,
+     "coverage": 100.0,
+     "turnout": 72.48,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1932",
+     "year": 1932,
+     "label": "1932",
+     "lsq": 21.75,
+     "coverage": 100.0,
+     "turnout": 70.77,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1933",
+     "year": 1933,
+     "label": "1933",
+     "lsq": 19.09,
+     "coverage": 100.0,
+     "turnout": 68.0,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1937",
+     "year": 1937,
+     "label": "1937",
+     "lsq": 3.29,
+     "coverage": 100.0,
+     "turnout": 66.07,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1946",
+     "year": 1946,
+     "label": "1946",
+     "lsq": 35.8,
+     "coverage": 100.0,
+     "turnout": 88.99,
+     "unfree": "unfree",
+     "caveat": true
+    },
+    {
+     "id": "1948",
+     "year": 1948,
+     "label": "1948",
+     "lsq": 33.53,
+     "coverage": 100.0,
+     "turnout": 91.21,
+     "unfree": "unfree",
+     "caveat": true
+    },
+    {
+     "id": "1990",
+     "year": 1990,
+     "label": "1990",
+     "lsq": 1.71,
+     "coverage": 100.0,
+     "turnout": 86.2,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1992",
+     "year": 1992,
+     "label": "1992",
+     "lsq": 6.9,
+     "coverage": 100.0,
+     "turnout": 76.29,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1996",
+     "year": 1996,
+     "label": "1996",
+     "lsq": 6.67,
+     "coverage": 100.0,
+     "turnout": 76.01,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2000",
+     "year": 2000,
+     "label": "2000",
+     "lsq": 8.74,
+     "coverage": 100.0,
+     "turnout": 65.31,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2004",
+     "year": 2004,
+     "label": "2004",
+     "lsq": 3.89,
+     "coverage": 100.0,
+     "turnout": 58.49,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2008",
+     "year": 2008,
+     "label": "2008",
+     "lsq": 3.33,
+     "coverage": 100.0,
+     "turnout": 39.2,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2012",
+     "year": 2012,
+     "label": "2012",
+     "lsq": 6.21,
+     "coverage": 100.0,
+     "turnout": 41.76,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2016",
+     "year": 2016,
+     "label": "2016",
+     "lsq": 2.79,
+     "coverage": 100.1,
+     "turnout": 39.46,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2020",
+     "year": 2020,
+     "label": "2020",
+     "lsq": 6.17,
+     "coverage": 100.0,
+     "turnout": 31.95,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2024",
+     "year": 2024,
+     "label": "2024",
+     "lsq": 4.7,
+     "coverage": 100.0,
+     "turnout": 52.5,
      "unfree": null,
      "caveat": false
     }
@@ -9171,6 +10906,119 @@
    ]
   },
   {
+   "code": "ke",
+   "family": "fptp",
+   "familyLabel": "First past the post",
+   "chamber": "290 single-member seats by plurality, plus 47 county women's seats and 12 nominated members",
+   "threshold": null,
+   "note": "The women's and nominated seats top up a first-past-the-post base rather than forming a proportional tier. Everything before 1963 was a settler franchise, and the three presidential elections of 1978 to 1983 were unopposed.",
+   "scored": 3,
+   "skipped": 19,
+   "skippedSample": [
+    {
+     "id": "1920",
+     "year": 1920,
+     "why": "no seat total"
+    },
+    {
+     "id": "1924",
+     "year": 1924,
+     "why": "no seat total"
+    },
+    {
+     "id": "1927",
+     "year": 1927,
+     "why": "no seat total"
+    }
+   ],
+   "noVoteShares": 4,
+   "notSeatBased": 11,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 7,
+    "latest": {
+     "year": 2022,
+     "turnout": 64.77
+    },
+    "median": 65.2,
+    "medianPost1945": 65.2,
+    "high": {
+     "year": 2013,
+     "turnout": 85.91,
+     "unfree": null
+    },
+    "low": {
+     "year": 1988,
+     "turnout": 40.7,
+     "unfree": null
+    }
+   },
+   "median": 10.44,
+   "latest": {
+    "id": "2017",
+    "year": 2017,
+    "label": "2017",
+    "lsq": 10.44,
+    "coverage": 98.1,
+    "turnout": 79.51,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "1961",
+    "year": 1961,
+    "label": "1961",
+    "lsq": 27.71,
+    "coverage": 100.0,
+    "turnout": 83.64,
+    "unfree": null,
+    "caveat": false
+   },
+   "best": {
+    "id": "2013",
+    "year": 2013,
+    "label": "2013",
+    "lsq": 8.62,
+    "coverage": 99.3,
+    "turnout": 85.91,
+    "unfree": null,
+    "caveat": false
+   },
+   "series": [
+    {
+     "id": "1961",
+     "year": 1961,
+     "label": "1961",
+     "lsq": 27.71,
+     "coverage": 100.0,
+     "turnout": 83.64,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2013",
+     "year": 2013,
+     "label": "2013",
+     "lsq": 8.62,
+     "coverage": 99.3,
+     "turnout": 85.91,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2017",
+     "year": 2017,
+     "label": "2017",
+     "lsq": 10.44,
+     "coverage": 98.1,
+     "turnout": 79.51,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
+  {
    "code": "uk",
    "family": "fptp",
    "familyLabel": "First past the post",
@@ -11054,6 +12902,149 @@
    ]
   },
   {
+   "code": "pe",
+   "family": "list-pr",
+   "familyLabel": "Party-list proportional",
+   "chamber": "130-seat Chamber of Deputies by open-list D'Hondt over 27 regional districts",
+   "threshold": "5% of the national vote",
+   "note": "The congressional series is the Chamber of Deputies throughout: bicameral to 1992, a single chamber from 1995 to 2021, and bicameral again from 2026, when a 60-seat Senate returned beside it.",
+   "scored": 6,
+   "skipped": 15,
+   "skippedSample": [
+    {
+     "id": "1866",
+     "year": 1866,
+     "why": "no seat total"
+    },
+    {
+     "id": "1868",
+     "year": 1868,
+     "why": "no seat total"
+    },
+    {
+     "id": "1931",
+     "year": 1931,
+     "why": "no vote shares recorded"
+    }
+   ],
+   "noVoteShares": 10,
+   "notSeatBased": 5,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 14,
+    "latest": {
+     "year": 2026,
+     "turnout": 73.81
+    },
+    "median": 82.32,
+    "medianPost1945": 82.32,
+    "high": {
+     "year": 1963,
+     "turnout": 94.38,
+     "unfree": null
+    },
+    "low": {
+     "year": 2021,
+     "turnout": 70.05,
+     "unfree": null
+    }
+   },
+   "median": 13.71,
+   "latest": {
+    "id": "2021",
+    "year": 2021,
+    "label": "2021",
+    "lsq": 14.02,
+    "coverage": 100.0,
+    "turnout": 70.05,
+    "unfree": null,
+    "caveat": false
+   },
+   "worst": {
+    "id": "2016",
+    "year": 2016,
+    "label": "2016",
+    "lsq": 15.23,
+    "coverage": 100.0,
+    "turnout": 81.8,
+    "unfree": null,
+    "caveat": false
+   },
+   "best": {
+    "id": "1985",
+    "year": 1985,
+    "label": "1985",
+    "lsq": 7.89,
+    "coverage": 100.0,
+    "turnout": 90.59,
+    "unfree": null,
+    "caveat": false
+   },
+   "series": [
+    {
+     "id": "1980",
+     "year": 1980,
+     "label": "1980",
+     "lsq": 13.39,
+     "coverage": 100.0,
+     "turnout": 79.14,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1985",
+     "year": 1985,
+     "label": "1985",
+     "lsq": 7.89,
+     "coverage": 100.0,
+     "turnout": 90.59,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2006",
+     "year": 2006,
+     "label": "2006",
+     "lsq": 14.16,
+     "coverage": 100.0,
+     "turnout": 88.71,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2011",
+     "year": 2011,
+     "label": "2011",
+     "lsq": 10.23,
+     "coverage": 100.0,
+     "turnout": 83.71,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2016",
+     "year": 2016,
+     "label": "2016",
+     "lsq": 15.23,
+     "coverage": 100.0,
+     "turnout": 81.8,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2021",
+     "year": 2021,
+     "label": "2021",
+     "lsq": 14.02,
+     "coverage": 100.0,
+     "turnout": 70.05,
+     "unfree": null,
+     "caveat": false
+    }
+   ]
+  },
+  {
    "code": "hu",
    "family": "mmm",
    "familyLabel": "Mixed-member majoritarian",
@@ -11435,6 +13426,179 @@
      "coverage": 98.2,
      "turnout": 71.18,
      "unfree": null,
+     "caveat": true
+    }
+   ]
+  },
+  {
+   "code": "bd",
+   "family": "fptp",
+   "familyLabel": "First past the post",
+   "chamber": "300 single-member seats by plurality, plus 50 women's seats shared out by general-seat share",
+   "threshold": null,
+   "note": "Five of the thirteen elections were boycotted by one of the two main parties, and 2014 returned more than half the house unopposed; those years carry no index because there was no contest to measure.",
+   "scored": 9,
+   "skipped": 4,
+   "skippedSample": [
+    {
+     "id": "1996-february",
+     "year": 1996,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "2008",
+     "year": 2008,
+     "why": "residual holds 16.8% of seats"
+    },
+    {
+     "id": "2024",
+     "year": 2024,
+     "why": "no vote shares recorded"
+    }
+   ],
+   "noVoteShares": 3,
+   "notSeatBased": 0,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 13,
+    "latest": {
+     "year": 2026,
+     "turnout": 59.44
+    },
+    "median": 60.27,
+    "medianPost1945": 60.27,
+    "high": {
+     "year": 2008,
+     "turnout": 87.13,
+     "unfree": null
+    },
+    "low": {
+     "year": 1996,
+     "turnout": 20.97,
+     "unfree": "unfree"
+    }
+   },
+   "median": 17.37,
+   "latest": {
+    "id": "2018",
+    "year": 2018,
+    "label": "2018",
+    "lsq": 10.51,
+    "coverage": 100.0,
+    "turnout": 82.58,
+    "unfree": "unfree",
+    "caveat": true
+   },
+   "worst": {
+    "id": "1979",
+    "year": 1979,
+    "label": "1979",
+    "lsq": 24.1,
+    "coverage": 100.0,
+    "turnout": 51.29,
+    "unfree": null,
+    "caveat": true
+   },
+   "best": {
+    "id": "2014",
+    "year": 2014,
+    "label": "2014",
+    "lsq": 8.58,
+    "coverage": 100.0,
+    "turnout": 39.58,
+    "unfree": "unfree",
+    "caveat": true
+   },
+   "series": [
+    {
+     "id": "1973",
+     "year": 1973,
+     "label": "1973",
+     "lsq": 19.41,
+     "coverage": 100.0,
+     "turnout": 54.91,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1979",
+     "year": 1979,
+     "label": "1979",
+     "lsq": 24.1,
+     "coverage": 100.0,
+     "turnout": 51.29,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1986",
+     "year": 1986,
+     "label": "1986",
+     "lsq": 10.71,
+     "coverage": 100.0,
+     "turnout": 61.1,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "1988",
+     "year": 1988,
+     "label": "1988",
+     "lsq": 12.36,
+     "coverage": 100.0,
+     "turnout": 52.48,
+     "unfree": "unfree",
+     "caveat": true
+    },
+    {
+     "id": "1991",
+     "year": 1991,
+     "label": "1991",
+     "lsq": 15.33,
+     "coverage": 99.9,
+     "turnout": 55.45,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "1996-june",
+     "year": 1996,
+     "label": "June 1996",
+     "lsq": 12.67,
+     "coverage": 100.0,
+     "turnout": 75.6,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2001",
+     "year": 2001,
+     "label": "2001",
+     "lsq": 21.23,
+     "coverage": 100.0,
+     "turnout": 74.97,
+     "unfree": null,
+     "caveat": false
+    },
+    {
+     "id": "2014",
+     "year": 2014,
+     "label": "2014",
+     "lsq": 8.58,
+     "coverage": 100.0,
+     "turnout": 39.58,
+     "unfree": "unfree",
+     "caveat": true
+    },
+    {
+     "id": "2018",
+     "year": 2018,
+     "label": "2018",
+     "lsq": 10.51,
+     "coverage": 100.0,
+     "turnout": 82.58,
+     "unfree": "unfree",
      "caveat": true
     }
    ]
@@ -11954,6 +14118,174 @@
    ]
   },
   {
+   "code": "et",
+   "family": "fptp",
+   "familyLabel": "First past the post",
+   "chamber": "547 single-member seats by plurality",
+   "threshold": null,
+   "note": "Multi-party only since 1994, and every election since has returned one governing coalition with all but a handful of seats, so the index reads a landslide where it can read anything.",
+   "scored": 3,
+   "skipped": 11,
+   "skippedSample": [
+    {
+     "id": "1957",
+     "year": 1957,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "1961",
+     "year": 1961,
+     "why": "no seat total"
+    },
+    {
+     "id": "1965",
+     "year": 1965,
+     "why": "no seat total"
+    }
+   ],
+   "noVoteShares": 8,
+   "notSeatBased": 3,
+   "gapReason": null,
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 8,
+    "latest": {
+     "year": 2026,
+     "turnout": 95.7
+    },
+    "median": 91.25,
+    "medianPost1945": 91.25,
+    "high": {
+     "year": 2026,
+     "turnout": 95.7,
+     "unfree": null
+    },
+    "low": {
+     "year": 2005,
+     "turnout": 82.6,
+     "unfree": null
+    }
+   },
+   "median": 23.85,
+   "latest": {
+    "id": "2021",
+    "year": 2021,
+    "label": "2021",
+    "lsq": 10.55,
+    "coverage": 100.0,
+    "turnout": 89.07,
+    "unfree": null,
+    "caveat": true
+   },
+   "worst": {
+    "id": "1995",
+    "year": 1995,
+    "label": "1995",
+    "lsq": 37.15,
+    "coverage": 100.0,
+    "turnout": 93.67,
+    "unfree": null,
+    "caveat": true
+   },
+   "best": {
+    "id": "1987",
+    "year": 1987,
+    "label": "1987",
+    "lsq": 3.99,
+    "coverage": 100.0,
+    "turnout": 90.53,
+    "unfree": "unfree",
+    "caveat": true
+   },
+   "series": [
+    {
+     "id": "1987",
+     "year": 1987,
+     "label": "1987",
+     "lsq": 3.99,
+     "coverage": 100.0,
+     "turnout": 90.53,
+     "unfree": "unfree",
+     "caveat": true
+    },
+    {
+     "id": "1995",
+     "year": 1995,
+     "label": "1995",
+     "lsq": 37.15,
+     "coverage": 100.0,
+     "turnout": 93.67,
+     "unfree": null,
+     "caveat": true
+    },
+    {
+     "id": "2021",
+     "year": 2021,
+     "label": "2021",
+     "lsq": 10.55,
+     "coverage": 100.0,
+     "turnout": 89.07,
+     "unfree": null,
+     "caveat": true
+    }
+   ]
+  },
+  {
+   "code": "ae",
+   "family": "other",
+   "familyLabel": "Other or non-competitive",
+   "chamber": "20 of 40 Federal National Council seats by single non-transferable vote in an electoral college the rulers appoint; the other 20 appointed",
+   "threshold": null,
+   "note": "No index. Parties are banned, every seat returns an independent, and the electorate is chosen: 6,595 members in 2006, 398,879 in 2023.",
+   "scored": 0,
+   "skipped": 5,
+   "skippedSample": [
+    {
+     "id": "2006",
+     "year": 2006,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "2011",
+     "year": 2011,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "2015",
+     "year": 2015,
+     "why": "no vote shares recorded"
+    }
+   ],
+   "noVoteShares": 5,
+   "notSeatBased": 0,
+   "gapReason": "Seats are on file but vote shares are not, so the index cannot be computed. Adding the shares would unlock the whole series.",
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 5,
+    "latest": {
+     "year": 2023,
+     "turnout": 44.0
+    },
+    "median": 35.29,
+    "medianPost1945": 35.29,
+    "high": {
+     "year": 2006,
+     "turnout": 74.4,
+     "unfree": null
+    },
+    "low": {
+     "year": 2011,
+     "turnout": 27.75,
+     "unfree": null
+    }
+   },
+   "median": null,
+   "latest": null,
+   "worst": null,
+   "best": null,
+   "series": []
+  },
+  {
    "code": "ar",
    "family": "list-pr",
    "familyLabel": "Party-list proportional",
@@ -12351,6 +14683,116 @@
    "gapReason": "This hub records single-winner contests, which have no seat share to compare a vote share against.",
    "seriesKind": "presidential",
    "turnout": null,
+   "median": null,
+   "latest": null,
+   "worst": null,
+   "best": null,
+   "series": []
+  },
+  {
+   "code": "vd",
+   "family": "fptp",
+   "familyLabel": "First past the post",
+   "chamber": "Single-member plurality to 1963, then multi-member provinces by d'Hondt in 1966 and by multiple non-transferable vote in 1971",
+   "threshold": null,
+   "note": "Candidates stood as individuals for the lower house of 1967 and 1971, so those years carry no party shares. The republic ended on 30 April 1975.",
+   "scored": 0,
+   "skipped": 6,
+   "skippedSample": [
+    {
+     "id": "1956",
+     "year": 1956,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "1959",
+     "year": 1959,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "1963",
+     "year": 1963,
+     "why": "no vote shares recorded"
+    }
+   ],
+   "noVoteShares": 4,
+   "notSeatBased": 2,
+   "gapReason": "No election met the scoring rules; the commonest reason was: no vote shares recorded.",
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 1,
+    "latest": {
+     "year": 1966,
+     "turnout": 80.83
+    },
+    "median": 80.83,
+    "medianPost1945": 80.83,
+    "high": {
+     "year": 1966,
+     "turnout": 80.83,
+     "unfree": null
+    },
+    "low": {
+     "year": 1966,
+     "turnout": 80.83,
+     "unfree": null
+    }
+   },
+   "median": null,
+   "latest": null,
+   "worst": null,
+   "best": null,
+   "series": []
+  },
+  {
+   "code": "vn",
+   "family": "other",
+   "familyLabel": "Other or non-competitive",
+   "chamber": "500 seats in two- and three-member districts, absolute majority with a second round, every candidate vetted by the Fatherland Front",
+   "threshold": null,
+   "note": "No index. Every seat goes to the Communist Party or to a vetted independent, and the tables report seats without vote shares.",
+   "scored": 0,
+   "skipped": 16,
+   "skippedSample": [
+    {
+     "id": "1946",
+     "year": 1946,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "1960",
+     "year": 1960,
+     "why": "no vote shares recorded"
+    },
+    {
+     "id": "1964",
+     "year": 1964,
+     "why": "no vote shares recorded"
+    }
+   ],
+   "noVoteShares": 14,
+   "notSeatBased": 0,
+   "gapReason": "No election met the scoring rules; the commonest reason was: no vote shares recorded.",
+   "seriesKind": "legislative",
+   "turnout": {
+    "n": 14,
+    "latest": {
+     "year": 2026,
+     "turnout": 99.7
+    },
+    "median": 99.55,
+    "medianPost1945": 99.55,
+    "high": {
+     "year": 1960,
+     "turnout": 99.9,
+     "unfree": "unfree"
+    },
+    "low": {
+     "year": 1981,
+     "turnout": 97.96,
+     "unfree": "unfree"
+    }
+   },
    "median": null,
    "latest": null,
    "worst": null,

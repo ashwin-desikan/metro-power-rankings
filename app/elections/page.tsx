@@ -29,7 +29,7 @@ import { getUaElections } from "@/lib/uaElections";
 import { getIqElections } from "@/lib/iqElections";
 import { getPsElections } from "@/lib/psElections";
 import { getVaElections } from "@/lib/vaElections";
-import { ELECTION_HUBS, HUB_REGION, GOVERNMENT_TYPE_LABELS, nextElections } from "@/lib/electionHubsMeta";
+import { ELECTION_HUBS, HUB_REGION, GOVERNMENT_TYPE_LABELS, nextElections, nextKind } from "@/lib/electionHubsMeta";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubDirectory, { type DirRow } from "./HubDirectory";
@@ -135,6 +135,12 @@ const CAPITALS: Record<string, [number, number]> = {
   hu: [47.4979, 19.0402], no: [59.9139, 10.7522], se: [59.3293, 18.0686],
   co: [4.711, -74.0721], cd: [-4.4419, 15.2663],
   cl: [-33.4489, -70.6693], ir: [35.6892, 51.389], pk: [33.6844, 73.0479],
+  // Wave 5, 2026-09-08. East Germany and South Vietnam are defunct and get
+  // no marker on purpose: the map is where the world votes today.
+  pe: [-12.0464, -77.0428], ke: [-1.2921, 36.8219], bd: [23.8103, 90.4125],
+  et: [9.0192, 38.7525], vn: [21.0278, 105.8342], ae: [24.4539, 54.3773],
+  cz: [50.0755, 14.4378], sk: [48.1486, 17.1077], ro: [44.4268, 26.1025],
+  fi: [60.1699, 24.9384], th: [13.7563, 100.5018], ve: [10.4806, -66.9036],
 };
 // The EU marker sits at Strasbourg — the Parliament's seat — so Brussels
 // stays legible as Belgium's marker.
@@ -260,7 +266,7 @@ export default async function ElectionsPage() {
 
   // ---------- world map markers ----------
   const markers: HubMarker[] = Object.values(ELECTION_HUBS)
-    .filter((m) => CAPITALS[m.code])
+    .filter((m) => CAPITALS[m.code] && m.status !== "defunct")
     .map((m) => ({
       code: m.code, name: m.name, href: m.href,
       lat: CAPITALS[m.code][0], lon: CAPITALS[m.code][1],
@@ -271,7 +277,7 @@ export default async function ElectionsPage() {
   // ---------- "every election ever" timeline ----------
   // The countdown board. nextElections() sorts on the structured dates in
   // ELECTION_HUBS and puts the unscheduled hubs (Ukraine, the Vatican) last.
-  const allNext = nextElections();
+  const allNext = nextElections().filter((r) => r.confidence !== "dissolved");
   const countdown = allNext.slice(0, 12);
   const confirmedCount = allNext.filter((r) => r.confidence === "confirmed").length;
 
@@ -616,7 +622,7 @@ export default async function ElectionsPage() {
             return (
               <div
                 key={r.code}
-                className="tap-row flex items-center gap-2 rounded-xl border p-3 transition-colors hover:border-[var(--accent)]"
+                className="tap-row flex min-w-0 items-center gap-2 rounded-xl border p-3 transition-colors hover:border-[var(--accent)]"
                 style={{ borderColor: r.overdue ? "#B4540A" : "var(--border)", backgroundColor: "var(--bg-card)" }}
               >
                 <Link href={r.href} className="tap-target flex min-h-11 min-w-0 flex-1 items-center gap-3">
@@ -633,7 +639,7 @@ export default async function ElectionsPage() {
                       </span>
                     </span>
                     <span className="block text-xs text-[var(--text-dim)] truncate">
-                      {r.confidence === "confirmed" && r.date ? fullDate(r.date) : r.next}
+                      {r.confidence === "confirmed" && r.date ? `${nextKind(r.next)} · ${fullDate(r.date)}` : r.next}
                     </span>
                   </span>
                   <span className="shrink-0 text-right tabular-nums text-xs">

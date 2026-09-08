@@ -371,6 +371,28 @@ def best_table(lines, prefer=None):
                 def seat_sum(t):
                     return sum(num(r.get("seats")) or 0 for r in t[1])
                 return min(full, key=seat_sum)
+            if prefer == "leg-large" and len(full) > 1:
+                # Peru's bicameral articles (1980, 1985, 1990, 2026) print the
+                # Senate table before the Chamber of Deputies table. Taking the
+                # first table put those four rows on the smaller upper house
+                # while the unicameral years in between (1995-2021, all called
+                # "Congress") report the larger body, so the series switched
+                # chambers mid-stream. "leg-large" keeps every bicameral year
+                # on the Chamber of Deputies, matching the unicameral rows on
+                # either side of it.
+                def seat_sum(t):
+                    return sum(num(r.get("seats")) or 0 for r in t[1])
+                return max(full, key=seat_sum)
+            if prefer == "leg-large" and len(tabs) > 1:
+                # 1962's Senate and Chamber of Deputies tables both give seats
+                # only, no votes, so neither qualifies for "full" above; fall
+                # back to the same largest-chamber choice over the seats-only
+                # tables rather than defaulting to the first (the Senate).
+                def seat_sum(t):
+                    return sum(num(r.get("seats")) or 0 for r in t[1])
+                seatful = [t for t in tabs if any(num(r.get("seats")) is not None for r in t[1])]
+                if len(seatful) > 1:
+                    return max(seatful, key=seat_sum)
             return (full or tabs)[0]
         return max(tabs, key=score)
 
@@ -389,7 +411,16 @@ def best_table(lines, prefer=None):
     if best and {"votes", "seats"} <= best[3]:
         return best[1], best[2]
     tiered = find_tiered(lines, head_ok)
-    if tiered:
+    # A stacked header usually beats a plain one that lacks votes and seats
+    # together, but not when it reads worse: Kenya's 2022 National Assembly
+    # article carries a clean "Party | Leader | Seats" table with 23 rows and,
+    # further down, a coalition-grouped "Party or alliance | Seats" table whose
+    # wrapped alliance header swallows the tier below it, so the stacked reader
+    # returns one row (the alliance's own name mislabelled with its first
+    # member's seat count). Preferring the stacked table unconditionally handed
+    # the hub a single-party legislature. Only take it when it captured at
+    # least as many rows as the plain table already in hand.
+    if tiered and (not best or len(tiered) >= len(best[1])):
         return tiered, (best[2] if best else {})
     if best:
         return best[1], best[2]
@@ -445,6 +476,15 @@ def build(path, want, kind_of, prefer=None):
 
     prefer picks between the two results tables a general-election article
     carries: "pres" takes the candidate-headed one, "leg" the party-headed one.
+    prefer may also be a callable(title) -> preference string, for a series
+    whose right preference changes partway through: Czechoslovakia's 1920-92
+    bicameral articles need "leg-large" to keep the larger house regardless of
+    which table an article prints first, but applying "leg-large" to the
+    unicameral 1996- Czech Republic articles as well picked up an outgoing
+    Chamber's pre-election-day composition table (also a full 200-seat table)
+    over the actual results table on two elections, since both tie on seat
+    sum and only the per-article default "first qualifying table" rule reads
+    the newer article correctly.
     """
     out = []
     seen = set()
@@ -466,10 +506,11 @@ def build(path, want, kind_of, prefer=None):
         if (title, date) in seen_titles:
             continue
         seen_titles.add((title, date))
-        rows, totals = best_table(lines, prefer)
+        this_prefer = prefer(title) if callable(prefer) else prefer
+        rows, totals = best_table(lines, this_prefer)
         parties = [to_party(r) for r in rows] if rows else []
         parties = [p for p in parties
-                   if p["name"] and len(p["name"]) < 70
+                   if p["name"] and len(p["name"]) < 100
                    and (p["seats"] is not None or p["votes"] is not None or p["share"] is not None)]
         turnout = ib["turnout"] if ib["turnout"] is not None else turnout_from_totals(totals)
         # The table's own Total row. Colombia's infobox gives the size of the

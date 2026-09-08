@@ -26,7 +26,8 @@ export const metadata: Metadata = {
   },
 };
 
-function horizonOf(nextDate: string | null): Horizon {
+function horizonOf(nextDate: string | null, confidence: string): Horizon {
+  if (confidence === "dissolved") return "dissolved";
   if (!nextDate) return "none";
   const year = Number(nextDate.slice(0, 4));
   if (year === 2026) return "2026";
@@ -69,7 +70,7 @@ export default function AllHubsPage() {
       familyKey: family?.key ?? "none",
       familyLabel: family?.label ?? "Not scored",
       regime,
-      horizon: horizonOf(r.date),
+      horizon: horizonOf(r.date, r.confidence),
     };
   });
 

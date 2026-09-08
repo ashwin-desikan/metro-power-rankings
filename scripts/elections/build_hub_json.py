@@ -137,6 +137,12 @@ FREEDOM_OVERRIDE = {
  ("pt", "1975"): (None, None),
 }
 
+# Per-hub modules (scripts/elections/hubs/<cc>.py) carry their own labels;
+# merged here so the three tables above stay the record for the older waves.
+ERA_FREEDOM.update(E.HUB_FREEDOM)
+ERA_CAVEAT.update(E.HUB_CAVEAT)
+FREEDOM_OVERRIDE.update(E.HUB_OVERRIDE)
+
 def era_for(cc, kind, year):
     for key, label, span, lo, hi, blurb in E.ERAS[cc][kind]:
         if lo <= year <= hi:
@@ -176,7 +182,10 @@ def leg_summary(e, chamber, adj):
             bits.append("%s stayed in office." % after["name"])
     elif after and after.get("name"):
         bits.append("%s took office." % after["name"])
-    return " ".join(bits) or ("A %s election; the results table for this contest is not on file." % adj.lower())
+    # A demonym keeps its capital in English, and takes "An" before a vowel
+    # (an Ethiopian election, a Pakistani one).
+    return " ".join(bits) or ("%s %s election; the results table for this contest is not on file."
+                              % ("An" if adj[:1].lower() in "aeiou" else "A", adj))
 
 def pres_summary(e, adj, runoff=False):
     cands = e["parties"]
@@ -201,7 +210,17 @@ def pres_summary(e, adj, runoff=False):
             bits.append("%s won with %s votes." % (top["name"], format(top["votes"], ",")))
     if e.get("turnout") is not None:
         bits.append("Turnout %.1f%%." % e["turnout"])
-    return " ".join(bits) or "Only one candidate was nominated, so no vote was held."
+    if bits:
+        return " ".join(bits)
+    # An infobox that names nobody as elected is a vote that elected nobody
+    # (Slovakia's National Council failed nine ballots in 1998); one that names
+    # a winner with no table is an unopposed return (five Irish presidencies).
+    after = (e.get("pmAfter") or {}).get("name")
+    if after and after.strip().lower() in ("none", "vacant"):
+        return "No candidate reached the majority required, so the office stayed vacant."
+    if after:
+        return "Only one candidate was nominated, so no vote was held."
+    return "The source records no vote count for this contest."
 
 def to_leg(cc, e, cfg):
     era = era_for(cc, "leg", e["year"])
@@ -314,19 +333,27 @@ def to_pres(cc, e, cfg):
               "r1Votes": c.get("votes"), "r1Share": pct(c.get("share")),
               "r2Votes": c.get("votes2"), "r2Share": pct(c.get("share2"))}
              for c in e["parties"]]
+    after = e.get("pmAfter")
+    if after and (after.get("name") or "").strip().lower() in ("none", "vacant"):
+        after = None
     return {
         "id": "pres-" + e["id"], "label": e["label"], "year": e["year"], "kind": "presidential",
         "date": e["date"], "era": era,
         "turnout": pct(e.get("turnout")), "turnout2": None,
         "candidates": cands,
-        "presBefore": e.get("pmBefore"), "presAfter": e.get("pmAfter"),
+        "presBefore": e.get("pmBefore"), "presAfter": after,
         "knownAs": None, "summary": pres_summary(e, cfg["adj"], cfg.get("runoffSummary", False)),
         "caveat": caveat, "unfree": unfree,
     }
 
+# The as-of stamp every hub prints. One value per run, not per hub.
+BUILT = "2026-09-08"
+
 def build(cc):
     cfg = E.HUBS[cc]
-    out = {"meta": {"title": cfg["title"], "sources": cfg["sources"], "built": "2026-08-30"}}
+    out = {"meta": {"title": cfg["title"], "sources": cfg["sources"], "built": BUILT}}
+    if cc in E.HUB_STATUS:
+        out["meta"].update(E.HUB_STATUS[cc])
     if cfg["shape"] == "leg":
         out["eras"] = eras_out(cc, "leg")
         out["elections"] = [to_leg(cc, e, cfg) for e in DRAFTS["%s-legislative" % cc]]
@@ -345,7 +372,10 @@ def build(cc):
 if __name__ == "__main__":
     import os
     os.makedirs('/tmp/hubs/json', exist_ok=True)
+    only = [a for a in sys.argv[1:] if not a.startswith("-")]
     for cc in E.HUBS:
+        if only and cc not in only:
+            continue
         # A wave can be rebuilt on its own: hubs whose drafts are not present
         # are skipped rather than crashing the run.
         need = [k for k in ("%s-legislative" % cc, "%s-presidential" % cc)

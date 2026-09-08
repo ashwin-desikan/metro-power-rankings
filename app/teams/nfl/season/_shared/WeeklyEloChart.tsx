@@ -312,11 +312,14 @@ export default function WeeklyEloChart({
           <line x1={M.left} x2={W - M.right} y1={py(1500)} y2={py(1500)} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="2 3" />
         ) : null}
 
-        {/* Where the regular season ended. Labelled per league when they differ. */}
+        {/* Where the regular season ended: the line sits ON the last regular-
+            season week, not half a step into the playoffs (Ashwin, 2026-09-08:
+            the playoffs start the weekend the regular season ends). Labelled
+            per league when they differ. */}
         {dividers.map(([lg, w]) => (
           <g key={lg}>
-            <line x1={px(w + 0.5)} x2={px(w + 0.5)} y1={M.top} y2={H - M.bottom} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="4 4" />
-            <text x={px(w + 0.5) + 4} y={M.top + 10} fontSize={9} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
+            <line x1={px(w)} x2={px(w)} y1={M.top} y2={H - M.bottom} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="4 4" />
+            <text x={px(w) + 4} y={M.top + 10} fontSize={9} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
               {oneDivider ? "playoffs" : `${lg} playoffs`}
             </text>
           </g>

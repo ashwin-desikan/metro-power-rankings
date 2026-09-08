@@ -115,9 +115,13 @@ export default async function NflStandings({
           were cut off and no width would have saved them. Two across gives the
           name 200px or more and nothing truncates at any width.
 
-          🔴 THE NICKNAME, NOT THE FULL NAME. The crest beside it already carries
-          the city, and the nickname is what fits without ellipsis at 390px. The
-          full name is on the row's title attribute and on the team page. */}
+          🔴 THE NICKNAME BELOW 1024px, THE FULL NAME FROM 1024px UP. Two cards
+          across at 640px give the name about 98px, so "Buccaneers" is the most
+          that fits there and the crest carries the city. From 1024px the same
+          two cards give the name 290px or more, and a nickname alone left the
+          row two thirds empty (Ashwin, 2026-09-08), so the full name renders
+          there. One tree, two spans; the title attribute carries the full name
+          at every width. */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {DIVISION_ORDER.map((divName) => {
           const teams = byDivision.get(divName) ?? [];
@@ -182,7 +186,10 @@ export default async function NflStandings({
                       {/* No `truncate`: the column is sized so the longest
                           nickname in the league fits whole. If a future name
                           does not, widen the column rather than clipping it. */}
-                      <span className="flex-1 text-xs whitespace-nowrap">{f.team}</span>
+                      <span className="flex-1 text-xs whitespace-nowrap">
+                        <span className="lg:hidden">{f.team}</span>
+                        <span className="hidden lg:inline">{f.name}</span>
+                      </span>
                       <span className="w-11 text-right text-xs tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                         {showRec ? `${t!.wins}-${t!.losses}${t!.ties ? `-${t!.ties}` : ""}` : "\u2014"}
                       </span>

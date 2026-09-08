@@ -35,6 +35,7 @@ export default function LineChart({
   }, [series]);
   const x0 = xs[0], x1 = xs[xs.length - 1];
 
+
   const px = (x: number) => PL + ((x - x0) / (x1 - x0)) * (W - PL - PR);
   const py = (y: number) => PT + (1 - y / yMax) * (H - PT - PB);
 
@@ -43,6 +44,18 @@ export default function LineChart({
     for (let d = Math.ceil(x0 / 20) * 20; d <= x1; d += 20) out.push(d);
     return out;
   }, [x0, x1]);
+
+  // A series can be legitimately empty: the UAE's parties are banned so no
+  // party has a vote share, and Bangladesh's tables carry seats without
+  // shares for years at a time. An empty chart says so rather than crashing
+  // the prerender on `points[last].x` (caught by the 2026-09-08 native build).
+  if (xs.length === 0) {
+    return (
+      <p className="text-xs text-[var(--text-dim)] py-6 text-center">
+        No figures on file for this chart.
+      </p>
+    );
+  }
 
   function onMove(e: React.MouseEvent<SVGSVGElement>) {
     const rect = svgRef.current?.getBoundingClientRect();
@@ -105,7 +118,7 @@ export default function LineChart({
         {hoverX != null ? (
           <line x1={px(hoverX)} x2={px(hoverX)} y1={PT} y2={H - PB} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="3 3" />
         ) : null}
-        {series.map((s) => (
+        {series.filter((s) => s.points.length > 0).map((s) => (
           <g key={s.name}>
             <polyline
               fill="none"

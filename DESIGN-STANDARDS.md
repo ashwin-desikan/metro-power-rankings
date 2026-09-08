@@ -121,6 +121,17 @@ outright. `Disclosure` sets `desktopOpen` by default; pass
 collapsible everywhere, or `defaultOpen` for a section that should also
 start open on a phone.
 
+**`data-desktop-default-open` is the variant for a DEFAULT the reader may
+change.** Same CSS reveal above 640px for the first paint, but the summary
+keeps its pointer and chevron, and a five-line inline script on the page
+swaps the attribute for a real `open` on desktop viewports, so every block
+toggles natively at every width. Use it for accordions whose desktop state
+is a starting point (the league blocks on /sports/standings, which a reader
+folds to reach the next sport), and `data-desktop-open` for sections that
+are simply part of the desktop page (sources, methodology). The first
+draft of the standings page used `data-desktop-open` and nobody could close
+the NBA on a laptop (2026-09-08).
+
 ### Rules
 
 - **Every mobile-only list of more than ~12 rows is capped.** `<CappedList>`

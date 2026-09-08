@@ -124,16 +124,36 @@ export type GameRow = {
   neutral: boolean;
   result?: "H" | "A" | "T";
   score?: string;
-  model?: { pH: number };
+  /**
+   * `pH` is Elo, straight from the workbook, and is never adjusted. `pH_rest`
+   * is present only on a row where a side is flagged in `rest` below: the
+   * same probability with a 140 Elo-point discount applied against whichever
+   * side is starting a QB other than that team-season's primary starter
+   * while favoured in the final two weeks of the regular season. `surprise`
+   * is computed from `pH_rest` when it exists, `pH` otherwise. See
+   * scripts/nfl/rest_adjust.py for the rule and the measurement behind it.
+   */
+  model?: { pH: number; pH_rest?: number };
   model_brier?: number;
   surprise?: number;
   market?: { spread: number; pH: number };
   market_brier?: number;
   elo_shift?: number;
   qb?: { home: string | null; away: string | null };
+  /** Present only when at least one side is flagged; see model.pH_rest. */
+  rest?: { home: boolean; away: boolean };
 };
 
 export type SeasonFile = { season: number; games: GameRow[] };
+
+/**
+ * `game_id` is NOT unique per game: the workbook shares one id across every
+ * game played on the same day, so matching or keying rows on it tags a whole
+ * slate at once. Within a season, date plus the two sides is unique.
+ */
+export function gameKey(g: Pick<GameRow, "date" | "home" | "away">): string {
+  return `${g.date ?? ""}|${g.home}|${g.away}`;
+}
 
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";

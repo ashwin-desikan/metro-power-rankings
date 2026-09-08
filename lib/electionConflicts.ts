@@ -57,6 +57,22 @@ export const HUB_COUNTRY_SLUGS: Record<string, string[]> = {
   "/elections/cl": ["chile"],
   "/elections/ir": ["iran"],
   "/elections/pk": ["pakistan"],
+  // Wave 5 (2026-09-08). The two defunct polities have no living country
+  // page to join, so no leader, no power rank and no country link.
+  "/elections/pe": ["peru"],
+  "/elections/ke": ["kenya"],
+  "/elections/bd": ["bangladesh"],
+  "/elections/et": ["ethiopia"],
+  "/elections/vn": ["vietnam"],
+  "/elections/ae": ["united-arab-emirates"],
+  "/elections/dd": [],
+  "/elections/vd": [],
+  "/elections/cz": ["czech-republic"],
+  "/elections/sk": ["slovakia"],
+  "/elections/ro": ["romania"],
+  "/elections/fi": ["finland"],
+  "/elections/th": ["thailand"],
+  "/elections/ve": ["venezuela"],
 };
 
 // Major wars only — border skirmishes would tag half the dataset and dilute

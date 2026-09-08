@@ -47,6 +47,20 @@ import { getCdElections } from "./cdElections";
 import { getClElections } from "./clElections";
 import { getIrElections } from "./irElections";
 import { getPkElections } from "./pkElections";
+import { getPeElections } from "./peElections";
+import { getKeElections } from "./keElections";
+import { getBdElections } from "./bdElections";
+import { getEtElections } from "./etElections";
+import { getVnElections } from "./vnElections";
+import { getAeElections } from "./aeElections";
+import { getDdElections } from "./ddElections";
+import { getVdElections } from "./vdElections";
+import { getCzElections } from "./czElections";
+import { getSkElections } from "./skElections";
+import { getRoElections } from "./roElections";
+import { getFiElections } from "./fiElections";
+import { getThElections } from "./thElections";
+import { getVeElections } from "./veElections";
 import { ELECTION_HUBS } from "./electionHubsMeta";
 // The Vatican hub is deliberately absent: conclaves are not polity-wide ballots,
 // so they stay out of the timeline, turnout and wartime joins.
@@ -101,6 +115,9 @@ export function getElectionCensus(): CensusRow[] {
   const de = getDeElections();
   const co = getCoElections(), cd = getCdElections();
   const cl = getClElections(), ir = getIrElections();
+  const pe = getPeElections(), ke = getKeElections(), vd = getVdElections();
+  const cz = getCzElections(), sk = getSkElections(), ro = getRoElections();
+  const fi = getFiElections(), ve = getVeElections();
   _census = [
     row("us", usd.elections.map((e) => ({
       id: e.id, year: e.year, label: e.label, winner: e.winner.name,
@@ -153,6 +170,22 @@ export function getElectionCensus(): CensusRow[] {
     row("cl", [...leg(cl.legislative, "Chile"), ...pres(cl.presidential, "Chile")]),
     row("pk", leg(getPkElections().elections, "Pakistan")),
     row("ir", [...leg(ir.legislative, "Iran"), ...pres(ir.presidential, "Iran")]),
+    // Wave 5 (2026-09-08). The two defunct polities count in full: a census
+    // of ballots cast has no reason to forget a state that stopped existing.
+    row("pe", [...leg(pe.legislative, "Peru"), ...pres(pe.presidential, "Peru")]),
+    row("ke", [...leg(ke.legislative, "Kenya"), ...pres(ke.presidential, "Kenya")]),
+    row("bd", leg(getBdElections().elections, "Bangladesh")),
+    row("et", leg(getEtElections().elections, "Ethiopia")),
+    row("vn", leg(getVnElections().elections, "Vietnam")),
+    row("ae", leg(getAeElections().elections, "United Arab Emirates")),
+    row("dd", leg(getDdElections().elections, "East Germany")),
+    row("vd", [...leg(vd.legislative, "South Vietnam"), ...pres(vd.presidential, "South Vietnam")]),
+    row("cz", [...leg(cz.legislative, "Czech Republic"), ...pres(cz.presidential, "Czech Republic")]),
+    row("sk", [...leg(sk.legislative, "Slovakia"), ...pres(sk.presidential, "Slovakia")]),
+    row("ro", [...leg(ro.legislative, "Romania"), ...pres(ro.presidential, "Romania")]),
+    row("fi", [...leg(fi.legislative, "Finland"), ...pres(fi.presidential, "Finland")]),
+    row("th", leg(getThElections().elections, "Thailand")),
+    row("ve", [...leg(ve.legislative, "Venezuela"), ...pres(ve.presidential, "Venezuela")]),
   ];
   return _census;
 }

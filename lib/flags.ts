@@ -65,6 +65,10 @@ export const FLAG_CODE: Record<string, string> = {
   "curacao": "cw",
   "cyprus": "cy",
   "czech-republic": "cz",
+  // "Czechia" and "Czech Republic" are used interchangeably across the site
+  // (Ashwin, 2026-09-08); both slugs resolve to the same flag, never to the
+  // historical placeholder.
+  "czechia": "cz",
   "denmark": "dk",
   "djibouti": "dj",
   "dominica": "dm",
@@ -269,9 +273,19 @@ export function flagSrcSet(slug: string): string | null {
 
 // Build a flagcdn URL from a raw code (used for historical eras whose flag
 // equals a current country's, e.g. West Germany → "de", Czechoslovakia → "cz").
+// Flags the CDN does not carry: defunct states drawn as SVGs in
+// public/flags/. The code is the historical ISO alpha-2 (DD for the GDR, VD
+// for the Republic of Vietnam), so a hub's `flag` field stays one short code
+// whether the state still exists or not. Add a file and a line here for the
+// next one.
+const LOCAL_FLAGS: Record<string, string> = {
+  dd: "/flags/dd.svg",
+  vd: "/flags/vd.svg",
+};
 export function flagUrlByCode(code: string): string {
-  return `https://flagcdn.com/20x15/${code}.png`;
+  return LOCAL_FLAGS[code] ?? `https://flagcdn.com/20x15/${code}.png`;
 }
 export function flagSrcSetByCode(code: string): string {
-  return `https://flagcdn.com/40x30/${code}.png 2x`;
+  // An SVG scales itself; no 2x candidate is needed or wanted.
+  return LOCAL_FLAGS[code] ? "" : `https://flagcdn.com/40x30/${code}.png 2x`;
 }

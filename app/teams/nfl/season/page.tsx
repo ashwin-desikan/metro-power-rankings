@@ -179,8 +179,12 @@ export default async function NflSeasonsIndex() {
             club-football belt solves it: one card per season carrying the year
             and the club, tinted with the club's own colour, so four Packers
             squares in a row read as four Packers squares in a row. */}
+        {/* A season in progress has no best team yet: the belt shows finished
+            seasons only, the way the club-football belt waits for May
+            (Ashwin, 2026-09-08). The season joins the strip when its
+            championship is decided. */}
         <div className="flex flex-wrap gap-1.5">
-          {rows.map((r) => {
+          {rows.filter((r) => r.complete).map((r) => {
             const nm = r.top?.name;
             const col = nm ? colour[nm] : null;
             const short = r.top?.team ?? nm ?? null;
@@ -249,7 +253,7 @@ export default async function NflSeasonsIndex() {
                   </thead>
                   <tbody>
                     {exp.upsets.slice(0, 8).map((u) => (
-                      <tr key={u.game_id} className="border-t" style={BORD}>
+                      <tr key={`${u.season}|${u.date ?? ""}|${u.winner}|${u.loser}`} className="border-t" style={BORD}>
                         <td className="py-1.5 px-3 tabular-nums" style={MONO}>
                           <Link href={`/teams/nfl/season/${u.season}`} className="text-[var(--accent)] hover:underline">{u.season}</Link>
                         </td>

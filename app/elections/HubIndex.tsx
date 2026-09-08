@@ -4,7 +4,7 @@ import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { MONO, TH, THR, TD, TableBox } from "@/app/business/ui";
 import { CappedList } from "@/app/_shared/Disclosure";
-import type { GovernmentType } from "@/lib/electionHubsMeta";
+import type { GovernmentType, NextConfidence } from "@/lib/electionHubsMeta";
 
 // The scaling answer for /elections/all. The landing page's four regional
 // columns work at 35 hubs and stop working somewhere well before 80, which is
@@ -17,7 +17,7 @@ import type { GovernmentType } from "@/lib/electionHubsMeta";
 // someone uses once and leaves.
 
 export type Regime = "competitive" | "managed";
-export type Horizon = "2026" | "2027" | "later" | "none";
+export type Horizon = "2026" | "2027" | "later" | "none" | "dissolved";
 
 export type HubRow = {
   code: string;
@@ -29,7 +29,7 @@ export type HubRow = {
   last: string;
   next: string;
   nextDate: string | null;
-  confidence: "confirmed" | "expected" | "unscheduled";
+  confidence: NextConfidence;
   daysAway: number | null;
   overdue: boolean;
   contests: number;
@@ -63,6 +63,7 @@ const HORIZON_OPTIONS: { key: Horizon; label: string }[] = [
   { key: "2027", label: "Voting in 2027" },
   { key: "later", label: "Later" },
   { key: "none", label: "No date" },
+  { key: "dissolved", label: "Dissolved" },
 ];
 const SORT_LABEL: Record<SortKey, string> = {
   name: "A–Z",
@@ -72,8 +73,8 @@ const SORT_LABEL: Record<SortKey, string> = {
   family: "Electoral family",
 };
 
-function statusOf(c: HubRow["confidence"]): "Set" | "Term running" | "No date" {
-  return c === "confirmed" ? "Set" : c === "expected" ? "Term running" : "No date";
+function statusOf(c: HubRow["confidence"]): "Set" | "Term running" | "No date" | "Dissolved" {
+  return c === "confirmed" ? "Set" : c === "expected" ? "Term running" : c === "dissolved" ? "Dissolved" : "No date";
 }
 
 function Chip({

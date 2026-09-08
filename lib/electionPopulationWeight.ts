@@ -38,6 +38,12 @@ export const HUB_COUNTRY_SLUG: Record<string, string> = {
   // Wave 2a, 2026-09-07.
   hu: "hungary", no: "norway", se: "sweden", co: "colombia", cd: "congo-dr",
   cl: "chile", ir: "iran", pk: "pakistan",
+  // Wave 5, 2026-09-08. East Germany and South Vietnam have no population
+  // series of their own; weighting them by today's Germany or Vietnam would
+  // be wrong, so they stay in the contest-counted chart only.
+  pe: "peru", ke: "kenya", bd: "bangladesh", et: "ethiopia", vn: "vietnam",
+  ae: "united-arab-emirates", cz: "czech-republic", sk: "slovakia", ro: "romania",
+  fi: "finland", th: "thailand", ve: "venezuela",
 };
 
 let _pop: PopFile | null = null;

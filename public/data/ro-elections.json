@@ -1,0 +1,8533 @@
+{
+ "meta": {
+  "title": "Romanian Elections",
+  "sources": [
+   "Wikipedia: Romanian legislative and presidential election articles 1901-2025",
+   "Biroul Electoral Central / Autoritatea Electorală Permanentă figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "presEras": [
+  {
+   "key": "republic",
+   "label": "The directly elected presidency",
+   "span": "1990-",
+   "blurb": "The presidency has been directly elected since Ion Iliescu's one-round win in May 1990; every contest since 1992 has used a two-round system that sends the top two finishers to a runoff whenever nobody clears a majority outright first time. The office sits alongside a prime minister who runs the government day to day but controls foreign and defence policy and can dissolve Parliament under specific conditions, the semi-presidential design the 1991 constitution settled on."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "kingdom",
+   "label": "The censitary kingdom",
+   "span": "1901-1918",
+   "blurb": "The Chamber of Deputies was elected through three separate electoral colleges of wealth and profession, one for large landowners and urban notables, one for lesser urban property holders, and one for the peasants who made up most of the population but held only a sliver of the vote. It was the government of the day that called each election and ran its machinery, not a neutral administration, and the franchise itself stayed a few percent of the population throughout. The last vote on this system, in 1918, was held under wartime German occupation with the National Liberal Party boycotting."
+  },
+  {
+   "key": "greater_romania",
+   "label": "Greater Romania and the electoral bonus",
+   "span": "1919-1937",
+   "blurb": "Universal male suffrage arrived with the postwar union of Transylvania, Bessarabia and Bukovina, and the opposition Romanian National Party actually won the first vote, in 1919. From 1926 an electoral bonus law handed any party clearing 40% of the national vote an automatic majority of seats, and it was almost always the party running the interior ministry that cleared it: the 1922 article's own account has army officers campaigning inside polling stations for the governing National Liberals. The system ran out of road in 1937, when nobody reached 40%, no coalition would form, and King Carol II handed the government to the fourth-placed, avowedly antisemitic National Christian Party instead."
+  },
+  {
+   "key": "dictatorship",
+   "label": "The royal dictatorship's single list",
+   "span": "1939",
+   "blurb": "King Carol II abolished party politics in 1938 and folded every legal party into the National Renaissance Front; by the time voters went to the polls in June 1939, opposition parties were banned outright and the Front was the only name on the ballot. It took 100% of the vote in a system that also raised the voting age and sorted the electorate into occupational groups rather than one national body of voters."
+  },
+  {
+   "key": "falsified",
+   "label": "The falsified election of 1946",
+   "span": "1946",
+   "blurb": "No election was held during the war years. When Romania voted again in November 1946, the Soviet-backed government of Petru Groza ran the count, and Wikipedia's own account, drawing on Romanian and Soviet-archive historians alike, describes widespread intimidation and outright fraud that inflated the governing bloc's declared 69.8% well past what independent estimates suggest it actually won. Within two years the main opposition parties were dissolved, the king was forced to abdicate, and Romania became a one-party state."
+  },
+  {
+   "key": "communist",
+   "label": "The communist single list",
+   "span": "1948-1985",
+   "blurb": "From 1948 a single National Front list, later renamed the Front of Socialist Unity and Democracy, ran unopposed at every election; turnout and the yes vote were both reported above 90% every time, and seat totals moved only when the legislature itself changed size. There was no rival candidate on the ballot and no possibility the ruling party could lose."
+  },
+  {
+   "key": "republic",
+   "label": "The post-1989 republic",
+   "span": "1990-",
+   "blurb": "Romania's first free vote since the war returned a Parliament and a president together in May 1990, and competitive multiparty politics has run continuously since, through six-odd governing coalitions and several minority governments. Turnout has fallen from the near-universal levels of 1990 to the low fifties by 2024, the year far-right parties took roughly a fifth of the vote between them for the first time."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "presidential",
+   "date": "20 May 1990 to elect the President and members of Parliament",
+   "era": "republic",
+   "turnout": 86.2,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ion Iliescu",
+     "party": "National Salvation Front",
+     "r1Votes": 12232498,
+     "r1Share": 85.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Radu Câmpeanu",
+     "party": "National Liberal Party",
+     "r1Votes": 1529188,
+     "r1Share": 10.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ion Rațiu",
+     "party": "Christian Democratic National Peasants' Party",
+     "r1Votes": 617007,
+     "r1Share": 4.29,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ion Iliescu (provisional)",
+    "party": "FSN"
+   },
+   "presAfter": {
+    "name": "Ion Iliescu",
+    "party": "FSN"
+   },
+   "knownAs": null,
+   "summary": "Ion Iliescu won with 85.07% against Radu Câmpeanu on 10.64%. Turnout 86.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "presidential",
+   "date": "27 September 1992",
+   "era": "republic",
+   "turnout": 76.29,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ion Iliescu",
+     "party": "Democratic National Salvation Front",
+     "r1Votes": 5633465,
+     "r1Share": 47.34,
+     "r2Votes": 7393429,
+     "r2Share": 61.43
+    },
+    {
+     "name": "Emil Constantinescu",
+     "party": "Romanian Democratic Convention",
+     "r1Votes": 3717006,
+     "r1Share": 31.24,
+     "r2Votes": 4641207,
+     "r2Share": 38.57
+    },
+    {
+     "name": "Gheorghe Funar",
+     "party": "Romanian National Unity Party",
+     "r1Votes": 1294388,
+     "r1Share": 10.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Caius-Traian Dragomir",
+     "party": "National Salvation Front",
+     "r1Votes": 564655,
+     "r1Share": 4.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ioan Mânzatu",
+     "party": "Republican Party",
+     "r1Votes": 362485,
+     "r1Share": 3.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mircea Druc",
+     "party": "Independent",
+     "r1Votes": 326866,
+     "r1Share": 2.75,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ion Iliescu",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Ion Iliescu",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Ion Iliescu won in the runoff with 61.43% against Emil Constantinescu on 38.57%. Turnout 76.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "presidential",
+   "date": "3 November 1996",
+   "era": "republic",
+   "turnout": 76.01,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Emil Constantinescu",
+     "party": "Romanian Democratic Convention",
+     "r1Votes": 3569941,
+     "r1Share": 28.21,
+     "r2Votes": 7057906,
+     "r2Share": 54.41
+    },
+    {
+     "name": "Ion Iliescu",
+     "party": "Party of Social Democracy in Romania",
+     "r1Votes": 4081093,
+     "r1Share": 32.25,
+     "r2Votes": 5914579,
+     "r2Share": 45.59
+    },
+    {
+     "name": "Petre Roman",
+     "party": "Democratic Party",
+     "r1Votes": 2598545,
+     "r1Share": 20.54,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "György Frunda",
+     "party": "Democratic Alliance of Hungarians in Romania",
+     "r1Votes": 761411,
+     "r1Share": 6.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Corneliu Vadim Tudor",
+     "party": "Greater Romania Party",
+     "r1Votes": 597508,
+     "r1Share": 4.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gheorghe Funar",
+     "party": "Romanian National Unity Party",
+     "r1Votes": 407828,
+     "r1Share": 3.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tudor Mohora",
+     "party": "Socialist Party",
+     "r1Votes": 160387,
+     "r1Share": 1.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolae Manolescu",
+     "party": "National Liberal Alliance",
+     "r1Votes": 90122,
+     "r1Share": 0.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adrian Păunescu",
+     "party": "Socialist Party of Labour",
+     "r1Votes": 87163,
+     "r1Share": 0.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ion Pop de Popa",
+     "party": "Humanist Party",
+     "r1Votes": 59752,
+     "r1Share": 0.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "George Muntean",
+     "party": "Independent",
+     "r1Votes": 54218,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Radu Câmpeanu",
+     "party": "National Liberal Ecologist Alliance",
+     "r1Votes": 43780,
+     "r1Share": 0.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nuțu Anghelina",
+     "party": "Independent",
+     "r1Votes": 43319,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Constantin Mudava",
+     "party": "Independent",
+     "r1Votes": 39477,
+     "r1Share": 0.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Constantin Niculescu",
+     "party": "National Party of Drivers",
+     "r1Votes": 30045,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolae Militaru",
+     "party": "Independent",
+     "r1Votes": 28318,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ion Iliescu",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Emil Constantinescu",
+    "party": "CDR"
+   },
+   "knownAs": null,
+   "summary": "Emil Constantinescu won in the runoff with 54.41% against Ion Iliescu on 45.59%. Turnout 76.0%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "presidential",
+   "date": "26 November 2000",
+   "era": "republic",
+   "turnout": 65.31,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ion Iliescu",
+     "party": "Social Democratic Pole of Romania",
+     "r1Votes": 4076273,
+     "r1Share": 36.35,
+     "r2Votes": 6696623,
+     "r2Share": 66.83
+    },
+    {
+     "name": "Corneliu Vadim Tudor",
+     "party": "Greater Romania Party",
+     "r1Votes": 3178293,
+     "r1Share": 28.34,
+     "r2Votes": 3324247,
+     "r2Share": 33.17
+    },
+    {
+     "name": "Theodor Stolojan",
+     "party": "National Liberal Party",
+     "r1Votes": 1321420,
+     "r1Share": 11.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mugur Isărescu",
+     "party": "Romanian Democratic Convention",
+     "r1Votes": 1069463,
+     "r1Share": 9.54,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "György Frunda",
+     "party": "Democratic Alliance of Hungarians in Romania",
+     "r1Votes": 696989,
+     "r1Share": 6.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Petre Roman",
+     "party": "Democratic Party",
+     "r1Votes": 334852,
+     "r1Share": 2.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Teodor Meleșcanu",
+     "party": "Alliance for Romania",
+     "r1Votes": 214642,
+     "r1Share": 1.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduard Gheorghe Manole",
+     "party": "Independent",
+     "r1Votes": 133991,
+     "r1Share": 1.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Graziela-Elena Bârlă",
+     "party": "Independent",
+     "r1Votes": 61455,
+     "r1Share": 0.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Prince Paul of Romania",
+     "party": "Party of National Reconciliation",
+     "r1Votes": 55238,
+     "r1Share": 0.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ion Sasu",
+     "party": "Socialist Party of Labour",
+     "r1Votes": 38375,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Niculae Cerveni",
+     "party": "Romanian Liberal Democratic Party",
+     "r1Votes": 31983,
+     "r1Share": 0.29,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Emil Constantinescu",
+    "party": "CDR"
+   },
+   "presAfter": {
+    "name": "Ion Iliescu",
+    "party": "PDSR"
+   },
+   "knownAs": null,
+   "summary": "Ion Iliescu won in the runoff with 66.83% against Corneliu Vadim Tudor on 33.17%. Turnout 65.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "28 November 2004 (first round) 12 December 2004 (second round)",
+   "era": "republic",
+   "turnout": 58.49,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Traian Băsescu",
+     "party": "Justice and Truth Alliance",
+     "r1Votes": 3545236,
+     "r1Share": 33.92,
+     "r2Votes": 5126794,
+     "r2Share": 51.23
+    },
+    {
+     "name": "Adrian Năstase",
+     "party": "National Union PSD+PUR",
+     "r1Votes": 4278864,
+     "r1Share": 40.94,
+     "r2Votes": 4881520,
+     "r2Share": 48.77
+    },
+    {
+     "name": "Corneliu Vadim Tudor",
+     "party": "Greater Romania Party",
+     "r1Votes": 1313714,
+     "r1Share": 12.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Béla Markó",
+     "party": "Democratic Alliance of Hungarians in Romania",
+     "r1Votes": 533446,
+     "r1Share": 5.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gheorghe Ciuhandu",
+     "party": "Christian Democratic National Peasants' Party",
+     "r1Votes": 198394,
+     "r1Share": 1.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gigi Becali",
+     "party": "New Generation Party",
+     "r1Votes": 184560,
+     "r1Share": 1.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Petre Roman",
+     "party": "Democratic Force",
+     "r1Votes": 140702,
+     "r1Share": 1.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gheorghe Dinu",
+     "party": "Independent",
+     "r1Votes": 113321,
+     "r1Share": 1.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marian Petre Miluț",
+     "party": "People's Action",
+     "r1Votes": 43378,
+     "r1Share": 0.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ovidiu Tudorici",
+     "party": "Union for Romanian Reconstruction",
+     "r1Votes": 37910,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aurel Rădulescu",
+     "party": "Christian Democratic People's Alliance",
+     "r1Votes": 35455,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alexandru Raj Tunaru",
+     "party": "Democratic Youth Party",
+     "r1Votes": 27225,
+     "r1Share": 0.26,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ion Iliescu",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Traian Băsescu",
+    "party": "PD"
+   },
+   "knownAs": null,
+   "summary": "Traian Băsescu won in the runoff with 51.23% against Adrian Năstase on 48.77%. Turnout 58.5%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "presidential",
+   "date": "22 November 2009 (first round) 6 December 2009 (second round)",
+   "era": "republic",
+   "turnout": 54.37,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Traian Băsescu",
+     "party": "Independent (PDL)",
+     "r1Votes": 3153640,
+     "r1Share": 32.45,
+     "r2Votes": 5275808,
+     "r2Share": 50.33
+    },
+    {
+     "name": "Mircea Geoană",
+     "party": "Social Democratic Party",
+     "r1Votes": 3027838,
+     "r1Share": 31.15,
+     "r2Votes": 5205760,
+     "r2Share": 49.67
+    },
+    {
+     "name": "Crin Antonescu",
+     "party": "National Liberal Party",
+     "r1Votes": 1945831,
+     "r1Share": 20.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Corneliu Vadim Tudor",
+     "party": "Greater Romania Party",
+     "r1Votes": 540380,
+     "r1Share": 5.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hunor Kelemen",
+     "party": "Democratic Alliance of Hungarians in Romania",
+     "r1Votes": 372764,
+     "r1Share": 3.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sorin Oprescu",
+     "party": "Independent",
+     "r1Votes": 309764,
+     "r1Share": 3.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "George Becali",
+     "party": "New Generation Party",
+     "r1Votes": 186390,
+     "r1Share": 1.92,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Remus Cernea",
+     "party": "Green Party",
+     "r1Votes": 60539,
+     "r1Share": 0.62,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Constantin Rotaru",
+     "party": "Socialist Alliance Party",
+     "r1Votes": 43684,
+     "r1Share": 0.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gheorghe-Eduard Manole",
+     "party": "Independent",
+     "r1Votes": 34189,
+     "r1Share": 0.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ovidiu-Cristian Iane",
+     "party": "Ecologist Party of Romania",
+     "r1Votes": 22515,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Constantin-Ninel Potîrcă",
+     "party": "Independent",
+     "r1Votes": 21306,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Traian Băsescu",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Traian Băsescu",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Traian Băsescu won in the runoff with 50.33% against Mircea Geoană on 49.67%. Turnout 54.4%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "2 November 2014 (first round) 16 November 2014 (second round)",
+   "era": "republic",
+   "turnout": 53.18,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Klaus Iohannis",
+     "party": "Christian Liberal Alliance (PNL–PDL)",
+     "r1Votes": 2881406,
+     "r1Share": 30.38,
+     "r2Votes": 6288769,
+     "r2Share": 54.43
+    },
+    {
+     "name": "Victor Ponta",
+     "party": "PSD–UNPR–PC Alliance",
+     "r1Votes": 3836093,
+     "r1Share": 40.44,
+     "r2Votes": 5264383,
+     "r2Share": 45.57
+    },
+    {
+     "name": "Călin Popescu-Tăriceanu",
+     "party": "Independent",
+     "r1Votes": 508572,
+     "r1Share": 5.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Elena Udrea",
+     "party": "PMP–PNȚCD Alliance",
+     "r1Votes": 493376,
+     "r1Share": 5.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Monica Macovei",
+     "party": "Independent",
+     "r1Votes": 421648,
+     "r1Share": 4.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dan Diaconescu",
+     "party": "People's Party – Dan Diaconescu",
+     "r1Votes": 382526,
+     "r1Share": 4.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Corneliu Vadim Tudor",
+     "party": "Greater Romania Party",
+     "r1Votes": 349416,
+     "r1Share": 3.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hunor Kelemen",
+     "party": "Democratic Alliance of Hungarians in Romania",
+     "r1Votes": 329727,
+     "r1Share": 3.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Teodor Meleșcanu",
+     "party": "Independent",
+     "r1Votes": 104131,
+     "r1Share": 1.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Zsolt Szilágyi",
+     "party": "Hungarian People's Party of Transylvania",
+     "r1Votes": 53146,
+     "r1Share": 0.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gheorghe Funar",
+     "party": "Independent",
+     "r1Votes": 45405,
+     "r1Share": 0.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "William Brînză",
+     "party": "Ecologist Party of Romania",
+     "r1Votes": 43194,
+     "r1Share": 0.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Constantin Rotaru",
+     "party": "Socialist Alternative Party",
+     "r1Votes": 28805,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mirel Mircea Amariței",
+     "party": "PRODEMO Party",
+     "r1Votes": 7895,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Traian Băsescu",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Klaus Iohannis",
+    "party": "PNL"
+   },
+   "knownAs": null,
+   "summary": "Klaus Iohannis won in the runoff with 54.43% against Victor Ponta on 45.57%. Turnout 53.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "presidential",
+   "date": "10 November 2019 (first round) 24 November 2019 (second round)",
+   "era": "republic",
+   "turnout": 51.18,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Klaus Iohannis",
+     "party": "Independent (PNL)",
+     "r1Votes": 3485292,
+     "r1Share": 37.82,
+     "r2Votes": 6509135,
+     "r2Share": 66.09
+    },
+    {
+     "name": "Viorica Dăncilă",
+     "party": "Social Democratic Party",
+     "r1Votes": 2051725,
+     "r1Share": 22.26,
+     "r2Votes": 3339922,
+     "r2Share": 33.91
+    },
+    {
+     "name": "Dan Barna",
+     "party": "2020 USR-PLUS Alliance",
+     "r1Votes": 1384450,
+     "r1Share": 15.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mircea Diaconu",
+     "party": "Alliance for \"One Man\" (PRO–ALDE)",
+     "r1Votes": 815201,
+     "r1Share": 8.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Theodor Paleologu",
+     "party": "People's Movement Party",
+     "r1Votes": 527098,
+     "r1Share": 5.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hunor Kelemen",
+     "party": "Democratic Alliance of Hungarians in Romania",
+     "r1Votes": 357014,
+     "r1Share": 3.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramona-Ioana Bruynseels",
+     "party": "Humanist Power Party",
+     "r1Votes": 244275,
+     "r1Share": 2.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alexandru Cumpănașu",
+     "party": "Independent",
+     "r1Votes": 141316,
+     "r1Share": 1.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Viorel Cataramă",
+     "party": "Liberal Right Party",
+     "r1Votes": 48662,
+     "r1Share": 0.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bogdan Stanoevici",
+     "party": "Independent",
+     "r1Votes": 39192,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cătălin Ivan",
+     "party": "Alternative for National Dignity",
+     "r1Votes": 32787,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ninel Peia",
+     "party": "Romanian Nationhood Party",
+     "r1Votes": 30884,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sebastian Popescu",
+     "party": "New Romania Party",
+     "r1Votes": 30850,
+     "r1Share": 0.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "John Ion Banu",
+     "party": "Romanian Nation Party",
+     "r1Votes": 27769,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Klaus Iohannis",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Klaus Iohannis",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Klaus Iohannis won in the runoff with 66.09% against Viorica Dăncilă on 33.91%. Turnout 51.2%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "presidential",
+   "date": "24 November 2024 (first round, annulled) 8 December 2024 (second round, cancelled)",
+   "era": "republic",
+   "turnout": 52.56,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Călin Georgescu",
+     "party": "Independent",
+     "r1Votes": 2120401,
+     "r1Share": 22.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Elena Lasconi",
+     "party": "Save Romania Union",
+     "r1Votes": 1772500,
+     "r1Share": 19.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marcel Ciolacu",
+     "party": "Social Democratic Party",
+     "r1Votes": 1769760,
+     "r1Share": 19.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "George Simion",
+     "party": "Alliance for the Union of Romanians",
+     "r1Votes": 1281325,
+     "r1Share": 13.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolae Ciucă",
+     "party": "National Liberal Party",
+     "r1Votes": 811952,
+     "r1Share": 8.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mircea Geoană",
+     "party": "Independent",
+     "r1Votes": 583898,
+     "r1Share": 6.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hunor Kelemen",
+     "party": "Democratic Alliance of Hungarians",
+     "r1Votes": 416353,
+     "r1Share": 4.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cristian Diaconescu",
+     "party": "Independent",
+     "r1Votes": 286842,
+     "r1Share": 3.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cristian Terheș",
+     "party": "Romanian National Conservative Party",
+     "r1Votes": 95782,
+     "r1Share": 1.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ana Birchall",
+     "party": "Independent",
+     "r1Votes": 42853,
+     "r1Share": 0.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ludovic Orban",
+     "party": "Force of the Right",
+     "r1Votes": 20089,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sebastian Popescu",
+     "party": "New Romania Party",
+     "r1Votes": 14683,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alexandra Păcuraru",
+     "party": "Alternative for National Dignity",
+     "r1Votes": 14502,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Silviu Predoiu",
+     "party": "National Action League Party",
+     "r1Votes": 11246,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Klaus Iohannis",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Election results annulled",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Călin Georgescu won with 22.94% against Elena Lasconi on 19.18%. Turnout 52.6%.",
+   "caveat": "The first round, held 24 November 2024 and won by Călin Georgescu, was annulled by the Constitutional Court on 6 December over allegations of Russian-linked social media interference, and the scheduled second round never took place.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "presidential",
+   "date": "4 May 2025 (first round) 18 May 2025 (second round)",
+   "era": "republic",
+   "turnout": 53.21,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nicușor Dan",
+     "party": "Independent",
+     "r1Votes": 1979767,
+     "r1Share": 20.99,
+     "r2Votes": 6168642,
+     "r2Share": 53.6
+    },
+    {
+     "name": "George Simion",
+     "party": "Alliance for the Union of Romanians",
+     "r1Votes": 3862761,
+     "r1Share": 40.96,
+     "r2Votes": 5339053,
+     "r2Share": 46.4
+    },
+    {
+     "name": "Crin Antonescu",
+     "party": "Romania Forward Electoral Alliance",
+     "r1Votes": 1892930,
+     "r1Share": 20.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Victor Ponta",
+     "party": "Independent",
+     "r1Votes": 1230164,
+     "r1Share": 13.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Elena Lasconi",
+     "party": "Save Romania Union",
+     "r1Votes": 252721,
+     "r1Share": 2.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lavinia Șandru",
+     "party": "Social Liberal Humanist Party",
+     "r1Votes": 60682,
+     "r1Share": 0.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Daniel Funeriu",
+     "party": "Independent",
+     "r1Votes": 49604,
+     "r1Share": 0.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cristian Terheș",
+     "party": "Romanian National Conservative Party",
+     "r1Votes": 36445,
+     "r1Share": 0.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sebastian Popescu",
+     "party": "New Romania Party",
+     "r1Votes": 25994,
+     "r1Share": 0.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "John Ion Banu",
+     "party": "Independent",
+     "r1Votes": 22020,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Silviu Predoiu",
+     "party": "National Action League Party",
+     "r1Votes": 17186,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ilie Bolojan (acting)",
+    "party": "PNL"
+   },
+   "presAfter": {
+    "name": "Nicușor Dan",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Nicușor Dan won in the runoff with 53.60% against George Simion on 46.40%. Turnout 53.2%.",
+   "caveat": "This was the re-run of the annulled 2024 election, ordered after Georgescu was barred from running in March 2025; George Simion led the first round but Nicușor Dan won the 18 May runoff.",
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1901",
+   "label": "1901",
+   "year": 1901,
+   "kind": "legislative",
+   "date": "9 and 15 March 1901",
+   "era": "kingdom",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Romanian election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "The franchise was a few percent of the population, split across three wealth- and profession-based electoral colleges, and it was the government of the day that ran the vote.",
+   "unfree": null
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "kind": "legislative",
+   "date": "February 1905",
+   "era": "kingdom",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A Romanian election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "The franchise was a few percent of the population, split across three wealth- and profession-based electoral colleges, and it was the government of the day that ran the vote.",
+   "unfree": null
+  },
+  {
+   "id": "1907",
+   "label": "1907",
+   "year": 1907,
+   "kind": "legislative",
+   "date": "June 1907",
+   "era": "kingdom",
+   "totalSeats": 102,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 90,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Disputed",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Liberal Party finished first with 90 of 102 seats.",
+   "seatLeader": "National Liberal Party",
+   "caveat": "The franchise was a few percent of the population, split across three wealth- and profession-based electoral colleges, and it was the government of the day that ran the vote.",
+   "unfree": null
+  },
+  {
+   "id": "1911",
+   "label": "1911",
+   "year": 1911,
+   "kind": "legislative",
+   "date": "March 1, 1911",
+   "era": "kingdom",
+   "totalSeats": 183,
+   "majoritySeats": null,
+   "turnout": 72.6,
+   "parties": [
+    {
+     "name": "PC",
+     "leader": "Petre P. Carp",
+     "seats": null,
+     "seatChange": null,
+     "votes": 133287,
+     "share": 61.4,
+     "swing": null
+    },
+    {
+     "name": "PNL / PCD",
+     "leader": "Ion I. C. Brătianu",
+     "seats": null,
+     "seatChange": null,
+     "votes": 81139,
+     "share": 37.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "PC led the poll with 61.4%. Turnout 72.6%.",
+   "seatLeader": null,
+   "caveat": "The franchise was a few percent of the population, split across three wealth- and profession-based electoral colleges, and it was the government of the day that ran the vote.",
+   "unfree": null
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "legislative",
+   "date": "8 and 18 November 1912",
+   "era": "kingdom",
+   "totalSeats": 183,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative-Democratic Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Conservative",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Conservative-Democratic Party finished first with 84 of 183 seats.",
+   "seatLeader": "Conservative-Democratic Party",
+   "caveat": "The franchise was a few percent of the population, split across three wealth- and profession-based electoral colleges, and it was the government of the day that ran the vote.",
+   "unfree": null
+  },
+  {
+   "id": "1914",
+   "label": "1914",
+   "year": 1914,
+   "kind": "legislative",
+   "date": "18 and 28 May 1914",
+   "era": "kingdom",
+   "totalSeats": 188,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 143,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative-Democratic Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dissident Liberals",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Liberal Party finished first with 143 of 188 seats.",
+   "seatLeader": "National Liberal Party",
+   "caveat": "The franchise was a few percent of the population, split across three wealth- and profession-based electoral colleges, and it was the government of the day that ran the vote.",
+   "unfree": null
+  },
+  {
+   "id": "1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "legislative",
+   "date": "19 and 29 May 1918 (19, 21 and 29 May for the Chamber of Deputies and 23, 25 and 27 May for the Senate)",
+   "era": "kingdom",
+   "totalSeats": 174,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative Party–Marghiloman",
+     "leader": null,
+     "seats": 165,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's League",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party–Carp",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labor Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Conservative Party–Marghiloman finished first with 165 of 174 seats.",
+   "seatLeader": "Conservative Party–Marghiloman",
+   "caveat": "The franchise was a few percent of the population, split across three wealth- and profession-based electoral colleges, and it was the government of the day that ran the vote.",
+   "unfree": null
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "legislative",
+   "date": "4–8 November 1919",
+   "era": "greater_romania",
+   "totalSeats": 568,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 169,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 103,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bessarabian Peasants' Party",
+     "leader": null,
+     "seats": 72,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Party",
+     "leader": null,
+     "seats": 61,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressive Conservative Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Group of Transylvanian Saxons",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Hungarian-Szekler Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's League",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Swabian Group",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Transylvanian Peasants' Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Union from Banat",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Artur Văitoianu",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Alexandru Vaida-Voevod",
+    "party": "PNR"
+   },
+   "knownAs": null,
+   "summary": "Romanian National Party finished first with 169 of 568 seats. Alexandru Vaida-Voevod replaced Artur Văitoianu.",
+   "seatLeader": "Romanian National Party",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "25–27 May 1920",
+   "era": "greater_romania",
+   "totalSeats": 366,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 206,
+     "seatChange": 199,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -142,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -87,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -36,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bessarabian Peasants' Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -49,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 12,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative-Democratic Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party–Iorga",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "German Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Transylvanian Peasants' Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party–Cuza",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -19,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexandru Averescu",
+    "party": "PP"
+   },
+   "pmAfter": {
+    "name": "Alexandru Averescu",
+    "party": "PP"
+   },
+   "knownAs": null,
+   "summary": "People's Party finished first with 206 of 366 seats. Alexandru Averescu stayed in office.",
+   "seatLeader": "People's Party",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "legislative",
+   "date": "1–3 March 1922",
+   "era": "greater_romania",
+   "totalSeats": 369,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 227,
+     "seatChange": 211,
+     "votes": 5173998,
+     "share": 53.87,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 15,
+     "votes": 1865083,
+     "share": 19.42,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -194,
+     "votes": 735417,
+     "share": 7.66,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party–Iorga",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -7,
+     "votes": 281640,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 74860,
+     "share": 0.78,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 221299,
+     "share": 2.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion I. C. Brătianu",
+    "party": "PNL"
+   },
+   "pmAfter": {
+    "name": "Ion I. C. Brătianu",
+    "party": "PNL"
+   },
+   "knownAs": null,
+   "summary": "National Liberal Party finished first with 227 of 369 seats on 53.9% of the vote. Ion I. C. Brătianu stayed in office.",
+   "seatLeader": "National Liberal Party",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1926",
+   "label": "1926",
+   "year": 1926,
+   "kind": "legislative",
+   "date": "May and June 1926",
+   "era": "greater_romania",
+   "totalSeats": 387,
+   "majoritySeats": null,
+   "turnout": 75.0,
+   "parties": [
+    {
+     "name": "People's Party-led alliance",
+     "leader": null,
+     "seats": 292,
+     "seatChange": 279,
+     "votes": 1366160,
+     "share": 53.38,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Bloc",
+     "leader": null,
+     "seats": 69,
+     "seatChange": null,
+     "votes": 727202,
+     "share": 28.42,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -206,
+     "votes": 192399,
+     "share": 7.52,
+     "swing": null
+    },
+    {
+     "name": "National-Christian Defense League",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 124778,
+     "share": 4.88,
+     "swing": null
+    },
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40594,
+     "share": 1.59,
+     "swing": null
+    },
+    {
+     "name": "Peasant Workers' Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39203,
+     "share": 1.53,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 37672,
+     "share": 1.47,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -40,
+     "votes": 16824,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Civic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7300,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Traders Council",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1861,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5096,
+     "share": 0.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "People's Party-led alliance finished first with 292 of 387 seats on 53.4% of the vote. Turnout 75.0%.",
+   "seatLeader": "People's Party-led alliance",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "7–14 July 1927",
+   "era": "greater_romania",
+   "totalSeats": 387,
+   "majoritySeats": null,
+   "turnout": 77.0,
+   "parties": [
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 318,
+     "seatChange": 302,
+     "votes": 1704435,
+     "share": 62.72,
+     "swing": null
+    },
+    {
+     "name": "National Peasants' Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": null,
+     "votes": 610149,
+     "share": 22.45,
+     "swing": null
+    },
+    {
+     "name": "Hungarian German Bloc",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 173517,
+     "share": 6.39,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -292,
+     "votes": 53371,
+     "share": 1.96,
+     "swing": null
+    },
+    {
+     "name": "National-Christian Defense League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -10,
+     "votes": 52481,
+     "share": 1.93,
+     "swing": null
+    },
+    {
+     "name": "Romanian Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 50059,
+     "share": 1.84,
+     "swing": null
+    },
+    {
+     "name": "Peasant Workers' Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 31505,
+     "share": 1.16,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28157,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "Legion of the Archangel Michael",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10761,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Traders Council",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 154,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2884,
+     "share": 0.11,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion I. C. Brătianu",
+    "party": "PNL"
+   },
+   "pmAfter": {
+    "name": "Ion I. C. Brătianu",
+    "party": "PNL"
+   },
+   "knownAs": null,
+   "summary": "National Liberal Party finished first with 318 of 387 seats on 62.7% of the vote. Turnout 77.0%. Ion I. C. Brătianu stayed in office.",
+   "seatLeader": "National Liberal Party",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "legislative",
+   "date": "12–19 December 1928",
+   "era": "greater_romania",
+   "totalSeats": 387,
+   "majoritySeats": null,
+   "turnout": 77.37,
+   "parties": [
+    {
+     "name": "National Peasants' Party",
+     "leader": null,
+     "seats": 348,
+     "seatChange": null,
+     "votes": 2208922,
+     "share": 79.25,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 185939,
+     "share": 6.67,
+     "swing": null
+    },
+    {
+     "name": "Magyar Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 172699,
+     "share": 6.2,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Party–Lupu",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 70506,
+     "share": 2.53,
+     "swing": null
+    },
+    {
+     "name": "National Party–People's Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 70490,
+     "share": 2.53,
+     "swing": null
+    },
+    {
+     "name": "Peasant Workers' Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38351,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "National-Christian Defense League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32273,
+     "share": 1.16,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party dissidents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6473,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Merchant Council Group (Olt)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 877,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Independent groups",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 900,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Iuliu Maniu",
+    "party": "PNȚ"
+   },
+   "pmAfter": {
+    "name": "Iuliu Maniu",
+    "party": "PNȚ"
+   },
+   "knownAs": null,
+   "summary": "National Peasants' Party finished first with 348 of 387 seats on 79.2% of the vote. Turnout 77.4%. Iuliu Maniu stayed in office.",
+   "seatLeader": "National Peasants' Party",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "1–8 June 1931",
+   "era": "greater_romania",
+   "totalSeats": 387,
+   "majoritySeats": null,
+   "turnout": 72.48,
+   "parties": [
+    {
+     "name": "National Union",
+     "leader": null,
+     "seats": 289,
+     "seatChange": null,
+     "votes": 1389901,
+     "share": 48.86,
+     "swing": null
+    },
+    {
+     "name": "National Peasants' Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": -296,
+     "votes": 438747,
+     "share": 15.42,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party–Brătianu",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 173586,
+     "share": 6.1,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 141141,
+     "share": 4.96,
+     "swing": null
+    },
+    {
+     "name": "Magyar Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -6,
+     "votes": 139003,
+     "share": 4.89,
+     "swing": null
+    },
+    {
+     "name": "National-Christian Defense League",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 8,
+     "votes": 113863,
+     "share": 4.0,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Party–Lupu",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 2,
+     "votes": 100682,
+     "share": 3.54,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -3,
+     "votes": 94957,
+     "share": 3.34,
+     "swing": null
+    },
+    {
+     "name": "League Against Usury–PȚD-Stere",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 80570,
+     "share": 2.83,
+     "swing": null
+    },
+    {
+     "name": "Peasant Workers' Bloc",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5,
+     "votes": 73716,
+     "share": 2.59,
+     "swing": null
+    },
+    {
+     "name": "Jewish Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 64193,
+     "share": 2.26,
+     "swing": null
+    },
+    {
+     "name": "Legion of the Archangel Michael",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30783,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3412,
+     "share": 0.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nicolae Iorga",
+    "party": "PND"
+   },
+   "pmAfter": {
+    "name": "Nicolae Iorga",
+    "party": "PND"
+   },
+   "knownAs": null,
+   "summary": "National Union finished first with 289 of 387 seats on 48.9% of the vote. Turnout 72.5%. Nicolae Iorga stayed in office.",
+   "seatLeader": "National Union",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "kind": "legislative",
+   "date": "17–26 July 1932",
+   "era": "greater_romania",
+   "totalSeats": 387,
+   "majoritySeats": null,
+   "turnout": 70.77,
+   "parties": [
+    {
+     "name": "National Peasants' Party–German Party",
+     "leader": null,
+     "seats": 274,
+     "seatChange": 244,
+     "votes": 1203700,
+     "share": 41.52,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 407023,
+     "share": 14.04,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party–Brătianu",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2,
+     "votes": 195048,
+     "share": 6.73,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Party–Lupu",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 5,
+     "votes": 170860,
+     "share": 5.89,
+     "swing": null
+    },
+    {
+     "name": "National-Christian Defense League",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 3,
+     "votes": 159071,
+     "share": 5.49,
+     "swing": null
+    },
+    {
+     "name": "Magyar Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 4,
+     "votes": 141894,
+     "share": 4.89,
+     "swing": null
+    },
+    {
+     "name": "National Agrarian Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 108857,
+     "share": 3.75,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1,
+     "votes": 101068,
+     "share": 3.49,
+     "swing": null
+    },
+    {
+     "name": "Codreanu Group",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 70674,
+     "share": 2.44,
+     "swing": null
+    },
+    {
+     "name": "National Union",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 68116,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "Jewish Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1,
+     "votes": 67582,
+     "share": 2.33,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -6,
+     "votes": 64525,
+     "share": 2.23,
+     "swing": null
+    },
+    {
+     "name": "Traders Council",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 45851,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Democratic Peasants' Party–Stere",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 41454,
+     "share": 1.43,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18643,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14831,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Peasant Workers' Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 9441,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Civic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1503,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9178,
+     "share": 0.32,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexandru Vaida-Voevod",
+    "party": "PNȚ"
+   },
+   "pmAfter": {
+    "name": "Alexandru Vaida-Voevod",
+    "party": "PNȚ"
+   },
+   "knownAs": null,
+   "summary": "National Peasants' Party–German Party finished first with 274 of 387 seats on 41.5% of the vote. Turnout 70.8%. Alexandru Vaida-Voevod stayed in office.",
+   "seatLeader": "National Peasants' Party–German Party",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "legislative",
+   "date": "20–29 December 1933",
+   "era": "greater_romania",
+   "totalSeats": 387,
+   "majoritySeats": null,
+   "turnout": 68.0,
+   "parties": [
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 300,
+     "seatChange": 272,
+     "votes": 1518864,
+     "share": 52.02,
+     "swing": null
+    },
+    {
+     "name": "National Peasants' Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -236,
+     "votes": 414685,
+     "share": 14.2,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Party–Lupu",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -1,
+     "votes": 152167,
+     "share": 5.21,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party–Brătianu",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -4,
+     "votes": 147665,
+     "share": 5.06,
+     "swing": null
+    },
+    {
+     "name": "National-Christian Defense League",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -2,
+     "votes": 133205,
+     "share": 4.56,
+     "swing": null
+    },
+    {
+     "name": "National Agrarian Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1,
+     "votes": 121748,
+     "share": 4.17,
+     "swing": null
+    },
+    {
+     "name": "Magyar Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -6,
+     "votes": 119562,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Radical Peasants' Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 82930,
+     "share": 2.84,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Union Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 3,
+     "votes": 73208,
+     "share": 2.51,
+     "swing": null
+    },
+    {
+     "name": "People's Party–Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 47114,
+     "share": 1.61,
+     "swing": null
+    },
+    {
+     "name": "Jewish Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 38565,
+     "share": 1.32,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -7,
+     "votes": 37672,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "Citizen Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13560,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Ploughmen's Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7970,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Labour League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3515,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "United Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1644,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Labour Party and Traders' Council",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1328,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4391,
+     "share": 0.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion Duca",
+    "party": "PNL"
+   },
+   "pmAfter": {
+    "name": "Gheorghe Tătărescu",
+    "party": "PNL"
+   },
+   "knownAs": null,
+   "summary": "National Liberal Party finished first with 300 of 387 seats on 52.0% of the vote. Turnout 68.0%. Gheorghe Tătărescu replaced Ion Duca.",
+   "seatLeader": "National Liberal Party",
+   "caveat": "Governments were organised by whoever held the interior ministry at the time; the 1922 article's own account describes army officers campaigning inside polling stations for the ruling party.",
+   "unfree": null
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "kind": "legislative",
+   "date": "20 December 1937",
+   "era": "greater_romania",
+   "totalSeats": 387,
+   "majoritySeats": null,
+   "turnout": 66.07,
+   "parties": [
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 152,
+     "seatChange": -148,
+     "votes": 1103353,
+     "share": 36.46,
+     "swing": null
+    },
+    {
+     "name": "National Peasants' Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 57,
+     "votes": 626612,
+     "share": 20.71,
+     "swing": null
+    },
+    {
+     "name": "Everything for the Country Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": 478378,
+     "share": 15.81,
+     "swing": null
+    },
+    {
+     "name": "National Christian Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 21,
+     "votes": 281167,
+     "share": 9.29,
+     "swing": null
+    },
+    {
+     "name": "Magyar Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 11,
+     "votes": 136139,
+     "share": 4.5,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party–Brătianu",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 6,
+     "votes": 119361,
+     "share": 3.94,
+     "swing": null
+    },
+    {
+     "name": "Radical Peasants' Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3,
+     "votes": 69198,
+     "share": 2.29,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Union Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 52101,
+     "share": 1.72,
+     "swing": null
+    },
+    {
+     "name": "Jewish Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 43681,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "German Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 43612,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28840,
+     "share": 0.95,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25567,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Traders Council",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1219,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16912,
+     "share": 0.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gheorghe Tătărescu",
+    "party": "PNL"
+   },
+   "pmAfter": {
+    "name": "Octavian Goga",
+    "party": "PNC"
+   },
+   "knownAs": null,
+   "summary": "National Liberal Party finished first with 152 of 387 seats on 36.5% of the vote. Turnout 66.1%. Octavian Goga replaced Gheorghe Tătărescu.",
+   "seatLeader": "National Liberal Party",
+   "caveat": "No party reached the 40% threshold for the automatic majority bonus, and King Carol II handed the government to the fourth-placed, antisemitic National Christian Party rather than to the plurality winner.",
+   "unfree": null
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "legislative",
+   "date": "1–2 June 1939",
+   "era": "dictatorship",
+   "totalSeats": 258,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Renaissance Front",
+     "leader": null,
+     "seats": 258,
+     "seatChange": null,
+     "votes": 1587514,
+     "share": 100.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Armand Călinescu",
+    "party": "FRN"
+   },
+   "pmAfter": {
+    "name": "Armand Călinescu",
+    "party": "FRN"
+   },
+   "knownAs": null,
+   "summary": "National Renaissance Front finished first with 258 of 258 seats on 100.0% of the vote. Armand Călinescu stayed in office.",
+   "seatLeader": "National Renaissance Front",
+   "caveat": "Opposition parties were banned and the National Renaissance Front was the only name on the ballot.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "19 November 1946",
+   "era": "falsified",
+   "totalSeats": 414,
+   "majoritySeats": 208,
+   "turnout": 88.99,
+   "parties": [
+    {
+     "name": "Romanian Social Democratic Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": 4773689,
+     "share": 69.77,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party–Tătărescu",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ploughmen's Front",
+     "leader": null,
+     "seats": 70,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanian Communist Party",
+     "leader": null,
+     "seats": 68,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Popular Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Peasants' Party–Alexandrescu",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jewish Democratic Committee",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Peasants' Party–Maniu",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 881304,
+     "share": 12.88,
+     "swing": null
+    },
+    {
+     "name": "Hungarian People's Union",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 568862,
+     "share": 8.31,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 259068,
+     "share": 3.79,
+     "swing": null
+    },
+    {
+     "name": "Democratic Peasants' Party–Lupu",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 161314,
+     "share": 2.36,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 65528,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 132162,
+     "share": 1.93,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Petru Groza",
+    "party": "Ploughmen's Front"
+   },
+   "pmAfter": {
+    "name": "Petru Groza",
+    "party": "Ploughmen's Front"
+   },
+   "knownAs": null,
+   "summary": "Romanian Social Democratic Party finished first with 81 of 414 seats on 69.8% of the vote. Turnout 89.0%. Petru Groza stayed in office.",
+   "seatLeader": "Romanian Social Democratic Party",
+   "caveat": "Historians describe the count itself as fraudulent, not merely tilted; the declared 69.8% for the governing bloc is widely disputed by contemporaries and later researchers alike.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "28 March 1948",
+   "era": "communist",
+   "totalSeats": 414,
+   "majoritySeats": 208,
+   "turnout": 91.21,
+   "parties": [
+    {
+     "name": "Romanian Workers Party",
+     "leader": null,
+     "seats": 190,
+     "seatChange": null,
+     "votes": 6959936,
+     "share": 93.19,
+     "swing": null
+    },
+    {
+     "name": "Ploughmen's Front",
+     "leader": null,
+     "seats": 126,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Popular Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hungarian People's Union",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PMR affiliates",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jewish Democratic Committee",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party–Bejan",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 212438,
+     "share": 2.84,
+     "swing": null
+    },
+    {
+     "name": "Democratic Peasants' Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 50532,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 245635,
+     "share": 3.29,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Petru Groza",
+    "party": "FP"
+   },
+   "pmAfter": {
+    "name": "Petru Groza",
+    "party": "FP"
+   },
+   "knownAs": null,
+   "summary": "Romanian Workers Party finished first with 190 of 414 seats on 93.2% of the vote. Turnout 91.2%. Petru Groza stayed in office.",
+   "seatLeader": "Romanian Workers Party",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "legislative",
+   "date": "30 November 1952",
+   "era": "communist",
+   "totalSeats": 428,
+   "majoritySeats": null,
+   "turnout": 97.91,
+   "parties": [
+    {
+     "name": "Romanian Workers Party",
+     "leader": null,
+     "seats": 428,
+     "seatChange": null,
+     "votes": 10187833,
+     "share": 100.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gheorghe",
+    "party": "Gheorghiu-Dej"
+   },
+   "pmAfter": {
+    "name": "Gheorghe",
+    "party": "Gheorghiu-Dej"
+   },
+   "knownAs": null,
+   "summary": "Romanian Workers Party finished first with 428 of 428 seats on 100.0% of the vote. Turnout 97.9%. Gheorghe stayed in office.",
+   "seatLeader": "Romanian Workers Party",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "3 February 1957",
+   "era": "communist",
+   "totalSeats": 437,
+   "majoritySeats": null,
+   "turnout": 99.15,
+   "parties": [
+    {
+     "name": "People's Democratic Front",
+     "leader": null,
+     "seats": 437,
+     "seatChange": null,
+     "votes": 11424521,
+     "share": 99.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Chivu Stoica",
+    "party": "PMR"
+   },
+   "pmAfter": {
+    "name": "Chivu Stoica",
+    "party": "PMR"
+   },
+   "knownAs": null,
+   "summary": "People's Democratic Front finished first with 437 of 437 seats on 99.0% of the vote. Turnout 99.2%. Chivu Stoica stayed in office.",
+   "seatLeader": "People's Democratic Front",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "5 March 1961",
+   "era": "communist",
+   "totalSeats": 465,
+   "majoritySeats": null,
+   "turnout": 99.78,
+   "parties": [
+    {
+     "name": "People's Democratic Front",
+     "leader": null,
+     "seats": 465,
+     "seatChange": null,
+     "votes": 12388787,
+     "share": 99.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Chivu Stoica",
+    "party": "PMR"
+   },
+   "pmAfter": {
+    "name": "Ion Gheorghe Maurer",
+    "party": "PMR"
+   },
+   "knownAs": null,
+   "summary": "People's Democratic Front finished first with 465 of 465 seats on 99.8% of the vote. Turnout 99.8%. Ion Gheorghe Maurer replaced Chivu Stoica.",
+   "seatLeader": "People's Democratic Front",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "7 March 1965",
+   "era": "communist",
+   "totalSeats": 465,
+   "majoritySeats": null,
+   "turnout": 99.96,
+   "parties": [
+    {
+     "name": "People's Democratic Front",
+     "leader": null,
+     "seats": 465,
+     "seatChange": null,
+     "votes": 12834862,
+     "share": 99.87,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion Gheorghe Maurer",
+    "party": "PMR"
+   },
+   "pmAfter": {
+    "name": "Ion Gheorghe Maurer",
+    "party": "PMR"
+   },
+   "knownAs": null,
+   "summary": "People's Democratic Front finished first with 465 of 465 seats on 99.9% of the vote. Turnout 100.0%. Ion Gheorghe Maurer stayed in office.",
+   "seatLeader": "People's Democratic Front",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "2 March 1969",
+   "era": "communist",
+   "totalSeats": 465,
+   "majoritySeats": null,
+   "turnout": 99.96,
+   "parties": [
+    {
+     "name": "Front of Socialist Unity",
+     "leader": null,
+     "seats": 465,
+     "seatChange": null,
+     "votes": 13543499,
+     "share": 99.77,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion Gheorghe Maurer",
+    "party": "PCR"
+   },
+   "pmAfter": {
+    "name": "Ion Gheorghe Maurer",
+    "party": "PCR"
+   },
+   "knownAs": null,
+   "summary": "Front of Socialist Unity finished first with 465 of 465 seats on 99.8% of the vote. Turnout 100.0%. Ion Gheorghe Maurer stayed in office.",
+   "seatLeader": "Front of Socialist Unity",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "kind": "legislative",
+   "date": "9 March 1975",
+   "era": "communist",
+   "totalSeats": 349,
+   "majoritySeats": null,
+   "turnout": 99.96,
+   "parties": [
+    {
+     "name": "Front of Socialist Unity",
+     "leader": null,
+     "seats": 349,
+     "seatChange": null,
+     "votes": 14715539,
+     "share": 98.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manea Mănescu",
+    "party": "PCR"
+   },
+   "pmAfter": {
+    "name": "Manea Mănescu",
+    "party": "PCR"
+   },
+   "knownAs": null,
+   "summary": "Front of Socialist Unity finished first with 349 of 349 seats on 98.8% of the vote. Turnout 100.0%. Manea Mănescu stayed in office.",
+   "seatLeader": "Front of Socialist Unity",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "legislative",
+   "date": "9 March 1980",
+   "era": "communist",
+   "totalSeats": 369,
+   "majoritySeats": null,
+   "turnout": 99.99,
+   "parties": [
+    {
+     "name": "Front of Socialist Unity and Democracy",
+     "leader": null,
+     "seats": 369,
+     "seatChange": null,
+     "votes": 15398443,
+     "share": 98.52,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ilie Verdeț",
+    "party": "PCR"
+   },
+   "pmAfter": {
+    "name": "Ilie Verdeț",
+    "party": "PCR"
+   },
+   "knownAs": null,
+   "summary": "Front of Socialist Unity and Democracy finished first with 369 of 369 seats on 98.5% of the vote. Turnout 100.0%. Ilie Verdeț stayed in office.",
+   "seatLeader": "Front of Socialist Unity and Democracy",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "17 March 1985",
+   "era": "communist",
+   "totalSeats": 369,
+   "majoritySeats": null,
+   "turnout": 99.99,
+   "parties": [
+    {
+     "name": "Front of Socialist Unity and Democracy",
+     "leader": null,
+     "seats": 369,
+     "seatChange": null,
+     "votes": 15375522,
+     "share": 97.73,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Constantin Dăscălescu",
+    "party": "PCR"
+   },
+   "pmAfter": {
+    "name": "Constantin Dăscălescu",
+    "party": "PCR"
+   },
+   "knownAs": null,
+   "summary": "Front of Socialist Unity and Democracy finished first with 369 of 369 seats on 97.7% of the vote. Turnout 100.0%. Constantin Dăscălescu stayed in office.",
+   "seatLeader": "Front of Socialist Unity and Democracy",
+   "caveat": "A single approved list, with no rival candidate, stood at every election; the result was never in doubt.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "20 May 1990 to elect the President and members of Parliament",
+   "era": "republic",
+   "totalSeats": 396,
+   "majoritySeats": null,
+   "turnout": 86.2,
+   "parties": [
+    {
+     "name": "National Salvation Front",
+     "leader": null,
+     "seats": 263,
+     "seatChange": null,
+     "votes": 9089659,
+     "share": 66.31,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 991601,
+     "share": 7.23,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 879290,
+     "share": 6.41,
+     "swing": null
+    },
+    {
+     "name": "Ecological Movement of Romania",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 358864,
+     "share": 2.62,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic National Peasants' Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 351357,
+     "share": 2.56,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Romanian Unity",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 290875,
+     "share": 2.12,
+     "swing": null
+    },
+    {
+     "name": "Democratic Agrarian Party of Romania",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 250403,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Party of Romania",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 232212,
+     "share": 1.69,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 143393,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Romanian Social Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 73014,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group of the Centre",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 65914,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of Labour",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 52595,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Party of Free Change",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 47017,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "National Reconstruction Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 43808,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Party of Young Free Democrats",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 43188,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 38768,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Liberal Union–Brătianu",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 36869,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of the Roma of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 29162,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Democratic Environmentalist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26058,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Cooperatist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24749,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24001,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Party of the Roma Woodworkers and Fiddlers in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21847,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Romanian Peasant Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21588,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party of Freedom of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20744,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 17974,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Party Christian Orthodox Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17521,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17484,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Party of the Gypsies of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16865,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Party of Democratic Unity from Moldova",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16863,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Party of Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16354,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 16179,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Party of Christian Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14902,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Humanistic Ecological Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12739,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Romanian Party for the New Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12305,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Party of Labour",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10744,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of the Serbs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 9095,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Grouping of the Centre 'New Romania'",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9073,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Christian Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8939,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Turkish Muslim Democratic Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8600,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Christian Party of the Roma of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7939,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Party Alliance for Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6695,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union 'Țara Oasului'",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6215,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Romanian Social Democratic Christian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6194,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Romanian Popular Front of National Salvation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5208,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 4932,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Union of Roma in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4605,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 4584,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "National Romanian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3983,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat – Bulgarian Cultural Association from Bucharest",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3451,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Radical Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3240,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party for National and Democratic Reconstruction",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3223,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Republican Union Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2693,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independent Hungarian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2578,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Modern Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2488,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 2372,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Forum of Democracy and National Unity of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2176,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of Labour and Social Justice of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2146,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Future of the Motherland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2091,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of Social Justice (New Democracy) of the North West of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2073,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "National Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1610,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Progressive Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1495,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Association of Former Political Prisoners/Detainees and Victims of the Dictatorship in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1404,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1116,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Democratic Constitutional Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 946,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Party for the Honouring of the Heroes of the Revolution and National Salvation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 891,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of Cluj",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 425,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 399,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of the Romanian House of Democratic Europe",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 390,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Movement 'Young Democracy'",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 328,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 256656,
+     "share": 1.87,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion Iliescu (provisional)",
+    "party": "FSN"
+   },
+   "pmAfter": {
+    "name": "Ion Iliescu",
+    "party": "FSN"
+   },
+   "knownAs": null,
+   "summary": "National Salvation Front finished first with 263 of 396 seats on 66.3% of the vote. Turnout 86.2%. Ion Iliescu replaced Ion Iliescu (provisional).",
+   "seatLeader": "National Salvation Front",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "27 September 1992",
+   "era": "republic",
+   "totalSeats": 341,
+   "majoritySeats": null,
+   "turnout": 76.29,
+   "parties": [
+    {
+     "name": "Democratic National Salvation Front",
+     "leader": null,
+     "seats": 117,
+     "seatChange": null,
+     "votes": 3003573,
+     "share": 27.75,
+     "swing": null
+    },
+    {
+     "name": "Romanian Democratic Convention",
+     "leader": null,
+     "seats": 82,
+     "seatChange": 60,
+     "votes": 2170289,
+     "share": 20.05,
+     "swing": null
+    },
+    {
+     "name": "National Salvation Front",
+     "leader": null,
+     "seats": 43,
+     "seatChange": -220,
+     "votes": 1101425,
+     "share": 10.17,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Unity Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 21,
+     "votes": 836547,
+     "share": 7.73,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -2,
+     "votes": 809653,
+     "share": 7.48,
+     "swing": null
+    },
+    {
+     "name": "Greater Romania Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 422136,
+     "share": 3.9,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Labour",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 328283,
+     "share": 3.03,
+     "swing": null
+    },
+    {
+     "name": "Democratic Agrarian Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -9,
+     "votes": 322990,
+     "share": 2.98,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -29,
+     "votes": 284678,
+     "share": 2.63,
+     "swing": null
+    },
+    {
+     "name": "Ecological Movement of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -8,
+     "votes": 243740,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 177056,
+     "share": 1.64,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -5,
+     "votes": 94154,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "National-Democratic Solidarity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 78615,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "New Liberal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 63098,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Liberal Union–Brătianu",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 54673,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 52170,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Party of Social-Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 50114,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48031,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Liberal Monarchist Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38542,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Convention of Social Solidarity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35286,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 34471,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Democratic Cooperatist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32446,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Union of the Roma of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 31060,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "National Party of Free Producers from Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29688,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Party for the Honouring of the Heroes of the Revolution and National Salvation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25781,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Republican Party of Romanians Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23447,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Romanian Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22908,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Traditional Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21800,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "General Union of Roma in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21734,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Christian Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18633,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Romanian Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16439,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 14861,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Independent National Peasant Christian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14828,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Democratic Romanian Front 16–20.XII.1989 Timișoara",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14779,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Romanian Renaissance and Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13573,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Free Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13353,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Movement for Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12708,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Party of Free Change",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 12360,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11497,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Christian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11472,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Party of the Gypsies of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9679,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8913,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Convention",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8863,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Turkish-Muslim Tatars",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7688,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7641,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party \"Constantin Titel Petrescu",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7171,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7044,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "National League of Expropriated of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6886,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Alliance of National Dignity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6064,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Party of the National Right",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5622,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5605,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Serbs and Carasovenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5306,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Romanian Party for the New Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5250,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Independent Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5140,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4662,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Antitotalitarian Party 'Down with the Nomenklatura'",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4623,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Party Democratic Future of the Motherland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4322,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Italian Community of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 4111,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of Labour",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 3888,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Forum of Democracy and National Unity of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3180,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Party of Social Justice (New Democracy) of the North West of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3063,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 2987,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Party 'Will of the People'",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2704,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of Justice and Social Democracy of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2687,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of Labour",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2623,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Turkish Muslim Democratic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 2569,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2525,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Union of Moldova",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2358,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "National Romanian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2201,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 1886,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "National Movement 'Motherland's Shield' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1738,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Movement for European Integration",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1367,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Humanitarian Party of Peace",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1173,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Romanian Popular Democratic Realistic Revolutionary Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1126,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party of the Revolution",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1075,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Party of Small Owners and Free Initiative of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 651,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 217,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Conservative Humanistic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 101,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "'Republican Tribune' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 57855,
+     "share": 0.53,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion Iliescu",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Ion Iliescu",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Democratic National Salvation Front finished first with 117 of 341 seats on 27.8% of the vote. Turnout 76.3%. Ion Iliescu stayed in office.",
+   "seatLeader": "Democratic National Salvation Front",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "3 November 1996",
+   "era": "republic",
+   "totalSeats": 343,
+   "majoritySeats": null,
+   "turnout": 76.01,
+   "parties": [
+    {
+     "name": "Romanian Democratic Convention",
+     "leader": null,
+     "seats": 122,
+     "seatChange": 40,
+     "votes": 3692321,
+     "share": 30.17,
+     "swing": null
+    },
+    {
+     "name": "Party of Social Democracy in Romania",
+     "leader": null,
+     "seats": 91,
+     "seatChange": -26,
+     "votes": 2633860,
+     "share": 21.52,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Union (PSDR–PD)",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 10,
+     "votes": 1582231,
+     "share": 12.93,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -2,
+     "votes": 812628,
+     "share": 6.64,
+     "swing": null
+    },
+    {
+     "name": "Greater Romania Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 3,
+     "votes": 546430,
+     "share": 4.46,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Unity Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -12,
+     "votes": 533348,
+     "share": 4.36,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 280364,
+     "share": 2.29,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Labour",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -13,
+     "votes": 262563,
+     "share": 2.15,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Party of Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 212303,
+     "share": 1.73,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 192495,
+     "share": 1.57,
+     "swing": null
+    },
+    {
+     "name": "Party of Pensioners of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 175676,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "National Union of the Centre (PDAR–MER–PUR)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 106069,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 102831,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Ecologist Alliance (PNL–C–PAV-E)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 96412,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 82195,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "Roma Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 71020,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Christian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 69380,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "National Party of the Motorists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 56387,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Romanian Working Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 50011,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "New Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33672,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Free Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 29576,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Ecological Convention Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27544,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Party of Reunification–Dacian-Latin Option",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25620,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 23888,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Party of Former Non-Communists and Political Prisoners",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21060,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19693,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Party for the Motherland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17841,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 17190,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Party of Social Protection of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16762,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Free Democratic Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14333,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Jewish Communities in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 12746,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Party of Private Entrepreneurs–Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11990,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 11902,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 11543,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Italian Community of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 11454,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Liberal Christian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10345,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Association of Italians of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9833,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9103,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Albanians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8722,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8463,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Party of the Revival of Romania 'Ion Mihalache'",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7751,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Party of the Romanian Revolution",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7340,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7165,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Serbs and Carasovenians in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6851,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6531,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Turkish-Muslim Tatars",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6319,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Bratstvo Community of Bulgarians in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5359,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Community of the Roma Ethnicity in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5227,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Turkish Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4326,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Ukrainians in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4132,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 4115,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Forum of the Szeklers Youth",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2142,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 1842,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Federation of Italians in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1711,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania–Prahova Hellenic Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1509,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Party of Democratic Solidarity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1352,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Community of Italians from Galați",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 791,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Community of Italians from Pitești",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 695,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "General Union of the Associations of the Huțul Ethnicity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 646,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Union of the Roma, Constanța County",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 640,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 486,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Social Cultural Association in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 439,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Italian Community – Prahova County",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 437,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Federation of Italians in Romania – Italian Community Ovidius Constanța",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 311,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 248825,
+     "share": 2.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion Iliescu",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Emil Constantinescu",
+    "party": "CDR"
+   },
+   "knownAs": null,
+   "summary": "Romanian Democratic Convention finished first with 122 of 343 seats on 30.2% of the vote. Turnout 76.0%. Emil Constantinescu replaced Ion Iliescu.",
+   "seatLeader": "Romanian Democratic Convention",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "legislative",
+   "date": "26 November 2000",
+   "era": "republic",
+   "totalSeats": 345,
+   "majoritySeats": null,
+   "turnout": 65.31,
+   "parties": [
+    {
+     "name": "Social Democratic Pole of Romania",
+     "leader": null,
+     "seats": 155,
+     "seatChange": 64,
+     "votes": 3968464,
+     "share": 36.61,
+     "swing": null
+    },
+    {
+     "name": "Greater Romania Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": 65,
+     "votes": 2112027,
+     "share": 19.48,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 762365,
+     "share": 7.03,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 747263,
+     "share": 6.89,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 2,
+     "votes": 736863,
+     "share": 6.8,
+     "swing": null
+    },
+    {
+     "name": "Romanian Democratic Convention",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -122,
+     "votes": 546135,
+     "share": 5.04,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 441228,
+     "share": 4.07,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party–Câmpeanu",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 151518,
+     "share": 1.4,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -18,
+     "votes": 149525,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 101256,
+     "share": 0.93,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Labour",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 91027,
+     "share": 0.84,
+     "swing": null
+    },
+    {
+     "name": "Party of Pensioners of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 76704,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 71786,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Romanian Working Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 68718,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Romanian Liberal Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 52497,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 48435,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Party of Romanian Life",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46129,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 40844,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Christian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 33410,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Free Republican Socialist Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32811,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Party of National Reconciliation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22376,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 21302,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Italian Community of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 21263,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of Pensioners in Romania and the Diaspora",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21062,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 20085,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "New Generation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19662,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party \"Constantin Titel Petrescu\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17730,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Party for the Motherland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16991,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "League of Italian Communities in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16266,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 15007,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Party of Non-Communists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14197,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Generation 2000",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13455,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Jewish Communities in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 12629,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Christian Centre of the Roma in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12171,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11916,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 11558,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 11084,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10840,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "League of Albanians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 10543,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Turkish-Muslim Tatars",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10380,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9404,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Association of Macedonians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8809,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Union of Serbs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8748,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Cultural Association of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8092,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Albanians of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 7798,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Ruthenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 6942,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Turkish Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6675,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Bratstvo Community of Bulgarians in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 5923,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Ukrainians in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5843,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5686,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5055,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Turkish Community of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3953,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Liberal Union–Brătianu",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3760,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Free Democrat Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3510,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Popular Union for Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3506,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3316,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Community Iasi",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2072,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Croats in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2059,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Prahova Hellenic Community",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1992,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Party of the Romanian Revolution",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1623,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania 'Dom Polski'",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1619,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Union of the Czechs of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1539,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Democratic League of the Croats in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1329,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "General Union of the Hutul Ethnicity in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1225,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "International League of the Romanians–Bucharest",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 516,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Union of Pavlicheni Bulgarians in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 497,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union ELPIS Constanta",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 449,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of Private Entrepreneurs–Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 401,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 137561,
+     "share": 1.27,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Emil Constantinescu",
+    "party": "CDR"
+   },
+   "pmAfter": {
+    "name": "Ion Iliescu",
+    "party": "PDSR"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Pole of Romania finished first with 155 of 345 seats on 36.6% of the vote. Turnout 65.3%. Ion Iliescu replaced Emil Constantinescu.",
+   "seatLeader": "Social Democratic Pole of Romania",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "legislative",
+   "date": "28 November 2004 (first round) 12 December 2004 (second round)",
+   "era": "republic",
+   "totalSeats": 332,
+   "majoritySeats": null,
+   "turnout": 58.49,
+   "parties": [
+    {
+     "name": "National Union PSD+PUR",
+     "leader": null,
+     "seats": 132,
+     "seatChange": -23,
+     "votes": 3730352,
+     "share": 36.61,
+     "swing": null
+    },
+    {
+     "name": "Justice and Truth Alliance",
+     "leader": null,
+     "seats": 112,
+     "seatChange": 51,
+     "votes": 3191546,
+     "share": 31.33,
+     "swing": null
+    },
+    {
+     "name": "Greater Romania Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -36,
+     "votes": 1316751,
+     "share": 12.92,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -5,
+     "votes": 628125,
+     "share": 6.17,
+     "swing": null
+    },
+    {
+     "name": "New Generation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 227443,
+     "share": 2.23,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic National Peasants' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 188268,
+     "share": 1.85,
+     "swing": null
+    },
+    {
+     "name": "Democratic Force",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 79376,
+     "share": 0.78,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 73001,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Roma Party of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 56076,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 53222,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "People's Action",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48152,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "United Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 44459,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 36166,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Romanian Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35278,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Union for Romanian Reconstruction",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32749,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Socialist Alliance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28429,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28034,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Christian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27650,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "New Democracy Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20926,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party \"Constantin Titel Petrescu\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20318,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "People's Alliance of Christian Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18594,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Democratic Youth Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16271,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 15283,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Third Millennium Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15109,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Alliance for a United Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15041,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Party for the Motherland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14882,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10888,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10562,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10331,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9810,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Association of Macedonians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9750,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Cultural Association of Slavonic Macedonians of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9595,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Jewish Communities in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8449,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Croatians of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7769,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Turkish Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7715,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Ethnic Turks Association",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7396,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7161,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Union of Serbs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6643,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Turco-Muslim Union of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6517,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Turkish-Muslim Tatars",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6452,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Association of Slavonic Macedonians of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6344,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Cultural Association of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6240,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Association of Italians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 6168,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5950,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5473,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Italian Community of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 5181,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Poles of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5159,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "League of Albanians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5011,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Bratstvo Community of Bulgarians in Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4065,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Ruthenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 2871,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "People's Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2336,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Force of Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1123,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 51646,
+     "share": 0.51,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ion Iliescu",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Traian Băsescu",
+    "party": "PD"
+   },
+   "knownAs": null,
+   "summary": "National Union PSD+PUR finished first with 132 of 332 seats on 36.6% of the vote. Turnout 58.5%. Traian Băsescu replaced Ion Iliescu.",
+   "seatLeader": "National Union PSD+PUR",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "kind": "legislative",
+   "date": "30 November 2008",
+   "era": "republic",
+   "totalSeats": 334,
+   "majoritySeats": null,
+   "turnout": 39.2,
+   "parties": [
+    {
+     "name": "Alliance PSD+PC",
+     "leader": null,
+     "seats": 114,
+     "seatChange": -18,
+     "votes": 2279449,
+     "share": 33.1,
+     "swing": null
+    },
+    {
+     "name": "Democratic Liberal Party",
+     "leader": null,
+     "seats": 115,
+     "seatChange": 67,
+     "votes": 2228860,
+     "share": 32.36,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 1,
+     "votes": 1279063,
+     "share": 18.57,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 0,
+     "votes": 425008,
+     "share": 6.17,
+     "swing": null
+    },
+    {
+     "name": "Greater Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -48,
+     "votes": 217595,
+     "share": 3.16,
+     "swing": null
+    },
+    {
+     "name": "New Generation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 156901,
+     "share": 2.28,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma \"Pro Europe\"",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 44037,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 23190,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Jewish Communities in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 22393,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Green Ecologist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18279,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 15373,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 14039,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 13829,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Turkish-Muslim Tatars",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 11868,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Association of Macedonians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 11814,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Union of Serbs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10878,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Association of Italians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9567,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Democratic Turkish Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9481,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9338,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9203,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9047,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8875,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "League of Albanians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8792,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Social Protection People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8388,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7670,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Ruthenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4514,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 585,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Christian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 316,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of the European Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 87,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28355,
+     "share": 0.41,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Călin Popescu-Tăriceanu",
+    "party": "PNL"
+   },
+   "pmAfter": {
+    "name": "Emil Boc",
+    "party": "PDL"
+   },
+   "knownAs": null,
+   "summary": "Democratic Liberal Party finished first with 115 of 334 seats on 32.4% of the vote. Turnout 39.2%. Emil Boc replaced Călin Popescu-Tăriceanu.",
+   "seatLeader": "Democratic Liberal Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "legislative",
+   "date": "9 December 2012",
+   "era": "republic",
+   "totalSeats": 412,
+   "majoritySeats": null,
+   "turnout": 41.76,
+   "parties": [
+    {
+     "name": "Social Liberal Union",
+     "leader": null,
+     "seats": 273,
+     "seatChange": 94,
+     "votes": 4344288,
+     "share": 58.63,
+     "swing": null
+    },
+    {
+     "name": "Right Romania Alliance",
+     "leader": null,
+     "seats": 56,
+     "seatChange": -59,
+     "votes": 1223189,
+     "share": 16.51,
+     "swing": null
+    },
+    {
+     "name": "People's Party – Dan Diaconescu",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": 1036730,
+     "share": 13.99,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -4,
+     "votes": 380656,
+     "share": 5.14,
+     "swing": null
+    },
+    {
+     "name": "Greater Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 92382,
+     "share": 1.25,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 58178,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "Hungarian People's Party of Transylvania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 47955,
+     "share": 0.65,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 39175,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 22124,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Association of Macedonians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 12212,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10761,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10155,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Jewish Communities in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10019,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "League of Albanians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10010,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9863,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9319,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Turkish-Muslim Tatars",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9291,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8677,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8328,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Union of Serbs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8207,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8023,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Association of Italians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7943,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7353,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Democratic Turkish Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7324,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6281,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Ruthenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5265,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Socialist Alliance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2331,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Social Protection People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 929,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Workers' Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 231,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Christian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 38,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12389,
+     "share": 0.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Victor Ponta",
+    "party": "USL (PSD)"
+   },
+   "pmAfter": {
+    "name": "Victor Ponta",
+    "party": "USL (PSD)"
+   },
+   "knownAs": null,
+   "summary": "Social Liberal Union finished first with 273 of 412 seats on 58.6% of the vote. Turnout 41.8%. Victor Ponta stayed in office.",
+   "seatLeader": "Social Liberal Union",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "11 December 2016",
+   "era": "republic",
+   "totalSeats": 329,
+   "majoritySeats": null,
+   "turnout": 39.46,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 154,
+     "seatChange": 4,
+     "votes": 3204864,
+     "share": 45.48,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 69,
+     "seatChange": -31,
+     "votes": 1412377,
+     "share": 20.04,
+     "swing": null
+    },
+    {
+     "name": "Save Romania Union",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 625154,
+     "share": 8.87,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 3,
+     "votes": 435969,
+     "share": 6.19,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Liberals and Democrats",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 396386,
+     "share": 5.62,
+     "swing": null
+    },
+    {
+     "name": "People's Movement Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 376891,
+     "share": 5.35,
+     "swing": null
+    },
+    {
+     "name": "United Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 196397,
+     "share": 2.79,
+     "swing": null
+    },
+    {
+     "name": "Greater Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 73264,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 62414,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Our Romania Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 61206,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 24580,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 13126,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 12375,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6545,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6160,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5817,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Turkish Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5536,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Association of Macedonians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5513,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Union of Serbs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5468,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Jewish Communities in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5069,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4868,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "League of Albanians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4640,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4542,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3532,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Association of Italians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3486,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3355,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Ruthenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 2824,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Humanist Power Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2599,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "New Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1764,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 1172,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Youth Civic Action Platform",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 609,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 566,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Democratic Roma Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 523,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Unity Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 518,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Our Vrancea Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 511,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 76764,
+     "share": 1.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Dacian Cioloș",
+    "party": "Independent (technocratic)"
+   },
+   "pmAfter": {
+    "name": "Sorin Grindeanu",
+    "party": "PSD"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 154 of 329 seats on 45.5% of the vote. Turnout 39.5%. Sorin Grindeanu replaced Dacian Cioloș.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "legislative",
+   "date": "6 December 2020",
+   "era": "republic",
+   "totalSeats": 330,
+   "majoritySeats": null,
+   "turnout": 31.95,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 110,
+     "seatChange": -44,
+     "votes": 1705777,
+     "share": 28.9,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 93,
+     "seatChange": 24,
+     "votes": 1486401,
+     "share": 25.19,
+     "swing": null
+    },
+    {
+     "name": "USR PLUS",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 25,
+     "votes": 906962,
+     "share": 15.37,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Union of Romanians",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 535828,
+     "share": 9.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance of Hungarians in Romania",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 0,
+     "votes": 339030,
+     "share": 5.74,
+     "swing": null
+    },
+    {
+     "name": "People's Movement Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -18,
+     "votes": 284501,
+     "share": 4.82,
+     "swing": null
+    },
+    {
+     "name": "PRO Romania Social-Liberal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -20,
+     "votes": 241267,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 65807,
+     "share": 1.12,
+     "swing": null
+    },
+    {
+     "name": "Party of Humanist Power (social-liberal)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 59465,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "Greater Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 32654,
+     "share": 0.55,
+     "swing": null
+    },
+    {
+     "name": "National Rebirth Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21662,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20614,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Romanian Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19693,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma \"Pro Europe\"",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 14523,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "New Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14089,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "League of Albanians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9029,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7582,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Association of Macedonians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7144,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6096,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5457,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5386,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5146,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4853,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Union of Serbs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4691,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Association of Italians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4170,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3820,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Ruthenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3779,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3750,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Noua Dreaptă",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3551,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Turkish Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3539,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Jewish Communities in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3509,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 3345,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Turkish-Muslim Tatars",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 2862,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "National Peasant Party Maniu-Mihalache",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2727,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Right Alternative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2005,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1912,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Romanian Nation Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1752,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Re:Start Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 537,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Unity Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 293,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communists' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 213,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Force Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 148,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 56346,
+     "share": 0.95,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ludovic Orban",
+    "party": "PNL"
+   },
+   "pmAfter": {
+    "name": "Florin Cîțu",
+    "party": "PNL"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 110 of 330 seats on 28.9% of the vote. Turnout 31.9%. Florin Cîțu replaced Ludovic Orban.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "1 December 2024",
+   "era": "republic",
+   "totalSeats": 331,
+   "majoritySeats": null,
+   "turnout": 52.5,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": -24,
+     "votes": 2030144,
+     "share": 21.96,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Union of Romanians",
+     "leader": null,
+     "seats": 63,
+     "seatChange": 30,
+     "votes": 1665143,
+     "share": 18.01,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": -44,
+     "votes": 1219810,
+     "share": 13.2,
+     "swing": null
+    },
+    {
+     "name": "Save Romania Union",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -15,
+     "votes": 1146357,
+     "share": 12.4,
+     "swing": null
+    },
+    {
+     "name": "S.O.S. Romania",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 679967,
+     "share": 7.36,
+     "swing": null
+    },
+    {
+     "name": "Party of Young People",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 596745,
+     "share": 6.46,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Hungarians in Romania",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 1,
+     "votes": 585397,
+     "share": 6.33,
+     "swing": null
+    },
+    {
+     "name": "Health Education Nature Sustainability Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 276494,
+     "share": 2.99,
+     "swing": null
+    },
+    {
+     "name": "Force of the Right",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 189678,
+     "share": 2.05,
+     "swing": null
+    },
+    {
+     "name": "United Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 177137,
+     "share": 1.92,
+     "swing": null
+    },
+    {
+     "name": "Renewing Romania's European Project",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 114223,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "Justice and Respect in Europe for All Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 107474,
+     "share": 1.16,
+     "swing": null
+    },
+    {
+     "name": "Romanian National Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 45687,
+     "share": 0.49,
+     "swing": null
+    },
+    {
+     "name": "Patriots of the Romanian People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 40960,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Romanian Ecologist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 34641,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 33372,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Romania in Action Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28504,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "National Christian Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25789,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "New Romania Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14107,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Party of the Roma \"Pro Europa\"",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 13881,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Association of Macedonians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 13800,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Socialist Romania Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12849,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "League of Albanians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9177,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Union of the Ukrainians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8750,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Democratic Forum of Germans in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8577,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Union of Serbs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7962,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Alternative for National Dignity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7747,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Hellenic Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7565,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Community of the Lipovan Russians in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7434,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Slovaks and Czechs of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7420,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Federation of the Jewish Communities in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5281,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Bulgarian Union of Banat–Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5089,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union of Turkic-Muslim Tatars of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4908,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Union of Armenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4747,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Cultural Union of Ruthenians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4571,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Democratic Turkish Union of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4547,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Union of Croats of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4413,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Union of Poles of Romania \"Dom Polski\"",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4215,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Association of Italians of Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4128,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "National Action League Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2912,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Forum of Czechs in Romania",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 2817,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Party of Faithful People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1143,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Geto-Dacian Union Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 435,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Patria Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 391,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Republican Party of Romania",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 279,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic National Peasants' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 270,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 248,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "United Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 229,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Party of Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 184,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 76043,
+     "share": 0.82,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Marcel Ciolacu",
+    "party": "PSD"
+   },
+   "pmAfter": {
+    "name": "Marcel Ciolacu",
+    "party": "PSD"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 86 of 331 seats on 22.0% of the vote. Turnout 52.5%. Marcel Ciolacu stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

@@ -1,0 +1,5701 @@
+{
+ "meta": {
+  "title": "Finnish Elections",
+  "sources": [
+   "Wikipedia: Finnish parliamentary election articles 1907-2023 (results tables and infoboxes)"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "presEras": [
+  {
+   "key": "direct",
+   "label": "The direct presidency",
+   "span": "1994-",
+   "blurb": "Finland has elected its president directly since 1994; before that an electoral college chose the head of state, and the office carried real foreign-policy power until the 2000 constitution trimmed it. The one contest on file is 2024, the first presidential election since Finland joined NATO, decided in the closest runoff the country has held: Alexander Stubb over Pekka Haavisto by 3.2 points. The direct elections of 1994 to 2018 and the electoral-college era join when their articles do."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "granddutchy",
+   "label": "The Grand Duchy",
+   "span": "1907-1917",
+   "blurb": "Finland's first Eduskunta election, in March 1907, was held under universal and equal suffrage for everyone over 24, a first in Europe and the first in the world to seat women as MPs; the old four-estate Diet of nobles, clergy, burghers and peasants was gone. It did the Social Democrats little lasting good: the Russian Emperor dissolved the new parliament repeatedly through the Grand Duchy's last decade of autonomy, and it barely sat at all once the First World War began."
+  },
+  {
+   "key": "young",
+   "label": "The young republic",
+   "span": "1919-1939",
+   "blurb": "Independence in 1917 was followed by civil war in 1918, and the republic's elections through the interwar years were fought over how far the new state should tilt right. The 1930 election came after the Lapua Movement's campaign to outlaw the Communist Party by force, including the kidnapping of left-wing politicians; the Communists' front organisations were banned that year and stayed off the ballot until 1945. Parliament itself was dissolved early more than once in the period, most often over budget and salary fights the government of the day could not carry."
+  },
+  {
+   "key": "warandkekkonen",
+   "label": "War and the Paasikivi-Kekkonen years",
+   "span": "1945-1979",
+   "blurb": "The 1945 election, held as Communists returned to the ballot for the first time since 1930, opened three and a half decades in which Finnish governments were built around keeping Moscow reassured, the foreign policy line named for presidents Paasikivi and Kekkonen. Kekkonen himself dissolved parliament early in 1961 during a Soviet diplomatic pressure campaign known as the Note Crisis, and coalitions across these years ran from centre-left to broad multi-party governments assembled to survive recurring recessions."
+  },
+  {
+   "key": "rainbow",
+   "label": "Recession and the Rainbow Coalition",
+   "span": "1983-2003",
+   "blurb": "The 1991 election, held deep in a recession that followed the Soviet collapse, threw out the Social Democrats for the Centre Party's Esko Aho, whose austerity government was in turn swept out in 1995 by the SDP's best result since the Second World War. What followed it was Paavo Lipponen's five-party Rainbow Coalition, Social Democrats governing alongside the National Coalition, Left Alliance, Swedish People's Party and Greens at once, a combination that carried Finland into the European Union in 1995 and held through two more elections."
+  },
+  {
+   "key": "multibloc",
+   "label": "The modern multi-bloc era",
+   "span": "2007-2023",
+   "blurb": "No single party has approached a majority since 2007, so every government here is a multi-party coalition assembled after weeks of talks, and several have broken apart mid-term. The 2023 election put the National Coalition first by a narrow margin over the Finns Party and the governing Social Democrats, and the coalition Petteri Orpo built with the Finns brought the nationalist right into government for the first time; the two elections either side of it, in 2019 and 2023, were fought against the backdrop of Russia's invasion of Ukraine and Finland's decision to join NATO."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "presidential",
+   "date": "28 January 2024 (first round) 11 February 2024 (second round)",
+   "era": "direct",
+   "turnout": 71.55,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alexander Stubb",
+     "party": "National Coalition Party",
+     "r1Votes": 882388,
+     "r1Share": 27.21,
+     "r2Votes": 1575444,
+     "r2Share": 51.62
+    },
+    {
+     "name": "Pekka Haavisto",
+     "party": "Independent (Green League)",
+     "r1Votes": 836712,
+     "r1Share": 25.8,
+     "r2Votes": 1476634,
+     "r2Share": 48.38
+    },
+    {
+     "name": "Jussi Halla-aho",
+     "party": "Finns Party",
+     "r1Votes": 615802,
+     "r1Share": 18.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olli Rehn",
+     "party": "Independent (Centre Party)",
+     "r1Votes": 496759,
+     "r1Share": 15.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Li Andersson",
+     "party": "Left Alliance",
+     "r1Votes": 158579,
+     "r1Share": 4.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jutta Urpilainen",
+     "party": "Social Democratic Party",
+     "r1Votes": 140867,
+     "r1Share": 4.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sari Essayah",
+     "party": "Christian Democrats",
+     "r1Votes": 47847,
+     "r1Share": 1.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mika Aaltola",
+     "party": "Independent",
+     "r1Votes": 47467,
+     "r1Share": 1.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hjallis Harkimo",
+     "party": "Movement Now",
+     "r1Votes": 17030,
+     "r1Share": 0.53,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Sauli Niinistö",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Alexander Stubb",
+    "party": "National Coalition"
+   },
+   "knownAs": null,
+   "summary": "Alexander Stubb won in the runoff with 51.62% against Pekka Haavisto on 48.38%. Turnout 71.5%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1907",
+   "label": "1907",
+   "year": 1907,
+   "kind": "legislative",
+   "date": "15 and 16 March 1907",
+   "era": "granddutchy",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 70.65,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": null,
+     "votes": 329946,
+     "share": 37.03,
+     "swing": null
+    },
+    {
+     "name": "Finnish Party",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": 243573,
+     "share": 27.34,
+     "swing": null
+    },
+    {
+     "name": "Young Finnish Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 121604,
+     "share": 13.65,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 112267,
+     "share": 12.6,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 51242,
+     "share": 5.75,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 13790,
+     "share": 1.55,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18568,
+     "share": 2.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 80 of 200 seats on 37.0% of the vote. Turnout 70.7%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": "The Eduskunta itself was elected on a genuinely universal franchise, but the Russian Emperor dissolved it repeatedly through this period and it barely sat once the First World War began.",
+   "unfree": null
+  },
+  {
+   "id": "1908",
+   "label": "1908",
+   "year": 1908,
+   "kind": "legislative",
+   "date": "1–2 July 1908",
+   "era": "granddutchy",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 64.4,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 83,
+     "seatChange": 3,
+     "votes": 310826,
+     "share": 38.4,
+     "swing": null
+    },
+    {
+     "name": "Finnish Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": -4,
+     "votes": 205892,
+     "share": 25.44,
+     "swing": null
+    },
+    {
+     "name": "Young Finnish Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 0,
+     "votes": 115201,
+     "share": 14.23,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 0,
+     "votes": 103146,
+     "share": 12.74,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1,
+     "votes": 51756,
+     "share": 6.39,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 18848,
+     "share": 2.33,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3772,
+     "share": 0.47,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 83 of 200 seats on 38.4% of the vote. Turnout 64.4%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": "The Eduskunta itself was elected on a genuinely universal franchise, but the Russian Emperor dissolved it repeatedly through this period and it barely sat once the First World War began.",
+   "unfree": null
+  },
+  {
+   "id": "1909",
+   "label": "1909",
+   "year": 1909,
+   "kind": "legislative",
+   "date": "1–3 May 1909",
+   "era": "granddutchy",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 65.32,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": 1,
+     "votes": 337685,
+     "share": 39.89,
+     "swing": null
+    },
+    {
+     "name": "Finnish Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -7,
+     "votes": 199920,
+     "share": 23.62,
+     "swing": null
+    },
+    {
+     "name": "Young Finnish Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 3,
+     "votes": 122770,
+     "share": 14.5,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 1,
+     "votes": 104191,
+     "share": 12.31,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3,
+     "votes": 56943,
+     "share": 6.73,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 23259,
+     "share": 2.75,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1703,
+     "share": 0.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 84 of 200 seats on 39.9% of the vote. Turnout 65.3%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": "The Eduskunta itself was elected on a genuinely universal franchise, but the Russian Emperor dissolved it repeatedly through this period and it barely sat once the First World War began.",
+   "unfree": null
+  },
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "kind": "legislative",
+   "date": "1–2 February 1910",
+   "era": "granddutchy",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 60.12,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 2,
+     "votes": 316951,
+     "share": 40.04,
+     "swing": null
+    },
+    {
+     "name": "Finnish Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": -6,
+     "votes": 174661,
+     "share": 22.07,
+     "swing": null
+    },
+    {
+     "name": "Young Finnish Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -1,
+     "votes": 114291,
+     "share": 14.44,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 1,
+     "votes": 107121,
+     "share": 13.53,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 4,
+     "votes": 60157,
+     "share": 7.6,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 17344,
+     "share": 2.19,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1034,
+     "share": 0.13,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 86 of 200 seats on 40.0% of the vote. Turnout 60.1%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": "The Eduskunta itself was elected on a genuinely universal franchise, but the Russian Emperor dissolved it repeatedly through this period and it barely sat once the First World War began.",
+   "unfree": null
+  },
+  {
+   "id": "1911",
+   "label": "1911",
+   "year": 1911,
+   "kind": "legislative",
+   "date": "2–3 January 1911",
+   "era": "granddutchy",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 59.78,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 0,
+     "votes": 321201,
+     "share": 40.03,
+     "swing": null
+    },
+    {
+     "name": "Finnish Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 1,
+     "votes": 174177,
+     "share": 21.71,
+     "swing": null
+    },
+    {
+     "name": "Young Finnish Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 0,
+     "votes": 119361,
+     "share": 14.88,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 0,
+     "votes": 106810,
+     "share": 13.31,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -1,
+     "votes": 62885,
+     "share": 7.84,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 17245,
+     "share": 2.15,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 708,
+     "share": 0.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 86 of 200 seats on 40.0% of the vote. Turnout 59.8%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": "The Eduskunta itself was elected on a genuinely universal franchise, but the Russian Emperor dissolved it repeatedly through this period and it barely sat once the First World War began.",
+   "unfree": null
+  },
+  {
+   "id": "1913",
+   "label": "1913",
+   "year": 1913,
+   "kind": "legislative",
+   "date": "1–2 August 1913",
+   "era": "granddutchy",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 51.09,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 90,
+     "seatChange": 4,
+     "votes": 312214,
+     "share": 43.11,
+     "swing": null
+    },
+    {
+     "name": "Finnish Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -5,
+     "votes": 143982,
+     "share": 19.88,
+     "swing": null
+    },
+    {
+     "name": "Young Finnish Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 1,
+     "votes": 102313,
+     "share": 14.13,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -1,
+     "votes": 94672,
+     "share": 13.07,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 2,
+     "votes": 56977,
+     "share": 7.87,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 12850,
+     "share": 1.77,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1296,
+     "share": 0.18,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 90 of 200 seats on 43.1% of the vote. Turnout 51.1%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": "The Eduskunta itself was elected on a genuinely universal franchise, but the Russian Emperor dissolved it repeatedly through this period and it barely sat once the First World War began.",
+   "unfree": null
+  },
+  {
+   "id": "1916",
+   "label": "1916",
+   "year": 1916,
+   "kind": "legislative",
+   "date": "1 and 3 July 1916",
+   "era": "granddutchy",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 55.54,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 103,
+     "seatChange": 13,
+     "votes": 376030,
+     "share": 47.29,
+     "swing": null
+    },
+    {
+     "name": "Finnish Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": -5,
+     "votes": 139111,
+     "share": 17.49,
+     "swing": null
+    },
+    {
+     "name": "Young Finnish Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -6,
+     "votes": 99419,
+     "share": 12.5,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -4,
+     "votes": 93555,
+     "share": 11.76,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 1,
+     "votes": 71608,
+     "share": 9.0,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 14626,
+     "share": 1.84,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 860,
+     "share": 0.11,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 103 of 200 seats on 47.3% of the vote. Turnout 55.5%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": "The Eduskunta itself was elected on a genuinely universal franchise, but the Russian Emperor dissolved it repeatedly through this period and it barely sat once the First World War began.",
+   "unfree": null
+  },
+  {
+   "id": "1917",
+   "label": "1917",
+   "year": 1917,
+   "kind": "legislative",
+   "date": "1–2 October 1917",
+   "era": "granddutchy",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 69.23,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 92,
+     "seatChange": -11,
+     "votes": 444670,
+     "share": 44.79,
+     "swing": null
+    },
+    {
+     "name": "Finnish Party–Young Finnish Party–People's Party",
+     "leader": null,
+     "seats": 61,
+     "seatChange": 5,
+     "votes": 299516,
+     "share": 30.17,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 7,
+     "votes": 122900,
+     "share": 12.38,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 0,
+     "votes": 108190,
+     "share": 10.9,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 15489,
+     "share": 1.56,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1997,
+     "share": 0.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 92 of 200 seats on 44.8% of the vote. Turnout 69.2%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": "The Eduskunta itself was elected on a genuinely universal franchise, but the Russian Emperor dissolved it repeatedly through this period and it barely sat once the First World War began.",
+   "unfree": null
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "legislative",
+   "date": "1–3 March 1919",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 67.13,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": -12,
+     "votes": 365046,
+     "share": 37.98,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 16,
+     "votes": 189297,
+     "share": 19.7,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 151018,
+     "share": 15.71,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 123090,
+     "share": 12.81,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 1,
+     "votes": 116582,
+     "share": 12.13,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 14718,
+     "share": 1.53,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1350,
+     "share": 0.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lauri Ingman",
+    "party": "National Coalition"
+   },
+   "pmAfter": {
+    "name": "Kaarlo Castrén",
+    "party": "National Progressive"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 80 of 200 seats on 38.0% of the vote. Turnout 67.1%. Kaarlo Castrén replaced Lauri Ingman.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "legislative",
+   "date": "1–3 July 1922",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 58.48,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -27,
+     "votes": 216861,
+     "share": 25.06,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 3,
+     "votes": 175401,
+     "share": 20.27,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 7,
+     "votes": 157116,
+     "share": 18.15,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers' Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 128181,
+     "share": 14.81,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 3,
+     "votes": 107414,
+     "share": 12.41,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -11,
+     "votes": 79676,
+     "share": 9.21,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 772,
+     "share": 0.09,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aimo Cajander",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Kyösti Kallio",
+    "party": "Agrarian"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 53 of 200 seats on 25.1% of the vote. Turnout 58.5%. Kyösti Kallio replaced Aimo Cajander.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "legislative",
+   "date": "1–2 April 1924",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 57.41,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 7,
+     "votes": 255068,
+     "share": 29.02,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -1,
+     "votes": 177982,
+     "share": 20.25,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 3,
+     "votes": 166880,
+     "share": 18.99,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -2,
+     "votes": 105733,
+     "share": 12.03,
+     "swing": null
+    },
+    {
+     "name": "Electoral Organisation of Socialist Workers and Smallholders",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -9,
+     "votes": 91839,
+     "share": 10.45,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 2,
+     "votes": 79937,
+     "share": 9.09,
+     "swing": null
+    },
+    {
+     "name": "Peasants' List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 456,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1046,
+     "share": 0.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aimo Cajander",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Lauri Ingman",
+    "party": "National Coalition"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 60 of 200 seats on 29.0% of the vote. Turnout 57.4%. Lauri Ingman replaced Aimo Cajander.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "1–2 July 1927",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 53.17,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 0,
+     "votes": 257572,
+     "share": 28.3,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 8,
+     "votes": 205313,
+     "share": 22.56,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -4,
+     "votes": 161450,
+     "share": 17.74,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 1,
+     "votes": 111005,
+     "share": 12.2,
+     "swing": null
+    },
+    {
+     "name": "Electoral Organisation of Socialist Workers and Smallholders",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 2,
+     "votes": 109939,
+     "share": 12.08,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -7,
+     "votes": 61613,
+     "share": 6.77,
+     "swing": null
+    },
+    {
+     "name": "Peasants' List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1341,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 784,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1174,
+     "share": 0.13,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Väinö Tanner",
+    "party": "SDP"
+   },
+   "pmAfter": {
+    "name": "Juho Sunila",
+    "party": "Agrarian"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 60 of 200 seats on 28.3% of the vote. Turnout 53.2%. Juho Sunila replaced Väinö Tanner.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "kind": "legislative",
+   "date": "1–2 July 1929",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 55.61,
+   "parties": [
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 8,
+     "votes": 248762,
+     "share": 26.15,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 59,
+     "seatChange": -1,
+     "votes": 260254,
+     "share": 27.36,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -6,
+     "votes": 138008,
+     "share": 14.51,
+     "swing": null
+    },
+    {
+     "name": "Electoral Organisation of Socialist Workers and Smallholders",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 3,
+     "votes": 128164,
+     "share": 13.47,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -1,
+     "votes": 108886,
+     "share": 11.45,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -3,
+     "votes": 53301,
+     "share": 5.6,
+     "swing": null
+    },
+    {
+     "name": "Small Farmers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10154,
+     "share": 1.07,
+     "swing": null
+    },
+    {
+     "name": "Peasant People's Party –Farmers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1258,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2483,
+     "share": 0.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Oskari Mantere",
+    "party": "National Progressive"
+   },
+   "pmAfter": {
+    "name": "Kyösti Kallio",
+    "party": "Agrarian"
+   },
+   "knownAs": null,
+   "summary": "Agrarian League finished first with 60 of 200 seats on 26.1% of the vote. Turnout 55.6%. Kyösti Kallio replaced Oskari Mantere.",
+   "seatLeader": "Agrarian League",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1930",
+   "label": "1930",
+   "year": 1930,
+   "kind": "legislative",
+   "date": "1–2 October 1930",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 65.92,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": 7,
+     "votes": 386026,
+     "share": 34.16,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 59,
+     "seatChange": -1,
+     "votes": 308280,
+     "share": 27.28,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 14,
+     "votes": 203958,
+     "share": 18.05,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -3,
+     "votes": 113318,
+     "share": 10.03,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 4,
+     "votes": 65830,
+     "share": 5.83,
+     "swing": null
+    },
+    {
+     "name": "Small Farmers' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 20883,
+     "share": 1.85,
+     "swing": null
+    },
+    {
+     "name": "Socialist List of Workers and Peasants",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -23,
+     "votes": 11504,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "Swedish Left",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 9226,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "Small groups of the Patriotic List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9085,
+     "share": 0.8,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1918,
+     "share": 0.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Pehr Evind Svinhufvud",
+    "party": "National Coalition"
+   },
+   "pmAfter": {
+    "name": "Pehr Evind Svinhufvud",
+    "party": "National Coalition"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 66 of 200 seats on 34.2% of the vote. Turnout 65.9%. Pehr Evind Svinhufvud stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "legislative",
+   "date": "1–3 July 1933",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 62.19,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 78,
+     "seatChange": 12,
+     "votes": 413551,
+     "share": 37.33,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -6,
+     "votes": 249758,
+     "share": 22.54,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party–Patriotic People's Movement",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -10,
+     "votes": 187527,
+     "share": 16.93,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 1,
+     "votes": 115433,
+     "share": 10.42,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0,
+     "votes": 82129,
+     "share": 7.41,
+     "swing": null
+    },
+    {
+     "name": "Small Farmers' Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 37544,
+     "share": 3.39,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 9390,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "List for the Working People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2667,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Organisation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2103,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "List of Real Finns, Temperance People etc.",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1476,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "National Socialist Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1406,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "List of Working People, Peasants and Intellectuals",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 787,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "List of Recession Men",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 645,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "List of Jaakko Seise",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 630,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "For the Poor–People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 370,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Rural People's Party–Party of Finnish Labor",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 311,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Party of Finnish Labor",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 226,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "List \"V.F.Johanson and M.Saarikoski\"",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 145,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "List of National Economy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 101,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "List F (Läheniemists)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 96,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1528,
+     "share": 0.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Toivo Mikael Kivimäki",
+    "party": "National Progressive"
+   },
+   "pmAfter": {
+    "name": "Toivo Mikael Kivimäki",
+    "party": "National Progressive"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 78 of 200 seats on 37.3% of the vote. Turnout 62.2%. Toivo Mikael Kivimäki stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "1–2 July 1936",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 62.92,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 83,
+     "seatChange": 5,
+     "votes": 452751,
+     "share": 38.59,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 0,
+     "votes": 262917,
+     "share": 22.41,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 0,
+     "votes": 131440,
+     "share": 11.2,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 2,
+     "votes": 121619,
+     "share": 10.36,
+     "swing": null
+    },
+    {
+     "name": "Patriotic People's Movement",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0,
+     "votes": 97891,
+     "share": 8.34,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -4,
+     "votes": 73654,
+     "share": 6.28,
+     "swing": null
+    },
+    {
+     "name": "Small Farmers' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": 23159,
+     "share": 1.97,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 7449,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2502,
+     "share": 0.21,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Toivo Mikael Kivimäki",
+    "party": "National Progressive"
+   },
+   "pmAfter": {
+    "name": "Toivo Mikael Kivimäki",
+    "party": "National Progressive"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 83 of 200 seats on 38.6% of the vote. Turnout 62.9%. Toivo Mikael Kivimäki stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "legislative",
+   "date": "1–2 July 1939",
+   "era": "young",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 66.55,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 85,
+     "seatChange": 2,
+     "votes": 515980,
+     "share": 39.77,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 3,
+     "votes": 296529,
+     "share": 22.86,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 5,
+     "votes": 176215,
+     "share": 13.58,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": -3,
+     "votes": 124720,
+     "share": 9.61,
+     "swing": null
+    },
+    {
+     "name": "Patriotic People's Movement",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -6,
+     "votes": 86219,
+     "share": 6.65,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -1,
+     "votes": 62387,
+     "share": 4.81,
+     "swing": null
+    },
+    {
+     "name": "Party of Smallholders and Rural People",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0,
+     "votes": 27783,
+     "share": 2.14,
+     "swing": null
+    },
+    {
+     "name": "Swedish Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5980,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1506,
+     "share": 0.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aimo Cajander",
+    "party": "National Progressive"
+   },
+   "pmAfter": {
+    "name": "Aimo Cajander",
+    "party": "National Progressive"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 85 of 200 seats on 39.8% of the vote. Turnout 66.5%. Aimo Cajander stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "17–18 March 1945",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 74.87,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": -35,
+     "votes": 425948,
+     "share": 25.08,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 49,
+     "seatChange": null,
+     "votes": 398618,
+     "share": 23.47,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 49,
+     "seatChange": -7,
+     "votes": 362662,
+     "share": 21.35,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 3,
+     "votes": 255394,
+     "share": 15.04,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -4,
+     "votes": 134106,
+     "share": 7.9,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3,
+     "votes": 87868,
+     "share": 5.17,
+     "swing": null
+    },
+    {
+     "name": "Small Farmers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 20061,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "Swedish Left",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 8192,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1623,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3904,
+     "share": 0.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Juho Kusti Paasikivi",
+    "party": "National Coalition"
+   },
+   "pmAfter": {
+    "name": "Juho Kusti Paasikivi",
+    "party": "National Coalition"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 50 of 200 seats on 25.1% of the vote. Turnout 74.9%. Juho Kusti Paasikivi stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "1–2 July 1948",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 78.25,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": 4,
+     "votes": 494719,
+     "share": 26.32,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 7,
+     "votes": 455635,
+     "share": 24.24,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -11,
+     "votes": 375538,
+     "share": 19.98,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 5,
+     "votes": 320366,
+     "share": 17.04,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -1,
+     "votes": 137981,
+     "share": 7.34,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -4,
+     "votes": 73444,
+     "share": 3.91,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 6567,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Small Farmers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5378,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5162,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5178,
+     "share": 0.28,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mauno Pekkala",
+    "party": "SKDL"
+   },
+   "pmAfter": {
+    "name": "Karl-August Fagerholm",
+    "party": "SDP"
+   },
+   "knownAs": null,
+   "summary": "Agrarian League finished first with 56 of 200 seats on 24.2% of the vote. Turnout 78.2%. Karl-August Fagerholm replaced Mauno Pekkala.",
+   "seatLeader": "Agrarian League",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "kind": "legislative",
+   "date": "1–2 July 1951",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 74.58,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -1,
+     "votes": 480754,
+     "share": 26.52,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -5,
+     "votes": 421613,
+     "share": 23.26,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 5,
+     "votes": 391134,
+     "share": 21.58,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -5,
+     "votes": 264044,
+     "share": 14.57,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 1,
+     "votes": 131719,
+     "share": 7.27,
+     "swing": null
+    },
+    {
+     "name": "People's Party of Finland",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 5,
+     "votes": 102933,
+     "share": 5.68,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5686,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Small Farmers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4964,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Liberal League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4936,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Radical People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4486,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 243,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 305,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Urho Kekkonen",
+    "party": "Agrarian"
+   },
+   "pmAfter": {
+    "name": "Urho Kekkonen",
+    "party": "Agrarian"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 53 of 200 seats on 26.5% of the vote. Turnout 74.6%. Urho Kekkonen stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "7–8 March 1954",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 79.9,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": 1,
+     "votes": 527094,
+     "share": 26.25,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 2,
+     "votes": 483958,
+     "share": 24.1,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 0,
+     "votes": 433251,
+     "share": 21.57,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -4,
+     "votes": 257025,
+     "share": 12.8,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3,
+     "votes": 158323,
+     "share": 7.88,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -2,
+     "votes": 135768,
+     "share": 6.76,
+     "swing": null
+    },
+    {
+     "name": "Liberal League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6810,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 4651,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Small Farmers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1040,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 337,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sakari Tuomioja",
+    "party": "Liberal League"
+   },
+   "pmAfter": {
+    "name": "Ralf Törngren",
+    "party": "RKP"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 54 of 200 seats on 26.2% of the vote. Turnout 79.9%. Ralf Törngren replaced Sakari Tuomioja.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "6–7 July 1958",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 74.99,
+   "parties": [
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 7,
+     "votes": 450220,
+     "share": 23.16,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -6,
+     "votes": 449536,
+     "share": 23.12,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -5,
+     "votes": 448364,
+     "share": 23.06,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 5,
+     "votes": 297094,
+     "share": 15.28,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 1,
+     "votes": 126365,
+     "share": 6.5,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -5,
+     "votes": 114617,
+     "share": 5.9,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Union of Workers and Smallholders",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 33947,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Liberal League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6424,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5487,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Agrarian League Opposition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5057,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3358,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Free Citizens and Centre List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3033,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Free Economy List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 331,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "People's Co-operation League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 160,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 242,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Reino Kuuskoski",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Karl-August Fagerholm",
+    "party": "SDP"
+   },
+   "knownAs": null,
+   "summary": "Finnish People's Democratic League finished first with 50 of 200 seats on 23.2% of the vote. Turnout 75.0%. Karl-August Fagerholm replaced Reino Kuuskoski.",
+   "seatLeader": "Finnish People's Democratic League",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "4–5 February 1962",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 85.09,
+   "parties": [
+    {
+     "name": "Agrarian League",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 5,
+     "votes": 528409,
+     "share": 22.95,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 47,
+     "seatChange": -3,
+     "votes": 506829,
+     "share": 22.02,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -10,
+     "votes": 448930,
+     "share": 19.5,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 3,
+     "votes": 346638,
+     "share": 15.06,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 5,
+     "votes": 146005,
+     "share": 6.34,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 0,
+     "votes": 140689,
+     "share": 6.11,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Union of Workers and Smallholders",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1,
+     "votes": 100396,
+     "share": 4.36,
+     "swing": null
+    },
+    {
+     "name": "Smallholders' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49773,
+     "share": 2.16,
+     "swing": null
+    },
+    {
+     "name": "Liberal League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 12000,
+     "share": 0.52,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8686,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7261,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Smallholders' Party Opposition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6329,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 53,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Martti Miettunen",
+    "party": "Agrarian"
+   },
+   "pmAfter": {
+    "name": "Ahti Karjalainen",
+    "party": "Agrarian"
+   },
+   "knownAs": null,
+   "summary": "Agrarian League finished first with 53 of 200 seats on 22.9% of the vote. Turnout 85.1%. Ahti Karjalainen replaced Martti Miettunen.",
+   "seatLeader": "Agrarian League",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "legislative",
+   "date": "20–21 March 1966",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 84.94,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 17,
+     "votes": 645339,
+     "share": 27.23,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": -4,
+     "votes": 503047,
+     "share": 21.23,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -6,
+     "votes": 502374,
+     "share": 21.2,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -6,
+     "votes": 326928,
+     "share": 13.79,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -5,
+     "votes": 153259,
+     "share": 6.47,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -2,
+     "votes": 134831,
+     "share": 5.69,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Union of Workers and Smallholders",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 5,
+     "votes": 61274,
+     "share": 2.59,
+     "swing": null
+    },
+    {
+     "name": "Smallholders' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 24351,
+     "share": 1.03,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10646,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7118,
+     "share": 0.3,
+     "swing": null
+    },
+    {
+     "name": "Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 513,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Christian Women of Western Finland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 124,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Christian-minded of Northern Savonia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 51,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Write-ins",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 161,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johannes Virolainen",
+    "party": "Centre"
+   },
+   "pmAfter": {
+    "name": "Rafael Paasio",
+    "party": "SDP"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 55 of 200 seats on 27.2% of the vote. Turnout 84.9%. Rafael Paasio replaced Johannes Virolainen.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "legislative",
+   "date": "15–16 March 1970",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 82.23,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -3,
+     "votes": 594185,
+     "share": 23.43,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 11,
+     "votes": 457582,
+     "share": 18.05,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": -13,
+     "votes": 434150,
+     "share": 17.12,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 36,
+     "seatChange": -5,
+     "votes": 420556,
+     "share": 16.58,
+     "swing": null
+    },
+    {
+     "name": "Finnish Rural Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 17,
+     "votes": 265939,
+     "share": 10.49,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -1,
+     "votes": 150823,
+     "share": 5.95,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0,
+     "votes": 135465,
+     "share": 5.34,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Union of Workers and Smallholders",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -7,
+     "votes": 35453,
+     "share": 1.4,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 28547,
+     "share": 1.13,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8971,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Entrepreneur Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 248,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3863,
+     "share": 0.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mauno Koivisto",
+    "party": "SDP"
+   },
+   "pmAfter": {
+    "name": "Teuvo Aura",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 52 of 200 seats on 23.4% of the vote. Turnout 82.2%. Teuvo Aura replaced Mauno Koivisto.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "kind": "legislative",
+   "date": "2–3 January 1972",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 81.41,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 3,
+     "votes": 664724,
+     "share": 25.78,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -3,
+     "votes": 453434,
+     "share": 17.59,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 1,
+     "votes": 438757,
+     "share": 17.02,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": -1,
+     "votes": 423039,
+     "share": 16.41,
+     "swing": null
+    },
+    {
+     "name": "Finnish Rural Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 0,
+     "votes": 236206,
+     "share": 9.16,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -1,
+     "votes": 132955,
+     "share": 5.16,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -2,
+     "votes": 130407,
+     "share": 5.06,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3,
+     "votes": 65228,
+     "share": 2.53,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Union of Workers and Smallholders",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25527,
+     "share": 0.99,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7672,
+     "share": 0.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Teuvo Aura",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Rafael Paasio",
+    "party": "SDP"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 55 of 200 seats on 25.8% of the vote. Turnout 81.4%. Rafael Paasio replaced Teuvo Aura.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "kind": "legislative",
+   "date": "21–22 September 1975",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 73.8,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": -1,
+     "votes": 683590,
+     "share": 24.86,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 3,
+     "votes": 519483,
+     "share": 18.89,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 1,
+     "votes": 505145,
+     "share": 18.37,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 4,
+     "votes": 484772,
+     "share": 17.63,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 128211,
+     "share": 4.66,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2,
+     "votes": 119534,
+     "share": 4.35,
+     "swing": null
+    },
+    {
+     "name": "Finnish Rural Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -16,
+     "votes": 98815,
+     "share": 3.59,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 5,
+     "votes": 90599,
+     "share": 3.29,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Unity Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 45402,
+     "share": 1.65,
+     "swing": null
+    },
+    {
+     "name": "Constitutional People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 43344,
+     "share": 1.58,
+     "swing": null
+    },
+    {
+     "name": "Party of Finnish Entrepreneurs",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11475,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9482,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9457,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 509,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Keijo Liinamaa",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Martti Miettunen",
+    "party": "Centre"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 54 of 200 seats on 24.9% of the vote. Turnout 73.8%. Martti Miettunen replaced Keijo Liinamaa.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "18–19 March 1979",
+   "era": "warandkekkonen",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 75.31,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -2,
+     "votes": 691512,
+     "share": 23.89,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 12,
+     "votes": 626764,
+     "share": 21.65,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 35,
+     "seatChange": -5,
+     "votes": 518045,
+     "share": 17.9,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": -3,
+     "votes": 500478,
+     "share": 17.29,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 138244,
+     "share": 4.78,
+     "swing": null
+    },
+    {
+     "name": "Finnish Rural Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 5,
+     "votes": 132457,
+     "share": 4.58,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 122418,
+     "share": 4.23,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -5,
+     "votes": 106560,
+     "share": 3.68,
+     "swing": null
+    },
+    {
+     "name": "Constitutional People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 34958,
+     "share": 1.21,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Unity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 9316,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9286,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Socialist Workers Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2955,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Party of Finnish Entrepreneurs",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1233,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 220,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kalevi Sorsa",
+    "party": "SDP"
+   },
+   "pmAfter": {
+    "name": "Mauno Koivisto",
+    "party": "SDP"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 52 of 200 seats on 23.9% of the vote. Turnout 75.3%. Mauno Koivisto replaced Kalevi Sorsa.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "20–21 March 1983",
+   "era": "rainbow",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 75.73,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 5,
+     "votes": 795953,
+     "share": 26.71,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -3,
+     "votes": 659078,
+     "share": 22.12,
+     "swing": null
+    },
+    {
+     "name": "Centre Party–Liberal People's Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -2,
+     "votes": 525207,
+     "share": 17.63,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -9,
+     "votes": 400930,
+     "share": 13.46,
+     "swing": null
+    },
+    {
+     "name": "Finnish Rural Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 10,
+     "votes": 288711,
+     "share": 9.69,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1,
+     "votes": 137423,
+     "share": 4.61,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -6,
+     "votes": 90410,
+     "share": 3.03,
+     "swing": null
+    },
+    {
+     "name": "Greens",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 43754,
+     "share": 1.47,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Right Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 11104,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9458,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "League for Civil Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2335,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 15331,
+     "share": 0.51,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kalevi Sorsa",
+    "party": "SDP"
+   },
+   "pmAfter": {
+    "name": "Kalevi Sorsa",
+    "party": "SDP"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 57 of 200 seats on 26.7% of the vote. Turnout 75.7%. Kalevi Sorsa stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "legislative",
+   "date": "15–16 March 1987",
+   "era": "rainbow",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 72.08,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": -1,
+     "votes": 695331,
+     "share": 24.14,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 9,
+     "votes": 666236,
+     "share": 23.13,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 2,
+     "votes": 507460,
+     "share": 17.62,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Democratic League",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -10,
+     "votes": 270433,
+     "share": 9.39,
+     "swing": null
+    },
+    {
+     "name": "Finnish Rural Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -8,
+     "votes": 181938,
+     "share": 6.32,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 2,
+     "votes": 152597,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alternative",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 122181,
+     "share": 4.24,
+     "swing": null
+    },
+    {
+     "name": "Greens",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2,
+     "votes": 115988,
+     "share": 4.03,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2,
+     "votes": 74209,
+     "share": 2.58,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35100,
+     "share": 1.22,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27824,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Liberals for Åland–Social Democrats",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7019,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Right Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 3096,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Åland Centre–Freeminded Cooperation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1843,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Free Åland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 539,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18299,
+     "share": 0.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kalevi Sorsa",
+    "party": "SDP"
+   },
+   "pmAfter": {
+    "name": "Harri Holkeri",
+    "party": "National Coalition"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 56 of 200 seats on 24.1% of the vote. Turnout 72.1%. Harri Holkeri replaced Kalevi Sorsa.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "legislative",
+   "date": "17 March 1991",
+   "era": "rainbow",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 68.39,
+   "parties": [
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 15,
+     "votes": 676717,
+     "share": 24.83,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -8,
+     "votes": 603080,
+     "share": 22.12,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -13,
+     "votes": 526487,
+     "share": 19.31,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -1,
+     "votes": 274639,
+     "share": 10.08,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 6,
+     "votes": 185894,
+     "share": 6.82,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -1,
+     "votes": 149476,
+     "share": 5.48,
+     "swing": null
+    },
+    {
+     "name": "Finnish Rural Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -2,
+     "votes": 132133,
+     "share": 4.85,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 3,
+     "votes": 83151,
+     "share": 3.05,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 21210,
+     "share": 0.78,
+     "swing": null
+    },
+    {
+     "name": "Women's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12725,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10762,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Right Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7599,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Liberals for Åland–Freeminded–Greens",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6546,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Communist Workers' Party – For Peace and Socialism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6201,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Independent Non-aligned Pensioners",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5230,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3835,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Humanity Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2831,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Joint Responsibility Party of Pensioners and the Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2807,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Åland Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1858,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Åland Social Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 940,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11797,
+     "share": 0.43,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Harri Holkeri",
+    "party": "National Coalition"
+   },
+   "pmAfter": {
+    "name": "Esko Aho",
+    "party": "Centre"
+   },
+   "knownAs": null,
+   "summary": "Centre Party finished first with 55 of 200 seats on 24.8% of the vote. Turnout 68.4%. Esko Aho replaced Harri Holkeri.",
+   "seatLeader": "Centre Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "19 March 1995",
+   "era": "rainbow",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 68.58,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": 15,
+     "votes": 785637,
+     "share": 28.25,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -11,
+     "votes": 552003,
+     "share": 19.85,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -1,
+     "votes": 497624,
+     "share": 17.89,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 3,
+     "votes": 310340,
+     "share": 11.16,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -1,
+     "votes": 181198,
+     "share": 6.52,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0,
+     "votes": 142874,
+     "share": 5.14,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -1,
+     "votes": 82311,
+     "share": 2.96,
+     "swing": null
+    },
+    {
+     "name": "Young Finns",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 78066,
+     "share": 2.81,
+     "swing": null
+    },
+    {
+     "name": "Finnish Rural Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -6,
+     "votes": 36185,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Free Finland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28067,
+     "share": 1.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 16247,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Women's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7919,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Ecological Party the Greens",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 7865,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Natural Law Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6819,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Liberals for Åland",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 6038,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Pensioners for People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5124,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Communist Workers' Party – For Peace and Socialism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4784,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3974,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Borgerlig samlingslista (C–FS–Ob)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2958,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Joint Responsibility Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1706,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Åland Social Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 909,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22273,
+     "share": 0.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 63 of 200 seats on 28.2% of the vote. Turnout 68.6%.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "legislative",
+   "date": "21 March 1999",
+   "era": "rainbow",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 65.3,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -12,
+     "votes": 612963,
+     "share": 22.86,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 4,
+     "votes": 600592,
+     "share": 22.4,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 7,
+     "votes": 563835,
+     "share": 21.03,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -2,
+     "votes": 291675,
+     "share": 10.88,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2,
+     "votes": 194846,
+     "share": 7.27,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0,
+     "votes": 137330,
+     "share": 5.12,
+     "swing": null
+    },
+    {
+     "name": "Finnish Christian League",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 3,
+     "votes": 111835,
+     "share": 4.17,
+     "swing": null
+    },
+    {
+     "name": "Reform Group",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 28549,
+     "share": 1.06,
+     "swing": null
+    },
+    {
+     "name": "Young Finns",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 28084,
+     "share": 1.05,
+     "swing": null
+    },
+    {
+     "name": "Finns Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 26440,
+     "share": 0.99,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20442,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Ecological Party the Greens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 10378,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Free Finland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10104,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Liberals for Åland",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 5870,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Pensioners for People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5451,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Liberal People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5194,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Pensioners' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4481,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Natural Law Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3903,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Åland Centre–Freeminded–Non-aligned",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3678,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Communist Workers' Party – For Peace and Socialism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3455,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Åland Social Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 924,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11262,
+     "share": 0.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Paavo Lipponen",
+    "party": "SDP"
+   },
+   "pmAfter": {
+    "name": "Paavo Lipponen",
+    "party": "SDP"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 51 of 200 seats on 22.9% of the vote. Turnout 65.3%. Paavo Lipponen stayed in office.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "kind": "legislative",
+   "date": "16 March 2003",
+   "era": "rainbow",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 66.7,
+   "parties": [
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 7,
+     "votes": 689391,
+     "share": 24.69,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 2,
+     "votes": 683223,
+     "share": 24.47,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -6,
+     "votes": 517904,
+     "share": 18.55,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -1,
+     "votes": 277152,
+     "share": 9.93,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 3,
+     "votes": 223564,
+     "share": 8.01,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -3,
+     "votes": 148987,
+     "share": 5.34,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -3,
+     "votes": 128824,
+     "share": 4.61,
+     "swing": null
+    },
+    {
+     "name": "Finns Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2,
+     "votes": 43816,
+     "share": 1.57,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 21079,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Forces for Change in Finland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11485,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8776,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Kirjava ”Puolue” – Elonkehän Puolesta",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6659,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Pensioners for People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 5346,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Blue-Whites",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4579,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Freeminded Cooperation–Non-aligned Coalition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 4306,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Liberals for Åland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 3323,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Communist Workers' Party – For Peace and Socialism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2908,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Åland Social Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2904,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Finland Rises – People Unites",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2640,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "For the Poor",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1448,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Åland Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1118,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Joint Responsibility Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 404,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1921,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Paavo Lipponen",
+    "party": "SDP"
+   },
+   "pmAfter": {
+    "name": "Anneli Jäätteenmäki",
+    "party": "Centre"
+   },
+   "knownAs": null,
+   "summary": "Centre Party finished first with 55 of 200 seats on 24.7% of the vote. Turnout 66.7%. Anneli Jäätteenmäki replaced Paavo Lipponen.",
+   "seatLeader": "Centre Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "18 March 2007",
+   "era": "multibloc",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": 65.0,
+   "parties": [
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -4,
+     "votes": 640428,
+     "share": 23.11,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 10,
+     "votes": 616841,
+     "share": 22.26,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": -8,
+     "votes": 594194,
+     "share": 21.44,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -2,
+     "votes": 244296,
+     "share": 8.82,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 1,
+     "votes": 234429,
+     "share": 8.46,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0,
+     "votes": 134790,
+     "share": 4.86,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1,
+     "votes": 126520,
+     "share": 4.57,
+     "swing": null
+    },
+    {
+     "name": "Finns Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2,
+     "votes": 112256,
+     "share": 4.05,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 18277,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Pensioners for People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 16715,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Civic Alliance (C–FS–LIB–ObS)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 9561,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5541,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Finnish People's Blue-Whites",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3913,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3171,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "For the Poor",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2521,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Communist Workers' Party – For Peace and Socialism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2007,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1764,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Åland Social Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1607,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Patriotic People's Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 821,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Joint Responsibility Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 164,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1420,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Matti Vanhanen",
+    "party": "Centre"
+   },
+   "pmAfter": {
+    "name": "Matti Vanhanen",
+    "party": "Centre"
+   },
+   "knownAs": null,
+   "summary": "Centre Party finished first with 51 of 200 seats on 23.1% of the vote. Turnout 65.0%. Matti Vanhanen stayed in office.",
+   "seatLeader": "Centre Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "17 April 2011",
+   "era": "multibloc",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 70.5,
+   "parties": [
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -6,
+     "votes": 599138,
+     "share": 20.38,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": -3,
+     "votes": 561558,
+     "share": 19.1,
+     "swing": null
+    },
+    {
+     "name": "True Finns",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 34,
+     "votes": 560075,
+     "share": 19.05,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": -16,
+     "votes": 463266,
+     "share": 15.76,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -3,
+     "votes": 239039,
+     "share": 8.13,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -5,
+     "votes": 213172,
+     "share": 7.25,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 125785,
+     "share": 4.28,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -1,
+     "votes": 118453,
+     "share": 4.03,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15103,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9232,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition 2011 (C–Ob–S–ÅF)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 8546,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Change 2011",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7504,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4285,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3236,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Senior Citizens' Party of Finland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3195,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Åland (L–M)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1957,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1857,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Communist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1575,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "For the Poor",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1335,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1260,
+     "share": 0.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mari Kiviniemi",
+    "party": "Centre"
+   },
+   "pmAfter": {
+    "name": "Jyrki Katainen",
+    "party": "National Coalition"
+   },
+   "knownAs": null,
+   "summary": "National Coalition Party finished first with 44 of 200 seats on 20.4% of the vote. Turnout 70.5%. Jyrki Katainen replaced Mari Kiviniemi.",
+   "seatLeader": "National Coalition Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "19 April 2015",
+   "era": "multibloc",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 70.1,
+   "parties": [
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 14,
+     "votes": 626218,
+     "share": 21.1,
+     "swing": null
+    },
+    {
+     "name": "Finns Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -1,
+     "votes": 524054,
+     "share": 17.65,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": -7,
+     "votes": 540212,
+     "share": 18.2,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -8,
+     "votes": 490102,
+     "share": 16.51,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 5,
+     "votes": 253102,
+     "share": 8.53,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -2,
+     "votes": 211702,
+     "share": 7.13,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 144802,
+     "share": 4.88,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -1,
+     "votes": 105134,
+     "share": 3.54,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 25086,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 13638,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Åland Coalition 2015 (C–M–S)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 10910,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7529,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Change 2011",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7442,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Pirkanmaa Joint List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2469,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Liberals for Åland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1277,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Communist Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1103,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 984,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "For the Poor",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 623,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2075,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alexander Stubb",
+    "party": "National Coalition"
+   },
+   "pmAfter": {
+    "name": "Juha Sipilä",
+    "party": "Centre"
+   },
+   "knownAs": null,
+   "summary": "Centre Party finished first with 49 of 200 seats on 21.1% of the vote. Turnout 70.1%. Juha Sipilä replaced Alexander Stubb.",
+   "seatLeader": "Centre Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "14 April 2019",
+   "era": "multibloc",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 72.8,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 6,
+     "votes": 546471,
+     "share": 17.73,
+     "swing": null
+    },
+    {
+     "name": "Finns Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 1,
+     "votes": 538805,
+     "share": 17.48,
+     "swing": null
+    },
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 1,
+     "votes": 523957,
+     "share": 17.0,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -18,
+     "votes": 423920,
+     "share": 13.76,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 5,
+     "votes": 354194,
+     "share": 11.49,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 4,
+     "votes": 251808,
+     "share": 8.17,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 139640,
+     "share": 4.53,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": 120144,
+     "share": 3.9,
+     "swing": null
+    },
+    {
+     "name": "Movement Now",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 69427,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "Blue Reform",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29943,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 19032,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "For Åland (C–L–M–S–ÅF)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 11640,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Seven Star Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11366,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7645,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Feminist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6662,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party – Freedom to Choose",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5014,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4305,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Animal Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3378,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Independence Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2444,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Finnish People First",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2366,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Communist Workers' Party – For Peace and Socialism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1240,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Aito suomalainen yhteislista",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 589,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Reform List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 525,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Alternative for Åland (ÅD)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 358,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Rehtiliike yhteislista",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 344,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Yhteislista Jaana ja Leo",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 87,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6612,
+     "share": 0.21,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Juha Sipilä",
+    "party": "Centre"
+   },
+   "pmAfter": {
+    "name": "Antti Rinne",
+    "party": "SDP"
+   },
+   "knownAs": null,
+   "summary": "Social Democratic Party finished first with 40 of 200 seats on 17.7% of the vote. Turnout 72.8%. Antti Rinne replaced Juha Sipilä.",
+   "seatLeader": "Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "2 April 2023",
+   "era": "multibloc",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 72.6,
+   "parties": [
+    {
+     "name": "National Coalition Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 4,
+     "votes": 644555,
+     "share": 20.82,
+     "swing": null
+    },
+    {
+     "name": "Finns Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 3,
+     "votes": 620981,
+     "share": 20.06,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 2,
+     "votes": 617552,
+     "share": 19.95,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -2,
+     "votes": 349640,
+     "share": 11.29,
+     "swing": null
+    },
+    {
+     "name": "Left Alliance",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -1,
+     "votes": 218430,
+     "share": 7.06,
+     "swing": null
+    },
+    {
+     "name": "Green League",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -4,
+     "votes": 217795,
+     "share": 7.04,
+     "swing": null
+    },
+    {
+     "name": "Swedish People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 133518,
+     "share": 4.31,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": 130694,
+     "share": 4.22,
+     "swing": null
+    },
+    {
+     "name": "Movement Now",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 74995,
+     "share": 2.42,
+     "swing": null
+    },
+    {
+     "name": "Freedom Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27558,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party – Freedom to Choose",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 14982,
+     "share": 0.48,
+     "swing": null
+    },
+    {
+     "name": "For Åland",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0,
+     "votes": 11452,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Power Belongs to the People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8469,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Crystal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4894,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Animal Justice Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3107,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 3058,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3044,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Blue-and-Black Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2307,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Finnish Reform Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 1362,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Finnish People First",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1225,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Lapland's Non-Aligned Joint List",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1231,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Feminist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1114,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "The Open Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 985,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Welfare and Equality",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 923,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Non-aligned Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 514,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Sustainable Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 494,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 169,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 556,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sanna Marin",
+    "party": "SDP"
+   },
+   "pmAfter": {
+    "name": "Petteri Orpo",
+    "party": "National Coalition"
+   },
+   "knownAs": null,
+   "summary": "National Coalition Party finished first with 48 of 200 seats on 20.8% of the vote. Turnout 72.6%. Petteri Orpo replaced Sanna Marin.",
+   "seatLeader": "National Coalition Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

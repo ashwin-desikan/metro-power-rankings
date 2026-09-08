@@ -1,0 +1,4095 @@
+{
+ "meta": {
+  "title": "Bangladeshi General Elections",
+  "sources": [
+   "Wikipedia: Bangladeshi general election articles 1973-2026 (results tables and infoboxes)",
+   "Bangladesh Election Commission figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "eras": [
+  {
+   "key": "founding",
+   "label": "The founding parliament",
+   "span": "1973–1975",
+   "blurb": "Bangladesh's first election, seven weeks after the Liberation War anniversary, returned Sheikh Mujibur Rahman's Awami League with 293 of 300 seats. The dump's own account calls the count unnecessarily rigged: the government pushed to sweep every seat, and eleven went to AL candidates unopposed. Mujib was assassinated in 1975 and no election followed for four years."
+  },
+  {
+   "key": "ershad",
+   "label": "Zia, Ershad, and martial law",
+   "span": "1979–1988",
+   "blurb": "Ziaur Rahman's military government organised a vote in 1979 that some opposition parties agreed to contest after partial concessions; Zia was assassinated in 1981, and Hussain Muhammad Ershad seized power in a 1982 coup. His 1986 election ran under martial law with the BNP boycotting and British observers calling it a tragedy for democracy; his 1988 election was boycotted by nearly every major party and dismissed by a Western diplomat as a mockery of an election."
+  },
+  {
+   "key": "caretaker",
+   "label": "The caretaker republic",
+   "span": "1991–2008",
+   "blurb": "A 1990 uprising toppled Ershad, and the 1991 election that followed was widely called free and fair. The BNP's landslide re-election in February 1996 on a 21% turnout, boycotted by the opposition, triggered strikes that forced a constitutional amendment installing a neutral caretaker government to run elections; the fresh vote it produced in June 1996 was credible, and so were 2001 and 2008. Power alternated between the Awami League and the BNP at every one of these five contests."
+  },
+  {
+   "key": "dominance",
+   "label": "One-party dominance",
+   "span": "2014–2024",
+   "blurb": "Parliament abolished the caretaker system in 2011. Without it, the Awami League won three elections in a row that international observers and the US State Department repeatedly called neither free nor fair: a 2014 vote the BNP boycotted outright, leaving 153 of 300 seats uncontested; a 2018 vote nicknamed the midnight election after reports of ballot boxes stuffed before polls opened; and a 2024 vote the BNP again boycotted, which The Economist said left Bangladesh effectively a one-party state."
+  },
+  {
+   "key": "uprising",
+   "label": "After the uprising",
+   "span": "2026–",
+   "blurb": "A student-led uprising in July 2024 forced Sheikh Hasina to flee the country after fifteen years in power, and an interim government under Muhammad Yunus governed until the first election since: 12 February 2026, held alongside a referendum on the July Charter, with the Awami League itself barred from taking part. The Bangladesh Nationalist Party won a landslide."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "7 March 1973",
+   "era": "founding",
+   "totalSeats": 315,
+   "majoritySeats": null,
+   "turnout": 54.91,
+   "parties": [
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 308,
+     "seatChange": 10,
+     "votes": 13798717,
+     "share": 73.2,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Muzaffar)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1569299,
+     "share": 8.32,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 1229110,
+     "share": 6.52,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Bhashani)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1002771,
+     "share": 5.32,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": 62354,
+     "share": 0.33,
+     "swing": null
+    },
+    {
+     "name": "Bangla Jatiya League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 53097,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 47211,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Sramik Krishak Samajbadi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38421,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Communist Party (Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18619,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Shramik Federation",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17271,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Banglar Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11911,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Bangla Chattra Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7564,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3761,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Ganatantrik Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1818,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -2,
+     "votes": 989884,
+     "share": 5.25,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sheikh Mujibur Rahman",
+    "party": "AL"
+   },
+   "pmAfter": {
+    "name": "Sheikh Mujibur Rahman",
+    "party": "AL"
+   },
+   "knownAs": null,
+   "summary": "Awami League finished first with 308 of 315 seats on 73.2% of the vote. Turnout 54.9%. Sheikh Mujibur Rahman stayed in office.",
+   "seatLeader": "Awami League",
+   "caveat": "The Awami League government pushed to sweep every seat; the count is described as unnecessarily rigged, and eleven constituencies went to AL candidates unopposed.",
+   "unfree": null
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "18 February 1979",
+   "era": "ershad",
+   "totalSeats": 330,
+   "majoritySeats": null,
+   "turnout": 51.29,
+   "parties": [
+    {
+     "name": "Bangladesh Nationalist Party",
+     "leader": null,
+     "seats": 237,
+     "seatChange": null,
+     "votes": 7934236,
+     "share": 41.17,
+     "swing": null
+    },
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -269,
+     "votes": 4734277,
+     "share": 24.56,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League–Islamic Democratic League",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 1941394,
+     "share": 10.07,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 7,
+     "votes": 931851,
+     "share": 4.83,
+     "swing": null
+    },
+    {
+     "name": "Awami League (Mizan)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 535426,
+     "share": 2.78,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Muzaffar)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 432514,
+     "share": 2.24,
+     "swing": null
+    },
+    {
+     "name": "United Peoples' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 170955,
+     "share": 0.89,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Gono Front",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 115622,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Nurur-Zahid)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 88385,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 75455,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh (Marxist–Leninist)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 74771,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya League",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 69319,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Ekata Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 44459,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Ganatantrik Andolan",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 34259,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Jatiyatabadi Ganatantrik Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27259,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Naser)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25336,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Janata Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18748,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "National Republican Party for Parity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14429,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10932,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7738,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "People's Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5703,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Sramik Krishak Samajbadi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4954,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3564,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Mukti Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3363,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Tanti Samity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1834,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Nizam-e-Islam Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1575,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Gano Azadi League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1378,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "United Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 389,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Ganatantrik Chashi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 130,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 15,
+     "votes": 1963345,
+     "share": 10.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Shah Azizur Rahman",
+    "party": "BNP"
+   },
+   "knownAs": null,
+   "summary": "Bangladesh Nationalist Party finished first with 237 of 330 seats on 41.2% of the vote. Turnout 51.3%. Shah Azizur Rahman took office.",
+   "seatLeader": "Bangladesh Nationalist Party",
+   "caveat": "Organised by Ziaur Rahman's military government under martial law; only some opposition parties agreed to take part after concessions fell short of their demands.",
+   "unfree": null
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "7 May 1986",
+   "era": "ershad",
+   "totalSeats": 330,
+   "majoritySeats": null,
+   "turnout": 61.1,
+   "parties": [
+    {
+     "name": "Jatiya Party",
+     "leader": null,
+     "seats": 183,
+     "seatChange": null,
+     "votes": 12079259,
+     "share": 42.34,
+     "swing": null
+    },
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 37,
+     "votes": 7462157,
+     "share": 26.16,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jamaat-e-Islami",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 1314057,
+     "share": 4.61,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Rab)",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 725303,
+     "share": 2.54,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4,
+     "votes": 412765,
+     "share": 1.45,
+     "swing": null
+    },
+    {
+     "name": "Oikya National Awami Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5,
+     "votes": 369824,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5,
+     "votes": 259728,
+     "share": 0.91,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Siraj)",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 248705,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Muzaffar)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1,
+     "votes": 202520,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krishak Sramik Awami League",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 191107,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 151828,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khilafat Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 123306,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Jana Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 98100,
+     "share": 0.34,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Nagarik Sanghati",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 68290,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Islami Jukta Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 50509,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party (Odud)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46704,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Samyabadi Dal (M-L)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36944,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Gano Azadi League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 23632,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islamic Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22931,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Jamaaiatay Olamaya Islam",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5676,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Jamaaiatay Olamaya Islam-Nizam-e-Islam Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5572,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Pragotishil Jatiyatabadi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2997,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party (Sujat)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1988,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jayita League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 1985,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Hindu Oikkya Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1338,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiyatabadi Ganatantrik Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 149,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Young Muslim Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 141,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islamic Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 110,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 16,
+     "votes": 4619025,
+     "share": 16.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Post vacant",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Mizanur Rahman Chowdhury",
+    "party": "JP(E)"
+   },
+   "knownAs": null,
+   "summary": "Jatiya Party finished first with 183 of 330 seats on 42.3% of the vote. Turnout 61.1%. Mizanur Rahman Chowdhury replaced Post vacant.",
+   "seatLeader": "Jatiya Party",
+   "caveat": "Held under Ershad's martial law with the BNP boycotting; a British observer team that included a former minister and a BBC journalist called it a tragedy for democracy and a cynically frustrated exercise.",
+   "unfree": null
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "3 March 1988",
+   "era": "ershad",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 52.48,
+   "parties": [
+    {
+     "name": "Jatiya Party",
+     "leader": null,
+     "seats": 251,
+     "seatChange": 98,
+     "votes": 17680133,
+     "share": 68.44,
+     "swing": null
+    },
+    {
+     "name": "Combined Opposition Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 3263340,
+     "share": 12.63,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Freedom Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 850284,
+     "share": 3.29,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Siraj)",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0,
+     "votes": 309666,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khilafat Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 105910,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "23-Party Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 102930,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Jana Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 28929,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Ganatantra Bastabayan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4209,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -7,
+     "votes": 3487457,
+     "share": 13.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mizanur Rahman Chowdhury",
+    "party": "JP(E)"
+   },
+   "pmAfter": {
+    "name": "Moudud Ahmed",
+    "party": "JP(E)"
+   },
+   "knownAs": null,
+   "summary": "Jatiya Party finished first with 251 of 300 seats on 68.4% of the vote. Turnout 52.5%. Moudud Ahmed replaced Mizanur Rahman Chowdhury.",
+   "seatLeader": "Jatiya Party",
+   "caveat": "Nearly every major party, including the Awami League, the BNP, Jamaat-e-Islami and the Communists, boycotted; a Western diplomat at the time called it a mockery of an election.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "legislative",
+   "date": "27 February 1991",
+   "era": "caretaker",
+   "totalSeats": 330,
+   "majoritySeats": null,
+   "turnout": 55.45,
+   "parties": [
+    {
+     "name": "Bangladesh Nationalist Party",
+     "leader": null,
+     "seats": 168,
+     "seatChange": null,
+     "votes": 10507549,
+     "share": 30.81,
+     "swing": null
+    },
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 88,
+     "seatChange": null,
+     "votes": 10259866,
+     "share": 30.08,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jamaat-e-Islami",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 4136661,
+     "share": 12.13,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": -216,
+     "votes": 4063537,
+     "share": 11.92,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krishak Sramik Awami League",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 616014,
+     "share": 1.81,
+     "swing": null
+    },
+    {
+     "name": "Zaker Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 417737,
+     "share": 1.22,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 407515,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Rab)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 269451,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "Islami Oikya Jote",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 269434,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Muzaffar)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 259978,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Inu)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 171011,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Ganatantri Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 152592,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 121918,
+     "share": 0.36,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Janata Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 120729,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "United Communist League of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 110517,
+     "share": 0.32,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khilafat Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 93049,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 90781,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Siraj)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": 84276,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League (Ainuddin)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 66575,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 63434,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Samajtantrik Dal (Khaliquzzaman)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 34868,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League (Kader)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 32693,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Janata Mukti Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30962,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Ganotantrik Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24761,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islami Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24310,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Oikkya Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21624,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party–Ganatantrik Oikkya Jote",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20568,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Jamaaiatay Olamaya Islam Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15073,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Samajtantrik Dal (Mahbub)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13413,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Hindu League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11941,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Samyabadi Dal (Marxist-Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11275,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Oikkya Prakriyya",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11074,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League (Matin)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11073,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Bhashani)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9129,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Pragotishil Jatiyatabadi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6677,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Sramik Krishak Samajbadi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6396,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Biplobi Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3671,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Pragotishil Ganatantrik Sakt",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3598,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party (Ashraf)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3187,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Tanti Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3115,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League (Yusuf)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2757,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Jukta Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2668,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party (Asad)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1570,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1421,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiyatabadi Ganatantrik Chhashi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1317,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Gano Azadi League (Samad)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1314,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Janasakti Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1263,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Nezam-e-Islam Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1236,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Islamic Samajtantrik Dal Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1039,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Freedom League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1034,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Peoples Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 879,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh People's League (Goariobi Newaz)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 742,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Mukti Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 723,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jana Parishad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 686,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Muslim Peoples Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 515,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krishak Sramik Mukti Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 503,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Hindu Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 502,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiyatabadi Ganatantrik Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 496,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Democratic League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 453,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Humanitarian Organization for the Prevention of Smoking and Drug Abuse",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 453,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Tarun Sangha",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 417,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 318,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Manobatabadi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 294,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Ideal Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 251,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Sadequr Rahman)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 248,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khilafat Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 241,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Inquilab Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 214,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islamic Biplobi Parishad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 202,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Bekar Samaj",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 182,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Adarsha Krishak Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 154,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islamic Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 138,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Bekar Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Sramajibi Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Nur Mohammad Kazi)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -22,
+     "votes": 1497396,
+     "share": 4.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Post vacant",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Khaleda Zia",
+    "party": "BNP"
+   },
+   "knownAs": null,
+   "summary": "Bangladesh Nationalist Party finished first with 168 of 330 seats on 30.8% of the vote. Turnout 55.5%. Khaleda Zia replaced Post vacant.",
+   "seatLeader": "Bangladesh Nationalist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1996-february",
+   "label": "February 1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "15 February 1996",
+   "era": "caretaker",
+   "totalSeats": 330,
+   "majoritySeats": null,
+   "turnout": 20.97,
+   "parties": [
+    {
+     "name": "Bangladesh Nationalist Party",
+     "leader": null,
+     "seats": 308,
+     "seatChange": 140,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Freedom Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 7,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Khaleda Zia",
+    "party": "BNP"
+   },
+   "pmAfter": {
+    "name": "Khaleda Zia",
+    "party": "BNP"
+   },
+   "knownAs": null,
+   "summary": "Bangladesh Nationalist Party finished first with 308 of 330 seats. Turnout 21.0%. Khaleda Zia stayed in office.",
+   "seatLeader": "Bangladesh Nationalist Party",
+   "caveat": "The three main opposition parties boycotted, turnout was 21%, the lowest in Bangladesh's history, and most seats went uncontested; the government it produced lasted twelve days.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1996-june",
+   "label": "June 1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "12 June 1996",
+   "era": "caretaker",
+   "totalSeats": 330,
+   "majoritySeats": null,
+   "turnout": 75.6,
+   "parties": [
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 173,
+     "seatChange": null,
+     "votes": 15882792,
+     "share": 37.44,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Nationalist Party",
+     "leader": null,
+     "seats": 116,
+     "seatChange": -192,
+     "votes": 14255986,
+     "share": 33.61,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 6954981,
+     "share": 16.4,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jamaat-e-Islami",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 3653013,
+     "share": 8.61,
+     "swing": null
+    },
+    {
+     "name": "Islami Oikya Jote",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 461517,
+     "share": 1.09,
+     "swing": null
+    },
+    {
+     "name": "Zaker Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 167597,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Rab)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 97916,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 56404,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Gano Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 54250,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Inu)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 50944,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48549,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 45585,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Sammilita Sangram Parishad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40803,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 38974,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Samridhya Bangladesh Andolon",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27083,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islami Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23696,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khilafat Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18397,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiyabadi Awami League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11190,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Islami Shasontontro Andolon",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11159,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Bangladesher Samajtantrik Dal (Khalekuzzaman)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10234,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Samajtantrik Dal (Mahbub)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6791,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Awami Party (NAP Bashani)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5948,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League (Jamir Ali)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4580,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Ganatantri Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4114,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Awami Party (NAP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3620,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3605,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Janata Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3364,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party (Nurul Islam)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2986,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party (Sheikh Asad)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2395,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1938,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Gano Azadi League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1683,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Progotisil Jatiata Badi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1515,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Hak Kathar Mancha",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1340,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Samyabadi Dal (Marxist-Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1148,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sramik Krishak Samajbadi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 964,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist Kendra",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 888,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Biplobi Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 631,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Saat Dalya Jote (Mirpur)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 602,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Hindu League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 570,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Peoples Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 558,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Bekar Samaj",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 548,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Tafsil Jati Federation (S.K. Mandal)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 537,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Desh Prem Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 532,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Ganotantrik Sarbahara Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 502,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya League (Sobhan)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 418,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jana Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 395,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Mahiuddin)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 393,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Seba Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 365,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 353,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krisak Sramik Janata Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 294,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Islami Al Zihad Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 288,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Sarbahara Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 248,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Daridra Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 244,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sramajibi Oikya Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 229,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Islamic Dal Bangladesh (Saifur)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 221,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh People's League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 213,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Samajtantrik Samsad (Darshan Shava)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 209,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krishak Sramik Mukti Andolon",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 189,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Gano Oikkya Front (Guff)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 186,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Mehanati Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 173,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Tafsili Federation (Sudir)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 150,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "People's Muslim League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 140,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (NAP Bhashani)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 138,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Quran Dorshion Sangshta Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 137,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Progatishil Gonotantrik Shakti",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 134,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 132,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Agragati Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 131,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Oikya Prokria",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 112,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Bashani Adarsha Bastabayan Parishad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 107,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Bastuhara Parishad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 105,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 99,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Quran Sunna Bastabayan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 82,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Tanjimul Muslimin",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 81,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Samridhya Bangladesh Babosai Samproday",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 48,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bashani Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 45,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krishak Raj Islami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Patriotic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islami Biplobi Parishad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Taherikay Olama-e-Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "United Peoples' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 26,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Manabodjikar Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 20,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -9,
+     "votes": 449618,
+     "share": 1.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Sheikh Hasina",
+    "party": "AL"
+   },
+   "knownAs": null,
+   "summary": "Awami League finished first with 173 of 330 seats on 37.4% of the vote. Turnout 75.6%. Sheikh Hasina took office.",
+   "seatLeader": "Awami League",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "kind": "legislative",
+   "date": "1 October 2001",
+   "era": "caretaker",
+   "totalSeats": 345,
+   "majoritySeats": null,
+   "turnout": 74.97,
+   "parties": [
+    {
+     "name": "Bangladesh Nationalist Party",
+     "leader": null,
+     "seats": 193,
+     "seatChange": null,
+     "votes": 22833978,
+     "share": 40.97,
+     "swing": null
+    },
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 62,
+     "seatChange": null,
+     "votes": 22365516,
+     "share": 40.13,
+     "swing": null
+    },
+    {
+     "name": "Islami Jatiya Oikya Front",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 4038453,
+     "share": 7.25,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jamaat-e-Islami",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 2385361,
+     "share": 4.28,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 621772,
+     "share": 1.12,
+     "swing": null
+    },
+    {
+     "name": "Islami Oikya Jote",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 376343,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Krishak Sramik Janata League",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 261344,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party (Manju)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 243617,
+     "share": 0.44,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 119382,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 56991,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 40484,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islami Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30761,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "BASAD–Khalekuzzaman",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21164,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 19256,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khilafat Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13472,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Gano Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8494,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Islami Shasantantra Andolon",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5944,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3976,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (NAP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3801,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Progressive Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3734,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Ganatantri Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3190,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Samajtantrik Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2308,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Janata Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1703,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krishak Sramik Mukti Andolon",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1248,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Zaker Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1181,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Peoples Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1155,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist Kendra",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1042,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh (Marxist–Leninist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 972,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Hindu League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 922,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Gano Azadi League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 780,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiyo Janata Party (Adv. Nurul Islam Khan)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 657,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League (Jamir Ali)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 582,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Patriotic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 551,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (Bhashani)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 442,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Tanti Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 441,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Samridha Bangladesh Andolon",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 429,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sramik Krishak Samajbadi Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 391,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Peoples Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 382,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Desh Prem Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 366,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 364,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Manabadhikar Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 237,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krisak Sramik Janata Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 197,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democrats Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 170,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Quran Darshan Sangstha Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 161,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party (Sheik Asad)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 148,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Pragatishil Ganotantrik Shakti",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 136,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Sama-Samaj Ganotantri Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 131,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Awami Party (NAP-Bhashani Mushtaq)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 79,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Quran and Sunnah Bastabayan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 77,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bhashani Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 76,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Krishak Sramik Awami League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 59,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Bhashani Adarsha Bastabayan Parishad",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 58,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Sarbahara Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 44,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Janata Party (Hafizur)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 2262073,
+     "share": 4.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Khaleda Zia",
+    "party": "BNP"
+   },
+   "knownAs": null,
+   "summary": "Bangladesh Nationalist Party finished first with 193 of 345 seats on 41.0% of the vote. Turnout 75.0%. Khaleda Zia took office.",
+   "seatLeader": "Bangladesh Nationalist Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "kind": "legislative",
+   "date": "29 December 2008",
+   "era": "caretaker",
+   "totalSeats": 345,
+   "majoritySeats": null,
+   "turnout": 87.13,
+   "parties": [
+    {
+     "name": "AL",
+     "leader": "Sheikh Hasina",
+     "seats": 230,
+     "seatChange": 168,
+     "votes": 33634629,
+     "share": 48.04,
+     "swing": null
+    },
+    {
+     "name": "BNP",
+     "leader": "Khaleda Zia",
+     "seats": 30,
+     "seatChange": -163,
+     "votes": 22757101,
+     "share": 32.5,
+     "swing": null
+    },
+    {
+     "name": "JP(E)",
+     "leader": "H.M. Ershad",
+     "seats": 27,
+     "seatChange": 13,
+     "votes": 4926360,
+     "share": 7.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Sheikh Hasina",
+    "party": "AL"
+   },
+   "knownAs": null,
+   "summary": "AL finished first with 230 of 345 seats on 48.0% of the vote. Turnout 87.1%. Sheikh Hasina took office.",
+   "seatLeader": "AL",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "legislative",
+   "date": "5 January 2014",
+   "era": "dominance",
+   "totalSeats": 350,
+   "majoritySeats": null,
+   "turnout": 39.58,
+   "parties": [
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 273,
+     "seatChange": null,
+     "votes": 12357374,
+     "share": 72.14,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 1199727,
+     "share": 7.0,
+     "swing": null
+    },
+    {
+     "name": "Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 359620,
+     "share": 2.1,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 203799,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Tarikat Federation",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 177449,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party (Manju)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 124389,
+     "share": 0.73,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Nationalist Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 107990,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7120,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Khelafat Majlish",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5725,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Gano Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2717,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islami Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2585,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Ganatantri Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2031,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 2579324,
+     "share": 15.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sheikh Hasina",
+    "party": "AL"
+   },
+   "pmAfter": {
+    "name": "Sheikh Hasina",
+    "party": "AL"
+   },
+   "knownAs": null,
+   "summary": "Awami League finished first with 273 of 350 seats on 72.1% of the vote. Turnout 39.6%. Sheikh Hasina stayed in office.",
+   "seatLeader": "Awami League",
+   "caveat": "Almost all opposition parties boycotted after a crackdown that put Khaleda Zia under house arrest, leaving 153 of 300 seats uncontested; the source states the election was not free and fair.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "30 December 2018",
+   "era": "dominance",
+   "totalSeats": 350,
+   "majoritySeats": null,
+   "turnout": 82.58,
+   "parties": [
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 300,
+     "seatChange": 27,
+     "votes": 63805379,
+     "share": 74.96,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Nationalist Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 7,
+     "votes": 9985202,
+     "share": 11.73,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -12,
+     "votes": 4443351,
+     "share": 5.22,
+     "swing": null
+    },
+    {
+     "name": "Islami Andolan Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1255373,
+     "share": 1.47,
+     "swing": null
+    },
+    {
+     "name": "Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -4,
+     "votes": 646064,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -4,
+     "votes": 610044,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Bikalpa Dhara Bangladesh",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 565940,
+     "share": 0.66,
+     "swing": null
+    },
+    {
+     "name": "Gano Forum",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2,
+     "votes": 501737,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Tarikat Federation[viii]",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 429955,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 218009,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party (Manju)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": 182611,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Rab)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 155986,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Krishak Sramik Janata League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 144115,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Khelafat Majlish",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 117110,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Zaker Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 109440,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islami Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 60372,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 55421,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party[xiii]",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 54031,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Kalyan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 44436,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38750,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "National People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36611,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Islamic Front Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 31468,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 18043,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17591,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League[xvii]",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 15116,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Nationalist Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 13289,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Islami Oikya Jote",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11328,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khilafat Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9796,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Awami Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8367,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Progressive Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6113,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Gano Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5277,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Awami Party-Bangladesh NAP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5176,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Party (Mukit)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4606,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Ganotantrik Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3798,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khelafat Majlish",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2899,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Ganatantri Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1641,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Cultural Liberation Front (Muktijote)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1219,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh (M-L)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 387,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League-BML",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 228,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -15,
+     "votes": 1498152,
+     "share": 1.76,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sheikh Hasina",
+    "party": "AL"
+   },
+   "pmAfter": {
+    "name": "Sheikh Hasina",
+    "party": "AL"
+   },
+   "knownAs": null,
+   "summary": "Awami League finished first with 300 of 350 seats on 75.0% of the vote. Turnout 82.6%. Sheikh Hasina stayed in office.",
+   "seatLeader": "Awami League",
+   "caveat": "Widely described by observers as unfair, with reports of ballot boxes already stuffed before polling stations opened, which is why it is known as the midnight election.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "7 January 2024",
+   "era": "dominance",
+   "totalSeats": 350,
+   "majoritySeats": null,
+   "turnout": 41.8,
+   "parties": [
+    {
+     "name": "Awami League",
+     "leader": null,
+     "seats": 271,
+     "seatChange": -29,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party (Ershad)",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -15,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Kalyan Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -2,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ganatantri Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 58,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sheikh Hasina",
+    "party": "AL"
+   },
+   "pmAfter": {
+    "name": "Sheikh Hasina",
+    "party": "AL"
+   },
+   "knownAs": null,
+   "summary": "Awami League finished first with 271 of 350 seats. Turnout 41.8%. Sheikh Hasina stayed in office.",
+   "seatLeader": "Awami League",
+   "caveat": "The BNP boycotted after a crackdown on its leaders; the US State Department said the vote was not free and fair, and the UK government said it lacked the preconditions of democracy.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "legislative",
+   "date": "12 February 2026",
+   "era": "uprising",
+   "totalSeats": 350,
+   "majoritySeats": null,
+   "turnout": 59.44,
+   "parties": [
+    {
+     "name": "Bangladesh Nationalist Party",
+     "leader": null,
+     "seats": 210,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gono Odhikar Parishad",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ganosanhati Andolan",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Workers Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jamiat Ulema-e-Islam Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jamaat-e-Islami",
+     "leader": null,
+     "seats": 68,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Citizen Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khelafat Majlis",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Khelafat Majlis",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Amar Bangladesh Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Khilafat Andolan",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nizam-e-Islam Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Development Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Ganotantrik Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Bangladesh (Marxist)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Samajtantrik Dal",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gano Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party (Ershad)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Sangskritik Muktijote",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Party (Manju)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Islami Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Supreme Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Islamic Front Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Islami Andolan Bangladesh",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Zaker Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Insaniyat Biplob Bangladesh",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jatiya Samajtantrik Dal (Rab)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gano Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Amjanatar Dol",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Congress",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nagorik Oikko",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Nationalist Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Minority Janata Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Kalyan Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Islami Oikya Jote",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ganatantri Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh National Awami Party (Bhasani)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Janotar Dol",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Republican Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Muslim League (Bulbul)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Jatiya Party (Siraj)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bangladesh Equal Right Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Tarique Rahman",
+    "party": "BNP"
+   },
+   "knownAs": null,
+   "summary": "Bangladesh Nationalist Party finished first with 210 of 350 seats. Turnout 59.4%. Tarique Rahman took office.",
+   "seatLeader": "Bangladesh Nationalist Party",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

@@ -1,0 +1,167 @@
+{
+ "meta": {
+  "title": "Emirati Federal National Council Elections",
+  "sources": [
+   "Wikipedia: Emirati parliamentary election articles 2006-2023 (results tables and infoboxes)",
+   "The National and Emirates News Agency (WAM) figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "eras": [
+  {
+   "key": "college",
+   "label": "The appointed electoral college",
+   "span": "2006–",
+   "blurb": "Half the Federal National Council is elected, and even that half is chosen not by ordinary citizens but by an electoral college the rulers of each emirate handpick. Political parties are banned, so every one of these five contests returned twenty independents to twenty seats, and the only line that moves from election to election is the college itself: 6,595 members in 2006, expanded to 398,879 by 2023."
+  }
+ ],
+ "elections": [
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "16, 18 and 20 December 2006",
+   "era": "college",
+   "totalSeats": 40,
+   "majoritySeats": null,
+   "turnout": 74.4,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 20 of 40 seats. Turnout 74.4%.",
+   "seatLeader": "Independents",
+   "caveat": "The 20 elected seats are chosen not by citizens at large but by an electoral college the rulers of each emirate select, and the other 20 seats in the council are simply appointed by those same rulers.",
+   "unfree": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "24 September 2011",
+   "era": "college",
+   "totalSeats": 40,
+   "majoritySeats": null,
+   "turnout": 27.75,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 20 of 40 seats. Turnout 27.8%.",
+   "seatLeader": "Independents",
+   "caveat": "The 20 elected seats are chosen not by citizens at large but by an electoral college the rulers of each emirate select, and the other 20 seats in the council are simply appointed by those same rulers.",
+   "unfree": null
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "3 October 2015",
+   "era": "college",
+   "totalSeats": 40,
+   "majoritySeats": null,
+   "turnout": 35.29,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 20 of 40 seats. Turnout 35.3%.",
+   "seatLeader": "Independents",
+   "caveat": "The 20 elected seats are chosen not by citizens at large but by an electoral college the rulers of each emirate select, and the other 20 seats in the council are simply appointed by those same rulers.",
+   "unfree": null
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "5 October 2019",
+   "era": "college",
+   "totalSeats": 40,
+   "majoritySeats": null,
+   "turnout": 34.81,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 20 of 40 seats. Turnout 34.8%.",
+   "seatLeader": "Independents",
+   "caveat": "The 20 elected seats are chosen not by citizens at large but by an electoral college the rulers of each emirate select, and the other 20 seats in the council are simply appointed by those same rulers.",
+   "unfree": null
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "7 October 2023",
+   "era": "college",
+   "totalSeats": 40,
+   "majoritySeats": null,
+   "turnout": 44.0,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 20 of 40 seats. Turnout 44.0%.",
+   "seatLeader": "Independents",
+   "caveat": "The 20 elected seats are chosen not by citizens at large but by an electoral college the rulers of each emirate select, and the other 20 seats in the council are simply appointed by those same rulers.",
+   "unfree": null
+  }
+ ]
+}

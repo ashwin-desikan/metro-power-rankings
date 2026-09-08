@@ -1,0 +1,5107 @@
+{
+ "meta": {
+  "title": "Czech and Czechoslovak Elections",
+  "sources": [
+   "Wikipedia: Czechoslovak and Czech legislative and presidential election articles 1918-2025",
+   "Statistical Office / Databáze poslanců figures as reported there"
+  ],
+  "built": "2026-09-08",
+  "status": "active",
+  "dissolved": null
+ },
+ "presEras": [
+  {
+   "key": "first",
+   "label": "The First Republic presidency",
+   "span": "1918-1946",
+   "blurb": "The president was chosen by the National Assembly sitting as one body, not by the public. Tomáš Garrigue Masaryk was elected by acclamation with no vote in 1918, then won three genuinely contested Assembly ballots against real rivals; Edvard Beneš succeeded him in 1935 over a right-wing challenger. Beneš resigned under German pressure weeks after the 1938 Munich Agreement; his unopposed 1946 re-election, after wartime exile, was the last free presidency before the Communist coup two years later."
+  },
+  {
+   "key": "communist",
+   "label": "The communist presidency",
+   "span": "1948-1985",
+   "blurb": "Nine Assembly votes over thirty-seven years, every one of them for a single nominee the National Front had already settled on. Only in 1968, the year of the Prague Spring, did the vote itself carry any real drama: Ludvík Svoboda's confirmation drew six recorded abstentions, the only time a communist-era president failed to receive every vote cast."
+  },
+  {
+   "key": "transition",
+   "label": "The transition",
+   "span": "1989-1992",
+   "blurb": "Václav Havel, the dissident playwright, was elected by the Federal Assembly on 29 December 1989, three weeks after the Velvet Revolution, as its only candidate; he was re-elected the same way in July 1990. His bid for a third term collapsed in 1992 when he could not win enough Slovak votes in the Assembly, and no successor was chosen before Czechoslovakia itself dissolved that December."
+  },
+  {
+   "key": "direct",
+   "label": "The direct presidency",
+   "span": "2013-",
+   "blurb": "The Czech Republic elected its president directly for the first time in January 2013, after two decades in which parliament had chosen the office indirectly (elections not covered in this record). All three direct elections have gone to a run-off between the top two first-round finishers: Miloš Zeman twice, then the retired general Petr Pavel in 2023."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "first",
+   "label": "The First Republic",
+   "span": "1920-1935",
+   "blurb": "Czechoslovakia's founding republic elected both houses of its National Assembly by list PR on a wide and genuinely competitive field, sixteen parties strong at the first vote in 1920. Governments were built afterwards from shifting coalitions of the largest blocs, a pattern historians call the Pětka. It ended not at the ballot box but at Munich."
+  },
+  {
+   "key": "1946",
+   "label": "The last free vote before the coup",
+   "span": "1946",
+   "blurb": "The only postwar election held before the Communist takeover, contested by four legal parties in the Czech lands and won outright by the Communist Party on just under 40%. Klement Gottwald became prime minister of a coalition government legitimately, then used the ministries he controlled to engineer the February 1948 coup that ended competitive politics for four decades."
+  },
+  {
+   "key": "communist",
+   "label": "The National Front single list",
+   "span": "1948-1986",
+   "blurb": "From 1948 voters were offered one National Front list with no opposition candidate and no real choice, approved every time with turnout and a yes vote both reported above 90%. Seat totals moved only because the house itself changed size, in 1954 and again at the 1968 federalization. These are the ritual elections a one-party state held to claim a mandate it did not need a vote to keep."
+  },
+  {
+   "key": "federal",
+   "label": "The federal elections that ended the federation",
+   "span": "1990-1992",
+   "blurb": "The two free federal elections of the post-Communist era, held for the last time as one Czechoslovak state. Civic Forum and its Slovak counterpart Public Against Violence swept 1990 on the strength of the Velvet Revolution; by 1992 both had splintered, and the federal parliament elected that June could not agree on a shared constitution, so a bill in the National Council dissolved Czechoslovakia into the Czech Republic and Slovakia effective 1 January 1993."
+  },
+  {
+   "key": "czech",
+   "label": "The Czech Republic",
+   "span": "1996-",
+   "blurb": "The Chamber of Deputies is the direct successor of the Czech National Council, the republic-level house that sat inside the federation from 1969 and was simply renamed at independence rather than re-founded; its own elections from 1968 to 1992 are not part of this series; the first Chamber of Deputies vote under the new constitution was 1996. Six governing coalitions later, the 2021 SPOLU-plus-Pirates and Mayors government lost to a resurgent ANO in October 2025."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "presidential",
+   "date": "1918",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Tomáš Garrigue Masaryk",
+    "party": "ČSP"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "Tomáš Garrigue Masaryk was elected by acclamation with no vote taken, as the only candidate for the new republic's first presidency.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "presidential",
+   "date": "27 May 1920",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Tomáš Garrigue Masaryk",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Tomáš Garrigue Masaryk",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The president was chosen by the National Assembly sitting as one body, not by a direct popular vote.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "presidential",
+   "date": "27 May 1927",
+   "era": "first",
+   "turnout": 96.0,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Tomáš Garrigue Masaryk",
+     "party": "Independent",
+     "r1Votes": 274,
+     "r1Share": 63.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Václav Šturc",
+     "party": "Communist Party of Czechoslovakia",
+     "r1Votes": 54,
+     "r1Share": 12.5,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Tomáš Garrigue Masaryk",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Tomáš Garrigue Masaryk",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Tomáš Garrigue Masaryk won with 63.43% against Václav Šturc on 12.50%. Turnout 96.0%.",
+   "caveat": "The president was chosen by the National Assembly sitting as one body, not by a direct popular vote.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1934",
+   "label": "1934",
+   "year": 1934,
+   "kind": "presidential",
+   "date": "24 May 1934",
+   "era": "first",
+   "turnout": 92.89,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Tomáš Garrigue Masaryk",
+     "party": "Independent",
+     "r1Votes": 327,
+     "r1Share": 78.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Klement Gottwald",
+     "party": "Communist Party of Czechoslovakia",
+     "r1Votes": 38,
+     "r1Share": 9.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Tomáš Garrigue Masaryk",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Tomáš Garrigue Masaryk",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Tomáš Garrigue Masaryk won with 78.23% against Klement Gottwald on 9.09%. Turnout 92.9%.",
+   "caveat": "The president was chosen by the National Assembly sitting as one body, not by a direct popular vote.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "presidential",
+   "date": "18 December 1935",
+   "era": "first",
+   "turnout": 97.78,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Edvard Beneš",
+     "party": "Czechoslovak National Socialist Party",
+     "r1Votes": 340,
+     "r1Share": 77.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bohumil Němec",
+     "party": "Republican Party of Farmers and Peasants",
+     "r1Votes": 24,
+     "r1Share": 5.45,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Milan Hodža (acting)",
+    "party": "RSZML"
+   },
+   "presAfter": {
+    "name": "Edvard Beneš",
+    "party": "ČSNS"
+   },
+   "knownAs": null,
+   "summary": "Edvard Beneš won with 77.27% against Bohumil Němec on 5.45%. Turnout 97.8%.",
+   "caveat": "The president was chosen by the National Assembly sitting as one body, not by a direct popular vote.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "presidential",
+   "date": "30 November 1938",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Edvard Beneš",
+    "party": "ČSNS"
+   },
+   "presAfter": {
+    "name": "Emil Hácha",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "The president was chosen by the National Assembly sitting as one body, not by a direct popular vote.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "presidential",
+   "date": "19 June 1946",
+   "era": "first",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Edvard Beneš",
+    "party": "ČSNS"
+   },
+   "presAfter": {
+    "name": "Edvard Beneš",
+    "party": "ČSNS"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": "Edvard Beneš was the only candidate and received all 298 votes cast in the National Assembly.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "presidential",
+   "date": "14 June 1948",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Edvard Beneš",
+    "party": "ČSNS"
+   },
+   "presAfter": {
+    "name": "Klement Gottwald",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "presidential",
+   "date": "21 March 1953",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Klement Gottwald",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Antonín Zápotocký",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "presidential",
+   "date": "19 November 1957",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Antonín Zápotocký",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Antonín Novotný",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "presidential",
+   "date": "12 November 1964",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Antonín Novotný",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Antonín Novotný",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1968",
+   "label": "1968",
+   "year": 1968,
+   "kind": "presidential",
+   "date": "30 March 1968",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ludvík Svoboda",
+     "party": null,
+     "r1Votes": 282,
+     "r1Share": 97.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abstain",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 2.08,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Antonín Novotný",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Ludvík Svoboda",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Ludvík Svoboda won with 97.58% against Abstain on 2.08%.",
+   "caveat": "Ludvík Svoboda was the sole nominee; the only departure from a unanimous communist-era vote was six recorded abstentions rather than a rival candidate.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "presidential",
+   "date": "22 March 1973",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Ludvík Svoboda",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Ludvík Svoboda",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1975",
+   "label": "1975",
+   "year": 1975,
+   "kind": "presidential",
+   "date": "29 May 1975",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Ludvík Svoboda",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Gustáv Husák",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "presidential",
+   "date": "22 May 1980",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Gustáv Husák",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Gustáv Husák",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "presidential",
+   "date": "22 May 1985",
+   "era": "communist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Gustáv Husák",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Gustáv Husák",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Only one candidate was nominated, so no vote was held.",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "presidential",
+   "date": "29 December 1989",
+   "era": "transition",
+   "turnout": 92.29,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Václav Havel",
+     "party": "Civic Forum",
+     "r1Votes": 323,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gustáv Husák",
+    "party": "KSČ"
+   },
+   "presAfter": {
+    "name": "Václav Havel",
+    "party": "OF"
+   },
+   "knownAs": null,
+   "summary": "Václav Havel won with 100.00%. Turnout 92.3%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "presidential",
+   "date": "5 July 1990",
+   "era": "transition",
+   "turnout": 95.0,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Václav Havel",
+     "party": "Civic Forum",
+     "r1Votes": 235,
+     "r1Share": 82.46,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Václav Havel",
+    "party": "OF"
+   },
+   "presAfter": {
+    "name": "Václav Havel",
+    "party": "OF"
+   },
+   "knownAs": null,
+   "summary": "Václav Havel won with 82.46%. Turnout 95.0%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "presidential",
+   "date": "3 July to 3 October 1992",
+   "era": "transition",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Václav Havel",
+    "party": null
+   },
+   "presAfter": null,
+   "knownAs": null,
+   "summary": "No candidate reached the majority required, so the office stayed vacant.",
+   "caveat": "Havel ran unopposed but failed to win enough Slovak MPs' votes in the Federal Assembly; no successor was chosen before Czechoslovakia dissolved that December.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "presidential",
+   "date": "January 2013",
+   "era": "direct",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Miloš Zeman",
+     "party": "Party of Civic Rights – Zemanovci",
+     "r1Votes": 1245848,
+     "r1Share": 24.22,
+     "r2Votes": 2717405,
+     "r2Share": 54.8
+    },
+    {
+     "name": "Karel Schwarzenberg",
+     "party": "TOP 09",
+     "r1Votes": 1204195,
+     "r1Share": 23.41,
+     "r2Votes": 2241171,
+     "r2Share": 45.2
+    },
+    {
+     "name": "Jan Fischer",
+     "party": "Independent",
+     "r1Votes": 841437,
+     "r1Share": 16.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jiří Dienstbier Jr.",
+     "party": "Czech Social Democratic Party",
+     "r1Votes": 829297,
+     "r1Share": 16.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimír Franz",
+     "party": "Independent",
+     "r1Votes": 351916,
+     "r1Share": 6.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Zuzana Roithová",
+     "party": "KDU-ČSL",
+     "r1Votes": 255045,
+     "r1Share": 4.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Táňa Fischerová",
+     "party": "Key Movement",
+     "r1Votes": 166211,
+     "r1Share": 3.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Přemysl Sobotka",
+     "party": "Civic Democratic Party",
+     "r1Votes": 126846,
+     "r1Share": 2.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jana Bobošíková",
+     "party": "Sovereignty",
+     "r1Votes": 123171,
+     "r1Share": 2.39,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Václav Klaus",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Miloš Zeman",
+    "party": "SPO"
+   },
+   "knownAs": null,
+   "summary": "Miloš Zeman won in the runoff with 54.80% against Karel Schwarzenberg on 45.20%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "January 2018",
+   "era": "direct",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Miloš Zeman",
+     "party": "Party of Civic Rights",
+     "r1Votes": 1985547,
+     "r1Share": 38.57,
+     "r2Votes": 2853390,
+     "r2Share": 51.37
+    },
+    {
+     "name": "Jiří Drahoš",
+     "party": "Independent",
+     "r1Votes": 1369601,
+     "r1Share": 26.6,
+     "r2Votes": 2701206,
+     "r2Share": 48.63
+    },
+    {
+     "name": "Pavel Fischer",
+     "party": "Independent",
+     "r1Votes": 526694,
+     "r1Share": 10.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michal Horáček",
+     "party": "Independent",
+     "r1Votes": 472643,
+     "r1Share": 9.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marek Hilšer",
+     "party": "Independent",
+     "r1Votes": 454949,
+     "r1Share": 8.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mirek Topolánek",
+     "party": "Independent",
+     "r1Votes": 221689,
+     "r1Share": 4.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jiří Hynek",
+     "party": "Realists",
+     "r1Votes": 63348,
+     "r1Share": 1.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Petr Hannig",
+     "party": "Party of Common Sense",
+     "r1Votes": 29228,
+     "r1Share": 0.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vratislav Kulhánek",
+     "party": "Civic Democratic Alliance",
+     "r1Votes": 24442,
+     "r1Share": 0.47,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Miloš Zeman",
+    "party": "SPO"
+   },
+   "presAfter": {
+    "name": "Miloš Zeman",
+    "party": "SPO"
+   },
+   "knownAs": null,
+   "summary": "Miloš Zeman won in the runoff with 51.37% against Jiří Drahoš on 48.63%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "presidential",
+   "date": "January 2023",
+   "era": "direct",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Petr Pavel",
+     "party": "Independent",
+     "r1Votes": 1975056,
+     "r1Share": 35.4,
+     "r2Votes": 3359151,
+     "r2Share": 58.33
+    },
+    {
+     "name": "Andrej Babiš",
+     "party": "ANO",
+     "r1Votes": 1952213,
+     "r1Share": 34.99,
+     "r2Votes": 2400046,
+     "r2Share": 41.67
+    },
+    {
+     "name": "Danuše Nerudová",
+     "party": "Independent",
+     "r1Votes": 777080,
+     "r1Share": 13.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pavel Fischer",
+     "party": "Independent",
+     "r1Votes": 376705,
+     "r1Share": 6.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jaroslav Bašta",
+     "party": "Freedom and Direct Democracy",
+     "r1Votes": 248375,
+     "r1Share": 4.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marek Hilšer",
+     "party": "Marek Hilšer to the Senate",
+     "r1Votes": 142912,
+     "r1Share": 2.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Karel Diviš",
+     "party": "Independent",
+     "r1Votes": 75475,
+     "r1Share": 1.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tomáš Zima",
+     "party": "Independent",
+     "r1Votes": 30769,
+     "r1Share": 0.55,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Miloš Zeman",
+    "party": "SPO"
+   },
+   "presAfter": {
+    "name": "Petr Pavel",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Petr Pavel won in the runoff with 58.33% against Andrej Babiš on 41.67%.",
+   "caveat": null,
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "18 and 25 April 1920",
+   "era": "first",
+   "totalSeats": 300,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Czechoslovak Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": null,
+     "votes": 1590520,
+     "share": 25.65,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party-Slovak People's Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 699728,
+     "share": 11.29,
+     "swing": null
+    },
+    {
+     "name": "German Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 689589,
+     "share": 11.12,
+     "swing": null
+    },
+    {
+     "name": "Republican Party of the Czechoslovak Countryside",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 603618,
+     "share": 9.74,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 500821,
+     "share": 8.08,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Democracy",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 387552,
+     "share": 6.25,
+     "swing": null
+    },
+    {
+     "name": "German National Party–German National Socialist Workers' Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 328735,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Slovak National and Peasant Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 242045,
+     "share": 3.9,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 241747,
+     "share": 3.9,
+     "swing": null
+    },
+    {
+     "name": "German Christian Social People's Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 212913,
+     "share": 3.43,
+     "swing": null
+    },
+    {
+     "name": "Provincial Christian-Socialist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 139355,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Traders' Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 122813,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "Hungarian-German Social Democratic Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 108546,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "German Democratic Freedom Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 105449,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Associated Jewish Parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 79714,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of the Czechoslovak Working People",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 58580,
+     "share": 0.94,
+     "swing": null
+    },
+    {
+     "name": "Party of Smallholders, Homeowners and Entrepreneurs of Czechoslovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 42670,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Provincial Party of Smallholders and Agrarians",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 26520,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "German Free Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7630,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Independent Party of Small People",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5252,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Hungarian National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4214,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Slavic Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2024,
+     "share": 0.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Czechoslovak Social Democratic Workers' Party finished first with 74 of 300 seats on 25.6% of the vote.",
+   "seatLeader": "Czechoslovak Social Democratic Workers' Party",
+   "caveat": "Elections were not held in every district (Ruthenia's vote was delayed to 1924, and parts of the Hlučín and Těšín regions were left unfilled in 1920), which is a franchise gap in the map rather than a rigged field.",
+   "unfree": null
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "kind": "legislative",
+   "date": "15 November 1925",
+   "era": "first",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Republican Party of Farmers and Peasants",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 17,
+     "votes": 970940,
+     "share": 13.66,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 41,
+     "seatChange": null,
+     "votes": 934223,
+     "share": 13.14,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -2,
+     "votes": 691095,
+     "share": 9.72,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -45,
+     "votes": 631403,
+     "share": 8.88,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party–Carpatho-Russian Labour Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 4,
+     "votes": 609153,
+     "share": 8.57,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League–Zipser German Party–Hungarian National Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 11,
+     "votes": 571765,
+     "share": 8.04,
+     "swing": null
+    },
+    {
+     "name": "Hlinka's Slovak People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 489111,
+     "share": 6.88,
+     "swing": null
+    },
+    {
+     "name": "German Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 4,
+     "votes": 411365,
+     "share": 5.79,
+     "swing": null
+    },
+    {
+     "name": "German Christian Social People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3,
+     "votes": 314438,
+     "share": 4.42,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Traders' Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 7,
+     "votes": 286058,
+     "share": 4.02,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Democracy",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -6,
+     "votes": 284601,
+     "share": 4.0,
+     "swing": null
+    },
+    {
+     "name": "German National Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 240918,
+     "share": 3.39,
+     "swing": null
+    },
+    {
+     "name": "German National Socialist Workers' Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 168354,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "Provincial Christian-Socialist Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -1,
+     "votes": 98337,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "Jewish Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 98845,
+     "share": 1.39,
+     "swing": null
+    },
+    {
+     "name": "National Labour Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 97938,
+     "share": 1.38,
+     "swing": null
+    },
+    {
+     "name": "Autonomous Agrarian Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 35699,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -12,
+     "votes": 35435,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Polish People's and Workers Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 29884,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Agrarian and Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27768,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "West Slovak Christian Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17285,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Jewish Economic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16936,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Cottiers and Smallholders Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14434,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "German Free Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 11344,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Independent Communist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7813,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Regional Agrarian Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4546,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Civic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4240,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Union of Christian Rural Peoples",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2389,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Entrepreneur Party of Subcarpathian Ruthenia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1094,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Republican Party of Farmers and Peasants finished first with 45 of 300 seats on 13.7% of the vote.",
+   "seatLeader": "Republican Party of Farmers and Peasants",
+   "caveat": "Elections were not held in every district (Ruthenia's vote was delayed to 1924, and parts of the Hlučín and Těšín regions were left unfilled in 1920), which is a franchise gap in the map rather than a rigged field.",
+   "unfree": null
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "kind": "legislative",
+   "date": "27 October 1929",
+   "era": "first",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 83.67,
+   "parties": [
+    {
+     "name": "Republican Party of Farmers and Peasants",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 1,
+     "votes": 1105498,
+     "share": 14.97,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 10,
+     "votes": 963462,
+     "share": 13.05,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Socialist Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 4,
+     "votes": 767328,
+     "share": 10.39,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 30,
+     "seatChange": -11,
+     "votes": 753220,
+     "share": 10.2,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -6,
+     "votes": 623340,
+     "share": 8.44,
+     "swing": null
+    },
+    {
+     "name": "German Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 4,
+     "votes": 506761,
+     "share": 6.86,
+     "swing": null
+    },
+    {
+     "name": "Hlinka's Slovak People's Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -4,
+     "votes": 425051,
+     "share": 5.76,
+     "swing": null
+    },
+    {
+     "name": "German Electoral Coalition",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 396454,
+     "share": 5.37,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Democracy",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 2,
+     "votes": 359547,
+     "share": 4.87,
+     "swing": null
+    },
+    {
+     "name": "DCVP–PGD–WSdM",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 1,
+     "votes": 348066,
+     "share": 4.71,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Traders' Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -1,
+     "votes": 291209,
+     "share": 3.94,
+     "swing": null
+    },
+    {
+     "name": "OKSZP–MNP–ZDP",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 5,
+     "votes": 257372,
+     "share": 3.49,
+     "swing": null
+    },
+    {
+     "name": "German National Socialist Workers' Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 1,
+     "votes": 204110,
+     "share": 2.76,
+     "swing": null
+    },
+    {
+     "name": "DNP–SdLB",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -3,
+     "votes": 189187,
+     "share": 2.56,
+     "swing": null
+    },
+    {
+     "name": "Electoral Union of Polish and Jewish Parties",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 104556,
+     "share": 1.42,
+     "swing": null
+    },
+    {
+     "name": "League Against Bound Tickets",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 70850,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "Provincial Party of Smallholders, Entrepreneurs and Workers",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6901,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "All German People's Party for Bohemia, Moravia and Silesia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6672,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Juriga's Slovak People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5395,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Republican Party of Farmers and Peasants finished first with 46 of 300 seats on 15.0% of the vote. Turnout 83.7%.",
+   "seatLeader": "Republican Party of Farmers and Peasants",
+   "caveat": "Elections were not held in every district (Ruthenia's vote was delayed to 1924, and parts of the Hlučín and Těšín regions were left unfilled in 1920), which is a franchise gap in the map rather than a rigged field.",
+   "unfree": null
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "19 May 1935",
+   "era": "first",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Sudeten German Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": 1249534,
+     "share": 15.18,
+     "swing": null
+    },
+    {
+     "name": "Republican Party of Farmers and Peasants",
+     "leader": null,
+     "seats": 45,
+     "seatChange": -1,
+     "votes": 1176628,
+     "share": 14.29,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": -1,
+     "votes": 1032773,
+     "share": 12.55,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 0,
+     "votes": 849495,
+     "share": 10.32,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Social Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -4,
+     "votes": 755872,
+     "share": 9.18,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -3,
+     "votes": 615804,
+     "share": 7.48,
+     "swing": null
+    },
+    {
+     "name": "Autonomous Bloc (HSĽS–SNS–AZS–PSL)",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 564273,
+     "share": 6.86,
+     "swing": null
+    },
+    {
+     "name": "National Unification–RNAP–RNP",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 458351,
+     "share": 5.57,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Traders' Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 5,
+     "votes": 448049,
+     "share": 5.44,
+     "swing": null
+    },
+    {
+     "name": "German Social Democratic Workers' Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -10,
+     "votes": 299945,
+     "share": 3.64,
+     "swing": null
+    },
+    {
+     "name": "OKSZP–MNP–ZDP",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0,
+     "votes": 291837,
+     "share": 3.55,
+     "swing": null
+    },
+    {
+     "name": "National Fascist Community",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 167434,
+     "share": 2.03,
+     "swing": null
+    },
+    {
+     "name": "German Christian Social People's Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -8,
+     "votes": 162781,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "Farmers' League",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 142402,
+     "share": 1.73,
+     "swing": null
+    },
+    {
+     "name": "National Unification of the Clerical-Administrative Parties",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10225,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Economic Party of Debtors",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5977,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Republican Party of Farmers and Peasants finished first with 45 of 300 seats on 14.3% of the vote.",
+   "seatLeader": "Republican Party of Farmers and Peasants",
+   "caveat": "Elections were not held in every district (Ruthenia's vote was delayed to 1924, and parts of the Hlučín and Těšín regions were left unfilled in 1920), which is a franchise gap in the map rather than a rigged field.",
+   "unfree": null
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "26 May 1946",
+   "era": "1946",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 93.86,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 93,
+     "seatChange": 63,
+     "votes": 2205697,
+     "share": 31.19,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak National Social Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 27,
+     "votes": 1298980,
+     "share": 18.37,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 24,
+     "votes": 1111009,
+     "share": 15.71,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": null,
+     "votes": 999622,
+     "share": 14.14,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democracy",
+     "leader": null,
+     "seats": 37,
+     "seatChange": -1,
+     "votes": 855538,
+     "share": 12.1,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 489596,
+     "share": 6.92,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 60195,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 50079,
+     "share": 0.71,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 93 of 300 seats on 31.2% of the vote. Turnout 93.9%.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "30 May 1948",
+   "era": "communist",
+   "totalSeats": 300,
+   "majoritySeats": null,
+   "turnout": 92.76,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 160,
+     "seatChange": null,
+     "votes": 6424734,
+     "share": 89.25,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 54,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democracy",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Klement Gottwald",
+    "party": "KSČ"
+   },
+   "pmAfter": {
+    "name": "Klement Gottwald",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 160 of 300 seats on 89.2% of the vote. Turnout 92.8%. Klement Gottwald stayed in office.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "28 November 1954",
+   "era": "communist",
+   "totalSeats": 368,
+   "majoritySeats": null,
+   "turnout": 99.18,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 172,
+     "seatChange": null,
+     "votes": 8494102,
+     "share": 97.89,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 90,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 56,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Viliam Široký",
+    "party": "KSČ"
+   },
+   "pmAfter": {
+    "name": "Viliam Široký",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 172 of 368 seats on 97.9% of the vote. Turnout 99.2%. Viliam Široký stayed in office.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "kind": "legislative",
+   "date": "12 June 1960",
+   "era": "communist",
+   "totalSeats": 300,
+   "majoritySeats": null,
+   "turnout": 99.68,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 147,
+     "seatChange": null,
+     "votes": 9059838,
+     "share": 99.86,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 69,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 43,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Viliam Široký",
+    "party": "KSČ"
+   },
+   "pmAfter": {
+    "name": "Viliam Široký",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 147 of 300 seats on 99.9% of the vote. Turnout 99.7%. Viliam Široký stayed in office.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "14 June 1964",
+   "era": "communist",
+   "totalSeats": 300,
+   "majoritySeats": null,
+   "turnout": 99.42,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 145,
+     "seatChange": null,
+     "votes": 9412309,
+     "share": 99.94,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Slovakia",
+     "leader": null,
+     "seats": 72,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jozef Lenárt",
+    "party": "KSČ"
+   },
+   "pmAfter": {
+    "name": "Jozef Lenárt",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 145 of 300 seats on 99.9% of the vote. Turnout 99.4%. Jozef Lenárt stayed in office.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "26–27 November 1971",
+   "era": "communist",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 145,
+     "seatChange": null,
+     "votes": 10153572,
+     "share": 100.0,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lubomír Štrougal",
+    "party": "KSČ"
+   },
+   "pmAfter": {
+    "name": "Lubomír Štrougal",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 145 of 200 seats on 100.0% of the vote. Lubomír Štrougal stayed in office.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "22–23 October 1976",
+   "era": "communist",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": 99.7,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 137,
+     "seatChange": null,
+     "votes": 10605672,
+     "share": 99.97,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lubomír Štrougal",
+    "party": "KSČ"
+   },
+   "pmAfter": {
+    "name": "Lubomír Štrougal",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 137 of 200 seats on 100.0% of the vote. Turnout 99.7%. Lubomír Štrougal stayed in office.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "5–6 June 1981",
+   "era": "communist",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": 99.51,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 137,
+     "seatChange": null,
+     "votes": 10725609,
+     "share": 99.96,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lubomír Štrougal",
+    "party": "KSČ"
+   },
+   "pmAfter": {
+    "name": "Lubomír Štrougal",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 137 of 200 seats on 100.0% of the vote. Turnout 99.5%. Lubomír Štrougal stayed in office.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "23–24 May 1986",
+   "era": "communist",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": 99.4,
+   "parties": [
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 138,
+     "seatChange": null,
+     "votes": 10871881,
+     "share": 99.4,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Slovak Revival",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lubomír Štrougal",
+    "party": "KSČ"
+   },
+   "pmAfter": {
+    "name": "Lubomír Štrougal",
+    "party": "KSČ"
+   },
+   "knownAs": null,
+   "summary": "Communist Party of Czechoslovakia finished first with 138 of 200 seats on 99.4% of the vote. Turnout 99.4%. Lubomír Štrougal stayed in office.",
+   "seatLeader": "Communist Party of Czechoslovakia",
+   "caveat": null,
+   "unfree": "unfree"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "8–9 June 1990",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 96.24,
+   "parties": [
+    {
+     "name": "Civic Forum",
+     "leader": null,
+     "seats": 68,
+     "seatChange": null,
+     "votes": 3851172,
+     "share": 36.2,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Czechoslovakia",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 1445407,
+     "share": 13.59,
+     "swing": null
+    },
+    {
+     "name": "Public Against Violence",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 1104125,
+     "share": 10.38,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 644008,
+     "share": 6.05,
+     "swing": null
+    },
+    {
+     "name": "Christian and Democratic Union",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 629359,
+     "share": 5.92,
+     "swing": null
+    },
+    {
+     "name": "Movement for Autonomous Democracy–Party for Moravia and Silesia",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 572015,
+     "share": 5.38,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 372025,
+     "share": 3.5,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Farmers and the Countryside",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 360779,
+     "share": 3.39,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 342455,
+     "share": 3.22,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 332974,
+     "share": 3.13,
+     "swing": null
+    },
+    {
+     "name": "Coexistence–Hungarian Christian Democratic Movement",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 296575,
+     "share": 2.79,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 201532,
+     "share": 1.89,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 149310,
+     "share": 1.4,
+     "swing": null
+    },
+    {
+     "name": "People's Democratic Party–Rally for the Republic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 76338,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Free Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 64070,
+     "share": 0.6,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 49012,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Electoral Union of Interest Groups",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 47971,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovakian Democratic Forum",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23428,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Rómovia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22670,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Civil Liberties Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22165,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Movement of Czechoslovakian Understanding",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21979,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Friends of Beer Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8943,
+     "share": 0.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Civic Forum finished first with 68 of 150 seats on 36.2% of the vote. Turnout 96.2%.",
+   "seatLeader": "Civic Forum",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "5 and 6 June 1992",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 84.68,
+   "parties": [
+    {
+     "name": "Civic Democratic Party–Christian Democratic Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": null,
+     "votes": 2200937,
+     "share": 22.97,
+     "swing": null
+    },
+    {
+     "name": "Movement for a Democratic Slovakia",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 1036459,
+     "share": 10.82,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 926228,
+     "share": 9.66,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Social Democracy–Social Democratic Party of Slovakia",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 648125,
+     "share": 6.76,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Left",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 446230,
+     "share": 4.66,
+     "swing": null
+    },
+    {
+     "name": "Rally for the Republic – Republican Party of Czechoslovakia",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 432075,
+     "share": 4.51,
+     "swing": null
+    },
+    {
+     "name": "KDU-ČSL",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 388122,
+     "share": 4.05,
+     "swing": null
+    },
+    {
+     "name": "Liberal-Social Union",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 378962,
+     "share": 3.95,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 323614,
+     "share": 3.38,
+     "swing": null
+    },
+    {
+     "name": "Slovak National Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0,
+     "votes": 290249,
+     "share": 3.03,
+     "swing": null
+    },
+    {
+     "name": "Civic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 284854,
+     "share": 2.97,
+     "swing": null
+    },
+    {
+     "name": "Movement for Autonomous Democracy–Party for Moravia and Silesia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -9,
+     "votes": 279136,
+     "share": 2.91,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Movement",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -5,
+     "votes": 277061,
+     "share": 2.89,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Christian Democratic Movement–Coexistence",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0,
+     "votes": 232776,
+     "share": 2.43,
+     "swing": null
+    },
+    {
+     "name": "Pensioners for Life Security",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 214681,
+     "share": 2.24,
+     "swing": null
+    },
+    {
+     "name": "Czechoslovak Businessmen's, Traders' and Farmers' Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 166325,
+     "share": 1.74,
+     "swing": null
+    },
+    {
+     "name": "Club of Committed Non-Party Members",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 129022,
+     "share": 1.35,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 122359,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 122226,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "Slovak Christian Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 106612,
+     "share": 1.11,
+     "swing": null
+    },
+    {
+     "name": "Independent Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 89817,
+     "share": 0.94,
+     "swing": null
+    },
+    {
+     "name": "Green Party in Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 81047,
+     "share": 0.85,
+     "swing": null
+    },
+    {
+     "name": "Hungarian Civic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 72877,
+     "share": 0.76,
+     "swing": null
+    },
+    {
+     "name": "Friends of Beer Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 68985,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Democrats 92 for a Common State",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 68168,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "Movement for Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 67406,
+     "share": 0.7,
+     "swing": null
+    },
+    {
+     "name": "Party of Labour and Security",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38580,
+     "share": 0.4,
+     "swing": null
+    },
+    {
+     "name": "Roma Civic Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33576,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Union of Communists of Slovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 23487,
+     "share": 0.25,
+     "swing": null
+    },
+    {
+     "name": "Republican Party and National Democratic Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10335,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Slovak People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10150,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "National Social Party – Czechoslovak National Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8922,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "National Liberals",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2457,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Movement for Freedom of Speech–Slovak Republican Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1576,
+     "share": 0.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Civic Democratic Party–Christian Democratic Party finished first with 48 of 150 seats on 23.0% of the vote. Turnout 84.7%.",
+   "seatLeader": "Civic Democratic Party–Christian Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "31 May and 1 June 1996",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 76.29,
+   "parties": [
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 68,
+     "seatChange": null,
+     "votes": 1794560,
+     "share": 29.62,
+     "swing": null
+    },
+    {
+     "name": "Czech Social Democratic Party",
+     "leader": null,
+     "seats": 61,
+     "seatChange": 45,
+     "votes": 1602250,
+     "share": 26.44,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -13,
+     "votes": 626136,
+     "share": 10.33,
+     "swing": null
+    },
+    {
+     "name": "KDU-ČSL",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 3,
+     "votes": 489349,
+     "share": 8.08,
+     "swing": null
+    },
+    {
+     "name": "SPR-RSČ",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 4,
+     "votes": 485072,
+     "share": 8.01,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Alliance",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -1,
+     "votes": 385369,
+     "share": 6.36,
+     "swing": null
+    },
+    {
+     "name": "Pensioners for Life Security",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 187455,
+     "share": 3.09,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 169796,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Free Democrats – Liberal National Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 124165,
+     "share": 2.05,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 85122,
+     "share": 1.4,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 30125,
+     "share": 0.5,
+     "swing": null
+    },
+    {
+     "name": "Czech-Moravian Union of the Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 27490,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "HSMSMNSJ",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25198,
+     "share": 0.42,
+     "swing": null
+    },
+    {
+     "name": "Moravian National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16580,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7740,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Czech Right",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2808,
+     "share": 0.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Václav Klaus",
+    "party": "ODS"
+   },
+   "pmAfter": {
+    "name": "Václav Klaus",
+    "party": "ODS"
+   },
+   "knownAs": null,
+   "summary": "Civic Democratic Party finished first with 68 of 200 seats on 29.6% of the vote. Turnout 76.3%. Václav Klaus stayed in office.",
+   "seatLeader": "Civic Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "19–20 June 1998",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 73.86,
+   "parties": [
+    {
+     "name": "Czech Social Democratic Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 13,
+     "votes": 1928660,
+     "share": 32.31,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": -5,
+     "votes": 1656011,
+     "share": 27.74,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 2,
+     "votes": 658550,
+     "share": 11.03,
+     "swing": null
+    },
+    {
+     "name": "KDU-ČSL",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 2,
+     "votes": 537013,
+     "share": 9.0,
+     "swing": null
+    },
+    {
+     "name": "Freedom Union",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 513596,
+     "share": 8.6,
+     "swing": null
+    },
+    {
+     "name": "SPR-RSČ",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -18,
+     "votes": 232965,
+     "share": 3.9,
+     "swing": null
+    },
+    {
+     "name": "Pensioners for Life Security",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 182900,
+     "share": 3.06,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 86431,
+     "share": 1.45,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 67143,
+     "share": 1.12,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 51981,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "Moravian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 22282,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Czech National Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 17185,
+     "share": 0.29,
+     "swing": null
+    },
+    {
+     "name": "Civic Coalition – Political Club",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14788,
+     "share": 0.25,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Josef Tošovský",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Miloš Zeman",
+    "party": "ČSSD"
+   },
+   "knownAs": null,
+   "summary": "Czech Social Democratic Party finished first with 74 of 200 seats on 32.3% of the vote. Turnout 73.9%. Miloš Zeman replaced Josef Tošovský.",
+   "seatLeader": "Czech Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "14–15 June 2002",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 57.95,
+   "parties": [
+    {
+     "name": "Czech Social Democratic Party",
+     "leader": null,
+     "seats": 70,
+     "seatChange": -4,
+     "votes": 1440279,
+     "share": 30.21,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": -5,
+     "votes": 1166975,
+     "share": 24.48,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 17,
+     "votes": 882653,
+     "share": 18.51,
+     "swing": null
+    },
+    {
+     "name": "Four-Coalition (KDU-ČSL, US–DEU)",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -8,
+     "votes": 680671,
+     "share": 14.28,
+     "swing": null
+    },
+    {
+     "name": "Union of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 132699,
+     "share": 2.78,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 112929,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "Republicans of Miroslav Sládek",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 46325,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Rural Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 41773,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "Party for Life Security",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 41404,
+     "share": 0.87,
+     "swing": null
+    },
+    {
+     "name": "Czech National Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 38655,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "Hope",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 29955,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "Right Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28163,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 24278,
+     "share": 0.51,
+     "swing": null
+    },
+    {
+     "name": "Choice for the Future",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16730,
+     "share": 0.35,
+     "swing": null
+    },
+    {
+     "name": "Path of Change",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13169,
+     "share": 0.28,
+     "swing": null
+    },
+    {
+     "name": "Moravian Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12957,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Party of Common Sense",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10849,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Akce za zrus.Senatu a proti t.",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9637,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "Balbín's Poetic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9287,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Humanist Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8461,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6786,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5532,
+     "share": 0.12,
+     "swing": null
+    },
+    {
+     "name": "Democratic League",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4059,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Czech Right",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2041,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Czech Social Democratic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 602,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Roma Civic Initiative",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 523,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Party of Democratic Socialism",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 475,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "New Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 139,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Miloš Zeman",
+    "party": "ČSSD"
+   },
+   "pmAfter": {
+    "name": "Vladimír Špidla",
+    "party": "ČSSD"
+   },
+   "knownAs": null,
+   "summary": "Czech Social Democratic Party finished first with 70 of 200 seats on 30.2% of the vote. Turnout 58.0%. Vladimír Špidla replaced Miloš Zeman.",
+   "seatLeader": "Czech Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "2–3 June 2006",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 64.42,
+   "parties": [
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": 23,
+     "votes": 1892475,
+     "share": 35.38,
+     "swing": null
+    },
+    {
+     "name": "Czech Social Democratic Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 4,
+     "votes": 1728827,
+     "share": 32.32,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -15,
+     "votes": 685328,
+     "share": 12.81,
+     "swing": null
+    },
+    {
+     "name": "KDU-ČSL",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -10,
+     "votes": 386706,
+     "share": 7.23,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 6,
+     "votes": 336487,
+     "share": 6.29,
+     "swing": null
+    },
+    {
+     "name": "SNK European Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 111724,
+     "share": 2.09,
+     "swing": null
+    },
+    {
+     "name": "Independent Democrats",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 36708,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 33030,
+     "share": 0.62,
+     "swing": null
+    },
+    {
+     "name": "Party of Common Sense",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 24828,
+     "share": 0.46,
+     "swing": null
+    },
+    {
+     "name": "Right Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 20382,
+     "share": 0.38,
+     "swing": null
+    },
+    {
+     "name": "Freedom Union – Democratic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -8,
+     "votes": 16457,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Law and Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12756,
+     "share": 0.24,
+     "swing": null
+    },
+    {
+     "name": "Moravané",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12552,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Equal Opportunities Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10879,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9341,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Coalition for the Czech Republic (KAN–SP-DEU-HNPD)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8140,
+     "share": 0.15,
+     "swing": null
+    },
+    {
+     "name": "Koruna Česká",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7293,
+     "share": 0.14,
+     "swing": null
+    },
+    {
+     "name": "Balbín's Poetic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 6897,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "4 VIZE",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3109,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Czech National Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1387,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Helax-Ostrava se bavi",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1375,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 857,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Folklore and Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 574,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Czech Right",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 395,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reform Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 253,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Unity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 216,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jiří Paroubek",
+    "party": "ČSSD"
+   },
+   "pmAfter": {
+    "name": "Mirek Topolánek",
+    "party": "ODS"
+   },
+   "knownAs": null,
+   "summary": "Civic Democratic Party finished first with 81 of 200 seats on 35.4% of the vote. Turnout 64.4%. Mirek Topolánek replaced Jiří Paroubek.",
+   "seatLeader": "Civic Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "28–29 May 2010",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 62.55,
+   "parties": [
+    {
+     "name": "Czech Social Democratic Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": -18,
+     "votes": 1155267,
+     "share": 22.09,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -28,
+     "votes": 1057792,
+     "share": 20.22,
+     "swing": null
+    },
+    {
+     "name": "TOP 09",
+     "leader": null,
+     "seats": 41,
+     "seatChange": null,
+     "votes": 873833,
+     "share": 16.71,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 0,
+     "votes": 589765,
+     "share": 11.27,
+     "swing": null
+    },
+    {
+     "name": "Public Affairs",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 569127,
+     "share": 10.88,
+     "swing": null
+    },
+    {
+     "name": "KDU-ČSL",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -13,
+     "votes": 229717,
+     "share": 4.39,
+     "swing": null
+    },
+    {
+     "name": "Party of Civic Rights – Zemanovci",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 226527,
+     "share": 4.33,
+     "swing": null
+    },
+    {
+     "name": "Sovereignty – Party of Common Sense",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 192145,
+     "share": 3.67,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -6,
+     "votes": 127831,
+     "share": 2.44,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 59888,
+     "share": 1.14,
+     "swing": null
+    },
+    {
+     "name": "Czech Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 42323,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "Party of Free Citizens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 38894,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "Right Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 24750,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Citizens.cz",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13397,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Moravané",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11914,
+     "share": 0.23,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4232,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Koruna Česká",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4024,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "STOP",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3155,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Rally for the Republic – Republican Party of Czechoslovakia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1993,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Czech National Socialist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1371,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Key Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1099,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Humanist Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 552,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "European Centre",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 522,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Czech National Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 295,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Liberálové.CZ",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 260,
+     "share": 0.0,
+     "swing": null
+    },
+    {
+     "name": "National Prosperity",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 186,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jan Fischer",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Petr Nečas",
+    "party": "ODS"
+   },
+   "knownAs": null,
+   "summary": "Czech Social Democratic Party finished first with 56 of 200 seats on 22.1% of the vote. Turnout 62.5%. Petr Nečas replaced Jan Fischer.",
+   "seatLeader": "Czech Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "kind": "legislative",
+   "date": "25–26 October 2013",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 59.44,
+   "parties": [
+    {
+     "name": "Czech Social Democratic Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": -2,
+     "votes": 1016829,
+     "share": 20.46,
+     "swing": null
+    },
+    {
+     "name": "ANO 2011",
+     "leader": null,
+     "seats": 47,
+     "seatChange": null,
+     "votes": 927240,
+     "share": 18.66,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 4,
+     "votes": 741044,
+     "share": 14.91,
+     "swing": null
+    },
+    {
+     "name": "TOP 09",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -5,
+     "votes": 596357,
+     "share": 12.0,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -12,
+     "votes": 384174,
+     "share": 7.73,
+     "swing": null
+    },
+    {
+     "name": "Dawn of Direct Democracy",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 342339,
+     "share": 6.89,
+     "swing": null
+    },
+    {
+     "name": "KDU-ČSL",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2,
+     "votes": 336970,
+     "share": 6.78,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 159025,
+     "share": 3.2,
+     "swing": null
+    },
+    {
+     "name": "Czech Pirate Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 2,
+     "votes": 132417,
+     "share": 2.66,
+     "swing": null
+    },
+    {
+     "name": "Party of Free Citizens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 2,
+     "votes": 122564,
+     "share": 2.47,
+     "swing": null
+    },
+    {
+     "name": "Party of Civic Rights – Zemanovci",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 75113,
+     "share": 1.51,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 42906,
+     "share": 0.86,
+     "swing": null
+    },
+    {
+     "name": "Political Change Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 28592,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "Head Up – Electoral Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21241,
+     "share": 0.43,
+     "swing": null
+    },
+    {
+     "name": "Sovereignty – Party of Common Sense",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 13538,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Freeholder Party of the Czech Republic",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 13041,
+     "share": 0.26,
+     "swing": null
+    },
+    {
+     "name": "Koruna Česká",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 8932,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "National Socialists – Left of the 21st century",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3843,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Active Independent Citizens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1237,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Right Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1225,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Roma Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 609,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Citizens 2011",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 455,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Club of Committed Non-Party Members",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 293,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jiří Rusnok",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Bohuslav Sobotka",
+    "party": "ČSSD"
+   },
+   "knownAs": null,
+   "summary": "Czech Social Democratic Party finished first with 50 of 200 seats on 20.5% of the vote. Turnout 59.4%. Bohuslav Sobotka replaced Jiří Rusnok.",
+   "seatLeader": "Czech Social Democratic Party",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "legislative",
+   "date": "20–21 October 2017",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 60.79,
+   "parties": [
+    {
+     "name": "ANO",
+     "leader": null,
+     "seats": 78,
+     "seatChange": 11,
+     "votes": 1500113,
+     "share": 29.64,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 4,
+     "votes": 572962,
+     "share": 11.32,
+     "swing": null
+    },
+    {
+     "name": "Czech Pirate Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 8,
+     "votes": 546393,
+     "share": 10.8,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Direct Democracy",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 538574,
+     "share": 10.64,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -7,
+     "votes": 393100,
+     "share": 7.77,
+     "swing": null
+    },
+    {
+     "name": "Czech Social Democratic Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -13,
+     "votes": 368347,
+     "share": 7.28,
+     "swing": null
+    },
+    {
+     "name": "KDU-ČSL",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -1,
+     "votes": 293643,
+     "share": 5.8,
+     "swing": null
+    },
+    {
+     "name": "TOP 09",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -7,
+     "votes": 268811,
+     "share": 5.31,
+     "swing": null
+    },
+    {
+     "name": "Mayors and Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 262157,
+     "share": 5.18,
+     "swing": null
+    },
+    {
+     "name": "Party of Free Citizens",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 79229,
+     "share": 1.57,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -2,
+     "votes": 74335,
+     "share": 1.47,
+     "swing": null
+    },
+    {
+     "name": "Party of Common Sense",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 36528,
+     "share": 0.72,
+     "swing": null
+    },
+    {
+     "name": "Realists",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 35995,
+     "share": 0.71,
+     "swing": null
+    },
+    {
+     "name": "Party of Civic Rights",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 18556,
+     "share": 0.37,
+     "swing": null
+    },
+    {
+     "name": "Sportsmen",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 10593,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Social Justice",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -1,
+     "votes": 10402,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "SPR–RSČ",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 9857,
+     "share": 0.19,
+     "swing": null
+    },
+    {
+     "name": "Order of Nation – Patriotic Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8735,
+     "share": 0.17,
+     "swing": null
+    },
+    {
+     "name": "Civic Democratic Alliance",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8030,
+     "share": 0.16,
+     "swing": null
+    },
+    {
+     "name": "Bloc Against Islamization – Defence of the Homeland",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 5077,
+     "share": 0.1,
+     "swing": null
+    },
+    {
+     "name": "Referendum on the European Union",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4276,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Happy Czechia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3852,
+     "share": 0.08,
+     "swing": null
+    },
+    {
+     "name": "Path of Responsible Society",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3758,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Good Choice 2016",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3722,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Czech National Social Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 1573,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Vote Right Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 491,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Society Against Development in the Prokop Valley",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 438,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "H.A.V.E.L.",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 436,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Citizens 2011",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 359,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Nation Together",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 300,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Czech National Front",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 117,
+     "share": 0.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bohuslav Sobotka",
+    "party": "ČSSD"
+   },
+   "pmAfter": {
+    "name": "Andrej Babiš",
+    "party": "ANO"
+   },
+   "knownAs": null,
+   "summary": "ANO finished first with 78 of 200 seats on 29.6% of the vote. Turnout 60.8%. Andrej Babiš replaced Bohuslav Sobotka.",
+   "seatLeader": "ANO",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "8–9 October 2021",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 65.39,
+   "parties": [
+    {
+     "name": "Spolu",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 5,
+     "votes": 1493905,
+     "share": 27.79,
+     "swing": null
+    },
+    {
+     "name": "ANO",
+     "leader": null,
+     "seats": 72,
+     "seatChange": -3,
+     "votes": 1458140,
+     "share": 27.13,
+     "swing": null
+    },
+    {
+     "name": "Pirates and Mayors",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 0,
+     "votes": 839776,
+     "share": 15.62,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Direct Democracy",
+     "leader": null,
+     "seats": 20,
+     "seatChange": -1,
+     "votes": 513910,
+     "share": 9.56,
+     "swing": null
+    },
+    {
+     "name": "Přísaha",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 251562,
+     "share": 4.68,
+     "swing": null
+    },
+    {
+     "name": "Czech Social Democratic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -3,
+     "votes": 250397,
+     "share": 4.66,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Bohemia and Moravia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -4,
+     "votes": 193817,
+     "share": 3.61,
+     "swing": null
+    },
+    {
+     "name": "Tricolour–Svobodní–Soukromníci",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 1,
+     "votes": 148463,
+     "share": 2.76,
+     "swing": null
+    },
+    {
+     "name": "Free Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 71587,
+     "share": 1.33,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 53343,
+     "share": 0.99,
+     "swing": null
+    },
+    {
+     "name": "We Will Open Czechia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 21804,
+     "share": 0.41,
+     "swing": null
+    },
+    {
+     "name": "Swiss Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 16823,
+     "share": 0.31,
+     "swing": null
+    },
+    {
+     "name": "Moravané",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 14285,
+     "share": 0.27,
+     "swing": null
+    },
+    {
+     "name": "Alliance for the Future",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 11531,
+     "share": 0.21,
+     "swing": null
+    },
+    {
+     "name": "Koruna Česká",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 8635,
+     "share": 0.16,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Andrej Babiš",
+    "party": "ANO"
+   },
+   "pmAfter": {
+    "name": "Petr Fiala",
+    "party": "ODS"
+   },
+   "knownAs": null,
+   "summary": "ANO finished first with 72 of 200 seats on 27.1% of the vote. Turnout 65.4%. Petr Fiala replaced Andrej Babiš.",
+   "seatLeader": "ANO",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "legislative",
+   "date": "3–4 October 2025",
+   "era": "czech",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 68.95,
+   "parties": [
+    {
+     "name": "ANO 2011",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 8,
+     "votes": 1940507,
+     "share": 34.52,
+     "swing": null
+    },
+    {
+     "name": "SPOLU",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -19,
+     "votes": 1313346,
+     "share": 23.36,
+     "swing": null
+    },
+    {
+     "name": "Mayors and Independents",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -11,
+     "votes": 631512,
+     "share": 11.23,
+     "swing": null
+    },
+    {
+     "name": "Czech Pirate Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 14,
+     "votes": 504537,
+     "share": 8.97,
+     "swing": null
+    },
+    {
+     "name": "Freedom and Direct Democracy",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -5,
+     "votes": 437611,
+     "share": 7.78,
+     "swing": null
+    },
+    {
+     "name": "Motorists for Themselves",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 380601,
+     "share": 6.77,
+     "swing": null
+    },
+    {
+     "name": "Stačilo!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 242031,
+     "share": 4.31,
+     "swing": null
+    },
+    {
+     "name": "Přísaha Civic Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 60503,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "Generation Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 25176,
+     "share": 0.45,
+     "swing": null
+    },
+    {
+     "name": "Czech Republic in First Place!",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 12455,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Swiss Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 12097,
+     "share": 0.22,
+     "swing": null
+    },
+    {
+     "name": "Czech Sovereignty of Social Democracy",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 10263,
+     "share": 0.18,
+     "swing": null
+    },
+    {
+     "name": "Voluntia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7375,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Koruna Česká",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7313,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Challenge 2025",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 6338,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Clear Signal of Independents",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4937,
+     "share": 0.09,
+     "swing": null
+    },
+    {
+     "name": "Rebels",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 4185,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Moravian Land Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3842,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Movement of Citizens and Entrepreneurs",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3718,
+     "share": 0.07,
+     "swing": null
+    },
+    {
+     "name": "Volt Czechia",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3639,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "The Left",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3318,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "The State Should Serve",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2881,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Circle Movement",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2209,
+     "share": 0.04,
+     "swing": null
+    },
+    {
+     "name": "Balbín's Poetic Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 612,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Right Bloc",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 429,
+     "share": 0.01,
+     "swing": null
+    },
+    {
+     "name": "Urza.cz",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 282,
+     "share": 0.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Petr Fiala",
+    "party": "ODS"
+   },
+   "pmAfter": {
+    "name": "Andrej Babiš",
+    "party": "ANO"
+   },
+   "knownAs": null,
+   "summary": "ANO 2011 finished first with 80 of 200 seats on 34.5% of the vote. Turnout 69.0%. Andrej Babiš replaced Petr Fiala.",
+   "seatLeader": "ANO 2011",
+   "caveat": null,
+   "unfree": null
+  }
+ ]
+}

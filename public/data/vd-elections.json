@@ -1,0 +1,555 @@
+{
+ "meta": {
+  "title": "South Vietnamese Elections",
+  "sources": [
+   "Wikipedia: South Vietnamese constitutional assembly, lower-house and presidential election articles 1956-1971 (results tables, infoboxes and lead text)",
+   "Figures as reported there (Dieter Nohlen et al., Keesing's Research Review, the Congressional Record and contemporary press accounts)"
+  ],
+  "built": "2026-09-08",
+  "status": "defunct",
+  "dissolved": "30 April 1975"
+ },
+ "presEras": [
+  {
+   "key": "diem",
+   "label": "Diệm's re-election",
+   "span": "1961",
+   "blurb": "Diệm's only direct re-election as president, held two years before the Buddhist crisis and the coup that ended his rule. The article gives only the candidates' vote shares, not the underlying totals or a turnout figure."
+  },
+  {
+   "key": "thieu",
+   "label": "The Thiệu presidency",
+   "span": "1967-1971",
+   "blurb": "Nguyễn Văn Thiệu won the presidency twice: in 1967, in a field of eleven the article says is widely considered to have been fraudulent, and in 1971 unopposed after his rivals were barred from the ballot or withdrew. Between them these are the last two presidential elections South Vietnam ever held."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "diem",
+   "label": "The First Republic",
+   "span": "1956-1963",
+   "blurb": "Ngô Đình Diệm's National Revolutionary Movement or its allied independents took the great majority of seats at every election of the period, while candidates faced government screening over alleged links to the communist Việt Minh and could be barred from the ballot on that basis. The 1959 election was later singled out as the dirtiest and most openly rigged of all South Vietnamese elections. The assembly elected in 1963 never sat: the Buddhist crisis and the coup that killed Diệm that November dissolved it before its first session."
+  },
+  {
+   "key": "thieu",
+   "label": "The Second Republic",
+   "span": "1966-1971",
+   "blurb": "A Constituent Assembly was elected in 1966 to write a constitution for the government of Nguyễn Văn Thiệu, and the two lower-house elections held under it, in 1967 and 1971, were fought mostly by individuals rather than parties. Only a handful of candidates carried a party label in either contest, so the results survive as constituency winners rather than a party-by-party tally. The 1971 election, with turnout of 79%, was the last one South Vietnam ever held."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "presidential",
+   "date": "9 April 1961",
+   "era": "diem",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ngô Đình Diệm",
+     "party": "Personalist Labor Revolutionary Party",
+     "r1Votes": null,
+     "r1Share": 89.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nguyễn Đình Quát",
+     "party": null,
+     "r1Votes": null,
+     "r1Share": 7.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hồ Nhựt Tân",
+     "party": null,
+     "r1Votes": null,
+     "r1Share": 4.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Ngô Đình Diệm",
+    "party": "PLRP"
+   },
+   "knownAs": null,
+   "summary": "Ngô Đình Diệm won with 89.00% against Nguyễn Đình Quát on 7.00%.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "presidential",
+   "date": "3 September 1967",
+   "era": "thieu",
+   "turnout": 83.17,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nguyễn Văn Thiệu",
+     "party": null,
+     "r1Votes": 1649561,
+     "r1Share": 34.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Trương Đình Dzu",
+     "party": null,
+     "r1Votes": 817120,
+     "r1Share": 17.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Phan Khắc Sửu",
+     "party": null,
+     "r1Votes": 513374,
+     "r1Share": 10.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Trần Văn Hương",
+     "party": null,
+     "r1Votes": 474100,
+     "r1Share": 10.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hà Thúc Ký",
+     "party": null,
+     "r1Votes": 349473,
+     "r1Share": 7.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nguyễn Đình Quát",
+     "party": null,
+     "r1Votes": 291718,
+     "r1Share": 6.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nguyễn Hòa Hiệp",
+     "party": null,
+     "r1Votes": 160790,
+     "r1Share": 3.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vũ Hồng Khanh",
+     "party": null,
+     "r1Votes": 149276,
+     "r1Share": 3.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hoàng Cơ Bình",
+     "party": null,
+     "r1Votes": 131071,
+     "r1Share": 2.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Phạm Huy Cơ",
+     "party": null,
+     "r1Votes": 106317,
+     "r1Share": 2.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Trần Văn Lý",
+     "party": null,
+     "r1Votes": 92604,
+     "r1Share": 1.96,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Nguyễn Văn Thiệu",
+    "party": "Democratic Progressive"
+   },
+   "knownAs": null,
+   "summary": "Nguyễn Văn Thiệu won with 34.83% against Trương Đình Dzu on 17.26%. Turnout 83.2%.",
+   "caveat": "The election is widely considered to have been fraudulent: the ruling military junta pushed aside its own strongest potential rival and had soldiers show voters how to mark their ballots, though Thiệu still won only a plurality against ten other candidates.",
+   "unfree": null
+  },
+  {
+   "id": "pres-1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "presidential",
+   "date": "2 October 1971",
+   "era": "thieu",
+   "turnout": 87.97,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nguyễn Văn Thiệu",
+     "party": null,
+     "r1Votes": 5971114,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nguyễn Văn Thiệu",
+    "party": "NSDF"
+   },
+   "presAfter": {
+    "name": "Nguyễn Văn Thiệu",
+    "party": "NSDF"
+   },
+   "knownAs": null,
+   "summary": "Nguyễn Văn Thiệu won with 100.00%. Turnout 88.0%.",
+   "caveat": "Thiệu ran unopposed after his rivals were barred from the ballot or withdrew, and took 100% of the vote.",
+   "unfree": "unfree"
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "legislative",
+   "date": "4 March 1956",
+   "era": "diem",
+   "totalSeats": 121,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Revolutionary Movement",
+     "leader": null,
+     "seats": 61,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Assembly",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Labor Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Movement to Win and Preserve Freedom",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dai-Viet Progressive Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Pro-government Independents",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Revolutionary Movement finished first with 61 of 121 seats.",
+   "seatLeader": "National Revolutionary Movement",
+   "caveat": "Candidates faced government screening over alleged links to the Việt Minh and could be barred from the ballot on that basis; the ruling National Revolutionary Movement or pro-government independents took the great majority of seats at every contest.",
+   "unfree": null
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "kind": "legislative",
+   "date": "30 August 1959",
+   "era": "diem",
+   "totalSeats": 123,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Revolutionary Movement",
+     "leader": null,
+     "seats": 78,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Vietnamese Socialist Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Vietnamese Restoration Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Liberties Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Pro-government independents",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Opposition independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Revolutionary Movement finished first with 78 of 123 seats.",
+   "seatLeader": "National Revolutionary Movement",
+   "caveat": "A 1966 CIA report called this the dirtiest and most openly rigged of all South Vietnamese elections: soldiers were bussed in from outside the district to stuff ballot boxes, and the two independents who won were barred from taking their seats.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "27 September 1963",
+   "era": "diem",
+   "totalSeats": 123,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Revolutionary Movement",
+     "leader": null,
+     "seats": 66,
+     "seatChange": -12,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Assembly",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Movement to Win and Preserve Freedom",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Vietnamese Democratic Socialist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Đại Việt Progressive Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Pro-government independents",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -13,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "National Revolutionary Movement finished first with 66 of 123 seats.",
+   "seatLeader": "National Revolutionary Movement",
+   "caveat": "Candidates faced government screening over alleged links to the Việt Minh and could be barred from the ballot on that basis; the ruling National Revolutionary Movement or pro-government independents took the great majority of seats at every contest.",
+   "unfree": null
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "legislative",
+   "date": "11 September 1966",
+   "era": "thieu",
+   "totalSeats": 117,
+   "majoritySeats": null,
+   "turnout": 80.83,
+   "parties": [
+    {
+     "name": "Việt Nam Quốc Dân Đảng",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dai Viet Progressive Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Independents finished first with 96 of 117 seats. Turnout 80.8%.",
+   "seatLeader": "Independents",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "legislative",
+   "date": "22 October 1967",
+   "era": "thieu",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A South Vietnamese election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Only a few candidates ran under a party label; most stood as individuals, so no party-by-party result is on file beyond the one bloc, the Việt Nam Quốc Dân Đảng, reported to have won at least nine seats.",
+   "unfree": null
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "1971",
+   "era": "thieu",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A South Vietnamese election; the results table for this contest is not on file.",
+   "seatLeader": null,
+   "caveat": "Candidates stood as individuals rather than under party labels, so no party-by-party result is on file. Turnout was 79%, with 5,567,446 of the 7,085,943 registered voters casting a ballot.",
+   "unfree": null
+  }
+ ]
+}
