@@ -194,14 +194,16 @@ export const CFB_DATA_GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 const GH_BASE = CFB_DATA_GH_BASE;
 
+// readLocal does the actual literal readFileSync per file (never a helper
+// taking a dynamic filename) so the Vercel file tracer scopes each route to
+// just the file it reads. See scripts/DATA-READS-RECIPE.md.
 async function load<T extends { meta: { generated_at: string } }>(
   file: string,
+  readLocal: () => T,
 ): Promise<T | null> {
   let local: T | null = null;
   try {
-    local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
-    ) as T;
+    local = readLocal();
   } catch {
     /* no build-time copy */
   }
@@ -226,13 +228,19 @@ async function load<T extends { meta: { generated_at: string } }>(
 }
 
 export async function getCfbSim(): Promise<CfbSimFile | null> {
-  return load<CfbSimFile>("cfb-sim.json");
+  return load<CfbSimFile>("cfb-sim.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "cfb-sim.json"), "utf-8")),
+  );
 }
 
 export async function getCfbPredictions(): Promise<CfbPredictionsFile | null> {
-  return load<CfbPredictionsFile>("cfb-predictions.json");
+  return load<CfbPredictionsFile>("cfb-predictions.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "cfb-predictions.json"), "utf-8")),
+  );
 }
 
 export async function getCfbSimHistory(): Promise<CfbSimHistoryFile | null> {
-  return load<CfbSimHistoryFile>("cfb-sim-history.json");
+  return load<CfbSimHistoryFile>("cfb-sim-history.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "cfb-sim-history.json"), "utf-8")),
+  );
 }

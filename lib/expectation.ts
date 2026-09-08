@@ -50,10 +50,17 @@ export type HomeAdvantage = {
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
-async function load<T>(file: string, isNewer: (remote: T, local: T | null) => boolean): Promise<T | null> {
+// readLocal does the actual literal readFileSync for the file (never a
+// helper taking a dynamic filename) so the Vercel file tracer scopes the
+// route to just this file. See scripts/DATA-READS-RECIPE.md.
+async function load<T>(
+  file: string,
+  readLocal: () => T,
+  isNewer: (remote: T, local: T | null) => boolean,
+): Promise<T | null> {
   let local: T | null = null;
   try {
-    local = JSON.parse(readFileSync(join(process.cwd(), "public", "data", file), "utf-8")) as T;
+    local = readLocal();
   } catch {
     /* no build-time copy */
   }
@@ -72,11 +79,20 @@ async function load<T>(file: string, isNewer: (remote: T, local: T | null) => bo
 }
 
 export async function getHomeAdvantage(): Promise<HomeAdvantage | null> {
-  return load<HomeAdvantage>("expectation/home-advantage.json", (remote, local) =>
-    Boolean(
-      remote?.meta?.generated_at &&
-        (!local || remote.meta.generated_at >= local.meta.generated_at),
-    ),
+  return load<HomeAdvantage>(
+    "expectation/home-advantage.json",
+    () =>
+      JSON.parse(
+        readFileSync(
+          join(process.cwd(), "public", "data", "expectation", "home-advantage.json"),
+          "utf-8",
+        ),
+      ),
+    (remote, local) =>
+      Boolean(
+        remote?.meta?.generated_at &&
+          (!local || remote.meta.generated_at >= local.meta.generated_at),
+      ),
   );
 }
 

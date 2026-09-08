@@ -68,12 +68,14 @@ const GH_DATA_BASE =
 // commits (which sync officeholder changes into these files) surface with NO
 // rebuild -- exactly like getUsCongress() does for the current-state snapshot.
 // Falls back to the build-time committed copy when the fetch fails.
-async function readHistoryFile<T>(file: string, fallback: T): Promise<T> {
+//
+// readLocal does the actual literal readFileSync per file (never a helper
+// taking a dynamic filename) so the Vercel file tracer scopes each route to
+// just the file it reads. See scripts/DATA-READS-RECIPE.md.
+async function readHistoryFile<T>(file: string, readLocal: () => T, fallback: T): Promise<T> {
   const local = (): T | null => {
     try {
-      return JSON.parse(
-        fs.readFileSync(path.join(process.cwd(), "public", "data", file), "utf-8"),
-      ) as T;
+      return readLocal();
     } catch {
       return null;
     }
@@ -97,14 +99,25 @@ export async function getExecutiveHistory(): Promise<{
   presidents: DatedOffice[];
   vicePresidents: DatedOffice[];
 }> {
-  return readHistoryFile("us-executive-history.json", {
-    presidents: [] as DatedOffice[],
-    vicePresidents: [] as DatedOffice[],
-  });
+  return readHistoryFile(
+    "us-executive-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "us-executive-history.json"), "utf-8"),
+      ) as { presidents: DatedOffice[]; vicePresidents: DatedOffice[] },
+    { presidents: [] as DatedOffice[], vicePresidents: [] as DatedOffice[] },
+  );
 }
 
 export async function getHouseHistory(): Promise<HouseCongress[]> {
-  return readHistoryFile<HouseCongress[]>("us-house-history.json", []);
+  return readHistoryFile<HouseCongress[]>(
+    "us-house-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "us-house-history.json"), "utf-8"),
+      ) as HouseCongress[],
+    [],
+  );
 }
 
 export type SenateTerm = {
@@ -119,6 +132,10 @@ export type SenateTerm = {
 export async function getSenateHistory(): Promise<SenateTerm[]> {
   const parsed = await readHistoryFile<{ terms?: SenateTerm[] }>(
     "us-senate-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "us-senate-history.json"), "utf-8"),
+      ) as { terms?: SenateTerm[] },
     {},
   );
   return parsed.terms ?? [];
@@ -130,7 +147,14 @@ export async function getCabinetHistory(): Promise<CabinetOfficeHistory[]> {
   const parsed = await readHistoryFile<{
     offices?: string[];
     cabinet?: Record<string, DatedOffice[]>;
-  }>("us-cabinet-history.json", {});
+  }>(
+    "us-cabinet-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "us-cabinet-history.json"), "utf-8"),
+      ) as { offices?: string[]; cabinet?: Record<string, DatedOffice[]> },
+    {},
+  );
   const cab = parsed.cabinet ?? {};
   const offices = parsed.offices ?? Object.keys(cab);
   return offices.map((office) => ({ office, holders: cab[office] ?? [] }));
@@ -139,7 +163,14 @@ export async function getCabinetHistory(): Promise<CabinetOfficeHistory[]> {
 export async function getGovernorHistory(): Promise<Record<string, DatedOffice[]>> {
   const parsed = await readHistoryFile<{
     governors?: Record<string, DatedOffice[]>;
-  }>("us-governor-history.json", {});
+  }>(
+    "us-governor-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "us-governor-history.json"), "utf-8"),
+      ) as { governors?: Record<string, DatedOffice[]> },
+    {},
+  );
   return parsed.governors ?? {};
 }
 
@@ -164,6 +195,10 @@ export type JusticeTerm = {
 export async function getScotusHistory(): Promise<JusticeTerm[]> {
   const parsed = await readHistoryFile<{ justices?: JusticeTerm[] }>(
     "us-scotus-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "us-scotus-history.json"), "utf-8"),
+      ) as { justices?: JusticeTerm[] },
     {},
   );
   return parsed.justices ?? [];

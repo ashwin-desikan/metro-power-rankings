@@ -36,8 +36,13 @@ played games would go DOWN.
 
 ESPN CONVENTIONS THIS REPO ALREADY LEARNED (lib/espnFetch.ts, lib/cfb-live.ts)
 -----------------------------------------------------------------------------
-  - Send NO User-Agent. Not a custom one, not a browser one. urllib sends
-    "Python-urllib/3.x" unless you take it off the opener, so this does.
+  - User-Agent: send urllib's OWN token, "Python-urllib/3.x". Measured on
+    2026-09-08 from the Windows box after the first scheduled run failed with
+    HTTP 403: no User-Agent at all -> 403, "Python-urllib/3.14" -> 200,
+    "curl/8.0" -> 200, "Mozilla/5.0" -> 403, "node" -> 403. Node's own fetch
+    (lib/espnFetch.ts, no explicit UA) still gets 200 from the same vantage.
+    The 09-07 finding ("no UA passes") was true that day; ESPN's edge policy
+    moved, so this script sends the default token and says so.
   - Pin seasontype=2 for the NFL regular season, and ask week by week.
   - Never pass limit=.
   - Read flags off the payload's own fields, never off a display string.
@@ -246,9 +251,11 @@ def parse_scoreboard(payload: dict, season: int, warn=print) -> list[dict]:
 # --------------------------------------------------------------- the sources
 
 def fetch_week(season: int, week: int) -> dict:
-    """ESPN's scoreboard for one week. NO User-Agent; see lib/espnFetch.ts."""
+    """ESPN's scoreboard for one week. urllib's own User-Agent stays on:
+    stripping it drew HTTP 403 on the first scheduled run (2026-09-08); see
+    the conventions note at the top of this file."""
     opener = urllib.request.build_opener()
-    opener.addheaders = [("Accept", "application/json")]
+    opener.addheaders = [("User-Agent", "Python-urllib/3"), ("Accept", "application/json")]
     with opener.open(ESPN_SCOREBOARD % (season, week), timeout=30) as r:
         return json.loads(r.read().decode("utf-8"))
 

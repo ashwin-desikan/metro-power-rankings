@@ -59,8 +59,15 @@ export type WorldsPortal = {
   getCountrySlugForTeam: (team: WorldsNation) => string | null;
 };
 
-export function makeWorldsPortal(sportDir: string): WorldsPortal {
-  const DATA_DIR = join(process.cwd(), "public", "data", sportDir);
+export function makeWorldsPortal(sportDir: "handball" | "volleyball"): WorldsPortal {
+  // Literal per-sport base dir (only handball and volleyball call this
+  // today) so the file tracer sees a fully literal join() at each branch
+  // instead of a dynamic segment directly under public/data. See
+  // scripts/DATA-READS-RECIPE.md rule 1.
+  const DATA_DIR =
+    sportDir === "handball"
+      ? join(process.cwd(), "public", "data", "handball")
+      : join(process.cwd(), "public", "data", "volleyball");
   function loadJson<T>(rel: string): T | null {
     const p = join(DATA_DIR, rel);
     if (!existsSync(p)) return null;

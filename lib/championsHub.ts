@@ -254,11 +254,18 @@ function norm(s: string): string {
 // by the async getters in those libs. So this stays a deliberate build-time
 // read, and scripts/check-live-data.mjs still passes because each path is
 // loaded through loadLiveJson in its owning lib.
-function identityList(rel: string): NationLike[] {
+const IDENTITY_LIST_FILES = {
+  "basketball/nations.json": () =>
+    join(process.cwd(), "public", "data", "basketball", "nations.json"),
+  "cricket/teams.json": () => join(process.cwd(), "public", "data", "cricket", "teams.json"),
+  "rugby-union/teams.json": () =>
+    join(process.cwd(), "public", "data", "rugby-union", "teams.json"),
+} as const;
+type IdentityListRel = keyof typeof IDENTITY_LIST_FILES;
+
+function identityList(rel: IdentityListRel): NationLike[] {
   try {
-    const rows = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", ...rel.split("/")), "utf-8"),
-    ) as NationLike[];
+    const rows = JSON.parse(readFileSync(IDENTITY_LIST_FILES[rel](), "utf-8")) as NationLike[];
     return rows.map((t) => ({ slug: t.slug, name: t.name, cur_name: t.cur_name }));
   } catch {
     return [];

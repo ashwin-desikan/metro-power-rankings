@@ -942,6 +942,10 @@ import importlib.util as _ilu
 import os as _os
 
 HUB_FREEDOM, HUB_CAVEAT, HUB_OVERRIDE, HUB_STATUS = {}, {}, {}, {}
+# (cc, "pres-<id>" | "<id>") -> summary sentence. A hub module sets SUMMARY_OVERRIDE
+# when the generic summary would mislead (Cuba 1916: two named candidates, no
+# count, which the fallback would otherwise call an unopposed return).
+HUB_SUMMARY = {}
 _HUBDIR = _os.path.join(_os.path.dirname(_os.path.realpath(__file__)), "hubs")
 if _os.path.isdir(_HUBDIR):
     for _f in sorted(_os.listdir(_HUBDIR)):
@@ -963,5 +967,6 @@ if _os.path.isdir(_HUBDIR):
         HUB_FREEDOM.update(getattr(_m, "ERA_FREEDOM", {}))
         HUB_CAVEAT.update(getattr(_m, "ERA_CAVEAT", {}))
         HUB_OVERRIDE.update(getattr(_m, "FREEDOM_OVERRIDE", {}))
+        HUB_SUMMARY.update(getattr(_m, "SUMMARY_OVERRIDE", {}))
         if getattr(_m, "STATUS", None):
             HUB_STATUS[_cc] = {"status": _m.STATUS, "dissolved": getattr(_m, "DISSOLVED", None)}

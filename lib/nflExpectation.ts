@@ -175,17 +175,22 @@ export function scoreWinnerFirst(g: Pick<GameRow, "score" | "result">): string |
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
-async function load<T>(file: string, isNewer: (remote: T, local: T | null) => boolean): Promise<T | null> {
+// `leaf` is a bare filename inside public/data/nfl/expectation/, which holds
+// only this module's payloads (index.json, teams.json, season-*.json).
+// Directory segments stay literal in the join() call so the file tracer
+// scopes to this subtree, not all of public/data.
+async function load<T>(leaf: string, isNewer: (remote: T, local: T | null) => boolean): Promise<T | null> {
+  const rel = `nfl/expectation/${leaf}`;
   let local: T | null = null;
   try {
     local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
+      readFileSync(join(process.cwd(), "public", "data", "nfl", "expectation", leaf), "utf-8"),
     ) as T;
   } catch {
     /* no build-time copy */
   }
   try {
-    const res = await fetch(`${GH_BASE}/${file}`, {
+    const res = await fetch(`${GH_BASE}/${rel}`, {
       next: { revalidate: 86400, tags: ["nfl-expectation"] },
     });
     if (res.ok) {
@@ -199,7 +204,7 @@ async function load<T>(file: string, isNewer: (remote: T, local: T | null) => bo
 }
 
 export async function getNflExpectation(): Promise<ExpectationIndex | null> {
-  return load<ExpectationIndex>("nfl/expectation/index.json", (remote, local) =>
+  return load<ExpectationIndex>("index.json", (remote, local) =>
     Boolean(
       remote?.meta?.generated_at &&
         (!local || remote.meta.generated_at >= local.meta.generated_at),
@@ -210,7 +215,7 @@ export async function getNflExpectation(): Promise<ExpectationIndex | null> {
 /** One season's game-level ledger. Fetched on demand, never eagerly. */
 export async function getNflExpectationSeason(season: number): Promise<SeasonFile | null> {
   if (!Number.isInteger(season)) return null;
-  return load<SeasonFile>(`nfl/expectation/season-${season}.json`, (remote) =>
+  return load<SeasonFile>(`season-${season}.json`, (remote) =>
     Boolean(remote?.games?.length),
   );
 }
@@ -218,7 +223,7 @@ export async function getNflExpectationSeason(season: number): Promise<SeasonFil
 /** All 2,415 team-seasons (~500 KB). Used by the per-season view; the index
  *  boards never need it, so it stays out of the main page's read. */
 export async function getNflExpectationTeams(): Promise<{ rows: TeamSeasonRow[] } | null> {
-  return load<{ rows: TeamSeasonRow[] }>("nfl/expectation/teams.json", (remote) =>
+  return load<{ rows: TeamSeasonRow[] }>("teams.json", (remote) =>
     Boolean(remote?.rows?.length),
   );
 }

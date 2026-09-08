@@ -52,8 +52,11 @@ export type RlNationDetail = {
 
 const DATA_DIR = join(process.cwd(), "public", "data", "rugby-league-intl");
 
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, rel);
+// `segs` is always a bare filename, or ("team-detail", leaf) -- both literal
+// directory segments up to the one dynamic leaf, per
+// scripts/DATA-READS-RECIPE.md rule 2.
+function loadJson<T>(...segs: string[]): T | null {
+  const p = join(DATA_DIR, ...segs);
   if (!existsSync(p)) return null;
   return JSON.parse(readFileSync(p, "utf-8")) as T;
 }
@@ -82,7 +85,7 @@ export function getAllRlSlugs(): string[] {
 }
 
 export function getRlNationDetail(slug: string): RlNationDetail | null {
-  return loadJson<RlNationDetail>(join("team-detail", `${slug}.json`));
+  return loadJson<RlNationDetail>("team-detail", `${slug}.json`);
 }
 
 // ---------- Country-hub join ----------

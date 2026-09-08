@@ -191,12 +191,17 @@ export type NflUpcoming = {
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
-async function load<T>(file: string, ok: (remote: T) => boolean): Promise<T | null> {
+// readLocal does the actual literal readFileSync per file (never a helper
+// taking a dynamic filename) so the Vercel file tracer scopes each route to
+// just the file(s) it reads. See scripts/DATA-READS-RECIPE.md.
+async function load<T>(
+  file: string,
+  readLocal: () => T,
+  ok: (remote: T) => boolean,
+): Promise<T | null> {
   let local: T | null = null;
   try {
-    local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
-    ) as T;
+    local = readLocal();
   } catch {
     /* no build-time copy */
   }
@@ -215,14 +220,26 @@ async function load<T>(file: string, ok: (remote: T) => boolean): Promise<T | nu
 }
 
 export async function getNflEloIndex(): Promise<NflEloIndex | null> {
-  return load<NflEloIndex>("nfl/elo/index.json", (r) => Boolean(r?.seasons?.length));
+  return load<NflEloIndex>(
+    "nfl/elo/index.json",
+    () => JSON.parse(readFileSync(join(process.cwd(), "public", "data", "nfl", "elo", "index.json"), "utf-8")),
+    (r) => Boolean(r?.seasons?.length),
+  );
 }
 
 /** One season. 107 of these exist; a page fetches exactly the one it renders. */
 export async function getNflEloSeason(season: number): Promise<NflEloSeason | null> {
   if (!Number.isInteger(season)) return null;
-  return load<NflEloSeason>(`nfl/elo/seasons/${season}.json`, (r) =>
-    Boolean(r?.season === season && r?.teams?.length),
+  return load<NflEloSeason>(
+    `nfl/elo/seasons/${season}.json`,
+    () =>
+      JSON.parse(
+        readFileSync(
+          join(process.cwd(), "public", "data", "nfl", "elo", "seasons", `${season}.json`),
+          "utf-8",
+        ),
+      ),
+    (r) => Boolean(r?.season === season && r?.teams?.length),
   );
 }
 
@@ -233,8 +250,13 @@ let _franchises: Promise<NflFranchisesFile | null> | null = null;
 
 export async function getNflFranchiseElos(): Promise<NflFranchisesFile | null> {
   if (!_franchises) {
-    _franchises = load<NflFranchisesFile>("nfl/elo/franchises.json", (r) =>
-      Boolean(r?.franchises?.length),
+    _franchises = load<NflFranchisesFile>(
+      "nfl/elo/franchises.json",
+      () =>
+        JSON.parse(
+          readFileSync(join(process.cwd(), "public", "data", "nfl", "elo", "franchises.json"), "utf-8"),
+        ),
+      (r) => Boolean(r?.franchises?.length),
     ).catch(() => null);
   }
   return _franchises;
@@ -249,7 +271,14 @@ export async function getNflFranchiseElo(name: string): Promise<NflFranchise | n
 
 /** The live season's schedule, priced where both ratings are facts. */
 export async function getNflUpcoming(): Promise<NflUpcoming | null> {
-  return load<NflUpcoming>("nfl/elo/upcoming.json", (r) => Boolean(r?.schedule?.length));
+  return load<NflUpcoming>(
+    "nfl/elo/upcoming.json",
+    () =>
+      JSON.parse(
+        readFileSync(join(process.cwd(), "public", "data", "nfl", "elo", "upcoming.json"), "utf-8"),
+      ),
+    (r) => Boolean(r?.schedule?.length),
+  );
 }
 
 /** Standings split by league, ratings left pooled. The order a hub renders. */

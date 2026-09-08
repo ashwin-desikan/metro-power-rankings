@@ -20,15 +20,14 @@ let _cache: PowerData | null = null;
 
 export function getPowerHistory(): PowerData {
   if (_cache) return _cache;
-  const base = path.join(process.cwd(), "public", "data");
   const ph = read<{ years: number[]; byYear: Record<string, PowerRow[]>; meta: PowerData["meta"] }>(
-    path.join(base, "power-history.json"),
+    path.join(process.cwd(), "public", "data", "power-history.json"),
   );
   const names = read<Record<string, Array<{ name: string; start?: string; end?: string }>>>(
-    path.join(base, "leaders", "_names.json"),
+    path.join(process.cwd(), "public", "data", "leaders", "_names.json"),
   ) ?? {};
-  const defunct = read<Record<string, { name: string; href?: string }>>(path.join(base, "leaders", "_defunct.json")) ?? {};
-  const countriesRaw = read<unknown>(path.join(base, "countries.json"));
+  const defunct = read<Record<string, { name: string; href?: string }>>(path.join(process.cwd(), "public", "data", "leaders", "_defunct.json")) ?? {};
+  const countriesRaw = read<unknown>(path.join(process.cwd(), "public", "data", "countries.json"));
   const crows = (Array.isArray(countriesRaw) ? countriesRaw : (countriesRaw as { countries?: unknown[] })?.countries ?? []) as Array<{ slug?: string; name?: string }>;
   const cname: Record<string, string> = {};
   for (const c of crows) if (c?.slug) cname[c.slug] = c.name ?? c.slug;

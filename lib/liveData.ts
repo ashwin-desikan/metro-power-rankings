@@ -26,11 +26,73 @@ const GH_RAW_BASE =
 /** Default revalidate: one hour. Every current caller refreshes weekly at most. */
 export const LIVE_DATA_REVALIDATE = 3600;
 
+// Every current caller's relPath is one of these known, literal shapes:
+// "<dir>/<file>.json" (a fixed name) or "<dir>/<subdir>/<slug>.json" (one
+// dynamic leaf). Each branch below puts every literal directory segment
+// directly in its own join() call and only the leaf is dynamic, so the
+// Vercel file tracer scopes a route to that one directory instead of all of
+// public/data. See scripts/DATA-READS-RECIPE.md.
+//
+// Adding a new loadLiveJson() call site for an existing or new directory
+// needs a matching branch here -- an unrecognised relPath returns null.
 function readLocal<T>(relPath: string): T | null {
   try {
-    return JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", ...relPath.split("/")), "utf-8"),
-    ) as T;
+    const cwd = process.cwd();
+    if (relPath === "basketball/nations.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "basketball", "nations.json"), "utf-8"));
+    if (relPath === "basketball/hub.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "basketball", "hub.json"), "utf-8"));
+    if (relPath === "basketball/fiba_ranking.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "basketball", "fiba_ranking.json"), "utf-8"));
+    if (relPath.startsWith("basketball/nation-detail/"))
+      return JSON.parse(
+        readFileSync(
+          join(cwd, "public", "data", "basketball", "nation-detail", relPath.slice("basketball/nation-detail/".length)),
+          "utf-8",
+        ),
+      );
+    if (relPath === "cricket/teams.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "cricket", "teams.json"), "utf-8"));
+    if (relPath === "cricket/hub.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "cricket", "hub.json"), "utf-8"));
+    if (relPath.startsWith("cricket/team-detail/"))
+      return JSON.parse(
+        readFileSync(
+          join(cwd, "public", "data", "cricket", "team-detail", relPath.slice("cricket/team-detail/".length)),
+          "utf-8",
+        ),
+      );
+    if (relPath === "rugby-union/teams.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "rugby-union", "teams.json"), "utf-8"));
+    if (relPath === "rugby-union/hub.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "rugby-union", "hub.json"), "utf-8"));
+    if (relPath.startsWith("rugby-union/team-detail/"))
+      return JSON.parse(
+        readFileSync(
+          join(cwd, "public", "data", "rugby-union", "team-detail", relPath.slice("rugby-union/team-detail/".length)),
+          "utf-8",
+        ),
+      );
+    if (relPath === "wbasketball/nations.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "wbasketball", "nations.json"), "utf-8"));
+    if (relPath === "wbasketball/hub.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "wbasketball", "hub.json"), "utf-8"));
+    if (relPath === "wbasketball/fiba_ranking.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "wbasketball", "fiba_ranking.json"), "utf-8"));
+    if (relPath.startsWith("wbasketball/nation-detail/"))
+      return JSON.parse(
+        readFileSync(
+          join(cwd, "public", "data", "wbasketball", "nation-detail", relPath.slice("wbasketball/nation-detail/".length)),
+          "utf-8",
+        ),
+      );
+    if (relPath === "sound/metros_unified.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "sound", "metros_unified.json"), "utf-8"));
+    if (relPath === "sound/metro_number_ones.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "sound", "metro_number_ones.json"), "utf-8"));
+    if (relPath === "refresh-schedule.json")
+      return JSON.parse(readFileSync(join(cwd, "public", "data", "refresh-schedule.json"), "utf-8"));
+    return null;
   } catch {
     return null;
   }

@@ -76,12 +76,17 @@ export { seasonToMonths, seasonValue, VALUE_LEAGUE_SLUGS };
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
-async function load<T>(file: string, ok: (remote: T) => boolean): Promise<T | null> {
+// readLocal does the actual literal readFileSync per file (never a helper
+// taking a dynamic filename) so the Vercel file tracer scopes each route to
+// just the file(s) it reads. See scripts/DATA-READS-RECIPE.md.
+async function load<T>(
+  file: string,
+  readLocal: () => T,
+  ok: (remote: T) => boolean,
+): Promise<T | null> {
   let local: T | null = null;
   try {
-    local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
-    ) as T;
+    local = readLocal();
   } catch {
     /* no build-time copy */
   }
@@ -100,12 +105,27 @@ async function load<T>(file: string, ok: (remote: T) => boolean): Promise<T | nu
 }
 
 export async function getClubValueIndex(): Promise<ValueIndex | null> {
-  return load<ValueIndex>("football/value/index.json", (r) => Boolean(r?.countries?.length));
+  return load<ValueIndex>(
+    "football/value/index.json",
+    () =>
+      JSON.parse(
+        readFileSync(join(process.cwd(), "public", "data", "football", "value", "index.json"), "utf-8"),
+      ),
+    (r) => Boolean(r?.countries?.length),
+  );
 }
 
 async function loadValueCountry(slug: ValueLeagueSlug): Promise<ValueCountryFile | null> {
-  return load<ValueCountryFile>(`football/value/${slug}.json`, (r) =>
-    Boolean(r?.meta?.country && Array.isArray(r?.clubs)),
+  return load<ValueCountryFile>(
+    `football/value/${slug}.json`,
+    () =>
+      JSON.parse(
+        readFileSync(
+          join(process.cwd(), "public", "data", "football", "value", `${slug}.json`),
+          "utf-8",
+        ),
+      ),
+    (r) => Boolean(r?.meta?.country && Array.isArray(r?.clubs)),
   );
 }
 

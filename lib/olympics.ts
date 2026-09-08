@@ -70,8 +70,11 @@ export type OlympicsHub = {
 
 const DATA_DIR = join(process.cwd(), "public", "data", "olympics");
 
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, rel);
+// `segs` is always a bare filename, or ("editions" | "team-detail", leaf) --
+// both literal directory segments up to the one dynamic leaf, per
+// scripts/DATA-READS-RECIPE.md rule 2.
+function loadJson<T>(...segs: string[]): T | null {
+  const p = join(DATA_DIR, ...segs);
   if (!existsSync(p)) return null;
   return JSON.parse(readFileSync(p, "utf-8")) as T;
 }
@@ -122,7 +125,7 @@ export function getOlympicEditionsIndex(): OlympicEditionIndexEntry[] {
   return _editionsIndex;
 }
 export function getOlympicEdition(slug: string): OlympicEdition | null {
-  return loadJson<OlympicEdition>(join("editions", `${slug}.json`));
+  return loadJson<OlympicEdition>("editions", `${slug}.json`);
 }
 
 // Map a Culture-Infra event label ("2021 Summer Olympics", "1906 Intercalated
@@ -164,7 +167,7 @@ export function olympicSlugForNoc(noc: string): string | null {
 }
 
 export function getOlympicTeamDetail(slug: string): OlympicTeamDetail | null {
-  return loadJson<OlympicTeamDetail>(join("team-detail", `${slug}.json`));
+  return loadJson<OlympicTeamDetail>("team-detail", `${slug}.json`);
 }
 
 // ---------- Country-hub join ----------

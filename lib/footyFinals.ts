@@ -49,9 +49,11 @@ export async function getFootyFinals(league: "afl" | "nrl"): Promise<FootyFinals
   const rel = `${league}/finals.json`;
   let local: FootyFinalsBundle | null = null;
   try {
-    local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", league, "finals.json"), "utf-8"),
-    ) as FootyFinalsBundle;
+    const p =
+      league === "afl"
+        ? join(process.cwd(), "public", "data", "afl", "finals.json")
+        : join(process.cwd(), "public", "data", "nrl", "finals.json");
+    local = JSON.parse(readFileSync(p, "utf-8")) as FootyFinalsBundle;
   } catch {
     /* no build-time copy yet (expected until the first refresh commits one) */
   }

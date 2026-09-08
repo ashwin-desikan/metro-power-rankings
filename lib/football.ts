@@ -264,10 +264,30 @@ export type ContinentalSection = {
 
 // ---------- File loading ----------
 
-const DATA_DIR = join(process.cwd(), "public", "data", "football");
+// Literal per-name path, one entry per file this module ever reads (name is
+// always one of this fixed handful at every call site below), so the file
+// tracer sees a fully literal join() at each branch instead of a dynamic
+// segment scoped to the whole 49 MB public/data/football directory. See
+// scripts/DATA-READS-RECIPE.md rule 1.
+const FOOTBALL_FILES = {
+  "index.json": () => join(process.cwd(), "public", "data", "football", "index.json"),
+  "seasons.json": () => join(process.cwd(), "public", "data", "football", "seasons.json"),
+  "cups.json": () => join(process.cwd(), "public", "data", "football", "cups.json"),
+  "europe.json": () => join(process.cwd(), "public", "data", "football", "europe.json"),
+  "leagues.json": () => join(process.cwd(), "public", "data", "football", "leagues.json"),
+  "mls-seasons.json": () => join(process.cwd(), "public", "data", "football", "mls-seasons.json"),
+  "domestic-cups.json": () =>
+    join(process.cwd(), "public", "data", "football", "domestic-cups.json"),
+  "european-tournaments.json": () =>
+    join(process.cwd(), "public", "data", "football", "european-tournaments.json"),
+  "slug-lookup.json": () => join(process.cwd(), "public", "data", "football", "slug-lookup.json"),
+  "club-history.json": () =>
+    join(process.cwd(), "public", "data", "football", "club-history.json"),
+} as const;
+type FootballFileName = keyof typeof FOOTBALL_FILES;
 
-function loadJson<T>(name: string, fallback: T): T {
-  const path = join(DATA_DIR, name);
+function loadJson<T>(name: FootballFileName, fallback: T): T {
+  const path = FOOTBALL_FILES[name]();
   if (!existsSync(path)) return fallback;
   try {
     return JSON.parse(readFileSync(path, "utf8")) as T;

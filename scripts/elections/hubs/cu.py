@@ -86,6 +86,9 @@ ERA_FREEDOM = {
 ERA_CAVEAT = {
     ("cu", "leg", "onerule"): "The Communist Party of Cuba and its affiliated mass organisations are the only names on the ballot; the declared result has equalled the National Assembly's own seat total at every election since 1993, and the first three, 1976 to 1986, were chosen indirectly through municipal assemblies with no results table on file at all.",
 }
+SUMMARY_OVERRIDE = {
+    ("cu", "pres-1916"): "Mario García Menocal was re-elected over Alfredo Zayas; the source records no vote count for the contest.",
+}
 FREEDOM_OVERRIDE = {
     ("cu", "1905"): ("partial", "A US peace commission later found the vote so tainted by fraud that it suspended the Congress the election had produced; a Cuban minister told American commissioners it was impossible to hold an election in Cuba without fraud."),
     ("cu", "1920"): ("partial", "The Liberal Party accused the ruling coalition of election fraud, the US ambassador substantiated it, and new elections were held in four provinces as a result."),

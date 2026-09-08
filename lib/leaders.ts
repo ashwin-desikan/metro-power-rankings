@@ -22,13 +22,15 @@ export type Leader = {
   metros?: LeaderMetro[];  // home metro(s) — US presidents
 };
 
-const DATA_DIR = path.join(process.cwd(), "public", "data", "leaders");
-
+// Every literal directory segment sits directly in the join() call and only
+// the leaf (the country slug) is dynamic, so the Vercel file tracer scopes
+// each route to public/data/leaders/ instead of all of public/data. See
+// scripts/DATA-READS-RECIPE.md.
 let _cache: Record<string, Leader[]> = {};
 
 export function getLeaders(slug: string): Leader[] {
   if (_cache[slug] !== undefined) return _cache[slug];
-  const file = path.join(DATA_DIR, `${slug}.json`);
+  const file = path.join(process.cwd(), "public", "data", "leaders", `${slug}.json`);
   if (!fs.existsSync(file)) {
     _cache[slug] = [];
     return [];
@@ -42,7 +44,7 @@ export function getLeaders(slug: string): Leader[] {
 }
 
 export function countryHasLeaders(slug: string): boolean {
-  return fs.existsSync(path.join(DATA_DIR, `${slug}.json`));
+  return fs.existsSync(path.join(process.cwd(), "public", "data", "leaders", `${slug}.json`));
 }
 
 /** Return year from an ISO date string, or null. */

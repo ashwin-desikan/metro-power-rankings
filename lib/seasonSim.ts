@@ -64,11 +64,33 @@ export { fmtOdds } from "./mlbSim";
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
+// A literal readFileSync per league (never a helper taking a dynamic
+// filename) so the Vercel file tracer scopes each route to just the one file
+// it reads. See scripts/DATA-READS-RECIPE.md.
+function readSeasonSimLocal(league: SeasonSimLeague): SeasonSimFile {
+  switch (league) {
+    case "afl":
+      return JSON.parse(readFileSync(join(process.cwd(), "public", "data", "afl-sim.json"), "utf-8"));
+    case "nrl":
+      return JSON.parse(readFileSync(join(process.cwd(), "public", "data", "nrl-sim.json"), "utf-8"));
+    case "wnba":
+      return JSON.parse(readFileSync(join(process.cwd(), "public", "data", "wnba-sim.json"), "utf-8"));
+    case "cfl":
+      return JSON.parse(readFileSync(join(process.cwd(), "public", "data", "cfl-sim.json"), "utf-8"));
+    case "npb":
+      return JSON.parse(readFileSync(join(process.cwd(), "public", "data", "npb-sim.json"), "utf-8"));
+    case "mls":
+      return JSON.parse(readFileSync(join(process.cwd(), "public", "data", "mls-sim.json"), "utf-8"));
+    case "nwsl":
+      return JSON.parse(readFileSync(join(process.cwd(), "public", "data", "nwsl-sim.json"), "utf-8"));
+  }
+}
+
 export async function getSeasonSim(league: SeasonSimLeague): Promise<SeasonSimFile | null> {
   const file = `${league}-sim.json`;
   let local: SeasonSimFile | null = null;
   try {
-    local = JSON.parse(readFileSync(join(process.cwd(), "public", "data", file), "utf-8")) as SeasonSimFile;
+    local = readSeasonSimLocal(league);
   } catch {
     /* no build-time copy (expected until the first refresh commits one) */
   }

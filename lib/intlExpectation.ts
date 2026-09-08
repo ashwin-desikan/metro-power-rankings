@@ -233,17 +233,25 @@ export type IntlDerived = {
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
-async function load<T>(file: string, ok: (remote: T) => boolean): Promise<T | null> {
+// `leaf` is a bare filename inside public/data/football/expectation/intl/,
+// which holds only this module's payloads (index.json plus one per league in
+// INTL_LEAGUE_SLUGS). Directory segments stay literal in the join() call so
+// the file tracer scopes to this subtree, not all of public/data.
+async function load<T>(leaf: string, ok: (remote: T) => boolean): Promise<T | null> {
+  const rel = `football/expectation/intl/${leaf}`;
   let local: T | null = null;
   try {
     local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
+      readFileSync(
+        join(process.cwd(), "public", "data", "football", "expectation", "intl", leaf),
+        "utf-8",
+      ),
     ) as T;
   } catch {
     /* no build-time copy */
   }
   try {
-    const res = await fetch(`${GH_BASE}/${file}`, {
+    const res = await fetch(`${GH_BASE}/${rel}`, {
       next: { revalidate: 86400, tags: ["intl-expectation"] },
     });
     if (res.ok) {
@@ -257,13 +265,11 @@ async function load<T>(file: string, ok: (remote: T) => boolean): Promise<T | nu
 }
 
 export async function getIntlExpectationIndex(): Promise<IntlIndex | null> {
-  return load<IntlIndex>("football/expectation/intl/index.json", (r) =>
-    Boolean(r?.countries?.length),
-  );
+  return load<IntlIndex>("index.json", (r) => Boolean(r?.countries?.length));
 }
 
 async function loadCountry(slug: IntlLeagueSlug): Promise<IntlCountryFile | null> {
-  return load<IntlCountryFile>(`football/expectation/intl/${slug}.json`, (r) =>
+  return load<IntlCountryFile>(`${slug}.json`, (r) =>
     Boolean(r?.meta?.country && Array.isArray(r?.clubs) && r.clubs.length > 0),
   );
 }

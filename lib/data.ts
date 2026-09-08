@@ -72,7 +72,11 @@ export interface MetroDetail {
   dimRanks?: Record<string, string | null>;
 }
 
-const dataDir = join(process.cwd(), "public", "data");
+// 🔴 No shared data-dir const. Next's file tracer globs the WHOLE directory a
+// const points at (measured 2026-09-08: join(ROOT_CONST, "metros.json") bundled
+// all 265 MB of public/data into every route importing this module). Every
+// read spells its path inline from process.cwd(); scripts/check-data-reads.mjs
+// enforces it.
 
 // Parsed once per process (same idea as _relocations below): metros.json is
 // ~1.6MB and the MCP route otherwise re-parses it on every list/search call.
@@ -82,14 +86,14 @@ const dataDir = join(process.cwd(), "public", "data");
 let _metros: import("./shared").Metro[] | null = null;
 export function getAllMetros() {
   if (_metros === null) {
-    const raw = readFileSync(join(dataDir, "metros.json"), "utf-8");
+    const raw = readFileSync(join(process.cwd(), "public", "data", "metros.json"), "utf-8");
     _metros = JSON.parse(raw) as import("./shared").Metro[];
   }
   return _metros.slice();
 }
 
 export function getRegions() {
-  const raw = readFileSync(join(dataDir, "regions.json"), "utf-8");
+  const raw = readFileSync(join(process.cwd(), "public", "data", "regions.json"), "utf-8");
   return JSON.parse(raw) as import("./shared").Region[];
 }
 
@@ -113,7 +117,7 @@ export function getRelocationsForMetro(slug: string): RelocationCard[] {
   if (_relocations === null) {
     try {
       _relocations = JSON.parse(
-        readFileSync(join(dataDir, "sports", "relocations-by-metro.json"), "utf-8")
+        readFileSync(join(process.cwd(), "public", "data", "sports", "relocations-by-metro.json"), "utf-8")
       );
     } catch {
       _relocations = {};
@@ -139,7 +143,7 @@ export function getSimilarMetrosForMetro(slug: string): MetroSimilarity | null {
   if (_similar === null) {
     try {
       _similar = JSON.parse(
-        readFileSync(join(dataDir, "similar-metros.json"), "utf-8")
+        readFileSync(join(process.cwd(), "public", "data", "similar-metros.json"), "utf-8")
       );
     } catch {
       _similar = {};
@@ -168,7 +172,7 @@ export function getMetroFootprint(slug: string): MetroFootprint | null {
   if (_footprint === null) {
     try {
       _footprint = JSON.parse(
-        readFileSync(join(dataDir, "metro-footprint.json"), "utf-8")
+        readFileSync(join(process.cwd(), "public", "data", "metro-footprint.json"), "utf-8")
       ).metros;
     } catch {
       _footprint = {};
@@ -190,7 +194,7 @@ export function metroDensity(
 
 export function getMetroDetail(slug: string): MetroDetail | null {
   try {
-    const raw = readFileSync(join(dataDir, "details", `${slug}.json`), "utf-8");
+    const raw = readFileSync(join(process.cwd(), "public", "data", "details", `${slug}.json`), "utf-8");
     return JSON.parse(raw);
   } catch {
     return null;
@@ -204,7 +208,7 @@ export function getAllSlugs(): string[] {
 
 export function getMeta(): { lastUpdate: string } {
   try {
-    const raw = readFileSync(join(dataDir, "meta.json"), "utf-8");
+    const raw = readFileSync(join(process.cwd(), "public", "data", "meta.json"), "utf-8");
     return JSON.parse(raw);
   } catch {
     return { lastUpdate: "" };

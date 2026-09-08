@@ -668,17 +668,31 @@ function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): nu
 }
 
 
-// IMPORTANT: the path is statically scoped under public/data/ so Turbopack's
-// File Tracing only walks that subtree at build time. A fully dynamic
-// path.join(process.cwd(), relPath) caused NFT to trace the entire project
-// root (~11k files) and pulled next.config.ts into the function bundle,
-// blowing past Vercel's deploy size limit. Always pass a bare filename here.
-function loadCsv(fileName: string): Record<string, string>[] {
-  // fileName is dynamic; the turbopackIgnore comment keeps the File Tracer
-  // from walking every file under public/data/ (which was matching 27540
-  // files even though only ~12 CSVs are read here). Build-time read still
-  // works because the files exist on disk during `next build`.
-  const path = join(process.cwd(), "public", "data", /*turbopackIgnore: true*/ fileName);
+// Literal per-name path, one entry per CSV this module reads, so the Vercel
+// file tracer sees a fully literal join() at every branch instead of a
+// dynamic segment directly under public/data. See
+// scripts/DATA-READS-RECIPE.md rule 1.
+const CSV_FILES = {
+  "global-gateway.csv": () => join(process.cwd(), "public", "data", "global-gateway.csv"),
+  "finance-capital.csv": () => join(process.cwd(), "public", "data", "finance-capital.csv"),
+  "culture-capital.csv": () => join(process.cwd(), "public", "data", "culture-capital.csv"),
+  "sports-mecca.csv": () => join(process.cwd(), "public", "data", "sports-mecca.csv"),
+  "rail-hub.csv": () => join(process.cwd(), "public", "data", "rail-hub.csv"),
+  "overperformer.csv": () => join(process.cwd(), "public", "data", "overperformer.csv"),
+  "greying-power.csv": () => join(process.cwd(), "public", "data", "greying-power.csv"),
+  "cosmopolitan-capital.csv": () => join(process.cwd(), "public", "data", "cosmopolitan-capital.csv"),
+  "emerging-standout.csv": () => join(process.cwd(), "public", "data", "emerging-standout.csv"),
+  "velvet-rock-capital.csv": () => join(process.cwd(), "public", "data", "velvet-rock-capital.csv"),
+  "isolated-capital.csv": () => join(process.cwd(), "public", "data", "isolated-capital.csv"),
+  "academic-gravity-wells.csv": () => join(process.cwd(), "public", "data", "academic-gravity-wells.csv"),
+  "skyline-cities.csv": () => join(process.cwd(), "public", "data", "skyline-cities.csv"),
+  "frozen-conurbations.csv": () => join(process.cwd(), "public", "data", "frozen-conurbations.csv"),
+  "conurbations.csv": () => join(process.cwd(), "public", "data", "conurbations.csv"),
+} as const;
+type CsvName = keyof typeof CSV_FILES;
+
+function loadCsv(fileName: CsvName): Record<string, string>[] {
+  const path = CSV_FILES[fileName]();
   if (!existsSync(path)) return [];
   const raw = readFileSync(path, "utf-8");
   const lines = raw.split(/\r?\n/).filter((l) => l.length > 0);
@@ -706,7 +720,7 @@ function getMetroIndex() {
   return _metroIndex;
 }
 
-function computeFromCsv(csvName: string, valueColumn: string, contextLabel: string): QualifyingMetro[] {
+function computeFromCsv(csvName: CsvName, valueColumn: string, contextLabel: string): QualifyingMetro[] {
   const csv = loadCsv(csvName);
   const { bySlug } = getMetroIndex();
   const out: QualifyingMetro[] = [];
@@ -731,7 +745,7 @@ function computeFromCsv(csvName: string, valueColumn: string, contextLabel: stri
 // badges.py (slug, name, country, rank, cluster_id, cluster_size,
 // cluster_diameter_km, cluster_member_slugs, cluster_member_names,
 // cluster_other_slugs, cluster_other_names, tier).
-function computeClustersFromCsv(csvName: string): QualifyingMetro[] {
+function computeClustersFromCsv(csvName: CsvName): QualifyingMetro[] {
   const csv = loadCsv(csvName);
   const { bySlug } = getMetroIndex();
   // Build one QualifyingMetro per cluster: the cluster's lead (lowest-rank

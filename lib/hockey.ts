@@ -39,8 +39,11 @@ export type HockeyHub = {
 
 const DATA_DIR = join(process.cwd(), "public", "data", "hockey");
 
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, rel);
+// `segs` is always a bare filename, or ("team-detail", leaf) -- both literal
+// directory segments up to the one dynamic leaf, per
+// scripts/DATA-READS-RECIPE.md rule 2.
+function loadJson<T>(...segs: string[]): T | null {
+  const p = join(DATA_DIR, ...segs);
   if (!existsSync(p)) return null;
   return JSON.parse(readFileSync(p, "utf-8")) as T;
 }
@@ -69,7 +72,7 @@ export function getAllHockeySlugs(): string[] {
 }
 
 export function getHockeyTeamDetail(slug: string): HockeyDetail | null {
-  return loadJson<HockeyDetail>(join("team-detail", `${slug}.json`));
+  return loadJson<HockeyDetail>("team-detail", `${slug}.json`);
 }
 
 // ---------- Country-hub join (same machinery as the other sports) ----------

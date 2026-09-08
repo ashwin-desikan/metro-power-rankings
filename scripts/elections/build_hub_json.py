@@ -142,6 +142,7 @@ FREEDOM_OVERRIDE = {
 ERA_FREEDOM.update(E.HUB_FREEDOM)
 ERA_CAVEAT.update(E.HUB_CAVEAT)
 FREEDOM_OVERRIDE.update(E.HUB_OVERRIDE)
+SUMMARY_OVERRIDE = dict(getattr(E, "HUB_SUMMARY", {}))
 
 def era_for(cc, kind, year):
     for key, label, span, lo, hi, blurb in E.ERAS[cc][kind]:
@@ -314,7 +315,7 @@ def to_leg(cc, e, cfg):
         "totalSeats": e.get("totalSeats"), "majoritySeats": e.get("majoritySeats"),
         "turnout": pct(e.get("turnout")), "parties": parties,
         "pmBefore": e.get("pmBefore"), "pmAfter": e.get("pmAfter"),
-        "knownAs": None, "summary": leg_summary(e, cfg.get("chamber"), cfg["adj"]),
+        "knownAs": None, "summary": SUMMARY_OVERRIDE.get((cc, e["id"])) or leg_summary(e, cfg.get("chamber"), cfg["adj"]),
         "seatLeader": max(seated, key=lambda p: p["seats"])["name"] if seated else None,
         "caveat": caveat, "unfree": unfree,
     }
@@ -342,7 +343,7 @@ def to_pres(cc, e, cfg):
         "turnout": pct(e.get("turnout")), "turnout2": None,
         "candidates": cands,
         "presBefore": e.get("pmBefore"), "presAfter": after,
-        "knownAs": None, "summary": pres_summary(e, cfg["adj"], cfg.get("runoffSummary", False)),
+        "knownAs": None, "summary": SUMMARY_OVERRIDE.get((cc, "pres-" + e["id"])) or pres_summary(e, cfg["adj"], cfg.get("runoffSummary", False)),
         "caveat": caveat, "unfree": unfree,
     }
 

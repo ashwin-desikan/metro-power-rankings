@@ -61,12 +61,14 @@ const GH =
 
 // Dev reads the working-tree file (local edits show at once); prod ISR-fetches
 // GitHub raw so weekly refreshes surface without a rebuild. Same as usPolitics.
-async function readHistory<T>(file: string, fallback: T): Promise<T> {
+//
+// readLocal does the actual literal readFileSync per file (never a helper
+// taking a dynamic filename) so the Vercel file tracer scopes each route to
+// just the file it reads. See scripts/DATA-READS-RECIPE.md.
+async function readHistory<T>(file: string, readLocal: () => T, fallback: T): Promise<T> {
   const local = (): T | null => {
     try {
-      return JSON.parse(
-        fs.readFileSync(path.join(process.cwd(), "public", "data", file), "utf-8"),
-      ) as T;
+      return readLocal();
     } catch {
       return null;
     }
@@ -92,16 +94,37 @@ const EMPTY_OFFICES: UkOffices = {
 };
 
 export async function getUkOffices(): Promise<UkOffices> {
-  const d = await readHistory<Partial<UkOffices>>("uk-offices-history.json", {});
+  const d = await readHistory<Partial<UkOffices>>(
+    "uk-offices-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "uk-offices-history.json"), "utf-8"),
+      ) as Partial<UkOffices>,
+    {},
+  );
   return { ...EMPTY_OFFICES, ...d };
 }
 
 export async function getUkCommonsHistory(): Promise<UkChamber[]> {
-  const d = await readHistory<{ parliaments?: UkChamber[] }>("uk-commons-history.json", {});
+  const d = await readHistory<{ parliaments?: UkChamber[] }>(
+    "uk-commons-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "uk-commons-history.json"), "utf-8"),
+      ) as { parliaments?: UkChamber[] },
+    {},
+  );
   return d.parliaments ?? [];
 }
 
 export async function getUkLordsHistory(): Promise<UkChamber[]> {
-  const d = await readHistory<{ periods?: UkChamber[] }>("uk-lords-history.json", {});
+  const d = await readHistory<{ periods?: UkChamber[] }>(
+    "uk-lords-history.json",
+    () =>
+      JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "uk-lords-history.json"), "utf-8"),
+      ) as { periods?: UkChamber[] },
+    {},
+  );
   return d.periods ?? [];
 }

@@ -51,10 +51,20 @@ export type TennisData = {
   hostMetros: HostMetro[]; davis: DavisNation[];
 };
 
-const DATA_DIR = join(process.cwd(), "public", "data", "majors");
+// Literal per-name path, one entry per file this module ever reads, so the
+// file tracer sees a fully literal join() at each branch instead of a
+// dynamic segment under public/data. See scripts/DATA-READS-RECIPE.md rule 1.
+// "champions-history.json" lives one level up from public/data/majors, at
+// public/data/champions-history.json, mirroring the original `../` rel.
+const MAJORS_FILES = {
+  "golf.json": () => join(process.cwd(), "public", "data", "majors", "golf.json"),
+  "tennis.json": () => join(process.cwd(), "public", "data", "majors", "tennis.json"),
+  "champions-history.json": () => join(process.cwd(), "public", "data", "champions-history.json"),
+} as const;
+type MajorsFileName = keyof typeof MAJORS_FILES;
 
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, rel);
+function loadJson<T>(rel: MajorsFileName): T | null {
+  const p = MAJORS_FILES[rel]();
   if (!existsSync(p)) return null;
   return JSON.parse(readFileSync(p, "utf-8")) as T;
 }
@@ -86,7 +96,7 @@ const GOLF_HISTORY_NAME: Record<string, string> = {
 let _golfMonths: Record<string, number> | null = null;
 export function golfMajorMonths(): Record<string, number> {
   if (_golfMonths) return _golfMonths;
-  const rows = loadJson<Array<{ competition?: string; year?: number; date?: string }>>("../champions-history.json") ?? [];
+  const rows = loadJson<Array<{ competition?: string; year?: number; date?: string }>>("champions-history.json") ?? [];
   const out: Record<string, number> = {};
   for (const r of rows) {
     const g = r.competition ? GOLF_HISTORY_NAME[r.competition] : undefined;

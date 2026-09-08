@@ -11528,3 +11528,52 @@ placeholders before).
   `findstr` the Windows copy before building. Native build clean, probe
   9/9 (economy, compare, three bank pages, owners, standings, home,
   business).
+
+### P. Evening: the function-size headroom, and the Tuesday NFL job's first run
+
+- **Function size, from 304 heavy routes to one, then none.** The morning
+  build had 304 routes at or above 220 MB (max 224.2 against Vercel's 250)
+  because readers under lib/ built `public/data` paths the file tracer
+  could not scope. Measured against Next's compiled tracer on a fixture
+  tree (table in `scripts/DATA-READS-RECIPE.md`): a dynamic first segment
+  under public/data bundles everything, as expected; but so does a shared
+  root const (`const dataDir = join(cwd, "public", "data")` then
+  `join(dataDir, "metros.json")`, literal leaf and all), which `lib/data.ts`
+  had carried since the site began, and so does a spread (`...rel`) as the
+  home page used. A const that already names a subdirectory scopes to that
+  subdirectory. Fix: 35 lib files plus `app/elections/HubShared.tsx` and
+  `app/page.tsx` now spell every read inline with literal directory
+  segments and at most one dynamic leaf (literal maps where names are
+  fixed; `load(leaf)` helpers keep their GitHub-raw-first behaviour).
+  Gate: `npm run check:data-reads` (in `verify`), rule B flags ANY join off
+  a root const, rule A strips comments before matching (the home page's
+  `/*turbopackIgnore*/` had hidden its spread); baseline file empty and
+  must stay empty. Measured natively after the lib pass: 68 routes at or
+  above 220 MB; after `lib/data.ts` and friends: ONE (the home page at
+  223.4, next largest 121.7); after the home page: `OK: no route traced at
+  or above 220.0 MB`, largest 121.7 MB (/countries/[slug]), then 120.5
+  (/rankings/[slug]) and 112.1 (/teams/football/[slug]). Twice the
+  headroom the site had this morning. vitest 175/175 unchanged throughout;
+  probe 27/28 clean (the cricket hub is the pre-existing 430px, below).
+- **Tuesday NFL job failed on its first scheduled run** (run 34234173254,
+  13:47 UTC, step "Carry the live season from ESPN", HTTP 403). Measured
+  from the Windows box: ESPN now answers 403 to a request with NO
+  User-Agent and 200 to `Python-urllib/3.14` or `curl/8.0` (browser UAs
+  and "node" 403), the opposite of the 09-07 finding. Node's fetch in
+  `lib/espnFetch.ts` still gets 200 with no explicit UA, so the site is
+  unaffected. `scripts/nfl/nfl_live_update.py` sends urllib's own token
+  again; dry run walks all 18 weeks, 272 games, none played, nothing
+  written. The Friday 09:30 UTC run is the first with results, so this
+  must be on origin before then. Nothing was dispatched by hand: a manual
+  `--write` run would land a data commit on origin ahead of the Windows
+  commits.
+- Cuba 1916: `SUMMARY_OVERRIDE` per hub module (hub_editorial.py loads it,
+  build_hub_json.py prefers it), the 1916 sentence now names Menocal over
+  Zayas and the missing count; JSON diff is that one line.
+- Not done, deliberately: the /elections tap-target labels are the
+  sitewide idioms (crumbs 15px, tab row 38px, SectionHead summary 16px,
+  inline prose links 20px, 30px chips), not an elections defect; changing
+  them touches every page. `/teams/cricket` probes 430px wide at 390 (the
+  page was not touched today and had never been probed; open). `/top-teams`
+  runs 91 phone screens (warn, pre-existing). Canada, Australia and New
+  Zealand still read as dominions to 2026; Ashwin has not ruled.

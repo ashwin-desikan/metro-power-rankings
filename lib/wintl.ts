@@ -60,10 +60,18 @@ export type WMedalComp = {
   nations: WMedalNation[];
 };
 
-const DATA_DIR = join(process.cwd(), "public", "data", "wintl");
+// Literal per-name path, one entry per file this module ever reads, so the
+// file tracer sees a fully literal join() at each branch instead of a
+// dynamic segment under public/data. See scripts/DATA-READS-RECIPE.md rule 1.
+const WINTL_FILES = {
+  euros: () => join(process.cwd(), "public", "data", "wintl", "euros.json"),
+  olympics: () => join(process.cwd(), "public", "data", "wintl", "olympics.json"),
+  finalissima: () => join(process.cwd(), "public", "data", "wintl", "finalissima.json"),
+} as const;
+type WintlFileName = keyof typeof WINTL_FILES;
 
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, `${rel}.json`);
+function loadJson<T>(rel: WintlFileName): T | null {
+  const p = WINTL_FILES[rel]();
   if (!existsSync(p)) return null;
   return JSON.parse(readFileSync(p, "utf-8")) as T;
 }

@@ -29,16 +29,39 @@ function fmtDate(iso: string): string {
   return `${MONTHS[parseInt(m[2], 10) - 1]} ${parseInt(m[3], 10)}, ${m[1]}`;
 }
 
-function readData<T>(rel: string[], fallback: T): T {
+// Every path is spelled as a literal: a spread (`...rel`) under public/data
+// made the file tracer bundle all 265 MB into the home page's function
+// (measured 2026-09-08, the last route left above 220 MB). Add a key here,
+// never a dynamic segment; scripts/check-data-reads.mjs enforces it.
+const HOME_FILES = {
+  meta: () => readFileSync(join(process.cwd(), 'public', 'data', 'meta.json'), 'utf-8'),
+  powerRanking: () => readFileSync(join(process.cwd(), 'public', 'data', 'power-ranking.json'), 'utf-8'),
+  zoneZeroCup: () => readFileSync(join(process.cwd(), 'public', 'data', 'zone-zero-cup.json'), 'utf-8'),
+  soundArtists: () => readFileSync(join(process.cwd(), 'public', 'data', 'sound', 'artists.json'), 'utf-8'),
+  screen: () => readFileSync(join(process.cwd(), 'public', 'data', 'screen', 'screen.json'), 'utf-8'),
+  powerHistory: () => readFileSync(join(process.cwd(), 'public', 'data', 'power-history.json'), 'utf-8'),
+  cricketTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'cricket', 'top-games.json'), 'utf-8'),
+  rugbyTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'rugby-union', 'top-games.json'), 'utf-8'),
+  footballTopClubGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'football', 'top-club-games.json'), 'utf-8'),
+  intlTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'international', 'top-games-all-time.json'), 'utf-8'),
+  nflTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'nfl', 'top-games-all-time.json'), 'utf-8'),
+  nbaTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'nba', 'top-games-all-time.json'), 'utf-8'),
+  mlbTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'mlb', 'top-games-all-time.json'), 'utf-8'),
+  cfbGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'cfb', 'games.json'), 'utf-8'),
+  cbbGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'cbb', 'games.json'), 'utf-8'),
+} as const;
+type HomeFile = keyof typeof HOME_FILES;
+
+function readData<T>(file: HomeFile, fallback: T): T {
   try {
-    return JSON.parse(readFileSync(join(/*turbopackIgnore: true*/ process.cwd(), 'public', 'data', ...rel), 'utf-8')) as T;
+    return JSON.parse(HOME_FILES[file]()) as T;
   } catch {
     return fallback;
   }
 }
 
 function getLastUpdate(): string {
-  const meta = readData<{ lastUpdate?: string }>(['meta.json'], {});
+  const meta = readData<{ lastUpdate?: string }>('meta', {});
   return meta.lastUpdate || new Date().toISOString().slice(0, 10);
 }
 
@@ -67,11 +90,11 @@ function topMetros(): Preview[] {
   return getAllMetros().slice(0, 3).map((m) => ({ name: m.name, sub: m.country, meta: m.score.toFixed(1) }));
 }
 function topPeople(): Preview[] {
-  const d = readData<{ ranking?: { name: string; metro?: string; power?: number }[] }>(['power-ranking.json'], {});
+  const d = readData<{ ranking?: { name: string; metro?: string; power?: number }[] }>('powerRanking', {});
   return (d.ranking ?? []).slice(0, 3).map((p) => ({ name: p.name, sub: p.metro, meta: p.power != null ? String(Math.round(p.power)) : '' }));
 }
 function topNations(): Preview[] {
-  const d = readData<{ nations?: { name: string; merit?: number; continent?: string; countrySlug?: string; slug?: string }[] }>(['zone-zero-cup.json'], {});
+  const d = readData<{ nations?: { name: string; merit?: number; continent?: string; countrySlug?: string; slug?: string }[] }>('zoneZeroCup', {});
   return (d.nations ?? []).slice(0, 3).map((n) => ({
     name: n.name,
     sub: n.continent,
@@ -80,15 +103,15 @@ function topNations(): Preview[] {
   }));
 }
 function topArtists(): Preview[] {
-  const d = readData<{ name: string; metro?: string; combined?: number }[]>(['sound', 'artists.json'], []);
+  const d = readData<{ name: string; metro?: string; combined?: number }[]>('soundArtists', []);
   return d.slice(0, 3).map((a) => ({ name: a.name, sub: a.metro, meta: a.combined != null ? a.combined.toFixed(0) : '' }));
 }
 function topFilmMetros(): Preview[] {
-  const d = readData<{ metros?: { name: string; country?: string; score?: number }[] }>(['screen', 'screen.json'], {});
+  const d = readData<{ metros?: { name: string; country?: string; score?: number }[] }>('screen', {});
   return (d.metros ?? []).slice(0, 3).map((m) => ({ name: m.name, sub: m.country, meta: m.score != null ? m.score.toFixed(0) : '' }));
 }
 function topPowers(): Preview[] {
-  const d = readData<{ byYear?: Record<string, { slug: string; share: number | null }[]> }>(['power-history.json'], {});
+  const d = readData<{ byYear?: Record<string, { slug: string; share: number | null }[]> }>('powerHistory', {});
   const cur = d.byYear?.['2026'] ?? [];
   return cur.slice(0, 3).map((r) => ({
     name: getCountry(r.slug)?.name ?? r.slug,
@@ -132,13 +155,13 @@ type SportGames = { tag: string; label: string; emoji: string; games: GameEntry[
 // same ranked source the /sports/games page uses: by game date for the pro
 // leagues, by team pairing for college (its FEATURED clips carry no date).
 type RankRow = { date?: string; team?: string; opp?: string };
-const RANK_SRC: Record<string, { file: string[]; key?: string; by: 'date' | 'teams' }> = {
-  INTFB: { file: ['international', 'top-games-all-time.json'], by: 'date' },
-  NFL: { file: ['nfl', 'top-games-all-time.json'], by: 'date' },
-  NBA: { file: ['nba', 'top-games-all-time.json'], by: 'date' },
-  MLB: { file: ['mlb', 'top-games-all-time.json'], by: 'date' },
-  CFB: { file: ['cfb', 'games.json'], key: 'top_overall', by: 'teams' },
-  CBB: { file: ['cbb', 'games.json'], key: 'top_overall', by: 'teams' },
+const RANK_SRC: Record<string, { file: HomeFile; key?: string; by: 'date' | 'teams' }> = {
+  INTFB: { file: 'intlTopGames', by: 'date' },
+  NFL: { file: 'nflTopGames', by: 'date' },
+  NBA: { file: 'nbaTopGames', by: 'date' },
+  MLB: { file: 'mlbTopGames', by: 'date' },
+  CFB: { file: 'cfbGames', key: 'top_overall', by: 'teams' },
+  CBB: { file: 'cbbGames', key: 'top_overall', by: 'teams' },
 };
 function norm(x?: string): string { return (x ?? '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
 function rankByDate(rows: RankRow[], date?: string): number | undefined {
@@ -182,7 +205,7 @@ type RugEntry = { date: string; team: string; teamSlug: string; opp: string; opp
 // not the FEATURED clip list, so their top-two marquee cards are built straight from the data.
 function ballGames(): SportGames[] {
   const out: SportGames[] = [];
-  const cric = readData<{ combined: CricEntry[] }>(['cricket', 'top-games.json'], { combined: [] }).combined.slice(0, 2);
+  const cric = readData<{ combined: CricEntry[] }>('cricketTopGames', { combined: [] }).combined.slice(0, 2);
   if (cric.length) {
     out.push({
       tag: 'CRICKET', label: 'Cricket', emoji: '\u{1F3CF}',
@@ -204,7 +227,7 @@ function ballGames(): SportGames[] {
       }),
     });
   }
-  const rug = readData<{ top: RugEntry[] }>(['rugby-union', 'top-games.json'], { top: [] }).top.slice(0, 2);
+  const rug = readData<{ top: RugEntry[] }>('rugbyTopGames', { top: [] }).top.slice(0, 2);
   if (rug.length) {
     out.push({
       tag: 'RUGBYU', label: 'Rugby Union', emoji: '\u{1F3C9}',
@@ -233,7 +256,7 @@ function ballGames(): SportGames[] {
 // as cricket and rugby: the data file is the source, so the card can't drift).
 type ClubEntry = { date: string; comp: string; round?: string | null; home: string; away: string; hg: number; ag: number; pens?: string | null };
 function clubBallGames(): SportGames[] {
-  const top = readData<{ top: ClubEntry[] }>(['football', 'top-club-games.json'], { top: [] }).top.slice(0, 2);
+  const top = readData<{ top: ClubEntry[] }>('footballTopClubGames', { top: [] }).top.slice(0, 2);
   if (!top.length) return [];
   return [{
     tag: 'CLUBFB', label: 'Club Football', emoji: '\u{1F3C6}',

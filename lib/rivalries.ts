@@ -87,6 +87,21 @@ function data(): RivalriesFile {
 // the franchise slug, so we map it back to the full display name.
 const MAJOR_LEAGUES = ["nfl", "nba", "mlb", "nhl"] as const;
 type FranchiseName = { slug?: string; display_name?: string; name?: string };
+
+// One literal branch per MAJOR_LEAGUES entry so the file tracer sees a fully
+// literal join() at each, per scripts/DATA-READS-RECIPE.md rule 1.
+function majorFranchisesPath(lg: (typeof MAJOR_LEAGUES)[number]): string {
+  switch (lg) {
+    case "nfl":
+      return join(process.cwd(), "public", "data", "nfl", "franchises.json");
+    case "nba":
+      return join(process.cwd(), "public", "data", "nba", "franchises.json");
+    case "mlb":
+      return join(process.cwd(), "public", "data", "mlb", "franchises.json");
+    case "nhl":
+      return join(process.cwd(), "public", "data", "nhl", "franchises.json");
+  }
+}
 let _majorNames: Record<string, Record<string, string>> | null = null;
 function majorNames(): Record<string, Record<string, string>> {
   if (_majorNames) return _majorNames;
@@ -94,7 +109,7 @@ function majorNames(): Record<string, Record<string, string>> {
   for (const lg of MAJOR_LEAGUES) {
     const map: Record<string, string> = {};
     try {
-      const p = join(process.cwd(), "public", "data", lg, "franchises.json");
+      const p = majorFranchisesPath(lg);
       if (existsSync(p)) {
         const j = JSON.parse(readFileSync(p, "utf-8")) as
           | FranchiseName[]

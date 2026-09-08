@@ -98,14 +98,16 @@ export const MLB_DATA_GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 const GH_BASE = MLB_DATA_GH_BASE;
 
+// readLocal does the actual literal readFileSync per file (never a helper
+// taking a dynamic filename) so the Vercel file tracer scopes each route to
+// just the file it reads. See scripts/DATA-READS-RECIPE.md.
 async function load<T extends { meta: { generated_at: string } }>(
   file: string,
+  readLocal: () => T,
 ): Promise<T | null> {
   let local: T | null = null;
   try {
-    local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
-    ) as T;
+    local = readLocal();
   } catch {
     /* no build-time copy */
   }
@@ -128,11 +130,15 @@ async function load<T extends { meta: { generated_at: string } }>(
 }
 
 export async function getMlbSim(): Promise<MlbSimFile | null> {
-  return load<MlbSimFile>("mlb-sim.json");
+  return load<MlbSimFile>("mlb-sim.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "mlb-sim.json"), "utf-8")),
+  );
 }
 
 export async function getMlbSimHistory(): Promise<MlbSimHistoryFile | null> {
-  return load<MlbSimHistoryFile>("mlb-sim-history.json");
+  return load<MlbSimHistoryFile>("mlb-sim-history.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "mlb-sim-history.json"), "utf-8")),
+  );
 }
 
 /** canonical -> playoff probability (percent). Empty map when the sim is

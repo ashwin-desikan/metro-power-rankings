@@ -28,7 +28,8 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-const dataDir = join(process.cwd(), "public", "data");
+// Paths are spelled inline: a shared data-dir const makes the file tracer
+// bundle all of public/data (see scripts/DATA-READS-RECIPE.md).
 
 export type StructureKind = "building" | "tower" | "mast" | "industrial" | "other";
 
@@ -84,7 +85,7 @@ let cached: SupertallsData | null = null;
 export function getSupertalls(): SupertallsData {
   if (cached) return cached;
   try {
-    const file = JSON.parse(readFileSync(join(dataDir, "supertalls.json"), "utf-8")) as SupertallsFile;
+    const file = JSON.parse(readFileSync(join(process.cwd(), "public", "data", "supertalls.json"), "utf-8")) as SupertallsFile;
     cached = {
       retrieved: file.retrieved,
       structures: file.structures.rows,
@@ -136,7 +137,7 @@ export function getSkydb(): { rows: SkydbMetro[]; totals: SkydbTotals; generated
   const empty = { metros: 0, over150m: 0, over200m: 0, over300m: 0 };
   try {
     const file = JSON.parse(
-      readFileSync(join(dataDir, "skyscrapers.json"), "utf-8"),
+      readFileSync(join(process.cwd(), "public", "data", "skyscrapers.json"), "utf-8"),
     ) as SkydbFile;
     const rows = Object.entries(file.metros ?? {})
       .map(([slug, m]) => ({ slug, ...m }))

@@ -309,10 +309,34 @@ type IndexPayload = {
 
 // ---------- File loading ----------
 
-const DATA_DIR = join(process.cwd(), "public", "data", "international");
+// Literal per-name path, one entry per file this module ever reads, so the
+// file tracer sees a fully literal join() at each branch instead of a
+// dynamic segment under public/data. See scripts/DATA-READS-RECIPE.md rule 1.
+const INTERNATIONAL_FILES = {
+  "index.json": () => join(process.cwd(), "public", "data", "international", "index.json"),
+  "appearances.json": () =>
+    join(process.cwd(), "public", "data", "international", "appearances.json"),
+  "finals.json": () => join(process.cwd(), "public", "data", "international", "finals.json"),
+  "tournaments.json": () =>
+    join(process.cwd(), "public", "data", "international", "tournaments.json"),
+  "top-games-all-time.json": () =>
+    join(process.cwd(), "public", "data", "international", "top-games-all-time.json"),
+  "top-games-by-decade.json": () =>
+    join(process.cwd(), "public", "data", "international", "top-games-by-decade.json"),
+  "top-games-by-team.json": () =>
+    join(process.cwd(), "public", "data", "international", "top-games-by-team.json"),
+  "honors-leaderboard.json": () =>
+    join(process.cwd(), "public", "data", "international", "honors-leaderboard.json"),
+  "similar-teams.json": () =>
+    join(process.cwd(), "public", "data", "international", "similar-teams.json"),
+  "wc2026-sim.json": () =>
+    join(process.cwd(), "public", "data", "international", "wc2026-sim.json"),
+  "wc2026.json": () => join(process.cwd(), "public", "data", "international", "wc2026.json"),
+} as const;
+type InternationalFileName = keyof typeof INTERNATIONAL_FILES;
 
-function loadJson<T>(name: string, fallback: T): T {
-  const path = join(DATA_DIR, name);
+function loadJson<T>(name: InternationalFileName, fallback: T): T {
+  const path = INTERNATIONAL_FILES[name]();
   if (!existsSync(path)) return fallback;
   try {
     return JSON.parse(readFileSync(path, "utf8")) as T;

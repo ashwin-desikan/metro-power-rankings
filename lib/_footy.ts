@@ -65,7 +65,10 @@ export function makeFooty(league: "afl" | "nrl") {
   let _d: FootyData | null = null;
   const data = (): FootyData => {
     if (!_d) {
-      const p = join(process.cwd(), "public", "data", league, "data.json");
+      const p =
+        league === "afl"
+          ? join(process.cwd(), "public", "data", "afl", "data.json")
+          : join(process.cwd(), "public", "data", "nrl", "data.json");
       _d = JSON.parse(readFileSync(p, "utf8")) as FootyData;
     }
     return _d;

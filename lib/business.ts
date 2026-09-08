@@ -623,13 +623,12 @@ export type GdpRatioRow = { name: string; slug: string; cap: number; gdpUsd: num
 
 export function computeGdpBoard(bizCountries: BizCountry[]): GdpRatioRow[] {
   try {
-    const dir = join(process.cwd(), "public", "data");
-    const countries = JSON.parse(readFileSync(join(dir, "countries.json"), "utf-8")) as {
+    const countries = JSON.parse(readFileSync(join(process.cwd(), "public", "data", "countries.json"), "utf-8")) as {
       name: string;
       slug: string;
     }[];
     const nameToSlug = new Map(countries.map((c) => [c.name.toLowerCase(), c.slug] as const));
-    const indicators = (JSON.parse(readFileSync(join(dir, "country-indicators.json"), "utf-8"))
+    const indicators = (JSON.parse(readFileSync(join(process.cwd(), "public", "data", "country-indicators.json"), "utf-8"))
       .countries ?? {}) as Record<string, { indicators?: Record<string, unknown> }>;
     const rows: GdpRatioRow[] = [];
     for (const c of bizCountries) {

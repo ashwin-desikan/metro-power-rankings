@@ -36,6 +36,26 @@ def pres_re(t):
 
 HUBS = {
   'ae': dict(path=H+'ae.txt', leg=leg_re()),
+  # Morocco: House of Representatives general elections 1963-2021 (legislative
+  # only, no presidency: it is a constitutional monarchy where the King
+  # appoints the prime minister). The 2026 general election, set for 23
+  # September 2026, has no result yet, so it is excluded from the series
+  # entirely rather than becoming an empty contest row; its own dump page
+  # carries only the outgoing House's seat count and polling estimates, no
+  # results table.
+  # "leg-tiered" reads the stacked "Party | Direct/National election | Indirect
+  # /Constituency election | Total" table that every contest but 1970 and 1977
+  # carries (those two also carry it, but with a stray blank line inside the
+  # header block that the shared tiered reader treats as end-of-table, so
+  # both fall back, correctly, to the plain infobox summary instead: real
+  # seats and seat change, no vote count). Without the preference the default
+  # "flat table first" rule instead reads 1984 and 1993 off that same plain
+  # infobox summary (abbreviated party codes, no votes or vote share at all),
+  # even though their own tiered tables parse cleanly and give real votes and
+  # shares for both. Confirmed against ma.txt: 1993's tiered "Direct
+  # election" column gives RNI 824,117 votes (13.24%) against the same 41
+  # seats the infobox already had right.
+  'ma': dict(path=H+'ma.txt', leg=leg_re(r'^2026 '), legPrefer='leg-tiered'),
   # Bangladesh's "Party | Votes | % | Seats" tables stack a second header row
   # "General | Women | Total | +/-"; a flat reading takes the general
   # (directly elected) seat count and drops the reserved women's seats that
@@ -177,6 +197,31 @@ HUBS = {
              leg=lambda t: re.match(r'^\d{4} Venezuelan (general|parliamentary) election$', t) is not None,
              pres=lambda t: re.match(r'^\d{4} Venezuelan (general|presidential) election$', t) is not None,
              legPrefer=lambda t: 'leg-large' if t == '1993 Venezuelan general election' else 'leg'),
+  # Cuba: the republic's general elections 1901-1958 (a general-election
+  # article carries both a candidate-headed presidential table and a
+  # party-headed House of Representatives table; 1901-1954 print the Senate's
+  # table ahead of the House's, both headed plainly "Party | Seats" with no
+  # votes column at all, so "leg-large" is needed to keep the series on the
+  # larger House rather than the first-printed Senate. 1958's article carries
+  # only the House table (no Senate section that year) and 1928 is a
+  # presidential-only article with no legislature at all), then the National
+  # Assembly of People's Power, 1976-2023 (indirectly elected in 1976, 1981
+  # and 1986 with no results table, one preapproved list every year since).
+  'cu': dict(path=H+'cu.txt',
+             leg=lambda t: re.match(r'^\d{4} Cuban (general|parliamentary) election$', t) is not None,
+             legPrefer=lambda t: 'leg-large' if 'general election' in t else 'leg',
+             pres=lambda t: re.match(r'^\d{4} Cuban (general|presidential) election$', t) is not None),
+  # Jamaica: general elections 1944-2025. The dump carries only one title per
+  # year, sometimes "Jamaica general election" and sometimes "Jamaican
+  # general election", so no dedup by year is needed; the default leg regex
+  # matches either spelling since it only anchors on the year and "general
+  # election".
+  'jm': dict(path=H+'jm.txt', leg=leg_re()),
+  # West Indies Federation: the one federal election of 25 March 1958. The
+  # dump's own title is "1958 West Indies federal elections" (plural, no
+  # "general"), which the shared leg_re() does not match, so it is matched
+  # directly.
+  'wi': dict(path=H+'wi.txt', leg=lambda t: t == '1958 West Indies federal elections'),
 
 }
 out = {"series": {}}
@@ -320,6 +365,55 @@ for cc, cfg in HUBS.items():
                 for p in et_by_id['2015']['parties']:
                     if p['seats'] is None and p['share'] == 0.0:
                         p['seats'], p['share'] = 0, None
+        if cc == 'ma' and kind == 'leg':
+            # 1963 is the first article in the series, so its nav line has no
+            # "<- previous" arrow ("17 May 1963\t1970 ->" rather than the
+            # "<- prev\tdate\tnext ->" shape NAV_RE expects), the same gap
+            # Thailand's 1933 fix documents above. Restore the date from the
+            # nav line itself (ma.txt line 3 of that article).
+            for e in series:
+                if e['id'] == '1963':
+                    e['date'] = '17 May 1963'
+            # Every article's "Prime Minister before / after" block is laid
+            # out as three lines the shared infobox() reader does not parse:
+            # a bare "X before\tX after" header (no "election" suffix, so
+            # LEADER_BEFORE/LEADER_AFTER never match it), then the before
+            # PM's name alone, then "beforeParty\tafterName" on one
+            # tab-joined line, then the after PM's party alone. 1963, the
+            # first contest, instead carries only a "Prime Minister after"
+            # header followed by name then party (no incumbent to report).
+            # Read this shape directly rather than widening the shared
+            # before/after reader for one hub's compressed layout.
+            from parse_dump import articles as _articles
+            by_id = {e['id']: e for e in series}
+            for title, art_lines in _articles(cfg['path']):
+                yr = title[:4]
+                if yr not in by_id:
+                    continue
+                before = after = None
+                for i, l in enumerate(art_lines):
+                    if l == 'Prime Minister before\tPrime Minister after':
+                        b_name = art_lines[i + 1].strip()
+                        b_party, a_name = (art_lines[i + 2].split('\t') + [None])[:2]
+                        a_party = art_lines[i + 3].strip()
+                        before = {'name': b_name, 'party': b_party.strip() or None}
+                        after = {'name': (a_name or '').strip(), 'party': a_party or None}
+                        break
+                    if l == 'Prime Minister after':
+                        a_name = art_lines[i + 1].strip()
+                        a_party = art_lines[i + 2].strip()
+                        after = {'name': a_name, 'party': a_party or None}
+                        break
+                if before:
+                    by_id[yr]['pmBefore'] = before
+                if after:
+                    by_id[yr]['pmAfter'] = after
+            # 2016's turnout is stated only in the lead sentence ("The vote
+            # had 43% turnout"), not in a "Turnout" infobox line the shared
+            # scanner reads, so it comes back None. Filled in from that
+            # sentence (ma.txt, 2016 article).
+            if '2016' in by_id and by_id['2016'].get('turnout') is None:
+                by_id['2016']['turnout'] = 43.0
         if cc == 'pe' and kind == 'leg':
             # 1936's article carries only the presidential infobox's tiny
             # Nominee/Party/Popular vote table (Benavides halted the count and
@@ -721,6 +815,81 @@ for cc, cfg in HUBS.items():
                     e['tableSeats'] = None
                     e['seatTotalSource'] = None
                     e['majoritySeats'] = None
+        if cc == 'cu' and kind == 'leg':
+            # 1993-2023's "Party\tVotes\t%\tSeats" table prints the same
+            # Communist Party of Cuba row twice, once for the entire-list
+            # vote and once for the selective vote, so a flat read carries
+            # both rows into the party list: the same name appears twice in
+            # the chronology, the second time with no seats at all. Keep only
+            # the entire-list row, which is the one that carries the seats.
+            # 1998's table names its only row "Entire list" rather than the
+            # party (cu.txt lines 22-23: "Entire list\t\t601"), unlike every
+            # other year in the series; restored to match the source's own
+            # wording elsewhere ("Communist Party of Cuba and affiliated
+            # (entire list)") rather than a bare table label.
+            for e in series:
+                if e['id'] == '1998':
+                    for p in e['parties']:
+                        if p['name'] == 'Entire list':
+                            p['name'] = 'Communist Party of Cuba and affiliated (entire list)'
+                if (len(e['parties']) == 2 and e['parties'][1]['seats'] is None
+                        and e['parties'][0]['name'].split(' (')[0]
+                        == e['parties'][1]['name'].split(' (')[0]):
+                    e['parties'] = e['parties'][:1]
+            # Same before/after infobox quirks as the presidential series
+            # above (1901's label-less "President after", 1958's stacked
+            # elected/appointed names), plus one leg-only case: 2023's
+            # "Elected" and "Prime Minister" render on two separate lines
+            # (cu.txt: "Elected" then, on the next line, "Prime Minister"),
+            # which the shared LEADER_AFTER match, requiring both words on
+            # one line, never joins.
+            leg_by_id = {e['id']: e for e in series}
+            if '1901' in leg_by_id:
+                leg_by_id['1901']['pmAfter'] = {'name': 'Tomás Estrada Palma', 'party': 'Independent'}
+            if '1958' in leg_by_id:
+                leg_by_id['1958']['pmAfter'] = {'name': 'Andrés Rivero Agüero', 'party': 'National Progressive Coalition'}
+            if '2023' in leg_by_id:
+                leg_by_id['2023']['pmAfter'] = {'name': 'Manuel Marrero Cruz', 'party': 'PCC'}
+        if cc == 'cu' and kind == 'pres':
+            # 1901, the series' first contest, carries only a "President
+            # after" label (no incumbent to report), the same "after" shape
+            # ma.py documents above, and here without the "election" suffix
+            # the shared LEADER_AFTER regex requires, so it never matches at
+            # all. 1958's "Elected President" block instead stacks two names,
+            # the man the count declared elected and the one who actually
+            # took the office nine weeks later after the Revolution
+            # (cu.txt: "Andrés Rivero Agüero (elected)" then "Manuel Urrutia
+            # Lleó (appointed)"), which the shared reader folds into one
+            # broken name/party pair. Both restored directly from the dump.
+            by_id = {e['id']: e for e in series}
+            if '1901' in by_id:
+                by_id['1901']['pmAfter'] = {'name': 'Tomás Estrada Palma', 'party': 'Independent'}
+            if '1958' in by_id:
+                by_id['1958']['pmAfter'] = {'name': 'Andrés Rivero Agüero', 'party': 'National Progressive Coalition'}
+        if cc == 'wi' and kind == 'leg':
+            # The one "Party\tSeats" table (WIFLP 25, DLP 19, BNP 1, Total 45)
+            # is immediately followed, with no blank line the shared table
+            # reader treats as a break, by the "By province" breakdown, whose
+            # own "Province\tParty\tMPs" header and rows ("Antigua and
+            # Barbuda\t2 (ALP)\t\t\t2") the reader keeps swallowing as if they
+            # were more party rows (reading "Province" as a party named
+            # "Province" with "Party" seats, and so on). Confirmed against
+            # wi.txt lines 123-134: the real table is exactly the first three
+            # rows plus the printed Total of 45. Cut there rather than widen
+            # the shared reader for one hub's unbroken section boundary.
+            for e in series:
+                e['parties'] = e['parties'][:3]
+                e['totalSeats'] = 45
+                e['tableSeats'] = 45
+                e['seatTotalSource'] = 'infobox'
+                # The infobox reads "Position unfilled before election / None"
+                # then "Prime Minister / Grantley Herbert Adams / Federalist",
+                # a shape the shared before/after reader does not recognise
+                # (no "election" suffix on either label). Restored directly
+                # from wi.txt lines 96-101: there was no office to hold
+                # before the Federation's only election.
+                e['pmBefore'] = None
+                e['pmAfter'] = {'name': 'Grantley Herbert Adams', 'party': 'Federalist'}
         key = '%s-%s' % (cc, 'presidential' if kind == 'pres' else 'legislative')
         out['series'][key] = series
         matched = [t for t in titles if t and want(t)]

@@ -78,24 +78,32 @@ export type UsStateResults = {
 };
 
 // ---------------- loaders ----------------
-function readJson<T>(file: string): T {
-  return JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", file), "utf-8")) as T;
-}
+// One literal readFileSync call per file (never a helper taking a dynamic
+// filename) so the Vercel file tracer scopes each route to just the file it
+// actually reads. See scripts/DATA-READS-RECIPE.md.
 let _core: UsElectionsFile | null = null;
 let _trends: UsElectionTrends | null = null;
 let _congress: UsCongressFile | null = null;
 export function getUsElections(): UsElectionsFile {
-  return (_core ??= readJson<UsElectionsFile>("us-elections.json"));
+  return (_core ??= JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), "public", "data", "us-elections.json"), "utf-8"),
+  ) as UsElectionsFile);
 }
 export function getUsElectionTrends(): UsElectionTrends {
-  return (_trends ??= readJson<UsElectionTrends>("us-elections-trends.json"));
+  return (_trends ??= JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), "public", "data", "us-elections-trends.json"), "utf-8"),
+  ) as UsElectionTrends);
 }
 export function getUsCongress(): UsCongressFile {
-  return (_congress ??= readJson<UsCongressFile>("us-elections-congress.json"));
+  return (_congress ??= JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), "public", "data", "us-elections-congress.json"), "utf-8"),
+  ) as UsCongressFile);
 }
 let _states: Record<string, UsStateResults> | null = null;
 export function getUsStateResults(id: string): UsStateResults | null {
-  _states ??= readJson<Record<string, UsStateResults>>("us-elections-states.json");
+  _states ??= JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), "public", "data", "us-elections-states.json"), "utf-8"),
+  ) as Record<string, UsStateResults>;
   return _states[id] ?? null;
 }
 // states carried per candidate name (state won = most electoral votes in it)

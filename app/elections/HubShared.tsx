@@ -7,13 +7,88 @@ import { getElectionCensus } from "@/lib/electionCensus";
 import { MONO } from "./_shared/ui";
 import FollowPolityButton from "./FollowPolityButton";
 
+// Literal per-hub path, one entry per ELECTION_HUBS code, so the Vercel file
+// tracer sees a fully literal join() at every branch instead of a dynamic
+// segment directly under public/data. See scripts/DATA-READS-RECIPE.md rule 1.
+const HUB_ELECTION_FILES: Record<string, () => string> = {
+  us: () => path.join(process.cwd(), "public", "data", "us-elections.json"),
+  uk: () => path.join(process.cwd(), "public", "data", "uk-elections.json"),
+  ca: () => path.join(process.cwd(), "public", "data", "ca-elections.json"),
+  eu: () => path.join(process.cwd(), "public", "data", "eu-elections.json"),
+  mx: () => path.join(process.cwd(), "public", "data", "mx-elections.json"),
+  br: () => path.join(process.cwd(), "public", "data", "br-elections.json"),
+  ar: () => path.join(process.cwd(), "public", "data", "ar-elections.json"),
+  de: () => path.join(process.cwd(), "public", "data", "de-elections.json"),
+  fr: () => path.join(process.cwd(), "public", "data", "fr-elections.json"),
+  it: () => path.join(process.cwd(), "public", "data", "it-elections.json"),
+  es: () => path.join(process.cwd(), "public", "data", "es-elections.json"),
+  pl: () => path.join(process.cwd(), "public", "data", "pl-elections.json"),
+  nl: () => path.join(process.cwd(), "public", "data", "nl-elections.json"),
+  ru: () => path.join(process.cwd(), "public", "data", "ru-elections.json"),
+  il: () => path.join(process.cwd(), "public", "data", "il-elections.json"),
+  za: () => path.join(process.cwd(), "public", "data", "za-elections.json"),
+  ng: () => path.join(process.cwd(), "public", "data", "ng-elections.json"),
+  tr: () => path.join(process.cwd(), "public", "data", "tr-elections.json"),
+  in: () => path.join(process.cwd(), "public", "data", "in-elections.json"),
+  jp: () => path.join(process.cwd(), "public", "data", "jp-elections.json"),
+  au: () => path.join(process.cwd(), "public", "data", "au-elections.json"),
+  nz: () => path.join(process.cwd(), "public", "data", "nz-elections.json"),
+  kr: () => path.join(process.cwd(), "public", "data", "kr-elections.json"),
+  id: () => path.join(process.cwd(), "public", "data", "id-elections.json"),
+  tw: () => path.join(process.cwd(), "public", "data", "tw-elections.json"),
+  cn: () => path.join(process.cwd(), "public", "data", "cn-elections.json"),
+  ua: () => path.join(process.cwd(), "public", "data", "ua-elections.json"),
+  iq: () => path.join(process.cwd(), "public", "data", "iq-elections.json"),
+  ps: () => path.join(process.cwd(), "public", "data", "ps-elections.json"),
+  va: () => path.join(process.cwd(), "public", "data", "va-elections.json"),
+  sg: () => path.join(process.cwd(), "public", "data", "sg-elections.json"),
+  my: () => path.join(process.cwd(), "public", "data", "my-elections.json"),
+  ch: () => path.join(process.cwd(), "public", "data", "ch-elections.json"),
+  be: () => path.join(process.cwd(), "public", "data", "be-elections.json"),
+  dk: () => path.join(process.cwd(), "public", "data", "dk-elections.json"),
+  gr: () => path.join(process.cwd(), "public", "data", "gr-elections.json"),
+  at: () => path.join(process.cwd(), "public", "data", "at-elections.json"),
+  pt: () => path.join(process.cwd(), "public", "data", "pt-elections.json"),
+  ie: () => path.join(process.cwd(), "public", "data", "ie-elections.json"),
+  ph: () => path.join(process.cwd(), "public", "data", "ph-elections.json"),
+  eg: () => path.join(process.cwd(), "public", "data", "eg-elections.json"),
+  hu: () => path.join(process.cwd(), "public", "data", "hu-elections.json"),
+  no: () => path.join(process.cwd(), "public", "data", "no-elections.json"),
+  se: () => path.join(process.cwd(), "public", "data", "se-elections.json"),
+  co: () => path.join(process.cwd(), "public", "data", "co-elections.json"),
+  cd: () => path.join(process.cwd(), "public", "data", "cd-elections.json"),
+  cl: () => path.join(process.cwd(), "public", "data", "cl-elections.json"),
+  ir: () => path.join(process.cwd(), "public", "data", "ir-elections.json"),
+  pk: () => path.join(process.cwd(), "public", "data", "pk-elections.json"),
+  pe: () => path.join(process.cwd(), "public", "data", "pe-elections.json"),
+  ke: () => path.join(process.cwd(), "public", "data", "ke-elections.json"),
+  bd: () => path.join(process.cwd(), "public", "data", "bd-elections.json"),
+  et: () => path.join(process.cwd(), "public", "data", "et-elections.json"),
+  vn: () => path.join(process.cwd(), "public", "data", "vn-elections.json"),
+  ae: () => path.join(process.cwd(), "public", "data", "ae-elections.json"),
+  dd: () => path.join(process.cwd(), "public", "data", "dd-elections.json"),
+  vd: () => path.join(process.cwd(), "public", "data", "vd-elections.json"),
+  cz: () => path.join(process.cwd(), "public", "data", "cz-elections.json"),
+  sk: () => path.join(process.cwd(), "public", "data", "sk-elections.json"),
+  ro: () => path.join(process.cwd(), "public", "data", "ro-elections.json"),
+  fi: () => path.join(process.cwd(), "public", "data", "fi-elections.json"),
+  th: () => path.join(process.cwd(), "public", "data", "th-elections.json"),
+  ve: () => path.join(process.cwd(), "public", "data", "ve-elections.json"),
+  ma: () => path.join(process.cwd(), "public", "data", "ma-elections.json"),
+  cu: () => path.join(process.cwd(), "public", "data", "cu-elections.json"),
+  jm: () => path.join(process.cwd(), "public", "data", "jm-elections.json"),
+  wi: () => path.join(process.cwd(), "public", "data", "wi-elections.json"),
+};
+
 // Reads `meta.built` from a hub's own public/data/<code>-elections.json:
 // one small readFileSync at build time, per hub. Absent or unreadable
 // (should not happen; every hub's JSON carries it as of 2026-09-07) simply
 // omits the "AS OF" fragment from the stamp rather than failing the page.
 function hubBuiltDate(code: string): string | null {
   try {
-    const raw = readFileSync(path.join(process.cwd(), "public", "data", `${code}-elections.json`), "utf-8");
+    const getPath = HUB_ELECTION_FILES[code];
+    if (!getPath) return null;
+    const raw = readFileSync(getPath(), "utf-8");
     const parsed = JSON.parse(raw) as { meta?: { built?: string } };
     return parsed.meta?.built ?? null;
   } catch {

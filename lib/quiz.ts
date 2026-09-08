@@ -148,9 +148,9 @@ interface MetroDetails {
   dimRanks?: Record<string, string | null>;
 }
 
-function readJson<T>(fileName: string): T {
-  const path = join(process.cwd(), "public", "data", fileName);
-  return JSON.parse(readFileSync(path, "utf-8")) as T;
+function readMetrosJson(): Metro[] {
+  const path = join(process.cwd(), "public", "data", "metros.json");
+  return JSON.parse(readFileSync(path, "utf-8")) as Metro[];
 }
 
 function readDetails(slug: string): MetroDetails | null {
@@ -163,10 +163,12 @@ function readDetails(slug: string): MetroDetails | null {
   }
 }
 
-function readCsv(fileName: string): Record<string, string>[] {
-  const path = join(process.cwd(), "public", "data", fileName);
-  if (!existsSync(path)) return [];
-  const raw = readFileSync(path, "utf-8");
+// Every badge CSV is a fixed, known name (BADGE_FILES below), so each gets
+// its own literal join() call in this map rather than a helper taking a
+// dynamic filename -- see scripts/DATA-READS-RECIPE.md.
+function readCsvAt(filePath: string): Record<string, string>[] {
+  if (!existsSync(filePath)) return [];
+  const raw = readFileSync(filePath, "utf-8");
   const lines = raw.split(/\r?\n/).filter((l) => l.length > 0);
   if (lines.length === 0) return [];
   const headers = lines[0].split(",");
@@ -199,9 +201,31 @@ const BADGE_FILES: string[] = [
   "rail-hub", "skyline-cities", "sports-mecca", "twin-metros",
 ];
 
+// A literal join() per badge, keyed by the same names as BADGE_FILES, so the
+// path the tracer sees is always fully literal even though the loop below
+// picks one dynamically. See scripts/DATA-READS-RECIPE.md.
+const BADGE_CSV_PATHS: Record<string, string> = {
+  "academic-gravity-wells": join(process.cwd(), "public", "data", "academic-gravity-wells.csv"),
+  conurbations: join(process.cwd(), "public", "data", "conurbations.csv"),
+  "cosmopolitan-capital": join(process.cwd(), "public", "data", "cosmopolitan-capital.csv"),
+  "culture-capital": join(process.cwd(), "public", "data", "culture-capital.csv"),
+  "emerging-standout": join(process.cwd(), "public", "data", "emerging-standout.csv"),
+  "finance-capital": join(process.cwd(), "public", "data", "finance-capital.csv"),
+  "frozen-conurbations": join(process.cwd(), "public", "data", "frozen-conurbations.csv"),
+  "global-gateway": join(process.cwd(), "public", "data", "global-gateway.csv"),
+  "greying-power": join(process.cwd(), "public", "data", "greying-power.csv"),
+  "isolated-capital": join(process.cwd(), "public", "data", "isolated-capital.csv"),
+  megaregions: join(process.cwd(), "public", "data", "megaregions.csv"),
+  overperformer: join(process.cwd(), "public", "data", "overperformer.csv"),
+  "rail-hub": join(process.cwd(), "public", "data", "rail-hub.csv"),
+  "skyline-cities": join(process.cwd(), "public", "data", "skyline-cities.csv"),
+  "sports-mecca": join(process.cwd(), "public", "data", "sports-mecca.csv"),
+  "twin-metros": join(process.cwd(), "public", "data", "twin-metros.csv"),
+};
+
 export function getQuizContext(): QuizContext {
   if (_ctx) return _ctx;
-  const metros = readJson<Metro[]>("metros.json");
+  const metros = readMetrosJson();
   const bySlug = new Map<string, Metro>();
   const byCountry = new Map<string, Metro[]>();
   for (const m of metros) {
@@ -215,7 +239,7 @@ export function getQuizContext(): QuizContext {
 
   const badgesByMetro = new Map<string, Set<string>>();
   for (const b of BADGE_FILES) {
-    const rows = readCsv(`${b}.csv`);
+    const rows = readCsvAt(BADGE_CSV_PATHS[b]);
     for (const r of rows) {
       const s = r.slug;
       if (!s) continue;
@@ -226,7 +250,7 @@ export function getQuizContext(): QuizContext {
 
   const clustersById = new Map<string, { id: string; tier: string; members: string[]; size: number; scoreSum: number }>();
   const clusterIdBySlug = new Map<string, string>();
-  for (const r of readCsv("conurbations.csv")) {
+  for (const r of readCsvAt(BADGE_CSV_PATHS.conurbations)) {
     const cid = r.cluster_id;
     if (!cid || clustersById.has(cid)) continue;
     const members = (r.cluster_member_slugs || "").split(";").filter(Boolean);

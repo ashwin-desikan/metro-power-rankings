@@ -150,17 +150,22 @@ export type PlClubsFile = { meta: { generated_at: string }; clubs: Record<string
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
-async function load<T>(file: string, isNewer: (remote: T, local: T | null) => boolean): Promise<T | null> {
+// `leaf` is a bare filename inside public/data/football/expectation/, which
+// holds only this module's two payloads (index.json, clubs.json). Directory
+// segments stay literal in the join() call so the file tracer scopes to this
+// subtree, not all of public/data.
+async function load<T>(leaf: string, isNewer: (remote: T, local: T | null) => boolean): Promise<T | null> {
+  const rel = `football/expectation/${leaf}`;
   let local: T | null = null;
   try {
     local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
+      readFileSync(join(process.cwd(), "public", "data", "football", "expectation", leaf), "utf-8"),
     ) as T;
   } catch {
     /* no build-time copy */
   }
   try {
-    const res = await fetch(`${GH_BASE}/${file}`, {
+    const res = await fetch(`${GH_BASE}/${rel}`, {
       next: { revalidate: 86400, tags: ["pl-expectation"] },
     });
     if (res.ok) {
@@ -174,7 +179,7 @@ async function load<T>(file: string, isNewer: (remote: T, local: T | null) => bo
 }
 
 export async function getPlExpectation(): Promise<PlExpectationIndex | null> {
-  return load<PlExpectationIndex>("football/expectation/index.json", (remote, local) =>
+  return load<PlExpectationIndex>("index.json", (remote, local) =>
     Boolean(
       remote?.meta?.generated_at &&
         (!local || remote.meta.generated_at >= local.meta.generated_at),
@@ -190,7 +195,7 @@ let _clubsPromise: Promise<PlClubsFile | null> | null = null;
 /** The whole per-club file (375 KB). Fetched on demand, never eagerly. */
 export async function getPlExpectationClubs(): Promise<PlClubsFile | null> {
   if (!_clubsPromise) {
-    _clubsPromise = load<PlClubsFile>("football/expectation/clubs.json", (remote) =>
+    _clubsPromise = load<PlClubsFile>("clubs.json", (remote) =>
       Boolean(remote?.clubs && Object.keys(remote.clubs).length > 0),
     ).catch(() => null);
   }

@@ -32,10 +32,17 @@ export type ClubRolls = {
   labels: Record<string, string>;
 };
 
-const DATA_DIR = join(process.cwd(), "public", "data", "rugby-union");
+// Literal per-name path, one entry per file this module ever reads, so the
+// file tracer sees a fully literal join() at each branch instead of a
+// dynamic segment under public/data. See scripts/DATA-READS-RECIPE.md rule 1.
+const RUGBY_CLUBS_FILES = {
+  "clubs.json": () => join(process.cwd(), "public", "data", "rugby-union", "clubs.json"),
+  "club-rolls.json": () => join(process.cwd(), "public", "data", "rugby-union", "club-rolls.json"),
+} as const;
+type RugbyClubsFileName = keyof typeof RUGBY_CLUBS_FILES;
 
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, rel);
+function loadJson<T>(rel: RugbyClubsFileName): T | null {
+  const p = RUGBY_CLUBS_FILES[rel]();
   if (!existsSync(p)) return null;
   return JSON.parse(readFileSync(p, "utf-8")) as T;
 }

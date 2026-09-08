@@ -50,8 +50,11 @@ export type NpbDefunct = {
 
 const DATA_DIR = join(process.cwd(), "public", "data", "npb");
 
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, rel);
+// `segs` is always a bare filename, or ("team-detail", leaf) -- both literal
+// directory segments up to the one dynamic leaf, per
+// scripts/DATA-READS-RECIPE.md rule 2.
+function loadJson<T>(...segs: string[]): T | null {
+  const p = join(DATA_DIR, ...segs);
   if (!existsSync(p)) return null;
   return JSON.parse(readFileSync(p, "utf-8")) as T;
 }
@@ -81,7 +84,7 @@ export function getAllNpbSlugs(): string[] {
 }
 
 export function getNpbTeamDetail(slug: string): NpbDetail | null {
-  return loadJson<NpbDetail>(join("team-detail", `${slug}.json`));
+  return loadJson<NpbDetail>("team-detail", `${slug}.json`);
 }
 
 // Metro-card join: look up an NPB club by its (current) team name.

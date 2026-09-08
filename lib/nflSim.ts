@@ -214,14 +214,16 @@ export const NFL_DATA_GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 const GH_BASE = NFL_DATA_GH_BASE;
 
+// readLocal does the actual literal readFileSync per file (never a helper
+// taking a dynamic filename) so the Vercel file tracer scopes each route to
+// just the file it reads. See scripts/DATA-READS-RECIPE.md.
 async function load<T extends { meta: { generated_at: string } }>(
   file: string,
+  readLocal: () => T,
 ): Promise<T | null> {
   let local: T | null = null;
   try {
-    local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
-    ) as T;
+    local = readLocal();
   } catch {
     /* no build-time copy */
   }
@@ -246,17 +248,25 @@ async function load<T extends { meta: { generated_at: string } }>(
 }
 
 export async function getNflSim(): Promise<NflSimFile | null> {
-  return load<NflSimFile>("nfl-sim.json");
+  return load<NflSimFile>("nfl-sim.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "nfl-sim.json"), "utf-8")),
+  );
 }
 
 export async function getNflPredictions(): Promise<NflPredictionsFile | null> {
-  return load<NflPredictionsFile>("nfl-predictions.json");
+  return load<NflPredictionsFile>("nfl-predictions.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "nfl-predictions.json"), "utf-8")),
+  );
 }
 
 export async function getNflSimHistory(): Promise<SimHistoryFile | null> {
-  return load<SimHistoryFile>("nfl-sim-history.json");
+  return load<SimHistoryFile>("nfl-sim-history.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "nfl-sim-history.json"), "utf-8")),
+  );
 }
 
 export async function getNflMetaMarket(): Promise<MetaMarketFile | null> {
-  return load<MetaMarketFile>("nfl-meta-market.json");
+  return load<MetaMarketFile>("nfl-meta-market.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "nfl-meta-market.json"), "utf-8")),
+  );
 }

@@ -118,14 +118,16 @@ export type PlSimHistoryFile = {
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
 
+// readLocal does the actual literal readFileSync per file (never a helper
+// taking a dynamic filename) so the Vercel file tracer scopes each route to
+// just the file it reads. See scripts/DATA-READS-RECIPE.md.
 async function load<T extends { meta: { generated_at: string } }>(
   file: string,
+  readLocal: () => T,
 ): Promise<T | null> {
   let local: T | null = null;
   try {
-    local = JSON.parse(
-      readFileSync(join(process.cwd(), "public", "data", file), "utf-8"),
-    ) as T;
+    local = readLocal();
   } catch {
     /* no build-time copy */
   }
@@ -153,13 +155,19 @@ async function load<T extends { meta: { generated_at: string } }>(
 }
 
 export async function getPlSim(): Promise<PlSimFile | null> {
-  return load<PlSimFile>("pl-sim.json");
+  return load<PlSimFile>("pl-sim.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "pl-sim.json"), "utf-8")),
+  );
 }
 
 export async function getPlPredictions(): Promise<PlPredictionsFile | null> {
-  return load<PlPredictionsFile>("pl-predictions.json");
+  return load<PlPredictionsFile>("pl-predictions.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "pl-predictions.json"), "utf-8")),
+  );
 }
 
 export async function getPlSimHistory(): Promise<PlSimHistoryFile | null> {
-  return load<PlSimHistoryFile>("pl-sim-history.json");
+  return load<PlSimHistoryFile>("pl-sim-history.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "pl-sim-history.json"), "utf-8")),
+  );
 }

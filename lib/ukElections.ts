@@ -64,16 +64,19 @@ export type UkElectionsBeyond = {
 };
 
 // ---------------- loaders ----------------
-function readJson<T>(file: string): T {
-  return JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", file), "utf-8")) as T;
-}
+// One literal readFileSync call per file so the Vercel file tracer scopes
+// each route to just the file it reads. See scripts/DATA-READS-RECIPE.md.
 let _core: UkElectionsFile | null = null;
 let _trends: UkElectionTrends | null = null;
 export function getUkElections(): UkElectionsFile {
-  return (_core ??= readJson<UkElectionsFile>("uk-elections.json"));
+  return (_core ??= JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), "public", "data", "uk-elections.json"), "utf-8"),
+  ) as UkElectionsFile);
 }
 export function getUkElectionTrends(): UkElectionTrends {
-  return (_trends ??= readJson<UkElectionTrends>("uk-elections-trends.json"));
+  return (_trends ??= JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), "public", "data", "uk-elections-trends.json"), "utf-8"),
+  ) as UkElectionTrends);
 }
 
 const GH = "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/";
@@ -87,7 +90,9 @@ const GH = "https://raw.githubusercontent.com/ashwin-desikan/metro-power-ranking
 export async function getUkElectionsBeyond(): Promise<UkElectionsBeyond> {
   const local = (): UkElectionsBeyond | null => {
     try {
-      return readJson<UkElectionsBeyond>("uk-elections-beyond.json");
+      return JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), "public", "data", "uk-elections-beyond.json"), "utf-8"),
+      ) as UkElectionsBeyond;
     } catch {
       return null;
     }

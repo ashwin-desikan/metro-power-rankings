@@ -164,6 +164,19 @@ explicit — apply it before touching any refresh script:
   function before pushing, never push and hope: Vercel enforces its limit
   AFTER a successful build, so a push that passes every local gate can still
   fail at deploy and spend a production build for nothing.
+- **`npm run check:data-reads`** (in `verify`, after `check:client-imports`) is
+  the gate behind the function-size number. Next's file tracer bundles into a
+  route EVERY file matched by the directory a read resolves to, and it does
+  not resolve a shared const: `const DATA_DIR = join(cwd, "public", "data")`
+  followed by `join(DATA_DIR, "metros.json")` bundles all 265 MB of
+  `public/data` even though the leaf is literal (measured against the
+  compiled tracer on 2026-09-08; `lib/data.ts` carried exactly that const
+  since the site began, which is why 304 routes sat at 220 MB). Spell every
+  `public/data` path inline from `process.cwd()` with literal directory
+  segments and at most one dynamic LEAF; a const is acceptable only when it
+  already names a subdirectory. Recipe and the measured table:
+  `scripts/DATA-READS-RECIPE.md`. The baseline `scripts/data-reads-baseline.json`
+  is empty and must stay empty.
 - `scripts/vercel-ignore.sh` **fails closed**: if it cannot resolve the base
   commit it skips rather than builds, because a missed deploy is auto-healed by
   `mac-mini-jobs/run-deploy-watch.sh` and a spurious deploy is healed by
