@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-09T07:20:54.239402+00:00",
+  "generated_at": "2026-09-09T07:31:06.721657+00:00",
   "jobs": [
-    {
-      "id": "sound-weekly",
-      "label": "Sound of the Metros (music charts)",
-      "schedule_text": "Wed at 07:30 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:30"
-      ],
-      "weekdays": [
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-09T07:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-02",
-        "status": "ok",
-        "slot": "2026-09-02T07:30:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -421,6 +401,26 @@
         "date": "2026-09-09",
         "status": "ok",
         "slot": "2026-09-09T07:10:00+00:00"
+      }
+    },
+    {
+      "id": "sound-weekly",
+      "label": "Sound of the Metros (music charts)",
+      "schedule_text": "Wed at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-16T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-09",
+        "status": "ok",
+        "slot": "2026-09-09T07:30:00+00:00"
       }
     },
     {
