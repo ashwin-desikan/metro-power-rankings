@@ -4393,8 +4393,8 @@
     "slug": "los-angeles",
     "metro": "Los Angeles",
     "us": 30.0,
-    "uk": 20.7,
-    "combined": 110.6,
+    "uk": 20.6,
+    "combined": 110.5,
     "rank": 1
    },
    {
@@ -4416,9 +4416,9 @@
    {
     "slug": "toronto",
     "metro": "Toronto",
-    "us": 19.1,
+    "us": 19.0,
     "uk": 7.9,
-    "combined": 65.1,
+    "combined": 65.0,
     "rank": 4
    },
    {
@@ -4441,7 +4441,7 @@
     "slug": "miami",
     "metro": "Miami",
     "us": 9.0,
-    "uk": 6.8,
+    "uk": 6.7,
     "combined": 33.7,
     "rank": 7
    },
@@ -4449,16 +4449,16 @@
     "slug": "knoxville",
     "metro": "Knoxville",
     "us": 10.6,
-    "uk": 0.4,
-    "combined": 32.1,
+    "uk": 0.6,
+    "combined": 32.4,
     "rank": 8
    },
    {
     "slug": "seoul",
     "metro": "Seoul",
     "us": 8.8,
-    "uk": 3.6,
-    "combined": 30.1,
+    "uk": 3.5,
+    "combined": 30.0,
     "rank": 9
    },
    {
@@ -4481,8 +4481,8 @@
     "slug": "manchester",
     "metro": "Manchester",
     "us": 5.2,
-    "uk": 6.1,
-    "combined": 21.8,
+    "uk": 6.0,
+    "combined": 21.7,
     "rank": 12
    },
    {
@@ -4490,14 +4490,14 @@
     "metro": "Kitchener-Waterloo",
     "us": 5.4,
     "uk": 3.0,
-    "combined": 19.1,
+    "combined": 19.0,
     "rank": 13
    },
    {
     "slug": "chicago",
     "metro": "Chicago",
     "us": 4.4,
-    "uk": 2.9,
+    "uk": 2.8,
     "combined": 16.1,
     "rank": 14
    },
@@ -4530,7 +4530,7 @@
     "metro": "Honolulu",
     "us": 3.9,
     "uk": 1.2,
-    "combined": 12.8,
+    "combined": 12.9,
     "rank": 18
    },
    {
@@ -4569,7 +4569,7 @@
     "slug": "montgomery",
     "metro": "Montgomery",
     "us": 2.4,
-    "uk": 0.4,
+    "uk": 0.5,
     "combined": 7.7,
     "rank": 23
    },
@@ -4625,7 +4625,7 @@
     "slug": "lagos",
     "metro": "Lagos",
     "us": 1.4,
-    "uk": 2.2,
+    "uk": 2.1,
     "combined": 6.3,
     "rank": 30
    },
@@ -4670,19 +4670,19 @@
     "rank": 35
    },
    {
-    "slug": "boston",
-    "metro": "Boston",
-    "us": 0.4,
-    "uk": 2.5,
-    "combined": 3.9,
-    "rank": 36
-   },
-   {
     "slug": "busan-ulsan",
     "metro": "Busan-Ulsan",
     "us": 1.0,
     "uk": 0.8,
     "combined": 3.9,
+    "rank": 36
+   },
+   {
+    "slug": "boston",
+    "metro": "Boston",
+    "us": 0.4,
+    "uk": 2.5,
+    "combined": 3.8,
     "rank": 37
    },
    {
@@ -4715,13 +4715,13 @@
     "name": "Taylor Swift",
     "slug": "taylor-swift",
     "metro": "Nashville",
-    "combined": 60.9
+    "combined": 61.0
    },
    {
     "name": "Drake",
     "slug": "drake",
     "metro": "Toronto",
-    "combined": 44.3
+    "combined": 44.1
    },
    {
     "name": "Morgan Wallen",
@@ -4733,7 +4733,7 @@
     "name": "Olivia Rodrigo",
     "slug": "olivia-rodrigo",
     "metro": "Los Angeles",
-    "combined": 26.6
+    "combined": 26.5
    },
    {
     "name": "Ariana Grande",
@@ -4751,7 +4751,7 @@
     "name": "Harry Styles",
     "slug": "harry-styles",
     "metro": "Manchester",
-    "combined": 20.3
+    "combined": 20.2
    },
    {
     "name": "SZA",
@@ -4760,16 +4760,16 @@
     "combined": 19.6
    },
    {
-    "name": "Justin Bieber",
-    "slug": "justin-bieber",
-    "metro": "Kitchener-Waterloo",
-    "combined": 19.1
-   },
-   {
     "name": "The Weeknd",
     "slug": "the-weeknd",
     "metro": "Toronto",
     "combined": 19.1
+   },
+   {
+    "name": "Justin Bieber",
+    "slug": "justin-bieber",
+    "metro": "Kitchener-Waterloo",
+    "combined": 19.0
    },
    {
     "name": "Doja Cat",
@@ -4799,7 +4799,7 @@
     "name": "BTS",
     "slug": "bts",
     "metro": "Seoul",
-    "combined": 14.3
+    "combined": 14.2
    },
    {
     "name": "Dua Lipa",
@@ -4811,7 +4811,7 @@
     "name": "Bruno Mars",
     "slug": "bruno-mars",
     "metro": "Honolulu",
-    "combined": 12.8
+    "combined": 12.9
    },
    {
     "name": "Beyonc\u00e9",
