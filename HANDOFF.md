@@ -11959,4 +11959,33 @@ Everything in the Notion Backlog. New today: the cap token (E); the Supabase see
 dispatch decision (C). Unchanged: Prices/Yields/Countries tabs, Case-Shiller, workbook half,
 elections dumps, Wave 1-4 re-diff, Everton/Lions, moves ledger gaps.
 
-**Not pushed. Not committed. Ask Ashwin.**
+### I. Evening: pushed, built, verified, and Ashwin's next four NFL asks
+Committed as three: `c8da44df1` (E, `[vercel skip]`), `003eadb47` (D, `[vercel skip]`),
+`dc83fbd5c` (G+H, app, untagged, HEAD). Rebased twice over bot data commits (one
+`lib/releases.ts` conflict, resolved by rewriting the 09-09 block), pushed
+`d7c5a4fd5..dc83fbd5c` at Ashwin's word. Vercel: exactly one production build,
+`dpl_4CRUHQE6bdPQ5wimUfD4kvvVAviY`, READY in 7 min 17 s, aliased to
+rankings.citizenofnowhere.org. Live checks: /teams/nfl/season/2024 and /1999 carry
+the scrubber controls; /teams/nfl/expectation/2025 links PFR box scores;
+/business/economy/housing and /35614 render; /rankings/new-york shows the House
+Prices panel to 2026 Q2. This was the THIRD paid build of the UTC day (two
+earlier READY builds from the mini's CFB commits), which the cap would have
+skipped once `VERCEL_BUILD_CAP_TOKEN` is in the build env; `[deploy-now]` is the
+override. Ashwin still needs to add the token.
+
+Ashwin's four NFL asks after the push, filed in the Notion Backlog (Area NFL):
+1. Era-specific abbreviations on the season towers (1999 Rams read LAR because
+   `abbrFor()` takes the franchise monogram by slug; the shard already carries
+   the era city+team). P1, small.
+2. Extend the towers through the playoffs above a seam (WC, DIV, CONF, SB); the
+   expectation file already has playoff rows with week numbers. P1, medium;
+   agreed with Ashwin that it does not spoil the shape.
+3. Week-by-week playoff seeding with real tiebreakers for the scrubbed
+   standings, computed in the shard builder, 2002 on first, no clinch flags in
+   the first cut. P2, a day's work with tests against known final seedings.
+4. KC at DEN 38-0, week 18 2024: the data ALREADY flags `rest.away`,
+   `pH_rest 0.487`; live towers say "toss-up (given 49%)"; the Ledger row shows
+   the rested pill; only the Elo line's 55-point drop remains, by ruling.
+   Waiting on Ashwin to say which page showed "massive upset".
+
+**Pushed and live at `dc83fbd5c`. Tree clean apart from this entry.**

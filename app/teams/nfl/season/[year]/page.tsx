@@ -239,12 +239,14 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           <SectionHead
             id="towers"
             title="The season as a shape"
-            sub="One box per week, week 1 at the bottom: green a win, red a loss; bright and outlined means nobody saw it coming."
+            sub="One box per week, week 1 at the bottom, the playoffs above the line: green a win, red a loss; bright and outlined means nobody saw it coming."
             more={
-              "Regular-season games only, one row per week, stacked bottom to top from week 1 so every team's column is the same height and lines up " +
-              "on the same week axis. A box's colour is win or loss; its shade is how surprising the result was, from the probability the model gave " +
+              "One row per regular-season week, stacked bottom to top from week 1 so every team's column is the same height and lines up " +
+              "on the same week axis; above the seam, one row per playoff round the season had, so the champion's column runs all the way up " +
+              "and a team that went home in the wild-card round stops there. A box's colour is win or loss; its shade is how surprising the result was, from the probability the model gave " +
               "the side that actually won, banded into expected (60% or better), toss-up, and shock (under 40%, which also gets an outline and a corner " +
-              "dot so it still reads without colour). A bye is an empty dashed slot, and a tie is a thin grey box. Teams are ordered by wins."
+              "dot so it still reads without colour). A bye, in the season or as a seeded rest, is an empty dashed slot; a tie is a thin grey box; " +
+              "a blank slot above the line is a season already over. The label under each column is the team's abbreviation in that season, so the 1999 Rams read STL. Teams are ordered by regular-season wins."
             }
           />
           <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>

@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { NflEloTeam, NflEloSeasonStatus, NflUpcoming } from "@/lib/nflElo";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { MONOGRAM_BY_SLUG } from "@/lib/nfl";
+import { eraAbbr } from "@/lib/nflEra";
 import type { TeamIdent } from "./TeamCell";
 
 // The companion to the towers, and only for a season actually under way.
@@ -29,10 +30,10 @@ type Row = {
   mean: number;
 };
 
+// Era abbreviation (STL for the 1999 Rams), not the franchise monogram; see
+// eraAbbr in lib/nflEra.ts.
 function abbrFor(t: NflEloTeam, slug: string | null): string {
-  if (slug && MONOGRAM_BY_SLUG[slug]) return MONOGRAM_BY_SLUG[slug].mono;
-  const nick = (t.team ?? t.name ?? "").trim();
-  return nick.slice(0, 3).toUpperCase() || "NFL";
+  return eraAbbr(t.city, t.team ?? t.name, slug && MONOGRAM_BY_SLUG[slug] ? MONOGRAM_BY_SLUG[slug].mono : null);
 }
 
 export default function WhatIsLeft({

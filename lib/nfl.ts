@@ -440,6 +440,9 @@ export const MONOGRAM_BY_SLUG: Record<string, { bg: string; fg: string; mono: st
   "detroit-lions":          { bg: "#0076B6", fg: "#B0B7BC", mono: "DET" },
   "jacksonville-jaguars":   { bg: "#006778", fg: "#D7A22A", mono: "JAX" },
   "carolina-panthers":      { bg: "#0085CA", fg: "#ffffff", mono: "CAR" },
+  // Missing since v1, so the Texans' label fell through to "TEX" (the first
+  // three letters of the nickname) on every season page. Caught 2026-09-09.
+  "houston-texans":         { bg: "#03202F", fg: "#A71930", mono: "HOU" },
 };
 
 export function monogramFor(slug: string): { bg: string; fg: string; mono: string } {
