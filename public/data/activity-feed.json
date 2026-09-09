@@ -1,13 +1,90 @@
 {
-  "generatedAt": "2026-09-08",
+  "generatedAt": "2026-09-09",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-09",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "5dfb3a494"
+    },
     {
       "date": "2026-09-08",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "60dc8aad1"
+      "text": "Data refreshed — Football, Basketball, Cricket, Screen of the Metros, and 4 more.",
+      "commit": "f750f02ca"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "The season as a shape: week grid with logos and legible shock classes.",
+      "commit": "0fb71d152"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Moves ledger on metro tiles with temporary homes and stopovers; expectation towers on NFL season hubs; economy refresh pipeline; EU flag.",
+      "commit": "fd35d64c7"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Geography of Erasure on the full moves ledger; finals columns fixed width; empty feeds never outrank fixtures.",
+      "commit": "9ec7977f4"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Tap targets on the shared idioms, top-teams paged, cricket fixtures fit, dominions closed.",
+      "commit": "b4912f4a6"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "Every public/data read scoped for the file tracer: no route above 220 MB.",
+      "commit": "6edc58ecb"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Rates board sortable in power order, one row per bank, euro joiners closed; compare page; menu icons.",
+      "commit": "6d1c4a70f"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Morocco, Cuba, Jamaica and the West Indies Federation; NRL finals; South Africa after 1961.",
+      "commit": "7bd2a27fb"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Economy tab: every policy rate decision of 60 central banks, eleven to founding.",
+      "commit": "8deb7ccdd"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NFL game logs print the score in the order the names are printed.",
+      "commit": "0b732bdfc"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "fix",
+      "hub": "Elections",
+      "text": "Fourteen election hubs, two dissolved states, NFL rest games and shock fix.",
+      "commit": "d351c1f67"
     },
     {
       "date": "2026-09-07",
@@ -4124,83 +4201,6 @@
       "hub": null,
       "text": "NFT over-tracing fix on substack.ts + badges.ts.",
       "commit": "002f142de"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": null,
-      "text": "AbortSignal.timeout(5000) on all five build-time external fetches (ESPN standings x4, Substack feed).",
-      "commit": "ec6be6e42"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "/updates: 2026-05-16 entry covers /sports preset row + NBA Wikipedia playoff links.",
-      "commit": "26d9aea3b"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "/sports preset row replaces Crown Jewels toggle.",
-      "commit": "4cda27855"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "NBA team pages: playoff-state hero badge and in-progress season chip now link to the year's Wikipedia NBA playoffs page.",
-      "commit": "1ba701f54"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Sports map: UK consolidation + Crown Jewels filter.",
-      "commit": "d448405c5"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Sports polish round 6 plus workbook sync: Power 4 chip renamed to Power Conferences.",
-      "commit": "639b92aad"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "NHL franchises v1 + workbook sync: all 32 active NHL franchises ship at /teams/nhl with Stanley Cups from 1910 in gold (NHA, PCHA, WCHL, NH…",
-      "commit": "9ea406b48"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Sports polish round 5: drop Minor/Jr/Int'l Hockey from /sports so the map's non-major scope is exactly FBS football plus NCAA Division I ba…",
-      "commit": "cf3deb51d"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Sports polish round 4: Power 4 default-on gate restricts FBS football and NCAA basketball to Big Ten/SEC/Big 12/ACC at first paint (chip to…",
-      "commit": "9f4348ec0"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Sports polish round 3: /sports filters moved under map and legend dropped (chip row already carries sport color); sports map clicks now rou…",
-      "commit": "6f3bc1e9b"
-    },
-    {
-      "date": "2026-05-15",
-      "category": "fix",
-      "hub": "Sports",
-      "text": "Sports polish: Euroleague added to /sports (886 markers), Sport filter promoted to always-visible chip row above the map (More filters coll…",
-      "commit": "c79db0def"
     }
   ]
 }
