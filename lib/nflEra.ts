@@ -39,12 +39,17 @@ const ERA_ABBR: Record<string, string> = {
 };
 
 export function eraAbbr(
-  city: string | null | undefined,
+  city_: string | null | undefined,
   team: string | null | undefined,
   franchiseMono: string | null | undefined,
 ): string {
-  const era = [city, team].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
+  const era = [city_, team].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
   if (era && ERA_ABBR[era]) return ERA_ABBR[era];
   if (franchiseMono) return franchiseMono;
+  // A defunct club with no franchise code: the city, which is how the 1920s
+  // are remembered (POT for the Pottsville Maroons, CAN for the Canton
+  // Bulldogs), rather than three letters of a nickname that two clubs shared.
+  const city = (city_ ?? "").trim().replace(/[^A-Za-z]/g, "");
+  if (city.length >= 3) return city.slice(0, 3).toUpperCase();
   return (team ?? "").trim().slice(0, 3).toUpperCase() || "NFL";
 }

@@ -122,8 +122,15 @@ export default async function NflStandings({
           row two thirds empty (Ashwin, 2026-09-08), so the full name renders
           there. One tree, two spans; the title attribute carries the full name
           at every width. */}
+      {/* 🔴 ONE COLUMN PER CONFERENCE, AFC LEFT, NFC RIGHT, EACH RUNNING EAST,
+          NORTH, SOUTH, WEST (Ashwin, 2026-09-09): a row-major grid put the AFC
+          in the top half and the NFC in the bottom, and the same division in a
+          different place on every screen width. The season pages use the same
+          arrangement, so a reader's eye lands on the same division everywhere. */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {DIVISION_ORDER.map((divName) => {
+        {["AFC", "NFC"].map((conf) => (
+        <div key={conf} className="flex flex-col gap-3 min-w-0">
+        {DIVISION_ORDER.filter((d) => d.startsWith(conf)).map((divName) => {
           const teams = byDivision.get(divName) ?? [];
           if (teams.length === 0) return null;
           const rows = teams.map((f) => ({ f, t: live[f.canonical] ?? null }));
@@ -213,6 +220,8 @@ export default async function NflStandings({
             </div>
           );
         })}
+        </div>
+        ))}
       </div>
     </section>
   );

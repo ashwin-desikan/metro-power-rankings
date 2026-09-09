@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useId, useState } from "react";
+import { createContext, useContext, useDeferredValue, useId, useState } from "react";
 import type { ReactNode } from "react";
 
 // The week scrubber for an NFL season hub: one piece of client state, "the
@@ -21,9 +21,23 @@ import type { ReactNode } from "react";
 // nodes, which the App Router allows; the consumers are the two client
 // components that already exist. Without a provider, useThroughWeek()
 // returns null and every consumer behaves exactly as before.
+//
+// 🔴 THE SLIDER MUST NOT MOVE UNDER THE THUMB (Ashwin, 2026-09-09: "it feels
+// like the whole thing is being pulled"). Three things did that in the first
+// build and all three are gone: the Final button mounted and unmounted, so
+// the toolbar reflowed mid-drag and the range input slid sideways; the week
+// label changed width ("week 9", "playoffs, week 19", "full season") and
+// pushed its neighbours; and every pixel of drag re-rendered eight standings
+// tables and a 32-line chart synchronously, so the thumb lagged the pointer.
+// Now Final is always mounted (disabled at the end), the label has a fixed
+// width, and consumers read a DEFERRED copy of the week (useDeferredValue) so
+// the control repaints first and the tables follow.
 
 type Ctx = {
+  /** The week the control shows: immediate, so the thumb tracks the pointer. */
   week: number;
+  /** The week consumers render: deferred, so heavy re-renders never hold the thumb. */
+  through: number;
   setWeek: (w: number) => void;
   minWeek: number;
   maxWeek: number;
@@ -45,9 +59,10 @@ export function WeekScrubberProvider({
   children: ReactNode;
 }) {
   const [week, setWeek] = useState(maxWeek);
+  const through = useDeferredValue(week);
   const clamp = (w: number) => Math.min(maxWeek, Math.max(minWeek, Math.round(w)));
   return (
-    <WeekCtx.Provider value={{ week, setWeek: (w) => setWeek(clamp(w)), minWeek, maxWeek, regEndWeek }}>
+    <WeekCtx.Provider value={{ week, through, setWeek: (w) => setWeek(clamp(w)), minWeek, maxWeek, regEndWeek }}>
       {children}
     </WeekCtx.Provider>
   );
@@ -61,7 +76,7 @@ export function WeekScrubberProvider({
 export function useThroughWeek(): number | null {
   const ctx = useContext(WeekCtx);
   if (!ctx) return null;
-  return ctx.week >= ctx.maxWeek ? null : ctx.week;
+  return ctx.through >= ctx.maxWeek ? null : ctx.through;
 }
 
 export function useWeekScrubber(): Ctx | null {
@@ -112,15 +127,14 @@ export function WeekScrubberControl({ className = "" }: { className?: string }) 
         style={{ borderColor: "var(--border)", color: atEnd ? "var(--text-dim)" : "var(--text-muted)" }}>
         ▶
       </button>
-      <span className="text-xs tabular-nums" style={{ fontFamily: MONO, color: atEnd ? "var(--text-muted)" : "var(--accent)" }} aria-live="polite">
+      <span className="text-xs tabular-nums whitespace-nowrap" style={{ fontFamily: MONO, color: atEnd ? "var(--text-muted)" : "var(--accent)", minWidth: "9.5em" }} aria-live="polite">
         {atEnd ? "full season" : label}
       </span>
-      {!atEnd ? (
-        <button type="button" className={`${btn} px-2`} onClick={() => setWeek(maxWeek)}
-          style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
-          Final
-        </button>
-      ) : null}
+      <button type="button" className={`${btn} px-2`} onClick={() => setWeek(maxWeek)} disabled={atEnd}
+        aria-label="Show the full season"
+        style={{ borderColor: "var(--border)", color: atEnd ? "var(--text-dim)" : "var(--text-muted)" }}>
+        Final
+      </button>
     </div>
   );
 }

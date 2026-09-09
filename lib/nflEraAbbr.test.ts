@@ -31,8 +31,9 @@ describe("eraAbbr", () => {
     expect(eraAbbr("Cincinnati ", " Bengals", "CIN")).toBe("CIN");
   });
 
-  it("uses the nickname for a defunct club with no slug", () => {
-    expect(eraAbbr("Pottsville", "Maroons", null)).toBe("MAR");
+  it("uses the city for a defunct club with no franchise code", () => {
+    expect(eraAbbr("Pottsville", "Maroons", null)).toBe("POT");
+    expect(eraAbbr("Canton", "Bulldogs", null)).toBe("CAN");
     expect(eraAbbr(null, null, null)).toBe("NFL");
   });
 });

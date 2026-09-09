@@ -605,6 +605,20 @@ def main():
 
     print("\nwrote %d season files + teams.json + index.json to %s" % (len(by_season), OUTDIR))
     print("meta:", json.dumps(meta))
+
+    # The week-by-week playoff seeds (public/data/nfl/seeds/YYYY.json) are
+    # derived from exactly these season files plus the Elo shard's conf/div,
+    # so they are rebuilt here, after the ledger, for every season from 1978
+    # that has a shard. A season whose shard is missing is skipped by
+    # seasons_available(); a failure in one season is reported and does not
+    # stop the others, since the ledger itself is already on disk.
+    import playoff_seeds
+    for y in playoff_seeds.seasons_available():
+        try:
+            playoff_seeds.write(y, playoff_seeds.build(y))
+        except SystemExit as e:
+            print("seeds %d: skipped (%s)" % (y, e))
+    print("rebuilt playoff seeds for %s" % (playoff_seeds.seasons_available() or "no seasons"))
     print("\nTOP 10 UPSETS BY PRE-GAME PROBABILITY")
     for u in upset_rows[:10]:
         print("  %d %-10s %-28s beat %-28s p=%.3f %-8s %s" % (

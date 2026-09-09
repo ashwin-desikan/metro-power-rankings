@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { TableScroll } from "@/app/_shared/TableScroll";
-import type { NflHonour, NflEloWeek } from "@/lib/nflElo";
+import type { NflHonour, NflEloWeek, NflSeedsFile } from "@/lib/nflElo";
 import { useThroughWeek, WeekScrubberControl } from "./WeekScrubber";
 
 // One season's standings, grouped the way a reader wants to read them.
@@ -26,10 +26,12 @@ import { useThroughWeek, WeekScrubberControl } from "./WeekScrubber";
 // table state living in the component. The trade-off is that a grouping cannot
 // be linked to; the trade the other way is 107 pages rendered per request.
 //
-// Ordering inside a group is by record, then by rating. The league's own
-// tiebreakers are not in the workbook, so where two teams finished level this
-// is not authoritative on which finished above the other; the division title
-// flag is, and it is drawn.
+// Ordering inside a group is by record, then by rating, unless the season
+// has a seeds file (public/data/nfl/seeds, 1978 on), in which case the order
+// inside a division and inside a conference is the NFL tiebreaking
+// procedure's, week by week, and the seed column is where the team would have
+// been seeded had the season ended after the scrubbed week. Before 1978 the
+// workbook's tiebreakers are not carried, and the note says so.
 
 export type StandingsTeam = {
   name: string;
@@ -50,6 +52,10 @@ export type StandingsTeam = {
    *  they stood after week N: the last week at or before N that carries a
    *  record. Optional; a table without it always shows the final standings. */
   weeks?: NflEloWeek[];
+  /** Filled from the seeds file for the scrubbed week: division rank and
+   *  conference rank by the tiebreaking procedure. */
+  dr?: number;
+  cr?: number;
 };
 
 const MONO: CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
@@ -78,10 +84,12 @@ function fmtRec(t: StandingsTeam): string {
   return d ? `${w}-${l}-${d}` : `${w}-${l}`;
 }
 
-function Strip({ t }: { t: StandingsTeam }) {
+function Strip({ t, withheld = false }: { t: StandingsTeam; withheld?: boolean }) {
   const f = t.flags ?? {};
   const earned = HONOURS.filter((h) => f[h.key]);
-  const words = earned.length
+  const words = withheld
+    ? "year-end honours withheld until the season is complete"
+    : earned.length
     ? `${t.team ?? t.name} ${earned.map((h) => h.label).join(", ")}`
     : `${t.team ?? t.name} won no year-end honours`;
   return (
@@ -114,14 +122,33 @@ function Crest({ t, size = 20 }: { t: StandingsTeam; size?: number }) {
 
 type View = "division" | "conference" | "rating";
 
+// Column order: AFC before NFC, NFL before AFL, Eastern before Western; a
+// key not listed sorts after them by name.
+const COLUMN_ORDER = ["AFC", "NFC", "NFL", "AFL", "AAFC", "Eastern", "Western"];
+function columnRank(k: string): number {
+  const i = COLUMN_ORDER.indexOf(k);
+  return i < 0 ? COLUMN_ORDER.length : i;
+}
+// Division order inside a column: East, Central or North, South, West; the
+// 1967-69 names (Capitol, Century, Central, Coastal) fall through to
+// alphabetical, which happens to be the order the league listed them.
+const DIVISION_ORDER = ["East", "Eastern", "Central", "North", "South", "West", "Western"];
+function divisionRank(k: string): number {
+  const last = k.split(" ").pop() ?? k;
+  const i = DIVISION_ORDER.indexOf(last);
+  return i < 0 ? DIVISION_ORDER.length : i;
+}
+
 export default function SeasonStandings({
   teams: finalTeams,
   showHonours: finalHonours,
   showSeeds: finalSeeds,
+  seeds = null,
 }: {
   teams: StandingsTeam[];
   showHonours: boolean;
   showSeeds: boolean;
+  seeds?: NflSeedsFile | null;
 }) {
   // 🔴 THE SCRUBBER REWRITES THE ROWS, NOT THE TABLE. After week N a team's
   // record, points and rating are the last stored week at or before N that
@@ -130,23 +157,48 @@ export default function SeasonStandings({
   // seeds are season-end facts and are not shown mid-season: a strip that
   // says "won the championship" next to a 3-2 record is a lie about time.
   const through = useThroughWeek();
+  // The seeds file's week for this view: the scrubbed week, or the last
+  // regular-season week it covers for the final table. Null when the file is
+  // missing (before 1978, or a live season before its first Friday build) or
+  // the week is outside it (week 0, a playoff week).
+  const seedWeek =
+    seeds && (through == null ? seeds.through_week : through >= 1 && through <= seeds.through_week ? through : null);
+  const seedRow = (name: string) => {
+    if (!seeds || seedWeek == null) return null;
+    const t = seeds.teams[name];
+    if (!t) return null;
+    return { seed: t.seed[seedWeek - 1] ?? undefined, dr: t.dr[seedWeek - 1], cr: t.cr[seedWeek - 1] };
+  };
   const teams: StandingsTeam[] = through == null
-    ? finalTeams
+    ? finalTeams.map((t) => {
+        const sr = seedRow(t.name);
+        return sr ? { ...t, dr: sr.dr, cr: sr.cr } : t;
+      })
     : finalTeams.map((t) => {
         const ws = (t.weeks ?? []).filter((w) => w.w <= through);
         const last = ws.length ? ws[ws.length - 1] : null;
         const withRec = [...ws].reverse().find((w) => w.rec);
+        const sr = seedRow(t.name);
         return {
           ...t,
           end: last ? last.e : t.end,
           rec: withRec ? withRec.rec : undefined,
           pts: withRec ? withRec.pts : undefined,
-          seed: undefined,
+          seed: sr ? sr.seed : undefined,
+          dr: sr?.dr,
+          cr: sr?.cr,
           flags: undefined,
         };
       });
+  const seeded = seedWeek != null && teams.some((t) => t.cr != null);
   const showHonours = through == null && finalHonours;
-  const showSeeds = through == null && finalSeeds;
+  // 🔴 COLUMNS DO NOT COME AND GO WITH THE SCRUBBER. A column that mounts at
+  // "Final" and unmounts at week 9 changes every table's width mid-drag, which
+  // is the "whole thing being pulled" Ashwin felt. The seed and season columns
+  // are decided once per page; mid-season they show a dash and an empty strip.
+  const seedsCol = finalSeeds || Boolean(seeds);
+  const honoursCol = finalHonours;
+  const showSeeds = (through == null && finalSeeds) || (through != null && seeded);
   const hasDiv = teams.some((t) => t.div && t.div !== t.conf);
   const hasConf = teams.some((t) => t.conf);
   const [view, setView] = useState<View>(hasDiv ? "division" : hasConf ? "conference" : "rating");
@@ -178,12 +230,19 @@ export default function SeasonStandings({
   const byDivision = (a: StandingsTeam, b: StandingsTeam) =>
     wonDivision(b) - wonDivision(a) || byRecord(a, b);
   const byRating = (a: StandingsTeam, b: StandingsTeam) => b.end - a.end;
+  // With a seeds file the procedure's own order replaces the ruling above:
+  // division rank inside a division, conference rank inside a conference
+  // (which is seeding order: division winners first, then the wild cards,
+  // then the rest in the order they would have been seeded).
+  const byDr = (a: StandingsTeam, b: StandingsTeam) => (a.dr ?? 99) - (b.dr ?? 99) || byDivision(a, b);
+  const byCr = (a: StandingsTeam, b: StandingsTeam) => (a.cr ?? 99) - (b.cr ?? 99) || byRecord(a, b);
 
   const keyFor = (t: StandingsTeam) =>
     view === "division" ? (t.div || t.conf || t.league || "NFL")
       : view === "conference" ? (t.conf || t.league || "NFL")
       : (t.league || "NFL");
 
+  const twoLeagues = new Set(teams.map((t) => t.league || "NFL")).size > 1;
   const groups = new Map<string, StandingsTeam[]>();
   for (const t of teams) {
     const k = keyFor(t);
@@ -192,15 +251,29 @@ export default function SeasonStandings({
   const ordered = [...groups.entries()]
     .map(([k, ts]) => ({
       key: k,
-      teams: [...ts].sort(view === "rating" ? byRating : view === "division" ? byDivision : byRecord),
+      teams: [...ts].sort(view === "rating" ? byRating : view === "division" ? (seeded ? byDr : byDivision) : seeded ? byCr : byRecord),
+      // The column a group belongs in: the league in the years two leagues
+      // ran (NFL left, AFL right, the NFL's Eastern and Western conferences
+      // stacked inside it), otherwise the conference, otherwise the league.
+      column: view === "rating" ? (ts[0].league || "NFL") : twoLeagues ? (ts[0].league || "NFL") : (ts[0].conf || ts[0].league || "NFL"),
+      conf: ts[0].conf || "",
     }))
-    // NFL groups first in the years two leagues ran, then alphabetical, which
-    // puts AFC before NFC and East before West without a hand-written order.
-    .sort((a, b) => {
-      const an = a.key.startsWith("NFL") ? 0 : 1;
-      const bn = b.key.startsWith("NFL") ? 0 : 1;
-      return an - bn || a.key.localeCompare(b.key);
-    });
+    .sort((a, b) =>
+      columnRank(a.column) - columnRank(b.column) || a.column.localeCompare(b.column)
+      || columnRank(a.conf) - columnRank(b.conf) || a.conf.localeCompare(b.conf)
+      || divisionRank(a.key) - divisionRank(b.key) || a.key.localeCompare(b.key));
+
+  // 🔴 ONE COLUMN PER CONFERENCE, ALWAYS IN THE SAME ORDER (Ashwin,
+  // 2026-09-09: "AFC at the top and NFC at the bottom is a weird thing to
+  // look at"). AFC left, NFC right; NFL left, AFL right in the sixties; the
+  // Eastern and Western conferences of 1967 to 1969 likewise. Inside a
+  // column the divisions run East, Central or North, South, West, so the
+  // same division sits in the same place on every season page from 1970 to
+  // today, and the eye learns where to look.
+  const columns = [...new Set(ordered.map((g) => g.column))].map((c) => ({
+    key: c,
+    groups: ordered.filter((g) => g.column === c),
+  }));
 
   const options: { v: View; label: string; on: boolean }[] = [
     { v: "division", label: "By division", on: hasDiv },
@@ -208,7 +281,7 @@ export default function SeasonStandings({
     { v: "rating", label: "By rating", on: true },
   ];
 
-  const cols = ordered.length > 2 ? "grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-6" : ordered.length > 1 ? "grid grid-cols-1 lg:grid-cols-2 gap-6" : "";
+  const cols = columns.length > 1 ? "grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-6" : "";
 
   return (
     <div>
@@ -232,12 +305,20 @@ export default function SeasonStandings({
         <WeekScrubberControl className="sm:ml-auto" />
       </div>
       {through != null ? (
-        <p className="text-xs mb-3" style={{ color: "var(--text-muted)" }}>
+        <p className="text-xs mb-3 min-h-[2lh]" style={{ color: "var(--text-muted)" }}>
           {through === 0
             ? "Before a game was played: the preseason ratings, ordered by rating, with no record to show."
-            : `As the table stood after week ${through}: record, points and rating from that week, the tiebreakers still not authoritative, honours and seeds withheld until the season is complete.`}
+            : seeded
+              ? `As the table stood after week ${through}: record, points and rating from that week, the order and the ${seeds!.label === "seed" ? "seed" : "playoff"} column by the tiebreaking procedure of the era as if the season had ended there, honours withheld until the season is complete.`
+              : `As the table stood after week ${through}: record, points and rating from that week, the tiebreakers still not authoritative, honours and seeds withheld until the season is complete.`}
         </p>
-      ) : null}
+      ) : (
+        <p className="text-xs mb-3 min-h-[2lh]" style={{ color: "var(--text-muted)" }}>
+          {seeded && view !== "rating"
+            ? "Order inside a division and a conference by the NFL tiebreaking procedure; the conference view is seeding order, division winners first."
+            : ""}
+        </p>
+      )}
 
       {/* 🔴 IT HAS TO FIT. Eight division tables in two columns is 546px of
           usable width each, and the first build spent 641px on eight columns
@@ -252,7 +333,9 @@ export default function SeasonStandings({
           second line under the team name rather than off the edge, so the phone
           still gets every number the desktop does. */}
       <div className={cols}>
-        {ordered.map((g) => (
+        {columns.map((col) => (
+        <div key={col.key} className="min-w-0 flex flex-col gap-6">
+        {col.groups.map((g) => (
           <div key={g.key} className="min-w-0">
             <h3 className="text-sm font-semibold mb-2">{g.key}</h3>
             <TableScroll className="rounded-xl border" style={CARD}>
@@ -263,8 +346,8 @@ export default function SeasonStandings({
                     <th className="py-2 px-2 font-medium text-right">W-L-T</th>
                     <th className="py-2 px-2 font-medium text-right hidden sm:table-cell">PF-PA</th>
                     <th className="py-2 px-2 font-medium text-right">Elo</th>
-                    {showSeeds ? <th className="py-2 px-2 font-medium text-right hidden sm:table-cell">Seed</th> : null}
-                    {showHonours ? <th className="py-2 px-2 font-medium whitespace-nowrap">Season</th> : null}
+                    {seedsCol ? <th className="py-2 px-2 font-medium text-right hidden sm:table-cell">{seeds && seeds.label !== "seed" ? "Playoffs" : "Seed"}</th> : null}
+                    {honoursCol ? <th className="py-2 px-2 font-medium whitespace-nowrap">Season</th> : null}
                   </tr>
                 </thead>
                 <tbody>
@@ -277,7 +360,10 @@ export default function SeasonStandings({
                        over the whole row while keeping its inline styling. The
                        row also clears 44px on a phone and stays compact where a
                        pointer is doing the aiming. */
-                    <tr key={t.name} className="border-t tap-row" style={BORD}>
+                    <tr key={t.name} className="border-t tap-row"
+                      style={seeded && view === "conference" && t.cr === (seeds!.pools?.[t.conf ?? ""]?.seeds ?? seeds!.seeds_per_conf) + 1
+                        ? { borderColor: "var(--accent)", borderTopWidth: 2 }
+                        : BORD}>
                       <td className="py-2 sm:py-1.5 px-2 align-middle" style={{ minHeight: 44 }}>
                         <span className="inline-flex items-center gap-1.5">
                           <Crest t={t} size={18} />
@@ -310,23 +396,30 @@ export default function SeasonStandings({
                         {t.pts ? `${t.pts[0]}-${t.pts[1]}` : ""}
                       </td>
                       <td className="py-2 sm:py-1.5 px-2 text-right tabular-nums font-semibold align-middle" style={MONO}>{t.end.toFixed(0)}</td>
-                      {showSeeds ? (
+                      {seedsCol ? (
                         <td className="py-1.5 px-2 text-right tabular-nums hidden sm:table-cell" style={MONO}>
-                          {t.seed ? (
-                            <span className="inline-grid place-items-center rounded-full" title={`entered the playoffs as the ${t.seed} seed`}
-                              style={{ width: 17, height: 17, background: "var(--bg-card-hover)", border: "1px solid var(--border)", fontSize: 10 }}>
+                          {showSeeds && t.seed ? (
+                            <span className="inline-grid place-items-center rounded-full"
+                              title={through != null ? (seeds?.label === "seed" ? `the ${t.seed} seed had the season ended after week ${through}` : seeds?.label === "place" ? `in the playoffs had the season ended after week ${through}` : `the league leader after week ${through}`) : `entered the playoffs as the ${t.seed} seed`}
+                              style={{ width: 17, height: 17, background: "var(--bg-card-hover)", border: `1px solid ${t.seed <= 4 ? "var(--accent)" : "var(--border)"}`, fontSize: 10 }}>
                               {t.seed}
                             </span>
                           ) : <span className="text-[var(--text-dim)]">&mdash;</span>}
                         </td>
                       ) : null}
-                      {showHonours ? <td className="py-2 sm:py-1.5 px-2 align-middle"><Strip t={t} /></td> : null}
+                      {honoursCol ? (
+                        <td className="py-2 sm:py-1.5 px-2 align-middle">
+                          {showHonours ? <Strip t={t} /> : <Strip t={{ ...t, flags: undefined }} withheld />}
+                        </td>
+                      ) : null}
                     </tr>
                   ))}
                 </tbody>
               </table>
             </TableScroll>
           </div>
+        ))}
+        </div>
         ))}
       </div>
 

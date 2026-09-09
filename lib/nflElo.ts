@@ -243,6 +243,49 @@ export async function getNflEloSeason(season: number): Promise<NflEloSeason | nu
   );
 }
 
+// Week-by-week playoff seeding for one season, 1920 on, from
+// scripts/nfl/playoff_seeds.py: for every regular-season week, each team's
+// division rank, rank in the pool it qualifies from (the conference from
+// 1970, the league before) and its seed or place if the season had ended
+// then, by the tiebreaking procedure of that era. Arrays are week 1 first.
+export type NflSeedsTeam = {
+  /** The pool the team qualifies from: conference from 1970, league before. */
+  conf: string;
+  div: string;
+  seed: (number | null)[];
+  dr: number[];
+  cr: number[];
+};
+
+export type NflSeedsFile = {
+  season: number;
+  /** The largest pool's seed count; `pools` has each pool's own. */
+  seeds_per_conf: number;
+  pools: Record<string, { seeds: number; per_division: number; divisions: number }>;
+  /** "seed" from 1970, "place" (a division winner's playoff place) 1933-69, "leader" before 1933 */
+  label: "seed" | "place" | "leader";
+  reg_end_week: number;
+  through_week: number;
+  complete: boolean;
+  note: string;
+  teams: Record<string, NflSeedsTeam>;
+  /** week -> the name-order stand-ins for a coin toss that week, if any */
+  notes: Record<string, string[]>;
+};
+
+/** One season's seeding file; null before 1920 or before the file is built. */
+export async function getNflSeeds(season: number): Promise<NflSeedsFile | null> {
+  if (!Number.isInteger(season) || season < 1920) return null;
+  return load<NflSeedsFile>(
+    `nfl/seeds/${season}.json`,
+    () =>
+      JSON.parse(
+        readFileSync(join(process.cwd(), "public", "data", "nfl", "seeds", `${season}.json`), "utf-8"),
+      ),
+    (r) => Boolean(r?.season === season && r?.teams),
+  );
+}
+
 // 78 franchise pages want one entry out of the same 349 KB file. Hold the
 // in-flight promise so it is parsed once per server process. Lazy, so it stays
 // off the build graph.

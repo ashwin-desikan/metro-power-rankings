@@ -133,10 +133,17 @@ function cellFor(g: GameRow, isHome: boolean, lead: string): { cell: Cell; pTeam
   const p = 1 - surprise;
   const band = bandFor(p);
   const teamWon = g.result === "H" ? isHome : !isHome;
-  const givenPct = Math.round(p * 100);
-  const verb = teamWon ? "beat" : "lost to";
+  // 🔴 THE PERCENTAGE IS ALWAYS THIS TEAM'S OWN CHANCE TO WIN. `p` is the
+  // winner's probability, which for a loss is the other side's, and "shock
+  // loss (given 32%)" read as if the loser had been given 32% (Ashwin,
+  // 2026-09-09). A loss now says what THIS team had been given, so a shock
+  // loss reads "had been given 68% to win" and the band and the number agree.
+  const ownPct = Math.round((teamWon ? p : 1 - p) * 100);
+  const title = teamWon
+    ? `${lead}: beat ${oppName}${scoreStr ? ` ${scoreStr}` : ""}, ${BAND_LABEL[band]} win (given ${ownPct}% to win)`
+    : `${lead}: lost to ${oppName}${scoreStr ? ` ${scoreStr}` : ""}, ${BAND_LABEL[band]} loss (had been given ${ownPct}% to win)`;
   return {
-    cell: { kind: "game", band, win: teamWon, title: `${lead}: ${verb} ${oppName}${scoreStr ? ` ${scoreStr}` : ""}, ${BAND_LABEL[band]} (given ${givenPct}%)` },
+    cell: { kind: "game", band, win: teamWon, title },
     pTeam,
     won: teamWon,
   };
@@ -423,27 +430,27 @@ export default function ExpectationTowers({
       <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-[var(--text-muted)]">
         <span className="inline-flex items-center gap-1.5">
           <span aria-hidden style={{ background: "var(--div-pos)", opacity: 0.3, width: 12, height: 12, borderRadius: 2, display: "inline-block" }} />
-          Expected win (p&ge;60%)
+          Expected win (given 60% or more)
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span aria-hidden style={{ background: "var(--div-pos)", opacity: 0.65, width: 12, height: 12, borderRadius: 2, display: "inline-block" }} />
-          Toss-up win (40&ndash;60%)
+          Toss-up win (given 40 to 60%)
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span aria-hidden style={{ background: "var(--div-pos)", opacity: 1, width: 12, height: 12, borderRadius: 2, border: "1.5px solid var(--text)", display: "inline-block" }} />
-          Shock win (&lt;40%)
+          Shock win (given under 40%)
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span aria-hidden style={{ background: "var(--div-neg)", opacity: 0.3, width: 12, height: 12, borderRadius: 2, display: "inline-block" }} />
-          Expected loss (p&ge;60%)
+          Expected loss (given under 40%)
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span aria-hidden style={{ background: "var(--div-neg)", opacity: 0.65, width: 12, height: 12, borderRadius: 2, display: "inline-block" }} />
-          Toss-up loss (40&ndash;60%)
+          Toss-up loss (given 40 to 60%)
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span aria-hidden style={{ background: "var(--div-neg)", opacity: 1, width: 12, height: 12, borderRadius: 2, border: "1.5px solid var(--text)", display: "inline-block" }} />
-          Shock loss (&lt;40%)
+          Shock loss (given 60% or more)
         </span>
         <span className="text-[var(--text-dim)]">a dashed box is a bye &middot; a grey box is a tie{tiers.length ? " \u00b7 above the line: the playoffs, round by round; an empty slot is a season already over" : ""}</span>
       </div>

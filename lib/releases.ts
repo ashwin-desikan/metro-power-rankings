@@ -21,11 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-09-09",
     headline: "Scrub any NFL season, and a Housing tab",
     items: [
-      "Every NFL season page gains a week scrubber, showing the ratings chart and the standings as they stood after any week, and every score in the NFL game logs opens its box score on Pro-Football-Reference.",
-      "The season-as-a-shape grid now runs through the playoffs, round by round above a line, so the champion's column reaches the top; and each column is labelled with the team's abbreviation of that season, so the 1999 Rams read STL rather than LAR.",
-      "A Housing tab joins the Economy hub: FHFA house prices for 410 US metro areas since 1991, in real terms by default, ranked over one to twenty-five years and through the 2007 crash, with a panel on 285 metro pages.",
-      "The college football board only opens picks for games involving AP Top 25 teams, so when the poll is late it opens none. It now says that on the page instead of leaving last week's games sitting there unexplained.",
-      "Every college football pick is frozen days before kickoff while the betting market keeps moving. The board now records the market's final price too, so from next week it can say how often the early call still beat it.",
+      "Every NFL season page gains a week scrubber: the chart, the standings and the playoff picture as they stood after any week, every season since 1920 by the tiebreakers of the era; game-log scores open their PFR box score.",
+      "The season-as-a-shape grid runs through the playoffs above a line, each column carries the team's abbreviation of that season (the 1999 Rams read STL), and a loss says what the loser had been given to win.",
+      "A Housing tab joins the Economy hub: FHFA house prices for 410 US metro areas since 1991, in real terms by default, ranked over one to twenty-five years and the 2007 crash, with a panel on 285 metro pages.",
+      "The college football board now says when the AP poll is late and it opened no picks, and records the market's closing price beside each frozen pick so it can say whether the early call held.",
     ],
   },
   {

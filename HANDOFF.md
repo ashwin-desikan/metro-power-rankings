@@ -11988,4 +11988,39 @@ Ashwin's four NFL asks after the push, filed in the Notion Backlog (Area NFL):
    the rested pill; only the Elo line's 55-point drop remains, by ruling.
    Waiting on Ashwin to say which page showed "massive upset".
 
-**Pushed and live at `dc83fbd5c`. Tree clean apart from this entry.**
+**Pushed and live at `dc83fbd5c`.**
+
+### J. Evening, second batch: towers through the playoffs, era abbreviations, the playoff picture week by week
+Committed `1bb12c555` (app, untagged): ExpectationTowers keyed by `round` above a seam (WC, DIV,
+CONF, SB; CH before 1966); `lib/nflEra.ts` eraAbbr (St. Louis Rams STL, Los Angeles Raiders RAI);
+the Texans had no monogram since v1 and read TEX on every season page, now HOU.
+
+Uncommitted on top (one app item, awaiting Ashwin's "commit"):
+- `scripts/nfl/playoff_seeds.py`: week-by-week seeding 1978 on by the NFL tiebreaking procedure,
+  written to `public/data/nfl/seeds/YYYY.json` (48 files, 400 KB), rebuilt by build_expectation.py
+  after the ledger; `--verify` matches the shard's final seeds in 48 of 48 seasons. 🔴 THREE ERA
+  SWITCHES, each located by a real case and written in the file: common games absent in 1979
+  (COMMON_FROM 1980); SOV/SOS/points rankings from 2002; the "restart at the two-club format"
+  note absent in 1990 and present in 1995 (RESTART_FROM 1991, earliest consistent, not sourced).
+  Net touchdowns skipped (no data); a level coin toss goes to the club first by name and is
+  listed under `notes`.
+- 🔴 SIX WORKBOOK SEED PAIRS WERE SWAPPED and are FIXED IN THE WORKBOOK ITSELF (Ashwin's word;
+  Excel COM, column J of every playoff row, backup `_scratch/NFL_all.backup-2026-09-09-1711.xlsx`,
+  staged copy refreshed, six shards patched to match): 1980 AFC 1/2 SD-CLE, 1981 AFC 4/5 NYJ-BUF,
+  1983 and 1985 AFC 1/2 LA-MIA, 1986 NFC 1/2 NYG-CHI, 1989 AFC 4/5 HOU-PIT. Settled by the playoff
+  hosts of each January. KNOWN_SHARD_SEED_ERRORS in playoff_seeds.py records them.
+- Live season: when a season has no ledger the script reads `upcoming.json` (a game with points is
+  played); `nfl-live-refresh.yml` runs it after the carry and commits `public/data/nfl/seeds`
+  (staged with `git add -A` first so a NEW file counts as a change). First real 2026 file after
+  Friday's run. Proved on a filled-in copy of upcoming.json.
+- Page: `lib/nflElo.ts` getNflSeeds; SeasonStandings orders by the procedure (dr/cr) and shows the
+  seed column at any scrubbed week; new `SeedTimeline.tsx` ("The playoff picture, week by week",
+  #picture, in the nav); one column per conference, AFC left, NFC right, East/Central-North/South/West
+  inside, NFL left of AFL in the sixties (also `NflStandings.tsx` on the hub); loss titles read from
+  the losing side ("had been given 48% to win"); scrubber jank fixed (Final always mounted, fixed-width
+  label, useDeferredValue for consumers, seed and season columns no longer mount/unmount).
+- Release notes: the build caps a day at FOUR bullets (check:release-notes does not); 09-09 merged to four.
+Gates: tsc 0, vitest 180, client-imports, release-notes, data-reads, mobile, table-scroll, public-data
+OK; 2024/1990/1968/1995 and the hub rendered at 1280 and 390, 0 console errors; next build pending.
+
+**Both committed; pushed to main at Ashwin's word (see K).**

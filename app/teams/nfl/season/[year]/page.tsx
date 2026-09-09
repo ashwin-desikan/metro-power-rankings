@@ -7,7 +7,7 @@ import { SectionHead } from "@/app/_shared/SectionHead";
 import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
-import { getNflEloIndex, getNflEloSeason, getNflUpcoming } from "@/lib/nflElo";
+import { getNflEloIndex, getNflEloSeason, getNflSeeds, getNflUpcoming } from "@/lib/nflElo";
 import { getNflExpectationSeason } from "@/lib/nflExpectation";
 import WeeklyEloChart from "../_shared/WeeklyEloChart";
 import PreseasonChart from "../_shared/PreseasonChart";
@@ -17,6 +17,8 @@ import TeamCell, { type TeamIdent } from "../_shared/TeamCell";
 import { seasonHasHonours } from "../_shared/HonoursStrip";
 import SeasonStandings, { type StandingsTeam } from "../_shared/SeasonStandings";
 import { WeekScrubberProvider, WeekScrubberControl } from "../_shared/WeekScrubber";
+import SeedTimeline, { type SeedTimelineTeam } from "../_shared/SeedTimeline";
+import { eraAbbr } from "@/lib/nflEra";
 import ExpectationPreview from "../_shared/ExpectationPreview";
 import SeasonJumper from "../_shared/SeasonJumper";
 import {
@@ -86,11 +88,12 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
   const season = parseYear(year);
   if (!season) notFound();
 
-  const [data, index, upcoming, expectationFile] = await Promise.all([
+  const [data, index, upcoming, expectationFile, seeds] = await Promise.all([
     getNflEloSeason(season).catch(() => null),
     getNflEloIndex().catch(() => null),
     getNflUpcoming().catch(() => null),
     getNflExpectationSeason(season).catch(() => null),
+    getNflSeeds(season).catch(() => null),
   ]);
   if (!data) notFound();
 
@@ -128,6 +131,11 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
     end: t.end, rec: t.rec, pts: t.pts, seed: t.seed, flags: t.flags,
     slug: ident[t.name].slug, logo: ident[t.name].logo, mono: ident[t.name].mono,
     weeks: t.weeks,
+  }));
+  const timelineTeams: SeedTimelineTeam[] = data.teams.map((t) => ({
+    name: t.name, city: t.city, team: t.team,
+    abbr: eraAbbr(t.city, t.team ?? t.name, ident[t.name].mono?.mono ?? null),
+    ident: ident[t.name],
   }));
   // The scrubber's range: from the seed (week 0) to the last week any team
   // has a rating for. A seeded season has nothing to scrub, so no provider,
@@ -201,6 +209,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
         ...(bestGames.length ? [{ label: "Greatest games", href: "#games" }] : []),
         { label: "Against expectation", href: "#expectation" },
         ...(seeded ? [] : [{ label: "Biggest movers", href: "#movers" }]),
+        ...(seeds ? [{ label: seeds.label === "leader" ? "The race, week by week" : "Playoff picture", href: "#picture" }] : []),
         { label: "Where this comes from", href: "#method" },
       ]} />
 
@@ -329,11 +338,39 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               : "") +
             "The record is the final regular-season record. The strip on each row fills in from the left as a team went further: playoffs, division, best record in its conference, conference final, championship game, championship. " +
             "An asterisk on a record is the best record in the league, and a seed is the number a team carried into the playoffs. " +
-            "Teams level on record are ordered by rating: the league's own tiebreakers are not in this workbook, so the order inside a tie is not authoritative. The division flag is."
+            (seeds
+              ? "Teams level on record are ordered by the NFL tiebreaking procedure, applied to the results as they stood after each week: head-to-head, division and conference records, common games, strength of victory and schedule, points rankings and net points, in the order the league used that season. Scrub to any week and the seed column shows where each team would have been seeded had the season ended there."
+              : "Teams level on record are ordered by rating: the league's own tiebreakers are not in this workbook, so the order inside a tie is not authoritative. The division flag is.")
           }
         >
-        <SeasonStandings teams={standingsTeams} showHonours={showHonours} showSeeds={showSeeds} />
+        <SeasonStandings teams={standingsTeams} showHonours={showHonours} showSeeds={showSeeds} seeds={seeds} />
       </CollapsibleSection>
+
+      {/* ---------------------------------- the playoff picture, week by week */}
+      {seeds ? (
+        <section className="mb-12">
+          <SectionHead
+            id="picture"
+            title={seeds.label === "leader" ? "The race for the title, week by week" : "The playoff picture, week by week"}
+            sub={
+              seeds.label === "seed"
+                ? `Each team's seed had the season ended after that week, ${seeds.seeds_per_conf} a conference; filled for a division winner, outlined for a wild card.`
+                : seeds.label === "place"
+                ? "Each team's playoff place had the season ended after that week: the division winners, by the standings of the day."
+                : "The standings leader after each week, in a league that crowned its champion from the table, ties excluded from the percentage as the league counted it."
+            }
+            more={
+              "Computed from the results as they stood after each week with the tiebreaking procedure of that era (head-to-head, division and conference records, net points; common games from 1980; strength of victory and schedule and the points rankings from 2002), so the number is a position, not a forecast. " +
+              (season < 1970 ? "Before 1970 a tied division title was played off, so a week that shows one club is the club the procedure would have placed first. " : season < 1975 ? "Before 1975 the divisional round's home fields rotated by division, so the seed here is a ranking by record, not the league's own number. " : "") +
+              "Rows are the final order; the line is the cut. The scrubber above highlights its week here. " +
+              (Object.keys(seeds.notes).length
+                ? `In ${Object.keys(seeds.notes).length} week${Object.keys(seeds.notes).length === 1 ? "" : "s"} two clubs were level on every step the ledger can score and the club first by name was placed first; the raw file lists them.`
+                : "No week needed the coin toss.")
+            }
+          />
+          <SeedTimeline seeds={seeds} teams={timelineTeams} />
+        </section>
+      ) : null}
 
       {/* --------------------------------------------------------- games */}
       {bestGames.length ? (
