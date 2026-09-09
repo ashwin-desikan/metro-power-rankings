@@ -19,7 +19,12 @@
 #   1. "[vercel skip]" on the SUBJECT LINE always skips - the house
 #      convention; every data/docs/automation commit carries it there.
 #   2. Non-main refs skip unless the commit opts in with "[preview]".
-#   3. "[deploy-retry]" (mac-mini run-deploy-watch.sh re-triggers) always builds.
+#   3. "[deploy-now]" always builds, past the same-day cap.
+#   3b. The same-day cap: at MAX_DAILY_BUILDS (2) paid production builds
+#      today, skip, whatever the commit touched. Counted from the Vercel API;
+#      inactive without VERCEL_BUILD_CAP_TOKEN. Added 2026-09-09.
+#   3c. "[deploy-retry]" (mac-mini run-deploy-watch.sh re-triggers) builds,
+#      but not past the cap.
 #   4. Otherwise, skip only when the WHOLE push range
 #      (VERCEL_GIT_PREVIOUS_SHA..HEAD) touched no build-relevant path.
 #      Diffing HEAD^..HEAD instead would miss an app commit buried under a
@@ -44,6 +49,74 @@ case "$SUBJECT" in *"[vercel skip]"*) exit 0;; esac
 if [ "${VERCEL_GIT_COMMIT_REF:-main}" != "main" ]; then
   case "$SUBJECT" in *"[preview]"*) exit 1;; *) exit 0;; esac
 fi
+
+# --- same-day production build cap. -------------------------------------
+# 2026-09-06, the FIFTH overage invoice ($105.77). The guard above was
+# verified correct against build logs; the money was 190 untagged app commits
+# in 30 days, 85% pushed by hand, in evening bursts far past the 2/day budget
+# that four memory files had already restated. A rule that lives in a memory
+# file holds for a few weeks. A rule that runs inside Vercel's own build step
+# holds for whoever pushed, from whatever machine, whether or not they read
+# anything. So the budget is enforced HERE.
+#
+# What is counted: today's (UTC) production deployments of this project that
+# actually consumed build minutes -- READY, ERROR, BUILDING, QUEUED,
+# INITIALIZING -- excluding this deployment itself. CANCELED and skipped are
+# free and are not counted, which is also why this cannot be estimated from
+# git alone: a push of ten stacked app commits is ONE build, and a commit
+# count would have blocked the day's only real deploy.
+#
+# The count comes from the Vercel API and needs a read token in the project's
+# build env as VERCEL_BUILD_CAP_TOKEN. Without it the cap is INACTIVE and the
+# guard behaves exactly as before, saying so in the log, so shipping this file
+# ahead of the token is safe. MAX_DAILY_BUILDS (default 2) is the ceiling.
+#
+# Override: "[deploy-now]" on the SUBJECT line always builds, the third
+# same-day deploy you genuinely want. It is the only tag that beats the cap:
+# "[deploy-retry]" (the mini's deploy watcher) does NOT, or the watcher would
+# spend the very builds the cap saved re-triggering the commits it skipped.
+# A capped commit is healed by that same watcher on the next UTC day, when
+# its retry once again reads under the ceiling.
+case "$SUBJECT" in *"[deploy-now]"*)
+  echo "vercel-ignore: [deploy-now] on the subject; building past any cap"; exit 1;;
+esac
+if [ -n "${VERCEL_IGNORE_TEST_SUBJECT:-}" ]; then
+  # test hook (scripts/test-vercel-ignore.sh only): prove the override path
+  # without a real commit carrying the tag
+  case "$VERCEL_IGNORE_TEST_SUBJECT" in *"[deploy-now]"*) exit 1;; esac
+fi
+MAX_DAILY_BUILDS="${MAX_DAILY_BUILDS:-2}"
+CAP_PROJECT="prj_eGoUAOrnwvNP86s7p74ruILMl3Dr"
+CAP_TEAM="team_yQjbuPwcr40J6AxkjCv6AawD"
+builds_today() {
+  # prints the number of paid production deployments created today (UTC),
+  # not counting this one; prints nothing when the count is unavailable
+  if [ -n "${VERCEL_BUILD_CAP_MOCK_COUNT:-}" ]; then
+    printf '%s\n' "$VERCEL_BUILD_CAP_MOCK_COUNT"; return 0   # test hook
+  fi
+  [ -n "${VERCEL_BUILD_CAP_TOKEN:-}" ] || return 0
+  NOW=$(date -u +%s); MID=$((NOW - NOW % 86400))
+  URL="https://api.vercel.com/v6/deployments?projectId=$CAP_PROJECT&teamId=$CAP_TEAM&target=production&limit=100&since=${MID}000"
+  JSON=$(curl -sS -m 20 -H "Authorization: Bearer $VERCEL_BUILD_CAP_TOKEN" "$URL" 2>/dev/null) || return 0
+  printf '%s' "$JSON" | SELF="${VERCEL_DEPLOYMENT_ID:-}" node -e '
+    let d; try { d = JSON.parse(require("fs").readFileSync(0, "utf8")); } catch (e) { process.exit(0); }
+    const paid = new Set(["READY", "ERROR", "BUILDING", "QUEUED", "INITIALIZING"]);
+    const self = process.env.SELF || "";
+    const n = (d.deployments || []).filter(x => paid.has(x.state) && x.uid !== self && x.id !== self).length;
+    process.stdout.write(String(n));
+  '
+}
+COUNT=$(builds_today)
+case "$COUNT" in
+  "")  echo "vercel-ignore: build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)";;
+  *[!0-9]*) echo "vercel-ignore: build cap count unreadable ('$COUNT'); cap not applied";;
+  *)
+    if [ "$COUNT" -ge "$MAX_DAILY_BUILDS" ]; then
+      echo "vercel-ignore: $COUNT paid production build(s) already today (cap $MAX_DAILY_BUILDS); skipping. Add [deploy-now] to the subject to build anyway."
+      exit 0
+    fi
+    echo "vercel-ignore: $COUNT paid production build(s) so far today (cap $MAX_DAILY_BUILDS)";;
+esac
 
 case "$SUBJECT" in *"[deploy-retry]"*) exit 1;; esac
 

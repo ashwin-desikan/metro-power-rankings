@@ -11732,3 +11732,113 @@ NFL Elo race; game-row box-score links on the expectation pages.
 Vercel: `dpl_8BP4f56iheoFsauEyxkmv9J5Eogj` for `0fb71d152` read READY at
 about 21:22 UTC, four Node functions, the only READY build of 2026-09-08
 (every other deployment today was CANCELED by the guard). No ERROR.
+
+## 2026-09-09 — cowork (cloud, bridged to the Windows box) → mini and next session: THE NFL JOB PROVED FROM THE BOX, THE RATES REFRESH REFUSES A THIN BASE, AND THE BUILD CAP IS CODE
+
+State at open: Windows tree clean at `8cb40287d` (the 09-08 close-out handoff
+on top of `0fb71d152`), origin 25 bot data commits ahead, Vercel showing only
+CANCELED deployments since the READY build for `0fb71d152`. Nothing pushed
+this session. Nothing committed yet: everything below is in the working tree
+awaiting Ashwin's commit call.
+
+### A. The season-opener article (content, not repo)
+"Four seasons, one ledger" drafted, rejected once for voice, rewritten from
+the two approved samples; hero (title over the 2025 season tower), 26
+screenshots, a 90 s primary walkthrough and four section videos (NFL, UCL,
+PL, CFB) recorded with Playwright on the Windows box (`_scratch/
+article-capture*.mjs`; the container and the local VM cannot reach the
+site). All in `OneDrive\Documents\Claude\Projects\Metro Area Project\Four
+Seasons One Ledger - article 2026-09-09\`. Two LinkedIn teasers written.
+Numbers read from the sims on 09-09: Bills 9.0% SB, Ohio State 13.2%,
+Arsenal 53.6%, PSG 15.4%; Ledger 20,978 priced games, 9 of 71 seasons.
+
+### B. Notion (see CLAUDE.md, new section)
+Four databases seeded under the private page "Citizen of Nowhere":
+Editorial calendar (12 rows), Backlog (28, from the 09-09 session prompt,
+the 09-08 tails and docs/BACKLOG-OPEN.md, each with an Owner), Data sources
+(14, ESPN's User-Agent history included), Decisions (23 rulings). Ids in
+project memory `reference_notion_workspace`. Mini: `claude mcp add
+--transport http notion https://mcp.notion.com/mcp`, then `/mcp` once.
+
+### C. NFL live job proved from the box (watch item 1, early)
+`scripts/nfl/nfl_live_update.py --self-test` 17/17, then `--season 2026
+--dry-run` from the Windows box with Python 3.14: ESPN answered 200 on all
+18 weeks, 272 games, 0 played, nothing written. So the fixed User-Agent
+works from a residential IP today. NOT proved: the GitHub runner's IP and
+Python 3.12's token. The first real evidence is Friday 09:30 UTC, or a
+`workflow_dispatch` now, which would commit a 0-played spine `[vercel skip]`
+to origin ahead of the Windows commits (harmless, one bot commit). Ashwin
+to decide whether to dispatch before Friday.
+
+### D. Policy-rate tables and the rates refresh (watch item 3, early)
+- Migration `20260908120000_policy_rate_tables.sql` APPLIED to Supabase via
+  the MCP (`policy_rate_changes`, `policy_rate_daily`, RLS read policies).
+  Both tables are empty: the seed (`load_policy_rates.py --write`) needs the
+  service key, which the Windows box does not carry; the mini's
+  `config.env` does. Mini: run the seed once before Friday's slot.
+- `refresh.py` dry run from the box reached BIS SDMX, FRED, ECB, Riksbank,
+  BoC and datahub. Norges Bank's open-data CSV is SEMICOLON-delimited
+  (header `FREQ;Frequency;...;TIME_PERIOD;OBS_VALUE;...`), so the parser
+  read one field and raised SourceUnreachable. Fixed: `_norges_delimiter()`
+  decides from the header; new fixture `fixtures/norges_kpra_semicolon.csv`
+  (first five lines of the live response) and a self-test case on it.
+- 🔴 `--write` from the box then rebuilt `boc.json` with 378 changes against
+  410 and one invented "new decision" (2026-06-10 2.25). Cause: the
+  builders read FULL-history inputs under `_scratch/macro/` (the Valet,
+  FRED, ECB, SWEA, Norges and datahub files, plus six hand-parsed JSONs) that
+  existed only in the 09-08 container. `refresh.py` merged a 90-day
+  incremental fetch onto a MISSING base, creating a thin file the builder
+  then read as the whole series. Fixed: `MissingBase(SourceUnreachable)` and
+  `_require_base()` at the top of all three merge helpers; a missing base is
+  a refusal, the bank's files stay untouched, and the run reports it; two
+  self-test cases. The regressed `boc.json`/`index.json` were reverted with
+  `git checkout`; `_scratch/macro/bis/WS_CBPOL_csv_flat.csv` was restored by
+  unzipping `bis_cbpol.zip`; the BoC base was re-seeded with a FULL Valet
+  fetch from 1935 (V39079 starts 2009-04-21, the earlier era is BIS) and
+  the rebuilt `boc.json` came back byte-identical to HEAD, last change
+  2025-10-30 at 2.25: BoC has NOT moved in 2026, the "new decision" was the
+  thin base. 55 of 61 files rebuild byte-identical from the box.
+- 🔴 STILL FAILING, needs a decision: `build_boj`, `build_snb`, `build_rba`,
+  `build_rbnz`, `build_norges`, `build_buba` read `_scratch/macro/
+  {boj_early_parsed, boj_cdab0040/0050/0100/0101_parsed, snb_discount_daily,
+  rba_a02_parsed, rbnz_ocr_own, norges_discount_monthly, buba_parsed}.json`,
+  produced on 09-08 by one-off parsers that never landed in the repo. Those
+  files exist on NO machine now. The six published JSONs are fine (the
+  refresh leaves them untouched) but cannot be rebuilt anywhere, including
+  the mini on Friday. Options: (a) commit the small base inputs to
+  `scripts/macro/rates/inputs/` and point `common.SCRATCH` fallbacks there,
+  which needs the six parsed files regenerated from their HTML sources
+  first; (b) make those six builders read the committed read-model as their
+  base when the scratch input is absent (append-only refresh). (b) is the
+  durable shape and matches the BIS cache pattern; it is a real change to
+  six builders and was not started.
+- Friday 07:30 on the mini will therefore: refresh the BIS cache and the 55
+  reachable files, refuse the seven bases it does not have (loudly, as
+  designed), upsert nothing new to Supabase unless a decision landed. That
+  is a correct, not a broken, first run.
+
+### E. The same-day build cap (infra, `[vercel skip]`)
+`scripts/vercel-ignore.sh`: after `[vercel skip]`, non-main and a new
+`[deploy-now]` override, `builds_today()` asks the Vercel API (v6
+deployments, `since=` UTC midnight, `target=production`) how many paid
+builds exist today excluding this deployment, and skips at
+`MAX_DAILY_BUILDS` (2). `[deploy-retry]` does NOT beat the cap. Without
+`VERCEL_BUILD_CAP_TOKEN` in the project's build env the cap is inactive
+and says so. `scripts/test-vercel-ignore.sh` gains ten cases on a mock
+count (`VERCEL_BUILD_CAP_MOCK_COUNT`) and a test-only subject hook
+(`VERCEL_IGNORE_TEST_SUBJECT`); 33/33 pass from the Windows box under Git's
+sh.exe. `mac-mini-jobs/run-deploy-watch.sh` resets its attempt counter on a
+new UTC day so a capped commit deploys tomorrow instead of exhausting three
+retries in an hour and alerting "deploy manually". The live API path is
+verified by shape only (the MCP's `list_deployments` returns the same
+fields); the first real proof is the first build after the token is set.
+Ashwin: create a read-scoped token at vercel.com/account/tokens and add it
+as `VERCEL_BUILD_CAP_TOKEN` (Production, build-time) in project settings.
+
+### F. Open, carried forward
+Everything in the Notion Backlog. New today: the six rate builders' lost
+inputs (D); the cap token (E); the Supabase seed on the mini (D); the NFL
+dispatch decision (C). Unchanged: Housing tab, NFL scrubber, workbook half,
+elections dumps, Wave 1-4 re-diff, Everton/Lions, moves ledger gaps.
+
+**Not pushed. Not committed. Ask Ashwin.**

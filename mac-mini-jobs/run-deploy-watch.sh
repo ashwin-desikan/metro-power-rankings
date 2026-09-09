@@ -164,6 +164,17 @@ esac
 if [ "$(( (NOW - LAST_TS) / 60 ))" -lt "$COOLDOWN_MIN" ]; then
   echo "re-triggered $(( (NOW - LAST_TS) / 60 ))m ago (<${COOLDOWN_MIN}m) — letting that build run"; exit 0
 fi
+# 2026-09-09: scripts/vercel-ignore.sh now caps paid production builds at
+# MAX_DAILY_BUILDS per UTC day and a "[deploy-retry]" does not beat that cap.
+# A commit the cap skipped looks to this watcher exactly like a canceled one
+# (no deployment), so without this reset three retries would burn inside an
+# hour and the commit would never deploy on its own. A new UTC day is a new
+# budget, so the attempt counter starts again with it.
+if [ "$ATTEMPTS" -gt 0 ] && [ "$(date -u -r "$LAST_TS" +%Y%m%d 2>/dev/null || date -u -d "@$LAST_TS" +%Y%m%d)" != "$(date -u +%Y%m%d)" ]; then
+  echo "new UTC day: resetting retry attempts for ${TARGET:0:9} (were $ATTEMPTS)"
+  ATTEMPTS=0
+fi
+
 if [ "$ATTEMPTS" -ge "$MAX_ATTEMPTS" ]; then
   echo "gave up after $ATTEMPTS attempts on ${TARGET:0:9}"
   push "[ALERT] Vercel auto-retry exhausted" rotating_light "Build of ${TARGET:0:9} ($TARGET_SUBJ) still not live after $ATTEMPTS retries. Deploy manually."

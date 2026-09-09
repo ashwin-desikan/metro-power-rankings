@@ -81,6 +81,34 @@ run SKIP  1c135d5bc 1c135d5bc^ "the merge that built: guard+hooks+CI+docs, zero 
 run SKIP  1c135d5bc ""         "same merge, base unreachable"
 
 echo
+echo "the same-day build cap (2026-09-09) - counted from the Vercel API,"
+echo "mocked here through VERCEL_BUILD_CAP_MOCK_COUNT; the real count is live-only"
+runcap() {  # runcap <expected> <sha> <mock count> <extra env assignments...> <why>
+  want="$1"; sha="$2"; mock="$3"; extra="$4"; why="$5"
+  if ! git cat-file -e "${sha}^{commit}" 2>/dev/null; then
+    missing=$((missing+1)); printf '  ----  %-5s %s  (not in this clone)\n' "$want" "$sha"; return
+  fi
+  env VERCEL_GIT_COMMIT_SHA="$sha" VERCEL_GIT_PREVIOUS_SHA="$sha^" VERCEL_GIT_COMMIT_REF=main \
+      VERCEL_BUILD_CAP_MOCK_COUNT="$mock" $extra sh scripts/vercel-ignore.sh >/dev/null 2>&1
+  if [ $? -eq 0 ]; then got=SKIP; else got=BUILD; fi
+  if [ "$got" = "$want" ]; then
+    pass=$((pass+1)); printf '  ok    %-5s %s  %s\n' "$got" "$sha" "$why"
+  else
+    fail=$((fail+1)); printf '  FAIL  got=%-5s want=%-5s %s  %s\n' "$got" "$want" "$sha" "$why"
+  fi
+}
+runcap BUILD e2801ca8b 0 "" "app commit, 0 builds today: builds"
+runcap BUILD e2801ca8b 1 "" "app commit, 1 build today: builds (the second of two)"
+runcap SKIP  e2801ca8b 2 "" "app commit, 2 builds today: the cap holds"
+runcap SKIP  e2801ca8b 7 "" "app commit, an evening burst: still holds"
+runcap BUILD e2801ca8b 2 "MAX_DAILY_BUILDS=3" "cap raised to 3 by env: builds"
+runcap SKIP  1291a3818 2 "" "[deploy-retry] does NOT beat the cap (or the watcher would spend the saved builds)"
+runcap BUILD 1291a3818 1 "" "[deploy-retry] under the cap still builds"
+runcap BUILD e2801ca8b 9 "VERCEL_IGNORE_TEST_SUBJECT=[deploy-now]" "[deploy-now] beats the cap"
+runcap SKIP  f2764f7c0 0 "" "[vercel skip] still wins before the cap is even consulted"
+runcap SKIP  986f86ebe 0 "" "untagged docs commit under the cap: still skipped by the path test"
+
+echo
 printf '%d passed, %d failed, %d commits not in this clone\n' "$pass" "$fail" "$missing"
 [ "$fail" -eq 0 ] || exit 1
 if [ $((pass)) -lt "$MIN_CASES" ]; then

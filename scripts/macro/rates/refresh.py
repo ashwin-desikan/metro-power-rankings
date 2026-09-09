@@ -118,6 +118,24 @@ class SourceUnreachable(RuntimeError):
     files untouched, and reports it (never a guessed value)."""
 
 
+class MissingBase(SourceUnreachable):
+    """Raised when the FULL-history input a builder reads (the Valet, FRED,
+    ECB, SWEA, Norges or datahub file under _scratch/macro) is not on disk.
+    An incremental fetch covers the last --days only; merging it onto nothing
+    produces a thin base that the builder then reads as the whole series.
+    Measured 2026-09-09 on the Windows box: boc.json rebuilt with 378
+    changes against 410, every decision from 2009 to 2025 gone, one added.
+    So a missing base is a refusal, never a create: the bank's files stay
+    untouched and the run reports it, exactly like an unreachable source."""
+
+
+def _require_base(path):
+    if not os.path.exists(path):
+        raise MissingBase(
+            "base input missing: {} (run the full builder download on this "
+            "machine first; refusing to seed it from an incremental fetch)".format(path))
+
+
 def http_get(url, fixtures_dir=None, fixture_name=None, timeout=30):
     if fixtures_dir:
         path = os.path.join(fixtures_dir, fixture_name)
@@ -200,6 +218,7 @@ def write_bis_cache(by_iso2, keep_days=400):
 # incremental response never loses history the bulk download originally had.
 
 def _merge_csv_two_col(path, rows, date_col, value_col, quote_all=False):
+    _require_base(path)
     existing = {}
     if os.path.exists(path):
         with open(path, newline="", encoding="utf-8") as f:
@@ -266,6 +285,7 @@ def fetch_ecb(key, start, fixtures_dir=None, fixture_name=None):
 
 
 def _merge_ecb_scratch(path, rows):
+    _require_base(path)
     existing = {}
     if os.path.exists(path):
         with open(path, newline="", encoding="utf-8") as f:
@@ -300,6 +320,7 @@ def fetch_riksbank(series, start, end, fixtures_dir=None):
 
 
 def _merge_json_list(path, rows, date_key="date", value_key="value"):
+    _require_base(path)
     existing = []
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
@@ -345,9 +366,19 @@ def refresh_boc(scratch, start, fixtures_dir):
                                "date", "V39079", quote_all=True)
 
 
-def fetch_norges(start, fixtures_dir=None):
-    text = http_get(NORGES_URL_TMPL.format(start=start), fixtures_dir, "norges_kpra.csv")
-    reader = csv.DictReader(io.StringIO(text))
+def _norges_delimiter(text):
+    """Norges Bank's open-data CSV is SEMICOLON-delimited (measured live from
+    the Windows box on 2026-09-09: the header is
+    'FREQ;Frequency;INSTRUMENT_TYPE;...;TIME_PERIOD;OBS_VALUE;CALC_METHOD;...').
+    The first dry run read it with the default comma and reported every column
+    as one field. Decide from the header line rather than assuming either."""
+    head = text.lstrip("\ufeff").split("\n", 1)[0]
+    return ";" if head.count(";") > head.count(",") else ","
+
+
+def fetch_norges(start, fixtures_dir=None, fixture_name="norges_kpra.csv"):
+    text = http_get(NORGES_URL_TMPL.format(start=start), fixtures_dir, fixture_name)
+    reader = csv.DictReader(io.StringIO(text.lstrip("\ufeff")), delimiter=_norges_delimiter(text))
     fields = reader.fieldnames or []
     if "TIME_PERIOD" not in fields or "OBS_VALUE" not in fields:
         raise SourceUnreachable(
@@ -801,13 +832,35 @@ def self_test():
         rows = fetch_boc("2026-08-01", FIXTURES_DEFAULT)
         assert rows and "level" in rows[0]
 
-    # Norges parser
+    # Norges parser, both delimiters: the comma fixture the script was written
+    # against and the semicolon shape the live endpoint actually returns
     if os.path.exists(os.path.join(FIXTURES_DEFAULT, "norges_kpra.csv")):
         rows = fetch_norges("2026-08-01", FIXTURES_DEFAULT)
         assert rows and "level" in rows[0]
+    if os.path.exists(os.path.join(FIXTURES_DEFAULT, "norges_kpra_semicolon.csv")):
+        rows = fetch_norges("2026-06-01", FIXTURES_DEFAULT, fixture_name="norges_kpra_semicolon.csv")
+        assert len(rows) == 4 and rows[0]["date"] == "2026-06-01" and rows[0]["level"] == 4.25, rows[:2]
+
+    # a missing base input is a refusal, never a thin file (2026-09-09)
+    import tempfile
+    tmp_scratch = tempfile.mkdtemp()
+    try:
+        _merge_csv_two_col(os.path.join(tmp_scratch, "nope.csv"), [{"date": "2026-01-01", "level": 1.0}], "date", "V")
+        raise AssertionError("merge onto a missing base must refuse")
+    except MissingBase:
+        pass
+    assert not os.path.exists(os.path.join(tmp_scratch, "nope.csv")), "refusal must not create the file"
+    try:
+        _merge_json_list(os.path.join(tmp_scratch, "nope.json"), [{"date": "2026-01-01", "value": 1.0}])
+        raise AssertionError("json merge onto a missing base must refuse")
+    except MissingBase:
+        pass
+    with open(os.path.join(tmp_scratch, "base.csv"), "w", newline="") as f:
+        f.write("date,V\n2025-01-01,1.0\n")
+    dates = _merge_csv_two_col(os.path.join(tmp_scratch, "base.csv"), [{"date": "2026-01-01", "level": 2.0}], "date", "V")
+    assert dates == ["2025-01-01", "2026-01-01"], dates
 
     # write_bis_cache merges without duplication and respects a rolling window
-    import tempfile
     tmp_cache = tempfile.mkdtemp()
     old_dir = c.BIS_CACHE_DIR
     c.BIS_CACHE_DIR = tmp_cache

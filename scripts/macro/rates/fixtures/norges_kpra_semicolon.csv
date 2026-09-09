@@ -1,0 +1,5 @@
+FREQ;Frequency;INSTRUMENT_TYPE;Instrument Type;TENOR;Tenor;UNIT_MEASURE;Unit of Measure;DECIMALS;COLLECTION;Collection Indicator;TIME_PERIOD;OBS_VALUE;CALC_METHOD;Calculation Method
+B;Business;KPRA;Key policy rate;SD;Policy rate;R;Rate;2;E;End of day;2026-06-01;4.25;;
+B;Business;KPRA;Key policy rate;SD;Policy rate;R;Rate;2;E;End of day;2026-06-02;4.25;;
+B;Business;KPRA;Key policy rate;SD;Policy rate;R;Rate;2;E;End of day;2026-06-03;4.25;;
+B;Business;KPRA;Key policy rate;SD;Policy rate;R;Rate;2;E;End of day;2026-06-04;4.25;;

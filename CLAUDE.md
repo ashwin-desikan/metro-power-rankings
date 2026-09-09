@@ -46,6 +46,22 @@ and disaster-recovery steps this file doesn't repeat.
   must be down" turned out to be wrong two months running — the actual bug
   was a query-optimizer join order issue. Assume your own code first.
 
+## Notion is the queryable half of the handoff (added 2026-09-09)
+
+`HANDOFF.md` stays in git as the audit trail. The parts of it a session needs
+to QUERY rather than read live in four Notion databases under the private
+page "Citizen of Nowhere" (ids in project memory `reference_notion_workspace`):
+**Backlog** (filter by Owner: Windows session, Mac mini, Ashwin), **Data
+sources** (one row per upstream feed with its quirks, owner script and last
+incident), **Decisions** (one row per ruling) and the **Editorial calendar**.
+At session start, read your open Backlog rows. Before touching a feed, read
+its Data sources row. Before re-deriving a modelling or naming rule, check
+Decisions. When you close an item or make a ruling, update the row in the
+same session you write the HANDOFF entry. On the mini the Notion MCP is
+added with `claude mcp add --transport http notion https://mcp.notion.com/mcp`
+and authorised once with `/mcp`; launchd jobs have no Claude in the loop and
+do not touch Notion.
+
 ## The working loop for data/pipeline fixes
 
 This project has organically converged on a discipline worth keeping
@@ -177,6 +193,18 @@ explicit — apply it before touching any refresh script:
   already names a subdirectory. Recipe and the measured table:
   `scripts/DATA-READS-RECIPE.md`. The baseline `scripts/data-reads-baseline.json`
   is empty and must stay empty.
+- **The 2/day budget is now CODE, not a promise (2026-09-09).**
+  `scripts/vercel-ignore.sh` asks the Vercel API how many paid production
+  builds (READY, ERROR, BUILDING, QUEUED, INITIALIZING; CANCELED and skipped
+  are free) this project has already started today, UTC, and skips at
+  `MAX_DAILY_BUILDS` (2) whatever the commit touched. `[deploy-now]` on the
+  SUBJECT is the only override; `[deploy-retry]` does not beat it, and the
+  mini's watcher resets its attempt counter on a new UTC day so a capped
+  commit deploys tomorrow on its own. The count needs a read token in the
+  project's build environment as `VERCEL_BUILD_CAP_TOKEN`; without it the
+  cap is INACTIVE and the log says so. Fifth overage (2026-09-06, $105.77)
+  was untagged commits in evening bursts, not a guard bug; see
+  `feedback_vercel_guardrail_must_be_infra_not_memory` in project memory.
 - `scripts/vercel-ignore.sh` **fails closed**: if it cannot resolve the base
   commit it skips rather than builds, because a missed deploy is auto-healed by
   `mac-mini-jobs/run-deploy-watch.sh` and a spurious deploy is healed by
