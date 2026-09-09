@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T07:31:06.721657+00:00",
+  "generated_at": "2026-09-09T10:21:14.243513+00:00",
   "jobs": [
     {
       "id": "football-standings",
@@ -20,6 +20,26 @@
         "date": "2026-09-09",
         "status": "ok",
         "slot": "2026-09-09T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "cfb-wed",
+      "label": "CFB predictions (catch a late AP poll, publish the slate, grade midweek)",
+      "schedule_text": "Wed at 11:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "11:40"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-09T11:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-04",
+        "status": "ok",
+        "slot": "2026-09-02T11:40:00+00:00"
       }
     },
     {
@@ -226,26 +246,6 @@
     {
       "id": "predictions-fri",
       "label": "PL + NFL predictions (fresh odds)",
-      "schedule_text": "Fri at 11:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "11:40"
-      ],
-      "weekdays": [
-        5
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-11T11:40:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-04T11:40:00+00:00"
-      }
-    },
-    {
-      "id": "cfb-fri",
-      "label": "CFB predictions (freeze late odds, grade midweek)",
       "schedule_text": "Fri at 11:40 UTC",
       "cadence": "weekly",
       "times": [
