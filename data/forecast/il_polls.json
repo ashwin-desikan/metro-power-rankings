@@ -18,5 +18,27 @@
   "Reserv.- NEP",
   "Amcha Yisrael"
  ],
- "polls": []
+ "polls": [
+  {
+   "date": "2026-09-08",
+   "pollster": "Lazar",
+   "seats": {
+    "Likud": 20,
+    "Together": 13,
+    "RZP- Zehut": 8,
+    "Otzma": 0,
+    "Blue & White": 7,
+    "Shas": 7,
+    "UTJ": 9,
+    "Yisrael Beiteinu": 5,
+    "Ra'am": 7,
+    "Joint List": 10,
+    "Dems": 25,
+    "Yashar": 4,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 47
+   },
+   "gov": null
+  }
+ ]
 }

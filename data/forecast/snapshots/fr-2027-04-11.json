@@ -2,8 +2,8 @@
  "code": "fr",
  "election": "2027-04-11",
  "confidence": "assumed",
- "built": "2026-09-07",
- "daysBefore": 216,
+ "built": "2026-09-09",
+ "daysBefore": 214,
  "block": {
   "electionAssumed": "2027-04-11",
   "electionDate": "2027-04-11",
@@ -34,7 +34,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 78.8,
+    "pA": 78.9,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -43,7 +43,7 @@
     "b": "Attal RE",
     "avgA": 54.9,
     "avgB": 45.1,
-    "pA": 93.9,
+    "pA": 94.0,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -102,7 +102,7 @@
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 7.1,
+  "monthsOut": 7.0,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]

@@ -930,6 +930,39 @@
     "Santos": 3.0,
     "Cury": 10.0
    }
+  },
+  {
+   "date": "2026-09-06",
+   "shares": {
+    "Lula": 36.0,
+    "F. Bolsonaro": 29.0,
+    "Caiado": 3.0,
+    "Zema": 2.0,
+    "Santos": 3.0,
+    "Cury": 8.0
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "shares": {
+    "Lula": 38.4,
+    "F. Bolsonaro": 37.3,
+    "Caiado": 4.0,
+    "Zema": 1.5,
+    "Santos": 4.0,
+    "Cury": 6.6
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "shares": {
+    "Lula": 39.0,
+    "F. Bolsonaro": 35.0,
+    "Caiado": 4.0,
+    "Zema": 1.0,
+    "Santos": 4.0,
+    "Cury": 9.0
+   }
   }
  ],
  "matchups": [
@@ -940,24 +973,24 @@
    ],
    "polls": [
     {
-     "date": "2026-08-31",
+     "date": "2026-09-07",
      "shares": {
-      "Lula": 45.8,
-      "F. Bolsonaro": 43.3
+      "Lula": 44.7,
+      "F. Bolsonaro": 43.2
      }
     },
     {
-     "date": "2026-08-31",
+     "date": "2026-09-06",
      "shares": {
       "Lula": 45.0,
-      "F. Bolsonaro": 43.0
+      "F. Bolsonaro": 44.0
      }
     },
     {
-     "date": "2026-08-31",
+     "date": "2026-09-07",
      "shares": {
-      "Lula": 45.8,
-      "F. Bolsonaro": 43.6
+      "Lula": 46.1,
+      "F. Bolsonaro": 44.8
      }
     },
     {
@@ -982,6 +1015,27 @@
     "Lula"
    ],
    "polls": [
+    {
+     "date": "2026-09-07",
+     "shares": {
+      "Lula": 46.0,
+      "F. Bolsonaro": 46.0
+     }
+    },
+    {
+     "date": "2026-09-07",
+     "shares": {
+      "Lula": 45.0,
+      "F. Bolsonaro": 46.0
+     }
+    },
+    {
+     "date": "2026-09-06",
+     "shares": {
+      "Lula": 41.0,
+      "F. Bolsonaro": 41.0
+     }
+    },
     {
      "date": "2026-09-02",
      "shares": {

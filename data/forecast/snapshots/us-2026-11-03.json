@@ -2,11 +2,11 @@
  "code": "us",
  "election": "2026-11-03",
  "confidence": "confirmed",
- "built": "2026-09-07",
- "daysBefore": 57,
+ "built": "2026-09-09",
+ "daysBefore": 55,
  "block": {
   "margin": 6.2,
-  "sigma": 2.6,
+  "sigma": 2.5,
   "aggregators": [
    {
     "source": "Decision Desk HQ",
@@ -93,7 +93,7 @@
     ]
    ]
   },
-  "monthsOut": 1.9,
+  "monthsOut": 1.8,
   "sims": 20000,
   "election": "2026-11-03",
   "electionDate": "2026-11-03",
@@ -122,7 +122,7 @@
     "lo": 47,
     "hi": 54
    },
-   "pDemControl": 44.7,
+   "pDemControl": 44.8,
    "competitive": [
     {
      "state": "Alaska",
