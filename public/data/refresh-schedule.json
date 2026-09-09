@@ -1,27 +1,6 @@
 {
-  "generated_at": "2026-09-09T10:21:14.243513+00:00",
+  "generated_at": "2026-09-09T11:02:41.107436+00:00",
   "jobs": [
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-09T11:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-09",
-        "status": "ok",
-        "slot": "2026-09-09T05:00:00+00:00"
-      }
-    },
     {
       "id": "cfb-wed",
       "label": "CFB predictions (catch a late AP poll, publish the slate, grade midweek)",
@@ -93,6 +72,27 @@
         "date": "2026-09-09",
         "status": "ok",
         "slot": "2026-09-09T07:00:00+00:00"
+      }
+    },
+    {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-09T17:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-09",
+        "status": "ok",
+        "slot": "2026-09-09T11:00:00+00:00"
       }
     },
     {
