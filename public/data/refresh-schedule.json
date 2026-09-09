@@ -1,55 +1,6 @@
 {
-  "generated_at": "2026-09-09T06:23:03.978334+00:00",
+  "generated_at": "2026-09-09T07:10:30.231340+00:00",
   "jobs": [
-    {
-      "id": "mlb-sim",
-      "label": "MLB + season playoff odds (7 leagues)",
-      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
-      "cadence": "daily",
-      "times": [
-        "07:00",
-        "14:30"
-      ],
-      "weekdays": [],
-      "months": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
-      "days_of_month": [],
-      "next_run": "2026-09-09T07:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-08",
-        "status": "ok",
-        "slot": "2026-09-08T14:30:00+00:00"
-      }
-    },
-    {
-      "id": "fiba-weekly",
-      "label": "FIBA basketball rankings",
-      "schedule_text": "Wed at 07:10 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:10"
-      ],
-      "weekdays": [
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-09T07:10:00+00:00",
-      "last_run": {
-        "date": "2026-09-02",
-        "status": "ok (manual)",
-        "slot": "2026-09-02T07:10:00+00:00"
-      }
-    },
     {
       "id": "feed-monitor",
       "label": "Feed shape monitor",
@@ -131,6 +82,35 @@
         "date": "2026-09-09",
         "status": "ok",
         "slot": "2026-09-09T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "mlb-sim",
+      "label": "MLB + season playoff odds (7 leagues)",
+      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
+      "cadence": "daily",
+      "times": [
+        "07:00",
+        "14:30"
+      ],
+      "weekdays": [],
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "days_of_month": [],
+      "next_run": "2026-09-09T14:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-09",
+        "status": "ok",
+        "slot": "2026-09-09T07:00:00+00:00"
       }
     },
     {
@@ -421,6 +401,26 @@
         "date": "2026-09-08",
         "status": "ok",
         "slot": "2026-09-08T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "fiba-weekly",
+      "label": "FIBA basketball rankings",
+      "schedule_text": "Wed at 07:10 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:10"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-16T07:10:00+00:00",
+      "last_run": {
+        "date": "2026-09-02",
+        "status": "ok (manual)",
+        "slot": "2026-09-02T07:10:00+00:00"
       }
     },
     {
