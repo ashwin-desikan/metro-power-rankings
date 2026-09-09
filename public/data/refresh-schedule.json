@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-09T11:12:44.632791+00:00",
+  "generated_at": "2026-09-09T11:49:33.536608+00:00",
   "jobs": [
-    {
-      "id": "cfb-wed",
-      "label": "CFB predictions (catch a late AP poll, publish the slate, grade midweek)",
-      "schedule_text": "Wed at 11:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "11:40"
-      ],
-      "weekdays": [
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-09T11:40:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "ok",
-        "slot": "2026-09-02T11:40:00+00:00"
-      }
-    },
     {
       "id": "screen-number-ones",
       "label": "US box office #1s",
@@ -441,6 +421,26 @@
         "date": "2026-09-09",
         "status": "ok",
         "slot": "2026-09-09T07:30:00+00:00"
+      }
+    },
+    {
+      "id": "cfb-wed",
+      "label": "CFB predictions (catch a late AP poll, publish the slate, grade midweek)",
+      "schedule_text": "Wed at 11:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "11:40"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-16T11:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-09",
+        "status": "ok",
+        "slot": "2026-09-09T11:40:00+00:00"
       }
     },
     {
