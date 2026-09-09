@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-09T05:57:22.922704+00:00",
+  "generated_at": "2026-09-09T06:07:30.956114+00:00",
   "jobs": [
-    {
-      "id": "substack-daily",
-      "label": "Substack feed sync",
-      "schedule_text": "Daily at 06:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "06:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-09T06:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-08",
-        "status": "ok",
-        "slot": "2026-09-08T06:00:00+00:00"
-      }
-    },
     {
       "id": "forecast",
       "label": "Election forecast",
@@ -261,6 +243,24 @@
         "date": "2026-09-09",
         "status": "ok",
         "slot": "2026-09-09T05:50:00+00:00"
+      }
+    },
+    {
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-10T06:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-09",
+        "status": "ok",
+        "slot": "2026-09-09T06:00:00+00:00"
       }
     },
     {
