@@ -141,6 +141,27 @@ catchup_hours = 20
 timeout_minutes = 30
 
 [[job]]
+id = "cfb-fri"                 # restored 2026-09-09 after being moved to Wed: Ashwin wants the
+                               # slate out early AND a second pass before Saturday.
+label = "CFB predictions (grade midweek, add late arrivals, refresh the sim)"
+time = "11:40"
+weekdays = [5]
+                               # What this slot CAN do: grade Wed/Thu games, add any fixture
+                               # that entered the AP-25 window after Wednesday, and refresh the
+                               # season sim, ratings and playoff odds, none of which are frozen.
+                               #
+                               # What it CANNOT do, and the reason is deliberate: it will not
+                               # revise a pick already in the ledger. grade_and_extend() skips
+                               # `if gid in known`, so model, market, blend and pick are frozen
+                               # by the run that first saw the game. That freeze is what makes
+                               # the Ledger's model-vs-market Brier honest -- a pick allowed to
+                               # drift toward the closing line would converge on the market and
+                               # the comparison would stop meaning anything.
+command = "runners/cfb.sh"
+catchup_hours = 20
+timeout_minutes = 30
+
+[[job]]
 id = "mlb-sim"                 # .github/workflows/mlb-sim-refresh.yml (schedule retired) + season-sims-refresh.yml (folded in 2026-08-11, schedule to be retired)
 label = "MLB + season playoff odds (7 leagues)"
 times = ["07:00", "14:30"]     # 07:00 = 8AM BST wake-up freshness for MLB/WNBA/CFL/MLS (their games are long over by then); 14:30 = same-day AFL/NRL/NPB evening games (Australia/Japan), which haven't kicked off by 07:00. The 14:30 run is a harmless no-op for the other four -- nothing new for them since 07:00.

@@ -8,18 +8,28 @@
 # run is always safe -- that is what makes a plain two-slot cadence safe
 # without any day-of-week branching in this script.
 #
-# Cadence (season window ~Aug 15 - Jan 20), two jobs.toml entries -> this one
-# script, same shape as predictions.sh's own Tue/Fri split:
-#   Sun 23:40 UTC - the main slot. AP poll lands ~18:00 UTC Sunday and
-#                   Saturday's finals are long in by 23:40; grades the week
-#                   and publishes the next AP-25 slate a few hours after the
-#                   poll drops.
-#   Fri 11:40 UTC - freezes any game ESPN priced late, grades midweek
-#                   MACtion, refreshes the sim. Kept as ITS OWN slot (not
-#                   folded directly into predictions.sh's Tue/Fri body)
-#                   rather than adding CFB to predictions.sh unconditionally,
-#                   which would also run it -- harmlessly, but pointlessly --
-#                   on Tuesday.
+# Cadence (season window ~Aug 15 - Jan 20), THREE jobs.toml entries -> this one
+# script. Kept as their own slots rather than folded into predictions.sh's
+# Tue/Fri body, which would also run CFB on Tuesday -- harmlessly, but
+# pointlessly:
+#   Sun 23:40 UTC - the main slot. When the AP poll lands ~18:00 UTC Sunday,
+#                   this grades the week and publishes the next AP-25 slate a
+#                   few hours later.
+#   Wed 11:40 UTC - added 2026-09-09 (was the Friday slot, moved). The Sunday
+#                   assumption is not always true: ESPN carried the Week 2 poll
+#                   dated 09-08, after Sunday's run, so the slate sat on last
+#                   weekend's games. Wednesday catches a Mon/Tue poll.
+#   Fri 11:40 UTC - restored 2026-09-09 alongside Wednesday. Grades Wed/Thu
+#                   games, adds any fixture that entered the AP-25 window after
+#                   Wednesday, refreshes the sim/ratings/playoff odds.
+#
+# What NO later slot does is revise a pick already made. grade_and_extend()
+# skips `if gid in known`, so model, market, blend and pick are frozen by the
+# run that first saw the game. Deliberate: a pick free to drift toward the
+# closing line would converge on the market and the Ledger's model-vs-market
+# Brier would stop meaning anything. Publishing earlier therefore trades a
+# less-informed market snapshot for an earlier slate -- that is the whole
+# point of the Wednesday slot, and it is a product decision, not a bug.
 #
 # The builder HARD-EXITS on purpose if the ten-conference set drifts by
 # name, records fail reconciliation, or the AP poll goes missing --
