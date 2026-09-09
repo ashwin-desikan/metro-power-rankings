@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T11:02:41.107436+00:00",
+  "generated_at": "2026-09-09T11:12:44.632791+00:00",
   "jobs": [
     {
       "id": "cfb-wed",
@@ -246,6 +246,26 @@
     {
       "id": "predictions-fri",
       "label": "PL + NFL predictions (fresh odds)",
+      "schedule_text": "Fri at 11:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "11:40"
+      ],
+      "weekdays": [
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-11T11:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-04",
+        "status": "ok",
+        "slot": "2026-09-04T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "cfb-fri",
+      "label": "CFB predictions (grade midweek, add late arrivals, refresh the sim)",
       "schedule_text": "Fri at 11:40 UTC",
       "cadence": "weekly",
       "times": [
