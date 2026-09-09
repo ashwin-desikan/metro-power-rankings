@@ -975,6 +975,7 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
     meta_by_gid = meta_by_gid or {}
     known = {e["event_id"] for e in ledger}
     kick_by_id = {u[0]: u[7] for u in upcoming if u[7]}
+    mkt_by_id = {u[0]: (u[6], u[9]) for u in upcoming}
     leverage_by_gid = leverage_by_gid or {}
     id_by_name = id_by_name or {}
     for e in ledger:
@@ -1022,6 +1023,19 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
         lev = leverage_by_gid.get(e["event_id"])
         if lev is not None:
             e["leverage"] = lev
+        # `closing` is the LAST market price seen before kickoff, overwritten on
+        # every run while the game is unplayed. It is NOT a second pick: it never
+        # touches `pick`, `blend` or any frozen field, and the record is scored
+        # on the frozen values exactly as before. Refreshing an UNGRADED entry is
+        # not a freeze violation for the same reason the meta-market backfill
+        # above is not -- today's price on a game nobody has played is not
+        # hindsight. It exists so the page can ask something it currently cannot:
+        # did the call we froze days early beat the market's final, best-informed
+        # read?
+        cm = mkt_by_id.get(e["event_id"])
+        if cm is not None and cm[0] is not None:
+            e["closing"] = {"pH": round(float(cm[0]), 4), "spread": cm[1],
+                            "as_of": today_iso}
         res = results_by_id.get(e["event_id"])
         if res:
             hs, as_ = res
@@ -1045,6 +1059,16 @@ def grade_and_extend(ledger, results_by_id, upcoming, rating_of, lite_rating_of,
             b = e.get("blend") or e["model"]
             e["blend_brier"] = round(brier2(b["pH"], hw), 4)
             e["pick_correct"] = (e["pick"] == e["result"])
+            # 🔴 Only score the closing line when it is genuinely LATER than the
+            # pick. A game picked and played between two runs never got a second
+            # read, so its `closing` still holds the pick-time price and
+            # "the pick beat the close" would be comparing a number with itself.
+            # Those entries are excluded from the count rather than counted as
+            # ties, which is why closing_graded is its own denominator.
+            cl = e.get("closing")
+            if cl is not None and cl.get("as_of") != e.get("predicted_at"):
+                e["closing_brier"] = round(brier2(cl["pH"], hw), 4)
+                e["beat_close"] = bool(e["blend_brier"] < e["closing_brier"])
     if not poll_fresh:
         ledger.sort(key=lambda e: (e["date"], e["home"]))
         return ledger
@@ -1120,6 +1144,15 @@ def ledger_record(ledger):
     gmm = [e for e in g if "meta_brier" in e]
     rec["meta_graded"] = len(gmm)
     rec["meta_brier"] = round(sum(e["meta_brier"] for e in gmm) / len(gmm), 4) if gmm else None
+    # The closing line: how the frozen pick fared against the market's LAST
+    # pre-kickoff price, over the games that actually got a later read. Its own
+    # denominator for the same reason as every tier above -- and it starts at
+    # zero on purpose, because backfilling a closing price onto a game already
+    # played would be hindsight.
+    gcl = [e for e in g if "closing_brier" in e]
+    rec["closing_graded"] = len(gcl)
+    rec["closing_brier"] = round(sum(e["closing_brier"] for e in gcl) / len(gcl), 4) if gcl else None
+    rec["beat_close"] = sum(1 for e in gcl if e.get("beat_close"))
     rec["fcs_opponent_games"] = sum(1 for e in ledger if e.get("fcs_opponent"))
     return rec
 
@@ -1707,6 +1740,53 @@ def self_test():
     stale = grade_and_extend(list(graded), {}, up, lambda t: 0.0, lambda t: 0.0,
                              lambda t: 0.0, "2026-09-14", {"194": 1}, "Week 3", False, {})
     check("poll-gate-blocks", all(e["event_id"] != "3" for e in stale))
+
+    # --- the closing line -------------------------------------------------
+    # An entry picked on 09-08 that gets a LATER market read, then plays.
+    cl_led = [{"event_id": "9", "date": "2026-09-19", "home": "Ohio State",
+               "away": "Texas", "home_slug": "ohio-state-cfb", "away_slug": "texas-cfb",
+               "model": {"pH": 0.70}, "market": {"pH": 0.60}, "blend": {"pH": 0.65},
+               "pick": "H", "predicted_at": "2026-09-08"}]
+    up_cl = [("9", "2026-09-19", "194", "251", "Ohio State", "Texas", 0.90,
+              "2026-09-19T19:30:00Z", False, -14.5)]
+    # run one: still unplayed, so the closing price refreshes to today's 0.90
+    refreshed = grade_and_extend(cl_led, {}, up_cl, lambda t: 0.0, lambda t: 0.0,
+                                 lambda t: 0.0, "2026-09-17", {"194": 1}, "Week 4", True, {})
+    e9 = refreshed[0]
+    check("closing-refreshes", e9["closing"]["pH"] == 0.9
+          and e9["closing"]["as_of"] == "2026-09-17")
+    check("closing-does-not-touch-the-freeze",
+          e9["model"]["pH"] == 0.70 and e9["market"]["pH"] == 0.60
+          and e9["blend"]["pH"] == 0.65 and e9["pick"] == "H")
+    # run two: the game is played. Home lost, so the frozen 0.65 (Brier 0.4225)
+    # beats the closing 0.90 (Brier 0.81).
+    graded_cl = grade_and_extend(refreshed, {"9": (10, 24)}, [], lambda t: 0.0,
+                                 lambda t: 0.0, lambda t: 0.0, "2026-09-20",
+                                 {"194": 1}, "Week 4", True, {})
+    e9 = graded_cl[0]
+    # NB brier2 is two-sided: it sums the squared error over BOTH outcomes, so
+    # each value is twice the one-sided square. Closing 0.90 on a home loss is
+    # 2*0.81 = 1.62; the frozen blend 0.65 is 2*0.4225 = 0.845.
+    check("closing-graded", abs(e9["closing_brier"] - 1.62) < 1e-9
+          and abs(e9["blend_brier"] - 0.845) < 1e-9)
+    check("closing-beat", e9["beat_close"] is True)
+    check("closing-never-moves-the-record-brier",
+          abs(e9["model_brier"] - 0.98) < 1e-9 and e9["pick_correct"] is False)
+    rec_cl = ledger_record(graded_cl)
+    check("closing-record", rec_cl["closing_graded"] == 1 and rec_cl["beat_close"] == 1
+          and abs(rec_cl["closing_brier"] - 1.62) < 1e-9)
+    # A game picked and played between runs never got a later read: its closing
+    # price is its pick price, so it must be EXCLUDED, not counted as a tie.
+    same_day = [{"event_id": "10", "date": "2026-09-19", "home": "Georgia",
+                 "away": "Auburn", "home_slug": "georgia-cfb", "away_slug": "auburn-cfb",
+                 "model": {"pH": 0.70}, "blend": {"pH": 0.70}, "pick": "H",
+                 "predicted_at": "2026-09-17",
+                 "closing": {"pH": 0.70, "spread": -7.0, "as_of": "2026-09-17"}}]
+    sd = grade_and_extend(same_day, {"10": (30, 10)}, [], lambda t: 0.0, lambda t: 0.0,
+                          lambda t: 0.0, "2026-09-20", {}, "Week 4", True, {})
+    check("closing-skips-same-run", "closing_brier" not in sd[0]
+          and "beat_close" not in sd[0])
+    check("closing-record-denominator", ledger_record(sd)["closing_graded"] == 0)
     fresh = grade_and_extend(list(graded), {}, up, lambda t: 2.0 if t == "194" else 0.0,
                              lambda t: 1.0 if t == "194" else 0.0,
                              lambda t: 1.5 if t == "194" else 0.0,

@@ -23,6 +23,7 @@ export const RELEASES: Release[] = [
     items: [
       "The college football board only opens picks for games involving AP Top 25 teams, so when the poll is late it opens none. It now says that on the page instead of leaving last week's games sitting there unexplained.",
       "The weekly college football refresh moved from Friday to Wednesday, so a slate held up by a late poll reaches the site three days sooner.",
+      "Every college football pick is frozen days before kickoff while the betting market keeps moving. The board now records the market's final price too, so from next week it can say how often the early call still beat it.",
     ],
   },
   {

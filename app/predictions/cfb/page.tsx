@@ -760,6 +760,19 @@ export default async function CfbPredictionsPage() {
                     <div className="text-xs text-[var(--text-muted)]">the benchmark to beat{rec.market_graded ? ` (${rec.market_graded} priced)` : ""}</div>
                   </div>
                 </div>
+                {!!rec.closing_graded && rec.closing_graded > 0 && (
+                  <p className="mb-4 text-sm text-[var(--text-muted)]">
+                    <strong className="text-[var(--text)]">
+                      Against the closing line: {rec.beat_close ?? 0} of {rec.closing_graded}.
+                    </strong>{" "}
+                    Each pick is frozen the day it is made, days before kickoff. The market keeps
+                    moving after that, and the price at kickoff is the best-informed number anyone
+                    has. This counts the games where the call we froze early still scored better
+                    than that final price{rec.closing_brier ? ` (closing Brier ${rec.closing_brier})` : ""}.
+                    Games picked and played between two runs never got a later read and are left
+                    out, which is why the count is its own.
+                  </p>
+                )}
                 {graded.length > 0 && (
                   <ResponsiveTable
                     variant="list"

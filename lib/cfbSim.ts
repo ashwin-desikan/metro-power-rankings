@@ -168,6 +168,14 @@ export type CfbPredictionsFile = {
     classic_brier?: number | null;
     meta_graded?: number;
     meta_brier?: number | null;
+    /** The closing line, added 2026-09-09. `closing_graded` is its own
+     *  denominator: a game picked and played between two runs never got a
+     *  second market read, so it is excluded rather than scored against
+     *  itself. Starts at zero and fills from the next graded week -- a
+     *  closing price cannot be backfilled onto a game already played. */
+    closing_graded?: number;
+    closing_brier?: number | null;
+    beat_close?: number;
     fcs_opponent_games?: number;
   };
   ledger: CfbPredictionEntry[];
