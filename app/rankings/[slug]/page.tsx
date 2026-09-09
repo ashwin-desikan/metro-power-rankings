@@ -13,6 +13,7 @@ import { getSoundForMetro } from "@/lib/sound";
 import SoundSection from "./SoundSection";
 import { getScreenForMetro } from "@/lib/screen";
 import ScreenSection from "./ScreenSection";
+import HousingPanel from "./HousingPanel";
 import { getMayor } from "@/lib/mayors";
 import {
   getAllMetros,
@@ -1259,6 +1260,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </Disclosure>
         )}
 
+
+        {/* House prices (FHFA), US metros the crosswalk joins; renders nothing otherwise */}
+        <HousingPanel slug={slug} />
 
         {/* Cultural Assets Section (Cultural Events + Museums/Landmarks) */}
         {((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0)) ||

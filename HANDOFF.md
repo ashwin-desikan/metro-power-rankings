@@ -11857,9 +11857,106 @@ verified from the box) on a fresh clone, once. Friday on the mini should
 now rebuild all 61 with nothing refused; the Supabase seed is the one step
 left for the mini's key.
 
+### G. Afternoon: the NFL week scrubber and box-score links (app, one build)
+- **Week scrubber** on every played NFL season page. `_shared/WeekScrubber.tsx`
+  is a context (client state, never a search param, so the 107 pages stay
+  static) with a provider the page wraps its body in, a control (native
+  range plus step buttons and a Final reset, 44px on a phone, aria-live
+  week label) rendered on the chart card AND in the standings toolbar, and
+  `useThroughWeek()`. `WeeklyEloChart` cuts every line at week N and ranks
+  and labels by the rating held then, keeping the whole-season axes, with a
+  dashed accent marker on week N. `SeasonStandings` rewrites each row from
+  the last stored week at or before N that carries a record (rec, pts, Elo
+  from the shard's weekly series; no modelling) and withholds honours and
+  seeds off the final week; `StandingsTeam` gains `weeks`. A seeded season
+  gets no provider and every consumer renders as before.
+- **Box-score links.** No file the site reads carries an ESPN game id
+  (`game_id` is the workbook slate id; nfl_live_update.py drops ESPN's
+  event id before upcoming.json), so ESPN links cannot be built for any
+  season. `lib/nflBoxscore.ts` builds Pro-Football-Reference's URL instead,
+  `/boxscores/<YYYYMMDD>0<franchise code>.htm`, from the ledger's
+  franchise-stable `home_slug` and a 32-entry code table; neutral-site
+  games and clubs without a code get a plain score. Wired as the score
+  itself on `/teams/nfl/expectation/[season]` and the season hub's
+  "three results it got most wrong". 🔴 PFR answers 403 to every scripted
+  request (curl, PowerShell and the desktop browser pane all hit its bot
+  check), so the URL shape is UNVERIFIED by machine. Ashwin to open three
+  in a normal browser before the push: 202509040phi (Eagles-Cowboys, 4 Sep
+  2025), 197009180ram (Rams, 18 Sep 1970), 202601250sea (Seahawks, 25 Jan
+  2026). Also known: the workbook does not flag Sao Paulo 2025 as neutral,
+  so that row links to 202509050sdg, which is what PFR uses anyway.
+- Release note: the existing 2026-09-09 block (CFB poll wait) gains two
+  bullets, four in total, 192 and 168 characters.
+- Gates on the box: tsc clean, client-imports, data-reads, mobile,
+  table-scroll OK, vitest green, release-notes OK, `next build --webpack`
+  OK (BUILD_ID 13:03), function-size no route at or above 220 MB. Probe at
+  390: /teams/nfl/season/2025 9.1 screens 1.7x, /1966 7.7, /2026 7.1,
+  /teams/nfl/expectation/2025 3.1, /updates 10.6, 5/5 clean, no sideways
+  scroll. Scrubber measured on the built server: 2025 at week 8, chart
+  points 736 -> 288 (32 x 9 weeks), one marker line, both controls read
+  "week 8", six tap targets 44px at 390 and 32px at 1280; standings at week
+  8 read Patriots 6-2 213-146 1506, Bills 5-2 (bye) 1634, Seed and Season
+  columns gone, the "as the table stood" note present; week 0 orders by
+  rating with no record. Expectation 2025: 284 box-score links on 317 rows
+  (the rest neutral or unplayed); 1970: 188 on 215.
+- Not committed. Untagged app commit when Ashwin says so; one build.
+
+### H. Late afternoon: the Housing tab (app, same build as G)
+`/business/economy/housing` per the scoping note section 4. Pipeline:
+`scripts/macro/housing/build_housing.py` (self-test, dry-run default,
+`--fetch-cpi`, `--write`) reads FHFA's all-series master file
+(`_scratch/macro/housing/HPI_master.csv`, 17 MB, downloaded from
+fhfa.gov/hpi/download/monthly/hpi_master.csv on the box) filtered to
+`hpi_type == traditional` (🔴 the file also carries "distress-free" and
+"manufactured" series under the same place ids; before that filter the USA
+row read a 39% year and a 55% crash), quarterly, MSA level: purchase-only
+for the 100 largest, all-transactions for the other 310, 37 of them
+principal divisions (the eleven biggest metros exist in FHFA only as their
+core division, flagged `division`). Real terms by the World Bank's annual
+US CPI (FP.CPI.TOTL, cached to `cpi_us.json`; runs to 2024, so 2025-26
+sit at 2024 prices and the page says so). Crosswalk to metros by principal
+city and state with `OVERRIDES` for the divisions and Honolulu/Monterey:
+285 of 596 US metros joined, 125 FHFA areas with no metro (Akron, Ann
+Arbor, Boulder and the like, folded into a neighbour in our metro list).
+Read model: `public/data/business/economy/housing/index.json` (238 KB,
+carries the national and census-division series, the CPI, the crosswalk
+stats and one summary row per MSA with nominal and real changes over 1, 5,
+10, 25 years and since 2000 plus the 2007-2012 drawdown) and
+`msa/<cbsa>.json` x 410 (1.95 MB total, `[yr, q, nsa, sa, real]`).
+Checks: USA purchase-only 2026 Q2 one year +2.1%, since 2000 +225%
+nominal / +78% real, crash 2007Q2 to 2011Q1 -21.9% nominal / -29.4% real;
+Las Vegas real crash -65.7%; Detroit real since 2000 +15%.
+Frontend: `lib/economyHousing.ts` (literal paths, GitHub-raw-first, tag
+`economy-housing` registered in the revalidate route), hub page with the
+US chart and division table, the sortable board (`HousingTable.tsx`, real
+or nominal and a horizon control, sort select on the phone, CappedList at
+12), six ranked boards, sources card; `[cbsa]` page per FHFA area
+(`generateStaticParams`, 410) with the chart, six horizon tiles and a
+year-by-year table; `HousingPanel.tsx` on `/rankings/[slug]` after the
+companies section for the 285 joined metros (compact chart plus four
+tiles, links to the area page); EconomyNav gains Housing; sitemap lists
+all 411 pages; `check:client-imports` knows the lib is server-only;
+`data-currency.json` gains `housing-fhfa` (120 days, reads `_meta.asOf`);
+mini job `economy-housing` (Saturdays 07:30, `runners/economy-housing.sh`:
+download, fetch CPI, build --write, commit `[vercel skip]`, revalidate).
+Case-Shiller's twenty cities are NOT on the page: datahub's
+house-prices-us endpoint answered 404 on the box; open.
+Gates on the box: tsc clean; client-imports, data-reads, mobile,
+table-scroll, data-currency (25 current, 0 overdue) OK; vitest 175/175;
+release-notes OK (the 09-09 block now: scrubber, box scores, CFB poll wait,
+Housing); `next build --webpack` OK; function-size no route at or above
+220 MB. Probe at 390: /business/economy/housing 7.3 screens 1.6x, /35614
+3.1, /10420 2.9, /rankings/las-vegas 6.2, /rankings/new-york 7.1,
+/business/economy 6.3, 8/8 clean. Measured on the built server at 1280 and
+390: hub scrollWidth 1280/390, 410 board rows and 419 phone cards, one
+chart, Rates and Housing tabs; New York area page stamp reads "principal
+metropolitan division"; Las Vegas metro page carries the House Prices
+disclosure with +1.7% one year, +66.9% ten years real, +84.0% since 2000
+real, -65.7% 2007Q1 to 2012Q1. Not committed.
+
 ### F. Open, carried forward
 Everything in the Notion Backlog. New today: the cap token (E); the Supabase seed on the mini (D); the NFL
-dispatch decision (C). Unchanged: Housing tab, NFL scrubber, workbook half,
+dispatch decision (C). Unchanged: Prices/Yields/Countries tabs, Case-Shiller, workbook half,
 elections dumps, Wave 1-4 re-diff, Everton/Lions, moves ledger gaps.
 
 **Not pushed. Not committed. Ask Ashwin.**

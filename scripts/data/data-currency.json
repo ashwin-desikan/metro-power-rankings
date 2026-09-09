@@ -124,6 +124,13 @@
   ],
   "snapshots": [
     {
+      "key": "housing-fhfa",
+      "label": "FHFA house price index (/business/economy/housing)",
+      "file": "public/data/business/economy/housing/index.json",
+      "maxAgeDays": 120,
+      "why": "FHFA publishes quarterly, about two months after quarter end; the mini's economy-housing job rebuilds weekly, so a build older than four months means the job stopped."
+    },
+    {
       "key": "hockey-men",
       "label": "IIHF men's world ranking",
       "file": "public/data/rankings/hockey-men.json",

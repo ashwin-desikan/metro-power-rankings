@@ -506,6 +506,17 @@ catchup_hours = 40              # weekly cadence, generous like egress-refresh:
 timeout_minutes = 30
 
 [[job]]
+id = "economy-housing"
+label = "House price refresh (/business/economy/housing)"
+time = "07:30"                  # Saturday; FHFA's master file updates a few
+                                 # weeks after each quarter closes, and the CPI
+                                 # print is annual, so weekly is already generous
+weekdays = [6]
+command = "runners/economy-housing.sh"
+catchup_hours = 40
+timeout_minutes = 20
+
+[[job]]
 id = "mktcap-refresh"
 label = "Company market caps"
 time = "09:00"                  # Saturday; matches cricket-weekly's slot on a

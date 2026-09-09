@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 // behind it.
 const TABS: [string, string][] = [
   ['/business/economy', 'Rates'],
+  ['/business/economy/housing', 'Housing'],
 ];
 
 export default function EconomyNav() {
@@ -16,7 +17,9 @@ export default function EconomyNav() {
   return (
     <nav className="mb-6 flex flex-wrap gap-1 border-b" style={{ borderColor: 'var(--border, #222b36)' }}>
       {TABS.map(([href, label]) => {
-        const active = href === '/business/economy' ? pathname.startsWith('/business/economy') : pathname.startsWith(href);
+        // Rates owns everything under /business/economy that no other tab claims.
+        const claimed = TABS.some(([h]) => h !== '/business/economy' && pathname.startsWith(h));
+        const active = href === '/business/economy' ? (pathname.startsWith('/business/economy') && !claimed) : pathname.startsWith(href);
         return (
           <Link
             key={href}

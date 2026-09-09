@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { getNflExpectation, getNflExpectationSeason, gameKey, scoreWinnerFirst } from "@/lib/nflExpectation";
+import { pfrBoxscoreUrl, PFR_LINK_LABEL } from "@/lib/nflBoxscore";
 
 // What the season looked like to a model that had to say so beforehand.
 //
@@ -92,7 +93,16 @@ export default async function ExpectationPreview({ season }: { season: number })
                       <Link href={`/teams/nfl/${wSlug}`} className="hover:text-[var(--accent)] hover:underline">{winner}</Link>
                     ) : winner}
                     <span className="text-[var(--text-muted)]"> beat {loser}</span>
-                    {scoreWinnerFirst(g) ? <span className="ml-1.5 tabular-nums text-[var(--text-dim)]" style={MONO}>{scoreWinnerFirst(g)}</span> : null}
+                    {scoreWinnerFirst(g) ? (
+                      pfrBoxscoreUrl(g) ? (
+                        <a href={pfrBoxscoreUrl(g)!} target="_blank" rel="noopener noreferrer" title={PFR_LINK_LABEL}
+                          className="ml-1.5 tabular-nums text-[var(--text-dim)] underline decoration-dotted underline-offset-2 hover:text-[var(--accent)]" style={MONO}>
+                          {scoreWinnerFirst(g)}
+                        </a>
+                      ) : (
+                        <span className="ml-1.5 tabular-nums text-[var(--text-dim)]" style={MONO}>{scoreWinnerFirst(g)}</span>
+                      )
+                    ) : null}
                     {g.rest?.home || g.rest?.away ? (
                       <span
                         className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded-full border text-[var(--text-muted)] whitespace-nowrap align-middle"

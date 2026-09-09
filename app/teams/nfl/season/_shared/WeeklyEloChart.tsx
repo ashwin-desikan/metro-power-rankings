@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { NflEloTeam } from "@/lib/nflElo";
+import { useThroughWeek } from "./WeekScrubber";
 
 // One season's Elo, week by week, every team on one axis.
 //
@@ -139,7 +140,23 @@ export default function WeeklyEloChart({
   const px = (w: number) => M.left + ((w - x0) / Math.max(x1 - x0, 1)) * (W - M.left - M.right);
   const py = (e: number) => M.top + (1 - (e - lo) / (hi - lo)) * (H - M.top - M.bottom);
 
-  const ranked = [...drawn].sort((a, b) => b.end - a.end);
+  // 🔴 THE SCRUBBER CUTS THE LINES, NEVER THE SCALE. "Through week N" draws
+  // every team only as far as week N and ranks and labels them by the rating
+  // they held THEN, but the axes stay the whole season's, so scrubbing reads
+  // as the season filling in rather than as thirty-two charts of different
+  // shapes. null means the whole season, which is also what a page with no
+  // scrubber gets.
+  const through = useThroughWeek();
+  const drawnV: NflEloTeam[] = through == null
+    ? drawn
+    : drawn
+        .map((t) => {
+          const weeks = t.weeks.filter((w) => w.w <= through);
+          return { ...t, weeks, end: weeks.length ? weeks[weeks.length - 1].e : t.start };
+        })
+        .filter((t) => t.weeks.length >= 1);
+
+  const ranked = [...drawnV].sort((a, b) => b.end - a.end);
   const leadCount = Math.min(emphasise, ranked.length);
   const lead = new Set(ranked.slice(0, leadCount).map((t) => t.name));
 
@@ -206,7 +223,7 @@ export default function WeeklyEloChart({
           style={{ background: "var(--bg-card)", borderColor: pinned ? "var(--accent)" : "var(--border)", color: pinned ? "var(--accent)" : "var(--text-muted)" }}
         >
           <option value="">no team pinned</option>
-          {[...drawn].sort((a, b) => b.end - a.end).map((t) => (
+          {[...drawnV].sort((a, b) => b.end - a.end).map((t) => (
             <option key={t.name} value={t.name}>
               {`${t.city ?? ""} ${t.team ?? t.name}`.trim()}
             </option>
@@ -229,13 +246,13 @@ export default function WeeklyEloChart({
           </span>
         ))}
         <span className="text-[var(--text-dim)]">
-          {drawn.length} of {rated.length} shown &middot; hover any point for that week &middot;{" "}
+          {drawnV.length} of {rated.length} shown &middot; hover any point for that week &middot;{" "}
           {pinned ? "click the line again to release it" : "click a line to lock it"}
         </span>
       </figcaption>
 
       <svg viewBox={`0 0 ${W} ${H}`} className={`w-full h-auto ${uid}${pinned ? " haspin" : ""}`} role="img"
-        aria-label={`Elo rating by week for ${drawn.length} teams in the ${season} season. ${ranked.slice(0, leadCount).map((t) => `${t.team ?? t.name} ended on ${t.end}`).join("; ")}.`}>
+        aria-label={`Elo rating by week for ${drawnV.length} teams in the ${season} season. ${ranked.slice(0, leadCount).map((t) => `${t.team ?? t.name} ${through == null ? "ended on" : `stood at`} ${t.end}`).join("; ")}.`}>
         <style>{`
           /* 🔴 THE BASE OPACITY IS A CLASS, NOT AN INLINE STYLE. It was inline,
              and an inline style beats a stylesheet rule, so neither the dim nor
@@ -325,6 +342,11 @@ export default function WeeklyEloChart({
           </g>
         ))}
 
+        {through != null && through > x0 ? (
+          <line x1={px(through)} x2={px(through)} y1={M.top} y2={H - M.bottom}
+            stroke="var(--accent)" strokeWidth={1} strokeOpacity={0.6} strokeDasharray="2 3" />
+        ) : null}
+
         {xTicks.map((w) => (
           <text key={w} x={px(w)} y={H - 10} textAnchor="middle" fontSize={10} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
             {w === 0 ? "seed" : `wk ${w}`}
@@ -332,7 +354,7 @@ export default function WeeklyEloChart({
         ))}
 
         {/* Trailing teams first so the emphasised few paint on top. */}
-        {[...drawn].sort((a, b) => (lead.has(a.name) ? 1 : 0) - (lead.has(b.name) ? 1 : 0)).map((t) => {
+        {[...drawnV].sort((a, b) => (lead.has(a.name) ? 1 : 0) - (lead.has(b.name) ? 1 : 0)).map((t) => {
           const color = colorByName[t.name] || "var(--border)";
           const isLead = lead.has(t.name);
           const solid: string[] = [];

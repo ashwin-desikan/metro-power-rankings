@@ -143,6 +143,7 @@ reader can actually see.
     runners/predictions.sh                   port of predictions-refresh.yml (both slots)
     runners/mlb-sim.sh                       port of mlb-sim-refresh.yml
     runners/economy-rates.sh                 policy-rate refresh, id "economy-rates" (NEW, see below)
+    runners/economy-housing.sh               FHFA house-price refresh, id "economy-housing", Saturdays 07:30 (2026-09-09)
     com.citizenofnowhere.dispatcher.plist    StartInterval 600
 
 Each runner is a **literal** port of its workflow: same step order, same

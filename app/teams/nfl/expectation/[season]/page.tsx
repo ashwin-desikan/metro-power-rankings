@@ -13,6 +13,7 @@ import {
   type GameRow,
 } from "@/lib/nflExpectation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { pfrBoxscoreUrl, PFR_LINK_LABEL } from "@/lib/nflBoxscore";
 
 // One season of the expectation ledger: the game log with what each result was
 // supposed to be, and the season's teams ranked by wins against expectation.
@@ -252,7 +253,8 @@ export default async function NflExpectationSeasonPage({
         <h2 className="text-2xl font-bold mb-1">The game log</h2>
         <p className="text-[var(--text-muted)] text-sm max-w-3xl mb-4">
           Chance is the home side&apos;s pre-game win probability. The five results that beat the
-          longest odds of {season} are marked.
+          longest odds of {season} are marked. A score opens the box score on Pro-Football-Reference;
+          neutral-site games and clubs no longer in the league carry none.
         </p>
         <TableScroll className="rounded-xl border max-h-[36rem]" style={card}>
           <table className="w-full text-xs">
@@ -299,7 +301,20 @@ export default async function NflExpectationSeasonPage({
                       {g.model ? pct(g.model.pH) : ""}
                     </td>
                     <td className="py-1.5 px-3 text-right tabular-nums whitespace-nowrap" style={mono}>
-                      {scoreAwayFirst(g) ?? (g.result ? g.result : "")}
+                      {(() => {
+                        const shown = scoreAwayFirst(g) ?? (g.result ? g.result : "");
+                        const box = g.result ? pfrBoxscoreUrl(g) : null;
+                        /* The score IS the link: a box score is what a score
+                           opens onto, and it keeps the row free of a fifth
+                           column. Neutral-site games and defunct clubs get a
+                           plain score; see lib/nflBoxscore.ts. */
+                        return box ? (
+                          <a href={box} target="_blank" rel="noopener noreferrer" title={PFR_LINK_LABEL}
+                            className="underline decoration-dotted underline-offset-2 hover:text-[var(--accent)]">
+                            {shown}
+                          </a>
+                        ) : shown;
+                      })()}
                     </td>
                     <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">
                       {g.playoff ? (g.round ?? "playoff") : typeof g.week === "number" ? `wk ${g.week}` : g.week ?? ""}

@@ -19,10 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-09",
-    headline: "College football says when it is waiting on the poll",
+    headline: "Scrub any NFL season, and a Housing tab",
     items: [
+      "Every NFL season page gains a week scrubber, showing the ratings chart and the standings as they stood after any week, and every score in the NFL game logs opens its box score on Pro-Football-Reference.",
+      "A Housing tab joins the Economy hub: FHFA house prices for 410 US metro areas since 1991, in real terms by default, ranked over one to twenty-five years and through the 2007 crash, with a panel on 285 metro pages.",
       "The college football board only opens picks for games involving AP Top 25 teams, so when the poll is late it opens none. It now says that on the page instead of leaving last week's games sitting there unexplained.",
-      "The weekly college football refresh moved from Friday to Wednesday, so a slate held up by a late poll reaches the site three days sooner.",
       "Every college football pick is frozen days before kickoff while the betting market keeps moving. The board now records the market's final price too, so from next week it can say how often the early call still beat it.",
     ],
   },

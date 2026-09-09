@@ -4,7 +4,8 @@ import { useState } from "react";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { TableScroll } from "@/app/_shared/TableScroll";
-import type { NflHonour } from "@/lib/nflElo";
+import type { NflHonour, NflEloWeek } from "@/lib/nflElo";
+import { useThroughWeek, WeekScrubberControl } from "./WeekScrubber";
 
 // One season's standings, grouped the way a reader wants to read them.
 //
@@ -45,6 +46,10 @@ export type StandingsTeam = {
   slug: string | null;
   logo: string | null;
   mono: { bg: string; fg: string; mono: string } | null;
+  /** The team's weekly series, so the scrubber can read the standings as
+   *  they stood after week N: the last week at or before N that carries a
+   *  record. Optional; a table without it always shows the final standings. */
+  weeks?: NflEloWeek[];
 };
 
 const MONO: CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
@@ -110,14 +115,38 @@ function Crest({ t, size = 20 }: { t: StandingsTeam; size?: number }) {
 type View = "division" | "conference" | "rating";
 
 export default function SeasonStandings({
-  teams,
-  showHonours,
-  showSeeds,
+  teams: finalTeams,
+  showHonours: finalHonours,
+  showSeeds: finalSeeds,
 }: {
   teams: StandingsTeam[];
   showHonours: boolean;
   showSeeds: boolean;
 }) {
+  // 🔴 THE SCRUBBER REWRITES THE ROWS, NOT THE TABLE. After week N a team's
+  // record, points and rating are the last stored week at or before N that
+  // carries a record (the workbook stops writing W/L/T once a team's regular
+  // season ends, so a January week inherits the final record). Honours and
+  // seeds are season-end facts and are not shown mid-season: a strip that
+  // says "won the championship" next to a 3-2 record is a lie about time.
+  const through = useThroughWeek();
+  const teams: StandingsTeam[] = through == null
+    ? finalTeams
+    : finalTeams.map((t) => {
+        const ws = (t.weeks ?? []).filter((w) => w.w <= through);
+        const last = ws.length ? ws[ws.length - 1] : null;
+        const withRec = [...ws].reverse().find((w) => w.rec);
+        return {
+          ...t,
+          end: last ? last.e : t.end,
+          rec: withRec ? withRec.rec : undefined,
+          pts: withRec ? withRec.pts : undefined,
+          seed: undefined,
+          flags: undefined,
+        };
+      });
+  const showHonours = through == null && finalHonours;
+  const showSeeds = through == null && finalSeeds;
   const hasDiv = teams.some((t) => t.div && t.div !== t.conf);
   const hasConf = teams.some((t) => t.conf);
   const [view, setView] = useState<View>(hasDiv ? "division" : hasConf ? "conference" : "rating");
@@ -200,7 +229,15 @@ export default function SeasonStandings({
             {o.label}
           </button>
         ))}
+        <WeekScrubberControl className="sm:ml-auto" />
       </div>
+      {through != null ? (
+        <p className="text-xs mb-3" style={{ color: "var(--text-muted)" }}>
+          {through === 0
+            ? "Before a game was played: the preseason ratings, ordered by rating, with no record to show."
+            : `As the table stood after week ${through}: record, points and rating from that week, the tiebreakers still not authoritative, honours and seeds withheld until the season is complete.`}
+        </p>
+      ) : null}
 
       {/* 🔴 IT HAS TO FIT. Eight division tables in two columns is 546px of
           usable width each, and the first build spent 641px on eight columns

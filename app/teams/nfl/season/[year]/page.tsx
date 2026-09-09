@@ -16,6 +16,7 @@ import WhatIsLeft from "../_shared/WhatIsLeft";
 import TeamCell, { type TeamIdent } from "../_shared/TeamCell";
 import { seasonHasHonours } from "../_shared/HonoursStrip";
 import SeasonStandings, { type StandingsTeam } from "../_shared/SeasonStandings";
+import { WeekScrubberProvider, WeekScrubberControl } from "../_shared/WeekScrubber";
 import ExpectationPreview from "../_shared/ExpectationPreview";
 import SeasonJumper from "../_shared/SeasonJumper";
 import {
@@ -126,7 +127,17 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
     league: t.league, conf: t.conf, div: t.div,
     end: t.end, rec: t.rec, pts: t.pts, seed: t.seed, flags: t.flags,
     slug: ident[t.name].slug, logo: ident[t.name].logo, mono: ident[t.name].mono,
+    weeks: t.weeks,
   }));
+  // The scrubber's range: from the seed (week 0) to the last week any team
+  // has a rating for. A seeded season has nothing to scrub, so no provider,
+  // and every consumer then renders the whole season as before.
+  const weekNums = data.teams.flatMap((t) => t.weeks.map((w) => w.w));
+  const scrubMin = weekNums.length ? Math.min(...weekNums) : 0;
+  const scrubMax = weekNums.length ? Math.max(...weekNums) : 0;
+  const regEnd = Object.values(data.reg_end_week ?? {});
+  const regEndWeek = regEnd.length ? Math.max(...regEnd) : null;
+  const scrub = !seeded && scrubMax > scrubMin;
   const showSeeds = data.teams.some((t) => t.seed != null);
   const movers = [...data.teams]
     .map((t) => ({ t, delta: t.end - t.start }))
@@ -153,7 +164,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
     `built ${data.meta.generated_at.slice(0, 10)}`,
   ].join(" · ");
 
-  return (
+  const body = (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>{" / "}
@@ -216,6 +227,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
           </div>
         ) : (
           <div className="rounded-xl border p-4 sm:p-5 min-w-0" style={CARD}>
+            <WeekScrubberControl className="mb-3" />
             <WeeklyEloChart teams={data.teams} season={season} colorByName={colorByName} regEndWeek={data.reg_end_week} />
           </div>
         )}
@@ -497,4 +509,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
       </section>
     </main>
   );
+  return scrub
+    ? <WeekScrubberProvider minWeek={scrubMin} maxWeek={scrubMax} regEndWeek={regEndWeek}>{body}</WeekScrubberProvider>
+    : body;
 }

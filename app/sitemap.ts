@@ -9,6 +9,7 @@ import { getStateSlugsWithMetros } from "@/lib/states";
 import { MARKET_PAGE_SLUGS } from "@/lib/marketPages";
 import { CURRENCY_PAGE_CODES } from "@/lib/currencyPages";
 import { getRatesIndex } from "@/lib/economyRates";
+import { getHousingIndex } from "@/lib/economyHousing";
 import { getAllFranchiseSlugs as getNflSlugs } from "@/lib/nfl";
 import { getAllFranchiseSlugs as getNbaSlugs } from "@/lib/nba";
 import { getAllFranchiseSlugs as getMlbSlugs } from "@/lib/mlb";
@@ -365,6 +366,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: stamp,
       changeFrequency: "daily" as const,
       priority: 0.55,
+    })),
+    {
+      url: `${BASE_URL}/business/economy/housing`,
+      lastModified: stamp,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    ...((await getHousingIndex())?.msas ?? []).map((m) => ({
+      url: `${BASE_URL}/business/economy/housing/${m.cbsa}`,
+      lastModified: stamp,
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
     })),
   ];
 

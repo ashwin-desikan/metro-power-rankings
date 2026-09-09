@@ -108,6 +108,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/footballSeasonExpectation",
   "@/lib/moves",
   "@/lib/economyRates",
+  "@/lib/economyHousing",
 ];
 
 const SCAN_DIRS = ["app", "components"];
