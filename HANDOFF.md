@@ -12025,6 +12025,34 @@ OK; 2024/1990/1968/1995 and the hub rendered at 1280 and 390, 0 console errors; 
 
 **Both committed; pushed to main at Ashwin's word (see K).**
 
+### K. Night: the seeds go back to 1920; pushed and live
+Ashwin's ask after seeing the 1978+ strip: everything to 1920. Pool = conference from 1970, league
+before; per pool the standings leader (1920-32), every division winner (1933-69; AFL 1969 top two
+per division; AAFC 1949 top four of one group), three winners plus a wild card (1970-77), then the
+wild-card era. Ties excluded from the percentage before 1972 (matters in 1921 and 1932). Two more
+switches from the record: division ties before 1978 go from conference record to net points in ALL
+games (1977 MIN over CHI), and division winners were seeded by record then net points (1975 MIN
+over LA). `--verify` 106 of 106: seeds from 1975, playoff appearances before; the listed exceptions
+are the ten played-off division ties, the sixties Playoff Bowl entrants, and 1921 (Buffalo and
+Chicago at .900, the league ruled for Chicago). 1925 shows Pottsville on top in weeks 2 and 12.
+Page: label follows the era ("seed", "playoff place", "league leader"; "The race for the title,
+week by week" for the 1920s); defunct clubs labelled by city (POT, CAN). 106 files, 820 KB.
+
+Committed `5f6744742` (rebased to `e41598f8b`) over `1bb12c555` (rebased to `8ccbb45ae`), pushed
+`53ec4e7cc..e41598f8b` at Ashwin's word. ONE production build, `dpl_AosXcpmJZdupXP5RhLMvgVtcAkig`,
+READY in 6 min 25 s, aliased. Live checks: 1925, 1999 and 2024 season pages carry the picture
+section with the era wording and the loss titles ("had been given 62% to win"); the hub and the
+season pages lay out AFC left, NFC right, East to West; seeds/1925.json served from GitHub raw.
+Gates before push: tsc 0, vitest 180, pytest 112, `next build --webpack` rc 0 (5,681 pages),
+function-size OK (largest 80 MB; NOTE a Turbopack build reports 9 GB per route to that check, so
+run the gate off `--webpack` only), all check:* OK.
+
+Open from tonight: clinch and elimination flags (x, y, z) are not in the seeds; the restart year
+1991 is the earliest consistent value, not sourced; Friday's nfl-live-refresh run is the first real
+`seeds/2026.json` (watch that the `git add -A` staging commits the new file); the cap token.
+
+**Pushed and live at `e41598f8b`. Tree clean apart from this entry.**
+
 ---
 
 ## 2026-09-10 — mini → next session: THE OAUTH EXPIRY TOOK OUT BOTH CLAUDE JOBS, AND TWO SILENT DATA FAULTS BEHIND EXIT 0
