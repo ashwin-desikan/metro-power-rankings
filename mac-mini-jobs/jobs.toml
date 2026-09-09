@@ -122,10 +122,20 @@ catchup_hours = 20
 timeout_minutes = 30
 
 [[job]]
-id = "cfb-fri"                 # commissioned via HANDOFF 2026-08-19 -- own slot, not folded into predictions-fri's body (would run CFB uselessly on Tue too)
-label = "CFB predictions (freeze late odds, grade midweek)"
-time = "11:40"                 # same moment as predictions-fri, kept as a separate job
-weekdays = [5]
+id = "cfb-wed"                 # commissioned via HANDOFF 2026-08-19 as cfb-fri; moved Fri -> Wed on 2026-09-09
+label = "CFB predictions (catch a late AP poll, publish the slate, grade midweek)"
+time = "11:40"                 # unchanged; the day moved, not the hour
+weekdays = [3]                 # was [5]. The Sunday slot assumes the AP poll lands ~18:00Z
+                               # Sun; in week 2 it did not -- ESPN carried the Week 2 poll
+                               # dated 2026-09-08, AFTER cfb-sun ran at 09-06 23:40Z. The
+                               # builder refuses to extend the slate on a poll older than
+                               # POLL_MAX_AGE_DAYS (9), so the site sat on last weekend's
+                               # games until Friday with nothing saying why. Wednesday
+                               # catches a Mon/Tue poll and publishes the slate three days
+                               # sooner. Cost, accepted deliberately: ledger entries freeze
+                               # their market price on first sight, so the market and blend
+                               # tiers now snapshot ESPN's line ~2 days further from
+                               # kickoff than the Friday slot did.
 command = "runners/cfb.sh"
 catchup_hours = 20
 timeout_minutes = 30

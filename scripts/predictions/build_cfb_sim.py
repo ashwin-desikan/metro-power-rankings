@@ -1417,6 +1417,18 @@ def build(sims, today=None):
     ap_set = {t: rk for t, rk in ap_ranks_by_id.items() if rk and rk <= 25}
     poll_fresh = bool(poll_date) and (today - date.fromisoformat(poll_date)).days <= POLL_MAX_AGE_DAYS
     upcoming = upcoming_ap_games(events, today, WINDOW_DAYS, ap_set) if ap_set else []
+    if not poll_fresh:
+        # 2026-09-09: the Week 2 poll landed 09-08, AFTER cfb-sun ran on 09-06,
+        # so the 09-07 build graded week 1 and opened nothing. Correct per the
+        # product promise ("the slate comes out after the AP poll"), but it
+        # looked identical to a healthy run from the outside and the site sat
+        # on last weekend's games. Say it plainly, in the log and on the page.
+        age = (today - date.fromisoformat(poll_date)).days if poll_date else None
+        print("  POLL STALE: %s poll dated %s is %s days old (limit %d) -- grading only, "
+              "NO new games added to the slate"
+              % (poll_label or "?", poll_date or "?", age, POLL_MAX_AGE_DAYS))
+    elif not upcoming:
+        print("  poll is fresh but no AP-25 games fall in the next %d days" % WINDOW_DAYS)
     window_gids = {u[0] for u in upcoming}
 
     lite_run = simulate(state, ratings_list_lite, TIER_SIMS, seed=SEASON,
@@ -1581,7 +1593,8 @@ def build(sims, today=None):
                  "match_blend_weight": MATCH_BLEND_W, "horizon_days": WINDOW_DAYS,
                  "scope": "games involving AP Top 25 teams only",
                  "tiers": ["lite", "classic", "market", "blend"],
-                 "poll": {"label": poll_label, "date": poll_date, "fresh": poll_fresh},
+                 "poll": {"label": poll_label, "date": poll_date, "fresh": poll_fresh,
+                          "max_age_days": POLL_MAX_AGE_DAYS},
                  "odds_source": "ESPN posted lines (moneyline, else spread)",
                  "results_source": "ESPN final scores"},
         "record": ledger_record(ledger),
