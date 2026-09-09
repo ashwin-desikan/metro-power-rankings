@@ -143,7 +143,10 @@ export type CfbPredictionsFile = {
     match_blend_weight: number;
     horizon_days: number;
     scope: string;
-    poll: { label: string | null; date: string | null; fresh: boolean };
+    /** `fresh` is false when the AP poll is older than `max_age_days`, in which
+     *  case build_cfb_sim.py grades the existing ledger and opens NO new games.
+     *  The page has to say so: a stalled slate looks exactly like a stale site. */
+    poll: { label: string | null; date: string | null; fresh: boolean; max_age_days?: number };
     odds_source: string;
     results_source: string;
     // points-v3, optional

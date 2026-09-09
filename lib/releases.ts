@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-09",
+    headline: "College football says when it is waiting on the poll",
+    items: [
+      "The college football board only opens picks for games involving AP Top 25 teams, so when the poll is late it opens none. It now says that on the page instead of leaving last week's games sitting there unexplained.",
+      "The weekly college football refresh moved from Friday to Wednesday, so a slate held up by a late poll reaches the site three days sooner.",
+    ],
+  },
+  {
     date: "2026-09-08",
     headline: "Policy rates to 1694, eighteen election hubs, NRL finals",
     items: [

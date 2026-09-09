@@ -239,6 +239,14 @@ export default async function CfbPredictionsPage() {
   // shown next to the number.
   const anyMeta = upcoming.some((e) => e.meta_market);
   const pollLabel = preds?.meta.poll.label ?? meta?.poll.label ?? null;
+  // A stalled slate and a neglected site look identical from outside. When the
+  // AP poll is past its freshness window the builder grades what is there and
+  // opens nothing new (build_cfb_sim.py, grade_and_extend), which is correct --
+  // the slate follows the poll -- but on 2026-09-09 it left last weekend's
+  // games sitting on the page for three days with nothing explaining why.
+  const pollFresh = preds?.meta.poll.fresh ?? true;
+  const pollDate = preds?.meta.poll.date ?? meta?.poll.date ?? null;
+  const pollMaxAge = preds?.meta.poll.max_age_days ?? 9;
   const conferences = (meta?.conferences ?? []).slice().sort(confSort);
   if (rows.some((r) => r.conference === "Independents") && !conferences.includes("Independents"))
     conferences.push("Independents");
@@ -509,6 +517,22 @@ export default async function CfbPredictionsPage() {
               ))}
             </div>
           </Disclosure>
+
+          {!pollFresh && (
+            <div className="mb-6 rounded-xl border p-4 sm:p-5" style={CARD}>
+              <p className="text-sm text-[var(--text)]">
+                <strong>No new games were opened in this build.</strong>{" "}
+                The slate covers AP Top 25 teams, so it follows the poll: this run read the{" "}
+                {pollLabel ?? "current"} poll{pollDate ? ` dated ${pollDate}` : ""}, which is past the{" "}
+                {pollMaxAge}-day freshness window, so the model graded the games already listed and
+                added none.
+              </p>
+              <p className="mt-2 text-sm text-[var(--text-muted)]">
+                Anything below is the previous slate until a newer poll lands. This is the model
+                declining to pick off a stale Top 25, not a failed refresh.
+              </p>
+            </div>
+          )}
 
           {/* Next games - AP Top 25 only */}
           {upcoming.length > 0 && (
