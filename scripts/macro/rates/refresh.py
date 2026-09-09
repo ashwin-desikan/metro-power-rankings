@@ -129,8 +129,48 @@ class MissingBase(SourceUnreachable):
     untouched and the run reports it, exactly like an unreachable source."""
 
 
+# Bases that can be SEEDED from the committed read model when absent. The
+# published <code>.json holds every own-era change point, and the builders
+# derive changes from a level series (a repeat is dropped, a change is kept),
+# so "published change points + the incremental daily fetch" rebuilds the
+# same file as "the full daily download + the incremental fetch". This is
+# the same identity build_boj & co. rely on (common.own_rows_from_published),
+# proved byte for byte on the Windows box 2026-09-09. Only the two bases
+# whose builders read them as a plain level series are seeded this way; the
+# rest still refuse, because a FRED/ECB/SWEA/datahub refetch is already the
+# whole series and needs no seed.
+SEEDABLE_BASES = {
+    "boc_bankrate.csv": ("boc", "2009-04-21", "csv2", ("date", "V39079")),
+    "norges_kpra_daily.json": ("norges", "1991-01-01", "json", None),
+}
+
+
+def _seed_base_from_published(path):
+    name = os.path.basename(path)
+    if name not in SEEDABLE_BASES:
+        return False
+    code, start, kind, cols = SEEDABLE_BASES[name]
+    try:
+        rows = c.own_rows_from_published(code, start=start)
+    except FileNotFoundError:
+        return False
+    if not rows:
+        return False
+    if kind == "csv2":
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            f.write('"{}","{}"\n'.format(cols[0], cols[1]))
+            for r in rows:
+                f.write('"{}","{}"\n'.format(r["date"], repr(float(r["level"]))))
+    else:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump([{"date": r["date"], "level": r["level"]} for r in rows], f)
+    print("  {}: base seeded from the published read model ({} change points from {})".format(
+        name, len(rows), rows[0]["date"]))
+    return True
+
+
 def _require_base(path):
-    if not os.path.exists(path):
+    if not os.path.exists(path) and not _seed_base_from_published(path):
         raise MissingBase(
             "base input missing: {} (run the full builder download on this "
             "machine first; refusing to seed it from an incremental fetch)".format(path))
@@ -855,6 +895,14 @@ def self_test():
         raise AssertionError("json merge onto a missing base must refuse")
     except MissingBase:
         pass
+    # a seedable base is rebuilt from the published read model, never thin
+    seeded = os.path.join(tmp_scratch, "boc_bankrate.csv")
+    dates = _merge_csv_two_col(seeded, [{"date": "2099-01-01", "level": 9.0}], "date", "V39079", quote_all=True)
+    assert dates[0] == "2009-04-21" and dates[-1] == "2099-01-01" and len(dates) > 30, (dates[:2], len(dates))
+    seeded_n = os.path.join(tmp_scratch, "norges_kpra_daily.json")
+    merged = _merge_json_list(seeded_n, [{"date": "2099-01-01", "level": 9.0}], value_key="level")
+    assert merged[0]["date"] == "1991-01-01" and merged[-1]["date"] == "2099-01-01" and len(merged) > 100, len(merged)
+
     with open(os.path.join(tmp_scratch, "base.csv"), "w", newline="") as f:
         f.write("date,V\n2025-01-01,1.0\n")
     dates = _merge_csv_two_col(os.path.join(tmp_scratch, "base.csv"), [{"date": "2026-01-01", "level": 2.0}], "date", "V")

@@ -22,9 +22,7 @@ SPLICE_DATE = "2000-01-01"
 
 
 def load_snb_discount():
-    path = os.path.join(c.SCRATCH, "snb_discount_daily.json")
-    with open(path, encoding="utf-8") as f:
-        rows = json.load(f)
+    rows = c.scratch_or_published("snb_discount_daily.json", CODE, end=SPLICE_DATE)
     rows.sort(key=lambda r: r["date"])
     return rows
 
@@ -105,8 +103,11 @@ def self_test():
     own_rows = load_snb_discount()
     assert own_rows[0]["date"] == "1907-06-20"
     assert own_rows[0]["level"] == 4.5
-    assert own_rows[-1]["date"] == "1999-12-30"
-    assert len(own_rows) > 20000, "expected the full daily series, found {}".format(len(own_rows))
+    if os.path.exists(os.path.join(c.SCRATCH, "snb_discount_daily.json")):
+        assert own_rows[-1]["date"] == "1999-12-30"
+        assert len(own_rows) > 20000, "expected the full daily series, found {}".format(len(own_rows))
+    else:
+        assert own_rows[-1]["date"] < SPLICE_DATE and len(own_rows) > 50, len(own_rows)
 
     print("build_snb self-test OK")
 

@@ -26,9 +26,7 @@ BAND_END = "1990-08-01"
 
 
 def load_own():
-    path = os.path.join(c.SCRATCH, "rba_a02_parsed.json")
-    with open(path, encoding="utf-8") as f:
-        rows = json.load(f)
+    rows = c.scratch_or_published("rba_a02_parsed.json", CODE, start=SPLICE_DATE)
     rows.sort(key=lambda r: r["date"])
     return rows
 

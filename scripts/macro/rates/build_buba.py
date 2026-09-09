@@ -23,9 +23,9 @@ DISSOLVED = "1998-12-31"
 
 
 def load_buba_parsed():
-    path = os.path.join(c.SCRATCH, "buba_parsed.json")
-    with open(path, encoding="utf-8") as f:
-        rows = json.load(f)
+    rows = c.scratch_or_published(
+        "buba_parsed.json", CODE,
+        transform=lambda r: {"date": r["date"], "discount": r["level"], "lombard": r.get("secondary")})
     rows.sort(key=lambda r: r["date"])
     return rows
 
@@ -162,8 +162,11 @@ def self_test():
     assert parsed[0]["date"] == "1948-07-01"
     assert parsed[0]["discount"] == 5.0
     assert parsed[0]["lombard"] == 6.0
-    assert parsed[-1]["date"] == "1996-04-19"
-    assert len(parsed) > 100, "expected the full 1948-1996 table, found {}".format(len(parsed))
+    if os.path.exists(os.path.join(c.SCRATCH, "buba_parsed.json")):
+        assert parsed[-1]["date"] == "1996-04-19"
+        assert len(parsed) > 100, "expected the full 1948-1996 table, found {}".format(len(parsed))
+    else:
+        assert parsed[-1]["date"] <= "1996-04-19" and len(parsed) > 50, len(parsed)
 
     print("build_buba self-test OK")
 

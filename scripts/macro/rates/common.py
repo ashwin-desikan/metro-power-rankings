@@ -328,6 +328,60 @@ def derive_changes_from_daily(rows, instrument=None):
     return changes
 
 
+def own_rows_from_published(code, start=None, end=None, fields=("lower", "upper", "secondary")):
+    """The builder's own-spine input, reconstructed from the committed read
+    model when the parsed scratch file is not on this machine.
+
+    2026-09-09: six builders (boj, snb, rba, rbnz, norges, buba) read hand-
+    parsed JSONs under _scratch/macro that were produced once, in a container
+    that no longer exists, by parsers that never landed in the repo. The
+    published public/data/.../<code>.json already holds every change point
+    of those own eras, and derive_changes_from_daily() is the identity on a
+    change-point series (it drops only a level that repeats), so feeding the
+    published rows back through the builder reproduces the file byte for
+    byte. That identity is the proof: a builder using this fallback must
+    rebuild its file identical to HEAD when nothing upstream has moved.
+
+    Returns [{'date','level'[, 'lower','upper','secondary']}] for the
+    published change rows (break rows excluded) with start <= date < end.
+    Raises FileNotFoundError when there is no published file either.
+    """
+    path = os.path.join(OUT_DIR, "{}.json".format(code))
+    with open(path, encoding="utf-8") as f:
+        published = json.load(f)
+    rows = []
+    for r in published.get("changes", []):
+        if r.get("break"):
+            continue
+        d = r["date"]
+        if start is not None and d < start:
+            continue
+        if end is not None and d >= end:
+            continue
+        row = {"date": d, "level": r["level"]}
+        for k in fields:
+            if r.get(k) is not None:
+                row[k] = r[k]
+        rows.append(row)
+    return rows
+
+
+def scratch_or_published(scratch_name, code, start=None, end=None, transform=None):
+    """Load _scratch/macro/<scratch_name> if it exists, else the published
+    read model for `code` windowed to [start, end). Prints which one it used
+    so a build log always says where the base came from."""
+    path = os.path.join(SCRATCH, scratch_name)
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    rows = own_rows_from_published(code, start, end)
+    if transform:
+        rows = [transform(r) for r in rows]
+    print("  {}: base = published read model ({} absent), {} rows {}..{}".format(
+        code, scratch_name, len(rows), rows[0]["date"] if rows else "-", rows[-1]["date"] if rows else "-"))
+    return rows
+
+
 def instrument_break_row(date_str, note, instrument=None):
     """A row marking an instrument change: 'break': true, never a silent
     restart. The next real change row after this still carries change=null."""

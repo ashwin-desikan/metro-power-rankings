@@ -11835,9 +11835,30 @@ fields); the first real proof is the first build after the token is set.
 Ashwin: create a read-scoped token at vercel.com/account/tokens and add it
 as `VERCEL_BUILD_CAP_TOKEN` (Production, build-time) in project settings.
 
+### D2. The six builders, closed the same afternoon (option b, proved)
+`common.own_rows_from_published(code, start, end)` and
+`scratch_or_published()`: when a builder's parsed scratch input is absent,
+it reads the same own-era change points back out of the committed
+`<code>.json` (break rows excluded, windowed per input table), prints
+"base = published read model", and builds. `derive_changes_from_daily()` is
+the identity on a change-point series, so the output must match HEAD when
+nothing upstream moved. Proof from the Windows box, where none of the six
+inputs exist: `boj`, `snb`, `rba`, `rbnz`, `norges`, `buba` each rebuilt
+byte-identical to HEAD, then a full `refresh.py --write` rebuilt all 61
+files byte-identical with every builder OK. Self-tests that asserted on
+the raw scratch shape are now conditional on the scratch file existing.
+`refresh.py` gains `SEEDABLE_BASES`: a missing `boc_bankrate.csv` or
+`norges_kpra_daily.json` is seeded from the published change points before
+the incremental merge (self-test covers both; a --write with the full Valet
+file moved aside rebuilt boc.json identical to HEAD). Other bases still
+refuse. `runners/economy-rates.sh` bootstraps the 470 MB BIS flat file
+from https://data.bis.org/static/bulk/WS_CBPOL_csv_flat.zip (4 MB, 200
+verified from the box) on a fresh clone, once. Friday on the mini should
+now rebuild all 61 with nothing refused; the Supabase seed is the one step
+left for the mini's key.
+
 ### F. Open, carried forward
-Everything in the Notion Backlog. New today: the six rate builders' lost
-inputs (D); the cap token (E); the Supabase seed on the mini (D); the NFL
+Everything in the Notion Backlog. New today: the cap token (E); the Supabase seed on the mini (D); the NFL
 dispatch decision (C). Unchanged: Housing tab, NFL scrubber, workbook half,
 elections dumps, Wave 1-4 re-diff, Everton/Lions, moves ledger gaps.
 

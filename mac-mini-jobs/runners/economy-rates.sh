@@ -26,6 +26,24 @@ mini_sync
 guarded "self-test refresh"           "$PY" scripts/macro/rates/refresh.py --self-test
 guarded "self-test load_policy_rates" "$PY" scripts/macro/rates/load_policy_rates.py --self-test
 
+# One-time bootstrap of the BIS bulk file. Every builder streams
+# _scratch/macro/bis/WS_CBPOL_csv_flat.csv (470 MB, untracked) and merges the
+# incremental cache on top; without it all twelve builders fail on the first
+# run of a fresh clone (measured on the Windows box 2026-09-09). The zip is
+# 4 MB at BIS's static bulk URL (verified 200, content-length 4102141, the
+# same bytes as the copy on the Windows box). Downloaded once, never refreshed
+# here: the weekly SDMX fetch is what keeps the levels current.
+BIS_FLAT="_scratch/macro/bis/WS_CBPOL_csv_flat.csv"
+bootstrap_bis_bulk() {
+  [ -s "$BIS_FLAT" ] && return 0
+  mkdir -p _scratch/macro/bis || return 1
+  curl -fsSL -m 300 -o _scratch/macro/bis_cbpol.zip \
+    "https://data.bis.org/static/bulk/WS_CBPOL_csv_flat.zip" || return 1
+  unzip -o -q _scratch/macro/bis_cbpol.zip -d _scratch/macro/bis || return 1
+  [ -s "$BIS_FLAT" ]
+}
+guarded "bootstrap BIS bulk CBPOL (first run only)" bootstrap_bis_bulk
+
 # The real run: fetch, merge, rerun every builder + build_index.py, write.
 # Captured to a temp file so the runner can grep it for a "NEW RATE
 # DECISIONS" block afterward without refresh.py needing to know anything

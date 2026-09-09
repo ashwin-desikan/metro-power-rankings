@@ -30,10 +30,15 @@ BIS_START = "1987-01-01"
 KPRA_START = "1991-01-01"
 
 
+NORGES_WINDOWS = {
+    "norges_discount_monthly.json": (None, BIS_START),
+    "norges_kpra_daily.json": (KPRA_START, None),
+}
+
+
 def load_json(name):
-    path = os.path.join(c.SCRATCH, name)
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+    start, end = NORGES_WINDOWS[name]
+    return c.scratch_or_published(name, CODE, start=start, end=end)
 
 
 def build(write=True):

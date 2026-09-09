@@ -26,9 +26,7 @@ OWN_START = "2009-10-29"
 
 
 def load_own():
-    path = os.path.join(c.SCRATCH, "rbnz_ocr_own.json")
-    with open(path, encoding="utf-8") as f:
-        rows = json.load(f)
+    rows = c.scratch_or_published("rbnz_ocr_own.json", CODE, start=OWN_START)
     rows.sort(key=lambda r: r["date"])
     return rows
 
@@ -104,8 +102,13 @@ def build(write=True):
 
 def self_test():
     own = load_own()
-    assert own[0]["date"] == "2009-10-29"
-    assert own[0]["level"] == 2.5
+    if os.path.exists(os.path.join(c.SCRATCH, "rbnz_ocr_own.json")):
+        assert own[0]["date"] == "2009-10-29"
+        assert own[0]["level"] == 2.5
+    else:
+        # the published read model holds change points only: the 2009-10-29
+        # seed row equals the BIS level before it and so never emitted a change
+        assert own[0]["date"] >= OWN_START, own[0]
     assert own[-1]["date"] > "2026-01-01"
 
     rows = [{"date": "2000-01-01", "level": 5.0}, {"date": "2000-02-01", "level": 5.0}]
