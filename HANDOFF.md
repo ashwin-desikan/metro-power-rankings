@@ -12385,8 +12385,84 @@ anything; the rest speak only to whoever opens the dashboard. Wiring the existin
 where a missed run could go unnoticed for weeks — would buy far more than a higher cap. Not
 done: Ashwin's call.
 
-**Pushed and live at `58ab5e622`** (data + FIBA + standings reconcile), `b5223a5d9` and
-`703456966` (canary), `ffebb034f` and `88e906673` (WNBA), `7f6faa8a4` and this entry (handoff).
+### J. 🔴 OPS-AUTOFIX — THE FIRST JOB ON THIS FLEET THAT ACTS ON PRODUCTION
+Ashwin asked for "an automated system that automatically starts fixing issues sent by ntfy or
+email". Built and live the same day, every two hours on the `:15`. Two files:
+`mac-mini-jobs/detect_issues.py` (read-only reconciler) and `run-ops-autofix.sh` (whitelist
+remedies). 28 jobs now.
+
+**How it relates to the 2026-08-30 ruling.** That ruling — daily-ops-sweep must never re-run
+jobs or write to any table, because *"an unattended daily job acting on its own judgment against
+production is the same risk category, just recurring"* — still stands, and this does not breach
+it, because **ops-autofix exercises no judgement**. Every action is a fixed response to a fixed
+machine-detected condition. The history matters though, so it is recorded: Ashwin first chose
+an AGGRESSIVE design (headless Claude with authority to edit code, commit and push unattended)
+with the counter-argument in front of him. The harness safety classifier refused to write or run
+that script, twice. He then chose the tiered whitelist, which is what exists. Do not "restore"
+the aggressive version on the assumption it was merely unfinished.
+
+**🔴 IT RECONCILES STATE. IT DOES NOT READ NOTIFICATIONS — and that was the point of the whole
+design.** The literal request was to act on ntfy and email. That was rejected on this day's own
+evidence: of six real faults, THREE sent no notification at all, and the two most damaging
+exited **0** (fiba-weekly committed a ranking short five nations; the Champions League table
+froze a day behind). A notification-driven fixer would have caught none of them. Notifications
+are a lossy projection of state; the state is authoritative and catches the silent failures too.
+`detect_issues.py` reconciles five things: a job whose last slot failed, deploy drift, a
+healthchecks tile down, a workflow whose LATEST run failed, and an uncommitted working tree.
+
+**The whitelist, in full.** Anything not here is reported and nothing is done.
+
+| finding | remedy |
+|---|---|
+| `deploy_drift` | cp/symlink repo → live dispatcher dir. Never deletes from live. |
+| `job_failed` | re-run once via `hc-run.sh` as the dispatcher would, then `--mark-ok` if it passed |
+| `action_failed` | `gh run rerun` |
+
+Excluded deliberately: `working_tree_dirty` is a HARD STOP for the whole script (never act
+around a human's uncommitted work); `check_down` usually means launchd or the mini was off,
+which no script fixes and re-running blind would mask; **anything data-shaped, never** — the
+FIBA slug mapping and the WNBA tie (sections C and H) would both have corrupted the board if
+guessed, and both exited 0.
+
+**Handbrakes.** `touch ~/metro-mini-jobs/AUTOFIX-OFF` stops it dead, this run and every future
+one. It never edits code, never commits, never pushes. Three attempts per finding-kind per day.
+Every action is announced on ntfy, always.
+
+**Four bugs caught while building it, three of them mine and all worth recognising by shape:**
+1. The detector reported the WNBA workflow that failed at 12:42Z and was re-run green at 13:57Z.
+   A fixer allowed to change code would have invented a problem and edited production to solve
+   it. Now reports only workflows whose LATEST run failed. Regression-tested.
+2. It pushed "nothing auto-fixable" every run. `newsletter-daily`'s tile is down until the next
+   morning, so at a 2-hourly cadence that is a dozen identical alerts overnight for something
+   needing nothing. **An alert channel that cries wolf on a schedule is worse than none**, because
+   it trains you to swipe it away — and this fleet's alerting only works because Ashwin reads it.
+   Actions are now always announced; unfixable findings at most once a day, fingerprinted.
+3. A dry run spent the real attempt budget, so testing three times would have left the next
+   genuine run standing down on the fault it existed to fix.
+4. 🔴 `NTFY_TOPIC=""` DOES NOT MUZZLE THESE SCRIPTS — third time in one day, after section F
+   documented it. They source `config.env` AFTER the environment is set and overwrite it. Its
+   own first dry run pushed a real alert to Ashwin's phone. Now `AUTOFIX_DRY_RUN=1`, fixed
+   inside the script rather than trusted to the caller. **Any script here that sources its own
+   config needs an internal dry-run flag; there is no external way to silence one.**
+
+⚠️ **Two of the three remedies have NEVER FIRED on a live fault.** `deploy_drift` was exercised
+in dry-run then resolved by hand; `job_failed` and `action_failed` are untested against
+production. Their first real exercise will be on a real fault. The likeliest early candidate is
+`economy-rates` at 07:30Z on 09-11 (its first genuine run ever, section E) — if it fails, the
+08:15Z autofix will re-run it.
+
+🔴 **It cannot fix the fault that has recurred three times since July.** ops-autofix does not use
+Claude, but an expired OAuth session still kills `daily-ops-sweep` and the digest, and nothing
+in the whitelist touches credentials. `claude-auth-canary` (00:30 + 06:30) remains the only
+thing protecting that, and autofix is not a substitute for it.
+
+No `hc_slug`: the healthchecks project is at exactly its 20-check cap (section I), and this job
+announces every action on ntfy, so a tile would add nothing worth deleting another for.
+
+**Pushed and live at `58ab5e622`** (data + FIBA + standings reconcile), `b5223a5d9`,
+`703456966` and `87cc23363` (canary), `ffebb034f` and `88e906673` (WNBA), `ae67af170`
+(healthchecks cap), `85b38ca4e`, `4993d5efb`, `6299174d8` and `0411cf7fe` (ops-autofix),
+`7f6faa8a4` and this entry (handoff).
 
 ## 2026-09-10 — cowork (cloud, bridged to the Windows box) → mini and next session: THE READOUT, THE PLAYED-OFF TITLES, ONE CHAMPIONS LEAGUE TABLE, AND EVERY COUNTRY TO 2100
 
