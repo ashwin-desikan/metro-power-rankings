@@ -12053,10 +12053,19 @@ run). The gaps are elsewhere:
   inside a double-quoted bash string, which would have **command-substituted and actually run
   claude** instead of printing its name; `bash -n` does not catch it. Single-quoted now, and the
   line was dry-fired with a stubbed `push`.
-- 🔴 **OPEN — `~/newsletter-podcast` IS NOT A GIT REPO.** That fix, and `run-daily.sh`,
-  `run-weekly.sh`, `post-socials.sh`, `watchdog.sh` and `retention-spotify.sh` with it, exist
-  ONLY on the mini, with no history and no backup beyond `/tmp/run-daily.sh.bak` (which /tmp will
-  eat). Five scripts that run unattended every day. Worth `git init` + a private remote.
+- **FIXED same session — `~/newsletter-podcast` IS NOW A GIT REPO.** It had none: that fix, and
+  `run-daily.sh`, `run-weekly.sh`, `post-socials.sh`, `watchdog.sh` and `retention-spotify.sh`
+  with it, existed ONLY on the mini, with no history and no backup beyond `/tmp/run-daily.sh.bak`
+  (which /tmp eats). Five scripts running unattended every day. Now
+  **github.com/ashwin-desikan/newsletter-podcast, PRIVATE**, initial commit `c19a7dc`, 20 files,
+  164 KB. Source only: `builds/` (5.1 GB of rendered episode audio), `logs/` (which carry the
+  full text of the newsletters the digest reads, so they go nowhere), `digest-newsfeed/` (daily
+  generated markdown) and the transient `DIGEST-FAILED.txt` are gitignored. Secrets unaffected —
+  they live in `~/.config/newsletter-podcast/env`, outside the tree, and reach the scripts
+  through the environment; the staged diff was scanned and holds no key (the `sk-proj-...` in
+  SETUP.md is a documentation placeholder). Note this remote uses **gh's https credential**, not
+  the per-repo SSH deploy-key aliases (`github-metro`, `github-citizenofnowhere-brand`) the other
+  two repos use.
 - **OPEN, for Ashwin's decision:** a proactive expiry canary (read `expiresAt` from the keychain
   blob, push a low-priority "re-auth within 48h" ntfy) would turn this from an after-the-fact
   failure into scheduled maintenance. And `daily-ops-sweep` has no same-day retry by design
