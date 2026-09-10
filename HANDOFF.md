@@ -12024,3 +12024,109 @@ Gates: tsc 0, vitest 180, client-imports, release-notes, data-reads, mobile, tab
 OK; 2024/1990/1968/1995 and the hub rendered at 1280 and 390, 0 console errors; next build pending.
 
 **Both committed; pushed to main at Ashwin's word (see K).**
+
+---
+
+## 2026-09-10 — mini → next session: THE OAUTH EXPIRY TOOK OUT BOTH CLAUDE JOBS, AND TWO SILENT DATA FAULTS BEHIND EXIT 0
+
+Morning session on the mini, started as "git pull and check the latest commits". Nothing was
+wrong with the repo; three real faults surfaced from the checking. All fixed and pushed at
+`58ab5e622` (`[vercel skip]`; the standings data rode out separately on the job's own
+`cdc0a2163`).
+
+### A. 🔴 THIRD CLAUDE OAUTH EXPIRY ON THE MINI — it takes out BOTH Claude-driven jobs at once
+`daily-ops-sweep` failed at 01:01Z and the `newsletter-podcast` daily digest at 07:00Z, same
+morning, same cause: `Failed to authenticate: OAuth session expired and could not be refreshed`.
+The keychain blob under service `Claude Code-credentials` had **no refresh token**, so nothing
+self-heals — it needs an interactive `claude` login on the mini. Ashwin re-authed; both jobs were
+re-run by hand and both completed clean (digest episode `1IaF1Kz9HkIA1tqYQMyXPa`, `final.mp3`
+37 MB, Gmail drafts created; sweep report written 10:17).
+
+Occurrences, from `~/newsletter-podcast/logs/launchd-daily.out`: **2026-07-30, 2026-08-29,
+2026-09-10** — 30 days then 12. Not a fixed TTL, so it cannot be planned around by calendar.
+Detection is sound in both wrappers (`auth_expired()` refuses the futile retry, 3s not a full
+run). The gaps are elsewhere:
+- **FIXED:** `run-daily.sh` logged and exited **silently** — today's failure was invisible for 90
+  minutes until `watchdog.sh` ran at 08:30Z, and that watchdog exists to check Spotify readiness,
+  not to be the auth alarm. The `push()` helper from `run-weekly.sh` L9-11 is now copied in and
+  fires on both `auth_expired` branches. Note the first draft of that line carried `` `claude` ``
+  inside a double-quoted bash string, which would have **command-substituted and actually run
+  claude** instead of printing its name; `bash -n` does not catch it. Single-quoted now, and the
+  line was dry-fired with a stubbed `push`.
+- 🔴 **OPEN — `~/newsletter-podcast` IS NOT A GIT REPO.** That fix, and `run-daily.sh`,
+  `run-weekly.sh`, `post-socials.sh`, `watchdog.sh` and `retention-spotify.sh` with it, exist
+  ONLY on the mini, with no history and no backup beyond `/tmp/run-daily.sh.bak` (which /tmp will
+  eat). Five scripts that run unattended every day. Worth `git init` + a private remote.
+- **OPEN, for Ashwin's decision:** a proactive expiry canary (read `expiresAt` from the keychain
+  blob, push a low-priority "re-auth within 48h" ntfy) would turn this from an after-the-fact
+  failure into scheduled maintenance. And `daily-ops-sweep` has no same-day retry by design
+  (`dispatcher.py` L316-318: "the alert is the signal, and the next slot is the retry"), so
+  without a human seeing the ntfy there is simply no ops sweep that day — for the one job whose
+  purpose is that Ashwin should not have to notice things himself.
+
+### B. 🔴 THE CHAMPIONS LEAGUE TABLE SAT ON TUESDAY WHILE WEDNESDAY WAS ALREADY IN THE FEED
+Ashwin's report: the CL tables on `/sports/standings` and the tournament hubs had Tuesday's
+matchday-1 results but not Wednesday's. **Not a fetch failure** — `euro-comps.json` and
+`live-competitions-2026.json` both carried all twelve games with scores.
+
+`group_label` is part of the `football_standings` upsert conflict key
+(`league_id,season,group_label,team_id`). api-football **renamed** the CL table
+`"League Phase"` → `"UEFA Champions League"` at the **09-09 11:00Z** run, mid-matchday-1. The
+upsert wrote 36 fresh rows under the new name and left the old 36 behind, frozen at Tuesday
+(12 played vs 24). `export_bundles.py` emits every label it finds, and
+`deriveLeaguePhaseGroups` (lib/euroCompDerive L70) returns published groups **verbatim** when
+any exist — so the page rendered BOTH tables, dead one first.
+
+⚠️ `football_standings.updated_at` is **insert-only** — it is not touched on conflict-update
+(the EPL rows say 2026-07-26 with 60 played). Do not use it as a freshness signal; the played
+counts are the real one.
+
+`refresh.py` now reconciles labels after each standings upsert: rows under any label the API did
+NOT return this run are deleted. Scoped to leagues that actually returned standings, so a failed
+fetch cannot blank a live table; leagues with genuinely several tables keep them all, because the
+API returns them all every run. A label containing a `"` skips the league rather than guess
+PostgREST's escaping — a missed prune is a stale table, a bad filter is data loss. `supa_delete`
+grew an `echo` flag so the prune NAMES what it removed: an unlogged DELETE in a job that runs
+four times a day is how data goes missing with no record of when.
+
+First live run was the scheduled 11:00Z one (same checkout, so it picked the change up):
+**282 rows reconciled across 18 leagues, every one a rename pair** — Süper Lig, I Liga, K-League,
+Ligat Ha'al, Premier Soccer League, Úrvalsdeild, Super League (China), National Division, A PFG,
+1. SNL, Liga MX, Primera A, Serie C and more. Uruguay (268) correctly kept all five of its real
+tables and dropped only the duplicate bare `"Apertura"`. The CL is now one group, 24 played.
+
+### C. 🔴 fiba-weekly EXITED 0 HAVING SILENTLY DROPPED FIVE NATIONS
+Found by the ops sweep. The 09-09 run mapped **114 of 119** and committed it (`b17d55d9c`);
+the run before mapped 119 of 119 on the *same* source date `2026-04-01`. Upstream did not
+change — the mapping broke.
+
+`46df23bb3` ("one row per country", 09-05) folded `zone-zero-cup.json` to the countries.json
+slug. `apply_womens_ranking.py`'s `IOC_SLUG`/`NAME_SLUG`, written the day BEFORE that commit,
+still folded the other way for exactly five: CZE→`czechia`, TPE→`chinese-taipei`,
+CIV→`ivory-coast`, ISV→`united-states-virgin-islands`, VIN→`st-vincent-and-the-grenadines`.
+`resolve()` returns None for a slug outside the universe, so it drops rather than folding. The
+men's side (`build_intl_basketball.py` `_FIBA_TO_COUNTRY`) had it right all along; the women's
+script was the odd one out. Verified against the live universe: those five now carry the
+countries.json spelling in `zone-zero-cup.json`, while **`great-britain` legitimately still
+diverges** from countries.json's `united-kingdom` — so exactly five moved and GBR stayed.
+
+Damage was latent, not live: the ZZC rebuild is manual (no `jobs.toml` entry), so the board still
+carried the merit. The next `zzc_v1_multipillar.py` run would have dropped it for all five —
+Czechia most materially, world rank 17 and 28th on the Cup board.
+
+`MAX_UNMAPPED = 12` structurally could not catch this: five is under twelve, and the failure was
+a **drop against last week**, not an absolute count. Added a shrink assert (`len(ranks) >= before`)
+with an explicit `--allow-shrink` for when FIBA really does lose nations; tested that it fires on
+a simulated 130→119 and that the flag overrides. Now **119 of 119**, five back at ranks 17, 39,
+53, 64, 103. The stale docstring in `slug_universe()` (it named four divergent spellings when only
+`great-britain` survives) was corrected too.
+
+### D. Checked and clear
+20 Vercel deployments on 09-10 by the sweep's count, **all CANCELED — 0 paid production builds**
+against the 2/day cap; every commit carried `[vercel skip]` and the guard skipped each. The
+recurring `feed-monitor` "empty ESPN PGA scoreboard: Biltmore Championship Asheville" note is
+correct and not a fault — that is a new FedExCup Fall event played **Sept 17-20 2026**, so an
+unposted field a week out is right, and `feed_shape_monitor.py` classes `empty` as a soft note
+that never alerts. `gap-league-watch`: Indian Super League still `awaiting_target`, unchanged.
+
+**Pushed and live at `58ab5e622`.**
