@@ -1,7 +1,14 @@
 {
   "_comment": "Cached fallback snapshot for lib/substack.ts. The live RSS feed at https://citizenofnowhere.substack.com/feed is the source of truth at runtime; this file is used when fetch fails (e.g., sandbox egress blocked, Substack 5xx) so the home page can always render. Refresh by running scripts/refresh-substack-feed.ts or by editing manually after publishing a new post.",
-  "fetchedAt": "2026-09-09",
+  "fetchedAt": "2026-09-10",
   "posts": [
+    {
+      "title": "Four seasons, one ledger",
+      "url": "https://citizenofnowhere.substack.com/p/four-seasons-one-ledger",
+      "pubDate": "2026-09-09",
+      "description": "The NFL starts tonight.",
+      "slug": "four-seasons-one-ledger"
+    },
     {
       "title": "The Nowhere 100",
       "url": "https://citizenofnowhere.substack.com/p/the-nowhere-100",
@@ -134,13 +141,6 @@
       "pubDate": "2025-08-14",
       "description": "In this episode of Ashwin and Sopan's Sports Roundup, the hosts celebrate their team's recent victory as world champions and discuss the upcoming Premier League season.",
       "slug": "sports-roundup-14-august-2025-ceb"
-    },
-    {
-      "title": "Sports Roundup - 28 July 2025",
-      "url": "https://citizenofnowhere.substack.com/p/sports-roundup-28-july-2025-04e",
-      "pubDate": "2025-07-30",
-      "description": "In this episode of the Sports Roundup, Ashwin and Sophon discuss a variety of sports topics, including the recent successes of the England women's football team, the latest in MLB, cricket updates, rugby highlights, and",
-      "slug": "sports-roundup-28-july-2025-04e"
     }
   ]
 }
