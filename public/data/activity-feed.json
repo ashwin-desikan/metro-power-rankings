@@ -1,13 +1,55 @@
 {
-  "generatedAt": "2026-09-09",
+  "generatedAt": "2026-09-10",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-10",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "801656477"
+    },
     {
       "date": "2026-09-09",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "5dfb3a494"
+      "text": "Data refreshed — Football, Basketball, Elections, Sound of the Metros, and 3 more.",
+      "commit": "35ac9e240"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "The playoff picture week by week, every NFL season since 1920.",
+      "commit": "e41598f8b"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NFL season towers: the playoffs above the seam, and each team's abbreviation of that season.",
+      "commit": "8ccbb45ae"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "hub",
+      "hub": "Api",
+      "text": "NFL week scrubber and box-score links; the Housing tab of the Economy hub.",
+      "commit": "dc83fbd5c"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Record the closing line, so the board can ask whether the early call held.",
+      "commit": "57790ccd0"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Tell the reader when the board is waiting on the AP poll.",
+      "commit": "180be3659"
     },
     {
       "date": "2026-09-08",
@@ -4159,48 +4201,6 @@
       "hub": "Sports",
       "text": "/sports: national-teams.tsv as definitive Federation source, FIFA + Active sub-filters, silver Major League.",
       "commit": "c4966e613"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "/sports polish: tier definitions disclosure, Special Filter scoping, F1/NASCAR promotion, sport colors.",
-      "commit": "4ca36fbf5"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "/updates: 2026-05-16 entry rewritten to consolidate today's /sports overhaul — Gold Standard rename (replacing Crown Jewels), Special Filte…",
-      "commit": "6263606b1"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "/sports: Crown Jewels renamed to Gold Standard across the project.",
-      "commit": "6a9af6081"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "/updates: 2026-05-16 entry consolidated to cover today's full /sports work (preset row, additive Power Conferences, International Teams + F…",
-      "commit": "96344d665"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "/sports: International Teams + Federation filter, sport-scoped Crown Jewels, Level filter, richer tooltip.",
-      "commit": "ef03f67e8"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "fix",
-      "hub": null,
-      "text": "NFT over-tracing fix on substack.ts + badges.ts.",
-      "commit": "002f142de"
     }
   ]
 }
