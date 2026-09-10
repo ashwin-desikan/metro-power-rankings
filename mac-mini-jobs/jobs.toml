@@ -553,3 +553,30 @@ command = "run-daily-ops-sweep.sh"
 hc_slug = "daily-ops-sweep"
 catchup_hours = 20
 timeout_minutes = 25         # was 15 -- the real first run got killed at 15m mid-investigation
+
+# --- claude-auth-canary: NEW 2026-09-10. Read-only, no writes. -------------
+# An expired Claude session takes out BOTH Claude-driven jobs at once: on
+# 2026-09-10 it failed daily-ops-sweep at 01:00Z and the newsletter digest at
+# 07:00Z, and each recovered only because Ashwin re-authed by hand. Third
+# occurrence (2026-07-30, 2026-08-29, 2026-09-10). Both wrappers detect the
+# condition and now push on it, but the first signal was always a job that
+# had ALREADY failed. This reads the stored credential and warns while there
+# is still time to act.
+#
+# 06:30, i.e. 30 minutes ahead of the 07:00Z newsletter digest, so a warning
+# lands before the day's first Claude-driven job rather than after it. Slot
+# is otherwise free (business-daily 05:50, substack-daily 06:00, mlb-sim
+# 07:00). Read-only: keychain in, one ntfy out, no repo and no table.
+#
+# It watches refreshTokenExpiresAt (~28 days), NOT expiresAt (~5 hours, and
+# silently refreshed all day) -- see the script header. catchup_hours is
+# short because a warning that arrives most of a day late has spent the
+# margin it exists to buy; the next daily slot is the retry.
+[[job]]
+id = "claude-auth-canary"
+label = "Claude auth canary (report-only)"
+time = "06:30"
+command = "run-claude-auth-canary.sh"
+hc_slug = "claude-auth-canary"
+catchup_hours = 6
+timeout_minutes = 5
