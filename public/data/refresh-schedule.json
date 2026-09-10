@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T11:08:42.111550+00:00",
+  "generated_at": "2026-09-10T11:48:47.279546+00:00",
   "jobs": [
     {
       "id": "mlb-sim",
@@ -182,6 +182,24 @@
       }
     },
     {
+      "id": "claude-auth-canary",
+      "label": "Claude auth canary (report-only)",
+      "schedule_text": "Daily at 06:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-11T06:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-10",
+        "status": "ok",
+        "slot": "2026-09-10T06:30:00+00:00"
+      }
+    },
+    {
       "id": "feed-monitor",
       "label": "Feed shape monitor",
       "schedule_text": "Daily at 07:20 UTC",
@@ -197,6 +215,26 @@
         "date": "2026-09-10",
         "status": "ok",
         "slot": "2026-09-10T07:20:00+00:00"
+      }
+    },
+    {
+      "id": "economy-rates",
+      "label": "Policy rate refresh (/business/economy)",
+      "schedule_text": "Fri at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-11T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-04",
+        "status": "missed",
+        "slot": "2026-09-04T07:30:00+00:00"
       }
     },
     {
@@ -237,6 +275,26 @@
         "date": "2026-09-04",
         "status": "ok",
         "slot": "2026-09-04T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "economy-housing",
+      "label": "House price refresh (/business/economy/housing)",
+      "schedule_text": "Sat at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        6
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-12T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "missed",
+        "slot": "2026-09-05T07:30:00+00:00"
       }
     },
     {
