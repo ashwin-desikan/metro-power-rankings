@@ -12253,9 +12253,53 @@ exits 0; TBD-with-results-landing blocks; a real club absent from the ladder blo
 84 checks (was 82), and a dry run against live ESPN data reproduces today's failure as four
 `NOT YET` lines and exit 0.
 
-**Still open for Ashwin:** the East tie. `div_title` is False for both Indiana and Atlanta and
-will stay that way until someone rules on the tiebreak — it no longer fails the run, so it will
-not nag. The other three clear themselves when ESPN seeds the field.
+### H. 🔴 A TIED CONFERENCE LEAD IS A SHARED TITLE — and the site had already said so for 24 years
+Ashwin asked for `div_title` to go to whichever club won the tiebreak between Indiana and
+Atlanta (both 26-14 East). **Nobody won it.** Their four regular-season meetings split 2-2
+(06-04 IND 83-71, 06-18 ATL 108-101, 06-20 ATL 113-96, 08-16 IND 95-91), so head-to-head — the
+first tiebreak anyone reaches for — does not separate them. Going further would have meant
+applying a rule I could not verify the WNBA actually uses, which is the guess this script
+exists to refuse. (Head-to-head points favour Atlanta 383-375, which is NOT a rule, only a
+number; do not let it become one.)
+
+**The answer was already in the data.** All FIVE tied conference leads in the 380 rows of
+history carry `div_title=True` for BOTH clubs — 2002, 2004, 2010 and 2011 East, 2020 West, 5 of
+5. It is also what the column means: "best regular-season record in its conference", and at
+equal records both genuinely finished top. A tiebreaker decides playoff SEEDING, not who led.
+So a tied lead is now a SHARED title in code, set for every tied club — not a one-off row edit,
+which the finalizer would have reverted on its next run since it recomputes and patches the
+difference. **Look for the site's own precedent before inventing a rule; 380 rows had already
+answered it.**
+
+`best_rec` deliberately keeps the old behaviour on a league-wide tie (left unset): it is a
+Supabase-only column, `None` across all 380 historic rows and absent from the hub JSON schema
+entirely, so there is no precedent to follow and nothing rendered to be wrong. The asymmetry
+with `div_title` is deliberate, not an oversight.
+
+**Two bugs this exposed, both fixed in `88e906673`:**
+1. 🔴 MINE, from section G the same morning. Ties were PENDING, and PENDING skipped ALL writes.
+   A tie never resolves on its own, so 2026 would have had its postseason flags silently never
+   written — a loud failure traded for a silent one, which is worse. Ties are now NOTICE:
+   printed, decided, blocking nothing. **Watch for this shape whenever a fatal check is
+   softened: "stop failing" must not quietly become "stop doing the work".**
+2. 🔴 LATENT, pre-existing, in BOTH write paths. Per-row patches routinely differ — a
+   conference leader that also holds the league's best record carries `best_rec` where the
+   others carry only `div_title` — and PostgREST rejects a bulk insert whose objects have
+   different keys (`PGRST102: All object keys must match`). It fired on the real 2026 write and
+   would have hit the normal path the first time any season finalized with a mixed patch.
+   `build_payload` now sends the union of changed columns for every row, filling untouched cells
+   from `by_team` — the same source the patch came from, so a no-op write, never a guess.
+
+Also: an unseeded bracket no longer holds back the REGULAR-SEASON flags, which owe nothing to
+it. The postseason flags stay strictly untouched; `div_title`/`best_rec` are written anyway, so
+the site does not have to claim nobody led the conference until ESPN gets round to seeding.
+
+**Applied and live.** 2026: Atlanta Dream and Indiana Fever `div_title=True`, Minnesota Lynx
+`div_title=True` + `best_rec=True` (31-9, genuinely the league's best). Postseason flags
+untouched — `playoffs` false, `p_wins`/`p_losses` null. Self-test 88 checks (82 that morning).
+Workflow re-run 34485939747 went green through ALL steps including the finalizer that had
+failed, rebuilt the hub JSON and committed it as `b6388d42f`. Nothing on the WNBA is
+outstanding; the nightly 08:00Z run should now be a clean no-op.
 
 **Pushed and live at `58ab5e622`** (data + FIBA + standings reconcile), `b5223a5d9` and
-`703456966` (canary), `7f6faa8a4` and this entry (handoff).
+`703456966` (canary), `ffebb034f` and `88e906673` (WNBA), `7f6faa8a4` and this entry (handoff).
