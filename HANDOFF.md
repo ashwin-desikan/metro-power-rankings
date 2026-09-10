@@ -13214,6 +13214,29 @@ Seeds and odds 1920-32 rebuilt (1932 through_week 13, complete); `playoff_seeds 
 1932 "2 qualifiers within the shard's 2 appearances", the rest unchanged. Also: "Rock Island
 Independents" reads RCK (era table), Rochester keeps ROC.
 
+### M. Pushed and live, 2026-09-11 01:03Z
+Two commits rebased onto `31df806f5` (eight bot and mini commits had landed since `bbed354ef`):
+`47b50a273` (data, scripts, migration, this entry, `[vercel skip]`) and **`c095ad8b6`** (the
+app commit, push HEAD). Vercel: one production build, READY at 01:12Z, the day's first (one
+left). Read off production: 1925's season grid draws 20 columns (FRA CRD POT CHI GB DET NYG
+PRO RCK ...), 1926 22, 1945 10; the 1932 standings scrubbed to week 13 show Bears and Spartans
+both "1*", "level, playoff to come", title 59/41, and the playoff picture's PO column carries
+"won the title playoff, 9-0 over Portsmouth Spartans, 1932-12-18"; `/teams/national` shares
+`/og?t=International+Football&p=%2Fteams%2Fnational` under "International Football | Citizen
+of Nowhere". Working copies are LF after the rebase under `autocrlf=input` (the repo's
+HANDOFF.md blob has always been LF; the CRLF is the Windows working copy, cosmetic).
+Still to do in the other repo: the brand hook workflow in `_scratch/daily-rebuild.yml`.
+
+### N. Close-out, 2026-09-11 01:30Z
+`78f620737` (section M) was rebased to `4453b1532` after something on the box merged origin into
+main under it (a "Merge branch 'main'" commit appeared; reset and rebased linear, nothing lost).
+Committed locally and NOT pushed; it rides under the next session's first push. The prompt for
+the next session is in the Claude Projects folder: "Next session prompt 2026-09-12.md" (Friday's
+three first runs to prove, then the brand hook, Ivory Coast at the builders, the Money Ledger
+remainder, the sortable and chart sweeps, the Prices tab). Note `015ef5f1d` "Auto: policy rates
+refresh" already landed on origin before 01:30Z: the mini ran the rates job early; the next
+session reads its result rather than waiting for 07:30Z.
+
 ---
 
 ## 2026-09-11 — mini → next session: FOUR RATES BUILDERS HAD NOT RUN SINCE 09-08, AND NOTION WENT UNUSED FOR A WHOLE SESSION
