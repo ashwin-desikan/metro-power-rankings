@@ -1,6 +1,35 @@
 {
-  "generated_at": "2026-09-10T17:08:23.639278+00:00",
+  "generated_at": "2026-09-10T19:48:30.235398+00:00",
   "jobs": [
+    {
+      "id": "ops-autofix",
+      "label": "Ops autofix (whitelist, acts on production)",
+      "schedule_text": "Daily at 00:15, 02:15, 04:15, 06:15, 08:15, 10:15, 12:15, 14:15, 16:15, 18:15, 20:15, 22:15 UTC",
+      "cadence": "daily",
+      "times": [
+        "00:15",
+        "02:15",
+        "04:15",
+        "06:15",
+        "08:15",
+        "10:15",
+        "12:15",
+        "14:15",
+        "16:15",
+        "18:15",
+        "20:15",
+        "22:15"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-10T20:15:00+00:00",
+      "last_run": {
+        "date": "2026-09-10",
+        "status": "missed",
+        "slot": "2026-09-10T18:15:00+00:00"
+      }
+    },
     {
       "id": "football-standings",
       "label": "Football live standings",
