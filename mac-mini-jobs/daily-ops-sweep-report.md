@@ -1,253 +1,269 @@
-# Daily Ops Sweep -- 2026-09-09
+# Daily Ops Sweep -- 2026-09-10
 
-Window: `2026-09-07T23:01Z` -> `2026-09-09T01:01Z` (trailing 26h), selected on each
-dispatcher.log line's own UTC timestamp. Read-only run: nothing was re-run, pinged,
-written or fixed. This file is the only thing this sweep touched.
+Window: `2026-09-09T07:08:47Z` -> `2026-09-10T09:08:30Z` (trailing 26h).
+Run context: this sweep is itself the **manual re-run** at 09:08Z. The scheduled
+01:00Z occurrence failed (see Self-healed #1); Ashwin re-authenticated and
+relaunched `run-daily-ops-sweep.sh` at 09:08Z.
 
-## Jobs this window: 20 ok, 0 failed, 3 flagged
+## Jobs this window: 19 ok, 1 failed, 1 flagged
 
-**Zero FAIL, zero MISSED.** Twenty completed dispatcher runs plus this sweep. Every
-scheduled slot in the window fired and exited 0.
+**Dispatcher jobs (20 runs):**
 
-| job | slot (UTC) | result |
+| Job | Slot(s) | Result |
 |---|---|---|
-| football-standings | 09-07 23:00 | DONE 85s |
-| daily-ops-sweep | 09-08 01:00 | DONE 595s |
-| activity-feed | 09-08 02:30 | DONE 5s |
-| euro-comps | 09-08 04:00 | DONE 5s |
-| gap-league-watch | 09-08 05:00 | DONE 3s |
-| football-standings | 09-08 05:00 | DONE 87s |
-| screen-number-ones | 09-08 05:00 | DONE 15s |
-| business-daily | 09-08 05:50 | DONE 338s |
-| substack-daily | 09-08 06:00 | DONE 4s |
-| predictions-tue | 09-08 06:40 | DONE 429s |
-| mlb-sim | 09-08 07:00 | DONE 453s |
-| rugby-weekly | 09-08 07:05 | DONE 11s |
-| feed-monitor | 09-08 07:20 | DONE 16s |
-| cricket-weekly | 09-08 09:00 | DONE 35s |
-| football-standings | 09-08 11:00 | DONE 88s |
-| screen-number-ones | 09-08 13:00 | DONE 15s |
-| mlb-sim | 09-08 14:30 | DONE 449s |
-| football-standings | 09-08 17:00 | DONE 92s |
-| screen-number-ones | 09-08 21:00 | DONE 18s |
-| football-standings | 09-08 23:00 | DONE 90s |
+| mlb-sim | 09-09 07:00Z, 14:30Z, 09-10 07:00Z | DONE (442s / 451s / 450s) |
+| fiba-weekly | 09-09 07:10Z | DONE 6s -- **FLAGGED**, see attention #1 |
+| feed-monitor | 09-09 07:20Z, 09-10 07:20Z | DONE (14s / 15s) |
+| sound-weekly | 09-09 07:30Z | DONE 9s |
+| football-standings | 09-09 11:00Z, 17:00Z, 23:00Z, 09-10 05:00Z | DONE (82/91/89/87s) |
+| cfb-wed | 09-09 11:40Z | DONE 405s |
+| screen-number-ones | 09-09 13:00Z, 21:00Z | DONE (16s / 17s) |
+| daily-ops-sweep | 09-10 01:00Z | **FAIL** exit 1 after 3s -- self-healed |
+| activity-feed | 09-10 02:30Z | DONE 5s |
+| euro-comps | 09-10 04:00Z | DONE 5s |
+| gap-league-watch | 09-10 05:00Z | DONE 3s |
+| business-daily | 09-10 05:50Z | DONE 340s |
+| substack-daily | 09-10 06:00Z | DONE 5s |
 
-**Nothing was due-and-skipped.** I checked every non-running job against its
-jobs.toml schedule rather than assuming: `forecast` (Mon/Wed/Fri) next fires 09-09
-06:10Z, `fiba-weekly` and `sound-weekly` (Wed) 09-09 07:10Z/07:30Z, all three still
-in the future at time of writing; `egress-refresh` (Sun) last ran 09-06,
-`mktcap-refresh` (Sat) 09-05, `cfb-fri`/`predictions-fri` 09-04, `cfb-sun` 09-06,
-the two monthlies 09-01. All correct for the calendar.
+No `MISSED` slots. `state.json` shows every job current; the only non-ok status
+is `daily-ops-sweep: failed`, which is the 01:00Z record and will clear at the
+next scheduled slot.
 
-**Job-script `push()` alerts fired this window: none.** `gap-league-watch` logged
-"no state transitions this run" (India ISL still `awaiting_target`, api-football's
-latest season for league 323 is 2025, working as designed). `football-standings`
-logged `unmatched=0 collisions=0 errors=0` on all five runs. No mktcap METRO QUEUE
-nudge, no business-daily geo-stub notice, no F1 catch-up alert. The only ntfy push in
-the window was yesterday's sweep digest.
+**Non-dispatcher jobs checked:**
+- `newsletter-podcast` daily digest (own launchd agent, 07:00Z): **FAILED**, then
+  re-run and completed clean -- see Self-healed #2.
+- F1 hourly poller: 10 ticks, all `idle: 2026 R13 already synced`. Nominal.
 
-**Non-dispatcher services, all healthy.** `f1-weekly` (hourly launchd) idle for all
-26 ticks; verified below, not assumed. `deploy-watch` (600s) clean, TARGET
-`0fb71d152` live and serving; `/tmp/deploy-watch.err` still unchanged since 09-06
-17:31 (its one `curl 429` predates the window). `heartbeat` (900s) and the dispatcher
-agent both last exit 0. `newsletter-podcast` completed 09-08 (episode
-`2ycHZsDLqLpdO08tKefvaq` READY after six polls, both Gmail drafts created); its
-09:30 watchdog logged "final.mp3 present (37 MB) and episode READY. Healthy."
+**In-job `push()` alerts this window (STEP 2):** one, the newsletter watchdog at
+08:30Z. `gap-league-watch` logged `no state transitions this run` (no push).
+`football-standings` logged `unmatched=0 collisions=0 errors=0` on all four runs
+(no UNMATCHED alert). `mktcap-refresh` is Saturday-only and did not run.
 
-**Standing gates, all green.** `check:release-notes` OK (131 entries, newest
-2026-09-08, so yesterday's ten-commit shipping day is covered). `check:data-currency`
-24 current / 0 overdue / 0 unreadable. Working tree clean; local `main` is 2 commits
-behind origin, both data-bot commits pushed after this sweep's fetch.
+## Self-healed (informational only, no action needed)
 
-**Vercel build ledger: 1 READY, 0 ERROR, 19 CANCELED** across the twenty deployments
-in the window, queried directly from the Vercel API. The single production build is
-`dpl_8BP4f56iheoFsauEyxkmv9J5Eogj` for `0fb71d152`, four Node functions. Ten untagged
-app commits shipped on 09-08 and cost exactly one build, comfortably inside the 2/day
-budget. The CLAUDE.md rule about the build-relevant commit being last in a push was
-followed correctly: `8cb40287d` (handoff, `[vercel skip]`) has its own CANCELED
-deployment created 8 minutes *after* the READY one, which means it went as a separate
-push rather than sitting on top of `0fb71d152`.
+**1. `daily-ops-sweep` FAIL at 01:01Z -- expired Claude OAuth session.**
+```
+2026-09-10T01:01:15Z | Failed to authenticate: OAuth session expired and could not be refreshed
+2026-09-10T01:01:15Z | ERROR: Claude Code login expired on the mini -- run 'claude' ... and re-run.
+2026-09-10T01:01:15Z FAIL daily-ops-sweep: failed exit 1 after 3s
+```
+The `auth_expired()` guard in `run-daily-ops-sweep.sh` worked exactly as designed:
+it detected the condition, refused the pointless retry, and exited 1, which made
+`dispatcher.py` push its `Metro: daily-ops-sweep failed` ntfy. Ashwin re-authed and
+relaunched at 09:08Z -- this report is that run. Nothing further needed for the
+run itself; the recurring *cause* is attention item #2.
 
-## Self-healed / verified fine (informational only, no action needed)
+**2. `newsletter-podcast` daily digest FAILED at 07:00Z -- same OAuth expiry.**
+Same root cause, same guard, 90 minutes later. Timeline:
+- 07:00:03Z fail (silent from the job itself -- `run-daily.sh` has no ntfy path)
+- 08:30:06Z `watchdog.sh` caught it and pushed the urgent alert (`final.mp3` missing)
+- 08:45Z re-run; 09:06Z audio built; 09:10:48Z done
 
-**1. `f1-weekly` sitting at "R13 already synced" is correct, and I checked it against
-the source rather than the previous sweep's note.** The poller compares Jolpica's
-last-race round to the max round stored in Supabase, so a stale *upstream* would look
-identical to a healthy idle: it can only ever report `IDLE`. That is a real blind spot
-in the design, so it is worth confirming from outside rather than trusting the log.
-A read-only fetch of `api.jolpi.ca/ergast/f1/2026/races.json` returns a 23-race 2026
-calendar in which the Italian Grand Prix at Monza **is** round 13, dated 2026-09-06,
-and the next race is R14, the Spanish Grand Prix, on 2026-09-13. So no race has
-happened since the last sync and none will before Sunday. Idle is the right answer.
-(Press coverage calls Monza "round 15"; that is a different calendar convention, not a
-discrepancy in our data, since the poller is self-consistent Jolpica-to-Supabase.)
+Verified healthy, not just "exited 0": `final.mp3` 37 MB, `episode.json` present,
+Spotify episode `1IaF1Kz9HkIA1tqYQMyXPa` polled through to `status: READY`, and the
+Gmail LinkedIn/Substack drafts were created. No action needed.
 
-**2. `empty:ESPN PGA scoreboard` in feed-monitor is still expected, not a break.**
-Unchanged since 09-02 and scored `ok` by the monitor, distinct from `FAIL`: the
-endpoint answers with valid shape and zero events. The FedEx Cup season has ended and
-the next PGA Tour event is 17 September, so an empty scoreboard this week is correct.
-Every other probe green on the 09-08 run, all 16.
-
-**3. Cricket, rugby, screen and football content all moved as expected.**
-`cricket-weekly` staged 6 new internationals (22678 -> 22690 rows, 2026-08-23 ..
-2026-09-01) with 0 Afghanistan additions. `screen-number-ones` ran three times and
-correctly committed only on the third, when the week actually changed.
-`football-standings` grew 2230 -> 2236 standings rows over the window with
-`unmatched=0` throughout, and the FA WSL flip that the last three sweeps tracked is
-fully settled (14 rows, `[2026-27]`, "all leagues on their current season").
+**3. Stale `~/newsletter-podcast/DIGEST-FAILED.txt` (written 08:30Z).**
+`watchdog.sh` only `rm -f`s the marker on a healthy run, and it runs once daily at
+08:30Z. The marker is therefore stale-but-harmless until 2026-09-11 08:30Z, when it
+clears itself. Noted so it is not mistaken for a live failure. No action.
 
 ## Needs Ashwin's attention
 
-**Three items. The first is new, time-boxed to Friday, and found by this sweep.**
+### 1. [P1] `fiba-weekly` silently dropped 5 nations from the Women's Basketball ranking. The bad data is committed; the damage is latent and lands on the next ZZC rebuild.
+
+**What happened.** The 2026-09-09 07:20Z `fiba-weekly` run exited 0 and pushed
+`b17d55d9c`, but its log shows a regression the exit code cannot express:
+
+```
+UNMAPPED, no rank credited:
+    Czechia (CZE, rank 17)
+    Chinese Taipei (TPE, rank 39)
+    Cote d'Ivoire (CIV, rank 53)
+    Virgin Islands (ISV, rank 64)
+    St.Vincent and the Grenadines (VIN, rank 103)
+mapped 114 of 119 teams, ranking date 2026-04-01
+wrote .../public/data/rankings/zzc-extra.json: Women's Basketball now 114 ranks (was 119)
+```
+
+The previous run (2026-09-05, `scraper-fiba-2026-09-05.log`) mapped **119 of 119**,
+on the *same* source date `2026-04-01`. The upstream data did not change -- 119 teams
+both times. Only the mapping broke.
+
+**Root cause.** Commit `46df23bb3` (2026-09-05 22:30, *"zzc: one row per country, and
+the Countries hub decides its name"*) deduplicated `public/data/zone-zero-cup.json`
+from 249 nation rows to 240, collapsing the double-entries (Taiwan sat on the board
+twice: `chinese-taipei` 44th on 21.70 merit and `taiwan` 153rd on 1.00). Its own
+comment states the new rule: *"fold to the countries.json slug, never away from it."*
+
+`scripts/basketball/apply_womens_ranking.py` builds its valid-slug universe from
+`zone-zero-cup.json` + `countries.json`, and `resolve()` returns `None` -- dropping
+the nation -- when its mapped slug is not in that universe. Its `IOC_SLUG` and
+`NAME_SLUG` tables (written 2026-09-04 in `17e1c6f94`, one day *before* the
+consolidation) still fold the **wrong** way, at exactly these five entries:
+
+| IOC | `IOC_SLUG` target (line) | actual `countries.json` slug |
+|---|---|---|
+| CZE | `czechia` (L46) | `czech-republic` |
+| TPE | `chinese-taipei` (L43) | `taiwan` |
+| CIV | `ivory-coast` (L43) | `cote-divoire` |
+| ISV | `united-states-virgin-islands` (L52) | `us-virgin-islands` |
+| VIN | `st-vincent-and-the-grenadines` (L52) | `st-vincent-the-grenadines` |
+
+The men's script got this right and was never affected: `build_intl_basketball.py`'s
+`_FIBA_TO_COUNTRY` (L227-236) folds `czechia -> czech-republic`,
+`chinese-taipei -> taiwan`, `cote-d-ivoire -> cote-divoire`,
+`virgin-islands -> us-virgin-islands`,
+`st-vincent-and-the-grenadines -> st-vincent-the-grenadines`. The women's script is
+the odd one out.
+
+**Why the guard didn't catch it.** `apply_womens_ranking.py` L35 sets
+`MAX_UNMAPPED = 12`. Five unmapped passes. The assertion's own message --
+*"Add them to IOC_SLUG rather than letting the ranking quietly shrink"* -- names
+precisely the failure that then occurred.
+
+**Impact is latent, not live.** `zone-zero-cup.json` was last rebuilt 2026-09-05 22:30,
+*before* the bad `zzc-extra.json` landed, and the ZZC rebuild is not a scheduled job
+(no entry in `jobs.toml` -- it is run by hand). All five countries currently still
+carry their Women's Basketball merit on the live board:
+
+```
+czech-republic | rank 28  | has Women's Basketball: True
+taiwan         | rank 44  | True
+cote-divoire   | rank 88  | True
+us-virgin-islands | rank 152 | True
+st-vincent-the-grenadines | rank 170 | True
+```
+
+So nothing is visibly wrong on the site today. **The next `zzc_v1_multipillar.py` run
+will silently drop that merit for all five** -- Czechia most materially, at world
+rank 17 and currently 28th on the Cup board.
+
+**Corroborating evidence that this is a producer bug, not an engine one.** Four other
+sports in the same `zzc-extra.json` emit the alias slugs raw and survive, because
+`zzc_v1_multipillar.py`'s `FOLD` map (L249-256) remaps every one of them:
+
+```
+Badminton          emits ['chinese-taipei']
+Lacrosse           emits ['czechia']
+Table Tennis       emits ['chinese-taipei']
+Women's Ice Hockey emits ['czechia', 'chinese-taipei']
+Women's Basketball emits none -- they were DROPPED, not folded
+```
+
+Women's Basketball is the only sport whose producer *validates* against the slug
+universe and therefore discards rather than passing through to `FOLD`.
+
+**Recommended fix** (two small edits in `scripts/basketball/apply_womens_ranking.py`,
+one file, no other script touched):
+
+1. Repoint the five entries in `IOC_SLUG` (L43, L46, L52) and the matching targets in
+   `NAME_SLUG` (L72-82, which carry the same five wrong slugs) at the `countries.json`
+   spellings in the table above. This follows `46df23bb3`'s stated rule and matches
+   what `build_intl_basketball.py` already does, rather than depending on `FOLD`
+   staying in sync with a second table.
+2. Tighten the guard so a shrink cannot pass silently again. The script already reads
+   the previous count into `before` (L160) purely for a log line -- assert on it, e.g.
+   fail when `len(ranks) < before` unless an explicit `--allow-shrink` flag is passed.
+   `MAX_UNMAPPED = 12` cannot catch this class of regression, because the failure is a
+   *drop against last week*, not an absolute count.
+
+Then re-run `python3 scripts/basketball/apply_womens_ranking.py --dry-run` and confirm
+it reports `119 of 119` before writing. Note `--dry-run` exists and is safe.
+
+**I made no change.** The next `fiba-weekly` slot is Wednesday 2026-09-16 07:10Z and
+will reproduce 114/119 unchanged; there is no self-heal path.
 
 ---
 
-### 1. `economy-rates` cannot fire this Friday: the live dispatcher config never got the job
+### 2. [P2] Third Claude OAuth expiry on the mini. It takes out both Claude-driven jobs at once, and there is no warning before it happens.
 
-*What happened.* `dispatcher.py --status` now prints a drift warning that yesterday's
-sweep explicitly reported as absent:
+**What happened.** One expired OAuth session failed `daily-ops-sweep` (01:00Z) and the
+`newsletter-podcast` digest (07:00Z) on the same morning. Both recovered only because
+Ashwin re-authed by hand.
 
-```
-WARNING: live copy differs from the repo (.../mac-mini-jobs):
-    differs       jobs.toml
-    missing-live  runners/economy-rates.sh
-```
+**This is a recurring pattern, not a one-off.** Occurrences found across all logs:
 
-`economy-rates` does **not appear at all** in the 23-row `--status` table. The
-dispatcher reads `~/metro-mini-jobs/jobs.toml`, which is a real copy (mtime Aug 30),
-not a symlink, and the new job only exists in the repo's copy:
+| Date | Job(s) hit | Gap since last re-auth |
+|---|---|---|
+| 2026-07-30 | newsletter digest (2 attempts) | -- |
+| 2026-08-29 | newsletter digest | 30 days |
+| 2026-09-10 | newsletter digest **and** daily-ops-sweep | 12 days |
 
-```
-$ diff "$REPO/mac-mini-jobs/jobs.toml" ~/metro-mini-jobs/jobs.toml
-< id = "economy-rates"
-< label = "Policy rate refresh (/business/economy)"
-< time = "07:30"
-< weekdays = [5]
-< command = "runners/economy-rates.sh"
-```
+(`~/newsletter-podcast/logs/launchd-daily.out` L2004/2006, 4047, 4871.) The interval is
+not a fixed TTL -- 30 days then 12 -- so this reads as a refresh-token failure rather
+than a predictable expiry, and it cannot be planned around by calendar.
 
-*Root cause.* Two independent gaps, and fixing only one is not enough:
+**What already works, so it does not need rebuilding.** Both wrappers have a correct
+`auth_expired()` guard that detects the condition and refuses the futile retry, which
+is why each burned 3 seconds rather than a full run. `dispatcher.py` pushed an ntfy for
+the sweep, and `watchdog.sh` pushed one for the newsletter. Detection is sound.
 
-1. `jobs.toml` is deployed by `cp`, per REBUILD-RUNBOOK.md line 135. Ashwin's
-   `fd35d64c7` ("...economy refresh pipeline...") added the job to the repo on 09-08
-   but nothing copied it across. The dispatcher therefore has no row for it.
-2. `~/metro-mini-jobs/runners/` holds six symlinks into the repo and **no
-   `economy-rates.sh`**. `dispatcher.py` runs a relative `command` with
-   `cwd=HERE` (`HERE = Path(__file__).resolve().parent`, line 39/261), so
-   `runners/economy-rates.sh` resolves to `~/metro-mini-jobs/runners/economy-rates.sh`,
-   which does not exist. Even with `jobs.toml` copied, the job would fail to launch.
+**The three real gaps.**
+1. **No proactive warning.** Nothing tells Ashwin the session is close to expiring; the
+   first signal is always a job that already failed.
+2. **`run-daily.sh` is silent on its own failure.** It logs and exits 1, with no ntfy.
+   Today the newsletter failure was invisible for 90 minutes until `watchdog.sh` ran at
+   08:30Z. That gap is pure luck of scheduling -- the watchdog exists to check Spotify
+   readiness, not to be the auth alarm.
+3. **A failed sweep produces no report for that day.** `dispatcher.py` records the slot
+   and deliberately does not retry (*"the alert is the signal, and the next slot is the
+   retry"*, L316-318). So without a human noticing the ntfy and re-running by hand, the
+   01:00Z failure would simply have meant no ops sweep on 2026-09-10 at all -- the one
+   job whose entire purpose is that Ashwin should not have to notice things himself.
 
-*This does not self-heal.* I checked `mini_sync()` in `runners/_common.sh` in case an
-earlier job would fix it: it is only `git fetch` + `merge --ff-only` against the repo
-working tree. It never copies `jobs.toml` or relinks `runners/`. So no Wednesday or
-Thursday job will repair this before Friday 07:30Z.
+**Recommended fixes, cheapest first:**
+- **(a) Give `run-daily.sh` the same alert path the sweep gets.** Add a `push()` ntfy on
+  the `auth_expired` branch (the helper already exists verbatim in
+  `newsletter-podcast/run-weekly.sh` L9-11 and `retention-spotify.sh` L22-23 -- copy it).
+  One-line-ish, removes the 90-minute blind window.
+- **(b) Add a proactive expiry canary.** Claude Code stores the OAuth blob in the macOS
+  Keychain under service `Claude Code-credentials` (confirmed present on this mini; I did
+  not read the secret). A tiny precheck can read its `expiresAt` and push a low-priority
+  "re-auth needed within 48h" ntfy, well before any job is due. That converts an
+  after-the-fact failure into scheduled maintenance.
+- **(c) Consider one same-day retry for `daily-ops-sweep` specifically.** Not a change to
+  the dispatcher's general no-retry policy, which is correct -- either a second slot in
+  `jobs.toml` (e.g. a 13:00Z catch-up that no-ops when the report file already carries
+  today's date) or leaving it as-is and accepting that this job depends on Ashwin seeing
+  the alert. Worth an explicit decision either way, since today it was manual recovery
+  that saved the run.
 
-*Precedent.* This is the same failure class the runbook already documents at lines
-136-144: the runners were `cp -R`'d until 2026-08-31 and had silently drifted to
-2026-08-06, so `forecast.sh` skipped its self-tests and `predictions.sh` never built
-the UCL sim, **both jobs reporting green the whole time**. That is why the runners are
-symlinks now and why `--check-sync` exists. `jobs.toml` is the one file still copied,
-so it is the one file that can still drift this way.
+**I made no change to any of these.**
 
-*Recommended fix.* Three commands on the mini, no repo change, no build:
+## Checked and clear (no action)
 
-```bash
-REPO="$HOME/Projects/Metro Area Project"
-cp "$REPO/mac-mini-jobs/jobs.toml" "$HOME/metro-mini-jobs/"
-ln -sf "$REPO/mac-mini-jobs/runners/economy-rates.sh" \
-       "$HOME/metro-mini-jobs/runners/economy-rates.sh"
-python3 "$HOME/metro-mini-jobs/dispatcher.py" --check-sync   # expect: no drift
-python3 "$HOME/metro-mini-jobs/dispatcher.py" --status       # expect: economy-rates row, Fri 07:30
-```
+- **Deploy discipline.** 20 Vercel deployments since 00:00Z today, **all `CANCELED`** --
+  zero `READY`, zero `ERROR`, so **0 paid production builds** against the 2/day cap.
+  Every commit carried `[vercel skip]` and the guard skipped each one. Counted via the
+  Vercel API (`list_deployments`), not GitHub `deployment_status`, per CLAUDE.md.
+- **`substack-daily` new post `four-seasons-one-ledger`,** committed `[vercel skip]`.
+  Correct: `lib/substack.ts` fetches the live RSS with hourly revalidation and treats
+  `public/data/substack-feed.json` only as a fallback snapshot, so no build is owed.
+- **`feed-monitor` "empty ESPN PGA scoreboard: Biltmore Championship Asheville: not
+  started (0 in field)"** on both days. Verified against the real world rather than
+  assumed: the Biltmore Championship Asheville is a new FedExCup Fall event played
+  **Sept 17-20, 2026** at The Cliffs at Walnut Cove. A week out, an unposted field is
+  correct. `feed_shape_monitor.py` classes `empty` as a soft note that never alerts
+  (L16-18, L84) -- working as designed.
+- **`gap-league-watch`**: Indian Super League still `awaiting_target` (api season 2025,
+  2026 unpublished). No state transition, no push. Unchanged from prior runs.
+- **`football-standings`**: all four runs `unmatched=0 collisions=0 errors=0`. The
+  `empty=2` in the fetch line is steady across runs, not a new drift.
+- **Git health**: working tree clean, `origin/main` and `HEAD` level (0 behind, 0 ahead).
+- **`HANDOFF.md`** (2026-09-09 entry, §F "Open, carried forward") and the project memory
+  carry nothing on the FIBA/countries slug consolidation. Finding #1 is new.
 
-No `chmod`: the dispatcher always invokes a runner as `/bin/bash <path>`, and `chmod`
-would follow the symlink and rewrite the repo file's mode (runbook line 142).
+## Sources
 
-*Secondary, and softer than it looks: the Supabase migration is not applied.*
-HANDOFF's watch list asks for
-`supabase/migrations/20260908120000_policy_rate_tables.sql` before the first run. I
-confirmed read-only that **neither `policy_rate_changes` nor `policy_rate_daily`
-exists** in `public` yet. But this will *not* fail the Friday job:
-`upsert_supabase()` in `scripts/macro/rates/refresh.py` (line 583) catches and prints
-`"policy_rate_changes upsert failed (...)"` rather than aborting, so the JSON and the
-commit still ship and only the Supabase mirror stays empty. It is recoverable
-afterwards with `load_policy_rates.py --write`. Worth doing before Friday, but it is
-the migration that is optional-for-Friday, not the config sync above.
+- [PGA Tour: Biltmore Championship Asheville, FedExCup Fall 2026](https://www.pgatour.com/article/news/latest/2025/11/10/biltmore-championship-asheville-north-carolina-new-event-pga-tour-schedule-2026-fedexcup-fall)
+- [Golf Channel: 2026 Biltmore Championship Asheville](https://www.golfchannel.com/pga-tour/2026/biltmore-championship-asheville)
 
-*Also still outstanding from HANDOFF's watch list, unchanged:* the live dry run of
-`scripts/macro/rates/refresh.py` and reading its NEW RATE DECISIONS block before the
-first `--write`. If the config sync above lands without that dry run, Friday 07:30Z
-will be the pipeline's first-ever live execution, unattended.
-
----
-
-### 2. The NFL live-refresh User-Agent fix is still unpushed, and Friday's run will 403 again
-
-*What happened.* HANDOFF's 09-08 close-out says plainly: "The NFL live refresh's
-failure email is the 13:47 UTC 403 run; fixed in `e4c9500a0`, unpushed. Friday's run
-fails again unless the push lands first."
-
-*Evidence it is still open.* I fetched `origin/main` fresh during this sweep
-(01:0xZ, 09-09) and `e4c9500a0` is not reachable from anywhere:
-
-```
-$ git branch -r --contains e4c9500a0
-error: malformed object name e4c9500a0
-```
-
-The object does not exist in this clone at all, which is what an unpushed
-Windows-side commit looks like from here. The only two commits that have landed on
-origin since are `a19eb9031` and `f750f02ca`, both data-bot refreshes. So the fix is
-still sitting on the Windows box.
-
-*Impact.* `nfl-live-refresh.yml` runs Friday 09:30 UTC. Per the same HANDOFF entry
-this is also the first run that would carry Thursday-opener results and flip the 2026
-hub to `live` (week grid, "What is left"). If it 403s, that flip does not happen and
-the failure email repeats.
-
-*Recommended fix.* On the Windows box, push `e4c9500a0` before Friday 09:30 UTC. It
-touches the workflow/scraper only, so it should carry `[vercel skip]` in the subject
-unless it also touches `app/`, `lib/` or `public/`. If it 403s even after the push,
-HANDOFF's own guidance applies: the UA policy moved again, so measure from a box with
-`curl` and adjust the token rather than retrying the same request.
-
-*Why this sweep cannot do more.* The commit is not on this machine and this run makes
-no writes regardless.
+Local evidence: `~/metro-mini-jobs/dispatcher.log`,
+`~/metro-mini-jobs/logs/{scraper-fiba-2026-09-05,scraper-fiba-2026-09-09,daily-ops-sweep-2026-09-10}.log`,
+`~/newsletter-podcast/logs/{2026-09-10,watchdog-2026-09-10,launchd-daily.out}`,
+`~/metro-mini-jobs/state.json`, and `git show 46df23bb3^:public/data/zone-zero-cup.json`.
 
 ---
-
-### 3. `forecast` is still pinned at `last_status: "failed"` (repeat of yesterday's item, not yet done)
-
-*What happened.* Unchanged since yesterday's sweep raised it. `--status` still reads:
-
-```
-forecast    09-07 06:10  2026-09-07   failed    already-ran
-```
-
-The 09-07 06:10Z slot genuinely failed (`ERROR France: required firstRound.shares is
-empty`, a Wikipedia heading roll-forward, fixed by hand in `48ecffabd`/`e5555ad49`).
-Because the fix landed by hand rather than by re-running the ~10-minute job, nothing
-ever overwrote the status.
-
-*Impact: cosmetic only, and this remains true.* `last_status` is bookkeeping and is
-never read by `decide()`, which uses only `last_run_date` and `last_slot`. It cannot
-suppress or delay the next run. **Note that next run is 09-09 06:10Z, roughly five
-hours after this sweep was written**, so by the time you read this the status may well
-have been overwritten with a genuine `ok` and the item closed itself. Worth a glance
-at `--status` before doing anything.
-
-*Recommended fix, only if 09-09 06:10Z did not already clear it:*
-
-```bash
-python3 ~/metro-mini-jobs/dispatcher.py --mark-ok forecast
-```
-
-That sets `ok (manual)`, deliberately distinct from a plain `ok`, and writes a
-`MARK-OK` line to dispatcher.log. I did not run it: this sweep makes no writes, even
-mechanical ones.
-
----
-*Read-only sweep. No jobs re-run, no healthchecks pinged, no Supabase writes, no data
-or script changes. Supabase was queried with a single read-only `SELECT` against
-`information_schema`; Jolpica and the Vercel API with read-only GETs. Only this file
-was written and committed.*
+*Read-only sweep. No job was re-run, no data written, no healthchecks pinged. The only
+file this run wrote is this report.*
