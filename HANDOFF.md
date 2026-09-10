@@ -12138,4 +12138,76 @@ correct and not a fault — that is a new FedExCup Fall event played **Sept 17-2
 unposted field a week out is right, and `feed_shape_monitor.py` classes `empty` as a soft note
 that never alerts. `gap-league-watch`: Indian Super League still `awaiting_target`, unchanged.
 
-**Pushed and live at `58ab5e622`.**
+### E. 🔴 COMMITTING A MINI JOB DOES NOT DEPLOY IT — `economy-rates` AND `economy-housing` HAD NEVER RUN
+Found while trying to schedule the auth canary (section F), and the most reusable thing in
+this entry.
+
+**launchd does not run the repo's dispatcher.** The loaded plist is
+`/bin/bash -lc 'cd "$HOME/metro-mini-jobs"; exec python3 dispatcher.py'` — a SEPARATE copy with
+its own `jobs.toml` and its own `state.json`. `dispatcher.py` sets `STATE_FILE = HERE/state.json`,
+so the live state is `~/metro-mini-jobs/state.json`, NOT the one beside the repo's copy. Editing
+`mac-mini-jobs/jobs.toml` in the repo schedules NOTHING until someone copies it across.
+
+⚠️ This is easy to get backwards, because some jobs DO run straight from the repo: `jobs.toml`
+entries whose `command` is an absolute `$HOME/Projects/...` path (football-standings,
+gap-league-watch) execute the working-tree script, uncommitted edits and all. That is why the
+09-10 `refresh.py` fix took effect at the 11:00Z run with nothing deployed. Relative commands
+(`run-daily-ops-sweep.sh`, `runners/economy-rates.sh`) resolve against the DISPATCHER's dir and
+need a live symlink.
+
+**What had silently not shipped.** `fd35d64c7` (09-08) and the 09-09 housing work added
+`economy-rates` (Fridays) and `economy-housing` (Saturdays) to the repo's `jobs.toml`. Neither
+the config nor `runners/economy-*.sh` ever reached `~/metro-mini-jobs`, so the live dispatcher
+carried 24 jobs where the repo declared 26. economy-rates skipped its 09-04 Friday; housing had
+never fired at all. Both now deployed; on the 11:48Z tick they logged MISSED for 09-04 and 09-05
+(8899m and 7459m late, past their 40h windows), pushed one ntfy each, and seeded to their next
+real slots. **First genuine runs: economy-rates Friday 09-11 07:30Z, economy-housing Saturday
+09-12 07:30Z. Watch both.**
+
+**The 09-09 ops sweep ALREADY CALLED THIS**, in as many words: *"economy-rates cannot fire this
+Friday... the live jobs.toml is a cp-deployed copy that never got it... this will not self-heal
+before Friday 07:30Z"*, with the cp/ln commands included, and it named the same failure class
+from 2026-08-31 when drifted runners left two jobs green while skipping their self-tests. The
+sweep did its job; the fix was never applied. That is the argument for reading the report, not
+for building more detection.
+
+**The one command that reveals it** — and it MUST be run from the live directory, because from
+inside the repo it compares the repo against itself and always says "in sync":
+
+    cd ~/metro-mini-jobs && python3 dispatcher.py --check-sync
+
+**Every deployed script is a SYMLINK into the repo** (`runners/_common.sh`, `business-daily.sh`,
+`run-daily-ops-sweep.sh`, all of them). Deploy with `ln -s`, never `cp`: a copy satisfies
+`--check-sync` on the day and then silently drifts the next time the repo version is edited.
+`jobs.toml` itself is the deliberate exception — a real copy, which is exactly what --check-sync
+is there to police. Worth adding a --check-sync line to the ops sweep's own checklist.
+
+### F. Claude auth canary, scheduled and proven under launchd
+`run-claude-auth-canary.sh`, daily 06:30 UTC (30 min ahead of the digest), read-only: keychain
+in, one ntfy out, no repo and no table, and it never prints the credential. Watches
+**refreshTokenExpiresAt** (~28 days), NOT `expiresAt` (~5 hours, refreshed silently all day) —
+the sweep suggested the latter, which would have fired every single day. Warns at 3 days,
+high priority inside 24h, loudest when the credential has NO refresh token, which is how it
+actually died (section A). `CLAUDE_AUTH_WARN_DAYS` overrides the threshold.
+
+First real dispatcher run 11:48:47Z, `DONE ok 0s`, 27.64 days left, correctly silent. That run
+also settled the open question: **keychain access works fine from the launchd context** — no
+Full Disk Access gate like the one that held egress-refresh at exit-126 through August.
+
+⚠️ `--dry-run` exists because `NTFY_TOPIC=""` DOES NOT MUZZLE THESE SCRIPTS. They source
+`~/.config/newsletter-podcast/env` after the environment is set, and that file defines
+NTFY_TOPIC, so the override is overwritten before push() runs. Testing the warning branches
+sent Ashwin two real "re-auth needed in 27d" alerts for a credential with 27 days left. Use
+`--dry-run`; never trust an env override on a script that sources its own config.
+
+**healthchecks:** `claude-auth-canary` and `daily-ops-sweep` both created. daily-ops-sweep had
+declared `hc_slug` since 08-30 with NO check behind it, so every ping it ever sent 404'd
+silently — it had no tile at all. Both had to be auto-provisioned by pinging
+`hc-ping.com/<key>/<slug>?create=1`, because **HC_API_KEY is READ-ONLY**: GET works, POST
+returns 403. Consequence: both landed with defaults (period 86400s, grace 3600s) rather than a
+cron schedule. 🔴 That grace is too tight for their catch-up windows — the canary's own first
+run was a legitimate 319m-late catch-up that would have shown red. Set grace to 21600 in the UI
+(or get a write-capable API key) for both.
+
+**Pushed and live at `58ab5e622`** (data + FIBA + standings reconcile), `b5223a5d9` and
+`703456966` (canary), `7f6faa8a4` and this entry (handoff).
