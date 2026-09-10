@@ -113,14 +113,26 @@ jobs:
             --season "${{ github.event.inputs.season || '2026' }}" --write \
             || echo "seeds: nothing to write yet (no regular-season game played)."
 
+      # Playoff and title odds by week for the live season: the games so far
+      # as played, the rest drawn from that week's ratings, seeded by
+      # playoff_seeds.picture(). Week 0 exists from the schedule alone, so
+      # this writes before the first kickoff; later weeks join as the
+      # carry adds results. Read via GitHub raw with ISR, never a build.
+      - name: Playoff odds for the live season
+        run: |
+          python3 scripts/nfl/playoff_odds.py --self-test
+          python3 scripts/nfl/playoff_odds.py \
+            --season "${{ github.event.inputs.season || '2026' }}" --write --quiet \
+            || echo "odds: nothing to write yet (no schedule for the season)."
+
       - name: Commit and push only if the data changed
         run: |
-          PATHS="public/data/nfl/elo public/data/nfl/playoffs.json public/data/nfl/seeds"
+          PATHS="public/data/nfl/elo public/data/nfl/playoffs.json public/data/nfl/seeds public/data/nfl/odds"
           # Staged first, so a NEW file (the live season's first seeds file)
           # counts as a change; `git diff --quiet` alone ignores untracked files.
           git add -A -- $PATHS
           if git diff --cached --quiet -- $PATHS; then
-            echo "No change in the NFL Elo spine, the playoff bracket or the seeds; nothing to deploy."
+            echo "No change in the NFL Elo spine, the playoff bracket, the seeds or the odds; nothing to deploy."
             exit 0
           fi
           # Shards, the spine, upcoming.json and playoffs.json are all read via

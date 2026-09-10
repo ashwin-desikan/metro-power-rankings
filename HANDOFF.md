@@ -12958,3 +12958,259 @@ Coast" at three builder sources; apply `overrides` into the workbook CSV when As
 edits it; Notion backlog rows; the Money Ledger remainder (frontier scatter, trading versus
 appreciation split, director ledger).
 
+## 2026-09-10 (night) — cowork (cloud, bridged to the Windows box) → mini and next session: THE QUEUE RECONCILED, THE RATES TABLE SEEDED, AND PLAYOFF ODDS BY WEEK FROM 1978
+
+State at open: Windows tree clean at `bbed354ef`; origin one commit ahead (`85b38ca4e`, the
+mini's `detect_issues.py`, `[vercel skip]`, no HANDOFF change). Vercel since 00:00Z: 1 READY
+(`b59c61a14`), 0 ERROR, the rest CANCELED. Read off production: "The world in 2100" on `/`,
+the 2026 column marked on `/countries/2100`, "verified ... 10 September 2026" on `/orgs` with
+the UAE out of OPEC and OPEC+, the "Transfer money" tab on the 2025-26 hub, `/og?t=...` cards
+on a club page and the 2100 board. The `b59c61a14` build log says `build cap inactive (no
+VERCEL_BUILD_CAP_TOKEN)`: the cap is code, not yet live.
+
+### A. The reconciliation (Ashwin's catch-up brief, the 2026-09-11 session prompt)
+Every open list folded into one table and presented; the ranked queue Ashwin chose: (1) the
+three first-run jobs tomorrow, (2) NFL playoff odds by week, 1978 on, P(playoffs) and
+P(title) only, (3) the twelve share-card pages, Satori bold and the HomeAdvantageChart
+hydration fix in the same build; then Ivory Coast at the builder sources, the Money Ledger
+remainder, the sortable and chart sweeps, the macro Prices tab. His rulings on the decisions:
+OAuth stays as it is (the canary is enough; no same-day sweep retry, no channel wiring);
+trademark tomorrow; the cap token later; the brand deploy hook is mine to decide (keep, at
+weekly cadence; a separate commit in the brand repo). Findings worth keeping:
+- **Closed, verified:** fiba's five nations (`58ab5e622`, 119 of 119, job ok 09-09); the
+  healthchecks cap (`ae67af170`, 20 checks, 0 dangling); footy-refresh runs 82-84 green and
+  `nrl/finals.json` carries the four week-1 finals; the PFR box-score URLs (Ashwin opened all
+  three; the convention resolves); `electionHubsMeta.ts` already carries NZ 2026-11-07 and
+  Nigeria 2027-01-16 confirmed, and `referendums.json` runs to 2026, so the 08-30 "resolver
+  before 4 October" defects are gone and the resolver itself is P2.
+- **Not yet run:** `economy-rates` (Fri 09-11 07:30Z) and `economy-housing` (Sat 09-12
+  07:30Z) both show MISSED for last week in `refresh-schedule.json`; `nfl-live-refresh.yml`
+  has ONE run in its history (09-08, the 403) and no dispatch since, so Friday 09:30Z is the
+  first with the User-Agent fix; `orgs-monthly.yml` has never run (cron is the 1st).
+- **Stale claims corrected:** Substack DID publish on 09-09 ("Four seasons, one ledger"),
+  so the "zero posts since 1 July" line in memory is wrong; `HANDOVER-next-session.md` in
+  the Claude Projects folder is the 2026-06-24 Play arcade handover and its Machina World Cup
+  thread is dead (tournament over), retire it.
+- **Notion Backlog:** cap-as-code, NFL scrubber, Housing tab, Population 2100, PFR links
+  marked Done; four rows filed (the 203-board sortable sweep, the 12 share-card pages +
+  Satori bold, the HomeAdvantageChart hydration mismatch, Ivory Coast at the three builder
+  sources: `build-international-data.py`, `countryfacts/build-facts.mjs`,
+  `cricket/build_cricket_top_games.py`).
+- The brand project's `daily-substack-refresh` hook built the same SHA `a2717b3f` on 08, 09
+  and 10 September: three paid builds for nothing.
+
+### B. The policy-rate tables are seeded (mini, Ashwin at the keyboard)
+`load_policy_rates.py --write` failed HTTP 400 on the first attempt. Not the key, not the
+payload shape (19,545 rows, one key set, no nulls, no duplicate (bank_code, date)): the
+migration declared every rate column `numeric(8,4)`, a ceiling of 9,999.9999, and the BIS
+Brazil series carries 1989 levels of 10,532% up to **790,799.14%** (largest single change
+258,402). `supabase/migrations/20260910200000_policy_rate_widen_numeric.sql` widens all five
+columns to `numeric(14,4)`; applied through the Supabase MCP, then the write succeeded:
+**19,545 `policy_rate_changes` rows, 59 bank codes** (60 files; one shares a code),
+`policy_rate_daily` still 0 until Friday's `refresh.py` fills the BIS cache. 🔴 The weekly
+`refresh.py --write` would have hit the same 400 on any hyperinflation row; it is gone with
+the migration. Notion row marked Done.
+
+### C. `scripts/nfl/playoff_odds.py`: playoff and title odds by week, 1978 on
+Ashwin: "for any single week ... from 1920 until 2025 and then even into this current 2026
+season, every week would have a playoff percentage ... a probability of winning the Super
+Bowl ... work out when a team would get eliminated, because we don't want to show a zero
+percentage". Ruled 1978 on to start, the two numbers only.
+- **Monte Carlo on the rest of the season.** After week N the games through N are the
+  ledger's results; every later regular-season game is drawn from the live engine's own
+  formula (`win_probability`, 65 to a home side, nothing to a neutral site, the self-test
+  asserts the workbook-verified 0.278093094) with each club's rating AFTER week N from the
+  shard, held fixed. Each drawn season is seeded by `playoff_seeds.picture()` (the literal
+  procedure), then played through the era's bracket; 2,000 draws a week; the RNG is seeded
+  from season and week so a rebuild is byte-identical. Scores are drawn loosely only because
+  the later tiebreak steps read them. Ties are not drawn.
+- **The bracket is the era's, and `--verify` proves it against the ledger:** the real
+  wild-card results replayed through `bracket()` reproduce the divisional pairings and hosts
+  of **48 of 48** complete seasons 1978-2025 (1978-89 five seeds with the same-division
+  rule, 1982's eight, 1990-2019 six, 2020 on seven). Two ledger faults found on the way,
+  not fixed there: 2002 files the Falcons at Green Bay (4 January) as "Div. Playoff"
+  (verify goes by postseason WEEK, not label, so it does not matter), and the 1989 AFC
+  wild card has the Steelers as hosts when the game was at the Astrodome (the same game
+  `playoff_seeds.KNOWN_SHARD_SEED_ERRORS` cites; whitelisted in `KNOWN_LEDGER_HOST_ERRORS`).
+- **"in" and "out" are proved, not sampled.** A status per week set only when wins alone
+  settle it: `out` when at least `seeds` clubs in the pool already exceed what this club
+  can reach AND a division rival does; `in` when fewer than `seeds` others can reach its
+  wins, or no division rival can. Sufficient conditions only. After the last regular-season
+  week of a complete season the playoff share is the procedure's fact (1 or 0) and the
+  status says which. A drawn 0.000 renders "<1%", never 0%.
+- **Grading:** a complete season carries `brier` per week (mean over clubs of
+  (P(playoffs) - made)^2). 2024: 0.238 at week 0, 0.080 after week 9, 0.013 after week 15,
+  0 at the end; after week 18 the Lions were 31% for the title, the Chiefs 24%, and the
+  title shares sum to 1.000 and the playoff shares to 14.0.
+- Output `public/data/nfl/odds/<season>.json` (index 0 = before the first game), about
+  45 s a season on the box; 1978-2026 built in two parallel `for /L` loops; 2026 exists from
+  the schedule alone (week 0). `nfl-live-refresh.yml` gains the step after the seeds and
+  `public/data/nfl/odds` in its commit paths, GitHub-raw-first with ISR like the seeds, so
+  the Friday run needs no build. Self-test: the formula, all four bracket shapes, a drawn
+  bracket, the status bounds.
+
+### D. The columns (app, one build)
+`SeasonStandings` gains "Playoff %" and "Title %" (desktop `hidden sm:table-cell`; the
+phone's second line reads "playoffs 74% · title 8%"), driven by the scrubber: index N of
+the odds file for week N, the last regular-season week for Final and for a playoff week.
+"in"/"out" print in place of the number where proved, accent for in, dim for out; a title
+cell of an eliminated club reads "out". `lib/nflElo.ts` `getNflOdds()` (literal path,
+GitHub-raw-first). The standings `more` note says what the columns are and are not.
+Columns are decided once per page (never mount with the scrubber, per the 09-09 rule).
+
+### E. Share cards: the last twelve pages, and a real bold
+- The eleven `page.tsx` files still on `/og-default.png` (elections/cn/[id], states/[slug],
+  teams/football, teams/football/domestic, teams/ipl/[slug], teams/national and its [slug],
+  british-home-championship, womens-world-cup/[slug], wfootball/leagues/[slug]) now call
+  `ogImage(TITLE, PATH)`, the title taken from each file's own og title and the path from its
+  canonical; a codemod, checked by hand. `grep og-default.png app` returns only the comment in
+  `app/og/route.tsx`. The rule in DESIGN-STANDARDS §9 stands: a new page never names the PNG.
+- **Satori bold.** `app/og/fonts.ts` fetches Inter 400 and 700 (latin WOFF, 31 KB each, from
+  @fontsource/inter under the OFL, `app/og/FONT-LICENSE.txt`) from the bundle by
+  `new URL(..., import.meta.url)`, the one loader an edge route and a file-convention image
+  share; both `/og` and `app/opengraph-image.tsx` pass them as `fonts`, and the card's
+  `fontFamily` is "Inter". The title finally renders at 700.
+- **HomeAdvantageChart hydration mismatch (found in K, fixed):** the SVG `<title>` was
+  `Home advantage in Elo points, {x0} to {x1}`, three JSX children, which React serialises as
+  three text nodes and the client reads as one. One template string now. The other three
+  SVG titles in `app/` are single expressions already.
+
+### F. The brand deploy hook (Ashwin: "your decision")
+Keep it, but stop rebuilding for nothing: the workflow now reads the Substack feed's newest
+title and the live homepage and POSTs the hook only when the title is missing from the page
+(manual dispatch always deploys). No state anywhere: the live site is the state. Tested from
+the box: newest "Four seasons, one ledger", site current, no deploy. The file is
+`_scratch/daily-rebuild.yml` here (the brand checkout sits on `stack-decision`, behind
+`origin/main`); it goes onto a branch off `origin/main` in citizenofnowhere-brand with
+Ashwin's word, its own repo and its own Vercel project.
+
+### G. Night: back to 1920, and "clinched" is proved, not sampled (Ashwin's second ask)
+Ashwin, after the 1978-on build: "when a team clinches a spot during the season, can you just
+indicate that either with 100% or 'clinched' ... >99% still feels like it says that that
+team could miss the playoffs ... I think you can statistically prove if a team has clinched a
+spot or not. Please do that, and do it all the way back to 1920 as well." The 1978 files
+from C were thrown away and every season 1920-2026 rebuilt with the same builder, changed
+in three places:
+- **Every era's bracket** in `bracket()`: 1920-32 no game (the leader is the champion, so
+  the page shows the title column alone); 1933-69 the two division winners in one final
+  (neutral: hosting alternated by division, which no seed expresses); the 1967-69 NFL's
+  conference semi-finals (Capitol v Century, Coastal v Central, from the shard's `conf`);
+  the 1969 AFL crossing its divisions (winner hosts the other runner-up); the 1949 AAFC's
+  one group 1v4, 2v3; 1970-77 four seeds with the same-division rule (hosts rotated to 1974,
+  the higher seed hosts here). `title_game()` returns one champion per LEAGUE to 1965
+  (1946-49 AAFC and NFL, 1960-65 AFL and NFL: two titles, each a title) and the Super Bowl
+  winner from 1966, the NFL and AFL champions meeting on a neutral field, which the shard's
+  one Elo pool per season makes a fair draw. `--verify` covers 1975 on: 51 of 51.
+- **🔴 `proved_status()` was WRONG in C, for every era.** It called a club "in" when fewer
+  than `seeds` others could reach its wins, which ignores that a division winner takes a
+  seed whatever its record: a club fifth on record can miss a seven-seed conference. On
+  2024 it had the Seahawks clinched after week 3. Rewritten on the era's percentage (ties
+  half a win from 1972, excluded before, so 6-0-8 beats 13-1 in 1965 as it did then): the
+  club's worst finish against each rival's best, places handed out as the era did (q per
+  division, one, or two in the 1969 AFL; the pool's remaining seeds as wild cards; only a
+  division's surplus over q competes for them), and the threats thinned by a max-flow over
+  the games the rivals still play against each other (two clubs meeting cannot both win;
+  a rival's games outside the set are credited as wins). "out" is the mirror: rivals whose
+  worst beats the club's best. Sufficient conditions only: never earlier than the league's
+  own announcement, sometimes later, because a clinch that rests on a tiebreaker (Buffalo's
+  2024 division, on division record in week 13) stays a number. Measured against the
+  record: 2024 Chiefs clinched week 13 (the league: 1 December, week 13), Lions week 14
+  (the league: 5 December, week 14), Bills week 15 (league week 13, by tiebreaker), Eagles
+  week 15 (league week 14, by tiebreaker); 1985 Bears week 12 (league week 11); 1965
+  Browns week 11, Bills week 12. Self-test: the flow (a shared game, an outside game), a
+  division-only era refusing a wild-card clinch, three 5-0 rivals with only each other
+  left. In the file the status is still `in`/`out`; the page prints **clinched** and
+  **out**.
+- Runtime: 107 seasons in three `for /L` loops on the box, about 40 minutes.
+`lib/nflElo.ts` and the page copy follow (1920, "the league championship to 1965, the Super
+Bowl from 1966"); the release note is the 2026-09-11 block.
+
+### H. Later: the defunct clubs were missing from the season grid, and the city is back
+Ashwin, on 1925: "why do you not show any of the defunct teams in [the season as a shape]?
+... Why aren't you showing the Pottsville Maroons?" and "it doesn't look that good in 1925
+when you just have the team name, because a lot of teams had similar names like Bulldogs. I
+think you need to bring back the city and team to the standings and then figure out how to
+just squeeze everything in."
+- **The grid.** `ExpectationTowers` matched a club's games by franchise slug. A defunct club
+  HAS a slug (its historical page), but the ledger's `home_slug`/`away_slug` is null for it,
+  so the match found nothing and the column was skipped: 1925 drew four columns (CRD CHI GB
+  NYG) out of twenty, and the champion was often absent. The ledger's `home_key`/`away_key`
+  is the shard name for every club in every season (the same two `playoff_seeds.py` reads),
+  so the join is the key first, then slug, then era name for a row without keys; `GameRow`
+  gains the two optional fields. Measured on the dev server: 1925 20 columns (FRA CRD POT
+  ...), 1926 22, 1945 10, 1963 22, 2024 32. It was not missing data: the ledger had every
+  game of every club all along.
+- **City and team, stacked.** The standings' name cell is the city in 10px dim above the
+  team, so the cell is as wide as the longer word rather than both and the column budget
+  holds: 529 px in the 531 px box at 1280 for 2024, 530 for 1963 (the 1933-69 division chip
+  is the widest case; the seed and season columns went to px-1.5 to make it fit), 1925 in
+  one column at 1084. On the phone the row grew: the two odds became a third line and the
+  season strip moved from its own column (hidden under 640) into the name cell, shown at
+  Final only (it was withheld mid-season anyway), so the name column keeps the width; the
+  odds line reads "clinched · title 10%", "out", or "playoffs 85% · title 12%". Rows are
+  99 px at Final and about 85 mid-season, from 111 with the strip in its own column; the
+  page does not scroll sideways (390 wide, tables 330 in 332). §2's density rule is met the
+  hard way: more lines, not less information.
+
+### I. The de facto crest (Ashwin: "the defunct teams all have no logos ... fill them in
+with just lettering ... for now")
+A club with no crest file and no franchise monogram (every defunct one) now gets the era
+abbreviation on the site's accent (`var(--accent)`, ink lettering) in `ident` on the
+season page, so the standings and the season grid share it. Two Rock Island and Rochester
+clubs both read ROC in 1925 (the abbreviation is the city's first three letters); a hand
+table of 1920s abbreviations, or the real 1920s marks Ashwin has in mind, is the better
+answer later. Measured at 1280: every 1925 row and tower carries a mark.
+
+### J. Gates and the stop
+`npm run verify` `_scratch/verify-20260910l.log` (the last of four runs tonight; `i`
+failed on the opengraph-image fetch, fixed in E; `j` and `k` passed before the late
+asks). Measured on the built server and the dev server, 390 and 1280: `_scratch/measure-
+odds.mjs`, `measure-odds2.mjs`, `measure-towers.mjs`, screenshots `standings-390.png`,
+`standings-1925.png`, `towers-1925.png`. Nothing committed: awaiting Ashwin's commit
+call. Two commits when he gives it: the `[vercel skip]` one (the odds builder and 107
+data files, the workflow step, the Supabase migration, this entry) and the app one
+(SeasonStandings, page.tsx, ExpectationTowers, nflElo.ts, nflExpectation.ts, the share
+cards, app/og, HomeAdvantageChart, releases.ts), app commit LAST so it is push HEAD.
+Origin has moved (`85b38ca4e`): fetch and rebase first. The brand-hook workflow
+(`_scratch/daily-rebuild.yml`) is a third commit in the other repo.
+
+**Watch tomorrow (Friday 2026-09-11):** 07:30Z `economy-rates` first genuine run (the
+policy-rate tables now hold 19,545 rows to append to); 09:30Z `nfl-live-refresh.yml`, its
+first run with the User-Agent fix, which now also writes `public/data/nfl/odds/2026.json`
+(week 0 exists already; week 1 joins once the carry has results); Saturday 07:30Z
+`economy-housing`.
+
+### K. The 1921 title (Gemini's brief, relayed by Ashwin)
+The procedure placed Buffalo first at the end of 1921: both 9-1 on the APFA's ties-excluded
+percentage, head-to-head 1-1 (Buffalo 7-6 on 24 November, Chicago 10-7 on 4 December), and a
+later step went Buffalo's way, so `odds/1921.json` read Bisons 100%. The league's executive
+committee ruled in January 1922 that the 4 December game counted and that the later meeting
+outweighed the earlier, and gave Chicago the title. `playoff_seeds.py` gains `LEAGUE_RULINGS`
+and `apply_rulings()`: for 1921, between the Bears and the Bisons level on percentage, the
+winner of their latest meeting is placed first, from the week it was played, with a `ruling:`
+note in the seeds file. Nothing else changes: through week 11 Buffalo still leads on
+percentage (9-1 to 8-1), so the odds read Bisons 54% / Bears 46% before the last two weeks and
+Bears 100% / Bisons 0% at the end. Seeds and odds for 1921 rebuilt; `--verify` 1921 OK; pytest
+112. General rulings (the second meeting outweighing the first as a rule for every season)
+were NOT adopted: the league never wrote one, and the procedure's own head-to-head step is
+the record for every other year.
+
+### L. 1932: the title that was played off (Ashwin: "both teams are qualified for the playoffs")
+The 1932 title was the one pre-1933 season decided by a game: the Bears (6-1-6) and the
+Spartans (6-1-4) level on the ties-excluded percentage after week 13, the league arranging a
+playoff (18 December, indoors at Chicago Stadium, Bears 9-0) that the record then counted as
+a regular game, which is how the ledger files it (week 14, round "NFL Champ", `playoff`
+false) and how the shard carries the Bears at 7-1-6. So the site read the Bears as the sole
+leader at week 14 and Portsmouth as nothing. Now: `playoff_seeds.load_season` files any
+pre-1933 row carrying a round as a played-off tie (the file's `tiebreaks`), `picture()` marks
+clubs level at the top of a one-group pool as sharing the leader's place with the `tie` flag
+(the 1933-69 division rule, extended back; a ruled tie, 1921, is not a tie), and the odds
+builder counts every club in a played-off tie as having reached the playoffs, which they did.
+The timeline and the standings show the number starred and dashed ("1*", "level for the
+league title; a playoff would decide it"; phone: "level, playoff to come") and the PO column
+carries the game. Measured on the dev server: week 12 Spartans 1 seed, week 13 Bears and
+Spartans both 1*, clinched, title 59/41, week 14 the record 7-1-6 with the Final honours.
+Seeds and odds 1920-32 rebuilt (1932 through_week 13, complete); `playoff_seeds --verify`
+1932 "2 qualifiers within the shard's 2 appearances", the rest unchanged. Also: "Rock Island
+Independents" reads RCK (era table), Rochester keeps ROC.
+

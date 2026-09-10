@@ -136,6 +136,48 @@ KNOWN_SHARD_SEED_ERRORS = {
 }
 
 
+# League rulings that override the procedure for one season. 1921: Chicago
+# (the Staleys, "Bears" here) and Buffalo (the All-Americans, "Bisons") both
+# finished 9-1 by the APFA's ties-excluded percentage; Buffalo held that the
+# 4 December game (Chicago 10-7) was a post-season exhibition, the league's
+# executive committee ruled in January 1922 that it counted and that the
+# second meeting outweighed the first, and gave Chicago the title (the
+# "Staley Swindle"). So between these two clubs, level on percentage, the
+# winner of their LATEST meeting is placed first, from the week that meeting
+# was played (Ashwin, 2026-09-10, via Gemini: "the model is incorrectly
+# awarding the 1921 title to the Buffalo All-Americans").
+LEAGUE_RULINGS: dict[int, dict] = {
+    1921: {"clubs": ("Bears", "Bisons"), "latest_meeting_wins": True,
+           "note": "APFA executive ruling, January 1922: the 4 December meeting counted and the "
+                   "later meeting outweighed the earlier, so Chicago was placed above Buffalo"},
+}
+
+
+def apply_rulings(season: int, order: list[str], st: "Standings", notes: list[str]) -> tuple[list[str], bool]:
+    """Reorder `order` where a league ruling settled a tie the procedure would
+    not; the flag says a ruling applied (so the tie is settled, not played off)."""
+    r = LEAGUE_RULINGS.get(season)
+    if not r:
+        return order, False
+    a, b = r["clubs"]
+    if a not in order or b not in order:
+        return order, False
+    if round(st.rec[a].pct, 6) != round(st.rec[b].pct, 6):
+        return order, False
+    meetings = [g for g in st.rec[a].games if g.opponent(a) == b and g.result_for(a) != 0.5]
+    if not meetings:
+        return order, False
+    last = max(meetings, key=lambda g: g.week)
+    winner = a if last.result_for(a) == 1.0 else b
+    loser = b if winner == a else a
+    if order.index(winner) < order.index(loser):
+        return order, True
+    out = [c for c in order if c != winner]
+    out.insert(out.index(loser), winner)
+    notes.append(f"ruling: {r['note']} ({winner} above {loser})")
+    return out, True
+
+
 def seeds_per_conf(season: int) -> int:
     """Seeds per conference in the wild-card era (1978 on)."""
     if season == 1982:
@@ -553,8 +595,23 @@ def picture(teams: dict[str, Team], games: list[Game], season: int, notes: list[
             # record, division standings not used.
             pool_order = _rank(members, st, br, "wc")
         elif len(divs) == 1:
-            # One group (1920-32, AAFC 1949): the standings are the seeding.
-            pool_order = _rank(members, st, br, "div")
+            # One group (1920-32, AAFC 1949): the standings are the seeding,
+            # unless the league ruled otherwise (1921). Before 1933 clubs
+            # level at the top were, once, played off: 1932, the Bears and
+            # the Spartans both 6-1 on the ties-excluded percentage, the
+            # league arranging a game (18 December, Chicago Stadium, Bears
+            # 9-0) that the record then counted. Level clubs at the top
+            # share the leader's place with the `tie` flag, as a division
+            # title level on the record does after 1932 (Ashwin, 2026-09-11:
+            # "you show that both teams are qualified for the playoffs").
+            pool_order, ruled = apply_rulings(season, _rank(members, st, br, "div"), st, notes)
+            if nseeds == 1 and not ruled and len(pool_order) > 1:
+                top = round(st.rec[pool_order[0]].pct, 6)
+                level = [n for n in pool_order if round(st.rec[n].pct, 6) == top]
+                if len(level) > 1:
+                    shared.extend(level[1:])
+                    for n in level:
+                        out[n]["tie"] = True
         else:
             br.seeding_winners = True
             seeded_winners = _rank(winners, st, br, "wc")
@@ -569,7 +626,7 @@ def picture(teams: dict[str, Team], games: list[Game], season: int, notes: list[
         # same seed), not a place of its own: the ranking above is what the
         # procedure would say, and the flag says the procedure did not apply.
         for n in shared:
-            leader = next(m for m in winners if teams[m].div == teams[n].div)
+            leader = next((m for m in winners if teams[m].div == teams[n].div), pool_order[0])
             out[n]["seed"] = out[leader]["seed"]
     return out
 
@@ -610,10 +667,13 @@ def load_season(season: int):
         with open(ledger_path, encoding="utf-8") as f:
             ledger = json.load(f)
         for g in ledger["games"]:
-            if g.get("playoff") and g.get("round") == "Div. Playoff" and season < 1970 and g.get("score"):
+            if ((g.get("playoff") and g.get("round") == "Div. Playoff" and season < 1970 and g.get("score"))
+                    or (season < 1933 and g.get("round") and g.get("score"))):
                 # The played-off division title (1941, 1943, 1947, 1950, 1952,
-                # 1957, 1958, 1963 AFL, 1965, 1968 AFL): kept for the file's
-                # `tiebreaks`, never counted in the standings.
+                # 1957, 1958, 1963 AFL, 1965, 1968 AFL), and the 1932 title
+                # game (the ledger's only pre-1933 row with a round, filed as
+                # a regular game because the record counted it): kept for the
+                # file's `tiebreaks`, never counted in the standings here.
                 hs, as_ = (int(x) for x in g["score"].split("-"))
                 tiebreaks.append({"home": g["home_key"], "away": g["away_key"], "score": g["score"],
                                   "date": g.get("date"), "winner": g["home_key"] if hs > as_ else g["away_key"]})
