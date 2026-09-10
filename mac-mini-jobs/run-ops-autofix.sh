@@ -84,7 +84,7 @@ push(){
 
 ACTED=()   # human-readable lines describing what was actually done
 
-log "=== ops-autofix start ($DATE)${DRY_RUN:+ }$([ "$DRY_RUN" = 1 ] && echo '[DRY RUN]') ==="
+log "=== ops-autofix start ($DATE)$([ "$DRY_RUN" = 1 ] && echo " [DRY RUN]") ==="
 
 if [ -f "$KILL" ]; then
   log "AUTOFIX-OFF present -- disabled. Remove $KILL to re-enable."
@@ -119,17 +119,21 @@ fi
 # Consumes one attempt per (kind) per run, so a fault this cannot actually fix
 # stops being retried after MAX_ATTEMPTS rather than every slot, forever.
 allowed(){
-  python3 - "$ATTEMPTS" "$DATE" "$MAX_ATTEMPTS" "$1" <<'PY'
+  # A DRY RUN must not spend the budget it is only pretending to use: testing
+  # three times would otherwise exhaust the cap and leave the next REAL run
+  # standing down on a fault it was meant to fix.
+  python3 - "$ATTEMPTS" "$DATE" "$MAX_ATTEMPTS" "$1" "$DRY_RUN" <<'PY'
 import json, sys
-path, date, cap, kind = sys.argv[1], sys.argv[2], int(sys.argv[3]), sys.argv[4]
+path, date, cap, kind, dry = sys.argv[1], sys.argv[2], int(sys.argv[3]), sys.argv[4], sys.argv[5] == "1"
 try:
     with open(path) as f: db = json.load(f)
 except Exception: db = {}
 if db.get("date") != date: db = {"date": date, "counts": {}}
 c = db.setdefault("counts", {})
 ok = c.get(kind, 0) < cap
-if ok: c[kind] = c.get(kind, 0) + 1
-with open(path, "w") as f: json.dump(db, f)
+if ok and not dry:
+    c[kind] = c.get(kind, 0) + 1
+    with open(path, "w") as f: json.dump(db, f)
 print("yes" if ok else "no")
 PY
 }
@@ -250,10 +254,43 @@ for f in json.load(sys.stdin):
         print("%s\t%s\t%s" % (k, f.get("id", ""), (f.get("evidence") or {}).get("run_id", "")))')
 
 # --- report -------------------------------------------------------------------
+# An ACTION is always announced -- Ashwin must know when something changed
+# production on his behalf, every time, without exception.
+#
+# A finding this script CANNOT fix is announced at most once a day, and only
+# when the set of them changes. Without that, a single self-healing condition
+# becomes a push every slot: newsletter-daily's tile stays down from a 07:00Z
+# failure until the next morning's run, which at a 2-hourly cadence is a dozen
+# identical "nothing auto-fixable" alerts overnight for something that needs
+# nothing from anyone. An alert channel that cries wolf on a schedule is worse
+# than no alert channel, because it trains you to swipe it away. The finding is
+# still logged every run; it just stops shouting.
 if [ "${#ACTED[@]}" -eq 0 ]; then
   log "no whitelisted action applied"
-  push "[ops-autofix] $COUNT finding(s), nothing auto-fixable" default mag \
-    "Detected $COUNT item(s) but none matched the whitelist, so nothing was done. See $LOG."
+  FINGERPRINT="$(printf '%s' "$FINDINGS" | python3 -c '
+import sys, json, hashlib
+fs = json.load(sys.stdin)
+key = "|".join(sorted("%s:%s" % (f["kind"], f.get("id", "")) for f in fs))
+print(hashlib.sha256(key.encode()).hexdigest()[:16])')"
+  NOTIFY="$(python3 - "$ATTEMPTS" "$DATE" "$FINGERPRINT" <<'PY'
+import json, sys
+path, date, fp = sys.argv[1], sys.argv[2], sys.argv[3]
+try:
+    with open(path) as f: db = json.load(f)
+except Exception: db = {}
+if db.get("date") != date: db = {"date": date, "counts": {}}
+already = db.get("reported") == fp
+db["reported"] = fp
+with open(path, "w") as f: json.dump(db, f)
+print("no" if already else "yes")
+PY
+)"
+  if [ "$NOTIFY" = "yes" ]; then
+    push "[ops-autofix] $COUNT finding(s), nothing auto-fixable" default mag \
+      "Detected $COUNT item(s), none matching the whitelist, so nothing was done. This will not repeat today unless the findings change. See $LOG."
+  else
+    log "same unfixable finding(s) as the last run -- not re-notifying"
+  fi
 else
   printf '%s\n' "${ACTED[@]}" | tee -a "$LOG"
   push "[ops-autofix] acted on $COUNT finding(s)" default wrench \
