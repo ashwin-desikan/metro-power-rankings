@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T14:46:24.167552+00:00",
+  "generated_at": "2026-09-10T14:56:29.290037+00:00",
   "jobs": [
     {
       "id": "football-standings",
@@ -55,7 +55,7 @@
       "next_run": "2026-09-11T01:00:00+00:00",
       "last_run": {
         "date": "2026-09-10",
-        "status": "failed",
+        "status": "ok (manual)",
         "slot": "2026-09-10T01:00:00+00:00"
       }
     },
