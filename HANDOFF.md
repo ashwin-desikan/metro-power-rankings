@@ -12846,3 +12846,39 @@ data-reads, public-data, release-notes OK; data-currency 28 current; vitest 193/
 437 files uncommitted on top of e82112a28; not rebuilt natively since build g, and this
 batch adds an edge route (`/og`) and deletes three file-convention images, so run
 `next build --webpack` before the commit.
+
+### T. The world in 2100 promoted on the home page, then the batch verified, rebased and pushed
+Ashwin, before the push: "ensure that the 2100 is featured on the main page, somewhere fairly
+visible, maybe in the prediction area." Done in `app/page.tsx` only: a featured card at the
+top of the masthead Predictions block ("The world in 2100", NEW tag, one-line blurb, the three
+largest countries on the 2100 median with flag, multiple and 2100 population via the existing
+`IndexPreview`, source line), read by a new `top2100()` from `getPopulation2100Index()`; a
+"Population 2100" chip first in the Predictions row; "The world in 2100" in the Geography
+column of the site index; "2100" in the Geography atlas sub-line. Measured at 390 and 1280:
+no horizontal overflow, card 358 px wide on the phone, three `/countries/2100` links on the page.
+
+**Verified in one run** (`npm run verify`, log `_scratch/verify-20260910h.log`): every gate,
+vitest 193/193, pytest 112, native `next build --webpack` clean with the `/og` edge route
+(Next warns that an edge page disables static generation for that page, which is the point),
+function-size OK, largest route still `/countries/[slug]` at 128.2 MB traced.
+
+**Push story.** The first push was rejected: 18 bot and mini commits had landed on origin since
+`ffebb034f` (all `[vercel skip]`: live bundles, refresh-schedule, the auth canary, WNBA
+finalize, the healthchecks cap). Rebased both local commits onto `origin/main` with
+`-c core.autocrlf=input`; one conflict, this file, where both sides had appended a section at
+the same point. Resolved by keeping both blocks in order (the mini's E onward, then the cowork
+entry) and dropping the duplicated "Pushed and live at `58ab5e622`" line; CRLF preserved
+(0 bare LF). Rebased SHAs: `9c3ec660e` (the 2100 and towers commit, formerly `e82112a28`) and
+**`b59c61a14`** (money ledger, SortableBoard and gate, 2100 blocs, filters and current year,
+25 organisations verified with the monthly tripwire, Citizen of Nowhere share cards, the home
+promo). `b59c61a14` is push HEAD and the build-relevant commit. **Pushed 2026-09-10; this is
+the day's first paid Vercel build** (one left). Confirm the production build on Vercel before
+starting anything new; the first things to eyeball live are `/`, `/countries/2100`, `/orgs`,
+the 2025-26 hub money tab and a WhatsApp preview of any page.
+
+**Open from R, unchanged:** 12 pages still on the default share card; Satori bold weight; the
+203-board sortable sweep; the HomeAdvantageChart SVG `<title>` hydration mismatch; "Ivory
+Coast" at three builder sources; apply `overrides` into the workbook CSV when Ashwin next
+edits it; Notion backlog rows; the Money Ledger remainder (frontier scatter, trading versus
+appreciation split, director ledger).
+
