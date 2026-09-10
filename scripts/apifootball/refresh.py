@@ -108,15 +108,25 @@ def supa_upsert(table, rows, on_conflict, key, resolution="merge-duplicates", ch
                 time.sleep(3)
     return n
 
-def supa_delete(table, filt, key):
+def supa_delete(table, filt, key, echo=False):
     """DELETE rows matching a PostgREST filter (e.g. filt='team_id=in.(1,2,3)'). Used to prune
     a stale crosswalk row: a dead duplicate team_id with zero live standings/fixtures this run
-    that is blocking the live team from claiming its Lookup club (see the collision handler)."""
+    that is blocking the live team from claiming its Lookup club (see the collision handler).
+
+    echo=True asks PostgREST to hand back the rows it removed, so a caller can say what it
+    deleted rather than deleting silently. Used by the standings label reconcile, which runs
+    unattended four times a day: an unlogged DELETE in a cron job is how data goes missing
+    without anyone being able to say when."""
+    prefer = "return=representation" if echo else "return=minimal"
     req = urllib.request.Request(f"{SUPA}/rest/v1/{table}?{filt}", method="DELETE",
-        headers={"apikey": key, "Authorization": "Bearer " + key, "Prefer": "return=minimal"})
+        headers={"apikey": key, "Authorization": "Bearer " + key, "Prefer": prefer,
+                 "Accept": "application/json"})
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(req, timeout=60): return
+            with urllib.request.urlopen(req, timeout=60) as r:
+                if not echo: return []
+                body = r.read().decode() or "[]"
+                return json.loads(body)
         except urllib.error.HTTPError as e:
             if attempt == 2: raise RuntimeError(f"{table} delete: HTTP {e.code} {e.read().decode()[:200]}")
             time.sleep(3)
@@ -202,6 +212,44 @@ def apply_aliases(standings, fixtures, teams_seen, alias):
         seen[(row["league_id"], row["season"], row["group_label"], row["team_id"])] = row
     standings[:] = list(seen.values())
     return n
+
+def stale_label_filters(standings):
+    """PostgREST filters deleting standings rows under a label the API dropped.
+
+    group_label is part of the football_standings conflict key, so when
+    api-football RENAMES a table mid-season the upsert writes a fresh set of
+    rows under the new name and leaves the old set behind, frozen at whatever
+    the table looked like on the last run that used it. export_bundles.py then
+    emits both, and the standings page renders the FIRST group -- the dead one.
+    That is exactly how the Champions League table sat on Tuesday's results
+    while Wednesday's were already in the fixtures feed (found 2026-09-10):
+    api-football renamed "League Phase" to "UEFA Champions League" at the
+    09-09 11:00Z run, mid-matchday-1, and the old 36 rows never moved again.
+
+    Only leagues that returned standings THIS run are touched, and only labels
+    absent from that response -- so a league that genuinely carries several
+    tables (Uruguay's Apertura/Clausura/Anual/Promedios, the Eerste Divisie
+    periods, Argentina's two groups) keeps all of them, because the API returns
+    them all on every run. A league whose fetch errored is not in `standings`
+    at all and so is never pruned: a bad API day cannot blank a live table.
+    """
+    live = {}
+    for r in standings:
+        live.setdefault((r["league_id"], r["season"]), set()).add(r["group_label"])
+    out = []
+    for (lid, season), labels in sorted(live.items()):
+        # A double quote inside a label would need PostgREST's own escaping.
+        # No label has ever carried one, and guessing the escape wrong deletes
+        # live rows, so skip the league instead: a missed prune is a stale
+        # table, a bad filter is data loss.
+        if any('"' in l for l in labels):
+            continue
+        vals = ",".join('"%s"' % l for l in sorted(labels))
+        filt = "league_id=eq.%d&season=eq.%d&group_label=not.in.%s" % (
+            lid, season, urllib.parse.quote("(%s)" % vals, safe="(),"))
+        out.append((lid, season, sorted(labels), filt))
+    return out
+
 
 def parse_standings(doc, league_id, season):
     rows, teams = [], {}
@@ -395,6 +443,18 @@ def main():
         log(f"PRUNED {len(evicted)} stale crosswalk row(s) reclaimed by a live team: {sorted(evicted)}")
     supa_upsert("football_team", resolved_rows, "team_id", skey)
     ns = supa_upsert("football_standings", standings, "league_id,season,group_label,team_id", skey)
+    dropped = 0
+    for lid, season_, labels, filt in stale_label_filters(standings):
+        gone = supa_delete("football_standings", filt, skey, echo=True)
+        if not gone: continue
+        dropped += len(gone)
+        by_label = {}
+        for r in gone: by_label[r.get("group_label")] = by_label.get(r.get("group_label"), 0) + 1
+        for gl, n in sorted(by_label.items()):
+            log(f"  label reconcile: league {lid} season {season_} dropped {n} row(s) under "
+                f"{gl!r}; the API now returns {labels}")
+    if dropped:
+        log(f"RECONCILED {dropped} standings row(s) left behind by an api-football table rename")
     nf = supa_upsert("football_fixtures", fixtures, "fixture_id", skey)
     log(f"WROTE: standings={ns} fixtures={nf} | new teams resolved to Lookup={len(resolved_rows)} "
         f"unmatched={len(unmatched)} collisions={len(collisions)}")

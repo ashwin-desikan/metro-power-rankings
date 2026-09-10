@@ -40,16 +40,17 @@ MIN_MAPPED = 60
 # guessed mapping credits the wrong country, which is worse than dropping one.
 IOC_SLUG = {
     "USA": "united-states", "GBR": "great-britain", "KOR": "south-korea",
-    "PRK": "north-korea", "TPE": "chinese-taipei", "CIV": "ivory-coast",
+    "PRK": "north-korea", "TPE": "taiwan", "CIV": "cote-divoire",
     "COD": "congo-dr", "CGO": "congo", "CPV": "cape-verde", "TUR": "turkey",
     "IRI": "iran", "RSA": "south-africa", "PUR": "puerto-rico",
-    "BIH": "bosnia-herzegovina", "CZE": "czechia", "NED": "netherlands",
+    "BIH": "bosnia-herzegovina", "CZE": "czech-republic", "NED": "netherlands",
     "GER": "germany", "SUI": "switzerland", "DEN": "denmark", "CRO": "croatia",
     "SLO": "slovenia", "SVK": "slovakia", "LAT": "latvia", "LTU": "lithuania",
     "GRE": "greece", "POR": "portugal", "MNE": "montenegro", "SRB": "serbia",
     "HKG": "hong-kong", "UAE": "united-arab-emirates", "DOM": "dominican-republic",
     "SSD": "south-sudan", "ESA": "el-salvador", "CRC": "costa-rica",
-    "ISV": "united-states-virgin-islands", "IVB": "british-virgin-islands", "VIN": "st-vincent-and-the-grenadines",
+    "ISV": "us-virgin-islands", "IVB": "british-virgin-islands",
+    "VIN": "st-vincent-the-grenadines",
     "ANT": "antigua-barbuda", "TTO": "trinidad-tobago", "MAS": "malaysia",
     "INA": "indonesia", "PHI": "philippines", "SIN": "singapore", "VIE": "vietnam",
     "NGR": "nigeria", "ALG": "algeria", "EGY": "egypt", "MAD": "madagascar",
@@ -69,17 +70,17 @@ IOC_SLUG = {
 # so the name path has to be able to stand alone.
 NAME_SLUG = {
     "turkiye": "turkey", "türkiye": "turkey",
-    "czechia": "czechia", "czech republic": "czechia",
+    "czechia": "czech-republic", "czech republic": "czech-republic",
     "great britain": "great-britain", "united kingdom": "great-britain",
     "bosnia and herzegovina": "bosnia-herzegovina",
-    "chinese taipei": "chinese-taipei", "taiwan": "chinese-taipei",
-    "virgin islands": "united-states-virgin-islands",
+    "chinese taipei": "taiwan", "taiwan": "taiwan",
+    "virgin islands": "us-virgin-islands",
     "dr congo": "congo-dr", "congo dr": "congo-dr",
-    "st.vincent and the grenadines": "st-vincent-and-the-grenadines",
-    "st vincent and the grenadines": "st-vincent-and-the-grenadines",
+    "st.vincent and the grenadines": "st-vincent-the-grenadines",
+    "st vincent and the grenadines": "st-vincent-the-grenadines",
     "hong kong, china": "hong-kong", "hong kong": "hong-kong",
     "korea": "south-korea", "korea republic": "south-korea",
-    "ivory coast": "ivory-coast", "cote d'ivoire": "ivory-coast",
+    "ivory coast": "cote-divoire", "cote d'ivoire": "cote-divoire",
     "cape verde": "cape-verde", "north macedonia": "north-macedonia",
     "united states": "united-states", "usa": "united-states",
 }
@@ -88,12 +89,14 @@ NAME_SLUG = {
 def slug_universe():
     """Every slug the Cup engine will actually recognise, and a name index.
 
-    NOT countries.json alone. That file is the site's country directory and uses
-    its own spellings, czech-republic and united-kingdom and taiwan, where the
-    engine says czechia and great-britain and chinese-taipei. Validating against
-    it would reject four real nations as unknown. The engine's own slug universe
-    is the previous zone-zero-cup.json build, with countries.json folded in so a
-    nation the Cup does not yet score is still recognised.
+    NOT countries.json alone. The two files agreed on almost everything even
+    before 46df23bb3 ("one row per country") folded zone-zero-cup.json to the
+    countries.json slug wherever they differed; since that commit the only
+    survivor is great-britain, which the engine says where the directory says
+    united-kingdom. Validating against countries.json alone would reject it.
+    The engine's own slug universe is the previous zone-zero-cup.json build,
+    with countries.json folded in so a nation the Cup does not yet score is
+    still recognised.
     """
     by_slug, by_name = set(), {}
     cup = os.path.join(DATA, "zone-zero-cup.json")
@@ -131,6 +134,7 @@ def resolve(team, by_slug, by_name):
 
 def main():
     dry = "--dry-run" in sys.argv
+    allow_shrink = "--allow-shrink" in sys.argv
     if not os.path.exists(SRC):
         sys.exit("missing %s; run fetch_fiba_ranking.py --gender women first" % SRC)
     src = json.load(io.open(SRC, encoding="utf-8"))
@@ -158,6 +162,18 @@ def main():
 
     doc = json.load(io.open(DEST, encoding="utf-8"))
     before = len(doc["sports"].get(SPORT, {}).get("ranks") or [])
+
+    # MAX_UNMAPPED cannot catch the regression that actually happened on
+    # 2026-09-09: five nations went unmapped, five is under twelve, the run
+    # exited 0 and committed a ranking that had quietly lost Czechia at world
+    # rank 17. The failure was a DROP AGAINST LAST WEEK, not an absolute count,
+    # so it needs its own gate. FIBA does genuinely shrink a ranking now and
+    # then (a federation suspended, a nation merged away), hence the flag --
+    # but it has to be an explicit decision, never a silent one.
+    assert allow_shrink or len(ranks) >= before, (
+        "sanity: %d ranks would replace %d -- the ranking shrank by %d. Fix the "
+        "mapping (see IOC_SLUG/NAME_SLUG) or pass --allow-shrink if the source "
+        "really did lose nations." % (len(ranks), before, before - len(ranks)))
     if dry:
         print("dry run: would write %d ranks (was %d)" % (len(ranks), before))
         return
